@@ -73,7 +73,7 @@ namespace ShareX.UploadersLib.FileUploaders
             if (!string.IsNullOrEmpty(Email) && !string.IsNullOrEmpty(Password))
             {
                 NameValueCollection headers = UploadHelpers.CreateAuthenticationHeader(Email, Password);
-                result = SendRequestFile("https://api.hostr.co/file", stream, fileName, headers: headers);
+                result = SendRequestFile("https://api.hostr.co/file", stream, fileName, "file", headers: headers);
 
                 if (result.IsSuccess)
                 {

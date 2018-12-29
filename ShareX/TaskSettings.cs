@@ -30,6 +30,7 @@ using ShareX.IndexerLib;
 using ShareX.MediaLib;
 using ShareX.ScreenCaptureLib;
 using ShareX.UploadersLib;
+using ShareX.UploadersLib.OtherServices;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -321,12 +322,11 @@ namespace ShareX
         #region Capture / General
 
         public bool ShowCursor = true;
+        public decimal ScreenshotDelay = 0;
         public bool CaptureTransparent = false;
         public bool CaptureShadow = true;
         public int CaptureShadowOffset = 20;
         public bool CaptureClientArea = false;
-        public bool IsDelayScreenshot = false;
-        public decimal DelayScreenshot = 2.0m;
         public bool CaptureAutoHideTaskbar = false;
         public Rectangle CaptureCustomRegion = new Rectangle(0, 0, 0, 0);
 
@@ -358,6 +358,12 @@ namespace ShareX
         public ScrollingCaptureOptions ScrollingCaptureOptions = new ScrollingCaptureOptions();
 
         #endregion Capture / Scrolling capture
+
+        #region Capture / OCR
+
+        public OCROptions OCROptions = new OCROptions();
+
+        #endregion Capture / OCR
     }
 
     public class TaskSettingsUpload
@@ -507,6 +513,12 @@ namespace ShareX
 
         [Category("After upload / Notifications"), DefaultValue(ToastClickAction.OpenUrl), Description("Specify action after toast notification window is left clicked."), TypeConverter(typeof(EnumDescriptionConverter))]
         public ToastClickAction ToastWindowClickAction { get; set; }
+
+        [Category("After upload / Notifications"), DefaultValue(ToastClickAction.CloseNotification), Description("Specify action after toast notification window is right clicked."), TypeConverter(typeof(EnumDescriptionConverter))]
+        public ToastClickAction ToastWindowRightClickAction { get; set; }
+
+        [Category("After upload / Notifications"), DefaultValue(ToastClickAction.AnnotateImage), Description("Specify action after toast notification window is middle clicked."), TypeConverter(typeof(EnumDescriptionConverter))]
+        public ToastClickAction ToastWindowMiddleClickAction { get; set; }
 
         private Size toastWindowSize;
 

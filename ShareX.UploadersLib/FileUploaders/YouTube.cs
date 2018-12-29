@@ -113,7 +113,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
             string metadata = GetMetadata(fileName);
 
-            UploadResult result = SendRequestFile("https://www.googleapis.com/upload/youtube/v3/videos?part=id,snippet,status", stream, fileName,
+            UploadResult result = SendRequestFile("https://www.googleapis.com/upload/youtube/v3/videos?part=id,snippet,status", stream, fileName, "file",
                 headers: googleAuth.GetAuthHeaders(), metadata: metadata);
 
             if (!string.IsNullOrEmpty(result.Response))

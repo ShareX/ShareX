@@ -66,6 +66,11 @@ namespace ShareX.HelpersLib
             }
         }
 
+        public static int RandomPick(params int[] nums)
+        {
+            return nums[Random(nums.Length - 1)];
+        }
+
         /// <summary>
         /// Returns a random number between 0 and <c>max</c> (inclusive) generated with a cryptographic PRNG.
         /// </summary>
@@ -184,6 +189,24 @@ namespace ShareX.HelpersLib
             float x = Lerp(pos1.X, pos2.X, amount);
             float y = Lerp(pos1.Y, pos2.Y, amount);
             return new Vector2(x, y);
+        }
+
+        public static void Clamp<T>(ref T val, T min, T max) where T : IComparable<T>
+        {
+            if (val.CompareTo(min) < 0)
+            {
+                val = min;
+            }
+            else if (val.CompareTo(max) > 0)
+            {
+                val = max;
+            }
+        }
+
+        public static T Clamp<T>(T val, T min, T max) where T : IComparable<T>
+        {
+            Clamp(ref val, min, max);
+            return val;
         }
     }
 }

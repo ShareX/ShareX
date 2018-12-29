@@ -76,14 +76,19 @@ namespace ShareX.MediaLib
                 string filename = string.Format("{0}-{1}.{2}", mediaFileName, timeSliceElapsed, Options.ImageFormat.GetDescription());
                 string tempThumbnailPath = Path.Combine(GetOutputDirectory(), filename);
 
-                using (Process p = new Process())
+                using (Process process = new Process())
                 {
-                    ProcessStartInfo psi = new ProcessStartInfo(FFmpegPath);
-                    psi.WindowStyle = ProcessWindowStyle.Hidden;
-                    psi.Arguments = string.Format("-ss {0} -i \"{1}\" -f image2 -vframes 1 -y \"{2}\"", timeSliceElapsed, MediaPath, tempThumbnailPath);
-                    p.StartInfo = psi;
-                    p.Start();
-                    p.WaitForExit(1000 * 30);
+                    ProcessStartInfo psi = new ProcessStartInfo()
+                    {
+                        FileName = FFmpegPath,
+                        Arguments = $"-ss {timeSliceElapsed} -i \"{MediaPath}\" -f image2 -vframes 1 -y \"{tempThumbnailPath}\"",
+                        UseShellExecute = false,
+                        CreateNoWindow = true
+                    };
+
+                    process.StartInfo = psi;
+                    process.Start();
+                    process.WaitForExit(1000 * 30);
                 }
 
                 if (File.Exists(tempThumbnailPath))

@@ -51,11 +51,17 @@ namespace ShareX
             txtOutputExtension.Text = fileAction.OutputExtension ?? "";
             txtExtensions.Text = fileAction.Extensions ?? "";
             cbHiddenWindow.Checked = fileAction.HiddenWindow;
+            cbDeleteInputFile.Checked = fileAction.DeleteInputFile;
         }
 
         private void btnPathBrowse_Click(object sender, EventArgs e)
         {
             Helpers.BrowseFile(txtPath);
+        }
+
+        private void txtOutputExtension_TextChanged(object sender, EventArgs e)
+        {
+            cbDeleteInputFile.Enabled = txtOutputExtension.TextLength > 0;
         }
 
         private void btnOK_Click(object sender, EventArgs e)
@@ -78,6 +84,7 @@ namespace ShareX
             FileAction.Extensions = txtExtensions.Text;
             FileAction.OutputExtension = txtOutputExtension.Text;
             FileAction.HiddenWindow = cbHiddenWindow.Checked;
+            FileAction.DeleteInputFile = cbDeleteInputFile.Checked;
 
             DialogResult = DialogResult.OK;
             Close();

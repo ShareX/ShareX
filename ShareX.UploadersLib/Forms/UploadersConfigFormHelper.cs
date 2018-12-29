@@ -960,9 +960,11 @@ namespace ShareX.UploadersLib
 
             cbCustomUploaderRequestType.SelectedIndex = (int)uploader.RequestType;
             rtbCustomUploaderRequestURL.Text = uploader.RequestURL ?? "";
-            cbCustomUploaderRequestFormat.SelectedIndex = (int)uploader.RequestFormat;
+            CustomUploaderSyntaxHighlight(rtbCustomUploaderRequestURL);
+            cbCustomUploaderRequestFormat.SelectedIndex = (int)uploader.RequestFormat - 1;
 
             rtbCustomUploaderData.Text = uploader.Data ?? "";
+            CustomUploaderSyntaxHighlight(rtbCustomUploaderData);
 
             txtCustomUploaderArgName.Text = "";
             rtbCustomUploaderArgValue.Text = "";
@@ -1002,8 +1004,11 @@ namespace ShareX.UploadersLib
             }
 
             rtbCustomUploaderURL.Text = uploader.URL ?? "";
+            CustomUploaderSyntaxHighlight(rtbCustomUploaderURL);
             rtbCustomUploaderThumbnailURL.Text = uploader.ThumbnailURL ?? "";
+            CustomUploaderSyntaxHighlight(rtbCustomUploaderThumbnailURL);
             rtbCustomUploaderDeletionURL.Text = uploader.DeletionURL ?? "";
+            CustomUploaderSyntaxHighlight(rtbCustomUploaderDeletionURL);
 
             CustomUploaderUpdateStates();
         }
@@ -1035,7 +1040,7 @@ namespace ShareX.UploadersLib
             CustomUploaderItem uploader = CustomUploaderGetSelected();
             if (uploader != null)
             {
-                if (uploader.RequestFormat == CustomUploaderRequestFormat.JSON)
+                if (uploader.ShouldSerializeData())
                 {
                     if (!tcCustomUploaderArguments.TabPages.Contains(tpCustomUploaderData))
                     {
@@ -1047,8 +1052,7 @@ namespace ShareX.UploadersLib
                     tcCustomUploaderArguments.TabPages.Remove(tpCustomUploaderData);
                 }
 
-                if ((uploader.RequestFormat == CustomUploaderRequestFormat.Automatic && uploader.RequestType == CustomUploaderRequestMethod.POST) ||
-                    uploader.RequestFormat == CustomUploaderRequestFormat.FormData)
+                if (uploader.ShouldSerializeFileFormName())
                 {
                     if (!tcCustomUploaderArguments.TabPages.Contains(tpCustomUploaderFile))
                     {
@@ -1165,12 +1169,6 @@ namespace ShareX.UploadersLib
                 {
                     lbCustomUploaderList.SelectedIndex = Config.CustomImageUploaderSelected;
                 }
-
-                CustomUploaderSyntaxHighlight(rtbCustomUploaderRequestURL);
-                CustomUploaderSyntaxHighlight(rtbCustomUploaderData);
-                CustomUploaderSyntaxHighlight(rtbCustomUploaderURL);
-                CustomUploaderSyntaxHighlight(rtbCustomUploaderThumbnailURL);
-                CustomUploaderSyntaxHighlight(rtbCustomUploaderDeletionURL);
             }
 
             CustomUploaderUpdateStates();

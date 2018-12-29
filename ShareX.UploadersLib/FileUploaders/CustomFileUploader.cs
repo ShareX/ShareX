@@ -80,33 +80,34 @@ namespace ShareX.UploadersLib.FileUploaders
 
         public override UploadResult Upload(Stream stream, string fileName)
         {
-            CustomUploaderArgumentInput input = new CustomUploaderArgumentInput(fileName, "");
+            UploadResult result = new UploadResult();
+            CustomUploaderInput input = new CustomUploaderInput(fileName, "");
 
-            CustomUploaderRequestFormat requestFormat = uploader.GetRequestFormat(CustomUploaderDestinationType.FileUploader);
-
-            if (requestFormat == CustomUploaderRequestFormat.FormData)
+            if (uploader.RequestFormat == CustomUploaderRequestFormat.MultipartFormData)
             {
-                UploadResult result = SendRequestFile(uploader.GetRequestURL(), stream, fileName, uploader.GetFileFormName(),
-                    uploader.GetArguments(input), uploader.GetHeaders(input), null, uploader.ResponseType, uploader.GetHttpMethod());
-
-                if (result.IsSuccess)
-                {
-                    try
-                    {
-                        uploader.ParseResponse(result);
-                    }
-                    catch (Exception e)
-                    {
-                        Errors.Add(Resources.CustomFileUploader_Upload_Response_parse_failed_ + Environment.NewLine + e);
-                    }
-                }
-
-                return result;
+                result = SendRequestFile(uploader.GetRequestURL(input), stream, fileName, uploader.GetFileFormName(),
+                    uploader.GetArguments(input), uploader.GetHeaders(input), null, uploader.ResponseType, uploader.RequestType);
+            }
+            else if (uploader.RequestFormat == CustomUploaderRequestFormat.Binary)
+            {
+                result.Response = SendRequest(uploader.RequestType, uploader.GetRequestURL(input), stream, UploadHelpers.GetMimeType(fileName),
+                    uploader.GetArguments(input), uploader.GetHeaders(input), null, uploader.ResponseType);
             }
             else
             {
-                throw new Exception("Unsupported request format.");
+                throw new Exception("Unsupported request format: " + uploader.RequestFormat);
             }
+
+            try
+            {
+                uploader.ParseResponse(result, input);
+            }
+            catch (Exception e)
+            {
+                Errors.Add(Resources.CustomFileUploader_Upload_Response_parse_failed_ + Environment.NewLine + e);
+            }
+
+            return result;
         }
     }
 }

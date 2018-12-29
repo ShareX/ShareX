@@ -31,6 +31,7 @@ using ShareX.MediaLib;
 using ShareX.Properties;
 using ShareX.ScreenCaptureLib;
 using ShareX.UploadersLib;
+using ShareX.UploadersLib.OtherServices;
 using ShareX.UploadersLib.SharingServices;
 using System;
 using System.Collections.Generic;
@@ -129,11 +130,8 @@ namespace ShareX
                 case HotkeyType.ScrollingCapture:
                     OpenScrollingCapture(safeTaskSettings, true);
                     break;
-                case HotkeyType.CaptureWebpage:
-                    OpenWebpageCapture(safeTaskSettings);
-                    break;
                 case HotkeyType.TextCapture:
-                    OCRImage(safeTaskSettings);
+                    _ = OCRImage(safeTaskSettings);
                     break;
                 case HotkeyType.AutoCapture:
                     OpenAutoCapture(safeTaskSettings);
@@ -738,22 +736,6 @@ namespace ShareX
             AutoCaptureForm.Instance.ForceActivate();
         }
 
-        public static void OpenWebpageCapture(TaskSettings taskSettings = null)
-        {
-            if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
-
-            WebpageCaptureForm webpageCaptureForm = new WebpageCaptureForm(Program.Settings.WebpageCaptureOptions);
-            webpageCaptureForm.ImageUploadRequested += img => UploadManager.RunImageTask(img, taskSettings);
-            webpageCaptureForm.ImageCopyRequested += img =>
-            {
-                using (img)
-                {
-                    ClipboardHelpers.CopyImage(img);
-                }
-            };
-            webpageCaptureForm.Show();
-        }
-
         public static void StartAutoCapture(TaskSettings taskSettings = null)
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
@@ -1084,10 +1066,19 @@ namespace ShareX
         {
             try
             {
-                ProcessStartInfo psi = new ProcessStartInfo(Application.ExecutablePath);
-                psi.Arguments = arguments;
-                psi.Verb = "runas";
-                Process.Start(psi);
+                using (Process process = new Process())
+                {
+                    ProcessStartInfo psi = new ProcessStartInfo()
+                    {
+                        FileName = Application.ExecutablePath,
+                        Arguments = arguments,
+                        UseShellExecute = false,
+                        Verb = "runas"
+                    };
+
+                    process.StartInfo = psi;
+                    process.Start();
+                }
             }
             catch
             {
@@ -1106,59 +1097,97 @@ namespace ShareX
             RegionCaptureTasks.ShowScreenRuler(taskSettings.CaptureSettings.SurfaceOptions);
         }
 
-        public static void OCRImage(TaskSettings taskSettings = null)
-        {
-            if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
-
-            using (Image img = RegionCaptureTasks.GetRegionImage(taskSettings.CaptureSettings.SurfaceOptions))
-            {
-                OCRImage(img);
-            }
-        }
-
-        public static void OCRImage(Image img)
-        {
-            if (img != null)
-            {
-                using (Stream stream = SaveImageAsStream(img, EImageFormat.PNG))
-                {
-                    OCRImage(stream, "ShareX.png");
-                }
-            }
-        }
-
         public static void SearchImage(string url)
         {
             new GoogleImageSearchSharingService().CreateSharer(null, null).ShareURL(url);
         }
 
-        public static void OCRImage(string filePath)
+        public static async Task OCRImage(TaskSettings taskSettings = null)
+        {
+            if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
+
+            using (Image img = RegionCaptureTasks.GetRegionImage(taskSettings.CaptureSettings.SurfaceOptions))
+            {
+                await OCRImage(img, taskSettings);
+            }
+        }
+
+        public static async Task OCRImage(Image img, TaskSettings taskSettings = null)
+        {
+            if (img != null)
+            {
+                using (Stream stream = SaveImageAsStream(img, EImageFormat.PNG))
+                {
+                    await OCRImage(stream, "ShareX.png", null, taskSettings);
+                }
+            }
+        }
+
+        public static async Task OCRImage(string filePath, TaskSettings taskSettings = null)
         {
             if (File.Exists(filePath))
             {
                 using (FileStream fs = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read))
                 {
-                    OCRImage(fs, Path.GetFileName(filePath), filePath);
+                    await OCRImage(fs, Path.GetFileName(filePath), filePath, taskSettings);
                 }
             }
         }
 
-        public static void OCRImage(Stream stream, string fileName, string filePath = null)
+        private static async Task OCRImage(Stream stream, string fileName, string filePath = null, TaskSettings taskSettings = null)
         {
             if (stream != null)
             {
-                using (OCRSpaceForm form = new OCRSpaceForm(stream, fileName))
-                {
-                    form.Language = Program.Settings.OCRLanguage;
-                    form.ShowDialog();
-                    Program.Settings.OCRLanguage = form.Language;
+                if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
-                    if (!string.IsNullOrEmpty(form.Result) && !string.IsNullOrEmpty(filePath))
+                OCROptions ocrOptions = taskSettings.CaptureSettings.OCROptions;
+
+                if (ocrOptions.Silent)
+                {
+                    await AsyncOCRImage(stream, fileName, filePath, ocrOptions);
+                }
+                else
+                {
+                    using (OCRSpaceForm form = new OCRSpaceForm(stream, fileName, ocrOptions))
                     {
-                        string textPath = Path.ChangeExtension(filePath, "txt");
-                        File.WriteAllText(textPath, form.Result, Encoding.UTF8);
+                        form.ShowDialog();
+
+                        if (!string.IsNullOrEmpty(form.Result) && !string.IsNullOrEmpty(filePath))
+                        {
+                            string textPath = Path.ChangeExtension(filePath, "txt");
+                            File.WriteAllText(textPath, form.Result, Encoding.UTF8);
+                        }
                     }
                 }
+            }
+        }
+
+        public static async Task AsyncOCRImage(Stream stream, string fileName, string filePath, OCROptions ocrOptions)
+        {
+            Program.MainForm.niTray.ShowBalloonTip(3000, "ShareX", Resources.OCRForm_AutoProcessing, ToolTipIcon.None);
+
+            string result = null;
+
+            if (stream != null && stream.Length > 0 && !string.IsNullOrEmpty(fileName))
+            {
+                result = await OCRSpace.DoOCRAsync(ocrOptions.DefaultLanguage, stream, fileName);
+            }
+
+            if (!string.IsNullOrEmpty(result))
+            {
+                ClipboardHelpers.CopyText(result);
+
+                if (!string.IsNullOrEmpty(filePath))
+                {
+                    string textPath = Path.ChangeExtension(filePath, "txt");
+                    File.WriteAllText(textPath, result, Encoding.UTF8);
+                }
+
+                Program.MainForm.niTray.ShowBalloonTip(3000, "ShareX", Resources.OCRForm_AutoComplete, ToolTipIcon.None);
+            }
+            else
+            {
+                Program.MainForm.niTray.ShowBalloonTip(3000, "ShareX", Resources.OCRForm_AutoCompleteFail, ToolTipIcon.Warning);
             }
         }
 
@@ -1488,7 +1517,6 @@ namespace ShareX
                 case HotkeyType.CustomRegion: return Resources.layer__arrow;
                 case HotkeyType.LastRegion: return Resources.layers;
                 case HotkeyType.ScrollingCapture: return Resources.ui_scroll_pane_image;
-                case HotkeyType.CaptureWebpage: return Resources.document_globe;
                 case HotkeyType.TextCapture: return Resources.edit_drop_cap;
                 case HotkeyType.AutoCapture: return Resources.clock;
                 case HotkeyType.StartAutoCapture: return Resources.clock__arrow;
@@ -1673,7 +1701,7 @@ namespace ShareX
             UpdateMessageBox.Start(updateChecker);
         }
 
-        public static Image QRCodeEncode(string text, int width, int height)
+        public static Image CreateQRCode(string text, int width, int height)
         {
             if (CheckQRCodeContent(text))
             {
@@ -1702,12 +1730,12 @@ namespace ShareX
             return null;
         }
 
-        public static Image QRCodeEncode(string text, int size)
+        public static Image CreateQRCode(string text, int size)
         {
-            return QRCodeEncode(text, size, size);
+            return CreateQRCode(text, size, size);
         }
 
-        public static string[] QRCodeDecode(Bitmap bmp)
+        public static string[] BarcodeScan(Bitmap bmp, bool scanQRCodeOnly = false)
         {
             try
             {
@@ -1717,16 +1745,20 @@ namespace ShareX
                     TryInverted = true,
                     Options = new DecodingOptions
                     {
-                        PossibleFormats = new List<BarcodeFormat>() { BarcodeFormat.QR_CODE },
                         TryHarder = true
                     }
                 };
+
+                if (scanQRCodeOnly)
+                {
+                    barcodeReader.Options.PossibleFormats = new List<BarcodeFormat>() { BarcodeFormat.QR_CODE };
+                }
 
                 Result[] results = barcodeReader.DecodeMultiple(bmp);
 
                 if (results != null)
                 {
-                    return results.Where(x => x != null).Select(x => x.Text).ToArray();
+                    return results.Where(x => x != null && !string.IsNullOrEmpty(x.Text)).Select(x => x.Text).ToArray();
                 }
             }
             catch (Exception e)

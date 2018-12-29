@@ -23,13 +23,15 @@
 
 #endregion License Information (GPL v3)
 
-using System.Drawing;
+using ShareX.UploadersLib.OtherServices;
 
-namespace ShareX.ScreenCaptureLib
+namespace ShareX.UploadersLib
 {
-    public class WebpageCaptureOptions
+    public class OCROptions
     {
-        public Size BrowserSize { get; set; } = Size.Empty;
-        public float Delay { get; set; } = 0f;
+        public OCRSpaceLanguages DefaultLanguage { get; set; } = OCRSpaceLanguages.eng;
+        public bool Silent { get; set; } = false;
+        public bool ProcessOnLoad { get; set; } = true;
+        public bool AutoCopy { get; set; } = false;
     }
 }

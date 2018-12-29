@@ -202,39 +202,56 @@ namespace ShareX
 
             Close();
 
+            ToastClickAction action = ToastClickAction.CloseNotification;
+
             if (e.Button == MouseButtons.Left)
             {
-                switch (ToastConfig.Action)
-                {
-                    case ToastClickAction.AnnotateImage:
-                        if (!string.IsNullOrEmpty(ToastConfig.FilePath) && Helpers.IsImageFile(ToastConfig.FilePath))
-                            TaskHelpers.AnnotateImageFromFile(ToastConfig.FilePath);
-                        break;
-                    case ToastClickAction.CopyImageToClipboard:
-                        if (!string.IsNullOrEmpty(ToastConfig.FilePath))
-                            ClipboardHelpers.CopyImageFromFile(ToastConfig.FilePath);
-                        break;
-                    case ToastClickAction.CopyUrl:
-                        if (!string.IsNullOrEmpty(ToastConfig.URL))
-                            ClipboardHelpers.CopyText(ToastConfig.URL);
-                        break;
-                    case ToastClickAction.OpenFile:
-                        if (!string.IsNullOrEmpty(ToastConfig.FilePath))
-                            URLHelpers.OpenURL(ToastConfig.FilePath);
-                        break;
-                    case ToastClickAction.OpenFolder:
-                        if (!string.IsNullOrEmpty(ToastConfig.FilePath))
-                            Helpers.OpenFolderWithFile(ToastConfig.FilePath);
-                        break;
-                    case ToastClickAction.OpenUrl:
-                        if (!string.IsNullOrEmpty(ToastConfig.URL))
-                            URLHelpers.OpenURL(ToastConfig.URL);
-                        break;
-                    case ToastClickAction.Upload:
-                        if (!string.IsNullOrEmpty(ToastConfig.FilePath))
-                            UploadManager.UploadFile(ToastConfig.FilePath);
-                        break;
-                }
+                action = ToastConfig.LeftClickAction;
+            }
+            else if (e.Button == MouseButtons.Right)
+            {
+                action = ToastConfig.RightClickAction;
+            }
+            else if (e.Button == MouseButtons.Middle)
+            {
+                action = ToastConfig.MiddleClickAction;
+            }
+
+            ExecuteAction(action);
+        }
+
+        private void ExecuteAction(ToastClickAction action)
+        {
+            switch (action)
+            {
+                case ToastClickAction.AnnotateImage:
+                    if (!string.IsNullOrEmpty(ToastConfig.FilePath) && Helpers.IsImageFile(ToastConfig.FilePath))
+                        TaskHelpers.AnnotateImageFromFile(ToastConfig.FilePath);
+                    break;
+                case ToastClickAction.CopyImageToClipboard:
+                    if (!string.IsNullOrEmpty(ToastConfig.FilePath))
+                        ClipboardHelpers.CopyImageFromFile(ToastConfig.FilePath);
+                    break;
+                case ToastClickAction.CopyUrl:
+                    if (!string.IsNullOrEmpty(ToastConfig.URL))
+                        ClipboardHelpers.CopyText(ToastConfig.URL);
+                    break;
+                case ToastClickAction.OpenFile:
+                    if (!string.IsNullOrEmpty(ToastConfig.FilePath))
+                        Helpers.OpenFile(ToastConfig.FilePath);
+                    break;
+                case ToastClickAction.OpenFolder:
+                    if (!string.IsNullOrEmpty(ToastConfig.FilePath))
+                        Helpers.OpenFolderWithFile(ToastConfig.FilePath);
+                    break;
+                case ToastClickAction.OpenUrl:
+                    if (!string.IsNullOrEmpty(ToastConfig.URL))
+                        URLHelpers.OpenURL(ToastConfig.URL);
+                    break;
+                case ToastClickAction.Upload:
+                    if (!string.IsNullOrEmpty(ToastConfig.FilePath))
+                        UploadManager.UploadFile(ToastConfig.FilePath);
+                    break;
             }
         }
 
@@ -326,7 +343,9 @@ namespace ShareX
         public string Text { get; set; }
         public string FilePath { get; set; }
         public string URL { get; set; }
-        public ToastClickAction Action { get; set; }
+        public ToastClickAction LeftClickAction { get; set; }
+        public ToastClickAction RightClickAction { get; set; }
+        public ToastClickAction MiddleClickAction { get; set; }
 
         public void Dispose()
         {

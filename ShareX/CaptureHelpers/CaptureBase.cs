@@ -45,9 +45,9 @@ namespace ShareX
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
-            if (taskSettings.CaptureSettings.IsDelayScreenshot && taskSettings.CaptureSettings.DelayScreenshot > 0)
+            if (taskSettings.CaptureSettings.ScreenshotDelay > 0)
             {
-                int delay = (int)(taskSettings.CaptureSettings.DelayScreenshot * 1000);
+                int delay = (int)(taskSettings.CaptureSettings.ScreenshotDelay * 1000);
 
                 Task.Delay(delay).ContinueInCurrentContext(() =>
                 {

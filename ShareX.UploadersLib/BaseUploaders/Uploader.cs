@@ -194,7 +194,7 @@ namespace ShareX.UploadersLib
             }
         }
 
-        protected UploadResult SendRequestFile(string url, Stream data, string fileName, string fileFormName = "file", Dictionary<string, string> args = null,
+        protected UploadResult SendRequestFile(string url, Stream data, string fileName, string fileFormName, Dictionary<string, string> args = null,
             NameValueCollection headers = null, CookieCollection cookies = null, ResponseType responseType = ResponseType.Text, HttpMethod method = HttpMethod.POST,
             string contentType = UploadHelpers.ContentTypeMultipartFormData, string metadata = null)
         {

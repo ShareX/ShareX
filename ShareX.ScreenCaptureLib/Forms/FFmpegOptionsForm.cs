@@ -280,9 +280,9 @@ namespace ShareX.ScreenCaptureLib
 
         private async void btnInstallHelperDevices_Click(object sender, EventArgs e)
         {
-            string filepath = Helpers.GetAbsolutePath(FFmpegHelper.DeviceSetupPath);
+            string filePath = Helpers.GetAbsolutePath(FFmpegHelper.DeviceSetupPath);
 
-            if (!string.IsNullOrEmpty(filepath) && File.Exists(filepath))
+            if (!string.IsNullOrEmpty(filePath) && File.Exists(filePath))
             {
                 bool result = false;
 
@@ -290,9 +290,17 @@ namespace ShareX.ScreenCaptureLib
                 {
                     try
                     {
-                        Process process = Process.Start(filepath);
+                        using (Process process = new Process())
+                        {
+                            ProcessStartInfo psi = new ProcessStartInfo()
+                            {
+                                FileName = filePath
+                            };
 
-                        result = process.WaitForExit(1000 * 60 * 5) && process.ExitCode == 0;
+                            process.StartInfo = psi;
+                            process.Start();
+                            result = process.WaitForExit(1000 * 60 * 5) && process.ExitCode == 0;
+                        }
                     }
                     catch { }
                 });
@@ -304,7 +312,7 @@ namespace ShareX.ScreenCaptureLib
             }
             else
             {
-                MessageBox.Show("File not exists: \"" + filepath + "\"", "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("File not exists: \"" + filePath + "\"", "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -491,9 +499,13 @@ namespace ShareX.ScreenCaptureLib
                 {
                     using (Process process = new Process())
                     {
-                        ProcessStartInfo psi = new ProcessStartInfo("cmd.exe");
-                        psi.Arguments = $"/k {Path.GetFileName(Options.FFmpeg.FFmpegPath)} {Options.GetFFmpegCommands()}";
-                        psi.WorkingDirectory = Path.GetDirectoryName(Options.FFmpeg.FFmpegPath);
+                        ProcessStartInfo psi = new ProcessStartInfo()
+                        {
+                            FileName = "cmd.exe",
+                            WorkingDirectory = Path.GetDirectoryName(Options.FFmpeg.FFmpegPath),
+                            Arguments = $"/k {Path.GetFileName(Options.FFmpeg.FFmpegPath)} {Options.GetFFmpegCommands()}",
+                            UseShellExecute = true
+                        };
 
                         process.StartInfo = psi;
                         process.Start();

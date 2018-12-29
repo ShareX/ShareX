@@ -1539,7 +1539,6 @@ namespace ShareX.HelpersLib
 
                 switch (ext)
                 {
-                    default:
                     case "png":
                         imageFormat = ImageFormat.Png;
                         break;
@@ -1572,26 +1571,37 @@ namespace ShareX.HelpersLib
             img.Save(filePath, GetImageFormat(filePath));
         }
 
-        public static string SaveImageFileDialog(Image img, string filePath = "")
+        public static string SaveImageFileDialog(Image img, string filePath = "", bool useLastDirectory = true)
         {
             using (SaveFileDialog sfd = new SaveFileDialog())
             {
+                string initialDirectory = null;
+
+                if (useLastDirectory && !string.IsNullOrEmpty(HelpersOptions.LastSaveDirectory) && Directory.Exists(HelpersOptions.LastSaveDirectory))
+                {
+                    initialDirectory = HelpersOptions.LastSaveDirectory;
+                }
+
                 if (!string.IsNullOrEmpty(filePath))
                 {
                     string folder = Path.GetDirectoryName(filePath);
-                    if (!string.IsNullOrEmpty(folder))
+
+                    if (string.IsNullOrEmpty(initialDirectory) && !string.IsNullOrEmpty(folder) && Directory.Exists(folder))
                     {
-                        sfd.InitialDirectory = folder;
+                        initialDirectory = folder;
                     }
+
                     sfd.FileName = Path.GetFileNameWithoutExtension(filePath);
                 }
 
+                sfd.InitialDirectory = initialDirectory;
                 sfd.DefaultExt = "png";
                 sfd.Filter = "PNG (*.png)|*.png|JPEG (*.jpg, *.jpeg, *.jpe, *.jfif)|*.jpg;*.jpeg;*.jpe;*.jfif|GIF (*.gif)|*.gif|BMP (*.bmp)|*.bmp|TIFF (*.tif, *.tiff)|*.tif;*.tiff";
 
-                if (sfd.ShowDialog() == DialogResult.OK)
+                if (sfd.ShowDialog() == DialogResult.OK && !string.IsNullOrEmpty(sfd.FileName))
                 {
                     SaveImage(img, sfd.FileName);
+                    HelpersOptions.LastSaveDirectory = Path.GetDirectoryName(sfd.FileName);
                     return sfd.FileName;
                 }
             }
@@ -1922,6 +1932,19 @@ namespace ShareX.HelpersLib
                     unsafeBitmap.SetPixel(i, color);
                 }
             }
+        }
+
+        public static Size GetImageFileDimensions(string filePath)
+        {
+            using (Image img = LoadImage(filePath))
+            {
+                if (img != null)
+                {
+                    return img.Size;
+                }
+            }
+
+            return Size.Empty;
         }
     }
 }

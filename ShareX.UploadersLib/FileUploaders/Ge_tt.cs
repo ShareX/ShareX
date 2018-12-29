@@ -120,7 +120,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
                 if (file != null)
                 {
-                    result = SendRequestFile(file.Upload.PostURL, stream, fileName);
+                    result = SendRequestFile(file.Upload.PostURL, stream, fileName, "file");
 
                     if (result.IsSuccess)
                     {

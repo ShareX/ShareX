@@ -27,7 +27,6 @@ using ShareX.HelpersLib;
 using ShareX.HistoryLib;
 using ShareX.ScreenCaptureLib;
 using ShareX.UploadersLib;
-using ShareX.UploadersLib.OtherServices;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -277,18 +276,6 @@ namespace ShareX
         public Rectangle ScreenRecordRegion = Rectangle.Empty;
 
         #endregion ScreenRecord Form
-
-        #region Webpage Capture Form
-
-        public WebpageCaptureOptions WebpageCaptureOptions = new WebpageCaptureOptions();
-
-        #endregion Webpage Capture Form
-
-        #region OCR Form
-
-        public OCRSpaceLanguages OCRLanguage = OCRSpaceLanguages.eng;
-
-        #endregion OCR Form
 
         #region Actions toolbar
 

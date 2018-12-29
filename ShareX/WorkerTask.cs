@@ -61,8 +61,6 @@ namespace ShareX
         private GenericUploader uploader;
         private TaskReferenceHelper taskReferenceHelper;
 
-        private static string lastSaveAsFolder;
-
         #region Constructors
 
         private WorkerTask(TaskSettings taskSettings)
@@ -615,16 +613,22 @@ namespace ShareX
                 {
                     using (SaveFileDialog sfd = new SaveFileDialog())
                     {
+                        string initialDirectory = null;
+
+                        if (!string.IsNullOrEmpty(HelpersOptions.LastSaveDirectory) && Directory.Exists(HelpersOptions.LastSaveDirectory))
+                        {
+                            initialDirectory = HelpersOptions.LastSaveDirectory;
+                        }
+                        else
+                        {
+                            initialDirectory = Info.TaskSettings.CaptureFolder;
+                        }
+
                         bool imageSaved;
 
                         do
                         {
-                            if (string.IsNullOrEmpty(lastSaveAsFolder) || !Directory.Exists(lastSaveAsFolder))
-                            {
-                                lastSaveAsFolder = Info.TaskSettings.CaptureFolder;
-                            }
-
-                            sfd.InitialDirectory = lastSaveAsFolder;
+                            sfd.InitialDirectory = initialDirectory;
                             sfd.FileName = Info.FileName;
                             sfd.DefaultExt = Path.GetExtension(Info.FileName).Substring(1);
                             sfd.Filter = string.Format("*{0}|*{0}|All files (*.*)|*.*", Path.GetExtension(Info.FileName));
@@ -633,7 +637,7 @@ namespace ShareX
                             if (sfd.ShowDialog() == DialogResult.OK && !string.IsNullOrEmpty(sfd.FileName))
                             {
                                 Info.FilePath = sfd.FileName;
-                                lastSaveAsFolder = Path.GetDirectoryName(Info.FilePath);
+                                HelpersOptions.LastSaveDirectory = Path.GetDirectoryName(Info.FilePath);
                                 imageSaved = imageData.Write(Info.FilePath);
 
                                 if (imageSaved)
@@ -1007,9 +1011,9 @@ namespace ShareX
 
         private void DoOCR()
         {
-            if (Data != null && Info.DataType == EDataType.Image)
+            if (Image != null && Info.DataType == EDataType.Image)
             {
-                TaskHelpers.OCRImage(Data, Info.FileName, Info.FilePath);
+                _ = TaskHelpers.OCRImage(Image, Info.TaskSettings);
             }
         }
 

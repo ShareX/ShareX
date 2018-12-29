@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -51,20 +52,29 @@ namespace ShareX.HelpersLib
                 {
                     try
                     {
-                        if (!string.IsNullOrEmpty(HelpersOptions.BrowserPath))
+                        using (Process process = new Process())
                         {
-                            Process.Start(HelpersOptions.BrowserPath, url);
-                        }
-                        else
-                        {
-                            Process.Start(url);
+                            ProcessStartInfo psi = new ProcessStartInfo();
+
+                            if (!string.IsNullOrEmpty(HelpersOptions.BrowserPath))
+                            {
+                                psi.FileName = HelpersOptions.BrowserPath;
+                                psi.Arguments = url;
+                            }
+                            else
+                            {
+                                psi.FileName = url;
+                            }
+
+                            process.StartInfo = psi;
+                            process.Start();
                         }
 
                         DebugHelper.WriteLine("URL opened: " + url);
                     }
                     catch (Exception e)
                     {
-                        DebugHelper.WriteException(e, string.Format("OpenURL({0}) failed", url));
+                        DebugHelper.WriteException(e, $"OpenURL({url}) failed");
                     }
                 });
             }
@@ -155,6 +165,12 @@ namespace ShareX.HelpersLib
             }
 
             return result.ToString();
+        }
+
+        public static string JSONEncode(string text)
+        {
+            text = JsonConvert.ToString(text);
+            return text.Substring(1, text.Length - 2);
         }
 
         public static string URLDecode(string url, int count = 1)

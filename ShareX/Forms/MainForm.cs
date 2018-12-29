@@ -174,10 +174,11 @@ namespace ShareX
             {
                 tsddbAfterCaptureTasks, tsddbAfterUploadTasks, tsmiImageUploaders, tsmiImageFileUploaders, tsmiTextUploaders, tsmiTextFileUploaders, tsmiFileUploaders,
                 tsmiURLShorteners, tsmiURLSharingServices, tsmiTrayAfterCaptureTasks, tsmiTrayAfterUploadTasks, tsmiTrayImageUploaders, tsmiTrayImageFileUploaders,
-                tsmiTrayTextUploaders, tsmiTrayTextFileUploaders, tsmiTrayFileUploaders, tsmiTrayURLShorteners, tsmiTrayURLSharingServices
+                tsmiTrayTextUploaders, tsmiTrayTextFileUploaders, tsmiTrayFileUploaders, tsmiTrayURLShorteners, tsmiTrayURLSharingServices, tsmiScreenshotDelay,
+                tsmiTrayScreenshotDelay
             })
             {
-                dropDownItem.DropDown.Closing += (sender, e) => e.Cancel = e.CloseReason == ToolStripDropDownCloseReason.ItemClicked;
+                dropDownItem.DisableMenuCloseOnClick();
             }
 
             ExportImportControl.UploadRequested += json => UploadManager.UploadText(json);
@@ -651,6 +652,7 @@ namespace ShareX
 
                     tsmiCopyFile.Enabled = uim.SelectedItem.IsFileExist;
                     tsmiCopyImage.Enabled = uim.SelectedItem.IsImageFile;
+                    tsmiCopyImageDimensions.Enabled = uim.SelectedItem.IsImageFile;
                     tsmiCopyText.Enabled = uim.SelectedItem.IsTextFile;
                     tsmiCopyThumbnailFile.Enabled = uim.SelectedItem.IsThumbnailFileExist;
                     tsmiCopyThumbnailImage.Enabled = uim.SelectedItem.IsThumbnailFileExist;
@@ -777,6 +779,7 @@ namespace ShareX
         private void AfterTaskSettingsJobs()
         {
             tsmiShowCursor.Checked = tsmiTrayShowCursor.Checked = Program.DefaultTaskSettings.CaptureSettings.ShowCursor;
+            SetScreenshotDelay(Program.DefaultTaskSettings.CaptureSettings.ScreenshotDelay);
         }
 
         public void UpdateCheckStates()
@@ -1024,6 +1027,46 @@ namespace ShareX
         {
             pNews.Visible = false;
             ucNews.MarkRead();
+        }
+
+        private void SetScreenshotDelay(decimal delay)
+        {
+            Program.DefaultTaskSettings.CaptureSettings.ScreenshotDelay = delay;
+
+            switch (delay)
+            {
+                default:
+                    tsmiScreenshotDelay.UpdateCheckedAll(false);
+                    tsmiTrayScreenshotDelay.UpdateCheckedAll(false);
+                    break;
+                case 0:
+                    tsmiScreenshotDelay0.RadioCheck();
+                    tsmiTrayScreenshotDelay0.RadioCheck();
+                    break;
+                case 1:
+                    tsmiScreenshotDelay1.RadioCheck();
+                    tsmiTrayScreenshotDelay1.RadioCheck();
+                    break;
+                case 2:
+                    tsmiScreenshotDelay2.RadioCheck();
+                    tsmiTrayScreenshotDelay2.RadioCheck();
+                    break;
+                case 3:
+                    tsmiScreenshotDelay3.RadioCheck();
+                    tsmiTrayScreenshotDelay3.RadioCheck();
+                    break;
+                case 4:
+                    tsmiScreenshotDelay4.RadioCheck();
+                    tsmiTrayScreenshotDelay4.RadioCheck();
+                    break;
+                case 5:
+                    tsmiScreenshotDelay5.RadioCheck();
+                    tsmiTrayScreenshotDelay5.RadioCheck();
+                    break;
+            }
+
+            tsmiScreenshotDelay.Text = tsmiTrayScreenshotDelay.Text = string.Format("Screenshot delay: {0}s", delay.ToString("0.#"));
+            tsmiScreenshotDelay.Checked = tsmiTrayScreenshotDelay.Checked = delay > 0;
         }
 
         private async Task PrepareCaptureMenuAsync(ToolStripMenuItem tsmiWindow, EventHandler handlerWindow, ToolStripMenuItem tsmiMonitor, EventHandler handlerMonitor)
@@ -1458,11 +1501,6 @@ namespace ShareX
             TaskHelpers.OpenScrollingCapture();
         }
 
-        private void tsmiWebpageCapture_Click(object sender, EventArgs e)
-        {
-            TaskHelpers.OpenWebpageCapture();
-        }
-
         private void tsmiTextCapture_Click(object sender, EventArgs e)
         {
             Hide();
@@ -1470,7 +1508,7 @@ namespace ShareX
 
             try
             {
-                TaskHelpers.OCRImage();
+                _ = TaskHelpers.OCRImage();
             }
             catch (Exception ex)
             {
@@ -1490,7 +1528,37 @@ namespace ShareX
         private void tsmiShowCursor_Click(object sender, EventArgs e)
         {
             Program.DefaultTaskSettings.CaptureSettings.ShowCursor = ((ToolStripMenuItem)sender).Checked;
-            AfterTaskSettingsJobs();
+            tsmiShowCursor.Checked = tsmiTrayShowCursor.Checked = Program.DefaultTaskSettings.CaptureSettings.ShowCursor;
+        }
+
+        private void tsmiScreenshotDelay0_Click(object sender, EventArgs e)
+        {
+            SetScreenshotDelay(0);
+        }
+
+        private void tsmiScreenshotDelay1_Click(object sender, EventArgs e)
+        {
+            SetScreenshotDelay(1);
+        }
+
+        private void tsmiScreenshotDelay2_Click(object sender, EventArgs e)
+        {
+            SetScreenshotDelay(2);
+        }
+
+        private void tsmiScreenshotDelay3_Click(object sender, EventArgs e)
+        {
+            SetScreenshotDelay(3);
+        }
+
+        private void tsmiScreenshotDelay4_Click(object sender, EventArgs e)
+        {
+            SetScreenshotDelay(4);
+        }
+
+        private void tsmiScreenshotDelay5_Click(object sender, EventArgs e)
+        {
+            SetScreenshotDelay(5);
         }
 
         private void tsbFileUpload_Click(object sender, EventArgs e)
@@ -1842,9 +1910,16 @@ namespace ShareX
             new CaptureLastRegion().Capture();
         }
 
-        private void tsmiTrayTextCapture_Click(object sender, EventArgs e)
+        private async void tsmiTrayTextCapture_Click(object sender, EventArgs e)
         {
-            TaskHelpers.OCRImage();
+            try
+            {
+                await TaskHelpers.OCRImage();
+            }
+            catch (Exception ex)
+            {
+                DebugHelper.WriteException(ex);
+            }
         }
 
         private void tsmiTrayToggleHotkeys_Click(object sender, EventArgs e)
@@ -1965,6 +2040,11 @@ namespace ShareX
         private void tsmiCopyImage_Click(object sender, EventArgs e)
         {
             uim.CopyImage();
+        }
+
+        private void tsmiCopyImageDimensions_Click(object sender, EventArgs e)
+        {
+            uim.CopyImageDimensions();
         }
 
         private void tsmiCopyText_Click(object sender, EventArgs e)
@@ -2094,9 +2174,9 @@ namespace ShareX
             uim.ShowQRCode();
         }
 
-        private void tsmiOCRImage_Click(object sender, EventArgs e)
+        private async void tsmiOCRImage_Click(object sender, EventArgs e)
         {
-            uim.OCRImage();
+            await uim.OCRImage();
         }
 
         private void tsmiCombineImages_Click(object sender, EventArgs e)

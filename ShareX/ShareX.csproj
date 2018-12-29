@@ -124,19 +124,19 @@
           <Private>False</Private>
         </Reference>
         <Reference Include="Windows.ApplicationModel.Activation.ActivatedEventsContract">
-          <HintPath>$(MSBuildProgramFiles32)\Windows Kits\10\References\10.0.17134.0\Windows.ApplicationModel.Activation.ActivatedEventsContract\1.0.0.0\Windows.ApplicationModel.Activation.ActivatedEventsContract.winmd</HintPath>
+          <HintPath>$(MSBuildProgramFiles32)\Windows Kits\10\References\10.0.17763.0\Windows.ApplicationModel.Activation.ActivatedEventsContract\1.0.0.0\Windows.ApplicationModel.Activation.ActivatedEventsContract.winmd</HintPath>
           <Private>False</Private>
         </Reference>
         <Reference Include="Windows.ApplicationModel.StartupTaskContract">
-          <HintPath>$(MSBuildProgramFiles32)\Windows Kits\10\References\10.0.17134.0\Windows.ApplicationModel.StartupTaskContract\3.0.0.0\Windows.ApplicationModel.StartupTaskContract.winmd</HintPath>
+          <HintPath>$(MSBuildProgramFiles32)\Windows Kits\10\References\10.0.17763.0\Windows.ApplicationModel.StartupTaskContract\3.0.0.0\Windows.ApplicationModel.StartupTaskContract.winmd</HintPath>
           <Private>False</Private>
         </Reference>
         <Reference Include="Windows.Foundation.FoundationContract">
-          <HintPath>$(MSBuildProgramFiles32)\Windows Kits\10\References\10.0.17134.0\Windows.Foundation.FoundationContract\3.0.0.0\Windows.Foundation.FoundationContract.winmd</HintPath>
+          <HintPath>$(MSBuildProgramFiles32)\Windows Kits\10\References\10.0.17763.0\Windows.Foundation.FoundationContract\3.0.0.0\Windows.Foundation.FoundationContract.winmd</HintPath>
           <Private>False</Private>
         </Reference>
         <Reference Include="Windows.Foundation.UniversalApiContract">
-          <HintPath>$(MSBuildProgramFiles32)\Windows Kits\10\References\10.0.17134.0\Windows.Foundation.UniversalApiContract\6.0.0.0\Windows.Foundation.UniversalApiContract.winmd</HintPath>
+          <HintPath>$(MSBuildProgramFiles32)\Windows Kits\10\References\10.0.17763.0\Windows.Foundation.UniversalApiContract\7.0.0.0\Windows.Foundation.UniversalApiContract.winmd</HintPath>
           <Private>False</Private>
         </Reference>
       </ItemGroup>
@@ -164,6 +164,8 @@
     <Compile Include="Controls\NewsListControl.Designer.cs">
       <DependentUpon>NewsListControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="EasterEggAboutAnimation.cs" />
+    <Compile Include="EasterEggBounce.cs" />
     <Compile Include="Forms\TextUploadForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1490,7 +1492,6 @@
     <None Include="Resources\kr.png" />
     <None Include="Resources\es.png" />
     <None Include="Resources\nl.png" />
-    <None Include="Resources\document-globe.png" />
     <None Include="Resources\keyboard--minus.png" />
     <None Include="Resources\keyboard--plus.png" />
     <None Include="Resources\images-stack.png" />
@@ -1561,11 +1562,14 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json">
-      <Version>11.0.2</Version>
+      <Version>12.0.1</Version>
     </PackageReference>
     <PackageReference Include="ZXing.Net">
       <Version>0.16.4</Version>
     </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clock-select.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

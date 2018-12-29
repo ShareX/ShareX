@@ -117,7 +117,6 @@
             this.cbCaptureClientArea = new System.Windows.Forms.CheckBox();
             this.nudScreenshotDelay = new System.Windows.Forms.NumericUpDown();
             this.nudCaptureShadowOffset = new System.Windows.Forms.NumericUpDown();
-            this.cbScreenshotDelay = new System.Windows.Forms.CheckBox();
             this.chkOverrideCaptureSettings = new System.Windows.Forms.CheckBox();
             this.tpRegionCapture = new System.Windows.Forms.TabPage();
             this.cbRegionCaptureShowFPS = new System.Windows.Forms.CheckBox();
@@ -175,6 +174,12 @@
             this.cbScreenRecorderFixedDuration = new System.Windows.Forms.CheckBox();
             this.nudGIFFPS = new System.Windows.Forms.NumericUpDown();
             this.lblGIFFPS = new System.Windows.Forms.Label();
+            this.tpOCR = new System.Windows.Forms.TabPage();
+            this.cbCaptureOCRAutoCopy = new System.Windows.Forms.CheckBox();
+            this.cbCaptureOCRProcessOnLoad = new System.Windows.Forms.CheckBox();
+            this.cbCaptureOCRSilent = new System.Windows.Forms.CheckBox();
+            this.lblOCRDefaultLanguage = new System.Windows.Forms.Label();
+            this.cbCaptureOCRDefaultLanguage = new System.Windows.Forms.ComboBox();
             this.tpUpload = new System.Windows.Forms.TabPage();
             this.tcUpload = new System.Windows.Forms.TabControl();
             this.tpUploadMain = new System.Windows.Forms.TabPage();
@@ -240,6 +245,7 @@
             this.pgTaskSettings = new System.Windows.Forms.PropertyGrid();
             this.chkOverrideAdvancedSettings = new System.Windows.Forms.CheckBox();
             this.tttvMain = new ShareX.HelpersLib.TabToTreeView();
+            this.lblScreenshotDelay = new System.Windows.Forms.Label();
             this.tcTaskSettings.SuspendLayout();
             this.tpTask.SuspendLayout();
             this.cmsDestinations.SuspendLayout();
@@ -279,6 +285,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudScreenRecorderDuration)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudScreenRecorderStartDelay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudGIFFPS)).BeginInit();
+            this.tpOCR.SuspendLayout();
             this.tpUpload.SuspendLayout();
             this.tcUpload.SuspendLayout();
             this.tpUploadMain.SuspendLayout();
@@ -805,6 +812,7 @@
             this.tcCapture.Controls.Add(this.tpCaptureGeneral);
             this.tcCapture.Controls.Add(this.tpRegionCapture);
             this.tcCapture.Controls.Add(this.tpScreenRecorder);
+            this.tcCapture.Controls.Add(this.tpOCR);
             resources.ApplyResources(this.tcCapture, "tcCapture");
             this.tcCapture.Name = "tcCapture";
             this.tcCapture.SelectedIndex = 0;
@@ -819,6 +827,7 @@
             // 
             // pCapture
             // 
+            this.pCapture.Controls.Add(this.lblScreenshotDelay);
             this.pCapture.Controls.Add(this.btnCaptureCustomRegionSelectRectangle);
             this.pCapture.Controls.Add(this.lblCaptureCustomRegion);
             this.pCapture.Controls.Add(this.lblCaptureCustomRegionWidth);
@@ -838,7 +847,6 @@
             this.pCapture.Controls.Add(this.cbCaptureClientArea);
             this.pCapture.Controls.Add(this.nudScreenshotDelay);
             this.pCapture.Controls.Add(this.nudCaptureShadowOffset);
-            this.pCapture.Controls.Add(this.cbScreenshotDelay);
             resources.ApplyResources(this.pCapture, "pCapture");
             this.pCapture.Name = "pCapture";
             // 
@@ -986,11 +994,6 @@
             // nudScreenshotDelay
             // 
             this.nudScreenshotDelay.DecimalPlaces = 1;
-            this.nudScreenshotDelay.Increment = new decimal(new int[] {
-            5,
-            0,
-            0,
-            65536});
             resources.ApplyResources(this.nudScreenshotDelay, "nudScreenshotDelay");
             this.nudScreenshotDelay.Maximum = new decimal(new int[] {
             300,
@@ -998,11 +1001,6 @@
             0,
             0});
             this.nudScreenshotDelay.Name = "nudScreenshotDelay";
-            this.nudScreenshotDelay.Value = new decimal(new int[] {
-            2,
-            0,
-            0,
-            0});
             this.nudScreenshotDelay.ValueChanged += new System.EventHandler(this.nudScreenshotDelay_ValueChanged);
             // 
             // nudCaptureShadowOffset
@@ -1015,13 +1013,6 @@
             0,
             0});
             this.nudCaptureShadowOffset.ValueChanged += new System.EventHandler(this.nudCaptureShadowOffset_ValueChanged);
-            // 
-            // cbScreenshotDelay
-            // 
-            resources.ApplyResources(this.cbScreenshotDelay, "cbScreenshotDelay");
-            this.cbScreenshotDelay.Name = "cbScreenshotDelay";
-            this.cbScreenshotDelay.UseVisualStyleBackColor = true;
-            this.cbScreenshotDelay.CheckedChanged += new System.EventHandler(this.cbScreenshotDelay_CheckedChanged);
             // 
             // chkOverrideCaptureSettings
             // 
@@ -1576,6 +1567,51 @@
             resources.ApplyResources(this.lblGIFFPS, "lblGIFFPS");
             this.lblGIFFPS.Name = "lblGIFFPS";
             // 
+            // tpOCR
+            // 
+            this.tpOCR.Controls.Add(this.cbCaptureOCRAutoCopy);
+            this.tpOCR.Controls.Add(this.cbCaptureOCRProcessOnLoad);
+            this.tpOCR.Controls.Add(this.cbCaptureOCRSilent);
+            this.tpOCR.Controls.Add(this.lblOCRDefaultLanguage);
+            this.tpOCR.Controls.Add(this.cbCaptureOCRDefaultLanguage);
+            resources.ApplyResources(this.tpOCR, "tpOCR");
+            this.tpOCR.Name = "tpOCR";
+            this.tpOCR.UseVisualStyleBackColor = true;
+            // 
+            // cbCaptureOCRAutoCopy
+            // 
+            resources.ApplyResources(this.cbCaptureOCRAutoCopy, "cbCaptureOCRAutoCopy");
+            this.cbCaptureOCRAutoCopy.Name = "cbCaptureOCRAutoCopy";
+            this.cbCaptureOCRAutoCopy.UseVisualStyleBackColor = true;
+            this.cbCaptureOCRAutoCopy.CheckedChanged += new System.EventHandler(this.cbCaptureOCRAutoCopy_CheckedChanged);
+            // 
+            // cbCaptureOCRProcessOnLoad
+            // 
+            resources.ApplyResources(this.cbCaptureOCRProcessOnLoad, "cbCaptureOCRProcessOnLoad");
+            this.cbCaptureOCRProcessOnLoad.Name = "cbCaptureOCRProcessOnLoad";
+            this.cbCaptureOCRProcessOnLoad.UseVisualStyleBackColor = true;
+            this.cbCaptureOCRProcessOnLoad.CheckedChanged += new System.EventHandler(this.cbCaptureOCRProcessOnLoad_CheckedChanged);
+            // 
+            // cbCaptureOCRSilent
+            // 
+            resources.ApplyResources(this.cbCaptureOCRSilent, "cbCaptureOCRSilent");
+            this.cbCaptureOCRSilent.Name = "cbCaptureOCRSilent";
+            this.cbCaptureOCRSilent.UseVisualStyleBackColor = true;
+            this.cbCaptureOCRSilent.CheckedChanged += new System.EventHandler(this.cbCaptureOCRSilent_CheckedChanged);
+            // 
+            // lblOCRDefaultLanguage
+            // 
+            resources.ApplyResources(this.lblOCRDefaultLanguage, "lblOCRDefaultLanguage");
+            this.lblOCRDefaultLanguage.Name = "lblOCRDefaultLanguage";
+            // 
+            // cbCaptureOCRDefaultLanguage
+            // 
+            this.cbCaptureOCRDefaultLanguage.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbCaptureOCRDefaultLanguage.FormattingEnabled = true;
+            resources.ApplyResources(this.cbCaptureOCRDefaultLanguage, "cbCaptureOCRDefaultLanguage");
+            this.cbCaptureOCRDefaultLanguage.Name = "cbCaptureOCRDefaultLanguage";
+            this.cbCaptureOCRDefaultLanguage.SelectedIndexChanged += new System.EventHandler(this.cbCaptureOCRDefaultLanguage_SelectedIndexChanged);
+            // 
             // tpUpload
             // 
             this.tpUpload.BackColor = System.Drawing.SystemColors.Window;
@@ -1882,6 +1918,7 @@
             this.lvActions.View = System.Windows.Forms.View.Details;
             this.lvActions.ItemMoved += new ShareX.HelpersLib.MyListView.ListViewItemMovedEventHandler(this.lvActions_ItemMoved);
             this.lvActions.ItemChecked += new System.Windows.Forms.ItemCheckedEventHandler(this.lvActions_ItemChecked);
+            this.lvActions.SelectedIndexChanged += new System.EventHandler(this.lvActions_SelectedIndexChanged);
             // 
             // chActionsName
             // 
@@ -2055,6 +2092,11 @@
             this.tttvMain.TreeViewSize = 190;
             this.tttvMain.TabChanged += new ShareX.HelpersLib.TabToTreeView.TabChangedEventHandler(this.tttvMain_TabChanged);
             // 
+            // lblScreenshotDelay
+            // 
+            resources.ApplyResources(this.lblScreenshotDelay, "lblScreenshotDelay");
+            this.lblScreenshotDelay.Name = "lblScreenshotDelay";
+            // 
             // TaskSettingsForm
             // 
             resources.ApplyResources(this, "$this");
@@ -2117,6 +2159,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudScreenRecorderDuration)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudScreenRecorderStartDelay)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudGIFFPS)).EndInit();
+            this.tpOCR.ResumeLayout(false);
+            this.tpOCR.PerformLayout();
             this.tpUpload.ResumeLayout(false);
             this.tcUpload.ResumeLayout(false);
             this.tpUploadMain.ResumeLayout(false);
@@ -2176,7 +2220,6 @@
         private System.Windows.Forms.CheckBox cbCaptureAutoHideTaskbar;
         private System.Windows.Forms.Label lblScreenshotDelayInfo;
         private System.Windows.Forms.NumericUpDown nudScreenshotDelay;
-        private System.Windows.Forms.CheckBox cbScreenshotDelay;
         private System.Windows.Forms.NumericUpDown nudCaptureShadowOffset;
         private System.Windows.Forms.CheckBox cbCaptureClientArea;
         private System.Windows.Forms.CheckBox cbCaptureShadow;
@@ -2354,5 +2397,12 @@
         private System.Windows.Forms.CheckBox cbScreenRecordConfirmAbort;
         private System.Windows.Forms.CheckBox cbFileUploadReplaceProblematicCharacters;
         private System.Windows.Forms.CheckBox cbScreenRecordTwoPassEncoding;
+        private System.Windows.Forms.TabPage tpOCR;
+        private System.Windows.Forms.Label lblOCRDefaultLanguage;
+        private System.Windows.Forms.ComboBox cbCaptureOCRDefaultLanguage;
+        private System.Windows.Forms.CheckBox cbCaptureOCRSilent;
+        private System.Windows.Forms.CheckBox cbCaptureOCRProcessOnLoad;
+        private System.Windows.Forms.CheckBox cbCaptureOCRAutoCopy;
+        private System.Windows.Forms.Label lblScreenshotDelay;
     }
 }

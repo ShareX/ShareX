@@ -28,6 +28,7 @@ using ShareX.ImageEffectsLib;
 using ShareX.Properties;
 using ShareX.ScreenCaptureLib;
 using ShareX.UploadersLib;
+using ShareX.UploadersLib.OtherServices;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -227,13 +228,12 @@ namespace ShareX
             #region General
 
             cbShowCursor.Checked = TaskSettings.CaptureSettings.ShowCursor;
+            nudScreenshotDelay.SetValue(TaskSettings.CaptureSettings.ScreenshotDelay);
             cbCaptureTransparent.Checked = TaskSettings.CaptureSettings.CaptureTransparent;
             cbCaptureShadow.Enabled = TaskSettings.CaptureSettings.CaptureTransparent;
             cbCaptureShadow.Checked = TaskSettings.CaptureSettings.CaptureShadow;
             nudCaptureShadowOffset.SetValue(TaskSettings.CaptureSettings.CaptureShadowOffset);
             cbCaptureClientArea.Checked = TaskSettings.CaptureSettings.CaptureClientArea;
-            cbScreenshotDelay.Checked = TaskSettings.CaptureSettings.IsDelayScreenshot;
-            nudScreenshotDelay.SetValue(TaskSettings.CaptureSettings.DelayScreenshot);
             cbCaptureAutoHideTaskbar.Checked = TaskSettings.CaptureSettings.CaptureAutoHideTaskbar;
             nudCaptureCustomRegionX.SetValue(TaskSettings.CaptureSettings.CaptureCustomRegion.X);
             nudCaptureCustomRegionY.SetValue(TaskSettings.CaptureSettings.CaptureCustomRegion.Y);
@@ -295,6 +295,22 @@ namespace ShareX
             cbScreenRecordTwoPassEncoding.Checked = TaskSettings.CaptureSettings.ScreenRecordTwoPassEncoding;
 
             #endregion Screen recorder
+
+            #region OCR
+
+            OCROptions ocrOptions = TaskSettings.CaptureSettings.OCROptions;
+
+            cbCaptureOCRDefaultLanguage.Items.AddRange(Helpers.GetEnumDescriptions<OCRSpaceLanguages>());
+            cbCaptureOCRDefaultLanguage.SelectedIndex = (int)ocrOptions.DefaultLanguage;
+
+            cbCaptureOCRSilent.Checked = ocrOptions.Silent;
+            cbCaptureOCRProcessOnLoad.Checked = ocrOptions.ProcessOnLoad;
+            cbCaptureOCRAutoCopy.Checked = ocrOptions.AutoCopy;
+
+            cbCaptureOCRAutoCopy.Enabled = !cbCaptureOCRSilent.Checked;
+            cbCaptureOCRProcessOnLoad.Enabled = !cbCaptureOCRSilent.Checked;
+
+            #endregion OCR
 
             #endregion Capture
 
@@ -805,19 +821,25 @@ namespace ShareX
             UpdateDefaultSettingVisibility();
         }
 
-        private void cbCaptureAutoHideTaskbar_CheckedChanged(object sender, EventArgs e)
+        private void cbShowCursor_CheckedChanged(object sender, EventArgs e)
         {
-            TaskSettings.CaptureSettings.CaptureAutoHideTaskbar = cbCaptureAutoHideTaskbar.Checked;
+            TaskSettings.CaptureSettings.ShowCursor = cbShowCursor.Checked;
         }
 
         private void nudScreenshotDelay_ValueChanged(object sender, EventArgs e)
         {
-            TaskSettings.CaptureSettings.DelayScreenshot = nudScreenshotDelay.Value;
+            TaskSettings.CaptureSettings.ScreenshotDelay = nudScreenshotDelay.Value;
         }
 
-        private void cbScreenshotDelay_CheckedChanged(object sender, EventArgs e)
+        private void cbCaptureTransparent_CheckedChanged(object sender, EventArgs e)
         {
-            TaskSettings.CaptureSettings.IsDelayScreenshot = cbScreenshotDelay.Checked;
+            TaskSettings.CaptureSettings.CaptureTransparent = cbCaptureTransparent.Checked;
+            cbCaptureShadow.Enabled = TaskSettings.CaptureSettings.CaptureTransparent;
+        }
+
+        private void cbCaptureShadow_CheckedChanged(object sender, EventArgs e)
+        {
+            TaskSettings.CaptureSettings.CaptureShadow = cbCaptureShadow.Checked;
         }
 
         private void nudCaptureShadowOffset_ValueChanged(object sender, EventArgs e)
@@ -830,20 +852,9 @@ namespace ShareX
             TaskSettings.CaptureSettings.CaptureClientArea = cbCaptureClientArea.Checked;
         }
 
-        private void cbCaptureShadow_CheckedChanged(object sender, EventArgs e)
+        private void cbCaptureAutoHideTaskbar_CheckedChanged(object sender, EventArgs e)
         {
-            TaskSettings.CaptureSettings.CaptureShadow = cbCaptureShadow.Checked;
-        }
-
-        private void cbShowCursor_CheckedChanged(object sender, EventArgs e)
-        {
-            TaskSettings.CaptureSettings.ShowCursor = cbShowCursor.Checked;
-        }
-
-        private void cbCaptureTransparent_CheckedChanged(object sender, EventArgs e)
-        {
-            TaskSettings.CaptureSettings.CaptureTransparent = cbCaptureTransparent.Checked;
-            cbCaptureShadow.Enabled = TaskSettings.CaptureSettings.CaptureTransparent;
+            TaskSettings.CaptureSettings.CaptureAutoHideTaskbar = cbCaptureAutoHideTaskbar.Checked;
         }
 
         private void nudScreenRegionX_ValueChanged(object sender, EventArgs e)
@@ -1097,6 +1108,33 @@ namespace ShareX
 
         #endregion Screen recorder
 
+        #region OCR
+
+        private void cbCaptureOCRDefaultLanguage_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            TaskSettings.CaptureSettings.OCROptions.DefaultLanguage = (OCRSpaceLanguages)cbCaptureOCRDefaultLanguage.SelectedIndex;
+        }
+
+        private void cbCaptureOCRSilent_CheckedChanged(object sender, EventArgs e)
+        {
+            TaskSettings.CaptureSettings.OCROptions.Silent = cbCaptureOCRSilent.Checked;
+
+            cbCaptureOCRAutoCopy.Enabled = !cbCaptureOCRSilent.Checked;
+            cbCaptureOCRProcessOnLoad.Enabled = !cbCaptureOCRSilent.Checked;
+        }
+
+        private void cbCaptureOCRProcessOnLoad_CheckedChanged(object sender, EventArgs e)
+        {
+            TaskSettings.CaptureSettings.OCROptions.ProcessOnLoad = cbCaptureOCRProcessOnLoad.Checked;
+        }
+
+        private void cbCaptureOCRAutoCopy_CheckedChanged(object sender, EventArgs e)
+        {
+            TaskSettings.CaptureSettings.OCROptions.AutoCopy = cbCaptureOCRAutoCopy.Checked;
+        }
+
+        #endregion OCR
+
         #endregion Capture
 
         #region Upload
@@ -1160,6 +1198,11 @@ namespace ShareX
         {
             TaskSettings.UploadSettings.NameFormatPatternActiveWindow = txtNameFormatPatternActiveWindow.Text;
             UpdateNameFormatPreviews();
+        }
+
+        private void cbFileUploadReplaceProblematicCharacters_CheckedChanged(object sender, EventArgs e)
+        {
+            TaskSettings.UploadSettings.FileUploadReplaceProblematicCharacters = cbFileUploadReplaceProblematicCharacters.Checked;
         }
 
         private void btnResetAutoIncrementNumber_Click(object sender, EventArgs e)
@@ -1380,6 +1423,11 @@ namespace ShareX
             }
         }
 
+        private void lvActions_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            btnActionsEdit.Enabled = btnActionsDuplicate.Enabled = btnActionsRemove.Enabled = lvActions.SelectedItems.Count > 0;
+        }
+
         private void lvActions_ItemChecked(object sender, ItemCheckedEventArgs e)
         {
             ExternalProgram fileAction = e.Item.Tag as ExternalProgram;
@@ -1488,11 +1536,6 @@ namespace ShareX
         private void txtToolsScreenColorPickerFormat_TextChanged(object sender, EventArgs e)
         {
             TaskSettings.ToolsSettings.ScreenColorPickerFormat = txtToolsScreenColorPickerFormat.Text;
-        }
-
-        private void cbFileUploadReplaceProblematicCharacters_CheckedChanged(object sender, EventArgs e)
-        {
-            TaskSettings.UploadSettings.FileUploadReplaceProblematicCharacters = cbFileUploadReplaceProblematicCharacters.Checked;
         }
 
         #endregion Tools

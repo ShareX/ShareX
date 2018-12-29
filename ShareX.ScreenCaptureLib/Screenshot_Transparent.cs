@@ -119,10 +119,9 @@ namespace ShareX.ScreenCaptureLib
                         transparentImage = whiteBackground2;
                     }
 
-                    if (cursorData != null && cursorData.IsValid)
+                    if (cursorData != null)
                     {
-                        Point cursorOffset = CaptureHelpers.ScreenToClient(rect.Location);
-                        cursorData.DrawCursor(transparentImage, cursorOffset);
+                        cursorData.DrawCursor(transparentImage, rect.Location);
                     }
 
                     if (isTransparent)
@@ -147,7 +146,6 @@ namespace ShareX.ScreenCaptureLib
                     if (whiteBackground != null) whiteBackground.Dispose();
                     if (blackBackground != null) blackBackground.Dispose();
                     if (isTransparent && whiteBackground2 != null) whiteBackground2.Dispose();
-                    if (cursorData != null) cursorData.Dispose();
                 }
             }
 

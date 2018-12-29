@@ -76,33 +76,36 @@ namespace ShareX.UploadersLib.URLShorteners
         public override UploadResult ShortenURL(string url)
         {
             UploadResult result = new UploadResult { URL = url };
-            CustomUploaderArgumentInput input = new CustomUploaderArgumentInput("", url);
+            CustomUploaderInput input = new CustomUploaderInput("", url);
 
-            CustomUploaderRequestFormat requestFormat = uploader.GetRequestFormat(CustomUploaderDestinationType.URLShortener);
-
-            if (requestFormat == CustomUploaderRequestFormat.FormData)
+            if (uploader.RequestFormat == CustomUploaderRequestFormat.MultipartFormData)
             {
-                result.Response = SendRequestMultiPart(uploader.GetRequestURL(), uploader.GetArguments(input), uploader.GetHeaders(input), null,
-                    uploader.ResponseType, uploader.GetHttpMethod());
+                result.Response = SendRequestMultiPart(uploader.GetRequestURL(input), uploader.GetArguments(input), uploader.GetHeaders(input), null,
+                    uploader.ResponseType, uploader.RequestType);
             }
-            else if (requestFormat == CustomUploaderRequestFormat.URLQuery)
+            else if (uploader.RequestFormat == CustomUploaderRequestFormat.URLQueryString)
             {
-                result.Response = SendRequest(uploader.GetHttpMethod(), uploader.GetRequestURL(), uploader.GetArguments(input),
+                result.Response = SendRequest(uploader.RequestType, uploader.GetRequestURL(input), uploader.GetArguments(input),
                     uploader.GetHeaders(input), null, uploader.ResponseType);
             }
-            else if (requestFormat == CustomUploaderRequestFormat.JSON)
+            else if (uploader.RequestFormat == CustomUploaderRequestFormat.JSON)
             {
-                result.Response = SendRequest(uploader.GetHttpMethod(), uploader.GetRequestURL(), uploader.GetData(input), UploadHelpers.ContentTypeJSON,
+                result.Response = SendRequest(uploader.RequestType, uploader.GetRequestURL(input), uploader.GetData(input), UploadHelpers.ContentTypeJSON,
                     uploader.GetArguments(input), uploader.GetHeaders(input), null, uploader.ResponseType);
+            }
+            else if (uploader.RequestFormat == CustomUploaderRequestFormat.FormURLEncoded)
+            {
+                result.Response = SendRequestURLEncoded(uploader.RequestType, uploader.GetRequestURL(input), uploader.GetArguments(input),
+                    uploader.GetHeaders(input), null, uploader.ResponseType);
             }
             else
             {
-                throw new Exception("Unsupported request format.");
+                throw new Exception("Unsupported request format: " + uploader.RequestFormat);
             }
 
             try
             {
-                uploader.ParseResponse(result, true);
+                uploader.ParseResponse(result, input, true);
             }
             catch (Exception e)
             {

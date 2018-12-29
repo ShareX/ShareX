@@ -85,7 +85,8 @@ namespace ShareX.UploadersLib.FileUploaders
                 headers = UploadHelpers.CreateAuthenticationHeader(Email, Password);
             }
 
-            UploadResult result = SendRequestFile(URLHelpers.CombineURL(Host, "upload"), stream, fileName, headers: headers);
+            string url = URLHelpers.CombineURL(Host, "upload");
+            UploadResult result = SendRequestFile(url, stream, fileName, "file", headers: headers);
 
             TranscodeFile(result);
 

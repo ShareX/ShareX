@@ -173,20 +173,22 @@ namespace ShareX.Setup
 
             if (Job.HasFlag(SetupJobs.CompileAppx))
             {
-                Process p = new Process
+                using (Process process = new Process())
                 {
-                    StartInfo = new ProcessStartInfo
+                    ProcessStartInfo psi = new ProcessStartInfo()
                     {
                         FileName = MakeAppxPath,
                         Arguments = $"pack /d \"{WindowsStoreOutputDir}\" /p \"{WindowsStoreAppxPath}\" /l /o",
                         UseShellExecute = false,
                         RedirectStandardOutput = true
-                    }
-                };
-                p.OutputDataReceived += (s, e) => Console.WriteLine(e.Data);
-                p.Start();
-                p.BeginOutputReadLine();
-                p.WaitForExit();
+                    };
+
+                    process.OutputDataReceived += (s, e) => Console.WriteLine(e.Data);
+                    process.StartInfo = psi;
+                    process.Start();
+                    process.BeginOutputReadLine();
+                    process.WaitForExit();
+                }
 
                 Directory.Delete(WindowsStoreOutputDir, true);
             }
@@ -226,11 +228,20 @@ namespace ShareX.Setup
             {
                 Console.WriteLine("Compiling setup file: " + filename);
 
-                ProcessStartInfo startInfo = new ProcessStartInfo(InnoSetupCompilerPath, $"\"{filename}\"");
-                startInfo.UseShellExecute = false;
-                startInfo.WorkingDirectory = Path.GetFullPath(InnoSetupDir);
-                Process process = Process.Start(startInfo);
-                process.WaitForExit();
+                using (Process process = new Process())
+                {
+                    ProcessStartInfo psi = new ProcessStartInfo()
+                    {
+                        FileName = InnoSetupCompilerPath,
+                        WorkingDirectory = Path.GetFullPath(InnoSetupDir),
+                        Arguments = $"\"{filename}\"",
+                        UseShellExecute = false
+                    };
+
+                    process.StartInfo = psi;
+                    process.Start();
+                    process.WaitForExit();
+                }
 
                 Console.WriteLine("Setup file is created.");
             }

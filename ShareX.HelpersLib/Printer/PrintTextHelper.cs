@@ -125,7 +125,7 @@ namespace ShareX.HelpersLib
                 // append c to line if not NewLine or Eos
                 if ((c != NewLine) && (c != Eos))
                 {
-                    Char ch = Convert.ToChar(c);
+                    char ch = Convert.ToChar(c);
                     line.Append(ch);
 
                     // if ch is whitespace, remember pos and continue

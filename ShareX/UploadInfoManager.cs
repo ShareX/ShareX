@@ -28,8 +28,10 @@ using ShareX.HelpersLib;
 using ShareX.Properties;
 using ShareX.UploadersLib;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ShareX
@@ -118,12 +120,12 @@ namespace ShareX
 
         public void OpenFile()
         {
-            if (IsItemSelected && SelectedItem.IsFileExist) URLHelpers.OpenURL(SelectedItem.Info.FilePath);
+            if (IsItemSelected && SelectedItem.IsFileExist) Helpers.OpenFile(SelectedItem.Info.FilePath);
         }
 
         public void OpenThumbnailFile()
         {
-            if (IsItemSelected && SelectedItem.IsThumbnailFileExist) URLHelpers.OpenURL(SelectedItem.Info.ThumbnailFilePath);
+            if (IsItemSelected && SelectedItem.IsThumbnailFileExist) Helpers.OpenFile(SelectedItem.Info.ThumbnailFilePath);
         }
 
         public void OpenFolder()
@@ -145,7 +147,7 @@ namespace ShareX
                 }
                 else if (SelectedItem.IsFilePathValid)
                 {
-                    URLHelpers.OpenURL(SelectedItem.Info.FilePath);
+                    Helpers.OpenFile(SelectedItem.Info.FilePath);
                 }
             }
         }
@@ -182,6 +184,18 @@ namespace ShareX
         public void CopyImage()
         {
             if (IsItemSelected && SelectedItem.IsImageFile) ClipboardHelpers.CopyImageFromFile(SelectedItem.Info.FilePath);
+        }
+
+        public void CopyImageDimensions()
+        {
+            if (IsItemSelected && SelectedItem.IsImageFile)
+            {
+                Size size = ImageHelpers.GetImageFileDimensions(SelectedItem.Info.FilePath);
+                if (!size.IsEmpty)
+                {
+                    ClipboardHelpers.CopyText($"{size.Width} x {size.Height}");
+                }
+            }
         }
 
         public void CopyText()
@@ -362,9 +376,9 @@ namespace ShareX
             if (IsItemSelected && SelectedItem.IsURLExist) new QRCodeForm(SelectedItem.Info.Result.URL).Show();
         }
 
-        public void OCRImage()
+        public async Task OCRImage()
         {
-            if (IsItemSelected && SelectedItem.IsImageFile) TaskHelpers.OCRImage(SelectedItem.Info.FilePath);
+            if (IsItemSelected && SelectedItem.IsImageFile) await TaskHelpers.OCRImage(SelectedItem.Info.FilePath);
         }
 
         public void CombineImages()

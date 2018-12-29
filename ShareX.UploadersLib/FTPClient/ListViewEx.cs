@@ -45,8 +45,8 @@ namespace ShareX.UploadersLib
         private struct NMHDR
         {
             public IntPtr hwndFrom;
-            public Int32 idFrom;
-            public Int32 code;
+            public int idFrom;
+            public int code;
         }
 
         [DllImport("user32.dll")]

@@ -18,7 +18,7 @@
                 components.Dispose();
             }
 
-            if (bounceTimer != null) bounceTimer.Dispose();
+            if (easterEgg != null) easterEgg.Dispose();
 
             base.Dispose(disposing);
         }
@@ -173,8 +173,6 @@
             resources.ApplyResources(this.cLogo, "cLogo");
             this.cLogo.Interval = 100;
             this.cLogo.Name = "cLogo";
-            this.cLogo.Draw += new ShareX.HelpersLib.Canvas.DrawEventHandler(this.cLogo_Draw);
-            this.cLogo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.cLogo_MouseDown);
             // 
             // lblBuild
             // 

@@ -129,8 +129,8 @@ namespace ShareX.UploadersLib
             rtbCustomUploaderLog.AddContextMenu();
             eiCustomUploaders.ObjectType = typeof(CustomUploaderItem);
             CustomUploaderAddDestinationTypes();
-            cbCustomUploaderRequestType.Items.AddRange(Enum.GetNames(typeof(CustomUploaderRequestMethod)));
-            cbCustomUploaderRequestFormat.Items.AddRange(Enum.GetNames(typeof(CustomUploaderRequestFormat)));
+            cbCustomUploaderRequestType.Items.AddRange(Enum.GetNames(typeof(HttpMethod)));
+            cbCustomUploaderRequestFormat.Items.AddRange(Helpers.GetEnumDescriptions<CustomUploaderRequestFormat>(1));
             cbCustomUploaderResponseType.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<ResponseType>());
 
             // Backblaze B2
@@ -597,6 +597,7 @@ namespace ShareX.UploadersLib
             cbAmazonS3StorageClass.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<AmazonS3StorageClass>());
             cbAmazonS3StorageClass.SelectedIndex = (int)Config.AmazonS3Settings.StorageClass;
             cbAmazonS3PublicACL.Checked = Config.AmazonS3Settings.SetPublicACL;
+            cbAmazonS3SignedPayload.Checked = Config.AmazonS3Settings.SignedPayload;
             cbAmazonS3StripExtensionImage.Checked = Config.AmazonS3Settings.RemoveExtensionImage;
             cbAmazonS3StripExtensionVideo.Checked = Config.AmazonS3Settings.RemoveExtensionVideo;
             cbAmazonS3StripExtensionText.Checked = Config.AmazonS3Settings.RemoveExtensionText;
@@ -2313,6 +2314,11 @@ namespace ShareX.UploadersLib
             Config.AmazonS3Settings.SetPublicACL = cbAmazonS3PublicACL.Checked;
         }
 
+        private void cbAmazonS3SignedPayload_CheckedChanged(object sender, EventArgs e)
+        {
+            Config.AmazonS3Settings.SignedPayload = cbAmazonS3SignedPayload.Checked;
+        }
+
         private void cbAmazonS3StripExtensionImage_CheckedChanged(object sender, EventArgs e)
         {
             Config.AmazonS3Settings.RemoveExtensionImage = cbAmazonS3StripExtensionImage.Checked;
@@ -3495,7 +3501,7 @@ namespace ShareX.UploadersLib
         private void cbCustomUploaderRequestType_SelectedIndexChanged(object sender, EventArgs e)
         {
             CustomUploaderItem uploader = CustomUploaderGetSelected();
-            if (uploader != null) uploader.RequestType = (CustomUploaderRequestMethod)cbCustomUploaderRequestType.SelectedIndex;
+            if (uploader != null) uploader.RequestType = (HttpMethod)cbCustomUploaderRequestType.SelectedIndex;
         }
 
         private void rtbCustomUploaderRequestURL_TextChanged(object sender, EventArgs e)
@@ -3510,7 +3516,7 @@ namespace ShareX.UploadersLib
         private void cbCustomUploaderRequestFormat_SelectedIndexChanged(object sender, EventArgs e)
         {
             CustomUploaderItem uploader = CustomUploaderGetSelected();
-            if (uploader != null) uploader.RequestFormat = (CustomUploaderRequestFormat)cbCustomUploaderRequestFormat.SelectedIndex;
+            if (uploader != null) uploader.RequestFormat = (CustomUploaderRequestFormat)(cbCustomUploaderRequestFormat.SelectedIndex + 1);
 
             CustomUploaderUpdateRequestFormatState();
         }

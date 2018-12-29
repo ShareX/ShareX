@@ -889,6 +889,16 @@ namespace ShareX.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap clock_select {
+            get {
+                object obj = ResourceManager.GetObject("clock_select", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap cn {
             get {
                 object obj = ResourceManager.GetObject("cn", resourceCulture);
@@ -1062,16 +1072,6 @@ namespace ShareX.Properties {
         public static System.Drawing.Bitmap document_copy {
             get {
                 object obj = ResourceManager.GetObject("document_copy", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap document_globe {
-            get {
-                object obj = ResourceManager.GetObject("document_globe", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1902,6 +1902,33 @@ namespace ShareX.Properties {
             get {
                 object obj = ResourceManager.GetObject("notebook", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The OCR output has been copied to your clipboard..
+        /// </summary>
+        public static string OCRForm_AutoComplete {
+            get {
+                return ResourceManager.GetString("OCRForm_AutoComplete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error occurred during OCR processing, or no text was returned..
+        /// </summary>
+        public static string OCRForm_AutoCompleteFail {
+            get {
+                return ResourceManager.GetString("OCRForm_AutoCompleteFail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to OCR is processing..
+        /// </summary>
+        public static string OCRForm_AutoProcessing {
+            get {
+                return ResourceManager.GetString("OCRForm_AutoProcessing", resourceCulture);
             }
         }
         

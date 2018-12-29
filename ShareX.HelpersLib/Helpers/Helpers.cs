@@ -337,9 +337,9 @@ namespace ShareX.HelpersLib
             return (T[])Enum.GetValues(typeof(T));
         }
 
-        public static string[] GetEnumDescriptions<T>()
+        public static string[] GetEnumDescriptions<T>(int skip = 0)
         {
-            return Enum.GetValues(typeof(T)).OfType<Enum>().Select(x => x.GetDescription()).ToArray();
+            return Enum.GetValues(typeof(T)).OfType<Enum>().Skip(skip).Select(x => x.GetDescription()).ToArray();
         }
 
         /*public static string[] GetLocalizedEnumDescriptions<T>()
@@ -424,7 +424,19 @@ namespace ShareX.HelpersLib
             {
                 try
                 {
-                    Process.Start(filePath);
+                    using (Process process = new Process())
+                    {
+                        ProcessStartInfo psi = new ProcessStartInfo()
+                        {
+                            FileName = filePath
+                        };
+
+                        process.StartInfo = psi;
+                        process.Start();
+                    }
+
+                    DebugHelper.WriteLine("File opened: " + filePath);
+
                     return true;
                 }
                 catch (Exception e)
@@ -451,7 +463,19 @@ namespace ShareX.HelpersLib
 
                 try
                 {
-                    Process.Start(folderPath);
+                    using (Process process = new Process())
+                    {
+                        ProcessStartInfo psi = new ProcessStartInfo()
+                        {
+                            FileName = folderPath
+                        };
+
+                        process.StartInfo = psi;
+                        process.Start();
+                    }
+
+                    DebugHelper.WriteLine("Folder opened: " + folderPath);
+
                     return true;
                 }
                 catch (Exception e)
@@ -474,6 +498,9 @@ namespace ShareX.HelpersLib
                 try
                 {
                     NativeMethods.OpenFolderAndSelectFile(filePath);
+
+                    DebugHelper.WriteLine("Folder opened with file: " + filePath);
+
                     return true;
                 }
                 catch (Exception e)
@@ -1242,6 +1269,16 @@ namespace ShareX.HelpersLib
             }
         }
 
+        public static byte[] ComputeSHA256(Stream stream, int bufferSize = 1024 * 32)
+        {
+            BufferedStream bufferedStream = new BufferedStream(stream, bufferSize);
+
+            using (SHA256Managed hashAlgorithm = new SHA256Managed())
+            {
+                return hashAlgorithm.ComputeHash(bufferedStream);
+            }
+        }
+
         public static byte[] ComputeSHA256(string data)
         {
             return ComputeSHA256(Encoding.UTF8.GetBytes(data));
@@ -1326,6 +1363,23 @@ namespace ShareX.HelpersLib
                 // If it fails, we'll just have to live with the old hand.
                 return false;
             }
+        }
+
+        public static bool IsTabletMode()
+        {
+            //int state = NativeMethods.GetSystemMetrics(SystemMetric.SM_CONVERTIBLESLATEMODE);
+            //return state == 0;
+
+            try
+            {
+                int result = (int)Registry.GetValue(@"HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\ImmersiveShell", "TabletMode", 0);
+                return result > 0;
+            }
+            catch
+            {
+            }
+
+            return false;
         }
     }
 }

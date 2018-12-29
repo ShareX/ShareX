@@ -234,11 +234,12 @@
     </Compile>
     <Compile Include="FileUploaders\Pushbullet.cs" />
     <Compile Include="FileUploaders\GfycatUploader.cs" />
-    <Compile Include="Helpers\CustomUploaderArgumentInput.cs" />
-    <Compile Include="Helpers\CustomUploaderParser.cs" />
-    <Compile Include="Helpers\CustomUploaderSyntaxInfo.cs" />
+    <Compile Include="CustomUploader\CustomUploaderInput.cs" />
+    <Compile Include="CustomUploader\CustomUploaderParser.cs" />
+    <Compile Include="CustomUploader\CustomUploaderSyntaxInfo.cs" />
     <Compile Include="Helpers\EscapeHelper.cs" />
     <Compile Include="Helpers\MimeTypes.cs" />
+    <Compile Include="Helpers\OCROptions.cs" />
     <Compile Include="Helpers\UploadHelpers.cs" />
     <Compile Include="OAuth\GoogleOAuth2.cs" />
     <Compile Include="OAuth\IOAuthBase.cs" />
@@ -322,7 +323,7 @@
       <DependentUpon>TwitterTweetForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Enums.cs" />
-    <Compile Include="Helpers\CustomUploaderItem.cs" />
+    <Compile Include="CustomUploader\CustomUploaderItem.cs" />
     <Compile Include="ImageUploaders\ImmioUploader.cs" />
     <Compile Include="ImageUploaders\Photobucket.cs" />
     <Compile Include="ImageUploaders\Twitter.cs" />
@@ -1022,7 +1023,7 @@
       <Version>1.6.3</Version>
     </PackageReference>
     <PackageReference Include="Newtonsoft.Json">
-      <Version>11.0.2</Version>
+      <Version>12.0.1</Version>
     </PackageReference>
     <PackageReference Include="SSH.NET">
       <Version>2016.1.0</Version>

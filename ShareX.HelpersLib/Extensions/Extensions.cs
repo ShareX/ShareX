@@ -342,6 +342,14 @@ namespace ShareX.HelpersLib
             tsb.Checked = true;
         }
 
+        public static void UpdateCheckedAll(this ToolStripMenuItem tsmi, bool check)
+        {
+            foreach (ToolStripMenuItem tsmiChild in tsmi.DropDownItems.OfType<ToolStripMenuItem>())
+            {
+                tsmiChild.Checked = check;
+            }
+        }
+
         public static void InvokeSafe(this Control control, Action action)
         {
             if (control != null && !control.IsDisposed)
@@ -359,18 +367,21 @@ namespace ShareX.HelpersLib
 
         public static void ForceActivate(this Form form)
         {
-            if (!form.Visible)
+            if (!form.IsDisposed)
             {
-                form.Show();
-            }
+                if (!form.Visible)
+                {
+                    form.Show();
+                }
 
-            if (form.WindowState == FormWindowState.Minimized)
-            {
-                form.WindowState = FormWindowState.Normal;
-            }
+                if (form.WindowState == FormWindowState.Minimized)
+                {
+                    form.WindowState = FormWindowState.Normal;
+                }
 
-            form.BringToFront();
-            form.Activate();
+                form.BringToFront();
+                form.Activate();
+            }
         }
 
         public static int WeekOfYear(this DateTime dateTime)
@@ -513,6 +524,11 @@ namespace ShareX.HelpersLib
         public static void HideImageMargin(this ToolStripDropDownItem tsddi)
         {
             ((ToolStripDropDownMenu)tsddi.DropDown).ShowImageMargin = false;
+        }
+
+        public static void DisableMenuCloseOnClick(this ToolStripDropDownItem tsddi)
+        {
+            tsddi.DropDown.Closing += (sender, e) => e.Cancel = e.CloseReason == ToolStripDropDownCloseReason.ItemClicked;
         }
 
         public static void SetValue(this NumericUpDown nud, decimal number)

@@ -29,13 +29,11 @@ using System.Runtime.InteropServices;
 
 namespace ShareX.HelpersLib
 {
-    public class CursorData : IDisposable
+    public class CursorData
     {
         public IntPtr Handle { get; private set; }
-        public bool IsVisible { get; private set; }
         public Point Position { get; private set; }
-
-        public bool IsValid => Handle != IntPtr.Zero && IsVisible;
+        public bool IsVisible { get; private set; }
 
         public CursorData()
         {
@@ -44,32 +42,43 @@ namespace ShareX.HelpersLib
 
         public void UpdateCursorData()
         {
+            Handle = IntPtr.Zero;
+            Position = Point.Empty;
+            IsVisible = false;
+
             CursorInfo cursorInfo = new CursorInfo();
             cursorInfo.cbSize = Marshal.SizeOf(cursorInfo);
 
             if (NativeMethods.GetCursorInfo(out cursorInfo))
             {
+                Handle = cursorInfo.hCursor;
+                Position = cursorInfo.ptScreenPos;
                 IsVisible = cursorInfo.flags == NativeConstants.CURSOR_SHOWING;
 
                 if (IsVisible)
                 {
-                    Handle = NativeMethods.CopyIcon(cursorInfo.hCursor);
-                    IconInfo iconInfo;
+                    IntPtr iconHandle = NativeMethods.CopyIcon(Handle);
 
-                    if (NativeMethods.GetIconInfo(Handle, out iconInfo))
+                    if (iconHandle != IntPtr.Zero)
                     {
-                        Point cursorPosition = CaptureHelpers.GetZeroBasedMousePosition();
-                        Position = new Point(cursorPosition.X - iconInfo.xHotspot, cursorPosition.Y - iconInfo.yHotspot);
+                        IconInfo iconInfo;
 
-                        if (iconInfo.hbmMask != IntPtr.Zero)
+                        if (NativeMethods.GetIconInfo(iconHandle, out iconInfo))
                         {
-                            NativeMethods.DeleteObject(iconInfo.hbmMask);
+                            Position = new Point(Position.X - iconInfo.xHotspot, Position.Y - iconInfo.yHotspot);
+
+                            if (iconInfo.hbmMask != IntPtr.Zero)
+                            {
+                                NativeMethods.DeleteObject(iconInfo.hbmMask);
+                            }
+
+                            if (iconInfo.hbmColor != IntPtr.Zero)
+                            {
+                                NativeMethods.DeleteObject(iconInfo.hbmColor);
+                            }
                         }
 
-                        if (iconInfo.hbmColor != IntPtr.Zero)
-                        {
-                            NativeMethods.DeleteObject(iconInfo.hbmColor);
-                        }
+                        NativeMethods.DestroyIcon(iconHandle);
                     }
                 }
             }
@@ -80,11 +89,12 @@ namespace ShareX.HelpersLib
             DrawCursor(img, Point.Empty);
         }
 
-        public void DrawCursor(Image img, Point cursorOffset)
+        public void DrawCursor(Image img, Point offset)
         {
-            if (IsValid)
+            if (IsVisible)
             {
-                Point drawPosition = new Point(Position.X - cursorOffset.X, Position.Y - cursorOffset.Y);
+                Point drawPosition = new Point(Position.X - offset.X, Position.Y - offset.Y);
+                drawPosition = CaptureHelpers.ScreenToClient(drawPosition);
 
                 using (Graphics g = Graphics.FromImage(img))
                 using (Icon icon = Icon.FromHandle(Handle))
@@ -99,22 +109,14 @@ namespace ShareX.HelpersLib
             DrawCursor(hdcDest, Point.Empty);
         }
 
-        public void DrawCursor(IntPtr hdcDest, Point cursorOffset)
+        public void DrawCursor(IntPtr hdcDest, Point offset)
         {
-            if (IsValid)
+            if (IsVisible)
             {
-                Point drawPosition = new Point(Position.X - cursorOffset.X, Position.Y - cursorOffset.Y);
+                Point drawPosition = new Point(Position.X - offset.X, Position.Y - offset.Y);
+                drawPosition = CaptureHelpers.ScreenToClient(drawPosition);
 
                 NativeMethods.DrawIconEx(hdcDest, drawPosition.X, drawPosition.Y, Handle, 0, 0, 0, IntPtr.Zero, NativeConstants.DI_NORMAL);
-            }
-        }
-
-        public void Dispose()
-        {
-            if (Handle != IntPtr.Zero)
-            {
-                NativeMethods.DestroyIcon(Handle);
-                Handle = IntPtr.Zero;
             }
         }
     }

@@ -44,6 +44,7 @@ namespace ShareX.HistoryLib
             cbViewMode.SelectedIndex = Settings.ViewMode;
             nudThumbnailSize.SetValue(Settings.ThumbnailSize.Width);
             nudMaximumImageLimit.SetValue(Settings.MaxItemCount);
+            cbFilterMissingFiles.Checked = Settings.FilterMissingFiles;
             cbRememberSearchText.Checked = Settings.RememberSearchText;
         }
 
@@ -60,6 +61,11 @@ namespace ShareX.HistoryLib
         private void nudMaximumImageLimit_ValueChanged(object sender, EventArgs e)
         {
             Settings.MaxItemCount = (int)nudMaximumImageLimit.Value;
+        }
+
+        private void cbFilterMissingFiles_CheckedChanged(object sender, EventArgs e)
+        {
+            Settings.FilterMissingFiles = cbFilterMissingFiles.Checked;
         }
 
         private void cbRememberSearchText_CheckedChanged(object sender, EventArgs e)
