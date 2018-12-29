@@ -87,10 +87,9 @@ namespace ShareX
 
             using (RegionCaptureForm form = new RegionCaptureForm(mode, taskSettings.CaptureSettingsReference.SurfaceOptions, img))
             {
-                if (cursorData != null && cursorData.IsValid)
+                if (cursorData != null && cursorData.IsVisible)
                 {
-                    form.AddCursor(cursorData.Handle, cursorData.Position);
-                    cursorData.Dispose();
+                    form.AddCursor(cursorData.Handle, CaptureHelpers.ScreenToClient(cursorData.Position));
                 }
 
                 form.ShowDialog();

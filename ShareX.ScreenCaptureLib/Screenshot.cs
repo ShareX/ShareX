@@ -129,14 +129,10 @@ namespace ShareX.ScreenCaptureLib
 
             if (captureCursor)
             {
-                Point cursorOffset = CaptureHelpers.ScreenToClient(rect.Location);
-
                 try
                 {
-                    using (CursorData cursorData = new CursorData())
-                    {
-                        cursorData.DrawCursor(hdcDest, cursorOffset);
-                    }
+                    CursorData cursorData = new CursorData();
+                    cursorData.DrawCursor(hdcDest, rect.Location);
                 }
                 catch (Exception e)
                 {
