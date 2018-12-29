@@ -137,17 +137,17 @@ namespace ShareX.ScreenCaptureLib
 
                 if (Form.Mode == RegionCaptureMode.TaskEditor)
                 {
-                    ToolStripButton tsbClose = new ToolStripButton(Resources.ShapeManager_CreateToolbar_ContinueTaskSpaceOrRightClick);
-                    tsbClose.DisplayStyle = ToolStripItemDisplayStyle.Image;
-                    tsbClose.Image = Resources.control;
-                    tsbClose.Click += (sender, e) => Form.CloseWindow(RegionResult.AnnotateContinueTask);
-                    tsMain.Items.Add(tsbClose);
+                    ToolStripButton tsbContinueTask = new ToolStripButton(Resources.ShapeManager_CreateToolbar_ContinueTaskSpaceOrRightClick);
+                    tsbContinueTask.DisplayStyle = ToolStripItemDisplayStyle.Image;
+                    tsbContinueTask.Image = Resources.control;
+                    tsbContinueTask.Click += (sender, e) => Form.CloseWindow(RegionResult.AnnotateContinueTask);
+                    tsMain.Items.Add(tsbContinueTask);
 
-                    ToolStripButton tsbCloseCancel = new ToolStripButton(Resources.ShapeManager_CreateToolbar_CancelTaskEsc);
-                    tsbCloseCancel.DisplayStyle = ToolStripItemDisplayStyle.Image;
-                    tsbCloseCancel.Image = Resources.cross;
-                    tsbCloseCancel.Click += (sender, e) => Form.CloseWindow(RegionResult.AnnotateCancelTask);
-                    tsMain.Items.Add(tsbCloseCancel);
+                    ToolStripButton tsbCancelTask = new ToolStripButton(Resources.ShapeManager_CreateToolbar_CancelTaskEsc);
+                    tsbCancelTask.DisplayStyle = ToolStripItemDisplayStyle.Image;
+                    tsbCancelTask.Image = Resources.cross;
+                    tsbCancelTask.Click += (sender, e) => Form.CloseWindow(RegionResult.AnnotateCancelTask);
+                    tsMain.Items.Add(tsbCancelTask);
 
                     tsMain.Items.Add(new ToolStripSeparator());
                 }
@@ -185,6 +185,16 @@ namespace ShareX.ScreenCaptureLib
                 tsMain.Items.Add(new ToolStripSeparator());
 
                 #endregion Editor mode
+            }
+            else if (Helpers.IsTabletMode())
+            {
+                ToolStripButton tsbClose = new ToolStripButton("Close (Esc)");
+                tsbClose.DisplayStyle = ToolStripItemDisplayStyle.Image;
+                tsbClose.Image = Resources.cross;
+                tsbClose.Click += (sender, e) => Form.CloseWindow();
+                tsMain.Items.Add(tsbClose);
+
+                tsMain.Items.Add(new ToolStripSeparator());
             }
 
             #region Tools

@@ -1364,5 +1364,22 @@ namespace ShareX.HelpersLib
                 return false;
             }
         }
+
+        public static bool IsTabletMode()
+        {
+            //int state = NativeMethods.GetSystemMetrics(SystemMetric.SM_CONVERTIBLESLATEMODE);
+            //return state == 0;
+
+            try
+            {
+                int result = (int)Registry.GetValue(@"HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\ImmersiveShell", "TabletMode", 0);
+                return result > 0;
+            }
+            catch
+            {
+            }
+
+            return false;
+        }
     }
 }

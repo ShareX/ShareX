@@ -599,7 +599,9 @@ namespace ShareX.HelpersLib
         /// <summary>
         /// Windows XP (v5.1+) This system metric is used in a Terminal Services environment. Its value is nonzero if the current session is remotely controlled; zero otherwise
         /// </summary>
-        SM_REMOTECONTROL = 0x2001
+        SM_REMOTECONTROL = 0x2001,
+        SM_CONVERTIBLESLATEMODE = 0x2003,
+        SM_SYSTEMDOCKED = 0x2004
     }
 
     /// <summary>
