@@ -1072,7 +1072,7 @@ namespace ShareX
                     {
                         FileName = Application.ExecutablePath,
                         Arguments = arguments,
-                        UseShellExecute = false,
+                        UseShellExecute = true,
                         Verb = "runas"
                     };
 

@@ -156,7 +156,7 @@ namespace ShareX.HelpersLib
                         {
                             FileName = DownloadLocation,
                             Arguments = "/UPDATE",
-                            UseShellExecute = false
+                            UseShellExecute = true
                         };
 
                         if (InstallType == InstallType.Silent)
