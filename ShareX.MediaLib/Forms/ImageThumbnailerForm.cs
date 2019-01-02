@@ -180,15 +180,16 @@ namespace ShareX.MediaLib
                             }
                         }
                     }
+
+                    Cursor = Cursors.Default;
+                    // TODO: Translate
+                    MessageBox.Show("Thumbnails successfully generated.", Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 catch (Exception ex)
                 {
                     DebugHelper.WriteException(ex);
-                    ex.ShowError();
-                }
-                finally
-                {
                     Cursor = Cursors.Default;
+                    ex.ShowError();
                 }
             }
         }
