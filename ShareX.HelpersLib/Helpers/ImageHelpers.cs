@@ -142,11 +142,6 @@ namespace ShareX.HelpersLib
 
         public static Image CreateThumbnail(Image img, int width, int height)
         {
-            if (img.Width == width && img.Height == height)
-            {
-                return img;
-            }
-
             double srcRatio = (double)img.Width / img.Height;
             double dstRatio = (double)width / height;
             int w, h;
@@ -185,7 +180,6 @@ namespace ShareX.HelpersLib
             bmp.SetResolution(img.HorizontalResolution, img.VerticalResolution);
 
             using (Graphics g = Graphics.FromImage(bmp))
-            using (img)
             {
                 g.SetHighQuality();
                 g.DrawImage(img, new Rectangle(0, 0, width, height), new Rectangle(x, y, w, h), GraphicsUnit.Pixel);
