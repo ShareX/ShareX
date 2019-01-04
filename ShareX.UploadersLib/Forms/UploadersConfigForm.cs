@@ -3394,7 +3394,7 @@ namespace ShareX.UploadersLib
 
         #region Custom uploaders
 
-        private void btnCustomUploaderAdd_Click(object sender, EventArgs e)
+        private void btnCustomUploaderNew_Click(object sender, EventArgs e)
         {
             CustomUploaderAdd();
             lbCustomUploaderList.SelectedIndex = lbCustomUploaderList.Items.Count - 1;
@@ -3417,7 +3417,7 @@ namespace ShareX.UploadersLib
                 else
                 {
                     CustomUploaderClearFields();
-                    btnCustomUploaderAdd.Focus();
+                    btnCustomUploaderNew.Focus();
                 }
 
                 CustomUploaderFixSelectedUploader(selected);

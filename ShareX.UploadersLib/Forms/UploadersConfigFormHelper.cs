@@ -1113,7 +1113,7 @@ namespace ShareX.UploadersLib
                 Config.CustomURLSharingServiceSelected = 0;
             CustomUploaderUpdateList();
             CustomUploaderUpdateStates();
-            btnCustomUploaderAdd.Focus();
+            btnCustomUploaderNew.Focus();
         }
 
         private void CustomUploaderClearFields()
@@ -1209,6 +1209,8 @@ namespace ShareX.UploadersLib
                     {
                         uploader.DestinationType = CustomUploaderGetDestinationType();
                     }
+
+                    CustomUploaderDestinationTypeUpdate();
                 };
 
                 cmsCustomUploaderDestinationType.Items.Add(tsmi);
@@ -1224,6 +1226,8 @@ namespace ShareX.UploadersLib
                 ToolStripMenuItem tsmi = (ToolStripMenuItem)cmsCustomUploaderDestinationType.Items[i];
                 tsmi.Checked = destinationType.HasFlag(1 << i);
             }
+
+            CustomUploaderDestinationTypeUpdate();
         }
 
         private CustomUploaderDestinationType CustomUploaderGetDestinationType()
@@ -1241,6 +1245,23 @@ namespace ShareX.UploadersLib
             }
 
             return destinationType;
+        }
+
+        private void CustomUploaderDestinationTypeUpdate()
+        {
+            CustomUploaderItem uploader = CustomUploaderGetSelected();
+            if (uploader != null)
+            {
+                if (uploader.DestinationType == CustomUploaderDestinationType.None)
+                {
+                    mbCustomUploaderDestinationType.Text = CustomUploaderDestinationType.None.GetLocalizedDescription();
+                }
+                else
+                {
+                    mbCustomUploaderDestinationType.Text = string.Join(", ", uploader.DestinationType.GetFlags<CustomUploaderDestinationType>().
+                        Select(x => x.GetLocalizedDescription()));
+                }
+            }
         }
 
         private void CustomUploaderFixSelectedUploader(int removedIndex)
