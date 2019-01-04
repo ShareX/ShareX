@@ -47,19 +47,17 @@ namespace ShareX.UploadersLib
         public CustomUploaderDestinationType DestinationType { get; set; }
 
         [DefaultValue(HttpMethod.POST)]
-        public HttpMethod RequestType { get; set; }
+        public HttpMethod RequestType { get; set; } = HttpMethod.POST;
 
         [DefaultValue("")]
         public string RequestURL { get; set; }
 
-        [DefaultValue(CustomUploaderRequestFormat.None)]
         public CustomUploaderRequestFormat RequestFormat { get; set; }
 
         [DefaultValue("")]
         public string FileFormName { get; set; }
 
-        public bool ShouldSerializeFileFormName() => (RequestFormat == CustomUploaderRequestFormat.None && RequestType == HttpMethod.POST) ||
-            RequestFormat == CustomUploaderRequestFormat.MultipartFormData;
+        public bool ShouldSerializeFileFormName() => !string.IsNullOrEmpty(FileFormName) && RequestFormat == CustomUploaderRequestFormat.MultipartFormData;
 
         [DefaultValue("")]
         public string Data { get; set; }
