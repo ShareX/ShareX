@@ -29,11 +29,15 @@ using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.ComponentModel;
+using System.Windows.Forms;
 
 namespace ShareX.UploadersLib
 {
     public class CustomUploaderItem
     {
+        [DefaultValue("")]
+        public string Version { get; set; }
+
         [DefaultValue("")]
         public string Name { get; set; }
 
@@ -48,20 +52,8 @@ namespace ShareX.UploadersLib
         [DefaultValue("")]
         public string RequestURL { get; set; }
 
-        private CustomUploaderRequestFormat requestFormat;
-
         [DefaultValue(CustomUploaderRequestFormat.None)]
-        public CustomUploaderRequestFormat RequestFormat
-        {
-            get
-            {
-                return CheckRequestFormat(requestFormat);
-            }
-            set
-            {
-                requestFormat = value;
-            }
-        }
+        public CustomUploaderRequestFormat RequestFormat { get; set; }
 
         [DefaultValue("")]
         public string FileFormName { get; set; }
@@ -139,24 +131,6 @@ namespace ShareX.UploadersLib
 
             string url = parser.Parse(RequestURL);
             return URLHelpers.FixPrefix(url);
-        }
-
-        private CustomUploaderRequestFormat CheckRequestFormat(CustomUploaderRequestFormat format)
-        {
-            // For backward compatibility
-            if (format == CustomUploaderRequestFormat.None)
-            {
-                if (RequestType == HttpMethod.POST)
-                {
-                    return CustomUploaderRequestFormat.MultipartFormData;
-                }
-                else
-                {
-                    return CustomUploaderRequestFormat.URLQueryString;
-                }
-            }
-
-            return format;
         }
 
         public string GetData(CustomUploaderInput input)
@@ -247,6 +221,23 @@ namespace ShareX.UploadersLib
                 result.ThumbnailURL = parser.Parse(ThumbnailURL);
                 result.DeletionURL = parser.Parse(DeletionURL);
             }
+        }
+
+        public void CheckBackwardCompatibility()
+        {
+            if (string.IsNullOrEmpty(Version) || Helpers.CompareVersion(Version, "12.3.1") <= 0)
+            {
+                if (RequestType == HttpMethod.POST)
+                {
+                    RequestFormat = CustomUploaderRequestFormat.MultipartFormData;
+                }
+                else
+                {
+                    RequestFormat = CustomUploaderRequestFormat.URLQueryString;
+                }
+            }
+
+            Version = Application.ProductVersion;
         }
     }
 }

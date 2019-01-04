@@ -3481,7 +3481,9 @@ namespace ShareX.UploadersLib
 
         private void eiCustomUploaders_ImportRequested(object obj)
         {
-            CustomUploaderAdd(obj as CustomUploaderItem);
+            CustomUploaderItem uploader = obj as CustomUploaderItem;
+            uploader.CheckBackwardCompatibility();
+            CustomUploaderAdd(uploader);
             CustomUploaderUpdateStates();
         }
 

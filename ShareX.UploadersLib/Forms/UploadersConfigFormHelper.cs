@@ -931,7 +931,12 @@ namespace ShareX.UploadersLib
 
         private void CustomUploaderAdd()
         {
-            CustomUploaderAdd(new CustomUploaderItem());
+            CustomUploaderItem uploader = new CustomUploaderItem()
+            {
+                Version = Application.ProductVersion
+            };
+
+            CustomUploaderAdd(uploader);
         }
 
         private void CustomUploaderAdd(CustomUploaderItem uploader)

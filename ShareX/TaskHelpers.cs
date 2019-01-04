@@ -1619,6 +1619,7 @@ namespace ShareX
                             }
                         }
 
+                        cui.CheckBackwardCompatibility();
                         Program.UploadersConfig.CustomUploadersList.Add(cui);
 
                         if (activate)
