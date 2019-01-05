@@ -460,9 +460,6 @@ Would you like to automatically download it?</value>
   <data name="ActionsForm_btnOK_Click_File_path_can_t_be_empty_" xml:space="preserve">
     <value>File path can't be empty.</value>
   </data>
-  <data name="MustReopenForPersonalFolderChangesToTakeEffect" xml:space="preserve">
-    <value>You must reopen ShareX for personal folder changes to take effect.</value>
-  </data>
   <data name="UploadTask_DoAfterCaptureJobs_Choose_a_folder_to_save" xml:space="preserve">
     <value>Choose a folder to save</value>
   </data>
@@ -574,6 +571,7 @@ here</value>
   </data>
   <data name="ApplicationSettingsForm_cbLanguage_SelectedIndexChanged_Language_Restart" xml:space="preserve">
     <value>ShareX needs to be restarted for the language changes to apply.
+
 Would you like to restart ShareX?</value>
   </data>
   <data name="Program_WritePersonalPathConfig_Cant_access_to_file" xml:space="preserve">

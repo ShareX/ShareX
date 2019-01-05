@@ -36,9 +36,7 @@ namespace ShareX
 {
     public partial class ApplicationSettingsForm : Form
     {
-        private const int MaxBufferSizePower = 14;
-
-        private bool ready, isValidPersonalPath;
+        private bool ready;
         private string lastPersonalPath;
 
         public ApplicationSettingsForm()
@@ -55,22 +53,6 @@ namespace ShareX
         private void SettingsForm_Resize(object sender, EventArgs e)
         {
             Refresh();
-        }
-
-        private void SettingsForm_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            if (isValidPersonalPath)
-            {
-                string currentPersonalPath = txtPersonalFolderPath.Text;
-
-                if (!currentPersonalPath.Equals(lastPersonalPath, StringComparison.InvariantCultureIgnoreCase))
-                {
-                    if (Program.WritePersonalPathConfig(currentPersonalPath))
-                    {
-                        MessageBox.Show(Resources.MustReopenForPersonalFolderChangesToTakeEffect, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                }
-            }
         }
 
         private void tttvMain_TabChanged(TabPage tabPage)
@@ -176,13 +158,13 @@ namespace ShareX
             nudUploadLimit.SetValue(Program.Settings.UploadLimit);
 
             cbBufferSize.Items.Clear();
-            for (int i = 0; i < MaxBufferSizePower; i++)
+            int maxBufferSizePower = 14;
+            for (int i = 0; i < maxBufferSizePower; i++)
             {
                 string size = ((long)(Math.Pow(2, i) * 1024)).ToSizeString(Program.Settings.BinaryUnits, 0);
                 cbBufferSize.Items.Add(size);
             }
-
-            cbBufferSize.SelectedIndex = Program.Settings.BufferSizePower.Between(0, MaxBufferSizePower);
+            cbBufferSize.SelectedIndex = Program.Settings.BufferSizePower.Between(0, maxBufferSizePower);
 
             lvClipboardFormats.Items.Clear();
             foreach (ClipboardFormat cf in Program.Settings.ClipboardContentFormats)
@@ -242,7 +224,7 @@ namespace ShareX
 
                 if (LanguageHelper.ChangeLanguage(Program.Settings.Language) &&
                     MessageBox.Show(Resources.ApplicationSettingsForm_cbLanguage_SelectedIndexChanged_Language_Restart,
-                    "ShareX", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+                    "ShareX - Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     Program.Restart();
                 }
@@ -330,11 +312,11 @@ namespace ShareX
                 }
 
                 lblPreviewPersonalFolderPath.Text = personalPath;
-                isValidPersonalPath = true;
+                btnPersonalFolderPathApply.Enabled = !personalPath.Equals(lastPersonalPath, StringComparison.OrdinalIgnoreCase);
             }
             catch (Exception e)
             {
-                isValidPersonalPath = false;
+                btnPersonalFolderPathApply.Enabled = false;
                 lblPreviewPersonalFolderPath.Text = "Error: " + e.Message;
             }
         }
@@ -508,7 +490,26 @@ namespace ShareX
 
         private void btnBrowsePersonalFolderPath_Click(object sender, EventArgs e)
         {
-            Helpers.BrowseFolder(Resources.ApplicationSettingsForm_btnBrowsePersonalFolderPath_Click_Choose_ShareX_personal_folder_path, txtPersonalFolderPath, Program.PersonalFolder, true);
+            Helpers.BrowseFolder(Resources.ApplicationSettingsForm_btnBrowsePersonalFolderPath_Click_Choose_ShareX_personal_folder_path,
+                txtPersonalFolderPath, Program.PersonalFolder, true);
+        }
+
+        private void btnPersonalFolderPathApply_Click(object sender, EventArgs e)
+        {
+            string currentPersonalPath = txtPersonalFolderPath.Text;
+
+            if (!currentPersonalPath.Equals(lastPersonalPath, StringComparison.OrdinalIgnoreCase) && Program.WritePersonalPathConfig(currentPersonalPath))
+            {
+                lastPersonalPath = currentPersonalPath;
+                btnPersonalFolderPathApply.Enabled = false;
+
+                // TODO: Translate
+                if (MessageBox.Show("ShareX needs to be restarted for the personal folder changes to apply.\r\n\r\nWould you like to restart ShareX?", "ShareX - Confirmation",
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    Program.Restart();
+                }
+            }
         }
 
         private void btnOpenPersonalFolder_Click(object sender, EventArgs e)
