@@ -485,7 +485,14 @@ namespace ShareX.HelpersLib
 
             if (!string.IsNullOrEmpty(query))
             {
-                return url + "?" + query;
+                if (url.Contains("?"))
+                {
+                    return url + "&" + query;
+                }
+                else
+                {
+                    return url + "?" + query;
+                }
             }
 
             return url;
