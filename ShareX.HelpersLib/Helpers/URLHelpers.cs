@@ -444,7 +444,36 @@ namespace ShareX.HelpersLib
         {
             if (args != null && args.Count > 0)
             {
-                return string.Join("&", args.Select(x => x.Key + "=" + (customEncoding ? URLEncode(x.Value) : HttpUtility.UrlEncode(x.Value))).ToArray());
+                List<string> pairs = new List<string>();
+
+                foreach (KeyValuePair<string, string> arg in args)
+                {
+                    string pair;
+
+                    if (string.IsNullOrEmpty(arg.Value))
+                    {
+                        pair = arg.Key;
+                    }
+                    else
+                    {
+                        string value;
+
+                        if (customEncoding)
+                        {
+                            value = URLEncode(arg.Value);
+                        }
+                        else
+                        {
+                            value = HttpUtility.UrlEncode(arg.Value);
+                        }
+
+                        pair = arg.Key + "=" + value;
+                    }
+
+                    pairs.Add(pair);
+                }
+
+                return string.Join("&", pairs);
             }
 
             return "";
