@@ -963,7 +963,7 @@ namespace ShareX.UploadersLib
             txtCustomUploaderName.Text = uploader.Name ?? "";
             CustomUploaderSetDestinationType(uploader.DestinationType);
 
-            cbCustomUploaderRequestType.SelectedIndex = (int)uploader.RequestType;
+            cbCustomUploaderRequestMethod.SelectedIndex = (int)uploader.RequestType;
             rtbCustomUploaderRequestURL.Text = uploader.RequestURL ?? "";
             CustomUploaderSyntaxHighlight(rtbCustomUploaderRequestURL);
             cbCustomUploaderRequestFormat.SelectedIndex = (int)uploader.RequestFormat;
@@ -971,8 +971,8 @@ namespace ShareX.UploadersLib
             rtbCustomUploaderData.Text = uploader.Data ?? "";
             CustomUploaderSyntaxHighlight(rtbCustomUploaderData);
 
-            txtCustomUploaderArgName.Text = "";
-            rtbCustomUploaderArgValue.Text = "";
+            txtCustomUploaderArgumentName.Text = "";
+            rtbCustomUploaderArgumentValue.Text = "";
             lvCustomUploaderArguments.Items.Clear();
             if (uploader.Arguments != null)
             {
@@ -982,7 +982,7 @@ namespace ShareX.UploadersLib
                 }
             }
 
-            txtCustomUploaderFileForm.Text = uploader.FileFormName ?? "";
+            txtCustomUploaderFileFormName.Text = uploader.FileFormName ?? "";
 
             txtCustomUploaderHeaderName.Text = "";
             rtbCustomUploaderHeaderValue.Text = "";
@@ -1045,7 +1045,10 @@ namespace ShareX.UploadersLib
             CustomUploaderItem uploader = CustomUploaderGetSelected();
             if (uploader != null)
             {
-                if (uploader.ShouldSerializeData())
+                pCustomUploaderMultipartFormData.Visible = uploader.RequestFormat == CustomUploaderRequestFormat.MultipartFormData;
+                pCustomUploaderJSON.Visible = uploader.RequestFormat == CustomUploaderRequestFormat.JSON;
+
+                /*if (uploader.ShouldSerializeData())
                 {
                     if (!tcCustomUploaderArguments.TabPages.Contains(tpCustomUploaderData))
                     {
@@ -1067,14 +1070,14 @@ namespace ShareX.UploadersLib
                 else if (tcCustomUploaderArguments.TabPages.Contains(tpCustomUploaderFile))
                 {
                     tcCustomUploaderArguments.TabPages.Remove(tpCustomUploaderFile);
-                }
+                }*/
             }
         }
 
         private void CustomUploaderUpdateArgumentsState()
         {
-            btnCustomUploaderArgAdd.Enabled = !string.IsNullOrEmpty(txtCustomUploaderArgName.Text);
-            btnCustomUploaderArgRemove.Enabled = btnCustomUploaderArgUpdate.Enabled = lvCustomUploaderArguments.SelectedItems.Count > 0;
+            btnCustomUploaderArgumentAdd.Enabled = !string.IsNullOrEmpty(txtCustomUploaderArgumentName.Text);
+            btnCustomUploaderArgumentRemove.Enabled = btnCustomUploaderArgumentUpdate.Enabled = lvCustomUploaderArguments.SelectedItems.Count > 0;
         }
 
         private void CustomUploaderUpdateHeadersState()
@@ -1348,7 +1351,7 @@ namespace ShareX.UploadersLib
 
             UploadResult result = null;
 
-            rtbCustomUploaderLog.ResetText();
+            rtbCustomUploaderResult.ResetText();
 
             await Task.Run(() =>
             {
@@ -1405,28 +1408,28 @@ namespace ShareX.UploadersLib
                         (type == CustomUploaderDestinationType.URLShortener && !string.IsNullOrEmpty(result.ShortenedURL)) ||
                         (type == CustomUploaderDestinationType.URLSharingService && !result.IsError && !string.IsNullOrEmpty(result.URL)))
                     {
-                        rtbCustomUploaderLog.AppendText("URL: " + result + Environment.NewLine);
+                        rtbCustomUploaderResult.AppendText("URL: " + result + Environment.NewLine);
 
                         if (!string.IsNullOrEmpty(result.ThumbnailURL))
                         {
-                            rtbCustomUploaderLog.AppendText("Thumbnail URL: " + result.ThumbnailURL + Environment.NewLine);
+                            rtbCustomUploaderResult.AppendText("Thumbnail URL: " + result.ThumbnailURL + Environment.NewLine);
                         }
 
                         if (!string.IsNullOrEmpty(result.DeletionURL))
                         {
-                            rtbCustomUploaderLog.AppendText("Deletion URL: " + result.DeletionURL + Environment.NewLine);
+                            rtbCustomUploaderResult.AppendText("Deletion URL: " + result.DeletionURL + Environment.NewLine);
                         }
                     }
                     else if (result.IsError)
                     {
-                        rtbCustomUploaderLog.AppendText(Resources.UploadersConfigForm_Error + ": " + result.ErrorsToString() + Environment.NewLine);
+                        rtbCustomUploaderResult.AppendText(Resources.UploadersConfigForm_Error + ": " + result.ErrorsToString() + Environment.NewLine);
                     }
                     else
                     {
-                        rtbCustomUploaderLog.AppendText(Resources.UploadersConfigForm_TestCustomUploader_Error__Result_is_empty_ + Environment.NewLine);
+                        rtbCustomUploaderResult.AppendText(Resources.UploadersConfigForm_TestCustomUploader_Error__Result_is_empty_ + Environment.NewLine);
                     }
 
-                    rtbCustomUploaderLog.ScrollToCaret();
+                    rtbCustomUploaderResult.ScrollToCaret();
 
                     btnCustomUploaderShowLastResponse.Tag = result.Response;
                     btnCustomUploaderShowLastResponse.Enabled = !string.IsNullOrEmpty(result.Response);
