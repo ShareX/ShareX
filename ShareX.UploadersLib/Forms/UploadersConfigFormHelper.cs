@@ -1422,35 +1422,43 @@ namespace ShareX.UploadersLib
             {
                 if (result != null)
                 {
-                    string resultText = "";
+                    StringBuilder sbResult = new StringBuilder();
 
                     if (((type == CustomUploaderDestinationType.ImageUploader || type == CustomUploaderDestinationType.TextUploader ||
                         type == CustomUploaderDestinationType.FileUploader) && !string.IsNullOrEmpty(result.URL)) ||
                         (type == CustomUploaderDestinationType.URLShortener && !string.IsNullOrEmpty(result.ShortenedURL)) ||
                         (type == CustomUploaderDestinationType.URLSharingService && !result.IsError && !string.IsNullOrEmpty(result.URL)))
                     {
-                        resultText = "URL: " + result;
+                        if (!string.IsNullOrEmpty(result.ShortenedURL))
+                        {
+                            sbResult.AppendLine("Shortened URL: " + result.ShortenedURL);
+                        }
+
+                        if (!string.IsNullOrEmpty(result.URL))
+                        {
+                            sbResult.AppendLine("URL: " + result.URL);
+                        }
 
                         if (!string.IsNullOrEmpty(result.ThumbnailURL))
                         {
-                            resultText += Environment.NewLine + "Thumbnail URL: " + result.ThumbnailURL;
+                            sbResult.AppendLine("Thumbnail URL: " + result.ThumbnailURL);
                         }
 
                         if (!string.IsNullOrEmpty(result.DeletionURL))
                         {
-                            resultText += Environment.NewLine + "Deletion URL: " + result.DeletionURL;
+                            sbResult.AppendLine("Deletion URL: " + result.DeletionURL);
                         }
                     }
                     else if (result.IsError)
                     {
-                        resultText = Resources.UploadersConfigForm_Error + ": " + result.ErrorsToString();
+                        sbResult.AppendLine(Resources.UploadersConfigForm_Error + ": " + result.ErrorsToString());
                     }
                     else
                     {
-                        resultText = Resources.UploadersConfigForm_TestCustomUploader_Error__Result_is_empty_;
+                        sbResult.AppendLine(Resources.UploadersConfigForm_TestCustomUploader_Error__Result_is_empty_);
                     }
 
-                    rtbCustomUploaderResult.Text = resultText;
+                    rtbCustomUploaderResult.Text = sbResult.ToString();
                     txtCustomUploaderResponse.Text = result.Response;
 
                     tcCustomUploader.SelectedTab = tpCustomUploaderTest;
