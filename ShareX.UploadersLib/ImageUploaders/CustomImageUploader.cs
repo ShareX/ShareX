@@ -88,7 +88,7 @@ namespace ShareX.UploadersLib.ImageUploaders
             else if (uploader.RequestFormat == CustomUploaderRequestFormat.Binary)
             {
                 result.Response = SendRequest(uploader.RequestType, uploader.GetRequestURL(input), stream, UploadHelpers.GetMimeType(fileName),
-                    uploader.GetArguments(input), uploader.GetHeaders(input), null, uploader.ResponseType);
+                    null, uploader.GetHeaders(input), null, uploader.ResponseType);
             }
             else
             {

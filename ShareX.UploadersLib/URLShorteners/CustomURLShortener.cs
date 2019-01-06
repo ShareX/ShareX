@@ -78,20 +78,19 @@ namespace ShareX.UploadersLib.URLShorteners
             UploadResult result = new UploadResult { URL = url };
             CustomUploaderInput input = new CustomUploaderInput("", url);
 
-            if (uploader.RequestFormat == CustomUploaderRequestFormat.MultipartFormData)
+            if (uploader.RequestFormat == CustomUploaderRequestFormat.None)
+            {
+                result.Response = SendRequest(uploader.RequestType, uploader.GetRequestURL(input), null, uploader.GetHeaders(input), null, uploader.ResponseType);
+            }
+            else if (uploader.RequestFormat == CustomUploaderRequestFormat.MultipartFormData)
             {
                 result.Response = SendRequestMultiPart(uploader.GetRequestURL(input), uploader.GetArguments(input), uploader.GetHeaders(input), null,
                     uploader.ResponseType, uploader.RequestType);
             }
-            else if (uploader.RequestFormat == CustomUploaderRequestFormat.URLQueryString)
-            {
-                result.Response = SendRequest(uploader.RequestType, uploader.GetRequestURL(input), uploader.GetArguments(input),
-                    uploader.GetHeaders(input), null, uploader.ResponseType);
-            }
             else if (uploader.RequestFormat == CustomUploaderRequestFormat.JSON)
             {
                 result.Response = SendRequest(uploader.RequestType, uploader.GetRequestURL(input), uploader.GetData(input), UploadHelpers.ContentTypeJSON,
-                    uploader.GetArguments(input), uploader.GetHeaders(input), null, uploader.ResponseType);
+                    null, uploader.GetHeaders(input), null, uploader.ResponseType);
             }
             else if (uploader.RequestFormat == CustomUploaderRequestFormat.FormURLEncoded)
             {

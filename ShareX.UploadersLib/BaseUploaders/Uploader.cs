@@ -142,12 +142,12 @@ namespace ShareX.UploadersLib
             }
         }
 
-        public string SendRequestURLEncoded(HttpMethod method, string url, Dictionary<string, string> args, NameValueCollection headers = null, CookieCollection cookies = null,
+        internal string SendRequestURLEncoded(HttpMethod method, string url, Dictionary<string, string> args, NameValueCollection headers = null, CookieCollection cookies = null,
             ResponseType responseType = ResponseType.Text)
         {
             string query = URLHelpers.CreateQueryString(args);
 
-            return SendRequest(method, url, query, UploadHelpers.ContentTypeURLEncoded, args, headers, cookies, responseType);
+            return SendRequest(method, url, query, UploadHelpers.ContentTypeURLEncoded, null, headers, cookies, responseType);
         }
 
         protected bool SendRequestDownload(HttpMethod method, string url, Stream downloadStream, Dictionary<string, string> args = null,

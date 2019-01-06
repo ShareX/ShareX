@@ -83,7 +83,11 @@ namespace ShareX.UploadersLib.TextUploaders
             UploadResult result = new UploadResult();
             CustomUploaderInput input = new CustomUploaderInput(fileName, text);
 
-            if (uploader.RequestFormat == CustomUploaderRequestFormat.MultipartFormData)
+            if (uploader.RequestFormat == CustomUploaderRequestFormat.None)
+            {
+                result.Response = SendRequest(uploader.RequestType, uploader.GetRequestURL(input), null, uploader.GetHeaders(input), null, uploader.ResponseType);
+            }
+            else if (uploader.RequestFormat == CustomUploaderRequestFormat.MultipartFormData)
             {
                 if (string.IsNullOrEmpty(uploader.FileFormName))
                 {
@@ -100,15 +104,10 @@ namespace ShareX.UploadersLib.TextUploaders
                     }
                 }
             }
-            else if (uploader.RequestFormat == CustomUploaderRequestFormat.URLQueryString)
-            {
-                result.Response = SendRequest(uploader.RequestType, uploader.GetRequestURL(input), uploader.GetArguments(input),
-                    uploader.GetHeaders(input), null, uploader.ResponseType);
-            }
             else if (uploader.RequestFormat == CustomUploaderRequestFormat.JSON)
             {
                 result.Response = SendRequest(uploader.RequestType, uploader.GetRequestURL(input), uploader.GetData(input), UploadHelpers.ContentTypeJSON,
-                    uploader.GetArguments(input), uploader.GetHeaders(input), null, uploader.ResponseType);
+                    null, uploader.GetHeaders(input), null, uploader.ResponseType);
             }
             else if (uploader.RequestFormat == CustomUploaderRequestFormat.Binary)
             {
@@ -116,7 +115,7 @@ namespace ShareX.UploadersLib.TextUploaders
                 using (MemoryStream stream = new MemoryStream(bytes))
                 {
                     result.Response = SendRequest(uploader.RequestType, uploader.GetRequestURL(input), stream, UploadHelpers.GetMimeType(fileName),
-                        uploader.GetArguments(input), uploader.GetHeaders(input), null, uploader.ResponseType);
+                        null, uploader.GetHeaders(input), null, uploader.ResponseType);
                 }
             }
             else if (uploader.RequestFormat == CustomUploaderRequestFormat.FormURLEncoded)

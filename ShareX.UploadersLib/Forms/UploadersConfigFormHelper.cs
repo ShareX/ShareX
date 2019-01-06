@@ -1038,9 +1038,10 @@ namespace ShareX.UploadersLib
 
             if (isSelected)
             {
+                CustomUploaderUpdateParametersState();
+                CustomUploaderUpdateHeadersState();
                 CustomUploaderUpdateRequestFormatState();
                 CustomUploaderUpdateArgumentsState();
-                CustomUploaderUpdateHeadersState();
                 CustomUploaderUpdateResponseState();
             }
 

@@ -62,7 +62,7 @@ namespace ShareX.UploadersLib
 
         public bool ShouldSerializeHeaders() => Headers != null && Headers.Count > 0;
 
-        public CustomUploaderRequestFormat RequestFormat { get; set; }
+        public CustomUploaderRequestFormat RequestFormat { get; set; } = CustomUploaderRequestFormat.MultipartFormData;
 
         [DefaultValue("")]
         public string FileFormName { get; set; }
@@ -129,11 +129,29 @@ namespace ShareX.UploadersLib
                 throw new Exception(Resources.CustomUploaderItem_GetRequestURL_RequestURLMustBeConfigured);
             }
 
-            CustomUploaderParser parser = new CustomUploaderParser(input);
-            parser.URLEncode = true;
+            string url = URLHelpers.FixPrefix(RequestURL);
 
-            string url = parser.Parse(RequestURL);
-            return URLHelpers.FixPrefix(url);
+            Dictionary<string, string> parameters = GetParameters(input);
+
+            return URLHelpers.CreateQueryString(url, parameters);
+        }
+
+        public Dictionary<string, string> GetParameters(CustomUploaderInput input)
+        {
+            Dictionary<string, string> parameters = new Dictionary<string, string>();
+
+            if (Parameters != null)
+            {
+                CustomUploaderParser parser = new CustomUploaderParser(input);
+                parser.UseNameParser = true;
+
+                foreach (KeyValuePair<string, string> parameter in Parameters)
+                {
+                    parameters.Add(parameter.Key, parser.Parse(parameter.Value));
+                }
+            }
+
+            return parameters;
         }
 
         public string GetData(CustomUploaderInput input)
@@ -236,7 +254,7 @@ namespace ShareX.UploadersLib
                 }
                 else
                 {
-                    RequestFormat = CustomUploaderRequestFormat.URLQueryString;
+                    RequestFormat = CustomUploaderRequestFormat.None;
 
                     if (Arguments != null)
                     {
