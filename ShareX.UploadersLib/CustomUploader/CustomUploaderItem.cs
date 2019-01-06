@@ -46,7 +46,6 @@ namespace ShareX.UploadersLib
         [DefaultValue(CustomUploaderDestinationType.None)]
         public CustomUploaderDestinationType DestinationType { get; set; }
 
-        [DefaultValue(HttpMethod.POST)]
         public HttpMethod RequestType { get; set; } = HttpMethod.POST;
 
         [DefaultValue("")]

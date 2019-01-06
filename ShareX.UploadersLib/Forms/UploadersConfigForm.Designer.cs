@@ -80,6 +80,8 @@ namespace ShareX.UploadersLib
             this.btnTwitterAdd = new System.Windows.Forms.Button();
             this.tpCustomUploaders = new System.Windows.Forms.TabPage();
             this.btnCustomUploaderURLSharingServiceTest = new System.Windows.Forms.Button();
+            this.btnCustomUploaderExamples = new System.Windows.Forms.Button();
+            this.btnCustomUploaderHelp = new System.Windows.Forms.Button();
             this.cbCustomUploaderURLSharingService = new System.Windows.Forms.ComboBox();
             this.lblCustomUploaderURLSharingService = new System.Windows.Forms.Label();
             this.pCustomUploader = new System.Windows.Forms.Panel();
@@ -165,11 +167,12 @@ namespace ShareX.UploadersLib
             this.lvCustomUploaderRegexps = new ShareX.HelpersLib.MyListView();
             this.lvRegexpsColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tpCustomUploaderTest = new System.Windows.Forms.TabPage();
-            this.txtCustomUploaderResponse = new System.Windows.Forms.TextBox();
+            this.tcCustomUploaderTest = new System.Windows.Forms.TabControl();
+            this.tpCustomUploaderResult = new System.Windows.Forms.TabPage();
             this.pCustomUploaderResult = new System.Windows.Forms.Panel();
             this.rtbCustomUploaderResult = new System.Windows.Forms.RichTextBox();
-            this.btnCustomUploaderHelp = new System.Windows.Forms.Button();
-            this.btnCustomUploaderExamples = new System.Windows.Forms.Button();
+            this.tpCustomUploaderResponseText = new System.Windows.Forms.TabPage();
+            this.txtCustomUploaderResponse = new System.Windows.Forms.TextBox();
             this.lblCustomUploaderDestinationType = new System.Windows.Forms.Label();
             this.lblCustomUploaderName = new System.Windows.Forms.Label();
             this.txtCustomUploaderName = new System.Windows.Forms.TextBox();
@@ -733,9 +736,6 @@ namespace ShareX.UploadersLib
             this.lblWidthHint = new System.Windows.Forms.Label();
             this.ttlvMain = new ShareX.HelpersLib.TabToListView();
             this.actRapidShareAccountType = new ShareX.UploadersLib.AccountTypeControl();
-            this.tcCustomUploaderTest = new System.Windows.Forms.TabControl();
-            this.tpCustomUploaderResult = new System.Windows.Forms.TabPage();
-            this.tpCustomUploaderResponseText = new System.Windows.Forms.TabPage();
             this.tpOtherUploaders.SuspendLayout();
             this.tcOtherUploaders.SuspendLayout();
             this.tpTwitter.SuspendLayout();
@@ -759,7 +759,10 @@ namespace ShareX.UploadersLib
             this.tpCustomUploaderXmlParse.SuspendLayout();
             this.tpCustomUploaderRegexParse.SuspendLayout();
             this.tpCustomUploaderTest.SuspendLayout();
+            this.tcCustomUploaderTest.SuspendLayout();
+            this.tpCustomUploaderResult.SuspendLayout();
             this.pCustomUploaderResult.SuspendLayout();
+            this.tpCustomUploaderResponseText.SuspendLayout();
             this.gbCustomUploaders.SuspendLayout();
             this.tpURLShorteners.SuspendLayout();
             this.tcURLShorteners.SuspendLayout();
@@ -840,9 +843,6 @@ namespace ShareX.UploadersLib
             this.tpChevereto.SuspendLayout();
             this.tpVgyme.SuspendLayout();
             this.tcUploaders.SuspendLayout();
-            this.tcCustomUploaderTest.SuspendLayout();
-            this.tpCustomUploaderResult.SuspendLayout();
-            this.tpCustomUploaderResponseText.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtRapidSharePremiumUserName
@@ -1056,6 +1056,20 @@ namespace ShareX.UploadersLib
             this.btnCustomUploaderURLSharingServiceTest.Name = "btnCustomUploaderURLSharingServiceTest";
             this.btnCustomUploaderURLSharingServiceTest.UseVisualStyleBackColor = true;
             this.btnCustomUploaderURLSharingServiceTest.Click += new System.EventHandler(this.btnCustomUploaderURLSharingServiceTest_Click);
+            // 
+            // btnCustomUploaderExamples
+            // 
+            resources.ApplyResources(this.btnCustomUploaderExamples, "btnCustomUploaderExamples");
+            this.btnCustomUploaderExamples.Name = "btnCustomUploaderExamples";
+            this.btnCustomUploaderExamples.UseVisualStyleBackColor = true;
+            this.btnCustomUploaderExamples.Click += new System.EventHandler(this.btnCustomUploaderExamples_Click);
+            // 
+            // btnCustomUploaderHelp
+            // 
+            resources.ApplyResources(this.btnCustomUploaderHelp, "btnCustomUploaderHelp");
+            this.btnCustomUploaderHelp.Name = "btnCustomUploaderHelp";
+            this.btnCustomUploaderHelp.UseVisualStyleBackColor = true;
+            this.btnCustomUploaderHelp.Click += new System.EventHandler(this.btnCustomUploaderHelp_Click);
             // 
             // cbCustomUploaderURLSharingService
             // 
@@ -1713,10 +1727,20 @@ namespace ShareX.UploadersLib
             this.tpCustomUploaderTest.Name = "tpCustomUploaderTest";
             this.tpCustomUploaderTest.UseVisualStyleBackColor = true;
             // 
-            // txtCustomUploaderResponse
+            // tcCustomUploaderTest
             // 
-            resources.ApplyResources(this.txtCustomUploaderResponse, "txtCustomUploaderResponse");
-            this.txtCustomUploaderResponse.Name = "txtCustomUploaderResponse";
+            this.tcCustomUploaderTest.Controls.Add(this.tpCustomUploaderResult);
+            this.tcCustomUploaderTest.Controls.Add(this.tpCustomUploaderResponseText);
+            resources.ApplyResources(this.tcCustomUploaderTest, "tcCustomUploaderTest");
+            this.tcCustomUploaderTest.Name = "tcCustomUploaderTest";
+            this.tcCustomUploaderTest.SelectedIndex = 0;
+            // 
+            // tpCustomUploaderResult
+            // 
+            this.tpCustomUploaderResult.Controls.Add(this.pCustomUploaderResult);
+            resources.ApplyResources(this.tpCustomUploaderResult, "tpCustomUploaderResult");
+            this.tpCustomUploaderResult.Name = "tpCustomUploaderResult";
+            this.tpCustomUploaderResult.UseVisualStyleBackColor = true;
             // 
             // pCustomUploaderResult
             // 
@@ -1732,19 +1756,17 @@ namespace ShareX.UploadersLib
             this.rtbCustomUploaderResult.Name = "rtbCustomUploaderResult";
             this.rtbCustomUploaderResult.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.txtCustomUploaderLog_LinkClicked);
             // 
-            // btnCustomUploaderHelp
+            // tpCustomUploaderResponseText
             // 
-            resources.ApplyResources(this.btnCustomUploaderHelp, "btnCustomUploaderHelp");
-            this.btnCustomUploaderHelp.Name = "btnCustomUploaderHelp";
-            this.btnCustomUploaderHelp.UseVisualStyleBackColor = true;
-            this.btnCustomUploaderHelp.Click += new System.EventHandler(this.btnCustomUploaderHelp_Click);
+            this.tpCustomUploaderResponseText.Controls.Add(this.txtCustomUploaderResponse);
+            resources.ApplyResources(this.tpCustomUploaderResponseText, "tpCustomUploaderResponseText");
+            this.tpCustomUploaderResponseText.Name = "tpCustomUploaderResponseText";
+            this.tpCustomUploaderResponseText.UseVisualStyleBackColor = true;
             // 
-            // btnCustomUploaderExamples
+            // txtCustomUploaderResponse
             // 
-            resources.ApplyResources(this.btnCustomUploaderExamples, "btnCustomUploaderExamples");
-            this.btnCustomUploaderExamples.Name = "btnCustomUploaderExamples";
-            this.btnCustomUploaderExamples.UseVisualStyleBackColor = true;
-            this.btnCustomUploaderExamples.Click += new System.EventHandler(this.btnCustomUploaderExamples_Click);
+            resources.ApplyResources(this.txtCustomUploaderResponse, "txtCustomUploaderResponse");
+            this.txtCustomUploaderResponse.Name = "txtCustomUploaderResponse";
             // 
             // lblCustomUploaderDestinationType
             // 
@@ -5856,28 +5878,6 @@ namespace ShareX.UploadersLib
             this.actRapidShareAccountType.Name = "actRapidShareAccountType";
             this.actRapidShareAccountType.SelectedAccountType = ShareX.UploadersLib.AccountType.Anonymous;
             // 
-            // tcCustomUploaderTest
-            // 
-            this.tcCustomUploaderTest.Controls.Add(this.tpCustomUploaderResult);
-            this.tcCustomUploaderTest.Controls.Add(this.tpCustomUploaderResponseText);
-            resources.ApplyResources(this.tcCustomUploaderTest, "tcCustomUploaderTest");
-            this.tcCustomUploaderTest.Name = "tcCustomUploaderTest";
-            this.tcCustomUploaderTest.SelectedIndex = 0;
-            // 
-            // tpCustomUploaderResult
-            // 
-            this.tpCustomUploaderResult.Controls.Add(this.pCustomUploaderResult);
-            resources.ApplyResources(this.tpCustomUploaderResult, "tpCustomUploaderResult");
-            this.tpCustomUploaderResult.Name = "tpCustomUploaderResult";
-            this.tpCustomUploaderResult.UseVisualStyleBackColor = true;
-            // 
-            // tpCustomUploaderResponseText
-            // 
-            this.tpCustomUploaderResponseText.Controls.Add(this.txtCustomUploaderResponse);
-            resources.ApplyResources(this.tpCustomUploaderResponseText, "tpCustomUploaderResponseText");
-            this.tpCustomUploaderResponseText.Name = "tpCustomUploaderResponseText";
-            this.tpCustomUploaderResponseText.UseVisualStyleBackColor = true;
-            // 
             // UploadersConfigForm
             // 
             resources.ApplyResources(this, "$this");
@@ -5924,7 +5924,11 @@ namespace ShareX.UploadersLib
             this.tpCustomUploaderRegexParse.ResumeLayout(false);
             this.tpCustomUploaderRegexParse.PerformLayout();
             this.tpCustomUploaderTest.ResumeLayout(false);
+            this.tcCustomUploaderTest.ResumeLayout(false);
+            this.tpCustomUploaderResult.ResumeLayout(false);
             this.pCustomUploaderResult.ResumeLayout(false);
+            this.tpCustomUploaderResponseText.ResumeLayout(false);
+            this.tpCustomUploaderResponseText.PerformLayout();
             this.gbCustomUploaders.ResumeLayout(false);
             this.tpURLShorteners.ResumeLayout(false);
             this.tcURLShorteners.ResumeLayout(false);
@@ -6068,10 +6072,6 @@ namespace ShareX.UploadersLib
             this.tpVgyme.ResumeLayout(false);
             this.tpVgyme.PerformLayout();
             this.tcUploaders.ResumeLayout(false);
-            this.tcCustomUploaderTest.ResumeLayout(false);
-            this.tpCustomUploaderResult.ResumeLayout(false);
-            this.tpCustomUploaderResponseText.ResumeLayout(false);
-            this.tpCustomUploaderResponseText.PerformLayout();
             this.ResumeLayout(false);
 
         }
