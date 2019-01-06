@@ -4101,19 +4101,6 @@ namespace ShareX.UploadersLib
             }
         }
 
-        private void btnCustomUploaderShowLastResponse_Click(object sender, EventArgs e)
-        {
-            string response = btnCustomUploaderShowLastResponse.Tag as string;
-
-            if (!string.IsNullOrEmpty(response))
-            {
-                using (ResponseForm form = new ResponseForm(response))
-                {
-                    form.ShowDialog();
-                }
-            }
-        }
-
         private void txtCustomUploaderLog_LinkClicked(object sender, LinkClickedEventArgs e)
         {
             URLHelpers.OpenURL(e.LinkText);
