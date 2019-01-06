@@ -3640,6 +3640,98 @@ namespace ShareX.UploadersLib
             CustomUploaderUpdateArgumentsState();
         }
 
+        private void txtCustomUploaderParameterName_TextChanged(object sender, EventArgs e)
+        {
+            CustomUploaderUpdateParametersState();
+        }
+
+        private void rtbCustomUploaderParameterValue_TextChanged(object sender, EventArgs e)
+        {
+            CustomUploaderSyntaxHighlight(rtbCustomUploaderParameterValue);
+        }
+
+        private void btnCustomUploaderParameterAdd_Click(object sender, EventArgs e)
+        {
+            string name = txtCustomUploaderParameterName.Text;
+
+            if (!string.IsNullOrEmpty(name))
+            {
+                CustomUploaderItem uploader = CustomUploaderGetSelected();
+                if (uploader != null)
+                {
+                    if (uploader.Parameters == null) uploader.Parameters = new Dictionary<string, string>();
+
+                    if (uploader.Parameters.ContainsKey(name))
+                    {
+                        // TODO: Translate
+                        MessageBox.Show("A parameter with the same name already exists.", "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                    else
+                    {
+                        string value = rtbCustomUploaderParameterValue.Text;
+                        lvCustomUploaderParameters.Items.Add(name).SubItems.Add(value);
+                        uploader.Parameters.Add(name, value);
+
+                        lvCustomUploaderParameters.SelectedItems.Clear();
+                        txtCustomUploaderParameterName.Text = "";
+                        rtbCustomUploaderParameterValue.Text = "";
+                        txtCustomUploaderParameterName.Focus();
+                    }
+                }
+            }
+        }
+
+        private void btnCustomUploaderParameterRemove_Click(object sender, EventArgs e)
+        {
+            if (lvCustomUploaderParameters.SelectedItems.Count > 0)
+            {
+                CustomUploaderItem uploader = CustomUploaderGetSelected();
+                if (uploader != null) uploader.Parameters.Remove(lvCustomUploaderParameters.SelectedItems[0].Text);
+
+                lvCustomUploaderParameters.SelectedItems[0].Remove();
+            }
+        }
+
+        private void btnCustomUploaderParameterUpdate_Click(object sender, EventArgs e)
+        {
+            if (lvCustomUploaderParameters.SelectedItems.Count > 0)
+            {
+                string name = txtCustomUploaderParameterName.Text;
+
+                if (!string.IsNullOrEmpty(name))
+                {
+                    string value = rtbCustomUploaderParameterValue.Text;
+
+                    CustomUploaderItem uploader = CustomUploaderGetSelected();
+                    if (uploader != null)
+                    {
+                        uploader.Parameters.Remove(lvCustomUploaderParameters.SelectedItems[0].Text);
+                        uploader.Parameters.Add(name, value);
+                    }
+
+                    lvCustomUploaderParameters.SelectedItems[0].Text = name;
+                    lvCustomUploaderParameters.SelectedItems[0].SubItems[1].Text = value;
+                }
+            }
+        }
+
+        private void lvCustomUploaderParameters_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string name = "";
+            string value = "";
+
+            if (lvCustomUploaderParameters.SelectedItems.Count > 0)
+            {
+                name = lvCustomUploaderParameters.SelectedItems[0].Text;
+                value = lvCustomUploaderParameters.SelectedItems[0].SubItems[1].Text;
+            }
+
+            txtCustomUploaderParameterName.Text = name;
+            rtbCustomUploaderParameterValue.Text = value;
+
+            CustomUploaderUpdateParametersState();
+        }
+
         private void txtCustomUploaderHeaderName_TextChanged(object sender, EventArgs e)
         {
             CustomUploaderUpdateHeadersState();

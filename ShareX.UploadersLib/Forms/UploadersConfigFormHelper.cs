@@ -984,6 +984,17 @@ namespace ShareX.UploadersLib
 
             txtCustomUploaderFileFormName.Text = uploader.FileFormName ?? "";
 
+            txtCustomUploaderParameterName.Text = "";
+            rtbCustomUploaderParameterValue.Text = "";
+            lvCustomUploaderParameters.Items.Clear();
+            if (uploader.Parameters != null)
+            {
+                foreach (KeyValuePair<string, string> arg in uploader.Parameters)
+                {
+                    lvCustomUploaderParameters.Items.Add(arg.Key).SubItems.Add(arg.Value);
+                }
+            }
+
             txtCustomUploaderHeaderName.Text = "";
             rtbCustomUploaderHeaderValue.Text = "";
             lvCustomUploaderHeaders.Items.Clear();
@@ -1074,16 +1085,22 @@ namespace ShareX.UploadersLib
             }
         }
 
-        private void CustomUploaderUpdateArgumentsState()
+        private void CustomUploaderUpdateParametersState()
         {
-            btnCustomUploaderArgumentAdd.Enabled = !string.IsNullOrEmpty(txtCustomUploaderArgumentName.Text);
-            btnCustomUploaderArgumentRemove.Enabled = btnCustomUploaderArgumentUpdate.Enabled = lvCustomUploaderArguments.SelectedItems.Count > 0;
+            btnCustomUploaderParameterAdd.Enabled = !string.IsNullOrEmpty(txtCustomUploaderParameterName.Text);
+            btnCustomUploaderParameterRemove.Enabled = btnCustomUploaderParameterUpdate.Enabled = lvCustomUploaderParameters.SelectedItems.Count > 0;
         }
 
         private void CustomUploaderUpdateHeadersState()
         {
             btnCustomUploaderHeaderAdd.Enabled = !string.IsNullOrEmpty(txtCustomUploaderHeaderName.Text);
             btnCustomUploaderHeaderRemove.Enabled = btnCustomUploaderHeaderUpdate.Enabled = lvCustomUploaderHeaders.SelectedItems.Count > 0;
+        }
+
+        private void CustomUploaderUpdateArgumentsState()
+        {
+            btnCustomUploaderArgumentAdd.Enabled = !string.IsNullOrEmpty(txtCustomUploaderArgumentName.Text);
+            btnCustomUploaderArgumentRemove.Enabled = btnCustomUploaderArgumentUpdate.Enabled = lvCustomUploaderArguments.SelectedItems.Count > 0;
         }
 
         private void CustomUploaderUpdateResponseState()

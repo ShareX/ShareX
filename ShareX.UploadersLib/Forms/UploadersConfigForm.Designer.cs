@@ -98,11 +98,6 @@ namespace ShareX.UploadersLib
             this.txtCustomUploaderArgumentName = new System.Windows.Forms.TextBox();
             this.txtCustomUploaderFileFormName = new System.Windows.Forms.TextBox();
             this.btnCustomUploaderArgumentUpdate = new System.Windows.Forms.Button();
-            this.pCustomUploaderJSON = new System.Windows.Forms.Panel();
-            this.btnCustomUploaderDataBeautify = new System.Windows.Forms.Button();
-            this.btnCustomUploaderDataMinify = new System.Windows.Forms.Button();
-            this.pCustomUploaderData = new System.Windows.Forms.Panel();
-            this.rtbCustomUploaderData = new System.Windows.Forms.RichTextBox();
             this.pCustomUploaderHeaderValue = new System.Windows.Forms.Panel();
             this.rtbCustomUploaderHeaderValue = new System.Windows.Forms.RichTextBox();
             this.lblCustomUploaderHeaders = new System.Windows.Forms.Label();
@@ -130,6 +125,11 @@ namespace ShareX.UploadersLib
             this.cbCustomUploaderRequestFormat = new System.Windows.Forms.ComboBox();
             this.lblCustomUploaderRequestMethod = new System.Windows.Forms.Label();
             this.lblCustomUploaderRequestFormat = new System.Windows.Forms.Label();
+            this.pCustomUploaderJSON = new System.Windows.Forms.Panel();
+            this.btnCustomUploaderDataBeautify = new System.Windows.Forms.Button();
+            this.btnCustomUploaderDataMinify = new System.Windows.Forms.Button();
+            this.pCustomUploaderData = new System.Windows.Forms.Panel();
+            this.rtbCustomUploaderData = new System.Windows.Forms.RichTextBox();
             this.tpCustomUploaderResponse = new System.Windows.Forms.TabPage();
             this.cbCustomUploaderResponseType = new System.Windows.Forms.ComboBox();
             this.pCustomUploaderDeletionURL = new System.Windows.Forms.Panel();
@@ -745,11 +745,11 @@ namespace ShareX.UploadersLib
             this.tpCustomUploaderRequest.SuspendLayout();
             this.pCustomUploaderMultipartFormData.SuspendLayout();
             this.pCustomUploaderArgumentValue.SuspendLayout();
-            this.pCustomUploaderJSON.SuspendLayout();
-            this.pCustomUploaderData.SuspendLayout();
             this.pCustomUploaderHeaderValue.SuspendLayout();
             this.pCustomUploaderParameterValue.SuspendLayout();
             this.pCustomUploaderRequestURL.SuspendLayout();
+            this.pCustomUploaderJSON.SuspendLayout();
+            this.pCustomUploaderData.SuspendLayout();
             this.tpCustomUploaderResponse.SuspendLayout();
             this.pCustomUploaderDeletionURL.SuspendLayout();
             this.pCustomUploaderThumbnailURL.SuspendLayout();
@@ -1211,43 +1211,6 @@ namespace ShareX.UploadersLib
             this.btnCustomUploaderArgumentUpdate.UseVisualStyleBackColor = true;
             this.btnCustomUploaderArgumentUpdate.Click += new System.EventHandler(this.btnCustomUploaderArgUpdate_Click);
             // 
-            // pCustomUploaderJSON
-            // 
-            this.pCustomUploaderJSON.Controls.Add(this.btnCustomUploaderDataBeautify);
-            this.pCustomUploaderJSON.Controls.Add(this.btnCustomUploaderDataMinify);
-            this.pCustomUploaderJSON.Controls.Add(this.pCustomUploaderData);
-            resources.ApplyResources(this.pCustomUploaderJSON, "pCustomUploaderJSON");
-            this.pCustomUploaderJSON.Name = "pCustomUploaderJSON";
-            // 
-            // btnCustomUploaderDataBeautify
-            // 
-            resources.ApplyResources(this.btnCustomUploaderDataBeautify, "btnCustomUploaderDataBeautify");
-            this.btnCustomUploaderDataBeautify.Name = "btnCustomUploaderDataBeautify";
-            this.btnCustomUploaderDataBeautify.UseVisualStyleBackColor = true;
-            this.btnCustomUploaderDataBeautify.Click += new System.EventHandler(this.btnCustomUploaderDataBeautify_Click);
-            // 
-            // btnCustomUploaderDataMinify
-            // 
-            resources.ApplyResources(this.btnCustomUploaderDataMinify, "btnCustomUploaderDataMinify");
-            this.btnCustomUploaderDataMinify.Name = "btnCustomUploaderDataMinify";
-            this.btnCustomUploaderDataMinify.UseVisualStyleBackColor = true;
-            this.btnCustomUploaderDataMinify.Click += new System.EventHandler(this.btnCustomUploaderDataMinify_Click);
-            // 
-            // pCustomUploaderData
-            // 
-            this.pCustomUploaderData.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pCustomUploaderData.Controls.Add(this.rtbCustomUploaderData);
-            resources.ApplyResources(this.pCustomUploaderData, "pCustomUploaderData");
-            this.pCustomUploaderData.Name = "pCustomUploaderData";
-            // 
-            // rtbCustomUploaderData
-            // 
-            this.rtbCustomUploaderData.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.rtbCustomUploaderData.DetectUrls = false;
-            resources.ApplyResources(this.rtbCustomUploaderData, "rtbCustomUploaderData");
-            this.rtbCustomUploaderData.Name = "rtbCustomUploaderData";
-            this.rtbCustomUploaderData.TextChanged += new System.EventHandler(this.rtbCustomUploaderData_TextChanged);
-            // 
             // pCustomUploaderHeaderValue
             // 
             this.pCustomUploaderHeaderValue.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -1299,6 +1262,7 @@ namespace ShareX.UploadersLib
             this.rtbCustomUploaderParameterValue.DetectUrls = false;
             resources.ApplyResources(this.rtbCustomUploaderParameterValue, "rtbCustomUploaderParameterValue");
             this.rtbCustomUploaderParameterValue.Name = "rtbCustomUploaderParameterValue";
+            this.rtbCustomUploaderParameterValue.TextChanged += new System.EventHandler(this.rtbCustomUploaderParameterValue_TextChanged);
             // 
             // btnCustomUploaderHeaderAdd
             // 
@@ -1312,6 +1276,7 @@ namespace ShareX.UploadersLib
             resources.ApplyResources(this.btnCustomUploaderParameterUpdate, "btnCustomUploaderParameterUpdate");
             this.btnCustomUploaderParameterUpdate.Name = "btnCustomUploaderParameterUpdate";
             this.btnCustomUploaderParameterUpdate.UseVisualStyleBackColor = true;
+            this.btnCustomUploaderParameterUpdate.Click += new System.EventHandler(this.btnCustomUploaderParameterUpdate_Click);
             // 
             // btnCustomUploaderHeaderRemove
             // 
@@ -1324,6 +1289,7 @@ namespace ShareX.UploadersLib
             // 
             resources.ApplyResources(this.txtCustomUploaderParameterName, "txtCustomUploaderParameterName");
             this.txtCustomUploaderParameterName.Name = "txtCustomUploaderParameterName";
+            this.txtCustomUploaderParameterName.TextChanged += new System.EventHandler(this.txtCustomUploaderParameterName_TextChanged);
             // 
             // lvCustomUploaderHeaders
             // 
@@ -1357,12 +1323,14 @@ namespace ShareX.UploadersLib
             resources.ApplyResources(this.btnCustomUploaderParameterAdd, "btnCustomUploaderParameterAdd");
             this.btnCustomUploaderParameterAdd.Name = "btnCustomUploaderParameterAdd";
             this.btnCustomUploaderParameterAdd.UseVisualStyleBackColor = true;
+            this.btnCustomUploaderParameterAdd.Click += new System.EventHandler(this.btnCustomUploaderParameterAdd_Click);
             // 
             // btnCustomUploaderParameterRemove
             // 
             resources.ApplyResources(this.btnCustomUploaderParameterRemove, "btnCustomUploaderParameterRemove");
             this.btnCustomUploaderParameterRemove.Name = "btnCustomUploaderParameterRemove";
             this.btnCustomUploaderParameterRemove.UseVisualStyleBackColor = true;
+            this.btnCustomUploaderParameterRemove.Click += new System.EventHandler(this.btnCustomUploaderParameterRemove_Click);
             // 
             // lvCustomUploaderParameters
             // 
@@ -1381,6 +1349,7 @@ namespace ShareX.UploadersLib
             this.lvCustomUploaderParameters.Name = "lvCustomUploaderParameters";
             this.lvCustomUploaderParameters.UseCompatibleStateImageBehavior = false;
             this.lvCustomUploaderParameters.View = System.Windows.Forms.View.Details;
+            this.lvCustomUploaderParameters.SelectedIndexChanged += new System.EventHandler(this.lvCustomUploaderParameters_SelectedIndexChanged);
             // 
             // columnHeader1
             // 
@@ -1436,6 +1405,43 @@ namespace ShareX.UploadersLib
             // 
             resources.ApplyResources(this.lblCustomUploaderRequestFormat, "lblCustomUploaderRequestFormat");
             this.lblCustomUploaderRequestFormat.Name = "lblCustomUploaderRequestFormat";
+            // 
+            // pCustomUploaderJSON
+            // 
+            this.pCustomUploaderJSON.Controls.Add(this.btnCustomUploaderDataBeautify);
+            this.pCustomUploaderJSON.Controls.Add(this.btnCustomUploaderDataMinify);
+            this.pCustomUploaderJSON.Controls.Add(this.pCustomUploaderData);
+            resources.ApplyResources(this.pCustomUploaderJSON, "pCustomUploaderJSON");
+            this.pCustomUploaderJSON.Name = "pCustomUploaderJSON";
+            // 
+            // btnCustomUploaderDataBeautify
+            // 
+            resources.ApplyResources(this.btnCustomUploaderDataBeautify, "btnCustomUploaderDataBeautify");
+            this.btnCustomUploaderDataBeautify.Name = "btnCustomUploaderDataBeautify";
+            this.btnCustomUploaderDataBeautify.UseVisualStyleBackColor = true;
+            this.btnCustomUploaderDataBeautify.Click += new System.EventHandler(this.btnCustomUploaderDataBeautify_Click);
+            // 
+            // btnCustomUploaderDataMinify
+            // 
+            resources.ApplyResources(this.btnCustomUploaderDataMinify, "btnCustomUploaderDataMinify");
+            this.btnCustomUploaderDataMinify.Name = "btnCustomUploaderDataMinify";
+            this.btnCustomUploaderDataMinify.UseVisualStyleBackColor = true;
+            this.btnCustomUploaderDataMinify.Click += new System.EventHandler(this.btnCustomUploaderDataMinify_Click);
+            // 
+            // pCustomUploaderData
+            // 
+            this.pCustomUploaderData.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pCustomUploaderData.Controls.Add(this.rtbCustomUploaderData);
+            resources.ApplyResources(this.pCustomUploaderData, "pCustomUploaderData");
+            this.pCustomUploaderData.Name = "pCustomUploaderData";
+            // 
+            // rtbCustomUploaderData
+            // 
+            this.rtbCustomUploaderData.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.rtbCustomUploaderData.DetectUrls = false;
+            resources.ApplyResources(this.rtbCustomUploaderData, "rtbCustomUploaderData");
+            this.rtbCustomUploaderData.Name = "rtbCustomUploaderData";
+            this.rtbCustomUploaderData.TextChanged += new System.EventHandler(this.rtbCustomUploaderData_TextChanged);
             // 
             // tpCustomUploaderResponse
             // 
@@ -5896,11 +5902,11 @@ namespace ShareX.UploadersLib
             this.pCustomUploaderMultipartFormData.ResumeLayout(false);
             this.pCustomUploaderMultipartFormData.PerformLayout();
             this.pCustomUploaderArgumentValue.ResumeLayout(false);
-            this.pCustomUploaderJSON.ResumeLayout(false);
-            this.pCustomUploaderData.ResumeLayout(false);
             this.pCustomUploaderHeaderValue.ResumeLayout(false);
             this.pCustomUploaderParameterValue.ResumeLayout(false);
             this.pCustomUploaderRequestURL.ResumeLayout(false);
+            this.pCustomUploaderJSON.ResumeLayout(false);
+            this.pCustomUploaderData.ResumeLayout(false);
             this.tpCustomUploaderResponse.ResumeLayout(false);
             this.tpCustomUploaderResponse.PerformLayout();
             this.pCustomUploaderDeletionURL.ResumeLayout(false);

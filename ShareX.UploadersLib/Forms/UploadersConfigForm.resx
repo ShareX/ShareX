@@ -731,24 +731,6 @@ when you made the application key.</value>
   <data name="&gt;&gt;pCustomUploaderMultipartFormData.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="rtbCustomUploaderHeaderValue.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="rtbCustomUploaderHeaderValue.Location" type="System.Drawing.Point, System.Drawing">
-    <value>2, 2</value>
-  </data>
-  <data name="rtbCustomUploaderHeaderValue.Multiline" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="rtbCustomUploaderHeaderValue.Size" type="System.Drawing.Size, System.Drawing">
-    <value>106, 14</value>
-  </data>
-  <data name="rtbCustomUploaderHeaderValue.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="rtbCustomUploaderHeaderValue.Text" xml:space="preserve">
-    <value />
-  </data>
   <data name="&gt;&gt;rtbCustomUploaderHeaderValue.Name" xml:space="preserve">
     <value>rtbCustomUploaderHeaderValue</value>
   </data>
@@ -893,6 +875,24 @@ when you made the application key.</value>
   <data name="&gt;&gt;txtCustomUploaderHeaderName.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
+  <data name="rtbCustomUploaderParameterValue.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="rtbCustomUploaderParameterValue.Location" type="System.Drawing.Point, System.Drawing">
+    <value>2, 2</value>
+  </data>
+  <data name="rtbCustomUploaderParameterValue.Multiline" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="rtbCustomUploaderParameterValue.Size" type="System.Drawing.Size, System.Drawing">
+    <value>106, 14</value>
+  </data>
+  <data name="rtbCustomUploaderParameterValue.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="rtbCustomUploaderParameterValue.Text" xml:space="preserve">
+    <value />
+  </data>
   <data name="&gt;&gt;rtbCustomUploaderParameterValue.Name" xml:space="preserve">
     <value>rtbCustomUploaderParameterValue</value>
   </data>
@@ -1031,18 +1031,6 @@ when you made the application key.</value>
   <data name="&gt;&gt;txtCustomUploaderParameterName.ZOrder" xml:space="preserve">
     <value>10</value>
   </data>
-  <data name="chCustomUploaderHeadersName.Text" xml:space="preserve">
-    <value>Name</value>
-  </data>
-  <data name="chCustomUploaderHeadersName.Width" type="System.Int32, mscorlib">
-    <value>114</value>
-  </data>
-  <data name="chCustomUploaderHeadersValue.Text" xml:space="preserve">
-    <value>Value</value>
-  </data>
-  <data name="chCustomUploaderHeadersValue.Width" type="System.Int32, mscorlib">
-    <value>114</value>
-  </data>
   <data name="lvCustomUploaderHeaders.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 336</value>
   </data>
@@ -1117,18 +1105,6 @@ when you made the application key.</value>
   </data>
   <data name="&gt;&gt;btnCustomUploaderParameterRemove.ZOrder" xml:space="preserve">
     <value>13</value>
-  </data>
-  <data name="columnHeader1.Text" xml:space="preserve">
-    <value>Name</value>
-  </data>
-  <data name="columnHeader1.Width" type="System.Int32, mscorlib">
-    <value>114</value>
-  </data>
-  <data name="columnHeader2.Text" xml:space="preserve">
-    <value>Value</value>
-  </data>
-  <data name="columnHeader2.Width" type="System.Int32, mscorlib">
-    <value>114</value>
   </data>
   <data name="lvCustomUploaderParameters.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 128</value>
@@ -2819,6 +2795,90 @@ when you made the application key.</value>
   <data name="&gt;&gt;btnCustomUploaderArgumentUpdate.ZOrder" xml:space="preserve">
     <value>8</value>
   </data>
+  <data name="rtbCustomUploaderHeaderValue.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="rtbCustomUploaderHeaderValue.Location" type="System.Drawing.Point, System.Drawing">
+    <value>2, 2</value>
+  </data>
+  <data name="rtbCustomUploaderHeaderValue.Multiline" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="rtbCustomUploaderHeaderValue.Size" type="System.Drawing.Size, System.Drawing">
+    <value>106, 14</value>
+  </data>
+  <data name="rtbCustomUploaderHeaderValue.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="rtbCustomUploaderHeaderValue.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;rtbCustomUploaderHeaderValue.Name" xml:space="preserve">
+    <value>rtbCustomUploaderHeaderValue</value>
+  </data>
+  <data name="&gt;&gt;rtbCustomUploaderHeaderValue.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rtbCustomUploaderHeaderValue.Parent" xml:space="preserve">
+    <value>pCustomUploaderHeaderValue</value>
+  </data>
+  <data name="&gt;&gt;rtbCustomUploaderHeaderValue.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="chCustomUploaderHeadersName.Text" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="chCustomUploaderHeadersName.Width" type="System.Int32, mscorlib">
+    <value>114</value>
+  </data>
+  <data name="chCustomUploaderHeadersValue.Text" xml:space="preserve">
+    <value>Value</value>
+  </data>
+  <data name="chCustomUploaderHeadersValue.Width" type="System.Int32, mscorlib">
+    <value>114</value>
+  </data>
+  <data name="columnHeader1.Text" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="columnHeader1.Width" type="System.Int32, mscorlib">
+    <value>114</value>
+  </data>
+  <data name="columnHeader2.Text" xml:space="preserve">
+    <value>Value</value>
+  </data>
+  <data name="columnHeader2.Width" type="System.Int32, mscorlib">
+    <value>114</value>
+  </data>
+  <data name="rtbCustomUploaderRequestURL.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="rtbCustomUploaderRequestURL.Location" type="System.Drawing.Point, System.Drawing">
+    <value>2, 2</value>
+  </data>
+  <data name="rtbCustomUploaderRequestURL.Multiline" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="rtbCustomUploaderRequestURL.Size" type="System.Drawing.Size, System.Drawing">
+    <value>402, 14</value>
+  </data>
+  <data name="rtbCustomUploaderRequestURL.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="rtbCustomUploaderRequestURL.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;rtbCustomUploaderRequestURL.Name" xml:space="preserve">
+    <value>rtbCustomUploaderRequestURL</value>
+  </data>
+  <data name="&gt;&gt;rtbCustomUploaderRequestURL.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rtbCustomUploaderRequestURL.Parent" xml:space="preserve">
+    <value>pCustomUploaderRequestURL</value>
+  </data>
+  <data name="&gt;&gt;rtbCustomUploaderRequestURL.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="btnCustomUploaderDataBeautify.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -2937,66 +2997,6 @@ when you made the application key.</value>
     <value>pCustomUploaderData</value>
   </data>
   <data name="&gt;&gt;rtbCustomUploaderData.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="rtbCustomUploaderParameterValue.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="rtbCustomUploaderParameterValue.Location" type="System.Drawing.Point, System.Drawing">
-    <value>2, 2</value>
-  </data>
-  <data name="rtbCustomUploaderParameterValue.Multiline" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="rtbCustomUploaderParameterValue.Size" type="System.Drawing.Size, System.Drawing">
-    <value>106, 14</value>
-  </data>
-  <data name="rtbCustomUploaderParameterValue.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="rtbCustomUploaderParameterValue.Text" xml:space="preserve">
-    <value />
-  </data>
-  <data name="&gt;&gt;rtbCustomUploaderParameterValue.Name" xml:space="preserve">
-    <value>rtbCustomUploaderParameterValue</value>
-  </data>
-  <data name="&gt;&gt;rtbCustomUploaderParameterValue.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;rtbCustomUploaderParameterValue.Parent" xml:space="preserve">
-    <value>pCustomUploaderParameterValue</value>
-  </data>
-  <data name="&gt;&gt;rtbCustomUploaderParameterValue.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="rtbCustomUploaderRequestURL.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="rtbCustomUploaderRequestURL.Location" type="System.Drawing.Point, System.Drawing">
-    <value>2, 2</value>
-  </data>
-  <data name="rtbCustomUploaderRequestURL.Multiline" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="rtbCustomUploaderRequestURL.Size" type="System.Drawing.Size, System.Drawing">
-    <value>402, 14</value>
-  </data>
-  <data name="rtbCustomUploaderRequestURL.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="rtbCustomUploaderRequestURL.Text" xml:space="preserve">
-    <value />
-  </data>
-  <data name="&gt;&gt;rtbCustomUploaderRequestURL.Name" xml:space="preserve">
-    <value>rtbCustomUploaderRequestURL</value>
-  </data>
-  <data name="&gt;&gt;rtbCustomUploaderRequestURL.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;rtbCustomUploaderRequestURL.Parent" xml:space="preserve">
-    <value>pCustomUploaderRequestURL</value>
-  </data>
-  <data name="&gt;&gt;rtbCustomUploaderRequestURL.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="cbCustomUploaderResponseType.Location" type="System.Drawing.Point, System.Drawing">
