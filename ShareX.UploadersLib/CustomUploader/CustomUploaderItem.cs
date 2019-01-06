@@ -237,6 +237,40 @@ namespace ShareX.UploadersLib
                 else
                 {
                     RequestFormat = CustomUploaderRequestFormat.URLQueryString;
+
+                    if (Arguments != null)
+                    {
+                        Parameters = new Dictionary<string, string>(Arguments);
+                        Arguments = null;
+                    }
+                }
+
+                NameValueCollection nvc = URLHelpers.ParseQueryString(RequestURL);
+                if (nvc != null && nvc.Count > 0)
+                {
+                    if (Parameters == null)
+                    {
+                        Parameters = new Dictionary<string, string>();
+                    }
+
+                    foreach (string key in nvc)
+                    {
+                        string value = nvc[key];
+
+                        if (key == null)
+                        {
+                            if (!Parameters.ContainsKey(value))
+                            {
+                                Parameters.Add(value, "");
+                            }
+                        }
+                        else if (!Parameters.ContainsKey(key))
+                        {
+                            Parameters.Add(key, value);
+                        }
+                    }
+
+                    RequestURL = URLHelpers.RemoveQueryString(RequestURL);
                 }
             }
 

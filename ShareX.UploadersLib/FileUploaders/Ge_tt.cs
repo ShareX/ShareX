@@ -87,7 +87,7 @@ namespace ShareX.UploadersLib.FileUploaders
             Dictionary<string, string> args = new Dictionary<string, string>();
             args.Add("accesstoken", accessToken);
 
-            string url = URLHelpers.CreateQuery(URLHelpers.CombineURL(APIURL, "shares/create"), args);
+            string url = URLHelpers.CreateQueryString(URLHelpers.CombineURL(APIURL, "shares/create"), args);
             string response = SendRequest(HttpMethod.POST, url);
 
             return JsonConvert.DeserializeObject<Ge_ttShare>(response);

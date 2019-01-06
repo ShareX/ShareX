@@ -26,6 +26,7 @@
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.Diagnostics;
 using System.Globalization;
 using System.Linq;
@@ -439,7 +440,7 @@ namespace ShareX.HelpersLib
             return url;
         }
 
-        public static string CreateQuery(Dictionary<string, string> args, bool customEncoding = false)
+        public static string CreateQueryString(Dictionary<string, string> args, bool customEncoding = false)
         {
             if (args != null && args.Count > 0)
             {
@@ -449,9 +450,9 @@ namespace ShareX.HelpersLib
             return "";
         }
 
-        public static string CreateQuery(string url, Dictionary<string, string> args, bool customEncoding = false)
+        public static string CreateQueryString(string url, Dictionary<string, string> args, bool customEncoding = false)
         {
-            string query = CreateQuery(args, customEncoding);
+            string query = CreateQueryString(args, customEncoding);
 
             if (!string.IsNullOrEmpty(query))
             {
@@ -461,7 +462,7 @@ namespace ShareX.HelpersLib
             return url;
         }
 
-        public static string RemoveQuery(string url)
+        public static string RemoveQueryString(string url)
         {
             if (!string.IsNullOrEmpty(url))
             {
@@ -474,6 +475,22 @@ namespace ShareX.HelpersLib
             }
 
             return url;
+        }
+
+        public static NameValueCollection ParseQueryString(string url)
+        {
+            if (!string.IsNullOrEmpty(url))
+            {
+                int index = url.IndexOf("?");
+
+                if (index > -1)
+                {
+                    string query = url.Substring(index + 1);
+                    return HttpUtility.ParseQueryString(query);
+                }
+            }
+
+            return null;
         }
 
         public static string BuildUri(string root, string path, string query = null)
