@@ -104,26 +104,30 @@ namespace ShareX.UploadersLib
             CodeMenu.Create<CodeMenuEntryFilename>(txtB2UploadPath, CodeMenuEntryFilename.n, CodeMenuEntryFilename.t, CodeMenuEntryFilename.pn);
             CodeMenu.Create<CodeMenuEntryFilename>(txtB2CustomUrl, CodeMenuEntryFilename.n, CodeMenuEntryFilename.t, CodeMenuEntryFilename.pn);
 
-            CodeMenuItem codeMenuItemInput = new CodeMenuItem("$input$", "Text/URL input");
-            CodeMenuItem codeMenuItemFilename = new CodeMenuItem("$filename$", "File name");
-
-            CodeMenu.Create<CodeMenuEntryFilename>(rtbCustomUploaderArgumentValue,
-                new CodeMenuEntryFilename[] { CodeMenuEntryFilename.n, CodeMenuEntryFilename.t, CodeMenuEntryFilename.pn },
-                new CodeMenuItem[] { codeMenuItemInput, codeMenuItemFilename });
-            CodeMenu.Create<CodeMenuEntryFilename>(rtbCustomUploaderHeaderValue,
-                new CodeMenuEntryFilename[] { CodeMenuEntryFilename.n, CodeMenuEntryFilename.t, CodeMenuEntryFilename.pn },
-                new CodeMenuItem[] { codeMenuItemInput, codeMenuItemFilename });
-
             // FTP
             cbFTPURLPathProtocol.Items.AddRange(Helpers.GetEnumDescriptions<BrowserProtocol>());
             cbFTPSEncryption.Items.AddRange(Enum.GetNames(typeof(FTPSEncryption)));
             eiFTP.ObjectType = typeof(FTPAccount);
 
             // Custom uploader
+            CodeMenuItem codeMenuItemInput = new CodeMenuItem("$input$", "Text/URL input");
+            CodeMenuItem codeMenuItemFilename = new CodeMenuItem("$filename$", "File name");
+
+            CodeMenu.Create<CodeMenuEntryFilename>(rtbCustomUploaderParameterValue,
+                new CodeMenuEntryFilename[] { CodeMenuEntryFilename.n, CodeMenuEntryFilename.t, CodeMenuEntryFilename.pn },
+                new CodeMenuItem[] { codeMenuItemInput, codeMenuItemFilename });
+            CodeMenu.Create<CodeMenuEntryFilename>(rtbCustomUploaderHeaderValue,
+                new CodeMenuEntryFilename[] { CodeMenuEntryFilename.n, CodeMenuEntryFilename.t, CodeMenuEntryFilename.pn },
+                new CodeMenuItem[] { codeMenuItemInput, codeMenuItemFilename });
+            CodeMenu.Create<CodeMenuEntryFilename>(rtbCustomUploaderArgumentValue,
+                new CodeMenuEntryFilename[] { CodeMenuEntryFilename.n, CodeMenuEntryFilename.t, CodeMenuEntryFilename.pn },
+                new CodeMenuItem[] { codeMenuItemInput, codeMenuItemFilename });
+
             rtbCustomUploaderRequestURL.AddContextMenu();
-            rtbCustomUploaderData.AddContextMenu();
-            rtbCustomUploaderArgumentValue.AddContextMenu();
+            rtbCustomUploaderParameterValue.AddContextMenu();
             rtbCustomUploaderHeaderValue.AddContextMenu();
+            rtbCustomUploaderArgumentValue.AddContextMenu();
+            rtbCustomUploaderData.AddContextMenu();
             rtbCustomUploaderURL.AddContextMenu();
             rtbCustomUploaderThumbnailURL.AddContextMenu();
             rtbCustomUploaderDeletionURL.AddContextMenu();
