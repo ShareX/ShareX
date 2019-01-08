@@ -966,7 +966,7 @@ namespace ShareX.UploadersLib
             cbCustomUploaderRequestMethod.SelectedIndex = (int)uploader.RequestType;
             rtbCustomUploaderRequestURL.Text = uploader.RequestURL ?? "";
             CustomUploaderSyntaxHighlight(rtbCustomUploaderRequestURL);
-            cbCustomUploaderRequestFormat.SelectedIndex = (int)uploader.RequestFormat;
+            cbCustomUploaderRequestFormat.SelectedIndex = (int)uploader.Body;
 
             rtbCustomUploaderData.Text = uploader.Data ?? "";
             CustomUploaderSyntaxHighlight(rtbCustomUploaderData);
@@ -1057,10 +1057,10 @@ namespace ShareX.UploadersLib
             CustomUploaderItem uploader = CustomUploaderGetSelected();
             if (uploader != null)
             {
-                pCustomUploaderBodyArguments.Visible = uploader.RequestFormat == CustomUploaderRequestFormat.MultipartFormData ||
-                    uploader.RequestFormat == CustomUploaderRequestFormat.FormURLEncoded;
-                pCustomUploaderBodyData.Visible = uploader.RequestFormat == CustomUploaderRequestFormat.JSON;
-                lblCustomUploaderFileFormName.Visible = txtCustomUploaderFileFormName.Visible = uploader.RequestFormat == CustomUploaderRequestFormat.MultipartFormData;
+                pCustomUploaderBodyArguments.Visible = uploader.Body == CustomUploaderBody.MultipartFormData ||
+                    uploader.Body == CustomUploaderBody.FormURLEncoded;
+                pCustomUploaderBodyData.Visible = uploader.Body == CustomUploaderBody.JSON;
+                lblCustomUploaderFileFormName.Visible = txtCustomUploaderFileFormName.Visible = uploader.Body == CustomUploaderBody.MultipartFormData;
             }
         }
 

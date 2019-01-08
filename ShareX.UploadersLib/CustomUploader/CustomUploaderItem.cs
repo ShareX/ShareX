@@ -61,22 +61,24 @@ namespace ShareX.UploadersLib
 
         public bool ShouldSerializeHeaders() => Headers != null && Headers.Count > 0;
 
-        public CustomUploaderRequestFormat RequestFormat { get; set; } = CustomUploaderRequestFormat.MultipartFormData;
-
-        [DefaultValue("")]
-        public string FileFormName { get; set; }
-
-        public bool ShouldSerializeFileFormName() => !string.IsNullOrEmpty(FileFormName) && RequestFormat == CustomUploaderRequestFormat.MultipartFormData;
-
-        [DefaultValue("")]
-        public string Data { get; set; }
-
-        public bool ShouldSerializeData() => RequestFormat == CustomUploaderRequestFormat.JSON;
+        [DefaultValue(CustomUploaderBody.None)]
+        public CustomUploaderBody Body { get; set; } = CustomUploaderBody.MultipartFormData;
 
         [DefaultValue(null)]
         public Dictionary<string, string> Arguments { get; set; }
 
-        public bool ShouldSerializeArguments() => Arguments != null && Arguments.Count > 0;
+        public bool ShouldSerializeArguments() => (Body == CustomUploaderBody.MultipartFormData || Body == CustomUploaderBody.FormURLEncoded) &&
+            Arguments != null && Arguments.Count > 0;
+
+        [DefaultValue("")]
+        public string FileFormName { get; set; }
+
+        public bool ShouldSerializeFileFormName() => Body == CustomUploaderBody.MultipartFormData && !string.IsNullOrEmpty(FileFormName);
+
+        [DefaultValue("")]
+        public string Data { get; set; }
+
+        public bool ShouldSerializeData() => Body == CustomUploaderBody.JSON && !string.IsNullOrEmpty(Data);
 
         [DefaultValue(ResponseType.Text)]
         public ResponseType ResponseType { get; set; }
@@ -160,7 +162,7 @@ namespace ShareX.UploadersLib
         {
             CustomUploaderParser parser = new CustomUploaderParser(input);
             parser.UseNameParser = true;
-            parser.JSONEncode = RequestFormat == CustomUploaderRequestFormat.JSON;
+            parser.JSONEncode = Body == CustomUploaderBody.JSON;
 
             return parser.Parse(Data);
         }
@@ -254,11 +256,11 @@ namespace ShareX.UploadersLib
             {
                 if (RequestType == HttpMethod.POST)
                 {
-                    RequestFormat = CustomUploaderRequestFormat.MultipartFormData;
+                    Body = CustomUploaderBody.MultipartFormData;
                 }
                 else
                 {
-                    RequestFormat = CustomUploaderRequestFormat.None;
+                    Body = CustomUploaderBody.None;
 
                     if (Arguments != null)
                     {

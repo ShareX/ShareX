@@ -78,28 +78,28 @@ namespace ShareX.UploadersLib.URLShorteners
             UploadResult result = new UploadResult { URL = url };
             CustomUploaderInput input = new CustomUploaderInput("", url);
 
-            if (uploader.RequestFormat == CustomUploaderRequestFormat.None)
+            if (uploader.Body == CustomUploaderBody.None)
             {
                 result.Response = SendRequest(uploader.RequestType, uploader.GetRequestURL(input), null, uploader.GetHeaders(input), null, uploader.ResponseType);
             }
-            else if (uploader.RequestFormat == CustomUploaderRequestFormat.MultipartFormData)
+            else if (uploader.Body == CustomUploaderBody.MultipartFormData)
             {
                 result.Response = SendRequestMultiPart(uploader.GetRequestURL(input), uploader.GetArguments(input), uploader.GetHeaders(input), null,
                     uploader.ResponseType, uploader.RequestType);
             }
-            else if (uploader.RequestFormat == CustomUploaderRequestFormat.JSON)
+            else if (uploader.Body == CustomUploaderBody.JSON)
             {
                 result.Response = SendRequest(uploader.RequestType, uploader.GetRequestURL(input), uploader.GetData(input), UploadHelpers.ContentTypeJSON,
                     null, uploader.GetHeaders(input), null, uploader.ResponseType);
             }
-            else if (uploader.RequestFormat == CustomUploaderRequestFormat.FormURLEncoded)
+            else if (uploader.Body == CustomUploaderBody.FormURLEncoded)
             {
                 result.Response = SendRequestURLEncoded(uploader.RequestType, uploader.GetRequestURL(input), uploader.GetArguments(input),
                     uploader.GetHeaders(input), null, uploader.ResponseType);
             }
             else
             {
-                throw new Exception("Unsupported request format: " + uploader.RequestFormat);
+                throw new Exception("Unsupported request format: " + uploader.Body);
             }
 
             try

@@ -289,7 +289,7 @@ namespace ShareX.UploadersLib
         LocalFilePathUri
     }
 
-    public enum CustomUploaderRequestFormat
+    public enum CustomUploaderBody
     {
         [Description("None")]
         None,
