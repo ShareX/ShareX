@@ -183,7 +183,7 @@ namespace ShareX.UploadersLib.FileUploaders
                         string link = data.url;
                         if (PreviewLink)
                         {
-                            link += Helpers.IsImageFile(path) ? "/preview" : "/download";
+                            link += Helpers.IsImageFile(path) ? "/preview" : (IsCompatibility81 ? "/" : "&") + "download";
                         }
                         else if (DirectLink)
                         {
