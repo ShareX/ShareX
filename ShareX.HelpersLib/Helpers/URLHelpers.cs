@@ -519,7 +519,7 @@ namespace ShareX.HelpersLib
             {
                 int index = url.IndexOf("?");
 
-                if (index > -1)
+                if (index > -1 && index + 1 < url.Length)
                 {
                     string query = url.Substring(index + 1);
                     return HttpUtility.ParseQueryString(query);

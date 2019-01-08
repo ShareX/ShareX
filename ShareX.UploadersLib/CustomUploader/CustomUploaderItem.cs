@@ -128,10 +128,13 @@ namespace ShareX.UploadersLib
                 throw new Exception(Resources.CustomUploaderItem_GetRequestURL_RequestURLMustBeConfigured);
             }
 
-            string url = URLHelpers.FixPrefix(RequestURL);
+            CustomUploaderParser parser = new CustomUploaderParser(input);
+            parser.URLEncode = true;
+            string url = parser.Parse(RequestURL);
+
+            url = URLHelpers.FixPrefix(url);
 
             Dictionary<string, string> parameters = GetParameters(input);
-
             return URLHelpers.CreateQueryString(url, parameters);
         }
 
@@ -245,6 +248,8 @@ namespace ShareX.UploadersLib
 
         public void CheckBackwardCompatibility()
         {
+            CheckRequestURL();
+
             if (string.IsNullOrEmpty(Version) || Helpers.CompareVersion(Version, "12.3.1") <= 0)
             {
                 if (RequestType == HttpMethod.POST)
@@ -261,8 +266,19 @@ namespace ShareX.UploadersLib
                         Arguments = null;
                     }
                 }
+            }
+
+            Version = Application.ProductVersion;
+        }
+
+        private void CheckRequestURL()
+        {
+            if (!string.IsNullOrEmpty(RequestURL))
+            {
+                RequestURL = URLHelpers.FixPrefix(RequestURL);
 
                 NameValueCollection nvc = URLHelpers.ParseQueryString(RequestURL);
+
                 if (nvc != null && nvc.Count > 0)
                 {
                     if (Parameters == null)
@@ -290,8 +306,6 @@ namespace ShareX.UploadersLib
                     RequestURL = URLHelpers.RemoveQueryString(RequestURL);
                 }
             }
-
-            Version = Application.ProductVersion;
         }
     }
 }

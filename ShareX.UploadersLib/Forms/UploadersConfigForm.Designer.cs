@@ -1115,8 +1115,8 @@ namespace ShareX.UploadersLib
             this.tpCustomUploaderRequest.Controls.Add(this.cbCustomUploaderRequestFormat);
             this.tpCustomUploaderRequest.Controls.Add(this.lblCustomUploaderRequestMethod);
             this.tpCustomUploaderRequest.Controls.Add(this.lblCustomUploaderRequestFormat);
-            this.tpCustomUploaderRequest.Controls.Add(this.pCustomUploaderBodyData);
             this.tpCustomUploaderRequest.Controls.Add(this.pCustomUploaderBodyArguments);
+            this.tpCustomUploaderRequest.Controls.Add(this.pCustomUploaderBodyData);
             resources.ApplyResources(this.tpCustomUploaderRequest, "tpCustomUploaderRequest");
             this.tpCustomUploaderRequest.Name = "tpCustomUploaderRequest";
             this.tpCustomUploaderRequest.UseVisualStyleBackColor = true;

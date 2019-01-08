@@ -1427,135 +1427,6 @@ when you made the application key.</value>
   <data name="&gt;&gt;lblCustomUploaderRequestFormat.ZOrder" xml:space="preserve">
     <value>19</value>
   </data>
-  <data name="btnCustomUploaderDataBeautify.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btnCustomUploaderDataBeautify.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 208</value>
-  </data>
-  <data name="btnCustomUploaderDataBeautify.Size" type="System.Drawing.Size, System.Drawing">
-    <value>112, 24</value>
-  </data>
-  <data name="btnCustomUploaderDataBeautify.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="btnCustomUploaderDataBeautify.Text" xml:space="preserve">
-    <value>Beautify</value>
-  </data>
-  <data name="&gt;&gt;btnCustomUploaderDataBeautify.Name" xml:space="preserve">
-    <value>btnCustomUploaderDataBeautify</value>
-  </data>
-  <data name="&gt;&gt;btnCustomUploaderDataBeautify.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnCustomUploaderDataBeautify.Parent" xml:space="preserve">
-    <value>pCustomUploaderBodyData</value>
-  </data>
-  <data name="&gt;&gt;btnCustomUploaderDataBeautify.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="btnCustomUploaderDataMinify.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btnCustomUploaderDataMinify.Location" type="System.Drawing.Point, System.Drawing">
-    <value>120, 208</value>
-  </data>
-  <data name="btnCustomUploaderDataMinify.Size" type="System.Drawing.Size, System.Drawing">
-    <value>112, 24</value>
-  </data>
-  <data name="btnCustomUploaderDataMinify.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="btnCustomUploaderDataMinify.Text" xml:space="preserve">
-    <value>Minify</value>
-  </data>
-  <data name="&gt;&gt;btnCustomUploaderDataMinify.Name" xml:space="preserve">
-    <value>btnCustomUploaderDataMinify</value>
-  </data>
-  <data name="&gt;&gt;btnCustomUploaderDataMinify.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnCustomUploaderDataMinify.Parent" xml:space="preserve">
-    <value>pCustomUploaderBodyData</value>
-  </data>
-  <data name="&gt;&gt;btnCustomUploaderDataMinify.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="rtbCustomUploaderData.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="rtbCustomUploaderData.Location" type="System.Drawing.Point, System.Drawing">
-    <value>2, 2</value>
-  </data>
-  <data name="rtbCustomUploaderData.Size" type="System.Drawing.Size, System.Drawing">
-    <value>226, 186</value>
-  </data>
-  <data name="rtbCustomUploaderData.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="rtbCustomUploaderData.Text" xml:space="preserve">
-    <value />
-  </data>
-  <data name="rtbCustomUploaderData.WordWrap" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;rtbCustomUploaderData.Name" xml:space="preserve">
-    <value>rtbCustomUploaderData</value>
-  </data>
-  <data name="&gt;&gt;rtbCustomUploaderData.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;rtbCustomUploaderData.Parent" xml:space="preserve">
-    <value>pCustomUploaderData</value>
-  </data>
-  <data name="&gt;&gt;rtbCustomUploaderData.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="pCustomUploaderData.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 8</value>
-  </data>
-  <data name="pCustomUploaderData.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
-  </data>
-  <data name="pCustomUploaderData.Size" type="System.Drawing.Size, System.Drawing">
-    <value>232, 192</value>
-  </data>
-  <data name="pCustomUploaderData.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;pCustomUploaderData.Name" xml:space="preserve">
-    <value>pCustomUploaderData</value>
-  </data>
-  <data name="&gt;&gt;pCustomUploaderData.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pCustomUploaderData.Parent" xml:space="preserve">
-    <value>pCustomUploaderBodyData</value>
-  </data>
-  <data name="&gt;&gt;pCustomUploaderData.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="pCustomUploaderBodyData.Location" type="System.Drawing.Point, System.Drawing">
-    <value>264, 96</value>
-  </data>
-  <data name="pCustomUploaderBodyData.Size" type="System.Drawing.Size, System.Drawing">
-    <value>240, 368</value>
-  </data>
-  <data name="pCustomUploaderBodyData.TabIndex" type="System.Int32, mscorlib">
-    <value>21</value>
-  </data>
-  <data name="&gt;&gt;pCustomUploaderBodyData.Name" xml:space="preserve">
-    <value>pCustomUploaderBodyData</value>
-  </data>
-  <data name="&gt;&gt;pCustomUploaderBodyData.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pCustomUploaderBodyData.Parent" xml:space="preserve">
-    <value>tpCustomUploaderRequest</value>
-  </data>
-  <data name="&gt;&gt;pCustomUploaderBodyData.ZOrder" xml:space="preserve">
-    <value>20</value>
-  </data>
   <data name="btnCustomUploaderArgumentAdd.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -1815,6 +1686,135 @@ when you made the application key.</value>
     <value>tpCustomUploaderRequest</value>
   </data>
   <data name="&gt;&gt;pCustomUploaderBodyArguments.ZOrder" xml:space="preserve">
+    <value>20</value>
+  </data>
+  <data name="btnCustomUploaderDataBeautify.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnCustomUploaderDataBeautify.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 208</value>
+  </data>
+  <data name="btnCustomUploaderDataBeautify.Size" type="System.Drawing.Size, System.Drawing">
+    <value>112, 24</value>
+  </data>
+  <data name="btnCustomUploaderDataBeautify.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="btnCustomUploaderDataBeautify.Text" xml:space="preserve">
+    <value>Beautify</value>
+  </data>
+  <data name="&gt;&gt;btnCustomUploaderDataBeautify.Name" xml:space="preserve">
+    <value>btnCustomUploaderDataBeautify</value>
+  </data>
+  <data name="&gt;&gt;btnCustomUploaderDataBeautify.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnCustomUploaderDataBeautify.Parent" xml:space="preserve">
+    <value>pCustomUploaderBodyData</value>
+  </data>
+  <data name="&gt;&gt;btnCustomUploaderDataBeautify.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="btnCustomUploaderDataMinify.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnCustomUploaderDataMinify.Location" type="System.Drawing.Point, System.Drawing">
+    <value>120, 208</value>
+  </data>
+  <data name="btnCustomUploaderDataMinify.Size" type="System.Drawing.Size, System.Drawing">
+    <value>112, 24</value>
+  </data>
+  <data name="btnCustomUploaderDataMinify.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="btnCustomUploaderDataMinify.Text" xml:space="preserve">
+    <value>Minify</value>
+  </data>
+  <data name="&gt;&gt;btnCustomUploaderDataMinify.Name" xml:space="preserve">
+    <value>btnCustomUploaderDataMinify</value>
+  </data>
+  <data name="&gt;&gt;btnCustomUploaderDataMinify.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnCustomUploaderDataMinify.Parent" xml:space="preserve">
+    <value>pCustomUploaderBodyData</value>
+  </data>
+  <data name="&gt;&gt;btnCustomUploaderDataMinify.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="rtbCustomUploaderData.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="rtbCustomUploaderData.Location" type="System.Drawing.Point, System.Drawing">
+    <value>2, 2</value>
+  </data>
+  <data name="rtbCustomUploaderData.Size" type="System.Drawing.Size, System.Drawing">
+    <value>226, 186</value>
+  </data>
+  <data name="rtbCustomUploaderData.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="rtbCustomUploaderData.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="rtbCustomUploaderData.WordWrap" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;rtbCustomUploaderData.Name" xml:space="preserve">
+    <value>rtbCustomUploaderData</value>
+  </data>
+  <data name="&gt;&gt;rtbCustomUploaderData.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rtbCustomUploaderData.Parent" xml:space="preserve">
+    <value>pCustomUploaderData</value>
+  </data>
+  <data name="&gt;&gt;rtbCustomUploaderData.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="pCustomUploaderData.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 8</value>
+  </data>
+  <data name="pCustomUploaderData.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="pCustomUploaderData.Size" type="System.Drawing.Size, System.Drawing">
+    <value>232, 192</value>
+  </data>
+  <data name="pCustomUploaderData.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;pCustomUploaderData.Name" xml:space="preserve">
+    <value>pCustomUploaderData</value>
+  </data>
+  <data name="&gt;&gt;pCustomUploaderData.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pCustomUploaderData.Parent" xml:space="preserve">
+    <value>pCustomUploaderBodyData</value>
+  </data>
+  <data name="&gt;&gt;pCustomUploaderData.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="pCustomUploaderBodyData.Location" type="System.Drawing.Point, System.Drawing">
+    <value>264, 96</value>
+  </data>
+  <data name="pCustomUploaderBodyData.Size" type="System.Drawing.Size, System.Drawing">
+    <value>240, 368</value>
+  </data>
+  <data name="pCustomUploaderBodyData.TabIndex" type="System.Int32, mscorlib">
+    <value>21</value>
+  </data>
+  <data name="&gt;&gt;pCustomUploaderBodyData.Name" xml:space="preserve">
+    <value>pCustomUploaderBodyData</value>
+  </data>
+  <data name="&gt;&gt;pCustomUploaderBodyData.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pCustomUploaderBodyData.Parent" xml:space="preserve">
+    <value>tpCustomUploaderRequest</value>
+  </data>
+  <data name="&gt;&gt;pCustomUploaderBodyData.ZOrder" xml:space="preserve">
     <value>21</value>
   </data>
   <data name="tpCustomUploaderRequest.Location" type="System.Drawing.Point, System.Drawing">
@@ -17666,9 +17666,6 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>1000, 633</value>
-  </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>840, 572</value>
