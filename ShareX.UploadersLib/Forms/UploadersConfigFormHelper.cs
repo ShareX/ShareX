@@ -929,7 +929,7 @@ namespace ShareX.UploadersLib
             return null;
         }
 
-        private void CustomUploaderAdd()
+        private void CustomUploaderNew()
         {
             CustomUploaderItem uploader = new CustomUploaderItem()
             {
@@ -937,6 +937,7 @@ namespace ShareX.UploadersLib
             };
 
             CustomUploaderAdd(uploader);
+            CustomUploaderUpdateList();
         }
 
         private void CustomUploaderAdd(CustomUploaderItem uploader)
@@ -945,7 +946,6 @@ namespace ShareX.UploadersLib
             {
                 Config.CustomUploadersList.Add(uploader);
                 lbCustomUploaderList.Items.Add(uploader);
-                CustomUploaderUpdateList();
             }
         }
 

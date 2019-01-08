@@ -3397,7 +3397,7 @@ namespace ShareX.UploadersLib
 
         private void btnCustomUploaderNew_Click(object sender, EventArgs e)
         {
-            CustomUploaderAdd();
+            CustomUploaderNew();
             lbCustomUploaderList.SelectedIndex = lbCustomUploaderList.Items.Count - 1;
             txtCustomUploaderName.Focus();
         }
@@ -3433,6 +3433,7 @@ namespace ShareX.UploadersLib
             {
                 CustomUploaderItem clone = uploader.Copy();
                 CustomUploaderAdd(clone);
+                CustomUploaderUpdateList();
                 lbCustomUploaderList.SelectedIndex = lbCustomUploaderList.Items.Count - 1;
             }
         }
@@ -3485,7 +3486,13 @@ namespace ShareX.UploadersLib
             CustomUploaderItem uploader = obj as CustomUploaderItem;
             uploader.CheckBackwardCompatibility();
             CustomUploaderAdd(uploader);
+        }
+
+        private void eiCustomUploaders_ImportCompleted()
+        {
+            CustomUploaderUpdateList();
             CustomUploaderUpdateStates();
+            lbCustomUploaderList.SelectedIndex = lbCustomUploaderList.Items.Count - 1;
         }
 
         private void btnCustomUploadersExportAll_Click(object sender, EventArgs e)
