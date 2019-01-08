@@ -295,17 +295,19 @@ namespace ShareX.UploadersLib
 
                     foreach (string key in nvc)
                     {
-                        string value = nvc[key];
-
                         if (key == null)
                         {
-                            if (!Parameters.ContainsKey(value))
+                            foreach (string value in nvc.GetValues(key))
                             {
-                                Parameters.Add(value, "");
+                                if (!Parameters.ContainsKey(value))
+                                {
+                                    Parameters.Add(value, "");
+                                }
                             }
                         }
                         else if (!Parameters.ContainsKey(key))
                         {
+                            string value = nvc[key];
                             Parameters.Add(key, value);
                         }
                     }
