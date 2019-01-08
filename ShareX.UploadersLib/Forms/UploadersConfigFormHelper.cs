@@ -1057,32 +1057,10 @@ namespace ShareX.UploadersLib
             CustomUploaderItem uploader = CustomUploaderGetSelected();
             if (uploader != null)
             {
-                pCustomUploaderMultipartFormData.Visible = uploader.RequestFormat == CustomUploaderRequestFormat.MultipartFormData;
-                pCustomUploaderJSON.Visible = uploader.RequestFormat == CustomUploaderRequestFormat.JSON;
-
-                /*if (uploader.ShouldSerializeData())
-                {
-                    if (!tcCustomUploaderArguments.TabPages.Contains(tpCustomUploaderData))
-                    {
-                        tcCustomUploaderArguments.TabPages.Insert(0, tpCustomUploaderData);
-                    }
-                }
-                else if (tcCustomUploaderArguments.TabPages.Contains(tpCustomUploaderData))
-                {
-                    tcCustomUploaderArguments.TabPages.Remove(tpCustomUploaderData);
-                }
-
-                if (uploader.ShouldSerializeFileFormName())
-                {
-                    if (!tcCustomUploaderArguments.TabPages.Contains(tpCustomUploaderFile))
-                    {
-                        tcCustomUploaderArguments.TabPages.Insert(1, tpCustomUploaderFile);
-                    }
-                }
-                else if (tcCustomUploaderArguments.TabPages.Contains(tpCustomUploaderFile))
-                {
-                    tcCustomUploaderArguments.TabPages.Remove(tpCustomUploaderFile);
-                }*/
+                pCustomUploaderBodyArguments.Visible = uploader.RequestFormat == CustomUploaderRequestFormat.MultipartFormData ||
+                    uploader.RequestFormat == CustomUploaderRequestFormat.FormURLEncoded;
+                pCustomUploaderBodyData.Visible = uploader.RequestFormat == CustomUploaderRequestFormat.JSON;
+                lblCustomUploaderFileFormName.Visible = txtCustomUploaderFileFormName.Visible = uploader.RequestFormat == CustomUploaderRequestFormat.MultipartFormData;
             }
         }
 
