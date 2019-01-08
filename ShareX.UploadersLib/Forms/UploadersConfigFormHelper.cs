@@ -963,7 +963,7 @@ namespace ShareX.UploadersLib
             txtCustomUploaderName.Text = uploader.Name ?? "";
             CustomUploaderSetDestinationType(uploader.DestinationType);
 
-            cbCustomUploaderRequestMethod.SelectedIndex = (int)uploader.RequestType;
+            cbCustomUploaderRequestMethod.SelectedIndex = (int)uploader.RequestMethod;
             rtbCustomUploaderRequestURL.Text = uploader.RequestURL ?? "";
             CustomUploaderSyntaxHighlight(rtbCustomUploaderRequestURL);
             cbCustomUploaderRequestFormat.SelectedIndex = (int)uploader.Body;

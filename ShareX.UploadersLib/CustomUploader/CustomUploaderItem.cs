@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using Newtonsoft.Json;
 using ShareX.HelpersLib;
 using ShareX.UploadersLib.Properties;
 using System;
@@ -46,7 +47,11 @@ namespace ShareX.UploadersLib
         [DefaultValue(CustomUploaderDestinationType.None)]
         public CustomUploaderDestinationType DestinationType { get; set; }
 
-        public HttpMethod RequestType { get; set; } = HttpMethod.POST;
+        public HttpMethod RequestMethod { get; set; } = HttpMethod.POST;
+
+        // For backward compatibility
+        [JsonProperty]
+        private HttpMethod RequestType { set => RequestMethod = value; }
 
         [DefaultValue("")]
         public string RequestURL { get; set; }
@@ -254,7 +259,7 @@ namespace ShareX.UploadersLib
 
             if (string.IsNullOrEmpty(Version) || Helpers.CompareVersion(Version, "12.3.1") <= 0)
             {
-                if (RequestType == HttpMethod.POST)
+                if (RequestMethod == HttpMethod.POST)
                 {
                     Body = CustomUploaderBody.MultipartFormData;
                 }

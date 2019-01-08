@@ -3504,7 +3504,7 @@ namespace ShareX.UploadersLib
         private void cbCustomUploaderRequestType_SelectedIndexChanged(object sender, EventArgs e)
         {
             CustomUploaderItem uploader = CustomUploaderGetSelected();
-            if (uploader != null) uploader.RequestType = (HttpMethod)cbCustomUploaderRequestMethod.SelectedIndex;
+            if (uploader != null) uploader.RequestMethod = (HttpMethod)cbCustomUploaderRequestMethod.SelectedIndex;
         }
 
         private void rtbCustomUploaderRequestURL_TextChanged(object sender, EventArgs e)
