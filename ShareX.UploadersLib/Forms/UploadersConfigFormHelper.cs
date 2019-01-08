@@ -1045,7 +1045,7 @@ namespace ShareX.UploadersLib
                 CustomUploaderUpdateResponseState();
             }
 
-            btnCustomUploaderClearUploaders.Enabled = btnCustomUploadersExportAll.Enabled = cbCustomUploaderImageUploader.Enabled =
+            btnCustomUploaderClearUploaders.Enabled = tsmiCustomUploaderExportAll.Enabled = cbCustomUploaderImageUploader.Enabled =
                 btnCustomUploaderImageUploaderTest.Enabled = cbCustomUploaderTextUploader.Enabled = btnCustomUploaderTextUploaderTest.Enabled =
                 cbCustomUploaderFileUploader.Enabled = btnCustomUploaderFileUploaderTest.Enabled = cbCustomUploaderURLShortener.Enabled =
                 btnCustomUploaderURLShortenerTest.Enabled = cbCustomUploaderURLSharingService.Enabled = btnCustomUploaderURLSharingServiceTest.Enabled =
@@ -1158,7 +1158,7 @@ namespace ShareX.UploadersLib
             }
 
 #if DEBUG
-            btnCustomUploadersExportAll.Visible = true;
+            tsmiCustomUploaderExportAll.Visible = true;
 #endif
 
             CustomUploaderClearFields();

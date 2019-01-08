@@ -3499,7 +3499,22 @@ namespace ShareX.UploadersLib
             lbCustomUploaderList.SelectedIndex = lbCustomUploaderList.Items.Count - 1;
         }
 
-        private void btnCustomUploadersExportAll_Click(object sender, EventArgs e)
+        private void btnCustomUploaderHelp_Click(object sender, EventArgs e)
+        {
+            cmsCustomUploaderHelp.Show(btnCustomUploaderHelp, 0, btnCustomUploaderHelp.Height);
+        }
+
+        private void tsmiCustomUploaderGuide_Click(object sender, EventArgs e)
+        {
+            URLHelpers.OpenURL(Links.URL_CUSTOM_UPLOADER);
+        }
+
+        private void tsmiCustomUploaderExamples_Click(object sender, EventArgs e)
+        {
+            URLHelpers.OpenURL(Links.URL_CUSTOM_UPLOADERS);
+        }
+
+        private void tsmiCustomUploaderExportAll_Click(object sender, EventArgs e)
         {
             CustomUploaderExportAll();
         }
@@ -4115,16 +4130,6 @@ namespace ShareX.UploadersLib
         private void txtCustomUploaderLog_LinkClicked(object sender, LinkClickedEventArgs e)
         {
             URLHelpers.OpenURL(e.LinkText);
-        }
-
-        private void btnCustomUploaderExamples_Click(object sender, EventArgs e)
-        {
-            URLHelpers.OpenURL(Links.URL_CUSTOM_UPLOADERS);
-        }
-
-        private void btnCustomUploaderHelp_Click(object sender, EventArgs e)
-        {
-            URLHelpers.OpenURL(Links.URL_CUSTOM_UPLOADER);
         }
 
         #endregion Custom uploaders
