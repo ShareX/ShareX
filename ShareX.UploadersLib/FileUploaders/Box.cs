@@ -83,7 +83,7 @@ namespace ShareX.UploadersLib.FileUploaders
             args.Add("response_type", "code");
             args.Add("client_id", AuthInfo.Client_ID);
 
-            return URLHelpers.CreateQuery("https://www.box.com/api/oauth2/authorize", args);
+            return URLHelpers.CreateQueryString("https://www.box.com/api/oauth2/authorize", args);
         }
 
         public bool GetAccessToken(string pin)

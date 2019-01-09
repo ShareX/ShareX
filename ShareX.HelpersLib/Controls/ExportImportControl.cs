@@ -44,6 +44,8 @@ namespace ShareX.HelpersLib
         public delegate void ImportEventHandler(object obj);
         public event ImportEventHandler ImportRequested;
 
+        public event Action ImportCompleted;
+
         public delegate void UploadEventHandler(string json);
         public static event UploadEventHandler UploadRequested;
 
@@ -183,77 +185,83 @@ namespace ShareX.HelpersLib
             return null;
         }
 
-        private void Import(string json)
+        private void OnImportRequested(string json)
         {
-            if (!string.IsNullOrEmpty(json))
+            if (ImportRequested != null)
             {
-                object obj = Deserialize(json);
-
-                if (obj != null)
+                if (!string.IsNullOrEmpty(json))
                 {
-                    ImportRequested(obj);
+                    object obj = Deserialize(json);
+
+                    if (obj != null)
+                    {
+                        ImportRequested(obj);
+                    }
                 }
+            }
+        }
+
+        private void OnImportCompleted()
+        {
+            if (ImportCompleted != null)
+            {
+                ImportCompleted();
             }
         }
 
         private void tsmiImportClipboard_Click(object sender, EventArgs e)
         {
-            if (ImportRequested != null)
+            if (Clipboard.ContainsText())
             {
-                if (Clipboard.ContainsText())
-                {
-                    string json = Clipboard.GetText();
-                    Import(json);
-                }
+                string json = Clipboard.GetText();
+                OnImportRequested(json);
+                OnImportCompleted();
             }
         }
 
         private void tsmiImportFile_Click(object sender, EventArgs e)
         {
-            if (ImportRequested != null)
+            string filter = "Settings (*.json)|*.json|All files (*.*)|*.*";
+
+            if (!string.IsNullOrEmpty(CustomFilter))
             {
-                string filter = "Settings (*.json)|*.json|All files (*.*)|*.*";
+                filter = CustomFilter + "|" + filter;
+            }
 
-                if (!string.IsNullOrEmpty(CustomFilter))
+            using (OpenFileDialog ofd = new OpenFileDialog() { Filter = filter, Multiselect = true })
+            {
+                if (ofd.ShowDialog() == DialogResult.OK)
                 {
-                    filter = CustomFilter + "|" + filter;
-                }
-
-                using (OpenFileDialog ofd = new OpenFileDialog() { Filter = filter, Multiselect = true })
-                {
-                    if (ofd.ShowDialog() == DialogResult.OK)
+                    foreach (string filename in ofd.FileNames)
                     {
-                        foreach (string filename in ofd.FileNames)
-                        {
-                            string json = File.ReadAllText(filename, Encoding.UTF8);
-                            Import(json);
-                        }
+                        string json = File.ReadAllText(filename, Encoding.UTF8);
+                        OnImportRequested(json);
                     }
+
+                    OnImportCompleted();
                 }
             }
         }
 
         private async void tsmiImportURL_Click(object sender, EventArgs e)
         {
-            if (ImportRequested != null)
+            string url = InputBox.GetInputText(Resources.ExportImportControl_tsmiImportURL_Click_URL_to_download_settings_from);
+
+            if (!string.IsNullOrEmpty(url))
             {
-                string url = InputBox.GetInputText(Resources.ExportImportControl_tsmiImportURL_Click_URL_to_download_settings_from);
+                btnImport.Enabled = false;
 
-                if (!string.IsNullOrEmpty(url))
+                string json = null;
+
+                await Task.Run(() =>
                 {
-                    btnImport.Enabled = false;
+                    json = Helpers.DownloadString(url);
+                });
 
-                    string json = null;
+                OnImportRequested(json);
+                OnImportCompleted();
 
-                    await Task.Run(() =>
-                    {
-                        json = Helpers.DownloadString(url);
-                    });
-
-                    Import(json);
-
-                    btnImport.Enabled = true;
-                }
+                btnImport.Enabled = true;
             }
         }
     }

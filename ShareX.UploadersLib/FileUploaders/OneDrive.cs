@@ -92,7 +92,7 @@ namespace ShareX.UploadersLib.FileUploaders
                 args.Add("code_challenge_method", AuthInfo.Proof.ChallengeMethod);
             }
 
-            return URLHelpers.CreateQuery(AuthorizationEndpoint, args);
+            return URLHelpers.CreateQueryString(AuthorizationEndpoint, args);
         }
 
         public bool GetAccessToken(string code)

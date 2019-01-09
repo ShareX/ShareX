@@ -54,7 +54,7 @@ namespace ShareX.UploadersLib
             args.Add("redirect_uri", RedirectMethod);
             args.Add("scope", Scope);
 
-            return URLHelpers.CreateQuery(AuthorizationEndpoint, args);
+            return URLHelpers.CreateQueryString(AuthorizationEndpoint, args);
         }
 
         public bool GetAccessToken(string code)

@@ -142,12 +142,12 @@ namespace ShareX.UploadersLib
             }
         }
 
-        public string SendRequestURLEncoded(HttpMethod method, string url, Dictionary<string, string> args, NameValueCollection headers = null, CookieCollection cookies = null,
+        internal string SendRequestURLEncoded(HttpMethod method, string url, Dictionary<string, string> args, NameValueCollection headers = null, CookieCollection cookies = null,
             ResponseType responseType = ResponseType.Text)
         {
-            string query = URLHelpers.CreateQuery(args);
+            string query = URLHelpers.CreateQueryString(args);
 
-            return SendRequest(method, url, query, UploadHelpers.ContentTypeURLEncoded, args, headers, cookies, responseType);
+            return SendRequest(method, url, query, UploadHelpers.ContentTypeURLEncoded, null, headers, cookies, responseType);
         }
 
         protected bool SendRequestDownload(HttpMethod method, string url, Stream downloadStream, Dictionary<string, string> args = null,
@@ -282,7 +282,7 @@ namespace ShareX.UploadersLib
 
             try
             {
-                url = URLHelpers.CreateQuery(url, args);
+                url = URLHelpers.CreateQueryString(url, args);
 
                 if (contentLength == -1)
                 {
@@ -353,7 +353,7 @@ namespace ShareX.UploadersLib
 
             try
             {
-                url = URLHelpers.CreateQuery(url, args);
+                url = URLHelpers.CreateQueryString(url, args);
 
                 long contentLength = 0;
 
@@ -455,7 +455,7 @@ namespace ShareX.UploadersLib
                 {
                     sb.AppendLine();
                     sb.AppendLine("Request URL:");
-                    sb.AppendLine(URLHelpers.RemoveQuery(url));
+                    sb.AppendLine(URLHelpers.RemoveQueryString(url));
                 }
 
                 if (e is WebException webException)

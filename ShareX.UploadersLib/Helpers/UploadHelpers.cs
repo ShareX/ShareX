@@ -69,6 +69,12 @@ namespace ShareX.UploadersLib
                     headers.Remove("Content-Length");
                 }
 
+                if (headers["Content-Type"] != null)
+                {
+                    contentType = headers["Content-Type"];
+                    headers.Remove("Content-Type");
+                }
+
                 if (headers["Referer"] != null)
                 {
                     referer = headers["Referer"];
