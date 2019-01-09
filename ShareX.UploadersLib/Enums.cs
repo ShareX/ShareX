@@ -291,7 +291,7 @@ namespace ShareX.UploadersLib
 
     public enum CustomUploaderBody
     {
-        [Description("None")]
+        [Description("No body")]
         None,
         [Description("Form data (multipart/form-data)")]
         MultipartFormData,

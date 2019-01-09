@@ -718,6 +718,10 @@ namespace ShareX.UploadersLib
             this.tsmiCustomUploaderGuide = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiCustomUploaderExamples = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiCustomUploaderExportAll = new System.Windows.Forms.ToolStripMenuItem();
+            this.tscCustomUploaderResponseText = new System.Windows.Forms.ToolStripContainer();
+            this.tsCustomUploaderResponseText = new System.Windows.Forms.ToolStrip();
+            this.tsbCustomUploaderJSONFormat = new System.Windows.Forms.ToolStripButton();
+            this.tsbCustomUploaderXMLFormat = new System.Windows.Forms.ToolStripButton();
             this.atcImgurAccountType = new ShareX.UploadersLib.AccountTypeControl();
             this.oauth2Imgur = new ShareX.UploadersLib.OAuthControl();
             this.atcTinyPicAccountType = new ShareX.UploadersLib.AccountTypeControl();
@@ -845,6 +849,10 @@ namespace ShareX.UploadersLib
             this.tpVgyme.SuspendLayout();
             this.tcUploaders.SuspendLayout();
             this.cmsCustomUploaderHelp.SuspendLayout();
+            this.tscCustomUploaderResponseText.ContentPanel.SuspendLayout();
+            this.tscCustomUploaderResponseText.TopToolStripPanel.SuspendLayout();
+            this.tscCustomUploaderResponseText.SuspendLayout();
+            this.tsCustomUploaderResponseText.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtRapidSharePremiumUserName
@@ -1729,7 +1737,7 @@ namespace ShareX.UploadersLib
             // 
             // tpCustomUploaderResponseText
             // 
-            this.tpCustomUploaderResponseText.Controls.Add(this.txtCustomUploaderResponse);
+            this.tpCustomUploaderResponseText.Controls.Add(this.tscCustomUploaderResponseText);
             resources.ApplyResources(this.tpCustomUploaderResponseText, "tpCustomUploaderResponseText");
             this.tpCustomUploaderResponseText.Name = "tpCustomUploaderResponseText";
             this.tpCustomUploaderResponseText.UseVisualStyleBackColor = true;
@@ -5727,6 +5735,45 @@ namespace ShareX.UploadersLib
             resources.ApplyResources(this.tsmiCustomUploaderExportAll, "tsmiCustomUploaderExportAll");
             this.tsmiCustomUploaderExportAll.Click += new System.EventHandler(this.tsmiCustomUploaderExportAll_Click);
             // 
+            // tscCustomUploaderResponseText
+            // 
+            // 
+            // tscCustomUploaderResponseText.ContentPanel
+            // 
+            this.tscCustomUploaderResponseText.ContentPanel.Controls.Add(this.txtCustomUploaderResponse);
+            resources.ApplyResources(this.tscCustomUploaderResponseText.ContentPanel, "tscCustomUploaderResponseText.ContentPanel");
+            resources.ApplyResources(this.tscCustomUploaderResponseText, "tscCustomUploaderResponseText");
+            this.tscCustomUploaderResponseText.Name = "tscCustomUploaderResponseText";
+            // 
+            // tscCustomUploaderResponseText.TopToolStripPanel
+            // 
+            this.tscCustomUploaderResponseText.TopToolStripPanel.Controls.Add(this.tsCustomUploaderResponseText);
+            this.tscCustomUploaderResponseText.TopToolStripPanel.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
+            // 
+            // tsCustomUploaderResponseText
+            // 
+            resources.ApplyResources(this.tsCustomUploaderResponseText, "tsCustomUploaderResponseText");
+            this.tsCustomUploaderResponseText.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.tsCustomUploaderResponseText.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsbCustomUploaderJSONFormat,
+            this.tsbCustomUploaderXMLFormat});
+            this.tsCustomUploaderResponseText.Name = "tsCustomUploaderResponseText";
+            // 
+            // tsbCustomUploaderJSONFormat
+            // 
+            this.tsbCustomUploaderJSONFormat.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            resources.ApplyResources(this.tsbCustomUploaderJSONFormat, "tsbCustomUploaderJSONFormat");
+            this.tsbCustomUploaderJSONFormat.Name = "tsbCustomUploaderJSONFormat";
+            this.tsbCustomUploaderJSONFormat.Click += new System.EventHandler(this.tsbCustomUploaderJSONFormat_Click);
+            // 
+            // tsbCustomUploaderXMLFormat
+            // 
+            this.tsbCustomUploaderXMLFormat.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            resources.ApplyResources(this.tsbCustomUploaderXMLFormat, "tsbCustomUploaderXMLFormat");
+            this.tsbCustomUploaderXMLFormat.Margin = new System.Windows.Forms.Padding(3, 1, 0, 2);
+            this.tsbCustomUploaderXMLFormat.Name = "tsbCustomUploaderXMLFormat";
+            this.tsbCustomUploaderXMLFormat.Click += new System.EventHandler(this.tsbCustomUploaderXMLFormat_Click);
+            // 
             // atcImgurAccountType
             // 
             resources.ApplyResources(this.atcImgurAccountType, "atcImgurAccountType");
@@ -5937,7 +5984,6 @@ namespace ShareX.UploadersLib
             this.tpCustomUploaderResult.ResumeLayout(false);
             this.pCustomUploaderResult.ResumeLayout(false);
             this.tpCustomUploaderResponseText.ResumeLayout(false);
-            this.tpCustomUploaderResponseText.PerformLayout();
             this.gbCustomUploaders.ResumeLayout(false);
             this.tpURLShorteners.ResumeLayout(false);
             this.tcURLShorteners.ResumeLayout(false);
@@ -6082,6 +6128,14 @@ namespace ShareX.UploadersLib
             this.tpVgyme.PerformLayout();
             this.tcUploaders.ResumeLayout(false);
             this.cmsCustomUploaderHelp.ResumeLayout(false);
+            this.tscCustomUploaderResponseText.ContentPanel.ResumeLayout(false);
+            this.tscCustomUploaderResponseText.ContentPanel.PerformLayout();
+            this.tscCustomUploaderResponseText.TopToolStripPanel.ResumeLayout(false);
+            this.tscCustomUploaderResponseText.TopToolStripPanel.PerformLayout();
+            this.tscCustomUploaderResponseText.ResumeLayout(false);
+            this.tscCustomUploaderResponseText.PerformLayout();
+            this.tsCustomUploaderResponseText.ResumeLayout(false);
+            this.tsCustomUploaderResponseText.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -6771,5 +6825,9 @@ namespace ShareX.UploadersLib
         private System.Windows.Forms.ToolStripMenuItem tsmiCustomUploaderGuide;
         private System.Windows.Forms.ToolStripMenuItem tsmiCustomUploaderExamples;
         private System.Windows.Forms.ToolStripMenuItem tsmiCustomUploaderExportAll;
+        private System.Windows.Forms.ToolStripContainer tscCustomUploaderResponseText;
+        private System.Windows.Forms.ToolStrip tsCustomUploaderResponseText;
+        private System.Windows.Forms.ToolStripButton tsbCustomUploaderJSONFormat;
+        private System.Windows.Forms.ToolStripButton tsbCustomUploaderXMLFormat;
     }
 }

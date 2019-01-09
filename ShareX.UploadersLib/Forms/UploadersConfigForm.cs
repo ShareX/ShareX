@@ -4073,6 +4073,40 @@ namespace ShareX.UploadersLib
             rtb.AppendText(text);
         }
 
+        private void tsbCustomUploaderJSONFormat_Click(object sender, EventArgs e)
+        {
+            string response = txtCustomUploaderResponse.Text;
+            if (!string.IsNullOrEmpty(response))
+            {
+                try
+                {
+                    response = Helpers.JSONFormat(response, Formatting.Indented);
+                    txtCustomUploaderResponse.Text = response;
+                }
+                catch
+                {
+                    MessageBox.Show("Formatting failed.", "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void tsbCustomUploaderXMLFormat_Click(object sender, EventArgs e)
+        {
+            string response = txtCustomUploaderResponse.Text;
+            if (!string.IsNullOrEmpty(response))
+            {
+                try
+                {
+                    response = Helpers.XMLFormat(response);
+                    txtCustomUploaderResponse.Text = response;
+                }
+                catch
+                {
+                    MessageBox.Show("Formatting failed.", "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
         private void cbCustomUploaderImageUploader_SelectedIndexChanged(object sender, EventArgs e)
         {
             Config.CustomImageUploaderSelected = cbCustomUploaderImageUploader.SelectedIndex;

@@ -2759,17 +2759,29 @@ store.book[0].title</value>
   <data name="&gt;&gt;tpCustomUploaderResult.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="&gt;&gt;tscCustomUploaderResponseText.BottomToolStripPanel.Name" xml:space="preserve">
+    <value>tscCustomUploaderResponseText.BottomToolStripPanel</value>
+  </data>
+  <data name="&gt;&gt;tscCustomUploaderResponseText.BottomToolStripPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tscCustomUploaderResponseText.BottomToolStripPanel.Parent" xml:space="preserve">
+    <value>tscCustomUploaderResponseText</value>
+  </data>
+  <data name="&gt;&gt;tscCustomUploaderResponseText.BottomToolStripPanel.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
   <data name="txtCustomUploaderResponse.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
   <data name="txtCustomUploaderResponse.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
+    <value>0, 0</value>
   </data>
   <data name="txtCustomUploaderResponse.Multiline" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="txtCustomUploaderResponse.Size" type="System.Drawing.Size, System.Drawing">
-    <value>492, 440</value>
+    <value>492, 415</value>
   </data>
   <data name="txtCustomUploaderResponse.TabIndex" type="System.Int32, mscorlib">
     <value>43</value>
@@ -2781,9 +2793,162 @@ store.book[0].title</value>
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;txtCustomUploaderResponse.Parent" xml:space="preserve">
-    <value>tpCustomUploaderResponseText</value>
+    <value>tscCustomUploaderResponseText.ContentPanel</value>
   </data>
   <data name="&gt;&gt;txtCustomUploaderResponse.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tscCustomUploaderResponseText.ContentPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>492, 415</value>
+  </data>
+  <data name="&gt;&gt;tscCustomUploaderResponseText.ContentPanel.Name" xml:space="preserve">
+    <value>tscCustomUploaderResponseText.ContentPanel</value>
+  </data>
+  <data name="&gt;&gt;tscCustomUploaderResponseText.ContentPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripContentPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tscCustomUploaderResponseText.ContentPanel.Parent" xml:space="preserve">
+    <value>tscCustomUploaderResponseText</value>
+  </data>
+  <data name="&gt;&gt;tscCustomUploaderResponseText.ContentPanel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tscCustomUploaderResponseText.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="&gt;&gt;tscCustomUploaderResponseText.LeftToolStripPanel.Name" xml:space="preserve">
+    <value>tscCustomUploaderResponseText.LeftToolStripPanel</value>
+  </data>
+  <data name="&gt;&gt;tscCustomUploaderResponseText.LeftToolStripPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tscCustomUploaderResponseText.LeftToolStripPanel.Parent" xml:space="preserve">
+    <value>tscCustomUploaderResponseText</value>
+  </data>
+  <data name="&gt;&gt;tscCustomUploaderResponseText.LeftToolStripPanel.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="tscCustomUploaderResponseText.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="&gt;&gt;tscCustomUploaderResponseText.RightToolStripPanel.Name" xml:space="preserve">
+    <value>tscCustomUploaderResponseText.RightToolStripPanel</value>
+  </data>
+  <data name="&gt;&gt;tscCustomUploaderResponseText.RightToolStripPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tscCustomUploaderResponseText.RightToolStripPanel.Parent" xml:space="preserve">
+    <value>tscCustomUploaderResponseText</value>
+  </data>
+  <data name="&gt;&gt;tscCustomUploaderResponseText.RightToolStripPanel.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="tscCustomUploaderResponseText.Size" type="System.Drawing.Size, System.Drawing">
+    <value>492, 440</value>
+  </data>
+  <data name="tscCustomUploaderResponseText.TabIndex" type="System.Int32, mscorlib">
+    <value>44</value>
+  </data>
+  <data name="tscCustomUploaderResponseText.Text" xml:space="preserve">
+    <value>toolStripContainer1</value>
+  </data>
+  <metadata name="tsCustomUploaderResponseText.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>564, 17</value>
+  </metadata>
+  <data name="tsCustomUploaderResponseText.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="tsbCustomUploaderJSONFormat.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIDSURBVDhPpZLrS5NhGMb3j4SWh0oRQVExD4gonkDpg4hG
+        YKxG6WBogkMZKgPNCEVJFBGdGETEvgwyO9DJE5syZw3PIlPEE9pgBCLZ5XvdMB8Ew8gXbl54nuf63dd9
+        0OGSnwCahxbPRNPAPMw9Xpg6ZmF46kZZ0xSKzJPIrhpDWsVnpBhGkKx3nAX8Pv7z1zg8OoY/cITdn4fw
+        bf/C0kYAN3Ma/w3gWfZL5kzTKBxjWyK2DftwI9tyMYCZKXbNHaD91bLYJrDXsYbrWfUKwJrPE9M2M1Oc
+        VzOOpHI7Jr376Hi9ogHqFIANO0/MmmmbmSmm9a8ze+I4MrNWAdjtoJgWcx+PSzg166yZZ8xM8XvXDix9
+        c4jIqFYAjoriBV9AhEPv1mH/sonogha0afbZMMZz+yreTGyhpusHwtNNCsA5U1zS4BLxzJIfg299qO32
+        Ir7UJtZfftyATqeT+8o2D8JSjQrAJblrncYL7ZJ2+bfaFnC/1S1NjL3diRat7qrO7wLRP3HjWsojBeCo
+        mDEo5mNjuweFGvjWg2EBhCbpkW78htSHHwRyNdmgAFzPEee2iFkzayy2OLXzT4gr6UdUnlXrullsxxQ+
+        kx0g8BTA3aZlButjSTyjODq/WcQcW/B/Je4OQhLvKQDnzN1mp0nnkvAhR8VuMzNrpm1mpjgkoVwB/v8D
+        TgDQASA1MVpwzwAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="tsbCustomUploaderJSONFormat.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="tsbCustomUploaderJSONFormat.Size" type="System.Drawing.Size, System.Drawing">
+    <value>78, 22</value>
+  </data>
+  <data name="tsbCustomUploaderJSONFormat.Text" xml:space="preserve">
+    <value>JSON format</value>
+  </data>
+  <data name="tsbCustomUploaderXMLFormat.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIDSURBVDhPpZLrS5NhGMb3j4SWh0oRQVExD4gonkDpg4hG
+        YKxG6WBogkMZKgPNCEVJFBGdGETEvgwyO9DJE5syZw3PIlPEE9pgBCLZ5XvdMB8Ew8gXbl54nuf63dd9
+        0OGSnwCahxbPRNPAPMw9Xpg6ZmF46kZZ0xSKzJPIrhpDWsVnpBhGkKx3nAX8Pv7z1zg8OoY/cITdn4fw
+        bf/C0kYAN3Ma/w3gWfZL5kzTKBxjWyK2DftwI9tyMYCZKXbNHaD91bLYJrDXsYbrWfUKwJrPE9M2M1Oc
+        VzOOpHI7Jr376Hi9ogHqFIANO0/MmmmbmSmm9a8ze+I4MrNWAdjtoJgWcx+PSzg166yZZ8xM8XvXDix9
+        c4jIqFYAjoriBV9AhEPv1mH/sonogha0afbZMMZz+yreTGyhpusHwtNNCsA5U1zS4BLxzJIfg299qO32
+        Ir7UJtZfftyATqeT+8o2D8JSjQrAJblrncYL7ZJ2+bfaFnC/1S1NjL3diRat7qrO7wLRP3HjWsojBeCo
+        mDEo5mNjuweFGvjWg2EBhCbpkW78htSHHwRyNdmgAFzPEee2iFkzayy2OLXzT4gr6UdUnlXrullsxxQ+
+        kx0g8BTA3aZlButjSTyjODq/WcQcW/B/Je4OQhLvKQDnzN1mp0nnkvAhR8VuMzNrpm1mpjgkoVwB/v8D
+        TgDQASA1MVpwzwAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="tsbCustomUploaderXMLFormat.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="tsbCustomUploaderXMLFormat.Size" type="System.Drawing.Size, System.Drawing">
+    <value>74, 22</value>
+  </data>
+  <data name="tsbCustomUploaderXMLFormat.Text" xml:space="preserve">
+    <value>XML format</value>
+  </data>
+  <data name="tsCustomUploaderResponseText.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 0</value>
+  </data>
+  <data name="tsCustomUploaderResponseText.Size" type="System.Drawing.Size, System.Drawing">
+    <value>158, 25</value>
+  </data>
+  <data name="tsCustomUploaderResponseText.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;tsCustomUploaderResponseText.Name" xml:space="preserve">
+    <value>tsCustomUploaderResponseText</value>
+  </data>
+  <data name="&gt;&gt;tsCustomUploaderResponseText.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsCustomUploaderResponseText.Parent" xml:space="preserve">
+    <value>tscCustomUploaderResponseText.TopToolStripPanel</value>
+  </data>
+  <data name="&gt;&gt;tsCustomUploaderResponseText.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;tscCustomUploaderResponseText.TopToolStripPanel.Name" xml:space="preserve">
+    <value>tscCustomUploaderResponseText.TopToolStripPanel</value>
+  </data>
+  <data name="&gt;&gt;tscCustomUploaderResponseText.TopToolStripPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tscCustomUploaderResponseText.TopToolStripPanel.Parent" xml:space="preserve">
+    <value>tscCustomUploaderResponseText</value>
+  </data>
+  <data name="&gt;&gt;tscCustomUploaderResponseText.TopToolStripPanel.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;tscCustomUploaderResponseText.Name" xml:space="preserve">
+    <value>tscCustomUploaderResponseText</value>
+  </data>
+  <data name="&gt;&gt;tscCustomUploaderResponseText.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripContainer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tscCustomUploaderResponseText.Parent" xml:space="preserve">
+    <value>tpCustomUploaderResponseText</value>
+  </data>
+  <data name="&gt;&gt;tscCustomUploaderResponseText.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="tpCustomUploaderResponseText.Location" type="System.Drawing.Point, System.Drawing">
@@ -17554,7 +17719,7 @@ Using an encrypted library disables sharing.</value>
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblWidthHint.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="ttlvMain.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -17639,6 +17804,9 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>1000, 633</value>
+  </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>840, 572</value>
@@ -17789,6 +17957,18 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="&gt;&gt;tsmiCustomUploaderExportAll.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsbCustomUploaderJSONFormat.Name" xml:space="preserve">
+    <value>tsbCustomUploaderJSONFormat</value>
+  </data>
+  <data name="&gt;&gt;tsbCustomUploaderJSONFormat.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsbCustomUploaderXMLFormat.Name" xml:space="preserve">
+    <value>tsbCustomUploaderXMLFormat</value>
+  </data>
+  <data name="&gt;&gt;tsbCustomUploaderXMLFormat.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>UploadersConfigForm</value>
