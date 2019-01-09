@@ -40,6 +40,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace ShareX.UploadersLib
 {
@@ -1059,8 +1060,9 @@ namespace ShareX.UploadersLib
             {
                 pCustomUploaderBodyArguments.Visible = uploader.Body == CustomUploaderBody.MultipartFormData ||
                     uploader.Body == CustomUploaderBody.FormURLEncoded;
-                pCustomUploaderBodyData.Visible = uploader.Body == CustomUploaderBody.JSON;
                 lblCustomUploaderFileFormName.Visible = txtCustomUploaderFileFormName.Visible = uploader.Body == CustomUploaderBody.MultipartFormData;
+                pCustomUploaderBodyData.Visible = uploader.Body == CustomUploaderBody.JSON || uploader.Body == CustomUploaderBody.XML;
+                btnCustomUploaderDataMinify.Visible = uploader.Body == CustomUploaderBody.JSON;
             }
         }
 
@@ -1487,7 +1489,24 @@ namespace ShareX.UploadersLib
             {
                 try
                 {
-                    rtbCustomUploaderData.Text = JToken.Parse(json).ToString(formatting);
+                    rtbCustomUploaderData.Text = Helpers.JSONFormat(json, formatting);
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show(e.Message, "ShareX - Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void CustomUploaderFormatXMLData()
+        {
+            string xml = rtbCustomUploaderData.Text;
+
+            if (!string.IsNullOrEmpty(xml))
+            {
+                try
+                {
+                    rtbCustomUploaderData.Text = Helpers.XMLFormat(xml);
                 }
                 catch (Exception e)
                 {

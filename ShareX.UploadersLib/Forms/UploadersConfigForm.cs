@@ -3560,7 +3560,18 @@ namespace ShareX.UploadersLib
 
         private void btnCustomUploaderDataBeautify_Click(object sender, EventArgs e)
         {
-            CustomUploaderFormatJsonData(Formatting.Indented);
+            CustomUploaderItem uploader = CustomUploaderGetSelected();
+            if (uploader != null)
+            {
+                if (uploader.Body == CustomUploaderBody.JSON)
+                {
+                    CustomUploaderFormatJsonData(Formatting.Indented);
+                }
+                else if (uploader.Body == CustomUploaderBody.XML)
+                {
+                    CustomUploaderFormatXMLData();
+                }
+            }
         }
 
         private void btnCustomUploaderDataMinify_Click(object sender, EventArgs e)

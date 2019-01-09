@@ -39,6 +39,7 @@ namespace ShareX.UploadersLib
     {
         public const string ContentTypeMultipartFormData = "multipart/form-data";
         public const string ContentTypeJSON = "application/json";
+        public const string ContentTypeXML = "application/xml";
         public const string ContentTypeURLEncoded = "application/x-www-form-urlencoded";
         public const string ContentTypeOctetStream = "application/octet-stream";
 

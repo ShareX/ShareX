@@ -83,7 +83,7 @@ namespace ShareX.UploadersLib
         [DefaultValue("")]
         public string Data { get; set; }
 
-        public bool ShouldSerializeData() => Body == CustomUploaderBody.JSON && !string.IsNullOrEmpty(Data);
+        public bool ShouldSerializeData() => (Body == CustomUploaderBody.JSON || Body == CustomUploaderBody.XML) && !string.IsNullOrEmpty(Data);
 
         [DefaultValue(ResponseType.Text)]
         public ResponseType ResponseType { get; set; }
@@ -163,11 +163,25 @@ namespace ShareX.UploadersLib
             return parameters;
         }
 
+        public string GetContentType()
+        {
+            switch (Body)
+            {
+                case CustomUploaderBody.JSON:
+                    return UploadHelpers.ContentTypeJSON;
+                case CustomUploaderBody.XML:
+                    return UploadHelpers.ContentTypeXML;
+            }
+
+            return null;
+        }
+
         public string GetData(CustomUploaderInput input)
         {
             CustomUploaderParser parser = new CustomUploaderParser(input);
             parser.UseNameParser = true;
             parser.JSONEncode = Body == CustomUploaderBody.JSON;
+            parser.XMLEncode = Body == CustomUploaderBody.XML;
 
             return parser.Parse(Data);
         }

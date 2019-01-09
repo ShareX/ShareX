@@ -104,9 +104,14 @@ namespace ShareX.UploadersLib.TextUploaders
                     }
                 }
             }
-            else if (uploader.Body == CustomUploaderBody.JSON)
+            else if (uploader.Body == CustomUploaderBody.FormURLEncoded)
             {
-                result.Response = SendRequest(uploader.RequestMethod, uploader.GetRequestURL(input), uploader.GetData(input), UploadHelpers.ContentTypeJSON,
+                result.Response = SendRequestURLEncoded(uploader.RequestMethod, uploader.GetRequestURL(input), uploader.GetArguments(input),
+                    uploader.GetHeaders(input), null, uploader.ResponseType);
+            }
+            else if (uploader.Body == CustomUploaderBody.JSON || uploader.Body == CustomUploaderBody.XML)
+            {
+                result.Response = SendRequest(uploader.RequestMethod, uploader.GetRequestURL(input), uploader.GetData(input), uploader.GetContentType(),
                     null, uploader.GetHeaders(input), null, uploader.ResponseType);
             }
             else if (uploader.Body == CustomUploaderBody.Binary)
@@ -117,11 +122,6 @@ namespace ShareX.UploadersLib.TextUploaders
                     result.Response = SendRequest(uploader.RequestMethod, uploader.GetRequestURL(input), stream, UploadHelpers.GetMimeType(fileName),
                         null, uploader.GetHeaders(input), null, uploader.ResponseType);
                 }
-            }
-            else if (uploader.Body == CustomUploaderBody.FormURLEncoded)
-            {
-                result.Response = SendRequestURLEncoded(uploader.RequestMethod, uploader.GetRequestURL(input), uploader.GetArguments(input),
-                    uploader.GetHeaders(input), null, uploader.ResponseType);
             }
             else
             {
