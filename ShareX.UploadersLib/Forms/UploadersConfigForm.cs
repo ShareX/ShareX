@@ -3560,7 +3560,18 @@ namespace ShareX.UploadersLib
 
         private void btnCustomUploaderDataBeautify_Click(object sender, EventArgs e)
         {
-            CustomUploaderFormatJsonData(Formatting.Indented);
+            CustomUploaderItem uploader = CustomUploaderGetSelected();
+            if (uploader != null)
+            {
+                if (uploader.Body == CustomUploaderBody.JSON)
+                {
+                    CustomUploaderFormatJsonData(Formatting.Indented);
+                }
+                else if (uploader.Body == CustomUploaderBody.XML)
+                {
+                    CustomUploaderFormatXMLData();
+                }
+            }
         }
 
         private void btnCustomUploaderDataMinify_Click(object sender, EventArgs e)
@@ -4062,6 +4073,54 @@ namespace ShareX.UploadersLib
             rtb.AppendText(text);
         }
 
+        private void txtCustomUploaderLog_LinkClicked(object sender, LinkClickedEventArgs e)
+        {
+            URLHelpers.OpenURL(e.LinkText);
+        }
+
+        private void tsbCustomUploaderJSONFormat_Click(object sender, EventArgs e)
+        {
+            string response = txtCustomUploaderResponse.Text;
+            if (!string.IsNullOrEmpty(response))
+            {
+                try
+                {
+                    response = Helpers.JSONFormat(response, Formatting.Indented);
+                    txtCustomUploaderResponse.Text = response;
+                }
+                catch
+                {
+                    MessageBox.Show("Formatting failed.", "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void tsbCustomUploaderXMLFormat_Click(object sender, EventArgs e)
+        {
+            string response = txtCustomUploaderResponse.Text;
+            if (!string.IsNullOrEmpty(response))
+            {
+                try
+                {
+                    response = Helpers.XMLFormat(response);
+                    txtCustomUploaderResponse.Text = response;
+                }
+                catch
+                {
+                    MessageBox.Show("Formatting failed.", "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void tsbCustomUploaderCopyResponseText_Click(object sender, EventArgs e)
+        {
+            string response = txtCustomUploaderResponse.Text;
+            if (!string.IsNullOrEmpty(response))
+            {
+                ClipboardHelpers.CopyText(response);
+            }
+        }
+
         private void cbCustomUploaderImageUploader_SelectedIndexChanged(object sender, EventArgs e)
         {
             Config.CustomImageUploaderSelected = cbCustomUploaderImageUploader.SelectedIndex;
@@ -4125,11 +4184,6 @@ namespace ShareX.UploadersLib
             {
                 await TestCustomUploader(CustomUploaderDestinationType.URLSharingService, Config.CustomUploadersList[Config.CustomURLSharingServiceSelected]);
             }
-        }
-
-        private void txtCustomUploaderLog_LinkClicked(object sender, LinkClickedEventArgs e)
-        {
-            URLHelpers.OpenURL(e.LinkText);
         }
 
         #endregion Custom uploaders

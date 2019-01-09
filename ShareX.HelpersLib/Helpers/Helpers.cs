@@ -24,6 +24,8 @@
 #endregion License Information (GPL v3)
 
 using Microsoft.Win32;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using ShareX.HelpersLib.Properties;
 using System;
 using System.Collections.Generic;
@@ -49,6 +51,8 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Web;
 using System.Windows.Forms;
+using System.Xml;
+using System.Xml.Linq;
 
 namespace ShareX.HelpersLib
 {
@@ -1380,6 +1384,38 @@ namespace ShareX.HelpersLib
             }
 
             return false;
+        }
+
+        public static string JSONFormat(string json, Newtonsoft.Json.Formatting formatting)
+        {
+            return JToken.Parse(json).ToString(formatting);
+        }
+
+        public static string XMLFormat(string xml)
+        {
+            using (MemoryStream ms = new MemoryStream())
+            using (XmlTextWriter writer = new XmlTextWriter(ms, Encoding.Unicode))
+            {
+                // Load the XmlDocument with the XML.
+                XmlDocument document = new XmlDocument();
+                document.LoadXml(xml);
+
+                writer.Formatting = System.Xml.Formatting.Indented;
+
+                // Write the XML into a formatting XmlTextWriter
+                document.WriteContentTo(writer);
+                writer.Flush();
+                ms.Flush();
+
+                // Have to rewind the MemoryStream in order to read its contents.
+                ms.Position = 0;
+
+                // Read MemoryStream contents into a StreamReader.
+                StreamReader sReader = new StreamReader(ms);
+
+                // Extract the text from the StreamReader.
+                return sReader.ReadToEnd();
+            }
         }
     }
 }

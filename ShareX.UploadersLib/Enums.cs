@@ -291,16 +291,18 @@ namespace ShareX.UploadersLib
 
     public enum CustomUploaderBody
     {
-        [Description("None")]
+        [Description("No body")]
         None,
         [Description("Form data (multipart/form-data)")]
         MultipartFormData,
+        [Description("Form URL encoded (application/x-www-form-urlencoded)")]
+        FormURLEncoded,
         [Description("JSON (application/json)")]
         JSON,
+        [Description("XML (application/xml)")]
+        XML,
         [Description("Binary")]
-        Binary,
-        [Description("Form URL encoded (application/x-www-form-urlencoded)")]
-        FormURLEncoded
+        Binary
     }
 
     [Flags]
