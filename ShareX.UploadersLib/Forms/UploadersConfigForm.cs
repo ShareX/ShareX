@@ -4073,6 +4073,11 @@ namespace ShareX.UploadersLib
             rtb.AppendText(text);
         }
 
+        private void txtCustomUploaderLog_LinkClicked(object sender, LinkClickedEventArgs e)
+        {
+            URLHelpers.OpenURL(e.LinkText);
+        }
+
         private void tsbCustomUploaderJSONFormat_Click(object sender, EventArgs e)
         {
             string response = txtCustomUploaderResponse.Text;
@@ -4104,6 +4109,15 @@ namespace ShareX.UploadersLib
                 {
                     MessageBox.Show("Formatting failed.", "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+            }
+        }
+
+        private void tsbCustomUploaderCopyResponseText_Click(object sender, EventArgs e)
+        {
+            string response = txtCustomUploaderResponse.Text;
+            if (!string.IsNullOrEmpty(response))
+            {
+                ClipboardHelpers.CopyText(response);
             }
         }
 
@@ -4170,11 +4184,6 @@ namespace ShareX.UploadersLib
             {
                 await TestCustomUploader(CustomUploaderDestinationType.URLSharingService, Config.CustomUploadersList[Config.CustomURLSharingServiceSelected]);
             }
-        }
-
-        private void txtCustomUploaderLog_LinkClicked(object sender, LinkClickedEventArgs e)
-        {
-            URLHelpers.OpenURL(e.LinkText);
         }
 
         #endregion Custom uploaders
