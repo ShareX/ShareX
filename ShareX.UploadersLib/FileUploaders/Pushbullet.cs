@@ -109,6 +109,7 @@ namespace ShareX.UploadersLib.FileUploaders
             pushArgs.Add("type", "file");
             pushArgs.Add("file_url", fileInfo.file_url);
             pushArgs.Add("body", "Sent via ShareX");
+            pushArgs.Add("file_type", fileInfo.file_type);
 
             string pushResult = SendRequestMultiPart(apiSendPushURL, pushArgs, headers);
 
