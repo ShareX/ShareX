@@ -1342,15 +1342,21 @@ namespace ShareX.UploadersLib
             }
         }
 
-        private async Task TestCustomUploader(CustomUploaderDestinationType type, CustomUploaderItem item)
+        private async Task TestCustomUploader(CustomUploaderDestinationType type, int index)
         {
+            if (!Config.CustomUploadersList.IsValidIndex(index))
+            {
+                return;
+            }
+
             btnCustomUploaderImageUploaderTest.Enabled = btnCustomUploaderTextUploaderTest.Enabled = btnCustomUploaderFileUploaderTest.Enabled =
                 btnCustomUploaderURLShortenerTest.Enabled = btnCustomUploaderURLSharingServiceTest.Enabled = false;
-
-            UploadResult result = null;
-
             rtbCustomUploaderResult.ResetText();
             txtCustomUploaderResponse.ResetText();
+            lbCustomUploaderList.SelectedIndex = index;
+
+            CustomUploaderItem item = Config.CustomUploadersList[index];
+            UploadResult result = null;
 
             await Task.Run(() =>
             {

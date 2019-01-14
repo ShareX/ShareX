@@ -4128,10 +4128,7 @@ namespace ShareX.UploadersLib
 
         private async void btnCustomUploaderImageUploaderTest_Click(object sender, EventArgs e)
         {
-            if (Config.CustomUploadersList.IsValidIndex(Config.CustomImageUploaderSelected))
-            {
-                await TestCustomUploader(CustomUploaderDestinationType.ImageUploader, Config.CustomUploadersList[Config.CustomImageUploaderSelected]);
-            }
+            await TestCustomUploader(CustomUploaderDestinationType.ImageUploader, Config.CustomImageUploaderSelected);
         }
 
         private void cbCustomUploaderTextUploader_SelectedIndexChanged(object sender, EventArgs e)
@@ -4141,10 +4138,7 @@ namespace ShareX.UploadersLib
 
         private async void btnCustomUploaderTextUploaderTest_Click(object sender, EventArgs e)
         {
-            if (Config.CustomUploadersList.IsValidIndex(Config.CustomTextUploaderSelected))
-            {
-                await TestCustomUploader(CustomUploaderDestinationType.TextUploader, Config.CustomUploadersList[Config.CustomTextUploaderSelected]);
-            }
+            await TestCustomUploader(CustomUploaderDestinationType.TextUploader, Config.CustomTextUploaderSelected);
         }
 
         private void cbCustomUploaderFileUploader_SelectedIndexChanged(object sender, EventArgs e)
@@ -4154,10 +4148,7 @@ namespace ShareX.UploadersLib
 
         private async void btnCustomUploaderFileUploaderTest_Click(object sender, EventArgs e)
         {
-            if (Config.CustomUploadersList.IsValidIndex(Config.CustomFileUploaderSelected))
-            {
-                await TestCustomUploader(CustomUploaderDestinationType.FileUploader, Config.CustomUploadersList[Config.CustomFileUploaderSelected]);
-            }
+            await TestCustomUploader(CustomUploaderDestinationType.FileUploader, Config.CustomFileUploaderSelected);
         }
 
         private void cbCustomUploaderURLShortener_SelectedIndexChanged(object sender, EventArgs e)
@@ -4167,10 +4158,7 @@ namespace ShareX.UploadersLib
 
         private async void btnCustomUploaderURLShortenerTest_Click(object sender, EventArgs e)
         {
-            if (Config.CustomUploadersList.IsValidIndex(Config.CustomURLShortenerSelected))
-            {
-                await TestCustomUploader(CustomUploaderDestinationType.URLShortener, Config.CustomUploadersList[Config.CustomURLShortenerSelected]);
-            }
+            await TestCustomUploader(CustomUploaderDestinationType.URLShortener, Config.CustomURLShortenerSelected);
         }
 
         private void cbCustomUploaderURLSharingService_SelectedIndexChanged(object sender, EventArgs e)
@@ -4180,10 +4168,7 @@ namespace ShareX.UploadersLib
 
         private async void btnCustomUploaderURLSharingServiceTest_Click(object sender, EventArgs e)
         {
-            if (Config.CustomUploadersList.IsValidIndex(Config.CustomURLSharingServiceSelected))
-            {
-                await TestCustomUploader(CustomUploaderDestinationType.URLSharingService, Config.CustomUploadersList[Config.CustomURLSharingServiceSelected]);
-            }
+            await TestCustomUploader(CustomUploaderDestinationType.URLSharingService, Config.CustomURLSharingServiceSelected);
         }
 
         #endregion Custom uploaders
