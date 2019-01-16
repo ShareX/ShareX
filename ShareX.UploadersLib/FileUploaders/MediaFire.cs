@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2018 ShareX Team
+    Copyright (c) 2007-2019 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -120,7 +120,7 @@ namespace ShareX.UploadersLib.FileUploaders
             args.Add("path", UploadPath);
             args.Add("response_format", "json");
             args.Add("signature", GetSignature("upload/simple.php", args));
-            string url = URLHelpers.CreateQuery(apiUrl + "upload/simple.php", args);
+            string url = URLHelpers.CreateQueryString(apiUrl + "upload/simple.php", args);
             UploadResult res = SendRequestFile(url, stream, fileName, "Filedata");
             if (!res.IsSuccess) throw new IOException(res.ErrorsToString());
             SimpleUploadResponse resp = DeserializeResponse<SimpleUploadResponse>(res.Response);

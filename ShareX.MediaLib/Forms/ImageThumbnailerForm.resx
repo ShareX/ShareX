@@ -132,19 +132,19 @@
     <value>lvImages</value>
   </data>
   <data name="&gt;&gt;lvImages.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=12.4.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lvImages.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lvImages.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>15</value>
   </data>
   <data name="btnAdd.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 8</value>
   </data>
   <data name="btnAdd.Size" type="System.Drawing.Size, System.Drawing">
-    <value>168, 24</value>
+    <value>152, 24</value>
   </data>
   <data name="btnAdd.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -162,13 +162,16 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnAdd.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>14</value>
+  </data>
+  <data name="btnRemove.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="btnRemove.Location" type="System.Drawing.Point, System.Drawing">
-    <value>184, 8</value>
+    <value>168, 8</value>
   </data>
   <data name="btnRemove.Size" type="System.Drawing.Size, System.Drawing">
-    <value>168, 23</value>
+    <value>152, 24</value>
   </data>
   <data name="btnRemove.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -186,13 +189,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnRemove.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>13</value>
   </data>
   <data name="lblWidth.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="lblWidth.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 416</value>
+    <value>5, 416</value>
   </data>
   <data name="lblWidth.Size" type="System.Drawing.Size, System.Drawing">
     <value>38, 13</value>
@@ -213,7 +216,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblWidth.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>12</value>
   </data>
   <data name="nudWidth.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 432</value>
@@ -238,13 +241,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;nudWidth.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>11</value>
   </data>
   <data name="lblHeight.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="lblHeight.Location" type="System.Drawing.Point, System.Drawing">
-    <value>104, 416</value>
+    <value>101, 416</value>
   </data>
   <data name="lblHeight.Size" type="System.Drawing.Size, System.Drawing">
     <value>41, 13</value>
@@ -265,7 +268,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblHeight.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>10</value>
   </data>
   <data name="nudHeight.Location" type="System.Drawing.Point, System.Drawing">
     <value>104, 432</value>
@@ -289,7 +292,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;nudHeight.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>9</value>
   </data>
   <data name="lblOutputFilename.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -316,7 +319,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblOutputFilename.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>8</value>
   </data>
   <data name="txtOutputFilename.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 528</value>
@@ -329,7 +332,6 @@
   </data>
   <data name="txtOutputFilename.Text" xml:space="preserve">
     <value>$filename_th</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;txtOutputFilename.Name" xml:space="preserve">
     <value>txtOutputFilename</value>
@@ -341,7 +343,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;txtOutputFilename.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>7</value>
   </data>
   <data name="btnGenerate.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -350,7 +352,7 @@
     <value>8, 560</value>
   </data>
   <data name="btnGenerate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>560, 23</value>
+    <value>560, 24</value>
   </data>
   <data name="btnGenerate.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
@@ -368,7 +370,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnGenerate.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>6</value>
   </data>
   <data name="lblOutputFolder.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -395,7 +397,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblOutputFolder.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>5</value>
   </data>
   <data name="txtOutputFolder.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 480</value>
@@ -416,7 +418,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;txtOutputFolder.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>4</value>
   </data>
   <data name="btnOutputFolder.Location" type="System.Drawing.Point, System.Drawing">
     <value>536, 479</value>
@@ -429,7 +431,6 @@
   </data>
   <data name="btnOutputFolder.Text" xml:space="preserve">
     <value>...</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;btnOutputFolder.Name" xml:space="preserve">
     <value>btnOutputFolder</value>
@@ -441,6 +442,84 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnOutputFolder.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="lblQuality.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblQuality.Location" type="System.Drawing.Point, System.Drawing">
+    <value>197, 416</value>
+  </data>
+  <data name="lblQuality.Size" type="System.Drawing.Size, System.Drawing">
+    <value>42, 13</value>
+  </data>
+  <data name="lblQuality.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="lblQuality.Text" xml:space="preserve">
+    <value>Quality:</value>
+  </data>
+  <data name="&gt;&gt;lblQuality.Name" xml:space="preserve">
+    <value>lblQuality</value>
+  </data>
+  <data name="&gt;&gt;lblQuality.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblQuality.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblQuality.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="nudQuality.Location" type="System.Drawing.Point, System.Drawing">
+    <value>200, 432</value>
+  </data>
+  <data name="nudQuality.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 20</value>
+  </data>
+  <data name="nudQuality.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="nudQuality.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
+  </data>
+  <data name="&gt;&gt;nudQuality.Name" xml:space="preserve">
+    <value>nudQuality</value>
+  </data>
+  <data name="&gt;&gt;nudQuality.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;nudQuality.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;nudQuality.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="lblQualityPercentage.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblQualityPercentage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>261, 436</value>
+  </data>
+  <data name="lblQualityPercentage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>15, 13</value>
+  </data>
+  <data name="lblQualityPercentage.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="lblQualityPercentage.Text" xml:space="preserve">
+    <value>%</value>
+  </data>
+  <data name="&gt;&gt;lblQualityPercentage.Name" xml:space="preserve">
+    <value>lblQualityPercentage</value>
+  </data>
+  <data name="&gt;&gt;lblQualityPercentage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblQualityPercentage.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblQualityPercentage.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">

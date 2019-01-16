@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2018 ShareX Team
+    Copyright (c) 2007-2019 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -83,12 +83,16 @@ namespace ShareX.UploadersLib.TextUploaders
             UploadResult result = new UploadResult();
             CustomUploaderInput input = new CustomUploaderInput(fileName, text);
 
-            if (uploader.RequestFormat == CustomUploaderRequestFormat.MultipartFormData)
+            if (uploader.Body == CustomUploaderBody.None)
+            {
+                result.Response = SendRequest(uploader.RequestMethod, uploader.GetRequestURL(input), null, uploader.GetHeaders(input), null, uploader.ResponseType);
+            }
+            else if (uploader.Body == CustomUploaderBody.MultipartFormData)
             {
                 if (string.IsNullOrEmpty(uploader.FileFormName))
                 {
                     result.Response = SendRequestMultiPart(uploader.GetRequestURL(input), uploader.GetArguments(input),
-                        uploader.GetHeaders(input), null, uploader.ResponseType, uploader.RequestType);
+                        uploader.GetHeaders(input), null, uploader.ResponseType, uploader.RequestMethod);
                 }
                 else
                 {
@@ -96,37 +100,32 @@ namespace ShareX.UploadersLib.TextUploaders
                     using (MemoryStream stream = new MemoryStream(bytes))
                     {
                         result = SendRequestFile(uploader.GetRequestURL(input), stream, fileName, uploader.GetFileFormName(),
-                            uploader.GetArguments(input), uploader.GetHeaders(input), null, uploader.ResponseType, uploader.RequestType);
+                            uploader.GetArguments(input), uploader.GetHeaders(input), null, uploader.ResponseType, uploader.RequestMethod);
                     }
                 }
             }
-            else if (uploader.RequestFormat == CustomUploaderRequestFormat.URLQueryString)
+            else if (uploader.Body == CustomUploaderBody.FormURLEncoded)
             {
-                result.Response = SendRequest(uploader.RequestType, uploader.GetRequestURL(input), uploader.GetArguments(input),
+                result.Response = SendRequestURLEncoded(uploader.RequestMethod, uploader.GetRequestURL(input), uploader.GetArguments(input),
                     uploader.GetHeaders(input), null, uploader.ResponseType);
             }
-            else if (uploader.RequestFormat == CustomUploaderRequestFormat.JSON)
+            else if (uploader.Body == CustomUploaderBody.JSON || uploader.Body == CustomUploaderBody.XML)
             {
-                result.Response = SendRequest(uploader.RequestType, uploader.GetRequestURL(input), uploader.GetData(input), UploadHelpers.ContentTypeJSON,
-                    uploader.GetArguments(input), uploader.GetHeaders(input), null, uploader.ResponseType);
+                result.Response = SendRequest(uploader.RequestMethod, uploader.GetRequestURL(input), uploader.GetData(input), uploader.GetContentType(),
+                    null, uploader.GetHeaders(input), null, uploader.ResponseType);
             }
-            else if (uploader.RequestFormat == CustomUploaderRequestFormat.Binary)
+            else if (uploader.Body == CustomUploaderBody.Binary)
             {
                 byte[] bytes = Encoding.UTF8.GetBytes(text);
                 using (MemoryStream stream = new MemoryStream(bytes))
                 {
-                    result.Response = SendRequest(uploader.RequestType, uploader.GetRequestURL(input), stream, UploadHelpers.GetMimeType(fileName),
-                        uploader.GetArguments(input), uploader.GetHeaders(input), null, uploader.ResponseType);
+                    result.Response = SendRequest(uploader.RequestMethod, uploader.GetRequestURL(input), stream, UploadHelpers.GetMimeType(fileName),
+                        null, uploader.GetHeaders(input), null, uploader.ResponseType);
                 }
-            }
-            else if (uploader.RequestFormat == CustomUploaderRequestFormat.FormURLEncoded)
-            {
-                result.Response = SendRequestURLEncoded(uploader.RequestType, uploader.GetRequestURL(input), uploader.GetArguments(input),
-                    uploader.GetHeaders(input), null, uploader.ResponseType);
             }
             else
             {
-                throw new Exception("Unsupported request format: " + uploader.RequestFormat);
+                throw new Exception("Unsupported request format: " + uploader.Body);
             }
 
             try

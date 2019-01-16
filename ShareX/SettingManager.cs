@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2018 ShareX Team
+    Copyright (c) 2007-2019 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -110,14 +110,10 @@ namespace ShareX
         {
             LoadApplicationConfig();
 
-            ApplicationConfigBackwardCompatibilityTasks();
-
             Task.Run(() =>
             {
                 LoadUploadersConfig();
                 uploadersConfigResetEvent.Set();
-
-                UploadersConfigBackwardCompatibilityTasks();
 
                 LoadHotkeysConfig();
                 hotkeysConfigResetEvent.Set();
@@ -143,12 +139,14 @@ namespace ShareX
         public static void LoadApplicationConfig()
         {
             Settings = ApplicationConfig.Load(ApplicationConfigFilePath, BackupFolder, true, true);
+            ApplicationConfigBackwardCompatibilityTasks();
             DefaultTaskSettings = Settings.DefaultTaskSettings;
         }
 
         public static void LoadUploadersConfig()
         {
             UploadersConfig = UploadersConfig.Load(UploadersConfigFilePath, BackupFolder, true, true);
+            UploadersConfigBackwardCompatibilityTasks();
         }
 
         public static void LoadHotkeysConfig()
@@ -210,6 +208,14 @@ namespace ShareX
                     {
                         UploadersConfig.AmazonS3Settings.Endpoint = "";
                     }
+                }
+            }
+
+            if (UploadersConfig.CustomUploadersList != null)
+            {
+                foreach (CustomUploaderItem cui in UploadersConfig.CustomUploadersList)
+                {
+                    cui.CheckBackwardCompatibility();
                 }
             }
         }

@@ -439,7 +439,7 @@
     <value>btnLanguages</value>
   </data>
   <data name="&gt;&gt;btnLanguages.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MenuButton, ShareX.HelpersLib, Version=12.2.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MenuButton, ShareX.HelpersLib, Version=12.4.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;btnLanguages.Parent" xml:space="preserve">
     <value>tpGeneral</value>
@@ -740,7 +740,6 @@
   </data>
   <data name="gbSteam.Text" xml:space="preserve">
     <value>Steam</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;gbSteam.Name" xml:space="preserve">
     <value>gbSteam</value>
@@ -957,7 +956,6 @@
   </data>
   <data name="gbWindows.Text" xml:space="preserve">
     <value>Windows</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;gbWindows.Name" xml:space="preserve">
     <value>gbWindows</value>
@@ -998,41 +996,35 @@
   <data name="&gt;&gt;tpIntegration.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="lblNotePersonalFolderPath.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="btnPersonalFolderPathApply.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 56</value>
   </data>
-  <data name="lblNotePersonalFolderPath.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="btnPersonalFolderPathApply.Size" type="System.Drawing.Size, System.Drawing">
+    <value>96, 23</value>
   </data>
-  <data name="lblNotePersonalFolderPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 88</value>
+  <data name="btnPersonalFolderPathApply.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
   </data>
-  <data name="lblNotePersonalFolderPath.Size" type="System.Drawing.Size, System.Drawing">
-    <value>354, 13</value>
+  <data name="btnPersonalFolderPathApply.Text" xml:space="preserve">
+    <value>Apply</value>
   </data>
-  <data name="lblNotePersonalFolderPath.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+  <data name="&gt;&gt;btnPersonalFolderPathApply.Name" xml:space="preserve">
+    <value>btnPersonalFolderPathApply</value>
   </data>
-  <data name="lblNotePersonalFolderPath.Text" xml:space="preserve">
-    <value>Note: You must reopen ShareX for personal folder changes to take effect.</value>
+  <data name="&gt;&gt;btnPersonalFolderPathApply.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;lblNotePersonalFolderPath.Name" xml:space="preserve">
-    <value>lblNotePersonalFolderPath</value>
-  </data>
-  <data name="&gt;&gt;lblNotePersonalFolderPath.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblNotePersonalFolderPath.Parent" xml:space="preserve">
+  <data name="&gt;&gt;btnPersonalFolderPathApply.Parent" xml:space="preserve">
     <value>tpPaths</value>
   </data>
-  <data name="&gt;&gt;lblNotePersonalFolderPath.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;btnPersonalFolderPathApply.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="btnOpenScreenshotsFolder.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="btnOpenScreenshotsFolder.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 212</value>
+    <value>16, 184</value>
   </data>
   <data name="btnOpenScreenshotsFolder.Size" type="System.Drawing.Size, System.Drawing">
     <value>96, 23</value>
@@ -1062,7 +1054,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblPreviewPersonalFolderPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>120, 61</value>
+    <value>224, 61</value>
   </data>
   <data name="lblPreviewPersonalFolderPath.Size" type="System.Drawing.Size, System.Drawing">
     <value>16, 13</value>
@@ -1072,7 +1064,6 @@
   </data>
   <data name="lblPreviewPersonalFolderPath.Text" xml:space="preserve">
     <value>...</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;lblPreviewPersonalFolderPath.Name" xml:space="preserve">
     <value>lblPreviewPersonalFolderPath</value>
@@ -1168,7 +1159,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnBrowseCustomScreenshotsPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>432, 139</value>
+    <value>432, 111</value>
   </data>
   <data name="btnBrowseCustomScreenshotsPath.Size" type="System.Drawing.Size, System.Drawing">
     <value>96, 23</value>
@@ -1195,7 +1186,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnOpenPersonalFolderPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 56</value>
+    <value>120, 56</value>
   </data>
   <data name="btnOpenPersonalFolderPath.Size" type="System.Drawing.Size, System.Drawing">
     <value>96, 23</value>
@@ -1219,7 +1210,7 @@
     <value>7</value>
   </data>
   <data name="txtCustomScreenshotsPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 140</value>
+    <value>16, 112</value>
   </data>
   <data name="txtCustomScreenshotsPath.Size" type="System.Drawing.Size, System.Drawing">
     <value>408, 20</value>
@@ -1246,7 +1237,7 @@
     <value>NoControl</value>
   </data>
   <data name="cbUseCustomScreenshotsPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 116</value>
+    <value>16, 88</value>
   </data>
   <data name="cbUseCustomScreenshotsPath.Size" type="System.Drawing.Size, System.Drawing">
     <value>174, 17</value>
@@ -1276,7 +1267,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblSaveImageSubFolderPattern.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 172</value>
+    <value>13, 144</value>
   </data>
   <data name="lblSaveImageSubFolderPattern.Size" type="System.Drawing.Size, System.Drawing">
     <value>94, 13</value>
@@ -1306,7 +1297,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblSaveImageSubFolderPatternPreview.Location" type="System.Drawing.Point, System.Drawing">
-    <value>120, 217</value>
+    <value>120, 189</value>
   </data>
   <data name="lblSaveImageSubFolderPatternPreview.Size" type="System.Drawing.Size, System.Drawing">
     <value>16, 13</value>
@@ -1316,7 +1307,6 @@
   </data>
   <data name="lblSaveImageSubFolderPatternPreview.Text" xml:space="preserve">
     <value>...</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;lblSaveImageSubFolderPatternPreview.Name" xml:space="preserve">
     <value>lblSaveImageSubFolderPatternPreview</value>
@@ -1331,7 +1321,7 @@
     <value>11</value>
   </data>
   <data name="txtSaveImageSubFolderPattern.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 188</value>
+    <value>16, 160</value>
   </data>
   <data name="txtSaveImageSubFolderPattern.Size" type="System.Drawing.Size, System.Drawing">
     <value>408, 20</value>
@@ -1775,7 +1765,7 @@
     <value>lvClipboardFormats</value>
   </data>
   <data name="&gt;&gt;lvClipboardFormats.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=12.2.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=12.4.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lvClipboardFormats.Parent" xml:space="preserve">
     <value>gbClipboardFormats</value>
@@ -1886,7 +1876,7 @@
     <value>lvSecondaryImageUploaders</value>
   </data>
   <data name="&gt;&gt;lvSecondaryImageUploaders.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=12.2.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=12.4.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lvSecondaryImageUploaders.Parent" xml:space="preserve">
     <value>gbSecondaryImageUploaders</value>
@@ -1940,7 +1930,7 @@
     <value>lvSecondaryFileUploaders</value>
   </data>
   <data name="&gt;&gt;lvSecondaryFileUploaders.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=12.2.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=12.4.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lvSecondaryFileUploaders.Parent" xml:space="preserve">
     <value>gbSecondaryFileUploaders</value>
@@ -1994,7 +1984,7 @@
     <value>lvSecondaryTextUploaders</value>
   </data>
   <data name="&gt;&gt;lvSecondaryTextUploaders.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=12.2.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=12.4.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lvSecondaryTextUploaders.Parent" xml:space="preserve">
     <value>gbSecondaryTextUploaders</value>
@@ -2978,7 +2968,7 @@
     <value>tttvMain</value>
   </data>
   <data name="&gt;&gt;tttvMain.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.TabToTreeView, ShareX.HelpersLib, Version=12.2.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.TabToTreeView, ShareX.HelpersLib, Version=12.4.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;tttvMain.Parent" xml:space="preserve">
     <value>$this</value>

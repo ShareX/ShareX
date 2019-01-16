@@ -66,7 +66,7 @@ namespace ShareX
             this.cbSendToMenu = new System.Windows.Forms.CheckBox();
             this.cbShellContextMenu = new System.Windows.Forms.CheckBox();
             this.tpPaths = new System.Windows.Forms.TabPage();
-            this.lblNotePersonalFolderPath = new System.Windows.Forms.Label();
+            this.btnPersonalFolderPathApply = new System.Windows.Forms.Button();
             this.btnOpenScreenshotsFolder = new System.Windows.Forms.Button();
             this.lblPreviewPersonalFolderPath = new System.Windows.Forms.Label();
             this.btnBrowsePersonalFolderPath = new System.Windows.Forms.Button();
@@ -440,7 +440,7 @@ namespace ShareX
             // tpPaths
             // 
             this.tpPaths.BackColor = System.Drawing.SystemColors.Window;
-            this.tpPaths.Controls.Add(this.lblNotePersonalFolderPath);
+            this.tpPaths.Controls.Add(this.btnPersonalFolderPathApply);
             this.tpPaths.Controls.Add(this.btnOpenScreenshotsFolder);
             this.tpPaths.Controls.Add(this.lblPreviewPersonalFolderPath);
             this.tpPaths.Controls.Add(this.btnBrowsePersonalFolderPath);
@@ -456,10 +456,12 @@ namespace ShareX
             resources.ApplyResources(this.tpPaths, "tpPaths");
             this.tpPaths.Name = "tpPaths";
             // 
-            // lblNotePersonalFolderPath
+            // btnPersonalFolderPathApply
             // 
-            resources.ApplyResources(this.lblNotePersonalFolderPath, "lblNotePersonalFolderPath");
-            this.lblNotePersonalFolderPath.Name = "lblNotePersonalFolderPath";
+            resources.ApplyResources(this.btnPersonalFolderPathApply, "btnPersonalFolderPathApply");
+            this.btnPersonalFolderPathApply.Name = "btnPersonalFolderPathApply";
+            this.btnPersonalFolderPathApply.UseVisualStyleBackColor = true;
+            this.btnPersonalFolderPathApply.Click += new System.EventHandler(this.btnPersonalFolderPathApply_Click);
             // 
             // btnOpenScreenshotsFolder
             // 
@@ -1044,7 +1046,6 @@ namespace ShareX
             this.Controls.Add(this.tttvMain);
             this.Name = "ApplicationSettingsForm";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.SettingsForm_FormClosed);
             this.Shown += new System.EventHandler(this.SettingsForm_Shown);
             this.Resize += new System.EventHandler(this.SettingsForm_Resize);
             this.tcSettings.ResumeLayout(false);
@@ -1148,7 +1149,6 @@ namespace ShareX
         private System.Windows.Forms.Label lblPersonalFolderPath;
         private System.Windows.Forms.TextBox txtPersonalFolderPath;
         private System.Windows.Forms.Button btnOpenScreenshotsFolder;
-        private System.Windows.Forms.Label lblNotePersonalFolderPath;
         private System.Windows.Forms.CheckBox cbSilentRun;
         private System.Windows.Forms.NumericUpDown nudRetryUpload;
         private System.Windows.Forms.TableLayoutPanel tlpBackupDestinations;
@@ -1208,5 +1208,6 @@ namespace ShareX
         private System.Windows.Forms.Button btnResetSettings;
         private System.Windows.Forms.CheckBox cbEditWithShareX;
         private System.Windows.Forms.Button btnCheckDevBuild;
+        private System.Windows.Forms.Button btnPersonalFolderPathApply;
     }
 }

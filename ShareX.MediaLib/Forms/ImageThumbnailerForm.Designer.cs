@@ -43,8 +43,12 @@
             this.lblOutputFolder = new System.Windows.Forms.Label();
             this.txtOutputFolder = new System.Windows.Forms.TextBox();
             this.btnOutputFolder = new System.Windows.Forms.Button();
+            this.lblQuality = new System.Windows.Forms.Label();
+            this.nudQuality = new System.Windows.Forms.NumericUpDown();
+            this.lblQualityPercentage = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.nudWidth)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudHeight)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudQuality)).BeginInit();
             this.SuspendLayout();
             // 
             // lvImages
@@ -60,6 +64,7 @@
             this.lvImages.Name = "lvImages";
             this.lvImages.UseCompatibleStateImageBehavior = false;
             this.lvImages.View = System.Windows.Forms.View.Details;
+            this.lvImages.SelectedIndexChanged += new System.EventHandler(this.lvImages_SelectedIndexChanged);
             this.lvImages.DragDrop += new System.Windows.Forms.DragEventHandler(this.lvImages_DragDrop);
             this.lvImages.DragEnter += new System.Windows.Forms.DragEventHandler(this.lvImages_DragEnter);
             // 
@@ -117,7 +122,7 @@
             0,
             0,
             0});
-            this.nudHeight.ValueChanged += new System.EventHandler(this.nudWidth_ValueChanged);
+            this.nudHeight.ValueChanged += new System.EventHandler(this.nudHeight_ValueChanged);
             // 
             // lblOutputFilename
             // 
@@ -155,11 +160,34 @@
             this.btnOutputFolder.UseVisualStyleBackColor = true;
             this.btnOutputFolder.Click += new System.EventHandler(this.btnOutputFolder_Click);
             // 
+            // lblQuality
+            // 
+            resources.ApplyResources(this.lblQuality, "lblQuality");
+            this.lblQuality.Name = "lblQuality";
+            // 
+            // nudQuality
+            // 
+            resources.ApplyResources(this.nudQuality, "nudQuality");
+            this.nudQuality.Name = "nudQuality";
+            this.nudQuality.Value = new decimal(new int[] {
+            90,
+            0,
+            0,
+            0});
+            // 
+            // lblQualityPercentage
+            // 
+            resources.ApplyResources(this.lblQualityPercentage, "lblQualityPercentage");
+            this.lblQualityPercentage.Name = "lblQualityPercentage";
+            // 
             // ImageThumbnailerForm
             // 
             this.AcceptButton = this.btnGenerate;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.lblQualityPercentage);
+            this.Controls.Add(this.nudQuality);
+            this.Controls.Add(this.lblQuality);
             this.Controls.Add(this.btnOutputFolder);
             this.Controls.Add(this.txtOutputFolder);
             this.Controls.Add(this.lblOutputFolder);
@@ -178,6 +206,7 @@
             this.Name = "ImageThumbnailerForm";
             ((System.ComponentModel.ISupportInitialize)(this.nudWidth)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudHeight)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudQuality)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -199,5 +228,8 @@
         private System.Windows.Forms.Label lblOutputFolder;
         private System.Windows.Forms.TextBox txtOutputFolder;
         private System.Windows.Forms.Button btnOutputFolder;
+        private System.Windows.Forms.Label lblQuality;
+        private System.Windows.Forms.NumericUpDown nudQuality;
+        private System.Windows.Forms.Label lblQualityPercentage;
     }
 }

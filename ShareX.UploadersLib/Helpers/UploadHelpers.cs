@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2018 ShareX Team
+    Copyright (c) 2007-2019 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -39,6 +39,7 @@ namespace ShareX.UploadersLib
     {
         public const string ContentTypeMultipartFormData = "multipart/form-data";
         public const string ContentTypeJSON = "application/json";
+        public const string ContentTypeXML = "application/xml";
         public const string ContentTypeURLEncoded = "application/x-www-form-urlencoded";
         public const string ContentTypeOctetStream = "application/octet-stream";
 
@@ -67,6 +68,12 @@ namespace ShareX.UploadersLib
                     }
 
                     headers.Remove("Content-Length");
+                }
+
+                if (headers["Content-Type"] != null)
+                {
+                    contentType = headers["Content-Type"];
+                    headers.Remove("Content-Type");
                 }
 
                 if (headers["Referer"] != null)

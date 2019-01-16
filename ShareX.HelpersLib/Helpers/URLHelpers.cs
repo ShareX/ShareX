@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2018 ShareX Team
+    Copyright (c) 2007-2019 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -26,6 +26,7 @@
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.Diagnostics;
 using System.Globalization;
 using System.Linq;
@@ -439,29 +440,65 @@ namespace ShareX.HelpersLib
             return url;
         }
 
-        public static string CreateQuery(Dictionary<string, string> args, bool customEncoding = false)
+        public static string CreateQueryString(Dictionary<string, string> args, bool customEncoding = false)
         {
             if (args != null && args.Count > 0)
             {
-                return string.Join("&", args.Select(x => x.Key + "=" + (customEncoding ? URLEncode(x.Value) : HttpUtility.UrlEncode(x.Value))).ToArray());
+                List<string> pairs = new List<string>();
+
+                foreach (KeyValuePair<string, string> arg in args)
+                {
+                    string pair;
+
+                    if (string.IsNullOrEmpty(arg.Value))
+                    {
+                        pair = arg.Key;
+                    }
+                    else
+                    {
+                        string value;
+
+                        if (customEncoding)
+                        {
+                            value = URLEncode(arg.Value);
+                        }
+                        else
+                        {
+                            value = HttpUtility.UrlEncode(arg.Value);
+                        }
+
+                        pair = arg.Key + "=" + value;
+                    }
+
+                    pairs.Add(pair);
+                }
+
+                return string.Join("&", pairs);
             }
 
             return "";
         }
 
-        public static string CreateQuery(string url, Dictionary<string, string> args, bool customEncoding = false)
+        public static string CreateQueryString(string url, Dictionary<string, string> args, bool customEncoding = false)
         {
-            string query = CreateQuery(args, customEncoding);
+            string query = CreateQueryString(args, customEncoding);
 
             if (!string.IsNullOrEmpty(query))
             {
-                return url + "?" + query;
+                if (url.Contains("?"))
+                {
+                    return url + "&" + query;
+                }
+                else
+                {
+                    return url + "?" + query;
+                }
             }
 
             return url;
         }
 
-        public static string RemoveQuery(string url)
+        public static string RemoveQueryString(string url)
         {
             if (!string.IsNullOrEmpty(url))
             {
@@ -474,6 +511,22 @@ namespace ShareX.HelpersLib
             }
 
             return url;
+        }
+
+        public static NameValueCollection ParseQueryString(string url)
+        {
+            if (!string.IsNullOrEmpty(url))
+            {
+                int index = url.IndexOf("?");
+
+                if (index > -1 && index + 1 < url.Length)
+                {
+                    string query = url.Substring(index + 1);
+                    return HttpUtility.ParseQueryString(query);
+                }
+            }
+
+            return null;
         }
 
         public static string BuildUri(string root, string path, string query = null)

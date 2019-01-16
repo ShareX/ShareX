@@ -501,6 +501,7 @@ namespace ShareX.Properties {
         
         /// <summary>
         ///   Looks up a localized string similar to ShareX needs to be restarted for the language changes to apply.
+        ///
         ///Would you like to restart ShareX?.
         /// </summary>
         public static string ApplicationSettingsForm_cbLanguage_SelectedIndexChanged_Language_Restart {
@@ -1833,15 +1834,6 @@ namespace ShareX.Properties {
             get {
                 object obj = ResourceManager.GetObject("monitor", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to You must reopen ShareX for personal folder changes to take effect..
-        /// </summary>
-        public static string MustReopenForPersonalFolderChangesToTakeEffect {
-            get {
-                return ResourceManager.GetString("MustReopenForPersonalFolderChangesToTakeEffect", resourceCulture);
             }
         }
         

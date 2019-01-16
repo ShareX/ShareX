@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2018 ShareX Team
+    Copyright (c) 2007-2019 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -28,7 +28,7 @@ using System.Runtime.InteropServices;
 
 [assembly: AssemblyCompany("ShareX Team")]
 [assembly: AssemblyProduct("ShareX")]
-[assembly: AssemblyCopyright("Copyright (c) 2007-2018 ShareX Team")]
+[assembly: AssemblyCopyright("Copyright (c) 2007-2019 ShareX Team")]
 [assembly: ComVisible(false)]
 [assembly: AssemblyVersion("12.4.0")]
 [assembly: AssemblyFileVersion("12.4.0")]

@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2018 ShareX Team
+    Copyright (c) 2007-2019 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -30,6 +30,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Security;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
@@ -50,6 +51,7 @@ namespace ShareX.UploadersLib
         public List<Match> RegexMatches { get; set; }
         public bool URLEncode { get; set; } // Only URL encodes filename and input
         public bool JSONEncode { get; set; }
+        public bool XMLEncode { get; set; }
         public bool UseNameParser { get; set; }
 
         public bool SkipSyntaxParse { get; set; }
@@ -142,6 +144,10 @@ namespace ShareX.UploadersLib
                                 if (JSONEncode)
                                 {
                                     syntaxResult = URLHelpers.JSONEncode(syntaxResult);
+                                }
+                                else if (XMLEncode)
+                                {
+                                    syntaxResult = SecurityElement.Escape(syntaxResult);
                                 }
 
                                 sbResult.Append(syntaxResult);

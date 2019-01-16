@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2018 ShareX Team
+    Copyright (c) 2007-2019 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -39,27 +39,24 @@ namespace ShareX.MediaLib
             Icon = ShareXResources.Icon;
         }
 
-        private void CheckState()
+        private void UpdateEnabled()
         {
+            btnRemove.Enabled = lvImages.SelectedItems.Count > 0;
             btnGenerate.Enabled = lvImages.Items.Count > 0 && nudWidth.Value > 0 && nudHeight.Value > 0 && !string.IsNullOrEmpty(txtOutputFolder.Text) &&
                 !string.IsNullOrEmpty(txtOutputFilename.Text);
         }
 
         private void AddFile(string filePath)
         {
-            if (string.IsNullOrEmpty(filePath))
+            if (!string.IsNullOrEmpty(filePath))
             {
-                return;
+                lvImages.Items.Add(filePath);
+
+                if (string.IsNullOrEmpty(txtOutputFolder.Text))
+                {
+                    txtOutputFolder.Text = Path.GetDirectoryName(filePath);
+                }
             }
-
-            lvImages.Items.Add(filePath);
-
-            if (string.IsNullOrEmpty(txtOutputFolder.Text))
-            {
-                txtOutputFolder.Text = Path.GetDirectoryName(filePath);
-            }
-
-            CheckState();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -72,6 +69,8 @@ namespace ShareX.MediaLib
                 {
                     AddFile(image);
                 }
+
+                UpdateEnabled();
             }
         }
 
@@ -84,6 +83,11 @@ namespace ShareX.MediaLib
                     lvImages.Items.Remove(lvi);
                 }
             }
+        }
+
+        private void lvImages_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            UpdateEnabled();
         }
 
         private void lvImages_DragEnter(object sender, DragEventArgs e)
@@ -110,18 +114,25 @@ namespace ShareX.MediaLib
                     {
                         AddFile(file);
                     }
+
+                    UpdateEnabled();
                 }
             }
         }
 
         private void nudWidth_ValueChanged(object sender, EventArgs e)
         {
-            CheckState();
+            UpdateEnabled();
+        }
+
+        private void nudHeight_ValueChanged(object sender, EventArgs e)
+        {
+            UpdateEnabled();
         }
 
         private void txtOutputFolder_TextChanged(object sender, EventArgs e)
         {
-            CheckState();
+            UpdateEnabled();
         }
 
         private void btnOutputFolder_Click(object sender, EventArgs e)
@@ -131,7 +142,7 @@ namespace ShareX.MediaLib
 
         private void txtOutputFilename_TextChanged(object sender, EventArgs e)
         {
-            CheckState();
+            UpdateEnabled();
         }
 
         private void btnGenerate_Click(object sender, EventArgs e)
@@ -140,8 +151,11 @@ namespace ShareX.MediaLib
             {
                 int width = (int)nudWidth.Value;
                 int height = (int)nudHeight.Value;
+                int quality = (int)nudQuality.Value;
                 string outputFolder = txtOutputFolder.Text;
                 string outputFilename = txtOutputFilename.Text;
+
+                Cursor = Cursors.WaitCursor;
 
                 try
                 {
@@ -151,24 +165,30 @@ namespace ShareX.MediaLib
 
                         if (File.Exists(filePath))
                         {
-                            Image img = ImageHelpers.LoadImage(filePath);
-
-                            if (img != null)
+                            using (Image img = ImageHelpers.LoadImage(filePath))
                             {
-                                using (img = ImageHelpers.CreateThumbnail(img, width, height))
+                                if (img != null)
                                 {
-                                    string filename = Path.GetFileNameWithoutExtension(filePath);
-                                    string outputPath = Path.Combine(outputFolder, outputFilename.Replace("$filename", filename));
-                                    outputPath = Path.ChangeExtension(outputPath, "jpg");
-                                    img.SaveJPG(outputPath, 90);
+                                    using (Image thumbnail = ImageHelpers.CreateThumbnail(img, width, height))
+                                    {
+                                        string filename = Path.GetFileNameWithoutExtension(filePath);
+                                        string outputPath = Path.Combine(outputFolder, outputFilename.Replace("$filename", filename));
+                                        outputPath = Path.ChangeExtension(outputPath, "jpg");
+                                        thumbnail.SaveJPG(outputPath, quality);
+                                    }
                                 }
                             }
                         }
                     }
+
+                    Cursor = Cursors.Default;
+                    // TODO: Translate
+                    MessageBox.Show("Thumbnails successfully generated.", Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 catch (Exception ex)
                 {
                     DebugHelper.WriteException(ex);
+                    Cursor = Cursors.Default;
                     ex.ShowError();
                 }
             }
