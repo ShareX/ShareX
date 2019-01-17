@@ -76,6 +76,28 @@ namespace ShareX.UploadersLib
                     headers.Remove("Content-Type");
                 }
 
+                if (headers["Cookie"] != null)
+                {
+                    string cookieHeader = headers["Cookie"];
+
+                    if (cookies == null)
+                    {
+                        cookies = new CookieCollection();
+                    }
+
+                    foreach (string cookie in cookieHeader.Split(new string[] { "; " }, StringSplitOptions.RemoveEmptyEntries))
+                    {
+                        string[] cookieValues = cookie.Split(new char[] { '=' }, StringSplitOptions.RemoveEmptyEntries);
+
+                        if (cookieValues.Length == 2)
+                        {
+                            cookies.Add(new Cookie(cookieValues[0], cookieValues[1], "/", request.Host.Split(':')[0]));
+                        }
+                    }
+
+                    headers.Remove("Cookie");
+                }
+
                 if (headers["Referer"] != null)
                 {
                     referer = headers["Referer"];
