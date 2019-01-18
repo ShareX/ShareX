@@ -123,6 +123,8 @@ namespace ShareX.UploadersLib
         Lambda,
         [Description("VideoBin")]
         VideoBin,
+        [Description("Teknik")]
+        Teknik,
         [Description("Pomf")]
         Pomf,
         [Description("Uguu")]

@@ -330,6 +330,19 @@ namespace ShareX.UploadersLib
 
         #endregion Lithiio
 
+        #region Teknik
+
+        public OAuth2Info TeknikOAuth2Info = null;
+
+        public string TeknikAPIUrl = TeknikUploader.DefaultAPIURL;
+        public string TeknikAuthUrl = TeknikUploader.DefaultAuthURL;
+        public int TeknikExpirationLength = 1;
+        public TeknikExpirationUnit TeknikExpirationUnit = TeknikExpirationUnit.Never;
+        public bool TeknikEncryption = false;
+        public bool TeknikGenerateDeletionKey = false;
+
+        #endregion
+
         #region Pomf
 
         public PomfUploader PomfUploader = new PomfUploader("https://mixtape.moe/upload.php");
