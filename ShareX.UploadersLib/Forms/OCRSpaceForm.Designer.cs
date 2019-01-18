@@ -33,7 +33,6 @@
             this.lblLanguage = new System.Windows.Forms.Label();
             this.txtResult = new System.Windows.Forms.TextBox();
             this.lblResult = new System.Windows.Forms.Label();
-            this.llAttribution = new System.Windows.Forms.LinkLabel();
             this.btnStartOCR = new System.Windows.Forms.Button();
             this.pbProgress = new System.Windows.Forms.ProgressBar();
             this.llGoogleTranslate = new System.Windows.Forms.LinkLabel();
@@ -61,13 +60,6 @@
             // 
             resources.ApplyResources(this.lblResult, "lblResult");
             this.lblResult.Name = "lblResult";
-            // 
-            // llAttribution
-            // 
-            resources.ApplyResources(this.llAttribution, "llAttribution");
-            this.llAttribution.Name = "llAttribution";
-            this.llAttribution.TabStop = true;
-            this.llAttribution.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llAttribution_LinkClicked);
             // 
             // btnStartOCR
             // 
@@ -101,7 +93,6 @@
             this.Controls.Add(this.cbLanguages);
             this.Controls.Add(this.pbProgress);
             this.Controls.Add(this.btnStartOCR);
-            this.Controls.Add(this.llAttribution);
             this.Name = "OCRSpaceForm";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Shown += new System.EventHandler(this.OCRSpaceResultForm_Shown);
@@ -116,7 +107,6 @@
         private System.Windows.Forms.Label lblLanguage;
         private System.Windows.Forms.TextBox txtResult;
         private System.Windows.Forms.Label lblResult;
-        private System.Windows.Forms.LinkLabel llAttribution;
         private System.Windows.Forms.Button btnStartOCR;
         private System.Windows.Forms.ProgressBar pbProgress;
         private System.Windows.Forms.LinkLabel llGoogleTranslate;
