@@ -147,7 +147,7 @@ namespace ShareX.UploadersLib
                                 }
                                 else if (XMLEncode)
                                 {
-                                    syntaxResult = SecurityElement.Escape(syntaxResult);
+                                    syntaxResult = URLHelpers.XMLEncode(syntaxResult);
                                 }
 
                                 sbResult.Append(syntaxResult);

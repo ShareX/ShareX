@@ -30,6 +30,7 @@ using System.Collections.Specialized;
 using System.Diagnostics;
 using System.Globalization;
 using System.Linq;
+using System.Security;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -172,6 +173,11 @@ namespace ShareX.HelpersLib
         {
             text = JsonConvert.ToString(text);
             return text.Substring(1, text.Length - 2);
+        }
+
+        public static string XMLEncode(string text)
+        {
+            return SecurityElement.Escape(text);
         }
 
         public static string URLDecode(string url, int count = 1)
