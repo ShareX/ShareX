@@ -2,31 +2,6 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2018 ShareX Team
-
-    This program is free software; you can redistribute it and/or
-    modify it under the terms of the GNU General Public License
-    as published by the Free Software Foundation; either version 2
-    of the License, or (at your option) any later version.
-
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License
-    along with this program; if not, write to the Free Software
-    Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
-
-    Optionally you can also view the license at <http://www.gnu.org/licenses/>.
-*/
-
-#endregion License Information (GPL v3)
-
-#region License Information (GPL v3)
-
-/*
-    ShareX - A program that allows you to take screenshots and share any file type
     Copyright (c) 2007-2019 ShareX Team
 
     This program is free software; you can redistribute it and/or
@@ -48,15 +23,12 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.HelpersLib;
 using ShareX.UploadersLib.Properties;
-using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
-using System.Xml.Linq;
 using Newtonsoft.Json;
 
 namespace ShareX.UploadersLib.ImageUploaders
@@ -76,23 +48,25 @@ namespace ShareX.UploadersLib.ImageUploaders
         {
             return new GooglePhotos(config.PicasaOAuth2Info)
             {
-                AlbumID = config.PicasaAlbumID
+                AlbumID = config.PicasaAlbumID,
+                IsPublic = config.GooglePhotosIsPublic
             };
         }
 
         public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpGooglePhotos;
     }
 
-    public class GooglePhotos : ImageUploader, IOAuth2
+    public sealed class GooglePhotos : ImageUploader, IOAuth2
     {
         private GoogleOAuth2 GoogleAuth { get; set; }
         public string AlbumID { get; set; }
+        public bool IsPublic { get; set; }
 
         public GooglePhotos(OAuth2Info oauth)
         {
             GoogleAuth = new GoogleOAuth2(oauth, this)
             {
-                Scope = "https://www.googleapis.com/auth/photoslibrary"
+                Scope = "https://www.googleapis.com/auth/photoslibrary.readonly.appcreateddata https://www.googleapis.com/auth/photoslibrary.sharing"
             };
         }
 
@@ -124,82 +98,112 @@ namespace ShareX.UploadersLib.ImageUploaders
 
             List<GooglePhotosAlbumInfo> albumList = new List<GooglePhotosAlbumInfo>();
 
-            string response = SendRequest(HttpMethod.GET, "https://photoslibrary.googleapis.com/v1/albums", headers: GoogleAuth.GetAuthHeaders());
-
-            GooglePhotosAlbums albums = JsonConvert.DeserializeObject<GooglePhotosAlbums>(response);
-
-            foreach (Album album in albums.albums)
+            Dictionary<string, string> args = new Dictionary<string, string>
             {
-                GooglePhotosAlbumInfo AlbumInfo = new GooglePhotosAlbumInfo
+                {"excludeNonAppCreatedData", "true" }
+            };
+
+            string pageToken = "";
+
+            do
+            {
+                args["pageToken"] = pageToken;
+                string response = SendRequest(HttpMethod.GET, "https://photoslibrary.googleapis.com/v1/albums", args, headers: GoogleAuth.GetAuthHeaders());
+                pageToken = "";
+
+                if (!string.IsNullOrEmpty(response))
                 {
-                    ID = album.id,
-                    Name = album.title
-                };
+                    GooglePhotosAlbums albums = JsonConvert.DeserializeObject<GooglePhotosAlbums>(response);
 
-                albumList.Add(AlbumInfo);
+                    if (albums.albums != null)
+                    {
+                        foreach (GooglePhotosAlbum album in albums.albums)
+                        {
+                            GooglePhotosAlbumInfo AlbumInfo = new GooglePhotosAlbumInfo
+                            {
+                                ID = album.id,
+                                Name = album.title
+                            };
+
+                            albumList.Add(AlbumInfo);
+                        }
+                        pageToken = albums.nextPageToken;
+                    }
+                }
             }
-
-            //if (!string.IsNullOrEmpty(response))
-            //{
-            //    XDocument xd = XDocument.Parse(response);
-
-            //    if (xd != null)
-            //    {
-            //        foreach (XElement entry in xd.Descendants(AtomNS + "entry"))
-            //        {
-            //            GooglePhotosAlbumInfo album = new GooglePhotosAlbumInfo();
-            //            album.ID = entry.GetElementValue(GPhotoNS + "id");
-            //            album.Name = entry.GetElementValue(AtomNS + "title");
-            //            album.Summary = entry.GetElementValue(AtomNS + "summary");
-            //            albumList.Add(album);
-            //        }
-            //    }
-            //}
+            while (!string.IsNullOrEmpty(pageToken));
 
             return albumList;
         }
 
         public override UploadResult Upload(Stream stream, string fileName)
         {
-            if (!CheckAuthorization() || string.IsNullOrEmpty(AlbumID)) return null;
+            if (!CheckAuthorization()) return null;
 
-            UploadResult ur = new UploadResult();
+            UploadResult result = new UploadResult();
 
-            //string url = string.Format("https://picasaweb.google.com/data/feed/api/user/default/albumid/" + AlbumID);
-            //string contentType = Helpers.GetMimeType(fileName);
+            if (IsPublic)
+            {
+                GooglePhotosNewAlbum tempItemAlbum = new GooglePhotosNewAlbum
+                {
+                    album = new GooglePhotosAlbum
+                    {
+                        title = fileName
+                    }
+                };
 
-            //NameValueCollection headers = GetAuthHeaders();
-            //headers.Add("Slug", URLHelpers.URLEncode(fileName));
+                string serializedTempItemAlbum = JsonConvert.SerializeObject(tempItemAlbum);
+                string serializedTempItemAlbumResponse = SendRequest(HttpMethod.POST, "https://photoslibrary.googleapis.com/v1/albums", serializedTempItemAlbum, headers: GoogleAuth.GetAuthHeaders(), contentType: UploadHelpers.ContentTypeJSON);
 
-            //ur.Response = SendRequest(HttpMethod.POST, url, stream, contentType, null, headers);
+                GooglePhotosAlbum tempItemAlbumResponse = JsonConvert.DeserializeObject<GooglePhotosAlbum>(serializedTempItemAlbumResponse);
 
-            //if (ur.Response != null)
-            //{
-            //    XDocument xd = XDocument.Parse(ur.Response);
+                AlbumID = tempItemAlbumResponse.id;
 
-            //    XElement entry_element = xd.Element(AtomNS + "entry");
+                GooglePhotosAlbumOptions albumOptions = new GooglePhotosAlbumOptions();
 
-            //    if (entry_element != null)
-            //    {
-            //        XElement group_element = entry_element.Element(MediaNS + "group");
+                string serializedAlbumOptions = JsonConvert.SerializeObject(albumOptions);
+                string serializedAlbumOptionsResponse = SendRequest(HttpMethod.POST, $"https://photoslibrary.googleapis.com/v1/albums/{AlbumID}:share", content: serializedAlbumOptions, headers: GoogleAuth.GetAuthHeaders(), contentType: UploadHelpers.ContentTypeJSON);
+                GooglePhotosAlbumOptionsResponse albumOptionsResponse = JsonConvert.DeserializeObject<GooglePhotosAlbumOptionsResponse>(serializedAlbumOptionsResponse);
 
-            //        if (group_element != null)
-            //        {
-            //            XElement content_element = group_element.Element(MediaNS + "content");
+                result.URL = albumOptionsResponse.shareInfo.shareableUrl;
+            }
 
-            //            if (content_element != null)
-            //            {
-            //                ur.ThumbnailURL = content_element.GetAttributeValue("url");
+            NameValueCollection uploadTokenHeaders = new NameValueCollection
+            {
+                { "X-Goog-Upload-File-Name", fileName },
+                { "X-Goog-Upload-Protocol", "raw" },
+                { "Authorization", GoogleAuth.GetAuthHeaders()["Authorization"] }
+            };
 
-            //                int last_slash_index = ur.ThumbnailURL.LastIndexOf(@"/");
+            string uploadToken = SendRequest(HttpMethod.POST, "https://photoslibrary.googleapis.com/v1/uploads", stream, contentType: UploadHelpers.ContentTypeOctetStream, headers: uploadTokenHeaders);
 
-            //                ur.URL = ur.ThumbnailURL.Insert(last_slash_index, @"/s0");
-            //            }
-            //        }
-            //    }
-            //}
+            GooglePhotosNewMediaItemRequest newMediaItemRequest = new GooglePhotosNewMediaItemRequest
+            {
+                albumId = AlbumID,
+                newMediaItems = new GooglePhotosNewMediaItem[]
+                {
+                    new  GooglePhotosNewMediaItem
+                    {
+                        simpleMediaItem = new GooglePhotosSimpleMediaItem
+                        {
+                            uploadToken = uploadToken
+                        }
+                    }
+                }
+            };
 
-            throw new NotImplementedException();
+            string serializedNewMediaItemRequest = JsonConvert.SerializeObject(newMediaItemRequest);
+
+            result.Response = SendRequest(HttpMethod.POST, "https://photoslibrary.googleapis.com/v1/mediaItems:batchCreate", serializedNewMediaItemRequest, headers: GoogleAuth.GetAuthHeaders(), contentType: UploadHelpers.ContentTypeJSON);
+
+            GooglePhotosNewMediaItemResults newMediaItemResult = JsonConvert.DeserializeObject<GooglePhotosNewMediaItemResults>(result.Response);
+
+            if (!IsPublic)
+            {
+                result.URL = newMediaItemResult.newMediaItemResults[0].mediaItem.productUrl;
+            }
+
+            return result;
         }
     }
 
@@ -212,11 +216,11 @@ namespace ShareX.UploadersLib.ImageUploaders
 
     public class GooglePhotosAlbums
     {
-        public Album[] albums { get; set; }
+        public GooglePhotosAlbum[] albums { get; set; }
         public string nextPageToken { get; set; }
     }
 
-    public class Album
+    public class GooglePhotosAlbum
     {
         public string id { get; set; }
         public string title { get; set; }
@@ -227,20 +231,88 @@ namespace ShareX.UploadersLib.ImageUploaders
         public string mediaItemsCount { get; set; }
     }
 
-    public class GooglePhotosMediaItem
+    public class GooglePhotosNewMediaItemRequest
     {
         public string albumId { get; set; }
-        public Newmediaitem[] newMediaItems { get; set; }
+        public GooglePhotosNewMediaItem[] newMediaItems { get; set; }
     }
 
-    public class Newmediaitem
+    public class GooglePhotosNewMediaItem
     {
         public string description { get; set; }
-        public Simplemediaitem simpleMediaItem { get; set; }
+        public GooglePhotosSimpleMediaItem simpleMediaItem { get; set; }
     }
 
-    public class Simplemediaitem
+    public class GooglePhotosSimpleMediaItem
     {
         public string uploadToken { get; set; }
+    }
+
+    public class GooglePhotosNewMediaItemResults
+    {
+        public GooglePhotosNewMediaItemResult[] newMediaItemResults { get; set; }
+    }
+
+    public class GooglePhotosNewMediaItemResult
+    {
+        public string uploadToken { get; set; }
+        public GooglePhotosStatus status { get; set; }
+        public GooglePhotosMediaItem mediaItem { get; set; }
+    }
+
+    public class GooglePhotosStatus
+    {
+        public string message { get; set; }
+        public int code { get; set; }
+    }
+
+    public class GooglePhotosMediaItem
+    {
+        public string id { get; set; }
+        public string productUrl { get; set; }
+        public string description { get; set; }
+        public string baseUrl { get; set; }
+        public GooglePhotosMediaMetaData mediaMetadata { get; set; }
+    }
+
+    public class GooglePhotosMediaMetaData
+    {
+        public string width { get; set; }
+        public string height { get; set; }
+        public string creationTime { get; set; }
+        public GooglePhotosPhoto photo { get; set; }
+    }
+
+    public class GooglePhotosPhoto
+    {
+    }
+
+    public class GooglePhotosNewAlbum
+    {
+        public GooglePhotosAlbum album { get; set; }
+    }
+
+    public class GooglePhotosAlbumOptions
+    {
+        public GooglePhotosSharedAlbumOptions sharedAlbumOptions { get; set; }
+    }
+
+    public class GooglePhotosSharedAlbumOptions
+    {
+        public string isCollaborative { get; set; }
+        public string isCommentable { get; set; }
+    }
+
+    public class GooglePhotosAlbumOptionsResponse
+    {
+        public GooglePhotosShareInfo shareInfo { get; set; }
+    }
+
+    public class GooglePhotosShareInfo
+    {
+        public GooglePhotosSharedAlbumOptions sharedAlbumOptions { get; set; }
+        public string shareableUrl { get; set; }
+        public string shareToken { get; set; }
+        public string isJoined { get; set; }
     }
 }

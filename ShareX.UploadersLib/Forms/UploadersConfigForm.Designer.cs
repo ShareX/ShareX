@@ -712,6 +712,7 @@ namespace ShareX.UploadersLib
             this.txtPhotobucketVerificationCode = new System.Windows.Forms.TextBox();
             this.lblPhotobucketAccountStatus = new System.Windows.Forms.Label();
             this.tpGooglePhotos = new System.Windows.Forms.TabPage();
+            this.cbGooglePhotosIsPublic = new System.Windows.Forms.CheckBox();
             this.txtPicasaAlbumID = new System.Windows.Forms.TextBox();
             this.lblPicasaAlbumID = new System.Windows.Forms.Label();
             this.lvPicasaAlbumList = new System.Windows.Forms.ListView();
@@ -5727,6 +5728,7 @@ namespace ShareX.UploadersLib
             // tpGooglePhotos
             // 
             this.tpGooglePhotos.BackColor = System.Drawing.SystemColors.Window;
+            this.tpGooglePhotos.Controls.Add(this.cbGooglePhotosIsPublic);
             this.tpGooglePhotos.Controls.Add(this.txtPicasaAlbumID);
             this.tpGooglePhotos.Controls.Add(this.lblPicasaAlbumID);
             this.tpGooglePhotos.Controls.Add(this.lvPicasaAlbumList);
@@ -5734,6 +5736,13 @@ namespace ShareX.UploadersLib
             this.tpGooglePhotos.Controls.Add(this.oauth2Picasa);
             resources.ApplyResources(this.tpGooglePhotos, "tpGooglePhotos");
             this.tpGooglePhotos.Name = "tpGooglePhotos";
+            // 
+            // cbGooglePhotosIsPublic
+            // 
+            resources.ApplyResources(this.cbGooglePhotosIsPublic, "cbGooglePhotosIsPublic");
+            this.cbGooglePhotosIsPublic.Name = "cbGooglePhotosIsPublic";
+            this.cbGooglePhotosIsPublic.UseVisualStyleBackColor = true;
+            this.cbGooglePhotosIsPublic.CheckedChanged += new System.EventHandler(this.cbGooglePhotosIsPublic_CheckedChanged);
             // 
             // txtPicasaAlbumID
             // 
@@ -6841,5 +6850,6 @@ namespace ShareX.UploadersLib
         private System.Windows.Forms.ToolStripButton tsbCustomUploaderJSONFormat;
         private System.Windows.Forms.ToolStripButton tsbCustomUploaderXMLFormat;
         private System.Windows.Forms.ToolStripButton tsbCustomUploaderCopyResponseText;
+        private System.Windows.Forms.CheckBox cbGooglePhotosIsPublic;
     }
 }

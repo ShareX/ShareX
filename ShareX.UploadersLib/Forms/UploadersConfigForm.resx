@@ -3654,7 +3654,7 @@ store.book[0].title</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpCustomUploaders.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 569</value>
+    <value>178, 42</value>
   </data>
   <data name="tpCustomUploaders.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -17046,6 +17046,33 @@ Using an encrypted library disables sharing.</value>
   <data name="&gt;&gt;tpPhotobucket.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
+  <data name="cbGooglePhotosIsPublic.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbGooglePhotosIsPublic.Location" type="System.Drawing.Point, System.Drawing">
+    <value>352, 463</value>
+  </data>
+  <data name="cbGooglePhotosIsPublic.Size" type="System.Drawing.Size, System.Drawing">
+    <value>90, 17</value>
+  </data>
+  <data name="cbGooglePhotosIsPublic.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="cbGooglePhotosIsPublic.Text" xml:space="preserve">
+    <value>Public upload</value>
+  </data>
+  <data name="&gt;&gt;cbGooglePhotosIsPublic.Name" xml:space="preserve">
+    <value>cbGooglePhotosIsPublic</value>
+  </data>
+  <data name="&gt;&gt;cbGooglePhotosIsPublic.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbGooglePhotosIsPublic.Parent" xml:space="preserve">
+    <value>tpGooglePhotos</value>
+  </data>
+  <data name="&gt;&gt;cbGooglePhotosIsPublic.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="txtPicasaAlbumID.Location" type="System.Drawing.Point, System.Drawing">
     <value>352, 64</value>
   </data>
@@ -17065,7 +17092,7 @@ Using an encrypted library disables sharing.</value>
     <value>tpGooglePhotos</value>
   </data>
   <data name="&gt;&gt;txtPicasaAlbumID.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="lblPicasaAlbumID.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -17095,7 +17122,7 @@ Using an encrypted library disables sharing.</value>
     <value>tpGooglePhotos</value>
   </data>
   <data name="&gt;&gt;lblPicasaAlbumID.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="chPicasaID.Text" xml:space="preserve">
     <value>ID</value>
@@ -17134,7 +17161,7 @@ Using an encrypted library disables sharing.</value>
     <value>tpGooglePhotos</value>
   </data>
   <data name="&gt;&gt;lvPicasaAlbumList.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="btnPicasaRefreshAlbumList.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -17164,7 +17191,7 @@ Using an encrypted library disables sharing.</value>
     <value>tpGooglePhotos</value>
   </data>
   <data name="&gt;&gt;btnPicasaRefreshAlbumList.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="oauth2Picasa.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 16</value>
@@ -17185,7 +17212,7 @@ Using an encrypted library disables sharing.</value>
     <value>tpGooglePhotos</value>
   </data>
   <data name="&gt;&gt;oauth2Picasa.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="tpGooglePhotos.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>
