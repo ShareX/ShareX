@@ -1142,6 +1142,19 @@ namespace ShareX
 
                 OCROptions ocrOptions = taskSettings.CaptureSettings.OCROptions;
 
+                if (!ocrOptions.Permission)
+                {
+                    if (MessageBox.Show("Please note that ShareX is using OCR.Space's online API to perform optical character recognition. Do you give permission to ShareX to upload images to this service?",
+                        "ShareX - Optical character recognition", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        taskSettings.CaptureSettingsReference.OCROptions.Permission = true;
+                    }
+                    else
+                    {
+                        return;
+                    }
+                }
+
                 if (ocrOptions.Silent)
                 {
                     await AsyncOCRImage(stream, fileName, filePath, ocrOptions);

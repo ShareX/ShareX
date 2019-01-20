@@ -76,6 +76,28 @@ namespace ShareX.UploadersLib
                     headers.Remove("Content-Type");
                 }
 
+                if (headers["Cookie"] != null)
+                {
+                    string cookieHeader = headers["Cookie"];
+
+                    if (cookies == null)
+                    {
+                        cookies = new CookieCollection();
+                    }
+
+                    foreach (string cookie in cookieHeader.Split(new string[] { "; " }, StringSplitOptions.RemoveEmptyEntries))
+                    {
+                        string[] cookieValues = cookie.Split(new char[] { '=' }, StringSplitOptions.RemoveEmptyEntries);
+
+                        if (cookieValues.Length == 2)
+                        {
+                            cookies.Add(new Cookie(cookieValues[0], cookieValues[1], "/", request.Host.Split(':')[0]));
+                        }
+                    }
+
+                    headers.Remove("Cookie");
+                }
+
                 if (headers["Referer"] != null)
                 {
                     referer = headers["Referer"];
@@ -198,34 +220,26 @@ namespace ShareX.UploadersLib
 
         public static string ResponseToString(WebResponse response, ResponseType responseType = ResponseType.Text)
         {
-            if (response == null)
+            if (response != null)
             {
-                return null;
+                switch (responseType)
+                {
+                    case ResponseType.Text:
+                        using (Stream responseStream = response.GetResponseStream())
+                        using (StreamReader reader = new StreamReader(responseStream, Encoding.UTF8))
+                        {
+                            return reader.ReadToEnd();
+                        }
+                    case ResponseType.RedirectionURL:
+                        return response.ResponseUri.OriginalString;
+                    case ResponseType.Headers:
+                        return response.Headers.ToString();
+                    case ResponseType.LocationHeader:
+                        return response.Headers["Location"];
+                }
             }
 
-            switch (responseType)
-            {
-                case ResponseType.Text:
-                    using (Stream responseStream = response.GetResponseStream())
-                    using (StreamReader reader = new StreamReader(responseStream, Encoding.UTF8))
-                    {
-                        return reader.ReadToEnd();
-                    }
-                case ResponseType.RedirectionURL:
-                    return response.ResponseUri.OriginalString;
-                case ResponseType.Headers:
-                    StringBuilder sbHeaders = new StringBuilder();
-                    foreach (string key in response.Headers.AllKeys)
-                    {
-                        string value = response.Headers[key];
-                        sbHeaders.AppendFormat("{0}: \"{1}\"{2}", key, value, Environment.NewLine);
-                    }
-                    return sbHeaders.ToString().Trim();
-                case ResponseType.LocationHeader:
-                    return response.Headers["Location"];
-                default:
-                    return null;
-            }
+            return null;
         }
 
         public static NameValueCollection CreateAuthenticationHeader(string username, string password)

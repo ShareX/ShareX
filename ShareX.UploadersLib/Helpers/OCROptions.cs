@@ -29,6 +29,7 @@ namespace ShareX.UploadersLib
 {
     public class OCROptions
     {
+        public bool Permission { get; set; } = false;
         public OCRSpaceLanguages DefaultLanguage { get; set; } = OCRSpaceLanguages.eng;
         public bool Silent { get; set; } = false;
         public bool ProcessOnLoad { get; set; } = true;
