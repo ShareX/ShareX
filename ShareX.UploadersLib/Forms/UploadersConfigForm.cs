@@ -655,7 +655,9 @@ namespace ShareX.UploadersLib
                 oauthTeknik.Status = OAuthLoginStatus.LoginSuccessful;
             }
 
-            tbTeknikAPIUrl.Text = Config.TeknikAPIUrl;
+            tbTeknikUploadAPIUrl.Text = Config.TeknikUploadAPIUrl;
+            tbTeknikPasteAPIUrl.Text = Config.TeknikPasteAPIUrl;
+            tbTeknikUrlShortenerAPIUrl.Text = Config.TeknikUrlShortenerAPIUrl;
             tbTeknikAuthUrl.Text = Config.TeknikAuthUrl;
             cbTeknikEncrypt.Checked = Config.TeknikEncryption;
             cbTeknikGenDeleteKey.Checked = Config.TeknikGenerateDeletionKey;
@@ -2560,9 +2562,19 @@ namespace ShareX.UploadersLib
             Config.TeknikOAuth2Info = null;
         }
 
-        private void tbTeknikAPIUrl_TextChanged(object sender, EventArgs e)
+        private void tbTeknikUploadAPIUrl_TextChanged(object sender, EventArgs e)
         {
-            Config.TeknikAPIUrl = tbTeknikAPIUrl.Text;
+            Config.TeknikUploadAPIUrl = tbTeknikUploadAPIUrl.Text;
+        }
+
+        private void tbTeknikPasteAPIUrl_TextChanged(object sender, EventArgs e)
+        {
+            Config.TeknikPasteAPIUrl = tbTeknikPasteAPIUrl.Text;
+        }
+
+        private void tbTeknikUrlShortenerAPIUrl_TextChanged(object sender, EventArgs e)
+        {
+            Config.TeknikUrlShortenerAPIUrl = tbTeknikUrlShortenerAPIUrl.Text;
         }
 
         private void tbTeknikAuthUrl_TextChanged(object sender, EventArgs e)

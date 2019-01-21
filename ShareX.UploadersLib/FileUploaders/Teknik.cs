@@ -21,14 +21,14 @@ namespace ShareX.UploadersLib.FileUploaders
 
         public override bool CheckConfig(UploadersConfig config)
         {
-            return OAuth2Info.CheckOAuth(config.TeknikOAuth2Info) && !string.IsNullOrEmpty(config.TeknikAPIUrl) && !string.IsNullOrEmpty(config.TeknikAuthUrl);
+            return OAuth2Info.CheckOAuth(config.TeknikOAuth2Info) && !string.IsNullOrEmpty(config.TeknikUploadAPIUrl) && !string.IsNullOrEmpty(config.TeknikAuthUrl);
         }
 
         public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
         {
             return new TeknikUploader(config.TeknikOAuth2Info, config.TeknikAuthUrl)
             {
-                APIUrl = config.TeknikAPIUrl,
+                APIUrl = config.TeknikUploadAPIUrl,
                 ExpirationUnit = config.TeknikExpirationUnit,
                 ExpirationLength = config.TeknikExpirationLength,
                 Encryption = config.TeknikEncryption,
@@ -37,6 +37,50 @@ namespace ShareX.UploadersLib.FileUploaders
         }
 
         public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpTeknik;
+    }
+
+    public class TeknikTextUploaderService : TextUploaderService
+    {
+        public override TextDestination EnumValue { get; } = TextDestination.Teknik;
+
+        public override Icon ServiceIcon => Resources.Teknik;
+
+        public override bool CheckConfig(UploadersConfig config)
+        {
+            return OAuth2Info.CheckOAuth(config.TeknikOAuth2Info) && !string.IsNullOrEmpty(config.TeknikPasteAPIUrl) && !string.IsNullOrEmpty(config.TeknikAuthUrl);
+        }
+
+        public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
+        {
+            return new TeknikPaster(config.TeknikOAuth2Info, config.TeknikAuthUrl)
+            {
+                APIUrl = config.TeknikPasteAPIUrl
+            };
+        }
+
+        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpGist;
+    }
+
+    public class TeknikUrlShortenerService : URLShortenerService
+    {
+        public override UrlShortenerType EnumValue { get; } = UrlShortenerType.Teknik;
+
+        public override Icon ServiceIcon => Resources.Teknik;
+
+        public override bool CheckConfig(UploadersConfig config)
+        {
+            return OAuth2Info.CheckOAuth(config.TeknikOAuth2Info) && !string.IsNullOrEmpty(config.TeknikUrlShortenerAPIUrl) && !string.IsNullOrEmpty(config.TeknikAuthUrl);
+        }
+
+        public override URLShortener CreateShortener(UploadersConfig config, TaskReferenceHelper taskInfo)
+        {
+            return new TeknikUrlShortener(config.TeknikOAuth2Info, config.TeknikAuthUrl)
+            {
+                APIUrl = config.TeknikUrlShortenerAPIUrl
+            };
+        }
+
+        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpGist;
     }
 
     public enum TeknikExpirationUnit
@@ -50,26 +94,22 @@ namespace ShareX.UploadersLib.FileUploaders
         Years = 14
     }
 
-    public sealed class TeknikUploader : FileUploader, IOAuth2Basic
+    public class Teknik : Uploader, IOAuth2Basic
     {
-        public const string DefaultAPIURL = "https://api.teknik.io/v1/Upload";
+        public const string DefaultUploadAPIURL = "https://api.teknik.io/v1/Upload";
+        public const string DefaultPasteAPIURL = "https://api.teknik.io/v1/Paste";
+        public const string DefaultUrlShortenerAPIURL = "https://api.teknik.io/v1/Shorten";
         public const string DefaultAuthURL = "https://auth.teknik.io";
 
         public OAuth2Info AuthInfo { get; set; }
         public string AuthUrl { get; set; }
 
-        public string APIUrl { get; set; }
-        public TeknikExpirationUnit ExpirationUnit { get; set; }
-        public int ExpirationLength { get; set; }
-
-        public bool Encryption { get; set; }
-        public bool GenerateDeletionKey { get; set; }
-
-        public TeknikUploader(OAuth2Info oauth, string authUrl)
+        public Teknik(OAuth2Info oauth, string authUrl)
         {
             AuthInfo = oauth;
             AuthUrl = authUrl;
         }
+        
 
         public bool GetAccessToken(string code)
         {
@@ -101,17 +141,37 @@ namespace ShareX.UploadersLib.FileUploaders
             Dictionary<string, string> args = new Dictionary<string, string>();
             args.Add("response_type", "code");
             args.Add("redirect_uri", Links.URL_CALLBACK);
-            args.Add("scope", "openid role account-info teknik-api.read teknik-api.write");
+            args.Add("scope", "openid teknik-api.write");
             args.Add("client_id", AuthInfo.Client_ID);
 
             return URLHelpers.CreateQueryString(AuthUrl + "/connect/authorize", args);
         }
 
-        private NameValueCollection GetAuthHeaders()
+        public NameValueCollection GetAuthHeaders()
         {
             NameValueCollection headers = new NameValueCollection();
             headers.Add("Authorization", "Bearer " + AuthInfo.Token.access_token);
             return headers;
+        }
+    }
+
+    public sealed class TeknikUploader : FileUploader, IOAuth2Basic
+    {
+        private Teknik _Teknik;
+
+        public OAuth2Info AuthInfo { get; set; }
+
+        public string APIUrl { get; set; }
+        public TeknikExpirationUnit ExpirationUnit { get; set; }
+        public int ExpirationLength { get; set; }
+
+        public bool Encryption { get; set; }
+        public bool GenerateDeletionKey { get; set; }
+
+        public TeknikUploader(OAuth2Info oauth, string authUrl)
+        {
+            _Teknik = new Teknik(oauth, authUrl);
+            AuthInfo = _Teknik.AuthInfo;
         }
 
         public override UploadResult Upload(Stream stream, string fileName)
@@ -125,11 +185,11 @@ namespace ShareX.UploadersLib.FileUploaders
             args.Add("blockSize", "128");
             args.Add("genDeletionKey", GenerateDeletionKey.ToString());
 
-            UploadResult result = SendRequestFile(APIUrl, stream, fileName, "file", args, GetAuthHeaders());
+            UploadResult result = SendRequestFile(APIUrl, stream, fileName, "file", args, _Teknik.GetAuthHeaders());
 
             if (result.IsSuccess)
             {
-                TeknikResponse response = JsonConvert.DeserializeObject<TeknikResponse>(result.Response);
+                TeknikUploadResponseWrapper response = JsonConvert.DeserializeObject<TeknikUploadResponseWrapper>(result.Response);
 
                 if (response.Result != null && response.Error == null)
                 {
@@ -139,17 +199,111 @@ namespace ShareX.UploadersLib.FileUploaders
 
             return result;
         }
+
+        public string GetAuthorizationURL()
+        {
+            return _Teknik.GetAuthorizationURL();
+        }
+
+        public bool GetAccessToken(string code)
+        {
+            return _Teknik.GetAccessToken(code);
+        }
     }
 
-    public class TeknikResponse
+    public sealed class TeknikPaster : TextUploader, IOAuth2Basic
     {
-        public TeknikUploadResponse Result { get; set; }
-        public TeknikErrorResponse Error { get; set; }
+        private Teknik _Teknik;
+
+        public OAuth2Info AuthInfo { get; set; }
+
+        public string APIUrl { get; set; }
+
+        public TeknikPaster(OAuth2Info oauth, string authUrl)
+        {
+            _Teknik = new Teknik(oauth, authUrl);
+            AuthInfo = _Teknik.AuthInfo;
+        }
+
+        public bool GetAccessToken(string code)
+        {
+            return _Teknik.GetAccessToken(code);
+        }
+
+        public string GetAuthorizationURL()
+        {
+            return _Teknik.GetAuthorizationURL();
+        }
+
+        public override UploadResult UploadText(string text, string fileName)
+        {
+            Dictionary<string, string> args = new Dictionary<string, string>();
+            args.Add("code", text);
+
+            string response = SendRequestMultiPart(APIUrl, args, _Teknik.GetAuthHeaders(), null, ResponseType.Text, HttpMethod.POST);
+            TeknikPasteResponseWrapper apiResponse = JsonConvert.DeserializeObject<TeknikPasteResponseWrapper>(response);
+            
+            UploadResult ur = new UploadResult();
+            if (apiResponse.Result != null && apiResponse.Error == null)
+            {
+                ur.URL = apiResponse.Result.Url;
+            }
+
+            return ur;
+        }
+    }
+
+    public sealed class TeknikUrlShortener : URLShortener, IOAuth2Basic
+    {
+        private Teknik _Teknik;
+
+        public OAuth2Info AuthInfo { get; set; }
+
+        public string APIUrl { get; set; }
+
+        public TeknikUrlShortener(OAuth2Info oauth, string authUrl)
+        {
+            _Teknik = new Teknik(oauth, authUrl);
+            AuthInfo = _Teknik.AuthInfo;
+        }
+
+        public bool GetAccessToken(string code)
+        {
+            return _Teknik.GetAccessToken(code);
+        }
+
+        public string GetAuthorizationURL()
+        {
+            return _Teknik.GetAuthorizationURL();
+        }
+
+        public override UploadResult ShortenURL(string url)
+        {
+            Dictionary<string, string> args = new Dictionary<string, string>();
+            args.Add("url", url);
+
+            string response = SendRequestMultiPart(APIUrl, args, _Teknik.GetAuthHeaders(), null, ResponseType.Text, HttpMethod.POST);
+            TeknikUrlShortenerResponseWrapper apiResponse = JsonConvert.DeserializeObject<TeknikUrlShortenerResponseWrapper>(response);
+
+            UploadResult ur = new UploadResult();
+            if (apiResponse.Result != null && apiResponse.Error == null)
+            {
+                ur.URL = apiResponse.Result.shortUrl;
+            }
+
+            return ur;
+        }
     }
 
     public class TeknikErrorResponse
     {
         public string Message { get; set; }
+    }
+
+    public class TeknikUploadResponseWrapper
+    {
+        public TeknikUploadResponse Result { get; set; }
+        public TeknikErrorResponse Error { get; set; }
     }
 
     public class TeknikUploadResponse
@@ -163,5 +317,32 @@ namespace ShareX.UploadersLib.FileUploaders
         public string IV { get; set; }
         public int BlockSize { get; set; }
         public string DeletionKey { get; set; }
+    }
+
+    public class TeknikPasteResponseWrapper
+    {
+        public TeknikPasteResponse Result { get; set; }
+        public TeknikErrorResponse Error { get; set; }
+    }
+
+    public class TeknikPasteResponse
+    {
+        public string Id { get; set; }
+        public string Url { get; set; }
+        public string Title { get; set; }
+        public string Syntax { get; set; }
+        public string Password { get; set; }
+    }
+
+    public class TeknikUrlShortenerResponseWrapper
+    {
+        public TeknikUrlShortenerResponse Result { get; set; }
+        public TeknikErrorResponse Error { get; set; }
+    }
+
+    public class TeknikUrlShortenerResponse
+    {
+        public string shortUrl { get; set; }
+        public string originalUrl { get; set; }
     }
 }

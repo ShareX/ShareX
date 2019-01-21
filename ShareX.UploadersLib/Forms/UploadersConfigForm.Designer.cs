@@ -490,12 +490,14 @@ namespace ShareX.UploadersLib
             this.lblLambdaUploadURL = new System.Windows.Forms.Label();
             this.cbLambdaUploadURL = new System.Windows.Forms.ComboBox();
             this.tpTeknik = new System.Windows.Forms.TabPage();
+            this.lblTeknikPasteAPIUrl = new System.Windows.Forms.Label();
+            this.tbTeknikPasteAPIUrl = new System.Windows.Forms.TextBox();
             this.lblTeknikAuthUrl = new System.Windows.Forms.Label();
             this.tbTeknikAuthUrl = new System.Windows.Forms.TextBox();
             this.cbTeknikGenDeleteKey = new System.Windows.Forms.CheckBox();
             this.cbTeknikEncrypt = new System.Windows.Forms.CheckBox();
-            this.lblTeknikAPIUrl = new System.Windows.Forms.Label();
-            this.tbTeknikAPIUrl = new System.Windows.Forms.TextBox();
+            this.lblTeknikUploadAPIUrl = new System.Windows.Forms.Label();
+            this.tbTeknikUploadAPIUrl = new System.Windows.Forms.TextBox();
             this.oauthTeknik = new ShareX.UploadersLib.OAuthControl();
             this.tpPomf = new System.Windows.Forms.TabPage();
             this.btnPomfTest = new System.Windows.Forms.Button();
@@ -750,6 +752,8 @@ namespace ShareX.UploadersLib
             this.tsmiCustomUploaderExamples = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiCustomUploaderExportAll = new System.Windows.Forms.ToolStripMenuItem();
             this.actRapidShareAccountType = new ShareX.UploadersLib.AccountTypeControl();
+            this.lblTeknikUrlShortenerAPIUrl = new System.Windows.Forms.Label();
+            this.tbTeknikUrlShortenerAPIUrl = new System.Windows.Forms.TextBox();
             this.tscCustomUploaderResponseText.ContentPanel.SuspendLayout();
             this.tscCustomUploaderResponseText.TopToolStripPanel.SuspendLayout();
             this.tscCustomUploaderResponseText.SuspendLayout();
@@ -4110,15 +4114,30 @@ namespace ShareX.UploadersLib
             // tpTeknik
             // 
             this.tpTeknik.BackColor = System.Drawing.SystemColors.Window;
+            this.tpTeknik.Controls.Add(this.lblTeknikUrlShortenerAPIUrl);
+            this.tpTeknik.Controls.Add(this.tbTeknikUrlShortenerAPIUrl);
+            this.tpTeknik.Controls.Add(this.lblTeknikPasteAPIUrl);
+            this.tpTeknik.Controls.Add(this.tbTeknikPasteAPIUrl);
             this.tpTeknik.Controls.Add(this.lblTeknikAuthUrl);
             this.tpTeknik.Controls.Add(this.tbTeknikAuthUrl);
             this.tpTeknik.Controls.Add(this.cbTeknikGenDeleteKey);
             this.tpTeknik.Controls.Add(this.cbTeknikEncrypt);
-            this.tpTeknik.Controls.Add(this.lblTeknikAPIUrl);
-            this.tpTeknik.Controls.Add(this.tbTeknikAPIUrl);
+            this.tpTeknik.Controls.Add(this.lblTeknikUploadAPIUrl);
+            this.tpTeknik.Controls.Add(this.tbTeknikUploadAPIUrl);
             this.tpTeknik.Controls.Add(this.oauthTeknik);
             resources.ApplyResources(this.tpTeknik, "tpTeknik");
             this.tpTeknik.Name = "tpTeknik";
+            // 
+            // lblTeknikPasteAPIUrl
+            // 
+            resources.ApplyResources(this.lblTeknikPasteAPIUrl, "lblTeknikPasteAPIUrl");
+            this.lblTeknikPasteAPIUrl.Name = "lblTeknikPasteAPIUrl";
+            // 
+            // tbTeknikPasteAPIUrl
+            // 
+            resources.ApplyResources(this.tbTeknikPasteAPIUrl, "tbTeknikPasteAPIUrl");
+            this.tbTeknikPasteAPIUrl.Name = "tbTeknikPasteAPIUrl";
+            this.tbTeknikPasteAPIUrl.TextChanged += new System.EventHandler(this.tbTeknikPasteAPIUrl_TextChanged);
             // 
             // lblTeknikAuthUrl
             // 
@@ -4145,16 +4164,16 @@ namespace ShareX.UploadersLib
             this.cbTeknikEncrypt.UseVisualStyleBackColor = true;
             this.cbTeknikEncrypt.CheckedChanged += new System.EventHandler(this.cbTeknikEncrypt_CheckedChanged);
             // 
-            // lblTeknikAPIUrl
+            // lblTeknikUploadAPIUrl
             // 
-            resources.ApplyResources(this.lblTeknikAPIUrl, "lblTeknikAPIUrl");
-            this.lblTeknikAPIUrl.Name = "lblTeknikAPIUrl";
+            resources.ApplyResources(this.lblTeknikUploadAPIUrl, "lblTeknikUploadAPIUrl");
+            this.lblTeknikUploadAPIUrl.Name = "lblTeknikUploadAPIUrl";
             // 
-            // tbTeknikAPIUrl
+            // tbTeknikUploadAPIUrl
             // 
-            resources.ApplyResources(this.tbTeknikAPIUrl, "tbTeknikAPIUrl");
-            this.tbTeknikAPIUrl.Name = "tbTeknikAPIUrl";
-            this.tbTeknikAPIUrl.TextChanged += new System.EventHandler(this.tbTeknikAPIUrl_TextChanged);
+            resources.ApplyResources(this.tbTeknikUploadAPIUrl, "tbTeknikUploadAPIUrl");
+            this.tbTeknikUploadAPIUrl.Name = "tbTeknikUploadAPIUrl";
+            this.tbTeknikUploadAPIUrl.TextChanged += new System.EventHandler(this.tbTeknikUploadAPIUrl_TextChanged);
             // 
             // oauthTeknik
             // 
@@ -6016,6 +6035,17 @@ namespace ShareX.UploadersLib
             this.actRapidShareAccountType.Name = "actRapidShareAccountType";
             this.actRapidShareAccountType.SelectedAccountType = ShareX.UploadersLib.AccountType.Anonymous;
             // 
+            // lblTeknikUrlShortenerAPIUrl
+            // 
+            resources.ApplyResources(this.lblTeknikUrlShortenerAPIUrl, "lblTeknikUrlShortenerAPIUrl");
+            this.lblTeknikUrlShortenerAPIUrl.Name = "lblTeknikUrlShortenerAPIUrl";
+            // 
+            // tbTeknikUrlShortenerAPIUrl
+            // 
+            resources.ApplyResources(this.tbTeknikUrlShortenerAPIUrl, "tbTeknikUrlShortenerAPIUrl");
+            this.tbTeknikUrlShortenerAPIUrl.Name = "tbTeknikUrlShortenerAPIUrl";
+            this.tbTeknikUrlShortenerAPIUrl.TextChanged += new System.EventHandler(this.tbTeknikUrlShortenerAPIUrl_TextChanged);
+            // 
             // UploadersConfigForm
             // 
             resources.ApplyResources(this, "$this");
@@ -6916,11 +6946,15 @@ namespace ShareX.UploadersLib
         private System.Windows.Forms.ToolStripButton tsbCustomUploaderCopyResponseText;
         private System.Windows.Forms.CheckBox cbTeknikGenDeleteKey;
         private System.Windows.Forms.CheckBox cbTeknikEncrypt;
-        private System.Windows.Forms.Label lblTeknikAPIUrl;
-        private System.Windows.Forms.TextBox tbTeknikAPIUrl;
+        private System.Windows.Forms.Label lblTeknikUploadAPIUrl;
+        private System.Windows.Forms.TextBox tbTeknikUploadAPIUrl;
         private OAuthControl oauthTeknik;
         private System.Windows.Forms.Label lblTeknikAuthUrl;
         private System.Windows.Forms.TextBox tbTeknikAuthUrl;
         internal System.Windows.Forms.TabPage tpTeknik;
+        private System.Windows.Forms.Label lblTeknikPasteAPIUrl;
+        private System.Windows.Forms.TextBox tbTeknikPasteAPIUrl;
+        private System.Windows.Forms.Label lblTeknikUrlShortenerAPIUrl;
+        private System.Windows.Forms.TextBox tbTeknikUrlShortenerAPIUrl;
     }
 }

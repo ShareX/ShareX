@@ -334,8 +334,10 @@ namespace ShareX.UploadersLib
 
         public OAuth2Info TeknikOAuth2Info = null;
 
-        public string TeknikAPIUrl = TeknikUploader.DefaultAPIURL;
-        public string TeknikAuthUrl = TeknikUploader.DefaultAuthURL;
+        public string TeknikUploadAPIUrl = Teknik.DefaultUploadAPIURL;
+        public string TeknikPasteAPIUrl = Teknik.DefaultPasteAPIURL;
+        public string TeknikUrlShortenerAPIUrl = Teknik.DefaultUrlShortenerAPIURL;
+        public string TeknikAuthUrl = Teknik.DefaultAuthURL;
         public int TeknikExpirationLength = 1;
         public TeknikExpirationUnit TeknikExpirationUnit = TeknikExpirationUnit.Never;
         public bool TeknikEncryption = false;
