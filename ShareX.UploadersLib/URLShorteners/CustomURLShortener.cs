@@ -102,7 +102,7 @@ namespace ShareX.UploadersLib.URLShorteners
 
             try
             {
-                uploader.ParseResponse(result, input, true);
+                uploader.ParseResponse(result, LastResponseInfo, input, true);
             }
             catch (Exception e)
             {

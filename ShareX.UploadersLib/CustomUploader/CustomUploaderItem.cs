@@ -241,11 +241,11 @@ namespace ShareX.UploadersLib
             return null;
         }
 
-        public void ParseResponse(UploadResult result, CustomUploaderInput input, bool isShortenedURL = false)
+        public void ParseResponse(UploadResult result, ResponseInfo responseInfo, CustomUploaderInput input, bool isShortenedURL = false)
         {
-            if (result != null && !string.IsNullOrEmpty(result.Response))
+            if (result != null && responseInfo != null && !string.IsNullOrEmpty(responseInfo.ResponseText))
             {
-                CustomUploaderParser parser = new CustomUploaderParser(result.Response, RegexList);
+                CustomUploaderParser parser = new CustomUploaderParser(responseInfo, RegexList);
                 parser.Filename = input.Filename;
                 parser.URLEncode = true;
 
@@ -257,7 +257,7 @@ namespace ShareX.UploadersLib
                 }
                 else
                 {
-                    url = parser.Response;
+                    url = parser.ResponseInfo.ResponseText;
                 }
 
                 if (isShortenedURL)

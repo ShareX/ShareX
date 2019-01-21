@@ -129,7 +129,7 @@ namespace ShareX.UploadersLib.TextUploaders
 
             try
             {
-                uploader.ParseResponse(result, input);
+                uploader.ParseResponse(result, LastResponseInfo, input);
             }
             catch (Exception e)
             {

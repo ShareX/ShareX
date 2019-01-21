@@ -97,7 +97,7 @@ namespace ShareX.UploadersLib.ImageUploaders
 
             try
             {
-                uploader.ParseResponse(result, input);
+                uploader.ParseResponse(result, LastResponseInfo, input);
             }
             catch (Exception e)
             {

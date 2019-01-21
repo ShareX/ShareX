@@ -100,7 +100,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
             try
             {
-                uploader.ParseResponse(result, input);
+                uploader.ParseResponse(result, LastResponseInfo, input);
             }
             catch (Exception e)
             {
