@@ -51,7 +51,10 @@ namespace ShareX.UploadersLib
         protected bool AllowReportProgress { get; set; } = true;
         protected bool ReturnResponseOnError { get; set; }
 
-        private HttpWebRequest currentRequest;
+        protected Uri ResponseUri { get; set; }
+        protected WebHeaderCollection Headers { get; set; }
+
+        private HttpWebRequest currentWebRequest;
         private Logger verboseLogger;
 
         public static void UpdateServicePointManager()
@@ -93,11 +96,11 @@ namespace ShareX.UploadersLib
             {
                 StopUploadRequested = true;
 
-                if (currentRequest != null)
+                if (currentWebRequest != null)
                 {
                     try
                     {
-                        currentRequest.Abort();
+                        currentWebRequest.Abort();
                     }
                     catch (Exception e)
                     {
@@ -118,7 +121,7 @@ namespace ShareX.UploadersLib
         {
             using (HttpWebResponse webResponse = GetResponse(method, url, data, contentType, args, headers, cookies))
             {
-                string response = UploadHelpers.ResponseToString(webResponse, responseType);
+                string response = ProcessWebResponse(webResponse);
 
                 if (VerboseLogs && !string.IsNullOrEmpty(VerboseLogsPath))
                 {
@@ -182,7 +185,7 @@ namespace ShareX.UploadersLib
 
                 using (HttpWebResponse webResponse = GetResponse(method, url, stream, contentType, null, headers, cookies))
                 {
-                    string response = UploadHelpers.ResponseToString(webResponse, responseType);
+                    string response = ProcessWebResponse(webResponse);
 
                     if (VerboseLogs && !string.IsNullOrEmpty(VerboseLogsPath))
                     {
@@ -226,8 +229,7 @@ namespace ShareX.UploadersLib
 
                 long contentLength = bytesArguments.Length + bytesDataOpen.Length + bytesDataDatafile.Length + data.Length + bytesDataClose.Length;
 
-                HttpWebRequest request = UploadHelpers.CreateWebRequest(method, url, headers, cookies, contentType, contentLength);
-                currentRequest = request;
+                HttpWebRequest request = CreateWebRequest(method, url, headers, cookies, contentType, contentLength);
 
                 using (Stream requestStream = request.GetRequestStream())
                 {
@@ -238,9 +240,9 @@ namespace ShareX.UploadersLib
                     requestStream.Write(bytesDataClose, 0, bytesDataClose.Length);
                 }
 
-                using (WebResponse response = request.GetResponse())
+                using (HttpWebResponse response = (HttpWebResponse)request.GetResponse())
                 {
-                    result.Response = UploadHelpers.ResponseToString(response, responseType);
+                    result.Response = ProcessWebResponse(response);
                 }
 
                 result.IsSuccess = true;
@@ -259,7 +261,7 @@ namespace ShareX.UploadersLib
             }
             finally
             {
-                currentRequest = null;
+                currentWebRequest = null;
                 IsUploading = false;
 
                 if (VerboseLogs && !string.IsNullOrEmpty(VerboseLogsPath))
@@ -301,8 +303,7 @@ namespace ShareX.UploadersLib
                 long dataLength = data.Length;
                 headers.Add("Content-Range", $"bytes {startByte}-{endByte}/{dataLength}");
 
-                HttpWebRequest request = UploadHelpers.CreateWebRequest(method, url, headers, cookies, contentType, contentLength);
-                currentRequest = request;
+                HttpWebRequest request = CreateWebRequest(method, url, headers, cookies, contentType, contentLength);
 
                 using (Stream requestStream = request.GetRequestStream())
                 {
@@ -312,9 +313,9 @@ namespace ShareX.UploadersLib
                     }
                 }
 
-                using (WebResponse response = request.GetResponse())
+                using (HttpWebResponse response = (HttpWebResponse)request.GetResponse())
                 {
-                    result.Response = UploadHelpers.ResponseToString(response, responseType);
+                    result.Response = ProcessWebResponse(response);
                 }
 
                 result.IsSuccess = true;
@@ -333,7 +334,7 @@ namespace ShareX.UploadersLib
             }
             finally
             {
-                currentRequest = null;
+                currentWebRequest = null;
                 IsUploading = false;
 
                 if (VerboseLogs && !string.IsNullOrEmpty(VerboseLogsPath))
@@ -362,8 +363,7 @@ namespace ShareX.UploadersLib
                     contentLength = data.Length;
                 }
 
-                HttpWebRequest request = UploadHelpers.CreateWebRequest(method, url, headers, cookies, contentType, contentLength);
-                currentRequest = request;
+                HttpWebRequest request = CreateWebRequest(method, url, headers, cookies, contentType, contentLength);
 
                 if (contentLength > 0)
                 {
@@ -393,7 +393,7 @@ namespace ShareX.UploadersLib
             }
             finally
             {
-                currentRequest = null;
+                currentWebRequest = null;
                 IsUploading = false;
             }
 
@@ -462,10 +462,11 @@ namespace ShareX.UploadersLib
                 {
                     try
                     {
-                        WebResponse res = webException.Response;
-                        using (res)
+                        HttpWebResponse webResponse = (HttpWebResponse)webException.Response;
+
+                        using (webResponse)
                         {
-                            response = UploadHelpers.ResponseToString(res);
+                            response = ProcessWebResponse(webResponse);
 
                             if (!string.IsNullOrEmpty(response))
                             {
@@ -539,6 +540,34 @@ namespace ShareX.UploadersLib
             sb.Append(new string('-', 30));
 
             verboseLogger.WriteLine(sb.ToString());
+        }
+
+        private HttpWebRequest CreateWebRequest(HttpMethod method, string url, NameValueCollection headers = null, CookieCollection cookies = null,
+            string contentType = null, long contentLength = 0)
+        {
+            ResponseUri = null;
+            Headers = null;
+
+            HttpWebRequest request = UploadHelpers.CreateWebRequest(method, url, headers, cookies, contentType, contentLength);
+            currentWebRequest = request;
+            return request;
+        }
+
+        private string ProcessWebResponse(HttpWebResponse response)
+        {
+            if (response != null)
+            {
+                Headers = response.Headers;
+                ResponseUri = response.ResponseUri;
+
+                using (Stream responseStream = response.GetResponseStream())
+                using (StreamReader reader = new StreamReader(responseStream, Encoding.UTF8))
+                {
+                    return reader.ReadToEnd();
+                }
+            }
+
+            return null;
         }
 
         #endregion Helper methods
