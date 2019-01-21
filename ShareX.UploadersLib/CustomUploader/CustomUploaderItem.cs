@@ -85,6 +85,7 @@ namespace ShareX.UploadersLib
 
         public bool ShouldSerializeData() => (Body == CustomUploaderBody.JSON || Body == CustomUploaderBody.XML) && !string.IsNullOrEmpty(Data);
 
+        // For backward compatibility
         [DefaultValue(ResponseType.Text)]
         public ResponseType ResponseType { get; set; }
 

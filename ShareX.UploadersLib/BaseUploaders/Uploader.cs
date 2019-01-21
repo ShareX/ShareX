@@ -110,14 +110,13 @@ namespace ShareX.UploadersLib
             }
         }
 
-        protected string SendRequest(HttpMethod method, string url, Dictionary<string, string> args = null, NameValueCollection headers = null,
-            CookieCollection cookies = null, ResponseType responseType = ResponseType.Text)
+        protected string SendRequest(HttpMethod method, string url, Dictionary<string, string> args = null, NameValueCollection headers = null, CookieCollection cookies = null)
         {
-            return SendRequest(method, url, (Stream)null, null, args, headers, cookies, responseType);
+            return SendRequest(method, url, (Stream)null, null, args, headers, cookies);
         }
 
         protected string SendRequest(HttpMethod method, string url, Stream data, string contentType = null, Dictionary<string, string> args = null, NameValueCollection headers = null,
-            CookieCollection cookies = null, ResponseType responseType = ResponseType.Text)
+            CookieCollection cookies = null)
         {
             using (HttpWebResponse webResponse = GetResponse(method, url, data, contentType, args, headers, cookies))
             {
@@ -133,7 +132,7 @@ namespace ShareX.UploadersLib
         }
 
         protected string SendRequest(HttpMethod method, string url, string content, string contentType = null, Dictionary<string, string> args = null, NameValueCollection headers = null,
-            CookieCollection cookies = null, ResponseType responseType = ResponseType.Text)
+            CookieCollection cookies = null)
         {
             byte[] data = Encoding.UTF8.GetBytes(content);
 
@@ -141,16 +140,15 @@ namespace ShareX.UploadersLib
             {
                 ms.Write(data, 0, data.Length);
 
-                return SendRequest(method, url, ms, contentType, args, headers, cookies, responseType);
+                return SendRequest(method, url, ms, contentType, args, headers, cookies);
             }
         }
 
-        internal string SendRequestURLEncoded(HttpMethod method, string url, Dictionary<string, string> args, NameValueCollection headers = null, CookieCollection cookies = null,
-            ResponseType responseType = ResponseType.Text)
+        internal string SendRequestURLEncoded(HttpMethod method, string url, Dictionary<string, string> args, NameValueCollection headers = null, CookieCollection cookies = null)
         {
             string query = URLHelpers.CreateQueryString(args);
 
-            return SendRequest(method, url, query, UploadHelpers.ContentTypeURLEncoded, null, headers, cookies, responseType);
+            return SendRequest(method, url, query, UploadHelpers.ContentTypeURLEncoded, null, headers, cookies);
         }
 
         protected bool SendRequestDownload(HttpMethod method, string url, Stream downloadStream, Dictionary<string, string> args = null,
@@ -173,7 +171,7 @@ namespace ShareX.UploadersLib
         }
 
         protected string SendRequestMultiPart(string url, Dictionary<string, string> args, NameValueCollection headers = null, CookieCollection cookies = null,
-            ResponseType responseType = ResponseType.Text, HttpMethod method = HttpMethod.POST)
+            HttpMethod method = HttpMethod.POST)
         {
             string boundary = UploadHelpers.CreateBoundary();
             string contentType = UploadHelpers.ContentTypeMultipartFormData + "; boundary=" + boundary;
@@ -198,8 +196,8 @@ namespace ShareX.UploadersLib
         }
 
         protected UploadResult SendRequestFile(string url, Stream data, string fileName, string fileFormName, Dictionary<string, string> args = null,
-            NameValueCollection headers = null, CookieCollection cookies = null, ResponseType responseType = ResponseType.Text, HttpMethod method = HttpMethod.POST,
-            string contentType = UploadHelpers.ContentTypeMultipartFormData, string metadata = null)
+            NameValueCollection headers = null, CookieCollection cookies = null, HttpMethod method = HttpMethod.POST, string contentType = UploadHelpers.ContentTypeMultipartFormData,
+            string metadata = null)
         {
             UploadResult result = new UploadResult();
 
@@ -274,8 +272,7 @@ namespace ShareX.UploadersLib
         }
 
         protected UploadResult SendRequestFileRange(string url, Stream data, string fileName, long contentPosition = 0, long contentLength = -1,
-            Dictionary<string, string> args = null, NameValueCollection headers = null, CookieCollection cookies = null, ResponseType responseType = ResponseType.Text,
-            HttpMethod method = HttpMethod.PUT)
+            Dictionary<string, string> args = null, NameValueCollection headers = null, CookieCollection cookies = null, HttpMethod method = HttpMethod.PUT)
         {
             UploadResult result = new UploadResult();
 
