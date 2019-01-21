@@ -205,6 +205,10 @@ namespace ShareX.UploadersLib
                 {
                     return ResponseInfo.ResponseURL;
                 }
+                else if (ResponseInfo.Headers != null && CheckKeyword(syntax, "header", out value)) // Example: $header:Location$
+                {
+                    return ResponseInfo.Headers[value];
+                }
                 else if (CheckKeyword(syntax, "regex", out value)) // Examples: $regex:1$ $regex:1|1$ $regex:1|thumbnail$
                 {
                     return ParseSyntaxRegex(value);
