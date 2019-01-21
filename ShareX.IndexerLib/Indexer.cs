@@ -30,7 +30,7 @@ namespace ShareX.IndexerLib
 {
     public abstract class Indexer
     {
-        protected IndexerSettings settings = null;
+        protected readonly IndexerSettings settings;
 
         protected Indexer(IndexerSettings indexerSettings)
         {
@@ -98,9 +98,7 @@ namespace ShareX.IndexerLib
 
                     folderInfo.Files.Sort((x, y) => x.Name.CompareTo(y.Name));
                 }
-                catch (UnauthorizedAccessException)
-                {
-                }
+                catch (UnauthorizedAccessException) { }
             }
 
             return folderInfo;

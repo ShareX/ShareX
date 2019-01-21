@@ -94,7 +94,7 @@ namespace ShareX.IndexerLib
 
         private string GetFolderNameRow(FolderInfo dir, int level)
         {
-            string folderNameRow = "";
+            string folderNameRow = string.Empty;
 
             if (!dir.IsEmpty)
             {

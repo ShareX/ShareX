@@ -39,21 +39,9 @@ namespace ShareX.IndexerLib
         public int TotalFolderCount { get; private set; }
         public FolderInfo Parent { get; set; }
 
-        public string FolderName
-        {
-            get
-            {
-                return Path.GetFileName(FolderPath);
-            }
-        }
+        public string FolderName => Path.GetFileName(FolderPath);
 
-        public bool IsEmpty
-        {
-            get
-            {
-                return TotalFileCount == 0 && TotalFolderCount == 0;
-            }
-        }
+        public bool IsEmpty => TotalFileCount == 0 && TotalFolderCount == 0;
 
         public FolderInfo(string folderPath)
         {
