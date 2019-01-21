@@ -1007,7 +1007,6 @@ namespace ShareX.UploadersLib
                 }
             }
 
-            cbCustomUploaderResponseType.SelectedIndex = (int)uploader.ResponseType;
             txtCustomUploaderJsonPath.Text = "";
             txtCustomUploaderXPath.Text = "";
             txtCustomUploaderRegexp.Text = "";

@@ -3863,8 +3863,6 @@ namespace ShareX.UploadersLib
 
         private void cbCustomUploaderResponseType_SelectedIndexChanged(object sender, EventArgs e)
         {
-            CustomUploaderItem uploader = CustomUploaderGetSelected();
-            if (uploader != null) uploader.ResponseType = (ResponseType)cbCustomUploaderResponseType.SelectedIndex;
         }
 
         private void txtCustomUploaderJsonPath_TextChanged(object sender, EventArgs e)

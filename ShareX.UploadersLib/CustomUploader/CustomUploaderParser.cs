@@ -205,9 +205,9 @@ namespace ShareX.UploadersLib
                 {
                     return ResponseInfo.ResponseURL;
                 }
-                else if (ResponseInfo.Headers != null && CheckKeyword(syntax, "header", out value)) // Example: $header:Location$
+                else if (CheckKeyword(syntax, "header", out value)) // Example: $header:Location$
                 {
-                    return ResponseInfo.Headers[value];
+                    return ParseSyntaxHeader(value);
                 }
                 else if (CheckKeyword(syntax, "regex", out value)) // Examples: $regex:1$ $regex:1|1$ $regex:1|thumbnail$
                 {
@@ -285,6 +285,16 @@ namespace ShareX.UploadersLib
             }
 
             return false;
+        }
+
+        private string ParseSyntaxHeader(string header)
+        {
+            if (ResponseInfo.Headers != null)
+            {
+                return ResponseInfo.Headers[header];
+            }
+
+            return null;
         }
 
         private string ParseSyntaxRegex(string syntax)
