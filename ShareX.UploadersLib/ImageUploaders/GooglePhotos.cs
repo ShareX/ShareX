@@ -92,7 +92,7 @@ namespace ShareX.UploadersLib.ImageUploaders
             return GoogleAuth.GetAccessToken(code);
         }
 
-        public void CreateAlbum(string albumName)
+        public GooglePhotosAlbum CreateAlbum(string albumName)
         {
             GooglePhotosNewAlbum newItemAlbum = new GooglePhotosNewAlbum
             {
@@ -102,10 +102,12 @@ namespace ShareX.UploadersLib.ImageUploaders
                 }
             };
 
-            string serializedTempItemAlbum = JsonConvert.SerializeObject(newItemAlbum);
-            string serializedTempItemAlbumResponse = SendRequest(HttpMethod.POST, "https://photoslibrary.googleapis.com/v1/albums", serializedTempItemAlbum, headers: GoogleAuth.GetAuthHeaders(), contentType: UploadHelpers.ContentTypeJSON);
+            string serializedNewItemAlbum = JsonConvert.SerializeObject(newItemAlbum);
+            string serializedNewItemAlbumResponse = SendRequest(HttpMethod.POST, "https://photoslibrary.googleapis.com/v1/albums", serializedNewItemAlbum, headers: GoogleAuth.GetAuthHeaders(), contentType: UploadHelpers.ContentTypeJSON);
 
-            GooglePhotosAlbum tempItemAlbumResponse = JsonConvert.DeserializeObject<GooglePhotosAlbum>(serializedTempItemAlbumResponse);
+            GooglePhotosAlbum newItemAlbumResponse = JsonConvert.DeserializeObject<GooglePhotosAlbum>(serializedNewItemAlbumResponse);
+
+            return newItemAlbumResponse;
         }
 
         public List<GooglePhotosAlbumInfo> GetAlbumList()
@@ -160,20 +162,7 @@ namespace ShareX.UploadersLib.ImageUploaders
 
             if (IsPublic)
             {
-                GooglePhotosNewAlbum tempItemAlbum = new GooglePhotosNewAlbum
-                {
-                    album = new GooglePhotosAlbum
-                    {
-                        title = fileName
-                    }
-                };
-
-                string serializedTempItemAlbum = JsonConvert.SerializeObject(tempItemAlbum);
-                string serializedTempItemAlbumResponse = SendRequest(HttpMethod.POST, "https://photoslibrary.googleapis.com/v1/albums", serializedTempItemAlbum, headers: GoogleAuth.GetAuthHeaders(), contentType: UploadHelpers.ContentTypeJSON);
-
-                GooglePhotosAlbum tempItemAlbumResponse = JsonConvert.DeserializeObject<GooglePhotosAlbum>(serializedTempItemAlbumResponse);
-
-                AlbumID = tempItemAlbumResponse.id;
+                AlbumID = CreateAlbum(fileName).id;
 
                 GooglePhotosAlbumOptions albumOptions = new GooglePhotosAlbumOptions();
 
