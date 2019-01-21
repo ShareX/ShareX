@@ -46,8 +46,6 @@ namespace ShareX.UploadersLib.TextUploaders
 
     public sealed class Paste2 : TextUploader
     {
-        private const string APIURL = "http://paste2.org/new-paste";
-
         private Paste2Settings settings;
 
         public Paste2()
@@ -68,11 +66,12 @@ namespace ShareX.UploadersLib.TextUploaders
             {
                 Dictionary<string, string> arguments = new Dictionary<string, string>();
                 arguments.Add("code", text);
-                arguments.Add("description", settings.Description);
                 arguments.Add("lang", settings.TextFormat);
-                arguments.Add("parent", "0");
+                arguments.Add("description", settings.Description);
+                arguments.Add("parent", "");
 
-                ur.URL = SendRequestMultiPart(APIURL, arguments, responseType: ResponseType.RedirectionURL);
+                SendRequestMultiPart("https://paste2.org/", arguments);
+                ur.URL = ResponseURL;
             }
 
             return ur;

@@ -51,7 +51,7 @@ namespace ShareX.UploadersLib
         protected bool AllowReportProgress { get; set; } = true;
         protected bool ReturnResponseOnError { get; set; }
 
-        protected Uri ResponseUri { get; set; }
+        protected string ResponseURL { get; set; }
         protected WebHeaderCollection Headers { get; set; }
 
         private HttpWebRequest currentWebRequest;
@@ -545,7 +545,7 @@ namespace ShareX.UploadersLib
         private HttpWebRequest CreateWebRequest(HttpMethod method, string url, NameValueCollection headers = null, CookieCollection cookies = null,
             string contentType = null, long contentLength = 0)
         {
-            ResponseUri = null;
+            ResponseURL = null;
             Headers = null;
 
             HttpWebRequest request = UploadHelpers.CreateWebRequest(method, url, headers, cookies, contentType, contentLength);
@@ -558,7 +558,7 @@ namespace ShareX.UploadersLib
             if (response != null)
             {
                 Headers = response.Headers;
-                ResponseUri = response.ResponseUri;
+                ResponseURL = response.ResponseUri.OriginalString;
 
                 using (Stream responseStream = response.GetResponseStream())
                 using (StreamReader reader = new StreamReader(responseStream, Encoding.UTF8))
