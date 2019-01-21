@@ -1177,6 +1177,12 @@ namespace ShareX.UploadersLib
             Config.GooglePhotosIsPublic = cbGooglePhotosIsPublic.Checked;
         }
 
+        private void btnGooglePhotosCreateAlbum_Click(object sender, EventArgs e)
+        {
+            GooglePhotosCreateAlbum(txtGooglePhotosCreateAlbumName.Text);
+            GooglePhotosRefreshAlbumList();
+        }
+
         #endregion Google Photos
 
         #region Chevereto

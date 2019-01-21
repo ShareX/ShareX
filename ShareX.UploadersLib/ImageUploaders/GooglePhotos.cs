@@ -66,7 +66,7 @@ namespace ShareX.UploadersLib.ImageUploaders
         {
             GoogleAuth = new GoogleOAuth2(oauth, this)
             {
-                Scope = "https://www.googleapis.com/auth/photoslibrary.readonly.appcreateddata https://www.googleapis.com/auth/photoslibrary.sharing"
+                Scope = "https://www.googleapis.com/auth/photoslibrary https://www.googleapis.com/auth/photoslibrary.sharing"
             };
         }
 
@@ -92,6 +92,22 @@ namespace ShareX.UploadersLib.ImageUploaders
             return GoogleAuth.GetAccessToken(code);
         }
 
+        public void CreateAlbum(string albumName)
+        {
+            GooglePhotosNewAlbum newItemAlbum = new GooglePhotosNewAlbum
+            {
+                album = new GooglePhotosAlbum
+                {
+                    title = albumName
+                }
+            };
+
+            string serializedTempItemAlbum = JsonConvert.SerializeObject(newItemAlbum);
+            string serializedTempItemAlbumResponse = SendRequest(HttpMethod.POST, "https://photoslibrary.googleapis.com/v1/albums", serializedTempItemAlbum, headers: GoogleAuth.GetAuthHeaders(), contentType: UploadHelpers.ContentTypeJSON);
+
+            GooglePhotosAlbum tempItemAlbumResponse = JsonConvert.DeserializeObject<GooglePhotosAlbum>(serializedTempItemAlbumResponse);
+        }
+
         public List<GooglePhotosAlbumInfo> GetAlbumList()
         {
             if (!CheckAuthorization()) return null;
@@ -100,7 +116,7 @@ namespace ShareX.UploadersLib.ImageUploaders
 
             Dictionary<string, string> args = new Dictionary<string, string>
             {
-                {"excludeNonAppCreatedData", "true" }
+                { "excludeNonAppCreatedData", "true" }
             };
 
             string pageToken = "";

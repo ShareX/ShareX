@@ -743,6 +743,9 @@ namespace ShareX.UploadersLib
             this.tsmiCustomUploaderExamples = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiCustomUploaderExportAll = new System.Windows.Forms.ToolStripMenuItem();
             this.actRapidShareAccountType = new ShareX.UploadersLib.AccountTypeControl();
+            this.btnGooglePhotosCreateAlbum = new System.Windows.Forms.Button();
+            this.txtGooglePhotosCreateAlbumName = new System.Windows.Forms.TextBox();
+            this.lblGooglePhotosCreateAlbumName = new System.Windows.Forms.Label();
             this.tscCustomUploaderResponseText.ContentPanel.SuspendLayout();
             this.tscCustomUploaderResponseText.TopToolStripPanel.SuspendLayout();
             this.tscCustomUploaderResponseText.SuspendLayout();
@@ -5728,6 +5731,9 @@ namespace ShareX.UploadersLib
             // tpGooglePhotos
             // 
             this.tpGooglePhotos.BackColor = System.Drawing.SystemColors.Window;
+            this.tpGooglePhotos.Controls.Add(this.lblGooglePhotosCreateAlbumName);
+            this.tpGooglePhotos.Controls.Add(this.txtGooglePhotosCreateAlbumName);
+            this.tpGooglePhotos.Controls.Add(this.btnGooglePhotosCreateAlbum);
             this.tpGooglePhotos.Controls.Add(this.cbGooglePhotosIsPublic);
             this.tpGooglePhotos.Controls.Add(this.txtPicasaAlbumID);
             this.tpGooglePhotos.Controls.Add(this.lblPicasaAlbumID);
@@ -5953,6 +5959,23 @@ namespace ShareX.UploadersLib
             resources.ApplyResources(this.actRapidShareAccountType, "actRapidShareAccountType");
             this.actRapidShareAccountType.Name = "actRapidShareAccountType";
             this.actRapidShareAccountType.SelectedAccountType = ShareX.UploadersLib.AccountType.Anonymous;
+            // 
+            // btnGooglePhotosCreateAlbum
+            // 
+            resources.ApplyResources(this.btnGooglePhotosCreateAlbum, "btnGooglePhotosCreateAlbum");
+            this.btnGooglePhotosCreateAlbum.Name = "btnGooglePhotosCreateAlbum";
+            this.btnGooglePhotosCreateAlbum.UseVisualStyleBackColor = true;
+            this.btnGooglePhotosCreateAlbum.Click += new System.EventHandler(this.btnGooglePhotosCreateAlbum_Click);
+            // 
+            // txtGooglePhotosCreateAlbumName
+            // 
+            resources.ApplyResources(this.txtGooglePhotosCreateAlbumName, "txtGooglePhotosCreateAlbumName");
+            this.txtGooglePhotosCreateAlbumName.Name = "txtGooglePhotosCreateAlbumName";
+            // 
+            // lblGooglePhotosCreateAlbumName
+            // 
+            resources.ApplyResources(this.lblGooglePhotosCreateAlbumName, "lblGooglePhotosCreateAlbumName");
+            this.lblGooglePhotosCreateAlbumName.Name = "lblGooglePhotosCreateAlbumName";
             // 
             // UploadersConfigForm
             // 
@@ -6851,5 +6874,8 @@ namespace ShareX.UploadersLib
         private System.Windows.Forms.ToolStripButton tsbCustomUploaderXMLFormat;
         private System.Windows.Forms.ToolStripButton tsbCustomUploaderCopyResponseText;
         private System.Windows.Forms.CheckBox cbGooglePhotosIsPublic;
+        private System.Windows.Forms.Label lblGooglePhotosCreateAlbumName;
+        private System.Windows.Forms.TextBox txtGooglePhotosCreateAlbumName;
+        private System.Windows.Forms.Button btnGooglePhotosCreateAlbum;
     }
 }
