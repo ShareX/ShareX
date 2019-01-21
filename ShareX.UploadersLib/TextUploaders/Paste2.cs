@@ -71,7 +71,7 @@ namespace ShareX.UploadersLib.TextUploaders
                 arguments.Add("parent", "");
 
                 SendRequestMultiPart("https://paste2.org/", arguments);
-                ur.URL = ResponseURL;
+                ur.URL = LastResponseInfo.ResponseURL;
             }
 
             return ur;

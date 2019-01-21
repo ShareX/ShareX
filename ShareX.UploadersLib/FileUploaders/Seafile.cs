@@ -492,7 +492,7 @@ namespace ShareX.UploadersLib.FileUploaders
                 }
 
                 SendRequestURLEncoded(HttpMethod.PUT, url, args, headers);
-                return Headers["Location"];
+                return LastResponseInfo.Headers["Location"];
             }
             finally
             {

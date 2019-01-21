@@ -65,7 +65,7 @@ namespace ShareX.UploadersLib.TextUploaders
                 arguments.Add("paste[authorization]", "burger");
 
                 SendRequestURLEncoded(HttpMethod.POST, "http://pastie.org/pastes", arguments);
-                ur.URL = ResponseURL;
+                ur.URL = LastResponseInfo.ResponseURL;
             }
 
             return ur;
