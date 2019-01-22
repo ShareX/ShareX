@@ -40,14 +40,6 @@ namespace ShareX.HelpersLib
 
         public static ContextMenuStrip Create<TEntry>(TextBoxBase tb, TEntry[] ignoreList, CodeMenuItem[] extraItems) where TEntry : CodeMenuEntry
         {
-            ContextMenuStrip cms = new ContextMenuStrip
-            {
-                Font = new Font("Lucida Console", 8),
-                AutoClose = false,
-                Opacity = 0.9,
-                ShowImageMargin = false
-            };
-
             List<CodeMenuItem> items = new List<CodeMenuItem>();
 
             if (extraItems != null)
@@ -59,6 +51,19 @@ namespace ShareX.HelpersLib
                 Select(x => new CodeMenuItem(x.ToPrefixString(), x.Description, x.Category));
 
             items.AddRange(variables);
+
+            return Create(tb, items.ToArray());
+        }
+
+        public static ContextMenuStrip Create(TextBoxBase tb, CodeMenuItem[] items)
+        {
+            ContextMenuStrip cms = new ContextMenuStrip
+            {
+                Font = new Font("Lucida Console", 8),
+                AutoClose = false,
+                Opacity = 0.9,
+                ShowImageMargin = false
+            };
 
             foreach (CodeMenuItem item in items)
             {

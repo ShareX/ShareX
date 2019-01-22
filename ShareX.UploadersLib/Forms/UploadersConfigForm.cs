@@ -109,19 +109,38 @@ namespace ShareX.UploadersLib
             cbFTPSEncryption.Items.AddRange(Enum.GetNames(typeof(FTPSEncryption)));
             eiFTP.ObjectType = typeof(FTPAccount);
 
-            // Custom uploader
-            CodeMenuItem codeMenuItemInput = new CodeMenuItem("$input$", "Text/URL input");
-            CodeMenuItem codeMenuItemFilename = new CodeMenuItem("$filename$", "File name");
+            // Custom uploaders
+            CodeMenuItem[] inputCodeMenuItems = new CodeMenuItem[]
+            {
+                new CodeMenuItem("$input$", "Text/URL input"),
+                new CodeMenuItem("$filename$", "File name")
+            };
 
             CodeMenu.Create<CodeMenuEntryFilename>(rtbCustomUploaderParameterValue,
-                new CodeMenuEntryFilename[] { CodeMenuEntryFilename.n, CodeMenuEntryFilename.t, CodeMenuEntryFilename.pn },
-                new CodeMenuItem[] { codeMenuItemInput, codeMenuItemFilename });
+                new CodeMenuEntryFilename[] { CodeMenuEntryFilename.n, CodeMenuEntryFilename.t, CodeMenuEntryFilename.pn }, inputCodeMenuItems);
             CodeMenu.Create<CodeMenuEntryFilename>(rtbCustomUploaderHeaderValue,
-                new CodeMenuEntryFilename[] { CodeMenuEntryFilename.n, CodeMenuEntryFilename.t, CodeMenuEntryFilename.pn },
-                new CodeMenuItem[] { codeMenuItemInput, codeMenuItemFilename });
+                new CodeMenuEntryFilename[] { CodeMenuEntryFilename.n, CodeMenuEntryFilename.t, CodeMenuEntryFilename.pn }, inputCodeMenuItems);
             CodeMenu.Create<CodeMenuEntryFilename>(rtbCustomUploaderArgumentValue,
-                new CodeMenuEntryFilename[] { CodeMenuEntryFilename.n, CodeMenuEntryFilename.t, CodeMenuEntryFilename.pn },
-                new CodeMenuItem[] { codeMenuItemInput, codeMenuItemFilename });
+                new CodeMenuEntryFilename[] { CodeMenuEntryFilename.n, CodeMenuEntryFilename.t, CodeMenuEntryFilename.pn }, inputCodeMenuItems);
+
+            CodeMenuItem[] outputCodeMenuItems = new CodeMenuItem[]
+            {
+                new CodeMenuItem("$response$", "Response text"),
+                new CodeMenuItem("$responseurl$", "Response/Redirection URL"),
+                new CodeMenuItem("$header:header_name$", "Response header"),
+                new CodeMenuItem("$json:path$", "Parse response using JSON"),
+                new CodeMenuItem("$xml:path$", "Parse response using XML"),
+                new CodeMenuItem("$regex:index|group$", "Parse response using Regex"),
+                new CodeMenuItem("$filename$", "File name used when uploading"),
+                new CodeMenuItem("$random:input1|input2$", "Random selection from list"),
+                new CodeMenuItem("$select:input1|input2$", "Lets user to select one input from list"),
+                new CodeMenuItem("$prompt:title|default_value$", "Lets user to input text"),
+                new CodeMenuItem("$base64:input$", "Base64 encode input")
+            };
+
+            CodeMenu.Create(rtbCustomUploaderURL, outputCodeMenuItems);
+            CodeMenu.Create(rtbCustomUploaderThumbnailURL, outputCodeMenuItems);
+            CodeMenu.Create(rtbCustomUploaderDeletionURL, outputCodeMenuItems);
 
             rtbCustomUploaderRequestURL.AddContextMenu();
             rtbCustomUploaderParameterValue.AddContextMenu();
