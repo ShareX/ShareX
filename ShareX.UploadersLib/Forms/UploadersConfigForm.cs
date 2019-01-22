@@ -292,13 +292,13 @@ namespace ShareX.UploadersLib
 
             #region Google Photos
 
-            if (OAuth2Info.CheckOAuth(Config.PicasaOAuth2Info))
+            if (OAuth2Info.CheckOAuth(Config.GooglePhotosOAuth2Info))
             {
                 oauth2Picasa.Status = OAuthLoginStatus.LoginSuccessful;
                 btnPicasaRefreshAlbumList.Enabled = true;
             }
 
-            txtPicasaAlbumID.Text = Config.PicasaAlbumID;
+            txtPicasaAlbumID.Text = Config.GooglePhotosAlbumID;
             cbGooglePhotosIsPublic.Checked = Config.GooglePhotosIsPublic;
 
             #endregion Google Photos
@@ -1150,27 +1150,27 @@ namespace ShareX.UploadersLib
         private void oauth2Picasa_OpenButtonClicked()
         {
             OAuth2Info oauth = new OAuth2Info(APIKeys.GoogleClientID, APIKeys.GoogleClientSecret);
-            Config.PicasaOAuth2Info = OAuth2Open(new GooglePhotos(oauth));
+            Config.GooglePhotosOAuth2Info = OAuth2Open(new GooglePhotos(oauth));
         }
 
         private void oauth2Picasa_CompleteButtonClicked(string code)
         {
-            btnPicasaRefreshAlbumList.Enabled = OAuth2Complete(new GooglePhotos(Config.PicasaOAuth2Info), code, oauth2Picasa);
+            btnPicasaRefreshAlbumList.Enabled = OAuth2Complete(new GooglePhotos(Config.GooglePhotosOAuth2Info), code, oauth2Picasa);
         }
 
         private void oauth2Picasa_ClearButtonClicked()
         {
-            Config.PicasaOAuth2Info = null;
+            Config.GooglePhotosOAuth2Info = null;
         }
 
         private void oauth2Picasa_RefreshButtonClicked()
         {
-            btnPicasaRefreshAlbumList.Enabled = OAuth2Refresh(new GooglePhotos(Config.PicasaOAuth2Info), oauth2Picasa);
+            btnPicasaRefreshAlbumList.Enabled = OAuth2Refresh(new GooglePhotos(Config.GooglePhotosOAuth2Info), oauth2Picasa);
         }
 
         private void txtPicasaAlbumID_TextChanged(object sender, EventArgs e)
         {
-            Config.PicasaAlbumID = txtPicasaAlbumID.Text;
+            Config.GooglePhotosAlbumID = txtPicasaAlbumID.Text;
         }
 
         private void btnPicasaRefreshAlbumList_Click(object sender, EventArgs e)

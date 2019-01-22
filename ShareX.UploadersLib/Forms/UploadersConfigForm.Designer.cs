@@ -712,6 +712,9 @@ namespace ShareX.UploadersLib
             this.txtPhotobucketVerificationCode = new System.Windows.Forms.TextBox();
             this.lblPhotobucketAccountStatus = new System.Windows.Forms.Label();
             this.tpGooglePhotos = new System.Windows.Forms.TabPage();
+            this.lblGooglePhotosCreateAlbumName = new System.Windows.Forms.Label();
+            this.txtGooglePhotosCreateAlbumName = new System.Windows.Forms.TextBox();
+            this.btnGooglePhotosCreateAlbum = new System.Windows.Forms.Button();
             this.cbGooglePhotosIsPublic = new System.Windows.Forms.CheckBox();
             this.txtPicasaAlbumID = new System.Windows.Forms.TextBox();
             this.lblPicasaAlbumID = new System.Windows.Forms.Label();
@@ -743,9 +746,6 @@ namespace ShareX.UploadersLib
             this.tsmiCustomUploaderExamples = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiCustomUploaderExportAll = new System.Windows.Forms.ToolStripMenuItem();
             this.actRapidShareAccountType = new ShareX.UploadersLib.AccountTypeControl();
-            this.btnGooglePhotosCreateAlbum = new System.Windows.Forms.Button();
-            this.txtGooglePhotosCreateAlbumName = new System.Windows.Forms.TextBox();
-            this.lblGooglePhotosCreateAlbumName = new System.Windows.Forms.Label();
             this.tscCustomUploaderResponseText.ContentPanel.SuspendLayout();
             this.tscCustomUploaderResponseText.TopToolStripPanel.SuspendLayout();
             this.tscCustomUploaderResponseText.SuspendLayout();
@@ -5743,6 +5743,23 @@ namespace ShareX.UploadersLib
             resources.ApplyResources(this.tpGooglePhotos, "tpGooglePhotos");
             this.tpGooglePhotos.Name = "tpGooglePhotos";
             // 
+            // lblGooglePhotosCreateAlbumName
+            // 
+            resources.ApplyResources(this.lblGooglePhotosCreateAlbumName, "lblGooglePhotosCreateAlbumName");
+            this.lblGooglePhotosCreateAlbumName.Name = "lblGooglePhotosCreateAlbumName";
+            // 
+            // txtGooglePhotosCreateAlbumName
+            // 
+            resources.ApplyResources(this.txtGooglePhotosCreateAlbumName, "txtGooglePhotosCreateAlbumName");
+            this.txtGooglePhotosCreateAlbumName.Name = "txtGooglePhotosCreateAlbumName";
+            // 
+            // btnGooglePhotosCreateAlbum
+            // 
+            resources.ApplyResources(this.btnGooglePhotosCreateAlbum, "btnGooglePhotosCreateAlbum");
+            this.btnGooglePhotosCreateAlbum.Name = "btnGooglePhotosCreateAlbum";
+            this.btnGooglePhotosCreateAlbum.UseVisualStyleBackColor = true;
+            this.btnGooglePhotosCreateAlbum.Click += new System.EventHandler(this.btnGooglePhotosCreateAlbum_Click);
+            // 
             // cbGooglePhotosIsPublic
             // 
             resources.ApplyResources(this.cbGooglePhotosIsPublic, "cbGooglePhotosIsPublic");
@@ -5959,23 +5976,6 @@ namespace ShareX.UploadersLib
             resources.ApplyResources(this.actRapidShareAccountType, "actRapidShareAccountType");
             this.actRapidShareAccountType.Name = "actRapidShareAccountType";
             this.actRapidShareAccountType.SelectedAccountType = ShareX.UploadersLib.AccountType.Anonymous;
-            // 
-            // btnGooglePhotosCreateAlbum
-            // 
-            resources.ApplyResources(this.btnGooglePhotosCreateAlbum, "btnGooglePhotosCreateAlbum");
-            this.btnGooglePhotosCreateAlbum.Name = "btnGooglePhotosCreateAlbum";
-            this.btnGooglePhotosCreateAlbum.UseVisualStyleBackColor = true;
-            this.btnGooglePhotosCreateAlbum.Click += new System.EventHandler(this.btnGooglePhotosCreateAlbum_Click);
-            // 
-            // txtGooglePhotosCreateAlbumName
-            // 
-            resources.ApplyResources(this.txtGooglePhotosCreateAlbumName, "txtGooglePhotosCreateAlbumName");
-            this.txtGooglePhotosCreateAlbumName.Name = "txtGooglePhotosCreateAlbumName";
-            // 
-            // lblGooglePhotosCreateAlbumName
-            // 
-            resources.ApplyResources(this.lblGooglePhotosCreateAlbumName, "lblGooglePhotosCreateAlbumName");
-            this.lblGooglePhotosCreateAlbumName.Name = "lblGooglePhotosCreateAlbumName";
             // 
             // UploadersConfigForm
             // 

@@ -41,14 +41,14 @@ namespace ShareX.UploadersLib.ImageUploaders
 
         public override bool CheckConfig(UploadersConfig config)
         {
-            return OAuth2Info.CheckOAuth(config.PicasaOAuth2Info);
+            return OAuth2Info.CheckOAuth(config.GooglePhotosOAuth2Info);
         }
 
         public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
         {
-            return new GooglePhotos(config.PicasaOAuth2Info)
+            return new GooglePhotos(config.GooglePhotosOAuth2Info)
             {
-                AlbumID = config.PicasaAlbumID,
+                AlbumID = config.GooglePhotosAlbumID,
                 IsPublic = config.GooglePhotosIsPublic
             };
         }

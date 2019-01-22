@@ -221,9 +221,9 @@ namespace ShareX.UploadersLib
             {
                 lvPicasaAlbumList.Items.Clear();
 
-                if (OAuth2Info.CheckOAuth(Config.PicasaOAuth2Info))
+                if (OAuth2Info.CheckOAuth(Config.GooglePhotosOAuth2Info))
                 {
-                    List<GooglePhotosAlbumInfo> albums = new GooglePhotos(Config.PicasaOAuth2Info).GetAlbumList();
+                    List<GooglePhotosAlbumInfo> albums = new GooglePhotos(Config.GooglePhotosOAuth2Info).GetAlbumList();
 
                     if (albums != null && albums.Count > 0)
                     {
@@ -246,9 +246,9 @@ namespace ShareX.UploadersLib
 
         public void GooglePhotosCreateAlbum(string albumName)
         {
-            if (OAuth2Info.CheckOAuth(Config.PicasaOAuth2Info))
+            if (OAuth2Info.CheckOAuth(Config.GooglePhotosOAuth2Info))
             {
-                new GooglePhotos(Config.PicasaOAuth2Info).CreateAlbum(albumName);
+                new GooglePhotos(Config.GooglePhotosOAuth2Info).CreateAlbum(albumName);
             }
         }
 
