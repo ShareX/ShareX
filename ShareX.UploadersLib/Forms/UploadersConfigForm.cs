@@ -155,11 +155,9 @@ namespace ShareX.UploadersLib
             CustomUploaderAddDestinationTypes();
             cbCustomUploaderRequestMethod.Items.AddRange(Enum.GetNames(typeof(HttpMethod)));
             cbCustomUploaderRequestFormat.Items.AddRange(Helpers.GetEnumDescriptions<CustomUploaderBody>());
-            cbCustomUploaderResponseType.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<ResponseType>());
 
             // Backblaze B2
-            txtB2Bucket.HandleCreated += (sender, e) =>
-                txtB2Bucket.SetWatermark(Resources.txtB2BucketWatermark, showCueWhenFocus: true);
+            txtB2Bucket.HandleCreated += (sender, e) => txtB2Bucket.SetWatermark(Resources.txtB2BucketWatermark, showCueWhenFocus: true);
 
 #if DEBUG
             btnCheveretoTestAll.Visible = true;
@@ -3890,10 +3888,6 @@ namespace ShareX.UploadersLib
             rtbCustomUploaderHeaderValue.Text = value;
 
             CustomUploaderUpdateHeadersState();
-        }
-
-        private void cbCustomUploaderResponseType_SelectedIndexChanged(object sender, EventArgs e)
-        {
         }
 
         private void txtCustomUploaderJsonPath_TextChanged(object sender, EventArgs e)
