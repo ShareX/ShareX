@@ -299,6 +299,7 @@ namespace ShareX.UploadersLib
             }
 
             txtPicasaAlbumID.Text = Config.PicasaAlbumID;
+            cbGooglePhotosIsPublic.Checked = Config.GooglePhotosIsPublic;
 
             #endregion Google Photos
 
@@ -1188,6 +1189,17 @@ namespace ShareX.UploadersLib
                     txtPicasaAlbumID.Text = album.ID;
                 }
             }
+        }
+
+        private void cbGooglePhotosIsPublic_CheckedChanged(object sender, EventArgs e)
+        {
+            Config.GooglePhotosIsPublic = cbGooglePhotosIsPublic.Checked;
+        }
+
+        private void btnGooglePhotosCreateAlbum_Click(object sender, EventArgs e)
+        {
+            GooglePhotosCreateAlbum(txtGooglePhotosCreateAlbumName.Text);
+            GooglePhotosRefreshAlbumList();
         }
 
         #endregion Google Photos

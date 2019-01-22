@@ -244,6 +244,14 @@ namespace ShareX.UploadersLib
             }
         }
 
+        public void GooglePhotosCreateAlbum(string albumName)
+        {
+            if (OAuth2Info.CheckOAuth(Config.PicasaOAuth2Info))
+            {
+                new GooglePhotos(Config.PicasaOAuth2Info).CreateAlbum(albumName);
+            }
+        }
+
         #endregion Google Photos
 
         #region Amazon S3
