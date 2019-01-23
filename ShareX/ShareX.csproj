@@ -1571,6 +1571,9 @@
   <ItemGroup>
     <None Include="Resources\clock-select.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\network-cloud.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>

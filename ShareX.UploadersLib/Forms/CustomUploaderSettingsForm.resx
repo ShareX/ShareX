@@ -457,7 +457,7 @@
     <value>40, 24</value>
   </data>
   <data name="btnCustomUploaderHelp.TabIndex" type="System.Int32, mscorlib">
-    <value>21</value>
+    <value>6</value>
   </data>
   <data name="btnCustomUploaderHelp.Text" xml:space="preserve">
     <value>?</value>
@@ -484,7 +484,7 @@
     <value>72, 24</value>
   </data>
   <data name="btnCustomUploaderNew.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+    <value>0</value>
   </data>
   <data name="btnCustomUploaderNew.Text" xml:space="preserve">
     <value>New</value>

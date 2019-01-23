@@ -884,6 +884,7 @@
             // 
             // tsmiCustomUploaderSettings
             // 
+            this.tsmiCustomUploaderSettings.Image = global::ShareX.Properties.Resources.network_cloud;
             this.tsmiCustomUploaderSettings.Name = "tsmiCustomUploaderSettings";
             resources.ApplyResources(this.tsmiCustomUploaderSettings, "tsmiCustomUploaderSettings");
             this.tsmiCustomUploaderSettings.Click += new System.EventHandler(this.tsmiCustomUploaderSettings_Click);
