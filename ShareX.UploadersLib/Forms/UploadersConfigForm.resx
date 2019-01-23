@@ -609,7 +609,7 @@ when you made the application key.</value>
     <value>4, 22</value>
   </data>
   <data name="tpTwitter.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 569</value>
+    <value>972, 537</value>
   </data>
   <data name="tpTwitter.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -636,7 +636,7 @@ when you made the application key.</value>
     <value>3, 3</value>
   </data>
   <data name="tcOtherUploaders.Size" type="System.Drawing.Size, System.Drawing">
-    <value>980, 595</value>
+    <value>980, 563</value>
   </data>
   <data name="tcOtherUploaders.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -660,7 +660,7 @@ when you made the application key.</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpOtherUploaders.Size" type="System.Drawing.Size, System.Drawing">
-    <value>986, 601</value>
+    <value>986, 569</value>
   </data>
   <data name="tpOtherUploaders.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -12967,7 +12967,7 @@ Using an encrypted library disables sharing.</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpImgur.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 569</value>
+    <value>972, 537</value>
   </data>
   <data name="tpImgur.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -14659,7 +14659,7 @@ Using an encrypted library disables sharing.</value>
     <value>780, 480</value>
   </data>
   <data name="tcImageUploaders.Size" type="System.Drawing.Size, System.Drawing">
-    <value>980, 595</value>
+    <value>980, 563</value>
   </data>
   <data name="tcImageUploaders.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -14683,7 +14683,7 @@ Using an encrypted library disables sharing.</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpImageUploaders.Size" type="System.Drawing.Size, System.Drawing">
-    <value>986, 601</value>
+    <value>986, 569</value>
   </data>
   <data name="tpImageUploaders.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -14710,7 +14710,7 @@ Using an encrypted library disables sharing.</value>
     <value>3, 3</value>
   </data>
   <data name="tcUploaders.Size" type="System.Drawing.Size, System.Drawing">
-    <value>994, 627</value>
+    <value>994, 595</value>
   </data>
   <data name="tcUploaders.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -14767,7 +14767,7 @@ Using an encrypted library disables sharing.</value>
     <value>0, 0, 0, 0</value>
   </data>
   <data name="ttlvMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>994, 627</value>
+    <value>994, 595</value>
   </data>
   <data name="ttlvMain.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -14809,7 +14809,7 @@ Using an encrypted library disables sharing.</value>
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1000, 633</value>
+    <value>1000, 601</value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>840, 572</value>

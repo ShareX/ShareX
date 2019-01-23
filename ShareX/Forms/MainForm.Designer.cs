@@ -1968,6 +1968,7 @@
             // 
             // tsmiTrayCustomUploaderSettings
             // 
+            this.tsmiTrayCustomUploaderSettings.Image = global::ShareX.Properties.Resources.network_cloud;
             this.tsmiTrayCustomUploaderSettings.Name = "tsmiTrayCustomUploaderSettings";
             resources.ApplyResources(this.tsmiTrayCustomUploaderSettings, "tsmiTrayCustomUploaderSettings");
             this.tsmiTrayCustomUploaderSettings.Click += new System.EventHandler(this.tsmiCustomUploaderSettings_Click);

@@ -54,7 +54,6 @@ namespace ShareX.UploadersLib
         {
             Config = config;
             InitializeComponent();
-            Size = new Size(1016, 640);
             InitializeControls();
         }
 
