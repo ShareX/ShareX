@@ -143,7 +143,10 @@ namespace ShareX.UploadersLib.ImageUploaders
                                 Name = album.title
                             };
 
-                            albumList.Add(AlbumInfo);
+                            if (album.shareInfo == null)
+                            {
+                                albumList.Add(AlbumInfo);
+                            }
                         }
                         pageToken = albums.nextPageToken;
                     }
@@ -233,6 +236,7 @@ namespace ShareX.UploadersLib.ImageUploaders
         public string coverPhotoBaseUrl { get; set; }
         public string coverPhotoMediaItemId { get; set; }
         public string isWriteable { get; set; }
+        public GooglePhotosShareInfo shareInfo { get; set; }
         public string mediaItemsCount { get; set; }
     }
 
