@@ -131,11 +131,11 @@ namespace ShareX.UploadersLib.ImageUploaders
 
                 if (!string.IsNullOrEmpty(response))
                 {
-                    GooglePhotosAlbums albums = JsonConvert.DeserializeObject<GooglePhotosAlbums>(response);
+                    GooglePhotosAlbums albumsResponse = JsonConvert.DeserializeObject<GooglePhotosAlbums>(response);
 
-                    if (albums.albums != null)
+                    if (albumsResponse.albums != null)
                     {
-                        foreach (GooglePhotosAlbum album in albums.albums)
+                        foreach (GooglePhotosAlbum album in albumsResponse.albums)
                         {
                             GooglePhotosAlbumInfo AlbumInfo = new GooglePhotosAlbumInfo
                             {
@@ -148,8 +148,8 @@ namespace ShareX.UploadersLib.ImageUploaders
                                 albumList.Add(AlbumInfo);
                             }
                         }
-                        pageToken = albums.nextPageToken;
                     }
+                    pageToken = albumsResponse.nextPageToken;
                 }
             }
             while (!string.IsNullOrEmpty(pageToken));
