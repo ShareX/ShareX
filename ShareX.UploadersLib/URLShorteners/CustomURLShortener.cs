@@ -26,8 +26,6 @@
 using ShareX.HelpersLib;
 using ShareX.UploadersLib.Properties;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace ShareX.UploadersLib.URLShorteners
 {
