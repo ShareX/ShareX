@@ -1436,6 +1436,25 @@ namespace ShareX
             }
         }
 
+        public static void OpenCustomUploaderSettingsWindow()
+        {
+            SettingManager.WaitUploadersConfig();
+
+            bool firstInstance = !CustomUploaderSettingsForm.IsInstanceActive;
+
+            CustomUploaderSettingsForm form = CustomUploaderSettingsForm.GetFormInstance(Program.UploadersConfig);
+
+            if (firstInstance)
+            {
+                form.FormClosed += (sender, e) => SettingManager.SaveUploadersConfigAsync();
+                form.Show();
+            }
+            else
+            {
+                form.ForceActivate();
+            }
+        }
+
         public static Image FindMenuIcon<T>(int index)
         {
             T e = Helpers.GetEnumFromIndex<T>(index);

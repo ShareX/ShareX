@@ -218,24 +218,14 @@ namespace ShareX.UploadersLib
             return Encoding.UTF8.GetBytes(string.Format("--{0}--\r\n", boundary));
         }
 
-        public static string ResponseToString(WebResponse response, ResponseType responseType = ResponseType.Text)
+        public static string ResponseToString(WebResponse response)
         {
             if (response != null)
             {
-                switch (responseType)
+                using (Stream responseStream = response.GetResponseStream())
+                using (StreamReader reader = new StreamReader(responseStream, Encoding.UTF8))
                 {
-                    case ResponseType.Text:
-                        using (Stream responseStream = response.GetResponseStream())
-                        using (StreamReader reader = new StreamReader(responseStream, Encoding.UTF8))
-                        {
-                            return reader.ReadToEnd();
-                        }
-                    case ResponseType.RedirectionURL:
-                        return response.ResponseUri.OriginalString;
-                    case ResponseType.Headers:
-                        return response.Headers.ToString();
-                    case ResponseType.LocationHeader:
-                        return response.Headers["Location"];
+                    return reader.ReadToEnd();
                 }
             }
 
