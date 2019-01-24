@@ -106,13 +106,11 @@ namespace ShareX.UploadersLib.FileUploaders
         {
             if (!CheckAuthorization()) return null;
 
-            string name = fileName;
-
-            string uploadPath = GetUploadPath(name);
+            string uploadPath = GetUploadPath(fileName);
 
             OnEarlyURLCopyRequested(GenerateURL(uploadPath));
 
-            GoogleCloudStorageMetadata metadata = new GoogleCloudStorageMetadata
+            GoogleCloudStorageMetadata googleCloudStorageMetadata = new GoogleCloudStorageMetadata
             {
                 name = uploadPath,
                 acl = new GoogleCloudStorageAcl[]
@@ -125,20 +123,13 @@ namespace ShareX.UploadersLib.FileUploaders
                 }
             };
 
-            string metadatajson = JsonConvert.SerializeObject(metadata);
+            string serializedGoogleCloudStorageMetadata = JsonConvert.SerializeObject(googleCloudStorageMetadata);
 
-            UploadResult result = SendRequestFile($"https://www.googleapis.com/upload/storage/v1/b/{Bucket}/o?uploadType=multipart", stream, fileName, "file",
-                headers: googleAuth.GetAuthHeaders(), contentType: "multipart/related", metadata: metadatajson);
+            UploadResult result = SendRequestFile($"https://www.googleapis.com/upload/storage/v1/b/{Bucket}/o?uploadType=multipart&fields=name", stream, fileName, null, headers: googleAuth.GetAuthHeaders(), contentType: "multipart/related", metadata: serializedGoogleCloudStorageMetadata);
 
-            GoogleCloudStorageResponse upload = JsonConvert.DeserializeObject<GoogleCloudStorageResponse>(result.Response);
+            GoogleCloudStorageResponse googleCloudStorageResponse = JsonConvert.DeserializeObject<GoogleCloudStorageResponse>(result.Response);
 
-            if (upload.name != uploadPath)
-            {
-                Errors.Add("Upload failed.");
-                return null;
-            }
-
-            result.URL = GenerateURL(uploadPath);
+            result.URL = GenerateURL(googleCloudStorageResponse.name);
 
             return result;
         }

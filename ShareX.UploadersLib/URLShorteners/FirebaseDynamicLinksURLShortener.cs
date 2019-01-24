@@ -110,11 +110,13 @@ namespace ShareX.UploadersLib.URLShorteners
 
             Dictionary<string, string> args = new Dictionary<string, string>
             {
-                { "key", WebAPIKey }
+                { "key", WebAPIKey },
+                { "fields", "shortLink" }
             };
 
             string requestjson = JsonConvert.SerializeObject(request);
             result.Response = SendRequest(HttpMethod.POST, "https://firebasedynamiclinks.googleapis.com/v1/shortLinks", requestjson, UploadHelpers.ContentTypeJSON, args);
+            DebugHelper.WriteLine(result.Response);
             FirebaseResponse firebaseResponse = JsonConvert.DeserializeObject<FirebaseResponse>(result.Response);
 
             if (firebaseResponse != null)

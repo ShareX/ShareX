@@ -102,6 +102,11 @@ namespace ShareX.UploadersLib.ImageUploaders
                 }
             };
 
+            Dictionary<string, string> args = new Dictionary<string, string>
+            {
+                { "fields", "id" }
+            };
+
             string serializedNewItemAlbum = JsonConvert.SerializeObject(newItemAlbum);
             string serializedNewItemAlbumResponse = SendRequest(HttpMethod.POST, "https://photoslibrary.googleapis.com/v1/albums", serializedNewItemAlbum, headers: GoogleAuth.GetAuthHeaders(), contentType: UploadHelpers.ContentTypeJSON);
 
@@ -118,7 +123,8 @@ namespace ShareX.UploadersLib.ImageUploaders
 
             Dictionary<string, string> args = new Dictionary<string, string>
             {
-                { "excludeNonAppCreatedData", "true" }
+                { "excludeNonAppCreatedData", "true" },
+                { "fields", "albums(id,title,shareInfo),nextPageToken" }
             };
 
             string pageToken = "";
@@ -167,10 +173,15 @@ namespace ShareX.UploadersLib.ImageUploaders
             {
                 AlbumID = CreateAlbum(fileName).id;
 
+                Dictionary<string, string> albumOptionsResponseArgs = new Dictionary<string, string>
+            {
+                { "fields", "shareInfo/shareableUrl" }
+            };
+
                 GooglePhotosAlbumOptions albumOptions = new GooglePhotosAlbumOptions();
 
                 string serializedAlbumOptions = JsonConvert.SerializeObject(albumOptions);
-                string serializedAlbumOptionsResponse = SendRequest(HttpMethod.POST, $"https://photoslibrary.googleapis.com/v1/albums/{AlbumID}:share", content: serializedAlbumOptions, headers: GoogleAuth.GetAuthHeaders(), contentType: UploadHelpers.ContentTypeJSON);
+                string serializedAlbumOptionsResponse = SendRequest(HttpMethod.POST, $"https://photoslibrary.googleapis.com/v1/albums/{AlbumID}:share", args: albumOptionsResponseArgs, content: serializedAlbumOptions, headers: GoogleAuth.GetAuthHeaders(), contentType: UploadHelpers.ContentTypeJSON);
                 GooglePhotosAlbumOptionsResponse albumOptionsResponse = JsonConvert.DeserializeObject<GooglePhotosAlbumOptionsResponse>(serializedAlbumOptionsResponse);
 
                 result.URL = albumOptionsResponse.shareInfo.shareableUrl;
@@ -200,9 +211,14 @@ namespace ShareX.UploadersLib.ImageUploaders
                 }
             };
 
+            Dictionary<string, string> newMediaItemRequestArgs = new Dictionary<string, string>
+            {
+                { "fields", "newMediaItemResults(mediaItem/productUrl)" }
+            };
+
             string serializedNewMediaItemRequest = JsonConvert.SerializeObject(newMediaItemRequest);
 
-            result.Response = SendRequest(HttpMethod.POST, "https://photoslibrary.googleapis.com/v1/mediaItems:batchCreate", serializedNewMediaItemRequest, headers: GoogleAuth.GetAuthHeaders(), contentType: UploadHelpers.ContentTypeJSON);
+            result.Response = SendRequest(HttpMethod.POST, "https://photoslibrary.googleapis.com/v1/mediaItems:batchCreate", serializedNewMediaItemRequest, args: newMediaItemRequestArgs, headers: GoogleAuth.GetAuthHeaders(), contentType: UploadHelpers.ContentTypeJSON);
 
             GooglePhotosNewMediaItemResults newMediaItemResult = JsonConvert.DeserializeObject<GooglePhotosNewMediaItemResults>(result.Response);
 
