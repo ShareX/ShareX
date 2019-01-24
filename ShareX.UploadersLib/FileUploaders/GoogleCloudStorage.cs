@@ -78,7 +78,7 @@ namespace ShareX.UploadersLib.FileUploaders
         {
             googleAuth = new GoogleOAuth2(oauth, this)
             {
-                Scope = "https://www.googleapis.com/auth/devstorage.full_control"
+                Scope = "https://www.googleapis.com/auth/devstorage.read_write"
             };
         }
 
