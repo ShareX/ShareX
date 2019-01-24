@@ -108,18 +108,13 @@ namespace ShareX.UploadersLib.FileUploaders
 
             string name = fileName;
 
-            if ((RemoveExtensionImage && Helpers.IsImageFile(fileName)) ||
-                (RemoveExtensionText && Helpers.IsTextFile(fileName)) ||
-                (RemoveExtensionVideo && Helpers.IsVideoFile(fileName)))
-            {
-                name = Path.GetFileNameWithoutExtension(fileName);
-            }
+            string uploadPath = GetUploadPath(name);
 
-            string uploadpath = GetUploadPath(name);
+            OnEarlyURLCopyRequested(GenerateURL(uploadPath));
 
             GoogleCloudStorageMetadata metadata = new GoogleCloudStorageMetadata
             {
-                name = uploadpath,
+                name = uploadPath,
                 acl = new GoogleCloudStorageAcl[]
                 {
                     new GoogleCloudStorageAcl
@@ -137,13 +132,13 @@ namespace ShareX.UploadersLib.FileUploaders
 
             GoogleCloudStorageResponse upload = JsonConvert.DeserializeObject<GoogleCloudStorageResponse>(result.Response);
 
-            if (upload.name != uploadpath)
+            if (upload.name != uploadPath)
             {
                 Errors.Add("Upload failed.");
                 return null;
             }
 
-            result.URL = GenerateURL(uploadpath);
+            result.URL = GenerateURL(uploadPath);
 
             return result;
         }
@@ -151,6 +146,14 @@ namespace ShareX.UploadersLib.FileUploaders
         private string GetUploadPath(string fileName)
         {
             string uploadPath = NameParser.Parse(NameParserType.FolderPath, Prefix.Trim('/'));
+
+            if ((RemoveExtensionImage && Helpers.IsImageFile(fileName)) ||
+                (RemoveExtensionText && Helpers.IsTextFile(fileName)) ||
+                (RemoveExtensionVideo && Helpers.IsVideoFile(fileName)))
+            {
+                fileName = Path.GetFileNameWithoutExtension(fileName);
+            }
+
             return URLHelpers.CombineURL(uploadPath, fileName);
         }
 
