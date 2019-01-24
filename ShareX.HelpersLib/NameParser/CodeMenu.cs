@@ -68,10 +68,17 @@ namespace ShareX.HelpersLib
             foreach (CodeMenuItem item in items)
             {
                 ToolStripMenuItem tsmi = new ToolStripMenuItem { Text = $"{item.Name} - {item.Description}", Tag = item.Name };
-                tsmi.Click += (sender, e) =>
+                tsmi.MouseUp += (sender, e) =>
                 {
-                    string text = ((ToolStripMenuItem)sender).Tag.ToString();
-                    tb.AppendTextToSelection(text);
+                    if (e.Button == MouseButtons.Left)
+                    {
+                        string text = ((ToolStripMenuItem)sender).Tag.ToString();
+                        tb.AppendTextToSelection(text);
+                    }
+                    else
+                    {
+                        cms.Close();
+                    }
                 };
 
                 if (string.IsNullOrWhiteSpace(item.Category))
