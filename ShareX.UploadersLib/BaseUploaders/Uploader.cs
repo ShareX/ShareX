@@ -209,13 +209,11 @@ namespace ShareX.UploadersLib
                 contentType += "; boundary=" + boundary;
 
                 byte[] bytesArguments = UploadHelpers.MakeInputContent(boundary, args, false);
-                byte[] bytesRelatedData = null;
                 byte[] bytesDataOpen;
 
                 if (relatedData != null)
                 {
-                    bytesRelatedData = UploadHelpers.MakeRelatedInputContent(boundary, "application/json; charset=UTF-8", relatedData);
-                    bytesDataOpen = UploadHelpers.MakeRelatedFileInputContentOpen(boundary, fileName);
+                    bytesDataOpen = UploadHelpers.MakeRelatedFileInputContentOpen(boundary, "application/json; charset=UTF-8", relatedData, fileName);
                 }
                 else
                 {
@@ -225,14 +223,12 @@ namespace ShareX.UploadersLib
                 byte[] bytesDataClose = UploadHelpers.MakeFileInputContentClose(boundary);
 
                 long contentLength = bytesArguments.Length + bytesDataOpen.Length + data.Length + bytesDataClose.Length;
-                if (bytesRelatedData != null) contentLength += bytesRelatedData.Length;
 
                 HttpWebRequest request = CreateWebRequest(method, url, headers, cookies, contentType, contentLength);
 
                 using (Stream requestStream = request.GetRequestStream())
                 {
                     requestStream.Write(bytesArguments, 0, bytesArguments.Length);
-                    if (bytesRelatedData != null) requestStream.Write(bytesRelatedData, 0, bytesRelatedData.Length);
                     requestStream.Write(bytesDataOpen, 0, bytesDataOpen.Length);
                     if (!TransferData(data, requestStream)) return null;
                     requestStream.Write(bytesDataClose, 0, bytesDataClose.Length);

@@ -151,8 +151,8 @@ namespace ShareX.UploadersLib
 
         public static byte[] MakeInputContent(string boundary, string name, string value)
         {
-            string format = string.Format("--{0}\r\nContent-Disposition: form-data; name=\"{1}\"\r\n\r\n{2}\r\n", boundary, name, value);
-            return Encoding.UTF8.GetBytes(format);
+            string content = $"--{boundary}\r\nContent-Disposition: form-data; name=\"{name}\"\r\n\r\n{value}\r\n";
+            return Encoding.UTF8.GetBytes(content);
         }
 
         public static byte[] MakeInputContent(string boundary, Dictionary<string, string> contents, bool isFinal = true)
@@ -161,10 +161,10 @@ namespace ShareX.UploadersLib
             {
                 if (string.IsNullOrEmpty(boundary)) boundary = CreateBoundary();
 
-                byte[] bytes;
-
                 if (contents != null)
                 {
+                    byte[] bytes;
+
                     foreach (KeyValuePair<string, string> content in contents)
                     {
                         if (!string.IsNullOrEmpty(content.Key) && !string.IsNullOrEmpty(content.Value))
@@ -176,7 +176,7 @@ namespace ShareX.UploadersLib
 
                     if (isFinal)
                     {
-                        bytes = MakeFinalBoundary(boundary);
+                        bytes = Encoding.UTF8.GetBytes($"--{boundary}--\r\n");
                         stream.Write(bytes, 0, bytes.Length);
                     }
                 }
@@ -185,34 +185,24 @@ namespace ShareX.UploadersLib
             }
         }
 
-        public static byte[] MakeRelatedInputContent(string boundary, string contentType, string relatedData)
+        public static byte[] MakeFileInputContentOpen(string boundary, string fileFormName, string fileName)
         {
-            string content = string.Format("--{0}\r\nContent-Type: {1}\r\n\r\n{2}\r\n\r\n", boundary, contentType, relatedData);
+            string mimeType = GetMimeType(fileName);
+            string content = $"--{boundary}\r\nContent-Disposition: form-data; name=\"{fileFormName}\"; filename=\"{fileName}\"\r\nContent-Type: {mimeType}\r\n\r\n";
             return Encoding.UTF8.GetBytes(content);
         }
 
-        public static byte[] MakeFileInputContentOpen(string boundary, string fileFormName, string fileName)
+        public static byte[] MakeRelatedFileInputContentOpen(string boundary, string contentType, string relatedData, string fileName)
         {
-            string format = string.Format("--{0}\r\nContent-Disposition: form-data; name=\"{1}\"; filename=\"{2}\"\r\nContent-Type: {3}\r\n\r\n",
-                boundary, fileFormName, fileName, GetMimeType(fileName));
-
-            return Encoding.UTF8.GetBytes(format);
-        }
-
-        public static byte[] MakeRelatedFileInputContentOpen(string boundary, string fileName)
-        {
-            string content = string.Format("--{0}\r\nContent-Type: {1}\r\n\r\n", boundary, GetMimeType(fileName));
+            string mimeType = GetMimeType(fileName);
+            string content = $"--{boundary}\r\nContent-Type: {contentType}\r\n\r\n{relatedData}\r\n\r\n";
+            content += $"--{boundary}\r\nContent-Type: {mimeType}\r\n\r\n";
             return Encoding.UTF8.GetBytes(content);
         }
 
         public static byte[] MakeFileInputContentClose(string boundary)
         {
-            return Encoding.UTF8.GetBytes(string.Format("\r\n--{0}--\r\n", boundary));
-        }
-
-        public static byte[] MakeFinalBoundary(string boundary)
-        {
-            return Encoding.UTF8.GetBytes(string.Format("--{0}--\r\n", boundary));
+            return Encoding.UTF8.GetBytes($"\r\n--{boundary}--\r\n");
         }
 
         public static string ResponseToString(WebResponse response)
