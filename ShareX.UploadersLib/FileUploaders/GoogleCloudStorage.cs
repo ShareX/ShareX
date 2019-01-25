@@ -133,7 +133,7 @@ namespace ShareX.UploadersLib.FileUploaders
             string metadatajson = JsonConvert.SerializeObject(metadata);
 
             UploadResult result = SendRequestFile($"https://www.googleapis.com/upload/storage/v1/b/{Bucket}/o?uploadType=multipart", stream, fileName, "file",
-                headers: googleAuth.GetAuthHeaders(), contentType: "multipart/related", metadata: metadatajson);
+                headers: googleAuth.GetAuthHeaders(), contentType: "multipart/related", relatedData: metadatajson);
 
             GoogleCloudStorageResponse upload = JsonConvert.DeserializeObject<GoogleCloudStorageResponse>(result.Response);
 

@@ -160,6 +160,7 @@ namespace ShareX.UploadersLib
             using (MemoryStream stream = new MemoryStream())
             {
                 if (string.IsNullOrEmpty(boundary)) boundary = CreateBoundary();
+
                 byte[] bytes;
 
                 if (contents != null)
@@ -184,6 +185,12 @@ namespace ShareX.UploadersLib
             }
         }
 
+        public static byte[] MakeRelatedInputContent(string boundary, string contentType, string relatedData)
+        {
+            string content = string.Format("--{0}\r\nContent-Type: {1}\r\n\r\n{2}\r\n\r\n", boundary, contentType, relatedData);
+            return Encoding.UTF8.GetBytes(content);
+        }
+
         public static byte[] MakeFileInputContentOpen(string boundary, string fileFormName, string fileName)
         {
             string format = string.Format("--{0}\r\nContent-Disposition: form-data; name=\"{1}\"; filename=\"{2}\"\r\nContent-Type: {3}\r\n\r\n",
@@ -192,20 +199,10 @@ namespace ShareX.UploadersLib
             return Encoding.UTF8.GetBytes(format);
         }
 
-        public static byte[] MakeFileInputContentOpen(string boundary, string fileFormName, string fileName, string metadata)
+        public static byte[] MakeRelatedFileInputContentOpen(string boundary, string fileName)
         {
-            string format = "";
-
-            if (metadata != null)
-            {
-                format = string.Format("--{0}\r\nContent-Type: {1}; charset=UTF-8\r\n\r\n{2}\r\n\r\n", boundary, ContentTypeJSON, metadata);
-            }
-            else
-            {
-                format = string.Format("--{0}\r\nContent-Type: {1}\r\n\r\n", boundary, GetMimeType(fileName));
-            }
-
-            return Encoding.UTF8.GetBytes(format);
+            string content = string.Format("--{0}\r\nContent-Type: {1}\r\n\r\n", boundary, GetMimeType(fileName));
+            return Encoding.UTF8.GetBytes(content);
         }
 
         public static byte[] MakeFileInputContentClose(string boundary)

@@ -196,7 +196,7 @@ namespace ShareX.UploadersLib
 
         protected UploadResult SendRequestFile(string url, Stream data, string fileName, string fileFormName, Dictionary<string, string> args = null,
             NameValueCollection headers = null, CookieCollection cookies = null, HttpMethod method = HttpMethod.POST, string contentType = UploadHelpers.ContentTypeMultipartFormData,
-            string metadata = null)
+            string relatedData = null)
         {
             UploadResult result = new UploadResult();
 
@@ -209,13 +209,13 @@ namespace ShareX.UploadersLib
                 contentType += "; boundary=" + boundary;
 
                 byte[] bytesArguments = UploadHelpers.MakeInputContent(boundary, args, false);
+                byte[] bytesRelatedData = null;
                 byte[] bytesDataOpen;
-                byte[] bytesDataDatafile = { };
 
-                if (metadata != null)
+                if (relatedData != null)
                 {
-                    bytesDataOpen = UploadHelpers.MakeFileInputContentOpen(boundary, fileFormName, fileName, metadata);
-                    bytesDataDatafile = UploadHelpers.MakeFileInputContentOpen(boundary, fileFormName, fileName, null);
+                    bytesRelatedData = UploadHelpers.MakeRelatedInputContent(boundary, "application/json; charset=UTF-8", relatedData);
+                    bytesDataOpen = UploadHelpers.MakeRelatedFileInputContentOpen(boundary, fileName);
                 }
                 else
                 {
@@ -224,15 +224,16 @@ namespace ShareX.UploadersLib
 
                 byte[] bytesDataClose = UploadHelpers.MakeFileInputContentClose(boundary);
 
-                long contentLength = bytesArguments.Length + bytesDataOpen.Length + bytesDataDatafile.Length + data.Length + bytesDataClose.Length;
+                long contentLength = bytesArguments.Length + bytesDataOpen.Length + data.Length + bytesDataClose.Length;
+                if (bytesRelatedData != null) contentLength += bytesRelatedData.Length;
 
                 HttpWebRequest request = CreateWebRequest(method, url, headers, cookies, contentType, contentLength);
 
                 using (Stream requestStream = request.GetRequestStream())
                 {
                     requestStream.Write(bytesArguments, 0, bytesArguments.Length);
+                    if (bytesRelatedData != null) requestStream.Write(bytesRelatedData, 0, bytesRelatedData.Length);
                     requestStream.Write(bytesDataOpen, 0, bytesDataOpen.Length);
-                    requestStream.Write(bytesDataDatafile, 0, bytesDataDatafile.Length);
                     if (!TransferData(data, requestStream)) return null;
                     requestStream.Write(bytesDataClose, 0, bytesDataClose.Length);
                 }
