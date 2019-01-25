@@ -196,7 +196,7 @@ namespace ShareX.UploadersLib
 
         protected UploadResult SendRequestFile(string url, Stream data, string fileName, string fileFormName, Dictionary<string, string> args = null,
             NameValueCollection headers = null, CookieCollection cookies = null, HttpMethod method = HttpMethod.POST, string contentType = UploadHelpers.ContentTypeMultipartFormData,
-            string metadata = null)
+            string relatedData = null)
         {
             UploadResult result = new UploadResult();
 
@@ -210,12 +210,10 @@ namespace ShareX.UploadersLib
 
                 byte[] bytesArguments = UploadHelpers.MakeInputContent(boundary, args, false);
                 byte[] bytesDataOpen;
-                byte[] bytesDataDatafile = { };
 
-                if (metadata != null)
+                if (relatedData != null)
                 {
-                    bytesDataOpen = UploadHelpers.MakeFileInputContentOpen(boundary, fileFormName, fileName, metadata);
-                    bytesDataDatafile = UploadHelpers.MakeFileInputContentOpen(boundary, fileFormName, fileName, null);
+                    bytesDataOpen = UploadHelpers.MakeRelatedFileInputContentOpen(boundary, "application/json; charset=UTF-8", relatedData, fileName);
                 }
                 else
                 {
@@ -224,7 +222,7 @@ namespace ShareX.UploadersLib
 
                 byte[] bytesDataClose = UploadHelpers.MakeFileInputContentClose(boundary);
 
-                long contentLength = bytesArguments.Length + bytesDataOpen.Length + bytesDataDatafile.Length + data.Length + bytesDataClose.Length;
+                long contentLength = bytesArguments.Length + bytesDataOpen.Length + data.Length + bytesDataClose.Length;
 
                 HttpWebRequest request = CreateWebRequest(method, url, headers, cookies, contentType, contentLength);
 
@@ -232,7 +230,6 @@ namespace ShareX.UploadersLib
                 {
                     requestStream.Write(bytesArguments, 0, bytesArguments.Length);
                     requestStream.Write(bytesDataOpen, 0, bytesDataOpen.Length);
-                    requestStream.Write(bytesDataDatafile, 0, bytesDataDatafile.Length);
                     if (!TransferData(data, requestStream)) return null;
                     requestStream.Write(bytesDataClose, 0, bytesDataClose.Length);
                 }
