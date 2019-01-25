@@ -102,14 +102,13 @@ namespace ShareX.UploadersLib.ImageUploaders
                 }
             };
 
-            Dictionary<string, string> args = new Dictionary<string, string>
+            Dictionary<string, string> newItemAlbumArgs = new Dictionary<string, string>
             {
                 { "fields", "id" }
             };
 
             string serializedNewItemAlbum = JsonConvert.SerializeObject(newItemAlbum);
-            string serializedNewItemAlbumResponse = SendRequest(HttpMethod.POST, "https://photoslibrary.googleapis.com/v1/albums", serializedNewItemAlbum, headers: GoogleAuth.GetAuthHeaders(), contentType: UploadHelpers.ContentTypeJSON);
-
+            string serializedNewItemAlbumResponse = SendRequest(HttpMethod.POST, "https://photoslibrary.googleapis.com/v1/albums", serializedNewItemAlbum, args: newItemAlbumArgs, headers: GoogleAuth.GetAuthHeaders(), contentType: UploadHelpers.ContentTypeJSON);
             GooglePhotosAlbum newItemAlbumResponse = JsonConvert.DeserializeObject<GooglePhotosAlbum>(serializedNewItemAlbumResponse);
 
             return newItemAlbumResponse;
