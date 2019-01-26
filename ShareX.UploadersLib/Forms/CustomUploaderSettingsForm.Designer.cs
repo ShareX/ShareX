@@ -43,7 +43,6 @@
             this.btnCustomUploaderURLShortenerTest = new System.Windows.Forms.Button();
             this.lblCustomUploaderTextUploader = new System.Windows.Forms.Label();
             this.gbCustomUploaders = new System.Windows.Forms.GroupBox();
-            this.btnCustomUploaderHelp = new System.Windows.Forms.Button();
             this.btnCustomUploaderNew = new System.Windows.Forms.Button();
             this.btnCustomUploaderDuplicate = new System.Windows.Forms.Button();
             this.btnCustomUploaderClearUploaders = new System.Windows.Forms.Button();
@@ -155,6 +154,7 @@
             this.tsmiCustomUploaderGuide = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiCustomUploaderExamples = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiCustomUploaderExportAll = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnCustomUploaderHelp = new ShareX.HelpersLib.MenuButton();
             this.tscCustomUploaderResponseText.ContentPanel.SuspendLayout();
             this.tscCustomUploaderResponseText.TopToolStripPanel.SuspendLayout();
             this.tscCustomUploaderResponseText.SuspendLayout();
@@ -292,13 +292,6 @@
             resources.ApplyResources(this.gbCustomUploaders, "gbCustomUploaders");
             this.gbCustomUploaders.Name = "gbCustomUploaders";
             this.gbCustomUploaders.TabStop = false;
-            // 
-            // btnCustomUploaderHelp
-            // 
-            resources.ApplyResources(this.btnCustomUploaderHelp, "btnCustomUploaderHelp");
-            this.btnCustomUploaderHelp.Name = "btnCustomUploaderHelp";
-            this.btnCustomUploaderHelp.UseVisualStyleBackColor = true;
-            this.btnCustomUploaderHelp.Click += new System.EventHandler(this.btnCustomUploaderHelp_Click);
             // 
             // btnCustomUploaderNew
             // 
@@ -1143,6 +1136,13 @@
             resources.ApplyResources(this.tsmiCustomUploaderExportAll, "tsmiCustomUploaderExportAll");
             this.tsmiCustomUploaderExportAll.Click += new System.EventHandler(this.tsmiCustomUploaderExportAll_Click);
             // 
+            // btnCustomUploaderHelp
+            // 
+            resources.ApplyResources(this.btnCustomUploaderHelp, "btnCustomUploaderHelp");
+            this.btnCustomUploaderHelp.Menu = this.cmsCustomUploaderHelp;
+            this.btnCustomUploaderHelp.Name = "btnCustomUploaderHelp";
+            this.btnCustomUploaderHelp.UseVisualStyleBackColor = true;
+            // 
             // CustomUploaderSettingsForm
             // 
             resources.ApplyResources(this, "$this");
@@ -1222,7 +1222,6 @@
         private System.Windows.Forms.Button btnCustomUploaderURLShortenerTest;
         private System.Windows.Forms.Label lblCustomUploaderTextUploader;
         private System.Windows.Forms.GroupBox gbCustomUploaders;
-        private System.Windows.Forms.Button btnCustomUploaderHelp;
         private System.Windows.Forms.Button btnCustomUploaderNew;
         private System.Windows.Forms.Button btnCustomUploaderDuplicate;
         private System.Windows.Forms.Button btnCustomUploaderClearUploaders;
@@ -1340,5 +1339,6 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiCustomUploaderGuide;
         private System.Windows.Forms.ToolStripMenuItem tsmiCustomUploaderExamples;
         private System.Windows.Forms.ToolStripMenuItem tsmiCustomUploaderExportAll;
+        private HelpersLib.MenuButton btnCustomUploaderHelp;
     }
 }

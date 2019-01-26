@@ -833,11 +833,6 @@ namespace ShareX.UploadersLib
             lbCustomUploaderList.SelectedIndex = lbCustomUploaderList.Items.Count - 1;
         }
 
-        private void btnCustomUploaderHelp_Click(object sender, EventArgs e)
-        {
-            cmsCustomUploaderHelp.Show(btnCustomUploaderHelp, 0, btnCustomUploaderHelp.Height);
-        }
-
         private void tsmiCustomUploaderGuide_Click(object sender, EventArgs e)
         {
             URLHelpers.OpenURL(Links.URL_CUSTOM_UPLOADER);
