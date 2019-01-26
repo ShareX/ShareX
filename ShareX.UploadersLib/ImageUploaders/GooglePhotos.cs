@@ -173,9 +173,9 @@ namespace ShareX.UploadersLib.ImageUploaders
                 AlbumID = CreateAlbum(fileName).id;
 
                 Dictionary<string, string> albumOptionsResponseArgs = new Dictionary<string, string>
-            {
-                { "fields", "shareInfo/shareableUrl" }
-            };
+                {
+                    { "fields", "shareInfo/shareableUrl" }
+                };
 
                 GooglePhotosAlbumOptions albumOptions = new GooglePhotosAlbumOptions();
 
