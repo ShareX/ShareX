@@ -190,21 +190,15 @@ namespace ShareX.UploadersLib.FileUploaders
             string url = URLHelpers.CombineURL(host, canonicalURI);
             url = URLHelpers.ForcePrefix(url, "https://");
 
-            using (HttpWebResponse response = GetResponse(HttpMethod.PUT, url, stream, contentType, null, headers))
-            {
-                if (response != null)
-                {
-                    NameValueCollection responseHeaders = response.Headers;
+            SendRequest(HttpMethod.PUT, url, stream, contentType, null, headers);
 
-                    if (responseHeaders != null && responseHeaders["ETag"] != null)
-                    {
-                        return new UploadResult
-                        {
-                            IsSuccess = true,
-                            URL = resultURL
-                        };
-                    }
-                }
+            if (LastResponseInfo != null && LastResponseInfo.Headers != null && LastResponseInfo.Headers["ETag"] != null)
+            {
+                return new UploadResult
+                {
+                    IsSuccess = true,
+                    URL = resultURL
+                };
             }
 
             Errors.Add("Upload to Amazon S3 failed.");

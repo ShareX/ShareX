@@ -108,16 +108,15 @@ namespace ShareX.UploadersLib.FileUploaders
 
             requestHeaders["Authorization"] = $"SharedKey {AzureStorageAccountName}:{stringToSign}";
 
-            using (HttpWebResponse response = GetResponse(HttpMethod.PUT, url, stream, contentType, null, requestHeaders, null))
+            SendRequest(HttpMethod.PUT, url, stream, contentType, null, requestHeaders);
+
+            if (LastResponseInfo != null && LastResponseInfo.Headers != null && LastResponseInfo.Headers["ETag"] != null)
             {
-                if (response != null && response.Headers != null)
+                return new UploadResult
                 {
-                    return new UploadResult
-                    {
-                        IsSuccess = true,
-                        URL = GenerateURL(uploadPath)
-                    };
-                }
+                    IsSuccess = true,
+                    URL = GenerateURL(uploadPath)
+                };
             }
 
             Errors.Add("Upload failed.");
