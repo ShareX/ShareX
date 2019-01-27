@@ -133,6 +133,9 @@ namespace ShareX.UploadersLib.FileUploaders
             }
 
             string uploadPath = GetUploadPath(fileName);
+            string resultURL = GenerateURL(uploadPath);
+
+            OnEarlyURLCopyRequested(resultURL);
 
             NameValueCollection headers = new NameValueCollection
             {
@@ -198,7 +201,7 @@ namespace ShareX.UploadersLib.FileUploaders
                         return new UploadResult
                         {
                             IsSuccess = true,
-                            URL = GenerateURL(uploadPath)
+                            URL = resultURL
                         };
                     }
                 }
