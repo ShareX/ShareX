@@ -3137,16 +3137,19 @@ namespace ShareX.UploadersLib
         private void cbGoogleCloudStorageStripExtensionImage_CheckedChanged(object sender, EventArgs e)
         {
             Config.GoogleCloudStorageRemoveExtensionImage = cbGoogleCloudStorageStripExtensionImage.Checked;
+            UpdateGoogleCloudStorageStatus();
         }
 
         private void cbGoogleCloudStorageStripExtensionVideo_CheckedChanged(object sender, EventArgs e)
         {
             Config.GoogleCloudStorageRemoveExtensionVideo = cbGoogleCloudStorageStripExtensionVideo.Checked;
+            UpdateGoogleCloudStorageStatus();
         }
 
         private void cbGoogleCloudStorageStripExtensionText_CheckedChanged(object sender, EventArgs e)
         {
             Config.GoogleCloudStorageRemoveExtensionText = cbGoogleCloudStorageStripExtensionText.Checked;
+            UpdateGoogleCloudStorageStatus();
         }
 
         #endregion Google Cloud Storage

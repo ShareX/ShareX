@@ -91,7 +91,7 @@ namespace ShareX.UploadersLib.URLShorteners
         {
             UploadResult result = new UploadResult { URL = url };
 
-            FirebaseRequest request = new FirebaseRequest
+            FirebaseRequest requestOptions = new FirebaseRequest
             {
                 dynamicLinkInfo = new DynamicLinkInfo
                 {
@@ -102,7 +102,7 @@ namespace ShareX.UploadersLib.URLShorteners
 
             if (IsShort)
             {
-                request.suffix = new FirebaseSuffix
+                requestOptions.suffix = new FirebaseSuffix
                 {
                     option = "SHORT"
                 };
@@ -110,11 +110,13 @@ namespace ShareX.UploadersLib.URLShorteners
 
             Dictionary<string, string> args = new Dictionary<string, string>
             {
-                { "key", WebAPIKey }
+                { "key", WebAPIKey },
+                { "fields", "shortLink" }
             };
 
-            string requestjson = JsonConvert.SerializeObject(request);
-            result.Response = SendRequest(HttpMethod.POST, "https://firebasedynamiclinks.googleapis.com/v1/shortLinks", requestjson, UploadHelpers.ContentTypeJSON, args);
+            string serializedRequestOptions = JsonConvert.SerializeObject(requestOptions);
+            result.Response = SendRequest(HttpMethod.POST, "https://firebasedynamiclinks.googleapis.com/v1/shortLinks", serializedRequestOptions, UploadHelpers.ContentTypeJSON, args);
+
             FirebaseResponse firebaseResponse = JsonConvert.DeserializeObject<FirebaseResponse>(result.Response);
 
             if (firebaseResponse != null)
