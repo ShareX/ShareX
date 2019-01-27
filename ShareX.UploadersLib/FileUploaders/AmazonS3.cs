@@ -132,13 +132,6 @@ namespace ShareX.UploadersLib.FileUploaders
                 hashedPayload = "UNSIGNED-PAYLOAD";
             }
 
-            if ((Settings.RemoveExtensionImage && Helpers.IsImageFile(fileName)) ||
-                (Settings.RemoveExtensionText && Helpers.IsTextFile(fileName)) ||
-                (Settings.RemoveExtensionVideo && Helpers.IsVideoFile(fileName)))
-            {
-                fileName = Path.GetFileNameWithoutExtension(fileName);
-            }
-
             string uploadPath = GetUploadPath(fileName);
 
             NameValueCollection headers = new NameValueCollection
@@ -259,6 +252,14 @@ namespace ShareX.UploadersLib.FileUploaders
         private string GetUploadPath(string fileName)
         {
             string path = NameParser.Parse(NameParserType.FolderPath, Settings.ObjectPrefix.Trim('/'));
+
+            if ((Settings.RemoveExtensionImage && Helpers.IsImageFile(fileName)) ||
+                (Settings.RemoveExtensionText && Helpers.IsTextFile(fileName)) ||
+                (Settings.RemoveExtensionVideo && Helpers.IsVideoFile(fileName)))
+            {
+                fileName = Path.GetFileNameWithoutExtension(fileName);
+            }
+
             return URLHelpers.CombineURL(path, fileName);
         }
 

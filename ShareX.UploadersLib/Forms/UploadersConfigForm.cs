@@ -2298,16 +2298,19 @@ namespace ShareX.UploadersLib
         private void cbAmazonS3StripExtensionImage_CheckedChanged(object sender, EventArgs e)
         {
             Config.AmazonS3Settings.RemoveExtensionImage = cbAmazonS3StripExtensionImage.Checked;
+            UpdateAmazonS3Status();
         }
 
         private void cbAmazonS3StripExtensionVideo_CheckedChanged(object sender, EventArgs e)
         {
             Config.AmazonS3Settings.RemoveExtensionVideo = cbAmazonS3StripExtensionVideo.Checked;
+            UpdateAmazonS3Status();
         }
 
         private void cbAmazonS3StripExtensionText_CheckedChanged(object sender, EventArgs e)
         {
             Config.AmazonS3Settings.RemoveExtensionText = cbAmazonS3StripExtensionText.Checked;
+            UpdateAmazonS3Status();
         }
 
         #endregion Amazon S3
