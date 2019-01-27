@@ -80,7 +80,7 @@ namespace ShareX
             }
             else if (!string.IsNullOrEmpty(config.Text))
             {
-                textRenderSize = Helpers.MeasureText(config.Text, textFont, size.Width - (textPadding * 2));
+                textRenderSize = TextRenderer.MeasureText(config.Text, textFont, size.Offset(-textPadding * 2), TextFormatFlags.Left);
                 size = new Size(textRenderSize.Width + (textPadding * 2), textRenderSize.Height + (textPadding * 2) + 2);
             }
 
