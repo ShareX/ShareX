@@ -242,7 +242,7 @@ namespace ShareX.UploadersLib
 
         public void ParseResponse(UploadResult result, ResponseInfo responseInfo, CustomUploaderInput input, bool isShortenedURL = false)
         {
-            if (result != null && responseInfo != null && !string.IsNullOrEmpty(responseInfo.ResponseText))
+            if (result != null && responseInfo != null && responseInfo.IsSuccess && !string.IsNullOrEmpty(responseInfo.ResponseText))
             {
                 CustomUploaderParser parser = new CustomUploaderParser(responseInfo, RegexList);
                 parser.Filename = input.Filename;
