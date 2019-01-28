@@ -98,7 +98,9 @@ namespace ShareX.IndexerLib
 
                     folderInfo.Files.Sort((x, y) => x.Name.CompareTo(y.Name));
                 }
-                catch (UnauthorizedAccessException) { }
+                catch (UnauthorizedAccessException)
+                {
+                }
             }
 
             return folderInfo;
