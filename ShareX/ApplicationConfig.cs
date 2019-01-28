@@ -222,9 +222,6 @@ namespace ShareX
         [Category("Upload"), DefaultValue(false), Description("Accept invalid SSL certificates when uploading.")]
         public bool AcceptInvalidSSLCertificates { get; set; }
 
-        [Category("Upload"), DefaultValue(false), Description("Writes verbose web request logs to \"{PersonalFolder}\\Logs\\ShareX-Request-Logs.txt\" file for debugging purposes.")]
-        public bool VerboseRequestLogs { get; set; }
-
         [Category("Upload"), DefaultValue(true), Description("Show first time upload warning.")]
         public bool ShowUploadWarning { get; set; }
 

@@ -44,8 +44,6 @@ namespace ShareX.UploadersLib
         public List<string> Errors { get; private set; } = new List<string>();
         public bool IsError => !StopUploadRequested && Errors != null && Errors.Count > 0;
         public int BufferSize { get; set; } = 8192;
-        public bool VerboseLogs { get; set; }
-        public string VerboseLogsPath { get; set; }
 
         protected bool StopUploadRequested { get; set; }
         protected bool AllowReportProgress { get; set; } = true;
@@ -54,7 +52,6 @@ namespace ShareX.UploadersLib
         protected ResponseInfo LastResponseInfo { get; set; }
 
         private HttpWebRequest currentWebRequest;
-        private Logger verboseLogger;
 
         public static void UpdateServicePointManager()
         {
@@ -119,14 +116,7 @@ namespace ShareX.UploadersLib
         {
             using (HttpWebResponse webResponse = GetResponse(method, url, data, contentType, args, headers, cookies))
             {
-                string response = ProcessWebResponse(webResponse);
-
-                if (VerboseLogs && !string.IsNullOrEmpty(VerboseLogsPath))
-                {
-                    WriteVerboseLog(url, args, headers, response);
-                }
-
-                return response;
+                return ProcessWebResponse(webResponse);
             }
         }
 
@@ -182,14 +172,7 @@ namespace ShareX.UploadersLib
 
                 using (HttpWebResponse webResponse = GetResponse(method, url, stream, contentType, null, headers, cookies))
                 {
-                    string response = ProcessWebResponse(webResponse);
-
-                    if (VerboseLogs && !string.IsNullOrEmpty(VerboseLogsPath))
-                    {
-                        WriteVerboseLog(url, args, headers, response);
-                    }
-
-                    return response;
+                    return ProcessWebResponse(webResponse);
                 }
             }
         }
@@ -257,11 +240,6 @@ namespace ShareX.UploadersLib
             {
                 currentWebRequest = null;
                 IsUploading = false;
-
-                if (VerboseLogs && !string.IsNullOrEmpty(VerboseLogsPath))
-                {
-                    WriteVerboseLog(url, args, headers, result.Response);
-                }
             }
 
             return result;
@@ -329,11 +307,6 @@ namespace ShareX.UploadersLib
             {
                 currentWebRequest = null;
                 IsUploading = false;
-
-                if (VerboseLogs && !string.IsNullOrEmpty(VerboseLogsPath))
-                {
-                    WriteVerboseLog(url, args, headers, result.Response);
-                }
             }
 
             return result;
@@ -485,54 +458,6 @@ namespace ShareX.UploadersLib
             }
 
             return response;
-        }
-
-        private void WriteVerboseLog(string url, Dictionary<string, string> args, NameValueCollection headers, string response)
-        {
-            if (verboseLogger == null)
-            {
-                verboseLogger = new Logger(VerboseLogsPath)
-                {
-                    MessageFormat = "Date: {0:yyyy-MM-dd HH:mm:ss.fff}\r\n{1}",
-                    StringWrite = false
-                };
-            }
-
-            StringBuilder sb = new StringBuilder();
-
-            sb.AppendLine("URL: " + (url ?? ""));
-
-            if (args != null && args.Count > 0)
-            {
-                sb.AppendLine("Arguments:");
-
-                foreach (KeyValuePair<string, string> arg in args)
-                {
-                    sb.AppendLine($"    Name: {arg.Key}, Value: {arg.Value}");
-                }
-            }
-
-            if (headers != null && headers.Count > 0)
-            {
-                sb.AppendLine("Headers:");
-
-                foreach (string key in headers)
-                {
-                    string value = headers[key];
-                    sb.AppendLine($"    Name: {key}, Value: {value}");
-                }
-            }
-
-            sb.AppendLine("Response:");
-
-            if (!string.IsNullOrEmpty(response))
-            {
-                sb.AppendLine(response);
-            }
-
-            sb.Append(new string('-', 30));
-
-            verboseLogger.WriteLine(sb.ToString());
         }
 
         private HttpWebRequest CreateWebRequest(HttpMethod method, string url, NameValueCollection headers = null, CookieCollection cookies = null,
