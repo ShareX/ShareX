@@ -192,7 +192,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
             SendRequest(HttpMethod.PUT, url, stream, contentType, null, headers);
 
-            if (LastResponseInfo != null && LastResponseInfo.Headers != null && LastResponseInfo.Headers["ETag"] != null)
+            if (LastResponseInfo != null && LastResponseInfo.StatusCode == HttpStatusCode.OK)
             {
                 return new UploadResult
                 {
