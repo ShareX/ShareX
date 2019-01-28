@@ -647,7 +647,7 @@ namespace ShareX.UploadersLib
                     }
                     else if (result.IsError)
                     {
-                        sbResult.AppendLine(Resources.UploadersConfigForm_Error + ": " + result.ErrorsToString());
+                        sbResult.AppendLine(result.ErrorsToString());
                     }
                     else
                     {

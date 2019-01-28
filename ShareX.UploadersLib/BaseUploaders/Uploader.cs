@@ -116,7 +116,7 @@ namespace ShareX.UploadersLib
         {
             using (HttpWebResponse webResponse = GetResponse(method, url, data, contentType, args, headers, cookies))
             {
-                return ProcessWebResponse(webResponse);
+                return ProcessWebResponseText(webResponse);
             }
         }
 
@@ -172,7 +172,7 @@ namespace ShareX.UploadersLib
 
                 using (HttpWebResponse webResponse = GetResponse(method, url, stream, contentType, null, headers, cookies))
                 {
-                    return ProcessWebResponse(webResponse);
+                    return ProcessWebResponseText(webResponse);
                 }
             }
         }
@@ -219,7 +219,7 @@ namespace ShareX.UploadersLib
 
                 using (HttpWebResponse response = (HttpWebResponse)request.GetResponse())
                 {
-                    result.Response = ProcessWebResponse(response);
+                    result.Response = ProcessWebResponseText(response);
                 }
 
                 result.IsSuccess = true;
@@ -228,7 +228,7 @@ namespace ShareX.UploadersLib
             {
                 if (!StopUploadRequested)
                 {
-                    string response = AddWebError(e, url);
+                    string response = ProcessError(e, url);
 
                     if (ReturnResponseOnError && e is WebException)
                     {
@@ -286,7 +286,7 @@ namespace ShareX.UploadersLib
 
                 using (HttpWebResponse response = (HttpWebResponse)request.GetResponse())
                 {
-                    result.Response = ProcessWebResponse(response);
+                    result.Response = ProcessWebResponseText(response);
                 }
 
                 result.IsSuccess = true;
@@ -295,7 +295,7 @@ namespace ShareX.UploadersLib
             {
                 if (!StopUploadRequested)
                 {
-                    string response = AddWebError(e, url);
+                    string response = ProcessError(e, url);
 
                     if (ReturnResponseOnError && e is WebException)
                     {
@@ -354,7 +354,7 @@ namespace ShareX.UploadersLib
             {
                 if (!StopUploadRequested)
                 {
-                    AddWebError(e, url);
+                    ProcessError(e, url);
                 }
             }
             finally
@@ -407,57 +407,78 @@ namespace ShareX.UploadersLib
             return !StopUploadRequested;
         }
 
-        private string AddWebError(Exception e, string url)
+        private string ProcessError(Exception e, string requestURL)
         {
-            string response = null;
+            string responseText = null;
 
-            if (Errors != null && e != null)
+            if (e != null)
             {
                 StringBuilder sb = new StringBuilder();
-                sb.AppendLine("Message:");
+                sb.AppendLine("Error message:");
                 sb.AppendLine(e.Message);
 
-                if (!string.IsNullOrEmpty(url))
+                if (!string.IsNullOrEmpty(requestURL))
                 {
                     sb.AppendLine();
                     sb.AppendLine("Request URL:");
-                    sb.AppendLine(URLHelpers.RemoveQueryString(url));
+                    sb.AppendLine(requestURL);
                 }
 
                 if (e is WebException webException)
                 {
                     try
                     {
-                        HttpWebResponse webResponse = (HttpWebResponse)webException.Response;
-
-                        using (webResponse)
+                        using (HttpWebResponse webResponse = (HttpWebResponse)webException.Response)
                         {
-                            response = ProcessWebResponse(webResponse);
+                            ResponseInfo responseInfo = ProcessWebResponse(webResponse);
 
-                            if (!string.IsNullOrEmpty(response))
+                            if (responseInfo != null)
                             {
+                                responseText = responseInfo.ResponseText;
+
                                 sb.AppendLine();
-                                sb.AppendLine("Response:");
-                                sb.AppendLine(response);
+                                sb.AppendLine("Status code:");
+                                sb.AppendLine($"{(int)responseInfo.StatusCode} {responseInfo.StatusCode}");
+
+                                if (!string.IsNullOrEmpty(requestURL) && !requestURL.Equals(responseInfo.ResponseURL))
+                                {
+                                    sb.AppendLine();
+                                    sb.AppendLine("Response URL:");
+                                    sb.AppendLine(responseInfo.ResponseURL);
+                                }
+
+                                if (responseInfo.Headers != null)
+                                {
+                                    sb.AppendLine();
+                                    sb.AppendLine("Headers:");
+                                    sb.AppendLine(responseInfo.Headers.ToString().TrimEnd());
+                                }
+
+                                sb.AppendLine();
+                                sb.AppendLine("Response text:");
+                                sb.AppendLine(responseInfo.ResponseText);
                             }
                         }
                     }
                     catch (Exception nested)
                     {
-                        DebugHelper.WriteException(nested, "AddWebError() WebException handler");
+                        DebugHelper.WriteException(nested, "ProcessError() WebException handler");
                     }
                 }
 
                 sb.AppendLine();
                 sb.AppendLine("Stack trace:");
-                sb.AppendLine(e.StackTrace);
+                sb.Append(e.StackTrace);
 
-                string errorText = sb.ToString().Trim();
+                string errorText = sb.ToString();
+
+                if (Errors == null) Errors = new List<string>();
                 Errors.Add(errorText);
+
                 DebugHelper.WriteLine("Error:\r\n" + errorText);
             }
 
-            return response;
+            return responseText;
         }
 
         private HttpWebRequest CreateWebRequest(HttpMethod method, string url, NameValueCollection headers = null, CookieCollection cookies = null,
@@ -470,11 +491,11 @@ namespace ShareX.UploadersLib
             return request;
         }
 
-        private string ProcessWebResponse(HttpWebResponse response)
+        private ResponseInfo ProcessWebResponse(HttpWebResponse response)
         {
             if (response != null)
             {
-                LastResponseInfo = new ResponseInfo()
+                ResponseInfo responseInfo = new ResponseInfo()
                 {
                     StatusCode = response.StatusCode,
                     ResponseURL = response.ResponseUri.OriginalString,
@@ -484,10 +505,24 @@ namespace ShareX.UploadersLib
                 using (Stream responseStream = response.GetResponseStream())
                 using (StreamReader reader = new StreamReader(responseStream, Encoding.UTF8))
                 {
-                    LastResponseInfo.ResponseText = reader.ReadToEnd();
+                    responseInfo.ResponseText = reader.ReadToEnd();
                 }
 
-                return LastResponseInfo.ResponseText;
+                LastResponseInfo = responseInfo;
+
+                return responseInfo;
+            }
+
+            return null;
+        }
+
+        private string ProcessWebResponseText(HttpWebResponse response)
+        {
+            ResponseInfo responseInfo = ProcessWebResponse(response);
+
+            if (responseInfo != null)
+            {
+                return responseInfo.ResponseText;
             }
 
             return null;
