@@ -288,7 +288,7 @@ namespace ShareX.UploadersLib.FileUploaders
             UploadResult ur = new UploadResult();
             if (apiResponse.Result != null && apiResponse.Error == null)
             {
-                ur.URL = apiResponse.Result.shortUrl;
+                ur.ShortenedURL = apiResponse.Result.shortUrl;
             }
 
             return ur;
