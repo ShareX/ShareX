@@ -254,14 +254,10 @@ namespace ShareX.UploadersLib
             return MimeTypes.DefaultMimeType;
         }
 
-        /// <summary>
-        /// Returns whether the HttpWebResponse was successful (has a 2xx status code).
-        /// </summary>
-        /// <param name="response">The HttpWebResponse to check.</param>
-        /// <returns>true if 2xx status code, otherwise false.</returns>
-        public static bool IsSuccessfulResponse(HttpWebResponse response)
+        public static bool IsSuccessStatusCode(HttpStatusCode statusCode)
         {
-            return int.TryParse(response.StatusCode.ToString(), out int rc) && (rc >= 200 && rc <= 299);
+            int statusCodeNum = (int)statusCode;
+            return statusCodeNum >= 200 && statusCodeNum <= 299;
         }
     }
 }

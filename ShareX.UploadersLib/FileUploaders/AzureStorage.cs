@@ -114,7 +114,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
             SendRequest(HttpMethod.PUT, requestURL, stream, contentType, null, requestHeaders);
 
-            if (LastResponseInfo != null && LastResponseInfo.StatusCode == HttpStatusCode.Created)
+            if (LastResponseInfo != null && LastResponseInfo.IsSuccess)
             {
                 return new UploadResult
                 {
