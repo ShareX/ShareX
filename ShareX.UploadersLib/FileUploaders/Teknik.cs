@@ -109,7 +109,6 @@ namespace ShareX.UploadersLib.FileUploaders
             AuthInfo = oauth;
             AuthUrl = authUrl;
         }
-        
 
         public bool GetAccessToken(string code)
         {
