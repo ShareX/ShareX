@@ -26,8 +26,6 @@
 using ShareX.HelpersLib;
 using ShareX.UploadersLib.Properties;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace ShareX.UploadersLib.URLShorteners
 {
@@ -80,22 +78,20 @@ namespace ShareX.UploadersLib.URLShorteners
 
             if (uploader.Body == CustomUploaderBody.None)
             {
-                result.Response = SendRequest(uploader.RequestMethod, uploader.GetRequestURL(input), null, uploader.GetHeaders(input), null, uploader.ResponseType);
+                result.Response = SendRequest(uploader.RequestMethod, uploader.GetRequestURL(input), null, uploader.GetHeaders(input));
             }
             else if (uploader.Body == CustomUploaderBody.MultipartFormData)
             {
-                result.Response = SendRequestMultiPart(uploader.GetRequestURL(input), uploader.GetArguments(input), uploader.GetHeaders(input), null,
-                    uploader.ResponseType, uploader.RequestMethod);
+                result.Response = SendRequestMultiPart(uploader.GetRequestURL(input), uploader.GetArguments(input), uploader.GetHeaders(input), null, uploader.RequestMethod);
             }
             else if (uploader.Body == CustomUploaderBody.FormURLEncoded)
             {
-                result.Response = SendRequestURLEncoded(uploader.RequestMethod, uploader.GetRequestURL(input), uploader.GetArguments(input),
-                    uploader.GetHeaders(input), null, uploader.ResponseType);
+                result.Response = SendRequestURLEncoded(uploader.RequestMethod, uploader.GetRequestURL(input), uploader.GetArguments(input), uploader.GetHeaders(input));
             }
             else if (uploader.Body == CustomUploaderBody.JSON || uploader.Body == CustomUploaderBody.XML)
             {
                 result.Response = SendRequest(uploader.RequestMethod, uploader.GetRequestURL(input), uploader.GetData(input), uploader.GetContentType(),
-                    null, uploader.GetHeaders(input), null, uploader.ResponseType);
+                    null, uploader.GetHeaders(input));
             }
             else
             {
@@ -104,7 +100,7 @@ namespace ShareX.UploadersLib.URLShorteners
 
             try
             {
-                uploader.ParseResponse(result, input, true);
+                uploader.ParseResponse(result, LastResponseInfo, input, true);
             }
             catch (Exception e)
             {

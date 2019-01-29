@@ -1676,9 +1676,14 @@ namespace ShareX
             UpdateDestinationStates();
         }
 
-        private void tsbDestinationSettings_Click(object sender, EventArgs e)
+        private void tsmiDestinationSettings_Click(object sender, EventArgs e)
         {
             TaskHelpers.OpenUploadersConfigWindow();
+        }
+
+        private void tsmiCustomUploaderSettings_Click(object sender, EventArgs e)
+        {
+            TaskHelpers.OpenCustomUploaderSettingsWindow();
         }
 
         private void tsbTaskSettings_Click(object sender, EventArgs e)
@@ -1688,8 +1693,11 @@ namespace ShareX
                 taskSettingsForm.ShowDialog();
             }
 
-            AfterTaskSettingsJobs();
-            SettingManager.SaveApplicationConfigAsync();
+            if (!IsDisposed)
+            {
+                AfterTaskSettingsJobs();
+                SettingManager.SaveApplicationConfigAsync();
+            }
         }
 
         private void tsbApplicationSettings_Click(object sender, EventArgs e)
@@ -1699,9 +1707,12 @@ namespace ShareX
                 settingsForm.ShowDialog();
             }
 
-            AfterApplicationSettingsJobs();
-            UpdateWorkflowsMenu();
-            SettingManager.SaveApplicationConfigAsync();
+            if (!IsDisposed)
+            {
+                AfterApplicationSettingsJobs();
+                UpdateWorkflowsMenu();
+                SettingManager.SaveApplicationConfigAsync();
+            }
         }
 
         private void tsbHotkeySettings_Click(object sender, EventArgs e)
@@ -1713,8 +1724,11 @@ namespace ShareX
                     hotkeySettingsForm.ShowDialog();
                 }
 
-                UpdateWorkflowsMenu();
-                SettingManager.SaveHotkeysConfigAsync();
+                if (!IsDisposed)
+                {
+                    UpdateWorkflowsMenu();
+                    SettingManager.SaveHotkeysConfigAsync();
+                }
             }
         }
 

@@ -85,8 +85,8 @@ namespace ShareX.UploadersLib
 
         public bool ShouldSerializeData() => (Body == CustomUploaderBody.JSON || Body == CustomUploaderBody.XML) && !string.IsNullOrEmpty(Data);
 
-        [DefaultValue(ResponseType.Text)]
-        public ResponseType ResponseType { get; set; }
+        // For backward compatibility
+        public ResponseType ResponseType { private get; set; }
 
         [DefaultValue(null)]
         public List<string> RegexList { get; set; }
@@ -240,11 +240,11 @@ namespace ShareX.UploadersLib
             return null;
         }
 
-        public void ParseResponse(UploadResult result, CustomUploaderInput input, bool isShortenedURL = false)
+        public void ParseResponse(UploadResult result, ResponseInfo responseInfo, CustomUploaderInput input, bool isShortenedURL = false)
         {
-            if (result != null && !string.IsNullOrEmpty(result.Response))
+            if (result != null && responseInfo != null && responseInfo.IsSuccess && !string.IsNullOrEmpty(responseInfo.ResponseText))
             {
-                CustomUploaderParser parser = new CustomUploaderParser(result.Response, RegexList);
+                CustomUploaderParser parser = new CustomUploaderParser(responseInfo, RegexList);
                 parser.Filename = input.Filename;
                 parser.URLEncode = true;
 
@@ -256,7 +256,7 @@ namespace ShareX.UploadersLib
                 }
                 else
                 {
-                    url = parser.Response;
+                    url = parser.ResponseInfo.ResponseText;
                 }
 
                 if (isShortenedURL)
@@ -293,6 +293,35 @@ namespace ShareX.UploadersLib
                         Arguments = null;
                     }
                 }
+
+                if (ResponseType == ResponseType.RedirectionURL)
+                {
+                    if (string.IsNullOrEmpty(URL))
+                    {
+                        URL = "$responseurl$";
+                    }
+
+                    URL = URL.Replace("$response$", "$responseurl$");
+                    ThumbnailURL = ThumbnailURL?.Replace("$response$", "$responseurl$");
+                    DeletionURL = DeletionURL?.Replace("$response$", "$responseurl$");
+                }
+                else if (ResponseType == ResponseType.Headers)
+                {
+                    URL = "Response type option is deprecated, please use \\$header:header_name\\$ syntax instead.";
+                }
+                else if (ResponseType == ResponseType.LocationHeader)
+                {
+                    if (string.IsNullOrEmpty(URL))
+                    {
+                        URL = "$header:Location$";
+                    }
+
+                    URL = URL.Replace("$response$", "$header:Location$");
+                    ThumbnailURL = ThumbnailURL?.Replace("$response$", "$header:Location$");
+                    DeletionURL = DeletionURL?.Replace("$response$", "$header:Location$");
+                }
+
+                ResponseType = ResponseType.Text;
             }
 
             Version = Application.ProductVersion;

@@ -23,14 +23,12 @@
 
 #endregion License Information (GPL v3)
 
-using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using ShareX.HelpersLib;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Security;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
@@ -47,7 +45,7 @@ namespace ShareX.UploadersLib
         public bool IsOutput { get; set; }
         public string Filename { get; set; }
         public string Input { get; set; }
-        public string Response { get; set; }
+        public ResponseInfo ResponseInfo { get; set; }
         public List<Match> RegexMatches { get; set; }
         public bool URLEncode { get; set; } // Only URL encodes filename and input
         public bool JSONEncode { get; set; }
@@ -70,9 +68,9 @@ namespace ShareX.UploadersLib
             IsOutput = false;
         }
 
-        public CustomUploaderParser(string response, List<string> regexList)
+        public CustomUploaderParser(ResponseInfo responseInfo, List<string> regexList)
         {
-            Response = response;
+            ResponseInfo = responseInfo;
 
             RegexMatches = new List<Match>();
 
@@ -80,7 +78,7 @@ namespace ShareX.UploadersLib
             {
                 foreach (string regex in regexList)
                 {
-                    Match match = Regex.Match(response, regex);
+                    Match match = Regex.Match(ResponseInfo.ResponseText, regex);
                     RegexMatches.Add(match);
                 }
             }
@@ -147,7 +145,7 @@ namespace ShareX.UploadersLib
                                 }
                                 else if (XMLEncode)
                                 {
-                                    syntaxResult = SecurityElement.Escape(syntaxResult);
+                                    syntaxResult = URLHelpers.XMLEncode(syntaxResult);
                                 }
 
                                 sbResult.Append(syntaxResult);
@@ -201,7 +199,15 @@ namespace ShareX.UploadersLib
             {
                 if (CheckKeyword(syntax, "response")) // Example: $response$
                 {
-                    return Response;
+                    return ResponseInfo.ResponseText;
+                }
+                else if (CheckKeyword(syntax, "responseurl")) // Example: $responseurl$
+                {
+                    return ResponseInfo.ResponseURL;
+                }
+                else if (CheckKeyword(syntax, "header", out value)) // Example: $header:Location$
+                {
+                    return ParseSyntaxHeader(value);
                 }
                 else if (CheckKeyword(syntax, "regex", out value)) // Examples: $regex:1$ $regex:1|1$ $regex:1|thumbnail$
                 {
@@ -281,6 +287,16 @@ namespace ShareX.UploadersLib
             return false;
         }
 
+        private string ParseSyntaxHeader(string header)
+        {
+            if (ResponseInfo.Headers != null)
+            {
+                return ResponseInfo.Headers[header];
+            }
+
+            return null;
+        }
+
         private string ParseSyntaxRegex(string syntax)
         {
             if (!string.IsNullOrEmpty(syntax))
@@ -334,7 +350,12 @@ namespace ShareX.UploadersLib
         {
             if (!string.IsNullOrEmpty(syntaxJsonPath))
             {
-                return (string)JToken.Parse(Response).SelectToken("$." + syntaxJsonPath);
+                if (!syntaxJsonPath.StartsWith("$."))
+                {
+                    syntaxJsonPath = "$." + syntaxJsonPath;
+                }
+
+                return (string)JToken.Parse(ResponseInfo.ResponseText).SelectToken(syntaxJsonPath);
             }
 
             return null;
@@ -346,7 +367,7 @@ namespace ShareX.UploadersLib
         {
             if (!string.IsNullOrEmpty(syntaxXPath))
             {
-                using (StringReader sr = new StringReader(Response))
+                using (StringReader sr = new StringReader(ResponseInfo.ResponseText))
                 {
                     XPathDocument doc = new XPathDocument(sr);
                     XPathNavigator nav = doc.CreateNavigator();

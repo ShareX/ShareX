@@ -94,7 +94,11 @@ namespace ShareX.UploadersLib.FileUploaders
 
             string date = DateTime.UtcNow.ToString("R", CultureInfo.InvariantCulture);
             string uploadPath = GetUploadPath(fileName);
-            string url = GenerateURL(uploadPath, true);
+            string requestURL = GenerateURL(uploadPath, true);
+            string resultURL = GenerateURL(uploadPath);
+
+            OnEarlyURLCopyRequested(resultURL);
+
             string contentType = UploadHelpers.GetMimeType(fileName);
 
             NameValueCollection requestHeaders = new NameValueCollection();
@@ -108,16 +112,15 @@ namespace ShareX.UploadersLib.FileUploaders
 
             requestHeaders["Authorization"] = $"SharedKey {AzureStorageAccountName}:{stringToSign}";
 
-            using (HttpWebResponse response = GetResponse(HttpMethod.PUT, url, stream, contentType, null, requestHeaders, null))
+            SendRequest(HttpMethod.PUT, requestURL, stream, contentType, null, requestHeaders);
+
+            if (LastResponseInfo != null && LastResponseInfo.IsSuccess)
             {
-                if (response != null && response.Headers != null)
+                return new UploadResult
                 {
-                    return new UploadResult
-                    {
-                        IsSuccess = true,
-                        URL = GenerateURL(uploadPath)
-                    };
-                }
+                    IsSuccess = true,
+                    URL = resultURL
+                };
             }
 
             Errors.Add("Upload failed.");

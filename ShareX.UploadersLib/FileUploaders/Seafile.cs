@@ -491,7 +491,8 @@ namespace ShareX.UploadersLib.FileUploaders
                     sslBypassHelper = new SSLBypassHelper();
                 }
 
-                return SendRequestURLEncoded(HttpMethod.PUT, url, args, headers, null, ResponseType.LocationHeader);
+                SendRequestURLEncoded(HttpMethod.PUT, url, args, headers);
+                return LastResponseInfo.Headers["Location"];
             }
             finally
             {

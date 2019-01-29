@@ -225,36 +225,6 @@
   <data name="&gt;&gt;lblResult.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="llAttribution.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
-  </data>
-  <data name="llAttribution.Location" type="System.Drawing.Point, System.Drawing">
-    <value>320, 8</value>
-  </data>
-  <data name="llAttribution.Size" type="System.Drawing.Size, System.Drawing">
-    <value>232, 24</value>
-  </data>
-  <data name="llAttribution.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="llAttribution.Text" xml:space="preserve">
-    <value>Powered by OCR.Space API</value>
-  </data>
-  <data name="llAttribution.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>TopRight</value>
-  </data>
-  <data name="&gt;&gt;llAttribution.Name" xml:space="preserve">
-    <value>llAttribution</value>
-  </data>
-  <data name="&gt;&gt;llAttribution.Type" xml:space="preserve">
-    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;llAttribution.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;llAttribution.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
   <data name="btnStartOCR.Location" type="System.Drawing.Point, System.Drawing">
     <value>168, 22</value>
   </data>

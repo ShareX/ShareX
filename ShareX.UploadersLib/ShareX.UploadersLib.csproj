@@ -159,6 +159,12 @@
     <Compile Include="FileUploaders\Uguu.cs" />
     <Compile Include="FileUploaders\VideoBin.cs" />
     <Compile Include="FileUploaders\YouTube.cs" />
+    <Compile Include="Forms\CustomUploaderSettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CustomUploaderSettingsForm.Designer.cs">
+      <DependentUpon>CustomUploaderSettingsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\OCRSpaceForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -241,6 +247,7 @@
     <Compile Include="Helpers\EscapeHelper.cs" />
     <Compile Include="Helpers\MimeTypes.cs" />
     <Compile Include="Helpers\OCROptions.cs" />
+    <Compile Include="Helpers\ResponseInfo.cs" />
     <Compile Include="Helpers\UploadHelpers.cs" />
     <Compile Include="OAuth\GoogleOAuth2.cs" />
     <Compile Include="OAuth\IOAuthBase.cs" />
@@ -462,6 +469,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\OAuthControl.zh-TW.resx">
       <DependentUpon>OAuthControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CustomUploaderSettingsForm.resx">
+      <DependentUpon>CustomUploaderSettingsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\EmailForm.de.resx">
       <DependentUpon>EmailForm.cs</DependentUpon>

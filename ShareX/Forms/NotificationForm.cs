@@ -80,7 +80,7 @@ namespace ShareX
             }
             else if (!string.IsNullOrEmpty(config.Text))
             {
-                textRenderSize = Helpers.MeasureText(config.Text, textFont, size.Width - (textPadding * 2));
+                textRenderSize = TextRenderer.MeasureText(config.Text, textFont, size.Offset(-textPadding * 2), TextFormatFlags.Left);
                 size = new Size(textRenderSize.Width + (textPadding * 2), textRenderSize.Height + (textPadding * 2) + 2);
             }
 
@@ -161,7 +161,7 @@ namespace ShareX
                         g.FillRectangle(brush, textRect);
                     }
 
-                    g.DrawString(ToastConfig.URL, textFont, Brushes.White, textRect.Offset(-urlPadding));
+                    TextRenderer.DrawText(g, ToastConfig.URL, textFont, textRect.Offset(-urlPadding), Color.White, TextFormatFlags.Left);
                 }
             }
             else if (!string.IsNullOrEmpty(ToastConfig.Text))
@@ -172,8 +172,8 @@ namespace ShareX
                 }
 
                 Rectangle textRect = new Rectangle(textPadding, textPadding, textRenderSize.Width + 2, textRenderSize.Height + 2);
-                g.DrawString(ToastConfig.Text, textFont, Brushes.Black, textRect);
-                g.DrawString(ToastConfig.Text, textFont, Brushes.White, textRect.LocationOffset(1));
+                TextRenderer.DrawText(g, ToastConfig.Text, textFont, textRect, Color.Black, TextFormatFlags.Left);
+                TextRenderer.DrawText(g, ToastConfig.Text, textFont, textRect.LocationOffset(1), Color.White, TextFormatFlags.Left);
             }
 
             g.DrawRectangleProper(Pens.Black, rect);
@@ -258,10 +258,13 @@ namespace ShareX
         private void NotificationForm_MouseEnter(object sender, EventArgs e)
         {
             isMouseInside = true;
-            Refresh();
-
             tOpacity.Stop();
-            Opacity = 1;
+
+            if (!IsDisposed)
+            {
+                Refresh();
+                Opacity = 1;
+            }
         }
 
         private void NotificationForm_MouseLeave(object sender, EventArgs e)

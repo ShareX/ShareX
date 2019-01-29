@@ -116,11 +116,6 @@ namespace ShareX.UploadersLib
             await StartOCR(data, fileName);
         }
 
-        private void llAttribution_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            URLHelpers.OpenURL("https://ocr.space");
-        }
-
         private void llGoogleTranslate_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             URLHelpers.OpenURL("https://translate.google.com/#auto/en/" + Uri.EscapeDataString(txtResult.Text));

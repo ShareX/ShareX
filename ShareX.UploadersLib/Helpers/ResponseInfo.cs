@@ -23,26 +23,16 @@
 
 #endregion License Information (GPL v3)
 
-using System;
-using System.ComponentModel;
-using System.Drawing;
-using System.Drawing.Design;
-using System.Windows.Forms;
+using System.Net;
 
-namespace ShareX.HelpersLib
+namespace ShareX.UploadersLib
 {
-    public class NameParserEditor : UITypeEditor
+    public class ResponseInfo
     {
-        public override UITypeEditorEditStyle GetEditStyle(ITypeDescriptorContext context)
-        {
-            return UITypeEditorEditStyle.Modal;
-        }
-
-        public override object EditValue(ITypeDescriptorContext context, IServiceProvider provider, object value)
-        {
-            Point pos = Cursor.Position;
-            CodeMenu.Create<CodeMenuEntryFilename>(null, CodeMenuEntryFilename.t, CodeMenuEntryFilename.pn).Show(pos.X, pos.Y);
-            return value;
-        }
+        public HttpStatusCode StatusCode { get; set; }
+        public bool IsSuccess => UploadHelpers.IsSuccessStatusCode(StatusCode);
+        public string ResponseURL { get; set; }
+        public WebHeaderCollection Headers { get; set; }
+        public string ResponseText { get; set; }
     }
 }

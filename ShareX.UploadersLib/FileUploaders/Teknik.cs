@@ -240,7 +240,7 @@ namespace ShareX.UploadersLib.FileUploaders
             Dictionary<string, string> args = new Dictionary<string, string>();
             args.Add("code", text);
 
-            string response = SendRequestMultiPart(APIUrl, args, _Teknik.GetAuthHeaders(), null, ResponseType.Text, HttpMethod.POST);
+            string response = SendRequestMultiPart(APIUrl, args, _Teknik.GetAuthHeaders(), null, HttpMethod.POST);
             TeknikPasteResponseWrapper apiResponse = JsonConvert.DeserializeObject<TeknikPasteResponseWrapper>(response);
             
             UploadResult ur = new UploadResult();
@@ -282,7 +282,7 @@ namespace ShareX.UploadersLib.FileUploaders
             Dictionary<string, string> args = new Dictionary<string, string>();
             args.Add("url", url);
 
-            string response = SendRequestMultiPart(APIUrl, args, _Teknik.GetAuthHeaders(), null, ResponseType.Text, HttpMethod.POST);
+            string response = SendRequestMultiPart(APIUrl, args, _Teknik.GetAuthHeaders(), null, HttpMethod.POST);
             TeknikUrlShortenerResponseWrapper apiResponse = JsonConvert.DeserializeObject<TeknikUrlShortenerResponseWrapper>(response);
 
             UploadResult ur = new UploadResult();

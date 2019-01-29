@@ -491,7 +491,7 @@ namespace ShareX.UploadersLib.FileUploaders
         /// <exception cref="IOException">If the response body cannot be read.</exception>
         private static B2Error ParseB2Error(HttpWebResponse res)
         {
-            if (UploadHelpers.IsSuccessfulResponse(res)) return null;
+            if (UploadHelpers.IsSuccessStatusCode(res.StatusCode)) return null;
 
             try
             {

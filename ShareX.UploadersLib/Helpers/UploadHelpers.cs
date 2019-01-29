@@ -151,8 +151,8 @@ namespace ShareX.UploadersLib
 
         public static byte[] MakeInputContent(string boundary, string name, string value)
         {
-            string format = string.Format("--{0}\r\nContent-Disposition: form-data; name=\"{1}\"\r\n\r\n{2}\r\n", boundary, name, value);
-            return Encoding.UTF8.GetBytes(format);
+            string content = $"--{boundary}\r\nContent-Disposition: form-data; name=\"{name}\"\r\n\r\n{value}\r\n";
+            return Encoding.UTF8.GetBytes(content);
         }
 
         public static byte[] MakeInputContent(string boundary, Dictionary<string, string> contents, bool isFinal = true)
@@ -160,10 +160,11 @@ namespace ShareX.UploadersLib
             using (MemoryStream stream = new MemoryStream())
             {
                 if (string.IsNullOrEmpty(boundary)) boundary = CreateBoundary();
-                byte[] bytes;
 
                 if (contents != null)
                 {
+                    byte[] bytes;
+
                     foreach (KeyValuePair<string, string> content in contents)
                     {
                         if (!string.IsNullOrEmpty(content.Key) && !string.IsNullOrEmpty(content.Value))
@@ -175,7 +176,7 @@ namespace ShareX.UploadersLib
 
                     if (isFinal)
                     {
-                        bytes = MakeFinalBoundary(boundary);
+                        bytes = Encoding.UTF8.GetBytes($"--{boundary}--\r\n");
                         stream.Write(bytes, 0, bytes.Length);
                     }
                 }
@@ -186,68 +187,36 @@ namespace ShareX.UploadersLib
 
         public static byte[] MakeFileInputContentOpen(string boundary, string fileFormName, string fileName)
         {
-            string format = string.Format("--{0}\r\nContent-Disposition: form-data; name=\"{1}\"; filename=\"{2}\"\r\nContent-Type: {3}\r\n\r\n",
-                boundary, fileFormName, fileName, GetMimeType(fileName));
-
-            return Encoding.UTF8.GetBytes(format);
+            string mimeType = GetMimeType(fileName);
+            string content = $"--{boundary}\r\nContent-Disposition: form-data; name=\"{fileFormName}\"; filename=\"{fileName}\"\r\nContent-Type: {mimeType}\r\n\r\n";
+            return Encoding.UTF8.GetBytes(content);
         }
 
-        public static byte[] MakeFileInputContentOpen(string boundary, string fileFormName, string fileName, string metadata)
+        public static byte[] MakeRelatedFileInputContentOpen(string boundary, string contentType, string relatedData, string fileName)
         {
-            string format = "";
-
-            if (metadata != null)
-            {
-                format = string.Format("--{0}\r\nContent-Type: {1}; charset=UTF-8\r\n\r\n{2}\r\n\r\n", boundary, ContentTypeJSON, metadata);
-            }
-            else
-            {
-                format = string.Format("--{0}\r\nContent-Type: {1}\r\n\r\n", boundary, GetMimeType(fileName));
-            }
-
-            return Encoding.UTF8.GetBytes(format);
+            string mimeType = GetMimeType(fileName);
+            string content = $"--{boundary}\r\nContent-Type: {contentType}\r\n\r\n{relatedData}\r\n\r\n";
+            content += $"--{boundary}\r\nContent-Type: {mimeType}\r\n\r\n";
+            return Encoding.UTF8.GetBytes(content);
         }
 
         public static byte[] MakeFileInputContentClose(string boundary)
         {
-            return Encoding.UTF8.GetBytes(string.Format("\r\n--{0}--\r\n", boundary));
+            return Encoding.UTF8.GetBytes($"\r\n--{boundary}--\r\n");
         }
 
-        public static byte[] MakeFinalBoundary(string boundary)
+        public static string ResponseToString(WebResponse response)
         {
-            return Encoding.UTF8.GetBytes(string.Format("--{0}--\r\n", boundary));
-        }
-
-        public static string ResponseToString(WebResponse response, ResponseType responseType = ResponseType.Text)
-        {
-            if (response == null)
+            if (response != null)
             {
-                return null;
+                using (Stream responseStream = response.GetResponseStream())
+                using (StreamReader reader = new StreamReader(responseStream, Encoding.UTF8))
+                {
+                    return reader.ReadToEnd();
+                }
             }
 
-            switch (responseType)
-            {
-                case ResponseType.Text:
-                    using (Stream responseStream = response.GetResponseStream())
-                    using (StreamReader reader = new StreamReader(responseStream, Encoding.UTF8))
-                    {
-                        return reader.ReadToEnd();
-                    }
-                case ResponseType.RedirectionURL:
-                    return response.ResponseUri.OriginalString;
-                case ResponseType.Headers:
-                    StringBuilder sbHeaders = new StringBuilder();
-                    foreach (string key in response.Headers.AllKeys)
-                    {
-                        string value = response.Headers[key];
-                        sbHeaders.AppendFormat("{0}: \"{1}\"{2}", key, value, Environment.NewLine);
-                    }
-                    return sbHeaders.ToString().Trim();
-                case ResponseType.LocationHeader:
-                    return response.Headers["Location"];
-                default:
-                    return null;
-            }
+            return null;
         }
 
         public static NameValueCollection CreateAuthenticationHeader(string username, string password)
@@ -285,14 +254,10 @@ namespace ShareX.UploadersLib
             return MimeTypes.DefaultMimeType;
         }
 
-        /// <summary>
-        /// Returns whether the HttpWebResponse was successful (has a 2xx status code).
-        /// </summary>
-        /// <param name="response">The HttpWebResponse to check.</param>
-        /// <returns>true if 2xx status code, otherwise false.</returns>
-        public static bool IsSuccessfulResponse(HttpWebResponse response)
+        public static bool IsSuccessStatusCode(HttpStatusCode statusCode)
         {
-            return int.TryParse(response.StatusCode.ToString(), out int rc) && (rc >= 200 && rc <= 299);
+            int statusCodeNum = (int)statusCode;
+            return statusCodeNum >= 200 && statusCodeNum <= 299;
         }
     }
 }

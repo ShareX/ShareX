@@ -1142,6 +1142,19 @@ namespace ShareX
 
                 OCROptions ocrOptions = taskSettings.CaptureSettings.OCROptions;
 
+                if (!ocrOptions.Permission)
+                {
+                    if (MessageBox.Show("Please note that ShareX is using OCR.Space's online API to perform optical character recognition. Do you give permission to ShareX to upload images to this service?",
+                        "ShareX - Optical character recognition", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        taskSettings.CaptureSettingsReference.OCROptions.Permission = true;
+                    }
+                    else
+                    {
+                        return;
+                    }
+                }
+
                 if (ocrOptions.Silent)
                 {
                     await AsyncOCRImage(stream, fileName, filePath, ocrOptions);
@@ -1423,6 +1436,25 @@ namespace ShareX
             }
         }
 
+        public static void OpenCustomUploaderSettingsWindow()
+        {
+            SettingManager.WaitUploadersConfig();
+
+            bool firstInstance = !CustomUploaderSettingsForm.IsInstanceActive;
+
+            CustomUploaderSettingsForm form = CustomUploaderSettingsForm.GetFormInstance(Program.UploadersConfig);
+
+            if (firstInstance)
+            {
+                form.FormClosed += (sender, e) => SettingManager.SaveUploadersConfigAsync();
+                form.Show();
+            }
+            else
+            {
+                form.ForceActivate();
+            }
+        }
+
         public static Image FindMenuIcon<T>(int index)
         {
             T e = Helpers.GetEnumFromIndex<T>(index);
@@ -1659,9 +1691,9 @@ namespace ShareX
                             Program.MainForm.UpdateCheckStates();
                             Program.MainForm.UpdateUploaderMenuNames();
 
-                            if (UploadersConfigForm.IsInstanceActive)
+                            if (CustomUploaderSettingsForm.IsInstanceActive)
                             {
-                                UploadersConfigForm.CustomUploaderUpdateTab();
+                                CustomUploaderSettingsForm.CustomUploaderUpdateTab();
                             }
                         }
                     }

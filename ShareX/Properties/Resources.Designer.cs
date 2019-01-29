@@ -1870,6 +1870,16 @@ namespace ShareX.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap network_cloud {
+            get {
+                object obj = ResourceManager.GetObject("network-cloud", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap network_ip {
             get {
                 object obj = ResourceManager.GetObject("network_ip", resourceCulture);

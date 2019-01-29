@@ -26,11 +26,8 @@
 using ShareX.HelpersLib;
 using ShareX.UploadersLib.Properties;
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Text;
-using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.TextUploaders
 {
@@ -65,8 +62,6 @@ namespace ShareX.UploadersLib.TextUploaders
 
             return null;
         }
-
-        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpCustomUploaders;
     }
 
     public sealed class CustomTextUploader : TextUploader
@@ -85,34 +80,33 @@ namespace ShareX.UploadersLib.TextUploaders
 
             if (uploader.Body == CustomUploaderBody.None)
             {
-                result.Response = SendRequest(uploader.RequestMethod, uploader.GetRequestURL(input), null, uploader.GetHeaders(input), null, uploader.ResponseType);
+                result.Response = SendRequest(uploader.RequestMethod, uploader.GetRequestURL(input), null, uploader.GetHeaders(input));
             }
             else if (uploader.Body == CustomUploaderBody.MultipartFormData)
             {
                 if (string.IsNullOrEmpty(uploader.FileFormName))
                 {
-                    result.Response = SendRequestMultiPart(uploader.GetRequestURL(input), uploader.GetArguments(input),
-                        uploader.GetHeaders(input), null, uploader.ResponseType, uploader.RequestMethod);
+                    result.Response = SendRequestMultiPart(uploader.GetRequestURL(input), uploader.GetArguments(input), uploader.GetHeaders(input),
+                        null, uploader.RequestMethod);
                 }
                 else
                 {
                     byte[] bytes = Encoding.UTF8.GetBytes(text);
                     using (MemoryStream stream = new MemoryStream(bytes))
                     {
-                        result = SendRequestFile(uploader.GetRequestURL(input), stream, fileName, uploader.GetFileFormName(),
-                            uploader.GetArguments(input), uploader.GetHeaders(input), null, uploader.ResponseType, uploader.RequestMethod);
+                        result = SendRequestFile(uploader.GetRequestURL(input), stream, fileName, uploader.GetFileFormName(), uploader.GetArguments(input),
+                            uploader.GetHeaders(input), null, uploader.RequestMethod);
                     }
                 }
             }
             else if (uploader.Body == CustomUploaderBody.FormURLEncoded)
             {
-                result.Response = SendRequestURLEncoded(uploader.RequestMethod, uploader.GetRequestURL(input), uploader.GetArguments(input),
-                    uploader.GetHeaders(input), null, uploader.ResponseType);
+                result.Response = SendRequestURLEncoded(uploader.RequestMethod, uploader.GetRequestURL(input), uploader.GetArguments(input), uploader.GetHeaders(input));
             }
             else if (uploader.Body == CustomUploaderBody.JSON || uploader.Body == CustomUploaderBody.XML)
             {
                 result.Response = SendRequest(uploader.RequestMethod, uploader.GetRequestURL(input), uploader.GetData(input), uploader.GetContentType(),
-                    null, uploader.GetHeaders(input), null, uploader.ResponseType);
+                    null, uploader.GetHeaders(input));
             }
             else if (uploader.Body == CustomUploaderBody.Binary)
             {
@@ -120,7 +114,7 @@ namespace ShareX.UploadersLib.TextUploaders
                 using (MemoryStream stream = new MemoryStream(bytes))
                 {
                     result.Response = SendRequest(uploader.RequestMethod, uploader.GetRequestURL(input), stream, UploadHelpers.GetMimeType(fileName),
-                        null, uploader.GetHeaders(input), null, uploader.ResponseType);
+                        null, uploader.GetHeaders(input));
                 }
             }
             else
@@ -130,7 +124,7 @@ namespace ShareX.UploadersLib.TextUploaders
 
             try
             {
-                uploader.ParseResponse(result, input);
+                uploader.ParseResponse(result, LastResponseInfo, input);
             }
             catch (Exception e)
             {

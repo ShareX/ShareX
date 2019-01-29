@@ -40,14 +40,6 @@ namespace ShareX.HelpersLib
 
         public static ContextMenuStrip Create<TEntry>(TextBoxBase tb, TEntry[] ignoreList, CodeMenuItem[] extraItems) where TEntry : CodeMenuEntry
         {
-            ContextMenuStrip cms = new ContextMenuStrip
-            {
-                Font = new Font("Lucida Console", 8),
-                AutoClose = false,
-                Opacity = 0.9,
-                ShowImageMargin = false
-            };
-
             List<CodeMenuItem> items = new List<CodeMenuItem>();
 
             if (extraItems != null)
@@ -60,13 +52,33 @@ namespace ShareX.HelpersLib
 
             items.AddRange(variables);
 
+            return Create(tb, items.ToArray());
+        }
+
+        public static ContextMenuStrip Create(TextBoxBase tb, CodeMenuItem[] items)
+        {
+            ContextMenuStrip cms = new ContextMenuStrip
+            {
+                Font = new Font("Lucida Console", 8),
+                AutoClose = tb == null,
+                Opacity = 0.9,
+                ShowImageMargin = false
+            };
+
             foreach (CodeMenuItem item in items)
             {
                 ToolStripMenuItem tsmi = new ToolStripMenuItem { Text = $"{item.Name} - {item.Description}", Tag = item.Name };
-                tsmi.Click += (sender, e) =>
+                tsmi.MouseUp += (sender, e) =>
                 {
-                    string text = ((ToolStripMenuItem)sender).Tag.ToString();
-                    tb.AppendTextToSelection(text);
+                    if (tb != null && e.Button == MouseButtons.Left)
+                    {
+                        string text = ((ToolStripMenuItem)sender).Tag.ToString();
+                        tb.AppendTextToSelection(text);
+                    }
+                    else
+                    {
+                        cms.Close();
+                    }
                 };
 
                 if (string.IsNullOrWhiteSpace(item.Category))
@@ -97,63 +109,34 @@ namespace ShareX.HelpersLib
             tsmiClose.Click += (sender, e) => cms.Close();
             cms.Items.Add(tsmiClose);
 
-            tb.MouseDown += (sender, e) =>
+            if (tb != null)
             {
-                if (cms.Items.Count > 0) cms.Show(tb, new Point(tb.Width + 1, 0));
-            };
-
-            tb.GotFocus += (sender, e) =>
-            {
-                if (cms.Items.Count > 0) cms.Show(tb, new Point(tb.Width + 1, 0));
-            };
-
-            tb.LostFocus += (sender, e) =>
-            {
-                if (cms.Visible) cms.Close();
-            };
-
-            tb.KeyDown += (sender, e) =>
-            {
-                if ((e.KeyCode == Keys.Enter || e.KeyCode == Keys.Escape) && cms.Visible)
+                tb.MouseDown += (sender, e) =>
                 {
-                    cms.Close();
-                    e.SuppressKeyPress = true;
-                }
-            };
+                    if (cms.Items.Count > 0) cms.Show(tb, new Point(tb.Width + 1, 0));
+                };
 
-            tb.Disposed += (sender, e) => cms.Dispose();
-
-            return cms;
-        }
-
-        public static ContextMenuStrip Create<TEntry>(params TEntry[] ignoreList) where TEntry : CodeMenuEntry
-        {
-            ContextMenuStrip cms = new ContextMenuStrip
-            {
-                Font = new Font("Lucida Console", 8),
-                AutoClose = true,
-                Opacity = 0.9,
-                ShowImageMargin = false
-            };
-
-            var variables = Helpers.GetValueFields<TEntry>().Where(x => !ignoreList.Contains(x)).
-                Select(x => new
+                tb.GotFocus += (sender, e) =>
                 {
-                    Name = x.ToPrefixString(),
-                    Description = x.Description
-                });
+                    if (cms.Items.Count > 0) cms.Show(tb, new Point(tb.Width + 1, 0));
+                };
 
-            foreach (var variable in variables)
-            {
-                ToolStripMenuItem tsmi = new ToolStripMenuItem { Text = string.Format("{0} - {1}", variable.Name, variable.Description), Tag = variable.Name };
-                cms.Items.Add(tsmi);
+                tb.LostFocus += (sender, e) =>
+                {
+                    if (cms.Visible) cms.Close();
+                };
+
+                tb.KeyDown += (sender, e) =>
+                {
+                    if ((e.KeyCode == Keys.Enter || e.KeyCode == Keys.Escape) && cms.Visible)
+                    {
+                        cms.Close();
+                        e.SuppressKeyPress = true;
+                    }
+                };
+
+                tb.Disposed += (sender, e) => cms.Dispose();
             }
-
-            cms.Items.Add(new ToolStripSeparator());
-
-            ToolStripMenuItem tsmiClose = new ToolStripMenuItem(Resources.CodeMenu_Create_Close);
-            tsmiClose.Click += (sender, e) => cms.Close();
-            cms.Items.Add(tsmiClose);
 
             return cms;
         }

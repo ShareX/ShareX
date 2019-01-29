@@ -27,7 +27,6 @@ using ShareX.HelpersLib;
 using ShareX.UploadersLib.Properties;
 using System;
 using System.IO;
-using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.ImageUploaders
 {
@@ -62,8 +61,6 @@ namespace ShareX.UploadersLib.ImageUploaders
 
             return null;
         }
-
-        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpCustomUploaders;
     }
 
     public sealed class CustomImageUploader : ImageUploader
@@ -82,13 +79,13 @@ namespace ShareX.UploadersLib.ImageUploaders
 
             if (uploader.Body == CustomUploaderBody.MultipartFormData)
             {
-                result = SendRequestFile(uploader.GetRequestURL(input), stream, fileName, uploader.GetFileFormName(),
-                    uploader.GetArguments(input), uploader.GetHeaders(input), null, uploader.ResponseType, uploader.RequestMethod);
+                result = SendRequestFile(uploader.GetRequestURL(input), stream, fileName, uploader.GetFileFormName(), uploader.GetArguments(input),
+                    uploader.GetHeaders(input), null, uploader.RequestMethod);
             }
             else if (uploader.Body == CustomUploaderBody.Binary)
             {
                 result.Response = SendRequest(uploader.RequestMethod, uploader.GetRequestURL(input), stream, UploadHelpers.GetMimeType(fileName),
-                    null, uploader.GetHeaders(input), null, uploader.ResponseType);
+                    null, uploader.GetHeaders(input));
             }
             else
             {
@@ -97,7 +94,7 @@ namespace ShareX.UploadersLib.ImageUploaders
 
             try
             {
-                uploader.ParseResponse(result, input);
+                uploader.ParseResponse(result, LastResponseInfo, input);
             }
             catch (Exception e)
             {

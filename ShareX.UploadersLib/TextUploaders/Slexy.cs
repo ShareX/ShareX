@@ -80,7 +80,8 @@ namespace ShareX.UploadersLib.TextUploaders
                 arguments.Add("tabbing", "true");
                 arguments.Add("tabtype", "real");
 
-                ur.URL = SendRequestMultiPart(APIURL, arguments, responseType: ResponseType.RedirectionURL);
+                SendRequestMultiPart(APIURL, arguments);
+                ur.URL = LastResponseInfo.ResponseURL;
             }
 
             return ur;
