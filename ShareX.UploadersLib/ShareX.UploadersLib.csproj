@@ -154,6 +154,7 @@
     <Compile Include="FileUploaders\PomfUploader.cs" />
     <Compile Include="FileUploaders\SFTP.cs" />
     <Compile Include="FileUploaders\SharedFolderUploader.cs" />
+    <Compile Include="FileUploaders\Teknik.cs" />
     <Compile Include="FileUploaders\Transfersh.cs" />
     <Compile Include="FileUploaders\Uguu.cs" />
     <Compile Include="FileUploaders\VideoBin.cs" />
@@ -277,6 +278,7 @@
     <Compile Include="Helpers\TaskReferenceHelper.cs" />
     <Compile Include="BaseServices\TextUploaderService.cs" />
     <Compile Include="TextUploaders\Pastie.cs" />
+    <Compile Include="TextUploaders\TeknikPastebin.cs" />
     <Compile Include="UploaderFactory.cs" />
     <Compile Include="ImageUploaders\Chevereto.cs" />
     <Compile Include="ImageUploaders\CheveretoUploader.cs" />
@@ -359,6 +361,7 @@
     <Compile Include="URLShorteners\FirebaseDynamicLinksURLShortener.cs" />
     <Compile Include="URLShorteners\KuttURLShortener.cs" />
     <Compile Include="URLShorteners\PolrURLShortener.cs" />
+    <Compile Include="URLShorteners\TeknikURLShortener.cs" />
     <Compile Include="URLShorteners\TwoGPURLShortener.cs" />
     <Compile Include="URLShorteners\AdFlyURLShortener.cs" />
     <Compile Include="URLShorteners\BitlyURLShortener.cs" />
@@ -1041,6 +1044,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Favicons\Kutt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Favicons\Teknik.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

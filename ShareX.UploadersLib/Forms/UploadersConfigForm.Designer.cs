@@ -367,6 +367,18 @@ namespace ShareX.UploadersLib
             this.txtLambdaApiKey = new System.Windows.Forms.TextBox();
             this.lblLambdaUploadURL = new System.Windows.Forms.Label();
             this.cbLambdaUploadURL = new System.Windows.Forms.ComboBox();
+            this.tpTeknik = new System.Windows.Forms.TabPage();
+            this.lblTeknikUrlShortenerAPIUrl = new System.Windows.Forms.Label();
+            this.tbTeknikUrlShortenerAPIUrl = new System.Windows.Forms.TextBox();
+            this.lblTeknikPasteAPIUrl = new System.Windows.Forms.Label();
+            this.tbTeknikPasteAPIUrl = new System.Windows.Forms.TextBox();
+            this.lblTeknikAuthUrl = new System.Windows.Forms.Label();
+            this.tbTeknikAuthUrl = new System.Windows.Forms.TextBox();
+            this.cbTeknikGenDeleteKey = new System.Windows.Forms.CheckBox();
+            this.cbTeknikEncrypt = new System.Windows.Forms.CheckBox();
+            this.lblTeknikUploadAPIUrl = new System.Windows.Forms.Label();
+            this.tbTeknikUploadAPIUrl = new System.Windows.Forms.TextBox();
+            this.oauthTeknik = new ShareX.UploadersLib.OAuthControl();
             this.tpPomf = new System.Windows.Forms.TabPage();
             this.btnPomfTest = new System.Windows.Forms.Button();
             this.txtPomfResultURL = new System.Windows.Forms.TextBox();
@@ -662,6 +674,7 @@ namespace ShareX.UploadersLib
             this.tpJira.SuspendLayout();
             this.gbJiraServer.SuspendLayout();
             this.tpLambda.SuspendLayout();
+            this.tpTeknik.SuspendLayout();
             this.tpPomf.SuspendLayout();
             this.tpSeafile.SuspendLayout();
             this.grpSeafileShareSettings.SuspendLayout();
@@ -1201,6 +1214,7 @@ namespace ShareX.UploadersLib
             this.tcFileUploaders.Controls.Add(this.tpHostr);
             this.tcFileUploaders.Controls.Add(this.tpJira);
             this.tcFileUploaders.Controls.Add(this.tpLambda);
+            this.tcFileUploaders.Controls.Add(this.tpTeknik);
             this.tcFileUploaders.Controls.Add(this.tpPomf);
             this.tcFileUploaders.Controls.Add(this.tpSeafile);
             this.tcFileUploaders.Controls.Add(this.tpStreamable);
@@ -1764,6 +1778,7 @@ namespace ShareX.UploadersLib
             this.chGoogleDriveTitle,
             this.chGoogleDriveDescription});
             this.lvGoogleDriveFoldersList.FullRowSelect = true;
+            this.lvGoogleDriveFoldersList.HideSelection = false;
             resources.ApplyResources(this.lvGoogleDriveFoldersList, "lvGoogleDriveFoldersList");
             this.lvGoogleDriveFoldersList.MultiSelect = false;
             this.lvGoogleDriveFoldersList.Name = "lvGoogleDriveFoldersList";
@@ -1893,6 +1908,7 @@ namespace ShareX.UploadersLib
             this.lvBoxFolders.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.chBoxFoldersName});
             this.lvBoxFolders.FullRowSelect = true;
+            this.lvBoxFolders.HideSelection = false;
             resources.ApplyResources(this.lvBoxFolders, "lvBoxFolders");
             this.lvBoxFolders.Name = "lvBoxFolders";
             this.lvBoxFolders.UseCompatibleStateImageBehavior = false;
@@ -2991,6 +3007,90 @@ namespace ShareX.UploadersLib
             resources.ApplyResources(this.cbLambdaUploadURL, "cbLambdaUploadURL");
             this.cbLambdaUploadURL.Name = "cbLambdaUploadURL";
             this.cbLambdaUploadURL.SelectedIndexChanged += new System.EventHandler(this.cbLambdaUploadURL_SelectedIndexChanged);
+            // 
+            // tpTeknik
+            // 
+            this.tpTeknik.BackColor = System.Drawing.SystemColors.Window;
+            this.tpTeknik.Controls.Add(this.lblTeknikUrlShortenerAPIUrl);
+            this.tpTeknik.Controls.Add(this.tbTeknikUrlShortenerAPIUrl);
+            this.tpTeknik.Controls.Add(this.lblTeknikPasteAPIUrl);
+            this.tpTeknik.Controls.Add(this.tbTeknikPasteAPIUrl);
+            this.tpTeknik.Controls.Add(this.lblTeknikAuthUrl);
+            this.tpTeknik.Controls.Add(this.tbTeknikAuthUrl);
+            this.tpTeknik.Controls.Add(this.cbTeknikGenDeleteKey);
+            this.tpTeknik.Controls.Add(this.cbTeknikEncrypt);
+            this.tpTeknik.Controls.Add(this.lblTeknikUploadAPIUrl);
+            this.tpTeknik.Controls.Add(this.tbTeknikUploadAPIUrl);
+            this.tpTeknik.Controls.Add(this.oauthTeknik);
+            resources.ApplyResources(this.tpTeknik, "tpTeknik");
+            this.tpTeknik.Name = "tpTeknik";
+            // 
+            // lblTeknikUrlShortenerAPIUrl
+            // 
+            resources.ApplyResources(this.lblTeknikUrlShortenerAPIUrl, "lblTeknikUrlShortenerAPIUrl");
+            this.lblTeknikUrlShortenerAPIUrl.Name = "lblTeknikUrlShortenerAPIUrl";
+            // 
+            // tbTeknikUrlShortenerAPIUrl
+            // 
+            resources.ApplyResources(this.tbTeknikUrlShortenerAPIUrl, "tbTeknikUrlShortenerAPIUrl");
+            this.tbTeknikUrlShortenerAPIUrl.Name = "tbTeknikUrlShortenerAPIUrl";
+            this.tbTeknikUrlShortenerAPIUrl.TextChanged += new System.EventHandler(this.tbTeknikUrlShortenerAPIUrl_TextChanged);
+            // 
+            // lblTeknikPasteAPIUrl
+            // 
+            resources.ApplyResources(this.lblTeknikPasteAPIUrl, "lblTeknikPasteAPIUrl");
+            this.lblTeknikPasteAPIUrl.Name = "lblTeknikPasteAPIUrl";
+            // 
+            // tbTeknikPasteAPIUrl
+            // 
+            resources.ApplyResources(this.tbTeknikPasteAPIUrl, "tbTeknikPasteAPIUrl");
+            this.tbTeknikPasteAPIUrl.Name = "tbTeknikPasteAPIUrl";
+            this.tbTeknikPasteAPIUrl.TextChanged += new System.EventHandler(this.tbTeknikPasteAPIUrl_TextChanged);
+            // 
+            // lblTeknikAuthUrl
+            // 
+            resources.ApplyResources(this.lblTeknikAuthUrl, "lblTeknikAuthUrl");
+            this.lblTeknikAuthUrl.Name = "lblTeknikAuthUrl";
+            // 
+            // tbTeknikAuthUrl
+            // 
+            resources.ApplyResources(this.tbTeknikAuthUrl, "tbTeknikAuthUrl");
+            this.tbTeknikAuthUrl.Name = "tbTeknikAuthUrl";
+            this.tbTeknikAuthUrl.TextChanged += new System.EventHandler(this.tbTeknikAuthUrl_TextChanged);
+            // 
+            // cbTeknikGenDeleteKey
+            // 
+            resources.ApplyResources(this.cbTeknikGenDeleteKey, "cbTeknikGenDeleteKey");
+            this.cbTeknikGenDeleteKey.Name = "cbTeknikGenDeleteKey";
+            this.cbTeknikGenDeleteKey.UseVisualStyleBackColor = true;
+            this.cbTeknikGenDeleteKey.CheckedChanged += new System.EventHandler(this.cbTeknikGenDeleteKey_CheckedChanged);
+            // 
+            // cbTeknikEncrypt
+            // 
+            resources.ApplyResources(this.cbTeknikEncrypt, "cbTeknikEncrypt");
+            this.cbTeknikEncrypt.Name = "cbTeknikEncrypt";
+            this.cbTeknikEncrypt.UseVisualStyleBackColor = true;
+            this.cbTeknikEncrypt.CheckedChanged += new System.EventHandler(this.cbTeknikEncrypt_CheckedChanged);
+            // 
+            // lblTeknikUploadAPIUrl
+            // 
+            resources.ApplyResources(this.lblTeknikUploadAPIUrl, "lblTeknikUploadAPIUrl");
+            this.lblTeknikUploadAPIUrl.Name = "lblTeknikUploadAPIUrl";
+            // 
+            // tbTeknikUploadAPIUrl
+            // 
+            resources.ApplyResources(this.tbTeknikUploadAPIUrl, "tbTeknikUploadAPIUrl");
+            this.tbTeknikUploadAPIUrl.Name = "tbTeknikUploadAPIUrl";
+            this.tbTeknikUploadAPIUrl.TextChanged += new System.EventHandler(this.tbTeknikUploadAPIUrl_TextChanged);
+            // 
+            // oauthTeknik
+            // 
+            this.oauthTeknik.IsRefreshable = false;
+            resources.ApplyResources(this.oauthTeknik, "oauthTeknik");
+            this.oauthTeknik.Name = "oauthTeknik";
+            this.oauthTeknik.OpenButtonClicked += new ShareX.UploadersLib.OAuthControl.OpenButtonClickedEventHandler(this.oauthTeknik_OpenButtonClicked);
+            this.oauthTeknik.CompleteButtonClicked += new ShareX.UploadersLib.OAuthControl.CompleteButtonClickedEventHandler(this.oauthTeknik_CompleteButtonClicked);
+            this.oauthTeknik.ClearButtonClicked += new ShareX.UploadersLib.OAuthControl.ClearButtonclickedEventHandler(this.oauthTeknik_ClearButtonClicked);
             // 
             // tpPomf
             // 
@@ -4678,6 +4778,7 @@ namespace ShareX.UploadersLib
             this.chPicasaName,
             this.chPicasaDescription});
             this.lvPicasaAlbumList.FullRowSelect = true;
+            this.lvPicasaAlbumList.HideSelection = false;
             resources.ApplyResources(this.lvPicasaAlbumList, "lvPicasaAlbumList");
             this.lvPicasaAlbumList.MultiSelect = false;
             this.lvPicasaAlbumList.Name = "lvPicasaAlbumList";
@@ -4932,6 +5033,8 @@ namespace ShareX.UploadersLib
             this.gbJiraServer.PerformLayout();
             this.tpLambda.ResumeLayout(false);
             this.tpLambda.PerformLayout();
+            this.tpTeknik.ResumeLayout(false);
+            this.tpTeknik.PerformLayout();
             this.tpPomf.ResumeLayout(false);
             this.tpPomf.PerformLayout();
             this.tpSeafile.ResumeLayout(false);
@@ -5574,5 +5677,17 @@ namespace ShareX.UploadersLib
         private System.Windows.Forms.Label lblGooglePhotosCreateAlbumName;
         private System.Windows.Forms.TextBox txtGooglePhotosCreateAlbumName;
         private System.Windows.Forms.Button btnGooglePhotosCreateAlbum;
+        private System.Windows.Forms.CheckBox cbTeknikGenDeleteKey;
+        private System.Windows.Forms.CheckBox cbTeknikEncrypt;
+        private System.Windows.Forms.Label lblTeknikUploadAPIUrl;
+        private System.Windows.Forms.TextBox tbTeknikUploadAPIUrl;
+        private OAuthControl oauthTeknik;
+        private System.Windows.Forms.Label lblTeknikAuthUrl;
+        private System.Windows.Forms.TextBox tbTeknikAuthUrl;
+        internal System.Windows.Forms.TabPage tpTeknik;
+        private System.Windows.Forms.Label lblTeknikPasteAPIUrl;
+        private System.Windows.Forms.TextBox tbTeknikPasteAPIUrl;
+        private System.Windows.Forms.Label lblTeknikUrlShortenerAPIUrl;
+        private System.Windows.Forms.TextBox tbTeknikUrlShortenerAPIUrl;
     }
 }
