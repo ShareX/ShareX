@@ -368,6 +368,8 @@ namespace ShareX.UploadersLib
             this.lblLambdaUploadURL = new System.Windows.Forms.Label();
             this.cbLambdaUploadURL = new System.Windows.Forms.ComboBox();
             this.tpTeknik = new System.Windows.Forms.TabPage();
+            this.lblTeknikUrlShortenerAPIUrl = new System.Windows.Forms.Label();
+            this.tbTeknikUrlShortenerAPIUrl = new System.Windows.Forms.TextBox();
             this.lblTeknikPasteAPIUrl = new System.Windows.Forms.Label();
             this.tbTeknikPasteAPIUrl = new System.Windows.Forms.TextBox();
             this.lblTeknikAuthUrl = new System.Windows.Forms.Label();
@@ -630,8 +632,6 @@ namespace ShareX.UploadersLib
             this.lblWidthHint = new System.Windows.Forms.Label();
             this.ttlvMain = new ShareX.HelpersLib.TabToListView();
             this.actRapidShareAccountType = new ShareX.UploadersLib.AccountTypeControl();
-            this.lblTeknikUrlShortenerAPIUrl = new System.Windows.Forms.Label();
-            this.tbTeknikUrlShortenerAPIUrl = new System.Windows.Forms.TextBox();
             this.tpOtherUploaders.SuspendLayout();
             this.tcOtherUploaders.SuspendLayout();
             this.tpTwitter.SuspendLayout();
@@ -3025,6 +3025,17 @@ namespace ShareX.UploadersLib
             resources.ApplyResources(this.tpTeknik, "tpTeknik");
             this.tpTeknik.Name = "tpTeknik";
             // 
+            // lblTeknikUrlShortenerAPIUrl
+            // 
+            resources.ApplyResources(this.lblTeknikUrlShortenerAPIUrl, "lblTeknikUrlShortenerAPIUrl");
+            this.lblTeknikUrlShortenerAPIUrl.Name = "lblTeknikUrlShortenerAPIUrl";
+            // 
+            // tbTeknikUrlShortenerAPIUrl
+            // 
+            resources.ApplyResources(this.tbTeknikUrlShortenerAPIUrl, "tbTeknikUrlShortenerAPIUrl");
+            this.tbTeknikUrlShortenerAPIUrl.Name = "tbTeknikUrlShortenerAPIUrl";
+            this.tbTeknikUrlShortenerAPIUrl.TextChanged += new System.EventHandler(this.tbTeknikUrlShortenerAPIUrl_TextChanged);
+            // 
             // lblTeknikPasteAPIUrl
             // 
             resources.ApplyResources(this.lblTeknikPasteAPIUrl, "lblTeknikPasteAPIUrl");
@@ -4931,17 +4942,6 @@ namespace ShareX.UploadersLib
             resources.ApplyResources(this.actRapidShareAccountType, "actRapidShareAccountType");
             this.actRapidShareAccountType.Name = "actRapidShareAccountType";
             this.actRapidShareAccountType.SelectedAccountType = ShareX.UploadersLib.AccountType.Anonymous;
-            // 
-            // lblTeknikUrlShortenerAPIUrl
-            // 
-            resources.ApplyResources(this.lblTeknikUrlShortenerAPIUrl, "lblTeknikUrlShortenerAPIUrl");
-            this.lblTeknikUrlShortenerAPIUrl.Name = "lblTeknikUrlShortenerAPIUrl";
-            // 
-            // tbTeknikUrlShortenerAPIUrl
-            // 
-            resources.ApplyResources(this.tbTeknikUrlShortenerAPIUrl, "tbTeknikUrlShortenerAPIUrl");
-            this.tbTeknikUrlShortenerAPIUrl.Name = "tbTeknikUrlShortenerAPIUrl";
-            this.tbTeknikUrlShortenerAPIUrl.TextChanged += new System.EventHandler(this.tbTeknikUrlShortenerAPIUrl_TextChanged);
             // 
             // UploadersConfigForm
             // 

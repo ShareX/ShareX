@@ -21,7 +21,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
         public override bool CheckConfig(UploadersConfig config)
         {
-            return OAuth2Info.CheckOAuth(config.TeknikOAuth2Info) && !string.IsNullOrEmpty(config.TeknikUploadAPIUrl) && !string.IsNullOrEmpty(config.TeknikAuthUrl);
+            return !string.IsNullOrEmpty(config.TeknikUploadAPIUrl) && !string.IsNullOrEmpty(config.TeknikAuthUrl);
         }
 
         public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
@@ -47,7 +47,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
         public override bool CheckConfig(UploadersConfig config)
         {
-            return OAuth2Info.CheckOAuth(config.TeknikOAuth2Info) && !string.IsNullOrEmpty(config.TeknikPasteAPIUrl) && !string.IsNullOrEmpty(config.TeknikAuthUrl);
+            return !string.IsNullOrEmpty(config.TeknikPasteAPIUrl) && !string.IsNullOrEmpty(config.TeknikAuthUrl);
         }
 
         public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
@@ -69,7 +69,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
         public override bool CheckConfig(UploadersConfig config)
         {
-            return OAuth2Info.CheckOAuth(config.TeknikOAuth2Info) && !string.IsNullOrEmpty(config.TeknikUrlShortenerAPIUrl) && !string.IsNullOrEmpty(config.TeknikAuthUrl);
+            return !string.IsNullOrEmpty(config.TeknikUrlShortenerAPIUrl) && !string.IsNullOrEmpty(config.TeknikAuthUrl);
         }
 
         public override URLShortener CreateShortener(UploadersConfig config, TaskReferenceHelper taskInfo)
@@ -149,9 +149,13 @@ namespace ShareX.UploadersLib.FileUploaders
 
         public NameValueCollection GetAuthHeaders()
         {
-            NameValueCollection headers = new NameValueCollection();
-            headers.Add("Authorization", "Bearer " + AuthInfo.Token.access_token);
-            return headers;
+            if (OAuth2Info.CheckOAuth(AuthInfo))
+            {
+                NameValueCollection headers = new NameValueCollection();
+                headers.Add("Authorization", "Bearer " + AuthInfo.Token.access_token);
+                return headers;
+            }
+            return null;
         }
     }
 

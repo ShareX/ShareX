@@ -759,7 +759,7 @@ when you made the application key.</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpBitly.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 569</value>
+    <value>972, 537</value>
   </data>
   <data name="tpBitly.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -1791,7 +1791,7 @@ when you made the application key.</value>
     <value>3, 3</value>
   </data>
   <data name="tcURLShorteners.Size" type="System.Drawing.Size, System.Drawing">
-    <value>980, 595</value>
+    <value>980, 563</value>
   </data>
   <data name="tcURLShorteners.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1815,7 +1815,7 @@ when you made the application key.</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpURLShorteners.Size" type="System.Drawing.Size, System.Drawing">
-    <value>986, 601</value>
+    <value>986, 569</value>
   </data>
   <data name="tpURLShorteners.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -3288,7 +3288,7 @@ when you made the application key.</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpFTP.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 551</value>
+    <value>972, 519</value>
   </data>
   <data name="tpFTP.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -8460,7 +8460,7 @@ when you made the application key.</value>
     <value>NoControl</value>
   </data>
   <data name="cbTeknikGenDeleteKey.Location" type="System.Drawing.Point, System.Drawing">
-    <value>390, 279</value>
+    <value>368, 156</value>
   </data>
   <data name="cbTeknikGenDeleteKey.Size" type="System.Drawing.Size, System.Drawing">
     <value>133, 17</value>
@@ -8490,7 +8490,7 @@ when you made the application key.</value>
     <value>NoControl</value>
   </data>
   <data name="cbTeknikEncrypt.Location" type="System.Drawing.Point, System.Drawing">
-    <value>390, 255</value>
+    <value>368, 132</value>
   </data>
   <data name="cbTeknikEncrypt.Size" type="System.Drawing.Size, System.Drawing">
     <value>129, 17</value>
@@ -8592,7 +8592,7 @@ when you made the application key.</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpTeknik.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 551</value>
+    <value>972, 519</value>
   </data>
   <data name="tpTeknik.TabIndex" type="System.Int32, mscorlib">
     <value>34</value>
@@ -11689,7 +11689,7 @@ Using an encrypted library disables sharing.</value>
     <value>3, 3</value>
   </data>
   <data name="tcFileUploaders.Size" type="System.Drawing.Size, System.Drawing">
-    <value>980, 595</value>
+    <value>980, 563</value>
   </data>
   <data name="tcFileUploaders.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -11713,7 +11713,7 @@ Using an encrypted library disables sharing.</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpFileUploaders.Size" type="System.Drawing.Size, System.Drawing">
-    <value>986, 601</value>
+    <value>986, 569</value>
   </data>
   <data name="tpFileUploaders.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -12178,7 +12178,7 @@ Using an encrypted library disables sharing.</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpPastebin.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 569</value>
+    <value>972, 537</value>
   </data>
   <data name="tpPastebin.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -12979,7 +12979,7 @@ Using an encrypted library disables sharing.</value>
     <value>3, 3</value>
   </data>
   <data name="tcTextUploaders.Size" type="System.Drawing.Size, System.Drawing">
-    <value>980, 595</value>
+    <value>980, 563</value>
   </data>
   <data name="tcTextUploaders.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -13003,7 +13003,7 @@ Using an encrypted library disables sharing.</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpTextUploaders.Size" type="System.Drawing.Size, System.Drawing">
-    <value>986, 601</value>
+    <value>986, 569</value>
   </data>
   <data name="tpTextUploaders.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -13519,7 +13519,7 @@ Using an encrypted library disables sharing.</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpImageShack.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 569</value>
+    <value>972, 537</value>
   </data>
   <data name="tpImageShack.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -13723,7 +13723,7 @@ Using an encrypted library disables sharing.</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpTinyPic.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 569</value>
+    <value>972, 537</value>
   </data>
   <data name="tpTinyPic.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -13801,7 +13801,7 @@ Using an encrypted library disables sharing.</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpFlickr.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 569</value>
+    <value>972, 537</value>
   </data>
   <data name="tpFlickr.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -14293,7 +14293,7 @@ Using an encrypted library disables sharing.</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpPhotobucket.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 569</value>
+    <value>972, 537</value>
   </data>
   <data name="tpPhotobucket.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -14563,7 +14563,7 @@ Using an encrypted library disables sharing.</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpGooglePhotos.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 569</value>
+    <value>972, 537</value>
   </data>
   <data name="tpGooglePhotos.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -14833,7 +14833,7 @@ Using an encrypted library disables sharing.</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpChevereto.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 569</value>
+    <value>972, 537</value>
   </data>
   <data name="tpChevereto.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -14941,7 +14941,7 @@ Using an encrypted library disables sharing.</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpVgyme.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 569</value>
+    <value>972, 537</value>
   </data>
   <data name="tpVgyme.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
