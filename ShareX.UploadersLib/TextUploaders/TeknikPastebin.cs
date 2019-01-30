@@ -1,12 +1,33 @@
-﻿using Newtonsoft.Json;
+﻿#region License Information (GPL v3)
+
+/*
+    ShareX - A program that allows you to take screenshots and share any file type
+    Copyright (c) 2007-2019 ShareX Team
+
+    This program is free software; you can redistribute it and/or
+    modify it under the terms of the GNU General Public License
+    as published by the Free Software Foundation; either version 2
+    of the License, or (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program; if not, write to the Free Software
+    Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+
+    Optionally you can also view the license at <http://www.gnu.org/licenses/>.
+*/
+
+#endregion License Information (GPL v3)
+
+using Newtonsoft.Json;
 using ShareX.UploadersLib.FileUploaders;
 using ShareX.UploadersLib.Properties;
-using System;
 using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.TextUploaders
@@ -30,31 +51,30 @@ namespace ShareX.UploadersLib.TextUploaders
             };
         }
 
-        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpGist;
+        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpTeknik;
     }
 
     public sealed class TeknikPaster : TextUploader, IOAuth2Basic
     {
-        private Teknik _Teknik;
-
         public OAuth2Info AuthInfo { get; set; }
-
         public string APIUrl { get; set; }
+
+        private Teknik teknik;
 
         public TeknikPaster(OAuth2Info oauth, string authUrl)
         {
-            _Teknik = new Teknik(oauth, authUrl);
-            AuthInfo = _Teknik.AuthInfo;
+            teknik = new Teknik(oauth, authUrl);
+            AuthInfo = teknik.AuthInfo;
         }
 
         public bool GetAccessToken(string code)
         {
-            return _Teknik.GetAccessToken(code);
+            return teknik.GetAccessToken(code);
         }
 
         public string GetAuthorizationURL()
         {
-            return _Teknik.GetAuthorizationURL();
+            return teknik.GetAuthorizationURL();
         }
 
         public override UploadResult UploadText(string text, string fileName)
@@ -62,7 +82,7 @@ namespace ShareX.UploadersLib.TextUploaders
             Dictionary<string, string> args = new Dictionary<string, string>();
             args.Add("code", text);
 
-            string response = SendRequestMultiPart(APIUrl, args, _Teknik.GetAuthHeaders(), null, HttpMethod.POST);
+            string response = SendRequestMultiPart(APIUrl, args, teknik.GetAuthHeaders());
             TeknikPasteResponseWrapper apiResponse = JsonConvert.DeserializeObject<TeknikPasteResponseWrapper>(response);
 
             UploadResult ur = new UploadResult();

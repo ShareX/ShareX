@@ -1,14 +1,35 @@
-﻿using Newtonsoft.Json;
+﻿#region License Information (GPL v3)
+
+/*
+    ShareX - A program that allows you to take screenshots and share any file type
+    Copyright (c) 2007-2019 ShareX Team
+
+    This program is free software; you can redistribute it and/or
+    modify it under the terms of the GNU General Public License
+    as published by the Free Software Foundation; either version 2
+    of the License, or (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program; if not, write to the Free Software
+    Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+
+    Optionally you can also view the license at <http://www.gnu.org/licenses/>.
+*/
+
+#endregion License Information (GPL v3)
+
+using Newtonsoft.Json;
 using ShareX.HelpersLib;
 using ShareX.UploadersLib.Properties;
-using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.FileUploaders
@@ -116,21 +137,19 @@ namespace ShareX.UploadersLib.FileUploaders
 
     public sealed class TeknikUploader : FileUploader, IOAuth2Basic
     {
-        private Teknik _Teknik;
-
         public OAuth2Info AuthInfo { get; set; }
-
         public string APIUrl { get; set; }
         public TeknikExpirationUnit ExpirationUnit { get; set; }
         public int ExpirationLength { get; set; }
-
         public bool Encryption { get; set; }
         public bool GenerateDeletionKey { get; set; }
 
+        private Teknik teknik;
+
         public TeknikUploader(OAuth2Info oauth, string authUrl)
         {
-            _Teknik = new Teknik(oauth, authUrl);
-            AuthInfo = _Teknik.AuthInfo;
+            teknik = new Teknik(oauth, authUrl);
+            AuthInfo = teknik.AuthInfo;
         }
 
         public override UploadResult Upload(Stream stream, string fileName)
@@ -144,7 +163,7 @@ namespace ShareX.UploadersLib.FileUploaders
             args.Add("blockSize", "128");
             args.Add("genDeletionKey", GenerateDeletionKey.ToString());
 
-            UploadResult result = SendRequestFile(APIUrl, stream, fileName, "file", args, _Teknik.GetAuthHeaders());
+            UploadResult result = SendRequestFile(APIUrl, stream, fileName, "file", args, teknik.GetAuthHeaders());
 
             if (result.IsSuccess)
             {
@@ -161,12 +180,12 @@ namespace ShareX.UploadersLib.FileUploaders
 
         public string GetAuthorizationURL()
         {
-            return _Teknik.GetAuthorizationURL();
+            return teknik.GetAuthorizationURL();
         }
 
         public bool GetAccessToken(string code)
         {
-            return _Teknik.GetAccessToken(code);
+            return teknik.GetAccessToken(code);
         }
     }
 
