@@ -242,34 +242,39 @@ namespace ShareX.UploadersLib
 
         public void ParseResponse(UploadResult result, ResponseInfo responseInfo, CustomUploaderInput input, bool isShortenedURL = false)
         {
-            if (result != null && responseInfo != null && responseInfo.IsSuccess && !string.IsNullOrEmpty(responseInfo.ResponseText))
+            if (result != null && responseInfo != null)
             {
-                CustomUploaderParser parser = new CustomUploaderParser(responseInfo, RegexList);
-                parser.Filename = input.Filename;
-                parser.URLEncode = true;
+                result.ResponseInfo = responseInfo;
 
-                string url;
+                if (responseInfo.IsSuccess && !string.IsNullOrEmpty(responseInfo.ResponseText))
+                {
+                    CustomUploaderParser parser = new CustomUploaderParser(responseInfo, RegexList);
+                    parser.Filename = input.Filename;
+                    parser.URLEncode = true;
 
-                if (!string.IsNullOrEmpty(URL))
-                {
-                    url = parser.Parse(URL);
-                }
-                else
-                {
-                    url = parser.ResponseInfo.ResponseText;
-                }
+                    string url;
 
-                if (isShortenedURL)
-                {
-                    result.ShortenedURL = url;
-                }
-                else
-                {
-                    result.URL = url;
-                }
+                    if (!string.IsNullOrEmpty(URL))
+                    {
+                        url = parser.Parse(URL);
+                    }
+                    else
+                    {
+                        url = parser.ResponseInfo.ResponseText;
+                    }
 
-                result.ThumbnailURL = parser.Parse(ThumbnailURL);
-                result.DeletionURL = parser.Parse(DeletionURL);
+                    if (isShortenedURL)
+                    {
+                        result.ShortenedURL = url;
+                    }
+                    else
+                    {
+                        result.URL = url;
+                    }
+
+                    result.ThumbnailURL = parser.Parse(ThumbnailURL);
+                    result.DeletionURL = parser.Parse(DeletionURL);
+                }
             }
         }
 

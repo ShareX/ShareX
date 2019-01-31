@@ -655,7 +655,7 @@ namespace ShareX.UploadersLib
                     }
 
                     rtbCustomUploaderResult.Text = sbResult.ToString();
-                    txtCustomUploaderResponse.Text = result.Response;
+                    txtCustomUploaderResponse.Text = result.ResponseInfo?.ResponseText;
 
                     tcCustomUploader.SelectedTab = tpCustomUploaderTest;
                 }

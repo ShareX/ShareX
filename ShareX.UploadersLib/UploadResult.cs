@@ -63,6 +63,8 @@ namespace ShareX.UploadersLib
             }
         }
 
+        public ResponseInfo ResponseInfo { get; set; }
+
         public UploadResult()
         {
             Errors = new List<string>();
