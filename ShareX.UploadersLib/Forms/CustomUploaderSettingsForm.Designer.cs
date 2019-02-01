@@ -43,6 +43,11 @@
             this.btnCustomUploaderURLShortenerTest = new System.Windows.Forms.Button();
             this.lblCustomUploaderTextUploader = new System.Windows.Forms.Label();
             this.gbCustomUploaders = new System.Windows.Forms.GroupBox();
+            this.btnCustomUploaderHelp = new ShareX.HelpersLib.MenuButton();
+            this.cmsCustomUploaderHelp = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.tsmiCustomUploaderGuide = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiCustomUploaderExamples = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiCustomUploaderExportAll = new System.Windows.Forms.ToolStripMenuItem();
             this.btnCustomUploaderNew = new System.Windows.Forms.Button();
             this.btnCustomUploaderDuplicate = new System.Windows.Forms.Button();
             this.btnCustomUploaderClearUploaders = new System.Windows.Forms.Button();
@@ -150,16 +155,12 @@
             this.cbCustomUploaderURLSharingService = new System.Windows.Forms.ComboBox();
             this.btnCustomUploaderURLSharingServiceTest = new System.Windows.Forms.Button();
             this.ttHelpTip = new System.Windows.Forms.ToolTip(this.components);
-            this.cmsCustomUploaderHelp = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.tsmiCustomUploaderGuide = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiCustomUploaderExamples = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiCustomUploaderExportAll = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnCustomUploaderHelp = new ShareX.HelpersLib.MenuButton();
             this.tscCustomUploaderResponseText.ContentPanel.SuspendLayout();
             this.tscCustomUploaderResponseText.TopToolStripPanel.SuspendLayout();
             this.tscCustomUploaderResponseText.SuspendLayout();
             this.tsCustomUploaderResponseText.SuspendLayout();
             this.gbCustomUploaders.SuspendLayout();
+            this.cmsCustomUploaderHelp.SuspendLayout();
             this.pCustomUploader.SuspendLayout();
             this.tcCustomUploader.SuspendLayout();
             this.tpCustomUploaderRequest.SuspendLayout();
@@ -183,7 +184,6 @@
             this.tpCustomUploaderResult.SuspendLayout();
             this.pCustomUploaderResult.SuspendLayout();
             this.tpCustomUploaderResponseText.SuspendLayout();
-            this.cmsCustomUploaderHelp.SuspendLayout();
             this.SuspendLayout();
             // 
             // tscCustomUploaderResponseText
@@ -292,6 +292,41 @@
             resources.ApplyResources(this.gbCustomUploaders, "gbCustomUploaders");
             this.gbCustomUploaders.Name = "gbCustomUploaders";
             this.gbCustomUploaders.TabStop = false;
+            // 
+            // btnCustomUploaderHelp
+            // 
+            resources.ApplyResources(this.btnCustomUploaderHelp, "btnCustomUploaderHelp");
+            this.btnCustomUploaderHelp.Menu = this.cmsCustomUploaderHelp;
+            this.btnCustomUploaderHelp.Name = "btnCustomUploaderHelp";
+            this.btnCustomUploaderHelp.UseVisualStyleBackColor = true;
+            // 
+            // cmsCustomUploaderHelp
+            // 
+            this.cmsCustomUploaderHelp.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiCustomUploaderGuide,
+            this.tsmiCustomUploaderExamples,
+            this.tsmiCustomUploaderExportAll});
+            this.cmsCustomUploaderHelp.Name = "cmsCustomUploaderHelp";
+            this.cmsCustomUploaderHelp.ShowImageMargin = false;
+            resources.ApplyResources(this.cmsCustomUploaderHelp, "cmsCustomUploaderHelp");
+            // 
+            // tsmiCustomUploaderGuide
+            // 
+            this.tsmiCustomUploaderGuide.Name = "tsmiCustomUploaderGuide";
+            resources.ApplyResources(this.tsmiCustomUploaderGuide, "tsmiCustomUploaderGuide");
+            this.tsmiCustomUploaderGuide.Click += new System.EventHandler(this.tsmiCustomUploaderGuide_Click);
+            // 
+            // tsmiCustomUploaderExamples
+            // 
+            this.tsmiCustomUploaderExamples.Name = "tsmiCustomUploaderExamples";
+            resources.ApplyResources(this.tsmiCustomUploaderExamples, "tsmiCustomUploaderExamples");
+            this.tsmiCustomUploaderExamples.Click += new System.EventHandler(this.tsmiCustomUploaderExamples_Click);
+            // 
+            // tsmiCustomUploaderExportAll
+            // 
+            this.tsmiCustomUploaderExportAll.Name = "tsmiCustomUploaderExportAll";
+            resources.ApplyResources(this.tsmiCustomUploaderExportAll, "tsmiCustomUploaderExportAll");
+            this.tsmiCustomUploaderExportAll.Click += new System.EventHandler(this.tsmiCustomUploaderExportAll_Click);
             // 
             // btnCustomUploaderNew
             // 
@@ -510,8 +545,6 @@
             // 
             // lvCustomUploaderHeaders
             // 
-            this.lvCustomUploaderHeaders.AllowDrop = true;
-            this.lvCustomUploaderHeaders.AllowItemDrag = true;
             this.lvCustomUploaderHeaders.AutoFillColumn = true;
             this.lvCustomUploaderHeaders.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.chCustomUploaderHeadersName,
@@ -551,8 +584,6 @@
             // 
             // lvCustomUploaderParameters
             // 
-            this.lvCustomUploaderParameters.AllowDrop = true;
-            this.lvCustomUploaderParameters.AllowItemDrag = true;
             this.lvCustomUploaderParameters.AutoFillColumn = true;
             this.lvCustomUploaderParameters.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
@@ -645,8 +676,6 @@
             // 
             // lvCustomUploaderArguments
             // 
-            this.lvCustomUploaderArguments.AllowDrop = true;
-            this.lvCustomUploaderArguments.AllowItemDrag = true;
             this.lvCustomUploaderArguments.AutoFillColumn = true;
             this.lvCustomUploaderArguments.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.chCustomUploaderArgumentsName,
@@ -982,8 +1011,6 @@
             // 
             // lvCustomUploaderRegexps
             // 
-            this.lvCustomUploaderRegexps.AllowDrop = true;
-            this.lvCustomUploaderRegexps.AllowItemDrag = true;
             this.lvCustomUploaderRegexps.AutoFillColumn = true;
             this.lvCustomUploaderRegexps.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.lvRegexpsColumn});
@@ -1108,43 +1135,9 @@
             this.ttHelpTip.UseAnimation = false;
             this.ttHelpTip.UseFading = false;
             // 
-            // cmsCustomUploaderHelp
-            // 
-            this.cmsCustomUploaderHelp.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmiCustomUploaderGuide,
-            this.tsmiCustomUploaderExamples,
-            this.tsmiCustomUploaderExportAll});
-            this.cmsCustomUploaderHelp.Name = "cmsCustomUploaderHelp";
-            this.cmsCustomUploaderHelp.ShowImageMargin = false;
-            resources.ApplyResources(this.cmsCustomUploaderHelp, "cmsCustomUploaderHelp");
-            // 
-            // tsmiCustomUploaderGuide
-            // 
-            this.tsmiCustomUploaderGuide.Name = "tsmiCustomUploaderGuide";
-            resources.ApplyResources(this.tsmiCustomUploaderGuide, "tsmiCustomUploaderGuide");
-            this.tsmiCustomUploaderGuide.Click += new System.EventHandler(this.tsmiCustomUploaderGuide_Click);
-            // 
-            // tsmiCustomUploaderExamples
-            // 
-            this.tsmiCustomUploaderExamples.Name = "tsmiCustomUploaderExamples";
-            resources.ApplyResources(this.tsmiCustomUploaderExamples, "tsmiCustomUploaderExamples");
-            this.tsmiCustomUploaderExamples.Click += new System.EventHandler(this.tsmiCustomUploaderExamples_Click);
-            // 
-            // tsmiCustomUploaderExportAll
-            // 
-            this.tsmiCustomUploaderExportAll.Name = "tsmiCustomUploaderExportAll";
-            resources.ApplyResources(this.tsmiCustomUploaderExportAll, "tsmiCustomUploaderExportAll");
-            this.tsmiCustomUploaderExportAll.Click += new System.EventHandler(this.tsmiCustomUploaderExportAll_Click);
-            // 
-            // btnCustomUploaderHelp
-            // 
-            resources.ApplyResources(this.btnCustomUploaderHelp, "btnCustomUploaderHelp");
-            this.btnCustomUploaderHelp.Menu = this.cmsCustomUploaderHelp;
-            this.btnCustomUploaderHelp.Name = "btnCustomUploaderHelp";
-            this.btnCustomUploaderHelp.UseVisualStyleBackColor = true;
-            // 
             // CustomUploaderSettingsForm
             // 
+            this.AllowDrop = true;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
@@ -1168,6 +1161,8 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "CustomUploaderSettingsForm";
+            this.DragDrop += new System.Windows.Forms.DragEventHandler(this.CustomUploaderSettingsForm_DragDrop);
+            this.DragEnter += new System.Windows.Forms.DragEventHandler(this.CustomUploaderSettingsForm_DragEnter);
             this.tscCustomUploaderResponseText.ContentPanel.ResumeLayout(false);
             this.tscCustomUploaderResponseText.ContentPanel.PerformLayout();
             this.tscCustomUploaderResponseText.TopToolStripPanel.ResumeLayout(false);
@@ -1177,6 +1172,7 @@
             this.tsCustomUploaderResponseText.ResumeLayout(false);
             this.tsCustomUploaderResponseText.PerformLayout();
             this.gbCustomUploaders.ResumeLayout(false);
+            this.cmsCustomUploaderHelp.ResumeLayout(false);
             this.pCustomUploader.ResumeLayout(false);
             this.pCustomUploader.PerformLayout();
             this.tcCustomUploader.ResumeLayout(false);
@@ -1207,7 +1203,6 @@
             this.tpCustomUploaderResult.ResumeLayout(false);
             this.pCustomUploaderResult.ResumeLayout(false);
             this.tpCustomUploaderResponseText.ResumeLayout(false);
-            this.cmsCustomUploaderHelp.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 

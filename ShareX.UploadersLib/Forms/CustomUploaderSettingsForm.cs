@@ -552,6 +552,27 @@ namespace ShareX.UploadersLib
             }
         }
 
+        private void AddTextToActiveURLField(string text)
+        {
+            RichTextBox rtb;
+
+            switch (customUploaderURLType)
+            {
+                default:
+                case URLType.URL:
+                    rtb = rtbCustomUploaderURL;
+                    break;
+                case URLType.ThumbnailURL:
+                    rtb = rtbCustomUploaderThumbnailURL;
+                    break;
+                case URLType.DeletionURL:
+                    rtb = rtbCustomUploaderDeletionURL;
+                    break;
+            }
+
+            rtb.AppendText(text);
+        }
+
         private async Task TestCustomUploader(CustomUploaderDestinationType type, int index)
         {
             if (!Config.CustomUploadersList.IsValidIndex(index))
@@ -732,6 +753,51 @@ namespace ShareX.UploadersLib
         }
 
         #region Form events
+
+        private void CustomUploaderSettingsForm_DragEnter(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.FileDrop, false))
+            {
+                string[] files = e.Data.GetData(DataFormats.FileDrop, false) as string[];
+
+                if (files != null && files.Any(x => !string.IsNullOrEmpty(x) && x.EndsWith(".sxcu")))
+                {
+                    e.Effect = DragDropEffects.Copy;
+                }
+                else
+                {
+                    e.Effect = DragDropEffects.None;
+                }
+            }
+            else
+            {
+                e.Effect = DragDropEffects.None;
+            }
+        }
+
+        private void CustomUploaderSettingsForm_DragDrop(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.FileDrop, false))
+            {
+                string[] files = e.Data.GetData(DataFormats.FileDrop, false) as string[];
+
+                if (files != null)
+                {
+                    foreach (string filePath in files.Where(x => !string.IsNullOrEmpty(x) && x.EndsWith(".sxcu")))
+                    {
+                        CustomUploaderItem cui = JsonHelpers.DeserializeFromFilePath<CustomUploaderItem>(filePath);
+
+                        if (cui != null)
+                        {
+                            cui.CheckBackwardCompatibility();
+                            CustomUploaderAdd(cui);
+                        }
+                    }
+
+                    eiCustomUploaders_ImportCompleted();
+                }
+            }
+        }
 
         private void btnCustomUploaderNew_Click(object sender, EventArgs e)
         {
@@ -1373,27 +1439,6 @@ namespace ShareX.UploadersLib
             CustomUploaderItem uploader = CustomUploaderGetSelected();
             if (uploader != null) uploader.DeletionURL = rtbCustomUploaderDeletionURL.Text;
             CustomUploaderSyntaxHighlight(rtbCustomUploaderDeletionURL);
-        }
-
-        private void AddTextToActiveURLField(string text)
-        {
-            RichTextBox rtb;
-
-            switch (customUploaderURLType)
-            {
-                default:
-                case URLType.URL:
-                    rtb = rtbCustomUploaderURL;
-                    break;
-                case URLType.ThumbnailURL:
-                    rtb = rtbCustomUploaderThumbnailURL;
-                    break;
-                case URLType.DeletionURL:
-                    rtb = rtbCustomUploaderDeletionURL;
-                    break;
-            }
-
-            rtb.AppendText(text);
         }
 
         private void txtCustomUploaderLog_LinkClicked(object sender, LinkClickedEventArgs e)
