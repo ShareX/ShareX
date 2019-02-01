@@ -1689,20 +1689,6 @@ namespace ShareX.UploadersLib
             }
         }
 
-        private void btnFTPClient_Click(object sender, EventArgs e)
-        {
-            FTPAccount account = FTPGetSelectedAccount();
-
-            if (account != null)
-            {
-                FTPOpenClient(account);
-            }
-            else
-            {
-                MessageBox.Show(Resources.UploadersConfigForm_FTPOpenClient_Unable_to_find_valid_FTP_account_, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-        }
-
         private object eiFTP_ExportRequested()
         {
             return FTPGetSelectedAccount();

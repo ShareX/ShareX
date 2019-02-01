@@ -208,9 +208,6 @@ namespace ShareX
                 case HotkeyType.VideoThumbnailer:
                     OpenVideoThumbnailer(safeTaskSettings);
                     break;
-                case HotkeyType.FTPClient:
-                    OpenFTPClient();
-                    break;
                 case HotkeyType.TweetMessage:
                     TweetMessage();
                     break;
@@ -1204,30 +1201,6 @@ namespace ShareX
             }
         }
 
-        public static void OpenFTPClient()
-        {
-            if (Program.UploadersConfig != null && Program.UploadersConfig.FTPAccountList != null)
-            {
-                FTPAccount account = Program.UploadersConfig.FTPAccountList.ReturnIfValidIndex(Program.UploadersConfig.FTPSelectedImage);
-
-                if (account != null)
-                {
-                    if (account.Protocol == FTPProtocol.FTP || account.Protocol == FTPProtocol.FTPS)
-                    {
-                        new FTPClientForm(account).Show();
-                    }
-                    else
-                    {
-                        MessageBox.Show(Resources.TaskHelpers_OpenFTPClient_FTP_client_only_supports_FTP_or_FTPS_, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-
-                    return;
-                }
-            }
-
-            MessageBox.Show(Resources.TaskHelpers_OpenFTPClient_Unable_to_find_valid_FTP_account_, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
-
         public static void TweetMessage()
         {
             if (Program.UploadersConfig != null && Program.UploadersConfig.TwitterOAuthInfoList != null)
@@ -1574,7 +1547,6 @@ namespace ShareX
                 case HotkeyType.IndexFolder: return Resources.folder_tree;
                 case HotkeyType.ImageCombiner: return Resources.document_break;
                 case HotkeyType.VideoThumbnailer: return Resources.images_stack;
-                case HotkeyType.FTPClient: return Resources.application_network;
                 case HotkeyType.TweetMessage: return Resources.Twitter;
                 case HotkeyType.MonitorTest: return Resources.monitor;
                 // Other

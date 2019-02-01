@@ -210,9 +210,6 @@ Are you sure you want to continue?</value>
   <data name="QRCodeForm_InputTextToEncode" xml:space="preserve">
     <value>Input text to encode</value>
   </data>
-  <data name="TaskHelpers_OpenFTPClient_Unable_to_find_valid_FTP_account_" xml:space="preserve">
-    <value>Unable to find a valid FTP account.</value>
-  </data>
   <data name="CaptureSound" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\CaptureSound.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -595,9 +592,6 @@ Please run ShareX as administrator to change personal folder path.</value>
   <data name="globe__arrow" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\globe--arrow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="TaskHelpers_OpenFTPClient_FTP_client_only_supports_FTP_or_FTPS_" xml:space="preserve">
-    <value>FTP client only supports FTP or FTPS.</value>
-  </data>
   <data name="arrow_090" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\arrow-090.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -653,9 +647,6 @@ Would you like to restart ShareX?</value>
   </data>
   <data name="ua" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ua.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="application_network" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\application-network.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="upload_cloud" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\upload-cloud.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -992,7 +983,7 @@ Middle click to close</value>
   <data name="ScreenRecordForm_DownloaderForm_InstallRequested_Download_of_FFmpeg_failed_" xml:space="preserve">
     <value>Download of FFmpeg failed.</value>
   </data>
-  <data name="network-cloud" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="network_cloud" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\network-cloud.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

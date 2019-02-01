@@ -183,17 +183,6 @@
     <Compile Include="Forms\PuushLoginForm.Designer.cs">
       <DependentUpon>PuushLoginForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="FTPClient\FTPClientForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FTPClient\FTPClientForm.Designer.cs">
-      <DependentUpon>FTPClientForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FTPClient\IconHelper.cs" />
-    <Compile Include="FTPClient\IconListManager.cs" />
-    <Compile Include="FTPClient\ListViewEx.cs">
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="Controls\AccountTypeControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -862,39 +851,6 @@
     <EmbeddedResource Include="Forms\UserPassBox.zh-TW.resx">
       <DependentUpon>UserPassBox.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FTPClient\FTPClientForm.de.resx">
-      <DependentUpon>FTPClientForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FTPClient\FTPClientForm.es-MX.resx">
-      <DependentUpon>FTPClientForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FTPClient\FTPClientForm.es.resx">
-      <DependentUpon>FTPClientForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FTPClient\FTPClientForm.fr.resx">
-      <DependentUpon>FTPClientForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FTPClient\FTPClientForm.hu.resx">
-      <DependentUpon>FTPClientForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FTPClient\FTPClientForm.id-ID.resx">
-      <DependentUpon>FTPClientForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FTPClient\FTPClientForm.it-IT.resx">
-      <DependentUpon>FTPClientForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FTPClient\FTPClientForm.ko-KR.resx">
-      <DependentUpon>FTPClientForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FTPClient\FTPClientForm.nl-NL.resx">
-      <DependentUpon>FTPClientForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FTPClient\FTPClientForm.pt-BR.resx">
-      <DependentUpon>FTPClientForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FTPClient\FTPClientForm.resx">
-      <DependentUpon>FTPClientForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Controls\AccountTypeControl.resx">
       <DependentUpon>AccountTypeControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -924,24 +880,6 @@
     <EmbeddedResource Include="Forms\TwitterTweetForm.resx">
       <DependentUpon>TwitterTweetForm.cs</DependentUpon>
       <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FTPClient\FTPClientForm.ru.resx">
-      <DependentUpon>FTPClientForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FTPClient\FTPClientForm.tr.resx">
-      <DependentUpon>FTPClientForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FTPClient\FTPClientForm.uk.resx">
-      <DependentUpon>FTPClientForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FTPClient\FTPClientForm.vi-VN.resx">
-      <DependentUpon>FTPClientForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FTPClient\FTPClientForm.zh-CN.resx">
-      <DependentUpon>FTPClientForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FTPClient\FTPClientForm.zh-TW.resx">
-      <DependentUpon>FTPClientForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.de.resx">
       <SubType>Designer</SubType>

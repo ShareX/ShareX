@@ -665,18 +665,6 @@ namespace ShareX.UploadersLib
             MessageBox.Show(msg, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        private void FTPOpenClient(FTPAccount account)
-        {
-            if (account.Protocol == FTPProtocol.FTP || account.Protocol == FTPProtocol.FTPS)
-            {
-                new FTPClientForm(account).Show();
-            }
-            else
-            {
-                MessageBox.Show(Resources.UploadersConfigForm_FTPOpenClient_FTP_client_only_supports_FTP_or_FTPS_, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-        }
-
         #endregion FTP
 
         #region SendSpace

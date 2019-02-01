@@ -89,7 +89,6 @@
             this.tsmiImageCombiner = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiImageThumbnailer = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiVideoThumbnailer = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiFTPClient = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTweetMessage = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiMonitorTest = new System.Windows.Forms.ToolStripMenuItem();
             this.tssMain1 = new System.Windows.Forms.ToolStripSeparator();
@@ -232,7 +231,6 @@
             this.tsmiTrayImageCombiner = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayImageThumbnailer = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayVideoThumbnailer = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiTrayFTPClient = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayTweetMessage = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayMonitorTest = new System.Windows.Forms.ToolStripMenuItem();
             this.tssTray1 = new System.Windows.Forms.ToolStripSeparator();
@@ -694,7 +692,6 @@
             this.tsmiImageCombiner,
             this.tsmiImageThumbnailer,
             this.tsmiVideoThumbnailer,
-            this.tsmiFTPClient,
             this.tsmiTweetMessage,
             this.tsmiMonitorTest});
             this.tsddbTools.Image = global::ShareX.Properties.Resources.toolbox;
@@ -784,13 +781,6 @@
             this.tsmiVideoThumbnailer.Name = "tsmiVideoThumbnailer";
             resources.ApplyResources(this.tsmiVideoThumbnailer, "tsmiVideoThumbnailer");
             this.tsmiVideoThumbnailer.Click += new System.EventHandler(this.tsmiVideoThumbnailer_Click);
-            // 
-            // tsmiFTPClient
-            // 
-            this.tsmiFTPClient.Image = global::ShareX.Properties.Resources.application_network;
-            this.tsmiFTPClient.Name = "tsmiFTPClient";
-            resources.ApplyResources(this.tsmiFTPClient, "tsmiFTPClient");
-            this.tsmiFTPClient.Click += new System.EventHandler(this.tsmiFTPClient_Click);
             // 
             // tsmiTweetMessage
             // 
@@ -1779,7 +1769,6 @@
             this.tsmiTrayImageCombiner,
             this.tsmiTrayImageThumbnailer,
             this.tsmiTrayVideoThumbnailer,
-            this.tsmiTrayFTPClient,
             this.tsmiTrayTweetMessage,
             this.tsmiTrayMonitorTest});
             this.tsmiTrayTools.Image = global::ShareX.Properties.Resources.toolbox;
@@ -1869,13 +1858,6 @@
             this.tsmiTrayVideoThumbnailer.Name = "tsmiTrayVideoThumbnailer";
             resources.ApplyResources(this.tsmiTrayVideoThumbnailer, "tsmiTrayVideoThumbnailer");
             this.tsmiTrayVideoThumbnailer.Click += new System.EventHandler(this.tsmiVideoThumbnailer_Click);
-            // 
-            // tsmiTrayFTPClient
-            // 
-            this.tsmiTrayFTPClient.Image = global::ShareX.Properties.Resources.application_network;
-            this.tsmiTrayFTPClient.Name = "tsmiTrayFTPClient";
-            resources.ApplyResources(this.tsmiTrayFTPClient, "tsmiTrayFTPClient");
-            this.tsmiTrayFTPClient.Click += new System.EventHandler(this.tsmiFTPClient_Click);
             // 
             // tsmiTrayTweetMessage
             // 
@@ -2373,8 +2355,6 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiOpenThumbnailFile;
         private System.Windows.Forms.ToolStripMenuItem tsmiCopyThumbnailFile;
         private System.Windows.Forms.ToolStripMenuItem tsmiCopyThumbnailImage;
-        private System.Windows.Forms.ToolStripMenuItem tsmiFTPClient;
-        private System.Windows.Forms.ToolStripMenuItem tsmiTrayFTPClient;
         private System.Windows.Forms.ToolStripMenuItem tsmiImageEditor;
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayImageEditor;
         private System.Windows.Forms.ToolStripDropDownButton tsddbWorkflows;

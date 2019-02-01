@@ -217,33 +217,6 @@ namespace ShareX.UploadersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Connecting to {0}.
-        /// </summary>
-        internal static string FTPClientForm_FTPClientForm_Connecting_to__0_ {
-            get {
-                return ResourceManager.GetString("FTPClientForm_FTPClientForm_Connecting_to__0_", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to ShareX FTP client.
-        /// </summary>
-        internal static string FTPClientForm_FTPClientForm_ShareX_FTP_client {
-            get {
-                return ResourceManager.GetString("FTPClientForm_FTPClientForm_ShareX_FTP_client", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Directory name to create.
-        /// </summary>
-        internal static string FTPClientForm_FTPCreateDirectory_Directory_name_to_create {
-            get {
-                return ResourceManager.GetString("FTPClientForm_FTPCreateDirectory_Directory_name_to_create", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
         internal static System.Drawing.Icon Gett {
@@ -784,15 +757,6 @@ namespace ShareX.UploadersLib.Properties {
         internal static string UploadersConfigForm_Error {
             get {
                 return ResourceManager.GetString("UploadersConfigForm_Error", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to FTP client only supports FTP or FTPS..
-        /// </summary>
-        internal static string UploadersConfigForm_FTPOpenClient_FTP_client_only_supports_FTP_or_FTPS_ {
-            get {
-                return ResourceManager.GetString("UploadersConfigForm_FTPOpenClient_FTP_client_only_supports_FTP_or_FTPS_", resourceCulture);
             }
         }
         

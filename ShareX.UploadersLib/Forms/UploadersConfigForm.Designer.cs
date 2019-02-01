@@ -141,7 +141,6 @@ namespace ShareX.UploadersLib
             this.pFTPTransferMode = new System.Windows.Forms.Panel();
             this.rbFTPTransferModeActive = new System.Windows.Forms.RadioButton();
             this.rbFTPTransferModePassive = new System.Windows.Forms.RadioButton();
-            this.btnFTPClient = new System.Windows.Forms.Button();
             this.txtFTPHost = new System.Windows.Forms.TextBox();
             this.pFTPProtocol = new System.Windows.Forms.Panel();
             this.rbFTPProtocolFTP = new System.Windows.Forms.RadioButton();
@@ -1259,7 +1258,6 @@ namespace ShareX.UploadersLib
             this.gbFTPAccount.Controls.Add(this.lblFTPHost);
             this.gbFTPAccount.Controls.Add(this.eiFTP);
             this.gbFTPAccount.Controls.Add(this.pFTPTransferMode);
-            this.gbFTPAccount.Controls.Add(this.btnFTPClient);
             this.gbFTPAccount.Controls.Add(this.txtFTPHost);
             this.gbFTPAccount.Controls.Add(this.pFTPProtocol);
             this.gbFTPAccount.Controls.Add(this.lblFTPPort);
@@ -1395,13 +1393,6 @@ namespace ShareX.UploadersLib
             this.rbFTPTransferModePassive.TabStop = true;
             this.rbFTPTransferModePassive.UseVisualStyleBackColor = true;
             this.rbFTPTransferModePassive.CheckedChanged += new System.EventHandler(this.rbFTPTransferModePassive_CheckedChanged);
-            // 
-            // btnFTPClient
-            // 
-            resources.ApplyResources(this.btnFTPClient, "btnFTPClient");
-            this.btnFTPClient.Name = "btnFTPClient";
-            this.btnFTPClient.UseVisualStyleBackColor = true;
-            this.btnFTPClient.Click += new System.EventHandler(this.btnFTPClient_Click);
             // 
             // txtFTPHost
             // 
@@ -5136,7 +5127,6 @@ namespace ShareX.UploadersLib
         private System.Windows.Forms.TextBox txtDropboxPath;
         private System.Windows.Forms.Button btnCopyShowFiles;
         internal System.Windows.Forms.TabPage tpFTP;
-        private System.Windows.Forms.Button btnFTPClient;
         private System.Windows.Forms.Label lblFTPFile;
         private System.Windows.Forms.Label lblFTPText;
         private System.Windows.Forms.Label lblFTPImage;

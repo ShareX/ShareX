@@ -424,16 +424,6 @@ namespace ShareX.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap application_network {
-            get {
-                object obj = ResourceManager.GetObject("application_network", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         public static System.Drawing.Bitmap application_task {
             get {
                 object obj = ResourceManager.GetObject("application_task", resourceCulture);
@@ -1872,7 +1862,7 @@ namespace ShareX.Properties {
         /// </summary>
         public static System.Drawing.Bitmap network_cloud {
             get {
-                object obj = ResourceManager.GetObject("network-cloud", resourceCulture);
+                object obj = ResourceManager.GetObject("network_cloud", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -2215,24 +2205,6 @@ namespace ShareX.Properties {
         public static System.IO.UnmanagedMemoryStream TaskCompletedSound {
             get {
                 return ResourceManager.GetStream("TaskCompletedSound", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to FTP client only supports FTP or FTPS..
-        /// </summary>
-        public static string TaskHelpers_OpenFTPClient_FTP_client_only_supports_FTP_or_FTPS_ {
-            get {
-                return ResourceManager.GetString("TaskHelpers_OpenFTPClient_FTP_client_only_supports_FTP_or_FTPS_", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Unable to find a valid FTP account..
-        /// </summary>
-        public static string TaskHelpers_OpenFTPClient_Unable_to_find_valid_FTP_account_ {
-            get {
-                return ResourceManager.GetString("TaskHelpers_OpenFTPClient_Unable_to_find_valid_FTP_account_", resourceCulture);
             }
         }
         
