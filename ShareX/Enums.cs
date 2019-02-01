@@ -210,7 +210,6 @@ namespace ShareX
         IndexFolder,
         ImageCombiner,
         VideoThumbnailer,
-        FTPClient,
         TweetMessage,
         MonitorTest,
         // Other
