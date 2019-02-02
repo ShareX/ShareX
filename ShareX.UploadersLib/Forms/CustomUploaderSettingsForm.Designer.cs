@@ -30,6 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomUploaderSettingsForm));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tscCustomUploaderResponseText = new System.Windows.Forms.ToolStripContainer();
             this.txtCustomUploaderResponse = new System.Windows.Forms.TextBox();
             this.tsCustomUploaderResponseText = new System.Windows.Forms.ToolStrip();
@@ -63,26 +65,20 @@
             this.pCustomUploader = new System.Windows.Forms.Panel();
             this.tcCustomUploader = new System.Windows.Forms.TabControl();
             this.tpCustomUploaderRequest = new System.Windows.Forms.TabPage();
+            this.dgvParameters = new System.Windows.Forms.DataGridView();
+            this.chParametersName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chParametersValue = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pCustomUploaderHeaderValue = new System.Windows.Forms.Panel();
             this.rtbCustomUploaderHeaderValue = new System.Windows.Forms.RichTextBox();
             this.lblCustomUploaderHeaders = new System.Windows.Forms.Label();
             this.btnCustomUploaderHeaderUpdate = new System.Windows.Forms.Button();
             this.lblCustomUploaderParameters = new System.Windows.Forms.Label();
             this.txtCustomUploaderHeaderName = new System.Windows.Forms.TextBox();
-            this.pCustomUploaderParameterValue = new System.Windows.Forms.Panel();
-            this.rtbCustomUploaderParameterValue = new System.Windows.Forms.RichTextBox();
             this.btnCustomUploaderHeaderAdd = new System.Windows.Forms.Button();
-            this.btnCustomUploaderParameterUpdate = new System.Windows.Forms.Button();
             this.btnCustomUploaderHeaderRemove = new System.Windows.Forms.Button();
-            this.txtCustomUploaderParameterName = new System.Windows.Forms.TextBox();
             this.lvCustomUploaderHeaders = new ShareX.HelpersLib.MyListView();
             this.chCustomUploaderHeadersName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chCustomUploaderHeadersValue = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.btnCustomUploaderParameterAdd = new System.Windows.Forms.Button();
-            this.btnCustomUploaderParameterRemove = new System.Windows.Forms.Button();
-            this.lvCustomUploaderParameters = new ShareX.HelpersLib.MyListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.pCustomUploaderRequestURL = new System.Windows.Forms.Panel();
             this.rtbCustomUploaderRequestURL = new System.Windows.Forms.RichTextBox();
             this.cbCustomUploaderRequestMethod = new System.Windows.Forms.ComboBox();
@@ -164,8 +160,8 @@
             this.pCustomUploader.SuspendLayout();
             this.tcCustomUploader.SuspendLayout();
             this.tpCustomUploaderRequest.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvParameters)).BeginInit();
             this.pCustomUploaderHeaderValue.SuspendLayout();
-            this.pCustomUploaderParameterValue.SuspendLayout();
             this.pCustomUploaderRequestURL.SuspendLayout();
             this.pCustomUploaderBodyArguments.SuspendLayout();
             this.pCustomUploaderArgumentValue.SuspendLayout();
@@ -437,20 +433,15 @@
             // 
             // tpCustomUploaderRequest
             // 
+            this.tpCustomUploaderRequest.Controls.Add(this.dgvParameters);
             this.tpCustomUploaderRequest.Controls.Add(this.pCustomUploaderHeaderValue);
             this.tpCustomUploaderRequest.Controls.Add(this.lblCustomUploaderHeaders);
             this.tpCustomUploaderRequest.Controls.Add(this.btnCustomUploaderHeaderUpdate);
             this.tpCustomUploaderRequest.Controls.Add(this.lblCustomUploaderParameters);
             this.tpCustomUploaderRequest.Controls.Add(this.txtCustomUploaderHeaderName);
-            this.tpCustomUploaderRequest.Controls.Add(this.pCustomUploaderParameterValue);
             this.tpCustomUploaderRequest.Controls.Add(this.btnCustomUploaderHeaderAdd);
-            this.tpCustomUploaderRequest.Controls.Add(this.btnCustomUploaderParameterUpdate);
             this.tpCustomUploaderRequest.Controls.Add(this.btnCustomUploaderHeaderRemove);
-            this.tpCustomUploaderRequest.Controls.Add(this.txtCustomUploaderParameterName);
             this.tpCustomUploaderRequest.Controls.Add(this.lvCustomUploaderHeaders);
-            this.tpCustomUploaderRequest.Controls.Add(this.btnCustomUploaderParameterAdd);
-            this.tpCustomUploaderRequest.Controls.Add(this.btnCustomUploaderParameterRemove);
-            this.tpCustomUploaderRequest.Controls.Add(this.lvCustomUploaderParameters);
             this.tpCustomUploaderRequest.Controls.Add(this.pCustomUploaderRequestURL);
             this.tpCustomUploaderRequest.Controls.Add(this.cbCustomUploaderRequestMethod);
             this.tpCustomUploaderRequest.Controls.Add(this.lblCustomUploaderRequestURL);
@@ -462,6 +453,53 @@
             resources.ApplyResources(this.tpCustomUploaderRequest, "tpCustomUploaderRequest");
             this.tpCustomUploaderRequest.Name = "tpCustomUploaderRequest";
             this.tpCustomUploaderRequest.UseVisualStyleBackColor = true;
+            // 
+            // dgvParameters
+            // 
+            this.dgvParameters.AllowUserToResizeRows = false;
+            this.dgvParameters.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.dgvParameters.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(0, 2, 0, 2);
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvParameters.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvParameters.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvParameters.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.chParametersName,
+            this.chParametersValue});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvParameters.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvParameters.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
+            this.dgvParameters.GridColor = System.Drawing.SystemColors.ControlLight;
+            resources.ApplyResources(this.dgvParameters, "dgvParameters");
+            this.dgvParameters.MultiSelect = false;
+            this.dgvParameters.Name = "dgvParameters";
+            this.dgvParameters.RowHeadersVisible = false;
+            this.dgvParameters.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvParameters_CellEndEdit);
+            // 
+            // chParametersName
+            // 
+            resources.ApplyResources(this.chParametersName, "chParametersName");
+            this.chParametersName.Name = "chParametersName";
+            this.chParametersName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // chParametersValue
+            // 
+            this.chParametersValue.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            resources.ApplyResources(this.chParametersValue, "chParametersValue");
+            this.chParametersValue.Name = "chParametersValue";
+            this.chParametersValue.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // pCustomUploaderHeaderValue
             // 
@@ -501,21 +539,6 @@
             this.txtCustomUploaderHeaderName.Name = "txtCustomUploaderHeaderName";
             this.txtCustomUploaderHeaderName.TextChanged += new System.EventHandler(this.txtCustomUploaderHeaderName_TextChanged);
             // 
-            // pCustomUploaderParameterValue
-            // 
-            this.pCustomUploaderParameterValue.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pCustomUploaderParameterValue.Controls.Add(this.rtbCustomUploaderParameterValue);
-            resources.ApplyResources(this.pCustomUploaderParameterValue, "pCustomUploaderParameterValue");
-            this.pCustomUploaderParameterValue.Name = "pCustomUploaderParameterValue";
-            // 
-            // rtbCustomUploaderParameterValue
-            // 
-            this.rtbCustomUploaderParameterValue.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.rtbCustomUploaderParameterValue.DetectUrls = false;
-            resources.ApplyResources(this.rtbCustomUploaderParameterValue, "rtbCustomUploaderParameterValue");
-            this.rtbCustomUploaderParameterValue.Name = "rtbCustomUploaderParameterValue";
-            this.rtbCustomUploaderParameterValue.TextChanged += new System.EventHandler(this.rtbCustomUploaderParameterValue_TextChanged);
-            // 
             // btnCustomUploaderHeaderAdd
             // 
             resources.ApplyResources(this.btnCustomUploaderHeaderAdd, "btnCustomUploaderHeaderAdd");
@@ -523,25 +546,12 @@
             this.btnCustomUploaderHeaderAdd.UseVisualStyleBackColor = true;
             this.btnCustomUploaderHeaderAdd.Click += new System.EventHandler(this.btnCustomUploaderHeaderAdd_Click);
             // 
-            // btnCustomUploaderParameterUpdate
-            // 
-            resources.ApplyResources(this.btnCustomUploaderParameterUpdate, "btnCustomUploaderParameterUpdate");
-            this.btnCustomUploaderParameterUpdate.Name = "btnCustomUploaderParameterUpdate";
-            this.btnCustomUploaderParameterUpdate.UseVisualStyleBackColor = true;
-            this.btnCustomUploaderParameterUpdate.Click += new System.EventHandler(this.btnCustomUploaderParameterUpdate_Click);
-            // 
             // btnCustomUploaderHeaderRemove
             // 
             resources.ApplyResources(this.btnCustomUploaderHeaderRemove, "btnCustomUploaderHeaderRemove");
             this.btnCustomUploaderHeaderRemove.Name = "btnCustomUploaderHeaderRemove";
             this.btnCustomUploaderHeaderRemove.UseVisualStyleBackColor = true;
             this.btnCustomUploaderHeaderRemove.Click += new System.EventHandler(this.btnCustomUploaderHeaderRemove_Click);
-            // 
-            // txtCustomUploaderParameterName
-            // 
-            resources.ApplyResources(this.txtCustomUploaderParameterName, "txtCustomUploaderParameterName");
-            this.txtCustomUploaderParameterName.Name = "txtCustomUploaderParameterName";
-            this.txtCustomUploaderParameterName.TextChanged += new System.EventHandler(this.txtCustomUploaderParameterName_TextChanged);
             // 
             // lvCustomUploaderHeaders
             // 
@@ -567,45 +577,6 @@
             // chCustomUploaderHeadersValue
             // 
             resources.ApplyResources(this.chCustomUploaderHeadersValue, "chCustomUploaderHeadersValue");
-            // 
-            // btnCustomUploaderParameterAdd
-            // 
-            resources.ApplyResources(this.btnCustomUploaderParameterAdd, "btnCustomUploaderParameterAdd");
-            this.btnCustomUploaderParameterAdd.Name = "btnCustomUploaderParameterAdd";
-            this.btnCustomUploaderParameterAdd.UseVisualStyleBackColor = true;
-            this.btnCustomUploaderParameterAdd.Click += new System.EventHandler(this.btnCustomUploaderParameterAdd_Click);
-            // 
-            // btnCustomUploaderParameterRemove
-            // 
-            resources.ApplyResources(this.btnCustomUploaderParameterRemove, "btnCustomUploaderParameterRemove");
-            this.btnCustomUploaderParameterRemove.Name = "btnCustomUploaderParameterRemove";
-            this.btnCustomUploaderParameterRemove.UseVisualStyleBackColor = true;
-            this.btnCustomUploaderParameterRemove.Click += new System.EventHandler(this.btnCustomUploaderParameterRemove_Click);
-            // 
-            // lvCustomUploaderParameters
-            // 
-            this.lvCustomUploaderParameters.AutoFillColumn = true;
-            this.lvCustomUploaderParameters.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2});
-            this.lvCustomUploaderParameters.FullRowSelect = true;
-            this.lvCustomUploaderParameters.GridLines = true;
-            this.lvCustomUploaderParameters.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
-            this.lvCustomUploaderParameters.HideSelection = false;
-            resources.ApplyResources(this.lvCustomUploaderParameters, "lvCustomUploaderParameters");
-            this.lvCustomUploaderParameters.MultiSelect = false;
-            this.lvCustomUploaderParameters.Name = "lvCustomUploaderParameters";
-            this.lvCustomUploaderParameters.UseCompatibleStateImageBehavior = false;
-            this.lvCustomUploaderParameters.View = System.Windows.Forms.View.Details;
-            this.lvCustomUploaderParameters.SelectedIndexChanged += new System.EventHandler(this.lvCustomUploaderParameters_SelectedIndexChanged);
-            // 
-            // columnHeader1
-            // 
-            resources.ApplyResources(this.columnHeader1, "columnHeader1");
-            // 
-            // columnHeader2
-            // 
-            resources.ApplyResources(this.columnHeader2, "columnHeader2");
             // 
             // pCustomUploaderRequestURL
             // 
@@ -1178,8 +1149,8 @@
             this.tcCustomUploader.ResumeLayout(false);
             this.tpCustomUploaderRequest.ResumeLayout(false);
             this.tpCustomUploaderRequest.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvParameters)).EndInit();
             this.pCustomUploaderHeaderValue.ResumeLayout(false);
-            this.pCustomUploaderParameterValue.ResumeLayout(false);
             this.pCustomUploaderRequestURL.ResumeLayout(false);
             this.pCustomUploaderBodyArguments.ResumeLayout(false);
             this.pCustomUploaderBodyArguments.PerformLayout();
@@ -1238,20 +1209,11 @@
         private System.Windows.Forms.Button btnCustomUploaderHeaderUpdate;
         private System.Windows.Forms.Label lblCustomUploaderParameters;
         private System.Windows.Forms.TextBox txtCustomUploaderHeaderName;
-        private System.Windows.Forms.Panel pCustomUploaderParameterValue;
-        private System.Windows.Forms.RichTextBox rtbCustomUploaderParameterValue;
         private System.Windows.Forms.Button btnCustomUploaderHeaderAdd;
-        private System.Windows.Forms.Button btnCustomUploaderParameterUpdate;
         private System.Windows.Forms.Button btnCustomUploaderHeaderRemove;
-        private System.Windows.Forms.TextBox txtCustomUploaderParameterName;
         private HelpersLib.MyListView lvCustomUploaderHeaders;
         private System.Windows.Forms.ColumnHeader chCustomUploaderHeadersName;
         private System.Windows.Forms.ColumnHeader chCustomUploaderHeadersValue;
-        private System.Windows.Forms.Button btnCustomUploaderParameterAdd;
-        private System.Windows.Forms.Button btnCustomUploaderParameterRemove;
-        private HelpersLib.MyListView lvCustomUploaderParameters;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.Panel pCustomUploaderRequestURL;
         private System.Windows.Forms.RichTextBox rtbCustomUploaderRequestURL;
         private System.Windows.Forms.ComboBox cbCustomUploaderRequestMethod;
@@ -1335,5 +1297,8 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiCustomUploaderExamples;
         private System.Windows.Forms.ToolStripMenuItem tsmiCustomUploaderExportAll;
         private HelpersLib.MenuButton btnCustomUploaderHelp;
+        private System.Windows.Forms.DataGridView dgvParameters;
+        private System.Windows.Forms.DataGridViewTextBoxColumn chParametersName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn chParametersValue;
     }
 }

@@ -71,8 +71,6 @@ namespace ShareX.UploadersLib
                 new CodeMenuItem("$base64:input$", "Base64 encode input")
             };
 
-            CodeMenu.Create<CodeMenuEntryFilename>(rtbCustomUploaderParameterValue,
-                new CodeMenuEntryFilename[] { CodeMenuEntryFilename.n, CodeMenuEntryFilename.t, CodeMenuEntryFilename.pn }, inputCodeMenuItems);
             CodeMenu.Create<CodeMenuEntryFilename>(rtbCustomUploaderHeaderValue,
                 new CodeMenuEntryFilename[] { CodeMenuEntryFilename.n, CodeMenuEntryFilename.t, CodeMenuEntryFilename.pn }, inputCodeMenuItems);
             CodeMenu.Create<CodeMenuEntryFilename>(rtbCustomUploaderArgumentValue,
@@ -98,7 +96,6 @@ namespace ShareX.UploadersLib
             CodeMenu.Create(rtbCustomUploaderDeletionURL, outputCodeMenuItems);
 
             rtbCustomUploaderRequestURL.AddContextMenu();
-            rtbCustomUploaderParameterValue.AddContextMenu();
             rtbCustomUploaderHeaderValue.AddContextMenu();
             rtbCustomUploaderArgumentValue.AddContextMenu();
             rtbCustomUploaderData.AddContextMenu();
@@ -196,14 +193,12 @@ namespace ShareX.UploadersLib
 
             txtCustomUploaderFileFormName.Text = uploader.FileFormName ?? "";
 
-            txtCustomUploaderParameterName.Text = "";
-            rtbCustomUploaderParameterValue.Text = "";
-            lvCustomUploaderParameters.Items.Clear();
+            dgvParameters.Rows.Clear();
             if (uploader.Parameters != null)
             {
                 foreach (KeyValuePair<string, string> arg in uploader.Parameters)
                 {
-                    lvCustomUploaderParameters.Items.Add(arg.Key).SubItems.Add(arg.Value);
+                    dgvParameters.Rows.Add(new string[] { arg.Key, arg.Value });
                 }
             }
 
@@ -249,7 +244,6 @@ namespace ShareX.UploadersLib
 
             if (isSelected)
             {
-                CustomUploaderUpdateParametersState();
                 CustomUploaderUpdateHeadersState();
                 CustomUploaderUpdateRequestFormatState();
                 CustomUploaderUpdateArgumentsState();
@@ -274,12 +268,6 @@ namespace ShareX.UploadersLib
                 pCustomUploaderBodyData.Visible = uploader.Body == CustomUploaderBody.JSON || uploader.Body == CustomUploaderBody.XML;
                 btnCustomUploaderDataMinify.Visible = uploader.Body == CustomUploaderBody.JSON;
             }
-        }
-
-        private void CustomUploaderUpdateParametersState()
-        {
-            btnCustomUploaderParameterAdd.Enabled = !string.IsNullOrEmpty(txtCustomUploaderParameterName.Text);
-            btnCustomUploaderParameterRemove.Enabled = btnCustomUploaderParameterUpdate.Enabled = lvCustomUploaderParameters.SelectedItems.Count > 0;
         }
 
         private void CustomUploaderUpdateHeadersState()
@@ -456,6 +444,66 @@ namespace ShareX.UploadersLib
             }
 
             return destinationType;
+        }
+
+        private void CheckDataGridView(DataGridView dgv)
+        {
+            for (int i = dgv.Rows.Count - 1; i > -1; i--)
+            {
+                DataGridViewRow row = dgv.Rows[i];
+                DataGridViewCell cell = row.Cells[0];
+
+                if (cell.Value == null)
+                {
+                    if (!row.IsNewRow)
+                    {
+                        dgv.Rows.RemoveAt(i);
+                    }
+                }
+                else
+                {
+                    bool isDuplicate = false;
+
+                    for (int i2 = 0; i2 < i; i2++)
+                    {
+                        if (dgv.Rows[i2].Cells[0].Value?.ToString() == cell.Value.ToString())
+                        {
+                            isDuplicate = true;
+                            break;
+                        }
+                    }
+
+                    if (isDuplicate)
+                    {
+                        // TODO: Translate
+                        cell.ErrorText = "Duplicate name not allowed.";
+                    }
+                    else
+                    {
+                        cell.ErrorText = null;
+                    }
+                }
+            }
+        }
+
+        private Dictionary<string, string> DataGridViewToDictionary(DataGridView dgv)
+        {
+            Dictionary<string, string> dic = new Dictionary<string, string>();
+
+            for (int i = 0; i < dgv.Rows.Count; i++)
+            {
+                DataGridViewRow row = dgv.Rows[i];
+                string name = row.Cells[0].Value?.ToString();
+
+                if (!string.IsNullOrEmpty(name) && !dic.ContainsKey(name))
+                {
+                    string value = row.Cells[1].Value?.ToString();
+
+                    dic.Add(name, value);
+                }
+            }
+
+            return dic;
         }
 
         private void CustomUploaderDestinationTypeUpdate()
@@ -1072,96 +1120,12 @@ namespace ShareX.UploadersLib
             CustomUploaderUpdateArgumentsState();
         }
 
-        private void txtCustomUploaderParameterName_TextChanged(object sender, EventArgs e)
+        private void dgvParameters_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
-            CustomUploaderUpdateParametersState();
-        }
+            CheckDataGridView(dgvParameters);
 
-        private void rtbCustomUploaderParameterValue_TextChanged(object sender, EventArgs e)
-        {
-            CustomUploaderSyntaxHighlight(rtbCustomUploaderParameterValue);
-        }
-
-        private void btnCustomUploaderParameterAdd_Click(object sender, EventArgs e)
-        {
-            string name = txtCustomUploaderParameterName.Text;
-
-            if (!string.IsNullOrEmpty(name))
-            {
-                CustomUploaderItem uploader = CustomUploaderGetSelected();
-                if (uploader != null)
-                {
-                    if (uploader.Parameters == null) uploader.Parameters = new Dictionary<string, string>();
-
-                    if (uploader.Parameters.ContainsKey(name))
-                    {
-                        // TODO: Translate
-                        MessageBox.Show("A parameter with the same name already exists.", "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    }
-                    else
-                    {
-                        string value = rtbCustomUploaderParameterValue.Text;
-                        lvCustomUploaderParameters.Items.Add(name).SubItems.Add(value);
-                        uploader.Parameters.Add(name, value);
-
-                        lvCustomUploaderParameters.SelectedItems.Clear();
-                        txtCustomUploaderParameterName.Text = "";
-                        rtbCustomUploaderParameterValue.Text = "";
-                        txtCustomUploaderParameterName.Focus();
-                    }
-                }
-            }
-        }
-
-        private void btnCustomUploaderParameterRemove_Click(object sender, EventArgs e)
-        {
-            if (lvCustomUploaderParameters.SelectedItems.Count > 0)
-            {
-                CustomUploaderItem uploader = CustomUploaderGetSelected();
-                if (uploader != null) uploader.Parameters.Remove(lvCustomUploaderParameters.SelectedItems[0].Text);
-
-                lvCustomUploaderParameters.SelectedItems[0].Remove();
-            }
-        }
-
-        private void btnCustomUploaderParameterUpdate_Click(object sender, EventArgs e)
-        {
-            if (lvCustomUploaderParameters.SelectedItems.Count > 0)
-            {
-                string name = txtCustomUploaderParameterName.Text;
-
-                if (!string.IsNullOrEmpty(name))
-                {
-                    string value = rtbCustomUploaderParameterValue.Text;
-
-                    CustomUploaderItem uploader = CustomUploaderGetSelected();
-                    if (uploader != null)
-                    {
-                        uploader.Parameters.Remove(lvCustomUploaderParameters.SelectedItems[0].Text);
-                        uploader.Parameters.Add(name, value);
-                    }
-
-                    lvCustomUploaderParameters.SelectedItems[0].Text = name;
-                    lvCustomUploaderParameters.SelectedItems[0].SubItems[1].Text = value;
-                }
-            }
-        }
-
-        private void lvCustomUploaderParameters_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            string name = "";
-            string value = "";
-
-            if (lvCustomUploaderParameters.SelectedItems.Count > 0)
-            {
-                name = lvCustomUploaderParameters.SelectedItems[0].Text;
-                value = lvCustomUploaderParameters.SelectedItems[0].SubItems[1].Text;
-            }
-
-            txtCustomUploaderParameterName.Text = name;
-            rtbCustomUploaderParameterValue.Text = value;
-
-            CustomUploaderUpdateParametersState();
+            CustomUploaderItem uploader = CustomUploaderGetSelected();
+            if (uploader != null) uploader.Parameters = DataGridViewToDictionary(dgvParameters);
         }
 
         private void txtCustomUploaderHeaderName_TextChanged(object sender, EventArgs e)
