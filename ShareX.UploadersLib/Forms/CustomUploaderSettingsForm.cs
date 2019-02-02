@@ -61,6 +61,7 @@ namespace ShareX.UploadersLib
             InitializeComponent();
             Icon = ShareXResources.Icon;
 
+            /*
             CodeMenuItem[] inputCodeMenuItems = new CodeMenuItem[]
             {
                 new CodeMenuItem("$input$", "Text/URL input"),
@@ -70,6 +71,7 @@ namespace ShareX.UploadersLib
                 new CodeMenuItem("$prompt:title|default_value$", "Lets user to input text"),
                 new CodeMenuItem("$base64:input$", "Base64 encode input")
             };
+            */
 
             CodeMenuItem[] outputCodeMenuItems = new CodeMenuItem[]
             {
@@ -969,7 +971,39 @@ namespace ShareX.UploadersLib
             CustomUploaderUpdateRequestFormatState();
         }
 
-        private void dgvParameters_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        private void dgv_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
+        {
+            if (((DataGridView)sender).CurrentCell.ColumnIndex == 1)
+            {
+                if (e.Control is TextBox tb)
+                {
+                    if (tb.AutoCompleteCustomSource == null || tb.AutoCompleteCustomSource.Count == 0)
+                    {
+                        AutoCompleteStringCollection col = new AutoCompleteStringCollection();
+                        col.Add("$input$");
+                        col.Add("$filename$");
+                        col.Add("$random:");
+                        col.Add("$select:");
+                        col.Add("$prompt:");
+                        col.Add("$base64:");
+
+                        tb.AutoCompleteCustomSource = col;
+                        tb.AutoCompleteSource = AutoCompleteSource.CustomSource;
+                    }
+
+                    tb.AutoCompleteMode = AutoCompleteMode.Suggest;
+                }
+            }
+            else
+            {
+                if (e.Control is TextBox tb)
+                {
+                    tb.AutoCompleteMode = AutoCompleteMode.None;
+                }
+            }
+        }
+
+        private void dgvParameters_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
             CheckDataGridView(dgvParameters);
 
@@ -977,7 +1011,7 @@ namespace ShareX.UploadersLib
             if (uploader != null) uploader.Parameters = DataGridViewToDictionary(dgvParameters);
         }
 
-        private void dgvHeaders_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        private void dgvHeaders_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
             CheckDataGridView(dgvHeaders);
 
@@ -985,7 +1019,7 @@ namespace ShareX.UploadersLib
             if (uploader != null) uploader.Headers = DataGridViewToDictionary(dgvHeaders);
         }
 
-        private void dgvArguments_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        private void dgvArguments_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
             CheckDataGridView(dgvArguments);
 

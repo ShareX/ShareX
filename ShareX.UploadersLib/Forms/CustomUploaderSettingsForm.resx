@@ -2766,18 +2766,6 @@ store.book[0].title</value>
   <data name="&gt;&gt;chParametersValue.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;lvRegexpsColumn.Name" xml:space="preserve">
-    <value>lvRegexpsColumn</value>
-  </data>
-  <data name="&gt;&gt;lvRegexpsColumn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ttHelpTip.Name" xml:space="preserve">
-    <value>ttHelpTip</value>
-  </data>
-  <data name="&gt;&gt;ttHelpTip.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;dataGridViewTextBoxColumn3.Name" xml:space="preserve">
     <value>dataGridViewTextBoxColumn3</value>
   </data>
@@ -2789,6 +2777,18 @@ store.book[0].title</value>
   </data>
   <data name="&gt;&gt;dataGridViewTextBoxColumn4.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lvRegexpsColumn.Name" xml:space="preserve">
+    <value>lvRegexpsColumn</value>
+  </data>
+  <data name="&gt;&gt;lvRegexpsColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ttHelpTip.Name" xml:space="preserve">
+    <value>ttHelpTip</value>
+  </data>
+  <data name="&gt;&gt;ttHelpTip.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>CustomUploaderSettingsForm</value>

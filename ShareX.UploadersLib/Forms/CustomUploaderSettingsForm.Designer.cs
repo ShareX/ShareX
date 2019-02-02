@@ -85,6 +85,9 @@
             this.lblCustomUploaderRequestMethod = new System.Windows.Forms.Label();
             this.lblCustomUploaderBody = new System.Windows.Forms.Label();
             this.pCustomUploaderBodyArguments = new System.Windows.Forms.Panel();
+            this.dgvArguments = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblCustomUploaderFileFormName = new System.Windows.Forms.Label();
             this.txtCustomUploaderFileFormName = new System.Windows.Forms.TextBox();
             this.pCustomUploaderBodyData = new System.Windows.Forms.Panel();
@@ -140,9 +143,6 @@
             this.cbCustomUploaderURLSharingService = new System.Windows.Forms.ComboBox();
             this.btnCustomUploaderURLSharingServiceTest = new System.Windows.Forms.Button();
             this.ttHelpTip = new System.Windows.Forms.ToolTip(this.components);
-            this.dgvArguments = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tscCustomUploaderResponseText.ContentPanel.SuspendLayout();
             this.tscCustomUploaderResponseText.TopToolStripPanel.SuspendLayout();
             this.tscCustomUploaderResponseText.SuspendLayout();
@@ -156,6 +156,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvParameters)).BeginInit();
             this.pCustomUploaderRequestURL.SuspendLayout();
             this.pCustomUploaderBodyArguments.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvArguments)).BeginInit();
             this.pCustomUploaderBodyData.SuspendLayout();
             this.pCustomUploaderData.SuspendLayout();
             this.tpCustomUploaderResponse.SuspendLayout();
@@ -171,7 +172,6 @@
             this.tpCustomUploaderResult.SuspendLayout();
             this.pCustomUploaderResult.SuspendLayout();
             this.tpCustomUploaderResponseText.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvArguments)).BeginInit();
             this.SuspendLayout();
             // 
             // tscCustomUploaderResponseText
@@ -474,7 +474,8 @@
             this.dgvHeaders.MultiSelect = false;
             this.dgvHeaders.Name = "dgvHeaders";
             this.dgvHeaders.RowHeadersVisible = false;
-            this.dgvHeaders.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHeaders_CellEndEdit);
+            this.dgvHeaders.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHeaders_CellValueChanged);
+            this.dgvHeaders.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dgv_EditingControlShowing);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -522,7 +523,8 @@
             this.dgvParameters.MultiSelect = false;
             this.dgvParameters.Name = "dgvParameters";
             this.dgvParameters.RowHeadersVisible = false;
-            this.dgvParameters.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvParameters_CellEndEdit);
+            this.dgvParameters.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvParameters_CellValueChanged);
+            this.dgvParameters.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dgv_EditingControlShowing);
             // 
             // chParametersName
             // 
@@ -601,6 +603,55 @@
             this.pCustomUploaderBodyArguments.Controls.Add(this.txtCustomUploaderFileFormName);
             resources.ApplyResources(this.pCustomUploaderBodyArguments, "pCustomUploaderBodyArguments");
             this.pCustomUploaderBodyArguments.Name = "pCustomUploaderBodyArguments";
+            // 
+            // dgvArguments
+            // 
+            this.dgvArguments.AllowUserToResizeRows = false;
+            this.dgvArguments.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.dgvArguments.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(0, 2, 0, 2);
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvArguments.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            this.dgvArguments.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvArguments.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4});
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.Padding = new System.Windows.Forms.Padding(1, 0, 0, 0);
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvArguments.DefaultCellStyle = dataGridViewCellStyle6;
+            this.dgvArguments.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
+            this.dgvArguments.GridColor = System.Drawing.SystemColors.ControlLight;
+            resources.ApplyResources(this.dgvArguments, "dgvArguments");
+            this.dgvArguments.MultiSelect = false;
+            this.dgvArguments.Name = "dgvArguments";
+            this.dgvArguments.RowHeadersVisible = false;
+            this.dgvArguments.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvArguments_CellValueChanged);
+            this.dgvArguments.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dgv_EditingControlShowing);
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            resources.ApplyResources(this.dataGridViewTextBoxColumn3, "dataGridViewTextBoxColumn3");
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            resources.ApplyResources(this.dataGridViewTextBoxColumn4, "dataGridViewTextBoxColumn4");
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // lblCustomUploaderFileFormName
             // 
@@ -1003,54 +1054,6 @@
             this.ttHelpTip.UseAnimation = false;
             this.ttHelpTip.UseFading = false;
             // 
-            // dgvArguments
-            // 
-            this.dgvArguments.AllowUserToResizeRows = false;
-            this.dgvArguments.BackgroundColor = System.Drawing.SystemColors.Window;
-            this.dgvArguments.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(0, 2, 0, 2);
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvArguments.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            this.dgvArguments.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvArguments.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.Padding = new System.Windows.Forms.Padding(1, 0, 0, 0);
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvArguments.DefaultCellStyle = dataGridViewCellStyle6;
-            this.dgvArguments.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
-            this.dgvArguments.GridColor = System.Drawing.SystemColors.ControlLight;
-            resources.ApplyResources(this.dgvArguments, "dgvArguments");
-            this.dgvArguments.MultiSelect = false;
-            this.dgvArguments.Name = "dgvArguments";
-            this.dgvArguments.RowHeadersVisible = false;
-            this.dgvArguments.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvArguments_CellEndEdit);
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            resources.ApplyResources(this.dataGridViewTextBoxColumn3, "dataGridViewTextBoxColumn3");
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            resources.ApplyResources(this.dataGridViewTextBoxColumn4, "dataGridViewTextBoxColumn4");
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
             // CustomUploaderSettingsForm
             // 
             this.AllowDrop = true;
@@ -1099,6 +1102,7 @@
             this.pCustomUploaderRequestURL.ResumeLayout(false);
             this.pCustomUploaderBodyArguments.ResumeLayout(false);
             this.pCustomUploaderBodyArguments.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvArguments)).EndInit();
             this.pCustomUploaderBodyData.ResumeLayout(false);
             this.pCustomUploaderData.ResumeLayout(false);
             this.tpCustomUploaderResponse.ResumeLayout(false);
@@ -1118,7 +1122,6 @@
             this.tpCustomUploaderResult.ResumeLayout(false);
             this.pCustomUploaderResult.ResumeLayout(false);
             this.tpCustomUploaderResponseText.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvArguments)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
