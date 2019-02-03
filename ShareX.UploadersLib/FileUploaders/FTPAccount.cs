@@ -63,7 +63,7 @@ namespace ShareX.UploadersLib
         [Category("FTP"), Description("URL = HttpHomePath + SubFolderPath + FileName\r\nIf HttpHomePath is empty then URL = Host + SubFolderPath + FileName\r\n%host = Host")]
         public string HttpHomePath { get; set; }
 
-        [Category("FTP"), Description("Automatically add sub folder path to end of http home path"), DefaultValue(true)]
+        [Category("FTP"), Description("Automatically add sub folder path to end of http home path"), DefaultValue(false)]
         public bool HttpHomePathAutoAddSubFolderPath { get; set; }
 
         [Category("FTP"), Description("Don't add file extension to URL"), DefaultValue(false)]
