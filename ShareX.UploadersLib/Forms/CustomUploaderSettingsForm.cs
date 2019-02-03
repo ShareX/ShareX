@@ -231,8 +231,8 @@ namespace ShareX.UploadersLib
         {
             bool isSelected = CustomUploaderCheck(lbCustomUploaderList.SelectedIndex);
 
-            txtCustomUploaderName.Enabled = btnCustomUploaderRemove.Enabled = btnCustomUploaderDuplicate.Enabled = pCustomUploader.Enabled =
-                mbCustomUploaderDestinationType.Enabled = isSelected;
+            btnCustomUploaderRemove.Enabled = btnCustomUploaderDuplicate.Enabled = txtCustomUploaderName.Enabled = mbCustomUploaderDestinationType.Enabled =
+                tcCustomUploader.Enabled = isSelected;
 
             if (isSelected)
             {
