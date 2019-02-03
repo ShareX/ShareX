@@ -186,14 +186,21 @@ namespace ShareX.UploadersLib
 
             if (string.IsNullOrEmpty(httpHomePath))
             {
-                string host = Host;
+                string url = Host;
 
-                if (host.StartsWith("ftp."))
+                if (url.StartsWith("ftp."))
                 {
-                    host = host.Substring(4);
+                    url = url.Substring(4);
                 }
 
-                httpHomeUri = new UriBuilder(URLHelpers.CombineURL(host, subFolderPath, filename));
+                if (HttpHomePathAutoAddSubFolderPath)
+                {
+                    url = URLHelpers.CombineURL(url, subFolderPath);
+                }
+
+                url = URLHelpers.CombineURL(url, filename);
+
+                httpHomeUri = new UriBuilder(url);
                 httpHomeUri.Port = -1; //Since httpHomePath is not set, it's safe to erase UriBuilder's assumed port number
             }
             else
