@@ -36,6 +36,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tscResponseText = new System.Windows.Forms.ToolStripContainer();
             this.txtResponseText = new System.Windows.Forms.TextBox();
             this.tsResponseText = new System.Windows.Forms.ToolStrip();
@@ -69,7 +71,11 @@
             this.tcCustomUploader = new System.Windows.Forms.TabControl();
             this.tpRequest = new System.Windows.Forms.TabPage();
             this.dgvHeaders = new System.Windows.Forms.DataGridView();
+            this.cHeadersName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cHeadersValue = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvParameters = new System.Windows.Forms.DataGridView();
+            this.cParametersName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cParametersValue = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblHeaders = new System.Windows.Forms.Label();
             this.lblParameters = new System.Windows.Forms.Label();
             this.pRequestURL = new System.Windows.Forms.Panel();
@@ -81,6 +87,8 @@
             this.lblBody = new System.Windows.Forms.Label();
             this.pBodyArguments = new System.Windows.Forms.Panel();
             this.dgvArguments = new System.Windows.Forms.DataGridView();
+            this.cArgumentsName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cArgumentsValue = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblFileFormName = new System.Windows.Forms.Label();
             this.txtFileFormName = new System.Windows.Forms.TextBox();
             this.pBodyData = new System.Windows.Forms.Panel();
@@ -107,20 +115,13 @@
             this.lblJsonPath = new System.Windows.Forms.Label();
             this.txtJsonPath = new System.Windows.Forms.TextBox();
             this.tpXmlParse = new System.Windows.Forms.TabPage();
-            this.btnXmlSyntaxAdd = new System.Windows.Forms.Button();
+            this.btnXmlAddSyntax = new System.Windows.Forms.Button();
             this.btnXPathHelp = new System.Windows.Forms.Button();
             this.lblXPathExample = new System.Windows.Forms.Label();
             this.lblXPath = new System.Windows.Forms.Label();
             this.txtXPath = new System.Windows.Forms.TextBox();
             this.tpRegexParse = new System.Windows.Forms.TabPage();
-            this.btnRegexHelp = new System.Windows.Forms.Button();
             this.btnRegexAddSyntax = new System.Windows.Forms.Button();
-            this.txtRegex = new System.Windows.Forms.TextBox();
-            this.btnRegexUpdate = new System.Windows.Forms.Button();
-            this.btnRegexAdd = new System.Windows.Forms.Button();
-            this.btnRegexRemove = new System.Windows.Forms.Button();
-            this.lvRegexList = new ShareX.HelpersLib.MyListView();
-            this.chRegex = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tpTest = new System.Windows.Forms.TabPage();
             this.tcTest = new System.Windows.Forms.TabControl();
             this.tpResult = new System.Windows.Forms.TabPage();
@@ -136,12 +137,8 @@
             this.cbURLSharingService = new System.Windows.Forms.ComboBox();
             this.btnURLSharingServiceTest = new System.Windows.Forms.Button();
             this.ttHelpTip = new System.Windows.Forms.ToolTip(this.components);
-            this.cHeadersName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cHeadersValue = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cParametersName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cParametersValue = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cArgumentsName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cArgumentsValue = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvRegex = new System.Windows.Forms.DataGridView();
+            this.cRegex = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tscResponseText.ContentPanel.SuspendLayout();
             this.tscResponseText.TopToolStripPanel.SuspendLayout();
             this.tscResponseText.SuspendLayout();
@@ -170,6 +167,7 @@
             this.tpResult.SuspendLayout();
             this.pResult.SuspendLayout();
             this.tpResponseText.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRegex)).BeginInit();
             this.SuspendLayout();
             // 
             // tscResponseText
@@ -465,6 +463,19 @@
             this.dgvHeaders.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHeaders_CellValueChanged);
             this.dgvHeaders.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dgv_EditingControlShowing);
             // 
+            // cHeadersName
+            // 
+            resources.ApplyResources(this.cHeadersName, "cHeadersName");
+            this.cHeadersName.Name = "cHeadersName";
+            this.cHeadersName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // cHeadersValue
+            // 
+            this.cHeadersValue.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            resources.ApplyResources(this.cHeadersValue, "cHeadersValue");
+            this.cHeadersValue.Name = "cHeadersValue";
+            this.cHeadersValue.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
             // dgvParameters
             // 
             this.dgvParameters.AllowUserToResizeRows = false;
@@ -500,6 +511,19 @@
             this.dgvParameters.RowHeadersVisible = false;
             this.dgvParameters.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvParameters_CellValueChanged);
             this.dgvParameters.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dgv_EditingControlShowing);
+            // 
+            // cParametersName
+            // 
+            resources.ApplyResources(this.cParametersName, "cParametersName");
+            this.cParametersName.Name = "cParametersName";
+            this.cParametersName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // cParametersValue
+            // 
+            this.cParametersValue.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            resources.ApplyResources(this.cParametersValue, "cParametersValue");
+            this.cParametersValue.Name = "cParametersValue";
+            this.cParametersValue.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // lblHeaders
             // 
@@ -601,6 +625,19 @@
             this.dgvArguments.RowHeadersVisible = false;
             this.dgvArguments.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvArguments_CellValueChanged);
             this.dgvArguments.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dgv_EditingControlShowing);
+            // 
+            // cArgumentsName
+            // 
+            resources.ApplyResources(this.cArgumentsName, "cArgumentsName");
+            this.cArgumentsName.Name = "cArgumentsName";
+            this.cArgumentsName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // cArgumentsValue
+            // 
+            this.cArgumentsValue.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            resources.ApplyResources(this.cArgumentsValue, "cArgumentsValue");
+            this.cArgumentsValue.Name = "cArgumentsValue";
+            this.cArgumentsValue.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // lblFileFormName
             // 
@@ -784,7 +821,7 @@
             // 
             // tpXmlParse
             // 
-            this.tpXmlParse.Controls.Add(this.btnXmlSyntaxAdd);
+            this.tpXmlParse.Controls.Add(this.btnXmlAddSyntax);
             this.tpXmlParse.Controls.Add(this.btnXPathHelp);
             this.tpXmlParse.Controls.Add(this.lblXPathExample);
             this.tpXmlParse.Controls.Add(this.lblXPath);
@@ -793,12 +830,12 @@
             this.tpXmlParse.Name = "tpXmlParse";
             this.tpXmlParse.UseVisualStyleBackColor = true;
             // 
-            // btnXmlSyntaxAdd
+            // btnXmlAddSyntax
             // 
-            resources.ApplyResources(this.btnXmlSyntaxAdd, "btnXmlSyntaxAdd");
-            this.btnXmlSyntaxAdd.Name = "btnXmlSyntaxAdd";
-            this.btnXmlSyntaxAdd.UseVisualStyleBackColor = true;
-            this.btnXmlSyntaxAdd.Click += new System.EventHandler(this.btnCustomUploaderXmlSyntaxAdd_Click);
+            resources.ApplyResources(this.btnXmlAddSyntax, "btnXmlAddSyntax");
+            this.btnXmlAddSyntax.Name = "btnXmlAddSyntax";
+            this.btnXmlAddSyntax.UseVisualStyleBackColor = true;
+            this.btnXmlAddSyntax.Click += new System.EventHandler(this.btnCustomUploaderXmlSyntaxAdd_Click);
             // 
             // btnXPathHelp
             // 
@@ -825,23 +862,11 @@
             // 
             // tpRegexParse
             // 
-            this.tpRegexParse.Controls.Add(this.btnRegexHelp);
+            this.tpRegexParse.Controls.Add(this.dgvRegex);
             this.tpRegexParse.Controls.Add(this.btnRegexAddSyntax);
-            this.tpRegexParse.Controls.Add(this.txtRegex);
-            this.tpRegexParse.Controls.Add(this.btnRegexUpdate);
-            this.tpRegexParse.Controls.Add(this.btnRegexAdd);
-            this.tpRegexParse.Controls.Add(this.btnRegexRemove);
-            this.tpRegexParse.Controls.Add(this.lvRegexList);
             resources.ApplyResources(this.tpRegexParse, "tpRegexParse");
             this.tpRegexParse.Name = "tpRegexParse";
             this.tpRegexParse.UseVisualStyleBackColor = true;
-            // 
-            // btnRegexHelp
-            // 
-            resources.ApplyResources(this.btnRegexHelp, "btnRegexHelp");
-            this.btnRegexHelp.Name = "btnRegexHelp";
-            this.btnRegexHelp.UseVisualStyleBackColor = true;
-            this.btnRegexHelp.Click += new System.EventHandler(this.btnCustomUploaderRegexHelp_Click);
             // 
             // btnRegexAddSyntax
             // 
@@ -849,53 +874,6 @@
             this.btnRegexAddSyntax.Name = "btnRegexAddSyntax";
             this.btnRegexAddSyntax.UseVisualStyleBackColor = true;
             this.btnRegexAddSyntax.Click += new System.EventHandler(this.btnCustomUploaderRegexAddSyntax_Click);
-            // 
-            // txtRegex
-            // 
-            resources.ApplyResources(this.txtRegex, "txtRegex");
-            this.txtRegex.Name = "txtRegex";
-            this.txtRegex.TextChanged += new System.EventHandler(this.txtCustomUploaderRegexp_TextChanged);
-            // 
-            // btnRegexUpdate
-            // 
-            resources.ApplyResources(this.btnRegexUpdate, "btnRegexUpdate");
-            this.btnRegexUpdate.Name = "btnRegexUpdate";
-            this.btnRegexUpdate.UseVisualStyleBackColor = true;
-            this.btnRegexUpdate.Click += new System.EventHandler(this.btnCustomUploaderRegexpEdit_Click);
-            // 
-            // btnRegexAdd
-            // 
-            resources.ApplyResources(this.btnRegexAdd, "btnRegexAdd");
-            this.btnRegexAdd.Name = "btnRegexAdd";
-            this.btnRegexAdd.UseVisualStyleBackColor = true;
-            this.btnRegexAdd.Click += new System.EventHandler(this.btnCustomUploaderRegexpAdd_Click);
-            // 
-            // btnRegexRemove
-            // 
-            resources.ApplyResources(this.btnRegexRemove, "btnRegexRemove");
-            this.btnRegexRemove.Name = "btnRegexRemove";
-            this.btnRegexRemove.UseVisualStyleBackColor = true;
-            this.btnRegexRemove.Click += new System.EventHandler(this.btnCustomUploaderRegexpRemove_Click);
-            // 
-            // lvRegexList
-            // 
-            this.lvRegexList.AutoFillColumn = true;
-            this.lvRegexList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.chRegex});
-            this.lvRegexList.FullRowSelect = true;
-            this.lvRegexList.GridLines = true;
-            this.lvRegexList.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
-            this.lvRegexList.HideSelection = false;
-            resources.ApplyResources(this.lvRegexList, "lvRegexList");
-            this.lvRegexList.MultiSelect = false;
-            this.lvRegexList.Name = "lvRegexList";
-            this.lvRegexList.UseCompatibleStateImageBehavior = false;
-            this.lvRegexList.View = System.Windows.Forms.View.Details;
-            this.lvRegexList.SelectedIndexChanged += new System.EventHandler(this.lvCustomUploaderRegexps_SelectedIndexChanged);
-            // 
-            // chRegex
-            // 
-            resources.ApplyResources(this.chRegex, "chRegex");
             // 
             // tpTest
             // 
@@ -1003,44 +981,47 @@
             this.ttHelpTip.UseAnimation = false;
             this.ttHelpTip.UseFading = false;
             // 
-            // cHeadersName
+            // dgvRegex
             // 
-            resources.ApplyResources(this.cHeadersName, "cHeadersName");
-            this.cHeadersName.Name = "cHeadersName";
-            this.cHeadersName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.dgvRegex.AllowUserToResizeRows = false;
+            this.dgvRegex.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.dgvRegex.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.Padding = new System.Windows.Forms.Padding(0, 2, 0, 2);
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvRegex.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            this.dgvRegex.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvRegex.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.cRegex});
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.Padding = new System.Windows.Forms.Padding(1, 0, 0, 0);
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvRegex.DefaultCellStyle = dataGridViewCellStyle8;
+            this.dgvRegex.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
+            this.dgvRegex.GridColor = System.Drawing.SystemColors.ControlLight;
+            resources.ApplyResources(this.dgvRegex, "dgvRegex");
+            this.dgvRegex.MultiSelect = false;
+            this.dgvRegex.Name = "dgvRegex";
+            this.dgvRegex.RowHeadersVisible = false;
+            this.dgvRegex.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRegex_CellValueChanged);
+            this.dgvRegex.SelectionChanged += new System.EventHandler(this.dgvRegex_SelectionChanged);
             // 
-            // cHeadersValue
+            // cRegex
             // 
-            this.cHeadersValue.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            resources.ApplyResources(this.cHeadersValue, "cHeadersValue");
-            this.cHeadersValue.Name = "cHeadersValue";
-            this.cHeadersValue.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // cParametersName
-            // 
-            resources.ApplyResources(this.cParametersName, "cParametersName");
-            this.cParametersName.Name = "cParametersName";
-            this.cParametersName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // cParametersValue
-            // 
-            this.cParametersValue.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            resources.ApplyResources(this.cParametersValue, "cParametersValue");
-            this.cParametersValue.Name = "cParametersValue";
-            this.cParametersValue.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // cArgumentsName
-            // 
-            resources.ApplyResources(this.cArgumentsName, "cArgumentsName");
-            this.cArgumentsName.Name = "cArgumentsName";
-            this.cArgumentsName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // cArgumentsValue
-            // 
-            this.cArgumentsValue.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            resources.ApplyResources(this.cArgumentsValue, "cArgumentsValue");
-            this.cArgumentsValue.Name = "cArgumentsValue";
-            this.cArgumentsValue.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.cRegex.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            resources.ApplyResources(this.cRegex, "cRegex");
+            this.cRegex.Name = "cRegex";
+            this.cRegex.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // CustomUploaderSettingsForm
             // 
@@ -1105,12 +1086,12 @@
             this.tpXmlParse.ResumeLayout(false);
             this.tpXmlParse.PerformLayout();
             this.tpRegexParse.ResumeLayout(false);
-            this.tpRegexParse.PerformLayout();
             this.tpTest.ResumeLayout(false);
             this.tcTest.ResumeLayout(false);
             this.tpResult.ResumeLayout(false);
             this.pResult.ResumeLayout(false);
             this.tpResponseText.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRegex)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1175,20 +1156,13 @@
         private System.Windows.Forms.Label lblJsonPath;
         private System.Windows.Forms.TextBox txtJsonPath;
         private System.Windows.Forms.TabPage tpXmlParse;
-        private System.Windows.Forms.Button btnXmlSyntaxAdd;
+        private System.Windows.Forms.Button btnXmlAddSyntax;
         private System.Windows.Forms.Button btnXPathHelp;
         private System.Windows.Forms.Label lblXPathExample;
         private System.Windows.Forms.Label lblXPath;
         private System.Windows.Forms.TextBox txtXPath;
         private System.Windows.Forms.TabPage tpRegexParse;
-        private System.Windows.Forms.Button btnRegexHelp;
         private System.Windows.Forms.Button btnRegexAddSyntax;
-        private System.Windows.Forms.TextBox txtRegex;
-        private System.Windows.Forms.Button btnRegexUpdate;
-        private System.Windows.Forms.Button btnRegexAdd;
-        private System.Windows.Forms.Button btnRegexRemove;
-        private HelpersLib.MyListView lvRegexList;
-        private System.Windows.Forms.ColumnHeader chRegex;
         private System.Windows.Forms.TabPage tpTest;
         private System.Windows.Forms.TabControl tcTest;
         private System.Windows.Forms.TabPage tpResult;
@@ -1224,5 +1198,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn cParametersValue;
         private System.Windows.Forms.DataGridViewTextBoxColumn cArgumentsName;
         private System.Windows.Forms.DataGridViewTextBoxColumn cArgumentsValue;
+        private System.Windows.Forms.DataGridView dgvRegex;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cRegex;
     }
 }

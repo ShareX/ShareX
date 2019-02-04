@@ -207,13 +207,13 @@ namespace ShareX.UploadersLib
 
             txtJsonPath.Text = "";
             txtXPath.Text = "";
-            txtRegex.Text = "";
-            lvRegexList.Items.Clear();
+
+            dgvRegex.Rows.Clear();
             if (uploader.RegexList != null)
             {
-                foreach (string regexp in uploader.RegexList)
+                foreach (string regex in uploader.RegexList)
                 {
-                    lvRegexList.Items.Add(regexp);
+                    dgvRegex.Rows.Add(new string[] { regex });
                 }
             }
 
@@ -263,10 +263,8 @@ namespace ShareX.UploadersLib
         private void CustomUploaderUpdateResponseState()
         {
             btnJsonAddSyntax.Enabled = !string.IsNullOrEmpty(txtJsonPath.Text);
-            btnXmlSyntaxAdd.Enabled = !string.IsNullOrEmpty(txtXPath.Text);
-            btnRegexAdd.Enabled = !string.IsNullOrEmpty(txtRegex.Text);
-            btnRegexRemove.Enabled = btnRegexUpdate.Enabled = btnRegexAddSyntax.Enabled =
-                lvRegexList.SelectedItems.Count > 0;
+            btnXmlAddSyntax.Enabled = !string.IsNullOrEmpty(txtXPath.Text);
+            btnRegexAddSyntax.Enabled = dgvRegex.SelectedCells.Count > 0;
         }
 
         private void CustomUploaderRefreshNames()
@@ -466,22 +464,40 @@ namespace ShareX.UploadersLib
 
         private Dictionary<string, string> DataGridViewToDictionary(DataGridView dgv)
         {
-            Dictionary<string, string> dic = new Dictionary<string, string>();
+            Dictionary<string, string> dictionary = new Dictionary<string, string>();
 
             for (int i = 0; i < dgv.Rows.Count; i++)
             {
                 DataGridViewRow row = dgv.Rows[i];
-                string name = row.Cells[0].Value?.ToString();
+                string key = row.Cells[0].Value?.ToString();
 
-                if (!string.IsNullOrEmpty(name) && !dic.ContainsKey(name))
+                if (!string.IsNullOrEmpty(key) && !dictionary.ContainsKey(key))
                 {
                     string value = row.Cells[1].Value?.ToString();
 
-                    dic.Add(name, value);
+                    dictionary.Add(key, value);
                 }
             }
 
-            return dic;
+            return dictionary;
+        }
+
+        private List<string> DataGridViewToList(DataGridView dgv)
+        {
+            List<string> list = new List<string>();
+
+            for (int i = 0; i < dgv.Rows.Count; i++)
+            {
+                DataGridViewRow row = dgv.Rows[i];
+                string item = row.Cells[0].Value?.ToString();
+
+                if (!string.IsNullOrEmpty(item))
+                {
+                    list.Add(item);
+                }
+            }
+
+            return list;
         }
 
         private void CustomUploaderDestinationTypeUpdate()
@@ -1107,83 +1123,25 @@ namespace ShareX.UploadersLib
             }
         }
 
-        private void txtCustomUploaderRegexp_TextChanged(object sender, EventArgs e)
+        private void dgvRegex_SelectionChanged(object sender, EventArgs e)
         {
             CustomUploaderUpdateResponseState();
         }
 
-        private void btnCustomUploaderRegexpAdd_Click(object sender, EventArgs e)
+        private void dgvRegex_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
-            string regexp = txtRegex.Text;
+            CheckDataGridView(dgvRegex);
 
-            if (!string.IsNullOrEmpty(regexp))
-            {
-                lvRegexList.Items.Add(regexp);
-                txtRegex.Text = "";
-                txtRegex.Focus();
-
-                CustomUploaderItem uploader = CustomUploaderGetSelected();
-                if (uploader != null)
-                {
-                    if (uploader.RegexList == null) uploader.RegexList = new List<string>();
-                    uploader.RegexList.Add(regexp);
-                }
-            }
-        }
-
-        private void btnCustomUploaderRegexpRemove_Click(object sender, EventArgs e)
-        {
-            int index = lvRegexList.SelectedIndex;
-            if (index > -1)
-            {
-                lvRegexList.Items.RemoveAt(index);
-
-                CustomUploaderItem uploader = CustomUploaderGetSelected();
-                if (uploader != null) uploader.RegexList.RemoveAt(index);
-            }
-        }
-
-        private void btnCustomUploaderRegexpEdit_Click(object sender, EventArgs e)
-        {
-            string regexp = txtRegex.Text;
-            if (!string.IsNullOrEmpty(regexp))
-            {
-                int index = lvRegexList.SelectedIndex;
-                if (index > -1)
-                {
-                    lvRegexList.Items[index].Text = regexp;
-
-                    CustomUploaderItem uploader = CustomUploaderGetSelected();
-                    if (uploader != null) uploader.RegexList[index] = regexp;
-                }
-            }
-        }
-
-        private void btnCustomUploaderRegexHelp_Click(object sender, EventArgs e)
-        {
-            URLHelpers.OpenURL("http://regexone.com");
-        }
-
-        private void lvCustomUploaderRegexps_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            string regex = "";
-
-            if (lvRegexList.SelectedItems.Count > 0)
-            {
-                regex = lvRegexList.SelectedItems[0].Text;
-            }
-
-            txtRegex.Text = regex;
-
-            CustomUploaderUpdateResponseState();
+            CustomUploaderItem uploader = CustomUploaderGetSelected();
+            if (uploader != null) uploader.RegexList = DataGridViewToList(dgvRegex);
         }
 
         private void btnCustomUploaderRegexAddSyntax_Click(object sender, EventArgs e)
         {
-            if (lvRegexList.SelectedIndices.Count > 0)
+            if (dgvRegex.SelectedCells.Count > 0)
             {
-                int selectedIndex = lvRegexList.SelectedIndices[0];
-                string regex = lvRegexList.Items[selectedIndex].Text;
+                int selectedIndex = dgvRegex.SelectedCells[0].RowIndex;
+                string regex = dgvRegex.SelectedCells[0].Value?.ToString();
 
                 if (!string.IsNullOrEmpty(regex))
                 {

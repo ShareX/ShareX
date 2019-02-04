@@ -1866,31 +1866,31 @@ store.book[0].title</value>
   <data name="&gt;&gt;tpJsonParse.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="btnXmlSyntaxAdd.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="btnXmlAddSyntax.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="btnXmlSyntaxAdd.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="btnXmlAddSyntax.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 128</value>
   </data>
-  <data name="btnXmlSyntaxAdd.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="btnXmlAddSyntax.Size" type="System.Drawing.Size, System.Drawing">
     <value>232, 23</value>
   </data>
-  <data name="btnXmlSyntaxAdd.TabIndex" type="System.Int32, mscorlib">
+  <data name="btnXmlAddSyntax.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
-  <data name="btnXmlSyntaxAdd.Text" xml:space="preserve">
+  <data name="btnXmlAddSyntax.Text" xml:space="preserve">
     <value>Add syntax to URL field</value>
   </data>
-  <data name="&gt;&gt;btnXmlSyntaxAdd.Name" xml:space="preserve">
-    <value>btnXmlSyntaxAdd</value>
+  <data name="&gt;&gt;btnXmlAddSyntax.Name" xml:space="preserve">
+    <value>btnXmlAddSyntax</value>
   </data>
-  <data name="&gt;&gt;btnXmlSyntaxAdd.Type" xml:space="preserve">
+  <data name="&gt;&gt;btnXmlAddSyntax.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;btnXmlSyntaxAdd.Parent" xml:space="preserve">
+  <data name="&gt;&gt;btnXmlAddSyntax.Parent" xml:space="preserve">
     <value>tpXmlParse</value>
   </data>
-  <data name="&gt;&gt;btnXmlSyntaxAdd.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;btnXmlAddSyntax.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="btnXPathHelp.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
@@ -2031,31 +2031,31 @@ store.book[0].title</value>
   <data name="&gt;&gt;tpXmlParse.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="btnRegexHelp.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <metadata name="cRegex.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="cRegex.HeaderText" xml:space="preserve">
+    <value>Regex</value>
   </data>
-  <data name="btnRegexHelp.Location" type="System.Drawing.Point, System.Drawing">
-    <value>216, 6</value>
+  <data name="dgvRegex.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 8</value>
   </data>
-  <data name="btnRegexHelp.Size" type="System.Drawing.Size, System.Drawing">
-    <value>24, 24</value>
+  <data name="dgvRegex.Size" type="System.Drawing.Size, System.Drawing">
+    <value>232, 112</value>
   </data>
-  <data name="btnRegexHelp.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+  <data name="dgvRegex.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
   </data>
-  <data name="btnRegexHelp.Text" xml:space="preserve">
-    <value>?</value>
+  <data name="&gt;&gt;dgvRegex.Name" xml:space="preserve">
+    <value>dgvRegex</value>
   </data>
-  <data name="&gt;&gt;btnRegexHelp.Name" xml:space="preserve">
-    <value>btnRegexHelp</value>
+  <data name="&gt;&gt;dgvRegex.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;btnRegexHelp.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnRegexHelp.Parent" xml:space="preserve">
+  <data name="&gt;&gt;dgvRegex.Parent" xml:space="preserve">
     <value>tpRegexParse</value>
   </data>
-  <data name="&gt;&gt;btnRegexHelp.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;dgvRegex.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="btnRegexAddSyntax.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
@@ -2084,132 +2084,6 @@ store.book[0].title</value>
   </data>
   <data name="&gt;&gt;btnRegexAddSyntax.ZOrder" xml:space="preserve">
     <value>1</value>
-  </data>
-  <data name="txtRegex.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 8</value>
-  </data>
-  <data name="txtRegex.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 20</value>
-  </data>
-  <data name="txtRegex.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;txtRegex.Name" xml:space="preserve">
-    <value>txtRegex</value>
-  </data>
-  <data name="&gt;&gt;txtRegex.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtRegex.Parent" xml:space="preserve">
-    <value>tpRegexParse</value>
-  </data>
-  <data name="&gt;&gt;txtRegex.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="btnRegexUpdate.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btnRegexUpdate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>168, 32</value>
-  </data>
-  <data name="btnRegexUpdate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>72, 24</value>
-  </data>
-  <data name="btnRegexUpdate.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="btnRegexUpdate.Text" xml:space="preserve">
-    <value>Update</value>
-  </data>
-  <data name="&gt;&gt;btnRegexUpdate.Name" xml:space="preserve">
-    <value>btnRegexUpdate</value>
-  </data>
-  <data name="&gt;&gt;btnRegexUpdate.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnRegexUpdate.Parent" xml:space="preserve">
-    <value>tpRegexParse</value>
-  </data>
-  <data name="&gt;&gt;btnRegexUpdate.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="btnRegexAdd.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btnRegexAdd.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 32</value>
-  </data>
-  <data name="btnRegexAdd.Size" type="System.Drawing.Size, System.Drawing">
-    <value>72, 24</value>
-  </data>
-  <data name="btnRegexAdd.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="btnRegexAdd.Text" xml:space="preserve">
-    <value>Add</value>
-  </data>
-  <data name="&gt;&gt;btnRegexAdd.Name" xml:space="preserve">
-    <value>btnRegexAdd</value>
-  </data>
-  <data name="&gt;&gt;btnRegexAdd.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnRegexAdd.Parent" xml:space="preserve">
-    <value>tpRegexParse</value>
-  </data>
-  <data name="&gt;&gt;btnRegexAdd.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="btnRegexRemove.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btnRegexRemove.Location" type="System.Drawing.Point, System.Drawing">
-    <value>88, 32</value>
-  </data>
-  <data name="btnRegexRemove.Size" type="System.Drawing.Size, System.Drawing">
-    <value>72, 24</value>
-  </data>
-  <data name="btnRegexRemove.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="btnRegexRemove.Text" xml:space="preserve">
-    <value>Remove</value>
-  </data>
-  <data name="&gt;&gt;btnRegexRemove.Name" xml:space="preserve">
-    <value>btnRegexRemove</value>
-  </data>
-  <data name="&gt;&gt;btnRegexRemove.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnRegexRemove.Parent" xml:space="preserve">
-    <value>tpRegexParse</value>
-  </data>
-  <data name="&gt;&gt;btnRegexRemove.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="chRegex.Width" type="System.Int32, mscorlib">
-    <value>227</value>
-  </data>
-  <data name="lvRegexList.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 64</value>
-  </data>
-  <data name="lvRegexList.Size" type="System.Drawing.Size, System.Drawing">
-    <value>232, 56</value>
-  </data>
-  <data name="lvRegexList.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;lvRegexList.Name" xml:space="preserve">
-    <value>lvRegexList</value>
-  </data>
-  <data name="&gt;&gt;lvRegexList.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=12.4.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;lvRegexList.Parent" xml:space="preserve">
-    <value>tpRegexParse</value>
-  </data>
-  <data name="&gt;&gt;lvRegexList.ZOrder" xml:space="preserve">
-    <value>6</value>
   </data>
   <data name="tpRegexParse.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>
@@ -2727,18 +2601,6 @@ store.book[0].title</value>
   <data name="&gt;&gt;tsmiExportAll.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;chRegex.Name" xml:space="preserve">
-    <value>chRegex</value>
-  </data>
-  <data name="&gt;&gt;chRegex.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ttHelpTip.Name" xml:space="preserve">
-    <value>ttHelpTip</value>
-  </data>
-  <data name="&gt;&gt;ttHelpTip.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;cHeadersName.Name" xml:space="preserve">
     <value>cHeadersName</value>
   </data>
@@ -2773,6 +2635,18 @@ store.book[0].title</value>
     <value>cArgumentsValue</value>
   </data>
   <data name="&gt;&gt;cArgumentsValue.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ttHelpTip.Name" xml:space="preserve">
+    <value>ttHelpTip</value>
+  </data>
+  <data name="&gt;&gt;ttHelpTip.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cRegex.Name" xml:space="preserve">
+    <value>cRegex</value>
+  </data>
+  <data name="&gt;&gt;cRegex.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
