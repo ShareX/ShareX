@@ -264,7 +264,7 @@ namespace ShareX.UploadersLib
         {
             btnJsonAddSyntax.Enabled = !string.IsNullOrEmpty(txtJsonPath.Text);
             btnXmlAddSyntax.Enabled = !string.IsNullOrEmpty(txtXPath.Text);
-            btnRegexAddSyntax.Enabled = dgvRegex.SelectedCells.Count > 0;
+            btnRegexAddSyntax.Enabled = dgvRegex.SelectedCells.OfType<DataGridViewCell>().Any(x => !x.OwningRow.IsNewRow);
         }
 
         private void CustomUploaderRefreshNames()
@@ -422,7 +422,7 @@ namespace ShareX.UploadersLib
             return destinationType;
         }
 
-        private void CheckDataGridView(DataGridView dgv)
+        private void CheckDataGridView(DataGridView dgv, bool checkDuplicate)
         {
             for (int i = dgv.Rows.Count - 1; i > -1; i--)
             {
@@ -436,7 +436,7 @@ namespace ShareX.UploadersLib
                         dgv.Rows.RemoveAt(i);
                     }
                 }
-                else
+                else if (checkDuplicate)
                 {
                     bool isDuplicate = false;
 
@@ -1021,7 +1021,7 @@ namespace ShareX.UploadersLib
 
         private void dgvParameters_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
-            CheckDataGridView(dgvParameters);
+            CheckDataGridView(dgvParameters, true);
 
             CustomUploaderItem uploader = CustomUploaderGetSelected();
             if (uploader != null) uploader.Parameters = DataGridViewToDictionary(dgvParameters);
@@ -1029,7 +1029,7 @@ namespace ShareX.UploadersLib
 
         private void dgvHeaders_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
-            CheckDataGridView(dgvHeaders);
+            CheckDataGridView(dgvHeaders, true);
 
             CustomUploaderItem uploader = CustomUploaderGetSelected();
             if (uploader != null) uploader.Headers = DataGridViewToDictionary(dgvHeaders);
@@ -1037,7 +1037,7 @@ namespace ShareX.UploadersLib
 
         private void dgvArguments_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
-            CheckDataGridView(dgvArguments);
+            CheckDataGridView(dgvArguments, true);
 
             CustomUploaderItem uploader = CustomUploaderGetSelected();
             if (uploader != null) uploader.Arguments = DataGridViewToDictionary(dgvArguments);
@@ -1130,7 +1130,7 @@ namespace ShareX.UploadersLib
 
         private void dgvRegex_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
-            CheckDataGridView(dgvRegex);
+            CheckDataGridView(dgvRegex, false);
 
             CustomUploaderItem uploader = CustomUploaderGetSelected();
             if (uploader != null) uploader.RegexList = DataGridViewToList(dgvRegex);

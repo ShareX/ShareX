@@ -121,6 +121,8 @@
             this.lblXPath = new System.Windows.Forms.Label();
             this.txtXPath = new System.Windows.Forms.TextBox();
             this.tpRegexParse = new System.Windows.Forms.TabPage();
+            this.dgvRegex = new System.Windows.Forms.DataGridView();
+            this.cRegex = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnRegexAddSyntax = new System.Windows.Forms.Button();
             this.tpTest = new System.Windows.Forms.TabPage();
             this.tcTest = new System.Windows.Forms.TabControl();
@@ -137,8 +139,7 @@
             this.cbURLSharingService = new System.Windows.Forms.ComboBox();
             this.btnURLSharingServiceTest = new System.Windows.Forms.Button();
             this.ttHelpTip = new System.Windows.Forms.ToolTip(this.components);
-            this.dgvRegex = new System.Windows.Forms.DataGridView();
-            this.cRegex = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblRegex = new System.Windows.Forms.Label();
             this.tscResponseText.ContentPanel.SuspendLayout();
             this.tscResponseText.TopToolStripPanel.SuspendLayout();
             this.tscResponseText.SuspendLayout();
@@ -162,12 +163,12 @@
             this.tpJsonParse.SuspendLayout();
             this.tpXmlParse.SuspendLayout();
             this.tpRegexParse.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRegex)).BeginInit();
             this.tpTest.SuspendLayout();
             this.tcTest.SuspendLayout();
             this.tpResult.SuspendLayout();
             this.pResult.SuspendLayout();
             this.tpResponseText.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvRegex)).BeginInit();
             this.SuspendLayout();
             // 
             // tscResponseText
@@ -862,11 +863,55 @@
             // 
             // tpRegexParse
             // 
+            this.tpRegexParse.Controls.Add(this.lblRegex);
             this.tpRegexParse.Controls.Add(this.dgvRegex);
             this.tpRegexParse.Controls.Add(this.btnRegexAddSyntax);
             resources.ApplyResources(this.tpRegexParse, "tpRegexParse");
             this.tpRegexParse.Name = "tpRegexParse";
             this.tpRegexParse.UseVisualStyleBackColor = true;
+            // 
+            // dgvRegex
+            // 
+            this.dgvRegex.AllowUserToResizeRows = false;
+            this.dgvRegex.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.dgvRegex.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.Padding = new System.Windows.Forms.Padding(0, 2, 0, 2);
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvRegex.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            this.dgvRegex.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvRegex.ColumnHeadersVisible = false;
+            this.dgvRegex.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.cRegex});
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.Padding = new System.Windows.Forms.Padding(1, 0, 0, 0);
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvRegex.DefaultCellStyle = dataGridViewCellStyle8;
+            this.dgvRegex.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
+            this.dgvRegex.GridColor = System.Drawing.SystemColors.ControlLight;
+            resources.ApplyResources(this.dgvRegex, "dgvRegex");
+            this.dgvRegex.MultiSelect = false;
+            this.dgvRegex.Name = "dgvRegex";
+            this.dgvRegex.RowHeadersVisible = false;
+            this.dgvRegex.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRegex_CellValueChanged);
+            this.dgvRegex.SelectionChanged += new System.EventHandler(this.dgvRegex_SelectionChanged);
+            // 
+            // cRegex
+            // 
+            this.cRegex.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            resources.ApplyResources(this.cRegex, "cRegex");
+            this.cRegex.Name = "cRegex";
+            this.cRegex.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // btnRegexAddSyntax
             // 
@@ -981,47 +1026,10 @@
             this.ttHelpTip.UseAnimation = false;
             this.ttHelpTip.UseFading = false;
             // 
-            // dgvRegex
+            // lblRegex
             // 
-            this.dgvRegex.AllowUserToResizeRows = false;
-            this.dgvRegex.BackgroundColor = System.Drawing.SystemColors.Window;
-            this.dgvRegex.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.Padding = new System.Windows.Forms.Padding(0, 2, 0, 2);
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvRegex.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
-            this.dgvRegex.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvRegex.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.cRegex});
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.Padding = new System.Windows.Forms.Padding(1, 0, 0, 0);
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvRegex.DefaultCellStyle = dataGridViewCellStyle8;
-            this.dgvRegex.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
-            this.dgvRegex.GridColor = System.Drawing.SystemColors.ControlLight;
-            resources.ApplyResources(this.dgvRegex, "dgvRegex");
-            this.dgvRegex.MultiSelect = false;
-            this.dgvRegex.Name = "dgvRegex";
-            this.dgvRegex.RowHeadersVisible = false;
-            this.dgvRegex.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRegex_CellValueChanged);
-            this.dgvRegex.SelectionChanged += new System.EventHandler(this.dgvRegex_SelectionChanged);
-            // 
-            // cRegex
-            // 
-            this.cRegex.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            resources.ApplyResources(this.cRegex, "cRegex");
-            this.cRegex.Name = "cRegex";
-            this.cRegex.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            resources.ApplyResources(this.lblRegex, "lblRegex");
+            this.lblRegex.Name = "lblRegex";
             // 
             // CustomUploaderSettingsForm
             // 
@@ -1086,12 +1094,13 @@
             this.tpXmlParse.ResumeLayout(false);
             this.tpXmlParse.PerformLayout();
             this.tpRegexParse.ResumeLayout(false);
+            this.tpRegexParse.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRegex)).EndInit();
             this.tpTest.ResumeLayout(false);
             this.tcTest.ResumeLayout(false);
             this.tpResult.ResumeLayout(false);
             this.pResult.ResumeLayout(false);
             this.tpResponseText.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvRegex)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1200,5 +1209,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn cArgumentsValue;
         private System.Windows.Forms.DataGridView dgvRegex;
         private System.Windows.Forms.DataGridViewTextBoxColumn cRegex;
+        private System.Windows.Forms.Label lblRegex;
     }
 }

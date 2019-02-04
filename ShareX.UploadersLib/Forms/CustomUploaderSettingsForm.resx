@@ -2031,6 +2031,33 @@ store.book[0].title</value>
   <data name="&gt;&gt;tpXmlParse.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="lblRegex.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblRegex.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 8</value>
+  </data>
+  <data name="lblRegex.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 13</value>
+  </data>
+  <data name="lblRegex.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="lblRegex.Text" xml:space="preserve">
+    <value>Regex list:</value>
+  </data>
+  <data name="&gt;&gt;lblRegex.Name" xml:space="preserve">
+    <value>lblRegex</value>
+  </data>
+  <data name="&gt;&gt;lblRegex.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblRegex.Parent" xml:space="preserve">
+    <value>tpRegexParse</value>
+  </data>
+  <data name="&gt;&gt;lblRegex.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <metadata name="cRegex.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -2038,10 +2065,10 @@ store.book[0].title</value>
     <value>Regex</value>
   </data>
   <data name="dgvRegex.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 8</value>
+    <value>8, 24</value>
   </data>
   <data name="dgvRegex.Size" type="System.Drawing.Size, System.Drawing">
-    <value>232, 112</value>
+    <value>232, 96</value>
   </data>
   <data name="dgvRegex.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -2056,7 +2083,7 @@ store.book[0].title</value>
     <value>tpRegexParse</value>
   </data>
   <data name="&gt;&gt;dgvRegex.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="btnRegexAddSyntax.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -2083,7 +2110,7 @@ store.book[0].title</value>
     <value>tpRegexParse</value>
   </data>
   <data name="&gt;&gt;btnRegexAddSyntax.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="tpRegexParse.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>
@@ -2637,17 +2664,17 @@ store.book[0].title</value>
   <data name="&gt;&gt;cArgumentsValue.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;ttHelpTip.Name" xml:space="preserve">
-    <value>ttHelpTip</value>
-  </data>
-  <data name="&gt;&gt;ttHelpTip.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;cRegex.Name" xml:space="preserve">
     <value>cRegex</value>
   </data>
   <data name="&gt;&gt;cRegex.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ttHelpTip.Name" xml:space="preserve">
+    <value>ttHelpTip</value>
+  </data>
+  <data name="&gt;&gt;ttHelpTip.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>CustomUploaderSettingsForm</value>
