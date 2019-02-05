@@ -165,6 +165,7 @@ namespace ShareX.UploadersLib
         private void CustomUploaderLoad(CustomUploaderItem uploader)
         {
             txtName.Text = uploader.Name ?? "";
+            txtName.SetWatermark(URLHelpers.GetHostName(uploader.RequestURL));
             CustomUploaderSetDestinationType(uploader.DestinationType);
 
             cbRequestMethod.SelectedIndex = (int)uploader.RequestMethod;
@@ -973,7 +974,11 @@ namespace ShareX.UploadersLib
         private void rtbCustomUploaderRequestURL_TextChanged(object sender, EventArgs e)
         {
             CustomUploaderItem uploader = CustomUploaderGetSelected();
-            if (uploader != null) uploader.RequestURL = rtbRequestURL.Text;
+            if (uploader != null)
+            {
+                uploader.RequestURL = rtbRequestURL.Text;
+                txtName.SetWatermark(URLHelpers.GetHostName(uploader.RequestURL));
+            }
 
             CustomUploaderSyntaxHighlight(rtbRequestURL);
             CustomUploaderRefreshNames();
