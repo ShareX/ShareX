@@ -85,6 +85,8 @@ namespace ShareX.HelpersLib
         {
             int length = Math.Min(HelpersOptions.RecentColors.Count, HelpersOptions.RecentColorsMax);
 
+            Color previousColor = Color.Empty;
+
             for (int i = 0; i < length; i++)
             {
                 ColorButton colorButton = new ColorButton()
@@ -98,7 +100,25 @@ namespace ShareX.HelpersLib
                     ManualButtonClick = true
                 };
 
-                colorButton.Click += (sender, e) => SetCurrentColor(colorButton.Color, true);
+                colorButton.MouseClick += (sender, e) =>
+                {
+                    if (e.Button == MouseButtons.Left)
+                    {
+                        SetCurrentColor(colorButton.Color, true);
+
+                        if (!IsScreenColorPickerMode)
+                        {
+                            if (!previousColor.IsEmpty && previousColor == colorButton.Color)
+                            {
+                                CloseOK();
+                            }
+                            else
+                            {
+                                previousColor = colorButton.Color;
+                            }
+                        }
+                    }
+                };
 
                 flpRecentColors.Controls.Add(colorButton);
                 if ((i + 1) % 16 == 0) flpRecentColors.SetFlowBreak(colorButton, true);
@@ -210,6 +230,13 @@ namespace ShareX.HelpersLib
             }
         }
 
+        private void CloseOK()
+        {
+            AddRecentColor(NewColor);
+            DialogResult = DialogResult.OK;
+            Close();
+        }
+
         #region Events
 
         private void ColorPickerForm_Shown(object sender, EventArgs e)
@@ -225,9 +252,7 @@ namespace ShareX.HelpersLib
 
         private void btnOK_Click(object sender, EventArgs e)
         {
-            AddRecentColor(NewColor);
-            DialogResult = DialogResult.OK;
-            Close();
+            CloseOK();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
