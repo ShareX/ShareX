@@ -1418,15 +1418,15 @@ namespace ShareX
             Program.Settings.ShowDiscordButton = false;
         }
 
-        private void pbPatreonOpen_Click(object sender, EventArgs e)
+        private void pbSupportUsOpen_Click(object sender, EventArgs e)
         {
-            URLHelpers.OpenURL(Links.URL_PATREON);
+            URLHelpers.OpenURL(Links.URL_DONATE);
         }
 
-        private void pbPatreonHide_Click(object sender, EventArgs e)
+        private void pbSupportUsHide_Click(object sender, EventArgs e)
         {
-            flpPatreon.Visible = false;
-            Program.Settings.ShowPatreonButton = false;
+            flpSupportUs.Visible = false;
+            Program.Settings.ShowSupportUsButton = false;
         }
 
         private void btnCloseNews_Click(object sender, EventArgs e)

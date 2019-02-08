@@ -135,9 +135,10 @@ namespace ShareX
         public static void UpdateMainFormTip()
         {
             Program.MainForm.lblMainFormTip.Visible = Program.Settings.ShowMainWindowTip && Tasks.Count == 0;
-            Program.MainForm.flpCommunity.Visible = Tasks.Count == 0 && (Program.Settings.ShowDiscordButton || Program.Settings.ShowPatreonButton);
+            Program.MainForm.flpCommunity.Visible = Tasks.Count == 0 && (Program.Settings.ShowDiscordButton || Program.Settings.ShowSupportUsButton) &&
+                (DateTime.Now - Program.Settings.FirstTimeRunDate).TotalDays >= 7;
             Program.MainForm.flpDiscord.Visible = Program.Settings.ShowDiscordButton;
-            Program.MainForm.flpPatreon.Visible = Program.Settings.ShowPatreonButton;
+            Program.MainForm.flpSupportUs.Visible = Program.Settings.ShowSupportUsButton;
         }
 
         private static ListViewItem FindListViewItem(WorkerTask task)

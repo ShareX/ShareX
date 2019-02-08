@@ -25,7 +25,6 @@
 
 using ShareX.HelpersLib;
 using ShareX.HistoryLib;
-using ShareX.ScreenCaptureLib;
 using ShareX.UploadersLib;
 using System;
 using System.Collections.Generic;
@@ -39,6 +38,7 @@ namespace ShareX
     {
         public TaskSettings DefaultTaskSettings = new TaskSettings();
 
+        public DateTime FirstTimeRunDate = DateTime.Now;
         public string FileUploadDefaultDirectory = "";
         public int NameParserAutoIncrementNumber = 0;
         public List<QuickTaskInfo> QuickTaskPresets = QuickTaskInfo.DefaultPresets;
@@ -158,8 +158,8 @@ namespace ShareX
         [Category("Application"), DefaultValue(true), Description("Show tips and hotkeys in main window when task list is empty.")]
         public bool ShowMainWindowTip { get; set; }
 
-        [Category("Application"), DefaultValue(true), Description("Show Patreon button in main window when task list is empty.")]
-        public bool ShowPatreonButton { get; set; }
+        [Category("Application"), DefaultValue(true), Description("Show support us button in main window when task list is empty.")]
+        public bool ShowSupportUsButton { get; set; }
 
         [Category("Application"), DefaultValue(true), Description("Show Discord button in main window when task list is empty.")]
         public bool ShowDiscordButton { get; set; }

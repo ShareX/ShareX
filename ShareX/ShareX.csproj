@@ -1518,8 +1518,6 @@
     <None Include="Resources\application--arrow.png" />
     <None Include="Resources\clipboard-paste-document-text.png" />
     <None Include="Resources\globe--arrow.png" />
-    <None Include="Resources\Patreon_Button_01.png" />
-    <None Include="Resources\Patreon_Button_02.png" />
     <None Include="Resources\drive-download.png" />
     <None Include="Resources\drive-upload.png" />
     <None Include="Resources\ui-splitter.png" />
@@ -1568,6 +1566,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\network-cloud.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SupportUs_Button_01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SupportUs_Button_02.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

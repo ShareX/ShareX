@@ -1927,26 +1927,6 @@ namespace ShareX.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap Patreon_Button_01 {
-            get {
-                object obj = ResourceManager.GetObject("Patreon_Button_01", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap Patreon_Button_02 {
-            get {
-                object obj = ResourceManager.GetObject("Patreon_Button_02", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         public static System.Drawing.Bitmap pencil {
             get {
                 object obj = ResourceManager.GetObject("pencil", resourceCulture);
@@ -2195,6 +2175,26 @@ namespace ShareX.Properties {
         public static System.Drawing.Bitmap script__minus {
             get {
                 object obj = ResourceManager.GetObject("script__minus", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap SupportUs_Button_01 {
+            get {
+                object obj = ResourceManager.GetObject("SupportUs_Button_01", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap SupportUs_Button_02 {
+            get {
+                object obj = ResourceManager.GetObject("SupportUs_Button_02", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

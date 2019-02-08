@@ -294,103 +294,94 @@
   <data name="&gt;&gt;scMain.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="flpPatreon.AutoSize" type="System.Boolean, mscorlib">
+  <data name="flpSupportUs.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="pbPatreonOpen.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="pbSupportUsOpen.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="pbPatreonOpen.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="pbSupportUsOpen.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
-  <data name="pbPatreonOpen.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="pbSupportUsOpen.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
-  <data name="pbPatreonOpen.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="pbSupportUsOpen.Size" type="System.Drawing.Size, System.Drawing">
     <value>168, 45</value>
   </data>
-  <data name="pbPatreonOpen.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+  <data name="pbSupportUsOpen.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>AutoSize</value>
   </data>
-  <data name="pbPatreonOpen.TabIndex" type="System.Int32, mscorlib">
+  <data name="pbSupportUsOpen.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <metadata name="ttMain.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>567, 17</value>
-  </metadata>
-  <data name="pbPatreonOpen.ToolTip" xml:space="preserve">
-    <value>Open ShareX Patreon campaign web page</value>
+  <data name="&gt;&gt;pbSupportUsOpen.Name" xml:space="preserve">
+    <value>pbSupportUsOpen</value>
   </data>
-  <data name="&gt;&gt;pbPatreonOpen.Name" xml:space="preserve">
-    <value>pbPatreonOpen</value>
-  </data>
-  <data name="&gt;&gt;pbPatreonOpen.Type" xml:space="preserve">
+  <data name="&gt;&gt;pbSupportUsOpen.Type" xml:space="preserve">
     <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;pbPatreonOpen.Parent" xml:space="preserve">
-    <value>flpPatreon</value>
+  <data name="&gt;&gt;pbSupportUsOpen.Parent" xml:space="preserve">
+    <value>flpSupportUs</value>
   </data>
-  <data name="&gt;&gt;pbPatreonOpen.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;pbSupportUsOpen.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="pbPatreonHide.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="pbSupportUsHide.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="pbPatreonHide.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="pbSupportUsHide.Location" type="System.Drawing.Point, System.Drawing">
     <value>168, 0</value>
   </data>
-  <data name="pbPatreonHide.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="pbSupportUsHide.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
-  <data name="pbPatreonHide.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="pbSupportUsHide.Size" type="System.Drawing.Size, System.Drawing">
     <value>47, 45</value>
   </data>
-  <data name="pbPatreonHide.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+  <data name="pbSupportUsHide.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>AutoSize</value>
   </data>
-  <data name="pbPatreonHide.TabIndex" type="System.Int32, mscorlib">
+  <data name="pbSupportUsHide.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="pbPatreonHide.ToolTip" xml:space="preserve">
-    <value>Hide Patreon button permanently</value>
+  <data name="&gt;&gt;pbSupportUsHide.Name" xml:space="preserve">
+    <value>pbSupportUsHide</value>
   </data>
-  <data name="&gt;&gt;pbPatreonHide.Name" xml:space="preserve">
-    <value>pbPatreonHide</value>
-  </data>
-  <data name="&gt;&gt;pbPatreonHide.Type" xml:space="preserve">
+  <data name="&gt;&gt;pbSupportUsHide.Type" xml:space="preserve">
     <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;pbPatreonHide.Parent" xml:space="preserve">
-    <value>flpPatreon</value>
+  <data name="&gt;&gt;pbSupportUsHide.Parent" xml:space="preserve">
+    <value>flpSupportUs</value>
   </data>
-  <data name="&gt;&gt;pbPatreonHide.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;pbSupportUsHide.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="flpPatreon.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="flpSupportUs.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 54</value>
   </data>
-  <data name="flpPatreon.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="flpSupportUs.Size" type="System.Drawing.Size, System.Drawing">
     <value>215, 45</value>
   </data>
-  <data name="flpPatreon.TabIndex" type="System.Int32, mscorlib">
+  <data name="flpSupportUs.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
-  <data name="flpPatreon.Visible" type="System.Boolean, mscorlib">
+  <data name="flpSupportUs.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="flpPatreon.WrapContents" type="System.Boolean, mscorlib">
+  <data name="flpSupportUs.WrapContents" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="&gt;&gt;flpPatreon.Name" xml:space="preserve">
-    <value>flpPatreon</value>
+  <data name="&gt;&gt;flpSupportUs.Name" xml:space="preserve">
+    <value>flpSupportUs</value>
   </data>
-  <data name="&gt;&gt;flpPatreon.Type" xml:space="preserve">
+  <data name="&gt;&gt;flpSupportUs.Type" xml:space="preserve">
     <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;flpPatreon.Parent" xml:space="preserve">
+  <data name="&gt;&gt;flpSupportUs.Parent" xml:space="preserve">
     <value>flpCommunity</value>
   </data>
-  <data name="&gt;&gt;flpPatreon.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;flpSupportUs.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="tsMain.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
@@ -1913,9 +1904,6 @@
   <data name="pbDiscordOpen.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="pbDiscordOpen.ToolTip" xml:space="preserve">
-    <value>Open ShareX Discord server invite link</value>
-  </data>
   <data name="&gt;&gt;pbDiscordOpen.Name" xml:space="preserve">
     <value>pbDiscordOpen</value>
   </data>
@@ -1945,9 +1933,6 @@
   </data>
   <data name="pbDiscordHide.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
-  </data>
-  <data name="pbDiscordHide.ToolTip" xml:space="preserve">
-    <value>Hide Discord button permanently</value>
   </data>
   <data name="&gt;&gt;pbDiscordHide.Name" xml:space="preserve">
     <value>pbDiscordHide</value>
@@ -2116,6 +2101,9 @@
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>834, 429</value>
+  </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>500, 250</value>
@@ -3490,12 +3478,6 @@
   </data>
   <data name="&gt;&gt;timerTraySingleClick.Type" xml:space="preserve">
     <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ttMain.Name" xml:space="preserve">
-    <value>ttMain</value>
-  </data>
-  <data name="&gt;&gt;ttMain.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MainForm</value>
