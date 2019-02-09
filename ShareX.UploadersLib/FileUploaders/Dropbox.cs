@@ -91,8 +91,8 @@ namespace ShareX.UploadersLib.FileUploaders
         private const string URLDelete = URLAPI + "/files/delete";
         private const string URLMove = URLAPI + "/files/move";
 
-        private const string URLShareDirect = "https://dl.dropboxusercontent.com/s";
-        private const string URLPublicDirect = "https://dl.dropboxusercontent.com/u";
+        private const string URLShareDirect = "https://dl.dropbox.com/s";
+        private const string URLPublicDirect = "https://dl.dropbox.com/u";
 
         public OAuth2Info AuthInfo { get; set; }
         public string UploadPath { get; set; }
