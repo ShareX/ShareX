@@ -42,7 +42,6 @@ namespace ShareX.HelpersLib
             AddDNS("OpenDNS", "208.67.222.222", "208.67.220.220"); // https://www.opendns.com
             AddDNS("Cloudflare", "1.1.1.1", "1.0.0.1"); // https://1.1.1.1
             AddDNS("Level 3 Communications", "4.2.2.1", "4.2.2.2"); // http://www.level3.com
-            AddDNS("Norton ConnectSafe", "199.85.126.10", "199.85.127.10"); // https://dns.norton.com
             AddDNS("Comodo Secure DNS", "8.26.56.26", "8.20.247.20"); // https://www.comodo.com/secure-dns/
             AddDNS("DNS Advantage", "156.154.70.1", "156.154.71.1"); // https://www.security.neustar/dns-services/free-recursive-dns-service
             AddDNS("Yandex DNS", "77.88.8.2", "77.88.8.88"); // https://dns.yandex.com
