@@ -41,7 +41,22 @@ namespace ShareX.HelpersLib
             }
         }
 
-        public static Icon Icon => Resources.ShareX_Icon;
+        public static bool UseWhiteIcon { get; set; }
+
+        public static Icon Icon
+        {
+            get
+            {
+                if (UseWhiteIcon)
+                {
+                    return Resources.ShareX_Icon_White;
+                }
+                else
+                {
+                    return Resources.ShareX_Icon;
+                }
+            }
+        }
 
         public static Image Logo => Resources.ShareX_Logo;
 

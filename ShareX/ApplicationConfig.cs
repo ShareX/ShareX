@@ -180,6 +180,9 @@ namespace ShareX
         [Category("Application"), DefaultValue(false), Description("In main window when task is completed automatically select it.")]
         public bool AutoSelectLastCompletedTask { get; set; }
 
+        [Category("Application"), DefaultValue(false), Description("Use white version of ShareX icon.")]
+        public bool UseWhiteShareXIcon { get; set; }
+
         [Category("Hotkey"), DefaultValue(false), Description("Disables hotkeys.")]
         public bool DisableHotkeys { get; set; }
 

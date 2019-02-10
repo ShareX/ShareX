@@ -137,15 +137,7 @@ namespace ShareX.HelpersLib.Properties {
         ///easygoing
         ///ecstatic
         ///edible
-        ///educated
-        ///fabulous
-        ///failing
-        ///faint
-        ///fair
-        ///faithful
-        ///fake
-        ///familiar
-        ///fam [rest of string was truncated]&quot;;.
+        ///educat [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string adjectives {
             get {
@@ -421,8 +413,7 @@ namespace ShareX.HelpersLib.Properties {
         ///africanjacana
         ///africanmolesnake
         ///africanparadiseflycatcher
-        ///africanpiedkingfisher
-        ///africanporcu [rest of string was truncated]&quot;;.
+        ///a [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string animals {
             get {
@@ -3119,6 +3110,16 @@ namespace ShareX.HelpersLib.Properties {
         internal static System.Drawing.Icon ShareX_Icon {
             get {
                 object obj = ResourceManager.GetObject("ShareX_Icon", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon ShareX_Icon_White {
+            get {
+                object obj = ResourceManager.GetObject("ShareX_Icon_White", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
             }
         }

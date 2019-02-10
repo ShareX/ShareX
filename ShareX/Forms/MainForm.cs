@@ -759,6 +759,14 @@ namespace ShareX
             HelpersOptions.RecentColors = Program.Settings.RecentColors;
             TaskManager.RecentManager.MaxCount = Program.Settings.RecentTasksMaxCount;
 
+            if (ShareXResources.UseWhiteIcon != Program.Settings.UseWhiteShareXIcon)
+            {
+                ShareXResources.UseWhiteIcon = Program.Settings.UseWhiteShareXIcon;
+
+                Icon = ShareXResources.Icon;
+                niTray.Icon = ShareXResources.Icon;
+            }
+
 #if RELEASE
             ConfigureAutoUpdate();
 #else
