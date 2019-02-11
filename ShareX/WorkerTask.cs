@@ -343,20 +343,22 @@ namespace ShareX
             {
                 Program.Settings.ShowUploadWarning = false;
                 Program.DefaultTaskSettings.AfterCaptureJob = Program.DefaultTaskSettings.AfterCaptureJob.Remove(AfterCaptureTasks.UploadImageToHost);
+                Info.TaskSettings.AfterCaptureJob = Info.TaskSettings.AfterCaptureJob.Remove(AfterCaptureTasks.UploadImageToHost);
+                Info.Result.IsURLExpected = false;
                 RequestSettingUpdate = true;
-                Stop();
+                return;
             }
 
-            if (Program.Settings.LargeFileSizeWarning > 0)
+            if (Program.Settings.ShowLargeFileSizeWarning > 0)
             {
-                long dataSize = Program.Settings.BinaryUnits ? Program.Settings.LargeFileSizeWarning * 1024 * 1024 : Program.Settings.LargeFileSizeWarning * 1000 * 1000;
+                long dataSize = Program.Settings.BinaryUnits ? Program.Settings.ShowLargeFileSizeWarning * 1024 * 1024 : Program.Settings.ShowLargeFileSizeWarning * 1000 * 1000;
                 if (Data != null && Data.Length > dataSize)
                 {
                     using (MyMessageBox msgbox = new MyMessageBox(Resources.UploadTask_DoUploadJob_You_are_attempting_to_upload_a_large_file, "ShareX",
                         MessageBoxButtons.YesNo, Resources.UploadManager_IsUploadConfirmed_Don_t_show_this_message_again_))
                     {
                         msgbox.ShowDialog();
-                        if (msgbox.IsChecked) Program.Settings.LargeFileSizeWarning = 0;
+                        if (msgbox.IsChecked) Program.Settings.ShowLargeFileSizeWarning = 0;
                         if (msgbox.DialogResult == DialogResult.No) Stop();
                     }
                 }

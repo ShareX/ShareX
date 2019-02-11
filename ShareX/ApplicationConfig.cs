@@ -164,9 +164,6 @@ namespace ShareX
         [Category("Application"), DefaultValue(true), Description("Show Discord button in main window when task list is empty.")]
         public bool ShowDiscordButton { get; set; }
 
-        [Category("Application"), DefaultValue(100), Description("Large file size defined in MB. ShareX will warn before uploading large files. 0 disables this feature.")]
-        public int LargeFileSizeWarning { get; set; }
-
         [Category("Application"), DefaultValue(""), Description("URLs will open using this path instead of default browser. Example path: chrome.exe")]
         [Editor(typeof(ExeFileNameEditor), typeof(UITypeEditor))]
         public string BrowserPath { get; set; }
@@ -230,6 +227,9 @@ namespace ShareX
 
         [Category("Upload"), DefaultValue(true), Description("Show more than 10 files upload warning.")]
         public bool ShowMultiUploadWarning { get; set; }
+
+        [Category("Upload"), DefaultValue(100), Description("Large file size defined in MB. ShareX will warn before uploading large files. 0 disables this feature.")]
+        public int ShowLargeFileSizeWarning { get; set; }
 
         [Category("Paths"), Description("Custom uploaders configuration path. If you have already configured this setting in another device and you are attempting to use the same location, then backup the file before configuring this setting and restore after exiting ShareX.")]
         [Editor(typeof(DirectoryNameEditor), typeof(UITypeEditor))]
