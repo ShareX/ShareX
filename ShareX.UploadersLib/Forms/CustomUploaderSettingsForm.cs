@@ -98,6 +98,7 @@ namespace ShareX.UploadersLib
             rtbResultThumbnailURL.AddContextMenu();
             rtbResultDeletionURL.AddContextMenu();
             rtbResult.AddContextMenu();
+            rtbResponseText.AddContextMenu();
             eiCustomUploaders.ObjectType = typeof(CustomUploaderItem);
             CustomUploaderAddDestinationTypes();
             cbRequestMethod.Items.AddRange(Enum.GetNames(typeof(HttpMethod)));
@@ -626,7 +627,7 @@ namespace ShareX.UploadersLib
             btnImageUploaderTest.Enabled = btnTextUploaderTest.Enabled = btnFileUploaderTest.Enabled =
                 btnURLShortenerTest.Enabled = btnURLSharingServiceTest.Enabled = false;
             rtbResult.ResetText();
-            txtResponseText.ResetText();
+            rtbResponseText.ResetText();
             lbCustomUploaderList.SelectedIndex = index;
 
             CustomUploaderItem item = Config.CustomUploadersList[index];
@@ -719,7 +720,7 @@ namespace ShareX.UploadersLib
                     }
 
                     rtbResult.Text = sbResult.ToString();
-                    txtResponseText.Text = result.ResponseInfo?.ResponseText;
+                    rtbResponseText.Text = result.ResponseInfo?.ResponseText;
 
                     tcCustomUploader.SelectedTab = tpTest;
                 }
@@ -1217,13 +1218,13 @@ namespace ShareX.UploadersLib
 
         private void tsbCustomUploaderJSONFormat_Click(object sender, EventArgs e)
         {
-            string response = txtResponseText.Text;
+            string response = rtbResponseText.Text;
             if (!string.IsNullOrEmpty(response))
             {
                 try
                 {
                     response = Helpers.JSONFormat(response, Formatting.Indented);
-                    txtResponseText.Text = response;
+                    rtbResponseText.Text = response;
                 }
                 catch
                 {
@@ -1234,13 +1235,13 @@ namespace ShareX.UploadersLib
 
         private void tsbCustomUploaderXMLFormat_Click(object sender, EventArgs e)
         {
-            string response = txtResponseText.Text;
+            string response = rtbResponseText.Text;
             if (!string.IsNullOrEmpty(response))
             {
                 try
                 {
                     response = Helpers.XMLFormat(response);
-                    txtResponseText.Text = response;
+                    rtbResponseText.Text = response;
                 }
                 catch
                 {
@@ -1251,7 +1252,7 @@ namespace ShareX.UploadersLib
 
         private void tsbCustomUploaderCopyResponseText_Click(object sender, EventArgs e)
         {
-            string response = txtResponseText.Text;
+            string response = rtbResponseText.Text;
             if (!string.IsNullOrEmpty(response))
             {
                 ClipboardHelpers.CopyText(response);

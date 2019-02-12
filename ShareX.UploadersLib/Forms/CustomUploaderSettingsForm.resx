@@ -130,33 +130,60 @@
     <value>4</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="txtResponseText.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="rtbResponseText.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="txtResponseText.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
+  <data name="rtbResponseText.Location" type="System.Drawing.Point, System.Drawing">
+    <value>2, 2</value>
+  </data>
+  <data name="rtbResponseText.Size" type="System.Drawing.Size, System.Drawing">
+    <value>486, 409</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="txtResponseText.Multiline" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="rtbResponseText.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
-  <data name="txtResponseText.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="rtbResponseText.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;rtbResponseText.Name" xml:space="preserve">
+    <value>rtbResponseText</value>
+  </data>
+  <data name="&gt;&gt;rtbResponseText.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rtbResponseText.Parent" xml:space="preserve">
+    <value>pResponseText</value>
+  </data>
+  <data name="&gt;&gt;rtbResponseText.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="pResponseText.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="pResponseText.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="pResponseText.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="pResponseText.Size" type="System.Drawing.Size, System.Drawing">
     <value>492, 415</value>
   </data>
-  <data name="txtResponseText.TabIndex" type="System.Int32, mscorlib">
-    <value>43</value>
+  <data name="pResponseText.TabIndex" type="System.Int32, mscorlib">
+    <value>42</value>
   </data>
-  <data name="&gt;&gt;txtResponseText.Name" xml:space="preserve">
-    <value>txtResponseText</value>
+  <data name="&gt;&gt;pResponseText.Name" xml:space="preserve">
+    <value>pResponseText</value>
   </data>
-  <data name="&gt;&gt;txtResponseText.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;pResponseText.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;txtResponseText.Parent" xml:space="preserve">
+  <data name="&gt;&gt;pResponseText.Parent" xml:space="preserve">
     <value>tscResponseText.ContentPanel</value>
   </data>
-  <data name="&gt;&gt;txtResponseText.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;pResponseText.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="tscResponseText.ContentPanel.Size" type="System.Drawing.Size, System.Drawing">

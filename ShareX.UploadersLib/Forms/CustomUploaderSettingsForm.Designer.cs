@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomUploaderSettingsForm));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -38,8 +37,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomUploaderSettingsForm));
             this.tscResponseText = new System.Windows.Forms.ToolStripContainer();
-            this.txtResponseText = new System.Windows.Forms.TextBox();
             this.tsResponseText = new System.Windows.Forms.ToolStrip();
             this.tsbResponseTextJSONFormat = new System.Windows.Forms.ToolStripButton();
             this.tsbResponseTextXMLFormat = new System.Windows.Forms.ToolStripButton();
@@ -121,6 +120,7 @@
             this.lblXPath = new System.Windows.Forms.Label();
             this.txtXPath = new System.Windows.Forms.TextBox();
             this.tpRegexParse = new System.Windows.Forms.TabPage();
+            this.lblRegex = new System.Windows.Forms.Label();
             this.dgvRegex = new System.Windows.Forms.DataGridView();
             this.cRegex = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnRegexAddSyntax = new System.Windows.Forms.Button();
@@ -139,7 +139,8 @@
             this.cbURLSharingService = new System.Windows.Forms.ComboBox();
             this.btnURLSharingServiceTest = new System.Windows.Forms.Button();
             this.ttHelpTip = new System.Windows.Forms.ToolTip(this.components);
-            this.lblRegex = new System.Windows.Forms.Label();
+            this.pResponseText = new System.Windows.Forms.Panel();
+            this.rtbResponseText = new System.Windows.Forms.RichTextBox();
             this.tscResponseText.ContentPanel.SuspendLayout();
             this.tscResponseText.TopToolStripPanel.SuspendLayout();
             this.tscResponseText.SuspendLayout();
@@ -169,6 +170,7 @@
             this.tpResult.SuspendLayout();
             this.pResult.SuspendLayout();
             this.tpResponseText.SuspendLayout();
+            this.pResponseText.SuspendLayout();
             this.SuspendLayout();
             // 
             // tscResponseText
@@ -176,7 +178,7 @@
             // 
             // tscResponseText.ContentPanel
             // 
-            this.tscResponseText.ContentPanel.Controls.Add(this.txtResponseText);
+            this.tscResponseText.ContentPanel.Controls.Add(this.pResponseText);
             resources.ApplyResources(this.tscResponseText.ContentPanel, "tscResponseText.ContentPanel");
             resources.ApplyResources(this.tscResponseText, "tscResponseText");
             this.tscResponseText.Name = "tscResponseText";
@@ -185,11 +187,6 @@
             // 
             this.tscResponseText.TopToolStripPanel.Controls.Add(this.tsResponseText);
             this.tscResponseText.TopToolStripPanel.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            // 
-            // txtResponseText
-            // 
-            resources.ApplyResources(this.txtResponseText, "txtResponseText");
-            this.txtResponseText.Name = "txtResponseText";
             // 
             // tsResponseText
             // 
@@ -870,6 +867,11 @@
             this.tpRegexParse.Name = "tpRegexParse";
             this.tpRegexParse.UseVisualStyleBackColor = true;
             // 
+            // lblRegex
+            // 
+            resources.ApplyResources(this.lblRegex, "lblRegex");
+            this.lblRegex.Name = "lblRegex";
+            // 
             // dgvRegex
             // 
             this.dgvRegex.AllowUserToResizeRows = false;
@@ -1026,10 +1028,19 @@
             this.ttHelpTip.UseAnimation = false;
             this.ttHelpTip.UseFading = false;
             // 
-            // lblRegex
+            // pResponseText
             // 
-            resources.ApplyResources(this.lblRegex, "lblRegex");
-            this.lblRegex.Name = "lblRegex";
+            this.pResponseText.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pResponseText.Controls.Add(this.rtbResponseText);
+            resources.ApplyResources(this.pResponseText, "pResponseText");
+            this.pResponseText.Name = "pResponseText";
+            // 
+            // rtbResponseText
+            // 
+            this.rtbResponseText.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            resources.ApplyResources(this.rtbResponseText, "rtbResponseText");
+            this.rtbResponseText.Name = "rtbResponseText";
+            this.rtbResponseText.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.txtCustomUploaderLog_LinkClicked);
             // 
             // CustomUploaderSettingsForm
             // 
@@ -1063,7 +1074,6 @@
             this.DragDrop += new System.Windows.Forms.DragEventHandler(this.CustomUploaderSettingsForm_DragDrop);
             this.DragEnter += new System.Windows.Forms.DragEventHandler(this.CustomUploaderSettingsForm_DragEnter);
             this.tscResponseText.ContentPanel.ResumeLayout(false);
-            this.tscResponseText.ContentPanel.PerformLayout();
             this.tscResponseText.TopToolStripPanel.ResumeLayout(false);
             this.tscResponseText.TopToolStripPanel.PerformLayout();
             this.tscResponseText.ResumeLayout(false);
@@ -1101,6 +1111,7 @@
             this.tpResult.ResumeLayout(false);
             this.pResult.ResumeLayout(false);
             this.tpResponseText.ResumeLayout(false);
+            this.pResponseText.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1179,7 +1190,6 @@
         private System.Windows.Forms.RichTextBox rtbResult;
         private System.Windows.Forms.TabPage tpResponseText;
         private System.Windows.Forms.ToolStripContainer tscResponseText;
-        private System.Windows.Forms.TextBox txtResponseText;
         private System.Windows.Forms.ToolStrip tsResponseText;
         private System.Windows.Forms.ToolStripButton tsbResponseTextJSONFormat;
         private System.Windows.Forms.ToolStripButton tsbResponseTextXMLFormat;
@@ -1210,5 +1220,7 @@
         private System.Windows.Forms.DataGridView dgvRegex;
         private System.Windows.Forms.DataGridViewTextBoxColumn cRegex;
         private System.Windows.Forms.Label lblRegex;
+        private System.Windows.Forms.Panel pResponseText;
+        private System.Windows.Forms.RichTextBox rtbResponseText;
     }
 }
