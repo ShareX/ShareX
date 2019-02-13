@@ -31,6 +31,42 @@ namespace ShareX.HelpersLib
 {
     public static class ColorHelpers
     {
+        public static Color[] StandardColors = new Color[]
+        {
+            Color.FromArgb(0, 0, 0),
+            Color.FromArgb(64, 64, 64),
+            Color.FromArgb(255, 0, 0),
+            Color.FromArgb(255, 106, 0),
+            Color.FromArgb(255, 216, 0),
+            Color.FromArgb(182, 255, 0),
+            Color.FromArgb(76, 255, 0),
+            Color.FromArgb(0, 255, 33),
+            Color.FromArgb(0, 255, 144),
+            Color.FromArgb(0, 255, 255),
+            Color.FromArgb(0, 148, 255),
+            Color.FromArgb(0, 38, 255),
+            Color.FromArgb(72, 0, 255),
+            Color.FromArgb(178, 0, 255),
+            Color.FromArgb(255, 0, 220),
+            Color.FromArgb(255, 0, 110),
+            Color.FromArgb(255, 255, 255),
+            Color.FromArgb(128, 128, 128),
+            Color.FromArgb(127, 0, 0),
+            Color.FromArgb(127, 51, 0),
+            Color.FromArgb(127, 106, 0),
+            Color.FromArgb(91, 127, 0),
+            Color.FromArgb(38, 127, 0),
+            Color.FromArgb(0, 127, 14),
+            Color.FromArgb(0, 127, 70),
+            Color.FromArgb(0, 127, 127),
+            Color.FromArgb(0, 74, 127),
+            Color.FromArgb(0, 19, 127),
+            Color.FromArgb(33, 0, 127),
+            Color.FromArgb(87, 0, 127),
+            Color.FromArgb(127, 0, 110),
+            Color.FromArgb(127, 0, 55)
+        };
+
         #region Convert Color to ...
 
         public static string ColorToHex(Color color, ColorFormat format = ColorFormat.RGB)

@@ -48,7 +48,7 @@ namespace ShareX.HelpersLib
 
             IsScreenColorPickerMode = isScreenColorPickerMode;
 
-            PrepareRecentColors();
+            PrepareColorPalette();
             SetCurrentColor(currentColor, !IsScreenColorPickerMode);
 
             btnOK.Visible = btnCancel.Visible = !IsScreenColorPickerMode;
@@ -81,9 +81,22 @@ namespace ShareX.HelpersLib
             return false;
         }
 
-        private void PrepareRecentColors()
+        private void PrepareColorPalette()
         {
-            int length = Math.Min(HelpersOptions.RecentColors.Count, HelpersOptions.RecentColorsMax);
+            flpColorPalette.Controls.Clear();
+
+            Color[] colors;
+
+            if (rbRecentColors.Checked)
+            {
+                colors = HelpersOptions.RecentColors.ToArray();
+            }
+            else
+            {
+                colors = ColorHelpers.StandardColors;
+            }
+
+            int length = Math.Min(colors.Length, HelpersOptions.RecentColorsMax);
 
             Color previousColor = Color.Empty;
 
@@ -91,7 +104,7 @@ namespace ShareX.HelpersLib
             {
                 ColorButton colorButton = new ColorButton()
                 {
-                    Color = HelpersOptions.RecentColors[i],
+                    Color = colors[i],
                     Size = new Size(16, 16),
                     Margin = new Padding(1),
                     BorderColor = Color.FromArgb(100, 100, 100),
@@ -120,8 +133,8 @@ namespace ShareX.HelpersLib
                     }
                 };
 
-                flpRecentColors.Controls.Add(colorButton);
-                if ((i + 1) % 16 == 0) flpRecentColors.SetFlowBreak(colorButton, true);
+                flpColorPalette.Controls.Add(colorButton);
+                if ((i + 1) % 16 == 0) flpColorPalette.SetFlowBreak(colorButton, true);
             }
         }
 
@@ -248,6 +261,11 @@ namespace ShareX.HelpersLib
         {
             NewColor = e.Color;
             UpdateControls(NewColor, e.ColorType);
+        }
+
+        private void rbRecentColors_CheckedChanged(object sender, EventArgs e)
+        {
+            PrepareColorPalette();
         }
 
         private void btnOK_Click(object sender, EventArgs e)
