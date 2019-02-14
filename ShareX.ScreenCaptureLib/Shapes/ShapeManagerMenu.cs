@@ -78,6 +78,7 @@ namespace ShareX.ScreenCaptureLib
             menuForm.LocationChanged += MenuForm_LocationChanged;
             menuForm.GotFocus += MenuForm_GotFocus;
             menuForm.LostFocus += MenuForm_LostFocus;
+            menuForm.MouseMove += Form.RegionCaptureForm_MouseMove;
 
             menuForm.SuspendLayout();
 
@@ -97,6 +98,7 @@ namespace ShareX.ScreenCaptureLib
             };
 
             tsMain.MouseLeave += TsMain_MouseLeave;
+            tsMain.MouseMove += Form.RegionCaptureForm_MouseMove;
 
             tsMain.SuspendLayout();
 
@@ -1021,6 +1023,7 @@ namespace ShareX.ScreenCaptureLib
                     };
 
                     tsi.MouseLeave += TsMain_MouseLeave;
+                    tsi.MouseMove += Form.RegionCaptureForm_MouseMove;
                 }
             }
 

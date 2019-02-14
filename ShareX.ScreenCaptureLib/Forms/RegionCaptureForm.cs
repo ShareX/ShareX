@@ -100,11 +100,17 @@ namespace ShareX.ScreenCaptureLib
         private Font infoFont, infoFontMedium, infoFontBig;
         private Stopwatch timerStart, timerFPS;
         private int frameCount;
-        private bool pause, isKeyAllowed, forceClose;
+        private bool isKeyAllowed, forceClose;
         private RectangleAnimation regionAnimation;
         private TextAnimation editorPanTipAnimation;
         private Bitmap bmpBackgroundImage;
         private Cursor defaultCursor;
+
+        private static Timer invalidateTimer = new Timer();
+        private const int BACKGROUND_INVALIDATE_INTERVAL_MS = 250;
+        private static Timer idleTimer = new Timer();
+        private const int MAX_INVALIDATE_INTERVAL_MS = 16;
+        private const int THROTTLE_DOWN_TIMEOUT_MS = 100;
 
         public RegionCaptureForm(RegionCaptureMode mode, RegionCaptureOptions options, Image canvas = null)
         {
@@ -125,7 +131,7 @@ namespace ShareX.ScreenCaptureLib
             timerFPS = new Stopwatch();
             regionAnimation = new RectangleAnimation()
             {
-                Duration = TimeSpan.FromMilliseconds(200)
+                Duration = TimeSpan.FromMilliseconds(1000)
             };
 
             if (IsEditorMode && Options.ShowEditorPanTip)
@@ -225,9 +231,12 @@ namespace ShareX.ScreenCaptureLib
                 ShowInTaskbar = true;
             }
 
+            InitInvalidateTimers();
+
             Shown += RegionCaptureForm_Shown;
             KeyDown += RegionCaptureForm_KeyDown;
             MouseDown += RegionCaptureForm_MouseDown;
+            MouseMove += RegionCaptureForm_MouseMove;
             Resize += RegionCaptureForm_Resize;
             LocationChanged += RegionCaptureForm_LocationChanged;
             LostFocus += RegionCaptureForm_LostFocus;
@@ -352,6 +361,26 @@ namespace ShareX.ScreenCaptureLib
                 if (bmpBackgroundImage != null) bmpBackgroundImage.Dispose();
                 bmpBackgroundImage = new Bitmap(Canvas);
             }
+        }
+
+        private void InitInvalidateTimers()
+        {
+            // Even if there are no changes on screen, invalidate the form
+            // at a reasonable rate in order to keep animations going (e.g. marquee)
+            invalidateTimer.Tick += new EventHandler((object obj, EventArgs eventArgs) =>
+            {
+                Invalidate();
+            });
+
+            invalidateTimer.Interval = BACKGROUND_INVALIDATE_INTERVAL_MS;
+            invalidateTimer.Start();
+
+            idleTimer.Interval = THROTTLE_DOWN_TIMEOUT_MS;
+            idleTimer.Tick += new EventHandler((object obj, EventArgs eventArgs) =>
+            {
+                invalidateTimer.Interval = BACKGROUND_INVALIDATE_INTERVAL_MS;
+                idleTimer.Stop();
+            });
         }
 
         private void OnMoved()
@@ -563,6 +592,8 @@ namespace ShareX.ScreenCaptureLib
                 MonitorKey(e.KeyData - Keys.D0);
                 return;
             }
+
+            Invalidate();
         }
 
         private void RegionCaptureForm_MouseDown(object sender, MouseEventArgs e)
@@ -578,7 +609,17 @@ namespace ShareX.ScreenCaptureLib
 
                 CloseWindow(RegionResult.Region);
             }
+
+            Invalidate();
         }
+
+        internal void RegionCaptureForm_MouseMove(object sender, MouseEventArgs e)
+        {
+            invalidateTimer.Interval = MAX_INVALIDATE_INTERVAL_MS;
+            idleTimer.Stop();
+            idleTimer.Start();
+        }
+
 
         private void MonitorKey(int index)
         {
@@ -603,13 +644,12 @@ namespace ShareX.ScreenCaptureLib
 
         internal void Pause()
         {
-            pause = true;
+            invalidateTimer.Stop();
         }
 
         internal void Resume()
         {
-            pause = false;
-
+            invalidateTimer.Start();
             Invalidate();
         }
 
@@ -668,7 +708,7 @@ namespace ShareX.ScreenCaptureLib
                 UpdateCenterOffset();
             }
 
-            borderDotPen.DashOffset = (float)timerStart.Elapsed.TotalSeconds * -15;
+            borderDotPen.DashOffset = (float)(timerStart.Elapsed.TotalMilliseconds / -BACKGROUND_INVALIDATE_INTERVAL_MS);
 
             ShapeManager.Update();
         }
@@ -704,11 +744,6 @@ namespace ShareX.ScreenCaptureLib
                 {
                     DrawFPS(g, 10);
                 }
-            }
-
-            if (!pause)
-            {
-                Invalidate();
             }
         }
 

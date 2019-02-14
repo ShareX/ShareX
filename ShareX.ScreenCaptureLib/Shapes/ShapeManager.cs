@@ -397,6 +397,8 @@ namespace ShareX.ScreenCaptureLib
                 tsmiShowMagnifier.Checked = Options.ShowMagnifier;
                 tslnudMagnifierPixelCount.Content.Value = Options.MagnifierPixelCount;
             }
+
+            Form.RegionCaptureForm_MouseMove(sender, e);
         }
 
         private void form_KeyDown(object sender, KeyEventArgs e)
