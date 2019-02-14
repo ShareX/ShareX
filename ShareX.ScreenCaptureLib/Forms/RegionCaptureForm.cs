@@ -131,7 +131,7 @@ namespace ShareX.ScreenCaptureLib
             timerFPS = new Stopwatch();
             regionAnimation = new RectangleAnimation()
             {
-                Duration = TimeSpan.FromMilliseconds(1000)
+                Duration = TimeSpan.FromMilliseconds(200)
             };
 
             if (IsEditorMode && Options.ShowEditorPanTip)
