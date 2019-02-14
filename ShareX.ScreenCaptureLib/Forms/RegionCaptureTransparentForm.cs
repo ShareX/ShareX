@@ -180,6 +180,12 @@ namespace ShareX.ScreenCaptureLib
 
         private void UpdateBackgroundImage()
         {
+            if (PreviousSelectionRectangle0Based == SelectionRectangle0Based)
+            {
+                // Don't update if the selection hasn't changed
+                return;
+            }
+
             // Clear previous rectangle selection
             gBackgroundImage.DrawRectangleProper(clearPen, PreviousSelectionRectangle0Based);
 

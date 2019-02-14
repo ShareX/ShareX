@@ -181,10 +181,15 @@ namespace ShareX.ScreenCaptureLib
 
         private void timer_Tick(object sender, EventArgs e)
         {
+            var previousSelectionRectangle = SelectionRectangle;
             currentPosition = CaptureHelpers.GetCursorPosition();
             SelectionRectangle = CaptureHelpers.CreateRectangle(positionOnClick.X, positionOnClick.Y, currentPosition.X, currentPosition.Y);
 
-            Refresh();
+            // Only refresh if the selection has changed
+            if (previousSelectionRectangle != SelectionRectangle)
+            {
+                Refresh();
+            }
         }
 
         protected override void OnPaintBackground(PaintEventArgs e)
