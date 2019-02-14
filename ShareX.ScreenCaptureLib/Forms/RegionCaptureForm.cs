@@ -620,7 +620,6 @@ namespace ShareX.ScreenCaptureLib
             idleTimer.Start();
         }
 
-
         private void MonitorKey(int index)
         {
             if (index == 0)
