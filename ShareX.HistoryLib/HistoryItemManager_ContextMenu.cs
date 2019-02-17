@@ -484,6 +484,10 @@ namespace ShareX.HistoryLib
             tsmiCopyForumImage.Enabled = IsImageURL && IsURLExist;
             tsmiCopyForumLinkedImage.Enabled = IsImageURL && IsThumbnailURLExist;
 
+            tsmiCopyMarkdownLink.Enabled = IsURLExist;
+            tsmiCopyMarkdownImage.Enabled = IsImageURL && IsURLExist;
+            tsmiCopyMarkdownLinkedImage.Enabled = IsImageURL && IsThumbnailURLExist;
+
             tsmiCopyFilePath.Enabled = IsFilePathValid;
             tsmiCopyFileName.Enabled = IsFilePathValid;
             tsmiCopyFileNameWithExtension.Enabled = IsFilePathValid;
