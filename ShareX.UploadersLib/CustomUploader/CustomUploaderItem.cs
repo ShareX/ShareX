@@ -294,7 +294,19 @@ namespace ShareX.UploadersLib
 
                     if (Arguments != null)
                     {
-                        Parameters = new Dictionary<string, string>(Arguments);
+                        if (Parameters == null)
+                        {
+                            Parameters = new Dictionary<string, string>();
+                        }
+
+                        foreach (KeyValuePair<string, string> pair in Arguments)
+                        {
+                            if (!Parameters.ContainsKey(pair.Key))
+                            {
+                                Parameters.Add(pair.Key, pair.Value);
+                            }
+                        }
+
                         Arguments = null;
                     }
                 }
