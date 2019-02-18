@@ -349,8 +349,6 @@ namespace ShareX.UploadersLib
         {
             if (!string.IsNullOrEmpty(RequestURL))
             {
-                RequestURL = URLHelpers.FixPrefix(RequestURL);
-
                 NameValueCollection nvc = URLHelpers.ParseQueryString(RequestURL);
 
                 if (nvc != null && nvc.Count > 0)
