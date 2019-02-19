@@ -58,8 +58,6 @@ namespace ShareX.UploadersLib.FileUploaders
 
     public class Pomf : FileUploader
     {
-        // Pomf clones: https://docs.google.com/spreadsheets/d/1kh1TZdtyX7UlRd55OBxf7DB-JGj2rsfWckI0FPQRYhE
-        // More clones: https://github.com/tsudoko/long-live-pomf/blob/master/long-live-pomf.md
         public static List<PomfUploader> Uploaders = new List<PomfUploader>()
         {
             //new PomfUploader("https://pomf.se/upload.php"),
@@ -67,12 +65,12 @@ namespace ShareX.UploadersLib.FileUploaders
             new PomfUploader("https://mixtape.moe/upload.php"),
             new PomfUploader("https://pomf.pyonpyon.moe/upload.php"),
             new PomfUploader("https://up.asis.io/upload.php", "http://dl.asis.io"),
-            new PomfUploader("https://api.put.re/upload"), 
+            new PomfUploader("https://api.put.re/upload"),
             new PomfUploader("https://yuu.sh/api/upload"),
             new PomfUploader("https://filuboksi.fi/upload.php"),
             new PomfUploader("https://dmca.gripe/api/upload"),
             new PomfUploader("https://safe.fiery.me/api/upload"),
-            new PomfUploader("https://pomf.fun/upload.php"),
+            new PomfUploader("https://pomf.fun/upload.php")
         };
 
         public PomfUploader Uploader { get; private set; }
