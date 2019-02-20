@@ -136,12 +136,7 @@ namespace ShareX.UploadersLib
 
         private void CustomUploaderNew()
         {
-            CustomUploaderItem uploader = new CustomUploaderItem()
-            {
-                Version = Application.ProductVersion
-            };
-
-            CustomUploaderAdd(uploader);
+            CustomUploaderAdd(CustomUploaderItem.Init());
             CustomUploaderUpdateList();
         }
 
@@ -231,25 +226,20 @@ namespace ShareX.UploadersLib
 
         private void CustomUploaderUpdateStates()
         {
-            bool isSelected = CustomUploaderCheck(lbCustomUploaderList.SelectedIndex);
-
             btnRemove.Enabled = btnDuplicate.Enabled = txtName.Enabled = mbDestinationType.Enabled =
-                tcCustomUploader.Enabled = isSelected;
-
-            if (isSelected)
-            {
-                CustomUploaderUpdateRequestFormatState();
-                CustomUploaderUpdateResponseState();
-            }
+                tcCustomUploader.Enabled = CustomUploaderCheck(lbCustomUploaderList.SelectedIndex);
 
             btnClearUploaders.Enabled = tsmiExportAll.Enabled = cbImageUploader.Enabled =
                 btnImageUploaderTest.Enabled = cbTextUploader.Enabled = btnTextUploaderTest.Enabled =
                 cbFileUploader.Enabled = btnFileUploaderTest.Enabled = cbURLShortener.Enabled =
                 btnURLShortenerTest.Enabled = cbURLSharingService.Enabled = btnURLSharingServiceTest.Enabled =
                 lbCustomUploaderList.Items.Count > 0;
+
+            CustomUploaderUpdateBodyState();
+            CustomUploaderUpdateResponseState();
         }
 
-        private void CustomUploaderUpdateRequestFormatState()
+        private void CustomUploaderUpdateBodyState()
         {
             CustomUploaderItem uploader = CustomUploaderGetSelected();
             if (uploader != null)
@@ -295,7 +285,7 @@ namespace ShareX.UploadersLib
 
         private void CustomUploaderClearFields()
         {
-            CustomUploaderLoad(new CustomUploaderItem());
+            CustomUploaderLoad(CustomUploaderItem.Init());
         }
 
         private void CustomUploaderExportAll()
@@ -990,7 +980,7 @@ namespace ShareX.UploadersLib
             CustomUploaderItem uploader = CustomUploaderGetSelected();
             if (uploader != null) uploader.Body = (CustomUploaderBody)cbBody.SelectedIndex;
 
-            CustomUploaderUpdateRequestFormatState();
+            CustomUploaderUpdateBodyState();
         }
 
         private void dgv_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)

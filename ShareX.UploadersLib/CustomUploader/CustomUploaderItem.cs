@@ -68,7 +68,7 @@ namespace ShareX.UploadersLib
         public bool ShouldSerializeHeaders() => Headers != null && Headers.Count > 0;
 
         [DefaultValue(CustomUploaderBody.None)]
-        public CustomUploaderBody Body { get; set; } = CustomUploaderBody.MultipartFormData;
+        public CustomUploaderBody Body { get; set; }
 
         [DefaultValue(null)]
         public Dictionary<string, string> Arguments { get; set; }
@@ -103,8 +103,18 @@ namespace ShareX.UploadersLib
         [DefaultValue("")]
         public string DeletionURL { get; set; }
 
-        public CustomUploaderItem()
+        private CustomUploaderItem()
         {
+        }
+
+        public static CustomUploaderItem Init()
+        {
+            return new CustomUploaderItem()
+            {
+                Version = Application.ProductVersion,
+                RequestMethod = HttpMethod.POST,
+                Body = CustomUploaderBody.MultipartFormData
+            };
         }
 
         public override string ToString()
