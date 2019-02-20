@@ -1662,11 +1662,11 @@ namespace ShareX
 
                             Program.MainForm.UpdateCheckStates();
                             Program.MainForm.UpdateUploaderMenuNames();
+                        }
 
-                            if (CustomUploaderSettingsForm.IsInstanceActive)
-                            {
-                                CustomUploaderSettingsForm.CustomUploaderUpdateTab();
-                            }
+                        if (CustomUploaderSettingsForm.IsInstanceActive)
+                        {
+                            CustomUploaderSettingsForm.CustomUploaderUpdateTab();
                         }
                     }
                 }
