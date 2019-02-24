@@ -102,10 +102,7 @@ namespace ShareX.HelpersLib
 
         private void llblUpdateAvailable_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            if (updateChecker != null && updateChecker.Status == UpdateStatus.UpdateAvailable)
-            {
-                updateChecker.DownloadUpdate();
-            }
+            UpdateMessageBox.Start(updateChecker);
         }
     }
 }
