@@ -24,15 +24,51 @@
 #endregion License Information (GPL v3)
 
 using System.Net;
+using System.Text;
 
 namespace ShareX.UploadersLib
 {
     public class ResponseInfo
     {
         public HttpStatusCode StatusCode { get; set; }
+        public string StatusDescription { get; set; }
         public bool IsSuccess => UploadHelpers.IsSuccessStatusCode(StatusCode);
         public string ResponseURL { get; set; }
         public WebHeaderCollection Headers { get; set; }
         public string ResponseText { get; set; }
+
+        public string ToReadableString(bool includeResponseText)
+        {
+            StringBuilder sbResponseInfo = new StringBuilder();
+
+            sbResponseInfo.AppendLine("Status code:");
+            sbResponseInfo.Append($"({(int)StatusCode}) {StatusDescription}");
+
+            if (!string.IsNullOrEmpty(ResponseURL))
+            {
+                sbResponseInfo.AppendLine();
+                sbResponseInfo.AppendLine();
+                sbResponseInfo.AppendLine("Response URL:");
+                sbResponseInfo.Append(ResponseURL);
+            }
+
+            if (Headers != null && Headers.Count > 0)
+            {
+                sbResponseInfo.AppendLine();
+                sbResponseInfo.AppendLine();
+                sbResponseInfo.AppendLine("Headers:");
+                sbResponseInfo.Append(Headers.ToString().TrimEnd());
+            }
+
+            if (includeResponseText && !string.IsNullOrEmpty(ResponseText))
+            {
+                sbResponseInfo.AppendLine();
+                sbResponseInfo.AppendLine();
+                sbResponseInfo.AppendLine("Response text:");
+                sbResponseInfo.Append(ResponseText);
+            }
+
+            return sbResponseInfo.ToString();
+        }
     }
 }

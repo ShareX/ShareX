@@ -438,7 +438,7 @@ namespace ShareX.UploadersLib
 
                                 sb.AppendLine();
                                 sb.AppendLine("Status code:");
-                                sb.AppendLine($"{(int)responseInfo.StatusCode} {responseInfo.StatusCode}");
+                                sb.AppendLine($"({(int)responseInfo.StatusCode}) {responseInfo.StatusDescription}");
 
                                 if (!string.IsNullOrEmpty(requestURL) && !requestURL.Equals(responseInfo.ResponseURL))
                                 {
@@ -498,6 +498,7 @@ namespace ShareX.UploadersLib
                 ResponseInfo responseInfo = new ResponseInfo()
                 {
                     StatusCode = response.StatusCode,
+                    StatusDescription = response.StatusDescription,
                     ResponseURL = response.ResponseUri.OriginalString,
                     Headers = response.Headers
                 };

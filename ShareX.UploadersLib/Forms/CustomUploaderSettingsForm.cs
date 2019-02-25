@@ -98,6 +98,7 @@ namespace ShareX.UploadersLib
             rtbResultThumbnailURL.AddContextMenu();
             rtbResultDeletionURL.AddContextMenu();
             rtbResult.AddContextMenu();
+            rtbResponseInfo.AddContextMenu();
             rtbResponseText.AddContextMenu();
             eiCustomUploaders.ObjectType = typeof(CustomUploaderItem);
             CustomUploaderAddDestinationTypes();
@@ -618,6 +619,7 @@ namespace ShareX.UploadersLib
                 btnURLShortenerTest.Enabled = btnURLSharingServiceTest.Enabled = false;
             rtbResult.ResetText();
             rtbResponseText.ResetText();
+            rtbResponseInfo.ResetText();
             lbCustomUploaderList.SelectedIndex = index;
 
             CustomUploaderItem item = Config.CustomUploadersList[index];
@@ -710,13 +712,54 @@ namespace ShareX.UploadersLib
                     }
 
                     rtbResult.Text = sbResult.ToString();
-                    rtbResponseText.Text = result.ResponseInfo?.ResponseText;
+
+                    if (result.ResponseInfo != null)
+                    {
+                        rtbResponseText.ResetText();
+                        rtbResponseText.Text = result.ResponseInfo.ResponseText;
+
+                        UpdateResponseInfoTextBox(result.ResponseInfo, true);
+                    }
 
                     tcCustomUploader.SelectedTab = tpTest;
                 }
 
                 btnImageUploaderTest.Enabled = btnTextUploaderTest.Enabled = btnFileUploaderTest.Enabled =
                     btnURLShortenerTest.Enabled = btnURLSharingServiceTest.Enabled = true;
+            }
+        }
+
+        private void UpdateResponseInfoTextBox(ResponseInfo responseInfo, bool includeResponseText)
+        {
+            rtbResponseInfo.ResetText();
+
+            rtbResponseInfo.SelectionFont = new Font(rtbResponseInfo.Font, FontStyle.Bold);
+            rtbResponseInfo.AppendText("Status code:\r\n");
+            rtbResponseInfo.SelectionFont = new Font(rtbResponseInfo.Font, FontStyle.Regular);
+            rtbResponseInfo.AppendText($"({(int)responseInfo.StatusCode}) {responseInfo.StatusDescription}");
+
+            if (!string.IsNullOrEmpty(responseInfo.ResponseURL))
+            {
+                rtbResponseInfo.SelectionFont = new Font(rtbResponseInfo.Font, FontStyle.Bold);
+                rtbResponseInfo.AppendText("\r\n\r\nResponse URL:\r\n");
+                rtbResponseInfo.SelectionFont = new Font(rtbResponseInfo.Font, FontStyle.Regular);
+                rtbResponseInfo.AppendText(responseInfo.ResponseURL);
+            }
+
+            if (responseInfo.Headers != null && responseInfo.Headers.Count > 0)
+            {
+                rtbResponseInfo.SelectionFont = new Font(rtbResponseInfo.Font, FontStyle.Bold);
+                rtbResponseInfo.AppendText("\r\n\r\nHeaders:\r\n");
+                rtbResponseInfo.SelectionFont = new Font(rtbResponseInfo.Font, FontStyle.Regular);
+                rtbResponseInfo.AppendText(responseInfo.Headers.ToString().TrimEnd('\r', '\n'));
+            }
+
+            if (includeResponseText && !string.IsNullOrEmpty(responseInfo.ResponseText))
+            {
+                rtbResponseInfo.SelectionFont = new Font(rtbResponseInfo.Font, FontStyle.Bold);
+                rtbResponseInfo.AppendText("\r\n\r\nResponse text:\r\n");
+                rtbResponseInfo.SelectionFont = new Font(rtbResponseInfo.Font, FontStyle.Regular);
+                rtbResponseInfo.AppendText(responseInfo.ResponseText);
             }
         }
 
