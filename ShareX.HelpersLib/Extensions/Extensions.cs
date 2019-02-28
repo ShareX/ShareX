@@ -246,11 +246,25 @@ namespace ShareX.HelpersLib
                 tsmiPaste.Click += (sender, e) => rtb.Paste();
                 cms.Items.Add(tsmiPaste);
 
+                // TODO: Translate
+                ToolStripMenuItem tsmiDelete = new ToolStripMenuItem("Delete");
+                tsmiDelete.Click += (sender, e) => rtb.SelectedText = "";
+                cms.Items.Add(tsmiDelete);
+
+                cms.Items.Add(new ToolStripSeparator());
+
+                // TODO: Translate
+                ToolStripMenuItem tsmiSelectAll = new ToolStripMenuItem("Select All");
+                tsmiSelectAll.Click += (sender, e) => rtb.SelectAll();
+                cms.Items.Add(tsmiSelectAll);
+
                 cms.Opening += (sender, e) =>
                 {
                     tsmiCut.Enabled = !rtb.ReadOnly && rtb.SelectionLength > 0;
                     tsmiCopy.Enabled = rtb.SelectionLength > 0;
                     tsmiPaste.Enabled = !rtb.ReadOnly && Clipboard.ContainsText();
+                    tsmiDelete.Enabled = !rtb.ReadOnly && rtb.SelectionLength > 0;
+                    tsmiSelectAll.Enabled = rtb.TextLength > 0 && rtb.SelectionLength < rtb.TextLength;
                 };
 
                 rtb.ContextMenuStrip = cms;
