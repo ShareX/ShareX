@@ -234,6 +234,16 @@ namespace ShareX.HelpersLib
                     ShowImageMargin = false
                 };
 
+                ToolStripMenuItem tsmiUndo = new ToolStripMenuItem(Resources.Extensions_AddContextMenu_Undo);
+                tsmiUndo.Click += (sender, e) => rtb.Undo();
+                cms.Items.Add(tsmiUndo);
+
+                ToolStripMenuItem tsmiRedo = new ToolStripMenuItem(Resources.Extensions_AddContextMenu_Redo);
+                tsmiRedo.Click += (sender, e) => rtb.Redo();
+                cms.Items.Add(tsmiRedo);
+
+                cms.Items.Add(new ToolStripSeparator());
+
                 ToolStripMenuItem tsmiCut = new ToolStripMenuItem(Resources.Extensions_AddContextMenu_Cut);
                 tsmiCut.Click += (sender, e) => rtb.Cut();
                 cms.Items.Add(tsmiCut);
@@ -246,20 +256,20 @@ namespace ShareX.HelpersLib
                 tsmiPaste.Click += (sender, e) => rtb.Paste();
                 cms.Items.Add(tsmiPaste);
 
-                // TODO: Translate
-                ToolStripMenuItem tsmiDelete = new ToolStripMenuItem("Delete");
+                ToolStripMenuItem tsmiDelete = new ToolStripMenuItem(Resources.Extensions_AddContextMenu_Delete);
                 tsmiDelete.Click += (sender, e) => rtb.SelectedText = "";
                 cms.Items.Add(tsmiDelete);
 
                 cms.Items.Add(new ToolStripSeparator());
 
-                // TODO: Translate
-                ToolStripMenuItem tsmiSelectAll = new ToolStripMenuItem("Select All");
+                ToolStripMenuItem tsmiSelectAll = new ToolStripMenuItem(Resources.Extensions_AddContextMenu_SelectAll);
                 tsmiSelectAll.Click += (sender, e) => rtb.SelectAll();
                 cms.Items.Add(tsmiSelectAll);
 
                 cms.Opening += (sender, e) =>
                 {
+                    tsmiUndo.Enabled = !rtb.ReadOnly && rtb.CanUndo;
+                    tsmiRedo.Enabled = !rtb.ReadOnly && rtb.CanRedo;
                     tsmiCut.Enabled = !rtb.ReadOnly && rtb.SelectionLength > 0;
                     tsmiCopy.Enabled = rtb.SelectionLength > 0;
                     tsmiPaste.Enabled = !rtb.ReadOnly && Clipboard.ContainsText();

@@ -1178,4 +1178,16 @@ Would you like to download and install it?</value>
   <data name="ShareX_Icon_White" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ShareX_Icon_White.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Extensions_AddContextMenu_Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="Extensions_AddContextMenu_SelectAll" xml:space="preserve">
+    <value>Select All</value>
+  </data>
+  <data name="Extensions_AddContextMenu_Redo" xml:space="preserve">
+    <value>Redo</value>
+  </data>
+  <data name="Extensions_AddContextMenu_Undo" xml:space="preserve">
+    <value>Undo</value>
+  </data>
 </root>

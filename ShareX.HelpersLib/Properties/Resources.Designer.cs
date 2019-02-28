@@ -781,11 +781,47 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Delete.
+        /// </summary>
+        internal static string Extensions_AddContextMenu_Delete {
+            get {
+                return ResourceManager.GetString("Extensions_AddContextMenu_Delete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Paste.
         /// </summary>
         internal static string Extensions_AddContextMenu_Paste {
             get {
                 return ResourceManager.GetString("Extensions_AddContextMenu_Paste", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Redo.
+        /// </summary>
+        internal static string Extensions_AddContextMenu_Redo {
+            get {
+                return ResourceManager.GetString("Extensions_AddContextMenu_Redo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select All.
+        /// </summary>
+        internal static string Extensions_AddContextMenu_SelectAll {
+            get {
+                return ResourceManager.GetString("Extensions_AddContextMenu_SelectAll", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Undo.
+        /// </summary>
+        internal static string Extensions_AddContextMenu_Undo {
+            get {
+                return ResourceManager.GetString("Extensions_AddContextMenu_Undo", resourceCulture);
             }
         }
         
