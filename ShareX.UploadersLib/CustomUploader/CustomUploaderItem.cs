@@ -257,8 +257,13 @@ namespace ShareX.UploadersLib
             {
                 result.ResponseInfo = responseInfo;
 
-                if (responseInfo.IsSuccess && !string.IsNullOrEmpty(responseInfo.ResponseText))
+                if (responseInfo.IsSuccess)
                 {
+                    if (responseInfo.ResponseText == null)
+                    {
+                        responseInfo.ResponseText = "";
+                    }
+
                     CustomUploaderParser parser = new CustomUploaderParser(responseInfo, RegexList);
                     parser.Filename = input.Filename;
                     parser.URLEncode = true;
