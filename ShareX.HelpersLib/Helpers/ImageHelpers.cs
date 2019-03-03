@@ -1529,29 +1529,26 @@ namespace ShareX.HelpersLib
 
             if (!string.IsNullOrEmpty(ext))
             {
-                ext = ext.ToLowerInvariant();
-
-                switch (ext)
+                if (ext.Equals("png", StringComparison.OrdinalIgnoreCase))
                 {
-                    case "png":
-                        imageFormat = ImageFormat.Png;
-                        break;
-                    case "jpg":
-                    case "jpeg":
-                    case "jpe":
-                    case "jfif":
-                        imageFormat = ImageFormat.Jpeg;
-                        break;
-                    case "gif":
-                        imageFormat = ImageFormat.Gif;
-                        break;
-                    case "bmp":
-                        imageFormat = ImageFormat.Bmp;
-                        break;
-                    case "tif":
-                    case "tiff":
-                        imageFormat = ImageFormat.Tiff;
-                        break;
+                    imageFormat = ImageFormat.Png;
+                }
+                else if (ext.Equals("jpg", StringComparison.OrdinalIgnoreCase) || ext.Equals("jpeg", StringComparison.OrdinalIgnoreCase) ||
+                    ext.Equals("jpe", StringComparison.OrdinalIgnoreCase) || ext.Equals("jfif", StringComparison.OrdinalIgnoreCase))
+                {
+                    imageFormat = ImageFormat.Jpeg;
+                }
+                else if (ext.Equals("gif", StringComparison.OrdinalIgnoreCase))
+                {
+                    imageFormat = ImageFormat.Gif;
+                }
+                else if (ext.Equals("bmp", StringComparison.OrdinalIgnoreCase))
+                {
+                    imageFormat = ImageFormat.Bmp;
+                }
+                else if (ext.Equals("tif", StringComparison.OrdinalIgnoreCase) || ext.Equals("tiff", StringComparison.OrdinalIgnoreCase))
+                {
+                    imageFormat = ImageFormat.Tiff;
                 }
             }
 

@@ -208,7 +208,7 @@ namespace ShareX.HelpersLib
 
             if (!string.IsNullOrEmpty(ext))
             {
-                return extensions.Any(x => ext.Equals(x, StringComparison.InvariantCultureIgnoreCase));
+                return extensions.Any(x => ext.Equals(x, StringComparison.OrdinalIgnoreCase));
             }
 
             return false;

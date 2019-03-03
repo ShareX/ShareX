@@ -51,12 +51,12 @@ namespace ShareX.UploadersLib
         {
             string extension = Helpers.GetFilenameExtension(filename);
 
-            return !string.IsNullOrEmpty(extension) && Extensions.Any(x => x.TrimStart('.').Equals(extension, StringComparison.InvariantCultureIgnoreCase));
+            return !string.IsNullOrEmpty(extension) && Extensions.Any(x => x.TrimStart('.').Equals(extension, StringComparison.OrdinalIgnoreCase));
         }
 
         public IGenericUploaderService GetUploaderService()
         {
-            return UploaderFactory.AllGenericUploaderServices.FirstOrDefault(x => x.ServiceIdentifier.Equals(Uploader, StringComparison.InvariantCultureIgnoreCase));
+            return UploaderFactory.AllGenericUploaderServices.FirstOrDefault(x => x.ServiceIdentifier.Equals(Uploader, StringComparison.OrdinalIgnoreCase));
         }
 
         public void SetExtensions(string extensions)
