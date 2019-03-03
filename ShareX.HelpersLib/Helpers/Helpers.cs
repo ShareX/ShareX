@@ -92,20 +92,44 @@ namespace ShareX.HelpersLib
             }
         }
 
-        /// <summary>Get file name extension without dot.</summary>
-        public static string GetFilenameExtension(string filePath)
+        public static string GetFilenameExtension(string filePath, bool includeDot = false, bool checkSecondExtension = true)
         {
+            string extension = "";
+
             if (!string.IsNullOrEmpty(filePath))
             {
                 int pos = filePath.LastIndexOf('.');
 
                 if (pos >= 0)
                 {
-                    return filePath.Substring(pos + 1);
+                    extension = filePath.Substring(pos + 1);
+
+                    if (checkSecondExtension)
+                    {
+                        filePath = filePath.Remove(pos);
+                        string extension2 = GetFilenameExtension(filePath, false, false);
+
+                        if (!string.IsNullOrEmpty(extension2))
+                        {
+                            foreach (string knownExtension in new string[] { "tar" })
+                            {
+                                if (extension2.Equals(knownExtension, StringComparison.OrdinalIgnoreCase))
+                                {
+                                    extension = extension2 + "." + extension;
+                                    break;
+                                }
+                            }
+                        }
+                    }
+
+                    if (includeDot)
+                    {
+                        extension = "." + extension;
+                    }
                 }
             }
 
-            return null;
+            return extension;
         }
 
         public static string GetFilenameSafe(string filePath)

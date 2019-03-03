@@ -102,7 +102,7 @@ namespace ShareX
 
             if (task.Info.TaskSettings.UploadSettings.FileUploadUseNamePattern)
             {
-                string ext = Path.GetExtension(task.Info.FilePath);
+                string ext = Helpers.GetFilenameExtension(task.Info.FilePath);
                 task.Info.FileName = TaskHelpers.GetFilename(task.Info.TaskSettings, ext);
             }
 
@@ -181,12 +181,12 @@ namespace ShareX
 
             if (!string.IsNullOrEmpty(customFileName))
             {
-                string ext = Path.GetExtension(task.Info.FilePath);
+                string ext = Helpers.GetFilenameExtension(task.Info.FilePath);
                 task.Info.FileName = Helpers.AppendExtension(customFileName, ext);
             }
             else if (task.Info.TaskSettings.UploadSettings.FileUploadUseNamePattern)
             {
-                string ext = Path.GetExtension(task.Info.FilePath);
+                string ext = Helpers.GetFilenameExtension(task.Info.FilePath);
                 task.Info.FileName = TaskHelpers.GetFilename(task.Info.TaskSettings, ext);
             }
 
@@ -211,7 +211,7 @@ namespace ShareX
 
             if (task.Info.TaskSettings.UploadSettings.FileUploadUseNamePattern)
             {
-                string ext = Path.GetExtension(filename);
+                string ext = Helpers.GetFilenameExtension(filename);
                 filename = TaskHelpers.GetFilename(task.Info.TaskSettings, ext);
             }
 
