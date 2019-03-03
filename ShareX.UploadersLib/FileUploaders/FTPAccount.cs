@@ -158,7 +158,12 @@ namespace ShareX.UploadersLib
 
         public string GetHttpHomePath()
         {
-            return NameParser.Parse(NameParserType.URL, HttpHomePath.Replace("%host", Host));
+            string homePath = HttpHomePath.Replace("%host", Host);
+
+            CustomUploaderParser parser = new CustomUploaderParser();
+            parser.UseNameParser = true;
+            parser.NameParserType = NameParserType.URL;
+            return parser.Parse(homePath);
         }
 
         public string GetUriPath(string filename, string subFolderPath = null)

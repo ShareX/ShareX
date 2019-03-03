@@ -51,6 +51,7 @@ namespace ShareX.UploadersLib
         public bool JSONEncode { get; set; }
         public bool XMLEncode { get; set; }
         public bool UseNameParser { get; set; }
+        public NameParserType NameParserType { get; set; } = NameParserType.Text;
 
         public bool SkipSyntaxParse { get; set; }
         public List<CustomUploaderSyntaxInfo> SyntaxInfoList { get; private set; }
@@ -104,7 +105,7 @@ namespace ShareX.UploadersLib
 
             if (UseNameParser)
             {
-                NameParser nameParser = new NameParser(NameParserType.Text);
+                NameParser nameParser = new NameParser(NameParserType);
                 EscapeHelper escapeHelper = new EscapeHelper();
                 escapeHelper.KeepEscapeCharacter = true;
                 text = escapeHelper.Parse(text, nameParser.Parse);
