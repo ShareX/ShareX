@@ -355,9 +355,9 @@ namespace ShareX.UploadersLib
                 }
 
                 ResponseType = ResponseType.Text;
-            }
 
-            Version = Application.ProductVersion;
+                Version = Application.ProductVersion;
+            }
         }
 
         private void CheckRequestURL()
