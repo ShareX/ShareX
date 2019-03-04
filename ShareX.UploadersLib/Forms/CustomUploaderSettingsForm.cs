@@ -297,13 +297,48 @@ namespace ShareX.UploadersLib
                 {
                     if (fsd.ShowDialog())
                     {
-                        foreach (CustomUploaderItem uploader in Config.CustomUploadersList)
+                        foreach (CustomUploaderItem cui in Config.CustomUploadersList)
                         {
-                            string json = eiCustomUploaders.Serialize(uploader);
-                            string filepath = Path.Combine(fsd.FileName, uploader.GetFileName());
-                            File.WriteAllText(filepath, json, Encoding.UTF8);
+                            string json = eiCustomUploaders.Serialize(cui);
+                            string filePath = Path.Combine(fsd.FileName, cui.GetFileName());
+                            File.WriteAllText(filePath, json, Encoding.UTF8);
                         }
                     }
+                }
+            }
+        }
+
+        private void CustomUploaderUpdateFolder()
+        {
+            using (FolderSelectDialog fsd = new FolderSelectDialog())
+            {
+                if (fsd.ShowDialog())
+                {
+                    string folderPath = fsd.FileName;
+                    string[] files = Directory.GetFiles(folderPath, "*.sxcu", SearchOption.TopDirectoryOnly);
+
+                    int updated = 0;
+
+                    if (files != null)
+                    {
+                        foreach (string filePath in files)
+                        {
+                            CustomUploaderItem cui = JsonHelpers.DeserializeFromFilePath<CustomUploaderItem>(filePath);
+
+                            if (cui != null)
+                            {
+                                cui.CheckBackwardCompatibility();
+
+                                string json = eiCustomUploaders.Serialize(cui);
+                                string newFilePath = Path.Combine(folderPath, cui.GetFileName());
+                                File.WriteAllText(newFilePath, json, Encoding.UTF8);
+
+                                updated++;
+                            }
+                        }
+                    }
+
+                    MessageBox.Show($"{updated} custom uploader files updated.", "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
         }
@@ -328,6 +363,7 @@ namespace ShareX.UploadersLib
 
 #if DEBUG
             tsmiExportAll.Visible = true;
+            tsmiUpdateFolder.Visible = true;
 #endif
 
             CustomUploaderClearFields();
@@ -989,6 +1025,11 @@ namespace ShareX.UploadersLib
         private void tsmiCustomUploaderExportAll_Click(object sender, EventArgs e)
         {
             CustomUploaderExportAll();
+        }
+
+        private void tsmiUpdateFolder_Click(object sender, EventArgs e)
+        {
+            CustomUploaderUpdateFolder();
         }
 
         private void txtCustomUploaderName_TextChanged(object sender, EventArgs e)
