@@ -53,6 +53,7 @@ namespace ShareX
         public bool IsWorking => Status == TaskStatus.Preparing || Status == TaskStatus.Working || Status == TaskStatus.Stopping;
         public bool StopRequested { get; private set; }
         public bool RequestSettingUpdate { get; private set; }
+        public bool EarlyURLCopied { get; private set; }
         public Stream Data { get; private set; }
         public Image Image { get; private set; }
 
@@ -302,6 +303,11 @@ namespace ShareX
             finally
             {
                 Dispose(!(Info.DataType == EDataType.Image && Info.TaskSettings.GeneralSettings.PopUpNotification == PopUpNotificationType.ToastNotification));
+
+                if (EarlyURLCopied && (StopRequested || Info.Result == null || string.IsNullOrEmpty(Info.Result.URL)))
+                {
+                    Clipboard.Clear();
+                }
 
                 if (Info.Job == TaskJob.Job && Info.TaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.DeleteFile) && !string.IsNullOrEmpty(Info.FilePath) && File.Exists(Info.FilePath))
                 {
@@ -845,7 +851,11 @@ namespace ShareX
 
                 if (Info.TaskSettings.AfterUploadJob.HasFlag(AfterUploadTasks.CopyURLToClipboard) && Info.TaskSettings.AdvancedSettings.EarlyCopyURL)
                 {
-                    uploader.EarlyURLCopyRequested += url => ClipboardHelpers.CopyText(url);
+                    uploader.EarlyURLCopyRequested += url =>
+                    {
+                        ClipboardHelpers.CopyText(url);
+                        EarlyURLCopied = true;
+                    };
                 }
 
                 fileName = URLHelpers.RemoveBidiControlCharacters(fileName);
