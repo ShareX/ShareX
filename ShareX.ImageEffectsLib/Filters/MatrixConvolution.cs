@@ -56,7 +56,7 @@ namespace ShareX.ImageEffectsLib
         [DefaultValue(1.0)]
         public double Factor { get; set; }
 
-        [DefaultValue(0)]
+        [DefaultValue((byte)0)]
         public byte Offset { get; set; }
 
         public MatrixConvolution()
