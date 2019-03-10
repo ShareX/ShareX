@@ -304,7 +304,7 @@ namespace ShareX
             {
                 Dispose(!(Info.DataType == EDataType.Image && Info.TaskSettings.GeneralSettings.PopUpNotification == PopUpNotificationType.ToastNotification));
 
-                if (EarlyURLCopied && (StopRequested || Info.Result == null || string.IsNullOrEmpty(Info.Result.URL)))
+                if (EarlyURLCopied && (StopRequested || Info.Result == null || string.IsNullOrEmpty(Info.Result.URL)) && Clipboard.ContainsText())
                 {
                     Clipboard.Clear();
                 }
