@@ -374,6 +374,8 @@ namespace ShareX.UploadersLib
             this.lblTeknikAuthUrl = new System.Windows.Forms.Label();
             this.tbTeknikAuthUrl = new System.Windows.Forms.TextBox();
             this.cbTeknikGenDeleteKey = new System.Windows.Forms.CheckBox();
+            this.tbTeknikPasteExpirationUnit = new System.Windows.Forms.TextBox();
+            this.tbTeknikPasteExpirationLength = new System.Windows.Forms.NumericUpDown();
             this.cbTeknikEncrypt = new System.Windows.Forms.CheckBox();
             this.lblTeknikUploadAPIUrl = new System.Windows.Forms.Label();
             this.tbTeknikUploadAPIUrl = new System.Windows.Forms.TextBox();
@@ -631,6 +633,8 @@ namespace ShareX.UploadersLib
             this.lblWidthHint = new System.Windows.Forms.Label();
             this.ttlvMain = new ShareX.HelpersLib.TabToListView();
             this.actRapidShareAccountType = new ShareX.UploadersLib.AccountTypeControl();
+            this.labelNoCopy1 = new ShareX.HelpersLib.LabelNoCopy();
+            this.labelNoCopy2 = new ShareX.HelpersLib.LabelNoCopy();
             this.tpOtherUploaders.SuspendLayout();
             this.tcOtherUploaders.SuspendLayout();
             this.tpTwitter.SuspendLayout();
@@ -674,6 +678,7 @@ namespace ShareX.UploadersLib
             this.gbJiraServer.SuspendLayout();
             this.tpLambda.SuspendLayout();
             this.tpTeknik.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tbTeknikPasteExpirationLength)).BeginInit();
             this.tpPomf.SuspendLayout();
             this.tpSeafile.SuspendLayout();
             this.grpSeafileShareSettings.SuspendLayout();
@@ -3002,6 +3007,8 @@ namespace ShareX.UploadersLib
             // tpTeknik
             // 
             this.tpTeknik.BackColor = System.Drawing.SystemColors.Window;
+            this.tpTeknik.Controls.Add(this.labelNoCopy2);
+            this.tpTeknik.Controls.Add(this.labelNoCopy1);
             this.tpTeknik.Controls.Add(this.lblTeknikUrlShortenerAPIUrl);
             this.tpTeknik.Controls.Add(this.tbTeknikUrlShortenerAPIUrl);
             this.tpTeknik.Controls.Add(this.lblTeknikPasteAPIUrl);
@@ -3009,6 +3016,8 @@ namespace ShareX.UploadersLib
             this.tpTeknik.Controls.Add(this.lblTeknikAuthUrl);
             this.tpTeknik.Controls.Add(this.tbTeknikAuthUrl);
             this.tpTeknik.Controls.Add(this.cbTeknikGenDeleteKey);
+            this.tpTeknik.Controls.Add(this.tbTeknikPasteExpirationUnit);
+            this.tpTeknik.Controls.Add(this.tbTeknikPasteExpirationLength);
             this.tpTeknik.Controls.Add(this.cbTeknikEncrypt);
             this.tpTeknik.Controls.Add(this.lblTeknikUploadAPIUrl);
             this.tpTeknik.Controls.Add(this.tbTeknikUploadAPIUrl);
@@ -3055,6 +3064,19 @@ namespace ShareX.UploadersLib
             this.cbTeknikGenDeleteKey.Name = "cbTeknikGenDeleteKey";
             this.cbTeknikGenDeleteKey.UseVisualStyleBackColor = true;
             this.cbTeknikGenDeleteKey.CheckedChanged += new System.EventHandler(this.cbTeknikGenDeleteKey_CheckedChanged);
+            // 
+            // tbTeknikPasteExpirationUnit
+            // 
+            resources.ApplyResources(this.tbTeknikPasteExpirationUnit, "tbTeknikPasteExpirationUnit");
+            this.tbTeknikPasteExpirationUnit.Name = "tbTeknikPasteExpirationUnit";
+            this.ttHelpTip.SetToolTip(this.tbTeknikPasteExpirationUnit, resources.GetString("tbTeknikPasteExpirationUnit.ToolTip"));
+            this.tbTeknikPasteExpirationUnit.TextChanged += new System.EventHandler(this.tbTeknikPasteExpirationUnit_TextChanged);
+            // 
+            // tbTeknikPasteExpirationLength
+            // 
+            resources.ApplyResources(this.tbTeknikPasteExpirationLength, "tbTeknikPasteExpirationLength");
+            this.tbTeknikPasteExpirationLength.Name = "tbTeknikPasteExpirationLength";
+            this.tbTeknikPasteExpirationLength.TextChanged += new System.EventHandler(this.tbTeknikPasteExpirationLength_TextChanged);
             // 
             // cbTeknikEncrypt
             // 
@@ -4934,6 +4956,16 @@ namespace ShareX.UploadersLib
             this.actRapidShareAccountType.Name = "actRapidShareAccountType";
             this.actRapidShareAccountType.SelectedAccountType = ShareX.UploadersLib.AccountType.Anonymous;
             // 
+            // labelNoCopy1
+            // 
+            resources.ApplyResources(this.labelNoCopy1, "labelNoCopy1");
+            this.labelNoCopy1.Name = "labelNoCopy1";
+            // 
+            // labelNoCopy2
+            // 
+            resources.ApplyResources(this.labelNoCopy2, "labelNoCopy2");
+            this.labelNoCopy2.Name = "labelNoCopy2";
+            // 
             // UploadersConfigForm
             // 
             resources.ApplyResources(this, "$this");
@@ -5026,6 +5058,7 @@ namespace ShareX.UploadersLib
             this.tpLambda.PerformLayout();
             this.tpTeknik.ResumeLayout(false);
             this.tpTeknik.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tbTeknikPasteExpirationLength)).EndInit();
             this.tpPomf.ResumeLayout(false);
             this.tpPomf.PerformLayout();
             this.tpSeafile.ResumeLayout(false);
@@ -5669,6 +5702,8 @@ namespace ShareX.UploadersLib
         private System.Windows.Forms.Button btnGooglePhotosCreateAlbum;
         private System.Windows.Forms.CheckBox cbTeknikGenDeleteKey;
         private System.Windows.Forms.CheckBox cbTeknikEncrypt;
+        private System.Windows.Forms.TextBox tbTeknikPasteExpirationUnit;
+        private System.Windows.Forms.NumericUpDown tbTeknikPasteExpirationLength;
         private System.Windows.Forms.Label lblTeknikUploadAPIUrl;
         private System.Windows.Forms.TextBox tbTeknikUploadAPIUrl;
         private OAuthControl oauthTeknik;
@@ -5679,5 +5714,7 @@ namespace ShareX.UploadersLib
         private System.Windows.Forms.TextBox tbTeknikPasteAPIUrl;
         private System.Windows.Forms.Label lblTeknikUrlShortenerAPIUrl;
         private System.Windows.Forms.TextBox tbTeknikUrlShortenerAPIUrl;
+        private HelpersLib.LabelNoCopy labelNoCopy2;
+        private HelpersLib.LabelNoCopy labelNoCopy1;
     }
 }

@@ -339,6 +339,8 @@ namespace ShareX.UploadersLib
         public string TeknikPasteAPIUrl = Teknik.DefaultPasteAPIURL;
         public string TeknikUrlShortenerAPIUrl = Teknik.DefaultUrlShortenerAPIURL;
         public string TeknikAuthUrl = Teknik.DefaultAuthURL;
+        public string TeknikPasteExpirationUnit = "minute";
+        public int TeknikPasteExpirationLength = 1;
         public int TeknikExpirationLength = 1;
         public TeknikExpirationUnit TeknikExpirationUnit = TeknikExpirationUnit.Never;
         public bool TeknikEncryption = false;

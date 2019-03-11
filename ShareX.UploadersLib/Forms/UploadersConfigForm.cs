@@ -625,8 +625,11 @@ namespace ShareX.UploadersLib
             tbTeknikPasteAPIUrl.Text = Config.TeknikPasteAPIUrl;
             tbTeknikUrlShortenerAPIUrl.Text = Config.TeknikUrlShortenerAPIUrl;
             tbTeknikAuthUrl.Text = Config.TeknikAuthUrl;
+            tbTeknikPasteExpirationLength.Text = Config.TeknikPasteExpirationLength.ToString();
+            tbTeknikPasteExpirationUnit.Text = Config.TeknikPasteExpirationUnit;
             cbTeknikEncrypt.Checked = Config.TeknikEncryption;
             cbTeknikGenDeleteKey.Checked = Config.TeknikGenerateDeletionKey;
+
 
             #endregion Teknik
 
@@ -2552,6 +2555,14 @@ namespace ShareX.UploadersLib
             Config.TeknikGenerateDeletionKey = cbTeknikGenDeleteKey.Checked;
         }
 
+        private void tbTeknikPasteExpirationUnit_TextChanged(object sender, EventArgs e)
+        {
+            Config.TeknikPasteExpirationUnit = tbTeknikPasteExpirationUnit.Text;
+        }
+        private void tbTeknikPasteExpirationLength_TextChanged(object sender, EventArgs e)
+        {
+            Config.TeknikPasteExpirationLength = Convert.ToInt32(tbTeknikPasteExpirationLength.Value);
+        }
         #endregion
 
         #region Pomf
