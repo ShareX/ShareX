@@ -630,7 +630,6 @@ namespace ShareX.UploadersLib
             cbTeknikEncrypt.Checked = Config.TeknikEncryption;
             cbTeknikGenDeleteKey.Checked = Config.TeknikGenerateDeletionKey;
 
-
             #endregion Teknik
 
             #region Pomf
