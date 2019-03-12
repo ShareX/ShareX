@@ -192,6 +192,7 @@ namespace ShareX.UploadersLib
         public OAuth2Info GfycatOAuth2Info = null;
         public AccountType GfycatAccountType = AccountType.Anonymous;
         public bool GfycatIsPublic = false;
+        public bool GfycatKeepAudio = true;
 
         #endregion Gfycat
 

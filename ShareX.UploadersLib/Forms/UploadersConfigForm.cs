@@ -733,6 +733,7 @@ namespace ShareX.UploadersLib
             }
 
             cbGfycatIsPublic.Checked = Config.GfycatIsPublic;
+            cbGfycatKeepAudio.Checked = Config.GfycatKeepAudio;
 
             #endregion Gfycat
 
@@ -3124,6 +3125,11 @@ namespace ShareX.UploadersLib
         private void cbGfycatIsPublic_CheckedChanged(object sender, EventArgs e)
         {
             Config.GfycatIsPublic = cbGfycatIsPublic.Checked;
+        }
+
+        private void cbGfycatKeepAudio_CheckedChanged(object sender, EventArgs e)
+        {
+            Config.GfycatKeepAudio = cbGfycatKeepAudio.Checked;
         }
 
         #endregion Gfycat

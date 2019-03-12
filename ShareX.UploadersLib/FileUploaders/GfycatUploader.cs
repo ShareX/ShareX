@@ -59,7 +59,8 @@ namespace ShareX.UploadersLib.FileUploaders
             return new GfycatUploader(config.GfycatOAuth2Info)
             {
                 UploadMethod = config.GfycatAccountType,
-                Private = !config.GfycatIsPublic
+                Private = !config.GfycatIsPublic,
+                KeepAudio = config.GfycatKeepAudio
             };
         }
 
@@ -111,7 +112,7 @@ namespace ShareX.UploadersLib.FileUploaders
                 client_secret = AuthInfo.Client_Secret,
                 grant_type = "authorization_code",
                 redirect_uri = Links.URL_CALLBACK,
-                code = code,
+                code = code
             });
 
             string response = SendRequest(HttpMethod.POST, URL_API_TOKEN, request, UploadHelpers.ContentTypeJSON);
@@ -140,7 +141,7 @@ namespace ShareX.UploadersLib.FileUploaders
                     refresh_token = AuthInfo.Token.refresh_token,
                     client_id = AuthInfo.Client_ID,
                     client_secret = AuthInfo.Client_Secret,
-                    grant_type = "refresh",
+                    grant_type = "refresh"
                 });
 
                 string response = SendRequest(HttpMethod.POST, URL_API_TOKEN, request, UploadHelpers.ContentTypeJSON);
