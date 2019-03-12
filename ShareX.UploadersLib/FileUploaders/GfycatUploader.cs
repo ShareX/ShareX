@@ -72,10 +72,10 @@ namespace ShareX.UploadersLib.FileUploaders
         public OAuth2Info AuthInfo { get; set; }
         public AccountType UploadMethod { get; set; }
         public OAuth2Token AnonymousToken { get; set; }
-        public bool NoResize { get; set; }
-        public bool IgnoreExisting { get; set; }
-        public bool Private { get; set; }
-        public bool KeepAudio { get; set; }
+        public bool NoResize { get; set; } = true;
+        public bool IgnoreExisting { get; set; } = true;
+        public bool Private { get; set; } = true;
+        public bool KeepAudio { get; set; } = true;
 
         private const string URL_AUTHORIZE = "https://gfycat.com/oauth/authorize";
         private const string URL_UPLOAD = "https://filedrop.gfycat.com";
@@ -87,9 +87,6 @@ namespace ShareX.UploadersLib.FileUploaders
         public GfycatUploader(OAuth2Info oauth)
         {
             AuthInfo = oauth;
-            NoResize = true;
-            IgnoreExisting = true;
-            KeepAudio = true;
         }
 
         public string GetAuthorizationURL()
@@ -219,6 +216,7 @@ namespace ShareX.UploadersLib.FileUploaders
             }
 
             int iterations = 0;
+
             while (!StopUploadRequested)
             {
                 string statusJson = SendRequest(HttpMethod.GET, URL_API_STATUS + name);
@@ -243,7 +241,7 @@ namespace ShareX.UploadersLib.FileUploaders
                     break;
                 }
                 else if ((response.Task.Equals("NotFoundo", StringComparison.InvariantCultureIgnoreCase) ||
-                    response.Task.Equals("NotFound", StringComparison.InvariantCultureIgnoreCase)) && iterations > 10)
+                    response.Task.Equals("NotFound", StringComparison.InvariantCultureIgnoreCase)) && iterations > 5)
                 {
                     Errors.Add("Gfy not found");
                     result.IsSuccess = false;
@@ -255,7 +253,7 @@ namespace ShareX.UploadersLib.FileUploaders
                     OnProgressChanged(progress);
                 }
 
-                Thread.Sleep(100);
+                Thread.Sleep(500);
                 iterations++;
             }
         }
