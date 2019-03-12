@@ -180,6 +180,8 @@ namespace ShareX.UploadersLib.FileUploaders
 
         public override UploadResult Upload(Stream stream, string fileName)
         {
+            AllowReportProgress = false;
+
             OAuth2Token token = GetOrCreateToken();
             if (token == null)
             {
@@ -197,6 +199,9 @@ namespace ShareX.UploadersLib.FileUploaders
 
             Dictionary<string, string> args = new Dictionary<string, string>();
             args.Add("key", gfy.GfyName);
+
+            AllowReportProgress = true;
+
             UploadResult result = SendRequestFile(URL_UPLOAD, stream, fileName, "file", args);
             if (!result.IsError)
             {
@@ -209,11 +214,8 @@ namespace ShareX.UploadersLib.FileUploaders
         private void WaitForTranscode(string name, UploadResult result)
         {
             ProgressManager progress = new ProgressManager(10000);
-
-            if (AllowReportProgress)
-            {
-                OnProgressChanged(progress);
-            }
+            progress.CustomProgressText = "Gfycat encoding...";
+            OnProgressChanged(progress);
 
             int iterations = 0;
 
@@ -248,14 +250,17 @@ namespace ShareX.UploadersLib.FileUploaders
                     break;
                 }
 
-                if (AllowReportProgress && progress.UpdateProgress((progress.Length - progress.Position) / response.Time))
+                if (progress.UpdateProgress((progress.Length - progress.Position) / response.Time))
                 {
                     OnProgressChanged(progress);
                 }
 
-                Thread.Sleep(500);
                 iterations++;
+                Thread.Sleep(500);
             }
+
+            progress.CustomProgressText = "";
+            OnProgressChanged(progress);
         }
 
         private GfycatCreateResponse CreateGfycat(NameValueCollection headers)
@@ -269,6 +274,7 @@ namespace ShareX.UploadersLib.FileUploaders
             string json = JsonConvert.SerializeObject(args);
 
             string response = SendRequest(HttpMethod.POST, URL_API_CREATE_GFY, json, UploadHelpers.ContentTypeJSON, null, headers);
+
             if (!string.IsNullOrEmpty(response))
             {
                 return JsonConvert.DeserializeObject<GfycatCreateResponse>(response);
@@ -285,6 +291,7 @@ namespace ShareX.UploadersLib.FileUploaders
                 {
                     return null;
                 }
+
                 return AuthInfo.Token;
             }
             else

@@ -54,6 +54,8 @@ namespace ShareX.UploadersLib
             }
         }
 
+        public string CustomProgressText { get; set; }
+
         private Stopwatch startTimer = new Stopwatch();
         private Stopwatch smoothTimer = new Stopwatch();
         private int smoothTime = 250;

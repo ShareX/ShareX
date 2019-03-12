@@ -100,11 +100,7 @@ namespace ShareX.UploadersLib.FileUploaders
             if (!string.IsNullOrEmpty(transcodeResponse.Shortcode))
             {
                 ProgressManager progress = new ProgressManager(100);
-
-                if (AllowReportProgress)
-                {
-                    OnProgressChanged(progress);
-                }
+                OnProgressChanged(progress);
 
                 while (!StopUploadRequested)
                 {
@@ -119,12 +115,8 @@ namespace ShareX.UploadersLib.FileUploaders
                     }
                     else if (response.status == 2)
                     {
-                        if (AllowReportProgress)
-                        {
-                            long delta = 100 - progress.Position;
-                            progress.UpdateProgress(delta);
-                            OnProgressChanged(progress);
-                        }
+                        progress.UpdateProgress(100 - progress.Position);
+                        OnProgressChanged(progress);
 
                         result.IsSuccess = true;
 
@@ -140,12 +132,8 @@ namespace ShareX.UploadersLib.FileUploaders
                         break;
                     }
 
-                    if (AllowReportProgress)
-                    {
-                        long delta = response.percent - progress.Position;
-                        progress.UpdateProgress(delta);
-                        OnProgressChanged(progress);
-                    }
+                    progress.UpdateProgress(response.percent - progress.Position);
+                    OnProgressChanged(progress);
 
                     Thread.Sleep(1000);
                 }
