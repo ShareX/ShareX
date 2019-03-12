@@ -47,7 +47,9 @@ namespace ShareX.UploadersLib.TextUploaders
         {
             return new TeknikPaster(config.TeknikOAuth2Info, config.TeknikAuthUrl)
             {
-                APIUrl = config.TeknikPasteAPIUrl
+                APIUrl = config.TeknikPasteAPIUrl,
+                ExpirationUnit = config.TeknikExpirationUnit,
+                ExpirationLength = config.TeknikExpirationLength
             };
         }
 
@@ -58,6 +60,8 @@ namespace ShareX.UploadersLib.TextUploaders
     {
         public OAuth2Info AuthInfo { get; set; }
         public string APIUrl { get; set; }
+        public TeknikExpirationUnit ExpirationUnit { get; set; }
+        public int ExpirationLength { get; set; }
 
         private Teknik teknik;
 
@@ -81,6 +85,8 @@ namespace ShareX.UploadersLib.TextUploaders
         {
             Dictionary<string, string> args = new Dictionary<string, string>();
             args.Add("code", text);
+            args.Add("expirationUnit", ExpirationUnit.ToString());
+            args.Add("expirationLength", ExpirationLength.ToString());
 
             string response = SendRequestMultiPart(APIUrl, args, teknik.GetAuthHeaders());
             TeknikPasteResponseWrapper apiResponse = JsonConvert.DeserializeObject<TeknikPasteResponseWrapper>(response);

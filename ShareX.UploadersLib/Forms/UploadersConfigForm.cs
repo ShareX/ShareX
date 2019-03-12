@@ -627,6 +627,10 @@ namespace ShareX.UploadersLib
             tbTeknikAuthUrl.Text = Config.TeknikAuthUrl;
             cbTeknikEncrypt.Checked = Config.TeknikEncryption;
             cbTeknikGenDeleteKey.Checked = Config.TeknikGenerateDeletionKey;
+            cbTeknikExpirationUnit.Items.AddRange(Enum.GetNames(typeof(TeknikExpirationUnit)));
+            cbTeknikExpirationUnit.SelectedIndex = (int)Config.TeknikExpirationUnit;
+            nudTeknikExpirationLength.SetValue(Config.TeknikExpirationLength);
+            nudTeknikExpirationLength.Visible = Config.TeknikExpirationUnit != TeknikExpirationUnit.Never;
 
             #endregion Teknik
 
@@ -2522,6 +2526,11 @@ namespace ShareX.UploadersLib
             Config.TeknikOAuth2Info = null;
         }
 
+        private void tbTeknikAuthUrl_TextChanged(object sender, EventArgs e)
+        {
+            Config.TeknikAuthUrl = tbTeknikAuthUrl.Text;
+        }
+
         private void tbTeknikUploadAPIUrl_TextChanged(object sender, EventArgs e)
         {
             Config.TeknikUploadAPIUrl = tbTeknikUploadAPIUrl.Text;
@@ -2537,11 +2546,6 @@ namespace ShareX.UploadersLib
             Config.TeknikUrlShortenerAPIUrl = tbTeknikUrlShortenerAPIUrl.Text;
         }
 
-        private void tbTeknikAuthUrl_TextChanged(object sender, EventArgs e)
-        {
-            Config.TeknikAuthUrl = tbTeknikAuthUrl.Text;
-        }
-
         private void cbTeknikEncrypt_CheckedChanged(object sender, EventArgs e)
         {
             Config.TeknikEncryption = cbTeknikEncrypt.Checked;
@@ -2552,7 +2556,18 @@ namespace ShareX.UploadersLib
             Config.TeknikGenerateDeletionKey = cbTeknikGenDeleteKey.Checked;
         }
 
-        #endregion
+        private void cbTeknikExpirationUnit_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Config.TeknikExpirationUnit = (TeknikExpirationUnit)cbTeknikExpirationUnit.SelectedIndex;
+            nudTeknikExpirationLength.Visible = Config.TeknikExpirationUnit != TeknikExpirationUnit.Never;
+        }
+
+        private void nudTeknikExpirationLength_ValueChanged(object sender, EventArgs e)
+        {
+            Config.TeknikExpirationLength = (int)nudTeknikExpirationLength.Value;
+        }
+
+        #endregion Teknik
 
         #region Pomf
 

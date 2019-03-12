@@ -334,17 +334,16 @@ namespace ShareX.UploadersLib
         #region Teknik
 
         public OAuth2Info TeknikOAuth2Info = null;
-
         public string TeknikUploadAPIUrl = Teknik.DefaultUploadAPIURL;
         public string TeknikPasteAPIUrl = Teknik.DefaultPasteAPIURL;
         public string TeknikUrlShortenerAPIUrl = Teknik.DefaultUrlShortenerAPIURL;
         public string TeknikAuthUrl = Teknik.DefaultAuthURL;
-        public int TeknikExpirationLength = 1;
         public TeknikExpirationUnit TeknikExpirationUnit = TeknikExpirationUnit.Never;
+        public int TeknikExpirationLength = 1;
         public bool TeknikEncryption = false;
         public bool TeknikGenerateDeletionKey = false;
 
-        #endregion
+        #endregion Teknik
 
         #region Pomf
 

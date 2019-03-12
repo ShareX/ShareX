@@ -631,6 +631,9 @@ namespace ShareX.UploadersLib
             this.lblWidthHint = new System.Windows.Forms.Label();
             this.ttlvMain = new ShareX.HelpersLib.TabToListView();
             this.actRapidShareAccountType = new ShareX.UploadersLib.AccountTypeControl();
+            this.lblTeknikExpiration = new System.Windows.Forms.Label();
+            this.cbTeknikExpirationUnit = new System.Windows.Forms.ComboBox();
+            this.nudTeknikExpirationLength = new System.Windows.Forms.NumericUpDown();
             this.tpOtherUploaders.SuspendLayout();
             this.tcOtherUploaders.SuspendLayout();
             this.tpTwitter.SuspendLayout();
@@ -714,6 +717,7 @@ namespace ShareX.UploadersLib
             this.tpChevereto.SuspendLayout();
             this.tpVgyme.SuspendLayout();
             this.tcUploaders.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTeknikExpirationLength)).BeginInit();
             this.SuspendLayout();
             // 
             // txtRapidSharePremiumUserName
@@ -3002,6 +3006,9 @@ namespace ShareX.UploadersLib
             // tpTeknik
             // 
             this.tpTeknik.BackColor = System.Drawing.SystemColors.Window;
+            this.tpTeknik.Controls.Add(this.nudTeknikExpirationLength);
+            this.tpTeknik.Controls.Add(this.cbTeknikExpirationUnit);
+            this.tpTeknik.Controls.Add(this.lblTeknikExpiration);
             this.tpTeknik.Controls.Add(this.lblTeknikUrlShortenerAPIUrl);
             this.tpTeknik.Controls.Add(this.tbTeknikUrlShortenerAPIUrl);
             this.tpTeknik.Controls.Add(this.lblTeknikPasteAPIUrl);
@@ -4934,6 +4941,30 @@ namespace ShareX.UploadersLib
             this.actRapidShareAccountType.Name = "actRapidShareAccountType";
             this.actRapidShareAccountType.SelectedAccountType = ShareX.UploadersLib.AccountType.Anonymous;
             // 
+            // lblTeknikExpiration
+            // 
+            resources.ApplyResources(this.lblTeknikExpiration, "lblTeknikExpiration");
+            this.lblTeknikExpiration.Name = "lblTeknikExpiration";
+            // 
+            // cbTeknikExpirationUnit
+            // 
+            this.cbTeknikExpirationUnit.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbTeknikExpirationUnit.FormattingEnabled = true;
+            resources.ApplyResources(this.cbTeknikExpirationUnit, "cbTeknikExpirationUnit");
+            this.cbTeknikExpirationUnit.Name = "cbTeknikExpirationUnit";
+            this.cbTeknikExpirationUnit.SelectedIndexChanged += new System.EventHandler(this.cbTeknikExpirationUnit_SelectedIndexChanged);
+            // 
+            // nudTeknikExpirationLength
+            // 
+            resources.ApplyResources(this.nudTeknikExpirationLength, "nudTeknikExpirationLength");
+            this.nudTeknikExpirationLength.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.nudTeknikExpirationLength.Name = "nudTeknikExpirationLength";
+            this.nudTeknikExpirationLength.ValueChanged += new System.EventHandler(this.nudTeknikExpirationLength_ValueChanged);
+            // 
             // UploadersConfigForm
             // 
             resources.ApplyResources(this, "$this");
@@ -5096,6 +5127,7 @@ namespace ShareX.UploadersLib
             this.tpVgyme.ResumeLayout(false);
             this.tpVgyme.PerformLayout();
             this.tcUploaders.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.nudTeknikExpirationLength)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -5679,5 +5711,8 @@ namespace ShareX.UploadersLib
         private System.Windows.Forms.TextBox tbTeknikPasteAPIUrl;
         private System.Windows.Forms.Label lblTeknikUrlShortenerAPIUrl;
         private System.Windows.Forms.TextBox tbTeknikUrlShortenerAPIUrl;
+        private System.Windows.Forms.Label lblTeknikExpiration;
+        private System.Windows.Forms.ComboBox cbTeknikExpirationUnit;
+        private System.Windows.Forms.NumericUpDown nudTeknikExpirationLength;
     }
 }

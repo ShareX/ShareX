@@ -62,13 +62,13 @@ namespace ShareX.UploadersLib.FileUploaders
 
     public enum TeknikExpirationUnit
     {
-        Never = 0,
-        Views = 1,
-        Minutes = 10,
-        Hours = 11,
-        Days = 12,
-        Months = 13,
-        Years = 14
+        Never,
+        Views,
+        Minutes,
+        Hours,
+        Days,
+        Months,
+        Years
     }
 
     public class Teknik : Uploader, IOAuth2Basic
