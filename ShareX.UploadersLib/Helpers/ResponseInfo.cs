@@ -32,7 +32,7 @@ namespace ShareX.UploadersLib
     {
         public HttpStatusCode StatusCode { get; set; }
         public string StatusDescription { get; set; }
-        public bool IsSuccess => UploadHelpers.IsSuccessStatusCode(StatusCode);
+        public bool IsSuccess => RequestHelpers.IsSuccessStatusCode(StatusCode);
         public string ResponseURL { get; set; }
         public WebHeaderCollection Headers { get; set; }
         public string ResponseText { get; set; }

@@ -260,7 +260,7 @@ namespace ShareX.UploadersLib.FileUploaders
         /// <returns>Null if an error occurs, and <c>error</c> will contain an error message. Otherwise, a <see cref="B2Authorization"/>.</returns>
         private B2Authorization B2ApiAuthorize(string keyId, string key, out string error)
         {
-            NameValueCollection headers = UploadHelpers.CreateAuthenticationHeader(keyId, key);
+            NameValueCollection headers = RequestHelpers.CreateAuthenticationHeader(keyId, key);
 
             using (HttpWebResponse res = GetResponse(HttpMethod.GET, B2AuthorizeAccountUrl, headers: headers, allowNon2xxResponses: true))
             {
@@ -270,7 +270,7 @@ namespace ShareX.UploadersLib.FileUploaders
                     return null;
                 }
 
-                string body = UploadHelpers.ResponseToString(res);
+                string body = RequestHelpers.ResponseToString(res);
 
                 error = null;
                 return JsonConvert.DeserializeObject<B2Authorization>(body);
@@ -308,7 +308,7 @@ namespace ShareX.UploadersLib.FileUploaders
                         return null;
                     }
 
-                    string body = UploadHelpers.ResponseToString(res);
+                    string body = RequestHelpers.ResponseToString(res);
 
                     JObject json;
 
@@ -362,7 +362,7 @@ namespace ShareX.UploadersLib.FileUploaders
                         return null;
                     }
 
-                    string body = UploadHelpers.ResponseToString(res);
+                    string body = RequestHelpers.ResponseToString(res);
 
                     error = null;
                     return JsonConvert.DeserializeObject<B2UploadUrl>(body);
@@ -416,7 +416,7 @@ namespace ShareX.UploadersLib.FileUploaders
                 ["X-Bz-Info-b2-content-disposition"] = URLHelpers.URLEncode(contentDisposition.ToString()),
             };
 
-            string contentType = UploadHelpers.GetMimeType(destinationPath);
+            string contentType = RequestHelpers.GetMimeType(destinationPath);
 
             using (HttpWebResponse res = GetResponse(HttpMethod.POST, b2UploadUrl.uploadUrl,
                 contentType: contentType, headers: headers, data: file, allowNon2xxResponses: true))
@@ -433,7 +433,7 @@ namespace ShareX.UploadersLib.FileUploaders
                     return new B2UploadResult((int)res.StatusCode, ParseB2Error(res), null);
                 }
 
-                string body = UploadHelpers.ResponseToString(res);
+                string body = RequestHelpers.ResponseToString(res);
                 DebugHelper.WriteLine($"B2 uploader: B2ApiUploadFile() reports success! '{body}'");
 
                 return new B2UploadResult((int)res.StatusCode, null, JsonConvert.DeserializeObject<B2Upload>(body));
@@ -491,11 +491,11 @@ namespace ShareX.UploadersLib.FileUploaders
         /// <exception cref="IOException">If the response body cannot be read.</exception>
         private static B2Error ParseB2Error(HttpWebResponse res)
         {
-            if (UploadHelpers.IsSuccessStatusCode(res.StatusCode)) return null;
+            if (RequestHelpers.IsSuccessStatusCode(res.StatusCode)) return null;
 
             try
             {
-                string body = UploadHelpers.ResponseToString(res);
+                string body = RequestHelpers.ResponseToString(res);
                 DebugHelper.WriteLine($"B2 uploader: ParseB2Error() got: {body}");
                 B2Error err = JsonConvert.DeserializeObject<B2Error>(body);
                 return err;

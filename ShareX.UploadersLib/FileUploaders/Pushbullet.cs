@@ -76,7 +76,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
         public UploadResult PushFile(Stream stream, string fileName)
         {
-            NameValueCollection headers = UploadHelpers.CreateAuthenticationHeader(Config.UserAPIKey, "");
+            NameValueCollection headers = RequestHelpers.CreateAuthenticationHeader(Config.UserAPIKey, "");
 
             Dictionary<string, string> pushArgs, upArgs = new Dictionary<string, string>();
 
@@ -125,7 +125,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
         private string Push(string pushType, string valueType, string value, string title)
         {
-            NameValueCollection headers = UploadHelpers.CreateAuthenticationHeader(Config.UserAPIKey, "");
+            NameValueCollection headers = RequestHelpers.CreateAuthenticationHeader(Config.UserAPIKey, "");
 
             Dictionary<string, string> args = new Dictionary<string, string>();
             args.Add("device_iden", Config.CurrentDevice.Key);
@@ -174,7 +174,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
         public List<PushbulletDevice> GetDeviceList()
         {
-            NameValueCollection headers = UploadHelpers.CreateAuthenticationHeader(Config.UserAPIKey, "");
+            NameValueCollection headers = RequestHelpers.CreateAuthenticationHeader(Config.UserAPIKey, "");
 
             string response = SendRequest(HttpMethod.GET, apiGetDevicesURL, headers: headers);
 

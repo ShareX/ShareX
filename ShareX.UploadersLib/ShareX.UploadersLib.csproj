@@ -237,7 +237,7 @@
     <Compile Include="Helpers\MimeTypes.cs" />
     <Compile Include="Helpers\OCROptions.cs" />
     <Compile Include="Helpers\ResponseInfo.cs" />
-    <Compile Include="Helpers\UploadHelpers.cs" />
+    <Compile Include="Helpers\RequestHelpers.cs" />
     <Compile Include="OAuth\GoogleOAuth2.cs" />
     <Compile Include="OAuth\IOAuthBase.cs" />
     <Compile Include="OAuth\OAuth2ProofKey.cs" />

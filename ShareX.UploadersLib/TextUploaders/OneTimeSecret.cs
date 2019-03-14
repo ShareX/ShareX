@@ -75,7 +75,7 @@ namespace ShareX.UploadersLib.TextUploaders
 
                 if (!string.IsNullOrEmpty(API_USERNAME) && !string.IsNullOrEmpty(API_KEY))
                 {
-                    headers = UploadHelpers.CreateAuthenticationHeader(API_USERNAME, API_KEY);
+                    headers = RequestHelpers.CreateAuthenticationHeader(API_USERNAME, API_KEY);
                 }
 
                 result.Response = SendRequestMultiPart(API_ENDPOINT, args, headers);

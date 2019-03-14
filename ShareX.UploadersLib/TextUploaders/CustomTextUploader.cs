@@ -113,7 +113,7 @@ namespace ShareX.UploadersLib.TextUploaders
                 byte[] bytes = Encoding.UTF8.GetBytes(text);
                 using (MemoryStream stream = new MemoryStream(bytes))
                 {
-                    result.Response = SendRequest(uploader.RequestMethod, uploader.GetRequestURL(input), stream, UploadHelpers.GetMimeType(fileName),
+                    result.Response = SendRequest(uploader.RequestMethod, uploader.GetRequestURL(input), stream, RequestHelpers.GetMimeType(fileName),
                         null, uploader.GetHeaders(input));
                 }
             }

@@ -82,7 +82,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
             if (!string.IsNullOrEmpty(Email) && !string.IsNullOrEmpty(Password))
             {
-                headers = UploadHelpers.CreateAuthenticationHeader(Email, Password);
+                headers = RequestHelpers.CreateAuthenticationHeader(Email, Password);
             }
 
             string url = URLHelpers.CombineURL(Host, "upload");

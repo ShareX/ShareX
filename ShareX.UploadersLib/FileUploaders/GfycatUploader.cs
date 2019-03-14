@@ -112,7 +112,7 @@ namespace ShareX.UploadersLib.FileUploaders
                 code = code
             });
 
-            string response = SendRequest(HttpMethod.POST, URL_API_TOKEN, request, UploadHelpers.ContentTypeJSON);
+            string response = SendRequest(HttpMethod.POST, URL_API_TOKEN, request, RequestHelpers.ContentTypeJSON);
 
             if (!string.IsNullOrEmpty(response))
             {
@@ -141,7 +141,7 @@ namespace ShareX.UploadersLib.FileUploaders
                     grant_type = "refresh"
                 });
 
-                string response = SendRequest(HttpMethod.POST, URL_API_TOKEN, request, UploadHelpers.ContentTypeJSON);
+                string response = SendRequest(HttpMethod.POST, URL_API_TOKEN, request, RequestHelpers.ContentTypeJSON);
 
                 if (!string.IsNullOrEmpty(response))
                 {
@@ -273,7 +273,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
             string json = JsonConvert.SerializeObject(args);
 
-            string response = SendRequest(HttpMethod.POST, URL_API_CREATE_GFY, json, UploadHelpers.ContentTypeJSON, null, headers);
+            string response = SendRequest(HttpMethod.POST, URL_API_CREATE_GFY, json, RequestHelpers.ContentTypeJSON, null, headers);
 
             if (!string.IsNullOrEmpty(response))
             {
@@ -305,7 +305,7 @@ namespace ShareX.UploadersLib.FileUploaders
                         grant_type = "client_credentials",
                     });
 
-                    string response = SendRequest(HttpMethod.POST, URL_API_TOKEN, request, UploadHelpers.ContentTypeJSON);
+                    string response = SendRequest(HttpMethod.POST, URL_API_TOKEN, request, RequestHelpers.ContentTypeJSON);
 
                     if (!string.IsNullOrEmpty(response))
                     {
