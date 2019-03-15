@@ -346,6 +346,20 @@ namespace ShareX.HelpersLib
             return NativeMethods.GetClientRect(handle);
         }
 
+        public static bool IsActiveWindowFullscreen()
+        {
+            IntPtr handle = NativeMethods.GetForegroundWindow();
+
+            if (handle.ToInt32() > 0)
+            {
+                Rectangle windowRectangle = GetWindowRectangle(handle);
+                Rectangle monitorRectangle = Screen.FromRectangle(windowRectangle).Bounds;
+                return windowRectangle.Contains(monitorRectangle);
+            }
+
+            return false;
+        }
+
         public static Rectangle EvenRectangleSize(Rectangle rect)
         {
             rect.Width -= rect.Width & 1;

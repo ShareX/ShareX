@@ -358,7 +358,8 @@ namespace ShareX
                                 }
 
                                 if (info.TaskSettings.GeneralSettings.PopUpNotification != PopUpNotificationType.None && Program.MainForm.niTray.Visible &&
-                                    !string.IsNullOrEmpty(errors))
+                                    !string.IsNullOrEmpty(errors) &&
+                                    (!info.TaskSettings.AdvancedSettings.NotificationCheckIsActiveWindowFullscreen || !CaptureHelpers.IsActiveWindowFullscreen()))
                                 {
                                     Program.MainForm.niTray.Tag = null;
                                     Program.MainForm.niTray.ShowBalloonTip(5000, "ShareX - " + Resources.TaskManager_task_UploadCompleted_Error, errors, ToolTipIcon.Error);
@@ -411,7 +412,8 @@ namespace ShareX
                                         result = new UploadInfoParser().Parse(info, info.TaskSettings.AdvancedSettings.BalloonTipContentFormat);
                                     }
 
-                                    if (!string.IsNullOrEmpty(result))
+                                    if (!string.IsNullOrEmpty(result) &&
+                                        (!info.TaskSettings.AdvancedSettings.NotificationCheckIsActiveWindowFullscreen || !CaptureHelpers.IsActiveWindowFullscreen()))
                                     {
                                         switch (info.TaskSettings.GeneralSettings.PopUpNotification)
                                         {
