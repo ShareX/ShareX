@@ -50,6 +50,7 @@ namespace ShareX.UploadersLib.Forms
             nodeLoader.RunWorkerCompleted += NodeLoader_RunWorkerCompleted;
             nodeLoader.RunWorkerAsync(mega);
             Text = "Loading...";
+            labelFolderBreadcrumb.Text = "Please Wait";
             progressBar1.Style = ProgressBarStyle.Marquee;
             progressBar1.MarqueeAnimationSpeed = 30;
             buttonSelectFolder.Enabled = false;

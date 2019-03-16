@@ -2151,16 +2151,7 @@ namespace ShareX.UploadersLib
                 {
                     lblMegaStatus.Text = Resources.UploadersConfigForm_MegaConfigureTab_Configured;
                     lblMegaStatus.ForeColor = OkColor;
-
-                    if (tryLogin)
-                    {
-                        // Do nada.
-                        btnMegaBrowse.Enabled = true;
-                    }
-                    else
-                    {
-                        btnMegaBrowse.Enabled = false;
-                    }
+                    btnMegaBrowse.Enabled = true;
                 }
                 else
                 {
