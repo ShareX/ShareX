@@ -165,6 +165,12 @@
     <Compile Include="Forms\CustomUploaderSettingsForm.Designer.cs">
       <DependentUpon>CustomUploaderSettingsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\MegaFolderSelectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MegaFolderSelectForm.Designer.cs">
+      <DependentUpon>MegaFolderSelectForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\OCRSpaceForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -559,6 +565,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\JiraUpload.zh-TW.resx">
       <DependentUpon>JiraUpload.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MegaFolderSelectForm.resx">
+      <DependentUpon>MegaFolderSelectForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\OAuthWebForm.de.resx">
       <DependentUpon>OAuthWebForm.cs</DependentUpon>
@@ -985,6 +994,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Favicons\Teknik.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icon1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\folder.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

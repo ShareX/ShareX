@@ -286,16 +286,17 @@ namespace ShareX.UploadersLib
             this.lblB2ApplicationKey = new System.Windows.Forms.Label();
             this.lblB2ApplicationKeyId = new System.Windows.Forms.Label();
             this.tpGfycat = new System.Windows.Forms.TabPage();
+            this.cbGfycatKeepAudio = new System.Windows.Forms.CheckBox();
             this.cbGfycatIsPublic = new System.Windows.Forms.CheckBox();
             this.atcGfycatAccountType = new ShareX.UploadersLib.AccountTypeControl();
             this.oauth2Gfycat = new ShareX.UploadersLib.OAuthControl();
             this.tpMega = new System.Windows.Forms.TabPage();
-            this.btnMegaRefreshFolders = new System.Windows.Forms.Button();
+            this.btnMegaBrowse = new System.Windows.Forms.Button();
+            this.txtMegaFolder = new System.Windows.Forms.TextBox();
             this.lblMegaStatus = new System.Windows.Forms.Label();
             this.btnMegaRegister = new System.Windows.Forms.Button();
             this.lblMegaFolder = new System.Windows.Forms.Label();
             this.lblMegaStatusTitle = new System.Windows.Forms.Label();
-            this.cbMegaFolder = new System.Windows.Forms.ComboBox();
             this.lblMegaEmail = new System.Windows.Forms.Label();
             this.btnMegaLogin = new System.Windows.Forms.Button();
             this.txtMegaEmail = new System.Windows.Forms.TextBox();
@@ -634,7 +635,6 @@ namespace ShareX.UploadersLib
             this.lblWidthHint = new System.Windows.Forms.Label();
             this.ttlvMain = new ShareX.HelpersLib.TabToListView();
             this.actRapidShareAccountType = new ShareX.UploadersLib.AccountTypeControl();
-            this.cbGfycatKeepAudio = new System.Windows.Forms.CheckBox();
             this.tpOtherUploaders.SuspendLayout();
             this.tcOtherUploaders.SuspendLayout();
             this.tpTwitter.SuspendLayout();
@@ -2433,6 +2433,13 @@ namespace ShareX.UploadersLib
             resources.ApplyResources(this.tpGfycat, "tpGfycat");
             this.tpGfycat.Name = "tpGfycat";
             // 
+            // cbGfycatKeepAudio
+            // 
+            resources.ApplyResources(this.cbGfycatKeepAudio, "cbGfycatKeepAudio");
+            this.cbGfycatKeepAudio.Name = "cbGfycatKeepAudio";
+            this.cbGfycatKeepAudio.UseVisualStyleBackColor = true;
+            this.cbGfycatKeepAudio.CheckedChanged += new System.EventHandler(this.cbGfycatKeepAudio_CheckedChanged);
+            // 
             // cbGfycatIsPublic
             // 
             resources.ApplyResources(this.cbGfycatIsPublic, "cbGfycatIsPublic");
@@ -2459,12 +2466,12 @@ namespace ShareX.UploadersLib
             // tpMega
             // 
             this.tpMega.BackColor = System.Drawing.SystemColors.Window;
-            this.tpMega.Controls.Add(this.btnMegaRefreshFolders);
+            this.tpMega.Controls.Add(this.btnMegaBrowse);
+            this.tpMega.Controls.Add(this.txtMegaFolder);
             this.tpMega.Controls.Add(this.lblMegaStatus);
             this.tpMega.Controls.Add(this.btnMegaRegister);
             this.tpMega.Controls.Add(this.lblMegaFolder);
             this.tpMega.Controls.Add(this.lblMegaStatusTitle);
-            this.tpMega.Controls.Add(this.cbMegaFolder);
             this.tpMega.Controls.Add(this.lblMegaEmail);
             this.tpMega.Controls.Add(this.btnMegaLogin);
             this.tpMega.Controls.Add(this.txtMegaEmail);
@@ -2473,12 +2480,18 @@ namespace ShareX.UploadersLib
             resources.ApplyResources(this.tpMega, "tpMega");
             this.tpMega.Name = "tpMega";
             // 
-            // btnMegaRefreshFolders
+            // btnMegaBrowse
             // 
-            resources.ApplyResources(this.btnMegaRefreshFolders, "btnMegaRefreshFolders");
-            this.btnMegaRefreshFolders.Name = "btnMegaRefreshFolders";
-            this.btnMegaRefreshFolders.UseVisualStyleBackColor = true;
-            this.btnMegaRefreshFolders.Click += new System.EventHandler(this.btnMegaRefreshFolders_Click);
+            resources.ApplyResources(this.btnMegaBrowse, "btnMegaBrowse");
+            this.btnMegaBrowse.Name = "btnMegaBrowse";
+            this.btnMegaBrowse.UseVisualStyleBackColor = true;
+            this.btnMegaBrowse.Click += new System.EventHandler(this.btnMegaBrowse_Click);
+            // 
+            // txtMegaFolder
+            // 
+            resources.ApplyResources(this.txtMegaFolder, "txtMegaFolder");
+            this.txtMegaFolder.Name = "txtMegaFolder";
+            this.txtMegaFolder.ReadOnly = true;
             // 
             // lblMegaStatus
             // 
@@ -2501,16 +2514,6 @@ namespace ShareX.UploadersLib
             // 
             resources.ApplyResources(this.lblMegaStatusTitle, "lblMegaStatusTitle");
             this.lblMegaStatusTitle.Name = "lblMegaStatusTitle";
-            // 
-            // cbMegaFolder
-            // 
-            this.cbMegaFolder.DisplayMember = "DisplayName";
-            this.cbMegaFolder.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbMegaFolder.FormattingEnabled = true;
-            resources.ApplyResources(this.cbMegaFolder, "cbMegaFolder");
-            this.cbMegaFolder.Name = "cbMegaFolder";
-            this.cbMegaFolder.ValueMember = "Node";
-            this.cbMegaFolder.SelectedIndexChanged += new System.EventHandler(this.cbMegaFolder_SelectedIndexChanged);
             // 
             // lblMegaEmail
             // 
@@ -4967,13 +4970,6 @@ namespace ShareX.UploadersLib
             this.actRapidShareAccountType.Name = "actRapidShareAccountType";
             this.actRapidShareAccountType.SelectedAccountType = ShareX.UploadersLib.AccountType.Anonymous;
             // 
-            // cbGfycatKeepAudio
-            // 
-            resources.ApplyResources(this.cbGfycatKeepAudio, "cbGfycatKeepAudio");
-            this.cbGfycatKeepAudio.Name = "cbGfycatKeepAudio";
-            this.cbGfycatKeepAudio.UseVisualStyleBackColor = true;
-            this.cbGfycatKeepAudio.CheckedChanged += new System.EventHandler(this.cbGfycatKeepAudio_CheckedChanged);
-            // 
             // UploadersConfigForm
             // 
             resources.ApplyResources(this, "$this");
@@ -5175,10 +5171,8 @@ namespace ShareX.UploadersLib
         private System.Windows.Forms.ComboBox cbFTPFile;
         private System.Windows.Forms.ComboBox cbFTPText;
         private System.Windows.Forms.Label lblMegaStatus;
-        private System.Windows.Forms.Button btnMegaRefreshFolders;
         private System.Windows.Forms.Button btnMegaRegister;
         private System.Windows.Forms.Label lblMegaFolder;
-        private System.Windows.Forms.ComboBox cbMegaFolder;
         private System.Windows.Forms.Label lblMegaEmail;
         private System.Windows.Forms.TextBox txtMegaEmail;
         private System.Windows.Forms.Label lblMegaPassword;
@@ -5724,5 +5718,7 @@ namespace ShareX.UploadersLib
         private System.Windows.Forms.ComboBox cbTeknikExpirationUnit;
         private System.Windows.Forms.NumericUpDown nudTeknikExpirationLength;
         private System.Windows.Forms.CheckBox cbGfycatKeepAudio;
+        private System.Windows.Forms.TextBox txtMegaFolder;
+        private System.Windows.Forms.Button btnMegaBrowse;
     }
 }

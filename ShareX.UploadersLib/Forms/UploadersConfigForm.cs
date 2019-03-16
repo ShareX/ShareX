@@ -2141,10 +2141,10 @@ namespace ShareX.UploadersLib
             {
                 lblMegaStatus.Text = Resources.UploadersConfigForm_MegaConfigureTab_Not_configured;
                 lblMegaStatus.ForeColor = NokColor;
+                btnMegaBrowse.Enabled = false;
             }
             else
             {
-                cbMegaFolder.Items.Clear();
 
                 Mega mega = new Mega(Config.MegaAuthInfos);
                 if (!tryLogin || mega.TryLogin())
@@ -2154,20 +2154,19 @@ namespace ShareX.UploadersLib
 
                     if (tryLogin)
                     {
-                        Mega.DisplayNode[] nodes = mega.GetDisplayNodes().ToArray();
-                        cbMegaFolder.Items.AddRange(nodes);
-                        cbMegaFolder.SelectedItem = nodes.FirstOrDefault(n => n.Node != null && n.Node.Id == Config.MegaParentNodeId) ?? Mega.DisplayNode.EmptyNode;
+                        // Do nada.
+                        btnMegaBrowse.Enabled = true;
                     }
                     else
                     {
-                        cbMegaFolder.Items.Add("[" + Resources.UploadersConfigForm_MegaConfigureTab_Click_refresh_button + "]");
-                        cbMegaFolder.SelectedIndex = 0;
+                        btnMegaBrowse.Enabled = false;
                     }
                 }
                 else
                 {
                     lblMegaStatus.Text = Resources.UploadersConfigForm_MegaConfigureTab_Invalid_authentication;
                     lblMegaStatus.ForeColor = NokColor;
+                    btnMegaBrowse.Enabled = false;
                 }
             }
 
@@ -2186,23 +2185,30 @@ namespace ShareX.UploadersLib
             MegaConfigureTab(true);
         }
 
-        private void cbMegaFolder_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            Mega.DisplayNode selectedNode = ((ComboBox)sender).SelectedItem as Mega.DisplayNode;
-            if (selectedNode != null)
-            {
-                Config.MegaParentNodeId = selectedNode == Mega.DisplayNode.EmptyNode ? null : selectedNode.Node.Id;
-            }
-        }
-
         private void btnMegaRegister_Click(object sender, EventArgs e)
         {
             URLHelpers.OpenURL("https://mega.co.nz/#register");
         }
 
-        private void btnMegaRefreshFolders_Click(object sender, EventArgs e)
+
+        private void btnMegaBrowse_Click(object sender, EventArgs e)
         {
-            MegaConfigureTab(true);
+            Mega mega = new Mega(Config.MegaAuthInfos);
+            if (mega.TryLogin())
+            {
+                Forms.MegaFolderSelectForm folderSelectDialog = new Forms.MegaFolderSelectForm(mega);
+                DialogResult dr = folderSelectDialog.ShowDialog();
+                if (dr.Equals(DialogResult.Cancel)) return; // User Cancelled the Dialog
+                Config.MegaParentNodeId = folderSelectDialog.getSelectedNodeID();
+                txtMegaFolder.Text = folderSelectDialog.getSelectedFolderPath();
+
+            } else
+            {
+                string errorMsg = mega.ToErrorString();
+                if (string.IsNullOrEmpty(errorMsg)) errorMsg = "Something went wrong." + Environment.NewLine + "Check connection and try again.";
+                MessageBox.Show(mega.ToErrorString(), "Login Error");
+            }
+            
         }
 
         #endregion Mega
@@ -3448,5 +3454,7 @@ namespace ShareX.UploadersLib
         #endregion Twitter
 
         #endregion Other uploaders
+
+        
     }
 }
