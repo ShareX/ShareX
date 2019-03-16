@@ -478,9 +478,15 @@ namespace ShareX
         [Category("After upload"), DefaultValue(0), Description("Automatically shorten URL if the URL is longer than the specified number of characters. 0 means automatic URL shortening is not active.")]
         public int AutoShortenURLLength { get; set; }
 
+        [Category("Notifications"), DefaultValue(false), Description("Disable notifications.")]
+        public bool DisableNotifications { get; set; }
+
+        [Category("Notifications"), DefaultValue(false), Description("If this option enabled then toast window or balloon tip won't be shown if active window is fullscreen.")]
+        public bool NotificationCheckIsActiveWindowFullscreen { get; set; }
+
         private float toastWindowDuration;
 
-        [Category("After upload / Notifications"), DefaultValue(3f), Description("Specify how long should toast notification window will stay on screen (in seconds).")]
+        [Category("Notifications"), DefaultValue(3f), Description("Specify how long should toast notification window will stay on screen (in seconds).")]
         public float ToastWindowDuration
         {
             get
@@ -495,7 +501,7 @@ namespace ShareX
 
         private float toastWindowFadeDuration;
 
-        [Category("After upload / Notifications"), DefaultValue(1f), Description("After toast window duration end, toast window will start fading, specify duration of this fade animation (in seconds).")]
+        [Category("Notifications"), DefaultValue(1f), Description("After toast window duration end, toast window will start fading, specify duration of this fade animation (in seconds).")]
         public float ToastWindowFadeDuration
         {
             get
@@ -508,21 +514,21 @@ namespace ShareX
             }
         }
 
-        [Category("After upload / Notifications"), DefaultValue(ContentAlignment.BottomRight), Description("Specify where should toast notification window appear on the screen.")]
+        [Category("Notifications"), DefaultValue(ContentAlignment.BottomRight), Description("Specify where should toast notification window appear on the screen.")]
         public ContentAlignment ToastWindowPlacement { get; set; }
 
-        [Category("After upload / Notifications"), DefaultValue(ToastClickAction.OpenUrl), Description("Specify action after toast notification window is left clicked."), TypeConverter(typeof(EnumDescriptionConverter))]
+        [Category("Notifications"), DefaultValue(ToastClickAction.OpenUrl), Description("Specify action after toast notification window is left clicked."), TypeConverter(typeof(EnumDescriptionConverter))]
         public ToastClickAction ToastWindowClickAction { get; set; }
 
-        [Category("After upload / Notifications"), DefaultValue(ToastClickAction.CloseNotification), Description("Specify action after toast notification window is right clicked."), TypeConverter(typeof(EnumDescriptionConverter))]
+        [Category("Notifications"), DefaultValue(ToastClickAction.CloseNotification), Description("Specify action after toast notification window is right clicked."), TypeConverter(typeof(EnumDescriptionConverter))]
         public ToastClickAction ToastWindowRightClickAction { get; set; }
 
-        [Category("After upload / Notifications"), DefaultValue(ToastClickAction.AnnotateImage), Description("Specify action after toast notification window is middle clicked."), TypeConverter(typeof(EnumDescriptionConverter))]
+        [Category("Notifications"), DefaultValue(ToastClickAction.AnnotateImage), Description("Specify action after toast notification window is middle clicked."), TypeConverter(typeof(EnumDescriptionConverter))]
         public ToastClickAction ToastWindowMiddleClickAction { get; set; }
 
         private Size toastWindowSize;
 
-        [Category("After upload / Notifications"), DefaultValue(typeof(Size), "400, 300"), Description("Maximum toast notification window size.")]
+        [Category("Notifications"), DefaultValue(typeof(Size), "400, 300"), Description("Maximum toast notification window size.")]
         public Size ToastWindowSize
         {
             get
@@ -537,9 +543,6 @@ namespace ShareX
 
         [Category("After upload"), DefaultValue(false), Description("After upload form will be automatically closed after 60 seconds.")]
         public bool AutoCloseAfterUploadForm { get; set; }
-
-        [Category("Interaction"), DefaultValue(false), Description("Disable notifications.")]
-        public bool DisableNotifications { get; set; }
 
         [Category("Upload text"), DefaultValue("txt"), Description("File extension when saving text to the local hard disk.")]
         public string TextFileExtension { get; set; }

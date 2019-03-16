@@ -179,15 +179,15 @@ namespace ShareX.UploadersLib
             switch (Body)
             {
                 case CustomUploaderBody.MultipartFormData:
-                    return UploadHelpers.ContentTypeMultipartFormData;
+                    return RequestHelpers.ContentTypeMultipartFormData;
                 case CustomUploaderBody.FormURLEncoded:
-                    return UploadHelpers.ContentTypeURLEncoded;
+                    return RequestHelpers.ContentTypeURLEncoded;
                 case CustomUploaderBody.JSON:
-                    return UploadHelpers.ContentTypeJSON;
+                    return RequestHelpers.ContentTypeJSON;
                 case CustomUploaderBody.XML:
-                    return UploadHelpers.ContentTypeXML;
+                    return RequestHelpers.ContentTypeXML;
                 case CustomUploaderBody.Binary:
-                    return UploadHelpers.ContentTypeOctetStream;
+                    return RequestHelpers.ContentTypeOctetStream;
             }
 
             return null;

@@ -1147,6 +1147,138 @@ Otherwise it can't keep up with recording and a lot of frame drops will happen.<
   <data name="&gt;&gt;tbAMF.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
+  <data name="cbQSVPreset.Location" type="System.Drawing.Point, System.Drawing">
+    <value>96, 13</value>
+  </data>
+  <data name="cbQSVPreset.Size" type="System.Drawing.Size, System.Drawing">
+    <value>192, 21</value>
+  </data>
+  <data name="cbQSVPreset.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;cbQSVPreset.Name" xml:space="preserve">
+    <value>cbQSVPreset</value>
+  </data>
+  <data name="&gt;&gt;cbQSVPreset.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbQSVPreset.Parent" xml:space="preserve">
+    <value>tbQSV</value>
+  </data>
+  <data name="&gt;&gt;cbQSVPreset.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblQSVPreset.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblQSVPreset.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblQSVPreset.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 17</value>
+  </data>
+  <data name="lblQSVPreset.Size" type="System.Drawing.Size, System.Drawing">
+    <value>40, 13</value>
+  </data>
+  <data name="lblQSVPreset.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="lblQSVPreset.Text" xml:space="preserve">
+    <value>Preset:</value>
+  </data>
+  <data name="&gt;&gt;lblQSVPreset.Name" xml:space="preserve">
+    <value>lblQSVPreset</value>
+  </data>
+  <data name="&gt;&gt;lblQSVPreset.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblQSVPreset.Parent" xml:space="preserve">
+    <value>tbQSV</value>
+  </data>
+  <data name="&gt;&gt;lblQSVPreset.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="nudQSVBitrate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>96, 37</value>
+  </data>
+  <data name="nudQSVBitrate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>88, 20</value>
+  </data>
+  <data name="nudQSVBitrate.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="nudQSVBitrate.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
+  </data>
+  <data name="&gt;&gt;nudQSVBitrate.Name" xml:space="preserve">
+    <value>nudQSVBitrate</value>
+  </data>
+  <data name="&gt;&gt;nudQSVBitrate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;nudQSVBitrate.Parent" xml:space="preserve">
+    <value>tbQSV</value>
+  </data>
+  <data name="&gt;&gt;nudQSVBitrate.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="lblQSVBitrate.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblQSVBitrate.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblQSVBitrate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 41</value>
+  </data>
+  <data name="lblQSVBitrate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>40, 13</value>
+  </data>
+  <data name="lblQSVBitrate.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="lblQSVBitrate.Text" xml:space="preserve">
+    <value>Bitrate:</value>
+  </data>
+  <data name="&gt;&gt;lblQSVBitrate.Name" xml:space="preserve">
+    <value>lblQSVBitrate</value>
+  </data>
+  <data name="&gt;&gt;lblQSVBitrate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblQSVBitrate.Parent" xml:space="preserve">
+    <value>tbQSV</value>
+  </data>
+  <data name="&gt;&gt;lblQSVBitrate.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="tbQSV.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tbQSV.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tbQSV.Size" type="System.Drawing.Size, System.Drawing">
+    <value>304, 70</value>
+  </data>
+  <data name="tbQSV.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="tbQSV.Text" xml:space="preserve">
+    <value>QuickSync</value>
+  </data>
+  <data name="&gt;&gt;tbQSV.Name" xml:space="preserve">
+    <value>tbQSV</value>
+  </data>
+  <data name="&gt;&gt;tbQSV.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tbQSV.Parent" xml:space="preserve">
+    <value>tcFFmpegVideoCodecs</value>
+  </data>
+  <data name="&gt;&gt;tbQSV.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
   <data name="tcFFmpegVideoCodecs.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 56</value>
   </data>
@@ -1832,7 +1964,7 @@ Otherwise it can't keep up with recording and a lot of frame drops will happen.<
     <value>eiFFmpeg</value>
   </data>
   <data name="&gt;&gt;eiFFmpeg.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.ExportImportControl, ShareX.HelpersLib, Version=12.3.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.ExportImportControl, ShareX.HelpersLib, Version=12.4.2.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;eiFFmpeg.Parent" xml:space="preserve">
     <value>$this</value>

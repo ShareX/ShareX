@@ -212,7 +212,7 @@ namespace ShareX.UploadersLib.FileUploaders
             string url = URLHelpers.BuildUri("https://graph.microsoft.com", $"/v1.0/{folderPath}:/{fileName}:/createUploadSession");
 
             AllowReportProgress = false;
-            string response = SendRequest(HttpMethod.POST, url, json, UploadHelpers.ContentTypeJSON, headers: GetAuthHeaders());
+            string response = SendRequest(HttpMethod.POST, url, json, RequestHelpers.ContentTypeJSON, headers: GetAuthHeaders());
             AllowReportProgress = true;
 
             OneDriveUploadSession session = JsonConvert.DeserializeObject<OneDriveUploadSession>(response);
@@ -291,7 +291,7 @@ namespace ShareX.UploadersLib.FileUploaders
                 type = linkTypeValue
             });
 
-            string response = SendRequest(HttpMethod.POST, $"https://graph.microsoft.com/v1.0/me/drive/items/{id}/createLink", json, UploadHelpers.ContentTypeJSON,
+            string response = SendRequest(HttpMethod.POST, $"https://graph.microsoft.com/v1.0/me/drive/items/{id}/createLink", json, RequestHelpers.ContentTypeJSON,
                 headers: GetAuthHeaders());
 
             OneDrivePermission permissionInfo = JsonConvert.DeserializeObject<OneDrivePermission>(response);

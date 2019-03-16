@@ -35,7 +35,7 @@ using System.Text;
 
 namespace ShareX.UploadersLib
 {
-    internal static class UploadHelpers
+    internal static class RequestHelpers
     {
         public const string ContentTypeMultipartFormData = "multipart/form-data";
         public const string ContentTypeJSON = "application/json";

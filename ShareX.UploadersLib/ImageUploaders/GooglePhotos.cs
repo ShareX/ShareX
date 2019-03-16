@@ -108,7 +108,7 @@ namespace ShareX.UploadersLib.ImageUploaders
             };
 
             string serializedNewItemAlbum = JsonConvert.SerializeObject(newItemAlbum);
-            string serializedNewItemAlbumResponse = SendRequest(HttpMethod.POST, "https://photoslibrary.googleapis.com/v1/albums", serializedNewItemAlbum, UploadHelpers.ContentTypeJSON, newItemAlbumArgs, GoogleAuth.GetAuthHeaders());
+            string serializedNewItemAlbumResponse = SendRequest(HttpMethod.POST, "https://photoslibrary.googleapis.com/v1/albums", serializedNewItemAlbum, RequestHelpers.ContentTypeJSON, newItemAlbumArgs, GoogleAuth.GetAuthHeaders());
             GooglePhotosAlbum newItemAlbumResponse = JsonConvert.DeserializeObject<GooglePhotosAlbum>(serializedNewItemAlbumResponse);
 
             return newItemAlbumResponse;
@@ -180,7 +180,7 @@ namespace ShareX.UploadersLib.ImageUploaders
                 GooglePhotosAlbumOptions albumOptions = new GooglePhotosAlbumOptions();
 
                 string serializedAlbumOptions = JsonConvert.SerializeObject(albumOptions);
-                string serializedAlbumOptionsResponse = SendRequest(HttpMethod.POST, $"https://photoslibrary.googleapis.com/v1/albums/{AlbumID}:share", serializedAlbumOptions, UploadHelpers.ContentTypeJSON, albumOptionsResponseArgs, GoogleAuth.GetAuthHeaders());
+                string serializedAlbumOptionsResponse = SendRequest(HttpMethod.POST, $"https://photoslibrary.googleapis.com/v1/albums/{AlbumID}:share", serializedAlbumOptions, RequestHelpers.ContentTypeJSON, albumOptionsResponseArgs, GoogleAuth.GetAuthHeaders());
                 GooglePhotosAlbumOptionsResponse albumOptionsResponse = JsonConvert.DeserializeObject<GooglePhotosAlbumOptionsResponse>(serializedAlbumOptionsResponse);
 
                 result.URL = albumOptionsResponse.shareInfo.shareableUrl;
@@ -193,7 +193,7 @@ namespace ShareX.UploadersLib.ImageUploaders
                 { "Authorization", GoogleAuth.GetAuthHeaders()["Authorization"] }
             };
 
-            string uploadToken = SendRequest(HttpMethod.POST, "https://photoslibrary.googleapis.com/v1/uploads", stream, UploadHelpers.ContentTypeOctetStream, null, uploadTokenHeaders);
+            string uploadToken = SendRequest(HttpMethod.POST, "https://photoslibrary.googleapis.com/v1/uploads", stream, RequestHelpers.ContentTypeOctetStream, null, uploadTokenHeaders);
 
             GooglePhotosNewMediaItemRequest newMediaItemRequest = new GooglePhotosNewMediaItemRequest
             {
@@ -217,7 +217,7 @@ namespace ShareX.UploadersLib.ImageUploaders
 
             string serializedNewMediaItemRequest = JsonConvert.SerializeObject(newMediaItemRequest);
 
-            result.Response = SendRequest(HttpMethod.POST, "https://photoslibrary.googleapis.com/v1/mediaItems:batchCreate", serializedNewMediaItemRequest, UploadHelpers.ContentTypeJSON, newMediaItemRequestArgs, GoogleAuth.GetAuthHeaders());
+            result.Response = SendRequest(HttpMethod.POST, "https://photoslibrary.googleapis.com/v1/mediaItems:batchCreate", serializedNewMediaItemRequest, RequestHelpers.ContentTypeJSON, newMediaItemRequestArgs, GoogleAuth.GetAuthHeaders());
 
             GooglePhotosNewMediaItemResults newMediaItemResult = JsonConvert.DeserializeObject<GooglePhotosNewMediaItemResults>(result.Response);
 

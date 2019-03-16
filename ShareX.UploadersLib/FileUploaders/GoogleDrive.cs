@@ -145,7 +145,7 @@ namespace ShareX.UploadersLib.FileUploaders
                 allowFileDiscovery = allowFileDiscovery.ToString()
             });
 
-            string response = SendRequest(HttpMethod.POST, url, json, UploadHelpers.ContentTypeJSON, null, GoogleAuth.GetAuthHeaders());
+            string response = SendRequest(HttpMethod.POST, url, json, RequestHelpers.ContentTypeJSON, null, GoogleAuth.GetAuthHeaders());
         }
 
         public List<GoogleDriveFile> GetFolders(bool trashed = false, bool writer = true)

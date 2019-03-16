@@ -214,6 +214,11 @@ namespace ShareX.ScreenCaptureLib
                             args.AppendFormat("-quality {0} ", FFmpeg.AMF_quality);
                             args.AppendFormat("-pix_fmt {0} ", "yuv420p");
                             break;
+                        case FFmpegVideoCodec.h264_qsv: // https://trac.ffmpeg.org/wiki/Hardware/QuickSync
+                        case FFmpegVideoCodec.hevc_qsv:
+                            args.AppendFormat("-preset {0} ", FFmpeg.QSV_preset);
+                            args.AppendFormat("-b:v {0}k ", FFmpeg.QSV_bitrate);
+                            break;
                     }
                 }
             }
