@@ -139,8 +139,8 @@ namespace ShareX
         public static void LoadApplicationConfig()
         {
             Settings = ApplicationConfig.Load(ApplicationConfigFilePath, BackupFolder, true, true);
-            ApplicationConfigBackwardCompatibilityTasks();
             DefaultTaskSettings = Settings.DefaultTaskSettings;
+            ApplicationConfigBackwardCompatibilityTasks();
         }
 
         public static void LoadUploadersConfig()
