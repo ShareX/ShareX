@@ -27,6 +27,7 @@ using ShareX.HelpersLib;
 using System;
 using System.Drawing;
 using System.Drawing.Imaging;
+using System.Linq;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -43,7 +44,8 @@ namespace ShareX.ScreenCaptureLib
                 if (CaptureShadow && !NativeMethods.IsZoomed(handle) && NativeMethods.IsDWMEnabled())
                 {
                     rect.Inflate(ShadowOffset, ShadowOffset);
-                    rect.Intersect(CaptureHelpers.GetScreenBounds());
+                    Rectangle intersectBounds = Screen.AllScreens.Select(x => x.Bounds).Where(x => x.IntersectsWith(rect)).Combine();
+                    rect.Intersect(intersectBounds);
                 }
 
                 Bitmap whiteBackground = null, blackBackground = null, whiteBackground2 = null;
