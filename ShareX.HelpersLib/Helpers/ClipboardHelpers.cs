@@ -108,11 +108,6 @@ namespace ShareX.HelpersLib
             {
                 try
                 {
-                    if (HelpersOptions.UseAlternativeCopyImage)
-                    {
-                        return CopyImageAlternative(img);
-                    }
-
                     if (HelpersOptions.DefaultCopyImageFillBackground)
                     {
                         return CopyImageDefaultFillBackground(img, Color.White);
@@ -245,11 +240,6 @@ namespace ShareX.HelpersLib
             {
                 lock (ClipboardLock)
                 {
-                    if (HelpersOptions.UseAlternativeGetImage)
-                    {
-                        return GetImageAlternative();
-                    }
-
                     return Clipboard.GetImage();
                 }
             }
