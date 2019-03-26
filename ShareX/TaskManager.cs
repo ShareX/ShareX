@@ -313,6 +313,8 @@ namespace ShareX
         {
             try
             {
+                task.KeepImage = false;
+
                 if (ListViewControl != null && task != null)
                 {
                     if (task.RequestSettingUpdate)
@@ -426,6 +428,8 @@ namespace ShareX
                                                 }
                                                 break;
                                             case PopUpNotificationType.ToastNotification:
+                                                task.KeepImage = true;
+
                                                 NotificationFormConfig toastConfig = new NotificationFormConfig()
                                                 {
                                                     LeftClickAction = info.TaskSettings.AdvancedSettings.ToastWindowClickAction,

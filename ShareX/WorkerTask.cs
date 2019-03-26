@@ -56,6 +56,7 @@ namespace ShareX
         public bool EarlyURLCopied { get; private set; }
         public Stream Data { get; private set; }
         public Image Image { get; private set; }
+        public bool KeepImage { get; set; }
 
         private string tempText;
         private ThreadWorker threadWorker;
@@ -302,7 +303,9 @@ namespace ShareX
             }
             finally
             {
-                Dispose(!(Info.DataType == EDataType.Image && Info.TaskSettings.GeneralSettings.PopUpNotification == PopUpNotificationType.ToastNotification));
+                KeepImage = Image != null && Info.TaskSettings.GeneralSettings.PopUpNotification == PopUpNotificationType.ToastNotification;
+
+                Dispose();
 
                 if (EarlyURLCopied && (StopRequested || Info.Result == null || string.IsNullOrEmpty(Info.Result.URL)) && Clipboard.ContainsText())
                 {
@@ -1120,7 +1123,7 @@ namespace ShareX
             }
         }
 
-        private void Dispose(bool shouldDisposeImage)
+        public void Dispose()
         {
             if (Data != null)
             {
@@ -1128,16 +1131,11 @@ namespace ShareX
                 Data = null;
             }
 
-            if (Image != null && shouldDisposeImage)
+            if (!KeepImage && Image != null)
             {
                 Image.Dispose();
                 Image = null;
             }
-        }
-
-        public void Dispose()
-        {
-            Dispose(true);
         }
     }
 }
