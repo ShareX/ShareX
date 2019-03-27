@@ -2181,7 +2181,7 @@ namespace ShareX.UploadersLib
                 return;
             }
 
-            Config.MegaAuthInfos = MegaApiClient.GenerateAuthInfos(txtMegaEmail.Text, txtMegaPassword.Text);
+            Config.MegaAuthInfos = new MegaApiClient().GenerateAuthInfos(txtMegaEmail.Text, txtMegaPassword.Text);
 
             MegaConfigureTab(true);
         }

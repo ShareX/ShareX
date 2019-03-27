@@ -644,7 +644,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="ImageListView">
-      <Version>11.0.4</Version>
+      <Version>13.4.0</Version>
     </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
