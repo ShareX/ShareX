@@ -57,8 +57,8 @@ namespace ShareX
         public Stream Data { get; private set; }
         public Image Image { get; private set; }
         public bool KeepImage { get; set; }
+        public string Text { get; private set; }
 
-        private string tempText;
         private ThreadWorker threadWorker;
         private GenericUploader uploader;
         private TaskReferenceHelper taskReferenceHelper;
@@ -151,7 +151,7 @@ namespace ShareX
             task.Info.Job = TaskJob.TextUpload;
             task.Info.DataType = EDataType.Text;
             task.Info.FileName = TaskHelpers.GetFilename(taskSettings, taskSettings.AdvancedSettings.TextFileExtension);
-            task.tempText = text;
+            task.Text = text;
             return task;
         }
 
@@ -540,7 +540,7 @@ namespace ShareX
 
                 DoFileJobs();
             }
-            else if (Info.Job == TaskJob.TextUpload && !string.IsNullOrEmpty(tempText))
+            else if (Info.Job == TaskJob.TextUpload && !string.IsNullOrEmpty(Text))
             {
                 DoTextJobs();
             }
@@ -746,12 +746,12 @@ namespace ShareX
                 {
                     Info.FilePath = filePath;
                     Helpers.CreateDirectoryFromFilePath(Info.FilePath);
-                    File.WriteAllText(Info.FilePath, tempText, Encoding.UTF8);
+                    File.WriteAllText(Info.FilePath, Text, Encoding.UTF8);
                     DebugHelper.WriteLine("Text saved to file: " + Info.FilePath);
                 }
             }
 
-            byte[] byteArray = Encoding.UTF8.GetBytes(tempText);
+            byte[] byteArray = Encoding.UTF8.GetBytes(Text);
             Data = new MemoryStream(byteArray);
         }
 
