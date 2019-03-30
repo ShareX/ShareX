@@ -106,6 +106,9 @@ namespace ShareX
         private static ManualResetEvent uploadersConfigResetEvent = new ManualResetEvent(false);
         private static ManualResetEvent hotkeysConfigResetEvent = new ManualResetEvent(false);
 
+        private const int SettingsSaveFailWarningLimit = 3;
+        private static int settingsSaveFailWarningCount;
+
         public static void LoadInitialSettings()
         {
             LoadApplicationConfig();
@@ -146,6 +149,8 @@ namespace ShareX
 
         private static void Settings_SettingsSaveFailed(Exception e)
         {
+            if (settingsSaveFailWarningCount == SettingsSaveFailWarningLimit) return;
+
             string message;
 
             if (e is UnauthorizedAccessException || e is FileNotFoundException)
@@ -158,6 +163,8 @@ namespace ShareX
             }
 
             TaskHelpers.ShowBalloonTip(message, ToolTipIcon.Warning, 5000, "ShareX failed to save settings");
+
+            settingsSaveFailWarningCount++;
         }
 
         public static void LoadUploadersConfig()
