@@ -791,15 +791,9 @@ namespace ShareX
 
                 ClipboardHelpers.CopyText(text);
 
-                if (Program.MainForm.niTray.Visible)
+                if (!taskSettings.AdvancedSettings.DisableNotifications && taskSettings.GeneralSettings.PopUpNotification != PopUpNotificationType.None)
                 {
-                    Program.MainForm.niTray.Tag = null;
-
-                    if (!taskSettings.AdvancedSettings.DisableNotifications && taskSettings.GeneralSettings.PopUpNotification != PopUpNotificationType.None)
-                    {
-                        Program.MainForm.niTray.ShowBalloonTip(3000, "ShareX",
-                            string.Format(Resources.TaskHelpers_OpenQuickScreenColorPicker_Copied_to_clipboard___0_, text), ToolTipIcon.Info);
-                    }
+                    ShowBalloonTip(string.Format(Resources.TaskHelpers_OpenQuickScreenColorPicker_Copied_to_clipboard___0_, text), ToolTipIcon.Info, 3000);
                 }
             }
         }
@@ -1174,7 +1168,7 @@ namespace ShareX
 
         public static async Task AsyncOCRImage(Stream stream, string fileName, string filePath, OCROptions ocrOptions)
         {
-            Program.MainForm.niTray.ShowBalloonTip(3000, "ShareX", Resources.OCRForm_AutoProcessing, ToolTipIcon.None);
+            ShowBalloonTip(Resources.OCRForm_AutoProcessing, ToolTipIcon.None, 3000);
 
             string result = null;
 
@@ -1193,11 +1187,11 @@ namespace ShareX
                     File.WriteAllText(textPath, result, Encoding.UTF8);
                 }
 
-                Program.MainForm.niTray.ShowBalloonTip(3000, "ShareX", Resources.OCRForm_AutoComplete, ToolTipIcon.None);
+                ShowBalloonTip(Resources.OCRForm_AutoComplete, ToolTipIcon.None, 3000);
             }
             else
             {
-                Program.MainForm.niTray.ShowBalloonTip(3000, "ShareX", Resources.OCRForm_AutoCompleteFail, ToolTipIcon.Warning);
+                ShowBalloonTip(Resources.OCRForm_AutoCompleteFail, ToolTipIcon.Warning, 3000);
             }
         }
 
@@ -1215,11 +1209,7 @@ namespace ShareX
                         {
                             if (twitter.ShowDialog() == DialogResult.OK && twitter.IsTweetSent)
                             {
-                                if (Program.MainForm.niTray.Visible)
-                                {
-                                    Program.MainForm.niTray.Tag = null;
-                                    Program.MainForm.niTray.ShowBalloonTip(5000, "ShareX - Twitter", Resources.TaskHelpers_TweetMessage_Tweet_successfully_sent_, ToolTipIcon.Info);
-                                }
+                                ShowBalloonTip(Resources.TaskHelpers_TweetMessage_Tweet_successfully_sent_, ToolTipIcon.Info, 3000);
                             }
                         }
                     });
@@ -1254,12 +1244,8 @@ namespace ShareX
             Program.HotkeyManager.ToggleHotkeys(hotkeysDisabled);
             Program.MainForm.UpdateToggleHotkeyButton();
 
-            if (Program.MainForm.niTray.Visible)
-            {
-                Program.MainForm.niTray.Tag = null;
-                string balloonTipText = hotkeysDisabled ? Resources.TaskHelpers_ToggleHotkeys_Hotkeys_disabled_ : Resources.TaskHelpers_ToggleHotkeys_Hotkeys_enabled_;
-                Program.MainForm.niTray.ShowBalloonTip(3000, "ShareX", balloonTipText, ToolTipIcon.Info);
-            }
+            string balloonTipText = hotkeysDisabled ? Resources.TaskHelpers_ToggleHotkeys_Hotkeys_disabled_ : Resources.TaskHelpers_ToggleHotkeys_Hotkeys_enabled_;
+            ShowBalloonTip(balloonTipText, ToolTipIcon.Info, 3000);
 
             return hotkeysDisabled;
         }
@@ -1777,6 +1763,15 @@ namespace ShareX
         public static bool CheckQRCodeContent(string content)
         {
             return !string.IsNullOrEmpty(content) && Encoding.UTF8.GetByteCount(content) <= 2952;
+        }
+
+        public static void ShowBalloonTip(string text, ToolTipIcon icon, int timeout, string title = "ShareX", string tag = null)
+        {
+            if (Program.MainForm != null && !Program.MainForm.IsDisposed && Program.MainForm.niTray != null && Program.MainForm.niTray.Visible)
+            {
+                Program.MainForm.niTray.Tag = tag;
+                Program.MainForm.niTray.ShowBalloonTip(timeout, title, text, icon);
+            }
         }
     }
 }

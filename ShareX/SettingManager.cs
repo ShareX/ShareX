@@ -139,8 +139,25 @@ namespace ShareX
         public static void LoadApplicationConfig()
         {
             Settings = ApplicationConfig.Load(ApplicationConfigFilePath, BackupFolder, true, true);
+            Settings.SettingsSaveFailed += Settings_SettingsSaveFailed;
             DefaultTaskSettings = Settings.DefaultTaskSettings;
             ApplicationConfigBackwardCompatibilityTasks();
+        }
+
+        private static void Settings_SettingsSaveFailed(Exception e)
+        {
+            string message;
+
+            if (e is UnauthorizedAccessException || e is FileNotFoundException)
+            {
+                message = "Your anti-virus software or the controlled folder access feature in Windows 10 could be blocking ShareX.";
+            }
+            else
+            {
+                message = e.Message;
+            }
+
+            TaskHelpers.ShowBalloonTip(message, ToolTipIcon.Warning, 5000, "ShareX failed to save settings");
         }
 
         public static void LoadUploadersConfig()

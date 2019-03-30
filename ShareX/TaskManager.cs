@@ -359,12 +359,10 @@ namespace ShareX
                                     TaskHelpers.PlayErrorSound(info.TaskSettings);
                                 }
 
-                                if (info.TaskSettings.GeneralSettings.PopUpNotification != PopUpNotificationType.None && Program.MainForm.niTray.Visible &&
-                                    !string.IsNullOrEmpty(errors) &&
+                                if (info.TaskSettings.GeneralSettings.PopUpNotification != PopUpNotificationType.None && !string.IsNullOrEmpty(errors) &&
                                     (!info.TaskSettings.AdvancedSettings.NotificationCheckIsActiveWindowFullscreen || !CaptureHelpers.IsActiveWindowFullscreen()))
                                 {
-                                    Program.MainForm.niTray.Tag = null;
-                                    Program.MainForm.niTray.ShowBalloonTip(5000, "ShareX - " + Resources.TaskManager_task_UploadCompleted_Error, errors, ToolTipIcon.Error);
+                                    TaskHelpers.ShowBalloonTip(errors, ToolTipIcon.Error, 5000, "ShareX - " + Resources.TaskManager_task_UploadCompleted_Error);
                                 }
                             }
                         }
@@ -420,12 +418,8 @@ namespace ShareX
                                         switch (info.TaskSettings.GeneralSettings.PopUpNotification)
                                         {
                                             case PopUpNotificationType.BalloonTip:
-                                                if (Program.MainForm.niTray.Visible)
-                                                {
-                                                    Program.MainForm.niTray.Tag = result;
-                                                    Program.MainForm.niTray.ShowBalloonTip(5000, "ShareX - " + Resources.TaskManager_task_UploadCompleted_ShareX___Task_completed,
-                                                        result, ToolTipIcon.Info);
-                                                }
+                                                TaskHelpers.ShowBalloonTip(result, ToolTipIcon.Info, 5000,
+                                                    "ShareX - " + Resources.TaskManager_task_UploadCompleted_ShareX___Task_completed, result);
                                                 break;
                                             case PopUpNotificationType.ToastNotification:
                                                 task.KeepImage = true;

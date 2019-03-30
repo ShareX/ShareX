@@ -38,6 +38,9 @@ namespace ShareX.HelpersLib
         public delegate void SettingsSavedEventHandler(T settings, string filePath, bool result);
         public event SettingsSavedEventHandler SettingsSaved;
 
+        public delegate void SettingsSaveFailedEventHandler(Exception e);
+        public event SettingsSaveFailedEventHandler SettingsSaveFailed;
+
         [Browsable(false), JsonIgnore]
         public string FilePath { get; private set; }
 
@@ -69,6 +72,14 @@ namespace ShareX.HelpersLib
             if (SettingsSaved != null)
             {
                 SettingsSaved((T)this, filePath, result);
+            }
+        }
+
+        protected virtual void OnSettingsSaveFailed(Exception e)
+        {
+            if (SettingsSaveFailed != null)
+            {
+                SettingsSaveFailed(e);
             }
         }
 
@@ -171,6 +182,8 @@ namespace ShareX.HelpersLib
             catch (Exception e)
             {
                 DebugHelper.WriteException(e);
+
+                OnSettingsSaveFailed(e);
             }
             finally
             {
