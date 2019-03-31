@@ -89,7 +89,7 @@ namespace ShareX.UploadersLib
 
         #region Chevereto
 
-        public CheveretoUploader CheveretoUploader = new CheveretoUploader("http://ultraimg.com/api/1/upload", "3374fa58c672fcaad8dab979f7687397");
+        public CheveretoUploader CheveretoUploader = new CheveretoUploader();
         public bool CheveretoDirectURL = true;
 
         #endregion Chevereto
@@ -348,7 +348,7 @@ namespace ShareX.UploadersLib
 
         #region Pomf
 
-        public PomfUploader PomfUploader = new PomfUploader("https://mixtape.moe/upload.php");
+        public PomfUploader PomfUploader = new PomfUploader();
 
         #endregion Pomf
 
