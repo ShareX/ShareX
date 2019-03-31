@@ -207,12 +207,6 @@
     <Compile Include="Controls\OAuthControl.Designer.cs">
       <DependentUpon>OAuthControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\OAuthWebForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\OAuthWebForm.Designer.cs">
-      <DependentUpon>OAuthWebForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\ResponseForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -560,54 +554,6 @@
     <EmbeddedResource Include="Forms\JiraUpload.zh-TW.resx">
       <DependentUpon>JiraUpload.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\OAuthWebForm.de.resx">
-      <DependentUpon>OAuthWebForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\OAuthWebForm.es-MX.resx">
-      <DependentUpon>OAuthWebForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\OAuthWebForm.es.resx">
-      <DependentUpon>OAuthWebForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\OAuthWebForm.fr.resx">
-      <DependentUpon>OAuthWebForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\OAuthWebForm.hu.resx">
-      <DependentUpon>OAuthWebForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\OAuthWebForm.id-ID.resx">
-      <DependentUpon>OAuthWebForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\OAuthWebForm.it-IT.resx">
-      <DependentUpon>OAuthWebForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\OAuthWebForm.ko-KR.resx">
-      <DependentUpon>OAuthWebForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\OAuthWebForm.nl-NL.resx">
-      <DependentUpon>OAuthWebForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\OAuthWebForm.pt-BR.resx">
-      <DependentUpon>OAuthWebForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\OAuthWebForm.ru.resx">
-      <DependentUpon>OAuthWebForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\OAuthWebForm.tr.resx">
-      <DependentUpon>OAuthWebForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\OAuthWebForm.uk.resx">
-      <DependentUpon>OAuthWebForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\OAuthWebForm.vi-VN.resx">
-      <DependentUpon>OAuthWebForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\OAuthWebForm.zh-CN.resx">
-      <DependentUpon>OAuthWebForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\OAuthWebForm.zh-TW.resx">
-      <DependentUpon>OAuthWebForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\OCRSpaceForm.de.resx">
       <DependentUpon>OCRSpaceForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -862,9 +808,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\OAuthControl.resx">
       <DependentUpon>OAuthControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\OAuthWebForm.resx">
-      <DependentUpon>OAuthWebForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ResponseForm.resx">
       <DependentUpon>ResponseForm.cs</DependentUpon>
