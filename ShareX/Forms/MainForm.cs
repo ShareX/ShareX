@@ -1752,19 +1752,7 @@ namespace ShareX
 
         private void tsmiShowDebugLog_Click(object sender, EventArgs e)
         {
-            DebugForm form = DebugForm.GetFormInstance(DebugHelper.Logger);
-            if (!form.HasUploadRequested)
-            {
-                form.UploadRequested += (text) =>
-                {
-                    DialogResult result = MessageBox.Show(form, Resources.MainForm_UploadDebugLogWarning, "ShareX", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1);
-                    if (result == DialogResult.Yes)
-                    {
-                        UploadManager.UploadText(text);
-                    }
-                };
-            }
-            form.ForceActivate();
+            TaskHelpers.OpenDebugLog();
         }
 
         private void tsmiTestImageUpload_Click(object sender, EventArgs e)
@@ -1860,11 +1848,19 @@ namespace ShareX
 
         private void niTray_BalloonTipClicked(object sender, EventArgs e)
         {
-            string url = niTray.Tag as string;
+            BalloonTipAction action = niTray.Tag as BalloonTipAction;
 
-            if (!string.IsNullOrEmpty(url))
+            if (action != null)
             {
-                URLHelpers.OpenURL(url);
+                switch (action.ClickAction)
+                {
+                    case BalloonTipClickAction.OpenURL:
+                        URLHelpers.OpenURL(action.Text);
+                        break;
+                    case BalloonTipClickAction.OpenDebugLog:
+                        TaskHelpers.OpenDebugLog();
+                        break;
+                }
             }
         }
 

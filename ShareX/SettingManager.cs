@@ -162,7 +162,12 @@ namespace ShareX
                 message = e.Message;
             }
 
-            TaskHelpers.ShowBalloonTip(message, ToolTipIcon.Warning, 5000, "ShareX failed to save settings");
+            BalloonTipAction action = new BalloonTipAction()
+            {
+                ClickAction = BalloonTipClickAction.OpenDebugLog
+            };
+
+            TaskHelpers.ShowBalloonTip(message, ToolTipIcon.Warning, 5000, "ShareX failed to save settings", action);
 
             settingsSaveFailWarningCount++;
         }

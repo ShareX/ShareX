@@ -139,6 +139,7 @@
     </When>
   </Choose>
   <ItemGroup>
+    <Compile Include="BalloonTipAction.cs" />
     <Compile Include="CaptureHelpers\CaptureActiveMonitor.cs" />
     <Compile Include="CaptureHelpers\CaptureActiveWindow.cs" />
     <Compile Include="CaptureHelpers\CaptureBase.cs" />

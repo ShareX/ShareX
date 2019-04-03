@@ -418,8 +418,14 @@ namespace ShareX
                                         switch (info.TaskSettings.GeneralSettings.PopUpNotification)
                                         {
                                             case PopUpNotificationType.BalloonTip:
+                                                BalloonTipAction action = new BalloonTipAction()
+                                                {
+                                                    ClickAction = BalloonTipClickAction.OpenURL,
+                                                    Text = result
+                                                };
+
                                                 TaskHelpers.ShowBalloonTip(result, ToolTipIcon.Info, 5000,
-                                                    "ShareX - " + Resources.TaskManager_task_UploadCompleted_ShareX___Task_completed, result);
+                                                    "ShareX - " + Resources.TaskManager_task_UploadCompleted_ShareX___Task_completed, action);
                                                 break;
                                             case PopUpNotificationType.ToastNotification:
                                                 task.KeepImage = true;

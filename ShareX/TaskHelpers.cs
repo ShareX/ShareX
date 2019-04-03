@@ -772,6 +772,24 @@ namespace ShareX
             imageHistoryForm.Show();
         }
 
+        public static void OpenDebugLog()
+        {
+            DebugForm form = DebugForm.GetFormInstance(DebugHelper.Logger);
+
+            if (!form.HasUploadRequested)
+            {
+                form.UploadRequested += text =>
+                {
+                    if (MessageBox.Show(form, Resources.MainForm_UploadDebugLogWarning, "ShareX", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                    {
+                        UploadManager.UploadText(text);
+                    }
+                };
+            }
+
+            form.ForceActivate();
+        }
+
         public static void ShowScreenColorPickerDialog(TaskSettings taskSettings = null)
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
@@ -1765,11 +1783,11 @@ namespace ShareX
             return !string.IsNullOrEmpty(content) && Encoding.UTF8.GetByteCount(content) <= 2952;
         }
 
-        public static void ShowBalloonTip(string text, ToolTipIcon icon, int timeout, string title = "ShareX", string tag = null)
+        public static void ShowBalloonTip(string text, ToolTipIcon icon, int timeout, string title = "ShareX", BalloonTipAction clickAction = null)
         {
             if (Program.MainForm != null && !Program.MainForm.IsDisposed && Program.MainForm.niTray != null && Program.MainForm.niTray.Visible)
             {
-                Program.MainForm.niTray.Tag = tag;
+                Program.MainForm.niTray.Tag = clickAction;
                 Program.MainForm.niTray.ShowBalloonTip(timeout, title, text, icon);
             }
         }

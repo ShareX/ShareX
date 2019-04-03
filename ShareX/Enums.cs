@@ -297,4 +297,11 @@ namespace ShareX
         EnabledByPolicy = StartupTaskState.EnabledByPolicy
     }
 #endif
+
+    public enum BalloonTipClickAction
+    {
+        None,
+        OpenURL,
+        OpenDebugLog
+    }
 }
