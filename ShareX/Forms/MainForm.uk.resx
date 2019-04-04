@@ -138,12 +138,6 @@
   <data name="chURL.Text" xml:space="preserve">
     <value>Посилання</value>
   </data>
-  <data name="pbPatreonOpen.ToolTip" xml:space="preserve">
-    <value>Відкрити сторінку компанії ShareX на Patreon</value>
-  </data>
-  <data name="pbPatreonHide.ToolTip" xml:space="preserve">
-    <value>Остаточно приховати кнопку Patreon</value>
-  </data>
   <data name="tsmiFullscreen.Text" xml:space="preserve">
     <value>Весь екран</value>
   </data>
@@ -173,9 +167,6 @@
   </data>
   <data name="tsmiScrollingCapture.Text" xml:space="preserve">
     <value>Захоплення з прокручуванням...</value>
-  </data>
-  <data name="tsmiWebpageCapture.Text" xml:space="preserve">
-    <value>Захоплення веб-сторінки...</value>
   </data>
   <data name="tsmiTextCapture.Text" xml:space="preserve">
     <value>Захоплення тексту (OCR)...</value>
@@ -248,9 +239,6 @@
   </data>
   <data name="tsmiVideoThumbnailer.Text" xml:space="preserve">
     <value>Генератор мініатюр відео...</value>
-  </data>
-  <data name="tsmiFTPClient.Text" xml:space="preserve">
-    <value>FTP-клієнт...</value>
   </data>
   <data name="tsmiTweetMessage.Text" xml:space="preserve">
     <value>Повідомлення у Tweeter...</value>
@@ -528,9 +516,6 @@
   <data name="tsmiTrayScrollingCapture.Text" xml:space="preserve">
     <value>Захоплення з прокручуванням...</value>
   </data>
-  <data name="tsmiTrayWebpageCapture.Text" xml:space="preserve">
-    <value>Захоплення веб-сторінки...</value>
-  </data>
   <data name="tsmiTrayTextCapture.Text" xml:space="preserve">
     <value>Захоплення тексту (OCR)...</value>
   </data>
@@ -602,9 +587,6 @@
   </data>
   <data name="tsmiTrayVideoThumbnailer.Text" xml:space="preserve">
     <value>Генератор мініатюр відео...</value>
-  </data>
-  <data name="tsmiTrayFTPClient.Text" xml:space="preserve">
-    <value>FTP-клієнт...</value>
   </data>
   <data name="tsmiTrayTweetMessage.Text" xml:space="preserve">
     <value>Повідомлення у Tweeter...</value>
@@ -701,12 +683,6 @@
   </data>
   <data name="tsmiTrayExit.Text" xml:space="preserve">
     <value>Вихід</value>
-  </data>
-  <data name="pbDiscordOpen.ToolTip" xml:space="preserve">
-    <value>Відкрити посилання запрошення на сервер ShareX у Discord</value>
-  </data>
-  <data name="pbDiscordHide.ToolTip" xml:space="preserve">
-    <value>Остаточно приховати кнопку Discord</value>
   </data>
   <data name="btnCloseNews.Text" xml:space="preserve">
     <value>Закрити</value>

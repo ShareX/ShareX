@@ -195,9 +195,6 @@ Wil je het automatisch downloaden?</value>
   <data name="MainForm_UpdateWorkflowsMenu_You_can_add_workflows_from_hotkey_settings___" xml:space="preserve">
     <value>Je kunt workflows toevoegen via de sneltoets instellingen...</value>
   </data>
-  <data name="TaskHelpers_OpenFTPClient_FTP_client_only_supports_FTP_or_FTPS_" xml:space="preserve">
-    <value>FTP programma ondersteund alleen FTP of FTPS.</value>
-  </data>
   <data name="ImageData_Write_Error" xml:space="preserve">
     <value>Kon de afbeelding niet wegschrijven op {0}.</value>
   </data>
@@ -220,14 +217,8 @@ Wil je ShareX opnieuw opstarten?</value>
   <data name="ChromeForm_btnRegister_Click_Chrome_support_enabled_" xml:space="preserve">
     <value>Chrome ondersteuning is ingeschakeld.</value>
   </data>
-  <data name="EncoderProgramForm_btnOK_Click_Extension_can_t_be_empty_" xml:space="preserve">
-    <value>Extensie kan niet leeg zijn.</value>
-  </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_After_capture___0_" xml:space="preserve">
     <value>Na vastleggen: {0}</value>
-  </data>
-  <data name="TaskSettingsForm_ConfigureEncoder_Configure_CLI_video_encoders_____" xml:space="preserve">
-    <value>Configureer CLI video omzetters ---&gt;</value>
   </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_URL_shortener___0_" xml:space="preserve">
     <value>Linkverkorter: {0}</value>
@@ -362,9 +353,6 @@ Wil je ShareX opnieuw opstarten?</value>
   <data name="HotkeyManager_ShowFailedHotkeys_hotkeys" xml:space="preserve">
     <value>sneltoetsen</value>
   </data>
-  <data name="EncoderProgramForm_btnOK_Click_Path_can_t_be_empty_" xml:space="preserve">
-    <value>Pad kan niet leeg zijn.</value>
-  </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_File_uploader___0_" xml:space="preserve">
     <value>Bestandsuploader: {0}</value>
   </data>
@@ -374,15 +362,9 @@ Wil je ShareX opnieuw opstarten?</value>
   <data name="TaskHelpers_TweetMessage_Tweet_successfully_sent_" xml:space="preserve">
     <value>Tweet succesvol verzonden.</value>
   </data>
-  <data name="EncoderProgramForm_btnPathBrowse_Click_Choose_encoder_path" xml:space="preserve">
-    <value>Kies een pad voor het conversieprogramma</value>
-  </data>
   <data name="Program_WritePersonalPathConfig_Cant_access_to_file" xml:space="preserve">
     <value>Kan het bestand "{0}" niet benaderen.
 Voer ShareX uit als beheerder om de persoonlijke map te wijzigen.</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_CLI_video_encoder_file_does_not_exist__" xml:space="preserve">
-    <value>het CLI videoconversie bestand bestaat niet:</value>
   </data>
   <data name="ApplicationSettingsForm_cbSteamShowInApp_CheckedChanged_For_settings_to_take_effect_ShareX_needs_to_be_reopened_from_Steam_" xml:space="preserve">
     <value>Om de instellingen toe te passen moet ShareX vanuit Steam heropgestart worden.</value>
@@ -426,12 +408,6 @@ Klik op "Nee" om de huidige upload te annuleren en het automatisch uploaden uit 
   </data>
   <data name="UploadTask_DoUploadJob_Uploading" xml:space="preserve">
     <value>Uploaden</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_There_is_no_valid_CLI_video_encoder_selected_" xml:space="preserve">
-    <value>Er is geen geldige CLI videoconverteerder geselecteerd.</value>
-  </data>
-  <data name="TaskHelpers_OpenFTPClient_Unable_to_find_valid_FTP_account_" xml:space="preserve">
-    <value>Kan geen geldig FTP account vinden.</value>
   </data>
   <data name="UploadTask_DoUploadJob_You_are_attempting_to_upload_a_large_file" xml:space="preserve">
     <value>Je probeert een groot bestand te uploaden.

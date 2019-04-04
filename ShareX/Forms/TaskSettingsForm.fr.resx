@@ -156,9 +156,6 @@
   <data name="cbCaptureClientArea.Text" xml:space="preserve">
     <value>Capturer la zone client pendant la capture d'une fenêtre ou d'une fenêtre active</value>
   </data>
-  <data name="cbScreenshotDelay.Text" xml:space="preserve">
-    <value>Délai de la capture d'écran :</value>
-  </data>
   <data name="tpRegionCapture.Text" xml:space="preserve">
     <value>Capture d'une région </value>
   </data>
@@ -234,9 +231,6 @@
   <data name="cbClipboardUploadAutoIndexFolder.Text" xml:space="preserve">
     <value>Si le presse-papier contient un chemin de dossier, indexer ce dossier et mettre en ligne l'index</value>
   </data>
-  <data name="chkClipboardUploadURLContents.Text" xml:space="preserve">
-    <value>Si le presse-papier contient l'URL d'un fichier, le télécharger et le mettre en ligne</value>
-  </data>
   <data name="cbClipboardUploadShareURL.Text" xml:space="preserve">
     <value>Si le presse-papier contient une URL, la partager en utilisant le service de partage de URL</value>
   </data>
@@ -248,9 +242,6 @@
   </data>
   <data name="cbFileUploadUseNamePattern.Text" xml:space="preserve">
     <value>Utiliser un modèle de nom pour la mise en ligne de fichiers plutôt que le nom du fichier réel</value>
-  </data>
-  <data name="btnResetAutoIncrementNumber.Text" xml:space="preserve">
-    <value>Remettre à zéro le compteur incrémental automatique</value>
   </data>
   <data name="lblNameFormatPatternPreviewActiveWindow.Text" xml:space="preserve">
     <value>Prévisualisation :</value>
@@ -275,12 +266,6 @@
   </data>
   <data name="cbScreenRecorderFixedDuration.Text" xml:space="preserve">
     <value>Durée fixée :</value>
-  </data>
-  <data name="btnEncoderConfig.Text" xml:space="preserve">
-    <value>Profils...</value>
-  </data>
-  <data name="chkRunScreencastCLI.Text" xml:space="preserve">
-    <value>Exécuter CLI après :</value>
   </data>
   <data name="lblScreenRecordFPS.Text" xml:space="preserve">
     <value>IPS de l'enregistrement d'écran :</value>

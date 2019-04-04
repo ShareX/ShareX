@@ -135,20 +135,8 @@
   <data name="gbFilters.Text" xml:space="preserve">
     <value>필터</value>
   </data>
-  <data name="cbFilenameFilterMethod.Items" xml:space="preserve">
-    <value>포함</value>
-  </data>
-  <data name="cbFilenameFilterMethod.Items1" xml:space="preserve">
-    <value>...으로 시작</value>
-  </data>
-  <data name="cbFilenameFilterMethod.Items2" xml:space="preserve">
-    <value>...으로 끝남</value>
-  </data>
   <data name="cbDateFilter.Text" xml:space="preserve">
     <value>날짜 필터:</value>
-  </data>
-  <data name="cbFilenameFilterMethod.Items3" xml:space="preserve">
-    <value>완전 일치</value>
   </data>
   <data name="cbHostFilter.Text" xml:space="preserve">
     <value>호스트 필터:</value>

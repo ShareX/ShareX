@@ -177,9 +177,6 @@
   <data name="lblPersonalFolderPath.Text" xml:space="preserve">
     <value>Dossier personnel ShareX :</value>
   </data>
-  <data name="lblNotePersonalFolderPath.Text" xml:space="preserve">
-    <value>Remarque : Vous devez redémarrer ShareX pour que les changements du dossier personnel soient pris en compte</value>
-  </data>
   <data name="tpIntegration.Text" xml:space="preserve">
     <value>Intégration</value>
   </data>

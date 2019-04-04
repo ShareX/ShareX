@@ -447,9 +447,6 @@
   <data name="tsmiTrayDonate.Text" xml:space="preserve">
     <value>Пожертвовать…</value>
   </data>
-  <data name="tsmiFTPClient.Text" xml:space="preserve">
-    <value>Клиент FTP…</value>
-  </data>
   <data name="tsmiHashCheck.Text" xml:space="preserve">
     <value>Проверка хеша…</value>
   </data>
@@ -492,9 +489,6 @@
   <data name="tsmiTrayHashCheck.Text" xml:space="preserve">
     <value>Проверка хеша…</value>
   </data>
-  <data name="tsmiTrayFTPClient.Text" xml:space="preserve">
-    <value>Клиент FTP…</value>
-  </data>
   <data name="tsmiTrayImageCombiner.Text" xml:space="preserve">
     <value>Объединитель изображений…</value>
   </data>
@@ -521,12 +515,6 @@
   </data>
   <data name="tsmiTrayScrollingCapture.Text" xml:space="preserve">
     <value>Захват с прокруткой…</value>
-  </data>
-  <data name="tsmiWebpageCapture.Text" xml:space="preserve">
-    <value>Захват веб-страницы…</value>
-  </data>
-  <data name="tsmiTrayWebpageCapture.Text" xml:space="preserve">
-    <value>Захват веб-страницы…</value>
   </data>
   <data name="tsmiVideoThumbnailer.Text" xml:space="preserve">
     <value>Миниатюры из видео…</value>
@@ -624,12 +612,6 @@
   <data name="tsmiHideColumns.Text" xml:space="preserve">
     <value>Скрыть столбцы</value>
   </data>
-  <data name="pbPatreonOpen.ToolTip" xml:space="preserve">
-    <value>Открыть веб-страницу Patreon-кампании ShareX</value>
-  </data>
-  <data name="pbPatreonHide.ToolTip" xml:space="preserve">
-    <value>Навсегда спрятать кнопку Patreon</value>
-  </data>
   <data name="tsmiTrayTextCapture.Text" xml:space="preserve">
     <value>Захват текста (OCR)...</value>
   </data>
@@ -692,12 +674,6 @@
   </data>
   <data name="tsmiCopyMarkdownLinkedImage.Text" xml:space="preserve">
     <value>Markdown изображение-ссылку</value>
-  </data>
-  <data name="pbDiscordHide.ToolTip" xml:space="preserve">
-    <value>Навсегда спрятать кнопку Discord</value>
-  </data>
-  <data name="pbDiscordOpen.ToolTip" xml:space="preserve">
-    <value>Открыть приглашение на Discord сервер ShareX</value>
   </data>
   <data name="tsmiTrayImageEditor.Text" xml:space="preserve">
     <value>Редактор изображений...</value>

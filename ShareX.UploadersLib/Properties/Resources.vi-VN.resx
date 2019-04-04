@@ -120,9 +120,6 @@
   <data name="CertFileNameEditor_EditValue_Browse_for_a_certificate_file___" xml:space="preserve">
     <value>Duyệt lấy tệp tin chứng chỉ...</value>
   </data>
-  <data name="FTPClientForm_FTPClientForm_Connecting_to__0_" xml:space="preserve">
-    <value>Đang kết nối tới {0}</value>
-  </data>
   <data name="UploadersConfigForm_oAuthJira_RefreshButtonClicked_Refresh_authorization_is_not_supported_" xml:space="preserve">
     <value>Làm mới quá trình ủy quyền không được hỗ trợ.</value>
   </data>
@@ -138,12 +135,6 @@
   <data name="OneDrive_RootFolder_Root_folder" xml:space="preserve">
     <value>Thư mục gốc</value>
   </data>
-  <data name="FTPClientForm_FTPClientForm_ShareX_FTP_client" xml:space="preserve">
-    <value>Trình FTP ShareX</value>
-  </data>
-  <data name="FTPClientForm_FTPCreateDirectory_Directory_name_to_create" xml:space="preserve">
-    <value>Tên thư mục sẽ tạo</value>
-  </data>
   <data name="JiraUpload_ValidateIssueId_Issue_not_found" xml:space="preserve">
     <value>Không thể tìm thấy vấn đề</value>
   </data>
@@ -155,9 +146,6 @@
   </data>
   <data name="TwitterTweetForm_SendTweet_Tweet_error" xml:space="preserve">
     <value>Lỗi khi Tweet</value>
-  </data>
-  <data name="UploadersConfigForm_FTPOpenClient_FTP_client_only_supports_FTP_or_FTPS_" xml:space="preserve">
-    <value>Trình FTP chỉ hỗ trợ FTP và FTPS.</value>
   </data>
   <data name="UploadersConfigForm_FTPOpenClient_Unable_to_find_valid_FTP_account_" xml:space="preserve">
     <value>Không thể tìm thấy tài khoản FTP hợp lệ.</value>
@@ -219,12 +207,6 @@ Các thư mục đã tạo:</value>
   </data>
   <data name="CustomUploaderItem_GetRequestURL_RequestURLMustBeConfigured" xml:space="preserve">
     <value>"URL yêu cầu" phải được thiết lập</value>
-  </data>
-  <data name="UploadersConfigForm_A_header_with_the_same_name_already_exists" xml:space="preserve">
-    <value>Header cùng tên đã tồn tại.</value>
-  </data>
-  <data name="UploadersConfigForm_An_argument_with_the_same_name_already_exists" xml:space="preserve">
-    <value>Đối số cùng tên đã tồn tại</value>
   </data>
   <data name="UploadersConfigForm_ConnectSFTPAccount_Key_file_not_found" xml:space="preserve">
     <value>Tệp key không tồn tại.</value>

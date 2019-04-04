@@ -222,9 +222,6 @@
   <data name="cbShellContextMenu.Text" xml:space="preserve">
     <value>Tampilkan "Unggah dengan ShareX" di menu konteks Windows Explorer</value>
   </data>
-  <data name="lblNotePersonalFolderPath.Text" xml:space="preserve">
-    <value>Catatan: Anda harus membuka kembali ShareX untuk menerapkan perubahan folder pribadi.</value>
-  </data>
   <data name="tpPaths.Text" xml:space="preserve">
     <value>Jalur</value>
   </data>

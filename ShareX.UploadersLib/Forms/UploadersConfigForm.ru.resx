@@ -131,90 +131,6 @@
   <data name="tpURLShorteners.Text" xml:space="preserve">
     <value>Короткие ссылки</value>
   </data>
-  <data name="btnCustomUploaderAdd.Text" xml:space="preserve">
-    <value>Добавить</value>
-  </data>
-  <data name="btnCustomUploaderRemove.Text" xml:space="preserve">
-    <value>Удалить</value>
-  </data>
-  <data name="btnCustomUploaderClearUploaders.Text" xml:space="preserve">
-    <value>Очистить загрузчики</value>
-  </data>
-  <data name="btnCustomUploadersExportAll.Text" xml:space="preserve">
-    <value>Все...</value>
-  </data>
-  <data name="gbCustomUploaders.Text" xml:space="preserve">
-    <value>Сервисы</value>
-  </data>
-  <data name="chCustomUploaderHeadersValue.Text" xml:space="preserve">
-    <value>Значение</value>
-  </data>
-  <data name="chCustomUploaderHeadersName.Text" xml:space="preserve">
-    <value>Имя</value>
-  </data>
-  <data name="btnCustomUploaderHeaderRemove.Text" xml:space="preserve">
-    <value>Удалить</value>
-  </data>
-  <data name="btnCustomUploaderHeaderAdd.Text" xml:space="preserve">
-    <value>Добавить</value>
-  </data>
-  <data name="btnCustomUploaderHeaderUpdate.Text" xml:space="preserve">
-    <value>Обновить</value>
-  </data>
-  <data name="tpCustomUploaderHeaders.Text" xml:space="preserve">
-    <value>Заголовки</value>
-  </data>
-  <data name="chCustomUploaderArgumentsValue.Text" xml:space="preserve">
-    <value>Значение</value>
-  </data>
-  <data name="chCustomUploaderArgumentsName.Text" xml:space="preserve">
-    <value>Имя</value>
-  </data>
-  <data name="btnCustomUploaderArgRemove.Text" xml:space="preserve">
-    <value>Удалить</value>
-  </data>
-  <data name="btnCustomUploaderArgAdd.Text" xml:space="preserve">
-    <value>Добавить</value>
-  </data>
-  <data name="btnCustomUploaderArgUpdate.Text" xml:space="preserve">
-    <value>Обновить</value>
-  </data>
-  <data name="tpCustomUploaderArguments.Text" xml:space="preserve">
-    <value>Аргументы</value>
-  </data>
-  <data name="lblCustomUploaderXPathExample.Text" xml:space="preserve">
-    <value>Примеры:
-
-/Files/File[1]/URL
-/store/book[1]/title</value>
-  </data>
-  <data name="btnCustomUploaderXmlSyntaxAdd.Text" xml:space="preserve">
-    <value>Добавить синтаксис в поле URL</value>
-  </data>
-  <data name="lblCustomUploaderJsonPathExample.Text" xml:space="preserve">
-    <value>Примеры:
-
-Files[0].URL
-store.book[0].title</value>
-  </data>
-  <data name="btnCustomUploaderJsonAddSyntax.Text" xml:space="preserve">
-    <value>Добавить синтаксис в поле URL</value>
-  </data>
-  <data name="btnCustomUploaderRegexpRemove.Text" xml:space="preserve">
-    <value>Удалить</value>
-  </data>
-  <data name="btnCustomUploaderRegexpAdd.Text" xml:space="preserve">
-    <value>Добавить</value>
-  </data>
-  <data name="btnCustomUploaderRegexpUpdate.Text" xml:space="preserve">
-    <value>Обновить</value>
-  </data>
-  <data name="btnCustomUploaderRegexAddSyntax.Text" xml:space="preserve">
-    <value>Добавить синтаксис в поле URL</value>
-  </data>
-  <data name="tpCustomUploaders.Text" xml:space="preserve">
-    <value>Пользовательские</value>
-  </data>
   <data name="btnTwitterAdd.Text" xml:space="preserve">
     <value>Добавить</value>
   </data>
@@ -232,60 +148,6 @@ store.book[0].title</value>
   </data>
   <data name="btnTwitterNameUpdate.Text" xml:space="preserve">
     <value>Обновить</value>
-  </data>
-  <data name="btnCustomUploaderExamples.Text" xml:space="preserve">
-    <value>Примеры</value>
-  </data>
-  <data name="btnCustomUploaderHelp.Text" xml:space="preserve">
-    <value>Помощь...</value>
-  </data>
-  <data name="lblCustomUploaderImageUploader.Text" xml:space="preserve">
-    <value>Сервис картинок:</value>
-  </data>
-  <data name="btnCustomUploaderFileUploaderTest.Text" xml:space="preserve">
-    <value>Тест</value>
-  </data>
-  <data name="lblCustomUploaderFileUploader.Text" xml:space="preserve">
-    <value>Файловый сервис:</value>
-  </data>
-  <data name="btnCustomUploaderImageUploaderTest.Text" xml:space="preserve">
-    <value>Тест</value>
-  </data>
-  <data name="lblCustomUploaderTestResult.Text" xml:space="preserve">
-    <value>Результат теста:</value>
-  </data>
-  <data name="lblCustomUploaderDeletionURL.Text" xml:space="preserve">
-    <value>Ссылка на удаление:</value>
-  </data>
-  <data name="btnCustomUploaderShowLastResponse.Text" xml:space="preserve">
-    <value>Показать последний ответ...</value>
-  </data>
-  <data name="lblCustomUploaderResponseType.Text" xml:space="preserve">
-    <value>Тип ответа:</value>
-  </data>
-  <data name="lblCustomUploaderTextUploader.Text" xml:space="preserve">
-    <value>Сервис текстов:</value>
-  </data>
-  <data name="lblCustomUploaderRequestURL.Text" xml:space="preserve">
-    <value>URL запроса:</value>
-  </data>
-  <data name="btnCustomUploaderURLShortenerTest.Text" xml:space="preserve">
-    <value>Тест</value>
-  </data>
-  <data name="lblCustomUploaderURLShortener.Text" xml:space="preserve">
-    <value>Сервис коротких ссылок:</value>
-  </data>
-  <data name="btnCustomUploaderTextUploaderTest.Text" xml:space="preserve">
-    <value>Тест</value>
-  </data>
-  <data name="lblCustomUploaderThumbnailURL.Text" xml:space="preserve">
-    <value>URL миниатюры:</value>
-  </data>
-  <data name="lblCustomUploaderFileForm.Text" xml:space="preserve">
-    <value>Имя формы с файлом:</value>
-  </data>
-  <data name="lblCustomUploaderRequestType.Text" xml:space="preserve">
-    <value>Тип запроса:</value>
   </data>
   <data name="lblBitlyDomain.Text" xml:space="preserve">
     <value>Домен:</value>
@@ -879,9 +741,6 @@ store.book[0].title</value>
   <data name="lblAzureStorageAccountName.Text" xml:space="preserve">
     <value>Картинка аккаунта:</value>
   </data>
-  <data name="mbCustomUploaderDestinationType.Text" xml:space="preserve">
-    <value>Тип сервиса</value>
-  </data>
   <data name="cbPlikComment.Text" xml:space="preserve">
     <value>Комментарий (Markdown)</value>
   </data>
@@ -893,9 +752,6 @@ store.book[0].title</value>
   </data>
   <data name="cbPlikIsSecured.Text" xml:space="preserve">
     <value>Логин/Пароль требуются?</value>
-  </data>
-  <data name="mbCustomUploaderDestinationType.ToolTip" xml:space="preserve">
-    <value>Сейчас тип сервиса используется когда пользователи импортируют сервис загрузок двойным кликом по файлу .sxcu</value>
   </data>
   <data name="lblGistCustomURL.Text" xml:space="preserve">
     <value>Пользовательский домен:</value>
@@ -1014,9 +870,6 @@ store.book[0].title</value>
   <data name="lblFTPRemoteDirectory.Text" xml:space="preserve">
     <value>Удаленная директория:</value>
   </data>
-  <data name="btnFTPClient.Text" xml:space="preserve">
-    <value>Клиент...</value>
-  </data>
   <data name="lblFTPURLPreview.Text" xml:space="preserve">
     <value>Предпросмотр URL:</value>
   </data>
@@ -1049,18 +902,6 @@ store.book[0].title</value>
   </data>
   <data name="cbxPlikTTLUnit.Items3" xml:space="preserve">
     <value>никогда</value>
-  </data>
-  <data name="btnCustomUploaderDuplicate.Text" xml:space="preserve">
-    <value>Копия</value>
-  </data>
-  <data name="btnCustomUploaderURLSharingServiceTest.Text" xml:space="preserve">
-    <value>Тест</value>
-  </data>
-  <data name="lblCustomUploaderURLSharingService.Text" xml:space="preserve">
-    <value>Сервис отправки ссылок:</value>
-  </data>
-  <data name="lblCustomUploaderName.Text" xml:space="preserve">
-    <value>Имя:</value>
   </data>
   <data name="lblAzureStorageCustomDomain.Text" xml:space="preserve">
     <value>Пользовательский домен:</value>
@@ -1148,9 +989,6 @@ store.book[0].title</value>
   </data>
   <data name="lblFirebaseDomainExample.Text" xml:space="preserve">
     <value>Пример: google.page.link</value>
-  </data>
-  <data name="lblCustomUploaderURL.Text" xml:space="preserve">
-    <value>URL:</value>
   </data>
   <data name="lblAzureStorageUploadPath.Text" xml:space="preserve">
     <value>Путь загрузки:</value>

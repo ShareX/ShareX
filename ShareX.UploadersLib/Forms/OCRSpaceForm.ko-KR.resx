@@ -123,9 +123,6 @@
   <data name="lblResult.Text" xml:space="preserve">
     <value>결과:</value>
   </data>
-  <data name="llAttribution.Text" xml:space="preserve">
-    <value>OCR.Space API로 구동</value>
-  </data>
   <data name="btnStartOCR.Text" xml:space="preserve">
     <value>OCR 시작하기</value>
   </data>

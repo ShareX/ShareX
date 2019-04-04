@@ -198,9 +198,6 @@
   <data name="tsmiRuler.Text" xml:space="preserve">
     <value>Règle...</value>
   </data>
-  <data name="tsmiFTPClient.Text" xml:space="preserve">
-    <value>Client FTP...</value>
-  </data>
   <data name="tsmiTweetMessage.Text" xml:space="preserve">
     <value>Tweeter un message...</value>
   </data>
@@ -456,9 +453,6 @@
   <data name="tsmiTrayRuler.Text" xml:space="preserve">
     <value>Règle...</value>
   </data>
-  <data name="tsmiTrayFTPClient.Text" xml:space="preserve">
-    <value>Client FTP...</value>
-  </data>
   <data name="tsmiTrayTweetMessage.Text" xml:space="preserve">
     <value>Tweeter un message...</value>
   </data>
@@ -573,12 +567,6 @@
   <data name="tsmiTrayRectangleTransparent.Text" xml:space="preserve">
     <value>Région (Transparent)</value>
   </data>
-  <data name="tsmiTrayWebpageCapture.Text" xml:space="preserve">
-    <value>Capturer une page Web...</value>
-  </data>
-  <data name="tsmiWebpageCapture.Text" xml:space="preserve">
-    <value>Capturer une page Web...</value>
-  </data>
   <data name="tsmiTrayToggleHotkeys.Text" xml:space="preserve">
     <value>Désactiver les raccourcis clavier</value>
   </data>
@@ -623,12 +611,6 @@
   </data>
   <data name="tsmiHideColumns.Text" xml:space="preserve">
     <value>Cacher les colonnes</value>
-  </data>
-  <data name="pbPatreonOpen.ToolTip" xml:space="preserve">
-    <value>Ouvrir la page web de la campagne Patreon de ShareX</value>
-  </data>
-  <data name="pbPatreonHide.ToolTip" xml:space="preserve">
-    <value>Cacher le bouton Patreon de manière définitive</value>
   </data>
   <data name="tsmiTextCapture.Text" xml:space="preserve">
     <value>Capture de texte (OCR)...</value>

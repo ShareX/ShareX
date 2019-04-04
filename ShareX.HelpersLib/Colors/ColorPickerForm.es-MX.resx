@@ -234,9 +234,6 @@
   <data name="btnClose.Text" xml:space="preserve">
     <value>Cerrar</value>
   </data>
-  <data name="lblRecentColors.Text" xml:space="preserve">
-    <value>Colores recientes:</value>
-  </data>
   <data name="btnScreenColorPicker.ToolTip" xml:space="preserve">
     <value>Elegir color de la pantalla</value>
   </data>

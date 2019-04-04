@@ -144,9 +144,6 @@
   <data name="lblPersonalFolderPath.Text" xml:space="preserve">
     <value>Carpeta personal ShareX:</value>
   </data>
-  <data name="lblNotePersonalFolderPath.Text" xml:space="preserve">
-    <value>Nota: Es necesario reabrir ShareX para cambios de carpetas personales surtan efecto.</value>
-  </data>
   <data name="gbSecondaryFileUploaders.Text" xml:space="preserve">
     <value>Cargadores de archivos secundarios</value>
   </data>

@@ -156,9 +156,6 @@
   <data name="cbCaptureClientArea.Text" xml:space="preserve">
     <value>Захватывать клиентскую область при захвате окна или активного окна</value>
   </data>
-  <data name="cbScreenshotDelay.Text" xml:space="preserve">
-    <value>Задержка для скриншота</value>
-  </data>
   <data name="tpRegionCapture.Text" xml:space="preserve">
     <value>Захват области</value>
   </data>
@@ -234,9 +231,6 @@
   <data name="cbClipboardUploadAutoIndexFolder.Text" xml:space="preserve">
     <value>Если в буфере находится путь к папке, проиндексировать папку и загрузить индекс</value>
   </data>
-  <data name="chkClipboardUploadURLContents.Text" xml:space="preserve">
-    <value>Если в буфере находится ссылка на файл, скачать его, а потом загрузить</value>
-  </data>
   <data name="cbClipboardUploadShareURL.Text" xml:space="preserve">
     <value>Если в буфере находится ссылка, сократить ее и отправить через сервис отправки ссылок</value>
   </data>
@@ -248,9 +242,6 @@
   </data>
   <data name="cbFileUploadUseNamePattern.Text" xml:space="preserve">
     <value>Использовать шаблон имени также и для файловых загрузок (вместо настоящего имени файла)</value>
-  </data>
-  <data name="btnResetAutoIncrementNumber.Text" xml:space="preserve">
-    <value>Сбросить число автонумерации</value>
   </data>
   <data name="lblNameFormatPatternPreviewActiveWindow.Text" xml:space="preserve">
     <value>Предпросмотр:</value>
@@ -275,12 +266,6 @@
   </data>
   <data name="cbScreenRecorderFixedDuration.Text" xml:space="preserve">
     <value>Фиксированная длительность:</value>
-  </data>
-  <data name="btnEncoderConfig.Text" xml:space="preserve">
-    <value>Профили…</value>
-  </data>
-  <data name="chkRunScreencastCLI.Text" xml:space="preserve">
-    <value>Запустить команду после записи:</value>
   </data>
   <data name="lblScreenRecordFPS.Text" xml:space="preserve">
     <value>Кадров в секунду при записи экрана:</value>
@@ -537,22 +522,14 @@
   <data name="btnWatchFolderEdit.Text" xml:space="preserve">
     <value>Изменить...</value>
   </data>
-  <data name="cbScreenRecorderConfirmAbort.Text" xml:space="preserve">
-    <value>Запрашивать подтверждение на отмену</value>
-  </data>
   <data name="cbFileUploadReplaceProblematicCharacters.Text" xml:space="preserve">
     <value>Заменять проблемные для URL символы подчеркиваниями при загрузке</value>
   </data>
   <data name="cbScreenRecordTwoPassEncoding.Text" xml:space="preserve">
     <value>Записывать без потерь, потом применять пользовательские настройки</value>
   </data>
-  <data name="cbScreenRecordRunScreencastCLI.Text" xml:space="preserve">
-    <value>Потом выполнять команду:</value>
-  </data>
   <data name="cbScreenRecordConfirmAbort.Text" xml:space="preserve">
     <value>Запрашивать подтверждение на отмену</value>
   </data>
-  <data name="btnScreenRecordEncoderConfig.Text" xml:space="preserve">
-    <value>Профили…</value>
   </data>
 </root>

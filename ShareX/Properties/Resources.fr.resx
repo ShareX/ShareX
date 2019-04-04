@@ -136,9 +136,6 @@ Cliquez sur « Non » pour annuler la mise en ligne et désactiver la mise en li
   <data name="UploadTask_DoUploadJob_Uploading" xml:space="preserve">
     <value>Mise en ligne en cours</value>
   </data>
-  <data name="ScreenRecordForm_StartRecording_There_is_no_valid_CLI_video_encoder_selected_" xml:space="preserve">
-    <value>Aucun encodeur vidéo CLI valide n'est sélectionné.</value>
-  </data>
   <data name="ScreenRecordForm_StartRecording_Encoding___" xml:space="preserve">
     <value>Encodage...</value>
   </data>
@@ -194,9 +191,6 @@ ici</value>
   <data name="HotkeyManager_ShowFailedHotkeys_hotkeys" xml:space="preserve">
     <value>raccourcis clavier</value>
   </data>
-  <data name="EncoderProgramForm_btnOK_Click_Path_can_t_be_empty_" xml:space="preserve">
-    <value>Le chemin ne peut pas être vide.</value>
-  </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_File_uploader___0_" xml:space="preserve">
     <value>Mise en ligne de fichiers : {0}</value>
   </data>
@@ -206,15 +200,9 @@ ici</value>
   <data name="TaskHelpers_TweetMessage_Tweet_successfully_sent_" xml:space="preserve">
     <value>Le tweet a bien été envoyé.</value>
   </data>
-  <data name="EncoderProgramForm_btnPathBrowse_Click_Choose_encoder_path" xml:space="preserve">
-    <value>Choisir le chemin de l'encodeur</value>
-  </data>
   <data name="Program_WritePersonalPathConfig_Cant_access_to_file" xml:space="preserve">
     <value>Impossible d'accéder au fichier « {0} ».
 Veuillez exécuter ShareX en tant qu'administrateur pour changer le chemin du dossier personnel.</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_CLI_video_encoder_file_does_not_exist__" xml:space="preserve">
-    <value>Le fichier de l'encodeur video CLI n'existe pas :</value>
   </data>
   <data name="ApplicationSettingsForm_cbSteamShowInApp_CheckedChanged_For_settings_to_take_effect_ShareX_needs_to_be_reopened_from_Steam_" xml:space="preserve">
     <value>Pour que les réglages prennent effets, ShareX doit être rouvert à partir de Steam.</value>
@@ -324,9 +312,6 @@ Voulez-vous le télécharger automatiquement ?</value>
   <data name="MainForm_UpdateWorkflowsMenu_You_can_add_workflows_from_hotkey_settings___" xml:space="preserve">
     <value>Vous pouvez ajouter des workflows à partir des paramètres des raccourcis clavier...</value>
   </data>
-  <data name="TaskHelpers_OpenFTPClient_FTP_client_only_supports_FTP_or_FTPS_" xml:space="preserve">
-    <value>Le client FTP prend uniquement en charge FTP ou FTPS.</value>
-  </data>
   <data name="ImageData_Write_Error" xml:space="preserve">
     <value>Impossible d'enregistrer l'image pour le chemin {0}.</value>
   </data>
@@ -349,14 +334,8 @@ Voulez-vous redémarrer ShareX ?</value>
   <data name="ChromeForm_btnRegister_Click_Chrome_support_enabled_" xml:space="preserve">
     <value>Support pour Chrome activé.</value>
   </data>
-  <data name="EncoderProgramForm_btnOK_Click_Extension_can_t_be_empty_" xml:space="preserve">
-    <value>L'extension ne peut pas être vide.</value>
-  </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_After_capture___0_" xml:space="preserve">
     <value>Après la capture : {0}</value>
-  </data>
-  <data name="TaskSettingsForm_ConfigureEncoder_Configure_CLI_video_encoders_____" xml:space="preserve">
-    <value>Configurer les encodeurs video CLI ---&gt;</value>
   </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_URL_shortener___0_" xml:space="preserve">
     <value>Raccourcisseur d'URL : {0}</value>
@@ -448,9 +427,6 @@ Voulez-vous redémarrer ShareX ?</value>
   </data>
   <data name="UploadManager_UploadFolder_Folder_upload" xml:space="preserve">
     <value>Dossier mis en ligne</value>
-  </data>
-  <data name="TaskHelpers_OpenFTPClient_Unable_to_find_valid_FTP_account_" xml:space="preserve">
-    <value>Impossible de trouver un compte FTP valide.</value>
   </data>
   <data name="UploadTask_DoUploadJob_You_are_attempting_to_upload_a_large_file" xml:space="preserve">
     <value>Vous êtes sur le point de mettre en ligne un fichier volumineux.

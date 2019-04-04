@@ -249,9 +249,6 @@
   <data name="gbSecondaryImageUploaders.Text" xml:space="preserve">
     <value>이차 이미지 업로더</value>
   </data>
-  <data name="lblNotePersonalFolderPath.Text" xml:space="preserve">
-    <value>주의: 개인 폴더를 변경한 뒤에는 ShareX를 재시작해야 변경 사항이 적용됩니다.</value>
-  </data>
   <data name="cbUseCustomScreenshotsPath.Text" xml:space="preserve">
     <value>사용자 지정 스크린샷 폴더 사용:</value>
   </data>

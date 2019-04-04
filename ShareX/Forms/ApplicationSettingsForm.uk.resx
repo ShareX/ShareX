@@ -159,9 +159,6 @@
   <data name="tpIntegration.Text" xml:space="preserve">
     <value>Інтеграція</value>
   </data>
-  <data name="lblNotePersonalFolderPath.Text" xml:space="preserve">
-    <value>Примітка: Ви повинні повторно відкрити ShareX для застосування зміни особистої теки.</value>
-  </data>
   <data name="btnOpenScreenshotsFolder.Text" xml:space="preserve">
     <value>Відкрити...</value>
   </data>

@@ -135,9 +135,6 @@
   <data name="UploadTask_CreateURLShortenerTask_Shorten_URL___0__" xml:space="preserve">
     <value>Acortar enlace ({0})</value>
   </data>
-  <data name="ScreenRecordForm_StartRecording_There_is_no_valid_CLI_video_encoder_selected_" xml:space="preserve">
-    <value>No hay ventana de comandos de codificador de video válida seleccionada.</value>
-  </data>
   <data name="ActionsToolbar_OpenAtShareXStartup" xml:space="preserve">
     <value>Abrir al iniciar ShareX</value>
   </data>
@@ -167,9 +164,6 @@
   </data>
   <data name="QRCodeForm_InputTextToEncode" xml:space="preserve">
     <value>Introducir texto a codificar</value>
-  </data>
-  <data name="TaskHelpers_OpenFTPClient_Unable_to_find_valid_FTP_account_" xml:space="preserve">
-    <value>No se puede encontrar una cuenta de FTP válida.</value>
   </data>
   <data name="AboutForm_AboutForm_Contributors" xml:space="preserve">
     <value>Colaboradores</value>
@@ -255,9 +249,6 @@ Por favor seleccione un atajo de teclado diferente o salga de la aplicación que
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_Image_uploader___0_" xml:space="preserve">
     <value>Servidor para imágenes: {0}</value>
   </data>
-  <data name="ScreenRecordForm_StartRecording_CLI_video_encoder_file_does_not_exist__" xml:space="preserve">
-    <value>Archivo de codificador de video CLI no existe:</value>
-  </data>
   <data name="TaskHelpers_OpenQuickScreenColorPicker_Copied_to_clipboard___0_" xml:space="preserve">
     <value>Copiado al portapapeles: {0}</value>
   </data>
@@ -334,9 +325,6 @@ aquí</value>
   <data name="AboutForm_AboutForm_Language_pt_BR" xml:space="preserve">
     <value>Portugués (Brasil)</value>
   </data>
-  <data name="EncoderProgramForm_btnOK_Click_Path_can_t_be_empty_" xml:space="preserve">
-    <value>La ubicación no puede estar vacía.</value>
-  </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_File_uploader___0_" xml:space="preserve">
     <value>Servidor para archivos: {0}</value>
   </data>
@@ -345,9 +333,6 @@ aquí</value>
   </data>
   <data name="TaskHelpers_TweetMessage_Tweet_successfully_sent_" xml:space="preserve">
     <value>Tuit publicado con éxito.</value>
-  </data>
-  <data name="EncoderProgramForm_btnPathBrowse_Click_Choose_encoder_path" xml:space="preserve">
-    <value>Elegir ubicación del codificador</value>
   </data>
   <data name="Program_WritePersonalPathConfig_Cant_access_to_file" xml:space="preserve">
     <value>No se puede acceder al archivo "{0}". 
@@ -367,9 +352,6 @@ Ejecute ShareX como administrador y cambie la ubicación de la carpeta personal.
   </data>
   <data name="MainForm_UpdateWorkflowsMenu_You_can_add_workflows_from_hotkey_settings___" xml:space="preserve">
     <value>Los flujos de trabajo pueden agregarse en la configuración de los atajos de teclado...</value>
-  </data>
-  <data name="TaskHelpers_OpenFTPClient_FTP_client_only_supports_FTP_or_FTPS_" xml:space="preserve">
-    <value>El cliente FTP solo soporta FTP o FTPS.</value>
   </data>
   <data name="AboutForm_AboutForm_Language_ru" xml:space="preserve">
     <value>Ruso</value>
@@ -408,9 +390,6 @@ Ejecute ShareX como administrador y cambie la ubicación de la carpeta personal.
   <data name="AutoCaptureForm_Execute_Start" xml:space="preserve">
     <value>Iniciar</value>
   </data>
-  <data name="EncoderProgramForm_btnOK_Click_Extension_can_t_be_empty_" xml:space="preserve">
-    <value>La extensión no puede estar vacía.</value>
-  </data>
   <data name="UploadManager_UploadFolder_Folder_upload" xml:space="preserve">
     <value>Subir carpeta</value>
   </data>
@@ -419,9 +398,6 @@ Ejecute ShareX como administrador y cambie la ubicación de la carpeta personal.
   </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_After_capture___0_" xml:space="preserve">
     <value>Después de capturar: {0}</value>
-  </data>
-  <data name="TaskSettingsForm_ConfigureEncoder_Configure_CLI_video_encoders_____" xml:space="preserve">
-    <value>Configurar codificadores de video CLI ---&gt;</value>
   </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_URL_shortener___0_" xml:space="preserve">
     <value>Acortador de enlaces: {0}</value>

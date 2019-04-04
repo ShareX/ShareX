@@ -156,9 +156,6 @@
   <data name="cbCaptureClientArea.Text" xml:space="preserve">
     <value>Pencere veya aktif pencere yakalama sırasında başlık çubuğunu yakalama</value>
   </data>
-  <data name="cbScreenshotDelay.Text" xml:space="preserve">
-    <value>Beklemesi süresi:</value>
-  </data>
   <data name="tpRegionCapture.Text" xml:space="preserve">
     <value>Bölge yakala</value>
   </data>
@@ -234,9 +231,6 @@
   <data name="cbClipboardUploadAutoIndexFolder.Text" xml:space="preserve">
     <value>Pano dizin yolu içeriyorsa dizini indeksle ve indeksi yükle</value>
   </data>
-  <data name="chkClipboardUploadURLContents.Text" xml:space="preserve">
-    <value>Eğer pano dosya adresi içeriyorsa dosyayı indir ve yükle</value>
-  </data>
   <data name="cbClipboardUploadShareURL.Text" xml:space="preserve">
     <value>Pano adres içeriyorsa adres paylaşım servisi ile paylaş</value>
   </data>
@@ -248,9 +242,6 @@
   </data>
   <data name="cbFileUploadUseNamePattern.Text" xml:space="preserve">
     <value>Dosya yükleme için de gerçek dosya ismi yerine isim deseni kullan</value>
-  </data>
-  <data name="btnResetAutoIncrementNumber.Text" xml:space="preserve">
-    <value>Otomatik artan sayıyı sıfırla</value>
   </data>
   <data name="lblNameFormatPatternPreviewActiveWindow.Text" xml:space="preserve">
     <value>Ön izleme:</value>
@@ -275,12 +266,6 @@
   </data>
   <data name="cbScreenRecorderFixedDuration.Text" xml:space="preserve">
     <value>Sabit süre:</value>
-  </data>
-  <data name="btnEncoderConfig.Text" xml:space="preserve">
-    <value>Profiller...</value>
-  </data>
-  <data name="chkRunScreencastCLI.Text" xml:space="preserve">
-    <value>Ardından CLI çalıştır:</value>
   </data>
   <data name="lblScreenRecordFPS.Text" xml:space="preserve">
     <value>Ekran kayıt FPS:</value>
@@ -485,9 +470,6 @@
   </data>
   <data name="cbRegionCaptureIsFixedSize.Text" xml:space="preserve">
     <value>Sabit boyut bölge modu:</value>
-  </data>
-  <data name="cbScreenRecorderConfirmAbort.Text" xml:space="preserve">
-    <value>İptal ederken onay iste</value>
   </data>
   <data name="cbFileUploadReplaceProblematicCharacters.Text" xml:space="preserve">
     <value>Adreslerdeki problematik karakterleri alt çizgi ile değiştir yüklerken</value>
