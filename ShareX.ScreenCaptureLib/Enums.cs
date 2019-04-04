@@ -264,10 +264,10 @@ namespace ShareX.ScreenCaptureLib
 
     public enum ShapeType // Localized
     {
-        ToolSelect,
         RegionRectangle,
         RegionEllipse,
         RegionFreehand,
+        ToolSelect,
         DrawingRectangle,
         DrawingEllipse,
         DrawingFreehand,
