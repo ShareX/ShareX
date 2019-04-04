@@ -955,6 +955,25 @@ namespace ShareX.ScreenCaptureLib
             };
             tsddbOptions.DropDownItems.Add(tsmiShowFPS);
 
+            ToolStripMenuItem tsmiSwitchToDrawingToolAfterSelection = new ToolStripMenuItem(Resources.ShapeManager_CreateContextMenu_SwitchToDrawingToolAfterSelection);
+            tsmiSwitchToDrawingToolAfterSelection.Checked = Options.SwitchToDrawingToolAfterSelection;
+            tsmiSwitchToDrawingToolAfterSelection.CheckOnClick = true;
+            tsmiSwitchToDrawingToolAfterSelection.Click += (sender, e) =>
+            {
+                Options.SwitchToDrawingToolAfterSelection = tsmiSwitchToDrawingToolAfterSelection.Checked;
+            };
+            tsddbOptions.DropDownItems.Add(tsmiSwitchToDrawingToolAfterSelection);
+
+            ToolStripMenuItem tsmiSwitchToSelectionToolAfterDrawing = new ToolStripMenuItem(Resources.ShapeManager_CreateContextMenu_SwitchToSelectionToolAfterDrawing);
+            tsmiSwitchToSelectionToolAfterDrawing.Checked = Options.SwitchToSelectionToolAfterDrawing;
+            tsmiSwitchToSelectionToolAfterDrawing.CheckOnClick = true;
+            tsmiSwitchToSelectionToolAfterDrawing.Click += (sender, e) =>
+            {
+                Options.SwitchToSelectionToolAfterDrawing = tsmiSwitchToSelectionToolAfterDrawing.Checked;
+            };
+            tsddbOptions.DropDownItems.Add(tsmiSwitchToSelectionToolAfterDrawing);
+
+
             if (!Form.IsEditorMode)
             {
                 ToolStripMenuItem tsmiRememberMenuState = new ToolStripMenuItem(Resources.ShapeManager_CreateContextMenu_RememberMenuState);
@@ -1233,12 +1252,6 @@ namespace ShareX.ScreenCaptureLib
 
             ShapeType shapeType = CurrentTool;
 
-            // use menu of current shape in case of an active select tool.
-            if(CurrentShape  != null && shapeType == ShapeType.ToolSelect)
-            {
-                shapeType = CurrentShape.ShapeType;
-            }
-
             foreach (ToolStripButton tsb in tsMain.Items.OfType<ToolStripButton>().Where(x => x.Tag is ShapeType))
             {
                 if ((ShapeType)tsb.Tag == shapeType)
@@ -1246,6 +1259,12 @@ namespace ShareX.ScreenCaptureLib
                     tsb.RadioCheck();
                     break;
                 }
+            }
+
+            // use menu of current shape in case of an active select tool.
+            if (CurrentShape != null && shapeType == ShapeType.ToolSelect)
+            {
+                shapeType = CurrentShape.ShapeType;
             }
 
             Color borderColor;

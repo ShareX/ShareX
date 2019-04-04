@@ -73,6 +73,9 @@ namespace ShareX.ScreenCaptureLib
         public bool MenuCollapsed = false;
         public Point MenuPosition = Point.Empty;
 
+        public bool SwitchToDrawingToolAfterSelection = true;
+        public bool SwitchToSelectionToolAfterDrawing = false;
+
         // Annotation
         public AnnotationOptions AnnotationOptions = new AnnotationOptions();
         public ShapeType LastRegionTool = ShapeType.ToolSelect;

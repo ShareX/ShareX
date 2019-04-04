@@ -70,6 +70,9 @@ namespace ShareX.ScreenCaptureLib
             }
             private set
             {
+                if (currentTool == value) return;
+
+                var previousTool = currentTool;
                 currentTool = value;
 
                 if (Form.IsAnnotationMode)
@@ -90,7 +93,10 @@ namespace ShareX.ScreenCaptureLib
                     ClearTools();
                 }
 
-                DeselectCurrentShape();
+                if(previousTool != ShapeType.ToolSelect && currentTool != ShapeType.ToolSelect)
+                {
+                    DeselectCurrentShape();
+                }
 
                 OnCurrentShapeTypeChanged(currentTool);
             }
@@ -811,6 +817,11 @@ namespace ShareX.ScreenCaptureLib
                 CurrentShape = shape;
                 SelectCurrentShape();
             }
+            else if (shape == null && CurrentTool == ShapeType.ToolSelect)
+            {
+                ClearTools();
+                DeselectCurrentShape();
+            }
             else if (!IsCreating && CurrentTool != ShapeType.ToolSelect) // Create new shape
             {
                 ClearTools();
@@ -865,13 +876,19 @@ namespace ShareX.ScreenCaptureLib
                             shape.OnCreated();
 
                             OnShapeCreated(shape);
+
+                            SelectCurrentShape();
+
+                            if (Options.SwitchToSelectionToolAfterDrawing)
+                            {
+                                CurrentTool = ShapeType.ToolSelect;
+                            }
                         }
                         else if (wasMoving)
                         {
                             shape.OnMoved();
+                            SelectCurrentShape();
                         }
-
-                        SelectCurrentShape();
                     }
                 }
             }
@@ -1242,6 +1259,10 @@ namespace ShareX.ScreenCaptureLib
             if (shape != null)
             {
                 shape.ShowNodes();
+                if (Options.SwitchToDrawingToolAfterSelection)
+                {
+                    CurrentTool = shape.ShapeType;
+                }
             }
         }
 
