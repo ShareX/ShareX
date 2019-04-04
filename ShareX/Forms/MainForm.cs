@@ -1073,7 +1073,7 @@ namespace ShareX
                     break;
             }
 
-            tsmiScreenshotDelay.Text = tsmiTrayScreenshotDelay.Text = string.Format("Screenshot delay: {0}s", delay.ToString("0.#"));
+            tsmiScreenshotDelay.Text = tsmiTrayScreenshotDelay.Text = string.Format(Resources.ScreenshotDelay0S, delay.ToString("0.#"));
             tsmiScreenshotDelay.Checked = tsmiTrayScreenshotDelay.Checked = delay > 0;
         }
 

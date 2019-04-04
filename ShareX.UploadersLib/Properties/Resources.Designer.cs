@@ -187,6 +187,15 @@ namespace ShareX.UploadersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Duplicate name not allowed..
+        /// </summary>
+        internal static string DuplicateNameNotAllowed {
+            get {
+                return ResourceManager.GetString("DuplicateNameNotAllowed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
         internal static System.Drawing.Icon Firebase {

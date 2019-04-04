@@ -986,4 +986,21 @@ Middle click to close</value>
   <data name="SupportUs_Button_02" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\SupportUs_Button_02.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="ShareXNeedsToBeRestartedForThePersonalFolderChangesToApply" xml:space="preserve">
+    <value>ShareX needs to be restarted for the personal folder changes to apply.
+
+Would you like to restart ShareX?</value>
+  </data>
+  <data name="ShareXConfirmation" xml:space="preserve">
+    <value>ShareX - Confirmation</value>
+  </data>
+  <data name="ScreenshotDelay0S" xml:space="preserve">
+    <value>Screenshot delay: {0}s</value>
+  </data>
+  <data name="PleaseNoteThatShareXIsUsingOCRSpaceSOnlineAPIToPerformOpticalCharacterRecognitionDoYouGivePermissionToShareXToUploadImagesToThisService" xml:space="preserve">
+    <value>Please note that ShareX is using OCR.Space's online API to perform optical character recognition. Do you give permission to ShareX to upload images to this service?</value>
+  </data>
+  <data name="ShareXOpticalCharacterRecognition" xml:space="preserve">
+    <value>ShareX - Optical character recognition</value>
+  </data>
 </root>

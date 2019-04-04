@@ -480,8 +480,7 @@ namespace ShareX.UploadersLib
 
                     if (isDuplicate)
                     {
-                        // TODO: Translate
-                        cell.ErrorText = "Duplicate name not allowed.";
+                        cell.ErrorText = Resources.DuplicateNameNotAllowed;
                     }
                     else
                     {
