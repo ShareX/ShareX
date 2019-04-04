@@ -527,6 +527,11 @@ namespace ShareX.ScreenCaptureLib
         {
             if (e.KeyData == Keys.Escape)
             {
+                if (ShapeManager.HandleEscape())
+                {
+                    return;
+                }
+
                 if (!IsEditorMode || ShowExitConfirmation())
                 {
                     CloseWindow();

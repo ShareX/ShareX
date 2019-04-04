@@ -264,6 +264,7 @@ namespace ShareX.ScreenCaptureLib
 
     public enum ShapeType // Localized
     {
+        ToolSelect,
         RegionRectangle,
         RegionEllipse,
         RegionFreehand,
@@ -283,7 +284,7 @@ namespace ShareX.ScreenCaptureLib
         EffectBlur,
         EffectPixelate,
         EffectHighlight,
-        ToolCrop
+        ToolCrop,
     }
 
     public enum ScrollingCaptureScrollMethod // Localized

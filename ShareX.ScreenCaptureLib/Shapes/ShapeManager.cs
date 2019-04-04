@@ -399,6 +399,17 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
+        public bool HandleEscape()
+        {
+            // escape key resets tool after first press, escape with select tool active, initiates close
+            if (CurrentTool != ShapeType.ToolSelect)
+            {
+                CurrentTool = ShapeType.ToolSelect;
+                return true;
+            }
+            return false;
+        }
+
         private void form_KeyDown(object sender, KeyEventArgs e)
         {
             switch (e.KeyCode)
@@ -546,6 +557,9 @@ namespace ShareX.ScreenCaptureLib
                         case Keys.Q:
                             Options.QuickCrop = !Options.QuickCrop;
                             tsmiQuickCrop.Checked = !Options.QuickCrop;
+                            break;
+                        case Keys.M:
+                            CurrentTool = ShapeType.ToolSelect;
                             break;
                     }
                 }
@@ -770,7 +784,7 @@ namespace ShareX.ScreenCaptureLib
 
             BaseShape shape = GetIntersectShape();
 
-            if (shape != null && shape.ShapeType == CurrentTool) // Select shape
+            if (shape != null && shape.CanBeSelectedByTool(CurrentTool)) // Select shape
             {
                 IsMoving = true;
                 shape.OnMoving();
@@ -778,7 +792,7 @@ namespace ShareX.ScreenCaptureLib
                 CurrentShape = shape;
                 SelectCurrentShape();
             }
-            else if (!IsCreating) // Create new shape
+            else if (!IsCreating && CurrentTool != ShapeType.ToolSelect) // Create new shape
             {
                 ClearTools();
                 DeselectCurrentShape();
@@ -1311,7 +1325,7 @@ namespace ShareX.ScreenCaptureLib
                 {
                     BaseShape shape = Shapes[i];
 
-                    if (shape.ShapeType == CurrentTool && shape.Intersects(position))
+                    if (shape.CanBeSelectedByTool(CurrentTool) && shape.Intersects(position))
                     {
                         return shape;
                     }

@@ -208,7 +208,7 @@ namespace ShareX.ScreenCaptureLib
                         continue;
                     }
                 }
-                else if (shapeType == ShapeType.DrawingRectangle)
+                else if (shapeType == ShapeType.ToolSelect)
                 {
                     tsMain.Items.Add(new ToolStripSeparator());
                 }
@@ -290,6 +290,9 @@ namespace ShareX.ScreenCaptureLib
                         break;
                     case ShapeType.ToolCrop:
                         img = Resources.image_crop;
+                        break;
+                    case ShapeType.ToolSelect:
+                        img = Resources.image_select;
                         break;
                 }
 
@@ -1229,6 +1232,12 @@ namespace ShareX.ScreenCaptureLib
             if (Form.IsClosing || menuForm == null || menuForm.IsDisposed) return;
 
             ShapeType shapeType = CurrentTool;
+
+            // use menu of current shape in case of an active select tool.
+            if(CurrentShape  != null && shapeType == ShapeType.ToolSelect)
+            {
+                shapeType = CurrentShape.ShapeType;
+            }
 
             foreach (ToolStripButton tsb in tsMain.Items.OfType<ToolStripButton>().Where(x => x.Tag is ShapeType))
             {

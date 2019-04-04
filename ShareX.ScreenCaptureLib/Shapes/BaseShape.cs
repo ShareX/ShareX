@@ -486,5 +486,10 @@ namespace ShareX.ScreenCaptureLib
         public virtual void Dispose()
         {
         }
+
+        public virtual bool CanBeSelectedByTool(ShapeType currentTool)
+        {
+            return ShapeType == currentTool || currentTool == ShapeType.ToolSelect;
+        }
     }
 }
