@@ -401,12 +401,31 @@ namespace ShareX.ScreenCaptureLib
 
         public bool HandleEscape()
         {
-            // escape key resets tool after first press, escape with select tool active, initiates close
+            // the escape key handling has 3 stages:
+            // 1. initiate exit if region selection is active
+            // 2. if a shape is selected, unselect it
+            // 3. switch to the select tool if a any other tool is active
+
+            switch (CurrentTool)
+            {
+                case ShapeType.RegionRectangle:
+                case ShapeType.RegionEllipse:
+                case ShapeType.RegionFreehand:
+                    return false;
+            }
+
+            if (CurrentShape != null)
+            {
+                ClearTools();
+                DeselectCurrentShape();
+            }
+
             if (CurrentTool != ShapeType.ToolSelect)
             {
                 CurrentTool = ShapeType.ToolSelect;
                 return true;
             }
+
             return false;
         }
 
