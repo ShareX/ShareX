@@ -284,7 +284,7 @@ namespace ShareX.ScreenCaptureLib
         EffectBlur,
         EffectPixelate,
         EffectHighlight,
-        ToolCrop,
+        ToolCrop
     }
 
     public enum ScrollingCaptureScrollMethod // Localized
