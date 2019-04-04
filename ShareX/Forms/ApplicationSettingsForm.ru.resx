@@ -345,4 +345,7 @@
   <data name="cbEditWithShareX.Text" xml:space="preserve">
     <value>Показывать пункт "Редактировать в ShareX" в контекстном меню проводника Windows</value>
   </data>
+  <data name="btnPersonalFolderPathApply.Text" xml:space="preserve">
+    <value>Применить</value>
+  </data>
 </root>

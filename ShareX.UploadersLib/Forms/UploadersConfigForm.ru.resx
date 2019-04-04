@@ -1096,4 +1096,34 @@
   <data name="lblB2UrlPreview.Text" xml:space="preserve">
     <value>Предпросмотр URL:</value>
   </data>
+  <data name="lblTeknikUrlShortenerAPIUrl.Text" xml:space="preserve">
+    <value>URL API сервиса коротких ссылок:</value>
+  </data>
+  <data name="btnGooglePhotosCreateAlbum.Text" xml:space="preserve">
+    <value>Создать</value>
+  </data>
+  <data name="lblGooglePhotosCreateAlbumName.Text" xml:space="preserve">
+    <value>Имя альбома:</value>
+  </data>
+  <data name="cbGfycatKeepAudio.Text" xml:space="preserve">
+    <value>Оставлять звук</value>
+  </data>
+  <data name="cbGooglePhotosIsPublic.Text" xml:space="preserve">
+    <value>Публичная загрузка</value>
+  </data>
+  <data name="cbTeknikGenDeleteKey.Text" xml:space="preserve">
+    <value>Генерировать ключ для удаления</value>
+  </data>
+  <data name="cbTeknikEncrypt.Text" xml:space="preserve">
+    <value>Шифрование на стороне клиента</value>
+  </data>
+  <data name="lblTeknikExpiration.Text" xml:space="preserve">
+    <value>Срок годности:</value>
+  </data>
+  <data name="lblTeknikAuthUrl.Text" xml:space="preserve">
+    <value>URL для аутентификаци:</value>
+  </data>
+  <data name="tpGoogleDrive.Text" xml:space="preserve">
+    <value>Google Диск</value>
+  </data>
 </root>

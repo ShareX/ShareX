@@ -484,7 +484,7 @@
     <value>Фильтры по расширениям:</value>
   </data>
   <data name="tpUploaderFilters.Text" xml:space="preserve">
-    <value>Фильтры загрузчиков</value>
+    <value>Фильтры сервисов</value>
   </data>
   <data name="cbOverrideAfterCaptureSettings.Text" xml:space="preserve">
     <value>Переопределить задачи после захвата</value>
@@ -531,5 +531,31 @@
   <data name="cbScreenRecordConfirmAbort.Text" xml:space="preserve">
     <value>Запрашивать подтверждение на отмену</value>
   </data>
+  <data name="lblScreenshotDelay.Text" xml:space="preserve">
+    <value>Задержка скриншота:</value>
+  </data>
+  <data name="tpOCR.Text" xml:space="preserve">
+    <value>Распознавание текста</value>
+  </data>
+  <data name="cbCaptureOCRProcessOnLoad.Text" xml:space="preserve">
+    <value>Распознавать при открывании диалога</value>
+  </data>
+  <data name="cbCaptureOCRSilent.Text" xml:space="preserve">
+    <value>Распознавать тихо</value>
+  </data>
+  <data name="btnAutoIncrementNumber.Text" xml:space="preserve">
+    <value>Изменить</value>
+  </data>
+  <data name="cbCaptureOCRAutoCopy.Text" xml:space="preserve">
+    <value>Автоматически копировать результаты в буфер обмена</value>
+  </data>
+  <data name="cbClipboardUploadURLContents.Text" xml:space="preserve">
+    <value>Если в буфере находится ссылка на файл, скачать его, а потом загрузить</value>
+  </data>
+  <data name="lblOCRDefaultLanguage.Text" xml:space="preserve">
+    <value>Язык по умолчанию:</value>
+  </data>
+  <data name="lblAutoIncrementNumber.Text" xml:space="preserve">
+    <value>Число счетчика:</value>
   </data>
 </root>

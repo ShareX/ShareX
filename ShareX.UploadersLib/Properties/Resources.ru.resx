@@ -200,7 +200,7 @@
     <value>Ошибка твита</value>
   </data>
   <data name="UploadersConfigForm_Remove_all_custom_uploaders_Confirmation" xml:space="preserve">
-    <value>Убрать все пользовательские загрузчики?</value>
+    <value>Убрать все пользовательские сервисы?</value>
   </data>
   <data name="OAuthControl_OAuthControl_PasteVerificationCodeHere" xml:space="preserve">
     <value>Вставьте код подтверждения сюда</value>
@@ -237,5 +237,8 @@
   </data>
   <data name="txtB2BucketWatermark" xml:space="preserve">
     <value>Работает только если ведро не задано при создании ключа</value>
+  </data>
+  <data name="DuplicateNameNotAllowed" xml:space="preserve">
+    <value>Повторение имен не разрешено.</value>
   </data>
 </root>
