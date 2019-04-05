@@ -177,9 +177,6 @@
   <data name="lblX.Text" xml:space="preserve">
     <value>X：</value>
   </data>
-  <data name="lblRecentColors.Text" xml:space="preserve">
-    <value>最近颜色：</value>
-  </data>
   <data name="btnScreenColorPicker.ToolTip" xml:space="preserve">
     <value>从屏幕选取颜色</value>
   </data>

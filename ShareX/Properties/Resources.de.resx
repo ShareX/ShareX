@@ -162,9 +162,6 @@
   <data name="HotkeyManager_ShowFailedHotkeys_hotkeys" xml:space="preserve">
     <value>Tastenkürzel</value>
   </data>
-  <data name="EncoderProgramForm_btnOK_Click_Path_can_t_be_empty_" xml:space="preserve">
-    <value>Pfad kann nicht leer sein.</value>
-  </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_File_uploader___0_" xml:space="preserve">
     <value>Dateihochlader: {0}</value>
   </data>
@@ -174,16 +171,10 @@
   <data name="TaskHelpers_TweetMessage_Tweet_successfully_sent_" xml:space="preserve">
     <value>Tweet erfolgreich gesendet</value>
   </data>
-  <data name="EncoderProgramForm_btnPathBrowse_Click_Choose_encoder_path" xml:space="preserve">
-    <value>Wähle einen Verschlüsselungspfad</value>
-  </data>
   <data name="Program_WritePersonalPathConfig_Cant_access_to_file" xml:space="preserve">
     <value>Es kann nicht auf die Datei {0} zugegriffen werden.
 
 Bitte starte ShareX als Administrator, um den Einstellungsordner zu ändern.</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_CLI_video_encoder_file_does_not_exist__" xml:space="preserve">
-    <value>CLI-Videocodec existiert nicht:</value>
   </data>
   <data name="ApplicationSettingsForm_cbSteamShowInApp_CheckedChanged_For_settings_to_take_effect_ShareX_needs_to_be_reopened_from_Steam_" xml:space="preserve">
     <value>Um die Einstellungen zu Übernehmen muss ShareX über Steam neu gestartet werden.</value>
@@ -287,9 +278,6 @@ Möchtest du es automatisch herunterladen?</value>
   <data name="MainForm_UpdateWorkflowsMenu_You_can_add_workflows_from_hotkey_settings___" xml:space="preserve">
     <value>Du kannst Arbeitsschritte aus den Hotkeyeinstellungen hinzufügen...</value>
   </data>
-  <data name="TaskHelpers_OpenFTPClient_FTP_client_only_supports_FTP_or_FTPS_" xml:space="preserve">
-    <value>FTP-Programm unterstützt nur FTP oder FTPS.</value>
-  </data>
   <data name="ImageData_Write_Error" xml:space="preserve">
     <value>Konnte Bild nicht in den Pfad {0} schreiben.</value>
   </data>
@@ -313,14 +301,8 @@ Soll ShareX neu gestartet werden?</value>
   <data name="ChromeForm_btnRegister_Click_Chrome_support_enabled_" xml:space="preserve">
     <value>Chrome-Unterstützung aktiviert.</value>
   </data>
-  <data name="EncoderProgramForm_btnOK_Click_Extension_can_t_be_empty_" xml:space="preserve">
-    <value>Erweiterung kann nicht leer sein.</value>
-  </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_After_capture___0_" xml:space="preserve">
     <value>Nach der Aufnahme: {0}</value>
-  </data>
-  <data name="TaskSettingsForm_ConfigureEncoder_Configure_CLI_video_encoders_____" xml:space="preserve">
-    <value>Konfiguriere CLI-Videocodec</value>
   </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_URL_shortener___0_" xml:space="preserve">
     <value>URL-Kürzer: {0}</value>
@@ -441,12 +423,6 @@ Klicke auf 'Nein', um das derzeitige Hochladen abzubrechen und das automatische 
   <data name="UploadTask_DoUploadJob_Uploading" xml:space="preserve">
     <value>Hochladen</value>
   </data>
-  <data name="ScreenRecordForm_StartRecording_There_is_no_valid_CLI_video_encoder_selected_" xml:space="preserve">
-    <value>Es wurde keine gültiger CLI-Videocodec ausgewählt</value>
-  </data>
-  <data name="TaskHelpers_OpenFTPClient_Unable_to_find_valid_FTP_account_" xml:space="preserve">
-    <value>Kann kein gültiges FTP Konto finden.</value>
-  </data>
   <data name="UploadTask_DoUploadJob_You_are_attempting_to_upload_a_large_file" xml:space="preserve">
     <value>Du versuchst eine große Datei hochzuladen.
 Bist du sicher?</value>
@@ -545,8 +521,5 @@ Mittlere Maustaste um die Aktionsleiste zu schließen</value>
   </data>
   <data name="AboutForm_AboutForm_Language_es" xml:space="preserve">
     <value>Spanisch</value>
-  </data>
-  <data name="MustReopenForPersonalFolderChangesToTakeEffect" xml:space="preserve">
-    <value>Sie müssen ShareX erneut öffnen, damit Änderungen an persönlichen Ordnern wirksam werden.</value>
   </data>
 </root>

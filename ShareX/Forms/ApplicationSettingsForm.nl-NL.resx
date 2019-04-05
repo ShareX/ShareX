@@ -144,9 +144,6 @@
   <data name="lblPersonalFolderPath.Text" xml:space="preserve">
     <value>ShareX persoonlijke map:</value>
   </data>
-  <data name="lblNotePersonalFolderPath.Text" xml:space="preserve">
-    <value>Opgelet: Je moet ShareX heropstarten alvorens de aangebrachte wijzigingen effect zullen hebben.</value>
-  </data>
   <data name="tpIntegration.Text" xml:space="preserve">
     <value>Integratie</value>
   </data>

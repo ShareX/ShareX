@@ -156,9 +156,6 @@
   <data name="cbCaptureClientArea.Text" xml:space="preserve">
     <value>Chụp vùng làm việc khi dùng chế độ chụp cửa sổ/cửa sổ hiện hành</value>
   </data>
-  <data name="cbScreenshotDelay.Text" xml:space="preserve">
-    <value>Độ trễ chụp</value>
-  </data>
   <data name="tpRegionCapture.Text" xml:space="preserve">
     <value>Chụp theo vùng</value>
   </data>
@@ -234,9 +231,6 @@
   <data name="cbClipboardUploadAutoIndexFolder.Text" xml:space="preserve">
     <value>Nếu vùng nhớ tạm có chứa đường dẫn tới thư mục, đánh dấu thư mục đó và tải lên phần được đánh dấu</value>
   </data>
-  <data name="chkClipboardUploadURLContents.Text" xml:space="preserve">
-    <value>Nếu vùng nhớ tạm có chứa URL của tệp thì tải về máy và tải lên</value>
-  </data>
   <data name="cbClipboardUploadShareURL.Text" xml:space="preserve">
     <value>Nếu vùng nhớ tạm chứa URL thì chia sẻ sử dụng dịch vụ chia sẻ URL</value>
   </data>
@@ -248,9 +242,6 @@
   </data>
   <data name="cbFileUploadUseNamePattern.Text" xml:space="preserve">
     <value>Sử dụng định dạng tên cho các tệp được tải lên thay vì tên thật của tệp</value>
-  </data>
-  <data name="btnResetAutoIncrementNumber.Text" xml:space="preserve">
-    <value>Đặt lại thiết lập tự động tăng số</value>
   </data>
   <data name="lblNameFormatPatternPreviewActiveWindow.Text" xml:space="preserve">
     <value>Xem trước:</value>
@@ -269,12 +260,6 @@
   </data>
   <data name="cbScreenRecorderFixedDuration.Text" xml:space="preserve">
     <value>Thời gian cố định:</value>
-  </data>
-  <data name="btnEncoderConfig.Text" xml:space="preserve">
-    <value>Nhóm các thiết lập...</value>
-  </data>
-  <data name="chkRunScreencastCLI.Text" xml:space="preserve">
-    <value>Chạy CLI sau đó:</value>
   </data>
   <data name="lblScreenRecordFPS.Text" xml:space="preserve">
     <value>Số khung hình trên giây (FPS) khi ghi lại màn hình:</value>
@@ -504,9 +489,6 @@
   <data name="cbRegionCaptureUseCustomInfoText.Text" xml:space="preserve">
     <value>Dùng thông tin chữ tùy chọn gần con trỏ:</value>
   </data>
-  <data name="cbScreenRecordRunScreencastCLI.Text" xml:space="preserve">
-    <value>Chạy CLI sau:</value>
-  </data>
   <data name="cbOverrideAfterUploadSettings.Text" xml:space="preserve">
     <value>Vượt quyền cài đặt sau khi tải lên</value>
   </data>
@@ -545,9 +527,6 @@
   </data>
   <data name="lblCaptureCustomRegion.Text" xml:space="preserve">
     <value>Vùng được thiết lập trước:</value>
-  </data>
-  <data name="btnScreenRecordEncoderConfig.Text" xml:space="preserve">
-    <value>Hồ sơ...</value>
   </data>
   <data name="cbScreenRecordTwoPassEncoding.Text" xml:space="preserve">
     <value>Ghi hình dùng nén không mất mát/lossless, sau đó áp dụng lựa chọn của người dùng cho việc nén</value>

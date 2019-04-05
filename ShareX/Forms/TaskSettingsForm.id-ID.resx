@@ -324,9 +324,6 @@
   <data name="lblScreenRecorderFixedDuration.Text" xml:space="preserve">
     <value>detik</value>
   </data>
-  <data name="btnEncoderConfig.Text" xml:space="preserve">
-    <value>Profil...</value>
-  </data>
   <data name="lblGIFFPS.Text" xml:space="preserve">
     <value>FPS GIF:</value>
   </data>
@@ -462,9 +459,6 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Pengaturan tugas</value>
   </data>
-  <data name="chkRunScreencastCLI.Text" xml:space="preserve">
-    <value>Jalankan CLI setelah:</value>
-  </data>
   <data name="lblNameFormatPatternActiveWindow.Text" xml:space="preserve">
     <value>Pola nama untuk pengambilan jendela:</value>
   </data>
@@ -485,9 +479,6 @@
   </data>
   <data name="cbRegionCaptureUseSquareMagnifier.Text" xml:space="preserve">
     <value>Gunakan kaca pembesar bentuk persegi, bukan lingkaran</value>
-  </data>
-  <data name="cbScreenshotDelay.Text" xml:space="preserve">
-    <value>Tunda screenshot:</value>
   </data>
   <data name="cbRegionCaptureShowCrosshair.Text" xml:space="preserve">
     <value>Tampilkan garis bidik layar</value>
@@ -519,9 +510,6 @@
   <data name="cbWatchFolderEnabled.Text" xml:space="preserve">
     <value>Pantau folder dan bila file baru dibuat lalu unggah</value>
   </data>
-  <data name="cbScreenRecorderConfirmAbort.Text" xml:space="preserve">
-    <value>Minta konfirmasi saat menggagalkan</value>
-  </data>
   <data name="cbRegionCaptureMultiRegionMode.Text" xml:space="preserve">
     <value>Gunakan mode multi area yang juga mengizinkan mengubah ukuran dan memindahkan area</value>
   </data>
@@ -540,14 +528,8 @@
   <data name="cbFileUploadUseNamePattern.Text" xml:space="preserve">
     <value>Gunakan pola nama untuk unggahan file bukan nama file sebenarnya</value>
   </data>
-  <data name="btnResetAutoIncrementNumber.Text" xml:space="preserve">
-    <value>Atur ulang otomatis nomori</value>
-  </data>
   <data name="cbClipboardUploadShareURL.Text" xml:space="preserve">
     <value>Bila papan klip berisi URL, bagikan dengan layanan berbagi URL</value>
-  </data>
-  <data name="chkClipboardUploadURLContents.Text" xml:space="preserve">
-    <value>Bila papan klip berisi URL file, unduh filenya lalu unggah</value>
   </data>
   <data name="cbClipboardUploadAutoIndexFolder.Text" xml:space="preserve">
     <value>Bila papan klip berisi jalur folder, indeks foldernya lalu unggah indeksnya</value>

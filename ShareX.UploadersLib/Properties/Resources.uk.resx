@@ -120,12 +120,6 @@
   <data name="UploadersConfigForm_MegaConfigureTab_Click_refresh_button" xml:space="preserve">
     <value>Натисніть кнопку „Оновити“</value>
   </data>
-  <data name="UploadersConfigForm_FTPOpenClient_FTP_client_only_supports_FTP_or_FTPS_" xml:space="preserve">
-    <value>FTP-клієнт підтримує лише FTP або FTPS.</value>
-  </data>
-  <data name="FTPClientForm_FTPCreateDirectory_Directory_name_to_create" xml:space="preserve">
-    <value>Назва теки для створення</value>
-  </data>
   <data name="UploadersConfigForm_Login_failed" xml:space="preserve">
     <value>Збій авторизації.</value>
   </data>

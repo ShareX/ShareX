@@ -204,10 +204,13 @@
   <data name="lblHex.Text" xml:space="preserve">
     <value>Шестнадцатеричный:</value>
   </data>
-  <data name="lblRecentColors.Text" xml:space="preserve">
-    <value>Последние цвета:</value>
-  </data>
   <data name="btnScreenColorPicker.ToolTip" xml:space="preserve">
     <value>Выбрать цвет на экране</value>
+  </data>
+  <data name="rbRecentColors.Text" xml:space="preserve">
+    <value>Недавние цвета</value>
+  </data>
+  <data name="rbStandardColors.Text" xml:space="preserve">
+    <value>Стандартные цвета</value>
   </data>
 </root>

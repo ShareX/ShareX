@@ -120,9 +120,6 @@
   <data name="CertFileNameEditor_EditValue_Browse_for_a_certificate_file___" xml:space="preserve">
     <value>Durchsuche für eine Zertifikatdatei...</value>
   </data>
-  <data name="FTPClientForm_FTPClientForm_Connecting_to__0_" xml:space="preserve">
-    <value>Verbinde zu {0}</value>
-  </data>
   <data name="UploadersConfigForm_oAuthJira_RefreshButtonClicked_Refresh_authorization_is_not_supported_" xml:space="preserve">
     <value>Aktualisiere Autorisierung ist nicht unterstüzt</value>
   </data>
@@ -137,12 +134,6 @@
   </data>
   <data name="OneDrive_RootFolder_Root_folder" xml:space="preserve">
     <value>Rootordner</value>
-  </data>
-  <data name="FTPClientForm_FTPClientForm_ShareX_FTP_client" xml:space="preserve">
-    <value>ShareX FTP Gerät</value>
-  </data>
-  <data name="FTPClientForm_FTPCreateDirectory_Directory_name_to_create" xml:space="preserve">
-    <value>zu erstellender Verzeichnisname</value>
   </data>
   <data name="JiraUpload_ValidateIssueId_Issue_not_found" xml:space="preserve">
     <value>Ausgabe nicht gefunden</value>
@@ -204,9 +195,6 @@ Hergestellte Ordner:</value>
   </data>
   <data name="UploadersConfigForm_FTPOpenClient_Unable_to_find_valid_FTP_account_" xml:space="preserve">
     <value>Kann kein gültiges FTP Konto finden.</value>
-  </data>
-  <data name="UploadersConfigForm_FTPOpenClient_FTP_client_only_supports_FTP_or_FTPS_" xml:space="preserve">
-    <value>Das FTP-Programm unterstützt nur FTP oder FTPS.</value>
   </data>
   <data name="OAuthControl_Status_NotLoggedIn" xml:space="preserve">
     <value>Nicht angemeldet.</value>

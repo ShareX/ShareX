@@ -189,9 +189,6 @@
   <data name="tpIntegration.Text" xml:space="preserve">
     <value>Integrazione</value>
   </data>
-  <data name="lblNotePersonalFolderPath.Text" xml:space="preserve">
-    <value>Nota: È necessario riavviare ShareX per applicare i cambiamenti per la Cartella Personale.</value>
-  </data>
   <data name="btnOpenScreenshotsFolder.Text" xml:space="preserve">
     <value>Apri...</value>
   </data>

@@ -138,12 +138,6 @@
   <data name="chURL.Text" xml:space="preserve">
     <value>Enlace</value>
   </data>
-  <data name="pbPatreonOpen.ToolTip" xml:space="preserve">
-    <value>Ir a la página de Pateron de ShareX</value>
-  </data>
-  <data name="pbPatreonHide.ToolTip" xml:space="preserve">
-    <value>Ocultar el botón de Patreon de forma permanente</value>
-  </data>
   <data name="tsmiFullscreen.Text" xml:space="preserve">
     <value>Pantalla completa</value>
   </data>
@@ -173,9 +167,6 @@
   </data>
   <data name="tsmiScrollingCapture.Text" xml:space="preserve">
     <value>Capturar desplazamiento...</value>
-  </data>
-  <data name="tsmiWebpageCapture.Text" xml:space="preserve">
-    <value>Capturar página web...</value>
   </data>
   <data name="tsmiTextCapture.Text" xml:space="preserve">
     <value>Capturar texto (OCR)...</value>
@@ -251,9 +242,6 @@
   </data>
   <data name="tsmiVideoThumbnailer.Text" xml:space="preserve">
     <value>Generador de miniaturas de video...</value>
-  </data>
-  <data name="tsmiFTPClient.Text" xml:space="preserve">
-    <value>Cliente FTP...</value>
   </data>
   <data name="tsmiTweetMessage.Text" xml:space="preserve">
     <value>Tuitear mensaje...</value>
@@ -567,9 +555,6 @@
   <data name="tsmiTrayScrollingCapture.Text" xml:space="preserve">
     <value>Capturar desplazamiento...</value>
   </data>
-  <data name="tsmiTrayWebpageCapture.Text" xml:space="preserve">
-    <value>Capturar página web...</value>
-  </data>
   <data name="tsmiTrayTextCapture.Text" xml:space="preserve">
     <value>Capturar texto (OCR)...</value>
   </data>
@@ -644,9 +629,6 @@
   </data>
   <data name="tsmiTrayVideoThumbnailer.Text" xml:space="preserve">
     <value>Generador de miniaturas de video...</value>
-  </data>
-  <data name="tsmiTrayFTPClient.Text" xml:space="preserve">
-    <value>Cliente FTP...</value>
   </data>
   <data name="tsmiTrayTweetMessage.Text" xml:space="preserve">
     <value>Tuitear mensaje...</value>
@@ -746,12 +728,6 @@
   </data>
   <data name="niTray.Text" xml:space="preserve">
     <value>ShareX</value>
-  </data>
-  <data name="pbDiscordOpen.ToolTip" xml:space="preserve">
-    <value>Abrir enlace de invitación al servidor en Discord</value>
-  </data>
-  <data name="pbDiscordHide.ToolTip" xml:space="preserve">
-    <value>Ocultar botón de Discord permanentemente</value>
   </data>
   <data name="btnCloseNews.Text" xml:space="preserve">
     <value>Cerrar</value>

@@ -156,9 +156,6 @@
   <data name="cbCaptureClientArea.Text" xml:space="preserve">
     <value>Nimm Geräteumgebung auf während Fenster- oder aktiver Fensteraufnahme</value>
   </data>
-  <data name="cbScreenshotDelay.Text" xml:space="preserve">
-    <value>Screenshot Verzögerung:</value>
-  </data>
   <data name="tpRegionCapture.Text" xml:space="preserve">
     <value>Regionsaufnahme</value>
   </data>
@@ -234,9 +231,6 @@
   <data name="cbClipboardUploadAutoIndexFolder.Text" xml:space="preserve">
     <value>Wenn die Zwischenablage einen Ordnerpfad enthält, teile diesen Ordner ein und dann lade die Teile hoch</value>
   </data>
-  <data name="chkClipboardUploadURLContents.Text" xml:space="preserve">
-    <value>Wenn die Zwischenablage eine Datei URL beinhaltet, dann lade es runter und lade es hoch</value>
-  </data>
   <data name="cbClipboardUploadShareURL.Text" xml:space="preserve">
     <value>Wenn die Zwischenablage eine URL enthält, dann Teile diese URL mithilfe eines Teilungsdienstes</value>
   </data>
@@ -248,9 +242,6 @@
   </data>
   <data name="cbFileUploadUseNamePattern.Text" xml:space="preserve">
     <value>Benutze Namensmuster für das Hochladen von Dateien anstatt vom eigentlichen Dateinamen</value>
-  </data>
-  <data name="btnResetAutoIncrementNumber.Text" xml:space="preserve">
-    <value>Setzte Autozuwachsnummer zurück</value>
   </data>
   <data name="lblNameFormatPatternPreviewActiveWindow.Text" xml:space="preserve">
     <value>Vorschau:</value>
@@ -275,12 +266,6 @@
   </data>
   <data name="cbScreenRecorderFixedDuration.Text" xml:space="preserve">
     <value>Gesetzte Dauer:</value>
-  </data>
-  <data name="btnEncoderConfig.Text" xml:space="preserve">
-    <value>Profile...</value>
-  </data>
-  <data name="chkRunScreencastCLI.Text" xml:space="preserve">
-    <value>Starte CLI danach</value>
   </data>
   <data name="lblScreenRecordFPS.Text" xml:space="preserve">
     <value>Bildschirmaufnahme FPS:</value>
@@ -431,9 +416,6 @@
   </data>
   <data name="lblRegionCaptureSnapSizesWidth.Text" xml:space="preserve">
     <value>Breite:</value>
-  </data>
-  <data name="cbScreenRecorderConfirmAbort.Text" xml:space="preserve">
-    <value>Abbrechen bestätigen lassen</value>
   </data>
   <data name="chUploaderFiltersName.Text" xml:space="preserve">
     <value>Hochlader</value>

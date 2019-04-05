@@ -156,9 +156,6 @@
   <data name="cbCaptureClientArea.Text" xml:space="preserve">
     <value>捕捉窗口或活动窗口时,   捕捉客户区</value>
   </data>
-  <data name="cbScreenshotDelay.Text" xml:space="preserve">
-    <value>截图延迟：</value>
-  </data>
   <data name="tpRegionCapture.Text" xml:space="preserve">
     <value>区域截图</value>
   </data>
@@ -234,9 +231,6 @@
   <data name="cbClipboardUploadAutoIndexFolder.Text" xml:space="preserve">
     <value>如果剪贴板中包含的文件夹路径, 则自动索引文件夹并上传索引。</value>
   </data>
-  <data name="chkClipboardUploadURLContents.Text" xml:space="preserve">
-    <value>如果剪贴板中包含一个文件URL链接, 则自动下载并上传。</value>
-  </data>
   <data name="cbClipboardUploadShareURL.Text" xml:space="preserve">
     <value>如果剪贴板中包含一个URL链接, 则使用URL共享服务分享。</value>
   </data>
@@ -248,9 +242,6 @@
   </data>
   <data name="cbFileUploadUseNamePattern.Text" xml:space="preserve">
     <value>使用以上的文件名格式设置上传, 而不使用实际文件名上传.</value>
-  </data>
-  <data name="btnResetAutoIncrementNumber.Text" xml:space="preserve">
-    <value>重置自动递增数</value>
   </data>
   <data name="lblNameFormatPatternPreviewActiveWindow.Text" xml:space="preserve">
     <value>预览：</value>
@@ -275,12 +266,6 @@
   </data>
   <data name="cbScreenRecorderFixedDuration.Text" xml:space="preserve">
     <value>固定时长:</value>
-  </data>
-  <data name="btnEncoderConfig.Text" xml:space="preserve">
-    <value>配置文件...</value>
-  </data>
-  <data name="chkRunScreencastCLI.Text" xml:space="preserve">
-    <value>之后运行CLI:</value>
   </data>
   <data name="lblScreenRecordFPS.Text" xml:space="preserve">
     <value>屏幕录制FPS:</value>
@@ -536,9 +521,6 @@
   </data>
   <data name="cbFileUploadReplaceProblematicCharacters.Text" xml:space="preserve">
     <value>上传时使用下划线替换URL中的问题字符</value>
-  </data>
-  <data name="cbScreenRecorderConfirmAbort.Text" xml:space="preserve">
-    <value>终止时确认</value>
   </data>
   <data name="lblAutoIncrementNumber.Text" xml:space="preserve">
     <value>0</value>

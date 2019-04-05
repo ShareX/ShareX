@@ -168,9 +168,6 @@
   <data name="rbSaturation.Text" xml:space="preserve">
     <value>Sättigung:</value>
   </data>
-  <data name="lblRecentColors.Text" xml:space="preserve">
-    <value>Vorherige Farben:</value>
-  </data>
   <data name="btnClose.Text" xml:space="preserve">
     <value>Schließen</value>
   </data>

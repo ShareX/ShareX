@@ -159,12 +159,6 @@
   <data name="tsmiLastRegion.Text" xml:space="preserve">
     <value>Area terakhir</value>
   </data>
-  <data name="pbPatreonOpen.ToolTip" xml:space="preserve">
-    <value>Buka halaman web kampanye Patreon ShareX</value>
-  </data>
-  <data name="pbPatreonHide.ToolTip" xml:space="preserve">
-    <value>Sembunyikan tombol Patreon secara permanen</value>
-  </data>
   <data name="tsmiScreenRecordingFFmpeg.Text" xml:space="preserve">
     <value>Perekaman layar</value>
   </data>
@@ -173,9 +167,6 @@
   </data>
   <data name="tsmiScrollingCapture.Text" xml:space="preserve">
     <value>Ambil bergulir...</value>
-  </data>
-  <data name="tsmiWebpageCapture.Text" xml:space="preserve">
-    <value>Ambil halaman web...</value>
   </data>
   <data name="tsmiTextCapture.Text" xml:space="preserve">
     <value>Ambil teks (OCR)...</value>
@@ -251,9 +242,6 @@
   </data>
   <data name="tsmiVideoThumbnailer.Text" xml:space="preserve">
     <value>Pemotret video...</value>
-  </data>
-  <data name="tsmiFTPClient.Text" xml:space="preserve">
-    <value>Klien FTP...</value>
   </data>
   <data name="tsmiTweetMessage.Text" xml:space="preserve">
     <value>Tweet pesan...</value>
@@ -564,9 +552,6 @@
   <data name="tsmiTrayScrollingCapture.Text" xml:space="preserve">
     <value>Ambil bergulir...</value>
   </data>
-  <data name="tsmiTrayWebpageCapture.Text" xml:space="preserve">
-    <value>Ambil halaman web...</value>
-  </data>
   <data name="tsmiTrayTextCapture.Text" xml:space="preserve">
     <value>Ambil teks (OCR)...</value>
   </data>
@@ -641,9 +626,6 @@
   </data>
   <data name="tsmiTrayVideoThumbnailer.Text" xml:space="preserve">
     <value>Pemotret video...</value>
-  </data>
-  <data name="tsmiTrayFTPClient.Text" xml:space="preserve">
-    <value>Klien FTP...</value>
   </data>
   <data name="tsmiTrayTweetMessage.Text" xml:space="preserve">
     <value>Tweet pesan...</value>
@@ -743,12 +725,6 @@
   </data>
   <data name="btnCloseNews.Text" xml:space="preserve">
     <value>Tutup</value>
-  </data>
-  <data name="pbDiscordHide.ToolTip" xml:space="preserve">
-    <value>Sembunyikan tombol Discord secara permanen</value>
-  </data>
-  <data name="pbDiscordOpen.ToolTip" xml:space="preserve">
-    <value>Buka tautan undangan server Discord ShareX</value>
   </data>
   <data name="tsmiOpenActionsToolbar.Text" xml:space="preserve">
     <value>Alihkan bilah alat tindakan</value>

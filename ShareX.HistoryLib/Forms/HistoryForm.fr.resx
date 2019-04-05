@@ -120,20 +120,11 @@
   <data name="btnApplyFilters.Text" xml:space="preserve">
     <value>Appliquer les filtres</value>
   </data>
-  <data name="cbFilenameFilterMethod.Items" xml:space="preserve">
-    <value>Contient</value>
-  </data>
   <data name="chDateTime.Text" xml:space="preserve">
     <value>Date</value>
   </data>
   <data name="cbDateFilter.Text" xml:space="preserve">
     <value>Filtre de date :</value>
-  </data>
-  <data name="cbFilenameFilterMethod.Items2" xml:space="preserve">
-    <value>Se termine par</value>
-  </data>
-  <data name="cbFilenameFilterMethod.Items3" xml:space="preserve">
-    <value>Correspondance exacte</value>
   </data>
   <data name="cbTypeFilter.Text" xml:space="preserve">
     <value>Filtre du type de fichier :</value>
@@ -155,9 +146,6 @@
   </data>
   <data name="btnRemoveFilters.Text" xml:space="preserve">
     <value>Supprimer les filtres</value>
-  </data>
-  <data name="cbFilenameFilterMethod.Items1" xml:space="preserve">
-    <value>Commence par</value>
   </data>
   <data name="lblFilterTo.Text" xml:space="preserve">
     <value>À :</value>

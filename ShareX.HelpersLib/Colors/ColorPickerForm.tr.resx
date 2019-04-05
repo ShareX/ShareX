@@ -195,9 +195,6 @@
   <data name="btnClose.Text" xml:space="preserve">
     <value>Kapat</value>
   </data>
-  <data name="lblRecentColors.Text" xml:space="preserve">
-    <value>Son renkler:</value>
-  </data>
   <data name="btnScreenColorPicker.ToolTip" xml:space="preserve">
     <value>Ekrandan renk seç</value>
   </data>

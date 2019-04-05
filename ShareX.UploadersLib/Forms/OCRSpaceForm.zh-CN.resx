@@ -123,9 +123,6 @@
   <data name="llGoogleTranslate.Text" xml:space="preserve">
     <value>在Google翻译中打开并关闭窗口</value>
   </data>
-  <data name="llAttribution.Text" xml:space="preserve">
-    <value>由OCR.Space API提供支持</value>
-  </data>
   <data name="lblResult.Text" xml:space="preserve">
     <value>结果：</value>
   </data>

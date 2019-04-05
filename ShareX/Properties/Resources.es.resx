@@ -211,14 +211,8 @@ Por favor seleccione una tecla de acceso directo diferente o salir de la aplicac
   <data name="UploadTask_DoUploadJob_First_time_upload_warning" xml:space="preserve">
     <value>Subir aviso por la primera vez</value>
   </data>
-  <data name="EncoderProgramForm_btnOK_Click_Extension_can_t_be_empty_" xml:space="preserve">
-    <value>La extensión no puede estar vacío.</value>
-  </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_After_capture___0_" xml:space="preserve">
     <value>Después de capturar: {0}</value>
-  </data>
-  <data name="TaskSettingsForm_ConfigureEncoder_Configure_CLI_video_encoders_____" xml:space="preserve">
-    <value>Configurar los codificadores de vídeo CLI ---&gt;</value>
   </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_URL_shortener___0_" xml:space="preserve">
     <value>Acortador de URL: {0}</value>
@@ -326,9 +320,6 @@ aquí</value>
   <data name="HotkeyManager_ShowFailedHotkeys_hotkeys" xml:space="preserve">
     <value>Teclas de acceso rápido</value>
   </data>
-  <data name="EncoderProgramForm_btnOK_Click_Path_can_t_be_empty_" xml:space="preserve">
-    <value>La ruta no puede estar vacío.</value>
-  </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_File_uploader___0_" xml:space="preserve">
     <value>Cargador de archivos: {0}</value>
   </data>
@@ -338,15 +329,9 @@ aquí</value>
   <data name="TaskHelpers_TweetMessage_Tweet_successfully_sent_" xml:space="preserve">
     <value>Tweet enviado con éxito.</value>
   </data>
-  <data name="EncoderProgramForm_btnPathBrowse_Click_Choose_encoder_path" xml:space="preserve">
-    <value>Elegir ruta codificador</value>
-  </data>
   <data name="Program_WritePersonalPathConfig_Cant_access_to_file" xml:space="preserve">
     <value>No se puede acceder "{0}" archivo.
 Por favor ejecute ShareX como administrador para cambiar ruta de la carpeta personal.</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_CLI_video_encoder_file_does_not_exist__" xml:space="preserve">
-    <value>Archivo de codificador de vídeo CLI no existe:</value>
   </data>
   <data name="ActionsForm_btnOK_Click_Name_can_t_be_empty_" xml:space="preserve">
     <value>El nombre no puede estar vacío.</value>
@@ -381,9 +366,6 @@ Por favor ejecute ShareX como administrador para cambiar ruta de la carpeta pers
   <data name="UploadTask_DoUploadJob_First_time_upload_warning_text" xml:space="preserve">
     <value>¿Está seguro de que desea subir esta captura de pantalla?
 Pulse "No" para cancelar la subida y desactivar la función de captura de pantalla de auto-carga.</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_There_is_no_valid_CLI_video_encoder_selected_" xml:space="preserve">
-    <value>No hay codificador de vídeo CLI válido seleccionado.</value>
   </data>
   <data name="ApplicationSettingsForm_cbStartWithWindows_Text" xml:space="preserve">
     <value>Ejecutar ShareX al iniciar Windows</value>

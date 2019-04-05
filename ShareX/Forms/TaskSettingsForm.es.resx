@@ -150,9 +150,6 @@
   <data name="cbCaptureClientArea.Text" xml:space="preserve">
     <value>Capturar área de cliente al hacer ventana o captura de la ventana activa</value>
   </data>
-  <data name="cbScreenshotDelay.Text" xml:space="preserve">
-    <value>Retraso de la captura de pantalla:</value>
-  </data>
   <data name="tpRegionCapture.Text" xml:space="preserve">
     <value>Captura región</value>
   </data>
@@ -225,9 +222,6 @@
   <data name="cbClipboardUploadAutoIndexFolder.Text" xml:space="preserve">
     <value>Si el portapapeles contiene una ruta de carpeta entonces índice que carpeta y subir el índice</value>
   </data>
-  <data name="chkClipboardUploadURLContents.Text" xml:space="preserve">
-    <value>Si el portapapeles contiene una dirección de fichero; descargarlo y cargarlo</value>
-  </data>
   <data name="cbClipboardUploadShareURL.Text" xml:space="preserve">
     <value>Si el portapapeles contiene una URL luego compartirlo usando servicio para compartir URL</value>
   </data>
@@ -239,9 +233,6 @@
   </data>
   <data name="cbFileUploadUseNamePattern.Text" xml:space="preserve">
     <value>Utilice modelo de nombre para la subida de archivos en vez de nombre de archivo actual</value>
-  </data>
-  <data name="btnResetAutoIncrementNumber.Text" xml:space="preserve">
-    <value>Restablecer número de incremento automático</value>
   </data>
   <data name="lblNameFormatPatternPreviewActiveWindow.Text" xml:space="preserve">
     <value>Vista previa</value>
@@ -260,12 +251,6 @@
   </data>
   <data name="cbScreenRecorderFixedDuration.Text" xml:space="preserve">
     <value>Duración fija:</value>
-  </data>
-  <data name="btnEncoderConfig.Text" xml:space="preserve">
-    <value>Perfiles...</value>
-  </data>
-  <data name="chkRunScreencastCLI.Text" xml:space="preserve">
-    <value>Ejecutar CLI después:</value>
   </data>
   <data name="lblScreenRecordFPS.Text" xml:space="preserve">
     <value>FFmpeg FPS:</value>

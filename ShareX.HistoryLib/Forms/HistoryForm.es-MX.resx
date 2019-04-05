@@ -132,18 +132,6 @@
   <data name="cbDateFilter.Text" xml:space="preserve">
     <value>Filtro por fecha:</value>
   </data>
-  <data name="cbFilenameFilterMethod.Items" xml:space="preserve">
-    <value>Contiene</value>
-  </data>
-  <data name="cbFilenameFilterMethod.Items1" xml:space="preserve">
-    <value>Comienza con</value>
-  </data>
-  <data name="cbFilenameFilterMethod.Items2" xml:space="preserve">
-    <value>Termina con</value>
-  </data>
-  <data name="cbFilenameFilterMethod.Items3" xml:space="preserve">
-    <value>Coincidencia exacta</value>
-  </data>
   <data name="cbHostFilter.Text" xml:space="preserve">
     <value>Filtro por host:</value>
   </data>

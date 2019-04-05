@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.MediaLib.Properties;
 using System;
 using System.Drawing;
 using System.IO;
@@ -182,8 +183,7 @@ namespace ShareX.MediaLib
                     }
 
                     Cursor = Cursors.Default;
-                    // TODO: Translate
-                    MessageBox.Show("Thumbnails successfully generated.", Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(Resources.ThumbnailsSuccessfullyGenerated, Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 catch (Exception ex)
                 {

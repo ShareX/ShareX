@@ -139,18 +139,6 @@
   <data name="btnApplyFilters.Text" xml:space="preserve">
     <value>Filtreleri uygula</value>
   </data>
-  <data name="cbFilenameFilterMethod.Items" xml:space="preserve">
-    <value>İçeren</value>
-  </data>
-  <data name="cbFilenameFilterMethod.Items1" xml:space="preserve">
-    <value>İle başlayan</value>
-  </data>
-  <data name="cbFilenameFilterMethod.Items2" xml:space="preserve">
-    <value>İle biten</value>
-  </data>
-  <data name="cbFilenameFilterMethod.Items3" xml:space="preserve">
-    <value>Tam eşleşme</value>
-  </data>
   <data name="cbFilenameFilter.Size" type="System.Drawing.Size, System.Drawing">
     <value>105, 17</value>
   </data>

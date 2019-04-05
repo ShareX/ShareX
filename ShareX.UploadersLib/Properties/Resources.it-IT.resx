@@ -117,9 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="FTPClientForm_FTPClientForm_Connecting_to__0_" xml:space="preserve">
-    <value>Connessione a {0}</value>
-  </data>
   <data name="OAuthInfo_OAuthInfo_New_account" xml:space="preserve">
     <value>Nuovo Account</value>
   </data>
@@ -131,9 +128,6 @@
   </data>
   <data name="UploadersConfigForm_Error" xml:space="preserve">
     <value>Errore</value>
-  </data>
-  <data name="UploadersConfigForm_FTPOpenClient_FTP_client_only_supports_FTP_or_FTPS_" xml:space="preserve">
-    <value>Il client FTP supporta solo FTP e FTPS.</value>
   </data>
   <data name="UploadersConfigForm_FTPOpenClient_Unable_to_find_valid_FTP_account_" xml:space="preserve">
     <value>Impossibile trovare una account FTP valido.</value>
@@ -203,12 +197,6 @@ Cartelle create:</value>
   <data name="KeyFileNameEditor_EditValue_Browse_for_a_key_file___" xml:space="preserve">
     <value>Cerca un File Chiave...</value>
   </data>
-  <data name="FTPClientForm_FTPCreateDirectory_Directory_name_to_create" xml:space="preserve">
-    <value>Nome Cartella da Creare</value>
-  </data>
-  <data name="FTPClientForm_FTPClientForm_ShareX_FTP_client" xml:space="preserve">
-    <value>ShareX - Client FTP</value>
-  </data>
   <data name="OAuthControl_OAuthControl_PasteVerificationCodeHere" xml:space="preserve">
     <value>Incolla Codice di Verifica</value>
   </data>
@@ -220,12 +208,6 @@ Cartelle create:</value>
   </data>
   <data name="UploadersConfigForm_ConnectSFTPAccount_Key_file_not_found" xml:space="preserve">
     <value>Il file chiave non esiste.</value>
-  </data>
-  <data name="UploadersConfigForm_A_header_with_the_same_name_already_exists" xml:space="preserve">
-    <value>Esiste già un'intestazione con lo stesso nome.</value>
-  </data>
-  <data name="UploadersConfigForm_An_argument_with_the_same_name_already_exists" xml:space="preserve">
-    <value>Esiste già un parametro con lo stesso nome.</value>
   </data>
   <data name="CustomUploaderItem_GetRequestURL_RequestURLMustBeConfigured" xml:space="preserve">
     <value>"URL Richiesta" deve essere configurato.</value>

@@ -126,9 +126,6 @@
   <data name="lblResult.Text" xml:space="preserve">
     <value>Результат:</value>
   </data>
-  <data name="llAttribution.Text" xml:space="preserve">
-    <value>Работает через API OCR.Space</value>
-  </data>
   <data name="btnStartOCR.Text" xml:space="preserve">
     <value>Начать распознавание</value>
   </data>

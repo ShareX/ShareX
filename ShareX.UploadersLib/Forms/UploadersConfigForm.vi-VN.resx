@@ -131,33 +131,6 @@ Ví dụ: nếu tên bucket là bucket.example.com thì URL sẽ là http://buck
   <data name="tpURLShorteners.Text" xml:space="preserve">
     <value>DỊch vụ rút gọn URL</value>
   </data>
-  <data name="btnCustomUploaderAdd.Text" xml:space="preserve">
-    <value>Thêm</value>
-  </data>
-  <data name="btnCustomUploaderRemove.Text" xml:space="preserve">
-    <value>Xóa bỏ</value>
-  </data>
-  <data name="btnCustomUploaderClearUploaders.Text" xml:space="preserve">
-    <value>Xóa các dịch vụ tải lên</value>
-  </data>
-  <data name="gbCustomUploaders.Text" xml:space="preserve">
-    <value>Dịch vụ tải lên</value>
-  </data>
-  <data name="btnCustomUploaderArgRemove.Text" xml:space="preserve">
-    <value>Xóa bỏ</value>
-  </data>
-  <data name="btnCustomUploaderArgAdd.Text" xml:space="preserve">
-    <value>Thêm</value>
-  </data>
-  <data name="btnCustomUploaderRegexpRemove.Text" xml:space="preserve">
-    <value>Xóa bỏ</value>
-  </data>
-  <data name="btnCustomUploaderRegexpAdd.Text" xml:space="preserve">
-    <value>Thêm</value>
-  </data>
-  <data name="tpCustomUploaders.Text" xml:space="preserve">
-    <value>Dịch vụ tải lên tùy chọn</value>
-  </data>
   <data name="btnTwitterAdd.Text" xml:space="preserve">
     <value>Thêm</value>
   </data>
@@ -175,63 +148,6 @@ Ví dụ: nếu tên bucket là bucket.example.com thì URL sẽ là http://buck
   </data>
   <data name="btnTwitterNameUpdate.Text" xml:space="preserve">
     <value>Cập nhật</value>
-  </data>
-  <data name="btnCustomUploaderExamples.Text" xml:space="preserve">
-    <value>Dịch vụ tải lên tùy chọn...</value>
-  </data>
-  <data name="btnCustomUploaderHelp.Text" xml:space="preserve">
-    <value>Trợ giúp...</value>
-  </data>
-  <data name="lblCustomUploaderImageUploader.Text" xml:space="preserve">
-    <value>Dịch vụ tải lên ảnh:</value>
-  </data>
-  <data name="btnCustomUploaderFileUploaderTest.Text" xml:space="preserve">
-    <value>Kiểm tra</value>
-  </data>
-  <data name="lblCustomUploaderFileUploader.Text" xml:space="preserve">
-    <value>Dịch vụ tải lên tệp:</value>
-  </data>
-  <data name="btnCustomUploaderImageUploaderTest.Text" xml:space="preserve">
-    <value>Kiểm tra</value>
-  </data>
-  <data name="lblCustomUploaderTestResult.Text" xml:space="preserve">
-    <value>Kết quả kiểm tra:</value>
-  </data>
-  <data name="lblCustomUploaderDeletionURL.Text" xml:space="preserve">
-    <value>URL để xóa:</value>
-  </data>
-  <data name="btnCustomUploaderShowLastResponse.Text" xml:space="preserve">
-    <value>Hiển thị lần phản hồi cuối...</value>
-  </data>
-  <data name="lblCustomUploaderResponseType.Text" xml:space="preserve">
-    <value>Kiểu phản hồi:</value>
-  </data>
-  <data name="lblCustomUploaderTextUploader.Text" xml:space="preserve">
-    <value>Dịch vụ tải lên văn bản:</value>
-  </data>
-  <data name="lblCustomUploaderRequestURL.Text" xml:space="preserve">
-    <value>URL yêu cầu:</value>
-  </data>
-  <data name="btnCustomUploaderURLShortenerTest.Text" xml:space="preserve">
-    <value>Kiểm tra</value>
-  </data>
-  <data name="lblCustomUploaderURLShortener.Text" xml:space="preserve">
-    <value>Dịch vụ rút gọn URL:</value>
-  </data>
-  <data name="btnCustomUploaderTextUploaderTest.Text" xml:space="preserve">
-    <value>Kiểm tra</value>
-  </data>
-  <data name="lblCustomUploaderThumbnailURL.Text" xml:space="preserve">
-    <value>URL ảnh thu nhỏ/thumbnail:</value>
-  </data>
-  <data name="lblCustomUploaderFileForm.Text" xml:space="preserve">
-    <value>Tên biểu mẫu tệp:</value>
-  </data>
-  <data name="lblCustomUploaderRequestType.Text" xml:space="preserve">
-    <value>Kiểu yêu cầu:</value>
-  </data>
-  <data name="lblCustomUploaderURL.Text" xml:space="preserve">
-    <value>URL</value>
   </data>
   <data name="lblBitlyDomain.Text" xml:space="preserve">
     <value>Tên miền:</value>
@@ -677,15 +593,6 @@ Ví dụ: nếu tên bucket là bucket.example.com thì URL sẽ là http://buck
   <data name="btnAmazonS3AccessKeyOpen.Text" xml:space="preserve">
     <value>...</value>
   </data>
-  <data name="btnCustomUploaderRegexHelp.Text" xml:space="preserve">
-    <value>?</value>
-  </data>
-  <data name="btnCustomUploadJsonPathHelp.Text" xml:space="preserve">
-    <value>?</value>
-  </data>
-  <data name="btnCustomUploaderXPathHelp.Text" xml:space="preserve">
-    <value>?</value>
-  </data>
   <data name="btnAmazonS3StorageClassHelp.Text" xml:space="preserve">
     <value>?</value>
   </data>
@@ -707,9 +614,6 @@ Ví dụ: nếu tên bucket là bucket.example.com thì URL sẽ là http://buck
   <data name="rbFTPTransferModeActive.Text" xml:space="preserve">
     <value>Chủ động</value>
   </data>
-  <data name="btnCustomUploaderHeaderAdd.Text" xml:space="preserve">
-    <value>Thêm</value>
-  </data>
   <data name="btnSharedFolderAdd.Text" xml:space="preserve">
     <value>Thêm</value>
   </data>
@@ -719,20 +623,8 @@ Ví dụ: nếu tên bucket là bucket.example.com thì URL sẽ là http://buck
   <data name="tpAdFly.Text" xml:space="preserve">
     <value>adf.ly</value>
   </data>
-  <data name="btnCustomUploaderJsonAddSyntax.Text" xml:space="preserve">
-    <value>Thêm cú pháp vào trường URL</value>
-  </data>
-  <data name="btnCustomUploaderXmlSyntaxAdd.Text" xml:space="preserve">
-    <value>Thêm cú pháp vào trường URL</value>
-  </data>
-  <data name="btnCustomUploaderRegexAddSyntax.Text" xml:space="preserve">
-    <value>Thêm cú pháp vào trường URL</value>
-  </data>
   <data name="gbAmazonS3Advanced.Text" xml:space="preserve">
     <value>Nâng cao</value>
-  </data>
-  <data name="btnCustomUploadersExportAll.Text" xml:space="preserve">
-    <value>Tất cả...</value>
   </data>
   <data name="tpAmazonS3.Text" xml:space="preserve">
     <value>Amazon S3</value>
@@ -766,9 +658,6 @@ Ví dụ: nếu tên bucket là bucket.example.com thì URL sẽ là http://buck
   </data>
   <data name="lblB2ApplicationKeyId.Text" xml:space="preserve">
     <value>Application Key ID:</value>
-  </data>
-  <data name="tpCustomUploaderArguments.Text" xml:space="preserve">
-    <value>Đối số</value>
   </data>
   <data name="tpJira.Text" xml:space="preserve">
     <value>Atlassian Jira</value>
@@ -818,9 +707,6 @@ Ví dụ: nếu tên bucket là bucket.example.com thì URL sẽ là http://buck
   <data name="lblB2ManageLink.Text" xml:space="preserve">
     <value>Nhấn vào đây để tạo một Application Key hoặc kiểm soát các bucket của bạn.</value>
   </data>
-  <data name="btnFTPClient.Text" xml:space="preserve">
-    <value>Client...</value>
-  </data>
   <data name="cbPlikComment.Text" xml:space="preserve">
     <value>Ghi chú (Kiểu Markdown)</value>
   </data>
@@ -832,9 +718,6 @@ Ví dụ: nếu tên bucket là bucket.example.com thì URL sẽ là http://buck
   </data>
   <data name="cbSeafileCreateShareableURL.Text" xml:space="preserve">
     <value>Tạo URL để chia sẻ</value>
-  </data>
-  <data name="mbCustomUploaderDestinationType.ToolTip" xml:space="preserve">
-    <value>Kiểu dịch vụ tải lên hiện tại được sử dụng khi người dùng nhập vào dịch vụ tải lên tùy chọn bằng cách nhấn đúp tệp .sxcu.</value>
   </data>
   <data name="lblGoogleCloudStorageDomain.Text" xml:space="preserve">
     <value>Tên miền tùy chỉnh:</value>
@@ -851,9 +734,6 @@ Ví dụ: nếu tên bucket là bucket.example.com thì URL sẽ là http://buck
   <data name="lblSeafileDaysToExpire.Text" xml:space="preserve">
     <value>Ngày tới khi hết hạn:</value>
   </data>
-  <data name="mbCustomUploaderDestinationType.Text" xml:space="preserve">
-    <value>Kiểu dịch vụ tải lên</value>
-  </data>
   <data name="cbPlikOneShot.Text" xml:space="preserve">
     <value>Tự hủy sau lượt tải về đầu tiên</value>
   </data>
@@ -864,9 +744,6 @@ Ví dụ: nếu tên bucket là bucket.example.com thì URL sẽ là http://buck
     <value>Dropbox</value>
   </data>
   <data name="btnSharedFolderDuplicate.Text" xml:space="preserve">
-    <value>Nhân bản</value>
-  </data>
-  <data name="btnCustomUploaderDuplicate.Text" xml:space="preserve">
     <value>Nhân bản</value>
   </data>
   <data name="btnFTPDuplicate.Text" xml:space="preserve">
@@ -911,18 +788,6 @@ Ví dụ: nếu tên bucket là bucket.example.com thì URL sẽ là http://buck
   <data name="lblGistCustomURLExample.Text" xml:space="preserve">
     <value>Ví dụ: https://api.github.com</value>
   </data>
-  <data name="lblCustomUploaderXPathExample.Text" xml:space="preserve">
-    <value>Ví dụ:
-
-/Files/File[1]/URL
-/store/book[1]/title</value>
-  </data>
-  <data name="lblCustomUploaderJsonPathExample.Text" xml:space="preserve">
-    <value>Ví dụ:
-
-Files[0].URL
-store.book[0].title</value>
-  </data>
   <data name="lblOwnCloudExpiryTime.Text" xml:space="preserve">
     <value>Thời gian hết hiệu lực (ngày)</value>
   </data>
@@ -965,12 +830,6 @@ store.book[0].title</value>
   <data name="tpYouTube.Text" xml:space="preserve">
     <value>YouTube</value>
   </data>
-  <data name="lblCustomUploaderXPath.Text" xml:space="preserve">
-    <value>XPath:</value>
-  </data>
-  <data name="tpCustomUploaderXmlParse.Text" xml:space="preserve">
-    <value>XML</value>
-  </data>
   <data name="llVgymeAccountDetailsPage.Text" xml:space="preserve">
     <value>Bạn có thể lấy key người dùng từ trang thông tin cá nhân.</value>
   </data>
@@ -987,9 +846,6 @@ store.book[0].title</value>
     <value>Nơi lưu các tệp của bạn.
 
 Chỉ có hiệu lực khi không chọn "Cho phép truy cập tới bucket" cho một bucket khi tạo application key.</value>
-  </data>
-  <data name="chCustomUploaderHeadersValue.Text" xml:space="preserve">
-    <value>Giá trị</value>
   </data>
   <data name="lvlVgymeUserKey.Text" xml:space="preserve">
     <value>User key:</value>
@@ -1017,9 +873,6 @@ Chỉ có hiệu lực khi không chọn "Cho phép truy cập tới bucket" cho
   </data>
   <data name="btnSeafilePathValidate.Text" xml:space="preserve">
     <value>Xác thực</value>
-  </data>
-  <data name="chCustomUploaderArgumentsValue.Text" xml:space="preserve">
-    <value>Giá trị</value>
   </data>
   <data name="cbGoogleDriveDirectLink.Text" xml:space="preserve">
     <value>Dùng liên kết trực tiếp</value>
@@ -1072,9 +925,6 @@ Chỉ có hiệu lực khi không chọn "Cho phép truy cập tới bucket" cho
   <data name="tpHastebin.Text" xml:space="preserve">
     <value>Hastebin</value>
   </data>
-  <data name="tpCustomUploaderHeaders.Text" xml:space="preserve">
-    <value>Header</value>
-  </data>
   <data name="lblFTPHost.Text" xml:space="preserve">
     <value>Host:</value>
   </data>
@@ -1089,9 +939,6 @@ Chỉ có hiệu lực khi không chọn "Cho phép truy cập tới bucket" cho
   </data>
   <data name="tpImgur.Text" xml:space="preserve">
     <value>Imgur</value>
-  </data>
-  <data name="tpCustomUploaderJsonParse.Text" xml:space="preserve">
-    <value>JSON</value>
   </data>
   <data name="lblSFTPKeyLocation.Text" xml:space="preserve">
     <value>Vị trí tệp key:</value>
@@ -1168,9 +1015,6 @@ Chỉ có hiệu lực khi không chọn "Cho phép truy cập tới bucket" cho
   <data name="tpPuush.Text" xml:space="preserve">
     <value>puush</value>
   </data>
-  <data name="tpCustomUploaderRegexParse.Text" xml:space="preserve">
-    <value>Biểu thức chính quy/Regex</value>
-  </data>
   <data name="lblFTPRemoteDirectory.Text" xml:space="preserve">
     <value>Thư mục từ xa:</value>
   </data>
@@ -1228,9 +1072,6 @@ Chỉ có hiệu lực khi không chọn "Cho phép truy cập tới bucket" cho
   <data name="grpSeafileObtainAuthToken.Text" xml:space="preserve">
     <value>Lấy token xác thực</value>
   </data>
-  <data name="btnCustomUploaderURLSharingServiceTest.Text" xml:space="preserve">
-    <value>Kiểm tra</value>
-  </data>
   <data name="btnCheveretoTestAll.Text" xml:space="preserve">
     <value>Kiểm tra tất cả</value>
   </data>
@@ -1239,15 +1080,6 @@ Chỉ có hiệu lực khi không chọn "Cho phép truy cập tới bucket" cho
   </data>
   <data name="cbAmazonS3StripExtensionText.Text" xml:space="preserve">
     <value>Văn bản</value>
-  </data>
-  <data name="btnCustomUploaderRegexpUpdate.Text" xml:space="preserve">
-    <value>Cập nhật</value>
-  </data>
-  <data name="btnCustomUploaderArgUpdate.Text" xml:space="preserve">
-    <value>Cập nhật</value>
-  </data>
-  <data name="btnCustomUploaderHeaderUpdate.Text" xml:space="preserve">
-    <value>Cập nhật</value>
   </data>
   <data name="lblB2UploadPath.Text" xml:space="preserve">
     <value>Đường dẫn tải lên:</value>
@@ -1266,9 +1098,6 @@ Chỉ có hiệu lực khi không chọn "Cho phép truy cập tới bucket" cho
   </data>
   <data name="lblB2UrlPreview.Text" xml:space="preserve">
     <value>URL xem trước:</value>
-  </data>
-  <data name="lblCustomUploaderURLSharingService.Text" xml:space="preserve">
-    <value>Dịch vụ chia sẻ URL:</value>
   </data>
   <data name="lblCheveretoUploaders.Text" xml:space="preserve">
     <value>Dịch vụ tải lên:</value>
@@ -1321,9 +1150,6 @@ Chỉ có hiệu lực khi không chọn "Cho phép truy cập tới bucket" cho
   <data name="gbJiraServer.Text" xml:space="preserve">
     <value>Máy chủ Jira</value>
   </data>
-  <data name="lblCustomUploaderJsonPath.Text" xml:space="preserve">
-    <value>JsonPath:</value>
-  </data>
   <data name="lblLambdaUploadURL.Text" xml:space="preserve">
     <value>Liên kết URL:</value>
   </data>
@@ -1343,17 +1169,8 @@ Sử dụng thư viện được mã hóa sẽ vô hiệu hóa chia sẻ.</value
   <data name="cbxPlikTTLUnit.Items2" xml:space="preserve">
     <value>phút</value>
   </data>
-  <data name="chCustomUploaderHeadersName.Text" xml:space="preserve">
-    <value>Tên</value>
-  </data>
   <data name="colSeafileLibraryName.Text" xml:space="preserve">
     <value>Tên</value>
-  </data>
-  <data name="chCustomUploaderArgumentsName.Text" xml:space="preserve">
-    <value>Tên</value>
-  </data>
-  <data name="lblCustomUploaderName.Text" xml:space="preserve">
-    <value>Tên:</value>
   </data>
   <data name="cbxPlikTTLUnit.Items3" xml:space="preserve">
     <value>không bao giờ</value>
@@ -1401,9 +1218,6 @@ Sử dụng thư viện được mã hóa sẽ vô hiệu hóa chia sẻ.</value
     <value>Làm mới</value>
   </data>
   <data name="btnSharedFolderRemove.Text" xml:space="preserve">
-    <value>Xóa bỏ</value>
-  </data>
-  <data name="btnCustomUploaderHeaderRemove.Text" xml:space="preserve">
     <value>Xóa bỏ</value>
   </data>
   <data name="lblSeafileSharePassword.Text" xml:space="preserve">
