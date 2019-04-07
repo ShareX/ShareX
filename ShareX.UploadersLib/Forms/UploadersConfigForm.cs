@@ -765,6 +765,7 @@ namespace ShareX.UploadersLib
             cbGoogleCloudStorageStripExtensionImage.Checked = Config.GoogleCloudStorageRemoveExtensionImage;
             cbGoogleCloudStorageStripExtensionVideo.Checked = Config.GoogleCloudStorageRemoveExtensionVideo;
             cbGoogleCloudStorageStripExtensionText.Checked = Config.GoogleCloudStorageRemoveExtensionText;
+            cbGoogleCloudStorageBucketPolicyOnly.Checked = Config.GoogleCloudStorageBucketPolicyOnly;
 
             #endregion Google Cloud Storage
         }

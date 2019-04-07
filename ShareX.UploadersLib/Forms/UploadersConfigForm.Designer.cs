@@ -5661,6 +5661,8 @@ namespace ShareX.UploadersLib
         private System.Windows.Forms.Label lblGoogleCloudStorageDomain;
         private System.Windows.Forms.TextBox txtGoogleCloudStorageObjectPrefix;
         private System.Windows.Forms.Label lblGoogleCloudStorageObjectPrefix;
+        private System.Windows.Forms.CheckBox cbGoogleCloudStorageBucketPolicyOnly;
+        private System.Windows.Forms.Label lblGoogleCloudStorageBucketPolicyOnly;
         private System.Windows.Forms.Button btnSharedFolderDuplicate;
         private System.Windows.Forms.Button btnSharedFolderRemove;
         private System.Windows.Forms.Button btnSharedFolderAdd;

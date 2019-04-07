@@ -54,7 +54,8 @@ namespace ShareX.UploadersLib.FileUploaders
                 Prefix = config.GoogleCloudStorageObjectPrefix,
                 RemoveExtensionImage = config.GoogleCloudStorageRemoveExtensionImage,
                 RemoveExtensionText = config.GoogleCloudStorageRemoveExtensionText,
-                RemoveExtensionVideo = config.GoogleCloudStorageRemoveExtensionVideo
+                RemoveExtensionVideo = config.GoogleCloudStorageRemoveExtensionVideo,
+                BucketPolicyOnly = config.GoogleCloudStorageBucketPolicyOnly
             };
         }
 
@@ -69,6 +70,7 @@ namespace ShareX.UploadersLib.FileUploaders
         public bool RemoveExtensionImage { get; set; }
         public bool RemoveExtensionText { get; set; }
         public bool RemoveExtensionVideo { get; set; }
+        public bool BucketPolicyOnly { get; set; }
 
         public OAuth2Info AuthInfo => googleAuth.AuthInfo;
 
@@ -112,16 +114,20 @@ namespace ShareX.UploadersLib.FileUploaders
 
             GoogleCloudStorageMetadata googleCloudStorageMetadata = new GoogleCloudStorageMetadata
             {
-                name = uploadPath,
-                acl = new GoogleCloudStorageAcl[]
+                name = uploadPath
+            };
+
+            if (!BucketPolicyOnly)
+            {
+                googleCloudStorageMetadata.acl = new GoogleCloudStorageAcl[]
                 {
                     new GoogleCloudStorageAcl
                     {
                         entity = "allUsers",
                         role = "READER"
                     }
-                }
-            };
+                };
+            }
 
             string serializedGoogleCloudStorageMetadata = JsonConvert.SerializeObject(googleCloudStorageMetadata);
 
