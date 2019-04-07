@@ -765,6 +765,7 @@ namespace ShareX.UploadersLib
             cbGoogleCloudStorageStripExtensionImage.Checked = Config.GoogleCloudStorageRemoveExtensionImage;
             cbGoogleCloudStorageStripExtensionVideo.Checked = Config.GoogleCloudStorageRemoveExtensionVideo;
             cbGoogleCloudStorageStripExtensionText.Checked = Config.GoogleCloudStorageRemoveExtensionText;
+            cbGoogleCloudStorageSetPublicACL.Checked = Config.GoogleCloudStorageSetPublicACL;
 
             #endregion Google Cloud Storage
         }
@@ -3225,6 +3226,12 @@ namespace ShareX.UploadersLib
         private void cbGoogleCloudStorageStripExtensionText_CheckedChanged(object sender, EventArgs e)
         {
             Config.GoogleCloudStorageRemoveExtensionText = cbGoogleCloudStorageStripExtensionText.Checked;
+            UpdateGoogleCloudStorageStatus();
+        }
+
+        private void cbGoogleCloudStorageSetPublicACL_CheckedChanged(object sender, EventArgs e)
+        {
+            Config.GoogleCloudStorageSetPublicACL = cbGoogleCloudStorageSetPublicACL.Checked;
             UpdateGoogleCloudStorageStatus();
         }
 

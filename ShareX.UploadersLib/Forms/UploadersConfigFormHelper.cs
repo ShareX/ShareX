@@ -268,7 +268,8 @@ namespace ShareX.UploadersLib
                 Prefix = Config.GoogleCloudStorageObjectPrefix,
                 RemoveExtensionImage = Config.GoogleCloudStorageRemoveExtensionImage,
                 RemoveExtensionText = Config.GoogleCloudStorageRemoveExtensionText,
-                RemoveExtensionVideo = Config.GoogleCloudStorageRemoveExtensionVideo
+                RemoveExtensionVideo = Config.GoogleCloudStorageRemoveExtensionVideo,
+                SetPublicACL = Config.GoogleCloudStorageSetPublicACL
             };
 
             lblGoogleCloudStoragePathPreview.Text = gcs.GetPreviewURL();
