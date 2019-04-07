@@ -429,6 +429,7 @@ namespace ShareX.UploadersLib
         public bool GoogleCloudStorageRemoveExtensionImage = false;
         public bool GoogleCloudStorageRemoveExtensionVideo = false;
         public bool GoogleCloudStorageRemoveExtensionText = false;
+        public bool GoogleCloudStorageSetPublicACL = true;
 
         #endregion Google Cloud Storage
 
