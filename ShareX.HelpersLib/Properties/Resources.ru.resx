@@ -360,7 +360,7 @@
     <value>Загрузка со ссылки</value>
   </data>
   <data name="FileDestination_CustomFileUploader" xml:space="preserve">
-    <value>Пользовательский сервис</value>
+    <value>Пользовательский сервис загрузки файлов</value>
   </data>
   <data name="FileDestination_Email" xml:space="preserve">
     <value>Электронная почта</value>
@@ -369,7 +369,7 @@
     <value>Общая папка</value>
   </data>
   <data name="ImageDestination_CustomImageUploader" xml:space="preserve">
-    <value>Пользовательский сервис</value>
+    <value>Пользовательский сервис загрузки картинок</value>
   </data>
   <data name="ImageDestination_FileUploader" xml:space="preserve">
     <value>Файловый сервис</value>
@@ -384,7 +384,7 @@
     <value>Текст ответа</value>
   </data>
   <data name="TextDestination_CustomTextUploader" xml:space="preserve">
-    <value>Пользовательский сервис</value>
+    <value>Пользовательский сервис загрузки текста</value>
   </data>
   <data name="TextDestination_FileUploader" xml:space="preserve">
     <value>Файловый сервис</value>
@@ -393,7 +393,7 @@
     <value>Электронная почта</value>
   </data>
   <data name="UrlShortenerType_CustomURLShortener" xml:space="preserve">
-    <value>Пользовательский сервис</value>
+    <value>Пользовательский сервис коротких ссылок</value>
   </data>
   <data name="AfterCaptureTasks_AddImageEffects" xml:space="preserve">
     <value>Добавить эффекты/водяной знак</value>
