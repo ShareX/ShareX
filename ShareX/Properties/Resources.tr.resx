@@ -152,7 +152,7 @@
     <value>Katkıda bulunanlar</value>
   </data>
   <data name="UploadManager_UploadURL_URL_to_download_from_and_upload" xml:space="preserve">
-    <value>Adresden dosya indir ve yükle</value>
+    <value>Adresten dosya indir ve yükle</value>
   </data>
   <data name="ActionsForm_btnOK_Click_File_path_can_t_be_empty_" xml:space="preserve">
     <value>Dosya yolu boş olamaz.</value>
