@@ -151,7 +151,7 @@ namespace ShareX.HistoryLib
             if (!string.IsNullOrEmpty(filenameFilter))
             {
                 string pattern = Regex.Escape(filenameFilter).Replace("\\?", ".").Replace("\\*", ".*");
-                Regex regex = new Regex(pattern, RegexOptions.Compiled | RegexOptions.IgnoreCase | RegexOptions.CultureInvariant);
+                Regex regex = new Regex(pattern, RegexOptions.IgnoreCase | RegexOptions.CultureInvariant);
                 result = result.Where(x => x.Filename != null && regex.IsMatch(x.Filename));
             }
 
