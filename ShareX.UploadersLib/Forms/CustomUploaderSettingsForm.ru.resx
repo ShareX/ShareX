@@ -117,122 +117,172 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="UploadersConfigForm_PhotobucketCreateAlbum__0__successfully_created_" xml:space="preserve">
-    <value>{0} berhasil dibuat.</value>
+  <data name="btnNew.Text" xml:space="preserve">
+    <value>Новый</value>
   </data>
-  <data name="UploadersConfigForm_Error" xml:space="preserve">
-    <value>Eror</value>
+  <data name="btnDuplicate.Text" xml:space="preserve">
+    <value>Копия</value>
   </data>
-  <data name="OAuthInfo_OAuthInfo_New_account" xml:space="preserve">
-    <value>Akun baru</value>
+  <data name="btnRemove.Text" xml:space="preserve">
+    <value>Удалить</value>
   </data>
-  <data name="UploadersConfigForm_LoadSettings_Selected_folder_" xml:space="preserve">
-    <value>Folder terpilih:</value>
+  <data name="lblHeaders.Text" xml:space="preserve">
+    <value>Заголовки:</value>
   </data>
-  <data name="UploadersConfigForm_TestFTPAccount_Connected_" xml:space="preserve">
-    <value>Tersambung!</value>
+  <data name="cParametersName.HeaderText" xml:space="preserve">
+    <value>Имя</value>
   </data>
-  <data name="JiraUpload_ValidateIssueId_Issue_not_found" xml:space="preserve">
-    <value>Masalah tidak ditemukan</value>
+  <data name="cHeadersValue.HeaderText" xml:space="preserve">
+    <value>Значение</value>
   </data>
-  <data name="UploadersConfigForm_MegaConfigureTab_Click_refresh_button" xml:space="preserve">
-    <value>Klik tombol segarkan</value>
+  <data name="cHeadersName.HeaderText" xml:space="preserve">
+    <value>Имя</value>
   </data>
-  <data name="OneDrive_RootFolder_Root_folder" xml:space="preserve">
-    <value>Folder akar</value>
+  <data name="lblImageUploader.Text" xml:space="preserve">
+    <value>Сервисы загрузки картинок:</value>
   </data>
-  <data name="UploadersConfigForm_ListFolders_Authentication_required_" xml:space="preserve">
-    <value>Otentikasi diperlukan.</value>
+  <data name="tsmiExportAll.Text" xml:space="preserve">
+    <value>Экспортировать все...</value>
   </data>
-  <data name="OAuthControl_OAuthControl_PasteVerificationCodeHere" xml:space="preserve">
-    <value>Tempel kode verifikasi di sini</value>
+  <data name="tsbResponseTextCopy.Text" xml:space="preserve">
+    <value>Скопировать ответ</value>
   </data>
-  <data name="UploadersConfigForm_Remove_all_custom_uploaders_Confirmation" xml:space="preserve">
-    <value>Buang semua pengunggah khusus?</value>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX - Настройки пользовательских сервисов</value>
   </data>
-  <data name="UploadersConfigForm_FTPOpenClient_Unable_to_find_valid_FTP_account_" xml:space="preserve">
-    <value>Gagal menemukan akun FTP yang valid.</value>
+  <data name="lblURLSharingService.Text" xml:space="preserve">
+    <value>Сервис отправки ссылок:</value>
   </data>
-  <data name="KeyFileNameEditor_EditValue_Browse_for_a_key_file___" xml:space="preserve">
-    <value>Jelajahi file kunci...</value>
+  <data name="tpResponse.Text" xml:space="preserve">
+    <value>Ответ</value>
   </data>
-  <data name="CertFileNameEditor_EditValue_Browse_for_a_certificate_file___" xml:space="preserve">
-    <value>Jelajahi file sertifikat...</value>
+  <data name="lblXPathExample.Text" xml:space="preserve">
+    <value>Примеры:
+
+/Files/File[1]/URL
+/store/book[1]/title</value>
   </data>
-  <data name="UploadersConfigForm_eiCustomUploaders_ExportRequested_DestinationTypeMustBeConfigured" xml:space="preserve">
-    <value>"Jenis tujuan" harus dikonfigurasi.</value>
+  <data name="cArgumentsValue.HeaderText" xml:space="preserve">
+    <value>Значение</value>
   </data>
-  <data name="CustomUploaderItem_GetFileFormName_FileFormNameMustBeConfigured" xml:space="preserve">
-    <value>"Nama formulir file" harus dikonfigurasi.</value>
+  <data name="cArgumentsName.HeaderText" xml:space="preserve">
+    <value>Имя</value>
   </data>
-  <data name="CustomUploaderItem_GetRequestURL_RequestURLMustBeConfigured" xml:space="preserve">
-    <value>"Permintaan URL" harus dikonfigurasi.</value>
+  <data name="cParametersValue.HeaderText" xml:space="preserve">
+    <value>Значение</value>
   </data>
-  <data name="UploadersConfigForm_eiCustomUploaders_ExportRequested_RequestURLMustBeConfigured" xml:space="preserve">
-    <value>"Permintaan URL" harus dikonfigurasi.</value>
+  <data name="tpResponseText.Text" xml:space="preserve">
+    <value>Текст ответа</value>
   </data>
-  <data name="UploadersConfigForm_TestFTPAccount_Connected_Created_folders" xml:space="preserve">
-    <value>Tersambung!
-Folder yang dibuat:</value>
+  <data name="tpResponseInfo.Text" xml:space="preserve">
+    <value>Информация об ответе</value>
   </data>
-  <data name="UploadersConfigForm_MegaConfigureTab_Configured" xml:space="preserve">
-    <value>Dikonfigurasi</value>
+  <data name="tpRequest.Text" xml:space="preserve">
+    <value>Запрос</value>
   </data>
-  <data name="UploadersConfigForm_TestCustomUploader_Error__Result_is_empty_" xml:space="preserve">
-    <value>Eror: Hasil kosong.</value>
+  <data name="lblJsonPathExample.Text" xml:space="preserve">
+    <value>Примеры:
+
+Files[0].URL
+store.book[0].title</value>
   </data>
-  <data name="UploadersConfigForm_LoadSettings_Invalid_device_name" xml:space="preserve">
-    <value>Nama perangkat tidak valid</value>
+  <data name="lblRequestMethod.Text" xml:space="preserve">
+    <value>Метод:</value>
   </data>
-  <data name="UploadersConfigForm_MegaConfigureTab_Invalid_authentication" xml:space="preserve">
-    <value>Otentikasi tidak valid</value>
+  <data name="lblParameters.Text" xml:space="preserve">
+    <value>Параметры URL:</value>
   </data>
-  <data name="UploadersConfigForm_ConnectSFTPAccount_Key_file_not_found" xml:space="preserve">
-    <value>File kunci tidak ada.</value>
+  <data name="tsmiCustomUploaders.Text" xml:space="preserve">
+    <value>Пользовательские сервисы...</value>
   </data>
-  <data name="TwitterTweetForm_SendTweet_Tweet_error" xml:space="preserve">
-    <value>Kesalahan Tweet</value>
+  <data name="lblFileUploader.Text" xml:space="preserve">
+    <value>Сервис загрузки файлов:</value>
   </data>
-  <data name="CustomFileUploader_Upload_Response_parse_failed_" xml:space="preserve">
-    <value>Gagal mengurai tanggapan.</value>
+  <data name="lblTextUploader.Text" xml:space="preserve">
+    <value>Сервис текстов:</value>
   </data>
-  <data name="UploadersConfigForm_Login_failed" xml:space="preserve">
-    <value>Login gagal.</value>
+  <data name="gbCustomUploaders.Text" xml:space="preserve">
+    <value>Сервисы</value>
   </data>
-  <data name="UploadersConfigForm_LoadSettings_Parent_album_path_e_g_" xml:space="preserve">
-    <value>Jalur album induk mis.</value>
+  <data name="btnClearUploaders.Text" xml:space="preserve">
+    <value>Очистить сервисы...</value>
   </data>
-  <data name="UploadersConfigForm_UpdatePastebinStatus_NotLoggedIn" xml:space="preserve">
-    <value>Belum login</value>
+  <data name="btnFileUploaderTest.Text" xml:space="preserve">
+    <value>Тест</value>
   </data>
-  <data name="UploadersConfigForm_UpdatePastebinStatus_LoggedIn" xml:space="preserve">
-    <value>Sudah login.</value>
+  <data name="btnTextUploaderTest.Text" xml:space="preserve">
+    <value>Тест</value>
   </data>
-  <data name="OAuthControl_Status_LoggedIn" xml:space="preserve">
-    <value>Sudah login.</value>
+  <data name="tsbResponseTextXMLFormat.Text" xml:space="preserve">
+    <value>XML формат</value>
   </data>
-  <data name="OAuthControl_Status_LoginFailed" xml:space="preserve">
-    <value>Login gagal.</value>
+  <data name="btnURLShortenerTest.Text" xml:space="preserve">
+    <value>Тест</value>
   </data>
-  <data name="OAuthControl_Status_NotLoggedIn" xml:space="preserve">
-    <value>Belum login.</value>
+  <data name="btnImageUploaderTest.Text" xml:space="preserve">
+    <value>Тест</value>
   </data>
-  <data name="UploadersConfigForm_Login_successful" xml:space="preserve">
-    <value>Login berhasil.</value>
+  <data name="tpTest.Text" xml:space="preserve">
+    <value>Тест</value>
   </data>
-  <data name="UploadersConfigForm_MegaConfigureTab_Not_configured" xml:space="preserve">
-    <value>Tidak dikonfigurasi</value>
+  <data name="btnURLSharingServiceTest.Text" xml:space="preserve">
+    <value>Тест</value>
   </data>
-  <data name="UploadersConfigForm_oAuthJira_RefreshButtonClicked_Refresh_authorization_is_not_supported_" xml:space="preserve">
-    <value>Segarkan otorisasi tidak didukung.</value>
+  <data name="lblResultThumbnailURL.Text" xml:space="preserve">
+    <value>URL миниатюры:</value>
   </data>
-  <data name="UploadersConfigForm_OneDriveAddFolder_Querying_folders___" xml:space="preserve">
-    <value>Folder kueri...</value>
+  <data name="lblResultDeletionURL.Text" xml:space="preserve">
+    <value>URL удаления:</value>
   </data>
-  <data name="UploadersConfigForm_SendSpaceRegister_SendSpace_Registration___" xml:space="preserve">
-    <value>Pendaftaran SendSpace...</value>
+  <data name="tsbResponseTextJSONFormat.Text" xml:space="preserve">
+    <value>JSON формат</value>
   </data>
-  <data name="UploadersConfigForm_BoxListFolders_Box_refresh_folders_list_failed" xml:space="preserve">
-    <value>Kotak segarkan daftar folder gagal</value>
+  <data name="tpResult.Text" xml:space="preserve">
+    <value>Результат</value>
+  </data>
+  <data name="lblParseResponse.Text" xml:space="preserve">
+    <value>Парсить ответ:</value>
+  </data>
+  <data name="lblRegex.Text" xml:space="preserve">
+    <value>Список regex:</value>
+  </data>
+  <data name="btnJsonAddSyntax.Text" xml:space="preserve">
+    <value>Добавить синтаксис в поле URL</value>
+  </data>
+  <data name="btnXmlAddSyntax.Text" xml:space="preserve">
+    <value>Добавить синтаксис в поле URL</value>
+  </data>
+  <data name="btnRegexAddSyntax.Text" xml:space="preserve">
+    <value>Добавить синтаксис в поле URL</value>
+  </data>
+  <data name="lblFileFormName.Text" xml:space="preserve">
+    <value>Имя файловой формы:</value>
+  </data>
+  <data name="lblName.Text" xml:space="preserve">
+    <value>Имя:</value>
+  </data>
+  <data name="lblDestinationType.Text" xml:space="preserve">
+    <value>Тип сервиса:</value>
+  </data>
+  <data name="mbDestinationType.ToolTip" xml:space="preserve">
+    <value>Сейчас тип сервиса используется, когда пользователи импортируют сервис двойным щелчком по файлу .sxcu.</value>
+  </data>
+  <data name="tsmiUpdateFolder.Text" xml:space="preserve">
+    <value>Обновить папку...</value>
+  </data>
+  <data name="btnDataBeautify.Text" xml:space="preserve">
+    <value>Украсить</value>
+  </data>
+  <data name="btnDataMinify.Text" xml:space="preserve">
+    <value>Сократить</value>
+  </data>
+  <data name="lblURLShortener.Text" xml:space="preserve">
+    <value>Сервис коротких ссылок:</value>
+  </data>
+  <data name="tsmiCustomUploaderGuide.Text" xml:space="preserve">
+    <value>Гайд по пользовательским сервисам...</value>
+  </data>
+  <data name="lblBody.Text" xml:space="preserve">
+    <value>Тело:</value>
   </data>
 </root>

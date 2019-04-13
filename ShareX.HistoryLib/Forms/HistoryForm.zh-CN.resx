@@ -129,18 +129,6 @@
   <data name="cbDateFilter.Text" xml:space="preserve">
     <value>日期筛选：</value>
   </data>
-  <data name="cbFilenameFilterMethod.Items" xml:space="preserve">
-    <value>包含</value>
-  </data>
-  <data name="cbFilenameFilterMethod.Items1" xml:space="preserve">
-    <value>开始于</value>
-  </data>
-  <data name="cbFilenameFilterMethod.Items2" xml:space="preserve">
-    <value>结束于</value>
-  </data>
-  <data name="cbFilenameFilterMethod.Items3" xml:space="preserve">
-    <value>精确匹配</value>
-  </data>
   <data name="cbHostFilter.Text" xml:space="preserve">
     <value>域名筛选：</value>
   </data>

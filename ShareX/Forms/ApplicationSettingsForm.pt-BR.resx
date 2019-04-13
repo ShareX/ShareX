@@ -255,9 +255,6 @@
   <data name="gbSecondaryTextUploaders.Text" xml:space="preserve">
     <value>Hospedagem de texto </value>
   </data>
-  <data name="lblNotePersonalFolderPath.Text" xml:space="preserve">
-    <value>Nota: é necessário reiniciar o programa para que as alterações façam efeito.</value>
-  </data>
   <data name="cbUseCustomScreenshotsPath.Text" xml:space="preserve">
     <value>Pasta de screenshots customizada</value>
   </data>

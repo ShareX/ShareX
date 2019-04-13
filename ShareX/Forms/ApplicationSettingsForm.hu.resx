@@ -144,9 +144,6 @@
   <data name="lblPersonalFolderPath.Text" xml:space="preserve">
     <value>ShareX személyes mappa:</value>
   </data>
-  <data name="lblNotePersonalFolderPath.Text" xml:space="preserve">
-    <value>Megjegyzés: Újra kell indítanod a ShareX-et a személyes mappa beállításaid változásainak életbe lépéséhez.</value>
-  </data>
   <data name="cbPrintDontShowWindowsDialog.Text" xml:space="preserve">
     <value>Ne mutassa a Windowsos nyomtatás dialógust</value>
   </data>

@@ -168,9 +168,6 @@
   <data name="lblPersonalFolderPath.Text" xml:space="preserve">
     <value>Персональная папка ShareX:</value>
   </data>
-  <data name="lblNotePersonalFolderPath.Text" xml:space="preserve">
-    <value>Заметка: Для применения персональной папки нужно перезапустить ShareX.</value>
-  </data>
   <data name="tpIntegration.Text" xml:space="preserve">
     <value>Интеграция</value>
   </data>
@@ -347,5 +344,8 @@
   </data>
   <data name="cbEditWithShareX.Text" xml:space="preserve">
     <value>Показывать пункт "Редактировать в ShareX" в контекстном меню проводника Windows</value>
+  </data>
+  <data name="btnPersonalFolderPathApply.Text" xml:space="preserve">
+    <value>Применить</value>
   </data>
 </root>

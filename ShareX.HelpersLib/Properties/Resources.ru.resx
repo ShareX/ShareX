@@ -360,7 +360,7 @@
     <value>Загрузка со ссылки</value>
   </data>
   <data name="FileDestination_CustomFileUploader" xml:space="preserve">
-    <value>Пользовательский сервис</value>
+    <value>Пользовательский сервис загрузки файлов</value>
   </data>
   <data name="FileDestination_Email" xml:space="preserve">
     <value>Электронная почта</value>
@@ -369,7 +369,7 @@
     <value>Общая папка</value>
   </data>
   <data name="ImageDestination_CustomImageUploader" xml:space="preserve">
-    <value>Пользовательский сервис</value>
+    <value>Пользовательский сервис загрузки картинок</value>
   </data>
   <data name="ImageDestination_FileUploader" xml:space="preserve">
     <value>Файловый сервис</value>
@@ -384,7 +384,7 @@
     <value>Текст ответа</value>
   </data>
   <data name="TextDestination_CustomTextUploader" xml:space="preserve">
-    <value>Пользовательский сервис</value>
+    <value>Пользовательский сервис загрузки текста</value>
   </data>
   <data name="TextDestination_FileUploader" xml:space="preserve">
     <value>Файловый сервис</value>
@@ -393,7 +393,7 @@
     <value>Электронная почта</value>
   </data>
   <data name="UrlShortenerType_CustomURLShortener" xml:space="preserve">
-    <value>Пользовательский сервис</value>
+    <value>Пользовательский сервис коротких ссылок</value>
   </data>
   <data name="AfterCaptureTasks_AddImageEffects" xml:space="preserve">
     <value>Добавить эффекты/водяной знак</value>
@@ -830,7 +830,7 @@
     <value>Захват экрана</value>
   </data>
   <data name="HotkeyType_TextCapture" xml:space="preserve">
-    <value>Захват текста (ORC)</value>
+    <value>Захват текста (OCR)</value>
   </data>
   <data name="AfterCaptureTasks_DoOCR" xml:space="preserve">
     <value>Распознать текст (OCR)</value>
@@ -1146,5 +1146,17 @@
   </data>
   <data name="WavFileNameEditor_EditValue_Browse_for_a_sound_file___" xml:space="preserve">
     <value>Искать звуковой файл...</value>
+  </data>
+  <data name="Extensions_AddContextMenu_SelectAll" xml:space="preserve">
+    <value>Выбрать все</value>
+  </data>
+  <data name="Extensions_AddContextMenu_Undo" xml:space="preserve">
+    <value>Отмена</value>
+  </data>
+  <data name="Extensions_AddContextMenu_Redo" xml:space="preserve">
+    <value>Повтор</value>
+  </data>
+  <data name="Extensions_AddContextMenu_Delete" xml:space="preserve">
+    <value>Удалить</value>
   </data>
 </root>

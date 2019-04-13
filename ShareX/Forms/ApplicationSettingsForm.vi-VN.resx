@@ -147,9 +147,6 @@
   <data name="lblPersonalFolderPath.Text" xml:space="preserve">
     <value>Thư mục riêng của ShareX:</value>
   </data>
-  <data name="lblNotePersonalFolderPath.Text" xml:space="preserve">
-    <value>Lưu ý: Bạn cần mở lại ShareX để các thay đổi thư mục riêng có hiệu lực</value>
-  </data>
   <data name="tpIntegration.Text" xml:space="preserve">
     <value>Tích hợp</value>
   </data>

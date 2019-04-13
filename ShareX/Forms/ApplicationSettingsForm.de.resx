@@ -144,9 +144,6 @@
   <data name="lblPersonalFolderPath.Text" xml:space="preserve">
     <value>ShareX' Eigene Dateien:</value>
   </data>
-  <data name="lblNotePersonalFolderPath.Text" xml:space="preserve">
-    <value>Anmerkung: ShareX muss neu gestartet werden, damit die Änderung am persönlichen Ordner in Kraft treten </value>
-  </data>
   <data name="tpIntegration.Text" xml:space="preserve">
     <value>Integration</value>
   </data>

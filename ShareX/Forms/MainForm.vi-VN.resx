@@ -264,9 +264,6 @@
   <data name="tsmiFileUploaders.Text" xml:space="preserve">
     <value>Dịch vụ tải lên tệp</value>
   </data>
-  <data name="tsmiFTPClient.Text" xml:space="preserve">
-    <value>Trình FTP...</value>
-  </data>
   <data name="tsmiFullscreen.Text" xml:space="preserve">
     <value>Toàn màn hình</value>
   </data>
@@ -435,9 +432,6 @@
   <data name="tsmiTrayFileUploaders.Text" xml:space="preserve">
     <value>Dịch vụ tải lên tệp</value>
   </data>
-  <data name="tsmiTrayFTPClient.Text" xml:space="preserve">
-    <value>Trình FTP...</value>
-  </data>
   <data name="tsmiTrayFullscreen.Text" xml:space="preserve">
     <value>Toàn màn hình</value>
   </data>
@@ -558,9 +552,6 @@
   <data name="tsmiTrayURLShorteners.Text" xml:space="preserve">
     <value>Dịch vụ rút gọn URL</value>
   </data>
-  <data name="tsmiTrayWebpageCapture.Text" xml:space="preserve">
-    <value>Chụp trang web...</value>
-  </data>
   <data name="tsmiTrayWindow.Text" xml:space="preserve">
     <value>Cửa sổ</value>
   </data>
@@ -572,9 +563,6 @@
   </data>
   <data name="tsmiURLShorteners.Text" xml:space="preserve">
     <value>Dịch vụ rút gọn URL</value>
-  </data>
-  <data name="tsmiWebpageCapture.Text" xml:space="preserve">
-    <value>Chụp trang web...</value>
   </data>
   <data name="tsmiWindow.Text" xml:space="preserve">
     <value>Cửa sổ</value>
@@ -666,23 +654,11 @@
   <data name="tsmiHideColumns.Text" xml:space="preserve">
     <value>Ẩn các cột</value>
   </data>
-  <data name="pbDiscordHide.ToolTip" xml:space="preserve">
-    <value>Ẩn nút Discord vĩnh viễn</value>
-  </data>
-  <data name="pbPatreonHide.ToolTip" xml:space="preserve">
-    <value>Ẩn nút Patreon vĩnh viễn</value>
-  </data>
   <data name="tsbNews.Text" xml:space="preserve">
     <value>Mới</value>
   </data>
   <data name="tsmiOCRImage.Text" xml:space="preserve">
     <value>Nhận dạng kí tự từ ảnh...</value>
-  </data>
-  <data name="pbDiscordOpen.ToolTip" xml:space="preserve">
-    <value>Mở liên kết mời vào ShareX Discord</value>
-  </data>
-  <data name="pbPatreonOpen.ToolTip" xml:space="preserve">
-    <value>Mở trang web chiến dịch quyên góp ShareX Patreon</value>
   </data>
   <data name="tsmiCopyMarkdownLink.Text" xml:space="preserve">
     <value>Liên kết Markdown</value>

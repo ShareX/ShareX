@@ -138,15 +138,6 @@
   <data name="btnAmazonS3StorageClassHelp.Text" xml:space="preserve">
     <value>?</value>
   </data>
-  <data name="btnCustomUploaderRegexHelp.Text" xml:space="preserve">
-    <value>?</value>
-  </data>
-  <data name="btnCustomUploaderXPathHelp.Text" xml:space="preserve">
-    <value>?</value>
-  </data>
-  <data name="btnCustomUploadJsonPathHelp.Text" xml:space="preserve">
-    <value>?</value>
-  </data>
   <data name="lblAzureStorageAccessKey.Text" xml:space="preserve">
     <value>Kunci akses:</value>
   </data>
@@ -180,9 +171,6 @@
   <data name="lblSendSpaceUsername.Text" xml:space="preserve">
     <value>Nama pengguna:</value>
   </data>
-  <data name="chCustomUploaderHeadersValue.Text" xml:space="preserve">
-    <value>Nilai</value>
-  </data>
   <data name="lblYourlsUsername.Text" xml:space="preserve">
     <value>Nama pengguna:</value>
   </data>
@@ -198,13 +186,7 @@
   <data name="tpVgyme.Text" xml:space="preserve">
     <value>vgy.me</value>
   </data>
-  <data name="tpCustomUploaderXmlParse.Text" xml:space="preserve">
-    <value>XML</value>
-  </data>
   <data name="lblOwnCloudHost.Text" xml:space="preserve">
-    <value>URL:</value>
-  </data>
-  <data name="lblCustomUploaderURL.Text" xml:space="preserve">
     <value>URL:</value>
   </data>
   <data name="tpTwitter.Text" xml:space="preserve">
@@ -243,22 +225,10 @@
   <data name="tpAdFly.Text" xml:space="preserve">
     <value>adf.ly</value>
   </data>
-  <data name="btnCustomUploaderArgAdd.Text" xml:space="preserve">
-    <value>Tambah</value>
-  </data>
-  <data name="btnCustomUploaderAdd.Text" xml:space="preserve">
-    <value>Tambah</value>
-  </data>
-  <data name="btnCustomUploaderHeaderAdd.Text" xml:space="preserve">
-    <value>Tambah</value>
-  </data>
   <data name="btnFTPAdd.Text" xml:space="preserve">
     <value>Tambah</value>
   </data>
   <data name="btnTwitterAdd.Text" xml:space="preserve">
-    <value>Tambah</value>
-  </data>
-  <data name="btnCustomUploaderRegexpAdd.Text" xml:space="preserve">
     <value>Tambah</value>
   </data>
   <data name="tpBitly.Text" xml:space="preserve">
@@ -277,9 +247,6 @@
     <value>Deskripsi</value>
   </data>
   <data name="btnFTPDuplicate.Text" xml:space="preserve">
-    <value>Duplikat</value>
-  </data>
-  <data name="btnCustomUploaderDuplicate.Text" xml:space="preserve">
     <value>Duplikat</value>
   </data>
   <data name="tpEmail.Text" xml:space="preserve">
@@ -318,9 +285,6 @@
   <data name="lblLithiioEmail.Text" xml:space="preserve">
     <value>Email:</value>
   </data>
-  <data name="lblCustomUploaderFileUploader.Text" xml:space="preserve">
-    <value>Pengunggah file:</value>
-  </data>
   <data name="tpFileUploaders.Text" xml:space="preserve">
     <value>Pengunggah file</value>
   </data>
@@ -329,9 +293,6 @@
   </data>
   <data name="lblFTPFile.Text" xml:space="preserve">
     <value>File:</value>
-  </data>
-  <data name="chCustomUploaderArgumentsValue.Text" xml:space="preserve">
-    <value>Nilai</value>
   </data>
   <data name="tpURLShorteners.Text" xml:space="preserve">
     <value>Penyingkat URL</value>
@@ -346,15 +307,6 @@
     <value>uPaste</value>
   </data>
   <data name="btnTwitterNameUpdate.Text" xml:space="preserve">
-    <value>Perbarui</value>
-  </data>
-  <data name="btnCustomUploaderHeaderUpdate.Text" xml:space="preserve">
-    <value>Perbarui</value>
-  </data>
-  <data name="btnCustomUploaderArgUpdate.Text" xml:space="preserve">
-    <value>Perbarui</value>
-  </data>
-  <data name="btnCustomUploaderRegexpUpdate.Text" xml:space="preserve">
     <value>Perbarui</value>
   </data>
   <data name="chImgurTitle.Text" xml:space="preserve">
@@ -372,28 +324,10 @@
   <data name="tpTextUploaders.Text" xml:space="preserve">
     <value>Pengunggah teks</value>
   </data>
-  <data name="lblCustomUploaderTextUploader.Text" xml:space="preserve">
-    <value>Pengunggah teks:</value>
-  </data>
   <data name="cbAmazonS3StripExtensionText.Text" xml:space="preserve">
     <value>Teks</value>
   </data>
-  <data name="btnCustomUploaderTextUploaderTest.Text" xml:space="preserve">
-    <value>Uji</value>
-  </data>
-  <data name="btnCustomUploaderImageUploaderTest.Text" xml:space="preserve">
-    <value>Uji</value>
-  </data>
   <data name="btnFTPTest.Text" xml:space="preserve">
-    <value>Uji</value>
-  </data>
-  <data name="btnCustomUploaderURLSharingServiceTest.Text" xml:space="preserve">
-    <value>Uji</value>
-  </data>
-  <data name="btnCustomUploaderURLShortenerTest.Text" xml:space="preserve">
-    <value>Uji</value>
-  </data>
-  <data name="btnCustomUploaderFileUploaderTest.Text" xml:space="preserve">
     <value>Uji</value>
   </data>
   <data name="btnCheveretoTestAll.Text" xml:space="preserve">
@@ -429,16 +363,7 @@
   <data name="btnFTPRemove.Text" xml:space="preserve">
     <value>Buang</value>
   </data>
-  <data name="btnCustomUploaderHeaderRemove.Text" xml:space="preserve">
-    <value>Buang</value>
-  </data>
   <data name="btnTwitterRemove.Text" xml:space="preserve">
-    <value>Buang</value>
-  </data>
-  <data name="btnCustomUploaderRegexpRemove.Text" xml:space="preserve">
-    <value>Buang</value>
-  </data>
-  <data name="btnCustomUploaderArgRemove.Text" xml:space="preserve">
     <value>Buang</value>
   </data>
   <data name="txtSeafileUploadLocationRefresh.Text" xml:space="preserve">
@@ -510,9 +435,6 @@
   <data name="lblLithiioPassword.Text" xml:space="preserve">
     <value>Sandi:</value>
   </data>
-  <data name="lblCustomUploaderName.Text" xml:space="preserve">
-    <value>Nama:</value>
-  </data>
   <data name="lblFTPName.Text" xml:space="preserve">
     <value>Nama:</value>
   </data>
@@ -522,13 +444,7 @@
   <data name="chPicasaName.Text" xml:space="preserve">
     <value>Nama</value>
   </data>
-  <data name="chCustomUploaderArgumentsName.Text" xml:space="preserve">
-    <value>Nama</value>
-  </data>
   <data name="colSeafileLibraryName.Text" xml:space="preserve">
-    <value>Nama</value>
-  </data>
-  <data name="chCustomUploaderHeadersName.Text" xml:space="preserve">
     <value>Nama</value>
   </data>
   <data name="tpImageUploaders.Text" xml:space="preserve">
@@ -542,9 +458,6 @@
   </data>
   <data name="lblFTPHost.Text" xml:space="preserve">
     <value>Host:</value>
-  </data>
-  <data name="btnCustomUploaderHelp.Text" xml:space="preserve">
-    <value>Bantuan...</value>
   </data>
   <data name="rbFTPProtocolFTPS.Text" xml:space="preserve">
     <value>FTPS</value>
@@ -578,9 +491,6 @@
   </data>
   <data name="tpFlickr.Text" xml:space="preserve">
     <value>Flickr</value>
-  </data>
-  <data name="tpCustomUploaderJsonParse.Text" xml:space="preserve">
-    <value>JSON</value>
   </data>
   <data name="tpGfycat.Text" xml:space="preserve">
     <value>Gfycat</value>
@@ -708,41 +618,14 @@
   <data name="chPicasaID.Text" xml:space="preserve">
     <value>ID</value>
   </data>
-  <data name="tpCustomUploaderArguments.Text" xml:space="preserve">
-    <value>Argumen:</value>
-  </data>
   <data name="cbAmazonS3CustomCNAME.Text" xml:space="preserve">
     <value>Gunakan domain khusus:</value>
-  </data>
-  <data name="mbCustomUploaderDestinationType.Text" xml:space="preserve">
-    <value>Jenis tujuan</value>
   </data>
   <data name="tpOtherUploaders.Text" xml:space="preserve">
     <value>Pengunggah lainnya</value>
   </data>
-  <data name="tpCustomUploaders.Text" xml:space="preserve">
-    <value>Pengunggah khusus</value>
-  </data>
-  <data name="btnCustomUploaderJsonAddSyntax.Text" xml:space="preserve">
-    <value>Tambah sintaks ke bidang URL</value>
-  </data>
-  <data name="btnCustomUploaderXmlSyntaxAdd.Text" xml:space="preserve">
-    <value>Tambah sintaks ke bidang URL</value>
-  </data>
-  <data name="btnCustomUploaderRegexAddSyntax.Text" xml:space="preserve">
-    <value>Tambah sintaks ke bidang URL</value>
-  </data>
-  <data name="btnCustomUploadersExportAll.Text" xml:space="preserve">
-    <value>Semua...</value>
-  </data>
   <data name="btnPhotobucketAddAlbum.Text" xml:space="preserve">
     <value>Tambah album</value>
-  </data>
-  <data name="btnFTPClient.Text" xml:space="preserve">
-    <value>Klien...</value>
-  </data>
-  <data name="btnCustomUploaderClearUploaders.Text" xml:space="preserve">
-    <value>Bersihkan pengunggah...</value>
   </data>
   <data name="lblGistCustomURL.Text" xml:space="preserve">
     <value>Domain khusus:</value>
@@ -755,9 +638,6 @@
   </data>
   <data name="lblPushbulletDevices.Text" xml:space="preserve">
     <value>Perangkat:</value>
-  </data>
-  <data name="gbCustomUploaders.Text" xml:space="preserve">
-    <value>Pengunggah</value>
   </data>
   <data name="cbAmazonS3StripExtensionVideo.Text" xml:space="preserve">
     <value>Video</value>
@@ -779,12 +659,6 @@
   </data>
   <data name="chBoxFoldersName.Text" xml:space="preserve">
     <value>Nama folder</value>
-  </data>
-  <data name="btnCustomUploaderExamples.Text" xml:space="preserve">
-    <value>Pengunggah khusus...</value>
-  </data>
-  <data name="btnCustomUploaderRemove.Text" xml:space="preserve">
-    <value>Buang</value>
   </data>
   <data name="cbOwnCloud81Compatibility.Text" xml:space="preserve">
     <value>ownCloud 8.1+ kompatibilitas</value>
@@ -843,9 +717,6 @@
   <data name="lblEmailSmtpServer.Text" xml:space="preserve">
     <value>Server SMTP:</value>
   </data>
-  <data name="lblCustomUploaderTestResult.Text" xml:space="preserve">
-    <value>Hasil uji:</value>
-  </data>
   <data name="lblImgurThumbnailType.Text" xml:space="preserve">
     <value>Jenis thumbnail:</value>
   </data>
@@ -875,12 +746,6 @@
   </data>
   <data name="lblFTPURLPath.Text" xml:space="preserve">
     <value>Jalur URL:</value>
-  </data>
-  <data name="lblCustomUploaderURLSharingService.Text" xml:space="preserve">
-    <value>Layanan berbagi URL:</value>
-  </data>
-  <data name="lblCustomUploaderURLShortener.Text" xml:space="preserve">
-    <value>Penyingkat URL:</value>
   </data>
   <data name="lblSeafileAccInfoUsage.Text" xml:space="preserve">
     <value>Penggunaan:</value>
@@ -921,23 +786,11 @@
   <data name="cbPlikIsSecured.Text" xml:space="preserve">
     <value>Nama pengguna dan sandi diperlukan?</value>
   </data>
-  <data name="lblCustomUploaderXPath.Text" xml:space="preserve">
-    <value>JalurX:</value>
-  </data>
   <data name="cbPastebinRaw.Text" xml:space="preserve">
     <value>Gunakan URL mentah</value>
   </data>
   <data name="cbGistUseRawURL.Text" xml:space="preserve">
     <value>Gunakan URL mentah</value>
-  </data>
-  <data name="lblCustomUploaderImageUploader.Text" xml:space="preserve">
-    <value>Pengunggah gambar:</value>
-  </data>
-  <data name="lblCustomUploaderDeletionURL.Text" xml:space="preserve">
-    <value>URL Penghapusan:</value>
-  </data>
-  <data name="lblCustomUploaderThumbnailURL.Text" xml:space="preserve">
-    <value>URL Thumbnail:</value>
   </data>
   <data name="lblGoogleDriveFolderID.Text" xml:space="preserve">
     <value>ID Folder:</value>
@@ -1014,9 +867,6 @@
   <data name="cbSeafileCreateShareableURL.Text" xml:space="preserve">
     <value>Buat URL yang bisa dibagikan</value>
   </data>
-  <data name="mbCustomUploaderDestinationType.ToolTip" xml:space="preserve">
-    <value>Saat ini jenis tujuan digunakan ketika pengguna mengimpor pengunggah khusus dengan mengklik ganda file .sxcu.</value>
-  </data>
   <data name="lblSeafileDaysToExpire.Text" xml:space="preserve">
     <value>Hari kedaluwarsa:</value>
   </data>
@@ -1053,26 +903,11 @@
   <data name="lblGistCustomURLExample.Text" xml:space="preserve">
     <value>Contoh: https://api.github.com</value>
   </data>
-  <data name="lblCustomUploaderXPathExample.Text" xml:space="preserve">
-    <value>Contoh:
-
-/Files/File[1]/URL
-/store/book[1]/title</value>
-  </data>
-  <data name="lblCustomUploaderJsonPathExample.Text" xml:space="preserve">
-    <value>Contoh:
-
-Files[0].URL
-store.book[0].title</value>
-  </data>
   <data name="lblPastebinExpiration.Text" xml:space="preserve">
     <value>Kedaluwarsa:</value>
   </data>
   <data name="btnLithiioFetchAPIKey.Text" xml:space="preserve">
     <value>Ambil kunci API</value>
-  </data>
-  <data name="lblCustomUploaderFileForm.Text" xml:space="preserve">
-    <value>Nama formulir file:</value>
   </data>
   <data name="lblPlikTTL.Text" xml:space="preserve">
     <value>File akan dibuang secara otomatis</value>
@@ -1098,17 +933,11 @@ store.book[0].title</value>
   <data name="btnPaste_eeGetUserKey.Text" xml:space="preserve">
     <value>Dapatkan kunci pengguna...</value>
   </data>
-  <data name="tpCustomUploaderHeaders.Text" xml:space="preserve">
-    <value>Header</value>
-  </data>
   <data name="cbSeafileIgnoreInvalidCert.Text" xml:space="preserve">
     <value>Abaikan sertifikat SSL tidak valid</value>
   </data>
   <data name="lblSharedFolderImages.Text" xml:space="preserve">
     <value>Gambar:</value>
-  </data>
-  <data name="lblCustomUploaderJsonPath.Text" xml:space="preserve">
-    <value>JalurJson:</value>
   </data>
   <data name="cbPolrIsSecret.Text" xml:space="preserve">
     <value>Adalah URL rahasia</value>
@@ -1142,15 +971,6 @@ store.book[0].title</value>
   </data>
   <data name="lblJiraIssuePrefix.Text" xml:space="preserve">
     <value>Awalan isu Jira:</value>
-  </data>
-  <data name="lblCustomUploaderRequestType.Text" xml:space="preserve">
-    <value>Jenis permintaan:</value>
-  </data>
-  <data name="lblCustomUploaderRequestURL.Text" xml:space="preserve">
-    <value>URL permintaan:</value>
-  </data>
-  <data name="lblCustomUploaderResponseType.Text" xml:space="preserve">
-    <value>Jenis tanggapan:</value>
   </data>
   <data name="btnPuushLogin.Text" xml:space="preserve">
     <value>Login</value>
@@ -1238,9 +1058,6 @@ store.book[0].title</value>
   </data>
   <data name="cbPolrUseAPIv1.Text" xml:space="preserve">
     <value>Gunakan API v1 yang ditinggalkan</value>
-  </data>
-  <data name="btnCustomUploaderShowLastResponse.Text" xml:space="preserve">
-    <value>Tampilkan tanggapan terakhir...</value>
   </data>
   <data name="lblFTPTransferMode.Text" xml:space="preserve">
     <value>Mode transfer:</value>
@@ -1347,9 +1164,6 @@ Menggunakan pustaka terenkripsi menonaktifkan berbagi.</value>
   </data>
   <data name="cbPlikRemovable.Text" xml:space="preserve">
     <value>Bisa dibuang</value>
-  </data>
-  <data name="tpCustomUploaderRegexParse.Text" xml:space="preserve">
-    <value>Eks.reg</value>
   </data>
   <data name="tpFTP.Text" xml:space="preserve">
     <value>FTP / FTPS / SFTP</value>

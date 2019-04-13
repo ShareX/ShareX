@@ -131,9 +131,6 @@ Por exemplo, se o seu bucket é chamado bucket.example.com então o URL será ht
   <data name="tpURLShorteners.Text" xml:space="preserve">
     <value>Encurtadores de URL</value>
   </data>
-  <data name="tpFTP.Text" xml:space="preserve">
-    <value>FTP</value>
-  </data>
   <data name="tpDropbox.Text" xml:space="preserve">
     <value>Dropbox</value>
   </data>
@@ -600,111 +597,6 @@ Usar uma biblioteca encriptada desabilita o compartilhamento.</value>
   <data name="tpBitly.Text" xml:space="preserve">
     <value>bit.ly</value>
   </data>
-  <data name="btnCustomUploaderAdd.Text" xml:space="preserve">
-    <value>Adicionar</value>
-  </data>
-  <data name="btnCustomUploaderRemove.Text" xml:space="preserve">
-    <value>Remover</value>
-  </data>
-  <data name="btnCustomUploaderClearUploaders.Text" xml:space="preserve">
-    <value>Limpar serviços de upload</value>
-  </data>
-  <data name="gbCustomUploaders.Text" xml:space="preserve">
-    <value>Serviços</value>
-  </data>
-  <data name="chCustomUploaderHeadersValue.Text" xml:space="preserve">
-    <value>Valor</value>
-  </data>
-  <data name="chCustomUploaderHeadersName.Text" xml:space="preserve">
-    <value>Nome</value>
-  </data>
-  <data name="btnCustomUploaderHeaderRemove.Text" xml:space="preserve">
-    <value>Remover</value>
-  </data>
-  <data name="btnCustomUploaderHeaderAdd.Text" xml:space="preserve">
-    <value>Adicionar</value>
-  </data>
-  <data name="btnCustomUploaderHeaderUpdate.Text" xml:space="preserve">
-    <value>Atualizar</value>
-  </data>
-  <data name="tpCustomUploaderHeaders.Text" xml:space="preserve">
-    <value>Cabeçalhos</value>
-  </data>
-  <data name="chCustomUploaderArgumentsValue.Text" xml:space="preserve">
-    <value>Valor</value>
-  </data>
-  <data name="chCustomUploaderArgumentsName.Text" xml:space="preserve">
-    <value>Nome</value>
-  </data>
-  <data name="btnCustomUploaderArgRemove.Text" xml:space="preserve">
-    <value>Remover</value>
-  </data>
-  <data name="btnCustomUploaderArgAdd.Text" xml:space="preserve">
-    <value>Adicionar</value>
-  </data>
-  <data name="btnCustomUploaderArgUpdate.Text" xml:space="preserve">
-    <value>Atualizar</value>
-  </data>
-  <data name="tpCustomUploaderArguments.Text" xml:space="preserve">
-    <value>Argumentos</value>
-  </data>
-  <data name="lblCustomUploaderXPath.Text" xml:space="preserve">
-    <value>XPath:</value>
-  </data>
-  <data name="lblCustomUploaderXPathExample.Text" xml:space="preserve">
-    <value>Exemplos:
-
-/Files/File[1]/URL
-/store/book[1]/title</value>
-  </data>
-  <data name="btnCustomUploaderXPathHelp.Text" xml:space="preserve">
-    <value>?</value>
-  </data>
-  <data name="btnCustomUploaderXmlSyntaxAdd.Text" xml:space="preserve">
-    <value>Adicionar sintaxe ao campo do URL</value>
-  </data>
-  <data name="tpCustomUploaderXmlParse.Text" xml:space="preserve">
-    <value>XML</value>
-  </data>
-  <data name="lblCustomUploaderJsonPath.Text" xml:space="preserve">
-    <value>JsonPath:</value>
-  </data>
-  <data name="lblCustomUploaderJsonPathExample.Text" xml:space="preserve">
-    <value>Exemplos:
-
-Files[0].URL
-store.book[0].title</value>
-  </data>
-  <data name="btnCustomUploadJsonPathHelp.Text" xml:space="preserve">
-    <value>?</value>
-  </data>
-  <data name="btnCustomUploaderJsonAddSyntax.Text" xml:space="preserve">
-    <value>Adicionar sintaxe ao campo do URL</value>
-  </data>
-  <data name="tpCustomUploaderJsonParse.Text" xml:space="preserve">
-    <value>JSON</value>
-  </data>
-  <data name="btnCustomUploaderRegexpRemove.Text" xml:space="preserve">
-    <value>Remover</value>
-  </data>
-  <data name="btnCustomUploaderRegexpAdd.Text" xml:space="preserve">
-    <value>Adicionar</value>
-  </data>
-  <data name="btnCustomUploaderRegexpUpdate.Text" xml:space="preserve">
-    <value>Atualizar</value>
-  </data>
-  <data name="btnCustomUploaderRegexAddSyntax.Text" xml:space="preserve">
-    <value>Adicionar sintaxe ao campo do URL</value>
-  </data>
-  <data name="btnCustomUploaderRegexHelp.Text" xml:space="preserve">
-    <value>?</value>
-  </data>
-  <data name="tpCustomUploaderRegexParse.Text" xml:space="preserve">
-    <value>Regex</value>
-  </data>
-  <data name="tpCustomUploaders.Text" xml:space="preserve">
-    <value>Hospedagem customizada</value>
-  </data>
   <data name="btnTwitterAdd.Text" xml:space="preserve">
     <value>Adicionar</value>
   </data>
@@ -725,63 +617,6 @@ store.book[0].title</value>
   </data>
   <data name="tpTwitter.Text" xml:space="preserve">
     <value>Twitter</value>
-  </data>
-  <data name="btnCustomUploaderExamples.Text" xml:space="preserve">
-    <value>Exemplos...</value>
-  </data>
-  <data name="btnCustomUploaderHelp.Text" xml:space="preserve">
-    <value>Ajuda...</value>
-  </data>
-  <data name="lblCustomUploaderImageUploader.Text" xml:space="preserve">
-    <value>Envio de imagens:</value>
-  </data>
-  <data name="btnCustomUploaderFileUploaderTest.Text" xml:space="preserve">
-    <value>Testar</value>
-  </data>
-  <data name="lblCustomUploaderFileUploader.Text" xml:space="preserve">
-    <value>Envio de arquivos:</value>
-  </data>
-  <data name="btnCustomUploaderImageUploaderTest.Text" xml:space="preserve">
-    <value>Testar</value>
-  </data>
-  <data name="lblCustomUploaderTestResult.Text" xml:space="preserve">
-    <value>Resultado do teste:</value>
-  </data>
-  <data name="lblCustomUploaderDeletionURL.Text" xml:space="preserve">
-    <value>URL de remoção:</value>
-  </data>
-  <data name="btnCustomUploaderShowLastResponse.Text" xml:space="preserve">
-    <value>Mostrar última resposta...</value>
-  </data>
-  <data name="lblCustomUploaderResponseType.Text" xml:space="preserve">
-    <value>URL de resposta:</value>
-  </data>
-  <data name="lblCustomUploaderTextUploader.Text" xml:space="preserve">
-    <value>Envio de texto:</value>
-  </data>
-  <data name="lblCustomUploaderRequestURL.Text" xml:space="preserve">
-    <value>URL de pedido:</value>
-  </data>
-  <data name="btnCustomUploaderURLShortenerTest.Text" xml:space="preserve">
-    <value>Testar</value>
-  </data>
-  <data name="lblCustomUploaderURLShortener.Text" xml:space="preserve">
-    <value>Encurtador de URL:</value>
-  </data>
-  <data name="btnCustomUploaderTextUploaderTest.Text" xml:space="preserve">
-    <value>Testar</value>
-  </data>
-  <data name="lblCustomUploaderThumbnailURL.Text" xml:space="preserve">
-    <value>URL da miniatura:</value>
-  </data>
-  <data name="lblCustomUploaderFileForm.Text" xml:space="preserve">
-    <value>Nome do formulário de arquivos:</value>
-  </data>
-  <data name="lblCustomUploaderRequestType.Text" xml:space="preserve">
-    <value>Tipo de pedido:</value>
-  </data>
-  <data name="lblCustomUploaderURL.Text" xml:space="preserve">
-    <value>URL:</value>
   </data>
   <data name="lblBitlyDomain.Text" xml:space="preserve">
     <value>Domínio:</value>
@@ -965,9 +800,6 @@ store.book[0].title</value>
   </data>
   <data name="gbPhotobucketAlbums.Text" xml:space="preserve">
     <value>Criar novo álbum</value>
-  </data>
-  <data name="btnCustomUploadersExportAll.Text" xml:space="preserve">
-    <value>Todos...</value>
   </data>
   <data name="lblPuushAPIKey.Text" xml:space="preserve">
     <value>Chave da API:</value>

@@ -29,6 +29,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using View = Manina.Windows.Forms.View;
 
@@ -106,12 +107,20 @@ namespace ShareX.HistoryLib
             List<HistoryItem> historyItems = history.GetHistoryItems();
             List<HistoryItem> filteredHistoryItems = new List<HistoryItem>();
 
+            Regex regex = null;
+
+            if (!string.IsNullOrEmpty(SearchText))
+            {
+                string pattern = Regex.Escape(SearchText).Replace("\\?", ".").Replace("\\*", ".*");
+                regex = new Regex(pattern, RegexOptions.IgnoreCase | RegexOptions.CultureInvariant);
+            }
+
             for (int i = historyItems.Count - 1; i >= 0; i--)
             {
                 HistoryItem hi = historyItems[i];
 
                 if (!string.IsNullOrEmpty(hi.Filepath) && Helpers.IsImageFile(hi.Filepath) &&
-                    (string.IsNullOrEmpty(SearchText) || hi.Filename.Contains(SearchText, StringComparison.InvariantCultureIgnoreCase)) &&
+                    (regex == null || regex.IsMatch(hi.Filename)) &&
                     (!Settings.FilterMissingFiles || File.Exists(hi.Filepath)))
                 {
                     filteredHistoryItems.Add(hi);

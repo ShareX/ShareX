@@ -117,9 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="tsmiFTPClient.Text" xml:space="preserve">
-    <value>FTP 클라이언트...</value>
-  </data>
   <data name="tsddbDebug.Text" xml:space="preserve">
     <value>디버그</value>
   </data>
@@ -396,9 +393,6 @@
   <data name="tsmiTrayFileUploaders.Text" xml:space="preserve">
     <value>파일 업로더</value>
   </data>
-  <data name="tsmiTrayFTPClient.Text" xml:space="preserve">
-    <value>FTP 클라이언트...</value>
-  </data>
   <data name="tsmiTrayFullscreen.Text" xml:space="preserve">
     <value>전체 화면</value>
   </data>
@@ -573,12 +567,6 @@
   <data name="tsmiTrayRectangleTransparent.Text" xml:space="preserve">
     <value>직사각형 (투명)</value>
   </data>
-  <data name="pbPatreonOpen.ToolTip" xml:space="preserve">
-    <value>ShareX Patreon 캠페인 웹 페이지 열기</value>
-  </data>
-  <data name="pbPatreonHide.ToolTip" xml:space="preserve">
-    <value>Patreon 버튼을 영원히 숨기기</value>
-  </data>
   <data name="tsmiTextCapture.Text" xml:space="preserve">
     <value>텍스트 촬영 (OCR)...</value>
   </data>
@@ -590,9 +578,6 @@
   </data>
   <data name="tsmiScrollingCapture.Text" xml:space="preserve">
     <value>스크롤 촬영...</value>
-  </data>
-  <data name="tsmiWebpageCapture.Text" xml:space="preserve">
-    <value>웹 페이지 촬영...</value>
   </data>
   <data name="tsmiImageEditor.Text" xml:space="preserve">
     <value>이미지 편집기...</value>
@@ -711,9 +696,6 @@
   <data name="tsmiTrayUploadText.Text" xml:space="preserve">
     <value>텍스트 업로드...</value>
   </data>
-  <data name="tsmiTrayWebpageCapture.Text" xml:space="preserve">
-    <value>웹 페이지 촬영...</value>
-  </data>
   <data name="tsmiTrayVideoThumbnailer.Text" xml:space="preserve">
     <value>비디오 섬네일 생성기...</value>
   </data>
@@ -732,9 +714,6 @@
   <data name="tsmiOpenURL.ShortcutKeyDisplayString" xml:space="preserve">
     <value>Enter</value>
   </data>
-  <data name="pbDiscordHide.ToolTip" xml:space="preserve">
-    <value>Discord 버튼을 영원히 숨기기</value>
-  </data>
   <data name="tsmiTrayImageCombiner.Text" xml:space="preserve">
     <value>이미지 취합기...</value>
   </data>
@@ -743,9 +722,6 @@
   </data>
   <data name="tsmiTrayImageThumbnailer.Text" xml:space="preserve">
     <value>이미지 섬네일 생성기...</value>
-  </data>
-  <data name="pbDiscordOpen.ToolTip" xml:space="preserve">
-    <value>ShareX Discord 서버 초대 링크 열기</value>
   </data>
   <data name="tsmiOpenActionsToolbar.Text" xml:space="preserve">
     <value>액션 도구상자 토글</value>

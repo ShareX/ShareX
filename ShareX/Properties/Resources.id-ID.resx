@@ -136,9 +136,6 @@ Apakah anda yakin ingin melanjutkan?</value>
   <data name="UploadTask_CreateURLShortenerTask_Shorten_URL___0__" xml:space="preserve">
     <value>Persingkat URL ({0})</value>
   </data>
-  <data name="ScreenRecordForm_StartRecording_There_is_no_valid_CLI_video_encoder_selected_" xml:space="preserve">
-    <value>Tidak ada enkoder video CLI valid terpilih.</value>
-  </data>
   <data name="ActionsToolbar_OpenAtShareXStartup" xml:space="preserve">
     <value>Buka di pengaktifan ShareX</value>
   </data>
@@ -168,9 +165,6 @@ Apakah anda yakin ingin melanjutkan?</value>
   </data>
   <data name="QRCodeForm_InputTextToEncode" xml:space="preserve">
     <value>Input teks untuk dienkode</value>
-  </data>
-  <data name="TaskHelpers_OpenFTPClient_Unable_to_find_valid_FTP_account_" xml:space="preserve">
-    <value>Gagal menemukan akun FTP yang valid.</value>
   </data>
   <data name="AboutForm_AboutForm_Contributors" xml:space="preserve">
     <value>Kontributor</value>
@@ -256,9 +250,6 @@ Apakah Anda ingin mengunduhnya secara otomatis?</value>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_Image_uploader___0_" xml:space="preserve">
     <value>Pengunggah gambar: {0}</value>
   </data>
-  <data name="ScreenRecordForm_StartRecording_CLI_video_encoder_file_does_not_exist__" xml:space="preserve">
-    <value>File enkoder video CLI tidak ada:</value>
-  </data>
   <data name="TaskHelpers_OpenQuickScreenColorPicker_Copied_to_clipboard___0_" xml:space="preserve">
     <value>Disalin ke papan klip: {0}</value>
   </data>
@@ -335,9 +326,6 @@ di sini</value>
   <data name="AboutForm_AboutForm_Language_pt_BR" xml:space="preserve">
     <value>Bahasa Portugis (Brazil)</value>
   </data>
-  <data name="EncoderProgramForm_btnOK_Click_Path_can_t_be_empty_" xml:space="preserve">
-    <value>Jalur tidak boleh kosong.</value>
-  </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_File_uploader___0_" xml:space="preserve">
     <value>Pengunggah file: {0}</value>
   </data>
@@ -346,9 +334,6 @@ di sini</value>
   </data>
   <data name="TaskHelpers_TweetMessage_Tweet_successfully_sent_" xml:space="preserve">
     <value>Tweet berhasil dikirm.</value>
-  </data>
-  <data name="EncoderProgramForm_btnPathBrowse_Click_Choose_encoder_path" xml:space="preserve">
-    <value>Pilih jalur enkoder</value>
   </data>
   <data name="Program_WritePersonalPathConfig_Cant_access_to_file" xml:space="preserve">
     <value>Tidak bisa mengakses file "{0}".
@@ -368,9 +353,6 @@ Jalankan ShareX sebagai administrator untuk mengubah jalur folder pribadi.</valu
   </data>
   <data name="MainForm_UpdateWorkflowsMenu_You_can_add_workflows_from_hotkey_settings___" xml:space="preserve">
     <value>Anda bisa menambahkan alur kerja dari pengaturan tombol cepat...</value>
-  </data>
-  <data name="TaskHelpers_OpenFTPClient_FTP_client_only_supports_FTP_or_FTPS_" xml:space="preserve">
-    <value>Klien FTP hanya mendukung FTP atau FTPS.</value>
   </data>
   <data name="AboutForm_AboutForm_Language_ru" xml:space="preserve">
     <value>Bahasa Rusia</value>
@@ -409,9 +391,6 @@ Apakah Anda ingin memulai ulang ShareX?</value>
   <data name="AutoCaptureForm_Execute_Start" xml:space="preserve">
     <value>Mulai</value>
   </data>
-  <data name="EncoderProgramForm_btnOK_Click_Extension_can_t_be_empty_" xml:space="preserve">
-    <value>Ekstensi tidak boleh kosong.</value>
-  </data>
   <data name="UploadManager_UploadFolder_Folder_upload" xml:space="preserve">
     <value>Unggahan folder</value>
   </data>
@@ -420,9 +399,6 @@ Apakah Anda ingin memulai ulang ShareX?</value>
   </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_After_capture___0_" xml:space="preserve">
     <value>Setelah mengambil: {0}</value>
-  </data>
-  <data name="TaskSettingsForm_ConfigureEncoder_Configure_CLI_video_encoders_____" xml:space="preserve">
-    <value>Konfigurasi enkoder video CLI ---&gt;</value>
   </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_URL_shortener___0_" xml:space="preserve">
     <value>Penyingkat URL: {0}</value>

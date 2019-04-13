@@ -303,9 +303,6 @@
   <data name="cbCaptureClientArea.Text" xml:space="preserve">
     <value>Capturar área del cliente al capturar una ventana</value>
   </data>
-  <data name="cbScreenshotDelay.Text" xml:space="preserve">
-    <value>Retraso de la captura de pantalla:</value>
-  </data>
   <data name="chkOverrideCaptureSettings.Text" xml:space="preserve">
     <value>Sobrescribir configuración de captura</value>
   </data>
@@ -393,9 +390,6 @@
   <data name="tpScreenRecorder.Text" xml:space="preserve">
     <value>Grabadora de pantalla</value>
   </data>
-  <data name="cbScreenRecorderConfirmAbort.Text" xml:space="preserve">
-    <value>Pedir confirmación al interrumpir</value>
-  </data>
   <data name="cbScreenRecorderShowCursor.Text" xml:space="preserve">
     <value>Incluir puntero del ratón en la grabación</value>
   </data>
@@ -413,12 +407,6 @@
   </data>
   <data name="lblScreenRecordFPS.Text" xml:space="preserve">
     <value>Fotogramas por segundo:</value>
-  </data>
-  <data name="chkRunScreencastCLI.Text" xml:space="preserve">
-    <value>Ejecutar CLI después:</value>
-  </data>
-  <data name="btnEncoderConfig.Text" xml:space="preserve">
-    <value>PErfiles</value>
   </data>
   <data name="cbScreenRecorderFixedDuration.Text" xml:space="preserve">
     <value>Duración fija:</value>
@@ -453,9 +441,6 @@
   <data name="lblNameFormatPatternPreviewActiveWindow.Text" xml:space="preserve">
     <value>Vista previa:</value>
   </data>
-  <data name="btnResetAutoIncrementNumber.Text" xml:space="preserve">
-    <value>Restablecer cuenta automática</value>
-  </data>
   <data name="cbFileUploadUseNamePattern.Text" xml:space="preserve">
     <value>Usar formato de nombre para subida de archivos en lugar del nombre real</value>
   </data>
@@ -467,9 +452,6 @@
   </data>
   <data name="cbClipboardUploadShareURL.Text" xml:space="preserve">
     <value>Compartir también el enlace que esté en el portapapeles</value>
-  </data>
-  <data name="chkClipboardUploadURLContents.Text" xml:space="preserve">
-    <value>Descargar y subir el archivo al enlace que esté en el portapapeles</value>
   </data>
   <data name="cbClipboardUploadAutoIndexFolder.Text" xml:space="preserve">
     <value>Indizar la carpeta y subir el índice que esté 

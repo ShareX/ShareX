@@ -144,9 +144,6 @@
   <data name="lblPersonalFolderPath.Text" xml:space="preserve">
     <value>ShareX 个人文件夹：</value>
   </data>
-  <data name="lblNotePersonalFolderPath.Text" xml:space="preserve">
-    <value>注意: 必须重新打开 ShareX 才能使个人文件夹更改生效。</value>
-  </data>
   <data name="tpIntegration.Text" xml:space="preserve">
     <value>综合</value>
   </data>

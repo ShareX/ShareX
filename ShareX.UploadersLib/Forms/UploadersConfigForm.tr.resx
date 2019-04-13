@@ -129,90 +129,6 @@
   <data name="tpURLShorteners.Text" xml:space="preserve">
     <value>Adres kısaltıcılar</value>
   </data>
-  <data name="btnCustomUploaderAdd.Text" xml:space="preserve">
-    <value>Ekle</value>
-  </data>
-  <data name="btnCustomUploaderRemove.Text" xml:space="preserve">
-    <value>Kaldır</value>
-  </data>
-  <data name="btnCustomUploaderClearUploaders.Text" xml:space="preserve">
-    <value>Yükleyicileri temizle</value>
-  </data>
-  <data name="btnCustomUploadersExportAll.Text" xml:space="preserve">
-    <value>Hepsi...</value>
-  </data>
-  <data name="gbCustomUploaders.Text" xml:space="preserve">
-    <value>Yükleyiciler</value>
-  </data>
-  <data name="chCustomUploaderHeadersValue.Text" xml:space="preserve">
-    <value>Değer</value>
-  </data>
-  <data name="chCustomUploaderHeadersName.Text" xml:space="preserve">
-    <value>İsim</value>
-  </data>
-  <data name="btnCustomUploaderHeaderRemove.Text" xml:space="preserve">
-    <value>Kaldır</value>
-  </data>
-  <data name="btnCustomUploaderHeaderAdd.Text" xml:space="preserve">
-    <value>Ekle</value>
-  </data>
-  <data name="btnCustomUploaderHeaderUpdate.Text" xml:space="preserve">
-    <value>Güncelle</value>
-  </data>
-  <data name="tpCustomUploaderHeaders.Text" xml:space="preserve">
-    <value>Başlıklar</value>
-  </data>
-  <data name="chCustomUploaderArgumentsValue.Text" xml:space="preserve">
-    <value>Değer</value>
-  </data>
-  <data name="chCustomUploaderArgumentsName.Text" xml:space="preserve">
-    <value>Ad</value>
-  </data>
-  <data name="btnCustomUploaderArgRemove.Text" xml:space="preserve">
-    <value>Kaldır</value>
-  </data>
-  <data name="btnCustomUploaderArgAdd.Text" xml:space="preserve">
-    <value>Ekle</value>
-  </data>
-  <data name="btnCustomUploaderArgUpdate.Text" xml:space="preserve">
-    <value>Güncelle</value>
-  </data>
-  <data name="tpCustomUploaderArguments.Text" xml:space="preserve">
-    <value>Argümanlar</value>
-  </data>
-  <data name="lblCustomUploaderXPathExample.Text" xml:space="preserve">
-    <value>Örnekler:
-
-/Files/File[1]/URL
-/store/book[1]/title</value>
-  </data>
-  <data name="btnCustomUploaderXmlSyntaxAdd.Text" xml:space="preserve">
-    <value>Adres bölümüne sözdizimini ekle</value>
-  </data>
-  <data name="lblCustomUploaderJsonPathExample.Text" xml:space="preserve">
-    <value>Örnekler:
-
-Files[0].URL
-store.book[0].title</value>
-  </data>
-  <data name="btnCustomUploaderJsonAddSyntax.Text" xml:space="preserve">
-    <value>Adres bölümüne sözdizimini ekle</value>
-  </data>
-  <data name="btnCustomUploaderRegexpRemove.Text" xml:space="preserve">
-    <value>Kaldır</value>
-  </data>
-  <data name="btnCustomUploaderRegexpAdd.Text" xml:space="preserve">
-    <value>Ekle</value>
-  </data>
-  <data name="btnCustomUploaderRegexpUpdate.Text" xml:space="preserve">
-    <value>Güncelle</value>
-  </data>
-  <data name="btnCustomUploaderRegexAddSyntax.Text" xml:space="preserve">
-    <value>Adres bölümüne sözdizimini ekle</value>
-  </data>
-  <data name="tpCustomUploaders.Text" xml:space="preserve">
-    <value>Özel yükleyiciler</value>
-  </data>
   <data name="btnTwitterAdd.Text" xml:space="preserve">
     <value>Ekle</value>
   </data>
@@ -230,60 +146,6 @@ store.book[0].title</value>
   </data>
   <data name="btnTwitterNameUpdate.Text" xml:space="preserve">
     <value>Güncelle</value>
-  </data>
-  <data name="btnCustomUploaderExamples.Text" xml:space="preserve">
-    <value>Örnekler...</value>
-  </data>
-  <data name="btnCustomUploaderHelp.Text" xml:space="preserve">
-    <value>Yardım...</value>
-  </data>
-  <data name="lblCustomUploaderImageUploader.Text" xml:space="preserve">
-    <value>Resim yükleyici:</value>
-  </data>
-  <data name="btnCustomUploaderFileUploaderTest.Text" xml:space="preserve">
-    <value>Test</value>
-  </data>
-  <data name="lblCustomUploaderFileUploader.Text" xml:space="preserve">
-    <value>Dosya yükleyici:</value>
-  </data>
-  <data name="btnCustomUploaderImageUploaderTest.Text" xml:space="preserve">
-    <value>Test</value>
-  </data>
-  <data name="lblCustomUploaderTestResult.Text" xml:space="preserve">
-    <value>Test sonucu:</value>
-  </data>
-  <data name="lblCustomUploaderDeletionURL.Text" xml:space="preserve">
-    <value>Silme adresi:</value>
-  </data>
-  <data name="btnCustomUploaderShowLastResponse.Text" xml:space="preserve">
-    <value>Son cevabı göster...</value>
-  </data>
-  <data name="lblCustomUploaderResponseType.Text" xml:space="preserve">
-    <value>Cevap türü:</value>
-  </data>
-  <data name="lblCustomUploaderTextUploader.Text" xml:space="preserve">
-    <value>Yazı yükleyici:</value>
-  </data>
-  <data name="lblCustomUploaderRequestURL.Text" xml:space="preserve">
-    <value>İstek adresi:</value>
-  </data>
-  <data name="btnCustomUploaderURLShortenerTest.Text" xml:space="preserve">
-    <value>Test</value>
-  </data>
-  <data name="lblCustomUploaderURLShortener.Text" xml:space="preserve">
-    <value>Adres kısaltıcı:</value>
-  </data>
-  <data name="btnCustomUploaderTextUploaderTest.Text" xml:space="preserve">
-    <value>Test</value>
-  </data>
-  <data name="lblCustomUploaderThumbnailURL.Text" xml:space="preserve">
-    <value>Küçük resim adresi:</value>
-  </data>
-  <data name="lblCustomUploaderFileForm.Text" xml:space="preserve">
-    <value>Dosya form adı:</value>
-  </data>
-  <data name="lblCustomUploaderRequestType.Text" xml:space="preserve">
-    <value>İstek türü:</value>
   </data>
   <data name="lblBitlyDomain.Text" xml:space="preserve">
     <value>Alan adı:</value>
@@ -843,9 +705,6 @@ store.book[0].title</value>
   </data>
   <data name="btnFTPRemove.Text" xml:space="preserve">
     <value>Kaldır</value>
-  </data>
-  <data name="btnCustomUploaderDuplicate.Text" xml:space="preserve">
-    <value>Çoğalt</value>
   </data>
   <data name="btnSharedFolderAdd.Text" xml:space="preserve">
     <value>Ekle</value>

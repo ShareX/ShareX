@@ -224,7 +224,7 @@ namespace ShareX
 
                 if (LanguageHelper.ChangeLanguage(Program.Settings.Language) &&
                     MessageBox.Show(Resources.ApplicationSettingsForm_cbLanguage_SelectedIndexChanged_Language_Restart,
-                    "ShareX - Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    Resources.ShareXConfirmation, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     Program.Restart();
                 }
@@ -502,9 +502,8 @@ namespace ShareX
             {
                 lastPersonalPath = currentPersonalPath;
                 btnPersonalFolderPathApply.Enabled = false;
-
-                // TODO: Translate
-                if (MessageBox.Show("ShareX needs to be restarted for the personal folder changes to apply.\r\n\r\nWould you like to restart ShareX?", "ShareX - Confirmation",
+                
+                if (MessageBox.Show(Resources.ShareXNeedsToBeRestartedForThePersonalFolderChangesToApply, Resources.ShareXConfirmation,
                     MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     Program.Restart();

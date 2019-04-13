@@ -61,6 +61,15 @@ namespace ShareX.MediaLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Thumbnails successfully generated..
+        /// </summary>
+        internal static string ThumbnailsSuccessfullyGenerated {
+            get {
+                return ResourceManager.GetString("ThumbnailsSuccessfullyGenerated", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Browse for media file.
         /// </summary>
         internal static string VideoThumbnailerForm_btnBrowse_Click_Browse_for_media_file {

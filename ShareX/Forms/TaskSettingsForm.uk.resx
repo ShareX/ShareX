@@ -207,9 +207,6 @@
   <data name="lblScreenshotDelayInfo.Text" xml:space="preserve">
     <value>секунд</value>
   </data>
-  <data name="cbScreenshotDelay.Text" xml:space="preserve">
-    <value>Затримка для знімка:</value>
-  </data>
   <data name="tpRegionCapture.Text" xml:space="preserve">
     <value>Захоплення області</value>
   </data>
@@ -230,9 +227,6 @@
   </data>
   <data name="lblScreenRecordFPS.Text" xml:space="preserve">
     <value>Запис екрану (кадрів/с):</value>
-  </data>
-  <data name="btnEncoderConfig.Text" xml:space="preserve">
-    <value>Профілі...</value>
   </data>
   <data name="cbScreenRecorderFixedDuration.Text" xml:space="preserve">
     <value>Фіксована тривалість:</value>

@@ -195,9 +195,6 @@
   <data name="tpIntegration.Text" xml:space="preserve">
     <value>Integración</value>
   </data>
-  <data name="lblNotePersonalFolderPath.Text" xml:space="preserve">
-    <value>Nota: es necesario abrir ShareX otra vez para que los cambios de carpeta personal surtan efecto.</value>
-  </data>
   <data name="btnOpenScreenshotsFolder.Text" xml:space="preserve">
     <value>Abrir...</value>
   </data>

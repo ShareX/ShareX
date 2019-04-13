@@ -447,9 +447,6 @@
   <data name="tsmiTrayDonate.Text" xml:space="preserve">
     <value>Пожертвовать…</value>
   </data>
-  <data name="tsmiFTPClient.Text" xml:space="preserve">
-    <value>Клиент FTP…</value>
-  </data>
   <data name="tsmiHashCheck.Text" xml:space="preserve">
     <value>Проверка хеша…</value>
   </data>
@@ -492,9 +489,6 @@
   <data name="tsmiTrayHashCheck.Text" xml:space="preserve">
     <value>Проверка хеша…</value>
   </data>
-  <data name="tsmiTrayFTPClient.Text" xml:space="preserve">
-    <value>Клиент FTP…</value>
-  </data>
   <data name="tsmiTrayImageCombiner.Text" xml:space="preserve">
     <value>Объединитель изображений…</value>
   </data>
@@ -521,12 +515,6 @@
   </data>
   <data name="tsmiTrayScrollingCapture.Text" xml:space="preserve">
     <value>Захват с прокруткой…</value>
-  </data>
-  <data name="tsmiWebpageCapture.Text" xml:space="preserve">
-    <value>Захват веб-страницы…</value>
-  </data>
-  <data name="tsmiTrayWebpageCapture.Text" xml:space="preserve">
-    <value>Захват веб-страницы…</value>
   </data>
   <data name="tsmiVideoThumbnailer.Text" xml:space="preserve">
     <value>Миниатюры из видео…</value>
@@ -624,12 +612,6 @@
   <data name="tsmiHideColumns.Text" xml:space="preserve">
     <value>Скрыть столбцы</value>
   </data>
-  <data name="pbPatreonOpen.ToolTip" xml:space="preserve">
-    <value>Открыть веб-страницу Patreon-кампании ShareX</value>
-  </data>
-  <data name="pbPatreonHide.ToolTip" xml:space="preserve">
-    <value>Навсегда спрятать кнопку Patreon</value>
-  </data>
   <data name="tsmiTrayTextCapture.Text" xml:space="preserve">
     <value>Захват текста (OCR)...</value>
   </data>
@@ -693,12 +675,6 @@
   <data name="tsmiCopyMarkdownLinkedImage.Text" xml:space="preserve">
     <value>Markdown изображение-ссылку</value>
   </data>
-  <data name="pbDiscordHide.ToolTip" xml:space="preserve">
-    <value>Навсегда спрятать кнопку Discord</value>
-  </data>
-  <data name="pbDiscordOpen.ToolTip" xml:space="preserve">
-    <value>Открыть приглашение на Discord сервер ShareX</value>
-  </data>
   <data name="tsmiTrayImageEditor.Text" xml:space="preserve">
     <value>Редактор изображений...</value>
   </data>
@@ -716,5 +692,56 @@
   </data>
   <data name="tsmiTrayShowCursor.Text" xml:space="preserve">
     <value>Показывать курсор</value>
+  </data>
+  <data name="tsmiCustomUploaderSettings.Text" xml:space="preserve">
+    <value>Настройки пользовательских сервисов...</value>
+  </data>
+  <data name="tsmiTrayCustomUploaderSettings.Text" xml:space="preserve">
+    <value>Настройки пользовательских сервисов...</value>
+  </data>
+  <data name="tsmiTrayScreenshotDelay.Text" xml:space="preserve">
+    <value>Задержка скриншота</value>
+  </data>
+  <data name="tsmiTrayScreenshotDelay0.Text" xml:space="preserve">
+    <value>Без задержки</value>
+  </data>
+  <data name="tsmiTrayScreenshotDelay1.Text" xml:space="preserve">
+    <value>1 секунда</value>
+  </data>
+  <data name="tsmiTrayScreenshotDelay2.Text" xml:space="preserve">
+    <value>2 секунды</value>
+  </data>
+  <data name="tsmiTrayScreenshotDelay3.Text" xml:space="preserve">
+    <value>3 секунды</value>
+  </data>
+  <data name="tsmiTrayScreenshotDelay4.Text" xml:space="preserve">
+    <value>4 секунды</value>
+  </data>
+  <data name="tsmiTrayScreenshotDelay5.Text" xml:space="preserve">
+    <value>5 секунд</value>
+  </data>
+  <data name="tsmiScreenshotDelay5.Text" xml:space="preserve">
+    <value>5 секунд</value>
+  </data>
+  <data name="tsmiScreenshotDelay4.Text" xml:space="preserve">
+    <value>4 секунды</value>
+  </data>
+  <data name="tsmiScreenshotDelay3.Text" xml:space="preserve">
+    <value>3 секунды</value>
+  </data>
+  <data name="tsmiScreenshotDelay2.Text" xml:space="preserve">
+    <value>2 секунды</value>
+  </data>
+  <data name="tsmiScreenshotDelay1.Text" xml:space="preserve">
+    <value>1 секунда</value>
+  </data>
+  <data name="tsmiScreenshotDelay0.Text" xml:space="preserve">
+    <value>Без задержки</value>
+  </data>
+  <data name="tsmiScreenshotDelay.Text" xml:space="preserve">
+    <value>Задержка скриншота</value>
+  </data>
+  <data name="tsmiCopyImageDimensions.Text" xml:space="preserve">
+    <value>Размеры изображения</value>
   </data>
 </root>

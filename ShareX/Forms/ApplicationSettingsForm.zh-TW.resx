@@ -144,9 +144,6 @@
   <data name="lblPersonalFolderPath.Text" xml:space="preserve">
     <value>ShareX個人資料夾:</value>
   </data>
-  <data name="lblNotePersonalFolderPath.Text" xml:space="preserve">
-    <value>注意: 必須重新開啟ShareX才能使個人資料夾更改生效.</value>
-  </data>
   <data name="tpIntegration.Text" xml:space="preserve">
     <value>綜合</value>
   </data>

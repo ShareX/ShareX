@@ -142,9 +142,6 @@
     <value>Connecté !
 Dossiers créés :</value>
   </data>
-  <data name="FTPClientForm_FTPClientForm_Connecting_to__0_" xml:space="preserve">
-    <value>Connexion à {0}</value>
-  </data>
   <data name="UploadersConfigForm_oAuthJira_RefreshButtonClicked_Refresh_authorization_is_not_supported_" xml:space="preserve">
     <value>Impossible d'actualiser l'autorisation.</value>
   </data>
@@ -162,9 +159,6 @@ Dossiers créés :</value>
   </data>
   <data name="CustomFileUploader_Upload_Response_parse_failed_" xml:space="preserve">
     <value>L'analyse de la réponse a échoué.</value>
-  </data>
-  <data name="FTPClientForm_FTPCreateDirectory_Directory_name_to_create" xml:space="preserve">
-    <value>Nom du dossier à créer</value>
   </data>
   <data name="UploadersConfigForm_TestCustomUploader_Error__Result_is_empty_" xml:space="preserve">
     <value>Erreur : Le résultat est vide.</value>
@@ -202,26 +196,14 @@ Dossiers créés :</value>
   <data name="TwitterTweetForm_SendTweet_Tweet_error" xml:space="preserve">
     <value>Erreur du Tweet</value>
   </data>
-  <data name="FTPClientForm_FTPClientForm_ShareX_FTP_client" xml:space="preserve">
-    <value>Client FTP de ShareX</value>
-  </data>
   <data name="UploadersConfigForm_FTPOpenClient_Unable_to_find_valid_FTP_account_" xml:space="preserve">
     <value>Impossible de trouver un compte FTP valide.</value>
-  </data>
-  <data name="UploadersConfigForm_FTPOpenClient_FTP_client_only_supports_FTP_or_FTPS_" xml:space="preserve">
-    <value>Le client FTP ne prend en charge que FTP ou FTPS.</value>
   </data>
   <data name="UploadersConfigForm_Remove_all_custom_uploaders_Confirmation" xml:space="preserve">
     <value>Supprimer tous les services de mise en ligne personnalisés ?</value>
   </data>
   <data name="OAuthControl_OAuthControl_PasteVerificationCodeHere" xml:space="preserve">
     <value>Collez le code de vérification ici</value>
-  </data>
-  <data name="UploadersConfigForm_A_header_with_the_same_name_already_exists" xml:space="preserve">
-    <value>Un entête avec le même nom existe déjà.</value>
-  </data>
-  <data name="UploadersConfigForm_An_argument_with_the_same_name_already_exists" xml:space="preserve">
-    <value>Un argument avec le même nom existe déjà.</value>
   </data>
   <data name="UploadersConfigForm_ConnectSFTPAccount_Key_file_not_found" xml:space="preserve">
     <value>Le fichier de clé n'existe pas!</value>

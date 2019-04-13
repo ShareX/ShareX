@@ -207,7 +207,4 @@
   <data name="btnScreenColorPicker.ToolTip" xml:space="preserve">
     <value>Chọn màu từ màn hình</value>
   </data>
-  <data name="lblRecentColors.Text" xml:space="preserve">
-    <value>Các màu gần đây:</value>
-  </data>
 </root>

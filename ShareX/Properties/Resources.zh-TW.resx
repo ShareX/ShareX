@@ -195,9 +195,6 @@
   <data name="MainForm_UpdateWorkflowsMenu_You_can_add_workflows_from_hotkey_settings___" xml:space="preserve">
     <value>您可以從快速鍵設定新增快捷動作...</value>
   </data>
-  <data name="TaskHelpers_OpenFTPClient_FTP_client_only_supports_FTP_or_FTPS_" xml:space="preserve">
-    <value>FTP客戶端只支援FTP和FTPS。</value>
-  </data>
   <data name="ImageData_Write_Error" xml:space="preserve">
     <value>無法寫入圖像到路徑{0}。</value>
   </data>
@@ -220,14 +217,8 @@
   <data name="ChromeForm_btnRegister_Click_Chrome_support_enabled_" xml:space="preserve">
     <value>Chrome瀏覽器擴充支援已啟用。</value>
   </data>
-  <data name="EncoderProgramForm_btnOK_Click_Extension_can_t_be_empty_" xml:space="preserve">
-    <value>擴充不能為空.</value>
-  </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_After_capture___0_" xml:space="preserve">
     <value>擷取後: {0}</value>
-  </data>
-  <data name="TaskSettingsForm_ConfigureEncoder_Configure_CLI_video_encoders_____" xml:space="preserve">
-    <value>設定CLI視訊編碼器---&gt;</value>
   </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_URL_shortener___0_" xml:space="preserve">
     <value>URL短鏈: {0}</value>
@@ -363,9 +354,6 @@
   <data name="HotkeyManager_ShowFailedHotkeys_hotkeys" xml:space="preserve">
     <value>快速鍵</value>
   </data>
-  <data name="EncoderProgramForm_btnOK_Click_Path_can_t_be_empty_" xml:space="preserve">
-    <value>路徑不能為空。</value>
-  </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_File_uploader___0_" xml:space="preserve">
     <value>檔案上傳: {0}</value>
   </data>
@@ -375,15 +363,9 @@
   <data name="TaskHelpers_TweetMessage_Tweet_successfully_sent_" xml:space="preserve">
     <value>推特傳送成功。</value>
   </data>
-  <data name="EncoderProgramForm_btnPathBrowse_Click_Choose_encoder_path" xml:space="preserve">
-    <value>選擇編碼器路徑</value>
-  </data>
   <data name="Program_WritePersonalPathConfig_Cant_access_to_file" xml:space="preserve">
     <value>無法訪問 "{0}" 檔案.
 請以管理員許可權運行ShareX以更改個人資料夾的路徑.</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_CLI_video_encoder_file_does_not_exist__" xml:space="preserve">
-    <value>CLI視訊編碼器的檔案不存在:</value>
   </data>
   <data name="ApplicationSettingsForm_cbSteamShowInApp_CheckedChanged_For_settings_to_take_effect_ShareX_needs_to_be_reopened_from_Steam_" xml:space="preserve">
     <value>為了使設定生效，ShareX需要從Steam重新開放。</value>
@@ -428,15 +410,9 @@
   <data name="UploadTask_DoUploadJob_Uploading" xml:space="preserve">
     <value>上傳</value>
   </data>
-  <data name="ScreenRecordForm_StartRecording_There_is_no_valid_CLI_video_encoder_selected_" xml:space="preserve">
-    <value>沒有選定有效的CLI視訊編碼器。</value>
-  </data>
   <data name="UploadTask_DoUploadJob_You_are_attempting_to_upload_a_large_file" xml:space="preserve">
     <value>你正在嘗試上傳一個大檔案。
 你確定要繼續嗎？</value>
-  </data>
-  <data name="TaskHelpers_OpenFTPClient_Unable_to_find_valid_FTP_account_" xml:space="preserve">
-    <value>無法找到有效的FTP帳戶。</value>
   </data>
   <data name="HotkeySettingsForm_Reset_all_hotkeys_to_defaults_Confirmation" xml:space="preserve">
     <value>重設所有快速鍵為預設值？</value>

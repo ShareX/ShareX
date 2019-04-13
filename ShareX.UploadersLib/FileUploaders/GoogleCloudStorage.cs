@@ -23,8 +23,6 @@
 
 #endregion License Information (GPL v3)
 
-/* https://github.com/matthewburnett */
-
 using Newtonsoft.Json;
 using ShareX.HelpersLib;
 using ShareX.UploadersLib.Properties;
@@ -54,7 +52,8 @@ namespace ShareX.UploadersLib.FileUploaders
                 Prefix = config.GoogleCloudStorageObjectPrefix,
                 RemoveExtensionImage = config.GoogleCloudStorageRemoveExtensionImage,
                 RemoveExtensionText = config.GoogleCloudStorageRemoveExtensionText,
-                RemoveExtensionVideo = config.GoogleCloudStorageRemoveExtensionVideo
+                RemoveExtensionVideo = config.GoogleCloudStorageRemoveExtensionVideo,
+                SetPublicACL = config.GoogleCloudStorageSetPublicACL
             };
         }
 
@@ -69,6 +68,7 @@ namespace ShareX.UploadersLib.FileUploaders
         public bool RemoveExtensionImage { get; set; }
         public bool RemoveExtensionText { get; set; }
         public bool RemoveExtensionVideo { get; set; }
+        public bool SetPublicACL { get; set; }
 
         public OAuth2Info AuthInfo => googleAuth.AuthInfo;
 
@@ -112,16 +112,20 @@ namespace ShareX.UploadersLib.FileUploaders
 
             GoogleCloudStorageMetadata googleCloudStorageMetadata = new GoogleCloudStorageMetadata
             {
-                name = uploadPath,
-                acl = new GoogleCloudStorageAcl[]
+                name = uploadPath
+            };
+
+            if (SetPublicACL)
+            {
+                googleCloudStorageMetadata.acl = new GoogleCloudStorageAcl[]
                 {
                     new GoogleCloudStorageAcl
                     {
                         entity = "allUsers",
                         role = "READER"
                     }
-                }
-            };
+                };
+            }
 
             string serializedGoogleCloudStorageMetadata = JsonConvert.SerializeObject(googleCloudStorageMetadata);
 

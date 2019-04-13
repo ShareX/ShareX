@@ -131,78 +131,6 @@
   <data name="tpURLShorteners.Text" xml:space="preserve">
     <value>URL短链：</value>
   </data>
-  <data name="btnCustomUploaderAdd.Text" xml:space="preserve">
-    <value>添加</value>
-  </data>
-  <data name="btnCustomUploaderRemove.Text" xml:space="preserve">
-    <value>删除</value>
-  </data>
-  <data name="btnCustomUploaderClearUploaders.Text" xml:space="preserve">
-    <value>清除上传</value>
-  </data>
-  <data name="btnCustomUploadersExportAll.Text" xml:space="preserve">
-    <value>全部...</value>
-  </data>
-  <data name="gbCustomUploaders.Text" xml:space="preserve">
-    <value>上传至：</value>
-  </data>
-  <data name="chCustomUploaderHeadersValue.Text" xml:space="preserve">
-    <value>值</value>
-  </data>
-  <data name="chCustomUploaderHeadersName.Text" xml:space="preserve">
-    <value>名称</value>
-  </data>
-  <data name="btnCustomUploaderHeaderRemove.Text" xml:space="preserve">
-    <value>删除</value>
-  </data>
-  <data name="btnCustomUploaderHeaderAdd.Text" xml:space="preserve">
-    <value>添加</value>
-  </data>
-  <data name="btnCustomUploaderHeaderUpdate.Text" xml:space="preserve">
-    <value>更新</value>
-  </data>
-  <data name="tpCustomUploaderHeaders.Text" xml:space="preserve">
-    <value>头部</value>
-  </data>
-  <data name="chCustomUploaderArgumentsValue.Text" xml:space="preserve">
-    <value>值</value>
-  </data>
-  <data name="chCustomUploaderArgumentsName.Text" xml:space="preserve">
-    <value>名称</value>
-  </data>
-  <data name="btnCustomUploaderArgRemove.Text" xml:space="preserve">
-    <value>删除</value>
-  </data>
-  <data name="btnCustomUploaderArgAdd.Text" xml:space="preserve">
-    <value>添加</value>
-  </data>
-  <data name="btnCustomUploaderArgUpdate.Text" xml:space="preserve">
-    <value>更新</value>
-  </data>
-  <data name="tpCustomUploaderArguments.Text" xml:space="preserve">
-    <value>参数</value>
-  </data>
-  <data name="btnCustomUploaderXmlSyntaxAdd.Text" xml:space="preserve">
-    <value>URL字段加入语法</value>
-  </data>
-  <data name="btnCustomUploaderJsonAddSyntax.Text" xml:space="preserve">
-    <value>URL字段加入语法</value>
-  </data>
-  <data name="btnCustomUploaderRegexpRemove.Text" xml:space="preserve">
-    <value>删除</value>
-  </data>
-  <data name="btnCustomUploaderRegexpAdd.Text" xml:space="preserve">
-    <value>添加</value>
-  </data>
-  <data name="btnCustomUploaderRegexpUpdate.Text" xml:space="preserve">
-    <value>更新</value>
-  </data>
-  <data name="btnCustomUploaderRegexAddSyntax.Text" xml:space="preserve">
-    <value>URL字段加入语法</value>
-  </data>
-  <data name="tpCustomUploaders.Text" xml:space="preserve">
-    <value>自定义上传</value>
-  </data>
   <data name="btnTwitterAdd.Text" xml:space="preserve">
     <value>添加</value>
   </data>
@@ -220,60 +148,6 @@
   </data>
   <data name="btnTwitterNameUpdate.Text" xml:space="preserve">
     <value>更新</value>
-  </data>
-  <data name="btnCustomUploaderExamples.Text" xml:space="preserve">
-    <value>例如...</value>
-  </data>
-  <data name="btnCustomUploaderHelp.Text" xml:space="preserve">
-    <value>帮助...</value>
-  </data>
-  <data name="lblCustomUploaderImageUploader.Text" xml:space="preserve">
-    <value>图片上传：</value>
-  </data>
-  <data name="btnCustomUploaderFileUploaderTest.Text" xml:space="preserve">
-    <value>测试</value>
-  </data>
-  <data name="lblCustomUploaderFileUploader.Text" xml:space="preserve">
-    <value>文件上传：</value>
-  </data>
-  <data name="btnCustomUploaderImageUploaderTest.Text" xml:space="preserve">
-    <value>测试</value>
-  </data>
-  <data name="lblCustomUploaderTestResult.Text" xml:space="preserve">
-    <value>测试结果：</value>
-  </data>
-  <data name="lblCustomUploaderDeletionURL.Text" xml:space="preserve">
-    <value>删除URL：</value>
-  </data>
-  <data name="btnCustomUploaderShowLastResponse.Text" xml:space="preserve">
-    <value>显示最近回应...</value>
-  </data>
-  <data name="lblCustomUploaderResponseType.Text" xml:space="preserve">
-    <value>响应类型：</value>
-  </data>
-  <data name="lblCustomUploaderTextUploader.Text" xml:space="preserve">
-    <value>文本上传：</value>
-  </data>
-  <data name="lblCustomUploaderRequestURL.Text" xml:space="preserve">
-    <value>请求URL：</value>
-  </data>
-  <data name="btnCustomUploaderURLShortenerTest.Text" xml:space="preserve">
-    <value>测试</value>
-  </data>
-  <data name="lblCustomUploaderURLShortener.Text" xml:space="preserve">
-    <value>URL短链：</value>
-  </data>
-  <data name="btnCustomUploaderTextUploaderTest.Text" xml:space="preserve">
-    <value>测试</value>
-  </data>
-  <data name="lblCustomUploaderThumbnailURL.Text" xml:space="preserve">
-    <value>缩略图网址：</value>
-  </data>
-  <data name="lblCustomUploaderFileForm.Text" xml:space="preserve">
-    <value>文件表单名称：</value>
-  </data>
-  <data name="lblCustomUploaderRequestType.Text" xml:space="preserve">
-    <value>请求类型：</value>
   </data>
   <data name="lblBitlyDomain.Text" xml:space="preserve">
     <value>域名：</value>
@@ -768,21 +642,6 @@
   <data name="gbPhotobucketAlbums.Text" xml:space="preserve">
     <value>创建新相册</value>
   </data>
-  <data name="lblCustomUploaderJsonPathExample.Text" xml:space="preserve">
-    <value>示例：
-
-Files[0].URL
-store.book[0].title</value>
-  </data>
-  <data name="lblCustomUploaderXPathExample.Text" xml:space="preserve">
-    <value>示例：
-
-/Files/File[1]/URL
-/store/book[1]/title</value>
-  </data>
-  <data name="lblCustomUploaderURL.Text" xml:space="preserve">
-    <value>URL：</value>
-  </data>
   <data name="btnPuushLogin.Text" xml:space="preserve">
     <value>登录</value>
   </data>
@@ -816,9 +675,6 @@ store.book[0].title</value>
   <data name="cbHastebinUseFileExtension.Text" xml:space="preserve">
     <value>使用文件扩展名显示语法高亮（.txt除外）</value>
   </data>
-  <data name="mbCustomUploaderDestinationType.Text" xml:space="preserve">
-    <value>目的类型</value>
-  </data>
   <data name="cbFTPAppendRemoteDirectory.Text" xml:space="preserve">
     <value>添加远程目录到URL路径</value>
   </data>
@@ -842,9 +698,6 @@ store.book[0].title</value>
   </data>
   <data name="cbFTPRemoveFileExtension.Text" xml:space="preserve">
     <value>从URL路径移除文件扩展名</value>
-  </data>
-  <data name="btnFTPClient.Text" xml:space="preserve">
-    <value>客户端...</value>
   </data>
   <data name="lblFTPPort.Text" xml:space="preserve">
     <value>端口：</value>
@@ -1086,9 +939,6 @@ store.book[0].title</value>
   <data name="tpChevereto.Text" xml:space="preserve">
     <value>Chevereto</value>
   </data>
-  <data name="mbCustomUploaderDestinationType.ToolTip" xml:space="preserve">
-    <value>当用户双击.sxcu文件导入自定义上载器时，将使用目的类型。</value>
-  </data>
   <data name="lblAzureStorageCustomDomain.Text" xml:space="preserve">
     <value>自定义域：</value>
   </data>
@@ -1099,9 +949,6 @@ store.book[0].title</value>
     <value>域名：</value>
   </data>
   <data name="btnSharedFolderDuplicate.Text" xml:space="preserve">
-    <value>复制</value>
-  </data>
-  <data name="btnCustomUploaderDuplicate.Text" xml:space="preserve">
     <value>复制</value>
   </data>
   <data name="tpDropbox.Text" xml:space="preserve">
@@ -1194,12 +1041,6 @@ store.book[0].title</value>
   <data name="gbJiraServer.Text" xml:space="preserve">
     <value>Jira服务器</value>
   </data>
-  <data name="tpCustomUploaderJsonParse.Text" xml:space="preserve">
-    <value>JSON</value>
-  </data>
-  <data name="lblCustomUploaderJsonPath.Text" xml:space="preserve">
-    <value>JsonPath:</value>
-  </data>
   <data name="tpLambda.Text" xml:space="preserve">
     <value>Lambda</value>
   </data>
@@ -1211,9 +1052,6 @@ store.book[0].title</value>
   </data>
   <data name="tpMega.Text" xml:space="preserve">
     <value>Mega</value>
-  </data>
-  <data name="lblCustomUploaderName.Text" xml:space="preserve">
-    <value>名称：</value>
   </data>
   <data name="tpOneDrive.Text" xml:space="preserve">
     <value>OneDrive</value>
@@ -1266,9 +1104,6 @@ store.book[0].title</value>
   <data name="tpPuush.Text" xml:space="preserve">
     <value>puush</value>
   </data>
-  <data name="tpCustomUploaderRegexParse.Text" xml:space="preserve">
-    <value>正则表达式</value>
-  </data>
   <data name="btnSharedFolderRemove.Text" xml:space="preserve">
     <value>删除</value>
   </data>
@@ -1302,9 +1137,6 @@ store.book[0].title</value>
   <data name="tpSul.Text" xml:space="preserve">
     <value>s-ul</value>
   </data>
-  <data name="btnCustomUploaderURLSharingServiceTest.Text" xml:space="preserve">
-    <value>测试</value>
-  </data>
   <data name="cbAmazonS3StripExtensionText.Text" xml:space="preserve">
     <value>文本</value>
   </data>
@@ -1329,9 +1161,6 @@ store.book[0].title</value>
   <data name="lblGoogleCloudStoragePathPreviewLabel.Text" xml:space="preserve">
     <value>URL预览：</value>
   </data>
-  <data name="lblCustomUploaderURLSharingService.Text" xml:space="preserve">
-    <value>URL分享：</value>
-  </data>
   <data name="lblSeafileAccInfoUsage.Text" xml:space="preserve">
     <value>用法：</value>
   </data>
@@ -1355,12 +1184,6 @@ store.book[0].title</value>
   </data>
   <data name="lblFirebaseWebAPIKey.Text" xml:space="preserve">
     <value>Web API密钥：</value>
-  </data>
-  <data name="tpCustomUploaderXmlParse.Text" xml:space="preserve">
-    <value>XML</value>
-  </data>
-  <data name="lblCustomUploaderXPath.Text" xml:space="preserve">
-    <value>XPath:</value>
   </data>
   <data name="tpYourls.Text" xml:space="preserve">
     <value>YOURLS</value>

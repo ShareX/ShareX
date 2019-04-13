@@ -30,6 +30,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace ShareX.HistoryLib
@@ -149,7 +150,9 @@ namespace ShareX.HistoryLib
 
             if (!string.IsNullOrEmpty(filenameFilter))
             {
-                result = result.Where(x => x.Filename != null && x.Filename.Contains(filenameFilter, StringComparison.InvariantCultureIgnoreCase));
+                string pattern = Regex.Escape(filenameFilter).Replace("\\?", ".").Replace("\\*", ".*");
+                Regex regex = new Regex(pattern, RegexOptions.IgnoreCase | RegexOptions.CultureInvariant);
+                result = result.Where(x => x.Filename != null && regex.IsMatch(x.Filename));
             }
 
             string urlFilter = txtURLFilter.Text;

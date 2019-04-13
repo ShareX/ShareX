@@ -267,9 +267,6 @@
   <data name="tsmiEditSelectedFile.Text" xml:space="preserve">
     <value>Editar imagem...</value>
   </data>
-  <data name="tsmiFTPClient.Text" xml:space="preserve">
-    <value>Cliente FTP...</value>
-  </data>
   <data name="tsmiFullscreen.Text" xml:space="preserve">
     <value>Tela cheia</value>
   </data>
@@ -413,9 +410,6 @@
   </data>
   <data name="tsmiTrayAfterUploadTasks.Text" xml:space="preserve">
     <value>Pós-upload</value>
-  </data>
-  <data name="tsmiTrayFTPClient.Text" xml:space="preserve">
-    <value>Cliente FTP...</value>
   </data>
   <data name="tsmiTrayHistory.Text" xml:space="preserve">
     <value>Histórico...</value>
@@ -570,17 +564,11 @@
   <data name="tsmiTrayURLSharingServices.Text" xml:space="preserve">
     <value>Serviços de compartilhamento de URLs</value>
   </data>
-  <data name="tsmiTrayWebpageCapture.Text" xml:space="preserve">
-    <value>Capturar página da web...</value>
-  </data>
   <data name="tsmiTrayWorkflows.Text" xml:space="preserve">
     <value>Workflows</value>
   </data>
   <data name="tsmiURLSharingServices.Text" xml:space="preserve">
     <value>Serviços de compartilhamento de URLs</value>
-  </data>
-  <data name="tsmiWebpageCapture.Text" xml:space="preserve">
-    <value>Captura de página da web...</value>
   </data>
   <data name="tsmiTrayVideoThumbnailer.Text" xml:space="preserve">
     <value>Miniaturizador de vídeo...</value>
@@ -623,12 +611,6 @@
   </data>
   <data name="tsmiHideColumns.Text" xml:space="preserve">
     <value>Esconder colunas</value>
-  </data>
-  <data name="pbPatreonOpen.ToolTip" xml:space="preserve">
-    <value>Abrir página do Patreon do ShareX</value>
-  </data>
-  <data name="pbPatreonHide.ToolTip" xml:space="preserve">
-    <value>Esconder botão do Patreon permanentemente</value>
   </data>
   <data name="tsmiTextCapture.Text" xml:space="preserve">
     <value>Captura de texto (OCR)...</value>

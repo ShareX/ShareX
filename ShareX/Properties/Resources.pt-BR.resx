@@ -195,9 +195,6 @@ Você gostaria de baixar automaticamente?</value>
   <data name="MainForm_UpdateWorkflowsMenu_You_can_add_workflows_from_hotkey_settings___" xml:space="preserve">
     <value>Você pode adicionar workflows através das opções de atalho</value>
   </data>
-  <data name="TaskHelpers_OpenFTPClient_FTP_client_only_supports_FTP_or_FTPS_" xml:space="preserve">
-    <value>Cliente FTP suporta apenas FTP ou FTPS.</value>
-  </data>
   <data name="ImageData_Write_Error" xml:space="preserve">
     <value>Não foi possível salvar imagem no local {0}.</value>
   </data>
@@ -220,14 +217,8 @@ Gostaria de reiniciar agora?</value>
   <data name="ChromeForm_btnRegister_Click_Chrome_support_enabled_" xml:space="preserve">
     <value>Suporte ao Chrome habilitado.</value>
   </data>
-  <data name="EncoderProgramForm_btnOK_Click_Extension_can_t_be_empty_" xml:space="preserve">
-    <value>Extensão não pode estar vazia.</value>
-  </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_After_capture___0_" xml:space="preserve">
     <value>Depois da captura: {0}</value>
-  </data>
-  <data name="TaskSettingsForm_ConfigureEncoder_Configure_CLI_video_encoders_____" xml:space="preserve">
-    <value>Configurar codificadores CLI de vídeo ---&gt;</value>
   </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_URL_shortener___0_" xml:space="preserve">
     <value>Encurtador de URL: {0}</value>
@@ -363,9 +354,6 @@ aqui</value>
   <data name="HotkeyManager_ShowFailedHotkeys_hotkeys" xml:space="preserve">
     <value>atalhos</value>
   </data>
-  <data name="EncoderProgramForm_btnOK_Click_Path_can_t_be_empty_" xml:space="preserve">
-    <value>Caminho não pode estar vazio.</value>
-  </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_File_uploader___0_" xml:space="preserve">
     <value>Envio de arquivos: {0}</value>
   </data>
@@ -375,15 +363,9 @@ aqui</value>
   <data name="TaskHelpers_TweetMessage_Tweet_successfully_sent_" xml:space="preserve">
     <value>Tuíte enviado com sucesso.</value>
   </data>
-  <data name="EncoderProgramForm_btnPathBrowse_Click_Choose_encoder_path" xml:space="preserve">
-    <value>Escolher local do programa de codificação</value>
-  </data>
   <data name="Program_WritePersonalPathConfig_Cant_access_to_file" xml:space="preserve">
     <value>Não foi possivel acessar "{0}".
 Por favor, execute o ShareX como administrador para mudar a pasta de destino.</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_CLI_video_encoder_file_does_not_exist__" xml:space="preserve">
-    <value>Arquivo de codificação CLI de vídeo não existe:</value>
   </data>
   <data name="ApplicationSettingsForm_cbSteamShowInApp_CheckedChanged_For_settings_to_take_effect_ShareX_needs_to_be_reopened_from_Steam_" xml:space="preserve">
     <value>Para que as alterações tenham efeito o programa precisa ser reaberto na Steam.</value>
@@ -418,12 +400,6 @@ Pressione "Não" para cancelar e desabilitar o upload automático.</value>
   </data>
   <data name="UploadTask_DoUploadJob_Uploading" xml:space="preserve">
     <value>Enviando</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_There_is_no_valid_CLI_video_encoder_selected_" xml:space="preserve">
-    <value>Não há um codificador CLI de vídeo válido.</value>
-  </data>
-  <data name="TaskHelpers_OpenFTPClient_Unable_to_find_valid_FTP_account_" xml:space="preserve">
-    <value>Não foi possível encontrar uma conta FTP válida.</value>
   </data>
   <data name="ScreenRecordForm_DownloaderForm_InstallRequested_FFmpeg_successfully_downloaded_" xml:space="preserve">
     <value>FFmpeg baixado com sucesso.</value>

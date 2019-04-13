@@ -150,9 +150,6 @@
   <data name="cbCaptureClientArea.Text" xml:space="preserve">
     <value>창을 촬영할 때 제목 표시줄이나 경계는 제외하기</value>
   </data>
-  <data name="cbScreenshotDelay.Text" xml:space="preserve">
-    <value>촬영 딜레이:</value>
-  </data>
   <data name="tpRegionCapture.Text" xml:space="preserve">
     <value>영역 촬영</value>
   </data>
@@ -225,9 +222,6 @@
   <data name="cbClipboardUploadAutoIndexFolder.Text" xml:space="preserve">
     <value>클립보드가 폴더 경로를 포함하고 있으면 폴더 색인을 생성하고 그 색인을 업로드하기</value>
   </data>
-  <data name="chkClipboardUploadURLContents.Text" xml:space="preserve">
-    <value>클립보드가 파일 URL을 포함하고 있으면 그 파일을 다운로드한 뒤 업로드하기</value>
-  </data>
   <data name="cbClipboardUploadShareURL.Text" xml:space="preserve">
     <value>클립보드가 URL을 포함하고 있으면 URL 공유 서비스를 이용해 공유하기</value>
   </data>
@@ -239,9 +233,6 @@
   </data>
   <data name="cbFileUploadUseNamePattern.Text" xml:space="preserve">
     <value>파일을 업로드할 때에도 실제 파일명 대신 이름 패턴을 사용하기</value>
-  </data>
-  <data name="btnResetAutoIncrementNumber.Text" xml:space="preserve">
-    <value>자동 증가 카운터 초기화</value>
   </data>
   <data name="lblNameFormatPatternPreviewActiveWindow.Text" xml:space="preserve">
     <value>미리보기:</value>
@@ -260,12 +251,6 @@
   </data>
   <data name="cbScreenRecorderFixedDuration.Text" xml:space="preserve">
     <value>지정된 길이만큼 녹화:</value>
-  </data>
-  <data name="btnEncoderConfig.Text" xml:space="preserve">
-    <value>프로필...</value>
-  </data>
-  <data name="chkRunScreencastCLI.Text" xml:space="preserve">
-    <value>녹화 후 CLI 실행:</value>
   </data>
   <data name="lblScreenRecordFPS.Text" xml:space="preserve">
     <value>FFmpeg 초당 프레임 수:</value>
@@ -554,9 +539,6 @@
   </data>
   <data name="lblRegionCaptureSnapSizes.Text" xml:space="preserve">
     <value>"Alt" 키를 누르고 있으면 달라붙을 영역 크기:</value>
-  </data>
-  <data name="cbScreenRecorderConfirmAbort.Text" xml:space="preserve">
-    <value>중단 할 때 확인을 요청</value>
   </data>
   <data name="cbFileUploadReplaceProblematicCharacters.Text" xml:space="preserve">
     <value>업로드 할 때 URL에 문제가있는 문자를 밑줄로 바꾸기</value>

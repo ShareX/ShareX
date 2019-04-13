@@ -207,9 +207,6 @@
   <data name="tsmiIndexFolder.Text" xml:space="preserve">
     <value>Indexmap...</value>
   </data>
-  <data name="tsmiFTPClient.Text" xml:space="preserve">
-    <value>FTP programma...</value>
-  </data>
   <data name="tsmiTweetMessage.Text" xml:space="preserve">
     <value>Tweet bericht...</value>
   </data>
@@ -459,9 +456,6 @@
   <data name="tsmiTrayIndexFolder.Text" xml:space="preserve">
     <value>Indexmap...</value>
   </data>
-  <data name="tsmiTrayFTPClient.Text" xml:space="preserve">
-    <value>FTP programma...</value>
-  </data>
   <data name="tsmiTrayTweetMessage.Text" xml:space="preserve">
     <value>Tweet bericht...</value>
   </data>
@@ -573,12 +567,6 @@
   <data name="tsmiTrayColorPicker.Text" xml:space="preserve">
     <value>Kleurenkiezer...</value>
   </data>
-  <data name="tsmiTrayWebpageCapture.Text" xml:space="preserve">
-    <value>Webpagina vastleggen...</value>
-  </data>
-  <data name="tsmiWebpageCapture.Text" xml:space="preserve">
-    <value>Webpagina vastleggen...</value>
-  </data>
   <data name="tsmiTrayToggleHotkeys.Text" xml:space="preserve">
     <value>Schakel sneltoetsen uit</value>
   </data>
@@ -636,26 +624,14 @@
   <data name="tsmiHideColumns.Text" xml:space="preserve">
     <value>Kolommen verbergen</value>
   </data>
-  <data name="pbDiscordOpen.ToolTip" xml:space="preserve">
-    <value>Open ShareX Discord server uitnodiging link</value>
-  </data>
   <data name="tsmiTrayShortenURL.Text" xml:space="preserve">
     <value>Verkort URL...</value>
   </data>
   <data name="tsbDonate.Text" xml:space="preserve">
     <value>Doneer...</value>
   </data>
-  <data name="pbDiscordHide.ToolTip" xml:space="preserve">
-    <value>Verberg Discord knop voor altijd</value>
-  </data>
   <data name="btnCloseNews.Text" xml:space="preserve">
     <value>Sluiten</value>
-  </data>
-  <data name="pbPatreonHide.ToolTip" xml:space="preserve">
-    <value>Verberg Patreon knop voorgoed</value>
-  </data>
-  <data name="pbPatreonOpen.ToolTip" xml:space="preserve">
-    <value>Open ShareX Patreon</value>
   </data>
   <data name="tsmiTextCapture.Text" xml:space="preserve">
     <value>Tekst vastleggen (OCR)...</value>

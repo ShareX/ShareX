@@ -171,9 +171,6 @@
   <data name="cbCaptureClientArea.Text" xml:space="preserve">
     <value>Cattura Area Client durante la Cattura Finestra o di una Finestra Attiva</value>
   </data>
-  <data name="cbScreenshotDelay.Text" xml:space="preserve">
-    <value>Ritardo Screenshot:</value>
-  </data>
   <data name="chkOverrideCaptureSettings.Text" xml:space="preserve">
     <value>Sostituisci Impostazioni Cattura</value>
   </data>
@@ -477,9 +474,6 @@
   <data name="lblGIFFPS.Text" xml:space="preserve">
     <value>FPS GIF:</value>
   </data>
-  <data name="btnEncoderConfig.Text" xml:space="preserve">
-    <value>Profili...</value>
-  </data>
   <data name="cbRegionCaptureDetectWindows.Text" xml:space="preserve">
     <value>Determina Regioni Finestra e Consenti Cattura al Passaggio del Cursore</value>
   </data>
@@ -488,9 +482,6 @@
   </data>
   <data name="cbRegionCaptureUseDimming.Text" xml:space="preserve">
     <value>Scurisci lo Sfondo per Distinguere meglio la Selezione (Influisce sulla velocità di avvio)</value>
-  </data>
-  <data name="chkRunScreencastCLI.Text" xml:space="preserve">
-    <value>Esegui CLI dopo:</value>
   </data>
   <data name="cbScreenRecorderFixedDuration.Text" xml:space="preserve">
     <value>Durata Fissa:</value>
@@ -507,9 +498,6 @@
   <data name="lblNameFormatPatternActiveWindow.Text" xml:space="preserve">
     <value>Struttura Nome per Cattura Finestra:</value>
   </data>
-  <data name="btnResetAutoIncrementNumber.Text" xml:space="preserve">
-    <value>Ripristina Numero d'Incremento Automatico</value>
-  </data>
   <data name="cbFileUploadUseNamePattern.Text" xml:space="preserve">
     <value>Usa Struttura Nome per il Caricamento invece del Nome File</value>
   </data>
@@ -518,9 +506,6 @@
   </data>
   <data name="cbClipboardUploadShareURL.Text" xml:space="preserve">
     <value>Se gli Appunti contengono un URL, Condividilo</value>
-  </data>
-  <data name="chkClipboardUploadURLContents.Text" xml:space="preserve">
-    <value>Se gli Appunti contengono un URL, Scaricalo e Caricalo</value>
   </data>
   <data name="cbClipboardUploadAutoIndexFolder.Text" xml:space="preserve">
     <value>Se gli Appunti contengono un Percorso Cartella, Indicizzala e Carica l'Indice</value>

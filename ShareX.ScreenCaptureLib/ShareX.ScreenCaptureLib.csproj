@@ -236,6 +236,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\selection.png" />
+    <None Include="Resources\stamp-cursor.png" />
     <None Include="Resources\smiley-yell.png" />
     <None Include="Resources\smiley-cool.png" />
     <None Include="Resources\gradient.png" />

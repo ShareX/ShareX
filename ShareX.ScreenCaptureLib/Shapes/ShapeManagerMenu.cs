@@ -277,7 +277,7 @@ namespace ShareX.ScreenCaptureLib
                         }
                         break;
                     case ShapeType.DrawingCursor:
-                        img = Resources.cursor;
+                        img = Resources.stamp_cursor;
                         break;
                     case ShapeType.EffectBlur:
                         img = Resources.layer_shade;

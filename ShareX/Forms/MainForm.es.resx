@@ -213,9 +213,6 @@
   <data name="tsmiIndexFolder.Text" xml:space="preserve">
     <value>Carpeta de índice...</value>
   </data>
-  <data name="tsmiFTPClient.Text" xml:space="preserve">
-    <value>Cliente FTP...</value>
-  </data>
   <data name="tsmiTweetMessage.Text" xml:space="preserve">
     <value>Tweet mensaje...</value>
   </data>
@@ -488,9 +485,6 @@
   </data>
   <data name="tsmiTrayIndexFolder.Text" xml:space="preserve">
     <value>Carpeta de índice...</value>
-  </data>
-  <data name="tsmiTrayFTPClient.Text" xml:space="preserve">
-    <value>Cliente FTP...</value>
   </data>
   <data name="tsmiTrayTweetMessage.Text" xml:space="preserve">
     <value>Tweet mensaje...</value>

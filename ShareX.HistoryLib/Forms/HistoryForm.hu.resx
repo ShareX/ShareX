@@ -129,18 +129,6 @@
   <data name="cbDateFilter.Text" xml:space="preserve">
     <value>Dátum szűrő:</value>
   </data>
-  <data name="cbFilenameFilterMethod.Items" xml:space="preserve">
-    <value>Tartalmaz</value>
-  </data>
-  <data name="cbFilenameFilterMethod.Items1" xml:space="preserve">
-    <value>Ezzel kezdődik</value>
-  </data>
-  <data name="cbFilenameFilterMethod.Items2" xml:space="preserve">
-    <value>Ezzel végződik</value>
-  </data>
-  <data name="cbFilenameFilterMethod.Items3" xml:space="preserve">
-    <value>Pontos egyezés</value>
-  </data>
   <data name="cbHostFilter.Text" xml:space="preserve">
     <value>Hoszt szűrő</value>
   </data>

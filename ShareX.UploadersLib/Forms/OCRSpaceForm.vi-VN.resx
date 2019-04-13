@@ -129,9 +129,6 @@
   <data name="llGoogleTranslate.Text" xml:space="preserve">
     <value>Mở trong Google Dịch và đóng cửa sổ</value>
   </data>
-  <data name="llAttribution.Text" xml:space="preserve">
-    <value>Được phát triển bởi API của OCR.Space</value>
-  </data>
   <data name="lblResult.Text" xml:space="preserve">
     <value>Kết quả:</value>
   </data>

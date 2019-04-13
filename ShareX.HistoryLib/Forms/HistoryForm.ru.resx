@@ -132,18 +132,6 @@
   <data name="lblFilterFrom.Text" xml:space="preserve">
     <value>От:</value>
   </data>
-  <data name="cbFilenameFilterMethod.Items" xml:space="preserve">
-    <value>Содержит</value>
-  </data>
-  <data name="cbFilenameFilterMethod.Items1" xml:space="preserve">
-    <value>Начинается с</value>
-  </data>
-  <data name="cbFilenameFilterMethod.Items2" xml:space="preserve">
-    <value>Заканчивается на</value>
-  </data>
-  <data name="cbFilenameFilterMethod.Items3" xml:space="preserve">
-    <value>Точное совпадение</value>
-  </data>
   <data name="cbTypeFilter.Text" xml:space="preserve">
     <value>По типу файла:</value>
   </data>

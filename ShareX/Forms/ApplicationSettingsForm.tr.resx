@@ -138,9 +138,6 @@
   <data name="cbRememberMainFormSize.Text" xml:space="preserve">
     <value>Ana pencere boyutunu hatırla</value>
   </data>
-  <data name="lblNotePersonalFolderPath.Text" xml:space="preserve">
-    <value>Not: Kişisel dizin değişikliğinin aktif olması için ShareX yeniden başlatılmalıdır.</value>
-  </data>
   <data name="tpIntegration.Text" xml:space="preserve">
     <value>Entegrasyon</value>
   </data>
