@@ -140,7 +140,7 @@ namespace ShareX.ScreenCaptureLib
             Manager.NodesVisible = true;
         }
 
-        public void Remove()
+        public virtual void Remove()
         {
             Manager.DeleteShape(this);
         }

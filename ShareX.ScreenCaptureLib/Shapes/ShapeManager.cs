@@ -68,7 +68,7 @@ namespace ShareX.ScreenCaptureLib
             {
                 return currentTool;
             }
-            private set
+            set
             {
                 if (currentTool == value) return;
 
@@ -879,7 +879,7 @@ namespace ShareX.ScreenCaptureLib
 
                             SelectCurrentShape();
 
-                            if (Options.SwitchToSelectionToolAfterDrawing)
+                            if (Options.SwitchToSelectionToolAfterDrawing && (shape.ShapeCategory == ShapeCategory.Drawing || shape.ShapeCategory == ShapeCategory.Effect))
                             {
                                 CurrentTool = ShapeType.ToolSelect;
                             }
