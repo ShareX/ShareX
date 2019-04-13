@@ -292,7 +292,7 @@ namespace ShareX.ScreenCaptureLib
                         img = Resources.image_crop;
                         break;
                     case ShapeType.ToolSelect:
-                        img = Resources.selection;
+                        img = Resources.cursor;
                         break;
                 }
 

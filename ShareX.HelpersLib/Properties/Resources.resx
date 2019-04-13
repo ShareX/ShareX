@@ -1074,7 +1074,7 @@ Would you like to download and install it?</value>
     <value>1 Week</value>
   </data>
   <data name="ShapeType_ToolSelect" xml:space="preserve">
-    <value>Select</value>
+    <value>Select and Move (M)</value>
   </data>
   <data name="ShapeType_DrawingRectangle" xml:space="preserve">
     <value>Drawing: Rectangle (R)</value>

@@ -3141,7 +3141,7 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Select.
+        ///   Looks up a localized string similar to Select and Move (M).
         /// </summary>
         internal static string ShapeType_ToolSelect {
             get {
