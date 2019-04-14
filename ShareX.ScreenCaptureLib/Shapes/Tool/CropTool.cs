@@ -114,6 +114,7 @@ namespace ShareX.ScreenCaptureLib
         public override void Remove()
         {
             base.Remove();
+
             if (Options.SwitchToSelectionToolAfterDrawing)
             {
                 Manager.CurrentTool = ShapeType.ToolSelect;

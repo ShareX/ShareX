@@ -1074,7 +1074,7 @@ Would you like to download and install it?</value>
     <value>1 Week</value>
   </data>
   <data name="ShapeType_ToolSelect" xml:space="preserve">
-    <value>Select and Move (M)</value>
+    <value>Select and move (M)</value>
   </data>
   <data name="ShapeType_DrawingRectangle" xml:space="preserve">
     <value>Drawing: Rectangle (R)</value>
@@ -1146,7 +1146,7 @@ Would you like to download and install it?</value>
     <value>Upload text</value>
   </data>
   <data name="ShapeType_ToolCrop" xml:space="preserve">
-    <value>Tool: Crop image (C)</value>
+    <value>Crop image (C)</value>
   </data>
   <data name="HotkeyType_UploadURL" xml:space="preserve">
     <value>Upload from URL</value>

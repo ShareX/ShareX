@@ -72,7 +72,7 @@ namespace ShareX.ScreenCaptureLib
             {
                 if (currentTool == value) return;
 
-                var previousTool = currentTool;
+                ShapeType previousTool = currentTool;
                 currentTool = value;
 
                 if (Form.IsAnnotationMode)
@@ -1155,6 +1155,7 @@ namespace ShareX.ScreenCaptureLib
                         case ShapeType.DrawingImage:
                         case ShapeType.DrawingSticker:
                         case ShapeType.DrawingCursor:
+                        case ShapeType.ToolSelect:
                             return null;
                     }
 
@@ -1259,6 +1260,7 @@ namespace ShareX.ScreenCaptureLib
             if (shape != null)
             {
                 shape.ShowNodes();
+
                 if (Options.SwitchToDrawingToolAfterSelection)
                 {
                     CurrentTool = shape.ShapeType;
