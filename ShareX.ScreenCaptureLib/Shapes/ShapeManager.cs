@@ -93,7 +93,7 @@ namespace ShareX.ScreenCaptureLib
                     ClearTools();
                 }
 
-                if(previousTool != ShapeType.ToolSelect && currentTool != ShapeType.ToolSelect)
+                if (previousTool != ShapeType.ToolSelect && currentTool != ShapeType.ToolSelect)
                 {
                     DeselectCurrentShape();
                 }
