@@ -333,6 +333,12 @@ Distance: {6:0.00} px / Angle: {7:0.00}°</value>
   <data name="ShapeManager_CreateContextMenu_Show_FPS" xml:space="preserve">
     <value>Show FPS</value>
   </data>
+  <data name="ShapeManager_CreateContextMenu_SwitchToDrawingToolAfterSelection" xml:space="preserve">
+    <value>Switch to drawing tool after shape selection</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_SwitchToSelectionToolAfterDrawing" xml:space="preserve">
+    <value>Switch to selection tool after shape drawing</value>
+  </data>
   <data name="FFmpegOptionsForm_UpdateUI_Quality_" xml:space="preserve">
     <value>Quality:</value>
   </data>

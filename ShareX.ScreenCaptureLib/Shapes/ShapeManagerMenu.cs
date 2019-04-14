@@ -208,7 +208,7 @@ namespace ShareX.ScreenCaptureLib
                         continue;
                     }
                 }
-                else if (shapeType == ShapeType.DrawingRectangle)
+                else if (shapeType == ShapeType.ToolSelect)
                 {
                     tsMain.Items.Add(new ToolStripSeparator());
                 }
@@ -290,6 +290,9 @@ namespace ShareX.ScreenCaptureLib
                         break;
                     case ShapeType.ToolCrop:
                         img = Resources.image_crop;
+                        break;
+                    case ShapeType.ToolSelect:
+                        img = Resources.cursor;
                         break;
                 }
 
@@ -952,6 +955,24 @@ namespace ShareX.ScreenCaptureLib
             };
             tsddbOptions.DropDownItems.Add(tsmiShowFPS);
 
+            ToolStripMenuItem tsmiSwitchToDrawingToolAfterSelection = new ToolStripMenuItem(Resources.ShapeManager_CreateContextMenu_SwitchToDrawingToolAfterSelection);
+            tsmiSwitchToDrawingToolAfterSelection.Checked = Options.SwitchToDrawingToolAfterSelection;
+            tsmiSwitchToDrawingToolAfterSelection.CheckOnClick = true;
+            tsmiSwitchToDrawingToolAfterSelection.Click += (sender, e) =>
+            {
+                Options.SwitchToDrawingToolAfterSelection = tsmiSwitchToDrawingToolAfterSelection.Checked;
+            };
+            tsddbOptions.DropDownItems.Add(tsmiSwitchToDrawingToolAfterSelection);
+
+            ToolStripMenuItem tsmiSwitchToSelectionToolAfterDrawing = new ToolStripMenuItem(Resources.ShapeManager_CreateContextMenu_SwitchToSelectionToolAfterDrawing);
+            tsmiSwitchToSelectionToolAfterDrawing.Checked = Options.SwitchToSelectionToolAfterDrawing;
+            tsmiSwitchToSelectionToolAfterDrawing.CheckOnClick = true;
+            tsmiSwitchToSelectionToolAfterDrawing.Click += (sender, e) =>
+            {
+                Options.SwitchToSelectionToolAfterDrawing = tsmiSwitchToSelectionToolAfterDrawing.Checked;
+            };
+            tsddbOptions.DropDownItems.Add(tsmiSwitchToSelectionToolAfterDrawing);
+
             if (!Form.IsEditorMode)
             {
                 ToolStripMenuItem tsmiRememberMenuState = new ToolStripMenuItem(Resources.ShapeManager_CreateContextMenu_RememberMenuState);
@@ -1237,6 +1258,12 @@ namespace ShareX.ScreenCaptureLib
                     tsb.RadioCheck();
                     break;
                 }
+            }
+
+            // use menu of current shape in case of an active select tool.
+            if (CurrentShape != null && shapeType == ShapeType.ToolSelect)
+            {
+                shapeType = CurrentShape.ShapeType;
             }
 
             Color borderColor;

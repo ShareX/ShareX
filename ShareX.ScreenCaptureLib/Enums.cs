@@ -267,6 +267,7 @@ namespace ShareX.ScreenCaptureLib
         RegionRectangle,
         RegionEllipse,
         RegionFreehand,
+        ToolSelect,
         DrawingRectangle,
         DrawingEllipse,
         DrawingFreehand,

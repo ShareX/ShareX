@@ -68,8 +68,11 @@ namespace ShareX.ScreenCaptureLib
             {
                 return currentTool;
             }
-            private set
+            set
             {
+                if (currentTool == value) return;
+
+                var previousTool = currentTool;
                 currentTool = value;
 
                 if (Form.IsAnnotationMode)
@@ -90,7 +93,10 @@ namespace ShareX.ScreenCaptureLib
                     ClearTools();
                 }
 
-                DeselectCurrentShape();
+                if (previousTool != ShapeType.ToolSelect && currentTool != ShapeType.ToolSelect)
+                {
+                    DeselectCurrentShape();
+                }
 
                 OnCurrentShapeTypeChanged(currentTool);
             }
@@ -399,6 +405,36 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
+        public bool HandleEscape()
+        {
+            // the escape key handling has 3 stages:
+            // 1. initiate exit if region selection is active
+            // 2. if a shape is selected, unselect it
+            // 3. switch to the select tool if a any other tool is active
+
+            switch (CurrentTool)
+            {
+                case ShapeType.RegionRectangle:
+                case ShapeType.RegionEllipse:
+                case ShapeType.RegionFreehand:
+                    return false;
+            }
+
+            if (CurrentShape != null)
+            {
+                ClearTools();
+                DeselectCurrentShape();
+            }
+
+            if (CurrentTool != ShapeType.ToolSelect)
+            {
+                CurrentTool = ShapeType.ToolSelect;
+                return true;
+            }
+
+            return false;
+        }
+
         private void form_KeyDown(object sender, KeyEventArgs e)
         {
             switch (e.KeyCode)
@@ -546,6 +582,9 @@ namespace ShareX.ScreenCaptureLib
                         case Keys.Q:
                             Options.QuickCrop = !Options.QuickCrop;
                             tsmiQuickCrop.Checked = !Options.QuickCrop;
+                            break;
+                        case Keys.M:
+                            CurrentTool = ShapeType.ToolSelect;
                             break;
                     }
                 }
@@ -770,7 +809,7 @@ namespace ShareX.ScreenCaptureLib
 
             BaseShape shape = GetIntersectShape();
 
-            if (shape != null && shape.ShapeType == CurrentTool) // Select shape
+            if (shape != null && shape.CanBeSelectedByTool(CurrentTool)) // Select shape
             {
                 IsMoving = true;
                 shape.OnMoving();
@@ -778,7 +817,12 @@ namespace ShareX.ScreenCaptureLib
                 CurrentShape = shape;
                 SelectCurrentShape();
             }
-            else if (!IsCreating) // Create new shape
+            else if (shape == null && CurrentTool == ShapeType.ToolSelect)
+            {
+                ClearTools();
+                DeselectCurrentShape();
+            }
+            else if (!IsCreating && CurrentTool != ShapeType.ToolSelect) // Create new shape
             {
                 ClearTools();
                 DeselectCurrentShape();
@@ -832,13 +876,19 @@ namespace ShareX.ScreenCaptureLib
                             shape.OnCreated();
 
                             OnShapeCreated(shape);
+
+                            SelectCurrentShape();
+
+                            if (Options.SwitchToSelectionToolAfterDrawing && (shape.ShapeCategory == ShapeCategory.Drawing || shape.ShapeCategory == ShapeCategory.Effect))
+                            {
+                                CurrentTool = ShapeType.ToolSelect;
+                            }
                         }
                         else if (wasMoving)
                         {
                             shape.OnMoved();
+                            SelectCurrentShape();
                         }
-
-                        SelectCurrentShape();
                     }
                 }
             }
@@ -1209,6 +1259,10 @@ namespace ShareX.ScreenCaptureLib
             if (shape != null)
             {
                 shape.ShowNodes();
+                if (Options.SwitchToDrawingToolAfterSelection)
+                {
+                    CurrentTool = shape.ShapeType;
+                }
             }
         }
 
@@ -1311,7 +1365,7 @@ namespace ShareX.ScreenCaptureLib
                 {
                     BaseShape shape = Shapes[i];
 
-                    if (shape.ShapeType == CurrentTool && shape.Intersects(position))
+                    if (shape.CanBeSelectedByTool(CurrentTool) && shape.Intersects(position))
                     {
                         return shape;
                     }

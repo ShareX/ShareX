@@ -1228,6 +1228,24 @@ namespace ShareX.ScreenCaptureLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Switch to drawing tool after shape selection.
+        /// </summary>
+        internal static string ShapeManager_CreateContextMenu_SwitchToDrawingToolAfterSelection {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateContextMenu_SwitchToDrawingToolAfterSelection", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Switch to selection tool after shape drawing.
+        /// </summary>
+        internal static string ShapeManager_CreateContextMenu_SwitchToSelectionToolAfterDrawing {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateContextMenu_SwitchToSelectionToolAfterDrawing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Width:.
         /// </summary>
         internal static string ShapeManager_CreateContextMenu_Width_ {

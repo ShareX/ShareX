@@ -868,6 +868,9 @@ Möchtest du sie herunterladen?</value>
   <data name="ShapeType_DrawingLine" xml:space="preserve">
     <value>Linie zeichnen</value>
   </data>
+  <data name="ShapeType_ToolSelect" xml:space="preserve">
+    <value>Auswählen und Verschieben</value>
+  </data>
   <data name="ShapeType_DrawingRectangle" xml:space="preserve">
     <value>Rechteck zeichnen</value>
   </data>

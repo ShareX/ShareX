@@ -111,6 +111,15 @@ namespace ShareX.ScreenCaptureLib
             Remove();
         }
 
+        public override void Remove()
+        {
+            base.Remove();
+            if (Options.SwitchToSelectionToolAfterDrawing)
+            {
+                Manager.CurrentTool = ShapeType.ToolSelect;
+            }
+        }
+
         public override void Dispose()
         {
             base.Dispose();

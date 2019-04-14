@@ -1073,6 +1073,9 @@ Would you like to download and install it?</value>
   <data name="PastebinExpiration_W1" xml:space="preserve">
     <value>1 Week</value>
   </data>
+  <data name="ShapeType_ToolSelect" xml:space="preserve">
+    <value>Select and Move (M)</value>
+  </data>
   <data name="ShapeType_DrawingRectangle" xml:space="preserve">
     <value>Drawing: Rectangle (R)</value>
   </data>

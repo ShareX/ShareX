@@ -140,7 +140,7 @@ namespace ShareX.ScreenCaptureLib
             Manager.NodesVisible = true;
         }
 
-        public void Remove()
+        public virtual void Remove()
         {
             Manager.DeleteShape(this);
         }
@@ -485,6 +485,11 @@ namespace ShareX.ScreenCaptureLib
 
         public virtual void Dispose()
         {
+        }
+
+        public virtual bool CanBeSelectedByTool(ShapeType currentTool)
+        {
+            return ShapeType == currentTool || currentTool == ShapeType.ToolSelect;
         }
     }
 }

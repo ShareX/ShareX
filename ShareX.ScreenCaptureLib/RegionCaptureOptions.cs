@@ -73,11 +73,14 @@ namespace ShareX.ScreenCaptureLib
         public bool MenuCollapsed = false;
         public Point MenuPosition = Point.Empty;
 
+        public bool SwitchToDrawingToolAfterSelection = true;
+        public bool SwitchToSelectionToolAfterDrawing = false;
+
         // Annotation
         public AnnotationOptions AnnotationOptions = new AnnotationOptions();
-        public ShapeType LastRegionTool = ShapeType.RegionRectangle;
-        public ShapeType LastAnnotationTool = ShapeType.DrawingRectangle;
-        public ShapeType LastEditorTool = ShapeType.DrawingRectangle;
+        public ShapeType LastRegionTool = ShapeType.ToolSelect;
+        public ShapeType LastAnnotationTool = ShapeType.ToolSelect;
+        public ShapeType LastEditorTool = ShapeType.ToolSelect;
 
         // Image editor
         public ImageEditorStartMode ImageEditorStartMode = ImageEditorStartMode.AutoSize;
