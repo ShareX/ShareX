@@ -96,12 +96,12 @@ namespace ShareX.ScreenCaptureLib
                 if (CurrentShape != null)
                 {
                     // do not keep selection if select tool does not handle it
-                    if ((currentTool == ShapeType.ToolSelect && !CurrentShape.IsHandledBySelectTool))
+                    if (currentTool == ShapeType.ToolSelect && !CurrentShape.IsHandledBySelectTool)
                     {
                         DeselectCurrentShape();
                     }
-                    // do not keep selection if we switch away from select tool and the selected shape does not match the new type
-                    else if (previousTool == ShapeType.ToolSelect && CurrentShape.ShapeType != currentTool)
+                    // do not keep selection if we switch away from a tool and the selected shape does not match the new type
+                    else if (CurrentShape.ShapeType != currentTool)
                     {
                         DeselectCurrentShape();
                     }
@@ -820,6 +820,7 @@ namespace ShareX.ScreenCaptureLib
 
             if (shape != null && shape.IsSelectable) // Select shape
             {
+                DeselectCurrentShape();
                 IsMoving = true;
                 shape.OnMoving();
                 Form.Cursor = Cursors.SizeAll;
