@@ -62,7 +62,7 @@ namespace ShareX.ScreenCaptureLib
 
         public override bool Intersects(Point position)
         {
-            return false;
+            return Manager.CurrentTool == ShapeType.ToolSelect && base.Intersects(position);
         }
 
         public override void ShowNodes()
