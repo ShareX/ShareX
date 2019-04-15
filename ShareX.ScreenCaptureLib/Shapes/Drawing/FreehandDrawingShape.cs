@@ -37,6 +37,8 @@ namespace ShareX.ScreenCaptureLib
 
         public override bool IsValidShape => positions.Count > 0;
 
+        public override bool IsSelectable => Manager.CurrentTool == ShapeType.ToolSelect;
+
         public Point LastPosition
         {
             get
@@ -59,11 +61,6 @@ namespace ShareX.ScreenCaptureLib
 
         private List<Point> positions = new List<Point>();
         private bool isPolygonMode;
-
-        public override bool Intersects(Point position)
-        {
-            return Manager.CurrentTool == ShapeType.ToolSelect && base.Intersects(position);
-        }
 
         public override void ShowNodes()
         {
