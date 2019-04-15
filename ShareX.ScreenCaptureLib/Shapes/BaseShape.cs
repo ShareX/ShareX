@@ -106,6 +106,22 @@ namespace ShareX.ScreenCaptureLib
         private Point tempNodePos, tempStartPos, tempEndPos;
         private Rectangle tempRectangle;
 
+
+        public bool IsHandledBySelectTool
+        {
+            get
+            {
+                switch (ShapeCategory)
+                {
+                    case ShapeCategory.Drawing:
+                    case ShapeCategory.Effect:
+                        return true;
+                    default:
+                        return false;
+                }
+            }
+        }
+
         public virtual bool Intersects(Point position)
         {
             return Rectangle.Contains(position);

@@ -93,7 +93,8 @@ namespace ShareX.ScreenCaptureLib
                     ClearTools();
                 }
 
-                if (previousTool != ShapeType.ToolSelect && currentTool != ShapeType.ToolSelect)
+                if (previousTool != ShapeType.ToolSelect && currentTool != ShapeType.ToolSelect
+                    && CurrentShape != null && !CurrentShape.IsHandledBySelectTool)
                 {
                     DeselectCurrentShape();
                 }
@@ -879,7 +880,7 @@ namespace ShareX.ScreenCaptureLib
 
                             SelectCurrentShape();
 
-                            if (Options.SwitchToSelectionToolAfterDrawing && (shape.ShapeCategory == ShapeCategory.Drawing || shape.ShapeCategory == ShapeCategory.Effect))
+                            if (Options.SwitchToSelectionToolAfterDrawing && shape.IsHandledBySelectTool)
                             {
                                 CurrentTool = ShapeType.ToolSelect;
                             }
