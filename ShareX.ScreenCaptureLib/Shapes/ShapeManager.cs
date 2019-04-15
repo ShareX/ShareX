@@ -93,10 +93,18 @@ namespace ShareX.ScreenCaptureLib
                     ClearTools();
                 }
 
-                if (previousTool != ShapeType.ToolSelect && currentTool != ShapeType.ToolSelect
-                    && CurrentShape != null && !CurrentShape.IsHandledBySelectTool)
+                if (CurrentShape != null)
                 {
-                    DeselectCurrentShape();
+                    // do not keep selection if select tool does not handle it
+                    if ((currentTool == ShapeType.ToolSelect && !CurrentShape.IsHandledBySelectTool))
+                    {
+                        DeselectCurrentShape();
+                    }
+                    // do not keep selection if we switch away from select tool and the selected shape does not match the new type
+                    else if (previousTool == ShapeType.ToolSelect && CurrentShape.ShapeType != currentTool)
+                    {
+                        DeselectCurrentShape();
+                    }
                 }
 
                 OnCurrentShapeTypeChanged(currentTool);
