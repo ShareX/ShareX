@@ -809,7 +809,7 @@ namespace ShareX.ScreenCaptureLib
 
             BaseShape shape = GetIntersectShape();
 
-            if (shape != null && shape.CanBeSelectedByTool(CurrentTool)) // Select shape
+            if (shape != null && shape.IsSelectable) // Select shape
             {
                 IsMoving = true;
                 shape.OnMoving();
@@ -1367,7 +1367,7 @@ namespace ShareX.ScreenCaptureLib
                 {
                     BaseShape shape = Shapes[i];
 
-                    if (shape.CanBeSelectedByTool(CurrentTool) && shape.Intersects(position))
+                    if (shape.IsSelectable && shape.Intersects(position))
                     {
                         return shape;
                     }

@@ -95,6 +95,8 @@ namespace ShareX.ScreenCaptureLib
 
         public virtual bool IsValidShape => !Rectangle.IsEmpty && Rectangle.Width >= MinimumSize && Rectangle.Height >= MinimumSize;
 
+        public virtual bool IsSelectable => Manager.CurrentTool == ShapeType || Manager.CurrentTool == ShapeType.ToolSelect;
+
         internal ShapeManager Manager { get; set; }
 
         protected InputManager InputManager => Manager.InputManager;
@@ -485,11 +487,6 @@ namespace ShareX.ScreenCaptureLib
 
         public virtual void Dispose()
         {
-        }
-
-        public virtual bool CanBeSelectedByTool(ShapeType currentTool)
-        {
-            return ShapeType == currentTool || currentTool == ShapeType.ToolSelect;
         }
     }
 }
