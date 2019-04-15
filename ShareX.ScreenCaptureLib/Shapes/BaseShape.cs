@@ -106,7 +106,6 @@ namespace ShareX.ScreenCaptureLib
         private Point tempNodePos, tempStartPos, tempEndPos;
         private Rectangle tempRectangle;
 
-
         public bool IsHandledBySelectTool
         {
             get
