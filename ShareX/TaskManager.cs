@@ -360,7 +360,7 @@ namespace ShareX
                                 }
 
                                 if (info.TaskSettings.GeneralSettings.PopUpNotification != PopUpNotificationType.None && !string.IsNullOrEmpty(errors) &&
-                                    (!info.TaskSettings.AdvancedSettings.NotificationCheckIsActiveWindowFullscreen || !CaptureHelpers.IsActiveWindowFullscreen()))
+                                    (!info.TaskSettings.AdvancedSettings.DisableNotificationsOnFullscreen || !CaptureHelpers.IsActiveWindowFullscreen()))
                                 {
                                     TaskHelpers.ShowBalloonTip(errors, ToolTipIcon.Error, 5000, "ShareX - " + Resources.TaskManager_task_UploadCompleted_Error);
                                 }
@@ -413,7 +413,7 @@ namespace ShareX
                                     }
 
                                     if (!string.IsNullOrEmpty(result) &&
-                                        (!info.TaskSettings.AdvancedSettings.NotificationCheckIsActiveWindowFullscreen || !CaptureHelpers.IsActiveWindowFullscreen()))
+                                        (!info.TaskSettings.AdvancedSettings.DisableNotificationsOnFullscreen || !CaptureHelpers.IsActiveWindowFullscreen()))
                                     {
                                         switch (info.TaskSettings.GeneralSettings.PopUpNotification)
                                         {
