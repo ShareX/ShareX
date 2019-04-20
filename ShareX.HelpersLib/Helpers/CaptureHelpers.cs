@@ -352,9 +352,16 @@ namespace ShareX.HelpersLib
 
             if (handle.ToInt32() > 0)
             {
-                Rectangle windowRectangle = GetWindowRectangle(handle);
-                Rectangle monitorRectangle = Screen.FromRectangle(windowRectangle).Bounds;
-                return windowRectangle.Contains(monitorRectangle);
+                WindowInfo windowInfo = new WindowInfo(handle);
+                string className = windowInfo.ClassName;
+                string[] ignoreList = new string[] { "Progman", "WorkerW" };
+
+                if (ignoreList.All(ignore => !className.Equals(ignore, StringComparison.OrdinalIgnoreCase)))
+                {
+                    Rectangle windowRectangle = windowInfo.Rectangle;
+                    Rectangle monitorRectangle = Screen.FromRectangle(windowRectangle).Bounds;
+                    return windowRectangle.Contains(monitorRectangle);
+                }
             }
 
             return false;

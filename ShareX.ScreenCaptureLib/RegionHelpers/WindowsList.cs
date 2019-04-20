@@ -73,7 +73,7 @@ namespace ShareX.ScreenCaptureLib
 
             if (!string.IsNullOrEmpty(className))
             {
-                return ignoreList.All(ignore => !className.Equals(ignore, StringComparison.InvariantCultureIgnoreCase));
+                return ignoreList.All(ignore => !className.Equals(ignore, StringComparison.OrdinalIgnoreCase));
             }
 
             return true;
