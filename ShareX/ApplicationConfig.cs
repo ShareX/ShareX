@@ -183,6 +183,9 @@ namespace ShareX
         [Category("Hotkey"), DefaultValue(false), Description("Disables hotkeys.")]
         public bool DisableHotkeys { get; set; }
 
+        [Category("Hotkey"), DefaultValue(false), Description("If active window is fullscreen then hotkeys won't be executed.")]
+        public bool DisableHotkeysOnFullscreen { get; set; }
+
         private int hotkeyRepeatLimit;
 
         [Category("Hotkey"), DefaultValue(1000), Description("If you hold hotkeys then it will only trigger every this milliseconds.")]

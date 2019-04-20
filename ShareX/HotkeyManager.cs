@@ -72,7 +72,7 @@ namespace ShareX
 
         private void hotkeyForm_HotkeyPress(ushort id, Keys key, Modifiers modifier)
         {
-            if (!IgnoreHotkeys)
+            if (!IgnoreHotkeys && (!Program.Settings.DisableHotkeysOnFullscreen || !CaptureHelpers.IsActiveWindowFullscreen()))
             {
                 HotkeySettings hotkeySetting = Hotkeys.Find(x => x.HotkeyInfo.ID == id);
 
