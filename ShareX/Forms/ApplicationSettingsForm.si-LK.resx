@@ -1,0 +1,363 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="chDescription.Text" xml:space="preserve">
+    <value>විස්තර</value>
+  </data>
+  <data name="btnCheckDevBuild.Text" xml:space="preserve">
+    <value>dev ගොඩ නැඟීමට ස්ථාපනය ...</value>
+  </data>
+  <data name="cbCheckPreReleaseUpdates.Text" xml:space="preserve">
+    <value>පෙර-නිදහස් යාවත්කාලීන සඳහා පරීක්ෂා කරන්න</value>
+  </data>
+  <data name="lblTrayMiddleClickAction.Text" xml:space="preserve">
+    <value>තැටි අයිකනය මැද ක්ලික්:</value>
+  </data>
+  <data name="lblTrayLeftDoubleClickAction.Text" xml:space="preserve">
+    <value>තැටි අයිකනය මත ඩබල් වම් ක්ලික් කරන්න:</value>
+  </data>
+  <data name="lblTrayLeftClickAction.Text" xml:space="preserve">
+    <value>තැටි අයිකනය මත ක්ලික් කරන්න ඉතිරි:</value>
+  </data>
+  <data name="btnEditQuickTaskMenu.Text" xml:space="preserve">
+    <value>ඉක්මන් කාර්යය මෙනුව සංස්කරණය ...</value>
+  </data>
+  <data name="cbShowTray.Text" xml:space="preserve">
+    <value>තැටි අයිකනය පෙන්වන්න</value>
+  </data>
+  <data name="cbTrayIconProgressEnabled.Text" xml:space="preserve">
+    <value>තැටි අයිකනය ප්රගතිය පෙන්වන්න</value>
+  </data>
+  <data name="cbRememberMainFormPosition.Text" xml:space="preserve">
+    <value>ප්රධාන කවුළුව තත්ත්වය මතක තබා ගන්න</value>
+  </data>
+  <data name="cbSilentRun.Text" xml:space="preserve">
+    <value>ආරම්භයක් මත තැටි සඳහා අවම</value>
+  </data>
+  <data name="cbTaskbarProgressEnabled.Text" xml:space="preserve">
+    <value>කාර්ය තීරුව බොත්තම ප්රගතිය පෙන්වන්න</value>
+  </data>
+  <data name="cbRememberMainFormSize.Text" xml:space="preserve">
+    <value>ප්රධාන කවුළුව විශාලත්වය මතක තබා ගන්න</value>
+  </data>
+  <data name="lblLanguage.Text" xml:space="preserve">
+    <value>භාෂාව:</value>
+  </data>
+  <data name="tpGeneral.Text" xml:space="preserve">
+    <value>ජනරාල්</value>
+  </data>
+  <data name="cbFirefoxAddonSupport.Text" xml:space="preserve">
+    <value>ෆයර්ෆොක්ස් addon සහය සක්රීය</value>
+  </data>
+  <data name="btnFirefoxOpenAddonPage.Text" xml:space="preserve">
+    <value>ShareX ෆයර්ෆොක්ස් addon ස්ථාපනය ...</value>
+  </data>
+  <data name="gbFirefox.Text" xml:space="preserve">
+    <value>ෆයර්ෆොක්ස් addon</value>
+  </data>
+  <data name="cbSteamShowInApp.Text" xml:space="preserve">
+    <value>ShareX විවෘත වන අතර, වාෂ්ප දී ප්රදර්ශනය "යෙදුම-"</value>
+  </data>
+  <data name="gbSteam.Text" xml:space="preserve">
+    <value>වාෂ්ප</value>
+  </data>
+  <data name="cbChromeExtensionSupport.Text" xml:space="preserve">
+    <value>ක්රෝම් සහය සක්රීය</value>
+  </data>
+  <data name="btnChromeOpenExtensionPage.Text" xml:space="preserve">
+    <value>ShareX ක්රෝම් ස්ථාපනය ...</value>
+  </data>
+  <data name="gbChrome.Text" xml:space="preserve">
+    <value>ක්රෝම්</value>
+  </data>
+  <data name="cbEditWithShareX.Text" xml:space="preserve">
+    <value>වින්ඩෝස් එක්ස්ප්ලෝරර් සන්දර්භය මෙනුවේ බොත්තම "ShareX සමග සංස්කරණය කරන්න" පෙන්වන්න</value>
+  </data>
+  <data name="cbSendToMenu.Text" xml:space="preserve">
+    <value>මෙනු "යවන්න" ShareX පෙන්වන්න</value>
+  </data>
+  <data name="cbShellContextMenu.Text" xml:space="preserve">
+    <value>වින්ඩෝස් එක්ස්ප්ලෝරර් සන්දර්භය මෙනුවේ බොත්තම "ShareX සමග උඩුගත කරන්න 'පෙන්වන්න</value>
+  </data>
+  <data name="gbWindows.Text" xml:space="preserve">
+    <value>වින්ඩෝස්</value>
+  </data>
+  <data name="tpIntegration.Text" xml:space="preserve">
+    <value>අනුකලනය</value>
+  </data>
+  <data name="btnPersonalFolderPathApply.Text" xml:space="preserve">
+    <value>අදාළ</value>
+  </data>
+  <data name="btnOpenScreenshotsFolder.Text" xml:space="preserve">
+    <value>විවෘත...</value>
+  </data>
+  <data name="lblPreviewPersonalFolderPath.Text" xml:space="preserve">
+    <value>...</value>
+  </data>
+  <data name="btnBrowsePersonalFolderPath.Text" xml:space="preserve">
+    <value>පිරික්සන්න ...</value>
+  </data>
+  <data name="lblPersonalFolderPath.Text" xml:space="preserve">
+    <value>ShareX පෞද්ගලික ෆෝල්ඩරය:</value>
+  </data>
+  <data name="btnBrowseCustomScreenshotsPath.Text" xml:space="preserve">
+    <value>පිරික්සන්න ...</value>
+  </data>
+  <data name="btnOpenPersonalFolderPath.Text" xml:space="preserve">
+    <value>විවෘත...</value>
+  </data>
+  <data name="cbUseCustomScreenshotsPath.Text" xml:space="preserve">
+    <value>අභිරුචි තිර ෆෝල්ඩරය භාවිතා කරන්න:</value>
+  </data>
+  <data name="lblSaveImageSubFolderPattern.Text" xml:space="preserve">
+    <value>උප ෆෝල්ඩරයක් රටාව:</value>
+  </data>
+  <data name="lblSaveImageSubFolderPatternPreview.Text" xml:space="preserve">
+    <value>...</value>
+  </data>
+  <data name="tpPaths.Text" xml:space="preserve">
+    <value>මාර්ග</value>
+  </data>
+  <data name="btnResetSettings.Text" xml:space="preserve">
+    <value>සැකසුම් නැවත සකස්...</value>
+  </data>
+  <data name="btnExport.Text" xml:space="preserve">
+    <value>අපනයන සැකසුම් ...</value>
+  </data>
+  <data name="btnImport.Text" xml:space="preserve">
+    <value>ආනයන සැකසුම් ...</value>
+  </data>
+  <data name="tpExportImport.Text" xml:space="preserve">
+    <value>අපනයන / ආනයනය</value>
+  </data>
+  <data name="lblUploadLimit.Text" xml:space="preserve">
+    <value>සමගාමී උඩුගත සීමාව:</value>
+  </data>
+  <data name="lblUploadLimitHint.Text" xml:space="preserve">
+    <value>0 - 25 (0 ආබාධිත)</value>
+  </data>
+  <data name="lblBufferSize.Text" xml:space="preserve">
+    <value>ස්වාරක්ෂක විශාලත්වය:</value>
+  </data>
+  <data name="btnClipboardFormatEdit.Text" xml:space="preserve">
+    <value>සංස්කරණය කරන්න...</value>
+  </data>
+  <data name="btnClipboardFormatRemove.Text" xml:space="preserve">
+    <value>ඉවත් කරන්න</value>
+  </data>
+  <data name="btnClipboardFormatAdd.Text" xml:space="preserve">
+    <value>එක් කරන්න ...</value>
+  </data>
+  <data name="chFormat.Text" xml:space="preserve">
+    <value>ආකෘතිය</value>
+  </data>
+  <data name="gbClipboardFormats.Text" xml:space="preserve">
+    <value>පසුරු පුවරුවට ආකෘති - මෙම ප්රධාන කවුළුව සන්දර්භය මෙනුවේ පිටපත් යටතේ පෙනී</value>
+  </data>
+  <data name="tpUploadResults.Text" xml:space="preserve">
+    <value>ප්රතිපල</value>
+  </data>
+  <data name="chkUseSecondaryUploaders.Text" xml:space="preserve">
+    <value>විට ක්රියා නොකල මනාප ද්විතියික uploaders සඳහා භාවිතා</value>
+  </data>
+  <data name="gbSecondaryImageUploaders.Text" xml:space="preserve">
+    <value>ද්විතීයික රූපය uploaders</value>
+  </data>
+  <data name="gbSecondaryFileUploaders.Text" xml:space="preserve">
+    <value>ද්විතීයික ගොනුව uploaders</value>
+  </data>
+  <data name="gbSecondaryTextUploaders.Text" xml:space="preserve">
+    <value>ද්විතීයික පෙළ uploaders</value>
+  </data>
+  <data name="cbIfUploadFailRetryOnce.Text" xml:space="preserve">
+    <value>උඩුගත අපොහොසත් වන්නේ නම්, නැවත උත්සාහ කිරීමට වාර ගණන:</value>
+  </data>
+  <data name="tpUploadRetry.Text" xml:space="preserve">
+    <value>නැවත උත්සාහ කරන්න</value>
+  </data>
+  <data name="tpUpload.Text" xml:space="preserve">
+    <value>උඩුගත</value>
+  </data>
+  <data name="cbHistoryCheckURL.Text" xml:space="preserve">
+    <value>URL එක හිස් නොවේ නම් පමණක් ඉතිරි</value>
+  </data>
+  <data name="cbHistorySaveTasks.Text" xml:space="preserve">
+    <value>ඉතිහාසය කාර්යයන් සුරකින්න</value>
+  </data>
+  <data name="gbHistory.Text" xml:space="preserve">
+    <value>ඉතිහාසය</value>
+  </data>
+  <data name="cbRecentTasksTrayMenuMostRecentFirst.Text" xml:space="preserve">
+    <value>තැටි මෙනුවේ පළමු වඩාත් ම මෑත කාර්යයන් පෙන්වන්න</value>
+  </data>
+  <data name="lblRecentTasksMaxCount.Text" xml:space="preserve">
+    <value>බේරා ගැනීමට කාර්යයන් උපරිම සංඛ්යාව:</value>
+  </data>
+  <data name="cbRecentTasksShowInTrayMenu.Text" xml:space="preserve">
+    <value>තැටි මෙනුව මෑත කාර්යයන් පෙන්වන්න</value>
+  </data>
+  <data name="cbRecentTasksShowInMainWindow.Text" xml:space="preserve">
+    <value>ආරම්භක ප්රධාන කවුළුව මෑත කාර්යයන් පෙන්වන්න</value>
+  </data>
+  <data name="cbRecentTasksSave.Text" xml:space="preserve">
+    <value>මෑත කාර්යයන් සුරකින්න</value>
+  </data>
+  <data name="gbRecentLinks.Text" xml:space="preserve">
+    <value>මෑත කාර්යයන්</value>
+  </data>
+  <data name="tpHistory.Text" xml:space="preserve">
+    <value>ඉතිහාසය</value>
+  </data>
+  <data name="cbPrintDontShowWindowsDialog.Text" xml:space="preserve">
+    <value>වින්ඩෝස් මුද්රිත සංවාද පෙන්වන්න එපා</value>
+  </data>
+  <data name="cbDontShowPrintSettingDialog.Text" xml:space="preserve">
+    <value>රූපය මුද්රිත සැකසුම් සංවාද පෙන්වන්න එපා</value>
+  </data>
+  <data name="btnShowImagePrintSettings.Text" xml:space="preserve">
+    <value>රූප මුද්රිත සැකසුම් ...</value>
+  </data>
+  <data name="tpPrint.Text" xml:space="preserve">
+    <value>මුද්රණය</value>
+  </data>
+  <data name="lblProxyMethod.Text" xml:space="preserve">
+    <value>ප්රෝක්සි සේවාදායක සැකසුම්:</value>
+  </data>
+  <data name="lblProxyHost.Text" xml:space="preserve">
+    <value>අනුග්රහය:</value>
+  </data>
+  <data name="lblProxyPort.Text" xml:space="preserve">
+    <value>වරාය:</value>
+  </data>
+  <data name="lblProxyPassword.Text" xml:space="preserve">
+    <value>රහස් පදය:</value>
+  </data>
+  <data name="lblProxyUsername.Text" xml:space="preserve">
+    <value>පරිශීලක නාමය:</value>
+  </data>
+  <data name="tpProxy.Text" xml:space="preserve">
+    <value>ප්රොක්සි</value>
+  </data>
+  <data name="tpAdvanced.Text" xml:space="preserve">
+    <value>උසස්</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX - අයදුම් සැකසුම්</value>
+  </data>
+</root>
