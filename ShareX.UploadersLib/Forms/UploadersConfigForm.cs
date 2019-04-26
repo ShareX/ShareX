@@ -105,11 +105,7 @@ namespace ShareX.UploadersLib
             eiFTP.ObjectType = typeof(FTPAccount);
 
             // Backblaze B2
-            txtB2Bucket.HandleCreated += (sender, e) => txtB2Bucket.SetWatermark(Resources.txtB2BucketWatermark, showCueWhenFocus: true);
-
-#if DEBUG
-            btnCheveretoTestAll.Visible = true;
-#endif
+            txtB2Bucket.HandleCreated += (sender, e) => txtB2Bucket.SetWatermark(Resources.txtB2BucketWatermark, true);
         }
 
         private void AddIconToTabs()
@@ -251,7 +247,6 @@ namespace ShareX.UploadersLib
             #region Chevereto
 
             if (Config.CheveretoUploader == null) Config.CheveretoUploader = new CheveretoUploader();
-            cbCheveretoUploaders.Items.AddRange(Chevereto.Uploaders.ToArray());
             txtCheveretoUploadURL.Text = Config.CheveretoUploader.UploadURL;
             txtCheveretoAPIKey.Text = Config.CheveretoUploader.APIKey;
             cbCheveretoDirectURL.Checked = Config.CheveretoDirectURL;
@@ -1165,43 +1160,6 @@ namespace ShareX.UploadersLib
         #endregion Google Photos
 
         #region Chevereto
-
-        private void cbCheveretoUploaders_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (cbCheveretoUploaders.SelectedIndex > -1)
-            {
-                CheveretoUploader uploader = cbCheveretoUploaders.SelectedItem as CheveretoUploader;
-
-                if (uploader != null)
-                {
-                    txtCheveretoUploadURL.Text = uploader.UploadURL;
-                    txtCheveretoAPIKey.Text = uploader.APIKey;
-                }
-            }
-        }
-
-        private async void btnCheveretoTestAll_Click(object sender, EventArgs e)
-        {
-            btnCheveretoTestAll.Enabled = false;
-            btnCheveretoTestAll.Text = "Testing...";
-            string result = null;
-
-            await Task.Run(() =>
-            {
-                result = Chevereto.TestUploaders();
-            });
-
-            if (!IsDisposed)
-            {
-                btnCheveretoTestAll.Text = "Test all";
-                btnCheveretoTestAll.Enabled = true;
-
-                if (!string.IsNullOrEmpty(result))
-                {
-                    MessageBox.Show(result, "Chevereto test results", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-            }
-        }
 
         private void txtCheveretoWebsite_TextChanged(object sender, EventArgs e)
         {
