@@ -109,7 +109,6 @@ namespace ShareX.UploadersLib
 
 #if DEBUG
             btnCheveretoTestAll.Visible = true;
-            btnPomfTest.Visible = true;
 #endif
         }
 
@@ -637,7 +636,6 @@ namespace ShareX.UploadersLib
             #region Pomf
 
             if (Config.PomfUploader == null) Config.PomfUploader = new PomfUploader();
-            cbPomfUploaders.Items.AddRange(Pomf.Uploaders.ToArray());
             txtPomfUploadURL.Text = Config.PomfUploader.UploadURL;
             txtPomfResultURL.Text = Config.PomfUploader.ResultURL;
 
@@ -2572,43 +2570,6 @@ namespace ShareX.UploadersLib
         #endregion Teknik
 
         #region Pomf
-
-        private void cbPomfUploaders_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (cbPomfUploaders.SelectedIndex > -1)
-            {
-                PomfUploader uploader = cbPomfUploaders.SelectedItem as PomfUploader;
-
-                if (uploader != null)
-                {
-                    txtPomfUploadURL.Text = uploader.UploadURL;
-                    txtPomfResultURL.Text = uploader.ResultURL;
-                }
-            }
-        }
-
-        private async void btnPomfTest_Click(object sender, EventArgs e)
-        {
-            btnPomfTest.Enabled = false;
-            btnPomfTest.Text = "Testing...";
-            string result = null;
-
-            await Task.Run(() =>
-            {
-                result = Pomf.TestUploaders();
-            });
-
-            if (!IsDisposed)
-            {
-                btnPomfTest.Text = "Test all";
-                btnPomfTest.Enabled = true;
-
-                if (!string.IsNullOrEmpty(result))
-                {
-                    Debug.WriteLine("Pomf test results:\r\n\r\n" + result);
-                }
-            }
-        }
 
         private void txtPomfUploadURL_TextChanged(object sender, EventArgs e)
         {

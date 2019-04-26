@@ -58,21 +58,6 @@ namespace ShareX.UploadersLib.FileUploaders
 
     public class Pomf : FileUploader
     {
-        public static List<PomfUploader> Uploaders = new List<PomfUploader>()
-        {
-            //new PomfUploader("https://pomf.se/upload.php"),
-            new PomfUploader("https://edfile.pro/api/upload"),
-            new PomfUploader("https://mixtape.moe/upload.php"),
-            new PomfUploader("https://pomf.pyonpyon.moe/upload.php"),
-            new PomfUploader("https://up.asis.io/upload.php", "http://dl.asis.io"),
-            new PomfUploader("https://api.put.re/upload"),
-            new PomfUploader("https://yuu.sh/api/upload"),
-            new PomfUploader("https://filuboksi.fi/upload.php"),
-            new PomfUploader("https://dmca.gripe/api/upload"),
-            new PomfUploader("https://safe.fiery.me/api/upload"),
-            new PomfUploader("https://pomf.fun/upload.php")
-        };
-
         public PomfUploader Uploader { get; private set; }
 
         public Pomf(PomfUploader uploader)
@@ -105,50 +90,6 @@ namespace ShareX.UploadersLib.FileUploaders
             return result;
         }
 
-        public static string TestUploaders()
-        {
-            List<PomfTest> successful = new List<PomfTest>();
-            List<PomfTest> failed = new List<PomfTest>();
-
-            using (MemoryStream ms = new MemoryStream())
-            {
-                using (Image logo = ShareXResources.Logo)
-                {
-                    logo.Save(ms, ImageFormat.Png);
-                }
-
-                foreach (PomfUploader uploader in Uploaders)
-                {
-                    try
-                    {
-                        Pomf pomf = new Pomf(uploader);
-                        string filename = Helpers.GetRandomAlphanumeric(10) + ".png";
-
-                        Stopwatch timer = Stopwatch.StartNew();
-                        UploadResult result = pomf.Upload(ms, filename);
-                        long uploadTime = timer.ElapsedMilliseconds;
-
-                        if (result != null && result.IsSuccess && !string.IsNullOrEmpty(result.URL))
-                        {
-                            successful.Add(new PomfTest { Name = uploader.ToString(), URL = result.URL, UploadTime = uploadTime });
-                        }
-                        else
-                        {
-                            failed.Add(new PomfTest { Name = uploader.ToString() });
-                        }
-                    }
-                    catch (Exception e)
-                    {
-                        DebugHelper.WriteException(e);
-                        failed.Add(new PomfTest { Name = uploader.ToString() });
-                    }
-                }
-            }
-
-            return string.Format("Successful uploads ({0}):\r\n\r\n{1}\r\n\r\nFailed uploads ({2}):\r\n\r\n{3}",
-                successful.Count, string.Join("\r\n", successful.OrderBy(x => x.UploadTime)), failed.Count, string.Join("\r\n", failed));
-        }
-
         private class PomfResponse
         {
             public bool success { get; set; }
@@ -162,23 +103,6 @@ namespace ShareX.UploadersLib.FileUploaders
             public string name { get; set; }
             public string url { get; set; }
             public string size { get; set; }
-        }
-
-        private class PomfTest
-        {
-            public string Name { get; set; }
-            public string URL { get; set; }
-            public long UploadTime { get; set; } = -1;
-
-            public override string ToString()
-            {
-                if (!string.IsNullOrEmpty(URL))
-                {
-                    return $"{Name} ({UploadTime}ms): {URL}";
-                }
-
-                return Name;
-            }
         }
     }
 }
