@@ -29,6 +29,7 @@
 using System;
 using System.Drawing;
 using System.Drawing.Imaging;
+using System.Threading.Tasks;
 
 namespace ShareX.HelpersLib
 {
@@ -44,13 +45,14 @@ namespace ShareX.HelpersLib
                 int originX = (kernel.Width - 1) / 2;
                 int originY = (kernel.Height - 1) / 2;
 
-                for (int y = 0; y < source.Height; y++)
+                Parallel.For(0, source.Height, y =>
                 {
-                    for (int x = 0; x < source.Width; x++)
+                    Parallel.For(0, source.Width, x =>
                     {
                         double r = 0.0;
                         double g = 0.0;
                         double b = 0.0;
+                        double a = 0.0;
 
                         // Apply each matrix multiplier to the color components for each pixel.
                         for (int fy = 0; fy < kernel.Height; fy++)
@@ -72,6 +74,10 @@ namespace ShareX.HelpersLib
                                 r += kernel[fy, fx] * currentColor.Red;
                                 g += kernel[fy, fx] * currentColor.Green;
                                 b += kernel[fy, fx] * currentColor.Blue;
+                                if (kernel.ConsiderAlpha)
+                                {
+                                    a += kernel[fy, fx] * currentColor.Alpha;
+                                }
                             }
                         }
 
@@ -84,9 +90,26 @@ namespace ShareX.HelpersLib
                         b += kernel.Offset;
                         b.Clamp(0, 255);
 
-                        dest.SetPixel(x, y, new ColorBgra((byte)b, (byte)g, (byte)r, source.GetPixel(x, y).Alpha));
-                    }
-                }
+                        if (kernel.ConsiderAlpha)
+                        {
+                            a += kernel.Offset;
+                            a.Clamp(0, 255);
+                        }
+
+                        dest.SetPixel(
+                            x,
+                            y,
+                            new ColorBgra(
+                                (byte)b,
+                                (byte)g,
+                                (byte)r,
+                                kernel.ConsiderAlpha
+                                    ? (byte)a
+                                    : source.GetPixel(x, y).Alpha
+                            )
+                        );
+                    });
+                });
             }
 
             return result;
@@ -115,6 +138,7 @@ namespace ShareX.HelpersLib
         public static ConvolutionMatrix GaussianBlur(int height, int width, double sigma)
         {
             ConvolutionMatrix cm = new ConvolutionMatrix(height, width);
+            cm.ConsiderAlpha = true;
 
             double sum = 0.0;
             double midpointX = (width - 1) / 2.0;
