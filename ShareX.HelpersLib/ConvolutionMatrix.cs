@@ -33,6 +33,8 @@ namespace ShareX.HelpersLib
         public int Height => matrix.GetLength(0);
         public byte Offset { get; set; }
 
+        public bool ConsiderAlpha { get; set; }
+
         public ConvolutionMatrix() : this(3)
         {
         }

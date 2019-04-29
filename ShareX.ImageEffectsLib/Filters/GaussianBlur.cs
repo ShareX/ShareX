@@ -67,7 +67,11 @@ namespace ShareX.ImageEffectsLib
         {
             ConvolutionMatrix kernelHoriz = ConvolutionMatrixManager.GaussianBlur(1, size, sigma);
 
-            ConvolutionMatrix kernelVert = new ConvolutionMatrix(size, 1);
+            ConvolutionMatrix kernelVert = new ConvolutionMatrix(size, 1)
+            {
+                ConsiderAlpha = kernelHoriz.ConsiderAlpha
+            };
+
             for (int i = 0; i < size; i++)
             {
                 kernelVert[i, 0] = kernelHoriz[0, i];
