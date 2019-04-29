@@ -72,7 +72,6 @@ namespace ShareX.ScreenCaptureLib
             {
                 if (currentTool == value) return;
 
-                ShapeType previousTool = currentTool;
                 currentTool = value;
 
                 if (Form.IsAnnotationMode)
@@ -93,9 +92,21 @@ namespace ShareX.ScreenCaptureLib
                     ClearTools();
                 }
 
-                if (previousTool != ShapeType.ToolSelect && currentTool != ShapeType.ToolSelect)
+                if (CurrentShape != null)
                 {
-                    DeselectCurrentShape();
+                    // do not keep selection if select tool does not handle it
+                    if (currentTool == ShapeType.ToolSelect)
+                    {
+                        if (!CurrentShape.IsHandledBySelectTool)
+                        {
+                            DeselectCurrentShape();
+                        }
+                    }
+                    // do not keep selection if we switch away from a tool and the selected shape does not match the new type
+                    else if (CurrentShape.ShapeType != currentTool)
+                    {
+                        DeselectCurrentShape();
+                    }
                 }
 
                 OnCurrentShapeTypeChanged(currentTool);
@@ -811,6 +822,7 @@ namespace ShareX.ScreenCaptureLib
 
             if (shape != null && shape.IsSelectable) // Select shape
             {
+                DeselectCurrentShape();
                 IsMoving = true;
                 shape.OnMoving();
                 Form.Cursor = Cursors.SizeAll;
@@ -879,7 +891,7 @@ namespace ShareX.ScreenCaptureLib
 
                             SelectCurrentShape();
 
-                            if (Options.SwitchToSelectionToolAfterDrawing && (shape.ShapeCategory == ShapeCategory.Drawing || shape.ShapeCategory == ShapeCategory.Effect))
+                            if (Options.SwitchToSelectionToolAfterDrawing && shape.IsHandledBySelectTool)
                             {
                                 CurrentTool = ShapeType.ToolSelect;
                             }
