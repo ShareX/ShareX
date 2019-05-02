@@ -260,6 +260,9 @@ namespace ShareX.ScreenCaptureLib
                     case ShapeType.DrawingStep:
                         img = Resources.counter_reset;
                         break;
+                    case ShapeType.DrawingMagnify:
+                        img = Resources.magnifier_zoom;
+                        break;
                     case ShapeType.DrawingImage:
                         img = Resources.folder_open_image;
                         break;
@@ -1377,6 +1380,7 @@ namespace ShareX.ScreenCaptureLib
                 case ShapeType.DrawingTextBackground:
                 case ShapeType.DrawingSpeechBalloon:
                 case ShapeType.DrawingStep:
+                case ShapeType.DrawingMagnify:
                 case ShapeType.DrawingImage:
                 case ShapeType.DrawingImageScreen:
                 case ShapeType.DrawingCursor:
@@ -1406,6 +1410,7 @@ namespace ShareX.ScreenCaptureLib
                 case ShapeType.DrawingTextBackground:
                 case ShapeType.DrawingSpeechBalloon:
                 case ShapeType.DrawingStep:
+                case ShapeType.DrawingMagnify:
                     tsbBorderColor.Visible = true;
                     tslnudBorderSize.Visible = true;
                     tsmiShadow.Visible = true;
@@ -1423,6 +1428,7 @@ namespace ShareX.ScreenCaptureLib
                 case ShapeType.DrawingTextBackground:
                 case ShapeType.DrawingSpeechBalloon:
                 case ShapeType.DrawingStep:
+                case ShapeType.DrawingMagnify:
                     tsbFillColor.Visible = true;
                     break;
             }

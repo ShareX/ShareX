@@ -277,6 +277,7 @@ namespace ShareX.ScreenCaptureLib
         DrawingTextBackground,
         DrawingSpeechBalloon,
         DrawingStep,
+        DrawingMagnify,
         DrawingImage,
         DrawingImageScreen,
         DrawingSticker,

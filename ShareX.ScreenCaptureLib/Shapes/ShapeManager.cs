@@ -183,6 +183,7 @@ namespace ShareX.ScreenCaptureLib
         // Is holding Alt?
         public bool IsSnapResizing { get; private set; }
         public bool IsRenderingOutput { get; private set; }
+        public Point RenderOffset { get; private set; }
         public bool IsModified { get; internal set; }
 
         public InputManager InputManager { get; private set; } = new InputManager();
@@ -1050,6 +1051,9 @@ namespace ShareX.ScreenCaptureLib
                 case ShapeType.DrawingStep:
                     shape = new StepDrawingShape();
                     break;
+                case ShapeType.DrawingMagnify:
+                    shape = new MagnifyDrawingShape();
+                    break;
                 case ShapeType.DrawingImage:
                     shape = new ImageFileDrawingShape();
                     break;
@@ -1237,6 +1241,7 @@ namespace ShareX.ScreenCaptureLib
             if (DrawingShapes.Length > 0 || EffectShapes.Length > 0)
             {
                 IsRenderingOutput = true;
+                RenderOffset = offset;
 
                 MoveAll(-offset.X, -offset.Y);
 
@@ -1261,6 +1266,7 @@ namespace ShareX.ScreenCaptureLib
 
                 MoveAll(offset);
 
+                RenderOffset = Point.Empty;
                 IsRenderingOutput = false;
             }
 

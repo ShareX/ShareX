@@ -3024,6 +3024,15 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Drawing: Magnify.
+        /// </summary>
+        internal static string ShapeType_DrawingMagnify {
+            get {
+                return ResourceManager.GetString("ShapeType_DrawingMagnify", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Drawing: Rectangle (R).
         /// </summary>
         internal static string ShapeType_DrawingRectangle {

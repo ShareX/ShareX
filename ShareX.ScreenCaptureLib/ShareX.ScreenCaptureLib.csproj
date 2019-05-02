@@ -153,6 +153,7 @@
     <Compile Include="Shapes\BaseShape.cs" />
     <Compile Include="Shapes\Drawing\ArrowDrawingShape.cs" />
     <Compile Include="Shapes\Drawing\ImageFileDrawingShape.cs" />
+    <Compile Include="Shapes\Drawing\MagnifyDrawingShape.cs" />
     <Compile Include="Shapes\Drawing\StickerDrawingShape.cs" />
     <Compile Include="Shapes\StickerPackInfo.cs" />
     <Compile Include="Shapes\Tool\BaseTool.cs" />
@@ -235,6 +236,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\magnifier-zoom.png" />
     <None Include="Resources\stamp-cursor.png" />
     <None Include="Resources\smiley-yell.png" />
     <None Include="Resources\smiley-cool.png" />

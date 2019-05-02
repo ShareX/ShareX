@@ -1193,4 +1193,7 @@ Would you like to download and install it?</value>
   <data name="Extensions_AddContextMenu_Undo" xml:space="preserve">
     <value>Undo</value>
   </data>
+  <data name="ShapeType_DrawingMagnify" xml:space="preserve">
+    <value>Drawing: Magnify</value>
+  </data>
 </root>
