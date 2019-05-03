@@ -57,7 +57,7 @@ namespace ShareX.ScreenCaptureLib
                 gp.AddEllipse(Rectangle);
                 g.SetClip(gp);
 
-                float magnify = Math.Max(MagnifyStrength, 100) / 100;
+                float magnify = Math.Max(MagnifyStrength, 100) / 100f;
                 int newWidth = (int)(Rectangle.Width / magnify);
                 int newHeight = (int)(Rectangle.Height / magnify);
 
