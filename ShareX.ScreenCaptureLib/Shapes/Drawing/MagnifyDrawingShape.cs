@@ -35,6 +35,18 @@ namespace ShareX.ScreenCaptureLib
 
         public int MagnifyStrength { get; set; } = 200;
 
+        public override void OnConfigLoad()
+        {
+            base.OnConfigLoad();
+            MagnifyStrength = AnnotationOptions.MagnifyStrength;
+        }
+
+        public override void OnConfigSave()
+        {
+            base.OnConfigSave();
+            AnnotationOptions.MagnifyStrength = MagnifyStrength;
+        }
+
         public override void OnDraw(Graphics g)
         {
             g.PixelOffsetMode = PixelOffsetMode.Half;
@@ -45,7 +57,7 @@ namespace ShareX.ScreenCaptureLib
                 gp.AddEllipse(Rectangle);
                 g.SetClip(gp);
 
-                float magnify = Math.Max(MagnifyStrength, 200) / 100;
+                float magnify = Math.Max(MagnifyStrength, 100) / 100;
                 int newWidth = (int)(Rectangle.Width / magnify);
                 int newHeight = (int)(Rectangle.Height / magnify);
 

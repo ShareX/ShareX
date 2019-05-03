@@ -51,7 +51,7 @@ namespace ShareX.ScreenCaptureLib
         private ToolStripMenuItem tsmiArrowHeadsBothSide, tsmiShadow, tsmiShadowColor, tsmiStepUseLetters, tsmiUndo, tsmiDelete, tsmiDeleteAll, tsmiMoveTop,
             tsmiMoveUp, tsmiMoveDown, tsmiMoveBottom, tsmiRegionCapture, tsmiQuickCrop, tsmiShowMagnifier, tsmiImageEditorBackgroundColor;
         private ToolStripLabeledNumericUpDown tslnudBorderSize, tslnudCornerRadius, tslnudCenterPoints, tslnudBlurRadius, tslnudPixelateSize, tslnudStepFontSize,
-            tslnudMagnifierPixelCount, tslnudStartingStepValue;
+            tslnudMagnifierPixelCount, tslnudStartingStepValue, tslnudMagnifyStrength;
         private ToolStripLabel tslDragLeft, tslDragRight;
         private ToolStripLabeledComboBox tscbImageInterpolationMode, tscbCursorTypes;
 
@@ -606,6 +606,18 @@ namespace ShareX.ScreenCaptureLib
                 Form.Resume();
             };
             tsddbShapeOptions.DropDownItems.Add(tsmiShadowColor);
+
+            // TODO: Translate
+            tslnudMagnifyStrength = new ToolStripLabeledNumericUpDown("Magnify strength:");
+            tslnudMagnifyStrength.Content.Minimum = 100;
+            tslnudMagnifyStrength.Content.Maximum = 1000;
+            tslnudMagnifyStrength.Content.Increment = 100;
+            tslnudMagnifyStrength.Content.ValueChanged = (sender, e) =>
+            {
+                AnnotationOptions.MagnifyStrength = (int)tslnudMagnifyStrength.Content.Value;
+                UpdateCurrentShape();
+            };
+            tsddbShapeOptions.DropDownItems.Add(tslnudMagnifyStrength);
 
             // In dropdown menu if only last item is visible then menu opens at 0, 0 position on first open, so need to add dummy item to solve this weird bug...
             tsddbShapeOptions.DropDownItems.Add(new ToolStripSeparator() { Visible = false });
@@ -1356,6 +1368,8 @@ namespace ShareX.ScreenCaptureLib
             tslnudStartingStepValue.Content.Value = StartingStepNumber;
             tsmiStepUseLetters.Checked = AnnotationOptions.StepUseLetters;
 
+            tslnudMagnifyStrength.Content.Value = AnnotationOptions.MagnifyStrength;
+
             tsmiShadow.Checked = AnnotationOptions.Shadow;
 
             if (tsmiShadowColor.Image != null) tsmiShadowColor.Image.Dispose();
@@ -1450,6 +1464,7 @@ namespace ShareX.ScreenCaptureLib
             tscbImageInterpolationMode.Visible = shapeType == ShapeType.DrawingImage || shapeType == ShapeType.DrawingImageScreen;
             tslnudStartingStepValue.Visible = shapeType == ShapeType.DrawingStep;
             tslnudStepFontSize.Visible = tsmiStepUseLetters.Visible = shapeType == ShapeType.DrawingStep;
+            tslnudMagnifyStrength.Visible = shapeType == ShapeType.DrawingMagnify;
             tscbCursorTypes.Visible = shapeType == ShapeType.DrawingCursor;
             tslnudBlurRadius.Visible = shapeType == ShapeType.EffectBlur;
             tslnudPixelateSize.Visible = shapeType == ShapeType.EffectPixelate;

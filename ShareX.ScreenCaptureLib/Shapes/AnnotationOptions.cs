@@ -84,6 +84,9 @@ namespace ShareX.ScreenCaptureLib
         public int StepFontSize { get; set; } = 18;
         public bool StepUseLetters { get; set; } = false;
 
+        // Magnify drawing
+        public int MagnifyStrength { get; set; } = 200;
+
         // Sticker drawing
         public List<StickerPackInfo> StickerPacks = new List<StickerPackInfo>()
         {
