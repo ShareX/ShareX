@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="ShapeType_RegionFreehand" xml:space="preserve">
-    <value>Region: Freehand</value>
+    <value>Freehand region</value>
   </data>
   <data name="ReplCodeMenuEntry_w_Current_week_name__Local_language_" xml:space="preserve">
     <value>Current week name (Local language)</value>
@@ -157,7 +157,7 @@
     <value>Video thumbnailer</value>
   </data>
   <data name="ShapeType_EffectBlur" xml:space="preserve">
-    <value>Effect: Blur (B)</value>
+    <value>Blur (B)</value>
   </data>
   <data name="AfterCaptureTasks_ShowQuickTaskMenu" xml:space="preserve">
     <value>Show quick task menu</value>
@@ -181,7 +181,7 @@
     <value>Image effects</value>
   </data>
   <data name="ShapeType_DrawingImageScreen" xml:space="preserve">
-    <value>Drawing: Image (Screen)</value>
+    <value>Image (Screen)</value>
   </data>
   <data name="UpdateCheckerLabel_UpdateControls_A_newer_version_of_ShareX_is_available" xml:space="preserve">
     <value>A newer version of {0} is available</value>
@@ -190,7 +190,7 @@
     <value>Show QR code window</value>
   </data>
   <data name="ShapeType_DrawingSpeechBalloon" xml:space="preserve">
-    <value>Drawing: Speech balloon (S)</value>
+    <value>Speech balloon (S)</value>
   </data>
   <data name="ProxyMethod_None" xml:space="preserve">
     <value>None</value>
@@ -214,7 +214,7 @@
     <value>Print image</value>
   </data>
   <data name="ShapeType_RegionRectangle" xml:space="preserve">
-    <value>Region: Rectangle</value>
+    <value>Rectangle region</value>
   </data>
   <data name="HotkeyType_FolderUpload_Category" xml:space="preserve">
     <value>Upload</value>
@@ -286,7 +286,7 @@
     <value>Current minute</value>
   </data>
   <data name="ShapeType_EffectPixelate" xml:space="preserve">
-    <value>Effect: Pixelate (P)</value>
+    <value>Pixelate (P)</value>
   </data>
   <data name="ReplCodeMenuEntry_d_Current_day" xml:space="preserve">
     <value>Current day</value>
@@ -384,7 +384,7 @@ Would you like to download it?</value>
     <value>1 Hour</value>
   </data>
   <data name="ShapeType_DrawingTextOutline" xml:space="preserve">
-    <value>Drawing: Text (Outline) (O)</value>
+    <value>Text (Outline) (O)</value>
   </data>
   <data name="AfterCaptureTasks_SaveImageToFile" xml:space="preserve">
     <value>Save image to file</value>
@@ -462,7 +462,7 @@ Would you like to download it?</value>
     <value>Screen capture</value>
   </data>
   <data name="ShapeType_DrawingImage" xml:space="preserve">
-    <value>Drawing: Image (File)</value>
+    <value>Image (File)</value>
   </data>
   <data name="ScreenRecordGIFEncoding_NET" xml:space="preserve">
     <value>.NET (Bad quality)</value>
@@ -515,13 +515,13 @@ File size: {2:n0} / {3:n0} KB</value>
     <value>Automatically detect</value>
   </data>
   <data name="ShapeType_DrawingArrow" xml:space="preserve">
-    <value>Drawing: Arrow (A)</value>
+    <value>Arrow (A)</value>
   </data>
   <data name="HotkeyType_VideoThumbnailer_Category" xml:space="preserve">
     <value>Tools</value>
   </data>
   <data name="ShapeType_RegionEllipse" xml:space="preserve">
-    <value>Region: Ellipse</value>
+    <value>Ellipse region</value>
   </data>
   <data name="HotkeyType_DNSChanger" xml:space="preserve">
     <value>DNS changer</value>
@@ -545,7 +545,7 @@ File size: {2:n0} / {3:n0} KB</value>
     <value>URL to download settings from</value>
   </data>
   <data name="ShapeType_DrawingFreehand" xml:space="preserve">
-    <value>Drawing: Freehand (F)</value>
+    <value>Freehand (F)</value>
   </data>
   <data name="DownloaderForm_ChangeStatus_Status___0_" xml:space="preserve">
     <value>Status: {0}</value>
@@ -575,7 +575,7 @@ File size: {2:n0} / {3:n0} KB</value>
     <value>Response text</value>
   </data>
   <data name="ShapeType_DrawingCursor" xml:space="preserve">
-    <value>Drawing: Cursor</value>
+    <value>Cursor</value>
   </data>
   <data name="ImgurThumbnailType_Huge_Thumbnail" xml:space="preserve">
     <value>Huge thumbnail</value>
@@ -747,7 +747,7 @@ Would you like to download and install it?</value>
     <value>Close</value>
   </data>
   <data name="ShapeType_DrawingSticker" xml:space="preserve">
-    <value>Drawing: Sticker</value>
+    <value>Sticker</value>
   </data>
   <data name="HotkeyType_ToggleActionsToolbar" xml:space="preserve">
     <value>Toggle actions toolbar</value>
@@ -765,7 +765,7 @@ Would you like to download and install it?</value>
     <value>Show "Before upload" window</value>
   </data>
   <data name="ShapeType_EffectHighlight" xml:space="preserve">
-    <value>Effect: Highlight (H)</value>
+    <value>Highlight (H)</value>
   </data>
   <data name="PastebinPrivacy_Public" xml:space="preserve">
     <value>Public</value>
@@ -819,7 +819,7 @@ Would you like to download and install it?</value>
     <value>Open history window</value>
   </data>
   <data name="ShapeType_DrawingStep" xml:space="preserve">
-    <value>Drawing: Step (I)</value>
+    <value>Step (I)</value>
   </data>
   <data name="ShareX_Logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ShareX_Logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -864,7 +864,7 @@ Would you like to download and install it?</value>
     <value>Random GUID</value>
   </data>
   <data name="ShapeType_DrawingLine" xml:space="preserve">
-    <value>Drawing: Line (L)</value>
+    <value>Line (L)</value>
   </data>
   <data name="HotkeyType_StopUploads_Category" xml:space="preserve">
     <value>Upload</value>
@@ -990,7 +990,7 @@ Would you like to download and install it?</value>
     <value>Screen capture</value>
   </data>
   <data name="ShapeType_DrawingEllipse" xml:space="preserve">
-    <value>Drawing: Ellipse (E)</value>
+    <value>Ellipse (E)</value>
   </data>
   <data name="HotkeyType_ColorPicker" xml:space="preserve">
     <value>Color picker</value>
@@ -1077,7 +1077,7 @@ Would you like to download and install it?</value>
     <value>Select and move (M)</value>
   </data>
   <data name="ShapeType_DrawingRectangle" xml:space="preserve">
-    <value>Drawing: Rectangle (R)</value>
+    <value>Rectangle (R)</value>
   </data>
   <data name="ImageEditorStartMode_Maximized" xml:space="preserve">
     <value>Maximized</value>
@@ -1101,7 +1101,7 @@ Would you like to download and install it?</value>
     <value>Standard storage</value>
   </data>
   <data name="ShapeType_DrawingTextBackground" xml:space="preserve">
-    <value>Drawing: Text (Background) (T)</value>
+    <value>Text (Background) (T)</value>
   </data>
   <data name="HotkeyType_LastRegion_Category" xml:space="preserve">
     <value>Screen capture</value>
@@ -1194,6 +1194,6 @@ Would you like to download and install it?</value>
     <value>Undo</value>
   </data>
   <data name="ShapeType_DrawingMagnify" xml:space="preserve">
-    <value>Drawing: Magnify</value>
+    <value>Magnify</value>
   </data>
 </root>
