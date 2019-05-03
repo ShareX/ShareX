@@ -97,6 +97,8 @@ namespace ShareX.ScreenCaptureLib
 
         public virtual bool IsSelectable => Manager.CurrentTool == ShapeType || Manager.CurrentTool == ShapeType.ToolSelect;
 
+        public bool ForceProportionalResizing { get; protected set; }
+
         internal ShapeManager Manager { get; set; }
 
         protected InputManager InputManager => Manager.InputManager;
@@ -246,7 +248,7 @@ namespace ShareX.ScreenCaptureLib
                     StartPosition = StartPosition.Add(InputManager.MouseVelocity);
                 }
 
-                if (Manager.IsProportionalResizing)
+                if (Manager.IsProportionalResizing || ForceProportionalResizing)
                 {
                     float degree, startDegree;
 

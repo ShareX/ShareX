@@ -35,6 +35,11 @@ namespace ShareX.ScreenCaptureLib
 
         public int MagnifyStrength { get; set; } = 200;
 
+        public MagnifyDrawingShape()
+        {
+            ForceProportionalResizing = true;
+        }
+
         public override void OnConfigLoad()
         {
             base.OnConfigLoad();
