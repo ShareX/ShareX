@@ -228,14 +228,16 @@ namespace ShareX.UploadersLib.FileUploaders
                 //         or
                 //           $customUrl/$uploadPath
 
-                string remoteLocation = URLHelpers.CombineURL(auth.downloadUrl, "file", URLHelpers.URLEncode(BucketName), uploadResult.Upload.fileName);
+                string encodedFileName = URLHelpers.URLEncode(uploadResult.Upload.fileName, true);
+                string remoteLocation = URLHelpers.CombineURL(auth.downloadUrl, "file", URLHelpers.URLEncode(BucketName), encodedFileName);
 
                 DebugHelper.WriteLine($"B2 uploader: Successful upload! File should be at: {remoteLocation}");
 
                 if (UseCustomUrl)
                 {
                     string parsedCustomUrl = NameParser.Parse(NameParserType.FolderPath, CustomUrl);
-                    remoteLocation = parsedCustomUrl + uploadResult.Upload.fileName;
+                    remoteLocation = URLHelpers.CombineURL(parsedCustomUrl, encodedFileName);
+
                     DebugHelper.WriteLine($"B2 uploader: But user requested custom URL, which will be: {remoteLocation}");
                 }
 
