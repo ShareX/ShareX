@@ -1490,7 +1490,7 @@ namespace ShareX.ScreenCaptureLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Interpolation mode.
+        ///   Looks up a localized string similar to Interpolation mode:.
         /// </summary>
         internal static string ShapeManager_CreateToolbar_InterpolationMode {
             get {

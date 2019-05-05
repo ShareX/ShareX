@@ -34,6 +34,7 @@ namespace ShareX.ScreenCaptureLib
         public override ShapeType ShapeType { get; } = ShapeType.DrawingMagnify;
 
         public int MagnifyStrength { get; set; } = 200;
+        public ImageEditorInterpolationMode ImageInterpolationMode { get; set; }
 
         public MagnifyDrawingShape()
         {
@@ -44,18 +45,20 @@ namespace ShareX.ScreenCaptureLib
         {
             base.OnConfigLoad();
             MagnifyStrength = AnnotationOptions.MagnifyStrength;
+            ImageInterpolationMode = AnnotationOptions.ImageInterpolationMode;
         }
 
         public override void OnConfigSave()
         {
             base.OnConfigSave();
             AnnotationOptions.MagnifyStrength = MagnifyStrength;
+            AnnotationOptions.ImageInterpolationMode = ImageInterpolationMode;
         }
 
         public override void OnDraw(Graphics g)
         {
             g.PixelOffsetMode = PixelOffsetMode.Half;
-            g.InterpolationMode = InterpolationMode.NearestNeighbor;
+            g.InterpolationMode = Manager.GetInterpolationMode(ImageInterpolationMode);
 
             using (GraphicsPath gp = new GraphicsPath())
             {

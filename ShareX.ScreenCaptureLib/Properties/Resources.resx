@@ -274,7 +274,7 @@ Distance: {6:0.00} px / Angle: {7:0.00}°</value>
     <value>Arrows on both ends</value>
   </data>
   <data name="ShapeManager_CreateToolbar_InterpolationMode" xml:space="preserve">
-    <value>Interpolation mode</value>
+    <value>Interpolation mode:</value>
   </data>
   <data name="layers_stack_arrange_back" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\layers-stack-arrange-back.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
