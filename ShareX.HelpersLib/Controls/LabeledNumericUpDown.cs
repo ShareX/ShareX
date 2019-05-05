@@ -42,6 +42,18 @@ namespace ShareX.HelpersLib
             }
         }
 
+        public string Text2
+        {
+            get
+            {
+                return lblText2.Text;
+            }
+            set
+            {
+                lblText2.Text = value;
+            }
+        }
+
         public decimal Value
         {
             get

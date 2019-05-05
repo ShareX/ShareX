@@ -442,6 +442,7 @@ namespace ShareX.ScreenCaptureLib
 
             // TODO: Translate
             tslnudMagnifyStrength = new ToolStripLabeledNumericUpDown("Magnify strength:");
+            tslnudMagnifyStrength.Content.Text2 = "%";
             tslnudMagnifyStrength.Content.Minimum = 100;
             tslnudMagnifyStrength.Content.Maximum = 1000;
             tslnudMagnifyStrength.Content.Increment = 100;
