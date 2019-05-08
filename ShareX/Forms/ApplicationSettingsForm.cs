@@ -287,10 +287,10 @@ namespace ShareX
 
         private void UpdatePersonalFolderPathPreview()
         {
-            string personalPath = txtPersonalFolderPath.Text;
-
             try
             {
+                string personalPath = Helpers.GetValidFolderPath(txtPersonalFolderPath.Text);
+
                 if (string.IsNullOrEmpty(personalPath))
                 {
                     if (Program.PortableApps)
@@ -318,6 +318,18 @@ namespace ShareX
             {
                 btnPersonalFolderPathApply.Enabled = false;
                 lblPreviewPersonalFolderPath.Text = "Error: " + e.Message;
+            }
+        }
+
+        private void UpdateScreenshotsFolderPathPreview()
+        {
+            try
+            {
+                lblSaveImageSubFolderPatternPreview.Text = Program.ScreenshotsFolder;
+            }
+            catch (Exception e)
+            {
+                lblSaveImageSubFolderPatternPreview.Text = "Error: " + e.Message;
             }
         }
 
@@ -496,7 +508,7 @@ namespace ShareX
 
         private void btnPersonalFolderPathApply_Click(object sender, EventArgs e)
         {
-            string currentPersonalPath = txtPersonalFolderPath.Text;
+            string currentPersonalPath = Helpers.GetValidFolderPath(txtPersonalFolderPath.Text);
 
             if (!currentPersonalPath.Equals(lastPersonalPath, StringComparison.OrdinalIgnoreCase) && Program.WritePersonalPathConfig(currentPersonalPath))
             {
@@ -519,24 +531,25 @@ namespace ShareX
         private void cbUseCustomScreenshotsPath_CheckedChanged(object sender, EventArgs e)
         {
             Program.Settings.UseCustomScreenshotsPath = cbUseCustomScreenshotsPath.Checked;
-            lblSaveImageSubFolderPatternPreview.Text = Program.ScreenshotsFolder;
+            UpdateScreenshotsFolderPathPreview();
         }
 
         private void txtCustomScreenshotsPath_TextChanged(object sender, EventArgs e)
         {
-            Program.Settings.CustomScreenshotsPath = txtCustomScreenshotsPath.Text;
-            lblSaveImageSubFolderPatternPreview.Text = Program.ScreenshotsFolder;
+            Program.Settings.CustomScreenshotsPath = Helpers.GetValidFolderPath(txtCustomScreenshotsPath.Text);
+            UpdateScreenshotsFolderPathPreview();
         }
 
         private void btnBrowseCustomScreenshotsPath_Click(object sender, EventArgs e)
         {
-            Helpers.BrowseFolder(Resources.ApplicationSettingsForm_btnBrowseCustomScreenshotsPath_Click_Choose_screenshots_folder_path, txtCustomScreenshotsPath, Program.PersonalFolder, true);
+            Helpers.BrowseFolder(Resources.ApplicationSettingsForm_btnBrowseCustomScreenshotsPath_Click_Choose_screenshots_folder_path,
+                txtCustomScreenshotsPath, Program.PersonalFolder, true);
         }
 
         private void txtSaveImageSubFolderPattern_TextChanged(object sender, EventArgs e)
         {
-            Program.Settings.SaveImageSubFolderPattern = txtSaveImageSubFolderPattern.Text;
-            lblSaveImageSubFolderPatternPreview.Text = Program.ScreenshotsFolder;
+            Program.Settings.SaveImageSubFolderPattern = Helpers.GetValidFolderPath(txtSaveImageSubFolderPattern.Text);
+            UpdateScreenshotsFolderPathPreview();
         }
 
         private void btnOpenScreenshotsFolder_Click(object sender, EventArgs e)
