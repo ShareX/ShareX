@@ -210,6 +210,22 @@ namespace ShareX.HelpersLib
                     ThrowEvent(ExceptionThrowed);
                 }
             }
+            finally
+            {
+                if (IsCanceled)
+                {
+                    try
+                    {
+                        if (File.Exists(DownloadLocation))
+                        {
+                            File.Delete(DownloadLocation);
+                        }
+                    }
+                    catch
+                    {
+                    }
+                }
+            }
         }
 
         private void worker_ProgressChanged(object sender, ProgressChangedEventArgs e)
