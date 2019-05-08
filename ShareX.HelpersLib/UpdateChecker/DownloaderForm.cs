@@ -223,7 +223,7 @@ namespace ShareX.HelpersLib
                 fileDownloader.DownloadStarted += (v1, v2) => ChangeStatus(Resources.DownloaderForm_StartDownload_Downloading_);
                 fileDownloader.ProgressChanged += (v1, v2) => ChangeProgress();
                 fileDownloader.DownloadCompleted += fileDownloader_DownloadCompleted;
-                fileDownloader.ExceptionThrowed += (v1, v2) => ChangeStatus(fileDownloader.LastException.Message);
+                fileDownloader.ExceptionThrown += (v1, v2) => ChangeStatus(fileDownloader.LastException.Message);
                 fileDownloader.StartDownload();
 
                 ChangeStatus(Resources.DownloaderForm_StartDownload_Getting_file_size_);
