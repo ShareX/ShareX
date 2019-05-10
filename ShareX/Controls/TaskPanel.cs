@@ -101,7 +101,8 @@ namespace ShareX
             InitializeComponent();
 
             Task = task;
-            Filename = task.Info.FileName;
+            UpdateFilename();
+            UpdateThumbnail();
         }
 
         public void UpdateFilename()
@@ -111,7 +112,7 @@ namespace ShareX
 
         public void UpdateThumbnail()
         {
-            pbThumbnail.LoadImageFromFile(Task.Info.FilePath);
+            pbThumbnail.LoadImageFromFileAsync(Task.Info.FilePath);
         }
 
         public void UpdateProgress()

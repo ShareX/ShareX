@@ -32,6 +32,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ShareX.HelpersLib;
 
 namespace ShareX
 {
@@ -44,6 +45,20 @@ namespace ShareX
             InitializeComponent();
 
             TaskPanels = new List<TaskPanel>();
+            AddTestTaskPanels();
+        }
+
+        public void AddTestTaskPanels()
+        {
+            for (int i = 0; i < 3; i++)
+            {
+                WorkerTask task = WorkerTask.CreateHistoryTask(new RecentTask()
+                {
+                    FilePath = @"..\..\..\ShareX.HelpersLib\Resources\ShareX_Logo.png"
+                });
+
+                AddTaskPanel(task);
+            }
         }
 
         public TaskPanel FindPanel(WorkerTask task)
