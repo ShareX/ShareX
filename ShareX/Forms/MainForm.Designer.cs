@@ -272,9 +272,11 @@
             this.pbDiscordHide = new System.Windows.Forms.PictureBox();
             this.pNews = new System.Windows.Forms.Panel();
             this.btnCloseNews = new System.Windows.Forms.Button();
+            this.ucNews = new ShareX.NewsListControl();
             this.flpCommunity = new System.Windows.Forms.FlowLayoutPanel();
             this.flpDiscord = new System.Windows.Forms.FlowLayoutPanel();
-            this.ucNews = new ShareX.NewsListControl();
+            this.pThumbnailView = new System.Windows.Forms.Panel();
+            this.ucTaskView = new ShareX.TaskView();
             ((System.ComponentModel.ISupportInitialize)(this.scMain)).BeginInit();
             this.scMain.Panel1.SuspendLayout();
             this.scMain.Panel2.SuspendLayout();
@@ -290,6 +292,7 @@
             this.pNews.SuspendLayout();
             this.flpCommunity.SuspendLayout();
             this.flpDiscord.SuspendLayout();
+            this.pThumbnailView.SuspendLayout();
             this.SuspendLayout();
             // 
             // scMain
@@ -2144,6 +2147,12 @@
             this.btnCloseNews.UseVisualStyleBackColor = true;
             this.btnCloseNews.Click += new System.EventHandler(this.btnCloseNews_Click);
             // 
+            // ucNews
+            // 
+            this.ucNews.BackColor = System.Drawing.SystemColors.Window;
+            resources.ApplyResources(this.ucNews, "ucNews");
+            this.ucNews.Name = "ucNews";
+            // 
             // flpCommunity
             // 
             resources.ApplyResources(this.flpCommunity, "flpCommunity");
@@ -2159,11 +2168,18 @@
             this.flpDiscord.Controls.Add(this.pbDiscordHide);
             this.flpDiscord.Name = "flpDiscord";
             // 
-            // ucNews
+            // pThumbnailView
             // 
-            this.ucNews.BackColor = System.Drawing.SystemColors.Window;
-            resources.ApplyResources(this.ucNews, "ucNews");
-            this.ucNews.Name = "ucNews";
+            this.pThumbnailView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(47)))), ((int)(((byte)(56)))));
+            this.pThumbnailView.Controls.Add(this.ucTaskView);
+            resources.ApplyResources(this.pThumbnailView, "pThumbnailView");
+            this.pThumbnailView.Name = "pThumbnailView";
+            // 
+            // ucTaskView
+            // 
+            this.ucTaskView.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.ucTaskView, "ucTaskView");
+            this.ucTaskView.Name = "ucTaskView";
             // 
             // MainForm
             // 
@@ -2171,6 +2187,7 @@
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
+            this.Controls.Add(this.pThumbnailView);
             this.Controls.Add(this.pNews);
             this.Controls.Add(this.flpCommunity);
             this.Controls.Add(this.scMain);
@@ -2205,6 +2222,7 @@
             this.flpCommunity.PerformLayout();
             this.flpDiscord.ResumeLayout(false);
             this.flpDiscord.PerformLayout();
+            this.pThumbnailView.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2457,5 +2475,7 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayScreenshotDelay5;
         private System.Windows.Forms.ToolStripMenuItem tsmiCustomUploaderSettings;
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayCustomUploaderSettings;
+        private System.Windows.Forms.Panel pThumbnailView;
+        private TaskView ucTaskView;
     }
 }

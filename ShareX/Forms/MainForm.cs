@@ -169,6 +169,8 @@ namespace ShareX
             TaskManager.ListViewControl = lvUploads;
             uim = new UploadInfoManager(lvUploads);
 
+            TaskManager.TaskView = ucTaskView;
+
             // Required for BackColor Transparent to work
             lblMainFormTip.Parent = lvUploads;
 

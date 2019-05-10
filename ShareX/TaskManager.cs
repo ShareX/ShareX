@@ -40,6 +40,8 @@ namespace ShareX
     {
         public static MyListView ListViewControl { get; set; }
 
+        public static TaskView TaskView { get; set; }
+
         public static bool IsBusy
         {
             get
@@ -72,6 +74,7 @@ namespace ShareX
                 }
 
                 CreateListViewItem(task);
+                TaskView.AddTaskPanel(task);
 
                 if (task.Status != TaskStatus.History)
                 {
@@ -236,6 +239,8 @@ namespace ShareX
 
         private static void task_UploadStarted(WorkerTask task)
         {
+            TaskView.UpdateThumbnail(task);
+
             TaskInfo info = task.Info;
 
             string status = string.Format("Upload started. Filename: {0}", info.FileName);
@@ -250,6 +255,8 @@ namespace ShareX
                 lvi.SubItems[1].Text = info.Status;
                 lvi.ImageIndex = 0;
             }
+
+            TaskView.UpdateFilename(task);
         }
 
         private static void task_UploadProgressChanged(WorkerTask task)
@@ -283,6 +290,8 @@ namespace ShareX
                     lvi.SubItems[5].Text = Helpers.ProperTimeSpan(info.Progress.Remaining);
                 }
 
+                TaskView.UpdateProgress(task);
+
                 UpdateProgressUI();
             }
         }
@@ -306,6 +315,8 @@ namespace ShareX
 
                     DebugHelper.WriteLine(text);
                 }
+
+                TaskView.HideProgress(task);
             }
         }
 

@@ -118,6 +118,9 @@
     <Compile Include="Controls\LabeledComboBox.Designer.cs">
       <DependentUpon>LabeledComboBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\RoundedCornerPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Controls\ToolStripBorderRight.cs">
       <SubType>Component</SubType>
     </Compile>
