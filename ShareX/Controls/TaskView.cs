@@ -73,6 +73,7 @@ namespace ShareX
             panel.ChangeThumbnailSize(ThumbnailSize);
             TaskPanels.Add(panel);
             flpMain.Controls.Add(panel);
+            flpMain.Controls.SetChildIndex(panel, 0);
         }
 
         public void UpdateFilename(WorkerTask task)

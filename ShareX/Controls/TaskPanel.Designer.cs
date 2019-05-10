@@ -67,6 +67,7 @@
             this.pbThumbnail.BackColor = System.Drawing.SystemColors.Window;
             this.pbThumbnail.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pbThumbnail.DrawCheckeredBackground = true;
+            this.pbThumbnail.FullscreenOnClick = true;
             this.pbThumbnail.Location = new System.Drawing.Point(5, 5);
             this.pbThumbnail.Name = "pbThumbnail";
             this.pbThumbnail.Size = new System.Drawing.Size(246, 212);
