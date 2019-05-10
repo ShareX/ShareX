@@ -53,7 +53,8 @@ namespace ShareX.HelpersLib
                 if (text != value)
                 {
                     text = value;
-                    Refresh();
+
+                    Invalidate();
                     OnTextChanged(EventArgs.Empty);
                 }
             }
@@ -71,7 +72,8 @@ namespace ShareX.HelpersLib
             set
             {
                 textAlign = value;
-                Refresh();
+
+                Invalidate();
             }
         }
 
@@ -87,7 +89,8 @@ namespace ShareX.HelpersLib
             set
             {
                 textShadowColor = value;
-                Refresh();
+
+                Invalidate();
             }
         }
 
@@ -103,7 +106,25 @@ namespace ShareX.HelpersLib
             set
             {
                 drawBorder = value;
-                Refresh();
+
+                Invalidate();
+            }
+        }
+
+        private bool autoEllipsis;
+
+        [DefaultValue(false)]
+        public bool AutoEllipsis
+        {
+            get
+            {
+                return autoEllipsis;
+            }
+            set
+            {
+                autoEllipsis = value;
+
+                Invalidate();
             }
         }
 
@@ -167,6 +188,11 @@ namespace ShareX.HelpersLib
                 case ContentAlignment.BottomRight:
                     tff = TextFormatFlags.Bottom | TextFormatFlags.Right;
                     break;
+            }
+
+            if (AutoEllipsis)
+            {
+                tff |= TextFormatFlags.EndEllipsis;
             }
 
             TextRenderer.DrawText(g, Text, Font, new Rectangle(ClientRectangle.X, ClientRectangle.Y + 1, ClientRectangle.Width, ClientRectangle.Height + 1), TextShadowColor, tff);

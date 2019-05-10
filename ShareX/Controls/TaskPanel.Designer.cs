@@ -74,6 +74,7 @@
             // 
             // lblFilename
             // 
+            this.lblFilename.AutoEllipsis = true;
             this.lblFilename.BackColor = System.Drawing.Color.Transparent;
             this.lblFilename.Font = new System.Drawing.Font("Arial", 12F);
             this.lblFilename.ForeColor = System.Drawing.Color.White;
@@ -82,7 +83,7 @@
             this.lblFilename.Size = new System.Drawing.Size(256, 24);
             this.lblFilename.TabIndex = 1;
             this.lblFilename.Text = "Test.png";
-            this.lblFilename.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblFilename.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // TaskPanel
             // 
