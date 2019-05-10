@@ -71,6 +71,18 @@ namespace ShareX.HelpersLib
             }
         }
 
+        public Color PictureBoxBackColor
+        {
+            get
+            {
+                return pbMain.BackColor;
+            }
+            set
+            {
+                pbMain.BackColor = value;
+            }
+        }
+
         private bool drawCheckeredBackground;
 
         [DefaultValue(false)]

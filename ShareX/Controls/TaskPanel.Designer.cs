@@ -64,12 +64,12 @@
             // 
             // pbThumbnail
             // 
-            this.pbThumbnail.BackColor = System.Drawing.SystemColors.Window;
+            this.pbThumbnail.BackColor = System.Drawing.Color.Transparent;
             this.pbThumbnail.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pbThumbnail.DrawCheckeredBackground = true;
             this.pbThumbnail.FullscreenOnClick = true;
             this.pbThumbnail.Location = new System.Drawing.Point(5, 5);
             this.pbThumbnail.Name = "pbThumbnail";
+            this.pbThumbnail.PictureBoxBackColor = System.Drawing.Color.Transparent;
             this.pbThumbnail.Size = new System.Drawing.Size(246, 212);
             this.pbThumbnail.TabIndex = 0;
             // 
@@ -81,7 +81,7 @@
             this.lblFilename.ForeColor = System.Drawing.Color.White;
             this.lblFilename.Location = new System.Drawing.Point(0, 0);
             this.lblFilename.Name = "lblFilename";
-            this.lblFilename.Size = new System.Drawing.Size(256, 24);
+            this.lblFilename.Size = new System.Drawing.Size(256, 22);
             this.lblFilename.TabIndex = 1;
             this.lblFilename.Text = "Test.png";
             this.lblFilename.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
