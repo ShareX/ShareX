@@ -311,7 +311,7 @@ namespace ShareX.HelpersLib
 
         private void pbMain_LoadProgressChanged(object sender, ProgressChangedEventArgs e)
         {
-            if (e.ProgressPercentage < 100)
+            if (isImageLoading && e.ProgressPercentage < 100)
             {
                 Text = string.Format(Resources.MyPictureBox_pbMain_LoadProgressChanged_Loading_image___0__, e.ProgressPercentage);
             }
