@@ -40,7 +40,6 @@
             this.pThumbnail.BackColor = System.Drawing.Color.Transparent;
             this.pThumbnail.Controls.Add(this.pbProgress);
             this.pThumbnail.Controls.Add(this.pbThumbnail);
-            this.pThumbnail.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pThumbnail.Location = new System.Drawing.Point(0, 24);
             this.pThumbnail.Name = "pThumbnail";
             this.pThumbnail.Padding = new System.Windows.Forms.Padding(5);
@@ -51,6 +50,8 @@
             // 
             // pbProgress
             // 
+            this.pbProgress.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pbProgress.Location = new System.Drawing.Point(8, 183);
             this.pbProgress.Maximum = 100;
             this.pbProgress.Minimum = 0;
@@ -74,7 +75,6 @@
             // lblFilename
             // 
             this.lblFilename.BackColor = System.Drawing.Color.Transparent;
-            this.lblFilename.Dock = System.Windows.Forms.DockStyle.Top;
             this.lblFilename.Font = new System.Drawing.Font("Arial", 12F);
             this.lblFilename.ForeColor = System.Drawing.Color.White;
             this.lblFilename.Location = new System.Drawing.Point(0, 0);
@@ -88,11 +88,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.pThumbnail);
             this.Controls.Add(this.lblFilename);
             this.Name = "TaskPanel";
-            this.Size = new System.Drawing.Size(256, 246);
+            this.Size = new System.Drawing.Size(259, 249);
             this.pThumbnail.ResumeLayout(false);
             this.ResumeLayout(false);
 

@@ -39,6 +39,7 @@ namespace ShareX
     public partial class TaskView : UserControl
     {
         public List<TaskPanel> TaskPanels { get; private set; }
+        public Size ThumbnailSize { get; set; } = new Size(200, 150);
 
         public TaskView()
         {
@@ -69,6 +70,7 @@ namespace ShareX
         public void AddTaskPanel(WorkerTask task)
         {
             TaskPanel panel = new TaskPanel(task);
+            panel.ChangeThumbnailSize(ThumbnailSize);
             TaskPanels.Add(panel);
             flpMain.Controls.Add(panel);
         }
