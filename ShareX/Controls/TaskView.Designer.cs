@@ -28,40 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tlpMain = new System.Windows.Forms.TableLayoutPanel();
+            this.flpMain = new System.Windows.Forms.FlowLayoutPanel();
             this.SuspendLayout();
             // 
-            // tlpMain
+            // flpMain
             // 
-            this.tlpMain.AutoSize = true;
-            this.tlpMain.ColumnCount = 3;
-            this.tlpMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tlpMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
-            this.tlpMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tlpMain.Location = new System.Drawing.Point(3, 3);
-            this.tlpMain.Name = "tlpMain";
-            this.tlpMain.RowCount = 1;
-            this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tlpMain.Size = new System.Drawing.Size(242, 228);
-            this.tlpMain.TabIndex = 0;
+            this.flpMain.AutoScroll = true;
+            this.flpMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flpMain.Location = new System.Drawing.Point(0, 0);
+            this.flpMain.Name = "flpMain";
+            this.flpMain.Padding = new System.Windows.Forms.Padding(3);
+            this.flpMain.Size = new System.Drawing.Size(242, 228);
+            this.flpMain.TabIndex = 0;
             // 
             // TaskView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.Transparent;
-            this.Controls.Add(this.tlpMain);
+            this.Controls.Add(this.flpMain);
             this.Name = "TaskView";
-            this.Padding = new System.Windows.Forms.Padding(3);
-            this.Size = new System.Drawing.Size(225, 211);
+            this.Size = new System.Drawing.Size(242, 228);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TableLayoutPanel tlpMain;
+        private System.Windows.Forms.FlowLayoutPanel flpMain;
     }
 }
