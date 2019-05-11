@@ -51,7 +51,7 @@ namespace ShareX
 
         public void AddTestTaskPanels()
         {
-            for (int i = 0; i < 3; i++)
+            for (int i = 0; i < 7; i++)
             {
                 WorkerTask task = WorkerTask.CreateHistoryTask(new RecentTask()
                 {
@@ -72,8 +72,15 @@ namespace ShareX
             TaskPanel panel = new TaskPanel(task);
             panel.ChangeThumbnailSize(ThumbnailSize);
             TaskPanels.Add(panel);
-            flpMain.Controls.Add(panel);
-            flpMain.Controls.SetChildIndex(panel, 0);
+
+            if (tlpMain.Controls.Count > 0 && tlpMain.Controls.Count % tlpMain.ColumnCount == 0)
+            {
+                RowStyle temp = tlpMain.RowStyles[tlpMain.RowCount - 1];
+                tlpMain.RowCount++;
+                tlpMain.RowStyles.Add(new RowStyle(temp.SizeType, temp.Height));
+            }
+
+            tlpMain.Controls.Add(panel, tlpMain.Controls.Count % tlpMain.ColumnCount, tlpMain.RowCount - 1);
         }
 
         public void UpdateFilename(WorkerTask task)
