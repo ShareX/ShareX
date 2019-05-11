@@ -239,8 +239,6 @@ namespace ShareX
 
         private static void task_UploadStarted(WorkerTask task)
         {
-            TaskView.UpdateThumbnail(task);
-
             TaskInfo info = task.Info;
 
             string status = string.Format("Upload started. Filename: {0}", info.FileName);
@@ -257,6 +255,8 @@ namespace ShareX
             }
 
             TaskView.UpdateFilename(task);
+            TaskView.UpdateThumbnail(task);
+            TaskView.UpdateProgressVisible(task, true);
         }
 
         private static void task_UploadProgressChanged(WorkerTask task)
@@ -290,9 +290,9 @@ namespace ShareX
                     lvi.SubItems[5].Text = Helpers.ProperTimeSpan(info.Progress.Remaining);
                 }
 
-                TaskView.UpdateProgress(task);
-
                 UpdateProgressUI();
+
+                TaskView.UpdateProgress(task);
             }
         }
 
@@ -315,9 +315,9 @@ namespace ShareX
 
                     DebugHelper.WriteLine(text);
                 }
-
-                TaskView.HideProgress(task);
             }
+
+            TaskView.UpdateProgressVisible(task, false);
         }
 
         private static void task_TaskCompleted(WorkerTask task)

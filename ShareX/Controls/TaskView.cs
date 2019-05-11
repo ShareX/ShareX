@@ -91,13 +91,13 @@ namespace ShareX
             FindPanel(task)?.UpdateProgress();
         }
 
-        public void HideProgress(WorkerTask task)
+        public void UpdateProgressVisible(WorkerTask task, bool visible)
         {
             TaskPanel panel = FindPanel(task);
 
             if (panel != null)
             {
-                panel.ProgressVisible = false;
+                panel.ProgressVisible = visible;
             }
         }
     }

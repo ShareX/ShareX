@@ -123,7 +123,6 @@ namespace ShareX
 
         public void UpdateProgress()
         {
-            ProgressVisible = true;
             Progress = (int)Task.Info.Progress.Percentage;
         }
     }
