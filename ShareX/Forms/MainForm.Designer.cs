@@ -272,11 +272,11 @@
             this.pbDiscordHide = new System.Windows.Forms.PictureBox();
             this.pNews = new System.Windows.Forms.Panel();
             this.btnCloseNews = new System.Windows.Forms.Button();
-            this.ucNews = new ShareX.NewsListControl();
             this.flpCommunity = new System.Windows.Forms.FlowLayoutPanel();
             this.flpDiscord = new System.Windows.Forms.FlowLayoutPanel();
             this.pThumbnailView = new System.Windows.Forms.Panel();
             this.ucTaskView = new ShareX.TaskView();
+            this.ucNews = new ShareX.NewsListControl();
             ((System.ComponentModel.ISupportInitialize)(this.scMain)).BeginInit();
             this.scMain.Panel1.SuspendLayout();
             this.scMain.Panel2.SuspendLayout();
@@ -2148,12 +2148,6 @@
             this.btnCloseNews.UseVisualStyleBackColor = true;
             this.btnCloseNews.Click += new System.EventHandler(this.btnCloseNews_Click);
             // 
-            // ucNews
-            // 
-            this.ucNews.BackColor = System.Drawing.SystemColors.Window;
-            resources.ApplyResources(this.ucNews, "ucNews");
-            this.ucNews.Name = "ucNews";
-            // 
             // flpCommunity
             // 
             resources.ApplyResources(this.flpCommunity, "flpCommunity");
@@ -2177,10 +2171,17 @@
             // 
             // ucTaskView
             // 
-            this.ucTaskView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(47)))), ((int)(((byte)(56)))));
             resources.ApplyResources(this.ucTaskView, "ucTaskView");
+            this.ucTaskView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(47)))), ((int)(((byte)(56)))));
             this.ucTaskView.Name = "ucTaskView";
             this.ucTaskView.ThumbnailSize = new System.Drawing.Size(200, 150);
+            this.ucTaskView.ContextMenuRequested += new ShareX.TaskView.TaskViewMouseEventHandler(this.UcTaskView_ContextMenuRequested);
+            // 
+            // ucNews
+            // 
+            this.ucNews.BackColor = System.Drawing.SystemColors.Window;
+            resources.ApplyResources(this.ucNews, "ucNews");
+            this.ucNews.Name = "ucNews";
             // 
             // MainForm
             // 

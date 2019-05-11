@@ -2090,6 +2090,9 @@
   <data name="&gt;&gt;flpCommunity.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
+  <data name="ucTaskView.AutoScroll" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
   <data name="ucTaskView.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>

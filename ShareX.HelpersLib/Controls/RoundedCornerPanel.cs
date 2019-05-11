@@ -72,7 +72,7 @@ namespace ShareX.HelpersLib
         {
             BackColor = Color.Transparent;
 
-            SetStyle(ControlStyles.SupportsTransparentBackColor, true);
+            SetStyle(ControlStyles.UserPaint | ControlStyles.AllPaintingInWmPaint | ControlStyles.ResizeRedraw | ControlStyles.OptimizedDoubleBuffer | ControlStyles.SupportsTransparentBackColor, true);
         }
 
         protected override void OnPaint(PaintEventArgs e)

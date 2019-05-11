@@ -40,6 +40,7 @@
             this.flpMain.Padding = new System.Windows.Forms.Padding(5, 3, 5, 5);
             this.flpMain.Size = new System.Drawing.Size(242, 8);
             this.flpMain.TabIndex = 0;
+            this.flpMain.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Panel_MouseUp);
             // 
             // TaskView
             // 

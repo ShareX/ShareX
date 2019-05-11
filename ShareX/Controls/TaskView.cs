@@ -40,6 +40,10 @@ namespace ShareX
     {
         public List<TaskPanel> TaskPanels { get; private set; }
         public Size ThumbnailSize { get; set; } = new Size(200, 150);
+        public WorkerTask SelectedTask { get; private set; }
+
+        public delegate void TaskViewMouseEventHandler(object sender, MouseEventArgs e, WorkerTask task);
+        public event TaskViewMouseEventHandler ContextMenuRequested;
 
         public TaskView()
         {
@@ -71,9 +75,27 @@ namespace ShareX
         {
             TaskPanel panel = new TaskPanel(task);
             panel.ChangeThumbnailSize(ThumbnailSize);
+            panel.MouseDown += (sender, e) => SelectedTask = panel.Task;
+            panel.MouseUp += Panel_MouseUp;
             TaskPanels.Add(panel);
             flpMain.Controls.Add(panel);
             flpMain.Controls.SetChildIndex(panel, 0);
+        }
+
+        protected void OnContextMenuRequested(object sender, MouseEventArgs e, WorkerTask task)
+        {
+            if (ContextMenuRequested != null)
+            {
+                ContextMenuRequested(sender, e, task);
+            }
+        }
+
+        private void Panel_MouseUp(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                OnContextMenuRequested(sender, e, SelectedTask);
+            }
         }
 
         public void UpdateFilename(WorkerTask task)

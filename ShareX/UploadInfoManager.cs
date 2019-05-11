@@ -96,6 +96,14 @@ namespace ShareX
             }
         }
 
+        public void SelectItem(WorkerTask task)
+        {
+            if (task != null && task.Info != null)
+            {
+                SelectedItems = new UploadInfoStatus[] { new UploadInfoStatus(task.Info) };
+            }
+        }
+
         #region Open
 
         public void OpenURL()

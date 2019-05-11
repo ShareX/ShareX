@@ -96,6 +96,46 @@ namespace ShareX
 
         private bool progressVisible;
 
+        public new event MouseEventHandler MouseDown
+        {
+            add
+            {
+                base.MouseDown += value;
+                lblFilename.MouseDown += value;
+                pThumbnail.MouseDown += value;
+                pbThumbnail.MouseDown += value;
+                pbProgress.MouseDown += value;
+            }
+            remove
+            {
+                base.MouseDown -= value;
+                lblFilename.MouseDown -= value;
+                pThumbnail.MouseDown -= value;
+                pbThumbnail.MouseDown -= value;
+                pbProgress.MouseDown -= value;
+            }
+        }
+
+        public new event MouseEventHandler MouseUp
+        {
+            add
+            {
+                base.MouseUp += value;
+                lblFilename.MouseUp += value;
+                pThumbnail.MouseUp += value;
+                pbThumbnail.MouseUp += value;
+                pbProgress.MouseUp += value;
+            }
+            remove
+            {
+                base.MouseUp -= value;
+                lblFilename.MouseUp -= value;
+                pThumbnail.MouseUp -= value;
+                pbThumbnail.MouseUp -= value;
+                pbProgress.MouseUp -= value;
+            }
+        }
+
         public TaskPanel(WorkerTask task)
         {
             InitializeComponent();

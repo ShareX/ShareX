@@ -590,7 +590,7 @@ namespace ShareX
             }
         }
 
-        private void UpdateContextMenu()
+        private void UpdateContextMenu(WorkerTask task = null)
         {
             cmsTaskInfo.SuspendLayout();
 
@@ -598,30 +598,38 @@ namespace ShareX
                 tsmiShowQRCode.Visible = tsmiOCRImage.Visible = tsmiCombineImages.Visible = tsmiUploadSelectedFile.Visible = tsmiDownloadSelectedURL.Visible =
                 tsmiEditSelectedFile.Visible = tsmiDeleteSelectedItem.Visible = tsmiDeleteSelectedFile.Visible = tsmiShortenSelectedURL.Visible =
                 tsmiShareSelectedURL.Visible = tsmiClearList.Visible = tssUploadInfo1.Visible = false;
-            pbPreview.Reset();
-            uim.RefreshSelectedItems();
 
-            switch (Program.Settings.ImagePreview)
+            if (task == null)
             {
-                case ImagePreviewVisibility.Show:
-                    scMain.Panel2Collapsed = false;
-                    break;
-                case ImagePreviewVisibility.Hide:
-                    scMain.Panel2Collapsed = true;
-                    break;
-                case ImagePreviewVisibility.Automatic:
-                    scMain.Panel2Collapsed = !uim.IsItemSelected || (!uim.SelectedItem.IsImageFile && !uim.SelectedItem.IsImageURL);
-                    break;
+                pbPreview.Reset();
+                uim.RefreshSelectedItems();
+
+                switch (Program.Settings.ImagePreview)
+                {
+                    case ImagePreviewVisibility.Show:
+                        scMain.Panel2Collapsed = false;
+                        break;
+                    case ImagePreviewVisibility.Hide:
+                        scMain.Panel2Collapsed = true;
+                        break;
+                    case ImagePreviewVisibility.Automatic:
+                        scMain.Panel2Collapsed = !uim.IsItemSelected || (!uim.SelectedItem.IsImageFile && !uim.SelectedItem.IsImageURL);
+                        break;
+                }
+
+                switch (Program.Settings.ImagePreviewLocation)
+                {
+                    case ImagePreviewLocation.Side:
+                        scMain.Orientation = Orientation.Vertical;
+                        break;
+                    case ImagePreviewLocation.Bottom:
+                        scMain.Orientation = Orientation.Horizontal;
+                        break;
+                }
             }
-
-            switch (Program.Settings.ImagePreviewLocation)
+            else
             {
-                case ImagePreviewLocation.Side:
-                    scMain.Orientation = Orientation.Vertical;
-                    break;
-                case ImagePreviewLocation.Bottom:
-                    scMain.Orientation = Orientation.Horizontal;
-                    break;
+                uim.SelectItem(task);
             }
 
             if (uim.IsItemSelected)
@@ -638,7 +646,9 @@ namespace ShareX
                 tsmiOpenFolder.Enabled = uim.SelectedItem.IsFileExist;
                 tsmiOpenThumbnailFile.Enabled = uim.SelectedItem.IsThumbnailFileExist;
 
-                if (GetCurrentTasks().Any(x => x.IsWorking))
+                WorkerTask[] tasks = GetCurrentTasks();
+
+                if (tasks != null && tasks.Any(x => x.IsWorking))
                 {
                     tsmiStopUpload.Visible = true;
                 }
@@ -707,15 +717,18 @@ namespace ShareX
                     tsmiShowResponse.Visible = !string.IsNullOrEmpty(uim.SelectedItem.Info.Result.Response);
                 }
 
-                if (!scMain.Panel2Collapsed)
+                if (task == null)
                 {
-                    if (uim.SelectedItem.IsImageFile)
+                    if (!scMain.Panel2Collapsed)
                     {
-                        pbPreview.LoadImageFromFileAsync(uim.SelectedItem.Info.FilePath);
-                    }
-                    else if (uim.SelectedItem.IsImageURL)
-                    {
-                        pbPreview.LoadImageFromURLAsync(uim.SelectedItem.Info.Result.URL);
+                        if (uim.SelectedItem.IsImageFile)
+                        {
+                            pbPreview.LoadImageFromFileAsync(uim.SelectedItem.Info.FilePath);
+                        }
+                        else if (uim.SelectedItem.IsImageURL)
+                        {
+                            pbPreview.LoadImageFromURLAsync(uim.SelectedItem.Info.Result.URL);
+                        }
                     }
                 }
             }
@@ -1342,6 +1355,12 @@ namespace ShareX
             }
 
             e.Handled = e.SuppressKeyPress = true;
+        }
+
+        private void UcTaskView_ContextMenuRequested(object sender, MouseEventArgs e, WorkerTask task)
+        {
+            UpdateContextMenu(task);
+            cmsTaskInfo.Show(sender as Control, e.X + 1, e.Y + 1);
         }
 
         private void cmsTaskInfo_Closing(object sender, ToolStripDropDownClosingEventArgs e)
