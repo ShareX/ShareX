@@ -384,6 +384,7 @@
             this.pbPreview.EnableRightClickMenu = true;
             this.pbPreview.FullscreenOnClick = true;
             this.pbPreview.Name = "pbPreview";
+            this.pbPreview.PictureBoxBackColor = System.Drawing.SystemColors.Control;
             this.pbPreview.ShowImageSizeLabel = true;
             // 
             // flpSupportUs
@@ -2170,16 +2171,16 @@
             // 
             // pThumbnailView
             // 
-            this.pThumbnailView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(47)))), ((int)(((byte)(56)))));
             this.pThumbnailView.Controls.Add(this.ucTaskView);
             resources.ApplyResources(this.pThumbnailView, "pThumbnailView");
             this.pThumbnailView.Name = "pThumbnailView";
             // 
             // ucTaskView
             // 
-            this.ucTaskView.BackColor = System.Drawing.Color.Transparent;
+            this.ucTaskView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(47)))), ((int)(((byte)(56)))));
             resources.ApplyResources(this.ucTaskView, "ucTaskView");
             this.ucTaskView.Name = "ucTaskView";
+            this.ucTaskView.ThumbnailSize = new System.Drawing.Size(200, 150);
             // 
             // MainForm
             // 

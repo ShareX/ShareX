@@ -107,7 +107,7 @@ namespace ShareX
 
         public void ChangeThumbnailSize(Size size)
         {
-            Size = new Size(pThumbnail.Padding.Horizontal + size.Width, lblFilename.Height + pThumbnail.Padding.Vertical + size.Height);
+            Size = new Size(pThumbnail.Padding.Horizontal + size.Width, pThumbnail.Top + pThumbnail.Padding.Vertical + size.Height);
         }
 
         public void UpdateFilename()

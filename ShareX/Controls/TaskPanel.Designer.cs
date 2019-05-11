@@ -82,11 +82,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblFilename.AutoEllipsis = true;
             this.lblFilename.BackColor = System.Drawing.Color.Transparent;
-            this.lblFilename.Font = new System.Drawing.Font("Arial", 12F);
+            this.lblFilename.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFilename.ForeColor = System.Drawing.Color.White;
             this.lblFilename.Location = new System.Drawing.Point(0, 0);
             this.lblFilename.Name = "lblFilename";
-            this.lblFilename.Size = new System.Drawing.Size(256, 24);
+            this.lblFilename.Size = new System.Drawing.Size(256, 22);
             this.lblFilename.TabIndex = 1;
             this.lblFilename.Text = "Test.png";
             this.lblFilename.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
