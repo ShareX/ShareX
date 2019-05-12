@@ -74,7 +74,11 @@ namespace ShareX
                 }
 
                 CreateListViewItem(task);
-                TaskView.AddTaskPanel(task);
+
+                if (Program.Settings.TaskViewMode == TaskViewMode.ThumbnailView)
+                {
+                    TaskView.AddTaskPanel(task);
+                }
 
                 if (task.Status != TaskStatus.History)
                 {
@@ -162,19 +166,6 @@ namespace ShareX
             return null;
         }
 
-        private static void ChangeListViewItemStatus(WorkerTask task)
-        {
-            if (ListViewControl != null)
-            {
-                ListViewItem lvi = FindListViewItem(task);
-
-                if (lvi != null)
-                {
-                    lvi.SubItems[1].Text = task.Info.Status;
-                }
-            }
-        }
-
         private static void CreateListViewItem(WorkerTask task)
         {
             if (ListViewControl != null)
@@ -230,6 +221,19 @@ namespace ShareX
             }
         }
 
+        private static void ChangeListViewItemStatus(WorkerTask task)
+        {
+            if (ListViewControl != null)
+            {
+                ListViewItem lvi = FindListViewItem(task);
+
+                if (lvi != null)
+                {
+                    lvi.SubItems[1].Text = task.Info.Status;
+                }
+            }
+        }
+
         private static void task_StatusChanged(WorkerTask task)
         {
             DebugHelper.WriteLine("Task status: " + task.Status);
@@ -254,45 +258,54 @@ namespace ShareX
                 lvi.ImageIndex = 0;
             }
 
-            TaskView.UpdateFilename(task);
-            TaskView.UpdateThumbnail(task);
-            TaskView.UpdateProgressVisible(task, true);
+            if (Program.Settings.TaskViewMode == TaskViewMode.ThumbnailView)
+            {
+                TaskView.UpdateFilename(task);
+                TaskView.UpdateThumbnail(task);
+                TaskView.UpdateProgressVisible(task, true);
+            }
         }
 
         private static void task_UploadProgressChanged(WorkerTask task)
         {
-            if (task.Status == TaskStatus.Working && ListViewControl != null)
+            if (task.Status == TaskStatus.Working)
             {
-                TaskInfo info = task.Info;
-
-                ListViewItem lvi = FindListViewItem(task);
-
-                if (lvi != null)
+                if (ListViewControl != null)
                 {
-                    lvi.SubItems[1].Text = string.Format("{0:0.0}%", info.Progress.Percentage);
+                    TaskInfo info = task.Info;
 
-                    if (info.Progress.CustomProgressText != null)
-                    {
-                        lvi.SubItems[2].Text = info.Progress.CustomProgressText;
-                        lvi.SubItems[3].Text = "";
-                    }
-                    else
-                    {
-                        lvi.SubItems[2].Text = string.Format("{0} / {1}", info.Progress.Position.ToSizeString(Program.Settings.BinaryUnits), info.Progress.Length.ToSizeString(Program.Settings.BinaryUnits));
+                    ListViewItem lvi = FindListViewItem(task);
 
-                        if (info.Progress.Speed > 0)
+                    if (lvi != null)
+                    {
+                        lvi.SubItems[1].Text = string.Format("{0:0.0}%", info.Progress.Percentage);
+
+                        if (info.Progress.CustomProgressText != null)
                         {
-                            lvi.SubItems[3].Text = ((long)info.Progress.Speed).ToSizeString(Program.Settings.BinaryUnits) + "/s";
+                            lvi.SubItems[2].Text = info.Progress.CustomProgressText;
+                            lvi.SubItems[3].Text = "";
                         }
-                    }
+                        else
+                        {
+                            lvi.SubItems[2].Text = string.Format("{0} / {1}", info.Progress.Position.ToSizeString(Program.Settings.BinaryUnits), info.Progress.Length.ToSizeString(Program.Settings.BinaryUnits));
 
-                    lvi.SubItems[4].Text = Helpers.ProperTimeSpan(info.Progress.Elapsed);
-                    lvi.SubItems[5].Text = Helpers.ProperTimeSpan(info.Progress.Remaining);
+                            if (info.Progress.Speed > 0)
+                            {
+                                lvi.SubItems[3].Text = ((long)info.Progress.Speed).ToSizeString(Program.Settings.BinaryUnits) + "/s";
+                            }
+                        }
+
+                        lvi.SubItems[4].Text = Helpers.ProperTimeSpan(info.Progress.Elapsed);
+                        lvi.SubItems[5].Text = Helpers.ProperTimeSpan(info.Progress.Remaining);
+                    }
+                }
+
+                if (Program.Settings.TaskViewMode == TaskViewMode.ThumbnailView)
+                {
+                    TaskView.UpdateProgress(task);
                 }
 
                 UpdateProgressUI();
-
-                TaskView.UpdateProgress(task);
             }
         }
 
@@ -317,7 +330,10 @@ namespace ShareX
                 }
             }
 
-            TaskView.UpdateProgressVisible(task, false);
+            if (Program.Settings.TaskViewMode == TaskViewMode.ThumbnailView)
+            {
+                TaskView.UpdateProgressVisible(task, false);
+            }
         }
 
         private static void task_TaskCompleted(WorkerTask task)
@@ -326,7 +342,7 @@ namespace ShareX
             {
                 task.KeepImage = false;
 
-                if (ListViewControl != null && task != null)
+                if (task != null)
                 {
                     if (task.RequestSettingUpdate)
                     {
@@ -476,6 +492,11 @@ namespace ShareX
                             {
                                 ListViewControl.SelectSingle(lvi);
                             }
+                        }
+
+                        if (Program.Settings.TaskViewMode == TaskViewMode.ThumbnailView)
+                        {
+                            TaskView.UpdateProgressVisible(task, false);
                         }
                     }
                 }
