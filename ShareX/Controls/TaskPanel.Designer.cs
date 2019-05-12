@@ -90,6 +90,7 @@
             this.pbThumbnail.Size = new System.Drawing.Size(246, 246);
             this.pbThumbnail.TabIndex = 2;
             this.pbThumbnail.TabStop = false;
+            this.pbThumbnail.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PbThumbnail_MouseDown);
             // 
             // TaskPanel
             // 

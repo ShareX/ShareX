@@ -169,15 +169,22 @@ namespace ShareX
             {
                 string filePath = Task.Info.FilePath;
 
-                using (Image img = ImageHelpers.LoadImage(filePath))
+                try
                 {
-                    if (img != null)
+                    using (Image img = ImageHelpers.LoadImage(filePath))
                     {
-                        ThumbnailSourceFilePath = filePath;
-
-                        ThumbnailImage = ImageHelpers.CreateThumbnail(img, ThumbnailSize.Width, ThumbnailSize.Height);
-                        pbThumbnail.Image = ThumbnailImage;
+                        if (img != null)
+                        {
+                            ThumbnailImage = ImageHelpers.CreateThumbnail(img, ThumbnailSize.Width, ThumbnailSize.Height);
+                            pbThumbnail.Image = ThumbnailImage;
+                            ThumbnailSourceFilePath = filePath;
+                            pbThumbnail.Cursor = Cursors.Hand;
+                        }
                     }
+                }
+                catch (Exception e)
+                {
+                    DebugHelper.WriteException(e);
                 }
             }
         }
@@ -191,11 +198,23 @@ namespace ShareX
                 ThumbnailImage.Dispose();
                 ThumbnailImage = null;
             }
+
+            ThumbnailSourceFilePath = null;
         }
 
         public void UpdateProgress()
         {
             Progress = (int)Task.Info.Progress.Percentage;
+        }
+
+        private void PbThumbnail_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left && !string.IsNullOrEmpty(ThumbnailSourceFilePath))
+            {
+                pbThumbnail.Enabled = false;
+                ImageViewer.ShowImage(ThumbnailSourceFilePath);
+                pbThumbnail.Enabled = true;
+            }
         }
     }
 }
