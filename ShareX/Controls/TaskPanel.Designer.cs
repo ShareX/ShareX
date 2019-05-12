@@ -83,7 +83,7 @@
             // 
             // pbThumbnail
             // 
-            this.pbThumbnail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(48)))));
+            this.pbThumbnail.BackColor = System.Drawing.Color.Transparent;
             this.pbThumbnail.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pbThumbnail.Location = new System.Drawing.Point(5, 5);
             this.pbThumbnail.Name = "pbThumbnail";

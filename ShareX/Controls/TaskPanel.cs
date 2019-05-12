@@ -175,7 +175,8 @@ namespace ShareX
                     {
                         if (img != null)
                         {
-                            ThumbnailImage = ImageHelpers.CreateThumbnail(img, ThumbnailSize.Width, ThumbnailSize.Height);
+                            //ThumbnailImage = ImageHelpers.CreateThumbnail(img, ThumbnailSize.Width, ThumbnailSize.Height);
+                            ThumbnailImage = ImageHelpers.ResizeImage(img, ThumbnailSize, false);
                             pbThumbnail.Image = ThumbnailImage;
                             ThumbnailSourceFilePath = filePath;
                             pbThumbnail.Cursor = Cursors.Hand;
@@ -189,6 +190,11 @@ namespace ShareX
             }
         }
 
+        public void UpdateProgress()
+        {
+            Progress = (int)Task.Info.Progress.Percentage;
+        }
+
         public void ClearThumbnail()
         {
             pbThumbnail.Image = null;
@@ -200,11 +206,6 @@ namespace ShareX
             }
 
             ThumbnailSourceFilePath = null;
-        }
-
-        public void UpdateProgress()
-        {
-            Progress = (int)Task.Info.Progress.Percentage;
         }
 
         private void PbThumbnail_MouseDown(object sender, MouseEventArgs e)
