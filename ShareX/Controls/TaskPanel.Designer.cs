@@ -42,8 +42,8 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pThumbnail.BackColor = System.Drawing.Color.Transparent;
-            this.pThumbnail.Controls.Add(this.pbThumbnail);
             this.pThumbnail.Controls.Add(this.pbProgress);
+            this.pThumbnail.Controls.Add(this.pbThumbnail);
             this.pThumbnail.Location = new System.Drawing.Point(0, 24);
             this.pThumbnail.Name = "pThumbnail";
             this.pThumbnail.Padding = new System.Windows.Forms.Padding(5);
@@ -63,7 +63,6 @@
             this.pbProgress.Name = "pbProgress";
             this.pbProgress.Size = new System.Drawing.Size(240, 32);
             this.pbProgress.TabIndex = 1;
-            this.pbProgress.Text = "blackStyleProgressBar1";
             this.pbProgress.Value = 50;
             this.pbProgress.Visible = false;
             // 

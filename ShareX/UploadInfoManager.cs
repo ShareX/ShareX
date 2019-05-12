@@ -102,6 +102,10 @@ namespace ShareX
             {
                 SelectedItems = new UploadInfoStatus[] { new UploadInfoStatus(task.Info) };
             }
+            else
+            {
+                SelectedItems = null;
+            }
         }
 
         #region Open

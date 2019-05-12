@@ -590,7 +590,7 @@ namespace ShareX
             }
         }
 
-        private void UpdateContextMenu(WorkerTask task = null)
+        private void UpdateContextMenu(bool listView = true, WorkerTask task = null)
         {
             cmsTaskInfo.SuspendLayout();
 
@@ -599,7 +599,7 @@ namespace ShareX
                 tsmiEditSelectedFile.Visible = tsmiDeleteSelectedItem.Visible = tsmiDeleteSelectedFile.Visible = tsmiShortenSelectedURL.Visible =
                 tsmiShareSelectedURL.Visible = tsmiClearList.Visible = tssUploadInfo1.Visible = false;
 
-            if (task == null)
+            if (listView)
             {
                 pbPreview.Reset();
                 uim.RefreshSelectedItems();
@@ -717,7 +717,7 @@ namespace ShareX
                     tsmiShowResponse.Visible = !string.IsNullOrEmpty(uim.SelectedItem.Info.Result.Response);
                 }
 
-                if (task == null)
+                if (listView)
                 {
                     if (!scMain.Panel2Collapsed)
                     {
@@ -1359,7 +1359,7 @@ namespace ShareX
 
         private void UcTaskView_ContextMenuRequested(object sender, MouseEventArgs e, WorkerTask task)
         {
-            UpdateContextMenu(task);
+            UpdateContextMenu(false, task);
             cmsTaskInfo.Show(sender as Control, e.X + 1, e.Y + 1);
         }
 

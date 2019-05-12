@@ -50,7 +50,7 @@ namespace ShareX
             InitializeComponent();
 
             TaskPanels = new List<TaskPanel>();
-            AddTestTaskPanels();
+            //AddTestTaskPanels();
         }
 
         public void AddTestTaskPanels()
@@ -88,6 +88,11 @@ namespace ShareX
             {
                 ContextMenuRequested(sender, e, task);
             }
+        }
+
+        private void FlpMain_MouseDown(object sender, MouseEventArgs e)
+        {
+            SelectedTask = null;
         }
 
         private void Panel_MouseUp(object sender, MouseEventArgs e)
