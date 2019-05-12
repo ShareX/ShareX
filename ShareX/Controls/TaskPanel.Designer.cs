@@ -30,9 +30,10 @@
         {
             this.pThumbnail = new ShareX.HelpersLib.RoundedCornerPanel();
             this.pbProgress = new ShareX.HelpersLib.BlackStyleProgressBar();
-            this.pbThumbnail = new ShareX.HelpersLib.MyPictureBox();
             this.lblFilename = new ShareX.HelpersLib.BlackStyleLabel();
+            this.pbThumbnail = new System.Windows.Forms.PictureBox();
             this.pThumbnail.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbThumbnail)).BeginInit();
             this.SuspendLayout();
             // 
             // pThumbnail
@@ -41,8 +42,8 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pThumbnail.BackColor = System.Drawing.Color.Transparent;
-            this.pThumbnail.Controls.Add(this.pbProgress);
             this.pThumbnail.Controls.Add(this.pbThumbnail);
+            this.pThumbnail.Controls.Add(this.pbProgress);
             this.pThumbnail.Location = new System.Drawing.Point(0, 24);
             this.pThumbnail.Name = "pThumbnail";
             this.pThumbnail.Padding = new System.Windows.Forms.Padding(5);
@@ -65,17 +66,6 @@
             this.pbProgress.Value = 50;
             this.pbProgress.Visible = false;
             // 
-            // pbThumbnail
-            // 
-            this.pbThumbnail.BackColor = System.Drawing.Color.Transparent;
-            this.pbThumbnail.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pbThumbnail.FullscreenOnClick = true;
-            this.pbThumbnail.Location = new System.Drawing.Point(5, 5);
-            this.pbThumbnail.Name = "pbThumbnail";
-            this.pbThumbnail.PictureBoxBackColor = System.Drawing.Color.Transparent;
-            this.pbThumbnail.Size = new System.Drawing.Size(246, 246);
-            this.pbThumbnail.TabIndex = 0;
-            // 
             // lblFilename
             // 
             this.lblFilename.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -91,6 +81,16 @@
             this.lblFilename.Text = "Test.png";
             this.lblFilename.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // pbThumbnail
+            // 
+            this.pbThumbnail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(48)))));
+            this.pbThumbnail.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pbThumbnail.Location = new System.Drawing.Point(5, 5);
+            this.pbThumbnail.Name = "pbThumbnail";
+            this.pbThumbnail.Size = new System.Drawing.Size(246, 246);
+            this.pbThumbnail.TabIndex = 2;
+            this.pbThumbnail.TabStop = false;
+            // 
             // TaskPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -101,6 +101,7 @@
             this.Name = "TaskPanel";
             this.Size = new System.Drawing.Size(256, 280);
             this.pThumbnail.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbThumbnail)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -108,8 +109,8 @@
         #endregion
 
         private HelpersLib.RoundedCornerPanel pThumbnail;
-        private HelpersLib.MyPictureBox pbThumbnail;
         private HelpersLib.BlackStyleLabel lblFilename;
         private HelpersLib.BlackStyleProgressBar pbProgress;
+        private System.Windows.Forms.PictureBox pbThumbnail;
     }
 }

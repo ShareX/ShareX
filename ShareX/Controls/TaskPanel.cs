@@ -32,6 +32,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ShareX.HelpersLib;
 
 namespace ShareX
 {
@@ -96,6 +97,10 @@ namespace ShareX
 
         private bool progressVisible;
 
+        public Image ThumbnailImage { get; private set; }
+        public Size ThumbnailSize { get; private set; }
+        public string ThumbnailSourceFilePath { get; private set; }
+
         public new event MouseEventHandler MouseDown
         {
             add
@@ -142,12 +147,13 @@ namespace ShareX
 
             Task = task;
             UpdateFilename();
-            UpdateThumbnail();
         }
 
         public void ChangeThumbnailSize(Size size)
         {
-            Size = new Size(pThumbnail.Padding.Horizontal + size.Width, pThumbnail.Top + pThumbnail.Padding.Vertical + size.Height);
+            ThumbnailSize = size;
+            Size = new Size(pThumbnail.Padding.Horizontal + ThumbnailSize.Width, pThumbnail.Top + pThumbnail.Padding.Vertical + ThumbnailSize.Height);
+            UpdateThumbnail();
         }
 
         public void UpdateFilename()
@@ -157,7 +163,34 @@ namespace ShareX
 
         public void UpdateThumbnail()
         {
-            pbThumbnail.LoadImageFromFileAsync(Task.Info.FilePath);
+            ClearThumbnail();
+
+            if (!ThumbnailSize.IsEmpty && Task.Info != null)
+            {
+                string filePath = Task.Info.FilePath;
+
+                using (Image img = ImageHelpers.LoadImage(filePath))
+                {
+                    if (img != null)
+                    {
+                        ThumbnailSourceFilePath = filePath;
+
+                        ThumbnailImage = ImageHelpers.CreateThumbnail(img, ThumbnailSize.Width, ThumbnailSize.Height);
+                        pbThumbnail.Image = ThumbnailImage;
+                    }
+                }
+            }
+        }
+
+        public void ClearThumbnail()
+        {
+            pbThumbnail.Image = null;
+
+            if (ThumbnailImage != null)
+            {
+                ThumbnailImage.Dispose();
+                ThumbnailImage = null;
+            }
         }
 
         public void UpdateProgress()
