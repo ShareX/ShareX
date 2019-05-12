@@ -17,6 +17,9 @@
             {
                 components.Dispose();
             }
+
+            ClearThumbnail();
+
             base.Dispose(disposing);
         }
 

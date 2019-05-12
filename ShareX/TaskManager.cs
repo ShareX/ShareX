@@ -102,6 +102,8 @@ namespace ShareX
                     ListViewControl.Items.Remove(lvi);
                 }
 
+                TaskView.RemoveTaskPanel(task);
+
                 task.Dispose();
             }
         }

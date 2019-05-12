@@ -982,14 +982,26 @@ namespace ShareX
             return null;
         }
 
+        private void RemoveTasks(IEnumerable<WorkerTask> tasks)
+        {
+            tasks.Where(x => x != null && !x.IsWorking).ForEach(TaskManager.Remove);
+        }
+
         private void RemoveSelectedItems()
         {
-            lvUploads.SelectedItems.Cast<ListViewItem>().Select(x => x.Tag as WorkerTask).Where(x => x != null && !x.IsWorking).ForEach(TaskManager.Remove);
+            if (Program.Settings.TaskViewMode == TaskViewMode.ListView)
+            {
+                RemoveTasks(lvUploads.SelectedItems.Cast<ListViewItem>().Select(x => x.Tag as WorkerTask));
+            }
+            else if (Program.Settings.TaskViewMode == TaskViewMode.ThumbnailView && ucTaskView.SelectedTaskPanel != null)
+            {
+                RemoveTasks(new WorkerTask[] { ucTaskView.SelectedTaskPanel.Task });
+            }
         }
 
         private void RemoveAllItems()
         {
-            lvUploads.Items.Cast<ListViewItem>().Select(x => x.Tag as WorkerTask).Where(x => x != null && !x.IsWorking).ForEach(TaskManager.Remove);
+            RemoveTasks(lvUploads.Items.Cast<ListViewItem>().Select(x => x.Tag as WorkerTask));
         }
 
         private void UpdateMainWindowLayout()
