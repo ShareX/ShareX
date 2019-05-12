@@ -50,6 +50,7 @@ namespace ShareX
 
         #region Main Form
 
+        public TaskViewMode TaskViewMode = TaskViewMode.ThumbnailView;
         public bool ShowMenu = true;
         public bool ShowColumns = true;
         public ImagePreviewVisibility ImagePreview = ImagePreviewVisibility.Automatic;

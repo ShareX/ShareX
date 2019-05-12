@@ -590,7 +590,7 @@ namespace ShareX
             }
         }
 
-        private void UpdateContextMenu(bool listView = true, WorkerTask task = null)
+        private void UpdateContextMenu(WorkerTask task = null)
         {
             cmsTaskInfo.SuspendLayout();
 
@@ -599,7 +599,7 @@ namespace ShareX
                 tsmiEditSelectedFile.Visible = tsmiDeleteSelectedItem.Visible = tsmiDeleteSelectedFile.Visible = tsmiShortenSelectedURL.Visible =
                 tsmiShareSelectedURL.Visible = tsmiClearList.Visible = tssUploadInfo1.Visible = false;
 
-            if (listView)
+            if (Program.Settings.TaskViewMode == TaskViewMode.ListView)
             {
                 pbPreview.Reset();
                 uim.RefreshSelectedItems();
@@ -646,9 +646,19 @@ namespace ShareX
                 tsmiOpenFolder.Enabled = uim.SelectedItem.IsFileExist;
                 tsmiOpenThumbnailFile.Enabled = uim.SelectedItem.IsThumbnailFileExist;
 
-                WorkerTask[] tasks = GetCurrentTasks();
+                bool showStopUpload;
 
-                if (tasks != null && tasks.Any(x => x.IsWorking))
+                if (Program.Settings.TaskViewMode == TaskViewMode.ListView)
+                {
+                    WorkerTask[] tasks = GetCurrentTasks();
+                    showStopUpload = tasks != null && tasks.Any(x => x.IsWorking);
+                }
+                else
+                {
+                    showStopUpload = task != null && task.IsWorking;
+                }
+
+                if (showStopUpload)
                 {
                     tsmiStopUpload.Visible = true;
                 }
@@ -717,7 +727,7 @@ namespace ShareX
                     tsmiShowResponse.Visible = !string.IsNullOrEmpty(uim.SelectedItem.Info.Result.Response);
                 }
 
-                if (listView)
+                if (Program.Settings.TaskViewMode == TaskViewMode.ListView)
                 {
                     if (!scMain.Panel2Collapsed)
                     {
@@ -1359,7 +1369,7 @@ namespace ShareX
 
         private void UcTaskView_ContextMenuRequested(object sender, MouseEventArgs e, WorkerTask task)
         {
-            UpdateContextMenu(false, task);
+            UpdateContextMenu(task);
             cmsTaskInfo.Show(sender as Control, e.X + 1, e.Y + 1);
         }
 

@@ -304,4 +304,10 @@ namespace ShareX
         OpenURL,
         OpenDebugLog
     }
+
+    public enum TaskViewMode
+    {
+        ListView,
+        ThumbnailView
+    }
 }
