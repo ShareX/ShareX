@@ -1316,7 +1316,7 @@
     <value>228, 22</value>
   </data>
   <data name="tsmiClearList.Text" xml:space="preserve">
-    <value>Clear list</value>
+    <value>Clear task list</value>
   </data>
   <data name="tssUploadInfo1.Size" type="System.Drawing.Size, System.Drawing">
     <value>225, 6</value>
@@ -1334,34 +1334,34 @@
     <value>Hide columns</value>
   </data>
   <data name="tsmiImagePreviewShow.Size" type="System.Drawing.Size, System.Drawing">
-    <value>130, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="tsmiImagePreviewShow.Text" xml:space="preserve">
     <value>Show</value>
   </data>
   <data name="tsmiImagePreviewHide.Size" type="System.Drawing.Size, System.Drawing">
-    <value>130, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="tsmiImagePreviewHide.Text" xml:space="preserve">
     <value>Hide</value>
   </data>
   <data name="tsmiImagePreviewAutomatic.Size" type="System.Drawing.Size, System.Drawing">
-    <value>130, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="tsmiImagePreviewAutomatic.Text" xml:space="preserve">
     <value>Automatic</value>
   </data>
   <data name="tssImagePreview.Size" type="System.Drawing.Size, System.Drawing">
-    <value>127, 6</value>
+    <value>177, 6</value>
   </data>
   <data name="tsmiImagePreviewSide.Size" type="System.Drawing.Size, System.Drawing">
-    <value>130, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="tsmiImagePreviewSide.Text" xml:space="preserve">
     <value>Side</value>
   </data>
   <data name="tsmiImagePreviewBottom.Size" type="System.Drawing.Size, System.Drawing">
-    <value>130, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="tsmiImagePreviewBottom.Text" xml:space="preserve">
     <value>Bottom</value>

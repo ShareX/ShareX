@@ -597,7 +597,7 @@ namespace ShareX
             tsmiStopUpload.Visible = tsmiOpen.Visible = tsmiCopy.Visible = tsmiShowErrors.Visible = tsmiShowResponse.Visible = tsmiSearchImage.Visible =
                 tsmiShowQRCode.Visible = tsmiOCRImage.Visible = tsmiCombineImages.Visible = tsmiUploadSelectedFile.Visible = tsmiDownloadSelectedURL.Visible =
                 tsmiEditSelectedFile.Visible = tsmiDeleteSelectedItem.Visible = tsmiDeleteSelectedFile.Visible = tsmiShortenSelectedURL.Visible =
-                tsmiShareSelectedURL.Visible = tsmiClearList.Visible = tssUploadInfo1.Visible = false;
+                tsmiShareSelectedURL.Visible = tsmiClearList.Visible = tssUploadInfo1.Visible = tsmiHideColumns.Visible = tsmiImagePreview.Visible = false;
 
             if (Program.Settings.TaskViewMode == TaskViewMode.ListView)
             {
@@ -744,6 +744,8 @@ namespace ShareX
             }
 
             tsmiClearList.Visible = tssUploadInfo1.Visible = lvUploads.Items.Count > 0;
+
+            tsmiHideColumns.Visible = tsmiImagePreview.Visible = Program.Settings.TaskViewMode == TaskViewMode.ListView;
 
             cmsTaskInfo.ResumeLayout();
             Refresh();
