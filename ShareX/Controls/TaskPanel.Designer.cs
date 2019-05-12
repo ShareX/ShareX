@@ -51,6 +51,7 @@
             this.pThumbnail.Radius = 5F;
             this.pThumbnail.Size = new System.Drawing.Size(256, 256);
             this.pThumbnail.TabIndex = 0;
+            this.pThumbnail.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PbThumbnail_MouseDown);
             // 
             // pbProgress
             // 

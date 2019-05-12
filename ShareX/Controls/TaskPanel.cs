@@ -179,7 +179,7 @@ namespace ShareX
                             ThumbnailImage = ImageHelpers.ResizeImage(img, ThumbnailSize, false);
                             pbThumbnail.Image = ThumbnailImage;
                             ThumbnailSourceFilePath = filePath;
-                            pbThumbnail.Cursor = Cursors.Hand;
+                            pbThumbnail.Cursor = pThumbnail.Cursor = Cursors.Hand;
                         }
                     }
                 }
