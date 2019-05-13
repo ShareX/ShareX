@@ -66,6 +66,11 @@ namespace ShareX
             }
         }
 
+        protected override Point ScrollToControl(Control activeControl)
+        {
+            return AutoScrollPosition;
+        }
+
         public TaskPanel FindPanel(WorkerTask task)
         {
             return TaskPanels.FirstOrDefault(x => x.Task == task);
