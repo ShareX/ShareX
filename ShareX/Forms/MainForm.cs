@@ -290,6 +290,7 @@ namespace ShareX
             UpdateToggleHotkeyButton();
             AfterTaskSettingsJobs();
             AfterApplicationSettingsJobs();
+            UpdateTaskViewMode();
 
             InitHotkeys();
 
@@ -749,6 +750,26 @@ namespace ShareX
 
             cmsTaskInfo.ResumeLayout();
             Refresh();
+        }
+
+        private void UpdateTaskViewMode()
+        {
+            if (Program.Settings.TaskViewMode == TaskViewMode.ListView)
+            {
+                tsmiSwitchTaskViewMode.Text = "Switch to thumbnail view";
+                tsmiSwitchTaskViewMode.Image = Resources.application_icon_large;
+                scMain.Visible = true;
+                pThumbnailView.Visible = false;
+                scMain.Focus();
+            }
+            else
+            {
+                tsmiSwitchTaskViewMode.Text = "Switch to list view";
+                tsmiSwitchTaskViewMode.Image = Resources.application_list;
+                pThumbnailView.Visible = true;
+                scMain.Visible = false;
+                pThumbnailView.Focus();
+            }
         }
 
         private void CleanCustomClipboardFormats()
@@ -2270,6 +2291,23 @@ namespace ShareX
         {
             Program.Settings.ImagePreview = ImagePreviewVisibility.Show;
             tsmiImagePreviewShow.Check();
+            UpdateContextMenu();
+        }
+
+        private void TsmiSwitchTaskViewMode_Click(object sender, EventArgs e)
+        {
+            tsMain.SendToBack();
+
+            if (Program.Settings.TaskViewMode == TaskViewMode.ListView)
+            {
+                Program.Settings.TaskViewMode = TaskViewMode.ThumbnailView;
+            }
+            else
+            {
+                Program.Settings.TaskViewMode = TaskViewMode.ListView;
+            }
+
+            UpdateTaskViewMode();
             UpdateContextMenu();
         }
 

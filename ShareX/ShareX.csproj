@@ -1592,6 +1592,9 @@
   <ItemGroup>
     <None Include="Resources\SupportUs_Button_02.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\application-list.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>

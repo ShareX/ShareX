@@ -185,6 +185,7 @@
             this.tssImagePreview = new System.Windows.Forms.ToolStripSeparator();
             this.tsmiImagePreviewSide = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiImagePreviewBottom = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiSwitchTaskViewMode = new System.Windows.Forms.ToolStripMenuItem();
             this.niTray = new System.Windows.Forms.NotifyIcon(this.components);
             this.cmsTray = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tsmiTrayCapture = new System.Windows.Forms.ToolStripMenuItem();
@@ -273,10 +274,10 @@
             this.pNews = new System.Windows.Forms.Panel();
             this.btnCloseNews = new System.Windows.Forms.Button();
             this.ucNews = new ShareX.NewsListControl();
-            this.flpCommunity = new System.Windows.Forms.FlowLayoutPanel();
-            this.flpDiscord = new System.Windows.Forms.FlowLayoutPanel();
             this.pThumbnailView = new System.Windows.Forms.Panel();
             this.ucTaskView = new ShareX.TaskView();
+            this.flpCommunity = new System.Windows.Forms.FlowLayoutPanel();
+            this.flpDiscord = new System.Windows.Forms.FlowLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.scMain)).BeginInit();
             this.scMain.Panel1.SuspendLayout();
             this.scMain.Panel2.SuspendLayout();
@@ -290,9 +291,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbDiscordOpen)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbDiscordHide)).BeginInit();
             this.pNews.SuspendLayout();
+            this.pThumbnailView.SuspendLayout();
             this.flpCommunity.SuspendLayout();
             this.flpDiscord.SuspendLayout();
-            this.pThumbnailView.SuspendLayout();
             this.SuspendLayout();
             // 
             // scMain
@@ -1029,7 +1030,8 @@
             this.tssUploadInfo1,
             this.tsmiHideMenu,
             this.tsmiHideColumns,
-            this.tsmiImagePreview});
+            this.tsmiImagePreview,
+            this.tsmiSwitchTaskViewMode});
             this.cmsTaskInfo.Name = "cmsHistory";
             resources.ApplyResources(this.cmsTaskInfo, "cmsTaskInfo");
             this.cmsTaskInfo.Closing += new System.Windows.Forms.ToolStripDropDownClosingEventHandler(this.cmsTaskInfo_Closing);
@@ -1479,6 +1481,12 @@
             resources.ApplyResources(this.tsmiImagePreviewBottom, "tsmiImagePreviewBottom");
             this.tsmiImagePreviewBottom.Tag = "Location";
             this.tsmiImagePreviewBottom.Click += new System.EventHandler(this.tsmiImagePreviewBottom_Click);
+            // 
+            // tsmiSwitchTaskViewMode
+            // 
+            this.tsmiSwitchTaskViewMode.Name = "tsmiSwitchTaskViewMode";
+            resources.ApplyResources(this.tsmiSwitchTaskViewMode, "tsmiSwitchTaskViewMode");
+            this.tsmiSwitchTaskViewMode.Click += new System.EventHandler(this.TsmiSwitchTaskViewMode_Click);
             // 
             // niTray
             // 
@@ -2154,6 +2162,20 @@
             resources.ApplyResources(this.ucNews, "ucNews");
             this.ucNews.Name = "ucNews";
             // 
+            // pThumbnailView
+            // 
+            this.pThumbnailView.Controls.Add(this.ucTaskView);
+            resources.ApplyResources(this.pThumbnailView, "pThumbnailView");
+            this.pThumbnailView.Name = "pThumbnailView";
+            // 
+            // ucTaskView
+            // 
+            resources.ApplyResources(this.ucTaskView, "ucTaskView");
+            this.ucTaskView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(47)))), ((int)(((byte)(56)))));
+            this.ucTaskView.Name = "ucTaskView";
+            this.ucTaskView.ThumbnailSize = new System.Drawing.Size(200, 150);
+            this.ucTaskView.ContextMenuRequested += new ShareX.TaskView.TaskViewMouseEventHandler(this.UcTaskView_ContextMenuRequested);
+            // 
             // flpCommunity
             // 
             resources.ApplyResources(this.flpCommunity, "flpCommunity");
@@ -2169,28 +2191,14 @@
             this.flpDiscord.Controls.Add(this.pbDiscordHide);
             this.flpDiscord.Name = "flpDiscord";
             // 
-            // pThumbnailView
-            // 
-            this.pThumbnailView.Controls.Add(this.ucTaskView);
-            resources.ApplyResources(this.pThumbnailView, "pThumbnailView");
-            this.pThumbnailView.Name = "pThumbnailView";
-            // 
-            // ucTaskView
-            // 
-            resources.ApplyResources(this.ucTaskView, "ucTaskView");
-            this.ucTaskView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(47)))), ((int)(((byte)(56)))));
-            this.ucTaskView.Name = "ucTaskView";
-            this.ucTaskView.ThumbnailSize = new System.Drawing.Size(200, 150);
-            this.ucTaskView.ContextMenuRequested += new ShareX.TaskView.TaskViewMouseEventHandler(this.UcTaskView_ContextMenuRequested);
-            // 
             // MainForm
             // 
             this.AllowDrop = true;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.Controls.Add(this.pThumbnailView);
             this.Controls.Add(this.pNews);
+            this.Controls.Add(this.pThumbnailView);
             this.Controls.Add(this.flpCommunity);
             this.Controls.Add(this.scMain);
             this.Controls.Add(this.tsMain);
@@ -2220,11 +2228,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbDiscordOpen)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbDiscordHide)).EndInit();
             this.pNews.ResumeLayout(false);
+            this.pThumbnailView.ResumeLayout(false);
             this.flpCommunity.ResumeLayout(false);
             this.flpCommunity.PerformLayout();
             this.flpDiscord.ResumeLayout(false);
             this.flpDiscord.PerformLayout();
-            this.pThumbnailView.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2479,5 +2487,6 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayCustomUploaderSettings;
         private System.Windows.Forms.Panel pThumbnailView;
         private TaskView ucTaskView;
+        private System.Windows.Forms.ToolStripMenuItem tsmiSwitchTaskViewMode;
     }
 }
