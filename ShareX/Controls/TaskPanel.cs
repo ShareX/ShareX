@@ -81,11 +81,7 @@ namespace ShareX
             set
             {
                 progressVisible = value;
-
-                if (pbProgress.Visible != progressVisible)
-                {
-                    pbProgress.Visible = progressVisible;
-                }
+                pbProgress.Visible = progressVisible;
             }
         }
 
