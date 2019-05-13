@@ -505,5 +505,46 @@ namespace ShareX.HelpersLib
 
             return CreateProcess(path, $"\"{path}\" {arguments}", ref pSec, ref tSec, false, (uint)flags, IntPtr.Zero, null, ref sInfo, out pInfo);
         }
+
+        public static Icon GetFileIcon(string filePath, bool isSmallIcon)
+        {
+            SHFILEINFO shfi = new SHFILEINFO();
+
+            SHGFI flags = SHGFI.Icon;
+
+            if (isSmallIcon)
+            {
+                flags |= SHGFI.SmallIcon;
+            }
+            else
+            {
+                flags |= SHGFI.LargeIcon;
+            }
+
+            SHGetFileInfo(filePath, 0, ref shfi, (uint)Marshal.SizeOf(shfi), (uint)flags);
+
+            Icon icon = (Icon)Icon.FromHandle(shfi.hIcon).Clone();
+            DestroyIcon(shfi.hIcon);
+            return icon;
+        }
+
+        public static Icon GetJumboFileIcon(string filePath)
+        {
+            SHFILEINFO shfi = new SHFILEINFO();
+
+            SHGFI flags = SHGFI.SysIconIndex | SHGFI.UseFileAttributes;
+            SHGetFileInfo(filePath, 0, ref shfi, (uint)Marshal.SizeOf(shfi), (uint)flags);
+
+            IImageList spiml = null;
+            Guid guil = new Guid(NativeConstants.IID_IImageList2);
+
+            SHGetImageList(NativeConstants.SHIL_JUMBO, ref guil, ref spiml);
+            IntPtr hIcon = IntPtr.Zero;
+            spiml.GetIcon(shfi.iIcon, NativeConstants.ILD_TRANSPARENT | NativeConstants.ILD_IMAGE, ref hIcon);
+
+            Icon icon = (Icon)Icon.FromHandle(hIcon).Clone();
+            DestroyIcon(hIcon);
+            return icon;
+        }
     }
 }

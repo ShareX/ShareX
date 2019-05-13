@@ -165,15 +165,28 @@ namespace ShareX
 
                 try
                 {
-                    using (Image img = ImageHelpers.LoadImage(filePath))
+                    if (Helpers.IsImageFile(filePath))
                     {
-                        if (img != null)
+                        using (Image img = ImageHelpers.LoadImage(filePath))
                         {
-                            //ThumbnailImage = ImageHelpers.CreateThumbnail(img, ThumbnailSize.Width, ThumbnailSize.Height);
+                            if (img != null)
+                            {
+                                //ThumbnailImage = ImageHelpers.CreateThumbnail(img, ThumbnailSize.Width, ThumbnailSize.Height);
+                                ThumbnailImage = ImageHelpers.ResizeImage(img, ThumbnailSize, false);
+                                pbThumbnail.Image = ThumbnailImage;
+                                ThumbnailSourceFilePath = filePath;
+                                pbThumbnail.Cursor = pThumbnail.Cursor = Cursors.Hand;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        using (Icon icon = NativeMethods.GetJumboFileIcon(filePath))
+                        using (Image img = icon.ToBitmap())
+                        {
                             ThumbnailImage = ImageHelpers.ResizeImage(img, ThumbnailSize, false);
                             pbThumbnail.Image = ThumbnailImage;
-                            ThumbnailSourceFilePath = filePath;
-                            pbThumbnail.Cursor = pThumbnail.Cursor = Cursors.Hand;
+                            pbThumbnail.Cursor = pThumbnail.Cursor = Cursors.Default;
                         }
                     }
                 }

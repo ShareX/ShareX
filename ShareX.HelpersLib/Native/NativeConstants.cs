@@ -88,5 +88,18 @@ namespace ShareX.HelpersLib
         public const uint MA_NOACTIVATE = 3;
         public const uint MA_NOACTIVATEANDEAT = 4;
         public const uint MOUSE_MOVE = 0xF012;
+
+        public const string IID_IImageList = "46EB5926-582E-4017-9FDF-E8998DAA0950";
+        public const string IID_IImageList2 = "192B9D83-50FC-457B-90A0-2B82A8B5DAE1";
+
+        public const int SHIL_LARGE = 0x0;
+        public const int SHIL_SMALL = 0x1;
+        public const int SHIL_EXTRALARGE = 0x2;
+        public const int SHIL_SYSSMALL = 0x3;
+        public const int SHIL_JUMBO = 0x4;
+        public const int SHIL_LAST = 0x4;
+
+        public const int ILD_TRANSPARENT = 0x00000001;
+        public const int ILD_IMAGE = 0x00000020;
     }
 }
