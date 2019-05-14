@@ -159,36 +159,40 @@ namespace ShareX
             {
                 string filePath = Task.Info.FilePath;
 
-                try
+                if (!string.IsNullOrEmpty(filePath))
                 {
-                    if (Helpers.IsImageFile(filePath))
+                    try
                     {
-                        using (Image img = ImageHelpers.LoadImage(filePath))
+                        if (Helpers.IsImageFile(filePath))
                         {
-                            if (img != null)
+                            using (Image img = ImageHelpers.LoadImage(filePath))
                             {
-                                //ThumbnailImage = ImageHelpers.CreateThumbnail(img, ThumbnailSize.Width, ThumbnailSize.Height);
-                                ThumbnailImage = ImageHelpers.ResizeImage(img, ThumbnailSize, false);
+                                if (img != null)
+                                {
+                                    //ThumbnailImage = ImageHelpers.CreateThumbnail(img, ThumbnailSize.Width, ThumbnailSize.Height);
+                                    ThumbnailImage = ImageHelpers.ResizeImage(img, ThumbnailSize, false);
+                                    pbThumbnail.Image = ThumbnailImage;
+                                    ThumbnailSourceFilePath = filePath;
+                                    pbThumbnail.Cursor = pThumbnail.Cursor = Cursors.Hand;
+                                }
+                            }
+                        }
+                        else
+                        {
+                            using (Icon icon = NativeMethods.GetJumboFileIcon(filePath))
+                            using (Bitmap bmp = icon.ToBitmap())
+                            using (Image img = ImageHelpers.AutoCropTransparent(bmp))
+                            {
+                                ThumbnailImage = ImageHelpers.ResizeImage(img, ThumbnailSize, false, true);
                                 pbThumbnail.Image = ThumbnailImage;
-                                ThumbnailSourceFilePath = filePath;
-                                pbThumbnail.Cursor = pThumbnail.Cursor = Cursors.Hand;
+                                pbThumbnail.Cursor = pThumbnail.Cursor = Cursors.Default;
                             }
                         }
                     }
-                    else
+                    catch (Exception e)
                     {
-                        using (Icon icon = NativeMethods.GetJumboFileIcon(filePath))
-                        using (Image img = icon.ToBitmap())
-                        {
-                            ThumbnailImage = ImageHelpers.ResizeImage(img, ThumbnailSize, false);
-                            pbThumbnail.Image = ThumbnailImage;
-                            pbThumbnail.Cursor = pThumbnail.Cursor = Cursors.Default;
-                        }
+                        DebugHelper.WriteException(e);
                     }
-                }
-                catch (Exception e)
-                {
-                    DebugHelper.WriteException(e);
                 }
             }
         }
