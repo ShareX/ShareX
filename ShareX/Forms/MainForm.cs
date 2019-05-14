@@ -1410,7 +1410,10 @@ namespace ShareX
 
         private void LblThumbnailViewTip_MouseUp(object sender, MouseEventArgs e)
         {
-            UcTaskView_ContextMenuRequested(lblThumbnailViewTip, e, null);
+            if (e.Button == MouseButtons.Right)
+            {
+                UcTaskView_ContextMenuRequested(lblThumbnailViewTip, e, null);
+            }
         }
 
         private void cmsTaskInfo_Closing(object sender, ToolStripDropDownClosingEventArgs e)
