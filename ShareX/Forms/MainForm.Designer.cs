@@ -275,10 +275,10 @@
             this.btnCloseNews = new System.Windows.Forms.Button();
             this.ucNews = new ShareX.NewsListControl();
             this.pThumbnailView = new System.Windows.Forms.Panel();
+            this.lblThumbnailViewTip = new System.Windows.Forms.Label();
             this.ucTaskView = new ShareX.TaskView();
             this.flpCommunity = new System.Windows.Forms.FlowLayoutPanel();
             this.flpDiscord = new System.Windows.Forms.FlowLayoutPanel();
-            this.lblThumbnailViewTip = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.scMain)).BeginInit();
             this.scMain.Panel1.SuspendLayout();
             this.scMain.Panel2.SuspendLayout();
@@ -2171,6 +2171,15 @@
             resources.ApplyResources(this.pThumbnailView, "pThumbnailView");
             this.pThumbnailView.Name = "pThumbnailView";
             // 
+            // lblThumbnailViewTip
+            // 
+            this.lblThumbnailViewTip.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.lblThumbnailViewTip, "lblThumbnailViewTip");
+            this.lblThumbnailViewTip.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(228)))), ((int)(((byte)(228)))));
+            this.lblThumbnailViewTip.Name = "lblThumbnailViewTip";
+            this.lblThumbnailViewTip.UseMnemonic = false;
+            this.lblThumbnailViewTip.MouseUp += new System.Windows.Forms.MouseEventHandler(this.LblThumbnailViewTip_MouseUp);
+            // 
             // ucTaskView
             // 
             resources.ApplyResources(this.ucTaskView, "ucTaskView");
@@ -2194,26 +2203,17 @@
             this.flpDiscord.Controls.Add(this.pbDiscordHide);
             this.flpDiscord.Name = "flpDiscord";
             // 
-            // lblThumbnailViewTip
-            // 
-            this.lblThumbnailViewTip.BackColor = System.Drawing.Color.Transparent;
-            resources.ApplyResources(this.lblThumbnailViewTip, "lblThumbnailViewTip");
-            this.lblThumbnailViewTip.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(228)))), ((int)(((byte)(228)))));
-            this.lblThumbnailViewTip.Name = "lblThumbnailViewTip";
-            this.lblThumbnailViewTip.UseMnemonic = false;
-            this.lblThumbnailViewTip.MouseUp += new System.Windows.Forms.MouseEventHandler(this.LblThumbnailViewTip_MouseUp);
-            // 
             // MainForm
             // 
             this.AllowDrop = true;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
+            this.Controls.Add(this.pNews);
             this.Controls.Add(this.pThumbnailView);
             this.Controls.Add(this.flpCommunity);
             this.Controls.Add(this.scMain);
             this.Controls.Add(this.tsMain);
-            this.Controls.Add(this.pNews);
             this.DoubleBuffered = true;
             this.Name = "MainForm";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
