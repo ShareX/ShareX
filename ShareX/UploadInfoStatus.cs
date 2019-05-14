@@ -30,7 +30,9 @@ namespace ShareX
 {
     public class UploadInfoStatus
     {
-        public TaskInfo Info { get; private set; }
+        public WorkerTask Task { get; private set; }
+
+        public TaskInfo Info => Task.Info;
 
         public bool IsURLExist { get; private set; }
         public bool IsShortenedURLExist { get; private set; }
@@ -46,9 +48,9 @@ namespace ShareX
         public bool IsImageFile { get; private set; }
         public bool IsTextFile { get; private set; }
 
-        public UploadInfoStatus(TaskInfo info)
+        public UploadInfoStatus(WorkerTask task)
         {
-            Info = info;
+            Task = task;
             Update();
         }
 

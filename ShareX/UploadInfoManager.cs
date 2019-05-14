@@ -70,25 +70,12 @@ namespace ShareX
             parser = new UploadInfoParser();
         }
 
-        private void CopyTexts(IEnumerable<string> texts)
-        {
-            if (texts != null && texts.Count() > 0)
-            {
-                string urls = string.Join("\r\n", texts.ToArray());
-
-                if (!string.IsNullOrEmpty(urls))
-                {
-                    ClipboardHelpers.CopyText(urls);
-                }
-            }
-        }
-
         public void RefreshSelectedItems()
         {
             if (lv != null && lv.SelectedItems != null && lv.SelectedItems.Count > 0)
             {
                 SelectedItems = lv.SelectedItems.Cast<ListViewItem>().Select(x => x.Tag as WorkerTask).Where(x => x != null && x.Info != null).
-                    Select(x => new UploadInfoStatus(x.Info)).ToArray();
+                    Select(x => new UploadInfoStatus(x)).ToArray();
             }
             else
             {
@@ -100,11 +87,24 @@ namespace ShareX
         {
             if (task != null && task.Info != null)
             {
-                SelectedItems = new UploadInfoStatus[] { new UploadInfoStatus(task.Info) };
+                SelectedItems = new UploadInfoStatus[] { new UploadInfoStatus(task) };
             }
             else
             {
                 SelectedItems = null;
+            }
+        }
+
+        private void CopyTexts(IEnumerable<string> texts)
+        {
+            if (texts != null && texts.Count() > 0)
+            {
+                string urls = string.Join("\r\n", texts.ToArray());
+
+                if (!string.IsNullOrEmpty(urls))
+                {
+                    ClipboardHelpers.CopyText(urls);
+                }
             }
         }
 
@@ -339,6 +339,17 @@ namespace ShareX
             }
         }
 
+        public void StopUpload()
+        {
+            if (IsItemSelected)
+            {
+                foreach (WorkerTask task in SelectedItems.Select(x => x.Task))
+                {
+                    task?.Stop();
+                }
+            }
+        }
+
         public void Upload()
         {
             if (IsItemSelected && SelectedItem.IsFileExist) UploadManager.UploadFile(SelectedItem.Info.FilePath);
@@ -395,7 +406,7 @@ namespace ShareX
 
         public void CombineImages()
         {
-            if (SelectedItems != null)
+            if (IsItemSelected)
             {
                 IEnumerable<string> imageFiles = SelectedItems.Where(x => x.IsImageFile).Select(x => x.Info.FilePath);
 

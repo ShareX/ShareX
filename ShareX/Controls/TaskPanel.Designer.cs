@@ -66,7 +66,7 @@
             this.pbProgress.Name = "pbProgress";
             this.pbProgress.Size = new System.Drawing.Size(240, 32);
             this.pbProgress.TabIndex = 1;
-            this.pbProgress.Value = 50;
+            this.pbProgress.Value = 0;
             this.pbProgress.Visible = false;
             // 
             // pbThumbnail

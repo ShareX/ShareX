@@ -647,19 +647,7 @@ namespace ShareX
                 tsmiOpenFolder.Enabled = uim.SelectedItem.IsFileExist;
                 tsmiOpenThumbnailFile.Enabled = uim.SelectedItem.IsThumbnailFileExist;
 
-                bool showStopUpload;
-
-                if (Program.Settings.TaskViewMode == TaskViewMode.ListView)
-                {
-                    WorkerTask[] tasks = GetCurrentTasks();
-                    showStopUpload = tasks != null && tasks.Any(x => x.IsWorking);
-                }
-                else
-                {
-                    showStopUpload = task != null && task.IsWorking;
-                }
-
-                if (showStopUpload)
+                if (uim.SelectedItems != null && uim.SelectedItems.Any(x => x.Task.IsWorking))
                 {
                     tsmiStopUpload.Visible = true;
                 }
@@ -981,23 +969,11 @@ namespace ShareX
             return null;
         }
 
-        private WorkerTask[] GetCurrentTasks()
+        private WorkerTask[] GetSelectedTasks()
         {
             if (lvUploads.SelectedItems.Count > 0)
             {
                 return lvUploads.SelectedItems.Cast<ListViewItem>().Select(x => x.Tag as WorkerTask).Where(x => x != null).ToArray();
-            }
-
-            return null;
-        }
-
-        private TaskInfo GetCurrentUploadInfo()
-        {
-            WorkerTask[] tasks = GetCurrentTasks();
-
-            if (tasks != null && tasks.Length > 0)
-            {
-                return tasks[0].Info;
             }
 
             return null;
@@ -1447,7 +1423,7 @@ namespace ShareX
 
         private void lvUploads_ItemDrag(object sender, ItemDragEventArgs e)
         {
-            TaskInfo[] taskInfos = GetCurrentTasks().Select(x => x.Info).Where(x => x != null).ToArray();
+            TaskInfo[] taskInfos = GetSelectedTasks().Select(x => x.Info).Where(x => x != null).ToArray();
 
             if (taskInfos.Length > 0)
             {
@@ -2055,13 +2031,7 @@ namespace ShareX
 
         private void tsmiStopUpload_Click(object sender, EventArgs e)
         {
-            if (lvUploads.SelectedItems.Count > 0)
-            {
-                foreach (WorkerTask task in GetCurrentTasks())
-                {
-                    task.Stop();
-                }
-            }
+            uim.StopUpload();
         }
 
         private void tsmiOpenURL_Click(object sender, EventArgs e)
@@ -2279,7 +2249,6 @@ namespace ShareX
         private void tsmiClearList_Click(object sender, EventArgs e)
         {
             RemoveAllItems();
-
             TaskManager.RecentManager.Clear();
         }
 
