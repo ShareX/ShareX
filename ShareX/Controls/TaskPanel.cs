@@ -158,41 +158,44 @@ namespace ShareX
 
             if (!ThumbnailSize.IsEmpty && Task.Info != null)
             {
-                string filePath = Task.Info.FilePath;
-
-                if (!string.IsNullOrEmpty(filePath))
+                try
                 {
-                    try
+                    string filePath = Task.Info.FilePath;
+
+                    if (string.IsNullOrEmpty(filePath))
                     {
-                        if (Helpers.IsImageFile(filePath))
+                        filePath = Task.Info.FileName;
+                    }
+                    else
+                    {
+                        using (Image img = ImageHelpers.LoadImage(filePath))
                         {
-                            using (Image img = ImageHelpers.LoadImage(filePath))
+                            if (img != null)
                             {
-                                if (img != null)
-                                {
-                                    //ThumbnailImage = ImageHelpers.CreateThumbnail(img, ThumbnailSize.Width, ThumbnailSize.Height);
-                                    ThumbnailImage = ImageHelpers.ResizeImage(img, ThumbnailSize, false);
-                                    pbThumbnail.Image = ThumbnailImage;
-                                    ThumbnailSourceFilePath = filePath;
-                                    pbThumbnail.Cursor = pThumbnail.Cursor = Cursors.Hand;
-                                }
-                            }
-                        }
-                        else
-                        {
-                            using (Icon icon = NativeMethods.GetJumboFileIcon(filePath, false))
-                            using (Image img = icon.ToBitmap())
-                            {
-                                ThumbnailImage = ImageHelpers.ResizeImage(img, ThumbnailSize, false, true);
+                                //ThumbnailImage = ImageHelpers.CreateThumbnail(img, ThumbnailSize.Width, ThumbnailSize.Height);
+                                ThumbnailImage = ImageHelpers.ResizeImage(img, ThumbnailSize, false);
                                 pbThumbnail.Image = ThumbnailImage;
-                                pbThumbnail.Cursor = pThumbnail.Cursor = Cursors.Default;
+                                ThumbnailSourceFilePath = filePath;
+                                pbThumbnail.Cursor = pThumbnail.Cursor = Cursors.Hand;
+                                return;
                             }
                         }
                     }
-                    catch (Exception e)
+
+                    if (!string.IsNullOrEmpty(filePath))
                     {
-                        DebugHelper.WriteException(e);
+                        using (Icon icon = NativeMethods.GetJumboFileIcon(filePath, false))
+                        using (Image img = icon.ToBitmap())
+                        {
+                            ThumbnailImage = ImageHelpers.ResizeImage(img, ThumbnailSize, false, true);
+                            pbThumbnail.Image = ThumbnailImage;
+                            pbThumbnail.Cursor = pThumbnail.Cursor = Cursors.Default;
+                        }
                     }
+                }
+                catch (Exception e)
+                {
+                    DebugHelper.WriteException(e);
                 }
             }
         }
