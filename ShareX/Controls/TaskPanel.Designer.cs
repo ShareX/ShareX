@@ -33,8 +33,8 @@
         {
             this.pThumbnail = new ShareX.HelpersLib.RoundedCornerPanel();
             this.pbProgress = new ShareX.HelpersLib.BlackStyleProgressBar();
-            this.lblFilename = new ShareX.HelpersLib.BlackStyleLabel();
             this.pbThumbnail = new System.Windows.Forms.PictureBox();
+            this.lblFilename = new ShareX.HelpersLib.BlackStyleLabel();
             this.pThumbnail.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbThumbnail)).BeginInit();
             this.SuspendLayout();
@@ -69,21 +69,6 @@
             this.pbProgress.Value = 50;
             this.pbProgress.Visible = false;
             // 
-            // lblFilename
-            // 
-            this.lblFilename.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblFilename.AutoEllipsis = true;
-            this.lblFilename.BackColor = System.Drawing.Color.Transparent;
-            this.lblFilename.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFilename.ForeColor = System.Drawing.Color.White;
-            this.lblFilename.Location = new System.Drawing.Point(0, 0);
-            this.lblFilename.Name = "lblFilename";
-            this.lblFilename.Size = new System.Drawing.Size(256, 22);
-            this.lblFilename.TabIndex = 1;
-            this.lblFilename.Text = "Test.png";
-            this.lblFilename.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // pbThumbnail
             // 
             this.pbThumbnail.BackColor = System.Drawing.Color.Transparent;
@@ -94,6 +79,21 @@
             this.pbThumbnail.TabIndex = 2;
             this.pbThumbnail.TabStop = false;
             this.pbThumbnail.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PbThumbnail_MouseDown);
+            // 
+            // lblFilename
+            // 
+            this.lblFilename.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblFilename.AutoEllipsis = true;
+            this.lblFilename.BackColor = System.Drawing.Color.Transparent;
+            this.lblFilename.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFilename.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(228)))), ((int)(((byte)(228)))));
+            this.lblFilename.Location = new System.Drawing.Point(0, 0);
+            this.lblFilename.Name = "lblFilename";
+            this.lblFilename.Size = new System.Drawing.Size(256, 22);
+            this.lblFilename.TabIndex = 1;
+            this.lblFilename.Text = "Test.png";
+            this.lblFilename.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // TaskPanel
             // 

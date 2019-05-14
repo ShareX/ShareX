@@ -440,11 +440,11 @@ namespace ShareX
                     sb.AppendFormat("{0}  |  {1}\r\n", hotkey.HotkeyInfo, hotkey.TaskSettings);
                 }
 
-                lblMainFormTip.Text = sb.ToString().Trim();
+                lblMainFormTip.Text = lblThumbnailViewTip.Text = sb.ToString().Trim();
             }
             else
             {
-                lblMainFormTip.Text = "";
+                lblMainFormTip.Text = lblThumbnailViewTip.Text = "";
             }
         }
 
@@ -1406,6 +1406,11 @@ namespace ShareX
         {
             UpdateContextMenu(task);
             cmsTaskInfo.Show(sender as Control, e.X + 1, e.Y + 1);
+        }
+
+        private void LblThumbnailViewTip_MouseUp(object sender, MouseEventArgs e)
+        {
+            UcTaskView_ContextMenuRequested(lblThumbnailViewTip, e, null);
         }
 
         private void cmsTaskInfo_Closing(object sender, ToolStripDropDownClosingEventArgs e)

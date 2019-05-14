@@ -278,6 +278,7 @@
             this.ucTaskView = new ShareX.TaskView();
             this.flpCommunity = new System.Windows.Forms.FlowLayoutPanel();
             this.flpDiscord = new System.Windows.Forms.FlowLayoutPanel();
+            this.lblThumbnailViewTip = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.scMain)).BeginInit();
             this.scMain.Panel1.SuspendLayout();
             this.scMain.Panel2.SuspendLayout();
@@ -2164,6 +2165,8 @@
             // 
             // pThumbnailView
             // 
+            this.pThumbnailView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(47)))), ((int)(((byte)(56)))));
+            this.pThumbnailView.Controls.Add(this.lblThumbnailViewTip);
             this.pThumbnailView.Controls.Add(this.ucTaskView);
             resources.ApplyResources(this.pThumbnailView, "pThumbnailView");
             this.pThumbnailView.Name = "pThumbnailView";
@@ -2191,17 +2194,26 @@
             this.flpDiscord.Controls.Add(this.pbDiscordHide);
             this.flpDiscord.Name = "flpDiscord";
             // 
+            // lblThumbnailViewTip
+            // 
+            this.lblThumbnailViewTip.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.lblThumbnailViewTip, "lblThumbnailViewTip");
+            this.lblThumbnailViewTip.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(228)))), ((int)(((byte)(228)))));
+            this.lblThumbnailViewTip.Name = "lblThumbnailViewTip";
+            this.lblThumbnailViewTip.UseMnemonic = false;
+            this.lblThumbnailViewTip.MouseUp += new System.Windows.Forms.MouseEventHandler(this.LblThumbnailViewTip_MouseUp);
+            // 
             // MainForm
             // 
             this.AllowDrop = true;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.Controls.Add(this.pNews);
             this.Controls.Add(this.pThumbnailView);
             this.Controls.Add(this.flpCommunity);
             this.Controls.Add(this.scMain);
             this.Controls.Add(this.tsMain);
+            this.Controls.Add(this.pNews);
             this.DoubleBuffered = true;
             this.Name = "MainForm";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
@@ -2488,5 +2500,6 @@
         private System.Windows.Forms.Panel pThumbnailView;
         private TaskView ucTaskView;
         private System.Windows.Forms.ToolStripMenuItem tsmiSwitchTaskViewMode;
+        public System.Windows.Forms.Label lblThumbnailViewTip;
     }
 }
