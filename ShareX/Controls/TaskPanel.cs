@@ -26,6 +26,7 @@
 using ShareX.HelpersLib;
 using System;
 using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 
 namespace ShareX
@@ -179,9 +180,8 @@ namespace ShareX
                         }
                         else
                         {
-                            using (Icon icon = NativeMethods.GetJumboFileIcon(filePath))
-                            using (Bitmap bmp = icon.ToBitmap())
-                            using (Image img = ImageHelpers.AutoCropTransparent(bmp))
+                            using (Icon icon = NativeMethods.GetJumboFileIcon(filePath, false))
+                            using (Image img = icon.ToBitmap())
                             {
                                 ThumbnailImage = ImageHelpers.ResizeImage(img, ThumbnailSize, false, true);
                                 pbThumbnail.Image = ThumbnailImage;

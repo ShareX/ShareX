@@ -528,7 +528,7 @@ namespace ShareX.HelpersLib
             return icon;
         }
 
-        public static Icon GetJumboFileIcon(string filePath)
+        public static Icon GetJumboFileIcon(string filePath, bool jumboSize = true)
         {
             SHFILEINFO shfi = new SHFILEINFO();
 
@@ -538,7 +538,7 @@ namespace ShareX.HelpersLib
             IImageList spiml = null;
             Guid guil = new Guid(NativeConstants.IID_IImageList2);
 
-            SHGetImageList(NativeConstants.SHIL_JUMBO, ref guil, ref spiml);
+            SHGetImageList(jumboSize ? NativeConstants.SHIL_JUMBO : NativeConstants.SHIL_EXTRALARGE, ref guil, ref spiml);
             IntPtr hIcon = IntPtr.Zero;
             spiml.GetIcon(shfi.iIcon, NativeConstants.ILD_TRANSPARENT | NativeConstants.ILD_IMAGE, ref hIcon);
 
