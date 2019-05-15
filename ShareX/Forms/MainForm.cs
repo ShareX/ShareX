@@ -73,16 +73,13 @@ namespace ShareX
             InitializeComponent();
 
             ShareXResources.UseWhiteIcon = Program.Settings.UseWhiteShareXIcon;
-
             Icon = ShareXResources.Icon;
             niTray.Icon = ShareXResources.Icon;
             Text = Program.Title;
 
-            tsMain.Renderer = new ToolStripDarkRenderer();
-            tsMain.DrawCustomBorder = false;
-            cmsTray.Renderer = new ToolStripDarkRenderer();
+            ShareXResources.UseDarkTheme = Program.Settings.UseDarkTheme;
+            UpdateTheme();
             cmsTray.IgnoreSeparatorClick();
-            cmsTaskInfo.Renderer = new ToolStripDarkRenderer();
             cmsTaskInfo.IgnoreSeparatorClick();
 
             tsddbWorkflows.HideImageMargin();
@@ -762,6 +759,24 @@ namespace ShareX
             }
         }
 
+        private void UpdateTheme()
+        {
+            if (ShareXResources.UseDarkTheme)
+            {
+                tsMain.Renderer = new ToolStripDarkRenderer();
+                tsMain.DrawCustomBorder = false;
+                cmsTray.Renderer = new ToolStripDarkRenderer();
+                cmsTaskInfo.Renderer = new ToolStripDarkRenderer();
+            }
+            else
+            {
+                tsMain.Renderer = new ToolStripCustomRenderer();
+                tsMain.DrawCustomBorder = true;
+                cmsTray.Renderer = new ToolStripCustomRenderer();
+                cmsTaskInfo.Renderer = new ToolStripCustomRenderer();
+            }
+        }
+
         private void CleanCustomClipboardFormats()
         {
             tssCopy6.Visible = false;
@@ -796,6 +811,13 @@ namespace ShareX
             HelpersOptions.BrowserPath = Program.Settings.BrowserPath;
             HelpersOptions.RecentColors = Program.Settings.RecentColors;
             TaskManager.RecentManager.MaxCount = Program.Settings.RecentTasksMaxCount;
+
+            if (ShareXResources.UseDarkTheme != Program.Settings.UseDarkTheme)
+            {
+                ShareXResources.UseDarkTheme = Program.Settings.UseDarkTheme;
+
+                UpdateTheme();
+            }
 
             if (ShareXResources.UseWhiteIcon != Program.Settings.UseWhiteShareXIcon)
             {

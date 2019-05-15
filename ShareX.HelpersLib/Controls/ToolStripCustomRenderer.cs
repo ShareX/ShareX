@@ -30,6 +30,10 @@ namespace ShareX.HelpersLib
 {
     public class ToolStripCustomRenderer : ToolStripRoundedEdgeRenderer
     {
+        public ToolStripCustomRenderer()
+        {
+        }
+
         public ToolStripCustomRenderer(ProfessionalColorTable professionalColorTable) : base(professionalColorTable)
         {
         }

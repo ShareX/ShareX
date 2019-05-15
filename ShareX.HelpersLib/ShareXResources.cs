@@ -41,6 +41,8 @@ namespace ShareX.HelpersLib
             }
         }
 
+        public static bool UseDarkTheme { get; set; }
+
         public static bool UseWhiteIcon { get; set; }
 
         public static Icon Icon

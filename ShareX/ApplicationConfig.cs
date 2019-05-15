@@ -138,6 +138,18 @@ namespace ShareX
 
         #region Advanced
 
+        [Category("Application"), DefaultValue(true), Description("Use dark theme. Currently only main window and tray menu supports it.")]
+        public bool UseDarkTheme { get; set; }
+
+        [Category("Application"), DefaultValue(false), Description("Use white version of ShareX icon.")]
+        public bool UseWhiteShareXIcon { get; set; }
+
+        [Category("Application"), DefaultValue(true), Description("Automatically check updates.")]
+#if STEAM || WindowsStore
+        [Browsable(false)]
+#endif
+        public bool AutoCheckUpdate { get; set; }
+
         [Category("Application"), DefaultValue(false), Description("Calculate and show file sizes in binary units (KiB, MiB etc.)")]
         public bool BinaryUnits { get; set; }
 
@@ -146,12 +158,6 @@ namespace ShareX
 
         [Category("Application"), DefaultValue(false), Description("Show only customized tasks in main window workflows.")]
         public bool WorkflowsOnlyShowEdited { get; set; }
-
-        [Category("Application"), DefaultValue(true), Description("Automatically check updates.")]
-#if STEAM || WindowsStore
-        [Browsable(false)]
-#endif
-        public bool AutoCheckUpdate { get; set; }
 
         [Category("Application"), DefaultValue(true), Description("Automatically expand capture menu when you open the tray menu.")]
         public bool TrayAutoExpandCaptureMenu { get; set; }
@@ -177,9 +183,6 @@ namespace ShareX
 
         [Category("Application"), DefaultValue(false), Description("In main window when task is completed automatically select it.")]
         public bool AutoSelectLastCompletedTask { get; set; }
-
-        [Category("Application"), DefaultValue(false), Description("Use white version of ShareX icon.")]
-        public bool UseWhiteShareXIcon { get; set; }
 
         [Category("Hotkey"), DefaultValue(false), Description("Disables hotkeys.")]
         public bool DisableHotkeys { get; set; }
