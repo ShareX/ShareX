@@ -28,26 +28,26 @@ using System.Windows.Forms;
 
 namespace ShareX.HelpersLib
 {
-    public class ToolStripBorderRight : ToolStrip
+    public class ToolStripDarkRenderer : ToolStripCustomRenderer
     {
-        public bool DrawCustomBorder { get; set; } = true;
+        public static Color LightColor { get; } = Color.FromArgb(235, 235, 235);
 
-        protected override void OnPaint(PaintEventArgs e)
+        public ToolStripDarkRenderer() : base(new DarkColorTable())
         {
-            base.OnPaint(e);
-
-            if (DrawCustomBorder)
-            {
-                using (Pen pen = new Pen(ProfessionalColors.SeparatorDark))
-                {
-                    e.Graphics.DrawLine(pen, new Point(ClientSize.Width - 1, 0), new Point(ClientSize.Width - 1, ClientSize.Height - 1));
-                }
-            }
         }
 
-        protected override void OnPaintBackground(PaintEventArgs e)
+        protected override void OnRenderItemText(ToolStripItemTextRenderEventArgs e)
         {
-            base.OnPaintBackground(e);
+            e.TextColor = LightColor;
+
+            base.OnRenderItemText(e);
+        }
+
+        protected override void OnRenderArrow(ToolStripArrowRenderEventArgs e)
+        {
+            e.ArrowColor = LightColor;
+
+            base.OnRenderArrow(e);
         }
     }
 }

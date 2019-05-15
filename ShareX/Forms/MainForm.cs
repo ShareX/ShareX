@@ -78,9 +78,11 @@ namespace ShareX
             niTray.Icon = ShareXResources.Icon;
             Text = Program.Title;
 
-            tsMain.Renderer = new ToolStripCheckedBoldRenderer();
-            cmsTray.Renderer = new ToolStripCheckedBoldRenderer();
+            tsMain.Renderer = new ToolStripDarkRenderer();
+            tsMain.DrawCustomBorder = false;
+            cmsTray.Renderer = new ToolStripDarkRenderer();
             cmsTray.IgnoreSeparatorClick();
+            cmsTaskInfo.Renderer = new ToolStripDarkRenderer();
             cmsTaskInfo.IgnoreSeparatorClick();
 
             tsddbWorkflows.HideImageMargin();

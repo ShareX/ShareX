@@ -53,7 +53,7 @@ namespace ShareX.HistoryLib
             HistoryPath = historyPath;
             Settings = settings;
 
-            tsMain.Renderer = new CustomToolStripProfessionalRenderer();
+            tsMain.Renderer = new ToolStripRoundedEdgeRenderer();
             ilvImages.View = (View)Settings.ViewMode;
             ilvImages.ThumbnailSize = Settings.ThumbnailSize;
 

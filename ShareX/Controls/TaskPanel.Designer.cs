@@ -87,7 +87,7 @@
             this.lblFilename.AutoEllipsis = true;
             this.lblFilename.BackColor = System.Drawing.Color.Transparent;
             this.lblFilename.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFilename.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(228)))), ((int)(((byte)(228)))));
+            this.lblFilename.ForeColor = System.Drawing.Color.White;
             this.lblFilename.Location = new System.Drawing.Point(0, 0);
             this.lblFilename.Name = "lblFilename";
             this.lblFilename.Size = new System.Drawing.Size(256, 22);

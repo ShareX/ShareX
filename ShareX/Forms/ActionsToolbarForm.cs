@@ -96,7 +96,7 @@ namespace ShareX
                 Margin = new Padding(1),
                 MinimumSize = new Size(10, 30),
                 Padding = new Padding(0, 1, 0, 0),
-                Renderer = new CustomToolStripProfessionalRenderer(),
+                Renderer = new ToolStripRoundedEdgeRenderer(),
                 TabIndex = 0,
                 ShowItemToolTips = false
             };

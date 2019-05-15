@@ -91,7 +91,7 @@ namespace ShareX.ScreenCaptureLib
                 Location = new Point(0, 0),
                 MinimumSize = new Size(10, 30),
                 Padding = Form.IsEditorMode ? new Padding(5, 1, 3, 0) : new Padding(0, 1, 0, 0),
-                Renderer = new CustomToolStripProfessionalRenderer(),
+                Renderer = new ToolStripRoundedEdgeRenderer(),
                 TabIndex = 0,
                 ShowItemToolTips = false
             };

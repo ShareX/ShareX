@@ -28,18 +28,17 @@ using System.Windows.Forms;
 
 namespace ShareX.HelpersLib
 {
-    public class ToolStripCheckedBoldRenderer : ToolStripProfessionalRenderer
+    public class ToolStripCustomRenderer : ToolStripRoundedEdgeRenderer
     {
-        public ToolStripCheckedBoldRenderer()
+        public ToolStripCustomRenderer(ProfessionalColorTable professionalColorTable) : base(professionalColorTable)
         {
-            RoundedEdges = false;
         }
 
         protected override void OnRenderItemText(ToolStripItemTextRenderEventArgs e)
         {
-            if (e.Item is ToolStripMenuItem && ((ToolStripMenuItem)e.Item).Checked)
+            if (e.Item is ToolStripMenuItem tsmi && tsmi.Checked)
             {
-                e.TextFont = new Font(e.Item.Font, FontStyle.Bold);
+                e.TextFont = new Font(tsmi.Font, FontStyle.Bold);
             }
 
             base.OnRenderItemText(e);
@@ -47,7 +46,7 @@ namespace ShareX.HelpersLib
 
         protected override void OnRenderArrow(ToolStripArrowRenderEventArgs e)
         {
-            if (e.Item is ToolStripDropDownButton && ((ToolStripDropDownButton)e.Item).Owner is ToolStripBorderRight)
+            if (e.Item is ToolStripDropDownButton tsddb && tsddb.Owner is ToolStripBorderRight)
             {
                 e.Direction = ArrowDirection.Right;
             }

@@ -108,7 +108,8 @@
     <Compile Include="..\SharedAssemblyInfo.cs">
       <Link>Properties\SharedAssemblyInfo.cs</Link>
     </Compile>
-    <Compile Include="Controls\CustomToolStripProfessionalRenderer.cs" />
+    <Compile Include="Controls\ToolStripRoundedEdgeRenderer.cs" />
+    <Compile Include="Controls\DarkColorTable.cs" />
     <Compile Include="Controls\HotkeySelectionButton.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -130,6 +131,7 @@
     <Compile Include="Controls\ToolStripButtonExtraImage.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Controls\ToolStripDarkRenderer.cs" />
     <Compile Include="Controls\ToolStripEx.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -188,7 +190,7 @@
     <Compile Include="Controls\LabelNoCopy.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Controls\ToolStripCheckedBoldRenderer.cs" />
+    <Compile Include="Controls\ToolStripCustomRenderer.cs" />
     <Compile Include="Controls\ToolStripButtonColorAnimation.cs">
       <SubType>Component</SubType>
     </Compile>

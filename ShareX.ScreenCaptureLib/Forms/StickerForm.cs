@@ -50,7 +50,7 @@ namespace ShareX.ScreenCaptureLib
 
             InitializeComponent();
             Icon = ShareXResources.Icon;
-            tsMain.Renderer = new CustomToolStripProfessionalRenderer();
+            tsMain.Renderer = new ToolStripRoundedEdgeRenderer();
             tsnudSize.NumericUpDownControl.Minimum = 16;
             tsnudSize.NumericUpDownControl.Maximum = 256;
             tsnudSize.NumericUpDownControl.Increment = 16;
