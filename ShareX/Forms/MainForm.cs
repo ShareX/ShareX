@@ -772,6 +772,9 @@ namespace ShareX
                 lblListViewTip.ForeColor = ToolStripDarkRenderer.TextColor;
                 scMain.SplitterColor = ToolStripDarkRenderer.BackgroundColor;
                 scMain.SplitterLineColor = ToolStripDarkRenderer.BorderColor;
+                pbPreview.CheckerPatternColor1 = Color.FromArgb(153, 153, 153);
+                pbPreview.CheckerPatternColor2 = Color.FromArgb(102, 102, 102);
+                pbPreview.UpdateCheckers(true);
             }
             else
             {
@@ -784,6 +787,9 @@ namespace ShareX
                 lblListViewTip.ForeColor = Color.Silver;
                 scMain.SplitterColor = Color.White;
                 scMain.SplitterLineColor = ProfessionalColors.SeparatorDark;
+                pbPreview.CheckerPatternColor1 = SystemColors.ControlLight;
+                pbPreview.CheckerPatternColor2 = SystemColors.ControlLightLight;
+                pbPreview.UpdateCheckers(true);
             }
         }
 
@@ -1317,6 +1323,39 @@ namespace ShareX
                 UpdateContextMenu();
                 cmsTaskInfo.Show((Control)sender, e.X + 1, e.Y + 1);
             }
+        }
+
+        private void LvUploads_DrawColumnHeader(object sender, DrawListViewColumnHeaderEventArgs e)
+        {
+            if (ShareXResources.UseDarkTheme)
+            {
+                using (Brush brush = new SolidBrush(ToolStripDarkRenderer.BackgroundColor))
+                {
+                    e.Graphics.FillRectangle(brush, e.Bounds);
+                }
+
+                TextRenderer.DrawText(e.Graphics, e.Header.Text, e.Font, e.Bounds.LocationOffset(4, 0).SizeOffset(-6, 0), ToolStripDarkRenderer.TextColor,
+                    TextFormatFlags.Left | TextFormatFlags.VerticalCenter | TextFormatFlags.EndEllipsis);
+
+                if (e.ColumnIndex > 0)
+                {
+                    using (Pen pen = new Pen(Color.FromArgb(22, 26, 31)))
+                    using (Pen pen2 = new Pen(Color.FromArgb(56, 64, 75)))
+                    {
+                        e.Graphics.DrawLine(pen, e.Bounds.Left, e.Bounds.Top, e.Bounds.Left, e.Bounds.Bottom - 1);
+                        e.Graphics.DrawLine(pen2, e.Bounds.Left + 1, e.Bounds.Top, e.Bounds.Left + 1, e.Bounds.Bottom - 1);
+                    }
+                }
+            }
+            else
+            {
+                e.DrawDefault = true;
+            }
+        }
+
+        private void LvUploads_DrawItem(object sender, DrawListViewItemEventArgs e)
+        {
+            e.DrawDefault = true;
         }
 
         private async void lvUploads_SelectedIndexChanged(object sender, EventArgs e)
@@ -2320,39 +2359,6 @@ namespace ShareX
 
             UpdateTaskViewMode();
             UpdateContextMenu();
-        }
-
-        private void LvUploads_DrawColumnHeader(object sender, DrawListViewColumnHeaderEventArgs e)
-        {
-            if (ShareXResources.UseDarkTheme)
-            {
-                using (Brush brush = new SolidBrush(ToolStripDarkRenderer.BackgroundColor))
-                {
-                    e.Graphics.FillRectangle(brush, e.Bounds);
-                }
-
-                TextRenderer.DrawText(e.Graphics, e.Header.Text, e.Font, e.Bounds.LocationOffset(4, 0).SizeOffset(-6, 0), ToolStripDarkRenderer.TextColor,
-                    TextFormatFlags.Left | TextFormatFlags.VerticalCenter | TextFormatFlags.EndEllipsis);
-
-                if (e.ColumnIndex > 0)
-                {
-                    using (Pen pen = new Pen(Color.FromArgb(22, 26, 31)))
-                    using (Pen pen2 = new Pen(Color.FromArgb(56, 64, 75)))
-                    {
-                        e.Graphics.DrawLine(pen, e.Bounds.Left, e.Bounds.Top, e.Bounds.Left, e.Bounds.Bottom - 1);
-                        e.Graphics.DrawLine(pen2, e.Bounds.Left + 1, e.Bounds.Top, e.Bounds.Left + 1, e.Bounds.Bottom - 1);
-                    }
-                }
-            }
-            else
-            {
-                e.DrawDefault = true;
-            }
-        }
-
-        private void LvUploads_DrawItem(object sender, DrawListViewItemEventArgs e)
-        {
-            e.DrawDefault = true;
         }
 
         private void tsmiImagePreviewHide_Click(object sender, EventArgs e)

@@ -99,6 +99,10 @@ namespace ShareX.HelpersLib
             }
         }
 
+        public Color CheckerPatternColor1 { get; set; } = SystemColors.ControlLight;
+
+        public Color CheckerPatternColor2 { get; set; } = SystemColors.ControlLightLight;
+
         [DefaultValue(false)]
         public bool FullscreenOnClick { get; set; }
 
@@ -197,14 +201,14 @@ namespace ShareX.HelpersLib
             AutoSetSizeMode();
         }
 
-        private void UpdateCheckers()
+        public void UpdateCheckers(bool forceUpdate = false)
         {
             if (DrawCheckeredBackground)
             {
-                if (pbMain.BackgroundImage == null || pbMain.BackgroundImage.Size != pbMain.ClientSize)
+                if (forceUpdate || pbMain.BackgroundImage == null || pbMain.BackgroundImage.Size != pbMain.ClientSize)
                 {
                     if (pbMain.BackgroundImage != null) pbMain.BackgroundImage.Dispose();
-                    pbMain.BackgroundImage = ImageHelpers.CreateCheckerPattern();
+                    pbMain.BackgroundImage = ImageHelpers.CreateCheckerPattern(10, 10, CheckerPatternColor1, CheckerPatternColor2);
                 }
             }
             else

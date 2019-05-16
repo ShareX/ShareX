@@ -740,7 +740,7 @@ namespace ShareX.HelpersLib
             return CreateCheckerPattern(width, height, SystemColors.ControlLight, SystemColors.ControlLightLight);
         }
 
-        private static Image CreateCheckerPattern(int width, int height, Color color1, Color color2)
+        public static Image CreateCheckerPattern(int width, int height, Color color1, Color color2)
         {
             Bitmap bmp = new Bitmap(width * 2, height * 2);
 
