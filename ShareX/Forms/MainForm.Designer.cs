@@ -313,12 +313,12 @@
             this.scMain.Panel2.Controls.Add(this.pbPreview);
             this.scMain.SplitterMoved += new System.Windows.Forms.SplitterEventHandler(this.scMain_SplitterMoved);
             // 
-            // lblMainFormTip
+            // lblListViewTip
             // 
-            resources.ApplyResources(this.lblListViewTip, "lblMainFormTip");
+            resources.ApplyResources(this.lblListViewTip, "lblListViewTip");
             this.lblListViewTip.BackColor = System.Drawing.Color.Transparent;
             this.lblListViewTip.ForeColor = System.Drawing.Color.Silver;
-            this.lblListViewTip.Name = "lblMainFormTip";
+            this.lblListViewTip.Name = "lblListViewTip";
             this.lblListViewTip.UseMnemonic = false;
             this.lblListViewTip.MouseUp += new System.Windows.Forms.MouseEventHandler(this.lblDragAndDropTip_MouseUp);
             // 
@@ -419,6 +419,7 @@
             // 
             resources.ApplyResources(this.tsMain, "tsMain");
             this.tsMain.CanOverflow = false;
+            this.tsMain.DrawCustomBorder = true;
             this.tsMain.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.tsMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsddbCapture,
@@ -2209,11 +2210,11 @@
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.Controls.Add(this.pNews);
-            this.Controls.Add(this.pThumbnailView);
             this.Controls.Add(this.flpCommunity);
             this.Controls.Add(this.scMain);
             this.Controls.Add(this.tsMain);
+            this.Controls.Add(this.pNews);
+            this.Controls.Add(this.pThumbnailView);
             this.DoubleBuffered = true;
             this.Name = "MainForm";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);

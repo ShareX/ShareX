@@ -770,6 +770,8 @@ namespace ShareX
                 lvUploads.BackColor = ToolStripDarkRenderer.BackgroundColor;
                 lvUploads.ForeColor = ToolStripDarkRenderer.TextColor;
                 lblListViewTip.ForeColor = ToolStripDarkRenderer.TextColor;
+                scMain.SplitterColor = ToolStripDarkRenderer.BackgroundColor;
+                scMain.SplitterLineColor = ToolStripDarkRenderer.BorderColor;
             }
             else
             {
@@ -780,6 +782,8 @@ namespace ShareX
                 lvUploads.BackColor = SystemColors.Window;
                 lvUploads.ForeColor = SystemColors.WindowText;
                 lblListViewTip.ForeColor = Color.Silver;
+                scMain.SplitterColor = Color.White;
+                scMain.SplitterLineColor = ProfessionalColors.SeparatorDark;
             }
         }
 

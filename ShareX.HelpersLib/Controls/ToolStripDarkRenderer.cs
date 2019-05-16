@@ -32,6 +32,7 @@ namespace ShareX.HelpersLib
     {
         public static Color BackgroundColor { get; } = Color.FromArgb(42, 47, 56);
         public static Color TextColor { get; } = Color.FromArgb(235, 235, 235);
+        public static Color BorderColor { get; } = Color.FromArgb(28, 32, 38);
 
         public ToolStripDarkRenderer() : base(new DarkColorTable())
         {

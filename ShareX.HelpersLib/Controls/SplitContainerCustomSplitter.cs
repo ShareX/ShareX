@@ -30,13 +30,19 @@ namespace ShareX.HelpersLib
 {
     public class SplitContainerCustomSplitter : SplitContainer
     {
+        public Color SplitterColor { get; set; } = Color.White;
+        public Color SplitterLineColor { get; set; } = ProfessionalColors.SeparatorDark;
+
         protected override void OnPaint(PaintEventArgs pevent)
         {
             Graphics g = pevent.Graphics;
             Rectangle rect = SplitterRectangle;
 
-            using (Pen pen = new Pen(ProfessionalColors.SeparatorDark))
+            using (Brush brush = new SolidBrush(SplitterColor))
+            using (Pen pen = new Pen(SplitterLineColor))
             {
+                g.FillRectangle(brush, rect);
+
                 if (Orientation == Orientation.Horizontal)
                 {
                     g.DrawLine(pen, rect.Left, rect.Top, rect.Right - 1, rect.Top);
