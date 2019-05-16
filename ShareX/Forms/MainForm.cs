@@ -171,7 +171,7 @@ namespace ShareX
             TaskManager.TaskView = ucTaskView;
 
             // Required for BackColor Transparent to work
-            lblMainFormTip.Parent = lvUploads;
+            lblListViewTip.Parent = lvUploads;
 
             foreach (ToolStripDropDownItem dropDownItem in new ToolStripDropDownItem[]
             {
@@ -439,11 +439,11 @@ namespace ShareX
                     sb.AppendFormat("{0}  |  {1}\r\n", hotkey.HotkeyInfo, hotkey.TaskSettings);
                 }
 
-                lblMainFormTip.Text = lblThumbnailViewTip.Text = sb.ToString().Trim();
+                lblListViewTip.Text = lblThumbnailViewTip.Text = sb.ToString().Trim();
             }
             else
             {
-                lblMainFormTip.Text = lblThumbnailViewTip.Text = "";
+                lblListViewTip.Text = lblThumbnailViewTip.Text = "";
             }
         }
 
@@ -767,6 +767,9 @@ namespace ShareX
                 tsMain.DrawCustomBorder = false;
                 cmsTray.Renderer = new ToolStripDarkRenderer();
                 cmsTaskInfo.Renderer = new ToolStripDarkRenderer();
+                lvUploads.BackColor = ToolStripDarkRenderer.BackgroundColor;
+                lvUploads.ForeColor = ToolStripDarkRenderer.TextColor;
+                lblListViewTip.ForeColor = ToolStripDarkRenderer.TextColor;
             }
             else
             {
@@ -774,6 +777,9 @@ namespace ShareX
                 tsMain.DrawCustomBorder = true;
                 cmsTray.Renderer = new ToolStripCustomRenderer();
                 cmsTaskInfo.Renderer = new ToolStripCustomRenderer();
+                lvUploads.BackColor = SystemColors.Window;
+                lvUploads.ForeColor = SystemColors.WindowText;
+                lblListViewTip.ForeColor = Color.Silver;
             }
         }
 

@@ -143,7 +143,7 @@ namespace ShareX
 
         public static void UpdateMainFormTip()
         {
-            Program.MainForm.lblMainFormTip.Visible = Program.MainForm.lblThumbnailViewTip.Visible = Program.Settings.ShowMainWindowTip && Tasks.Count == 0;
+            Program.MainForm.lblListViewTip.Visible = Program.MainForm.lblThumbnailViewTip.Visible = Program.Settings.ShowMainWindowTip && Tasks.Count == 0;
             Program.MainForm.flpCommunity.Visible = Tasks.Count == 0 && (Program.Settings.ShowDiscordButton || Program.Settings.ShowSupportUsButton) &&
                 (DateTime.Now - Program.Settings.FirstTimeRunDate).TotalDays >= 7;
             Program.MainForm.flpDiscord.Visible = Program.Settings.ShowDiscordButton;

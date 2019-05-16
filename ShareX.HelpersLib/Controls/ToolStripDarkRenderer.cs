@@ -30,7 +30,8 @@ namespace ShareX.HelpersLib
 {
     public class ToolStripDarkRenderer : ToolStripCustomRenderer
     {
-        public static Color LightColor { get; } = Color.FromArgb(235, 235, 235);
+        public static Color BackgroundColor { get; } = Color.FromArgb(42, 47, 56);
+        public static Color TextColor { get; } = Color.FromArgb(235, 235, 235);
 
         public ToolStripDarkRenderer() : base(new DarkColorTable())
         {
@@ -38,14 +39,14 @@ namespace ShareX.HelpersLib
 
         protected override void OnRenderItemText(ToolStripItemTextRenderEventArgs e)
         {
-            e.TextColor = LightColor;
+            e.TextColor = TextColor;
 
             base.OnRenderItemText(e);
         }
 
         protected override void OnRenderArrow(ToolStripArrowRenderEventArgs e)
         {
-            e.ArrowColor = LightColor;
+            e.ArrowColor = TextColor;
 
             base.OnRenderArrow(e);
         }

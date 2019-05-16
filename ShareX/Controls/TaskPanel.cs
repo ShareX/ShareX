@@ -135,7 +135,7 @@ namespace ShareX
         public TaskPanel(WorkerTask task)
         {
             InitializeComponent();
-            lblFilename.ForeColor = ToolStripDarkRenderer.LightColor;
+            lblFilename.ForeColor = ToolStripDarkRenderer.TextColor;
 
             Task = task;
             UpdateFilename();
