@@ -2322,6 +2322,39 @@ namespace ShareX
             UpdateContextMenu();
         }
 
+        private void LvUploads_DrawColumnHeader(object sender, DrawListViewColumnHeaderEventArgs e)
+        {
+            if (ShareXResources.UseDarkTheme)
+            {
+                using (Brush brush = new SolidBrush(ToolStripDarkRenderer.BackgroundColor))
+                {
+                    e.Graphics.FillRectangle(brush, e.Bounds);
+                }
+
+                TextRenderer.DrawText(e.Graphics, e.Header.Text, e.Font, e.Bounds.LocationOffset(4, 0).SizeOffset(-6, 0), ToolStripDarkRenderer.TextColor,
+                    TextFormatFlags.Left | TextFormatFlags.VerticalCenter | TextFormatFlags.EndEllipsis);
+
+                if (e.ColumnIndex > 0)
+                {
+                    using (Pen pen = new Pen(Color.FromArgb(22, 26, 31)))
+                    using (Pen pen2 = new Pen(Color.FromArgb(56, 64, 75)))
+                    {
+                        e.Graphics.DrawLine(pen, e.Bounds.Left, e.Bounds.Top, e.Bounds.Left, e.Bounds.Bottom - 1);
+                        e.Graphics.DrawLine(pen2, e.Bounds.Left + 1, e.Bounds.Top, e.Bounds.Left + 1, e.Bounds.Bottom - 1);
+                    }
+                }
+            }
+            else
+            {
+                e.DrawDefault = true;
+            }
+        }
+
+        private void LvUploads_DrawItem(object sender, DrawListViewItemEventArgs e)
+        {
+            e.DrawDefault = true;
+        }
+
         private void tsmiImagePreviewHide_Click(object sender, EventArgs e)
         {
             Program.Settings.ImagePreview = ImagePreviewVisibility.Hide;
