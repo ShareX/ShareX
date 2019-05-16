@@ -772,8 +772,6 @@ namespace ShareX
                 lblListViewTip.ForeColor = ToolStripDarkRenderer.TextColor;
                 scMain.SplitterColor = ToolStripDarkRenderer.BackgroundColor;
                 scMain.SplitterLineColor = ToolStripDarkRenderer.BorderColor;
-                pbPreview.CheckerPatternColor1 = Color.FromArgb(153, 153, 153);
-                pbPreview.CheckerPatternColor2 = Color.FromArgb(102, 102, 102);
                 pbPreview.UpdateCheckers(true);
             }
             else
@@ -787,8 +785,6 @@ namespace ShareX
                 lblListViewTip.ForeColor = Color.Silver;
                 scMain.SplitterColor = Color.White;
                 scMain.SplitterLineColor = ProfessionalColors.SeparatorDark;
-                pbPreview.CheckerPatternColor1 = SystemColors.ControlLight;
-                pbPreview.CheckerPatternColor2 = SystemColors.ControlLightLight;
                 pbPreview.UpdateCheckers(true);
             }
         }
@@ -833,6 +829,7 @@ namespace ShareX
                 ShareXResources.UseDarkTheme = Program.Settings.UseDarkTheme;
 
                 UpdateTheme();
+                Refresh();
             }
 
             if (ShareXResources.UseWhiteIcon != Program.Settings.UseWhiteShareXIcon)

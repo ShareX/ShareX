@@ -37,6 +37,7 @@ namespace ShareX.HelpersLib
         private ImageViewer(Image image)
         {
             screenshot = image;
+
             InitializeComponent();
             Icon = ShareXResources.Icon;
         }

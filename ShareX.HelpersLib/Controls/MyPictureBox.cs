@@ -99,10 +99,6 @@ namespace ShareX.HelpersLib
             }
         }
 
-        public Color CheckerPatternColor1 { get; set; } = SystemColors.ControlLight;
-
-        public Color CheckerPatternColor2 { get; set; } = SystemColors.ControlLightLight;
-
         [DefaultValue(false)]
         public bool FullscreenOnClick { get; set; }
 
@@ -208,7 +204,21 @@ namespace ShareX.HelpersLib
                 if (forceUpdate || pbMain.BackgroundImage == null || pbMain.BackgroundImage.Size != pbMain.ClientSize)
                 {
                     if (pbMain.BackgroundImage != null) pbMain.BackgroundImage.Dispose();
-                    pbMain.BackgroundImage = ImageHelpers.CreateCheckerPattern(10, 10, CheckerPatternColor1, CheckerPatternColor2);
+
+                    Color checkerPatternColor1, checkerPatternColor2;
+
+                    if (ShareXResources.UseDarkTheme)
+                    {
+                        checkerPatternColor1 = Color.FromArgb(153, 153, 153);
+                        checkerPatternColor2 = Color.FromArgb(102, 102, 102);
+                    }
+                    else
+                    {
+                        checkerPatternColor1 = SystemColors.ControlLight;
+                        checkerPatternColor2 = SystemColors.ControlLightLight;
+                    }
+
+                    pbMain.BackgroundImage = ImageHelpers.CreateCheckerPattern(10, 10, checkerPatternColor1, checkerPatternColor2);
                 }
             }
             else
