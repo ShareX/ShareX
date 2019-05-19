@@ -355,6 +355,13 @@ namespace ShareX
 
                     if (info != null && info.Result != null)
                     {
+                        if (Program.Settings.TaskViewMode == TaskViewMode.ThumbnailView)
+                        {
+                            TaskView.UpdateFilename(task);
+                            TaskView.UpdateThumbnail(task);
+                            TaskView.UpdateProgressVisible(task, false);
+                        }
+
                         ListViewItem lvi = FindListViewItem(task);
 
                         if (task.Status == TaskStatus.Stopped)
@@ -494,11 +501,6 @@ namespace ShareX
                             {
                                 ListViewControl.SelectSingle(lvi);
                             }
-                        }
-
-                        if (Program.Settings.TaskViewMode == TaskViewMode.ThumbnailView)
-                        {
-                            TaskView.UpdateProgressVisible(task, false);
                         }
                     }
                 }
