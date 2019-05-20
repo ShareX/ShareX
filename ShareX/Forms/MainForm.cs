@@ -1521,17 +1521,9 @@ namespace ShareX
                 if (dataObject != null)
                 {
                     AllowDrop = false;
-
                     lvUploads.DoDragDrop(dataObject, DragDropEffects.Copy | DragDropEffects.Move);
+                    AllowDrop = true;
                 }
-            }
-        }
-
-        private void lvUploads_QueryContinueDrag(object sender, QueryContinueDragEventArgs e)
-        {
-            if (e.Action != DragAction.Continue)
-            {
-                AllowDrop = true;
             }
         }
 

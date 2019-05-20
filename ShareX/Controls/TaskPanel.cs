@@ -260,15 +260,8 @@ namespace ShareX
                     Program.MainForm.AllowDrop = false;
                     dragBoxFromMouseDown = Rectangle.Empty;
                     pbThumbnail.DoDragDrop(dataObject, DragDropEffects.Copy | DragDropEffects.Move);
+                    Program.MainForm.AllowDrop = true;
                 }
-            }
-        }
-
-        private void PbThumbnail_QueryContinueDrag(object sender, QueryContinueDragEventArgs e)
-        {
-            if (e.Action != DragAction.Continue)
-            {
-                Program.MainForm.AllowDrop = true;
             }
         }
     }
