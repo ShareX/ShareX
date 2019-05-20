@@ -26,6 +26,7 @@
 using ShareX.HelpersLib;
 using System;
 using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 
 namespace ShareX
@@ -91,6 +92,8 @@ namespace ShareX
         public Size ThumbnailSize { get; private set; }
         public string ThumbnailSourceFilePath { get; private set; }
 
+        private Rectangle dragBoxFromMouseDown;
+
         public new event MouseEventHandler MouseDown
         {
             add
@@ -149,7 +152,7 @@ namespace ShareX
 
         public void UpdateFilename()
         {
-            Filename = Task.Info.FileName;
+            Filename = Task.Info?.FileName;
         }
 
         public void UpdateThumbnail()
@@ -202,7 +205,10 @@ namespace ShareX
 
         public void UpdateProgress()
         {
-            Progress = (int)Task.Info.Progress.Percentage;
+            if (Task.Info != null)
+            {
+                Progress = (int)Task.Info.Progress.Percentage;
+            }
         }
 
         public void ClearThumbnail()
@@ -220,11 +226,46 @@ namespace ShareX
 
         private void PbThumbnail_MouseDown(object sender, MouseEventArgs e)
         {
+            if (e.Button == MouseButtons.Left)
+            {
+                Size dragSize = SystemInformation.DragSize;
+                dragBoxFromMouseDown = new Rectangle(new Point(e.X - (dragSize.Width / 2), e.Y - (dragSize.Height / 2)), dragSize);
+            }
+        }
+
+        private void PbThumbnail_MouseUp(object sender, MouseEventArgs e)
+        {
+            dragBoxFromMouseDown = Rectangle.Empty;
+
             if (e.Button == MouseButtons.Left && !string.IsNullOrEmpty(ThumbnailSourceFilePath))
             {
                 pbThumbnail.Enabled = false;
                 ImageViewer.ShowImage(ThumbnailSourceFilePath);
                 pbThumbnail.Enabled = true;
+            }
+        }
+
+        private void PbThumbnail_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left && dragBoxFromMouseDown != Rectangle.Empty && !dragBoxFromMouseDown.Contains(e.X, e.Y) &&
+                Task.Info != null && !string.IsNullOrEmpty(Task.Info.FilePath) && File.Exists(Task.Info.FilePath))
+            {
+                IDataObject dataObject = new DataObject(DataFormats.FileDrop, new string[] { Task.Info.FilePath });
+
+                if (dataObject != null)
+                {
+                    Program.MainForm.AllowDrop = false;
+
+                    DoDragDrop(dataObject, DragDropEffects.Copy | DragDropEffects.Move);
+                }
+            }
+        }
+
+        private void PbThumbnail_QueryContinueDrag(object sender, QueryContinueDragEventArgs e)
+        {
+            if (e.Action != DragAction.Continue)
+            {
+                Program.MainForm.AllowDrop = true;
             }
         }
     }

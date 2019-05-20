@@ -54,7 +54,6 @@
             this.pThumbnail.Radius = 5F;
             this.pThumbnail.Size = new System.Drawing.Size(256, 256);
             this.pThumbnail.TabIndex = 0;
-            this.pThumbnail.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PbThumbnail_MouseDown);
             // 
             // pbProgress
             // 
@@ -78,7 +77,10 @@
             this.pbThumbnail.Size = new System.Drawing.Size(246, 246);
             this.pbThumbnail.TabIndex = 2;
             this.pbThumbnail.TabStop = false;
+            this.pbThumbnail.QueryContinueDrag += new System.Windows.Forms.QueryContinueDragEventHandler(this.PbThumbnail_QueryContinueDrag);
             this.pbThumbnail.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PbThumbnail_MouseDown);
+            this.pbThumbnail.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PbThumbnail_MouseMove);
+            this.pbThumbnail.MouseUp += new System.Windows.Forms.MouseEventHandler(this.PbThumbnail_MouseUp);
             // 
             // lblFilename
             // 
