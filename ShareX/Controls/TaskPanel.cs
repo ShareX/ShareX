@@ -228,7 +228,7 @@ namespace ShareX
         {
             if (e.Button == MouseButtons.Left)
             {
-                Size dragSize = SystemInformation.DragSize;
+                Size dragSize = new Size(10, 10);
                 dragBoxFromMouseDown = new Rectangle(new Point(e.X - (dragSize.Width / 2), e.Y - (dragSize.Height / 2)), dragSize);
             }
         }
@@ -236,7 +236,10 @@ namespace ShareX
         private void PbThumbnail_MouseUp(object sender, MouseEventArgs e)
         {
             dragBoxFromMouseDown = Rectangle.Empty;
+        }
 
+        private void PbThumbnail_MouseClick(object sender, MouseEventArgs e)
+        {
             if (e.Button == MouseButtons.Left && !string.IsNullOrEmpty(ThumbnailSourceFilePath))
             {
                 pbThumbnail.Enabled = false;
@@ -255,7 +258,7 @@ namespace ShareX
                 if (dataObject != null)
                 {
                     Program.MainForm.AllowDrop = false;
-
+                    dragBoxFromMouseDown = Rectangle.Empty;
                     pbThumbnail.DoDragDrop(dataObject, DragDropEffects.Copy | DragDropEffects.Move);
                 }
             }

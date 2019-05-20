@@ -78,6 +78,7 @@
             this.pbThumbnail.TabIndex = 2;
             this.pbThumbnail.TabStop = false;
             this.pbThumbnail.QueryContinueDrag += new System.Windows.Forms.QueryContinueDragEventHandler(this.PbThumbnail_QueryContinueDrag);
+            this.pbThumbnail.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PbThumbnail_MouseClick);
             this.pbThumbnail.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PbThumbnail_MouseDown);
             this.pbThumbnail.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PbThumbnail_MouseMove);
             this.pbThumbnail.MouseUp += new System.Windows.Forms.MouseEventHandler(this.PbThumbnail_MouseUp);
