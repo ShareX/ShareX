@@ -256,7 +256,7 @@ namespace ShareX
                 {
                     Program.MainForm.AllowDrop = false;
 
-                    DoDragDrop(dataObject, DragDropEffects.Copy | DragDropEffects.Move);
+                    pbThumbnail.DoDragDrop(dataObject, DragDropEffects.Copy | DragDropEffects.Move);
                 }
             }
         }
