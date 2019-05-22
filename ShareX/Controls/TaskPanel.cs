@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.Properties;
 using System;
 using System.Drawing;
 using System.IO;
@@ -257,7 +258,8 @@ namespace ShareX
                             pbThumbnail.Enabled = true;
                         }
                     }
-                    else
+                    else if (Helpers.IsTextFile(filePath) || Helpers.IsVideoFile(filePath) || MessageBox.Show("Would you like to run this file?" + "\r\n\r\n" + filePath,
+                        Resources.ShareXConfirmation, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
                         Helpers.OpenFile(filePath);
                     }
