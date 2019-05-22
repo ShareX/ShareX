@@ -212,23 +212,44 @@ namespace ShareX.HelpersLib
 
         public static bool GetExtendedFrameBounds(IntPtr handle, out Rectangle rectangle)
         {
-            RECT rect;
-            int result = DwmGetWindowAttribute(handle, (int)DwmWindowAttribute.ExtendedFrameBounds, out rect, Marshal.SizeOf(typeof(RECT)));
+            bool result = GetWindowAttribute(handle, WindowAttribute.DWMWA_EXTENDED_FRAME_BOUNDS, out RECT rect);
             rectangle = rect;
-            return result == 0;
+            return result;
         }
 
-        public static bool GetNCRenderingEnabled(IntPtr handle)
+        public static bool GetNCRenderingEnabled(IntPtr handle) => GetWindowAttribute(handle, WindowAttribute.DWMWA_NCRENDERING_ENABLED, out bool enabled) && enabled;
+
+        public static void SetNCRenderingPolicy(IntPtr handle, DwmNCRenderingPolicy renderingPolicy) => SetWindowAttribute(handle, WindowAttribute.DWMWA_NCRENDERING_POLICY, renderingPolicy);
+
+        public static bool GetWindowAttribute<T>(IntPtr handle, WindowAttribute attribute, out T value) where T : unmanaged
         {
-            bool enabled;
-            int result = DwmGetWindowAttribute(handle, (int)DwmWindowAttribute.NCRenderingEnabled, out enabled, sizeof(bool));
-            return result == 0 && enabled;
+            int size = Marshal.SizeOf<T>();
+            IntPtr temp = Marshal.AllocHGlobal(size);
+            try
+            {
+                int result = DwmGetWindowAttribute(handle, attribute, temp, size);
+                value = Marshal.PtrToStructure<T>(temp);
+                return result == 0;
+            }
+            finally
+            {
+                Marshal.FreeHGlobal(temp);
+            }
         }
 
-        public static void SetNCRenderingPolicy(IntPtr handle, DwmNCRenderingPolicy renderingPolicy)
+        public static void SetWindowAttribute<T>(IntPtr handle, WindowAttribute attribute, T value) where T : unmanaged
         {
-            int renderPolicy = (int)renderingPolicy;
-            DwmSetWindowAttribute(handle, (int)DwmWindowAttribute.NCRenderingPolicy, ref renderPolicy, sizeof(int));
+            int size = Marshal.SizeOf<T>();
+            IntPtr temp = Marshal.AllocHGlobal(size);
+            try
+            {
+                Marshal.StructureToPtr(value, temp, false);
+                DwmSetWindowAttribute(handle, attribute, temp, size);
+            }
+            finally
+            {
+                Marshal.FreeHGlobal(temp);
+            }
         }
 
         public static Rectangle GetWindowRect(IntPtr handle)
@@ -347,9 +368,7 @@ namespace ShareX.HelpersLib
         {
             if (IsDWMEnabled())
             {
-                int cloaked;
-                int result = DwmGetWindowAttribute(handle, (int)DwmWindowAttribute.Cloaked, out cloaked, sizeof(int));
-                return result == 0 && cloaked != 0;
+                return GetWindowAttribute(handle, WindowAttribute.DWMWA_CLOAKED, out bool cloaked) && cloaked;
             }
 
             return false;

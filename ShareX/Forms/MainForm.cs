@@ -761,6 +761,7 @@ namespace ShareX
 
         private void UpdateTheme()
         {
+            DWMManager.EnableDarkTitlebar(this, ShareXResources.UseDarkTheme);
             if (ShareXResources.UseDarkTheme)
             {
                 tsMain.Renderer = new ToolStripDarkRenderer();
