@@ -33,6 +33,46 @@ namespace ShareX
 {
     public partial class TaskPanel : UserControl
     {
+        public new event MouseEventHandler MouseDown
+        {
+            add
+            {
+                base.MouseDown += value;
+                lblFilename.MouseDown += value;
+                pThumbnail.MouseDown += value;
+                pbThumbnail.MouseDown += value;
+                pbProgress.MouseDown += value;
+            }
+            remove
+            {
+                base.MouseDown -= value;
+                lblFilename.MouseDown -= value;
+                pThumbnail.MouseDown -= value;
+                pbThumbnail.MouseDown -= value;
+                pbProgress.MouseDown -= value;
+            }
+        }
+
+        public new event MouseEventHandler MouseUp
+        {
+            add
+            {
+                base.MouseUp += value;
+                lblFilename.MouseUp += value;
+                pThumbnail.MouseUp += value;
+                pbThumbnail.MouseUp += value;
+                pbProgress.MouseUp += value;
+            }
+            remove
+            {
+                base.MouseUp -= value;
+                lblFilename.MouseUp -= value;
+                pThumbnail.MouseUp -= value;
+                pbThumbnail.MouseUp -= value;
+                pbProgress.MouseUp -= value;
+            }
+        }
+
         public WorkerTask Task { get; private set; }
 
         public string Filename
@@ -90,47 +130,9 @@ namespace ShareX
 
         public Size ThumbnailSize { get; private set; }
 
+        public bool ThumbnailSupportsClick { get; private set; }
+
         private Rectangle dragBoxFromMouseDown;
-
-        public new event MouseEventHandler MouseDown
-        {
-            add
-            {
-                base.MouseDown += value;
-                lblFilename.MouseDown += value;
-                pThumbnail.MouseDown += value;
-                pbThumbnail.MouseDown += value;
-                pbProgress.MouseDown += value;
-            }
-            remove
-            {
-                base.MouseDown -= value;
-                lblFilename.MouseDown -= value;
-                pThumbnail.MouseDown -= value;
-                pbThumbnail.MouseDown -= value;
-                pbProgress.MouseDown -= value;
-            }
-        }
-
-        public new event MouseEventHandler MouseUp
-        {
-            add
-            {
-                base.MouseUp += value;
-                lblFilename.MouseUp += value;
-                pThumbnail.MouseUp += value;
-                pbThumbnail.MouseUp += value;
-                pbProgress.MouseUp += value;
-            }
-            remove
-            {
-                base.MouseUp -= value;
-                lblFilename.MouseUp -= value;
-                pThumbnail.MouseUp -= value;
-                pbThumbnail.MouseUp -= value;
-                pbProgress.MouseUp -= value;
-            }
-        }
 
         public TaskPanel(WorkerTask task)
         {
@@ -167,14 +169,16 @@ namespace ShareX
                     {
                         filePath = Task.Info.FileName;
                     }
-                    else
+                    else if (File.Exists(filePath))
                     {
+                        ThumbnailSupportsClick = true;
+                        pbThumbnail.Cursor = pThumbnail.Cursor = Cursors.Hand;
+
                         using (Image img = ImageHelpers.LoadImage(filePath))
                         {
                             if (img != null)
                             {
                                 pbThumbnail.Image = ImageHelpers.ResizeImage(img, ThumbnailSize, false);
-                                pbThumbnail.Cursor = pThumbnail.Cursor = Cursors.Hand;
                                 return;
                             }
                         }
@@ -186,7 +190,6 @@ namespace ShareX
                         using (Image img = icon.ToBitmap())
                         {
                             pbThumbnail.Image = ImageHelpers.ResizeImage(img, ThumbnailSize, false, true);
-                            pbThumbnail.Cursor = pThumbnail.Cursor = Cursors.Default;
                         }
                     }
                 }
@@ -214,6 +217,9 @@ namespace ShareX
             {
                 temp.Dispose();
             }
+
+            ThumbnailSupportsClick = false;
+            pbThumbnail.Cursor = pThumbnail.Cursor = Cursors.Default;
         }
 
         private void PbThumbnail_MouseDown(object sender, MouseEventArgs e)
@@ -232,17 +238,29 @@ namespace ShareX
 
         private void PbThumbnail_MouseClick(object sender, MouseEventArgs e)
         {
-            if (e.Button == MouseButtons.Left && Task.Info != null && !string.IsNullOrEmpty(Task.Info.FilePath) && File.Exists(Task.Info.FilePath))
+            if (ThumbnailSupportsClick && e.Button == MouseButtons.Left && Task.Info != null)
             {
-                pbThumbnail.Enabled = false;
+                string filePath = Task.Info.FilePath;
 
-                try
+                if (!string.IsNullOrEmpty(filePath) && File.Exists(filePath))
                 {
-                    ImageViewer.ShowImage(Task.Info.FilePath);
-                }
-                finally
-                {
-                    pbThumbnail.Enabled = true;
+                    if (Helpers.IsImageFile(filePath))
+                    {
+                        pbThumbnail.Enabled = false;
+
+                        try
+                        {
+                            ImageViewer.ShowImage(filePath);
+                        }
+                        finally
+                        {
+                            pbThumbnail.Enabled = true;
+                        }
+                    }
+                    else
+                    {
+                        Helpers.OpenFile(filePath);
+                    }
                 }
             }
         }
