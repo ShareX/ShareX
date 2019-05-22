@@ -88,9 +88,7 @@ namespace ShareX
 
         private bool progressVisible;
 
-        public Image ThumbnailImage { get; private set; }
         public Size ThumbnailSize { get; private set; }
-        public string ThumbnailSourceFilePath { get; private set; }
 
         private Rectangle dragBoxFromMouseDown;
 
@@ -175,10 +173,7 @@ namespace ShareX
                         {
                             if (img != null)
                             {
-                                //ThumbnailImage = ImageHelpers.CreateThumbnail(img, ThumbnailSize.Width, ThumbnailSize.Height);
-                                ThumbnailImage = ImageHelpers.ResizeImage(img, ThumbnailSize, false);
-                                pbThumbnail.Image = ThumbnailImage;
-                                ThumbnailSourceFilePath = filePath;
+                                pbThumbnail.Image = ImageHelpers.ResizeImage(img, ThumbnailSize, false);
                                 pbThumbnail.Cursor = pThumbnail.Cursor = Cursors.Hand;
                                 return;
                             }
@@ -190,8 +185,7 @@ namespace ShareX
                         using (Icon icon = NativeMethods.GetJumboFileIcon(filePath, false))
                         using (Image img = icon.ToBitmap())
                         {
-                            ThumbnailImage = ImageHelpers.ResizeImage(img, ThumbnailSize, false, true);
-                            pbThumbnail.Image = ThumbnailImage;
+                            pbThumbnail.Image = ImageHelpers.ResizeImage(img, ThumbnailSize, false, true);
                             pbThumbnail.Cursor = pThumbnail.Cursor = Cursors.Default;
                         }
                     }
@@ -213,15 +207,13 @@ namespace ShareX
 
         public void ClearThumbnail()
         {
+            Image temp = pbThumbnail.Image;
             pbThumbnail.Image = null;
 
-            if (ThumbnailImage != null)
+            if (temp != null && temp != pbThumbnail.ErrorImage && temp != pbThumbnail.InitialImage)
             {
-                ThumbnailImage.Dispose();
-                ThumbnailImage = null;
+                temp.Dispose();
             }
-
-            ThumbnailSourceFilePath = null;
         }
 
         private void PbThumbnail_MouseDown(object sender, MouseEventArgs e)
@@ -240,11 +232,18 @@ namespace ShareX
 
         private void PbThumbnail_MouseClick(object sender, MouseEventArgs e)
         {
-            if (e.Button == MouseButtons.Left && !string.IsNullOrEmpty(ThumbnailSourceFilePath))
+            if (e.Button == MouseButtons.Left && Task.Info != null && !string.IsNullOrEmpty(Task.Info.FilePath) && File.Exists(Task.Info.FilePath))
             {
                 pbThumbnail.Enabled = false;
-                ImageViewer.ShowImage(ThumbnailSourceFilePath);
-                pbThumbnail.Enabled = true;
+
+                try
+                {
+                    ImageViewer.ShowImage(Task.Info.FilePath);
+                }
+                finally
+                {
+                    pbThumbnail.Enabled = true;
+                }
             }
         }
 
