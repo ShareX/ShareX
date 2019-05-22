@@ -64,12 +64,14 @@ namespace ShareX.HelpersLib
                 Bitmap bmp = new Bitmap(size, size);
 
                 using (Graphics g = Graphics.FromImage(bmp))
+                using (Brush shadowBrush = new SolidBrush(Color.FromArgb(150, 0, 0, 0)))
                 using (Brush brush = new SolidBrush(Color.FromArgb(230, 0, 0)))
                 using (Font font = new Font("Arial", 9, FontStyle.Bold))
                 using (StringFormat stringFormat = new StringFormat())
                 {
                     g.SmoothingMode = SmoothingMode.HighQuality;
                     g.PixelOffsetMode = PixelOffsetMode.Half;
+                    g.DrawRoundedRectangle(shadowBrush, null, new Rectangle(0, 1, bmp.Width, bmp.Height), 3);
                     g.DrawRoundedRectangle(brush, null, new Rectangle(0, 0, bmp.Width, bmp.Height), 3);
                     stringFormat.Alignment = StringAlignment.Center;
                     stringFormat.LineAlignment = StringAlignment.Center;
