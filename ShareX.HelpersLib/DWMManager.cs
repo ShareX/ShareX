@@ -71,13 +71,13 @@ namespace ShareX.HelpersLib
             }
         }
 
-        public static bool EnableDarkTitlebar(Form form, bool enabled)
+        public static bool EnableDarkTitlebar(IntPtr handle, bool enabled)
         {
             if (Helpers.IsWindows10OrGreater() && Helpers.IsWindowsBuildOrGreater(17763))
             {
                 try
                 {
-                    NativeMethods.SetWindowAttribute(form.Handle, WindowAttribute.DWMWA_USE_IMMERSIVE_DARK_MODE, enabled);
+                    NativeMethods.SetWindowAttribute(handle, WindowAttribute.DWMWA_USE_IMMERSIVE_DARK_MODE, enabled);
                     return true;
                 }
                 catch (Exception e)
