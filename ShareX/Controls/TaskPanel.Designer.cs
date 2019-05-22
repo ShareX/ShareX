@@ -59,10 +59,11 @@
             // 
             this.pbProgress.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.pbProgress.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pbProgress.ForeColor = System.Drawing.Color.White;
             this.pbProgress.Location = new System.Drawing.Point(8, 216);
-            this.pbProgress.Maximum = 100;
-            this.pbProgress.Minimum = 0;
             this.pbProgress.Name = "pbProgress";
+            this.pbProgress.ShowPercentageText = true;
             this.pbProgress.Size = new System.Drawing.Size(240, 32);
             this.pbProgress.TabIndex = 1;
             this.pbProgress.Value = 0;

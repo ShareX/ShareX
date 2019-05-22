@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using System;
+using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
@@ -32,38 +33,7 @@ namespace ShareX.HelpersLib
 {
     public class BlackStyleProgressBar : Control
     {
-        public int Maximum
-        {
-            get
-            {
-                return maximum;
-            }
-            set
-            {
-                if (maximum != value)
-                {
-                    if (value < 0)
-                    {
-                        throw new ArgumentOutOfRangeException("Maximum");
-                    }
-
-                    if (minimum > value)
-                    {
-                        minimum = value;
-                    }
-
-                    maximum = value;
-
-                    if (this.value > maximum)
-                    {
-                        this.value = maximum;
-                    }
-
-                    Refresh();
-                }
-            }
-        }
-
+        [DefaultValue(0)]
         public int Minimum
         {
             get
@@ -91,11 +61,45 @@ namespace ShareX.HelpersLib
                         this.value = minimum;
                     }
 
-                    Refresh();
+                    Invalidate();
                 }
             }
         }
 
+        [DefaultValue(100)]
+        public int Maximum
+        {
+            get
+            {
+                return maximum;
+            }
+            set
+            {
+                if (maximum != value)
+                {
+                    if (value < 0)
+                    {
+                        throw new ArgumentOutOfRangeException("Maximum");
+                    }
+
+                    if (minimum > value)
+                    {
+                        minimum = value;
+                    }
+
+                    maximum = value;
+
+                    if (this.value > maximum)
+                    {
+                        this.value = maximum;
+                    }
+
+                    Invalidate();
+                }
+            }
+        }
+
+        [DefaultValue(0)]
         public int Value
         {
             get
@@ -113,20 +117,40 @@ namespace ShareX.HelpersLib
 
                     this.value = value;
 
-                    Refresh();
+                    Invalidate();
                 }
             }
         }
 
-        private int maximum, minimum, value;
+        [DefaultValue(false)]
+        public bool ShowPercentageText
+        {
+            get
+            {
+                return showPercentageText;
+            }
+            set
+            {
+                if (showPercentageText != value)
+                {
+                    showPercentageText = value;
+
+                    Invalidate();
+                }
+            }
+        }
+
+        private bool showPercentageText;
+
+        private int minimum, maximum, value;
 
         public BlackStyleProgressBar()
         {
             SetStyle(ControlStyles.UserPaint | ControlStyles.AllPaintingInWmPaint | ControlStyles.ResizeRedraw | ControlStyles.OptimizedDoubleBuffer | ControlStyles.SupportsTransparentBackColor, true);
 
-            maximum = 100;
             minimum = 0;
-            value = 50;
+            maximum = 100;
+            value = 0;
         }
 
         protected override void OnPaint(PaintEventArgs pe)
@@ -140,6 +164,7 @@ namespace ShareX.HelpersLib
             if (Value > Minimum && Value <= Maximum)
             {
                 DrawProgressBar(g);
+                DrawText(g, Value + "%");
             }
         }
 
@@ -182,6 +207,15 @@ namespace ShareX.HelpersLib
             using (Pen innerBorderPen = new Pen(innerBorderBrush))
             {
                 g.DrawRectangle(innerBorderPen, new Rectangle(progressBarRect.X, progressBarRect.Y, progressBarRect.Width - 1, progressBarRect.Height - 1));
+            }
+        }
+
+        private void DrawText(Graphics g, string text)
+        {
+            if (ShowPercentageText)
+            {
+                TextRenderer.DrawText(g, text, Font, ClientRectangle.LocationOffset(0, 1), Color.Black, TextFormatFlags.HorizontalCenter | TextFormatFlags.VerticalCenter);
+                TextRenderer.DrawText(g, text, Font, ClientRectangle, ForeColor, TextFormatFlags.HorizontalCenter | TextFormatFlags.VerticalCenter);
             }
         }
     }
