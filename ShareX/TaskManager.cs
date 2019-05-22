@@ -597,6 +597,19 @@ namespace ShareX
             }
         }
 
+        public static void AddTestTasks(int count)
+        {
+            for (int i = 0; i < count; i++)
+            {
+                WorkerTask task = WorkerTask.CreateHistoryTask(new RecentTask()
+                {
+                    FilePath = @"..\..\..\ShareX.HelpersLib\Resources\ShareX_Logo.png"
+                });
+
+                Start(task);
+            }
+        }
+
         public static void TestTrayIcon()
         {
             Timer timer = new Timer();

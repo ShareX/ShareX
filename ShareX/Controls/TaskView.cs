@@ -44,20 +44,6 @@ namespace ShareX
             InitializeComponent();
 
             TaskPanels = new List<TaskPanel>();
-            //AddTestTaskPanels();
-        }
-
-        public void AddTestTaskPanels()
-        {
-            for (int i = 0; i < 7; i++)
-            {
-                WorkerTask task = WorkerTask.CreateHistoryTask(new RecentTask()
-                {
-                    FilePath = @"..\..\..\ShareX.HelpersLib\Resources\ShareX_Logo.png"
-                });
-
-                AddTaskPanel(task);
-            }
         }
 
         protected override Point ScrollToControl(Control activeControl)
