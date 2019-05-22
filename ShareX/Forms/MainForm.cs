@@ -773,6 +773,7 @@ namespace ShareX
                 scMain.SplitterColor = ToolStripDarkRenderer.BackgroundColor;
                 scMain.SplitterLineColor = ToolStripDarkRenderer.BorderColor;
                 pbPreview.UpdateCheckers(true);
+                flpCommunity.BackColor = ToolStripDarkRenderer.BackgroundColor;
             }
             else
             {
@@ -786,6 +787,7 @@ namespace ShareX
                 scMain.SplitterColor = Color.White;
                 scMain.SplitterLineColor = ProfessionalColors.SeparatorDark;
                 pbPreview.UpdateCheckers(true);
+                flpCommunity.BackColor = SystemColors.Window;
             }
         }
 
