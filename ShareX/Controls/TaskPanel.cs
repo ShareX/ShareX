@@ -137,11 +137,27 @@ namespace ShareX
 
         public TaskPanel(WorkerTask task)
         {
-            InitializeComponent();
-            lblFilename.ForeColor = ShareXResources.DarkTextColor;
-
             Task = task;
+
+            InitializeComponent();
+            UpdateTheme();
             UpdateFilename();
+        }
+
+        public void UpdateTheme()
+        {
+            if (ShareXResources.UseDarkTheme)
+            {
+                lblFilename.ForeColor = ShareXResources.DarkTextColor;
+                lblFilename.TextShadowColor = Color.Black;
+                pThumbnail.PanelColor = ShareXResources.DarkBorderColor;
+            }
+            else
+            {
+                lblFilename.ForeColor = SystemColors.WindowText;
+                lblFilename.TextShadowColor = Color.Transparent;
+                pThumbnail.PanelColor = SystemColors.ControlLight;
+            }
         }
 
         public void ChangeThumbnailSize(Size size)

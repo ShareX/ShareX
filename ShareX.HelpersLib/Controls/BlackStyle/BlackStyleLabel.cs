@@ -195,7 +195,11 @@ namespace ShareX.HelpersLib
                 tff |= TextFormatFlags.EndEllipsis;
             }
 
-            TextRenderer.DrawText(g, Text, Font, ClientRectangle.LocationOffset(0, 1), TextShadowColor, tff);
+            if (TextShadowColor.A > 0)
+            {
+                TextRenderer.DrawText(g, Text, Font, ClientRectangle.LocationOffset(0, 1), TextShadowColor, tff);
+            }
+
             TextRenderer.DrawText(g, Text, Font, ClientRectangle, ForeColor, tff);
         }
     }

@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.HelpersLib;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -41,14 +42,32 @@ namespace ShareX
 
         public TaskView()
         {
-            InitializeComponent();
-
             TaskPanels = new List<TaskPanel>();
+
+            InitializeComponent();
+            UpdateTheme();
         }
 
         protected override Point ScrollToControl(Control activeControl)
         {
             return AutoScrollPosition;
+        }
+
+        public void UpdateTheme()
+        {
+            if (ShareXResources.UseDarkTheme)
+            {
+                BackColor = ShareXResources.DarkBackgroundColor;
+            }
+            else
+            {
+                BackColor = SystemColors.Window;
+            }
+
+            foreach (TaskPanel panel in TaskPanels)
+            {
+                panel.UpdateTheme();
+            }
         }
 
         public TaskPanel FindPanel(WorkerTask task)

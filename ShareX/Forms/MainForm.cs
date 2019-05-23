@@ -779,7 +779,8 @@ namespace ShareX
                 lblListViewTip.ForeColor = ShareXResources.DarkTextColor;
                 scMain.SplitterColor = ShareXResources.DarkBackgroundColor;
                 scMain.SplitterLineColor = ShareXResources.DarkBorderColor;
-                pbPreview.UpdateCheckers(true);
+                pThumbnailView.BackColor = ShareXResources.DarkBackgroundColor;
+                lblThumbnailViewTip.ForeColor = ShareXResources.DarkTextColor;
                 flpCommunity.BackColor = ShareXResources.DarkBackgroundColor;
             }
             else
@@ -793,9 +794,13 @@ namespace ShareX
                 lblListViewTip.ForeColor = Color.Silver;
                 scMain.SplitterColor = Color.White;
                 scMain.SplitterLineColor = ProfessionalColors.SeparatorDark;
-                pbPreview.UpdateCheckers(true);
+                pThumbnailView.BackColor = SystemColors.Window;
+                lblThumbnailViewTip.ForeColor = Color.Silver;
                 flpCommunity.BackColor = SystemColors.Window;
             }
+
+            pbPreview.UpdateCheckers(true);
+            ucTaskView.UpdateTheme();
         }
 
         private void CleanCustomClipboardFormats()
