@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using System;
+using System.Windows.Forms;
 
 namespace ShareX.HelpersLib
 {
@@ -68,6 +69,24 @@ namespace ShareX.HelpersLib
                 ChangeComposition(true);
                 autoEnable = false;
             }
+        }
+
+        public static bool EnableDarkTitlebar(IntPtr handle, bool enabled)
+        {
+            if (Helpers.IsWindows10OrGreater() && Helpers.IsWindowsBuildOrGreater(17763))
+            {
+                try
+                {
+                    NativeMethods.SetWindowAttribute(handle, WindowAttribute.DWMWA_USE_IMMERSIVE_DARK_MODE, enabled);
+                    return true;
+                }
+                catch (Exception e)
+                {
+                    DebugHelper.WriteException(e);
+                }
+            }
+
+            return false;
         }
     }
 }
