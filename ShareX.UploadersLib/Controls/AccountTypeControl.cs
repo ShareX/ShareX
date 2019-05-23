@@ -41,7 +41,7 @@ namespace ShareX.UploadersLib
         {
             get
             {
-                return (AccountType)cbAccountType.SelectedIndex.Between(0, 1);
+                return (AccountType)cbAccountType.SelectedIndex.Clamp(0, 1);
             }
             set
             {

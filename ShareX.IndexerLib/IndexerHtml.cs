@@ -124,7 +124,7 @@ namespace ShareX.IndexerLib
                 folderNameRow = " " + HtmlHelper.Tag("span", folderNameRow, "", "class=\"FolderInfo\"");
             }
 
-            int heading = (level + 1).Between(1, 6);
+            int heading = (level + 1).Clamp(1, 6);
 
             return HtmlHelper.StartTag("h" + heading) + URLHelpers.HtmlEncode(dir.FolderName) + folderNameRow + HtmlHelper.EndTag("h" + heading);
         }

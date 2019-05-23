@@ -62,7 +62,7 @@ namespace ShareX.HelpersLib
             }
             set
             {
-                nudValue.Value = value.Between(Minimum, Maximum);
+                nudValue.Value = value.Clamp(Minimum, Maximum);
             }
         }
 
@@ -74,7 +74,7 @@ namespace ShareX.HelpersLib
             }
             set
             {
-                nudValue2.Value = value.Between(Minimum, Maximum);
+                nudValue2.Value = value.Clamp(Minimum, Maximum);
             }
         }
 

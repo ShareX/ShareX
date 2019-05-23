@@ -70,7 +70,7 @@ namespace ShareX.HelpersLib
         /// <param name="value">1 = No change (Min 0.1, Max 5.0)</param>
         public static Image ChangeGamma(Image img, float value)
         {
-            value = value.Between(0.1f, 5.0f);
+            value = value.Clamp(0.1f, 5.0f);
 
             Bitmap bmp = img.CreateEmptyBitmap();
 

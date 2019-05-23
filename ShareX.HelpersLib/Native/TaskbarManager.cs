@@ -140,7 +140,7 @@ namespace ShareX.HelpersLib
         {
             if (Enabled && IsPlatformSupported && hwnd != IntPtr.Zero)
             {
-                currentValue = currentValue.Between(0, maximumValue);
+                currentValue = currentValue.Clamp(0, maximumValue);
 
                 try
                 {

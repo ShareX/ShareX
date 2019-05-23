@@ -319,17 +319,17 @@ namespace ShareX.HelpersLib
 
         public static double ValidColor(double number)
         {
-            return number.Between(0, 1);
+            return number.Clamp(0, 1);
         }
 
         public static int ValidColor(int number)
         {
-            return number.Between(0, 255);
+            return number.Clamp(0, 255);
         }
 
         public static byte ValidColor(byte number)
         {
-            return number.Between(0, 255);
+            return number.Clamp((byte)0, (byte)255);
         }
 
         public static Color RandomColor()

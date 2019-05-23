@@ -45,7 +45,7 @@ namespace ShareX.HelpersLib
             }
             set
             {
-                location = value.Between(0f, 100f);
+                location = value.Clamp(0f, 100f);
             }
         }
 

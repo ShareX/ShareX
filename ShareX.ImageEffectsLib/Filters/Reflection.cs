@@ -42,7 +42,7 @@ namespace ShareX.ImageEffectsLib
             }
             set
             {
-                percentage = value.Between(1, 100);
+                percentage = value.Clamp(1, 100);
             }
         }
 
@@ -57,7 +57,7 @@ namespace ShareX.ImageEffectsLib
             }
             set
             {
-                maxAlpha = value.Between(0, 255);
+                maxAlpha = value.Clamp(0, 255);
             }
         }
 
@@ -72,7 +72,7 @@ namespace ShareX.ImageEffectsLib
             }
             set
             {
-                minAlpha = value.Between(0, 255);
+                minAlpha = value.Clamp(0, 255);
             }
         }
 

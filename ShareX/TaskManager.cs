@@ -123,7 +123,7 @@ namespace ShareX
                 }
                 else
                 {
-                    len = (Program.Settings.UploadLimit - workingTasksCount).Between(0, inQueueTasks.Length);
+                    len = (Program.Settings.UploadLimit - workingTasksCount).Clamp(0, inQueueTasks.Length);
                 }
 
                 for (int i = 0; i < len; i++)

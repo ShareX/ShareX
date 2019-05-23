@@ -296,7 +296,7 @@ namespace ShareX.HelpersLib
 
         public static void SaveJPG(this Image img, Stream stream, int quality)
         {
-            quality = quality.Between(0, 100);
+            quality = quality.Clamp(0, 100);
             EncoderParameters encoderParameters = new EncoderParameters(1);
             encoderParameters.Param[0] = new EncoderParameter(Encoder.Quality, quality);
             img.Save(stream, ImageFormat.Jpeg.GetCodecInfo(), encoderParameters);
@@ -571,7 +571,7 @@ namespace ShareX.HelpersLib
 
         public static void SetValue(this NumericUpDown nud, decimal number)
         {
-            nud.Value = number.Between(nud.Minimum, nud.Maximum);
+            nud.Value = number.Clamp(nud.Minimum, nud.Maximum);
         }
 
         public static bool IsValidImage(this PictureBox pb)

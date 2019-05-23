@@ -41,39 +41,9 @@ namespace ShareX.HelpersLib
             return num;
         }
 
-        public static int Between(this int num, int min, int max)
+        public static T Clamp<T>(this T num, T min, T max) where T : IComparable<T>
         {
-            if (num <= min) return min;
-            if (num >= max) return max;
-            return num;
-        }
-
-        public static float Between(this float num, float min, float max)
-        {
-            if (num <= min) return min;
-            if (num >= max) return max;
-            return num;
-        }
-
-        public static double Between(this double num, double min, double max)
-        {
-            if (num <= min) return min;
-            if (num >= max) return max;
-            return num;
-        }
-
-        public static byte Between(this byte num, byte min, byte max)
-        {
-            if (num <= min) return min;
-            if (num >= max) return max;
-            return num;
-        }
-
-        public static decimal Between(this decimal num, decimal min, decimal max)
-        {
-            if (num <= min) return min;
-            if (num >= max) return max;
-            return num;
+            return MathHelpers.Clamp(num, min, max);
         }
 
         public static bool IsBetween(this int num, int min, int max)
@@ -111,7 +81,7 @@ namespace ShareX.HelpersLib
             int place = (int)Math.Floor(Math.Log(size, 1024));
             double num = size / Math.Pow(1024, place);
             string suffix = binary ? Suffix_Binary[place] : Suffix_Decimal[place];
-            return string.Format("{0} {1}", num.ToDecimalString(decimalPlaces.Between(0, 3)), suffix);
+            return string.Format("{0} {1}", num.ToDecimalString(decimalPlaces.Clamp(0, 3)), suffix);
         }
 
         public static string ToDecimalString(this double number, int decimalPlaces)
@@ -148,11 +118,6 @@ namespace ShareX.HelpersLib
         public static bool IsEvenNumber(this int num)
         {
             return num % 2 == 0;
-        }
-
-        public static void Clamp<T>(ref this T val, T min, T max) where T : struct, IComparable<T>
-        {
-            MathHelpers.Clamp(ref val, min, max);
         }
     }
 }

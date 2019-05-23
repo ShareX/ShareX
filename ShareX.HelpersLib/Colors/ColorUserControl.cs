@@ -396,7 +396,7 @@ namespace ShareX.HelpersLib
 
         protected Point GetPoint(Point point)
         {
-            return new Point(point.X.Between(0, clientWidth - 1), point.Y.Between(0, clientHeight - 1));
+            return new Point(point.X.Clamp(0, clientWidth - 1), point.Y.Clamp(0, clientHeight - 1));
         }
 
         protected int Round(double val)

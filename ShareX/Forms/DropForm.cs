@@ -62,11 +62,11 @@ namespace ShareX
         {
             InitializeComponent();
 
-            DropSize = size.Between(10, 300);
+            DropSize = size.Clamp(10, 300);
             DropOffset = offset;
             DropAlignment = alignment;
-            DropOpacity = opacity.Between(1, 255);
-            DropHoverOpacity = hoverOpacity.Between(1, 255);
+            DropOpacity = opacity.Clamp(1, 255);
+            DropHoverOpacity = hoverOpacity.Clamp(1, 255);
 
             backgroundImage = DrawDropImage(DropSize);
 

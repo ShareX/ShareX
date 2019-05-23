@@ -1184,9 +1184,9 @@ namespace ShareX.ScreenCaptureLib
 
         private Bitmap Magnifier(Image img, Point position, int horizontalPixelCount, int verticalPixelCount, int pixelSize)
         {
-            horizontalPixelCount = (horizontalPixelCount | 1).Between(1, 101);
-            verticalPixelCount = (verticalPixelCount | 1).Between(1, 101);
-            pixelSize = pixelSize.Between(1, 1000);
+            horizontalPixelCount = (horizontalPixelCount | 1).Clamp(1, 101);
+            verticalPixelCount = (verticalPixelCount | 1).Clamp(1, 101);
+            pixelSize = pixelSize.Clamp(1, 1000);
 
             if (horizontalPixelCount * pixelSize > ClientArea.Width || verticalPixelCount * pixelSize > ClientArea.Height)
             {

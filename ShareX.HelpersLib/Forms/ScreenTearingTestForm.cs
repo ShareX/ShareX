@@ -99,11 +99,11 @@ namespace ShareX.HelpersLib
         {
             if (e.Delta > 0)
             {
-                animationSpeed = (animationSpeed + speedChange).Between(minSpeed, maxSpeed);
+                animationSpeed = (animationSpeed + speedChange).Clamp(minSpeed, maxSpeed);
             }
             else if (e.Delta < 0)
             {
-                animationSpeed = (animationSpeed - speedChange).Between(minSpeed, maxSpeed);
+                animationSpeed = (animationSpeed - speedChange).Clamp(minSpeed, maxSpeed);
             }
 
             base.OnMouseWheel(e);

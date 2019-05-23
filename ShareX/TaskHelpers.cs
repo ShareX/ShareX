@@ -639,7 +639,7 @@ namespace ShareX
 
         public static Icon GetProgressIcon(int percentage)
         {
-            percentage = percentage.Between(0, 99);
+            percentage = percentage.Clamp(0, 99);
 
             Size size = SystemInformation.SmallIconSize;
             using (Bitmap bmp = new Bitmap(size.Width, size.Height))

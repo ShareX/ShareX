@@ -191,22 +191,11 @@ namespace ShareX.HelpersLib
             return new Vector2(x, y);
         }
 
-        public static void Clamp<T>(ref T val, T min, T max) where T : IComparable<T>
+        public static T Clamp<T>(T num, T min, T max) where T : IComparable<T>
         {
-            if (val.CompareTo(min) < 0)
-            {
-                val = min;
-            }
-            else if (val.CompareTo(max) > 0)
-            {
-                val = max;
-            }
-        }
-
-        public static T Clamp<T>(T val, T min, T max) where T : IComparable<T>
-        {
-            Clamp(ref val, min, max);
-            return val;
+            if (num.CompareTo(min) <= 0) return min;
+            if (num.CompareTo(max) >= 0) return max;
+            return num;
         }
     }
 }

@@ -40,7 +40,7 @@ namespace ShareX.ScreenCaptureLib
             }
             private set
             {
-                opacity = value.Between(0, 1);
+                opacity = value.Clamp(0, 1);
             }
         }
 

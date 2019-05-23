@@ -495,7 +495,7 @@ namespace ShareX
             }
             set
             {
-                toastWindowDuration = value.Between(0, 30);
+                toastWindowDuration = value.Clamp(0, 30);
             }
         }
 
@@ -510,7 +510,7 @@ namespace ShareX
             }
             set
             {
-                toastWindowFadeDuration = value.Between(0, 30);
+                toastWindowFadeDuration = value.Clamp(0, 30);
             }
         }
 

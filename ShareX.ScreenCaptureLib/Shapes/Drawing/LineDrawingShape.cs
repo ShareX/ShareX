@@ -77,7 +77,7 @@ namespace ShareX.ScreenCaptureLib
             base.OnConfigLoad();
 
             int previousCenterPointCount = CenterPointCount;
-            CenterPointCount = AnnotationOptions.LineCenterPointCount.Between(0, MaximumCenterPointCount);
+            CenterPointCount = AnnotationOptions.LineCenterPointCount.Clamp(0, MaximumCenterPointCount);
 
             if (CenterPointCount != previousCenterPointCount)
             {

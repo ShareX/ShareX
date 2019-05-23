@@ -554,9 +554,9 @@ namespace ShareX.HelpersLib
 
         public static Bitmap AddReflection(Image img, int percentage, int maxAlpha, int minAlpha)
         {
-            percentage = percentage.Between(1, 100);
-            maxAlpha = maxAlpha.Between(0, 255);
-            minAlpha = minAlpha.Between(0, 255);
+            percentage = percentage.Clamp(1, 100);
+            maxAlpha = maxAlpha.Clamp(0, 255);
+            minAlpha = minAlpha.Clamp(0, 255);
 
             Bitmap reflection;
 

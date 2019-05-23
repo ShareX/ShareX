@@ -43,7 +43,7 @@ namespace ShareX
             }
             set
             {
-                maxCount = value.Between(1, 100);
+                maxCount = value.Clamp(1, 100);
 
                 lock (itemsLock)
                 {
