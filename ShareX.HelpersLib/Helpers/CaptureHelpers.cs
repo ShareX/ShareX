@@ -189,9 +189,9 @@ namespace ShareX.HelpersLib
         {
             Color targetColor = GetPixelColor(x, y);
 
-            return targetColor.R.IsBetween(color.R - variation, color.R + variation) &&
-                   targetColor.G.IsBetween(color.G - variation, color.G + variation) &&
-                   targetColor.B.IsBetween(color.B - variation, color.B + variation);
+            return targetColor.R.IsBetween((byte)(color.R - variation), (byte)(color.R + variation)) &&
+                   targetColor.G.IsBetween((byte)(color.G - variation), (byte)(color.G + variation)) &&
+                   targetColor.B.IsBetween((byte)(color.B - variation), (byte)(color.B + variation));
         }
 
         public static Rectangle CreateRectangle(int x, int y, int x2, int y2)

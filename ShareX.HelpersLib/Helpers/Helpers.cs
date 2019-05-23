@@ -24,7 +24,6 @@
 #endregion License Information (GPL v3)
 
 using Microsoft.Win32;
-using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using ShareX.HelpersLib.Properties;
 using System;
@@ -52,7 +51,6 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Windows.Forms;
 using System.Xml;
-using System.Xml.Linq;
 
 namespace ShareX.HelpersLib
 {
