@@ -212,44 +212,42 @@ namespace ShareX.HelpersLib
 
         public static bool GetExtendedFrameBounds(IntPtr handle, out Rectangle rectangle)
         {
-            bool result = GetWindowAttribute(handle, WindowAttribute.DWMWA_EXTENDED_FRAME_BOUNDS, out RECT rect);
+            RECT rect;
+            int result = DwmGetWindowAttribute(handle, (int)DwmWindowAttribute.DWMWA_EXTENDED_FRAME_BOUNDS, out rect, Marshal.SizeOf(typeof(RECT)));
             rectangle = rect;
-            return result;
+            return result == 0;
         }
 
-        public static bool GetNCRenderingEnabled(IntPtr handle) => GetWindowAttribute(handle, WindowAttribute.DWMWA_NCRENDERING_ENABLED, out bool enabled) && enabled;
-
-        public static void SetNCRenderingPolicy(IntPtr handle, DwmNCRenderingPolicy renderingPolicy) => SetWindowAttribute(handle, WindowAttribute.DWMWA_NCRENDERING_POLICY, renderingPolicy);
-
-        public static bool GetWindowAttribute<T>(IntPtr handle, WindowAttribute attribute, out T value) where T : unmanaged
+        public static bool GetNCRenderingEnabled(IntPtr handle)
         {
-            int size = Marshal.SizeOf<T>();
-            IntPtr temp = Marshal.AllocHGlobal(size);
-            try
-            {
-                int result = DwmGetWindowAttribute(handle, attribute, temp, size);
-                value = Marshal.PtrToStructure<T>(temp);
-                return result == 0;
-            }
-            finally
-            {
-                Marshal.FreeHGlobal(temp);
-            }
+            bool enabled;
+            int result = DwmGetWindowAttribute(handle, (int)DwmWindowAttribute.DWMWA_NCRENDERING_ENABLED, out enabled, sizeof(bool));
+            return result == 0 && enabled;
         }
 
-        public static void SetWindowAttribute<T>(IntPtr handle, WindowAttribute attribute, T value) where T : unmanaged
+        public static void SetNCRenderingPolicy(IntPtr handle, DwmNCRenderingPolicy renderingPolicy)
         {
-            int size = Marshal.SizeOf<T>();
-            IntPtr temp = Marshal.AllocHGlobal(size);
-            try
+            int renderPolicy = (int)renderingPolicy;
+            DwmSetWindowAttribute(handle, (int)DwmWindowAttribute.DWMWA_NCRENDERING_POLICY, ref renderPolicy, sizeof(int));
+        }
+
+        public static bool UseImmersiveDarkMode(IntPtr handle, bool enabled)
+        {
+            if (Helpers.IsWindows10OrGreater(17763))
             {
-                Marshal.StructureToPtr(value, temp, false);
-                DwmSetWindowAttribute(handle, attribute, temp, size);
+                try
+                {
+                    int useImmersiveDarkMode = enabled ? 1 : 0;
+                    int result = DwmSetWindowAttribute(handle, (int)DwmWindowAttribute.DWMWA_USE_IMMERSIVE_DARK_MODE, ref useImmersiveDarkMode, sizeof(int));
+                    return result == 0;
+                }
+                catch (Exception e)
+                {
+                    DebugHelper.WriteException(e);
+                }
             }
-            finally
-            {
-                Marshal.FreeHGlobal(temp);
-            }
+
+            return false;
         }
 
         public static Rectangle GetWindowRect(IntPtr handle)
@@ -368,7 +366,9 @@ namespace ShareX.HelpersLib
         {
             if (IsDWMEnabled())
             {
-                return GetWindowAttribute(handle, WindowAttribute.DWMWA_CLOAKED, out bool cloaked) && cloaked;
+                int cloaked;
+                int result = DwmGetWindowAttribute(handle, (int)DwmWindowAttribute.DWMWA_CLOAKED, out cloaked, sizeof(int));
+                return result == 0 && cloaked != 0;
             }
 
             return false;

@@ -67,7 +67,7 @@ namespace ShareX
                 TaskHelpers.OpenActionsToolbar();
             }
 
-            DWMManager.EnableDarkTitlebar(Handle, ShareXResources.UseDarkTheme);
+            NativeMethods.UseImmersiveDarkMode(Handle, ShareXResources.UseDarkTheme);
         }
 
         private void InitializeControls()
@@ -765,7 +765,7 @@ namespace ShareX
         {
             if (IsHandleCreated)
             {
-                DWMManager.EnableDarkTitlebar(Handle, ShareXResources.UseDarkTheme);
+                NativeMethods.UseImmersiveDarkMode(Handle, ShareXResources.UseDarkTheme);
             }
 
             if (ShareXResources.UseDarkTheme)

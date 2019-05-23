@@ -619,14 +619,9 @@ namespace ShareX.HelpersLib
             return (OSVersion.Major == 6 && OSVersion.Minor >= 2) || OSVersion.Major > 6;
         }
 
-        public static bool IsWindows10OrGreater()
+        public static bool IsWindows10OrGreater(int build = -1)
         {
-            return OSVersion.Major >= 10;
-        }
-
-        public static bool IsWindowsBuildOrGreater(int buildId)
-        {
-            return OSVersion.Build >= buildId;
+            return OSVersion.Major >= 10 && OSVersion.Build >= build;
         }
 
         public static bool IsDefaultInstallDir()

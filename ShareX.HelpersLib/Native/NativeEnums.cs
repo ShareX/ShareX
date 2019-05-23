@@ -2017,7 +2017,7 @@ namespace ShareX.HelpersLib
         DWM_EC_ENABLECOMPOSITION = 1
     }
 
-    public enum WindowAttribute : uint
+    public enum DwmWindowAttribute : uint
     {
         /// <summary>
         /// Use with DwmGetWindowAttribute. Discovers whether non-client rendering is enabled. The retrieved value is of type BOOL. TRUE if non-client rendering is enabled; otherwise, FALSE.
