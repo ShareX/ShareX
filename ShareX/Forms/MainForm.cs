@@ -774,13 +774,13 @@ namespace ShareX
                 tsMain.DrawCustomBorder = false;
                 cmsTray.Renderer = new ToolStripDarkRenderer();
                 cmsTaskInfo.Renderer = new ToolStripDarkRenderer();
-                lvUploads.BackColor = ToolStripDarkRenderer.BackgroundColor;
-                lvUploads.ForeColor = ToolStripDarkRenderer.TextColor;
-                lblListViewTip.ForeColor = ToolStripDarkRenderer.TextColor;
-                scMain.SplitterColor = ToolStripDarkRenderer.BackgroundColor;
-                scMain.SplitterLineColor = ToolStripDarkRenderer.BorderColor;
+                lvUploads.BackColor = ShareXResources.DarkBackgroundColor;
+                lvUploads.ForeColor = ShareXResources.DarkTextColor;
+                lblListViewTip.ForeColor = ShareXResources.DarkTextColor;
+                scMain.SplitterColor = ShareXResources.DarkBackgroundColor;
+                scMain.SplitterLineColor = ShareXResources.DarkBorderColor;
                 pbPreview.UpdateCheckers(true);
-                flpCommunity.BackColor = ToolStripDarkRenderer.BackgroundColor;
+                flpCommunity.BackColor = ShareXResources.DarkBackgroundColor;
             }
             else
             {
@@ -1335,12 +1335,12 @@ namespace ShareX
         {
             if (ShareXResources.UseDarkTheme)
             {
-                using (Brush brush = new SolidBrush(ToolStripDarkRenderer.BackgroundColor))
+                using (Brush brush = new SolidBrush(ShareXResources.DarkBackgroundColor))
                 {
                     e.Graphics.FillRectangle(brush, e.Bounds);
                 }
 
-                TextRenderer.DrawText(e.Graphics, e.Header.Text, e.Font, e.Bounds.LocationOffset(4, 0).SizeOffset(-6, 0), ToolStripDarkRenderer.TextColor,
+                TextRenderer.DrawText(e.Graphics, e.Header.Text, e.Font, e.Bounds.LocationOffset(4, 0).SizeOffset(-6, 0), ShareXResources.DarkTextColor,
                     TextFormatFlags.Left | TextFormatFlags.VerticalCenter | TextFormatFlags.EndEllipsis);
 
                 if (e.ColumnIndex > 0)

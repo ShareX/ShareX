@@ -42,7 +42,6 @@ namespace ShareX.HelpersLib
         }
 
         public static bool UseDarkTheme { get; set; }
-
         public static bool UseWhiteIcon { get; set; }
 
         public static Icon Icon
@@ -61,7 +60,10 @@ namespace ShareX.HelpersLib
         }
 
         public static Image Logo => Resources.ShareX_Logo;
-
         public static Image LogoBlack => Resources.ShareX_Logo_Black;
+
+        public static Color DarkBackgroundColor { get; } = Color.FromArgb(42, 47, 56);
+        public static Color DarkTextColor { get; } = Color.FromArgb(235, 235, 235);
+        public static Color DarkBorderColor { get; } = Color.FromArgb(28, 32, 38);
     }
 }
