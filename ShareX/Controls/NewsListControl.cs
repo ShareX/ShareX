@@ -41,10 +41,36 @@ namespace ShareX
         public NewsListControl()
         {
             InitializeComponent();
-            dgvNews.AlternatingRowsDefaultCellStyle.BackColor = dgvNews.AlternatingRowsDefaultCellStyle.SelectionBackColor =
-                ColorHelpers.DarkerColor(SystemColors.Window, 0.02f);
-            dgvNews.GridColor = ProfessionalColors.SeparatorDark;
             dgvNews.DoubleBuffered(true);
+            UpdateTheme();
+        }
+
+        public void UpdateTheme()
+        {
+            if (ShareXResources.UseDarkTheme)
+            {
+                dgvNews.BackgroundColor = ShareXResources.DarkBackgroundColor;
+                dgvNews.DefaultCellStyle.BackColor = dgvNews.DefaultCellStyle.SelectionBackColor = ShareXResources.DarkBackgroundColor;
+                dgvNews.DefaultCellStyle.ForeColor = dgvNews.DefaultCellStyle.SelectionForeColor = ShareXResources.DarkTextColor;
+                dgvNews.AlternatingRowsDefaultCellStyle.BackColor = dgvNews.AlternatingRowsDefaultCellStyle.SelectionBackColor =
+                    ColorHelpers.LighterColor(ShareXResources.DarkBackgroundColor, 0.02f);
+                dgvNews.GridColor = ShareXResources.DarkBorderColor;
+            }
+            else
+            {
+                dgvNews.BackgroundColor = SystemColors.Window;
+                dgvNews.DefaultCellStyle.BackColor = dgvNews.DefaultCellStyle.SelectionBackColor = SystemColors.Window;
+                dgvNews.DefaultCellStyle.ForeColor = dgvNews.DefaultCellStyle.SelectionForeColor = SystemColors.ControlText;
+                dgvNews.AlternatingRowsDefaultCellStyle.BackColor = dgvNews.AlternatingRowsDefaultCellStyle.SelectionBackColor =
+                    ColorHelpers.DarkerColor(SystemColors.Window, 0.02f);
+                dgvNews.GridColor = ProfessionalColors.SeparatorDark;
+            }
+
+            foreach (DataGridViewRow row in dgvNews.Rows)
+            {
+                row.Cells[2].Style.ForeColor = row.Cells[2].Style.SelectionForeColor =
+                    ShareXResources.UseDarkTheme ? ShareXResources.DarkTextColor : SystemColors.ControlText;
+            }
         }
 
         public void Start()
@@ -162,7 +188,8 @@ namespace ShareX
                 if (newsItem != null && !string.IsNullOrEmpty(newsItem.URL))
                 {
                     dgvNews.Cursor = Cursors.Hand;
-                    row.Cells[e.ColumnIndex].Style.ForeColor = row.Cells[e.ColumnIndex].Style.SelectionForeColor = SystemColors.HotTrack;
+                    row.Cells[e.ColumnIndex].Style.ForeColor = row.Cells[e.ColumnIndex].Style.SelectionForeColor =
+                        ShareXResources.UseDarkTheme ? Color.White : SystemColors.HotTrack;
                 }
             }
         }
@@ -175,7 +202,8 @@ namespace ShareX
                 NewsItem newsItem = row.Tag as NewsItem;
                 if (newsItem != null && !string.IsNullOrEmpty(newsItem.URL))
                 {
-                    row.Cells[e.ColumnIndex].Style.ForeColor = row.Cells[e.ColumnIndex].Style.SelectionForeColor = SystemColors.ControlText;
+                    row.Cells[e.ColumnIndex].Style.ForeColor = row.Cells[e.ColumnIndex].Style.SelectionForeColor =
+                        ShareXResources.UseDarkTheme ? ShareXResources.DarkTextColor : SystemColors.ControlText;
                 }
             }
 

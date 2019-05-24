@@ -801,6 +801,7 @@ namespace ShareX
 
             pbPreview.UpdateCheckers(true);
             ucTaskView.UpdateTheme();
+            ucNews.UpdateTheme();
         }
 
         private void CleanCustomClipboardFormats()
