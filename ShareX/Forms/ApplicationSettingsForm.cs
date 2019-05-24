@@ -101,6 +101,8 @@ namespace ShareX
             cbTrayIconProgressEnabled.Checked = Program.Settings.TrayIconProgressEnabled;
             cbTaskbarProgressEnabled.Enabled = TaskbarManager.IsPlatformSupported;
             cbTaskbarProgressEnabled.Checked = Program.Settings.TaskbarProgressEnabled;
+            cbUseDarkTheme.Checked = Program.Settings.UseDarkTheme;
+            cbUseWhiteShareXIcon.Checked = Program.Settings.UseWhiteShareXIcon;
             cbRememberMainFormPosition.Checked = Program.Settings.RememberMainFormPosition;
             cbRememberMainFormSize.Checked = Program.Settings.RememberMainFormSize;
 
@@ -365,6 +367,16 @@ namespace ShareX
             {
                 TaskbarManager.Enabled = Program.Settings.TaskbarProgressEnabled;
             }
+        }
+
+        private void CbUseDarkTheme_CheckedChanged(object sender, EventArgs e)
+        {
+            Program.Settings.UseDarkTheme = cbUseDarkTheme.Checked;
+        }
+
+        private void CbUseWhiteShareXIcon_CheckedChanged(object sender, EventArgs e)
+        {
+            Program.Settings.UseWhiteShareXIcon = cbUseWhiteShareXIcon.Checked;
         }
 
         private void cbRememberMainFormPosition_CheckedChanged(object sender, EventArgs e)

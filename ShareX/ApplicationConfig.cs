@@ -70,6 +70,8 @@ namespace ShareX
         public bool SilentRun = false;
         public bool TrayIconProgressEnabled = true;
         public bool TaskbarProgressEnabled = true;
+        public bool UseDarkTheme = true;
+        public bool UseWhiteShareXIcon = false;
         public bool RememberMainFormPosition = false;
         public Point MainFormPosition = Point.Empty;
         public bool RememberMainFormSize = false;
@@ -137,12 +139,6 @@ namespace ShareX
         #endregion Print
 
         #region Advanced
-
-        [Category("Application"), DefaultValue(true), Description("Use dark theme. Currently only main window and tray menu supports it.")]
-        public bool UseDarkTheme { get; set; }
-
-        [Category("Application"), DefaultValue(false), Description("Use white version of ShareX icon.")]
-        public bool UseWhiteShareXIcon { get; set; }
 
         [Category("Application"), DefaultValue(true), Description("Automatically check updates.")]
 #if STEAM || WindowsStore

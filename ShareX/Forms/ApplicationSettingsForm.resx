@@ -121,14 +121,68 @@
   <data name="tcSettings.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="cbUseWhiteShareXIcon.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="cbUseWhiteShareXIcon.Location" type="System.Drawing.Point, System.Drawing">
+    <value>248, 96</value>
+  </data>
+  <data name="cbUseWhiteShareXIcon.Size" type="System.Drawing.Size, System.Drawing">
+    <value>134, 17</value>
+  </data>
+  <data name="cbUseWhiteShareXIcon.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="cbUseWhiteShareXIcon.Text" xml:space="preserve">
+    <value>Use white ShareX icon</value>
+  </data>
+  <data name="&gt;&gt;cbUseWhiteShareXIcon.Name" xml:space="preserve">
+    <value>cbUseWhiteShareXIcon</value>
+  </data>
+  <data name="&gt;&gt;cbUseWhiteShareXIcon.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbUseWhiteShareXIcon.Parent" xml:space="preserve">
+    <value>tpGeneral</value>
+  </data>
+  <data name="&gt;&gt;cbUseWhiteShareXIcon.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="cbUseDarkTheme.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbUseDarkTheme.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 96</value>
+  </data>
+  <data name="cbUseDarkTheme.Size" type="System.Drawing.Size, System.Drawing">
+    <value>101, 17</value>
+  </data>
+  <data name="cbUseDarkTheme.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="cbUseDarkTheme.Text" xml:space="preserve">
+    <value>Use dark theme</value>
+  </data>
+  <data name="&gt;&gt;cbUseDarkTheme.Name" xml:space="preserve">
+    <value>cbUseDarkTheme</value>
+  </data>
+  <data name="&gt;&gt;cbUseDarkTheme.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbUseDarkTheme.Parent" xml:space="preserve">
+    <value>tpGeneral</value>
+  </data>
+  <data name="&gt;&gt;cbUseDarkTheme.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <data name="btnCheckDevBuild.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 352</value>
+    <value>16, 280</value>
   </data>
   <data name="btnCheckDevBuild.Size" type="System.Drawing.Size, System.Drawing">
     <value>288, 23</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="btnCheckDevBuild.TabIndex" type="System.Int32, mscorlib">
     <value>17</value>
   </data>
@@ -145,13 +199,13 @@
     <value>tpGeneral</value>
   </data>
   <data name="&gt;&gt;btnCheckDevBuild.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>2</value>
   </data>
   <data name="cbCheckPreReleaseUpdates.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="cbCheckPreReleaseUpdates.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 328</value>
+    <value>16, 256</value>
   </data>
   <data name="cbCheckPreReleaseUpdates.Size" type="System.Drawing.Size, System.Drawing">
     <value>168, 17</value>
@@ -172,10 +226,10 @@
     <value>tpGeneral</value>
   </data>
   <data name="&gt;&gt;cbCheckPreReleaseUpdates.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="cbTrayMiddleClickAction.Location" type="System.Drawing.Point, System.Drawing">
-    <value>248, 260</value>
+    <value>248, 196</value>
   </data>
   <data name="cbTrayMiddleClickAction.Size" type="System.Drawing.Size, System.Drawing">
     <value>288, 21</value>
@@ -193,13 +247,13 @@
     <value>tpGeneral</value>
   </data>
   <data name="&gt;&gt;cbTrayMiddleClickAction.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>4</value>
   </data>
   <data name="lblTrayMiddleClickAction.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="lblTrayMiddleClickAction.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 264</value>
+    <value>13, 200</value>
   </data>
   <data name="lblTrayMiddleClickAction.Size" type="System.Drawing.Size, System.Drawing">
     <value>125, 13</value>
@@ -220,10 +274,10 @@
     <value>tpGeneral</value>
   </data>
   <data name="&gt;&gt;lblTrayMiddleClickAction.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>5</value>
   </data>
   <data name="cbTrayLeftDoubleClickAction.Location" type="System.Drawing.Point, System.Drawing">
-    <value>248, 236</value>
+    <value>248, 172</value>
   </data>
   <data name="cbTrayLeftDoubleClickAction.Size" type="System.Drawing.Size, System.Drawing">
     <value>288, 21</value>
@@ -241,13 +295,13 @@
     <value>tpGeneral</value>
   </data>
   <data name="&gt;&gt;cbTrayLeftDoubleClickAction.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>6</value>
   </data>
   <data name="lblTrayLeftDoubleClickAction.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="lblTrayLeftDoubleClickAction.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 240</value>
+    <value>13, 176</value>
   </data>
   <data name="lblTrayLeftDoubleClickAction.Size" type="System.Drawing.Size, System.Drawing">
     <value>144, 13</value>
@@ -268,10 +322,10 @@
     <value>tpGeneral</value>
   </data>
   <data name="&gt;&gt;lblTrayLeftDoubleClickAction.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>7</value>
   </data>
   <data name="cbTrayLeftClickAction.Location" type="System.Drawing.Point, System.Drawing">
-    <value>248, 212</value>
+    <value>248, 148</value>
   </data>
   <data name="cbTrayLeftClickAction.Size" type="System.Drawing.Size, System.Drawing">
     <value>288, 21</value>
@@ -289,13 +343,13 @@
     <value>tpGeneral</value>
   </data>
   <data name="&gt;&gt;cbTrayLeftClickAction.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>8</value>
   </data>
   <data name="lblTrayLeftClickAction.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="lblTrayLeftClickAction.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 216</value>
+    <value>13, 152</value>
   </data>
   <data name="lblTrayLeftClickAction.Size" type="System.Drawing.Size, System.Drawing">
     <value>109, 13</value>
@@ -316,10 +370,10 @@
     <value>tpGeneral</value>
   </data>
   <data name="&gt;&gt;lblTrayLeftClickAction.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>9</value>
   </data>
   <data name="btnEditQuickTaskMenu.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 296</value>
+    <value>16, 224</value>
   </data>
   <data name="btnEditQuickTaskMenu.Size" type="System.Drawing.Size, System.Drawing">
     <value>288, 23</value>
@@ -340,7 +394,7 @@
     <value>tpGeneral</value>
   </data>
   <data name="&gt;&gt;btnEditQuickTaskMenu.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>10</value>
   </data>
   <data name="cbShowTray.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -349,7 +403,7 @@
     <value>NoControl</value>
   </data>
   <data name="cbShowTray.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 64</value>
+    <value>16, 48</value>
   </data>
   <data name="cbShowTray.Size" type="System.Drawing.Size, System.Drawing">
     <value>96, 17</value>
@@ -370,7 +424,7 @@
     <value>tpGeneral</value>
   </data>
   <data name="&gt;&gt;cbShowTray.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>11</value>
   </data>
   <data name="cbTrayIconProgressEnabled.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -379,7 +433,7 @@
     <value>NoControl</value>
   </data>
   <data name="cbTrayIconProgressEnabled.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 112</value>
+    <value>16, 72</value>
   </data>
   <data name="cbTrayIconProgressEnabled.Size" type="System.Drawing.Size, System.Drawing">
     <value>150, 17</value>
@@ -400,7 +454,7 @@
     <value>tpGeneral</value>
   </data>
   <data name="&gt;&gt;cbTrayIconProgressEnabled.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>12</value>
   </data>
   <data name="btnLanguages.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
@@ -409,7 +463,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnLanguages.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 32</value>
+    <value>248, 16</value>
   </data>
   <metadata name="cmsLanguages.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
@@ -424,7 +478,7 @@
     <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="btnLanguages.Size" type="System.Drawing.Size, System.Drawing">
-    <value>224, 23</value>
+    <value>288, 23</value>
   </data>
   <data name="btnLanguages.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -439,13 +493,13 @@
     <value>btnLanguages</value>
   </data>
   <data name="&gt;&gt;btnLanguages.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MenuButton, ShareX.HelpersLib, Version=12.4.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MenuButton, ShareX.HelpersLib, Version=13.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;btnLanguages.Parent" xml:space="preserve">
     <value>tpGeneral</value>
   </data>
   <data name="&gt;&gt;btnLanguages.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>13</value>
   </data>
   <data name="cbRememberMainFormPosition.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -454,7 +508,7 @@
     <value>NoControl</value>
   </data>
   <data name="cbRememberMainFormPosition.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 160</value>
+    <value>16, 120</value>
   </data>
   <data name="cbRememberMainFormPosition.Size" type="System.Drawing.Size, System.Drawing">
     <value>180, 17</value>
@@ -475,7 +529,7 @@
     <value>tpGeneral</value>
   </data>
   <data name="&gt;&gt;cbRememberMainFormPosition.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>14</value>
   </data>
   <data name="cbSilentRun.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -484,7 +538,7 @@
     <value>NoControl</value>
   </data>
   <data name="cbSilentRun.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 88</value>
+    <value>248, 48</value>
   </data>
   <data name="cbSilentRun.Size" type="System.Drawing.Size, System.Drawing">
     <value>136, 17</value>
@@ -505,7 +559,7 @@
     <value>tpGeneral</value>
   </data>
   <data name="&gt;&gt;cbSilentRun.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>15</value>
   </data>
   <data name="cbTaskbarProgressEnabled.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -514,7 +568,7 @@
     <value>NoControl</value>
   </data>
   <data name="cbTaskbarProgressEnabled.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 136</value>
+    <value>248, 72</value>
   </data>
   <data name="cbTaskbarProgressEnabled.Size" type="System.Drawing.Size, System.Drawing">
     <value>178, 17</value>
@@ -535,7 +589,7 @@
     <value>tpGeneral</value>
   </data>
   <data name="&gt;&gt;cbTaskbarProgressEnabled.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>16</value>
   </data>
   <data name="cbRememberMainFormSize.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -544,7 +598,7 @@
     <value>NoControl</value>
   </data>
   <data name="cbRememberMainFormSize.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 184</value>
+    <value>248, 120</value>
   </data>
   <data name="cbRememberMainFormSize.Size" type="System.Drawing.Size, System.Drawing">
     <value>162, 17</value>
@@ -565,7 +619,7 @@
     <value>tpGeneral</value>
   </data>
   <data name="&gt;&gt;cbRememberMainFormSize.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>17</value>
   </data>
   <data name="lblLanguage.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -595,7 +649,7 @@
     <value>tpGeneral</value>
   </data>
   <data name="&gt;&gt;lblLanguage.ZOrder" xml:space="preserve">
-    <value>16</value>
+    <value>18</value>
   </data>
   <data name="tpGeneral.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>
@@ -1765,7 +1819,7 @@
     <value>lvClipboardFormats</value>
   </data>
   <data name="&gt;&gt;lvClipboardFormats.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=12.4.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=13.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lvClipboardFormats.Parent" xml:space="preserve">
     <value>gbClipboardFormats</value>
@@ -1876,7 +1930,7 @@
     <value>lvSecondaryImageUploaders</value>
   </data>
   <data name="&gt;&gt;lvSecondaryImageUploaders.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=12.4.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=13.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lvSecondaryImageUploaders.Parent" xml:space="preserve">
     <value>gbSecondaryImageUploaders</value>
@@ -1930,7 +1984,7 @@
     <value>lvSecondaryFileUploaders</value>
   </data>
   <data name="&gt;&gt;lvSecondaryFileUploaders.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=12.4.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=13.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lvSecondaryFileUploaders.Parent" xml:space="preserve">
     <value>gbSecondaryFileUploaders</value>
@@ -1984,7 +2038,7 @@
     <value>lvSecondaryTextUploaders</value>
   </data>
   <data name="&gt;&gt;lvSecondaryTextUploaders.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=12.4.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=13.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lvSecondaryTextUploaders.Parent" xml:space="preserve">
     <value>gbSecondaryTextUploaders</value>
@@ -2968,7 +3022,7 @@
     <value>tttvMain</value>
   </data>
   <data name="&gt;&gt;tttvMain.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.TabToTreeView, ShareX.HelpersLib, Version=12.4.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.TabToTreeView, ShareX.HelpersLib, Version=13.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;tttvMain.Parent" xml:space="preserve">
     <value>$this</value>

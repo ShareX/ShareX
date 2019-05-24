@@ -329,7 +329,7 @@ namespace ShareX.HelpersLib
 
         public static byte ValidColor(byte number)
         {
-            return number.Clamp((byte)0, (byte)255);
+            return number.Clamp<byte>(0, 255);
         }
 
         public static Color RandomColor()

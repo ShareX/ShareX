@@ -143,6 +143,8 @@ namespace ShareX
             this.tpAdvanced = new System.Windows.Forms.TabPage();
             this.pgSettings = new System.Windows.Forms.PropertyGrid();
             this.tttvMain = new ShareX.HelpersLib.TabToTreeView();
+            this.cbUseDarkTheme = new System.Windows.Forms.CheckBox();
+            this.cbUseWhiteShareXIcon = new System.Windows.Forms.CheckBox();
             this.tcSettings.SuspendLayout();
             this.tpGeneral.SuspendLayout();
             this.tpIntegration.SuspendLayout();
@@ -192,6 +194,8 @@ namespace ShareX
             // tpGeneral
             // 
             this.tpGeneral.BackColor = System.Drawing.SystemColors.Window;
+            this.tpGeneral.Controls.Add(this.cbUseWhiteShareXIcon);
+            this.tpGeneral.Controls.Add(this.cbUseDarkTheme);
             this.tpGeneral.Controls.Add(this.btnCheckDevBuild);
             this.tpGeneral.Controls.Add(this.cbCheckPreReleaseUpdates);
             this.tpGeneral.Controls.Add(this.cbTrayMiddleClickAction);
@@ -1037,6 +1041,20 @@ namespace ShareX
             this.tttvMain.TreeViewSize = 175;
             this.tttvMain.TabChanged += new ShareX.HelpersLib.TabToTreeView.TabChangedEventHandler(this.tttvMain_TabChanged);
             // 
+            // cbUseDarkTheme
+            // 
+            resources.ApplyResources(this.cbUseDarkTheme, "cbUseDarkTheme");
+            this.cbUseDarkTheme.Name = "cbUseDarkTheme";
+            this.cbUseDarkTheme.UseVisualStyleBackColor = true;
+            this.cbUseDarkTheme.CheckedChanged += new System.EventHandler(this.CbUseDarkTheme_CheckedChanged);
+            // 
+            // cbUseWhiteShareXIcon
+            // 
+            resources.ApplyResources(this.cbUseWhiteShareXIcon, "cbUseWhiteShareXIcon");
+            this.cbUseWhiteShareXIcon.Name = "cbUseWhiteShareXIcon";
+            this.cbUseWhiteShareXIcon.UseVisualStyleBackColor = true;
+            this.cbUseWhiteShareXIcon.CheckedChanged += new System.EventHandler(this.CbUseWhiteShareXIcon_CheckedChanged);
+            // 
             // ApplicationSettingsForm
             // 
             resources.ApplyResources(this, "$this");
@@ -1209,5 +1227,7 @@ namespace ShareX
         private System.Windows.Forms.CheckBox cbEditWithShareX;
         private System.Windows.Forms.Button btnCheckDevBuild;
         private System.Windows.Forms.Button btnPersonalFolderPathApply;
+        private System.Windows.Forms.CheckBox cbUseDarkTheme;
+        private System.Windows.Forms.CheckBox cbUseWhiteShareXIcon;
     }
 }

@@ -114,6 +114,16 @@ namespace ShareX.HelpersLib
             }
         }
 
+        /// <summary>
+        /// Returns a random number between <c>min</c> and <c>max</c> (inclusive).
+        /// </summary>
+        /// <remarks>
+        /// This uses <c>System.Random()</c>, which does not provide safe random numbers. This function
+        /// should not be used to generate things that should be unique, like random file names.
+        /// </remarks>
+        /// <param name="min">The lower limit of the number (inclusive).</param>
+        /// <param name="max">The upper limit of the number (inclusive).</param>
+        /// <returns>A random number.</returns>
         public static int Random(int min, int max)
         {
             lock (randomLock)
@@ -125,6 +135,11 @@ namespace ShareX.HelpersLib
         public static int RandomPick(params int[] nums)
         {
             return nums[Random(nums.Length - 1)];
+        }
+
+        public static int RandomAdd(int num, int min, int max)
+        {
+            return num + Random(min, max);
         }
 
         /// <summary>
@@ -140,7 +155,7 @@ namespace ShareX.HelpersLib
         /// <summary>
         /// Returns a random number between <c>min</c> and <c>max</c> (inclusive) generated with a cryptographic PRNG.
         /// </summary>
-        /// <param name="min">The lower limit of the number.</param>
+        /// <param name="min">The lower limit of the number (inclusive).</param>
         /// <param name="max">The upper limit of the number (inclusive).</param>
         /// <returns>A cryptographically random number.</returns>
         public static int CryptoRandom(int min, int max)
@@ -173,11 +188,6 @@ namespace ShareX.HelpersLib
 
                 return (int)(min + (r % diff));
             }
-        }
-
-        public static int RandomAdd(int num, int min, int max)
-        {
-            return num + Random(min, max);
         }
 
         public static float RadianToDegree(float radian)
