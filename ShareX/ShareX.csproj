@@ -167,6 +167,9 @@
     <Compile Include="Controls\TaskPanel.Designer.cs">
       <DependentUpon>TaskPanel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\TaskRoundedCornerPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Controls\TaskView.cs">
       <SubType>UserControl</SubType>
     </Compile>

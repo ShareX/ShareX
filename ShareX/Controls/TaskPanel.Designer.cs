@@ -31,7 +31,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pThumbnail = new ShareX.HelpersLib.RoundedCornerPanel();
+            this.pThumbnail = new ShareX.TaskRoundedCornerPanel();
             this.pbProgress = new ShareX.HelpersLib.BlackStyleProgressBar();
             this.pbThumbnail = new System.Windows.Forms.PictureBox();
             this.lblFilename = new ShareX.HelpersLib.BlackStyleLabel();
@@ -115,7 +115,7 @@
 
         #endregion
 
-        private HelpersLib.RoundedCornerPanel pThumbnail;
+        private ShareX.TaskRoundedCornerPanel pThumbnail;
         private HelpersLib.BlackStyleLabel lblFilename;
         private HelpersLib.BlackStyleProgressBar pbProgress;
         private System.Windows.Forms.PictureBox pbThumbnail;

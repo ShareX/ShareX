@@ -225,6 +225,14 @@ namespace ShareX
             }
         }
 
+        public void UpdateStatus()
+        {
+            if (Task.Info != null)
+            {
+                pThumbnail.UpdateStatusColor(Task.Status);
+            }
+        }
+
         public void ClearThumbnail()
         {
             Image temp = pbThumbnail.Image;

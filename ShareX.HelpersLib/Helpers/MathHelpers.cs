@@ -132,14 +132,14 @@ namespace ShareX.HelpersLib
             }
         }
 
-        public static int RandomPick(params int[] nums)
-        {
-            return nums[Random(nums.Length - 1)];
-        }
-
         public static int RandomAdd(int num, int min, int max)
         {
             return num + Random(min, max);
+        }
+
+        public static T RandomPick<T>(params T[] nums)
+        {
+            return nums[Random(nums.Length - 1)];
         }
 
         /// <summary>

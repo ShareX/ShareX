@@ -265,6 +265,7 @@ namespace ShareX
                 TaskView.UpdateFilename(task);
                 TaskView.UpdateThumbnail(task);
                 TaskView.UpdateProgressVisible(task, true);
+                TaskView.UpdateStatus(task);
             }
         }
 
@@ -360,6 +361,7 @@ namespace ShareX
                             TaskView.UpdateFilename(task);
                             TaskView.UpdateThumbnail(task);
                             TaskView.UpdateProgressVisible(task, false);
+                            TaskView.UpdateStatus(task);
                         }
 
                         ListViewItem lvi = FindListViewItem(task);

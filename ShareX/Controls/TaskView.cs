@@ -143,5 +143,10 @@ namespace ShareX
                 panel.ProgressVisible = visible;
             }
         }
+
+        public void UpdateStatus(WorkerTask task)
+        {
+            FindPanel(task)?.UpdateStatus();
+        }
     }
 }
