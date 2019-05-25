@@ -48,8 +48,10 @@ namespace ShareX.HelpersLib
                 if (text != value)
                 {
                     text = value;
-                    Refresh();
+
                     OnTextChanged(EventArgs.Empty);
+
+                    Invalidate();
                 }
             }
         }

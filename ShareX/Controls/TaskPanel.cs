@@ -274,7 +274,7 @@ namespace ShareX
                             pbThumbnail.Enabled = true;
                         }
                     }
-                    else if (Helpers.IsTextFile(filePath) || Helpers.IsVideoFile(filePath) || MessageBox.Show("Would you like to run this file?" + "\r\n\r\n" + filePath,
+                    else if (Helpers.IsTextFile(filePath) || Helpers.IsVideoFile(filePath) || MessageBox.Show("Would you like to open this file?" + "\r\n\r\n" + filePath,
                         Resources.ShareXConfirmation, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
                         Helpers.OpenFile(filePath);

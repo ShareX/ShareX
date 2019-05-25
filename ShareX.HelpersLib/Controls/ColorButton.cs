@@ -47,8 +47,10 @@ namespace ShareX.HelpersLib
             set
             {
                 color = value;
-                Refresh();
+
                 OnColorChanged(color);
+
+                Invalidate();
             }
         }
 

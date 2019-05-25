@@ -56,6 +56,7 @@ namespace ShareX
         {
             RunPuushTasks();
 
+            NativeMethods.UseImmersiveDarkMode(Handle, ShareXResources.UseDarkTheme);
             UpdateControls();
 
             DebugHelper.WriteLine("Startup time: {0} ms", Program.StartTimer.ElapsedMilliseconds);
@@ -66,8 +67,6 @@ namespace ShareX
             {
                 TaskHelpers.OpenActionsToolbar();
             }
-
-            NativeMethods.UseImmersiveDarkMode(Handle, ShareXResources.UseDarkTheme);
         }
 
         private void InitializeControls()
@@ -734,10 +733,10 @@ namespace ShareX
             }
 
             tsmiClearList.Visible = tssUploadInfo1.Visible = lvUploads.Items.Count > 0;
-
             tsmiHideColumns.Visible = tsmiImagePreview.Visible = Program.Settings.TaskViewMode == TaskViewMode.ListView;
 
             cmsTaskInfo.ResumeLayout();
+
             Refresh();
         }
 

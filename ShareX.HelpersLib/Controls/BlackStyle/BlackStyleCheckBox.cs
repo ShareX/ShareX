@@ -49,7 +49,7 @@ namespace ShareX.HelpersLib
 
                     OnCheckedChanged(EventArgs.Empty);
 
-                    Refresh();
+                    Invalidate();
                 }
             }
         }
@@ -71,7 +71,7 @@ namespace ShareX.HelpersLib
                 {
                     text = value;
 
-                    Refresh();
+                    Invalidate();
                 }
             }
         }
@@ -134,15 +134,17 @@ namespace ShareX.HelpersLib
         protected override void OnMouseEnter(EventArgs e)
         {
             base.OnMouseEnter(e);
+
             isHover = true;
-            Refresh();
+            Invalidate();
         }
 
         protected override void OnMouseLeave(EventArgs e)
         {
             base.OnMouseLeave(e);
+
             isHover = false;
-            Refresh();
+            Invalidate();
         }
 
         protected override void OnClick(EventArgs e)

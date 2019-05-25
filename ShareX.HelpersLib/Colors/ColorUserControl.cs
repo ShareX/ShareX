@@ -57,7 +57,7 @@ namespace ShareX.HelpersLib
                     SetSliderMarker();
                 }
 
-                Refresh();
+                Invalidate();
             }
         }
 
@@ -80,7 +80,7 @@ namespace ShareX.HelpersLib
                     SetSliderMarker();
                 }
 
-                Refresh();
+                Invalidate();
             }
         }
 

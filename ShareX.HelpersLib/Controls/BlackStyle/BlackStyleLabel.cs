@@ -54,8 +54,9 @@ namespace ShareX.HelpersLib
                 {
                     text = value;
 
-                    Invalidate();
                     OnTextChanged(EventArgs.Empty);
+
+                    Invalidate();
                 }
             }
         }
