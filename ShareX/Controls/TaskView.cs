@@ -118,35 +118,5 @@ namespace ShareX
                 OnContextMenuRequested(sender, e, SelectedTaskPanel?.Task);
             }
         }
-
-        public void UpdateFilename(WorkerTask task)
-        {
-            FindPanel(task)?.UpdateFilename();
-        }
-
-        public void UpdateThumbnail(WorkerTask task)
-        {
-            FindPanel(task)?.UpdateThumbnail();
-        }
-
-        public void UpdateProgress(WorkerTask task)
-        {
-            FindPanel(task)?.UpdateProgress();
-        }
-
-        public void UpdateProgressVisible(WorkerTask task, bool visible)
-        {
-            TaskPanel panel = FindPanel(task);
-
-            if (panel != null)
-            {
-                panel.ProgressVisible = visible;
-            }
-        }
-
-        public void UpdateStatus(WorkerTask task)
-        {
-            FindPanel(task)?.UpdateStatus();
-        }
     }
 }

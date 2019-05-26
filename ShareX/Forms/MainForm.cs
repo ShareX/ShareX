@@ -167,9 +167,8 @@ namespace ShareX
             lvUploads.SmallImageList = il;
 
             TaskManager.ListViewControl = lvUploads;
-            uim = new UploadInfoManager(lvUploads);
-
             TaskManager.TaskView = ucTaskView;
+            uim = new UploadInfoManager(lvUploads);
 
             // Required for BackColor Transparent to work
             lblListViewTip.Parent = lvUploads;

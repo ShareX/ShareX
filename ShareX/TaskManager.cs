@@ -152,16 +152,13 @@ namespace ShareX
 
         private static ListViewItem FindListViewItem(WorkerTask task)
         {
-            if (ListViewControl != null)
+            foreach (ListViewItem lvi in ListViewControl.Items)
             {
-                foreach (ListViewItem lvi in ListViewControl.Items)
-                {
-                    WorkerTask tag = lvi.Tag as WorkerTask;
+                WorkerTask tag = lvi.Tag as WorkerTask;
 
-                    if (tag != null && tag == task)
-                    {
-                        return lvi;
-                    }
+                if (tag != null && tag == task)
+                {
+                    return lvi;
                 }
             }
 
@@ -170,69 +167,63 @@ namespace ShareX
 
         private static void CreateListViewItem(WorkerTask task)
         {
-            if (ListViewControl != null)
+            TaskInfo info = task.Info;
+
+            if (task.Status != TaskStatus.History)
             {
-                TaskInfo info = task.Info;
-
-                if (task.Status != TaskStatus.History)
-                {
-                    DebugHelper.WriteLine("Task in queue. Job: {0}, Type: {1}, Host: {2}", info.Job, info.UploadDestination, info.UploaderHost);
-                }
-
-                ListViewItem lvi = new ListViewItem();
-                lvi.Tag = task;
-                lvi.Text = info.FileName;
-
-                if (task.Status == TaskStatus.History)
-                {
-                    lvi.SubItems.Add(Resources.TaskManager_CreateListViewItem_History);
-                    lvi.SubItems.Add(task.Info.TaskEndTime.ToString());
-                }
-                else
-                {
-                    lvi.SubItems.Add(Resources.TaskManager_CreateListViewItem_In_queue);
-                    lvi.SubItems.Add("");
-                }
-
-                lvi.SubItems.Add("");
-                lvi.SubItems.Add("");
-                lvi.SubItems.Add("");
-
-                if (task.Status == TaskStatus.History)
-                {
-                    lvi.SubItems.Add(task.Info.ToString());
-                    lvi.ImageIndex = 4;
-                }
-                else
-                {
-                    lvi.SubItems.Add("");
-                    lvi.ImageIndex = 3;
-                }
-
-                if (Program.Settings.ShowMostRecentTaskFirst)
-                {
-                    ListViewControl.Items.Insert(0, lvi);
-                }
-                else
-                {
-                    ListViewControl.Items.Add(lvi);
-                }
-
-                lvi.EnsureVisible();
-                ListViewControl.FillLastColumn();
+                DebugHelper.WriteLine("Task in queue. Job: {0}, Type: {1}, Host: {2}", info.Job, info.UploadDestination, info.UploaderHost);
             }
+
+            ListViewItem lvi = new ListViewItem();
+            lvi.Tag = task;
+            lvi.Text = info.FileName;
+
+            if (task.Status == TaskStatus.History)
+            {
+                lvi.SubItems.Add(Resources.TaskManager_CreateListViewItem_History);
+                lvi.SubItems.Add(task.Info.TaskEndTime.ToString());
+            }
+            else
+            {
+                lvi.SubItems.Add(Resources.TaskManager_CreateListViewItem_In_queue);
+                lvi.SubItems.Add("");
+            }
+
+            lvi.SubItems.Add("");
+            lvi.SubItems.Add("");
+            lvi.SubItems.Add("");
+
+            if (task.Status == TaskStatus.History)
+            {
+                lvi.SubItems.Add(task.Info.ToString());
+                lvi.ImageIndex = 4;
+            }
+            else
+            {
+                lvi.SubItems.Add("");
+                lvi.ImageIndex = 3;
+            }
+
+            if (Program.Settings.ShowMostRecentTaskFirst)
+            {
+                ListViewControl.Items.Insert(0, lvi);
+            }
+            else
+            {
+                ListViewControl.Items.Add(lvi);
+            }
+
+            lvi.EnsureVisible();
+            ListViewControl.FillLastColumn();
         }
 
         private static void ChangeListViewItemStatus(WorkerTask task)
         {
-            if (ListViewControl != null)
-            {
-                ListViewItem lvi = FindListViewItem(task);
+            ListViewItem lvi = FindListViewItem(task);
 
-                if (lvi != null)
-                {
-                    lvi.SubItems[1].Text = task.Info.Status;
-                }
+            if (lvi != null)
+            {
+                lvi.SubItems[1].Text = task.Info.Status;
             }
         }
 
@@ -260,12 +251,14 @@ namespace ShareX
                 lvi.ImageIndex = 0;
             }
 
-            if (Program.Settings.TaskViewMode == TaskViewMode.ThumbnailView)
+            TaskPanel panel = TaskView.FindPanel(task);
+
+            if (panel != null)
             {
-                TaskView.UpdateFilename(task);
-                TaskView.UpdateThumbnail(task);
-                TaskView.UpdateProgressVisible(task, true);
-                TaskView.UpdateStatus(task);
+                panel.UpdateStatus();
+                panel.UpdateFilename();
+                panel.UpdateThumbnail();
+                panel.ProgressVisible = true;
             }
         }
 
@@ -273,39 +266,38 @@ namespace ShareX
         {
             if (task.Status == TaskStatus.Working)
             {
-                if (ListViewControl != null)
+                TaskInfo info = task.Info;
+
+                ListViewItem lvi = FindListViewItem(task);
+
+                if (lvi != null)
                 {
-                    TaskInfo info = task.Info;
+                    lvi.SubItems[1].Text = string.Format("{0:0.0}%", info.Progress.Percentage);
 
-                    ListViewItem lvi = FindListViewItem(task);
-
-                    if (lvi != null)
+                    if (info.Progress.CustomProgressText != null)
                     {
-                        lvi.SubItems[1].Text = string.Format("{0:0.0}%", info.Progress.Percentage);
-
-                        if (info.Progress.CustomProgressText != null)
-                        {
-                            lvi.SubItems[2].Text = info.Progress.CustomProgressText;
-                            lvi.SubItems[3].Text = "";
-                        }
-                        else
-                        {
-                            lvi.SubItems[2].Text = string.Format("{0} / {1}", info.Progress.Position.ToSizeString(Program.Settings.BinaryUnits), info.Progress.Length.ToSizeString(Program.Settings.BinaryUnits));
-
-                            if (info.Progress.Speed > 0)
-                            {
-                                lvi.SubItems[3].Text = ((long)info.Progress.Speed).ToSizeString(Program.Settings.BinaryUnits) + "/s";
-                            }
-                        }
-
-                        lvi.SubItems[4].Text = Helpers.ProperTimeSpan(info.Progress.Elapsed);
-                        lvi.SubItems[5].Text = Helpers.ProperTimeSpan(info.Progress.Remaining);
+                        lvi.SubItems[2].Text = info.Progress.CustomProgressText;
+                        lvi.SubItems[3].Text = "";
                     }
+                    else
+                    {
+                        lvi.SubItems[2].Text = string.Format("{0} / {1}", info.Progress.Position.ToSizeString(Program.Settings.BinaryUnits), info.Progress.Length.ToSizeString(Program.Settings.BinaryUnits));
+
+                        if (info.Progress.Speed > 0)
+                        {
+                            lvi.SubItems[3].Text = ((long)info.Progress.Speed).ToSizeString(Program.Settings.BinaryUnits) + "/s";
+                        }
+                    }
+
+                    lvi.SubItems[4].Text = Helpers.ProperTimeSpan(info.Progress.Elapsed);
+                    lvi.SubItems[5].Text = Helpers.ProperTimeSpan(info.Progress.Remaining);
                 }
 
-                if (Program.Settings.TaskViewMode == TaskViewMode.ThumbnailView)
+                TaskPanel panel = TaskView.FindPanel(task);
+
+                if (panel != null)
                 {
-                    TaskView.UpdateProgress(task);
+                    panel.UpdateProgress();
                 }
 
                 UpdateProgressUI();
@@ -333,9 +325,11 @@ namespace ShareX
                 }
             }
 
-            if (Program.Settings.TaskViewMode == TaskViewMode.ThumbnailView)
+            TaskPanel panel = TaskView.FindPanel(task);
+
+            if (panel != null)
             {
-                TaskView.UpdateProgressVisible(task, false);
+                panel.ProgressVisible = false;
             }
         }
 
@@ -356,12 +350,14 @@ namespace ShareX
 
                     if (info != null && info.Result != null)
                     {
-                        if (Program.Settings.TaskViewMode == TaskViewMode.ThumbnailView)
+                        TaskPanel panel = TaskView.FindPanel(task);
+
+                        if (panel != null)
                         {
-                            TaskView.UpdateFilename(task);
-                            TaskView.UpdateThumbnail(task);
-                            TaskView.UpdateProgressVisible(task, false);
-                            TaskView.UpdateStatus(task);
+                            panel.UpdateStatus();
+                            panel.UpdateFilename();
+                            panel.UpdateThumbnail();
+                            panel.ProgressVisible = false;
                         }
 
                         ListViewItem lvi = FindListViewItem(task);
