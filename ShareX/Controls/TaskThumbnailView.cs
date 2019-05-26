@@ -31,18 +31,18 @@ using System.Windows.Forms;
 
 namespace ShareX
 {
-    public partial class TaskView : UserControl
+    public partial class TaskThumbnailView : UserControl
     {
-        public List<TaskPanel> TaskPanels { get; private set; }
+        public List<TaskThumbnailPanel> Panels { get; private set; }
+        public TaskThumbnailPanel SelectedPanel { get; private set; }
         public Size ThumbnailSize { get; set; } = new Size(200, 150);
-        public TaskPanel SelectedTaskPanel { get; private set; }
 
         public delegate void TaskViewMouseEventHandler(object sender, MouseEventArgs e, WorkerTask task);
         public event TaskViewMouseEventHandler ContextMenuRequested;
 
-        public TaskView()
+        public TaskThumbnailView()
         {
-            TaskPanels = new List<TaskPanel>();
+            Panels = new List<TaskThumbnailPanel>();
 
             InitializeComponent();
             UpdateTheme();
@@ -64,35 +64,35 @@ namespace ShareX
                 BackColor = SystemColors.Window;
             }
 
-            foreach (TaskPanel panel in TaskPanels)
+            foreach (TaskThumbnailPanel panel in Panels)
             {
                 panel.UpdateTheme();
             }
         }
 
-        public TaskPanel FindPanel(WorkerTask task)
+        public TaskThumbnailPanel FindPanel(WorkerTask task)
         {
-            return TaskPanels.FirstOrDefault(x => x.Task == task);
+            return Panels.FirstOrDefault(x => x.Task == task);
         }
 
         public void AddTaskPanel(WorkerTask task)
         {
-            TaskPanel panel = new TaskPanel(task);
+            TaskThumbnailPanel panel = new TaskThumbnailPanel(task);
             panel.ChangeThumbnailSize(ThumbnailSize);
-            panel.MouseDown += (sender, e) => SelectedTaskPanel = panel;
+            panel.MouseDown += (sender, e) => SelectedPanel = panel;
             panel.MouseUp += Panel_MouseUp;
-            TaskPanels.Add(panel);
+            Panels.Add(panel);
             flpMain.Controls.Add(panel);
             flpMain.Controls.SetChildIndex(panel, 0);
         }
 
         public void RemoveTaskPanel(WorkerTask task)
         {
-            TaskPanel panel = FindPanel(task);
+            TaskThumbnailPanel panel = FindPanel(task);
 
             if (panel != null)
             {
-                TaskPanels.Remove(panel);
+                Panels.Remove(panel);
                 flpMain.Controls.Remove(panel);
                 panel.Dispose();
             }
@@ -108,14 +108,14 @@ namespace ShareX
 
         private void FlpMain_MouseDown(object sender, MouseEventArgs e)
         {
-            SelectedTaskPanel = null;
+            SelectedPanel = null;
         }
 
         private void Panel_MouseUp(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Right)
             {
-                OnContextMenuRequested(sender, e, SelectedTaskPanel?.Task);
+                OnContextMenuRequested(sender, e, SelectedPanel?.Task);
             }
         }
     }

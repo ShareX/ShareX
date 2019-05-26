@@ -32,7 +32,7 @@ using System.Windows.Forms;
 
 namespace ShareX
 {
-    public partial class TaskPanel : UserControl
+    public partial class TaskThumbnailPanel : UserControl
     {
         public new event MouseEventHandler MouseDown
         {
@@ -135,7 +135,7 @@ namespace ShareX
 
         private Rectangle dragBoxFromMouseDown;
 
-        public TaskPanel(WorkerTask task)
+        public TaskThumbnailPanel(WorkerTask task)
         {
             Task = task;
 

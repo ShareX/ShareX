@@ -1,6 +1,6 @@
 ﻿namespace ShareX
 {
-    partial class TaskView
+    partial class TaskThumbnailView
     {
         /// <summary> 
         /// Required designer variable.

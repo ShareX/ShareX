@@ -1,6 +1,6 @@
 ﻿namespace ShareX
 {
-    partial class TaskPanel
+    partial class TaskThumbnailPanel
     {
         /// <summary> 
         /// Required designer variable.

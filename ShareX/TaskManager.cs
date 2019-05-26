@@ -40,7 +40,7 @@ namespace ShareX
     {
         public static MyListView ListViewControl { get; set; }
 
-        public static TaskView TaskView { get; set; }
+        public static TaskThumbnailView TaskThumbnailView { get; set; }
 
         public static bool IsBusy
         {
@@ -77,7 +77,7 @@ namespace ShareX
 
                 if (Program.Settings.TaskViewMode == TaskViewMode.ThumbnailView)
                 {
-                    TaskView.AddTaskPanel(task);
+                    TaskThumbnailView.AddTaskPanel(task);
                 }
 
                 if (task.Status != TaskStatus.History)
@@ -102,7 +102,7 @@ namespace ShareX
                     ListViewControl.Items.Remove(lvi);
                 }
 
-                TaskView.RemoveTaskPanel(task);
+                TaskThumbnailView.RemoveTaskPanel(task);
 
                 task.Dispose();
             }
@@ -251,7 +251,7 @@ namespace ShareX
                 lvi.ImageIndex = 0;
             }
 
-            TaskPanel panel = TaskView.FindPanel(task);
+            TaskThumbnailPanel panel = TaskThumbnailView.FindPanel(task);
 
             if (panel != null)
             {
@@ -293,7 +293,7 @@ namespace ShareX
                     lvi.SubItems[5].Text = Helpers.ProperTimeSpan(info.Progress.Remaining);
                 }
 
-                TaskPanel panel = TaskView.FindPanel(task);
+                TaskThumbnailPanel panel = TaskThumbnailView.FindPanel(task);
 
                 if (panel != null)
                 {
@@ -325,7 +325,7 @@ namespace ShareX
                 }
             }
 
-            TaskPanel panel = TaskView.FindPanel(task);
+            TaskThumbnailPanel panel = TaskThumbnailView.FindPanel(task);
 
             if (panel != null)
             {
@@ -350,7 +350,7 @@ namespace ShareX
 
                     if (info != null && info.Result != null)
                     {
-                        TaskPanel panel = TaskView.FindPanel(task);
+                        TaskThumbnailPanel panel = TaskThumbnailView.FindPanel(task);
 
                         if (panel != null)
                         {

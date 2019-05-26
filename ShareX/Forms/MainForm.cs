@@ -167,7 +167,7 @@ namespace ShareX
             lvUploads.SmallImageList = il;
 
             TaskManager.ListViewControl = lvUploads;
-            TaskManager.TaskView = ucTaskView;
+            TaskManager.TaskThumbnailView = ucTaskThumbnailView;
             uim = new UploadInfoManager(lvUploads);
 
             // Required for BackColor Transparent to work
@@ -798,7 +798,7 @@ namespace ShareX
             }
 
             pbPreview.UpdateCheckers(true);
-            ucTaskView.UpdateTheme();
+            ucTaskThumbnailView.UpdateTheme();
             ucNews.UpdateTheme();
         }
 
@@ -1040,9 +1040,9 @@ namespace ShareX
             {
                 RemoveTasks(lvUploads.SelectedItems.Cast<ListViewItem>().Select(x => x.Tag as WorkerTask));
             }
-            else if (Program.Settings.TaskViewMode == TaskViewMode.ThumbnailView && ucTaskView.SelectedTaskPanel != null)
+            else if (Program.Settings.TaskViewMode == TaskViewMode.ThumbnailView && ucTaskThumbnailView.SelectedPanel != null)
             {
-                RemoveTasks(new WorkerTask[] { ucTaskView.SelectedTaskPanel.Task });
+                RemoveTasks(new WorkerTask[] { ucTaskThumbnailView.SelectedPanel.Task });
             }
         }
 

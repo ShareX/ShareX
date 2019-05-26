@@ -276,7 +276,7 @@
             this.ucNews = new ShareX.NewsListControl();
             this.pThumbnailView = new System.Windows.Forms.Panel();
             this.lblThumbnailViewTip = new System.Windows.Forms.Label();
-            this.ucTaskView = new ShareX.TaskView();
+            this.ucTaskThumbnailView = new ShareX.TaskThumbnailView();
             this.flpCommunity = new System.Windows.Forms.FlowLayoutPanel();
             this.flpDiscord = new System.Windows.Forms.FlowLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.scMain)).BeginInit();
@@ -2172,7 +2172,7 @@
             // 
             this.pThumbnailView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(47)))), ((int)(((byte)(56)))));
             this.pThumbnailView.Controls.Add(this.lblThumbnailViewTip);
-            this.pThumbnailView.Controls.Add(this.ucTaskView);
+            this.pThumbnailView.Controls.Add(this.ucTaskThumbnailView);
             resources.ApplyResources(this.pThumbnailView, "pThumbnailView");
             this.pThumbnailView.Name = "pThumbnailView";
             // 
@@ -2185,13 +2185,13 @@
             this.lblThumbnailViewTip.UseMnemonic = false;
             this.lblThumbnailViewTip.MouseUp += new System.Windows.Forms.MouseEventHandler(this.LblThumbnailViewTip_MouseUp);
             // 
-            // ucTaskView
+            // ucTaskThumbnailView
             // 
-            resources.ApplyResources(this.ucTaskView, "ucTaskView");
-            this.ucTaskView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(47)))), ((int)(((byte)(56)))));
-            this.ucTaskView.Name = "ucTaskView";
-            this.ucTaskView.ThumbnailSize = new System.Drawing.Size(200, 150);
-            this.ucTaskView.ContextMenuRequested += new ShareX.TaskView.TaskViewMouseEventHandler(this.UcTaskView_ContextMenuRequested);
+            resources.ApplyResources(this.ucTaskThumbnailView, "ucTaskThumbnailView");
+            this.ucTaskThumbnailView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(47)))), ((int)(((byte)(56)))));
+            this.ucTaskThumbnailView.Name = "ucTaskThumbnailView";
+            this.ucTaskThumbnailView.ThumbnailSize = new System.Drawing.Size(200, 150);
+            this.ucTaskThumbnailView.ContextMenuRequested += new ShareX.TaskThumbnailView.TaskViewMouseEventHandler(this.UcTaskView_ContextMenuRequested);
             // 
             // flpCommunity
             // 
@@ -2503,7 +2503,7 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiCustomUploaderSettings;
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayCustomUploaderSettings;
         private System.Windows.Forms.Panel pThumbnailView;
-        private TaskView ucTaskView;
+        private TaskThumbnailView ucTaskThumbnailView;
         private System.Windows.Forms.ToolStripMenuItem tsmiSwitchTaskViewMode;
         public System.Windows.Forms.Label lblThumbnailViewTip;
     }

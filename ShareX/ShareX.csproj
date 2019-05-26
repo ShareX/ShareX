@@ -161,20 +161,20 @@
     <Compile Include="Controls\NewsListControl.Designer.cs">
       <DependentUpon>NewsListControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\TaskPanel.cs">
+    <Compile Include="Controls\TaskThumbnailPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\TaskPanel.Designer.cs">
-      <DependentUpon>TaskPanel.cs</DependentUpon>
+    <Compile Include="Controls\TaskThumbnailPanel.Designer.cs">
+      <DependentUpon>TaskThumbnailPanel.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\TaskRoundedCornerPanel.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Controls\TaskView.cs">
+    <Compile Include="Controls\TaskThumbnailView.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\TaskView.Designer.cs">
-      <DependentUpon>TaskView.cs</DependentUpon>
+    <Compile Include="Controls\TaskThumbnailView.Designer.cs">
+      <DependentUpon>TaskThumbnailView.cs</DependentUpon>
     </Compile>
     <Compile Include="EasterEggAboutAnimation.cs" />
     <Compile Include="EasterEggBounce.cs" />
@@ -405,11 +405,11 @@
     <EmbeddedResource Include="Controls\NewsListControl.resx">
       <DependentUpon>NewsListControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\TaskPanel.resx">
-      <DependentUpon>TaskPanel.cs</DependentUpon>
+    <EmbeddedResource Include="Controls\TaskThumbnailPanel.resx">
+      <DependentUpon>TaskThumbnailPanel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\TaskView.resx">
-      <DependentUpon>TaskView.cs</DependentUpon>
+    <EmbeddedResource Include="Controls\TaskThumbnailView.resx">
+      <DependentUpon>TaskThumbnailView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AboutForm.de.resx">
       <DependentUpon>AboutForm.cs</DependentUpon>
