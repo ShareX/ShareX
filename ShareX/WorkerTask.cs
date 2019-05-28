@@ -44,7 +44,7 @@ namespace ShareX
         public delegate void TaskEventHandler(WorkerTask task);
         public delegate void UploaderServiceEventHandler(IUploaderService uploaderService);
 
-        public event TaskEventHandler StatusChanged, UploadStarted, UploadProgressChanged, UploadCompleted, TaskCompleted;
+        public event TaskEventHandler StatusChanged, ImageReady, UploadStarted, UploadProgressChanged, UploadCompleted, TaskCompleted;
         public event UploaderServiceEventHandler UploadersConfigWindowRequested;
 
         public TaskInfo Info { get; private set; }
@@ -288,6 +288,8 @@ namespace ShareX
             try
             {
                 StopRequested = !DoThreadJob();
+
+                OnImageReady();
 
                 if (!StopRequested)
                 {
@@ -1060,6 +1062,14 @@ namespace ShareX
             if (StatusChanged != null)
             {
                 threadWorker.InvokeAsync(() => StatusChanged(this));
+            }
+        }
+
+        private void OnImageReady()
+        {
+            if (ImageReady != null)
+            {
+                threadWorker.InvokeAsync(() => ImageReady(this));
             }
         }
 

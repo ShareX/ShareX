@@ -130,9 +130,12 @@ namespace ShareX.HelpersLib
             bmp.SetResolution(img.HorizontalResolution, img.VerticalResolution);
 
             using (Graphics g = Graphics.FromImage(bmp))
-            using (img)
             {
-                g.Clear(backColor);
+                if (backColor.A > 0)
+                {
+                    g.Clear(backColor);
+                }
+
                 g.SetHighQuality();
                 g.DrawImage(img, newX, newY, newWidth, newHeight);
             }

@@ -172,7 +172,7 @@ namespace ShareX
             Filename = Task.Info?.FileName;
         }
 
-        public void UpdateThumbnail()
+        public void UpdateThumbnail(Image image = null)
         {
             ClearThumbnail();
 
@@ -182,31 +182,41 @@ namespace ShareX
                 {
                     string filePath = Task.Info.FilePath;
 
-                    if (string.IsNullOrEmpty(filePath))
-                    {
-                        filePath = Task.Info.FileName;
-                    }
-                    else if (File.Exists(filePath))
+                    if (!string.IsNullOrEmpty(filePath) && File.Exists(filePath))
                     {
                         ThumbnailSupportsClick = true;
                         pbThumbnail.Cursor = pThumbnail.Cursor = Cursors.Hand;
-
-                        using (Image img = ImageHelpers.LoadImage(filePath))
-                        {
-                            if (img != null)
-                            {
-                                pbThumbnail.Image = ImageHelpers.ResizeImage(img, ThumbnailSize, false);
-                                return;
-                            }
-                        }
                     }
 
-                    if (!string.IsNullOrEmpty(filePath))
+                    if (image != null)
                     {
-                        using (Icon icon = NativeMethods.GetJumboFileIcon(filePath, false))
-                        using (Image img = icon.ToBitmap())
+                        pbThumbnail.Image = ImageHelpers.ResizeImage(image, ThumbnailSize, false);
+                    }
+                    else
+                    {
+                        if (string.IsNullOrEmpty(filePath))
                         {
-                            pbThumbnail.Image = ImageHelpers.ResizeImage(img, ThumbnailSize, false, true);
+                            filePath = Task.Info.FileName;
+                        }
+                        else if (File.Exists(filePath))
+                        {
+                            using (Image img = ImageHelpers.LoadImage(filePath))
+                            {
+                                if (img != null)
+                                {
+                                    pbThumbnail.Image = ImageHelpers.ResizeImage(img, ThumbnailSize, false);
+                                    return;
+                                }
+                            }
+                        }
+
+                        if (!string.IsNullOrEmpty(filePath))
+                        {
+                            using (Icon icon = NativeMethods.GetJumboFileIcon(filePath, false))
+                            using (Image img = icon.ToBitmap())
+                            {
+                                pbThumbnail.Image = ImageHelpers.ResizeImage(img, ThumbnailSize, false, true);
+                            }
                         }
                     }
                 }
@@ -293,17 +303,23 @@ namespace ShareX
 
         private void PbThumbnail_MouseMove(object sender, MouseEventArgs e)
         {
-            if (e.Button == MouseButtons.Left && dragBoxFromMouseDown != Rectangle.Empty && !dragBoxFromMouseDown.Contains(e.X, e.Y) &&
-                Task.Info != null && !string.IsNullOrEmpty(Task.Info.FilePath) && File.Exists(Task.Info.FilePath))
+            if (e.Button == MouseButtons.Left && dragBoxFromMouseDown != Rectangle.Empty && !dragBoxFromMouseDown.Contains(e.X, e.Y))
             {
-                IDataObject dataObject = new DataObject(DataFormats.FileDrop, new string[] { Task.Info.FilePath });
-
-                if (dataObject != null)
+                if (Task.Info != null && !string.IsNullOrEmpty(Task.Info.FilePath) && File.Exists(Task.Info.FilePath))
                 {
-                    Program.MainForm.AllowDrop = false;
+                    IDataObject dataObject = new DataObject(DataFormats.FileDrop, new string[] { Task.Info.FilePath });
+
+                    if (dataObject != null)
+                    {
+                        Program.MainForm.AllowDrop = false;
+                        dragBoxFromMouseDown = Rectangle.Empty;
+                        pbThumbnail.DoDragDrop(dataObject, DragDropEffects.Copy | DragDropEffects.Move);
+                        Program.MainForm.AllowDrop = true;
+                    }
+                }
+                else
+                {
                     dragBoxFromMouseDown = Rectangle.Empty;
-                    pbThumbnail.DoDragDrop(dataObject, DragDropEffects.Copy | DragDropEffects.Move);
-                    Program.MainForm.AllowDrop = true;
                 }
             }
         }

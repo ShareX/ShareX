@@ -65,11 +65,12 @@ namespace ShareX
 
                 if (task.Status != TaskStatus.History)
                 {
-                    task.StatusChanged += task_StatusChanged;
-                    task.UploadStarted += task_UploadStarted;
-                    task.UploadProgressChanged += task_UploadProgressChanged;
-                    task.UploadCompleted += task_UploadCompleted;
-                    task.TaskCompleted += task_TaskCompleted;
+                    task.StatusChanged += Task_StatusChanged;
+                    task.ImageReady += Task_ImageReady;
+                    task.UploadStarted += Task_UploadStarted;
+                    task.UploadProgressChanged += Task_UploadProgressChanged;
+                    task.UploadCompleted += Task_UploadCompleted;
+                    task.TaskCompleted += Task_TaskCompleted;
                     task.UploadersConfigWindowRequested += Task_UploadersConfigWindowRequested;
                 }
 
@@ -227,14 +228,25 @@ namespace ShareX
             }
         }
 
-        private static void task_StatusChanged(WorkerTask task)
+        private static void Task_StatusChanged(WorkerTask task)
         {
             DebugHelper.WriteLine("Task status: " + task.Status);
             ChangeListViewItemStatus(task);
             UpdateProgressUI();
         }
 
-        private static void task_UploadStarted(WorkerTask task)
+        private static void Task_ImageReady(WorkerTask task)
+        {
+            TaskThumbnailPanel panel = TaskThumbnailView.FindPanel(task);
+
+            if (panel != null)
+            {
+                panel.UpdateFilename();
+                panel.UpdateThumbnail(task.Image);
+            }
+        }
+
+        private static void Task_UploadStarted(WorkerTask task)
         {
             TaskInfo info = task.Info;
 
@@ -256,13 +268,11 @@ namespace ShareX
             if (panel != null)
             {
                 panel.UpdateStatus();
-                panel.UpdateFilename();
-                panel.UpdateThumbnail();
                 panel.ProgressVisible = true;
             }
         }
 
-        private static void task_UploadProgressChanged(WorkerTask task)
+        private static void Task_UploadProgressChanged(WorkerTask task)
         {
             if (task.Status == TaskStatus.Working)
             {
@@ -304,7 +314,7 @@ namespace ShareX
             }
         }
 
-        private static void task_UploadCompleted(WorkerTask task)
+        private static void Task_UploadCompleted(WorkerTask task)
         {
             TaskInfo info = task.Info;
 
@@ -333,7 +343,7 @@ namespace ShareX
             }
         }
 
-        private static void task_TaskCompleted(WorkerTask task)
+        private static void Task_TaskCompleted(WorkerTask task)
         {
             try
             {
@@ -355,8 +365,6 @@ namespace ShareX
                         if (panel != null)
                         {
                             panel.UpdateStatus();
-                            panel.UpdateFilename();
-                            panel.UpdateThumbnail();
                             panel.ProgressVisible = false;
                         }
 
