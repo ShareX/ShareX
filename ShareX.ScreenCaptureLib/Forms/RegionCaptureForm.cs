@@ -105,6 +105,7 @@ namespace ShareX.ScreenCaptureLib
         private TextAnimation editorPanTipAnimation;
         private Bitmap bmpBackgroundImage;
         private Cursor defaultCursor;
+        private Color canvasBackgroundColor;
 
         public RegionCaptureForm(RegionCaptureMode mode, RegionCaptureOptions options, Image canvas = null)
         {
@@ -149,7 +150,17 @@ namespace ShareX.ScreenCaptureLib
             textOuterBorderPen = new Pen(Color.FromArgb(150, Color.White));
             textInnerBorderPen = new Pen(Color.FromArgb(150, Color.FromArgb(0, 81, 145)));
             markerPen = new Pen(Color.FromArgb(200, Color.Red));
-            canvasBorderPen = new Pen(Color.FromArgb(30, Color.Black));
+
+            if (ShareXResources.UseDarkTheme)
+            {
+                canvasBackgroundColor = ShareXResources.DarkBackgroundColor;
+                canvasBorderPen = new Pen(ShareXResources.DarkBorderColor);
+            }
+            else
+            {
+                canvasBackgroundColor = Color.FromArgb(200, 200, 200);
+                canvasBorderPen = new Pen(Color.FromArgb(176, 176, 176));
+            }
 
             Prepare(canvas);
 
@@ -313,7 +324,7 @@ namespace ShareX.ScreenCaptureLib
                 {
                     Rectangle sourceRect = new Rectangle(0, 0, Canvas.Width, Canvas.Height);
 
-                    using (Image checkers = ImageHelpers.DrawCheckers(Canvas.Width, Canvas.Height))
+                    using (Image checkers = ImageHelpers.DrawCheckers(Canvas.Width, Canvas.Height, ShareXResources.CheckerColor1, ShareXResources.CheckerColor2))
                     {
                         g.DrawImage(checkers, sourceRect);
                     }
@@ -691,7 +702,7 @@ namespace ShareX.ScreenCaptureLib
 
             if (IsEditorMode && !CanvasRectangle.Contains(ClientArea))
             {
-                g.Clear(Options.ImageEditorBackgroundColor);
+                g.Clear(canvasBackgroundColor);
                 g.DrawRectangleProper(canvasBorderPen, CanvasRectangle.Offset(1));
             }
 

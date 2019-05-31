@@ -49,7 +49,7 @@ namespace ShareX.ScreenCaptureLib
         private ToolStripButton tsbSaveImage, tsbBorderColor, tsbFillColor, tsbHighlightColor;
         private ToolStripDropDownButton tsddbShapeOptions;
         private ToolStripMenuItem tsmiArrowHeadsBothSide, tsmiShadow, tsmiShadowColor, tsmiStepUseLetters, tsmiUndo, tsmiDelete, tsmiDeleteAll, tsmiMoveTop,
-            tsmiMoveUp, tsmiMoveDown, tsmiMoveBottom, tsmiRegionCapture, tsmiQuickCrop, tsmiShowMagnifier, tsmiImageEditorBackgroundColor;
+            tsmiMoveUp, tsmiMoveDown, tsmiMoveBottom, tsmiRegionCapture, tsmiQuickCrop, tsmiShowMagnifier;
         private ToolStripLabeledNumericUpDown tslnudBorderSize, tslnudCornerRadius, tslnudCenterPoints, tslnudBlurRadius, tslnudPixelateSize, tslnudStepFontSize,
             tslnudMagnifierPixelCount, tslnudStartingStepValue, tslnudMagnifyStrength;
         private ToolStripLabel tslDragLeft, tslDragRight;
@@ -863,21 +863,6 @@ namespace ShareX.ScreenCaptureLib
                 tsmiAutoCloseEditorOnTask.Click += (sender, e) => Options.AutoCloseEditorOnTask = tsmiAutoCloseEditorOnTask.Checked;
                 tsddbOptions.DropDownItems.Add(tsmiAutoCloseEditorOnTask);
 
-                tsmiImageEditorBackgroundColor = new ToolStripMenuItem(Resources.ShapeManager_CreateToolbar_EditorBackgroundColor);
-                tsmiImageEditorBackgroundColor.Click += (sender, e) =>
-                {
-                    Form.Pause();
-
-                    if (PickColor(Options.ImageEditorBackgroundColor, out Color newColor))
-                    {
-                        Options.ImageEditorBackgroundColor = newColor;
-                        UpdateMenu();
-                    }
-
-                    Form.Resume();
-                };
-                tsddbOptions.DropDownItems.Add(tsmiImageEditorBackgroundColor);
-
                 tsddbOptions.DropDownItems.Add(new ToolStripSeparator());
             }
 
@@ -1474,12 +1459,6 @@ namespace ShareX.ScreenCaptureLib
             if (tsmiRegionCapture != null)
             {
                 tsmiRegionCapture.Visible = !Options.QuickCrop && ValidRegions.Length > 0;
-            }
-
-            if (tsmiImageEditorBackgroundColor != null)
-            {
-                if (tsmiImageEditorBackgroundColor.Image != null) tsmiImageEditorBackgroundColor.Image.Dispose();
-                tsmiImageEditorBackgroundColor.Image = ImageHelpers.CreateColorPickerIcon(Options.ImageEditorBackgroundColor, new Rectangle(0, 0, 16, 16));
             }
         }
 

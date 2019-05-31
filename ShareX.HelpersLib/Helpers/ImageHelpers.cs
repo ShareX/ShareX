@@ -721,10 +721,15 @@ namespace ShareX.HelpersLib
 
         public static Image DrawCheckers(int width, int height)
         {
+            return DrawCheckers(width, height, SystemColors.ControlLight, SystemColors.ControlLightLight);
+        }
+
+        public static Image DrawCheckers(int width, int height, Color color1, Color color2)
+        {
             Bitmap bmp = new Bitmap(width, height);
 
             using (Graphics g = Graphics.FromImage(bmp))
-            using (Image checker = CreateCheckerPattern())
+            using (Image checker = CreateCheckerPattern(10, 10, color1, color2))
             using (Brush checkerBrush = new TextureBrush(checker, WrapMode.Tile))
             {
                 g.FillRectangle(checkerBrush, new Rectangle(0, 0, bmp.Width, bmp.Height));

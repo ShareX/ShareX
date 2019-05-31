@@ -86,7 +86,6 @@ namespace ShareX.ScreenCaptureLib
         public ImageEditorStartMode ImageEditorStartMode = ImageEditorStartMode.AutoSize;
         public WindowState ImageEditorWindowState = new WindowState();
         public bool AutoCloseEditorOnTask = false;
-        public Color ImageEditorBackgroundColor = Color.FromArgb(200, 200, 200);
         public bool ShowEditorPanTip = true;
         public ImageEditorInterpolationMode ImageEditorResizeInterpolationMode = ImageEditorInterpolationMode.Bicubic;
         public Size EditorNewImageSize = new Size(800, 600);

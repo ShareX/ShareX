@@ -205,20 +205,7 @@ namespace ShareX.HelpersLib
                 {
                     if (pbMain.BackgroundImage != null) pbMain.BackgroundImage.Dispose();
 
-                    Color checkerPatternColor1, checkerPatternColor2;
-
-                    if (ShareXResources.UseDarkTheme)
-                    {
-                        checkerPatternColor1 = Color.FromArgb(153, 153, 153);
-                        checkerPatternColor2 = Color.FromArgb(102, 102, 102);
-                    }
-                    else
-                    {
-                        checkerPatternColor1 = SystemColors.ControlLight;
-                        checkerPatternColor2 = SystemColors.ControlLightLight;
-                    }
-
-                    pbMain.BackgroundImage = ImageHelpers.CreateCheckerPattern(10, 10, checkerPatternColor1, checkerPatternColor2);
+                    pbMain.BackgroundImage = ImageHelpers.CreateCheckerPattern(10, 10, ShareXResources.CheckerColor1, ShareXResources.CheckerColor2);
                 }
             }
             else
