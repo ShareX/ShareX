@@ -690,7 +690,6 @@ namespace ShareX.HelpersLib
             using (img)
             {
                 g.FillRectangle(brush, 0, 0, result.Width, result.Height);
-                g.SetHighQuality();
                 g.DrawImage(img, 0, 0, result.Width, result.Height);
             }
 

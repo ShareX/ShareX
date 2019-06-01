@@ -75,12 +75,13 @@ namespace ShareX
             if (config.Image != null)
             {
                 config.Image = ImageHelpers.ResizeImageLimit(config.Image, size);
-                config.Image = ImageHelpers.DrawCheckers(config.Image);
+                Color backgroundColor = ShareXResources.UseDarkTheme ? ShareXResources.DarkBackgroundColor : SystemColors.Window;
+                config.Image = ImageHelpers.FillBackground(config.Image, backgroundColor);
                 size = new Size(config.Image.Width + 2, config.Image.Height + 2);
             }
             else if (!string.IsNullOrEmpty(config.Text))
             {
-                textRenderSize = TextRenderer.MeasureText(config.Text, textFont, size.Offset(-textPadding * 2), TextFormatFlags.Left);
+                textRenderSize = TextRenderer.MeasureText(config.Text, textFont, size.Offset(-textPadding * 2), TextFormatFlags.Left | TextFormatFlags.EndEllipsis);
                 size = new Size(textRenderSize.Width + (textPadding * 2), textRenderSize.Height + (textPadding * 2) + 2);
             }
 
@@ -161,7 +162,7 @@ namespace ShareX
                         g.FillRectangle(brush, textRect);
                     }
 
-                    TextRenderer.DrawText(g, ToastConfig.URL, textFont, textRect.Offset(-urlPadding), Color.White, TextFormatFlags.Left);
+                    TextRenderer.DrawText(g, ToastConfig.URL, textFont, textRect.Offset(-urlPadding), Color.White, TextFormatFlags.Left | TextFormatFlags.EndEllipsis);
                 }
             }
             else if (!string.IsNullOrEmpty(ToastConfig.Text))
@@ -172,11 +173,15 @@ namespace ShareX
                 }
 
                 Rectangle textRect = new Rectangle(textPadding, textPadding, textRenderSize.Width + 2, textRenderSize.Height + 2);
-                TextRenderer.DrawText(g, ToastConfig.Text, textFont, textRect, Color.Black, TextFormatFlags.Left);
-                TextRenderer.DrawText(g, ToastConfig.Text, textFont, textRect.LocationOffset(1), Color.White, TextFormatFlags.Left);
+                TextRenderer.DrawText(g, ToastConfig.Text, textFont, textRect, Color.Black, TextFormatFlags.Left | TextFormatFlags.EndEllipsis);
+                TextRenderer.DrawText(g, ToastConfig.Text, textFont, textRect.LocationOffset(1), Color.White, TextFormatFlags.Left | TextFormatFlags.EndEllipsis);
             }
 
-            g.DrawRectangleProper(Pens.Black, rect);
+            Color borderColor = ShareXResources.UseDarkTheme ? ShareXResources.DarkBorderColor : SystemColors.WindowText;
+            using (Pen borderPen = new Pen(borderColor))
+            {
+                g.DrawRectangleProper(borderPen, rect);
+            }
         }
 
         public static void Show(int duration, int fadeDuration, ContentAlignment placement, Size size, NotificationFormConfig config)
