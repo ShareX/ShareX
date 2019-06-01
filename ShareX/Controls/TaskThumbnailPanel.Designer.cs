@@ -54,6 +54,7 @@
             this.pThumbnail.Radius = 5F;
             this.pThumbnail.Size = new System.Drawing.Size(256, 256);
             this.pThumbnail.TabIndex = 0;
+            this.pThumbnail.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PbThumbnail_MouseClick);
             // 
             // pbProgress
             // 
@@ -66,7 +67,6 @@
             this.pbProgress.ShowPercentageText = true;
             this.pbProgress.Size = new System.Drawing.Size(240, 32);
             this.pbProgress.TabIndex = 1;
-            this.pbProgress.Value = 0;
             this.pbProgress.Visible = false;
             // 
             // pbThumbnail
@@ -98,14 +98,14 @@
             this.lblFilename.Text = "Test.png";
             this.lblFilename.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // TaskPanel
+            // TaskThumbnailPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.pThumbnail);
             this.Controls.Add(this.lblFilename);
-            this.Name = "TaskPanel";
+            this.Name = "TaskThumbnailPanel";
             this.Size = new System.Drawing.Size(256, 280);
             this.pThumbnail.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbThumbnail)).EndInit();
