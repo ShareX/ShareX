@@ -205,7 +205,8 @@ namespace ShareX.HelpersLib
                 {
                     if (pbMain.BackgroundImage != null) pbMain.BackgroundImage.Dispose();
 
-                    pbMain.BackgroundImage = ImageHelpers.CreateCheckerPattern(10, 10, ShareXResources.CheckerColor1, ShareXResources.CheckerColor2);
+                    pbMain.BackgroundImage = ImageHelpers.CreateCheckerPattern(ShareXResources.CheckerSize, ShareXResources.CheckerSize,
+                        ShareXResources.CheckerColor1, ShareXResources.CheckerColor2);
                 }
             }
             else

@@ -324,7 +324,8 @@ namespace ShareX.ScreenCaptureLib
                 {
                     Rectangle sourceRect = new Rectangle(0, 0, Canvas.Width, Canvas.Height);
 
-                    using (Image checkers = ImageHelpers.DrawCheckers(Canvas.Width, Canvas.Height, ShareXResources.CheckerColor1, ShareXResources.CheckerColor2))
+                    using (Image checkers = ImageHelpers.DrawCheckers(Canvas.Width, Canvas.Height, ShareXResources.CheckerSize,
+                        ShareXResources.CheckerColor1, ShareXResources.CheckerColor2))
                     {
                         g.DrawImage(checkers, sourceRect);
                     }

@@ -53,7 +53,8 @@ namespace ShareX.HelpersLib
         public static Color DarkTextColor { get; } = Color.FromArgb(235, 235, 235);
         public static Color DarkBorderColor { get; } = Color.FromArgb(28, 32, 38);
 
-        public static Color CheckerColor1 => UseDarkTheme ? Color.FromArgb(153, 153, 153) : SystemColors.ControlLight;
-        public static Color CheckerColor2 => UseDarkTheme ? Color.FromArgb(102, 102, 102) : SystemColors.ControlLightLight;
+        public static int CheckerSize { get; } = 15;
+        public static Color CheckerColor1 => UseDarkTheme ? Color.FromArgb(60, 60, 60) : SystemColors.ControlLightLight;
+        public static Color CheckerColor2 => UseDarkTheme ? Color.FromArgb(50, 50, 50) : SystemColors.ControlLight;
     }
 }

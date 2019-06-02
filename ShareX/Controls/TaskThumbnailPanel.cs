@@ -188,36 +188,11 @@ namespace ShareX
                         pbThumbnail.Cursor = pThumbnail.Cursor = Cursors.Hand;
                     }
 
-                    if (image != null)
-                    {
-                        pbThumbnail.Image = ImageHelpers.ResizeImage(image, ThumbnailSize, false);
-                    }
-                    else
-                    {
-                        if (string.IsNullOrEmpty(filePath))
-                        {
-                            filePath = Task.Info.FileName;
-                        }
-                        else if (File.Exists(filePath))
-                        {
-                            using (Image img = ImageHelpers.LoadImage(filePath))
-                            {
-                                if (img != null)
-                                {
-                                    pbThumbnail.Image = ImageHelpers.ResizeImage(img, ThumbnailSize, false);
-                                    return;
-                                }
-                            }
-                        }
+                    Image img = CreateThumbnail(filePath, image);
 
-                        if (!string.IsNullOrEmpty(filePath))
-                        {
-                            using (Icon icon = NativeMethods.GetJumboFileIcon(filePath, false))
-                            using (Image img = icon.ToBitmap())
-                            {
-                                pbThumbnail.Image = ImageHelpers.ResizeImage(img, ThumbnailSize, false, true);
-                            }
-                        }
+                    if (img != null)
+                    {
+                        pbThumbnail.Image = img;
                     }
                 }
                 catch (Exception e)
@@ -225,6 +200,42 @@ namespace ShareX
                     DebugHelper.WriteException(e);
                 }
             }
+        }
+
+        private Image CreateThumbnail(string filePath, Image image = null)
+        {
+            if (image != null)
+            {
+                return ImageHelpers.ResizeImage(image, ThumbnailSize, false);
+            }
+            else
+            {
+                if (string.IsNullOrEmpty(filePath))
+                {
+                    filePath = Task.Info.FileName;
+                }
+                else if (File.Exists(filePath))
+                {
+                    using (Image img = ImageHelpers.LoadImage(filePath))
+                    {
+                        if (img != null)
+                        {
+                            return ImageHelpers.ResizeImage(img, ThumbnailSize, false);
+                        }
+                    }
+                }
+
+                if (!string.IsNullOrEmpty(filePath))
+                {
+                    using (Icon icon = NativeMethods.GetJumboFileIcon(filePath, false))
+                    using (Image img = icon.ToBitmap())
+                    {
+                        return ImageHelpers.ResizeImage(img, ThumbnailSize, false, true);
+                    }
+                }
+            }
+
+            return null;
         }
 
         public void UpdateProgress()
