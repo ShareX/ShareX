@@ -75,15 +75,16 @@ namespace ShareX
             return Panels.FirstOrDefault(x => x.Task == task);
         }
 
-        public void AddTaskPanel(WorkerTask task)
+        public TaskThumbnailPanel AddTaskPanel(WorkerTask task)
         {
             TaskThumbnailPanel panel = new TaskThumbnailPanel(task);
-            panel.ChangeThumbnailSize(ThumbnailSize);
             panel.MouseDown += (sender, e) => SelectedPanel = panel;
             panel.MouseUp += Panel_MouseUp;
+            panel.ChangeThumbnailSize(ThumbnailSize);
             Panels.Add(panel);
             flpMain.Controls.Add(panel);
             flpMain.Controls.SetChildIndex(panel, 0);
+            return panel;
         }
 
         public void RemoveTaskPanel(WorkerTask task)
@@ -95,6 +96,17 @@ namespace ShareX
                 Panels.Remove(panel);
                 flpMain.Controls.Remove(panel);
                 panel.Dispose();
+            }
+        }
+
+        public void UpdateAllThumbnails()
+        {
+            foreach (TaskThumbnailPanel panel in Panels)
+            {
+                if (!panel.ThumbnailExists)
+                {
+                    panel.UpdateThumbnail();
+                }
             }
         }
 

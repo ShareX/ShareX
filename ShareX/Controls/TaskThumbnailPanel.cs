@@ -129,6 +129,8 @@ namespace ShareX
 
         private bool progressVisible;
 
+        public bool ThumbnailExists { get; private set; }
+
         public Size ThumbnailSize { get; private set; }
 
         public bool ThumbnailSupportsClick { get; private set; }
@@ -164,7 +166,6 @@ namespace ShareX
         {
             ThumbnailSize = size;
             Size = new Size(pThumbnail.Padding.Horizontal + ThumbnailSize.Width, pThumbnail.Top + pThumbnail.Padding.Vertical + ThumbnailSize.Height);
-            UpdateThumbnail();
         }
 
         public void UpdateFilename()
@@ -175,6 +176,8 @@ namespace ShareX
         public void UpdateThumbnail(Image image = null)
         {
             ClearThumbnail();
+
+            ThumbnailExists = false;
 
             if (!ThumbnailSize.IsEmpty && Task.Info != null)
             {
@@ -193,6 +196,8 @@ namespace ShareX
                     if (img != null)
                     {
                         pbThumbnail.Image = img;
+
+                        ThumbnailExists = true;
                     }
                 }
                 catch (Exception e)

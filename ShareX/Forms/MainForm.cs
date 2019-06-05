@@ -2353,6 +2353,7 @@ namespace ShareX
             if (Program.Settings.TaskViewMode == TaskViewMode.ListView)
             {
                 Program.Settings.TaskViewMode = TaskViewMode.ThumbnailView;
+                ucTaskThumbnailView.UpdateAllThumbnails();
             }
             else
             {

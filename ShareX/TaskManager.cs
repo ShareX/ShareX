@@ -76,9 +76,11 @@ namespace ShareX
 
                 CreateListViewItem(task);
 
+                TaskThumbnailPanel panel = TaskThumbnailView.AddTaskPanel(task);
+
                 if (Program.Settings.TaskViewMode == TaskViewMode.ThumbnailView)
                 {
-                    TaskThumbnailView.AddTaskPanel(task);
+                    panel.UpdateThumbnail();
                 }
 
                 if (task.Status != TaskStatus.History)
@@ -242,7 +244,11 @@ namespace ShareX
             if (panel != null)
             {
                 panel.UpdateFilename();
-                panel.UpdateThumbnail(task.Image);
+
+                if (Program.Settings.TaskViewMode == TaskViewMode.ThumbnailView)
+                {
+                    panel.UpdateThumbnail(task.Image);
+                }
             }
         }
 
