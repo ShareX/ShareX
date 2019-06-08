@@ -99,11 +99,11 @@ namespace ShareX
             }
         }
 
-        public void UpdateAllThumbnails()
+        public void UpdateAllThumbnails(bool forceUpdate = false)
         {
             foreach (TaskThumbnailPanel panel in Panels)
             {
-                if (!panel.ThumbnailExists)
+                if (forceUpdate || !panel.ThumbnailExists)
                 {
                     panel.UpdateThumbnail();
                 }

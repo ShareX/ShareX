@@ -162,22 +162,20 @@ namespace ShareX
             }
         }
 
+        public void UpdateFilename()
+        {
+            Filename = Task.Info?.FileName;
+        }
+
         public void ChangeThumbnailSize(Size size)
         {
             ThumbnailSize = size;
             Size = new Size(pThumbnail.Padding.Horizontal + ThumbnailSize.Width, pThumbnail.Top + pThumbnail.Padding.Vertical + ThumbnailSize.Height);
         }
 
-        public void UpdateFilename()
-        {
-            Filename = Task.Info?.FileName;
-        }
-
         public void UpdateThumbnail(Image image = null)
         {
             ClearThumbnail();
-
-            ThumbnailExists = false;
 
             if (!ThumbnailSize.IsEmpty && Task.Info != null)
             {
@@ -271,6 +269,8 @@ namespace ShareX
 
             ThumbnailSupportsClick = false;
             pbThumbnail.Cursor = pThumbnail.Cursor = Cursors.Default;
+
+            ThumbnailExists = false;
         }
 
         private void PbThumbnail_MouseDown(object sender, MouseEventArgs e)
