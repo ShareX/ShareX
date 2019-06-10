@@ -2549,6 +2549,16 @@ namespace ShareX.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap ui_thumbnail_title {
+            get {
+                object obj = ResourceManager.GetObject("ui_thumbnail_title", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap ui_toolbar__arrow {
             get {
                 object obj = ResourceManager.GetObject("ui_toolbar__arrow", resourceCulture);

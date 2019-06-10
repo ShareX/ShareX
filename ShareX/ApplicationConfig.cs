@@ -53,6 +53,7 @@ namespace ShareX
         public TaskViewMode TaskViewMode = TaskViewMode.ThumbnailView;
         public bool ShowMenu = true;
         public bool ShowColumns = true;
+        public bool ShowThumbnailTitle = true;
         public ImagePreviewVisibility ImagePreview = ImagePreviewVisibility.Automatic;
         public ImagePreviewLocation ImagePreviewLocation = ImagePreviewLocation.Side;
         public int PreviewSplitterDistance = 335;

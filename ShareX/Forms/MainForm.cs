@@ -597,7 +597,7 @@ namespace ShareX
             tsmiStopUpload.Visible = tsmiOpen.Visible = tsmiCopy.Visible = tsmiShowErrors.Visible = tsmiShowResponse.Visible = tsmiSearchImage.Visible =
                 tsmiShowQRCode.Visible = tsmiOCRImage.Visible = tsmiCombineImages.Visible = tsmiUploadSelectedFile.Visible = tsmiDownloadSelectedURL.Visible =
                 tsmiEditSelectedFile.Visible = tsmiDeleteSelectedItem.Visible = tsmiDeleteSelectedFile.Visible = tsmiShortenSelectedURL.Visible =
-                tsmiShareSelectedURL.Visible = tsmiClearList.Visible = tssUploadInfo1.Visible = tsmiHideColumns.Visible = tsmiImagePreview.Visible = false;
+                tsmiShareSelectedURL.Visible = false;
 
             if (Program.Settings.TaskViewMode == TaskViewMode.ListView)
             {
@@ -732,7 +732,6 @@ namespace ShareX
             }
 
             tsmiClearList.Visible = tssUploadInfo1.Visible = lvUploads.Items.Count > 0;
-            tsmiHideColumns.Visible = tsmiImagePreview.Visible = Program.Settings.TaskViewMode == TaskViewMode.ListView;
 
             cmsTaskInfo.ResumeLayout();
 
@@ -1064,6 +1063,8 @@ namespace ShareX
 
             tsMain.Visible = Program.Settings.ShowMenu;
 
+            tsmiHideColumns.Visible = tsmiImagePreview.Visible = Program.Settings.TaskViewMode == TaskViewMode.ListView;
+
             if (Program.Settings.ShowColumns)
             {
                 tsmiHideColumns.Text = Resources.MainForm_UpdateMainWindowLayout_Hide_columns;
@@ -1074,6 +1075,20 @@ namespace ShareX
             }
 
             lvUploads.HeaderStyle = Program.Settings.ShowColumns ? ColumnHeaderStyle.Nonclickable : ColumnHeaderStyle.None;
+
+            ucTaskThumbnailView.TitleVisible = Program.Settings.ShowThumbnailTitle;
+
+            tsmiHideThumbnailTitle.Visible = Program.Settings.TaskViewMode == TaskViewMode.ThumbnailView;
+
+            // TODO: Translate
+            if (Program.Settings.ShowThumbnailTitle)
+            {
+                tsmiHideThumbnailTitle.Text = "Hide thumbnail title";
+            }
+            else
+            {
+                tsmiHideThumbnailTitle.Text = "Show thumbnail title";
+            }
 
             Refresh();
         }
@@ -2346,6 +2361,12 @@ namespace ShareX
             UpdateContextMenu();
         }
 
+        private void TsmiHideThumbnailTitle_Click(object sender, EventArgs e)
+        {
+            Program.Settings.ShowThumbnailTitle = !Program.Settings.ShowThumbnailTitle;
+            UpdateMainWindowLayout();
+        }
+
         private void TsmiSwitchTaskViewMode_Click(object sender, EventArgs e)
         {
             tsMain.SendToBack();
@@ -2361,6 +2382,7 @@ namespace ShareX
             }
 
             UpdateTaskViewMode();
+            UpdateMainWindowLayout();
             UpdateContextMenu();
         }
 

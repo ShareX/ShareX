@@ -878,37 +878,37 @@
     <value>News</value>
   </data>
   <data name="tsmiShowDebugLog.Size" type="System.Drawing.Size, System.Drawing">
-    <value>172, 22</value>
+    <value>171, 22</value>
   </data>
   <data name="tsmiShowDebugLog.Text" xml:space="preserve">
     <value>Debug log...</value>
   </data>
   <data name="tsmiTestImageUpload.Size" type="System.Drawing.Size, System.Drawing">
-    <value>172, 22</value>
+    <value>171, 22</value>
   </data>
   <data name="tsmiTestImageUpload.Text" xml:space="preserve">
     <value>Test image upload</value>
   </data>
   <data name="tsmiTestTextUpload.Size" type="System.Drawing.Size, System.Drawing">
-    <value>172, 22</value>
+    <value>171, 22</value>
   </data>
   <data name="tsmiTestTextUpload.Text" xml:space="preserve">
     <value>Test text upload</value>
   </data>
   <data name="tsmiTestFileUpload.Size" type="System.Drawing.Size, System.Drawing">
-    <value>172, 22</value>
+    <value>171, 22</value>
   </data>
   <data name="tsmiTestFileUpload.Text" xml:space="preserve">
     <value>Test file upload</value>
   </data>
   <data name="tsmiTestURLShortener.Size" type="System.Drawing.Size, System.Drawing">
-    <value>172, 22</value>
+    <value>171, 22</value>
   </data>
   <data name="tsmiTestURLShortener.Text" xml:space="preserve">
     <value>Test URL shortener</value>
   </data>
   <data name="tsmiTestURLSharing.Size" type="System.Drawing.Size, System.Drawing">
-    <value>172, 22</value>
+    <value>171, 22</value>
   </data>
   <data name="tsmiTestURLSharing.Text" xml:space="preserve">
     <value>Test URL sharing</value>
@@ -1334,34 +1334,34 @@
     <value>Hide columns</value>
   </data>
   <data name="tsmiImagePreviewShow.Size" type="System.Drawing.Size, System.Drawing">
-    <value>130, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="tsmiImagePreviewShow.Text" xml:space="preserve">
     <value>Show</value>
   </data>
   <data name="tsmiImagePreviewHide.Size" type="System.Drawing.Size, System.Drawing">
-    <value>130, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="tsmiImagePreviewHide.Text" xml:space="preserve">
     <value>Hide</value>
   </data>
   <data name="tsmiImagePreviewAutomatic.Size" type="System.Drawing.Size, System.Drawing">
-    <value>130, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="tsmiImagePreviewAutomatic.Text" xml:space="preserve">
     <value>Automatic</value>
   </data>
   <data name="tssImagePreview.Size" type="System.Drawing.Size, System.Drawing">
-    <value>127, 6</value>
+    <value>177, 6</value>
   </data>
   <data name="tsmiImagePreviewSide.Size" type="System.Drawing.Size, System.Drawing">
-    <value>130, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="tsmiImagePreviewSide.Text" xml:space="preserve">
     <value>Side</value>
   </data>
   <data name="tsmiImagePreviewBottom.Size" type="System.Drawing.Size, System.Drawing">
-    <value>130, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="tsmiImagePreviewBottom.Text" xml:space="preserve">
     <value>Bottom</value>
@@ -1372,6 +1372,12 @@
   <data name="tsmiImagePreview.Text" xml:space="preserve">
     <value>Image preview</value>
   </data>
+  <data name="tsmiHideThumbnailTitle.Size" type="System.Drawing.Size, System.Drawing">
+    <value>228, 22</value>
+  </data>
+  <data name="tsmiHideThumbnailTitle.Text" xml:space="preserve">
+    <value>Hide thumbnail title</value>
+  </data>
   <data name="tsmiSwitchTaskViewMode.Size" type="System.Drawing.Size, System.Drawing">
     <value>228, 22</value>
   </data>
@@ -1379,7 +1385,7 @@
     <value>Switch to thumbnail view</value>
   </data>
   <data name="cmsTaskInfo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>229, 472</value>
+    <value>229, 494</value>
   </data>
   <data name="&gt;&gt;cmsTaskInfo.Name" xml:space="preserve">
     <value>cmsTaskInfo</value>
@@ -1533,7 +1539,7 @@
     <value>Screenshot delay</value>
   </data>
   <data name="tsmiTrayCapture.Size" type="System.Drawing.Size, System.Drawing">
-    <value>192, 22</value>
+    <value>191, 22</value>
   </data>
   <data name="tsmiTrayCapture.Text" xml:space="preserve">
     <value>Capture</value>
@@ -1581,13 +1587,13 @@
     <value>Shorten URL...</value>
   </data>
   <data name="tsmiTrayUpload.Size" type="System.Drawing.Size, System.Drawing">
-    <value>192, 22</value>
+    <value>191, 22</value>
   </data>
   <data name="tsmiTrayUpload.Text" xml:space="preserve">
     <value>Upload</value>
   </data>
   <data name="tsmiTrayWorkflows.Size" type="System.Drawing.Size, System.Drawing">
-    <value>192, 22</value>
+    <value>191, 22</value>
   </data>
   <data name="tsmiTrayWorkflows.Text" xml:space="preserve">
     <value>Workflows</value>
@@ -1677,22 +1683,22 @@
     <value>Monitor test...</value>
   </data>
   <data name="tsmiTrayTools.Size" type="System.Drawing.Size, System.Drawing">
-    <value>192, 22</value>
+    <value>191, 22</value>
   </data>
   <data name="tsmiTrayTools.Text" xml:space="preserve">
     <value>Tools</value>
   </data>
   <data name="tssTray1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>189, 6</value>
+    <value>188, 6</value>
   </data>
   <data name="tsmiTrayAfterCaptureTasks.Size" type="System.Drawing.Size, System.Drawing">
-    <value>192, 22</value>
+    <value>191, 22</value>
   </data>
   <data name="tsmiTrayAfterCaptureTasks.Text" xml:space="preserve">
     <value>After capture tasks</value>
   </data>
   <data name="tsmiTrayAfterUploadTasks.Size" type="System.Drawing.Size, System.Drawing">
-    <value>192, 22</value>
+    <value>191, 22</value>
   </data>
   <data name="tsmiTrayAfterUploadTasks.Text" xml:space="preserve">
     <value>After upload tasks</value>
@@ -1743,115 +1749,115 @@
     <value>Custom uploader settings...</value>
   </data>
   <data name="tsmiTrayDestinations.Size" type="System.Drawing.Size, System.Drawing">
-    <value>192, 22</value>
+    <value>191, 22</value>
   </data>
   <data name="tsmiTrayDestinations.Text" xml:space="preserve">
     <value>Destinations</value>
   </data>
   <data name="tsmiTrayTaskSettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>192, 22</value>
+    <value>191, 22</value>
   </data>
   <data name="tsmiTrayTaskSettings.Text" xml:space="preserve">
     <value>Task settings...</value>
   </data>
   <data name="tsmiTrayApplicationSettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>192, 22</value>
+    <value>191, 22</value>
   </data>
   <data name="tsmiTrayApplicationSettings.Text" xml:space="preserve">
     <value>Application settings...</value>
   </data>
   <data name="tsmiTrayHotkeySettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>192, 22</value>
+    <value>191, 22</value>
   </data>
   <data name="tsmiTrayHotkeySettings.Text" xml:space="preserve">
     <value>Hotkey settings...</value>
   </data>
   <data name="tsmiTrayToggleHotkeys.Size" type="System.Drawing.Size, System.Drawing">
-    <value>192, 22</value>
+    <value>191, 22</value>
   </data>
   <data name="tsmiTrayToggleHotkeys.Text" xml:space="preserve">
     <value>Disable hotkeys</value>
   </data>
   <data name="tssTray2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>189, 6</value>
+    <value>188, 6</value>
   </data>
   <data name="tsmiScreenshotsFolder.Size" type="System.Drawing.Size, System.Drawing">
-    <value>192, 22</value>
+    <value>191, 22</value>
   </data>
   <data name="tsmiScreenshotsFolder.Text" xml:space="preserve">
     <value>Screenshots folder...</value>
   </data>
   <data name="tsmiTrayHistory.Size" type="System.Drawing.Size, System.Drawing">
-    <value>192, 22</value>
+    <value>191, 22</value>
   </data>
   <data name="tsmiTrayHistory.Text" xml:space="preserve">
     <value>History...</value>
   </data>
   <data name="tsmiTrayImageHistory.Size" type="System.Drawing.Size, System.Drawing">
-    <value>192, 22</value>
+    <value>191, 22</value>
   </data>
   <data name="tsmiTrayImageHistory.Text" xml:space="preserve">
     <value>Image history...</value>
   </data>
   <data name="tsmiTrayShowDebugLog.Size" type="System.Drawing.Size, System.Drawing">
-    <value>172, 22</value>
+    <value>171, 22</value>
   </data>
   <data name="tsmiTrayShowDebugLog.Text" xml:space="preserve">
     <value>Debug log...</value>
   </data>
   <data name="tsmiTrayTestImageUpload.Size" type="System.Drawing.Size, System.Drawing">
-    <value>172, 22</value>
+    <value>171, 22</value>
   </data>
   <data name="tsmiTrayTestImageUpload.Text" xml:space="preserve">
     <value>Test image upload</value>
   </data>
   <data name="tsmiTrayTestTextUpload.Size" type="System.Drawing.Size, System.Drawing">
-    <value>172, 22</value>
+    <value>171, 22</value>
   </data>
   <data name="tsmiTrayTestTextUpload.Text" xml:space="preserve">
     <value>Test text upload</value>
   </data>
   <data name="tsmiTrayTestFileUpload.Size" type="System.Drawing.Size, System.Drawing">
-    <value>172, 22</value>
+    <value>171, 22</value>
   </data>
   <data name="tsmiTrayTestFileUpload.Text" xml:space="preserve">
     <value>Test file upload</value>
   </data>
   <data name="tsmiTrayTestURLShortener.Size" type="System.Drawing.Size, System.Drawing">
-    <value>172, 22</value>
+    <value>171, 22</value>
   </data>
   <data name="tsmiTrayTestURLShortener.Text" xml:space="preserve">
     <value>Test URL shortener</value>
   </data>
   <data name="tsmiTrayTestURLSharing.Size" type="System.Drawing.Size, System.Drawing">
-    <value>172, 22</value>
+    <value>171, 22</value>
   </data>
   <data name="tsmiTrayTestURLSharing.Text" xml:space="preserve">
     <value>Test URL sharing</value>
   </data>
   <data name="tsmiTrayDebug.Size" type="System.Drawing.Size, System.Drawing">
-    <value>192, 22</value>
+    <value>191, 22</value>
   </data>
   <data name="tsmiTrayDebug.Text" xml:space="preserve">
     <value>Debug</value>
   </data>
   <data name="tsmiTrayDonate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>192, 22</value>
+    <value>191, 22</value>
   </data>
   <data name="tsmiTrayDonate.Text" xml:space="preserve">
     <value>Donate...</value>
   </data>
   <data name="tsmiTrayAbout.Size" type="System.Drawing.Size, System.Drawing">
-    <value>192, 22</value>
+    <value>191, 22</value>
   </data>
   <data name="tsmiTrayAbout.Text" xml:space="preserve">
     <value>About...</value>
   </data>
   <data name="tssTray3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>189, 6</value>
+    <value>188, 6</value>
   </data>
   <data name="tsmiTrayRecentItems.Size" type="System.Drawing.Size, System.Drawing">
-    <value>192, 22</value>
+    <value>191, 22</value>
   </data>
   <data name="tsmiTrayRecentItems.Text" xml:space="preserve">
     <value>Recent links</value>
@@ -1860,25 +1866,25 @@
     <value>False</value>
   </data>
   <data name="tsmiOpenActionsToolbar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>192, 22</value>
+    <value>191, 22</value>
   </data>
   <data name="tsmiOpenActionsToolbar.Text" xml:space="preserve">
     <value>Toggle actions toolbar</value>
   </data>
   <data name="tsmiTrayShow.Size" type="System.Drawing.Size, System.Drawing">
-    <value>192, 22</value>
+    <value>191, 22</value>
   </data>
   <data name="tsmiTrayShow.Text" xml:space="preserve">
     <value>Open main window</value>
   </data>
   <data name="tsmiTrayExit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>192, 22</value>
+    <value>191, 22</value>
   </data>
   <data name="tsmiTrayExit.Text" xml:space="preserve">
     <value>Exit</value>
   </data>
   <data name="cmsTray.Size" type="System.Drawing.Size, System.Drawing">
-    <value>193, 484</value>
+    <value>192, 484</value>
   </data>
   <data name="&gt;&gt;cmsTray.Name" xml:space="preserve">
     <value>cmsTray</value>
@@ -3072,6 +3078,12 @@
     <value>tsmiImagePreviewBottom</value>
   </data>
   <data name="&gt;&gt;tsmiImagePreviewBottom.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsmiHideThumbnailTitle.Name" xml:space="preserve">
+    <value>tsmiHideThumbnailTitle</value>
+  </data>
+  <data name="&gt;&gt;tsmiHideThumbnailTitle.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiSwitchTaskViewMode.Name" xml:space="preserve">

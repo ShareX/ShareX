@@ -1598,6 +1598,9 @@
   <ItemGroup>
     <None Include="Resources\application-list.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ui-thumbnail-title.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>

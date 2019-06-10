@@ -185,6 +185,7 @@
             this.tssImagePreview = new System.Windows.Forms.ToolStripSeparator();
             this.tsmiImagePreviewSide = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiImagePreviewBottom = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiHideThumbnailTitle = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiSwitchTaskViewMode = new System.Windows.Forms.ToolStripMenuItem();
             this.niTray = new System.Windows.Forms.NotifyIcon(this.components);
             this.cmsTray = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -1037,6 +1038,7 @@
             this.tsmiHideMenu,
             this.tsmiHideColumns,
             this.tsmiImagePreview,
+            this.tsmiHideThumbnailTitle,
             this.tsmiSwitchTaskViewMode});
             this.cmsTaskInfo.Name = "cmsHistory";
             resources.ApplyResources(this.cmsTaskInfo, "cmsTaskInfo");
@@ -1487,6 +1489,13 @@
             resources.ApplyResources(this.tsmiImagePreviewBottom, "tsmiImagePreviewBottom");
             this.tsmiImagePreviewBottom.Tag = "Location";
             this.tsmiImagePreviewBottom.Click += new System.EventHandler(this.tsmiImagePreviewBottom_Click);
+            // 
+            // tsmiHideThumbnailTitle
+            // 
+            this.tsmiHideThumbnailTitle.Image = global::ShareX.Properties.Resources.ui_thumbnail_title;
+            this.tsmiHideThumbnailTitle.Name = "tsmiHideThumbnailTitle";
+            resources.ApplyResources(this.tsmiHideThumbnailTitle, "tsmiHideThumbnailTitle");
+            this.tsmiHideThumbnailTitle.Click += new System.EventHandler(this.TsmiHideThumbnailTitle_Click);
             // 
             // tsmiSwitchTaskViewMode
             // 
@@ -2191,6 +2200,7 @@
             this.ucTaskThumbnailView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(47)))), ((int)(((byte)(56)))));
             this.ucTaskThumbnailView.Name = "ucTaskThumbnailView";
             this.ucTaskThumbnailView.ThumbnailSize = new System.Drawing.Size(200, 150);
+            this.ucTaskThumbnailView.TitleVisible = true;
             this.ucTaskThumbnailView.ContextMenuRequested += new ShareX.TaskThumbnailView.TaskViewMouseEventHandler(this.UcTaskView_ContextMenuRequested);
             // 
             // flpCommunity
@@ -2506,5 +2516,6 @@
         private TaskThumbnailView ucTaskThumbnailView;
         private System.Windows.Forms.ToolStripMenuItem tsmiSwitchTaskViewMode;
         public System.Windows.Forms.Label lblThumbnailViewTip;
+        private System.Windows.Forms.ToolStripMenuItem tsmiHideThumbnailTitle;
     }
 }

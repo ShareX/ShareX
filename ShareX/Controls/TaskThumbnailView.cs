@@ -35,6 +35,29 @@ namespace ShareX
     {
         public List<TaskThumbnailPanel> Panels { get; private set; }
         public TaskThumbnailPanel SelectedPanel { get; private set; }
+
+        public bool TitleVisible
+        {
+            get
+            {
+                return titleVisible;
+            }
+            set
+            {
+                if (titleVisible != value)
+                {
+                    titleVisible = value;
+
+                    foreach (TaskThumbnailPanel panel in Panels)
+                    {
+                        panel.TitleVisible = titleVisible;
+                    }
+                }
+            }
+        }
+
+        private bool titleVisible = true;
+
         public Size ThumbnailSize { get; set; } = new Size(200, 150);
 
         public delegate void TaskViewMouseEventHandler(object sender, MouseEventArgs e, WorkerTask task);
@@ -70,24 +93,26 @@ namespace ShareX
             }
         }
 
-        public TaskThumbnailPanel FindPanel(WorkerTask task)
-        {
-            return Panels.FirstOrDefault(x => x.Task == task);
-        }
-
-        public TaskThumbnailPanel AddTaskPanel(WorkerTask task)
+        private TaskThumbnailPanel CreatePanel(WorkerTask task)
         {
             TaskThumbnailPanel panel = new TaskThumbnailPanel(task);
             panel.MouseDown += (sender, e) => SelectedPanel = panel;
             panel.MouseUp += Panel_MouseUp;
-            panel.ChangeThumbnailSize(ThumbnailSize);
+            panel.ThumbnailSize = ThumbnailSize;
+            panel.TitleVisible = TitleVisible;
+            return panel;
+        }
+
+        public TaskThumbnailPanel AddPanel(WorkerTask task)
+        {
+            TaskThumbnailPanel panel = CreatePanel(task);
             Panels.Add(panel);
             flpMain.Controls.Add(panel);
             flpMain.Controls.SetChildIndex(panel, 0);
             return panel;
         }
 
-        public void RemoveTaskPanel(WorkerTask task)
+        public void RemovePanel(WorkerTask task)
         {
             TaskThumbnailPanel panel = FindPanel(task);
 
@@ -97,6 +122,11 @@ namespace ShareX
                 flpMain.Controls.Remove(panel);
                 panel.Dispose();
             }
+        }
+
+        public TaskThumbnailPanel FindPanel(WorkerTask task)
+        {
+            return Panels.FirstOrDefault(x => x.Task == task);
         }
 
         public void UpdateAllThumbnails(bool forceUpdate = false)

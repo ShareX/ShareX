@@ -76,7 +76,7 @@ namespace ShareX
 
                 CreateListViewItem(task);
 
-                TaskThumbnailPanel panel = TaskThumbnailView.AddTaskPanel(task);
+                TaskThumbnailPanel panel = TaskThumbnailView.AddPanel(task);
 
                 if (Program.Settings.TaskViewMode == TaskViewMode.ThumbnailView)
                 {
@@ -105,7 +105,7 @@ namespace ShareX
                     ListViewControl.Items.Remove(lvi);
                 }
 
-                TaskThumbnailView.RemoveTaskPanel(task);
+                TaskThumbnailView.RemovePanel(task);
 
                 task.Dispose();
             }

@@ -39,7 +39,7 @@ namespace ShareX
             add
             {
                 base.MouseDown += value;
-                lblFilename.MouseDown += value;
+                lblTitle.MouseDown += value;
                 pThumbnail.MouseDown += value;
                 pbThumbnail.MouseDown += value;
                 pbProgress.MouseDown += value;
@@ -47,7 +47,7 @@ namespace ShareX
             remove
             {
                 base.MouseDown -= value;
-                lblFilename.MouseDown -= value;
+                lblTitle.MouseDown -= value;
                 pThumbnail.MouseDown -= value;
                 pbThumbnail.MouseDown -= value;
                 pbProgress.MouseDown -= value;
@@ -59,7 +59,7 @@ namespace ShareX
             add
             {
                 base.MouseUp += value;
-                lblFilename.MouseUp += value;
+                lblTitle.MouseUp += value;
                 pThumbnail.MouseUp += value;
                 pbThumbnail.MouseUp += value;
                 pbProgress.MouseUp += value;
@@ -67,7 +67,7 @@ namespace ShareX
             remove
             {
                 base.MouseUp -= value;
-                lblFilename.MouseUp -= value;
+                lblTitle.MouseUp -= value;
                 pThumbnail.MouseUp -= value;
                 pbThumbnail.MouseUp -= value;
                 pbProgress.MouseUp -= value;
@@ -76,24 +76,54 @@ namespace ShareX
 
         public WorkerTask Task { get; private set; }
 
-        public string Filename
+        public string Title
         {
             get
             {
-                return filename;
+                return title;
             }
             set
             {
-                filename = value;
+                title = value;
 
-                if (lblFilename.Text != filename)
+                if (lblTitle.Text != title)
                 {
-                    lblFilename.Text = filename;
+                    lblTitle.Text = title;
                 }
             }
         }
 
-        private string filename;
+        private string title;
+
+        public bool TitleVisible
+        {
+            get
+            {
+                return titleVisible;
+            }
+            set
+            {
+                if (titleVisible != value)
+                {
+                    titleVisible = value;
+
+                    if (titleVisible)
+                    {
+                        lblTitle.Visible = true;
+                        pThumbnail.Location = new Point(0, lblTitle.Height + 2);
+                    }
+                    else
+                    {
+                        lblTitle.Visible = false;
+                        pThumbnail.Location = new Point(0, 0);
+                    }
+
+                    UpdateSize();
+                }
+            }
+        }
+
+        private bool titleVisible = true;
 
         public int Progress
         {
@@ -131,7 +161,24 @@ namespace ShareX
 
         public bool ThumbnailExists { get; private set; }
 
-        public Size ThumbnailSize { get; private set; }
+        public Size ThumbnailSize
+        {
+            get
+            {
+                return thumbnailSize;
+            }
+            set
+            {
+                if (thumbnailSize != value)
+                {
+                    thumbnailSize = value;
+
+                    UpdateSize();
+                }
+            }
+        }
+
+        private Size thumbnailSize;
 
         public bool ThumbnailSupportsClick { get; private set; }
 
@@ -150,27 +197,28 @@ namespace ShareX
         {
             if (ShareXResources.UseDarkTheme)
             {
-                lblFilename.ForeColor = ShareXResources.DarkTextColor;
-                lblFilename.TextShadowColor = Color.Black;
+                lblTitle.ForeColor = ShareXResources.DarkTextColor;
+                lblTitle.TextShadowColor = Color.Black;
                 pThumbnail.PanelColor = ShareXResources.DarkBorderColor;
             }
             else
             {
-                lblFilename.ForeColor = SystemColors.WindowText;
-                lblFilename.TextShadowColor = Color.Transparent;
+                lblTitle.ForeColor = SystemColors.WindowText;
+                lblTitle.TextShadowColor = Color.Transparent;
                 pThumbnail.PanelColor = SystemColors.ControlLight;
             }
         }
 
         public void UpdateFilename()
         {
-            Filename = Task.Info?.FileName;
+            Title = Task.Info?.FileName;
         }
 
-        public void ChangeThumbnailSize(Size size)
+        private void UpdateSize()
         {
-            ThumbnailSize = size;
-            Size = new Size(pThumbnail.Padding.Horizontal + ThumbnailSize.Width, pThumbnail.Top + pThumbnail.Padding.Vertical + ThumbnailSize.Height);
+            lblTitle.Width = pThumbnail.Padding.Horizontal + ThumbnailSize.Width;
+            pThumbnail.Size = new Size(pThumbnail.Padding.Horizontal + ThumbnailSize.Width, pThumbnail.Padding.Vertical + ThumbnailSize.Height);
+            Size = new Size(pThumbnail.Width, pThumbnail.Top + pThumbnail.Height);
         }
 
         public void UpdateThumbnail(Image image = null)

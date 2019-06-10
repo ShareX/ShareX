@@ -34,16 +34,13 @@
             this.pThumbnail = new ShareX.TaskRoundedCornerPanel();
             this.pbProgress = new ShareX.HelpersLib.BlackStyleProgressBar();
             this.pbThumbnail = new System.Windows.Forms.PictureBox();
-            this.lblFilename = new ShareX.HelpersLib.BlackStyleLabel();
+            this.lblTitle = new ShareX.HelpersLib.BlackStyleLabel();
             this.pThumbnail.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbThumbnail)).BeginInit();
             this.SuspendLayout();
             // 
             // pThumbnail
             // 
-            this.pThumbnail.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.pThumbnail.BackColor = System.Drawing.Color.Transparent;
             this.pThumbnail.Controls.Add(this.pbProgress);
             this.pThumbnail.Controls.Add(this.pbThumbnail);
@@ -83,20 +80,18 @@
             this.pbThumbnail.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PbThumbnail_MouseMove);
             this.pbThumbnail.MouseUp += new System.Windows.Forms.MouseEventHandler(this.PbThumbnail_MouseUp);
             // 
-            // lblFilename
+            // lblTitle
             // 
-            this.lblFilename.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblFilename.AutoEllipsis = true;
-            this.lblFilename.BackColor = System.Drawing.Color.Transparent;
-            this.lblFilename.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFilename.ForeColor = System.Drawing.Color.White;
-            this.lblFilename.Location = new System.Drawing.Point(0, 0);
-            this.lblFilename.Name = "lblFilename";
-            this.lblFilename.Size = new System.Drawing.Size(256, 22);
-            this.lblFilename.TabIndex = 1;
-            this.lblFilename.Text = "Test.png";
-            this.lblFilename.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblTitle.AutoEllipsis = true;
+            this.lblTitle.BackColor = System.Drawing.Color.Transparent;
+            this.lblTitle.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.ForeColor = System.Drawing.Color.White;
+            this.lblTitle.Location = new System.Drawing.Point(0, 0);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(256, 22);
+            this.lblTitle.TabIndex = 1;
+            this.lblTitle.Text = "Test.png";
+            this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // TaskThumbnailPanel
             // 
@@ -104,7 +99,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.pThumbnail);
-            this.Controls.Add(this.lblFilename);
+            this.Controls.Add(this.lblTitle);
             this.Name = "TaskThumbnailPanel";
             this.Size = new System.Drawing.Size(256, 280);
             this.pThumbnail.ResumeLayout(false);
@@ -116,7 +111,7 @@
         #endregion
 
         private ShareX.TaskRoundedCornerPanel pThumbnail;
-        private HelpersLib.BlackStyleLabel lblFilename;
+        private HelpersLib.BlackStyleLabel lblTitle;
         private HelpersLib.BlackStyleProgressBar pbProgress;
         private System.Windows.Forms.PictureBox pbThumbnail;
     }
