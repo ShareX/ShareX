@@ -58,7 +58,27 @@ namespace ShareX
 
         private bool titleVisible = true;
 
-        public Size ThumbnailSize { get; set; } = new Size(200, 150);
+        public Size ThumbnailSize
+        {
+            get
+            {
+                return thumbnailSize;
+            }
+            set
+            {
+                if (thumbnailSize != value)
+                {
+                    thumbnailSize = value;
+
+                    foreach (TaskThumbnailPanel panel in Panels)
+                    {
+                        panel.ThumbnailSize = thumbnailSize;
+                    }
+                }
+            }
+        }
+
+        private Size thumbnailSize = new Size(200, 150);
 
         public delegate void TaskViewMouseEventHandler(object sender, MouseEventArgs e, WorkerTask task);
         public event TaskViewMouseEventHandler ContextMenuRequested;

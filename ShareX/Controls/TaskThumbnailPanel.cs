@@ -198,7 +198,7 @@ namespace ShareX
             if (ShareXResources.UseDarkTheme)
             {
                 lblTitle.ForeColor = ShareXResources.DarkTextColor;
-                lblTitle.TextShadowColor = Color.Black;
+                lblTitle.TextShadowColor = ShareXResources.DarkBorderColor;
                 pThumbnail.PanelColor = ShareXResources.DarkBorderColor;
             }
             else
