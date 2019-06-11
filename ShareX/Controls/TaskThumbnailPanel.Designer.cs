@@ -64,7 +64,9 @@
             this.pbProgress.ShowPercentageText = true;
             this.pbProgress.Size = new System.Drawing.Size(240, 32);
             this.pbProgress.TabIndex = 1;
+            this.pbProgress.Text = null;
             this.pbProgress.Visible = false;
+            this.pbProgress.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PbThumbnail_MouseClick);
             // 
             // pbThumbnail
             // 

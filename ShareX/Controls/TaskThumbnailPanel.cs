@@ -234,7 +234,7 @@ namespace ShareX
                     if (!string.IsNullOrEmpty(filePath) && File.Exists(filePath))
                     {
                         ThumbnailSupportsClick = true;
-                        pbThumbnail.Cursor = pThumbnail.Cursor = Cursors.Hand;
+                        pThumbnail.Cursor = Cursors.Hand;
                     }
 
                     Image img = CreateThumbnail(filePath, image);
@@ -316,7 +316,7 @@ namespace ShareX
             }
 
             ThumbnailSupportsClick = false;
-            pbThumbnail.Cursor = pThumbnail.Cursor = Cursors.Default;
+            pThumbnail.Cursor = Cursors.Default;
 
             ThumbnailExists = false;
         }
