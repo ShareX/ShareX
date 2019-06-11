@@ -66,6 +66,8 @@ namespace ShareX.HelpersLib
             }
         }
 
+        private int minimum;
+
         [DefaultValue(100)]
         public int Maximum
         {
@@ -99,6 +101,8 @@ namespace ShareX.HelpersLib
             }
         }
 
+        private int maximum;
+
         [DefaultValue(0)]
         public int Value
         {
@@ -122,6 +126,8 @@ namespace ShareX.HelpersLib
             }
         }
 
+        private int value;
+
         [DefaultValue(false)]
         public bool ShowPercentageText
         {
@@ -142,7 +148,24 @@ namespace ShareX.HelpersLib
 
         private bool showPercentageText;
 
-        private int minimum, maximum, value;
+        public override string Text
+        {
+            get
+            {
+                return text;
+            }
+            set
+            {
+                if (text != value)
+                {
+                    text = value;
+
+                    Invalidate();
+                }
+            }
+        }
+
+        private string text;
 
         public BlackStyleProgressBar()
         {
@@ -164,7 +187,15 @@ namespace ShareX.HelpersLib
             if (Value > Minimum && Value <= Maximum)
             {
                 DrawProgressBar(g);
-                DrawText(g, Value + "%");
+
+                if (!string.IsNullOrEmpty(Text))
+                {
+                    DrawText(g, Text);
+                }
+                else if (ShowPercentageText)
+                {
+                    DrawText(g, Value + "%");
+                }
             }
         }
 
@@ -212,11 +243,8 @@ namespace ShareX.HelpersLib
 
         private void DrawText(Graphics g, string text)
         {
-            if (ShowPercentageText)
-            {
-                TextRenderer.DrawText(g, text, Font, ClientRectangle.LocationOffset(0, 1), Color.Black, TextFormatFlags.HorizontalCenter | TextFormatFlags.VerticalCenter);
-                TextRenderer.DrawText(g, text, Font, ClientRectangle, ForeColor, TextFormatFlags.HorizontalCenter | TextFormatFlags.VerticalCenter);
-            }
+            TextRenderer.DrawText(g, text, Font, ClientRectangle.LocationOffset(0, 1), Color.Black, TextFormatFlags.HorizontalCenter | TextFormatFlags.VerticalCenter);
+            TextRenderer.DrawText(g, text, Font, ClientRectangle, ForeColor, TextFormatFlags.HorizontalCenter | TextFormatFlags.VerticalCenter);
         }
     }
 }
