@@ -43,7 +43,7 @@ namespace ShareX.ImageEffectsLib
             }
             set
             {
-                size = value.Min(1);
+                size = value.Max(1);
             }
         }
 

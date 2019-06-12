@@ -49,7 +49,7 @@ namespace ShareX.ImageEffectsLib
             get => size;
             set
             {
-                size = value.Min(1);
+                size = value.Max(1);
 
                 if (size.IsEvenNumber())
                 {

@@ -42,7 +42,7 @@ namespace ShareX.ImageEffectsLib
             }
             set
             {
-                radius = value.Min(3);
+                radius = value.Max(3);
 
                 if (radius.IsEvenNumber())
                 {

@@ -43,7 +43,7 @@ namespace ShareX.ImageEffectsLib
             }
             set
             {
-                cornerRadius = value.Min(0);
+                cornerRadius = value.Max(0);
             }
         }
 

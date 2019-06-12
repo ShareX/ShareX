@@ -91,7 +91,7 @@ namespace ShareX.ImageEffectsLib
             }
             set
             {
-                cornerRadius = value.Min(0);
+                cornerRadius = value.Max(0);
             }
         }
 
@@ -222,7 +222,7 @@ namespace ShareX.ImageEffectsLib
 
                         if (DrawBorder)
                         {
-                            int borderSize = BorderSize.Min(1);
+                            int borderSize = BorderSize.Max(1);
 
                             if (borderSize.IsEvenNumber())
                             {
