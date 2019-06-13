@@ -38,21 +38,11 @@ namespace ShareX
 {
     public static class TaskManager
     {
-        public static MyListView ListViewControl { get; set; }
-
+        public static List<WorkerTask> Tasks { get; } = new List<WorkerTask>();
+        public static TaskListView TaskListView { get; set; }
         public static TaskThumbnailView TaskThumbnailView { get; set; }
-
-        public static bool IsBusy
-        {
-            get
-            {
-                return Tasks.Count > 0 && Tasks.Any(task => task.IsBusy);
-            }
-        }
-
-        private static readonly List<WorkerTask> Tasks = new List<WorkerTask>();
-
-        public static readonly RecentTaskManager RecentManager = new RecentTaskManager();
+        public static RecentTaskManager RecentManager { get; } = new RecentTaskManager();
+        public static bool IsBusy => Tasks.Count > 0 && Tasks.Any(task => task.IsBusy);
 
         private static int lastIconStatus = -1;
 
@@ -74,7 +64,7 @@ namespace ShareX
                     task.UploadersConfigWindowRequested += Task_UploadersConfigWindowRequested;
                 }
 
-                CreateListViewItem(task);
+                TaskListView.AddItem(task);
 
                 TaskThumbnailPanel panel = TaskThumbnailView.AddPanel(task);
 
@@ -98,12 +88,7 @@ namespace ShareX
                 Tasks.Remove(task);
                 UpdateMainFormTip();
 
-                ListViewItem lvi = FindListViewItem(task);
-
-                if (lvi != null)
-                {
-                    ListViewControl.Items.Remove(lvi);
-                }
+                TaskListView.RemoveItem(task);
 
                 TaskThumbnailView.RemovePanel(task);
 
@@ -153,87 +138,17 @@ namespace ShareX
             Program.MainForm.flpSupportUs.Visible = Program.Settings.ShowSupportUsButton;
         }
 
-        private static ListViewItem FindListViewItem(WorkerTask task)
+        private static void Task_StatusChanged(WorkerTask task)
         {
-            foreach (ListViewItem lvi in ListViewControl.Items)
-            {
-                WorkerTask tag = lvi.Tag as WorkerTask;
+            DebugHelper.WriteLine("Task status: " + task.Status);
 
-                if (tag != null && tag == task)
-                {
-                    return lvi;
-                }
-            }
-
-            return null;
-        }
-
-        private static void CreateListViewItem(WorkerTask task)
-        {
-            TaskInfo info = task.Info;
-
-            if (task.Status != TaskStatus.History)
-            {
-                DebugHelper.WriteLine("Task in queue. Job: {0}, Type: {1}, Host: {2}", info.Job, info.UploadDestination, info.UploaderHost);
-            }
-
-            ListViewItem lvi = new ListViewItem();
-            lvi.Tag = task;
-            lvi.Text = info.FileName;
-
-            if (task.Status == TaskStatus.History)
-            {
-                lvi.SubItems.Add(Resources.TaskManager_CreateListViewItem_History);
-                lvi.SubItems.Add(task.Info.TaskEndTime.ToString());
-            }
-            else
-            {
-                lvi.SubItems.Add(Resources.TaskManager_CreateListViewItem_In_queue);
-                lvi.SubItems.Add("");
-            }
-
-            lvi.SubItems.Add("");
-            lvi.SubItems.Add("");
-            lvi.SubItems.Add("");
-
-            if (task.Status == TaskStatus.History)
-            {
-                lvi.SubItems.Add(task.Info.ToString());
-                lvi.ImageIndex = 4;
-            }
-            else
-            {
-                lvi.SubItems.Add("");
-                lvi.ImageIndex = 3;
-            }
-
-            if (Program.Settings.ShowMostRecentTaskFirst)
-            {
-                ListViewControl.Items.Insert(0, lvi);
-            }
-            else
-            {
-                ListViewControl.Items.Add(lvi);
-            }
-
-            lvi.EnsureVisible();
-            ListViewControl.FillLastColumn();
-        }
-
-        private static void ChangeListViewItemStatus(WorkerTask task)
-        {
-            ListViewItem lvi = FindListViewItem(task);
+            ListViewItem lvi = TaskListView.FindItem(task);
 
             if (lvi != null)
             {
                 lvi.SubItems[1].Text = task.Info.Status;
             }
-        }
 
-        private static void Task_StatusChanged(WorkerTask task)
-        {
-            DebugHelper.WriteLine("Task status: " + task.Status);
-            ChangeListViewItemStatus(task);
             UpdateProgressUI();
         }
 
@@ -260,7 +175,7 @@ namespace ShareX
             if (!string.IsNullOrEmpty(info.FilePath)) status += ", Filepath: " + info.FilePath;
             DebugHelper.WriteLine(status);
 
-            ListViewItem lvi = FindListViewItem(task);
+            ListViewItem lvi = TaskListView.FindItem(task);
 
             if (lvi != null)
             {
@@ -284,7 +199,7 @@ namespace ShareX
             {
                 TaskInfo info = task.Info;
 
-                ListViewItem lvi = FindListViewItem(task);
+                ListViewItem lvi = TaskListView.FindItem(task);
 
                 if (lvi != null)
                 {
@@ -374,7 +289,7 @@ namespace ShareX
                             panel.ProgressVisible = false;
                         }
 
-                        ListViewItem lvi = FindListViewItem(task);
+                        ListViewItem lvi = TaskListView.FindItem(task);
 
                         if (task.Status == TaskStatus.Stopped)
                         {
@@ -511,7 +426,7 @@ namespace ShareX
 
                             if (Program.Settings.AutoSelectLastCompletedTask)
                             {
-                                ListViewControl.SelectSingle(lvi);
+                                TaskListView.ListViewControl.SelectSingle(lvi);
                             }
                         }
                     }
@@ -659,7 +574,7 @@ namespace ShareX
 
         public static void AddRecentTasksToMainWindow()
         {
-            if (ListViewControl.Items.Count == 0)
+            if (TaskListView.ListViewControl.Items.Count == 0)
             {
                 foreach (RecentTask recentTask in RecentManager.Tasks)
                 {

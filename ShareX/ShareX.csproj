@@ -341,6 +341,7 @@
     <Compile Include="TaskHelpers.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TaskListView.cs" />
     <Compile Include="TaskManager.cs" />
     <Compile Include="TaskSettings.cs" />
     <Compile Include="UploadInfoParser.cs" />

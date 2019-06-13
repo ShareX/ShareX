@@ -166,7 +166,7 @@ namespace ShareX
             il.Images.Add(Resources.clock);
             lvUploads.SmallImageList = il;
 
-            TaskManager.ListViewControl = lvUploads;
+            TaskManager.TaskListView = new TaskListView(lvUploads);
             TaskManager.TaskThumbnailView = ucTaskThumbnailView;
             uim = new UploadInfoManager(lvUploads);
 
