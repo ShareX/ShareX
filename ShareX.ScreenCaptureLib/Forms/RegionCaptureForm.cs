@@ -575,7 +575,7 @@ namespace ShareX.ScreenCaptureLib
                     break;
             }
 
-            if (e.KeyData >= Keys.D0 && e.KeyData <= Keys.D9)
+            if (!IsEditorMode && e.KeyData >= Keys.D0 && e.KeyData <= Keys.D9)
             {
                 MonitorKey(e.KeyData - Keys.D0);
                 return;
