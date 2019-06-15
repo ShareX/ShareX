@@ -88,7 +88,8 @@ namespace ShareX
         public static bool IgnoreHotkeyWarning { get; private set; }
         public static bool PuushMode { get; private set; }
 
-        internal static ApplicationConfig Settings { get; set; }
+        public static ApplicationConfig Settings { get; set; }
+
         internal static TaskSettings DefaultTaskSettings { get; set; }
         internal static UploadersConfig UploadersConfig { get; set; }
         internal static HotkeysConfig HotkeysConfig { get; set; }
