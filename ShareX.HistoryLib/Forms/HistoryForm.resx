@@ -125,10 +125,43 @@
   <data name="scMain.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
+  <data name="rtbStats.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="rtbStats.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 9.75pt</value>
+  </data>
+  <data name="rtbStats.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="rtbStats.Size" type="System.Drawing.Size, System.Drawing">
+    <value>550, 641</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="rtbStats.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="rtbStats.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="rtbStats.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;rtbStats.Name" xml:space="preserve">
+    <value>rtbStats</value>
+  </data>
+  <data name="&gt;&gt;rtbStats.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rtbStats.Parent" xml:space="preserve">
+    <value>scMain.Panel1</value>
+  </data>
+  <data name="&gt;&gt;rtbStats.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="chIcon.Text" xml:space="preserve">
     <value />
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="chIcon.Width" type="System.Int32, mscorlib">
     <value>24</value>
   </data>
@@ -166,13 +199,13 @@
     <value>lvHistory</value>
   </data>
   <data name="&gt;&gt;lvHistory.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=12.3.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=13.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lvHistory.Parent" xml:space="preserve">
     <value>scMain.Panel1</value>
   </data>
   <data name="&gt;&gt;lvHistory.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="&gt;&gt;scMain.Panel1.Name" xml:space="preserve">
     <value>scMain.Panel1</value>
@@ -189,6 +222,33 @@
   <data name="scMain.Panel1MinSize" type="System.Int32, mscorlib">
     <value>100</value>
   </data>
+  <data name="btnShowStats.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
+  <data name="btnShowStats.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 608</value>
+  </data>
+  <data name="btnShowStats.Size" type="System.Drawing.Size, System.Drawing">
+    <value>144, 24</value>
+  </data>
+  <data name="btnShowStats.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="btnShowStats.Text" xml:space="preserve">
+    <value>Show stats</value>
+  </data>
+  <data name="&gt;&gt;btnShowStats.Name" xml:space="preserve">
+    <value>btnShowStats</value>
+  </data>
+  <data name="&gt;&gt;btnShowStats.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnShowStats.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;btnShowStats.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="pbThumbnail.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
@@ -196,7 +256,7 @@
     <value>8, 8</value>
   </data>
   <data name="pbThumbnail.Size" type="System.Drawing.Size, System.Drawing">
-    <value>408, 384</value>
+    <value>408, 352</value>
   </data>
   <data name="pbThumbnail.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -205,13 +265,13 @@
     <value>pbThumbnail</value>
   </data>
   <data name="&gt;&gt;pbThumbnail.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyPictureBox, ShareX.HelpersLib, Version=12.3.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyPictureBox, ShareX.HelpersLib, Version=13.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;pbThumbnail.Parent" xml:space="preserve">
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;pbThumbnail.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="gbFilters.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left, Right</value>
@@ -601,7 +661,7 @@
     <value>14</value>
   </data>
   <data name="gbFilters.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 400</value>
+    <value>8, 368</value>
   </data>
   <data name="gbFilters.Size" type="System.Drawing.Size, System.Drawing">
     <value>408, 234</value>
@@ -622,7 +682,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;gbFilters.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="panel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -679,7 +739,7 @@
     <value>scMain</value>
   </data>
   <data name="&gt;&gt;scMain.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.SplitContainerCustomSplitter, ShareX.HelpersLib, Version=12.3.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.SplitContainerCustomSplitter, ShareX.HelpersLib, Version=13.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;scMain.Parent" xml:space="preserve">
     <value>$this</value>

@@ -31,12 +31,14 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HistoryForm));
             this.scMain = new ShareX.HelpersLib.SplitContainerCustomSplitter();
+            this.rtbStats = new System.Windows.Forms.RichTextBox();
             this.lvHistory = new ShareX.HelpersLib.MyListView();
             this.chIcon = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chDateTime = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chFilename = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chURL = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnShowStats = new System.Windows.Forms.Button();
             this.pbThumbnail = new ShareX.HelpersLib.MyPictureBox();
             this.gbFilters = new System.Windows.Forms.GroupBox();
             this.lblURLFilter = new System.Windows.Forms.Label();
@@ -70,12 +72,21 @@
             // 
             // scMain.Panel1
             // 
+            this.scMain.Panel1.Controls.Add(this.rtbStats);
             this.scMain.Panel1.Controls.Add(this.lvHistory);
             // 
             // scMain.Panel2
             // 
             this.scMain.Panel2.Controls.Add(this.panel1);
+            this.scMain.SplitterColor = System.Drawing.Color.White;
+            this.scMain.SplitterLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(189)))), ((int)(((byte)(189)))));
             this.scMain.SplitterMoved += new System.Windows.Forms.SplitterEventHandler(this.scMain_SplitterMoved);
+            // 
+            // rtbStats
+            // 
+            this.rtbStats.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            resources.ApplyResources(this.rtbStats, "rtbStats");
+            this.rtbStats.Name = "rtbStats";
             // 
             // lvHistory
             // 
@@ -117,10 +128,18 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnShowStats);
             this.panel1.Controls.Add(this.pbThumbnail);
             this.panel1.Controls.Add(this.gbFilters);
             resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
+            // 
+            // btnShowStats
+            // 
+            resources.ApplyResources(this.btnShowStats, "btnShowStats");
+            this.btnShowStats.Name = "btnShowStats";
+            this.btnShowStats.UseVisualStyleBackColor = true;
+            this.btnShowStats.Click += new System.EventHandler(this.BtnShowStats_Click);
             // 
             // pbThumbnail
             // 
@@ -130,6 +149,7 @@
             this.pbThumbnail.DrawCheckeredBackground = true;
             this.pbThumbnail.FullscreenOnClick = true;
             this.pbThumbnail.Name = "pbThumbnail";
+            this.pbThumbnail.PictureBoxBackColor = System.Drawing.SystemColors.Control;
             this.pbThumbnail.ShowImageSizeLabel = true;
             // 
             // gbFilters
@@ -286,5 +306,7 @@
         private System.Windows.Forms.Label lblFilenameFilter;
         private System.Windows.Forms.Label lblURLFilter;
         private System.Windows.Forms.TextBox txtURLFilter;
+        private System.Windows.Forms.Button btnShowStats;
+        private System.Windows.Forms.RichTextBox rtbStats;
     }
 }

@@ -44,6 +44,7 @@ namespace ShareX.HistoryLib
         private HistoryItemManager him;
         private HistoryItem[] allHistoryItems;
         private string defaultTitle;
+        private bool showingStats;
 
         public HistoryForm(string historyPath, HistorySettings settings, Action<string> uploadFile = null, Action<string> editImage = null)
         {
@@ -53,7 +54,7 @@ namespace ShareX.HistoryLib
             InitializeComponent();
             Icon = ShareXResources.Icon;
             defaultTitle = Text;
-            UpdateTitle();
+            //UpdateTitle();
 
             // Mark the Date column as having a date; used for sorting
             chDateTime.Tag = new DateTime();
@@ -84,6 +85,63 @@ namespace ShareX.HistoryLib
         {
             allHistoryItems = GetHistoryItems();
             ApplyFiltersAndAdd();
+        }
+
+        private void OutputStats(HistoryItem[] historyItems)
+        {
+            rtbStats.ResetText();
+
+            rtbStats.SetFontBold();
+            rtbStats.AppendLine("History item counts:");
+            rtbStats.SetFontRegular();
+            rtbStats.AppendLine("Total: " + historyItems.Length);
+
+            IEnumerable<string> types = historyItems.
+                Select(x => x.Type).
+                GroupBy(x => x).
+                OrderByDescending(x => x.Count()).
+                Select(x => string.Format("{0}: {1}", x.Key, x.Count()));
+
+            rtbStats.AppendLine(string.Join(Environment.NewLine, types));
+
+            rtbStats.AppendLine();
+            rtbStats.SetFontBold();
+            rtbStats.AppendLine("Yearly usages:");
+            rtbStats.SetFontRegular();
+
+            IEnumerable<string> yearlyUsages = historyItems.
+                GroupBy(x => x.DateTime.Year).
+                OrderByDescending(x => x.Key).
+                Select(x => string.Format("{0}: {1} ({2:N0}%)", x.Key, x.Count(), x.Count() / (float)historyItems.Length * 100));
+
+            rtbStats.AppendLine(string.Join(Environment.NewLine, yearlyUsages));
+
+            rtbStats.AppendLine();
+            rtbStats.SetFontBold();
+            rtbStats.AppendLine("File extensions:");
+            rtbStats.SetFontRegular();
+
+            IEnumerable<string> fileExtensions = historyItems.
+                Where(x => !string.IsNullOrEmpty(x.Filename) && !x.Filename.EndsWith(")")).
+                Select(x => Helpers.GetFilenameExtension(x.Filename)).
+                GroupBy(x => x).
+                OrderByDescending(x => x.Count()).
+                Select(x => string.Format("{0} ({1})", x.Key, x.Count()));
+
+            rtbStats.AppendLine(string.Join(Environment.NewLine, fileExtensions));
+
+            rtbStats.AppendLine();
+            rtbStats.SetFontBold();
+            rtbStats.AppendLine("Hosts:");
+            rtbStats.SetFontRegular();
+
+            IEnumerable<string> hosts = historyItems.
+                Select(x => x.Host).
+                GroupBy(x => x).
+                OrderByDescending(x => x.Count()).
+                Select(x => string.Format("{0} ({1})", x.Key, x.Count()));
+
+            rtbStats.AppendLine(string.Join(Environment.NewLine, hosts));
         }
 
         private HistoryItem[] him_GetHistoryItems()
@@ -177,7 +235,7 @@ namespace ShareX.HistoryLib
         {
             Cursor = Cursors.WaitCursor;
 
-            UpdateTitle(historyItems);
+            //UpdateTitle(historyItems);
 
             lvHistory.Items.Clear();
 
@@ -338,6 +396,29 @@ namespace ShareX.HistoryLib
         private void btnRemoveFilters_Click(object sender, EventArgs e)
         {
             AddHistoryItems(allHistoryItems);
+        }
+
+        private void BtnShowStats_Click(object sender, EventArgs e)
+        {
+            if (showingStats)
+            {
+                lvHistory.Visible = true;
+                rtbStats.Visible = false;
+                // TODO: Translate
+                btnShowStats.Text = "Show stats";
+                showingStats = false;
+            }
+            else
+            {
+                rtbStats.Visible = true;
+                lvHistory.Visible = false;
+                // TODO: Translate
+                btnShowStats.Text = "Hide stats";
+                Cursor = Cursors.WaitCursor;
+                OutputStats(allHistoryItems);
+                Cursor = Cursors.Default;
+                showingStats = true;
+            }
         }
 
         private void lvHistory_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)

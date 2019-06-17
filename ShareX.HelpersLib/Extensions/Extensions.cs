@@ -694,5 +694,20 @@ namespace ShareX.HelpersLib
             PropertyInfo pi = dgv.GetType().GetProperty("DoubleBuffered", BindingFlags.Instance | BindingFlags.NonPublic);
             pi.SetValue(dgv, value, null);
         }
+
+        public static void AppendLine(this RichTextBox rtb, string value = "")
+        {
+            rtb.AppendText(value + Environment.NewLine);
+        }
+
+        public static void SetFontRegular(this RichTextBox rtb)
+        {
+            rtb.SelectionFont = new Font(rtb.Font, FontStyle.Regular);
+        }
+
+        public static void SetFontBold(this RichTextBox rtb)
+        {
+            rtb.SelectionFont = new Font(rtb.Font, FontStyle.Bold);
+        }
     }
 }

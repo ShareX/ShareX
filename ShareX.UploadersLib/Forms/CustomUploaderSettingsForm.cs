@@ -768,32 +768,32 @@ namespace ShareX.UploadersLib
         {
             rtbResponseInfo.ResetText();
 
-            rtbResponseInfo.SelectionFont = new Font(rtbResponseInfo.Font, FontStyle.Bold);
+            rtbResponseInfo.SetFontBold();
             rtbResponseInfo.AppendText("Status code:\r\n");
-            rtbResponseInfo.SelectionFont = new Font(rtbResponseInfo.Font, FontStyle.Regular);
+            rtbResponseInfo.SetFontRegular();
             rtbResponseInfo.AppendText($"({(int)responseInfo.StatusCode}) {responseInfo.StatusDescription}");
 
             if (!string.IsNullOrEmpty(responseInfo.ResponseURL))
             {
-                rtbResponseInfo.SelectionFont = new Font(rtbResponseInfo.Font, FontStyle.Bold);
+                rtbResponseInfo.SetFontBold();
                 rtbResponseInfo.AppendText("\r\n\r\nResponse URL:\r\n");
-                rtbResponseInfo.SelectionFont = new Font(rtbResponseInfo.Font, FontStyle.Regular);
+                rtbResponseInfo.SetFontRegular();
                 rtbResponseInfo.AppendText(responseInfo.ResponseURL);
             }
 
             if (responseInfo.Headers != null && responseInfo.Headers.Count > 0)
             {
-                rtbResponseInfo.SelectionFont = new Font(rtbResponseInfo.Font, FontStyle.Bold);
+                rtbResponseInfo.SetFontBold();
                 rtbResponseInfo.AppendText("\r\n\r\nHeaders:\r\n");
-                rtbResponseInfo.SelectionFont = new Font(rtbResponseInfo.Font, FontStyle.Regular);
+                rtbResponseInfo.SetFontRegular();
                 rtbResponseInfo.AppendText(responseInfo.Headers.ToString().TrimEnd('\r', '\n'));
             }
 
             if (includeResponseText && !string.IsNullOrEmpty(responseInfo.ResponseText))
             {
-                rtbResponseInfo.SelectionFont = new Font(rtbResponseInfo.Font, FontStyle.Bold);
+                rtbResponseInfo.SetFontBold();
                 rtbResponseInfo.AppendText("\r\n\r\nResponse text:\r\n");
-                rtbResponseInfo.SelectionFont = new Font(rtbResponseInfo.Font, FontStyle.Regular);
+                rtbResponseInfo.SetFontRegular();
                 rtbResponseInfo.AppendText(responseInfo.ResponseText);
             }
         }
