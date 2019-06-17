@@ -52,7 +52,8 @@ namespace ShareX.HistoryLib
             Settings = settings;
 
             InitializeComponent();
-            Icon = ShareXResources.Icon;
+            ShareXResources.ApplyThemeToForm(this);
+
             defaultTitle = Text;
             UpdateTitle();
 
@@ -77,8 +78,6 @@ namespace ShareX.HistoryLib
             {
                 scMain.SplitterDistance = Settings.SplitterDistance;
             }
-
-            ShareXResources.ApplyTheme(this);
 
             Settings.WindowState.AutoHandleFormState(this);
         }

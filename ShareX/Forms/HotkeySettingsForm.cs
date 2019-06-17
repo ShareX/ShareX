@@ -42,7 +42,8 @@ namespace ShareX
         public HotkeySettingsForm(HotkeyManager hotkeyManager)
         {
             InitializeComponent();
-            Icon = ShareXResources.Icon;
+            ShareXResources.ApplyThemeToForm(this);
+
             PrepareHotkeys(hotkeyManager);
         }
 

@@ -42,8 +42,7 @@ namespace ShareX
         public ApplicationSettingsForm()
         {
             InitializeControls();
-            Icon = ShareXResources.Icon;
-            ShareXResources.ApplyTheme(this);
+            ShareXResources.ApplyThemeToForm(this);
         }
 
         private void SettingsForm_Shown(object sender, EventArgs e)

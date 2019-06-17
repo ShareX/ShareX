@@ -43,6 +43,7 @@ namespace ShareX.HelpersLib
 
         public static bool UseDarkTheme { get; set; }
         public static bool UseWhiteIcon { get; set; }
+        public static bool ApplyTheme { get; set; } = true;
 
         public static Icon Icon => UseWhiteIcon ? Resources.ShareX_Icon_White : Resources.ShareX_Icon;
 
@@ -51,16 +52,29 @@ namespace ShareX.HelpersLib
 
         public static Color BackgroundColor => UseDarkTheme ? DarkBackgroundColor : SystemColors.Window;
         public static Color TextColor => UseDarkTheme ? DarkTextColor : SystemColors.ControlText;
+        public static Color BorderColor => UseDarkTheme ? DarkBorderColor : ProfessionalColors.SeparatorDark;
+        public static Color CheckerColor1 => UseDarkTheme ? DarkCheckerColor1 : SystemColors.ControlLightLight;
+        public static Color CheckerColor2 => UseDarkTheme ? DarkCheckerColor2 : SystemColors.ControlLight;
 
         public static Color DarkBackgroundColor { get; } = Color.FromArgb(42, 47, 56);
         public static Color DarkTextColor { get; } = Color.FromArgb(235, 235, 235);
         public static Color DarkBorderColor { get; } = Color.FromArgb(28, 32, 38);
+        public static Color DarkCheckerColor1 { get; } = Color.FromArgb(60, 60, 60);
+        public static Color DarkCheckerColor2 { get; } = Color.FromArgb(50, 50, 50);
 
         public static int CheckerSize { get; } = 15;
-        public static Color CheckerColor1 => UseDarkTheme ? Color.FromArgb(60, 60, 60) : SystemColors.ControlLightLight;
-        public static Color CheckerColor2 => UseDarkTheme ? Color.FromArgb(50, 50, 50) : SystemColors.ControlLight;
 
-        public static void ApplyTheme(Control control)
+        public static void ApplyThemeToForm(Form form)
+        {
+            form.Icon = Icon;
+
+            if (ApplyTheme)
+            {
+                ApplyThemeToControl(form);
+            }
+        }
+
+        private static void ApplyThemeToControl(Control control)
         {
             if (control is Label ||
                 control is CheckBox ||
@@ -85,7 +99,8 @@ namespace ShareX.HelpersLib
                 control.ForeColor = TextColor;
             }
 
-            if (control is Form || control is TabPage)
+            if (control is Form ||
+                control is TabPage)
             {
                 control.BackColor = BackgroundColor;
             }
@@ -98,7 +113,7 @@ namespace ShareX.HelpersLib
 
             foreach (Control child in control.Controls)
             {
-                ApplyTheme(child);
+                ApplyThemeToControl(child);
             }
         }
     }
