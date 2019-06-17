@@ -78,7 +78,14 @@ namespace ShareX.HistoryLib
                 scMain.SplitterDistance = Settings.SplitterDistance;
             }
 
+            UpdateTheme();
+
             Settings.WindowState.AutoHandleFormState(this);
+        }
+
+        public void UpdateTheme()
+        {
+            ShareXResources.ApplyTheme(this);
         }
 
         private void RefreshHistoryItems()

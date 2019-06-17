@@ -49,6 +49,9 @@ namespace ShareX.HelpersLib
         public static Image Logo => Resources.ShareX_Logo;
         public static Image LogoBlack => Resources.ShareX_Logo_Black;
 
+        public static Color BackgroundColor => UseDarkTheme ? DarkBackgroundColor : SystemColors.Window;
+        public static Color TextColor => UseDarkTheme ? DarkTextColor : SystemColors.ControlText;
+
         public static Color DarkBackgroundColor { get; } = Color.FromArgb(42, 47, 56);
         public static Color DarkTextColor { get; } = Color.FromArgb(235, 235, 235);
         public static Color DarkBorderColor { get; } = Color.FromArgb(28, 32, 38);
@@ -56,5 +59,40 @@ namespace ShareX.HelpersLib
         public static int CheckerSize { get; } = 15;
         public static Color CheckerColor1 => UseDarkTheme ? Color.FromArgb(60, 60, 60) : SystemColors.ControlLightLight;
         public static Color CheckerColor2 => UseDarkTheme ? Color.FromArgb(50, 50, 50) : SystemColors.ControlLight;
+
+        public static void ApplyTheme(Control parent)
+        {
+            foreach (Control control in parent.Controls)
+            {
+                if (control is Label || control is CheckBox || control is RichTextBox)
+                {
+                    control.ForeColor = TextColor;
+                    control.BackColor = BackgroundColor;
+                }
+
+                if (control is Button)
+                {
+                    control.ForeColor = SystemColors.ControlText;
+                }
+
+                if (control is GroupBox)
+                {
+                    control.ForeColor = TextColor;
+                }
+
+                if (control is Form)
+                {
+                    control.BackColor = BackgroundColor;
+                }
+
+                if (control is SplitContainer sc)
+                {
+                    sc.Panel1.BackColor = BackgroundColor;
+                    sc.Panel2.BackColor = BackgroundColor;
+                }
+
+                ApplyTheme(control);
+            }
+        }
     }
 }

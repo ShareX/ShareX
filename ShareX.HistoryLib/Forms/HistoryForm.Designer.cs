@@ -31,13 +31,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HistoryForm));
             this.scMain = new ShareX.HelpersLib.SplitContainerCustomSplitter();
+            this.pStats = new System.Windows.Forms.Panel();
             this.rtbStats = new System.Windows.Forms.RichTextBox();
             this.lvHistory = new ShareX.HelpersLib.MyListView();
             this.chIcon = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chDateTime = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chFilename = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chURL = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.panel1 = new System.Windows.Forms.Panel();
             this.btnShowStats = new System.Windows.Forms.Button();
             this.pbThumbnail = new ShareX.HelpersLib.MyPictureBox();
             this.gbFilters = new System.Windows.Forms.GroupBox();
@@ -56,14 +56,12 @@
             this.cbDateFilter = new System.Windows.Forms.CheckBox();
             this.dtpFilterTo = new System.Windows.Forms.DateTimePicker();
             this.txtFilenameFilter = new System.Windows.Forms.TextBox();
-            this.pStats = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.scMain)).BeginInit();
             this.scMain.Panel1.SuspendLayout();
             this.scMain.Panel2.SuspendLayout();
             this.scMain.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.gbFilters.SuspendLayout();
             this.pStats.SuspendLayout();
+            this.gbFilters.SuspendLayout();
             this.SuspendLayout();
             // 
             // scMain
@@ -79,10 +77,18 @@
             // 
             // scMain.Panel2
             // 
-            this.scMain.Panel2.Controls.Add(this.panel1);
+            this.scMain.Panel2.Controls.Add(this.btnShowStats);
+            this.scMain.Panel2.Controls.Add(this.pbThumbnail);
+            this.scMain.Panel2.Controls.Add(this.gbFilters);
             this.scMain.SplitterColor = System.Drawing.Color.White;
             this.scMain.SplitterLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(189)))), ((int)(((byte)(189)))));
             this.scMain.SplitterMoved += new System.Windows.Forms.SplitterEventHandler(this.scMain_SplitterMoved);
+            // 
+            // pStats
+            // 
+            this.pStats.Controls.Add(this.rtbStats);
+            resources.ApplyResources(this.pStats, "pStats");
+            this.pStats.Name = "pStats";
             // 
             // rtbStats
             // 
@@ -127,14 +133,6 @@
             // chURL
             // 
             resources.ApplyResources(this.chURL, "chURL");
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.btnShowStats);
-            this.panel1.Controls.Add(this.pbThumbnail);
-            this.panel1.Controls.Add(this.gbFilters);
-            resources.ApplyResources(this.panel1, "panel1");
-            this.panel1.Name = "panel1";
             // 
             // btnShowStats
             // 
@@ -260,12 +258,6 @@
             resources.ApplyResources(this.txtFilenameFilter, "txtFilenameFilter");
             this.txtFilenameFilter.Name = "txtFilenameFilter";
             // 
-            // pStats
-            // 
-            this.pStats.Controls.Add(this.rtbStats);
-            resources.ApplyResources(this.pStats, "pStats");
-            this.pStats.Name = "pStats";
-            // 
             // HistoryForm
             // 
             resources.ApplyResources(this, "$this");
@@ -281,10 +273,9 @@
             this.scMain.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.scMain)).EndInit();
             this.scMain.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
+            this.pStats.ResumeLayout(false);
             this.gbFilters.ResumeLayout(false);
             this.gbFilters.PerformLayout();
-            this.pStats.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -297,7 +288,6 @@
         private System.Windows.Forms.ColumnHeader chURL;
         private System.Windows.Forms.ColumnHeader chIcon;
         private ShareX.HelpersLib.SplitContainerCustomSplitter scMain;
-        private System.Windows.Forms.Panel panel1;
         private HelpersLib.MyPictureBox pbThumbnail;
         private System.Windows.Forms.GroupBox gbFilters;
         private System.Windows.Forms.ComboBox cbHostFilterSelection;
