@@ -60,38 +60,45 @@ namespace ShareX.HelpersLib
         public static Color CheckerColor1 => UseDarkTheme ? Color.FromArgb(60, 60, 60) : SystemColors.ControlLightLight;
         public static Color CheckerColor2 => UseDarkTheme ? Color.FromArgb(50, 50, 50) : SystemColors.ControlLight;
 
-        public static void ApplyTheme(Control parent)
+        public static void ApplyTheme(Control control)
         {
-            foreach (Control control in parent.Controls)
+            if (control is Label ||
+                control is CheckBox ||
+                control is RichTextBox ||
+                control is TreeView ||
+                control is ComboBox ||
+                control is NumericUpDown ||
+                control is ListBox ||
+                control is ListView)
             {
-                if (control is Label || control is CheckBox || control is RichTextBox)
-                {
-                    control.ForeColor = TextColor;
-                    control.BackColor = BackgroundColor;
-                }
+                control.ForeColor = TextColor;
+                control.BackColor = BackgroundColor;
+            }
 
-                if (control is Button)
-                {
-                    control.ForeColor = SystemColors.ControlText;
-                }
+            if (control is Button)
+            {
+                control.ForeColor = SystemColors.ControlText;
+            }
 
-                if (control is GroupBox)
-                {
-                    control.ForeColor = TextColor;
-                }
+            if (control is GroupBox)
+            {
+                control.ForeColor = TextColor;
+            }
 
-                if (control is Form)
-                {
-                    control.BackColor = BackgroundColor;
-                }
+            if (control is Form || control is TabPage)
+            {
+                control.BackColor = BackgroundColor;
+            }
 
-                if (control is SplitContainer sc)
-                {
-                    sc.Panel1.BackColor = BackgroundColor;
-                    sc.Panel2.BackColor = BackgroundColor;
-                }
+            if (control is SplitContainer sc)
+            {
+                sc.Panel1.BackColor = BackgroundColor;
+                sc.Panel2.BackColor = BackgroundColor;
+            }
 
-                ApplyTheme(control);
+            foreach (Control child in control.Controls)
+            {
+                ApplyTheme(child);
             }
         }
     }

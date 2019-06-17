@@ -1878,6 +1878,159 @@
   <data name="&gt;&gt;tpUploadResults.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="lvSecondaryFileUploaders.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="lvSecondaryFileUploaders.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 18</value>
+  </data>
+  <data name="lvSecondaryFileUploaders.Size" type="System.Drawing.Size, System.Drawing">
+    <value>162, 242</value>
+  </data>
+  <data name="lvSecondaryFileUploaders.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;lvSecondaryFileUploaders.Name" xml:space="preserve">
+    <value>lvSecondaryFileUploaders</value>
+  </data>
+  <data name="&gt;&gt;lvSecondaryFileUploaders.Type" xml:space="preserve">
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=13.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;lvSecondaryFileUploaders.Parent" xml:space="preserve">
+    <value>gbSecondaryFileUploaders</value>
+  </data>
+  <data name="&gt;&gt;lvSecondaryFileUploaders.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="gbSecondaryFileUploaders.Location" type="System.Drawing.Point, System.Drawing">
+    <value>360, 64</value>
+  </data>
+  <data name="gbSecondaryFileUploaders.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 5, 3, 3</value>
+  </data>
+  <data name="gbSecondaryFileUploaders.Size" type="System.Drawing.Size, System.Drawing">
+    <value>168, 263</value>
+  </data>
+  <data name="gbSecondaryFileUploaders.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="gbSecondaryFileUploaders.Text" xml:space="preserve">
+    <value>Secondary file uploaders</value>
+  </data>
+  <data name="&gt;&gt;gbSecondaryFileUploaders.Name" xml:space="preserve">
+    <value>gbSecondaryFileUploaders</value>
+  </data>
+  <data name="&gt;&gt;gbSecondaryFileUploaders.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;gbSecondaryFileUploaders.Parent" xml:space="preserve">
+    <value>tpUploadRetry</value>
+  </data>
+  <data name="&gt;&gt;gbSecondaryFileUploaders.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lvSecondaryImageUploaders.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="lvSecondaryImageUploaders.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 18</value>
+  </data>
+  <data name="lvSecondaryImageUploaders.Size" type="System.Drawing.Size, System.Drawing">
+    <value>162, 242</value>
+  </data>
+  <data name="lvSecondaryImageUploaders.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;lvSecondaryImageUploaders.Name" xml:space="preserve">
+    <value>lvSecondaryImageUploaders</value>
+  </data>
+  <data name="&gt;&gt;lvSecondaryImageUploaders.Type" xml:space="preserve">
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=13.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;lvSecondaryImageUploaders.Parent" xml:space="preserve">
+    <value>gbSecondaryImageUploaders</value>
+  </data>
+  <data name="&gt;&gt;lvSecondaryImageUploaders.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="gbSecondaryImageUploaders.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 64</value>
+  </data>
+  <data name="gbSecondaryImageUploaders.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 5, 3, 3</value>
+  </data>
+  <data name="gbSecondaryImageUploaders.Size" type="System.Drawing.Size, System.Drawing">
+    <value>168, 263</value>
+  </data>
+  <data name="gbSecondaryImageUploaders.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="gbSecondaryImageUploaders.Text" xml:space="preserve">
+    <value>Secondary image uploaders</value>
+  </data>
+  <data name="&gt;&gt;gbSecondaryImageUploaders.Name" xml:space="preserve">
+    <value>gbSecondaryImageUploaders</value>
+  </data>
+  <data name="&gt;&gt;gbSecondaryImageUploaders.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;gbSecondaryImageUploaders.Parent" xml:space="preserve">
+    <value>tpUploadRetry</value>
+  </data>
+  <data name="&gt;&gt;gbSecondaryImageUploaders.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="lvSecondaryTextUploaders.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="lvSecondaryTextUploaders.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 18</value>
+  </data>
+  <data name="lvSecondaryTextUploaders.Size" type="System.Drawing.Size, System.Drawing">
+    <value>162, 242</value>
+  </data>
+  <data name="lvSecondaryTextUploaders.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;lvSecondaryTextUploaders.Name" xml:space="preserve">
+    <value>lvSecondaryTextUploaders</value>
+  </data>
+  <data name="&gt;&gt;lvSecondaryTextUploaders.Type" xml:space="preserve">
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=13.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;lvSecondaryTextUploaders.Parent" xml:space="preserve">
+    <value>gbSecondaryTextUploaders</value>
+  </data>
+  <data name="&gt;&gt;lvSecondaryTextUploaders.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="gbSecondaryTextUploaders.Location" type="System.Drawing.Point, System.Drawing">
+    <value>184, 64</value>
+  </data>
+  <data name="gbSecondaryTextUploaders.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 5, 3, 3</value>
+  </data>
+  <data name="gbSecondaryTextUploaders.Size" type="System.Drawing.Size, System.Drawing">
+    <value>168, 263</value>
+  </data>
+  <data name="gbSecondaryTextUploaders.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="gbSecondaryTextUploaders.Text" xml:space="preserve">
+    <value>Secondary text uploaders</value>
+  </data>
+  <data name="&gt;&gt;gbSecondaryTextUploaders.Name" xml:space="preserve">
+    <value>gbSecondaryTextUploaders</value>
+  </data>
+  <data name="&gt;&gt;gbSecondaryTextUploaders.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;gbSecondaryTextUploaders.Parent" xml:space="preserve">
+    <value>tpUploadRetry</value>
+  </data>
+  <data name="&gt;&gt;gbSecondaryTextUploaders.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
   <data name="chkUseSecondaryUploaders.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1906,205 +2059,7 @@
     <value>tpUploadRetry</value>
   </data>
   <data name="&gt;&gt;chkUseSecondaryUploaders.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="tlpBackupDestinations.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
-  </data>
-  <data name="tlpBackupDestinations.ColumnCount" type="System.Int32, mscorlib">
     <value>3</value>
-  </data>
-  <data name="lvSecondaryImageUploaders.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="lvSecondaryImageUploaders.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 18</value>
-  </data>
-  <data name="lvSecondaryImageUploaders.Size" type="System.Drawing.Size, System.Drawing">
-    <value>156, 242</value>
-  </data>
-  <data name="lvSecondaryImageUploaders.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;lvSecondaryImageUploaders.Name" xml:space="preserve">
-    <value>lvSecondaryImageUploaders</value>
-  </data>
-  <data name="&gt;&gt;lvSecondaryImageUploaders.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=13.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;lvSecondaryImageUploaders.Parent" xml:space="preserve">
-    <value>gbSecondaryImageUploaders</value>
-  </data>
-  <data name="&gt;&gt;lvSecondaryImageUploaders.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="gbSecondaryImageUploaders.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="gbSecondaryImageUploaders.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 8</value>
-  </data>
-  <data name="gbSecondaryImageUploaders.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 5, 3, 3</value>
-  </data>
-  <data name="gbSecondaryImageUploaders.Size" type="System.Drawing.Size, System.Drawing">
-    <value>162, 263</value>
-  </data>
-  <data name="gbSecondaryImageUploaders.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="gbSecondaryImageUploaders.Text" xml:space="preserve">
-    <value>Secondary image uploaders</value>
-  </data>
-  <data name="&gt;&gt;gbSecondaryImageUploaders.Name" xml:space="preserve">
-    <value>gbSecondaryImageUploaders</value>
-  </data>
-  <data name="&gt;&gt;gbSecondaryImageUploaders.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;gbSecondaryImageUploaders.Parent" xml:space="preserve">
-    <value>tlpBackupDestinations</value>
-  </data>
-  <data name="&gt;&gt;gbSecondaryImageUploaders.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="lvSecondaryFileUploaders.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="lvSecondaryFileUploaders.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 18</value>
-  </data>
-  <data name="lvSecondaryFileUploaders.Size" type="System.Drawing.Size, System.Drawing">
-    <value>158, 242</value>
-  </data>
-  <data name="lvSecondaryFileUploaders.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;lvSecondaryFileUploaders.Name" xml:space="preserve">
-    <value>lvSecondaryFileUploaders</value>
-  </data>
-  <data name="&gt;&gt;lvSecondaryFileUploaders.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=13.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;lvSecondaryFileUploaders.Parent" xml:space="preserve">
-    <value>gbSecondaryFileUploaders</value>
-  </data>
-  <data name="&gt;&gt;lvSecondaryFileUploaders.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="gbSecondaryFileUploaders.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="gbSecondaryFileUploaders.Location" type="System.Drawing.Point, System.Drawing">
-    <value>349, 8</value>
-  </data>
-  <data name="gbSecondaryFileUploaders.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 5, 3, 3</value>
-  </data>
-  <data name="gbSecondaryFileUploaders.Size" type="System.Drawing.Size, System.Drawing">
-    <value>164, 263</value>
-  </data>
-  <data name="gbSecondaryFileUploaders.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="gbSecondaryFileUploaders.Text" xml:space="preserve">
-    <value>Secondary file uploaders</value>
-  </data>
-  <data name="&gt;&gt;gbSecondaryFileUploaders.Name" xml:space="preserve">
-    <value>gbSecondaryFileUploaders</value>
-  </data>
-  <data name="&gt;&gt;gbSecondaryFileUploaders.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;gbSecondaryFileUploaders.Parent" xml:space="preserve">
-    <value>tlpBackupDestinations</value>
-  </data>
-  <data name="&gt;&gt;gbSecondaryFileUploaders.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="lvSecondaryTextUploaders.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="lvSecondaryTextUploaders.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 18</value>
-  </data>
-  <data name="lvSecondaryTextUploaders.Size" type="System.Drawing.Size, System.Drawing">
-    <value>161, 242</value>
-  </data>
-  <data name="lvSecondaryTextUploaders.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;lvSecondaryTextUploaders.Name" xml:space="preserve">
-    <value>lvSecondaryTextUploaders</value>
-  </data>
-  <data name="&gt;&gt;lvSecondaryTextUploaders.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=13.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;lvSecondaryTextUploaders.Parent" xml:space="preserve">
-    <value>gbSecondaryTextUploaders</value>
-  </data>
-  <data name="&gt;&gt;lvSecondaryTextUploaders.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="gbSecondaryTextUploaders.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="gbSecondaryTextUploaders.Location" type="System.Drawing.Point, System.Drawing">
-    <value>176, 8</value>
-  </data>
-  <data name="gbSecondaryTextUploaders.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 5, 3, 3</value>
-  </data>
-  <data name="gbSecondaryTextUploaders.Size" type="System.Drawing.Size, System.Drawing">
-    <value>167, 263</value>
-  </data>
-  <data name="gbSecondaryTextUploaders.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="gbSecondaryTextUploaders.Text" xml:space="preserve">
-    <value>Secondary text uploaders</value>
-  </data>
-  <data name="&gt;&gt;gbSecondaryTextUploaders.Name" xml:space="preserve">
-    <value>gbSecondaryTextUploaders</value>
-  </data>
-  <data name="&gt;&gt;gbSecondaryTextUploaders.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;gbSecondaryTextUploaders.Parent" xml:space="preserve">
-    <value>tlpBackupDestinations</value>
-  </data>
-  <data name="&gt;&gt;gbSecondaryTextUploaders.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="tlpBackupDestinations.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 56</value>
-  </data>
-  <data name="tlpBackupDestinations.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 5, 5, 5</value>
-  </data>
-  <data name="tlpBackupDestinations.RowCount" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="tlpBackupDestinations.Size" type="System.Drawing.Size, System.Drawing">
-    <value>521, 279</value>
-  </data>
-  <data name="tlpBackupDestinations.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;tlpBackupDestinations.Name" xml:space="preserve">
-    <value>tlpBackupDestinations</value>
-  </data>
-  <data name="&gt;&gt;tlpBackupDestinations.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tlpBackupDestinations.Parent" xml:space="preserve">
-    <value>tpUploadRetry</value>
-  </data>
-  <data name="&gt;&gt;tlpBackupDestinations.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="tlpBackupDestinations.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="gbSecondaryImageUploaders" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="gbSecondaryFileUploaders" Row="0" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="gbSecondaryTextUploaders" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,33,Percent,34,Percent,33" /&gt;&lt;Rows Styles="Percent,100" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="cbIfUploadFailRetryOnce.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2134,7 +2089,7 @@
     <value>tpUploadRetry</value>
   </data>
   <data name="&gt;&gt;cbIfUploadFailRetryOnce.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>4</value>
   </data>
   <data name="nudRetryUpload.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 32</value>
@@ -2158,7 +2113,7 @@
     <value>tpUploadRetry</value>
   </data>
   <data name="&gt;&gt;nudRetryUpload.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>5</value>
   </data>
   <data name="tpUploadRetry.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>

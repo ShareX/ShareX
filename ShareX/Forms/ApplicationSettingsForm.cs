@@ -43,6 +43,7 @@ namespace ShareX
         {
             InitializeControls();
             Icon = ShareXResources.Icon;
+            ShareXResources.ApplyTheme(this);
         }
 
         private void SettingsForm_Shown(object sender, EventArgs e)
@@ -176,7 +177,7 @@ namespace ShareX
 
             nudRetryUpload.SetValue(Program.Settings.MaxUploadFailRetry);
             chkUseSecondaryUploaders.Checked = Program.Settings.UseSecondaryUploaders;
-            tlpBackupDestinations.Enabled = Program.Settings.UseSecondaryUploaders;
+            gbSecondaryImageUploaders.Enabled = gbSecondaryTextUploaders.Enabled = gbSecondaryFileUploaders.Enabled = Program.Settings.UseSecondaryUploaders;
 
             Program.Settings.SecondaryImageUploaders.AddRange(Helpers.GetEnums<ImageDestination>().Where(n => Program.Settings.SecondaryImageUploaders.All(e => e != n)));
             Program.Settings.SecondaryTextUploaders.AddRange(Helpers.GetEnums<TextDestination>().Where(n => Program.Settings.SecondaryTextUploaders.All(e => e != n)));
@@ -786,7 +787,7 @@ namespace ShareX
         private void chkUseSecondaryUploaders_CheckedChanged(object sender, EventArgs e)
         {
             Program.Settings.UseSecondaryUploaders = chkUseSecondaryUploaders.Checked;
-            tlpBackupDestinations.Enabled = Program.Settings.UseSecondaryUploaders;
+            gbSecondaryImageUploaders.Enabled = gbSecondaryTextUploaders.Enabled = gbSecondaryFileUploaders.Enabled = Program.Settings.UseSecondaryUploaders;
         }
 
         private void nudRetryUpload_ValueChanged(object sender, EventArgs e)
