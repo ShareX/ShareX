@@ -56,12 +56,14 @@
             this.cbDateFilter = new System.Windows.Forms.CheckBox();
             this.dtpFilterTo = new System.Windows.Forms.DateTimePicker();
             this.txtFilenameFilter = new System.Windows.Forms.TextBox();
+            this.pStats = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.scMain)).BeginInit();
             this.scMain.Panel1.SuspendLayout();
             this.scMain.Panel2.SuspendLayout();
             this.scMain.SuspendLayout();
             this.panel1.SuspendLayout();
             this.gbFilters.SuspendLayout();
+            this.pStats.SuspendLayout();
             this.SuspendLayout();
             // 
             // scMain
@@ -72,7 +74,7 @@
             // 
             // scMain.Panel1
             // 
-            this.scMain.Panel1.Controls.Add(this.rtbStats);
+            this.scMain.Panel1.Controls.Add(this.pStats);
             this.scMain.Panel1.Controls.Add(this.lvHistory);
             // 
             // scMain.Panel2
@@ -258,6 +260,12 @@
             resources.ApplyResources(this.txtFilenameFilter, "txtFilenameFilter");
             this.txtFilenameFilter.Name = "txtFilenameFilter";
             // 
+            // pStats
+            // 
+            this.pStats.Controls.Add(this.rtbStats);
+            resources.ApplyResources(this.pStats, "pStats");
+            this.pStats.Name = "pStats";
+            // 
             // HistoryForm
             // 
             resources.ApplyResources(this, "$this");
@@ -276,6 +284,7 @@
             this.panel1.ResumeLayout(false);
             this.gbFilters.ResumeLayout(false);
             this.gbFilters.PerformLayout();
+            this.pStats.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -308,5 +317,6 @@
         private System.Windows.Forms.TextBox txtURLFilter;
         private System.Windows.Forms.Button btnShowStats;
         private System.Windows.Forms.RichTextBox rtbStats;
+        private System.Windows.Forms.Panel pStats;
     }
 }

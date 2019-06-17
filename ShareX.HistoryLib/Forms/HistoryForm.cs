@@ -54,7 +54,7 @@ namespace ShareX.HistoryLib
             InitializeComponent();
             Icon = ShareXResources.Icon;
             defaultTitle = Text;
-            //UpdateTitle();
+            UpdateTitle();
 
             // Mark the Date column as having a date; used for sorting
             chDateTime.Tag = new DateTime();
@@ -97,10 +97,9 @@ namespace ShareX.HistoryLib
             rtbStats.AppendLine("Total: " + historyItems.Length);
 
             IEnumerable<string> types = historyItems.
-                Select(x => x.Type).
-                GroupBy(x => x).
+                GroupBy(x => x.Type).
                 OrderByDescending(x => x.Count()).
-                Select(x => string.Format("{0}: {1}", x.Key, x.Count()));
+                Select(x => string.Format("{0}: {1} ({2:N0}%)", x.Key, x.Count(), x.Count() / (float)historyItems.Length * 100));
 
             rtbStats.AppendLine(string.Join(Environment.NewLine, types));
 
@@ -136,8 +135,7 @@ namespace ShareX.HistoryLib
             rtbStats.SetFontRegular();
 
             IEnumerable<string> hosts = historyItems.
-                Select(x => x.Host).
-                GroupBy(x => x).
+                GroupBy(x => x.Host).
                 OrderByDescending(x => x.Count()).
                 Select(x => string.Format("{0} ({1})", x.Key, x.Count()));
 
@@ -235,7 +233,7 @@ namespace ShareX.HistoryLib
         {
             Cursor = Cursors.WaitCursor;
 
-            //UpdateTitle(historyItems);
+            UpdateTitle(historyItems);
 
             lvHistory.Items.Clear();
 
@@ -292,11 +290,10 @@ namespace ShareX.HistoryLib
                     status.AppendFormat(" - " + Resources.HistoryForm_UpdateItemCount___Filtered___0_, historyItems.Length.ToString("N0"));
                 }
 
-                IEnumerable<string> types = from hi in historyItems
-                                            group hi by hi.Type
-                                            into t
-                                            let count = t.Count()
-                                            select string.Format(" - {0}: {1:N0}", t.Key, count);
+                IEnumerable<string> types = historyItems.
+                    GroupBy(x => x.Type).
+                    OrderByDescending(x => x.Count()).
+                    Select(x => string.Format(" - {0}: {1}", x.Key, x.Count()));
 
                 foreach (string type in types)
                 {
@@ -403,14 +400,14 @@ namespace ShareX.HistoryLib
             if (showingStats)
             {
                 lvHistory.Visible = true;
-                rtbStats.Visible = false;
+                pStats.Visible = false;
                 // TODO: Translate
                 btnShowStats.Text = "Show stats";
                 showingStats = false;
             }
             else
             {
-                rtbStats.Visible = true;
+                pStats.Visible = true;
                 lvHistory.Visible = false;
                 // TODO: Translate
                 btnShowStats.Text = "Hide stats";

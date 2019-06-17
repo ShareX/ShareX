@@ -132,10 +132,10 @@
     <value>Arial, 9.75pt</value>
   </data>
   <data name="rtbStats.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
+    <value>3, 3</value>
   </data>
   <data name="rtbStats.Size" type="System.Drawing.Size, System.Drawing">
-    <value>550, 641</value>
+    <value>544, 635</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="rtbStats.TabIndex" type="System.Int32, mscorlib">
@@ -144,9 +144,6 @@
   <data name="rtbStats.Text" xml:space="preserve">
     <value />
   </data>
-  <data name="rtbStats.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
   <data name="&gt;&gt;rtbStats.Name" xml:space="preserve">
     <value>rtbStats</value>
   </data>
@@ -154,9 +151,39 @@
     <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;rtbStats.Parent" xml:space="preserve">
-    <value>scMain.Panel1</value>
+    <value>pStats</value>
   </data>
   <data name="&gt;&gt;rtbStats.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="pStats.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="pStats.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="pStats.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="pStats.Size" type="System.Drawing.Size, System.Drawing">
+    <value>550, 641</value>
+  </data>
+  <data name="pStats.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="pStats.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;pStats.Name" xml:space="preserve">
+    <value>pStats</value>
+  </data>
+  <data name="&gt;&gt;pStats.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pStats.Parent" xml:space="preserve">
+    <value>scMain.Panel1</value>
+  </data>
+  <data name="&gt;&gt;pStats.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="chIcon.Text" xml:space="preserve">
