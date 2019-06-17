@@ -828,13 +828,17 @@ namespace ShareX
             }
 
             HotkeyRepeatLimit = Program.Settings.HotkeyRepeatLimit;
+
             HelpersOptions.CurrentProxy = Program.Settings.ProxySettings;
             HelpersOptions.AcceptInvalidSSLCertificates = Program.Settings.AcceptInvalidSSLCertificates;
             HelpersOptions.DefaultCopyImageFillBackground = Program.Settings.DefaultClipboardCopyImageFillBackground;
             HelpersOptions.RotateImageByExifOrientationData = Program.Settings.RotateImageByExifOrientationData;
             HelpersOptions.BrowserPath = Program.Settings.BrowserPath;
             HelpersOptions.RecentColors = Program.Settings.RecentColors;
+
             TaskManager.RecentManager.MaxCount = Program.Settings.RecentTasksMaxCount;
+
+            ShareXResources.ApplyTheme = Program.Settings.ExperimentalDarkTheme;
 
             if (ShareXResources.UseDarkTheme != Program.Settings.UseDarkTheme)
             {
