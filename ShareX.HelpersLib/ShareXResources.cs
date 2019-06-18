@@ -71,6 +71,8 @@ namespace ShareX.HelpersLib
             if (ApplyTheme)
             {
                 ApplyThemeToControl(form);
+
+                NativeMethods.UseImmersiveDarkMode(form.Handle, UseDarkTheme);
             }
         }
 
