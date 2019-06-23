@@ -39,9 +39,11 @@ namespace ShareX.ImageEffectsLib
 
         public WatermarkForm(WatermarkConfig watermarkConfig)
         {
-            InitializeComponent();
-            Icon = ShareXResources.Icon;
             config = watermarkConfig;
+
+            InitializeComponent();
+            ShareXResources.ApplyThemeToForm(this);
+
             CodeMenu.Create<CodeMenuEntryFilename>(txtWatermarkText, CodeMenuEntryFilename.t, CodeMenuEntryFilename.pn);
         }
 

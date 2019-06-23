@@ -202,7 +202,7 @@
     <value>True</value>
   </data>
   <data name="lblMargin.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 16</value>
+    <value>13, 16</value>
   </data>
   <data name="lblMargin.Size" type="System.Drawing.Size, System.Drawing">
     <value>42, 13</value>

@@ -44,9 +44,10 @@ namespace ShareX.HelpersLib
 
         private DebugForm(Logger logger)
         {
-            InitializeComponent();
-            Icon = ShareXResources.Icon;
             Logger = logger;
+
+            InitializeComponent();
+            ShareXResources.ApplyThemeToForm(this);
 
             rtbDebug.Text = Logger.ToString();
             rtbDebug.SelectionStart = rtbDebug.TextLength;

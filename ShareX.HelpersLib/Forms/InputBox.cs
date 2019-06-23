@@ -36,7 +36,7 @@ namespace ShareX.HelpersLib
         public InputBox(string title = null, string inputText = null, string okText = null, string cancelText = null)
         {
             InitializeComponent();
-            Icon = ShareXResources.Icon;
+            ShareXResources.ApplyThemeToForm(this);
 
             InputText = inputText;
 

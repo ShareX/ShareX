@@ -38,7 +38,7 @@ namespace ShareX.HelpersLib
         public HashCheckForm()
         {
             InitializeComponent();
-            Icon = ShareXResources.Icon;
+            ShareXResources.ApplyThemeToForm(this);
 
             cbHashType.Items.AddRange(Helpers.GetEnumDescriptions<HashType>());
             cbHashType.SelectedIndex = (int)HashType.SHA1;
@@ -64,10 +64,13 @@ namespace ShareX.HelpersLib
                 {
                     txtTarget.BackColor = Color.FromArgb(255, 200, 200);
                 }
+
+                txtTarget.ForeColor = SystemColors.ControlText;
             }
             else
             {
-                txtTarget.BackColor = SystemColors.Window;
+                txtTarget.BackColor = txtResult.BackColor;
+                txtTarget.ForeColor = txtResult.ForeColor;
             }
         }
 

@@ -39,8 +39,10 @@ namespace ShareX.HelpersLib
         public GradientPickerForm(GradientInfo gradient)
         {
             Gradient = gradient;
+
             InitializeComponent();
-            Icon = ShareXResources.Icon;
+            ShareXResources.ApplyThemeToForm(this);
+
             cbGradientType.Items.AddRange(Helpers.GetEnumNamesProper<LinearGradientMode>());
             cbGradientType.SelectedIndex = (int)Gradient.Type;
             foreach (GradientStop gradientStop in Gradient.Colors)

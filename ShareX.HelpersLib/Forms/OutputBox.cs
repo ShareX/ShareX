@@ -33,7 +33,8 @@ namespace ShareX.HelpersLib
         public OutputBox(string text, string title)
         {
             InitializeComponent();
-            Icon = ShareXResources.Icon;
+            ShareXResources.ApplyThemeToForm(this);
+
             Text = "ShareX - " + title;
             txtText.Text = text;
         }

@@ -42,8 +42,6 @@ namespace ShareX.HelpersLib
 
         public MyMessageBox(string text, string caption, MessageBoxButtons buttons = MessageBoxButtons.OK, string checkBoxText = null, bool isChecked = false)
         {
-            Icon = ShareXResources.Icon;
-
             Width = 180;
             Height = 100;
             Text = caption;
@@ -148,6 +146,13 @@ namespace ShareX.HelpersLib
             panel.Location = new Point(0, labelPanel.Bottom + LabelVerticalPadding);
             panel.Size = new Size(labelPanel.Width + (LabelHorizontalPadding * 2), button1.Height + (ButtonPadding * 2));
             ClientSize = new Size(panel.Width, labelPanel.Height + (LabelVerticalPadding * 2) + panel.Height);
+
+            ShareXResources.ApplyThemeToForm(this);
+
+            if (ShareXResources.UseDarkTheme)
+            {
+                panel.BackColor = ShareXResources.DarkBorderColor;
+            }
         }
 
         private void MyMessageBox_Shown(object sender, System.EventArgs e)

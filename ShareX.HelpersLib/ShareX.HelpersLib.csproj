@@ -157,10 +157,10 @@
     <Compile Include="Colors\CMYK.cs" />
     <Compile Include="Colors\ColorEventHandler.cs" />
     <Compile Include="Colors\GradientInfo.cs" />
-    <Compile Include="Colors\GradientPickerForm.cs">
+    <Compile Include="Forms\GradientPickerForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Colors\GradientPickerForm.Designer.cs">
+    <Compile Include="Forms\GradientPickerForm.Designer.cs">
       <DependentUpon>GradientPickerForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Colors\GradientStop.cs" />
@@ -204,10 +204,10 @@
     <Compile Include="ConvolutionMatrix.cs" />
     <Compile Include="ConvolutionMatrixManager.cs" />
     <Compile Include="DNS\AdapterInfo.cs" />
-    <Compile Include="DNS\DNSChangerForm.cs">
+    <Compile Include="Forms\DNSChangerForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DNS\DNSChangerForm.Designer.cs">
+    <Compile Include="Forms\DNSChangerForm.Designer.cs">
       <DependentUpon>DNSChangerForm.cs</DependentUpon>
     </Compile>
     <Compile Include="DNS\DNSInfo.cs" />
@@ -316,10 +316,10 @@
     <Compile Include="Colors\ColorUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Colors\ColorPickerForm.cs">
+    <Compile Include="Forms\ColorPickerForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Colors\ColorPickerForm.Designer.cs">
+    <Compile Include="Forms\ColorPickerForm.Designer.cs">
       <DependentUpon>ColorPickerForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Extensions\EnumExtensions.cs" />
@@ -402,18 +402,18 @@
     <Compile Include="Native\NativeMethods.cs" />
     <Compile Include="Native\NativeMethods_Helpers.cs" />
     <Compile Include="Native\NativeStructs.cs" />
-    <Compile Include="Printer\PrintForm.cs">
+    <Compile Include="Forms\PrintForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Printer\PrintForm.Designer.cs">
+    <Compile Include="Forms\PrintForm.Designer.cs">
       <DependentUpon>PrintForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Printer\PrintHelper.cs" />
     <Compile Include="Printer\PrintSettings.cs" />
-    <Compile Include="Printer\PrintTextForm.cs">
+    <Compile Include="Forms\PrintTextForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Printer\PrintTextForm.Designer.cs">
+    <Compile Include="Forms\PrintTextForm.Designer.cs">
       <DependentUpon>PrintTextForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Printer\PrintTextHelper.cs" />
@@ -469,106 +469,106 @@
     <Compile Include="XmlColor.cs" />
     <Compile Include="XmlFont.cs" />
     <Compile Include="ZipManager.cs" />
-    <EmbeddedResource Include="Colors\ColorPickerForm.de.resx">
+    <EmbeddedResource Include="Forms\ColorPickerForm.de.resx">
       <DependentUpon>ColorPickerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Colors\ColorPickerForm.es-MX.resx">
+    <EmbeddedResource Include="Forms\ColorPickerForm.es-MX.resx">
       <DependentUpon>ColorPickerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Colors\ColorPickerForm.es.resx">
+    <EmbeddedResource Include="Forms\ColorPickerForm.es.resx">
       <DependentUpon>ColorPickerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Colors\ColorPickerForm.fr.resx">
+    <EmbeddedResource Include="Forms\ColorPickerForm.fr.resx">
       <DependentUpon>ColorPickerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Colors\ColorPickerForm.hu.resx">
+    <EmbeddedResource Include="Forms\ColorPickerForm.hu.resx">
       <DependentUpon>ColorPickerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Colors\ColorPickerForm.id-ID.resx">
+    <EmbeddedResource Include="Forms\ColorPickerForm.id-ID.resx">
       <DependentUpon>ColorPickerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Colors\ColorPickerForm.it-IT.resx">
+    <EmbeddedResource Include="Forms\ColorPickerForm.it-IT.resx">
       <DependentUpon>ColorPickerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Colors\ColorPickerForm.ko-KR.resx">
+    <EmbeddedResource Include="Forms\ColorPickerForm.ko-KR.resx">
       <DependentUpon>ColorPickerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Colors\ColorPickerForm.nl-NL.resx">
+    <EmbeddedResource Include="Forms\ColorPickerForm.nl-NL.resx">
       <DependentUpon>ColorPickerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Colors\ColorPickerForm.pt-BR.resx">
+    <EmbeddedResource Include="Forms\ColorPickerForm.pt-BR.resx">
       <DependentUpon>ColorPickerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Colors\ColorPickerForm.resx">
+    <EmbeddedResource Include="Forms\ColorPickerForm.resx">
       <DependentUpon>ColorPickerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Colors\ColorPickerForm.ru.resx">
+    <EmbeddedResource Include="Forms\ColorPickerForm.ru.resx">
       <DependentUpon>ColorPickerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Colors\ColorPickerForm.tr.resx">
+    <EmbeddedResource Include="Forms\ColorPickerForm.tr.resx">
       <DependentUpon>ColorPickerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Colors\ColorPickerForm.uk.resx">
+    <EmbeddedResource Include="Forms\ColorPickerForm.uk.resx">
       <DependentUpon>ColorPickerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Colors\ColorPickerForm.vi-VN.resx">
+    <EmbeddedResource Include="Forms\ColorPickerForm.vi-VN.resx">
       <DependentUpon>ColorPickerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Colors\ColorPickerForm.zh-CN.resx">
+    <EmbeddedResource Include="Forms\ColorPickerForm.zh-CN.resx">
       <DependentUpon>ColorPickerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Colors\ColorPickerForm.zh-TW.resx">
+    <EmbeddedResource Include="Forms\ColorPickerForm.zh-TW.resx">
       <DependentUpon>ColorPickerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Colors\GradientPickerForm.de.resx">
+    <EmbeddedResource Include="Forms\GradientPickerForm.de.resx">
       <DependentUpon>GradientPickerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Colors\GradientPickerForm.es-MX.resx">
+    <EmbeddedResource Include="Forms\GradientPickerForm.es-MX.resx">
       <DependentUpon>GradientPickerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Colors\GradientPickerForm.es.resx">
+    <EmbeddedResource Include="Forms\GradientPickerForm.es.resx">
       <DependentUpon>GradientPickerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Colors\GradientPickerForm.fr.resx">
+    <EmbeddedResource Include="Forms\GradientPickerForm.fr.resx">
       <DependentUpon>GradientPickerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Colors\GradientPickerForm.hu.resx">
+    <EmbeddedResource Include="Forms\GradientPickerForm.hu.resx">
       <DependentUpon>GradientPickerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Colors\GradientPickerForm.id-ID.resx">
+    <EmbeddedResource Include="Forms\GradientPickerForm.id-ID.resx">
       <DependentUpon>GradientPickerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Colors\GradientPickerForm.it-IT.resx">
+    <EmbeddedResource Include="Forms\GradientPickerForm.it-IT.resx">
       <DependentUpon>GradientPickerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Colors\GradientPickerForm.ko-KR.resx">
+    <EmbeddedResource Include="Forms\GradientPickerForm.ko-KR.resx">
       <DependentUpon>GradientPickerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Colors\GradientPickerForm.nl-NL.resx">
+    <EmbeddedResource Include="Forms\GradientPickerForm.nl-NL.resx">
       <DependentUpon>GradientPickerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Colors\GradientPickerForm.pt-BR.resx">
+    <EmbeddedResource Include="Forms\GradientPickerForm.pt-BR.resx">
       <DependentUpon>GradientPickerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Colors\GradientPickerForm.resx">
+    <EmbeddedResource Include="Forms\GradientPickerForm.resx">
       <DependentUpon>GradientPickerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Colors\GradientPickerForm.ru.resx">
+    <EmbeddedResource Include="Forms\GradientPickerForm.ru.resx">
       <DependentUpon>GradientPickerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Colors\GradientPickerForm.tr.resx">
+    <EmbeddedResource Include="Forms\GradientPickerForm.tr.resx">
       <DependentUpon>GradientPickerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Colors\GradientPickerForm.uk.resx">
+    <EmbeddedResource Include="Forms\GradientPickerForm.uk.resx">
       <DependentUpon>GradientPickerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Colors\GradientPickerForm.vi-VN.resx">
+    <EmbeddedResource Include="Forms\GradientPickerForm.vi-VN.resx">
       <DependentUpon>GradientPickerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Colors\GradientPickerForm.zh-CN.resx">
+    <EmbeddedResource Include="Forms\GradientPickerForm.zh-CN.resx">
       <DependentUpon>GradientPickerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Colors\GradientPickerForm.zh-TW.resx">
+    <EmbeddedResource Include="Forms\GradientPickerForm.zh-TW.resx">
       <DependentUpon>GradientPickerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\ExportImportControl.de.resx">
@@ -673,55 +673,55 @@
     <EmbeddedResource Include="Controls\MyPictureBox.zh-TW.resx">
       <DependentUpon>MyPictureBox.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DNS\DNSChangerForm.de.resx">
+    <EmbeddedResource Include="Forms\DNSChangerForm.de.resx">
       <DependentUpon>DNSChangerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DNS\DNSChangerForm.es-MX.resx">
+    <EmbeddedResource Include="Forms\DNSChangerForm.es-MX.resx">
       <DependentUpon>DNSChangerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DNS\DNSChangerForm.es.resx">
+    <EmbeddedResource Include="Forms\DNSChangerForm.es.resx">
       <DependentUpon>DNSChangerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DNS\DNSChangerForm.fr.resx">
+    <EmbeddedResource Include="Forms\DNSChangerForm.fr.resx">
       <DependentUpon>DNSChangerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DNS\DNSChangerForm.hu.resx">
+    <EmbeddedResource Include="Forms\DNSChangerForm.hu.resx">
       <DependentUpon>DNSChangerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DNS\DNSChangerForm.id-ID.resx">
+    <EmbeddedResource Include="Forms\DNSChangerForm.id-ID.resx">
       <DependentUpon>DNSChangerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DNS\DNSChangerForm.it-IT.resx">
+    <EmbeddedResource Include="Forms\DNSChangerForm.it-IT.resx">
       <DependentUpon>DNSChangerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DNS\DNSChangerForm.ko-KR.resx">
+    <EmbeddedResource Include="Forms\DNSChangerForm.ko-KR.resx">
       <DependentUpon>DNSChangerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DNS\DNSChangerForm.nl-NL.resx">
+    <EmbeddedResource Include="Forms\DNSChangerForm.nl-NL.resx">
       <DependentUpon>DNSChangerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DNS\DNSChangerForm.pt-BR.resx">
+    <EmbeddedResource Include="Forms\DNSChangerForm.pt-BR.resx">
       <DependentUpon>DNSChangerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DNS\DNSChangerForm.resx">
+    <EmbeddedResource Include="Forms\DNSChangerForm.resx">
       <DependentUpon>DNSChangerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DNS\DNSChangerForm.ru.resx">
+    <EmbeddedResource Include="Forms\DNSChangerForm.ru.resx">
       <DependentUpon>DNSChangerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DNS\DNSChangerForm.tr.resx">
+    <EmbeddedResource Include="Forms\DNSChangerForm.tr.resx">
       <DependentUpon>DNSChangerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DNS\DNSChangerForm.uk.resx">
+    <EmbeddedResource Include="Forms\DNSChangerForm.uk.resx">
       <DependentUpon>DNSChangerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DNS\DNSChangerForm.vi-VN.resx">
+    <EmbeddedResource Include="Forms\DNSChangerForm.vi-VN.resx">
       <DependentUpon>DNSChangerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DNS\DNSChangerForm.zh-CN.resx">
+    <EmbeddedResource Include="Forms\DNSChangerForm.zh-CN.resx">
       <DependentUpon>DNSChangerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DNS\DNSChangerForm.zh-TW.resx">
+    <EmbeddedResource Include="Forms\DNSChangerForm.zh-TW.resx">
       <DependentUpon>DNSChangerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ClipboardContentViewer.de.resx">
@@ -1033,100 +1033,100 @@
     <EmbeddedResource Include="Controls\ExportImportControl.resx">
       <DependentUpon>ExportImportControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Printer\PrintForm.de.resx">
+    <EmbeddedResource Include="Forms\PrintForm.de.resx">
       <DependentUpon>PrintForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Printer\PrintForm.es-MX.resx">
+    <EmbeddedResource Include="Forms\PrintForm.es-MX.resx">
       <DependentUpon>PrintForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Printer\PrintForm.es.resx">
+    <EmbeddedResource Include="Forms\PrintForm.es.resx">
       <DependentUpon>PrintForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Printer\PrintForm.fr.resx">
+    <EmbeddedResource Include="Forms\PrintForm.fr.resx">
       <DependentUpon>PrintForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Printer\PrintForm.hu.resx">
+    <EmbeddedResource Include="Forms\PrintForm.hu.resx">
       <DependentUpon>PrintForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Printer\PrintForm.id-ID.resx">
+    <EmbeddedResource Include="Forms\PrintForm.id-ID.resx">
       <DependentUpon>PrintForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Printer\PrintForm.it-IT.resx">
+    <EmbeddedResource Include="Forms\PrintForm.it-IT.resx">
       <DependentUpon>PrintForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Printer\PrintForm.ko-KR.resx">
+    <EmbeddedResource Include="Forms\PrintForm.ko-KR.resx">
       <DependentUpon>PrintForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Printer\PrintForm.nl-NL.resx">
+    <EmbeddedResource Include="Forms\PrintForm.nl-NL.resx">
       <DependentUpon>PrintForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Printer\PrintForm.pt-BR.resx">
+    <EmbeddedResource Include="Forms\PrintForm.pt-BR.resx">
       <DependentUpon>PrintForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Printer\PrintForm.ru.resx">
+    <EmbeddedResource Include="Forms\PrintForm.ru.resx">
       <DependentUpon>PrintForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Printer\PrintForm.tr.resx">
+    <EmbeddedResource Include="Forms\PrintForm.tr.resx">
       <DependentUpon>PrintForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Printer\PrintForm.uk.resx">
+    <EmbeddedResource Include="Forms\PrintForm.uk.resx">
       <DependentUpon>PrintForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Printer\PrintForm.vi-VN.resx">
+    <EmbeddedResource Include="Forms\PrintForm.vi-VN.resx">
       <DependentUpon>PrintForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Printer\PrintForm.zh-CN.resx">
+    <EmbeddedResource Include="Forms\PrintForm.zh-CN.resx">
       <DependentUpon>PrintForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Printer\PrintForm.zh-TW.resx">
+    <EmbeddedResource Include="Forms\PrintForm.zh-TW.resx">
       <DependentUpon>PrintForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Printer\PrintTextForm.de.resx">
+    <EmbeddedResource Include="Forms\PrintTextForm.de.resx">
       <DependentUpon>PrintTextForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Printer\PrintTextForm.es-MX.resx">
+    <EmbeddedResource Include="Forms\PrintTextForm.es-MX.resx">
       <DependentUpon>PrintTextForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Printer\PrintTextForm.es.resx">
+    <EmbeddedResource Include="Forms\PrintTextForm.es.resx">
       <DependentUpon>PrintTextForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Printer\PrintTextForm.fr.resx">
+    <EmbeddedResource Include="Forms\PrintTextForm.fr.resx">
       <DependentUpon>PrintTextForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Printer\PrintTextForm.hu.resx">
+    <EmbeddedResource Include="Forms\PrintTextForm.hu.resx">
       <DependentUpon>PrintTextForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Printer\PrintTextForm.id-ID.resx">
+    <EmbeddedResource Include="Forms\PrintTextForm.id-ID.resx">
       <DependentUpon>PrintTextForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Printer\PrintTextForm.it-IT.resx">
+    <EmbeddedResource Include="Forms\PrintTextForm.it-IT.resx">
       <DependentUpon>PrintTextForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Printer\PrintTextForm.ko-KR.resx">
+    <EmbeddedResource Include="Forms\PrintTextForm.ko-KR.resx">
       <DependentUpon>PrintTextForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Printer\PrintTextForm.nl-NL.resx">
+    <EmbeddedResource Include="Forms\PrintTextForm.nl-NL.resx">
       <DependentUpon>PrintTextForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Printer\PrintTextForm.pt-BR.resx">
+    <EmbeddedResource Include="Forms\PrintTextForm.pt-BR.resx">
       <DependentUpon>PrintTextForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Printer\PrintTextForm.ru.resx">
+    <EmbeddedResource Include="Forms\PrintTextForm.ru.resx">
       <DependentUpon>PrintTextForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Printer\PrintTextForm.tr.resx">
+    <EmbeddedResource Include="Forms\PrintTextForm.tr.resx">
       <DependentUpon>PrintTextForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Printer\PrintTextForm.uk.resx">
+    <EmbeddedResource Include="Forms\PrintTextForm.uk.resx">
       <DependentUpon>PrintTextForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Printer\PrintTextForm.vi-VN.resx">
+    <EmbeddedResource Include="Forms\PrintTextForm.vi-VN.resx">
       <DependentUpon>PrintTextForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Printer\PrintTextForm.zh-CN.resx">
+    <EmbeddedResource Include="Forms\PrintTextForm.zh-CN.resx">
       <DependentUpon>PrintTextForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Printer\PrintTextForm.zh-TW.resx">
+    <EmbeddedResource Include="Forms\PrintTextForm.zh-TW.resx">
       <DependentUpon>PrintTextForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.de.resx" />
@@ -1183,10 +1183,10 @@
       <DependentUpon>DownloaderForm.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Printer\PrintForm.resx">
+    <EmbeddedResource Include="Forms\PrintForm.resx">
       <DependentUpon>PrintForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Printer\PrintTextForm.resx">
+    <EmbeddedResource Include="Forms\PrintTextForm.resx">
       <DependentUpon>PrintTextForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

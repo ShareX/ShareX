@@ -41,7 +41,12 @@ namespace ShareX.HelpersLib
         public ClipboardContentViewer(bool showCheckBox = false)
         {
             InitializeComponent();
-            Icon = ShareXResources.Icon;
+            ShareXResources.ApplyThemeToForm(this);
+
+            if (ShareXResources.UseDarkTheme)
+            {
+                lblQuestion.BackColor = ShareXResources.DarkBorderColor;
+            }
 
             cbDontShowThisWindow.Visible = showCheckBox;
         }
