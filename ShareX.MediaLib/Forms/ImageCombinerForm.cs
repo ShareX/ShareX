@@ -41,8 +41,10 @@ namespace ShareX.MediaLib
         public ImageCombinerForm(ImageCombinerOptions options)
         {
             Options = options;
+
             InitializeComponent();
-            Icon = ShareXResources.Icon;
+            ShareXResources.ApplyThemeToForm(this);
+
             cbOrientation.Items.AddRange(Enum.GetNames(typeof(Orientation)));
             cbOrientation.SelectedIndex = (int)Options.Orientation;
             nudSpace.SetValue(Options.Space);

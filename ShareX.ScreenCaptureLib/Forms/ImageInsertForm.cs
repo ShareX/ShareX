@@ -36,7 +36,7 @@ namespace ShareX.ScreenCaptureLib
         public ImageInsertForm()
         {
             InitializeComponent();
-            Icon = ShareXResources.Icon;
+            ShareXResources.ApplyThemeToForm(this);
         }
 
         private void Close(ImageInsertMethod insertMethod)

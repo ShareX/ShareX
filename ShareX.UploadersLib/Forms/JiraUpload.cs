@@ -23,8 +23,6 @@
 
 #endregion License Information (GPL v3)
 
-// gpailler
-
 using ShareX.HelpersLib;
 using ShareX.UploadersLib.Properties;
 using System;
@@ -51,7 +49,7 @@ namespace ShareX.UploadersLib
         public JiraUpload()
         {
             InitializeComponent();
-            Icon = ShareXResources.Icon;
+            ShareXResources.ApplyThemeToForm(this);
         }
 
         public JiraUpload(string issuePrefix, GetSummaryHandler getSummary) : this()

@@ -48,7 +48,7 @@ namespace ShareX.HistoryLib
         public ImageHistoryForm(string historyPath, ImageHistorySettings settings, Action<string> uploadFile = null, Action<string> editImage = null)
         {
             InitializeComponent();
-            Icon = ShareXResources.Icon;
+            ShareXResources.ApplyThemeToForm(this);
 
             HistoryPath = historyPath;
             Settings = settings;

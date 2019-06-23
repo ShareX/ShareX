@@ -45,9 +45,10 @@ namespace ShareX.ScreenCaptureLib
 
         public FFmpegOptionsForm(ScreencastOptions options)
         {
-            InitializeComponent();
-            Icon = ShareXResources.Icon;
             Options = options;
+
+            InitializeComponent();
+            ShareXResources.ApplyThemeToForm(this);
 
             eiFFmpeg.ObjectType = typeof(FFmpegOptions);
             cboVideoCodec.Items.AddRange(Helpers.GetEnumDescriptions<FFmpegVideoCodec>());
@@ -236,6 +237,7 @@ namespace ShareX.ScreenCaptureLib
             }
 
             txtFFmpegPath.BackColor = backColor;
+            txtFFmpegPath.ForeColor = SystemColors.ControlText;
 #endif
         }
 

@@ -42,7 +42,8 @@ namespace ShareX.IndexerLib
         public DirectoryIndexerForm(IndexerSettings settings)
         {
             InitializeComponent();
-            Icon = ShareXResources.Icon;
+            ShareXResources.ApplyThemeToForm(this);
+
             Settings = settings;
             pgSettings.SelectedObject = Settings;
         }

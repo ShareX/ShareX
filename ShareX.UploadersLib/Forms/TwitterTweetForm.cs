@@ -97,7 +97,8 @@ namespace ShareX.UploadersLib
         public TwitterTweetForm()
         {
             InitializeComponent();
-            Icon = ShareXResources.Icon;
+            ShareXResources.ApplyThemeToForm(this);
+
             MediaMode = false;
         }
 

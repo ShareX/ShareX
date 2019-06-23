@@ -56,7 +56,7 @@ namespace ShareX.ScreenCaptureLib
             RegionCaptureOptions = regionCaptureOptions;
 
             InitializeComponent();
-            Icon = ShareXResources.Icon;
+            ShareXResources.ApplyThemeToForm(this);
 
             cbScrollMethod.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<ScrollingCaptureScrollMethod>());
             cbScrollMethod.SelectedIndex = (int)Options.ScrollMethod;

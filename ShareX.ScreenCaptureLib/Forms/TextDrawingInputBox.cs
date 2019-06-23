@@ -43,7 +43,7 @@ namespace ShareX.ScreenCaptureLib
         public TextDrawingInputBox(string text, TextDrawingOptions options, bool supportGradient)
         {
             InitializeComponent();
-            Icon = ShareXResources.Icon;
+            ShareXResources.ApplyThemeToForm(this);
 
             InputText = text;
             Options = options;

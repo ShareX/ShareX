@@ -44,7 +44,7 @@ namespace ShareX.UploadersLib
         public OCRSpaceForm(OCROptions ocrOptions)
         {
             InitializeComponent();
-            Icon = ShareXResources.Icon;
+            ShareXResources.ApplyThemeToForm(this);
 
             this.ocrOptions = ocrOptions;
             cbLanguages.Items.AddRange(Helpers.GetEnumDescriptions<OCRSpaceLanguages>());

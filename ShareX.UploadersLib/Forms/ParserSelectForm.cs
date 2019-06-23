@@ -38,7 +38,6 @@ namespace ShareX.UploadersLib
         public ParserSelectForm(string[] texts)
         {
             InitializeComponent();
-            Icon = ShareXResources.Icon;
 
             Texts = texts;
             SelectedText = Texts[0];
@@ -60,7 +59,8 @@ namespace ShareX.UploadersLib
                         Margin = new Padding(i < rowSize ? 5 : 0, i % rowSize == 0 ? 5 : 0, 5, 5),
                         Padding = new Padding(5),
                         Font = new Font(Font.FontFamily, 12),
-                        Text = text
+                        Text = text,
+                        UseVisualStyleBackColor = true
                     };
 
                     button.Click += (sender, e) =>
@@ -81,6 +81,8 @@ namespace ShareX.UploadersLib
             }
 
             ResumeLayout();
+
+            ShareXResources.ApplyThemeToForm(this);
         }
 
         private void ParserSelectForm_Shown(object sender, EventArgs e)

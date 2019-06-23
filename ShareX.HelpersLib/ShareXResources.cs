@@ -88,6 +88,7 @@ namespace ShareX.HelpersLib
             switch (control)
             {
                 case Button btn:
+                case CheckBox cb when cb.Appearance == Appearance.Button:
                     // Button looks better with system colors
                     control.ForeColor = SystemColors.ControlText;
                     break;

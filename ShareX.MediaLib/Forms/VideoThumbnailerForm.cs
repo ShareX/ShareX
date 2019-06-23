@@ -44,8 +44,10 @@ namespace ShareX.MediaLib
         {
             FFmpegPath = ffmpegPath;
             Options = options;
+
             InitializeComponent();
-            Icon = ShareXResources.Icon;
+            ShareXResources.ApplyThemeToForm(this);
+
             txtMediaPath.Text = Options.LastVideoPath ?? "";
             pgOptions.SelectedObject = Options;
         }

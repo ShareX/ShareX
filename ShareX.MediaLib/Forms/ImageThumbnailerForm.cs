@@ -37,7 +37,7 @@ namespace ShareX.MediaLib
         public ImageThumbnailerForm()
         {
             InitializeComponent();
-            Icon = ShareXResources.Icon;
+            ShareXResources.ApplyThemeToForm(this);
         }
 
         private void UpdateEnabled()

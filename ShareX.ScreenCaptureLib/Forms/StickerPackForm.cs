@@ -39,7 +39,7 @@ namespace ShareX.ScreenCaptureLib
             Stickers = stickers;
 
             InitializeComponent();
-            Icon = ShareXResources.Icon;
+            ShareXResources.ApplyThemeToForm(this);
 
             foreach (StickerPackInfo stickerPackInfo in Stickers)
             {

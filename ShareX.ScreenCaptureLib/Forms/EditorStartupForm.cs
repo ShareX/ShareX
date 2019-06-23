@@ -40,9 +40,10 @@ namespace ShareX.ScreenCaptureLib
 
         public EditorStartupForm(RegionCaptureOptions options)
         {
-            InitializeComponent();
-            Icon = ShareXResources.Icon;
             Options = options;
+
+            InitializeComponent();
+            ShareXResources.ApplyThemeToForm(this);
         }
 
         private void LoadImageFile(string imageFilePath)
