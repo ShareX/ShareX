@@ -91,18 +91,18 @@ namespace ShareX.HelpersLib
                 case CheckBox cb when cb.Appearance == Appearance.Button:
                     // Buttons looks better with system colors
                     control.ForeColor = SystemColors.ControlText;
-                    break;
+                    return;
                 case SplitContainer sc:
                     sc.Panel1.BackColor = BackgroundColor;
                     sc.Panel2.BackColor = BackgroundColor;
-                    goto default;
+                    break;
                 case PropertyGrid pg:
                     pg.CategoryForeColor = TextColor;
                     pg.CategorySplitterColor = BorderColor;
                     pg.LineColor = BorderColor;
                     pg.SelectedItemWithFocusForeColor = BorderColor;
                     pg.SelectedItemWithFocusBackColor = TextColor;
-                    goto default;
+                    break;
                 case DataGridView dgv:
                     dgv.BackgroundColor = BackgroundColor;
                     dgv.GridColor = BorderColor;
@@ -115,12 +115,14 @@ namespace ShareX.HelpersLib
                     dgv.ColumnHeadersDefaultCellStyle.ForeColor = TextColor;
                     dgv.ColumnHeadersDefaultCellStyle.SelectionForeColor = TextColor;
                     dgv.EnableHeadersVisualStyles = false;
-                    goto default;
-                default:
-                    control.ForeColor = TextColor;
-                    control.BackColor = BackgroundColor;
+                    break;
+                case LinkLabel ll:
+                    ll.LinkColor = Color.FromArgb(166, 212, 255);
                     break;
             }
+
+            control.ForeColor = TextColor;
+            control.BackColor = BackgroundColor;
 
             foreach (Control child in control.Controls)
             {
