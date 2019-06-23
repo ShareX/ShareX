@@ -66,8 +66,11 @@ namespace ShareX
 
         public HotkeySelectionControl(HotkeySettings setting)
         {
-            InitializeComponent();
             Setting = setting;
+
+            InitializeComponent();
+            lblHotkeyDescription.ForeColor = SystemColors.ControlText;
+            btnHotkey.ForeColor = SystemColors.ControlText;
             UpdateDescription();
             UpdateHotkeyText();
             UpdateHotkeyStatus();

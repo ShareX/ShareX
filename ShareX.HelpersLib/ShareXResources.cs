@@ -85,39 +85,20 @@ namespace ShareX.HelpersLib
 
         private static void ApplyThemeToControl(Control control)
         {
-            if (control is Label ||
-                control is CheckBox ||
-                control is RichTextBox ||
-                control is TreeView ||
-                control is ComboBox ||
-                control is NumericUpDown ||
-                control is ListBox ||
-                control is ListView)
+            switch (control)
             {
-                control.ForeColor = TextColor;
-                control.BackColor = BackgroundColor;
-            }
-
-            if (control is Button)
-            {
-                control.ForeColor = SystemColors.ControlText;
-            }
-
-            if (control is GroupBox)
-            {
-                control.ForeColor = TextColor;
-            }
-
-            if (control is Form ||
-                control is TabPage)
-            {
-                control.BackColor = BackgroundColor;
-            }
-
-            if (control is SplitContainer sc)
-            {
-                sc.Panel1.BackColor = BackgroundColor;
-                sc.Panel2.BackColor = BackgroundColor;
+                case Button btn:
+                    // Button looks better with system colors
+                    control.ForeColor = SystemColors.ControlText;
+                    break;
+                case SplitContainer sc:
+                    sc.Panel1.BackColor = BackgroundColor;
+                    sc.Panel2.BackColor = BackgroundColor;
+                    goto default;
+                default:
+                    control.ForeColor = TextColor;
+                    control.BackColor = BackgroundColor;
+                    break;
             }
 
             foreach (Control child in control.Controls)
