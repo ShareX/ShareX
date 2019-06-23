@@ -95,6 +95,13 @@ namespace ShareX.HelpersLib
                     sc.Panel1.BackColor = BackgroundColor;
                     sc.Panel2.BackColor = BackgroundColor;
                     goto default;
+                case PropertyGrid pg:
+                    pg.CategoryForeColor = TextColor;
+                    pg.CategorySplitterColor = BorderColor;
+                    pg.LineColor = BorderColor;
+                    pg.SelectedItemWithFocusForeColor = BorderColor;
+                    pg.SelectedItemWithFocusBackColor = TextColor;
+                    goto default;
                 default:
                     control.ForeColor = TextColor;
                     control.BackColor = BackgroundColor;
