@@ -40,8 +40,10 @@ namespace ShareX
         public WatchFolderForm(WatchFolderSettings watchFolder)
         {
             WatchFolder = watchFolder;
+
             InitializeComponent();
-            Icon = ShareXResources.Icon;
+            ShareXResources.ApplyThemeToForm(this);
+
             txtFolderPath.Text = watchFolder.FolderPath ?? "";
             txtFilter.Text = watchFolder.Filter ?? "";
             cbIncludeSubdirectories.Checked = watchFolder.IncludeSubdirectories;

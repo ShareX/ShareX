@@ -53,7 +53,10 @@ namespace ShareX.UploadersLib
         private UploadersConfigForm(UploadersConfig config)
         {
             Config = config;
+
             InitializeComponent();
+            ShareXResources.ApplyThemeToForm(this);
+
             InitializeControls();
         }
 
@@ -79,8 +82,6 @@ namespace ShareX.UploadersLib
 
         private void InitializeControls()
         {
-            Icon = ShareXResources.Icon;
-
             if (!string.IsNullOrEmpty(Config.FilePath))
             {
                 Text += " - " + Config.FilePath;

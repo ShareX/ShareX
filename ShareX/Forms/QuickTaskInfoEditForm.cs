@@ -36,9 +36,11 @@ namespace ShareX
 
         public QuickTaskInfoEditForm(QuickTaskInfo taskInfo)
         {
-            InitializeComponent();
-            Icon = ShareXResources.Icon;
             TaskInfo = taskInfo;
+
+            InitializeComponent();
+            ShareXResources.ApplyThemeToForm(this);
+
             txtName.Text = TaskInfo.Name;
             AddMultiEnumItemsContextMenu<AfterCaptureTasks>(x => TaskInfo.AfterCaptureTasks = TaskInfo.AfterCaptureTasks.Swap(x), cmsAfterCapture);
             AddMultiEnumItemsContextMenu<AfterUploadTasks>(x => TaskInfo.AfterUploadTasks = TaskInfo.AfterUploadTasks.Swap(x), cmsAfterUpload);

@@ -41,7 +41,7 @@ namespace ShareX
         public ActionsForm(ExternalProgram fileAction)
         {
             InitializeComponent();
-            Icon = ShareXResources.Icon;
+            ShareXResources.ApplyThemeToForm(this);
 
             FileAction = fileAction;
             txtName.Text = fileAction.Name ?? "";

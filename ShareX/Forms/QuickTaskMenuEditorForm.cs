@@ -37,7 +37,7 @@ namespace ShareX
         public QuickTaskMenuEditorForm()
         {
             InitializeComponent();
-            Icon = ShareXResources.Icon;
+            ShareXResources.ApplyThemeToForm(this);
 
             if (Program.Settings.QuickTaskPresets == null)
             {
@@ -49,7 +49,6 @@ namespace ShareX
 
         private void UpdateItem(ListViewItem lvi, QuickTaskInfo taskInfo)
         {
-            lvi.BackColor = taskInfo.IsValid ? Color.White : Color.WhiteSmoke;
             lvi.Tag = taskInfo;
             lvi.Text = taskInfo.ToString();
         }

@@ -35,7 +35,7 @@ namespace ShareX
         public BeforeUploadForm(TaskInfo info)
         {
             InitializeComponent();
-            Icon = ShareXResources.Icon;
+            ShareXResources.ApplyThemeToForm(this);
             DialogResult = DialogResult.OK;
 
             ucBeforeUpload.InitCompleted += currentDestination =>

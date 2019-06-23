@@ -46,7 +46,7 @@ namespace ShareX
         public QRCodeForm(string text = null)
         {
             InitializeComponent();
-            Icon = ShareXResources.Icon;
+            ShareXResources.ApplyThemeToForm(this);
 
             if (!string.IsNullOrEmpty(text))
             {
@@ -104,6 +104,7 @@ namespace ShareX
 
                 int size = Math.Min(pbQRCode.Width, pbQRCode.Height);
                 pbQRCode.Image = TaskHelpers.CreateQRCode(text, size);
+                pbQRCode.BackColor = Color.White;
             }
         }
 
