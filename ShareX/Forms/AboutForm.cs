@@ -37,13 +37,14 @@ namespace ShareX
         public AboutForm()
         {
             InitializeComponent();
-            ShareXResources.ApplyTheme(this);
 
             lblProductName.Text = Program.Title;
             pbLogo.Image = ShareXResources.Logo;
 
             rtbShareXInfo.AddContextMenu();
             rtbCredits.AddContextMenu();
+
+            ShareXResources.ApplyTheme(this);
 
 #if STEAM || WindowsStore
             uclUpdate.Visible = false;

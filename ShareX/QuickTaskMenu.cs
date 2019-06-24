@@ -43,6 +43,11 @@ namespace ShareX
                 AutoClose = false
             };
 
+            if (ShareXResources.UseDarkTheme)
+            {
+                cms.Renderer = new ToolStripDarkRenderer();
+            }
+
             cms.KeyUp += (sender, e) =>
             {
                 if (e.KeyCode == Keys.Escape)

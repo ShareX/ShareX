@@ -47,12 +47,13 @@ namespace ShareX.HelpersLib
             Logger = logger;
 
             InitializeComponent();
-            ShareXResources.ApplyTheme(this);
 
             rtbDebug.Text = Logger.ToString();
             rtbDebug.SelectionStart = rtbDebug.TextLength;
             rtbDebug.ScrollToCaret();
             rtbDebug.AddContextMenu();
+
+            ShareXResources.ApplyTheme(this);
 
             string startupPath = AppDomain.CurrentDomain.BaseDirectory;
             llRunningFrom.Text = startupPath;
