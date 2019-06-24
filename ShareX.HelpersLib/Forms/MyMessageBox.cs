@@ -147,7 +147,7 @@ namespace ShareX.HelpersLib
             panel.Size = new Size(labelPanel.Width + (LabelHorizontalPadding * 2), button1.Height + (ButtonPadding * 2));
             ClientSize = new Size(panel.Width, labelPanel.Height + (LabelVerticalPadding * 2) + panel.Height);
 
-            ShareXResources.ApplyThemeToForm(this);
+            ShareXResources.ApplyTheme(this);
 
             if (ShareXResources.UseDarkTheme)
             {

@@ -40,7 +40,7 @@ namespace ShareX.UploadersLib
         public UserPassBox(string title, string userName, string password)
         {
             InitializeComponent();
-            ShareXResources.ApplyThemeToForm(this);
+            ShareXResources.ApplyTheme(this);
 
             Text = title;
             txtUserName.Text = userName;

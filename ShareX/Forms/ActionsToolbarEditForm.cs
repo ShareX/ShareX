@@ -40,7 +40,7 @@ namespace ShareX
         public ActionsToolbarEditForm(List<HotkeyType> actions)
         {
             InitializeComponent();
-            ShareXResources.ApplyThemeToForm(this);
+            ShareXResources.ApplyTheme(this);
 
             Actions = actions;
 

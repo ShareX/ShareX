@@ -43,7 +43,7 @@ namespace ShareX.HelpersLib
 
         public static bool UseDarkTheme { get; set; }
         public static bool UseWhiteIcon { get; set; }
-        public static bool ApplyTheme { get; set; } = true;
+        public static bool ExperimentalDarkTheme { get; set; } = true;
 
         public static Icon Icon => UseWhiteIcon ? Resources.ShareX_Icon_White : Resources.ShareX_Icon;
 
@@ -61,32 +61,33 @@ namespace ShareX.HelpersLib
         public static Color DarkBorderColor { get; } = Color.FromArgb(28, 32, 38);
         public static Color DarkCheckerColor1 { get; } = Color.FromArgb(60, 60, 60);
         public static Color DarkCheckerColor2 { get; } = Color.FromArgb(50, 50, 50);
+        public static Color DarkLinkColor { get; } = Color.FromArgb(166, 212, 255);
 
         public static int CheckerSize { get; } = 15;
 
-        public static void ApplyThemeToForm(Form form, bool setIcon = true)
+        public static void ApplyTheme(Form form, bool setIcon = true)
         {
             if (setIcon)
             {
                 form.Icon = Icon;
             }
 
-            if (ApplyTheme)
+            if (ExperimentalDarkTheme)
             {
-                ApplyThemeToControl(form);
+                ApplyDarkThemeToControl(form);
 
                 if (form.IsHandleCreated)
                 {
-                    NativeMethods.UseImmersiveDarkMode(form.Handle, UseDarkTheme);
+                    NativeMethods.UseImmersiveDarkMode(form.Handle, true);
                 }
                 else
                 {
-                    form.HandleCreated += (s, e) => NativeMethods.UseImmersiveDarkMode(form.Handle, UseDarkTheme);
+                    form.HandleCreated += (s, e) => NativeMethods.UseImmersiveDarkMode(form.Handle, true);
                 }
             }
         }
 
-        private static void ApplyThemeToControl(Control control)
+        private static void ApplyDarkThemeToControl(Control control)
         {
             switch (control)
             {
@@ -96,58 +97,58 @@ namespace ShareX.HelpersLib
                     control.ForeColor = SystemColors.ControlText;
                     return;
                 case SplitContainer sc:
-                    sc.Panel1.BackColor = BackgroundColor;
-                    sc.Panel2.BackColor = BackgroundColor;
+                    sc.Panel1.BackColor = DarkBackgroundColor;
+                    sc.Panel2.BackColor = DarkBackgroundColor;
                     break;
                 case PropertyGrid pg:
-                    pg.CategoryForeColor = TextColor;
-                    pg.CategorySplitterColor = BorderColor;
-                    pg.LineColor = BorderColor;
-                    pg.SelectedItemWithFocusForeColor = BorderColor;
-                    pg.SelectedItemWithFocusBackColor = TextColor;
+                    pg.CategoryForeColor = DarkTextColor;
+                    pg.CategorySplitterColor = DarkBorderColor;
+                    pg.LineColor = DarkBorderColor;
+                    pg.SelectedItemWithFocusForeColor = DarkBorderColor;
+                    pg.SelectedItemWithFocusBackColor = DarkTextColor;
                     break;
                 case DataGridView dgv:
-                    dgv.BackgroundColor = BackgroundColor;
-                    dgv.GridColor = BorderColor;
-                    dgv.DefaultCellStyle.BackColor = BackgroundColor;
-                    dgv.DefaultCellStyle.SelectionBackColor = BackgroundColor;
-                    dgv.DefaultCellStyle.ForeColor = TextColor;
-                    dgv.DefaultCellStyle.SelectionForeColor = TextColor;
-                    dgv.ColumnHeadersDefaultCellStyle.BackColor = BorderColor;
-                    dgv.ColumnHeadersDefaultCellStyle.SelectionBackColor = BorderColor;
-                    dgv.ColumnHeadersDefaultCellStyle.ForeColor = TextColor;
-                    dgv.ColumnHeadersDefaultCellStyle.SelectionForeColor = TextColor;
+                    dgv.BackgroundColor = DarkBackgroundColor;
+                    dgv.GridColor = DarkBorderColor;
+                    dgv.DefaultCellStyle.BackColor = DarkBackgroundColor;
+                    dgv.DefaultCellStyle.SelectionBackColor = DarkBackgroundColor;
+                    dgv.DefaultCellStyle.ForeColor = DarkTextColor;
+                    dgv.DefaultCellStyle.SelectionForeColor = DarkTextColor;
+                    dgv.ColumnHeadersDefaultCellStyle.BackColor = DarkBorderColor;
+                    dgv.ColumnHeadersDefaultCellStyle.SelectionBackColor = DarkBorderColor;
+                    dgv.ColumnHeadersDefaultCellStyle.ForeColor = DarkTextColor;
+                    dgv.ColumnHeadersDefaultCellStyle.SelectionForeColor = DarkTextColor;
                     dgv.EnableHeadersVisualStyles = false;
                     break;
                 case ToolStrip ts:
                     ts.Renderer = new ToolStripDarkRenderer();
-                    ApplyThemeToToolStripItemCollection(ts.Items);
+                    ApplyDarkThemeToToolStripItemCollection(ts.Items);
                     return;
                 case LinkLabel ll:
-                    ll.LinkColor = Color.FromArgb(166, 212, 255);
+                    ll.LinkColor = DarkLinkColor;
                     break;
             }
 
-            control.ForeColor = TextColor;
-            control.BackColor = BackgroundColor;
+            control.ForeColor = DarkTextColor;
+            control.BackColor = DarkBackgroundColor;
 
             foreach (Control child in control.Controls)
             {
-                ApplyThemeToControl(child);
+                ApplyDarkThemeToControl(child);
             }
         }
 
-        private static void ApplyThemeToToolStripItemCollection(ToolStripItemCollection collection)
+        private static void ApplyDarkThemeToToolStripItemCollection(ToolStripItemCollection collection)
         {
             foreach (ToolStripItem tsi in collection)
             {
                 switch (tsi)
                 {
                     case ToolStripControlHost tsch:
-                        ApplyThemeToControl(tsch.Control);
+                        ApplyDarkThemeToControl(tsch.Control);
                         break;
                     case ToolStripDropDownItem tsddi:
-                        ApplyThemeToToolStripItemCollection(tsddi.DropDownItems);
+                        ApplyDarkThemeToToolStripItemCollection(tsddi.DropDownItems);
                         break;
                 }
             }

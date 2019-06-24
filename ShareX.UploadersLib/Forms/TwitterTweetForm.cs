@@ -97,7 +97,7 @@ namespace ShareX.UploadersLib
         public TwitterTweetForm()
         {
             InitializeComponent();
-            ShareXResources.ApplyThemeToForm(this);
+            ShareXResources.ApplyTheme(this);
 
             MediaMode = false;
         }

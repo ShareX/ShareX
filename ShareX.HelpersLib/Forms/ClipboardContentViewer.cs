@@ -41,7 +41,7 @@ namespace ShareX.HelpersLib
         public ClipboardContentViewer(bool showCheckBox = false)
         {
             InitializeComponent();
-            ShareXResources.ApplyThemeToForm(this);
+            ShareXResources.ApplyTheme(this);
 
             if (ShareXResources.UseDarkTheme)
             {

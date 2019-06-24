@@ -43,7 +43,7 @@ namespace ShareX.MediaLib
             Options = options;
 
             InitializeComponent();
-            ShareXResources.ApplyThemeToForm(this);
+            ShareXResources.ApplyTheme(this);
 
             cbOrientation.Items.AddRange(Enum.GetNames(typeof(Orientation)));
             cbOrientation.SelectedIndex = (int)Options.Orientation;

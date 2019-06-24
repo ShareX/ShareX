@@ -36,7 +36,7 @@ namespace ShareX
         public TextUploadForm(string content = null)
         {
             InitializeComponent();
-            ShareXResources.ApplyThemeToForm(this);
+            ShareXResources.ApplyTheme(this);
 
             if (string.IsNullOrEmpty(content) && Clipboard.ContainsText())
             {

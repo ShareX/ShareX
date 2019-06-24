@@ -33,7 +33,7 @@ namespace ShareX.HistoryLib
         public HistoryItemInfoForm(object hi)
         {
             InitializeComponent();
-            ShareXResources.ApplyThemeToForm(this);
+            ShareXResources.ApplyTheme(this);
 
             olvMain.SelectObject(hi);
         }

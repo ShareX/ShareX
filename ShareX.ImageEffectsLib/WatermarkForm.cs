@@ -42,7 +42,7 @@ namespace ShareX.ImageEffectsLib
             config = watermarkConfig;
 
             InitializeComponent();
-            ShareXResources.ApplyThemeToForm(this);
+            ShareXResources.ApplyTheme(this);
 
             CodeMenu.Create<CodeMenuEntryFilename>(txtWatermarkText, CodeMenuEntryFilename.t, CodeMenuEntryFilename.pn);
         }

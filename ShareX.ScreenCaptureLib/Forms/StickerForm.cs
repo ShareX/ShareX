@@ -50,7 +50,7 @@ namespace ShareX.ScreenCaptureLib
 
             InitializeComponent();
             tsMain.Renderer = new ToolStripRoundedEdgeRenderer();
-            ShareXResources.ApplyThemeToForm(this);
+            ShareXResources.ApplyTheme(this);
 
             tsnudSize.NumericUpDownControl.Minimum = 16;
             tsnudSize.NumericUpDownControl.Maximum = 256;

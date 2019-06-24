@@ -42,7 +42,7 @@ namespace ShareX
             TaskSettings = taskSettings;
 
             InitializeComponent();
-            ShareXResources.ApplyThemeToForm(this);
+            ShareXResources.ApplyTheme(this);
 
             ImageList imageList = new ImageList { ColorDepth = ColorDepth.Depth32Bit };
             imageList.Images.Add(Resources.checkbox_uncheck);

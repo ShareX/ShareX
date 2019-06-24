@@ -49,7 +49,7 @@ namespace ShareX.UploadersLib
         public JiraUpload()
         {
             InitializeComponent();
-            ShareXResources.ApplyThemeToForm(this);
+            ShareXResources.ApplyTheme(this);
         }
 
         public JiraUpload(string issuePrefix, GetSummaryHandler getSummary) : this()

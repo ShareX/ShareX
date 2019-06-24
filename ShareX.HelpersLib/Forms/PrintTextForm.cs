@@ -38,7 +38,7 @@ namespace ShareX.HelpersLib
         public PrintTextForm(string text, PrintSettings settings)
         {
             InitializeComponent();
-            ShareXResources.ApplyThemeToForm(this);
+            ShareXResources.ApplyTheme(this);
 
             printHelper = new PrintHelper(text);
             printHelper.Settings = printSettings = settings;

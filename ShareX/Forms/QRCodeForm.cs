@@ -46,7 +46,7 @@ namespace ShareX
         public QRCodeForm(string text = null)
         {
             InitializeComponent();
-            ShareXResources.ApplyThemeToForm(this);
+            ShareXResources.ApplyTheme(this);
 
             if (!string.IsNullOrEmpty(text))
             {

@@ -37,7 +37,7 @@ namespace ShareX.ScreenCaptureLib
         public NewImageForm(RegionCaptureOptions options)
         {
             InitializeComponent();
-            ShareXResources.ApplyThemeToForm(this);
+            ShareXResources.ApplyTheme(this);
 
             Options = options;
 

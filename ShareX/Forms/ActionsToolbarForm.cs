@@ -60,7 +60,7 @@ namespace ShareX
         private ActionsToolbarForm()
         {
             InitializeComponent();
-            ShareXResources.ApplyThemeToForm(this);
+            ShareXResources.ApplyTheme(this);
         }
 
         private void InitializeComponent()

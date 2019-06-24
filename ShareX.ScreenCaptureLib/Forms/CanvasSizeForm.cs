@@ -36,7 +36,7 @@ namespace ShareX.ScreenCaptureLib
         public CanvasSizeForm()
         {
             InitializeComponent();
-            ShareXResources.ApplyThemeToForm(this);
+            ShareXResources.ApplyTheme(this);
         }
 
         public CanvasSizeForm(Padding canvas) : this()

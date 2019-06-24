@@ -1050,7 +1050,7 @@ namespace ShareX.ScreenCaptureLib
             tsMain.PerformLayout();
             menuForm.ResumeLayout(false);
 
-            ShareXResources.ApplyThemeToForm(menuForm, false);
+            ShareXResources.ApplyTheme(menuForm, false);
 
             menuForm.Show(Form);
 

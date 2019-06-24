@@ -52,7 +52,7 @@ namespace ShareX.HistoryLib
             Settings = settings;
 
             InitializeComponent();
-            ShareXResources.ApplyThemeToForm(this);
+            ShareXResources.ApplyTheme(this);
 
             defaultTitle = Text;
             UpdateTitle();

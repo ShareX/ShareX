@@ -44,7 +44,7 @@ namespace ShareX.HelpersLib
         public ColorPickerForm(Color currentColor, bool isScreenColorPickerMode = false)
         {
             InitializeComponent();
-            ShareXResources.ApplyThemeToForm(this);
+            ShareXResources.ApplyTheme(this);
 
             IsScreenColorPickerMode = isScreenColorPickerMode;
 

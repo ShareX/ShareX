@@ -37,7 +37,7 @@ namespace ShareX.HistoryLib
         public ImageHistorySettingsForm(ImageHistorySettings settings)
         {
             InitializeComponent();
-            ShareXResources.ApplyThemeToForm(this);
+            ShareXResources.ApplyTheme(this);
 
             Settings = settings;
             cbViewMode.Items.AddRange(Enum.GetNames(typeof(Manina.Windows.Forms.View)));

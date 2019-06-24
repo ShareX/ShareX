@@ -37,7 +37,7 @@ namespace ShareX
         public AboutForm()
         {
             InitializeComponent();
-            ShareXResources.ApplyThemeToForm(this);
+            ShareXResources.ApplyTheme(this);
 
             lblProductName.Text = Program.Title;
             pbLogo.Image = ShareXResources.Logo;

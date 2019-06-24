@@ -49,7 +49,7 @@ namespace ShareX.HistoryLib
         {
             InitializeComponent();
             tsMain.Renderer = new ToolStripRoundedEdgeRenderer();
-            ShareXResources.ApplyThemeToForm(this);
+            ShareXResources.ApplyTheme(this);
 
             HistoryPath = historyPath;
             Settings = settings;

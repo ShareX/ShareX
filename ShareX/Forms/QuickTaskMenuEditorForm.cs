@@ -37,7 +37,7 @@ namespace ShareX
         public QuickTaskMenuEditorForm()
         {
             InitializeComponent();
-            ShareXResources.ApplyThemeToForm(this);
+            ShareXResources.ApplyTheme(this);
 
             if (Program.Settings.QuickTaskPresets == null)
             {

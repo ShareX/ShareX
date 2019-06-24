@@ -41,7 +41,7 @@ namespace ShareX.HelpersLib
             Gradient = gradient;
 
             InitializeComponent();
-            ShareXResources.ApplyThemeToForm(this);
+            ShareXResources.ApplyTheme(this);
 
             cbGradientType.Items.AddRange(Helpers.GetEnumNamesProper<LinearGradientMode>());
             cbGradientType.SelectedIndex = (int)Gradient.Type;

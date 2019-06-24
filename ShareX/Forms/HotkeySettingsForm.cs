@@ -42,7 +42,7 @@ namespace ShareX
         public HotkeySettingsForm(HotkeyManager hotkeyManager)
         {
             InitializeComponent();
-            ShareXResources.ApplyThemeToForm(this);
+            ShareXResources.ApplyTheme(this);
 
             PrepareHotkeys(hotkeyManager);
         }

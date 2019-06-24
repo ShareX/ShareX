@@ -46,7 +46,7 @@ namespace ShareX.MediaLib
             Options = options;
 
             InitializeComponent();
-            ShareXResources.ApplyThemeToForm(this);
+            ShareXResources.ApplyTheme(this);
 
             txtMediaPath.Text = Options.LastVideoPath ?? "";
             pgOptions.SelectedObject = Options;

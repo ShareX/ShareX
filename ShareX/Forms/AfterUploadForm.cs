@@ -46,7 +46,7 @@ namespace ShareX
         public AfterUploadForm(TaskInfo info)
         {
             InitializeComponent();
-            ShareXResources.ApplyThemeToForm(this);
+            ShareXResources.ApplyTheme(this);
 
             Info = info;
             if (Info.TaskSettings.AdvancedSettings.AutoCloseAfterUploadForm) tmrClose.Start();

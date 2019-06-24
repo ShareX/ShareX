@@ -43,7 +43,7 @@ namespace ShareX.ScreenCaptureLib
             Options = options;
 
             InitializeComponent();
-            ShareXResources.ApplyThemeToForm(this);
+            ShareXResources.ApplyTheme(this);
         }
 
         private void LoadImageFile(string imageFilePath)

@@ -59,7 +59,7 @@ namespace ShareX.UploadersLib
             Config = config;
 
             InitializeComponent();
-            ShareXResources.ApplyThemeToForm(this);
+            ShareXResources.ApplyTheme(this);
 
             /*
             CodeMenuItem[] inputCodeMenuItems = new CodeMenuItem[]

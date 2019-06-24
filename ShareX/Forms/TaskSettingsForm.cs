@@ -48,7 +48,7 @@ namespace ShareX
         public TaskSettingsForm(TaskSettings hotkeySetting, bool isDefault = false)
         {
             InitializeComponent();
-            ShareXResources.ApplyThemeToForm(this);
+            ShareXResources.ApplyTheme(this);
 
             TaskSettings = hotkeySetting;
             IsDefault = isDefault;

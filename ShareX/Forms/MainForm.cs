@@ -838,7 +838,7 @@ namespace ShareX
 
             TaskManager.RecentManager.MaxCount = Program.Settings.RecentTasksMaxCount;
 
-            ShareXResources.ApplyTheme = Program.Settings.ExperimentalDarkTheme;
+            ShareXResources.ExperimentalDarkTheme = Program.Settings.ExperimentalDarkTheme;
 
             if (ShareXResources.UseDarkTheme != Program.Settings.UseDarkTheme)
             {

@@ -47,7 +47,7 @@ namespace ShareX.HelpersLib
             Logger = logger;
 
             InitializeComponent();
-            ShareXResources.ApplyThemeToForm(this);
+            ShareXResources.ApplyTheme(this);
 
             rtbDebug.Text = Logger.ToString();
             rtbDebug.SelectionStart = rtbDebug.TextLength;

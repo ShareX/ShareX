@@ -55,7 +55,7 @@ namespace ShareX.UploadersLib
             Config = config;
 
             InitializeComponent();
-            ShareXResources.ApplyThemeToForm(this);
+            ShareXResources.ApplyTheme(this);
 
             InitializeControls();
         }

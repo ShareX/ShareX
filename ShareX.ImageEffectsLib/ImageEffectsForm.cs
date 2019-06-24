@@ -48,7 +48,7 @@ namespace ShareX.ImageEffectsLib
         public ImageEffectsForm(Image img, List<ImageEffectPreset> presets, int selectedPresetIndex)
         {
             InitializeComponent();
-            ShareXResources.ApplyThemeToForm(this);
+            ShareXResources.ApplyTheme(this);
 
             DefaultImage = img;
             Presets = presets;

@@ -39,7 +39,7 @@ namespace ShareX
             TaskInfo = taskInfo;
 
             InitializeComponent();
-            ShareXResources.ApplyThemeToForm(this);
+            ShareXResources.ApplyTheme(this);
 
             txtName.Text = TaskInfo.Name;
             AddMultiEnumItemsContextMenu<AfterCaptureTasks>(x => TaskInfo.AfterCaptureTasks = TaskInfo.AfterCaptureTasks.Swap(x), cmsAfterCapture);
