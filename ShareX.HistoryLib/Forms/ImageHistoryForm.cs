@@ -49,7 +49,6 @@ namespace ShareX.HistoryLib
         {
             InitializeComponent();
             tsMain.Renderer = new ToolStripRoundedEdgeRenderer();
-            ShareXResources.ApplyTheme(this);
 
             HistoryPath = historyPath;
             Settings = settings;
@@ -59,6 +58,7 @@ namespace ShareX.HistoryLib
 
             him = new HistoryItemManager(uploadFile, editImage);
             him.GetHistoryItems += him_GetHistoryItems;
+            ilvImages.ContextMenuStrip = him.cmsHistory;
 
             defaultTitle = Text;
 
@@ -66,6 +66,8 @@ namespace ShareX.HistoryLib
             {
                 tstbSearch.Text = Settings.SearchText;
             }
+
+            ShareXResources.ApplyTheme(this);
 
             Settings.WindowState.AutoHandleFormState(this);
         }
@@ -158,14 +160,6 @@ namespace ShareX.HistoryLib
             {
                 RefreshHistoryItems();
                 e.Handled = true;
-            }
-        }
-
-        private void ilvImages_MouseUp(object sender, MouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Right)
-            {
-                him.cmsHistory.Show(ilvImages, e.X + 1, e.Y + 1);
             }
         }
 

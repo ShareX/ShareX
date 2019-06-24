@@ -59,7 +59,6 @@ namespace ShareX.UploadersLib
             Config = config;
 
             InitializeComponent();
-            ShareXResources.ApplyTheme(this);
 
             /*
             CodeMenuItem[] inputCodeMenuItems = new CodeMenuItem[]
@@ -104,6 +103,8 @@ namespace ShareX.UploadersLib
             CustomUploaderAddDestinationTypes();
             cbRequestMethod.Items.AddRange(Enum.GetNames(typeof(HttpMethod)));
             cbBody.Items.AddRange(Helpers.GetEnumDescriptions<CustomUploaderBody>());
+
+            ShareXResources.ApplyTheme(this);
 
             CustomUploaderLoadTab();
         }

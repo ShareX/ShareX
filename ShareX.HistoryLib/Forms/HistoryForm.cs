@@ -52,7 +52,6 @@ namespace ShareX.HistoryLib
             Settings = settings;
 
             InitializeComponent();
-            ShareXResources.ApplyTheme(this);
 
             defaultTitle = Text;
             UpdateTitle();
@@ -70,6 +69,7 @@ namespace ShareX.HistoryLib
 
             him = new HistoryItemManager(uploadFile, editImage);
             him.GetHistoryItems += him_GetHistoryItems;
+            lvHistory.ContextMenuStrip = him.cmsHistory;
 
             pbThumbnail.Reset();
             lvHistory.FillLastColumn();
@@ -78,6 +78,8 @@ namespace ShareX.HistoryLib
             {
                 scMain.SplitterDistance = Settings.SplitterDistance;
             }
+
+            ShareXResources.ApplyTheme(this);
 
             Settings.WindowState.AutoHandleFormState(this);
         }
@@ -424,14 +426,6 @@ namespace ShareX.HistoryLib
             if (e.IsSelected)
             {
                 UpdateControls();
-            }
-        }
-
-        private void lvHistory_MouseUp(object sender, MouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Right)
-            {
-                him.cmsHistory.Show(lvHistory, e.X + 1, e.Y + 1);
             }
         }
 

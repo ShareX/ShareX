@@ -46,7 +46,6 @@ namespace ShareX.HelpersLib
         public static bool ExperimentalDarkTheme { get; set; } = true;
 
         public static Icon Icon => UseWhiteIcon ? Resources.ShareX_Icon_White : Resources.ShareX_Icon;
-
         public static Image Logo => Resources.ShareX_Logo;
         public static Image LogoBlack => Resources.ShareX_Logo_Black;
 
@@ -55,6 +54,7 @@ namespace ShareX.HelpersLib
         public static Color BorderColor => UseDarkTheme ? DarkBorderColor : ProfessionalColors.SeparatorDark;
         public static Color CheckerColor1 => UseDarkTheme ? DarkCheckerColor1 : SystemColors.ControlLightLight;
         public static Color CheckerColor2 => UseDarkTheme ? DarkCheckerColor2 : SystemColors.ControlLight;
+        public static int CheckerSize { get; } = 15;
 
         public static Color DarkBackgroundColor { get; } = Color.FromArgb(42, 47, 56);
         public static Color DarkTextColor { get; } = Color.FromArgb(235, 235, 235);
@@ -62,8 +62,6 @@ namespace ShareX.HelpersLib
         public static Color DarkCheckerColor1 { get; } = Color.FromArgb(60, 60, 60);
         public static Color DarkCheckerColor2 { get; } = Color.FromArgb(50, 50, 50);
         public static Color DarkLinkColor { get; } = Color.FromArgb(166, 212, 255);
-
-        public static int CheckerSize { get; } = 15;
 
         public static void ApplyTheme(Form form, bool setIcon = true)
         {
@@ -89,6 +87,16 @@ namespace ShareX.HelpersLib
 
         private static void ApplyDarkThemeToControl(Control control)
         {
+            if (control.ContextMenuStrip != null)
+            {
+                control.ContextMenuStrip.Renderer = new ToolStripDarkRenderer();
+            }
+
+            if (control is MenuButton mb && mb.Menu != null)
+            {
+                mb.Menu.Renderer = new ToolStripDarkRenderer();
+            }
+
             switch (control)
             {
                 case Button btn:
