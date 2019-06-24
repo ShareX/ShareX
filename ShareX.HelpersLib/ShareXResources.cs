@@ -57,6 +57,7 @@ namespace ShareX.HelpersLib
         public static int CheckerSize { get; } = 15;
 
         public static Color DarkBackgroundColor { get; } = Color.FromArgb(42, 47, 56);
+        public static Color DarkBackgroundVariantColor { get; } = ColorHelpers.LighterColor(DarkBackgroundColor, 0.05f);
         public static Color DarkTextColor { get; } = Color.FromArgb(235, 235, 235);
         public static Color DarkBorderColor { get; } = Color.FromArgb(28, 32, 38);
         public static Color DarkCheckerColor1 { get; } = Color.FromArgb(60, 60, 60);
@@ -104,26 +105,37 @@ namespace ShareX.HelpersLib
                     // Buttons looks better with system colors
                     control.ForeColor = SystemColors.ControlText;
                     return;
+                case TextBox tb:
+                    tb.ForeColor = DarkTextColor;
+                    tb.BackColor = DarkBackgroundVariantColor;
+                    tb.BorderStyle = BorderStyle.FixedSingle;
+                    return;
                 case SplitContainer sc:
                     sc.Panel1.BackColor = DarkBackgroundColor;
                     sc.Panel2.BackColor = DarkBackgroundColor;
                     break;
                 case PropertyGrid pg:
                     pg.CategoryForeColor = DarkTextColor;
-                    pg.CategorySplitterColor = DarkBorderColor;
-                    pg.LineColor = DarkBorderColor;
-                    pg.SelectedItemWithFocusForeColor = DarkBorderColor;
+                    pg.CategorySplitterColor = DarkBackgroundColor;
+                    pg.LineColor = DarkBackgroundColor;
+                    pg.SelectedItemWithFocusForeColor = DarkBackgroundColor;
                     pg.SelectedItemWithFocusBackColor = DarkTextColor;
-                    break;
+                    pg.ViewForeColor = DarkTextColor;
+                    pg.ViewBackColor = DarkBackgroundVariantColor;
+                    pg.ViewBorderColor = DarkBorderColor;
+                    pg.HelpForeColor = DarkTextColor;
+                    pg.HelpBackColor = DarkBackgroundColor;
+                    pg.HelpBorderColor = DarkBorderColor;
+                    return;
                 case DataGridView dgv:
-                    dgv.BackgroundColor = DarkBackgroundColor;
+                    dgv.BackgroundColor = DarkBackgroundVariantColor;
                     dgv.GridColor = DarkBorderColor;
-                    dgv.DefaultCellStyle.BackColor = DarkBackgroundColor;
-                    dgv.DefaultCellStyle.SelectionBackColor = DarkBackgroundColor;
+                    dgv.DefaultCellStyle.BackColor = DarkBackgroundVariantColor;
+                    dgv.DefaultCellStyle.SelectionBackColor = DarkBackgroundVariantColor;
                     dgv.DefaultCellStyle.ForeColor = DarkTextColor;
                     dgv.DefaultCellStyle.SelectionForeColor = DarkTextColor;
-                    dgv.ColumnHeadersDefaultCellStyle.BackColor = DarkBorderColor;
-                    dgv.ColumnHeadersDefaultCellStyle.SelectionBackColor = DarkBorderColor;
+                    dgv.ColumnHeadersDefaultCellStyle.BackColor = DarkBackgroundColor;
+                    dgv.ColumnHeadersDefaultCellStyle.SelectionBackColor = DarkBackgroundColor;
                     dgv.ColumnHeadersDefaultCellStyle.ForeColor = DarkTextColor;
                     dgv.ColumnHeadersDefaultCellStyle.SelectionForeColor = DarkTextColor;
                     dgv.EnableHeadersVisualStyles = false;
