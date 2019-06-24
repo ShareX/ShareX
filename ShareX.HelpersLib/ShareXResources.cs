@@ -64,9 +64,12 @@ namespace ShareX.HelpersLib
 
         public static int CheckerSize { get; } = 15;
 
-        public static void ApplyThemeToForm(Form form)
+        public static void ApplyThemeToForm(Form form, bool setIcon = true)
         {
-            form.Icon = Icon;
+            if (setIcon)
+            {
+                form.Icon = Icon;
+            }
 
             if (ApplyTheme)
             {
