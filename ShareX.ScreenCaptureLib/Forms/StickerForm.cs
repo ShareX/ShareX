@@ -49,9 +49,9 @@ namespace ShareX.ScreenCaptureLib
             StickerSize = stickerSize;
 
             InitializeComponent();
+            tsMain.Renderer = new ToolStripRoundedEdgeRenderer();
             ShareXResources.ApplyThemeToForm(this);
 
-            tsMain.Renderer = new ToolStripRoundedEdgeRenderer();
             tsnudSize.NumericUpDownControl.Minimum = 16;
             tsnudSize.NumericUpDownControl.Maximum = 256;
             tsnudSize.NumericUpDownControl.Increment = 16;

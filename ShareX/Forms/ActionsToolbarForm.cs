@@ -60,6 +60,7 @@ namespace ShareX
         private ActionsToolbarForm()
         {
             InitializeComponent();
+            ShareXResources.ApplyThemeToForm(this);
         }
 
         private void InitializeComponent()
@@ -74,7 +75,6 @@ namespace ShareX
             BackColor = SystemColors.ActiveBorder;
             ClientSize = new Size(284, 261);
             FormBorderStyle = FormBorderStyle.None;
-            Icon = ShareXResources.Icon;
             ShowInTaskbar = false;
             StartPosition = FormStartPosition.Manual;
             Text = "ShareX - Actions toolbar";

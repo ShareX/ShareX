@@ -116,6 +116,10 @@ namespace ShareX.HelpersLib
                     dgv.ColumnHeadersDefaultCellStyle.SelectionForeColor = TextColor;
                     dgv.EnableHeadersVisualStyles = false;
                     break;
+                case ToolStrip ts:
+                    ts.Renderer = new ToolStripDarkRenderer();
+                    ApplyThemeToToolStripItemCollection(ts.Items);
+                    return;
                 case LinkLabel ll:
                     ll.LinkColor = Color.FromArgb(166, 212, 255);
                     break;
@@ -127,6 +131,22 @@ namespace ShareX.HelpersLib
             foreach (Control child in control.Controls)
             {
                 ApplyThemeToControl(child);
+            }
+        }
+
+        private static void ApplyThemeToToolStripItemCollection(ToolStripItemCollection collection)
+        {
+            foreach (ToolStripItem tsi in collection)
+            {
+                switch (tsi)
+                {
+                    case ToolStripControlHost tsch:
+                        ApplyThemeToControl(tsch.Control);
+                        break;
+                    case ToolStripDropDownItem tsddi:
+                        ApplyThemeToToolStripItemCollection(tsddi.DropDownItems);
+                        break;
+                }
             }
         }
     }

@@ -48,12 +48,12 @@ namespace ShareX.HistoryLib
         public ImageHistoryForm(string historyPath, ImageHistorySettings settings, Action<string> uploadFile = null, Action<string> editImage = null)
         {
             InitializeComponent();
+            tsMain.Renderer = new ToolStripRoundedEdgeRenderer();
             ShareXResources.ApplyThemeToForm(this);
 
             HistoryPath = historyPath;
             Settings = settings;
 
-            tsMain.Renderer = new ToolStripRoundedEdgeRenderer();
             ilvImages.View = (View)Settings.ViewMode;
             ilvImages.ThumbnailSize = Settings.ThumbnailSize;
 
