@@ -147,7 +147,7 @@ namespace ShareX
 #endif
         public bool AutoCheckUpdate { get; set; }
 
-        [Category("Application"), DefaultValue(false), Description("Enables experimental dark theme support by changing each controls BackColor and ForeColor properties to dark theme colors.")]
+        [Category("Application"), DefaultValue(true), Description("Enables experimental dark theme support by changing each controls BackColor and ForeColor properties to dark theme colors.")]
         public bool ExperimentalDarkTheme { get; set; }
 
         [Category("Application"), DefaultValue(false), Description("Calculate and show file sizes in binary units (KiB, MiB etc.)")]
