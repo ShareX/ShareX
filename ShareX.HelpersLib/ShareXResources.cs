@@ -101,6 +101,11 @@ namespace ShareX.HelpersLib
             switch (control)
             {
                 case Button btn:
+                    btn.FlatStyle = FlatStyle.Flat;
+                    btn.FlatAppearance.BorderColor = DarkBorderColor;
+                    btn.ForeColor = DarkTextColor;
+                    btn.BackColor = DarkBackgroundVariantColor;
+                    return;
                 case CheckBox cb when cb.Appearance == Appearance.Button:
                     // Buttons looks better with system colors
                     control.ForeColor = SystemColors.ControlText;
