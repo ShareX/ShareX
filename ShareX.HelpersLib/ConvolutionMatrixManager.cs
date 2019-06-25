@@ -60,14 +60,14 @@ namespace ShareX.HelpersLib
                             int fyr = fy - originY;
                             int offsetY = y + fyr;
 
-                            offsetY.Clamp(0, source.Height - 1);
+                            offsetY = offsetY.Clamp(0, source.Height - 1);
 
                             for (int fx = 0; fx < kernel.Width; fx++)
                             {
                                 int fxr = fx - originX;
                                 int offsetX = x + fxr;
 
-                                offsetX.Clamp(0, source.Width - 1);
+                                offsetX = offsetX.Clamp(0, source.Width - 1);
 
                                 ColorBgra currentColor = source.GetPixel(offsetX, offsetY);
 
@@ -82,18 +82,18 @@ namespace ShareX.HelpersLib
                         }
 
                         r += kernel.Offset;
-                        r.Clamp(0, 255);
+                        r = r.Clamp(0, 255);
 
                         g += kernel.Offset;
-                        g.Clamp(0, 255);
+                        g = g.Clamp(0, 255);
 
                         b += kernel.Offset;
-                        b.Clamp(0, 255);
+                        b = b.Clamp(0, 255);
 
                         if (kernel.ConsiderAlpha)
                         {
                             a += kernel.Offset;
-                            a.Clamp(0, 255);
+                            a = a.Clamp(0, 255);
                         }
 
                         dest.SetPixel(
