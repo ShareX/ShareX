@@ -132,6 +132,7 @@ namespace ShareX.ImageEffectsLib
                 typeof(Reflection),
                 typeof(Shadow),
                 typeof(Sharpen),
+                typeof(Slice),
                 typeof(Smooth),
                 typeof(TornEdge));
         }

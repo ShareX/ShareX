@@ -1499,6 +1499,37 @@ namespace ShareX.HelpersLib
             }
         }
 
+        public static Bitmap Slice(Image img, int minSliceHeight, int maxSliceHeight, int minSliceShift, int maxSliceShift)
+        {
+            Bitmap result = img.CreateEmptyBitmap();
+
+            using (Graphics g = Graphics.FromImage(result))
+            {
+                int y = 0;
+
+                while (y < img.Height)
+                {
+                    Rectangle sourceRect = new Rectangle(0, y, img.Width, MathHelpers.Random(minSliceHeight, maxSliceHeight));
+                    Rectangle destRect = sourceRect;
+
+                    if (MathHelpers.Random(1) == 0) // Shift left
+                    {
+                        destRect.X = MathHelpers.Random(-maxSliceShift, -minSliceShift);
+                    }
+                    else // Shift right
+                    {
+                        destRect.X = MathHelpers.Random(minSliceShift, maxSliceShift);
+                    }
+
+                    g.DrawImage(img, destRect, sourceRect, GraphicsUnit.Pixel);
+
+                    y += sourceRect.Height;
+                }
+            }
+
+            return result;
+        }
+
         public static string OpenImageFileDialog(Form form = null)
         {
             string[] images = OpenImageFileDialog(false, form);
