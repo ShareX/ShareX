@@ -457,6 +457,11 @@ namespace ShareX.ImageEffectsLib
             }
         }
 
+        private void BtnRefresh_Click(object sender, EventArgs e)
+        {
+            UpdatePreview();
+        }
+
         private void lvEffects_ItemMoved(object sender, int oldIndex, int newIndex)
         {
             ImageEffectPreset preset = GetSelectedPreset();

@@ -53,6 +53,7 @@
             this.btnClose = new System.Windows.Forms.Button();
             this.btnOK = new System.Windows.Forms.Button();
             this.btnUploadImage = new System.Windows.Forms.Button();
+            this.btnRefresh = new System.Windows.Forms.Button();
             this.cmsLoadImage.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -142,6 +143,7 @@
             this.pbResult.EnableRightClickMenu = true;
             this.pbResult.FullscreenOnClick = true;
             this.pbResult.Name = "pbResult";
+            this.pbResult.PictureBoxBackColor = System.Drawing.SystemColors.Control;
             this.pbResult.ShowImageSizeLabel = true;
             this.pbResult.DragDrop += new System.Windows.Forms.DragEventHandler(this.pbResult_DragDrop);
             this.pbResult.DragEnter += new System.Windows.Forms.DragEventHandler(this.pbResult_DragEnter);
@@ -235,12 +237,20 @@
             this.btnUploadImage.UseVisualStyleBackColor = true;
             this.btnUploadImage.Click += new System.EventHandler(this.btnUploadImage_Click);
             // 
+            // btnRefresh
+            // 
+            resources.ApplyResources(this.btnRefresh, "btnRefresh");
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.BtnRefresh_Click);
+            // 
             // ImageEffectsForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.CancelButton = this.btnClose;
+            this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.btnUploadImage);
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.btnClose);
@@ -293,6 +303,7 @@
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button btnOK;
         private System.Windows.Forms.Button btnUploadImage;
+        private System.Windows.Forms.Button btnRefresh;
     }
 }
 
