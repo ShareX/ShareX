@@ -107,13 +107,25 @@ namespace ShareX.HelpersLib
                     btn.BackColor = DarkBackgroundVariantColor;
                     return;
                 case CheckBox cb when cb.Appearance == Appearance.Button:
-                    // Buttons looks better with system colors
-                    control.ForeColor = SystemColors.ControlText;
+                    cb.FlatStyle = FlatStyle.Flat;
+                    cb.FlatAppearance.BorderColor = DarkBorderColor;
+                    cb.ForeColor = DarkTextColor;
+                    cb.BackColor = DarkBackgroundVariantColor;
                     return;
                 case TextBox tb:
                     tb.ForeColor = DarkTextColor;
                     tb.BackColor = DarkBackgroundVariantColor;
                     tb.BorderStyle = BorderStyle.FixedSingle;
+                    return;
+                case ComboBox cb:
+                    cb.FlatStyle = FlatStyle.Flat;
+                    cb.ForeColor = DarkTextColor;
+                    cb.BackColor = DarkBackgroundVariantColor;
+                    return;
+                case ListBox lb:
+                case ListView lv:
+                    control.ForeColor = DarkTextColor;
+                    control.BackColor = DarkBackgroundVariantColor;
                     return;
                 case SplitContainer sc:
                     sc.Panel1.BackColor = DarkBackgroundColor;
