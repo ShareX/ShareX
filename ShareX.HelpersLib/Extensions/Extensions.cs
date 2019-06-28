@@ -709,5 +709,51 @@ namespace ShareX.HelpersLib
         {
             rtb.SelectionFont = new Font(rtb.Font, FontStyle.Bold);
         }
+
+        public static void SupportDarkTheme(this ListView lv)
+        {
+            if (!lv.OwnerDraw)
+            {
+                lv.OwnerDraw = true;
+
+                lv.DrawItem += (sender, e) =>
+                {
+                    e.DrawDefault = true;
+                };
+
+                lv.DrawSubItem += (sender, e) =>
+                {
+                    e.DrawDefault = true;
+                };
+
+                lv.DrawColumnHeader += (sender, e) =>
+                {
+                    if (ShareXResources.UseDarkTheme)
+                    {
+                        using (Brush brush = new SolidBrush(ShareXResources.DarkBackgroundColor))
+                        {
+                            e.Graphics.FillRectangle(brush, e.Bounds);
+                        }
+
+                        TextRenderer.DrawText(e.Graphics, e.Header.Text, e.Font, e.Bounds.LocationOffset(2, 0).SizeOffset(-4, 0), ShareXResources.DarkTextColor,
+                            TextFormatFlags.Left | TextFormatFlags.VerticalCenter | TextFormatFlags.EndEllipsis);
+
+                        if (e.Bounds.Right < lv.ClientRectangle.Right)
+                        {
+                            using (Pen pen = new Pen(Color.FromArgb(22, 26, 31)))
+                            using (Pen pen2 = new Pen(Color.FromArgb(56, 64, 75)))
+                            {
+                                e.Graphics.DrawLine(pen, e.Bounds.Right - 2, e.Bounds.Top, e.Bounds.Right - 2, e.Bounds.Bottom - 1);
+                                e.Graphics.DrawLine(pen2, e.Bounds.Right - 1, e.Bounds.Top, e.Bounds.Right - 1, e.Bounds.Bottom - 1);
+                            }
+                        }
+                    }
+                    else
+                    {
+                        e.DrawDefault = true;
+                    }
+                };
+            }
+        }
     }
 }

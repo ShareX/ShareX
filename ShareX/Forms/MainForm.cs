@@ -157,6 +157,8 @@ namespace ShareX
                 tsmiShareSelectedURL.DropDownItems.Add(tsmi);
             }
 
+            lvUploads.SupportDarkTheme();
+
             ImageList il = new ImageList();
             il.ColorDepth = ColorDepth.Depth32Bit;
             il.Images.Add(Resources.navigation_090_button);
@@ -1352,39 +1354,6 @@ namespace ShareX
                 UpdateContextMenu();
                 cmsTaskInfo.Show((Control)sender, e.X + 1, e.Y + 1);
             }
-        }
-
-        private void LvUploads_DrawColumnHeader(object sender, DrawListViewColumnHeaderEventArgs e)
-        {
-            if (ShareXResources.UseDarkTheme)
-            {
-                using (Brush brush = new SolidBrush(ShareXResources.DarkBackgroundColor))
-                {
-                    e.Graphics.FillRectangle(brush, e.Bounds);
-                }
-
-                TextRenderer.DrawText(e.Graphics, e.Header.Text, e.Font, e.Bounds.LocationOffset(4, 0).SizeOffset(-6, 0), ShareXResources.DarkTextColor,
-                    TextFormatFlags.Left | TextFormatFlags.VerticalCenter | TextFormatFlags.EndEllipsis);
-
-                if (e.ColumnIndex > 0)
-                {
-                    using (Pen pen = new Pen(Color.FromArgb(22, 26, 31)))
-                    using (Pen pen2 = new Pen(Color.FromArgb(56, 64, 75)))
-                    {
-                        e.Graphics.DrawLine(pen, e.Bounds.Left, e.Bounds.Top, e.Bounds.Left, e.Bounds.Bottom - 1);
-                        e.Graphics.DrawLine(pen2, e.Bounds.Left + 1, e.Bounds.Top, e.Bounds.Left + 1, e.Bounds.Bottom - 1);
-                    }
-                }
-            }
-            else
-            {
-                e.DrawDefault = true;
-            }
-        }
-
-        private void LvUploads_DrawItem(object sender, DrawListViewItemEventArgs e)
-        {
-            e.DrawDefault = true;
         }
 
         private async void lvUploads_SelectedIndexChanged(object sender, EventArgs e)

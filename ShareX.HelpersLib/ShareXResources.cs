@@ -123,9 +123,13 @@ namespace ShareX.HelpersLib
                     cb.BackColor = DarkBackgroundVariantColor;
                     return;
                 case ListBox lb:
+                    lb.ForeColor = DarkTextColor;
+                    lb.BackColor = DarkBackgroundVariantColor;
+                    return;
                 case ListView lv:
-                    control.ForeColor = DarkTextColor;
-                    control.BackColor = DarkBackgroundVariantColor;
+                    lv.ForeColor = DarkTextColor;
+                    lv.BackColor = DarkBackgroundVariantColor;
+                    lv.SupportDarkTheme();
                     return;
                 case SplitContainer sc:
                     sc.Panel1.BackColor = DarkBackgroundColor;
