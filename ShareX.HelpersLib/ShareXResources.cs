@@ -71,7 +71,7 @@ namespace ShareX.HelpersLib
                 form.Icon = Icon;
             }
 
-            if (ExperimentalDarkTheme)
+            if (UseDarkTheme && ExperimentalDarkTheme)
             {
                 ApplyDarkThemeToControl(form);
 
