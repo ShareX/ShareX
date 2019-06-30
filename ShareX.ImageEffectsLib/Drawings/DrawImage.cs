@@ -81,7 +81,23 @@ namespace ShareX.ImageEffectsLib
                     else if (SizeMode == DrawImageSizeMode.PercentageOfCanvas)
                     {
                         // Relative size (percentage of image)
-                        imageSize = new Size((int)(img.Width * (Size.Width / 100.0)), (int)(img.Height * (Size.Height / 100.0)));
+                        decimal ratio = decimal.Divide(img2.Width, img2.Height);
+                        if (Size.Width == 0 && Size.Height != 0)
+                        {
+                            int Height = (int)(img.Height * (Size.Height / 100.0));
+                            int Width = (int)(Height * ratio);
+                            imageSize = new Size(Width, Height);
+                        }
+                        else if (Size.Height == 0 && Size.Width != 0)
+                        {
+                            int Width = (int)(img.Width * (Size.Width / 100.0));
+                            int Height = (int)(Width * decimal.Divide(1, ratio));
+                            imageSize = new Size(Width, Height);
+                        }
+                        else
+                        {
+                            imageSize = new Size((int)(img.Width * (Size.Width / 100.0)), (int)(img.Height * (Size.Height / 100.0)));
+                        }
                     }
 
                     // Place the image
