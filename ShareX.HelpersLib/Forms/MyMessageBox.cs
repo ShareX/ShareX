@@ -149,7 +149,7 @@ namespace ShareX.HelpersLib
 
             ShareXResources.ApplyTheme(this);
 
-            if (ShareXResources.UseDarkTheme)
+            if (ShareXResources.ExperimentalDarkTheme)
             {
                 panel.BackColor = ShareXResources.DarkBorderColor;
             }

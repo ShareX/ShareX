@@ -65,7 +65,7 @@ namespace ShareX.HelpersLib
                 ShowImageMargin = false
             };
 
-            if (ShareXResources.UseDarkTheme)
+            if (ShareXResources.ExperimentalDarkTheme)
             {
                 cms.Renderer = new ToolStripDarkRenderer();
             }

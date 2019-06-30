@@ -42,8 +42,22 @@ namespace ShareX.HelpersLib
         }
 
         public static bool UseDarkTheme { get; set; }
+
+        public static bool ExperimentalDarkTheme
+        {
+            get
+            {
+                return UseDarkTheme && experimentalDarkTheme;
+            }
+            set
+            {
+                experimentalDarkTheme = value;
+            }
+        }
+
+        private static bool experimentalDarkTheme;
+
         public static bool UseWhiteIcon { get; set; }
-        public static bool ExperimentalDarkTheme { get; set; } = true;
 
         public static Icon Icon => UseWhiteIcon ? Resources.ShareX_Icon_White : Resources.ShareX_Icon;
         public static Image Logo => Resources.ShareX_Logo;
@@ -71,7 +85,7 @@ namespace ShareX.HelpersLib
                 form.Icon = Icon;
             }
 
-            if (UseDarkTheme && ExperimentalDarkTheme)
+            if (ExperimentalDarkTheme)
             {
                 ApplyDarkThemeToControl(form);
 
