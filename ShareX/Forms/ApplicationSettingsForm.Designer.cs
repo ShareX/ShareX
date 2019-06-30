@@ -103,16 +103,16 @@ namespace ShareX
             this.chDescription = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chFormat = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tpUploadRetry = new System.Windows.Forms.TabPage();
-            this.chkUseSecondaryUploaders = new System.Windows.Forms.CheckBox();
-            this.gbSecondaryImageUploaders = new System.Windows.Forms.GroupBox();
-            this.lvSecondaryImageUploaders = new ShareX.HelpersLib.MyListView();
-            this.chSecondaryImageUploaders = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.gbSecondaryFileUploaders = new System.Windows.Forms.GroupBox();
             this.lvSecondaryFileUploaders = new ShareX.HelpersLib.MyListView();
             this.chSecondaryFileUploaders = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.gbSecondaryImageUploaders = new System.Windows.Forms.GroupBox();
+            this.lvSecondaryImageUploaders = new ShareX.HelpersLib.MyListView();
+            this.chSecondaryImageUploaders = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.gbSecondaryTextUploaders = new System.Windows.Forms.GroupBox();
             this.lvSecondaryTextUploaders = new ShareX.HelpersLib.MyListView();
             this.chSecondaryTextUploaders = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chkUseSecondaryUploaders = new System.Windows.Forms.CheckBox();
             this.cbIfUploadFailRetryOnce = new System.Windows.Forms.Label();
             this.nudRetryUpload = new System.Windows.Forms.NumericUpDown();
             this.tpHistory = new System.Windows.Forms.TabPage();
@@ -144,6 +144,7 @@ namespace ShareX
             this.tpAdvanced = new System.Windows.Forms.TabPage();
             this.pgSettings = new System.Windows.Forms.PropertyGrid();
             this.tttvMain = new ShareX.HelpersLib.TabToTreeView();
+            this.cbExperimentalDarkTheme = new System.Windows.Forms.CheckBox();
             this.tcSettings.SuspendLayout();
             this.tpGeneral.SuspendLayout();
             this.tpIntegration.SuspendLayout();
@@ -160,8 +161,8 @@ namespace ShareX
             this.tpUploadResults.SuspendLayout();
             this.gbClipboardFormats.SuspendLayout();
             this.tpUploadRetry.SuspendLayout();
-            this.gbSecondaryImageUploaders.SuspendLayout();
             this.gbSecondaryFileUploaders.SuspendLayout();
+            this.gbSecondaryImageUploaders.SuspendLayout();
             this.gbSecondaryTextUploaders.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudRetryUpload)).BeginInit();
             this.tpHistory.SuspendLayout();
@@ -192,6 +193,7 @@ namespace ShareX
             // tpGeneral
             // 
             this.tpGeneral.BackColor = System.Drawing.SystemColors.Window;
+            this.tpGeneral.Controls.Add(this.cbExperimentalDarkTheme);
             this.tpGeneral.Controls.Add(this.cbUseWhiteShareXIcon);
             this.tpGeneral.Controls.Add(this.cbUseDarkTheme);
             this.tpGeneral.Controls.Add(this.btnCheckDevBuild);
@@ -728,12 +730,30 @@ namespace ShareX
             resources.ApplyResources(this.tpUploadRetry, "tpUploadRetry");
             this.tpUploadRetry.Name = "tpUploadRetry";
             // 
-            // chkUseSecondaryUploaders
+            // gbSecondaryFileUploaders
             // 
-            resources.ApplyResources(this.chkUseSecondaryUploaders, "chkUseSecondaryUploaders");
-            this.chkUseSecondaryUploaders.Name = "chkUseSecondaryUploaders";
-            this.chkUseSecondaryUploaders.UseVisualStyleBackColor = true;
-            this.chkUseSecondaryUploaders.CheckedChanged += new System.EventHandler(this.chkUseSecondaryUploaders_CheckedChanged);
+            this.gbSecondaryFileUploaders.Controls.Add(this.lvSecondaryFileUploaders);
+            resources.ApplyResources(this.gbSecondaryFileUploaders, "gbSecondaryFileUploaders");
+            this.gbSecondaryFileUploaders.Name = "gbSecondaryFileUploaders";
+            this.gbSecondaryFileUploaders.TabStop = false;
+            // 
+            // lvSecondaryFileUploaders
+            // 
+            this.lvSecondaryFileUploaders.AllowDrop = true;
+            this.lvSecondaryFileUploaders.AllowItemDrag = true;
+            this.lvSecondaryFileUploaders.AutoFillColumn = true;
+            this.lvSecondaryFileUploaders.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.lvSecondaryFileUploaders.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.chSecondaryFileUploaders});
+            resources.ApplyResources(this.lvSecondaryFileUploaders, "lvSecondaryFileUploaders");
+            this.lvSecondaryFileUploaders.FullRowSelect = true;
+            this.lvSecondaryFileUploaders.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
+            this.lvSecondaryFileUploaders.HideSelection = false;
+            this.lvSecondaryFileUploaders.MultiSelect = false;
+            this.lvSecondaryFileUploaders.Name = "lvSecondaryFileUploaders";
+            this.lvSecondaryFileUploaders.UseCompatibleStateImageBehavior = false;
+            this.lvSecondaryFileUploaders.View = System.Windows.Forms.View.Details;
+            this.lvSecondaryFileUploaders.MouseUp += new System.Windows.Forms.MouseEventHandler(this.lvSecondaryUploaders_MouseUp);
             // 
             // gbSecondaryImageUploaders
             // 
@@ -760,31 +780,6 @@ namespace ShareX
             this.lvSecondaryImageUploaders.View = System.Windows.Forms.View.Details;
             this.lvSecondaryImageUploaders.MouseUp += new System.Windows.Forms.MouseEventHandler(this.lvSecondaryUploaders_MouseUp);
             // 
-            // gbSecondaryFileUploaders
-            // 
-            this.gbSecondaryFileUploaders.Controls.Add(this.lvSecondaryFileUploaders);
-            resources.ApplyResources(this.gbSecondaryFileUploaders, "gbSecondaryFileUploaders");
-            this.gbSecondaryFileUploaders.Name = "gbSecondaryFileUploaders";
-            this.gbSecondaryFileUploaders.TabStop = false;
-            // 
-            // lvSecondaryFileUploaders
-            // 
-            this.lvSecondaryFileUploaders.AllowDrop = true;
-            this.lvSecondaryFileUploaders.AllowItemDrag = true;
-            this.lvSecondaryFileUploaders.AutoFillColumn = true;
-            this.lvSecondaryFileUploaders.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.lvSecondaryFileUploaders.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.chSecondaryFileUploaders});
-            resources.ApplyResources(this.lvSecondaryFileUploaders, "lvSecondaryFileUploaders");
-            this.lvSecondaryFileUploaders.FullRowSelect = true;
-            this.lvSecondaryFileUploaders.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
-            this.lvSecondaryFileUploaders.HideSelection = false;
-            this.lvSecondaryFileUploaders.MultiSelect = false;
-            this.lvSecondaryFileUploaders.Name = "lvSecondaryFileUploaders";
-            this.lvSecondaryFileUploaders.UseCompatibleStateImageBehavior = false;
-            this.lvSecondaryFileUploaders.View = System.Windows.Forms.View.Details;
-            this.lvSecondaryFileUploaders.MouseUp += new System.Windows.Forms.MouseEventHandler(this.lvSecondaryUploaders_MouseUp);
-            // 
             // gbSecondaryTextUploaders
             // 
             this.gbSecondaryTextUploaders.Controls.Add(this.lvSecondaryTextUploaders);
@@ -809,6 +804,13 @@ namespace ShareX
             this.lvSecondaryTextUploaders.UseCompatibleStateImageBehavior = false;
             this.lvSecondaryTextUploaders.View = System.Windows.Forms.View.Details;
             this.lvSecondaryTextUploaders.MouseUp += new System.Windows.Forms.MouseEventHandler(this.lvSecondaryUploaders_MouseUp);
+            // 
+            // chkUseSecondaryUploaders
+            // 
+            resources.ApplyResources(this.chkUseSecondaryUploaders, "chkUseSecondaryUploaders");
+            this.chkUseSecondaryUploaders.Name = "chkUseSecondaryUploaders";
+            this.chkUseSecondaryUploaders.UseVisualStyleBackColor = true;
+            this.chkUseSecondaryUploaders.CheckedChanged += new System.EventHandler(this.chkUseSecondaryUploaders_CheckedChanged);
             // 
             // cbIfUploadFailRetryOnce
             // 
@@ -1050,6 +1052,13 @@ namespace ShareX
             this.tttvMain.TreeViewSize = 175;
             this.tttvMain.TabChanged += new ShareX.HelpersLib.TabToTreeView.TabChangedEventHandler(this.tttvMain_TabChanged);
             // 
+            // cbExperimentalDarkTheme
+            // 
+            resources.ApplyResources(this.cbExperimentalDarkTheme, "cbExperimentalDarkTheme");
+            this.cbExperimentalDarkTheme.Name = "cbExperimentalDarkTheme";
+            this.cbExperimentalDarkTheme.UseVisualStyleBackColor = true;
+            this.cbExperimentalDarkTheme.CheckedChanged += new System.EventHandler(this.CbExperimentalDarkTheme_CheckedChanged);
+            // 
             // ApplicationSettingsForm
             // 
             resources.ApplyResources(this, "$this");
@@ -1085,8 +1094,8 @@ namespace ShareX
             this.gbClipboardFormats.ResumeLayout(false);
             this.tpUploadRetry.ResumeLayout(false);
             this.tpUploadRetry.PerformLayout();
-            this.gbSecondaryImageUploaders.ResumeLayout(false);
             this.gbSecondaryFileUploaders.ResumeLayout(false);
+            this.gbSecondaryImageUploaders.ResumeLayout(false);
             this.gbSecondaryTextUploaders.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.nudRetryUpload)).EndInit();
             this.tpHistory.ResumeLayout(false);
@@ -1222,5 +1231,6 @@ namespace ShareX
         private System.Windows.Forms.Button btnPersonalFolderPathApply;
         private System.Windows.Forms.CheckBox cbUseDarkTheme;
         private System.Windows.Forms.CheckBox cbUseWhiteShareXIcon;
+        private System.Windows.Forms.CheckBox cbExperimentalDarkTheme;
     }
 }

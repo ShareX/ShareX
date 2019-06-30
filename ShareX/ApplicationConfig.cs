@@ -72,6 +72,7 @@ namespace ShareX
         public bool TrayIconProgressEnabled = true;
         public bool TaskbarProgressEnabled = true;
         public bool UseDarkTheme = true;
+        public bool ExperimentalDarkTheme = true;
         public bool UseWhiteShareXIcon = false;
         public bool RememberMainFormPosition = false;
         public Point MainFormPosition = Point.Empty;
@@ -146,9 +147,6 @@ namespace ShareX
         [Browsable(false)]
 #endif
         public bool AutoCheckUpdate { get; set; }
-
-        [Category("Application"), DefaultValue(true), Description("Enables experimental dark theme support by changing each controls color options to dark theme colors.")]
-        public bool ExperimentalDarkTheme { get; set; }
 
         [Category("Application"), DefaultValue(false), Description("Calculate and show file sizes in binary units (KiB, MiB etc.)")]
         public bool BinaryUnits { get; set; }
