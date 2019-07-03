@@ -56,6 +56,15 @@ namespace ShareX.HistoryLib
             ilvImages.View = (View)Settings.ViewMode;
             ilvImages.ThumbnailSize = Settings.ThumbnailSize;
 
+            if (ShareXResources.ExperimentalDarkTheme)
+            {
+                ilvImages.BorderStyle = BorderStyle.None;
+                ilvImages.Colors.BackColor = ShareXResources.DarkBackgroundVariantColor;
+                ilvImages.Colors.BorderColor = ShareXResources.DarkBorderColor;
+                ilvImages.Colors.ForeColor = ShareXResources.DarkTextColor;
+                ilvImages.Colors.SelectedForeColor = ShareXResources.DarkTextColor;
+            }
+
             him = new HistoryItemManager(uploadFile, editImage);
             him.GetHistoryItems += him_GetHistoryItems;
             ilvImages.ContextMenuStrip = him.cmsHistory;

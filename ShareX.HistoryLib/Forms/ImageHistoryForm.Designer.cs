@@ -28,6 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            Manina.Windows.Forms.ImageListView.ImageListViewColumnHeader ımageListViewColumnHeader1 = new Manina.Windows.Forms.ImageListView.ImageListViewColumnHeader(Manina.Windows.Forms.ColumnType.Name, "Name", 100, 0, true);
+            Manina.Windows.Forms.ImageListView.ImageListViewColumnHeader ımageListViewColumnHeader2 = new Manina.Windows.Forms.ImageListView.ImageListViewColumnHeader(Manina.Windows.Forms.ColumnType.FileSize, "Size", 100, 1, true);
+            Manina.Windows.Forms.ImageListView.ImageListViewColumnHeader ımageListViewColumnHeader3 = new Manina.Windows.Forms.ImageListView.ImageListViewColumnHeader(Manina.Windows.Forms.ColumnType.Dimensions, "Dimensions", 100, 2, true);
+            Manina.Windows.Forms.ImageListView.ImageListViewColumnHeader ımageListViewColumnHeader4 = new Manina.Windows.Forms.ImageListView.ImageListViewColumnHeader(Manina.Windows.Forms.ColumnType.FilePath, "Path", 100, 3, true);
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ImageHistoryForm));
             this.tscMain = new System.Windows.Forms.ToolStripContainer();
             this.ilvImages = new Manina.Windows.Forms.ImageListView();
@@ -63,18 +67,37 @@
             this.ilvImages.AllowDuplicateFileNames = true;
             this.ilvImages.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.ilvImages.CacheLimit = "100MB";
-            this.ilvImages.ColumnHeaderFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            ımageListViewColumnHeader1.Comparer = null;
+            ımageListViewColumnHeader1.DisplayIndex = 0;
+            ımageListViewColumnHeader1.Grouper = null;
+            ımageListViewColumnHeader1.Key = "";
+            ımageListViewColumnHeader1.Type = Manina.Windows.Forms.ColumnType.Name;
+            ımageListViewColumnHeader2.Comparer = null;
+            ımageListViewColumnHeader2.DisplayIndex = 1;
+            ımageListViewColumnHeader2.Grouper = null;
+            ımageListViewColumnHeader2.Key = "";
+            ımageListViewColumnHeader2.Type = Manina.Windows.Forms.ColumnType.FileSize;
+            ımageListViewColumnHeader3.Comparer = null;
+            ımageListViewColumnHeader3.DisplayIndex = 2;
+            ımageListViewColumnHeader3.Grouper = null;
+            ımageListViewColumnHeader3.Key = "";
+            ımageListViewColumnHeader3.Type = Manina.Windows.Forms.ColumnType.Dimensions;
+            ımageListViewColumnHeader4.Comparer = null;
+            ımageListViewColumnHeader4.DisplayIndex = 3;
+            ımageListViewColumnHeader4.Grouper = null;
+            ımageListViewColumnHeader4.Key = "";
+            ımageListViewColumnHeader4.Type = Manina.Windows.Forms.ColumnType.FilePath;
             this.ilvImages.Columns.AddRange(new Manina.Windows.Forms.ImageListView.ImageListViewColumnHeader[] {
-            new Manina.Windows.Forms.ImageListView.ImageListViewColumnHeader(Manina.Windows.Forms.ColumnType.Name, "", 100, 0, true),
-            new Manina.Windows.Forms.ImageListView.ImageListViewColumnHeader(Manina.Windows.Forms.ColumnType.FileSize, "", 100, 1, true),
-            new Manina.Windows.Forms.ImageListView.ImageListViewColumnHeader(Manina.Windows.Forms.ColumnType.Dimensions, "", 100, 2, true),
-            new Manina.Windows.Forms.ImageListView.ImageListViewColumnHeader(Manina.Windows.Forms.ColumnType.FilePath, "", 100, 3, true)});
+            ımageListViewColumnHeader1,
+            ımageListViewColumnHeader2,
+            ımageListViewColumnHeader3,
+            ımageListViewColumnHeader4});
             resources.ApplyResources(this.ilvImages, "ilvImages");
-            this.ilvImages.GroupHeaderFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             this.ilvImages.Name = "ilvImages";
             this.ilvImages.PersistentCacheDirectory = "";
             this.ilvImages.PersistentCacheSize = ((long)(100));
             this.ilvImages.ThumbnailSize = new System.Drawing.Size(100, 100);
+            this.ilvImages.UseWIC = true;
             this.ilvImages.ItemDoubleClick += new Manina.Windows.Forms.ItemDoubleClickEventHandler(this.ilvImages_ItemDoubleClick);
             this.ilvImages.SelectionChanged += new System.EventHandler(this.ilvImages_SelectionChanged);
             this.ilvImages.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ilvImages_KeyDown);
@@ -100,8 +123,8 @@
             // tstbSearch
             // 
             this.tstbSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tstbSearch.Name = "tstbSearch";
             resources.ApplyResources(this.tstbSearch, "tstbSearch");
+            this.tstbSearch.Name = "tstbSearch";
             this.tstbSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tstbSearch_KeyDown);
             // 
             // tsbSearch

@@ -148,7 +148,7 @@
     <value>ilvImages</value>
   </data>
   <data name="&gt;&gt;ilvImages.Type" xml:space="preserve">
-    <value>Manina.Windows.Forms.ImageListView, ImageListView, Version=11.0.4.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Manina.Windows.Forms.ImageListView, ImageListView, Version=13.4.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;ilvImages.Parent" xml:space="preserve">
     <value>tscMain.ContentPanel</value>
@@ -219,6 +219,9 @@
   <data name="tslSearch.Text" xml:space="preserve">
     <value>Search:</value>
   </data>
+  <data name="tstbSearch.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9pt</value>
+  </data>
   <data name="tstbSearch.Size" type="System.Drawing.Size, System.Drawing">
     <value>300, 25</value>
   </data>
@@ -250,7 +253,7 @@
     <value>3, 0</value>
   </data>
   <data name="tsMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>472, 25</value>
+    <value>441, 25</value>
   </data>
   <data name="tsMain.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
