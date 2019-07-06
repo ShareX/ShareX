@@ -197,6 +197,14 @@ namespace ShareX.HelpersLib
             AutoSetSizeMode();
         }
 
+        public void UpdateTheme()
+        {
+            UpdateCheckers(true);
+
+            lblImageSize.BackColor = ShareXResources.BackgroundColor;
+            lblImageSize.ForeColor = ShareXResources.TextColor;
+        }
+
         public void UpdateCheckers(bool forceUpdate = false)
         {
             if (DrawCheckeredBackground)
@@ -369,7 +377,7 @@ namespace ShareX.HelpersLib
 
         private void MyPictureBox_Resize(object sender, EventArgs e)
         {
-            lblImageSize.Location = new Point((Width - lblImageSize.Width) / 2, Height - lblImageSize.Height);
+            lblImageSize.Location = new Point((Width - lblImageSize.Width) / 2, Height - lblImageSize.Height + 1);
         }
     }
 }

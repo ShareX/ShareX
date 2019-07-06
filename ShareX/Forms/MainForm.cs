@@ -798,7 +798,7 @@ namespace ShareX
                 flpCommunity.BackColor = SystemColors.Window;
             }
 
-            pbPreview.UpdateCheckers(true);
+            pbPreview.UpdateTheme();
             ucTaskThumbnailView.UpdateTheme();
             ucNews.UpdateTheme();
         }
