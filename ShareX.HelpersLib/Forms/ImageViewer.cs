@@ -39,7 +39,7 @@ namespace ShareX.HelpersLib
             screenshot = image;
 
             InitializeComponent();
-            Icon = ShareXResources.Icon;
+            ShareXResources.ApplyTheme(this);
         }
 
         public static void ShowImage(Image img)
@@ -139,6 +139,7 @@ namespace ShareX.HelpersLib
             pbPreview.FullscreenOnClick = false;
             pbPreview.Location = new System.Drawing.Point(0, 0);
             pbPreview.Name = "pbPreview";
+            pbPreview.ShowImageSizeLabel = true;
             pbPreview.Size = new System.Drawing.Size(96, 100);
             pbPreview.TabIndex = 0;
             pbPreview.LoadImage(screenshot);
