@@ -176,6 +176,7 @@ namespace ShareX.HelpersLib
             pbMain.MouseEnter += PbMain_MouseEnter;
             pbMain.MouseLeave += PbMain_MouseLeave;
             MouseDown += MyPictureBox_MouseDown;
+            UpdateImageSizeLabel();
         }
 
         private void PbMain_MouseEnter(object sender, EventArgs e)
@@ -195,6 +196,11 @@ namespace ShareX.HelpersLib
         {
             UpdateCheckers();
             AutoSetSizeMode();
+        }
+
+        private void UpdateImageSizeLabel()
+        {
+            lblImageSize.Location = new Point((ClientSize.Width - lblImageSize.Width) / 2, ClientSize.Height - lblImageSize.Height + 1);
         }
 
         public void UpdateTheme()
@@ -332,6 +338,7 @@ namespace ShareX.HelpersLib
             if (IsValidImage)
             {
                 lblImageSize.Text = $"{Image.Width} x {Image.Height}";
+                UpdateImageSizeLabel();
 
                 if (Image.Width > pbMain.ClientSize.Width || Image.Height > pbMain.ClientSize.Height)
                 {
@@ -377,7 +384,7 @@ namespace ShareX.HelpersLib
 
         private void MyPictureBox_Resize(object sender, EventArgs e)
         {
-            lblImageSize.Location = new Point((Width - lblImageSize.Width) / 2, Height - lblImageSize.Height + 1);
+            UpdateImageSizeLabel();
         }
     }
 }

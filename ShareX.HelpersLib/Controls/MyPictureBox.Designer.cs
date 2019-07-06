@@ -86,6 +86,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbMain)).EndInit();
             this.cmsMenu.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
