@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Farbwähler</value>
+    <value>ShareX - Farbauswähler</value>
   </data>
   <data name="btnCancel.Text" xml:space="preserve">
     <value>Abbrechen</value>
@@ -172,7 +172,7 @@
     <value>Schließen</value>
   </data>
   <data name="lblCursorPosition.Text" xml:space="preserve">
-    <value>Mausposition:</value>
+    <value>Mauszeigerposition:</value>
   </data>
   <data name="lblHex.Text" xml:space="preserve">
     <value>Hex:</value>
@@ -206,5 +206,11 @@
   </data>
   <data name="btnScreenColorPicker.ToolTip" xml:space="preserve">
     <value>Farbe vom Bildschirm auswählen</value>
+  </data>
+  <data name="rbRecentColors.Text" xml:space="preserve">
+    <value>Zuletzt verwendete Farben</value>
+  </data>
+  <data name="rbStandardColors.Text" xml:space="preserve">
+    <value>Standardfarben</value>
   </data>
 </root>

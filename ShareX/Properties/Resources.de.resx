@@ -124,7 +124,7 @@
     <value>Mitwirkende</value>
   </data>
   <data name="UploadManager_UploadURL_URL_to_download_from_and_upload" xml:space="preserve">
-    <value>URL zum Herunter- und Hochladen </value>
+    <value>URL zum Down- und Upload</value>
   </data>
   <data name="ActionsForm_btnOK_Click_File_path_can_t_be_empty_" xml:space="preserve">
     <value>Dateipfad kann nicht leer sein.</value>
@@ -142,7 +142,7 @@
     <value>Hotkeys deaktiviert.</value>
   </data>
   <data name="UploadManager_IsUploadConfirmed_Upload_files" xml:space="preserve">
-    <value>Lade Dateien hoch</value>
+    <value>Dateien hochladen</value>
   </data>
   <data name="HotkeyManager_ShowFailedHotkeys_These_applications_could_be_conflicting_" xml:space="preserve">
     <value>Diese Anwendungen könnten die Benutzung vom ShareX stören:</value>
@@ -163,7 +163,7 @@
     <value>Tastenkürzel</value>
   </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_File_uploader___0_" xml:space="preserve">
-    <value>Dateihochlader: {0}</value>
+    <value>Dateiuploader: {0}</value>
   </data>
   <data name="AboutForm_AboutForm_Project_page" xml:space="preserve">
     <value>Projektseite</value>
@@ -173,7 +173,6 @@
   </data>
   <data name="Program_WritePersonalPathConfig_Cant_access_to_file" xml:space="preserve">
     <value>Es kann nicht auf die Datei {0} zugegriffen werden.
-
 Bitte starte ShareX als Administrator, um den Einstellungsordner zu ändern.</value>
   </data>
   <data name="ApplicationSettingsForm_cbSteamShowInApp_CheckedChanged_For_settings_to_take_effect_ShareX_needs_to_be_reopened_from_Steam_" xml:space="preserve">
@@ -192,16 +191,16 @@ Bitte starte ShareX als Administrator, um den Einstellungsordner zu ändern.</va
     <value>Bitte warten...</value>
   </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_Image_uploader___0_" xml:space="preserve">
-    <value>Bildhochlader: {0}</value>
+    <value>Bilduploader: {0}</value>
   </data>
   <data name="TaskHelpers_OpenQuickScreenColorPicker_Copied_to_clipboard___0_" xml:space="preserve">
     <value>In Zwischenablage kopiert: {0}</value>
   </data>
   <data name="MainForm_UpdateMenu_Hide_menu" xml:space="preserve">
-    <value>Menü verstecken</value>
+    <value>Menü ausblenden</value>
   </data>
   <data name="TaskHelpers_TweetMessage_Unable_to_find_valid_Twitter_account_" xml:space="preserve">
-    <value>Kann keinen gültigen Twitter Account finden.</value>
+    <value>Kann kein gültiges Twitter-Konto finden.</value>
   </data>
   <data name="QuickTaskMenu_ShowMenu_Cancel" xml:space="preserve">
     <value>Abbrechen</value>
@@ -235,7 +234,7 @@ Bitte wähle ein anderes Tastenkürzel aus oder beende das widersprüchliche Pro
     <value>X: {0}, Y {1}, Breite: {2}, Höhe: {3}</value>
   </data>
   <data name="UploadManager_IsUploadConfirmed_Don_t_show_this_message_again_" xml:space="preserve">
-    <value>Diese Nachricht nicht mehr anzeigen</value>
+    <value>Diese Nachricht nicht mehr anzeigen.</value>
   </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_Task___0_" xml:space="preserve">
     <value>Aufgabe: Aufgabe {0}</value>
@@ -287,7 +286,7 @@ Möchtest du es automatisch herunterladen?</value>
 Soll ShareX neu gestartet werden?</value>
   </data>
   <data name="FileExistForm_txtNewName_TextChanged_Use_new_name__" xml:space="preserve">
-    <value>Benutze neuen Namen:</value>
+    <value>Neuen Namen verwenden:</value>
   </data>
   <data name="ScreenRecordForm_StartRecording_Missing" xml:space="preserve">
     <value>Fehlt</value>
@@ -296,7 +295,7 @@ Soll ShareX neu gestartet werden?</value>
     <value>Übersetzer</value>
   </data>
   <data name="UploadTask_DoUploadJob_First_time_upload_warning" xml:space="preserve">
-    <value>Warnung: Erstes Hochladen</value>
+    <value>Warnung: Erster Upload</value>
   </data>
   <data name="ChromeForm_btnRegister_Click_Chrome_support_enabled_" xml:space="preserve">
     <value>Chrome-Unterstützung aktiviert.</value>
@@ -308,7 +307,7 @@ Soll ShareX neu gestartet werden?</value>
     <value>URL-Kürzer: {0}</value>
   </data>
   <data name="UploadInfoManager_ShowErrors_Upload_errors" xml:space="preserve">
-    <value>Hochladefehler</value>
+    <value>Uploadfehler</value>
   </data>
   <data name="Program_Run_Unable_to_create_folder_" xml:space="preserve">
     <value>Konnte Ordner nicht erstellen</value>
@@ -332,7 +331,7 @@ Soll ShareX neu gestartet werden?</value>
     <value>Herunterladen fehlgeschlagen: {0}</value>
   </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_Text_uploader___0_" xml:space="preserve">
-    <value>Texthochlader: {0}</value>
+    <value>Textuploader: {0}</value>
   </data>
   <data name="UploadTask_Prepare_Preparing" xml:space="preserve">
     <value>Vorbereiten</value>
@@ -344,7 +343,7 @@ Soll ShareX neu gestartet werden?</value>
     <value>Angehalten</value>
   </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_URL_sharing_service___0_" xml:space="preserve">
-    <value>URL-Teiler: {0}</value>
+    <value>URL-Freigabedienst: {0}</value>
   </data>
   <data name="ChromeForm_btnUnregister_Click_Chrome_support_disabled_" xml:space="preserve">
     <value>Chrome-Unterstützung deaktiviert.</value>
@@ -356,7 +355,7 @@ Soll ShareX neu gestartet werden?</value>
     <value>Vorschau:</value>
   </data>
   <data name="MainForm_tsmiTestTextUpload_Click_Text_upload_test" xml:space="preserve">
-    <value>Teste Hochladen von Text</value>
+    <value>Text-Upload-Test</value>
   </data>
   <data name="TaskSettingsForm_UpdateWindowTitle_Task_settings_for__0_" xml:space="preserve">
     <value>Aufgabeneinstellungen für {0}</value>
@@ -371,16 +370,16 @@ Soll ShareX neu gestartet werden?</value>
     <value>Fertig</value>
   </data>
   <data name="BeforeUploadForm_BeforeUploadForm__0__is_about_to_be_uploaded_to__1___You_may_choose_a_different_destination_" xml:space="preserve">
-    <value>{0} wird in Kürze zu {1} hochgeladen. Du kannst ein anderes Ziel auswählen.</value>
+    <value>{0} wird gleich zu {1} hochgeladen. Du kannst ein anderes Ziel auswählen.</value>
   </data>
   <data name="AboutForm_AboutForm_Website" xml:space="preserve">
     <value>Webseite</value>
   </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_After_upload___0_" xml:space="preserve">
-    <value>Nach der Aufnahme: {0}</value>
+    <value>Nach dem Upload: {0}</value>
   </data>
   <data name="ApplicationSettingsForm_btnBrowseCustomScreenshotsPath_Click_Choose_screenshots_folder_path" xml:space="preserve">
-    <value>Wähle einen Screenshotordner aus</value>
+    <value>Wähle einen Screenshot-Ordner aus</value>
   </data>
   <data name="ScreenRecordForm_StartRecording_Click_tray_icon_to_start_recording_" xml:space="preserve">
     <value>Klicke, um die Aufnahme zu starten.</value>
@@ -389,7 +388,7 @@ Soll ShareX neu gestartet werden?</value>
     <value>Herunterladen von FFmpeg fehlgeschlagen.</value>
   </data>
   <data name="MainForm_UpdateMenu_Show_menu" xml:space="preserve">
-    <value>Zeige Menü</value>
+    <value>Menü anzeigen</value>
   </data>
   <data name="UploadManager_UploadFolder_Folder_upload" xml:space="preserve">
     <value>Ordner hochladen</value>
@@ -417,8 +416,7 @@ Soll ShareX neu gestartet werden?</value>
   </data>
   <data name="UploadTask_DoUploadJob_First_time_upload_warning_text" xml:space="preserve">
     <value>Bist du dir sicher, dass du du diesen Screenshot hochladen möchtest?
-
-Klicke auf 'Nein', um das derzeitige Hochladen abzubrechen und das automatische Hochladen von Screenshots zu deaktivieren.</value>
+Klicke auf 'Nein', um den derzeitigen Upload abzubrechen und den automatischen Upload von Screenshots zu deaktivieren.</value>
   </data>
   <data name="UploadTask_DoUploadJob_Uploading" xml:space="preserve">
     <value>Hochladen</value>
@@ -466,7 +464,7 @@ Mittlere Maustaste um die Aktionsleiste zu schließen</value>
     <value>Möchten Sie die Aufnahme wirklich beenden?</value>
   </data>
   <data name="IntegrationHelpers_EditWithShareX" xml:space="preserve">
-    <value>mit ShareX bearbeiten</value>
+    <value>Mit ShareX bearbeiten</value>
   </data>
   <data name="ApplicationSettingsForm_btnCheckDevBuild_Click_DevBuilds_Warning" xml:space="preserve">
     <value>Entwicklungs-Versionen können instabil sein und sind nur für Testzwecke geeignet. Möchten Sie diese trotzdem installieren?</value>
@@ -521,5 +519,40 @@ Mittlere Maustaste um die Aktionsleiste zu schließen</value>
   </data>
   <data name="AboutForm_AboutForm_Language_es" xml:space="preserve">
     <value>Spanisch</value>
+  </data>
+  <data name="ShareXConfirmation" xml:space="preserve">
+    <value>ShareX - Bestätigung</value>
+  </data>
+  <data name="ScreenshotDelay0S" xml:space="preserve">
+    <value>Screenshot-Verzögerung: {0}s</value>
+  </data>
+  <data name="ShareXOpticalCharacterRecognition" xml:space="preserve">
+    <value>ShareX - Texterkennung (OCR)</value>
+  </data>
+  <data name="OCRForm_AutoProcessing" xml:space="preserve">
+    <value>Texterkennung wird verarbeitet.</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_id_ID" xml:space="preserve">
+    <value>Indonesisch</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_uk" xml:space="preserve">
+    <value>Ukrainisch</value>
+  </data>
+  <data name="QRCodeForm_InputTextToEncode" xml:space="preserve">
+    <value>Text zum Encodieren einfügen</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_es_MX" xml:space="preserve">
+    <value>Mexikanisches Spanisch</value>
+  </data>
+  <data name="MainForm_UploadDebugLogWarning" xml:space="preserve">
+    <value>Das Debugprotokoll könnte sensible Informationen beinhalten. Bist du sicher, dass du fortfahren möchtest?</value>
+  </data>
+  <data name="ShareXNeedsToBeRestartedForThePersonalFolderChangesToApply" xml:space="preserve">
+    <value>ShareX muss neu gestartet werden, damit die Änderungen am Einstellungsordner wirksam werden.
+
+Soll ShareX neu gestartet werden?</value>
+  </data>
+  <data name="PleaseNoteThatShareXIsUsingOCRSpaceSOnlineAPIToPerformOpticalCharacterRecognitionDoYouGivePermissionToShareXToUploadImagesToThisService" xml:space="preserve">
+    <value>Bitte beachte, dass ShareX OCR.Space's online API für die Ausführung der Texterkennung benutzt. Gibst du ShareX die Berechtigung, Bilder an diesen Dienst hochzuladen?</value>
   </data>
 </root>
