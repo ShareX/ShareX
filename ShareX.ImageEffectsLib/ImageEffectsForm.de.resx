@@ -156,4 +156,10 @@
   <data name="tsmiLoadImageFromFile.Text" xml:space="preserve">
     <value>Aus Datei...</value>
   </data>
+  <data name="btnUploadImage.Text" xml:space="preserve">
+    <value>Bild hochladen</value>
+  </data>
+  <data name="lblPresetName.Text" xml:space="preserve">
+    <value>Name:</value>
+  </data>
 </root>

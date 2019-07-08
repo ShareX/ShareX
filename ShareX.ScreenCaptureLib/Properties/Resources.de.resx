@@ -141,13 +141,13 @@ Weite: {4} px / Höhe: {5} px
 Distanz: {6:0.00} px / Winkel: {7:0.00}°</value>
   </data>
   <data name="BaseRegionForm_InitializeComponent_Region_capture" xml:space="preserve">
-    <value>Regionsaufnahme</value>
+    <value>Bereichsaufnahme</value>
   </data>
   <data name="FFmpegOptionsForm_DownloaderForm_InstallRequested_Download_of_FFmpeg_failed_" xml:space="preserve">
     <value>Herunterladen von FFmpeg ist fehlgeschlagen.</value>
   </data>
   <data name="RectangleLight_InitializeComponent_Rectangle_capture_light" xml:space="preserve">
-    <value>Rechteckaufnahme leicht</value>
+    <value>Rechteckaufnahme einfach</value>
   </data>
   <data name="WebpageCaptureForm_UpdateControls_Capture" xml:space="preserve">
     <value>Aufnahme</value>
@@ -243,7 +243,7 @@ Distanz: {6:0.00} px / Winkel: {7:0.00}°</value>
     <value>Bild drucken...</value>
   </data>
   <data name="ShapeManager_CreateToolbar_LastRegion" xml:space="preserve">
-    <value>Letzte Region aufnehmen</value>
+    <value>Letzten Bereich aufnehmen</value>
   </data>
   <data name="ShapeManager_CreateContextMenu_Capture" xml:space="preserve">
     <value>Aufnehmen</value>
@@ -283,5 +283,30 @@ Distanz: {6:0.00} px / Winkel: {7:0.00}°</value>
   </data>
   <data name="ShapeManager_CreateContextMenu_Magnifier_pixel_size_" xml:space="preserve">
     <value>Lupenpixelgröße:</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Show_screen_wide_crosshair" xml:space="preserve">
+    <value>Bildschirmweites Steuerkreuz anzeigen</value>
+  </data>
+  <data name="LightResizeNodes" xml:space="preserve">
+    <value>Einfache Größenänderungspunkte verwenden</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_RememberMenuState" xml:space="preserve">
+    <value>Menüzustand merken</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_RunAfterCaptureTasks" xml:space="preserve">
+    <value>Aufgaben nach der Aufnahme ausführen (Eingabe)</value>
+  </data>
+  <data name="ImageEffects" xml:space="preserve">
+    <value>Bildeffekte hinzufügen...</value>
+  </data>
+  <data name="RegionCaptureForm_ShowExitConfirmation_ShareXImageEditor" xml:space="preserve">
+    <value>ShareX - Bildeditor</value>
+  </data>
+  <data name="RegionCaptureForm_ShowExitConfirmation_Text" xml:space="preserve">
+    <value>Es sind ungespeicherte Änderungen vorhanden.
+Möchtest du den Bildeditor schließen?</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Multi_region_mode" xml:space="preserve">
+    <value>Mehrbereichs-Modus</value>
   </data>
 </root>
