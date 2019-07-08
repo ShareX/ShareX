@@ -799,6 +799,7 @@ namespace ShareX
             }
 
             pbPreview.UpdateTheme();
+            pbPreview.UpdateCheckers(true);
             ucTaskThumbnailView.UpdateTheme();
             ucNews.UpdateTheme();
         }

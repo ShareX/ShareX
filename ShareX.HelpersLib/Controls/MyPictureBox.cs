@@ -166,6 +166,7 @@ namespace ShareX.HelpersLib
         {
             InitializeComponent();
             Text = "";
+            UpdateTheme();
             UpdateImageSizeLabel();
         }
 
@@ -176,8 +177,6 @@ namespace ShareX.HelpersLib
 
         public void UpdateTheme()
         {
-            UpdateCheckers(true);
-
             lblImageSize.BackColor = ShareXResources.BackgroundColor;
             lblImageSize.ForeColor = ShareXResources.TextColor;
         }
