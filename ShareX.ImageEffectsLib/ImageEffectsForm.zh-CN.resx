@@ -162,4 +162,7 @@
   <data name="btnClose.Text" xml:space="preserve">
     <value>关闭</value>
   </data>
+  <data name="btnRefresh.Text" xml:space="preserve">
+    <value>刷新</value>
+  </data>
 </root>

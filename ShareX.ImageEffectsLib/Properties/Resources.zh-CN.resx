@@ -121,7 +121,7 @@
     <value>调整</value>
   </data>
   <data name="ImageEffectsForm_AddAllEffectsToTreeView_Drawings" xml:space="preserve">
-    <value>图纸</value>
+    <value>绘图</value>
   </data>
   <data name="ImageEffectsForm_AddAllEffectsToTreeView_Filters" xml:space="preserve">
     <value>过滤器</value>

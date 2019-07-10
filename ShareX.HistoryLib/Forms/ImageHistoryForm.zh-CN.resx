@@ -118,12 +118,18 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="$this.Text" xml:space="preserve">
-    <value>图像历史</value>
+    <value>ShareX - 历史图片</value>
   </data>
   <data name="tsbSearch.Text" xml:space="preserve">
-    <value>条带按钮</value>
+    <value>搜索</value>
   </data>
   <data name="tslSearch.Text" xml:space="preserve">
     <value>搜索：</value>
+  </data>
+  <data name="tsbSearch.ToolTipText" xml:space="preserve">
+    <value>搜索</value>
+  </data>
+  <data name="tsbSettings.Text" xml:space="preserve">
+    <value>设置...</value>
   </data>
 </root>

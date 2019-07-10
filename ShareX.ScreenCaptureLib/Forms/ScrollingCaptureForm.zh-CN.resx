@@ -190,7 +190,7 @@
     <value>合并调整</value>
   </data>
   <data name="lblCombineLastVertical.Text" xml:space="preserve">
-    <value>最后垂直:</value>
+    <value>最后垂直：</value>
   </data>
   <data name="lblCombineVertical.Text" xml:space="preserve">
     <value>垂直:</value>
@@ -205,7 +205,7 @@
     <value>右：</value>
   </data>
   <data name="lblTrimTop.Text" xml:space="preserve">
-    <value>顶部:</value>
+    <value>顶部：</value>
   </data>
   <data name="lblTrimLeft.Text" xml:space="preserve">
     <value>左：</value>

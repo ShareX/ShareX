@@ -147,4 +147,7 @@
   <data name="txtOutputFilename.Text" xml:space="preserve">
     <value>$filename_th</value>
   </data>
+  <data name="lblQuality.Text" xml:space="preserve">
+    <value>质量：</value>
+  </data>
 </root>

@@ -154,7 +154,7 @@
     <value>截图文件夹...</value>
   </data>
   <data name="tsbTaskSettings.Text" xml:space="preserve">
-    <value>任务设置...</value>
+    <value>动作设置...</value>
   </data>
   <data name="tsddbAfterCaptureTasks.Text" xml:space="preserve">
     <value>截图后的动作</value>
@@ -169,7 +169,7 @@
     <value>调试</value>
   </data>
   <data name="tsddbDestinations.Text" xml:space="preserve">
-    <value>目的地...</value>
+    <value>上传至...</value>
   </data>
   <data name="tsddbTools.Text" xml:space="preserve">
     <value>工具</value>
@@ -190,7 +190,7 @@
     <value>复制</value>
   </data>
   <data name="tsmiCopyDeletionURL.Text" xml:space="preserve">
-    <value>删除URL</value>
+    <value>删除 URL</value>
   </data>
   <data name="tsmiCopyFile.Text" xml:space="preserve">
     <value>文件</value>
@@ -208,28 +208,28 @@
     <value>文件夹</value>
   </data>
   <data name="tsmiCopyForumImage.Text" xml:space="preserve">
-    <value>论坛（BB代码）的图像</value>
+    <value>论坛（BB 代码）的图像</value>
   </data>
   <data name="tsmiCopyForumLink.Text" xml:space="preserve">
-    <value>论坛（BB代码）链接</value>
+    <value>论坛（BB 代码）链接</value>
   </data>
   <data name="tsmiCopyForumLinkedImage.Text" xml:space="preserve">
-    <value>论坛（BB代码）链接的图像</value>
+    <value>论坛（BB 代码）链接的图像</value>
   </data>
   <data name="tsmiCopyHTMLImage.Text" xml:space="preserve">
-    <value>HTML图像</value>
+    <value>HTML 图像</value>
   </data>
   <data name="tsmiCopyHTMLLink.Text" xml:space="preserve">
-    <value>HTML链接</value>
+    <value>HTML 链接</value>
   </data>
   <data name="tsmiCopyHTMLLinkedImage.Text" xml:space="preserve">
-    <value>HTML链接的图像</value>
+    <value>HTML 链接的图像</value>
   </data>
   <data name="tsmiCopyImage.Text" xml:space="preserve">
     <value>图像</value>
   </data>
   <data name="tsmiCopyShortenedURL.Text" xml:space="preserve">
-    <value>URL短链</value>
+    <value>URL 短链</value>
   </data>
   <data name="tsmiCopyText.Text" xml:space="preserve">
     <value>文本</value>
@@ -241,7 +241,7 @@
     <value>缩略图</value>
   </data>
   <data name="tsmiCopyThumbnailURL.Text" xml:space="preserve">
-    <value>缩略图URL</value>
+    <value>缩略图 URL</value>
   </data>
   <data name="tsmiCopyURL.Text" xml:space="preserve">
     <value>URL</value>
@@ -250,7 +250,7 @@
     <value>删除本地文件</value>
   </data>
   <data name="tsmiDestinationSettings.Text" xml:space="preserve">
-    <value>目的地设置..</value>
+    <value>上传目标设置...</value>
   </data>
   <data name="tsmiDNSChanger.Text" xml:space="preserve">
     <value>修改 DNS...</value>
@@ -304,7 +304,7 @@
     <value>打开</value>
   </data>
   <data name="tsmiOpenDeletionURL.Text" xml:space="preserve">
-    <value>删除URL</value>
+    <value>删除 URL</value>
   </data>
   <data name="tsmiOpenFile.Text" xml:space="preserve">
     <value>文件</value>
@@ -313,13 +313,13 @@
     <value>文件夹</value>
   </data>
   <data name="tsmiOpenShortenedURL.Text" xml:space="preserve">
-    <value>URL短链</value>
+    <value>URL 短链</value>
   </data>
   <data name="tsmiOpenThumbnailFile.Text" xml:space="preserve">
     <value>缩略图文件</value>
   </data>
   <data name="tsmiOpenThumbnailURL.Text" xml:space="preserve">
-    <value>缩略图URL</value>
+    <value>缩略图 URL</value>
   </data>
   <data name="tsmiOpenURL.Text" xml:space="preserve">
     <value>URL</value>
@@ -328,10 +328,10 @@
     <value>二维码...</value>
   </data>
   <data name="tsmiRectangle.Text" xml:space="preserve">
-    <value>矩形</value>
+    <value>矩形区域</value>
   </data>
   <data name="tsmiRectangleLight.Text" xml:space="preserve">
-    <value>矩形（光）</value>
+    <value>矩形区域（不变暗）</value>
   </data>
   <data name="tsmiRuler.Text" xml:space="preserve">
     <value>尺子...</value>
@@ -349,10 +349,10 @@
     <value>截图文件夹...</value>
   </data>
   <data name="tsmiShareSelectedURL.Text" xml:space="preserve">
-    <value>URL分享</value>
+    <value>分享 URL</value>
   </data>
   <data name="tsmiShortenSelectedURL.Text" xml:space="preserve">
-    <value>URL短链</value>
+    <value>生成 URL 短链</value>
   </data>
   <data name="tsmiShowDebugLog.Text" xml:space="preserve">
     <value>调试日志...</value>
@@ -379,10 +379,10 @@
     <value>测试文本上传</value>
   </data>
   <data name="tsmiTestURLSharing.Text" xml:space="preserve">
-    <value>测试URL共享</value>
+    <value>测试 URL 共享</value>
   </data>
   <data name="tsmiTestURLShortener.Text" xml:space="preserve">
-    <value>测试URL短链</value>
+    <value>测试 URL 短链</value>
   </data>
   <data name="tsmiTextUploaders.Text" xml:space="preserve">
     <value>文字上传</value>
@@ -460,10 +460,10 @@
     <value>二维码...</value>
   </data>
   <data name="tsmiTrayRectangle.Text" xml:space="preserve">
-    <value>矩形</value>
+    <value>矩形区域</value>
   </data>
   <data name="tsmiTrayRectangleLight.Text" xml:space="preserve">
-    <value>矩形（光）</value>
+    <value>矩形区域（不变暗）</value>
   </data>
   <data name="tsmiTrayRuler.Text" xml:space="preserve">
     <value>尺子...</value>
@@ -541,19 +541,19 @@
     <value>上传</value>
   </data>
   <data name="tsmiUploadURL.Text" xml:space="preserve">
-    <value>从URL上传...</value>
+    <value>从 URL 上传...</value>
   </data>
   <data name="tsmiURLSharingServices.Text" xml:space="preserve">
-    <value>URL共享</value>
+    <value>URL 共享</value>
   </data>
   <data name="tsmiURLShorteners.Text" xml:space="preserve">
-    <value>URL短链</value>
+    <value>URL 短链</value>
   </data>
   <data name="tsmiWindow.Text" xml:space="preserve">
     <value>窗口</value>
   </data>
   <data name="tsmiRectangleTransparent.Text" xml:space="preserve">
-    <value>矩形（透明）</value>
+    <value>矩形区域（ShareX 窗口透明）</value>
   </data>
   <data name="tsmiScrollingCapture.Text" xml:space="preserve">
     <value>滚动捕捉...</value>
@@ -568,7 +568,7 @@
     <value>视频缩略图...</value>
   </data>
   <data name="tsmiTrayRectangleTransparent.Text" xml:space="preserve">
-    <value>矩形（透明）</value>
+    <value>矩形区域（ShareX 窗口透明）</value>
   </data>
   <data name="tsmiTrayScrollingCapture.Text" xml:space="preserve">
     <value>滚动捕捉...</value>
@@ -610,13 +610,13 @@
     <value>最近的链接</value>
   </data>
   <data name="tsmiTextCapture.Text" xml:space="preserve">
-    <value>文本捕捉（OCR）</value>
+    <value>文本识别（OCR）</value>
   </data>
   <data name="tsmiDownloadSelectedURL.Text" xml:space="preserve">
     <value>下载</value>
   </data>
   <data name="tsmiTrayTextCapture.Text" xml:space="preserve">
-    <value>文本捕捉（OCR）</value>
+    <value>文本识别（OCR）</value>
   </data>
   <data name="tsmiHideColumns.Text" xml:space="preserve">
     <value>隐藏列</value>
@@ -631,10 +631,10 @@
     <value>Google 图片搜索</value>
   </data>
   <data name="tsmiOCRImage.Text" xml:space="preserve">
-    <value>OCR 图片...</value>
+    <value>文字识别（OCR）...</value>
   </data>
   <data name="tsmiCombineImages.Text" xml:space="preserve">
-    <value>图片拼接...</value>
+    <value>合并图像...</value>
   </data>
   <data name="tsmiOpenActionsToolbar.Text" xml:space="preserve">
     <value>显示工作栏</value>
@@ -661,7 +661,7 @@
     <value>Alt+C</value>
   </data>
   <data name="tsmiCopyMarkdownImage.Text" xml:space="preserve">
-    <value>Markdown 的图像</value>
+    <value>Markdown 图像</value>
   </data>
   <data name="tsmiCopyMarkdownLink.Text" xml:space="preserve">
     <value>Markdown 链接</value>
@@ -706,7 +706,7 @@
     <value>Enter</value>
   </data>
   <data name="tsmiShortenURL.Text" xml:space="preserve">
-    <value>URL短链</value>
+    <value>UR L短链</value>
   </data>
   <data name="tsmiShowCursor.Text" xml:space="preserve">
     <value>显示指针</value>
@@ -731,5 +731,38 @@
   </data>
   <data name="tsmiUploadText.Text" xml:space="preserve">
     <value>上传文本...</value>
+  </data>
+  <data name="tsmiScreenshotDelay.Text" xml:space="preserve">
+    <value>截图倒计时</value>
+  </data>
+  <data name="tsmiScreenshotDelay0.Text" xml:space="preserve">
+    <value>关闭</value>
+  </data>
+  <data name="tsmiScreenshotDelay1.Text" xml:space="preserve">
+    <value>1 秒</value>
+  </data>
+  <data name="tsmiScreenshotDelay2.Text" xml:space="preserve">
+    <value>2 秒</value>
+  </data>
+  <data name="tsmiScreenshotDelay3.Text" xml:space="preserve">
+    <value>3 秒</value>
+  </data>
+  <data name="tsmiScreenshotDelay4.Text" xml:space="preserve">
+    <value>4 秒</value>
+  </data>
+  <data name="tsmiScreenshotDelay5.Text" xml:space="preserve">
+    <value>5 秒</value>
+  </data>
+  <data name="tsmiCustomUploaderSettings.Text" xml:space="preserve">
+    <value>自定义上传目标...</value>
+  </data>
+  <data name="tsmiCopyImageDimensions.Text" xml:space="preserve">
+    <value>图像尺寸</value>
+  </data>
+  <data name="tsmiHideThumbnailTitle.Text" xml:space="preserve">
+    <value>隐藏缩略图标题</value>
+  </data>
+  <data name="tsmiSwitchTaskViewMode.Text" xml:space="preserve">
+    <value>切换至缩略图视图</value>
   </data>
 </root>

@@ -130,7 +130,7 @@
     <value>预览...</value>
   </data>
   <data name="cbAllowEnlarge.Text" xml:space="preserve">
-    <value>运行图像被放大</value>
+    <value>允许图像被放大</value>
   </data>
   <data name="cbAutoRotate.Text" xml:space="preserve">
     <value>自动旋转图像</value>
