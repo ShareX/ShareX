@@ -121,7 +121,7 @@
     <value>语言：</value>
   </data>
   <data name="llGoogleTranslate.Text" xml:space="preserve">
-    <value>在Google翻译中打开并关闭窗口</value>
+    <value>在 Google 翻译中打开并关闭窗口</value>
   </data>
   <data name="lblResult.Text" xml:space="preserve">
     <value>结果：</value>
@@ -130,6 +130,6 @@
     <value>ShareX - 光学字符识别</value>
   </data>
   <data name="btnStartOCR.Text" xml:space="preserve">
-    <value>开始OCR识别</value>
+    <value>开始文本识别</value>
   </data>
 </root>

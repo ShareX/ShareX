@@ -118,26 +118,26 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AutoCaptureForm_UpdateStatus_Timeleft___0_s___1____Total___2_" xml:space="preserve">
-    <value>剩余时间: {0}秒 ({1}%) 总计: {2}</value>
+    <value>剩余时间：{0}秒 ({1}%) 总计：{2}</value>
   </data>
   <data name="AboutForm_AboutForm_Contributors" xml:space="preserve">
     <value>开源贡献</value>
   </data>
   <data name="TaskHelpers_TweetMessage_Unable_to_find_valid_Twitter_account_" xml:space="preserve">
-    <value>无法找到可用的Twitter账号。</value>
+    <value>无法找到可用的 Twitter 账号。</value>
   </data>
   <data name="UploadTask_ThreadDoWork_URL_is_empty_" xml:space="preserve">
-    <value>URL是空的.</value>
+    <value>URL是空的。</value>
   </data>
   <data name="ApplicationSettingsForm_btnBrowsePersonalFolderPath_Click_Choose_ShareX_personal_folder_path" xml:space="preserve">
     <value>选择ShareX个人文件夹路径</value>
   </data>
   <data name="HotkeyManager_ShowFailedHotkeys_Unable_to_register_hotkey" xml:space="preserve">
-    <value>无法注册 {0}:
+    <value>无法注册快捷键 {0}：
 
 {1}
 
-请选择一个不同的快捷键,   或退出冲突的应用程序,   然后重新打开ShareX.</value>
+请选择一个不同的快捷键，或退出冲突的应用程序，并重新启动ShareX。</value>
   </data>
   <data name="MainForm_tsmiDeleteSelectedFile_Click_File_delete_confirmation" xml:space="preserve">
     <value>文件删除确认</value>
@@ -146,19 +146,19 @@
     <value>停止</value>
   </data>
   <data name="UploadTask_CreateShareURLTask_Share_URL___0__" xml:space="preserve">
-    <value>分享URL ({0})</value>
+    <value>分享 URL ({0})</value>
   </data>
   <data name="AutoCaptureForm_UpdateRegion_X___0___Y___1___Width___2___Height___3_" xml:space="preserve">
-    <value>X: {0},   Y: {1},   宽: {2},   高: {3}</value>
+    <value>X: {0}，Y: {1}， 宽: {2}，高: {3}</value>
   </data>
   <data name="UploadManager_IsUploadConfirmed_Don_t_show_this_message_again_" xml:space="preserve">
     <value>不要再显示此消息。</value>
   </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_Task___0_" xml:space="preserve">
-    <value>任务: {0}</value>
+    <value>任务：{0}</value>
   </data>
   <data name="ScreenRecordForm_StartRecording_FFmpeg_video_and_audio_source_both_can_t_be__None__" xml:space="preserve">
-    <value>FFmpeg的视频和音频信号源都不能是"None".</value>
+    <value>FFmpeg 的视频和音频信号源不可都为“空”。</value>
   </data>
   <data name="AboutForm_AboutForm_Changelog" xml:space="preserve">
     <value>更新日志</value>
@@ -173,15 +173,15 @@
     <value>任务设置</value>
   </data>
   <data name="BeforeUploadForm_BeforeUploadForm_Please_choose_a_destination_" xml:space="preserve">
-    <value>请选择一个上传地址.</value>
+    <value>请选择一个上传地址。</value>
   </data>
   <data name="UploadTask_Prepare_Starting" xml:space="preserve">
     <value>开始</value>
   </data>
   <data name="ScreenRecordForm_StartRecording_does_not_exist" xml:space="preserve">
-    <value>{0} 不存在.
+    <value>{0} 不存在。
 
-你想自动下载吗?</value>
+要自动下载吗?</value>
   </data>
   <data name="AboutForm_AboutForm_External_libraries" xml:space="preserve">
     <value>外部库</value>
@@ -196,14 +196,14 @@
     <value>您可以从快捷键设置添加快捷动作...</value>
   </data>
   <data name="ImageData_Write_Error" xml:space="preserve">
-    <value>无法写入图像到路径{0}。</value>
+    <value>无法写入图像到路径 {0}。</value>
   </data>
   <data name="ApplicationSettingsForm_cbLanguage_SelectedIndexChanged_Language_Restart" xml:space="preserve">
-    <value>语言更改需要重新启动ShareX。
-你要重新启动ShareX？</value>
+    <value>语言更改需要重新启动 ShareX。
+你要重新启动 ShareX ？</value>
   </data>
   <data name="FileExistForm_txtNewName_TextChanged_Use_new_name__" xml:space="preserve">
-    <value>使用新的名字:</value>
+    <value>使用新的名字：</value>
   </data>
   <data name="ScreenRecordForm_StartRecording_Missing" xml:space="preserve">
     <value>丢失</value>
@@ -215,13 +215,13 @@
     <value>第一次上传警告</value>
   </data>
   <data name="ChromeForm_btnRegister_Click_Chrome_support_enabled_" xml:space="preserve">
-    <value>Chrome浏览器扩展支持已启用。</value>
+    <value>Chrome 浏览器扩展支持已启用。</value>
   </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_After_capture___0_" xml:space="preserve">
-    <value>捕捉后: {0}</value>
+    <value>捕捉后：{0}</value>
   </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_URL_shortener___0_" xml:space="preserve">
-    <value>URL短链: {0}</value>
+    <value>URL短链：{0}</value>
   </data>
   <data name="UploadInfoManager_ShowErrors_Upload_errors" xml:space="preserve">
     <value>上传错误</value>
@@ -242,14 +242,14 @@
     <value>文件上传</value>
   </data>
   <data name="MainForm_tsmiDeleteSelectedFile_Click_Do_you_really_want_to_delete_this_file_" xml:space="preserve">
-    <value>你真的要删除这个文件?</value>
+    <value>你真的要删除这个文件吗?</value>
   </data>
   <data name="UploadManager_DownloadAndUploadFile_Download_failed" xml:space="preserve">
-    <value>下载失败:
+    <value>下载失败：
 {0}</value>
   </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_Text_uploader___0_" xml:space="preserve">
-    <value>文字上传: {0}</value>
+    <value>文字上传：{0}</value>
   </data>
   <data name="UploadTask_Prepare_Preparing" xml:space="preserve">
     <value>准备</value>
@@ -258,7 +258,7 @@
     <value>停止</value>
   </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_URL_sharing_service___0_" xml:space="preserve">
-    <value>URL共享: {0}</value>
+    <value>URL 共享: {0}</value>
   </data>
   <data name="ChromeForm_btnUnregister_Click_Chrome_support_disabled_" xml:space="preserve">
     <value>Chrome浏览器扩展支持已禁用。</value>
@@ -282,13 +282,13 @@
     <value>完成</value>
   </data>
   <data name="BeforeUploadForm_BeforeUploadForm__0__is_about_to_be_uploaded_to__1___You_may_choose_a_different_destination_" xml:space="preserve">
-    <value>{0} 是将要上载至 {1}. 您可以选择不同的上传地址.</value>
+    <value>{0} 将上载至 {1}，您可以选择不同的上传目标。</value>
   </data>
   <data name="AboutForm_AboutForm_Website" xml:space="preserve">
     <value>网站</value>
   </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_After_upload___0_" xml:space="preserve">
-    <value>上传后: {0}</value>
+    <value>上传后：{0}</value>
   </data>
   <data name="ApplicationSettingsForm_btnBrowseCustomScreenshotsPath_Click_Choose_screenshots_folder_path" xml:space="preserve">
     <value>选择截图文件夹路径</value>
@@ -303,10 +303,10 @@
     <value>等待...</value>
   </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_Image_uploader___0_" xml:space="preserve">
-    <value>图片上传: {0}</value>
+    <value>图片上传：{0}</value>
   </data>
   <data name="TaskHelpers_OpenQuickScreenColorPicker_Copied_to_clipboard___0_" xml:space="preserve">
-    <value>已复制到剪贴板: {0}</value>
+    <value>已复制到剪贴板：{0}</value>
   </data>
   <data name="MainForm_UpdateMenu_Hide_menu" xml:space="preserve">
     <value>隐藏菜单</value>
@@ -315,7 +315,7 @@
     <value>显示菜单</value>
   </data>
   <data name="UploadManager_UploadURL_URL_to_download_from_and_upload" xml:space="preserve">
-    <value>下载和上传URL</value>
+    <value>下载和上传 URL</value>
   </data>
   <data name="ActionsForm_btnOK_Click_File_path_can_t_be_empty_" xml:space="preserve">
     <value>文件路径不能为空。</value>
@@ -342,7 +342,7 @@
     <value>错误</value>
   </data>
   <data name="ClipboardFormatForm_ClipboardFormatForm_Supported_variables___0__and_other_variables_such_as__1__etc_" xml:space="preserve">
-    <value>支持的变量: {0} 和其他变量,   如 {1} 等。</value>
+    <value>支持的变量：{0} 和其它变量，如 {1} 等。</value>
   </data>
   <data name="DropForm_DrawDropImage_Drop_here" xml:space="preserve">
     <value>拖到
@@ -355,20 +355,20 @@
     <value>快捷键</value>
   </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_File_uploader___0_" xml:space="preserve">
-    <value>文件上传: {0}</value>
+    <value>文件上传：{0}</value>
   </data>
   <data name="AboutForm_AboutForm_Project_page" xml:space="preserve">
     <value>项目页面</value>
   </data>
   <data name="TaskHelpers_TweetMessage_Tweet_successfully_sent_" xml:space="preserve">
-    <value>Tweet发送成功。</value>
+    <value>Tweet 发送成功。</value>
   </data>
   <data name="Program_WritePersonalPathConfig_Cant_access_to_file" xml:space="preserve">
     <value>无法访问 "{0}" 文件.
-请以管理员权限运行ShareX以更改个人文件夹的路径.</value>
+请以管理员权限运行 ShareX 以更改个人文件夹路径。</value>
   </data>
   <data name="ApplicationSettingsForm_cbSteamShowInApp_CheckedChanged_For_settings_to_take_effect_ShareX_needs_to_be_reopened_from_Steam_" xml:space="preserve">
-    <value>为了使设置生效，ShareX需要从Steam重新开启。</value>
+    <value>为使设置生效，ShareX 需从 Steam 重新启动。</value>
   </data>
   <data name="ActionsForm_btnOK_Click_Name_can_t_be_empty_" xml:space="preserve">
     <value>名称不能为空。</value>
@@ -383,7 +383,7 @@
     <value>文件上传</value>
   </data>
   <data name="ScreenRecordForm_DownloaderForm_InstallRequested_FFmpeg_successfully_downloaded_" xml:space="preserve">
-    <value>FFmpeg下载成功。</value>
+    <value>FFmpeg 下载成功。</value>
   </data>
   <data name="ScreenRecordForm_StartRecording_Encoding___" xml:space="preserve">
     <value>编码...</value>
@@ -401,7 +401,7 @@
     <value>暂停</value>
   </data>
   <data name="UploadTask_CreateURLShortenerTask_Shorten_URL___0__" xml:space="preserve">
-    <value>缩短URL ({0})</value>
+    <value>缩短 URL ({0})</value>
   </data>
   <data name="UploadTask_DoUploadJob_First_time_upload_warning_text" xml:space="preserve">
     <value>你确定要上传这个截图？
@@ -442,7 +442,7 @@
     <value>继续</value>
   </data>
   <data name="IntegrationHelpers_UploadWithShareX" xml:space="preserve">
-    <value>使用ShareX上传</value>
+    <value>使用 ShareX 上传</value>
   </data>
   <data name="ActionsToolbarEditForm_Separator" xml:space="preserve">
     <value>分隔符</value>
@@ -457,7 +457,7 @@
     <value>保持在其他窗口前端</value>
   </data>
   <data name="ActionsToolbar_OpenAtShareXStartup" xml:space="preserve">
-    <value>和ShareX一起打开</value>
+    <value>和 ShareX 同时启动</value>
   </data>
   <data name="ActionsToolbar_Edit" xml:space="preserve">
     <value>编辑...</value>
@@ -519,7 +519,7 @@
     <value>意大利语</value>
   </data>
   <data name="UploadManager_ShowShortenURLDialog_ShortenURL" xml:space="preserve">
-    <value>生成URL短链</value>
+    <value>生成 UR L短链</value>
   </data>
   <data name="UploadManager_ShowShortenURLDialog_Shorten" xml:space="preserve">
     <value>生成</value>
@@ -528,9 +528,53 @@
     <value>使用ShareX编辑</value>
   </data>
   <data name="ApplicationSettingsForm_btnCheckDevBuild_Click_DevBuilds_Warning" xml:space="preserve">
-    <value>Dev builds并不稳定，仅可用于测试目的，要安装吗？</value>
+    <value>开发版并不稳定，仅用于测试目的，要安装吗？</value>
   </data>
   <data name="ApplicationSettingsForm_btnResetSettings_Click_WouldYouLikeToResetShareXSettings" xml:space="preserve">
-    <value>要重置ShareX设置项吗？</value>
+    <value>要重置 ShareX 设置项吗？</value>
+  </data>
+  <data name="ApplicationSettingsForm_cbStartWithWindows_EnabledByPolicy_Text" xml:space="preserve">
+    <value>启动已由你的组织启用</value>
+  </data>
+  <data name="OCRForm_AutoCompleteFail" xml:space="preserve">
+    <value>文本识别时出错，或未识别到任何文本。</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_uk" xml:space="preserve">
+    <value>乌克兰语</value>
+  </data>
+  <data name="OCRForm_AutoComplete" xml:space="preserve">
+    <value>文本识别结果已复制至剪贴板。</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_id_ID" xml:space="preserve">
+    <value>印尼语</value>
+  </data>
+  <data name="ApplicationSettingsForm_cbStartWithWindows_DisabledByPolicy_Text" xml:space="preserve">
+    <value>开机启动项已被你的组织禁用</value>
+  </data>
+  <data name="OCRForm_AutoProcessing" xml:space="preserve">
+    <value>文字识别中。</value>
+  </data>
+  <data name="MainForm_UploadDebugLogWarning" xml:space="preserve">
+    <value>调试日志可能包含敏感信息，确定继续吗？</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_es_MX" xml:space="preserve">
+    <value>西班牙语 - 墨西哥</value>
+  </data>
+  <data name="ShareXNeedsToBeRestartedForThePersonalFolderChangesToApply" xml:space="preserve">
+    <value>ShareX 需要重启以应用个人文件夹更改。
+
+要重启吗？</value>
+  </data>
+  <data name="ShareXConfirmation" xml:space="preserve">
+    <value>ShareX - 确认</value>
+  </data>
+  <data name="ScreenshotDelay0S" xml:space="preserve">
+    <value>截图倒计时：{0} 秒</value>
+  </data>
+  <data name="PleaseNoteThatShareXIsUsingOCRSpaceSOnlineAPIToPerformOpticalCharacterRecognitionDoYouGivePermissionToShareXToUploadImagesToThisService" xml:space="preserve">
+    <value>请注意，ShareX 使用 OCR.Space 的在线 API 来执行光学字符识别，是否允许 ShareX 上传图像至此在线服务？</value>
+  </data>
+  <data name="ShareXOpticalCharacterRecognition" xml:space="preserve">
+    <value>ShareX - 光学字符识别</value>
   </data>
 </root>

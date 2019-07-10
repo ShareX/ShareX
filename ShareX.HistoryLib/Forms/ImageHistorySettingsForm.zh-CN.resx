@@ -117,19 +117,25 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="lblViewMode.Text" xml:space="preserve">
+    <value>浏览模式：</value>
+  </data>
+  <data name="lblThumbnailSize.Text" xml:space="preserve">
+    <value>缩略图尺寸：</value>
+  </data>
+  <data name="cbFilterMissingFiles.Text" xml:space="preserve">
+    <value>过滤丢失文件</value>
+  </data>
+  <data name="lblMaximumImageLimit.Text" xml:space="preserve">
+    <value>最大图像限制：</value>
+  </data>
+  <data name="lblThumbnailSizeUnit.Text" xml:space="preserve">
+    <value>像素</value>
+  </data>
+  <data name="cbRememberSearchText.Text" xml:space="preserve">
+    <value>记住搜索输入</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - 屏幕录制</value>
-  </data>
-  <data name="btnAbort.Text" xml:space="preserve">
-    <value>中止</value>
-  </data>
-  <data name="btnStart.Text" xml:space="preserve">
-    <value>开始</value>
-  </data>
-  <data name="tsmiStart.Text" xml:space="preserve">
-    <value>开始</value>
-  </data>
-  <data name="tsmiAbort.Text" xml:space="preserve">
-    <value>停止</value>
+    <value>ShareX - 历史图片设置</value>
   </data>
 </root>

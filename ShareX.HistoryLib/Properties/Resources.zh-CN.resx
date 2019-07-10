@@ -118,10 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="HistoryForm_UpdateItemCount___Filtered___0_" xml:space="preserve">
-    <value>过滤: {0}</value>
+    <value>过滤：{0}</value>
   </data>
   <data name="HistoryForm_UpdateItemCount_Total___0_" xml:space="preserve">
-    <value>总计: {0}</value>
+    <value>总计：{0}</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_Copy" xml:space="preserve">
     <value>复制</value>
@@ -145,13 +145,13 @@
     <value>文件夹</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_Forum__BBCode__image" xml:space="preserve">
-    <value>论坛（BBCode）的图像</value>
+    <value>论坛（BB 代码）的图像</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_Forum__BBCode__link" xml:space="preserve">
-    <value>论坛（BBCode）链接</value>
+    <value>论坛（BB 代码）链接</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_Forum__BBCode__linked_image" xml:space="preserve">
-    <value>论坛（BBCode）链接的图像</value>
+    <value>论坛（BB 代码）链接的图像</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_HTML_image" xml:space="preserve">
     <value>HTML图像</value>
@@ -175,7 +175,7 @@
     <value>打开</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_Shortened_URL" xml:space="preserve">
-    <value>URL短链</value>
+    <value>URL 短链</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_Show" xml:space="preserve">
     <value>显示</value>
@@ -184,7 +184,7 @@
     <value>文本</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_Thumbnail_URL" xml:space="preserve">
-    <value>缩略图URL</value>
+    <value>缩略图 URL</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_URL" xml:space="preserve">
     <value>URL</value>
@@ -211,7 +211,7 @@
     <value>错误</value>
   </data>
   <data name="HistoryManager_GetHistoryItems_Error_occured_while_reading_XML_file___0_" xml:space="preserve">
-    <value>读取XML文件({0})时发生错误</value>
+    <value>读取 XML 文件 {0} 时发生错误</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_Markdown__linked_image" xml:space="preserve">
     <value>Markdown 链接的图像</value>
@@ -221,5 +221,11 @@
   </data>
   <data name="HistoryItemManager_InitializeComponent_Markdown__image" xml:space="preserve">
     <value>Markdown 图像</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_EditImage" xml:space="preserve">
+    <value>编辑图像...</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_UploadFile" xml:space="preserve">
+    <value>上传文件</value>
   </data>
 </root>

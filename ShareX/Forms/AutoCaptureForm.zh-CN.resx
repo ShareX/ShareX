@@ -127,10 +127,10 @@
     <value>选择区域</value>
   </data>
   <data name="cbAutoMinimize.Text" xml:space="preserve">
-    <value>自动最小化到托盘</value>
+    <value>自动最小化到系统托盘</value>
   </data>
   <data name="cbWaitUploads.Text" xml:space="preserve">
-    <value>等到任务完成</value>
+    <value>等待任务完成</value>
   </data>
   <data name="gbRegion.Text" xml:space="preserve">
     <value>区域</value>

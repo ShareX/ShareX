@@ -136,7 +136,7 @@
     <value>编辑...</value>
   </data>
   <data name="lblUploadLimitHint.Text" xml:space="preserve">
-    <value>0 - 25（0禁用）</value>
+    <value>0 - 25（0 禁用）</value>
   </data>
   <data name="lblBufferSize.Text" xml:space="preserve">
     <value>缓冲区大小：</value>
@@ -148,7 +148,7 @@
     <value>综合</value>
   </data>
   <data name="cbPrintDontShowWindowsDialog.Text" xml:space="preserve">
-    <value>不显示Windows打印对话框</value>
+    <value>不显示 Windows 打印对话框</value>
   </data>
   <data name="gbSecondaryFileUploaders.Text" xml:space="preserve">
     <value>辅助文件上传程序</value>
@@ -157,10 +157,10 @@
     <value>显示托盘图标</value>
   </data>
   <data name="cbSilentRun.Text" xml:space="preserve">
-    <value>开始时最小化到托盘</value>
+    <value>启动时最小化到托盘</value>
   </data>
   <data name="cbSendToMenu.Text" xml:space="preserve">
-    <value>在 "发送到" 菜单显示 ShareX</value>
+    <value>在 "发送到" 菜单中显示 ShareX</value>
   </data>
   <data name="cbRememberMainFormPosition.Text" xml:space="preserve">
     <value>记住主窗口的位置</value>
@@ -217,7 +217,7 @@
     <value>打开...</value>
   </data>
   <data name="cbTrayIconProgressEnabled.Text" xml:space="preserve">
-    <value>在系统托盘显示进展</value>
+    <value>在系统托盘显示进度</value>
   </data>
   <data name="lblProxyUsername.Text" xml:space="preserve">
     <value>用户名：</value>
@@ -253,10 +253,10 @@
     <value>辅助文本上传程序</value>
   </data>
   <data name="cbSteamShowInApp.Text" xml:space="preserve">
-    <value>当 ShareX 打开时，在 Steam 状态显示 ShareX</value>
+    <value>当 ShareX 开启时，在 Steam 状态显示 ShareX</value>
   </data>
   <data name="cbShellContextMenu.Text" xml:space="preserve">
-    <value>在 Windows 资源管理器右键菜单显示 "使用ShareX上传" 按钮</value>
+    <value>在 Windows 资源管理器右键菜单显示 "使用 ShareX 上传" 按钮</value>
   </data>
   <data name="tpGeneral.Text" xml:space="preserve">
     <value>常规</value>
@@ -292,10 +292,10 @@
     <value>保存任务历史</value>
   </data>
   <data name="lblRecentTasksMaxCount.Text" xml:space="preserve">
-    <value>最大数量的保存任务</value>
+    <value>保存任务最大数量</value>
   </data>
   <data name="cbHistoryCheckURL.Text" xml:space="preserve">
-    <value>仅保存URL（截图并上传图床之后）</value>
+    <value>仅保存 URL（截图并上传图床之后）</value>
   </data>
   <data name="gbHistory.Text" xml:space="preserve">
     <value>历史</value>
@@ -307,7 +307,7 @@
     <value>在托盘菜单显示近期任务</value>
   </data>
   <data name="cbRecentTasksSave.Text" xml:space="preserve">
-    <value>保存近期的任务</value>
+    <value>保存近期任务</value>
   </data>
   <data name="gbRecentLinks.Text" xml:space="preserve">
     <value>近期任务</value>
@@ -316,7 +316,7 @@
     <value>历史</value>
   </data>
   <data name="cbRecentTasksShowInMainWindow.Text" xml:space="preserve">
-    <value>在启动主窗口时显示近期的任务</value>
+    <value>在启动主窗口时显示近期任务</value>
   </data>
   <data name="gbChrome.Text" xml:space="preserve">
     <value>Chrome 扩展程序</value>
@@ -352,9 +352,21 @@
     <value>Firefox 扩展程序</value>
   </data>
   <data name="btnCheckDevBuild.Text" xml:space="preserve">
-    <value>安装dev build...</value>
+    <value>安装开发版...</value>
   </data>
   <data name="cbEditWithShareX.Text" xml:space="preserve">
     <value>在Windows上下文菜单中显示“使用ShareX编辑”</value>
+  </data>
+  <data name="cbExperimentalDarkTheme.Text" xml:space="preserve">
+    <value>实验性黑暗主题</value>
+  </data>
+  <data name="cbUseWhiteShareXIcon.Text" xml:space="preserve">
+    <value>使用白色 ShareX 图标</value>
+  </data>
+  <data name="cbUseDarkTheme.Text" xml:space="preserve">
+    <value>使用黑暗主题</value>
+  </data>
+  <data name="btnPersonalFolderPathApply.Text" xml:space="preserve">
+    <value>应用</value>
   </data>
 </root>

@@ -169,17 +169,17 @@
     <value>质量：</value>
   </data>
   <data name="nudx264CRF.ToolTip" xml:space="preserve">
-    <value>CRF：范围为0-51。其中，0表示无损，30为默认值，51表示最差质量。
+    <value>CRF：范围为 0-51。其中，0 表示无损，30 为默认值，51 表示最差质量。
 值越高质量越差，但文件体积越小。</value>
   </data>
   <data name="tbAACBitrate.ToolTip" xml:space="preserve">
-    <value>默认值是128k</value>
+    <value>默认值为 128k</value>
   </data>
   <data name="tbMP3_qscale.ToolTip" xml:space="preserve">
-    <value>范围为0-9，较低的值表示更高的质量。0-3通常会产生透明效果，4（默认）接近感知透明度，6为“可勉强接受的”质量。</value>
+    <value>范围为 0-9，较低的值表示更高的质量。0-3 通常会产生透明效果，4（默认）接近感知透明度，6 为“可勉强接受的”质量。</value>
   </data>
   <data name="tbVorbis_qscale.ToolTip" xml:space="preserve">
-    <value>范围为0-10，其中10为最高质量，3-6为推荐测试范围，默认值为3.</value>
+    <value>范围为 0-10，其中 10 为最高质量，3-6 为推荐测试范围，默认值为 3.</value>
   </data>
   <data name="lblx264Preset.Text" xml:space="preserve">
     <value>预设：</value>
@@ -188,7 +188,7 @@
     <value>可变比特率：</value>
   </data>
   <data name="gbFFmpegExe.Text" xml:space="preserve">
-    <value>FFmpeg路径</value>
+    <value>FFmpeg 路径</value>
   </data>
   <data name="cbOverrideFFmpegPath.Text" xml:space="preserve">
     <value>使用自定义路径</value>
@@ -211,7 +211,7 @@
   <data name="cbx264Preset.ToolTip" xml:space="preserve">
     <value>较快的预设 = 编码速度较快，但是文件比较大。
 较慢的预设 = 编码速度较慢，但是文件比较小。
-对于实时编码（比如屏幕录制），预设必须尽快</value>
+对于实时编码（比如屏幕录制），预设的速度必须尽量快</value>
   </data>
   <data name="nudXvidQscale.ToolTip" xml:space="preserve">
     <value>1表示最高质量、最大文件，31表示最低质量、最小文件。</value>
@@ -230,9 +230,21 @@
     <value>比特率：</value>
   </data>
   <data name="cbGIFDither.ToolTip" xml:space="preserve">
-    <value>默认值为sierra2_4a</value>
+    <value>默认值为 sierra2_4a</value>
   </data>
   <data name="cbGIFStatsMode.ToolTip" xml:space="preserve">
-    <value>默认值为full</value>
+    <value>默认值为 full</value>
+  </data>
+  <data name="lblQSVBitrate.Text" xml:space="preserve">
+    <value>比特率：</value>
+  </data>
+  <data name="lblQSVPreset.Text" xml:space="preserve">
+    <value>预设：</value>
+  </data>
+  <data name="lblAMFQuality.Text" xml:space="preserve">
+    <value>质量：</value>
+  </data>
+  <data name="lblAMFUsage.Text" xml:space="preserve">
+    <value>使用量：</value>
   </data>
 </root>
