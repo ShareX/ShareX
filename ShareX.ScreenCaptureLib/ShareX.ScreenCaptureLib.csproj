@@ -343,6 +343,9 @@
     <EmbeddedResource Include="Forms\CanvasSizeForm.zh-CN.resx">
       <DependentUpon>CanvasSizeForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EditorStartupForm.de.resx">
+      <DependentUpon>EditorStartupForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\EditorStartupForm.es-MX.resx">
       <DependentUpon>EditorStartupForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -379,6 +382,9 @@
     <EmbeddedResource Include="Forms\FFmpegOptionsForm.uk.resx">
       <DependentUpon>FFmpegOptionsForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ImageInsertForm.de.resx">
+      <DependentUpon>ImageInsertForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ImageInsertForm.es-MX.resx">
       <DependentUpon>ImageInsertForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -403,6 +409,9 @@
     <EmbeddedResource Include="Forms\ImageInsertForm.zh-CN.resx">
       <DependentUpon>ImageInsertForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ImageSizeForm.de.resx">
+      <DependentUpon>ImageSizeForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ImageSizeForm.es-MX.resx">
       <DependentUpon>ImageSizeForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -417,6 +426,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ImageSizeForm.zh-CN.resx">
       <DependentUpon>ImageSizeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\NewImageForm.de.resx">
+      <DependentUpon>NewImageForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\NewImageForm.es-MX.resx">
       <DependentUpon>NewImageForm.cs</DependentUpon>
@@ -537,6 +549,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\StickerPackForm.zh-CN.resx">
       <DependentUpon>StickerPackForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TextDrawingInputBox.de.resx">
+      <DependentUpon>TextDrawingInputBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\TextDrawingInputBox.es-MX.resx">
       <DependentUpon>TextDrawingInputBox.cs</DependentUpon>
