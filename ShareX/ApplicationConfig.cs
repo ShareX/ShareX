@@ -48,6 +48,13 @@ namespace ShareX
             this.ApplyDefaultPropertyValues();
         }
 
+        public enum UploadWarning
+        {
+            Never,
+            Always,
+            FirstUpload
+        }
+
         #region Main Form
 
         public TaskViewMode TaskViewMode = TaskViewMode.ThumbnailView;
@@ -221,8 +228,8 @@ namespace ShareX
         [Category("Upload"), DefaultValue(false), Description("Accept invalid SSL certificates when uploading.")]
         public bool AcceptInvalidSSLCertificates { get; set; }
 
-        [Category("Upload"), DefaultValue(true), Description("Show first time upload warning.")]
-        public bool ShowUploadWarning { get; set; }
+        [Category("Upload"), DefaultValue(UploadWarning.FirstUpload), Description("Show first time upload warning.")]
+        public UploadWarning ShowUploadWarning { get; set; }
 
         [Category("Upload"), DefaultValue(true), Description("Show more than 10 files upload warning.")]
         public bool ShowMultiUploadWarning { get; set; }
