@@ -124,16 +124,19 @@
     <value>Thoát ứng dụng</value>
   </data>
   <data name="btnContinue.Text" xml:space="preserve">
-    <value>OK</value>
+    <value>Tiếp tục</value>
   </data>
   <data name="btnOpenLogFile.Text" xml:space="preserve">
-    <value>Mở tệp sự kiện</value>
+    <value>Mở tệp sự kiện...</value>
   </data>
   <data name="btnSendBugReport.Text" xml:space="preserve">
     <value>Gửi báo cáo lỗi</value>
   </data>
   <data name="lblErrorMessage.Text" xml:space="preserve">
-    <value>Error
-Error 2</value>
+    <value>Lỗi
+Lỗi 2</value>
+  </data>
+  <data name="btnOK.Text" xml:space="preserve">
+    <value>OK</value>
   </data>
 </root>

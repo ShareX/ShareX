@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2017 ShareX Team
+    Copyright (c) 2007-2019 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -64,7 +64,7 @@ namespace ShareX.UploadersLib.ImageUploaders
         private const string APIVersion = "1.1";
         private const int characters_reserved_per_media = 23;
 
-        public const int MessageLimit = 140;
+        public const int MessageLimit = 280;
         public const int MessageMediaLimit = MessageLimit - characters_reserved_per_media;
 
         public OAuthInfo AuthInfo { get; set; }

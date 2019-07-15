@@ -121,12 +121,15 @@
     <value>关闭</value>
   </data>
   <data name="btnShareXLicense.Text" xml:space="preserve">
-    <value>Sharex 许可</value>
+    <value>ShareX 许可</value>
   </data>
   <data name="btnLicenses.Text" xml:space="preserve">
     <value>许可</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - 关于</value>
+  </data>
+  <data name="lblBuild.Text" xml:space="preserve">
+    <value>编译版本</value>
   </data>
 </root>

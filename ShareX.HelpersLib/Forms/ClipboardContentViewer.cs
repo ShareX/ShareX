@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2017 ShareX Team
+    Copyright (c) 2007-2019 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -35,11 +35,18 @@ namespace ShareX.HelpersLib
     {
         public bool IsClipboardContentValid { get; private set; }
         public bool DontShowThisWindow { get; private set; }
+        public EClipboardContentType ClipboardContentType { get; private set; }
+        public object ClipboardContent { get; private set; }
 
         public ClipboardContentViewer(bool showCheckBox = false)
         {
             InitializeComponent();
-            Icon = ShareXResources.Icon;
+            ShareXResources.ApplyTheme(this);
+
+            if (ShareXResources.ExperimentalDarkTheme)
+            {
+                lblQuestion.BackColor = ShareXResources.DarkBorderColor;
+            }
 
             cbDontShowThisWindow.Visible = showCheckBox;
         }
@@ -59,6 +66,8 @@ namespace ShareX.HelpersLib
                 {
                     if (img != null)
                     {
+                        ClipboardContentType = EClipboardContentType.Image;
+                        ClipboardContent = img.Clone();
                         pbClipboard.LoadImage(img);
                         pbClipboard.Visible = true;
                         lblQuestion.Text = string.Format(Resources.ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__Image__Size___0_x_1__, img.Width, img.Height);
@@ -72,6 +81,8 @@ namespace ShareX.HelpersLib
 
                 if (!string.IsNullOrEmpty(text))
                 {
+                    ClipboardContentType = EClipboardContentType.Text;
+                    ClipboardContent = text;
                     txtClipboard.Text = text;
                     txtClipboard.Visible = true;
                     lblQuestion.Text = string.Format(Resources.ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__Text__Length___0__, text.Length);
@@ -84,6 +95,8 @@ namespace ShareX.HelpersLib
 
                 if (files.Length > 0)
                 {
+                    ClipboardContentType = EClipboardContentType.Files;
+                    ClipboardContent = files;
                     lbClipboard.Items.AddRange(files);
                     lbClipboard.Visible = true;
                     lblQuestion.Text = string.Format(Resources.ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__File__Count___0__, files.Length);

@@ -118,9 +118,18 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="$this.Text" xml:space="preserve">
-    <value>화면 영역 창</value>
+    <value>ShareX - 화면 녹화</value>
   </data>
   <data name="btnAbort.Text" xml:space="preserve">
     <value>취소</value>
+  </data>
+  <data name="tsmiAbort.Text" xml:space="preserve">
+    <value>취소</value>
+  </data>
+  <data name="tsmiStart.Text" xml:space="preserve">
+    <value>시작</value>
+  </data>
+  <data name="btnStart.Text" xml:space="preserve">
+    <value>시작</value>
   </data>
 </root>

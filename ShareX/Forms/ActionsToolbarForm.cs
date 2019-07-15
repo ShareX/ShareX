@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2017 ShareX Team
+    Copyright (c) 2007-2019 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -60,6 +60,7 @@ namespace ShareX
         private ActionsToolbarForm()
         {
             InitializeComponent();
+            ShareXResources.ApplyTheme(this);
         }
 
         private void InitializeComponent()
@@ -74,7 +75,6 @@ namespace ShareX
             BackColor = SystemColors.ActiveBorder;
             ClientSize = new Size(284, 261);
             FormBorderStyle = FormBorderStyle.None;
-            Icon = ShareXResources.Icon;
             ShowInTaskbar = false;
             StartPosition = FormStartPosition.Manual;
             Text = "ShareX - Actions toolbar";
@@ -96,23 +96,10 @@ namespace ShareX
                 Margin = new Padding(1),
                 MinimumSize = new Size(10, 30),
                 Padding = new Padding(0, 1, 0, 0),
-                Renderer = new CustomToolStripProfessionalRenderer(),
+                Renderer = new ToolStripRoundedEdgeRenderer(),
                 TabIndex = 0,
                 ShowItemToolTips = false
             };
-
-            // https://www.medo64.com/2014/01/scaling-toolstrip-with-dpi/
-            using (Graphics g = CreateGraphics())
-            {
-                double scale = Math.Max(g.DpiX, g.DpiY) / 96.0;
-                double newScale = ((int)Math.Floor(scale * 100) / 25 * 25) / 100.0;
-                if (newScale > 1)
-                {
-                    int newWidth = (int)(tsMain.ImageScalingSize.Width * newScale);
-                    int newHeight = (int)(tsMain.ImageScalingSize.Height * newScale);
-                    tsMain.ImageScalingSize = new Size(newWidth, newHeight);
-                }
-            }
 
             tsMain.MouseLeave += tsMain_MouseLeave;
 
@@ -417,7 +404,8 @@ namespace ShareX
             if (e.Button == MouseButtons.Left && !Program.Settings.ActionsToolbarLockPosition)
             {
                 NativeMethods.ReleaseCapture();
-                NativeMethods.DefWindowProc(Handle, (uint)WindowsMessages.SYSCOMMAND, (UIntPtr)NativeConstants.MOUSE_MOVE, IntPtr.Zero);
+                Message message = Message.Create(Handle, (int)WindowsMessages.SYSCOMMAND, new IntPtr(NativeConstants.MOUSE_MOVE), IntPtr.Zero);
+                DefWndProc(ref message);
             }
         }
 

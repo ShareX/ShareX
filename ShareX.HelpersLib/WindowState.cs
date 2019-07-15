@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2017 ShareX Team
+    Copyright (c) 2007-2019 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -31,20 +31,16 @@ namespace ShareX.HelpersLib
 {
     public class WindowState
     {
-        public Point Location { get; set; }
-        public Size Size { get; set; }
-        public bool IsMaximized { get; set; }
+        public Point Location { get; private set; }
+        public Size Size { get; private set; }
+        public bool IsMaximized { get; private set; }
 
-        public void SetFormState(Form form)
+        public void ApplyFormState(Form form)
         {
-            if (!Location.IsEmpty && CaptureHelpers.GetScreenBounds().IntersectsWith(new Rectangle(Location, Size)))
+            if (!Location.IsEmpty && !Size.IsEmpty && CaptureHelpers.GetScreenWorkingArea().Contains(new Rectangle(Location, Size)))
             {
                 form.StartPosition = FormStartPosition.Manual;
                 form.Location = Location;
-            }
-
-            if (!Size.IsEmpty)
-            {
                 form.Size = Size;
             }
 
@@ -54,7 +50,7 @@ namespace ShareX.HelpersLib
             }
         }
 
-        public void GetFormState(Form form)
+        public void UpdateFormState(Form form)
         {
             WINDOWPLACEMENT wp = new WINDOWPLACEMENT();
             wp.length = Marshal.SizeOf(wp);
@@ -69,8 +65,8 @@ namespace ShareX.HelpersLib
 
         public void AutoHandleFormState(Form form)
         {
-            SetFormState(form);
-            form.FormClosing += (sender, e) => GetFormState(form);
+            ApplyFormState(form);
+            form.FormClosing += (sender, e) => UpdateFormState(form);
         }
     }
 }

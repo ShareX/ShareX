@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2017 ShareX Team
+    Copyright (c) 2007-2019 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -30,6 +30,7 @@ using System.Drawing;
 using System.Drawing.Design;
 using System.Drawing.Drawing2D;
 using System.Linq;
+using System.Windows.Forms;
 
 namespace ShareX.ImageEffectsLib
 {
@@ -39,25 +40,13 @@ namespace ShareX.ImageEffectsLib
         [DefaultValue(ContentAlignment.BottomRight)]
         public ContentAlignment Placement { get; set; }
 
-        private Point offset;
-
         [DefaultValue(typeof(Point), "5, 5")]
-        public Point Offset
-        {
-            get
-            {
-                return offset;
-            }
-            set
-            {
-                offset = new Point(value.X.Min(0), value.Y.Min(0));
-            }
-        }
+        public Point Offset { get; set; }
 
         [DefaultValue(true), Description("If text watermark size bigger than source image then don't draw it.")]
         public bool AutoHide { get; set; }
 
-        [DefaultValue("getsharex.com"), Editor(typeof(NameParserEditor), typeof(UITypeEditor))]
+        [DefaultValue("Text watermark"), Editor(typeof(NameParserEditor), typeof(UITypeEditor))]
         public string Text { get; set; }
 
         private FontSafe textFontSafe = new FontSafe();
@@ -102,18 +91,21 @@ namespace ShareX.ImageEffectsLib
             }
             set
             {
-                cornerRadius = value.Min(0);
+                cornerRadius = value.Max(0);
             }
         }
 
-        [DefaultValue(5)]
-        public int BackgroundPadding { get; set; }
+        [DefaultValue(typeof(Padding), "5, 5, 5, 5")]
+        public Padding Padding { get; set; }
 
         [DefaultValue(true)]
         public bool DrawBorder { get; set; }
 
         [DefaultValue(typeof(Color), "Black"), Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
         public Color BorderColor { get; set; }
+
+        [DefaultValue(1)]
+        public int BorderSize { get; set; }
 
         [DefaultValue(true)]
         public bool DrawBackground { get; set; }
@@ -127,7 +119,7 @@ namespace ShareX.ImageEffectsLib
         [DefaultValue(LinearGradientMode.Vertical)]
         public LinearGradientMode GradientType { get; set; }
 
-        [DefaultValue(typeof(Color), "0, 20, 40"), Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
+        [DefaultValue(typeof(Color), "0, 30, 80"), Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
         public Color BackgroundColor2 { get; set; }
 
         [DefaultValue(false)]
@@ -176,7 +168,7 @@ namespace ShareX.ImageEffectsLib
                 string parsedText = parser.Parse(Text);
 
                 Size textSize = Helpers.MeasureText(parsedText, textFont);
-                Size watermarkSize = new Size(textSize.Width + BackgroundPadding * 2, textSize.Height + BackgroundPadding * 2);
+                Size watermarkSize = new Size(Padding.Left + textSize.Width + Padding.Right, Padding.Top + textSize.Height + Padding.Bottom);
                 Point watermarkPosition = Helpers.GetPosition(Placement, Offset, img.Size, watermarkSize);
                 Rectangle watermarkRectangle = new Rectangle(watermarkPosition, watermarkSize);
 
@@ -187,7 +179,7 @@ namespace ShareX.ImageEffectsLib
 
                 using (Graphics g = Graphics.FromImage(img))
                 {
-                    g.SetHighQuality();
+                    g.SmoothingMode = SmoothingMode.HighQuality;
 
                     using (GraphicsPath gp = new GraphicsPath())
                     {
@@ -230,30 +222,34 @@ namespace ShareX.ImageEffectsLib
 
                         if (DrawBorder)
                         {
-                            using (Pen borderPen = new Pen(BorderColor))
+                            int borderSize = BorderSize.Max(1);
+
+                            if (borderSize.IsEvenNumber())
+                            {
+                                g.PixelOffsetMode = PixelOffsetMode.Half;
+                            }
+
+                            using (Pen borderPen = new Pen(BorderColor, borderSize))
                             {
                                 g.DrawPath(borderPen, gp);
                             }
+
+                            g.PixelOffsetMode = PixelOffsetMode.Default;
                         }
                     }
 
-                    using (StringFormat sf = new StringFormat { Alignment = StringAlignment.Center, LineAlignment = StringAlignment.Center })
+                    if (DrawTextShadow)
                     {
-                        float centerX = watermarkRectangle.Width / 2f;
-                        float centerY = watermarkRectangle.Height / 2f;
-
-                        if (DrawTextShadow)
+                        using (Brush textShadowBrush = new SolidBrush(TextShadowColor))
                         {
-                            using (Brush textShadowBrush = new SolidBrush(TextShadowColor))
-                            {
-                                g.DrawString(parsedText, textFont, textShadowBrush, watermarkRectangle.X + centerX + TextShadowOffset.X, watermarkRectangle.Y + centerY + TextShadowOffset.Y, sf);
-                            }
+                            g.DrawString(parsedText, textFont, textShadowBrush, watermarkRectangle.X + Padding.Left + TextShadowOffset.X,
+                                watermarkRectangle.Y + Padding.Top + TextShadowOffset.Y);
                         }
+                    }
 
-                        using (Brush textBrush = new SolidBrush(TextColor))
-                        {
-                            g.DrawString(parsedText, textFont, textBrush, watermarkRectangle.X + centerX, watermarkRectangle.Y + centerY, sf);
-                        }
+                    using (Brush textBrush = new SolidBrush(TextColor))
+                    {
+                        g.DrawString(parsedText, textFont, textBrush, watermarkRectangle.X + Padding.Left, watermarkRectangle.Y + Padding.Top);
                     }
                 }
             }

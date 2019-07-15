@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2017 ShareX Team
+    Copyright (c) 2007-2019 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -23,7 +23,6 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.HelpersLib;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 
@@ -33,7 +32,18 @@ namespace ShareX.ScreenCaptureLib
     {
         public override ShapeType ShapeType { get; } = ShapeType.DrawingImage;
 
-        public Image Image { get; private set; }
+        public Image Image { get; protected set; }
+        public ImageEditorInterpolationMode ImageInterpolationMode { get; protected set; }
+
+        public override void OnConfigLoad()
+        {
+            ImageInterpolationMode = AnnotationOptions.ImageInterpolationMode;
+        }
+
+        public override void OnConfigSave()
+        {
+            AnnotationOptions.ImageInterpolationMode = ImageInterpolationMode;
+        }
 
         public void SetImage(Image img, bool centerImage)
         {
@@ -48,7 +58,7 @@ namespace ShareX.ScreenCaptureLib
 
                 if (centerImage)
                 {
-                    location = new Point(Rectangle.X - size.Width / 2, Rectangle.Y - size.Height / 2);
+                    location = new Point(Rectangle.X - (size.Width / 2), Rectangle.Y - (size.Height / 2));
                 }
                 else
                 {
@@ -57,27 +67,6 @@ namespace ShareX.ScreenCaptureLib
 
                 Rectangle = new Rectangle(location, size);
             }
-        }
-
-        public bool OpenImageDialog(bool centerImage)
-        {
-            Manager.IsMoving = false;
-
-            string filepath = ImageHelpers.OpenImageFileDialog();
-
-            if (!string.IsNullOrEmpty(filepath))
-            {
-                Image img = ImageHelpers.LoadImage(filepath);
-
-                if (img != null)
-                {
-                    SetImage(img, centerImage);
-
-                    return true;
-                }
-            }
-
-            return false;
         }
 
         public override void OnDraw(Graphics g)
@@ -89,38 +78,22 @@ namespace ShareX.ScreenCaptureLib
         {
             if (Image != null)
             {
-                if (Manager.IsRenderingOutput)
-                {
-                    g.InterpolationMode = InterpolationMode.HighQualityBicubic;
-                }
-                else
-                {
-                    g.InterpolationMode = InterpolationMode.NearestNeighbor;
-                }
+                g.PixelOffsetMode = PixelOffsetMode.Half;
+                g.InterpolationMode = Manager.GetInterpolationMode(ImageInterpolationMode);
 
                 g.DrawImage(Image, Rectangle);
 
+                g.PixelOffsetMode = PixelOffsetMode.Default;
                 g.InterpolationMode = InterpolationMode.Bilinear;
             }
         }
 
-        public override void OnCreating()
+        public override void OnMoved()
         {
-            StartPosition = EndPosition = InputManager.MousePosition0Based;
-
-            if (!OpenImageDialog(true))
+            /*if (Manager.Form.IsEditorMode)
             {
-                Remove();
-            }
-            else
-            {
-                ShowNodes();
-            }
-        }
-
-        public override void OnDoubleClicked()
-        {
-            OpenImageDialog(false);
+                Manager.AutoResizeCanvas();
+            }*/
         }
 
         public override void Dispose()

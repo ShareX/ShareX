@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="$this.Text" xml:space="preserve">
-    <value>모니터 테스트</value>
+    <value>ShareX - 모니터 테스트</value>
   </data>
   <data name="btnClose.Text" xml:space="preserve">
     <value>닫기</value>
@@ -142,13 +142,13 @@
     <value>크기:</value>
   </data>
   <data name="cbShapes.Items" xml:space="preserve">
-    <value>체크무늬</value>
-  </data>
-  <data name="cbShapes.Items1" xml:space="preserve">
     <value>가로선</value>
   </data>
-  <data name="cbShapes.Items2" xml:space="preserve">
+  <data name="cbShapes.Items1" xml:space="preserve">
     <value>세로선</value>
+  </data>
+  <data name="cbShapes.Items2" xml:space="preserve">
+    <value>체크무늬</value>
   </data>
   <data name="lblTip.Text" xml:space="preserve">
     <value>바깥쪽을 눌러 이 설정판을 숨기거나 표시할 수 있습니다.</value>
@@ -167,5 +167,8 @@
   </data>
   <data name="btnColorDialog.Text" xml:space="preserve">
     <value>색상 대화상자...</value>
+  </data>
+  <data name="btnScreenTearingTest.Text" xml:space="preserve">
+    <value>화면 찢김 현상 테스트</value>
   </data>
 </root>

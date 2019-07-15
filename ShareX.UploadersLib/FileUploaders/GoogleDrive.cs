@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2017 ShareX Team
+    Copyright (c) 2007-2019 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -61,7 +61,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
     public enum GoogleDrivePermissionRole
     {
-        owner, reader, writer
+        owner, reader, writer, organizer, commenter
     }
 
     public enum GoogleDrivePermissionType
@@ -71,110 +71,42 @@ namespace ShareX.UploadersLib.FileUploaders
 
     public sealed class GoogleDrive : FileUploader, IOAuth2
     {
-        public OAuth2Info AuthInfo { get; set; }
+        private GoogleOAuth2 GoogleAuth { get; set; }
         public bool IsPublic { get; set; }
         public bool DirectLink { get; set; }
         public string FolderID { get; set; }
 
         public GoogleDrive(OAuth2Info oauth)
         {
-            AuthInfo = oauth;
-        }
-
-        public string GetAuthorizationURL()
-        {
-            Dictionary<string, string> args = new Dictionary<string, string>();
-            args.Add("response_type", "code");
-            args.Add("client_id", AuthInfo.Client_ID);
-            args.Add("redirect_uri", "urn:ietf:wg:oauth:2.0:oob");
-            args.Add("scope", "https://www.googleapis.com/auth/drive");
-
-            return CreateQuery("https://accounts.google.com/o/oauth2/auth", args);
-        }
-
-        public bool GetAccessToken(string code)
-        {
-            Dictionary<string, string> args = new Dictionary<string, string>();
-            args.Add("code", code);
-            args.Add("client_id", AuthInfo.Client_ID);
-            args.Add("client_secret", AuthInfo.Client_Secret);
-            args.Add("redirect_uri", "urn:ietf:wg:oauth:2.0:oob");
-            args.Add("grant_type", "authorization_code");
-
-            string response = SendRequestMultiPart("https://accounts.google.com/o/oauth2/token", args);
-
-            if (!string.IsNullOrEmpty(response))
+            GoogleAuth = new GoogleOAuth2(oauth, this)
             {
-                OAuth2Token token = JsonConvert.DeserializeObject<OAuth2Token>(response);
-
-                if (token != null && !string.IsNullOrEmpty(token.access_token))
-                {
-                    token.UpdateExpireDate();
-                    AuthInfo.Token = token;
-                    return true;
-                }
-            }
-
-            return false;
+                Scope = "https://www.googleapis.com/auth/drive"
+            };
         }
+
+        public OAuth2Info AuthInfo => GoogleAuth.AuthInfo;
 
         public bool RefreshAccessToken()
         {
-            if (OAuth2Info.CheckOAuth(AuthInfo) && !string.IsNullOrEmpty(AuthInfo.Token.refresh_token))
-            {
-                Dictionary<string, string> args = new Dictionary<string, string>();
-                args.Add("refresh_token", AuthInfo.Token.refresh_token);
-                args.Add("client_id", AuthInfo.Client_ID);
-                args.Add("client_secret", AuthInfo.Client_Secret);
-                args.Add("grant_type", "refresh_token");
-
-                string response = SendRequestMultiPart("https://accounts.google.com/o/oauth2/token", args);
-
-                if (!string.IsNullOrEmpty(response))
-                {
-                    OAuth2Token token = JsonConvert.DeserializeObject<OAuth2Token>(response);
-
-                    if (token != null && !string.IsNullOrEmpty(token.access_token))
-                    {
-                        token.UpdateExpireDate();
-                        string refresh_token = AuthInfo.Token.refresh_token;
-                        AuthInfo.Token = token;
-                        AuthInfo.Token.refresh_token = refresh_token;
-                        return true;
-                    }
-                }
-            }
-
-            return false;
+            return GoogleAuth.RefreshAccessToken();
         }
 
         public bool CheckAuthorization()
         {
-            if (OAuth2Info.CheckOAuth(AuthInfo))
-            {
-                if (AuthInfo.Token.IsExpired && !RefreshAccessToken())
-                {
-                    Errors.Add("Refresh access token failed.");
-                    return false;
-                }
-            }
-            else
-            {
-                Errors.Add("Login is required.");
-                return false;
-            }
-
-            return true;
+            return GoogleAuth.CheckAuthorization();
         }
 
-        private NameValueCollection GetAuthHeaders()
+        public string GetAuthorizationURL()
         {
-            NameValueCollection headers = new NameValueCollection();
-            headers.Add("Authorization", "Bearer " + AuthInfo.Token.access_token);
-            return headers;
+            return GoogleAuth.GetAuthorizationURL();
         }
 
-        private string GetMetadata(string title, string parentID)
+        public bool GetAccessToken(string code)
+        {
+            return GoogleAuth.GetAccessToken(code);
+        }
+
+        private string GetMetadata(string name, string parentID)
         {
             object metadata;
 
@@ -182,13 +114,10 @@ namespace ShareX.UploadersLib.FileUploaders
             {
                 metadata = new
                 {
-                    title = title,
+                    name = name,
                     parents = new[]
                     {
-                        new
-                        {
-                            id = parentID
-                        }
+                        parentID
                     }
                 };
             }
@@ -196,28 +125,27 @@ namespace ShareX.UploadersLib.FileUploaders
             {
                 metadata = new
                 {
-                    title = title
+                    name = name
                 };
             }
 
             return JsonConvert.SerializeObject(metadata);
         }
 
-        private void SetPermissions(string fileID, GoogleDrivePermissionRole role, GoogleDrivePermissionType type, string value, bool withLink)
+        private void SetPermissions(string fileID, GoogleDrivePermissionRole role, GoogleDrivePermissionType type, bool allowFileDiscovery)
         {
             if (!CheckAuthorization()) return;
 
-            string url = string.Format("https://www.googleapis.com/drive/v2/files/{0}/permissions", fileID);
+            string url = string.Format("https://www.googleapis.com/drive/v3/files/{0}/permissions", fileID);
 
             string json = JsonConvert.SerializeObject(new
             {
                 role = role.ToString(),
                 type = type.ToString(),
-                value = value,
-                withLink = withLink.ToString()
+                allowFileDiscovery = allowFileDiscovery.ToString()
             });
 
-            string response = SendRequest(HttpMethod.POST, url, json, ContentTypeJSON, null, GetAuthHeaders());
+            string response = SendRequest(HttpMethod.POST, url, json, RequestHelpers.ContentTypeJSON, null, GoogleAuth.GetAuthHeaders());
         }
 
         public List<GoogleDriveFile> GetFolders(bool trashed = false, bool writer = true)
@@ -238,20 +166,32 @@ namespace ShareX.UploadersLib.FileUploaders
 
             Dictionary<string, string> args = new Dictionary<string, string>();
             args.Add("q", query);
+            args.Add("fields", "nextPageToken,files(id,name,description)");
 
-            string response = SendRequest(HttpMethod.GET, "https://www.googleapis.com/drive/v2/files", args, GetAuthHeaders());
+            List<GoogleDriveFile> folders = new List<GoogleDriveFile>();
+            string pageToken = "";
 
-            if (!string.IsNullOrEmpty(response))
+            // Make sure we get all the pages of results
+            do
             {
-                GoogleDriveFileList fileList = JsonConvert.DeserializeObject<GoogleDriveFileList>(response);
+                args["pageToken"] = pageToken;
+                string response = SendRequest(HttpMethod.GET, "https://www.googleapis.com/drive/v3/files", args, GoogleAuth.GetAuthHeaders());
+                pageToken = "";
 
-                if (fileList != null)
+                if (!string.IsNullOrEmpty(response))
                 {
-                    return fileList.items;
+                    GoogleDriveFileList fileList = JsonConvert.DeserializeObject<GoogleDriveFileList>(response);
+
+                    if (fileList != null)
+                    {
+                        folders.AddRange(fileList.files);
+                        pageToken = fileList.nextPageToken;
+                    }
                 }
             }
+            while (!string.IsNullOrEmpty(pageToken));
 
-            return null;
+            return folders;
         }
 
         public override UploadResult Upload(Stream stream, string fileName)
@@ -260,8 +200,8 @@ namespace ShareX.UploadersLib.FileUploaders
 
             string metadata = GetMetadata(fileName, FolderID);
 
-            UploadResult result = SendRequestFile("https://www.googleapis.com/upload/drive/v2/files?uploadType=multipart", stream, fileName, headers: GetAuthHeaders(),
-                contentType: "multipart/related", metadata: metadata);
+            UploadResult result = SendRequestFile("https://www.googleapis.com/upload/drive/v3/files?uploadType=multipart&fields=id,webViewLink,webContentLink", stream, fileName,
+                "file", headers: GoogleAuth.GetAuthHeaders(), contentType: "multipart/related", relatedData: metadata);
 
             if (!string.IsNullOrEmpty(result.Response))
             {
@@ -273,7 +213,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
                     if (IsPublic)
                     {
-                        SetPermissions(upload.id, GoogleDrivePermissionRole.reader, GoogleDrivePermissionType.anyone, "", true);
+                        SetPermissions(upload.id, GoogleDrivePermissionRole.reader, GoogleDrivePermissionType.anyone, false);
                     }
 
                     if (DirectLink)
@@ -289,7 +229,7 @@ namespace ShareX.UploadersLib.FileUploaders
                     }
                     else
                     {
-                        result.URL = upload.alternateLink;
+                        result.URL = upload.webViewLink;
                     }
                 }
             }
@@ -301,14 +241,15 @@ namespace ShareX.UploadersLib.FileUploaders
     public class GoogleDriveFile
     {
         public string id { get; set; }
-        public string alternateLink { get; set; }
+        public string webViewLink { get; set; }
         public string webContentLink { get; set; }
-        public string title { get; set; }
+        public string name { get; set; }
         public string description { get; set; }
     }
 
     public class GoogleDriveFileList
     {
-        public List<GoogleDriveFile> items { get; set; }
+        public List<GoogleDriveFile> files { get; set; }
+        public string nextPageToken { get; set; }
     }
 }

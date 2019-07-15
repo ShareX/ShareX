@@ -132,9 +132,6 @@
   <data name="FFmpegOptionsForm_UpdateUI_Quality_" xml:space="preserve">
     <value>Qualität:</value>
   </data>
-  <data name="RectangleAnnotate_InitializeComponent_Rectangle_capture_annotate" xml:space="preserve">
-    <value>Rechteckaufnahme Anmerkung</value>
-  </data>
   <data name="RectangleRegion_GetAreaText_Area" xml:space="preserve">
     <value>X: {0} Y: {1} W: {2} H: {3}</value>
   </data>
@@ -144,82 +141,16 @@ Weite: {4} px / Höhe: {5} px
 Distanz: {6:0.00} px / Winkel: {7:0.00}°</value>
   </data>
   <data name="BaseRegionForm_InitializeComponent_Region_capture" xml:space="preserve">
-    <value>Regionsaufnahme</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Ctrl___C__Copy_info" xml:space="preserve">
-    <value>[Strg + C] Info kopieren</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Ctrl___C__Copy_position" xml:space="preserve">
-    <value>[Strg + C] Position kopieren</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Ctrl___C__Copy_position_and_size" xml:space="preserve">
-    <value>[Strg + C] Position und Größe kopieren</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Double_Left_click___Enter__Capture_regions" xml:space="preserve">
-    <value>[Doppel Linksklick] [Enter] Regionen aufnehmen</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Esc__Cancel_capture" xml:space="preserve">
-    <value>[Esc] Aufnahme abbrechen</value>
+    <value>Bereichsaufnahme</value>
   </data>
   <data name="FFmpegOptionsForm_DownloaderForm_InstallRequested_Download_of_FFmpeg_failed_" xml:space="preserve">
     <value>Herunterladen von FFmpeg ist fehlgeschlagen.</value>
   </data>
-  <data name="RectangleRegion_WriteTips__Arrow_keys__Move_cursor_position" xml:space="preserve">
-    <value>[Pfeiltasten] Zeigerposition ändern</value>
-  </data>
-  <data name="RectangleRegion_WriteTips_____Active_monitor_capture" xml:space="preserve">
-    <value>[~] Aufnahme aktiver Bildschirm</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Hold_Shift__Proportional_resizing" xml:space="preserve">
-    <value>[Umschalttaste halten] Größe proportional ändern</value>
-  </data>
   <data name="RectangleLight_InitializeComponent_Rectangle_capture_light" xml:space="preserve">
-    <value>Rechteckaufnahme leicht</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__1__2__3_____0__Monitor_capture" xml:space="preserve">
-    <value>[1, 2, 3 ... 0] Aufnahme Bildschirm</value>
-  </data>
-  <data name="RectangleAnnotate_WriteTips__Mouse_wheel__Swap_modes" xml:space="preserve">
-    <value>[Mausrad] Modi wechseln</value>
-  </data>
-  <data name="RectangleAnnotate_WriteTips__1__Select_capture_mode" xml:space="preserve">
-    <value>[1] Aufnahmemodus auswählen</value>
-  </data>
-  <data name="RectangleAnnotate_WriteTips__2__Select_rectangle_drawing_mode" xml:space="preserve">
-    <value>[2] Rechteckzeichenmodus auswählen</value>
-  </data>
-  <data name="RectangleAnnotate_WriteTips__3__Select_pen_drawing_mode" xml:space="preserve">
-    <value>[3] Stiftzeichenmodus auswählen</value>
-  </data>
-  <data name="RectangleAnnotate_WriteTips__Shift__Change_border_color" xml:space="preserve">
-    <value>[Umschalttaste] Rahmenfarbe ändern</value>
-  </data>
-  <data name="RectangleAnnotate_WriteTips__Ctrl___Mouse_wheel__Change_border_size" xml:space="preserve">
-    <value>[Strg + Mausrad] Rahmengröße ändern</value>
-  </data>
-  <data name="RectangleAnnotate_WriteTips__Shift__Change_pen_color" xml:space="preserve">
-    <value>[Umschalttaste] Stiftfarbe ändern</value>
-  </data>
-  <data name="RectangleAnnotate_WriteTips__Ctrl___Mouse_wheel__Change_pen_size" xml:space="preserve">
-    <value>[Strg + Mausrad] Stiftgröße ändern</value>
+    <value>Rechteckaufnahme einfach</value>
   </data>
   <data name="WebpageCaptureForm_UpdateControls_Capture" xml:space="preserve">
     <value>Aufnahme</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__F1__Hide_tips" xml:space="preserve">
-    <value>[F1] Tipps verstecken</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Hold_Alt__Snap_resizing_to_preset_sizes" xml:space="preserve">
-    <value>[Alt halten] Raste Auswahl auf vorgefertigte Größen ein</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Hold_Left_click__Start_region_selection" xml:space="preserve">
-    <value>[Linksklick halten] [Einf] Beginne Regionsauswahl</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Hold_Left_click_on_selection__Move_region" xml:space="preserve">
-    <value>[Linksklick auf Auswahl halten] Verschiebe Region</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Insert__Stop_region_selection" xml:space="preserve">
-    <value>[Linksklick loslassen] [Einf] Regionsauswahl beenden</value>
   </data>
   <data name="ScrollingCaptureForm_StartCapture_Stop_capture" xml:space="preserve">
     <value>Aufnahme Stoppen</value>
@@ -230,13 +161,152 @@ Distanz: {6:0.00} px / Winkel: {7:0.00}°</value>
   <data name="RectangleTransparent_RectangleTransparent_Rectangle_capture_transparent" xml:space="preserve">
     <value>Rechteckaufnahme Transparent</value>
   </data>
-  <data name="RectangleRegion_WriteTips__Space__Fullscreen_capture" xml:space="preserve">
-    <value>[Leertaste] Vollbild Aufnahme</value>
+  <data name="ShapeManager_CreateContextMenu_Border_color___" xml:space="preserve">
+    <value>Rahmenfarbe...</value>
   </data>
-  <data name="RectangleRegion_WriteTips__Right_click__Cancel_region_selection" xml:space="preserve">
-    <value>[Rechtsklick] [Entf] Regionsauswahl abbrechen</value>
+  <data name="ShapeManager_CreateContextMenu_Border_size_" xml:space="preserve">
+    <value>Rahmengröße:</value>
   </data>
-  <data name="RectangleRegion_WriteTips__Right_click_on_selection___Delete__Remove_region" xml:space="preserve">
-    <value>[Entf] Region entfernen</value>
+  <data name="ShapeManager_CreateContextMenu_Fill_color___" xml:space="preserve">
+    <value>Füllfarbe...</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Corner_radius_" xml:space="preserve">
+    <value>Eckenradius</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Pixel_size_" xml:space="preserve">
+    <value>Pixelgröße:</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Highlight_color___" xml:space="preserve">
+    <value>Hervorhebungsfarbe...</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Options" xml:space="preserve">
+    <value>Optionen</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Show_position_and_size_info" xml:space="preserve">
+    <value>Positions- und Größeninformation anzeigen</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Show_magnifier" xml:space="preserve">
+    <value>Lupe anzeigen</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Width_" xml:space="preserve">
+    <value>Breite:</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Height_" xml:space="preserve">
+    <value>Höhe:</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Show_FPS" xml:space="preserve">
+    <value>FPS anzeigen</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_EnableAnimations" xml:space="preserve">
+    <value>Animationen aktivieren</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_ShapeOptions" xml:space="preserve">
+    <value>Formoptionen</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_Edit" xml:space="preserve">
+    <value>Bearbeiten</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_Undo" xml:space="preserve">
+    <value>Rückgängig</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_Delete" xml:space="preserve">
+    <value>Löschen</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_DeleteAll" xml:space="preserve">
+    <value>Alles löschen</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_BringForward" xml:space="preserve">
+    <value>Eine Ebene nach vorne</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_SendBackward" xml:space="preserve">
+    <value>Eine Ebene nach hinten</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_BringToFront" xml:space="preserve">
+    <value>In den Vordergrund</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_SendToBack" xml:space="preserve">
+    <value>In den Hintergrund</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_SaveImage" xml:space="preserve">
+    <value>Bild speichern</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_SaveImageAs" xml:space="preserve">
+    <value>Bild speichern unter...</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_CopyImageToClipboard" xml:space="preserve">
+    <value>Bild in Zwischenablage kopieren</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_UploadImage" xml:space="preserve">
+    <value>Bild hochladen</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_PrintImage" xml:space="preserve">
+    <value>Bild drucken...</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_LastRegion" xml:space="preserve">
+    <value>Letzten Bereich aufnehmen</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Capture" xml:space="preserve">
+    <value>Aufnehmen</value>
+  </data>
+  <data name="RegionCaptureForm_InitializeComponent_ImageEditor" xml:space="preserve">
+    <value>Bildeditor</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_Image" xml:space="preserve">
+    <value>Bild</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_ImageSize" xml:space="preserve">
+    <value>Bildgröße...</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_Rotate90Clockwise" xml:space="preserve">
+    <value>Um 90° im Uhrzeigersinn drehen</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_Rotate90CounterClockwise" xml:space="preserve">
+    <value>Um 90° gegen den Uhrzeigersinn drehen</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_Rotate180" xml:space="preserve">
+    <value>Um 180° drehen</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_FlipHorizontal" xml:space="preserve">
+    <value>Horizontal spiegeln</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_FlipVertical" xml:space="preserve">
+    <value>Vertikal spiegeln</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_EditorBackgroundColor" xml:space="preserve">
+    <value>Editorhintergrund...</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_PasteImageText" xml:space="preserve">
+    <value>Bild/Text einfügen</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Magnifier_pixel_count_" xml:space="preserve">
+    <value>Lupenpixelanzahl:</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Magnifier_pixel_size_" xml:space="preserve">
+    <value>Lupenpixelgröße:</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Show_screen_wide_crosshair" xml:space="preserve">
+    <value>Bildschirmweites Steuerkreuz anzeigen</value>
+  </data>
+  <data name="LightResizeNodes" xml:space="preserve">
+    <value>Einfache Größenänderungspunkte verwenden</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_RememberMenuState" xml:space="preserve">
+    <value>Menüzustand merken</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_RunAfterCaptureTasks" xml:space="preserve">
+    <value>Aufgaben nach der Aufnahme ausführen (Eingabe)</value>
+  </data>
+  <data name="ImageEffects" xml:space="preserve">
+    <value>Bildeffekte hinzufügen...</value>
+  </data>
+  <data name="RegionCaptureForm_ShowExitConfirmation_ShareXImageEditor" xml:space="preserve">
+    <value>ShareX - Bildeditor</value>
+  </data>
+  <data name="RegionCaptureForm_ShowExitConfirmation_Text" xml:space="preserve">
+    <value>Es sind ungespeicherte Änderungen vorhanden.
+Möchtest du den Bildeditor schließen?</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Multi_region_mode" xml:space="preserve">
+    <value>Mehrbereichs-Modus</value>
   </data>
 </root>

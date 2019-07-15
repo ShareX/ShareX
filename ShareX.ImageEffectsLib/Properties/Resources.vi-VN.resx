@@ -132,4 +132,7 @@
   <data name="ImageEffectsForm_AddAllEffectsToTreeView_Manipulations" xml:space="preserve">
     <value>Thao tác</value>
   </data>
+  <data name="ImageEffectsForm_EditorMode_Cancel" xml:space="preserve">
+    <value>Hủy bỏ</value>
+  </data>
 </root>

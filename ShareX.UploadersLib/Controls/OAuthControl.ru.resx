@@ -126,9 +126,6 @@
   <data name="btnRefreshAuthorization.Text" xml:space="preserve">
     <value>Обновить авторизацию</value>
   </data>
-  <data name="lblLoginStatus.Text" xml:space="preserve">
-    <value>Состояние</value>
-  </data>
   <data name="btnClearAuthorization.Text" xml:space="preserve">
     <value>Очистить авторизацию</value>
   </data>
@@ -137,5 +134,8 @@
   </data>
   <data name="btnCompleteAuthorization.Text" xml:space="preserve">
     <value>Шаг 2: Завершить авторизацию</value>
+  </data>
+  <data name="lblStatus.Text" xml:space="preserve">
+    <value>Состояние:</value>
   </data>
 </root>

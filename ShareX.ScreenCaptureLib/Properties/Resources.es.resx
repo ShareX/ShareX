@@ -149,9 +149,6 @@
 Anchura: {4} px / Altura: {5} px
 Distancia: {6:0.00} px / Ángulo: {7:0.00}°</value>
   </data>
-  <data name="RectangleAnnotate_InitializeComponent_Rectangle_capture_annotate" xml:space="preserve">
-    <value>Captura de rectángulo anotar</value>
-  </data>
   <data name="RectangleTransparent_RectangleTransparent_Rectangle_capture_transparent" xml:space="preserve">
     <value>Captura de rectángulo transparente</value>
   </data>

@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2017 ShareX Team
+    Copyright (c) 2007-2019 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -29,11 +29,11 @@ using System.Runtime.InteropServices;
 
 namespace ShareX.HelpersLib
 {
-    public class CursorData : IDisposable
+    public class CursorData
     {
-        public bool IsVisible { get; private set; }
-        public IntPtr IconHandle { get; private set; }
+        public IntPtr Handle { get; private set; }
         public Point Position { get; private set; }
+        public bool IsVisible { get; private set; }
 
         public CursorData()
         {
@@ -42,76 +42,81 @@ namespace ShareX.HelpersLib
 
         public void UpdateCursorData()
         {
+            Handle = IntPtr.Zero;
+            Position = Point.Empty;
+            IsVisible = false;
+
             CursorInfo cursorInfo = new CursorInfo();
             cursorInfo.cbSize = Marshal.SizeOf(cursorInfo);
 
             if (NativeMethods.GetCursorInfo(out cursorInfo))
             {
+                Handle = cursorInfo.hCursor;
+                Position = cursorInfo.ptScreenPos;
                 IsVisible = cursorInfo.flags == NativeConstants.CURSOR_SHOWING;
 
                 if (IsVisible)
                 {
-                    IconHandle = NativeMethods.CopyIcon(cursorInfo.hCursor);
-                    IconInfo iconInfo;
+                    IntPtr iconHandle = NativeMethods.CopyIcon(Handle);
 
-                    if (NativeMethods.GetIconInfo(IconHandle, out iconInfo))
+                    if (iconHandle != IntPtr.Zero)
                     {
-                        Point cursorPosition = CaptureHelpers.GetZeroBasedMousePosition();
-                        Position = new Point(cursorPosition.X - iconInfo.xHotspot, cursorPosition.Y - iconInfo.yHotspot);
+                        IconInfo iconInfo;
 
-                        if (iconInfo.hbmMask != IntPtr.Zero)
+                        if (NativeMethods.GetIconInfo(iconHandle, out iconInfo))
                         {
-                            NativeMethods.DeleteObject(iconInfo.hbmMask);
+                            Position = new Point(Position.X - iconInfo.xHotspot, Position.Y - iconInfo.yHotspot);
+
+                            if (iconInfo.hbmMask != IntPtr.Zero)
+                            {
+                                NativeMethods.DeleteObject(iconInfo.hbmMask);
+                            }
+
+                            if (iconInfo.hbmColor != IntPtr.Zero)
+                            {
+                                NativeMethods.DeleteObject(iconInfo.hbmColor);
+                            }
                         }
 
-                        if (iconInfo.hbmColor != IntPtr.Zero)
-                        {
-                            NativeMethods.DeleteObject(iconInfo.hbmColor);
-                        }
+                        NativeMethods.DestroyIcon(iconHandle);
                     }
                 }
             }
         }
 
-        public void DrawCursorToImage(Image img)
+        public void DrawCursor(Image img)
         {
-            DrawCursorToImage(img, Point.Empty);
+            DrawCursor(img, Point.Empty);
         }
 
-        public void DrawCursorToImage(Image img, Point cursorOffset)
+        public void DrawCursor(Image img, Point offset)
         {
-            if (IconHandle != IntPtr.Zero)
+            if (IsVisible)
             {
-                Point drawPosition = new Point(Position.X - cursorOffset.X, Position.Y - cursorOffset.Y);
+                Point drawPosition = new Point(Position.X - offset.X, Position.Y - offset.Y);
+                drawPosition = CaptureHelpers.ScreenToClient(drawPosition);
 
                 using (Graphics g = Graphics.FromImage(img))
-                using (Icon icon = Icon.FromHandle(IconHandle))
+                using (Icon icon = Icon.FromHandle(Handle))
                 {
                     g.DrawIcon(icon, drawPosition.X, drawPosition.Y);
                 }
             }
         }
 
-        public void DrawCursorToHandle(IntPtr hdcDest)
+        public void DrawCursor(IntPtr hdcDest)
         {
-            DrawCursorToHandle(hdcDest, Point.Empty);
+            DrawCursor(hdcDest, Point.Empty);
         }
 
-        public void DrawCursorToHandle(IntPtr hdcDest, Point cursorOffset)
+        public void DrawCursor(IntPtr hdcDest, Point offset)
         {
-            if (IconHandle != IntPtr.Zero)
+            if (IsVisible)
             {
-                Point drawPosition = new Point(Position.X - cursorOffset.X, Position.Y - cursorOffset.Y);
-                NativeMethods.DrawIconEx(hdcDest, drawPosition.X, drawPosition.Y, IconHandle, 0, 0, 0, IntPtr.Zero, NativeConstants.DI_NORMAL);
-            }
-        }
+                Point drawPosition = new Point(Position.X - offset.X, Position.Y - offset.Y);
+                drawPosition = CaptureHelpers.ScreenToClient(drawPosition);
 
-        public void Dispose()
-        {
-            if (IconHandle != IntPtr.Zero)
-            {
-                NativeMethods.DestroyIcon(IconHandle);
-                IconHandle = IntPtr.Zero;
+                NativeMethods.DrawIconEx(hdcDest, drawPosition.X, drawPosition.Y, Handle, 0, 0, 0, IntPtr.Zero, NativeConstants.DI_NORMAL);
             }
         }
     }

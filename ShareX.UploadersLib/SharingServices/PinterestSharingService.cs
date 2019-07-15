@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2017 ShareX Team
+    Copyright (c) 2007-2019 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -25,10 +25,10 @@
 
 namespace ShareX.UploadersLib.SharingServices
 {
-    public class PinterestSharingService : SimpleSharingService
+    public class PinterestSharingService : SimpleURLSharingService
     {
         public override URLSharingServices EnumValue { get; } = URLSharingServices.Pinterest;
 
-        protected override string UrlFormatString { get; } = "http://pinterest.com/pin/create/button/?url={0}&media={0}";
+        protected override string URLFormatString { get; } = "http://pinterest.com/pin/create/button/?url={0}&media={0}";
     }
 }

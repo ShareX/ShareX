@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2017 ShareX Team
+    Copyright (c) 2007-2019 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -37,8 +37,27 @@ namespace ShareX.UploadersLib.SharingServices
             return !string.IsNullOrEmpty(config.EmailSmtpServer) && config.EmailSmtpPort > 0 && !string.IsNullOrEmpty(config.EmailFrom) && !string.IsNullOrEmpty(config.EmailPassword);
         }
 
-        public override void ShareURL(string url, UploadersConfig config)
+        public override URLSharer CreateSharer(UploadersConfig config, TaskReferenceHelper taskInfo)
         {
+            return new EmailSharer(config);
+        }
+
+        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpEmail;
+    }
+
+    public sealed class EmailSharer : URLSharer
+    {
+        private UploadersConfig config;
+
+        public EmailSharer(UploadersConfig config)
+        {
+            this.config = config;
+        }
+
+        public override UploadResult ShareURL(string url)
+        {
+            UploadResult result = new UploadResult { URL = url, IsURLExpected = false };
+
             if (config.EmailAutomaticSend && !string.IsNullOrEmpty(config.EmailAutomaticSendTo))
             {
                 Email email = new Email()
@@ -82,8 +101,8 @@ namespace ShareX.UploadersLib.SharingServices
             }
 
             //URLHelpers.OpenURL("mailto:?body=" + URLHelpers.URLEncode(url));
-        }
 
-        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpEmail;
+            return result;
+        }
     }
 }

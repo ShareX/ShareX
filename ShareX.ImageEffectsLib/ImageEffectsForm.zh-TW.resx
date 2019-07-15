@@ -123,9 +123,6 @@
   <data name="btnAdd.Text" xml:space="preserve">
     <value>新增</value>
   </data>
-  <data name="btnCancel.Text" xml:space="preserve">
-    <value>取消</value>
-  </data>
   <data name="btnClear.Text" xml:space="preserve">
     <value>清除</value>
   </data>
@@ -134,9 +131,6 @@
   </data>
   <data name="btnOK.Text" xml:space="preserve">
     <value>確定</value>
-  </data>
-  <data name="btnRefresh.Text" xml:space="preserve">
-    <value>重新整理</value>
   </data>
   <data name="btnRemove.Text" xml:space="preserve">
     <value>刪除</value>

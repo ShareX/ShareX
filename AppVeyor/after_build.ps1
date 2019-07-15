@@ -6,13 +6,21 @@ if ($env:APPVEYOR_PULL_REQUEST_NUMBER -eq $null)
     }
     elseif ($env:APPVEYOR_REPO_TAG -eq $true)
     {
-		if ($env:CONFIGURATION -eq "Steam")
-		{
-			& "ShareX.Setup\bin\Steam\ShareX.Setup.exe" -AppVeyorSteam
-		}
-		elseif ($env:CONFIGURATION -eq "WindowsStore")
-		{
-			& "ShareX.Setup\bin\WindowsStore\ShareX.Setup.exe" -AppVeyorWindowsStore
-		}
+        if ($env:CONFIGURATION -eq "Steam")
+        {
+            & "ShareX.Setup\bin\Steam\ShareX.Setup.exe" -AppVeyorSteamRelease
+        }
+        elseif ($env:CONFIGURATION -eq "WindowsStore")
+        {
+            & "ShareX.Setup\bin\WindowsStore\ShareX.Setup.exe" -AppVeyorWindowsStoreRelease
+        }
+    }
+    elseif ($env:CONFIGURATION -eq "Steam")
+    {
+        & "ShareX.Setup\bin\Steam\ShareX.Setup.exe" -AppVeyorSteam
+    }
+    elseif ($env:CONFIGURATION -eq "WindowsStore")
+    {
+        & "ShareX.Setup\bin\WindowsStore\ShareX.Setup.exe" -AppVeyorWindowsStore
     }
 }

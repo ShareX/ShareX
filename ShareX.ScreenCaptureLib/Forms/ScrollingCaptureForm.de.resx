@@ -136,10 +136,10 @@
     <value>Wähle Fenster oder Steuerung zum Scrollen aus...</value>
   </data>
   <data name="btnSelectRectangle.Text" xml:space="preserve">
-    <value>(Optional) Wähle angepasste Region im Fenster aus...</value>
+    <value>(Optional) Wähle eigenen Bereich im Fenster aus...</value>
   </data>
   <data name="btnStartTask.Text" xml:space="preserve">
-    <value>Lade Hoch/Speichere abhängig von den "Nach der Aufnahme" Einstellungen</value>
+    <value>Lade hoch / speichere abhängig von den Einstellungen nach der Aufnahme</value>
   </data>
   <data name="cbAutoCombine.Text" xml:space="preserve">
     <value>Rate automatisch die Abstände und Verbinde nach der Aufnahme</value>
@@ -151,7 +151,7 @@
     <value>Entferne doppelte Bilder</value>
   </data>
   <data name="cbStartCaptureAutomatically.Text" xml:space="preserve">
-    <value>Starte Scrollaufnahme sofort nach der Auswahl der Aufnahmeregion</value>
+    <value>Scrollaufnahme sofort nach der Auswahl des Aufnahmebereichs starten</value>
   </data>
   <data name="gbImages.Text" xml:space="preserve">
     <value>Bilder</value>
@@ -175,10 +175,10 @@
     <value>Verbinde Anpassungen</value>
   </data>
   <data name="cbStartSelectionAutomatically.Text" xml:space="preserve">
-    <value>Starte automatisch die Auswahl der Aufnahmeregion vor der Öffnung dieses Fensters</value>
+    <value>Automatisch die Auswahl des Aufnahmebereichs vor der Öffnung dieses Fensters starten</value>
   </data>
   <data name="chkAutoUpload.Text" xml:space="preserve">
-    <value>Lade Hoch/Speichere automatisch abhängig von den "Nach der Aufnahme" Einstellungen und schließe</value>
+    <value>Lade hoch / speichere abhängig von den Einstellungen nach der Aufnahme</value>
   </data>
   <data name="lblMaximumScrollCount.Text" xml:space="preserve">
     <value>Maximale Scrollanzahl:</value>
@@ -214,7 +214,7 @@
     <value>Ausgabe</value>
   </data>
   <data name="lblNote.Text" xml:space="preserve">
-    <value>Bitte beachte: ShareX versucht bestmöglich eine korrekte Scrollaufnahme zu erstellen, es kann aber nicht jeder Inhalt korrekt aufgenommen werden. Das Hauptproblem sind animierte Objekte (z.B. GIF Bilder) oder statische Inhalte (z.B. Menüs oder Buttons), die Ihre Position nicht verändern wenn die Seite scrollt.</value>
+    <value>Bitte beachte: ShareX versucht bestmöglich eine korrekte Scrollaufnahme zu erstellen, es kann aber nicht jeder Inhalt korrekt aufgenommen werden. Das Hauptproblem sind animierte Objekte (z. B. GIF Bilder) oder statische Inhalte (z. B. Menüs oder Buttons), die Ihre Position nicht verändern wenn die Seite scrollt.</value>
   </data>
   <data name="gbBeforeCapture.Text" xml:space="preserve">
     <value>Vor der Aufnahme</value>

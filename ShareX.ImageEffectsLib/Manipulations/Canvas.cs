@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2017 ShareX Team
+    Copyright (c) 2007-2019 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -26,29 +26,18 @@
 using ShareX.HelpersLib;
 using System.ComponentModel;
 using System.Drawing;
+using System.Drawing.Design;
 using System.Windows.Forms;
 
 namespace ShareX.ImageEffectsLib
 {
     internal class Canvas : ImageEffect
     {
-        private Padding margin;
-
         [DefaultValue(typeof(Padding), "0, 0, 0, 0")]
-        public Padding Margin
-        {
-            get
-            {
-                return margin;
-            }
-            set
-            {
-                if (value.Top >= 0 && value.Right >= 0 && value.Bottom >= 0 && value.Left >= 0)
-                {
-                    margin = value;
-                }
-            }
-        }
+        public Padding Margin { get; set; }
+
+        [DefaultValue(typeof(Color), "Transparent"), Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
+        public Color Color { get; set; }
 
         public Canvas()
         {
@@ -57,9 +46,15 @@ namespace ShareX.ImageEffectsLib
 
         public override Image Apply(Image img)
         {
-            if (Margin.All == 0) return img;
+            Image result = ImageHelpers.AddCanvas(img, Margin, Color);
 
-            return ImageHelpers.AddCanvas(img, Margin);
+            if (result == null)
+            {
+                return img;
+            }
+
+            img.Dispose();
+            return result;
         }
     }
 }

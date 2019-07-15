@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2017 ShareX Team
+    Copyright (c) 2007-2019 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -62,13 +62,16 @@ namespace ShareX.UploadersLib
                 switch (status)
                 {
                     case OAuthLoginStatus.LoginRequired:
-                        lblLoginStatus.Text = Resources.OAuthControl_Status_Status__Not_logged_in_;
+                        lblStatusValue.Text = Resources.OAuthControl_Status_NotLoggedIn;
+                        lblStatusValue.ForeColor = Color.FromArgb(200, 0, 0);
                         break;
                     case OAuthLoginStatus.LoginSuccessful:
-                        lblLoginStatus.Text = Resources.OAuthControl_Status_Status__Logged_in_;
+                        lblStatusValue.Text = Resources.OAuthControl_Status_LoggedIn;
+                        lblStatusValue.ForeColor = Color.FromArgb(0, 128, 0);
                         break;
                     case OAuthLoginStatus.LoginFailed:
-                        lblLoginStatus.Text = Resources.OAuthControl_Status_Status__Login_failed_;
+                        lblStatusValue.Text = Resources.OAuthControl_Status_LoginFailed;
+                        lblStatusValue.ForeColor = Color.FromArgb(200, 0, 0);
                         break;
                 }
 

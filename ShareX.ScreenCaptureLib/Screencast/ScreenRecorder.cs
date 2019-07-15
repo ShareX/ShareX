@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2017 ShareX Team
+    Copyright (c) 2007-2019 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -109,7 +109,7 @@ namespace ShareX.ScreenCaptureLib
                 throw new Exception("Screen recorder cache path is empty.");
             }
 
-            FPS = outputType == ScreenRecordOutput.GIF ? options.GIFFPS : options.ScreenRecordFPS;
+            FPS = options.FPS;
             DurationSeconds = options.Duration;
             CaptureRectangle = captureRectangle;
             CachePath = options.OutputPath;
@@ -230,18 +230,19 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        public bool FFmpegEncodeAsGIF(string sourceFilePath, string targetFilePath)
+        public bool FFmpegEncodeVideo(string input, string output)
         {
-            Helpers.CreateDirectoryFromFilePath(targetFilePath);
-            return ffmpegCli.EncodeGIF(sourceFilePath, targetFilePath);
+            Helpers.CreateDirectoryFromFilePath(output);
+            bool result = ffmpegCli.EncodeVideo(input, output);
+            //DebugHelper.WriteLine("Video encoding result:\nInput file size: {0}\nOutput file size: {1}", new FileInfo(input).Length.ToSizeString(), new FileInfo(output).Length.ToSizeString());
+            return result;
         }
 
-        public void EncodeUsingCommandLine(VideoEncoder encoder, string sourceFilePath, string targetFilePath)
+        public bool FFmpegEncodeAsGIF(string sourceFilePath, string targetFilePath, string tempFolder)
         {
-            if (!string.IsNullOrEmpty(sourceFilePath) && File.Exists(sourceFilePath))
-            {
-                encoder.Encode(sourceFilePath, targetFilePath);
-            }
+            Helpers.CreateDirectoryFromFilePath(targetFilePath);
+            Helpers.CreateDirectoryFromDirectoryPath(tempFolder);
+            return ffmpegCli.EncodeGIF(sourceFilePath, targetFilePath, tempFolder);
         }
 
         protected void OnRecordingStarted()

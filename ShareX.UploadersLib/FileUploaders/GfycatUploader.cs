@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2017 ShareX Team
+    Copyright (c) 2007-2019 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -60,6 +60,7 @@ namespace ShareX.UploadersLib.FileUploaders
             {
                 UploadMethod = config.GfycatAccountType,
                 Private = !config.GfycatIsPublic,
+                KeepAudio = config.GfycatKeepAudio
             };
         }
 
@@ -71,9 +72,10 @@ namespace ShareX.UploadersLib.FileUploaders
         public OAuth2Info AuthInfo { get; set; }
         public AccountType UploadMethod { get; set; }
         public OAuth2Token AnonymousToken { get; set; }
-        public bool NoResize { get; set; }
-        public bool IgnoreExisting { get; set; }
-        public bool Private { get; set; }
+        public bool NoResize { get; set; } = true;
+        public bool IgnoreExisting { get; set; } = true;
+        public bool Private { get; set; } = true;
+        public bool KeepAudio { get; set; } = true;
 
         private const string URL_AUTHORIZE = "https://gfycat.com/oauth/authorize";
         private const string URL_UPLOAD = "https://filedrop.gfycat.com";
@@ -85,8 +87,6 @@ namespace ShareX.UploadersLib.FileUploaders
         public GfycatUploader(OAuth2Info oauth)
         {
             AuthInfo = oauth;
-            NoResize = true;
-            IgnoreExisting = false;
         }
 
         public string GetAuthorizationURL()
@@ -98,7 +98,7 @@ namespace ShareX.UploadersLib.FileUploaders
             args.Add("response_type", "code");
             args.Add("redirect_uri", Links.URL_CALLBACK);
 
-            return CreateQuery(URL_AUTHORIZE, args);
+            return URLHelpers.CreateQueryString(URL_AUTHORIZE, args);
         }
 
         public bool GetAccessToken(string code)
@@ -109,10 +109,10 @@ namespace ShareX.UploadersLib.FileUploaders
                 client_secret = AuthInfo.Client_Secret,
                 grant_type = "authorization_code",
                 redirect_uri = Links.URL_CALLBACK,
-                code = code,
+                code = code
             });
 
-            string response = SendRequest(HttpMethod.POST, URL_API_TOKEN, request, ContentTypeJSON);
+            string response = SendRequest(HttpMethod.POST, URL_API_TOKEN, request, RequestHelpers.ContentTypeJSON);
 
             if (!string.IsNullOrEmpty(response))
             {
@@ -138,10 +138,10 @@ namespace ShareX.UploadersLib.FileUploaders
                     refresh_token = AuthInfo.Token.refresh_token,
                     client_id = AuthInfo.Client_ID,
                     client_secret = AuthInfo.Client_Secret,
-                    grant_type = "refresh",
+                    grant_type = "refresh"
                 });
 
-                string response = SendRequest(HttpMethod.POST, URL_API_TOKEN, request, ContentTypeJSON);
+                string response = SendRequest(HttpMethod.POST, URL_API_TOKEN, request, RequestHelpers.ContentTypeJSON);
 
                 if (!string.IsNullOrEmpty(response))
                 {
@@ -180,6 +180,8 @@ namespace ShareX.UploadersLib.FileUploaders
 
         public override UploadResult Upload(Stream stream, string fileName)
         {
+            AllowReportProgress = false;
+
             OAuth2Token token = GetOrCreateToken();
             if (token == null)
             {
@@ -197,6 +199,9 @@ namespace ShareX.UploadersLib.FileUploaders
 
             Dictionary<string, string> args = new Dictionary<string, string>();
             args.Add("key", gfy.GfyName);
+
+            AllowReportProgress = true;
+
             UploadResult result = SendRequestFile(URL_UPLOAD, stream, fileName, "file", args);
             if (!result.IsError)
             {
@@ -209,13 +214,11 @@ namespace ShareX.UploadersLib.FileUploaders
         private void WaitForTranscode(string name, UploadResult result)
         {
             ProgressManager progress = new ProgressManager(10000);
-
-            if (AllowReportProgress)
-            {
-                OnProgressChanged(progress);
-            }
+            progress.CustomProgressText = "Gfycat encoding...";
+            OnProgressChanged(progress);
 
             int iterations = 0;
+
             while (!StopUploadRequested)
             {
                 string statusJson = SendRequest(HttpMethod.GET, URL_API_STATUS + name);
@@ -227,6 +230,12 @@ namespace ShareX.UploadersLib.FileUploaders
                     result.IsSuccess = false;
                     break;
                 }
+                else if (response.Task.Equals("error", StringComparison.InvariantCultureIgnoreCase))
+                {
+                    Errors.Add(response.Description);
+                    result.IsSuccess = false;
+                    break;
+                }
                 else if (response.GfyName != null)
                 {
                     result.IsSuccess = true;
@@ -234,21 +243,24 @@ namespace ShareX.UploadersLib.FileUploaders
                     break;
                 }
                 else if ((response.Task.Equals("NotFoundo", StringComparison.InvariantCultureIgnoreCase) ||
-                    response.Task.Equals("NotFound", StringComparison.InvariantCultureIgnoreCase)) && iterations > 10)
+                    response.Task.Equals("NotFound", StringComparison.InvariantCultureIgnoreCase)) && iterations > 5)
                 {
                     Errors.Add("Gfy not found");
                     result.IsSuccess = false;
                     break;
                 }
 
-                if (AllowReportProgress && progress.UpdateProgress((progress.Length - progress.Position) / response.Time))
+                if (progress.UpdateProgress((progress.Length - progress.Position) / response.Time))
                 {
                     OnProgressChanged(progress);
                 }
 
-                Thread.Sleep(100);
                 iterations++;
+                Thread.Sleep(500);
             }
+
+            progress.CustomProgressText = "";
+            OnProgressChanged(progress);
         }
 
         private GfycatCreateResponse CreateGfycat(NameValueCollection headers)
@@ -257,10 +269,12 @@ namespace ShareX.UploadersLib.FileUploaders
             args.Add("private", Private);
             args.Add("noResize", NoResize);
             args.Add("noMd5", IgnoreExisting);
+            args.Add("keepAudio", KeepAudio);
 
             string json = JsonConvert.SerializeObject(args);
 
-            string response = SendRequest(HttpMethod.POST, URL_API_CREATE_GFY, json, ContentTypeJSON, null, headers);
+            string response = SendRequest(HttpMethod.POST, URL_API_CREATE_GFY, json, RequestHelpers.ContentTypeJSON, null, headers);
+
             if (!string.IsNullOrEmpty(response))
             {
                 return JsonConvert.DeserializeObject<GfycatCreateResponse>(response);
@@ -277,6 +291,7 @@ namespace ShareX.UploadersLib.FileUploaders
                 {
                     return null;
                 }
+
                 return AuthInfo.Token;
             }
             else
@@ -290,7 +305,7 @@ namespace ShareX.UploadersLib.FileUploaders
                         grant_type = "client_credentials",
                     });
 
-                    string response = SendRequest(HttpMethod.POST, URL_API_TOKEN, request, ContentTypeJSON);
+                    string response = SendRequest(HttpMethod.POST, URL_API_TOKEN, request, RequestHelpers.ContentTypeJSON);
 
                     if (!string.IsNullOrEmpty(response))
                     {
@@ -320,5 +335,6 @@ namespace ShareX.UploadersLib.FileUploaders
         public int Time { get; set; }
         public string GfyName { get; set; }
         public string Error { get; set; }
+        public string Description { get; set; }
     }
 }

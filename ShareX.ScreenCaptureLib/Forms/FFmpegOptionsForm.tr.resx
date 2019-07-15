@@ -230,4 +230,7 @@ Gerçek zamanlı kodlama (ekran kaydetme gibi) için ön ayar olabildiğince hı
     <value>Gerçek zamanlı kodlama (ekran kaydetme gibi) için ön ayar olabildiğince hızlı olmalıdır.
 Yoksa yeterince hızlı kaydetemez ve kare kayıpları meydana gelir.</value>
   </data>
+  <data name="lblVP8BitrateK.Text" xml:space="preserve">
+    <value>kbit/s</value>
+  </data>
 </root>

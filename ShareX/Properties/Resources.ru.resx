@@ -168,9 +168,6 @@
   <data name="HotkeyManager_ShowFailedHotkeys_hotkeys" xml:space="preserve">
     <value>горячие клавиши</value>
   </data>
-  <data name="EncoderProgramForm_btnOK_Click_Path_can_t_be_empty_" xml:space="preserve">
-    <value>Путь не может быть пустым.</value>
-  </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_File_uploader___0_" xml:space="preserve">
     <value>Сервис загрузки файлов: {0}</value>
   </data>
@@ -180,15 +177,9 @@
   <data name="TaskHelpers_TweetMessage_Tweet_successfully_sent_" xml:space="preserve">
     <value>Твит успешно отправлен.</value>
   </data>
-  <data name="EncoderProgramForm_btnPathBrowse_Click_Choose_encoder_path" xml:space="preserve">
-    <value>Выберите путь к кодировщику.</value>
-  </data>
   <data name="Program_WritePersonalPathConfig_Cant_access_to_file" xml:space="preserve">
     <value>Нет доступа к файлу "{0}".
 Пожалуйста запустите ShareX от имени администратора для изменения пути к личной папке.</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_CLI_video_encoder_file_does_not_exist__" xml:space="preserve">
-    <value>Консольный кодировщик видео не существует: </value>
   </data>
   <data name="ApplicationSettingsForm_cbSteamShowInApp_CheckedChanged_For_settings_to_take_effect_ShareX_needs_to_be_reopened_from_Steam_" xml:space="preserve">
     <value>Чтобы применить настройки, ShareX нужно заново открыть в Steam.</value>
@@ -204,11 +195,6 @@
   </data>
   <data name="ScreenRecordForm_StartRecording_Waiting___" xml:space="preserve">
     <value>Ожидание...</value>
-  </data>
-  <data name="TaskHelpers_OpenImageEditor_Your_clipboard_contains_image" xml:space="preserve">
-    <value>Ваш буфер обмена содержит изображение, хотите открыть его в редакторе?
-
-Нажмите «Да», чтобы открыть изображение из буфера. Если нажать «Нет», откроется окно выбора файла.</value>
   </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_Image_uploader___0_" xml:space="preserve">
     <value>Сервис загрузки картинок: {0}</value>
@@ -238,7 +224,7 @@
     <value>Ссылка пуста.</value>
   </data>
   <data name="ApplicationSettingsForm_btnBrowsePersonalFolderPath_Click_Choose_ShareX_personal_folder_path" xml:space="preserve">
-    <value>Выберите путь к личной папке ShareX</value>
+    <value>Выберите путь к персональной папке ShareX</value>
   </data>
   <data name="HotkeyManager_ShowFailedHotkeys_Unable_to_register_hotkey" xml:space="preserve">
     <value>Не удалось зарегистрировать {0}:
@@ -303,9 +289,6 @@
   <data name="MainForm_UpdateWorkflowsMenu_You_can_add_workflows_from_hotkey_settings___" xml:space="preserve">
     <value>Операции можно добавить в настройках горячих клавиш…</value>
   </data>
-  <data name="TaskHelpers_OpenFTPClient_FTP_client_only_supports_FTP_or_FTPS_" xml:space="preserve">
-    <value>Клиент FTP поддерживает только протоколы FTP или FTPS.</value>
-  </data>
   <data name="ImageData_Write_Error" xml:space="preserve">
     <value>Не удалось сохранить изображение по пути {0}.</value>
   </data>
@@ -313,20 +296,11 @@
     <value>Для изменения языка ShareX должен быть перезапущен.
 Хотите перезапустить ShareX?</value>
   </data>
-  <data name="ScreenColorPicker_UpdateControls_Start_screen_color_picker" xml:space="preserve">
-    <value>Включить режим пипетки</value>
-  </data>
   <data name="FileExistForm_txtNewName_TextChanged_Use_new_name__" xml:space="preserve">
     <value>Использовать новое имя:</value>
   </data>
-  <data name="ScreenColorPicker_UpdateControls_Stop_screen_color_picker" xml:space="preserve">
-    <value>Выключить режим пипетки</value>
-  </data>
   <data name="ScreenRecordForm_StartRecording_Missing" xml:space="preserve">
     <value>Отсутствует</value>
-  </data>
-  <data name="ScreenColorPicker_btnCopyAll_Click_Cursor_position" xml:space="preserve">
-    <value>Позиция курсора (X, Y) = {0}, {1}</value>
   </data>
   <data name="AboutForm_AboutForm_Translators" xml:space="preserve">
     <value>Переводчики</value>
@@ -337,14 +311,8 @@
   <data name="ChromeForm_btnRegister_Click_Chrome_support_enabled_" xml:space="preserve">
     <value>Поддержка Chrome включена.</value>
   </data>
-  <data name="EncoderProgramForm_btnOK_Click_Extension_can_t_be_empty_" xml:space="preserve">
-    <value>Расширение не может быть пустым.</value>
-  </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_After_capture___0_" xml:space="preserve">
     <value>После захвата: {0}</value>
-  </data>
-  <data name="TaskSettingsForm_ConfigureEncoder_Configure_CLI_video_encoders_____" xml:space="preserve">
-    <value>Добавить консольные кодировщики &gt;&gt;</value>
   </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_URL_shortener___0_" xml:space="preserve">
     <value>Сервис коротких ссылок: {0}</value>
@@ -395,9 +363,6 @@
   <data name="AutoCaptureForm_Execute_Start" xml:space="preserve">
     <value>Старт</value>
   </data>
-  <data name="ScreenColorPicker_ScreenColorPicker_Close" xml:space="preserve">
-    <value>Закрыть</value>
-  </data>
   <data name="TaskSettingsForm_txtNameFormatPatternActiveWindow_TextChanged_Preview_" xml:space="preserve">
     <value>Предпросмотр:</value>
   </data>
@@ -412,9 +377,6 @@
   </data>
   <data name="UploadTask_DownloadAndUpload_Downloading" xml:space="preserve">
     <value>Скачивается</value>
-  </data>
-  <data name="TaskHelpers_OpenImageEditor_Image_editor___How_to_load_image_" xml:space="preserve">
-    <value>Редактор изображений - Как загрузить изображение?</value>
   </data>
   <data name="QuickTaskMenu_ShowMenu_Continue" xml:space="preserve">
     <value>Продолжить</value>
@@ -443,9 +405,6 @@
   <data name="UploadManager_UploadFolder_Folder_upload" xml:space="preserve">
     <value>Загрузка папки</value>
   </data>
-  <data name="TaskHelpers_OpenFTPClient_Unable_to_find_valid_FTP_account_" xml:space="preserve">
-    <value>Не удалось найти рабочий аккаунт FTP.</value>
-  </data>
   <data name="ScreenRecordForm_DownloaderForm_InstallRequested_FFmpeg_successfully_downloaded_" xml:space="preserve">
     <value>FFmpeg успешно загружен.</value>
   </data>
@@ -473,9 +432,6 @@
   </data>
   <data name="UploadTask_DoUploadJob_Uploading" xml:space="preserve">
     <value>Загружается</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_There_is_no_valid_CLI_video_encoder_selected_" xml:space="preserve">
-    <value>Ни один подходящий консольный кодировщик не выбран.</value>
   </data>
   <data name="HotkeySettingsForm_Reset_all_hotkeys_to_defaults_Confirmation" xml:space="preserve">
     <value>Сбросить все горячие клавиши?</value>
@@ -547,5 +503,79 @@
   </data>
   <data name="AboutForm_AboutForm_Language_zh_TW" xml:space="preserve">
     <value>Традиционный китайский</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_it_IT" xml:space="preserve">
+    <value>Итальянский</value>
+  </data>
+  <data name="QRCodeForm_InputTextToEncode" xml:space="preserve">
+    <value>Введите текст для кодирования</value>
+  </data>
+  <data name="ApplicationSettingsForm_cbStartWithWindows_Text" xml:space="preserve">
+    <value>Запускать ShareX при старте системы</value>
+  </data>
+  <data name="ApplicationSettingsForm_cbStartWithWindows_DisabledByUser_Text" xml:space="preserve">
+    <value>Автозапуск отключен через Диспетчер задач</value>
+  </data>
+  <data name="UploadManager_ShowShortenURLDialog_ShortenURL" xml:space="preserve">
+    <value>Сокращение ссылки</value>
+  </data>
+  <data name="UploadManager_ShowShortenURLDialog_Shorten" xml:space="preserve">
+    <value>Сократить</value>
+  </data>
+  <data name="IntegrationHelpers_EditWithShareX" xml:space="preserve">
+    <value>Редактировать в ShareX</value>
+  </data>
+  <data name="ScreenRecord_ConfirmCancel" xml:space="preserve">
+    <value>Вы действительно хотите отменить эту запись?</value>
+  </data>
+  <data name="ApplicationSettingsForm_btnCheckDevBuild_Click_DevBuilds_Warning" xml:space="preserve">
+    <value>Dev сборки могут быть нестабильными и должны использоваться только для тестирования. Хотите установить?</value>
+  </data>
+  <data name="ApplicationSettingsForm_btnResetSettings_Click_WouldYouLikeToResetShareXSettings" xml:space="preserve">
+    <value>Хотите сбросить настройки ShareX?</value>
+  </data>
+  <data name="ApplicationSettingsForm_cbStartWithWindows_DisabledByPolicy_Text" xml:space="preserve">
+    <value>Автозапуск отключен вашей организацией</value>
+  </data>
+  <data name="ApplicationSettingsForm_cbStartWithWindows_EnabledByPolicy_Text" xml:space="preserve">
+    <value>Автозапуск включен вашей организацией</value>
+  </data>
+  <data name="MainForm_UploadDebugLogWarning" xml:space="preserve">
+    <value>Журнал отладки может содержать конфиденциальную информацию. Вы уверены, что хотите продолжить?</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_uk" xml:space="preserve">
+    <value>Украинский</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_id_ID" xml:space="preserve">
+    <value>Индонезийский</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_es_MX" xml:space="preserve">
+    <value>Испанский (Мексика)</value>
+  </data>
+  <data name="OCRForm_AutoProcessing" xml:space="preserve">
+    <value>Распознавание в процессе.</value>
+  </data>
+  <data name="OCRForm_AutoCompleteFail" xml:space="preserve">
+    <value>Произошла ошибка распознавание, либо текст не обнаружен.</value>
+  </data>
+  <data name="OCRForm_AutoComplete" xml:space="preserve">
+    <value>Результат распознавания скопирован в буфер обмена.</value>
+  </data>
+  <data name="ShareXNeedsToBeRestartedForThePersonalFolderChangesToApply" xml:space="preserve">
+    <value>Для применения настроек персональной папки ShareX должен быть перезапущен. 
+
+Хотите перезапустить ShareX?</value>
+  </data>
+  <data name="ShareXConfirmation" xml:space="preserve">
+    <value>ShareX - Подтверждение</value>
+  </data>
+  <data name="ScreenshotDelay0S" xml:space="preserve">
+    <value>Задержка скриншота: {0}с</value>
+  </data>
+  <data name="PleaseNoteThatShareXIsUsingOCRSpaceSOnlineAPIToPerformOpticalCharacterRecognitionDoYouGivePermissionToShareXToUploadImagesToThisService" xml:space="preserve">
+    <value>Обратите внимание, ShareX использует онлайн API OCR.Space для распознавания текста. Вы даете ShareX разрешение на загрузку изображений на этот сервис?</value>
+  </data>
+  <data name="ShareXOpticalCharacterRecognition" xml:space="preserve">
+    <value>ShareX - Распознавание текста</value>
   </data>
 </root>

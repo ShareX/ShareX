@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2017 ShareX Team
+    Copyright (c) 2007-2019 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -41,7 +41,7 @@ namespace ShareX
         public ActionsForm(ExternalProgram fileAction)
         {
             InitializeComponent();
-            Icon = ShareXResources.Icon;
+            ShareXResources.ApplyTheme(this);
 
             FileAction = fileAction;
             txtName.Text = fileAction.Name ?? "";
@@ -51,11 +51,17 @@ namespace ShareX
             txtOutputExtension.Text = fileAction.OutputExtension ?? "";
             txtExtensions.Text = fileAction.Extensions ?? "";
             cbHiddenWindow.Checked = fileAction.HiddenWindow;
+            cbDeleteInputFile.Checked = fileAction.DeleteInputFile;
         }
 
         private void btnPathBrowse_Click(object sender, EventArgs e)
         {
             Helpers.BrowseFile(txtPath);
+        }
+
+        private void txtOutputExtension_TextChanged(object sender, EventArgs e)
+        {
+            cbDeleteInputFile.Enabled = txtOutputExtension.TextLength > 0;
         }
 
         private void btnOK_Click(object sender, EventArgs e)
@@ -78,6 +84,7 @@ namespace ShareX
             FileAction.Extensions = txtExtensions.Text;
             FileAction.OutputExtension = txtOutputExtension.Text;
             FileAction.HiddenWindow = cbHiddenWindow.Checked;
+            FileAction.DeleteInputFile = cbDeleteInputFile.Checked;
 
             DialogResult = DialogResult.OK;
             Close();

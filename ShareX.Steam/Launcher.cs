@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2017 ShareX Team
+    Copyright (c) 2007-2019 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -64,7 +64,7 @@ namespace ShareX.Steam
                 // If running on startup and need to show "In-app" then wait until Steam is open
                 if (IsStartupRun && ShowInApp)
                 {
-                    for (int i = 0; i < 10 && !SteamAPI.IsSteamRunning(); i++)
+                    for (int i = 0; i < 20 && !SteamAPI.IsSteamRunning(); i++)
                     {
                         Thread.Sleep(1000);
                     }
@@ -186,14 +186,18 @@ namespace ShareX.Steam
             {
                 if (ShowInApp)
                 {
-                    ProcessStartInfo startInfo = new ProcessStartInfo()
+                    using (Process process = new Process())
                     {
-                        Arguments = arguments,
-                        FileName = ContentExecutablePath,
-                        UseShellExecute = true
-                    };
+                        ProcessStartInfo psi = new ProcessStartInfo()
+                        {
+                            FileName = ContentExecutablePath,
+                            Arguments = arguments,
+                            UseShellExecute = true
+                        };
 
-                    Process.Start(startInfo);
+                        process.StartInfo = psi;
+                        process.Start();
+                    }
                 }
                 else
                 {
@@ -208,7 +212,9 @@ namespace ShareX.Steam
                             return;
                         }
                     }
-                    catch { }
+                    catch
+                    {
+                    }
 
                     // Workaround 2
                     string path = Path.Combine(Environment.SystemDirectory, "cmd.exe");
@@ -218,15 +224,19 @@ namespace ShareX.Steam
                         path = "cmd.exe";
                     }
 
-                    ProcessStartInfo startInfo = new ProcessStartInfo()
+                    using (Process process = new Process())
                     {
-                        Arguments = $"/C start \"\" \"{ContentExecutablePath}\" {arguments}",
-                        CreateNoWindow = true,
-                        FileName = path,
-                        UseShellExecute = false
-                    };
+                        ProcessStartInfo psi = new ProcessStartInfo()
+                        {
+                            FileName = path,
+                            Arguments = $"/C start \"\" \"{ContentExecutablePath}\" {arguments}",
+                            UseShellExecute = false,
+                            CreateNoWindow = true
+                        };
 
-                    Process.Start(startInfo);
+                        process.StartInfo = psi;
+                        process.Start();
+                    }
                 }
             }
             catch (Exception e)
@@ -252,10 +262,16 @@ namespace ShareX.Steam
                 {
                     if (File.Exists(ContentExecutablePath))
                     {
-                        Process process = Process.Start(ContentExecutablePath, "-uninstall");
-
-                        if (process != null)
+                        using (Process process = new Process())
                         {
+                            ProcessStartInfo psi = new ProcessStartInfo()
+                            {
+                                FileName = ContentExecutablePath,
+                                Arguments = "-uninstall"
+                            };
+
+                            process.StartInfo = psi;
+                            process.Start();
                             process.WaitForExit();
                         }
                     }

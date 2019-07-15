@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2017 ShareX Team
+    Copyright (c) 2007-2019 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -24,10 +24,10 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
-using ShareX.ScreenCaptureLib;
 using System;
 using System.Drawing;
 using System.Threading;
+using System.Threading.Tasks;
 
 namespace ShareX
 {
@@ -45,14 +45,14 @@ namespace ShareX
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
-            if (taskSettings.CaptureSettings.IsDelayScreenshot && taskSettings.CaptureSettings.DelayScreenshot > 0)
+            if (taskSettings.CaptureSettings.ScreenshotDelay > 0)
             {
-                int delay = (int)(taskSettings.CaptureSettings.DelayScreenshot * 1000);
+                int delay = (int)(taskSettings.CaptureSettings.ScreenshotDelay * 1000);
 
-                TaskEx.RunDelayed(() =>
+                Task.Delay(delay).ContinueInCurrentContext(() =>
                 {
                     CaptureInternal(taskSettings, autoHideForm);
-                }, delay);
+                });
             }
             else
             {
@@ -101,13 +101,13 @@ namespace ShareX
                     TaskHelpers.PlayCaptureSound(taskSettings);
                 }
 
-                if (taskSettings.AdvancedSettings.UseShareXForAnnotation && taskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.AnnotateImage) && !AllowAnnotation)
+                if (taskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.AnnotateImage) && !AllowAnnotation)
                 {
                     taskSettings.AfterCaptureJob = taskSettings.AfterCaptureJob.Remove(AfterCaptureTasks.AnnotateImage);
                 }
 
                 if (taskSettings.ImageSettings.ImageEffectOnlyRegionCapture &&
-                    this.GetType() != typeof(CaptureRegion) && this.GetType() != typeof(CaptureLastRegion))
+                    GetType() != typeof(CaptureRegion) && GetType() != typeof(CaptureLastRegion))
                 {
                     taskSettings.AfterCaptureJob = taskSettings.AfterCaptureJob.Remove(AfterCaptureTasks.AddImageEffects);
                 }

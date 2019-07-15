@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2017 ShareX Team
+    Copyright (c) 2007-2019 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -34,6 +34,7 @@ namespace ShareX.HelpersLib
     public class MyListView : ListView
     {
         public delegate void ListViewItemMovedEventHandler(object sender, int oldIndex, int newIndex);
+
         public event ListViewItemMovedEventHandler ItemMoved;
 
         [DefaultValue(false)]
@@ -66,10 +67,7 @@ namespace ShareX.HelpersLib
             }
             set
             {
-                foreach (ListViewItem lvi in SelectedItems)
-                {
-                    lvi.Selected = false;
-                }
+                UnselectAll();
 
                 if (value > -1)
                 {
@@ -140,6 +138,24 @@ namespace ShareX.HelpersLib
             if (Items.Count > 0)
             {
                 SelectedIndex = Items.Count - 1;
+            }
+        }
+
+        public void SelectSingle(ListViewItem lvi)
+        {
+            UnselectAll();
+
+            if (lvi != null)
+            {
+                lvi.Selected = true;
+            }
+        }
+
+        public void UnselectAll()
+        {
+            foreach (ListViewItem lvi in SelectedItems)
+            {
+                lvi.Selected = false;
             }
         }
 
@@ -308,7 +324,12 @@ namespace ShareX.HelpersLib
                     lvwColumnSorter.Order = SortOrder.Ascending;
                 }
 
+                // if the column is tagged as a DateTime, then sort by date
+                lvwColumnSorter.SortByDate = Columns[e.Column].Tag is DateTime;
+
+                Cursor.Current = Cursors.WaitCursor;
                 Sort();
+                Cursor.Current = Cursors.Default;
             }
         }
 
@@ -323,6 +344,15 @@ namespace ShareX.HelpersLib
 
                 Point[] rightTriangle = new Point[] { new Point(right, y - 4), new Point(right - 8, y), new Point(right, y + 4) };
                 g.FillPolygon(SystemBrushes.HotTrack, rightTriangle);
+            }
+        }
+
+        protected override void ScaleControl(SizeF factor, BoundsSpecified specified)
+        {
+            base.ScaleControl(factor, specified);
+            foreach (ColumnHeader column in Columns)
+            {
+                column.Width = (int)Math.Round(column.Width * factor.Width);
             }
         }
     }

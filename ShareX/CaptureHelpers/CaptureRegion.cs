@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2017 ShareX Team
+    Copyright (c) 2007-2019 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.HelpersLib;
 using ShareX.ScreenCaptureLib;
 using System.Drawing;
 using System.Windows.Forms;
@@ -73,20 +74,31 @@ namespace ShareX
                 mode = RegionCaptureMode.Annotation;
             }
 
-            RegionCaptureForm form = new RegionCaptureForm(mode);
+            Screenshot screenshot = TaskHelpers.GetScreenshot(taskSettings);
+            screenshot.CaptureCursor = false;
+            Image img = screenshot.CaptureFullscreen();
 
-            try
+            CursorData cursorData = null;
+
+            if (taskSettings.CaptureSettings.ShowCursor)
             {
-                form.Config = taskSettings.CaptureSettingsReference.SurfaceOptions;
-                Image img = TaskHelpers.GetScreenshot(taskSettings).CaptureFullscreen();
-                form.Prepare(img);
+                cursorData = new CursorData();
+            }
+
+            using (RegionCaptureForm form = new RegionCaptureForm(mode, taskSettings.CaptureSettingsReference.SurfaceOptions, img))
+            {
+                if (cursorData != null && cursorData.IsVisible)
+                {
+                    form.AddCursor(cursorData.Handle, CaptureHelpers.ScreenToClient(cursorData.Position));
+                }
+
                 form.ShowDialog();
 
                 imageInfo.Image = form.GetResultImage();
 
                 if (imageInfo.Image != null)
                 {
-                    if (form.IsAnnotated)
+                    if (form.IsModified)
                     {
                         AllowAnnotation = false;
                     }
@@ -98,13 +110,6 @@ namespace ShareX
                     }
 
                     lastRegionCaptureType = RegionCaptureType.Default;
-                }
-            }
-            finally
-            {
-                if (form != null)
-                {
-                    form.Dispose();
                 }
             }
 

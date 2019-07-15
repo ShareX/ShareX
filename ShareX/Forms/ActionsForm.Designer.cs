@@ -43,6 +43,7 @@
             this.txtOutputExtension = new System.Windows.Forms.TextBox();
             this.lblOutputExtension = new System.Windows.Forms.Label();
             this.cbHiddenWindow = new System.Windows.Forms.CheckBox();
+            this.cbDeleteInputFile = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // lblName
@@ -92,6 +93,7 @@
             // btnCancel
             // 
             resources.ApplyResources(this.btnCancel, "btnCancel");
+            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -110,6 +112,7 @@
             // 
             resources.ApplyResources(this.txtOutputExtension, "txtOutputExtension");
             this.txtOutputExtension.Name = "txtOutputExtension";
+            this.txtOutputExtension.TextChanged += new System.EventHandler(this.txtOutputExtension_TextChanged);
             // 
             // lblOutputExtension
             // 
@@ -122,12 +125,20 @@
             this.cbHiddenWindow.Name = "cbHiddenWindow";
             this.cbHiddenWindow.UseVisualStyleBackColor = true;
             // 
+            // cbDeleteInputFile
+            // 
+            resources.ApplyResources(this.cbDeleteInputFile, "cbDeleteInputFile");
+            this.cbDeleteInputFile.Name = "cbDeleteInputFile";
+            this.cbDeleteInputFile.UseVisualStyleBackColor = true;
+            // 
             // ActionsForm
             // 
             this.AcceptButton = this.btnOK;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
+            this.CancelButton = this.btnCancel;
+            this.Controls.Add(this.cbDeleteInputFile);
             this.Controls.Add(this.cbHiddenWindow);
             this.Controls.Add(this.lblOutputExtension);
             this.Controls.Add(this.txtOutputExtension);
@@ -165,5 +176,6 @@
         private System.Windows.Forms.TextBox txtOutputExtension;
         private System.Windows.Forms.Label lblOutputExtension;
         private System.Windows.Forms.CheckBox cbHiddenWindow;
+        private System.Windows.Forms.CheckBox cbDeleteInputFile;
     }
 }

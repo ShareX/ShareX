@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2017 ShareX Team
+    Copyright (c) 2007-2019 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -135,36 +135,36 @@ namespace ShareX.HelpersLib
 
         private void InitializeComponent()
         {
-            this.colorBox = new HelpersLib.ColorBox();
-            this.colorSlider = new HelpersLib.ColorSlider();
-            this.SuspendLayout();
+            colorBox = new HelpersLib.ColorBox();
+            colorSlider = new HelpersLib.ColorSlider();
+            SuspendLayout();
             //
             // colorBox
             //
-            this.colorBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.colorBox.DrawStyle = HelpersLib.DrawStyle.Hue;
-            this.colorBox.Location = new System.Drawing.Point(0, 0);
-            this.colorBox.Name = "colorBox";
-            this.colorBox.Size = new System.Drawing.Size(258, 258);
-            this.colorBox.TabIndex = 0;
+            colorBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            colorBox.DrawStyle = HelpersLib.DrawStyle.Hue;
+            colorBox.Location = new System.Drawing.Point(0, 0);
+            colorBox.Name = "colorBox";
+            colorBox.Size = new System.Drawing.Size(258, 258);
+            colorBox.TabIndex = 0;
             //
             // colorSlider
             //
-            this.colorSlider.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.colorSlider.DrawStyle = HelpersLib.DrawStyle.Hue;
-            this.colorSlider.Location = new System.Drawing.Point(257, 0);
-            this.colorSlider.Name = "colorSlider";
-            this.colorSlider.Size = new System.Drawing.Size(32, 258);
-            this.colorSlider.TabIndex = 1;
+            colorSlider.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            colorSlider.DrawStyle = HelpersLib.DrawStyle.Hue;
+            colorSlider.Location = new System.Drawing.Point(257, 0);
+            colorSlider.Name = "colorSlider";
+            colorSlider.Size = new System.Drawing.Size(32, 258);
+            colorSlider.TabIndex = 1;
             //
             // ColorPicker
             //
-            this.AutoSize = true;
-            this.Controls.Add(this.colorBox);
-            this.Controls.Add(this.colorSlider);
-            this.Name = "ColorPicker";
-            this.Size = new System.Drawing.Size(292, 261);
-            this.ResumeLayout(false);
+            AutoSize = true;
+            Controls.Add(colorBox);
+            Controls.Add(colorSlider);
+            Name = "ColorPicker";
+            Size = new System.Drawing.Size(292, 261);
+            ResumeLayout(false);
         }
 
         #endregion Component Designer generated code

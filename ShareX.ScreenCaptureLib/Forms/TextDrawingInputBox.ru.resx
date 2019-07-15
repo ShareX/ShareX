@@ -153,4 +153,46 @@
   <data name="btnCancel.Text" xml:space="preserve">
     <value>Отменить</value>
   </data>
+  <data name="tsrbmiGradientForwardDiagonal.Text" xml:space="preserve">
+    <value>Прямо диагональный</value>
+  </data>
+  <data name="tsrbmiGradientBackwardDiagonal.Text" xml:space="preserve">
+    <value>Обратно диагональный</value>
+  </data>
+  <data name="btnGradient.ToolTip" xml:space="preserve">
+    <value>Градиент</value>
+  </data>
+  <data name="btnTextColor.ToolTip" xml:space="preserve">
+    <value>Цвет текста</value>
+  </data>
+  <data name="cbBold.ToolTip" xml:space="preserve">
+    <value>Жирный</value>
+  </data>
+  <data name="cbItalic.ToolTip" xml:space="preserve">
+    <value>Курсив</value>
+  </data>
+  <data name="cbUnderline.ToolTip" xml:space="preserve">
+    <value>Подчеркнутый</value>
+  </data>
+  <data name="btnAlignmentHorizontal.ToolTip" xml:space="preserve">
+    <value>Горизонтальное выравнивание</value>
+  </data>
+  <data name="btnAlignmentVertical.ToolTip" xml:space="preserve">
+    <value>Вертикальное выравнивание</value>
+  </data>
+  <data name="tsmiEnableGradient.Text" xml:space="preserve">
+    <value>Применять градиент</value>
+  </data>
+  <data name="tsmiSecondColor.Text" xml:space="preserve">
+    <value>Второй цвет текста...</value>
+  </data>
+  <data name="tsmiGradientMode.Text" xml:space="preserve">
+    <value>Режим градиента</value>
+  </data>
+  <data name="tsrbmiGradientHorizontal.Text" xml:space="preserve">
+    <value>Горизонтальный</value>
+  </data>
+  <data name="tsrbmiGradientVertical.Text" xml:space="preserve">
+    <value>Вертикальный</value>
+  </data>
 </root>

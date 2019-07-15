@@ -120,17 +120,11 @@
   <data name="CertFileNameEditor_EditValue_Browse_for_a_certificate_file___" xml:space="preserve">
     <value>Procurar por um arquivo de certificado...</value>
   </data>
-  <data name="FTPClientForm_FTPClientForm_Connecting_to__0_" xml:space="preserve">
-    <value>Conectando ao {0}</value>
-  </data>
   <data name="UploadersConfigForm_oAuthJira_RefreshButtonClicked_Refresh_authorization_is_not_supported_" xml:space="preserve">
     <value>Autorização de atualização não é suportada.</value>
   </data>
   <data name="UploadersConfigForm_LoadSettings_Invalid_device_name" xml:space="preserve">
     <value>Nome de dispositivo invalido</value>
-  </data>
-  <data name="OAuthControl_Status_Status__Login_failed_" xml:space="preserve">
-    <value>Status: Falha no login.</value>
   </data>
   <data name="UploadersConfigForm_BoxListFolders_Box_refresh_folders_list_failed" xml:space="preserve">
     <value>Falha na atualização da lista de pastas do Box</value>
@@ -140,21 +134,6 @@
   </data>
   <data name="OneDrive_RootFolder_Root_folder" xml:space="preserve">
     <value>Pasta raiz</value>
-  </data>
-  <data name="UploadersConfigForm_MinusUpdateControls_Logged_in_as__0__" xml:space="preserve">
-    <value>Logado como {0}</value>
-  </data>
-  <data name="FTPClientForm_FTPClientForm_ShareX_FTP_client" xml:space="preserve">
-    <value>Cliente FTP do ShareX</value>
-  </data>
-  <data name="FTPClientForm_FTPCreateDirectory_Directory_name_to_create" xml:space="preserve">
-    <value>Nome do diretório para ser criado</value>
-  </data>
-  <data name="OAuthControl_Status_Status__Logged_in_" xml:space="preserve">
-    <value>Status: Logado.</value>
-  </data>
-  <data name="OAuthControl_Status_Status__Not_logged_in_" xml:space="preserve">
-    <value>Status: Deslogado.</value>
   </data>
   <data name="OAuthInfo_OAuthInfo_New_account" xml:space="preserve">
     <value>Nova conta</value>
@@ -186,9 +165,6 @@
   <data name="UploadersConfigForm_MegaConfigureTab_Not_configured" xml:space="preserve">
     <value>Não configurado</value>
   </data>
-  <data name="UploadersConfigForm_MinusUpdateControls_Not_logged_in_" xml:space="preserve">
-    <value>Não está logado.</value>
-  </data>
   <data name="UploadersConfigForm_PhotobucketCreateAlbum__0__successfully_created_" xml:space="preserve">
     <value>{0} criado com sucesso.</value>
   </data>
@@ -216,9 +192,6 @@ Pastas criadas:</value>
   </data>
   <data name="UploadersConfigForm_OneDriveAddFolder_Querying_folders___" xml:space="preserve">
     <value>Consultando pastas...</value>
-  </data>
-  <data name="UploadersConfigForm_FTPOpenClient_FTP_client_only_supports_FTP_or_FTPS_" xml:space="preserve">
-    <value>Cliente FTP suporta apenas FTP ou FTPS.</value>
   </data>
   <data name="UploadersConfigForm_FTPOpenClient_Unable_to_find_valid_FTP_account_" xml:space="preserve">
     <value>Não foi possivel achar uma conta FTP valida.</value>

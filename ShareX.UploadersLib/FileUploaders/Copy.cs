@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2017 ShareX Team
+    Copyright (c) 2007-2019 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -118,7 +118,7 @@ namespace ShareX.UploadersLib.FileUploaders
         {
             if (!string.IsNullOrEmpty(path) && OAuthInfo.CheckOAuth(AuthInfo))
             {
-                string url = URLHelpers.CombineURL(URLFiles, URLHelpers.URLPathEncode(path));
+                string url = URLHelpers.CombineURL(URLFiles, URLHelpers.URLEncode(path, true));
                 string query = OAuthManager.GenerateQuery(url, null, HttpMethod.GET, AuthInfo);
                 return SendRequestDownload(HttpMethod.GET, query, downloadStream);
             }
@@ -136,7 +136,7 @@ namespace ShareX.UploadersLib.FileUploaders
                 return null;
             }
 
-            string url = URLHelpers.CombineURL(URLFiles, URLHelpers.URLPathEncode(path));
+            string url = URLHelpers.CombineURL(URLFiles, URLHelpers.URLEncode(path, true));
 
             Dictionary<string, string> args = new Dictionary<string, string>();
             args.Add("overwrite", "true");
@@ -168,7 +168,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
             if (OAuthInfo.CheckOAuth(AuthInfo))
             {
-                string url = URLHelpers.CombineURL(URLMetaData, URLHelpers.URLPathEncode(path));
+                string url = URLHelpers.CombineURL(URLMetaData, URLHelpers.URLEncode(path, true));
 
                 string query = OAuthManager.GenerateQuery(url, null, HttpMethod.GET, AuthInfo);
 
@@ -210,7 +210,7 @@ namespace ShareX.UploadersLib.FileUploaders
         {
             path = path.Trim('/');
 
-            string url = URLHelpers.CombineURL(URLLinks, URLHelpers.URLPathEncode(path));
+            string url = URLHelpers.CombineURL(URLLinks, URLHelpers.URLEncode(path, true));
 
             string query = OAuthManager.GenerateQuery(url, null, HttpMethod.POST, AuthInfo);
 

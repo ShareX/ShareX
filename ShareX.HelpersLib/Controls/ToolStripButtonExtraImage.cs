@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2017 ShareX Team
+    Copyright (c) 2007-2019 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -23,12 +23,8 @@
 
 #endregion License Information (GPL v3)
 
-using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace ShareX.HelpersLib
@@ -38,10 +34,24 @@ namespace ShareX.HelpersLib
         [DefaultValue(false)]
         public bool ShowExtraImage { get; set; }
 
-        [DefaultValue(null)]
-        public Image ExtraImage { get; set; }
+        private Image extraImage;
 
-        private int extraImagePadding = 2;
+        [DefaultValue(null)]
+        public Image ExtraImage
+        {
+            get
+            {
+                return extraImage;
+            }
+            set
+            {
+                extraImage = value;
+                Invalidate();
+            }
+        }
+
+        [DefaultValue(2)]
+        public int ExtraImagePadding { get; set; } = 2;
 
         protected override void OnPaint(PaintEventArgs e)
         {
@@ -49,8 +59,21 @@ namespace ShareX.HelpersLib
 
             if (ShowExtraImage && ExtraImage != null)
             {
-                e.Graphics.DrawImage(ExtraImage, new Point(Width - ExtraImage.Width - extraImagePadding, extraImagePadding));
+                e.Graphics.DrawImage(ExtraImage, new Point(Width - ExtraImage.Width - ExtraImagePadding, ExtraImagePadding));
             }
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                if (ExtraImage != null)
+                {
+                    ExtraImage.Dispose();
+                }
+            }
+
+            base.Dispose(disposing);
         }
     }
 }

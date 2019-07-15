@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2017 ShareX Team
+    Copyright (c) 2007-2019 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using Newtonsoft.Json;
+using ShareX.HelpersLib;
 using ShareX.UploadersLib.Properties;
 using System.Collections.Generic;
 using System.Collections.Specialized;
@@ -82,7 +83,7 @@ namespace ShareX.UploadersLib.FileUploaders
             args.Add("response_type", "code");
             args.Add("client_id", AuthInfo.Client_ID);
 
-            return CreateQuery("https://www.box.com/api/oauth2/authorize", args);
+            return URLHelpers.CreateQueryString("https://www.box.com/api/oauth2/authorize", args);
         }
 
         public bool GetAccessToken(string pin)

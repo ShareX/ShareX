@@ -118,24 +118,24 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="btnClearAuthorization.Text" xml:space="preserve">
-    <value>Xóa xác thực</value>
+    <value>Xóa ủy quyền</value>
   </data>
   <data name="btnCompleteAuthorization.Text" xml:space="preserve">
-    <value>Bước 2: Hoàn thành việc xác thực</value>
+    <value>Bước 2: Hoàn thành việc ủy quyền</value>
   </data>
   <data name="btnOpenAuthorizePage.Text" xml:space="preserve">
-    <value>Bước 1: Mở trang xác thực...</value>
+    <value>Bước 1: Mở trang ủy quyền...</value>
   </data>
   <data name="btnRefreshAuthorization.Text" xml:space="preserve">
-    <value>Làm mới xác thực</value>
+    <value>Làm mới ủy quyền</value>
   </data>
   <data name="gbUserAccount.Text" xml:space="preserve">
     <value>Tài khoản người dùng</value>
   </data>
-  <data name="lblLoginStatus.Text" xml:space="preserve">
-    <value>Trạng thái</value>
-  </data>
   <data name="lblVerificationCode.Text" xml:space="preserve">
     <value>Mã xác thực:</value>
+  </data>
+  <data name="lblStatus.Text" xml:space="preserve">
+    <value>Trạng thái:</value>
   </data>
 </root>

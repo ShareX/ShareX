@@ -130,7 +130,7 @@
     <value>刷新</value>
   </data>
   <data name="btnTest.Text" xml:space="preserve">
-    <value>使用CMD测试</value>
+    <value>使用命令行测试</value>
   </data>
   <data name="cbCustomCommands.Text" xml:space="preserve">
     <value>使用自定义命令</value>
@@ -169,23 +169,17 @@
     <value>质量：</value>
   </data>
   <data name="nudx264CRF.ToolTip" xml:space="preserve">
-    <value>"恒速率因子（CRF）:量化比例的范围为0-51:其中,0是无损的,23是默认值,51是最糟糕的.
-较低的值是一个更高的质量和主观理智的范围是18-28.
-考虑18为视觉上无损或几乎如此:它应该看起来相同或几乎相同的输入,但它在技术上并不无损.
-范围是指数,因此增加了CRF值+6大约一半的比特率,而-6大致的比特率的两倍.
-一般用法是选择最高CRF值仍提供可接受的质量.
-如果输出看起来不错,然后尝试更高的价值,如果它看起来不错,然后选择一个较低的值".
-默认值是128K.
-范围是0-9,其中较低的值是一个更高的质量. 0-3,通常会产生透明效果,4（默认）应接近感知透明度和6产生一个"可以接受的"质量.</value>
+    <value>CRF：范围为 0-51。其中，0 表示无损，30 为默认值，51 表示最差质量。
+值越高质量越差，但文件体积越小。</value>
   </data>
   <data name="tbAACBitrate.ToolTip" xml:space="preserve">
-    <value>默认值是128K.</value>
+    <value>默认值为 128k</value>
   </data>
   <data name="tbMP3_qscale.ToolTip" xml:space="preserve">
-    <value>范围是0-9,其中较低的值是一个更高的质量. 0-3,通常会产生透明效果,4（默认）应接近感知透明度和6产生一个"可以接受的"质量.</value>
+    <value>范围为 0-9，较低的值表示更高的质量。0-3 通常会产生透明效果，4（默认）接近感知透明度，6 为“可勉强接受的”质量。</value>
   </data>
   <data name="tbVorbis_qscale.ToolTip" xml:space="preserve">
-    <value>范围是0-10,其中10为最高质量. 3-6是一个很好的范围内尝试.默认值是3.</value>
+    <value>范围为 0-10，其中 10 为最高质量，3-6 为推荐测试范围，默认值为 3.</value>
   </data>
   <data name="lblx264Preset.Text" xml:space="preserve">
     <value>预设：</value>
@@ -194,7 +188,7 @@
     <value>可变比特率：</value>
   </data>
   <data name="gbFFmpegExe.Text" xml:space="preserve">
-    <value>FFmpeg路径</value>
+    <value>FFmpeg 路径</value>
   </data>
   <data name="cbOverrideFFmpegPath.Text" xml:space="preserve">
     <value>使用自定义路径</value>
@@ -215,12 +209,12 @@
     <value>安装捕捉器</value>
   </data>
   <data name="cbx264Preset.ToolTip" xml:space="preserve">
-    <value>较快的预设 = 编码时间较快，但是文件比较大。
-较慢的预设 = 编码时间较慢，但是文件比较小。
-对于实时编码（比如屏幕录制），预设必须尽快</value>
+    <value>较快的预设 = 编码速度较快，但是文件比较大。
+较慢的预设 = 编码速度较慢，但是文件比较小。
+对于实时编码（比如屏幕录制），预设的速度必须尽量快</value>
   </data>
   <data name="nudXvidQscale.ToolTip" xml:space="preserve">
-    <value>1为最高的质量和最大的文件，31为最低的质量和最小的文件。</value>
+    <value>1表示最高质量、最大文件，31表示最低质量、最小文件。</value>
   </data>
   <data name="pbAudioCodecWarning.ToolTip" xml:space="preserve">
     <value>所选视频容器不支持此音频解码器。</value>
@@ -235,7 +229,22 @@
   <data name="lblNVENCBitrate.Text" xml:space="preserve">
     <value>比特率：</value>
   </data>
-  <data name="tpNVENC.Text" xml:space="preserve">
-    <value>NVENC</value>
+  <data name="cbGIFDither.ToolTip" xml:space="preserve">
+    <value>默认值为 sierra2_4a</value>
+  </data>
+  <data name="cbGIFStatsMode.ToolTip" xml:space="preserve">
+    <value>默认值为 full</value>
+  </data>
+  <data name="lblQSVBitrate.Text" xml:space="preserve">
+    <value>比特率：</value>
+  </data>
+  <data name="lblQSVPreset.Text" xml:space="preserve">
+    <value>预设：</value>
+  </data>
+  <data name="lblAMFQuality.Text" xml:space="preserve">
+    <value>质量：</value>
+  </data>
+  <data name="lblAMFUsage.Text" xml:space="preserve">
+    <value>使用量：</value>
   </data>
 </root>

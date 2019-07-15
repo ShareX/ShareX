@@ -148,13 +148,10 @@
     <value>Редактировать меню быстрых задач</value>
   </data>
   <data name="cbShellContextMenu.Text" xml:space="preserve">
-    <value>Показывать кнопку "Загрузить с помощью ShareX" в контекстном меню</value>
+    <value>Показывать пункт "Загрузить с помощью ShareX" в контекстном меню проводника Windows</value>
   </data>
   <data name="cbSendToMenu.Text" xml:space="preserve">
     <value>Показывать ShareX в меню "Отправить"</value>
-  </data>
-  <data name="cbStartWithWindows.Text" xml:space="preserve">
-    <value>Запускать ShareX при старте системы</value>
   </data>
   <data name="cbSteamShowInApp.Text" xml:space="preserve">
     <value>Пока ShareX открыт, показывать в Steam статус "В приложении"</value>
@@ -170,9 +167,6 @@
   </data>
   <data name="lblPersonalFolderPath.Text" xml:space="preserve">
     <value>Персональная папка ShareX:</value>
-  </data>
-  <data name="lblNotePersonalFolderPath.Text" xml:space="preserve">
-    <value>Заметка: Для применения персональной папки нужно перезапустить ShareX.</value>
   </data>
   <data name="tpIntegration.Text" xml:space="preserve">
     <value>Интеграция</value>
@@ -247,7 +241,7 @@
     <value>Вторичные для файлов</value>
   </data>
   <data name="gbClipboardFormats.Text" xml:space="preserve">
-    <value>Форматы содержимого буфера</value>
+    <value>Форматы содержимого буфера - они появятся в контекстном меню в главном окне</value>
   </data>
   <data name="tpUploadResults.Text" xml:space="preserve">
     <value>Результаты</value>
@@ -276,12 +270,6 @@
   <data name="tpExportImport.Text" xml:space="preserve">
     <value>Экспорт / Импорт</value>
   </data>
-  <data name="cbExportHistory.Text" xml:space="preserve">
-    <value>Экспортировать историю</value>
-  </data>
-  <data name="cbExportSettings.Text" xml:space="preserve">
-    <value>Экспортировать настройки</value>
-  </data>
   <data name="btnExport.Text" xml:space="preserve">
     <value>Экспорт...</value>
   </data>
@@ -302,9 +290,6 @@
   </data>
   <data name="tpPaths.Text" xml:space="preserve">
     <value>Каталоги</value>
-  </data>
-  <data name="cbExportLogs.Text" xml:space="preserve">
-    <value>Экспортитовать логи</value>
   </data>
   <data name="cbHistorySaveTasks.Text" xml:space="preserve">
     <value>Сохранять задачи в историю</value>
@@ -353,5 +338,14 @@
   </data>
   <data name="gbFirefox.Text" xml:space="preserve">
     <value>Дополнение для Firefox</value>
+  </data>
+  <data name="btnCheckDevBuild.Text" xml:space="preserve">
+    <value>Установить dev сборку...</value>
+  </data>
+  <data name="cbEditWithShareX.Text" xml:space="preserve">
+    <value>Показывать пункт "Редактировать в ShareX" в контекстном меню проводника Windows</value>
+  </data>
+  <data name="btnPersonalFolderPathApply.Text" xml:space="preserve">
+    <value>Применить</value>
   </data>
 </root>

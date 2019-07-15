@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2017 ShareX Team
+    Copyright (c) 2007-2019 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using Newtonsoft.Json;
+using ShareX.HelpersLib;
 using ShareX.UploadersLib.Properties;
 using System.Collections.Generic;
 using System.Drawing;
@@ -56,6 +57,8 @@ namespace ShareX.UploadersLib.FileUploaders
 
     public sealed class Ge_tt : FileUploader
     {
+        private const string APIURL = "http://api.ge.tt/1";
+
         public string APIKey { get; private set; }
         public string AccessToken { get; set; }
 
@@ -73,7 +76,8 @@ namespace ShareX.UploadersLib.FileUploaders
 
             string json = JsonConvert.SerializeObject(args);
 
-            string response = SendRequest(HttpMethod.POST, "https://open.ge.tt/1/users/login", json, ContentTypeJSON);
+            string url = URLHelpers.CombineURL(APIURL, "users/login");
+            string response = SendRequest(HttpMethod.POST, url, json, RequestHelpers.ContentTypeJSON);
 
             return JsonConvert.DeserializeObject<Ge_ttLogin>(response);
         }
@@ -83,7 +87,7 @@ namespace ShareX.UploadersLib.FileUploaders
             Dictionary<string, string> args = new Dictionary<string, string>();
             args.Add("accesstoken", accessToken);
 
-            string url = CreateQuery("https://open.ge.tt/1/shares/create", args);
+            string url = URLHelpers.CreateQueryString(URLHelpers.CombineURL(APIURL, "shares/create"), args);
             string response = SendRequest(HttpMethod.POST, url);
 
             return JsonConvert.DeserializeObject<Ge_ttShare>(response);
@@ -99,7 +103,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
             string json = JsonConvert.SerializeObject(args2);
 
-            string response = SendRequest(HttpMethod.POST, $"https://open.ge.tt/1/files/{shareName}/create", json, ContentTypeJSON, args);
+            string response = SendRequest(HttpMethod.POST, URLHelpers.CombineURL(APIURL, "files", shareName, "create"), json, RequestHelpers.ContentTypeJSON, args);
 
             return JsonConvert.DeserializeObject<Ge_ttFile>(response);
         }
@@ -116,7 +120,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
                 if (file != null)
                 {
-                    result = SendRequestFile(file.Upload.PostURL, stream, fileName);
+                    result = SendRequestFile(file.Upload.PostURL, stream, fileName, "file");
 
                     if (result.IsSuccess)
                     {

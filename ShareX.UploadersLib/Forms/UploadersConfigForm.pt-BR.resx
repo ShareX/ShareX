@@ -131,9 +131,6 @@ Por exemplo, se o seu bucket é chamado bucket.example.com então o URL será ht
   <data name="tpURLShorteners.Text" xml:space="preserve">
     <value>Encurtadores de URL</value>
   </data>
-  <data name="tpFTP.Text" xml:space="preserve">
-    <value>FTP</value>
-  </data>
   <data name="tpDropbox.Text" xml:space="preserve">
     <value>Dropbox</value>
   </data>
@@ -169,9 +166,6 @@ Por exemplo, se o seu bucket é chamado bucket.example.com então o URL será ht
   </data>
   <data name="tpHostr.Text" xml:space="preserve">
     <value>Hostr</value>
-  </data>
-  <data name="tpMinus.Text" xml:space="preserve">
-    <value>Minus</value>
   </data>
   <data name="tpJira.Text" xml:space="preserve">
     <value>Atlassian Jira</value>
@@ -423,39 +417,6 @@ Usar uma biblioteca encriptada desabilita o compartilhamento.</value>
   <data name="txtJiraIssuePrefix.Text" xml:space="preserve">
     <value>PROJETO-</value>
   </data>
-  <data name="btnMinusFolderRemove.Text" xml:space="preserve">
-    <value>Remover pasta</value>
-  </data>
-  <data name="btnMinusFolderAdd.Text" xml:space="preserve">
-    <value>Adicionar pasta</value>
-  </data>
-  <data name="btnMinusReadFolderList.Text" xml:space="preserve">
-    <value>Atualizar lista de pastas</value>
-  </data>
-  <data name="gbMinusUpload.Text" xml:space="preserve">
-    <value>Enviar imagens para</value>
-  </data>
-  <data name="btnMinusAuth.Text" xml:space="preserve">
-    <value>Autorizar</value>
-  </data>
-  <data name="lblMinusUsername.Text" xml:space="preserve">
-    <value>Usuário:</value>
-  </data>
-  <data name="lblMinusPassword.Text" xml:space="preserve">
-    <value>Senha:</value>
-  </data>
-  <data name="btnMinusRefreshAuth.Text" xml:space="preserve">
-    <value>Atualizar autorização</value>
-  </data>
-  <data name="lblMinusAuthStatus.Text" xml:space="preserve">
-    <value>Status do login:</value>
-  </data>
-  <data name="gbMinusUserPass.Text" xml:space="preserve">
-    <value>Autenticação</value>
-  </data>
-  <data name="lblMinusURLType.Text" xml:space="preserve">
-    <value>Tipo da URL:</value>
-  </data>
   <data name="lblLocalhostrEmail.Text" xml:space="preserve">
     <value>Email:</value>
   </data>
@@ -627,128 +588,14 @@ Usar uma biblioteca encriptada desabilita o compartilhamento.</value>
   <data name="tpPolr.Text" xml:space="preserve">
     <value>Polr</value>
   </data>
-  <data name="tpCoinURL.Text" xml:space="preserve">
-    <value>CoinURL</value>
-  </data>
   <data name="tpAdFly.Text" xml:space="preserve">
     <value>adf.ly</value>
   </data>
   <data name="tpYourls.Text" xml:space="preserve">
     <value>YOURLS</value>
   </data>
-  <data name="tpGoogleURLShortener.Text" xml:space="preserve">
-    <value>Google</value>
-  </data>
   <data name="tpBitly.Text" xml:space="preserve">
     <value>bit.ly</value>
-  </data>
-  <data name="btnCustomUploaderAdd.Text" xml:space="preserve">
-    <value>Adicionar</value>
-  </data>
-  <data name="btnCustomUploaderUpdate.Text" xml:space="preserve">
-    <value>Atualizar</value>
-  </data>
-  <data name="btnCustomUploaderRemove.Text" xml:space="preserve">
-    <value>Remover</value>
-  </data>
-  <data name="btnCustomUploaderClearUploaders.Text" xml:space="preserve">
-    <value>Limpar serviços de upload</value>
-  </data>
-  <data name="gbCustomUploaders.Text" xml:space="preserve">
-    <value>Serviços</value>
-  </data>
-  <data name="chCustomUploaderHeadersValue.Text" xml:space="preserve">
-    <value>Valor</value>
-  </data>
-  <data name="chCustomUploaderHeadersName.Text" xml:space="preserve">
-    <value>Nome</value>
-  </data>
-  <data name="btnCustomUploaderHeaderRemove.Text" xml:space="preserve">
-    <value>Remover</value>
-  </data>
-  <data name="btnCustomUploaderHeaderAdd.Text" xml:space="preserve">
-    <value>Adicionar</value>
-  </data>
-  <data name="btnCustomUploaderHeaderUpdate.Text" xml:space="preserve">
-    <value>Atualizar</value>
-  </data>
-  <data name="tpCustomUploaderHeaders.Text" xml:space="preserve">
-    <value>Cabeçalhos</value>
-  </data>
-  <data name="chCustomUploaderArgumentsValue.Text" xml:space="preserve">
-    <value>Valor</value>
-  </data>
-  <data name="chCustomUploaderArgumentsName.Text" xml:space="preserve">
-    <value>Nome</value>
-  </data>
-  <data name="btnCustomUploaderArgRemove.Text" xml:space="preserve">
-    <value>Remover</value>
-  </data>
-  <data name="btnCustomUploaderArgAdd.Text" xml:space="preserve">
-    <value>Adicionar</value>
-  </data>
-  <data name="btnCustomUploaderArgUpdate.Text" xml:space="preserve">
-    <value>Atualizar</value>
-  </data>
-  <data name="tpCustomUploaderArguments.Text" xml:space="preserve">
-    <value>Argumentos</value>
-  </data>
-  <data name="lblCustomUploaderXPath.Text" xml:space="preserve">
-    <value>XPath:</value>
-  </data>
-  <data name="lblCustomUploaderXPathExample.Text" xml:space="preserve">
-    <value>Exemplos:
-
-/Files/File[1]/URL
-/store/book[1]/title</value>
-  </data>
-  <data name="btnCustomUploaderXPathHelp.Text" xml:space="preserve">
-    <value>?</value>
-  </data>
-  <data name="btnCustomUploaderXmlSyntaxAdd.Text" xml:space="preserve">
-    <value>Adicionar sintaxe ao campo do URL</value>
-  </data>
-  <data name="tpCustomUploaderXmlParse.Text" xml:space="preserve">
-    <value>XML</value>
-  </data>
-  <data name="lblCustomUploaderJsonPath.Text" xml:space="preserve">
-    <value>JsonPath:</value>
-  </data>
-  <data name="lblCustomUploaderJsonPathExample.Text" xml:space="preserve">
-    <value>Exemplos:
-
-Files[0].URL
-store.book[0].title</value>
-  </data>
-  <data name="btnCustomUploadJsonPathHelp.Text" xml:space="preserve">
-    <value>?</value>
-  </data>
-  <data name="btnCustomUploaderJsonAddSyntax.Text" xml:space="preserve">
-    <value>Adicionar sintaxe ao campo do URL</value>
-  </data>
-  <data name="tpCustomUploaderJsonParse.Text" xml:space="preserve">
-    <value>JSON</value>
-  </data>
-  <data name="btnCustomUploaderRegexpRemove.Text" xml:space="preserve">
-    <value>Remover</value>
-  </data>
-  <data name="btnCustomUploaderRegexpAdd.Text" xml:space="preserve">
-    <value>Adicionar</value>
-  </data>
-  <data name="btnCustomUploaderRegexpUpdate.Text" xml:space="preserve">
-    <value>Atualizar</value>
-  </data>
-  <data name="btnCustomUploaderRegexAddSyntax.Text" xml:space="preserve">
-    <value>Adicionar sintaxe ao campo do URL</value>
-  </data>
-  <data name="btnCustomUploaderRegexHelp.Text" xml:space="preserve">
-    <value>?</value>
-  </data>
-  <data name="tpCustomUploaderRegexParse.Text" xml:space="preserve">
-    <value>Regex</value>
-  </data>
-  <data name="tpCustomUploaders.Text" xml:space="preserve">
-    <value>Hospedagem customizada</value>
   </data>
   <data name="btnTwitterAdd.Text" xml:space="preserve">
     <value>Adicionar</value>
@@ -770,66 +617,6 @@ store.book[0].title</value>
   </data>
   <data name="tpTwitter.Text" xml:space="preserve">
     <value>Twitter</value>
-  </data>
-  <data name="btnCustomUploaderExamples.Text" xml:space="preserve">
-    <value>Exemplos...</value>
-  </data>
-  <data name="btnCustomUploaderHelp.Text" xml:space="preserve">
-    <value>Ajuda...</value>
-  </data>
-  <data name="btnCustomUploaderClear.Text" xml:space="preserve">
-    <value>Limpar campos --&gt;</value>
-  </data>
-  <data name="lblCustomUploaderImageUploader.Text" xml:space="preserve">
-    <value>Envio de imagens:</value>
-  </data>
-  <data name="btnCustomUploaderFileUploaderTest.Text" xml:space="preserve">
-    <value>Testar</value>
-  </data>
-  <data name="lblCustomUploaderFileUploader.Text" xml:space="preserve">
-    <value>Envio de arquivos:</value>
-  </data>
-  <data name="btnCustomUploaderImageUploaderTest.Text" xml:space="preserve">
-    <value>Testar</value>
-  </data>
-  <data name="lblCustomUploaderTestResult.Text" xml:space="preserve">
-    <value>Resultado do teste:</value>
-  </data>
-  <data name="lblCustomUploaderDeletionURL.Text" xml:space="preserve">
-    <value>URL de remoção:</value>
-  </data>
-  <data name="btnCustomUploaderShowLastResponse.Text" xml:space="preserve">
-    <value>Mostrar última resposta...</value>
-  </data>
-  <data name="lblCustomUploaderResponseType.Text" xml:space="preserve">
-    <value>URL de resposta:</value>
-  </data>
-  <data name="lblCustomUploaderTextUploader.Text" xml:space="preserve">
-    <value>Envio de texto:</value>
-  </data>
-  <data name="lblCustomUploaderRequestURL.Text" xml:space="preserve">
-    <value>URL de pedido:</value>
-  </data>
-  <data name="btnCustomUploaderURLShortenerTest.Text" xml:space="preserve">
-    <value>Testar</value>
-  </data>
-  <data name="lblCustomUploaderURLShortener.Text" xml:space="preserve">
-    <value>Encurtador de URL:</value>
-  </data>
-  <data name="btnCustomUploaderTextUploaderTest.Text" xml:space="preserve">
-    <value>Testar</value>
-  </data>
-  <data name="lblCustomUploaderThumbnailURL.Text" xml:space="preserve">
-    <value>URL da miniatura:</value>
-  </data>
-  <data name="lblCustomUploaderFileForm.Text" xml:space="preserve">
-    <value>Nome do formulário de arquivos:</value>
-  </data>
-  <data name="lblCustomUploaderRequestType.Text" xml:space="preserve">
-    <value>Tipo de pedido:</value>
-  </data>
-  <data name="lblCustomUploaderURL.Text" xml:space="preserve">
-    <value>URL:</value>
   </data>
   <data name="lblBitlyDomain.Text" xml:space="preserve">
     <value>Domínio:</value>
@@ -857,9 +644,6 @@ store.book[0].title</value>
   </data>
   <data name="lblAdflyAPIKEY.Text" xml:space="preserve">
     <value>Chave de API:</value>
-  </data>
-  <data name="lblCoinURLUUID.Text" xml:space="preserve">
-    <value>UUID:</value>
   </data>
   <data name="lblPolrAPIKey.Text" xml:space="preserve">
     <value>Chave da API:</value>
@@ -909,9 +693,6 @@ store.book[0].title</value>
   <data name="lblPicasaAlbumID.Text" xml:space="preserve">
     <value>ID de album para upload (Vazio = sem upload de album):</value>
   </data>
-  <data name="tpPicasa.Text" xml:space="preserve">
-    <value>Picasa</value>
-  </data>
   <data name="lblPhotobucketAccountStatus.Text" xml:space="preserve">
     <value>Login exigido.</value>
   </data>
@@ -950,18 +731,6 @@ store.book[0].title</value>
   </data>
   <data name="tpPhotobucket.Text" xml:space="preserve">
     <value>Photobucket</value>
-  </data>
-  <data name="btnFlickrOpenAuthorize.Text" xml:space="preserve">
-    <value>Passo 1: Abrir página de autorização...</value>
-  </data>
-  <data name="btnFlickrCompleteAuth.Text" xml:space="preserve">
-    <value>Passo 2: Completar autorização</value>
-  </data>
-  <data name="btnFlickrCheckToken.Text" xml:space="preserve">
-    <value>Atualizar autorização</value>
-  </data>
-  <data name="btnFlickrOpenImages.Text" xml:space="preserve">
-    <value>Sua stream de fotos...</value>
   </data>
   <data name="tpFlickr.Text" xml:space="preserve">
     <value>Flicker</value>
@@ -1032,22 +801,8 @@ store.book[0].title</value>
   <data name="gbPhotobucketAlbums.Text" xml:space="preserve">
     <value>Criar novo álbum</value>
   </data>
-  <data name="cbAmazonS3UseRRS.Text" xml:space="preserve">
-    <value>Usar armazenamento reduzido de redundância</value>
-  </data>
-  <data name="cbAmazonS3UseRRS.ToolTip" xml:space="preserve">
-    <value>Usar uma classe de hospedagem de menor redundância para objetos guardados.
-Com esta opção, os objetos são mais baratos de armazenar, mas possuem durabilidade de 99.99%, ao invés de 99.999999999%.
-Isso significa que eles podem ser perdidos da Amazon S3 em algum momento.</value>
-  </data>
-  <data name="btnCustomUploadersExportAll.Text" xml:space="preserve">
-    <value>Todos...</value>
-  </data>
   <data name="lblPuushAPIKey.Text" xml:space="preserve">
     <value>Chave da API:</value>
-  </data>
-  <data name="llPuushCreateAccount.Text" xml:space="preserve">
-    <value>Criar uma conta...</value>
   </data>
   <data name="llPuushForgottenPassword.Text" xml:space="preserve">
     <value>Esqueceu sua senha?</value>
@@ -1069,9 +824,6 @@ Isso significa que eles podem ser perdidos da Amazon S3 em algum momento.</value
   </data>
   <data name="cbGoogleDriveDirectLink.Text" xml:space="preserve">
     <value>Usar link direto</value>
-  </data>
-  <data name="cbMinusPublic.Text" xml:space="preserve">
-    <value>Público</value>
   </data>
   <data name="cbStreamableUseDirectURL.Text" xml:space="preserve">
     <value>Usar link direto</value>
@@ -1112,46 +864,10 @@ Isso significa que eles podem ser perdidos da Amazon S3 em algum momento.</value
   <data name="lvlVgymeUserKey.Text" xml:space="preserve">
     <value>Chave de usuário:</value>
   </data>
-  <data name="llSomeImageAPIKey.Text" xml:space="preserve">
-    <value>Para obter uma chave de API visite https://someimage.com/api</value>
-  </data>
-  <data name="lblSomeImageAPIKey.Text" xml:space="preserve">
-    <value>Chave de API:</value>
-  </data>
-  <data name="cbSomeImageDirectURL.Text" xml:space="preserve">
-    <value>URL direto</value>
-  </data>
   <data name="lblOwnCloudHostExample.Text" xml:space="preserve">
     <value>Exemplo: http://example.com/owncloud</value>
   </data>
-  <data name="cbUpleaInstantDownloadEnabled.Text" xml:space="preserve">
-    <value>Download Instantâneo habilitado</value>
-  </data>
-  <data name="cbUpleaIsPremium.Text" xml:space="preserve">
-    <value>Membro premium</value>
-  </data>
-  <data name="gbUpleaLoginCredentials.Text" xml:space="preserve">
-    <value>Credenciais</value>
-  </data>
-  <data name="lblUpleaEmailAddress.Text" xml:space="preserve">
-    <value>Email:</value>
-  </data>
-  <data name="lblUpleaUsername.Text" xml:space="preserve">
-    <value>Usuário</value>
-  </data>
-  <data name="lblUpleaPassword.Text" xml:space="preserve">
-    <value>Senha:</value>
-  </data>
-  <data name="lblUpleaApiKey.Text" xml:space="preserve">
-    <value>Chave da API:</value>
-  </data>
-  <data name="gbUpleaUserInformation.Text" xml:space="preserve">
-    <value>Informações do usuário</value>
-  </data>
   <data name="cbHastebinUseFileExtension.Text" xml:space="preserve">
     <value>Utilizar extensão do arquivo para destaque de sintaxe (exceto .txt)</value>
-  </data>
-  <data name="btnUpleaLogin.Text" xml:space="preserve">
-    <value>Obter chave da API</value>
   </data>
 </root>

@@ -132,7 +132,4 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX descargador de archivos</value>
   </data>
-  <data name="cbShowChangelog.Text" xml:space="preserve">
-    <value>Mostrar notas de actualización</value>
-  </data>
 </root>

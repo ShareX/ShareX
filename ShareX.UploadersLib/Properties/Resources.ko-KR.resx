@@ -117,26 +117,14 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="OAuthControl_Status_Status__Logged_in_" xml:space="preserve">
-    <value>상태: 로그인 완료.</value>
-  </data>
-  <data name="OAuthControl_Status_Status__Not_logged_in_" xml:space="preserve">
-    <value>상태: 로그인되어 있지 않음.</value>
-  </data>
   <data name="UploadersConfigForm_LoadSettings_Selected_folder_" xml:space="preserve">
     <value>선택된 폴더:</value>
-  </data>
-  <data name="FTPClientForm_FTPClientForm_Connecting_to__0_" xml:space="preserve">
-    <value>{0}에 접속 중</value>
   </data>
   <data name="UploadersConfigForm_oAuthJira_RefreshButtonClicked_Refresh_authorization_is_not_supported_" xml:space="preserve">
     <value>인증 새로고침은 지원되지 않습니다.</value>
   </data>
   <data name="UploadersConfigForm_LoadSettings_Invalid_device_name" xml:space="preserve">
     <value>올바르지 않은 장치명</value>
-  </data>
-  <data name="OAuthControl_Status_Status__Login_failed_" xml:space="preserve">
-    <value>상태: 로그인 실패.</value>
   </data>
   <data name="UploadersConfigForm_BoxListFolders_Box_refresh_folders_list_failed" xml:space="preserve">
     <value>Box 폴더 목록 갱신 실패</value>
@@ -146,15 +134,6 @@
   </data>
   <data name="OneDrive_RootFolder_Root_folder" xml:space="preserve">
     <value>최상위 폴더</value>
-  </data>
-  <data name="UploadersConfigForm_MinusUpdateControls_Logged_in_as__0__" xml:space="preserve">
-    <value>{0} 사용자로 로그인 됨.</value>
-  </data>
-  <data name="FTPClientForm_FTPClientForm_ShareX_FTP_client" xml:space="preserve">
-    <value>ShareX FTP 클라이언트</value>
-  </data>
-  <data name="FTPClientForm_FTPCreateDirectory_Directory_name_to_create" xml:space="preserve">
-    <value>생성할 폴더 이름</value>
   </data>
   <data name="KeyFileNameEditor_EditValue_Browse_for_a_key_file___" xml:space="preserve">
     <value>키 파일 탐색...</value>
@@ -195,9 +174,6 @@
   <data name="UploadersConfigForm_MegaConfigureTab_Invalid_authentication" xml:space="preserve">
     <value>올바르지 않은 인증</value>
   </data>
-  <data name="UploadersConfigForm_MinusUpdateControls_Not_logged_in_" xml:space="preserve">
-    <value>로그인되어 있지 않음.</value>
-  </data>
   <data name="UploadersConfigForm_OneDriveAddFolder_Querying_folders___" xml:space="preserve">
     <value>폴더 불러오는 중...</value>
   </data>
@@ -216,5 +192,47 @@
   </data>
   <data name="UploadersConfigForm_PhotobucketCreateAlbum__0__successfully_created_" xml:space="preserve">
     <value>{0} 성공적으로 생성됨.</value>
+  </data>
+  <data name="UploadersConfigForm_FTPOpenClient_Unable_to_find_valid_FTP_account_" xml:space="preserve">
+    <value>유효한 FTP 계정을 찾을 수 없습니다.</value>
+  </data>
+  <data name="CustomFileUploader_Upload_Response_parse_failed_" xml:space="preserve">
+    <value>응답 파싱에 실패했습니다.</value>
+  </data>
+  <data name="UploadersConfigForm_Remove_all_custom_uploaders_Confirmation" xml:space="preserve">
+    <value>모든 커스텀 업로더를 삭제하겠습니까?</value>
+  </data>
+  <data name="OAuthControl_OAuthControl_PasteVerificationCodeHere" xml:space="preserve">
+    <value>인증 코드를 여기에 붙여넣으세요</value>
+  </data>
+  <data name="UploadersConfigForm_ConnectSFTPAccount_Key_file_not_found" xml:space="preserve">
+    <value>키 파일을 찾을 수 없습니다.</value>
+  </data>
+  <data name="UploadersConfigForm_eiCustomUploaders_ExportRequested_RequestURLMustBeConfigured" xml:space="preserve">
+    <value>"요청 URL" 항목을 설정해야 합니다.</value>
+  </data>
+  <data name="UploadersConfigForm_eiCustomUploaders_ExportRequested_DestinationTypeMustBeConfigured" xml:space="preserve">
+    <value>"목적지 타입" 항목을 설정해야 합니다.</value>
+  </data>
+  <data name="CustomUploaderItem_GetRequestURL_RequestURLMustBeConfigured" xml:space="preserve">
+    <value>"요청 URL" 항목을 설정해야 합니다.</value>
+  </data>
+  <data name="CustomUploaderItem_GetFileFormName_FileFormNameMustBeConfigured" xml:space="preserve">
+    <value>"파일 폼 항목명" 항목을 설정해야 합니다.</value>
+  </data>
+  <data name="UploadersConfigForm_UpdatePastebinStatus_NotLoggedIn" xml:space="preserve">
+    <value>로그인 되어있지 않음.</value>
+  </data>
+  <data name="UploadersConfigForm_UpdatePastebinStatus_LoggedIn" xml:space="preserve">
+    <value>로그인 되어있음.</value>
+  </data>
+  <data name="OAuthControl_Status_NotLoggedIn" xml:space="preserve">
+    <value>로그인 되어있지 않음.</value>
+  </data>
+  <data name="OAuthControl_Status_LoggedIn" xml:space="preserve">
+    <value>로그인 되어있음.</value>
+  </data>
+  <data name="OAuthControl_Status_LoginFailed" xml:space="preserve">
+    <value>로그인 실패.</value>
   </data>
 </root>

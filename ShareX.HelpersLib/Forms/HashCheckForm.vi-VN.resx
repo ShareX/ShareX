@@ -118,16 +118,16 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="$this.Text" xml:space="preserve">
-    <value>Kiểm tra Hash</value>
+    <value>ShareX - Kiểm tra Hash</value>
   </data>
   <data name="btnFilePathBrowse.Text" xml:space="preserve">
     <value>Duyệt...</value>
   </data>
   <data name="btnStartHashCheck.Text" xml:space="preserve">
-    <value>Bắt đầu</value>
+    <value>Kiểm tra</value>
   </data>
   <data name="lblFile.Text" xml:space="preserve">
-    <value>Đường dẫn tệp tin:</value>
+    <value>Đường dẫn tệp:</value>
   </data>
   <data name="lblHashType.Text" xml:space="preserve">
     <value>Kiểu Hash:</value>
@@ -137,5 +137,44 @@
   </data>
   <data name="lblTarget.Text" xml:space="preserve">
     <value>Đối tượng:</value>
+  </data>
+  <data name="lblHashCheckBase64.Text" xml:space="preserve">
+    <value>Base64:</value>
+  </data>
+  <data name="lblHashCheckBinary.Text" xml:space="preserve">
+    <value>Nhị phân:</value>
+  </data>
+  <data name="btnHashCheckCopyAll.Text" xml:space="preserve">
+    <value>Sao chép tất cả</value>
+  </data>
+  <data name="btnHashCheckDecodeHex.Text" xml:space="preserve">
+    <value>Giải mã</value>
+  </data>
+  <data name="btnHashCheckDecodeBinary.Text" xml:space="preserve">
+    <value>Giải mã</value>
+  </data>
+  <data name="btnHashCheckDecodeBase64.Text" xml:space="preserve">
+    <value>Giải mã</value>
+  </data>
+  <data name="btnHashCheckDecodeASCII.Text" xml:space="preserve">
+    <value>Giải mã</value>
+  </data>
+  <data name="btnHashCheckEncodeText.Text" xml:space="preserve">
+    <value>Nén</value>
+  </data>
+  <data name="tpFileHashCheck.Text" xml:space="preserve">
+    <value>Kiểm tra hash của tệp</value>
+  </data>
+  <data name="tpTextConversions.Text" xml:space="preserve">
+    <value>Chuyển đổi văn bản</value>
+  </data>
+  <data name="lblHashCheckText.Text" xml:space="preserve">
+    <value>Văn bản:</value>
+  </data>
+  <data name="lblHashCheckHex.Text" xml:space="preserve">
+    <value>Mã 16 (Hex):</value>
+  </data>
+  <data name="lblHashCheckHash.Text" xml:space="preserve">
+    <value>Hash:</value>
   </data>
 </root>

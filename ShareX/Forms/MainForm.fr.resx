@@ -198,9 +198,6 @@
   <data name="tsmiRuler.Text" xml:space="preserve">
     <value>Règle...</value>
   </data>
-  <data name="tsmiFTPClient.Text" xml:space="preserve">
-    <value>Client FTP...</value>
-  </data>
   <data name="tsmiTweetMessage.Text" xml:space="preserve">
     <value>Tweeter un message...</value>
   </data>
@@ -456,9 +453,6 @@
   <data name="tsmiTrayRuler.Text" xml:space="preserve">
     <value>Règle...</value>
   </data>
-  <data name="tsmiTrayFTPClient.Text" xml:space="preserve">
-    <value>Client FTP...</value>
-  </data>
   <data name="tsmiTrayTweetMessage.Text" xml:space="preserve">
     <value>Tweeter un message...</value>
   </data>
@@ -573,12 +567,6 @@
   <data name="tsmiTrayRectangleTransparent.Text" xml:space="preserve">
     <value>Région (Transparent)</value>
   </data>
-  <data name="tsmiTrayWebpageCapture.Text" xml:space="preserve">
-    <value>Capturer une page Web...</value>
-  </data>
-  <data name="tsmiWebpageCapture.Text" xml:space="preserve">
-    <value>Capturer une page Web...</value>
-  </data>
   <data name="tsmiTrayToggleHotkeys.Text" xml:space="preserve">
     <value>Désactiver les raccourcis clavier</value>
   </data>
@@ -586,7 +574,7 @@
     <value>Générateur de miniatures de vidéo...</value>
   </data>
   <data name="tsmiVideoThumbnailer.Text" xml:space="preserve">
-    <value>Générateur de miniatures vidéo...</value>
+    <value>Générateur de miniatures de vidéo...</value>
   </data>
   <data name="tsmiTrayImageCombiner.Text" xml:space="preserve">
     <value>Combineur d'images...</value>
@@ -623,12 +611,6 @@
   </data>
   <data name="tsmiHideColumns.Text" xml:space="preserve">
     <value>Cacher les colonnes</value>
-  </data>
-  <data name="pbPatreonOpen.ToolTip" xml:space="preserve">
-    <value>Ouvrir la page web de la campagne Patreon de ShareX</value>
-  </data>
-  <data name="pbPatreonHide.ToolTip" xml:space="preserve">
-    <value>Cacher le bouton Patreon de manière définitive</value>
   </data>
   <data name="tsmiTextCapture.Text" xml:space="preserve">
     <value>Capture de texte (OCR)...</value>
@@ -684,12 +666,6 @@
   <data name="tsmiOCRImage.Text" xml:space="preserve">
     <value>Image OCR...</value>
   </data>
-  <data name="tsmiAnnotateImage.Text" xml:space="preserve">
-    <value>Modifier l'image...</value>
-  </data>
-  <data name="tsmiTrayAnnotateImage.Text" xml:space="preserve">
-    <value>Modifier l'image...</value>
-  </data>
   <data name="tsmiSearchImage.Text" xml:space="preserve">
     <value>Rechercher une image avec Google...</value>
   </data>
@@ -707,5 +683,32 @@
   </data>
   <data name="tsbNews.Text" xml:space="preserve">
     <value>Nouveautés</value>
+  </data>
+  <data name="tsmiTrayUploadText.Text" xml:space="preserve">
+    <value>Mettre en ligne un texte...</value>
+  </data>
+  <data name="tsmiUploadText.Text" xml:space="preserve">
+    <value>Mettre en ligne un texte...</value>
+  </data>
+  <data name="tsmiImageThumbnailer.Text" xml:space="preserve">
+    <value>Générateur de miniatures d'image...</value>
+  </data>
+  <data name="tsmiTrayImageThumbnailer.Text" xml:space="preserve">
+    <value>Générateur de miniatures d'image...</value>
+  </data>
+  <data name="tsmiTrayShortenURL.Text" xml:space="preserve">
+    <value>Raccourcir l'URL...</value>
+  </data>
+  <data name="tsmiShortenURL.Text" xml:space="preserve">
+    <value>Raccourcir l'URL...</value>
+  </data>
+  <data name="tsmiCopyMarkdownImage.Text" xml:space="preserve">
+    <value>Image Markdown</value>
+  </data>
+  <data name="tsmiCopyMarkdownLink.Text" xml:space="preserve">
+    <value>Lien Markdown</value>
+  </data>
+  <data name="tsmiCopyMarkdownLinkedImage.Text" xml:space="preserve">
+    <value>Image liée Markdown</value>
   </data>
 </root>

@@ -121,7 +121,7 @@
     <value>ShareX - Lưu như thế nào?</value>
   </data>
   <data name="btnCancel.Text" xml:space="preserve">
-    <value>Không lưu</value>
+    <value>Không lưu lại</value>
   </data>
   <data name="btnNewName.Text" xml:space="preserve">
     <value>Dùng tên mới:</value>

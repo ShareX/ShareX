@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2017 ShareX Team
+    Copyright (c) 2007-2019 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.HelpersLib;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 
@@ -31,6 +32,20 @@ namespace ShareX.ScreenCaptureLib
     public class ArrowDrawingShape : LineDrawingShape
     {
         public override ShapeType ShapeType { get; } = ShapeType.DrawingArrow;
+
+        public bool ArrowHeadsBothSide { get; set; }
+
+        public override void OnConfigLoad()
+        {
+            base.OnConfigLoad();
+            ArrowHeadsBothSide = AnnotationOptions.ArrowHeadsBothSide;
+        }
+
+        public override void OnConfigSave()
+        {
+            base.OnConfigSave();
+            AnnotationOptions.ArrowHeadsBothSide = ArrowHeadsBothSide;
+        }
 
         protected override Pen CreatePen(Color borderColor, int borderSize)
         {
@@ -46,11 +61,16 @@ namespace ShareX.ScreenCaptureLib
                     BaseInset = arrowHeight - arrowCurve
                 };
 
-                return new Pen(borderColor, borderSize)
+                Pen pen = new Pen(borderColor, borderSize);
+                pen.CustomEndCap = lineCap;
+
+                if (ArrowHeadsBothSide && MathHelpers.Distance(Points[0], Points[Points.Length - 1]) > arrowHeight * borderSize * 2)
                 {
-                    CustomEndCap = lineCap,
-                    LineJoin = LineJoin.Round
-                };
+                    pen.CustomStartCap = lineCap;
+                }
+
+                pen.LineJoin = LineJoin.Round;
+                return pen;
             }
         }
     }

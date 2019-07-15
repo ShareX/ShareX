@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2017 ShareX Team
+    Copyright (c) 2007-2019 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -53,8 +53,10 @@ namespace ShareX.HelpersLib
                 if (text != value)
                 {
                     text = value;
-                    Refresh();
+
                     OnTextChanged(EventArgs.Empty);
+
+                    Invalidate();
                 }
             }
         }
@@ -71,7 +73,8 @@ namespace ShareX.HelpersLib
             set
             {
                 textAlign = value;
-                Refresh();
+
+                Invalidate();
             }
         }
 
@@ -87,7 +90,8 @@ namespace ShareX.HelpersLib
             set
             {
                 textShadowColor = value;
-                Refresh();
+
+                Invalidate();
             }
         }
 
@@ -103,7 +107,25 @@ namespace ShareX.HelpersLib
             set
             {
                 drawBorder = value;
-                Refresh();
+
+                Invalidate();
+            }
+        }
+
+        private bool autoEllipsis;
+
+        [DefaultValue(false)]
+        public bool AutoEllipsis
+        {
+            get
+            {
+                return autoEllipsis;
+            }
+            set
+            {
+                autoEllipsis = value;
+
+                Invalidate();
             }
         }
 
@@ -169,7 +191,16 @@ namespace ShareX.HelpersLib
                     break;
             }
 
-            TextRenderer.DrawText(g, Text, Font, new Rectangle(ClientRectangle.X, ClientRectangle.Y + 1, ClientRectangle.Width, ClientRectangle.Height + 1), TextShadowColor, tff);
+            if (AutoEllipsis)
+            {
+                tff |= TextFormatFlags.EndEllipsis;
+            }
+
+            if (TextShadowColor.A > 0)
+            {
+                TextRenderer.DrawText(g, Text, Font, ClientRectangle.LocationOffset(0, 1), TextShadowColor, tff);
+            }
+
             TextRenderer.DrawText(g, Text, Font, ClientRectangle, ForeColor, tff);
         }
     }

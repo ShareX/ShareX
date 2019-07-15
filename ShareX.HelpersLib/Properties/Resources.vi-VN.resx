@@ -130,7 +130,7 @@
     <value>Duyệt lấy tập tin thực thi...</value>
   </data>
   <data name="CssFileNameEditor_EditValue_Browse_for_a_Cascading_Style_Sheet___" xml:space="preserve">
-    <value>Duyệt lấy tệp CSS</value>
+    <value>Duyệt lấy tệp CSS...</value>
   </data>
   <data name="Stop" xml:space="preserve">
     <value>Dừng lại</value>
@@ -154,7 +154,7 @@
     <value>Kiểm tra cập nhật thất bại</value>
   </data>
   <data name="UpdateCheckerLabel_UpdateControls_A_newer_version_of_ShareX_is_available" xml:space="preserve">
-    <value>Có một phiên bản mới của {0}</value>
+    <value>Phiên bản mới của {0} khả dụng</value>
   </data>
   <data name="UpdateCheckerLabel_UpdateControls_ShareX_is_up_to_date" xml:space="preserve">
     <value>{0} đã được cập nhật</value>
@@ -193,7 +193,7 @@
     <value>Hủy bỏ</value>
   </data>
   <data name="MyMessageBox_MyMessageBox_Yes" xml:space="preserve">
-    <value>Có</value>
+    <value>Đồng ý</value>
   </data>
   <data name="MyMessageBox_MyMessageBox_No" xml:space="preserve">
     <value>Không</value>
@@ -255,7 +255,7 @@ Kích thước tệp: {2:n0} / {3:n0} KB</value>
     <value>Đang mở ảnh: {0}%</value>
   </data>
   <data name="DownloaderForm_fileDownloader_DownloadCompleted_Download_completed_" xml:space="preserve">
-    <value>Tải xuống thành công.</value>
+    <value>Tải về thành công.</value>
   </data>
   <data name="DownloaderForm_fileDownloader_DownloadCompleted_Install" xml:space="preserve">
     <value>Cài đặt</value>
@@ -264,7 +264,7 @@ Kích thước tệp: {2:n0} / {3:n0} KB</value>
     <value>Thư mục không tồn tại:</value>
   </data>
   <data name="Helpers_DownloadString_Download_failed_" xml:space="preserve">
-    <value>Tải xuống thất bại:</value>
+    <value>Tải về thất bại:</value>
   </data>
   <data name="GIFQuality_Bit4" xml:space="preserve">
     <value>Bộ lượng tử octree 16 màu (4 bit)</value>
@@ -351,19 +351,19 @@ Kích thước tệp: {2:n0} / {3:n0} KB</value>
     <value>Lấy màu từ màn hình</value>
   </data>
   <data name="HotkeyType_ScreenRecorder" xml:space="preserve">
-    <value>Ghi lại màn hình</value>
+    <value>Bắt đầu/Dừng ghi lại màn hình sử dụng vùng tự chọn</value>
   </data>
   <data name="HotkeyType_StopUploads" xml:space="preserve">
     <value>Dừng mọi tác vụ tải lên đang chạy</value>
   </data>
   <data name="HotkeyType_TweetMessage" xml:space="preserve">
-    <value>Tin nhắn tweet</value>
+    <value>Tweet tin nhắn</value>
   </data>
   <data name="HotkeyType_UploadURL" xml:space="preserve">
     <value>Tải lên từ URL</value>
   </data>
   <data name="FileDestination_CustomFileUploader" xml:space="preserve">
-    <value>Tùy chỉnh dịch vụ tải lên tệp tin</value>
+    <value>Dịch vụ tải lên tệp tin tùy chọn</value>
   </data>
   <data name="FileDestination_Email" xml:space="preserve">
     <value>Email</value>
@@ -375,7 +375,7 @@ Kích thước tệp: {2:n0} / {3:n0} KB</value>
     <value>Dịch vụ tải lên ảnh tùy chọn</value>
   </data>
   <data name="ImageDestination_FileUploader" xml:space="preserve">
-    <value>Dịch vụ tải lên tệp tin</value>
+    <value>Dịch vụ tải lên tệp</value>
   </data>
   <data name="ResponseType_Headers" xml:space="preserve">
     <value>Header trả về</value>
@@ -387,19 +387,19 @@ Kích thước tệp: {2:n0} / {3:n0} KB</value>
     <value>Văn bản trả về</value>
   </data>
   <data name="TextDestination_CustomTextUploader" xml:space="preserve">
-    <value>Tùy chỉnh dịch vụ tải lên văn bản</value>
+    <value>Dịch vụ tải lên văn bản tùy chọn</value>
   </data>
   <data name="TextDestination_FileUploader" xml:space="preserve">
-    <value>Dịch vụ tải lên file</value>
+    <value>Dịch vụ tải lên tệp</value>
   </data>
   <data name="URLSharingServices_Email" xml:space="preserve">
     <value>Email</value>
   </data>
   <data name="UrlShortenerType_CustomURLShortener" xml:space="preserve">
-    <value>Tùy chỉnh dịch vụ URL rút gọn</value>
+    <value>Dịch vụ rút gọn URL tùy chọn</value>
   </data>
   <data name="AfterCaptureTasks_AddImageEffects" xml:space="preserve">
-    <value>Thêm hiệu ứng ảnh / hình mờ (effects/watermark)</value>
+    <value>Thêm hiệu ứng ảnh / hình đóng dấu (effects/watermark)</value>
   </data>
   <data name="AfterCaptureTasks_AnnotateImage" xml:space="preserve">
     <value>Mở trong trình sửa ảnh</value>
@@ -426,7 +426,7 @@ Kích thước tệp: {2:n0} / {3:n0} KB</value>
     <value>Lưu ảnh vào tệp tin dưới dạng...</value>
   </data>
   <data name="AfterCaptureTasks_SaveThumbnailImageToFile" xml:space="preserve">
-    <value>Lưu ảnh thu nhỏ vào tệp tin</value>
+    <value>Lưu ảnh thu nhỏ/thumbnail vào tệp tin</value>
   </data>
   <data name="AfterCaptureTasks_SendImageToPrinter" xml:space="preserve">
     <value>In ảnh</value>
@@ -456,7 +456,7 @@ Kích thước tệp: {2:n0} / {3:n0} KB</value>
     <value>Không lưu lại</value>
   </data>
   <data name="FileExistAction_Overwrite" xml:space="preserve">
-    <value>Ghi đè</value>
+    <value>Ghi đè tệp</value>
   </data>
   <data name="FileExistAction_UniqueName" xml:space="preserve">
     <value>Thêm số vào tên tệp</value>
@@ -477,26 +477,26 @@ Kích thước tệp: {2:n0} / {3:n0} KB</value>
     <value>Bắt đầu chụp tự động dùng vùng lần trước</value>
   </data>
   <data name="HotkeyType_StartScreenRecorder" xml:space="preserve">
-    <value>Bắt đầu ghi lại màn hình sử dụng vùng lần trước</value>
+    <value>Bắt đầu/Dừng ghi lại màn hình sử dụng vùng lần trước</value>
   </data>
   <data name="UpdateMessageBox_UpdateMessageBox_" xml:space="preserve">
-    <value>Phiên bản mới hơn của {0} đã có.
+    <value>Phiên bản mới hơn của {0} khả dụng.
 Bạn có muốn tải về và cài đặt không?</value>
   </data>
   <data name="UpdateMessageBox_UpdateMessageBox_update_is_available" xml:space="preserve">
-    <value>Bản cập nhật có sẵn</value>
+    <value>Bản cập nhật khả dụng</value>
   </data>
   <data name="Helpers_CreateDirectoryIfNotExist_Create_failed_" xml:space="preserve">
     <value>Không thể tạo đường dẫn.</value>
   </data>
   <data name="HotkeyType_ColorPicker" xml:space="preserve">
-    <value>Trình chọn màu sắc</value>
+    <value>Chọn màu sắc</value>
   </data>
   <data name="HotkeyType_ScreenRecorderGIF" xml:space="preserve">
-    <value>Ghi lại màn hình (dạng ảnh GIF)</value>
+    <value>Bắt đầu/Dừng ghi lại màn hình (dạng ảnh GIF) sử dụng vùng tự chọn</value>
   </data>
   <data name="HotkeyType_StartScreenRecorderGIF" xml:space="preserve">
-    <value>Bắt đầu ghi lại màn hình (dạng ảnh GIF) sử dụng vùng lần trước</value>
+    <value>Bắt đầu/Dừng ghi lại màn hình (dạng ảnh GIF) sử dụng vùng lần trước</value>
   </data>
   <data name="HotkeyType_RectangleTransparent" xml:space="preserve">
     <value>Chụp theo vùng (Trong suốt)</value>
@@ -610,13 +610,13 @@ Bạn có muốn tải về và cài đặt không?</value>
     <value>Chụp màn hình</value>
   </data>
   <data name="HotkeyType_ScreenRecorderActiveWindow" xml:space="preserve">
-    <value>Bắt đầu ghi lại màn hình sử dụng vùng cửa sổ đang hoạt động</value>
+    <value>Bắt đầu/Dừng ghi lại màn hình sử dụng vùng cửa sổ đang hoạt động</value>
   </data>
   <data name="HotkeyType_ScreenRecorderActiveWindow_Category" xml:space="preserve">
     <value>Ghi lại màn hình</value>
   </data>
   <data name="HotkeyType_ScreenRecorderGIFActiveWindow" xml:space="preserve">
-    <value>Bắt đầu ghi lại màn hình (dạng ảnh GIF) sử dụng vùng cửa sổ đang hoạt động</value>
+    <value>Bắt đầu/Dừng ghi lại màn hình (dạng ảnh GIF) sử dụng vùng cửa sổ đang hoạt động</value>
   </data>
   <data name="HotkeyType_ScreenRecorderGIFActiveWindow_Category" xml:space="preserve">
     <value>Ghi lại màn hình</value>
@@ -646,25 +646,25 @@ Bạn có muốn tải về và cài đặt không?</value>
     <value>Chụp màn hình</value>
   </data>
   <data name="HotkeyType_DisableHotkeys" xml:space="preserve">
-    <value>Vô hiệu hóa/Kích hoạt hotkey</value>
+    <value>Tắt/Bật phím tắt</value>
   </data>
   <data name="HotkeyType_DisableHotkeys_Category" xml:space="preserve">
     <value>Khác</value>
   </data>
   <data name="ReplCodeMenuEntry_ia_Auto_increment_alphanumeric" xml:space="preserve">
-    <value>Auto increment alphanumeric case-insensitive. 0 pad left using {n}</value>
+    <value>Tự tăng theo chữ và số không phân biệt chữ viết hoa/thường. Chèn 0 bên trái sử dụng {n}</value>
   </data>
   <data name="ReplCodeMenuEntry_ix_Auto_increment_hexadecimal" xml:space="preserve">
-    <value>Auto increment hexadecimal. 0 pad left using {n}</value>
+    <value>Tự tăng theo hệ 16. Chèn 0 bên trái sử dụng {n}</value>
   </data>
   <data name="ReplCodeMenuEntry_rx_Random_hexadecimal" xml:space="preserve">
     <value>Kí tự hệ cơ số 16. Lặp lại dùng {n}</value>
   </data>
   <data name="ReplCodeMenuEntry_iAa_Auto_increment_alphanumeric_all" xml:space="preserve">
-    <value>Auto increment alphanumeric case-sensitive. 0 pad left using {n}</value>
+    <value>Tự tăng theo chữ và số có phân biệt chữ viết hoa/thường. Chèn 0 bên trái sử dụng {n}</value>
   </data>
   <data name="ReplCodeMenuEntry_ib_Auto_increment_base_alphanumeric" xml:space="preserve">
-    <value>Auto increment by base {n} using alphanumeric (1 &lt; n &lt; 63)</value>
+    <value>Tự tăng theo hệ cơ số {n} sử dụng chữ và số (1 &lt; n &lt; 63)</value>
   </data>
   <data name="ReplCodeMenuEntry_guid_Random_guid" xml:space="preserve">
     <value>GUID ngẫu nhiên</value>
@@ -700,7 +700,7 @@ Bạn có muốn tải về và cài đặt không?</value>
     <value>Công cụ</value>
   </data>
   <data name="HotkeyType_VideoThumbnailer" xml:space="preserve">
-    <value>Trình tạo ảnh thu nhỏ cho video</value>
+    <value>Trình tạo ảnh thu nhỏ/thumbnail cho video</value>
   </data>
   <data name="HotkeyType_VideoThumbnailer_Category" xml:space="preserve">
     <value>Công cụ</value>
@@ -742,7 +742,7 @@ Bạn có muốn tải về và cài đặt không?</value>
     <value>Giờ hiện tại</value>
   </data>
   <data name="DNSChangerForm_DNSChangerForm_Manual" xml:space="preserve">
-    <value>Tự thiết lập</value>
+    <value>Thủ công</value>
   </data>
   <data name="ReplCodeMenuEntry_height_Gets_image_height" xml:space="preserve">
     <value>Chiều cao của ảnh</value>
@@ -763,7 +763,7 @@ Bạn có muốn tải về và cài đặt không?</value>
     <value>Chiều rộng của ảnh</value>
   </data>
   <data name="ReplCodeMenuEntry_un_User_name" xml:space="preserve">
-    <value>Tên tài khoản</value>
+    <value>Tên người dùng</value>
   </data>
   <data name="ReplCodeMenuEntry_pm_Gets_AM_PM" xml:space="preserve">
     <value>Lấy AM/PM (Sáng/Chiều)</value>
@@ -781,6 +781,370 @@ Bạn có muốn tải về và cài đặt không?</value>
     <value>Kí tự hệ bảng chữ cái &amp; số. Lặp lại dùng {n}</value>
   </data>
   <data name="ReplCodeMenuEntry_i_Auto_increment_number" xml:space="preserve">
-    <value>Auto increment number. 0 pad left using {n}</value>
+    <value>Tự tăng số. Chèn 0 bên trái sử dụng {n}</value>
+  </data>
+  <data name="PastebinExpiration_D1" xml:space="preserve">
+    <value>1 Ngày</value>
+  </data>
+  <data name="PastebinExpiration_H1" xml:space="preserve">
+    <value>1 Giờ</value>
+  </data>
+  <data name="PastebinExpiration_M1" xml:space="preserve">
+    <value>1 Tháng</value>
+  </data>
+  <data name="PastebinExpiration_W1" xml:space="preserve">
+    <value>1 Tuần</value>
+  </data>
+  <data name="PastebinExpiration_M10" xml:space="preserve">
+    <value>10 Phút</value>
+  </data>
+  <data name="PastebinExpiration_W2" xml:space="preserve">
+    <value>2 Tuần</value>
+  </data>
+  <data name="PNGBitDepth_Bit24" xml:space="preserve">
+    <value>24 bit</value>
+  </data>
+  <data name="PNGBitDepth_Bit32" xml:space="preserve">
+    <value>32 bit</value>
+  </data>
+  <data name="UpdateMessageBox_UpdateMessageBox_Portable" xml:space="preserve">
+    <value>Phiên bản mới hơn của {0} khả dụng.
+Bạn có muốn tải về không?</value>
+  </data>
+  <data name="HotkeyType_AbortScreenRecording" xml:space="preserve">
+    <value>Dừng ghi lại màn hình</value>
+  </data>
+  <data name="ImageEditorStartMode_AutoSize" xml:space="preserve">
+    <value>Tự động chỉnh kích thước</value>
+  </data>
+  <data name="PNGBitDepth_Automatic" xml:space="preserve">
+    <value>Tự động phát hiện</value>
+  </data>
+  <data name="ScrollingCaptureScrollMethod_Automatic" xml:space="preserve">
+    <value>Tự động thử tất cả các phương thức tới khi một cái làm được</value>
+  </data>
+  <data name="LinearGradientMode_BackwardDiagonal" xml:space="preserve">
+    <value>Kẻ chéo về phía sau</value>
+  </data>
+  <data name="ImageEditorInterpolationMode_Bicubic" xml:space="preserve">
+    <value>Bicubic</value>
+  </data>
+  <data name="ImgurThumbnailType_Big_Square" xml:space="preserve">
+    <value>Hình vuông lớn</value>
+  </data>
+  <data name="ImageEditorInterpolationMode_Bilinear" xml:space="preserve">
+    <value>Bilinear</value>
+  </data>
+  <data name="WavFileNameEditor_EditValue_Browse_for_a_sound_file___" xml:space="preserve">
+    <value>Duyệt lấy tệp âm thanh...</value>
+  </data>
+  <data name="RegionCaptureAction_CancelCapture" xml:space="preserve">
+    <value>Hủy chụp hình</value>
+  </data>
+  <data name="RegionCaptureAction_CaptureActiveMonitor" xml:space="preserve">
+    <value>Chụp màn hình đang hoạt động</value>
+  </data>
+  <data name="RegionCaptureAction_CaptureFullscreen" xml:space="preserve">
+    <value>Chụp toàn màn hình</value>
+  </data>
+  <data name="Helpers_BrowseFile_Choose_file" xml:space="preserve">
+    <value>Chọn tệp</value>
+  </data>
+  <data name="Helpers_BrowseFolder_Choose_folder" xml:space="preserve">
+    <value>Chọn thư mục</value>
+  </data>
+  <data name="UpdateMessageBox_UpdateMessageBox_CurrentVersion" xml:space="preserve">
+    <value>Phiên bản hiện tại</value>
+  </data>
+  <data name="URLSharingServices_CustomURLSharingService" xml:space="preserve">
+    <value>Dịch vụ chia sẻ URL tùy chọn</value>
+  </data>
+  <data name="PNGBitDepth_Default" xml:space="preserve">
+    <value>Mặc định</value>
+  </data>
+  <data name="ScrollingCaptureScrollTopMethod_None" xml:space="preserve">
+    <value>Vô hiệu hóa cuộn lên trên cùng</value>
+  </data>
+  <data name="RegionCaptureAction_None" xml:space="preserve">
+    <value>Không làm gì</value>
+  </data>
+  <data name="ShapeType_DrawingArrow" xml:space="preserve">
+    <value>Vẽ: Mũi tên (A)</value>
+  </data>
+  <data name="ShapeType_DrawingCursor" xml:space="preserve">
+    <value>Vẽ: Dùng chuột</value>
+  </data>
+  <data name="ShapeType_DrawingEllipse" xml:space="preserve">
+    <value>Vẽ: Hình E-líp (E)</value>
+  </data>
+  <data name="ShapeType_DrawingFreehand" xml:space="preserve">
+    <value>Vẽ: Thủ công (F)</value>
+  </data>
+  <data name="ShapeType_DrawingImage" xml:space="preserve">
+    <value>Vẽ: Chèn ảnh (từ tệp)</value>
+  </data>
+  <data name="ShapeType_DrawingImageScreen" xml:space="preserve">
+    <value>Vẽ: Chèn ảnh (từ màn hình)</value>
+  </data>
+  <data name="ShapeType_DrawingLine" xml:space="preserve">
+    <value>Vẽ: Đường thẳng (L)</value>
+  </data>
+  <data name="ShapeType_DrawingRectangle" xml:space="preserve">
+    <value>Vẽ: Hình chữ nhật (R)</value>
+  </data>
+  <data name="ShapeType_DrawingSpeechBalloon" xml:space="preserve">
+    <value>Vẽ: Hộp hội thoại (S)</value>
+  </data>
+  <data name="ShapeType_DrawingStep" xml:space="preserve">
+    <value>Vẽ: Bước chỉ dẫn (I)</value>
+  </data>
+  <data name="ShapeType_DrawingSticker" xml:space="preserve">
+    <value>Vẽ: Sticker</value>
+  </data>
+  <data name="ShapeType_DrawingTextBackground" xml:space="preserve">
+    <value>Vẽ: Viết chữ (Có màu nền) (T)</value>
+  </data>
+  <data name="ShapeType_DrawingTextOutline" xml:space="preserve">
+    <value>Vẽ: Viết chữ (Có viền) (O)</value>
+  </data>
+  <data name="ShapeType_EffectBlur" xml:space="preserve">
+    <value>Hiệu ứng: Làm mờ (B)</value>
+  </data>
+  <data name="ShapeType_EffectHighlight" xml:space="preserve">
+    <value>Hiệu ứng: Đánh dấu (H)</value>
+  </data>
+  <data name="ShapeType_EffectPixelate" xml:space="preserve">
+    <value>Hiệu ứng: Điểm ảnh hóa (P)</value>
+  </data>
+  <data name="HotkeyType_ExitShareX" xml:space="preserve">
+    <value>Thoát ShareX</value>
+  </data>
+  <data name="Helpers_OpenFile_File_not_exist_" xml:space="preserve">
+    <value>Tệp không tồn tại:</value>
+  </data>
+  <data name="CustomUploaderDestinationType_FileUploader" xml:space="preserve">
+    <value>Dịch vụ tải lên tệp</value>
+  </data>
+  <data name="ScrollingCaptureScrollTopMethod_All" xml:space="preserve">
+    <value>Đầu tiên mô phỏng nhấn phím"Home" sau đó gửi thông báo cuộn lên trên cùng</value>
+  </data>
+  <data name="LinearGradientMode_ForwardDiagonal" xml:space="preserve">
+    <value>Kẻ chéo về phía trước</value>
+  </data>
+  <data name="ImageEditorStartMode_Fullscreen" xml:space="preserve">
+    <value>Toàn màn hình</value>
+  </data>
+  <data name="LinearGradientMode_Vertical" xml:space="preserve">
+    <value>Chiều dọc</value>
+  </data>
+  <data name="HotkeyType_ShortenURL" xml:space="preserve">
+    <value>Rút gọn URL</value>
+  </data>
+  <data name="AfterCaptureTasks_ShowAfterCaptureWindow" xml:space="preserve">
+    <value>Hiện cửa sổ "Sau khi chụp"</value>
+  </data>
+  <data name="AfterUploadTasks_ShowAfterUploadWindow" xml:space="preserve">
+    <value>Hiện cửa sổ "Sau khi tải lên"</value>
+  </data>
+  <data name="AfterCaptureTasks_ShowBeforeUploadWindow" xml:space="preserve">
+    <value>Hiện cửa sổ "Trước khi tải lên"</value>
+  </data>
+  <data name="AfterCaptureTasks_ShowInExplorer" xml:space="preserve">
+    <value>Hiện tệp trong trình duyệt tệp/explorer</value>
+  </data>
+  <data name="CodeMenuEntryFilename_RandomAdjective" xml:space="preserve">
+    <value>Tính từ ngẫu nhiên</value>
+  </data>
+  <data name="CustomUploaderDestinationType_TextUploader" xml:space="preserve">
+    <value>Dịch vụ tải lên văn bản</value>
+  </data>
+  <data name="HotkeyType_TextCapture" xml:space="preserve">
+    <value>Lấy văn bản (Nhận dạng kí tự)</value>
+  </data>
+  <data name="YouTubeVideoPrivacy_Unlisted" xml:space="preserve">
+    <value>Không công khai</value>
+  </data>
+  <data name="PastebinPrivacy_Unlisted" xml:space="preserve">
+    <value>Không công khai</value>
+  </data>
+  <data name="HotkeyType_ShortenURL_Category" xml:space="preserve">
+    <value>Tải lên</value>
+  </data>
+  <data name="HotkeyType_UploadText_Category" xml:space="preserve">
+    <value>Tải lên</value>
+  </data>
+  <data name="HotkeyType_UploadText" xml:space="preserve">
+    <value>Tải lên văn bản</value>
+  </data>
+  <data name="CustomUploaderDestinationType_URLSharingService" xml:space="preserve">
+    <value>Dịch vụ chia sẻ URL</value>
+  </data>
+  <data name="CustomUploaderDestinationType_URLShortener" xml:space="preserve">
+    <value>Dịch vụ rút gọn URL</value>
+  </data>
+  <data name="HotkeyType_AbortScreenRecording_Category" xml:space="preserve">
+    <value>Ghi lại màn hình</value>
+  </data>
+  <data name="HotkeyType_ScreenRecorderGIFCustomRegion_Category" xml:space="preserve">
+    <value>Ghi lại màn hình</value>
+  </data>
+  <data name="HotkeyType_ScreenRecorderCustomRegion_Category" xml:space="preserve">
+    <value>Ghi lại màn hình</value>
+  </data>
+  <data name="AmazonS3StorageClass_STANDARD" xml:space="preserve">
+    <value>Lưu trữ tiêu chuẩn</value>
+  </data>
+  <data name="AmazonS3StorageClass_STANDARD_IA" xml:space="preserve">
+    <value>Lưu trữ ít truy cập tiêu chuẩn</value>
+  </data>
+  <data name="ImageEditorInterpolationMode_HighQualityBicubic" xml:space="preserve">
+    <value>Bicubic chất lượng cao</value>
+  </data>
+  <data name="ImageEditorInterpolationMode_HighQualityBilinear" xml:space="preserve">
+    <value>Bilinear chất lượng cao</value>
+  </data>
+  <data name="UpdateMessageBox_UpdateMessageBox_LatestVersion" xml:space="preserve">
+    <value>Phiên bản mới nhất</value>
+  </data>
+  <data name="ImageEditorInterpolationMode_NearestNeighbor" xml:space="preserve">
+    <value>Nearest neighbor</value>
+  </data>
+  <data name="PastebinExpiration_N" xml:space="preserve">
+    <value>Không bao giờ</value>
+  </data>
+  <data name="ImageEditorStartMode_Normal" xml:space="preserve">
+    <value>Bình thường</value>
+  </data>
+  <data name="HotkeyType_ToggleActionsToolbar_Category" xml:space="preserve">
+    <value>Khác</value>
+  </data>
+  <data name="HotkeyType_OpenImageHistory_Category" xml:space="preserve">
+    <value>Khác</value>
+  </data>
+  <data name="HotkeyType_OpenMainWindow_Category" xml:space="preserve">
+    <value>Khác</value>
+  </data>
+  <data name="HotkeyType_OpenMainWindow" xml:space="preserve">
+    <value>Hiện cửa sổ chính</value>
+  </data>
+  <data name="HotkeyType_OpenHistory" xml:space="preserve">
+    <value>Mở cửa sổ lịch sử</value>
+  </data>
+  <data name="HotkeyType_OpenImageHistory" xml:space="preserve">
+    <value>Mở cửa sổ lịch sử hình ảnh</value>
+  </data>
+  <data name="HotkeyType_OpenHistory_Category" xml:space="preserve">
+    <value>Khác</value>
+  </data>
+  <data name="HotkeyType_ExitShareX_Category" xml:space="preserve">
+    <value>Khác</value>
+  </data>
+  <data name="ImageEditorStartMode_PreviousState" xml:space="preserve">
+    <value>Trạng thái trước</value>
+  </data>
+  <data name="YouTubeVideoPrivacy_Private" xml:space="preserve">
+    <value>Riêng tư</value>
+  </data>
+  <data name="PastebinPrivacy_Private" xml:space="preserve">
+    <value>Riêng tư (chỉ cho thành viên)</value>
+  </data>
+  <data name="PastebinPrivacy_Public" xml:space="preserve">
+    <value>Công khai</value>
+  </data>
+  <data name="YouTubeVideoPrivacy_Public" xml:space="preserve">
+    <value>Công khai</value>
+  </data>
+  <data name="CodeMenuEntryFilename_RandomAnimal" xml:space="preserve">
+    <value>Động vật ngẫu nhiên</value>
+  </data>
+  <data name="AfterCaptureTasks_ScanQRCode" xml:space="preserve">
+    <value>Quét mã QR</value>
+  </data>
+  <data name="HotkeyType_TextCapture_Category" xml:space="preserve">
+    <value>Chụp màn hình</value>
+  </data>
+  <data name="AfterCaptureTasks_DoOCR" xml:space="preserve">
+    <value>Nhận dạng chữ (OCR)</value>
+  </data>
+  <data name="AfterCaptureTasks_ShowQuickTaskMenu" xml:space="preserve">
+    <value>Hiện menu tác vụ nhanh</value>
+  </data>
+  <data name="RegionCaptureAction_RemoveShapeCancelCapture" xml:space="preserve">
+    <value>Xóa hình hoặc hủy chụp</value>
+  </data>
+  <data name="HotkeyType_ToggleActionsToolbar" xml:space="preserve">
+    <value>Bật/Tắt thanh công cụ hành động</value>
+  </data>
+  <data name="ScrollingCaptureScrollMethod_MouseWheel" xml:space="preserve">
+    <value>Mô phỏng cuộn chuột</value>
+  </data>
+  <data name="CustomUploaderDestinationType_ImageUploader" xml:space="preserve">
+    <value>Trình tải lên ảnh</value>
+  </data>
+  <data name="ShapeType_RegionEllipse" xml:space="preserve">
+    <value>Vùng: E-líp</value>
+  </data>
+  <data name="LinearGradientMode_Horizontal" xml:space="preserve">
+    <value>Chiều ngang</value>
+  </data>
+  <data name="ScrollingCaptureScrollTopMethod_SendMessageTop" xml:space="preserve">
+    <value>Gửi thông báo cuộn lên trên cùng</value>
+  </data>
+  <data name="ResponseType_LocationHeader" xml:space="preserve">
+    <value>Vị trí header</value>
+  </data>
+  <data name="RegionCaptureAction_RemoveShape" xml:space="preserve">
+    <value>Xóa bỏ hình</value>
+  </data>
+  <data name="ScrollingCaptureScrollMethod_KeyPressPageDown" xml:space="preserve">
+    <value>Mô phỏng nhấn phím "Page down"</value>
+  </data>
+  <data name="ShapeType_ToolCrop" xml:space="preserve">
+    <value>Công cụ: Cắt ảnh (C)</value>
+  </data>
+  <data name="URLSharingServices_GoogleImageSearch" xml:space="preserve">
+    <value>Tìm kiếm hình ảnh trên Google</value>
+  </data>
+  <data name="ScrollingCaptureScrollTopMethod_KeyPressHome" xml:space="preserve">
+    <value>Mô phỏng nhấn phím "Home"</value>
+  </data>
+  <data name="ImgurThumbnailType_Small_Square" xml:space="preserve">
+    <value>Hình vuông nhỏ</value>
+  </data>
+  <data name="ReplCodeMenuEntry_rf_Random_line_from_file" xml:space="preserve">
+    <value>Dòng ngẫu nhiên từ một tệp. Dùng {filepath} để chỉ định tệp</value>
+  </data>
+  <data name="ImgurThumbnailType_Large_Thumbnail" xml:space="preserve">
+    <value>Ảnh thu nhỏ/thumbnail cỡ lớn</value>
+  </data>
+  <data name="ImgurThumbnailType_Huge_Thumbnail" xml:space="preserve">
+    <value>Ảnh thu nhỏ/thumbnail cỡ rất lớn</value>
+  </data>
+  <data name="HotkeyType_ScreenRecorderGIFCustomRegion" xml:space="preserve">
+    <value>Bắt đầu/Dừng ghi hình màn hình (dùng GIF) sử dụng vùng đã chỉ </value>
+  </data>
+  <data name="ImageEditorStartMode_Maximized" xml:space="preserve">
+    <value>Tối đa</value>
+  </data>
+  <data name="ImgurThumbnailType_Medium_Thumbnail" xml:space="preserve">
+    <value>Ảnh thu nhỏ/thumbnail cỡ vừa</value>
+  </data>
+  <data name="ShapeType_RegionFreehand" xml:space="preserve">
+    <value>Vùng: Tự vẽ</value>
+  </data>
+  <data name="ShapeType_RegionRectangle" xml:space="preserve">
+    <value>Vùng: Chữ nhật</value>
+  </data>
+  <data name="ScrollingCaptureScrollMethod_SendMessageScroll" xml:space="preserve">
+    <value>Gửi thông báo cuộn trang tới cửa sổ hoặc bảng điều khiển</value>
+  </data>
+  <data name="ImgurThumbnailType_Small_Thumbnail" xml:space="preserve">
+    <value>Hình thu nhỏ/thumbnail cỡ nhỏ</value>
+  </data>
+  <data name="HotkeyType_ScreenRecorderCustomRegion" xml:space="preserve">
+    <value>Bắt đầu/Dừng ghi lại màn hình sử dụng vùng được thiết lập trước</value>
+  </data>
+  <data name="RegionCaptureAction_SwapToolType" xml:space="preserve">
+    <value>Hoán đổi kiểu công cụ</value>
   </data>
 </root>

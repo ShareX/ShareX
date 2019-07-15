@@ -123,7 +123,7 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="lblIssueId.Location" type="System.Drawing.Point, System.Drawing">
-    <value>19, 9</value>
+    <value>13, 9</value>
   </data>
   <data name="lblIssueId.Size" type="System.Drawing.Size, System.Drawing">
     <value>47, 13</value>
@@ -157,7 +157,7 @@
     <value>72, 6</value>
   </data>
   <data name="txtIssueId.Size" type="System.Drawing.Size, System.Drawing">
-    <value>153, 20</value>
+    <value>152, 20</value>
   </data>
   <data name="txtIssueId.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -184,7 +184,7 @@
     <value>3, 16</value>
   </data>
   <data name="lblSummary.Size" type="System.Drawing.Size, System.Drawing">
-    <value>207, 41</value>
+    <value>210, 41</value>
   </data>
   <data name="lblSummary.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -204,11 +204,14 @@
   <data name="btnUpload.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
   </data>
+  <data name="btnUpload.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="btnUpload.Location" type="System.Drawing.Point, System.Drawing">
-    <value>147, 98</value>
+    <value>120, 98</value>
   </data>
   <data name="btnUpload.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
+    <value>104, 23</value>
   </data>
   <data name="btnUpload.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -232,10 +235,10 @@
     <value>Bottom, Left</value>
   </data>
   <data name="btnCancel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>18, 98</value>
+    <value>8, 98</value>
   </data>
   <data name="btnCancel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
+    <value>104, 23</value>
   </data>
   <data name="btnCancel.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -259,10 +262,10 @@
     <value>Top, Bottom, Left, Right</value>
   </data>
   <data name="gpSummary.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 32</value>
+    <value>8, 32</value>
   </data>
   <data name="gpSummary.Size" type="System.Drawing.Size, System.Drawing">
-    <value>213, 60</value>
+    <value>216, 60</value>
   </data>
   <data name="gpSummary.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -290,6 +293,9 @@
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>237, 127</value>
+  </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>

@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2017 ShareX Team
+    Copyright (c) 2007-2019 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -24,16 +24,29 @@
 #endregion License Information (GPL v3)
 
 using Newtonsoft.Json;
+using ShareX.HelpersLib;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
+using System.Threading.Tasks;
 
 namespace ShareX.UploadersLib.OtherServices
 {
     public enum OCRSpaceLanguages
     {
+        [Description("Arabic")]
+        ara,
+        [Description("Bulgarian")]
+        bul,
+        [Description("Chinese (Simplified)")]
+        chs,
+        [Description("Chinese (Traditional)")]
+        cht,
+        [Description("Croatian")]
+        hrv,
         [Description("Czech")]
-        ce,
+        cze,
         [Description("Danish")]
         dan,
         [Description("Dutch")]
@@ -46,34 +59,32 @@ namespace ShareX.UploadersLib.OtherServices
         fre,
         [Description("German")]
         ger,
+        [Description("Greek")]
+        gre,
         [Description("Hungarian")]
         hun,
+        [Description("Korean")]
+        kor,
         [Description("Italian")]
         ita,
+        [Description("Japanese")]
+        jpn,
         [Description("Norwegian")]
         nor,
         [Description("Polish")]
         pol,
         [Description("Portuguese")]
         por,
+        [Description("Russian")]
+        rus,
+        [Description("Slovenian")]
+        slv,
         [Description("Spanish")]
         spa,
         [Description("Swedish")]
         swe,
-        [Description("Chinese Simplified")]
-        chs,
-        [Description("Greek")]
-        gre,
-        [Description("Japanese")]
-        jpn,
-        [Description("Russian")]
-        rus,
         [Description("Turkish")]
-        tur,
-        [Description("Chinese Traditional")]
-        cht,
-        [Description("Korean")]
-        kor
+        tur
     }
 
     public class OCRSpace : Uploader
@@ -83,11 +94,13 @@ namespace ShareX.UploadersLib.OtherServices
         private const string APIURLAsia = "https://apipro3.ocr.space/parse/image";
         private const string APIURLFree = "https://api.ocr.space/parse/image";
 
+        public string APIKey { get; set; }
         public OCRSpaceLanguages Language { get; set; } = OCRSpaceLanguages.eng;
         public bool Overlay { get; set; }
 
-        public OCRSpace(OCRSpaceLanguages language = OCRSpaceLanguages.eng, bool overlay = false)
+        public OCRSpace(string apiKey, OCRSpaceLanguages language = OCRSpaceLanguages.eng, bool overlay = false)
         {
+            APIKey = apiKey;
             Language = language;
             Overlay = overlay;
         }
@@ -95,12 +108,16 @@ namespace ShareX.UploadersLib.OtherServices
         public OCRSpaceResponse DoOCR(Stream stream, string fileName)
         {
             Dictionary<string, string> arguments = new Dictionary<string, string>();
-            arguments.Add("apikey", APIKeys.OCRSpaceAPIKey);
-            //arguments.Add("url", "");
+            arguments.Add("apikey", APIKey);
             arguments.Add("language", Language.ToString());
             arguments.Add("isOverlayRequired", Overlay.ToString());
 
             UploadResult ur = SendRequestFile(APIURLUSA, stream, fileName, "file", arguments);
+
+            if (!ur.IsSuccess)
+            {
+                ur = SendRequestFile(APIURLEurope, stream, fileName, "file", arguments);
+            }
 
             if (ur.IsSuccess)
             {
@@ -108,6 +125,33 @@ namespace ShareX.UploadersLib.OtherServices
             }
 
             return null;
+        }
+
+        public static string DoOCR(OCRSpaceLanguages language, Stream stream, string fileName)
+        {
+            string result = null;
+
+            try
+            {
+                OCRSpace ocr = new OCRSpace(APIKeys.OCRSpaceAPIKey, language);
+                OCRSpaceResponse response = ocr.DoOCR(stream, fileName);
+
+                if (response != null && !response.IsErroredOnProcessing && response.ParsedResults.Count > 0)
+                {
+                    result = response.ParsedResults[0].ParsedText;
+                }
+            }
+            catch (Exception e)
+            {
+                DebugHelper.WriteException(e);
+            }
+
+            return result;
+        }
+
+        public static Task<string> DoOCRAsync(OCRSpaceLanguages language, Stream stream, string fileName)
+        {
+            return Task.Run(() => DoOCR(language, stream, fileName));
         }
     }
 

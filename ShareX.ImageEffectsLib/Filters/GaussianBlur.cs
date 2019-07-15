@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2017 ShareX Team
+    Copyright (c) 2007-2019 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using System;
 using System.ComponentModel;
 using System.Drawing;
 
@@ -32,11 +33,54 @@ namespace ShareX.ImageEffectsLib
     [Description("Gaussian blur")]
     internal class GaussianBlur : ImageEffect
     {
+        private double sigma;
+        private int size;
+
+        [DefaultValue(0.7955555)]
+        public double Sigma
+        {
+            get => sigma;
+            set => sigma = Math.Max(value, 0.1);
+        }
+
+        [DefaultValue(3)]
+        public int Size
+        {
+            get => size;
+            set
+            {
+                size = value.Max(1);
+
+                if (size.IsEvenNumber())
+                {
+                    size++;
+                }
+            }
+        }
+
+        public GaussianBlur()
+        {
+            this.ApplyDefaultPropertyValues();
+        }
+
         public override Image Apply(Image img)
         {
-            using (img)
+            ConvolutionMatrix kernelHoriz = ConvolutionMatrixManager.GaussianBlur(1, size, sigma);
+
+            ConvolutionMatrix kernelVert = new ConvolutionMatrix(size, 1)
             {
-                return ConvolutionMatrixManager.GaussianBlur().Apply(img);
+                ConsiderAlpha = kernelHoriz.ConsiderAlpha
+            };
+
+            for (int i = 0; i < size; i++)
+            {
+                kernelVert[i, 0] = kernelHoriz[0, i];
+            }
+
+            using (img)
+            using (Image horizPass = kernelHoriz.Apply(img))
+            {
+                return kernelVert.Apply(horizPass);
             }
         }
     }

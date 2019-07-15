@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2017 ShareX Team
+    Copyright (c) 2007-2019 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -23,144 +23,222 @@
 
 #endregion License Information (GPL v3)
 
-using Gma.QrCodeNet.Encoding;
-using Gma.QrCodeNet.Encoding.Windows.Render;
 using ShareX.HelpersLib;
+using ShareX.Properties;
+using ShareX.ScreenCaptureLib;
 using System;
 using System.Drawing;
-using System.Drawing.Imaging;
 using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading;
 using System.Windows.Forms;
+using ZXing;
+using ZXing.Common;
+using ZXing.Rendering;
 
 namespace ShareX
 {
     public partial class QRCodeForm : Form
     {
-        public bool EditMode { get; set; }
+        private bool isReady;
 
         public QRCodeForm(string text = null)
         {
             InitializeComponent();
-            Icon = ShareXResources.Icon;
-            ClientSize = new Size(400, 400);
+            ShareXResources.ApplyTheme(this);
 
             if (!string.IsNullOrEmpty(text))
             {
-                qrMain.Dock = DockStyle.Fill;
-                qrMain.Cursor = Cursors.Hand;
-                Text += ": " + text;
-                qrMain.Text = text;
+                txtQRCode.Text = text;
             }
-            else
+        }
+
+        public static QRCodeForm EncodeClipboard()
+        {
+            if (Clipboard.ContainsText())
             {
-                EditMode = true;
-                txtQRCode.Visible = true;
+                string text = Clipboard.GetText();
 
-                if (Clipboard.ContainsText())
+                if (TaskHelpers.CheckQRCodeContent(text))
                 {
-                    text = Clipboard.GetText();
-
-                    if (URLHelpers.IsValidURL(text))
-                    {
-                        txtQRCode.Text = text;
-                    }
-                    else
-                    {
-                        SetDefaultText();
-                    }
+                    return new QRCodeForm(text);
                 }
-                else
-                {
-                    SetDefaultText();
-                }
+            }
 
-                txtQRCode.SelectAll();
+            return new QRCodeForm();
+        }
+
+        public static QRCodeForm DecodeFile(string filePath)
+        {
+            QRCodeForm form = new QRCodeForm();
+            form.tcMain.SelectedTab = form.tpDecode;
+            form.DecodeFromFile(filePath);
+            return form;
+        }
+
+        private void QRCodeForm_Shown(object sender, EventArgs e)
+        {
+            isReady = true;
+
+            txtQRCode.SetWatermark(Resources.QRCodeForm_InputTextToEncode);
+
+            EncodeText(txtQRCode.Text);
+        }
+
+        private void ClearQRCode()
+        {
+            if (pbQRCode.Image != null)
+            {
+                Image temp = pbQRCode.Image;
+                pbQRCode.Image = null;
+                temp.Dispose();
             }
         }
 
-        private void SetDefaultText()
+        private void EncodeText(string text)
         {
-            txtQRCode.Text = "Input text to convert";
+            if (isReady)
+            {
+                ClearQRCode();
+
+                int size = Math.Min(pbQRCode.Width, pbQRCode.Height);
+                pbQRCode.Image = TaskHelpers.CreateQRCode(text, size);
+                pbQRCode.BackColor = Color.White;
+            }
         }
 
-        private void txtQRCode_TextChanged(object sender, EventArgs e)
+        private void DecodeImage(Bitmap bmp)
         {
-            qrMain.Text = txtQRCode.Text;
+            string output = "";
+
+            string[] results = TaskHelpers.BarcodeScan(bmp);
+
+            if (results != null)
+            {
+                output = string.Join(Environment.NewLine + Environment.NewLine, results);
+            }
+
+            txtDecodeResult.Text = output;
+        }
+
+        private void DecodeFromFile(string filePath)
+        {
+            if (!string.IsNullOrEmpty(filePath))
+            {
+                using (Image img = ImageHelpers.LoadImage(filePath))
+                {
+                    if (img != null)
+                    {
+                        DecodeImage((Bitmap)img);
+                    }
+                }
+            }
         }
 
         private void QRCodeForm_Resize(object sender, EventArgs e)
         {
-            qrMain.Refresh();
+            EncodeText(txtQRCode.Text);
         }
 
-        private void qrMain_Click(object sender, EventArgs e)
+        private void txtQRCode_TextChanged(object sender, EventArgs e)
         {
-            if (!EditMode)
-            {
-                Close();
-            }
+            EncodeText(txtQRCode.Text);
         }
 
         private void tsmiCopy_Click(object sender, EventArgs e)
         {
-            GraphicsRenderer gRender = new GraphicsRenderer(new FixedModuleSize(20, QuietZoneModules.Two));
-            BitMatrix matrix = qrMain.GetQrMatrix();
-            using (MemoryStream stream = new MemoryStream())
+            if (pbQRCode.Image != null)
             {
-                gRender.WriteToStream(matrix, ImageFormat.Png, stream);
-
-                using (Image img = Image.FromStream(stream))
-                {
-                    ClipboardHelpers.CopyImage(img);
-                }
+                ClipboardHelpers.CopyImage(pbQRCode.Image);
             }
         }
 
         private void tsmiSaveAs_Click(object sender, EventArgs e)
         {
-            using (SaveFileDialog saveFileDialog = new SaveFileDialog())
+            if (!string.IsNullOrEmpty(txtQRCode.Text))
             {
-                saveFileDialog.Filter = @"PNG (*.png)|*.png|JPEG (*.jpg)|*.jpg|Bitmap (*.bmp)|*.bmp|Encapsuled PostScript (*.eps)|*.eps|SVG (*.svg)|*.svg";
-                saveFileDialog.FileName = txtQRCode.Text;
-                saveFileDialog.DefaultExt = "png";
-
-                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                using (SaveFileDialog sfd = new SaveFileDialog())
                 {
-                    string filePath = saveFileDialog.FileName;
+                    sfd.Filter = @"PNG (*.png)|*.png|JPEG (*.jpg)|*.jpg|Bitmap (*.bmp)|*.bmp|SVG (*.svg)|*.svg";
+                    sfd.FileName = txtQRCode.Text;
+                    sfd.DefaultExt = "png";
 
-                    if (filePath.EndsWith("eps"))
+                    if (sfd.ShowDialog() == DialogResult.OK)
                     {
-                        // Initialize the EPS renderer
-                        EncapsulatedPostScriptRenderer renderer = new EncapsulatedPostScriptRenderer(new FixedModuleSize(6, QuietZoneModules.Two), // Modules size is 6/72th inch (72 points = 1 inch)
-                            new FormColor(Color.Black), new FormColor(Color.White));
-                        BitMatrix matrix = qrMain.GetQrMatrix();
-                        using (FileStream fs = new FileStream(filePath, FileMode.Create))
+                        string filePath = sfd.FileName;
+
+                        if (filePath.EndsWith("svg", StringComparison.InvariantCultureIgnoreCase))
                         {
-                            renderer.WriteToStream(matrix, fs);
+                            BarcodeWriterSvg writer = new BarcodeWriterSvg
+                            {
+                                Format = BarcodeFormat.QR_CODE,
+                                Options = new EncodingOptions
+                                {
+                                    Width = pbQRCode.Width,
+                                    Height = pbQRCode.Height
+                                }
+                            };
+                            SvgRenderer.SvgImage svgImage = writer.Write(txtQRCode.Text);
+                            File.WriteAllText(filePath, svgImage.Content, Encoding.UTF8);
                         }
-                    }
-                    else if (filePath.EndsWith("svg"))
-                    {
-                        // Initialize the EPS renderer
-                        SVGRenderer renderer = new SVGRenderer(new FixedModuleSize(6, QuietZoneModules.Two), // Modules size is 6/72th inch (72 points = 1 inch)
-                            new FormColor(Color.FromArgb(150, 200, 200, 210)), new FormColor(Color.FromArgb(200, 255, 155, 0)));
-                        BitMatrix matrix = qrMain.GetQrMatrix();
-                        using (FileStream fs = new FileStream(filePath, FileMode.Create))
+                        else
                         {
-                            renderer.WriteToStream(matrix, fs, false);
-                        }
-                    }
-                    else
-                    {
-                        GraphicsRenderer gRender = new GraphicsRenderer(new FixedModuleSize(20, QuietZoneModules.Two));
-                        BitMatrix matrix = qrMain.GetQrMatrix();
-                        using (FileStream fs = new FileStream(filePath, FileMode.Create))
-                        {
-                            gRender.WriteToStream(matrix, ImageHelpers.GetImageFormat(filePath), fs);
+                            if (pbQRCode.Image != null)
+                            {
+                                ImageHelpers.SaveImage(pbQRCode.Image, filePath);
+                            }
                         }
                     }
                 }
             }
+        }
+
+        private void tsmiUpload_Click(object sender, EventArgs e)
+        {
+            if (pbQRCode.Image != null)
+            {
+                Image img = (Image)pbQRCode.Image.Clone();
+                UploadManager.UploadImage(img);
+            }
+        }
+
+        private void tsmiDecode_Click(object sender, EventArgs e)
+        {
+            if (pbQRCode.Image != null)
+            {
+                tcMain.SelectedTab = tpDecode;
+
+                DecodeImage((Bitmap)pbQRCode.Image);
+            }
+        }
+
+        private void btnDecodeFromScreen_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Hide();
+                Thread.Sleep(250);
+
+                using (Image img = RegionCaptureTasks.GetRegionImage(null))
+                {
+                    if (img != null)
+                    {
+                        DecodeImage((Bitmap)img);
+                    }
+                }
+            }
+            finally
+            {
+                this.ForceActivate();
+            }
+        }
+
+        private void btnDecodeFromFile_Click(object sender, EventArgs e)
+        {
+            string filePath = ImageHelpers.OpenImageFileDialog();
+
+            DecodeFromFile(filePath);
         }
     }
 }

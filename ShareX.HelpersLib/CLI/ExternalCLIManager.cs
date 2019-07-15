@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2017 ShareX Team
+    Copyright (c) 2007-2019 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -40,28 +40,32 @@ namespace ShareX.HelpersLib
 
         public virtual int Open(string path, string args = null)
         {
-            DebugHelper.WriteLine("CLI: \"{0}\" {1}", path, args);
-
             if (File.Exists(path))
             {
                 using (process = new Process())
                 {
-                    ProcessStartInfo psi = new ProcessStartInfo(path);
-                    psi.UseShellExecute = false;
-                    psi.CreateNoWindow = true;
-                    psi.RedirectStandardInput = true;
-                    psi.RedirectStandardOutput = true;
-                    psi.RedirectStandardError = true;
-                    psi.Arguments = args;
-                    psi.WorkingDirectory = Path.GetDirectoryName(path);
-                    psi.StandardOutputEncoding = Encoding.UTF8;
-                    psi.StandardErrorEncoding = Encoding.UTF8;
+                    ProcessStartInfo psi = new ProcessStartInfo()
+                    {
+                        FileName = path,
+                        WorkingDirectory = Path.GetDirectoryName(path),
+                        Arguments = args,
+                        UseShellExecute = false,
+                        CreateNoWindow = true,
+                        RedirectStandardInput = true,
+                        RedirectStandardOutput = true,
+                        RedirectStandardError = true,
+                        StandardOutputEncoding = Encoding.UTF8,
+                        StandardErrorEncoding = Encoding.UTF8
+                    };
 
                     process.EnableRaisingEvents = true;
                     if (psi.RedirectStandardOutput) process.OutputDataReceived += cli_OutputDataReceived;
                     if (psi.RedirectStandardError) process.ErrorDataReceived += cli_ErrorDataReceived;
                     process.StartInfo = psi;
+
+                    DebugHelper.WriteLine($"CLI: \"{psi.FileName}\" {psi.Arguments}");
                     process.Start();
+
                     if (psi.RedirectStandardOutput) process.BeginOutputReadLine();
                     if (psi.RedirectStandardError) process.BeginErrorReadLine();
 

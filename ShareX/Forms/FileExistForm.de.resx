@@ -124,16 +124,16 @@
     <value>Nicht speichern</value>
   </data>
   <data name="btnNewName.Text" xml:space="preserve">
-    <value>Benutze neuen Namen:</value>
+    <value>Neuen Namen verwenden:</value>
   </data>
   <data name="btnOverwrite.Text" xml:space="preserve">
     <value>Überschreiben:</value>
   </data>
   <data name="btnUniqueName.Text" xml:space="preserve">
-    <value>Benutze einzigartigen Namen:</value>
+    <value>Einzigartigen Namen verwenden:</value>
   </data>
   <data name="lblTitle.Text" xml:space="preserve">
     <value>Es existiert bereits eine Datei mit demselben Namen im Zielverzeichnis.
-Wähle einen neuen Namen oder Aktion aus:</value>
+Wähle einen neuen Namen oder eine Aktion aus:</value>
   </data>
 </root>

@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2017 ShareX Team
+    Copyright (c) 2007-2019 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -29,89 +29,61 @@ namespace ShareX.HelpersLib
 {
     public static class NumberExtensions
     {
-        public static int Min(this int num, int min)
+        private static readonly string[] suffixDecimal = new[] { "B", "KB", "MB", "GB", "TB", "PB", "EB" };
+        private static readonly string[] suffixBinary = new[] { "B", "KiB", "MiB", "GiB", "TiB", "PiB", "EiB" };
+
+        public static T Min<T>(this T num, T min) where T : IComparable<T>
         {
-            if (num < min) return min;
-            return num;
+            return MathHelpers.Min(num, min);
         }
 
-        public static int Max(this int num, int max)
+        public static T Max<T>(this T num, T max) where T : IComparable<T>
         {
-            if (num > max) return max;
-            return num;
+            return MathHelpers.Max(num, max);
         }
 
-        public static int Between(this int num, int min, int max)
+        public static T Clamp<T>(this T num, T min, T max) where T : IComparable<T>
         {
-            if (num <= min) return min;
-            if (num >= max) return max;
-            return num;
+            return MathHelpers.Clamp(num, min, max);
         }
 
-        public static float Between(this float num, float min, float max)
+        public static bool IsBetween<T>(this T num, T min, T max) where T : IComparable<T>
         {
-            if (num <= min) return min;
-            if (num >= max) return max;
-            return num;
+            return MathHelpers.IsBetween(num, min, max);
         }
 
-        public static double Between(this double num, double min, double max)
+        public static T BetweenOrDefault<T>(this T num, T min, T max, T defaultValue = default(T)) where T : IComparable<T>
         {
-            if (num <= min) return min;
-            if (num >= max) return max;
-            return num;
-        }
-
-        public static byte Between(this byte num, byte min, byte max)
-        {
-            if (num <= min) return min;
-            if (num >= max) return max;
-            return num;
-        }
-
-        public static decimal Between(this decimal num, decimal min, decimal max)
-        {
-            if (num <= min) return min;
-            if (num >= max) return max;
-            return num;
-        }
-
-        public static bool IsBetween(this int num, int min, int max)
-        {
-            return num >= min && num <= max;
-        }
-
-        public static bool IsBetween(this byte num, int min, int max)
-        {
-            return num >= min && num <= max;
-        }
-
-        public static int BetweenOrDefault(this int num, int min, int max, int defaultValue = 0)
-        {
-            if (num.IsBetween(min, max)) return num;
-            return defaultValue;
+            return MathHelpers.BetweenOrDefault(num, min, max, defaultValue);
         }
 
         public static float Remap(this float value, float from1, float to1, float from2, float to2)
         {
-            return (value - from1) / (to1 - from1) * (to2 - from2) + from2;
+            return MathHelpers.Remap(value, from1, to1, from2, to2);
+        }
+
+        public static bool IsEvenNumber(this int num)
+        {
+            return MathHelpers.IsEvenNumber(num);
+        }
+
+        public static bool IsOddNumber(this int num)
+        {
+            return MathHelpers.IsOddNumber(num);
         }
 
         public static int RandomAdd(this int num, int min, int max)
         {
-            return num + MathHelpers.Random(min, max);
+            return MathHelpers.RandomAdd(num, min, max);
         }
-
-        private static readonly string[] Suffix_Decimal = new[] { "B", "KB", "MB", "GB", "TB", "PB", "EB" };
-        private static readonly string[] Suffix_Binary = new[] { "B", "KiB", "MiB", "GiB", "TiB", "PiB", "EiB" };
 
         public static string ToSizeString(this long size, bool binary = false, int decimalPlaces = 2)
         {
             if (size < 1024) return Math.Max(size, 0) + " B";
             int place = (int)Math.Floor(Math.Log(size, 1024));
             double num = size / Math.Pow(1024, place);
-            string suffix = binary ? Suffix_Binary[place] : Suffix_Decimal[place];
-            return string.Format("{0} {1}", num.ToDecimalString(decimalPlaces.Between(0, 3)), suffix);
+            string suffix = binary ? suffixBinary[place] : suffixDecimal[place];
+            return string.Format("{0} {1}", num.ToDecimalString(decimalPlaces.Clamp(0, 3)), suffix);
         }
 
         public static string ToDecimalString(this double number, int decimalPlaces)
@@ -136,18 +108,13 @@ namespace ShareX.HelpersLib
 
             string result = "";
             int quotient = Math.Abs(value);
-            while (0 < quotient)
+            while (quotient > 0)
             {
                 int temp = quotient % radix;
                 result = digits[temp] + result;
                 quotient /= radix;
             }
             return result;
-        }
-
-        public static bool IsEvenNumber(this int num)
-        {
-            return num % 2 == 0;
         }
     }
 }

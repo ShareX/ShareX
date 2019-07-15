@@ -144,9 +144,6 @@
   <data name="lblPersonalFolderPath.Text" xml:space="preserve">
     <value>ShareX個人資料夾:</value>
   </data>
-  <data name="lblNotePersonalFolderPath.Text" xml:space="preserve">
-    <value>注意: 必須重新開啟ShareX才能使個人資料夾更改生效.</value>
-  </data>
   <data name="tpIntegration.Text" xml:space="preserve">
     <value>綜合</value>
   </data>
@@ -164,9 +161,6 @@
   </data>
   <data name="cbSendToMenu.Text" xml:space="preserve">
     <value>在"傳送到"選單顯示ShareX</value>
-  </data>
-  <data name="cbStartWithWindows.Text" xml:space="preserve">
-    <value>Windows啟動時運行ShareX </value>
   </data>
   <data name="cbRememberMainFormPosition.Text" xml:space="preserve">
     <value>記住主視窗的位置</value>
@@ -284,15 +278,6 @@
   </data>
   <data name="btnEditQuickTaskMenu.Text" xml:space="preserve">
     <value>編輯快速任務選單...</value>
-  </data>
-  <data name="cbExportSettings.Text" xml:space="preserve">
-    <value>匯出設定</value>
-  </data>
-  <data name="cbExportHistory.Text" xml:space="preserve">
-    <value>匯出歷史</value>
-  </data>
-  <data name="cbExportLogs.Text" xml:space="preserve">
-    <value>匯出日誌</value>
   </data>
   <data name="btnExport.Text" xml:space="preserve">
     <value>匯出...</value>

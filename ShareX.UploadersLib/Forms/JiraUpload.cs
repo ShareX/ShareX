@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2017 ShareX Team
+    Copyright (c) 2007-2019 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -23,8 +23,6 @@
 
 #endregion License Information (GPL v3)
 
-// gpailler
-
 using ShareX.HelpersLib;
 using ShareX.UploadersLib.Properties;
 using System;
@@ -37,8 +35,8 @@ namespace ShareX.UploadersLib
     {
         public delegate string GetSummaryHandler(string issueId);
 
-        private readonly string _issuePrefix;
-        private readonly GetSummaryHandler _getSummary;
+        private readonly string issuePrefix;
+        private readonly GetSummaryHandler getSummary;
 
         public string IssueId
         {
@@ -51,7 +49,7 @@ namespace ShareX.UploadersLib
         public JiraUpload()
         {
             InitializeComponent();
-            Icon = ShareXResources.Icon;
+            ShareXResources.ApplyTheme(this);
         }
 
         public JiraUpload(string issuePrefix, GetSummaryHandler getSummary) : this()
@@ -60,15 +58,15 @@ namespace ShareX.UploadersLib
             {
                 throw new ArgumentNullException("getSummary");
             }
-            _issuePrefix = issuePrefix;
-            _getSummary = getSummary;
+            this.issuePrefix = issuePrefix;
+            this.getSummary = getSummary;
         }
 
         private void JiraUpload_Load(object sender, EventArgs e)
         {
             UpdateSummary(null);
 
-            txtIssueId.Text = _issuePrefix;
+            txtIssueId.Text = issuePrefix;
             txtIssueId.SelectionStart = txtIssueId.Text.Length;
         }
 
@@ -85,9 +83,7 @@ namespace ShareX.UploadersLib
 
         private void ValidateIssueId(string issueId)
         {
-            Task.Factory
-                .StartNew(() => _getSummary(issueId))
-                .ContinueWith(UpdateSummaryAsync);
+            Task.Run(() => getSummary(issueId)).ContinueWith(UpdateSummaryAsync);
         }
 
         private void UpdateSummaryAsync(Task<string> task)

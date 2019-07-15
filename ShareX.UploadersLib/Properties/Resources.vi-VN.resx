@@ -118,19 +118,13 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="CertFileNameEditor_EditValue_Browse_for_a_certificate_file___" xml:space="preserve">
-    <value>Duyệt lấy tệp tin xác thực...</value>
-  </data>
-  <data name="FTPClientForm_FTPClientForm_Connecting_to__0_" xml:space="preserve">
-    <value>Đang kết nối tới {0}</value>
+    <value>Duyệt lấy tệp tin chứng chỉ...</value>
   </data>
   <data name="UploadersConfigForm_oAuthJira_RefreshButtonClicked_Refresh_authorization_is_not_supported_" xml:space="preserve">
-    <value>Làm mới quá trình xác thực không được hỗ trợ.</value>
+    <value>Làm mới quá trình ủy quyền không được hỗ trợ.</value>
   </data>
   <data name="UploadersConfigForm_LoadSettings_Invalid_device_name" xml:space="preserve">
     <value>Tên thiết bị không hợp lệ</value>
-  </data>
-  <data name="OAuthControl_Status_Status__Login_failed_" xml:space="preserve">
-    <value>Trạng thái: Đăng nhập thất bại.</value>
   </data>
   <data name="UploadersConfigForm_BoxListFolders_Box_refresh_folders_list_failed" xml:space="preserve">
     <value>Làm mới danh sách thư mục thất bại</value>
@@ -141,35 +135,17 @@
   <data name="OneDrive_RootFolder_Root_folder" xml:space="preserve">
     <value>Thư mục gốc</value>
   </data>
-  <data name="UploadersConfigForm_MinusUpdateControls_Logged_in_as__0__" xml:space="preserve">
-    <value>Đăng nhập với tư cách {0}.</value>
-  </data>
-  <data name="FTPClientForm_FTPClientForm_ShareX_FTP_client" xml:space="preserve">
-    <value>Trình FTP ShareX</value>
-  </data>
-  <data name="FTPClientForm_FTPCreateDirectory_Directory_name_to_create" xml:space="preserve">
-    <value>Tên đường dẫn sẽ tạo</value>
-  </data>
   <data name="JiraUpload_ValidateIssueId_Issue_not_found" xml:space="preserve">
     <value>Không thể tìm thấy vấn đề</value>
   </data>
   <data name="KeyFileNameEditor_EditValue_Browse_for_a_key_file___" xml:space="preserve">
     <value>Duyệt lấy tệp key...</value>
   </data>
-  <data name="OAuthControl_Status_Status__Logged_in_" xml:space="preserve">
-    <value>Trạng thái: Đã đăng nhập.</value>
-  </data>
-  <data name="OAuthControl_Status_Status__Not_logged_in_" xml:space="preserve">
-    <value>Trạng thái: Chưa đăng nhập.</value>
-  </data>
   <data name="OAuthInfo_OAuthInfo_New_account" xml:space="preserve">
     <value>Tài khoản mới</value>
   </data>
   <data name="TwitterTweetForm_SendTweet_Tweet_error" xml:space="preserve">
     <value>Lỗi khi Tweet</value>
-  </data>
-  <data name="UploadersConfigForm_FTPOpenClient_FTP_client_only_supports_FTP_or_FTPS_" xml:space="preserve">
-    <value>Trình FTP chỉ hỗ trợ FTP và FTPS.</value>
   </data>
   <data name="UploadersConfigForm_FTPOpenClient_Unable_to_find_valid_FTP_account_" xml:space="preserve">
     <value>Không thể tìm thấy tài khoản FTP hợp lệ.</value>
@@ -195,9 +171,6 @@
   <data name="UploadersConfigForm_MegaConfigureTab_Not_configured" xml:space="preserve">
     <value>Chưa thiết lập</value>
   </data>
-  <data name="UploadersConfigForm_MinusUpdateControls_Not_logged_in_" xml:space="preserve">
-    <value>Chưa đăng nhập.</value>
-  </data>
   <data name="UploadersConfigForm_OneDriveAddFolder_Querying_folders___" xml:space="preserve">
     <value>Đang lấy các thư mục...</value>
   </data>
@@ -222,5 +195,44 @@ Các thư mục đã tạo:</value>
   </data>
   <data name="UploadersConfigForm_MegaConfigureTab_Click_refresh_button" xml:space="preserve">
     <value>Nhấn nút làm mới</value>
+  </data>
+  <data name="UploadersConfigForm_eiCustomUploaders_ExportRequested_DestinationTypeMustBeConfigured" xml:space="preserve">
+    <value>"Kiểu dịch vụ tải lên" phải được thiết lập.</value>
+  </data>
+  <data name="CustomUploaderItem_GetFileFormName_FileFormNameMustBeConfigured" xml:space="preserve">
+    <value>"Tên biểu mẫu tệp" phải được thiết lập.</value>
+  </data>
+  <data name="UploadersConfigForm_eiCustomUploaders_ExportRequested_RequestURLMustBeConfigured" xml:space="preserve">
+    <value>"URL yêu cầu" phải được thiết lập</value>
+  </data>
+  <data name="CustomUploaderItem_GetRequestURL_RequestURLMustBeConfigured" xml:space="preserve">
+    <value>"URL yêu cầu" phải được thiết lập</value>
+  </data>
+  <data name="UploadersConfigForm_ConnectSFTPAccount_Key_file_not_found" xml:space="preserve">
+    <value>Tệp key không tồn tại.</value>
+  </data>
+  <data name="UploadersConfigForm_UpdatePastebinStatus_LoggedIn" xml:space="preserve">
+    <value>Đã đăng nhập.</value>
+  </data>
+  <data name="OAuthControl_Status_LoggedIn" xml:space="preserve">
+    <value>Đã đăng nhập.</value>
+  </data>
+  <data name="OAuthControl_Status_LoginFailed" xml:space="preserve">
+    <value>Đăng nhập thất bại.</value>
+  </data>
+  <data name="UploadersConfigForm_UpdatePastebinStatus_NotLoggedIn" xml:space="preserve">
+    <value>Chưa đăng nhập.</value>
+  </data>
+  <data name="OAuthControl_Status_NotLoggedIn" xml:space="preserve">
+    <value>Chưa đăng nhập.</value>
+  </data>
+  <data name="OAuthControl_OAuthControl_PasteVerificationCodeHere" xml:space="preserve">
+    <value>Điền mã xác nhận ở đây</value>
+  </data>
+  <data name="UploadersConfigForm_Remove_all_custom_uploaders_Confirmation" xml:space="preserve">
+    <value>Xóa tất cả trình tải lên tùy chỉnh?</value>
+  </data>
+  <data name="CustomFileUploader_Upload_Response_parse_failed_" xml:space="preserve">
+    <value>Xử lý dữ liệu trả về gặp lỗi.</value>
   </data>
 </root>

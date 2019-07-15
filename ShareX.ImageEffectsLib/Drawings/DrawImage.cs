@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2017 ShareX Team
+    Copyright (c) 2007-2019 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -34,29 +34,26 @@ namespace ShareX.ImageEffectsLib
     [Description("Image watermark")]
     public class DrawImage : ImageEffect
     {
+        [DefaultValue(""), Editor(typeof(ImageFileNameEditor), typeof(UITypeEditor))]
+        public string ImageLocation { get; set; }
+
         [DefaultValue(ContentAlignment.BottomRight)]
         public ContentAlignment Placement { get; set; }
 
-        private Point offset;
-
         [DefaultValue(typeof(Point), "5, 5")]
-        public Point Offset
-        {
-            get
-            {
-                return offset;
-            }
-            set
-            {
-                offset = new Point(value.X.Min(0), value.Y.Min(0));
-            }
-        }
+        public Point Offset { get; set; }
+
+        [DefaultValue(false)]
+        public bool RandomPosition { get; set; }
+
+        [DefaultValue(DrawImageSizeMode.DontResize), Description("How the image watermark should be rescaled, if at all.")]
+        public DrawImageSizeMode SizeMode { get; set; }
+
+        [DefaultValue(typeof(Size), "0, 0")]
+        public Size Size { get; set; }
 
         [DefaultValue(true), Description("If image watermark size bigger than source image then don't draw it.")]
         public bool AutoHide { get; set; }
-
-        [DefaultValue(""), Editor(typeof(ImageFileNameEditor), typeof(UITypeEditor))]
-        public string ImageLocation { get; set; }
 
         public DrawImage()
         {
@@ -69,8 +66,48 @@ namespace ShareX.ImageEffectsLib
             {
                 using (Image img2 = ImageHelpers.LoadImage(ImageLocation))
                 {
-                    Point imagePosition = Helpers.GetPosition(Placement, Offset, img.Size, img2.Size);
-                    Rectangle imageRectangle = new Rectangle(imagePosition, img2.Size);
+                    // Calculate size first
+                    Size imageSize = img2.Size;
+                    if (SizeMode == DrawImageSizeMode.AbsoluteSize)
+                    {
+                        // Use Size property
+                        imageSize = Size;
+                    }
+                    else if (SizeMode == DrawImageSizeMode.PercentageOfWatermark)
+                    {
+                        // Relative size (percentage of watermark)
+                        imageSize = new Size((int)(img2.Width * (Size.Width / 100.0)), (int)(img2.Height * (Size.Height / 100.0)));
+                    }
+                    else if (SizeMode == DrawImageSizeMode.PercentageOfCanvas)
+                    {
+                        // Relative size (percentage of image)
+                        imageSize = new Size((int)(img.Width * (Size.Width / 100.0)), (int)(img.Height * (Size.Height / 100.0)));
+                    }
+
+                    // Place the image
+                    Point imagePosition;
+                    if (RandomPosition)
+                    {
+                        int x = 0;
+                        if (img.Width - imageSize.Width > 0)
+                        {
+                            x = MathHelpers.Random(0, img.Width - imageSize.Width);
+                        }
+
+                        int y = 0;
+                        if (img.Height - imageSize.Height > 0)
+                        {
+                            y = MathHelpers.Random(0, img.Height - imageSize.Height);
+                        }
+
+                        imagePosition = new Point(x, y);
+                    }
+                    else
+                    {
+                        imagePosition = Helpers.GetPosition(Placement, Offset, img.Size, imageSize);
+                    }
+
+                    Rectangle imageRectangle = new Rectangle(imagePosition, imageSize);
 
                     if (AutoHide && !new Rectangle(0, 0, img.Width, img.Height).Contains(imageRectangle))
                     {
@@ -86,6 +123,14 @@ namespace ShareX.ImageEffectsLib
             }
 
             return img;
+        }
+
+        public enum DrawImageSizeMode
+        {
+            DontResize,
+            AbsoluteSize,
+            PercentageOfWatermark,
+            PercentageOfCanvas
         }
     }
 }

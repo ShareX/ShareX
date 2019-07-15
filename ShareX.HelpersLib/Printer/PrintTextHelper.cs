@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2017 ShareX Team
+    Copyright (c) 2007-2019 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -117,7 +117,7 @@ namespace ShareX.HelpersLib
             // next character
             int c;
 
-            for (;;)
+            while (true)
             {
                 // get next character
                 c = NextChar();
@@ -125,7 +125,7 @@ namespace ShareX.HelpersLib
                 // append c to line if not NewLine or Eos
                 if ((c != NewLine) && (c != Eos))
                 {
-                    Char ch = Convert.ToChar(c);
+                    char ch = Convert.ToChar(c);
                     line.Append(ch);
 
                     // if ch is whitespace, remember pos and continue
@@ -180,7 +180,9 @@ namespace ShareX.HelpersLib
 
                 // if next line doesn't fit on page anymore, exit loop
                 if (textheight > (pageheight - lineheight) || c == Eos)
+                {
                     break;
+                }
             }
 
             // print footer

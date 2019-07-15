@@ -1,4 +1,4 @@
-﻿
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -167,5 +167,8 @@
   </data>
   <data name="lblRed.Text" xml:space="preserve">
     <value>K:</value>
+  </data>
+  <data name="btnScreenTearingTest.Text" xml:space="preserve">
+    <value>Ekran yırtılma testi</value>
   </data>
 </root>

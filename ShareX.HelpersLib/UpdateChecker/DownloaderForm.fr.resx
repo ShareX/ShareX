@@ -129,9 +129,6 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Téléchargement de fichiers</value>
   </data>
-  <data name="cbShowChangelog.Text" xml:space="preserve">
-    <value>Afficher les notes de mise à jour</value>
-  </data>
   <data name="btnAction.Text" xml:space="preserve">
     <value>Télécharger</value>
   </data>

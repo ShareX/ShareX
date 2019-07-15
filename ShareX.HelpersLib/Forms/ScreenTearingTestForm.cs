@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2017 ShareX Team
+    Copyright (c) 2007-2019 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -48,8 +48,7 @@ namespace ShareX.HelpersLib
 
             SuspendLayout();
 
-            AutoScaleDimensions = new SizeF(6F, 13F);
-            AutoScaleMode = AutoScaleMode.Font;
+            AutoScaleMode = AutoScaleMode.None;
             StartPosition = FormStartPosition.Manual;
             Bounds = screenRectangle;
             Cursor = Cursors.Hand;
@@ -100,11 +99,11 @@ namespace ShareX.HelpersLib
         {
             if (e.Delta > 0)
             {
-                animationSpeed = (animationSpeed + speedChange).Between(minSpeed, maxSpeed);
+                animationSpeed = (animationSpeed + speedChange).Clamp(minSpeed, maxSpeed);
             }
             else if (e.Delta < 0)
             {
-                animationSpeed = (animationSpeed - speedChange).Between(minSpeed, maxSpeed);
+                animationSpeed = (animationSpeed - speedChange).Clamp(minSpeed, maxSpeed);
             }
 
             base.OnMouseWheel(e);

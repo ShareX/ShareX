@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2017 ShareX Team
+    Copyright (c) 2007-2019 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -23,11 +23,6 @@
 
 #endregion License Information (GPL v3)
 
-using Greenshot;
-using Greenshot.Drawing;
-using Greenshot.IniFile;
-using Greenshot.Plugin;
-using GreenshotPlugin.Core;
 using ShareX.HelpersLib;
 using ShareX.HistoryLib;
 using ShareX.ImageEffectsLib;
@@ -36,6 +31,7 @@ using ShareX.MediaLib;
 using ShareX.Properties;
 using ShareX.ScreenCaptureLib;
 using ShareX.UploadersLib;
+using ShareX.UploadersLib.OtherServices;
 using ShareX.UploadersLib.SharingServices;
 using System;
 using System.Collections.Generic;
@@ -43,8 +39,16 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
+using System.Linq;
 using System.Speech.Synthesis;
+using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
 using System.Windows.Forms;
+using ZXing;
+using ZXing.Common;
+using ZXing.QrCode;
+using ZXing.Rendering;
 
 namespace ShareX
 {
@@ -83,11 +87,17 @@ namespace ShareX
                 case HotkeyType.ClipboardUploadWithContentViewer:
                     UploadManager.ClipboardUploadWithContentViewer(safeTaskSettings);
                     break;
+                case HotkeyType.UploadText:
+                    UploadManager.ShowTextUploadDialog(safeTaskSettings);
+                    break;
                 case HotkeyType.UploadURL:
                     UploadManager.UploadURL(safeTaskSettings);
                     break;
                 case HotkeyType.DragDropUpload:
                     OpenDropWindow(safeTaskSettings);
+                    break;
+                case HotkeyType.ShortenURL:
+                    UploadManager.ShowShortenURLDialog(safeTaskSettings);
                     break;
                 case HotkeyType.StopUploads:
                     TaskManager.StopAllTasks();
@@ -120,17 +130,14 @@ namespace ShareX
                 case HotkeyType.ScrollingCapture:
                     OpenScrollingCapture(safeTaskSettings, true);
                     break;
-                case HotkeyType.CaptureWebpage:
-                    OpenWebpageCapture(safeTaskSettings);
-                    break;
                 case HotkeyType.TextCapture:
-                    OCRImage(safeTaskSettings);
+                    _ = OCRImage(safeTaskSettings);
                     break;
                 case HotkeyType.AutoCapture:
-                    OpenAutoCapture();
+                    OpenAutoCapture(safeTaskSettings);
                     break;
                 case HotkeyType.StartAutoCapture:
-                    StartAutoCapture();
+                    StartAutoCapture(safeTaskSettings);
                     break;
                 // Screen record
                 case HotkeyType.ScreenRecorder:
@@ -162,7 +169,7 @@ namespace ShareX
                     break;
                 // Tools
                 case HotkeyType.ColorPicker:
-                    OpenColorPicker();
+                    ShowScreenColorPickerDialog(safeTaskSettings);
                     break;
                 case HotkeyType.ScreenColorPicker:
                     OpenScreenColorPicker(safeTaskSettings);
@@ -170,15 +177,15 @@ namespace ShareX
                 case HotkeyType.ImageEditor:
                     if (command != null && !string.IsNullOrEmpty(command.Parameter) && File.Exists(command.Parameter))
                     {
-                        AnnotateImage(command.Parameter, safeTaskSettings);
+                        AnnotateImageFromFile(command.Parameter, safeTaskSettings);
                     }
                     else
                     {
-                        AnnotateImage(safeTaskSettings);
+                        OpenImageEditor(safeTaskSettings);
                     }
                     break;
                 case HotkeyType.ImageEffects:
-                    OpenImageEffects();
+                    OpenImageEffects(taskSettings);
                     break;
                 case HotkeyType.HashCheck:
                     OpenHashCheck();
@@ -200,9 +207,6 @@ namespace ShareX
                     break;
                 case HotkeyType.VideoThumbnailer:
                     OpenVideoThumbnailer(safeTaskSettings);
-                    break;
-                case HotkeyType.FTPClient:
-                    OpenFTPClient();
                     break;
                 case HotkeyType.TweetMessage:
                     TweetMessage();
@@ -258,7 +262,7 @@ namespace ShareX
                 (img.Width > taskSettings.ImageSettings.ThumbnailWidth && img.Height > taskSettings.ImageSettings.ThumbnailHeight)))
             {
                 string thumbnailFileName = Path.GetFileNameWithoutExtension(filename) + taskSettings.ImageSettings.ThumbnailName + ".jpg";
-                string thumbnailFilePath = CheckFilePath(folder, thumbnailFileName, taskSettings);
+                string thumbnailFilePath = HandleExistsFile(folder, thumbnailFileName, taskSettings);
 
                 if (!string.IsNullOrEmpty(thumbnailFilePath))
                 {
@@ -300,6 +304,14 @@ namespace ShareX
             {
                 case EImageFormat.PNG:
                     SaveImageAsPNGStream(img, stream, pngBitDepth);
+
+                    if (Program.Settings.PNGStripColorSpaceInformation)
+                    {
+                        using (stream)
+                        {
+                            return PNGStripColorSpaceInformation(stream);
+                        }
+                    }
                     break;
                 case EImageFormat.JPEG:
                     SaveImageAsJPEGStream(img, stream, jpegQuality);
@@ -358,6 +370,64 @@ namespace ShareX
             img.Save(stream, ImageFormat.Png);
         }
 
+        private static MemoryStream PNGStripChunks(MemoryStream stream, params string[] chunks)
+        {
+            MemoryStream output = new MemoryStream();
+            stream.Seek(0, SeekOrigin.Begin);
+
+            byte[] signature = new byte[8];
+            stream.Read(signature, 0, 8);
+            output.Write(signature, 0, 8);
+
+            while (true)
+            {
+                byte[] lenBytes = new byte[4];
+                if (stream.Read(lenBytes, 0, 4) != 4)
+                {
+                    break;
+                }
+
+                if (BitConverter.IsLittleEndian)
+                {
+                    Array.Reverse(lenBytes);
+                }
+
+                int len = BitConverter.ToInt32(lenBytes, 0);
+
+                if (BitConverter.IsLittleEndian)
+                {
+                    Array.Reverse(lenBytes);
+                }
+
+                byte[] type = new byte[4];
+                stream.Read(type, 0, 4);
+
+                byte[] data = new byte[len + 4];
+                stream.Read(data, 0, data.Length);
+
+                string strType = Encoding.ASCII.GetString(type);
+
+                if (!chunks.Contains(strType))
+                {
+                    output.Write(lenBytes, 0, lenBytes.Length);
+                    output.Write(type, 0, type.Length);
+                    output.Write(data, 0, data.Length);
+                }
+            }
+
+            return output;
+        }
+
+        private static MemoryStream PNGStripColorSpaceInformation(MemoryStream stream)
+        {
+            // http://www.libpng.org/pub/png/spec/1.2/PNG-Chunks.html
+            // 4.2.2.1. gAMA Image gamma
+            // 4.2.2.2. cHRM Primary chromaticities
+            // 4.2.2.3. sRGB Standard RGB color space
+            // 4.2.2.4. iCCP Embedded ICC profile
+            return PNGStripChunks(stream, "gAMA", "cHRM", "sRGB", "iCCP");
+        }
+
         private static void SaveImageAsJPEGStream(Image img, Stream stream, int jpegQuality)
         {
             try
@@ -372,12 +442,17 @@ namespace ShareX
             }
         }
 
-        public static void SaveImageAsFile(Image img, TaskSettings taskSettings)
+        public static void SaveImageAsFile(Image img, TaskSettings taskSettings, bool overwriteFile = false)
         {
             using (ImageData imageData = PrepareImage(img, taskSettings))
             {
                 string fileName = GetFilename(taskSettings, imageData.ImageFormat.GetDescription(), img);
-                string filePath = CheckFilePath(taskSettings.CaptureFolder, fileName, taskSettings);
+                string filePath = Path.Combine(taskSettings.CaptureFolder, fileName);
+
+                if (!overwriteFile)
+                {
+                    filePath = HandleExistsFile(filePath, taskSettings);
+                }
 
                 if (!string.IsNullOrEmpty(filePath))
                 {
@@ -495,23 +570,30 @@ namespace ShareX
             }
         }
 
-        public static Image AddImageEffects(Image img, TaskSettings taskSettings)
+        public static Image AddImageEffects(Image img, TaskSettingsImage taskSettingsImage)
         {
-            if (taskSettings.ImageSettings.ShowImageEffectsWindowAfterCapture)
+            if (!img.PixelFormat.HasFlag(PixelFormat.Indexed))
             {
-                using (ImageEffectsForm imageEffectsForm = new ImageEffectsForm(img, taskSettings.ImageSettings.ImageEffects))
+                if (taskSettingsImage.ShowImageEffectsWindowAfterCapture)
                 {
-                    if (imageEffectsForm.ShowDialog() == DialogResult.OK)
+                    using (ImageEffectsForm imageEffectsForm = new ImageEffectsForm(img, taskSettingsImage.ImageEffectPresets,
+                        taskSettingsImage.SelectedImageEffectPreset))
                     {
-                        taskSettings.ImageSettings.ImageEffects = imageEffectsForm.Effects;
+                        imageEffectsForm.ShowDialog();
+                        taskSettingsImage.SelectedImageEffectPreset = imageEffectsForm.SelectedPresetIndex;
+                    }
+                }
+
+                if (taskSettingsImage.ImageEffectPresets.IsValidIndex(taskSettingsImage.SelectedImageEffectPreset))
+                {
+                    using (img)
+                    {
+                        return taskSettingsImage.ImageEffectPresets[taskSettingsImage.SelectedImageEffectPreset].ApplyEffects(img);
                     }
                 }
             }
 
-            using (img)
-            {
-                return ImageEffectManager.ApplyEffects(img, taskSettings.ImageSettings.ImageEffects);
-            }
+            return img;
         }
 
         public static void AddDefaultExternalPrograms(TaskSettings taskSettings)
@@ -557,36 +639,41 @@ namespace ShareX
 
         public static Icon GetProgressIcon(int percentage)
         {
-            percentage = percentage.Between(0, 99);
+            percentage = percentage.Clamp(0, 99);
 
-            using (Bitmap bmp = new Bitmap(16, 16))
+            Size size = SystemInformation.SmallIconSize;
+            using (Bitmap bmp = new Bitmap(size.Width, size.Height))
             using (Graphics g = Graphics.FromImage(bmp))
             {
-                int y = (int)(16 * (percentage / 100f));
+                int y = (int)(size.Height * (percentage / 100f));
 
                 if (y > 0)
                 {
                     using (Brush brush = new SolidBrush(Color.FromArgb(16, 116, 193)))
                     {
-                        g.FillRectangle(brush, 0, 15 - y, 16, y);
+                        g.FillRectangle(brush, 0, size.Height - 1 - y, size.Width, y);
                     }
                 }
 
-                using (Font font = new Font("Arial", 12, GraphicsUnit.Pixel))
+                using (Font font = new Font("Arial", 10))
                 using (StringFormat sf = new StringFormat { Alignment = StringAlignment.Center, LineAlignment = StringAlignment.Center })
                 {
-                    g.DrawString(percentage.ToString(), font, Brushes.Black, 8, 8, sf);
-                    g.DrawString(percentage.ToString(), font, Brushes.White, 8, 7, sf);
+                    g.DrawString(percentage.ToString(), font, Brushes.Black, size.Width / 2, size.Height / 2, sf);
+                    g.DrawString(percentage.ToString(), font, Brushes.White, size.Width / 2, (size.Height / 2) - 1, sf);
                 }
 
                 return Icon.FromHandle(bmp.GetHicon());
             }
         }
 
-        public static string CheckFilePath(string folder, string filename, TaskSettings taskSettings)
+        public static string HandleExistsFile(string folder, string filename, TaskSettings taskSettings)
         {
             string filepath = Path.Combine(folder, filename);
+            return HandleExistsFile(filepath, taskSettings);
+        }
 
+        public static string HandleExistsFile(string filepath, TaskSettings taskSettings)
+        {
             if (File.Exists(filepath))
             {
                 switch (taskSettings.ImageSettings.FileExistAction)
@@ -638,32 +725,22 @@ namespace ShareX
             scrollingCaptureForm.Show();
         }
 
-        public static void OpenAutoCapture()
-        {
-            AutoCaptureForm.Instance.ForceActivate();
-        }
-
-        public static void OpenWebpageCapture(TaskSettings taskSettings = null)
+        public static void OpenAutoCapture(TaskSettings taskSettings = null)
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
-            WebpageCaptureForm webpageCaptureForm = new WebpageCaptureForm(Program.Settings.WebpageCaptureOptions);
-            webpageCaptureForm.ImageUploadRequested += img => UploadManager.RunImageTask(img, taskSettings);
-            webpageCaptureForm.ImageCopyRequested += img =>
-            {
-                using (img)
-                {
-                    ClipboardHelpers.CopyImage(img);
-                }
-            };
-            webpageCaptureForm.Show();
+            AutoCaptureForm.Instance.TaskSettings = taskSettings;
+            AutoCaptureForm.Instance.ForceActivate();
         }
 
-        public static void StartAutoCapture()
+        public static void StartAutoCapture(TaskSettings taskSettings = null)
         {
+            if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
+
             if (!AutoCaptureForm.IsRunning)
             {
                 AutoCaptureForm form = AutoCaptureForm.Instance;
+                form.TaskSettings = taskSettings;
                 form.Show();
                 form.Execute();
             }
@@ -683,32 +760,41 @@ namespace ShareX
 
         public static void OpenHistory()
         {
-            HistoryForm historyForm = new HistoryForm(Program.HistoryFilePath, Program.Settings.HistoryMaxItemCount, Program.Settings.HistorySplitterDistance);
-            historyForm.SplitterDistanceChanged += splitterDistance => Program.Settings.HistorySplitterDistance = splitterDistance;
-            Program.Settings.HistoryWindowState.AutoHandleFormState(historyForm);
+            HistoryForm historyForm = new HistoryForm(Program.HistoryFilePath, Program.Settings.HistorySettings,
+                filePath => UploadManager.UploadFile(filePath), filePath => AnnotateImageFromFile(filePath));
             historyForm.Show();
         }
 
         public static void OpenImageHistory()
         {
-            ImageHistoryForm imageHistoryForm = new ImageHistoryForm(Program.HistoryFilePath, Program.Settings.ImageHistoryViewMode,
-                Program.Settings.ImageHistoryThumbnailSize, Program.Settings.ImageHistoryMaxItemCount);
-            Program.Settings.ImageHistoryWindowState.AutoHandleFormState(imageHistoryForm);
-            imageHistoryForm.FormClosed += imageHistoryForm_FormClosed;
+            ImageHistoryForm imageHistoryForm = new ImageHistoryForm(Program.HistoryFilePath, Program.Settings.ImageHistorySettings,
+                filePath => UploadManager.UploadFile(filePath), filePath => AnnotateImageFromFile(filePath));
             imageHistoryForm.Show();
         }
 
-        private static void imageHistoryForm_FormClosed(object sender, FormClosedEventArgs e)
+        public static void OpenDebugLog()
         {
-            ImageHistoryForm imageHistoryForm = sender as ImageHistoryForm;
-            Program.Settings.ImageHistoryViewMode = imageHistoryForm.ViewMode;
-            Program.Settings.ImageHistoryThumbnailSize = imageHistoryForm.ThumbnailSize;
-            Program.Settings.ImageHistoryMaxItemCount = imageHistoryForm.MaxItemCount;
+            DebugForm form = DebugForm.GetFormInstance(DebugHelper.Logger);
+
+            if (!form.HasUploadRequested)
+            {
+                form.UploadRequested += text =>
+                {
+                    if (MessageBox.Show(form, Resources.MainForm_UploadDebugLogWarning, "ShareX", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                    {
+                        UploadManager.UploadText(text);
+                    }
+                };
+            }
+
+            form.ForceActivate();
         }
 
-        public static void OpenColorPicker()
+        public static void ShowScreenColorPickerDialog(TaskSettings taskSettings = null)
         {
-            new ScreenColorPicker(true).Show();
+            if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
+
+            RegionCaptureTasks.ShowScreenColorPickerDialog(taskSettings.CaptureSettings.SurfaceOptions, true);
         }
 
         public static void OpenScreenColorPicker(TaskSettings taskSettings = null)
@@ -723,15 +809,9 @@ namespace ShareX
 
                 ClipboardHelpers.CopyText(text);
 
-                if (Program.MainForm.niTray.Visible)
+                if (!taskSettings.AdvancedSettings.DisableNotifications && taskSettings.GeneralSettings.PopUpNotification != PopUpNotificationType.None)
                 {
-                    Program.MainForm.niTray.Tag = null;
-
-                    if (!taskSettings.AdvancedSettings.DisableNotifications && taskSettings.GeneralSettings.PopUpNotification != PopUpNotificationType.None)
-                    {
-                        Program.MainForm.niTray.ShowBalloonTip(3000, "ShareX",
-                            string.Format(Resources.TaskHelpers_OpenQuickScreenColorPicker_Copied_to_clipboard___0_, text), ToolTipIcon.Info);
-                    }
+                    ShowBalloonTip(string.Format(Resources.TaskHelpers_OpenQuickScreenColorPicker_Copied_to_clipboard___0_, text), ToolTipIcon.Info, 3000);
                 }
             }
         }
@@ -798,53 +878,28 @@ namespace ShareX
             thumbnailerForm.Show();
         }
 
-        public static void AnnotateImage(TaskSettings taskSettings = null)
+        public static void OpenImageEditor(TaskSettings taskSettings = null)
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
-            if (Clipboard.ContainsImage() && MessageBox.Show(Resources.TaskHelpers_OpenImageEditor_Your_clipboard_contains_image,
-                Resources.TaskHelpers_OpenImageEditor_Image_editor___How_to_load_image_, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            using (EditorStartupForm editorStartupForm = new EditorStartupForm(taskSettings.CaptureSettingsReference.SurfaceOptions))
             {
-                using (Image img = ClipboardHelpers.GetImage())
+                if (editorStartupForm.ShowDialog() == DialogResult.OK)
                 {
-                    if (img != null)
-                    {
-                        if (taskSettings.AdvancedSettings.UseShareXForAnnotation)
-                        {
-                            AnnotateImageUsingShareX(img, null, taskSettings);
-                        }
-                        else
-                        {
-                            AnnotateImageUsingGreenshot(img, null);
-                        }
-
-                        return;
-                    }
+                    AnnotateImageAsync(editorStartupForm.Image, editorStartupForm.ImageFilePath, taskSettings);
                 }
-            }
-
-            string filePath = ImageHelpers.OpenImageFileDialog();
-
-            if (!string.IsNullOrEmpty(filePath))
-            {
-                AnnotateImage(filePath, taskSettings);
             }
         }
 
-        public static void AnnotateImage(string filePath, TaskSettings taskSettings = null)
+        public static void AnnotateImageFromFile(string filePath, TaskSettings taskSettings = null)
         {
             if (!string.IsNullOrEmpty(filePath) && File.Exists(filePath))
             {
                 if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
-                if (taskSettings.AdvancedSettings.UseShareXForAnnotation)
-                {
-                    AnnotateImageUsingShareX(null, filePath, taskSettings);
-                }
-                else
-                {
-                    AnnotateImageUsingGreenshot(null, filePath);
-                }
+                Image img = ImageHelpers.LoadImage(filePath);
+
+                AnnotateImageAsync(img, filePath, taskSettings);
             }
             else
             {
@@ -852,124 +907,144 @@ namespace ShareX
             }
         }
 
-        private static void AnnotateImageUsingShareX(Image img, string filePath, TaskSettings taskSettings)
+        public static void AnnotateImageAsync(Image img, string filePath, TaskSettings taskSettings)
         {
-            Image result = AnnotateImageUsingShareX(img, filePath, taskSettings.CaptureSettingsReference.SurfaceOptions);
+            ThreadWorker worker = new ThreadWorker();
 
-            if (result != null)
+            worker.DoWork += () =>
             {
-                UploadManager.RunImageTask(result, taskSettings);
-            }
+                img = AnnotateImage(img, filePath, taskSettings);
+            };
+
+            worker.Completed += () =>
+            {
+                if (img != null)
+                {
+                    UploadManager.RunImageTask(img, taskSettings);
+                }
+            };
+
+            worker.Start(ApartmentState.STA);
         }
 
-        public static Image AnnotateImageForTask(Image img, string filePath, TaskSettings taskSettings)
+        public static Image AnnotateImage(Image img, string filePath, TaskSettings taskSettings, bool taskMode = false)
         {
-            if (img != null)
-            {
-                if (taskSettings.AdvancedSettings.UseShareXForAnnotation)
-                {
-                    return AnnotateImageUsingShareX(img, filePath, taskSettings.CaptureSettingsReference.SurfaceOptions, true);
-                }
-                else
-                {
-                    return AnnotateImageUsingGreenshot(img, filePath);
-                }
-            }
-
-            return null;
-        }
-
-        private static Image AnnotateImageUsingShareX(Image img, string filePath, RegionCaptureOptions options, bool taskMode = false)
-        {
-            if (img == null && File.Exists(filePath))
-            {
-                img = ImageHelpers.LoadImage(filePath);
-            }
-
             if (img != null)
             {
                 using (img)
                 {
-                    return RegionCaptureTasks.AnnotateImage(img, filePath, options,
-                        (x, newFilePath) => ImageHelpers.SaveImage(x, newFilePath),
-                        (x, newFilePath) => ImageHelpers.SaveImageFileDialog(x, newFilePath),
-                        x => ClipboardHelpers.CopyImage(x),
-                        x => UploadManager.UploadImage(x),
-                        x => PrintImage(x),
-                        taskMode);
+                    RegionCaptureMode mode = taskMode ? RegionCaptureMode.TaskEditor : RegionCaptureMode.Editor;
+                    RegionCaptureOptions options = taskSettings.CaptureSettingsReference.SurfaceOptions;
+
+                    using (RegionCaptureForm form = new RegionCaptureForm(mode, options, img))
+                    {
+                        form.ImageFilePath = filePath;
+
+                        form.SaveImageRequested += (output, newFilePath) =>
+                        {
+                            using (output)
+                            {
+                                if (string.IsNullOrEmpty(newFilePath))
+                                {
+                                    string fileName = GetFilename(taskSettings, taskSettings.ImageSettings.ImageFormat.GetDescription(), output);
+                                    newFilePath = Path.Combine(taskSettings.CaptureFolder, fileName);
+                                }
+
+                                ImageHelpers.SaveImage(output, newFilePath);
+                            }
+
+                            return newFilePath;
+                        };
+
+                        form.SaveImageAsRequested += (output, newFilePath) =>
+                        {
+                            using (output)
+                            {
+                                if (string.IsNullOrEmpty(newFilePath))
+                                {
+                                    string fileName = GetFilename(taskSettings, taskSettings.ImageSettings.ImageFormat.GetDescription(), output);
+                                    newFilePath = Path.Combine(taskSettings.CaptureFolder, fileName);
+                                }
+
+                                newFilePath = ImageHelpers.SaveImageFileDialog(output, newFilePath);
+                            }
+
+                            return newFilePath;
+                        };
+
+                        form.CopyImageRequested += output =>
+                        {
+                            Program.MainForm.InvokeSafe(() =>
+                            {
+                                using (output) { ClipboardHelpers.CopyImage(output); }
+                            });
+                        };
+
+                        form.UploadImageRequested += output =>
+                        {
+                            Program.MainForm.InvokeSafe(() =>
+                            {
+                                UploadManager.UploadImage(output);
+                            });
+                        };
+
+                        form.PrintImageRequested += output =>
+                        {
+                            Program.MainForm.InvokeSafe(() =>
+                            {
+                                using (output) { PrintImage(output); }
+                            });
+                        };
+
+                        form.ShowDialog();
+
+                        switch (form.Result)
+                        {
+                            case RegionResult.Close: // Esc
+                            case RegionResult.AnnotateCancelTask:
+                                return null;
+                            case RegionResult.Region: // Enter
+                            case RegionResult.AnnotateRunAfterCaptureTasks:
+                                return form.GetResultImage();
+                            case RegionResult.Fullscreen: // Space or right click
+                            case RegionResult.AnnotateContinueTask:
+                                return (Image)form.Canvas.Clone();
+                        }
+                    }
                 }
             }
 
             return null;
         }
 
-        private static Image AnnotateImageUsingGreenshot(Image img, string imgPath)
+        public static void OpenImageEffects(TaskSettings taskSettings = null)
         {
-            return AnnotateImageUsingGreenshot(img, imgPath, !Program.Sandbox, Program.PersonalFolder,
-                x => Program.MainForm.InvokeSafe(() => ClipboardHelpers.CopyImage(x)),
-                x => Program.MainForm.InvokeSafe(() => UploadManager.UploadImage(x)),
-                (x, filePath) => Program.MainForm.InvokeSafe(() => ImageHelpers.SaveImage(x, filePath)),
-                (x, filePath) =>
-                {
-                    string newFilePath = null;
-                    Program.MainForm.InvokeSafe(() => newFilePath = ImageHelpers.SaveImageFileDialog(x, filePath));
-                    return newFilePath;
-                },
-                x => Program.MainForm.InvokeSafe(() => PrintImage(x)));
-        }
+            if (taskSettings == null) taskSettings = Program.DefaultTaskSettings;
 
-        private static Image AnnotateImageUsingGreenshot(Image img, string imgPath, bool allowSave, string configPath, Action<Image> clipboardCopyRequested,
-            Action<Image> imageUploadRequested, Action<Image, string> imageSaveRequested, Func<Image, string, string> imageSaveAsRequested, Action<Image> printImageRequested)
-        {
-            if (!IniConfig.isInitialized)
-            {
-                IniConfig.AllowSave = allowSave;
-                IniConfig.Init(configPath);
-            }
-
-            using (Image cloneImage = img != null ? (Image)img.Clone() : ImageHelpers.LoadImage(imgPath))
-            using (ICapture capture = new Capture { Image = cloneImage })
-            using (Surface surface = new Surface(capture))
-            using (ImageEditorForm editor = new ImageEditorForm(surface, true))
-            {
-                editor.IsTaskWork = img != null;
-                editor.SetImagePath(imgPath);
-                editor.ClipboardCopyRequested += clipboardCopyRequested;
-                editor.ImageUploadRequested += imageUploadRequested;
-                editor.ImageSaveRequested += imageSaveRequested;
-                editor.ImageSaveAsRequested += imageSaveAsRequested;
-                editor.PrintImageRequested += printImageRequested;
-
-                DialogResult result = editor.ShowDialog();
-
-                if (result == DialogResult.OK && editor.IsTaskWork)
-                {
-                    using (img)
-                    {
-                        return editor.GetImageForExport();
-                    }
-                }
-
-                if (result == DialogResult.Abort)
-                {
-                    return null;
-                }
-            }
-
-            return img;
-        }
-
-        public static void OpenImageEffects()
-        {
             string filePath = ImageHelpers.OpenImageFileDialog();
             Image img = null;
             if (!string.IsNullOrEmpty(filePath))
             {
                 img = ImageHelpers.LoadImage(filePath);
             }
-            ImageEffectsForm form = new ImageEffectsForm(img);
-            form.EditorMode();
-            form.Show();
+
+            if (img != null)
+            {
+                if (img.PixelFormat.HasFlag(PixelFormat.Indexed))
+                {
+                    MessageBox.Show("Unsupported pixel format: " + img.PixelFormat, "ShareX - Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    using (ImageEffectsForm imageEffectsForm = new ImageEffectsForm(img, taskSettings.ImageSettings.ImageEffectPresets,
+                        taskSettings.ImageSettings.SelectedImageEffectPreset))
+                    {
+                        imageEffectsForm.EnableToolMode(x => UploadManager.RunImageTask(x, taskSettings));
+                        imageEffectsForm.ShowDialog();
+                        //taskSettings.ImageSettings.SelectedImageEffectPreset = imageEffectsForm.SelectedPresetIndex;
+                    }
+                }
+            }
         }
 
         public static void OpenMonitorTest()
@@ -983,7 +1058,7 @@ namespace ShareX
         public static void OpenDNSChanger()
         {
 #if WindowsStore
-            MessageBox.Show("Not supported in Windows Store build.", "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Not supported in Microsoft Store build.", "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
 #else
             if (Helpers.IsAdministrator())
             {
@@ -1000,17 +1075,28 @@ namespace ShareX
         {
             try
             {
-                ProcessStartInfo psi = new ProcessStartInfo(Application.ExecutablePath);
-                psi.Arguments = arguments;
-                psi.Verb = "runas";
-                Process.Start(psi);
+                using (Process process = new Process())
+                {
+                    ProcessStartInfo psi = new ProcessStartInfo()
+                    {
+                        FileName = Application.ExecutablePath,
+                        Arguments = arguments,
+                        UseShellExecute = true,
+                        Verb = "runas"
+                    };
+
+                    process.StartInfo = psi;
+                    process.Start();
+                }
             }
-            catch { }
+            catch
+            {
+            }
         }
 
         public static void OpenQRCode()
         {
-            new QRCodeForm().Show();
+            QRCodeForm.EncodeClipboard().Show();
         }
 
         public static void OpenRuler(TaskSettings taskSettings = null)
@@ -1020,78 +1106,111 @@ namespace ShareX
             RegionCaptureTasks.ShowScreenRuler(taskSettings.CaptureSettings.SurfaceOptions);
         }
 
-        public static void OCRImage(TaskSettings taskSettings = null)
+        public static void SearchImage(string url)
+        {
+            new GoogleImageSearchSharingService().CreateSharer(null, null).ShareURL(url);
+        }
+
+        public static async Task OCRImage(TaskSettings taskSettings = null)
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
             using (Image img = RegionCaptureTasks.GetRegionImage(taskSettings.CaptureSettings.SurfaceOptions))
             {
-                OCRImage(img);
+                await OCRImage(img, taskSettings);
             }
         }
 
-        public static void OCRImage(Image img)
+        public static async Task OCRImage(Image img, TaskSettings taskSettings = null)
         {
             if (img != null)
             {
                 using (Stream stream = SaveImageAsStream(img, EImageFormat.PNG))
                 {
-                    OCRImage(stream, "ShareX.png");
+                    await OCRImage(stream, "ShareX.png", null, taskSettings);
                 }
             }
         }
 
-        public static void SearchImage(string url)
-        {
-            new GoogleImageSearchSharingService().ShareURL(url, null);
-        }
-
-        public static void OCRImage(string filePath)
+        public static async Task OCRImage(string filePath, TaskSettings taskSettings = null)
         {
             if (File.Exists(filePath))
             {
                 using (FileStream fs = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read))
                 {
-                    OCRImage(fs, Path.GetFileName(filePath));
+                    await OCRImage(fs, Path.GetFileName(filePath), filePath, taskSettings);
                 }
             }
         }
 
-        public static void OCRImage(Stream stream, string fileName)
+        private static async Task OCRImage(Stream stream, string fileName, string filePath = null, TaskSettings taskSettings = null)
         {
             if (stream != null)
             {
-                using (OCRSpaceForm form = new OCRSpaceForm(stream, fileName))
+                if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
+
+                OCROptions ocrOptions = taskSettings.CaptureSettings.OCROptions;
+
+                if (!ocrOptions.Permission)
                 {
-                    form.Language = Program.Settings.OCRLanguage;
-                    form.ShowDialog();
-                    Program.Settings.OCRLanguage = form.Language;
+                    if (MessageBox.Show(Resources.PleaseNoteThatShareXIsUsingOCRSpaceSOnlineAPIToPerformOpticalCharacterRecognitionDoYouGivePermissionToShareXToUploadImagesToThisService,
+                        Resources.ShareXOpticalCharacterRecognition, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        taskSettings.CaptureSettingsReference.OCROptions.Permission = true;
+                    }
+                    else
+                    {
+                        return;
+                    }
+                }
+
+                if (ocrOptions.Silent)
+                {
+                    await AsyncOCRImage(stream, fileName, filePath, ocrOptions);
+                }
+                else
+                {
+                    using (OCRSpaceForm form = new OCRSpaceForm(stream, fileName, ocrOptions))
+                    {
+                        form.ShowDialog();
+
+                        if (!string.IsNullOrEmpty(form.Result) && !string.IsNullOrEmpty(filePath))
+                        {
+                            string textPath = Path.ChangeExtension(filePath, "txt");
+                            File.WriteAllText(textPath, form.Result, Encoding.UTF8);
+                        }
+                    }
                 }
             }
         }
 
-        public static void OpenFTPClient()
+        public static async Task AsyncOCRImage(Stream stream, string fileName, string filePath, OCROptions ocrOptions)
         {
-            if (Program.UploadersConfig != null && Program.UploadersConfig.FTPAccountList != null)
+            ShowBalloonTip(Resources.OCRForm_AutoProcessing, ToolTipIcon.None, 3000);
+
+            string result = null;
+
+            if (stream != null && stream.Length > 0 && !string.IsNullOrEmpty(fileName))
             {
-                FTPAccount account = Program.UploadersConfig.FTPAccountList.ReturnIfValidIndex(Program.UploadersConfig.FTPSelectedImage);
-
-                if (account != null)
-                {
-                    if (account.Protocol == FTPProtocol.FTP || account.Protocol == FTPProtocol.FTPS)
-                    {
-                        new FTPClientForm(account).Show();
-                    }
-                    else
-                    {
-                        MessageBox.Show(Resources.TaskHelpers_OpenFTPClient_FTP_client_only_supports_FTP_or_FTPS_, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-
-                    return;
-                }
+                result = await OCRSpace.DoOCRAsync(ocrOptions.DefaultLanguage, stream, fileName);
             }
 
-            MessageBox.Show(Resources.TaskHelpers_OpenFTPClient_Unable_to_find_valid_FTP_account_, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if (!string.IsNullOrEmpty(result))
+            {
+                ClipboardHelpers.CopyText(result);
+
+                if (!string.IsNullOrEmpty(filePath))
+                {
+                    string textPath = Path.ChangeExtension(filePath, "txt");
+                    File.WriteAllText(textPath, result, Encoding.UTF8);
+                }
+
+                ShowBalloonTip(Resources.OCRForm_AutoComplete, ToolTipIcon.None, 3000);
+            }
+            else
+            {
+                ShowBalloonTip(Resources.OCRForm_AutoCompleteFail, ToolTipIcon.Warning, 3000);
+            }
         }
 
         public static void TweetMessage()
@@ -1102,17 +1221,13 @@ namespace ShareX
 
                 if (twitterOAuth != null && OAuthInfo.CheckOAuth(twitterOAuth))
                 {
-                    TaskEx.Run(() =>
+                    Task.Run(() =>
                     {
                         using (TwitterTweetForm twitter = new TwitterTweetForm(twitterOAuth))
                         {
                             if (twitter.ShowDialog() == DialogResult.OK && twitter.IsTweetSent)
                             {
-                                if (Program.MainForm.niTray.Visible)
-                                {
-                                    Program.MainForm.niTray.Tag = null;
-                                    Program.MainForm.niTray.ShowBalloonTip(5000, "ShareX - Twitter", Resources.TaskHelpers_TweetMessage_Tweet_successfully_sent_, ToolTipIcon.Info);
-                                }
+                                ShowBalloonTip(Resources.TaskHelpers_TweetMessage_Tweet_successfully_sent_, ToolTipIcon.Info, 3000);
                             }
                         }
                     });
@@ -1147,12 +1262,8 @@ namespace ShareX
             Program.HotkeyManager.ToggleHotkeys(hotkeysDisabled);
             Program.MainForm.UpdateToggleHotkeyButton();
 
-            if (Program.MainForm.niTray.Visible)
-            {
-                Program.MainForm.niTray.Tag = null;
-                string balloonTipText = hotkeysDisabled ? Resources.TaskHelpers_ToggleHotkeys_Hotkeys_disabled_ : Resources.TaskHelpers_ToggleHotkeys_Hotkeys_enabled_;
-                Program.MainForm.niTray.ShowBalloonTip(3000, "ShareX", balloonTipText, ToolTipIcon.Info);
-            }
+            string balloonTipText = hotkeysDisabled ? Resources.TaskHelpers_ToggleHotkeys_Hotkeys_disabled_ : Resources.TaskHelpers_ToggleHotkeys_Hotkeys_enabled_;
+            ShowBalloonTip(balloonTipText, ToolTipIcon.Info, 3000);
 
             return hotkeysDisabled;
         }
@@ -1178,7 +1289,7 @@ namespace ShareX
                         Program.DefaultTaskSettings.CaptureSettings.FFmpegOptions.CLIPath = taskSettings.TaskSettingsReference.CaptureSettings.FFmpegOptions.CLIPath =
                             taskSettings.CaptureSettings.FFmpegOptions.CLIPath = Program.DefaultFFmpegFilePath;
 
-#if STEAM
+#if STEAM || WindowsStore
                         Program.DefaultTaskSettings.CaptureSettings.FFmpegOptions.OverrideCLIPath = taskSettings.TaskSettingsReference.CaptureSettings.FFmpegOptions.OverrideCLIPath =
                           taskSettings.CaptureSettings.FFmpegOptions.OverrideCLIPath = true;
 #endif
@@ -1199,7 +1310,7 @@ namespace ShareX
 
         private static void DownloaderForm_InstallRequested(string filePath)
         {
-            bool result = FFmpegDownloader.ExtractFFmpeg(filePath, Program.DefaultFFmpegFilePath);
+            bool result = FFmpegDownloader.ExtractFFmpeg(filePath, Program.ToolsFolder);
 
             if (result)
             {
@@ -1263,7 +1374,7 @@ namespace ShareX
 
         public static void TextToSpeechAsync(string text)
         {
-            TaskEx.Run(() =>
+            Task.Run(() =>
             {
                 using (SpeechSynthesizer speaker = new SpeechSynthesizer())
                 {
@@ -1302,6 +1413,25 @@ namespace ShareX
             }
         }
 
+        public static void OpenCustomUploaderSettingsWindow()
+        {
+            SettingManager.WaitUploadersConfig();
+
+            bool firstInstance = !CustomUploaderSettingsForm.IsInstanceActive;
+
+            CustomUploaderSettingsForm form = CustomUploaderSettingsForm.GetFormInstance(Program.UploadersConfig);
+
+            if (firstInstance)
+            {
+                form.FormClosed += (sender, e) => SettingManager.SaveUploadersConfigAsync();
+                form.Show();
+            }
+            else
+            {
+                form.ForceActivate();
+            }
+        }
+
         public static Image FindMenuIcon<T>(int index)
         {
             T e = Helpers.GetEnumFromIndex<T>(index);
@@ -1336,6 +1466,8 @@ namespace ShareX
                         return Resources.clipboard_list;
                     case AfterCaptureTasks.ShowInExplorer:
                         return Resources.folder_stand;
+                    case AfterCaptureTasks.ScanQRCode:
+                        return Resources.barcode_2d;
                     case AfterCaptureTasks.DoOCR:
                         return Resources.edit_drop_cap;
                     case AfterCaptureTasks.ShowBeforeUploadWindow:
@@ -1379,8 +1511,10 @@ namespace ShareX
                 case HotkeyType.FolderUpload: return Resources.folder;
                 case HotkeyType.ClipboardUpload: return Resources.clipboard;
                 case HotkeyType.ClipboardUploadWithContentViewer: return Resources.clipboard_task;
+                case HotkeyType.UploadText: return Resources.notebook;
                 case HotkeyType.UploadURL: return Resources.drive;
                 case HotkeyType.DragDropUpload: return Resources.inbox;
+                case HotkeyType.ShortenURL: return Resources.edit_scale;
                 case HotkeyType.StopUploads: return Resources.cross_button;
                 // Screen capture
                 case HotkeyType.PrintScreen: return Resources.layer_fullscreen;
@@ -1392,7 +1526,6 @@ namespace ShareX
                 case HotkeyType.CustomRegion: return Resources.layer__arrow;
                 case HotkeyType.LastRegion: return Resources.layers;
                 case HotkeyType.ScrollingCapture: return Resources.ui_scroll_pane_image;
-                case HotkeyType.CaptureWebpage: return Resources.document_globe;
                 case HotkeyType.TextCapture: return Resources.edit_drop_cap;
                 case HotkeyType.AutoCapture: return Resources.clock;
                 case HotkeyType.StartAutoCapture: return Resources.clock__arrow;
@@ -1418,7 +1551,6 @@ namespace ShareX
                 case HotkeyType.IndexFolder: return Resources.folder_tree;
                 case HotkeyType.ImageCombiner: return Resources.document_break;
                 case HotkeyType.VideoThumbnailer: return Resources.images_stack;
-                case HotkeyType.FTPClient: return Resources.application_network;
                 case HotkeyType.TweetMessage: return Resources.Twitter;
                 case HotkeyType.MonitorTest: return Resources.monitor;
                 // Other
@@ -1463,7 +1595,7 @@ namespace ShareX
 
                         if (cui.DestinationType == CustomUploaderDestinationType.None)
                         {
-                            DialogResult result = MessageBox.Show($"Would you like to add \"{cui.Name}\" custom uploader?",
+                            DialogResult result = MessageBox.Show($"Would you like to add \"{cui.ToString()}\" custom uploader?",
                                 "ShareX - Custom uploader confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
 
                             if (result == DialogResult.No)
@@ -1474,14 +1606,15 @@ namespace ShareX
                         else
                         {
                             List<string> destinations = new List<string>();
-                            if (cui.DestinationType.Has(CustomUploaderDestinationType.ImageUploader)) destinations.Add("images");
-                            if (cui.DestinationType.Has(CustomUploaderDestinationType.TextUploader)) destinations.Add("texts");
-                            if (cui.DestinationType.Has(CustomUploaderDestinationType.FileUploader)) destinations.Add("files");
-                            if (cui.DestinationType.Has(CustomUploaderDestinationType.URLShortener)) destinations.Add("urls");
+                            if (cui.DestinationType.HasFlag(CustomUploaderDestinationType.ImageUploader)) destinations.Add("images");
+                            if (cui.DestinationType.HasFlag(CustomUploaderDestinationType.TextUploader)) destinations.Add("texts");
+                            if (cui.DestinationType.HasFlag(CustomUploaderDestinationType.FileUploader)) destinations.Add("files");
+                            if (cui.DestinationType.HasFlag(CustomUploaderDestinationType.URLShortener) ||
+                                (cui.DestinationType.HasFlag(CustomUploaderDestinationType.URLSharingService))) destinations.Add("urls");
 
                             string destinationsText = string.Join("/", destinations);
 
-                            DialogResult result = MessageBox.Show($"Would you like to set \"{cui.Name}\" as the active custom uploader for {destinationsText}?",
+                            DialogResult result = MessageBox.Show($"Would you like to set \"{cui.ToString()}\" as the active custom uploader for {destinationsText}?",
                                 "ShareX - Custom uploader confirmation", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
 
                             if (result == DialogResult.Yes)
@@ -1494,43 +1627,50 @@ namespace ShareX
                             }
                         }
 
+                        cui.CheckBackwardCompatibility();
                         Program.UploadersConfig.CustomUploadersList.Add(cui);
 
                         if (activate)
                         {
                             int index = Program.UploadersConfig.CustomUploadersList.Count - 1;
 
-                            if (cui.DestinationType.Has(CustomUploaderDestinationType.ImageUploader))
+                            if (cui.DestinationType.HasFlag(CustomUploaderDestinationType.ImageUploader))
                             {
                                 Program.UploadersConfig.CustomImageUploaderSelected = index;
                                 Program.DefaultTaskSettings.ImageDestination = ImageDestination.CustomImageUploader;
                             }
 
-                            if (cui.DestinationType.Has(CustomUploaderDestinationType.TextUploader))
+                            if (cui.DestinationType.HasFlag(CustomUploaderDestinationType.TextUploader))
                             {
                                 Program.UploadersConfig.CustomTextUploaderSelected = index;
                                 Program.DefaultTaskSettings.TextDestination = TextDestination.CustomTextUploader;
                             }
 
-                            if (cui.DestinationType.Has(CustomUploaderDestinationType.FileUploader))
+                            if (cui.DestinationType.HasFlag(CustomUploaderDestinationType.FileUploader))
                             {
                                 Program.UploadersConfig.CustomFileUploaderSelected = index;
                                 Program.DefaultTaskSettings.FileDestination = FileDestination.CustomFileUploader;
                             }
 
-                            if (cui.DestinationType.Has(CustomUploaderDestinationType.URLShortener))
+                            if (cui.DestinationType.HasFlag(CustomUploaderDestinationType.URLShortener))
                             {
                                 Program.UploadersConfig.CustomURLShortenerSelected = index;
                                 Program.DefaultTaskSettings.URLShortenerDestination = UrlShortenerType.CustomURLShortener;
                             }
 
+                            if (cui.DestinationType.HasFlag(CustomUploaderDestinationType.URLSharingService))
+                            {
+                                Program.UploadersConfig.CustomURLSharingServiceSelected = index;
+                                Program.DefaultTaskSettings.URLSharingServiceDestination = URLSharingServices.CustomURLSharingService;
+                            }
+
                             Program.MainForm.UpdateCheckStates();
                             Program.MainForm.UpdateUploaderMenuNames();
+                        }
 
-                            if (UploadersConfigForm.IsInstanceActive)
-                            {
-                                UploadersConfigForm.UpdateCustomUploaderTab();
-                            }
+                        if (CustomUploaderSettingsForm.IsInstanceActive)
+                        {
+                            CustomUploaderSettingsForm.CustomUploaderUpdateTab();
                         }
                     }
                 }
@@ -1555,6 +1695,100 @@ namespace ShareX
             else
             {
                 ActionsToolbarForm.Instance.ForceActivate();
+            }
+        }
+
+        public static void DownloadAppVeyorBuild()
+        {
+            AppVeyorUpdateChecker updateChecker = new AppVeyorUpdateChecker()
+            {
+                IsBeta = Program.Dev,
+                IsPortable = Program.Portable,
+                Proxy = HelpersOptions.CurrentProxy.GetWebProxy()
+            };
+            updateChecker.CheckUpdate();
+            UpdateMessageBox.Start(updateChecker);
+        }
+
+        public static Image CreateQRCode(string text, int width, int height)
+        {
+            if (CheckQRCodeContent(text))
+            {
+                try
+                {
+                    BarcodeWriter writer = new BarcodeWriter
+                    {
+                        Format = BarcodeFormat.QR_CODE,
+                        Options = new QrCodeEncodingOptions
+                        {
+                            Width = width,
+                            Height = height,
+                            CharacterSet = "UTF-8"
+                        },
+                        Renderer = new BitmapRenderer()
+                    };
+
+                    return writer.Write(text);
+                }
+                catch (Exception e)
+                {
+                    e.ShowError();
+                }
+            }
+
+            return null;
+        }
+
+        public static Image CreateQRCode(string text, int size)
+        {
+            return CreateQRCode(text, size, size);
+        }
+
+        public static string[] BarcodeScan(Bitmap bmp, bool scanQRCodeOnly = false)
+        {
+            try
+            {
+                BarcodeReader barcodeReader = new BarcodeReader
+                {
+                    AutoRotate = true,
+                    TryInverted = true,
+                    Options = new DecodingOptions
+                    {
+                        TryHarder = true
+                    }
+                };
+
+                if (scanQRCodeOnly)
+                {
+                    barcodeReader.Options.PossibleFormats = new List<BarcodeFormat>() { BarcodeFormat.QR_CODE };
+                }
+
+                Result[] results = barcodeReader.DecodeMultiple(bmp);
+
+                if (results != null)
+                {
+                    return results.Where(x => x != null && !string.IsNullOrEmpty(x.Text)).Select(x => x.Text).ToArray();
+                }
+            }
+            catch (Exception e)
+            {
+                e.ShowError();
+            }
+
+            return null;
+        }
+
+        public static bool CheckQRCodeContent(string content)
+        {
+            return !string.IsNullOrEmpty(content) && Encoding.UTF8.GetByteCount(content) <= 2952;
+        }
+
+        public static void ShowBalloonTip(string text, ToolTipIcon icon, int timeout, string title = "ShareX", BalloonTipAction clickAction = null)
+        {
+            if (Program.MainForm != null && !Program.MainForm.IsDisposed && Program.MainForm.niTray != null && Program.MainForm.niTray.Visible)
+            {
+                Program.MainForm.niTray.Tag = clickAction;
+                Program.MainForm.niTray.ShowBalloonTip(timeout, title, text, icon);
             }
         }
     }

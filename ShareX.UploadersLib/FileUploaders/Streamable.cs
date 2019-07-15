@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2017 ShareX Team
+    Copyright (c) 2007-2019 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -82,10 +82,11 @@ namespace ShareX.UploadersLib.FileUploaders
 
             if (!string.IsNullOrEmpty(Email) && !string.IsNullOrEmpty(Password))
             {
-                headers = CreateAuthenticationHeader(Email, Password);
+                headers = RequestHelpers.CreateAuthenticationHeader(Email, Password);
             }
 
-            UploadResult result = SendRequestFile(URLHelpers.CombineURL(Host, "upload"), stream, fileName, headers: headers);
+            string url = URLHelpers.CombineURL(Host, "upload");
+            UploadResult result = SendRequestFile(url, stream, fileName, "file", headers: headers);
 
             TranscodeFile(result);
 
@@ -99,11 +100,7 @@ namespace ShareX.UploadersLib.FileUploaders
             if (!string.IsNullOrEmpty(transcodeResponse.Shortcode))
             {
                 ProgressManager progress = new ProgressManager(100);
-
-                if (AllowReportProgress)
-                {
-                    OnProgressChanged(progress);
-                }
+                OnProgressChanged(progress);
 
                 while (!StopUploadRequested)
                 {
@@ -118,12 +115,8 @@ namespace ShareX.UploadersLib.FileUploaders
                     }
                     else if (response.status == 2)
                     {
-                        if (AllowReportProgress)
-                        {
-                            long delta = 100 - progress.Position;
-                            progress.UpdateProgress(delta);
-                            OnProgressChanged(progress);
-                        }
+                        progress.UpdateProgress(100 - progress.Position);
+                        OnProgressChanged(progress);
 
                         result.IsSuccess = true;
 
@@ -139,14 +132,10 @@ namespace ShareX.UploadersLib.FileUploaders
                         break;
                     }
 
-                    if (AllowReportProgress)
-                    {
-                        long delta = response.percent - progress.Position;
-                        progress.UpdateProgress(delta);
-                        OnProgressChanged(progress);
-                    }
+                    progress.UpdateProgress(response.percent - progress.Position);
+                    OnProgressChanged(progress);
 
-                    Thread.Sleep(100);
+                    Thread.Sleep(1000);
                 }
             }
             else

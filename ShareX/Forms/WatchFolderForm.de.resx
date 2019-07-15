@@ -1,3 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -117,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="$this.Text" xml:space="preserve">
-    <value>Beobachte Ordner</value>
+    <value>ShareX - Ordner beobachten</value>
   </data>
   <data name="btnCancel.Text" xml:space="preserve">
     <value>Abbrechen</value>
@@ -126,7 +127,7 @@
     <value>OK</value>
   </data>
   <data name="cbIncludeSubdirectories.Text" xml:space="preserve">
-    <value>Beziehe Unterdirektoren ein</value>
+    <value>Unterverzeichnisse einbeziehen</value>
   </data>
   <data name="lblFilter.Text" xml:space="preserve">
     <value>Filter:</value>

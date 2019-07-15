@@ -126,14 +126,14 @@
     <value>16, 368</value>
   </data>
   <data name="btnScreenTearingTest.Size" type="System.Drawing.Size, System.Drawing">
-    <value>320, 23</value>
+    <value>320, 24</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="btnScreenTearingTest.TabIndex" type="System.Int32, mscorlib">
     <value>25</value>
   </data>
   <data name="btnScreenTearingTest.Text" xml:space="preserve">
-    <value>Screen tearing test</value>
+    <value>Start test animation</value>
   </data>
   <data name="&gt;&gt;btnScreenTearingTest.Name" xml:space="preserve">
     <value>btnScreenTearingTest</value>
@@ -151,10 +151,10 @@
     <value>NoControl</value>
   </data>
   <data name="btnGradientColor2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>224, 257</value>
+    <value>232, 257</value>
   </data>
   <data name="btnGradientColor2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>96, 24</value>
+    <value>104, 24</value>
   </data>
   <data name="btnGradientColor2.TabIndex" type="System.Int32, mscorlib">
     <value>18</value>
@@ -169,7 +169,7 @@
     <value>btnGradientColor2</value>
   </data>
   <data name="&gt;&gt;btnGradientColor2.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.ColorButton, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.ColorButton, ShareX.HelpersLib, Version=12.4.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;btnGradientColor2.Parent" xml:space="preserve">
     <value>pSettings</value>
@@ -184,7 +184,7 @@
     <value>120, 257</value>
   </data>
   <data name="btnGradientColor1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>96, 24</value>
+    <value>104, 24</value>
   </data>
   <data name="btnGradientColor1.TabIndex" type="System.Int32, mscorlib">
     <value>17</value>
@@ -199,7 +199,7 @@
     <value>btnGradientColor1</value>
   </data>
   <data name="&gt;&gt;btnGradientColor1.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.ColorButton, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.ColorButton, ShareX.HelpersLib, Version=12.4.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;btnGradientColor1.Parent" xml:space="preserve">
     <value>pSettings</value>
@@ -214,16 +214,16 @@
     <value>NoControl</value>
   </data>
   <data name="lblTip.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 400</value>
+    <value>-1, 407</value>
   </data>
   <data name="lblTip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>320, 40</value>
+    <value>353, 40</value>
   </data>
   <data name="lblTip.TabIndex" type="System.Int32, mscorlib">
     <value>24</value>
   </data>
   <data name="lblTip.Text" xml:space="preserve">
-    <value>You can click outside for hide/show this panel.</value>
+    <value>Tip: You can click outside to hide/show this panel.</value>
   </data>
   <data name="lblTip.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleCenter</value>
@@ -298,7 +298,7 @@
     <value>211, 8</value>
   </data>
   <data name="btnClose.Size" type="System.Drawing.Size, System.Drawing">
-    <value>125, 23</value>
+    <value>125, 24</value>
   </data>
   <data name="btnClose.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -368,7 +368,7 @@
   </data>
   <data name="lblShapeSizeValue.Text" xml:space="preserve">
     <value>1</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;lblShapeSizeValue.Name" xml:space="preserve">
     <value>lblShapeSizeValue</value>
   </data>
@@ -545,7 +545,7 @@
   </data>
   <data name="lblBlueValue.Text" xml:space="preserve">
     <value>0</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;lblBlueValue.Name" xml:space="preserve">
     <value>lblBlueValue</value>
   </data>
@@ -635,7 +635,7 @@
   </data>
   <data name="lblGreenValue.Text" xml:space="preserve">
     <value>0</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;lblGreenValue.Name" xml:space="preserve">
     <value>lblGreenValue</value>
   </data>
@@ -725,7 +725,7 @@
   </data>
   <data name="lblRedValue.Text" xml:space="preserve">
     <value>0</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;lblRedValue.Name" xml:space="preserve">
     <value>lblRedValue</value>
   </data>
@@ -815,7 +815,7 @@
   </data>
   <data name="lblBlackWhiteValue.Text" xml:space="preserve">
     <value>0</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;lblBlackWhiteValue.Name" xml:space="preserve">
     <value>lblBlackWhiteValue</value>
   </data>
@@ -886,10 +886,10 @@
     <value>25</value>
   </data>
   <data name="pSettings.Location" type="System.Drawing.Point, System.Drawing">
-    <value>100, 100</value>
+    <value>88, 88</value>
   </data>
   <data name="pSettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>353, 452</value>
+    <value>352, 448</value>
   </data>
   <data name="pSettings.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>

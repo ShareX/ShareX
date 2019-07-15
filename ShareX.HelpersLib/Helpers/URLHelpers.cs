@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2017 ShareX Team
+    Copyright (c) 2007-2019 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -23,81 +23,128 @@
 
 #endregion License Information (GPL v3)
 
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.Diagnostics;
 using System.Globalization;
 using System.Linq;
+using System.Security;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 using System.Web;
 
 namespace ShareX.HelpersLib
 {
     public static class URLHelpers
     {
+        public const string URLCharacters = Helpers.Alphanumeric + "-._~"; // 45 46 95 126
+        public const string URLPathCharacters = URLCharacters + "/"; // 47
+        public const string ValidURLCharacters = URLPathCharacters + ":?#[]@!$&'()*+,;= ";
+
+        public static readonly char[] BidiControlCharacters = new char[] { '\u200E', '\u200F', '\u202A', '\u202B', '\u202C', '\u202D', '\u202E' };
+
         public static void OpenURL(string url)
         {
             if (!string.IsNullOrEmpty(url))
             {
-                TaskEx.Run(() =>
+                Task.Run(() =>
                 {
                     try
                     {
-                        if (!string.IsNullOrEmpty(HelpersOptions.BrowserPath))
+                        using (Process process = new Process())
                         {
-                            Process.Start(HelpersOptions.BrowserPath, url);
-                        }
-                        else
-                        {
-                            Process.Start(url);
+                            ProcessStartInfo psi = new ProcessStartInfo();
+
+                            if (!string.IsNullOrEmpty(HelpersOptions.BrowserPath))
+                            {
+                                psi.FileName = HelpersOptions.BrowserPath;
+                                psi.Arguments = url;
+                            }
+                            else
+                            {
+                                psi.FileName = url;
+                            }
+
+                            process.StartInfo = psi;
+                            process.Start();
                         }
 
                         DebugHelper.WriteLine("URL opened: " + url);
                     }
                     catch (Exception e)
                     {
-                        DebugHelper.WriteException(e, string.Format("OpenURL({0}) failed", url));
+                        DebugHelper.WriteException(e, $"OpenURL({url}) failed");
                     }
                 });
             }
         }
 
-        private static string Encode(string text, string unreservedCharacters)
+        public static string URLEncode(string text, bool isPath = false)
         {
-            StringBuilder result = new StringBuilder();
+            StringBuilder sb = new StringBuilder();
 
             if (!string.IsNullOrEmpty(text))
             {
-                foreach (char c in text)
+                string unreservedCharacters;
+
+                if (isPath)
                 {
-                    if (unreservedCharacters.Contains(c))
+                    unreservedCharacters = URLPathCharacters;
+                }
+                else
+                {
+                    unreservedCharacters = URLCharacters;
+                }
+
+                foreach (char c in Encoding.UTF8.GetBytes(text))
+                {
+                    if (unreservedCharacters.IndexOf(c) != -1)
                     {
-                        result.Append(c);
+                        sb.Append(c);
                     }
                     else
                     {
-                        byte[] bytes = Encoding.UTF8.GetBytes(c.ToString());
-
-                        foreach (byte b in bytes)
-                        {
-                            result.AppendFormat(CultureInfo.InvariantCulture, "%{0:X2}", b);
-                        }
+                        sb.AppendFormat(CultureInfo.InvariantCulture, "%{0:X2}", (int)c);
                     }
                 }
             }
 
-            return result.ToString();
+            return sb.ToString();
         }
 
-        public static string URLEncode(string text)
+        public static string RemoveBidiControlCharacters(string text)
         {
-            return Encode(text, Helpers.URLCharacters);
+            return new string(text.Where(c => !BidiControlCharacters.Contains(c)).ToArray());
         }
 
-        public static string URLPathEncode(string text)
+        public static string ReplaceReservedCharacters(string text, string replace)
         {
-            return Encode(text, Helpers.URLPathCharacters);
+            StringBuilder sb = new StringBuilder();
+
+            string last = null;
+
+            foreach (char c in text)
+            {
+                if (URLCharacters.Contains(c))
+                {
+                    last = c.ToString();
+                }
+                else if (last != replace)
+                {
+                    last = replace;
+                }
+                else
+                {
+                    continue;
+                }
+
+                sb.Append(last);
+            }
+
+            return sb.ToString();
         }
 
         public static string HtmlEncode(string text)
@@ -120,6 +167,17 @@ namespace ShareX.HelpersLib
             }
 
             return result.ToString();
+        }
+
+        public static string JSONEncode(string text)
+        {
+            text = JsonConvert.ToString(text);
+            return text.Substring(1, text.Length - 2);
+        }
+
+        public static string XMLEncode(string text)
+        {
+            return SecurityElement.Escape(text);
         }
 
         public static string URLDecode(string url, int count = 1)
@@ -368,11 +426,9 @@ namespace ShareX.HelpersLib
             return url;
         }
 
-        public static string GetShortURL(string url)
+        public static string GetHostName(string url)
         {
-            Uri uri;
-
-            if (Uri.TryCreate(url, UriKind.Absolute, out uri))
+            if (!string.IsNullOrEmpty(url) && Uri.TryCreate(url, UriKind.Absolute, out Uri uri))
             {
                 string host = uri.Host;
 
@@ -390,26 +446,101 @@ namespace ShareX.HelpersLib
             return url;
         }
 
-        public static string CreateQuery(string url, Dictionary<string, string> args)
+        public static string CreateQueryString(Dictionary<string, string> args, bool customEncoding = false)
         {
-            string query = CreateQuery(args);
+            if (args != null && args.Count > 0)
+            {
+                List<string> pairs = new List<string>();
+
+                foreach (KeyValuePair<string, string> arg in args)
+                {
+                    string pair;
+
+                    if (string.IsNullOrEmpty(arg.Value))
+                    {
+                        pair = arg.Key;
+                    }
+                    else
+                    {
+                        string value;
+
+                        if (customEncoding)
+                        {
+                            value = URLEncode(arg.Value);
+                        }
+                        else
+                        {
+                            value = HttpUtility.UrlEncode(arg.Value);
+                        }
+
+                        pair = arg.Key + "=" + value;
+                    }
+
+                    pairs.Add(pair);
+                }
+
+                return string.Join("&", pairs);
+            }
+
+            return "";
+        }
+
+        public static string CreateQueryString(string url, Dictionary<string, string> args, bool customEncoding = false)
+        {
+            string query = CreateQueryString(args, customEncoding);
 
             if (!string.IsNullOrEmpty(query))
             {
-                return url + "?" + query;
+                if (url.Contains("?"))
+                {
+                    return url + "&" + query;
+                }
+                else
+                {
+                    return url + "?" + query;
+                }
             }
 
             return url;
         }
 
-        public static string CreateQuery(Dictionary<string, string> args)
+        public static string RemoveQueryString(string url)
         {
-            if (args != null && args.Count > 0)
+            if (!string.IsNullOrEmpty(url))
             {
-                return string.Join("&", args.Select(x => x.Key + "=" + URLEncode(x.Value)).ToArray());
+                int index = url.IndexOf("?");
+
+                if (index > -1)
+                {
+                    return url.Remove(index);
+                }
             }
 
-            return "";
+            return url;
+        }
+
+        public static NameValueCollection ParseQueryString(string url)
+        {
+            if (!string.IsNullOrEmpty(url))
+            {
+                int index = url.IndexOf("?");
+
+                if (index > -1 && index + 1 < url.Length)
+                {
+                    string query = url.Substring(index + 1);
+                    return HttpUtility.ParseQueryString(query);
+                }
+            }
+
+            return null;
+        }
+
+        public static string BuildUri(string root, string path, string query = null)
+        {
+            UriBuilder builder = new UriBuilder(root);
+            builder.Path = path;
+            builder.Query = query;
+            return builder.Uri.AbsoluteUri;
         }
     }
 }

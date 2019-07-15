@@ -121,7 +121,7 @@
     <value>匿名</value>
   </data>
   <data name="cbAccountType.Items1" xml:space="preserve">
-    <value>普通用户</value>
+    <value>用户</value>
   </data>
   <data name="lblAccountType.Text" xml:space="preserve">
     <value>账号类型：</value>

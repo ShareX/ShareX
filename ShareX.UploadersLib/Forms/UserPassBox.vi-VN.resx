@@ -133,7 +133,7 @@
     <value>Mật khẩu:</value>
   </data>
   <data name="lblUserName.Text" xml:space="preserve">
-    <value>Tên đăng nhập</value>
+    <value>Tên người dùng:</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Đăng nhập</value>

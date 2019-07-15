@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="lblDescription.Text" xml:space="preserve">
-    <value>说明：</value>
+    <value>描述：</value>
   </data>
   <data name="tpTask.Text" xml:space="preserve">
     <value>任务</value>
@@ -136,7 +136,7 @@
     <value>高</value>
   </data>
   <data name="cbShowCursor.Text" xml:space="preserve">
-    <value>在屏幕截图上显示光标（鼠标指针）</value>
+    <value>在截图上显示鼠标指针</value>
   </data>
   <data name="lblCaptureShadowOffset.Text" xml:space="preserve">
     <value>阴影偏移:</value>
@@ -145,19 +145,16 @@
     <value>捕捉具有透明度的窗口</value>
   </data>
   <data name="cbCaptureAutoHideTaskbar.Text" xml:space="preserve">
-    <value>捕捉窗口时，如果窗口与任务栏相交，则隐藏任务栏</value>
+    <value>捕捉窗口时，如果窗口与任务栏重叠，则隐藏任务栏</value>
   </data>
   <data name="cbCaptureShadow.Text" xml:space="preserve">
-    <value>拍摄窗口阴影（需要透明度）</value>
+    <value>捕捉窗口阴影（需要透明度）</value>
   </data>
   <data name="lblScreenshotDelayInfo.Text" xml:space="preserve">
     <value>秒</value>
   </data>
   <data name="cbCaptureClientArea.Text" xml:space="preserve">
-    <value>捕捉窗口或活动窗口时,   捕捉客户区</value>
-  </data>
-  <data name="cbScreenshotDelay.Text" xml:space="preserve">
-    <value>截图延迟：</value>
+    <value>截图时排除标题栏与边框</value>
   </data>
   <data name="tpRegionCapture.Text" xml:space="preserve">
     <value>区域截图</value>
@@ -202,7 +199,7 @@
     <value>文件夹路径</value>
   </data>
   <data name="cbWatchFolderEnabled.Text" xml:space="preserve">
-    <value>监控文件夹, 如果发现新的文件自动上传。</value>
+    <value>监控文件夹，如果发现新的文件自动上传。</value>
   </data>
   <data name="btnActionsRemove.Text" xml:space="preserve">
     <value>删除</value>
@@ -232,13 +229,10 @@
     <value>如果剪贴板中包含一个URL链接, 则使用URL短链来缩短。</value>
   </data>
   <data name="cbClipboardUploadAutoIndexFolder.Text" xml:space="preserve">
-    <value>如果剪贴板中包含的文件夹路径, 则自动索引文件夹并上传索引。</value>
-  </data>
-  <data name="chkClipboardUploadURLContents.Text" xml:space="preserve">
-    <value>如果剪贴板中包含一个文件URL链接, 则自动下载并上传。</value>
+    <value>如果剪贴板中包含文件夹路径, 则自动索引文件夹并上传索引。</value>
   </data>
   <data name="cbClipboardUploadShareURL.Text" xml:space="preserve">
-    <value>如果剪贴板中包含一个URL链接, 则使用URL共享服务分享。</value>
+    <value>如果剪贴板中包含 URL 链接, 则使用 URL 共享服务分享。</value>
   </data>
   <data name="tpUploadClipboard.Text" xml:space="preserve">
     <value>剪贴板上传</value>
@@ -247,16 +241,13 @@
     <value>截图或剪贴板的文件名设置：</value>
   </data>
   <data name="cbFileUploadUseNamePattern.Text" xml:space="preserve">
-    <value>使用以上的文件名格式设置上传, 而不使用实际文件名上传.</value>
-  </data>
-  <data name="btnResetAutoIncrementNumber.Text" xml:space="preserve">
-    <value>重置自动递增数</value>
+    <value>使用以上的文件名格式设置上传，而不使用实际文件名上传.</value>
   </data>
   <data name="lblNameFormatPatternPreviewActiveWindow.Text" xml:space="preserve">
     <value>预览：</value>
   </data>
   <data name="lblNameFormatPatternActiveWindow.Text" xml:space="preserve">
-    <value>文件夹监控自动上传的文件名设置:</value>
+    <value>窗口截图文件名格式：</value>
   </data>
   <data name="lblNameFormatPatternPreview.Text" xml:space="preserve">
     <value>预览：</value>
@@ -265,7 +256,7 @@
     <value>使用自定义时区：</value>
   </data>
   <data name="cbRegionCaptureUseWindowPattern.Text" xml:space="preserve">
-    <value>使用窗口名称模式捕捉区域（ShareX将尝试检测选择区域后面的窗口）</value>
+    <value>使用窗口名称模式捕捉区域（ShareX 将尝试检测选择区域后面的窗口）</value>
   </data>
   <data name="tpFileNaming.Text" xml:space="preserve">
     <value>文件命名</value>
@@ -276,14 +267,8 @@
   <data name="cbScreenRecorderFixedDuration.Text" xml:space="preserve">
     <value>固定时长:</value>
   </data>
-  <data name="btnEncoderConfig.Text" xml:space="preserve">
-    <value>配置文件...</value>
-  </data>
-  <data name="chkRunScreencastCLI.Text" xml:space="preserve">
-    <value>之后运行CLI:</value>
-  </data>
   <data name="lblScreenRecordFPS.Text" xml:space="preserve">
-    <value>屏幕记录FPS:</value>
+    <value>屏幕录制FPS:</value>
   </data>
   <data name="lblScreenRecorderFixedDuration.Text" xml:space="preserve">
     <value>秒</value>
@@ -298,7 +283,7 @@
     <value>屏幕录制选项...</value>
   </data>
   <data name="cbScreenRecorderShowCursor.Text" xml:space="preserve">
-    <value>在录像中显示光标（鼠标指针）</value>
+    <value>在录像中显示鼠标指针</value>
   </data>
   <data name="lblThumbnailWidth.Text" xml:space="preserve">
     <value>宽：</value>
@@ -307,7 +292,7 @@
     <value>高：</value>
   </data>
   <data name="lblThumbnailName.Text" xml:space="preserve">
-    <value>缩略图的名字：</value>
+    <value>缩略图名称：</value>
   </data>
   <data name="lblThumbnailNamePreview.Text" xml:space="preserve">
     <value>预览</value>
@@ -319,7 +304,7 @@
     <value>缩略图</value>
   </data>
   <data name="btnImageEffects.Text" xml:space="preserve">
-    <value>图像效果的配置...</value>
+    <value>图像效果配置...</value>
   </data>
   <data name="cbImageEffectOnlyRegionCapture.Text" xml:space="preserve">
     <value>只适用于区域截图</value>
@@ -358,10 +343,10 @@
     <value>任务...</value>
   </data>
   <data name="tsmiURLSharingServices.Text" xml:space="preserve">
-    <value>URL分享</value>
+    <value>URL 分享</value>
   </data>
   <data name="tsmiURLShorteners.Text" xml:space="preserve">
-    <value>URL短链</value>
+    <value>URL 短链</value>
   </data>
   <data name="tsmiFileUploaders.Text" xml:space="preserve">
     <value>文件上传</value>
@@ -373,7 +358,7 @@
     <value>图片上传</value>
   </data>
   <data name="btnDestinations.Text" xml:space="preserve">
-    <value>上传至...</value>
+    <value>上传目标...</value>
   </data>
   <data name="btnAfterUpload.Text" xml:space="preserve">
     <value>上传后...</value>
@@ -388,7 +373,7 @@
     <value>覆盖默认的自定义上传：</value>
   </data>
   <data name="cbImageAutoUseJPEG.Text" xml:space="preserve">
-    <value>如果图像大小比指定大小大，使用JPEG格式</value>
+    <value>如果图像大小比指定大小大，则使用JPEG格式</value>
   </data>
   <data name="btnCaptureCustomRegionSelectRectangle.Text" xml:space="preserve">
     <value>选择区域...</value>
@@ -397,7 +382,7 @@
     <value>自定义区域：</value>
   </data>
   <data name="cbRegionCaptureShowFPS.Text" xml:space="preserve">
-    <value>在左上角显示FPS</value>
+    <value>在左上角显示 FPS</value>
   </data>
   <data name="lblRegionCaptureFixedSizeWidth.Text" xml:space="preserve">
     <value>宽：</value>
@@ -424,10 +409,7 @@
     <value>在光标附近显示放大镜</value>
   </data>
   <data name="cbRegionCaptureShowInfo.Text" xml:space="preserve">
-    <value>显示位置以及尺寸</value>
-  </data>
-  <data name="cbRegionCaptureShowTips.Text" xml:space="preserve">
-    <value>在右上角显示快捷键以及提示</value>
+    <value>显示位置与尺寸</value>
   </data>
   <data name="lblRegionCaptureSnapSizes.Text" xml:space="preserve">
     <value>按”ALT”键时、自动吸附区域</value>
@@ -439,10 +421,10 @@
     <value>检测窗口区域，并允许光标悬停捕获</value>
   </data>
   <data name="lblRegionCaptureMouseMiddleClickAction.Text" xml:space="preserve">
-    <value>鼠标中键单击动作：</value>
+    <value>鼠标中键单击动作</value>
   </data>
   <data name="lblRegionCaptureMouseRightClickAction.Text" xml:space="preserve">
-    <value>鼠标右键单击动作：</value>
+    <value>鼠标右键单击动作</value>
   </data>
   <data name="cbRegionCaptureMultiRegionMode.Text" xml:space="preserve">
     <value>使用多区域模式，将允许调整大小和运动区域</value>
@@ -457,10 +439,10 @@
     <value>高度：</value>
   </data>
   <data name="lblRegionCaptureSnapSizesWidth.Text" xml:space="preserve">
-    <value>宽度：</value>
+    <value>宽：</value>
   </data>
   <data name="cbRegionCaptureUseDimming.Text" xml:space="preserve">
-    <value>灰暗的背景，这样选择可以更易区分（将影响启动速度）</value>
+    <value>背景暗化（便于区分选区，将影响启动速度）</value>
   </data>
   <data name="cbRegionCaptureUseCustomInfoText.Text" xml:space="preserve">
     <value>在光标附近显示自定义信息：</value>
@@ -469,13 +451,13 @@
     <value>屏幕拾色器格式：</value>
   </data>
   <data name="cbOverrideAfterCaptureSettings.Text" xml:space="preserve">
-    <value>覆盖“截图”设置</value>
+    <value>覆盖“截图后”设置</value>
   </data>
   <data name="cbOverrideAfterUploadSettings.Text" xml:space="preserve">
-    <value>覆盖“上传”设置</value>
+    <value>覆盖“上传后”设置</value>
   </data>
   <data name="cbOverrideDestinationSettings.Text" xml:space="preserve">
-    <value>覆盖“目标”设置</value>
+    <value>覆盖“上传目标”设置</value>
   </data>
   <data name="chkOverrideGeneralSettings.Text" xml:space="preserve">
     <value>覆盖一般设置</value>
@@ -484,7 +466,7 @@
     <value>覆盖图片设置</value>
   </data>
   <data name="chUploaderFiltersName.Text" xml:space="preserve">
-    <value>上传</value>
+    <value>上传到</value>
   </data>
   <data name="chUploaderFiltersExtension.Text" xml:space="preserve">
     <value>扩展</value>
@@ -499,16 +481,16 @@
     <value>增加</value>
   </data>
   <data name="lblUploaderFiltersDestination.Text" xml:space="preserve">
-    <value>上传到：</value>
+    <value>上传至：</value>
   </data>
   <data name="lblUploaderFiltersExtensionsExample.Text" xml:space="preserve">
-    <value>例子：png, jpg, jpeg</value>
+    <value>例如：png, jpg, jpeg</value>
   </data>
   <data name="lblUploaderFiltersExtensions.Text" xml:space="preserve">
     <value>扩展筛选：</value>
   </data>
   <data name="tpUploaderFilters.Text" xml:space="preserve">
-    <value>上传筛选：</value>
+    <value>上传筛选</value>
   </data>
   <data name="chkOverrideActions.Text" xml:space="preserve">
     <value>覆盖动作</value>
@@ -526,6 +508,69 @@
     <value>覆盖上传设置</value>
   </data>
   <data name="lblImagePNGBitDepth.Text" xml:space="preserve">
-    <value>PNG 图像色深</value>
+    <value>PNG 图像位深</value>
+  </data>
+  <data name="btnRegionCaptureSnapSizesAdd.Text" xml:space="preserve">
+    <value>+</value>
+  </data>
+  <data name="btnRegionCaptureSnapSizesRemove.Text" xml:space="preserve">
+    <value>-</value>
+  </data>
+  <data name="btnWatchFolderEdit.Text" xml:space="preserve">
+    <value>编辑...</value>
+  </data>
+  <data name="cbFileUploadReplaceProblematicCharacters.Text" xml:space="preserve">
+    <value>上传时使用下划线替换 URL 中的非法字符</value>
+  </data>
+  <data name="lblAutoIncrementNumber.Text" xml:space="preserve">
+    <value>自增数：</value>
+  </data>
+  <data name="lblCaptureCustomRegionX.Text" xml:space="preserve">
+    <value>X</value>
+  </data>
+  <data name="lblCaptureCustomRegionY.Text" xml:space="preserve">
+    <value>Y</value>
+  </data>
+  <data name="lblImageJPEGQualityHint.Text" xml:space="preserve">
+    <value>0 - 100</value>
+  </data>
+  <data name="lblImageSizeLimitHint.Text" xml:space="preserve">
+    <value>kB</value>
+  </data>
+  <data name="lblRegionCaptureMouse4ClickAction.Text" xml:space="preserve">
+    <value>鼠标侧键 1 动作</value>
+  </data>
+  <data name="lblRegionCaptureMouse5ClickAction.Text" xml:space="preserve">
+    <value>鼠标侧键 2 动作</value>
+  </data>
+  <data name="lblScreenshotDelay.Text" xml:space="preserve">
+    <value>截图定时器：</value>
+  </data>
+  <data name="cbScreenRecordTwoPassEncoding.Text" xml:space="preserve">
+    <value>使用无损编码录制，并应用用户编码选项</value>
+  </data>
+  <data name="cbScreenRecordConfirmAbort.Text" xml:space="preserve">
+    <value>中止时确认</value>
+  </data>
+  <data name="cbCaptureOCRAutoCopy.Text" xml:space="preserve">
+    <value>自动复制结果至剪贴板</value>
+  </data>
+  <data name="cbCaptureOCRProcessOnLoad.Text" xml:space="preserve">
+    <value>对话框打开时识别</value>
+  </data>
+  <data name="cbCaptureOCRSilent.Text" xml:space="preserve">
+    <value>静默识别</value>
+  </data>
+  <data name="lblOCRDefaultLanguage.Text" xml:space="preserve">
+    <value>默认语言：</value>
+  </data>
+  <data name="tpOCR.Text" xml:space="preserve">
+    <value>文本识别（OCR）</value>
+  </data>
+  <data name="btnAutoIncrementNumber.Text" xml:space="preserve">
+    <value>更改</value>
+  </data>
+  <data name="cbClipboardUploadURLContents.Text" xml:space="preserve">
+    <value>如果剪贴板中包含文件 URL，则下载并上传它</value>
   </data>
 </root>

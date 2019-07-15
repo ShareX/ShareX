@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2017 ShareX Team
+    Copyright (c) 2007-2019 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -23,11 +23,9 @@
 
 #endregion License Information (GPL v3)
 
-using SevenZip;
 using ShareX.HelpersLib;
 using System;
-using System.IO;
-using System.Text.RegularExpressions;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace ShareX.MediaLib
@@ -40,14 +38,14 @@ namespace ShareX.MediaLib
 
             if (NativeMethods.Is64Bit())
             {
-                url = "http://ffmpeg.zeranoe.com/builds/win64/static/ffmpeg-latest-win64-static.7z";
+                url = "https://ffmpeg.zeranoe.com/builds/win64/static/ffmpeg-latest-win64-static.zip";
             }
             else
             {
-                url = "http://ffmpeg.zeranoe.com/builds/win32/static/ffmpeg-latest-win32-static.7z";
+                url = "https://ffmpeg.zeranoe.com/builds/win32/static/ffmpeg-latest-win32-static.zip";
             }
 
-            using (DownloaderForm form = new DownloaderForm(url, "ffmpeg.7z"))
+            using (DownloaderForm form = new DownloaderForm(url, "ffmpeg.zip"))
             {
                 form.Proxy = HelpersOptions.CurrentProxy.GetWebProxy();
                 form.InstallType = InstallType.Event;
@@ -57,37 +55,12 @@ namespace ShareX.MediaLib
             }
         }
 
-        public static bool ExtractFFmpeg(string zipPath, string extractPath)
+        public static bool ExtractFFmpeg(string archivePath, string extractPath)
         {
             try
             {
-                if (NativeMethods.Is64Bit())
-                {
-                    SevenZipBase.SetLibraryPath(Helpers.GetAbsolutePath("7z-x64.dll"));
-                }
-                else
-                {
-                    SevenZipBase.SetLibraryPath(Helpers.GetAbsolutePath("7z.dll"));
-                }
-
-                Helpers.CreateDirectoryFromFilePath(extractPath);
-
-                using (SevenZipExtractor zip = new SevenZipExtractor(zipPath))
-                {
-                    Regex regex = new Regex(@"^ffmpeg-.+\\bin\\ffmpeg\.exe$", RegexOptions.Compiled | RegexOptions.CultureInvariant);
-
-                    foreach (ArchiveFileInfo item in zip.ArchiveFileData)
-                    {
-                        if (regex.IsMatch(item.FileName))
-                        {
-                            using (FileStream fs = new FileStream(extractPath, FileMode.Create, FileAccess.Write, FileShare.None))
-                            {
-                                zip.ExtractFile(item.Index, fs);
-                                return true;
-                            }
-                        }
-                    }
-                }
+                ZipManager.Extract(archivePath, extractPath, false, new List<string>() { "ffmpeg.exe" });
+                return true;
             }
             catch (Exception e)
             {

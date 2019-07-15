@@ -122,12 +122,117 @@
     <value>Top, Bottom, Left, Right</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="cbCheckPreReleaseUpdates.AutoSize" type="System.Boolean, mscorlib">
+  <data name="cbExperimentalDarkTheme.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="cbExperimentalDarkTheme.Location" type="System.Drawing.Point, System.Drawing">
+    <value>248, 96</value>
+  </data>
+  <data name="cbExperimentalDarkTheme.Size" type="System.Drawing.Size, System.Drawing">
+    <value>142, 17</value>
+  </data>
+  <data name="cbExperimentalDarkTheme.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="cbExperimentalDarkTheme.Text" xml:space="preserve">
+    <value>Experimental dark theme</value>
+  </data>
+  <data name="&gt;&gt;cbExperimentalDarkTheme.Name" xml:space="preserve">
+    <value>cbExperimentalDarkTheme</value>
+  </data>
+  <data name="&gt;&gt;cbExperimentalDarkTheme.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbExperimentalDarkTheme.Parent" xml:space="preserve">
+    <value>tpGeneral</value>
+  </data>
+  <data name="&gt;&gt;cbExperimentalDarkTheme.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="cbUseWhiteShareXIcon.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbUseWhiteShareXIcon.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 120</value>
+  </data>
+  <data name="cbUseWhiteShareXIcon.Size" type="System.Drawing.Size, System.Drawing">
+    <value>134, 17</value>
+  </data>
+  <data name="cbUseWhiteShareXIcon.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="cbUseWhiteShareXIcon.Text" xml:space="preserve">
+    <value>Use white ShareX icon</value>
+  </data>
+  <data name="&gt;&gt;cbUseWhiteShareXIcon.Name" xml:space="preserve">
+    <value>cbUseWhiteShareXIcon</value>
+  </data>
+  <data name="&gt;&gt;cbUseWhiteShareXIcon.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbUseWhiteShareXIcon.Parent" xml:space="preserve">
+    <value>tpGeneral</value>
+  </data>
+  <data name="&gt;&gt;cbUseWhiteShareXIcon.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="cbUseDarkTheme.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbUseDarkTheme.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 96</value>
+  </data>
+  <data name="cbUseDarkTheme.Size" type="System.Drawing.Size, System.Drawing">
+    <value>101, 17</value>
+  </data>
+  <data name="cbUseDarkTheme.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="cbUseDarkTheme.Text" xml:space="preserve">
+    <value>Use dark theme</value>
+  </data>
+  <data name="&gt;&gt;cbUseDarkTheme.Name" xml:space="preserve">
+    <value>cbUseDarkTheme</value>
+  </data>
+  <data name="&gt;&gt;cbUseDarkTheme.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbUseDarkTheme.Parent" xml:space="preserve">
+    <value>tpGeneral</value>
+  </data>
+  <data name="&gt;&gt;cbUseDarkTheme.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="btnCheckDevBuild.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 304</value>
+  </data>
+  <data name="btnCheckDevBuild.Size" type="System.Drawing.Size, System.Drawing">
+    <value>288, 23</value>
+  </data>
+  <data name="btnCheckDevBuild.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="btnCheckDevBuild.Text" xml:space="preserve">
+    <value>Install dev build...</value>
+  </data>
+  <data name="&gt;&gt;btnCheckDevBuild.Name" xml:space="preserve">
+    <value>btnCheckDevBuild</value>
+  </data>
+  <data name="&gt;&gt;btnCheckDevBuild.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnCheckDevBuild.Parent" xml:space="preserve">
+    <value>tpGeneral</value>
+  </data>
+  <data name="&gt;&gt;btnCheckDevBuild.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="cbCheckPreReleaseUpdates.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
   <data name="cbCheckPreReleaseUpdates.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 328</value>
+    <value>16, 280</value>
   </data>
   <data name="cbCheckPreReleaseUpdates.Size" type="System.Drawing.Size, System.Drawing">
     <value>168, 17</value>
@@ -148,10 +253,10 @@
     <value>tpGeneral</value>
   </data>
   <data name="&gt;&gt;cbCheckPreReleaseUpdates.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>4</value>
   </data>
   <data name="cbTrayMiddleClickAction.Location" type="System.Drawing.Point, System.Drawing">
-    <value>248, 260</value>
+    <value>248, 220</value>
   </data>
   <data name="cbTrayMiddleClickAction.Size" type="System.Drawing.Size, System.Drawing">
     <value>288, 21</value>
@@ -169,13 +274,13 @@
     <value>tpGeneral</value>
   </data>
   <data name="&gt;&gt;cbTrayMiddleClickAction.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>5</value>
   </data>
   <data name="lblTrayMiddleClickAction.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="lblTrayMiddleClickAction.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 264</value>
+    <value>13, 224</value>
   </data>
   <data name="lblTrayMiddleClickAction.Size" type="System.Drawing.Size, System.Drawing">
     <value>125, 13</value>
@@ -196,10 +301,10 @@
     <value>tpGeneral</value>
   </data>
   <data name="&gt;&gt;lblTrayMiddleClickAction.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>6</value>
   </data>
   <data name="cbTrayLeftDoubleClickAction.Location" type="System.Drawing.Point, System.Drawing">
-    <value>248, 236</value>
+    <value>248, 196</value>
   </data>
   <data name="cbTrayLeftDoubleClickAction.Size" type="System.Drawing.Size, System.Drawing">
     <value>288, 21</value>
@@ -217,13 +322,13 @@
     <value>tpGeneral</value>
   </data>
   <data name="&gt;&gt;cbTrayLeftDoubleClickAction.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>7</value>
   </data>
   <data name="lblTrayLeftDoubleClickAction.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="lblTrayLeftDoubleClickAction.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 240</value>
+    <value>13, 200</value>
   </data>
   <data name="lblTrayLeftDoubleClickAction.Size" type="System.Drawing.Size, System.Drawing">
     <value>144, 13</value>
@@ -244,10 +349,10 @@
     <value>tpGeneral</value>
   </data>
   <data name="&gt;&gt;lblTrayLeftDoubleClickAction.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>8</value>
   </data>
   <data name="cbTrayLeftClickAction.Location" type="System.Drawing.Point, System.Drawing">
-    <value>248, 212</value>
+    <value>248, 172</value>
   </data>
   <data name="cbTrayLeftClickAction.Size" type="System.Drawing.Size, System.Drawing">
     <value>288, 21</value>
@@ -265,13 +370,13 @@
     <value>tpGeneral</value>
   </data>
   <data name="&gt;&gt;cbTrayLeftClickAction.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>9</value>
   </data>
   <data name="lblTrayLeftClickAction.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="lblTrayLeftClickAction.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 216</value>
+    <value>13, 176</value>
   </data>
   <data name="lblTrayLeftClickAction.Size" type="System.Drawing.Size, System.Drawing">
     <value>109, 13</value>
@@ -292,10 +397,10 @@
     <value>tpGeneral</value>
   </data>
   <data name="&gt;&gt;lblTrayLeftClickAction.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>10</value>
   </data>
   <data name="btnEditQuickTaskMenu.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 296</value>
+    <value>16, 248</value>
   </data>
   <data name="btnEditQuickTaskMenu.Size" type="System.Drawing.Size, System.Drawing">
     <value>288, 23</value>
@@ -316,7 +421,7 @@
     <value>tpGeneral</value>
   </data>
   <data name="&gt;&gt;btnEditQuickTaskMenu.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>11</value>
   </data>
   <data name="cbShowTray.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -325,7 +430,7 @@
     <value>NoControl</value>
   </data>
   <data name="cbShowTray.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 64</value>
+    <value>16, 48</value>
   </data>
   <data name="cbShowTray.Size" type="System.Drawing.Size, System.Drawing">
     <value>96, 17</value>
@@ -346,7 +451,7 @@
     <value>tpGeneral</value>
   </data>
   <data name="&gt;&gt;cbShowTray.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>12</value>
   </data>
   <data name="cbTrayIconProgressEnabled.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -355,7 +460,7 @@
     <value>NoControl</value>
   </data>
   <data name="cbTrayIconProgressEnabled.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 112</value>
+    <value>16, 72</value>
   </data>
   <data name="cbTrayIconProgressEnabled.Size" type="System.Drawing.Size, System.Drawing">
     <value>150, 17</value>
@@ -376,7 +481,7 @@
     <value>tpGeneral</value>
   </data>
   <data name="&gt;&gt;cbTrayIconProgressEnabled.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>13</value>
   </data>
   <data name="btnLanguages.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
@@ -385,7 +490,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnLanguages.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 32</value>
+    <value>248, 16</value>
   </data>
   <metadata name="cmsLanguages.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
@@ -400,7 +505,7 @@
     <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="btnLanguages.Size" type="System.Drawing.Size, System.Drawing">
-    <value>224, 23</value>
+    <value>288, 23</value>
   </data>
   <data name="btnLanguages.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -415,13 +520,13 @@
     <value>btnLanguages</value>
   </data>
   <data name="&gt;&gt;btnLanguages.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MenuButton, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MenuButton, ShareX.HelpersLib, Version=13.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;btnLanguages.Parent" xml:space="preserve">
     <value>tpGeneral</value>
   </data>
   <data name="&gt;&gt;btnLanguages.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>14</value>
   </data>
   <data name="cbRememberMainFormPosition.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -430,7 +535,7 @@
     <value>NoControl</value>
   </data>
   <data name="cbRememberMainFormPosition.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 160</value>
+    <value>16, 144</value>
   </data>
   <data name="cbRememberMainFormPosition.Size" type="System.Drawing.Size, System.Drawing">
     <value>180, 17</value>
@@ -451,7 +556,7 @@
     <value>tpGeneral</value>
   </data>
   <data name="&gt;&gt;cbRememberMainFormPosition.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>15</value>
   </data>
   <data name="cbSilentRun.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -460,16 +565,16 @@
     <value>NoControl</value>
   </data>
   <data name="cbSilentRun.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 88</value>
+    <value>248, 48</value>
   </data>
   <data name="cbSilentRun.Size" type="System.Drawing.Size, System.Drawing">
-    <value>137, 17</value>
+    <value>136, 17</value>
   </data>
   <data name="cbSilentRun.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
   <data name="cbSilentRun.Text" xml:space="preserve">
-    <value>On start minimize to tray</value>
+    <value>Minimize to tray on start</value>
   </data>
   <data name="&gt;&gt;cbSilentRun.Name" xml:space="preserve">
     <value>cbSilentRun</value>
@@ -481,7 +586,7 @@
     <value>tpGeneral</value>
   </data>
   <data name="&gt;&gt;cbSilentRun.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>16</value>
   </data>
   <data name="cbTaskbarProgressEnabled.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -490,7 +595,7 @@
     <value>NoControl</value>
   </data>
   <data name="cbTaskbarProgressEnabled.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 136</value>
+    <value>248, 72</value>
   </data>
   <data name="cbTaskbarProgressEnabled.Size" type="System.Drawing.Size, System.Drawing">
     <value>178, 17</value>
@@ -511,7 +616,7 @@
     <value>tpGeneral</value>
   </data>
   <data name="&gt;&gt;cbTaskbarProgressEnabled.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>17</value>
   </data>
   <data name="cbRememberMainFormSize.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -520,7 +625,7 @@
     <value>NoControl</value>
   </data>
   <data name="cbRememberMainFormSize.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 184</value>
+    <value>248, 144</value>
   </data>
   <data name="cbRememberMainFormSize.Size" type="System.Drawing.Size, System.Drawing">
     <value>162, 17</value>
@@ -541,7 +646,7 @@
     <value>tpGeneral</value>
   </data>
   <data name="&gt;&gt;cbRememberMainFormSize.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>18</value>
   </data>
   <data name="lblLanguage.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -571,7 +676,7 @@
     <value>tpGeneral</value>
   </data>
   <data name="&gt;&gt;lblLanguage.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>19</value>
   </data>
   <data name="tpGeneral.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>
@@ -655,7 +760,7 @@
     <value>1</value>
   </data>
   <data name="gbFirefox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 216</value>
+    <value>8, 240</value>
   </data>
   <data name="gbFirefox.Size" type="System.Drawing.Size, System.Drawing">
     <value>536, 88</value>
@@ -706,7 +811,7 @@
     <value>0</value>
   </data>
   <data name="gbSteam.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 312</value>
+    <value>8, 336</value>
   </data>
   <data name="gbSteam.Size" type="System.Drawing.Size, System.Drawing">
     <value>536, 56</value>
@@ -716,7 +821,7 @@
   </data>
   <data name="gbSteam.Text" xml:space="preserve">
     <value>Steam</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;gbSteam.Name" xml:space="preserve">
     <value>gbSteam</value>
   </data>
@@ -781,7 +886,7 @@
     <value>1</value>
   </data>
   <data name="gbChrome.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 120</value>
+    <value>8, 144</value>
   </data>
   <data name="gbChrome.Size" type="System.Drawing.Size, System.Drawing">
     <value>536, 88</value>
@@ -804,34 +909,34 @@
   <data name="&gt;&gt;gbChrome.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="lblWindowsStoreStartupStatus.AutoSize" type="System.Boolean, mscorlib">
+  <data name="cbEditWithShareX.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="lblWindowsStoreStartupStatus.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 56</value>
+  <data name="cbEditWithShareX.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="lblWindowsStoreStartupStatus.Size" type="System.Drawing.Size, System.Drawing">
-    <value>37, 13</value>
+  <data name="cbEditWithShareX.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 72</value>
   </data>
-  <data name="lblWindowsStoreStartupStatus.TabIndex" type="System.Int32, mscorlib">
+  <data name="cbEditWithShareX.Size" type="System.Drawing.Size, System.Drawing">
+    <value>343, 17</value>
+  </data>
+  <data name="cbEditWithShareX.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
-  <data name="lblWindowsStoreStartupStatus.Text" xml:space="preserve">
-    <value>Status</value>
-  <comment>@Invariant</comment></data>
-  <data name="lblWindowsStoreStartupStatus.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
+  <data name="cbEditWithShareX.Text" xml:space="preserve">
+    <value>Show "Edit with ShareX" button in Windows Explorer context menu</value>
   </data>
-  <data name="&gt;&gt;lblWindowsStoreStartupStatus.Name" xml:space="preserve">
-    <value>lblWindowsStoreStartupStatus</value>
+  <data name="&gt;&gt;cbEditWithShareX.Name" xml:space="preserve">
+    <value>cbEditWithShareX</value>
   </data>
-  <data name="&gt;&gt;lblWindowsStoreStartupStatus.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;cbEditWithShareX.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;lblWindowsStoreStartupStatus.Parent" xml:space="preserve">
+  <data name="&gt;&gt;cbEditWithShareX.Parent" xml:space="preserve">
     <value>gbWindows</value>
   </data>
-  <data name="&gt;&gt;lblWindowsStoreStartupStatus.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;cbEditWithShareX.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="cbStartWithWindows.AutoSize" type="System.Boolean, mscorlib">
@@ -844,13 +949,10 @@
     <value>16, 24</value>
   </data>
   <data name="cbStartWithWindows.Size" type="System.Drawing.Size, System.Drawing">
-    <value>188, 17</value>
+    <value>15, 14</value>
   </data>
   <data name="cbStartWithWindows.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
-  </data>
-  <data name="cbStartWithWindows.Text" xml:space="preserve">
-    <value>Run ShareX when Windows starts</value>
   </data>
   <data name="&gt;&gt;cbStartWithWindows.Name" xml:space="preserve">
     <value>cbStartWithWindows</value>
@@ -871,7 +973,7 @@
     <value>NoControl</value>
   </data>
   <data name="cbSendToMenu.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 72</value>
+    <value>16, 96</value>
   </data>
   <data name="cbSendToMenu.Size" type="System.Drawing.Size, System.Drawing">
     <value>181, 17</value>
@@ -928,14 +1030,14 @@
     <value>8, 8</value>
   </data>
   <data name="gbWindows.Size" type="System.Drawing.Size, System.Drawing">
-    <value>536, 104</value>
+    <value>536, 128</value>
   </data>
   <data name="gbWindows.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
   <data name="gbWindows.Text" xml:space="preserve">
     <value>Windows</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;gbWindows.Name" xml:space="preserve">
     <value>gbWindows</value>
   </data>
@@ -975,41 +1077,35 @@
   <data name="&gt;&gt;tpIntegration.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="lblNotePersonalFolderPath.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="btnPersonalFolderPathApply.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 56</value>
   </data>
-  <data name="lblNotePersonalFolderPath.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="btnPersonalFolderPathApply.Size" type="System.Drawing.Size, System.Drawing">
+    <value>96, 23</value>
   </data>
-  <data name="lblNotePersonalFolderPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 88</value>
+  <data name="btnPersonalFolderPathApply.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
   </data>
-  <data name="lblNotePersonalFolderPath.Size" type="System.Drawing.Size, System.Drawing">
-    <value>354, 13</value>
+  <data name="btnPersonalFolderPathApply.Text" xml:space="preserve">
+    <value>Apply</value>
   </data>
-  <data name="lblNotePersonalFolderPath.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+  <data name="&gt;&gt;btnPersonalFolderPathApply.Name" xml:space="preserve">
+    <value>btnPersonalFolderPathApply</value>
   </data>
-  <data name="lblNotePersonalFolderPath.Text" xml:space="preserve">
-    <value>Note: You must reopen ShareX for personal folder changes to take effect.</value>
+  <data name="&gt;&gt;btnPersonalFolderPathApply.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;lblNotePersonalFolderPath.Name" xml:space="preserve">
-    <value>lblNotePersonalFolderPath</value>
-  </data>
-  <data name="&gt;&gt;lblNotePersonalFolderPath.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblNotePersonalFolderPath.Parent" xml:space="preserve">
+  <data name="&gt;&gt;btnPersonalFolderPathApply.Parent" xml:space="preserve">
     <value>tpPaths</value>
   </data>
-  <data name="&gt;&gt;lblNotePersonalFolderPath.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;btnPersonalFolderPathApply.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="btnOpenScreenshotsFolder.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="btnOpenScreenshotsFolder.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 212</value>
+    <value>16, 184</value>
   </data>
   <data name="btnOpenScreenshotsFolder.Size" type="System.Drawing.Size, System.Drawing">
     <value>96, 23</value>
@@ -1039,7 +1135,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblPreviewPersonalFolderPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>120, 61</value>
+    <value>224, 61</value>
   </data>
   <data name="lblPreviewPersonalFolderPath.Size" type="System.Drawing.Size, System.Drawing">
     <value>16, 13</value>
@@ -1049,7 +1145,7 @@
   </data>
   <data name="lblPreviewPersonalFolderPath.Text" xml:space="preserve">
     <value>...</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;lblPreviewPersonalFolderPath.Name" xml:space="preserve">
     <value>lblPreviewPersonalFolderPath</value>
   </data>
@@ -1144,7 +1240,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnBrowseCustomScreenshotsPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>432, 139</value>
+    <value>432, 111</value>
   </data>
   <data name="btnBrowseCustomScreenshotsPath.Size" type="System.Drawing.Size, System.Drawing">
     <value>96, 23</value>
@@ -1171,7 +1267,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnOpenPersonalFolderPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 56</value>
+    <value>120, 56</value>
   </data>
   <data name="btnOpenPersonalFolderPath.Size" type="System.Drawing.Size, System.Drawing">
     <value>96, 23</value>
@@ -1195,7 +1291,7 @@
     <value>7</value>
   </data>
   <data name="txtCustomScreenshotsPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 140</value>
+    <value>16, 112</value>
   </data>
   <data name="txtCustomScreenshotsPath.Size" type="System.Drawing.Size, System.Drawing">
     <value>408, 20</value>
@@ -1222,7 +1318,7 @@
     <value>NoControl</value>
   </data>
   <data name="cbUseCustomScreenshotsPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 116</value>
+    <value>16, 88</value>
   </data>
   <data name="cbUseCustomScreenshotsPath.Size" type="System.Drawing.Size, System.Drawing">
     <value>174, 17</value>
@@ -1252,7 +1348,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblSaveImageSubFolderPattern.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 172</value>
+    <value>13, 144</value>
   </data>
   <data name="lblSaveImageSubFolderPattern.Size" type="System.Drawing.Size, System.Drawing">
     <value>94, 13</value>
@@ -1282,7 +1378,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblSaveImageSubFolderPatternPreview.Location" type="System.Drawing.Point, System.Drawing">
-    <value>120, 217</value>
+    <value>120, 189</value>
   </data>
   <data name="lblSaveImageSubFolderPatternPreview.Size" type="System.Drawing.Size, System.Drawing">
     <value>16, 13</value>
@@ -1292,7 +1388,7 @@
   </data>
   <data name="lblSaveImageSubFolderPatternPreview.Text" xml:space="preserve">
     <value>...</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;lblSaveImageSubFolderPatternPreview.Name" xml:space="preserve">
     <value>lblSaveImageSubFolderPatternPreview</value>
   </data>
@@ -1306,7 +1402,7 @@
     <value>11</value>
   </data>
   <data name="txtSaveImageSubFolderPattern.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 188</value>
+    <value>16, 160</value>
   </data>
   <data name="txtSaveImageSubFolderPattern.Size" type="System.Drawing.Size, System.Drawing">
     <value>408, 20</value>
@@ -1354,7 +1450,7 @@
     <value>2</value>
   </data>
   <data name="btnResetSettings.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 160</value>
+    <value>16, 80</value>
   </data>
   <data name="btnResetSettings.Size" type="System.Drawing.Size, System.Drawing">
     <value>184, 24</value>
@@ -1377,95 +1473,8 @@
   <data name="&gt;&gt;btnResetSettings.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="cbExportLogs.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="cbExportLogs.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="cbExportLogs.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 64</value>
-  </data>
-  <data name="cbExportLogs.Size" type="System.Drawing.Size, System.Drawing">
-    <value>78, 17</value>
-  </data>
-  <data name="cbExportLogs.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="cbExportLogs.Text" xml:space="preserve">
-    <value>Export logs</value>
-  </data>
-  <data name="&gt;&gt;cbExportLogs.Name" xml:space="preserve">
-    <value>cbExportLogs</value>
-  </data>
-  <data name="&gt;&gt;cbExportLogs.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbExportLogs.Parent" xml:space="preserve">
-    <value>tpExportImport</value>
-  </data>
-  <data name="&gt;&gt;cbExportLogs.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="cbExportHistory.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="cbExportHistory.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="cbExportHistory.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 40</value>
-  </data>
-  <data name="cbExportHistory.Size" type="System.Drawing.Size, System.Drawing">
-    <value>89, 17</value>
-  </data>
-  <data name="cbExportHistory.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="cbExportHistory.Text" xml:space="preserve">
-    <value>Export history</value>
-  </data>
-  <data name="&gt;&gt;cbExportHistory.Name" xml:space="preserve">
-    <value>cbExportHistory</value>
-  </data>
-  <data name="&gt;&gt;cbExportHistory.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbExportHistory.Parent" xml:space="preserve">
-    <value>tpExportImport</value>
-  </data>
-  <data name="&gt;&gt;cbExportHistory.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="cbExportSettings.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="cbExportSettings.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 16</value>
-  </data>
-  <data name="cbExportSettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>95, 17</value>
-  </data>
-  <data name="cbExportSettings.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="cbExportSettings.Text" xml:space="preserve">
-    <value>Export settings</value>
-  </data>
-  <data name="&gt;&gt;cbExportSettings.Name" xml:space="preserve">
-    <value>cbExportSettings</value>
-  </data>
-  <data name="&gt;&gt;cbExportSettings.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbExportSettings.Parent" xml:space="preserve">
-    <value>tpExportImport</value>
-  </data>
-  <data name="&gt;&gt;cbExportSettings.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
   <data name="pbExportImport.Location" type="System.Drawing.Point, System.Drawing">
-    <value>208, 96</value>
+    <value>208, 16</value>
   </data>
   <data name="pbExportImport.Size" type="System.Drawing.Size, System.Drawing">
     <value>184, 23</value>
@@ -1486,10 +1495,10 @@
     <value>tpExportImport</value>
   </data>
   <data name="&gt;&gt;pbExportImport.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>1</value>
   </data>
   <data name="btnExport.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 96</value>
+    <value>16, 16</value>
   </data>
   <data name="btnExport.Size" type="System.Drawing.Size, System.Drawing">
     <value>184, 23</value>
@@ -1498,7 +1507,7 @@
     <value>3</value>
   </data>
   <data name="btnExport.Text" xml:space="preserve">
-    <value>Export...</value>
+    <value>Export settings...</value>
   </data>
   <data name="&gt;&gt;btnExport.Name" xml:space="preserve">
     <value>btnExport</value>
@@ -1510,13 +1519,13 @@
     <value>tpExportImport</value>
   </data>
   <data name="&gt;&gt;btnExport.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>2</value>
   </data>
   <data name="btnImport.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="btnImport.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 128</value>
+    <value>16, 48</value>
   </data>
   <data name="btnImport.Size" type="System.Drawing.Size, System.Drawing">
     <value>184, 23</value>
@@ -1525,7 +1534,7 @@
     <value>4</value>
   </data>
   <data name="btnImport.Text" xml:space="preserve">
-    <value>Import...</value>
+    <value>Import settings...</value>
   </data>
   <data name="&gt;&gt;btnImport.Name" xml:space="preserve">
     <value>btnImport</value>
@@ -1537,7 +1546,7 @@
     <value>tpExportImport</value>
   </data>
   <data name="&gt;&gt;btnImport.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>3</value>
   </data>
   <data name="tpExportImport.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>
@@ -1837,7 +1846,7 @@
     <value>lvClipboardFormats</value>
   </data>
   <data name="&gt;&gt;lvClipboardFormats.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=13.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lvClipboardFormats.Parent" xml:space="preserve">
     <value>gbClipboardFormats</value>
@@ -1896,6 +1905,159 @@
   <data name="&gt;&gt;tpUploadResults.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="lvSecondaryFileUploaders.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="lvSecondaryFileUploaders.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 18</value>
+  </data>
+  <data name="lvSecondaryFileUploaders.Size" type="System.Drawing.Size, System.Drawing">
+    <value>162, 242</value>
+  </data>
+  <data name="lvSecondaryFileUploaders.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;lvSecondaryFileUploaders.Name" xml:space="preserve">
+    <value>lvSecondaryFileUploaders</value>
+  </data>
+  <data name="&gt;&gt;lvSecondaryFileUploaders.Type" xml:space="preserve">
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=13.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;lvSecondaryFileUploaders.Parent" xml:space="preserve">
+    <value>gbSecondaryFileUploaders</value>
+  </data>
+  <data name="&gt;&gt;lvSecondaryFileUploaders.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="gbSecondaryFileUploaders.Location" type="System.Drawing.Point, System.Drawing">
+    <value>360, 64</value>
+  </data>
+  <data name="gbSecondaryFileUploaders.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 5, 3, 3</value>
+  </data>
+  <data name="gbSecondaryFileUploaders.Size" type="System.Drawing.Size, System.Drawing">
+    <value>168, 263</value>
+  </data>
+  <data name="gbSecondaryFileUploaders.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="gbSecondaryFileUploaders.Text" xml:space="preserve">
+    <value>Secondary file uploaders</value>
+  </data>
+  <data name="&gt;&gt;gbSecondaryFileUploaders.Name" xml:space="preserve">
+    <value>gbSecondaryFileUploaders</value>
+  </data>
+  <data name="&gt;&gt;gbSecondaryFileUploaders.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;gbSecondaryFileUploaders.Parent" xml:space="preserve">
+    <value>tpUploadRetry</value>
+  </data>
+  <data name="&gt;&gt;gbSecondaryFileUploaders.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lvSecondaryImageUploaders.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="lvSecondaryImageUploaders.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 18</value>
+  </data>
+  <data name="lvSecondaryImageUploaders.Size" type="System.Drawing.Size, System.Drawing">
+    <value>162, 242</value>
+  </data>
+  <data name="lvSecondaryImageUploaders.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;lvSecondaryImageUploaders.Name" xml:space="preserve">
+    <value>lvSecondaryImageUploaders</value>
+  </data>
+  <data name="&gt;&gt;lvSecondaryImageUploaders.Type" xml:space="preserve">
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=13.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;lvSecondaryImageUploaders.Parent" xml:space="preserve">
+    <value>gbSecondaryImageUploaders</value>
+  </data>
+  <data name="&gt;&gt;lvSecondaryImageUploaders.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="gbSecondaryImageUploaders.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 64</value>
+  </data>
+  <data name="gbSecondaryImageUploaders.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 5, 3, 3</value>
+  </data>
+  <data name="gbSecondaryImageUploaders.Size" type="System.Drawing.Size, System.Drawing">
+    <value>168, 263</value>
+  </data>
+  <data name="gbSecondaryImageUploaders.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="gbSecondaryImageUploaders.Text" xml:space="preserve">
+    <value>Secondary image uploaders</value>
+  </data>
+  <data name="&gt;&gt;gbSecondaryImageUploaders.Name" xml:space="preserve">
+    <value>gbSecondaryImageUploaders</value>
+  </data>
+  <data name="&gt;&gt;gbSecondaryImageUploaders.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;gbSecondaryImageUploaders.Parent" xml:space="preserve">
+    <value>tpUploadRetry</value>
+  </data>
+  <data name="&gt;&gt;gbSecondaryImageUploaders.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="lvSecondaryTextUploaders.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="lvSecondaryTextUploaders.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 18</value>
+  </data>
+  <data name="lvSecondaryTextUploaders.Size" type="System.Drawing.Size, System.Drawing">
+    <value>162, 242</value>
+  </data>
+  <data name="lvSecondaryTextUploaders.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;lvSecondaryTextUploaders.Name" xml:space="preserve">
+    <value>lvSecondaryTextUploaders</value>
+  </data>
+  <data name="&gt;&gt;lvSecondaryTextUploaders.Type" xml:space="preserve">
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=13.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;lvSecondaryTextUploaders.Parent" xml:space="preserve">
+    <value>gbSecondaryTextUploaders</value>
+  </data>
+  <data name="&gt;&gt;lvSecondaryTextUploaders.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="gbSecondaryTextUploaders.Location" type="System.Drawing.Point, System.Drawing">
+    <value>184, 64</value>
+  </data>
+  <data name="gbSecondaryTextUploaders.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 5, 3, 3</value>
+  </data>
+  <data name="gbSecondaryTextUploaders.Size" type="System.Drawing.Size, System.Drawing">
+    <value>168, 263</value>
+  </data>
+  <data name="gbSecondaryTextUploaders.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="gbSecondaryTextUploaders.Text" xml:space="preserve">
+    <value>Secondary text uploaders</value>
+  </data>
+  <data name="&gt;&gt;gbSecondaryTextUploaders.Name" xml:space="preserve">
+    <value>gbSecondaryTextUploaders</value>
+  </data>
+  <data name="&gt;&gt;gbSecondaryTextUploaders.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;gbSecondaryTextUploaders.Parent" xml:space="preserve">
+    <value>tpUploadRetry</value>
+  </data>
+  <data name="&gt;&gt;gbSecondaryTextUploaders.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
   <data name="chkUseSecondaryUploaders.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1924,205 +2086,7 @@
     <value>tpUploadRetry</value>
   </data>
   <data name="&gt;&gt;chkUseSecondaryUploaders.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="tlpBackupDestinations.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
-  </data>
-  <data name="tlpBackupDestinations.ColumnCount" type="System.Int32, mscorlib">
     <value>3</value>
-  </data>
-  <data name="lvSecondaryImageUploaders.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="lvSecondaryImageUploaders.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 18</value>
-  </data>
-  <data name="lvSecondaryImageUploaders.Size" type="System.Drawing.Size, System.Drawing">
-    <value>156, 242</value>
-  </data>
-  <data name="lvSecondaryImageUploaders.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;lvSecondaryImageUploaders.Name" xml:space="preserve">
-    <value>lvSecondaryImageUploaders</value>
-  </data>
-  <data name="&gt;&gt;lvSecondaryImageUploaders.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;lvSecondaryImageUploaders.Parent" xml:space="preserve">
-    <value>gbSecondaryImageUploaders</value>
-  </data>
-  <data name="&gt;&gt;lvSecondaryImageUploaders.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="gbSecondaryImageUploaders.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="gbSecondaryImageUploaders.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 8</value>
-  </data>
-  <data name="gbSecondaryImageUploaders.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 5, 3, 3</value>
-  </data>
-  <data name="gbSecondaryImageUploaders.Size" type="System.Drawing.Size, System.Drawing">
-    <value>162, 263</value>
-  </data>
-  <data name="gbSecondaryImageUploaders.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="gbSecondaryImageUploaders.Text" xml:space="preserve">
-    <value>Secondary image uploaders</value>
-  </data>
-  <data name="&gt;&gt;gbSecondaryImageUploaders.Name" xml:space="preserve">
-    <value>gbSecondaryImageUploaders</value>
-  </data>
-  <data name="&gt;&gt;gbSecondaryImageUploaders.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;gbSecondaryImageUploaders.Parent" xml:space="preserve">
-    <value>tlpBackupDestinations</value>
-  </data>
-  <data name="&gt;&gt;gbSecondaryImageUploaders.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="lvSecondaryFileUploaders.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="lvSecondaryFileUploaders.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 18</value>
-  </data>
-  <data name="lvSecondaryFileUploaders.Size" type="System.Drawing.Size, System.Drawing">
-    <value>158, 242</value>
-  </data>
-  <data name="lvSecondaryFileUploaders.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;lvSecondaryFileUploaders.Name" xml:space="preserve">
-    <value>lvSecondaryFileUploaders</value>
-  </data>
-  <data name="&gt;&gt;lvSecondaryFileUploaders.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;lvSecondaryFileUploaders.Parent" xml:space="preserve">
-    <value>gbSecondaryFileUploaders</value>
-  </data>
-  <data name="&gt;&gt;lvSecondaryFileUploaders.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="gbSecondaryFileUploaders.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="gbSecondaryFileUploaders.Location" type="System.Drawing.Point, System.Drawing">
-    <value>349, 8</value>
-  </data>
-  <data name="gbSecondaryFileUploaders.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 5, 3, 3</value>
-  </data>
-  <data name="gbSecondaryFileUploaders.Size" type="System.Drawing.Size, System.Drawing">
-    <value>164, 263</value>
-  </data>
-  <data name="gbSecondaryFileUploaders.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="gbSecondaryFileUploaders.Text" xml:space="preserve">
-    <value>Secondary file uploaders</value>
-  </data>
-  <data name="&gt;&gt;gbSecondaryFileUploaders.Name" xml:space="preserve">
-    <value>gbSecondaryFileUploaders</value>
-  </data>
-  <data name="&gt;&gt;gbSecondaryFileUploaders.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;gbSecondaryFileUploaders.Parent" xml:space="preserve">
-    <value>tlpBackupDestinations</value>
-  </data>
-  <data name="&gt;&gt;gbSecondaryFileUploaders.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="lvSecondaryTextUploaders.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="lvSecondaryTextUploaders.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 18</value>
-  </data>
-  <data name="lvSecondaryTextUploaders.Size" type="System.Drawing.Size, System.Drawing">
-    <value>161, 242</value>
-  </data>
-  <data name="lvSecondaryTextUploaders.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;lvSecondaryTextUploaders.Name" xml:space="preserve">
-    <value>lvSecondaryTextUploaders</value>
-  </data>
-  <data name="&gt;&gt;lvSecondaryTextUploaders.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;lvSecondaryTextUploaders.Parent" xml:space="preserve">
-    <value>gbSecondaryTextUploaders</value>
-  </data>
-  <data name="&gt;&gt;lvSecondaryTextUploaders.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="gbSecondaryTextUploaders.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="gbSecondaryTextUploaders.Location" type="System.Drawing.Point, System.Drawing">
-    <value>176, 8</value>
-  </data>
-  <data name="gbSecondaryTextUploaders.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 5, 3, 3</value>
-  </data>
-  <data name="gbSecondaryTextUploaders.Size" type="System.Drawing.Size, System.Drawing">
-    <value>167, 263</value>
-  </data>
-  <data name="gbSecondaryTextUploaders.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="gbSecondaryTextUploaders.Text" xml:space="preserve">
-    <value>Secondary text uploaders</value>
-  </data>
-  <data name="&gt;&gt;gbSecondaryTextUploaders.Name" xml:space="preserve">
-    <value>gbSecondaryTextUploaders</value>
-  </data>
-  <data name="&gt;&gt;gbSecondaryTextUploaders.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;gbSecondaryTextUploaders.Parent" xml:space="preserve">
-    <value>tlpBackupDestinations</value>
-  </data>
-  <data name="&gt;&gt;gbSecondaryTextUploaders.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="tlpBackupDestinations.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 56</value>
-  </data>
-  <data name="tlpBackupDestinations.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 5, 5, 5</value>
-  </data>
-  <data name="tlpBackupDestinations.RowCount" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="tlpBackupDestinations.Size" type="System.Drawing.Size, System.Drawing">
-    <value>521, 279</value>
-  </data>
-  <data name="tlpBackupDestinations.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;tlpBackupDestinations.Name" xml:space="preserve">
-    <value>tlpBackupDestinations</value>
-  </data>
-  <data name="&gt;&gt;tlpBackupDestinations.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tlpBackupDestinations.Parent" xml:space="preserve">
-    <value>tpUploadRetry</value>
-  </data>
-  <data name="&gt;&gt;tlpBackupDestinations.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="tlpBackupDestinations.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="gbSecondaryImageUploaders" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="gbSecondaryFileUploaders" Row="0" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="gbSecondaryTextUploaders" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,33,Percent,34,Percent,33" /&gt;&lt;Rows Styles="Percent,100" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="cbIfUploadFailRetryOnce.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2152,7 +2116,7 @@
     <value>tpUploadRetry</value>
   </data>
   <data name="&gt;&gt;cbIfUploadFailRetryOnce.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>4</value>
   </data>
   <data name="nudRetryUpload.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 32</value>
@@ -2176,7 +2140,7 @@
     <value>tpUploadRetry</value>
   </data>
   <data name="&gt;&gt;nudRetryUpload.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>5</value>
   </data>
   <data name="tpUploadRetry.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>
@@ -3040,7 +3004,7 @@
     <value>tttvMain</value>
   </data>
   <data name="&gt;&gt;tttvMain.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.TabToTreeView, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.TabToTreeView, ShareX.HelpersLib, Version=13.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;tttvMain.Parent" xml:space="preserve">
     <value>$this</value>
@@ -3081,16 +3045,16 @@
   <data name="&gt;&gt;chFormat.Type" xml:space="preserve">
     <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;chSecondaryImageUploaders.Name" xml:space="preserve">
-    <value>chSecondaryImageUploaders</value>
-  </data>
-  <data name="&gt;&gt;chSecondaryImageUploaders.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;chSecondaryFileUploaders.Name" xml:space="preserve">
     <value>chSecondaryFileUploaders</value>
   </data>
   <data name="&gt;&gt;chSecondaryFileUploaders.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chSecondaryImageUploaders.Name" xml:space="preserve">
+    <value>chSecondaryImageUploaders</value>
+  </data>
+  <data name="&gt;&gt;chSecondaryImageUploaders.Type" xml:space="preserve">
     <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;chSecondaryTextUploaders.Name" xml:space="preserve">

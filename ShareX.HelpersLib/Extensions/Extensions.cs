@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2017 ShareX Team
+    Copyright (c) 2007-2019 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -34,6 +34,7 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using Encoder = System.Drawing.Imaging.Encoder;
 
@@ -131,9 +132,9 @@ namespace ShareX.HelpersLib
 
         public static double ToDouble(this Version value)
         {
-            return Math.Max(value.Major, 0) * Math.Pow(10, 12) +
-                Math.Max(value.Minor, 0) * Math.Pow(10, 9) +
-                Math.Max(value.Build, 0) * Math.Pow(10, 6) +
+            return (Math.Max(value.Major, 0) * Math.Pow(10, 12)) +
+                (Math.Max(value.Minor, 0) * Math.Pow(10, 9)) +
+                (Math.Max(value.Build, 0) * Math.Pow(10, 6)) +
                 Math.Max(value.Revision, 0);
         }
 
@@ -169,7 +170,7 @@ namespace ShareX.HelpersLib
 
         public static Rectangle Offset(this Rectangle rect, int offset)
         {
-            return new Rectangle(rect.X - offset, rect.Y - offset, rect.Width + offset * 2, rect.Height + offset * 2);
+            return new Rectangle(rect.X - offset, rect.Y - offset, rect.Width + (offset * 2), rect.Height + (offset * 2));
         }
 
         public static Rectangle LocationOffset(this Rectangle rect, int x, int y)
@@ -228,23 +229,74 @@ namespace ShareX.HelpersLib
         {
             if (rtb.ContextMenuStrip == null)
             {
-                ContextMenuStrip cms = new ContextMenuStrip { ShowImageMargin = false };
+                ContextMenuStrip cms = new ContextMenuStrip()
+                {
+                    ShowImageMargin = false
+                };
+
+                ToolStripMenuItem tsmiUndo = new ToolStripMenuItem(Resources.Extensions_AddContextMenu_Undo);
+                tsmiUndo.Click += (sender, e) => rtb.Undo();
+                cms.Items.Add(tsmiUndo);
+
+                ToolStripMenuItem tsmiRedo = new ToolStripMenuItem(Resources.Extensions_AddContextMenu_Redo);
+                tsmiRedo.Click += (sender, e) => rtb.Redo();
+                cms.Items.Add(tsmiRedo);
+
+                cms.Items.Add(new ToolStripSeparator());
+
                 ToolStripMenuItem tsmiCut = new ToolStripMenuItem(Resources.Extensions_AddContextMenu_Cut);
                 tsmiCut.Click += (sender, e) => rtb.Cut();
                 cms.Items.Add(tsmiCut);
+
                 ToolStripMenuItem tsmiCopy = new ToolStripMenuItem(Resources.Extensions_AddContextMenu_Copy);
                 tsmiCopy.Click += (sender, e) => rtb.Copy();
                 cms.Items.Add(tsmiCopy);
+
                 ToolStripMenuItem tsmiPaste = new ToolStripMenuItem(Resources.Extensions_AddContextMenu_Paste);
                 tsmiPaste.Click += (sender, e) => rtb.Paste();
                 cms.Items.Add(tsmiPaste);
+
+                ToolStripMenuItem tsmiDelete = new ToolStripMenuItem(Resources.Extensions_AddContextMenu_Delete);
+                tsmiDelete.Click += (sender, e) => rtb.SelectedText = "";
+                cms.Items.Add(tsmiDelete);
+
+                cms.Items.Add(new ToolStripSeparator());
+
+                ToolStripMenuItem tsmiSelectAll = new ToolStripMenuItem(Resources.Extensions_AddContextMenu_SelectAll);
+                tsmiSelectAll.Click += (sender, e) => rtb.SelectAll();
+                cms.Items.Add(tsmiSelectAll);
+
+                cms.Opening += (sender, e) =>
+                {
+                    tsmiUndo.Enabled = !rtb.ReadOnly && rtb.CanUndo;
+                    tsmiRedo.Enabled = !rtb.ReadOnly && rtb.CanRedo;
+                    tsmiCut.Enabled = !rtb.ReadOnly && rtb.SelectionLength > 0;
+                    tsmiCopy.Enabled = rtb.SelectionLength > 0;
+                    tsmiPaste.Enabled = !rtb.ReadOnly && Clipboard.ContainsText();
+                    tsmiDelete.Enabled = !rtb.ReadOnly && rtb.SelectionLength > 0;
+                    tsmiSelectAll.Enabled = rtb.TextLength > 0 && rtb.SelectionLength < rtb.TextLength;
+                };
+
                 rtb.ContextMenuStrip = cms;
             }
         }
 
+        public static void SupportSelectAll(this TextBox tb)
+        {
+            tb.KeyDown += (sender, e) =>
+            {
+                if (e.Control && e.KeyCode == Keys.A)
+                {
+                    tb.SelectAll();
+                    e.SuppressKeyPress = true;
+                    e.Handled = true;
+                }
+            };
+        }
+
         public static void SaveJPG(this Image img, Stream stream, int quality)
         {
-            quality = quality.Between(0, 100);
+            quality = quality.Clamp(0, 100);
             EncoderParameters encoderParameters = new EncoderParameters(1);
             encoderParameters.Param[0] = new EncoderParameter(Encoder.Quality, quality);
             img.Save(stream, ImageFormat.Jpeg.GetCodecInfo(), encoderParameters);
@@ -293,7 +345,7 @@ namespace ShareX.HelpersLib
             return Helpers.DateTimeToUnix(dateTime);
         }
 
-        public static void AppendTextToSelection(this TextBox tb, string text)
+        public static void AppendTextToSelection(this TextBoxBase tb, string text)
         {
             if (!string.IsNullOrEmpty(text))
             {
@@ -328,6 +380,14 @@ namespace ShareX.HelpersLib
             tsb.Checked = true;
         }
 
+        public static void UpdateCheckedAll(this ToolStripMenuItem tsmi, bool check)
+        {
+            foreach (ToolStripMenuItem tsmiChild in tsmi.DropDownItems.OfType<ToolStripMenuItem>())
+            {
+                tsmiChild.Checked = check;
+            }
+        }
+
         public static void InvokeSafe(this Control control, Action action)
         {
             if (control != null && !control.IsDisposed)
@@ -345,18 +405,21 @@ namespace ShareX.HelpersLib
 
         public static void ForceActivate(this Form form)
         {
-            if (!form.Visible)
+            if (!form.IsDisposed)
             {
-                form.Show();
-            }
+                if (!form.Visible)
+                {
+                    form.Show();
+                }
 
-            if (form.WindowState == FormWindowState.Minimized)
-            {
-                form.WindowState = FormWindowState.Normal;
-            }
+                if (form.WindowState == FormWindowState.Minimized)
+                {
+                    form.WindowState = FormWindowState.Normal;
+                }
 
-            form.BringToFront();
-            form.Activate();
+                form.BringToFront();
+                form.Activate();
+            }
         }
 
         public static int WeekOfYear(this DateTime dateTime)
@@ -466,11 +529,11 @@ namespace ShareX.HelpersLib
         {
             if (tsmi != null)
             {
-                foreach (ToolStripMenuItem item in tsmi.GetCurrentParent().Items)
+                foreach (ToolStripItem item in tsmi.GetCurrentParent().Items)
                 {
-                    if (item != null)
+                    if (item != null && item is ToolStripMenuItem tsmiItem && tsmiItem.Tag.Equals(tsmi.Tag))
                     {
-                        item.Checked = item == tsmi;
+                        tsmiItem.Checked = tsmiItem == tsmi;
                     }
                 }
             }
@@ -501,9 +564,14 @@ namespace ShareX.HelpersLib
             ((ToolStripDropDownMenu)tsddi.DropDown).ShowImageMargin = false;
         }
 
+        public static void DisableMenuCloseOnClick(this ToolStripDropDownItem tsddi)
+        {
+            tsddi.DropDown.Closing += (sender, e) => e.Cancel = e.CloseReason == ToolStripDropDownCloseReason.ItemClicked;
+        }
+
         public static void SetValue(this NumericUpDown nud, decimal number)
         {
-            nud.Value = number.Between(nud.Minimum, nud.Maximum);
+            nud.Value = number.Clamp(nud.Minimum, nud.Maximum);
         }
 
         public static bool IsValidImage(this PictureBox pb)
@@ -574,7 +642,16 @@ namespace ShareX.HelpersLib
 
         public static Point Center(this Rectangle rect)
         {
-            return new Point(rect.X + rect.Width / 2, rect.Y + rect.Height / 2);
+            return new Point(rect.X + (rect.Width / 2), rect.Y + (rect.Height / 2));
+        }
+
+        public static Point Restrict(this Point point, Rectangle rect)
+        {
+            point.X = Math.Max(point.X, rect.X);
+            point.Y = Math.Max(point.Y, rect.Y);
+            point.X = Math.Min(point.X, rect.X + rect.Width - 1);
+            point.Y = Math.Min(point.Y, rect.Y + rect.Height - 1);
+            return point;
         }
 
         public static void RefreshItems(this ComboBox cb)
@@ -582,9 +659,101 @@ namespace ShareX.HelpersLib
             typeof(ComboBox).InvokeMember("RefreshItems", BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.InvokeMethod, null, cb, new object[] { });
         }
 
-        public static void ShowError(this Exception e)
+        public static void RefreshItem(this ListBox lb, int index)
         {
-            MessageBox.Show(e.ToString(), "ShareX - " + Resources.Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            typeof(ListBox).InvokeMember("RefreshItem", BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.InvokeMethod, null, lb, new object[] { index });
+        }
+
+        public static void RefreshSelectedItem(this ListBox lb)
+        {
+            if (lb.SelectedIndex > -1)
+            {
+                lb.RefreshItem(lb.SelectedIndex);
+            }
+        }
+
+        public static void RefreshItems(this ListBox lb)
+        {
+            typeof(ListBox).InvokeMember("RefreshItems", BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.InvokeMethod, null, lb, new object[] { });
+        }
+
+        public static void ShowError(this Exception e, bool fullError = true)
+        {
+            string error = fullError ? e.ToString() : e.Message;
+            MessageBox.Show(error, "ShareX - " + Resources.Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        public static Task ContinueInCurrentContext(this Task task, Action action)
+        {
+            TaskScheduler scheduler = TaskScheduler.FromCurrentSynchronizationContext();
+            return task.ContinueWith(t => action(), scheduler);
+        }
+
+        public static void DoubleBuffered(this DataGridView dgv, bool value)
+        {
+            PropertyInfo pi = dgv.GetType().GetProperty("DoubleBuffered", BindingFlags.Instance | BindingFlags.NonPublic);
+            pi.SetValue(dgv, value, null);
+        }
+
+        public static void AppendLine(this RichTextBox rtb, string value = "")
+        {
+            rtb.AppendText(value + Environment.NewLine);
+        }
+
+        public static void SetFontRegular(this RichTextBox rtb)
+        {
+            rtb.SelectionFont = new Font(rtb.Font, FontStyle.Regular);
+        }
+
+        public static void SetFontBold(this RichTextBox rtb)
+        {
+            rtb.SelectionFont = new Font(rtb.Font, FontStyle.Bold);
+        }
+
+        public static void SupportDarkTheme(this ListView lv)
+        {
+            if (!lv.OwnerDraw)
+            {
+                lv.OwnerDraw = true;
+
+                lv.DrawItem += (sender, e) =>
+                {
+                    e.DrawDefault = true;
+                };
+
+                lv.DrawSubItem += (sender, e) =>
+                {
+                    e.DrawDefault = true;
+                };
+
+                lv.DrawColumnHeader += (sender, e) =>
+                {
+                    if (ShareXResources.UseDarkTheme)
+                    {
+                        using (Brush brush = new SolidBrush(ShareXResources.DarkBackgroundColor))
+                        {
+                            e.Graphics.FillRectangle(brush, e.Bounds);
+                        }
+
+                        TextRenderer.DrawText(e.Graphics, e.Header.Text, e.Font, e.Bounds.LocationOffset(2, 0).SizeOffset(-4, 0), ShareXResources.DarkTextColor,
+                            TextFormatFlags.Left | TextFormatFlags.VerticalCenter | TextFormatFlags.EndEllipsis);
+
+                        if (e.Bounds.Right < lv.ClientRectangle.Right)
+                        {
+                            using (Pen pen = new Pen(Color.FromArgb(22, 26, 31)))
+                            using (Pen pen2 = new Pen(Color.FromArgb(56, 64, 75)))
+                            {
+                                e.Graphics.DrawLine(pen, e.Bounds.Right - 2, e.Bounds.Top, e.Bounds.Right - 2, e.Bounds.Bottom - 1);
+                                e.Graphics.DrawLine(pen2, e.Bounds.Right - 1, e.Bounds.Top, e.Bounds.Right - 1, e.Bounds.Bottom - 1);
+                            }
+                        }
+                    }
+                    else
+                    {
+                        e.DrawDefault = true;
+                    }
+                };
+            }
         }
     }
 }

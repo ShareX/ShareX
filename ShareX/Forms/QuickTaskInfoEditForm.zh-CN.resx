@@ -124,7 +124,7 @@
     <value>菜单：</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Sharex - 编辑快速任务菜单</value>
+    <value>ShareX - 编辑快速任务菜单</value>
   </data>
   <data name="lblAfterUploadTasks.Text" xml:space="preserve">
     <value>上传任务后：</value>

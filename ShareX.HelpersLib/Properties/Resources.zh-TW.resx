@@ -946,15 +946,6 @@
   <data name="ShapeType_DrawingSpeechBalloon" xml:space="preserve">
     <value>繪圖：言語氣球</value>
   </data>
-  <data name="DownloaderForm_ChangeProgress_Progress___0_" xml:space="preserve">
-    <value>進度: {0}</value>
-  </data>
-  <data name="DownloaderForm_Download_Canceled" xml:space="preserve">
-    <value>下載取消</value>
-  </data>
-  <data name="DownloaderForm_ProxyDetected" xml:space="preserve">
-    <value>找到可能可用的代理。請從主選單開啟應用程式設定，然後選擇"代理"來修改代理設定.</value>
-  </data>
   <data name="ShapeType_DrawingTextOutline" xml:space="preserve">
     <value>畫:文字(外框)</value>
   </data>

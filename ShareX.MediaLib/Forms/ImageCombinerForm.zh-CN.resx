@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="btnAdd.Text" xml:space="preserve">
-    <value>添加</value>
+    <value>添加...</value>
   </data>
   <data name="btnRemove.Text" xml:space="preserve">
     <value>删除</value>
@@ -133,10 +133,10 @@
     <value>图像文件路径</value>
   </data>
   <data name="btnCombine.Text" xml:space="preserve">
-    <value>合并图像和保存/上传依赖于截图后设置</value>
+    <value>根据捕捉设置合并图像并保存或上传</value>
   </data>
   <data name="lblSpace.Text" xml:space="preserve">
-    <value>图像之间的空隙：</value>
+    <value>图像间空隙：</value>
   </data>
   <data name="lblOrientation.Text" xml:space="preserve">
     <value>合并方向：</value>

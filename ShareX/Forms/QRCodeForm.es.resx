@@ -124,6 +124,6 @@
     <value>Copiar al portapapeles</value>
   </data>
   <data name="tsmiSaveAs.Text" xml:space="preserve">
-    <value>Guardar como archivo de imagen...</value>
+    <value>Guardar imagen como...</value>
   </data>
 </root>

@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2017 ShareX Team
+    Copyright (c) 2007-2019 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -25,10 +25,10 @@
 
 namespace ShareX.UploadersLib.SharingServices
 {
-    public class VkSharingService : SimpleSharingService
+    public class VkSharingService : SimpleURLSharingService
     {
         public override URLSharingServices EnumValue { get; } = URLSharingServices.VK;
 
-        protected override string UrlFormatString { get; } = "http://vk.com/share.php?url={0}";
+        protected override string URLFormatString { get; } = "http://vk.com/share.php?url={0}";
     }
 }

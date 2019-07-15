@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2017 ShareX Team
+    Copyright (c) 2007-2019 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -25,61 +25,51 @@
 
 namespace ShareX.UploadersLib
 {
-    public static partial class APIKeys
+    internal static partial class APIKeys
     {
-        // Image Uploaders
-        public static string ImgurClientID = "";
-        public static string ImgurClientSecret = "";
-        public static string ImageShackKey = "";
-        public static string TinyPicID = "";
-        public static string TinyPicKey = "";
-        public static string FlickrKey = "";
-        public static string FlickrSecret = "";
-        public static string PhotobucketConsumerKey = "";
-        public static string PhotobucketConsumerSecret = "";
-        public static string TwitsnapsKey = "";
-        public static string TwitPicKey = "";
-        public static string SomeImageKey = "";
-        public static string SlimgClientID = "";
-        public static string SlimgClientSecret = "";
+        // Image uploaders
+        public static readonly string ImgurClientID = "";
+        public static readonly string ImgurClientSecret = "";
+        public static readonly string ImageShackKey = "";
+        public static readonly string TinyPicID = "";
+        public static readonly string TinyPicKey = "";
+        public static readonly string FlickrKey = "";
+        public static readonly string FlickrSecret = "";
+        public static readonly string PhotobucketConsumerKey = "";
+        public static readonly string PhotobucketConsumerSecret = "";
 
-        // File Uploaders
-        public static string DropboxConsumerKey = "";
-        public static string DropboxConsumerSecret = "";
-        public static string CopyConsumerKey = "";
-        public static string CopyConsumerSecret = "";
-        public static string HubicClientID = "";
-        public static string HubicClientSecret = "";
-        public static string MinusConsumerKey = "";
-        public static string MinusConsumerSecret = "";
-        public static string BoxClientID = "";
-        public static string BoxClientSecret = "";
-        public static string SendSpaceKey = "";
-        public static string Ge_ttKey = "";
-        public static string JiraConsumerKey = "";
-        public static string MediaFireAppId = "";
-        public static string MediaFireApiKey = "";
-        public static string OneDriveClientID = "";
-        public static string OneDriveClientSecret = "";
-        public static string GfycatClientID = "";
-        public static string GfycatClientSecret = "";
+        // Text uploaders
+        public static readonly string PastebinKey = "";
+        public static readonly string GitHubID = "";
+        public static readonly string GitHubSecret = "";
+        public static readonly string Paste_eeApplicationKey = "";
 
-        // Text Uploaders
-        public static string PastebinKey = "";
-        public static string PastebinCaKey = "";
-        public static string GitHubID = "";
-        public static string GitHubSecret = "";
+        // File uploaders
+        public static readonly string DropboxConsumerKey = "";
+        public static readonly string DropboxConsumerSecret = "";
+        public static readonly string BoxClientID = "";
+        public static readonly string BoxClientSecret = "";
+        public static readonly string SendSpaceKey = "";
+        public static readonly string Ge_ttKey = "";
+        public static readonly string JiraConsumerKey = "";
+        public static readonly string MediaFireAppId = "";
+        public static readonly string MediaFireApiKey = "";
+        public static readonly string OneDriveClientID = "";
+        public static readonly string OneDriveClientSecret = "";
+        public static readonly string GfycatClientID = "";
+        public static readonly string GfycatClientSecret = "";
+        public static readonly string TeknikClientID = "";
+        public static readonly string TeknikClientSecret = "";
 
-        // URL Shorteners
-        public static string BitlyClientID = "";
-        public static string BitlyClientSecret = "";
+        // URL shorteners
+        public static readonly string BitlyClientID = "";
+        public static readonly string BitlyClientSecret = "";
 
-        // Other Services
-        public static string GoogleAPIKey = "";
-        public static string GoogleClientID = "";
-        public static string GoogleClientSecret = "";
-        public static string TwitterConsumerKey = "";
-        public static string TwitterConsumerSecret = "";
-        public static string OCRSpaceAPIKey = "";
+        // Other services
+        public static readonly string GoogleClientID = "";
+        public static readonly string GoogleClientSecret = "";
+        public static readonly string TwitterConsumerKey = "";
+        public static readonly string TwitterConsumerSecret = "";
+        public static readonly string OCRSpaceAPIKey = "";
     }
 }

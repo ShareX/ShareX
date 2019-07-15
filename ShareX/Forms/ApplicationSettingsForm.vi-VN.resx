@@ -136,19 +136,16 @@
     <value>Khi ShareX đang chạy, hiện "In-App" trong Steam</value>
   </data>
   <data name="btnClipboardFormatEdit.Text" xml:space="preserve">
-    <value>Sửa...</value>
+    <value>Chỉnh sửa...</value>
   </data>
   <data name="lblUploadLimitHint.Text" xml:space="preserve">
-    <value>0 - 25 (0 đã tắt)</value>
+    <value>0 - 25 (0 sẽ vô hiệu hóa)</value>
   </data>
   <data name="lblBufferSize.Text" xml:space="preserve">
     <value>Kích thước buffer:</value>
   </data>
   <data name="lblPersonalFolderPath.Text" xml:space="preserve">
     <value>Thư mục riêng của ShareX:</value>
-  </data>
-  <data name="lblNotePersonalFolderPath.Text" xml:space="preserve">
-    <value>Lưu ý: Bạn cần mở lại ShareX để các thay đổi thư mục riêng có hiệu lực</value>
   </data>
   <data name="tpIntegration.Text" xml:space="preserve">
     <value>Tích hợp</value>
@@ -160,16 +157,13 @@
     <value>Dịch vụ tải lên tệp tin phụ</value>
   </data>
   <data name="cbShowTray.Text" xml:space="preserve">
-    <value>Hiện icon ở khay hệ thống</value>
+    <value>Hiện biểu tượng ở khay hệ thống</value>
   </data>
   <data name="cbSilentRun.Text" xml:space="preserve">
     <value>Khi khởi động thu nhỏ xuống khay hệ thống</value>
   </data>
   <data name="cbSendToMenu.Text" xml:space="preserve">
     <value>Hiện ShareX trong menu "Send to"</value>
-  </data>
-  <data name="cbStartWithWindows.Text" xml:space="preserve">
-    <value>Chạy ShareX cùng Windows</value>
   </data>
   <data name="tpGeneral.Text" xml:space="preserve">
     <value>Tổng quan</value>
@@ -178,7 +172,7 @@
     <value>Ngôn ngữ:</value>
   </data>
   <data name="btnClipboardFormatRemove.Text" xml:space="preserve">
-    <value>Xóa</value>
+    <value>Xóa bỏ</value>
   </data>
   <data name="btnClipboardFormatAdd.Text" xml:space="preserve">
     <value>Thêm...</value>
@@ -190,7 +184,7 @@
     <value>Giới hạn tải lên đồng thời:</value>
   </data>
   <data name="cbTaskbarProgressEnabled.Text" xml:space="preserve">
-    <value>Hiện tiến độ ở nút taskbar</value>
+    <value>Hiện tiến độ ở nút thanh tác vụ</value>
   </data>
   <data name="lblProxyHost.Text" xml:space="preserve">
     <value>Host:</value>
@@ -208,7 +202,7 @@
     <value>Thiết lập Proxy:</value>
   </data>
   <data name="cbTrayIconProgressEnabled.Text" xml:space="preserve">
-    <value>Hiện tiến độ ở icon trong khay hệ thống</value>
+    <value>Hiện tiến độ ở biểu tượng trong khay hệ thống</value>
   </data>
   <data name="cbRememberMainFormPosition.Text" xml:space="preserve">
     <value>Nhớ vị trí cửa sổ chính</value>
@@ -217,16 +211,16 @@
     <value>Duyệt...</value>
   </data>
   <data name="gbClipboardFormats.Text" xml:space="preserve">
-    <value>Định dạng cho vùng nhớ tạm</value>
+    <value>Định dạng cho vùng nhớ tạm - xuất hiện dưới mục Sao chép ở menu ngữ cảnh trong cửa sổ chính</value>
   </data>
   <data name="lblProxyUsername.Text" xml:space="preserve">
-    <value>Tên đăng nhập:</value>
+    <value>Tên người dùng:</value>
   </data>
   <data name="cbRememberMainFormSize.Text" xml:space="preserve">
     <value>Nhớ kích thước cửa sổ chính</value>
   </data>
   <data name="cbShellContextMenu.Text" xml:space="preserve">
-    <value>Hiện nút "Upload with ShareX" trong menu ngữ cảnh của Windows Explorer</value>
+    <value>Hiện nút "Tải lên với ShareX" trong menu ngữ cảnh của Windows Explorer</value>
   </data>
   <data name="lblSaveImageSubFolderPattern.Text" xml:space="preserve">
     <value>Định dạng tên thư mục phụ</value>
@@ -269,5 +263,86 @@
   </data>
   <data name="btnOpenPersonalFolderPath.Text" xml:space="preserve">
     <value>Mở...</value>
+  </data>
+  <data name="cbCheckPreReleaseUpdates.Text" xml:space="preserve">
+    <value>Kiểm tra các bản cập nhật trước phát hành chính thức</value>
+  </data>
+  <data name="gbChrome.Text" xml:space="preserve">
+    <value>Tiện ích mở rộng Chrome</value>
+  </data>
+  <data name="btnEditQuickTaskMenu.Text" xml:space="preserve">
+    <value>Sửa menu tác vụ nhanh...</value>
+  </data>
+  <data name="cbChromeExtensionSupport.Text" xml:space="preserve">
+    <value>Kích hoạt hỗ trợ tiện ích mở rộng cho Chrome</value>
+  </data>
+  <data name="cbFirefoxAddonSupport.Text" xml:space="preserve">
+    <value>Kích hoạt hỗ trợ tiện ích mở rộng cho Firefox</value>
+  </data>
+  <data name="tpExportImport.Text" xml:space="preserve">
+    <value>Nhập vào/Xuất ra</value>
+  </data>
+  <data name="btnExport.Text" xml:space="preserve">
+    <value>Xuất ra các cài đặt...</value>
+  </data>
+  <data name="gbFirefox.Text" xml:space="preserve">
+    <value>Tiện ích mở rộng cho Firefox</value>
+  </data>
+  <data name="cbEditWithShareX.Text" xml:space="preserve">
+    <value>Hiện nút "Chỉnh sửa với ShareX" trong menu ngữ cảnh của Windows Explorer</value>
+  </data>
+  <data name="tpHistory.Text" xml:space="preserve">
+    <value>Lịch sử</value>
+  </data>
+  <data name="btnImport.Text" xml:space="preserve">
+    <value>Nhập vào cài đặt...</value>
+  </data>
+  <data name="btnCheckDevBuild.Text" xml:space="preserve">
+    <value>Cài đặt phiên bản cho lập trình viên...</value>
+  </data>
+  <data name="btnChromeOpenExtensionPage.Text" xml:space="preserve">
+    <value>Cài đặt tiện ích mở rộng ShareX cho Chrome...</value>
+  </data>
+  <data name="btnFirefoxOpenAddonPage.Text" xml:space="preserve">
+    <value>Cài đặt tiện ích mở rộng ShareX cho Firefox...</value>
+  </data>
+  <data name="cbRecentTasksSave.Text" xml:space="preserve">
+    <value>Lưu các tác vụ gần đây</value>
+  </data>
+  <data name="cbHistorySaveTasks.Text" xml:space="preserve">
+    <value>Lưu các tác vụ vào lịch sử</value>
+  </data>
+  <data name="gbRecentLinks.Text" xml:space="preserve">
+    <value>Tác vụ gần đây:</value>
+  </data>
+  <data name="cbRecentTasksShowInMainWindow.Text" xml:space="preserve">
+    <value>Hiện tác vụ gần đây ở cửa sổ chính khi khởi động</value>
+  </data>
+  <data name="lblRecentTasksMaxCount.Text" xml:space="preserve">
+    <value>Số lượng tác vụ tối đa có thể lưu:</value>
+  </data>
+  <data name="gbHistory.Text" xml:space="preserve">
+    <value>Lịch sử</value>
+  </data>
+  <data name="cbRecentTasksTrayMenuMostRecentFirst.Text" xml:space="preserve">
+    <value>Hiện tác vụ gần đây trước trên menu khay hệ thống</value>
+  </data>
+  <data name="btnResetSettings.Text" xml:space="preserve">
+    <value>Đặt lại cài đặt...</value>
+  </data>
+  <data name="lblTrayLeftDoubleClickAction.Text" xml:space="preserve">
+    <value>Khi nhấn đúp chuột trái vào biểu tượng ở khay hệ thống:</value>
+  </data>
+  <data name="lblTrayLeftClickAction.Text" xml:space="preserve">
+    <value>Khi nhấn chuột trái vào biểu tượng ở khay hệ thống:</value>
+  </data>
+  <data name="lblTrayMiddleClickAction.Text" xml:space="preserve">
+    <value>Khi nhấn chuột giữa vào biểu tượng ở khay hệ thống:</value>
+  </data>
+  <data name="cbHistoryCheckURL.Text" xml:space="preserve">
+    <value>Chỉ lưu lại nếu URL không để trống</value>
+  </data>
+  <data name="cbRecentTasksShowInTrayMenu.Text" xml:space="preserve">
+    <value>Hiện tác vụ gần đây ở menu khay hệ thống</value>
   </data>
 </root>

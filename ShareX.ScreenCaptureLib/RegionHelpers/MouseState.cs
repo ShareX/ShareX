@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2017 ShareX Team
+    Copyright (c) 2007-2019 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -33,13 +33,21 @@ namespace ShareX.ScreenCaptureLib
     {
         public MouseButtons Buttons { get; private set; }
         public Point Position { get; private set; }
-        public Point ZeroBasedPosition { get; private set; }
+        public Point ClientPosition { get; private set; }
 
-        public void Update()
+        public void Update(Control control)
         {
             Buttons = Control.MouseButtons;
             Position = Control.MousePosition;
-            ZeroBasedPosition = CaptureHelpers.ScreenToClient(Position);
+
+            if (control != null)
+            {
+                ClientPosition = control.PointToClient(Position);
+            }
+            else
+            {
+                ClientPosition = CaptureHelpers.ScreenToClient(Position);
+            }
         }
     }
 }

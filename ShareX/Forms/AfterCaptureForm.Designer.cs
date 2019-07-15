@@ -84,10 +84,10 @@
             // 
             // tpAfterCapture
             // 
+            this.tpAfterCapture.BackColor = System.Drawing.SystemColors.Window;
             this.tpAfterCapture.Controls.Add(this.lvAfterCaptureTasks);
             resources.ApplyResources(this.tpAfterCapture, "tpAfterCapture");
             this.tpAfterCapture.Name = "tpAfterCapture";
-            this.tpAfterCapture.UseVisualStyleBackColor = true;
             // 
             // lvAfterCaptureTasks
             // 
@@ -107,17 +107,17 @@
             // 
             // tpBeforeUpload
             // 
+            this.tpBeforeUpload.BackColor = System.Drawing.SystemColors.Window;
             this.tpBeforeUpload.Controls.Add(this.ucBeforeUpload);
             resources.ApplyResources(this.tpBeforeUpload, "tpBeforeUpload");
             this.tpBeforeUpload.Name = "tpBeforeUpload";
-            this.tpBeforeUpload.UseVisualStyleBackColor = true;
             // 
             // tpAfterUpload
             // 
+            this.tpAfterUpload.BackColor = System.Drawing.SystemColors.Window;
             this.tpAfterUpload.Controls.Add(this.lvAfterUploadTasks);
             resources.ApplyResources(this.tpAfterUpload, "tpAfterUpload");
             this.tpAfterUpload.Name = "tpAfterUpload";
-            this.tpAfterUpload.UseVisualStyleBackColor = true;
             // 
             // lvAfterUploadTasks
             // 

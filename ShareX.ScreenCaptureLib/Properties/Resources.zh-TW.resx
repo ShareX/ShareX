@@ -132,9 +132,6 @@
   <data name="FFmpegOptionsForm_UpdateUI_Quality_" xml:space="preserve">
     <value>質量:</value>
   </data>
-  <data name="RectangleAnnotate_InitializeComponent_Rectangle_capture_annotate" xml:space="preserve">
-    <value>矩形擷取標註</value>
-  </data>
   <data name="RectangleRegion_GetAreaText_Area" xml:space="preserve">
     <value>X: {0} Y: {1} W: {2} H: {3}</value>
   </data>
@@ -146,104 +143,20 @@
   <data name="BaseRegionForm_InitializeComponent_Region_capture" xml:space="preserve">
     <value>區域擷取</value>
   </data>
-  <data name="RectangleRegion_WriteTips__Ctrl___C__Copy_position_and_size" xml:space="preserve">
-    <value>[Ctrl + C] 複製位置和大小</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Right_click__Cancel_region_selection" xml:space="preserve">
-    <value>[右鍵單擊] [Delete] 取消區域選擇</value>
-  </data>
   <data name="ScrollingCaptureForm_StopCapture_Start_capture" xml:space="preserve">
     <value>開始擷取</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Space__Fullscreen_capture" xml:space="preserve">
-    <value>[空格] 全屏擷取</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Insert__Stop_region_selection" xml:space="preserve">
-    <value>[鬆開左鍵] [Insert] 完成區域選擇</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Hold_Left_click_on_selection__Move_region" xml:space="preserve">
-    <value>[按住左鍵單擊選擇]移動區域</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Right_click_on_selection___Delete__Remove_region" xml:space="preserve">
-    <value>[Delete] 刪除區域</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__F1__Hide_tips" xml:space="preserve">
-    <value>[F1] 隱藏提示</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Hold_Left_click__Start_region_selection" xml:space="preserve">
-    <value>[按住左鍵] [Insert] 啟動區域選擇</value>
   </data>
   <data name="ScrollingCaptureForm_StartCapture_Stop_capture" xml:space="preserve">
     <value>停止擷取</value>
   </data>
-  <data name="RectangleRegion_WriteTips__Hold_Alt__Snap_resizing_to_preset_sizes" xml:space="preserve">
-    <value>[按住Alt鍵] 重設擷取選擇區域至預設大小</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Double_Left_click___Enter__Capture_regions" xml:space="preserve">
-    <value>[左鍵雙擊] [Enter] 擷取區域</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Ctrl___C__Copy_info" xml:space="preserve">
-    <value>[Ctrl + C] 複製資訊</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Ctrl___C__Copy_position" xml:space="preserve">
-    <value>[Ctrl + C] 複製位置資訊</value>
-  </data>
   <data name="RectangleTransparent_RectangleTransparent_Rectangle_capture_transparent" xml:space="preserve">
     <value>透明矩形擷取</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Esc__Cancel_capture" xml:space="preserve">
-    <value>[Esc] 取消擷取</value>
   </data>
   <data name="FFmpegOptionsForm_DownloaderForm_InstallRequested_Download_of_FFmpeg_failed_" xml:space="preserve">
     <value>FFmpeg下載失敗。</value>
   </data>
-  <data name="RectangleRegion_WriteTips__Arrow_keys__Move_cursor_position" xml:space="preserve">
-    <value>[方向鍵 ] 移動遊標的位置</value>
-  </data>
-  <data name="RectangleRegion_WriteTips_____Active_monitor_capture" xml:space="preserve">
-    <value>[~] [滑鼠雙擊]擷取活動顯示器</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__Hold_Shift__Proportional_resizing" xml:space="preserve">
-    <value>[按住Shift] 比例調整</value>
-  </data>
   <data name="RectangleLight_InitializeComponent_Rectangle_capture_light" xml:space="preserve">
     <value>矩形擷取光</value>
-  </data>
-  <data name="RectangleRegion_WriteTips__1__2__3_____0__Monitor_capture" xml:space="preserve">
-    <value>[1，2，3...0] 擷取顯示器</value>
-  </data>
-  <data name="RectangleAnnotate_WriteTips__Mouse_wheel__Swap_modes" xml:space="preserve">
-    <value>[滑鼠滾輪] 互換模式</value>
-  </data>
-  <data name="RectangleAnnotate_WriteTips__1__Select_capture_mode" xml:space="preserve">
-    <value>[1] 選擇擷取模式</value>
-  </data>
-  <data name="RectangleAnnotate_WriteTips__2__Select_rectangle_drawing_mode" xml:space="preserve">
-    <value>[2] 選擇矩形繪圖模式</value>
-  </data>
-  <data name="RectangleAnnotate_WriteTips__3__Select_pen_drawing_mode" xml:space="preserve">
-    <value>[3] 選擇畫筆畫模式</value>
-  </data>
-  <data name="RectangleAnnotate_WriteTips__Shift__Change_border_color" xml:space="preserve">
-    <value>[Shift] 更改邊框顏色</value>
-  </data>
-  <data name="RectangleAnnotate_WriteTips__Ctrl___Mouse_wheel__Change_border_size" xml:space="preserve">
-    <value>[Ctrl +滑鼠滾輪] 更改邊框尺寸</value>
-  </data>
-  <data name="RectangleAnnotate_WriteTips__Shift__Change_pen_color" xml:space="preserve">
-    <value>[Shift] 更改畫筆顏色</value>
-  </data>
-  <data name="RectangleAnnotate_WriteTips__Ctrl___Mouse_wheel__Change_pen_size" xml:space="preserve">
-    <value>[Ctrl +滑鼠滾輪] 更改畫筆大小</value>
-  </data>
-  <data name="RectangleRegionForm_WriteTips__Hold_Ctrl___Arrow_keys__Move_region" xml:space="preserve">
-    <value>[按住Ctrl + 方向鍵] 移動區域</value>
-  </data>
-  <data name="RectangleRegionForm_WriteTips__Hold_Shift___Arrow_keys__Resize_or_move_region_faster" xml:space="preserve">
-    <value>[按住Shift + 方向鍵] 調整尺寸或更快的移動區域</value>
-  </data>
-  <data name="RectangleRegionForm_WriteTips__Hold_Shift___Arrow_keys__Move_cursor_position_faster" xml:space="preserve">
-    <value>[按住Shift + 方向鍵] 快速移動遊標位置</value>
   </data>
   <data name="ShapeManager_CreateContextMenu_Show_FPS" xml:space="preserve">
     <value>顯示FPS</value>
@@ -274,9 +187,6 @@
   </data>
   <data name="ShapeManager_CreateContextMenu_Show_position_and_size_info" xml:space="preserve">
     <value>顯示位置和尺寸資訊</value>
-  </data>
-  <data name="ShapeManager_CreateContextMenu_Show_tips" xml:space="preserve">
-    <value>顯示提示</value>
   </data>
   <data name="ShapeManager_CreateContextMenu_Multi_region_mode" xml:space="preserve">
     <value>多區域模式</value>
@@ -313,21 +223,6 @@
   </data>
   <data name="ShapeManager_CreateContextMenu_Border_color___" xml:space="preserve">
     <value>邊框顏色...</value>
-  </data>
-  <data name="RectangleRegionForm_WriteTips__Mouse_wheel__Change_current_tool" xml:space="preserve">
-    <value>[滑鼠滾輪] 更改當前工具</value>
-  </data>
-  <data name="RectangleRegionForm_WriteTips__Tab___Mouse_4_click__Select_last_region_tool" xml:space="preserve">
-    <value>[Tab] [Mouse 4 click] 選擇最後一個區域工具</value>
-  </data>
-  <data name="RectangleRegionForm_WriteTips__Tab___Mouse_4_click__Select_last_annotation_tool" xml:space="preserve">
-    <value>[Tab] [Mouse 4 click] 選擇最後一個註解工具</value>
-  </data>
-  <data name="RectangleRegionForm_WriteTips__Ctrl___Mouse_wheel__Change_magnifier_size" xml:space="preserve">
-    <value>[Ctrl +滑鼠滾輪] 更改放大鏡尺寸</value>
-  </data>
-  <data name="RectangleRegionForm_WriteTips__Hold_Ctrl__Move_selection" xml:space="preserve">
-    <value>[按住Ctrl鍵] 移動選擇區域</value>
   </data>
   <data name="WebpageCaptureForm_UpdateControls_Capture" xml:space="preserve">
     <value>擷取</value>
