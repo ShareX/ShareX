@@ -52,6 +52,13 @@ namespace ShareX
             this.ApplyDefaultPropertyValues();
         }
 
+        public enum UploadWarning
+        {
+            Never,
+            Always,
+            FirstUpload
+        }
+
         #region Main Form
 
         public bool ShowMenu = true;
@@ -205,8 +212,16 @@ namespace ShareX
         [Category("Upload"), DefaultValue(false), Description("Accept invalid SSL certificates when uploading.")]
         public bool AcceptInvalidSSLCertificates { get; set; }
 
+<<<<<<< Updated upstream
         [Category("Application"), DefaultValue(true), Description("Save settings after task completed but only if there is no other active tasks. This setting will be handy for situations where setting save fails when Windows shutdown and not let ShareX to save in time.")]
         public bool SaveSettingsAfterTaskCompleted { get; set; }
+=======
+        [Category("Upload"), DefaultValue(UploadWarning.FirstUpload), Description("Show first time upload warning.")]
+        public UploadWarning ShowUploadWarning { get; set; }
+
+        [Category("Upload"), DefaultValue(true), Description("Show more than 10 files upload warning.")]
+        public bool ShowMultiUploadWarning { get; set; }
+>>>>>>> Stashed changes
 
         [Category("Clipboard upload"), DefaultValue(true), Description("Show clipboard content viewer when using clipboard upload in main window.")]
         public bool ShowClipboardContentViewer { get; set; }

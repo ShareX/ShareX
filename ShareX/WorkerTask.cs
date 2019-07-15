@@ -341,6 +341,7 @@ namespace ShareX
 
         private void DoUploadJob()
         {
+<<<<<<< Updated upstream
             if (Program.Settings.ShowUploadWarning && MessageBox.Show(
                 Resources.UploadTask_DoUploadJob_First_time_upload_warning_text,
                 "ShareX - " + Resources.UploadTask_DoUploadJob_First_time_upload_warning,
@@ -350,6 +351,23 @@ namespace ShareX
                 Program.DefaultTaskSettings.AfterCaptureJob = Program.DefaultTaskSettings.AfterCaptureJob.Remove(AfterCaptureTasks.UploadImageToHost);
                 RequestSettingUpdate = true;
                 Stop();
+=======
+            if (Program.Settings.ShowUploadWarning != ApplicationConfig.UploadWarning.Never)
+            {
+                if (MessageBox.Show(Resources.UploadTask_DoUploadJob_First_time_upload_warning_text,
+                    "ShareX - " + Resources.UploadTask_DoUploadJob_First_time_upload_warning,
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.No)
+                {
+                    if (Program.Settings.ShowUploadWarning.Equals(ApplicationConfig.UploadWarning.FirstUpload))
+                        Program.Settings.ShowUploadWarning = ApplicationConfig.UploadWarning.Never;
+
+                    Program.DefaultTaskSettings.AfterCaptureJob = Program.DefaultTaskSettings.AfterCaptureJob.Remove(AfterCaptureTasks.UploadImageToHost);
+                    Info.TaskSettings.AfterCaptureJob = Info.TaskSettings.AfterCaptureJob.Remove(AfterCaptureTasks.UploadImageToHost);
+                    Info.Result.IsURLExpected = false;
+                    RequestSettingUpdate = true;
+                    return;
+                }
+>>>>>>> Stashed changes
             }
 
             if (Program.Settings.LargeFileSizeWarning > 0)
@@ -369,7 +387,8 @@ namespace ShareX
 
             if (!StopRequested)
             {
-                Program.Settings.ShowUploadWarning = false;
+                if (Program.Settings.ShowUploadWarning.Equals(ApplicationConfig.UploadWarning.FirstUpload))
+                    Program.Settings.ShowUploadWarning = ApplicationConfig.UploadWarning.Never;
 
                 SettingManager.WaitUploadersConfig();
 
