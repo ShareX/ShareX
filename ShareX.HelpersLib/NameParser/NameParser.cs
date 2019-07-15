@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2017 ShareX Team
+    Copyright (c) 2007-2019 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.HelpersLib.Properties;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -32,11 +33,12 @@ namespace ShareX.HelpersLib
 {
     public enum NameParserType
     {
+        Default,
         Text, // Allows new line
         FileName,
         FolderPath,
         FilePath,
-        URL
+        URL // URL path encodes
     }
 
     public class NameParser
@@ -50,6 +52,11 @@ namespace ShareX.HelpersLib
         public string WindowText { get; set; } // %t
         public string ProcessName { get; set; } // %pn
         public TimeZoneInfo CustomTimeZone { get; set; }
+
+        // If we're trying to preview via TaskSettings or not
+        // Used so that %rf throws "File not found" exceptions and brings up a popup on upload
+        // But only returns an error message when previewing to avoid popup spam
+        public bool IsPreviewMode { get; set; } = false;
 
         protected NameParser()
         {
@@ -76,7 +83,7 @@ namespace ShareX.HelpersLib
 
             if (WindowText != null)
             {
-                string windowText = WindowText.Replace(' ', '_');
+                string windowText = WindowText.Trim().Replace(' ', '_');
                 if (MaxTitleLength > 0 && windowText.Length > MaxTitleLength)
                 {
                     windowText = windowText.Remove(MaxTitleLength);
@@ -86,7 +93,8 @@ namespace ShareX.HelpersLib
 
             if (ProcessName != null)
             {
-                sb.Replace(CodeMenuEntryFilename.pn.ToPrefixString(), ProcessName);
+                string processName = ProcessName.Trim().Replace(' ', '_');
+                sb.Replace(CodeMenuEntryFilename.pn.ToPrefixString(), processName);
             }
 
             string width = "", height = "";
@@ -228,28 +236,65 @@ namespace ShareX.HelpersLib
 
             string result = sb.ToString();
 
+            result = result.ReplaceAll(CodeMenuEntryFilename.radjective.ToPrefixString(),
+                () => CultureInfo.InvariantCulture.TextInfo.ToTitleCase(Helpers.GetRandomLine(Resources.adjectives)));
+            result = result.ReplaceAll(CodeMenuEntryFilename.ranimal.ToPrefixString(),
+                () => CultureInfo.InvariantCulture.TextInfo.ToTitleCase(Helpers.GetRandomLine(Resources.animals)));
+
+            foreach (Tuple<string, string> entry in ListEntryWithArgument(result, CodeMenuEntryFilename.rf.ToPrefixString()))
+            {
+                result = result.ReplaceAll(entry.Item1, () =>
+                {
+                    try
+                    {
+                        string path = entry.Item2;
+
+                        if (Helpers.IsTextFile(path))
+                        {
+                            return Helpers.GetRandomLineFromFile(path);
+                        }
+                        else
+                        {
+                            throw new Exception("Valid text file path is required.");
+                        }
+                    }
+                    catch (Exception e) when (IsPreviewMode)
+                    {
+                        return e.Message;
+                    }
+                });
+            }
+
+            foreach (Tuple<string, int> entry in ListEntryWithValue(result, CodeMenuEntryFilename.rna.ToPrefixString()))
+            {
+                result = result.ReplaceAll(entry.Item1, () => Helpers.RepeatGenerator(entry.Item2, () => Helpers.GetRandomChar(Helpers.Base56).ToString()));
+            }
+
             foreach (Tuple<string, int> entry in ListEntryWithValue(result, CodeMenuEntryFilename.rn.ToPrefixString()))
             {
                 result = result.ReplaceAll(entry.Item1, () => Helpers.RepeatGenerator(entry.Item2, () => Helpers.GetRandomChar(Helpers.Numbers).ToString()));
             }
+
             foreach (Tuple<string, int> entry in ListEntryWithValue(result, CodeMenuEntryFilename.ra.ToPrefixString()))
             {
                 result = result.ReplaceAll(entry.Item1, () => Helpers.RepeatGenerator(entry.Item2, () => Helpers.GetRandomChar(Helpers.Alphanumeric).ToString()));
             }
+
             foreach (Tuple<string, int> entry in ListEntryWithValue(result, CodeMenuEntryFilename.rx.ToPrefixString()))
             {
                 result = result.ReplaceAll(entry.Item1, () => Helpers.RepeatGenerator(entry.Item2, () => Helpers.GetRandomChar(Helpers.Hexadecimal.ToLowerInvariant()).ToString()));
             }
+
             foreach (Tuple<string, int> entry in ListEntryWithValue(result, CodeMenuEntryFilename.rx.ToPrefixString().Replace('x', 'X')))
             {
                 result = result.ReplaceAll(entry.Item1, () => Helpers.RepeatGenerator(entry.Item2, () => Helpers.GetRandomChar(Helpers.Hexadecimal.ToUpperInvariant()).ToString()));
             }
 
+            result = result.ReplaceAll(CodeMenuEntryFilename.rna.ToPrefixString(), () => Helpers.GetRandomChar(Helpers.Base56).ToString());
             result = result.ReplaceAll(CodeMenuEntryFilename.rn.ToPrefixString(), () => Helpers.GetRandomChar(Helpers.Numbers).ToString());
             result = result.ReplaceAll(CodeMenuEntryFilename.ra.ToPrefixString(), () => Helpers.GetRandomChar(Helpers.Alphanumeric).ToString());
             result = result.ReplaceAll(CodeMenuEntryFilename.rx.ToPrefixString(), () => Helpers.GetRandomChar(Helpers.Hexadecimal.ToLowerInvariant()).ToString());
             result = result.ReplaceAll(CodeMenuEntryFilename.rx.ToPrefixString().Replace('x', 'X'), () => Helpers.GetRandomChar(Helpers.Hexadecimal.ToUpperInvariant()).ToString());
-
             result = result.ReplaceAll(CodeMenuEntryFilename.guid.ToPrefixString().ToLowerInvariant(), () => Guid.NewGuid().ToString().ToLowerInvariant());
             result = result.ReplaceAll(CodeMenuEntryFilename.guid.ToPrefixString().ToUpperInvariant(), () => Guid.NewGuid().ToString().ToUpperInvariant());
 
@@ -288,6 +333,14 @@ namespace ShareX.HelpersLib
                     Array.Resize(ref s, elements);
                 }
                 yield return new Tuple<string, string[]>(o.Item1, s);
+            }
+        }
+
+        private IEnumerable<Tuple<string, string>> ListEntryWithArgument(string text, string entry)
+        {
+            foreach (Tuple<string, string[]> o in ListEntryWithArguments(text, entry, 1))
+            {
+                yield return new Tuple<string, string>(o.Item1, o.Item2[0]);
             }
         }
 

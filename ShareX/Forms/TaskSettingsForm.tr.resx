@@ -156,9 +156,6 @@
   <data name="cbCaptureClientArea.Text" xml:space="preserve">
     <value>Pencere veya aktif pencere yakalama sırasında başlık çubuğunu yakalama</value>
   </data>
-  <data name="cbScreenshotDelay.Text" xml:space="preserve">
-    <value>Beklemesi süresi:</value>
-  </data>
   <data name="tpRegionCapture.Text" xml:space="preserve">
     <value>Bölge yakala</value>
   </data>
@@ -229,16 +226,13 @@
     <value>Kopyala</value>
   </data>
   <data name="cbClipboardUploadShortenURL.Text" xml:space="preserve">
-    <value>Pano URL içeriyorsa URL kısaltıcı kullan</value>
+    <value>Pano adres içeriyorsa adres kısaltıcı kullan</value>
   </data>
   <data name="cbClipboardUploadAutoIndexFolder.Text" xml:space="preserve">
     <value>Pano dizin yolu içeriyorsa dizini indeksle ve indeksi yükle</value>
   </data>
-  <data name="chkClipboardUploadURLContents.Text" xml:space="preserve">
-    <value>Eğer pano dosya URL bilgisi içeriyorsa indir ve yükle</value>
-  </data>
   <data name="cbClipboardUploadShareURL.Text" xml:space="preserve">
-    <value>Pano URL içeriyorsa URL paylaşım servisi ile paylaş</value>
+    <value>Pano adres içeriyorsa adres paylaşım servisi ile paylaş</value>
   </data>
   <data name="tpUploadClipboard.Text" xml:space="preserve">
     <value>Panodan yükleme</value>
@@ -248,9 +242,6 @@
   </data>
   <data name="cbFileUploadUseNamePattern.Text" xml:space="preserve">
     <value>Dosya yükleme için de gerçek dosya ismi yerine isim deseni kullan</value>
-  </data>
-  <data name="btnResetAutoIncrementNumber.Text" xml:space="preserve">
-    <value>Otomatik artan sayıyı sıfırla</value>
   </data>
   <data name="lblNameFormatPatternPreviewActiveWindow.Text" xml:space="preserve">
     <value>Ön izleme:</value>
@@ -276,12 +267,6 @@
   <data name="cbScreenRecorderFixedDuration.Text" xml:space="preserve">
     <value>Sabit süre:</value>
   </data>
-  <data name="btnEncoderConfig.Text" xml:space="preserve">
-    <value>Profiller...</value>
-  </data>
-  <data name="chkRunScreencastCLI.Text" xml:space="preserve">
-    <value>Ardından CLI çalıştır:</value>
-  </data>
   <data name="lblScreenRecordFPS.Text" xml:space="preserve">
     <value>Ekran kayıt FPS:</value>
   </data>
@@ -301,10 +286,10 @@
     <value>Ekran kaydında imleç göster</value>
   </data>
   <data name="lblThumbnailWidth.Text" xml:space="preserve">
-    <value>En:</value>
+    <value>Genişlik:</value>
   </data>
   <data name="lblThumbnailHeight.Text" xml:space="preserve">
-    <value>Boy:</value>
+    <value>Yükseklik:</value>
   </data>
   <data name="lblThumbnailName.Text" xml:space="preserve">
     <value>Küçük resim adı:</value>
@@ -358,10 +343,10 @@
     <value>Görev...</value>
   </data>
   <data name="tsmiURLSharingServices.Text" xml:space="preserve">
-    <value>URL paylaşım servisleri</value>
+    <value>Adres paylaşım servisleri</value>
   </data>
   <data name="tsmiURLShorteners.Text" xml:space="preserve">
-    <value>URL kısaltıcılar</value>
+    <value>Adres kısaltıcılar</value>
   </data>
   <data name="tsmiFileUploaders.Text" xml:space="preserve">
     <value>Dosya yükleyiciler</value>
@@ -386,5 +371,158 @@
   </data>
   <data name="chkOverrideCustomUploader.Text" xml:space="preserve">
     <value>Özel yükleyiciyi değiştir:</value>
+  </data>
+  <data name="lblRegionCaptureSnapSizesWidth.Text" xml:space="preserve">
+    <value>Genişlik:</value>
+  </data>
+  <data name="lblRegionCaptureFixedSizeWidth.Text" xml:space="preserve">
+    <value>Genişlik:</value>
+  </data>
+  <data name="btnUploaderFiltersAdd.Text" xml:space="preserve">
+    <value>Ekle</value>
+  </data>
+  <data name="btnRegionCaptureSnapSizesDialogAdd.Text" xml:space="preserve">
+    <value>Ekle</value>
+  </data>
+  <data name="lblUploaderFiltersExtensionsExample.Text" xml:space="preserve">
+    <value>Örnek: png, jpg, jpeg</value>
+  </data>
+  <data name="btnWatchFolderEdit.Text" xml:space="preserve">
+    <value>Düzenle...</value>
+  </data>
+  <data name="btnRegionCaptureSnapSizesDialogCancel.Text" xml:space="preserve">
+    <value>İptal</value>
+  </data>
+  <data name="chUploaderFiltersExtension.Text" xml:space="preserve">
+    <value>Uzantı</value>
+  </data>
+  <data name="lblUploaderFiltersExtensions.Text" xml:space="preserve">
+    <value>Uzantı filtresi:</value>
+  </data>
+  <data name="RegionCaptureSnapSizesHeight.Text" xml:space="preserve">
+    <value>Yükseklik:</value>
+  </data>
+  <data name="lblRegionCaptureFixedSizeHeight.Text" xml:space="preserve">
+    <value>Yükseklik:</value>
+  </data>
+  <data name="lblImageSizeLimitHint.Text" xml:space="preserve">
+    <value>kB</value>
+  </data>
+  <data name="btnUploaderFiltersUpdate.Text" xml:space="preserve">
+    <value>Güncelle</value>
+  </data>
+  <data name="chUploaderFiltersName.Text" xml:space="preserve">
+    <value>Yükleyici</value>
+  </data>
+  <data name="tpUploaderFilters.Text" xml:space="preserve">
+    <value>Yükleyici filtreleri</value>
+  </data>
+  <data name="lblUploaderFiltersDestination.Text" xml:space="preserve">
+    <value>Yükleyici:</value>
+  </data>
+  <data name="btnUploaderFiltersRemove.Text" xml:space="preserve">
+    <value>Sil</value>
+  </data>
+  <data name="lblImagePNGBitDepth.Text" xml:space="preserve">
+    <value>PNG bit derinliği:</value>
+  </data>
+  <data name="lblCaptureCustomRegion.Text" xml:space="preserve">
+    <value>Önceden ayarlanmış bölge:</value>
+  </data>
+  <data name="lblToolsScreenColorPickerFormat.Text" xml:space="preserve">
+    <value>Ekran renk seçici formatı:</value>
+  </data>
+  <data name="btnCaptureCustomRegionSelectRectangle.Text" xml:space="preserve">
+    <value>Bölge seç:</value>
+  </data>
+  <data name="cbRegionCaptureShowFPS.Text" xml:space="preserve">
+    <value>Sol üst köşede FPS göster</value>
+  </data>
+  <data name="cbRegionCaptureShowMagnifier.Text" xml:space="preserve">
+    <value>İmleç yanında büyüteç göster</value>
+  </data>
+  <data name="cbRegionCaptureShowInfo.Text" xml:space="preserve">
+    <value>Pozisyon ve boyut bilgisi göster</value>
+  </data>
+  <data name="cbRegionCaptureShowCrosshair.Text" xml:space="preserve">
+    <value>Ekranı kaplıyan artı şeklinde imleç göster</value>
+  </data>
+  <data name="lblRegionCaptureMouseMiddleClickAction.Text" xml:space="preserve">
+    <value>Fare orta tuşuna basıldığında:</value>
+  </data>
+  <data name="lblRegionCaptureMouse5ClickAction.Text" xml:space="preserve">
+    <value>Fare 5 tuşuna basıldığında:</value>
+  </data>
+  <data name="lblRegionCaptureMouse4ClickAction.Text" xml:space="preserve">
+    <value>Fare 4 tuşuna basıldığında:</value>
+  </data>
+  <data name="lblRegionCaptureMagnifierPixelSize.Text" xml:space="preserve">
+    <value>Büyüteç piksel boyutu:</value>
+  </data>
+  <data name="lblRegionCaptureMagnifierPixelCount.Text" xml:space="preserve">
+    <value>Büyüteç piksel sayısı:</value>
+  </data>
+  <data name="lblRegionCaptureMouseRightClickAction.Text" xml:space="preserve">
+    <value>Fare sağ tuşuna basıldığında:</value>
+  </data>
+  <data name="cbImageAutoUseJPEG.Text" xml:space="preserve">
+    <value>Eğer resim dosya boyutu ayarlanan boyutdan fazlaysa JPEG kullan:</value>
+  </data>
+  <data name="cbRegionCaptureIsFixedSize.Text" xml:space="preserve">
+    <value>Sabit boyut bölge modu:</value>
+  </data>
+  <data name="cbFileUploadReplaceProblematicCharacters.Text" xml:space="preserve">
+    <value>Adreslerdeki problematik karakterleri alt çizgi ile değiştir yüklerken</value>
+  </data>
+  <data name="cbRegionCaptureUseCustomInfoText.Text" xml:space="preserve">
+    <value>İmleç yanında özel bilgi yazısı kullan:</value>
+  </data>
+  <data name="cbRegionCaptureUseSquareMagnifier.Text" xml:space="preserve">
+    <value>Kare şeklinde büyüteç kullan yuvarlak yerine</value>
+  </data>
+  <data name="cbRegionCaptureDetectControls.Text" xml:space="preserve">
+    <value>Ayrıca pencere içindeki kontrol bölgelerini tespit et</value>
+  </data>
+  <data name="cbRegionCaptureDetectWindows.Text" xml:space="preserve">
+    <value>Pencere alanlarını tespit edip imleç ile yakalamaya izin ver</value>
+  </data>
+  <data name="cbRegionCaptureUseDimming.Text" xml:space="preserve">
+    <value>Arkaplanı karart böylece seçim bölgesi daha kolay ayırt edilebilir (başlangıç hızını etkiler)</value>
+  </data>
+  <data name="lblRegionCaptureSnapSizes.Text" xml:space="preserve">
+    <value>"Alt" tuşuna basılı tutulduğunda bölgeyi bu boyutlara kitle:</value>
+  </data>
+  <data name="cbRegionCaptureMultiRegionMode.Text" xml:space="preserve">
+    <value>Çoklu bölge modunu kullan, ayrıca bölgeleri yeniden boyutlandırmayı veya taşımayıda sağlar</value>
+  </data>
+  <data name="cbOverrideAfterCaptureSettings.Text" xml:space="preserve">
+    <value>Yakalama sonrası ayarlarını değiştir</value>
+  </data>
+  <data name="cbOverrideAfterUploadSettings.Text" xml:space="preserve">
+    <value>Yükleme sonrası ayarlarını değiştir</value>
+  </data>
+  <data name="cbOverrideDestinationSettings.Text" xml:space="preserve">
+    <value>Hedefleri değiştir</value>
+  </data>
+  <data name="chkOverrideAdvancedSettings.Text" xml:space="preserve">
+    <value>Gelişmiş ayarları değiştir</value>
+  </data>
+  <data name="chkOverrideCaptureSettings.Text" xml:space="preserve">
+    <value>Yakalama ayarlarını değiştir</value>
+  </data>
+  <data name="chkOverrideActions.Text" xml:space="preserve">
+    <value>Aksiyon ayarlarını değiştir</value>
+  </data>
+  <data name="chkOverrideGeneralSettings.Text" xml:space="preserve">
+    <value>Genel ayarları değiştir</value>
+  </data>
+  <data name="chkOverrideImageSettings.Text" xml:space="preserve">
+    <value>Resim ayarlarını değiştir</value>
+  </data>
+  <data name="chkOverrideToolsSettings.Text" xml:space="preserve">
+    <value>Araç ayarlarını değiştir</value>
+  </data>
+  <data name="chkOverrideUploadSettings.Text" xml:space="preserve">
+    <value>Yükleme ayarlarını değiştir</value>
   </data>
 </root>

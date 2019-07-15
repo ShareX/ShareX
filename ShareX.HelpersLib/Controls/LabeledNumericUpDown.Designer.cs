@@ -31,6 +31,7 @@
             this.flpMain = new System.Windows.Forms.FlowLayoutPanel();
             this.lblText = new System.Windows.Forms.Label();
             this.nudValue = new System.Windows.Forms.NumericUpDown();
+            this.lblText2 = new System.Windows.Forms.Label();
             this.flpMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudValue)).BeginInit();
             this.SuspendLayout();
@@ -41,10 +42,11 @@
             this.flpMain.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.flpMain.Controls.Add(this.lblText);
             this.flpMain.Controls.Add(this.nudValue);
+            this.flpMain.Controls.Add(this.lblText2);
             this.flpMain.Location = new System.Drawing.Point(0, 0);
             this.flpMain.Margin = new System.Windows.Forms.Padding(0);
             this.flpMain.Name = "flpMain";
-            this.flpMain.Size = new System.Drawing.Size(93, 20);
+            this.flpMain.Size = new System.Drawing.Size(96, 20);
             this.flpMain.TabIndex = 0;
             this.flpMain.WrapContents = false;
             // 
@@ -69,14 +71,26 @@
             this.nudValue.TabIndex = 1;
             this.nudValue.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // lblText2
+            // 
+            this.lblText2.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblText2.AutoSize = true;
+            this.lblText2.Location = new System.Drawing.Point(93, 3);
+            this.lblText2.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
+            this.lblText2.Name = "lblText2";
+            this.lblText2.Size = new System.Drawing.Size(0, 13);
+            this.lblText2.TabIndex = 2;
+            // 
             // LabeledNumericUpDown
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.flpMain);
             this.Name = "LabeledNumericUpDown";
-            this.Size = new System.Drawing.Size(96, 23);
+            this.Size = new System.Drawing.Size(96, 20);
             this.flpMain.ResumeLayout(false);
             this.flpMain.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudValue)).EndInit();
@@ -90,5 +104,6 @@
         private System.Windows.Forms.FlowLayoutPanel flpMain;
         private System.Windows.Forms.Label lblText;
         private System.Windows.Forms.NumericUpDown nudValue;
+        private System.Windows.Forms.Label lblText2;
     }
 }

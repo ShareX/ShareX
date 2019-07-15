@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2017 ShareX Team
+    Copyright (c) 2007-2019 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -23,54 +23,70 @@
 
 #endregion License Information (GPL v3)
 
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Windows.Forms;
 using ShareX.HelpersLib;
-using System.Drawing.Drawing2D;
+using System;
+using System.Drawing;
+using System.Linq;
+using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace ShareX
 {
     public partial class NewsListControl : UserControl
     {
-        public NewsManager NewsManager { get; private set; }
-
         public event EventHandler NewsLoaded;
 
-        private ToolTip tooltip;
+        public NewsManager NewsManager { get; private set; }
 
         public NewsListControl()
         {
             InitializeComponent();
+            dgvNews.DoubleBuffered(true);
+            UpdateTheme();
+        }
 
-            tooltip = new ToolTip()
+        public void UpdateTheme()
+        {
+            if (ShareXResources.UseDarkTheme)
             {
-                AutoPopDelay = 10000,
-                InitialDelay = 500
-            };
+                dgvNews.BackgroundColor = ShareXResources.DarkBackgroundColor;
+                dgvNews.DefaultCellStyle.BackColor = dgvNews.DefaultCellStyle.SelectionBackColor = ShareXResources.DarkBackgroundColor;
+                dgvNews.DefaultCellStyle.ForeColor = dgvNews.DefaultCellStyle.SelectionForeColor = ShareXResources.DarkTextColor;
+                dgvNews.AlternatingRowsDefaultCellStyle.BackColor = dgvNews.AlternatingRowsDefaultCellStyle.SelectionBackColor =
+                    ColorHelpers.LighterColor(ShareXResources.DarkBackgroundColor, 0.02f);
+                dgvNews.GridColor = ShareXResources.DarkBorderColor;
+            }
+            else
+            {
+                dgvNews.BackgroundColor = SystemColors.Window;
+                dgvNews.DefaultCellStyle.BackColor = dgvNews.DefaultCellStyle.SelectionBackColor = SystemColors.Window;
+                dgvNews.DefaultCellStyle.ForeColor = dgvNews.DefaultCellStyle.SelectionForeColor = SystemColors.ControlText;
+                dgvNews.AlternatingRowsDefaultCellStyle.BackColor = dgvNews.AlternatingRowsDefaultCellStyle.SelectionBackColor =
+                    ColorHelpers.DarkerColor(SystemColors.Window, 0.02f);
+                dgvNews.GridColor = ProfessionalColors.SeparatorDark;
+            }
 
-            tlpMain.CellPaint += TlpMain_CellPaint;
-            tlpMain.Layout += TlpMain_Layout;
+            foreach (DataGridViewRow row in dgvNews.Rows)
+            {
+                row.Cells[2].Style.ForeColor = row.Cells[2].Style.SelectionForeColor =
+                    ShareXResources.UseDarkTheme ? ShareXResources.DarkTextColor : SystemColors.ControlText;
+            }
         }
 
         public void Start()
         {
-            TaskEx.Run(() =>
+            Task.Run(() =>
             {
                 NewsManager = new NewsManager();
                 NewsManager.LastReadDate = Program.Settings.NewsLastReadDate;
                 NewsManager.UpdateNews();
                 NewsManager.UpdateUnread();
-            },
-            () =>
+            }).ContinueInCurrentContext(() =>
             {
                 if (NewsManager != null && NewsManager.NewsItems != null)
                 {
+                    SuspendLayout();
+
                     foreach (NewsItem item in NewsManager.NewsItems)
                     {
                         if (item != null)
@@ -78,6 +94,10 @@ namespace ShareX
                             AddNewsItem(item);
                         }
                     }
+
+                    UpdateUnreadStatus();
+
+                    ResumeLayout();
 
                     OnNewsLoaded();
                 }
@@ -105,66 +125,17 @@ namespace ShareX
                     NewsManager.UpdateUnread();
                 }
             }
-        }
 
-        private void TlpMain_Layout(object sender, LayoutEventArgs e)
-        {
-            TaskEx.RunDelayed(() =>
-            {
-                if (tlpMain.HorizontalScroll.Visible)
-                {
-                    tlpMain.Padding = new Padding(0, 0, SystemInformation.VerticalScrollBarWidth, 0);
-                }
-                else
-                {
-                    tlpMain.Padding = new Padding(0);
-                }
-            }, 1);
-        }
-
-        private void TlpMain_CellPaint(object sender, TableLayoutCellPaintEventArgs e)
-        {
-            Color color;
-
-            if (e.Row.IsEvenNumber())
-            {
-                color = Color.FromArgb(250, 250, 250);
-            }
-            else
-            {
-                color = Color.FromArgb(247, 247, 247);
-            }
-
-            using (Brush brush = new SolidBrush(color))
-            {
-                e.Graphics.FillRectangle(brush, e.CellBounds);
-            }
-
-            if (NewsManager != null && NewsManager.NewsItems != null & NewsManager.NewsItems.IsValidIndex(e.Row) &&
-                NewsManager.NewsItems[e.Row].IsUnread && e.Column == 0)
-            {
-                e.Graphics.FillRectangle(Brushes.LimeGreen, new Rectangle(e.CellBounds.X, e.CellBounds.Y, 5, e.CellBounds.Height));
-            }
-
-            e.Graphics.DrawLine(Pens.LightGray, new Point(e.CellBounds.X, e.CellBounds.Bottom - 1), new Point(e.CellBounds.Right - 1, e.CellBounds.Bottom - 1));
+            UpdateUnreadStatus();
         }
 
         public void AddNewsItem(NewsItem item)
         {
-            RowStyle style = new RowStyle(SizeType.AutoSize);
-            tlpMain.RowStyles.Add(style);
-            int index = tlpMain.RowCount++ - 1;
+            int index = dgvNews.Rows.Add();
+            DataGridViewRow row = dgvNews.Rows[index];
+            row.Tag = item;
 
-            Label lblDateTime = new Label()
-            {
-                Anchor = AnchorStyles.Left | AnchorStyles.Right,
-                AutoSize = true,
-                BackColor = Color.Transparent,
-                Font = new Font("Arial", 10),
-                Margin = new Padding(0),
-                Padding = new Padding(10, 8, 5, 8),
-                Text = item.DateTime.ToShortDateString()
-            };
+            row.Cells[1].Value = item.DateTime.ToShortDateString();
 
             string dateTimeTooltip;
             double days = (DateTime.Now - item.DateTime).TotalDays;
@@ -182,37 +153,74 @@ namespace ShareX
                 dateTimeTooltip = (int)days + " days ago.";
             }
 
-            tooltip.SetToolTip(lblDateTime, dateTimeTooltip);
+            row.Cells[1].ToolTipText = dateTimeTooltip;
 
-            tlpMain.Controls.Add(lblDateTime, 0, index);
-
-            Label lblText = new Label()
-            {
-                Anchor = AnchorStyles.Left | AnchorStyles.Right,
-                AutoSize = true,
-                BackColor = Color.Transparent,
-                Font = new Font("Arial", 10),
-                Margin = new Padding(0),
-                Padding = new Padding(5, 8, 5, 8),
-                Text = item.Text
-            };
+            row.Cells[2].Value = item.Text;
 
             if (URLHelpers.IsValidURL(item.URL))
             {
-                tooltip.SetToolTip(lblText, item.URL);
-                lblText.Cursor = Cursors.Hand;
-                lblText.MouseEnter += (sender, e) => lblText.ForeColor = Color.Blue;
-                lblText.MouseLeave += (sender, e) => lblText.ForeColor = SystemColors.ControlText;
-                lblText.MouseClick += (sender, e) =>
+                row.Cells[2].ToolTipText = item.URL;
+            }
+        }
+
+        private void UpdateUnreadStatus()
+        {
+            foreach (DataGridViewRow row in dgvNews.Rows)
+            {
+                NewsItem newsItem = row.Tag as NewsItem;
+                if (newsItem != null && newsItem.IsUnread)
                 {
-                    if (e.Button == MouseButtons.Left)
-                    {
-                        URLHelpers.OpenURL(item.URL);
-                    }
-                };
+                    row.Cells[0].Style.BackColor = row.Cells[0].Style.SelectionBackColor = Color.LimeGreen;
+                }
+                else
+                {
+                    row.Cells[0].Style = null;
+                }
+            }
+        }
+
+        private void dgvNews_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 2)
+            {
+                DataGridViewRow row = dgvNews.Rows[e.RowIndex];
+                NewsItem newsItem = row.Tag as NewsItem;
+                if (newsItem != null && !string.IsNullOrEmpty(newsItem.URL))
+                {
+                    dgvNews.Cursor = Cursors.Hand;
+                    row.Cells[e.ColumnIndex].Style.ForeColor = row.Cells[e.ColumnIndex].Style.SelectionForeColor =
+                        ShareXResources.UseDarkTheme ? Color.White : SystemColors.HotTrack;
+                }
+            }
+        }
+
+        private void dgvNews_CellMouseLeave(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 2)
+            {
+                DataGridViewRow row = dgvNews.Rows[e.RowIndex];
+                NewsItem newsItem = row.Tag as NewsItem;
+                if (newsItem != null && !string.IsNullOrEmpty(newsItem.URL))
+                {
+                    row.Cells[e.ColumnIndex].Style.ForeColor = row.Cells[e.ColumnIndex].Style.SelectionForeColor =
+                        ShareXResources.UseDarkTheme ? ShareXResources.DarkTextColor : SystemColors.ControlText;
+                }
             }
 
-            tlpMain.Controls.Add(lblText, 1, index);
+            dgvNews.Cursor = Cursors.Default;
+        }
+
+        private void dgvNews_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left && e.ColumnIndex == 2)
+            {
+                DataGridViewRow row = dgvNews.Rows[e.RowIndex];
+                NewsItem newsItem = row.Tag as NewsItem;
+                if (newsItem != null && URLHelpers.IsValidURL(newsItem.URL))
+                {
+                    URLHelpers.OpenURL(newsItem.URL);
+                }
+            }
         }
     }
 }

@@ -45,3 +45,5 @@ begin
 	else
 		Result := true;
 end;
+
+[Setup]

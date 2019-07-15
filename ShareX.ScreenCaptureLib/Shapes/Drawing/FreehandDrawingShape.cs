@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2017 ShareX Team
+    Copyright (c) 2007-2019 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -37,6 +37,8 @@ namespace ShareX.ScreenCaptureLib
 
         public override bool IsValidShape => positions.Count > 0;
 
+        public override bool IsSelectable => Manager.CurrentTool == ShapeType.ToolSelect;
+
         public Point LastPosition
         {
             get
@@ -60,11 +62,6 @@ namespace ShareX.ScreenCaptureLib
         private List<Point> positions = new List<Point>();
         private bool isPolygonMode;
 
-        public override bool Intersects(Point position)
-        {
-            return false;
-        }
-
         public override void ShowNodes()
         {
         }
@@ -73,13 +70,13 @@ namespace ShareX.ScreenCaptureLib
         {
             if (Manager.IsCreating)
             {
-                if (Manager.IsCornerMoving)
+                if (Manager.IsCornerMoving && !Manager.IsPanning)
                 {
                     Move(InputManager.MouseVelocity);
                 }
                 else
                 {
-                    Point pos = InputManager.MousePosition0Based;
+                    Point pos = InputManager.ClientMousePosition;
 
                     if (positions.Count == 0 || (!Manager.IsProportionalResizing && LastPosition != pos))
                     {
@@ -139,7 +136,7 @@ namespace ShareX.ScreenCaptureLib
                 {
                     using (Brush brush = new SolidBrush(borderColor))
                     {
-                        Rectangle rect = new Rectangle((int)(points[0].X - borderSize / 2f), (int)(points[0].Y - borderSize / 2f), borderSize, borderSize);
+                        Rectangle rect = new Rectangle((int)(points[0].X - (borderSize / 2f)), (int)(points[0].Y - (borderSize / 2f)), borderSize, borderSize);
                         g.FillEllipse(brush, rect);
                     }
                 }

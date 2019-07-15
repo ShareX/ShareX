@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2017 ShareX Team
+    Copyright (c) 2007-2019 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -76,7 +76,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
         public UploadResult PushFile(Stream stream, string fileName)
         {
-            NameValueCollection headers = CreateAuthenticationHeader(Config.UserAPIKey, "");
+            NameValueCollection headers = RequestHelpers.CreateAuthenticationHeader(Config.UserAPIKey, "");
 
             Dictionary<string, string> pushArgs, upArgs = new Dictionary<string, string>();
 
@@ -109,6 +109,7 @@ namespace ShareX.UploadersLib.FileUploaders
             pushArgs.Add("type", "file");
             pushArgs.Add("file_url", fileInfo.file_url);
             pushArgs.Add("body", "Sent via ShareX");
+            pushArgs.Add("file_type", fileInfo.file_type);
 
             string pushResult = SendRequestMultiPart(apiSendPushURL, pushArgs, headers);
 
@@ -124,7 +125,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
         private string Push(string pushType, string valueType, string value, string title)
         {
-            NameValueCollection headers = CreateAuthenticationHeader(Config.UserAPIKey, "");
+            NameValueCollection headers = RequestHelpers.CreateAuthenticationHeader(Config.UserAPIKey, "");
 
             Dictionary<string, string> args = new Dictionary<string, string>();
             args.Add("device_iden", Config.CurrentDevice.Key);
@@ -173,7 +174,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
         public List<PushbulletDevice> GetDeviceList()
         {
-            NameValueCollection headers = CreateAuthenticationHeader(Config.UserAPIKey, "");
+            NameValueCollection headers = RequestHelpers.CreateAuthenticationHeader(Config.UserAPIKey, "");
 
             string response = SendRequest(HttpMethod.GET, apiGetDevicesURL, headers: headers);
 

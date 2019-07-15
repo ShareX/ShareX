@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2017 ShareX Team
+    Copyright (c) 2007-2019 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -42,7 +42,7 @@ namespace ShareX
             TaskSettings = taskSettings;
 
             InitializeComponent();
-            Icon = ShareXResources.Icon;
+            ShareXResources.ApplyTheme(this);
 
             ImageList imageList = new ImageList { ColorDepth = ColorDepth.Depth32Bit };
             imageList.Images.Add(Resources.checkbox_uncheck);
@@ -97,6 +97,7 @@ namespace ShareX
         private void AddAfterCaptureItems(AfterCaptureTasks afterCaptureTasks)
         {
             AfterCaptureTasks[] ignore = new AfterCaptureTasks[] { AfterCaptureTasks.None, AfterCaptureTasks.ShowQuickTaskMenu, AfterCaptureTasks.ShowAfterCaptureWindow };
+            int itemHeight = 0;
 
             foreach (AfterCaptureTasks task in Helpers.GetEnums<AfterCaptureTasks>())
             {
@@ -105,7 +106,15 @@ namespace ShareX
                 CheckItem(lvi, afterCaptureTasks.HasFlag(task));
                 lvi.Tag = task;
                 lvAfterCaptureTasks.Items.Add(lvi);
+
+                if (itemHeight == 0)
+                    itemHeight = lvi.Bounds.Height;
             }
+
+            int newListViewHeight = lvAfterCaptureTasks.Items.Count * itemHeight;
+            int listViewHeightDifference = newListViewHeight - lvAfterCaptureTasks.Height;
+            if (listViewHeightDifference > 0)
+                Height += listViewHeightDifference;
         }
 
         private AfterCaptureTasks GetAfterCaptureTasks()

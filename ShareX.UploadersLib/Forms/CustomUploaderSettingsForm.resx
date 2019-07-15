@@ -1,0 +1,2820 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="&gt;&gt;tscResponseText.BottomToolStripPanel.Name" xml:space="preserve">
+    <value>tscResponseText.BottomToolStripPanel</value>
+  </data>
+  <data name="&gt;&gt;tscResponseText.BottomToolStripPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tscResponseText.BottomToolStripPanel.Parent" xml:space="preserve">
+    <value>tscResponseText</value>
+  </data>
+  <data name="&gt;&gt;tscResponseText.BottomToolStripPanel.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="rtbResponseText.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="rtbResponseText.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 9pt</value>
+  </data>
+  <data name="rtbResponseText.Location" type="System.Drawing.Point, System.Drawing">
+    <value>2, 2</value>
+  </data>
+  <data name="rtbResponseText.Size" type="System.Drawing.Size, System.Drawing">
+    <value>486, 409</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="rtbResponseText.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="rtbResponseText.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;rtbResponseText.Name" xml:space="preserve">
+    <value>rtbResponseText</value>
+  </data>
+  <data name="&gt;&gt;rtbResponseText.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rtbResponseText.Parent" xml:space="preserve">
+    <value>pResponseText</value>
+  </data>
+  <data name="&gt;&gt;rtbResponseText.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="pResponseText.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="pResponseText.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="pResponseText.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="pResponseText.Size" type="System.Drawing.Size, System.Drawing">
+    <value>492, 415</value>
+  </data>
+  <data name="pResponseText.TabIndex" type="System.Int32, mscorlib">
+    <value>42</value>
+  </data>
+  <data name="&gt;&gt;pResponseText.Name" xml:space="preserve">
+    <value>pResponseText</value>
+  </data>
+  <data name="&gt;&gt;pResponseText.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pResponseText.Parent" xml:space="preserve">
+    <value>tscResponseText.ContentPanel</value>
+  </data>
+  <data name="&gt;&gt;pResponseText.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tscResponseText.ContentPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>492, 415</value>
+  </data>
+  <data name="&gt;&gt;tscResponseText.ContentPanel.Name" xml:space="preserve">
+    <value>tscResponseText.ContentPanel</value>
+  </data>
+  <data name="&gt;&gt;tscResponseText.ContentPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripContentPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tscResponseText.ContentPanel.Parent" xml:space="preserve">
+    <value>tscResponseText</value>
+  </data>
+  <data name="&gt;&gt;tscResponseText.ContentPanel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tscResponseText.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="&gt;&gt;tscResponseText.LeftToolStripPanel.Name" xml:space="preserve">
+    <value>tscResponseText.LeftToolStripPanel</value>
+  </data>
+  <data name="&gt;&gt;tscResponseText.LeftToolStripPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tscResponseText.LeftToolStripPanel.Parent" xml:space="preserve">
+    <value>tscResponseText</value>
+  </data>
+  <data name="&gt;&gt;tscResponseText.LeftToolStripPanel.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="tscResponseText.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="&gt;&gt;tscResponseText.RightToolStripPanel.Name" xml:space="preserve">
+    <value>tscResponseText.RightToolStripPanel</value>
+  </data>
+  <data name="&gt;&gt;tscResponseText.RightToolStripPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tscResponseText.RightToolStripPanel.Parent" xml:space="preserve">
+    <value>tscResponseText</value>
+  </data>
+  <data name="&gt;&gt;tscResponseText.RightToolStripPanel.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="tscResponseText.Size" type="System.Drawing.Size, System.Drawing">
+    <value>492, 440</value>
+  </data>
+  <data name="tscResponseText.TabIndex" type="System.Int32, mscorlib">
+    <value>44</value>
+  </data>
+  <data name="tscResponseText.Text" xml:space="preserve">
+    <value>toolStripContainer1</value>
+  </data>
+  <metadata name="tsResponseText.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>380, 17</value>
+  </metadata>
+  <data name="tsResponseText.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="tsbResponseTextJSONFormat.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="tsbResponseTextJSONFormat.Size" type="System.Drawing.Size, System.Drawing">
+    <value>78, 22</value>
+  </data>
+  <data name="tsbResponseTextJSONFormat.Text" xml:space="preserve">
+    <value>JSON format</value>
+  </data>
+  <data name="tsbResponseTextXMLFormat.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="tsbResponseTextXMLFormat.Size" type="System.Drawing.Size, System.Drawing">
+    <value>74, 22</value>
+  </data>
+  <data name="tsbResponseTextXMLFormat.Text" xml:space="preserve">
+    <value>XML format</value>
+  </data>
+  <data name="tsbResponseTextCopy.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="tsbResponseTextCopy.Size" type="System.Drawing.Size, System.Drawing">
+    <value>89, 22</value>
+  </data>
+  <data name="tsbResponseTextCopy.Text" xml:space="preserve">
+    <value>Copy response</value>
+  </data>
+  <data name="tsResponseText.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 0</value>
+  </data>
+  <data name="tsResponseText.Size" type="System.Drawing.Size, System.Drawing">
+    <value>250, 25</value>
+  </data>
+  <data name="tsResponseText.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;tsResponseText.Name" xml:space="preserve">
+    <value>tsResponseText</value>
+  </data>
+  <data name="&gt;&gt;tsResponseText.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsResponseText.Parent" xml:space="preserve">
+    <value>tscResponseText.TopToolStripPanel</value>
+  </data>
+  <data name="&gt;&gt;tsResponseText.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;tscResponseText.TopToolStripPanel.Name" xml:space="preserve">
+    <value>tscResponseText.TopToolStripPanel</value>
+  </data>
+  <data name="&gt;&gt;tscResponseText.TopToolStripPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tscResponseText.TopToolStripPanel.Parent" xml:space="preserve">
+    <value>tscResponseText</value>
+  </data>
+  <data name="&gt;&gt;tscResponseText.TopToolStripPanel.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;tscResponseText.Name" xml:space="preserve">
+    <value>tscResponseText</value>
+  </data>
+  <data name="&gt;&gt;tscResponseText.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripContainer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tscResponseText.Parent" xml:space="preserve">
+    <value>tpResponseText</value>
+  </data>
+  <data name="&gt;&gt;tscResponseText.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="cbImageUploader.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 376</value>
+  </data>
+  <data name="cbImageUploader.Size" type="System.Drawing.Size, System.Drawing">
+    <value>176, 21</value>
+  </data>
+  <data name="cbImageUploader.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;cbImageUploader.Name" xml:space="preserve">
+    <value>cbImageUploader</value>
+  </data>
+  <data name="&gt;&gt;cbImageUploader.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbImageUploader.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;cbImageUploader.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="btnTextUploaderTest.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnTextUploaderTest.Location" type="System.Drawing.Point, System.Drawing">
+    <value>192, 414</value>
+  </data>
+  <data name="btnTextUploaderTest.Size" type="System.Drawing.Size, System.Drawing">
+    <value>64, 24</value>
+  </data>
+  <data name="btnTextUploaderTest.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="btnTextUploaderTest.Text" xml:space="preserve">
+    <value>Test</value>
+  </data>
+  <data name="&gt;&gt;btnTextUploaderTest.Name" xml:space="preserve">
+    <value>btnTextUploaderTest</value>
+  </data>
+  <data name="&gt;&gt;btnTextUploaderTest.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnTextUploaderTest.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnTextUploaderTest.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="lblURLShortener.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblURLShortener.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblURLShortener.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 480</value>
+  </data>
+  <data name="lblURLShortener.Size" type="System.Drawing.Size, System.Drawing">
+    <value>79, 13</value>
+  </data>
+  <data name="lblURLShortener.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="lblURLShortener.Text" xml:space="preserve">
+    <value>URL shortener:</value>
+  </data>
+  <data name="&gt;&gt;lblURLShortener.Name" xml:space="preserve">
+    <value>lblURLShortener</value>
+  </data>
+  <data name="&gt;&gt;lblURLShortener.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblURLShortener.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblURLShortener.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="cbTextUploader.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 416</value>
+  </data>
+  <data name="cbTextUploader.Size" type="System.Drawing.Size, System.Drawing">
+    <value>176, 21</value>
+  </data>
+  <data name="cbTextUploader.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;cbTextUploader.Name" xml:space="preserve">
+    <value>cbTextUploader</value>
+  </data>
+  <data name="&gt;&gt;cbTextUploader.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbTextUploader.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;cbTextUploader.ZOrder" xml:space="preserve">
+    <value>16</value>
+  </data>
+  <data name="btnURLShortenerTest.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnURLShortenerTest.Location" type="System.Drawing.Point, System.Drawing">
+    <value>192, 494</value>
+  </data>
+  <data name="btnURLShortenerTest.Size" type="System.Drawing.Size, System.Drawing">
+    <value>64, 24</value>
+  </data>
+  <data name="btnURLShortenerTest.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="btnURLShortenerTest.Text" xml:space="preserve">
+    <value>Test</value>
+  </data>
+  <data name="&gt;&gt;btnURLShortenerTest.Name" xml:space="preserve">
+    <value>btnURLShortenerTest</value>
+  </data>
+  <data name="&gt;&gt;btnURLShortenerTest.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnURLShortenerTest.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnURLShortenerTest.ZOrder" xml:space="preserve">
+    <value>18</value>
+  </data>
+  <data name="lblTextUploader.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblTextUploader.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblTextUploader.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 400</value>
+  </data>
+  <data name="lblTextUploader.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 13</value>
+  </data>
+  <data name="lblTextUploader.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="lblTextUploader.Text" xml:space="preserve">
+    <value>Text uploader:</value>
+  </data>
+  <data name="&gt;&gt;lblTextUploader.Name" xml:space="preserve">
+    <value>lblTextUploader</value>
+  </data>
+  <data name="&gt;&gt;lblTextUploader.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblTextUploader.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblTextUploader.ZOrder" xml:space="preserve">
+    <value>20</value>
+  </data>
+  <data name="mbHelp.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="mbHelp.Location" type="System.Drawing.Point, System.Drawing">
+    <value>200, 312</value>
+  </data>
+  <metadata name="cmsHelp.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>119, 17</value>
+  </metadata>
+  <data name="tsmiCustomUploaderGuide.Size" type="System.Drawing.Size, System.Drawing">
+    <value>183, 22</value>
+  </data>
+  <data name="tsmiCustomUploaderGuide.Text" xml:space="preserve">
+    <value>Custom uploader guide...</value>
+  </data>
+  <data name="tsmiCustomUploaders.Size" type="System.Drawing.Size, System.Drawing">
+    <value>183, 22</value>
+  </data>
+  <data name="tsmiCustomUploaders.Text" xml:space="preserve">
+    <value>Custom uploaders...</value>
+  </data>
+  <data name="tsmiExportAll.Size" type="System.Drawing.Size, System.Drawing">
+    <value>183, 22</value>
+  </data>
+  <data name="tsmiExportAll.Text" xml:space="preserve">
+    <value>Export all...</value>
+  </data>
+  <data name="tsmiExportAll.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="tsmiUpdateFolder.Size" type="System.Drawing.Size, System.Drawing">
+    <value>183, 22</value>
+  </data>
+  <data name="tsmiUpdateFolder.Text" xml:space="preserve">
+    <value>Update folder...</value>
+  </data>
+  <data name="tsmiUpdateFolder.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="cmsHelp.Size" type="System.Drawing.Size, System.Drawing">
+    <value>184, 92</value>
+  </data>
+  <data name="&gt;&gt;cmsHelp.Name" xml:space="preserve">
+    <value>cmsHelp</value>
+  </data>
+  <data name="&gt;&gt;cmsHelp.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="mbHelp.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 0, 0, 0</value>
+  </data>
+  <data name="mbHelp.Size" type="System.Drawing.Size, System.Drawing">
+    <value>40, 24</value>
+  </data>
+  <data name="mbHelp.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="mbHelp.Text" xml:space="preserve">
+    <value>?</value>
+  </data>
+  <data name="mbHelp.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;mbHelp.Name" xml:space="preserve">
+    <value>mbHelp</value>
+  </data>
+  <data name="&gt;&gt;mbHelp.Type" xml:space="preserve">
+    <value>ShareX.HelpersLib.MenuButton, ShareX.HelpersLib, Version=12.4.2.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;mbHelp.Parent" xml:space="preserve">
+    <value>gbCustomUploaders</value>
+  </data>
+  <data name="&gt;&gt;mbHelp.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="btnNew.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnNew.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 16</value>
+  </data>
+  <data name="btnNew.Size" type="System.Drawing.Size, System.Drawing">
+    <value>72, 24</value>
+  </data>
+  <data name="btnNew.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="btnNew.Text" xml:space="preserve">
+    <value>New</value>
+  </data>
+  <data name="&gt;&gt;btnNew.Name" xml:space="preserve">
+    <value>btnNew</value>
+  </data>
+  <data name="&gt;&gt;btnNew.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnNew.Parent" xml:space="preserve">
+    <value>gbCustomUploaders</value>
+  </data>
+  <data name="&gt;&gt;btnNew.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="btnDuplicate.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnDuplicate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>168, 16</value>
+  </data>
+  <data name="btnDuplicate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>72, 24</value>
+  </data>
+  <data name="btnDuplicate.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="btnDuplicate.Text" xml:space="preserve">
+    <value>Duplicate</value>
+  </data>
+  <data name="&gt;&gt;btnDuplicate.Name" xml:space="preserve">
+    <value>btnDuplicate</value>
+  </data>
+  <data name="&gt;&gt;btnDuplicate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnDuplicate.Parent" xml:space="preserve">
+    <value>gbCustomUploaders</value>
+  </data>
+  <data name="&gt;&gt;btnDuplicate.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="btnClearUploaders.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnClearUploaders.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 280</value>
+  </data>
+  <data name="btnClearUploaders.Size" type="System.Drawing.Size, System.Drawing">
+    <value>232, 24</value>
+  </data>
+  <data name="btnClearUploaders.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="btnClearUploaders.Text" xml:space="preserve">
+    <value>Clear uploaders...</value>
+  </data>
+  <data name="&gt;&gt;btnClearUploaders.Name" xml:space="preserve">
+    <value>btnClearUploaders</value>
+  </data>
+  <data name="&gt;&gt;btnClearUploaders.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnClearUploaders.Parent" xml:space="preserve">
+    <value>gbCustomUploaders</value>
+  </data>
+  <data name="&gt;&gt;btnClearUploaders.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="eiCustomUploaders.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 312</value>
+  </data>
+  <data name="eiCustomUploaders.Size" type="System.Drawing.Size, System.Drawing">
+    <value>192, 26</value>
+  </data>
+  <data name="eiCustomUploaders.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;eiCustomUploaders.Name" xml:space="preserve">
+    <value>eiCustomUploaders</value>
+  </data>
+  <data name="&gt;&gt;eiCustomUploaders.Type" xml:space="preserve">
+    <value>ShareX.HelpersLib.ExportImportControl, ShareX.HelpersLib, Version=12.4.2.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;eiCustomUploaders.Parent" xml:space="preserve">
+    <value>gbCustomUploaders</value>
+  </data>
+  <data name="&gt;&gt;eiCustomUploaders.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="lbCustomUploaderList.IntegralHeight" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="lbCustomUploaderList.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 48</value>
+  </data>
+  <data name="lbCustomUploaderList.Size" type="System.Drawing.Size, System.Drawing">
+    <value>232, 224</value>
+  </data>
+  <data name="lbCustomUploaderList.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;lbCustomUploaderList.Name" xml:space="preserve">
+    <value>lbCustomUploaderList</value>
+  </data>
+  <data name="&gt;&gt;lbCustomUploaderList.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbCustomUploaderList.Parent" xml:space="preserve">
+    <value>gbCustomUploaders</value>
+  </data>
+  <data name="&gt;&gt;lbCustomUploaderList.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="btnRemove.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnRemove.Location" type="System.Drawing.Point, System.Drawing">
+    <value>88, 16</value>
+  </data>
+  <data name="btnRemove.Size" type="System.Drawing.Size, System.Drawing">
+    <value>72, 24</value>
+  </data>
+  <data name="btnRemove.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="btnRemove.Text" xml:space="preserve">
+    <value>Remove</value>
+  </data>
+  <data name="&gt;&gt;btnRemove.Name" xml:space="preserve">
+    <value>btnRemove</value>
+  </data>
+  <data name="&gt;&gt;btnRemove.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnRemove.Parent" xml:space="preserve">
+    <value>gbCustomUploaders</value>
+  </data>
+  <data name="&gt;&gt;btnRemove.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="gbCustomUploaders.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 8</value>
+  </data>
+  <data name="gbCustomUploaders.Size" type="System.Drawing.Size, System.Drawing">
+    <value>248, 344</value>
+  </data>
+  <data name="gbCustomUploaders.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="gbCustomUploaders.Text" xml:space="preserve">
+    <value>Uploaders</value>
+  </data>
+  <data name="&gt;&gt;gbCustomUploaders.Name" xml:space="preserve">
+    <value>gbCustomUploaders</value>
+  </data>
+  <data name="&gt;&gt;gbCustomUploaders.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;gbCustomUploaders.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;gbCustomUploaders.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="cbURLShortener.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 496</value>
+  </data>
+  <data name="cbURLShortener.Size" type="System.Drawing.Size, System.Drawing">
+    <value>176, 21</value>
+  </data>
+  <data name="cbURLShortener.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="&gt;&gt;cbURLShortener.Name" xml:space="preserve">
+    <value>cbURLShortener</value>
+  </data>
+  <data name="&gt;&gt;cbURLShortener.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbURLShortener.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;cbURLShortener.ZOrder" xml:space="preserve">
+    <value>22</value>
+  </data>
+  <data name="cbFileUploader.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 456</value>
+  </data>
+  <data name="cbFileUploader.Size" type="System.Drawing.Size, System.Drawing">
+    <value>176, 21</value>
+  </data>
+  <data name="cbFileUploader.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;cbFileUploader.Name" xml:space="preserve">
+    <value>cbFileUploader</value>
+  </data>
+  <data name="&gt;&gt;cbFileUploader.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbFileUploader.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;cbFileUploader.ZOrder" xml:space="preserve">
+    <value>21</value>
+  </data>
+  <data name="btnImageUploaderTest.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnImageUploaderTest.Location" type="System.Drawing.Point, System.Drawing">
+    <value>192, 374</value>
+  </data>
+  <data name="btnImageUploaderTest.Size" type="System.Drawing.Size, System.Drawing">
+    <value>64, 24</value>
+  </data>
+  <data name="btnImageUploaderTest.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="btnImageUploaderTest.Text" xml:space="preserve">
+    <value>Test</value>
+  </data>
+  <data name="&gt;&gt;btnImageUploaderTest.Name" xml:space="preserve">
+    <value>btnImageUploaderTest</value>
+  </data>
+  <data name="&gt;&gt;btnImageUploaderTest.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnImageUploaderTest.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnImageUploaderTest.ZOrder" xml:space="preserve">
+    <value>19</value>
+  </data>
+  <data name="lblFileUploader.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblFileUploader.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblFileUploader.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 440</value>
+  </data>
+  <data name="lblFileUploader.Size" type="System.Drawing.Size, System.Drawing">
+    <value>70, 13</value>
+  </data>
+  <data name="lblFileUploader.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="lblFileUploader.Text" xml:space="preserve">
+    <value>File uploader:</value>
+  </data>
+  <data name="&gt;&gt;lblFileUploader.Name" xml:space="preserve">
+    <value>lblFileUploader</value>
+  </data>
+  <data name="&gt;&gt;lblFileUploader.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblFileUploader.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblFileUploader.ZOrder" xml:space="preserve">
+    <value>17</value>
+  </data>
+  <data name="btnFileUploaderTest.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnFileUploaderTest.Location" type="System.Drawing.Point, System.Drawing">
+    <value>192, 454</value>
+  </data>
+  <data name="btnFileUploaderTest.Size" type="System.Drawing.Size, System.Drawing">
+    <value>64, 24</value>
+  </data>
+  <data name="btnFileUploaderTest.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="btnFileUploaderTest.Text" xml:space="preserve">
+    <value>Test</value>
+  </data>
+  <data name="&gt;&gt;btnFileUploaderTest.Name" xml:space="preserve">
+    <value>btnFileUploaderTest</value>
+  </data>
+  <data name="&gt;&gt;btnFileUploaderTest.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnFileUploaderTest.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnFileUploaderTest.ZOrder" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="lblImageUploader.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblImageUploader.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblImageUploader.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 360</value>
+  </data>
+  <data name="lblImageUploader.Size" type="System.Drawing.Size, System.Drawing">
+    <value>83, 13</value>
+  </data>
+  <data name="lblImageUploader.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="lblImageUploader.Text" xml:space="preserve">
+    <value>Image uploader:</value>
+  </data>
+  <data name="&gt;&gt;lblImageUploader.Name" xml:space="preserve">
+    <value>lblImageUploader</value>
+  </data>
+  <data name="&gt;&gt;lblImageUploader.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblImageUploader.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblImageUploader.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="tcCustomUploader.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <metadata name="cHeadersName.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="cHeadersName.HeaderText" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <metadata name="cHeadersValue.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="cHeadersValue.HeaderText" xml:space="preserve">
+    <value>Value</value>
+  </data>
+  <data name="dgvHeaders.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 280</value>
+  </data>
+  <data name="dgvHeaders.Size" type="System.Drawing.Size, System.Drawing">
+    <value>232, 184</value>
+  </data>
+  <data name="dgvHeaders.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;dgvHeaders.Name" xml:space="preserve">
+    <value>dgvHeaders</value>
+  </data>
+  <data name="&gt;&gt;dgvHeaders.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dgvHeaders.Parent" xml:space="preserve">
+    <value>tpRequest</value>
+  </data>
+  <data name="&gt;&gt;dgvHeaders.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="cParametersName.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="cParametersName.HeaderText" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <metadata name="cParametersValue.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="cParametersValue.HeaderText" xml:space="preserve">
+    <value>Value</value>
+  </data>
+  <data name="dgvParameters.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 72</value>
+  </data>
+  <data name="dgvParameters.Size" type="System.Drawing.Size, System.Drawing">
+    <value>232, 184</value>
+  </data>
+  <data name="dgvParameters.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;dgvParameters.Name" xml:space="preserve">
+    <value>dgvParameters</value>
+  </data>
+  <data name="&gt;&gt;dgvParameters.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dgvParameters.Parent" xml:space="preserve">
+    <value>tpRequest</value>
+  </data>
+  <data name="&gt;&gt;dgvParameters.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="lblHeaders.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblHeaders.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblHeaders.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 264</value>
+  </data>
+  <data name="lblHeaders.Size" type="System.Drawing.Size, System.Drawing">
+    <value>50, 13</value>
+  </data>
+  <data name="lblHeaders.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="lblHeaders.Text" xml:space="preserve">
+    <value>Headers:</value>
+  </data>
+  <data name="&gt;&gt;lblHeaders.Name" xml:space="preserve">
+    <value>lblHeaders</value>
+  </data>
+  <data name="&gt;&gt;lblHeaders.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblHeaders.Parent" xml:space="preserve">
+    <value>tpRequest</value>
+  </data>
+  <data name="&gt;&gt;lblHeaders.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="lblParameters.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblParameters.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblParameters.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 56</value>
+  </data>
+  <data name="lblParameters.Size" type="System.Drawing.Size, System.Drawing">
+    <value>87, 13</value>
+  </data>
+  <data name="lblParameters.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="lblParameters.Text" xml:space="preserve">
+    <value>URL parameters:</value>
+  </data>
+  <data name="&gt;&gt;lblParameters.Name" xml:space="preserve">
+    <value>lblParameters</value>
+  </data>
+  <data name="&gt;&gt;lblParameters.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblParameters.Parent" xml:space="preserve">
+    <value>tpRequest</value>
+  </data>
+  <data name="&gt;&gt;lblParameters.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="rtbRequestURL.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="rtbRequestURL.Location" type="System.Drawing.Point, System.Drawing">
+    <value>2, 2</value>
+  </data>
+  <data name="rtbRequestURL.Multiline" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="rtbRequestURL.Size" type="System.Drawing.Size, System.Drawing">
+    <value>402, 14</value>
+  </data>
+  <data name="rtbRequestURL.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="rtbRequestURL.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;rtbRequestURL.Name" xml:space="preserve">
+    <value>rtbRequestURL</value>
+  </data>
+  <data name="&gt;&gt;rtbRequestURL.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rtbRequestURL.Parent" xml:space="preserve">
+    <value>pRequestURL</value>
+  </data>
+  <data name="&gt;&gt;rtbRequestURL.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="pRequestURL.Location" type="System.Drawing.Point, System.Drawing">
+    <value>88, 24</value>
+  </data>
+  <data name="pRequestURL.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="pRequestURL.Size" type="System.Drawing.Size, System.Drawing">
+    <value>408, 20</value>
+  </data>
+  <data name="pRequestURL.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;pRequestURL.Name" xml:space="preserve">
+    <value>pRequestURL</value>
+  </data>
+  <data name="&gt;&gt;pRequestURL.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pRequestURL.Parent" xml:space="preserve">
+    <value>tpRequest</value>
+  </data>
+  <data name="&gt;&gt;pRequestURL.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="cbRequestMethod.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 24</value>
+  </data>
+  <data name="cbRequestMethod.Size" type="System.Drawing.Size, System.Drawing">
+    <value>64, 21</value>
+  </data>
+  <data name="cbRequestMethod.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;cbRequestMethod.Name" xml:space="preserve">
+    <value>cbRequestMethod</value>
+  </data>
+  <data name="&gt;&gt;cbRequestMethod.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbRequestMethod.Parent" xml:space="preserve">
+    <value>tpRequest</value>
+  </data>
+  <data name="&gt;&gt;cbRequestMethod.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="lblRequestURL.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblRequestURL.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblRequestURL.Location" type="System.Drawing.Point, System.Drawing">
+    <value>85, 6</value>
+  </data>
+  <data name="lblRequestURL.Size" type="System.Drawing.Size, System.Drawing">
+    <value>32, 13</value>
+  </data>
+  <data name="lblRequestURL.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="lblRequestURL.Text" xml:space="preserve">
+    <value>URL:</value>
+  </data>
+  <data name="&gt;&gt;lblRequestURL.Name" xml:space="preserve">
+    <value>lblRequestURL</value>
+  </data>
+  <data name="&gt;&gt;lblRequestURL.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblRequestURL.Parent" xml:space="preserve">
+    <value>tpRequest</value>
+  </data>
+  <data name="&gt;&gt;lblRequestURL.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="cbBody.Location" type="System.Drawing.Point, System.Drawing">
+    <value>264, 72</value>
+  </data>
+  <data name="cbBody.Size" type="System.Drawing.Size, System.Drawing">
+    <value>232, 21</value>
+  </data>
+  <data name="cbBody.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;cbBody.Name" xml:space="preserve">
+    <value>cbBody</value>
+  </data>
+  <data name="&gt;&gt;cbBody.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbBody.Parent" xml:space="preserve">
+    <value>tpRequest</value>
+  </data>
+  <data name="&gt;&gt;cbBody.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="lblRequestMethod.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblRequestMethod.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblRequestMethod.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 8</value>
+  </data>
+  <data name="lblRequestMethod.Size" type="System.Drawing.Size, System.Drawing">
+    <value>46, 13</value>
+  </data>
+  <data name="lblRequestMethod.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="lblRequestMethod.Text" xml:space="preserve">
+    <value>Method:</value>
+  </data>
+  <data name="&gt;&gt;lblRequestMethod.Name" xml:space="preserve">
+    <value>lblRequestMethod</value>
+  </data>
+  <data name="&gt;&gt;lblRequestMethod.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblRequestMethod.Parent" xml:space="preserve">
+    <value>tpRequest</value>
+  </data>
+  <data name="&gt;&gt;lblRequestMethod.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="lblBody.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblBody.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblBody.Location" type="System.Drawing.Point, System.Drawing">
+    <value>261, 56</value>
+  </data>
+  <data name="lblBody.Size" type="System.Drawing.Size, System.Drawing">
+    <value>34, 13</value>
+  </data>
+  <data name="lblBody.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="lblBody.Text" xml:space="preserve">
+    <value>Body:</value>
+  </data>
+  <data name="&gt;&gt;lblBody.Name" xml:space="preserve">
+    <value>lblBody</value>
+  </data>
+  <data name="&gt;&gt;lblBody.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblBody.Parent" xml:space="preserve">
+    <value>tpRequest</value>
+  </data>
+  <data name="&gt;&gt;lblBody.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <metadata name="cArgumentsName.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="cArgumentsName.HeaderText" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <metadata name="cArgumentsValue.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="cArgumentsValue.HeaderText" xml:space="preserve">
+    <value>Value</value>
+  </data>
+  <data name="dgvArguments.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 8</value>
+  </data>
+  <data name="dgvArguments.Size" type="System.Drawing.Size, System.Drawing">
+    <value>232, 224</value>
+  </data>
+  <data name="dgvArguments.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;dgvArguments.Name" xml:space="preserve">
+    <value>dgvArguments</value>
+  </data>
+  <data name="&gt;&gt;dgvArguments.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dgvArguments.Parent" xml:space="preserve">
+    <value>pBodyArguments</value>
+  </data>
+  <data name="&gt;&gt;dgvArguments.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblFileFormName.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblFileFormName.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblFileFormName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>-3, 240</value>
+  </data>
+  <data name="lblFileFormName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>78, 13</value>
+  </data>
+  <data name="lblFileFormName.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="lblFileFormName.Text" xml:space="preserve">
+    <value>File form name:</value>
+  </data>
+  <data name="&gt;&gt;lblFileFormName.Name" xml:space="preserve">
+    <value>lblFileFormName</value>
+  </data>
+  <data name="&gt;&gt;lblFileFormName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblFileFormName.Parent" xml:space="preserve">
+    <value>pBodyArguments</value>
+  </data>
+  <data name="&gt;&gt;lblFileFormName.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="txtFileFormName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 256</value>
+  </data>
+  <data name="txtFileFormName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>232, 20</value>
+  </data>
+  <data name="txtFileFormName.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;txtFileFormName.Name" xml:space="preserve">
+    <value>txtFileFormName</value>
+  </data>
+  <data name="&gt;&gt;txtFileFormName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtFileFormName.Parent" xml:space="preserve">
+    <value>pBodyArguments</value>
+  </data>
+  <data name="&gt;&gt;txtFileFormName.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="pBodyArguments.Location" type="System.Drawing.Point, System.Drawing">
+    <value>264, 96</value>
+  </data>
+  <data name="pBodyArguments.Size" type="System.Drawing.Size, System.Drawing">
+    <value>240, 368</value>
+  </data>
+  <data name="pBodyArguments.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;pBodyArguments.Name" xml:space="preserve">
+    <value>pBodyArguments</value>
+  </data>
+  <data name="&gt;&gt;pBodyArguments.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pBodyArguments.Parent" xml:space="preserve">
+    <value>tpRequest</value>
+  </data>
+  <data name="&gt;&gt;pBodyArguments.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="btnDataBeautify.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnDataBeautify.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 208</value>
+  </data>
+  <data name="btnDataBeautify.Size" type="System.Drawing.Size, System.Drawing">
+    <value>112, 24</value>
+  </data>
+  <data name="btnDataBeautify.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="btnDataBeautify.Text" xml:space="preserve">
+    <value>Beautify</value>
+  </data>
+  <data name="&gt;&gt;btnDataBeautify.Name" xml:space="preserve">
+    <value>btnDataBeautify</value>
+  </data>
+  <data name="&gt;&gt;btnDataBeautify.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnDataBeautify.Parent" xml:space="preserve">
+    <value>pBodyData</value>
+  </data>
+  <data name="&gt;&gt;btnDataBeautify.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="btnDataMinify.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnDataMinify.Location" type="System.Drawing.Point, System.Drawing">
+    <value>120, 208</value>
+  </data>
+  <data name="btnDataMinify.Size" type="System.Drawing.Size, System.Drawing">
+    <value>112, 24</value>
+  </data>
+  <data name="btnDataMinify.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="btnDataMinify.Text" xml:space="preserve">
+    <value>Minify</value>
+  </data>
+  <data name="&gt;&gt;btnDataMinify.Name" xml:space="preserve">
+    <value>btnDataMinify</value>
+  </data>
+  <data name="&gt;&gt;btnDataMinify.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnDataMinify.Parent" xml:space="preserve">
+    <value>pBodyData</value>
+  </data>
+  <data name="&gt;&gt;btnDataMinify.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="rtbData.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="rtbData.Location" type="System.Drawing.Point, System.Drawing">
+    <value>2, 2</value>
+  </data>
+  <data name="rtbData.Size" type="System.Drawing.Size, System.Drawing">
+    <value>226, 186</value>
+  </data>
+  <data name="rtbData.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="rtbData.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="rtbData.WordWrap" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;rtbData.Name" xml:space="preserve">
+    <value>rtbData</value>
+  </data>
+  <data name="&gt;&gt;rtbData.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rtbData.Parent" xml:space="preserve">
+    <value>pData</value>
+  </data>
+  <data name="&gt;&gt;rtbData.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="pData.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 8</value>
+  </data>
+  <data name="pData.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="pData.Size" type="System.Drawing.Size, System.Drawing">
+    <value>232, 192</value>
+  </data>
+  <data name="pData.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;pData.Name" xml:space="preserve">
+    <value>pData</value>
+  </data>
+  <data name="&gt;&gt;pData.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pData.Parent" xml:space="preserve">
+    <value>pBodyData</value>
+  </data>
+  <data name="&gt;&gt;pData.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="pBodyData.Location" type="System.Drawing.Point, System.Drawing">
+    <value>264, 96</value>
+  </data>
+  <data name="pBodyData.Size" type="System.Drawing.Size, System.Drawing">
+    <value>240, 368</value>
+  </data>
+  <data name="pBodyData.TabIndex" type="System.Int32, mscorlib">
+    <value>21</value>
+  </data>
+  <data name="&gt;&gt;pBodyData.Name" xml:space="preserve">
+    <value>pBodyData</value>
+  </data>
+  <data name="&gt;&gt;pBodyData.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pBodyData.Parent" xml:space="preserve">
+    <value>tpRequest</value>
+  </data>
+  <data name="&gt;&gt;pBodyData.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="tpRequest.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tpRequest.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tpRequest.Size" type="System.Drawing.Size, System.Drawing">
+    <value>512, 478</value>
+  </data>
+  <data name="tpRequest.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="tpRequest.Text" xml:space="preserve">
+    <value>Request</value>
+  </data>
+  <data name="&gt;&gt;tpRequest.Name" xml:space="preserve">
+    <value>tpRequest</value>
+  </data>
+  <data name="&gt;&gt;tpRequest.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tpRequest.Parent" xml:space="preserve">
+    <value>tcCustomUploader</value>
+  </data>
+  <data name="&gt;&gt;tpRequest.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblParseResponse.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblParseResponse.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblParseResponse.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 8</value>
+  </data>
+  <data name="lblParseResponse.Size" type="System.Drawing.Size, System.Drawing">
+    <value>83, 13</value>
+  </data>
+  <data name="lblParseResponse.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="lblParseResponse.Text" xml:space="preserve">
+    <value>Parse response:</value>
+  </data>
+  <data name="&gt;&gt;lblParseResponse.Name" xml:space="preserve">
+    <value>lblParseResponse</value>
+  </data>
+  <data name="&gt;&gt;lblParseResponse.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblParseResponse.Parent" xml:space="preserve">
+    <value>tpResponse</value>
+  </data>
+  <data name="&gt;&gt;lblParseResponse.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="rtbResultDeletionURL.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="rtbResultDeletionURL.Location" type="System.Drawing.Point, System.Drawing">
+    <value>2, 2</value>
+  </data>
+  <data name="rtbResultDeletionURL.Multiline" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="rtbResultDeletionURL.Size" type="System.Drawing.Size, System.Drawing">
+    <value>250, 14</value>
+  </data>
+  <data name="rtbResultDeletionURL.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="rtbResultDeletionURL.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;rtbResultDeletionURL.Name" xml:space="preserve">
+    <value>rtbResultDeletionURL</value>
+  </data>
+  <data name="&gt;&gt;rtbResultDeletionURL.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rtbResultDeletionURL.Parent" xml:space="preserve">
+    <value>pResultDeletionURL</value>
+  </data>
+  <data name="&gt;&gt;rtbResultDeletionURL.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="pResultDeletionURL.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 324</value>
+  </data>
+  <data name="pResultDeletionURL.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="pResultDeletionURL.Size" type="System.Drawing.Size, System.Drawing">
+    <value>256, 20</value>
+  </data>
+  <data name="pResultDeletionURL.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;pResultDeletionURL.Name" xml:space="preserve">
+    <value>pResultDeletionURL</value>
+  </data>
+  <data name="&gt;&gt;pResultDeletionURL.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pResultDeletionURL.Parent" xml:space="preserve">
+    <value>tpResponse</value>
+  </data>
+  <data name="&gt;&gt;pResultDeletionURL.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="lblResultDeletionURL.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblResultDeletionURL.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblResultDeletionURL.Location" type="System.Drawing.Point, System.Drawing">
+    <value>17, 308</value>
+  </data>
+  <data name="lblResultDeletionURL.Size" type="System.Drawing.Size, System.Drawing">
+    <value>74, 13</value>
+  </data>
+  <data name="lblResultDeletionURL.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="lblResultDeletionURL.Text" xml:space="preserve">
+    <value>Deletion URL:</value>
+  </data>
+  <data name="&gt;&gt;lblResultDeletionURL.Name" xml:space="preserve">
+    <value>lblResultDeletionURL</value>
+  </data>
+  <data name="&gt;&gt;lblResultDeletionURL.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblResultDeletionURL.Parent" xml:space="preserve">
+    <value>tpResponse</value>
+  </data>
+  <data name="&gt;&gt;lblResultDeletionURL.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="rtbResultThumbnailURL.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="rtbResultThumbnailURL.Location" type="System.Drawing.Point, System.Drawing">
+    <value>2, 2</value>
+  </data>
+  <data name="rtbResultThumbnailURL.Multiline" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="rtbResultThumbnailURL.Size" type="System.Drawing.Size, System.Drawing">
+    <value>250, 14</value>
+  </data>
+  <data name="rtbResultThumbnailURL.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="rtbResultThumbnailURL.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;rtbResultThumbnailURL.Name" xml:space="preserve">
+    <value>rtbResultThumbnailURL</value>
+  </data>
+  <data name="&gt;&gt;rtbResultThumbnailURL.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rtbResultThumbnailURL.Parent" xml:space="preserve">
+    <value>pResultThumbnailURL</value>
+  </data>
+  <data name="&gt;&gt;rtbResultThumbnailURL.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="pResultThumbnailURL.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 282</value>
+  </data>
+  <data name="pResultThumbnailURL.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="pResultThumbnailURL.Size" type="System.Drawing.Size, System.Drawing">
+    <value>256, 20</value>
+  </data>
+  <data name="pResultThumbnailURL.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;pResultThumbnailURL.Name" xml:space="preserve">
+    <value>pResultThumbnailURL</value>
+  </data>
+  <data name="&gt;&gt;pResultThumbnailURL.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pResultThumbnailURL.Parent" xml:space="preserve">
+    <value>tpResponse</value>
+  </data>
+  <data name="&gt;&gt;pResultThumbnailURL.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="rtbResultURL.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="rtbResultURL.Location" type="System.Drawing.Point, System.Drawing">
+    <value>2, 2</value>
+  </data>
+  <data name="rtbResultURL.Multiline" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="rtbResultURL.Size" type="System.Drawing.Size, System.Drawing">
+    <value>250, 14</value>
+  </data>
+  <data name="rtbResultURL.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="rtbResultURL.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;rtbResultURL.Name" xml:space="preserve">
+    <value>rtbResultURL</value>
+  </data>
+  <data name="&gt;&gt;rtbResultURL.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rtbResultURL.Parent" xml:space="preserve">
+    <value>pResultURL</value>
+  </data>
+  <data name="&gt;&gt;rtbResultURL.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="pResultURL.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 240</value>
+  </data>
+  <data name="pResultURL.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="pResultURL.Size" type="System.Drawing.Size, System.Drawing">
+    <value>256, 20</value>
+  </data>
+  <data name="pResultURL.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;pResultURL.Name" xml:space="preserve">
+    <value>pResultURL</value>
+  </data>
+  <data name="&gt;&gt;pResultURL.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pResultURL.Parent" xml:space="preserve">
+    <value>tpResponse</value>
+  </data>
+  <data name="&gt;&gt;pResultURL.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="lblResultThumbnailURL.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblResultThumbnailURL.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblResultThumbnailURL.Location" type="System.Drawing.Point, System.Drawing">
+    <value>17, 266</value>
+  </data>
+  <data name="lblResultThumbnailURL.Size" type="System.Drawing.Size, System.Drawing">
+    <value>84, 13</value>
+  </data>
+  <data name="lblResultThumbnailURL.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="lblResultThumbnailURL.Text" xml:space="preserve">
+    <value>Thumbnail URL:</value>
+  </data>
+  <data name="&gt;&gt;lblResultThumbnailURL.Name" xml:space="preserve">
+    <value>lblResultThumbnailURL</value>
+  </data>
+  <data name="&gt;&gt;lblResultThumbnailURL.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblResultThumbnailURL.Parent" xml:space="preserve">
+    <value>tpResponse</value>
+  </data>
+  <data name="&gt;&gt;lblResultThumbnailURL.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="lblResultURL.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblResultURL.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblResultURL.Location" type="System.Drawing.Point, System.Drawing">
+    <value>17, 224</value>
+  </data>
+  <data name="lblResultURL.Size" type="System.Drawing.Size, System.Drawing">
+    <value>32, 13</value>
+  </data>
+  <data name="lblResultURL.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="lblResultURL.Text" xml:space="preserve">
+    <value>URL:</value>
+  </data>
+  <data name="&gt;&gt;lblResultURL.Name" xml:space="preserve">
+    <value>lblResultURL</value>
+  </data>
+  <data name="&gt;&gt;lblResultURL.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblResultURL.Parent" xml:space="preserve">
+    <value>tpResponse</value>
+  </data>
+  <data name="&gt;&gt;lblResultURL.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="btnJsonAddSyntax.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnJsonAddSyntax.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 128</value>
+  </data>
+  <data name="btnJsonAddSyntax.Size" type="System.Drawing.Size, System.Drawing">
+    <value>232, 23</value>
+  </data>
+  <data name="btnJsonAddSyntax.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="btnJsonAddSyntax.Text" xml:space="preserve">
+    <value>Add syntax to URL field</value>
+  </data>
+  <data name="&gt;&gt;btnJsonAddSyntax.Name" xml:space="preserve">
+    <value>btnJsonAddSyntax</value>
+  </data>
+  <data name="&gt;&gt;btnJsonAddSyntax.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnJsonAddSyntax.Parent" xml:space="preserve">
+    <value>tpJsonParse</value>
+  </data>
+  <data name="&gt;&gt;btnJsonAddSyntax.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="btnJsonPathHelp.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnJsonPathHelp.Location" type="System.Drawing.Point, System.Drawing">
+    <value>216, 22</value>
+  </data>
+  <data name="btnJsonPathHelp.Size" type="System.Drawing.Size, System.Drawing">
+    <value>24, 24</value>
+  </data>
+  <data name="btnJsonPathHelp.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="btnJsonPathHelp.Text" xml:space="preserve">
+    <value>?</value>
+  </data>
+  <data name="&gt;&gt;btnJsonPathHelp.Name" xml:space="preserve">
+    <value>btnJsonPathHelp</value>
+  </data>
+  <data name="&gt;&gt;btnJsonPathHelp.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnJsonPathHelp.Parent" xml:space="preserve">
+    <value>tpJsonParse</value>
+  </data>
+  <data name="&gt;&gt;btnJsonPathHelp.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="lblJsonPathExample.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblJsonPathExample.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblJsonPathExample.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 56</value>
+  </data>
+  <data name="lblJsonPathExample.Size" type="System.Drawing.Size, System.Drawing">
+    <value>88, 52</value>
+  </data>
+  <data name="lblJsonPathExample.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="lblJsonPathExample.Text" xml:space="preserve">
+    <value>Examples:
+
+Files[0].URL
+store.book[0].title</value>
+  </data>
+  <data name="&gt;&gt;lblJsonPathExample.Name" xml:space="preserve">
+    <value>lblJsonPathExample</value>
+  </data>
+  <data name="&gt;&gt;lblJsonPathExample.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblJsonPathExample.Parent" xml:space="preserve">
+    <value>tpJsonParse</value>
+  </data>
+  <data name="&gt;&gt;lblJsonPathExample.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="lblJsonPath.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblJsonPath.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblJsonPath.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 8</value>
+  </data>
+  <data name="lblJsonPath.Size" type="System.Drawing.Size, System.Drawing">
+    <value>54, 13</value>
+  </data>
+  <data name="lblJsonPath.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="lblJsonPath.Text" xml:space="preserve">
+    <value>JsonPath:</value>
+  </data>
+  <data name="&gt;&gt;lblJsonPath.Name" xml:space="preserve">
+    <value>lblJsonPath</value>
+  </data>
+  <data name="&gt;&gt;lblJsonPath.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblJsonPath.Parent" xml:space="preserve">
+    <value>tpJsonParse</value>
+  </data>
+  <data name="&gt;&gt;lblJsonPath.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="txtJsonPath.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 24</value>
+  </data>
+  <data name="txtJsonPath.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 20</value>
+  </data>
+  <data name="txtJsonPath.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;txtJsonPath.Name" xml:space="preserve">
+    <value>txtJsonPath</value>
+  </data>
+  <data name="&gt;&gt;txtJsonPath.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtJsonPath.Parent" xml:space="preserve">
+    <value>tpJsonParse</value>
+  </data>
+  <data name="&gt;&gt;txtJsonPath.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="tpJsonParse.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tpJsonParse.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tpJsonParse.Size" type="System.Drawing.Size, System.Drawing">
+    <value>248, 158</value>
+  </data>
+  <data name="tpJsonParse.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="tpJsonParse.Text" xml:space="preserve">
+    <value>JSON</value>
+  </data>
+  <data name="&gt;&gt;tpJsonParse.Name" xml:space="preserve">
+    <value>tpJsonParse</value>
+  </data>
+  <data name="&gt;&gt;tpJsonParse.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tpJsonParse.Parent" xml:space="preserve">
+    <value>tcResponseParse</value>
+  </data>
+  <data name="&gt;&gt;tpJsonParse.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="btnXmlAddSyntax.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnXmlAddSyntax.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 128</value>
+  </data>
+  <data name="btnXmlAddSyntax.Size" type="System.Drawing.Size, System.Drawing">
+    <value>232, 23</value>
+  </data>
+  <data name="btnXmlAddSyntax.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="btnXmlAddSyntax.Text" xml:space="preserve">
+    <value>Add syntax to URL field</value>
+  </data>
+  <data name="&gt;&gt;btnXmlAddSyntax.Name" xml:space="preserve">
+    <value>btnXmlAddSyntax</value>
+  </data>
+  <data name="&gt;&gt;btnXmlAddSyntax.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnXmlAddSyntax.Parent" xml:space="preserve">
+    <value>tpXmlParse</value>
+  </data>
+  <data name="&gt;&gt;btnXmlAddSyntax.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="btnXPathHelp.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnXPathHelp.Location" type="System.Drawing.Point, System.Drawing">
+    <value>216, 22</value>
+  </data>
+  <data name="btnXPathHelp.Size" type="System.Drawing.Size, System.Drawing">
+    <value>24, 24</value>
+  </data>
+  <data name="btnXPathHelp.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="btnXPathHelp.Text" xml:space="preserve">
+    <value>?</value>
+  </data>
+  <data name="&gt;&gt;btnXPathHelp.Name" xml:space="preserve">
+    <value>btnXPathHelp</value>
+  </data>
+  <data name="&gt;&gt;btnXPathHelp.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnXPathHelp.Parent" xml:space="preserve">
+    <value>tpXmlParse</value>
+  </data>
+  <data name="&gt;&gt;btnXPathHelp.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="lblXPathExample.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblXPathExample.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblXPathExample.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 56</value>
+  </data>
+  <data name="lblXPathExample.Size" type="System.Drawing.Size, System.Drawing">
+    <value>97, 52</value>
+  </data>
+  <data name="lblXPathExample.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="lblXPathExample.Text" xml:space="preserve">
+    <value>Examples:
+
+/Files/File[1]/URL
+/store/book[1]/title</value>
+  </data>
+  <data name="&gt;&gt;lblXPathExample.Name" xml:space="preserve">
+    <value>lblXPathExample</value>
+  </data>
+  <data name="&gt;&gt;lblXPathExample.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblXPathExample.Parent" xml:space="preserve">
+    <value>tpXmlParse</value>
+  </data>
+  <data name="&gt;&gt;lblXPathExample.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="lblXPath.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblXPath.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblXPath.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 8</value>
+  </data>
+  <data name="lblXPath.Size" type="System.Drawing.Size, System.Drawing">
+    <value>39, 13</value>
+  </data>
+  <data name="lblXPath.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="lblXPath.Text" xml:space="preserve">
+    <value>XPath:</value>
+  </data>
+  <data name="&gt;&gt;lblXPath.Name" xml:space="preserve">
+    <value>lblXPath</value>
+  </data>
+  <data name="&gt;&gt;lblXPath.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblXPath.Parent" xml:space="preserve">
+    <value>tpXmlParse</value>
+  </data>
+  <data name="&gt;&gt;lblXPath.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="txtXPath.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 24</value>
+  </data>
+  <data name="txtXPath.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 20</value>
+  </data>
+  <data name="txtXPath.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;txtXPath.Name" xml:space="preserve">
+    <value>txtXPath</value>
+  </data>
+  <data name="&gt;&gt;txtXPath.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtXPath.Parent" xml:space="preserve">
+    <value>tpXmlParse</value>
+  </data>
+  <data name="&gt;&gt;txtXPath.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="tpXmlParse.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tpXmlParse.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tpXmlParse.Size" type="System.Drawing.Size, System.Drawing">
+    <value>248, 158</value>
+  </data>
+  <data name="tpXmlParse.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="tpXmlParse.Text" xml:space="preserve">
+    <value>XML</value>
+  </data>
+  <data name="&gt;&gt;tpXmlParse.Name" xml:space="preserve">
+    <value>tpXmlParse</value>
+  </data>
+  <data name="&gt;&gt;tpXmlParse.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tpXmlParse.Parent" xml:space="preserve">
+    <value>tcResponseParse</value>
+  </data>
+  <data name="&gt;&gt;tpXmlParse.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="lblRegex.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblRegex.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 8</value>
+  </data>
+  <data name="lblRegex.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 13</value>
+  </data>
+  <data name="lblRegex.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="lblRegex.Text" xml:space="preserve">
+    <value>Regex list:</value>
+  </data>
+  <data name="&gt;&gt;lblRegex.Name" xml:space="preserve">
+    <value>lblRegex</value>
+  </data>
+  <data name="&gt;&gt;lblRegex.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblRegex.Parent" xml:space="preserve">
+    <value>tpRegexParse</value>
+  </data>
+  <data name="&gt;&gt;lblRegex.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="cRegex.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="cRegex.HeaderText" xml:space="preserve">
+    <value>Regex</value>
+  </data>
+  <data name="dgvRegex.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 24</value>
+  </data>
+  <data name="dgvRegex.Size" type="System.Drawing.Size, System.Drawing">
+    <value>232, 96</value>
+  </data>
+  <data name="dgvRegex.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;dgvRegex.Name" xml:space="preserve">
+    <value>dgvRegex</value>
+  </data>
+  <data name="&gt;&gt;dgvRegex.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dgvRegex.Parent" xml:space="preserve">
+    <value>tpRegexParse</value>
+  </data>
+  <data name="&gt;&gt;dgvRegex.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="btnRegexAddSyntax.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnRegexAddSyntax.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 128</value>
+  </data>
+  <data name="btnRegexAddSyntax.Size" type="System.Drawing.Size, System.Drawing">
+    <value>232, 23</value>
+  </data>
+  <data name="btnRegexAddSyntax.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="btnRegexAddSyntax.Text" xml:space="preserve">
+    <value>Add syntax to URL field</value>
+  </data>
+  <data name="&gt;&gt;btnRegexAddSyntax.Name" xml:space="preserve">
+    <value>btnRegexAddSyntax</value>
+  </data>
+  <data name="&gt;&gt;btnRegexAddSyntax.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnRegexAddSyntax.Parent" xml:space="preserve">
+    <value>tpRegexParse</value>
+  </data>
+  <data name="&gt;&gt;btnRegexAddSyntax.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="tpRegexParse.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tpRegexParse.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tpRegexParse.Size" type="System.Drawing.Size, System.Drawing">
+    <value>248, 158</value>
+  </data>
+  <data name="tpRegexParse.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="tpRegexParse.Text" xml:space="preserve">
+    <value>Regex</value>
+  </data>
+  <data name="&gt;&gt;tpRegexParse.Name" xml:space="preserve">
+    <value>tpRegexParse</value>
+  </data>
+  <data name="&gt;&gt;tpRegexParse.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tpRegexParse.Parent" xml:space="preserve">
+    <value>tcResponseParse</value>
+  </data>
+  <data name="&gt;&gt;tpRegexParse.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="tcResponseParse.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 26</value>
+  </data>
+  <data name="tcResponseParse.Size" type="System.Drawing.Size, System.Drawing">
+    <value>256, 184</value>
+  </data>
+  <data name="tcResponseParse.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;tcResponseParse.Name" xml:space="preserve">
+    <value>tcResponseParse</value>
+  </data>
+  <data name="&gt;&gt;tcResponseParse.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tcResponseParse.Parent" xml:space="preserve">
+    <value>tpResponse</value>
+  </data>
+  <data name="&gt;&gt;tcResponseParse.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="tpResponse.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tpResponse.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tpResponse.Size" type="System.Drawing.Size, System.Drawing">
+    <value>512, 478</value>
+  </data>
+  <data name="tpResponse.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="tpResponse.Text" xml:space="preserve">
+    <value>Response</value>
+  </data>
+  <data name="&gt;&gt;tpResponse.Name" xml:space="preserve">
+    <value>tpResponse</value>
+  </data>
+  <data name="&gt;&gt;tpResponse.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tpResponse.Parent" xml:space="preserve">
+    <value>tcCustomUploader</value>
+  </data>
+  <data name="&gt;&gt;tpResponse.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="rtbResult.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="rtbResult.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 9pt</value>
+  </data>
+  <data name="rtbResult.Location" type="System.Drawing.Point, System.Drawing">
+    <value>2, 2</value>
+  </data>
+  <data name="rtbResult.Size" type="System.Drawing.Size, System.Drawing">
+    <value>486, 434</value>
+  </data>
+  <data name="rtbResult.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="rtbResult.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;rtbResult.Name" xml:space="preserve">
+    <value>rtbResult</value>
+  </data>
+  <data name="&gt;&gt;rtbResult.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rtbResult.Parent" xml:space="preserve">
+    <value>pResult</value>
+  </data>
+  <data name="&gt;&gt;rtbResult.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="pResult.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="pResult.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="pResult.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="pResult.Size" type="System.Drawing.Size, System.Drawing">
+    <value>492, 440</value>
+  </data>
+  <data name="pResult.TabIndex" type="System.Int32, mscorlib">
+    <value>41</value>
+  </data>
+  <data name="&gt;&gt;pResult.Name" xml:space="preserve">
+    <value>pResult</value>
+  </data>
+  <data name="&gt;&gt;pResult.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pResult.Parent" xml:space="preserve">
+    <value>tpResult</value>
+  </data>
+  <data name="&gt;&gt;pResult.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tpResult.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tpResult.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tpResult.Size" type="System.Drawing.Size, System.Drawing">
+    <value>498, 446</value>
+  </data>
+  <data name="tpResult.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="tpResult.Text" xml:space="preserve">
+    <value>Result</value>
+  </data>
+  <data name="&gt;&gt;tpResult.Name" xml:space="preserve">
+    <value>tpResult</value>
+  </data>
+  <data name="&gt;&gt;tpResult.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tpResult.Parent" xml:space="preserve">
+    <value>tcTest</value>
+  </data>
+  <data name="&gt;&gt;tpResult.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="rtbResponseInfo.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="rtbResponseInfo.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 9pt</value>
+  </data>
+  <data name="rtbResponseInfo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>2, 2</value>
+  </data>
+  <data name="rtbResponseInfo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>486, 434</value>
+  </data>
+  <data name="rtbResponseInfo.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="rtbResponseInfo.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;rtbResponseInfo.Name" xml:space="preserve">
+    <value>rtbResponseInfo</value>
+  </data>
+  <data name="&gt;&gt;rtbResponseInfo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rtbResponseInfo.Parent" xml:space="preserve">
+    <value>pResponseInfo</value>
+  </data>
+  <data name="&gt;&gt;rtbResponseInfo.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="pResponseInfo.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="pResponseInfo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="pResponseInfo.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="pResponseInfo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>492, 440</value>
+  </data>
+  <data name="pResponseInfo.TabIndex" type="System.Int32, mscorlib">
+    <value>43</value>
+  </data>
+  <data name="&gt;&gt;pResponseInfo.Name" xml:space="preserve">
+    <value>pResponseInfo</value>
+  </data>
+  <data name="&gt;&gt;pResponseInfo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pResponseInfo.Parent" xml:space="preserve">
+    <value>tpResponseInfo</value>
+  </data>
+  <data name="&gt;&gt;pResponseInfo.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tpResponseInfo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tpResponseInfo.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tpResponseInfo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>498, 446</value>
+  </data>
+  <data name="tpResponseInfo.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="tpResponseInfo.Text" xml:space="preserve">
+    <value>Response info</value>
+  </data>
+  <data name="&gt;&gt;tpResponseInfo.Name" xml:space="preserve">
+    <value>tpResponseInfo</value>
+  </data>
+  <data name="&gt;&gt;tpResponseInfo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tpResponseInfo.Parent" xml:space="preserve">
+    <value>tcTest</value>
+  </data>
+  <data name="&gt;&gt;tpResponseInfo.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="tpResponseText.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tpResponseText.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tpResponseText.Size" type="System.Drawing.Size, System.Drawing">
+    <value>498, 446</value>
+  </data>
+  <data name="tpResponseText.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="tpResponseText.Text" xml:space="preserve">
+    <value>Response text</value>
+  </data>
+  <data name="&gt;&gt;tpResponseText.Name" xml:space="preserve">
+    <value>tpResponseText</value>
+  </data>
+  <data name="&gt;&gt;tpResponseText.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tpResponseText.Parent" xml:space="preserve">
+    <value>tcTest</value>
+  </data>
+  <data name="&gt;&gt;tpResponseText.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="tcTest.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="tcTest.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="tcTest.Size" type="System.Drawing.Size, System.Drawing">
+    <value>506, 472</value>
+  </data>
+  <data name="tcTest.TabIndex" type="System.Int32, mscorlib">
+    <value>44</value>
+  </data>
+  <data name="&gt;&gt;tcTest.Name" xml:space="preserve">
+    <value>tcTest</value>
+  </data>
+  <data name="&gt;&gt;tcTest.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tcTest.Parent" xml:space="preserve">
+    <value>tpTest</value>
+  </data>
+  <data name="&gt;&gt;tcTest.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tpTest.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tpTest.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tpTest.Size" type="System.Drawing.Size, System.Drawing">
+    <value>512, 478</value>
+  </data>
+  <data name="tpTest.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="tpTest.Text" xml:space="preserve">
+    <value>Test</value>
+  </data>
+  <data name="&gt;&gt;tpTest.Name" xml:space="preserve">
+    <value>tpTest</value>
+  </data>
+  <data name="&gt;&gt;tpTest.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tpTest.Parent" xml:space="preserve">
+    <value>tcCustomUploader</value>
+  </data>
+  <data name="&gt;&gt;tpTest.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="tcCustomUploader.Location" type="System.Drawing.Point, System.Drawing">
+    <value>272, 56</value>
+  </data>
+  <data name="tcCustomUploader.Size" type="System.Drawing.Size, System.Drawing">
+    <value>520, 504</value>
+  </data>
+  <data name="tcCustomUploader.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;tcCustomUploader.Name" xml:space="preserve">
+    <value>tcCustomUploader</value>
+  </data>
+  <data name="&gt;&gt;tcCustomUploader.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tcCustomUploader.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;tcCustomUploader.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="lblDestinationType.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblDestinationType.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblDestinationType.Location" type="System.Drawing.Point, System.Drawing">
+    <value>533, 8</value>
+  </data>
+  <data name="lblDestinationType.Size" type="System.Drawing.Size, System.Drawing">
+    <value>86, 13</value>
+  </data>
+  <data name="lblDestinationType.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="lblDestinationType.Text" xml:space="preserve">
+    <value>Destination type:</value>
+  </data>
+  <data name="&gt;&gt;lblDestinationType.Name" xml:space="preserve">
+    <value>lblDestinationType</value>
+  </data>
+  <data name="&gt;&gt;lblDestinationType.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblDestinationType.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblDestinationType.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="lblName.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblName.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>269, 8</value>
+  </data>
+  <data name="lblName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>38, 13</value>
+  </data>
+  <data name="lblName.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="lblName.Text" xml:space="preserve">
+    <value>Name:</value>
+  </data>
+  <data name="&gt;&gt;lblName.Name" xml:space="preserve">
+    <value>lblName</value>
+  </data>
+  <data name="&gt;&gt;lblName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblName.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblName.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="mbDestinationType.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="mbDestinationType.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="mbDestinationType.Location" type="System.Drawing.Point, System.Drawing">
+    <value>535, 23</value>
+  </data>
+  <metadata name="cmsDestinationType.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>218, 17</value>
+  </metadata>
+  <data name="cmsDestinationType.Size" type="System.Drawing.Size, System.Drawing">
+    <value>61, 4</value>
+  </data>
+  <data name="&gt;&gt;cmsDestinationType.Name" xml:space="preserve">
+    <value>cmsDestinationType</value>
+  </data>
+  <data name="&gt;&gt;cmsDestinationType.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="mbDestinationType.Size" type="System.Drawing.Size, System.Drawing">
+    <value>257, 23</value>
+  </data>
+  <data name="mbDestinationType.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="mbDestinationType.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <metadata name="ttHelpTip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <data name="mbDestinationType.ToolTip" xml:space="preserve">
+    <value>Currently destination type is used when users import custom uploader by double clicking the .sxcu file.</value>
+  </data>
+  <data name="&gt;&gt;mbDestinationType.Name" xml:space="preserve">
+    <value>mbDestinationType</value>
+  </data>
+  <data name="&gt;&gt;mbDestinationType.Type" xml:space="preserve">
+    <value>ShareX.HelpersLib.MenuButton, ShareX.HelpersLib, Version=12.4.2.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;mbDestinationType.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;mbDestinationType.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="txtName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>272, 24</value>
+  </data>
+  <data name="txtName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>248, 20</value>
+  </data>
+  <data name="txtName.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;txtName.Name" xml:space="preserve">
+    <value>txtName</value>
+  </data>
+  <data name="&gt;&gt;txtName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtName.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;txtName.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="lblURLSharingService.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblURLSharingService.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblURLSharingService.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 520</value>
+  </data>
+  <data name="lblURLSharingService.Size" type="System.Drawing.Size, System.Drawing">
+    <value>106, 13</value>
+  </data>
+  <data name="lblURLSharingService.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="lblURLSharingService.Text" xml:space="preserve">
+    <value>URL sharing service:</value>
+  </data>
+  <data name="&gt;&gt;lblURLSharingService.Name" xml:space="preserve">
+    <value>lblURLSharingService</value>
+  </data>
+  <data name="&gt;&gt;lblURLSharingService.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblURLSharingService.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblURLSharingService.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="cbURLSharingService.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 536</value>
+  </data>
+  <data name="cbURLSharingService.Size" type="System.Drawing.Size, System.Drawing">
+    <value>176, 21</value>
+  </data>
+  <data name="cbURLSharingService.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="&gt;&gt;cbURLSharingService.Name" xml:space="preserve">
+    <value>cbURLSharingService</value>
+  </data>
+  <data name="&gt;&gt;cbURLSharingService.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbURLSharingService.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;cbURLSharingService.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="btnURLSharingServiceTest.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnURLSharingServiceTest.Location" type="System.Drawing.Point, System.Drawing">
+    <value>192, 534</value>
+  </data>
+  <data name="btnURLSharingServiceTest.Size" type="System.Drawing.Size, System.Drawing">
+    <value>64, 24</value>
+  </data>
+  <data name="btnURLSharingServiceTest.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="btnURLSharingServiceTest.Text" xml:space="preserve">
+    <value>Test</value>
+  </data>
+  <data name="&gt;&gt;btnURLSharingServiceTest.Name" xml:space="preserve">
+    <value>btnURLSharingServiceTest</value>
+  </data>
+  <data name="&gt;&gt;btnURLSharingServiceTest.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnURLSharingServiceTest.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnURLSharingServiceTest.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>63</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>801, 569</value>
+  </data>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterScreen</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX - Custom uploader settings</value>
+  </data>
+  <data name="&gt;&gt;tsbResponseTextJSONFormat.Name" xml:space="preserve">
+    <value>tsbResponseTextJSONFormat</value>
+  </data>
+  <data name="&gt;&gt;tsbResponseTextJSONFormat.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsbResponseTextXMLFormat.Name" xml:space="preserve">
+    <value>tsbResponseTextXMLFormat</value>
+  </data>
+  <data name="&gt;&gt;tsbResponseTextXMLFormat.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsbResponseTextCopy.Name" xml:space="preserve">
+    <value>tsbResponseTextCopy</value>
+  </data>
+  <data name="&gt;&gt;tsbResponseTextCopy.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsmiCustomUploaderGuide.Name" xml:space="preserve">
+    <value>tsmiCustomUploaderGuide</value>
+  </data>
+  <data name="&gt;&gt;tsmiCustomUploaderGuide.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsmiCustomUploaders.Name" xml:space="preserve">
+    <value>tsmiCustomUploaders</value>
+  </data>
+  <data name="&gt;&gt;tsmiCustomUploaders.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsmiExportAll.Name" xml:space="preserve">
+    <value>tsmiExportAll</value>
+  </data>
+  <data name="&gt;&gt;tsmiExportAll.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsmiUpdateFolder.Name" xml:space="preserve">
+    <value>tsmiUpdateFolder</value>
+  </data>
+  <data name="&gt;&gt;tsmiUpdateFolder.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cHeadersName.Name" xml:space="preserve">
+    <value>cHeadersName</value>
+  </data>
+  <data name="&gt;&gt;cHeadersName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cHeadersValue.Name" xml:space="preserve">
+    <value>cHeadersValue</value>
+  </data>
+  <data name="&gt;&gt;cHeadersValue.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cParametersName.Name" xml:space="preserve">
+    <value>cParametersName</value>
+  </data>
+  <data name="&gt;&gt;cParametersName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cParametersValue.Name" xml:space="preserve">
+    <value>cParametersValue</value>
+  </data>
+  <data name="&gt;&gt;cParametersValue.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cArgumentsName.Name" xml:space="preserve">
+    <value>cArgumentsName</value>
+  </data>
+  <data name="&gt;&gt;cArgumentsName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cArgumentsValue.Name" xml:space="preserve">
+    <value>cArgumentsValue</value>
+  </data>
+  <data name="&gt;&gt;cArgumentsValue.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cRegex.Name" xml:space="preserve">
+    <value>cRegex</value>
+  </data>
+  <data name="&gt;&gt;cRegex.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ttHelpTip.Name" xml:space="preserve">
+    <value>ttHelpTip</value>
+  </data>
+  <data name="&gt;&gt;ttHelpTip.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>CustomUploaderSettingsForm</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+</root>

@@ -121,21 +121,21 @@
     <value>ShareX mit Windows starten</value>
   </data>
   <data name="cbSendToMenu.Text" xml:space="preserve">
-    <value>Zeige ShareX im "Senden an" Menü</value>
+    <value>ShareX im "Senden an"-Menü anzeigen</value>
   </data>
   <data name="cbShellContextMenuButton.Text" xml:space="preserve">
-    <value>Zeige "Mit ShareX hochladen" im Windows Explorer Kontextmenü</value>
+    <value>"Mit ShareX hochladen"-Eintrag im Kontextmenü anzeigen</value>
   </data>
   <data name="cbSteamInApp.Text" xml:space="preserve">
-    <value>Zeige "In-App" in Steam, während ShareX geöffnet ist</value>
+    <value>"In-App" in Steam anzeigen, während ShareX geöffnet ist</value>
   </data>
   <data name="lblTitle.Text" xml:space="preserve">
-    <value>ShareX Erstkonfiguration</value>
+    <value>ShareX-Erstkonfiguration</value>
   </data>
   <data name="btnOK.Text" xml:space="preserve">
     <value>OK</value>
   </data>
   <data name="lblNote.Text" xml:space="preserve">
-    <value>Du kannst diese Einstellungen in "Programmeinstellungen -&gt; Integrationen" finden.</value>
+    <value>Du kannst diese Einstellungen in "Anwendungseinstellungen -&gt; Integration" finden.</value>
   </data>
 </root>

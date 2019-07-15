@@ -1,9 +1,7 @@
 [CustomMessages]
 sqlcompact35sp2_title=SQL Server Compact 3.5 Service Pack 2
 
-en.sqlcompact35sp2_size=5.3 MB
-de.sqlcompact35sp2_size=5,3 MB
-
+sqlcompact35sp2_size=5.3 MB
 
 [Code]
 const
@@ -17,5 +15,7 @@ begin
 			CustomMessage('sqlcompact35sp2_title'),
 			CustomMessage('sqlcompact35sp2_size'),
 			sqlcompact35sp2_url,
-			false, false);
+			false, false, false);
 end;
+
+[Setup]

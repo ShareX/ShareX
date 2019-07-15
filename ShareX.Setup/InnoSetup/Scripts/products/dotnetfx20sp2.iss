@@ -1,11 +1,9 @@
-//http://www.microsoft.com/downloads/details.aspx?familyid=5B2C0358-915B-4EB5-9B1D-10E506DA9D0F
+; http://www.microsoft.com/downloads/details.aspx?familyid=5B2C0358-915B-4EB5-9B1D-10E506DA9D0F
 
 [CustomMessages]
 dotnetfx20sp2_title=.NET Framework 2.0 Service Pack 2
 
-en.dotnetfx20sp2_size=24 MB - 52 MB
-de.dotnetfx20sp2_size=24 MB - 52 MB
-
+dotnetfx20sp2_size=24 MB - 52 MB
 
 [Code]
 const
@@ -21,5 +19,7 @@ begin
 			CustomMessage('dotnetfx20sp2_title'),
 			CustomMessage('dotnetfx20sp2_size'),
 			GetString(dotnetfx20sp2_url, dotnetfx20sp2_url_x64, dotnetfx20sp2_url_ia64),
-			false, false);
+			false, false, false);
 end;
+
+[Setup]

@@ -120,4 +120,7 @@
   <data name="VideoThumbnailerForm_btnBrowse_Click_Browse_for_media_file" xml:space="preserve">
     <value>浏览媒体文件</value>
   </data>
+  <data name="ThumbnailsSuccessfullyGenerated" xml:space="preserve">
+    <value>缩略图生成成功</value>
+  </data>
 </root>

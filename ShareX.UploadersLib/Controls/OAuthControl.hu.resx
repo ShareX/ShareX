@@ -132,9 +132,6 @@
   <data name="gbUserAccount.Text" xml:space="preserve">
     <value>Felhasználói fiók</value>
   </data>
-  <data name="lblLoginStatus.Text" xml:space="preserve">
-    <value>Állapot</value>
-  </data>
   <data name="lblVerificationCode.Text" xml:space="preserve">
     <value>Ellenőrző kód (a felhatalmazó oldalról szerezheted meg):</value>
   </data>

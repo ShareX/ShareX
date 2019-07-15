@@ -71,6 +71,11 @@
             this.tpGIF = new System.Windows.Forms.TabPage();
             this.lblGIFDither = new System.Windows.Forms.Label();
             this.lblGIFStatsMode = new System.Windows.Forms.Label();
+            this.tbAMF = new System.Windows.Forms.TabPage();
+            this.cbAMFQuality = new System.Windows.Forms.ComboBox();
+            this.lblAMFQuality = new System.Windows.Forms.Label();
+            this.cbAMFUsage = new System.Windows.Forms.ComboBox();
+            this.lblAMFUsage = new System.Windows.Forms.Label();
             this.btnTest = new System.Windows.Forms.Button();
             this.btnCopyPreview = new System.Windows.Forms.Button();
             this.tcFFmpegAudioCodecs = new System.Windows.Forms.TabControl();
@@ -93,6 +98,11 @@
             this.btnRefreshSources = new System.Windows.Forms.Button();
             this.gbCodecs = new System.Windows.Forms.GroupBox();
             this.eiFFmpeg = new ShareX.HelpersLib.ExportImportControl();
+            this.tbQSV = new System.Windows.Forms.TabPage();
+            this.cbQSVPreset = new System.Windows.Forms.ComboBox();
+            this.lblQSVPreset = new System.Windows.Forms.Label();
+            this.nudQSVBitrate = new System.Windows.Forms.NumericUpDown();
+            this.lblQSVBitrate = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.nudx264CRF)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudXvidQscale)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbVorbis_qscale)).BeginInit();
@@ -111,12 +121,15 @@
             this.tpNVENC.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudNVENCBitrate)).BeginInit();
             this.tpGIF.SuspendLayout();
+            this.tbAMF.SuspendLayout();
             this.tcFFmpegAudioCodecs.SuspendLayout();
             this.tpAAC.SuspendLayout();
             this.tpVorbis.SuspendLayout();
             this.tpMP3.SuspendLayout();
             this.gbSource.SuspendLayout();
             this.gbCodecs.SuspendLayout();
+            this.tbQSV.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudQSVBitrate)).BeginInit();
             this.SuspendLayout();
             // 
             // lblx264CRF
@@ -356,12 +369,15 @@
             this.tcFFmpegVideoCodecs.Controls.Add(this.tpXvid);
             this.tcFFmpegVideoCodecs.Controls.Add(this.tpNVENC);
             this.tcFFmpegVideoCodecs.Controls.Add(this.tpGIF);
+            this.tcFFmpegVideoCodecs.Controls.Add(this.tbAMF);
+            this.tcFFmpegVideoCodecs.Controls.Add(this.tbQSV);
             resources.ApplyResources(this.tcFFmpegVideoCodecs, "tcFFmpegVideoCodecs");
             this.tcFFmpegVideoCodecs.Name = "tcFFmpegVideoCodecs";
             this.tcFFmpegVideoCodecs.SelectedIndex = 0;
             // 
             // tpX264
             // 
+            this.tpX264.BackColor = System.Drawing.SystemColors.Window;
             this.tpX264.Controls.Add(this.pbx264PresetWarning);
             this.tpX264.Controls.Add(this.nudx264CRF);
             this.tpX264.Controls.Add(this.lblx264CRF);
@@ -369,16 +385,15 @@
             this.tpX264.Controls.Add(this.lblx264Preset);
             resources.ApplyResources(this.tpX264, "tpX264");
             this.tpX264.Name = "tpX264";
-            this.tpX264.UseVisualStyleBackColor = true;
             // 
             // tpVpx
             // 
+            this.tpVpx.BackColor = System.Drawing.SystemColors.Window;
             this.tpVpx.Controls.Add(this.lblVP8BitrateK);
             this.tpVpx.Controls.Add(this.nudVP8Bitrate);
             this.tpVpx.Controls.Add(this.lblVP8Bitrate);
             resources.ApplyResources(this.tpVpx, "tpVpx");
             this.tpVpx.Name = "tpVpx";
-            this.tpVpx.UseVisualStyleBackColor = true;
             // 
             // lblVP8BitrateK
             // 
@@ -418,21 +433,21 @@
             // 
             // tpXvid
             // 
+            this.tpXvid.BackColor = System.Drawing.SystemColors.Window;
             this.tpXvid.Controls.Add(this.nudXvidQscale);
             this.tpXvid.Controls.Add(this.lblXvidQscale);
             resources.ApplyResources(this.tpXvid, "tpXvid");
             this.tpXvid.Name = "tpXvid";
-            this.tpXvid.UseVisualStyleBackColor = true;
             // 
             // tpNVENC
             // 
+            this.tpNVENC.BackColor = System.Drawing.SystemColors.Window;
             this.tpNVENC.Controls.Add(this.cbNVENCPreset);
             this.tpNVENC.Controls.Add(this.lblNVENCPreset);
             this.tpNVENC.Controls.Add(this.nudNVENCBitrate);
             this.tpNVENC.Controls.Add(this.lblNVENCBitrate);
             resources.ApplyResources(this.tpNVENC, "tpNVENC");
             this.tpNVENC.Name = "tpNVENC";
-            this.tpNVENC.UseVisualStyleBackColor = true;
             // 
             // cbNVENCPreset
             // 
@@ -475,13 +490,13 @@
             // 
             // tpGIF
             // 
+            this.tpGIF.BackColor = System.Drawing.SystemColors.Window;
             this.tpGIF.Controls.Add(this.cbGIFDither);
             this.tpGIF.Controls.Add(this.lblGIFDither);
             this.tpGIF.Controls.Add(this.cbGIFStatsMode);
             this.tpGIF.Controls.Add(this.lblGIFStatsMode);
             resources.ApplyResources(this.tpGIF, "tpGIF");
             this.tpGIF.Name = "tpGIF";
-            this.tpGIF.UseVisualStyleBackColor = true;
             // 
             // lblGIFDither
             // 
@@ -492,6 +507,42 @@
             // 
             resources.ApplyResources(this.lblGIFStatsMode, "lblGIFStatsMode");
             this.lblGIFStatsMode.Name = "lblGIFStatsMode";
+            // 
+            // tbAMF
+            // 
+            this.tbAMF.Controls.Add(this.cbAMFQuality);
+            this.tbAMF.Controls.Add(this.lblAMFQuality);
+            this.tbAMF.Controls.Add(this.cbAMFUsage);
+            this.tbAMF.Controls.Add(this.lblAMFUsage);
+            resources.ApplyResources(this.tbAMF, "tbAMF");
+            this.tbAMF.Name = "tbAMF";
+            this.tbAMF.UseVisualStyleBackColor = true;
+            // 
+            // cbAMFQuality
+            // 
+            this.cbAMFQuality.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbAMFQuality.FormattingEnabled = true;
+            resources.ApplyResources(this.cbAMFQuality, "cbAMFQuality");
+            this.cbAMFQuality.Name = "cbAMFQuality";
+            this.cbAMFQuality.SelectedIndexChanged += new System.EventHandler(this.cbAMFQuality_SelectedIndexChanged);
+            // 
+            // lblAMFQuality
+            // 
+            resources.ApplyResources(this.lblAMFQuality, "lblAMFQuality");
+            this.lblAMFQuality.Name = "lblAMFQuality";
+            // 
+            // cbAMFUsage
+            // 
+            this.cbAMFUsage.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbAMFUsage.FormattingEnabled = true;
+            resources.ApplyResources(this.cbAMFUsage, "cbAMFUsage");
+            this.cbAMFUsage.Name = "cbAMFUsage";
+            this.cbAMFUsage.SelectedIndexChanged += new System.EventHandler(this.cbAMFUsage_SelectedIndexChanged);
+            // 
+            // lblAMFUsage
+            // 
+            resources.ApplyResources(this.lblAMFUsage, "lblAMFUsage");
+            this.lblAMFUsage.Name = "lblAMFUsage";
             // 
             // btnTest
             // 
@@ -518,11 +569,11 @@
             // 
             // tpAAC
             // 
+            this.tpAAC.BackColor = System.Drawing.SystemColors.Window;
             this.tpAAC.Controls.Add(this.tbAACBitrate);
             this.tpAAC.Controls.Add(this.lblAACQuality);
             resources.ApplyResources(this.tpAAC, "tpAAC");
             this.tpAAC.Name = "tpAAC";
-            this.tpAAC.UseVisualStyleBackColor = true;
             // 
             // lblAACQuality
             // 
@@ -531,11 +582,11 @@
             // 
             // tpVorbis
             // 
+            this.tpVorbis.BackColor = System.Drawing.SystemColors.Window;
             this.tpVorbis.Controls.Add(this.tbVorbis_qscale);
             this.tpVorbis.Controls.Add(this.lblVorbisQuality);
             resources.ApplyResources(this.tpVorbis, "tpVorbis");
             this.tpVorbis.Name = "tpVorbis";
-            this.tpVorbis.UseVisualStyleBackColor = true;
             // 
             // lblVorbisQuality
             // 
@@ -544,11 +595,11 @@
             // 
             // tpMP3
             // 
+            this.tpMP3.BackColor = System.Drawing.SystemColors.Window;
             this.tpMP3.Controls.Add(this.tbMP3_qscale);
             this.tpMP3.Controls.Add(this.lblMP3Quality);
             resources.ApplyResources(this.tpMP3, "tpMP3");
             this.tpMP3.Name = "tpMP3";
-            this.tpMP3.UseVisualStyleBackColor = true;
             // 
             // lblMP3Quality
             // 
@@ -649,11 +700,61 @@
             // 
             // eiFFmpeg
             // 
+            this.eiFFmpeg.DefaultFileName = null;
             resources.ApplyResources(this.eiFFmpeg, "eiFFmpeg");
             this.eiFFmpeg.Name = "eiFFmpeg";
             this.eiFFmpeg.ObjectType = null;
             this.eiFFmpeg.ExportRequested += new ShareX.HelpersLib.ExportImportControl.ExportEventHandler(this.eiFFmpeg_ExportRequested);
             this.eiFFmpeg.ImportRequested += new ShareX.HelpersLib.ExportImportControl.ImportEventHandler(this.eiFFmpeg_ImportRequested);
+            // 
+            // tbQSV
+            // 
+            this.tbQSV.Controls.Add(this.cbQSVPreset);
+            this.tbQSV.Controls.Add(this.lblQSVPreset);
+            this.tbQSV.Controls.Add(this.nudQSVBitrate);
+            this.tbQSV.Controls.Add(this.lblQSVBitrate);
+            resources.ApplyResources(this.tbQSV, "tbQSV");
+            this.tbQSV.Name = "tbQSV";
+            this.tbQSV.UseVisualStyleBackColor = true;
+            // 
+            // cbQSVPreset
+            // 
+            this.cbQSVPreset.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbQSVPreset.FormattingEnabled = true;
+            resources.ApplyResources(this.cbQSVPreset, "cbQSVPreset");
+            this.cbQSVPreset.Name = "cbQSVPreset";
+            this.cbQSVPreset.SelectedIndexChanged += new System.EventHandler(this.cbQSVPreset_SelectedIndexChanged);
+            // 
+            // lblQSVPreset
+            // 
+            resources.ApplyResources(this.lblQSVPreset, "lblQSVPreset");
+            this.lblQSVPreset.Name = "lblQSVPreset";
+            // 
+            // nudQSVBitrate
+            // 
+            resources.ApplyResources(this.nudQSVBitrate, "nudQSVBitrate");
+            this.nudQSVBitrate.Maximum = new decimal(new int[] {
+            50000,
+            0,
+            0,
+            0});
+            this.nudQSVBitrate.Minimum = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            this.nudQSVBitrate.Name = "nudQSVBitrate";
+            this.nudQSVBitrate.Value = new decimal(new int[] {
+            3000,
+            0,
+            0,
+            0});
+            this.nudQSVBitrate.ValueChanged += new System.EventHandler(this.nudQSVBitrate_ValueChanged);
+            // 
+            // lblQSVBitrate
+            // 
+            resources.ApplyResources(this.lblQSVBitrate, "lblQSVBitrate");
+            this.lblQSVBitrate.Name = "lblQSVBitrate";
             // 
             // FFmpegOptionsForm
             // 
@@ -674,6 +775,7 @@
             this.MinimizeBox = false;
             this.Name = "FFmpegOptionsForm";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
+            this.Load += new System.EventHandler(this.FFmpegOptionsForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nudx264CRF)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudXvidQscale)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbVorbis_qscale)).EndInit();
@@ -700,6 +802,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudNVENCBitrate)).EndInit();
             this.tpGIF.ResumeLayout(false);
             this.tpGIF.PerformLayout();
+            this.tbAMF.ResumeLayout(false);
+            this.tbAMF.PerformLayout();
             this.tcFFmpegAudioCodecs.ResumeLayout(false);
             this.tpAAC.ResumeLayout(false);
             this.tpAAC.PerformLayout();
@@ -711,6 +815,9 @@
             this.gbSource.PerformLayout();
             this.gbCodecs.ResumeLayout(false);
             this.gbCodecs.PerformLayout();
+            this.tbQSV.ResumeLayout(false);
+            this.tbQSV.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudQSVBitrate)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -781,5 +888,15 @@
         private System.Windows.Forms.Label lblNVENCPreset;
         private System.Windows.Forms.NumericUpDown nudNVENCBitrate;
         private System.Windows.Forms.Label lblNVENCBitrate;
+        private System.Windows.Forms.TabPage tbAMF;
+        private System.Windows.Forms.ComboBox cbAMFUsage;
+        private System.Windows.Forms.Label lblAMFUsage;
+        private System.Windows.Forms.ComboBox cbAMFQuality;
+        private System.Windows.Forms.Label lblAMFQuality;
+        private System.Windows.Forms.TabPage tbQSV;
+        private System.Windows.Forms.ComboBox cbQSVPreset;
+        private System.Windows.Forms.Label lblQSVPreset;
+        private System.Windows.Forms.NumericUpDown nudQSVBitrate;
+        private System.Windows.Forms.Label lblQSVBitrate;
     }
 }

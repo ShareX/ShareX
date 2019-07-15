@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2017 ShareX Team
+    Copyright (c) 2007-2019 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -26,8 +26,6 @@
 using ShareX.HelpersLib;
 using ShareX.UploadersLib.Properties;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace ShareX.UploadersLib.URLShorteners
 {
@@ -66,37 +64,43 @@ namespace ShareX.UploadersLib.URLShorteners
 
     public sealed class CustomURLShortener : URLShortener
     {
-        private CustomUploaderItem customUploader;
+        private CustomUploaderItem uploader;
 
         public CustomURLShortener(CustomUploaderItem customUploaderItem)
         {
-            customUploader = customUploaderItem;
+            uploader = customUploaderItem;
         }
 
         public override UploadResult ShortenURL(string url)
         {
-            if (customUploader.RequestType == CustomUploaderRequestType.POST && !string.IsNullOrEmpty(customUploader.FileFormName))
-                throw new Exception("'File form name' cannot be used with custom URL shortener.");
-
-            if (customUploader.Arguments == null || !customUploader.Arguments.Any(x => x.Value.Contains("$input$") || x.Value.Contains("%input")))
-                throw new Exception("Atleast one '$input$' required for argument value.");
-
             UploadResult result = new UploadResult { URL = url };
+            CustomUploaderInput input = new CustomUploaderInput("", url);
 
-            Dictionary<string, string> args = customUploader.GetArguments(url);
-
-            if (customUploader.RequestType == CustomUploaderRequestType.POST)
+            if (uploader.Body == CustomUploaderBody.None)
             {
-                result.Response = SendRequestMultiPart(customUploader.GetRequestURL(), args, customUploader.GetHeaders(), responseType: customUploader.ResponseType);
+                result.Response = SendRequest(uploader.RequestMethod, uploader.GetRequestURL(input), null, uploader.GetHeaders(input));
+            }
+            else if (uploader.Body == CustomUploaderBody.MultipartFormData)
+            {
+                result.Response = SendRequestMultiPart(uploader.GetRequestURL(input), uploader.GetArguments(input), uploader.GetHeaders(input), null, uploader.RequestMethod);
+            }
+            else if (uploader.Body == CustomUploaderBody.FormURLEncoded)
+            {
+                result.Response = SendRequestURLEncoded(uploader.RequestMethod, uploader.GetRequestURL(input), uploader.GetArguments(input), uploader.GetHeaders(input));
+            }
+            else if (uploader.Body == CustomUploaderBody.JSON || uploader.Body == CustomUploaderBody.XML)
+            {
+                result.Response = SendRequest(uploader.RequestMethod, uploader.GetRequestURL(input), uploader.GetData(input), uploader.GetContentType(),
+                    null, uploader.GetHeaders(input));
             }
             else
             {
-                result.Response = SendRequest(customUploader.GetHttpMethod(), customUploader.GetRequestURL(), args, customUploader.GetHeaders(), responseType: customUploader.ResponseType);
+                throw new Exception("Unsupported request format: " + uploader.Body);
             }
 
             try
             {
-                customUploader.ParseResponse(result, true);
+                uploader.ParseResponse(result, LastResponseInfo, input, true);
             }
             catch (Exception e)
             {

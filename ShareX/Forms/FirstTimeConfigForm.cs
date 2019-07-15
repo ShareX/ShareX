@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2017 ShareX Team
+    Copyright (c) 2007-2019 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -38,7 +38,10 @@ namespace ShareX
             InitializeComponent();
             pbLogo.Image = ImageHelpers.ResizeImage(ShareXResources.Logo, 128, 128);
 
-            cbRunStartup.Checked = IntegrationHelpers.CheckStartupShortcut();
+            StartupState state = StartupManagerSingletonProvider.CurrentStartupManager.State;
+            cbRunStartup.Checked = state == StartupState.Enabled || state == StartupState.EnabledByPolicy;
+            cbRunStartup.Enabled = state != StartupState.DisabledByUser && state != StartupState.DisabledByPolicy && state != StartupState.EnabledByPolicy;
+
             cbShellContextMenuButton.Checked = IntegrationHelpers.CheckShellContextMenuButton();
             cbSendToMenu.Checked = IntegrationHelpers.CheckSendToMenuButton();
 
@@ -60,7 +63,7 @@ namespace ShareX
         {
             if (loaded)
             {
-                IntegrationHelpers.CreateStartupShortcut(cbRunStartup.Checked);
+                StartupManagerSingletonProvider.CurrentStartupManager.State = cbRunStartup.Checked ? StartupState.Enabled : StartupState.Disabled;
             }
         }
 

@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2017 ShareX Team
+    Copyright (c) 2007-2019 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -41,11 +41,30 @@ namespace ShareX.UploadersLib.SharingServices
                 pushbulletSettings.DeviceList.IsValidIndex(pushbulletSettings.SelectedDevice);
         }
 
-        public override void ShareURL(string url, UploadersConfig config)
+        public override URLSharer CreateSharer(UploadersConfig config, TaskReferenceHelper taskInfo)
         {
-            new Pushbullet(config.PushbulletSettings).PushLink(url, "ShareX: URL share");
+            return new PushbulletSharer(config.PushbulletSettings);
         }
 
         public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpPushbullet;
+    }
+
+    public sealed class PushbulletSharer : URLSharer
+    {
+        public PushbulletSettings Settings { get; private set; }
+
+        public PushbulletSharer(PushbulletSettings settings)
+        {
+            Settings = settings;
+        }
+
+        public override UploadResult ShareURL(string url)
+        {
+            UploadResult result = new UploadResult { URL = url, IsURLExpected = false };
+
+            new Pushbullet(Settings).PushLink(url, "ShareX: URL share");
+
+            return result;
+        }
     }
 }

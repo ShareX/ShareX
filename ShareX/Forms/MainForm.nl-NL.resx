@@ -207,9 +207,6 @@
   <data name="tsmiIndexFolder.Text" xml:space="preserve">
     <value>Indexmap...</value>
   </data>
-  <data name="tsmiFTPClient.Text" xml:space="preserve">
-    <value>FTP programma...</value>
-  </data>
   <data name="tsmiTweetMessage.Text" xml:space="preserve">
     <value>Tweet bericht...</value>
   </data>
@@ -459,9 +456,6 @@
   <data name="tsmiTrayIndexFolder.Text" xml:space="preserve">
     <value>Indexmap...</value>
   </data>
-  <data name="tsmiTrayFTPClient.Text" xml:space="preserve">
-    <value>FTP programma...</value>
-  </data>
   <data name="tsmiTrayTweetMessage.Text" xml:space="preserve">
     <value>Tweet bericht...</value>
   </data>
@@ -573,12 +567,6 @@
   <data name="tsmiTrayColorPicker.Text" xml:space="preserve">
     <value>Kleurenkiezer...</value>
   </data>
-  <data name="tsmiTrayWebpageCapture.Text" xml:space="preserve">
-    <value>Webpagina vastleggen...</value>
-  </data>
-  <data name="tsmiWebpageCapture.Text" xml:space="preserve">
-    <value>Webpagina vastleggen...</value>
-  </data>
   <data name="tsmiTrayToggleHotkeys.Text" xml:space="preserve">
     <value>Schakel sneltoetsen uit</value>
   </data>
@@ -620,5 +608,62 @@
   </data>
   <data name="tsmiTrayDebug.Text" xml:space="preserve">
     <value>Foutopsporing</value>
+  </data>
+  <data name="tsbNews.Text" xml:space="preserve">
+    <value>Nieuws</value>
+  </data>
+  <data name="tsmiShortenURL.Text" xml:space="preserve">
+    <value>URL verkorten...</value>
+  </data>
+  <data name="tsmiDeleteSelectedItem.Text" xml:space="preserve">
+    <value>Verwijder taak van lijst</value>
+  </data>
+  <data name="tsmiOCRImage.Text" xml:space="preserve">
+    <value>OCR afbeelding...</value>
+  </data>
+  <data name="tsmiHideColumns.Text" xml:space="preserve">
+    <value>Kolommen verbergen</value>
+  </data>
+  <data name="tsmiTrayShortenURL.Text" xml:space="preserve">
+    <value>Verkort URL...</value>
+  </data>
+  <data name="tsbDonate.Text" xml:space="preserve">
+    <value>Doneer...</value>
+  </data>
+  <data name="btnCloseNews.Text" xml:space="preserve">
+    <value>Sluiten</value>
+  </data>
+  <data name="tsmiTextCapture.Text" xml:space="preserve">
+    <value>Tekst vastleggen (OCR)...</value>
+  </data>
+  <data name="tsmiShowCursor.Text" xml:space="preserve">
+    <value>Laat cursor zien</value>
+  </data>
+  <data name="tsmiUploadText.Text" xml:space="preserve">
+    <value>Upload tekst...</value>
+  </data>
+  <data name="tsmiImageEditor.Text" xml:space="preserve">
+    <value>Foto-editor...</value>
+  </data>
+  <data name="tsbAbout.Text" xml:space="preserve">
+    <value>Over...</value>
+  </data>
+  <data name="tsmiSearchImage.Text" xml:space="preserve">
+    <value>Google afbeelding zoeken...</value>
+  </data>
+  <data name="tsmiCombineImages.Text" xml:space="preserve">
+    <value>Afbeeldingen combineren...</value>
+  </data>
+  <data name="tsmiTrayTextCapture.Text" xml:space="preserve">
+    <value>Tekst vastleggen (OCR)...</value>
+  </data>
+  <data name="tsmiTrayUploadText.Text" xml:space="preserve">
+    <value>Upload tekst...</value>
+  </data>
+  <data name="tsmiTrayImageEditor.Text" xml:space="preserve">
+    <value>Foto-editor...</value>
+  </data>
+  <data name="tsmiTrayShowCursor.Text" xml:space="preserve">
+    <value>Laat cursor zien</value>
   </data>
 </root>

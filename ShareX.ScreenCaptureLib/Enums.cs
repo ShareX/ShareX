@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2017 ShareX Team
+    Copyright (c) 2007-2019 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -52,12 +52,7 @@ namespace ShareX.ScreenCaptureLib
         ActiveMonitor,
         AnnotateRunAfterCaptureTasks,
         AnnotateContinueTask,
-        AnnotateCancelTask,
-        AnnotateSaveImage,
-        AnnotateSaveImageAs,
-        AnnotateCopyImage,
-        AnnotateUploadImage,
-        AnnotatePrintImage
+        AnnotateCancelTask
     }
 
     public enum NodeType
@@ -84,7 +79,7 @@ namespace ShareX.ScreenCaptureLib
 
     internal enum NodeShape
     {
-        Square, Circle, Diamond
+        Square, Circle, Diamond, CustomNode
     }
 
     public enum FFmpegVideoCodec
@@ -102,7 +97,19 @@ namespace ShareX.ScreenCaptureLib
         [Description("H.264 NVENC (mp4)")]
         h264_nvenc,
         [Description("HEVC NVENC (mp4)")]
-        hevc_nvenc
+        hevc_nvenc,
+        [Description("WebP")]
+        libwebp,
+        [Description("APNG")]
+        apng,
+        [Description("H.264 AMF (mp4)")]
+        h264_amf,
+        [Description("HEVC AMF (mp4)")]
+        hevc_amf,
+        [Description("H.264 QuickSync (mp4)")]
+        h264_qsv,
+        [Description("HEVC QuickSync (mp4)")]
+        hevc_qsv
     }
 
     public enum FFmpegPreset
@@ -153,6 +160,46 @@ namespace ShareX.ScreenCaptureLib
         lossless,
         [Description("Lossless high performance")]
         losslesshp
+    }
+
+    public enum FFmpegAMFUsage
+    {
+        [Description("Generic Transcoding")]
+        transcoding = 0,
+        [Description("Ultra Low Latency")]
+        ultralowlatency = 1,
+        [Description("Low Latency")]
+        lowlatency = 2,
+        [Description("Webcam")]
+        webcam = 3
+    }
+
+    public enum FFmpegAMFQuality
+    {
+        [Description("Prefer Speed")]
+        speed = 0,
+        [Description("Balanced")]
+        balanced = 1,
+        [Description("Prefer Quality")]
+        quality = 2
+    }
+
+    public enum FFmpegQSVPreset
+    {
+        [Description("Very fast")]
+        veryfast,
+        [Description("Faster")]
+        faster,
+        [Description("Fast")]
+        fast,
+        [Description("Medium")]
+        medium,
+        [Description("Slow")]
+        slow,
+        [Description("Slower")]
+        slower,
+        [Description("Very slow")]
+        veryslow
     }
 
     public enum FFmpegTune
@@ -211,7 +258,8 @@ namespace ShareX.ScreenCaptureLib
     {
         Region,
         Drawing,
-        Effect
+        Effect,
+        Tool
     }
 
     public enum ShapeType // Localized
@@ -219,6 +267,7 @@ namespace ShareX.ScreenCaptureLib
         RegionRectangle,
         RegionEllipse,
         RegionFreehand,
+        ToolSelect,
         DrawingRectangle,
         DrawingEllipse,
         DrawingFreehand,
@@ -228,19 +277,15 @@ namespace ShareX.ScreenCaptureLib
         DrawingTextBackground,
         DrawingSpeechBalloon,
         DrawingStep,
+        DrawingMagnify,
         DrawingImage,
         DrawingImageScreen,
+        DrawingSticker,
+        DrawingCursor,
         EffectBlur,
         EffectPixelate,
         EffectHighlight,
-        DrawingCrop
-    }
-
-    public enum RegionAnnotateMode
-    {
-        Capture,
-        Rectangle,
-        Pen
+        ToolCrop
     }
 
     public enum ScrollingCaptureScrollMethod // Localized
@@ -257,5 +302,30 @@ namespace ShareX.ScreenCaptureLib
         SendMessageTop,
         KeyPressHome,
         None
+    }
+
+    public enum ImageEditorStartMode // Localized
+    {
+        AutoSize,
+        Normal,
+        Maximized,
+        PreviousState,
+        Fullscreen
+    }
+
+    public enum ImageEditorInterpolationMode // Localized
+    {
+        HighQualityBicubic,
+        Bicubic,
+        HighQualityBilinear,
+        Bilinear,
+        NearestNeighbor
+    }
+
+    public enum ImageInsertMethod
+    {
+        Center,
+        CanvasExpandDown,
+        CanvasExpandRight
     }
 }

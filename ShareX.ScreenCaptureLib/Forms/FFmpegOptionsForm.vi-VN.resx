@@ -130,12 +130,8 @@
     <value>Sử dụng đường dẫn tùy chỉnh</value>
   </data>
   <data name="nudx264CRF.ToolTip" xml:space="preserve">
-    <value>Nhân tố thừa số không đổi (Constant Rate Factor - CRF): Phạm vi của bộ lượng tử hóa là 0-51: trong đó 0 là lossless (không mất mát thông tin), 23 là mặc định, 51 là tồi nhất.
-Giá trị thấp hơn sẽ cho chất lượng cao hơn và phạm vi ổn định theo đánh giá chủ quan là 18-28.
-18 là giá trị gần như lossless cho mắt người: nó nhìn giống hoặc gần giống tương tự đầu vào nhưng về mặt kỹ thuật thì không phải là lossless.
-Phạm vi được tính theo lũy thừa (số mũ), vì vậy tăng giá trị CRF lên +6 thì số bit rate sẽ tăng lên khoảng 2 lần trong khi nếu giảm CRF -6 thì số bit rate sẽ giảm đi 2 lần.
-Cách dùng phổ biến là chọn giá trị cao nhất mà vẫn cho kết quả có thể chấp nhận được.
-Nếu như đầu ra có vẻ tốt thì thử giá trị cao hơn và nếu như nhìn không tốt thì chọn giá trị thấp hơn.</value>
+    <value>Nhân tố thừa số không đổi (Constant Rate Factor - CRF): Phạm vi của bộ lượng tử hóa là 0-51: trong đó 0 là lossless (không mất mát thông tin), 30 là mặc định, 51 là tồi nhất.
+Giá trị cao hơn cho kết quả tệ hơn nhưng kích thước tệp sẽ nhỏ hơn</value>
   </data>
   <data name="tbAACBitrate.ToolTip" xml:space="preserve">
     <value>Mặc định là 128k.</value>
@@ -180,7 +176,7 @@ Nếu như đầu ra có vẻ tốt thì thử giá trị cao hơn và nếu nh�
     <value>Nguồn audio:</value>
   </data>
   <data name="lblAudioCodec.Text" xml:space="preserve">
-    <value>Audio codec:</value>
+    <value>Codec âm thanh/Audio codec:</value>
   </data>
   <data name="lblAACQuality.Text" xml:space="preserve">
     <value>Bitrate:</value>
@@ -201,7 +197,7 @@ Nếu như đầu ra có vẻ tốt thì thử giá trị cao hơn và nếu nh�
     <value>Biến bitrate:</value>
   </data>
   <data name="tbMP3_qscale.ToolTip" xml:space="preserve">
-    <value>Range is 0-9 where a lower value is a higher quality. 0-3 will normally produce transparent results, 4 (default) should be close to perceptual transparency, and 6 produces an "acceptable" quality.</value>
+    <value>Khoảng 0-9 với giá trị thấp hơn cho chất lượng cao hơn. 0-3 bình thường sẽ cho kết quả trong suốt, 4 (mặc định) sẽ gần với độ trong suốt thấy được, và 6 cho kết quả "chấp nhận được"</value>
   </data>
   <data name="tbVorbis_qscale.ToolTip" xml:space="preserve">
     <value>Phạm vi là 0 - 10, 10 cho chất lượng cao nhất, 3-6 là phạm vi tốt để dùng. Mặc định là 3.</value>
@@ -210,9 +206,9 @@ Nếu như đầu ra có vẻ tốt thì thử giá trị cao hơn và nếu nh�
     <value>Cài đặt thiết bị ghi</value>
   </data>
   <data name="cbx264Preset.ToolTip" xml:space="preserve">
-    <value>Bộ thiết lập trước (preset) là một bộ các lựa chọn cung cấp từ tốc độ encode nhất định tới độ nén. Bộ thiết lập chậm hơn sẽ cho khả năng nén cao hơn (khă năng nén là chất lượng trên kích thước tệp).
-Điều này có nghĩa là, nếu bạn mong muốn một kích thước tệp hoặc bit rate nhất định, bộ thiết lập chậm hơn sẽ cho chất lượng cao hơn.
-Tương tự, với chất lượng encode không đổi, bạn sẽ giảm được số bit rate bằng việc chọn bộ thiết lập chậm hơn.</value>
+    <value>Bộ thiết lập nhanh hơn = Nén nhanh hơn nhưng kích thước tệp lớn hơn.
+Bộ thiết lập chậm hơn = Nén chậm hơn nhưng kích thước tệp nhỏ hơn.
+Khi nén ở thời gian thực (vd: Ghi lại màn hình), bộ thiết lập cần phải nhanh nhất có thể.</value>
   </data>
   <data name="lblx264Preset.Text" xml:space="preserve">
     <value>Bộ thiết lập:</value>
@@ -225,5 +221,21 @@ Tương tự, với chất lượng encode không đổi, bạn sẽ giảm đư
   </data>
   <data name="lblHelperDevices.Text" xml:space="preserve">
     <value>Cài đặt "screen-capture-recorder" và "virtual-audio-capturer" cho nguồn video/audio.</value>
+  </data>
+  <data name="lblNVENCBitrate.Text" xml:space="preserve">
+    <value>Bitrate:</value>
+  </data>
+  <data name="pbx264PresetWarning.ToolTip" xml:space="preserve">
+    <value>Khuyến nghị chọn bộ thiết lập nhanh nhất có thể khi nén theo thời gian thực như ghi lại màn hình.
+Nếu không bộ thiết lập không thể theo kịp đoạn ghi hình và tình trạng rớt khung hình sẽ xảy ra nhiều.</value>
+  </data>
+  <data name="lblVP8BitrateK.Text" xml:space="preserve">
+    <value>kbit/giây</value>
+  </data>
+  <data name="lblNVENCPreset.Text" xml:space="preserve">
+    <value>Bộ thiết lập:</value>
+  </data>
+  <data name="pbAudioCodecWarning.ToolTip" xml:space="preserve">
+    <value>Codec âm thanh này không được hỗ trợ vởi video container được chọn</value>
   </data>
 </root>

@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2017 ShareX Team
+    Copyright (c) 2007-2019 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -145,10 +145,10 @@ namespace ShareX.HelpersLib
 
         public static void AddDiamond(this GraphicsPath graphicsPath, RectangleF rect)
         {
-            PointF p1 = new PointF(rect.X + rect.Width / 2.0f, rect.Y);
-            PointF p2 = new PointF(rect.X + rect.Width, rect.Y + rect.Height / 2.0f);
-            PointF p3 = new PointF(rect.X + rect.Width / 2.0f, rect.Y + rect.Height);
-            PointF p4 = new PointF(rect.X, rect.Y + rect.Height / 2.0f);
+            PointF p1 = new PointF(rect.X + (rect.Width / 2.0f), rect.Y);
+            PointF p2 = new PointF(rect.X + rect.Width, rect.Y + (rect.Height / 2.0f));
+            PointF p3 = new PointF(rect.X + (rect.Width / 2.0f), rect.Y + rect.Height);
+            PointF p4 = new PointF(rect.X, rect.Y + (rect.Height / 2.0f));
 
             graphicsPath.AddPolygon(new PointF[] { p1, p2, p3, p4 });
         }
@@ -161,8 +161,8 @@ namespace ShareX.HelpersLib
 
             for (int i = 0; i < sideCount; i++)
             {
-                points[i] = new PointF(rect.X + ((rect.Width / 2.0f) * (float)Math.Cos(a)) + rect.Width / 2.0f,
-                    rect.Y + ((rect.Height / 2.0f) * (float)Math.Sin(a)) + rect.Height / 2.0f);
+                points[i] = new PointF(rect.X + ((rect.Width / 2.0f) * (float)Math.Cos(a)) + (rect.Width / 2.0f),
+                    rect.Y + ((rect.Height / 2.0f) * (float)Math.Sin(a)) + (rect.Height / 2.0f));
 
                 a += (float)Math.PI * 2.0f / sideCount;
             }

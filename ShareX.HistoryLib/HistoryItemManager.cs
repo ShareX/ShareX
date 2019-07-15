@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2017 ShareX Team
+    Copyright (c) 2007-2019 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using System;
 using System.IO;
 using System.Linq;
 
@@ -48,8 +49,13 @@ namespace ShareX.HistoryLib
         public bool IsImageFile { get; private set; }
         public bool IsTextFile { get; private set; }
 
-        public HistoryItemManager()
+        private Action<string> uploadFile, editImage;
+
+        public HistoryItemManager(Action<string> uploadFile, Action<string> editImage)
         {
+            this.uploadFile = uploadFile;
+            this.editImage = editImage;
+
             InitializeComponent();
         }
 
@@ -131,7 +137,7 @@ namespace ShareX.HistoryLib
 
         public void OpenFile()
         {
-            if (HistoryItem != null && IsFileExist) URLHelpers.OpenURL(HistoryItem.Filepath);
+            if (HistoryItem != null && IsFileExist) Helpers.OpenFile(HistoryItem.Filepath);
         }
 
         public void OpenFolder()
@@ -153,7 +159,7 @@ namespace ShareX.HistoryLib
                 }
                 else if (IsFileExist)
                 {
-                    URLHelpers.OpenURL(HistoryItem.Filepath);
+                    Helpers.OpenFile(HistoryItem.Filepath);
                 }
             }
         }
@@ -259,6 +265,21 @@ namespace ShareX.HistoryLib
             }
         }
 
+        public void CopyMarkdownLink()
+        {
+            if (HistoryItem != null && IsURLExist) ClipboardHelpers.CopyText(string.Format("[{0}]({1})", HistoryItem.Filename, HistoryItem.URL));
+        }
+
+        public void CopyMarkdownImage()
+        {
+            if (HistoryItem != null && IsImageURL) ClipboardHelpers.CopyText(string.Format("![{0}]({1})", HistoryItem.Filename, HistoryItem.URL));
+        }
+
+        public void CopyMarkdownLinkedImage()
+        {
+            if (HistoryItem != null && IsImageURL) ClipboardHelpers.CopyText(string.Format("[![{0}]({1})]({2})", HistoryItem.Filename, HistoryItem.URL, HistoryItem.URL));
+        }
+
         public void CopyFilePath()
         {
             if (HistoryItem != null && IsFilePathValid) ClipboardHelpers.CopyText(HistoryItem.Filepath);
@@ -287,6 +308,16 @@ namespace ShareX.HistoryLib
         public void ShowMoreInfo()
         {
             new HistoryItemInfoForm(HistoryItem).Show();
+        }
+
+        public void UploadFile()
+        {
+            if (uploadFile != null && HistoryItem != null && IsFileExist) uploadFile(HistoryItem.Filepath);
+        }
+
+        public void EditImage()
+        {
+            if (editImage != null && HistoryItem != null && IsImageFile) editImage(HistoryItem.Filepath);
         }
     }
 }

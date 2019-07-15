@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2017 ShareX Team
+    Copyright (c) 2007-2019 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using System.Collections.Generic;
 using System.Drawing;
 
 namespace ShareX.ScreenCaptureLib
@@ -43,6 +44,14 @@ namespace ShareX.ScreenCaptureLib
         public Color FillColor { get; set; } = TransparentColor;
         public int DrawingCornerRadius { get; set; } = 3;
         public bool Shadow { get; set; } = true;
+        public Color ShadowColor { get; set; } = Color.FromArgb(125, 0, 0, 0);
+        public Point ShadowOffset { get; set; } = new Point(0, 1);
+
+        // Line, arrow drawing
+        public int LineCenterPointCount { get; set; } = 1;
+
+        // Arrow drawing
+        public bool ArrowHeadsBothSide { get; set; } = false;
 
         // Text (Outline) drawing
         public TextDrawingOptions TextOutlineOptions { get; set; } = new TextDrawingOptions()
@@ -64,16 +73,34 @@ namespace ShareX.ScreenCaptureLib
         public int TextBorderSize { get; set; } = 0;
         public Color TextFillColor { get; set; } = PrimaryColor;
 
+        // Image drawing
+        public ImageEditorInterpolationMode ImageInterpolationMode = ImageEditorInterpolationMode.NearestNeighbor;
+        public string LastImageFilePath { get; set; }
+
         // Step drawing
         public Color StepBorderColor { get; set; } = SecondaryColor;
         public int StepBorderSize { get; set; } = 0;
         public Color StepFillColor { get; set; } = PrimaryColor;
+        public int StepFontSize { get; set; } = 18;
+        public bool StepUseLetters { get; set; } = false;
+
+        // Magnify drawing
+        public int MagnifyStrength { get; set; } = 200;
+
+        // Sticker drawing
+        public List<StickerPackInfo> StickerPacks = new List<StickerPackInfo>()
+        {
+            new StickerPackInfo(@"Stickers\BlobEmoji", "Blob Emoji")
+        };
+        public int SelectedStickerPack = 0;
+        public int StickerSize { get; set; } = 64;
+        public string LastStickerPath { get; set; }
 
         // Blur effect
-        public int BlurRadius { get; set; } = 15;
+        public int BlurRadius { get; set; } = 35;
 
         // Pixelate effect
-        public int PixelateSize { get; set; } = 8;
+        public int PixelateSize { get; set; } = 15;
 
         // Highlight effect
         public Color HighlightColor { get; set; } = Color.Yellow;

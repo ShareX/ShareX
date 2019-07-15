@@ -133,7 +133,7 @@
     <value>过滤器：</value>
   </data>
   <data name="lblFilterExample.Text" xml:space="preserve">
-    <value>例如: *.PNG</value>
+    <value>例如: *.png</value>
   </data>
   <data name="lblFolderPath.Text" xml:space="preserve">
     <value>文件夹路径：</value>

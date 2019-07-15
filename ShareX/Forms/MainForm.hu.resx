@@ -207,9 +207,6 @@
   <data name="tsmiRuler.Text" xml:space="preserve">
     <value>Vonalzó...</value>
   </data>
-  <data name="tsmiFTPClient.Text" xml:space="preserve">
-    <value>FTP kliens...</value>
-  </data>
   <data name="tsmiTweetMessage.Text" xml:space="preserve">
     <value>Tweet üzenet...</value>
   </data>
@@ -470,9 +467,6 @@
   </data>
   <data name="tsmiTrayRuler.Text" xml:space="preserve">
     <value>Vonalzó...</value>
-  </data>
-  <data name="tsmiTrayFTPClient.Text" xml:space="preserve">
-    <value>FTP kliens...</value>
   </data>
   <data name="tsmiTrayTweetMessage.Text" xml:space="preserve">
     <value>Tweet üzenet...</value>

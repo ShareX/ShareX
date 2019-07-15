@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2017 ShareX Team
+    Copyright (c) 2007-2019 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -24,11 +24,10 @@
 #endregion License Information (GPL v3)
 
 using IWshRuntimeLibrary;
-using ShareX.HelpersLib.Properties;
 using Shell32;
 using System;
 using System.IO;
-using System.Windows.Forms;
+using System.Reflection;
 using File = System.IO.File;
 using Folder = Shell32.Folder;
 
@@ -45,7 +44,7 @@ namespace ShareX.HelpersLib
         public static bool SetShortcut(bool create, string shortcutPath, string targetPath = "", string arguments = "")
         {
             try
-            { 
+            {
                 if (create)
                 {
                     return Create(shortcutPath, targetPath, arguments);
@@ -116,8 +115,9 @@ namespace ShareX.HelpersLib
 
             try
             {
-                Shell shell = new ShellClass();
-                Folder folder = shell.NameSpace(directory);
+                Type t = Type.GetTypeFromProgID("Shell.Application");
+                object shell = Activator.CreateInstance(t);
+                Folder folder = (Folder)t.InvokeMember("NameSpace", BindingFlags.InvokeMethod, null, shell, new object[] { directory });
                 FolderItem folderItem = folder.ParseName(filename);
 
                 if (folderItem != null)

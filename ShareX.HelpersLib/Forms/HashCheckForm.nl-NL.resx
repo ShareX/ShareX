@@ -138,4 +138,25 @@
   <data name="lblTarget.Text" xml:space="preserve">
     <value>Doel:</value>
   </data>
+  <data name="lblHashCheckHex.Text" xml:space="preserve">
+    <value>Hexadecimaal:</value>
+  </data>
+  <data name="btnHashCheckCopyAll.Text" xml:space="preserve">
+    <value>Kopieer alles</value>
+  </data>
+  <data name="btnHashCheckDecodeBase64.Text" xml:space="preserve">
+    <value>Decoderen</value>
+  </data>
+  <data name="btnHashCheckDecodeASCII.Text" xml:space="preserve">
+    <value>Decoderen</value>
+  </data>
+  <data name="btnHashCheckDecodeHex.Text" xml:space="preserve">
+    <value>Decoderen</value>
+  </data>
+  <data name="btnHashCheckDecodeBinary.Text" xml:space="preserve">
+    <value>Decoderen</value>
+  </data>
+  <data name="tpTextConversions.Text" xml:space="preserve">
+    <value>Text conversies</value>
+  </data>
 </root>

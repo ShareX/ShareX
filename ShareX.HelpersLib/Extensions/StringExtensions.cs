@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2017 ShareX Team
+    Copyright (c) 2007-2019 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -167,6 +167,39 @@ namespace ShareX.HelpersLib
             return text;
         }
 
+        public static string BatchReplace(this string text, Dictionary<string, string> replace)
+        {
+            StringBuilder sb = new StringBuilder();
+
+            for (int i = 0; i < text.Length; i++)
+            {
+                string current = text.Substring(i);
+
+                bool replaced = false;
+
+                foreach (KeyValuePair<string, string> entry in replace)
+                {
+                    if (current.StartsWith(entry.Key))
+                    {
+                        if (!string.IsNullOrEmpty(entry.Value))
+                        {
+                            sb.Append(entry.Value);
+                        }
+                        i += entry.Key.Length - 1;
+                        replaced = true;
+                        continue;
+                    }
+                }
+
+                if (!replaced)
+                {
+                    sb.Append(text[i]);
+                }
+            }
+
+            return sb.ToString();
+        }
+
         public static string RemoveWhiteSpaces(this string str)
         {
             return new string(str.Where(c => !char.IsWhiteSpace(c)).ToArray());
@@ -257,9 +290,7 @@ namespace ShareX.HelpersLib
         {
             int f = 0;
             int b = 0;
-            while (text.Length > f
-                   && 0 <= (f = text.IndexOf(front, f))
-                   && 0 <= (b = text.IndexOf(back, f + front.Length)))
+            while (text.Length > f && (f = text.IndexOf(front, f)) >= 0 && (b = text.IndexOf(back, f + front.Length)) >= 0)
             {
                 string result = text.Substring(f, (b + back.Length) - f);
                 yield return new Tuple<string, string>(result, result.Substring(front.Length, (result.Length - back.Length) - front.Length));
@@ -287,7 +318,7 @@ namespace ShareX.HelpersLib
                 for (int i = text.Length - 1; i >= 0; --i)
                 {
                     int temp = digits.IndexOf(text[i]) * (int)Math.Pow(radix, text.Length - (i + 1));
-                    if (0 > temp)
+                    if (temp < 0)
                     {
                         throw new IndexOutOfRangeException("Text contains characters not found in digits.");
                     }

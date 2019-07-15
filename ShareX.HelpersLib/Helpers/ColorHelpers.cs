@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2017 ShareX Team
+    Copyright (c) 2007-2019 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -25,27 +25,47 @@
 
 using System;
 using System.Drawing;
-using System.Linq;
 using System.Text.RegularExpressions;
 
 namespace ShareX.HelpersLib
 {
     public static class ColorHelpers
     {
-        public static double ValidColor(double number)
+        public static Color[] StandardColors = new Color[]
         {
-            return number.Between(0, 1);
-        }
-
-        public static int ValidColor(int number)
-        {
-            return number.Between(0, 255);
-        }
-
-        public static byte ValidColor(byte number)
-        {
-            return number.Between(0, 255);
-        }
+            Color.FromArgb(0, 0, 0),
+            Color.FromArgb(64, 64, 64),
+            Color.FromArgb(255, 0, 0),
+            Color.FromArgb(255, 106, 0),
+            Color.FromArgb(255, 216, 0),
+            Color.FromArgb(182, 255, 0),
+            Color.FromArgb(76, 255, 0),
+            Color.FromArgb(0, 255, 33),
+            Color.FromArgb(0, 255, 144),
+            Color.FromArgb(0, 255, 255),
+            Color.FromArgb(0, 148, 255),
+            Color.FromArgb(0, 38, 255),
+            Color.FromArgb(72, 0, 255),
+            Color.FromArgb(178, 0, 255),
+            Color.FromArgb(255, 0, 220),
+            Color.FromArgb(255, 0, 110),
+            Color.FromArgb(255, 255, 255),
+            Color.FromArgb(128, 128, 128),
+            Color.FromArgb(127, 0, 0),
+            Color.FromArgb(127, 51, 0),
+            Color.FromArgb(127, 106, 0),
+            Color.FromArgb(91, 127, 0),
+            Color.FromArgb(38, 127, 0),
+            Color.FromArgb(0, 127, 14),
+            Color.FromArgb(0, 127, 70),
+            Color.FromArgb(0, 127, 127),
+            Color.FromArgb(0, 74, 127),
+            Color.FromArgb(0, 19, 127),
+            Color.FromArgb(33, 0, 127),
+            Color.FromArgb(87, 0, 127),
+            Color.FromArgb(127, 0, 110),
+            Color.FromArgb(127, 0, 55)
+        };
 
         #region Convert Color to ...
 
@@ -110,11 +130,11 @@ namespace ShareX.HelpersLib
 
             if (Max == color.R)
             {
-                if (color.G < color.B) hsb.Hue = (360 + q * (color.G - color.B)) / 360;
+                if (color.G < color.B) hsb.Hue = (360 + (q * (color.G - color.B))) / 360;
                 else hsb.Hue = q * (color.G - color.B) / 360;
             }
-            else if (Max == color.G) hsb.Hue = (120 + q * (color.B - color.R)) / 360;
-            else if (Max == color.B) hsb.Hue = (240 + q * (color.R - color.G)) / 360;
+            else if (Max == color.G) hsb.Hue = (120 + (q * (color.B - color.R))) / 360;
+            else if (Max == color.B) hsb.Hue = (240 + (q * (color.R - color.G))) / 360;
             else hsb.Hue = 0.0;
 
             hsb.Alpha = color.A;
@@ -236,37 +256,37 @@ namespace ShareX.HelpersLib
 
             if (hsb.Hue >= 0 && hsb.Hue <= (double)1 / 6)
             {
-                Mid = (int)Math.Round(((hsb.Hue - 0) * q) * 1530 + Min);
+                Mid = (int)Math.Round((((hsb.Hue - 0) * q) * 1530) + Min);
                 return Color.FromArgb(hsb.Alpha, Max, Mid, Min);
             }
 
             if (hsb.Hue <= (double)1 / 3)
             {
-                Mid = (int)Math.Round(-((hsb.Hue - (double)1 / 6) * q) * 1530 + Max);
+                Mid = (int)Math.Round((-((hsb.Hue - ((double)1 / 6)) * q) * 1530) + Max);
                 return Color.FromArgb(hsb.Alpha, Mid, Max, Min);
             }
 
             if (hsb.Hue <= 0.5)
             {
-                Mid = (int)Math.Round(((hsb.Hue - (double)1 / 3) * q) * 1530 + Min);
+                Mid = (int)Math.Round((((hsb.Hue - ((double)1 / 3)) * q) * 1530) + Min);
                 return Color.FromArgb(hsb.Alpha, Min, Max, Mid);
             }
 
             if (hsb.Hue <= (double)2 / 3)
             {
-                Mid = (int)Math.Round(-((hsb.Hue - 0.5) * q) * 1530 + Max);
+                Mid = (int)Math.Round((-((hsb.Hue - 0.5) * q) * 1530) + Max);
                 return Color.FromArgb(hsb.Alpha, Min, Mid, Max);
             }
 
             if (hsb.Hue <= (double)5 / 6)
             {
-                Mid = (int)Math.Round(((hsb.Hue - (double)2 / 3) * q) * 1530 + Min);
+                Mid = (int)Math.Round((((hsb.Hue - ((double)2 / 3)) * q) * 1530) + Min);
                 return Color.FromArgb(hsb.Alpha, Mid, Min, Max);
             }
 
             if (hsb.Hue <= 1.0)
             {
-                Mid = (int)Math.Round(-((hsb.Hue - (double)5 / 6) * q) * 1530 + Max);
+                Mid = (int)Math.Round((-((hsb.Hue - ((double)5 / 6)) * q) * 1530) + Max);
                 return Color.FromArgb(hsb.Alpha, Max, Min, Mid);
             }
 
@@ -284,9 +304,9 @@ namespace ShareX.HelpersLib
                 return Color.FromArgb(cmyk.Alpha, 0, 0, 0);
             }
 
-            double c = cmyk.Cyan * (1 - cmyk.Key) + cmyk.Key;
-            double m = cmyk.Magenta * (1 - cmyk.Key) + cmyk.Key;
-            double y = cmyk.Yellow * (1 - cmyk.Key) + cmyk.Key;
+            double c = (cmyk.Cyan * (1 - cmyk.Key)) + cmyk.Key;
+            double m = (cmyk.Magenta * (1 - cmyk.Key)) + cmyk.Key;
+            double y = (cmyk.Yellow * (1 - cmyk.Key)) + cmyk.Key;
 
             int r = (int)Math.Round((1 - c) * 255);
             int g = (int)Math.Round((1 - m) * 255);
@@ -296,6 +316,21 @@ namespace ShareX.HelpersLib
         }
 
         #endregion Convert CMYK to ...
+
+        public static double ValidColor(double number)
+        {
+            return number.Clamp(0, 1);
+        }
+
+        public static int ValidColor(int number)
+        {
+            return number.Clamp(0, 255);
+        }
+
+        public static byte ValidColor(byte number)
+        {
+            return number.Clamp<byte>(0, 255);
+        }
 
         public static Color RandomColor()
         {
@@ -336,7 +371,7 @@ namespace ShareX.HelpersLib
 
         public static int PerceivedBrightness(Color color)
         {
-            return (int)Math.Sqrt(color.R * color.R * .299 + color.G * color.G * .587 + color.B * color.B * .114);
+            return (int)Math.Sqrt((color.R * color.R * .299) + (color.G * color.G * .587) + (color.B * color.B * .114));
         }
 
         public static Color VisibleColor(Color color)
@@ -352,6 +387,38 @@ namespace ShareX.HelpersLib
         public static Color Lerp(Color from, Color to, float amount)
         {
             return Color.FromArgb((int)MathHelpers.Lerp(from.R, to.R, amount), (int)MathHelpers.Lerp(from.G, to.G, amount), (int)MathHelpers.Lerp(from.B, to.B, amount));
+        }
+
+        public static Color DeterministicStringToColor(string text)
+        {
+            int hash = text.GetHashCode();
+            int r = (hash & 0xFF0000) >> 16;
+            int g = (hash & 0x00FF00) >> 8;
+            int b = hash & 0x0000FF;
+            return Color.FromArgb(r, g, b);
+        }
+
+        public static int ColorDifference(Color color1, Color color2)
+        {
+            int rDiff = Math.Abs(color1.R - color2.R);
+            int gDiff = Math.Abs(color1.G - color2.G);
+            int bDiff = Math.Abs(color1.B - color2.B);
+            return rDiff + gDiff + bDiff;
+        }
+
+        public static bool ColorsAreClose(Color color1, Color color2, int threshold)
+        {
+            return ColorDifference(color1, color2) <= threshold;
+        }
+
+        public static Color LighterColor(Color color, float amount)
+        {
+            return Lerp(color, Color.White, amount);
+        }
+
+        public static Color DarkerColor(Color color, float amount)
+        {
+            return Lerp(color, Color.Black, amount);
         }
     }
 }

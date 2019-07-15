@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2017 ShareX Team
+    Copyright (c) 2007-2019 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -134,7 +134,7 @@ namespace ShareX.HelpersLib
                 try
                 {
                     int num2 = (int)r.CallAs(typeIFileDialog, dialog, "Show", hWndOwner);
-                    flag = 0 == num2;
+                    flag = num2 == 0;
                 }
                 finally
                 {
@@ -172,26 +172,26 @@ namespace ShareX.HelpersLib
     internal class WindowWrapper : IWin32Window
     {
         /// <summary>
-        /// Constructor
-        /// </summary>
-        /// <param name="handle">Handle to wrap</param>
-        public WindowWrapper(IntPtr handle)
-        {
-            _hwnd = handle;
-        }
-
-        /// <summary>
         /// Original ptr
         /// </summary>
         public IntPtr Handle
         {
             get
             {
-                return _hwnd;
+                return hwnd;
             }
         }
 
-        private IntPtr _hwnd;
+        private IntPtr hwnd;
+
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="handle">Handle to wrap</param>
+        public WindowWrapper(IntPtr handle)
+        {
+            hwnd = handle;
+        }
     }
 
     /// <summary>

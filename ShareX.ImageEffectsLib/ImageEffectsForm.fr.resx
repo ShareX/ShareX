@@ -120,9 +120,6 @@
   <data name="btnAdd.Text" xml:space="preserve">
     <value>Ajouter</value>
   </data>
-  <data name="btnCancel.Text" xml:space="preserve">
-    <value>Annuler</value>
-  </data>
   <data name="btnClear.Text" xml:space="preserve">
     <value>Vider</value>
   </data>
@@ -134,9 +131,6 @@
   </data>
   <data name="btnRemove.Text" xml:space="preserve">
     <value>Supprimer</value>
-  </data>
-  <data name="btnRefresh.Text" xml:space="preserve">
-    <value>Rafraîchir</value>
   </data>
   <data name="btnSaveImage.Text" xml:space="preserve">
     <value>Enregistrer l'image...</value>
@@ -152,5 +146,17 @@
   </data>
   <data name="tsmiLoadImageFromFile.Text" xml:space="preserve">
     <value>Depuis un fichier...</value>
+  </data>
+  <data name="btnClose.Text" xml:space="preserve">
+    <value>Fermer</value>
+  </data>
+  <data name="lblPresetName.Text" xml:space="preserve">
+    <value>Nom :</value>
+  </data>
+  <data name="btnRemovePreset.Text" xml:space="preserve">
+    <value>Supprimer le préréglage</value>
+  </data>
+  <data name="btnAddPreset.Text" xml:space="preserve">
+    <value>Nouveau préréglage</value>
   </data>
 </root>

@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2017 ShareX Team
+    Copyright (c) 2007-2019 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -27,38 +27,45 @@ using ShareX.HelpersLib;
 using ShareX.UploadersLib.OtherServices;
 using System;
 using System.IO;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ShareX.UploadersLib
 {
     public partial class OCRSpaceForm : Form
     {
-        public OCRSpaceLanguages Language { get; set; } = OCRSpaceLanguages.eng;
+        public OCRSpaceLanguages Language { get; set; }
         public string Result { get; private set; }
 
         private Stream data;
-        private string filename;
+        private string fileName;
+        private OCROptions ocrOptions;
 
-        public OCRSpaceForm()
+        public OCRSpaceForm(OCROptions ocrOptions)
         {
             InitializeComponent();
-            Icon = ShareXResources.Icon;
+            ShareXResources.ApplyTheme(this);
+
+            this.ocrOptions = ocrOptions;
             cbLanguages.Items.AddRange(Helpers.GetEnumDescriptions<OCRSpaceLanguages>());
+            cbLanguages.SelectedIndex = (int)ocrOptions.DefaultLanguage;
+            Language = ocrOptions.DefaultLanguage;
+            txtResult.SupportSelectAll();
         }
 
-        public OCRSpaceForm(Stream data, string filename) : this()
+        public OCRSpaceForm(Stream data, string fileName, OCROptions ocrOptions) : this(ocrOptions)
         {
             this.data = data;
-            this.filename = filename;
+            this.fileName = fileName;
         }
 
-        private void OCRSpaceResultForm_Shown(object sender, EventArgs e)
+        private async void OCRSpaceResultForm_Shown(object sender, EventArgs e)
         {
             UpdateControls();
 
-            if (string.IsNullOrEmpty(Result))
+            if (ocrOptions.ProcessOnLoad && string.IsNullOrEmpty(Result))
             {
-                StartOCR(data, filename);
+                await StartOCR(data, fileName);
             }
         }
 
@@ -71,42 +78,31 @@ namespace ShareX.UploadersLib
                 txtResult.Text = Result;
             }
 
-            btnStartOCR.Visible = data != null && data.Length > 0 && !string.IsNullOrEmpty(filename);
+            btnStartOCR.Visible = data != null && data.Length > 0 && !string.IsNullOrEmpty(fileName);
         }
 
-        private void StartOCR(Stream stream, string filename)
+        public async Task StartOCR(Stream stream, string fileName)
         {
-            if (stream != null && stream.Length > 0 && !string.IsNullOrEmpty(filename))
+            if (stream != null && stream.Length > 0 && !string.IsNullOrEmpty(fileName))
             {
                 cbLanguages.Enabled = btnStartOCR.Enabled = txtResult.Enabled = false;
                 pbProgress.Visible = true;
 
-                TaskEx.Run(() =>
-                {
-                    try
-                    {
-                        OCRSpace ocr = new OCRSpace(Language, false);
-                        OCRSpaceResponse response = ocr.DoOCR(stream, filename);
+                Result = await OCRSpace.DoOCRAsync(Language, stream, fileName);
 
-                        if (response != null && !response.IsErroredOnProcessing && response.ParsedResults.Count > 0)
-                        {
-                            Result = response.ParsedResults[0].ParsedText;
-                        }
-                    }
-                    catch (Exception e)
-                    {
-                        DebugHelper.WriteException(e);
-                    }
-                },
-                () =>
+                if (!string.IsNullOrEmpty(Result) && ocrOptions.AutoCopy)
                 {
-                    if (!IsDisposed)
-                    {
-                        UpdateControls();
-                        cbLanguages.Enabled = btnStartOCR.Enabled = txtResult.Enabled = true;
-                        pbProgress.Visible = false;
-                    }
-                });
+                    ClipboardHelpers.CopyText(Result);
+                }
+
+                if (!IsDisposed)
+                {
+                    UpdateControls();
+                    cbLanguages.Enabled = btnStartOCR.Enabled = txtResult.Enabled = true;
+                    pbProgress.Visible = false;
+                    txtResult.Focus();
+                    llGoogleTranslate.Enabled = true;
+                }
             }
         }
 
@@ -115,14 +111,15 @@ namespace ShareX.UploadersLib
             Language = (OCRSpaceLanguages)cbLanguages.SelectedIndex;
         }
 
-        private void btnStartOCR_Click(object sender, EventArgs e)
+        private async void btnStartOCR_Click(object sender, EventArgs e)
         {
-            StartOCR(data, filename);
+            await StartOCR(data, fileName);
         }
 
-        private void llAttribution_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void llGoogleTranslate_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            URLHelpers.OpenURL("https://ocr.space");
+            URLHelpers.OpenURL("https://translate.google.com/#auto/en/" + Uri.EscapeDataString(txtResult.Text));
+            Close();
         }
     }
 }

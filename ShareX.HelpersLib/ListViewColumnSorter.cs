@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2017 ShareX Team
+    Copyright (c) 2007-2019 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using System;
 using System.Collections;
 using System.Windows.Forms;
 
@@ -42,6 +43,10 @@ namespace ShareX.HelpersLib
         /// </summary>
         private SortOrder OrderOfSort;
         /// <summary>
+        /// Specifies whether to sort as a date
+        /// </summary>
+        public bool SortByDate { get; set; }
+        /// <summary>
         /// Case insensitive comparer object
         /// </summary>
         private CaseInsensitiveComparer ObjectCompare;
@@ -56,6 +61,8 @@ namespace ShareX.HelpersLib
 
             // Initialize the sort order to 'none'
             OrderOfSort = SortOrder.None;
+
+            SortByDate = false;
 
             // Initialize the CaseInsensitiveComparer object
             ObjectCompare = new CaseInsensitiveComparer();
@@ -77,7 +84,14 @@ namespace ShareX.HelpersLib
             listviewY = (ListViewItem)y;
 
             // Compare the two items
-            compareResult = ObjectCompare.Compare(listviewX.SubItems[ColumnToSort].Text, listviewY.SubItems[ColumnToSort].Text);
+            if (SortByDate)
+            {
+                compareResult = DateTime.Compare((DateTime)listviewX.SubItems[ColumnToSort].Tag, (DateTime)listviewY.SubItems[ColumnToSort].Tag);
+            }
+            else
+            {
+                compareResult = ObjectCompare.Compare(listviewX.SubItems[ColumnToSort].Text, listviewY.SubItems[ColumnToSort].Text);
+            }
 
             // Calculate correct return value based on object comparison
             if (OrderOfSort == SortOrder.Ascending)

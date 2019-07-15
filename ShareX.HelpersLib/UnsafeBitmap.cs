@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2017 ShareX Team
+    Copyright (c) 2007-2019 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -149,7 +149,7 @@ namespace ShareX.HelpersLib
 
         public ColorBgra GetPixel(int x, int y)
         {
-            return Pointer[x + y * Width];
+            return Pointer[x + (y * Width)];
         }
 
         public void SetPixel(int i, ColorBgra color)
@@ -164,12 +164,12 @@ namespace ShareX.HelpersLib
 
         public void SetPixel(int x, int y, ColorBgra color)
         {
-            Pointer[x + y * Width] = color;
+            Pointer[x + (y * Width)] = color;
         }
 
         public void SetPixel(int x, int y, uint color)
         {
-            Pointer[x + y * Width] = color;
+            Pointer[x + (y * Width)] = color;
         }
 
         public void ClearPixel(int i)
@@ -179,7 +179,7 @@ namespace ShareX.HelpersLib
 
         public void ClearPixel(int x, int y)
         {
-            Pointer[x + y * Width] = 0;
+            Pointer[x + (y * Width)] = 0;
         }
 
         public void Dispose()

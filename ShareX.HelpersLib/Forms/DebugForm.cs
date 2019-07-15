@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2017 ShareX Team
+    Copyright (c) 2007-2019 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -33,25 +33,45 @@ namespace ShareX.HelpersLib
 {
     public partial class DebugForm : Form
     {
+        private static DebugForm instance;
+
+        public delegate void EventHandler(string log);
+        public event EventHandler UploadRequested;
+
         public Logger Logger { get; private set; }
 
-        public DebugForm(Logger logger)
+        public bool HasUploadRequested => UploadRequested != null;
+
+        private DebugForm(Logger logger)
         {
-            InitializeComponent();
-            Icon = ShareXResources.Icon;
             Logger = logger;
+
+            InitializeComponent();
 
             rtbDebug.Text = Logger.ToString();
             rtbDebug.SelectionStart = rtbDebug.TextLength;
             rtbDebug.ScrollToCaret();
             rtbDebug.AddContextMenu();
 
+            ShareXResources.ApplyTheme(this);
+
             string startupPath = AppDomain.CurrentDomain.BaseDirectory;
             llRunningFrom.Text = startupPath;
             llRunningFrom.LinkClicked += (sender, e) => Helpers.OpenFolder(startupPath);
 
             Logger.MessageAdded += logger_MessageAdded;
+            Activated += (sender, e) => btnUploadLog.Visible = HasUploadRequested;
             FormClosing += (sender, e) => Logger.MessageAdded -= logger_MessageAdded;
+        }
+
+        public static DebugForm GetFormInstance(Logger logger)
+        {
+            if (instance == null || instance.IsDisposed)
+            {
+                instance = new DebugForm(logger);
+            }
+
+            return instance;
         }
 
         private void logger_MessageAdded(string message)
@@ -65,7 +85,7 @@ namespace ShareX.HelpersLib
             {
                 int start = rtbDebug.SelectionStart;
                 int len = rtbDebug.SelectionLength;
-                rtbDebug.AppendText(message + Environment.NewLine);
+                rtbDebug.AppendText(message);
                 if (len > 0)
                 {
                     rtbDebug.Select(start, len);
@@ -97,7 +117,18 @@ namespace ShareX.HelpersLib
             }
             string assemblies = sb.ToString().Trim();
 
-            AppendMessage("Loaded assemblies:\r\n" + assemblies);
+            DebugHelper.WriteLine($"Loaded assemblies:\r\n{assemblies}");
+        }
+
+        private void btnUploadLog_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(rtbDebug.Text))
+            {
+                this.InvokeSafe(() =>
+                {
+                    UploadRequested?.Invoke(rtbDebug.Text);
+                });
+            }
         }
 
         private void rtbDebug_LinkClicked(object sender, LinkClickedEventArgs e)

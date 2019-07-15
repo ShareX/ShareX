@@ -126,6 +126,7 @@
             this.txtResult.Name = "txtResult";
             this.txtResult.ReadOnly = true;
             this.txtResult.TextChanged += new System.EventHandler(this.txtResult_TextChanged);
+            this.txtResult.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtResult_KeyDown);
             // 
             // txtTarget
             // 
@@ -150,6 +151,7 @@
             // tpFileHashCheck
             // 
             this.tpFileHashCheck.AllowDrop = true;
+            this.tpFileHashCheck.BackColor = System.Drawing.SystemColors.Window;
             this.tpFileHashCheck.Controls.Add(this.lblFile);
             this.tpFileHashCheck.Controls.Add(this.txtFilePath);
             this.tpFileHashCheck.Controls.Add(this.txtTarget);
@@ -164,12 +166,12 @@
             this.tpFileHashCheck.Controls.Add(this.lblProgressPercentage);
             resources.ApplyResources(this.tpFileHashCheck, "tpFileHashCheck");
             this.tpFileHashCheck.Name = "tpFileHashCheck";
-            this.tpFileHashCheck.UseVisualStyleBackColor = true;
             this.tpFileHashCheck.DragDrop += new System.Windows.Forms.DragEventHandler(this.tpFileHashCheck_DragDrop);
             this.tpFileHashCheck.DragEnter += new System.Windows.Forms.DragEventHandler(this.tpFileHashCheck_DragEnter);
             // 
             // tpTextConversions
             // 
+            this.tpTextConversions.BackColor = System.Drawing.SystemColors.Window;
             this.tpTextConversions.Controls.Add(this.btnHashCheckCopyAll);
             this.tpTextConversions.Controls.Add(this.txtHashCheckHash);
             this.tpTextConversions.Controls.Add(this.lblHashCheckHash);
@@ -190,7 +192,6 @@
             this.tpTextConversions.Controls.Add(this.lblHashCheckText);
             resources.ApplyResources(this.tpTextConversions, "tpTextConversions");
             this.tpTextConversions.Name = "tpTextConversions";
-            this.tpTextConversions.UseVisualStyleBackColor = true;
             // 
             // btnHashCheckCopyAll
             // 

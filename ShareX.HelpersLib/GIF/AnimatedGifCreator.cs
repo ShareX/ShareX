@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2017 ShareX Team
+    Copyright (c) 2007-2019 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -125,7 +125,7 @@ namespace ShareX.HelpersLib
             buffer[1] = 0xF9; // Graphic control extension
             buffer[2] = 0x04; // Size of block
             buffer[3] = 0x09; // Flags: reserved, disposal method, user input, transparent color
-            buffer[4] = (byte)(delay / 10 % 0x100); // Delay time low byte
+            buffer[4] = (byte)((delay / 10) % 0x100); // Delay time low byte
             buffer[5] = (byte)(delay / 10 / 0x100); // Delay time high byte
             buffer[6] = 0xFF; // Transparent color index
             buffer[7] = 0x00; // Block terminator

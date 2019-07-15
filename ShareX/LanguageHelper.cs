@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2017 ShareX Team
+    Copyright (c) 2007-2019 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -92,8 +92,17 @@ namespace ShareX
                 case SupportedLanguage.Hungarian:
                     icon = Resources.hu;
                     break;
+                case SupportedLanguage.Indonesian:
+                    icon = Resources.id;
+                    break;
+                case SupportedLanguage.Italian:
+                    icon = Resources.it;
+                    break;
                 case SupportedLanguage.Korean:
                     icon = Resources.kr;
+                    break;
+                case SupportedLanguage.MexicanSpanish:
+                    icon = Resources.mx;
                     break;
                 case SupportedLanguage.PortugueseBrazil:
                     icon = Resources.br;
@@ -112,6 +121,9 @@ namespace ShareX
                     break;
                 case SupportedLanguage.Turkish:
                     icon = Resources.tr;
+                    break;
+                case SupportedLanguage.Ukrainian:
+                    icon = Resources.ua;
                     break;
                 case SupportedLanguage.Vietnamese:
                     icon = Resources.vn;
@@ -143,8 +155,17 @@ namespace ShareX
                 case SupportedLanguage.Hungarian:
                     cultureName = "hu-HU";
                     break;
+                case SupportedLanguage.Indonesian:
+                    cultureName = "id-ID";
+                    break;
+                case SupportedLanguage.Italian:
+                    cultureName = "it-IT";
+                    break;
                 case SupportedLanguage.Korean:
                     cultureName = "ko-KR";
+                    break;
+                case SupportedLanguage.MexicanSpanish:
+                    cultureName = "es-MX";
                     break;
                 case SupportedLanguage.PortugueseBrazil:
                     cultureName = "pt-BR";
@@ -163,6 +184,9 @@ namespace ShareX
                     break;
                 case SupportedLanguage.Turkish:
                     cultureName = "tr-TR";
+                    break;
+                case SupportedLanguage.Ukrainian:
+                    cultureName = "uk-UA";
                     break;
                 case SupportedLanguage.Vietnamese:
                     cultureName = "vi-VN";

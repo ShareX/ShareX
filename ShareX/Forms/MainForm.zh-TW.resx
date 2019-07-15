@@ -261,9 +261,6 @@
   <data name="tsmiFileUploaders.Text" xml:space="preserve">
     <value>檔案上傳者</value>
   </data>
-  <data name="tsmiFTPClient.Text" xml:space="preserve">
-    <value>FTP客戶端...</value>
-  </data>
   <data name="tsmiFullscreen.Text" xml:space="preserve">
     <value>全屏</value>
   </data>
@@ -426,9 +423,6 @@
   <data name="tsmiTrayFileUploaders.Text" xml:space="preserve">
     <value>檔案上傳者</value>
   </data>
-  <data name="tsmiTrayFTPClient.Text" xml:space="preserve">
-    <value>FTP客戶端...</value>
-  </data>
   <data name="tsmiTrayFullscreen.Text" xml:space="preserve">
     <value>全屏</value>
   </data>
@@ -564,9 +558,6 @@
   <data name="tsmiScrollingCapture.Text" xml:space="preserve">
     <value>捲動擷取...</value>
   </data>
-  <data name="tsmiWebpageCapture.Text" xml:space="preserve">
-    <value>網頁擷取...</value>
-  </data>
   <data name="tsmiColorPicker.Text" xml:space="preserve">
     <value>顏色選擇器...</value>
   </data>
@@ -581,9 +572,6 @@
   </data>
   <data name="tsmiTrayScrollingCapture.Text" xml:space="preserve">
     <value>捲動擷取...</value>
-  </data>
-  <data name="tsmiTrayWebpageCapture.Text" xml:space="preserve">
-    <value>網頁擷取...</value>
   </data>
   <data name="tsmiTrayColorPicker.Text" xml:space="preserve">
     <value>顏色選擇器...</value>
@@ -630,12 +618,6 @@
   <data name="tsmiTrayTextCapture.Text" xml:space="preserve">
     <value>文字擷取（OCR）</value>
   </data>
-  <data name="pbPatreonHide.ToolTip" xml:space="preserve">
-    <value>永久隱藏Patreon按鈕</value>
-  </data>
-  <data name="pbPatreonOpen.ToolTip" xml:space="preserve">
-    <value>開啟ShareX在Patreon上的捐助頁面</value>
-  </data>
   <data name="tsmiHideColumns.Text" xml:space="preserve">
     <value>隱藏列</value>
   </data>
@@ -651,13 +633,7 @@
   <data name="tsmiCombineImages.Text" xml:space="preserve">
     <value>合併圖片...</value>
   </data>
-  <data name="tsmiTrayAnnotateImage.Text" xml:space="preserve">
-    <value>注釋圖片...</value>
-  </data>
   <data name="tsmiOpenActionsToolbar.Text" xml:space="preserve">
     <value>切換動作工具列</value>
-  </data>
-  <data name="tsmiAnnotateImage.Text" xml:space="preserve">
-    <value>注釋圖片...</value>
   </data>
 </root>

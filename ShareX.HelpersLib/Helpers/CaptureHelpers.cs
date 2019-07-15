@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2017 ShareX Team
+    Copyright (c) 2007-2019 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -189,9 +189,9 @@ namespace ShareX.HelpersLib
         {
             Color targetColor = GetPixelColor(x, y);
 
-            return targetColor.R.IsBetween(color.R - variation, color.R + variation) &&
-                   targetColor.G.IsBetween(color.G - variation, color.G + variation) &&
-                   targetColor.B.IsBetween(color.B - variation, color.B + variation);
+            return targetColor.R.IsBetween((byte)(color.R - variation), (byte)(color.R + variation)) &&
+                   targetColor.G.IsBetween((byte)(color.G - variation), (byte)(color.G + variation)) &&
+                   targetColor.B.IsBetween((byte)(color.B - variation), (byte)(color.B + variation));
         }
 
         public static Rectangle CreateRectangle(int x, int y, int x2, int y2)
@@ -270,7 +270,7 @@ namespace ShareX.HelpersLib
             float angle = MathHelpers.LookAtRadian(pos, pos2);
             float startAngle = MathHelpers.DegreeToRadian(startDegree);
             float snapAngle = MathHelpers.DegreeToRadian(degree);
-            float newAngle = (float)Math.Round((angle + startAngle) / snapAngle) * snapAngle - startAngle;
+            float newAngle = ((float)Math.Round((angle + startAngle) / snapAngle) * snapAngle) - startAngle;
             float distance = MathHelpers.Distance(pos, pos2);
             return (Point)(pos + MathHelpers.RadianToVector2(newAngle, distance));
         }
@@ -344,6 +344,27 @@ namespace ShareX.HelpersLib
         {
             IntPtr handle = NativeMethods.GetForegroundWindow();
             return NativeMethods.GetClientRect(handle);
+        }
+
+        public static bool IsActiveWindowFullscreen()
+        {
+            IntPtr handle = NativeMethods.GetForegroundWindow();
+
+            if (handle.ToInt32() > 0)
+            {
+                WindowInfo windowInfo = new WindowInfo(handle);
+                string className = windowInfo.ClassName;
+                string[] ignoreList = new string[] { "Progman", "WorkerW" };
+
+                if (ignoreList.All(ignore => !className.Equals(ignore, StringComparison.OrdinalIgnoreCase)))
+                {
+                    Rectangle windowRectangle = windowInfo.Rectangle;
+                    Rectangle monitorRectangle = Screen.FromRectangle(windowRectangle).Bounds;
+                    return windowRectangle.Contains(monitorRectangle);
+                }
+            }
+
+            return false;
         }
 
         public static Rectangle EvenRectangleSize(Rectangle rect)

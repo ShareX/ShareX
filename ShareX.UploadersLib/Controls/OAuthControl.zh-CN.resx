@@ -132,10 +132,10 @@
   <data name="gbUserAccount.Text" xml:space="preserve">
     <value>用户帐户</value>
   </data>
-  <data name="lblLoginStatus.Text" xml:space="preserve">
-    <value>状态</value>
-  </data>
   <data name="lblVerificationCode.Text" xml:space="preserve">
     <value>验证码：</value>
+  </data>
+  <data name="lblStatus.Text" xml:space="preserve">
+    <value>状态：</value>
   </data>
 </root>

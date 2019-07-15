@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2017 ShareX Team
+    Copyright (c) 2007-2019 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -43,20 +43,23 @@ namespace ShareX
         public TimeSpan Countdown { get; set; }
         public Stopwatch Timer { get; private set; }
         public ManualResetEvent RecordResetEvent { get; set; }
-        public bool AbortRequested { get; private set; }
+        public bool IsStopRequested { get; private set; }
+        public bool IsAbortRequested { get; private set; }
 
+        private TaskSettings taskSettings;
         private Color borderColor = Color.Red;
         private Rectangle borderRectangle;
         private Rectangle borderRectangle0Based;
         private bool activateWindow;
         private float duration;
 
-        public ScreenRecordForm(Rectangle regionRectangle, bool activateWindow = true, float duration = 0)
+        public ScreenRecordForm(Rectangle regionRectangle, TaskSettings taskSettings, bool activateWindow = true, float duration = 0)
         {
             InitializeComponent();
             Icon = ShareXResources.Icon;
             niTray.Icon = ShareXResources.Icon;
 
+            this.taskSettings = taskSettings;
             this.activateWindow = activateWindow;
             this.duration = duration;
 
@@ -102,7 +105,7 @@ namespace ShareX
             get
             {
                 CreateParams createParams = base.CreateParams;
-                createParams.ExStyle |= (int)WindowStyles.WS_EX_TOPMOST;
+                createParams.ExStyle |= (int)(WindowStyles.WS_EX_TOPMOST | WindowStyles.WS_EX_TOOLWINDOW);
                 return createParams;
             }
         }
@@ -130,6 +133,14 @@ namespace ShareX
             if (activateWindow)
             {
                 this.ForceActivate();
+            }
+        }
+
+        private void ScreenRecordForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (!IsStopRequested)
+            {
+                AbortRecording();
             }
         }
 
@@ -217,7 +228,11 @@ namespace ShareX
         {
             if (e.Button == MouseButtons.Left)
             {
-                AbortRecording();
+                if (!taskSettings.CaptureSettings.ScreenRecordAskConfirmationOnAbort ||
+                    MessageBox.Show(Resources.ScreenRecord_ConfirmCancel, "ShareX", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                {
+                    AbortRecording();
+                }
             }
         }
 
@@ -225,9 +240,11 @@ namespace ShareX
         {
             if (IsWorking)
             {
+                IsStopRequested = true;
+
                 if (!IsRecording)
                 {
-                    AbortRequested = true;
+                    IsAbortRequested = true;
                 }
 
                 OnStopRequested();
@@ -240,7 +257,7 @@ namespace ShareX
 
         public void AbortRecording()
         {
-            AbortRequested = true;
+            IsAbortRequested = true;
             StartStopRecording();
         }
 
@@ -275,7 +292,7 @@ namespace ShareX
                         IsRecording = true;
                         StartRecordingTimer();
                         break;
-                    case ScreenRecordState.AfterStop:
+                    case ScreenRecordState.Encoding:
                         Hide();
                         string trayTextAfterStop = "ShareX - " + Resources.ScreenRecordForm_StartRecording_Encoding___;
                         niTray.Text = trayTextAfterStop.Truncate(63);

@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2017 ShareX Team
+    Copyright (c) 2007-2019 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -23,7 +23,6 @@
 
 #endregion License Information (GPL v3)
 
-using SevenZip;
 using ShareX.HelpersLib;
 using ShareX.ScreenCaptureLib;
 using ShareX.UploadersLib;
@@ -32,21 +31,26 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ShareX
 {
     internal static class SettingManager
     {
+        private const string ApplicationConfigFilename = "ApplicationConfig.json";
+
         private static string ApplicationConfigFilePath
         {
             get
             {
                 if (Program.Sandbox) return null;
 
-                return Path.Combine(Program.PersonalFolder, "ApplicationConfig.json");
+                return Path.Combine(Program.PersonalFolder, ApplicationConfigFilename);
             }
         }
+
+        private const string UploadersConfigFilename = "UploadersConfig.json";
 
         private static string UploadersConfigFilePath
         {
@@ -65,9 +69,11 @@ namespace ShareX
                     uploadersConfigFolder = Program.PersonalFolder;
                 }
 
-                return Path.Combine(uploadersConfigFolder, "UploadersConfig.json");
+                return Path.Combine(uploadersConfigFolder, UploadersConfigFilename);
             }
         }
+
+        private const string HotkeysConfigFilename = "HotkeysConfig.json";
 
         private static string HotkeysConfigFilePath
         {
@@ -86,13 +92,11 @@ namespace ShareX
                     hotkeysConfigFolder = Program.PersonalFolder;
                 }
 
-                return Path.Combine(hotkeysConfigFolder, "HotkeysConfig.json");
+                return Path.Combine(hotkeysConfigFolder, HotkeysConfigFilename);
             }
         }
 
-        private static string BackupFolder => Path.Combine(Program.PersonalFolder, "Backup");
-
-        private static string GreenshotImageEditorConfigFilePath => Path.Combine(Program.PersonalFolder, "GreenshotImageEditor.ini");
+        public static string BackupFolder => Path.Combine(Program.PersonalFolder, "Backup");
 
         private static ApplicationConfig Settings { get => Program.Settings; set => Program.Settings = value; }
         private static TaskSettings DefaultTaskSettings { get => Program.DefaultTaskSettings; set => Program.DefaultTaskSettings = value; }
@@ -102,18 +106,17 @@ namespace ShareX
         private static ManualResetEvent uploadersConfigResetEvent = new ManualResetEvent(false);
         private static ManualResetEvent hotkeysConfigResetEvent = new ManualResetEvent(false);
 
+        private const int SettingsSaveFailWarningLimit = 3;
+        private static int settingsSaveFailWarningCount;
+
         public static void LoadInitialSettings()
         {
             LoadApplicationConfig();
 
-            ApplicationConfigBackwardCompatibilityTasks();
-
-            TaskEx.Run(() =>
+            Task.Run(() =>
             {
                 LoadUploadersConfig();
                 uploadersConfigResetEvent.Set();
-
-                UploadersConfigBackwardCompatibilityTasks();
 
                 LoadHotkeysConfig();
                 hotkeysConfigResetEvent.Set();
@@ -138,18 +141,46 @@ namespace ShareX
 
         public static void LoadApplicationConfig()
         {
-            Settings = ApplicationConfig.Load(ApplicationConfigFilePath);
+            Settings = ApplicationConfig.Load(ApplicationConfigFilePath, BackupFolder, true, true);
+            Settings.SettingsSaveFailed += Settings_SettingsSaveFailed;
             DefaultTaskSettings = Settings.DefaultTaskSettings;
+            ApplicationConfigBackwardCompatibilityTasks();
+        }
+
+        private static void Settings_SettingsSaveFailed(Exception e)
+        {
+            if (settingsSaveFailWarningCount == SettingsSaveFailWarningLimit) return;
+
+            string message;
+
+            if (e is UnauthorizedAccessException || e is FileNotFoundException)
+            {
+                message = "Your anti-virus software or the controlled folder access feature in Windows 10 could be blocking ShareX.";
+            }
+            else
+            {
+                message = e.Message;
+            }
+
+            BalloonTipAction action = new BalloonTipAction()
+            {
+                ClickAction = BalloonTipClickAction.OpenDebugLog
+            };
+
+            TaskHelpers.ShowBalloonTip(message, ToolTipIcon.Warning, 5000, "ShareX failed to save settings", action);
+
+            settingsSaveFailWarningCount++;
         }
 
         public static void LoadUploadersConfig()
         {
-            UploadersConfig = UploadersConfig.Load(UploadersConfigFilePath);
+            UploadersConfig = UploadersConfig.Load(UploadersConfigFilePath, BackupFolder, true, true);
+            UploadersConfigBackwardCompatibilityTasks();
         }
 
         public static void LoadHotkeysConfig()
         {
-            HotkeysConfig = HotkeysConfig.Load(HotkeysConfigFilePath);
+            HotkeysConfig = HotkeysConfig.Load(HotkeysConfigFilePath, BackupFolder, true, true);
         }
 
         public static void LoadAllSettings()
@@ -208,6 +239,14 @@ namespace ShareX
                     }
                 }
             }
+
+            if (UploadersConfig.CustomUploadersList != null)
+            {
+                foreach (CustomUploaderItem cui in UploadersConfig.CustomUploadersList)
+                {
+                    cui.CheckBackwardCompatibility();
+                }
+            }
         }
 
         public static void SaveAllSettings()
@@ -239,123 +278,54 @@ namespace ShareX
             SaveHotkeysConfigAsync();
         }
 
-        public static void BackupSettings()
-        {
-            Helpers.BackupFileWeekly(ApplicationConfigFilePath, BackupFolder);
-            Helpers.BackupFileWeekly(UploadersConfigFilePath, BackupFolder);
-            Helpers.BackupFileWeekly(HotkeysConfigFilePath, BackupFolder);
-            Helpers.BackupFileWeekly(Program.HistoryFilePath, BackupFolder);
-        }
-
         public static void ResetSettings()
         {
-            Settings = new ApplicationConfig();
-            DefaultTaskSettings = Settings.DefaultTaskSettings;
-            UploadersConfig = new UploadersConfig();
-            HotkeysConfig = new HotkeysConfig();
+            if (File.Exists(ApplicationConfigFilePath)) File.Delete(ApplicationConfigFilePath);
+            LoadApplicationConfig();
 
-            if (File.Exists(GreenshotImageEditorConfigFilePath))
-            {
-                File.Delete(GreenshotImageEditorConfigFilePath);
-            }
+            if (File.Exists(UploadersConfigFilePath)) File.Delete(UploadersConfigFilePath);
+            LoadUploadersConfig();
+
+            if (File.Exists(HotkeysConfigFilePath)) File.Delete(HotkeysConfigFilePath);
+            LoadHotkeysConfig();
         }
 
-        public static bool Export(string exportPath)
+        public static bool Export(string archivePath)
         {
             try
             {
-                Set7ZipLibraryPath();
+                List<string> files = new List<string>();
+                files.Add(ApplicationConfigFilename);
+                files.Add(HotkeysConfigFilename);
+                files.Add(UploadersConfigFilename);
+                files.Add(Program.HistoryFilename);
 
-                SevenZipCompressor zip = new SevenZipCompressor()
-                {
-                    ArchiveFormat = OutArchiveFormat.SevenZip,
-                    CompressionLevel = CompressionLevel.Normal,
-                    CompressionMethod = CompressionMethod.Lzma2
-                };
-
-                Dictionary<string, string> files = new Dictionary<string, string>();
-
-                if (Settings.ExportSettings)
-                {
-                    AddFileToDictionary(files, ApplicationConfigFilePath);
-                    AddFileToDictionary(files, HotkeysConfigFilePath);
-                    AddFileToDictionary(files, UploadersConfigFilePath);
-                    AddFileToDictionary(files, GreenshotImageEditorConfigFilePath);
-                }
-
-                if (Settings.ExportHistory)
-                {
-                    AddFileToDictionary(files, Program.HistoryFilePath);
-                }
-
-                if (Settings.ExportLogs)
-                {
-                    foreach (string file in Directory.GetFiles(Program.LogsFolder, "*.txt", SearchOption.TopDirectoryOnly))
-                    {
-                        AddFileToDictionary(files, file, Path.GetFileName(Program.LogsFolder));
-                    }
-                }
-
-                zip.CompressFileDictionary(files, exportPath);
-
+                ZipManager.Compress(archivePath, files, Program.PersonalFolder);
                 return true;
             }
             catch (Exception e)
             {
                 DebugHelper.WriteException(e);
-                MessageBox.Show("Error while exporting backup:\r\n\r\n" + e, "ShareX - Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error while exporting backup:\r\n" + e, "ShareX - Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             return false;
         }
 
-        public static bool Import(string importPath)
+        public static bool Import(string archivePath)
         {
             try
             {
-                Set7ZipLibraryPath();
-
-                using (SevenZipExtractor zip = new SevenZipExtractor(importPath))
-                {
-                    zip.ExtractArchive(Program.PersonalFolder);
-
-                    return true;
-                }
+                ZipManager.Extract(archivePath, Program.PersonalFolder);
+                return true;
             }
             catch (Exception e)
             {
                 DebugHelper.WriteException(e);
-                MessageBox.Show("Error while importing backup:\r\n\r\n" + e, "ShareX - Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error while importing backup:\r\n" + e, "ShareX - Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             return false;
-        }
-
-        private static void Set7ZipLibraryPath()
-        {
-            if (NativeMethods.Is64Bit())
-            {
-                SevenZipBase.SetLibraryPath(Helpers.GetAbsolutePath("7z-x64.dll"));
-            }
-            else
-            {
-                SevenZipBase.SetLibraryPath(Helpers.GetAbsolutePath("7z.dll"));
-            }
-        }
-
-        private static void AddFileToDictionary(Dictionary<string, string> files, string filePath, string subFolder = null)
-        {
-            if (File.Exists(filePath))
-            {
-                string destinationPath = Path.GetFileName(filePath);
-
-                if (!string.IsNullOrEmpty(subFolder))
-                {
-                    destinationPath = Path.Combine(subFolder, destinationPath);
-                }
-
-                files.Add(destinationPath, filePath);
-            }
         }
     }
 }

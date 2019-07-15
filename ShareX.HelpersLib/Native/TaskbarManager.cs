@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2017 ShareX Team
+    Copyright (c) 2007-2019 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -67,7 +67,7 @@ namespace ShareX.HelpersLib
 
             // ITaskbarList3
             [PreserveSig]
-            void SetProgressValue(IntPtr hwnd, UInt64 ullCompleted, UInt64 ullTotal);
+            void SetProgressValue(IntPtr hwnd, ulong ullCompleted, ulong ullTotal);
 
             [PreserveSig]
             void SetProgressState(IntPtr hwnd, TaskbarProgressBarStatus tbpFlags);
@@ -78,51 +78,51 @@ namespace ShareX.HelpersLib
         {
         }
 
-        private static readonly object _syncLock = new object();
+        private static readonly object syncLock = new object();
 
-        private static ITaskbarList4 _taskbarList;
+        private static ITaskbarList4 taskbarList;
 
         private static ITaskbarList4 TaskbarList
         {
             get
             {
-                if (_taskbarList == null)
+                if (taskbarList == null)
                 {
-                    lock (_syncLock)
+                    lock (syncLock)
                     {
-                        if (_taskbarList == null)
+                        if (taskbarList == null)
                         {
-                            _taskbarList = (ITaskbarList4)new CTaskbarList();
-                            _taskbarList.HrInit();
+                            taskbarList = (ITaskbarList4)new CTaskbarList();
+                            taskbarList.HrInit();
                         }
                     }
                 }
 
-                return _taskbarList;
+                return taskbarList;
             }
         }
 
-        private static IntPtr _mainWindowHandle;
+        private static IntPtr mainWindowHandle;
 
         private static IntPtr MainWindowHandle
         {
             get
             {
-                if (_mainWindowHandle == IntPtr.Zero)
+                if (mainWindowHandle == IntPtr.Zero)
                 {
                     Process currentProcess = Process.GetCurrentProcess();
 
                     if (currentProcess == null || currentProcess.MainWindowHandle == IntPtr.Zero)
                     {
-                        _mainWindowHandle = IntPtr.Zero;
+                        mainWindowHandle = IntPtr.Zero;
                     }
                     else
                     {
-                        _mainWindowHandle = currentProcess.MainWindowHandle;
+                        mainWindowHandle = currentProcess.MainWindowHandle;
                     }
                 }
 
-                return _mainWindowHandle;
+                return mainWindowHandle;
             }
         }
 
@@ -140,7 +140,7 @@ namespace ShareX.HelpersLib
         {
             if (Enabled && IsPlatformSupported && hwnd != IntPtr.Zero)
             {
-                currentValue = currentValue.Between(0, maximumValue);
+                currentValue = currentValue.Clamp(0, maximumValue);
 
                 try
                 {

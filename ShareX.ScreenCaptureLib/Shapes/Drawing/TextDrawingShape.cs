@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2017 ShareX Team
+    Copyright (c) 2007-2019 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -26,6 +26,7 @@
 using ShareX.HelpersLib;
 using System.Drawing;
 using System.Drawing.Text;
+using System.Windows.Forms;
 
 namespace ShareX.ScreenCaptureLib
 {
@@ -35,6 +36,7 @@ namespace ShareX.ScreenCaptureLib
 
         public string Text { get; set; }
         public TextDrawingOptions TextOptions { get; set; }
+        public virtual bool SupportGradient { get; }
 
         public override void OnConfigLoad()
         {
@@ -44,6 +46,8 @@ namespace ShareX.ScreenCaptureLib
             FillColor = AnnotationOptions.TextFillColor;
             CornerRadius = AnnotationOptions.DrawingCornerRadius;
             Shadow = AnnotationOptions.Shadow;
+            ShadowColor = AnnotationOptions.ShadowColor;
+            ShadowOffset = AnnotationOptions.ShadowOffset;
         }
 
         public override void OnConfigSave()
@@ -54,6 +58,8 @@ namespace ShareX.ScreenCaptureLib
             AnnotationOptions.TextFillColor = FillColor;
             AnnotationOptions.DrawingCornerRadius = CornerRadius;
             AnnotationOptions.Shadow = Shadow;
+            AnnotationOptions.ShadowColor = ShadowColor;
+            AnnotationOptions.ShadowOffset = ShadowOffset;
         }
 
         public override void OnDraw(Graphics g)
@@ -94,23 +100,23 @@ namespace ShareX.ScreenCaptureLib
 
         public override void OnCreating()
         {
-            StartPosition = EndPosition = InputManager.MousePosition0Based;
+            Point pos = InputManager.ClientMousePosition;
+            Rectangle = new Rectangle(pos.X, pos.Y, 1, 1);
 
-            ShowTextInputBox();
-
-            if (string.IsNullOrEmpty(Text))
+            if (ShowTextInputBox())
             {
-                Remove();
+                OnCreated();
             }
             else
             {
-                OnCreated();
+                Remove();
             }
         }
 
         public override void OnCreated()
         {
             AutoSize(true);
+            base.OnCreated();
             ShowNodes();
         }
 
@@ -119,34 +125,45 @@ namespace ShareX.ScreenCaptureLib
             ShowTextInputBox();
         }
 
-        private void ShowTextInputBox()
+        private bool ShowTextInputBox()
         {
-            Manager.PauseForm();
+            bool result;
 
-            using (TextDrawingInputBox inputBox = new TextDrawingInputBox(Text, TextOptions))
+            Manager.Form.Pause();
+
+            using (TextDrawingInputBox inputBox = new TextDrawingInputBox(Text, TextOptions, SupportGradient))
             {
-                inputBox.ShowDialog();
+                result = inputBox.ShowDialog(Manager.Form) == DialogResult.OK;
                 Text = inputBox.InputText;
                 OnConfigSave();
             }
 
-            Manager.ResumeForm();
+            Manager.Form.Resume();
+
+            return result;
         }
 
         public void AutoSize(bool center)
         {
             Size size;
 
-            using (Font font = new Font(TextOptions.Font, TextOptions.Size, TextOptions.Style))
+            if (!string.IsNullOrEmpty(Text))
             {
-                size = Helpers.MeasureText(Text, font).Offset(10, 15);
+                using (Font font = new Font(TextOptions.Font, TextOptions.Size, TextOptions.Style))
+                {
+                    size = Helpers.MeasureText(Text, font).Offset(15, 20);
+                }
+            }
+            else
+            {
+                size = new Size(100, 60);
             }
 
             Point location;
 
             if (center)
             {
-                location = new Point(Rectangle.X - size.Width / 2, Rectangle.Y - size.Height / 2);
+                location = new Point(Rectangle.X - (size.Width / 2), Rectangle.Y - (size.Height / 2));
             }
             else
             {

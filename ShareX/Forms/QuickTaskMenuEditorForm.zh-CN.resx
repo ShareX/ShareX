@@ -124,7 +124,7 @@
     <value>编辑</value>
   </data>
   <data name="btnRemove.Text" xml:space="preserve">
-    <value>去除</value>
+    <value>删除</value>
   </data>
   <data name="btnReset.Text" xml:space="preserve">
     <value>还原默认</value>
@@ -133,7 +133,7 @@
     <value>关闭</value>
   </data>
   <data name="lblTip.Text" xml:space="preserve">
-    <value>提示：如果您添加空的任务，它会被转换为菜单中的分隔线。</value>
+    <value>提示：如果您添加空任务，它会被转换为菜单中的分隔线。</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - 快速任务菜单编辑</value>

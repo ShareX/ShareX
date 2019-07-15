@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2017 ShareX Team
+    Copyright (c) 2007-2019 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -28,8 +28,10 @@ using ShareX.HelpersLib;
 using ShareX.Properties;
 using ShareX.UploadersLib;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ShareX
@@ -68,6 +70,31 @@ namespace ShareX
             parser = new UploadInfoParser();
         }
 
+        public void RefreshSelectedItems()
+        {
+            if (lv != null && lv.SelectedItems != null && lv.SelectedItems.Count > 0)
+            {
+                SelectedItems = lv.SelectedItems.Cast<ListViewItem>().Select(x => x.Tag as WorkerTask).Where(x => x != null && x.Info != null).
+                    Select(x => new UploadInfoStatus(x)).ToArray();
+            }
+            else
+            {
+                SelectedItems = null;
+            }
+        }
+
+        public void SelectItem(WorkerTask task)
+        {
+            if (task != null && task.Info != null)
+            {
+                SelectedItems = new UploadInfoStatus[] { new UploadInfoStatus(task) };
+            }
+            else
+            {
+                SelectedItems = null;
+            }
+        }
+
         private void CopyTexts(IEnumerable<string> texts)
         {
             if (texts != null && texts.Count() > 0)
@@ -78,19 +105,6 @@ namespace ShareX
                 {
                     ClipboardHelpers.CopyText(urls);
                 }
-            }
-        }
-
-        public void RefreshSelectedItems()
-        {
-            if (lv != null && lv.SelectedItems != null && lv.SelectedItems.Count > 0)
-            {
-                SelectedItems = lv.SelectedItems.Cast<ListViewItem>().Select(x => x.Tag as WorkerTask).Where(x => x != null && x.Info != null).
-                    Select(x => new UploadInfoStatus(x.Info)).ToArray();
-            }
-            else
-            {
-                SelectedItems = null;
             }
         }
 
@@ -118,12 +132,12 @@ namespace ShareX
 
         public void OpenFile()
         {
-            if (IsItemSelected && SelectedItem.IsFileExist) URLHelpers.OpenURL(SelectedItem.Info.FilePath);
+            if (IsItemSelected && SelectedItem.IsFileExist) Helpers.OpenFile(SelectedItem.Info.FilePath);
         }
 
         public void OpenThumbnailFile()
         {
-            if (IsItemSelected && SelectedItem.IsThumbnailFileExist) URLHelpers.OpenURL(SelectedItem.Info.ThumbnailFilePath);
+            if (IsItemSelected && SelectedItem.IsThumbnailFileExist) Helpers.OpenFile(SelectedItem.Info.ThumbnailFilePath);
         }
 
         public void OpenFolder()
@@ -145,7 +159,7 @@ namespace ShareX
                 }
                 else if (SelectedItem.IsFilePathValid)
                 {
-                    URLHelpers.OpenURL(SelectedItem.Info.FilePath);
+                    Helpers.OpenFile(SelectedItem.Info.FilePath);
                 }
             }
         }
@@ -182,6 +196,18 @@ namespace ShareX
         public void CopyImage()
         {
             if (IsItemSelected && SelectedItem.IsImageFile) ClipboardHelpers.CopyImageFromFile(SelectedItem.Info.FilePath);
+        }
+
+        public void CopyImageDimensions()
+        {
+            if (IsItemSelected && SelectedItem.IsImageFile)
+            {
+                Size size = ImageHelpers.GetImageFileDimensions(SelectedItem.Info.FilePath);
+                if (!size.IsEmpty)
+                {
+                    ClipboardHelpers.CopyText($"{size.Width} x {size.Height}");
+                }
+            }
         }
 
         public void CopyText()
@@ -227,6 +253,21 @@ namespace ShareX
         public void CopyForumLinkedImage()
         {
             if (IsItemSelected) CopyTexts(SelectedItems.Where(x => x.IsImageURL && x.IsThumbnailURLExist).Select(x => parser.Parse(x.Info, UploadInfoParser.ForumLinkedImage)));
+        }
+
+        public void CopyMarkdownLink()
+        {
+            if (IsItemSelected) CopyTexts(SelectedItems.Where(x => x.IsURLExist).Select(x => parser.Parse(x.Info, UploadInfoParser.MarkdownLink)));
+        }
+
+        public void CopyMarkdownImage()
+        {
+            if (IsItemSelected) CopyTexts(SelectedItems.Where(x => x.IsImageURL).Select(x => parser.Parse(x.Info, UploadInfoParser.MarkdownImage)));
+        }
+
+        public void CopyMarkdownLinkedImage()
+        {
+            if (IsItemSelected) CopyTexts(SelectedItems.Where(x => x.IsImageURL && x.IsThumbnailURLExist).Select(x => parser.Parse(x.Info, UploadInfoParser.MarkdownLinkedImage)));
         }
 
         public void CopyFilePath()
@@ -298,6 +339,17 @@ namespace ShareX
             }
         }
 
+        public void StopUpload()
+        {
+            if (IsItemSelected)
+            {
+                foreach (WorkerTask task in SelectedItems.Select(x => x.Task))
+                {
+                    task?.Stop();
+                }
+            }
+        }
+
         public void Upload()
         {
             if (IsItemSelected && SelectedItem.IsFileExist) UploadManager.UploadFile(SelectedItem.Info.FilePath);
@@ -310,7 +362,7 @@ namespace ShareX
 
         public void EditImage()
         {
-            if (IsItemSelected && SelectedItem.IsImageFile) TaskHelpers.AnnotateImage(SelectedItem.Info.FilePath);
+            if (IsItemSelected && SelectedItem.IsImageFile) TaskHelpers.AnnotateImageFromFile(SelectedItem.Info.FilePath);
         }
 
         public void DeleteFiles()
@@ -347,14 +399,14 @@ namespace ShareX
             if (IsItemSelected && SelectedItem.IsURLExist) new QRCodeForm(SelectedItem.Info.Result.URL).Show();
         }
 
-        public void OCRImage()
+        public async Task OCRImage()
         {
-            if (IsItemSelected && SelectedItem.IsImageFile) TaskHelpers.OCRImage(SelectedItem.Info.FilePath);
+            if (IsItemSelected && SelectedItem.IsImageFile) await TaskHelpers.OCRImage(SelectedItem.Info.FilePath);
         }
 
         public void CombineImages()
         {
-            if (SelectedItems != null)
+            if (IsItemSelected)
             {
                 IEnumerable<string> imageFiles = SelectedItems.Where(x => x.IsImageFile).Select(x => x.Info.FilePath);
 

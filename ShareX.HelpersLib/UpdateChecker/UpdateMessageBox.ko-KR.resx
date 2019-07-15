@@ -123,4 +123,10 @@
   <data name="btnNo.Text" xml:space="preserve">
     <value>아니요</value>
   </data>
+  <data name="cbDontShow.Text" xml:space="preserve">
+    <value>ShareX가 다시 시작할 때 까지 보이지 말기</value>
+  </data>
+  <data name="lblViewChangelog.Text" xml:space="preserve">
+    <value>변경사항 보기</value>
+  </data>
 </root>

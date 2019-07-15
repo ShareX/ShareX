@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2017 ShareX Team
+    Copyright (c) 2007-2019 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -23,6 +23,8 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.HelpersLib;
+using ShareX.ImageEffectsLib;
 using System.Collections.Generic;
 using System.Drawing;
 
@@ -56,13 +58,13 @@ namespace ShareX.ScreenCaptureLib
             new SnapSize(1280, 720), // 720p
             new SnapSize(1920, 1080) // 1080p
         };
-        public bool ShowHotkeys = false;
         public bool ShowInfo = true;
         public bool ShowMagnifier = true;
         public bool UseSquareMagnifier = false;
         public int MagnifierPixelCount = 15; // Must be odd number like 11, 13, 15 etc.
         public int MagnifierPixelSize = 10;
         public bool ShowCrosshair = false;
+        public bool UseLightResizeNodes = false;
         public bool EnableAnimations = true;
         public bool IsFixedSize = false;
         public Size FixedSize = new Size(250, 250);
@@ -71,8 +73,26 @@ namespace ShareX.ScreenCaptureLib
         public bool MenuCollapsed = false;
         public Point MenuPosition = Point.Empty;
 
+        public bool SwitchToDrawingToolAfterSelection = false;
+        public bool SwitchToSelectionToolAfterDrawing = false;
+
+        // Annotation
         public AnnotationOptions AnnotationOptions = new AnnotationOptions();
         public ShapeType LastRegionTool = ShapeType.RegionRectangle;
         public ShapeType LastAnnotationTool = ShapeType.DrawingRectangle;
+        public ShapeType LastEditorTool = ShapeType.DrawingRectangle;
+
+        // Image editor
+        public ImageEditorStartMode ImageEditorStartMode = ImageEditorStartMode.AutoSize;
+        public WindowState ImageEditorWindowState = new WindowState();
+        public bool AutoCloseEditorOnTask = false;
+        public bool ShowEditorPanTip = true;
+        public ImageEditorInterpolationMode ImageEditorResizeInterpolationMode = ImageEditorInterpolationMode.Bicubic;
+        public Size EditorNewImageSize = new Size(800, 600);
+        public bool EditorNewImageTransparent = false;
+        public Color EditorNewImageBackgroundColor = Color.White;
+        public Color EditorCanvasColor = Color.Transparent;
+        public List<ImageEffectPreset> ImageEffectPresets = new List<ImageEffectPreset>();
+        public int SelectedImageEffectPreset = 0;
     }
 }

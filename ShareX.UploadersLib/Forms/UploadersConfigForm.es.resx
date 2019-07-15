@@ -131,90 +131,6 @@ Por ejemplo, si el balde se llama balde.ejemplo.com entonces URL será http://ba
   <data name="tpURLShorteners.Text" xml:space="preserve">
     <value>Acortadores de URL</value>
   </data>
-  <data name="btnCustomUploaderAdd.Text" xml:space="preserve">
-    <value>Añadir</value>
-  </data>
-  <data name="btnCustomUploaderUpdate.Text" xml:space="preserve">
-    <value>Actualizar</value>
-  </data>
-  <data name="btnCustomUploaderRemove.Text" xml:space="preserve">
-    <value>Quitar</value>
-  </data>
-  <data name="gbCustomUploaders.Text" xml:space="preserve">
-    <value>Cargadores</value>
-  </data>
-  <data name="btnCustomUploaderArgRemove.Text" xml:space="preserve">
-    <value>Quitar</value>
-  </data>
-  <data name="btnCustomUploaderArgAdd.Text" xml:space="preserve">
-    <value>Añadir</value>
-  </data>
-  <data name="btnCustomUploaderRegexpRemove.Text" xml:space="preserve">
-    <value>Quitar</value>
-  </data>
-  <data name="btnCustomUploaderRegexpAdd.Text" xml:space="preserve">
-    <value>Añadir</value>
-  </data>
-  <data name="tpCustomUploaders.Text" xml:space="preserve">
-    <value>Cargadores personalizados</value>
-  </data>
-  <data name="btnCustomUploaderExamples.Text" xml:space="preserve">
-    <value>Ejemplos...</value>
-  </data>
-  <data name="btnCustomUploaderHelp.Text" xml:space="preserve">
-    <value>Ayuda...</value>
-  </data>
-  <data name="btnCustomUploaderClear.Text" xml:space="preserve">
-    <value>Borrar campos --&gt;</value>
-  </data>
-  <data name="lblCustomUploaderImageUploader.Text" xml:space="preserve">
-    <value>Cargador de imágenes:</value>
-  </data>
-  <data name="btnCustomUploaderFileUploaderTest.Text" xml:space="preserve">
-    <value>Probar</value>
-  </data>
-  <data name="lblCustomUploaderFileUploader.Text" xml:space="preserve">
-    <value>Cargador de archivos:</value>
-  </data>
-  <data name="btnCustomUploaderImageUploaderTest.Text" xml:space="preserve">
-    <value>Probar</value>
-  </data>
-  <data name="lblCustomUploaderTestResult.Text" xml:space="preserve">
-    <value>Resultado de la prueba:</value>
-  </data>
-  <data name="lblCustomUploaderDeletionURL.Text" xml:space="preserve">
-    <value>Supresión URL:</value>
-  </data>
-  <data name="btnCustomUploaderShowLastResponse.Text" xml:space="preserve">
-    <value>Mostrar última respuesta...</value>
-  </data>
-  <data name="lblCustomUploaderResponseType.Text" xml:space="preserve">
-    <value>Tipo de respuesta:</value>
-  </data>
-  <data name="lblCustomUploaderTextUploader.Text" xml:space="preserve">
-    <value>Cargador de texto:</value>
-  </data>
-  <data name="lblCustomUploaderRequestURL.Text" xml:space="preserve">
-    <value>URL de solicitud:</value>
-  </data>
-  <data name="btnCustomUploaderURLShortenerTest.Text" xml:space="preserve">
-    <value>Probar</value>
-  </data>
-  <data name="lblCustomUploaderURLShortener.Text" xml:space="preserve">
-    <value>Acortador de URL:</value>
-  </data>
-  <data name="btnCustomUploaderTextUploaderTest.Text" xml:space="preserve">
-    <value>Probar</value>
-  </data>
-  <data name="lblCustomUploaderThumbnailURL.Text" xml:space="preserve">
-    <value>URL miniatura:</value>
-  </data>
-  <data name="lblCustomUploaderFileForm.Text" xml:space="preserve">
-    <value>Nombre de archivo formulario:</value>
-  </data>
-  <data name="lblCustomUploaderRequestType.Text" xml:space="preserve">
-    <value>Tipo de solicitud:</value>
-  </data>
   <data name="lblBitlyDomain.Text" xml:space="preserve">
     <value>Dominio:</value>
   </data>
@@ -307,18 +223,6 @@ Por ejemplo, si el balde se llama balde.ejemplo.com entonces URL será http://ba
   </data>
   <data name="gbPhotobucketAlbumPath.Text" xml:space="preserve">
     <value>Subir imágenes a</value>
-  </data>
-  <data name="btnFlickrOpenAuthorize.Text" xml:space="preserve">
-    <value>Paso 1: Abrir la página de autorización...</value>
-  </data>
-  <data name="btnFlickrCompleteAuth.Text" xml:space="preserve">
-    <value>Paso 2: Completar autorización</value>
-  </data>
-  <data name="btnFlickrCheckToken.Text" xml:space="preserve">
-    <value>Refrescar autorización</value>
-  </data>
-  <data name="btnFlickrOpenImages.Text" xml:space="preserve">
-    <value>Su photostream...</value>
   </data>
   <data name="btnTinyPicOpenMyImages.Text" xml:space="preserve">
     <value>Abrir mi página de imágenes...</value>
@@ -454,39 +358,6 @@ Por ejemplo, si el balde se llama balde.ejemplo.com entonces URL será http://ba
   </data>
   <data name="lblJiraIssuePrefix.Text" xml:space="preserve">
     <value>Jira problema prefijo:</value>
-  </data>
-  <data name="btnMinusFolderRemove.Text" xml:space="preserve">
-    <value>Quitar carpeta</value>
-  </data>
-  <data name="btnMinusFolderAdd.Text" xml:space="preserve">
-    <value>Añadir carpeta</value>
-  </data>
-  <data name="btnMinusReadFolderList.Text" xml:space="preserve">
-    <value>Recargar lista de carpetas</value>
-  </data>
-  <data name="gbMinusUpload.Text" xml:space="preserve">
-    <value>Subir imágenes a</value>
-  </data>
-  <data name="btnMinusAuth.Text" xml:space="preserve">
-    <value>Autorizar</value>
-  </data>
-  <data name="lblMinusUsername.Text" xml:space="preserve">
-    <value>Nombre de usuario:</value>
-  </data>
-  <data name="lblMinusPassword.Text" xml:space="preserve">
-    <value>Contraseña:</value>
-  </data>
-  <data name="btnMinusRefreshAuth.Text" xml:space="preserve">
-    <value>Refrescar autorización</value>
-  </data>
-  <data name="lblMinusAuthStatus.Text" xml:space="preserve">
-    <value>Estado de iniciar sesión:</value>
-  </data>
-  <data name="gbMinusUserPass.Text" xml:space="preserve">
-    <value>Autenticación</value>
-  </data>
-  <data name="lblMinusURLType.Text" xml:space="preserve">
-    <value>Tipo de URL:</value>
   </data>
   <data name="lblLocalhostrEmail.Text" xml:space="preserve">
     <value>Email:</value>
@@ -649,13 +520,5 @@ Por ejemplo, si el balde se llama balde.ejemplo.com entonces URL será http://ba
   </data>
   <data name="gbPhotobucketAlbums.Text" xml:space="preserve">
     <value>Crear nuevo álbum</value>
-  </data>
-  <data name="cbAmazonS3UseRRS.Text" xml:space="preserve">
-    <value>Utilice almacenaje de redundancia reducida</value>
-  </data>
-  <data name="cbAmazonS3UseRRS.ToolTip" xml:space="preserve">
-    <value>Utilice una clase de almacenamiento de menor redundancia para los objetos almacenados.
-Con esta opción, los objetos son más barato para almacenar, pero tienen el 99,99% de durabilidad, en lugar de 99.999999999%.
-Esto significa que se pueden perder de Amazon S3 en algún momento.</value>
   </data>
 </root>

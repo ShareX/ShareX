@@ -156,9 +156,6 @@
   <data name="cbCaptureClientArea.Text" xml:space="preserve">
     <value>Capturar área do cliente quando estiver capturando janelas ou janelas ativas</value>
   </data>
-  <data name="cbScreenshotDelay.Text" xml:space="preserve">
-    <value>Atraso de captura de tela:</value>
-  </data>
   <data name="tpRegionCapture.Text" xml:space="preserve">
     <value>Captura de região</value>
   </data>
@@ -234,9 +231,6 @@
   <data name="cbClipboardUploadAutoIndexFolder.Text" xml:space="preserve">
     <value>Se a área de transferência conter o local de uma pasta: arquivar a pasta e enviar o índice</value>
   </data>
-  <data name="chkClipboardUploadURLContents.Text" xml:space="preserve">
-    <value>Se a área de transferência conter um URL: baixar o arquivo e enviá-lo</value>
-  </data>
   <data name="cbClipboardUploadShareURL.Text" xml:space="preserve">
     <value>Se a área de transferência conter um URL: compartilhar usando serviço de compartilhamento de URL</value>
   </data>
@@ -248,9 +242,6 @@
   </data>
   <data name="cbFileUploadUseNamePattern.Text" xml:space="preserve">
     <value>Utilizar padrão para envio de arquivos ao invés do nome do arquivo</value>
-  </data>
-  <data name="btnResetAutoIncrementNumber.Text" xml:space="preserve">
-    <value>Redefinir número de incrementação automática</value>
   </data>
   <data name="lblNameFormatPatternPreviewActiveWindow.Text" xml:space="preserve">
     <value>Pré-visualização:</value>
@@ -275,12 +266,6 @@
   </data>
   <data name="cbScreenRecorderFixedDuration.Text" xml:space="preserve">
     <value>Duração fixa:</value>
-  </data>
-  <data name="btnEncoderConfig.Text" xml:space="preserve">
-    <value>Perfis...</value>
-  </data>
-  <data name="chkRunScreencastCLI.Text" xml:space="preserve">
-    <value>Executar CLI depois de:</value>
   </data>
   <data name="lblScreenRecordFPS.Text" xml:space="preserve">
     <value>QPS da gravação de tela:</value>
@@ -413,9 +398,6 @@
   </data>
   <data name="cbRegionCaptureShowInfo.Text" xml:space="preserve">
     <value>Mostrar informações de posição e tamanho</value>
-  </data>
-  <data name="cbRegionCaptureShowTips.Text" xml:space="preserve">
-    <value>Mostrar atalhos e dicas no canto superior direito</value>
   </data>
   <data name="btnRegionCaptureSnapSizesRemove.Text" xml:space="preserve">
     <value>-</value>

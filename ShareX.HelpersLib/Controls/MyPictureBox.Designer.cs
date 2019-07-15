@@ -49,8 +49,17 @@
             // pbMain
             // 
             resources.ApplyResources(this.pbMain, "pbMain");
+            this.pbMain.ErrorImage = global::ShareX.HelpersLib.Properties.Resources.cross;
+            this.pbMain.InitialImage = global::ShareX.HelpersLib.Properties.Resources.Loading;
             this.pbMain.Name = "pbMain";
             this.pbMain.TabStop = false;
+            this.pbMain.LoadCompleted += new System.ComponentModel.AsyncCompletedEventHandler(this.PbMain_LoadCompleted);
+            this.pbMain.LoadProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.PbMain_LoadProgressChanged);
+            this.pbMain.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PbMain_MouseDown);
+            this.pbMain.MouseLeave += new System.EventHandler(this.PbMain_MouseLeave);
+            this.pbMain.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PbMain_MouseMove);
+            this.pbMain.MouseUp += new System.Windows.Forms.MouseEventHandler(this.PbMain_MouseUp);
+            this.pbMain.Resize += new System.EventHandler(this.PbMain_Resize);
             // 
             // cmsMenu
             // 
@@ -85,6 +94,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbMain)).EndInit();
             this.cmsMenu.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2017 ShareX Team
+    Copyright (c) 2007-2019 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -29,21 +29,20 @@ using ShareX.UploadersLib;
 using System;
 using System.Drawing;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ShareX
 {
     public partial class ApplicationSettingsForm : Form
     {
-        private const int MaxBufferSizePower = 14;
-
         private bool ready;
         private string lastPersonalPath;
 
         public ApplicationSettingsForm()
         {
             InitializeControls();
-            Icon = ShareXResources.Icon;
+            ShareXResources.ApplyTheme(this);
         }
 
         private void SettingsForm_Shown(object sender, EventArgs e)
@@ -56,26 +55,12 @@ namespace ShareX
             Refresh();
         }
 
-        private void SettingsForm_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            string currentPersonalPath = txtPersonalFolderPath.Text;
-
-            if (!currentPersonalPath.Equals(lastPersonalPath, StringComparison.InvariantCultureIgnoreCase))
-            {
-                Program.WritePersonalPathConfig(currentPersonalPath);
-
-                MessageBox.Show("You must reopen ShareX for personal folder changes to take effect.", "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-        }
-
         private void tttvMain_TabChanged(TabPage tabPage)
         {
-#if WindowsStore
             if (tabPage == tpIntegration)
             {
-                CheckWindowsStoreStartup();
+                UpdateStartWithWindows();
             }
-#endif
         }
 
         private void InitializeControls()
@@ -116,6 +101,10 @@ namespace ShareX
             cbTrayIconProgressEnabled.Checked = Program.Settings.TrayIconProgressEnabled;
             cbTaskbarProgressEnabled.Enabled = TaskbarManager.IsPlatformSupported;
             cbTaskbarProgressEnabled.Checked = Program.Settings.TaskbarProgressEnabled;
+            cbUseDarkTheme.Checked = Program.Settings.UseDarkTheme;
+            cbExperimentalDarkTheme.Enabled = Program.Settings.UseDarkTheme;
+            cbExperimentalDarkTheme.Checked = Program.Settings.ExperimentalDarkTheme;
+            cbUseWhiteShareXIcon.Checked = Program.Settings.UseWhiteShareXIcon;
             cbRememberMainFormPosition.Checked = Program.Settings.RememberMainFormPosition;
             cbRememberMainFormSize.Checked = Program.Settings.RememberMainFormSize;
 
@@ -125,20 +114,21 @@ namespace ShareX
 
 #if STEAM || WindowsStore
             cbCheckPreReleaseUpdates.Visible = false;
+            btnCheckDevBuild.Visible = false;
 #else
             cbCheckPreReleaseUpdates.Checked = Program.Settings.CheckPreReleaseUpdates;
 #endif
 
             // Integration
 #if WindowsStore
-            cbStartWithWindows.Enabled = false;
             cbShellContextMenu.Visible = false;
+            cbEditWithShareX.Visible = false;
             cbSendToMenu.Visible = false;
             gbChrome.Visible = false;
             gbFirefox.Visible = false;
 #else
-            cbStartWithWindows.Checked = IntegrationHelpers.CheckStartupShortcut();
             cbShellContextMenu.Checked = IntegrationHelpers.CheckShellContextMenuButton();
+            cbEditWithShareX.Checked = IntegrationHelpers.CheckEditShellContextMenuButton();
             cbSendToMenu.Checked = IntegrationHelpers.CheckSendToMenuButton();
             cbChromeExtensionSupport.Checked = IntegrationHelpers.CheckChromeExtensionSupport();
             btnChromeOpenExtensionPage.Enabled = cbChromeExtensionSupport.Checked;
@@ -160,12 +150,6 @@ namespace ShareX
             txtCustomScreenshotsPath.Text = Program.Settings.CustomScreenshotsPath;
             txtSaveImageSubFolderPattern.Text = Program.Settings.SaveImageSubFolderPattern;
 
-            // Export / Import
-            cbExportSettings.Checked = Program.Settings.ExportSettings;
-            cbExportHistory.Checked = Program.Settings.ExportHistory;
-            cbExportLogs.Checked = Program.Settings.ExportLogs;
-            UpdateExportButton();
-
             // Proxy
             cbProxyMethod.SelectedIndex = (int)Program.Settings.ProxySettings.ProxyMethod;
             txtProxyUsername.Text = Program.Settings.ProxySettings.Username;
@@ -178,13 +162,13 @@ namespace ShareX
             nudUploadLimit.SetValue(Program.Settings.UploadLimit);
 
             cbBufferSize.Items.Clear();
-            for (int i = 0; i < MaxBufferSizePower; i++)
+            int maxBufferSizePower = 14;
+            for (int i = 0; i < maxBufferSizePower; i++)
             {
                 string size = ((long)(Math.Pow(2, i) * 1024)).ToSizeString(Program.Settings.BinaryUnits, 0);
                 cbBufferSize.Items.Add(size);
             }
-
-            cbBufferSize.SelectedIndex = Program.Settings.BufferSizePower.Between(0, MaxBufferSizePower);
+            cbBufferSize.SelectedIndex = Program.Settings.BufferSizePower.Clamp(0, maxBufferSizePower);
 
             lvClipboardFormats.Items.Clear();
             foreach (ClipboardFormat cf in Program.Settings.ClipboardContentFormats)
@@ -194,7 +178,7 @@ namespace ShareX
 
             nudRetryUpload.SetValue(Program.Settings.MaxUploadFailRetry);
             chkUseSecondaryUploaders.Checked = Program.Settings.UseSecondaryUploaders;
-            tlpBackupDestinations.Enabled = Program.Settings.UseSecondaryUploaders;
+            gbSecondaryImageUploaders.Enabled = gbSecondaryTextUploaders.Enabled = gbSecondaryFileUploaders.Enabled = Program.Settings.UseSecondaryUploaders;
 
             Program.Settings.SecondaryImageUploaders.AddRange(Helpers.GetEnums<ImageDestination>().Where(n => Program.Settings.SecondaryImageUploaders.All(e => e != n)));
             Program.Settings.SecondaryTextUploaders.AddRange(Helpers.GetEnums<TextDestination>().Where(n => Program.Settings.SecondaryTextUploaders.All(e => e != n)));
@@ -244,11 +228,48 @@ namespace ShareX
 
                 if (LanguageHelper.ChangeLanguage(Program.Settings.Language) &&
                     MessageBox.Show(Resources.ApplicationSettingsForm_cbLanguage_SelectedIndexChanged_Language_Restart,
-                    "ShareX", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+                    Resources.ShareXConfirmation, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     Program.Restart();
                 }
             }
+        }
+
+        private void UpdateStartWithWindows()
+        {
+            ready = false;
+
+            cbStartWithWindows.Text = Resources.ApplicationSettingsForm_cbStartWithWindows_Text;
+            cbStartWithWindows.Enabled = false;
+
+            try
+            {
+                StartupState state = StartupManagerSingletonProvider.CurrentStartupManager.State;
+                cbStartWithWindows.Checked = state == StartupState.Enabled || state == StartupState.EnabledByPolicy;
+
+                if (state == StartupState.DisabledByUser)
+                {
+                    cbStartWithWindows.Text = Resources.ApplicationSettingsForm_cbStartWithWindows_DisabledByUser_Text;
+                }
+                else if (state == StartupState.DisabledByPolicy)
+                {
+                    cbStartWithWindows.Text = Resources.ApplicationSettingsForm_cbStartWithWindows_DisabledByPolicy_Text;
+                }
+                else if (state == StartupState.EnabledByPolicy)
+                {
+                    cbStartWithWindows.Text = Resources.ApplicationSettingsForm_cbStartWithWindows_EnabledByPolicy_Text;
+                }
+                else
+                {
+                    cbStartWithWindows.Enabled = true;
+                }
+            }
+            catch (Exception e)
+            {
+                e.ShowError();
+            }
+
+            ready = true;
         }
 
         private void UpdateProxyControls()
@@ -270,106 +291,49 @@ namespace ShareX
 
         private void UpdatePersonalFolderPathPreview()
         {
-            string personalPath = txtPersonalFolderPath.Text;
-
-            if (string.IsNullOrEmpty(personalPath))
+            try
             {
-                if (Program.PortableApps)
+                string personalPath = Helpers.GetValidFolderPath(txtPersonalFolderPath.Text);
+
+                if (string.IsNullOrEmpty(personalPath))
                 {
-                    personalPath = Program.PortableAppsPersonalFolder;
-                }
-                else if (Program.Portable)
-                {
-                    personalPath = Program.PortablePersonalFolder;
-                }
-                else
-                {
-                    personalPath = Program.DefaultPersonalFolder;
-                }
-            }
-            else
-            {
-                personalPath = Helpers.ExpandFolderVariables(personalPath);
-                personalPath = Helpers.GetAbsolutePath(personalPath);
-            }
-
-            lblPreviewPersonalFolderPath.Text = personalPath;
-        }
-
-        private void UpdateExportButton()
-        {
-            btnExport.Enabled = Program.Settings.ExportSettings || Program.Settings.ExportHistory || Program.Settings.ExportLogs;
-        }
-
-        private void CheckWindowsStoreStartup()
-        {
-            if (cbStartWithWindows.Enabled) return;
-
-            lblWindowsStoreStartupStatus.Text = "Checking startup state...";
-            lblWindowsStoreStartupStatus.Visible = true;
-
-            StartupTaskState state = StartupTaskState.Error;
-
-            TaskEx.Run(() =>
-            {
-                state = IntegrationHelpers.CheckStartupWindowsStore();
-            },
-            () =>
-            {
-                if (!IsDisposed)
-                {
-                    if (state == StartupTaskState.Error)
+                    if (Program.PortableApps)
                     {
-                        lblWindowsStoreStartupStatus.Text = "Startup state check failed. Check debug log for more info.";
+                        personalPath = Program.PortableAppsPersonalFolder;
                     }
-                    else if (state == StartupTaskState.DisabledByUser)
+                    else if (Program.Portable)
                     {
-                        lblWindowsStoreStartupStatus.Text = "The startup has been disabled by the user.";
+                        personalPath = Program.PortablePersonalFolder;
                     }
                     else
                     {
-                        lblWindowsStoreStartupStatus.Visible = false;
-                        cbStartWithWindows.Checked = state == StartupTaskState.Enabled;
-                        cbStartWithWindows.Enabled = true;
+                        personalPath = Program.DefaultPersonalFolder;
                     }
                 }
-            });
+                else
+                {
+                    personalPath = Helpers.GetAbsolutePath(personalPath);
+                }
+
+                lblPreviewPersonalFolderPath.Text = personalPath;
+                btnPersonalFolderPathApply.Enabled = !personalPath.Equals(lastPersonalPath, StringComparison.OrdinalIgnoreCase);
+            }
+            catch (Exception e)
+            {
+                btnPersonalFolderPathApply.Enabled = false;
+                lblPreviewPersonalFolderPath.Text = "Error: " + e.Message;
+            }
         }
 
-        private void ConfigureWindowsStoreStartup()
+        private void UpdateScreenshotsFolderPathPreview()
         {
-            if (cbStartWithWindows.Enabled)
+            try
             {
-                cbStartWithWindows.Enabled = false;
-                lblWindowsStoreStartupStatus.Text = "Configuring startup...";
-                lblWindowsStoreStartupStatus.Visible = true;
-
-                bool enable = cbStartWithWindows.Checked;
-                StartupTaskState state = StartupTaskState.Error;
-
-                TaskEx.Run(() =>
-                {
-                    state = IntegrationHelpers.ConfigureStartupWindowsStore(enable);
-                },
-                () =>
-                {
-                    if (!IsDisposed)
-                    {
-                        if (state == StartupTaskState.Error)
-                        {
-                            lblWindowsStoreStartupStatus.Text = "Startup configuration failed. Check debug log for more info.";
-                        }
-                        else if (state == StartupTaskState.DisabledByUser)
-                        {
-                            lblWindowsStoreStartupStatus.Text = "The startup has been disabled by the user.";
-                        }
-                        else
-                        {
-                            lblWindowsStoreStartupStatus.Visible = false;
-                            cbStartWithWindows.Enabled = true;
-                        }
-                    }
-                });
+                lblSaveImageSubFolderPatternPreview.Text = Program.ScreenshotsFolder;
+            }
+            catch (Exception e)
+            {
+                lblSaveImageSubFolderPatternPreview.Text = "Error: " + e.Message;
             }
         }
 
@@ -407,6 +371,22 @@ namespace ShareX
             }
         }
 
+        private void CbUseDarkTheme_CheckedChanged(object sender, EventArgs e)
+        {
+            Program.Settings.UseDarkTheme = cbUseDarkTheme.Checked;
+            cbExperimentalDarkTheme.Enabled = Program.Settings.UseDarkTheme;
+        }
+
+        private void CbExperimentalDarkTheme_CheckedChanged(object sender, EventArgs e)
+        {
+            Program.Settings.ExperimentalDarkTheme = cbExperimentalDarkTheme.Checked;
+        }
+
+        private void CbUseWhiteShareXIcon_CheckedChanged(object sender, EventArgs e)
+        {
+            Program.Settings.UseWhiteShareXIcon = cbUseWhiteShareXIcon.Checked;
+        }
+
         private void cbRememberMainFormPosition_CheckedChanged(object sender, EventArgs e)
         {
             Program.Settings.RememberMainFormPosition = cbRememberMainFormPosition.Checked;
@@ -442,6 +422,15 @@ namespace ShareX
             Program.Settings.CheckPreReleaseUpdates = cbCheckPreReleaseUpdates.Checked;
         }
 
+        private void btnCheckDevBuild_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show(Resources.ApplicationSettingsForm_btnCheckDevBuild_Click_DevBuilds_Warning, "ShareX",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+                TaskHelpers.DownloadAppVeyorBuild();
+            }
+        }
+
         #endregion General
 
         #region Integration
@@ -450,11 +439,15 @@ namespace ShareX
         {
             if (ready)
             {
-#if WindowsStore
-                ConfigureWindowsStoreStartup();
-#else
-                IntegrationHelpers.CreateStartupShortcut(cbStartWithWindows.Checked);
-#endif
+                try
+                {
+                    StartupManagerSingletonProvider.CurrentStartupManager.State = cbStartWithWindows.Checked ? StartupState.Enabled : StartupState.Disabled;
+                    UpdateStartWithWindows();
+                }
+                catch (Exception ex)
+                {
+                    ex.ShowError();
+                }
             }
         }
 
@@ -463,6 +456,14 @@ namespace ShareX
             if (ready)
             {
                 IntegrationHelpers.CreateShellContextMenuButton(cbShellContextMenu.Checked);
+            }
+        }
+
+        private void cbEditWithShareX_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ready)
+            {
+                IntegrationHelpers.CreateEditShellContextMenuButton(cbEditWithShareX.Checked);
             }
         }
 
@@ -521,7 +522,25 @@ namespace ShareX
 
         private void btnBrowsePersonalFolderPath_Click(object sender, EventArgs e)
         {
-            Helpers.BrowseFolder(Resources.ApplicationSettingsForm_btnBrowsePersonalFolderPath_Click_Choose_ShareX_personal_folder_path, txtPersonalFolderPath, Program.PersonalFolder, true);
+            Helpers.BrowseFolder(Resources.ApplicationSettingsForm_btnBrowsePersonalFolderPath_Click_Choose_ShareX_personal_folder_path,
+                txtPersonalFolderPath, Program.PersonalFolder, true);
+        }
+
+        private void btnPersonalFolderPathApply_Click(object sender, EventArgs e)
+        {
+            string currentPersonalPath = Helpers.GetValidFolderPath(txtPersonalFolderPath.Text);
+
+            if (!currentPersonalPath.Equals(lastPersonalPath, StringComparison.OrdinalIgnoreCase) && Program.WritePersonalPathConfig(currentPersonalPath))
+            {
+                lastPersonalPath = currentPersonalPath;
+                btnPersonalFolderPathApply.Enabled = false;
+                
+                if (MessageBox.Show(Resources.ShareXNeedsToBeRestartedForThePersonalFolderChangesToApply, Resources.ShareXConfirmation,
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    Program.Restart();
+                }
+            }
         }
 
         private void btnOpenPersonalFolder_Click(object sender, EventArgs e)
@@ -532,24 +551,25 @@ namespace ShareX
         private void cbUseCustomScreenshotsPath_CheckedChanged(object sender, EventArgs e)
         {
             Program.Settings.UseCustomScreenshotsPath = cbUseCustomScreenshotsPath.Checked;
-            lblSaveImageSubFolderPatternPreview.Text = Program.ScreenshotsFolder;
+            UpdateScreenshotsFolderPathPreview();
         }
 
         private void txtCustomScreenshotsPath_TextChanged(object sender, EventArgs e)
         {
-            Program.Settings.CustomScreenshotsPath = txtCustomScreenshotsPath.Text;
-            lblSaveImageSubFolderPatternPreview.Text = Program.ScreenshotsFolder;
+            Program.Settings.CustomScreenshotsPath = Helpers.GetValidFolderPath(txtCustomScreenshotsPath.Text);
+            UpdateScreenshotsFolderPathPreview();
         }
 
         private void btnBrowseCustomScreenshotsPath_Click(object sender, EventArgs e)
         {
-            Helpers.BrowseFolder(Resources.ApplicationSettingsForm_btnBrowseCustomScreenshotsPath_Click_Choose_screenshots_folder_path, txtCustomScreenshotsPath, Program.PersonalFolder, true);
+            Helpers.BrowseFolder(Resources.ApplicationSettingsForm_btnBrowseCustomScreenshotsPath_Click_Choose_screenshots_folder_path,
+                txtCustomScreenshotsPath, Program.PersonalFolder, true);
         }
 
         private void txtSaveImageSubFolderPattern_TextChanged(object sender, EventArgs e)
         {
-            Program.Settings.SaveImageSubFolderPattern = txtSaveImageSubFolderPattern.Text;
-            lblSaveImageSubFolderPatternPreview.Text = Program.ScreenshotsFolder;
+            Program.Settings.SaveImageSubFolderPattern = Helpers.GetValidFolderPath(txtSaveImageSubFolderPattern.Text);
+            UpdateScreenshotsFolderPathPreview();
         }
 
         private void btnOpenScreenshotsFolder_Click(object sender, EventArgs e)
@@ -561,25 +581,7 @@ namespace ShareX
 
         #region Export / Import
 
-        private void cbExportSettings_CheckedChanged(object sender, EventArgs e)
-        {
-            Program.Settings.ExportSettings = cbExportSettings.Checked;
-            UpdateExportButton();
-        }
-
-        private void cbExportHistory_CheckedChanged(object sender, EventArgs e)
-        {
-            Program.Settings.ExportHistory = cbExportHistory.Checked;
-            UpdateExportButton();
-        }
-
-        private void cbExportLogs_CheckedChanged(object sender, EventArgs e)
-        {
-            Program.Settings.ExportLogs = cbExportLogs.Checked;
-            UpdateExportButton();
-        }
-
-        private void btnExport_Click(object sender, EventArgs e)
+        private async void btnExport_Click(object sender, EventArgs e)
         {
             using (SaveFileDialog sfd = new SaveFileDialog())
             {
@@ -598,27 +600,25 @@ namespace ShareX
 
                     DebugHelper.WriteLine($"Export started: {exportPath}");
 
-                    TaskEx.Run(() =>
+                    await Task.Run(() =>
                     {
                         SettingManager.SaveAllSettings();
                         SettingManager.Export(exportPath);
-                    },
-                    () =>
-                    {
-                        if (!IsDisposed)
-                        {
-                            pbExportImport.Visible = false;
-                            btnExport.Enabled = true;
-                            btnImport.Enabled = true;
-                        }
-
-                        DebugHelper.WriteLine($"Export completed: {exportPath}");
                     });
+
+                    if (!IsDisposed)
+                    {
+                        pbExportImport.Visible = false;
+                        btnExport.Enabled = true;
+                        btnImport.Enabled = true;
+                    }
+
+                    DebugHelper.WriteLine($"Export completed: {exportPath}");
                 }
             }
         }
 
-        private void btnImport_Click(object sender, EventArgs e)
+        private async void btnImport_Click(object sender, EventArgs e)
         {
             using (OpenFileDialog ofd = new OpenFileDialog())
             {
@@ -635,35 +635,33 @@ namespace ShareX
 
                     DebugHelper.WriteLine($"Import started: {importPath}");
 
-                    TaskEx.Run(() =>
+                    await Task.Run(() =>
                     {
                         SettingManager.Import(importPath);
                         SettingManager.LoadAllSettings();
-                    },
-                    () =>
-                    {
-                        if (!IsDisposed)
-                        {
-                            UpdateControls();
-
-                            pbExportImport.Visible = false;
-                            btnExport.Enabled = true;
-                            btnImport.Enabled = true;
-                        }
-
-                        LanguageHelper.ChangeLanguage(Program.Settings.Language);
-
-                        Program.MainForm.UpdateControls();
-
-                        DebugHelper.WriteLine($"Import completed: {importPath}");
                     });
+
+                    if (!IsDisposed)
+                    {
+                        UpdateControls();
+
+                        pbExportImport.Visible = false;
+                        btnExport.Enabled = true;
+                        btnImport.Enabled = true;
+                    }
+
+                    LanguageHelper.ChangeLanguage(Program.Settings.Language);
+
+                    Program.MainForm.UpdateControls();
+
+                    DebugHelper.WriteLine($"Import completed: {importPath}");
                 }
             }
         }
 
         private void btnResetSettings_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Would you like to reset ShareX settings?", "ShareX", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+            if (MessageBox.Show(Resources.ApplicationSettingsForm_btnResetSettings_Click_WouldYouLikeToResetShareXSettings, "ShareX", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
             {
                 SettingManager.ResetSettings();
                 SettingManager.SaveAllSettings();
@@ -796,7 +794,7 @@ namespace ShareX
         private void chkUseSecondaryUploaders_CheckedChanged(object sender, EventArgs e)
         {
             Program.Settings.UseSecondaryUploaders = chkUseSecondaryUploaders.Checked;
-            tlpBackupDestinations.Enabled = Program.Settings.UseSecondaryUploaders;
+            gbSecondaryImageUploaders.Enabled = gbSecondaryTextUploaders.Enabled = gbSecondaryFileUploaders.Enabled = Program.Settings.UseSecondaryUploaders;
         }
 
         private void nudRetryUpload_ValueChanged(object sender, EventArgs e)

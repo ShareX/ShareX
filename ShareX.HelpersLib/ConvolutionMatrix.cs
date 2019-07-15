@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2017 ShareX Team
+    Copyright (c) 2007-2019 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -27,31 +27,38 @@ namespace ShareX.HelpersLib
 {
     public class ConvolutionMatrix
     {
-        public int Size { get; private set; }
-        public int[,] Matrix { get; set; }
-        public int Factor { get; set; }
-        public int Offset { get; set; }
+        private readonly double[,] matrix;
+
+        public int Width => matrix.GetLength(1);
+        public int Height => matrix.GetLength(0);
+        public byte Offset { get; set; }
+
+        public bool ConsiderAlpha { get; set; }
 
         public ConvolutionMatrix() : this(3)
         {
         }
 
-        public ConvolutionMatrix(int size)
+        public ConvolutionMatrix(int size) : this(size, size)
         {
-            Size = size;
-            Matrix = new int[Size, Size];
-            Factor = 1;
         }
 
-        public void SetAll(int value)
+        public ConvolutionMatrix(int height, int width)
         {
-            for (int y = 0; y < Size; y++)
+            matrix = new double[height, width];
+        }
+
+        public void SetAll(double value)
+        {
+            for (int y = 0; y < Height; y++)
             {
-                for (int x = 0; x < Size; x++)
+                for (int x = 0; x < Width; x++)
                 {
-                    Matrix[x, y] = value;
+                    matrix[y, x] = value;
                 }
             }
         }
+
+        public ref double this[int y, int x] => ref matrix[y, x];
     }
 }

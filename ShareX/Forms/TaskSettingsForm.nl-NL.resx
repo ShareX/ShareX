@@ -162,9 +162,6 @@
   <data name="cbCaptureClientArea.Text" xml:space="preserve">
     <value>Leg gebied vast bij het opnemen van een (actief) venster</value>
   </data>
-  <data name="cbScreenshotDelay.Text" xml:space="preserve">
-    <value>Vertraging schermafdruk:</value>
-  </data>
   <data name="tpRegionCapture.Text" xml:space="preserve">
     <value>Regio vastleggen</value>
   </data>
@@ -240,9 +237,6 @@
   <data name="cbClipboardUploadAutoIndexFolder.Text" xml:space="preserve">
     <value>Als het klembord een pad naar een map bevat, indexeer de map en upload het indexbestand</value>
   </data>
-  <data name="chkClipboardUploadURLContents.Text" xml:space="preserve">
-    <value>Als het klembord een link naar een bestand bevat, download dit bestand en upload het opnieuw</value>
-  </data>
   <data name="cbClipboardUploadShareURL.Text" xml:space="preserve">
     <value>Als het klembord een link bevat, deel de link via een service</value>
   </data>
@@ -254,9 +248,6 @@
   </data>
   <data name="cbFileUploadUseNamePattern.Text" xml:space="preserve">
     <value>Gebruik een patroon voor geüploade bestanden in plaats van de originele bestandsnaam</value>
-  </data>
-  <data name="btnResetAutoIncrementNumber.Text" xml:space="preserve">
-    <value>Automatisch ophogen herinstellen</value>
   </data>
   <data name="lblNameFormatPatternPreviewActiveWindow.Text" xml:space="preserve">
     <value>Voorbeeld:</value>
@@ -275,12 +266,6 @@
   </data>
   <data name="cbScreenRecorderFixedDuration.Text" xml:space="preserve">
     <value>Vaste duur:</value>
-  </data>
-  <data name="btnEncoderConfig.Text" xml:space="preserve">
-    <value>Profielen...</value>
-  </data>
-  <data name="chkRunScreencastCLI.Text" xml:space="preserve">
-    <value>voer erna CLI uit:</value>
   </data>
   <data name="lblScreenRecordFPS.Text" xml:space="preserve">
     <value>FFmpeg FPS:</value>
@@ -387,5 +372,74 @@ groter zijn dan de afmetingen van een miniatuurversie</value>
   </data>
   <data name="chkOverrideCustomUploader.Text" xml:space="preserve">
     <value>Vervang de standaard aangepaste uploader:</value>
+  </data>
+  <data name="btnUploaderFiltersRemove.Text" xml:space="preserve">
+    <value>Verwijder</value>
+  </data>
+  <data name="chUploaderFiltersExtension.Text" xml:space="preserve">
+    <value>Extensie</value>
+  </data>
+  <data name="btnRegionCaptureSnapSizesDialogCancel.Text" xml:space="preserve">
+    <value>Annuleer</value>
+  </data>
+  <data name="btnRegionCaptureSnapSizesDialogAdd.Text" xml:space="preserve">
+    <value>Toevoegen</value>
+  </data>
+  <data name="RegionCaptureSnapSizesHeight.Text" xml:space="preserve">
+    <value>Hoogte:</value>
+  </data>
+  <data name="lblRegionCaptureSnapSizesWidth.Text" xml:space="preserve">
+    <value>Breedte:</value>
+  </data>
+  <data name="lblRegionCaptureFixedSizeWidth.Text" xml:space="preserve">
+    <value>Breedte:</value>
+  </data>
+  <data name="lblRegionCaptureFixedSizeHeight.Text" xml:space="preserve">
+    <value>Hoogte:</value>
+  </data>
+  <data name="lblRegionCaptureMouseRightClickAction.Text" xml:space="preserve">
+    <value>Rechter muisknop actie:</value>
+  </data>
+  <data name="lblRegionCaptureMouseMiddleClickAction.Text" xml:space="preserve">
+    <value>Midden muisknop actie:</value>
+  </data>
+  <data name="lblRegionCaptureMouse5ClickAction.Text" xml:space="preserve">
+    <value>Muisknop 5 klik actie:</value>
+  </data>
+  <data name="lblRegionCaptureMouse4ClickAction.Text" xml:space="preserve">
+    <value>Muisknop 4 klik actie:</value>
+  </data>
+  <data name="lblCaptureCustomRegion.Text" xml:space="preserve">
+    <value>Vooraf geconfigureerde regio:</value>
+  </data>
+  <data name="btnCaptureCustomRegionSelectRectangle.Text" xml:space="preserve">
+    <value>Selecteer regio...</value>
+  </data>
+  <data name="cbRegionCaptureUseSquareMagnifier.Text" xml:space="preserve">
+    <value>Gebruik vierkante vergrootglas in plaats van cirkel</value>
+  </data>
+  <data name="chkOverrideUploadSettings.Text" xml:space="preserve">
+    <value>Upload instellingen overschrijven</value>
+  </data>
+  <data name="lblRegionCaptureMagnifierPixelSize.Text" xml:space="preserve">
+    <value>Vergrootglas pixel grote:</value>
+  </data>
+  <data name="chkOverrideImageSettings.Text" xml:space="preserve">
+    <value>Afbeelding instellingen overschrijven</value>
+  </data>
+  <data name="tpFileNaming.Text" xml:space="preserve">
+    <value>Bestand benaming</value>
+  </data>
+  <data name="btnWatchFolderEdit.Text" xml:space="preserve">
+    <value>Bewerk...</value>
+  </data>
+  <data name="btnUploaderFiltersUpdate.Text" xml:space="preserve">
+    <value>Bijwerken</value>
+  </data>
+  <data name="btnUploaderFiltersAdd.Text" xml:space="preserve">
+    <value>Toevoegen</value>
+  </data>
+  <data name="lblUploaderFiltersExtensionsExample.Text" xml:space="preserve">
+    <value>Voorbeeld: png, jpg, jpeg</value>
   </data>
 </root>

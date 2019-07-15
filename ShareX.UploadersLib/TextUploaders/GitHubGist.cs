@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2017 ShareX Team
+    Copyright (c) 2007-2019 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -30,6 +30,7 @@ using ShareX.HelpersLib;
 using ShareX.UploadersLib.Properties;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Linq;
 using System.Net;
 using System.Windows.Forms;
 
@@ -41,18 +42,14 @@ namespace ShareX.UploadersLib.TextUploaders
 
         public override Icon ServiceIcon => Resources.GitHub;
 
-        public override bool CheckConfig(UploadersConfig config) => true;
+        public override bool CheckConfig(UploadersConfig config)
+        {
+            return OAuth2Info.CheckOAuth(config.GistOAuth2Info);
+        }
 
         public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
         {
-            OAuth2Info oauth = null;
-
-            if (!config.GistAnonymousLogin)
-            {
-                oauth = config.GistOAuth2Info;
-            }
-
-            return new GitHubGist(oauth)
+            return new GitHubGist(config.GistOAuth2Info)
             {
                 PublicUpload = config.GistPublishPublic,
                 RawURL = config.GistRawURL,
@@ -73,10 +70,6 @@ namespace ShareX.UploadersLib.TextUploaders
         public bool RawURL { get; set; }
         public string CustomURLAPI { get; set; }
 
-        public GitHubGist()
-        {
-        }
-
         public GitHubGist(OAuth2Info oAuthInfos)
         {
             AuthInfo = oAuthInfos;
@@ -89,7 +82,7 @@ namespace ShareX.UploadersLib.TextUploaders
             args.Add("redirect_uri", Links.URL_CALLBACK);
             args.Add("scope", "gist");
 
-            return CreateQuery("https://github.com/login/oauth/authorize", args);
+            return URLHelpers.CreateQueryString("https://github.com/login/oauth/authorize", args);
         }
 
         public bool GetAccessToken(string code)
@@ -100,7 +93,7 @@ namespace ShareX.UploadersLib.TextUploaders
             args.Add("code", code);
 
             WebHeaderCollection headers = new WebHeaderCollection();
-            headers.Add("Accept", ContentTypeJSON);
+            headers.Add("Accept", RequestHelpers.ContentTypeJSON);
 
             string response = SendRequestMultiPart("https://github.com/login/oauth/access_token", args, headers);
 
@@ -133,8 +126,6 @@ namespace ShareX.UploadersLib.TextUploaders
                     }
                 };
 
-                string json = JsonConvert.SerializeObject(gistUploadObject);
-
                 string url;
 
                 if (!string.IsNullOrEmpty(CustomURLAPI))
@@ -148,27 +139,41 @@ namespace ShareX.UploadersLib.TextUploaders
 
                 url = URLHelpers.CombineURL(url, "gists");
 
-                if (AuthInfo != null)
-                {
-                    url += "?access_token=" + AuthInfo.Token.access_token;
-                }
+                string json = JsonConvert.SerializeObject(gistUploadObject);
 
-                string response = SendRequest(HttpMethod.POST, url, json, ContentTypeJSON);
+                Dictionary<string, string> args = new Dictionary<string, string>();
+                args.Add("access_token", AuthInfo.Token.access_token);
+
+                string response = SendRequest(HttpMethod.POST, url, json, RequestHelpers.ContentTypeJSON, args);
+
+                GistResponse gistResponse = JsonConvert.DeserializeObject<GistResponse>(response);
 
                 if (response != null)
                 {
                     if (RawURL)
                     {
-                        ur.URL = Helpers.ParseJSON(response, "files.*.raw_url");
+                        ur.URL = gistResponse.files.First().Value.raw_url;
                     }
                     else
                     {
-                        ur.URL = Helpers.ParseJSON(response, "html_url");
+                        ur.URL = gistResponse.html_url;
                     }
                 }
             }
 
             return ur;
+        }
+
+        private class GistResponse
+        {
+            public string html_url { get; set; }
+            public Dictionary<string, GistFileInfo> files { get; set; }
+        }
+
+        private class GistFileInfo
+        {
+            public string filename { get; set; }
+            public string raw_url { get; set; }
         }
     }
 }

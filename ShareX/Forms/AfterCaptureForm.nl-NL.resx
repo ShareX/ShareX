@@ -138,4 +138,7 @@
   <data name="lblFileName.Text" xml:space="preserve">
     <value>Bestandsnaam:</value>
   </data>
+  <data name="tpAfterUpload.Text" xml:space="preserve">
+    <value>Na upload:</value>
+  </data>
 </root>

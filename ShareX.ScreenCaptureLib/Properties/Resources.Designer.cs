@@ -19,7 +19,7 @@ namespace ShareX.ScreenCaptureLib.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -63,9 +63,39 @@ namespace ShareX.ScreenCaptureLib.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap arrow_circle {
+            get {
+                object obj = ResourceManager.GetObject("arrow_circle", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap arrow_circle_135_left {
+            get {
+                object obj = ResourceManager.GetObject("arrow_circle_135_left", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap arrow_circle_225_left {
             get {
                 object obj = ResourceManager.GetObject("arrow_circle_225_left", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap arrow_circle_double {
+            get {
+                object obj = ResourceManager.GetObject("arrow_circle_double", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -95,6 +125,16 @@ namespace ShareX.ScreenCaptureLib.Properties {
         internal static System.Drawing.Bitmap camera {
             get {
                 object obj = ResourceManager.GetObject("camera", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap CircleNode {
+            get {
+                object obj = ResourceManager.GetObject("CircleNode", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -152,6 +192,16 @@ namespace ShareX.ScreenCaptureLib.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap cursor {
+            get {
+                object obj = ResourceManager.GetObject("cursor", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap disk_black {
             get {
                 object obj = ResourceManager.GetObject("disk_black", resourceCulture);
@@ -176,6 +226,15 @@ namespace ShareX.ScreenCaptureLib.Properties {
             get {
                 object obj = ResourceManager.GetObject("drive_globe", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Drop shadow color....
+        /// </summary>
+        internal static string DropShadowColor {
+            get {
+                return ResourceManager.GetString("DropShadowColor", resourceCulture);
             }
         }
         
@@ -290,6 +349,15 @@ namespace ShareX.ScreenCaptureLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Clipboard does not contain an image..
+        /// </summary>
+        internal static string EditorStartupForm_ClipboardDoesNotContainAnImage {
+            get {
+                return ResourceManager.GetString("EditorStartupForm_ClipboardDoesNotContainAnImage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap eraser {
@@ -387,6 +455,16 @@ namespace ShareX.ScreenCaptureLib.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap gradient {
+            get {
+                object obj = ResourceManager.GetObject("gradient", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap grid {
             get {
                 object obj = ResourceManager.GetObject("grid", resourceCulture);
@@ -407,10 +485,89 @@ namespace ShareX.ScreenCaptureLib.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap image__pencil {
+            get {
+                object obj = ResourceManager.GetObject("image__pencil", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap image__plus {
+            get {
+                object obj = ResourceManager.GetObject("image__plus", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap image_crop {
             get {
                 object obj = ResourceManager.GetObject("image_crop", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap image_empty {
+            get {
+                object obj = ResourceManager.GetObject("image_empty", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap image_resize {
+            get {
+                object obj = ResourceManager.GetObject("image_resize", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap image_resize_actual {
+            get {
+                object obj = ResourceManager.GetObject("image_resize_actual", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap image_saturation {
+            get {
+                object obj = ResourceManager.GetObject("image_saturation", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap image_select {
+            get {
+                object obj = ResourceManager.GetObject("image_select", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Add image effects....
+        /// </summary>
+        internal static string ImageEffects {
+            get {
+                return ResourceManager.GetString("ImageEffects", resourceCulture);
             }
         }
         
@@ -440,6 +597,26 @@ namespace ShareX.ScreenCaptureLib.Properties {
         internal static System.Drawing.Bitmap layer__pencil {
             get {
                 object obj = ResourceManager.GetObject("layer__pencil", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap layer_flip {
+            get {
+                object obj = ResourceManager.GetObject("layer_flip", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap layer_flip_vertical {
+            get {
+                object obj = ResourceManager.GetObject("layer_flip_vertical", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -617,6 +794,55 @@ namespace ShareX.ScreenCaptureLib.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap layout_center {
+            get {
+                object obj = ResourceManager.GetObject("layout_center", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap layout_split {
+            get {
+                object obj = ResourceManager.GetObject("layout_split", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap layout_split_vertical {
+            get {
+                object obj = ResourceManager.GetObject("layout_split_vertical", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use light resize nodes.
+        /// </summary>
+        internal static string LightResizeNodes {
+            get {
+                return ResourceManager.GetString("LightResizeNodes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap magnifier_zoom {
+            get {
+                object obj = ResourceManager.GetObject("magnifier_zoom", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap monitor {
             get {
                 object obj = ResourceManager.GetObject("monitor", resourceCulture);
@@ -645,6 +871,15 @@ namespace ShareX.ScreenCaptureLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Open keybinds web page....
+        /// </summary>
+        internal static string OpenKeybindsPage {
+            get {
+                return ResourceManager.GetString("OpenKeybindsPage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap pencil {
@@ -661,87 +896,6 @@ namespace ShareX.ScreenCaptureLib.Properties {
             get {
                 object obj = ResourceManager.GetObject("printer", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Rectangle capture annotate.
-        /// </summary>
-        internal static string RectangleAnnotate_InitializeComponent_Rectangle_capture_annotate {
-            get {
-                return ResourceManager.GetString("RectangleAnnotate_InitializeComponent_Rectangle_capture_annotate", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to [1] Select capture mode.
-        /// </summary>
-        internal static string RectangleAnnotate_WriteTips__1__Select_capture_mode {
-            get {
-                return ResourceManager.GetString("RectangleAnnotate_WriteTips__1__Select_capture_mode", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to [2] Select rectangle drawing mode.
-        /// </summary>
-        internal static string RectangleAnnotate_WriteTips__2__Select_rectangle_drawing_mode {
-            get {
-                return ResourceManager.GetString("RectangleAnnotate_WriteTips__2__Select_rectangle_drawing_mode", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to [3] Select pen drawing mode.
-        /// </summary>
-        internal static string RectangleAnnotate_WriteTips__3__Select_pen_drawing_mode {
-            get {
-                return ResourceManager.GetString("RectangleAnnotate_WriteTips__3__Select_pen_drawing_mode", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to [Ctrl + Mouse wheel] Change border size.
-        /// </summary>
-        internal static string RectangleAnnotate_WriteTips__Ctrl___Mouse_wheel__Change_border_size {
-            get {
-                return ResourceManager.GetString("RectangleAnnotate_WriteTips__Ctrl___Mouse_wheel__Change_border_size", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to [Ctrl + Mouse wheel] Change pen size.
-        /// </summary>
-        internal static string RectangleAnnotate_WriteTips__Ctrl___Mouse_wheel__Change_pen_size {
-            get {
-                return ResourceManager.GetString("RectangleAnnotate_WriteTips__Ctrl___Mouse_wheel__Change_pen_size", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to [Mouse wheel] Swap modes.
-        /// </summary>
-        internal static string RectangleAnnotate_WriteTips__Mouse_wheel__Swap_modes {
-            get {
-                return ResourceManager.GetString("RectangleAnnotate_WriteTips__Mouse_wheel__Swap_modes", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to [Shift] Change border color.
-        /// </summary>
-        internal static string RectangleAnnotate_WriteTips__Shift__Change_border_color {
-            get {
-                return ResourceManager.GetString("RectangleAnnotate_WriteTips__Shift__Change_border_color", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to [Shift] Change pen color.
-        /// </summary>
-        internal static string RectangleAnnotate_WriteTips__Shift__Change_pen_color {
-            get {
-                return ResourceManager.GetString("RectangleAnnotate_WriteTips__Shift__Change_pen_color", resourceCulture);
             }
         }
         
@@ -786,233 +940,6 @@ namespace ShareX.ScreenCaptureLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to [~] [Mouse X2 click] Active monitor capture.
-        /// </summary>
-        internal static string RectangleRegion_WriteTips_____Active_monitor_capture {
-            get {
-                return ResourceManager.GetString("RectangleRegion_WriteTips_____Active_monitor_capture", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to [1, 2, 3 ... 0] Monitor capture.
-        /// </summary>
-        internal static string RectangleRegion_WriteTips__1__2__3_____0__Monitor_capture {
-            get {
-                return ResourceManager.GetString("RectangleRegion_WriteTips__1__2__3_____0__Monitor_capture", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to [Arrow keys] Move cursor position.
-        /// </summary>
-        internal static string RectangleRegion_WriteTips__Arrow_keys__Move_cursor_position {
-            get {
-                return ResourceManager.GetString("RectangleRegion_WriteTips__Arrow_keys__Move_cursor_position", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to [Ctrl + C] Copy info.
-        /// </summary>
-        internal static string RectangleRegion_WriteTips__Ctrl___C__Copy_info {
-            get {
-                return ResourceManager.GetString("RectangleRegion_WriteTips__Ctrl___C__Copy_info", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to [Ctrl + C] Copy position.
-        /// </summary>
-        internal static string RectangleRegion_WriteTips__Ctrl___C__Copy_position {
-            get {
-                return ResourceManager.GetString("RectangleRegion_WriteTips__Ctrl___C__Copy_position", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to [Ctrl + C] Copy position and size.
-        /// </summary>
-        internal static string RectangleRegion_WriteTips__Ctrl___C__Copy_position_and_size {
-            get {
-                return ResourceManager.GetString("RectangleRegion_WriteTips__Ctrl___C__Copy_position_and_size", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to [Double left click] [Enter] Capture regions.
-        /// </summary>
-        internal static string RectangleRegion_WriteTips__Double_Left_click___Enter__Capture_regions {
-            get {
-                return ResourceManager.GetString("RectangleRegion_WriteTips__Double_Left_click___Enter__Capture_regions", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to [Esc] Cancel capture.
-        /// </summary>
-        internal static string RectangleRegion_WriteTips__Esc__Cancel_capture {
-            get {
-                return ResourceManager.GetString("RectangleRegion_WriteTips__Esc__Cancel_capture", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to [F1] Hide hotkeys.
-        /// </summary>
-        internal static string RectangleRegion_WriteTips__F1__Hide_tips {
-            get {
-                return ResourceManager.GetString("RectangleRegion_WriteTips__F1__Hide_tips", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to [Hold Alt] Snap selection to preset sizes.
-        /// </summary>
-        internal static string RectangleRegion_WriteTips__Hold_Alt__Snap_resizing_to_preset_sizes {
-            get {
-                return ResourceManager.GetString("RectangleRegion_WriteTips__Hold_Alt__Snap_resizing_to_preset_sizes", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to [Hold left click] [Insert] Start region selection.
-        /// </summary>
-        internal static string RectangleRegion_WriteTips__Hold_Left_click__Start_region_selection {
-            get {
-                return ResourceManager.GetString("RectangleRegion_WriteTips__Hold_Left_click__Start_region_selection", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to [Hold left click on selection] Move region.
-        /// </summary>
-        internal static string RectangleRegion_WriteTips__Hold_Left_click_on_selection__Move_region {
-            get {
-                return ResourceManager.GetString("RectangleRegion_WriteTips__Hold_Left_click_on_selection__Move_region", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to [Hold Shift] Proportional resizing.
-        /// </summary>
-        internal static string RectangleRegion_WriteTips__Hold_Shift__Proportional_resizing {
-            get {
-                return ResourceManager.GetString("RectangleRegion_WriteTips__Hold_Shift__Proportional_resizing", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to [Release left click] [Insert] Finish region selection.
-        /// </summary>
-        internal static string RectangleRegion_WriteTips__Insert__Stop_region_selection {
-            get {
-                return ResourceManager.GetString("RectangleRegion_WriteTips__Insert__Stop_region_selection", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to [Right click] [Delete] Cancel region selection.
-        /// </summary>
-        internal static string RectangleRegion_WriteTips__Right_click__Cancel_region_selection {
-            get {
-                return ResourceManager.GetString("RectangleRegion_WriteTips__Right_click__Cancel_region_selection", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to [Delete] Remove region.
-        /// </summary>
-        internal static string RectangleRegion_WriteTips__Right_click_on_selection___Delete__Remove_region {
-            get {
-                return ResourceManager.GetString("RectangleRegion_WriteTips__Right_click_on_selection___Delete__Remove_region", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to [Space] [Mouse X1 click] Fullscreen capture.
-        /// </summary>
-        internal static string RectangleRegion_WriteTips__Space__Fullscreen_capture {
-            get {
-                return ResourceManager.GetString("RectangleRegion_WriteTips__Space__Fullscreen_capture", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to [Ctrl + Mouse wheel] Change current tool.
-        /// </summary>
-        internal static string RectangleRegionForm_WriteTips__Ctrl___Mouse_wheel__Change_magnifier_size {
-            get {
-                return ResourceManager.GetString("RectangleRegionForm_WriteTips__Ctrl___Mouse_wheel__Change_magnifier_size", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to [Hold Ctrl + Arrow keys] Move region.
-        /// </summary>
-        internal static string RectangleRegionForm_WriteTips__Hold_Ctrl___Arrow_keys__Move_region {
-            get {
-                return ResourceManager.GetString("RectangleRegionForm_WriteTips__Hold_Ctrl___Arrow_keys__Move_region", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to [Hold Ctrl] Move selection.
-        /// </summary>
-        internal static string RectangleRegionForm_WriteTips__Hold_Ctrl__Move_selection {
-            get {
-                return ResourceManager.GetString("RectangleRegionForm_WriteTips__Hold_Ctrl__Move_selection", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to [Hold Shift + Arrow keys] Move cursor position faster.
-        /// </summary>
-        internal static string RectangleRegionForm_WriteTips__Hold_Shift___Arrow_keys__Move_cursor_position_faster {
-            get {
-                return ResourceManager.GetString("RectangleRegionForm_WriteTips__Hold_Shift___Arrow_keys__Move_cursor_position_fast" +
-                        "er", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to [Hold Shift + Arrow keys] Resize or move region faster.
-        /// </summary>
-        internal static string RectangleRegionForm_WriteTips__Hold_Shift___Arrow_keys__Resize_or_move_region_faster {
-            get {
-                return ResourceManager.GetString("RectangleRegionForm_WriteTips__Hold_Shift___Arrow_keys__Resize_or_move_region_fas" +
-                        "ter", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to [Mouse wheel] Change magnifier size.
-        /// </summary>
-        internal static string RectangleRegionForm_WriteTips__Mouse_wheel__Change_current_tool {
-            get {
-                return ResourceManager.GetString("RectangleRegionForm_WriteTips__Mouse_wheel__Change_current_tool", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to [Tab] [Mouse middle click] Select last annotation tool.
-        /// </summary>
-        internal static string RectangleRegionForm_WriteTips__Tab___Mouse_4_click__Select_last_annotation_tool {
-            get {
-                return ResourceManager.GetString("RectangleRegionForm_WriteTips__Tab___Mouse_4_click__Select_last_annotation_tool", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to [Tab] [Mouse middle click] Select last region tool.
-        /// </summary>
-        internal static string RectangleRegionForm_WriteTips__Tab___Mouse_4_click__Select_last_region_tool {
-            get {
-                return ResourceManager.GetString("RectangleRegionForm_WriteTips__Tab___Mouse_4_click__Select_last_region_tool", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Rectangle capture transparent.
         /// </summary>
         internal static string RectangleTransparent_RectangleTransparent_Rectangle_capture_transparent {
@@ -1022,56 +949,39 @@ namespace ShareX.ScreenCaptureLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to [Arrow keys] Resize region from bottom right corner.
+        ///   Looks up a localized string similar to Image editor.
         /// </summary>
-        internal static string RegionCaptureForm_WriteTips_ArrowKeysResizeRegionFromBottomRightCorner {
+        internal static string RegionCaptureForm_InitializeComponent_ImageEditor {
             get {
-                return ResourceManager.GetString("RegionCaptureForm_WriteTips_ArrowKeysResizeRegionFromBottomRightCorner", resourceCulture);
+                return ResourceManager.GetString("RegionCaptureForm_InitializeComponent_ImageEditor", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to [Ctrl + V] Paste image or text.
+        ///   Looks up a localized string similar to ShareX - Image editor.
         /// </summary>
-        internal static string RegionCaptureForm_WriteTips_CtrlVPasteImageOrText {
+        internal static string RegionCaptureForm_ShowExitConfirmation_ShareXImageEditor {
             get {
-                return ResourceManager.GetString("RegionCaptureForm_WriteTips_CtrlVPasteImageOrText", resourceCulture);
+                return ResourceManager.GetString("RegionCaptureForm_ShowExitConfirmation_ShareXImageEditor", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to [Ctrl + Z] Undo shape.
+        ///   Looks up a localized string similar to There are unsaved changes.
+        ///Would you like to close image editor?.
         /// </summary>
-        internal static string RegionCaptureForm_WriteTips_CtrlZUndoShape {
+        internal static string RegionCaptureForm_ShowExitConfirmation_Text {
             get {
-                return ResourceManager.GetString("RegionCaptureForm_WriteTips_CtrlZUndoShape", resourceCulture);
+                return ResourceManager.GetString("RegionCaptureForm_ShowExitConfirmation_Text", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to [Hold Alt + Arrow keys] Resize region from top left corner.
+        ///   Looks up a localized string similar to Tip: You can pan image by holding mouse middle button and dragging..
         /// </summary>
-        internal static string RegionCaptureForm_WriteTips_HoldAltArrowKeysResizeRegionFromTopLeftCorner {
+        internal static string RegionCaptureForm_TipYouCanPanImageByHoldingMouseMiddleButtonAndDragging {
             get {
-                return ResourceManager.GetString("RegionCaptureForm_WriteTips_HoldAltArrowKeysResizeRegionFromTopLeftCorner", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Note: Hiding these tips will increase FPS greatly..
-        /// </summary>
-        internal static string RegionCaptureForm_WriteTips_NoteHidingTheseTipsWillIncreaseFPSGreatly {
-            get {
-                return ResourceManager.GetString("RegionCaptureForm_WriteTips_NoteHidingTheseTipsWillIncreaseFPSGreatly", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to [Right click] Cancel capture / remove region.
-        /// </summary>
-        internal static string RegionCaptureForm_WriteTips_RightClickCancelCaptureRemoveRegion {
-            get {
-                return ResourceManager.GetString("RegionCaptureForm_WriteTips_RightClickCancelCaptureRemoveRegion", resourceCulture);
+                return ResourceManager.GetString("RegionCaptureForm_TipYouCanPanImageByHoldingMouseMiddleButtonAndDragging", resourceCulture);
             }
         }
         
@@ -1094,7 +1004,25 @@ namespace ShareX.ScreenCaptureLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Blur radius:.
+        ///   Looks up a localized string similar to Arrows on both ends.
+        /// </summary>
+        internal static string ShapeManager_ArrowsOnBothEnds {
+            get {
+                return ResourceManager.GetString("ShapeManager_ArrowsOnBothEnds", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Center points:.
+        /// </summary>
+        internal static string ShapeManager_CenterPoints {
+            get {
+                return ResourceManager.GetString("ShapeManager_CenterPoints", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Blur strength:.
         /// </summary>
         internal static string ShapeManager_CreateContextMenu_Blur_radius_ {
             get {
@@ -1301,20 +1229,29 @@ namespace ShareX.ScreenCaptureLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Show hotkeys.
-        /// </summary>
-        internal static string ShapeManager_CreateContextMenu_Show_tips {
-            get {
-                return ResourceManager.GetString("ShapeManager_CreateContextMenu_Show_tips", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Square shape magnifier.
         /// </summary>
         internal static string ShapeManager_CreateContextMenu_Square_shape_magnifier {
             get {
                 return ResourceManager.GetString("ShapeManager_CreateContextMenu_Square_shape_magnifier", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Switch to drawing tool after shape selection.
+        /// </summary>
+        internal static string ShapeManager_CreateContextMenu_SwitchToDrawingToolAfterSelection {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateContextMenu_SwitchToDrawingToolAfterSelection", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Switch to selection tool after shape drawing.
+        /// </summary>
+        internal static string ShapeManager_CreateContextMenu_SwitchToSelectionToolAfterDrawing {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateContextMenu_SwitchToSelectionToolAfterDrawing", resourceCulture);
             }
         }
         
@@ -1328,11 +1265,38 @@ namespace ShareX.ScreenCaptureLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Annotate menu.
+        /// </summary>
+        internal static string ShapeManager_CreateToolbar_AnnotateMenu {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateToolbar_AnnotateMenu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Apply changes &amp; continue task (Enter).
         /// </summary>
         internal static string ShapeManager_CreateToolbar_ApplyChangesContinueTaskEnter {
             get {
                 return ResourceManager.GetString("ShapeManager_CreateToolbar_ApplyChangesContinueTaskEnter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Auto close editor on task.
+        /// </summary>
+        internal static string ShapeManager_CreateToolbar_AutoCloseEditorOnTask {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateToolbar_AutoCloseEditorOnTask", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Auto crop image....
+        /// </summary>
+        internal static string ShapeManager_CreateToolbar_AutoCropImage {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateToolbar_AutoCropImage", resourceCulture);
             }
         }
         
@@ -1364,6 +1328,15 @@ namespace ShareX.ScreenCaptureLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Canvas size....
+        /// </summary>
+        internal static string ShapeManager_CreateToolbar_CanvasSize {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateToolbar_CanvasSize", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Capture regions.
         /// </summary>
         internal static string ShapeManager_CreateToolbar_CaptureRegions {
@@ -1382,11 +1355,20 @@ namespace ShareX.ScreenCaptureLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Copy image to clipboard.
+        ///   Looks up a localized string similar to Copy image to clipboard (Ctrl + Shift + C).
         /// </summary>
         internal static string ShapeManager_CreateToolbar_CopyImageToClipboard {
             get {
                 return ResourceManager.GetString("ShapeManager_CreateToolbar_CopyImageToClipboard", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Crop image....
+        /// </summary>
+        internal static string ShapeManager_CreateToolbar_CropImage {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateToolbar_CropImage", resourceCulture);
             }
         }
         
@@ -1427,6 +1409,87 @@ namespace ShareX.ScreenCaptureLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Editor start mode:.
+        /// </summary>
+        internal static string ShapeManager_CreateToolbar_EditorStartMode {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateToolbar_EditorStartMode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Flip horizontal.
+        /// </summary>
+        internal static string ShapeManager_CreateToolbar_FlipHorizontal {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateToolbar_FlipHorizontal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Flip vertical.
+        /// </summary>
+        internal static string ShapeManager_CreateToolbar_FlipVertical {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateToolbar_FlipVertical", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Font size:.
+        /// </summary>
+        internal static string ShapeManager_CreateToolbar_FontSize {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateToolbar_FontSize", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Image.
+        /// </summary>
+        internal static string ShapeManager_CreateToolbar_Image {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateToolbar_Image", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Image size....
+        /// </summary>
+        internal static string ShapeManager_CreateToolbar_ImageSize {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateToolbar_ImageSize", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Insert image file....
+        /// </summary>
+        internal static string ShapeManager_CreateToolbar_InsertImageFile {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateToolbar_InsertImageFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Insert image from screen....
+        /// </summary>
+        internal static string ShapeManager_CreateToolbar_InsertImageFromScreen {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateToolbar_InsertImageFromScreen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Interpolation mode:.
+        /// </summary>
+        internal static string ShapeManager_CreateToolbar_InterpolationMode {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateToolbar_InterpolationMode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Capture last region.
         /// </summary>
         internal static string ShapeManager_CreateToolbar_LastRegion {
@@ -1436,7 +1499,34 @@ namespace ShareX.ScreenCaptureLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Print image....
+        ///   Looks up a localized string similar to New image....
+        /// </summary>
+        internal static string ShapeManager_CreateToolbar_NewImage {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateToolbar_NewImage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Open image file....
+        /// </summary>
+        internal static string ShapeManager_CreateToolbar_OpenImageFile {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateToolbar_OpenImageFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Paste image/text.
+        /// </summary>
+        internal static string ShapeManager_CreateToolbar_PasteImageText {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateToolbar_PasteImageText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Print image... (Ctrl + P).
         /// </summary>
         internal static string ShapeManager_CreateToolbar_PrintImage {
             get {
@@ -1445,7 +1535,34 @@ namespace ShareX.ScreenCaptureLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Run after capture tasks.
+        ///   Looks up a localized string similar to Rotate 180°.
+        /// </summary>
+        internal static string ShapeManager_CreateToolbar_Rotate180 {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateToolbar_Rotate180", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Rotate 90° clockwise.
+        /// </summary>
+        internal static string ShapeManager_CreateToolbar_Rotate90Clockwise {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateToolbar_Rotate90Clockwise", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Rotate 90° counter clockwise.
+        /// </summary>
+        internal static string ShapeManager_CreateToolbar_Rotate90CounterClockwise {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateToolbar_Rotate90CounterClockwise", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Run after capture tasks (Enter).
         /// </summary>
         internal static string ShapeManager_CreateToolbar_RunAfterCaptureTasks {
             get {
@@ -1454,7 +1571,7 @@ namespace ShareX.ScreenCaptureLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Save image.
+        ///   Looks up a localized string similar to Save image (Ctrl + S).
         /// </summary>
         internal static string ShapeManager_CreateToolbar_SaveImage {
             get {
@@ -1463,7 +1580,7 @@ namespace ShareX.ScreenCaptureLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Save image as....
+        ///   Looks up a localized string similar to Save image as... (Ctrl + Shift + S).
         /// </summary>
         internal static string ShapeManager_CreateToolbar_SaveImageAs {
             get {
@@ -1499,6 +1616,15 @@ namespace ShareX.ScreenCaptureLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Value of first step:.
+        /// </summary>
+        internal static string ShapeManager_CreateToolbar_StartingStepValue {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateToolbar_StartingStepValue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Undo.
         /// </summary>
         internal static string ShapeManager_CreateToolbar_Undo {
@@ -1508,11 +1634,59 @@ namespace ShareX.ScreenCaptureLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Upload image.
+        ///   Looks up a localized string similar to Upload image (Ctrl + U).
         /// </summary>
         internal static string ShapeManager_CreateToolbar_UploadImage {
             get {
                 return ResourceManager.GetString("ShapeManager_CreateToolbar_UploadImage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use letters.
+        /// </summary>
+        internal static string ShapeManager_CreateToolbar_UseLetters {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateToolbar_UseLetters", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cursor type:.
+        /// </summary>
+        internal static string ShapeManager_CursorType {
+            get {
+                return ResourceManager.GetString("ShapeManager_CursorType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap smiley_cool {
+            get {
+                object obj = ResourceManager.GetObject("smiley_cool", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap smiley_yell {
+            get {
+                object obj = ResourceManager.GetObject("smiley_yell", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap stamp_cursor {
+            get {
+                object obj = ResourceManager.GetObject("stamp_cursor", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -1523,6 +1697,15 @@ namespace ShareX.ScreenCaptureLib.Properties {
             get {
                 object obj = ResourceManager.GetObject("test_32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This window will close before opening the keybinds web page. Do you want to continue?.
+        /// </summary>
+        internal static string ThisWindowWillCloseBeforeOpeningKeybindsPageWantContinue {
+            get {
+                return ResourceManager.GetString("ThisWindowWillCloseBeforeOpeningKeybindsPageWantContinue", resourceCulture);
             }
         }
         

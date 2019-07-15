@@ -252,14 +252,8 @@
   <data name="cbSendToMenu.Text" xml:space="preserve">
     <value>Mostrar ShareX no menu de "Enviar para"</value>
   </data>
-  <data name="cbStartWithWindows.Text" xml:space="preserve">
-    <value>Executar ShareX quando o Windows iniciar</value>
-  </data>
   <data name="gbSecondaryTextUploaders.Text" xml:space="preserve">
     <value>Hospedagem de texto </value>
-  </data>
-  <data name="lblNotePersonalFolderPath.Text" xml:space="preserve">
-    <value>Nota: é necessário reiniciar o programa para que as alterações façam efeito.</value>
   </data>
   <data name="cbUseCustomScreenshotsPath.Text" xml:space="preserve">
     <value>Pasta de screenshots customizada</value>
@@ -287,15 +281,6 @@
   </data>
   <data name="btnEditQuickTaskMenu.Text" xml:space="preserve">
     <value>Editar menu de tarefas rápidas...</value>
-  </data>
-  <data name="cbExportLogs.Text" xml:space="preserve">
-    <value>Exportar registros</value>
-  </data>
-  <data name="cbExportHistory.Text" xml:space="preserve">
-    <value>Exportar histórico</value>
-  </data>
-  <data name="cbExportSettings.Text" xml:space="preserve">
-    <value>Exportar configurações</value>
   </data>
   <data name="btnExport.Text" xml:space="preserve">
     <value>Exportar...</value>

@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2017 ShareX Team
+    Copyright (c) 2007-2019 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using System;
+using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
@@ -32,38 +33,7 @@ namespace ShareX.HelpersLib
 {
     public class BlackStyleProgressBar : Control
     {
-        public int Maximum
-        {
-            get
-            {
-                return maximum;
-            }
-            set
-            {
-                if (maximum != value)
-                {
-                    if (value < 0)
-                    {
-                        throw new ArgumentOutOfRangeException("Maximum");
-                    }
-
-                    if (minimum > value)
-                    {
-                        minimum = value;
-                    }
-
-                    maximum = value;
-
-                    if (this.value > maximum)
-                    {
-                        this.value = maximum;
-                    }
-
-                    Refresh();
-                }
-            }
-        }
-
+        [DefaultValue(0)]
         public int Minimum
         {
             get
@@ -91,11 +61,49 @@ namespace ShareX.HelpersLib
                         this.value = minimum;
                     }
 
-                    Refresh();
+                    Invalidate();
                 }
             }
         }
 
+        private int minimum;
+
+        [DefaultValue(100)]
+        public int Maximum
+        {
+            get
+            {
+                return maximum;
+            }
+            set
+            {
+                if (maximum != value)
+                {
+                    if (value < 0)
+                    {
+                        throw new ArgumentOutOfRangeException("Maximum");
+                    }
+
+                    if (minimum > value)
+                    {
+                        minimum = value;
+                    }
+
+                    maximum = value;
+
+                    if (this.value > maximum)
+                    {
+                        this.value = maximum;
+                    }
+
+                    Invalidate();
+                }
+            }
+        }
+
+        private int maximum;
+
+        [DefaultValue(0)]
         public int Value
         {
             get
@@ -113,20 +121,59 @@ namespace ShareX.HelpersLib
 
                     this.value = value;
 
-                    Refresh();
+                    Invalidate();
                 }
             }
         }
 
-        private int maximum, minimum, value;
+        private int value;
+
+        [DefaultValue(false)]
+        public bool ShowPercentageText
+        {
+            get
+            {
+                return showPercentageText;
+            }
+            set
+            {
+                if (showPercentageText != value)
+                {
+                    showPercentageText = value;
+
+                    Invalidate();
+                }
+            }
+        }
+
+        private bool showPercentageText;
+
+        public override string Text
+        {
+            get
+            {
+                return text;
+            }
+            set
+            {
+                if (text != value)
+                {
+                    text = value;
+
+                    Invalidate();
+                }
+            }
+        }
+
+        private string text;
 
         public BlackStyleProgressBar()
         {
             SetStyle(ControlStyles.UserPaint | ControlStyles.AllPaintingInWmPaint | ControlStyles.ResizeRedraw | ControlStyles.OptimizedDoubleBuffer | ControlStyles.SupportsTransparentBackColor, true);
 
-            maximum = 100;
             minimum = 0;
-            value = 50;
+            maximum = 100;
+            value = 0;
         }
 
         protected override void OnPaint(PaintEventArgs pe)
@@ -140,6 +187,15 @@ namespace ShareX.HelpersLib
             if (Value > Minimum && Value <= Maximum)
             {
                 DrawProgressBar(g);
+
+                if (!string.IsNullOrEmpty(Text))
+                {
+                    DrawText(g, Text);
+                }
+                else if (ShowPercentageText)
+                {
+                    DrawText(g, Value + "%");
+                }
             }
         }
 
@@ -183,6 +239,12 @@ namespace ShareX.HelpersLib
             {
                 g.DrawRectangle(innerBorderPen, new Rectangle(progressBarRect.X, progressBarRect.Y, progressBarRect.Width - 1, progressBarRect.Height - 1));
             }
+        }
+
+        private void DrawText(Graphics g, string text)
+        {
+            TextRenderer.DrawText(g, text, Font, ClientRectangle.LocationOffset(0, 1), Color.Black, TextFormatFlags.HorizontalCenter | TextFormatFlags.VerticalCenter);
+            TextRenderer.DrawText(g, text, Font, ClientRectangle, ForeColor, TextFormatFlags.HorizontalCenter | TextFormatFlags.VerticalCenter);
         }
     }
 }

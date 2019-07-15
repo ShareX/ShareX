@@ -127,7 +127,7 @@
     <value>Hiện ShareX ở menu "Send to"</value>
   </data>
   <data name="cbShellContextMenuButton.Text" xml:space="preserve">
-    <value>Hiện nút "Upload with ShareX" trong menu ngữ cảnh của Windows Explorer</value>
+    <value>Hiện nút "Tải lên với ShareX" trong menu ngữ cảnh của Windows Explorer</value>
   </data>
   <data name="cbSteamInApp.Text" xml:space="preserve">
     <value>Khi ShareX đang chạy, hiện "In-App" trong Steam</value>

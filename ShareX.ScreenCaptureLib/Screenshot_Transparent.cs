@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2017 ShareX Team
+    Copyright (c) 2007-2019 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -27,6 +27,7 @@ using ShareX.HelpersLib;
 using System;
 using System.Drawing;
 using System.Drawing.Imaging;
+using System.Linq;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -43,11 +44,12 @@ namespace ShareX.ScreenCaptureLib
                 if (CaptureShadow && !NativeMethods.IsZoomed(handle) && NativeMethods.IsDWMEnabled())
                 {
                     rect.Inflate(ShadowOffset, ShadowOffset);
-                    rect.Intersect(CaptureHelpers.GetScreenBounds());
+                    Rectangle intersectBounds = Screen.AllScreens.Select(x => x.Bounds).Where(x => x.IntersectsWith(rect)).Combine();
+                    rect.Intersect(intersectBounds);
                 }
 
                 Bitmap whiteBackground = null, blackBackground = null, whiteBackground2 = null;
-                CursorData cursor = null;
+                CursorData cursorData = null;
                 bool isTransparent = false, isTaskbarHide = false;
 
                 try
@@ -61,7 +63,7 @@ namespace ShareX.ScreenCaptureLib
                     {
                         try
                         {
-                            cursor = new CursorData();
+                            cursorData = new CursorData();
                         }
                         catch (Exception e)
                         {
@@ -119,10 +121,9 @@ namespace ShareX.ScreenCaptureLib
                         transparentImage = whiteBackground2;
                     }
 
-                    if (cursor != null && cursor.IsVisible)
+                    if (cursorData != null)
                     {
-                        Point cursorOffset = CaptureHelpers.ScreenToClient(rect.Location);
-                        cursor.DrawCursorToImage(transparentImage, cursorOffset);
+                        cursorData.DrawCursor(transparentImage, rect.Location);
                     }
 
                     if (isTransparent)
@@ -147,7 +148,6 @@ namespace ShareX.ScreenCaptureLib
                     if (whiteBackground != null) whiteBackground.Dispose();
                     if (blackBackground != null) blackBackground.Dispose();
                     if (isTransparent && whiteBackground2 != null) whiteBackground2.Dispose();
-                    if (cursor != null) cursor.Dispose();
                 }
             }
 

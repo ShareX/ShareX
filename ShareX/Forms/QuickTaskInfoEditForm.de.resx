@@ -118,15 +118,18 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Schnellzugriff Eintrag bearbeiten</value>
+    <value>ShareX - Schnellzugriffsmenü-Eintrag bearbeiten</value>
   </data>
   <data name="lblAfterCaptureTasks.Text" xml:space="preserve">
-    <value>"Nach der Aufnahme" Aufgaben:</value>
+    <value>Aufgaben nach der Aufnahme:</value>
   </data>
   <data name="lblAfterUploadTasks.Text" xml:space="preserve">
-    <value>"Nach dem Hochladen" Aufgaben</value>
+    <value>Aufgaben nach dem Upload:</value>
   </data>
   <data name="lblName.Text" xml:space="preserve">
     <value>Menü Text:</value>
+  </data>
+  <data name="btnOK.Text" xml:space="preserve">
+    <value>OK</value>
   </data>
 </root>

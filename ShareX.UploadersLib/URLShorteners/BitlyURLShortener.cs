@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2017 ShareX Team
+    Copyright (c) 2007-2019 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -80,7 +80,7 @@ namespace ShareX.UploadersLib.URLShorteners
             args.Add("client_id", AuthInfo.Client_ID);
             args.Add("redirect_uri", Links.URL_CALLBACK);
 
-            return CreateQuery("https://bitly.com/oauth/authorize", args);
+            return URLHelpers.CreateQueryString("https://bitly.com/oauth/authorize", args);
         }
 
         public bool GetAccessToken(string code)

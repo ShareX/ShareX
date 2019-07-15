@@ -19,7 +19,7 @@ namespace ShareX.HistoryLib.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -113,6 +113,15 @@ namespace ShareX.HistoryLib.Properties {
         internal static string HistoryItemManager_InitializeComponent_Deletion_URL {
             get {
                 return ResourceManager.GetString("HistoryItemManager_InitializeComponent_Deletion_URL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit image....
+        /// </summary>
+        internal static string HistoryItemManager_InitializeComponent_EditImage {
+            get {
+                return ResourceManager.GetString("HistoryItemManager_InitializeComponent_EditImage", resourceCulture);
             }
         }
         
@@ -234,6 +243,33 @@ namespace ShareX.HistoryLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Markdown image.
+        /// </summary>
+        internal static string HistoryItemManager_InitializeComponent_Markdown__image {
+            get {
+                return ResourceManager.GetString("HistoryItemManager_InitializeComponent_Markdown__image", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Markdown link.
+        /// </summary>
+        internal static string HistoryItemManager_InitializeComponent_Markdown__link {
+            get {
+                return ResourceManager.GetString("HistoryItemManager_InitializeComponent_Markdown__link", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Markdown linked image.
+        /// </summary>
+        internal static string HistoryItemManager_InitializeComponent_Markdown__linked_image {
+            get {
+                return ResourceManager.GetString("HistoryItemManager_InitializeComponent_Markdown__linked_image", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to More info.
         /// </summary>
         internal static string HistoryItemManager_InitializeComponent_More_info {
@@ -288,6 +324,15 @@ namespace ShareX.HistoryLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Upload file.
+        /// </summary>
+        internal static string HistoryItemManager_InitializeComponent_UploadFile {
+            get {
+                return ResourceManager.GetString("HistoryItemManager_InitializeComponent_UploadFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to URL.
         /// </summary>
         internal static string HistoryItemManager_InitializeComponent_URL {
@@ -338,6 +383,16 @@ namespace ShareX.HistoryLib.Properties {
         internal static System.Drawing.Bitmap image {
             get {
                 object obj = ResourceManager.GetObject("image", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap magnifier {
+            get {
+                object obj = ResourceManager.GetObject("magnifier", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

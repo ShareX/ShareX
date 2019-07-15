@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2017 ShareX Team
+    Copyright (c) 2007-2019 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -24,11 +24,12 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using System;
 using System.Drawing;
 
 namespace ShareX.ScreenCaptureLib
 {
-    internal class ResizeNode : DrawableObject
+    internal class ResizeNode : ImageEditorControl
     {
         public const int DefaultSize = 13;
 
@@ -44,22 +45,55 @@ namespace ShareX.ScreenCaptureLib
             {
                 position = value;
 
-                Rectangle = new Rectangle(position.X - (Size - 1) / 2, position.Y - (Size - 1) / 2, Size, Size);
+                Rectangle = new Rectangle(position.X - ((Size - 1) / 2), position.Y - ((Size - 1) / 2), Size, Size);
             }
         }
 
         public int Size { get; set; }
 
-        public NodeShape Shape { get; set; }
+        public bool AutoSetSize { get; set; } = true;
+
+        private NodeShape shape;
+
+        public NodeShape Shape
+        {
+            get
+            {
+                return shape;
+            }
+            set
+            {
+                shape = value;
+
+                if (AutoSetSize)
+                {
+                    if (shape == NodeShape.CustomNode && CustomNodeImage != null)
+                    {
+                        Size = Math.Max(CustomNodeImage.Width, CustomNodeImage.Height);
+                    }
+                    else
+                    {
+                        Size = DefaultSize;
+                    }
+                }
+            }
+        }
+
+        public Image CustomNodeImage { get; private set; }
 
         public ResizeNode(int x = 0, int y = 0)
         {
-            Size = DefaultSize;
             Shape = NodeShape.Square;
             Position = new Point(x, y);
         }
 
-        public override void Draw(Graphics g)
+        public void SetCustomNode(Image customNodeImage)
+        {
+            CustomNodeImage = customNodeImage;
+            Shape = NodeShape.CustomNode;
+        }
+
+        public override void OnDraw(Graphics g)
         {
             Rectangle rect = Rectangle.SizeOffset(-1);
 
@@ -69,6 +103,7 @@ namespace ShareX.ScreenCaptureLib
                     g.DrawRectangle(Pens.White, rect.Offset(-1));
                     g.DrawRectangle(Pens.Black, rect);
                     break;
+                default:
                 case NodeShape.Circle:
                     g.DrawEllipse(Pens.White, rect.Offset(-1));
                     g.DrawEllipse(Pens.Black, rect);
@@ -76,6 +111,9 @@ namespace ShareX.ScreenCaptureLib
                 case NodeShape.Diamond:
                     g.DrawDiamond(Pens.White, rect.Offset(-1));
                     g.DrawDiamond(Pens.Black, rect);
+                    break;
+                case NodeShape.CustomNode when CustomNodeImage != null:
+                    g.DrawImage(CustomNodeImage, Rectangle);
                     break;
             }
         }

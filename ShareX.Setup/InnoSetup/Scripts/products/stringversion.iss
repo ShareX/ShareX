@@ -1,3 +1,4 @@
+[Code]
 function stringtoversion(var temp: String): Integer;
 var
 	part: String;
@@ -27,9 +28,16 @@ var
 begin
 	num1 := stringtoversion(x);
 	num2 := stringtoversion(y);
-	if (num1 = -1) or (num2 = -1) then begin
+	if (num1 = -1) and (num2 = -1) then begin
 		Result := 0;
 		Exit;
+	end;
+
+	if (num1 < 0) then begin
+		num1 := 0;
+	end;
+	if (num2 < 0) then begin
+		num2 := 0;
 	end;
 
 	if (num1 < num2) then begin
@@ -46,7 +54,9 @@ var
   temp1, temp2: String;
 
 begin
-    temp1 := versionA;
-    temp2 := versionB;
-    Result := compareinnerversion(temp1, temp2);
+	temp1 := versionA;
+	temp2 := versionB;
+	Result := compareinnerversion(temp1, temp2);
 end;
+
+[Setup]

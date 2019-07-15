@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2017 ShareX Team
+    Copyright (c) 2007-2019 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -54,8 +54,13 @@ namespace ShareX.HelpersLib
         public static readonly CodeMenuEntryFilename ix = new CodeMenuEntryFilename("ix", Resources.ReplCodeMenuEntry_ix_Auto_increment_hexadecimal, Resources.ReplCodeMenuCategory_Incremental);
         public static readonly CodeMenuEntryFilename rn = new CodeMenuEntryFilename("rn", Resources.ReplCodeMenuEntry_rn_Random_number_0_to_9, Resources.ReplCodeMenuCategory_Random);
         public static readonly CodeMenuEntryFilename ra = new CodeMenuEntryFilename("ra", Resources.ReplCodeMenuEntry_ra_Random_alphanumeric_char, Resources.ReplCodeMenuCategory_Random);
+        // TODO: Translate
+        public static readonly CodeMenuEntryFilename rna = new CodeMenuEntryFilename("rna", "Random non ambiguous alphanumeric char. Repeat using {n}", Resources.ReplCodeMenuCategory_Random);
         public static readonly CodeMenuEntryFilename rx = new CodeMenuEntryFilename("rx", Resources.ReplCodeMenuEntry_rx_Random_hexadecimal, Resources.ReplCodeMenuCategory_Random);
         public static readonly CodeMenuEntryFilename guid = new CodeMenuEntryFilename("guid", Resources.ReplCodeMenuEntry_guid_Random_guid, Resources.ReplCodeMenuCategory_Random);
+        public static readonly CodeMenuEntryFilename radjective = new CodeMenuEntryFilename("radjective", Resources.CodeMenuEntryFilename_RandomAdjective, Resources.ReplCodeMenuCategory_Random);
+        public static readonly CodeMenuEntryFilename ranimal = new CodeMenuEntryFilename("ranimal", Resources.CodeMenuEntryFilename_RandomAnimal, Resources.ReplCodeMenuCategory_Random);
+        public static readonly CodeMenuEntryFilename rf = new CodeMenuEntryFilename("rf", Resources.ReplCodeMenuEntry_rf_Random_line_from_file, Resources.ReplCodeMenuCategory_Random);
         public static readonly CodeMenuEntryFilename width = new CodeMenuEntryFilename("width", Resources.ReplCodeMenuEntry_width_Gets_image_width, Resources.ReplCodeMenuCategory_Image);
         public static readonly CodeMenuEntryFilename height = new CodeMenuEntryFilename("height", Resources.ReplCodeMenuEntry_height_Gets_image_height, Resources.ReplCodeMenuCategory_Image);
         public static readonly CodeMenuEntryFilename un = new CodeMenuEntryFilename("un", Resources.ReplCodeMenuEntry_un_User_name, Resources.ReplCodeMenuCategory_Computer);

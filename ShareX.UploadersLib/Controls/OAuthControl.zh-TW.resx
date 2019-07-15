@@ -1,3 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -130,9 +131,6 @@
   </data>
   <data name="gbUserAccount.Text" xml:space="preserve">
     <value>使用者帳戶</value>
-  </data>
-  <data name="lblLoginStatus.Text" xml:space="preserve">
-    <value>狀態</value>
   </data>
   <data name="lblVerificationCode.Text" xml:space="preserve">
     <value>驗證碼（從獲得授權頁面驗證碼）:</value>

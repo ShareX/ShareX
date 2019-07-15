@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2017 ShareX Team
+    Copyright (c) 2007-2019 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -24,9 +24,8 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
-using ShareX.ScreenCaptureLib;
+using ShareX.HistoryLib;
 using ShareX.UploadersLib;
-using ShareX.UploadersLib.OtherServices;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -39,13 +38,10 @@ namespace ShareX
     {
         public TaskSettings DefaultTaskSettings = new TaskSettings();
 
+        public DateTime FirstTimeRunDate = DateTime.Now;
         public string FileUploadDefaultDirectory = "";
-        public bool ShowUploadWarning = true; // First time upload warning
-        public bool ShowMultiUploadWarning = true; // More than 10 files upload warning
         public int NameParserAutoIncrementNumber = 0;
-        public bool DisableHotkeys = false;
         public List<QuickTaskInfo> QuickTaskPresets = QuickTaskInfo.DefaultPresets;
-        public bool ShowPatreonButton = true;
 
         public ApplicationConfig()
         {
@@ -54,10 +50,14 @@ namespace ShareX
 
         #region Main Form
 
+        public TaskViewMode TaskViewMode = TaskViewMode.ThumbnailView;
         public bool ShowMenu = true;
         public bool ShowColumns = true;
+        public bool ShowThumbnailTitle = true;
         public ImagePreviewVisibility ImagePreview = ImagePreviewVisibility.Automatic;
+        public ImagePreviewLocation ImagePreviewLocation = ImagePreviewLocation.Side;
         public int PreviewSplitterDistance = 335;
+        public List<int> TaskListViewColumnWidths = new List<int>();
         public DateTime NewsLastReadDate;
 
         #endregion Main Form
@@ -71,6 +71,9 @@ namespace ShareX
         public bool SilentRun = false;
         public bool TrayIconProgressEnabled = true;
         public bool TaskbarProgressEnabled = true;
+        public bool UseDarkTheme = true;
+        public bool ExperimentalDarkTheme = true;
+        public bool UseWhiteShareXIcon = false;
         public bool RememberMainFormPosition = false;
         public Point MainFormPosition = Point.Empty;
         public bool RememberMainFormSize = false;
@@ -92,14 +95,6 @@ namespace ShareX
         public string SaveImageSubFolderPattern = "%y-%mo";
 
         #endregion Paths
-
-        #region Export / Import
-
-        public bool ExportSettings = true;
-        public bool ExportHistory = true;
-        public bool ExportLogs = false;
-
-        #endregion Export / Import
 
         #region Proxy
 
@@ -133,14 +128,8 @@ namespace ShareX
         public bool RecentTasksShowInTrayMenu = true;
         public bool RecentTasksTrayMenuMostRecentFirst = false;
 
-        public WindowState HistoryWindowState = new WindowState();
-        public int HistoryMaxItemCount = 0;
-        public int HistorySplitterDistance = 550;
-
-        public WindowState ImageHistoryWindowState = new WindowState();
-        public int ImageHistoryViewMode = 3;
-        public Size ImageHistoryThumbnailSize = new Size(150, 150);
-        public int ImageHistoryMaxItemCount = 250;
+        public HistorySettings HistorySettings = new HistorySettings();
+        public ImageHistorySettings ImageHistorySettings = new ImageHistorySettings();
 
         #endregion History
 
@@ -151,31 +140,7 @@ namespace ShareX
 
         #endregion Print
 
-        #region Profiles
-
-        public List<VideoEncoder> VideoEncoders = new List<VideoEncoder>();
-
-        #endregion Profiles
-
         #region Advanced
-
-        [Category("Application"), DefaultValue(false), Description("Calculate and show file sizes in binary units (KiB, MiB etc.)")]
-        public bool BinaryUnits { get; set; }
-
-        [Category("Application"), DefaultValue(false), Description("Show most recent task first in main window.")]
-        public bool ShowMostRecentTaskFirst { get; set; }
-
-        [Category("Application"), DefaultValue(true), Description("Default .NET method can't copy image with alpha channel to clipboard. Alternatively, when this setting is false, ShareX copies \"PNG\" and 32 bit \"DIB\" to clipboard in order to retain image transparency. If you are experiencing issues then set this setting to true to use the default .NET method.")]
-        public bool UseDefaultClipboardCopyImage { get; set; }
-
-        [Category("Application"), DefaultValue(true), Description("Default .NET method can't get image with alpha channel from clipboard. Alternatively, when this setting is false, ShareX checks if clipboard contains \"PNG\" or 32 bit \"DIB\" in order to retain image transparency. If you are experiencing issues then set this setting to true to use the default .NET method.")]
-        public bool UseDefaultClipboardGetImage { get; set; }
-
-        [Category("Application"), DefaultValue(true), Description("Because default .NET image copying not supports alpha channel, background of image will be black. This option will fill background white.")]
-        public bool DefaultClipboardCopyImageFillBackground { get; set; }
-
-        [Category("Application"), DefaultValue(false), Description("Show only customized tasks in main window workflows.")]
-        public bool WorkflowsOnlyShowEdited { get; set; }
 
         [Category("Application"), DefaultValue(true), Description("Automatically check updates.")]
 #if STEAM || WindowsStore
@@ -183,14 +148,26 @@ namespace ShareX
 #endif
         public bool AutoCheckUpdate { get; set; }
 
+        [Category("Application"), DefaultValue(false), Description("Calculate and show file sizes in binary units (KiB, MiB etc.)")]
+        public bool BinaryUnits { get; set; }
+
+        [Category("Application"), DefaultValue(false), Description("Show most recent task first in main window.")]
+        public bool ShowMostRecentTaskFirst { get; set; }
+
+        [Category("Application"), DefaultValue(false), Description("Show only customized tasks in main window workflows.")]
+        public bool WorkflowsOnlyShowEdited { get; set; }
+
         [Category("Application"), DefaultValue(true), Description("Automatically expand capture menu when you open the tray menu.")]
         public bool TrayAutoExpandCaptureMenu { get; set; }
 
-        [Category("Application"), DefaultValue(true), Description("Show tips in main window list when list is empty.")]
+        [Category("Application"), DefaultValue(true), Description("Show tips and hotkeys in main window when task list is empty.")]
         public bool ShowMainWindowTip { get; set; }
 
-        [Category("Application"), DefaultValue(100), Description("Large file size defined in MiB or MB. ShareX will warn before uploading large files. 0 disables this feature.")]
-        public int LargeFileSizeWarning { get; set; }
+        [Category("Application"), DefaultValue(true), Description("Show support us button in main window when task list is empty.")]
+        public bool ShowSupportUsButton { get; set; }
+
+        [Category("Application"), DefaultValue(true), Description("Show Discord button in main window when task list is empty.")]
+        public bool ShowDiscordButton { get; set; }
 
         [Category("Application"), DefaultValue(""), Description("URLs will open using this path instead of default browser. Example path: chrome.exe")]
         [Editor(typeof(ExeFileNameEditor), typeof(UITypeEditor))]
@@ -199,17 +176,59 @@ namespace ShareX
         [Category("Application"), DefaultValue(false), Description("Show version and build info in tray text so if you are running more than one ShareX build you can differentiate them in tray bar.")]
         public bool TrayTextMoreInfo { get; set; }
 
+        [Category("Application"), DefaultValue(false), Description("Save settings after task completed but only if there is no other active tasks.")]
+        public bool SaveSettingsAfterTaskCompleted { get; set; }
+
+        [Category("Application"), DefaultValue(false), Description("In main window when task is completed automatically select it.")]
+        public bool AutoSelectLastCompletedTask { get; set; }
+
+        [Category("Hotkey"), DefaultValue(false), Description("Disables hotkeys.")]
+        public bool DisableHotkeys { get; set; }
+
+        [Category("Hotkey"), DefaultValue(false), Description("If active window is fullscreen then hotkeys won't be executed.")]
+        public bool DisableHotkeysOnFullscreen { get; set; }
+
+        private int hotkeyRepeatLimit;
+
+        [Category("Hotkey"), DefaultValue(1000), Description("If you hold hotkeys then it will only trigger every this milliseconds.")]
+        public int HotkeyRepeatLimit
+        {
+            get
+            {
+                return hotkeyRepeatLimit;
+            }
+            set
+            {
+                hotkeyRepeatLimit = Math.Max(value, 200);
+            }
+        }
+
+        [Category("Clipboard"), DefaultValue(true), Description("Show clipboard content viewer when using clipboard upload in main window.")]
+        public bool ShowClipboardContentViewer { get; set; }
+
+        [Category("Clipboard"), DefaultValue(true), Description("Because default .NET image copying not supports alpha channel, background of image will be black. This option will fill background white.")]
+        public bool DefaultClipboardCopyImageFillBackground { get; set; }
+
+        [Category("Image"), DefaultValue(true), Description("If JPEG exif contains orientation data then rotate image accordingly.")]
+        public bool RotateImageByExifOrientationData { get; set; }
+
+        [Category("Image"), DefaultValue(false), Description("Strip color space information chunks from PNG image.")]
+        public bool PNGStripColorSpaceInformation { get; set; }
+
         [Category("Upload"), DefaultValue(false), Description("Can be used to disable uploading application wide.")]
         public bool DisableUpload { get; set; }
 
         [Category("Upload"), DefaultValue(false), Description("Accept invalid SSL certificates when uploading.")]
         public bool AcceptInvalidSSLCertificates { get; set; }
 
-        [Category("Application"), DefaultValue(true), Description("Save settings after task completed but only if there is no other active tasks. This setting will be handy for situations where setting save fails when Windows shutdown and not let ShareX to save in time.")]
-        public bool SaveSettingsAfterTaskCompleted { get; set; }
+        [Category("Upload"), DefaultValue(true), Description("Show first time upload warning.")]
+        public bool ShowUploadWarning { get; set; }
 
-        [Category("Clipboard upload"), DefaultValue(true), Description("Show clipboard content viewer when using clipboard upload in main window.")]
-        public bool ShowClipboardContentViewer { get; set; }
+        [Category("Upload"), DefaultValue(true), Description("Show more than 10 files upload warning.")]
+        public bool ShowMultiUploadWarning { get; set; }
+
+        [Category("Upload"), DefaultValue(100), Description("Large file size defined in MB. ShareX will warn before uploading large files. 0 disables this feature.")]
+        public int ShowLargeFileSizeWarning { get; set; }
 
         [Category("Paths"), Description("Custom uploaders configuration path. If you have already configured this setting in another device and you are attempting to use the same location, then backup the file before configuring this setting and restore after exiting ShareX.")]
         [Editor(typeof(DirectoryNameEditor), typeof(UITypeEditor))]
@@ -257,18 +276,6 @@ namespace ShareX
 
         #endregion ScreenRecord Form
 
-        #region Webpage Capture Form
-
-        public WebpageCaptureOptions WebpageCaptureOptions = new WebpageCaptureOptions();
-
-        #endregion Webpage Capture Form
-
-        #region OCR Form
-
-        public OCRSpaceLanguages OCRLanguage = OCRSpaceLanguages.eng;
-
-        #endregion OCR Form
-
         #region Actions toolbar
 
         public List<HotkeyType> ActionsToolbarList = new List<HotkeyType>() { HotkeyType.RectangleRegion, HotkeyType.PrintScreen, HotkeyType.ScreenRecorder,
@@ -283,5 +290,11 @@ namespace ShareX
         public bool ActionsToolbarStayTopMost = true;
 
         #endregion Actions toolbar
+
+        #region Color Picker Form
+
+        public List<Color> RecentColors = new List<Color>();
+
+        #endregion Color Picker Form
     }
 }

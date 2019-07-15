@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2017 ShareX Team
+    Copyright (c) 2007-2019 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -76,14 +76,19 @@ namespace ShareX.MediaLib
                 string filename = string.Format("{0}-{1}.{2}", mediaFileName, timeSliceElapsed, Options.ImageFormat.GetDescription());
                 string tempThumbnailPath = Path.Combine(GetOutputDirectory(), filename);
 
-                using (Process p = new Process())
+                using (Process process = new Process())
                 {
-                    ProcessStartInfo psi = new ProcessStartInfo(FFmpegPath);
-                    psi.WindowStyle = ProcessWindowStyle.Hidden;
-                    psi.Arguments = string.Format("-ss {0} -i \"{1}\" -f image2 -vframes 1 -y \"{2}\"", timeSliceElapsed, MediaPath, tempThumbnailPath);
-                    p.StartInfo = psi;
-                    p.Start();
-                    p.WaitForExit(1000 * 30);
+                    ProcessStartInfo psi = new ProcessStartInfo()
+                    {
+                        FileName = FFmpegPath,
+                        Arguments = $"-ss {timeSliceElapsed} -i \"{MediaPath}\" -f image2 -vframes 1 -y \"{tempThumbnailPath}\"",
+                        UseShellExecute = false,
+                        CreateNoWindow = true
+                    };
+
+                    process.StartInfo = psi;
+                    process.Start();
+                    process.WaitForExit(1000 * 30);
                 }
 
                 if (File.Exists(tempThumbnailPath))
@@ -182,7 +187,7 @@ namespace ShareX.MediaLib
             }
 
             Random random = new Random();
-            return (int)(random.NextDouble() * (mediaSeekTimes[start + 1] - mediaSeekTimes[start]) + mediaSeekTimes[start]);
+            return (int)((random.NextDouble() * (mediaSeekTimes[start + 1] - mediaSeekTimes[start])) + mediaSeekTimes[start]);
         }
 
         private Image CombineScreenshots(List<VideoThumbnailInfo> thumbnails)
@@ -207,7 +212,7 @@ namespace ShareX.MediaLib
 
                 foreach (VideoThumbnailInfo thumbnail in thumbnails)
                 {
-                    Image img = Image.FromFile(thumbnail.Filepath);
+                    Image img = ImageHelpers.LoadImage(thumbnail.Filepath);
 
                     if (Options.MaxThumbnailWidth > 0 && img.Width > Options.MaxThumbnailWidth)
                     {
@@ -222,18 +227,18 @@ namespace ShareX.MediaLib
 
                 int thumbWidth = images[0].Width;
 
-                int width = Options.Padding * 2 +
-                            thumbWidth * columnCount +
-                            (columnCount - 1) * Options.Spacing;
+                int width = (Options.Padding * 2) +
+                            (thumbWidth * columnCount) +
+                            ((columnCount - 1) * Options.Spacing);
 
                 int rowCount = (int)Math.Ceiling(images.Count / (float)columnCount);
 
                 int thumbHeight = images[0].Height;
 
-                int height = Options.Padding * 3 +
+                int height = (Options.Padding * 3) +
                              infoStringHeight +
-                             thumbHeight * rowCount +
-                             (rowCount - 1) * Options.Spacing;
+                             (thumbHeight * rowCount) +
+                             ((rowCount - 1) * Options.Spacing);
 
                 finalImage = new Bitmap(width, height);
 
@@ -250,7 +255,7 @@ namespace ShareX.MediaLib
                     }
 
                     int i = 0;
-                    int offsetY = Options.Padding * 2 + infoStringHeight;
+                    int offsetY = (Options.Padding * 2) + infoStringHeight;
 
                     for (int y = 0; y < rowCount; y++)
                     {

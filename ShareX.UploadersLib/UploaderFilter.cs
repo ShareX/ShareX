@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2017 ShareX Team
+    Copyright (c) 2007-2019 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -51,12 +51,12 @@ namespace ShareX.UploadersLib
         {
             string extension = Helpers.GetFilenameExtension(filename);
 
-            return !string.IsNullOrEmpty(extension) && Extensions.Any(x => x.TrimStart('.').Equals(extension, StringComparison.InvariantCultureIgnoreCase));
+            return !string.IsNullOrEmpty(extension) && Extensions.Any(x => x.TrimStart('.').Equals(extension, StringComparison.OrdinalIgnoreCase));
         }
 
         public IGenericUploaderService GetUploaderService()
         {
-            return UploaderFactory.AllGenericUploaderServices.Where(x => x.ServiceIdentifier.Equals(Uploader, StringComparison.InvariantCultureIgnoreCase)).FirstOrDefault();
+            return UploaderFactory.AllGenericUploaderServices.FirstOrDefault(x => x.ServiceIdentifier.Equals(Uploader, StringComparison.OrdinalIgnoreCase));
         }
 
         public void SetExtensions(string extensions)

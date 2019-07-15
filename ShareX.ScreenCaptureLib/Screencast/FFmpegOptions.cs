@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2017 ShareX Team
+    Copyright (c) 2007-2019 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -51,6 +51,10 @@ namespace ShareX.ScreenCaptureLib
         public int NVENC_bitrate { get; set; } = 3000; // kbit/s
         public FFmpegPaletteGenStatsMode GIFStatsMode { get; set; } = FFmpegPaletteGenStatsMode.full;
         public FFmpegPaletteUseDither GIFDither { get; set; } = FFmpegPaletteUseDither.sierra2_4a;
+        public FFmpegAMFUsage AMF_usage { get; set; } = FFmpegAMFUsage.transcoding;
+        public FFmpegAMFQuality AMF_quality { get; set; } = FFmpegAMFQuality.speed;
+        public FFmpegQSVPreset QSV_preset { get; set; } = FFmpegQSVPreset.fast;
+        public int QSV_bitrate { get; set; } = 3000;
 
         // Audio
         public int AAC_bitrate { get; set; } = 128; // kbit/s
@@ -61,7 +65,7 @@ namespace ShareX.ScreenCaptureLib
         {
             get
             {
-#if STEAM
+#if STEAM || WindowsStore
                 if (!OverrideCLIPath)
                 {
                     if (NativeMethods.Is64Bit())
@@ -96,12 +100,21 @@ namespace ShareX.ScreenCaptureLib
                         case FFmpegVideoCodec.libx265:
                         case FFmpegVideoCodec.h264_nvenc:
                         case FFmpegVideoCodec.hevc_nvenc:
-                        case FFmpegVideoCodec.gif:
+                        case FFmpegVideoCodec.h264_amf:
+                        case FFmpegVideoCodec.hevc_amf:
+                        case FFmpegVideoCodec.h264_qsv:
+                        case FFmpegVideoCodec.hevc_qsv:
                             return "mp4";
                         case FFmpegVideoCodec.libvpx:
                             return "webm";
                         case FFmpegVideoCodec.libxvid:
                             return "avi";
+                        case FFmpegVideoCodec.gif:
+                            return "gif";
+                        case FFmpegVideoCodec.libwebp:
+                            return "webp";
+                        case FFmpegVideoCodec.apng:
+                            return "apng";
                     }
                 }
                 else if (!AudioSource.Equals(FFmpegHelper.SourceNone, StringComparison.InvariantCultureIgnoreCase))
@@ -126,7 +139,11 @@ namespace ShareX.ScreenCaptureLib
         public bool IsVideoSourceSelected => !string.IsNullOrEmpty(VideoSource) && !VideoSource.Equals(FFmpegHelper.SourceNone, StringComparison.InvariantCultureIgnoreCase);
 
         public bool IsAudioSourceSelected => !string.IsNullOrEmpty(AudioSource) && !AudioSource.Equals(FFmpegHelper.SourceNone, StringComparison.InvariantCultureIgnoreCase) &&
-            (!IsVideoSourceSelected || VideoCodec != FFmpegVideoCodec.gif);
+            (!IsVideoSourceSelected || !IsAnimatedImage);
+
+        public bool IsAnimatedImage => VideoCodec == FFmpegVideoCodec.gif || VideoCodec == FFmpegVideoCodec.libwebp || VideoCodec == FFmpegVideoCodec.apng;
+
+        public bool IsEvenSizeRequired => !IsAnimatedImage;
 
         public FFmpegOptions()
         {

@@ -123,9 +123,6 @@
   <data name="btnAdd.Text" xml:space="preserve">
     <value>Toevoegen</value>
   </data>
-  <data name="btnCancel.Text" xml:space="preserve">
-    <value>Annuleren</value>
-  </data>
   <data name="btnClear.Text" xml:space="preserve">
     <value>Legen</value>
   </data>
@@ -134,9 +131,6 @@
   </data>
   <data name="btnOK.Text" xml:space="preserve">
     <value>OK</value>
-  </data>
-  <data name="btnRefresh.Text" xml:space="preserve">
-    <value>Verversen</value>
   </data>
   <data name="btnRemove.Text" xml:space="preserve">
     <value>Verwijderen</value>
@@ -152,5 +146,11 @@
   </data>
   <data name="tsmiLoadImageFromFile.Text" xml:space="preserve">
     <value>Van bestand...</value>
+  </data>
+  <data name="lblPresetName.Text" xml:space="preserve">
+    <value>Naam:</value>
+  </data>
+  <data name="btnClose.Text" xml:space="preserve">
+    <value>Sluiten</value>
   </data>
 </root>

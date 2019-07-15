@@ -55,17 +55,17 @@
             // 
             // tpString
             // 
+            this.tpString.BackColor = System.Drawing.SystemColors.Window;
             this.tpString.Controls.Add(this.txtSource);
             resources.ApplyResources(this.tpString, "tpString");
             this.tpString.Name = "tpString";
-            this.tpString.UseVisualStyleBackColor = true;
             // 
             // tpWebBrowser
             // 
+            this.tpWebBrowser.BackColor = System.Drawing.SystemColors.Window;
             this.tpWebBrowser.Controls.Add(this.wbResponse);
             resources.ApplyResources(this.tpWebBrowser, "tpWebBrowser");
             this.tpWebBrowser.Name = "tpWebBrowser";
-            this.tpWebBrowser.UseVisualStyleBackColor = true;
             // 
             // wbResponse
             // 

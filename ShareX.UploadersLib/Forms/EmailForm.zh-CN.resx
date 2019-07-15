@@ -133,6 +133,6 @@
     <value>主题：</value>
   </data>
   <data name="lblToEmail.Text" xml:space="preserve">
-    <value>发送到邮箱：</value>
+    <value>发送到电子邮箱：</value>
   </data>
 </root>

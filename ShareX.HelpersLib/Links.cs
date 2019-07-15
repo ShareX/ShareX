@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2017 ShareX Team
+    Copyright (c) 2007-2019 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -36,7 +36,7 @@ namespace ShareX.HelpersLib
         public const string URL_BERK = "https://github.com/Jaex";
         public const string URL_MIKE = "https://github.com/McoreD";
         public const string URL_STEAM = "http://store.steampowered.com/app/400040/";
-        public const string URL_PATREON = "https://www.patreon.com/ShareX";
+        public const string URL_DISCORD = "https://discord.gg/ShareX";
         private const string URL_DOCS = URL_WEBSITE + "/docs";
         public const string URL_CUSTOM_UPLOADER = URL_DOCS + "/custom-uploader";
         public const string URL_CUSTOM_UPLOADERS = "https://github.com/ShareX/CustomUploaders";
