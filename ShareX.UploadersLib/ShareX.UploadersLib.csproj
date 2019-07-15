@@ -357,6 +357,7 @@
     <Compile Include="URLShorteners\VgdURLShortener.cs" />
     <Compile Include="URLShorteners\VURLShortener.cs" />
     <Compile Include="URLShorteners\YourlsURLShortener.cs" />
+    <Compile Include="URLShorteners\ZeroWidthURLShortener.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Controls\AccountTypeControl.de.resx">

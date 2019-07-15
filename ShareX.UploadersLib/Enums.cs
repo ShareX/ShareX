@@ -181,6 +181,8 @@ namespace ShareX.UploadersLib
         FirebaseDynamicLinks,
         [Description("Kutt")]
         Kutt,
+        [Description("Zero Width Shortener")]
+        ZeroWidthShortener,
         CustomURLShortener // Localized
     }
 
