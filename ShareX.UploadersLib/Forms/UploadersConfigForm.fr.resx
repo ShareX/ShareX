@@ -573,18 +573,6 @@ Utiliser une librairie chiffrée désactive le partage.</value>
   <data name="gbPhotobucketAlbumPath.Text" xml:space="preserve">
     <value>Mettre en ligne les images vers</value>
   </data>
-  <data name="btnTinyPicOpenMyImages.Text" xml:space="preserve">
-    <value>Ouvrir ma page d'images...</value>
-  </data>
-  <data name="lblTinyPicUsername.Text" xml:space="preserve">
-    <value>Adresse e-mail</value>
-  </data>
-  <data name="lblTinyPicPassword.Text" xml:space="preserve">
-    <value>Mot de passe :</value>
-  </data>
-  <data name="btnTinyPicLogin.Text" xml:space="preserve">
-    <value>Connexion</value>
-  </data>
   <data name="lblImageShackPassword.Text" xml:space="preserve">
     <value>Mot de passe :</value>
   </data>

@@ -634,18 +634,6 @@
   <data name="gbPhotobucketAlbumPath.Text" xml:space="preserve">
     <value>Resimleri buraya yükle</value>
   </data>
-  <data name="btnTinyPicOpenMyImages.Text" xml:space="preserve">
-    <value>Resimlerim sayfasını aç</value>
-  </data>
-  <data name="lblTinyPicUsername.Text" xml:space="preserve">
-    <value>Eposta:</value>
-  </data>
-  <data name="lblTinyPicPassword.Text" xml:space="preserve">
-    <value>Şifre:</value>
-  </data>
-  <data name="btnTinyPicLogin.Text" xml:space="preserve">
-    <value>Giriş</value>
-  </data>
   <data name="lblImageShackPassword.Text" xml:space="preserve">
     <value>Şifre:</value>
   </data>

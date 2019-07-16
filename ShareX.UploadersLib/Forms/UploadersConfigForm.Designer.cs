@@ -557,13 +557,6 @@ namespace ShareX.UploadersLib
             this.txtImageShackUsername = new System.Windows.Forms.TextBox();
             this.txtImageShackPassword = new System.Windows.Forms.TextBox();
             this.lblImageShackPassword = new System.Windows.Forms.Label();
-            this.tpTinyPic = new System.Windows.Forms.TabPage();
-            this.btnTinyPicLogin = new System.Windows.Forms.Button();
-            this.txtTinyPicPassword = new System.Windows.Forms.TextBox();
-            this.lblTinyPicPassword = new System.Windows.Forms.Label();
-            this.txtTinyPicUsername = new System.Windows.Forms.TextBox();
-            this.lblTinyPicUsername = new System.Windows.Forms.Label();
-            this.btnTinyPicOpenMyImages = new System.Windows.Forms.Button();
             this.tpFlickr = new System.Windows.Forms.TabPage();
             this.cbFlickrDirectLink = new System.Windows.Forms.CheckBox();
             this.tpPhotobucket = new System.Windows.Forms.TabPage();
@@ -613,7 +606,6 @@ namespace ShareX.UploadersLib
             this.ttlvMain = new ShareX.HelpersLib.TabToListView();
             this.atcImgurAccountType = new ShareX.UploadersLib.AccountTypeControl();
             this.oauth2Imgur = new ShareX.UploadersLib.OAuthControl();
-            this.atcTinyPicAccountType = new ShareX.UploadersLib.AccountTypeControl();
             this.oauthFlickr = new ShareX.UploadersLib.OAuthControl();
             this.oauth2Picasa = new ShareX.UploadersLib.OAuthControl();
             this.oAuth2Gist = new ShareX.UploadersLib.OAuthControl();
@@ -705,8 +697,7 @@ namespace ShareX.UploadersLib
             this.tpImageUploaders.SuspendLayout();
             this.tcImageUploaders.SuspendLayout();
             this.tpImgur.SuspendLayout();
-            this.tpImageShack.SuspendLayout();
-            this.tpTinyPic.SuspendLayout();
+            this.tpImageShack.SuspendLayout();            
             this.tpFlickr.SuspendLayout();
             this.tpPhotobucket.SuspendLayout();
             this.gbPhotobucketAlbumPath.SuspendLayout();
@@ -4232,8 +4223,7 @@ namespace ShareX.UploadersLib
             // tcImageUploaders
             // 
             this.tcImageUploaders.Controls.Add(this.tpImgur);
-            this.tcImageUploaders.Controls.Add(this.tpImageShack);
-            this.tcImageUploaders.Controls.Add(this.tpTinyPic);
+            this.tcImageUploaders.Controls.Add(this.tpImageShack);            
             this.tcImageUploaders.Controls.Add(this.tpFlickr);
             this.tcImageUploaders.Controls.Add(this.tpPhotobucket);
             this.tcImageUploaders.Controls.Add(this.tpGooglePhotos);
@@ -4391,56 +4381,6 @@ namespace ShareX.UploadersLib
             // 
             resources.ApplyResources(this.lblImageShackPassword, "lblImageShackPassword");
             this.lblImageShackPassword.Name = "lblImageShackPassword";
-            // 
-            // tpTinyPic
-            // 
-            this.tpTinyPic.BackColor = System.Drawing.SystemColors.Window;
-            this.tpTinyPic.Controls.Add(this.atcTinyPicAccountType);
-            this.tpTinyPic.Controls.Add(this.btnTinyPicLogin);
-            this.tpTinyPic.Controls.Add(this.txtTinyPicPassword);
-            this.tpTinyPic.Controls.Add(this.lblTinyPicPassword);
-            this.tpTinyPic.Controls.Add(this.txtTinyPicUsername);
-            this.tpTinyPic.Controls.Add(this.lblTinyPicUsername);
-            this.tpTinyPic.Controls.Add(this.btnTinyPicOpenMyImages);
-            resources.ApplyResources(this.tpTinyPic, "tpTinyPic");
-            this.tpTinyPic.Name = "tpTinyPic";
-            // 
-            // btnTinyPicLogin
-            // 
-            resources.ApplyResources(this.btnTinyPicLogin, "btnTinyPicLogin");
-            this.btnTinyPicLogin.Name = "btnTinyPicLogin";
-            this.btnTinyPicLogin.UseVisualStyleBackColor = true;
-            this.btnTinyPicLogin.Click += new System.EventHandler(this.btnTinyPicLogin_Click);
-            // 
-            // txtTinyPicPassword
-            // 
-            resources.ApplyResources(this.txtTinyPicPassword, "txtTinyPicPassword");
-            this.txtTinyPicPassword.Name = "txtTinyPicPassword";
-            this.txtTinyPicPassword.UseSystemPasswordChar = true;
-            this.txtTinyPicPassword.TextChanged += new System.EventHandler(this.txtTinyPicPassword_TextChanged);
-            // 
-            // lblTinyPicPassword
-            // 
-            resources.ApplyResources(this.lblTinyPicPassword, "lblTinyPicPassword");
-            this.lblTinyPicPassword.Name = "lblTinyPicPassword";
-            // 
-            // txtTinyPicUsername
-            // 
-            resources.ApplyResources(this.txtTinyPicUsername, "txtTinyPicUsername");
-            this.txtTinyPicUsername.Name = "txtTinyPicUsername";
-            this.txtTinyPicUsername.TextChanged += new System.EventHandler(this.txtTinyPicUsername_TextChanged);
-            // 
-            // lblTinyPicUsername
-            // 
-            resources.ApplyResources(this.lblTinyPicUsername, "lblTinyPicUsername");
-            this.lblTinyPicUsername.Name = "lblTinyPicUsername";
-            // 
-            // btnTinyPicOpenMyImages
-            // 
-            resources.ApplyResources(this.btnTinyPicOpenMyImages, "btnTinyPicOpenMyImages");
-            this.btnTinyPicOpenMyImages.Name = "btnTinyPicOpenMyImages";
-            this.btnTinyPicOpenMyImages.UseVisualStyleBackColor = true;
-            this.btnTinyPicOpenMyImages.Click += new System.EventHandler(this.btnTinyPicOpenMyImages_Click);
             // 
             // tpFlickr
             // 
@@ -4787,13 +4727,6 @@ namespace ShareX.UploadersLib
             this.oauth2Imgur.ClearButtonClicked += new ShareX.UploadersLib.OAuthControl.ClearButtonclickedEventHandler(this.oauth2Imgur_ClearButtonClicked);
             this.oauth2Imgur.RefreshButtonClicked += new ShareX.UploadersLib.OAuthControl.RefreshButtonClickedEventHandler(this.oauth2Imgur_RefreshButtonClicked);
             // 
-            // atcTinyPicAccountType
-            // 
-            resources.ApplyResources(this.atcTinyPicAccountType, "atcTinyPicAccountType");
-            this.atcTinyPicAccountType.Name = "atcTinyPicAccountType";
-            this.atcTinyPicAccountType.SelectedAccountType = ShareX.UploadersLib.AccountType.Anonymous;
-            this.atcTinyPicAccountType.AccountTypeChanged += new ShareX.UploadersLib.AccountTypeControl.AccountTypeChangedEventHandler(this.atcTinyPicAccountType_AccountTypeChanged);
-            // 
             // oauthFlickr
             // 
             this.oauthFlickr.IsRefreshable = false;
@@ -5086,9 +5019,7 @@ namespace ShareX.UploadersLib
             this.tpImgur.ResumeLayout(false);
             this.tpImgur.PerformLayout();
             this.tpImageShack.ResumeLayout(false);
-            this.tpImageShack.PerformLayout();
-            this.tpTinyPic.ResumeLayout(false);
-            this.tpTinyPic.PerformLayout();
+            this.tpImageShack.PerformLayout();            
             this.tpFlickr.ResumeLayout(false);
             this.tpFlickr.PerformLayout();
             this.tpPhotobucket.ResumeLayout(false);
@@ -5254,14 +5185,7 @@ namespace ShareX.UploadersLib
         private System.Windows.Forms.Label lblImageShackUsername;
         private System.Windows.Forms.TextBox txtImageShackUsername;
         private System.Windows.Forms.TextBox txtImageShackPassword;
-        private System.Windows.Forms.Label lblImageShackPassword;
-        private AccountTypeControl atcTinyPicAccountType;
-        private System.Windows.Forms.Button btnTinyPicLogin;
-        private System.Windows.Forms.TextBox txtTinyPicPassword;
-        private System.Windows.Forms.Label lblTinyPicPassword;
-        private System.Windows.Forms.TextBox txtTinyPicUsername;
-        private System.Windows.Forms.Label lblTinyPicUsername;
-        private System.Windows.Forms.Button btnTinyPicOpenMyImages;
+        private System.Windows.Forms.Label lblImageShackPassword;        
         private System.Windows.Forms.GroupBox gbPhotobucketAlbumPath;
         private System.Windows.Forms.Button btnPhotobucketAddAlbum;
         private System.Windows.Forms.Button btnPhotobucketRemoveAlbum;
@@ -5436,8 +5360,7 @@ namespace ShareX.UploadersLib
         private System.Windows.Forms.CheckBox cbGistUseRawURL;
         private System.Windows.Forms.CheckBox cbStreamableUseDirectURL;
         internal System.Windows.Forms.TabPage tpImgur;
-        internal System.Windows.Forms.TabPage tpImageShack;
-        internal System.Windows.Forms.TabPage tpTinyPic;
+        internal System.Windows.Forms.TabPage tpImageShack;        
         internal System.Windows.Forms.TabPage tpFlickr;
         internal System.Windows.Forms.TabPage tpPhotobucket;
         internal System.Windows.Forms.TabPage tpGooglePhotos;

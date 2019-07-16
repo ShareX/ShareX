@@ -224,18 +224,6 @@
   <data name="gbPhotobucketAlbumPath.Text" xml:space="preserve">
     <value>업로드할 곳</value>
   </data>
-  <data name="btnTinyPicOpenMyImages.Text" xml:space="preserve">
-    <value>내 이미지 페이지 열기...</value>
-  </data>
-  <data name="lblTinyPicUsername.Text" xml:space="preserve">
-    <value>이메일:</value>
-  </data>
-  <data name="lblTinyPicPassword.Text" xml:space="preserve">
-    <value>비밀번호:</value>
-  </data>
-  <data name="btnTinyPicLogin.Text" xml:space="preserve">
-    <value>로그인</value>
-  </data>
   <data name="lblImageShackPassword.Text" xml:space="preserve">
     <value>비밀번호:</value>
   </data>
@@ -565,9 +553,6 @@
   </data>
   <data name="chPicasaID.Text" xml:space="preserve">
     <value>ID</value>
-  </data>
-  <data name="tpTinyPic.Text" xml:space="preserve">
-    <value>TinyPic</value>
   </data>
   <data name="cbFlickrDirectLink.Text" xml:space="preserve">
     <value>핫링크 사용하기</value>

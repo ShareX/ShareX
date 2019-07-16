@@ -735,21 +735,6 @@ Usar uma biblioteca encriptada desabilita o compartilhamento.</value>
   <data name="tpFlickr.Text" xml:space="preserve">
     <value>Flicker</value>
   </data>
-  <data name="btnTinyPicOpenMyImages.Text" xml:space="preserve">
-    <value>Abrir minha página de imagens...</value>
-  </data>
-  <data name="lblTinyPicUsername.Text" xml:space="preserve">
-    <value>Email:</value>
-  </data>
-  <data name="lblTinyPicPassword.Text" xml:space="preserve">
-    <value>Senha:</value>
-  </data>
-  <data name="btnTinyPicLogin.Text" xml:space="preserve">
-    <value>Logar</value>
-  </data>
-  <data name="tpTinyPic.Text" xml:space="preserve">
-    <value>TinyPic</value>
-  </data>
   <data name="lblImageShackPassword.Text" xml:space="preserve">
     <value>Senha:</value>
   </data>

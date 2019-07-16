@@ -521,18 +521,6 @@ Ví dụ: nếu tên bucket là bucket.example.com thì URL sẽ là http://buck
   <data name="gbPhotobucketAlbumPath.Text" xml:space="preserve">
     <value>Tải lên ảnh tới</value>
   </data>
-  <data name="btnTinyPicOpenMyImages.Text" xml:space="preserve">
-    <value>Mở trang hình ảnh của tôi...</value>
-  </data>
-  <data name="lblTinyPicUsername.Text" xml:space="preserve">
-    <value>Email:</value>
-  </data>
-  <data name="lblTinyPicPassword.Text" xml:space="preserve">
-    <value>Mật khẩu:</value>
-  </data>
-  <data name="btnTinyPicLogin.Text" xml:space="preserve">
-    <value>Đăng nhập</value>
-  </data>
   <data name="lblImageShackPassword.Text" xml:space="preserve">
     <value>Mật khẩu:</value>
   </data>
@@ -1047,9 +1035,6 @@ Chỉ có hiệu lực khi không chọn "Cho phép truy cập tới bucket" cho
   </data>
   <data name="lblFTPText.Text" xml:space="preserve">
     <value>Văn bản:</value>
-  </data>
-  <data name="tpTinyPic.Text" xml:space="preserve">
-    <value>TinyPic</value>
   </data>
   <data name="lblFTPTransferMode.Text" xml:space="preserve">
     <value>Chế độ trao đổi:</value>

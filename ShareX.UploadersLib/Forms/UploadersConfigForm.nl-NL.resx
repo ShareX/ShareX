@@ -597,18 +597,6 @@ Een versleutelde bibliotheek gebruiken schakelt delen uit.</value>
   <data name="gbPhotobucketAlbumPath.Text" xml:space="preserve">
     <value>Upload afbeeldingen naar</value>
   </data>
-  <data name="btnTinyPicOpenMyImages.Text" xml:space="preserve">
-    <value>Open pagina met mijn afbeeldingen...</value>
-  </data>
-  <data name="lblTinyPicUsername.Text" xml:space="preserve">
-    <value>E-mail:</value>
-  </data>
-  <data name="lblTinyPicPassword.Text" xml:space="preserve">
-    <value>Wachtwoord:</value>
-  </data>
-  <data name="btnTinyPicLogin.Text" xml:space="preserve">
-    <value>Inloggen</value>
-  </data>
   <data name="lblImageShackPassword.Text" xml:space="preserve">
     <value>Wachtwoord:</value>
   </data>

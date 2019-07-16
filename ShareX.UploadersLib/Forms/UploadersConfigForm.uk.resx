@@ -600,15 +600,6 @@
   <data name="lblImageShackPassword.Text" xml:space="preserve">
     <value>Пароль:</value>
   </data>
-  <data name="btnTinyPicLogin.Text" xml:space="preserve">
-    <value>Вхід</value>
-  </data>
-  <data name="lblTinyPicPassword.Text" xml:space="preserve">
-    <value>Пароль:</value>
-  </data>
-  <data name="lblTinyPicUsername.Text" xml:space="preserve">
-    <value>Ел. пошта:</value>
-  </data>
   <data name="btnPhotobucketAddAlbum.Text" xml:space="preserve">
     <value>Додати альбом</value>
   </data>

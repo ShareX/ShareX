@@ -192,9 +192,6 @@
   <data name="tpTwitter.Text" xml:space="preserve">
     <value>Twitter</value>
   </data>
-  <data name="tpTinyPic.Text" xml:space="preserve">
-    <value>TinyPic</value>
-  </data>
   <data name="lblLambdaApiKey.Text" xml:space="preserve">
     <value>Kunci API:</value>
   </data>
@@ -251,9 +248,6 @@
   </data>
   <data name="tpEmail.Text" xml:space="preserve">
     <value>Email</value>
-  </data>
-  <data name="lblTinyPicUsername.Text" xml:space="preserve">
-    <value>Email:</value>
   </data>
   <data name="lblOneTimeSecretEmail.Text" xml:space="preserve">
     <value>Email:</value>
@@ -412,9 +406,6 @@
     <value>Sandi:</value>
   </data>
   <data name="lblMegaPassword.Text" xml:space="preserve">
-    <value>Sandi:</value>
-  </data>
-  <data name="lblTinyPicPassword.Text" xml:space="preserve">
     <value>Sandi:</value>
   </data>
   <data name="lblSeafilePassword.Text" xml:space="preserve">
@@ -981,9 +972,6 @@
   <data name="btnImageShackLogin.Text" xml:space="preserve">
     <value>Login</value>
   </data>
-  <data name="btnTinyPicLogin.Text" xml:space="preserve">
-    <value>Login</value>
-  </data>
   <data name="btnGe_ttLogin.Text" xml:space="preserve">
     <value>Login</value>
   </data>
@@ -1120,9 +1108,6 @@
     <value>Buka halaman profil publik ...</value>
   </data>
   <data name="btnImageShackOpenMyImages.Text" xml:space="preserve">
-    <value>Buka halaman gambar saya...</value>
-  </data>
-  <data name="btnTinyPicOpenMyImages.Text" xml:space="preserve">
     <value>Buka halaman gambar saya...</value>
   </data>
   <data name="grpSeafileShareSettings.Text" xml:space="preserve">
