@@ -33,8 +33,6 @@ namespace ShareX.ScreenCaptureLib
 {
     public abstract class BaseShape : IDisposable
     {
-        protected const int MinimumSize = 3;
-
         public abstract ShapeCategory ShapeCategory { get; }
 
         public abstract ShapeType ShapeType { get; }
@@ -93,7 +91,7 @@ namespace ShareX.ScreenCaptureLib
 
         public Size InitialSize { get; set; }
 
-        public virtual bool IsValidShape => !Rectangle.IsEmpty && Rectangle.Width >= MinimumSize && Rectangle.Height >= MinimumSize;
+        public virtual bool IsValidShape => !Rectangle.IsEmpty && Rectangle.Width >= Options.MinimumSize && Rectangle.Height >= Options.MinimumSize;
 
         public virtual bool IsSelectable => Manager.CurrentTool == ShapeType || Manager.CurrentTool == ShapeType.ToolSelect;
 

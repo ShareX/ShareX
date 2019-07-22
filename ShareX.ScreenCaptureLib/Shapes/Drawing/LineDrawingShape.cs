@@ -40,7 +40,7 @@ namespace ShareX.ScreenCaptureLib
         public bool CenterNodeActive { get; private set; }
         public int CenterPointCount { get; private set; }
 
-        public override bool IsValidShape => Rectangle.Width > 1 || Rectangle.Height > 1;
+        public override bool IsValidShape => Rectangle.Width >= Options.MinimumSize || Rectangle.Height >= Options.MinimumSize;
 
         protected override void UseLightResizeNodes()
         {

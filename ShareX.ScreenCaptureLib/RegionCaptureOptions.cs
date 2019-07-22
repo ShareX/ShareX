@@ -32,6 +32,7 @@ namespace ShareX.ScreenCaptureLib
 {
     public class RegionCaptureOptions
     {
+        public const int DefaultMinimumSize = 5;
         public const int MagnifierPixelCountMinimum = 3;
         public const int MagnifierPixelCountMaximum = 35;
         public const int MagnifierPixelSizeMinimum = 3;
@@ -41,6 +42,7 @@ namespace ShareX.ScreenCaptureLib
         public const int MoveSpeedMaximum = 10;
 
         public bool QuickCrop = true;
+        public int MinimumSize = DefaultMinimumSize;
         public RegionCaptureAction RegionCaptureActionRightClick = RegionCaptureAction.RemoveShapeCancelCapture;
         public RegionCaptureAction RegionCaptureActionMiddleClick = RegionCaptureAction.SwapToolType;
         public RegionCaptureAction RegionCaptureActionX1Click = RegionCaptureAction.CaptureFullscreen;

@@ -1179,10 +1179,10 @@ namespace ShareX.ScreenCaptureLib
                     {
                         Point location = InputManager.ClientMousePosition;
 
-                        return new RectangleRegionShape()
-                        {
-                            Rectangle = new Rectangle(new Point(location.X - (Options.FixedSize.Width / 2), location.Y - (Options.FixedSize.Height / 2)), Options.FixedSize)
-                        };
+                        BaseShape rectangleRegionShape = CreateShape(ShapeType.RegionRectangle);
+                        rectangleRegionShape.Rectangle = new Rectangle(new Point(location.X - (Options.FixedSize.Width / 2),
+                            location.Y - (Options.FixedSize.Height / 2)), Options.FixedSize);
+                        return rectangleRegionShape;
                     }
                     else
                     {
@@ -1192,10 +1192,9 @@ namespace ShareX.ScreenCaptureLib
                         {
                             Rectangle hoverArea = CaptureHelpers.ScreenToClient(window.Rectangle);
 
-                            return new RectangleRegionShape()
-                            {
-                                Rectangle = Rectangle.Intersect(Form.ClientArea, hoverArea)
-                            };
+                            BaseShape rectangleRegionShape = CreateShape(ShapeType.RegionRectangle);
+                            rectangleRegionShape.Rectangle = Rectangle.Intersect(Form.ClientArea, hoverArea);
+                            return rectangleRegionShape;
                         }
                     }
                 }
