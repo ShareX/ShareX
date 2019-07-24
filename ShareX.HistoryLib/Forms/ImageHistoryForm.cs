@@ -63,6 +63,7 @@ namespace ShareX.HistoryLib
                 ilvImages.Colors.BorderColor = ShareXResources.DarkBorderColor;
                 ilvImages.Colors.ForeColor = ShareXResources.DarkTextColor;
                 ilvImages.Colors.SelectedForeColor = ShareXResources.DarkTextColor;
+                ilvImages.Colors.UnFocusedForeColor = ShareXResources.DarkTextColor;
             }
 
             him = new HistoryItemManager(uploadFile, editImage);
