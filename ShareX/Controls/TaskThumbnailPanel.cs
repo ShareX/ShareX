@@ -190,7 +190,7 @@ namespace ShareX
 
             InitializeComponent();
             UpdateTheme();
-            UpdateFilename();
+            UpdateTitle();
         }
 
         public void UpdateTheme()
@@ -200,18 +200,33 @@ namespace ShareX
                 lblTitle.ForeColor = ShareXResources.DarkTextColor;
                 lblTitle.TextShadowColor = ShareXResources.DarkBorderColor;
                 pThumbnail.PanelColor = ShareXResources.DarkBorderColor;
+                ttMain.BackColor = ShareXResources.DarkBackgroundColor;
+                ttMain.ForeColor = ShareXResources.DarkTextColor;
             }
             else
             {
-                lblTitle.ForeColor = SystemColors.WindowText;
+                lblTitle.ForeColor = SystemColors.ControlText;
                 lblTitle.TextShadowColor = Color.Transparent;
                 pThumbnail.PanelColor = SystemColors.ControlLight;
+                ttMain.BackColor = SystemColors.Window;
+                ttMain.ForeColor = SystemColors.ControlText;
             }
         }
 
-        public void UpdateFilename()
+        public void UpdateTitle()
         {
             Title = Task.Info?.FileName;
+
+            if (Task.Info != null && !string.IsNullOrEmpty(Task.Info.ToString()))
+            {
+                lblTitle.Cursor = Cursors.Hand;
+                ttMain.SetToolTip(lblTitle, Task.Info.ToString());
+            }
+            else
+            {
+                lblTitle.Cursor = Cursors.Default;
+                ttMain.SetToolTip(lblTitle, null);
+            }
         }
 
         private void UpdateSize()
@@ -304,19 +319,7 @@ namespace ShareX
                 pThumbnail.UpdateStatusColor(Task.Status);
             }
 
-            UpdateTitleCursor();
-        }
-
-        private void UpdateTitleCursor()
-        {
-            if (Task.Info != null && !string.IsNullOrEmpty(Task.Info.ToString()))
-            {
-                lblTitle.Cursor = Cursors.Hand;
-            }
-            else
-            {
-                lblTitle.Cursor = Cursors.Default;
-            }
+            UpdateTitle();
         }
 
         public void ClearThumbnail()
@@ -422,6 +425,13 @@ namespace ShareX
                     dragBoxFromMouseDown = Rectangle.Empty;
                 }
             }
+        }
+
+        private void TtMain_Draw(object sender, DrawToolTipEventArgs e)
+        {
+            e.DrawBackground();
+            e.DrawBorder();
+            e.DrawText();
         }
     }
 }

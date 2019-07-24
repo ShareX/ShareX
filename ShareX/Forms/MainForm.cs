@@ -789,7 +789,7 @@ namespace ShareX
                 cmsTray.Renderer = new ToolStripCustomRenderer();
                 cmsTaskInfo.Renderer = new ToolStripCustomRenderer();
                 lvUploads.BackColor = SystemColors.Window;
-                lvUploads.ForeColor = SystemColors.WindowText;
+                lvUploads.ForeColor = SystemColors.ControlText;
                 lblListViewTip.ForeColor = Color.Silver;
                 scMain.SplitterColor = Color.White;
                 scMain.SplitterLineColor = ProfessionalColors.SeparatorDark;

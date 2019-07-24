@@ -158,7 +158,7 @@ namespace ShareX
 
             if (panel != null)
             {
-                panel.UpdateFilename();
+                panel.UpdateTitle();
 
                 if (Program.Settings.TaskViewMode == TaskViewMode.ThumbnailView)
                 {
