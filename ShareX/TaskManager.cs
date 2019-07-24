@@ -333,12 +333,7 @@ namespace ShareX
                         {
                             DebugHelper.WriteLine($"Task completed. Filename: {info.FileName}, Duration: {(long)info.TaskDuration.TotalMilliseconds} ms");
 
-                            string result = info.Result.ToString();
-
-                            if (string.IsNullOrEmpty(result) && !string.IsNullOrEmpty(info.FilePath))
-                            {
-                                result = info.FilePath;
-                            }
+                            string result = info.ToString();
 
                             if (lvi != null)
                             {

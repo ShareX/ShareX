@@ -94,6 +94,7 @@
             this.lblTitle.TabIndex = 1;
             this.lblTitle.Text = "Test.png";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblTitle.MouseClick += new System.Windows.Forms.MouseEventHandler(this.LblTitle_MouseClick);
             // 
             // TaskThumbnailPanel
             // 

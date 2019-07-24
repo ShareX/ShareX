@@ -303,6 +303,20 @@ namespace ShareX
             {
                 pThumbnail.UpdateStatusColor(Task.Status);
             }
+
+            UpdateTitleCursor();
+        }
+
+        private void UpdateTitleCursor()
+        {
+            if (Task.Info != null && !string.IsNullOrEmpty(Task.Info.ToString()))
+            {
+                lblTitle.Cursor = Cursors.Hand;
+            }
+            else
+            {
+                lblTitle.Cursor = Cursors.Default;
+            }
         }
 
         public void ClearThumbnail()
@@ -319,6 +333,28 @@ namespace ShareX
             pThumbnail.Cursor = Cursors.Default;
 
             ThumbnailExists = false;
+        }
+
+        private void LblTitle_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left && Task.Info != null)
+            {
+                if (Task.Info.Result != null)
+                {
+                    string url = Task.Info.Result.ToString();
+
+                    if (!string.IsNullOrEmpty(url))
+                    {
+                        URLHelpers.OpenURL(url);
+                        return;
+                    }
+                }
+
+                if (!string.IsNullOrEmpty(Task.Info.FilePath))
+                {
+                    Helpers.OpenFile(Task.Info.FilePath);
+                }
+            }
         }
 
         private void PbThumbnail_MouseDown(object sender, MouseEventArgs e)
