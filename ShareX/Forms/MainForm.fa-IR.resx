@@ -117,120 +117,92 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="UploadTask_Stop_Stopping" xml:space="preserve">
-    <value>در حال توقف</value>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="scMain.Panel1.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
   </data>
-  <data name="UploadTask_CreateURLShortenerTask_Shorten_URL___0__" xml:space="preserve">
-    <value>کوتاه کردن لینک {{0}}</value>
+  <data name="scMain.Panel2.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
   </data>
-  <data name="BeforeUploadControl_AddDestination_Custom" xml:space="preserve">
-    <value>سفارشی سازی</value>
+  <data name="tsmiFullscreen.Text" xml:space="preserve">
+    <value>تمام صفحه</value>
   </data>
-  <data name="ActionsToolbar_OpenAtShareXStartup" xml:space="preserve">
-    <value>بازکردن برنامه در هنگام شروع ویندوز</value>
+  <data name="tsmiWindow.Text" xml:space="preserve">
+    <value>پنجره</value>
   </data>
-  <data name="AboutForm_AboutForm_Language_fr" xml:space="preserve">
-    <value>فرانسوی</value>
+  <data name="tsmiMonitor.Text" xml:space="preserve">
+    <value>مانیتور</value>
   </data>
-  <data name="UploadTask_DoUploadJob_Uploading" xml:space="preserve">
-    <value>در حال آپلود کردن</value>
+  <data name="tsmiRectangle.Text" xml:space="preserve">
+    <value>ناحیه</value>
   </data>
-  <data name="ScreenRecordForm_StartRecording_does_not_exist" xml:space="preserve">
-    <value>فایل {0} وجود ندارد 
-
- آیا مایل به دانلود آن هستید؟</value>
+  <data name="tsmiLastRegion.Text" xml:space="preserve">
+    <value>آخرین ناحیه</value>
   </data>
-  <data name="ScreenRecord_ConfirmCancel" xml:space="preserve">
-    <value>آیا از توقف ضبط اطمینان دارید؟</value>
+  <data name="tsmiScreenRecordingFFmpeg.Text" xml:space="preserve">
+    <value>ضبط صفحه</value>
   </data>
-  <data name="UploadManager_IsUploadConfirmed_Are_you_sure_you_want_to_upload__0__files_" xml:space="preserve">
-    <value>آیا میخواهید {0} فایل را آپلود کنید؟</value>
+  <data name="tsmiShowCursor.Text" xml:space="preserve">
+    <value>نمایش کرسر</value>
   </data>
-  <data name="UploadTask_DoAfterCaptureJobs_Choose_a_folder_to_save" xml:space="preserve">
-    <value>یک فولدر برای ذخیره کردن انتخاب کنید</value>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="tsmiScreenshotDelay.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAABl0RVh0U29m
+        dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAI4SURBVDhPpZHvaxJxHMfvD7CMHoqPm4igCDLxgYHN
+        o84fCOqT1SSEarL1pAfd9qAHgwqEJgvGKscY5IOspAKpIAnBqEHqGdvKnTd1O+dZ7Mc5fGKPPt3nmIey
+        9aQevO4+fD/v9+u+cAQA/Bfyw+v1Ej6fj/D7/UQgEDgVDAaHJfwS4SNwHsYdZjCLnZMEuqvhcGRheflF
+        oVyuN/f2ugjOeIY7zPxNoLs2Pj6VZZgG12rB7uEhxJ+vwdsvImQZEQqcIL2ZxvVIZAqzAwKPx3P68tjY
+        ZLZYbHzb2oJf7bYsoO+9gvTnNiQzBzCX/AmvP9UgVyo1roRCk9hRBBRF2ebi8VShWoWKIMhlZGL6Kbxb
+        acu8yYlw++EGfChuwsLSUgo7ioAkydGP+fw2Cvpxjd6FRGZHIZrg4M6jPKysrm5jRxE4HI6JAsd1e8Xe
+        DeyeaeUGSCq7CxdvvIcfPN/FjiKw2+03mWpVFvTKFosFaJoGvfMx6MgEDJHP4ByZhKFLL4FtNrvYUQQ2
+        my2UYxi+X7BZr4PVapXfPTiJAstCqVzmsaMIpK+dj83Pp/EPtERxQNKbEdyt8Tw8WVxMY0cRmM3mMxdG
+        Ruiv6+vCzv7+QKmfprT7XqkITqeTxo4iMJlMhMFgMFIuVxQDB53OsTKecbWa4Ha7o5jFzoBAr9cTWq3W
+        bDQaZx7MzmbKLCuInc7vtsSGJI3FYhkpN4MZzJ4o0Gg0hFqtPqtSqSiJWxL3j8CZwh1mjgn+HSD+ABVB
+        iM3ORgOyAAAAAElFTkSuQmCC
+</value>
   </data>
-  <data name="ScreenRecordForm_StartRecording_Click_tray_icon_to_start_recording_" xml:space="preserve">
-    <value>برای شروع کلیک کنید</value>
+  <data name="tsmiScreenshotDelay.Text" xml:space="preserve">
+    <value>تاخیر عکس گرفتن</value>
   </data>
-  <data name="ScreenRecordForm_StartRecording_Click_tray_icon_to_stop_recording_" xml:space="preserve">
-    <value>برای توقف کلیک کنید</value>
+  <data name="tsddbUpload.Text" xml:space="preserve">
+    <value>آپلود</value>
   </data>
-  <data name="ActionsToolbar_Close" xml:space="preserve">
-    <value>بستن</value>
+  <data name="tsddbTools.Text" xml:space="preserve">
+    <value>ابزارها</value>
   </data>
-  <data name="QuickTaskMenu_ShowMenu_Continue" xml:space="preserve">
-    <value>ادامه دادن</value>
+  <data name="tsbScreenshotsFolder.Text" xml:space="preserve">
+    <value>رجوع به فولدر عکس ها</value>
   </data>
-  <data name="AboutForm_AboutForm_Contributors" xml:space="preserve">
-    <value>مشارکت کنندگان</value>
+  <data name="tsbHistory.Text" xml:space="preserve">
+    <value>تاریخچه</value>
   </data>
-  <data name="MainForm_UpdateToggleHotkeyButton_Disable_hotkeys" xml:space="preserve">
-    <value>غیرفعال کردن کلیدهای سریع</value>
+  <data name="tsbImageHistory.Text" xml:space="preserve">
+    <value>تاریخچه عکس ها</value>
   </data>
-  <data name="MainForm_tsmiDeleteSelectedFile_Click_Do_you_really_want_to_delete_this_file_" xml:space="preserve">
-    <value>آیا مایل به حذف این فایل هستید؟</value>
+  <data name="tsbNews.Text" xml:space="preserve">
+    <value>اعلامیه ها</value>
   </data>
-  <data name="UploadTask_OnUploadCompleted_Done" xml:space="preserve">
-    <value>انجام شد</value>
+  <data name="tsbDonate.Text" xml:space="preserve">
+    <value>کمک مالی</value>
   </data>
-  <data name="UploadManager_IsUploadConfirmed_Don_t_show_this_message_again_" xml:space="preserve">
-    <value>دیگر این پیام را نمایش نده</value>
+  <data name="tsbAbout.Text" xml:space="preserve">
+    <value>درباره</value>
   </data>
-  <data name="ScreenRecordForm_DownloaderForm_InstallRequested_Download_of_FFmpeg_failed_" xml:space="preserve">
-    <value>دانلود برنامه FFmpeg با مشکل مواجه شد.</value>
-  </data>
-  <data name="UploadTask_DownloadAndUpload_Downloading" xml:space="preserve">
-    <value>در حال دانلود</value>
-  </data>
-  <data name="TaskManager_task_UploadCompleted_Error" xml:space="preserve">
-    <value>خطا</value>
-  </data>
-  <data name="Program_Run_Error" xml:space="preserve">
-    <value>خطا</value>
-  </data>
-  <data name="ActionsToolbar_Edit" xml:space="preserve">
-    <value>ویرایش..</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_Waiting___" xml:space="preserve">
-    <value>لطفا صبر کنید...</value>
-  </data>
-  <data name="AboutForm_AboutForm_Website" xml:space="preserve">
-    <value>سایت</value>
-  </data>
-  <data name="UploadTask_ThreadDoWork_URL_is_empty_" xml:space="preserve">
-    <value>آدرس خالی است.</value>
-  </data>
-  <data name="AboutForm_AboutForm_Changelog" xml:space="preserve">
-    <value>تغییرات</value>
-  </data>
-  <data name="AboutForm_AboutForm_Language_de" xml:space="preserve">
-    <value>آلمانی</value>
-  </data>
-  <data name="AboutForm_AboutForm_Language_es" xml:space="preserve">
-    <value>اسپانیایی</value>
-  </data>
-  <data name="AboutForm_AboutForm_Language_it_IT" xml:space="preserve">
-    <value>ایتالیایی</value>
-  </data>
-  <data name="AboutForm_AboutForm_Language_ko_KR" xml:space="preserve">
-    <value>کره ای</value>
-  </data>
-  <data name="AboutForm_AboutForm_Language_nl_NL" xml:space="preserve">
-    <value>هلندی</value>
-  </data>
-  <data name="AboutForm_AboutForm_Language_pt_BR" xml:space="preserve">
-    <value>پرتغالی</value>
-  </data>
-  <data name="AboutForm_AboutForm_Language_tr" xml:space="preserve">
-    <value>ترکی</value>
-  </data>
-  <data name="AboutForm_AboutForm_Language_uk" xml:space="preserve">
-    <value>اوکراینی</value>
-  </data>
-  <data name="AutoCaptureForm_Execute_Start" xml:space="preserve">
-    <value>شروع</value>
-  </data>
-  <data name="AutoCaptureForm_Execute_Stop" xml:space="preserve">
-    <value>توقف</value>
+  <data name="tsmiTrayScreenshotDelay.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAABl0RVh0U29m
+        dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAI4SURBVDhPpZHvaxJxHMfvD7CMHoqPm4igCDLxgYHN
+        o84fCOqT1SSEarL1pAfd9qAHgwqEJgvGKscY5IOspAKpIAnBqEHqGdvKnTd1O+dZ7Mc5fGKPPt3nmIey
+        9aQevO4+fD/v9+u+cAQA/Bfyw+v1Ej6fj/D7/UQgEDgVDAaHJfwS4SNwHsYdZjCLnZMEuqvhcGRheflF
+        oVyuN/f2ugjOeIY7zPxNoLs2Pj6VZZgG12rB7uEhxJ+vwdsvImQZEQqcIL2ZxvVIZAqzAwKPx3P68tjY
+        ZLZYbHzb2oJf7bYsoO+9gvTnNiQzBzCX/AmvP9UgVyo1roRCk9hRBBRF2ebi8VShWoWKIMhlZGL6Kbxb
+        acu8yYlw++EGfChuwsLSUgo7ioAkydGP+fw2Cvpxjd6FRGZHIZrg4M6jPKysrm5jRxE4HI6JAsd1e8Xe
+        DeyeaeUGSCq7CxdvvIcfPN/FjiKw2+03mWpVFvTKFosFaJoGvfMx6MgEDJHP4ByZhKFLL4FtNrvYUQQ2
+        my2UYxi+X7BZr4PVapXfPTiJAstCqVzmsaMIpK+dj83Pp/EPtERxQNKbEdyt8Tw8WVxMY0cRmM3mMxdG
+        Ruiv6+vCzv7+QKmfprT7XqkITqeTxo4iMJlMhMFgMFIuVxQDB53OsTKecbWa4Ha7o5jFzoBAr9cTWq3W
+        bDQaZx7MzmbKLCuInc7vtsSGJI3FYhkpN4MZzJ4o0Gg0hFqtPqtSqSiJWxL3j8CZwh1mjgn+HSD+ABVB
+        iM3ORgOyAAAAAElFTkSuQmCC
+</value>
   </data>
 </root>
