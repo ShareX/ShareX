@@ -124,28 +124,79 @@
   <data name="scMain.Panel2.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
     <value>No</value>
   </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="tsmiFullscreen.Size" type="System.Drawing.Size, System.Drawing">
+    <value>184, 22</value>
+  </data>
   <data name="tsmiFullscreen.Text" xml:space="preserve">
     <value>تمام صفحه</value>
+  </data>
+  <data name="tsmiWindow.Size" type="System.Drawing.Size, System.Drawing">
+    <value>184, 22</value>
   </data>
   <data name="tsmiWindow.Text" xml:space="preserve">
     <value>پنجره</value>
   </data>
+  <data name="tsmiMonitor.Size" type="System.Drawing.Size, System.Drawing">
+    <value>184, 22</value>
+  </data>
   <data name="tsmiMonitor.Text" xml:space="preserve">
     <value>مانیتور</value>
+  </data>
+  <data name="tsmiRectangle.Size" type="System.Drawing.Size, System.Drawing">
+    <value>184, 22</value>
   </data>
   <data name="tsmiRectangle.Text" xml:space="preserve">
     <value>ناحیه</value>
   </data>
+  <data name="tsmiRectangleLight.Size" type="System.Drawing.Size, System.Drawing">
+    <value>184, 22</value>
+  </data>
+  <data name="tsmiRectangleTransparent.Size" type="System.Drawing.Size, System.Drawing">
+    <value>184, 22</value>
+  </data>
+  <data name="tsmiLastRegion.Size" type="System.Drawing.Size, System.Drawing">
+    <value>184, 22</value>
+  </data>
   <data name="tsmiLastRegion.Text" xml:space="preserve">
     <value>آخرین ناحیه</value>
   </data>
+  <data name="tsmiScreenRecordingFFmpeg.Size" type="System.Drawing.Size, System.Drawing">
+    <value>184, 22</value>
+  </data>
   <data name="tsmiScreenRecordingFFmpeg.Text" xml:space="preserve">
-    <value>ضبط صفحه</value>
+    <value>ضبط فیلم صفحه</value>
+  </data>
+  <data name="tsmiScreenRecordingGIF.Size" type="System.Drawing.Size, System.Drawing">
+    <value>184, 22</value>
+  </data>
+  <data name="tsmiScreenRecordingGIF.Text" xml:space="preserve">
+    <value>ضبط فیلم (GIF)</value>
+  </data>
+  <data name="tsmiScrollingCapture.Size" type="System.Drawing.Size, System.Drawing">
+    <value>184, 22</value>
+  </data>
+  <data name="tsmiTextCapture.Size" type="System.Drawing.Size, System.Drawing">
+    <value>184, 22</value>
+  </data>
+  <data name="tsmiTextCapture.Text" xml:space="preserve">
+    <value>تشخیص متن (OCR)</value>
+  </data>
+  <data name="tsmiAutoCapture.Size" type="System.Drawing.Size, System.Drawing">
+    <value>184, 22</value>
+  </data>
+  <data name="tsmiAutoCapture.Text" xml:space="preserve">
+    <value>ضبط خودکار</value>
+  </data>
+  <data name="tssCapture1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>181, 6</value>
+  </data>
+  <data name="tsmiShowCursor.Size" type="System.Drawing.Size, System.Drawing">
+    <value>184, 22</value>
   </data>
   <data name="tsmiShowCursor.Text" xml:space="preserve">
     <value>نمایش کرسر</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="tsmiScreenshotDelay.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAABl0RVh0U29m
@@ -162,14 +213,104 @@
         iM3ORgOyAAAAAElFTkSuQmCC
 </value>
   </data>
+  <data name="tsmiScreenshotDelay.Size" type="System.Drawing.Size, System.Drawing">
+    <value>184, 22</value>
+  </data>
   <data name="tsmiScreenshotDelay.Text" xml:space="preserve">
     <value>تاخیر عکس گرفتن</value>
+  </data>
+  <data name="tsddbCapture.Text" xml:space="preserve">
+    <value>ضبط</value>
+  </data>
+  <data name="tsmiUploadFile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>199, 22</value>
+  </data>
+  <data name="tsmiUploadFile.Text" xml:space="preserve">
+    <value>آپلود فایل</value>
+  </data>
+  <data name="tsmiUploadFolder.Size" type="System.Drawing.Size, System.Drawing">
+    <value>199, 22</value>
+  </data>
+  <data name="tsmiUploadFolder.Text" xml:space="preserve">
+    <value>آپلود فولدر</value>
+  </data>
+  <data name="tsmiUploadClipboard.Size" type="System.Drawing.Size, System.Drawing">
+    <value>199, 22</value>
+  </data>
+  <data name="tsmiUploadClipboard.Text" xml:space="preserve">
+    <value>آپلود از کلیپ بورد</value>
+  </data>
+  <data name="tsmiUploadText.Size" type="System.Drawing.Size, System.Drawing">
+    <value>199, 22</value>
+  </data>
+  <data name="tsmiUploadText.Text" xml:space="preserve">
+    <value>آپلود متن</value>
+  </data>
+  <data name="tsmiUploadURL.Size" type="System.Drawing.Size, System.Drawing">
+    <value>199, 22</value>
+  </data>
+  <data name="tsmiUploadURL.Text" xml:space="preserve">
+    <value>آپلود از طریق آدرس URL</value>
+  </data>
+  <data name="tsmiUploadDragDrop.Size" type="System.Drawing.Size, System.Drawing">
+    <value>199, 22</value>
+  </data>
+  <data name="tsmiShortenURL.Size" type="System.Drawing.Size, System.Drawing">
+    <value>199, 22</value>
+  </data>
+  <data name="tsmiShortenURL.Text" xml:space="preserve">
+    <value>کوتاه کننده لینک</value>
   </data>
   <data name="tsddbUpload.Text" xml:space="preserve">
     <value>آپلود</value>
   </data>
+  <data name="tsmiColorPicker.Text" xml:space="preserve">
+    <value>انتخاب رنگ</value>
+  </data>
+  <data name="tsmiScreenColorPicker.Text" xml:space="preserve">
+    <value>انتخاب رنگ صفحه</value>
+  </data>
+  <data name="tsmiImageEditor.Text" xml:space="preserve">
+    <value>ویرایشگر تصویر</value>
+  </data>
+  <data name="tsmiImageEffects.Text" xml:space="preserve">
+    <value>افکت های تصویر</value>
+  </data>
+  <data name="tsmiHashCheck.Text" xml:space="preserve">
+    <value>چک کردن Hash</value>
+  </data>
+  <data name="tsmiQRCode.Text" xml:space="preserve">
+    <value>QR کد</value>
+  </data>
+  <data name="tsmiRuler.Text" xml:space="preserve">
+    <value>خط کش</value>
+  </data>
+  <data name="tsmiImageCombiner.Text" xml:space="preserve">
+    <value>تلفیق کننده عکس</value>
+  </data>
+  <data name="tsmiMonitorTest.Text" xml:space="preserve">
+    <value>تست مانیتور</value>
+  </data>
   <data name="tsddbTools.Text" xml:space="preserve">
     <value>ابزارها</value>
+  </data>
+  <data name="tsddbAfterCaptureTasks.Text" xml:space="preserve">
+    <value>وظایف بعد از ضبط</value>
+  </data>
+  <data name="tsddbAfterUploadTasks.Text" xml:space="preserve">
+    <value>وظایف بعد از آپلود</value>
+  </data>
+  <data name="tsddbDestinations.Text" xml:space="preserve">
+    <value>مقصدها</value>
+  </data>
+  <data name="tsbTaskSettings.Text" xml:space="preserve">
+    <value>تنظیمات وظایف</value>
+  </data>
+  <data name="tsbApplicationSettings.Text" xml:space="preserve">
+    <value>تنظیمات برنامه</value>
+  </data>
+  <data name="tsbHotkeySettings.Text" xml:space="preserve">
+    <value>تنظیمات کلیدهای میانبر</value>
   </data>
   <data name="tsbScreenshotsFolder.Text" xml:space="preserve">
     <value>رجوع به فولدر عکس ها</value>
@@ -183,11 +324,32 @@
   <data name="tsbNews.Text" xml:space="preserve">
     <value>اعلامیه ها</value>
   </data>
+  <data name="tsmiShowDebugLog.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="tsmiTestImageUpload.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="tsmiTestTextUpload.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="tsmiTestFileUpload.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="tsmiTestURLShortener.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="tsmiTestURLSharing.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="tsddbDebug.Text" xml:space="preserve">
+    <value>خطایابی</value>
+  </data>
   <data name="tsbDonate.Text" xml:space="preserve">
     <value>کمک مالی</value>
   </data>
   <data name="tsbAbout.Text" xml:space="preserve">
-    <value>درباره</value>
+    <value>درباره ما</value>
   </data>
   <data name="tsmiTrayScreenshotDelay.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

@@ -129,7 +129,7 @@ namespace ShareX
                     icon = Resources.vn;
                     break;
                 case SupportedLanguage.Persian:
-                    icon = Resources.vn;
+                    icon = Resources.IR;
                     break;
             }
 
