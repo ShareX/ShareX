@@ -237,6 +237,7 @@ namespace ShareX
 #if !DEBUG // Allow Visual Studio to break on exceptions in Debug builds.
             Application.ThreadException += Application_ThreadException;
             AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;
+            Application.SetUnhandledExceptionMode(UnhandledExceptionMode.CatchException);
 #endif
 
             StartTimer = Stopwatch.StartNew(); // For be able to show startup time
