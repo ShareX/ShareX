@@ -158,7 +158,7 @@ namespace ShareX
 
             if (panel != null)
             {
-                panel.UpdateFilename();
+                panel.UpdateTitle();
 
                 if (Program.Settings.TaskViewMode == TaskViewMode.ThumbnailView)
                 {
@@ -333,12 +333,7 @@ namespace ShareX
                         {
                             DebugHelper.WriteLine($"Task completed. Filename: {info.FileName}, Duration: {(long)info.TaskDuration.TotalMilliseconds} ms");
 
-                            string result = info.Result.ToString();
-
-                            if (string.IsNullOrEmpty(result) && !string.IsNullOrEmpty(info.FilePath))
-                            {
-                                result = info.FilePath;
-                            }
+                            string result = info.ToString();
 
                             if (lvi != null)
                             {
