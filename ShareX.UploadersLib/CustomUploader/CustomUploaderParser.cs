@@ -225,9 +225,9 @@ namespace ShareX.UploadersLib
             }
             else
             {
-                if (CheckKeyword(syntax, "input")) // Example: $input$
+                if (CheckKeyword(syntax, "input", out value)) // Example: $input$ or $input:url$
                 {
-                    return AutoEncode(Input);
+                    return ParseSyntaxInput(value);
                 }
             }
 
@@ -286,6 +286,23 @@ namespace ShareX.UploadersLib
             }
 
             return false;
+        }
+
+        private string ParseSyntaxInput(string value)
+        {
+            if (!string.IsNullOrEmpty(value))
+            {
+                if (value == "text")
+                {
+                    return URLEncode ? "" : AutoEncode(Input);
+                }
+                else if (value == "url")
+                {
+                    return URLEncode ? AutoEncode(Input) : "";
+                }
+            }
+
+            return AutoEncode(Input);
         }
 
         private string ParseSyntaxHeader(string header)
