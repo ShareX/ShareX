@@ -303,7 +303,7 @@ namespace ShareX
             {
                 if (taskSettings.CaptureSettings.FFmpegOptions.VideoCodec == FFmpegVideoCodec.gif)
                 {
-                    screenRecorder.FFmpegEncodeAsGIF(input, output, Program.ToolsFolder);
+                    screenRecorder.FFmpegEncodeAsGIF(input, output);
                 }
                 else
                 {
