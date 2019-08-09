@@ -591,10 +591,6 @@ namespace ShareX.ScreenCaptureLib
                         case Keys.PageDown:
                             MoveCurrentShapeDown();
                             break;
-                        case Keys.Q:
-                            Options.QuickCrop = !Options.QuickCrop;
-                            tsmiQuickCrop.Checked = !Options.QuickCrop;
-                            break;
                         case Keys.M:
                             CurrentTool = ShapeType.ToolSelect;
                             break;
@@ -622,6 +618,16 @@ namespace ShareX.ScreenCaptureLib
                             break;
                         case Keys.Control | Keys.P:
                             Form.OnPrintImageRequested();
+                            break;
+                    }
+                }
+                else
+                {
+                    switch (e.KeyData)
+                    {
+                        case Keys.Q:
+                            Options.QuickCrop = !Options.QuickCrop;
+                            tsmiQuickCrop.Checked = !Options.QuickCrop;
                             break;
                     }
                 }
