@@ -247,6 +247,7 @@
             this.pgTaskSettings = new System.Windows.Forms.PropertyGrid();
             this.chkOverrideAdvancedSettings = new System.Windows.Forms.CheckBox();
             this.tttvMain = new ShareX.HelpersLib.TabToTreeView();
+            this.lblActionsNote = new System.Windows.Forms.Label();
             this.tcTaskSettings.SuspendLayout();
             this.tpTask.SuspendLayout();
             this.cmsDestinations.SuspendLayout();
@@ -1895,6 +1896,7 @@
             // 
             // pActions
             // 
+            this.pActions.Controls.Add(this.lblActionsNote);
             this.pActions.Controls.Add(this.btnActionsDuplicate);
             this.pActions.Controls.Add(this.btnActionsAdd);
             this.pActions.Controls.Add(this.lvActions);
@@ -1930,6 +1932,7 @@
             this.chActionsArgs,
             this.chActionsExtensions});
             this.lvActions.FullRowSelect = true;
+            this.lvActions.HideSelection = false;
             this.lvActions.MultiSelect = false;
             this.lvActions.Name = "lvActions";
             this.lvActions.UseCompatibleStateImageBehavior = false;
@@ -2010,6 +2013,7 @@
             this.chWatchFolderFilter,
             this.chWatchFolderIncludeSubdirectories});
             this.lvWatchFolderList.FullRowSelect = true;
+            this.lvWatchFolderList.HideSelection = false;
             this.lvWatchFolderList.Name = "lvWatchFolderList";
             this.lvWatchFolderList.UseCompatibleStateImageBehavior = false;
             this.lvWatchFolderList.View = System.Windows.Forms.View.Details;
@@ -2110,6 +2114,11 @@
             this.tttvMain.TreeViewSize = 190;
             this.tttvMain.TabChanged += new ShareX.HelpersLib.TabToTreeView.TabChangedEventHandler(this.tttvMain_TabChanged);
             // 
+            // lblActionsNote
+            // 
+            resources.ApplyResources(this.lblActionsNote, "lblActionsNote");
+            this.lblActionsNote.Name = "lblActionsNote";
+            // 
             // TaskSettingsForm
             // 
             resources.ApplyResources(this, "$this");
@@ -2188,6 +2197,7 @@
             this.tpActions.ResumeLayout(false);
             this.tpActions.PerformLayout();
             this.pActions.ResumeLayout(false);
+            this.pActions.PerformLayout();
             this.tpWatchFolders.ResumeLayout(false);
             this.tpWatchFolders.PerformLayout();
             this.tpTools.ResumeLayout(false);
@@ -2419,5 +2429,6 @@
         private System.Windows.Forms.Label lblAutoIncrementNumber;
         private System.Windows.Forms.NumericUpDown nudAutoIncrementNumber;
         private System.Windows.Forms.Button btnAutoIncrementNumber;
+        private System.Windows.Forms.Label lblActionsNote;
     }
 }
