@@ -783,6 +783,9 @@ namespace ShareX
                 pThumbnailView.BackColor = ShareXResources.DarkBackgroundColor;
                 lblThumbnailViewTip.ForeColor = ShareXResources.DarkTextColor;
                 flpSocialButtons.BackColor = ShareXResources.DarkBackgroundColor;
+                btnCloseNews.FlatAppearance.BorderColor = ShareXResources.DarkBorderColor;
+                btnCloseNews.ForeColor = ShareXResources.DarkTextColor;
+                btnCloseNews.BackColor = ShareXResources.DarkBackgroundVariantColor;
             }
             else
             {
@@ -800,6 +803,9 @@ namespace ShareX
                 pThumbnailView.BackColor = SystemColors.Window;
                 lblThumbnailViewTip.ForeColor = Color.Silver;
                 flpSocialButtons.BackColor = SystemColors.Window;
+                btnCloseNews.FlatAppearance.BorderColor = SystemColors.ControlText;
+                btnCloseNews.ForeColor = SystemColors.ControlText;
+                btnCloseNews.BackColor = SystemColors.Window;
             }
 
             pbPreview.UpdateTheme();

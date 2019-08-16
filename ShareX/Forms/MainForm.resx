@@ -1776,68 +1776,23 @@
   <metadata name="timerTraySingleClick.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>405, 17</value>
   </metadata>
-  <data name="&gt;&gt;btnCloseNews.Name" xml:space="preserve">
-    <value>btnCloseNews</value>
-  </data>
-  <data name="&gt;&gt;btnCloseNews.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnCloseNews.Parent" xml:space="preserve">
-    <value>pNews</value>
-  </data>
-  <data name="&gt;&gt;btnCloseNews.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;ucNews.Name" xml:space="preserve">
-    <value>ucNews</value>
-  </data>
-  <data name="&gt;&gt;ucNews.Type" xml:space="preserve">
-    <value>ShareX.NewsListControl, ShareX, Version=13.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;ucNews.Parent" xml:space="preserve">
-    <value>pNews</value>
-  </data>
-  <data name="&gt;&gt;ucNews.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="pNews.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="pNews.Location" type="System.Drawing.Point, System.Drawing">
-    <value>160, 0</value>
-  </data>
-  <data name="pNews.Size" type="System.Drawing.Size, System.Drawing">
-    <value>674, 429</value>
-  </data>
-  <data name="pNews.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="pNews.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;pNews.Name" xml:space="preserve">
-    <value>pNews</value>
-  </data>
-  <data name="&gt;&gt;pNews.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pNews.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;pNews.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
   <data name="btnCloseNews.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
+  </data>
+  <data name="btnCloseNews.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="btnCloseNews.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 11.25pt</value>
   </data>
   <data name="btnCloseNews.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="btnCloseNews.Location" type="System.Drawing.Point, System.Drawing">
-    <value>560, 400</value>
+    <value>552, 392</value>
   </data>
   <data name="btnCloseNews.Size" type="System.Drawing.Size, System.Drawing">
-    <value>91, 23</value>
+    <value>99, 31</value>
   </data>
   <data name="btnCloseNews.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -1880,6 +1835,33 @@
   </data>
   <data name="&gt;&gt;ucNews.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="pNews.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="pNews.Location" type="System.Drawing.Point, System.Drawing">
+    <value>160, 0</value>
+  </data>
+  <data name="pNews.Size" type="System.Drawing.Size, System.Drawing">
+    <value>674, 429</value>
+  </data>
+  <data name="pNews.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="pNews.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;pNews.Name" xml:space="preserve">
+    <value>pNews</value>
+  </data>
+  <data name="&gt;&gt;pNews.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pNews.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;pNews.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="&gt;&gt;lblThumbnailViewTip.Name" xml:space="preserve">
     <value>lblThumbnailViewTip</value>
@@ -1998,6 +1980,90 @@
   <data name="flpSocialButtons.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
   </data>
+  <data name="&gt;&gt;pbPatreonButton.Name" xml:space="preserve">
+    <value>pbPatreonButton</value>
+  </data>
+  <data name="&gt;&gt;pbPatreonButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pbPatreonButton.Parent" xml:space="preserve">
+    <value>flpSocialButtons</value>
+  </data>
+  <data name="&gt;&gt;pbPatreonButton.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;pbBitcoinButton.Name" xml:space="preserve">
+    <value>pbBitcoinButton</value>
+  </data>
+  <data name="&gt;&gt;pbBitcoinButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pbBitcoinButton.Parent" xml:space="preserve">
+    <value>flpSocialButtons</value>
+  </data>
+  <data name="&gt;&gt;pbBitcoinButton.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;pbTwitterButton.Name" xml:space="preserve">
+    <value>pbTwitterButton</value>
+  </data>
+  <data name="&gt;&gt;pbTwitterButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pbTwitterButton.Parent" xml:space="preserve">
+    <value>flpSocialButtons</value>
+  </data>
+  <data name="&gt;&gt;pbTwitterButton.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;pbDiscordButton.Name" xml:space="preserve">
+    <value>pbDiscordButton</value>
+  </data>
+  <data name="&gt;&gt;pbDiscordButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pbDiscordButton.Parent" xml:space="preserve">
+    <value>flpSocialButtons</value>
+  </data>
+  <data name="&gt;&gt;pbDiscordButton.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;pbSocialHideButton.Name" xml:space="preserve">
+    <value>pbSocialHideButton</value>
+  </data>
+  <data name="&gt;&gt;pbSocialHideButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pbSocialHideButton.Parent" xml:space="preserve">
+    <value>flpSocialButtons</value>
+  </data>
+  <data name="&gt;&gt;pbSocialHideButton.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="flpSocialButtons.Location" type="System.Drawing.Point, System.Drawing">
+    <value>614, 379</value>
+  </data>
+  <data name="flpSocialButtons.Size" type="System.Drawing.Size, System.Drawing">
+    <value>215, 45</value>
+  </data>
+  <data name="flpSocialButtons.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;flpSocialButtons.Name" xml:space="preserve">
+    <value>flpSocialButtons</value>
+  </data>
+  <data name="&gt;&gt;flpSocialButtons.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;flpSocialButtons.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;flpSocialButtons.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <metadata name="ttMain.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>567, 17</value>
+  </metadata>
   <data name="pbPatreonButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
@@ -2013,9 +2079,6 @@
   <data name="pbPatreonButton.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <metadata name="ttMain.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>567, 17</value>
-  </metadata>
   <data name="pbPatreonButton.ToolTip" xml:space="preserve">
     <value>Support us on Patreon</value>
   </data>
@@ -2163,27 +2226,9 @@
   <data name="&gt;&gt;pbSocialHideButton.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="flpSocialButtons.Location" type="System.Drawing.Point, System.Drawing">
-    <value>614, 379</value>
-  </data>
-  <data name="flpSocialButtons.Size" type="System.Drawing.Size, System.Drawing">
-    <value>215, 45</value>
-  </data>
-  <data name="flpSocialButtons.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;flpSocialButtons.Name" xml:space="preserve">
-    <value>flpSocialButtons</value>
-  </data>
-  <data name="&gt;&gt;flpSocialButtons.Type" xml:space="preserve">
-    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;flpSocialButtons.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;flpSocialButtons.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
+  <metadata name="ttMain.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>567, 17</value>
+  </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
