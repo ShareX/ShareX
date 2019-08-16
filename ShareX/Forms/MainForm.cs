@@ -780,7 +780,7 @@ namespace ShareX
                 scMain.SplitterLineColor = ShareXResources.DarkBorderColor;
                 pThumbnailView.BackColor = ShareXResources.DarkBackgroundColor;
                 lblThumbnailViewTip.ForeColor = ShareXResources.DarkTextColor;
-                flpCommunity.BackColor = ShareXResources.DarkBackgroundColor;
+                flpSocialButtons.BackColor = ShareXResources.DarkBackgroundColor;
             }
             else
             {
@@ -795,7 +795,7 @@ namespace ShareX
                 scMain.SplitterLineColor = ProfessionalColors.SeparatorDark;
                 pThumbnailView.BackColor = SystemColors.Window;
                 lblThumbnailViewTip.ForeColor = Color.Silver;
-                flpCommunity.BackColor = SystemColors.Window;
+                flpSocialButtons.BackColor = SystemColors.Window;
             }
 
             pbPreview.UpdateTheme();
@@ -1529,26 +1529,30 @@ namespace ShareX
             }
         }
 
-        private void pbDiscordOpen_Click(object sender, EventArgs e)
-        {
-            URLHelpers.OpenURL(Links.URL_DISCORD);
-        }
-
-        private void pbDiscordHide_Click(object sender, EventArgs e)
-        {
-            flpDiscord.Visible = false;
-            Program.Settings.ShowDiscordButton = false;
-        }
-
-        private void pbSupportUsOpen_Click(object sender, EventArgs e)
+        private void PbPatreonButton_Click(object sender, EventArgs e)
         {
             URLHelpers.OpenURL(Links.URL_DONATE);
         }
 
-        private void pbSupportUsHide_Click(object sender, EventArgs e)
+        private void PbBitcoinButton_Click(object sender, EventArgs e)
         {
-            flpSupportUs.Visible = false;
-            Program.Settings.ShowSupportUsButton = false;
+            URLHelpers.OpenURL(Links.URL_DONATE);
+        }
+
+        private void PbTwitterButton_Click(object sender, EventArgs e)
+        {
+            URLHelpers.OpenURL(Links.URL_TWITTER);
+        }
+
+        private void PbDiscordButton_Click(object sender, EventArgs e)
+        {
+            URLHelpers.OpenURL(Links.URL_DISCORD);
+        }
+
+        private void PbSocialHideButton_Click(object sender, EventArgs e)
+        {
+            Program.Settings.ShowSocialButtons = false;
+            flpSocialButtons.Visible = false;
         }
 
         private void btnCloseNews_Click(object sender, EventArgs e)
