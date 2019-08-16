@@ -773,6 +773,8 @@ namespace ShareX
                 tsMain.DrawCustomBorder = false;
                 cmsTray.Renderer = new ToolStripDarkRenderer();
                 cmsTaskInfo.Renderer = new ToolStripDarkRenderer();
+                ttMain.BackColor = ShareXResources.DarkBackgroundColor;
+                ttMain.ForeColor = ShareXResources.DarkTextColor;
                 lvUploads.BackColor = ShareXResources.DarkBackgroundColor;
                 lvUploads.ForeColor = ShareXResources.DarkTextColor;
                 lblListViewTip.ForeColor = ShareXResources.DarkTextColor;
@@ -788,6 +790,8 @@ namespace ShareX
                 tsMain.DrawCustomBorder = true;
                 cmsTray.Renderer = new ToolStripCustomRenderer();
                 cmsTaskInfo.Renderer = new ToolStripCustomRenderer();
+                ttMain.BackColor = SystemColors.Window;
+                ttMain.ForeColor = SystemColors.ControlText;
                 lvUploads.BackColor = SystemColors.Window;
                 lvUploads.ForeColor = SystemColors.ControlText;
                 lblListViewTip.ForeColor = Color.Silver;
@@ -1344,7 +1348,14 @@ namespace ShareX
             UploadManager.DragDropUpload(e.Data);
         }
 
-        private void lblDragAndDropTip_MouseUp(object sender, MouseEventArgs e)
+        private void TtMain_Draw(object sender, DrawToolTipEventArgs e)
+        {
+            e.DrawBackground();
+            e.DrawBorder();
+            e.DrawText();
+        }
+
+        private void lblListViewTip_MouseUp(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
             {

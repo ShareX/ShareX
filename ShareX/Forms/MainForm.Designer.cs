@@ -279,6 +279,7 @@
             this.pbTwitterButton = new System.Windows.Forms.PictureBox();
             this.pbDiscordButton = new System.Windows.Forms.PictureBox();
             this.pbSocialHideButton = new System.Windows.Forms.PictureBox();
+            this.ttMain = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.scMain)).BeginInit();
             this.scMain.Panel1.SuspendLayout();
             this.scMain.Panel2.SuspendLayout();
@@ -321,7 +322,7 @@
             this.lblListViewTip.ForeColor = System.Drawing.Color.Silver;
             this.lblListViewTip.Name = "lblListViewTip";
             this.lblListViewTip.UseMnemonic = false;
-            this.lblListViewTip.MouseUp += new System.Windows.Forms.MouseEventHandler(this.lblDragAndDropTip_MouseUp);
+            this.lblListViewTip.MouseUp += new System.Windows.Forms.MouseEventHandler(this.lblListViewTip_MouseUp);
             // 
             // lvUploads
             // 
@@ -2173,6 +2174,7 @@
             resources.ApplyResources(this.pbPatreonButton, "pbPatreonButton");
             this.pbPatreonButton.Name = "pbPatreonButton";
             this.pbPatreonButton.TabStop = false;
+            this.ttMain.SetToolTip(this.pbPatreonButton, resources.GetString("pbPatreonButton.ToolTip"));
             this.pbPatreonButton.Click += new System.EventHandler(this.PbPatreonButton_Click);
             // 
             // pbBitcoinButton
@@ -2182,6 +2184,7 @@
             resources.ApplyResources(this.pbBitcoinButton, "pbBitcoinButton");
             this.pbBitcoinButton.Name = "pbBitcoinButton";
             this.pbBitcoinButton.TabStop = false;
+            this.ttMain.SetToolTip(this.pbBitcoinButton, resources.GetString("pbBitcoinButton.ToolTip"));
             this.pbBitcoinButton.Click += new System.EventHandler(this.PbBitcoinButton_Click);
             // 
             // pbTwitterButton
@@ -2191,6 +2194,7 @@
             resources.ApplyResources(this.pbTwitterButton, "pbTwitterButton");
             this.pbTwitterButton.Name = "pbTwitterButton";
             this.pbTwitterButton.TabStop = false;
+            this.ttMain.SetToolTip(this.pbTwitterButton, resources.GetString("pbTwitterButton.ToolTip"));
             this.pbTwitterButton.Click += new System.EventHandler(this.PbTwitterButton_Click);
             // 
             // pbDiscordButton
@@ -2200,6 +2204,7 @@
             resources.ApplyResources(this.pbDiscordButton, "pbDiscordButton");
             this.pbDiscordButton.Name = "pbDiscordButton";
             this.pbDiscordButton.TabStop = false;
+            this.ttMain.SetToolTip(this.pbDiscordButton, resources.GetString("pbDiscordButton.ToolTip"));
             this.pbDiscordButton.Click += new System.EventHandler(this.PbDiscordButton_Click);
             // 
             // pbSocialHideButton
@@ -2209,7 +2214,16 @@
             resources.ApplyResources(this.pbSocialHideButton, "pbSocialHideButton");
             this.pbSocialHideButton.Name = "pbSocialHideButton";
             this.pbSocialHideButton.TabStop = false;
+            this.ttMain.SetToolTip(this.pbSocialHideButton, resources.GetString("pbSocialHideButton.ToolTip"));
             this.pbSocialHideButton.Click += new System.EventHandler(this.PbSocialHideButton_Click);
+            // 
+            // ttMain
+            // 
+            this.ttMain.AutoPopDelay = 5000;
+            this.ttMain.InitialDelay = 200;
+            this.ttMain.OwnerDraw = true;
+            this.ttMain.ReshowDelay = 100;
+            this.ttMain.Draw += new System.Windows.Forms.DrawToolTipEventHandler(this.TtMain_Draw);
             // 
             // MainForm
             // 
@@ -2506,5 +2520,6 @@
         private System.Windows.Forms.PictureBox pbTwitterButton;
         private System.Windows.Forms.PictureBox pbDiscordButton;
         private System.Windows.Forms.PictureBox pbSocialHideButton;
+        private System.Windows.Forms.ToolTip ttMain;
     }
 }
