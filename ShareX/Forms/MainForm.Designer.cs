@@ -547,8 +547,9 @@
             this.tsmiScreenshotDelay3,
             this.tsmiScreenshotDelay4,
             this.tsmiScreenshotDelay5});
-            resources.ApplyResources(this.tsmiScreenshotDelay, "tsmiScreenshotDelay");
+            this.tsmiScreenshotDelay.Image = global::ShareX.Properties.Resources.clock_select;
             this.tsmiScreenshotDelay.Name = "tsmiScreenshotDelay";
+            resources.ApplyResources(this.tsmiScreenshotDelay, "tsmiScreenshotDelay");
             // 
             // tsmiScreenshotDelay0
             // 
@@ -1639,8 +1640,9 @@
             this.tsmiTrayScreenshotDelay3,
             this.tsmiTrayScreenshotDelay4,
             this.tsmiTrayScreenshotDelay5});
-            resources.ApplyResources(this.tsmiTrayScreenshotDelay, "tsmiTrayScreenshotDelay");
+            this.tsmiTrayScreenshotDelay.Image = global::ShareX.Properties.Resources.clock_select;
             this.tsmiTrayScreenshotDelay.Name = "tsmiTrayScreenshotDelay";
+            resources.ApplyResources(this.tsmiTrayScreenshotDelay, "tsmiTrayScreenshotDelay");
             // 
             // tsmiTrayScreenshotDelay0
             // 
