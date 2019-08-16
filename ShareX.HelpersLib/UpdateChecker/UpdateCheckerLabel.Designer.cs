@@ -38,6 +38,7 @@
             // 
             // pbLoading
             // 
+            this.pbLoading.Image = global::ShareX.HelpersLib.Properties.Resources.LoadingSmall;
             resources.ApplyResources(this.pbLoading, "pbLoading");
             this.pbLoading.Name = "pbLoading";
             this.pbLoading.TabStop = false;

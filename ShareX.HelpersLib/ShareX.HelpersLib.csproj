@@ -1370,6 +1370,9 @@
   <ItemGroup>
     <None Include="Resources\ShareX_Icon_White.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LoadingSmall.gif" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
