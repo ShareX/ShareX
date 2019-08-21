@@ -72,7 +72,7 @@ namespace ShareX
         public bool TrayIconProgressEnabled = true;
         public bool TaskbarProgressEnabled = true;
         public bool UseDarkTheme = true;
-        public bool ExperimentalDarkTheme = true;
+        public bool ExperimentalDarkTheme = false;
         public bool UseWhiteShareXIcon = false;
         public bool RememberMainFormPosition = false;
         public Point MainFormPosition = Point.Empty;
