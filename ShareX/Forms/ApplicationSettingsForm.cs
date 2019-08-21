@@ -534,7 +534,7 @@ namespace ShareX
             {
                 lastPersonalPath = currentPersonalPath;
                 btnPersonalFolderPathApply.Enabled = false;
-                
+
                 if (MessageBox.Show(Resources.ShareXNeedsToBeRestartedForThePersonalFolderChangesToApply, Resources.ShareXConfirmation,
                     MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {

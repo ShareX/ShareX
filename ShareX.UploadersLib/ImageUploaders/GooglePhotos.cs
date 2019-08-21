@@ -23,13 +23,13 @@
 
 #endregion License Information (GPL v3)
 
+using Newtonsoft.Json;
 using ShareX.UploadersLib.Properties;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
-using Newtonsoft.Json;
 
 namespace ShareX.UploadersLib.ImageUploaders
 {
