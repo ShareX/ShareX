@@ -1540,6 +1540,11 @@ namespace ShareX
             TaskSettings.ToolsSettings.ScreenColorPickerFormat = txtToolsScreenColorPickerFormat.Text;
         }
 
+        private void TaskSettingsForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
         #endregion Tools
 
         #region Advanced

@@ -66,6 +66,7 @@
             // 
             // pSettings
             // 
+            resources.ApplyResources(this.pSettings, "pSettings");
             this.pSettings.BackColor = System.Drawing.SystemColors.Window;
             this.pSettings.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pSettings.Controls.Add(this.btnScreenTearingTest);
@@ -94,7 +95,6 @@
             this.pSettings.Controls.Add(this.lblBlackWhiteValue);
             this.pSettings.Controls.Add(this.tbBlackWhite);
             this.pSettings.Controls.Add(this.rbBlackWhite);
-            resources.ApplyResources(this.pSettings, "pSettings");
             this.pSettings.Name = "pSettings";
             // 
             // btnScreenTearingTest
@@ -106,31 +106,31 @@
             // 
             // btnGradientColor2
             // 
-            this.btnGradientColor2.Color = System.Drawing.Color.Empty;
             resources.ApplyResources(this.btnGradientColor2, "btnGradientColor2");
+            this.btnGradientColor2.Color = System.Drawing.Color.Empty;
             this.btnGradientColor2.Name = "btnGradientColor2";
             this.btnGradientColor2.UseVisualStyleBackColor = true;
             this.btnGradientColor2.ColorChanged += new ShareX.HelpersLib.ColorButton.ColorChangedEventHandler(this.btnGradientColor2_ColorChanged);
             // 
             // btnGradientColor1
             // 
-            this.btnGradientColor1.Color = System.Drawing.Color.Empty;
             resources.ApplyResources(this.btnGradientColor1, "btnGradientColor1");
+            this.btnGradientColor1.Color = System.Drawing.Color.Empty;
             this.btnGradientColor1.Name = "btnGradientColor1";
             this.btnGradientColor1.UseVisualStyleBackColor = true;
             this.btnGradientColor1.ColorChanged += new ShareX.HelpersLib.ColorButton.ColorChangedEventHandler(this.btnGradientColor1_ColorChanged);
             // 
             // lblTip
             // 
-            this.lblTip.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.lblTip, "lblTip");
+            this.lblTip.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblTip.Name = "lblTip";
             // 
             // cbGradient
             // 
+            resources.ApplyResources(this.cbGradient, "cbGradient");
             this.cbGradient.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbGradient.FormattingEnabled = true;
-            resources.ApplyResources(this.cbGradient, "cbGradient");
             this.cbGradient.Name = "cbGradient";
             this.cbGradient.SelectedIndexChanged += new System.EventHandler(this.cbGradient_SelectedIndexChanged);
             // 
@@ -177,13 +177,13 @@
             // 
             // cbShapes
             // 
+            resources.ApplyResources(this.cbShapes, "cbShapes");
             this.cbShapes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbShapes.FormattingEnabled = true;
             this.cbShapes.Items.AddRange(new object[] {
             resources.GetString("cbShapes.Items"),
             resources.GetString("cbShapes.Items1"),
             resources.GetString("cbShapes.Items2")});
-            resources.ApplyResources(this.cbShapes, "cbShapes");
             this.cbShapes.Name = "cbShapes";
             this.cbShapes.SelectedIndexChanged += new System.EventHandler(this.cbShapes_SelectedIndexChanged);
             // 

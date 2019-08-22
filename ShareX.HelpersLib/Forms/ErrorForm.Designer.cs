@@ -48,8 +48,8 @@
             // 
             // btnSendBugReport
             // 
-            this.btnSendBugReport.BackColor = System.Drawing.Color.Transparent;
             resources.ApplyResources(this.btnSendBugReport, "btnSendBugReport");
+            this.btnSendBugReport.BackColor = System.Drawing.Color.Transparent;
             this.btnSendBugReport.Name = "btnSendBugReport";
             this.btnSendBugReport.UseVisualStyleBackColor = false;
             this.btnSendBugReport.Click += new System.EventHandler(this.btnSendBugReport_Click);
@@ -58,14 +58,15 @@
             // 
             resources.ApplyResources(this.btnClose, "btnClose");
             this.btnClose.BackColor = System.Drawing.Color.Transparent;
+            this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnClose.Name = "btnClose";
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // btnOpenLogFile
             // 
-            this.btnOpenLogFile.BackColor = System.Drawing.Color.Transparent;
             resources.ApplyResources(this.btnOpenLogFile, "btnOpenLogFile");
+            this.btnOpenLogFile.BackColor = System.Drawing.Color.Transparent;
             this.btnOpenLogFile.Name = "btnOpenLogFile";
             this.btnOpenLogFile.UseVisualStyleBackColor = false;
             this.btnOpenLogFile.Click += new System.EventHandler(this.btnOpenLogFile_Click);
@@ -82,8 +83,8 @@
             // 
             // btnContinue
             // 
-            this.btnContinue.BackColor = System.Drawing.Color.Transparent;
             resources.ApplyResources(this.btnContinue, "btnContinue");
+            this.btnContinue.BackColor = System.Drawing.Color.Transparent;
             this.btnContinue.Name = "btnContinue";
             this.btnContinue.UseVisualStyleBackColor = false;
             this.btnContinue.Click += new System.EventHandler(this.btnContinue_Click);

@@ -39,9 +39,9 @@
             // 
             // lblTimer
             // 
+            resources.ApplyResources(this.lblTimer, "lblTimer");
             this.lblTimer.BackColor = System.Drawing.Color.DimGray;
             this.lblTimer.DrawBorder = true;
-            resources.ApplyResources(this.lblTimer, "lblTimer");
             this.lblTimer.ForeColor = System.Drawing.Color.White;
             this.lblTimer.Name = "lblTimer";
             this.lblTimer.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -67,30 +67,30 @@
             // 
             // cmsMain
             // 
+            resources.ApplyResources(this.cmsMain, "cmsMain");
             this.cmsMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiStart,
             this.tsmiAbort});
             this.cmsMain.Name = "cmsMain";
-            resources.ApplyResources(this.cmsMain, "cmsMain");
             // 
             // tsmiStart
             // 
+            resources.ApplyResources(this.tsmiStart, "tsmiStart");
             this.tsmiStart.Image = global::ShareX.Properties.Resources.control_record;
             this.tsmiStart.Name = "tsmiStart";
-            resources.ApplyResources(this.tsmiStart, "tsmiStart");
             this.tsmiStart.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnStart_MouseClick);
             // 
             // tsmiAbort
             // 
+            resources.ApplyResources(this.tsmiAbort, "tsmiAbort");
             this.tsmiAbort.Image = global::ShareX.Properties.Resources.cross;
             this.tsmiAbort.Name = "tsmiAbort";
-            resources.ApplyResources(this.tsmiAbort, "tsmiAbort");
             this.tsmiAbort.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnAbort_MouseClick);
             // 
             // niTray
             // 
-            this.niTray.ContextMenuStrip = this.cmsMain;
             resources.ApplyResources(this.niTray, "niTray");
+            this.niTray.ContextMenuStrip = this.cmsMain;
             this.niTray.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnStart_MouseClick);
             // 
             // ScreenRecordForm

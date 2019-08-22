@@ -69,8 +69,8 @@
             // 
             // txtFilePath
             // 
-            this.txtFilePath.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtFilePath, "txtFilePath");
+            this.txtFilePath.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtFilePath.Name = "txtFilePath";
             // 
             // btnFilePathBrowse
@@ -109,9 +109,9 @@
             // 
             // cbHashType
             // 
+            resources.ApplyResources(this.cbHashType, "cbHashType");
             this.cbHashType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbHashType.FormattingEnabled = true;
-            resources.ApplyResources(this.cbHashType, "cbHashType");
             this.cbHashType.Name = "cbHashType";
             // 
             // pbProgress
@@ -121,8 +121,8 @@
             // 
             // txtResult
             // 
-            this.txtResult.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtResult, "txtResult");
+            this.txtResult.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtResult.Name = "txtResult";
             this.txtResult.ReadOnly = true;
             this.txtResult.TextChanged += new System.EventHandler(this.txtResult_TextChanged);
@@ -130,8 +130,8 @@
             // 
             // txtTarget
             // 
-            this.txtTarget.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtTarget, "txtTarget");
+            this.txtTarget.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtTarget.Name = "txtTarget";
             this.txtTarget.TextChanged += new System.EventHandler(this.txtTarget_TextChanged);
             // 
@@ -142,14 +142,15 @@
             // 
             // tcMain
             // 
+            resources.ApplyResources(this.tcMain, "tcMain");
             this.tcMain.Controls.Add(this.tpFileHashCheck);
             this.tcMain.Controls.Add(this.tpTextConversions);
-            resources.ApplyResources(this.tcMain, "tcMain");
             this.tcMain.Name = "tcMain";
             this.tcMain.SelectedIndex = 0;
             // 
             // tpFileHashCheck
             // 
+            resources.ApplyResources(this.tpFileHashCheck, "tpFileHashCheck");
             this.tpFileHashCheck.AllowDrop = true;
             this.tpFileHashCheck.BackColor = System.Drawing.SystemColors.Window;
             this.tpFileHashCheck.Controls.Add(this.lblFile);
@@ -164,13 +165,13 @@
             this.tpFileHashCheck.Controls.Add(this.btnStartHashCheck);
             this.tpFileHashCheck.Controls.Add(this.lblTarget);
             this.tpFileHashCheck.Controls.Add(this.lblProgressPercentage);
-            resources.ApplyResources(this.tpFileHashCheck, "tpFileHashCheck");
             this.tpFileHashCheck.Name = "tpFileHashCheck";
             this.tpFileHashCheck.DragDrop += new System.Windows.Forms.DragEventHandler(this.tpFileHashCheck_DragDrop);
             this.tpFileHashCheck.DragEnter += new System.Windows.Forms.DragEventHandler(this.tpFileHashCheck_DragEnter);
             // 
             // tpTextConversions
             // 
+            resources.ApplyResources(this.tpTextConversions, "tpTextConversions");
             this.tpTextConversions.BackColor = System.Drawing.SystemColors.Window;
             this.tpTextConversions.Controls.Add(this.btnHashCheckCopyAll);
             this.tpTextConversions.Controls.Add(this.txtHashCheckHash);
@@ -190,7 +191,6 @@
             this.tpTextConversions.Controls.Add(this.btnHashCheckEncodeText);
             this.tpTextConversions.Controls.Add(this.txtHashCheckText);
             this.tpTextConversions.Controls.Add(this.lblHashCheckText);
-            resources.ApplyResources(this.tpTextConversions, "tpTextConversions");
             this.tpTextConversions.Name = "tpTextConversions";
             // 
             // btnHashCheckCopyAll

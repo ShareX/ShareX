@@ -84,47 +84,47 @@
             // 
             // rtbShareXInfo
             // 
+            resources.ApplyResources(this.rtbShareXInfo, "rtbShareXInfo");
             this.rtbShareXInfo.BackColor = System.Drawing.SystemColors.Window;
             this.rtbShareXInfo.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.rtbShareXInfo.ForeColor = System.Drawing.SystemColors.ControlText;
-            resources.ApplyResources(this.rtbShareXInfo, "rtbShareXInfo");
             this.rtbShareXInfo.Name = "rtbShareXInfo";
             this.rtbShareXInfo.ReadOnly = true;
             this.rtbShareXInfo.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.rtb_LinkClicked);
             // 
             // pbMikeURL
             // 
+            resources.ApplyResources(this.pbMikeURL, "pbMikeURL");
             this.pbMikeURL.BackColor = System.Drawing.Color.Transparent;
             this.pbMikeURL.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbMikeURL.Image = global::ShareX.Properties.Resources.GitHub;
-            resources.ApplyResources(this.pbMikeURL, "pbMikeURL");
             this.pbMikeURL.Name = "pbMikeURL";
             this.pbMikeURL.TabStop = false;
             this.pbMikeURL.Click += new System.EventHandler(this.pbMikeURL_Click);
             // 
             // pbAU
             // 
+            resources.ApplyResources(this.pbAU, "pbAU");
             this.pbAU.BackColor = System.Drawing.Color.Transparent;
             this.pbAU.Image = global::ShareX.Properties.Resources.au;
-            resources.ApplyResources(this.pbAU, "pbAU");
             this.pbAU.Name = "pbAU";
             this.pbAU.TabStop = false;
             // 
             // pbBerkURL
             // 
+            resources.ApplyResources(this.pbBerkURL, "pbBerkURL");
             this.pbBerkURL.BackColor = System.Drawing.Color.Transparent;
             this.pbBerkURL.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbBerkURL.Image = global::ShareX.Properties.Resources.GitHub;
-            resources.ApplyResources(this.pbBerkURL, "pbBerkURL");
             this.pbBerkURL.Name = "pbBerkURL";
             this.pbBerkURL.TabStop = false;
             this.pbBerkURL.Click += new System.EventHandler(this.pbBerkURL_Click);
             // 
             // pbTR
             // 
+            resources.ApplyResources(this.pbTR, "pbTR");
             this.pbTR.BackColor = System.Drawing.Color.Transparent;
             this.pbTR.Image = global::ShareX.Properties.Resources.tr;
-            resources.ApplyResources(this.pbTR, "pbTR");
             this.pbTR.Name = "pbTR";
             this.pbTR.TabStop = false;
             // 
