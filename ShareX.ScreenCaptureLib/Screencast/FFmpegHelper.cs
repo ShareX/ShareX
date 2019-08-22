@@ -101,39 +101,13 @@ namespace ShareX.ScreenCaptureLib
             return Run(Options.FFmpeg.FFmpegPath, Options.GetFFmpegCommands());
         }
 
-        public bool EncodeGIF(string input, string output, string tempFolder)
+        public bool EncodeGIF(string input, string output)
         {
-            bool result;
-
-            string palettePath = Path.Combine(tempFolder, "FFmpeg-palette.png");
-
-            try
-            {
-                // https://ffmpeg.org/ffmpeg-filters.html#palettegen-1
-                result = Run(Options.FFmpeg.FFmpegPath, string.Format("-y -i \"{0}\" -vf \"palettegen=stats_mode={2}\" \"{1}\"", input, palettePath, Options.FFmpeg.GIFStatsMode));
-
-                if (result)
-                {
-                    if (File.Exists(palettePath))
-                    {
-                        // https://ffmpeg.org/ffmpeg-filters.html#paletteuse
-                        result = Run(Options.FFmpeg.FFmpegPath, string.Format("-y -i \"{0}\" -i \"{1}\" -lavfi \"paletteuse=dither={3}\" \"{2}\"", input, palettePath, output, Options.FFmpeg.GIFDither));
-                    }
-                    else
-                    {
-                        result = false;
-                    }
-                }
-            }
-            finally
-            {
-                if (File.Exists(palettePath))
-                {
-                    File.Delete(palettePath);
-                }
-            }
-
-            return result;
+            // https://ffmpeg.org/ffmpeg-filters.html#palettegen-1
+            // https://ffmpeg.org/ffmpeg-filters.html#paletteuse
+            return Run(Options.FFmpeg.FFmpegPath,
+                $"-y -i \"{input}\" -lavfi \"palettegen=stats_mode={Options.FFmpeg.GIFStatsMode}[palette]," +
+                $"[0:v][palette]paletteuse=dither={Options.FFmpeg.GIFDither}\" \"{output}\"");
         }
 
         private bool Run(string path, string args = null)

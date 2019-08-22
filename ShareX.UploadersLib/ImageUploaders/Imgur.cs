@@ -296,7 +296,18 @@ namespace ShareX.UploadersLib.ImageUploaders
 
             ReturnResponseOnError = true;
 
-            UploadResult result = SendRequestFile("https://api.imgur.com/3/image", stream, fileName, "image", args, headers);
+            string fileFormName;
+
+            if (Helpers.IsVideoFile(fileName))
+            {
+                fileFormName = "video";
+            }
+            else
+            {
+                fileFormName = "image";
+            }
+
+            UploadResult result = SendRequestFile("https://api.imgur.com/3/upload", stream, fileName, fileFormName, args, headers);
 
             if (!string.IsNullOrEmpty(result.Response))
             {

@@ -213,6 +213,12 @@ namespace ShareX.UploadersLib.FileUploaders
                     DebugHelper.WriteLine("B2 uploader: Too Many Requests, trying with same URL.");
                     continue;
                 }
+                else if (uploadResult.RC == 503)
+                {
+                    DebugHelper.WriteLine("B2 uploader: Service Unavailable, trying with new URL.");
+                    url = null;
+                    continue;
+                }
                 else if (uploadResult.RC != 200)
                 {
                     // something else happened that wasn't a success, so bail out

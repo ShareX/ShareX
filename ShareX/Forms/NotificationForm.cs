@@ -177,7 +177,7 @@ namespace ShareX
                 TextRenderer.DrawText(g, ToastConfig.Text, textFont, textRect.LocationOffset(1), Color.White, TextFormatFlags.Left | TextFormatFlags.EndEllipsis);
             }
 
-            Color borderColor = ShareXResources.UseDarkTheme ? ShareXResources.DarkBorderColor : SystemColors.WindowText;
+            Color borderColor = ShareXResources.UseDarkTheme ? ShareXResources.DarkBorderColor : SystemColors.ControlText;
             using (Pen borderPen = new Pen(borderColor))
             {
                 g.DrawRectangleProper(borderPen, rect);
