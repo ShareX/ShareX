@@ -27,7 +27,6 @@ using ShareX.HelpersLib;
 using ShareX.Properties;
 using System;
 using System.Windows.Forms;
-using System.Runtime.InteropServices;
 
 namespace ShareX
 {
@@ -35,21 +34,15 @@ namespace ShareX
     {
         private EasterEggAboutAnimation easterEgg;
 
-        [DllImportAttribute("user32.dll")]
-        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int LPAR);
-
-        [DllImportAttribute("user32.dll")]
-        public static extern bool ReleaseCapture();
-
-        private const int WM_NCLBUTTONDOWN = 0xA1;
-        private const int HT_CAPTION = 0x2;
-
-        private void move_window(object sender, MouseEventArgs e) //moving window function
+        private void moveWindow(object sender, MouseEventArgs mouseMove) //moving window function
         {
-            if (e.Button == MouseButtons.Left)
+            if (mouseMove.Button == MouseButtons.Left && easterEgg.IsPaused)
             {
-                ReleaseCapture();
-                SendMessage(this.Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
+                NativeMethods.ReleaseCapture();             //Capture mouse
+                NativeMethods.SendMessage(Handle,           //Handle
+                                          0xA1,             //WM_NCLBUTTONDOWN
+                                          new IntPtr(0x2),  //HT_CAPTION
+                                          IntPtr.Zero);     //Zero
             }
         }
 
@@ -64,7 +57,7 @@ namespace ShareX
             rtbCredits.AddContextMenu();
 
             ShareXResources.ApplyTheme(this);
-            this.MouseDown += new MouseEventHandler(move_window); //handler for moving window without title
+            this.MouseDown += new MouseEventHandler(moveWindow); //handler for moving window without title
 
 #if STEAM || WindowsStore
             uclUpdate.Visible = false;

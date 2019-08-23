@@ -406,10 +406,10 @@
     <value>NoControl</value>
   </data>
   <data name="pbLogo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>388, 12</value>
+    <value>400, 12</value>
   </data>
   <data name="pbLogo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>202, 202</value>
+    <value>190, 191</value>
   </data>
   <data name="pbLogo.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>Zoom</value>
