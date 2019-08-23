@@ -1609,6 +1609,9 @@
   <ItemGroup>
     <None Include="Resources\SocialHideButton.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\21KIdJJH5DL.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>

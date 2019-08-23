@@ -211,10 +211,13 @@
     <value>Top, Bottom, Left, Right</value>
   </data>
   <data name="rtbCredits.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 219</value>
+    <value>16, 220</value>
+  </data>
+  <data name="rtbCredits.ScrollBars" type="System.Windows.Forms.RichTextBoxScrollBars, System.Windows.Forms">
+    <value>ForcedVertical</value>
   </data>
   <data name="rtbCredits.Size" type="System.Drawing.Size, System.Drawing">
-    <value>560, 333</value>
+    <value>572, 334</value>
   </data>
   <data name="rtbCredits.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -241,7 +244,7 @@
     <value>16, 80</value>
   </data>
   <data name="rtbShareXInfo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>368, 62</value>
+    <value>366, 79</value>
   </data>
   <data name="rtbShareXInfo.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -265,7 +268,7 @@
     <value>NoControl</value>
   </data>
   <data name="pbMikeURL.Location" type="System.Drawing.Point, System.Drawing">
-    <value>41, 185</value>
+    <value>40, 187</value>
   </data>
   <data name="pbMikeURL.Size" type="System.Drawing.Size, System.Drawing">
     <value>16, 16</value>
@@ -292,10 +295,10 @@
     <value>NoControl</value>
   </data>
   <data name="pbAU.Location" type="System.Drawing.Point, System.Drawing">
-    <value>17, 185</value>
+    <value>16, 187</value>
   </data>
   <data name="pbAU.Size" type="System.Drawing.Size, System.Drawing">
-    <value>16, 16</value>
+    <value>18, 14</value>
   </data>
   <data name="pbAU.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>CenterImage</value>
@@ -319,7 +322,7 @@
     <value>NoControl</value>
   </data>
   <data name="pbBerkURL.Location" type="System.Drawing.Point, System.Drawing">
-    <value>41, 161</value>
+    <value>40, 165</value>
   </data>
   <data name="pbBerkURL.Size" type="System.Drawing.Size, System.Drawing">
     <value>16, 16</value>
@@ -346,10 +349,10 @@
     <value>NoControl</value>
   </data>
   <data name="pbTR.Location" type="System.Drawing.Point, System.Drawing">
-    <value>17, 161</value>
+    <value>16, 167</value>
   </data>
   <data name="pbTR.Size" type="System.Drawing.Size, System.Drawing">
-    <value>16, 16</value>
+    <value>18, 14</value>
   </data>
   <data name="pbTR.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>CenterImage</value>
@@ -403,10 +406,10 @@
     <value>NoControl</value>
   </data>
   <data name="pbLogo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>376, 8</value>
+    <value>388, 12</value>
   </data>
   <data name="pbLogo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 200</value>
+    <value>202, 202</value>
   </data>
   <data name="pbLogo.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>Zoom</value>
@@ -433,10 +436,10 @@
     <value>NoControl</value>
   </data>
   <data name="btnClose.Location" type="System.Drawing.Point, System.Drawing">
-    <value>472, 560</value>
+    <value>388, 565</value>
   </data>
   <data name="btnClose.Size" type="System.Drawing.Size, System.Drawing">
-    <value>104, 23</value>
+    <value>202, 25</value>
   </data>
   <data name="btnClose.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -463,10 +466,10 @@
     <value>NoControl</value>
   </data>
   <data name="btnShareXLicense.Location" type="System.Drawing.Point, System.Drawing">
-    <value>152, 560</value>
+    <value>14, 565</value>
   </data>
   <data name="btnShareXLicense.Size" type="System.Drawing.Size, System.Drawing">
-    <value>168, 23</value>
+    <value>191, 25</value>
   </data>
   <data name="btnShareXLicense.TabIndex" type="System.Int32, mscorlib">
     <value>20</value>
@@ -493,10 +496,10 @@
     <value>NoControl</value>
   </data>
   <data name="btnLicenses.Location" type="System.Drawing.Point, System.Drawing">
-    <value>328, 560</value>
+    <value>211, 565</value>
   </data>
   <data name="btnLicenses.Size" type="System.Drawing.Size, System.Drawing">
-    <value>136, 23</value>
+    <value>171, 25</value>
   </data>
   <data name="btnLicenses.TabIndex" type="System.Int32, mscorlib">
     <value>21</value>
@@ -520,7 +523,7 @@
     <value>14, 41</value>
   </data>
   <data name="uclUpdate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>224, 24</value>
+    <value>368, 24</value>
   </data>
   <data name="uclUpdate.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -529,7 +532,7 @@
     <value>uclUpdate</value>
   </data>
   <data name="&gt;&gt;uclUpdate.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.UpdateCheckerLabel, ShareX.HelpersLib, Version=12.4.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.UpdateCheckerLabel, ShareX.HelpersLib, Version=13.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;uclUpdate.Parent" xml:space="preserve">
     <value>$this</value>
@@ -541,7 +544,7 @@
     <value>Top, Right</value>
   </data>
   <data name="cLogo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>384, 0</value>
+    <value>400, 0</value>
   </data>
   <data name="cLogo.Size" type="System.Drawing.Size, System.Drawing">
     <value>200, 200</value>
@@ -553,7 +556,7 @@
     <value>cLogo</value>
   </data>
   <data name="&gt;&gt;cLogo.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.Canvas, ShareX.HelpersLib, Version=12.4.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.Canvas, ShareX.HelpersLib, Version=13.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;cLogo.Parent" xml:space="preserve">
     <value>$this</value>
@@ -601,7 +604,13 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>584, 593</value>
+    <value>600, 600</value>
+  </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>Off</value>
+  </data>
+  <data name="$this.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>800, 800</value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>600, 600</value>
