@@ -36,9 +36,8 @@ namespace ShareX
 
         private void moveWindow(object sender, MouseEventArgs mouseMove) //moving window function
         {
-            if (mouseMove.Button == MouseButtons.Left)
+            if (mouseMove.Button == MouseButtons.Left && !easterEgg.IsBounce)
             {
-                easterEgg.IsPaused = true;
                 NativeMethods.ReleaseCapture();             //Capture mouse
                 NativeMethods.SendMessage(Handle,           //Handle
                                           0xA1,             //WM_NCLBUTTONDOWN

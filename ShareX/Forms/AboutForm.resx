@@ -244,7 +244,7 @@
     <value>16, 80</value>
   </data>
   <data name="rtbShareXInfo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>366, 79</value>
+    <value>282, 79</value>
   </data>
   <data name="rtbShareXInfo.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -523,7 +523,7 @@
     <value>14, 41</value>
   </data>
   <data name="uclUpdate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>368, 24</value>
+    <value>284, 24</value>
   </data>
   <data name="uclUpdate.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>

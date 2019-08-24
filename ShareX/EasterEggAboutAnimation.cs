@@ -34,13 +34,23 @@ namespace ShareX
     public class EasterEggAboutAnimation : IDisposable
     {
         public Canvas Canvas { get; private set; }
+
+        public bool IsBounce { get; private set; }
+
         public bool IsPaused { get; set; }
+
         public Size Size { get; set; } = new Size(200, 200);
+
         public int Step { get; set; } = 10;
+
         public int MinStep { get; set; } = 3;
+
         public int MaxStep { get; set; } = 35;
+
         public int Speed { get; set; } = 1;
+
         public Color Color { get; set; } = new HSB(0.0, 1.0, 0.9);
+
         public int ClickCount { get; private set; }
 
         private EasterEggBounce easterEggBounce;
@@ -73,11 +83,13 @@ namespace ShareX
                 {
                     easterEggBounce.ApplyGravity = e.Button == MouseButtons.Left;
                     easterEggBounce.Start();
+                    IsBounce = easterEggBounce.IsWorking;
                 }
             }
             else
             {
                 easterEggBounce.Stop();
+                IsBounce = easterEggBounce.IsWorking;
             }
         }
 
