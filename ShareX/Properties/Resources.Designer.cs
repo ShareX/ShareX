@@ -1366,6 +1366,15 @@ namespace ShareX.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Hide thumbnail title.
+        /// </summary>
+        public static string HideThumbnailTitle {
+            get {
+                return ResourceManager.GetString("HideThumbnailTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to hotkey.
         /// </summary>
         public static string HotkeyManager_ShowFailedHotkeys_hotkey {
@@ -2248,12 +2257,39 @@ namespace ShareX.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Show thumbnail title.
+        /// </summary>
+        public static string ShowThumbnailTitle {
+            get {
+                return ResourceManager.GetString("ShowThumbnailTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         public static System.Drawing.Bitmap SocialHideButton {
             get {
                 object obj = ResourceManager.GetObject("SocialHideButton", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Switch to list view.
+        /// </summary>
+        public static string SwitchToListView {
+            get {
+                return ResourceManager.GetString("SwitchToListView", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Switch to thumbnail view.
+        /// </summary>
+        public static string SwitchToThumbnailView {
+            get {
+                return ResourceManager.GetString("SwitchToThumbnailView", resourceCulture);
             }
         }
         

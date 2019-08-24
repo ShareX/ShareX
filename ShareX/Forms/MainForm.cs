@@ -744,7 +744,7 @@ namespace ShareX
         {
             if (Program.Settings.TaskViewMode == TaskViewMode.ListView)
             {
-                tsmiSwitchTaskViewMode.Text = "Switch to thumbnail view";
+                tsmiSwitchTaskViewMode.Text = Resources.SwitchToThumbnailView;
                 tsmiSwitchTaskViewMode.Image = Resources.application_icon_large;
                 scMain.Visible = true;
                 pThumbnailView.Visible = false;
@@ -752,7 +752,7 @@ namespace ShareX
             }
             else
             {
-                tsmiSwitchTaskViewMode.Text = "Switch to list view";
+                tsmiSwitchTaskViewMode.Text = Resources.SwitchToListView;
                 tsmiSwitchTaskViewMode.Image = Resources.application_list;
                 pThumbnailView.Visible = true;
                 scMain.Visible = false;
@@ -1097,14 +1097,13 @@ namespace ShareX
 
             tsmiHideThumbnailTitle.Visible = Program.Settings.TaskViewMode == TaskViewMode.ThumbnailView;
 
-            // TODO: Translate
             if (Program.Settings.ShowThumbnailTitle)
             {
-                tsmiHideThumbnailTitle.Text = "Hide thumbnail title";
+                tsmiHideThumbnailTitle.Text = Resources.HideThumbnailTitle;
             }
             else
             {
-                tsmiHideThumbnailTitle.Text = "Show thumbnail title";
+                tsmiHideThumbnailTitle.Text = Resources.ShowThumbnailTitle;
             }
 
             Refresh();

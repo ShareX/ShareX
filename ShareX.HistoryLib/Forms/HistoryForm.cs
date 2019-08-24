@@ -95,9 +95,9 @@ namespace ShareX.HistoryLib
             rtbStats.ResetText();
 
             rtbStats.SetFontBold();
-            rtbStats.AppendLine("History item counts:");
+            rtbStats.AppendLine(Resources.HistoryItemCounts);
             rtbStats.SetFontRegular();
-            rtbStats.AppendLine("Total: " + historyItems.Length);
+            rtbStats.AppendLine(Resources.HistoryStats_Total + " " + historyItems.Length);
 
             IEnumerable<string> types = historyItems.
                 GroupBy(x => x.Type).
@@ -108,7 +108,7 @@ namespace ShareX.HistoryLib
 
             rtbStats.AppendLine();
             rtbStats.SetFontBold();
-            rtbStats.AppendLine("Yearly usages:");
+            rtbStats.AppendLine(Resources.HistoryStats_YearlyUsages);
             rtbStats.SetFontRegular();
 
             IEnumerable<string> yearlyUsages = historyItems.
@@ -120,7 +120,7 @@ namespace ShareX.HistoryLib
 
             rtbStats.AppendLine();
             rtbStats.SetFontBold();
-            rtbStats.AppendLine("File extensions:");
+            rtbStats.AppendLine(Resources.HistoryStats_FileExtensions);
             rtbStats.SetFontRegular();
 
             IEnumerable<string> fileExtensions = historyItems.
@@ -134,7 +134,7 @@ namespace ShareX.HistoryLib
 
             rtbStats.AppendLine();
             rtbStats.SetFontBold();
-            rtbStats.AppendLine("Hosts:");
+            rtbStats.AppendLine(Resources.HistoryStats_Hosts);
             rtbStats.SetFontRegular();
 
             IEnumerable<string> hosts = historyItems.
@@ -404,16 +404,14 @@ namespace ShareX.HistoryLib
             {
                 lvHistory.Visible = true;
                 pStats.Visible = false;
-                // TODO: Translate
-                btnShowStats.Text = "Show stats";
+                btnShowStats.Text = Resources.BtnShowStats_ShowStats;
                 showingStats = false;
             }
             else
             {
                 pStats.Visible = true;
                 lvHistory.Visible = false;
-                // TODO: Translate
-                btnShowStats.Text = "Hide stats";
+                btnShowStats.Text = Resources.BtnShowStats_HideStats;
                 Cursor = Cursors.WaitCursor;
                 OutputStats(allHistoryItems);
                 Cursor = Cursors.Default;
