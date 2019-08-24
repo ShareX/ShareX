@@ -1126,4 +1126,7 @@
   <data name="tpGoogleDrive.Text" xml:space="preserve">
     <value>Google Диск</value>
   </data>
+  <data name="tpImageShack.Text" xml:space="preserve">
+    <value>Изображение</value>
+  </data>
 </root>

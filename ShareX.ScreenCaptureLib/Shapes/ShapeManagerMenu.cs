@@ -188,7 +188,7 @@ namespace ShareX.ScreenCaptureLib
             }
             else if (Helpers.IsTabletMode())
             {
-                ToolStripButton tsbClose = new ToolStripButton("Close (Esc)");
+                ToolStripButton tsbClose = new ToolStripButton(Resources.CloseEsc);
                 tsbClose.DisplayStyle = ToolStripItemDisplayStyle.Image;
                 tsbClose.Image = Resources.cross;
                 tsbClose.Click += (sender, e) => Form.CloseWindow();
@@ -440,8 +440,7 @@ namespace ShareX.ScreenCaptureLib
             tsddbShapeOptions.Image = Resources.layer__pencil;
             tsMain.Items.Add(tsddbShapeOptions);
 
-            // TODO: Translate
-            tslnudMagnifyStrength = new ToolStripLabeledNumericUpDown("Magnify strength:");
+            tslnudMagnifyStrength = new ToolStripLabeledNumericUpDown(Resources.MagnifyStrength);
             tslnudMagnifyStrength.Content.Text2 = "%";
             tslnudMagnifyStrength.Content.Minimum = 100;
             tslnudMagnifyStrength.Content.Maximum = 1000;
