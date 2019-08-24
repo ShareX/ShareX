@@ -132,4 +132,7 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Настройки истории изображений</value>
   </data>
+  <data name="cbFilterMissingFiles.Text" xml:space="preserve">
+    <value>Фильтровать отсутствующие файлы</value>
+  </data>
 </root>

@@ -558,4 +558,7 @@
   <data name="lblAutoIncrementNumber.Text" xml:space="preserve">
     <value>Число счетчика:</value>
   </data>
+  <data name="lblActionsNote.Text" xml:space="preserve">
+    <value>Заметка: Можно включить/выключить действия в "Задачи после захвата -&gt; Выполнить действия".</value>
+  </data>
 </root>

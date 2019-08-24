@@ -159,4 +159,7 @@
   <data name="lblURLFilter.Text" xml:space="preserve">
     <value>URL:</value>
   </data>
+  <data name="btnShowStats.Text" xml:space="preserve">
+    <value>Показать статистику</value>
+  </data>
 </root>

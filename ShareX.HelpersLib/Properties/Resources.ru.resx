@@ -1159,4 +1159,13 @@
   <data name="Extensions_AddContextMenu_Delete" xml:space="preserve">
     <value>Удалить</value>
   </data>
+  <data name="ShapeType_ToolSelect" xml:space="preserve">
+    <value>Выбирать и двигать (M)</value>
+  </data>
+  <data name="ShapeType_DrawingMagnify" xml:space="preserve">
+    <value>Увеличение</value>
+  </data>
+  <data name="RandomNonAmbiguousAlphanumericCharRepeatUsingN" xml:space="preserve">
+    <value>Случайный недвусмысленный алфавитно-цифровой символ. Повторение задается через {n}</value>
+  </data>
 </root>

@@ -411,4 +411,16 @@
   <data name="ThisWindowWillCloseBeforeOpeningKeybindsPageWantContinue" xml:space="preserve">
     <value>Это окно закроется перед тем, как открыть страницу с горячими клавишами. Хотите продолжить?</value>
   </data>
+  <data name="ShapeManager_CreateContextMenu_SwitchToDrawingToolAfterSelection" xml:space="preserve">
+    <value>Переключаться на инструмент рисования после выбора фигуры</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_SwitchToSelectionToolAfterDrawing" xml:space="preserve">
+    <value>Переключаться на инструмент выделения после рисования фигуры</value>
+  </data>
+  <data name="MagnifyStrength" xml:space="preserve">
+    <value>Степень увеличения:</value>
+  </data>
+  <data name="CloseEsc" xml:space="preserve">
+    <value>Закрыть (Esc)</value>
+  </data>
 </root>
