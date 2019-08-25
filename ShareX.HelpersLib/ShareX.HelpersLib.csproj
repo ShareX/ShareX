@@ -272,6 +272,7 @@
     </Compile>
     <Compile Include="NameParser\CodeMenuEntryFilename.cs" />
     <Compile Include="TextBoxTraceListener.cs" />
+    <Compile Include="SafeStringEnumConverter.cs" />
     <Compile Include="UITypeEditors\EnumDescriptionConverter.cs" />
     <Compile Include="UITypeEditors\DirectoryNameEditor.cs" />
     <Compile Include="UITypeEditors\GradientEditor.cs" />

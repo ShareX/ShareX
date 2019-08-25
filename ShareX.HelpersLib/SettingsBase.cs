@@ -215,7 +215,7 @@ namespace ShareX.HelpersLib
                                 using (JsonTextReader jsonReader = new JsonTextReader(streamReader))
                                 {
                                     JsonSerializer serializer = new JsonSerializer();
-                                    serializer.Converters.Add(new StringEnumConverter());
+                                    serializer.Converters.Add(new SafeStringEnumConverter());
                                     serializer.DateTimeZoneHandling = DateTimeZoneHandling.Local;
                                     serializer.ObjectCreationHandling = ObjectCreationHandling.Replace;
                                     settings = serializer.Deserialize<T>(jsonReader);

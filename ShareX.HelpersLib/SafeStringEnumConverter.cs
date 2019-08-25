@@ -1,4 +1,4 @@
-#region License Information (GPL v3)
+﻿#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -23,12 +23,24 @@
 
 #endregion License Information (GPL v3)
 
-using System.Reflection;
-using System.Runtime.InteropServices;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+using System;
 
-[assembly: AssemblyCompany("ShareX Team")]
-[assembly: AssemblyProduct("ShareX")]
-[assembly: AssemblyCopyright("Copyright (c) 2007-2019 ShareX Team")]
-[assembly: ComVisible(false)]
-[assembly: AssemblyVersion("13.0.1")]
-[assembly: AssemblyFileVersion("13.0.1")]
+namespace ShareX.HelpersLib
+{
+    public class SafeStringEnumConverter : StringEnumConverter
+    {
+        public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
+        {
+            try
+            {
+                return base.ReadJson(reader, objectType, existingValue, serializer);
+            }
+            catch (JsonSerializationException)
+            {
+                return existingValue;
+            }
+        }
+    }
+}
