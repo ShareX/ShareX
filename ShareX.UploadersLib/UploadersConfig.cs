@@ -56,15 +56,6 @@ namespace ShareX.UploadersLib
 
         #endregion ImageShack
 
-        #region TinyPic
-
-        public AccountType TinyPicAccountType = AccountType.Anonymous;
-        public string TinyPicRegistrationCode = "";
-        public string TinyPicUsername = "";
-        public string TinyPicPassword = "";
-
-        #endregion TinyPic
-
         #region Flickr
 
         public OAuthInfo FlickrOAuthInfo = null;

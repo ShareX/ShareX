@@ -35,8 +35,6 @@ namespace ShareX.UploadersLib
         Imgur,
         [Description("ImageShack")]
         ImageShack,
-        [Description("TinyPic")]
-        TinyPic,
         [Description("Flickr")]
         Flickr,
         [Description("Photobucket")]

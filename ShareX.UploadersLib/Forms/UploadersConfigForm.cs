@@ -187,14 +187,6 @@ namespace ShareX.UploadersLib
 
             #endregion ImageShack
 
-            #region TinyPic
-
-            atcTinyPicAccountType.SelectedAccountType = Config.TinyPicAccountType;
-            txtTinyPicUsername.Text = Config.TinyPicUsername;
-            txtTinyPicPassword.Text = Config.TinyPicPassword;
-
-            #endregion TinyPic
-
             #region Flickr
 
             if (OAuthInfo.CheckOAuth(Config.FlickrOAuthInfo))
@@ -974,60 +966,6 @@ namespace ShareX.UploadersLib
         }
 
         #endregion ImageShack
-
-        #region TinyPic
-
-        private void atcTinyPicAccountType_AccountTypeChanged(AccountType accountType)
-        {
-            Config.TinyPicAccountType = accountType;
-        }
-
-        private void txtTinyPicUsername_TextChanged(object sender, EventArgs e)
-        {
-            Config.TinyPicUsername = txtTinyPicUsername.Text;
-        }
-
-        private void txtTinyPicPassword_TextChanged(object sender, EventArgs e)
-        {
-            Config.TinyPicPassword = txtTinyPicPassword.Text;
-        }
-
-        private void btnTinyPicLogin_Click(object sender, EventArgs e)
-        {
-            string username = txtTinyPicUsername.Text;
-            string password = txtTinyPicPassword.Text;
-
-            if (!string.IsNullOrEmpty(username) && !string.IsNullOrEmpty(password))
-            {
-                try
-                {
-                    TinyPicUploader tpu = new TinyPicUploader(APIKeys.TinyPicID, APIKeys.TinyPicKey);
-                    string registrationCode = tpu.UserAuth(username, password);
-
-                    if (!string.IsNullOrEmpty(registrationCode))
-                    {
-                        Config.TinyPicRegistrationCode = registrationCode;
-                        MessageBox.Show(Resources.UploadersConfigForm_Login_successful, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    else
-                    {
-                        MessageBox.Show(Resources.UploadersConfigForm_Login_failed, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
-                catch (Exception ex)
-                {
-                    DebugHelper.WriteException(ex);
-                    ex.ShowError();
-                }
-            }
-        }
-
-        private void btnTinyPicOpenMyImages_Click(object sender, EventArgs e)
-        {
-            URLHelpers.OpenURL("http://tinypic.com/yourstuff.php");
-        }
-
-        #endregion TinyPic
 
         #region Flickr
 
