@@ -215,9 +215,10 @@ namespace ShareX.HelpersLib
                                 using (JsonTextReader jsonReader = new JsonTextReader(streamReader))
                                 {
                                     JsonSerializer serializer = new JsonSerializer();
-                                    serializer.Converters.Add(new SafeStringEnumConverter());
+                                    serializer.Converters.Add(new StringEnumConverter());
                                     serializer.DateTimeZoneHandling = DateTimeZoneHandling.Local;
                                     serializer.ObjectCreationHandling = ObjectCreationHandling.Replace;
+                                    serializer.Error += Serializer_Error;
                                     settings = serializer.Deserialize<T>(jsonReader);
                                 }
 
@@ -249,6 +250,15 @@ namespace ShareX.HelpersLib
             DebugHelper.WriteLine($"{typeName} not found. Loading new instance.");
 
             return new T();
+        }
+
+        private static void Serializer_Error(object sender, Newtonsoft.Json.Serialization.ErrorEventArgs e)
+        {
+            // Handle missing enum values
+            if (e.ErrorContext.Error.Message.StartsWith("Error converting value"))
+            {
+                e.ErrorContext.Handled = true;
+            }
         }
     }
 }
