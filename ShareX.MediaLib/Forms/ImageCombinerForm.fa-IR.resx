@@ -154,4 +154,7 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - ترکیب کننده عکس</value>
   </data>
+  <data name="chFilepath.Text" xml:space="preserve">
+    <value>مسیر فایل عکس</value>
+  </data>
 </root>

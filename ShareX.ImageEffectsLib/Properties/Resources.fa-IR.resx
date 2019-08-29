@@ -120,4 +120,7 @@
   <data name="ImageEffectsForm_EditorMode_Cancel" xml:space="preserve">
     <value>انصراف</value>
   </data>
+  <data name="ImageEffectsForm_AddAllEffectsToTreeView_Filters" xml:space="preserve">
+    <value>فیلترها</value>
+  </data>
 </root>

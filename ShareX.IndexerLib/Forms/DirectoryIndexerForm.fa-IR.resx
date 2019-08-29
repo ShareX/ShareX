@@ -129,4 +129,7 @@
   <data name="tpPreview.Text" xml:space="preserve">
     <value>پیش نمایش</value>
   </data>
+  <data name="btnBrowseFolder.Text" xml:space="preserve">
+    <value>انتخاب پوشه ...</value>
+  </data>
 </root>

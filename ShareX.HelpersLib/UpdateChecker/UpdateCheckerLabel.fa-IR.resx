@@ -123,4 +123,7 @@
   <data name="llblUpdateAvailable.Text" xml:space="preserve">
     <value>نسخه جدیدتری از شیرایکس در دسترس است.</value>
   </data>
+  <data name="lblCheckingUpdates.Text" xml:space="preserve">
+    <value>در حال چک کردن نسخه به روز ...</value>
+  </data>
 </root>

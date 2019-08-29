@@ -276,10 +276,10 @@
     <value>پیش نمایش:</value>
   </data>
   <data name="TaskManager_task_UploadCompleted_ShareX___Task_completed" xml:space="preserve">
-    <value>انجام شد.</value>
+    <value>وظیفه انجام شد.</value>
   </data>
   <data name="UploadManager_ShowShortenURLDialog_Shorten" xml:space="preserve">
-    <value>کوتاه کردن</value>
+    <value>کوتاه کن</value>
   </data>
   <data name="UploadManager_ShowShortenURLDialog_ShortenURL" xml:space="preserve">
     <value>کوتاه کردن آدرس</value>
@@ -386,5 +386,98 @@
   </data>
   <data name="ScreenRecordForm_StartRecording_Encoding___" xml:space="preserve">
     <value>در حال انکدکردن ...</value>
+  </data>
+  <data name="UploadTask_DoUploadJob_You_are_attempting_to_upload_a_large_file" xml:space="preserve">
+    <value>شما در حال آپلود یک فایل بزرگ هستید. 
+آیا مایل به ادامه هستید؟</value>
+  </data>
+  <data name="ScreenRecordForm_StartRecording_FFmpeg_error" xml:space="preserve">
+    <value>خطای FFmpeg</value>
+  </data>
+  <data name="QRCodeForm_InputTextToEncode" xml:space="preserve">
+    <value>متن ورودی برای انکد  کردن</value>
+  </data>
+  <data name="OCRForm_AutoCompleteFail" xml:space="preserve">
+    <value>خطایی در هنگام پردازش OCR صورت گرفته یا هیچ متنی تشخیص داده نشده است.</value>
+  </data>
+  <data name="OCRForm_AutoComplete" xml:space="preserve">
+    <value>خروجی OCR به کلیپ بورد شما کپی شد.</value>
+  </data>
+  <data name="MainForm_UpdateMainWindowLayout_Hide_columns" xml:space="preserve">
+    <value>مخفی کردن ستون ها</value>
+  </data>
+  <data name="ActionsForm_btnOK_Click_Name_can_t_be_empty_" xml:space="preserve">
+    <value>نام نمی تواند خالی باشد</value>
+  </data>
+  <data name="ApplicationSettingsForm_cbSteamShowInApp_CheckedChanged_For_settings_to_take_effect_ShareX_needs_to_be_reopened_from_Steam_" xml:space="preserve">
+    <value>برای اعمال تنظیمات نرم افزار باید بسته و سپس باز شود. </value>
+  </data>
+  <data name="ApplicationSettingsForm_btnBrowsePersonalFolderPath_Click_Choose_ShareX_personal_folder_path" xml:space="preserve">
+    <value>پوشه شخصی شیرایکس را انتخاب کن</value>
+  </data>
+  <data name="MainForm_tsmiDeleteSelectedFile_Click_File_delete_confirmation" xml:space="preserve">
+    <value>تاییدیه حذف فایل</value>
+  </data>
+  <data name="TaskSettingsForm_UpdateUploaderMenuNames_After_upload___0_" xml:space="preserve">
+    <value>بعد از آپلود: {0}</value>
+  </data>
+  <data name="HotkeySettingsForm_Reset_all_hotkeys_to_defaults_Confirmation" xml:space="preserve">
+    <value>آیا می خواهید تمام تنظیمات کلیدهای میانبر به حالت اولیه خودشان بازگردند؟</value>
+  </data>
+  <data name="AboutForm_AboutForm_Changelog" xml:space="preserve">
+    <value>تغییرات</value>
+  </data>
+  <data name="BeforeUploadForm_BeforeUploadForm_Please_choose_a_destination_" xml:space="preserve">
+    <value>لطفا یک مقصد انتخاب کنید.</value>
+  </data>
+  <data name="TaskSettingsForm_UpdateUploaderMenuNames_Image_uploader___0_" xml:space="preserve">
+    <value>آپلود کننده عکس: {0}</value>
+  </data>
+  <data name="TaskHelpers_OpenQuickScreenColorPicker_Copied_to_clipboard___0_" xml:space="preserve">
+    <value>به کلیپ بورد کپی شد: {0}</value>
+  </data>
+  <data name="MainForm_UpdateMenu_Hide_menu" xml:space="preserve">
+    <value>مخفی کردن منو</value>
+  </data>
+  <data name="UploadManager_UploadURL_URL_to_download_from_and_upload" xml:space="preserve">
+    <value>آدرس برای دانلود و آپلود</value>
+  </data>
+  <data name="ActionsForm_btnOK_Click_File_path_can_t_be_empty_" xml:space="preserve">
+    <value>مسیر فایل نمی تواند خالی باشد</value>
+  </data>
+  <data name="MainForm_UpdateToggleHotkeyButton_Enable_hotkeys" xml:space="preserve">
+    <value>فعال سازی کلیدهای میانبر</value>
+  </data>
+  <data name="AutoCaptureForm_UpdateStatus_Timeleft___0_s___1____Total___2_" xml:space="preserve">
+    <value>زمان باقیمانده: {0} ثانیه ({1}%) مجموع: {2}</value>
+  </data>
+  <data name="HotkeyManager_ShowFailedHotkeys_Hotkey_registration_failed" xml:space="preserve">
+    <value>تنظیم کلیدهای میانبر با مشکل مواجه شد.</value>
+  </data>
+  <data name="ApplicationSettingsForm_cbStartWithWindows_DisabledByUser_Text" xml:space="preserve">
+    <value>شروع خودکار در Task Manager غیرفعال شده است.</value>
+  </data>
+  <data name="DropForm_DrawDropImage_Drop_here" xml:space="preserve">
+    <value>اینجا
+رها کنید</value>
+  </data>
+  <data name="TaskSettingsForm_UpdateUploaderMenuNames_File_uploader___0_" xml:space="preserve">
+    <value>آپلودکننده فایل: {0}</value>
+  </data>
+  <data name="AboutForm_AboutForm_Project_page" xml:space="preserve">
+    <value>صفحه پروزّه</value>
+  </data>
+  <data name="UploadManager_DownloadAndUploadFile_Download_failed" xml:space="preserve">
+    <value>دانلود با مشکل مواجه شد:
+{0}</value>
+  </data>
+  <data name="UploadTask_Prepare_Preparing" xml:space="preserve">
+    <value>در حال آماده سازی</value>
+  </data>
+  <data name="QuickTaskMenu_ShowMenu_Edit_this_menu___" xml:space="preserve">
+    <value>ویرایش این منو ...</value>
+  </data>
+  <data name="ChromeForm_btnUnregister_Click_Chrome_support_disabled_" xml:space="preserve">
+    <value>پشتیبانی از کروم غیرفعال شد.</value>
   </data>
 </root>

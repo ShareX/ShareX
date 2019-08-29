@@ -545,4 +545,318 @@
   <data name="HotkeyType_ScreenRecorderCustomRegion" xml:space="preserve">
     <value>شروع/توقف ضبط فیلم صفحه با ناحیه از پیش تنظیم شده</value>
   </data>
+  <data name="ImgurThumbnailType_Big_Square" xml:space="preserve">
+    <value>مربع بزرگ</value>
+  </data>
+  <data name="HotkeyType_AutoCapture" xml:space="preserve">
+    <value>ضبط خودکار</value>
+  </data>
+  <data name="ReplCodeMenuEntry_mo_Current_month" xml:space="preserve">
+    <value>ماه جاری</value>
+  </data>
+  <data name="HotkeyType_ImageEffects" xml:space="preserve">
+    <value>افکت های تصویر</value>
+  </data>
+  <data name="ShapeType_DrawingImageScreen" xml:space="preserve">
+    <value>عکس (اسکرین)</value>
+  </data>
+  <data name="ProxyMethod_None" xml:space="preserve">
+    <value>هیچ کدام</value>
+  </data>
+  <data name="ShapeType_DrawingSpeechBalloon" xml:space="preserve">
+    <value>بالن متن (S)</value>
+  </data>
+  <data name="ShapeType_RegionRectangle" xml:space="preserve">
+    <value>ناحیه مستطیلی</value>
+  </data>
+  <data name="AfterCaptureTasks_SendImageToPrinter" xml:space="preserve">
+    <value>چاپ عکس</value>
+  </data>
+  <data name="AfterCaptureTasks_PerformActions" xml:space="preserve">
+    <value>انجام اعمال</value>
+  </data>
+  <data name="ReplCodeMenuCategory_Date_and_Time" xml:space="preserve">
+    <value>تاریخ و زمان</value>
+  </data>
+  <data name="HotkeyType_ImageCombiner" xml:space="preserve">
+    <value>ترکیب کننده عکس</value>
+  </data>
+  <data name="YouTubeVideoPrivacy_Private" xml:space="preserve">
+    <value>شخصی</value>
+  </data>
+  <data name="CustomUploaderDestinationType_FileUploader" xml:space="preserve">
+    <value>آپلود کننده فایل</value>
+  </data>
+  <data name="ReplCodeMenuEntry_h_Current_hour" xml:space="preserve">
+    <value>ساعت جاری</value>
+  </data>
+  <data name="ReplCodeMenuEntry_ms_Current_millisecond" xml:space="preserve">
+    <value>زمان (بر حسب میلی ثانیه)</value>
+  </data>
+  <data name="DownloaderForm_fileDownloader_DownloadCompleted_Install" xml:space="preserve">
+    <value>نصب</value>
+  </data>
+  <data name="ReplCodeMenuEntry_mi_Current_minute" xml:space="preserve">
+    <value>دقیقه جاری</value>
+  </data>
+  <data name="ReplCodeMenuEntry_d_Current_day" xml:space="preserve">
+    <value>روز جاری</value>
+  </data>
+  <data name="PastebinPrivacy_Unlisted" xml:space="preserve">
+    <value>لیست نشده</value>
+  </data>
+  <data name="Extensions_AddContextMenu_Cut" xml:space="preserve">
+    <value>برداشتن</value>
+  </data>
+  <data name="AfterCaptureTasks_CopyImageToClipboard" xml:space="preserve">
+    <value>عکس را به کلیپ بورد کپی کن</value>
+  </data>
+  <data name="HotkeyType_PrintScreen" xml:space="preserve">
+    <value>ضبط صفحه بصورت کامل</value>
+  </data>
+  <data name="ImageEditorStartMode_Normal" xml:space="preserve">
+    <value>عادی</value>
+  </data>
+  <data name="DNSChangerForm_btnSave_Click_DNS_successfully_set_" xml:space="preserve">
+    <value>تنظیمات DNS با موفقیت انجام شد.</value>
+  </data>
+  <data name="ReplCodeMenuCategory_Image" xml:space="preserve">
+    <value>عکس</value>
+  </data>
+  <data name="PastebinExpiration_M10" xml:space="preserve">
+    <value>۱۰ دقیقه</value>
+  </data>
+  <data name="HotkeyType_ExitShareX" xml:space="preserve">
+    <value>خروج از برنامه</value>
+  </data>
+  <data name="Helpers_DownloadString_Download_failed_" xml:space="preserve">
+    <value>دانلود با مشکل مواجه شد:</value>
+  </data>
+  <data name="Start" xml:space="preserve">
+    <value>شروع</value>
+  </data>
+  <data name="ReplCodeMenuCategory_Random" xml:space="preserve">
+    <value>تصادفی</value>
+  </data>
+  <data name="CustomUploaderDestinationType_ImageUploader" xml:space="preserve">
+    <value>آپلود کننده عکس</value>
+  </data>
+  <data name="HotkeyType_HashCheck" xml:space="preserve">
+    <value>چک کردن Hash</value>
+  </data>
+  <data name="YouTubeVideoPrivacy_Public" xml:space="preserve">
+    <value>عمومی</value>
+  </data>
+  <data name="ShapeType_DrawingImage" xml:space="preserve">
+    <value>عکس (فایل)</value>
+  </data>
+  <data name="ImageEditorStartMode_Fullscreen" xml:space="preserve">
+    <value>تمام صفحه</value>
+  </data>
+  <data name="DownloaderForm_ChangeProgress_Progress" xml:space="preserve">
+    <value>پیشرفت: {0:0.0}%
+سرعت دانلود: {1:0.0} کیلوبایت بر ثانیه
+حجم فایل: {2:n0} بر {3:n0} کیلوبایت</value>
+  </data>
+  <data name="HotkeyType_None" xml:space="preserve">
+    <value>هیچ کدام</value>
+  </data>
+  <data name="ReplCodeMenuCategory_Computer" xml:space="preserve">
+    <value>کامیپوتر</value>
+  </data>
+  <data name="ReplCodeMenuEntry_yy_Current_year__2_digits_" xml:space="preserve">
+    <value>سال جاری (۲ رقم)</value>
+  </data>
+  <data name="PNGBitDepth_Automatic" xml:space="preserve">
+    <value>تشخیص خودکار</value>
+  </data>
+  <data name="ShapeType_RegionEllipse" xml:space="preserve">
+    <value>ناحیه بیضی</value>
+  </data>
+  <data name="HotkeyType_DNSChanger" xml:space="preserve">
+    <value>تغییردهنده DNS</value>
+  </data>
+  <data name="ExportImportControl_Serialize_Export_failed_" xml:space="preserve">
+    <value>خروجی گرفتن با مشکل مواجه شد.</value>
+  </data>
+  <data name="YouTubeVideoPrivacy_Unlisted" xml:space="preserve">
+    <value>لیست نشده</value>
+  </data>
+  <data name="AfterCaptureTasks_DoOCR" xml:space="preserve">
+    <value>متن را تشخیص بده (OCR)</value>
+  </data>
+  <data name="ShapeType_DrawingCursor" xml:space="preserve">
+    <value>کرسر</value>
+  </data>
+  <data name="LinearGradientMode_Horizontal" xml:space="preserve">
+    <value>افقی</value>
+  </data>
+  <data name="ReplCodeMenuEntry_y_Current_year" xml:space="preserve">
+    <value>سال جاری</value>
+  </data>
+  <data name="PastebinExpiration_W2" xml:space="preserve">
+    <value>۲ هفته</value>
+  </data>
+  <data name="HotkeyType_IndexFolder" xml:space="preserve">
+    <value>پوشه ایندکس</value>
+  </data>
+  <data name="ScreenRecordGIFEncoding_FFmpeg" xml:space="preserve">
+    <value>FFmpeg (کیفیت خوب)</value>
+  </data>
+  <data name="AfterUploadTasks_OpenURL" xml:space="preserve">
+    <value>بازکردن آدرس</value>
+  </data>
+  <data name="AfterCaptureTasks_AnnotateImage" xml:space="preserve">
+    <value>بازکردن در ویرایشگر عکس</value>
+  </data>
+  <data name="AfterCaptureTasks_CopyFilePathToClipboard" xml:space="preserve">
+    <value>کپی کردن مسیر فایل به کلیپ بورد</value>
+  </data>
+  <data name="MyPictureBox_LoadImageAsync_Loading_image___" xml:space="preserve">
+    <value>در حال بارگذاری عکس ...</value>
+  </data>
+  <data name="HotkeyType_LastRegion" xml:space="preserve">
+    <value>ضبط آخرین ناحیه</value>
+  </data>
+  <data name="UpdateMessageBox_UpdateMessageBox_CurrentVersion" xml:space="preserve">
+    <value>ورژن جاری</value>
+  </data>
+  <data name="Helpers_BrowseFolder_Choose_folder" xml:space="preserve">
+    <value>پوشه را انتخاب کن</value>
+  </data>
+  <data name="Helpers_OpenFile_File_not_exist_" xml:space="preserve">
+    <value>فایل وجود ندارد:</value>
+  </data>
+  <data name="ExportImportControl_Deserialize_Import_failed_" xml:space="preserve">
+    <value>وارد کردن اطلاعات با مشکل مواجه شد.</value>
+  </data>
+  <data name="Extensions_AddContextMenu_Paste" xml:space="preserve">
+    <value>چسباندن</value>
+  </data>
+  <data name="HotkeyType_OpenImageHistory" xml:space="preserve">
+    <value>بازکردن پنجره تاریخچه عکس</value>
+  </data>
+  <data name="CodeMenu_Create_Close" xml:space="preserve">
+    <value>بستن</value>
+  </data>
+  <data name="ScrollingCaptureScrollMethod_Automatic" xml:space="preserve">
+    <value>بصورت خودکار تمام روش ها را امتحان کن تا یکی جواب دهد</value>
+  </data>
+  <data name="PastebinPrivacy_Public" xml:space="preserve">
+    <value>عمومی</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>خطا</value>
+  </data>
+  <data name="RegionCaptureAction_CaptureFullscreen" xml:space="preserve">
+    <value>ضبط تمام صفحه</value>
+  </data>
+  <data name="HotkeyType_ImageEditor" xml:space="preserve">
+    <value>ویرایشگر عکس</value>
+  </data>
+  <data name="HotkeyType_OpenHistory" xml:space="preserve">
+    <value>بازکردن پنجره تاریخچه</value>
+  </data>
+  <data name="ResponseType_Headers" xml:space="preserve">
+    <value>هدرهای پاسخ</value>
+  </data>
+  <data name="RegionCaptureAction_CancelCapture" xml:space="preserve">
+    <value>انصراف از ضبط</value>
+  </data>
+  <data name="ProxyMethod_Automatic" xml:space="preserve">
+    <value>خودکار</value>
+  </data>
+  <data name="AfterCaptureTasks_CopyFileToClipboard" xml:space="preserve">
+    <value>فایل را به کلیپ بورد کپی کن</value>
+  </data>
+  <data name="ShapeType_DrawingLine" xml:space="preserve">
+    <value>خط (L)</value>
+  </data>
+  <data name="ImageDestination_CustomImageUploader" xml:space="preserve">
+    <value>آپلود کننده عکس سفارشی</value>
+  </data>
+  <data name="HotkeyType_ActiveWindow" xml:space="preserve">
+    <value>ضبط پنجره جاری</value>
+  </data>
+  <data name="ReplCodeMenuEntry_width_Gets_image_width" xml:space="preserve">
+    <value>عرض تصویر</value>
+  </data>
+  <data name="ReplCodeMenuEntry_w2_Current_week_name__English_" xml:space="preserve">
+    <value>نام هفته جاری (انگلیسی)</value>
+  </data>
+  <data name="ImageDestination_FileUploader" xml:space="preserve">
+    <value>آپلودکننده فایل</value>
+  </data>
+  <data name="PNGBitDepth_Default" xml:space="preserve">
+    <value>پیش فرض</value>
+  </data>
+  <data name="HotkeyType_FTPClient" xml:space="preserve">
+    <value>کلاینت FTP</value>
+  </data>
+  <data name="Helpers_CreateDirectoryIfNotExist_Create_failed_" xml:space="preserve">
+    <value>ایحاد پوشه با مشکل مواجه شد.</value>
+  </data>
+  <data name="ImgurThumbnailType_Small_Square" xml:space="preserve">
+    <value>مربع کوچک</value>
+  </data>
+  <data name="DownloaderForm_StartDownload_Getting_file_size_" xml:space="preserve">
+    <value>در حال گرفتن اندازه فایل.</value>
+  </data>
+  <data name="ShapeType_DrawingEllipse" xml:space="preserve">
+    <value>بیضی (E)</value>
+  </data>
+  <data name="HotkeyType_ColorPicker" xml:space="preserve">
+    <value>انتخاب کننده رنگ</value>
+  </data>
+  <data name="TextDestination_FileUploader" xml:space="preserve">
+    <value>آپلود کننده فایل</value>
+  </data>
+  <data name="MyPictureBox_pbMain_LoadProgressChanged_Loading_image___0__" xml:space="preserve">
+    <value>در حال بارگزاری عکس: {0}%</value>
+  </data>
+  <data name="RegionCaptureAction_None" xml:space="preserve">
+    <value>هیچ کاری انجام نده</value>
+  </data>
+  <data name="HotkeyType_DisableHotkeys" xml:space="preserve">
+    <value>غیرفعال/فعال کردن کلیدهای میانبر</value>
+  </data>
+  <data name="ActionsCodeMenuEntry_FilePath_File_path" xml:space="preserve">
+    <value>مسیر فایل</value>
+  </data>
+  <data name="ImageEditorStartMode_PreviousState" xml:space="preserve">
+    <value>حالت قبلی</value>
+  </data>
+  <data name="SupportedLanguage_Automatic" xml:space="preserve">
+    <value>خودکار</value>
+  </data>
+  <data name="RegionCaptureAction_CaptureActiveMonitor" xml:space="preserve">
+    <value>ضبط صفحه جاری</value>
+  </data>
+  <data name="HotkeyType_OpenMainWindow" xml:space="preserve">
+    <value>بازکردن پنجره اصلی</value>
+  </data>
+  <data name="PastebinExpiration_W1" xml:space="preserve">
+    <value>۱ هفته</value>
+  </data>
+  <data name="ShapeType_DrawingRectangle" xml:space="preserve">
+    <value>مستطیل (R)</value>
+  </data>
+  <data name="Helpers_BrowseFile_Choose_file" xml:space="preserve">
+    <value>انتخاب فایل</value>
+  </data>
+  <data name="ReplCodeMenuEntry_height_Gets_image_height" xml:space="preserve">
+    <value>ارتفاع تصویر</value>
+  </data>
+  <data name="AmazonS3StorageClass_STANDARD" xml:space="preserve">
+    <value>فضای ذخیره سازی استاندار</value>
+  </data>
+  <data name="ShapeType_ToolCrop" xml:space="preserve">
+    <value>بریدن عکس (C)</value>
+  </data>
+  <data name="ReplCodeMenuEntry_cn_Computer_name" xml:space="preserve">
+    <value>نام کامیپوتر</value>
+  </data>
+  <data name="Extensions_AddContextMenu_Redo" xml:space="preserve">
+    <value>انجام دوباره</value>
+  </data>
 </root>

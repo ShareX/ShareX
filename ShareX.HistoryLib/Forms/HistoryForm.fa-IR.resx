@@ -135,4 +135,28 @@
   <data name="btnRemoveFilters.Text" xml:space="preserve">
     <value>پاک کردن فیلترها</value>
   </data>
+  <data name="chDateTime.Text" xml:space="preserve">
+    <value>تاریخ</value>
+  </data>
+  <data name="chFilename.Text" xml:space="preserve">
+    <value>نام فایل</value>
+  </data>
+  <data name="lblFilenameFilter.Text" xml:space="preserve">
+    <value>نام فایل:</value>
+  </data>
+  <data name="btnApplyFilters.Text" xml:space="preserve">
+    <value>اعمال فیلترها:</value>
+  </data>
+  <data name="cbHostFilter.Text" xml:space="preserve">
+    <value>هاست:</value>
+  </data>
+  <data name="lblFilterFrom.Text" xml:space="preserve">
+    <value>از:</value>
+  </data>
+  <data name="cbDateFilter.Text" xml:space="preserve">
+    <value>تاریخ:</value>
+  </data>
+  <data name="gbFilters.Text" xml:space="preserve">
+    <value>فیلترها</value>
+  </data>
 </root>

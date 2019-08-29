@@ -129,4 +129,7 @@
   <data name="btnCancel.Text" xml:space="preserve">
     <value>انصراف</value>
   </data>
+  <data name="lblBottom.Text" xml:space="preserve">
+    <value>زیر:</value>
+  </data>
 </root>

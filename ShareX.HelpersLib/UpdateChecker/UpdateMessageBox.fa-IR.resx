@@ -123,4 +123,7 @@
   <data name="btnNo.Text" xml:space="preserve">
     <value>خیر</value>
   </data>
+  <data name="lblViewChangelog.Text" xml:space="preserve">
+    <value>مشاهده تغییرات نرم افزار ...</value>
+  </data>
 </root>

@@ -297,4 +297,106 @@
   <data name="btnRegionCaptureSnapSizesDialogCancel.Text" xml:space="preserve">
     <value>انصراف</value>
   </data>
+  <data name="tsmiImageUploaders.Text" xml:space="preserve">
+    <value>آپلود کننده های عکس</value>
+  </data>
+  <data name="tsmiFileUploaders.Text" xml:space="preserve">
+    <value>آپلودکننده فایل</value>
+  </data>
+  <data name="tpGeneral.Text" xml:space="preserve">
+    <value>عمومی</value>
+  </data>
+  <data name="lblImagePNGBitDepth.Text" xml:space="preserve">
+    <value>عمق رنگ PNG:</value>
+  </data>
+  <data name="lblImageFormat.Text" xml:space="preserve">
+    <value>فرمت عکس:</value>
+  </data>
+  <data name="lblImageFileExist.Text" xml:space="preserve">
+    <value>اگر فایل وجود داشت:</value>
+  </data>
+  <data name="lblImageSizeLimitHint.Text" xml:space="preserve">
+    <value>کیلوبابت</value>
+  </data>
+  <data name="lblImageJPEGQuality.Text" xml:space="preserve">
+    <value>کیفیت JPEG:</value>
+  </data>
+  <data name="chkShowImageEffectsWindowAfterCapture.Text" xml:space="preserve">
+    <value>افکت های عکس را بعد از ضبط نشان بده</value>
+  </data>
+  <data name="btnImageEffects.Text" xml:space="preserve">
+    <value>تنظیمات افکت های عکس ...</value>
+  </data>
+  <data name="tpEffects.Text" xml:space="preserve">
+    <value>افکت ها</value>
+  </data>
+  <data name="tpImage.Text" xml:space="preserve">
+    <value>عکس</value>
+  </data>
+  <data name="lblCaptureCustomRegion.Text" xml:space="preserve">
+    <value>ناحیه از پیش تنظیم شده:</value>
+  </data>
+  <data name="cbRegionCaptureShowInfo.Text" xml:space="preserve">
+    <value>نمایش اطلاعات مکان و سایز</value>
+  </data>
+  <data name="lblRegionCaptureMouseMiddleClickAction.Text" xml:space="preserve">
+    <value>عمل وسط کلیک موس:</value>
+  </data>
+  <data name="lblRegionCaptureMouseRightClickAction.Text" xml:space="preserve">
+    <value>عمل راست کلیک موس:</value>
+  </data>
+  <data name="chkScreenRecordAutoStart.Text" xml:space="preserve">
+    <value>شروع کردن ضبط بعد از:</value>
+  </data>
+  <data name="cbScreenRecorderFixedDuration.Text" xml:space="preserve">
+    <value>مدت ثابت:</value>
+  </data>
+  <data name="lblOCRDefaultLanguage.Text" xml:space="preserve">
+    <value>زبان پیش فرض:</value>
+  </data>
+  <data name="cbCaptureOCRAutoCopy.Text" xml:space="preserve">
+    <value>به صورت خودکار نتایج را در کلیپ بورد کپی کن</value>
+  </data>
+  <data name="tpCapture.Text" xml:space="preserve">
+    <value>ضبط</value>
+  </data>
+  <data name="btnAutoIncrementNumber.Text" xml:space="preserve">
+    <value>تغییردادن</value>
+  </data>
+  <data name="tpFileNaming.Text" xml:space="preserve">
+    <value>نام گذاری فایل</value>
+  </data>
+  <data name="tpUploadClipboard.Text" xml:space="preserve">
+    <value>آپلود کلیپ بورد</value>
+  </data>
+  <data name="cbClipboardUploadShortenURL.Text" xml:space="preserve">
+    <value>اگر کلیپ بورد حاوی لینک است لینک را کوتاه کن</value>
+  </data>
+  <data name="cbClipboardUploadAutoIndexFolder.Text" xml:space="preserve">
+    <value>اگر کلیپ بورد حاوی آدرس پوشه است، پوشه را ایندکس کن و ایندکس را آپلود کن</value>
+  </data>
+  <data name="cbClipboardUploadURLContents.Text" xml:space="preserve">
+    <value>اگر کلیپ بورد حاوی آدرس فایل است، آن را دانلود و سپس آپلود کن</value>
+  </data>
+  <data name="cbClipboardUploadShareURL.Text" xml:space="preserve">
+    <value>اگر کلیپ بورد حاوی آدرس است، آن را با سرویس اشتراک گذاری آدرس به اشتراک بگذار.</value>
+  </data>
+  <data name="chUploaderFiltersExtension.Text" xml:space="preserve">
+    <value>پسوند</value>
+  </data>
+  <data name="lblUploaderFiltersExtensionsExample.Text" xml:space="preserve">
+    <value>نمونه: png, jpg, jpeg</value>
+  </data>
+  <data name="lblUploaderFiltersExtensions.Text" xml:space="preserve">
+    <value>فیلتر پسوند:</value>
+  </data>
+  <data name="chActionsExtensions.Text" xml:space="preserve">
+    <value>پسوندها</value>
+  </data>
+  <data name="chWatchFolderFolderPath.Text" xml:space="preserve">
+    <value>مسیر پوشه</value>
+  </data>
+  <data name="chWatchFolderFilter.Text" xml:space="preserve">
+    <value>فیلتر</value>
+  </data>
 </root>

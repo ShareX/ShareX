@@ -129,4 +129,7 @@
   <data name="btnRemove.Text" xml:space="preserve">
     <value>حذف کردن</value>
   </data>
+  <data name="btnReset.Text" xml:space="preserve">
+    <value>ریست به تنظیمات اولیه ...</value>
+  </data>
 </root>

@@ -156,4 +156,28 @@
   <data name="btnFFmpegBrowse.Text" xml:space="preserve">
     <value>...</value>
   </data>
+  <data name="lblAMFUsage.Text" xml:space="preserve">
+    <value>استفاده:</value>
+  </data>
+  <data name="lblQSVBitrate.Text" xml:space="preserve">
+    <value>نرخ بیت:</value>
+  </data>
+  <data name="lblNVENCBitrate.Text" xml:space="preserve">
+    <value>نرخ بیت:</value>
+  </data>
+  <data name="lblAACQuality.Text" xml:space="preserve">
+    <value>نرخ بیت:</value>
+  </data>
+  <data name="lblAudioSource.Text" xml:space="preserve">
+    <value>منبع صدا:</value>
+  </data>
+  <data name="lblAudioCodec.Text" xml:space="preserve">
+    <value>منبع صدا:</value>
+  </data>
+  <data name="gbSource.Text" xml:space="preserve">
+    <value>منابع</value>
+  </data>
+  <data name="gbCodecs.Text" xml:space="preserve">
+    <value>کدک ها</value>
+  </data>
 </root>

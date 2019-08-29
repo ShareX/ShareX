@@ -165,4 +165,34 @@
   <data name="HistoryItemManager_InitializeComponent_More_info" xml:space="preserve">
     <value>اطلاعات بیشتر</value>
   </data>
+  <data name="HistoryManager_GetHistoryItems_Error" xml:space="preserve">
+    <value>خطا</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Image_preview" xml:space="preserve">
+    <value>پیش نمایش عکس</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_File" xml:space="preserve">
+    <value>فایل</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Image" xml:space="preserve">
+    <value>عکس</value>
+  </data>
+  <data name="ObjectListView_ObjectListView_Copy_name" xml:space="preserve">
+    <value>کپی نام</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Folder" xml:space="preserve">
+    <value>پوشه</value>
+  </data>
+  <data name="ObjectListView_ObjectListView_Copy_value" xml:space="preserve">
+    <value>کپی مقدار</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_File_name_with_extension" xml:space="preserve">
+    <value>نام فایل با پسوند</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_HTML_image" xml:space="preserve">
+    <value>عکس HTML</value>
+  </data>
+  <data name="HistoryForm_UpdateItemCount___Filtered___0_" xml:space="preserve">
+    <value>فیلترشده: {0}</value>
+  </data>
 </root>

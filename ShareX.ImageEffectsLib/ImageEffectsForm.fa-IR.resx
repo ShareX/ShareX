@@ -144,4 +144,19 @@
   <data name="btnAdd.Text" xml:space="preserve">
     <value>اضافه کردن</value>
   </data>
+  <data name="btnClear.Text" xml:space="preserve">
+    <value>پاک کردن</value>
+  </data>
+  <data name="tsmiLoadImageFromFile.Text" xml:space="preserve">
+    <value>از فایل ...</value>
+  </data>
+  <data name="tsmiLoadImageFromClipboard.Text" xml:space="preserve">
+    <value>از کلیپ بورد</value>
+  </data>
+  <data name="mbLoadImage.Text" xml:space="preserve">
+    <value>بارگذاری عکس </value>
+  </data>
+  <data name="btnClose.Text" xml:space="preserve">
+    <value>بستن</value>
+  </data>
 </root>

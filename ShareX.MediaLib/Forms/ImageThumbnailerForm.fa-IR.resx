@@ -132,4 +132,13 @@
   <data name="btnOutputFolder.Text" xml:space="preserve">
     <value>...</value>
   </data>
+  <data name="lblHeight.Text" xml:space="preserve">
+    <value>ارتفاع:</value>
+  </data>
+  <data name="lblOutputFilename.Text" xml:space="preserve">
+    <value>نام فایل خروجی:</value>
+  </data>
+  <data name="lblOutputFolder.Text" xml:space="preserve">
+    <value>پوشه خروجی:</value>
+  </data>
 </root>

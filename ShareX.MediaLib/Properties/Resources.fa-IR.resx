@@ -117,65 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="btnScreenTearingTest.Text" xml:space="preserve">
-    <value>تست انمیشین را شروع کن</value>
-  </data>
-  <data name="btnClose.Text" xml:space="preserve">
-    <value>بستن</value>
-  </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="lblShapeSize.Size" type="System.Drawing.Size, System.Drawing">
-    <value>32, 13</value>
-  </data>
-  <data name="lblShapeSize.Text" xml:space="preserve">
-    <value>سایز:</value>
-  </data>
-  <data name="rbShapes.Size" type="System.Drawing.Size, System.Drawing">
-    <value>51, 17</value>
-  </data>
-  <data name="rbShapes.Text" xml:space="preserve">
-    <value>شکل:</value>
-  </data>
-  <data name="rbRedGreenBlue.Size" type="System.Drawing.Size, System.Drawing">
-    <value>101, 17</value>
-  </data>
-  <data name="rbRedGreenBlue.Text" xml:space="preserve">
-    <value>قرمز، سبز، آبی:</value>
-  </data>
-  <data name="rbBlackWhite.Size" type="System.Drawing.Size, System.Drawing">
-    <value>82, 17</value>
-  </data>
-  <data name="rbBlackWhite.Text" xml:space="preserve">
-    <value>سیاه، سفید:</value>
-  </data>
-  <data name="cbShapes.Items1" xml:space="preserve">
-    <value>خطوط عمودی</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - تست صفحه نمایش</value>
-  </data>
-  <data name="lblBlackWhiteValue.Text" xml:space="preserve">
-    <value>۰</value>
-  </data>
-  <data name="lblRedValue.Text" xml:space="preserve">
-    <value>۰</value>
-  </data>
-  <data name="lblBlueValue.Text" xml:space="preserve">
-    <value>۰</value>
-  </data>
-  <data name="lblGreenValue.Text" xml:space="preserve">
-    <value>۰</value>
-  </data>
-  <data name="lblShapeSizeValue.Text" xml:space="preserve">
-    <value>۱</value>
-  </data>
-  <data name="btnColorDialog.Text" xml:space="preserve">
-    <value>پنجره رنگ ...</value>
-  </data>
-  <data name="btnGradientColor2.Text" xml:space="preserve">
-    <value>رنگ ۲</value>
-  </data>
-  <data name="lblTip.Text" xml:space="preserve">
-    <value>راهنما: برای مخفی کردن/نمایش این پنجره، خارج این پنجره کلیک کنید.</value>
+  <data name="VideoThumbnailerForm_btnBrowse_Click_Browse_for_media_file" xml:space="preserve">
+    <value>انتخاب فایل مدیا</value>
   </data>
 </root>
