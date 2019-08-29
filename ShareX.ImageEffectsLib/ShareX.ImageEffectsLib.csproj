@@ -182,6 +182,9 @@
     <EmbeddedResource Include="ImageEffectsForm.es.resx">
       <DependentUpon>ImageEffectsForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ImageEffectsForm.fa-IR.resx">
+      <DependentUpon>ImageEffectsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ImageEffectsForm.fr.resx">
       <DependentUpon>ImageEffectsForm.cs</DependentUpon>
     </EmbeddedResource>

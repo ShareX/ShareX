@@ -462,6 +462,9 @@
     <EmbeddedResource Include="Forms\CustomUploaderSettingsForm.de.resx">
       <DependentUpon>CustomUploaderSettingsForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CustomUploaderSettingsForm.fa-IR.resx">
+      <DependentUpon>CustomUploaderSettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\CustomUploaderSettingsForm.resx">
       <DependentUpon>CustomUploaderSettingsForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -531,6 +534,9 @@
     <EmbeddedResource Include="Forms\JiraUpload.es.resx">
       <DependentUpon>JiraUpload.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\JiraUpload.fa-IR.resx">
+      <DependentUpon>JiraUpload.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\JiraUpload.fr.resx">
       <DependentUpon>JiraUpload.cs</DependentUpon>
     </EmbeddedResource>
@@ -576,6 +582,9 @@
     <EmbeddedResource Include="Forms\OCRSpaceForm.es-MX.resx">
       <DependentUpon>OCRSpaceForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\OCRSpaceForm.fa-IR.resx">
+      <DependentUpon>OCRSpaceForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\OCRSpaceForm.id-ID.resx">
       <DependentUpon>OCRSpaceForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -603,6 +612,9 @@
     <EmbeddedResource Include="Forms\PuushLoginForm.es-MX.resx">
       <DependentUpon>PuushLoginForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PuushLoginForm.fa-IR.resx">
+      <DependentUpon>PuushLoginForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\PuushLoginForm.ko-KR.resx">
       <DependentUpon>PuushLoginForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -628,6 +640,9 @@
       <DependentUpon>ResponseForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ResponseForm.es.resx">
+      <DependentUpon>ResponseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ResponseForm.fa-IR.resx">
       <DependentUpon>ResponseForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ResponseForm.fr.resx">
@@ -678,6 +693,9 @@
     <EmbeddedResource Include="Forms\TwitterTweetForm.es.resx">
       <DependentUpon>TwitterTweetForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TwitterTweetForm.fa-IR.resx">
+      <DependentUpon>TwitterTweetForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\TwitterTweetForm.fr.resx">
       <DependentUpon>TwitterTweetForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -724,6 +742,9 @@
       <DependentUpon>UploadersConfigForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\UploadersConfigForm.es.resx">
+      <DependentUpon>UploadersConfigForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UploadersConfigForm.fa-IR.resx">
       <DependentUpon>UploadersConfigForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\UploadersConfigForm.fr.resx">

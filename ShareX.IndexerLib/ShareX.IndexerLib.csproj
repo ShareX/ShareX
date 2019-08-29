@@ -112,6 +112,9 @@
     <EmbeddedResource Include="Forms\DirectoryIndexerForm.es-MX.resx">
       <DependentUpon>DirectoryIndexerForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DirectoryIndexerForm.fa-IR.resx">
+      <DependentUpon>DirectoryIndexerForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\DirectoryIndexerForm.ko-KR.resx">
       <DependentUpon>DirectoryIndexerForm.cs</DependentUpon>
     </EmbeddedResource>

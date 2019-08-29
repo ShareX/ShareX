@@ -544,6 +544,9 @@
     <EmbeddedResource Include="Forms\GradientPickerForm.es.resx">
       <DependentUpon>GradientPickerForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\GradientPickerForm.fa-IR.resx">
+      <DependentUpon>GradientPickerForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\GradientPickerForm.fr.resx">
       <DependentUpon>GradientPickerForm.cs</DependentUpon>
     </EmbeddedResource>

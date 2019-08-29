@@ -175,6 +175,9 @@
     <EmbeddedResource Include="Forms\ImageThumbnailerForm.es-MX.resx">
       <DependentUpon>ImageThumbnailerForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ImageThumbnailerForm.fa-IR.resx">
+      <DependentUpon>ImageThumbnailerForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ImageThumbnailerForm.fr.resx">
       <DependentUpon>ImageThumbnailerForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -203,6 +206,9 @@
       <DependentUpon>VideoThumbnailerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\VideoThumbnailerForm.es-MX.resx">
+      <DependentUpon>VideoThumbnailerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\VideoThumbnailerForm.fa-IR.resx">
       <DependentUpon>VideoThumbnailerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\VideoThumbnailerForm.fr.resx">
