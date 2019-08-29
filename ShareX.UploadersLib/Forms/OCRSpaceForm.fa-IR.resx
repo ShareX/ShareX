@@ -126,4 +126,7 @@
   <data name="lblResult.Text" xml:space="preserve">
     <value>نتایج:</value>
   </data>
+  <data name="llGoogleTranslate.Text" xml:space="preserve">
+    <value>باز کردن در مترجم گوگل و بستن این پنجره</value>
+  </data>
 </root>

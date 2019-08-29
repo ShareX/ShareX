@@ -222,4 +222,7 @@
   <data name="ShapeManager_CreateContextMenu_Fill_color___" xml:space="preserve">
     <value>پرکردن رنگ ...</value>
   </data>
+  <data name="ImageEffects" xml:space="preserve">
+    <value>اضافه کردن افکت های عکس...</value>
+  </data>
 </root>

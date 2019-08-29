@@ -399,4 +399,7 @@
   <data name="chWatchFolderFilter.Text" xml:space="preserve">
     <value>فیلتر</value>
   </data>
+  <data name="lblImageEffectsNote.Text" xml:space="preserve">
+    <value>شما می توانید افکت های عکس را با رفتن به منوی «وظایف بعد از ضبط»  -&gt; «اضافه کردن افکت های عکس» فعال / غیرفعال کنید.</value>
+  </data>
 </root>

@@ -859,4 +859,13 @@
   <data name="Extensions_AddContextMenu_Redo" xml:space="preserve">
     <value>انجام دوباره</value>
   </data>
+  <data name="AfterCaptureTasks_ShowQuickTaskMenu" xml:space="preserve">
+    <value>نمایش منوی وظایف سریع</value>
+  </data>
+  <data name="AfterCaptureTasks_AddImageEffects" xml:space="preserve">
+    <value>اضافه کردن افکت های عکس / واترمارک</value>
+  </data>
+  <data name="AfterUploadTasks_CopyURLToClipboard" xml:space="preserve">
+    <value>کپی کردن آدرس به کلیپ بورد</value>
+  </data>
 </root>
