@@ -303,4 +303,16 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - تنظیمات برنامه</value>
   </data>
+  <data name="cbShellContextMenu.Text" xml:space="preserve">
+    <value>منوی آپلود با ShareX را در راست کلیک Windows Explorer اضافه کن</value>
+  </data>
+  <data name="cbEditWithShareX.Text" xml:space="preserve">
+    <value>منوی ویرایش با ShareX را در راست کلیک Windows Explorer اضافه کن</value>
+  </data>
+  <data name="cbRecentTasksSave.Text" xml:space="preserve">
+    <value>وظایف اخیر را ذخیره کن</value>
+  </data>
+  <data name="gbRecentLinks.Text" xml:space="preserve">
+    <value>وظایف اخیر</value>
+  </data>
 </root>

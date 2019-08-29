@@ -117,20 +117,22 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="lblTitle.Text" xml:space="preserve">
-    <value>یک فایل با همین نام در این مکان وجود دارد.
-لطفا فایل یا عمل جدیدی را انتخاب کنید:</value>
+  <data name="lblURLFilter.Text" xml:space="preserve">
+    <value>آدرس:</value>
   </data>
-  <data name="btnUniqueName.Text" xml:space="preserve">
-    <value>از یک نام غیرتکراری استفاده کن:</value>
+  <data name="chURL.Text" xml:space="preserve">
+    <value>آدرس</value>
   </data>
-  <data name="btnNewName.Text" xml:space="preserve">
-    <value>از نام جدید استفاده کن:</value>
+  <data name="cbTypeFilter.Text" xml:space="preserve">
+    <value>نوع:</value>
   </data>
-  <data name="btnCancel.Text" xml:space="preserve">
-    <value>ذخیره نکن</value>
+  <data name="lblFilterTo.Text" xml:space="preserve">
+    <value>به:</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - چگونه ذخیره کنم؟</value>
+    <value>ShareX - تاریخچه</value>
+  </data>
+  <data name="btnRemoveFilters.Text" xml:space="preserve">
+    <value>پاک کردن فیلترها</value>
   </data>
 </root>

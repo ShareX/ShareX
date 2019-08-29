@@ -117,20 +117,109 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="lblTitle.Text" xml:space="preserve">
-    <value>یک فایل با همین نام در این مکان وجود دارد.
-لطفا فایل یا عمل جدیدی را انتخاب کنید:</value>
+  <data name="tsbResponseTextXMLFormat.Text" xml:space="preserve">
+    <value>فرمت XML:</value>
   </data>
-  <data name="btnUniqueName.Text" xml:space="preserve">
-    <value>از یک نام غیرتکراری استفاده کن:</value>
+  <data name="cArgumentsValue.HeaderText" xml:space="preserve">
+    <value>مقدار</value>
   </data>
-  <data name="btnNewName.Text" xml:space="preserve">
-    <value>از نام جدید استفاده کن:</value>
+  <data name="cParametersValue.HeaderText" xml:space="preserve">
+    <value>مقدار</value>
   </data>
-  <data name="btnCancel.Text" xml:space="preserve">
-    <value>ذخیره نکن</value>
+  <data name="cHeadersValue.HeaderText" xml:space="preserve">
+    <value>مقدار</value>
+  </data>
+  <data name="lblResultURL.Text" xml:space="preserve">
+    <value>آدرس:</value>
+  </data>
+  <data name="lblRequestURL.Text" xml:space="preserve">
+    <value>آدرس:</value>
+  </data>
+  <data name="lblURLShortener.Text" xml:space="preserve">
+    <value>کوتاه کننده لینک:</value>
+  </data>
+  <data name="lblURLSharingService.Text" xml:space="preserve">
+    <value>سرویس اشتراک گذاری لینک</value>
+  </data>
+  <data name="lblParameters.Text" xml:space="preserve">
+    <value>پارامترهای آدرس:</value>
+  </data>
+  <data name="gbCustomUploaders.Text" xml:space="preserve">
+    <value>آپلودکننده ها</value>
+  </data>
+  <data name="tsmiUpdateFolder.Text" xml:space="preserve">
+    <value>به روز رسانی پوشه...</value>
+  </data>
+  <data name="lblTextUploader.Text" xml:space="preserve">
+    <value>آپلود کننده های متن:</value>
+  </data>
+  <data name="btnImageUploaderTest.Text" xml:space="preserve">
+    <value>تست</value>
+  </data>
+  <data name="btnURLSharingServiceTest.Text" xml:space="preserve">
+    <value>تست</value>
+  </data>
+  <data name="btnTextUploaderTest.Text" xml:space="preserve">
+    <value>تست</value>
+  </data>
+  <data name="tpTest.Text" xml:space="preserve">
+    <value>تست</value>
+  </data>
+  <data name="btnFileUploaderTest.Text" xml:space="preserve">
+    <value>تست</value>
+  </data>
+  <data name="btnURLShortenerTest.Text" xml:space="preserve">
+    <value>تست</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - چگونه ذخیره کنم؟</value>
+    <value>ShareX - تنظیمات آپلودکننده سفارشی</value>
+  </data>
+  <data name="tpResult.Text" xml:space="preserve">
+    <value>نتیجه</value>
+  </data>
+  <data name="tpResponseText.Text" xml:space="preserve">
+    <value>متن پاسخ</value>
+  </data>
+  <data name="tpResponseInfo.Text" xml:space="preserve">
+    <value>اطلاعات پاسخ</value>
+  </data>
+  <data name="tpResponse.Text" xml:space="preserve">
+    <value>پاسخ</value>
+  </data>
+  <data name="tpRequest.Text" xml:space="preserve">
+    <value>درخواست</value>
+  </data>
+  <data name="btnRemove.Text" xml:space="preserve">
+    <value>حذف کردن</value>
+  </data>
+  <data name="btnNew.Text" xml:space="preserve">
+    <value>جدید</value>
+  </data>
+  <data name="lblName.Text" xml:space="preserve">
+    <value>نام:</value>
+  </data>
+  <data name="cParametersName.HeaderText" xml:space="preserve">
+    <value>نام:</value>
+  </data>
+  <data name="cArgumentsName.HeaderText" xml:space="preserve">
+    <value>نام:</value>
+  </data>
+  <data name="cHeadersName.HeaderText" xml:space="preserve">
+    <value>نام:</value>
+  </data>
+  <data name="btnDuplicate.Text" xml:space="preserve">
+    <value>کپی کردن</value>
+  </data>
+  <data name="lblResultDeletionURL.Text" xml:space="preserve">
+    <value>آدرس حذف:</value>
+  </data>
+  <data name="mbHelp.Text" xml:space="preserve">
+    <value>؟</value>
+  </data>
+  <data name="btnXPathHelp.Text" xml:space="preserve">
+    <value>؟</value>
+  </data>
+  <data name="btnJsonPathHelp.Text" xml:space="preserve">
+    <value>؟</value>
   </data>
 </root>

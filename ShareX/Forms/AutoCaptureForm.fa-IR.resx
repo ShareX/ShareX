@@ -124,7 +124,7 @@
     <value>شروع</value>
   </data>
   <data name="cbWaitUploads.Text" xml:space="preserve">
-    <value>صبر کن تا کارها تمام شود</value>
+    <value>صبر کنید تا وظایف پایان یابند</value>
   </data>
   <data name="lblRegion.Text" xml:space="preserve">
     <value>ناحیه</value>

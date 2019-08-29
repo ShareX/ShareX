@@ -117,20 +117,34 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="lblTitle.Text" xml:space="preserve">
-    <value>یک فایل با همین نام در این مکان وجود دارد.
-لطفا فایل یا عمل جدیدی را انتخاب کنید:</value>
+  <data name="btnAlignmentVertical.ToolTip" xml:space="preserve">
+    <value>تراز عمودی</value>
   </data>
-  <data name="btnUniqueName.Text" xml:space="preserve">
-    <value>از یک نام غیرتکراری استفاده کن:</value>
+  <data name="tsrbmiGradientVertical.Text" xml:space="preserve">
+    <value>عمودی</value>
   </data>
-  <data name="btnNewName.Text" xml:space="preserve">
-    <value>از نام جدید استفاده کن:</value>
+  <data name="tsmiAlignmentTop.Text" xml:space="preserve">
+    <value>بالا</value>
   </data>
-  <data name="btnCancel.Text" xml:space="preserve">
-    <value>ذخیره نکن</value>
+  <data name="btnTextColor.ToolTip" xml:space="preserve">
+    <value>رنگ متن</value>
+  </data>
+  <data name="lblTextSize.Text" xml:space="preserve">
+    <value>سایز:</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - چگونه ذخیره کنم؟</value>
+    <value>ShareX - آپلود متن</value>
+  </data>
+  <data name="tsmiSecondColor.Text" xml:space="preserve">
+    <value>دیگر رنگ های متن ...</value>
+  </data>
+  <data name="tsmiAlignmentRight.Text" xml:space="preserve">
+    <value>راست:</value>
+  </data>
+  <data name="btnOK.Text" xml:space="preserve">
+    <value>تایید</value>
+  </data>
+  <data name="btnCancel.Text" xml:space="preserve">
+    <value>انصراف</value>
   </data>
 </root>

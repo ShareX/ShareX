@@ -117,20 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="lblTitle.Text" xml:space="preserve">
-    <value>یک فایل با همین نام در این مکان وجود دارد.
-لطفا فایل یا عمل جدیدی را انتخاب کنید:</value>
+  <data name="TwitterTweetForm_SendTweet_Tweet_error" xml:space="preserve">
+    <value>خطای توئیت</value>
   </data>
-  <data name="btnUniqueName.Text" xml:space="preserve">
-    <value>از یک نام غیرتکراری استفاده کن:</value>
+  <data name="UploadersConfigForm_LoadSettings_Selected_folder_" xml:space="preserve">
+    <value>پوشه انتخاب شده:</value>
   </data>
-  <data name="btnNewName.Text" xml:space="preserve">
-    <value>از نام جدید استفاده کن:</value>
-  </data>
-  <data name="btnCancel.Text" xml:space="preserve">
-    <value>ذخیره نکن</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - چگونه ذخیره کنم؟</value>
+  <data name="OAuthInfo_OAuthInfo_New_account" xml:space="preserve">
+    <value>اکانت جدید</value>
   </data>
 </root>

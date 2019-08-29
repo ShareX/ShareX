@@ -127,7 +127,7 @@
     <value>نام فایل:</value>
   </data>
   <data name="btnAction.Text" xml:space="preserve">
-    <value>دانلود</value>
+    <value>دانلود (بارگذاری)</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - دانلودکننده فایل</value>

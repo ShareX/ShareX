@@ -121,7 +121,7 @@
     <value>در حال توقف</value>
   </data>
   <data name="UploadTask_CreateURLShortenerTask_Shorten_URL___0__" xml:space="preserve">
-    <value>کوتاه کردن لینک {{0}}</value>
+    <value>کوتاه کردن آدرس {{0}}</value>
   </data>
   <data name="BeforeUploadControl_AddDestination_Custom" xml:space="preserve">
     <value>سفارشی سازی</value>
@@ -285,7 +285,7 @@
     <value>کوتاه کردن</value>
   </data>
   <data name="UploadManager_ShowShortenURLDialog_ShortenURL" xml:space="preserve">
-    <value>کوتاه کردن لینک</value>
+    <value>کوتاه کردن آدرس</value>
   </data>
   <data name="UploadManager_UploadFile_File_upload" xml:space="preserve">
     <value>آپلود فایل</value>
@@ -298,5 +298,93 @@
   </data>
   <data name="TaskHelpers_ToggleHotkeys_Hotkeys_enabled_" xml:space="preserve">
     <value>کلیدهای میانبر غیرفعال شدند.</value>
+  </data>
+  <data name="ApplicationSettingsForm_btnResetSettings_Click_WouldYouLikeToResetShareXSettings" xml:space="preserve">
+    <value>آیا می خواهید تنظیمات ShareX را به حالت اولیه برگردانید؟</value>
+  </data>
+  <data name="FileExistForm_txtNewName_TextChanged_Use_new_name__" xml:space="preserve">
+    <value>از نام جدید استفاده کن:</value>
+  </data>
+  <data name="TaskSettingsForm_UpdateUploaderMenuNames_URL_shortener___0_" xml:space="preserve">
+    <value>کوتاه کننده لینک : {0}</value>
+  </data>
+  <data name="TaskSettingsForm_UpdateUploaderMenuNames_URL_sharing_service___0_" xml:space="preserve">
+    <value>سرویس اشتراک گذاری لینک: {0}</value>
+  </data>
+  <data name="IntegrationHelpers_UploadWithShareX" xml:space="preserve">
+    <value>آپلود با ShareX</value>
+  </data>
+  <data name="UploadManager_IsUploadConfirmed_Upload_files" xml:space="preserve">
+    <value>آپلود فایل ها</value>
+  </data>
+  <data name="UploadInfoManager_ShowErrors_Upload_errors" xml:space="preserve">
+    <value>آپلود خطاها</value>
+  </data>
+  <data name="Program_Run_Unable_to_create_folder_" xml:space="preserve">
+    <value>ایجاد پوشه با مشکل مواجه شد:</value>
+  </data>
+  <data name="TaskHelpers_TweetMessage_Tweet_successfully_sent_" xml:space="preserve">
+    <value>توییت با موفقیت ارسال شد</value>
+  </data>
+  <data name="TaskSettingsForm_UpdateUploaderMenuNames_Text_uploader___0_" xml:space="preserve">
+    <value>آپلود کننده های متن: {0}</value>
+  </data>
+  <data name="MainForm_tsmiTestTextUpload_Click_Text_upload_test" xml:space="preserve">
+    <value>تست آپلود متن</value>
+  </data>
+  <data name="TaskSettingsForm_UpdateUploaderMenuNames_Task___0_" xml:space="preserve">
+    <value>وظیفه: {0}</value>
+  </data>
+  <data name="TaskSettingsForm_UpdateWindowTitle_Task_settings_for__0_" xml:space="preserve">
+    <value>تنظیمات وظیفه برای {0}</value>
+  </data>
+  <data name="TaskSettingsForm_UpdateWindowTitle_Task_settings" xml:space="preserve">
+    <value>تنظیمات وظیفه</value>
+  </data>
+  <data name="UploadTask_OnUploadCompleted_Stopped" xml:space="preserve">
+    <value>متوقف شد</value>
+  </data>
+  <data name="UploadTask_Prepare_Starting" xml:space="preserve">
+    <value>در حال شروع</value>
+  </data>
+  <data name="MainForm_UpdateMenu_Show_menu" xml:space="preserve">
+    <value>نشان دادن منو</value>
+  </data>
+  <data name="MainForm_UpdateMainWindowLayout_Show_columns" xml:space="preserve">
+    <value>نمایش ستون ها</value>
+  </data>
+  <data name="ShareXNeedsToBeRestartedForThePersonalFolderChangesToApply" xml:space="preserve">
+    <value>برای تغییر پوشه شخصی ShareX نیاز به راه اندازی مجدد دارد.
+
+آیا می خواهید ShareX مجدد راه اندازی شود؟</value>
+  </data>
+  <data name="ApplicationSettingsForm_cbLanguage_SelectedIndexChanged_Language_Restart" xml:space="preserve">
+    <value>ShareX برای تغییر زبان نیاز به راه اندازی مجدد دارد.
+
+آیا می خواهید ShareX را مجددا راه اندازی کنید؟</value>
+  </data>
+  <data name="ShareXOpticalCharacterRecognition" xml:space="preserve">
+    <value>ShareX - شناسایی متن از تصویر</value>
+  </data>
+  <data name="ShareXConfirmation" xml:space="preserve">
+    <value>ShareX - تاییدیه</value>
+  </data>
+  <data name="UploadTask_CreateShareURLTask_Share_URL___0__" xml:space="preserve">
+    <value>اشتراک گذاری آدرس ({0})</value>
+  </data>
+  <data name="ActionsToolbarEditForm_Separator" xml:space="preserve">
+    <value>جداکننده</value>
+  </data>
+  <data name="HotkeySelectionControl_StartEditing_Select_a_hotkey___" xml:space="preserve">
+    <value>کلید میانبر را انتخاب کن...</value>
+  </data>
+  <data name="ScreenshotDelay0S" xml:space="preserve">
+    <value>تاخیر ضبط: {0} ثانیه</value>
+  </data>
+  <data name="ApplicationSettingsForm_cbStartWithWindows_Text" xml:space="preserve">
+    <value>هنگام شروع ویندوز، ShareX را اجرا کن</value>
+  </data>
+  <data name="IntegrationHelpers_EditWithShareX" xml:space="preserve">
+    <value>ویرایش با ShareX ...</value>
   </data>
 </root>

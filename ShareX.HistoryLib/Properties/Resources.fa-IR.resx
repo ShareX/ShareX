@@ -117,20 +117,37 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="lblTitle.Text" xml:space="preserve">
-    <value>یک فایل با همین نام در این مکان وجود دارد.
-لطفا فایل یا عمل جدیدی را انتخاب کنید:</value>
+  <data name="ObjectListView_ObjectListView_Value" xml:space="preserve">
+    <value>مقدار</value>
   </data>
-  <data name="btnUniqueName.Text" xml:space="preserve">
-    <value>از یک نام غیرتکراری استفاده کن:</value>
+  <data name="HistoryItemManager_InitializeComponent_URL" xml:space="preserve">
+    <value>آدرس</value>
   </data>
-  <data name="btnNewName.Text" xml:space="preserve">
-    <value>از نام جدید استفاده کن:</value>
+  <data name="HistoryItemManager_InitializeComponent_UploadFile" xml:space="preserve">
+    <value>آپلود فایل</value>
   </data>
-  <data name="btnCancel.Text" xml:space="preserve">
-    <value>ذخیره نکن</value>
+  <data name="HistoryForm_UpdateItemCount_Total___0_" xml:space="preserve">
+    <value>جمع: {0}</value>
   </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - چگونه ذخیره کنم؟</value>
+  <data name="HistoryItemManager_InitializeComponent_Text" xml:space="preserve">
+    <value>متن</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Show" xml:space="preserve">
+    <value>نمایش</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Shortened_URL" xml:space="preserve">
+    <value>ادرس کوتاه شده</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Open" xml:space="preserve">
+    <value>بازکردن</value>
+  </data>
+  <data name="ObjectListView_ObjectListView_Name" xml:space="preserve">
+    <value>نام:</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Deletion_URL" xml:space="preserve">
+    <value>آدرس حذف</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Copy" xml:space="preserve">
+    <value>کپی</value>
   </data>
 </root>

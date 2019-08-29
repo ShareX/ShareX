@@ -121,7 +121,7 @@
     <value>کپی کردن عکس به کلیپ بورد</value>
   </data>
   <data name="tsmiUpload.Text" xml:space="preserve">
-    <value>آپلود عکس </value>
+    <value>آپلود عکس</value>
   </data>
   <data name="tpDecode.Text" xml:space="preserve">
     <value>تبدیل به QR</value>
@@ -139,7 +139,7 @@
     <value>بخوان! </value>
   </data>
   <data name="lblDecodeResult.Text" xml:space="preserve">
-    <value>نتیجه</value>
+    <value>نتایج:</value>
   </data>
   <data name="tsmiSaveAs.Text" xml:space="preserve">
     <value>ذخیره به عنوان عکس</value>

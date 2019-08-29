@@ -117,20 +117,43 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="lblTitle.Text" xml:space="preserve">
-    <value>یک فایل با همین نام در این مکان وجود دارد.
-لطفا فایل یا عمل جدیدی را انتخاب کنید:</value>
+  <data name="lblVideoSource.Text" xml:space="preserve">
+    <value>منبع ویدئو:</value>
   </data>
-  <data name="btnUniqueName.Text" xml:space="preserve">
-    <value>از یک نام غیرتکراری استفاده کن:</value>
+  <data name="lblCodec.Text" xml:space="preserve">
+    <value>کدک ویدئو:</value>
   </data>
-  <data name="btnNewName.Text" xml:space="preserve">
-    <value>از نام جدید استفاده کن:</value>
+  <data name="lblVP8Bitrate.Text" xml:space="preserve">
+    <value>نرخ بیت متغیر:</value>
   </data>
-  <data name="btnCancel.Text" xml:space="preserve">
-    <value>ذخیره نکن</value>
+  <data name="lblXvidQscale.Text" xml:space="preserve">
+    <value>نرخ بیت متغیر:</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - چگونه ذخیره کنم؟</value>
+    <value>ShareX - تنظیمات ضبط فیلم صفحه</value>
+  </data>
+  <data name="btnRefreshSources.Text" xml:space="preserve">
+    <value>بارگذاری مجدد</value>
+  </data>
+  <data name="lblMP3Quality.Text" xml:space="preserve">
+    <value>کیفیت:</value>
+  </data>
+  <data name="lblVorbisQuality.Text" xml:space="preserve">
+    <value>کیفیت:</value>
+  </data>
+  <data name="lblAMFQuality.Text" xml:space="preserve">
+    <value>کیفیت:</value>
+  </data>
+  <data name="btnDownload.Text" xml:space="preserve">
+    <value>دانلود (بارگذاری)</value>
+  </data>
+  <data name="btnCopyPreview.Text" xml:space="preserve">
+    <value>کپی</value>
+  </data>
+  <data name="btnHelperDevicesHelp.Text" xml:space="preserve">
+    <value>؟</value>
+  </data>
+  <data name="btnFFmpegBrowse.Text" xml:space="preserve">
+    <value>...</value>
   </data>
 </root>

@@ -127,9 +127,12 @@
     <value>باز کردن فایل خطا ...</value>
   </data>
   <data name="btnContinue.Text" xml:space="preserve">
-    <value>ادامه</value>
+    <value>ادامه دادن</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - خطا</value>
+  </data>
+  <data name="btnOK.Text" xml:space="preserve">
+    <value>تایید</value>
   </data>
 </root>

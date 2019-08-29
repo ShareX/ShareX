@@ -139,4 +139,7 @@
   <data name="btnUploadLog.Text" xml:space="preserve">
     <value>آپلود کردن لاگ...</value>
   </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX - خطایابی</value>
+  </data>
 </root>

@@ -122,7 +122,7 @@
     <value>50, 13</value>
   </data>
   <data name="lblToEmail.Text" xml:space="preserve">
-    <value>ارسال به:</value>
+    <value>ارسال به ایمیل:</value>
   </data>
   <data name="lblSubject.Size" type="System.Drawing.Size, System.Drawing">
     <value>43, 13</value>

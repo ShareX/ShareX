@@ -117,20 +117,22 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="lblTitle.Text" xml:space="preserve">
-    <value>یک فایل با همین نام در این مکان وجود دارد.
-لطفا فایل یا عمل جدیدی را انتخاب کنید:</value>
-  </data>
-  <data name="btnUniqueName.Text" xml:space="preserve">
-    <value>از یک نام غیرتکراری استفاده کن:</value>
-  </data>
-  <data name="btnNewName.Text" xml:space="preserve">
-    <value>از نام جدید استفاده کن:</value>
-  </data>
-  <data name="btnCancel.Text" xml:space="preserve">
-    <value>ذخیره نکن</value>
+  <data name="lblWidth.Text" xml:space="preserve">
+    <value>پنها:</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - چگونه ذخیره کنم؟</value>
+    <value>ShareX - اندازه عکس</value>
+  </data>
+  <data name="lblHeightPixels.Text" xml:space="preserve">
+    <value>پیکسل</value>
+  </data>
+  <data name="lblWidthPixels.Text" xml:space="preserve">
+    <value>پیکسل</value>
+  </data>
+  <data name="btnOK.Text" xml:space="preserve">
+    <value>تایید</value>
+  </data>
+  <data name="btnCancel.Text" xml:space="preserve">
+    <value>انصراف</value>
   </data>
 </root>

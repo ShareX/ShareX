@@ -127,6 +127,6 @@
     <value>ویرایش</value>
   </data>
   <data name="btnRemove.Text" xml:space="preserve">
-    <value>حذف</value>
+    <value>حذف کردن</value>
   </data>
 </root>
