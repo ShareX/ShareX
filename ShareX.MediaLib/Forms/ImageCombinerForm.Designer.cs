@@ -74,9 +74,9 @@
             // 
             // lvImages
             // 
-            resources.ApplyResources(this.lvImages, "lvImages");
             this.lvImages.AllowDrop = true;
             this.lvImages.AllowItemDrag = true;
+            resources.ApplyResources(this.lvImages, "lvImages");
             this.lvImages.AutoFillColumn = true;
             this.lvImages.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.chFilepath});
@@ -136,8 +136,8 @@
             // ImageCombinerForm
             // 
             this.AcceptButton = this.btnCombine;
-            resources.ApplyResources(this, "$this");
             this.AllowDrop = true;
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.Controls.Add(this.lblSpacePixel);

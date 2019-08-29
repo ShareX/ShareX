@@ -69,7 +69,6 @@
             this.lblAlpha = new System.Windows.Forms.Label();
             this.ttMain = new System.Windows.Forms.ToolTip(this.components);
             this.btnScreenColorPicker = new System.Windows.Forms.Button();
-            this.cbTransparent = new ShareX.HelpersLib.ColorButton();
             this.cmsCopy = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tsmiCopyAll = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiCopyRGB = new System.Windows.Forms.ToolStripMenuItem();
@@ -90,6 +89,7 @@
             this.rbStandardColors = new System.Windows.Forms.RadioButton();
             this.flpColorPaletteSelection = new System.Windows.Forms.FlowLayoutPanel();
             this.mbCopy = new ShareX.HelpersLib.MenuButton();
+            this.cbTransparent = new ShareX.HelpersLib.ColorButton();
             this.pbColorPreview = new ShareX.HelpersLib.MyPictureBox();
             this.colorPicker = new ShareX.HelpersLib.ColorPicker();
             ((System.ComponentModel.ISupportInitialize)(this.nudKey)).BeginInit();
@@ -110,10 +110,9 @@
             // 
             // btnCancel
             // 
-            resources.ApplyResources(this.btnCancel, "btnCancel");
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            resources.ApplyResources(this.btnCancel, "btnCancel");
             this.btnCancel.Name = "btnCancel";
-            this.ttMain.SetToolTip(this.btnCancel, resources.GetString("btnCancel.ToolTip"));
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
@@ -121,7 +120,6 @@
             // 
             resources.ApplyResources(this.btnOK, "btnOK");
             this.btnOK.Name = "btnOK";
-            this.ttMain.SetToolTip(this.btnOK, resources.GetString("btnOK.ToolTip"));
             this.btnOK.UseVisualStyleBackColor = true;
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
@@ -129,33 +127,28 @@
             // 
             resources.ApplyResources(this.lblOld, "lblOld");
             this.lblOld.Name = "lblOld";
-            this.ttMain.SetToolTip(this.lblOld, resources.GetString("lblOld.ToolTip"));
             // 
             // lblNew
             // 
             resources.ApplyResources(this.lblNew, "lblNew");
             this.lblNew.Name = "lblNew";
-            this.ttMain.SetToolTip(this.lblNew, resources.GetString("lblNew.ToolTip"));
             // 
             // txtHex
             // 
             resources.ApplyResources(this.txtHex, "txtHex");
             this.txtHex.Name = "txtHex";
-            this.ttMain.SetToolTip(this.txtHex, resources.GetString("txtHex.ToolTip"));
             this.txtHex.TextChanged += new System.EventHandler(this.txtHex_TextChanged);
             // 
             // lblHex
             // 
             resources.ApplyResources(this.lblHex, "lblHex");
             this.lblHex.Name = "lblHex";
-            this.ttMain.SetToolTip(this.lblHex, resources.GetString("lblHex.ToolTip"));
             // 
             // nudKey
             // 
-            resources.ApplyResources(this.nudKey, "nudKey");
             this.nudKey.DecimalPlaces = 1;
+            resources.ApplyResources(this.nudKey, "nudKey");
             this.nudKey.Name = "nudKey";
-            this.ttMain.SetToolTip(this.nudKey, resources.GetString("nudKey.ToolTip"));
             this.nudKey.Value = new decimal(new int[] {
             100,
             0,
@@ -165,10 +158,9 @@
             // 
             // nudYellow
             // 
-            resources.ApplyResources(this.nudYellow, "nudYellow");
             this.nudYellow.DecimalPlaces = 1;
+            resources.ApplyResources(this.nudYellow, "nudYellow");
             this.nudYellow.Name = "nudYellow";
-            this.ttMain.SetToolTip(this.nudYellow, resources.GetString("nudYellow.ToolTip"));
             this.nudYellow.Value = new decimal(new int[] {
             100,
             0,
@@ -178,10 +170,9 @@
             // 
             // nudMagenta
             // 
-            resources.ApplyResources(this.nudMagenta, "nudMagenta");
             this.nudMagenta.DecimalPlaces = 1;
+            resources.ApplyResources(this.nudMagenta, "nudMagenta");
             this.nudMagenta.Name = "nudMagenta";
-            this.ttMain.SetToolTip(this.nudMagenta, resources.GetString("nudMagenta.ToolTip"));
             this.nudMagenta.Value = new decimal(new int[] {
             100,
             0,
@@ -191,10 +182,9 @@
             // 
             // nudCyan
             // 
-            resources.ApplyResources(this.nudCyan, "nudCyan");
             this.nudCyan.DecimalPlaces = 1;
+            resources.ApplyResources(this.nudCyan, "nudCyan");
             this.nudCyan.Name = "nudCyan";
-            this.ttMain.SetToolTip(this.nudCyan, resources.GetString("nudCyan.ToolTip"));
             this.nudCyan.Value = new decimal(new int[] {
             100,
             0,
@@ -206,43 +196,36 @@
             // 
             resources.ApplyResources(this.lblKey, "lblKey");
             this.lblKey.Name = "lblKey";
-            this.ttMain.SetToolTip(this.lblKey, resources.GetString("lblKey.ToolTip"));
             // 
             // lblYellow
             // 
             resources.ApplyResources(this.lblYellow, "lblYellow");
             this.lblYellow.Name = "lblYellow";
-            this.ttMain.SetToolTip(this.lblYellow, resources.GetString("lblYellow.ToolTip"));
             // 
             // lblMagenta
             // 
             resources.ApplyResources(this.lblMagenta, "lblMagenta");
             this.lblMagenta.Name = "lblMagenta";
-            this.ttMain.SetToolTip(this.lblMagenta, resources.GetString("lblMagenta.ToolTip"));
             // 
             // lblCyan
             // 
             resources.ApplyResources(this.lblCyan, "lblCyan");
             this.lblCyan.Name = "lblCyan";
-            this.ttMain.SetToolTip(this.lblCyan, resources.GetString("lblCyan.ToolTip"));
             // 
             // lblHue
             // 
             resources.ApplyResources(this.lblHue, "lblHue");
             this.lblHue.Name = "lblHue";
-            this.ttMain.SetToolTip(this.lblHue, resources.GetString("lblHue.ToolTip"));
             // 
             // lblBrightnessPerc
             // 
             resources.ApplyResources(this.lblBrightnessPerc, "lblBrightnessPerc");
             this.lblBrightnessPerc.Name = "lblBrightnessPerc";
-            this.ttMain.SetToolTip(this.lblBrightnessPerc, resources.GetString("lblBrightnessPerc.ToolTip"));
             // 
             // lblSaturationPerc
             // 
             resources.ApplyResources(this.lblSaturationPerc, "lblSaturationPerc");
             this.lblSaturationPerc.Name = "lblSaturationPerc";
-            this.ttMain.SetToolTip(this.lblSaturationPerc, resources.GetString("lblSaturationPerc.ToolTip"));
             // 
             // nudBlue
             // 
@@ -253,7 +236,6 @@
             0,
             0});
             this.nudBlue.Name = "nudBlue";
-            this.ttMain.SetToolTip(this.nudBlue, resources.GetString("nudBlue.ToolTip"));
             this.nudBlue.Value = new decimal(new int[] {
             255,
             0,
@@ -270,7 +252,6 @@
             0,
             0});
             this.nudGreen.Name = "nudGreen";
-            this.ttMain.SetToolTip(this.nudGreen, resources.GetString("nudGreen.ToolTip"));
             this.nudGreen.Value = new decimal(new int[] {
             255,
             0,
@@ -287,7 +268,6 @@
             0,
             0});
             this.nudRed.Name = "nudRed";
-            this.ttMain.SetToolTip(this.nudRed, resources.GetString("nudRed.ToolTip"));
             this.nudRed.Value = new decimal(new int[] {
             255,
             0,
@@ -299,7 +279,6 @@
             // 
             resources.ApplyResources(this.nudBrightness, "nudBrightness");
             this.nudBrightness.Name = "nudBrightness";
-            this.ttMain.SetToolTip(this.nudBrightness, resources.GetString("nudBrightness.ToolTip"));
             this.nudBrightness.Value = new decimal(new int[] {
             100,
             0,
@@ -311,7 +290,6 @@
             // 
             resources.ApplyResources(this.nudSaturation, "nudSaturation");
             this.nudSaturation.Name = "nudSaturation";
-            this.ttMain.SetToolTip(this.nudSaturation, resources.GetString("nudSaturation.ToolTip"));
             this.nudSaturation.Value = new decimal(new int[] {
             100,
             0,
@@ -328,7 +306,6 @@
             0,
             0});
             this.nudHue.Name = "nudHue";
-            this.ttMain.SetToolTip(this.nudHue, resources.GetString("nudHue.ToolTip"));
             this.nudHue.Value = new decimal(new int[] {
             360,
             0,
@@ -340,7 +317,6 @@
             // 
             resources.ApplyResources(this.rbBlue, "rbBlue");
             this.rbBlue.Name = "rbBlue";
-            this.ttMain.SetToolTip(this.rbBlue, resources.GetString("rbBlue.ToolTip"));
             this.rbBlue.UseVisualStyleBackColor = true;
             this.rbBlue.CheckedChanged += new System.EventHandler(this.rbBlue_CheckedChanged);
             // 
@@ -348,7 +324,6 @@
             // 
             resources.ApplyResources(this.rbGreen, "rbGreen");
             this.rbGreen.Name = "rbGreen";
-            this.ttMain.SetToolTip(this.rbGreen, resources.GetString("rbGreen.ToolTip"));
             this.rbGreen.UseVisualStyleBackColor = true;
             this.rbGreen.CheckedChanged += new System.EventHandler(this.rbGreen_CheckedChanged);
             // 
@@ -356,7 +331,6 @@
             // 
             resources.ApplyResources(this.rbRed, "rbRed");
             this.rbRed.Name = "rbRed";
-            this.ttMain.SetToolTip(this.rbRed, resources.GetString("rbRed.ToolTip"));
             this.rbRed.UseVisualStyleBackColor = true;
             this.rbRed.CheckedChanged += new System.EventHandler(this.rbRed_CheckedChanged);
             // 
@@ -364,7 +338,6 @@
             // 
             resources.ApplyResources(this.rbBrightness, "rbBrightness");
             this.rbBrightness.Name = "rbBrightness";
-            this.ttMain.SetToolTip(this.rbBrightness, resources.GetString("rbBrightness.ToolTip"));
             this.rbBrightness.UseVisualStyleBackColor = true;
             this.rbBrightness.CheckedChanged += new System.EventHandler(this.rbBrightness_CheckedChanged);
             // 
@@ -372,7 +345,6 @@
             // 
             resources.ApplyResources(this.rbSaturation, "rbSaturation");
             this.rbSaturation.Name = "rbSaturation";
-            this.ttMain.SetToolTip(this.rbSaturation, resources.GetString("rbSaturation.ToolTip"));
             this.rbSaturation.UseVisualStyleBackColor = true;
             this.rbSaturation.CheckedChanged += new System.EventHandler(this.rbSaturation_CheckedChanged);
             // 
@@ -382,7 +354,6 @@
             this.rbHue.Checked = true;
             this.rbHue.Name = "rbHue";
             this.rbHue.TabStop = true;
-            this.ttMain.SetToolTip(this.rbHue, resources.GetString("rbHue.ToolTip"));
             this.rbHue.UseVisualStyleBackColor = true;
             this.rbHue.CheckedChanged += new System.EventHandler(this.rbHue_CheckedChanged);
             // 
@@ -390,38 +361,32 @@
             // 
             resources.ApplyResources(this.lblDecimal, "lblDecimal");
             this.lblDecimal.Name = "lblDecimal";
-            this.ttMain.SetToolTip(this.lblDecimal, resources.GetString("lblDecimal.ToolTip"));
             // 
             // txtDecimal
             // 
             resources.ApplyResources(this.txtDecimal, "txtDecimal");
             this.txtDecimal.Name = "txtDecimal";
-            this.ttMain.SetToolTip(this.txtDecimal, resources.GetString("txtDecimal.ToolTip"));
             this.txtDecimal.TextChanged += new System.EventHandler(this.txtDecimal_TextChanged);
             // 
             // lblCyanPerc
             // 
             resources.ApplyResources(this.lblCyanPerc, "lblCyanPerc");
             this.lblCyanPerc.Name = "lblCyanPerc";
-            this.ttMain.SetToolTip(this.lblCyanPerc, resources.GetString("lblCyanPerc.ToolTip"));
             // 
             // lblMagentaPerc
             // 
             resources.ApplyResources(this.lblMagentaPerc, "lblMagentaPerc");
             this.lblMagentaPerc.Name = "lblMagentaPerc";
-            this.ttMain.SetToolTip(this.lblMagentaPerc, resources.GetString("lblMagentaPerc.ToolTip"));
             // 
             // lblYellowPerc
             // 
             resources.ApplyResources(this.lblYellowPerc, "lblYellowPerc");
             this.lblYellowPerc.Name = "lblYellowPerc";
-            this.ttMain.SetToolTip(this.lblYellowPerc, resources.GetString("lblYellowPerc.ToolTip"));
             // 
             // lblKeyPerc
             // 
             resources.ApplyResources(this.lblKeyPerc, "lblKeyPerc");
             this.lblKeyPerc.Name = "lblKeyPerc";
-            this.ttMain.SetToolTip(this.lblKeyPerc, resources.GetString("lblKeyPerc.ToolTip"));
             // 
             // nudAlpha
             // 
@@ -432,7 +397,6 @@
             0,
             0});
             this.nudAlpha.Name = "nudAlpha";
-            this.ttMain.SetToolTip(this.nudAlpha, resources.GetString("nudAlpha.ToolTip"));
             this.nudAlpha.Value = new decimal(new int[] {
             255,
             0,
@@ -444,7 +408,6 @@
             // 
             resources.ApplyResources(this.lblAlpha, "lblAlpha");
             this.lblAlpha.Name = "lblAlpha";
-            this.ttMain.SetToolTip(this.lblAlpha, resources.GetString("lblAlpha.ToolTip"));
             // 
             // ttMain
             // 
@@ -454,26 +417,15 @@
             // 
             // btnScreenColorPicker
             // 
-            resources.ApplyResources(this.btnScreenColorPicker, "btnScreenColorPicker");
             this.btnScreenColorPicker.Image = global::ShareX.HelpersLib.Properties.Resources.pipette;
+            resources.ApplyResources(this.btnScreenColorPicker, "btnScreenColorPicker");
             this.btnScreenColorPicker.Name = "btnScreenColorPicker";
             this.ttMain.SetToolTip(this.btnScreenColorPicker, resources.GetString("btnScreenColorPicker.ToolTip"));
             this.btnScreenColorPicker.UseVisualStyleBackColor = true;
             this.btnScreenColorPicker.Click += new System.EventHandler(this.btnScreenColorPicker_Click);
             // 
-            // cbTransparent
-            // 
-            resources.ApplyResources(this.cbTransparent, "cbTransparent");
-            this.cbTransparent.Color = System.Drawing.Color.Transparent;
-            this.cbTransparent.ManualButtonClick = true;
-            this.cbTransparent.Name = "cbTransparent";
-            this.ttMain.SetToolTip(this.cbTransparent, resources.GetString("cbTransparent.ToolTip"));
-            this.cbTransparent.UseVisualStyleBackColor = true;
-            this.cbTransparent.Click += new System.EventHandler(this.cbTransparent_Click);
-            // 
             // cmsCopy
             // 
-            resources.ApplyResources(this.cmsCopy, "cmsCopy");
             this.cmsCopy.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiCopyAll,
             this.tsmiCopyRGB,
@@ -484,98 +436,91 @@
             this.tsmiCopyPosition});
             this.cmsCopy.Name = "cmsCopy";
             this.cmsCopy.ShowImageMargin = false;
-            this.ttMain.SetToolTip(this.cmsCopy, resources.GetString("cmsCopy.ToolTip"));
+            resources.ApplyResources(this.cmsCopy, "cmsCopy");
             // 
             // tsmiCopyAll
             // 
-            resources.ApplyResources(this.tsmiCopyAll, "tsmiCopyAll");
             this.tsmiCopyAll.Name = "tsmiCopyAll";
+            resources.ApplyResources(this.tsmiCopyAll, "tsmiCopyAll");
             this.tsmiCopyAll.Click += new System.EventHandler(this.tsmiCopyAll_Click);
             // 
             // tsmiCopyRGB
             // 
-            resources.ApplyResources(this.tsmiCopyRGB, "tsmiCopyRGB");
             this.tsmiCopyRGB.Name = "tsmiCopyRGB";
+            resources.ApplyResources(this.tsmiCopyRGB, "tsmiCopyRGB");
             this.tsmiCopyRGB.Click += new System.EventHandler(this.tsmiCopyRGB_Click);
             // 
             // tsmiCopyHexadecimal
             // 
-            resources.ApplyResources(this.tsmiCopyHexadecimal, "tsmiCopyHexadecimal");
             this.tsmiCopyHexadecimal.Name = "tsmiCopyHexadecimal";
+            resources.ApplyResources(this.tsmiCopyHexadecimal, "tsmiCopyHexadecimal");
             this.tsmiCopyHexadecimal.Click += new System.EventHandler(this.tsmiCopyHexadecimal_Click);
             // 
             // tsmiCopyCMYK
             // 
-            resources.ApplyResources(this.tsmiCopyCMYK, "tsmiCopyCMYK");
             this.tsmiCopyCMYK.Name = "tsmiCopyCMYK";
+            resources.ApplyResources(this.tsmiCopyCMYK, "tsmiCopyCMYK");
             this.tsmiCopyCMYK.Click += new System.EventHandler(this.tsmiCopyCMYK_Click);
             // 
             // tsmiCopyHSB
             // 
-            resources.ApplyResources(this.tsmiCopyHSB, "tsmiCopyHSB");
             this.tsmiCopyHSB.Name = "tsmiCopyHSB";
+            resources.ApplyResources(this.tsmiCopyHSB, "tsmiCopyHSB");
             this.tsmiCopyHSB.Click += new System.EventHandler(this.tsmiCopyHSB_Click);
             // 
             // tsmiCopyDecimal
             // 
-            resources.ApplyResources(this.tsmiCopyDecimal, "tsmiCopyDecimal");
             this.tsmiCopyDecimal.Name = "tsmiCopyDecimal";
+            resources.ApplyResources(this.tsmiCopyDecimal, "tsmiCopyDecimal");
             this.tsmiCopyDecimal.Click += new System.EventHandler(this.tsmiCopyDecimal_Click);
             // 
             // tsmiCopyPosition
             // 
-            resources.ApplyResources(this.tsmiCopyPosition, "tsmiCopyPosition");
             this.tsmiCopyPosition.Name = "tsmiCopyPosition";
+            resources.ApplyResources(this.tsmiCopyPosition, "tsmiCopyPosition");
             this.tsmiCopyPosition.Click += new System.EventHandler(this.tsmiCopyPosition_Click);
             // 
             // pCursorPosition
             // 
-            resources.ApplyResources(this.pCursorPosition, "pCursorPosition");
             this.pCursorPosition.Controls.Add(this.txtY);
             this.pCursorPosition.Controls.Add(this.txtX);
             this.pCursorPosition.Controls.Add(this.lblY);
             this.pCursorPosition.Controls.Add(this.lblX);
             this.pCursorPosition.Controls.Add(this.lblCursorPosition);
+            resources.ApplyResources(this.pCursorPosition, "pCursorPosition");
             this.pCursorPosition.Name = "pCursorPosition";
-            this.ttMain.SetToolTip(this.pCursorPosition, resources.GetString("pCursorPosition.ToolTip"));
             // 
             // txtY
             // 
             resources.ApplyResources(this.txtY, "txtY");
             this.txtY.Name = "txtY";
             this.txtY.ReadOnly = true;
-            this.ttMain.SetToolTip(this.txtY, resources.GetString("txtY.ToolTip"));
             // 
             // txtX
             // 
             resources.ApplyResources(this.txtX, "txtX");
             this.txtX.Name = "txtX";
             this.txtX.ReadOnly = true;
-            this.ttMain.SetToolTip(this.txtX, resources.GetString("txtX.ToolTip"));
             // 
             // lblY
             // 
             resources.ApplyResources(this.lblY, "lblY");
             this.lblY.Name = "lblY";
-            this.ttMain.SetToolTip(this.lblY, resources.GetString("lblY.ToolTip"));
             // 
             // lblX
             // 
             resources.ApplyResources(this.lblX, "lblX");
             this.lblX.Name = "lblX";
-            this.ttMain.SetToolTip(this.lblX, resources.GetString("lblX.ToolTip"));
             // 
             // lblCursorPosition
             // 
             resources.ApplyResources(this.lblCursorPosition, "lblCursorPosition");
             this.lblCursorPosition.Name = "lblCursorPosition";
-            this.ttMain.SetToolTip(this.lblCursorPosition, resources.GetString("lblCursorPosition.ToolTip"));
             // 
             // btnClose
             // 
             resources.ApplyResources(this.btnClose, "btnClose");
             this.btnClose.Name = "btnClose";
-            this.ttMain.SetToolTip(this.btnClose, resources.GetString("btnClose.ToolTip"));
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
@@ -583,7 +528,6 @@
             // 
             resources.ApplyResources(this.flpColorPalette, "flpColorPalette");
             this.flpColorPalette.Name = "flpColorPalette";
-            this.ttMain.SetToolTip(this.flpColorPalette, resources.GetString("flpColorPalette.ToolTip"));
             // 
             // rbRecentColors
             // 
@@ -591,7 +535,6 @@
             this.rbRecentColors.Checked = true;
             this.rbRecentColors.Name = "rbRecentColors";
             this.rbRecentColors.TabStop = true;
-            this.ttMain.SetToolTip(this.rbRecentColors, resources.GetString("rbRecentColors.ToolTip"));
             this.rbRecentColors.UseVisualStyleBackColor = true;
             this.rbRecentColors.CheckedChanged += new System.EventHandler(this.rbRecentColors_CheckedChanged);
             // 
@@ -599,7 +542,6 @@
             // 
             resources.ApplyResources(this.rbStandardColors, "rbStandardColors");
             this.rbStandardColors.Name = "rbStandardColors";
-            this.ttMain.SetToolTip(this.rbStandardColors, resources.GetString("rbStandardColors.ToolTip"));
             this.rbStandardColors.UseVisualStyleBackColor = true;
             // 
             // flpColorPaletteSelection
@@ -608,25 +550,31 @@
             this.flpColorPaletteSelection.Controls.Add(this.rbRecentColors);
             this.flpColorPaletteSelection.Controls.Add(this.rbStandardColors);
             this.flpColorPaletteSelection.Name = "flpColorPaletteSelection";
-            this.ttMain.SetToolTip(this.flpColorPaletteSelection, resources.GetString("flpColorPaletteSelection.ToolTip"));
             // 
             // mbCopy
             // 
             resources.ApplyResources(this.mbCopy, "mbCopy");
             this.mbCopy.Menu = this.cmsCopy;
             this.mbCopy.Name = "mbCopy";
-            this.ttMain.SetToolTip(this.mbCopy, resources.GetString("mbCopy.ToolTip"));
             this.mbCopy.UseVisualStyleBackColor = true;
+            // 
+            // cbTransparent
+            // 
+            this.cbTransparent.Color = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.cbTransparent, "cbTransparent");
+            this.cbTransparent.ManualButtonClick = true;
+            this.cbTransparent.Name = "cbTransparent";
+            this.ttMain.SetToolTip(this.cbTransparent, resources.GetString("cbTransparent.ToolTip"));
+            this.cbTransparent.UseVisualStyleBackColor = true;
+            this.cbTransparent.Click += new System.EventHandler(this.cbTransparent_Click);
             // 
             // pbColorPreview
             // 
-            resources.ApplyResources(this.pbColorPreview, "pbColorPreview");
             this.pbColorPreview.BackColor = System.Drawing.SystemColors.Window;
             this.pbColorPreview.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pbColorPreview.DrawCheckeredBackground = true;
+            resources.ApplyResources(this.pbColorPreview, "pbColorPreview");
             this.pbColorPreview.Name = "pbColorPreview";
-            this.pbColorPreview.PictureBoxBackColor = System.Drawing.SystemColors.Window;
-            this.ttMain.SetToolTip(this.pbColorPreview, resources.GetString("pbColorPreview.ToolTip"));
             this.pbColorPreview.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pbColorPreview_MouseClick);
             // 
             // colorPicker
@@ -634,7 +582,6 @@
             resources.ApplyResources(this.colorPicker, "colorPicker");
             this.colorPicker.DrawStyle = ShareX.HelpersLib.DrawStyle.Hue;
             this.colorPicker.Name = "colorPicker";
-            this.ttMain.SetToolTip(this.colorPicker, resources.GetString("colorPicker.ToolTip"));
             this.colorPicker.ColorChanged += new ShareX.HelpersLib.ColorEventHandler(this.colorPicker_ColorChanged);
             // 
             // ColorPickerForm
@@ -693,7 +640,6 @@
             this.MaximizeBox = false;
             this.Name = "ColorPickerForm";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
-            this.ttMain.SetToolTip(this, resources.GetString("$this.ToolTip"));
             this.Shown += new System.EventHandler(this.ColorPickerForm_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.nudKey)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudYellow)).EndInit();

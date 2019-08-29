@@ -46,9 +46,9 @@
             // 
             // cbAdapters
             // 
-            resources.ApplyResources(this.cbAdapters, "cbAdapters");
             this.cbAdapters.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbAdapters.FormattingEnabled = true;
+            resources.ApplyResources(this.cbAdapters, "cbAdapters");
             this.cbAdapters.Name = "cbAdapters";
             this.cbAdapters.SelectedIndexChanged += new System.EventHandler(this.cbAdapters_SelectedIndexChanged);
             // 
@@ -89,16 +89,15 @@
             // btnCancel
             // 
             resources.ApplyResources(this.btnCancel, "btnCancel");
-            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // cbDNSType
             // 
-            resources.ApplyResources(this.cbDNSType, "cbDNSType");
             this.cbDNSType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbDNSType.FormattingEnabled = true;
+            resources.ApplyResources(this.cbDNSType, "cbDNSType");
             this.cbDNSType.Name = "cbDNSType";
             this.cbDNSType.SelectedIndexChanged += new System.EventHandler(this.cbDNSType_SelectedIndexChanged);
             // 

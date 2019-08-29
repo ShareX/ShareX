@@ -90,7 +90,8 @@ namespace ShareX.IndexerLib.Properties {
         ///    border-top-right-radius: 5px;
         ///    padding: 4px 0px 4px 10px;
         ///    margin: 0px 10px -10px 10px;
-        ///    color: # [rest of string was truncated]&quot;;.
+        ///    color: #FFFFFF;
+        ///    font-family: Aria [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string IndexerDefault {
             get {

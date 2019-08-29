@@ -38,39 +38,42 @@
             // 
             // lblProgress
             // 
-            resources.ApplyResources(this.lblProgress, "lblProgress");
             this.lblProgress.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.lblProgress, "lblProgress");
             this.lblProgress.ForeColor = System.Drawing.Color.White;
             this.lblProgress.Name = "lblProgress";
             // 
             // lblStatus
             // 
-            resources.ApplyResources(this.lblStatus, "lblStatus");
             this.lblStatus.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.lblStatus, "lblStatus");
             this.lblStatus.ForeColor = System.Drawing.Color.White;
             this.lblStatus.Name = "lblStatus";
             // 
             // lblFilename
             // 
-            resources.ApplyResources(this.lblFilename, "lblFilename");
             this.lblFilename.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.lblFilename, "lblFilename");
             this.lblFilename.ForeColor = System.Drawing.Color.White;
             this.lblFilename.Name = "lblFilename";
             // 
             // btnAction
             // 
-            resources.ApplyResources(this.btnAction, "btnAction");
             this.btnAction.BackColor = System.Drawing.Color.Transparent;
             this.btnAction.Cursor = System.Windows.Forms.Cursors.Hand;
+            resources.ApplyResources(this.btnAction, "btnAction");
             this.btnAction.ForeColor = System.Drawing.Color.White;
             this.btnAction.Name = "btnAction";
             this.btnAction.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnAction_MouseClick);
             // 
             // pbProgress
             // 
-            resources.ApplyResources(this.pbProgress, "pbProgress");
             this.pbProgress.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.pbProgress, "pbProgress");
+            this.pbProgress.Maximum = 100;
+            this.pbProgress.Minimum = 0;
             this.pbProgress.Name = "pbProgress";
+            this.pbProgress.Value = 0;
             // 
             // DownloaderForm
             // 

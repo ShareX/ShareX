@@ -40,8 +40,8 @@
             // 
             // lblQuestion
             // 
-            resources.ApplyResources(this.lblQuestion, "lblQuestion");
             this.lblQuestion.BackColor = System.Drawing.Color.RoyalBlue;
+            resources.ApplyResources(this.lblQuestion, "lblQuestion");
             this.lblQuestion.ForeColor = System.Drawing.Color.White;
             this.lblQuestion.Name = "lblQuestion";
             // 
@@ -82,12 +82,10 @@
             // pbClipboard
             // 
             resources.ApplyResources(this.pbClipboard, "pbClipboard");
-            this.pbClipboard.BackColor = System.Drawing.SystemColors.Window;
             this.pbClipboard.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pbClipboard.DrawCheckeredBackground = true;
             this.pbClipboard.FullscreenOnClick = true;
             this.pbClipboard.Name = "pbClipboard";
-            this.pbClipboard.PictureBoxBackColor = System.Drawing.SystemColors.Window;
             this.pbClipboard.ShowImageSizeLabel = true;
             // 
             // ClipboardContentViewer

@@ -98,49 +98,48 @@ namespace ShareX.HelpersLib
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InputBox));
-            this.btnOK = new System.Windows.Forms.Button();
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.txtInputText = new System.Windows.Forms.TextBox();
-            this.SuspendLayout();
-            // 
+            btnOK = new System.Windows.Forms.Button();
+            btnCancel = new System.Windows.Forms.Button();
+            txtInputText = new System.Windows.Forms.TextBox();
+            SuspendLayout();
+            //
             // btnOK
-            // 
-            resources.ApplyResources(this.btnOK, "btnOK");
-            this.btnOK.Name = "btnOK";
-            this.btnOK.UseVisualStyleBackColor = true;
-            this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
-            // 
+            //
+            resources.ApplyResources(btnOK, "btnOK");
+            btnOK.Name = "btnOK";
+            btnOK.UseVisualStyleBackColor = true;
+            btnOK.Click += new System.EventHandler(btnOK_Click);
+            //
             // btnCancel
-            // 
-            resources.ApplyResources(this.btnCancel, "btnCancel");
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-            // 
+            //
+            resources.ApplyResources(btnCancel, "btnCancel");
+            btnCancel.Name = "btnCancel";
+            btnCancel.UseVisualStyleBackColor = true;
+            btnCancel.Click += new System.EventHandler(btnCancel_Click);
+            //
             // txtInputText
-            // 
-            resources.ApplyResources(this.txtInputText, "txtInputText");
-            this.txtInputText.Name = "txtInputText";
-            // 
+            //
+            resources.ApplyResources(txtInputText, "txtInputText");
+            txtInputText.Name = "txtInputText";
+            //
             // InputBox
-            // 
-            this.AcceptButton = this.btnOK;
+            //
+            AcceptButton = btnOK;
             resources.ApplyResources(this, "$this");
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Window;
-            this.Controls.Add(this.txtInputText);
-            this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.btnOK);
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-            this.Name = "InputBox";
-            this.ShowInTaskbar = false;
-            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
-            this.TopMost = true;
-            this.Shown += new System.EventHandler(this.InputBox_Shown);
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            BackColor = System.Drawing.SystemColors.Window;
+            Controls.Add(txtInputText);
+            Controls.Add(btnCancel);
+            Controls.Add(btnOK);
+            MaximizeBox = false;
+            MinimizeBox = false;
+            Name = "InputBox";
+            ShowInTaskbar = false;
+            SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
+            TopMost = true;
+            Shown += new System.EventHandler(InputBox_Shown);
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         private System.Windows.Forms.Button btnOK;

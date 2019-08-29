@@ -306,13 +306,11 @@
             // 
             // scMain.Panel1
             // 
-            resources.ApplyResources(this.scMain.Panel1, "scMain.Panel1");
             this.scMain.Panel1.Controls.Add(this.lblListViewTip);
             this.scMain.Panel1.Controls.Add(this.lvUploads);
             // 
             // scMain.Panel2
             // 
-            resources.ApplyResources(this.scMain.Panel2, "scMain.Panel2");
             this.scMain.Panel2.Controls.Add(this.pbPreview);
             this.scMain.SplitterColor = System.Drawing.Color.White;
             this.scMain.SplitterLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(189)))), ((int)(((byte)(189)))));
@@ -329,7 +327,6 @@
             // 
             // lvUploads
             // 
-            resources.ApplyResources(this.lvUploads, "lvUploads");
             this.lvUploads.AutoFillColumn = true;
             this.lvUploads.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.lvUploads.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
@@ -340,6 +337,7 @@
             this.chElapsed,
             this.chRemaining,
             this.chURL});
+            resources.ApplyResources(this.lvUploads, "lvUploads");
             this.lvUploads.FullRowSelect = true;
             this.lvUploads.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.lvUploads.HideSelection = false;
@@ -384,8 +382,8 @@
             // 
             // pbPreview
             // 
-            resources.ApplyResources(this.pbPreview, "pbPreview");
             this.pbPreview.BackColor = System.Drawing.SystemColors.Window;
+            resources.ApplyResources(this.pbPreview, "pbPreview");
             this.pbPreview.DrawCheckeredBackground = true;
             this.pbPreview.EnableRightClickMenu = true;
             this.pbPreview.FullscreenOnClick = true;
@@ -403,18 +401,18 @@
             // 
             // pbSupportUsOpen
             // 
-            resources.ApplyResources(this.pbSupportUsOpen, "pbSupportUsOpen");
             this.pbSupportUsOpen.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbSupportUsOpen.Image = global::ShareX.Properties.Resources.SupportUs_Button_01;
+            resources.ApplyResources(this.pbSupportUsOpen, "pbSupportUsOpen");
             this.pbSupportUsOpen.Name = "pbSupportUsOpen";
             this.pbSupportUsOpen.TabStop = false;
             this.pbSupportUsOpen.Click += new System.EventHandler(this.pbSupportUsOpen_Click);
             // 
             // pbSupportUsHide
             // 
-            resources.ApplyResources(this.pbSupportUsHide, "pbSupportUsHide");
             this.pbSupportUsHide.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbSupportUsHide.Image = global::ShareX.Properties.Resources.SupportUs_Button_02;
+            resources.ApplyResources(this.pbSupportUsHide, "pbSupportUsHide");
             this.pbSupportUsHide.Name = "pbSupportUsHide";
             this.pbSupportUsHide.TabStop = false;
             this.pbSupportUsHide.Click += new System.EventHandler(this.pbSupportUsHide_Click);
@@ -452,7 +450,6 @@
             // 
             // tsddbCapture
             // 
-            resources.ApplyResources(this.tsddbCapture, "tsddbCapture");
             this.tsddbCapture.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiFullscreen,
             this.tsmiWindow,
@@ -470,107 +467,107 @@
             this.tsmiShowCursor,
             this.tsmiScreenshotDelay});
             this.tsddbCapture.Image = global::ShareX.Properties.Resources.camera;
+            resources.ApplyResources(this.tsddbCapture, "tsddbCapture");
             this.tsddbCapture.Name = "tsddbCapture";
             this.tsddbCapture.DropDownOpening += new System.EventHandler(this.tsddbCapture_DropDownOpening);
             // 
             // tsmiFullscreen
             // 
-            resources.ApplyResources(this.tsmiFullscreen, "tsmiFullscreen");
             this.tsmiFullscreen.Image = global::ShareX.Properties.Resources.layer_fullscreen;
             this.tsmiFullscreen.Name = "tsmiFullscreen";
+            resources.ApplyResources(this.tsmiFullscreen, "tsmiFullscreen");
             this.tsmiFullscreen.Click += new System.EventHandler(this.tsmiFullscreen_Click);
             // 
             // tsmiWindow
             // 
-            resources.ApplyResources(this.tsmiWindow, "tsmiWindow");
             this.tsmiWindow.Image = global::ShareX.Properties.Resources.application_blue;
             this.tsmiWindow.Name = "tsmiWindow";
+            resources.ApplyResources(this.tsmiWindow, "tsmiWindow");
             // 
             // tsmiMonitor
             // 
-            resources.ApplyResources(this.tsmiMonitor, "tsmiMonitor");
             this.tsmiMonitor.Image = global::ShareX.Properties.Resources.monitor;
             this.tsmiMonitor.Name = "tsmiMonitor";
+            resources.ApplyResources(this.tsmiMonitor, "tsmiMonitor");
             // 
             // tsmiRectangle
             // 
-            resources.ApplyResources(this.tsmiRectangle, "tsmiRectangle");
             this.tsmiRectangle.Image = global::ShareX.Properties.Resources.layer_shape;
             this.tsmiRectangle.Name = "tsmiRectangle";
+            resources.ApplyResources(this.tsmiRectangle, "tsmiRectangle");
             this.tsmiRectangle.Click += new System.EventHandler(this.tsmiRectangle_Click);
             // 
             // tsmiRectangleLight
             // 
-            resources.ApplyResources(this.tsmiRectangleLight, "tsmiRectangleLight");
             this.tsmiRectangleLight.Image = global::ShareX.Properties.Resources.Rectangle;
             this.tsmiRectangleLight.Name = "tsmiRectangleLight";
+            resources.ApplyResources(this.tsmiRectangleLight, "tsmiRectangleLight");
             this.tsmiRectangleLight.Click += new System.EventHandler(this.tsmiRectangleLight_Click);
             // 
             // tsmiRectangleTransparent
             // 
-            resources.ApplyResources(this.tsmiRectangleTransparent, "tsmiRectangleTransparent");
             this.tsmiRectangleTransparent.Image = global::ShareX.Properties.Resources.layer_transparent;
             this.tsmiRectangleTransparent.Name = "tsmiRectangleTransparent";
+            resources.ApplyResources(this.tsmiRectangleTransparent, "tsmiRectangleTransparent");
             this.tsmiRectangleTransparent.Click += new System.EventHandler(this.tsmiRectangleTransparent_Click);
             // 
             // tsmiLastRegion
             // 
-            resources.ApplyResources(this.tsmiLastRegion, "tsmiLastRegion");
             this.tsmiLastRegion.Image = global::ShareX.Properties.Resources.layers;
             this.tsmiLastRegion.Name = "tsmiLastRegion";
+            resources.ApplyResources(this.tsmiLastRegion, "tsmiLastRegion");
             this.tsmiLastRegion.Click += new System.EventHandler(this.tsmiLastRegion_Click);
             // 
             // tsmiScreenRecordingFFmpeg
             // 
-            resources.ApplyResources(this.tsmiScreenRecordingFFmpeg, "tsmiScreenRecordingFFmpeg");
             this.tsmiScreenRecordingFFmpeg.Image = global::ShareX.Properties.Resources.camcorder_image;
             this.tsmiScreenRecordingFFmpeg.Name = "tsmiScreenRecordingFFmpeg";
+            resources.ApplyResources(this.tsmiScreenRecordingFFmpeg, "tsmiScreenRecordingFFmpeg");
             this.tsmiScreenRecordingFFmpeg.Click += new System.EventHandler(this.tsmiScreenRecordingFFmpeg_Click);
             // 
             // tsmiScreenRecordingGIF
             // 
-            resources.ApplyResources(this.tsmiScreenRecordingGIF, "tsmiScreenRecordingGIF");
             this.tsmiScreenRecordingGIF.Image = global::ShareX.Properties.Resources.film;
             this.tsmiScreenRecordingGIF.Name = "tsmiScreenRecordingGIF";
+            resources.ApplyResources(this.tsmiScreenRecordingGIF, "tsmiScreenRecordingGIF");
             this.tsmiScreenRecordingGIF.Click += new System.EventHandler(this.tsmiScreenRecordingGIF_Click);
             // 
             // tsmiScrollingCapture
             // 
-            resources.ApplyResources(this.tsmiScrollingCapture, "tsmiScrollingCapture");
             this.tsmiScrollingCapture.Image = global::ShareX.Properties.Resources.ui_scroll_pane_image;
             this.tsmiScrollingCapture.Name = "tsmiScrollingCapture";
+            resources.ApplyResources(this.tsmiScrollingCapture, "tsmiScrollingCapture");
             this.tsmiScrollingCapture.Click += new System.EventHandler(this.tsmiScrollingCapture_Click);
             // 
             // tsmiTextCapture
             // 
-            resources.ApplyResources(this.tsmiTextCapture, "tsmiTextCapture");
             this.tsmiTextCapture.Image = global::ShareX.Properties.Resources.edit_drop_cap;
             this.tsmiTextCapture.Name = "tsmiTextCapture";
+            resources.ApplyResources(this.tsmiTextCapture, "tsmiTextCapture");
             this.tsmiTextCapture.Click += new System.EventHandler(this.tsmiTextCapture_Click);
             // 
             // tsmiAutoCapture
             // 
-            resources.ApplyResources(this.tsmiAutoCapture, "tsmiAutoCapture");
             this.tsmiAutoCapture.Image = global::ShareX.Properties.Resources.clock;
             this.tsmiAutoCapture.Name = "tsmiAutoCapture";
+            resources.ApplyResources(this.tsmiAutoCapture, "tsmiAutoCapture");
             this.tsmiAutoCapture.Click += new System.EventHandler(this.tsmiAutoCapture_Click);
             // 
             // tssCapture1
             // 
-            resources.ApplyResources(this.tssCapture1, "tssCapture1");
             this.tssCapture1.Name = "tssCapture1";
+            resources.ApplyResources(this.tssCapture1, "tssCapture1");
             // 
             // tsmiShowCursor
             // 
-            resources.ApplyResources(this.tsmiShowCursor, "tsmiShowCursor");
             this.tsmiShowCursor.CheckOnClick = true;
             this.tsmiShowCursor.Image = global::ShareX.Properties.Resources.cursor;
             this.tsmiShowCursor.Name = "tsmiShowCursor";
+            resources.ApplyResources(this.tsmiShowCursor, "tsmiShowCursor");
             this.tsmiShowCursor.Click += new System.EventHandler(this.tsmiShowCursor_Click);
             // 
             // tsmiScreenshotDelay
             // 
-            resources.ApplyResources(this.tsmiScreenshotDelay, "tsmiScreenshotDelay");
             this.tsmiScreenshotDelay.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiScreenshotDelay0,
             this.tsmiScreenshotDelay1,
@@ -578,47 +575,47 @@
             this.tsmiScreenshotDelay3,
             this.tsmiScreenshotDelay4,
             this.tsmiScreenshotDelay5});
+            resources.ApplyResources(this.tsmiScreenshotDelay, "tsmiScreenshotDelay");
             this.tsmiScreenshotDelay.Name = "tsmiScreenshotDelay";
             // 
             // tsmiScreenshotDelay0
             // 
-            resources.ApplyResources(this.tsmiScreenshotDelay0, "tsmiScreenshotDelay0");
             this.tsmiScreenshotDelay0.Name = "tsmiScreenshotDelay0";
+            resources.ApplyResources(this.tsmiScreenshotDelay0, "tsmiScreenshotDelay0");
             this.tsmiScreenshotDelay0.Click += new System.EventHandler(this.tsmiScreenshotDelay0_Click);
             // 
             // tsmiScreenshotDelay1
             // 
-            resources.ApplyResources(this.tsmiScreenshotDelay1, "tsmiScreenshotDelay1");
             this.tsmiScreenshotDelay1.Name = "tsmiScreenshotDelay1";
+            resources.ApplyResources(this.tsmiScreenshotDelay1, "tsmiScreenshotDelay1");
             this.tsmiScreenshotDelay1.Click += new System.EventHandler(this.tsmiScreenshotDelay1_Click);
             // 
             // tsmiScreenshotDelay2
             // 
-            resources.ApplyResources(this.tsmiScreenshotDelay2, "tsmiScreenshotDelay2");
             this.tsmiScreenshotDelay2.Name = "tsmiScreenshotDelay2";
+            resources.ApplyResources(this.tsmiScreenshotDelay2, "tsmiScreenshotDelay2");
             this.tsmiScreenshotDelay2.Click += new System.EventHandler(this.tsmiScreenshotDelay2_Click);
             // 
             // tsmiScreenshotDelay3
             // 
-            resources.ApplyResources(this.tsmiScreenshotDelay3, "tsmiScreenshotDelay3");
             this.tsmiScreenshotDelay3.Name = "tsmiScreenshotDelay3";
+            resources.ApplyResources(this.tsmiScreenshotDelay3, "tsmiScreenshotDelay3");
             this.tsmiScreenshotDelay3.Click += new System.EventHandler(this.tsmiScreenshotDelay3_Click);
             // 
             // tsmiScreenshotDelay4
             // 
-            resources.ApplyResources(this.tsmiScreenshotDelay4, "tsmiScreenshotDelay4");
             this.tsmiScreenshotDelay4.Name = "tsmiScreenshotDelay4";
+            resources.ApplyResources(this.tsmiScreenshotDelay4, "tsmiScreenshotDelay4");
             this.tsmiScreenshotDelay4.Click += new System.EventHandler(this.tsmiScreenshotDelay4_Click);
             // 
             // tsmiScreenshotDelay5
             // 
-            resources.ApplyResources(this.tsmiScreenshotDelay5, "tsmiScreenshotDelay5");
             this.tsmiScreenshotDelay5.Name = "tsmiScreenshotDelay5";
+            resources.ApplyResources(this.tsmiScreenshotDelay5, "tsmiScreenshotDelay5");
             this.tsmiScreenshotDelay5.Click += new System.EventHandler(this.tsmiScreenshotDelay5_Click);
             // 
             // tsddbUpload
             // 
-            resources.ApplyResources(this.tsddbUpload, "tsddbUpload");
             this.tsddbUpload.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiUploadFile,
             this.tsmiUploadFolder,
@@ -628,66 +625,66 @@
             this.tsmiUploadDragDrop,
             this.tsmiShortenURL});
             this.tsddbUpload.Image = global::ShareX.Properties.Resources.arrow_090;
+            resources.ApplyResources(this.tsddbUpload, "tsddbUpload");
             this.tsddbUpload.Name = "tsddbUpload";
             // 
             // tsmiUploadFile
             // 
-            resources.ApplyResources(this.tsmiUploadFile, "tsmiUploadFile");
             this.tsmiUploadFile.Image = global::ShareX.Properties.Resources.folder_open_document;
             this.tsmiUploadFile.Name = "tsmiUploadFile";
+            resources.ApplyResources(this.tsmiUploadFile, "tsmiUploadFile");
             this.tsmiUploadFile.Click += new System.EventHandler(this.tsbFileUpload_Click);
             // 
             // tsmiUploadFolder
             // 
-            resources.ApplyResources(this.tsmiUploadFolder, "tsmiUploadFolder");
             this.tsmiUploadFolder.Image = global::ShareX.Properties.Resources.folder;
             this.tsmiUploadFolder.Name = "tsmiUploadFolder";
+            resources.ApplyResources(this.tsmiUploadFolder, "tsmiUploadFolder");
             this.tsmiUploadFolder.Click += new System.EventHandler(this.tsmiUploadFolder_Click);
             // 
             // tsmiUploadClipboard
             // 
-            resources.ApplyResources(this.tsmiUploadClipboard, "tsmiUploadClipboard");
             this.tsmiUploadClipboard.Image = global::ShareX.Properties.Resources.clipboard;
             this.tsmiUploadClipboard.Name = "tsmiUploadClipboard";
+            resources.ApplyResources(this.tsmiUploadClipboard, "tsmiUploadClipboard");
             this.tsmiUploadClipboard.Click += new System.EventHandler(this.tsbClipboardUpload_Click);
             // 
             // tsmiUploadText
             // 
-            resources.ApplyResources(this.tsmiUploadText, "tsmiUploadText");
             this.tsmiUploadText.Image = global::ShareX.Properties.Resources.notebook;
             this.tsmiUploadText.Name = "tsmiUploadText";
+            resources.ApplyResources(this.tsmiUploadText, "tsmiUploadText");
             this.tsmiUploadText.Click += new System.EventHandler(this.tsmiUploadText_Click);
             // 
             // tsmiUploadURL
             // 
-            resources.ApplyResources(this.tsmiUploadURL, "tsmiUploadURL");
             this.tsmiUploadURL.Image = global::ShareX.Properties.Resources.drive;
             this.tsmiUploadURL.Name = "tsmiUploadURL";
+            resources.ApplyResources(this.tsmiUploadURL, "tsmiUploadURL");
             this.tsmiUploadURL.Click += new System.EventHandler(this.tsmiUploadURL_Click);
             // 
             // tsmiUploadDragDrop
             // 
-            resources.ApplyResources(this.tsmiUploadDragDrop, "tsmiUploadDragDrop");
             this.tsmiUploadDragDrop.Image = global::ShareX.Properties.Resources.inbox;
             this.tsmiUploadDragDrop.Name = "tsmiUploadDragDrop";
+            resources.ApplyResources(this.tsmiUploadDragDrop, "tsmiUploadDragDrop");
             this.tsmiUploadDragDrop.Click += new System.EventHandler(this.tsbDragDropUpload_Click);
             // 
             // tsmiShortenURL
             // 
-            resources.ApplyResources(this.tsmiShortenURL, "tsmiShortenURL");
             this.tsmiShortenURL.Image = global::ShareX.Properties.Resources.edit_scale;
             this.tsmiShortenURL.Name = "tsmiShortenURL";
+            resources.ApplyResources(this.tsmiShortenURL, "tsmiShortenURL");
             this.tsmiShortenURL.Click += new System.EventHandler(this.tsmiShortenURL_Click);
             // 
             // tsddbWorkflows
             // 
-            resources.ApplyResources(this.tsddbWorkflows, "tsddbWorkflows");
             this.tsddbWorkflows.Image = global::ShareX.Properties.Resources.categories;
+            resources.ApplyResources(this.tsddbWorkflows, "tsddbWorkflows");
             this.tsddbWorkflows.Name = "tsddbWorkflows";
             // 
             // tsddbTools
             // 
-            resources.ApplyResources(this.tsddbTools, "tsddbTools");
             this.tsddbTools.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiColorPicker,
             this.tsmiScreenColorPicker,
@@ -704,127 +701,127 @@
             this.tsmiTweetMessage,
             this.tsmiMonitorTest});
             this.tsddbTools.Image = global::ShareX.Properties.Resources.toolbox;
+            resources.ApplyResources(this.tsddbTools, "tsddbTools");
             this.tsddbTools.Name = "tsddbTools";
             // 
             // tsmiColorPicker
             // 
-            resources.ApplyResources(this.tsmiColorPicker, "tsmiColorPicker");
             this.tsmiColorPicker.Image = global::ShareX.Properties.Resources.color;
             this.tsmiColorPicker.Name = "tsmiColorPicker";
+            resources.ApplyResources(this.tsmiColorPicker, "tsmiColorPicker");
             this.tsmiColorPicker.Click += new System.EventHandler(this.tsmiColorPicker_Click);
             // 
             // tsmiScreenColorPicker
             // 
-            resources.ApplyResources(this.tsmiScreenColorPicker, "tsmiScreenColorPicker");
             this.tsmiScreenColorPicker.Image = global::ShareX.Properties.Resources.pipette;
             this.tsmiScreenColorPicker.Name = "tsmiScreenColorPicker";
+            resources.ApplyResources(this.tsmiScreenColorPicker, "tsmiScreenColorPicker");
             this.tsmiScreenColorPicker.Click += new System.EventHandler(this.tsmiScreenColorPicker_Click);
             // 
             // tsmiImageEditor
             // 
-            resources.ApplyResources(this.tsmiImageEditor, "tsmiImageEditor");
             this.tsmiImageEditor.Image = global::ShareX.Properties.Resources.image_pencil;
             this.tsmiImageEditor.Name = "tsmiImageEditor";
+            resources.ApplyResources(this.tsmiImageEditor, "tsmiImageEditor");
             this.tsmiImageEditor.Click += new System.EventHandler(this.tsmiImageEditor_Click);
             // 
             // tsmiImageEffects
             // 
-            resources.ApplyResources(this.tsmiImageEffects, "tsmiImageEffects");
             this.tsmiImageEffects.Image = global::ShareX.Properties.Resources.image_saturation;
             this.tsmiImageEffects.Name = "tsmiImageEffects";
+            resources.ApplyResources(this.tsmiImageEffects, "tsmiImageEffects");
             this.tsmiImageEffects.Click += new System.EventHandler(this.tsmiImageEffects_Click);
             // 
             // tsmiHashCheck
             // 
-            resources.ApplyResources(this.tsmiHashCheck, "tsmiHashCheck");
             this.tsmiHashCheck.Image = global::ShareX.Properties.Resources.application_task;
             this.tsmiHashCheck.Name = "tsmiHashCheck";
+            resources.ApplyResources(this.tsmiHashCheck, "tsmiHashCheck");
             this.tsmiHashCheck.Click += new System.EventHandler(this.tsmiHashCheck_Click);
             // 
             // tsmiDNSChanger
             // 
-            resources.ApplyResources(this.tsmiDNSChanger, "tsmiDNSChanger");
             this.tsmiDNSChanger.Image = global::ShareX.Properties.Resources.network_ip;
             this.tsmiDNSChanger.Name = "tsmiDNSChanger";
+            resources.ApplyResources(this.tsmiDNSChanger, "tsmiDNSChanger");
             this.tsmiDNSChanger.Click += new System.EventHandler(this.tsmiDNSChanger_Click);
             // 
             // tsmiQRCode
             // 
-            resources.ApplyResources(this.tsmiQRCode, "tsmiQRCode");
             this.tsmiQRCode.Image = global::ShareX.Properties.Resources.barcode_2d;
             this.tsmiQRCode.Name = "tsmiQRCode";
+            resources.ApplyResources(this.tsmiQRCode, "tsmiQRCode");
             this.tsmiQRCode.Click += new System.EventHandler(this.tsmiQRCode_Click);
             // 
             // tsmiRuler
             // 
-            resources.ApplyResources(this.tsmiRuler, "tsmiRuler");
             this.tsmiRuler.Image = global::ShareX.Properties.Resources.ruler_triangle;
             this.tsmiRuler.Name = "tsmiRuler";
+            resources.ApplyResources(this.tsmiRuler, "tsmiRuler");
             this.tsmiRuler.Click += new System.EventHandler(this.tsmiRuler_Click);
             // 
             // tsmiIndexFolder
             // 
-            resources.ApplyResources(this.tsmiIndexFolder, "tsmiIndexFolder");
             this.tsmiIndexFolder.Image = global::ShareX.Properties.Resources.folder_tree;
             this.tsmiIndexFolder.Name = "tsmiIndexFolder";
+            resources.ApplyResources(this.tsmiIndexFolder, "tsmiIndexFolder");
             this.tsmiIndexFolder.Click += new System.EventHandler(this.tsmiIndexFolder_Click);
             // 
             // tsmiImageCombiner
             // 
-            resources.ApplyResources(this.tsmiImageCombiner, "tsmiImageCombiner");
             this.tsmiImageCombiner.Image = global::ShareX.Properties.Resources.document_break;
             this.tsmiImageCombiner.Name = "tsmiImageCombiner";
+            resources.ApplyResources(this.tsmiImageCombiner, "tsmiImageCombiner");
             this.tsmiImageCombiner.Click += new System.EventHandler(this.tsmiImageCombiner_Click);
             // 
             // tsmiImageThumbnailer
             // 
-            resources.ApplyResources(this.tsmiImageThumbnailer, "tsmiImageThumbnailer");
             this.tsmiImageThumbnailer.Image = global::ShareX.Properties.Resources.image_resize_actual;
             this.tsmiImageThumbnailer.Name = "tsmiImageThumbnailer";
+            resources.ApplyResources(this.tsmiImageThumbnailer, "tsmiImageThumbnailer");
             this.tsmiImageThumbnailer.Click += new System.EventHandler(this.tsmiImageThumbnailer_Click);
             // 
             // tsmiVideoThumbnailer
             // 
-            resources.ApplyResources(this.tsmiVideoThumbnailer, "tsmiVideoThumbnailer");
             this.tsmiVideoThumbnailer.Image = global::ShareX.Properties.Resources.images_stack;
             this.tsmiVideoThumbnailer.Name = "tsmiVideoThumbnailer";
+            resources.ApplyResources(this.tsmiVideoThumbnailer, "tsmiVideoThumbnailer");
             this.tsmiVideoThumbnailer.Click += new System.EventHandler(this.tsmiVideoThumbnailer_Click);
             // 
             // tsmiTweetMessage
             // 
-            resources.ApplyResources(this.tsmiTweetMessage, "tsmiTweetMessage");
             this.tsmiTweetMessage.Image = global::ShareX.Properties.Resources.Twitter;
             this.tsmiTweetMessage.Name = "tsmiTweetMessage";
+            resources.ApplyResources(this.tsmiTweetMessage, "tsmiTweetMessage");
             this.tsmiTweetMessage.Click += new System.EventHandler(this.tsmiTweetMessage_Click);
             // 
             // tsmiMonitorTest
             // 
-            resources.ApplyResources(this.tsmiMonitorTest, "tsmiMonitorTest");
             this.tsmiMonitorTest.Image = global::ShareX.Properties.Resources.monitor;
             this.tsmiMonitorTest.Name = "tsmiMonitorTest";
+            resources.ApplyResources(this.tsmiMonitorTest, "tsmiMonitorTest");
             this.tsmiMonitorTest.Click += new System.EventHandler(this.tsmiMonitorTest_Click);
             // 
             // tssMain1
             // 
-            resources.ApplyResources(this.tssMain1, "tssMain1");
             this.tssMain1.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
             this.tssMain1.Name = "tssMain1";
+            resources.ApplyResources(this.tssMain1, "tssMain1");
             // 
             // tsddbAfterCaptureTasks
             // 
-            resources.ApplyResources(this.tsddbAfterCaptureTasks, "tsddbAfterCaptureTasks");
             this.tsddbAfterCaptureTasks.Image = global::ShareX.Properties.Resources.image_export;
+            resources.ApplyResources(this.tsddbAfterCaptureTasks, "tsddbAfterCaptureTasks");
             this.tsddbAfterCaptureTasks.Name = "tsddbAfterCaptureTasks";
             // 
             // tsddbAfterUploadTasks
             // 
-            resources.ApplyResources(this.tsddbAfterUploadTasks, "tsddbAfterUploadTasks");
             this.tsddbAfterUploadTasks.Image = global::ShareX.Properties.Resources.upload_cloud;
+            resources.ApplyResources(this.tsddbAfterUploadTasks, "tsddbAfterUploadTasks");
             this.tsddbAfterUploadTasks.Name = "tsddbAfterUploadTasks";
             // 
             // tsddbDestinations
             // 
-            resources.ApplyResources(this.tsddbDestinations, "tsddbDestinations");
             this.tsddbDestinations.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiImageUploaders,
             this.tsmiTextUploaders,
@@ -835,117 +832,117 @@
             this.tsmiDestinationSettings,
             this.tsmiCustomUploaderSettings});
             this.tsddbDestinations.Image = global::ShareX.Properties.Resources.drive_globe;
+            resources.ApplyResources(this.tsddbDestinations, "tsddbDestinations");
             this.tsddbDestinations.Name = "tsddbDestinations";
             this.tsddbDestinations.DropDownOpened += new System.EventHandler(this.tsddbDestinations_DropDownOpened);
             // 
             // tsmiImageUploaders
             // 
-            resources.ApplyResources(this.tsmiImageUploaders, "tsmiImageUploaders");
             this.tsmiImageUploaders.Image = global::ShareX.Properties.Resources.image;
             this.tsmiImageUploaders.Name = "tsmiImageUploaders";
+            resources.ApplyResources(this.tsmiImageUploaders, "tsmiImageUploaders");
             // 
             // tsmiTextUploaders
             // 
-            resources.ApplyResources(this.tsmiTextUploaders, "tsmiTextUploaders");
             this.tsmiTextUploaders.Image = global::ShareX.Properties.Resources.notebook;
             this.tsmiTextUploaders.Name = "tsmiTextUploaders";
+            resources.ApplyResources(this.tsmiTextUploaders, "tsmiTextUploaders");
             // 
             // tsmiFileUploaders
             // 
-            resources.ApplyResources(this.tsmiFileUploaders, "tsmiFileUploaders");
             this.tsmiFileUploaders.Image = global::ShareX.Properties.Resources.application_block;
             this.tsmiFileUploaders.Name = "tsmiFileUploaders";
+            resources.ApplyResources(this.tsmiFileUploaders, "tsmiFileUploaders");
             // 
             // tsmiURLShorteners
             // 
-            resources.ApplyResources(this.tsmiURLShorteners, "tsmiURLShorteners");
             this.tsmiURLShorteners.Image = global::ShareX.Properties.Resources.edit_scale;
             this.tsmiURLShorteners.Name = "tsmiURLShorteners";
+            resources.ApplyResources(this.tsmiURLShorteners, "tsmiURLShorteners");
             // 
             // tsmiURLSharingServices
             // 
-            resources.ApplyResources(this.tsmiURLSharingServices, "tsmiURLSharingServices");
             this.tsmiURLSharingServices.Image = global::ShareX.Properties.Resources.globe_share;
             this.tsmiURLSharingServices.Name = "tsmiURLSharingServices";
+            resources.ApplyResources(this.tsmiURLSharingServices, "tsmiURLSharingServices");
             // 
             // tssDestinations1
             // 
-            resources.ApplyResources(this.tssDestinations1, "tssDestinations1");
             this.tssDestinations1.Name = "tssDestinations1";
+            resources.ApplyResources(this.tssDestinations1, "tssDestinations1");
             // 
             // tsmiDestinationSettings
             // 
-            resources.ApplyResources(this.tsmiDestinationSettings, "tsmiDestinationSettings");
             this.tsmiDestinationSettings.Image = global::ShareX.Properties.Resources.globe_pencil;
             this.tsmiDestinationSettings.Name = "tsmiDestinationSettings";
+            resources.ApplyResources(this.tsmiDestinationSettings, "tsmiDestinationSettings");
             this.tsmiDestinationSettings.Click += new System.EventHandler(this.tsmiDestinationSettings_Click);
             // 
             // tsmiCustomUploaderSettings
             // 
-            resources.ApplyResources(this.tsmiCustomUploaderSettings, "tsmiCustomUploaderSettings");
             this.tsmiCustomUploaderSettings.Image = global::ShareX.Properties.Resources.network_cloud;
             this.tsmiCustomUploaderSettings.Name = "tsmiCustomUploaderSettings";
+            resources.ApplyResources(this.tsmiCustomUploaderSettings, "tsmiCustomUploaderSettings");
             this.tsmiCustomUploaderSettings.Click += new System.EventHandler(this.tsmiCustomUploaderSettings_Click);
             // 
             // tsbTaskSettings
             // 
-            resources.ApplyResources(this.tsbTaskSettings, "tsbTaskSettings");
             this.tsbTaskSettings.Image = global::ShareX.Properties.Resources.gear;
+            resources.ApplyResources(this.tsbTaskSettings, "tsbTaskSettings");
             this.tsbTaskSettings.Name = "tsbTaskSettings";
             this.tsbTaskSettings.Click += new System.EventHandler(this.tsbTaskSettings_Click);
             // 
             // tsbApplicationSettings
             // 
-            resources.ApplyResources(this.tsbApplicationSettings, "tsbApplicationSettings");
             this.tsbApplicationSettings.Image = global::ShareX.Properties.Resources.wrench_screwdriver;
+            resources.ApplyResources(this.tsbApplicationSettings, "tsbApplicationSettings");
             this.tsbApplicationSettings.Name = "tsbApplicationSettings";
             this.tsbApplicationSettings.Click += new System.EventHandler(this.tsbApplicationSettings_Click);
             // 
             // tsbHotkeySettings
             // 
-            resources.ApplyResources(this.tsbHotkeySettings, "tsbHotkeySettings");
             this.tsbHotkeySettings.Image = global::ShareX.Properties.Resources.keyboard;
+            resources.ApplyResources(this.tsbHotkeySettings, "tsbHotkeySettings");
             this.tsbHotkeySettings.Name = "tsbHotkeySettings";
             this.tsbHotkeySettings.Click += new System.EventHandler(this.tsbHotkeySettings_Click);
             // 
             // tssMain2
             // 
-            resources.ApplyResources(this.tssMain2, "tssMain2");
             this.tssMain2.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
             this.tssMain2.Name = "tssMain2";
+            resources.ApplyResources(this.tssMain2, "tssMain2");
             // 
             // tsbScreenshotsFolder
             // 
-            resources.ApplyResources(this.tsbScreenshotsFolder, "tsbScreenshotsFolder");
             this.tsbScreenshotsFolder.Image = global::ShareX.Properties.Resources.folder_open_image;
+            resources.ApplyResources(this.tsbScreenshotsFolder, "tsbScreenshotsFolder");
             this.tsbScreenshotsFolder.Name = "tsbScreenshotsFolder";
             this.tsbScreenshotsFolder.Click += new System.EventHandler(this.tsbScreenshotsFolder_Click);
             // 
             // tsbHistory
             // 
-            resources.ApplyResources(this.tsbHistory, "tsbHistory");
             this.tsbHistory.Image = global::ShareX.Properties.Resources.application_blog;
+            resources.ApplyResources(this.tsbHistory, "tsbHistory");
             this.tsbHistory.Name = "tsbHistory";
             this.tsbHistory.Click += new System.EventHandler(this.tsbHistory_Click);
             // 
             // tsbImageHistory
             // 
-            resources.ApplyResources(this.tsbImageHistory, "tsbImageHistory");
             this.tsbImageHistory.Image = global::ShareX.Properties.Resources.application_icon_large;
+            resources.ApplyResources(this.tsbImageHistory, "tsbImageHistory");
             this.tsbImageHistory.Name = "tsbImageHistory";
             this.tsbImageHistory.Click += new System.EventHandler(this.tsbImageHistory_Click);
             // 
             // tsbNews
             // 
-            resources.ApplyResources(this.tsbNews, "tsbNews");
             this.tsbNews.Counter = 0;
             this.tsbNews.Image = global::ShareX.Properties.Resources.megaphone;
+            resources.ApplyResources(this.tsbNews, "tsbNews");
             this.tsbNews.Name = "tsbNews";
             this.tsbNews.Click += new System.EventHandler(this.tsbNews_Click);
             // 
             // tsddbDebug
             // 
-            resources.ApplyResources(this.tsddbDebug, "tsddbDebug");
             this.tsddbDebug.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiShowDebugLog,
             this.tsmiTestImageUpload,
@@ -954,68 +951,68 @@
             this.tsmiTestURLShortener,
             this.tsmiTestURLSharing});
             this.tsddbDebug.Image = global::ShareX.Properties.Resources.traffic_cone;
+            resources.ApplyResources(this.tsddbDebug, "tsddbDebug");
             this.tsddbDebug.Name = "tsddbDebug";
             // 
             // tsmiShowDebugLog
             // 
-            resources.ApplyResources(this.tsmiShowDebugLog, "tsmiShowDebugLog");
             this.tsmiShowDebugLog.Image = global::ShareX.Properties.Resources.application_monitor;
             this.tsmiShowDebugLog.Name = "tsmiShowDebugLog";
+            resources.ApplyResources(this.tsmiShowDebugLog, "tsmiShowDebugLog");
             this.tsmiShowDebugLog.Click += new System.EventHandler(this.tsmiShowDebugLog_Click);
             // 
             // tsmiTestImageUpload
             // 
-            resources.ApplyResources(this.tsmiTestImageUpload, "tsmiTestImageUpload");
             this.tsmiTestImageUpload.Image = global::ShareX.Properties.Resources.image;
             this.tsmiTestImageUpload.Name = "tsmiTestImageUpload";
+            resources.ApplyResources(this.tsmiTestImageUpload, "tsmiTestImageUpload");
             this.tsmiTestImageUpload.Click += new System.EventHandler(this.tsmiTestImageUpload_Click);
             // 
             // tsmiTestTextUpload
             // 
-            resources.ApplyResources(this.tsmiTestTextUpload, "tsmiTestTextUpload");
             this.tsmiTestTextUpload.Image = global::ShareX.Properties.Resources.notebook;
             this.tsmiTestTextUpload.Name = "tsmiTestTextUpload";
+            resources.ApplyResources(this.tsmiTestTextUpload, "tsmiTestTextUpload");
             this.tsmiTestTextUpload.Click += new System.EventHandler(this.tsmiTestTextUpload_Click);
             // 
             // tsmiTestFileUpload
             // 
-            resources.ApplyResources(this.tsmiTestFileUpload, "tsmiTestFileUpload");
             this.tsmiTestFileUpload.Image = global::ShareX.Properties.Resources.application_block;
             this.tsmiTestFileUpload.Name = "tsmiTestFileUpload";
+            resources.ApplyResources(this.tsmiTestFileUpload, "tsmiTestFileUpload");
             this.tsmiTestFileUpload.Click += new System.EventHandler(this.tsmiTestFileUpload_Click);
             // 
             // tsmiTestURLShortener
             // 
-            resources.ApplyResources(this.tsmiTestURLShortener, "tsmiTestURLShortener");
             this.tsmiTestURLShortener.Image = global::ShareX.Properties.Resources.edit_scale;
             this.tsmiTestURLShortener.Name = "tsmiTestURLShortener";
+            resources.ApplyResources(this.tsmiTestURLShortener, "tsmiTestURLShortener");
             this.tsmiTestURLShortener.Click += new System.EventHandler(this.tsmiTestURLShortener_Click);
             // 
             // tsmiTestURLSharing
             // 
-            resources.ApplyResources(this.tsmiTestURLSharing, "tsmiTestURLSharing");
             this.tsmiTestURLSharing.Image = global::ShareX.Properties.Resources.globe_share;
             this.tsmiTestURLSharing.Name = "tsmiTestURLSharing";
+            resources.ApplyResources(this.tsmiTestURLSharing, "tsmiTestURLSharing");
             this.tsmiTestURLSharing.Click += new System.EventHandler(this.tsmiTestURLSharing_Click);
             // 
             // tsbDonate
             // 
-            resources.ApplyResources(this.tsbDonate, "tsbDonate");
             this.tsbDonate.AnimationSpeed = 0.8F;
             this.tsbDonate.Image = global::ShareX.Properties.Resources.heart;
+            resources.ApplyResources(this.tsbDonate, "tsbDonate");
             this.tsbDonate.Name = "tsbDonate";
             this.tsbDonate.Click += new System.EventHandler(this.tsbDonate_Click);
             // 
             // tsbAbout
             // 
-            resources.ApplyResources(this.tsbAbout, "tsbAbout");
             this.tsbAbout.Image = global::ShareX.Properties.Resources.crown;
+            resources.ApplyResources(this.tsbAbout, "tsbAbout");
             this.tsbAbout.Name = "tsbAbout";
             this.tsbAbout.Click += new System.EventHandler(this.tsbAbout_Click);
             // 
             // cmsTaskInfo
             // 
-            resources.ApplyResources(this.cmsTaskInfo, "cmsTaskInfo");
             this.cmsTaskInfo.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiShowErrors,
             this.tsmiStopUpload,
@@ -1041,26 +1038,26 @@
             this.tsmiHideThumbnailTitle,
             this.tsmiSwitchTaskViewMode});
             this.cmsTaskInfo.Name = "cmsHistory";
+            resources.ApplyResources(this.cmsTaskInfo, "cmsTaskInfo");
             this.cmsTaskInfo.Closing += new System.Windows.Forms.ToolStripDropDownClosingEventHandler(this.cmsTaskInfo_Closing);
             this.cmsTaskInfo.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.cmsTaskInfo_PreviewKeyDown);
             // 
             // tsmiShowErrors
             // 
-            resources.ApplyResources(this.tsmiShowErrors, "tsmiShowErrors");
             this.tsmiShowErrors.Image = global::ShareX.Properties.Resources.exclamation_button;
             this.tsmiShowErrors.Name = "tsmiShowErrors";
+            resources.ApplyResources(this.tsmiShowErrors, "tsmiShowErrors");
             this.tsmiShowErrors.Click += new System.EventHandler(this.tsmiShowErrors_Click);
             // 
             // tsmiStopUpload
             // 
-            resources.ApplyResources(this.tsmiStopUpload, "tsmiStopUpload");
             this.tsmiStopUpload.Image = global::ShareX.Properties.Resources.cross_button;
             this.tsmiStopUpload.Name = "tsmiStopUpload";
+            resources.ApplyResources(this.tsmiStopUpload, "tsmiStopUpload");
             this.tsmiStopUpload.Click += new System.EventHandler(this.tsmiStopUpload_Click);
             // 
             // tsmiOpen
             // 
-            resources.ApplyResources(this.tsmiOpen, "tsmiOpen");
             this.tsmiOpen.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiOpenURL,
             this.tsmiOpenShortenedURL,
@@ -1072,57 +1069,57 @@
             this.tsmiOpenThumbnailFile});
             this.tsmiOpen.Image = global::ShareX.Properties.Resources.folder_open_document;
             this.tsmiOpen.Name = "tsmiOpen";
+            resources.ApplyResources(this.tsmiOpen, "tsmiOpen");
             // 
             // tsmiOpenURL
             // 
-            resources.ApplyResources(this.tsmiOpenURL, "tsmiOpenURL");
             this.tsmiOpenURL.Name = "tsmiOpenURL";
+            resources.ApplyResources(this.tsmiOpenURL, "tsmiOpenURL");
             this.tsmiOpenURL.Click += new System.EventHandler(this.tsmiOpenURL_Click);
             // 
             // tsmiOpenShortenedURL
             // 
-            resources.ApplyResources(this.tsmiOpenShortenedURL, "tsmiOpenShortenedURL");
             this.tsmiOpenShortenedURL.Name = "tsmiOpenShortenedURL";
+            resources.ApplyResources(this.tsmiOpenShortenedURL, "tsmiOpenShortenedURL");
             this.tsmiOpenShortenedURL.Click += new System.EventHandler(this.tsmiOpenShortenedURL_Click);
             // 
             // tsmiOpenThumbnailURL
             // 
-            resources.ApplyResources(this.tsmiOpenThumbnailURL, "tsmiOpenThumbnailURL");
             this.tsmiOpenThumbnailURL.Name = "tsmiOpenThumbnailURL";
+            resources.ApplyResources(this.tsmiOpenThumbnailURL, "tsmiOpenThumbnailURL");
             this.tsmiOpenThumbnailURL.Click += new System.EventHandler(this.tsmiOpenThumbnailURL_Click);
             // 
             // tsmiOpenDeletionURL
             // 
-            resources.ApplyResources(this.tsmiOpenDeletionURL, "tsmiOpenDeletionURL");
             this.tsmiOpenDeletionURL.Name = "tsmiOpenDeletionURL";
+            resources.ApplyResources(this.tsmiOpenDeletionURL, "tsmiOpenDeletionURL");
             this.tsmiOpenDeletionURL.Click += new System.EventHandler(this.tsmiOpenDeletionURL_Click);
             // 
             // tssOpen1
             // 
-            resources.ApplyResources(this.tssOpen1, "tssOpen1");
             this.tssOpen1.Name = "tssOpen1";
+            resources.ApplyResources(this.tssOpen1, "tssOpen1");
             // 
             // tsmiOpenFile
             // 
-            resources.ApplyResources(this.tsmiOpenFile, "tsmiOpenFile");
             this.tsmiOpenFile.Name = "tsmiOpenFile";
+            resources.ApplyResources(this.tsmiOpenFile, "tsmiOpenFile");
             this.tsmiOpenFile.Click += new System.EventHandler(this.tsmiOpenFile_Click);
             // 
             // tsmiOpenFolder
             // 
-            resources.ApplyResources(this.tsmiOpenFolder, "tsmiOpenFolder");
             this.tsmiOpenFolder.Name = "tsmiOpenFolder";
+            resources.ApplyResources(this.tsmiOpenFolder, "tsmiOpenFolder");
             this.tsmiOpenFolder.Click += new System.EventHandler(this.tsmiOpenFolder_Click);
             // 
             // tsmiOpenThumbnailFile
             // 
-            resources.ApplyResources(this.tsmiOpenThumbnailFile, "tsmiOpenThumbnailFile");
             this.tsmiOpenThumbnailFile.Name = "tsmiOpenThumbnailFile";
+            resources.ApplyResources(this.tsmiOpenThumbnailFile, "tsmiOpenThumbnailFile");
             this.tsmiOpenThumbnailFile.Click += new System.EventHandler(this.tsmiOpenThumbnailFile_Click);
             // 
             // tsmiCopy
             // 
-            resources.ApplyResources(this.tsmiCopy, "tsmiCopy");
             this.tsmiCopy.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiCopyURL,
             this.tsmiCopyShortenedURL,
@@ -1155,286 +1152,286 @@
             this.tssCopy6});
             this.tsmiCopy.Image = global::ShareX.Properties.Resources.document_copy;
             this.tsmiCopy.Name = "tsmiCopy";
+            resources.ApplyResources(this.tsmiCopy, "tsmiCopy");
             // 
             // tsmiCopyURL
             // 
-            resources.ApplyResources(this.tsmiCopyURL, "tsmiCopyURL");
             this.tsmiCopyURL.Name = "tsmiCopyURL";
+            resources.ApplyResources(this.tsmiCopyURL, "tsmiCopyURL");
             this.tsmiCopyURL.Click += new System.EventHandler(this.tsmiCopyURL_Click);
             // 
             // tsmiCopyShortenedURL
             // 
-            resources.ApplyResources(this.tsmiCopyShortenedURL, "tsmiCopyShortenedURL");
             this.tsmiCopyShortenedURL.Name = "tsmiCopyShortenedURL";
+            resources.ApplyResources(this.tsmiCopyShortenedURL, "tsmiCopyShortenedURL");
             this.tsmiCopyShortenedURL.Click += new System.EventHandler(this.tsmiCopyShortenedURL_Click);
             // 
             // tsmiCopyThumbnailURL
             // 
-            resources.ApplyResources(this.tsmiCopyThumbnailURL, "tsmiCopyThumbnailURL");
             this.tsmiCopyThumbnailURL.Name = "tsmiCopyThumbnailURL";
+            resources.ApplyResources(this.tsmiCopyThumbnailURL, "tsmiCopyThumbnailURL");
             this.tsmiCopyThumbnailURL.Click += new System.EventHandler(this.tsmiCopyThumbnailURL_Click);
             // 
             // tsmiCopyDeletionURL
             // 
-            resources.ApplyResources(this.tsmiCopyDeletionURL, "tsmiCopyDeletionURL");
             this.tsmiCopyDeletionURL.Name = "tsmiCopyDeletionURL";
+            resources.ApplyResources(this.tsmiCopyDeletionURL, "tsmiCopyDeletionURL");
             this.tsmiCopyDeletionURL.Click += new System.EventHandler(this.tsmiCopyDeletionURL_Click);
             // 
             // tssCopy1
             // 
-            resources.ApplyResources(this.tssCopy1, "tssCopy1");
             this.tssCopy1.Name = "tssCopy1";
+            resources.ApplyResources(this.tssCopy1, "tssCopy1");
             // 
             // tsmiCopyFile
             // 
-            resources.ApplyResources(this.tsmiCopyFile, "tsmiCopyFile");
             this.tsmiCopyFile.Name = "tsmiCopyFile";
+            resources.ApplyResources(this.tsmiCopyFile, "tsmiCopyFile");
             this.tsmiCopyFile.Click += new System.EventHandler(this.tsmiCopyFile_Click);
             // 
             // tsmiCopyImage
             // 
-            resources.ApplyResources(this.tsmiCopyImage, "tsmiCopyImage");
             this.tsmiCopyImage.Name = "tsmiCopyImage";
+            resources.ApplyResources(this.tsmiCopyImage, "tsmiCopyImage");
             this.tsmiCopyImage.Click += new System.EventHandler(this.tsmiCopyImage_Click);
             // 
             // tsmiCopyImageDimensions
             // 
-            resources.ApplyResources(this.tsmiCopyImageDimensions, "tsmiCopyImageDimensions");
             this.tsmiCopyImageDimensions.Name = "tsmiCopyImageDimensions";
+            resources.ApplyResources(this.tsmiCopyImageDimensions, "tsmiCopyImageDimensions");
             this.tsmiCopyImageDimensions.Click += new System.EventHandler(this.tsmiCopyImageDimensions_Click);
             // 
             // tsmiCopyText
             // 
-            resources.ApplyResources(this.tsmiCopyText, "tsmiCopyText");
             this.tsmiCopyText.Name = "tsmiCopyText";
+            resources.ApplyResources(this.tsmiCopyText, "tsmiCopyText");
             this.tsmiCopyText.Click += new System.EventHandler(this.tsmiCopyText_Click);
             // 
             // tsmiCopyThumbnailFile
             // 
-            resources.ApplyResources(this.tsmiCopyThumbnailFile, "tsmiCopyThumbnailFile");
             this.tsmiCopyThumbnailFile.Name = "tsmiCopyThumbnailFile";
+            resources.ApplyResources(this.tsmiCopyThumbnailFile, "tsmiCopyThumbnailFile");
             this.tsmiCopyThumbnailFile.Click += new System.EventHandler(this.tsmiCopyThumbnailFile_Click);
             // 
             // tsmiCopyThumbnailImage
             // 
-            resources.ApplyResources(this.tsmiCopyThumbnailImage, "tsmiCopyThumbnailImage");
             this.tsmiCopyThumbnailImage.Name = "tsmiCopyThumbnailImage";
+            resources.ApplyResources(this.tsmiCopyThumbnailImage, "tsmiCopyThumbnailImage");
             this.tsmiCopyThumbnailImage.Click += new System.EventHandler(this.tsmiCopyThumbnailImage_Click);
             // 
             // tssCopy2
             // 
-            resources.ApplyResources(this.tssCopy2, "tssCopy2");
             this.tssCopy2.Name = "tssCopy2";
+            resources.ApplyResources(this.tssCopy2, "tssCopy2");
             // 
             // tsmiCopyHTMLLink
             // 
-            resources.ApplyResources(this.tsmiCopyHTMLLink, "tsmiCopyHTMLLink");
             this.tsmiCopyHTMLLink.Name = "tsmiCopyHTMLLink";
+            resources.ApplyResources(this.tsmiCopyHTMLLink, "tsmiCopyHTMLLink");
             this.tsmiCopyHTMLLink.Click += new System.EventHandler(this.tsmiCopyHTMLLink_Click);
             // 
             // tsmiCopyHTMLImage
             // 
-            resources.ApplyResources(this.tsmiCopyHTMLImage, "tsmiCopyHTMLImage");
             this.tsmiCopyHTMLImage.Name = "tsmiCopyHTMLImage";
+            resources.ApplyResources(this.tsmiCopyHTMLImage, "tsmiCopyHTMLImage");
             this.tsmiCopyHTMLImage.Click += new System.EventHandler(this.tsmiCopyHTMLImage_Click);
             // 
             // tsmiCopyHTMLLinkedImage
             // 
-            resources.ApplyResources(this.tsmiCopyHTMLLinkedImage, "tsmiCopyHTMLLinkedImage");
             this.tsmiCopyHTMLLinkedImage.Name = "tsmiCopyHTMLLinkedImage";
+            resources.ApplyResources(this.tsmiCopyHTMLLinkedImage, "tsmiCopyHTMLLinkedImage");
             this.tsmiCopyHTMLLinkedImage.Click += new System.EventHandler(this.tsmiCopyHTMLLinkedImage_Click);
             // 
             // tssCopy3
             // 
-            resources.ApplyResources(this.tssCopy3, "tssCopy3");
             this.tssCopy3.Name = "tssCopy3";
+            resources.ApplyResources(this.tssCopy3, "tssCopy3");
             // 
             // tsmiCopyForumLink
             // 
-            resources.ApplyResources(this.tsmiCopyForumLink, "tsmiCopyForumLink");
             this.tsmiCopyForumLink.Name = "tsmiCopyForumLink";
+            resources.ApplyResources(this.tsmiCopyForumLink, "tsmiCopyForumLink");
             this.tsmiCopyForumLink.Click += new System.EventHandler(this.tsmiCopyForumLink_Click);
             // 
             // tsmiCopyForumImage
             // 
-            resources.ApplyResources(this.tsmiCopyForumImage, "tsmiCopyForumImage");
             this.tsmiCopyForumImage.Name = "tsmiCopyForumImage";
+            resources.ApplyResources(this.tsmiCopyForumImage, "tsmiCopyForumImage");
             this.tsmiCopyForumImage.Click += new System.EventHandler(this.tsmiCopyForumImage_Click);
             // 
             // tsmiCopyForumLinkedImage
             // 
-            resources.ApplyResources(this.tsmiCopyForumLinkedImage, "tsmiCopyForumLinkedImage");
             this.tsmiCopyForumLinkedImage.Name = "tsmiCopyForumLinkedImage";
+            resources.ApplyResources(this.tsmiCopyForumLinkedImage, "tsmiCopyForumLinkedImage");
             this.tsmiCopyForumLinkedImage.Click += new System.EventHandler(this.tsmiCopyForumLinkedImage_Click);
             // 
             // tssCopy4
             // 
-            resources.ApplyResources(this.tssCopy4, "tssCopy4");
             this.tssCopy4.Name = "tssCopy4";
+            resources.ApplyResources(this.tssCopy4, "tssCopy4");
             // 
             // tsmiCopyMarkdownLink
             // 
-            resources.ApplyResources(this.tsmiCopyMarkdownLink, "tsmiCopyMarkdownLink");
             this.tsmiCopyMarkdownLink.Name = "tsmiCopyMarkdownLink";
+            resources.ApplyResources(this.tsmiCopyMarkdownLink, "tsmiCopyMarkdownLink");
             this.tsmiCopyMarkdownLink.Click += new System.EventHandler(this.tsmiCopyMarkdownLink_Click);
             // 
             // tsmiCopyMarkdownImage
             // 
-            resources.ApplyResources(this.tsmiCopyMarkdownImage, "tsmiCopyMarkdownImage");
             this.tsmiCopyMarkdownImage.Name = "tsmiCopyMarkdownImage";
+            resources.ApplyResources(this.tsmiCopyMarkdownImage, "tsmiCopyMarkdownImage");
             this.tsmiCopyMarkdownImage.Click += new System.EventHandler(this.tsmiCopyMarkdownImage_Click);
             // 
             // tsmiCopyMarkdownLinkedImage
             // 
-            resources.ApplyResources(this.tsmiCopyMarkdownLinkedImage, "tsmiCopyMarkdownLinkedImage");
             this.tsmiCopyMarkdownLinkedImage.Name = "tsmiCopyMarkdownLinkedImage";
+            resources.ApplyResources(this.tsmiCopyMarkdownLinkedImage, "tsmiCopyMarkdownLinkedImage");
             this.tsmiCopyMarkdownLinkedImage.Click += new System.EventHandler(this.tsmiCopyMarkdownLinkedImage_Click);
             // 
             // tssCopy5
             // 
-            resources.ApplyResources(this.tssCopy5, "tssCopy5");
             this.tssCopy5.Name = "tssCopy5";
+            resources.ApplyResources(this.tssCopy5, "tssCopy5");
             // 
             // tsmiCopyFilePath
             // 
-            resources.ApplyResources(this.tsmiCopyFilePath, "tsmiCopyFilePath");
             this.tsmiCopyFilePath.Name = "tsmiCopyFilePath";
+            resources.ApplyResources(this.tsmiCopyFilePath, "tsmiCopyFilePath");
             this.tsmiCopyFilePath.Click += new System.EventHandler(this.tsmiCopyFilePath_Click);
             // 
             // tsmiCopyFileName
             // 
-            resources.ApplyResources(this.tsmiCopyFileName, "tsmiCopyFileName");
             this.tsmiCopyFileName.Name = "tsmiCopyFileName";
+            resources.ApplyResources(this.tsmiCopyFileName, "tsmiCopyFileName");
             this.tsmiCopyFileName.Click += new System.EventHandler(this.tsmiCopyFileName_Click);
             // 
             // tsmiCopyFileNameWithExtension
             // 
-            resources.ApplyResources(this.tsmiCopyFileNameWithExtension, "tsmiCopyFileNameWithExtension");
             this.tsmiCopyFileNameWithExtension.Name = "tsmiCopyFileNameWithExtension";
+            resources.ApplyResources(this.tsmiCopyFileNameWithExtension, "tsmiCopyFileNameWithExtension");
             this.tsmiCopyFileNameWithExtension.Click += new System.EventHandler(this.tsmiCopyFileNameWithExtension_Click);
             // 
             // tsmiCopyFolder
             // 
-            resources.ApplyResources(this.tsmiCopyFolder, "tsmiCopyFolder");
             this.tsmiCopyFolder.Name = "tsmiCopyFolder";
+            resources.ApplyResources(this.tsmiCopyFolder, "tsmiCopyFolder");
             this.tsmiCopyFolder.Click += new System.EventHandler(this.tsmiCopyFolder_Click);
             // 
             // tssCopy6
             // 
-            resources.ApplyResources(this.tssCopy6, "tssCopy6");
             this.tssCopy6.Name = "tssCopy6";
+            resources.ApplyResources(this.tssCopy6, "tssCopy6");
             // 
             // tsmiUploadSelectedFile
             // 
-            resources.ApplyResources(this.tsmiUploadSelectedFile, "tsmiUploadSelectedFile");
             this.tsmiUploadSelectedFile.Image = global::ShareX.Properties.Resources.drive_upload;
             this.tsmiUploadSelectedFile.Name = "tsmiUploadSelectedFile";
+            resources.ApplyResources(this.tsmiUploadSelectedFile, "tsmiUploadSelectedFile");
             this.tsmiUploadSelectedFile.Click += new System.EventHandler(this.tsmiUploadSelectedFile_Click);
             // 
             // tsmiDownloadSelectedURL
             // 
-            resources.ApplyResources(this.tsmiDownloadSelectedURL, "tsmiDownloadSelectedURL");
             this.tsmiDownloadSelectedURL.Image = global::ShareX.Properties.Resources.drive_download;
             this.tsmiDownloadSelectedURL.Name = "tsmiDownloadSelectedURL";
+            resources.ApplyResources(this.tsmiDownloadSelectedURL, "tsmiDownloadSelectedURL");
             this.tsmiDownloadSelectedURL.Click += new System.EventHandler(this.tsmiDownloadSelectedURL_Click);
             // 
             // tsmiEditSelectedFile
             // 
-            resources.ApplyResources(this.tsmiEditSelectedFile, "tsmiEditSelectedFile");
             this.tsmiEditSelectedFile.Image = global::ShareX.Properties.Resources.image_pencil;
             this.tsmiEditSelectedFile.Name = "tsmiEditSelectedFile";
+            resources.ApplyResources(this.tsmiEditSelectedFile, "tsmiEditSelectedFile");
             this.tsmiEditSelectedFile.Click += new System.EventHandler(this.tsmiEditSelectedFile_Click);
             // 
             // tsmiDeleteSelectedItem
             // 
-            resources.ApplyResources(this.tsmiDeleteSelectedItem, "tsmiDeleteSelectedItem");
             this.tsmiDeleteSelectedItem.Image = global::ShareX.Properties.Resources.script__minus;
             this.tsmiDeleteSelectedItem.Name = "tsmiDeleteSelectedItem";
+            resources.ApplyResources(this.tsmiDeleteSelectedItem, "tsmiDeleteSelectedItem");
             this.tsmiDeleteSelectedItem.Click += new System.EventHandler(this.tsmiDeleteSelectedItem_Click);
             // 
             // tsmiDeleteSelectedFile
             // 
-            resources.ApplyResources(this.tsmiDeleteSelectedFile, "tsmiDeleteSelectedFile");
             this.tsmiDeleteSelectedFile.Image = global::ShareX.Properties.Resources.bin;
             this.tsmiDeleteSelectedFile.Name = "tsmiDeleteSelectedFile";
+            resources.ApplyResources(this.tsmiDeleteSelectedFile, "tsmiDeleteSelectedFile");
             this.tsmiDeleteSelectedFile.Click += new System.EventHandler(this.tsmiDeleteSelectedFile_Click);
             // 
             // tsmiShortenSelectedURL
             // 
-            resources.ApplyResources(this.tsmiShortenSelectedURL, "tsmiShortenSelectedURL");
             this.tsmiShortenSelectedURL.Image = global::ShareX.Properties.Resources.edit_scale;
             this.tsmiShortenSelectedURL.Name = "tsmiShortenSelectedURL";
+            resources.ApplyResources(this.tsmiShortenSelectedURL, "tsmiShortenSelectedURL");
             // 
             // tsmiShareSelectedURL
             // 
-            resources.ApplyResources(this.tsmiShareSelectedURL, "tsmiShareSelectedURL");
             this.tsmiShareSelectedURL.Image = global::ShareX.Properties.Resources.globe_share;
             this.tsmiShareSelectedURL.Name = "tsmiShareSelectedURL";
+            resources.ApplyResources(this.tsmiShareSelectedURL, "tsmiShareSelectedURL");
             // 
             // tsmiSearchImage
             // 
-            resources.ApplyResources(this.tsmiSearchImage, "tsmiSearchImage");
             this.tsmiSearchImage.Image = global::ShareX.Properties.Resources.Google;
             this.tsmiSearchImage.Name = "tsmiSearchImage";
+            resources.ApplyResources(this.tsmiSearchImage, "tsmiSearchImage");
             this.tsmiSearchImage.Click += new System.EventHandler(this.tsmiSearchImage_Click);
             // 
             // tsmiShowQRCode
             // 
-            resources.ApplyResources(this.tsmiShowQRCode, "tsmiShowQRCode");
             this.tsmiShowQRCode.Image = global::ShareX.Properties.Resources.barcode_2d;
             this.tsmiShowQRCode.Name = "tsmiShowQRCode";
+            resources.ApplyResources(this.tsmiShowQRCode, "tsmiShowQRCode");
             this.tsmiShowQRCode.Click += new System.EventHandler(this.tsmiShowQRCode_Click);
             // 
             // tsmiOCRImage
             // 
-            resources.ApplyResources(this.tsmiOCRImage, "tsmiOCRImage");
             this.tsmiOCRImage.Image = global::ShareX.Properties.Resources.edit_drop_cap;
             this.tsmiOCRImage.Name = "tsmiOCRImage";
+            resources.ApplyResources(this.tsmiOCRImage, "tsmiOCRImage");
             this.tsmiOCRImage.Click += new System.EventHandler(this.tsmiOCRImage_Click);
             // 
             // tsmiCombineImages
             // 
-            resources.ApplyResources(this.tsmiCombineImages, "tsmiCombineImages");
             this.tsmiCombineImages.Image = global::ShareX.Properties.Resources.document_break;
             this.tsmiCombineImages.Name = "tsmiCombineImages";
+            resources.ApplyResources(this.tsmiCombineImages, "tsmiCombineImages");
             this.tsmiCombineImages.Click += new System.EventHandler(this.tsmiCombineImages_Click);
             // 
             // tsmiShowResponse
             // 
-            resources.ApplyResources(this.tsmiShowResponse, "tsmiShowResponse");
             this.tsmiShowResponse.Image = global::ShareX.Properties.Resources.application_browser;
             this.tsmiShowResponse.Name = "tsmiShowResponse";
+            resources.ApplyResources(this.tsmiShowResponse, "tsmiShowResponse");
             this.tsmiShowResponse.Click += new System.EventHandler(this.tsmiShowResponse_Click);
             // 
             // tsmiClearList
             // 
-            resources.ApplyResources(this.tsmiClearList, "tsmiClearList");
             this.tsmiClearList.Image = global::ShareX.Properties.Resources.eraser;
             this.tsmiClearList.Name = "tsmiClearList";
+            resources.ApplyResources(this.tsmiClearList, "tsmiClearList");
             this.tsmiClearList.Click += new System.EventHandler(this.tsmiClearList_Click);
             // 
             // tssUploadInfo1
             // 
-            resources.ApplyResources(this.tssUploadInfo1, "tssUploadInfo1");
             this.tssUploadInfo1.Name = "tssUploadInfo1";
+            resources.ApplyResources(this.tssUploadInfo1, "tssUploadInfo1");
             // 
             // tsmiHideMenu
             // 
-            resources.ApplyResources(this.tsmiHideMenu, "tsmiHideMenu");
             this.tsmiHideMenu.Image = global::ShareX.Properties.Resources.layout_select_sidebar;
             this.tsmiHideMenu.Name = "tsmiHideMenu";
+            resources.ApplyResources(this.tsmiHideMenu, "tsmiHideMenu");
             this.tsmiHideMenu.Click += new System.EventHandler(this.tsmiHideMenu_Click);
             // 
             // tsmiHideColumns
             // 
-            resources.ApplyResources(this.tsmiHideColumns, "tsmiHideColumns");
             this.tsmiHideColumns.Image = global::ShareX.Properties.Resources.layout_select;
             this.tsmiHideColumns.Name = "tsmiHideColumns";
+            resources.ApplyResources(this.tsmiHideColumns, "tsmiHideColumns");
             this.tsmiHideColumns.Click += new System.EventHandler(this.tsmiHideColumns_Click);
             // 
             // tsmiImagePreview
             // 
-            resources.ApplyResources(this.tsmiImagePreview, "tsmiImagePreview");
             this.tsmiImagePreview.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiImagePreviewShow,
             this.tsmiImagePreviewHide,
@@ -1444,75 +1441,75 @@
             this.tsmiImagePreviewBottom});
             this.tsmiImagePreview.Image = global::ShareX.Properties.Resources.layout_select_content;
             this.tsmiImagePreview.Name = "tsmiImagePreview";
+            resources.ApplyResources(this.tsmiImagePreview, "tsmiImagePreview");
             // 
             // tsmiImagePreviewShow
             // 
-            resources.ApplyResources(this.tsmiImagePreviewShow, "tsmiImagePreviewShow");
             this.tsmiImagePreviewShow.Checked = true;
             this.tsmiImagePreviewShow.CheckState = System.Windows.Forms.CheckState.Checked;
             this.tsmiImagePreviewShow.Name = "tsmiImagePreviewShow";
+            resources.ApplyResources(this.tsmiImagePreviewShow, "tsmiImagePreviewShow");
             this.tsmiImagePreviewShow.Tag = "Visibility";
             this.tsmiImagePreviewShow.Click += new System.EventHandler(this.tsmiImagePreviewShow_Click);
             // 
             // tsmiImagePreviewHide
             // 
-            resources.ApplyResources(this.tsmiImagePreviewHide, "tsmiImagePreviewHide");
             this.tsmiImagePreviewHide.Name = "tsmiImagePreviewHide";
+            resources.ApplyResources(this.tsmiImagePreviewHide, "tsmiImagePreviewHide");
             this.tsmiImagePreviewHide.Tag = "Visibility";
             this.tsmiImagePreviewHide.Click += new System.EventHandler(this.tsmiImagePreviewHide_Click);
             // 
             // tsmiImagePreviewAutomatic
             // 
-            resources.ApplyResources(this.tsmiImagePreviewAutomatic, "tsmiImagePreviewAutomatic");
             this.tsmiImagePreviewAutomatic.Name = "tsmiImagePreviewAutomatic";
+            resources.ApplyResources(this.tsmiImagePreviewAutomatic, "tsmiImagePreviewAutomatic");
             this.tsmiImagePreviewAutomatic.Tag = "Visibility";
             this.tsmiImagePreviewAutomatic.Click += new System.EventHandler(this.tsmiImagePreviewAutomatic_Click);
             // 
             // tssImagePreview
             // 
-            resources.ApplyResources(this.tssImagePreview, "tssImagePreview");
             this.tssImagePreview.Name = "tssImagePreview";
+            resources.ApplyResources(this.tssImagePreview, "tssImagePreview");
             // 
             // tsmiImagePreviewSide
             // 
-            resources.ApplyResources(this.tsmiImagePreviewSide, "tsmiImagePreviewSide");
             this.tsmiImagePreviewSide.Checked = true;
             this.tsmiImagePreviewSide.CheckState = System.Windows.Forms.CheckState.Checked;
             this.tsmiImagePreviewSide.Name = "tsmiImagePreviewSide";
+            resources.ApplyResources(this.tsmiImagePreviewSide, "tsmiImagePreviewSide");
             this.tsmiImagePreviewSide.Tag = "Location";
             this.tsmiImagePreviewSide.Click += new System.EventHandler(this.tsmiImagePreviewSide_Click);
             // 
             // tsmiImagePreviewBottom
             // 
-            resources.ApplyResources(this.tsmiImagePreviewBottom, "tsmiImagePreviewBottom");
             this.tsmiImagePreviewBottom.Name = "tsmiImagePreviewBottom";
+            resources.ApplyResources(this.tsmiImagePreviewBottom, "tsmiImagePreviewBottom");
             this.tsmiImagePreviewBottom.Tag = "Location";
             this.tsmiImagePreviewBottom.Click += new System.EventHandler(this.tsmiImagePreviewBottom_Click);
             // 
             // tsmiHideThumbnailTitle
             // 
-            resources.ApplyResources(this.tsmiHideThumbnailTitle, "tsmiHideThumbnailTitle");
             this.tsmiHideThumbnailTitle.Image = global::ShareX.Properties.Resources.ui_thumbnail_title;
             this.tsmiHideThumbnailTitle.Name = "tsmiHideThumbnailTitle";
+            resources.ApplyResources(this.tsmiHideThumbnailTitle, "tsmiHideThumbnailTitle");
             this.tsmiHideThumbnailTitle.Click += new System.EventHandler(this.TsmiHideThumbnailTitle_Click);
             // 
             // tsmiSwitchTaskViewMode
             // 
-            resources.ApplyResources(this.tsmiSwitchTaskViewMode, "tsmiSwitchTaskViewMode");
             this.tsmiSwitchTaskViewMode.Name = "tsmiSwitchTaskViewMode";
+            resources.ApplyResources(this.tsmiSwitchTaskViewMode, "tsmiSwitchTaskViewMode");
             this.tsmiSwitchTaskViewMode.Click += new System.EventHandler(this.TsmiSwitchTaskViewMode_Click);
             // 
             // niTray
             // 
-            resources.ApplyResources(this.niTray, "niTray");
             this.niTray.ContextMenuStrip = this.cmsTray;
+            resources.ApplyResources(this.niTray, "niTray");
             this.niTray.BalloonTipClicked += new System.EventHandler(this.niTray_BalloonTipClicked);
             this.niTray.MouseClick += new System.Windows.Forms.MouseEventHandler(this.niTray_MouseClick);
             this.niTray.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.niTray_MouseDoubleClick);
             // 
             // cmsTray
             // 
-            resources.ApplyResources(this.cmsTray, "cmsTray");
             this.cmsTray.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiTrayCapture,
             this.tsmiTrayUpload,
@@ -1539,12 +1536,12 @@
             this.tsmiTrayShow,
             this.tsmiTrayExit});
             this.cmsTray.Name = "cmsTray";
+            resources.ApplyResources(this.cmsTray, "cmsTray");
             this.cmsTray.Closed += new System.Windows.Forms.ToolStripDropDownClosedEventHandler(this.cmsTray_Closed);
             this.cmsTray.Opened += new System.EventHandler(this.cmsTray_Opened);
             // 
             // tsmiTrayCapture
             // 
-            resources.ApplyResources(this.tsmiTrayCapture, "tsmiTrayCapture");
             this.tsmiTrayCapture.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiTrayFullscreen,
             this.tsmiTrayWindow,
@@ -1563,106 +1560,106 @@
             this.tsmiTrayScreenshotDelay});
             this.tsmiTrayCapture.Image = global::ShareX.Properties.Resources.camera;
             this.tsmiTrayCapture.Name = "tsmiTrayCapture";
+            resources.ApplyResources(this.tsmiTrayCapture, "tsmiTrayCapture");
             this.tsmiTrayCapture.DropDownOpening += new System.EventHandler(this.tsmiCapture_DropDownOpening);
             // 
             // tsmiTrayFullscreen
             // 
-            resources.ApplyResources(this.tsmiTrayFullscreen, "tsmiTrayFullscreen");
             this.tsmiTrayFullscreen.Image = global::ShareX.Properties.Resources.layer_fullscreen;
             this.tsmiTrayFullscreen.Name = "tsmiTrayFullscreen";
+            resources.ApplyResources(this.tsmiTrayFullscreen, "tsmiTrayFullscreen");
             this.tsmiTrayFullscreen.Click += new System.EventHandler(this.tsmiTrayFullscreen_Click);
             // 
             // tsmiTrayWindow
             // 
-            resources.ApplyResources(this.tsmiTrayWindow, "tsmiTrayWindow");
             this.tsmiTrayWindow.Image = global::ShareX.Properties.Resources.application_blue;
             this.tsmiTrayWindow.Name = "tsmiTrayWindow";
+            resources.ApplyResources(this.tsmiTrayWindow, "tsmiTrayWindow");
             // 
             // tsmiTrayMonitor
             // 
-            resources.ApplyResources(this.tsmiTrayMonitor, "tsmiTrayMonitor");
             this.tsmiTrayMonitor.Image = global::ShareX.Properties.Resources.monitor;
             this.tsmiTrayMonitor.Name = "tsmiTrayMonitor";
+            resources.ApplyResources(this.tsmiTrayMonitor, "tsmiTrayMonitor");
             // 
             // tsmiTrayRectangle
             // 
-            resources.ApplyResources(this.tsmiTrayRectangle, "tsmiTrayRectangle");
             this.tsmiTrayRectangle.Image = global::ShareX.Properties.Resources.layer_shape;
             this.tsmiTrayRectangle.Name = "tsmiTrayRectangle";
+            resources.ApplyResources(this.tsmiTrayRectangle, "tsmiTrayRectangle");
             this.tsmiTrayRectangle.Click += new System.EventHandler(this.tsmiTrayRectangle_Click);
             // 
             // tsmiTrayRectangleLight
             // 
-            resources.ApplyResources(this.tsmiTrayRectangleLight, "tsmiTrayRectangleLight");
             this.tsmiTrayRectangleLight.Image = global::ShareX.Properties.Resources.Rectangle;
             this.tsmiTrayRectangleLight.Name = "tsmiTrayRectangleLight";
+            resources.ApplyResources(this.tsmiTrayRectangleLight, "tsmiTrayRectangleLight");
             this.tsmiTrayRectangleLight.Click += new System.EventHandler(this.tsmiTrayRectangleLight_Click);
             // 
             // tsmiTrayRectangleTransparent
             // 
-            resources.ApplyResources(this.tsmiTrayRectangleTransparent, "tsmiTrayRectangleTransparent");
             this.tsmiTrayRectangleTransparent.Image = global::ShareX.Properties.Resources.layer_transparent;
             this.tsmiTrayRectangleTransparent.Name = "tsmiTrayRectangleTransparent";
+            resources.ApplyResources(this.tsmiTrayRectangleTransparent, "tsmiTrayRectangleTransparent");
             this.tsmiTrayRectangleTransparent.Click += new System.EventHandler(this.tsmiTrayRectangleTransparent_Click);
             // 
             // tsmiTrayLastRegion
             // 
-            resources.ApplyResources(this.tsmiTrayLastRegion, "tsmiTrayLastRegion");
             this.tsmiTrayLastRegion.Image = global::ShareX.Properties.Resources.layers;
             this.tsmiTrayLastRegion.Name = "tsmiTrayLastRegion";
+            resources.ApplyResources(this.tsmiTrayLastRegion, "tsmiTrayLastRegion");
             this.tsmiTrayLastRegion.Click += new System.EventHandler(this.tsmiTrayLastRegion_Click);
             // 
             // tsmiTrayScreenRecordingFFmpeg
             // 
-            resources.ApplyResources(this.tsmiTrayScreenRecordingFFmpeg, "tsmiTrayScreenRecordingFFmpeg");
             this.tsmiTrayScreenRecordingFFmpeg.Image = global::ShareX.Properties.Resources.camcorder_image;
             this.tsmiTrayScreenRecordingFFmpeg.Name = "tsmiTrayScreenRecordingFFmpeg";
+            resources.ApplyResources(this.tsmiTrayScreenRecordingFFmpeg, "tsmiTrayScreenRecordingFFmpeg");
             this.tsmiTrayScreenRecordingFFmpeg.Click += new System.EventHandler(this.tsmiScreenRecordingFFmpeg_Click);
             // 
             // tsmiTrayScreenRecordingGIF
             // 
-            resources.ApplyResources(this.tsmiTrayScreenRecordingGIF, "tsmiTrayScreenRecordingGIF");
             this.tsmiTrayScreenRecordingGIF.Image = global::ShareX.Properties.Resources.film;
             this.tsmiTrayScreenRecordingGIF.Name = "tsmiTrayScreenRecordingGIF";
+            resources.ApplyResources(this.tsmiTrayScreenRecordingGIF, "tsmiTrayScreenRecordingGIF");
             this.tsmiTrayScreenRecordingGIF.Click += new System.EventHandler(this.tsmiScreenRecordingGIF_Click);
             // 
             // tsmiTrayScrollingCapture
             // 
-            resources.ApplyResources(this.tsmiTrayScrollingCapture, "tsmiTrayScrollingCapture");
             this.tsmiTrayScrollingCapture.Image = global::ShareX.Properties.Resources.ui_scroll_pane_image;
             this.tsmiTrayScrollingCapture.Name = "tsmiTrayScrollingCapture";
+            resources.ApplyResources(this.tsmiTrayScrollingCapture, "tsmiTrayScrollingCapture");
             this.tsmiTrayScrollingCapture.Click += new System.EventHandler(this.tsmiScrollingCapture_Click);
             // 
             // tsmiTrayTextCapture
             // 
-            resources.ApplyResources(this.tsmiTrayTextCapture, "tsmiTrayTextCapture");
             this.tsmiTrayTextCapture.Image = global::ShareX.Properties.Resources.edit_drop_cap;
             this.tsmiTrayTextCapture.Name = "tsmiTrayTextCapture";
+            resources.ApplyResources(this.tsmiTrayTextCapture, "tsmiTrayTextCapture");
             this.tsmiTrayTextCapture.Click += new System.EventHandler(this.tsmiTrayTextCapture_Click);
             // 
             // tsmiTrayAutoCapture
             // 
-            resources.ApplyResources(this.tsmiTrayAutoCapture, "tsmiTrayAutoCapture");
             this.tsmiTrayAutoCapture.Image = global::ShareX.Properties.Resources.clock;
             this.tsmiTrayAutoCapture.Name = "tsmiTrayAutoCapture";
+            resources.ApplyResources(this.tsmiTrayAutoCapture, "tsmiTrayAutoCapture");
             this.tsmiTrayAutoCapture.Click += new System.EventHandler(this.tsmiAutoCapture_Click);
             // 
             // tssTrayCapture1
             // 
-            resources.ApplyResources(this.tssTrayCapture1, "tssTrayCapture1");
             this.tssTrayCapture1.Name = "tssTrayCapture1";
+            resources.ApplyResources(this.tssTrayCapture1, "tssTrayCapture1");
             // 
             // tsmiTrayShowCursor
             // 
-            resources.ApplyResources(this.tsmiTrayShowCursor, "tsmiTrayShowCursor");
             this.tsmiTrayShowCursor.CheckOnClick = true;
             this.tsmiTrayShowCursor.Image = global::ShareX.Properties.Resources.cursor;
             this.tsmiTrayShowCursor.Name = "tsmiTrayShowCursor";
+            resources.ApplyResources(this.tsmiTrayShowCursor, "tsmiTrayShowCursor");
             this.tsmiTrayShowCursor.Click += new System.EventHandler(this.tsmiShowCursor_Click);
             // 
             // tsmiTrayScreenshotDelay
             // 
-            resources.ApplyResources(this.tsmiTrayScreenshotDelay, "tsmiTrayScreenshotDelay");
             this.tsmiTrayScreenshotDelay.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiTrayScreenshotDelay0,
             this.tsmiTrayScreenshotDelay1,
@@ -1670,47 +1667,47 @@
             this.tsmiTrayScreenshotDelay3,
             this.tsmiTrayScreenshotDelay4,
             this.tsmiTrayScreenshotDelay5});
+            resources.ApplyResources(this.tsmiTrayScreenshotDelay, "tsmiTrayScreenshotDelay");
             this.tsmiTrayScreenshotDelay.Name = "tsmiTrayScreenshotDelay";
             // 
             // tsmiTrayScreenshotDelay0
             // 
-            resources.ApplyResources(this.tsmiTrayScreenshotDelay0, "tsmiTrayScreenshotDelay0");
             this.tsmiTrayScreenshotDelay0.Name = "tsmiTrayScreenshotDelay0";
+            resources.ApplyResources(this.tsmiTrayScreenshotDelay0, "tsmiTrayScreenshotDelay0");
             this.tsmiTrayScreenshotDelay0.Click += new System.EventHandler(this.tsmiScreenshotDelay0_Click);
             // 
             // tsmiTrayScreenshotDelay1
             // 
-            resources.ApplyResources(this.tsmiTrayScreenshotDelay1, "tsmiTrayScreenshotDelay1");
             this.tsmiTrayScreenshotDelay1.Name = "tsmiTrayScreenshotDelay1";
+            resources.ApplyResources(this.tsmiTrayScreenshotDelay1, "tsmiTrayScreenshotDelay1");
             this.tsmiTrayScreenshotDelay1.Click += new System.EventHandler(this.tsmiScreenshotDelay1_Click);
             // 
             // tsmiTrayScreenshotDelay2
             // 
-            resources.ApplyResources(this.tsmiTrayScreenshotDelay2, "tsmiTrayScreenshotDelay2");
             this.tsmiTrayScreenshotDelay2.Name = "tsmiTrayScreenshotDelay2";
+            resources.ApplyResources(this.tsmiTrayScreenshotDelay2, "tsmiTrayScreenshotDelay2");
             this.tsmiTrayScreenshotDelay2.Click += new System.EventHandler(this.tsmiScreenshotDelay2_Click);
             // 
             // tsmiTrayScreenshotDelay3
             // 
-            resources.ApplyResources(this.tsmiTrayScreenshotDelay3, "tsmiTrayScreenshotDelay3");
             this.tsmiTrayScreenshotDelay3.Name = "tsmiTrayScreenshotDelay3";
+            resources.ApplyResources(this.tsmiTrayScreenshotDelay3, "tsmiTrayScreenshotDelay3");
             this.tsmiTrayScreenshotDelay3.Click += new System.EventHandler(this.tsmiScreenshotDelay3_Click);
             // 
             // tsmiTrayScreenshotDelay4
             // 
-            resources.ApplyResources(this.tsmiTrayScreenshotDelay4, "tsmiTrayScreenshotDelay4");
             this.tsmiTrayScreenshotDelay4.Name = "tsmiTrayScreenshotDelay4";
+            resources.ApplyResources(this.tsmiTrayScreenshotDelay4, "tsmiTrayScreenshotDelay4");
             this.tsmiTrayScreenshotDelay4.Click += new System.EventHandler(this.tsmiScreenshotDelay4_Click);
             // 
             // tsmiTrayScreenshotDelay5
             // 
-            resources.ApplyResources(this.tsmiTrayScreenshotDelay5, "tsmiTrayScreenshotDelay5");
             this.tsmiTrayScreenshotDelay5.Name = "tsmiTrayScreenshotDelay5";
+            resources.ApplyResources(this.tsmiTrayScreenshotDelay5, "tsmiTrayScreenshotDelay5");
             this.tsmiTrayScreenshotDelay5.Click += new System.EventHandler(this.tsmiScreenshotDelay5_Click);
             // 
             // tsmiTrayUpload
             // 
-            resources.ApplyResources(this.tsmiTrayUpload, "tsmiTrayUpload");
             this.tsmiTrayUpload.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiTrayUploadFile,
             this.tsmiTrayUploadFolder,
@@ -1721,65 +1718,65 @@
             this.tsmiTrayShortenURL});
             this.tsmiTrayUpload.Image = global::ShareX.Properties.Resources.arrow_090;
             this.tsmiTrayUpload.Name = "tsmiTrayUpload";
+            resources.ApplyResources(this.tsmiTrayUpload, "tsmiTrayUpload");
             // 
             // tsmiTrayUploadFile
             // 
-            resources.ApplyResources(this.tsmiTrayUploadFile, "tsmiTrayUploadFile");
             this.tsmiTrayUploadFile.Image = global::ShareX.Properties.Resources.folder_open_document;
             this.tsmiTrayUploadFile.Name = "tsmiTrayUploadFile";
+            resources.ApplyResources(this.tsmiTrayUploadFile, "tsmiTrayUploadFile");
             this.tsmiTrayUploadFile.Click += new System.EventHandler(this.tsbFileUpload_Click);
             // 
             // tsmiTrayUploadFolder
             // 
-            resources.ApplyResources(this.tsmiTrayUploadFolder, "tsmiTrayUploadFolder");
             this.tsmiTrayUploadFolder.Image = global::ShareX.Properties.Resources.folder;
             this.tsmiTrayUploadFolder.Name = "tsmiTrayUploadFolder";
+            resources.ApplyResources(this.tsmiTrayUploadFolder, "tsmiTrayUploadFolder");
             this.tsmiTrayUploadFolder.Click += new System.EventHandler(this.tsmiUploadFolder_Click);
             // 
             // tsmiTrayUploadClipboard
             // 
-            resources.ApplyResources(this.tsmiTrayUploadClipboard, "tsmiTrayUploadClipboard");
             this.tsmiTrayUploadClipboard.Image = global::ShareX.Properties.Resources.clipboard;
             this.tsmiTrayUploadClipboard.Name = "tsmiTrayUploadClipboard";
+            resources.ApplyResources(this.tsmiTrayUploadClipboard, "tsmiTrayUploadClipboard");
             this.tsmiTrayUploadClipboard.Click += new System.EventHandler(this.tsbClipboardUpload_Click);
             // 
             // tsmiTrayUploadText
             // 
-            resources.ApplyResources(this.tsmiTrayUploadText, "tsmiTrayUploadText");
             this.tsmiTrayUploadText.Image = global::ShareX.Properties.Resources.notebook;
             this.tsmiTrayUploadText.Name = "tsmiTrayUploadText";
+            resources.ApplyResources(this.tsmiTrayUploadText, "tsmiTrayUploadText");
             this.tsmiTrayUploadText.Click += new System.EventHandler(this.tsmiUploadText_Click);
             // 
             // tsmiTrayUploadURL
             // 
-            resources.ApplyResources(this.tsmiTrayUploadURL, "tsmiTrayUploadURL");
             this.tsmiTrayUploadURL.Image = global::ShareX.Properties.Resources.drive;
             this.tsmiTrayUploadURL.Name = "tsmiTrayUploadURL";
+            resources.ApplyResources(this.tsmiTrayUploadURL, "tsmiTrayUploadURL");
             this.tsmiTrayUploadURL.Click += new System.EventHandler(this.tsmiUploadURL_Click);
             // 
             // tsmiTrayUploadDragDrop
             // 
-            resources.ApplyResources(this.tsmiTrayUploadDragDrop, "tsmiTrayUploadDragDrop");
             this.tsmiTrayUploadDragDrop.Image = global::ShareX.Properties.Resources.inbox;
             this.tsmiTrayUploadDragDrop.Name = "tsmiTrayUploadDragDrop";
+            resources.ApplyResources(this.tsmiTrayUploadDragDrop, "tsmiTrayUploadDragDrop");
             this.tsmiTrayUploadDragDrop.Click += new System.EventHandler(this.tsbDragDropUpload_Click);
             // 
             // tsmiTrayShortenURL
             // 
-            resources.ApplyResources(this.tsmiTrayShortenURL, "tsmiTrayShortenURL");
             this.tsmiTrayShortenURL.Image = global::ShareX.Properties.Resources.edit_scale;
             this.tsmiTrayShortenURL.Name = "tsmiTrayShortenURL";
+            resources.ApplyResources(this.tsmiTrayShortenURL, "tsmiTrayShortenURL");
             this.tsmiTrayShortenURL.Click += new System.EventHandler(this.tsmiShortenURL_Click);
             // 
             // tsmiTrayWorkflows
             // 
-            resources.ApplyResources(this.tsmiTrayWorkflows, "tsmiTrayWorkflows");
             this.tsmiTrayWorkflows.Image = global::ShareX.Properties.Resources.categories;
             this.tsmiTrayWorkflows.Name = "tsmiTrayWorkflows";
+            resources.ApplyResources(this.tsmiTrayWorkflows, "tsmiTrayWorkflows");
             // 
             // tsmiTrayTools
             // 
-            resources.ApplyResources(this.tsmiTrayTools, "tsmiTrayTools");
             this.tsmiTrayTools.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiTrayColorPicker,
             this.tsmiTrayScreenColorPicker,
@@ -1797,125 +1794,125 @@
             this.tsmiTrayMonitorTest});
             this.tsmiTrayTools.Image = global::ShareX.Properties.Resources.toolbox;
             this.tsmiTrayTools.Name = "tsmiTrayTools";
+            resources.ApplyResources(this.tsmiTrayTools, "tsmiTrayTools");
             // 
             // tsmiTrayColorPicker
             // 
-            resources.ApplyResources(this.tsmiTrayColorPicker, "tsmiTrayColorPicker");
             this.tsmiTrayColorPicker.Image = global::ShareX.Properties.Resources.color;
             this.tsmiTrayColorPicker.Name = "tsmiTrayColorPicker";
+            resources.ApplyResources(this.tsmiTrayColorPicker, "tsmiTrayColorPicker");
             this.tsmiTrayColorPicker.Click += new System.EventHandler(this.tsmiColorPicker_Click);
             // 
             // tsmiTrayScreenColorPicker
             // 
-            resources.ApplyResources(this.tsmiTrayScreenColorPicker, "tsmiTrayScreenColorPicker");
             this.tsmiTrayScreenColorPicker.Image = global::ShareX.Properties.Resources.pipette;
             this.tsmiTrayScreenColorPicker.Name = "tsmiTrayScreenColorPicker";
+            resources.ApplyResources(this.tsmiTrayScreenColorPicker, "tsmiTrayScreenColorPicker");
             this.tsmiTrayScreenColorPicker.Click += new System.EventHandler(this.tsmiScreenColorPicker_Click);
             // 
             // tsmiTrayImageEditor
             // 
-            resources.ApplyResources(this.tsmiTrayImageEditor, "tsmiTrayImageEditor");
             this.tsmiTrayImageEditor.Image = global::ShareX.Properties.Resources.image_pencil;
             this.tsmiTrayImageEditor.Name = "tsmiTrayImageEditor";
+            resources.ApplyResources(this.tsmiTrayImageEditor, "tsmiTrayImageEditor");
             this.tsmiTrayImageEditor.Click += new System.EventHandler(this.tsmiImageEditor_Click);
             // 
             // tsmiTrayImageEffects
             // 
-            resources.ApplyResources(this.tsmiTrayImageEffects, "tsmiTrayImageEffects");
             this.tsmiTrayImageEffects.Image = global::ShareX.Properties.Resources.image_saturation;
             this.tsmiTrayImageEffects.Name = "tsmiTrayImageEffects";
+            resources.ApplyResources(this.tsmiTrayImageEffects, "tsmiTrayImageEffects");
             this.tsmiTrayImageEffects.Click += new System.EventHandler(this.tsmiImageEffects_Click);
             // 
             // tsmiTrayHashCheck
             // 
-            resources.ApplyResources(this.tsmiTrayHashCheck, "tsmiTrayHashCheck");
             this.tsmiTrayHashCheck.Image = global::ShareX.Properties.Resources.application_task;
             this.tsmiTrayHashCheck.Name = "tsmiTrayHashCheck";
+            resources.ApplyResources(this.tsmiTrayHashCheck, "tsmiTrayHashCheck");
             this.tsmiTrayHashCheck.Click += new System.EventHandler(this.tsmiHashCheck_Click);
             // 
             // tsmiTrayDNSChanger
             // 
-            resources.ApplyResources(this.tsmiTrayDNSChanger, "tsmiTrayDNSChanger");
             this.tsmiTrayDNSChanger.Image = global::ShareX.Properties.Resources.network_ip;
             this.tsmiTrayDNSChanger.Name = "tsmiTrayDNSChanger";
+            resources.ApplyResources(this.tsmiTrayDNSChanger, "tsmiTrayDNSChanger");
             this.tsmiTrayDNSChanger.Click += new System.EventHandler(this.tsmiDNSChanger_Click);
             // 
             // tsmiTrayQRCode
             // 
-            resources.ApplyResources(this.tsmiTrayQRCode, "tsmiTrayQRCode");
             this.tsmiTrayQRCode.Image = global::ShareX.Properties.Resources.barcode_2d;
             this.tsmiTrayQRCode.Name = "tsmiTrayQRCode";
+            resources.ApplyResources(this.tsmiTrayQRCode, "tsmiTrayQRCode");
             this.tsmiTrayQRCode.Click += new System.EventHandler(this.tsmiQRCode_Click);
             // 
             // tsmiTrayRuler
             // 
-            resources.ApplyResources(this.tsmiTrayRuler, "tsmiTrayRuler");
             this.tsmiTrayRuler.Image = global::ShareX.Properties.Resources.ruler_triangle;
             this.tsmiTrayRuler.Name = "tsmiTrayRuler";
+            resources.ApplyResources(this.tsmiTrayRuler, "tsmiTrayRuler");
             this.tsmiTrayRuler.Click += new System.EventHandler(this.tsmiRuler_Click);
             // 
             // tsmiTrayIndexFolder
             // 
-            resources.ApplyResources(this.tsmiTrayIndexFolder, "tsmiTrayIndexFolder");
             this.tsmiTrayIndexFolder.Image = global::ShareX.Properties.Resources.folder_tree;
             this.tsmiTrayIndexFolder.Name = "tsmiTrayIndexFolder";
+            resources.ApplyResources(this.tsmiTrayIndexFolder, "tsmiTrayIndexFolder");
             this.tsmiTrayIndexFolder.Click += new System.EventHandler(this.tsmiIndexFolder_Click);
             // 
             // tsmiTrayImageCombiner
             // 
-            resources.ApplyResources(this.tsmiTrayImageCombiner, "tsmiTrayImageCombiner");
             this.tsmiTrayImageCombiner.Image = global::ShareX.Properties.Resources.document_break;
             this.tsmiTrayImageCombiner.Name = "tsmiTrayImageCombiner";
+            resources.ApplyResources(this.tsmiTrayImageCombiner, "tsmiTrayImageCombiner");
             this.tsmiTrayImageCombiner.Click += new System.EventHandler(this.tsmiImageCombiner_Click);
             // 
             // tsmiTrayImageThumbnailer
             // 
-            resources.ApplyResources(this.tsmiTrayImageThumbnailer, "tsmiTrayImageThumbnailer");
             this.tsmiTrayImageThumbnailer.Image = global::ShareX.Properties.Resources.image_resize_actual;
             this.tsmiTrayImageThumbnailer.Name = "tsmiTrayImageThumbnailer";
+            resources.ApplyResources(this.tsmiTrayImageThumbnailer, "tsmiTrayImageThumbnailer");
             this.tsmiTrayImageThumbnailer.Click += new System.EventHandler(this.tsmiImageThumbnailer_Click);
             // 
             // tsmiTrayVideoThumbnailer
             // 
-            resources.ApplyResources(this.tsmiTrayVideoThumbnailer, "tsmiTrayVideoThumbnailer");
             this.tsmiTrayVideoThumbnailer.Image = global::ShareX.Properties.Resources.images_stack;
             this.tsmiTrayVideoThumbnailer.Name = "tsmiTrayVideoThumbnailer";
+            resources.ApplyResources(this.tsmiTrayVideoThumbnailer, "tsmiTrayVideoThumbnailer");
             this.tsmiTrayVideoThumbnailer.Click += new System.EventHandler(this.tsmiVideoThumbnailer_Click);
             // 
             // tsmiTrayTweetMessage
             // 
-            resources.ApplyResources(this.tsmiTrayTweetMessage, "tsmiTrayTweetMessage");
             this.tsmiTrayTweetMessage.Image = global::ShareX.Properties.Resources.Twitter;
             this.tsmiTrayTweetMessage.Name = "tsmiTrayTweetMessage";
+            resources.ApplyResources(this.tsmiTrayTweetMessage, "tsmiTrayTweetMessage");
             this.tsmiTrayTweetMessage.Click += new System.EventHandler(this.tsmiTweetMessage_Click);
             // 
             // tsmiTrayMonitorTest
             // 
-            resources.ApplyResources(this.tsmiTrayMonitorTest, "tsmiTrayMonitorTest");
             this.tsmiTrayMonitorTest.Image = global::ShareX.Properties.Resources.monitor;
             this.tsmiTrayMonitorTest.Name = "tsmiTrayMonitorTest";
+            resources.ApplyResources(this.tsmiTrayMonitorTest, "tsmiTrayMonitorTest");
             this.tsmiTrayMonitorTest.Click += new System.EventHandler(this.tsmiMonitorTest_Click);
             // 
             // tssTray1
             // 
-            resources.ApplyResources(this.tssTray1, "tssTray1");
             this.tssTray1.Name = "tssTray1";
+            resources.ApplyResources(this.tssTray1, "tssTray1");
             // 
             // tsmiTrayAfterCaptureTasks
             // 
-            resources.ApplyResources(this.tsmiTrayAfterCaptureTasks, "tsmiTrayAfterCaptureTasks");
             this.tsmiTrayAfterCaptureTasks.Image = global::ShareX.Properties.Resources.image_export;
             this.tsmiTrayAfterCaptureTasks.Name = "tsmiTrayAfterCaptureTasks";
+            resources.ApplyResources(this.tsmiTrayAfterCaptureTasks, "tsmiTrayAfterCaptureTasks");
             // 
             // tsmiTrayAfterUploadTasks
             // 
-            resources.ApplyResources(this.tsmiTrayAfterUploadTasks, "tsmiTrayAfterUploadTasks");
             this.tsmiTrayAfterUploadTasks.Image = global::ShareX.Properties.Resources.upload_cloud;
             this.tsmiTrayAfterUploadTasks.Name = "tsmiTrayAfterUploadTasks";
+            resources.ApplyResources(this.tsmiTrayAfterUploadTasks, "tsmiTrayAfterUploadTasks");
             // 
             // tsmiTrayDestinations
             // 
-            resources.ApplyResources(this.tsmiTrayDestinations, "tsmiTrayDestinations");
             this.tsmiTrayDestinations.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiTrayImageUploaders,
             this.tsmiTrayTextUploaders,
@@ -1927,114 +1924,114 @@
             this.tsmiTrayCustomUploaderSettings});
             this.tsmiTrayDestinations.Image = global::ShareX.Properties.Resources.drive_globe;
             this.tsmiTrayDestinations.Name = "tsmiTrayDestinations";
+            resources.ApplyResources(this.tsmiTrayDestinations, "tsmiTrayDestinations");
             this.tsmiTrayDestinations.DropDownOpened += new System.EventHandler(this.tsddbDestinations_DropDownOpened);
             // 
             // tsmiTrayImageUploaders
             // 
-            resources.ApplyResources(this.tsmiTrayImageUploaders, "tsmiTrayImageUploaders");
             this.tsmiTrayImageUploaders.Image = global::ShareX.Properties.Resources.image;
             this.tsmiTrayImageUploaders.Name = "tsmiTrayImageUploaders";
+            resources.ApplyResources(this.tsmiTrayImageUploaders, "tsmiTrayImageUploaders");
             // 
             // tsmiTrayTextUploaders
             // 
-            resources.ApplyResources(this.tsmiTrayTextUploaders, "tsmiTrayTextUploaders");
             this.tsmiTrayTextUploaders.Image = global::ShareX.Properties.Resources.notebook;
             this.tsmiTrayTextUploaders.Name = "tsmiTrayTextUploaders";
+            resources.ApplyResources(this.tsmiTrayTextUploaders, "tsmiTrayTextUploaders");
             // 
             // tsmiTrayFileUploaders
             // 
-            resources.ApplyResources(this.tsmiTrayFileUploaders, "tsmiTrayFileUploaders");
             this.tsmiTrayFileUploaders.Image = global::ShareX.Properties.Resources.application_block;
             this.tsmiTrayFileUploaders.Name = "tsmiTrayFileUploaders";
+            resources.ApplyResources(this.tsmiTrayFileUploaders, "tsmiTrayFileUploaders");
             // 
             // tsmiTrayURLShorteners
             // 
-            resources.ApplyResources(this.tsmiTrayURLShorteners, "tsmiTrayURLShorteners");
             this.tsmiTrayURLShorteners.Image = global::ShareX.Properties.Resources.edit_scale;
             this.tsmiTrayURLShorteners.Name = "tsmiTrayURLShorteners";
+            resources.ApplyResources(this.tsmiTrayURLShorteners, "tsmiTrayURLShorteners");
             // 
             // tsmiTrayURLSharingServices
             // 
-            resources.ApplyResources(this.tsmiTrayURLSharingServices, "tsmiTrayURLSharingServices");
             this.tsmiTrayURLSharingServices.Image = global::ShareX.Properties.Resources.globe_share;
             this.tsmiTrayURLSharingServices.Name = "tsmiTrayURLSharingServices";
+            resources.ApplyResources(this.tsmiTrayURLSharingServices, "tsmiTrayURLSharingServices");
             // 
             // tssTrayDestinations1
             // 
-            resources.ApplyResources(this.tssTrayDestinations1, "tssTrayDestinations1");
             this.tssTrayDestinations1.Name = "tssTrayDestinations1";
+            resources.ApplyResources(this.tssTrayDestinations1, "tssTrayDestinations1");
             // 
             // tsmiTrayDestinationSettings
             // 
-            resources.ApplyResources(this.tsmiTrayDestinationSettings, "tsmiTrayDestinationSettings");
             this.tsmiTrayDestinationSettings.Image = global::ShareX.Properties.Resources.globe_pencil;
             this.tsmiTrayDestinationSettings.Name = "tsmiTrayDestinationSettings";
+            resources.ApplyResources(this.tsmiTrayDestinationSettings, "tsmiTrayDestinationSettings");
             this.tsmiTrayDestinationSettings.Click += new System.EventHandler(this.tsmiDestinationSettings_Click);
             // 
             // tsmiTrayCustomUploaderSettings
             // 
-            resources.ApplyResources(this.tsmiTrayCustomUploaderSettings, "tsmiTrayCustomUploaderSettings");
             this.tsmiTrayCustomUploaderSettings.Image = global::ShareX.Properties.Resources.network_cloud;
             this.tsmiTrayCustomUploaderSettings.Name = "tsmiTrayCustomUploaderSettings";
+            resources.ApplyResources(this.tsmiTrayCustomUploaderSettings, "tsmiTrayCustomUploaderSettings");
             this.tsmiTrayCustomUploaderSettings.Click += new System.EventHandler(this.tsmiCustomUploaderSettings_Click);
             // 
             // tsmiTrayTaskSettings
             // 
-            resources.ApplyResources(this.tsmiTrayTaskSettings, "tsmiTrayTaskSettings");
             this.tsmiTrayTaskSettings.Image = global::ShareX.Properties.Resources.gear;
             this.tsmiTrayTaskSettings.Name = "tsmiTrayTaskSettings";
+            resources.ApplyResources(this.tsmiTrayTaskSettings, "tsmiTrayTaskSettings");
             this.tsmiTrayTaskSettings.Click += new System.EventHandler(this.tsbTaskSettings_Click);
             // 
             // tsmiTrayApplicationSettings
             // 
-            resources.ApplyResources(this.tsmiTrayApplicationSettings, "tsmiTrayApplicationSettings");
             this.tsmiTrayApplicationSettings.Image = global::ShareX.Properties.Resources.wrench_screwdriver;
             this.tsmiTrayApplicationSettings.Name = "tsmiTrayApplicationSettings";
+            resources.ApplyResources(this.tsmiTrayApplicationSettings, "tsmiTrayApplicationSettings");
             this.tsmiTrayApplicationSettings.Click += new System.EventHandler(this.tsbApplicationSettings_Click);
             // 
             // tsmiTrayHotkeySettings
             // 
-            resources.ApplyResources(this.tsmiTrayHotkeySettings, "tsmiTrayHotkeySettings");
             this.tsmiTrayHotkeySettings.Image = global::ShareX.Properties.Resources.keyboard;
             this.tsmiTrayHotkeySettings.Name = "tsmiTrayHotkeySettings";
+            resources.ApplyResources(this.tsmiTrayHotkeySettings, "tsmiTrayHotkeySettings");
             this.tsmiTrayHotkeySettings.Click += new System.EventHandler(this.tsbHotkeySettings_Click);
             // 
             // tsmiTrayToggleHotkeys
             // 
-            resources.ApplyResources(this.tsmiTrayToggleHotkeys, "tsmiTrayToggleHotkeys");
             this.tsmiTrayToggleHotkeys.Image = global::ShareX.Properties.Resources.keyboard__minus;
             this.tsmiTrayToggleHotkeys.Name = "tsmiTrayToggleHotkeys";
+            resources.ApplyResources(this.tsmiTrayToggleHotkeys, "tsmiTrayToggleHotkeys");
             this.tsmiTrayToggleHotkeys.Click += new System.EventHandler(this.tsmiTrayToggleHotkeys_Click);
             // 
             // tssTray2
             // 
-            resources.ApplyResources(this.tssTray2, "tssTray2");
             this.tssTray2.Name = "tssTray2";
+            resources.ApplyResources(this.tssTray2, "tssTray2");
             // 
             // tsmiScreenshotsFolder
             // 
-            resources.ApplyResources(this.tsmiScreenshotsFolder, "tsmiScreenshotsFolder");
             this.tsmiScreenshotsFolder.Image = global::ShareX.Properties.Resources.folder_open_image;
             this.tsmiScreenshotsFolder.Name = "tsmiScreenshotsFolder";
+            resources.ApplyResources(this.tsmiScreenshotsFolder, "tsmiScreenshotsFolder");
             this.tsmiScreenshotsFolder.Click += new System.EventHandler(this.tsbScreenshotsFolder_Click);
             // 
             // tsmiTrayHistory
             // 
-            resources.ApplyResources(this.tsmiTrayHistory, "tsmiTrayHistory");
             this.tsmiTrayHistory.Image = global::ShareX.Properties.Resources.application_blog;
             this.tsmiTrayHistory.Name = "tsmiTrayHistory";
+            resources.ApplyResources(this.tsmiTrayHistory, "tsmiTrayHistory");
             this.tsmiTrayHistory.Click += new System.EventHandler(this.tsbHistory_Click);
             // 
             // tsmiTrayImageHistory
             // 
-            resources.ApplyResources(this.tsmiTrayImageHistory, "tsmiTrayImageHistory");
             this.tsmiTrayImageHistory.Image = global::ShareX.Properties.Resources.application_icon_large;
             this.tsmiTrayImageHistory.Name = "tsmiTrayImageHistory";
+            resources.ApplyResources(this.tsmiTrayImageHistory, "tsmiTrayImageHistory");
             this.tsmiTrayImageHistory.Click += new System.EventHandler(this.tsbImageHistory_Click);
             // 
             // tsmiTrayDebug
             // 
-            resources.ApplyResources(this.tsmiTrayDebug, "tsmiTrayDebug");
             this.tsmiTrayDebug.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiTrayShowDebugLog,
             this.tsmiTrayTestImageUpload,
@@ -2044,93 +2041,94 @@
             this.tsmiTrayTestURLSharing});
             this.tsmiTrayDebug.Image = global::ShareX.Properties.Resources.traffic_cone;
             this.tsmiTrayDebug.Name = "tsmiTrayDebug";
+            resources.ApplyResources(this.tsmiTrayDebug, "tsmiTrayDebug");
             // 
             // tsmiTrayShowDebugLog
             // 
-            resources.ApplyResources(this.tsmiTrayShowDebugLog, "tsmiTrayShowDebugLog");
             this.tsmiTrayShowDebugLog.Image = global::ShareX.Properties.Resources.application_monitor;
             this.tsmiTrayShowDebugLog.Name = "tsmiTrayShowDebugLog";
+            resources.ApplyResources(this.tsmiTrayShowDebugLog, "tsmiTrayShowDebugLog");
             this.tsmiTrayShowDebugLog.Click += new System.EventHandler(this.tsmiShowDebugLog_Click);
             // 
             // tsmiTrayTestImageUpload
             // 
-            resources.ApplyResources(this.tsmiTrayTestImageUpload, "tsmiTrayTestImageUpload");
             this.tsmiTrayTestImageUpload.Image = global::ShareX.Properties.Resources.image;
             this.tsmiTrayTestImageUpload.Name = "tsmiTrayTestImageUpload";
+            resources.ApplyResources(this.tsmiTrayTestImageUpload, "tsmiTrayTestImageUpload");
             this.tsmiTrayTestImageUpload.Click += new System.EventHandler(this.tsmiTestImageUpload_Click);
             // 
             // tsmiTrayTestTextUpload
             // 
-            resources.ApplyResources(this.tsmiTrayTestTextUpload, "tsmiTrayTestTextUpload");
             this.tsmiTrayTestTextUpload.Image = global::ShareX.Properties.Resources.notebook;
             this.tsmiTrayTestTextUpload.Name = "tsmiTrayTestTextUpload";
+            resources.ApplyResources(this.tsmiTrayTestTextUpload, "tsmiTrayTestTextUpload");
             this.tsmiTrayTestTextUpload.Click += new System.EventHandler(this.tsmiTestTextUpload_Click);
             // 
             // tsmiTrayTestFileUpload
             // 
-            resources.ApplyResources(this.tsmiTrayTestFileUpload, "tsmiTrayTestFileUpload");
             this.tsmiTrayTestFileUpload.Image = global::ShareX.Properties.Resources.application_block;
             this.tsmiTrayTestFileUpload.Name = "tsmiTrayTestFileUpload";
+            resources.ApplyResources(this.tsmiTrayTestFileUpload, "tsmiTrayTestFileUpload");
             this.tsmiTrayTestFileUpload.Click += new System.EventHandler(this.tsmiTestFileUpload_Click);
             // 
             // tsmiTrayTestURLShortener
             // 
-            resources.ApplyResources(this.tsmiTrayTestURLShortener, "tsmiTrayTestURLShortener");
             this.tsmiTrayTestURLShortener.Image = global::ShareX.Properties.Resources.edit_scale;
             this.tsmiTrayTestURLShortener.Name = "tsmiTrayTestURLShortener";
+            resources.ApplyResources(this.tsmiTrayTestURLShortener, "tsmiTrayTestURLShortener");
             this.tsmiTrayTestURLShortener.Click += new System.EventHandler(this.tsmiTestURLShortener_Click);
             // 
             // tsmiTrayTestURLSharing
             // 
-            resources.ApplyResources(this.tsmiTrayTestURLSharing, "tsmiTrayTestURLSharing");
             this.tsmiTrayTestURLSharing.Image = global::ShareX.Properties.Resources.globe_share;
             this.tsmiTrayTestURLSharing.Name = "tsmiTrayTestURLSharing";
+            resources.ApplyResources(this.tsmiTrayTestURLSharing, "tsmiTrayTestURLSharing");
             this.tsmiTrayTestURLSharing.Click += new System.EventHandler(this.tsmiTestURLSharing_Click);
             // 
             // tsmiTrayDonate
             // 
-            resources.ApplyResources(this.tsmiTrayDonate, "tsmiTrayDonate");
             this.tsmiTrayDonate.Image = global::ShareX.Properties.Resources.heart;
             this.tsmiTrayDonate.Name = "tsmiTrayDonate";
+            resources.ApplyResources(this.tsmiTrayDonate, "tsmiTrayDonate");
             this.tsmiTrayDonate.Click += new System.EventHandler(this.tsbDonate_Click);
             // 
             // tsmiTrayAbout
             // 
-            resources.ApplyResources(this.tsmiTrayAbout, "tsmiTrayAbout");
             this.tsmiTrayAbout.Image = global::ShareX.Properties.Resources.crown;
             this.tsmiTrayAbout.Name = "tsmiTrayAbout";
+            resources.ApplyResources(this.tsmiTrayAbout, "tsmiTrayAbout");
             this.tsmiTrayAbout.Click += new System.EventHandler(this.tsbAbout_Click);
             // 
             // tssTray3
             // 
-            resources.ApplyResources(this.tssTray3, "tssTray3");
             this.tssTray3.Name = "tssTray3";
+            resources.ApplyResources(this.tssTray3, "tssTray3");
             // 
             // tsmiTrayRecentItems
             // 
-            resources.ApplyResources(this.tsmiTrayRecentItems, "tsmiTrayRecentItems");
             this.tsmiTrayRecentItems.Image = global::ShareX.Properties.Resources.clipboard_list;
             this.tsmiTrayRecentItems.Name = "tsmiTrayRecentItems";
+            resources.ApplyResources(this.tsmiTrayRecentItems, "tsmiTrayRecentItems");
             // 
             // tsmiOpenActionsToolbar
             // 
-            resources.ApplyResources(this.tsmiOpenActionsToolbar, "tsmiOpenActionsToolbar");
             this.tsmiOpenActionsToolbar.Image = global::ShareX.Properties.Resources.ui_toolbar__arrow;
             this.tsmiOpenActionsToolbar.Name = "tsmiOpenActionsToolbar";
+            resources.ApplyResources(this.tsmiOpenActionsToolbar, "tsmiOpenActionsToolbar");
             this.tsmiOpenActionsToolbar.Click += new System.EventHandler(this.tsmiOpenActionsToolbar_Click);
             // 
             // tsmiTrayShow
             // 
-            resources.ApplyResources(this.tsmiTrayShow, "tsmiTrayShow");
             this.tsmiTrayShow.Image = global::ShareX.Properties.Resources.tick_button;
             this.tsmiTrayShow.Name = "tsmiTrayShow";
+            resources.ApplyResources(this.tsmiTrayShow, "tsmiTrayShow");
             this.tsmiTrayShow.Click += new System.EventHandler(this.tsmiTrayShow_Click);
             // 
             // tsmiTrayExit
             // 
-            resources.ApplyResources(this.tsmiTrayExit, "tsmiTrayExit");
             this.tsmiTrayExit.Image = global::ShareX.Properties.Resources.cross_button;
             this.tsmiTrayExit.Name = "tsmiTrayExit";
+            resources.ApplyResources(this.tsmiTrayExit, "tsmiTrayExit");
             this.tsmiTrayExit.Click += new System.EventHandler(this.tsmiTrayExit_Click);
             this.tsmiTrayExit.MouseDown += new System.Windows.Forms.MouseEventHandler(this.tsmiTrayExit_MouseDown);
             // 
@@ -2140,27 +2138,27 @@
             // 
             // pbDiscordOpen
             // 
-            resources.ApplyResources(this.pbDiscordOpen, "pbDiscordOpen");
             this.pbDiscordOpen.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbDiscordOpen.Image = global::ShareX.Properties.Resources.Discord_Button_01;
+            resources.ApplyResources(this.pbDiscordOpen, "pbDiscordOpen");
             this.pbDiscordOpen.Name = "pbDiscordOpen";
             this.pbDiscordOpen.TabStop = false;
             this.pbDiscordOpen.Click += new System.EventHandler(this.pbDiscordOpen_Click);
             // 
             // pbDiscordHide
             // 
-            resources.ApplyResources(this.pbDiscordHide, "pbDiscordHide");
             this.pbDiscordHide.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbDiscordHide.Image = global::ShareX.Properties.Resources.Discord_Button_02;
+            resources.ApplyResources(this.pbDiscordHide, "pbDiscordHide");
             this.pbDiscordHide.Name = "pbDiscordHide";
             this.pbDiscordHide.TabStop = false;
             this.pbDiscordHide.Click += new System.EventHandler(this.pbDiscordHide_Click);
             // 
             // pNews
             // 
-            resources.ApplyResources(this.pNews, "pNews");
             this.pNews.Controls.Add(this.btnCloseNews);
             this.pNews.Controls.Add(this.ucNews);
+            resources.ApplyResources(this.pNews, "pNews");
             this.pNews.Name = "pNews";
             // 
             // btnCloseNews
@@ -2172,22 +2170,22 @@
             // 
             // ucNews
             // 
-            resources.ApplyResources(this.ucNews, "ucNews");
             this.ucNews.BackColor = System.Drawing.SystemColors.Window;
+            resources.ApplyResources(this.ucNews, "ucNews");
             this.ucNews.Name = "ucNews";
             // 
             // pThumbnailView
             // 
-            resources.ApplyResources(this.pThumbnailView, "pThumbnailView");
             this.pThumbnailView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(47)))), ((int)(((byte)(56)))));
             this.pThumbnailView.Controls.Add(this.lblThumbnailViewTip);
             this.pThumbnailView.Controls.Add(this.ucTaskThumbnailView);
+            resources.ApplyResources(this.pThumbnailView, "pThumbnailView");
             this.pThumbnailView.Name = "pThumbnailView";
             // 
             // lblThumbnailViewTip
             // 
-            resources.ApplyResources(this.lblThumbnailViewTip, "lblThumbnailViewTip");
             this.lblThumbnailViewTip.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.lblThumbnailViewTip, "lblThumbnailViewTip");
             this.lblThumbnailViewTip.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(228)))), ((int)(((byte)(228)))));
             this.lblThumbnailViewTip.Name = "lblThumbnailViewTip";
             this.lblThumbnailViewTip.UseMnemonic = false;
@@ -2219,8 +2217,8 @@
             // 
             // MainForm
             // 
-            resources.ApplyResources(this, "$this");
             this.AllowDrop = true;
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.Controls.Add(this.pNews);
