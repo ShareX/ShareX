@@ -138,4 +138,13 @@
   <data name="btnCancel.Text" xml:space="preserve">
     <value>انصراف</value>
   </data>
+  <data name="lblHeight.Text" xml:space="preserve">
+    <value>ارتفاع:</value>
+  </data>
+  <data name="btnChangeColor.Text" xml:space="preserve">
+    <value>تغییر رنگ...</value>
+  </data>
+  <data name="gbBackgroundColor.Text" xml:space="preserve">
+    <value>رنگ پس زمینه </value>
+  </data>
 </root>

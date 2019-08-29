@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="lblCombineVertical.Text" xml:space="preserve">
-    <value>عمودی:</value>
+    <value>عمودی</value>
   </data>
   <data name="btnStartTask.Text" xml:space="preserve">
     <value>آپلود/ذخیره کردن با توجه به تنظیمات بعد از ضبط</value>
@@ -146,5 +146,41 @@
   </data>
   <data name="cbStartSelectionAutomatically.Text" xml:space="preserve">
     <value>قبل از بازکردن این پنجره، بگذار ناحیه ضبط را انتخاب کنم.</value>
+  </data>
+  <data name="btnCapture.Text" xml:space="preserve">
+    <value>شروع ضبط با اسکرول</value>
+  </data>
+  <data name="cbRemoveDuplicates.Text" xml:space="preserve">
+    <value>پاک کردن عکس های تکراری</value>
+  </data>
+  <data name="cbAutoDetectScrollEnd.Text" xml:space="preserve">
+    <value>تشخیص انتهای اسکرول</value>
+  </data>
+  <data name="gbWhileCapturing.Text" xml:space="preserve">
+    <value>در حال ضبط</value>
+  </data>
+  <data name="lblStartDelay.Text" xml:space="preserve">
+    <value>تاخیر شروع</value>
+  </data>
+  <data name="gbBeforeCapture.Text" xml:space="preserve">
+    <value>قبل از ضبط</value>
+  </data>
+  <data name="tpCapture.Text" xml:space="preserve">
+    <value>ضبط</value>
+  </data>
+  <data name="lblImageCount.Text" xml:space="preserve">
+    <value>تعداد عکس:</value>
+  </data>
+  <data name="gbImages.Text" xml:space="preserve">
+    <value>عکس ها</value>
+  </data>
+  <data name="lblTrimBottom.Text" xml:space="preserve">
+    <value>پایین:</value>
+  </data>
+  <data name="lblTrimLeft.Text" xml:space="preserve">
+    <value>چپ:</value>
+  </data>
+  <data name="tpOutput.Text" xml:space="preserve">
+    <value>خروجی</value>
   </data>
 </root>

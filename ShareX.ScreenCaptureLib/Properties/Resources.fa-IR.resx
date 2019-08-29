@@ -174,4 +174,52 @@
   <data name="ShapeManager_CreateToolbar_CaptureRegions" xml:space="preserve">
     <value>ناحیه های ضبط</value>
   </data>
+  <data name="ShapeManager_CreateToolbar_UseLetters" xml:space="preserve">
+    <value>استفاده از حروف</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_ImageSize" xml:space="preserve">
+    <value>سایز عکس...</value>
+  </data>
+  <data name="RegionCaptureForm_InitializeComponent_ImageEditor" xml:space="preserve">
+    <value>ویرایشگر عکس</value>
+  </data>
+  <data name="FFmpegHelper_Record_FFmpeg_error" xml:space="preserve">
+    <value>خطای FFmpeg</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_BringForward" xml:space="preserve">
+    <value>آوردن به جلو</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_Rotate90CounterClockwise" xml:space="preserve">
+    <value>۹۰ درجه در جهت خلاف عقربه ساعت بچرخان</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Capture" xml:space="preserve">
+    <value>ضبط</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_OpenImageFile" xml:space="preserve">
+    <value>بازکردن فایل عکس ...</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_Rotate90Clockwise" xml:space="preserve">
+    <value>۹۰ درجه در جهت عقربه های ساعت بچرخان</value>
+  </data>
+  <data name="WebpageCaptureForm_UpdateControls_Capture" xml:space="preserve">
+    <value>ضبط</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_PrintImage" xml:space="preserve">
+    <value>چاپ عکس ... (Ctrl + P)</value>
+  </data>
+  <data name="ShapeManager_CursorType" xml:space="preserve">
+    <value>نوع کرسر:</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Capture_fullscreen" xml:space="preserve">
+    <value>ضبط تمام صفحه</value>
+  </data>
+  <data name="ScrollingCaptureForm_StopCapture_Start_capture" xml:space="preserve">
+    <value>شروع ضبط</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Height_" xml:space="preserve">
+    <value>ارتفاع:</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Fill_color___" xml:space="preserve">
+    <value>پرکردن رنگ ...</value>
+  </data>
 </root>

@@ -139,12 +139,42 @@
     <value>دیگر رنگ های متن ...</value>
   </data>
   <data name="tsmiAlignmentRight.Text" xml:space="preserve">
-    <value>راست:</value>
+    <value>راست</value>
   </data>
   <data name="btnOK.Text" xml:space="preserve">
     <value>تایید</value>
   </data>
   <data name="btnCancel.Text" xml:space="preserve">
     <value>انصراف</value>
+  </data>
+  <data name="lblFont.Text" xml:space="preserve">
+    <value>فونت:</value>
+  </data>
+  <data name="cbBold.ToolTip" xml:space="preserve">
+    <value>برجسته</value>
+  </data>
+  <data name="cbUnderline.ToolTip" xml:space="preserve">
+    <value>زیرخط دار کردن</value>
+  </data>
+  <data name="cbItalic.ToolTip" xml:space="preserve">
+    <value>ایتالیک</value>
+  </data>
+  <data name="btnAlignmentHorizontal.ToolTip" xml:space="preserve">
+    <value>تراز افقی</value>
+  </data>
+  <data name="tsmiAlignmentLeft.Text" xml:space="preserve">
+    <value>چپ</value>
+  </data>
+  <data name="tsmiAlignmentCenter.Text" xml:space="preserve">
+    <value>وسط</value>
+  </data>
+  <data name="tsmiAlignmentMiddle.Text" xml:space="preserve">
+    <value>وسط</value>
+  </data>
+  <data name="tsmiAlignmentBottom.Text" xml:space="preserve">
+    <value>پایین</value>
+  </data>
+  <data name="tsrbmiGradientHorizontal.Text" xml:space="preserve">
+    <value>افقی</value>
   </data>
 </root>
