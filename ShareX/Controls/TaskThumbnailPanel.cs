@@ -233,7 +233,7 @@ namespace ShareX
         {
             lblTitle.Width = pThumbnail.Padding.Horizontal + ThumbnailSize.Width;
             pThumbnail.Size = new Size(pThumbnail.Padding.Horizontal + ThumbnailSize.Width, pThumbnail.Padding.Vertical + ThumbnailSize.Height);
-            Size = new Size(pThumbnail.Width, pThumbnail.Top + pThumbnail.Height);
+            Size = new Size(pThumbnail.Width, pThumbnail.Top + pThumbnail.Height + 22);
         }
 
         public void UpdateThumbnail(Image image = null)
