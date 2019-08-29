@@ -543,4 +543,19 @@
   <data name="gbFTPAccount.Text" xml:space="preserve">
     <value>اکانت</value>
   </data>
+  <data name="lblAzureStorageAccessKey.Text" xml:space="preserve">
+    <value>کلید دسترسی:</value>
+  </data>
+  <data name="grpSeafileAccInfo.Text" xml:space="preserve">
+    <value>اطلاعات اکانت</value>
+  </data>
+  <data name="lblFTPAccounts.Text" xml:space="preserve">
+    <value>اکانت ها:</value>
+  </data>
+  <data name="rbFTPTransferModeActive.Text" xml:space="preserve">
+    <value>فعال</value>
+  </data>
+  <data name="btnPhotobucketAddAlbum.Text" xml:space="preserve">
+    <value>اضافه کردن آلبوم</value>
+  </data>
 </root>

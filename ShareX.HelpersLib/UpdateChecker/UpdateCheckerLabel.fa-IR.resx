@@ -120,4 +120,7 @@
   <data name="lblStatus.Text" xml:space="preserve">
     <value>... حاوی آخرین نسخه نرم افزار است.</value>
   </data>
+  <data name="llblUpdateAvailable.Text" xml:space="preserve">
+    <value>نسخه جدیدتری از شیرایکس در دسترس است.</value>
+  </data>
 </root>

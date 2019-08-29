@@ -498,4 +498,51 @@
   <data name="PNGBitDepth_Bit24" xml:space="preserve">
     <value>۲۴ بیت</value>
   </data>
+  <data name="UpdateCheckerLabel_UpdateControls_A_newer_version_of_ShareX_is_available" xml:space="preserve">
+    <value>نسخه جدیدتری از {0} در دسترس است.</value>
+  </data>
+  <data name="UpdateMessageBox_UpdateMessageBox_" xml:space="preserve">
+    <value>نسخه جدیدتری از {0} در دسترس است.
+آیا مایلید آن را دانلود و نصب کنید؟</value>
+  </data>
+  <data name="UpdateMessageBox_UpdateMessageBox_Portable" xml:space="preserve">
+    <value>نسخه جدیدتری از {0} در دسترس است.
+آیا مایلید آن را دانلود و نصب کنید؟</value>
+  </data>
+  <data name="HotkeyType_AbortScreenRecording" xml:space="preserve">
+    <value>انصراف از ضبط فیلم صفحه</value>
+  </data>
+  <data name="HotkeyType_RectangleTransparent" xml:space="preserve">
+    <value>ضبط ناحیه (شفاف)</value>
+  </data>
+  <data name="HotkeyType_RectangleRegion" xml:space="preserve">
+    <value>ضبط ناحیه</value>
+  </data>
+  <data name="HotkeyType_RectangleLight" xml:space="preserve">
+    <value>ضبط ناحیه (روشن)</value>
+  </data>
+  <data name="HotkeyType_StartScreenRecorder" xml:space="preserve">
+    <value>شروع/توقف ضبط فیلم صفحه با آخرین ناحیه</value>
+  </data>
+  <data name="HotkeyType_ScreenRecorderGIFActiveWindow" xml:space="preserve">
+    <value>شروع/توقف ضبط فیلم صفحه (GIF) از پنجره جاری</value>
+  </data>
+  <data name="HotkeyType_ScreenRecorderGIFCustomRegion" xml:space="preserve">
+    <value>شروع/توقف ضبط فیلم صفحه (GIF) با ناحیه از پیش تنظیم شده</value>
+  </data>
+  <data name="HotkeyType_ScreenRecorderActiveWindow" xml:space="preserve">
+    <value>شروع/توقف ضبط فیلم صفحه از پنجره جاری</value>
+  </data>
+  <data name="HotkeyType_ScreenRecorderGIF" xml:space="preserve">
+    <value>شروع/توقف ضبط فیلم صفحه (GIF) از ناحیه سفارشی</value>
+  </data>
+  <data name="HotkeyType_StartScreenRecorderGIF" xml:space="preserve">
+    <value>شروع/توقف ضبط فیلم صفحه (GIF) با آخرین ناحیه</value>
+  </data>
+  <data name="HotkeyType_ScreenRecorder" xml:space="preserve">
+    <value>شروع/توقف ضبط فیلم صفحه از ناحیه سفارشی</value>
+  </data>
+  <data name="HotkeyType_ScreenRecorderCustomRegion" xml:space="preserve">
+    <value>شروع/توقف ضبط فیلم صفحه با ناحیه از پیش تنظیم شده</value>
+  </data>
 </root>

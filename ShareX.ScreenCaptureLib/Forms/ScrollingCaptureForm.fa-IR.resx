@@ -144,4 +144,7 @@
   <data name="gbAfterCapture.Text" xml:space="preserve">
     <value>بعد از ضبط</value>
   </data>
+  <data name="cbStartSelectionAutomatically.Text" xml:space="preserve">
+    <value>قبل از بازکردن این پنجره، بگذار ناحیه ضبط را انتخاب کنم.</value>
+  </data>
 </root>

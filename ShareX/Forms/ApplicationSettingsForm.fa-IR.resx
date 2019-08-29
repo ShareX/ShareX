@@ -315,4 +315,13 @@
   <data name="gbRecentLinks.Text" xml:space="preserve">
     <value>وظایف اخیر</value>
   </data>
+  <data name="cbUseCustomScreenshotsPath.Text" xml:space="preserve">
+    <value>از پوشه سفارشی برای اسکرین شات ها استفاده کن:</value>
+  </data>
+  <data name="cbIfUploadFailRetryOnce.Text" xml:space="preserve">
+    <value>تعداد سعی ها در صورتی که آپلود با مشکل مواجه شود.</value>
+  </data>
+  <data name="cbHistoryCheckURL.Text" xml:space="preserve">
+    <value>فقط در صورتی آدرس را ذخیره کن که خالی نباشد</value>
+  </data>
 </root>

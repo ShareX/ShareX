@@ -150,4 +150,10 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - ضبط خودکار</value>
   </data>
+  <data name="cbAutoMinimize.Text" xml:space="preserve">
+    <value>به صورت خودکار شیرایکس را به نواروظیفه کوچک کن</value>
+  </data>
+  <data name="rbCustomRegion.Text" xml:space="preserve">
+    <value>ناحیه سفارشی</value>
+  </data>
 </root>

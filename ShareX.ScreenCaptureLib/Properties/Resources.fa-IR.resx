@@ -171,4 +171,7 @@
   <data name="ShapeManager_CreateToolbar_DeleteAll" xml:space="preserve">
     <value>حذف همه</value>
   </data>
+  <data name="ShapeManager_CreateToolbar_CaptureRegions" xml:space="preserve">
+    <value>ناحیه های ضبط</value>
+  </data>
 </root>

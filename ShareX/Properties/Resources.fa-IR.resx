@@ -200,9 +200,6 @@
   <data name="UploadTask_ThreadDoWork_URL_is_empty_" xml:space="preserve">
     <value>آدرس خالی است.</value>
   </data>
-  <data name="AboutForm_AboutForm_Changelog" xml:space="preserve">
-    <value>تغییرات</value>
-  </data>
   <data name="AboutForm_AboutForm_Language_de" xml:space="preserve">
     <value>آلمانی</value>
   </data>
@@ -386,5 +383,8 @@
   </data>
   <data name="IntegrationHelpers_EditWithShareX" xml:space="preserve">
     <value>ویرایش با ShareX ...</value>
+  </data>
+  <data name="ScreenRecordForm_StartRecording_Encoding___" xml:space="preserve">
+    <value>در حال انکدکردن ...</value>
   </data>
 </root>

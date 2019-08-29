@@ -121,7 +121,7 @@
     <value>ShareX تنظیمات اولیه نرم افزار</value>
   </data>
   <data name="cbSendToMenu.Text" xml:space="preserve">
-    <value>نشان دادن ShareX در منوی "Send To"</value>
+    <value>نشان دادن شیرایکس در منوی «ارسال به»</value>
   </data>
   <data name="cbRunStartup.Text" xml:space="preserve">
     <value>هنگام شروع ویندوز، ShareX را اجرا کن</value>

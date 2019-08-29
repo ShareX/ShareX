@@ -150,4 +150,19 @@
   <data name="HistoryItemManager_InitializeComponent_Copy" xml:space="preserve">
     <value>کپی</value>
   </data>
+  <data name="HistoryItemManager_InitializeComponent_File_name" xml:space="preserve">
+    <value>نام فایل</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_File_path" xml:space="preserve">
+    <value>مسیر فایل</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_HTML_link" xml:space="preserve">
+    <value>لینک HTML</value>
+  </data>
+  <data name="HistoryItemManager_UpdateTexts_HTML_link___0__" xml:space="preserve">
+    <value>لینک HTML ({0})</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_More_info" xml:space="preserve">
+    <value>اطلاعات بیشتر</value>
+  </data>
 </root>
