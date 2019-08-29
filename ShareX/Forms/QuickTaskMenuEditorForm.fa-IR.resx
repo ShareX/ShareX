@@ -117,22 +117,16 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="btnStart.Text" xml:space="preserve">
-    <value>شروع</value>
+  <data name="btnAdd.Text" xml:space="preserve">
+    <value>اضافه کردن</value>
   </data>
-  <data name="btnAbort.Text" xml:space="preserve">
-    <value>انصراف</value>
+  <data name="btnClose.Text" xml:space="preserve">
+    <value>بستن</value>
   </data>
-  <data name="lblTimer.Text" xml:space="preserve">
-    <value>۰۰:۰۰:۰۰</value>
+  <data name="btnEdit.Text" xml:space="preserve">
+    <value>ویرایش</value>
   </data>
-  <data name="tsmiAbort.Text" xml:space="preserve">
-    <value>انصراف</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - ضبط فیلم صفحه</value>
-  </data>
-  <data name="tsmiStart.Text" xml:space="preserve">
-    <value>شروع</value>
+  <data name="btnRemove.Text" xml:space="preserve">
+    <value>حذف</value>
   </data>
 </root>

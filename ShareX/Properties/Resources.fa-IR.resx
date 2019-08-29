@@ -293,4 +293,10 @@
   <data name="UploadManager_UploadFolder_Folder_upload" xml:space="preserve">
     <value>آپلود فولدر</value>
   </data>
+  <data name="TaskHelpers_ToggleHotkeys_Hotkeys_disabled_" xml:space="preserve">
+    <value>کلیدهای میانبر غیرفعال شدند.</value>
+  </data>
+  <data name="TaskHelpers_ToggleHotkeys_Hotkeys_enabled_" xml:space="preserve">
+    <value>کلیدهای میانبر غیرفعال شدند.</value>
+  </data>
 </root>

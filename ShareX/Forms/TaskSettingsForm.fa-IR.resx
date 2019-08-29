@@ -117,22 +117,52 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="btnStart.Text" xml:space="preserve">
-    <value>شروع</value>
+  <data name="lblImageJPEGQualityHint.Text" xml:space="preserve">
+    <value>۰ - ۱۰۰</value>
   </data>
-  <data name="btnAbort.Text" xml:space="preserve">
-    <value>انصراف</value>
+  <data name="tpActions.Text" xml:space="preserve">
+    <value>کارها</value>
   </data>
-  <data name="lblTimer.Text" xml:space="preserve">
-    <value>۰۰:۰۰:۰۰</value>
+  <data name="btnRegionCaptureSnapSizesDialogAdd.Text" xml:space="preserve">
+    <value>اضافه کردن</value>
   </data>
-  <data name="tsmiAbort.Text" xml:space="preserve">
-    <value>انصراف</value>
+  <data name="btnUploaderFiltersAdd.Text" xml:space="preserve">
+    <value>اضافه کردن</value>
   </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - ضبط فیلم صفحه</value>
+  <data name="btnActionsAdd.Text" xml:space="preserve">
+    <value>اضافه کردن</value>
   </data>
-  <data name="tsmiStart.Text" xml:space="preserve">
-    <value>شروع</value>
+  <data name="btnWatchFolderAdd.Text" xml:space="preserve">
+    <value>اضافه کردن...</value>
+  </data>
+  <data name="tpAdvanced.Text" xml:space="preserve">
+    <value>پیشرفته</value>
+  </data>
+  <data name="btnAfterCapture.Text" xml:space="preserve">
+    <value>بعد از ضبط ...</value>
+  </data>
+  <data name="lblAfterTaskNotification.Text" xml:space="preserve">
+    <value>بعد از اتمام وظیفه:</value>
+  </data>
+  <data name="btnAfterUpload.Text" xml:space="preserve">
+    <value>بعد از آپلود ...</value>
+  </data>
+  <data name="chActionsArgs.Text" xml:space="preserve">
+    <value>آرگومان های ورودی:</value>
+  </data>
+  <data name="lblCaptureCustomRegionHeight.Text" xml:space="preserve">
+    <value>ارتفاع:</value>
+  </data>
+  <data name="lblThumbnailHeight.Text" xml:space="preserve">
+    <value>ارتفاع:</value>
+  </data>
+  <data name="lblRegionCaptureFixedSizeHeight.Text" xml:space="preserve">
+    <value>ارتفاع:</value>
+  </data>
+  <data name="RegionCaptureSnapSizesHeight.Text" xml:space="preserve">
+    <value>ارتفاع:</value>
+  </data>
+  <data name="lblImageGIFQuality.Text" xml:space="preserve">
+    <value>کیفیت GIF:</value>
   </data>
 </root>

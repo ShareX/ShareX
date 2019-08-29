@@ -117,22 +117,37 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="btnStart.Text" xml:space="preserve">
-    <value>شروع</value>
+  <data name="cbDeleteInputFile.Text" xml:space="preserve">
+    <value>حذف فایل ورودی</value>
   </data>
-  <data name="btnAbort.Text" xml:space="preserve">
-    <value>انصراف</value>
+  <data name="lblPath.Text" xml:space="preserve">
+    <value>مسیر فایل:</value>
   </data>
-  <data name="lblTimer.Text" xml:space="preserve">
-    <value>۰۰:۰۰:۰۰</value>
+  <data name="lblExtensions.Text" xml:space="preserve">
+    <value>فیلتر پسوند فایل (مثلا mp4)</value>
   </data>
-  <data name="tsmiAbort.Text" xml:space="preserve">
+  <data name="btnPathBrowse.Text" xml:space="preserve">
+    <value>...</value>
+  </data>
+  <data name="lblOutputExtension.Text" xml:space="preserve">
+    <value>پسوند فایل خروجی (خالی = از همان نام فایل استفاده کن):</value>
+  </data>
+  <data name="cbHiddenWindow.Text" xml:space="preserve">
+    <value>پنجره مخفی</value>
+  </data>
+  <data name="btnOK.Text" xml:space="preserve">
+    <value>تایید</value>
+  </data>
+  <data name="lblName.Text" xml:space="preserve">
+    <value>نام:</value>
+  </data>
+  <data name="btnCancel.Text" xml:space="preserve">
     <value>انصراف</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - ضبط فیلم صفحه</value>
+    <value>ShareX - اعمال</value>
   </data>
-  <data name="tsmiStart.Text" xml:space="preserve">
-    <value>شروع</value>
+  <data name="lblArgs.Text" xml:space="preserve">
+    <value>آرگومان های ورودی:</value>
   </data>
 </root>

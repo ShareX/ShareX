@@ -117,22 +117,28 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="btnStart.Text" xml:space="preserve">
-    <value>شروع</value>
+  <data name="btnPathBrowse.Text" xml:space="preserve">
+    <value>...</value>
   </data>
-  <data name="btnAbort.Text" xml:space="preserve">
+  <data name="btnCancel.Text" xml:space="preserve">
     <value>انصراف</value>
   </data>
-  <data name="lblTimer.Text" xml:space="preserve">
-    <value>۰۰:۰۰:۰۰</value>
+  <data name="lblFilterExample.Text" xml:space="preserve">
+    <value>نمونه: *.png</value>
   </data>
-  <data name="tsmiAbort.Text" xml:space="preserve">
-    <value>انصراف</value>
+  <data name="lblFilter.Text" xml:space="preserve">
+    <value>فیلتر:</value>
+  </data>
+  <data name="lblFolderPath.Text" xml:space="preserve">
+    <value>مسیر پوشه:</value>
+  </data>
+  <data name="cbIncludeSubdirectories.Text" xml:space="preserve">
+    <value>زیرپوشه ها را نیز ذر نظر بگیر</value>
+  </data>
+  <data name="btnOK.Text" xml:space="preserve">
+    <value>تایید</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - ضبط فیلم صفحه</value>
-  </data>
-  <data name="tsmiStart.Text" xml:space="preserve">
-    <value>شروع</value>
+    <value>ShareX - مشاهده تغییرات پوشه</value>
   </data>
 </root>

@@ -117,22 +117,34 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="btnStart.Text" xml:space="preserve">
-    <value>شروع</value>
+  <data name="tsmiCopy.Text" xml:space="preserve">
+    <value>کپی کردن عکس به کلیپ بورد</value>
   </data>
-  <data name="btnAbort.Text" xml:space="preserve">
-    <value>انصراف</value>
+  <data name="tsmiUpload.Text" xml:space="preserve">
+    <value>آپلود عکس </value>
   </data>
-  <data name="lblTimer.Text" xml:space="preserve">
-    <value>۰۰:۰۰:۰۰</value>
+  <data name="tpDecode.Text" xml:space="preserve">
+    <value>تبدیل به QR</value>
   </data>
-  <data name="tsmiAbort.Text" xml:space="preserve">
-    <value>انصراف</value>
+  <data name="tsmiDecode.Text" xml:space="preserve">
+    <value>تبدیل به QR</value>
+  </data>
+  <data name="btnDecodeFromFile.Text" xml:space="preserve">
+    <value>خواندن کد QR از عکس ...</value>
+  </data>
+  <data name="btnDecodeFromScreen.Text" xml:space="preserve">
+    <value>خواندن QR از صفحه نمایش ...</value>
+  </data>
+  <data name="tpEncode.Text" xml:space="preserve">
+    <value>بخوان! </value>
+  </data>
+  <data name="lblDecodeResult.Text" xml:space="preserve">
+    <value>نتیجه</value>
+  </data>
+  <data name="tsmiSaveAs.Text" xml:space="preserve">
+    <value>ذخیره به عنوان عکس</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - ضبط فیلم صفحه</value>
-  </data>
-  <data name="tsmiStart.Text" xml:space="preserve">
-    <value>شروع</value>
+    <value>ShareX - کد QR</value>
   </data>
 </root>

@@ -117,22 +117,37 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="btnStart.Text" xml:space="preserve">
+  <data name="ssBar.Text" xml:space="preserve">
+    <value>وضعیت</value>
+  </data>
+  <data name="btnExecute.Text" xml:space="preserve">
     <value>شروع</value>
   </data>
-  <data name="btnAbort.Text" xml:space="preserve">
-    <value>انصراف</value>
+  <data name="cbWaitUploads.Text" xml:space="preserve">
+    <value>صبر کن تا کارها تمام شود</value>
   </data>
-  <data name="lblTimer.Text" xml:space="preserve">
-    <value>۰۰:۰۰:۰۰</value>
+  <data name="lblRegion.Text" xml:space="preserve">
+    <value>ناحیه</value>
   </data>
-  <data name="tsmiAbort.Text" xml:space="preserve">
-    <value>انصراف</value>
+  <data name="btnRegion.Text" xml:space="preserve">
+    <value>انتخاب ناحیه</value>
+  </data>
+  <data name="lblDuration.Text" xml:space="preserve">
+    <value>تعداد تکرار:</value>
+  </data>
+  <data name="niTray.Text" xml:space="preserve">
+    <value>ShareX - ضبط خودکار</value>
+  </data>
+  <data name="lblDurationSeconds.Text" xml:space="preserve">
+    <value>ثانیه</value>
+  </data>
+  <data name="rbFullscreen.Text" xml:space="preserve">
+    <value>تمام صفحه</value>
+  </data>
+  <data name="gbRegion.Text" xml:space="preserve">
+    <value>ناحیه</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - ضبط فیلم صفحه</value>
-  </data>
-  <data name="tsmiStart.Text" xml:space="preserve">
-    <value>شروع</value>
+    <value>ShareX - ضبط خودکار</value>
   </data>
 </root>
