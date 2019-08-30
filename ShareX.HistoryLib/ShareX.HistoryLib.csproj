@@ -143,6 +143,9 @@
     <EmbeddedResource Include="Forms\HistoryForm.es.resx">
       <DependentUpon>HistoryForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\HistoryForm.fa-IR.resx">
+      <DependentUpon>HistoryForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\HistoryForm.fr.resx">
       <DependentUpon>HistoryForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -189,6 +192,9 @@
       <DependentUpon>HistoryItemInfoForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\HistoryItemInfoForm.es.resx">
+      <DependentUpon>HistoryItemInfoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\HistoryItemInfoForm.fa-IR.resx">
       <DependentUpon>HistoryItemInfoForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\HistoryItemInfoForm.fr.resx">
@@ -239,6 +245,9 @@
     <EmbeddedResource Include="Forms\ImageHistoryForm.es.resx">
       <DependentUpon>ImageHistoryForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ImageHistoryForm.fa-IR.resx">
+      <DependentUpon>ImageHistoryForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ImageHistoryForm.fr.resx">
       <DependentUpon>ImageHistoryForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -284,6 +293,9 @@
     <EmbeddedResource Include="Forms\ImageHistorySettingsForm.es-MX.resx">
       <DependentUpon>ImageHistorySettingsForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ImageHistorySettingsForm.fa-IR.resx">
+      <DependentUpon>ImageHistorySettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ImageHistorySettingsForm.resx">
       <DependentUpon>ImageHistorySettingsForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -302,6 +314,7 @@
     <EmbeddedResource Include="Properties\Resources.de.resx" />
     <EmbeddedResource Include="Properties\Resources.es-MX.resx" />
     <EmbeddedResource Include="Properties\Resources.es.resx" />
+    <EmbeddedResource Include="Properties\Resources.fa-IR.resx" />
     <EmbeddedResource Include="Properties\Resources.fr.resx" />
     <EmbeddedResource Include="Properties\Resources.hu.resx" />
     <EmbeddedResource Include="Properties\Resources.it-IT.resx" />
