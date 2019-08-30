@@ -244,7 +244,6 @@ namespace ShareX
 
             // Add the event handler for handling non-UI thread exceptions to the event
             AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;
-            Application.SetUnhandledExceptionMode(UnhandledExceptionMode.CatchException);
 #endif
 
             StartTimer = Stopwatch.StartNew(); // For be able to show startup time
