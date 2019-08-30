@@ -159,4 +159,10 @@
   <data name="btnAddPreset.Text" xml:space="preserve">
     <value>Nouveau préréglage</value>
   </data>
+  <data name="btnUploadImage.Text" xml:space="preserve">
+    <value>Mettre en ligne une image</value>
+  </data>
+  <data name="btnRefresh.Text" xml:space="preserve">
+    <value>Rafraîchir</value>
+  </data>
 </root>

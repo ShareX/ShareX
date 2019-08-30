@@ -278,7 +278,7 @@ Veuillez sélectionner un raccourci différent ou quitter l'application en confl
     <value>La vidéo ou la piste audio source doit être définie.</value>
   </data>
   <data name="AboutForm_AboutForm_Changelog" xml:space="preserve">
-    <value>Notes de changement</value>
+    <value>Historique des modifications</value>
   </data>
   <data name="HotkeyManager_ShowFailedHotkeys_hotkey" xml:space="preserve">
     <value>raccourci clavier</value>
@@ -511,5 +511,82 @@ Clique de la molette pour fermer</value>
   </data>
   <data name="ApplicationSettingsForm_cbStartWithWindows_Text" xml:space="preserve">
     <value>Lancer ShareX au démarrage de Windows</value>
+  </data>
+  <data name="ScreenshotDelay0S" xml:space="preserve">
+    <value>Délai de capture d'écran : {0} s</value>
+  </data>
+  <data name="SwitchToThumbnailView" xml:space="preserve">
+    <value>Basculer vers la vue miniatures</value>
+  </data>
+  <data name="SwitchToListView" xml:space="preserve">
+    <value>Basculer vers la vue liste</value>
+  </data>
+  <data name="HideThumbnailTitle" xml:space="preserve">
+    <value>Cacher le titre des miniatures</value>
+  </data>
+  <data name="ShowThumbnailTitle" xml:space="preserve">
+    <value>Afficher le titre des miniatures</value>
+  </data>
+  <data name="UploadManager_ShowShortenURLDialog_ShortenURL" xml:space="preserve">
+    <value>Raccourcir URL</value>
+  </data>
+  <data name="ScreenRecord_ConfirmCancel" xml:space="preserve">
+    <value>Êtes-vous sûr de vouloir abandonner cet enregistrement ?</value>
+  </data>
+  <data name="ApplicationSettingsForm_btnCheckDevBuild_Click_DevBuilds_Warning" xml:space="preserve">
+    <value>Les versions de développement peuvent être instables et doivent être utilisées uniquement à des fins de test. Voulez-vous installer ?</value>
+  </data>
+  <data name="IntegrationHelpers_EditWithShareX" xml:space="preserve">
+    <value>Modifier avec ShareX</value>
+  </data>
+  <data name="OCRForm_AutoCompleteFail" xml:space="preserve">
+    <value>Une erreur est survenue lors du traitement OCR, ou aucun texte n'a été retourné.</value>
+  </data>
+  <data name="OCRForm_AutoProcessing" xml:space="preserve">
+    <value>L'OCR est en cours de traitement.</value>
+  </data>
+  <data name="ShareXConfirmation" xml:space="preserve">
+    <value>ShareX - Confirmation</value>
+  </data>
+  <data name="ShareXOpticalCharacterRecognition" xml:space="preserve">
+    <value>ShareX - Reconnaissance optique de caractères</value>
+  </data>
+  <data name="UploadManager_ShowShortenURLDialog_Shorten" xml:space="preserve">
+    <value>Raccourcir</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_uk" xml:space="preserve">
+    <value>Ukrainien</value>
+  </data>
+  <data name="ApplicationSettingsForm_cbStartWithWindows_EnabledByPolicy_Text" xml:space="preserve">
+    <value>Le démarrage a été activé par votre organisation</value>
+  </data>
+  <data name="OCRForm_AutoComplete" xml:space="preserve">
+    <value>La résultat de l'OCR a été copié vers votre presse-papier.</value>
+  </data>
+  <data name="MainForm_UploadDebugLogWarning" xml:space="preserve">
+    <value>Le journal de déboggage peut contenir des informations sensibles. Êtes-vous sûr de vouloir continuer ?</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_id_ID" xml:space="preserve">
+    <value>Indonésien</value>
+  </data>
+  <data name="ShareXNeedsToBeRestartedForThePersonalFolderChangesToApply" xml:space="preserve">
+    <value>ShareX doit être redémarré pour que les changements du dossier personnel soient appliqués.
+
+Voulez-vous redémarrer ShareX ?</value>
+  </data>
+  <data name="ApplicationSettingsForm_cbStartWithWindows_DisabledByPolicy_Text" xml:space="preserve">
+    <value>Le démarrage a été désactivé par votre organisation</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_es_MX" xml:space="preserve">
+    <value>Espagnol mexicain</value>
+  </data>
+  <data name="PleaseNoteThatShareXIsUsingOCRSpaceSOnlineAPIToPerformOpticalCharacterRecognitionDoYouGivePermissionToShareXToUploadImagesToThisService" xml:space="preserve">
+    <value>Veuillez noter que ShareX utilise l'API en ligne OCR.Space pour effectuer la reconnaissance optique de caractères. Donnez-vous la permission à ShareX de mettre en ligne des images vers ce service ?</value>
+  </data>
+  <data name="ActionsToolbar_StayTopMost" xml:space="preserve">
+    <value>Rester sur le dessus</value>
+  </data>
+  <data name="ApplicationSettingsForm_btnResetSettings_Click_WouldYouLikeToResetShareXSettings" xml:space="preserve">
+    <value>Voulez-vous réinitialiser les paramètres de ShareX ?</value>
   </data>
 </root>

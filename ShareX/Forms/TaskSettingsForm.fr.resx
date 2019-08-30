@@ -513,4 +513,67 @@
   <data name="lblRegionCaptureSnapSizes.Text" xml:space="preserve">
     <value>La taille des régions s'adaptera à cette liste lors du maintient de la touche "Alt" :</value>
   </data>
+  <data name="lblScreenshotDelay.Text" xml:space="preserve">
+    <value>Délai de capture d'écran :</value>
+  </data>
+  <data name="lblCaptureCustomRegionY.Text" xml:space="preserve">
+    <value>Y</value>
+  </data>
+  <data name="lblCaptureCustomRegionX.Text" xml:space="preserve">
+    <value>X</value>
+  </data>
+  <data name="btnRegionCaptureSnapSizesRemove.Text" xml:space="preserve">
+    <value>-</value>
+  </data>
+  <data name="btnRegionCaptureSnapSizesAdd.Text" xml:space="preserve">
+    <value>+</value>
+  </data>
+  <data name="lblImageJPEGQualityHint.Text" xml:space="preserve">
+    <value>0 - 100</value>
+  </data>
+  <data name="lblAutoIncrementNumber.Text" xml:space="preserve">
+    <value>Incrémentation automatique du numéro :</value>
+  </data>
+  <data name="lblOCRDefaultLanguage.Text" xml:space="preserve">
+    <value>Langue par défaut :</value>
+  </data>
+  <data name="cbCaptureOCRAutoCopy.Text" xml:space="preserve">
+    <value>Copier automatiquement les résultats dans le presse-papier</value>
+  </data>
+  <data name="cbRegionCaptureDetectControls.Text" xml:space="preserve">
+    <value>Détecter également les régions des contrôles dans les fenêtres</value>
+  </data>
+  <data name="cbScreenRecordConfirmAbort.Text" xml:space="preserve">
+    <value>Demander une confirmation lors de l'abandon</value>
+  </data>
+  <data name="btnAutoIncrementNumber.Text" xml:space="preserve">
+    <value>Modifier</value>
+  </data>
+  <data name="btnWatchFolderEdit.Text" xml:space="preserve">
+    <value>Modifier...</value>
+  </data>
+  <data name="cbClipboardUploadURLContents.Text" xml:space="preserve">
+    <value>Si le presse-papier contient un fichier d'URL alors le télécharger et le mettre en ligne</value>
+  </data>
+  <data name="tpOCR.Text" xml:space="preserve">
+    <value>OCR</value>
+  </data>
+  <data name="lblActionsNote.Text" xml:space="preserve">
+    <value>Note : Vous pouvez activer/désactiver des actions depuis "Tâches après la capture -&gt; Effectuer des actions".</value>
+  </data>
+  <data name="lblImagePNGBitDepth.Text" xml:space="preserve">
+    <value>Profondeur de bits PNG</value>
+  </data>
+  <data name="cbScreenRecordTwoPassEncoding.Text" xml:space="preserve">
+    <value>Enregistrer en utilisant un encodage sans perte puis appliquer les options d'encodage de l'utilisateur</value>
+  </data>
+  <data name="cbFileUploadReplaceProblematicCharacters.Text" xml:space="preserve">
+    <value>Remplacer les caractères problématiques dans les URL par des underscores lors de la mise en ligne</value>
+  </data>
+  <data name="cbCaptureOCRSilent.Text" xml:space="preserve">
+    <value>Traitement OCR silencieux</value>
+  </data>
+  <data name="cbCaptureOCRProcessOnLoad.Text" xml:space="preserve">
+    <value>Traitement OCR lorsque la boîte de dialogue est ouverte</value>
+  </data>
 </root>

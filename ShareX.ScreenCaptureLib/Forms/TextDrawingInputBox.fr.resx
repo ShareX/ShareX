@@ -139,7 +139,7 @@
     <value>Bas</value>
   </data>
   <data name="lblTextSize.Text" xml:space="preserve">
-    <value>Taille:</value>
+    <value>Taille :</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Saisie de texte</value>
@@ -152,5 +152,47 @@
   </data>
   <data name="lblTip.Text" xml:space="preserve">
     <value>Nouvelle ligne : Ctrl+Entrée</value>
+  </data>
+  <data name="tsrbmiGradientBackwardDiagonal.Text" xml:space="preserve">
+    <value>Diagonale en arrière</value>
+  </data>
+  <data name="cbBold.ToolTip" xml:space="preserve">
+    <value>Gras</value>
+  </data>
+  <data name="tsmiEnableGradient.Text" xml:space="preserve">
+    <value>Activer dégradé</value>
+  </data>
+  <data name="tsrbmiGradientForwardDiagonal.Text" xml:space="preserve">
+    <value>Diagonale en avant</value>
+  </data>
+  <data name="btnGradient.ToolTip" xml:space="preserve">
+    <value>Dégradé</value>
+  </data>
+  <data name="tsmiGradientMode.Text" xml:space="preserve">
+    <value>Mode de dégradé</value>
+  </data>
+  <data name="tsrbmiGradientHorizontal.Text" xml:space="preserve">
+    <value>Horizontal</value>
+  </data>
+  <data name="btnAlignmentHorizontal.ToolTip" xml:space="preserve">
+    <value>Alignement horizontal</value>
+  </data>
+  <data name="cbItalic.ToolTip" xml:space="preserve">
+    <value>Italique</value>
+  </data>
+  <data name="btnTextColor.ToolTip" xml:space="preserve">
+    <value>Couleur du texte</value>
+  </data>
+  <data name="tsmiSecondColor.Text" xml:space="preserve">
+    <value>Couleur secondaire du texte</value>
+  </data>
+  <data name="cbUnderline.ToolTip" xml:space="preserve">
+    <value>Souligner</value>
+  </data>
+  <data name="btnAlignmentVertical.ToolTip" xml:space="preserve">
+    <value>Alignement vertical</value>
+  </data>
+  <data name="tsrbmiGradientVertical.Text" xml:space="preserve">
+    <value>Vertical</value>
   </data>
 </root>
