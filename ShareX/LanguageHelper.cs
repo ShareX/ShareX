@@ -104,6 +104,9 @@ namespace ShareX
                 case SupportedLanguage.MexicanSpanish:
                     icon = Resources.mx;
                     break;
+                case SupportedLanguage.Persian:
+                    icon = Resources.ir;
+                    break;
                 case SupportedLanguage.PortugueseBrazil:
                     icon = Resources.br;
                     break;
@@ -127,9 +130,6 @@ namespace ShareX
                     break;
                 case SupportedLanguage.Vietnamese:
                     icon = Resources.vn;
-                    break;
-                case SupportedLanguage.Persian:
-                    icon = Resources.IR;
                     break;
             }
 
@@ -170,6 +170,9 @@ namespace ShareX
                 case SupportedLanguage.MexicanSpanish:
                     cultureName = "es-MX";
                     break;
+                case SupportedLanguage.Persian:
+                    cultureName = "fa-IR";
+                    break;
                 case SupportedLanguage.PortugueseBrazil:
                     cultureName = "pt-BR";
                     break;
@@ -193,9 +196,6 @@ namespace ShareX
                     break;
                 case SupportedLanguage.Vietnamese:
                     cultureName = "vi-VN";
-                    break;
-                case SupportedLanguage.Persian:
-                    cultureName = "fa-IR";
                     break;
             }
 

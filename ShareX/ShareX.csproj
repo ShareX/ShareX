@@ -1668,7 +1668,7 @@
     <None Include="Resources\SocialHideButton.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resources\IR.png" />
+    <None Include="Resources\ir.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

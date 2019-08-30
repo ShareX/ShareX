@@ -234,10 +234,16 @@ namespace ShareX
         [STAThread]
         private static void Main(string[] args)
         {
-#if !DEBUG // Allow Visual Studio to break on exceptions in Debug builds.
+            // Allow Visual Studio to break on exceptions in Debug builds
+#if !DEBUG
+            // Add the event handler for handling UI thread exceptions to the event
             Application.ThreadException += Application_ThreadException;
-            AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;
+
+            // Set the unhandled exception mode to force all Windows Forms errors to go through our handler
             Application.SetUnhandledExceptionMode(UnhandledExceptionMode.CatchException);
+
+            // Add the event handler for handling non-UI thread exceptions to the event
+            AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;
 #endif
 
             StartTimer = Stopwatch.StartNew(); // For be able to show startup time
