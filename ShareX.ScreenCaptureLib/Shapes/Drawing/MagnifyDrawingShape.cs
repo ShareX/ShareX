@@ -71,7 +71,7 @@ namespace ShareX.ScreenCaptureLib
 
                 g.DrawImage(Manager.Form.Canvas, Rectangle,
                     new Rectangle(Rectangle.X + (Rectangle.Width / 2) - (newWidth / 2) - Manager.Form.CanvasRectangle.X + Manager.RenderOffset.X,
-                    Rectangle.Y  + (Rectangle.Height / 2) - (newHeight / 2) - Manager.Form.CanvasRectangle.Y + Manager.RenderOffset.Y,
+                    Rectangle.Y + (Rectangle.Height / 2) - (newHeight / 2) - Manager.Form.CanvasRectangle.Y + Manager.RenderOffset.Y,
                     newWidth, newHeight), GraphicsUnit.Pixel);
 
                 g.ResetClip();

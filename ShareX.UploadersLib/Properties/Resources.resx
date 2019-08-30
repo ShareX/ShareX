@@ -257,9 +257,6 @@ Created folders:</value>
   <data name="Polr" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Favicons\Polr.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="TinyPic" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Favicons\TinyPic.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="UploadersConfigForm_oAuthJira_RefreshButtonClicked_Refresh_authorization_is_not_supported_" xml:space="preserve">
     <value>Refresh authorization is not supported.</value>
   </data>

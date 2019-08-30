@@ -63,6 +63,8 @@ namespace ShareX
         Korean,
         [Description("Español mexicano (Mexican Spanish)")]
         MexicanSpanish,
+        [Description("فارسی (Persian)")]
+        Persian,
         [Description("Português-Brasil (Portuguese-Brazil)")]
         PortugueseBrazil,
         [Description("Русский (Russian)")]

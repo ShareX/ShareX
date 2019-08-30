@@ -127,7 +127,7 @@
     <value>Показывать прогресс на иконке в трее</value>
   </data>
   <data name="cbRememberMainFormPosition.Text" xml:space="preserve">
-    <value>Запоминать расположение главного окна</value>
+    <value>Запоминать положение главного окна</value>
   </data>
   <data name="cbShowTray.Text" xml:space="preserve">
     <value>Показывать иконку в трее</value>
@@ -347,5 +347,14 @@
   </data>
   <data name="btnPersonalFolderPathApply.Text" xml:space="preserve">
     <value>Применить</value>
+  </data>
+  <data name="cbExperimentalDarkTheme.Text" xml:space="preserve">
+    <value>Экспериментальная темная тема</value>
+  </data>
+  <data name="cbUseWhiteShareXIcon.Text" xml:space="preserve">
+    <value>Использовать белую иконку ShareX</value>
+  </data>
+  <data name="cbUseDarkTheme.Text" xml:space="preserve">
+    <value>Использовать темную тему</value>
   </data>
 </root>

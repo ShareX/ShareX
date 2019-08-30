@@ -744,7 +744,7 @@ namespace ShareX
         {
             if (Program.Settings.TaskViewMode == TaskViewMode.ListView)
             {
-                tsmiSwitchTaskViewMode.Text = "Switch to thumbnail view";
+                tsmiSwitchTaskViewMode.Text = Resources.SwitchToThumbnailView;
                 tsmiSwitchTaskViewMode.Image = Resources.application_icon_large;
                 scMain.Visible = true;
                 pThumbnailView.Visible = false;
@@ -752,7 +752,7 @@ namespace ShareX
             }
             else
             {
-                tsmiSwitchTaskViewMode.Text = "Switch to list view";
+                tsmiSwitchTaskViewMode.Text = Resources.SwitchToListView;
                 tsmiSwitchTaskViewMode.Image = Resources.application_list;
                 pThumbnailView.Visible = true;
                 scMain.Visible = false;
@@ -773,6 +773,8 @@ namespace ShareX
                 tsMain.DrawCustomBorder = false;
                 cmsTray.Renderer = new ToolStripDarkRenderer();
                 cmsTaskInfo.Renderer = new ToolStripDarkRenderer();
+                ttMain.BackColor = ShareXResources.DarkBackgroundColor;
+                ttMain.ForeColor = ShareXResources.DarkTextColor;
                 lvUploads.BackColor = ShareXResources.DarkBackgroundColor;
                 lvUploads.ForeColor = ShareXResources.DarkTextColor;
                 lblListViewTip.ForeColor = ShareXResources.DarkTextColor;
@@ -780,7 +782,10 @@ namespace ShareX
                 scMain.SplitterLineColor = ShareXResources.DarkBorderColor;
                 pThumbnailView.BackColor = ShareXResources.DarkBackgroundColor;
                 lblThumbnailViewTip.ForeColor = ShareXResources.DarkTextColor;
-                flpCommunity.BackColor = ShareXResources.DarkBackgroundColor;
+                flpSocialButtons.BackColor = ShareXResources.DarkBackgroundColor;
+                btnCloseNews.FlatAppearance.BorderColor = ShareXResources.DarkBorderColor;
+                btnCloseNews.ForeColor = ShareXResources.DarkTextColor;
+                btnCloseNews.BackColor = ShareXResources.DarkBackgroundVariantColor;
             }
             else
             {
@@ -788,6 +793,8 @@ namespace ShareX
                 tsMain.DrawCustomBorder = true;
                 cmsTray.Renderer = new ToolStripCustomRenderer();
                 cmsTaskInfo.Renderer = new ToolStripCustomRenderer();
+                ttMain.BackColor = SystemColors.Window;
+                ttMain.ForeColor = SystemColors.ControlText;
                 lvUploads.BackColor = SystemColors.Window;
                 lvUploads.ForeColor = SystemColors.ControlText;
                 lblListViewTip.ForeColor = Color.Silver;
@@ -795,7 +802,10 @@ namespace ShareX
                 scMain.SplitterLineColor = ProfessionalColors.SeparatorDark;
                 pThumbnailView.BackColor = SystemColors.Window;
                 lblThumbnailViewTip.ForeColor = Color.Silver;
-                flpCommunity.BackColor = SystemColors.Window;
+                flpSocialButtons.BackColor = SystemColors.Window;
+                btnCloseNews.FlatAppearance.BorderColor = SystemColors.ControlText;
+                btnCloseNews.ForeColor = SystemColors.ControlText;
+                btnCloseNews.BackColor = SystemColors.Window;
             }
 
             pbPreview.UpdateTheme();
@@ -1087,14 +1097,13 @@ namespace ShareX
 
             tsmiHideThumbnailTitle.Visible = Program.Settings.TaskViewMode == TaskViewMode.ThumbnailView;
 
-            // TODO: Translate
             if (Program.Settings.ShowThumbnailTitle)
             {
-                tsmiHideThumbnailTitle.Text = "Hide thumbnail title";
+                tsmiHideThumbnailTitle.Text = Resources.HideThumbnailTitle;
             }
             else
             {
-                tsmiHideThumbnailTitle.Text = "Show thumbnail title";
+                tsmiHideThumbnailTitle.Text = Resources.ShowThumbnailTitle;
             }
 
             Refresh();
@@ -1344,7 +1353,14 @@ namespace ShareX
             UploadManager.DragDropUpload(e.Data);
         }
 
-        private void lblDragAndDropTip_MouseUp(object sender, MouseEventArgs e)
+        private void TtMain_Draw(object sender, DrawToolTipEventArgs e)
+        {
+            e.DrawBackground();
+            e.DrawBorder();
+            e.DrawText();
+        }
+
+        private void lblListViewTip_MouseUp(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
             {
@@ -1529,26 +1545,30 @@ namespace ShareX
             }
         }
 
-        private void pbDiscordOpen_Click(object sender, EventArgs e)
-        {
-            URLHelpers.OpenURL(Links.URL_DISCORD);
-        }
-
-        private void pbDiscordHide_Click(object sender, EventArgs e)
-        {
-            flpDiscord.Visible = false;
-            Program.Settings.ShowDiscordButton = false;
-        }
-
-        private void pbSupportUsOpen_Click(object sender, EventArgs e)
+        private void PbPatreonButton_Click(object sender, EventArgs e)
         {
             URLHelpers.OpenURL(Links.URL_DONATE);
         }
 
-        private void pbSupportUsHide_Click(object sender, EventArgs e)
+        private void PbBitcoinButton_Click(object sender, EventArgs e)
         {
-            flpSupportUs.Visible = false;
-            Program.Settings.ShowSupportUsButton = false;
+            URLHelpers.OpenURL(Links.URL_DONATE);
+        }
+
+        private void PbTwitterButton_Click(object sender, EventArgs e)
+        {
+            URLHelpers.OpenURL(Links.URL_TWITTER);
+        }
+
+        private void PbDiscordButton_Click(object sender, EventArgs e)
+        {
+            URLHelpers.OpenURL(Links.URL_DISCORD);
+        }
+
+        private void PbSocialHideButton_Click(object sender, EventArgs e)
+        {
+            Program.Settings.ShowSocialButtons = false;
+            flpSocialButtons.Visible = false;
         }
 
         private void btnCloseNews_Click(object sender, EventArgs e)

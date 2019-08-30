@@ -162,4 +162,7 @@
   <data name="btnUploadImage.Text" xml:space="preserve">
     <value>Загрузить изображение</value>
   </data>
+  <data name="btnRefresh.Text" xml:space="preserve">
+    <value>Обновить</value>
+  </data>
 </root>

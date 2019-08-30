@@ -2159,6 +2159,16 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap LoadingSmall {
+            get {
+                object obj = ResourceManager.GetObject("LoadingSmall", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Cancel.
         /// </summary>
         internal static string MyMessageBox_MyMessageBox_Cancel {
@@ -2417,6 +2427,15 @@ namespace ShareX.HelpersLib.Properties {
         internal static string ProxyMethod_None {
             get {
                 return ResourceManager.GetString("ProxyMethod_None", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Random non ambiguous alphanumeric char. Repeat using {n}.
+        /// </summary>
+        internal static string RandomNonAmbiguousAlphanumericCharRepeatUsingN {
+            get {
+                return ResourceManager.GetString("RandomNonAmbiguousAlphanumericCharRepeatUsingN", resourceCulture);
             }
         }
         

@@ -150,6 +150,15 @@ namespace ShareX.ScreenCaptureLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Close (Esc).
+        /// </summary>
+        internal static string CloseEsc {
+            get {
+                return ResourceManager.GetString("CloseEsc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap control {
@@ -837,6 +846,15 @@ namespace ShareX.ScreenCaptureLib.Properties {
             get {
                 object obj = ResourceManager.GetObject("magnifier_zoom", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Magnify strength:.
+        /// </summary>
+        internal static string MagnifyStrength {
+            get {
+                return ResourceManager.GetString("MagnifyStrength", resourceCulture);
             }
         }
         

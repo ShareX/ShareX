@@ -228,4 +228,25 @@
   <data name="HistoryItemManager_InitializeComponent_EditImage" xml:space="preserve">
     <value>Редактировать изображение…</value>
   </data>
+  <data name="BtnShowStats_ShowStats" xml:space="preserve">
+    <value>Показать статистику</value>
+  </data>
+  <data name="BtnShowStats_HideStats" xml:space="preserve">
+    <value>Спрятать статистику</value>
+  </data>
+  <data name="HistoryItemCounts" xml:space="preserve">
+    <value>Количество элементов истории:</value>
+  </data>
+  <data name="HistoryStats_Total" xml:space="preserve">
+    <value>Всего:</value>
+  </data>
+  <data name="HistoryStats_YearlyUsages" xml:space="preserve">
+    <value>Использование по годам:</value>
+  </data>
+  <data name="HistoryStats_FileExtensions" xml:space="preserve">
+    <value>Расширения файлов:</value>
+  </data>
+  <data name="HistoryStats_Hosts" xml:space="preserve">
+    <value>Сервисы:</value>
+  </data>
 </root>

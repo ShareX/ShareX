@@ -326,7 +326,6 @@
     <Compile Include="ImageUploaders\ImageBin.cs" />
     <Compile Include="ImageUploaders\ImageShackUploader.cs" />
     <Compile Include="ImageUploaders\Img1Uploader.cs" />
-    <Compile Include="ImageUploaders\TinyPicUploader.cs" />
     <Compile Include="ImageUploaders\TwitPicUploader.cs" />
     <Compile Include="ImageUploaders\TwitSnapsUploader.cs" />
     <Compile Include="ImageUploaders\UploadScreenshot.cs" />
@@ -910,7 +909,6 @@
     <None Include="Favicons\Pastebin.ico" />
     <None Include="Favicons\Photobucket.ico" />
     <None Include="Favicons\SendSpace.ico" />
-    <None Include="Favicons\TinyPic.ico" />
     <None Include="Favicons\Twitter.ico" />
     <None Include="Favicons\Upaste.ico" />
     <None Include="Favicons\AdFly.ico" />
@@ -952,13 +950,13 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="FluentFTP">
-      <Version>23.1.0</Version>
+      <Version>27.0.2</Version>
     </PackageReference>
     <PackageReference Include="MegaApiClient">
       <Version>1.7.1</Version>
     </PackageReference>
     <PackageReference Include="Newtonsoft.Json">
-      <Version>12.0.1</Version>
+      <Version>12.0.2</Version>
     </PackageReference>
     <PackageReference Include="SSH.NET">
       <Version>2016.1.0</Version>

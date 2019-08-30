@@ -1616,8 +1616,6 @@
     <None Include="Resources\Exclamation-16.png" />
     <None Include="Resources\image-resize-actual.png" />
     <None Include="Resources\it.png" />
-    <None Include="Resources\Discord_Button_01.png" />
-    <None Include="Resources\Discord_Button_02.png" />
     <None Include="Resources\tw.png" />
     <None Include="ShareX_Icon.ico" />
     <None Include="Resources\globe--pencil.png" />
@@ -1636,7 +1634,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json">
-      <Version>12.0.1</Version>
+      <Version>12.0.2</Version>
     </PackageReference>
     <PackageReference Include="ZXing.Net">
       <Version>0.16.4</Version>
@@ -1649,16 +1647,28 @@
     <None Include="Resources\network-cloud.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\SupportUs_Button_01.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\SupportUs_Button_02.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\application-list.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\ui-thumbnail-title.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PatreonButton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BitcoinButton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TwitterButton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DiscordButton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SocialHideButton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ir.png" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\IR.png" />

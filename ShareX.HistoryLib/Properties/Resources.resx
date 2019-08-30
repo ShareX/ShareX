@@ -244,4 +244,25 @@
   <data name="HistoryItemManager_InitializeComponent_EditImage" xml:space="preserve">
     <value>Edit image...</value>
   </data>
+  <data name="BtnShowStats_ShowStats" xml:space="preserve">
+    <value>Show stats</value>
+  </data>
+  <data name="BtnShowStats_HideStats" xml:space="preserve">
+    <value>Hide stats</value>
+  </data>
+  <data name="HistoryItemCounts" xml:space="preserve">
+    <value>History item counts:</value>
+  </data>
+  <data name="HistoryStats_Total" xml:space="preserve">
+    <value>Total:</value>
+  </data>
+  <data name="HistoryStats_YearlyUsages" xml:space="preserve">
+    <value>Yearly usages:</value>
+  </data>
+  <data name="HistoryStats_FileExtensions" xml:space="preserve">
+    <value>File extensions:</value>
+  </data>
+  <data name="HistoryStats_Hosts" xml:space="preserve">
+    <value>Hosts:</value>
+  </data>
 </root>

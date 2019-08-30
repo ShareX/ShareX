@@ -30,7 +30,6 @@ using ShareX.IndexerLib;
 using ShareX.MediaLib;
 using ShareX.ScreenCaptureLib;
 using ShareX.UploadersLib;
-using ShareX.UploadersLib.OtherServices;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

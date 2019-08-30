@@ -32,7 +32,6 @@ using System.Drawing;
 using System.Globalization;
 using System.IO;
 using System.Linq;
-using System.Net;
 using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.FileUploaders

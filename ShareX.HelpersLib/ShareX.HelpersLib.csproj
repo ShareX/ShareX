@@ -272,6 +272,7 @@
     </Compile>
     <Compile Include="NameParser\CodeMenuEntryFilename.cs" />
     <Compile Include="TextBoxTraceListener.cs" />
+    <Compile Include="SafeStringEnumConverter.cs" />
     <Compile Include="UITypeEditors\EnumDescriptionConverter.cs" />
     <Compile Include="UITypeEditors\DirectoryNameEditor.cs" />
     <Compile Include="UITypeEditors\GradientEditor.cs" />
@@ -1398,7 +1399,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json">
-      <Version>12.0.1</Version>
+      <Version>12.0.2</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
@@ -1406,6 +1407,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\ShareX_Icon_White.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LoadingSmall.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

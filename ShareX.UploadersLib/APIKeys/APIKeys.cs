@@ -31,8 +31,6 @@ namespace ShareX.UploadersLib
         public static readonly string ImgurClientID = "";
         public static readonly string ImgurClientSecret = "";
         public static readonly string ImageShackKey = "";
-        public static readonly string TinyPicID = "";
-        public static readonly string TinyPicKey = "";
         public static readonly string FlickrKey = "";
         public static readonly string FlickrSecret = "";
         public static readonly string PhotobucketConsumerKey = "";

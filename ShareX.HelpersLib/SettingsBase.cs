@@ -130,7 +130,7 @@ namespace ShareX.HelpersLib
         private bool SaveInternal(string filePath)
         {
             string typeName = GetType().Name;
-            DebugHelper.WriteLine("{0} save started: {1}", typeName, filePath);
+            DebugHelper.WriteLine($"{typeName} save started: {filePath}");
 
             bool isSuccess = false;
 
@@ -148,12 +148,11 @@ namespace ShareX.HelpersLib
                         using (StreamWriter streamWriter = new StreamWriter(fileStream))
                         using (JsonTextWriter jsonWriter = new JsonTextWriter(streamWriter))
                         {
-                            jsonWriter.DateTimeZoneHandling = DateTimeZoneHandling.Utc;
-                            jsonWriter.Formatting = Formatting.Indented;
-
                             JsonSerializer serializer = new JsonSerializer();
                             serializer.ContractResolver = new WritablePropertiesOnlyResolver();
                             serializer.Converters.Add(new StringEnumConverter());
+                            serializer.DateTimeZoneHandling = DateTimeZoneHandling.Utc;
+                            serializer.Formatting = Formatting.Indented;
                             serializer.Serialize(jsonWriter, this);
                             jsonWriter.Flush();
                         }
@@ -187,7 +186,8 @@ namespace ShareX.HelpersLib
             }
             finally
             {
-                DebugHelper.WriteLine("{0} save {1}: {2}", typeName, isSuccess ? "successful" : "failed", filePath);
+                string status = isSuccess ? "successful" : "failed";
+                DebugHelper.WriteLine($"{typeName} save {status}: {filePath}");
             }
 
             return isSuccess;
@@ -199,7 +199,7 @@ namespace ShareX.HelpersLib
 
             if (!string.IsNullOrEmpty(filePath))
             {
-                DebugHelper.WriteLine("{0} load started: {1}", typeName, filePath);
+                DebugHelper.WriteLine($"{typeName} load started: {filePath}");
 
                 try
                 {
@@ -214,21 +214,20 @@ namespace ShareX.HelpersLib
                                 using (StreamReader streamReader = new StreamReader(fileStream))
                                 using (JsonTextReader jsonReader = new JsonTextReader(streamReader))
                                 {
-                                    jsonReader.DateTimeZoneHandling = DateTimeZoneHandling.Local;
-
                                     JsonSerializer serializer = new JsonSerializer();
                                     serializer.Converters.Add(new StringEnumConverter());
+                                    serializer.DateTimeZoneHandling = DateTimeZoneHandling.Local;
                                     serializer.ObjectCreationHandling = ObjectCreationHandling.Replace;
-                                    serializer.Error += (sender, e) => e.ErrorContext.Handled = true;
+                                    serializer.Error += Serializer_Error;
                                     settings = serializer.Deserialize<T>(jsonReader);
                                 }
 
                                 if (settings == null)
                                 {
-                                    throw new Exception(typeName + " object is null.");
+                                    throw new Exception($"{typeName} object is null.");
                                 }
 
-                                DebugHelper.WriteLine("{0} load finished: {1}", typeName, filePath);
+                                DebugHelper.WriteLine($"{typeName} load finished: {filePath}");
 
                                 return settings;
                             }
@@ -237,7 +236,7 @@ namespace ShareX.HelpersLib
                 }
                 catch (Exception e)
                 {
-                    DebugHelper.WriteException(e, typeName + " load failed: " + filePath);
+                    DebugHelper.WriteException(e, $"{typeName} load failed: {filePath}");
                 }
 
                 if (!string.IsNullOrEmpty(backupFolder))
@@ -248,9 +247,18 @@ namespace ShareX.HelpersLib
                 }
             }
 
-            DebugHelper.WriteLine("{0} not found. Loading new instance.", typeName);
+            DebugHelper.WriteLine($"{typeName} not found. Loading new instance.");
 
             return new T();
+        }
+
+        private static void Serializer_Error(object sender, Newtonsoft.Json.Serialization.ErrorEventArgs e)
+        {
+            // Handle missing enum values
+            if (e.ErrorContext.Error.Message.StartsWith("Error converting value"))
+            {
+                e.ErrorContext.Handled = true;
+            }
         }
     }
 }

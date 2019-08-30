@@ -23,11 +23,24 @@
 
 #endregion License Information (GPL v3)
 
-namespace ShareX
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+using System;
+
+namespace ShareX.HelpersLib
 {
-    public class BalloonTipAction
+    public class SafeStringEnumConverter : StringEnumConverter
     {
-        public BalloonTipClickAction ClickAction { get; set; }
-        public string Text { get; set; }
+        public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
+        {
+            try
+            {
+                return base.ReadJson(reader, objectType, existingValue, serializer);
+            }
+            catch (JsonSerializationException)
+            {
+                return existingValue;
+            }
+        }
     }
 }

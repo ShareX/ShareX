@@ -72,7 +72,7 @@ namespace ShareX
         public bool TrayIconProgressEnabled = true;
         public bool TaskbarProgressEnabled = true;
         public bool UseDarkTheme = true;
-        public bool ExperimentalDarkTheme = true;
+        public bool ExperimentalDarkTheme = false;
         public bool UseWhiteShareXIcon = false;
         public bool RememberMainFormPosition = false;
         public Point MainFormPosition = Point.Empty;
@@ -163,11 +163,8 @@ namespace ShareX
         [Category("Application"), DefaultValue(true), Description("Show tips and hotkeys in main window when task list is empty.")]
         public bool ShowMainWindowTip { get; set; }
 
-        [Category("Application"), DefaultValue(true), Description("Show support us button in main window when task list is empty.")]
-        public bool ShowSupportUsButton { get; set; }
-
-        [Category("Application"), DefaultValue(true), Description("Show Discord button in main window when task list is empty.")]
-        public bool ShowDiscordButton { get; set; }
+        [Category("Application"), DefaultValue(true), Description("Show social buttons in main window when task list is empty.")]
+        public bool ShowSocialButtons { get; set; }
 
         [Category("Application"), DefaultValue(""), Description("URLs will open using this path instead of default browser. Example path: chrome.exe")]
         [Editor(typeof(ExeFileNameEditor), typeof(UITypeEditor))]

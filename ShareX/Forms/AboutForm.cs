@@ -140,12 +140,12 @@ Copyright (c) 2007-2019 ShareX Team";
 
         private void pbBerkURL_Click(object sender, EventArgs e)
         {
-            URLHelpers.OpenURL(Links.URL_BERK);
+            URLHelpers.OpenURL(Links.URL_JAEX);
         }
 
         private void pbMikeURL_Click(object sender, EventArgs e)
         {
-            URLHelpers.OpenURL(Links.URL_MIKE);
+            URLHelpers.OpenURL(Links.URL_MCORED);
         }
 
         private void rtb_LinkClicked(object sender, LinkClickedEventArgs e)
