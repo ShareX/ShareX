@@ -120,4 +120,7 @@
   <data name="VideoThumbnailerForm_btnBrowse_Click_Browse_for_media_file" xml:space="preserve">
     <value>Chercher des fichiers multimédias</value>
   </data>
+  <data name="ThumbnailsSuccessfullyGenerated" xml:space="preserve">
+    <value>Les miniatures ont été générées avec succès.</value>
+  </data>
 </root>

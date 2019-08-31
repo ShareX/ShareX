@@ -339,4 +339,34 @@
   <data name="gbFirefox.Text" xml:space="preserve">
     <value>Extension Firefox</value>
   </data>
+  <data name="cbExperimentalDarkTheme.Text" xml:space="preserve">
+    <value>Thème sombre expérimental</value>
+  </data>
+  <data name="cbUseWhiteShareXIcon.Text" xml:space="preserve">
+    <value>Utiliser une icône ShareX blanche</value>
+  </data>
+  <data name="cbUseDarkTheme.Text" xml:space="preserve">
+    <value>Utiliser le thème sombre</value>
+  </data>
+  <data name="btnPersonalFolderPathApply.Text" xml:space="preserve">
+    <value>Appliquer</value>
+  </data>
+  <data name="lblPreviewPersonalFolderPath.Text" xml:space="preserve">
+    <value>...</value>
+  </data>
+  <data name="lblSaveImageSubFolderPatternPreview.Text" xml:space="preserve">
+    <value>...</value>
+  </data>
+  <data name="gbSteam.Text" xml:space="preserve">
+    <value>Steam</value>
+  </data>
+  <data name="btnCheckDevBuild.Text" xml:space="preserve">
+    <value>Installer une version de développement...</value>
+  </data>
+  <data name="gbWindows.Text" xml:space="preserve">
+    <value>Windows</value>
+  </data>
+  <data name="cbEditWithShareX.Text" xml:space="preserve">
+    <value>Afficher le bouton "Modifier avec ShareX" dans le menu contextuel de l'explorateur Windows.</value>
+  </data>
 </root>

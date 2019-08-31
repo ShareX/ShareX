@@ -132,4 +132,7 @@
   <data name="ImageEffectsForm_AddAllEffectsToTreeView_Manipulations" xml:space="preserve">
     <value>Manipulations</value>
   </data>
+  <data name="ImageEffectsForm_EditorMode_Cancel" xml:space="preserve">
+    <value>Annuler</value>
+  </data>
 </root>

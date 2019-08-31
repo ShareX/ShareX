@@ -124,7 +124,7 @@
     <value>Largeur :</value>
   </data>
   <data name="btnGenerate.Text" xml:space="preserve">
-    <value>Générateur des miniatures</value>
+    <value>Générer des miniatures</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Générateur de miniatures d'image</value>
@@ -140,5 +140,17 @@
   </data>
   <data name="btnRemove.Text" xml:space="preserve">
     <value>Supprimer</value>
+  </data>
+  <data name="btnOutputFolder.Text" xml:space="preserve">
+    <value>...</value>
+  </data>
+  <data name="lblQualityPercentage.Text" xml:space="preserve">
+    <value>%</value>
+  </data>
+  <data name="txtOutputFilename.Text" xml:space="preserve">
+    <value>$filename_th</value>
+  </data>
+  <data name="lblQuality.Text" xml:space="preserve">
+    <value>Qualité :</value>
   </data>
 </root>

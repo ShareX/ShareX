@@ -142,12 +142,24 @@
     <value>ShareX - Historique</value>
   </data>
   <data name="cbHostFilter.Text" xml:space="preserve">
-    <value>Filtre d'hôte :</value>
+    <value>Hôte :</value>
   </data>
   <data name="btnRemoveFilters.Text" xml:space="preserve">
     <value>Supprimer les filtres</value>
   </data>
   <data name="lblFilterTo.Text" xml:space="preserve">
     <value>À :</value>
+  </data>
+  <data name="btnShowStats.Text" xml:space="preserve">
+    <value>Afficher les statistiques</value>
+  </data>
+  <data name="chURL.Text" xml:space="preserve">
+    <value>URL</value>
+  </data>
+  <data name="lblURLFilter.Text" xml:space="preserve">
+    <value>URL :</value>
+  </data>
+  <data name="lblFilenameFilter.Text" xml:space="preserve">
+    <value>Nom du fichier :</value>
   </data>
 </root>

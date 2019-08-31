@@ -121,7 +121,7 @@
     <value>Annuler</value>
   </data>
   <data name="btnChangeFont.Text" xml:space="preserve">
-    <value>Changer la police...</value>
+    <value>Modifier la police...</value>
   </data>
   <data name="lblFont.Text" xml:space="preserve">
     <value>Police :</value>

@@ -129,9 +129,6 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Dégradé</value>
   </data>
-  <data name="lblGradientType.Text" xml:space="preserve">
-    <value>Type de dégradé :</value>
-  </data>
   <data name="chLocation.Text" xml:space="preserve">
     <value>Emplacement</value>
   </data>
@@ -146,5 +143,8 @@
   </data>
   <data name="lblPreview.Text" xml:space="preserve">
     <value>Prévisualisation :</value>
+  </data>
+  <data name="lblGradientType.Text" xml:space="preserve">
+    <value>Type de dégradé :</value>
   </data>
 </root>
