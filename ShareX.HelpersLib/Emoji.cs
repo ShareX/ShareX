@@ -1076,7 +1076,7 @@ namespace ShareX.HelpersLib
             "\ud83d\udd65",
             "\ud83d\udd66",
             "\ud83d\udd67",
-            "\ud83c\udde6\ud83c\uddeb",
+            /*"\ud83c\udde6\ud83c\uddeb",
             "\ud83c\udde6\ud83c\uddfd",
             "\ud83c\udde6\ud83c\uddf1",
             "\ud83c\udde9\ud83c\uddff",
@@ -1310,7 +1310,7 @@ namespace ShareX.HelpersLib
             "\ud83c\uddfa\ud83c\uddec",
             "\ud83c\uddfa\ud83c\udde6",
             "\ud83c\udde6\ud83c\uddea",
-            "\ud83c\uddec\ud83c\udde7"
+            "\ud83c\uddec\ud83c\udde7"*/
         };
     }
 }
