@@ -136,6 +136,7 @@
     <Compile Include="Controls\ToolStripNumericUpDown.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Emoji.cs" />
     <Compile Include="Forms\DebugForm.cs">
       <SubType>Form</SubType>
     </Compile>
