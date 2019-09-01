@@ -137,9 +137,9 @@ namespace ShareX.HelpersLib
             return num + Random(min, max);
         }
 
-        public static T RandomPick<T>(params T[] nums)
+        public static T RandomPick<T>(params T[] array)
         {
-            return nums[Random(nums.Length - 1)];
+            return array[Random(array.Length - 1)];
         }
 
         /// <summary>
@@ -188,6 +188,11 @@ namespace ShareX.HelpersLib
 
                 return (int)(min + (r % diff));
             }
+        }
+
+        public static T CryptoRandomPick<T>(params T[] array)
+        {
+            return array[CryptoRandom(array.Length - 1)];
         }
 
         public static float RadianToDegree(float radian)
