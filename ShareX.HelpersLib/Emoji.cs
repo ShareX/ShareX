@@ -31,6 +31,21 @@ namespace ShareX.HelpersLib
 {
     public static class Emoji
     {
+        public static int SearchEmoji(string text)
+        {
+            int emojiLength = 0;
+
+            foreach (string emoji in Emojis)
+            {
+                if (text.StartsWith(emoji, StringComparison.Ordinal))
+                {
+                    emojiLength = Math.Max(emojiLength, emoji.Length);
+                }
+            }
+
+            return emojiLength;
+        }
+
         public static void SaveEmojiList(string filePath)
         {
             File.WriteAllText(filePath, string.Join(Environment.NewLine, Emojis), Encoding.UTF8);
