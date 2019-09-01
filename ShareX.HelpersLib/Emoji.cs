@@ -985,7 +985,7 @@ namespace ShareX.HelpersLib
             "\u2934\ufe0f",
             "\u2935\ufe0f",
             "#\ufe0f\u20e3",
-            "*\ufe0f\u20e3",
+            //"*\ufe0f\u20e3",
             "\u2139\ufe0f",
             "\ud83d\udd24",
             "\ud83d\udd21",
