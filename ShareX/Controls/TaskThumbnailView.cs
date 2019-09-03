@@ -142,6 +142,7 @@ namespace ShareX
             panel.MouseUp += Panel_MouseUp;
             panel.ThumbnailSize = ThumbnailSize;
             panel.TitleVisible = TitleVisible;
+            panel.TitleLocation = TitleLocation;
             return panel;
         }
 

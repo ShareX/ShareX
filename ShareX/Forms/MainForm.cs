@@ -266,6 +266,25 @@ namespace ShareX
                     break;
             }
 
+            if (Program.Settings.ShowThumbnailTitle)
+            {
+                tsmiThumbnailTitleShow.Check();
+            }
+            else
+            {
+                tsmiThumbnailTitleHide.Check();
+            }
+
+            switch (Program.Settings.ThumbnailTitleLocation)
+            {
+                case ThumbnailTitleLocation.Top:
+                    tsmiThumbnailTitleTop.Check();
+                    break;
+                case ThumbnailTitleLocation.Bottom:
+                    tsmiThumbnailTitleBottom.Check();
+                    break;
+            }
+
             if (Program.Settings.PreviewSplitterDistance > 0)
             {
                 scMain.SplitterDistance = Program.Settings.PreviewSplitterDistance;
