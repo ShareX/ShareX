@@ -127,6 +127,7 @@ namespace ShareX
                 if (titleLocation != value)
                 {
                     titleLocation = value;
+                    pThumbnail.StatusLocation = value;
                     UpdateLayout();
                 }
             }

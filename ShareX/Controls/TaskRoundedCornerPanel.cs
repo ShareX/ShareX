@@ -33,6 +33,7 @@ namespace ShareX
     public class TaskRoundedCornerPanel : RoundedCornerPanel
     {
         public Color StatusColor { get; private set; } = Color.Transparent;
+        public ThumbnailTitleLocation StatusLocation { get; set; }
 
         public void UpdateStatusColor(TaskStatus status)
         {
@@ -71,6 +72,17 @@ namespace ShareX
 
                 g.PixelOffsetMode = PixelOffsetMode.Half;
 
+                int y;
+
+                if (StatusLocation == ThumbnailTitleLocation.Top)
+                {
+                    y = 0;
+                }
+                else
+                {
+                    y = ClientRectangle.Height;
+                }
+
                 using (LinearGradientBrush brush = new LinearGradientBrush(new Rectangle(0, 0, ClientRectangle.Width, 1), Color.Black, Color.Black,
                     LinearGradientMode.Horizontal))
                 {
@@ -81,7 +93,7 @@ namespace ShareX
 
                     using (Pen pen = new Pen(brush))
                     {
-                        g.DrawLine(pen, new Point(0, 0), new Point(ClientRectangle.Width - 1, 0));
+                        g.DrawLine(pen, new Point(0, y), new Point(ClientRectangle.Width - 1, y));
                     }
                 }
             }
