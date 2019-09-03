@@ -76,6 +76,8 @@ namespace ShareX
 
         public WorkerTask Task { get; private set; }
 
+        private string title;
+
         public string Title
         {
             get
@@ -93,7 +95,7 @@ namespace ShareX
             }
         }
 
-        private string title;
+        private bool titleVisible = true;
 
         public bool TitleVisible
         {
@@ -106,24 +108,31 @@ namespace ShareX
                 if (titleVisible != value)
                 {
                     titleVisible = value;
-
-                    if (titleVisible)
-                    {
-                        lblTitle.Visible = true;
-                        pThumbnail.Location = new Point(0, lblTitle.Height + 2);
-                    }
-                    else
-                    {
-                        lblTitle.Visible = false;
-                        pThumbnail.Location = new Point(0, 0);
-                    }
-
-                    UpdateSize();
+                    lblTitle.Visible = titleVisible;
+                    UpdateLayout();
                 }
             }
         }
 
-        private bool titleVisible = true;
+        private ThumbnailTitleLocation titleLocation;
+
+        public ThumbnailTitleLocation TitleLocation
+        {
+            get
+            {
+                return titleLocation;
+            }
+            set
+            {
+                if (titleLocation != value)
+                {
+                    titleLocation = value;
+                    UpdateLayout();
+                }
+            }
+        }
+
+        private int progress;
 
         public int Progress
         {
@@ -142,7 +151,7 @@ namespace ShareX
             }
         }
 
-        private int progress;
+        private bool progressVisible;
 
         public bool ProgressVisible
         {
@@ -157,9 +166,9 @@ namespace ShareX
             }
         }
 
-        private bool progressVisible;
-
         public bool ThumbnailExists { get; private set; }
+
+        private Size thumbnailSize;
 
         public Size ThumbnailSize
         {
@@ -173,12 +182,10 @@ namespace ShareX
                 {
                     thumbnailSize = value;
 
-                    UpdateSize();
+                    UpdateLayout();
                 }
             }
         }
-
-        private Size thumbnailSize;
 
         public bool ThumbnailSupportsClick { get; private set; }
 
@@ -229,11 +236,35 @@ namespace ShareX
             }
         }
 
-        private void UpdateSize()
+        private void UpdateLayout()
         {
             lblTitle.Width = pThumbnail.Padding.Horizontal + ThumbnailSize.Width;
             pThumbnail.Size = new Size(pThumbnail.Padding.Horizontal + ThumbnailSize.Width, pThumbnail.Padding.Vertical + ThumbnailSize.Height);
-            Size = new Size(pThumbnail.Width, pThumbnail.Top + pThumbnail.Height);
+            int panelHeight = pThumbnail.Height;
+            if (TitleVisible)
+            {
+                panelHeight += lblTitle.Height + 2;
+            }
+            Size = new Size(pThumbnail.Width, panelHeight);
+
+            if (TitleLocation == ThumbnailTitleLocation.Top)
+            {
+                lblTitle.Location = new Point(0, 0);
+
+                if (TitleVisible)
+                {
+                    pThumbnail.Location = new Point(0, lblTitle.Height + 2);
+                }
+                else
+                {
+                    pThumbnail.Location = new Point(0, 0);
+                }
+            }
+            else
+            {
+                pThumbnail.Location = new Point(0, 0);
+                lblTitle.Location = new Point(0, pThumbnail.Height + 2);
+            }
         }
 
         public void UpdateThumbnail(Image image = null)

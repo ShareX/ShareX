@@ -270,6 +270,11 @@ namespace ShareX
         Side, Bottom
     }
 
+    public enum ThumbnailTitleLocation
+    {
+        Top, Bottom
+    }
+
     public enum ScreenRecordState
     {
         Waiting, BeforeStart, AfterStart, AfterRecordingStart, Encoding

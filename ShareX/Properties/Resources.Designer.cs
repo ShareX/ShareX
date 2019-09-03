@@ -1366,15 +1366,6 @@ namespace ShareX.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Hide thumbnail title.
-        /// </summary>
-        public static string HideThumbnailTitle {
-            get {
-                return ResourceManager.GetString("HideThumbnailTitle", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to hotkey.
         /// </summary>
         public static string HotkeyManager_ShowFailedHotkeys_hotkey {
@@ -2263,15 +2254,6 @@ namespace ShareX.Properties {
         public static string ShareXOpticalCharacterRecognition {
             get {
                 return ResourceManager.GetString("ShareXOpticalCharacterRecognition", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Show thumbnail title.
-        /// </summary>
-        public static string ShowThumbnailTitle {
-            get {
-                return ResourceManager.GetString("ShowThumbnailTitle", resourceCulture);
             }
         }
         

@@ -1094,17 +1094,9 @@ namespace ShareX
             lvUploads.HeaderStyle = Program.Settings.ShowColumns ? ColumnHeaderStyle.Nonclickable : ColumnHeaderStyle.None;
 
             ucTaskThumbnailView.TitleVisible = Program.Settings.ShowThumbnailTitle;
+            ucTaskThumbnailView.TitleLocation = Program.Settings.ThumbnailTitleLocation;
 
-            tsmiHideThumbnailTitle.Visible = Program.Settings.TaskViewMode == TaskViewMode.ThumbnailView;
-
-            if (Program.Settings.ShowThumbnailTitle)
-            {
-                tsmiHideThumbnailTitle.Text = Resources.HideThumbnailTitle;
-            }
-            else
-            {
-                tsmiHideThumbnailTitle.Text = Resources.ShowThumbnailTitle;
-            }
+            tsmiThumbnailTitle.Visible = Program.Settings.TaskViewMode == TaskViewMode.ThumbnailView;
 
             Refresh();
         }
@@ -2355,31 +2347,6 @@ namespace ShareX
             UpdateContextMenu();
         }
 
-        private void TsmiHideThumbnailTitle_Click(object sender, EventArgs e)
-        {
-            Program.Settings.ShowThumbnailTitle = !Program.Settings.ShowThumbnailTitle;
-            UpdateMainWindowLayout();
-        }
-
-        private void TsmiSwitchTaskViewMode_Click(object sender, EventArgs e)
-        {
-            tsMain.SendToBack();
-
-            if (Program.Settings.TaskViewMode == TaskViewMode.ListView)
-            {
-                Program.Settings.TaskViewMode = TaskViewMode.ThumbnailView;
-                ucTaskThumbnailView.UpdateAllThumbnails();
-            }
-            else
-            {
-                Program.Settings.TaskViewMode = TaskViewMode.ListView;
-            }
-
-            UpdateTaskViewMode();
-            UpdateMainWindowLayout();
-            UpdateContextMenu();
-        }
-
         private void tsmiImagePreviewHide_Click(object sender, EventArgs e)
         {
             Program.Settings.ImagePreview = ImagePreviewVisibility.Hide;
@@ -2405,6 +2372,53 @@ namespace ShareX
         {
             Program.Settings.ImagePreviewLocation = ImagePreviewLocation.Bottom;
             tsmiImagePreviewBottom.Check();
+            UpdateContextMenu();
+        }
+
+        private void TsmiThumbnailTitleShow_Click(object sender, EventArgs e)
+        {
+            Program.Settings.ShowThumbnailTitle = true;
+            tsmiThumbnailTitleShow.Check();
+            UpdateMainWindowLayout();
+        }
+
+        private void TsmiThumbnailTitleHide_Click(object sender, EventArgs e)
+        {
+            Program.Settings.ShowThumbnailTitle = false;
+            tsmiThumbnailTitleHide.Check();
+            UpdateMainWindowLayout();
+        }
+
+        private void TsmiThumbnailTitleTop_Click(object sender, EventArgs e)
+        {
+            Program.Settings.ThumbnailTitleLocation = ThumbnailTitleLocation.Top;
+            tsmiThumbnailTitleTop.Check();
+            UpdateMainWindowLayout();
+        }
+
+        private void TsmiThumbnailTitleBottom_Click(object sender, EventArgs e)
+        {
+            Program.Settings.ThumbnailTitleLocation = ThumbnailTitleLocation.Bottom;
+            tsmiThumbnailTitleBottom.Check();
+            UpdateMainWindowLayout();
+        }
+
+        private void TsmiSwitchTaskViewMode_Click(object sender, EventArgs e)
+        {
+            tsMain.SendToBack();
+
+            if (Program.Settings.TaskViewMode == TaskViewMode.ListView)
+            {
+                Program.Settings.TaskViewMode = TaskViewMode.ThumbnailView;
+                ucTaskThumbnailView.UpdateAllThumbnails();
+            }
+            else
+            {
+                Program.Settings.TaskViewMode = TaskViewMode.ListView;
+            }
+
+            UpdateTaskViewMode();
+            UpdateMainWindowLayout();
             UpdateContextMenu();
         }
 

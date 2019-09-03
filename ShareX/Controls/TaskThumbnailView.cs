@@ -36,6 +36,8 @@ namespace ShareX
         public List<TaskThumbnailPanel> Panels { get; private set; }
         public TaskThumbnailPanel SelectedPanel { get; private set; }
 
+        private bool titleVisible = true;
+
         public bool TitleVisible
         {
             get
@@ -56,7 +58,29 @@ namespace ShareX
             }
         }
 
-        private bool titleVisible = true;
+        private ThumbnailTitleLocation titleLocation;
+
+        public ThumbnailTitleLocation TitleLocation
+        {
+            get
+            {
+                return titleLocation;
+            }
+            set
+            {
+                if (titleLocation != value)
+                {
+                    titleLocation = value;
+
+                    foreach (TaskThumbnailPanel panel in Panels)
+                    {
+                        panel.TitleLocation = titleLocation;
+                    }
+                }
+            }
+        }
+
+        private Size thumbnailSize = new Size(200, 150);
 
         public Size ThumbnailSize
         {
@@ -77,8 +101,6 @@ namespace ShareX
                 }
             }
         }
-
-        private Size thumbnailSize = new Size(200, 150);
 
         public delegate void TaskViewMouseEventHandler(object sender, MouseEventArgs e, WorkerTask task);
         public event TaskViewMouseEventHandler ContextMenuRequested;
