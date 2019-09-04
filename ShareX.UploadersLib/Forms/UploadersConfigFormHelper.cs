@@ -294,27 +294,21 @@ namespace ShareX.UploadersLib
         private void B2UpdateCustomDomainPreview()
         {
             string uploadPath = NameParser.Parse(NameParserType.FolderPath, Config.B2UploadPath);
+            string url;
 
             if (cbB2CustomUrl.Checked)
             {
                 string customUrl = NameParser.Parse(NameParserType.FolderPath, Config.B2CustomUrl);
-                if (URLHelpers.IsValidURL(customUrl))
-                {
-                    txtB2UrlPreview.Text = customUrl + uploadPath + "example.png";
-                }
-                else
-                {
-                    txtB2UrlPreview.Text = "invalid custom URL";
-                }
+                url = URLHelpers.CombineURL(customUrl, uploadPath, "example.png");
+                url = URLHelpers.FixPrefix(url, "https://");
             }
             else
             {
-                string bucket = string.IsNullOrEmpty(Config.B2BucketName) ?
-                    "[bucket]" :
-                    URLHelpers.URLEncode(Config.B2BucketName);
-                string url = $"https://f001.backblazeb2.com/file/{bucket}/{uploadPath}example.png";
-                txtB2UrlPreview.Text = url;
+                string bucket = string.IsNullOrEmpty(Config.B2BucketName) ? "[bucket]" : URLHelpers.URLEncode(Config.B2BucketName);
+                url = URLHelpers.CombineURL("https://f001.backblazeb2.com/file", bucket, uploadPath, "example.png");
             }
+
+            lblB2UrlPreview.Text = url;
         }
 
         #endregion Backblaze B2

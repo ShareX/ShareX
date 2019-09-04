@@ -110,7 +110,7 @@ namespace ShareX.UploadersLib.FileUploaders
         public override UploadResult Upload(Stream stream, string fileName)
         {
             string parsedUploadPath = NameParser.Parse(NameParserType.FolderPath, UploadPath);
-            string destinationPath = parsedUploadPath + fileName;
+            string destinationPath = URLHelpers.CombineURL(parsedUploadPath, fileName);
 
             // docs: https://www.backblaze.com/b2/docs/
 
@@ -243,6 +243,7 @@ namespace ShareX.UploadersLib.FileUploaders
                 {
                     string parsedCustomUrl = NameParser.Parse(NameParserType.FolderPath, CustomUrl);
                     remoteLocation = URLHelpers.CombineURL(parsedCustomUrl, encodedFileName);
+                    remoteLocation = URLHelpers.FixPrefix(remoteLocation, "https://");
 
                     DebugHelper.WriteLine($"B2 uploader: But user requested custom URL, which will be: {remoteLocation}");
                 }
