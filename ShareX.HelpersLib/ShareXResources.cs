@@ -41,7 +41,30 @@ namespace ShareX.HelpersLib
             }
         }
 
-        public static bool UseDarkTheme { get; set; }
+        private static bool useDarkTheme;
+
+        public static bool UseDarkTheme
+        {
+            get
+            {
+                return useDarkTheme;
+            }
+            set
+            {
+                useDarkTheme = value;
+
+                if (useDarkTheme)
+                {
+                    Theme.ApplyDarkColors();
+                }
+                else
+                {
+                    Theme.ApplySystemColors();
+                }
+            }
+        }
+
+        private static bool experimentalDarkTheme;
 
         public static bool ExperimentalDarkTheme
         {
@@ -55,28 +78,13 @@ namespace ShareX.HelpersLib
             }
         }
 
-        private static bool experimentalDarkTheme;
-
         public static bool UseWhiteIcon { get; set; }
 
         public static Icon Icon => UseWhiteIcon ? Resources.ShareX_Icon_White : Resources.ShareX_Icon;
         public static Image Logo => Resources.ShareX_Logo;
         public static Image LogoBlack => Resources.ShareX_Logo_Black;
 
-        public static Color BackgroundColor => UseDarkTheme ? DarkBackgroundColor : SystemColors.Window;
-        public static Color TextColor => UseDarkTheme ? DarkTextColor : SystemColors.ControlText;
-        public static Color BorderColor => UseDarkTheme ? DarkBorderColor : ProfessionalColors.SeparatorDark;
-        public static Color CheckerColor1 => UseDarkTheme ? DarkCheckerColor1 : SystemColors.ControlLightLight;
-        public static Color CheckerColor2 => UseDarkTheme ? DarkCheckerColor2 : SystemColors.ControlLight;
-        public static int CheckerSize { get; } = 15;
-
-        public static Color DarkBackgroundColor { get; } = Color.FromArgb(42, 47, 56);
-        public static Color DarkBackgroundVariantColor { get; } = ColorHelpers.LighterColor(DarkBackgroundColor, 0.05f);
-        public static Color DarkTextColor { get; } = Color.FromArgb(235, 235, 235);
-        public static Color DarkBorderColor { get; } = Color.FromArgb(28, 32, 38);
-        public static Color DarkCheckerColor1 { get; } = Color.FromArgb(60, 60, 60);
-        public static Color DarkCheckerColor2 { get; } = Color.FromArgb(50, 50, 50);
-        public static Color DarkLinkColor { get; } = Color.FromArgb(166, 212, 255);
+        public static ShareXTheme Theme { get; set; } = new ShareXTheme();
 
         public static void ApplyTheme(Form form, bool setIcon = true)
         {
@@ -116,63 +124,63 @@ namespace ShareX.HelpersLib
             {
                 case Button btn:
                     btn.FlatStyle = FlatStyle.Flat;
-                    btn.FlatAppearance.BorderColor = DarkBorderColor;
-                    btn.ForeColor = DarkTextColor;
-                    btn.BackColor = DarkBackgroundVariantColor;
+                    btn.FlatAppearance.BorderColor = Theme.BorderColor;
+                    btn.ForeColor = Theme.TextColor;
+                    btn.BackColor = Theme.BackgroundColor2;
                     return;
                 case CheckBox cb when cb.Appearance == Appearance.Button:
                     cb.FlatStyle = FlatStyle.Flat;
-                    cb.FlatAppearance.BorderColor = DarkBorderColor;
-                    cb.ForeColor = DarkTextColor;
-                    cb.BackColor = DarkBackgroundVariantColor;
+                    cb.FlatAppearance.BorderColor = Theme.BorderColor;
+                    cb.ForeColor = Theme.TextColor;
+                    cb.BackColor = Theme.BackgroundColor2;
                     return;
                 case TextBox tb:
-                    tb.ForeColor = DarkTextColor;
-                    tb.BackColor = DarkBackgroundVariantColor;
+                    tb.ForeColor = Theme.TextColor;
+                    tb.BackColor = Theme.BackgroundColor2;
                     tb.BorderStyle = BorderStyle.FixedSingle;
                     return;
                 case ComboBox cb:
                     cb.FlatStyle = FlatStyle.Flat;
-                    cb.ForeColor = DarkTextColor;
-                    cb.BackColor = DarkBackgroundVariantColor;
+                    cb.ForeColor = Theme.TextColor;
+                    cb.BackColor = Theme.BackgroundColor2;
                     return;
                 case ListBox lb:
-                    lb.ForeColor = DarkTextColor;
-                    lb.BackColor = DarkBackgroundVariantColor;
+                    lb.ForeColor = Theme.TextColor;
+                    lb.BackColor = Theme.BackgroundColor2;
                     return;
                 case ListView lv:
-                    lv.ForeColor = DarkTextColor;
-                    lv.BackColor = DarkBackgroundVariantColor;
+                    lv.ForeColor = Theme.TextColor;
+                    lv.BackColor = Theme.BackgroundColor2;
                     lv.SupportDarkTheme();
                     return;
                 case SplitContainer sc:
-                    sc.Panel1.BackColor = DarkBackgroundColor;
-                    sc.Panel2.BackColor = DarkBackgroundColor;
+                    sc.Panel1.BackColor = Theme.BackgroundColor;
+                    sc.Panel2.BackColor = Theme.BackgroundColor;
                     break;
                 case PropertyGrid pg:
-                    pg.CategoryForeColor = DarkTextColor;
-                    pg.CategorySplitterColor = DarkBackgroundColor;
-                    pg.LineColor = DarkBackgroundColor;
-                    pg.SelectedItemWithFocusForeColor = DarkBackgroundColor;
-                    pg.SelectedItemWithFocusBackColor = DarkTextColor;
-                    pg.ViewForeColor = DarkTextColor;
-                    pg.ViewBackColor = DarkBackgroundVariantColor;
-                    pg.ViewBorderColor = DarkBorderColor;
-                    pg.HelpForeColor = DarkTextColor;
-                    pg.HelpBackColor = DarkBackgroundColor;
-                    pg.HelpBorderColor = DarkBorderColor;
+                    pg.CategoryForeColor = Theme.TextColor;
+                    pg.CategorySplitterColor = Theme.BackgroundColor;
+                    pg.LineColor = Theme.BackgroundColor;
+                    pg.SelectedItemWithFocusForeColor = Theme.BackgroundColor;
+                    pg.SelectedItemWithFocusBackColor = Theme.TextColor;
+                    pg.ViewForeColor = Theme.TextColor;
+                    pg.ViewBackColor = Theme.BackgroundColor2;
+                    pg.ViewBorderColor = Theme.BorderColor;
+                    pg.HelpForeColor = Theme.TextColor;
+                    pg.HelpBackColor = Theme.BackgroundColor;
+                    pg.HelpBorderColor = Theme.BorderColor;
                     return;
                 case DataGridView dgv:
-                    dgv.BackgroundColor = DarkBackgroundVariantColor;
-                    dgv.GridColor = DarkBorderColor;
-                    dgv.DefaultCellStyle.BackColor = DarkBackgroundVariantColor;
-                    dgv.DefaultCellStyle.SelectionBackColor = DarkBackgroundVariantColor;
-                    dgv.DefaultCellStyle.ForeColor = DarkTextColor;
-                    dgv.DefaultCellStyle.SelectionForeColor = DarkTextColor;
-                    dgv.ColumnHeadersDefaultCellStyle.BackColor = DarkBackgroundColor;
-                    dgv.ColumnHeadersDefaultCellStyle.SelectionBackColor = DarkBackgroundColor;
-                    dgv.ColumnHeadersDefaultCellStyle.ForeColor = DarkTextColor;
-                    dgv.ColumnHeadersDefaultCellStyle.SelectionForeColor = DarkTextColor;
+                    dgv.BackgroundColor = Theme.BackgroundColor2;
+                    dgv.GridColor = Theme.BorderColor;
+                    dgv.DefaultCellStyle.BackColor = Theme.BackgroundColor2;
+                    dgv.DefaultCellStyle.SelectionBackColor = Theme.BackgroundColor2;
+                    dgv.DefaultCellStyle.ForeColor = Theme.TextColor;
+                    dgv.DefaultCellStyle.SelectionForeColor = Theme.TextColor;
+                    dgv.ColumnHeadersDefaultCellStyle.BackColor = Theme.BackgroundColor;
+                    dgv.ColumnHeadersDefaultCellStyle.SelectionBackColor = Theme.BackgroundColor;
+                    dgv.ColumnHeadersDefaultCellStyle.ForeColor = Theme.TextColor;
+                    dgv.ColumnHeadersDefaultCellStyle.SelectionForeColor = Theme.TextColor;
                     dgv.EnableHeadersVisualStyles = false;
                     break;
                 case ToolStrip ts:
@@ -180,12 +188,12 @@ namespace ShareX.HelpersLib
                     ApplyDarkThemeToToolStripItemCollection(ts.Items);
                     return;
                 case LinkLabel ll:
-                    ll.LinkColor = DarkLinkColor;
+                    ll.LinkColor = Theme.LinkColor;
                     break;
             }
 
-            control.ForeColor = DarkTextColor;
-            control.BackColor = DarkBackgroundColor;
+            control.ForeColor = Theme.TextColor;
+            control.BackColor = Theme.BackgroundColor;
 
             foreach (Control child in control.Controls)
             {

@@ -792,19 +792,19 @@ namespace ShareX
                 tsMain.DrawCustomBorder = false;
                 cmsTray.Renderer = new ToolStripDarkRenderer();
                 cmsTaskInfo.Renderer = new ToolStripDarkRenderer();
-                ttMain.BackColor = ShareXResources.DarkBackgroundColor;
-                ttMain.ForeColor = ShareXResources.DarkTextColor;
-                lvUploads.BackColor = ShareXResources.DarkBackgroundColor;
-                lvUploads.ForeColor = ShareXResources.DarkTextColor;
-                lblListViewTip.ForeColor = ShareXResources.DarkTextColor;
-                scMain.SplitterColor = ShareXResources.DarkBackgroundColor;
-                scMain.SplitterLineColor = ShareXResources.DarkBorderColor;
-                pThumbnailView.BackColor = ShareXResources.DarkBackgroundColor;
-                lblThumbnailViewTip.ForeColor = ShareXResources.DarkTextColor;
-                flpSocialButtons.BackColor = ShareXResources.DarkBackgroundColor;
-                btnCloseNews.FlatAppearance.BorderColor = ShareXResources.DarkBorderColor;
-                btnCloseNews.ForeColor = ShareXResources.DarkTextColor;
-                btnCloseNews.BackColor = ShareXResources.DarkBackgroundVariantColor;
+                ttMain.BackColor = ShareXResources.Theme.BackgroundColor;
+                ttMain.ForeColor = ShareXResources.Theme.TextColor;
+                lvUploads.BackColor = ShareXResources.Theme.BackgroundColor;
+                lvUploads.ForeColor = ShareXResources.Theme.TextColor;
+                lblListViewTip.ForeColor = ShareXResources.Theme.TextColor;
+                scMain.SplitterColor = ShareXResources.Theme.BackgroundColor;
+                scMain.SplitterLineColor = ShareXResources.Theme.BorderColor;
+                pThumbnailView.BackColor = ShareXResources.Theme.BackgroundColor;
+                lblThumbnailViewTip.ForeColor = ShareXResources.Theme.TextColor;
+                flpSocialButtons.BackColor = ShareXResources.Theme.BackgroundColor;
+                btnCloseNews.FlatAppearance.BorderColor = ShareXResources.Theme.BorderColor;
+                btnCloseNews.ForeColor = ShareXResources.Theme.TextColor;
+                btnCloseNews.BackColor = ShareXResources.Theme.BackgroundColor2;
             }
             else
             {

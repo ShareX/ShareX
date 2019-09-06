@@ -730,12 +730,12 @@ namespace ShareX.HelpersLib
                 {
                     if (ShareXResources.UseDarkTheme)
                     {
-                        using (Brush brush = new SolidBrush(ShareXResources.DarkBackgroundColor))
+                        using (Brush brush = new SolidBrush(ShareXResources.Theme.BackgroundColor))
                         {
                             e.Graphics.FillRectangle(brush, e.Bounds);
                         }
 
-                        TextRenderer.DrawText(e.Graphics, e.Header.Text, e.Font, e.Bounds.LocationOffset(2, 0).SizeOffset(-4, 0), ShareXResources.DarkTextColor,
+                        TextRenderer.DrawText(e.Graphics, e.Header.Text, e.Font, e.Bounds.LocationOffset(2, 0).SizeOffset(-4, 0), ShareXResources.Theme.TextColor,
                             TextFormatFlags.Left | TextFormatFlags.VerticalCenter | TextFormatFlags.EndEllipsis);
 
                         if (e.Bounds.Right < lv.ClientRectangle.Right)

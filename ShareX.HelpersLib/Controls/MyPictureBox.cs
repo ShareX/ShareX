@@ -177,8 +177,8 @@ namespace ShareX.HelpersLib
 
         public void UpdateTheme()
         {
-            lblImageSize.BackColor = ShareXResources.BackgroundColor;
-            lblImageSize.ForeColor = ShareXResources.TextColor;
+            lblImageSize.BackColor = ShareXResources.Theme.BackgroundColor;
+            lblImageSize.ForeColor = ShareXResources.Theme.TextColor;
         }
 
         public void UpdateCheckers(bool forceUpdate = false)
@@ -189,8 +189,8 @@ namespace ShareX.HelpersLib
                 {
                     if (pbMain.BackgroundImage != null) pbMain.BackgroundImage.Dispose();
 
-                    pbMain.BackgroundImage = ImageHelpers.CreateCheckerPattern(ShareXResources.CheckerSize, ShareXResources.CheckerSize,
-                        ShareXResources.CheckerColor1, ShareXResources.CheckerColor2);
+                    pbMain.BackgroundImage = ImageHelpers.CreateCheckerPattern(ShareXResources.Theme.CheckerSize, ShareXResources.Theme.CheckerSize,
+                        ShareXResources.Theme.CheckerColor, ShareXResources.Theme.CheckerColor2);
                 }
             }
             else

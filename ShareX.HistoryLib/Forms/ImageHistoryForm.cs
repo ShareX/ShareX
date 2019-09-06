@@ -59,11 +59,11 @@ namespace ShareX.HistoryLib
             if (ShareXResources.ExperimentalDarkTheme)
             {
                 ilvImages.BorderStyle = BorderStyle.None;
-                ilvImages.Colors.BackColor = ShareXResources.DarkBackgroundVariantColor;
-                ilvImages.Colors.BorderColor = ShareXResources.DarkBorderColor;
-                ilvImages.Colors.ForeColor = ShareXResources.DarkTextColor;
-                ilvImages.Colors.SelectedForeColor = ShareXResources.DarkTextColor;
-                ilvImages.Colors.UnFocusedForeColor = ShareXResources.DarkTextColor;
+                ilvImages.Colors.BackColor = ShareXResources.Theme.BackgroundColor2;
+                ilvImages.Colors.BorderColor = ShareXResources.Theme.BorderColor;
+                ilvImages.Colors.ForeColor = ShareXResources.Theme.TextColor;
+                ilvImages.Colors.SelectedForeColor = ShareXResources.Theme.TextColor;
+                ilvImages.Colors.UnFocusedForeColor = ShareXResources.Theme.TextColor;
             }
 
             him = new HistoryItemManager(uploadFile, editImage);

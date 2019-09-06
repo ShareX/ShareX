@@ -153,8 +153,8 @@ namespace ShareX.ScreenCaptureLib
 
             if (ShareXResources.UseDarkTheme)
             {
-                canvasBackgroundColor = ShareXResources.DarkBackgroundColor;
-                canvasBorderPen = new Pen(ShareXResources.DarkBorderColor);
+                canvasBackgroundColor = ShareXResources.Theme.BackgroundColor;
+                canvasBorderPen = new Pen(ShareXResources.Theme.BorderColor);
             }
             else
             {
@@ -324,8 +324,8 @@ namespace ShareX.ScreenCaptureLib
                 {
                     Rectangle sourceRect = new Rectangle(0, 0, Canvas.Width, Canvas.Height);
 
-                    using (Image checkers = ImageHelpers.DrawCheckers(Canvas.Width, Canvas.Height, ShareXResources.CheckerSize,
-                        ShareXResources.CheckerColor1, ShareXResources.CheckerColor2))
+                    using (Image checkers = ImageHelpers.DrawCheckers(Canvas.Width, Canvas.Height, ShareXResources.Theme.CheckerSize,
+                        ShareXResources.Theme.CheckerColor, ShareXResources.Theme.CheckerColor2))
                     {
                         g.DrawImage(checkers, sourceRect);
                     }

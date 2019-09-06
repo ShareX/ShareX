@@ -49,12 +49,12 @@ namespace ShareX
         {
             if (ShareXResources.UseDarkTheme)
             {
-                dgvNews.BackgroundColor = ShareXResources.DarkBackgroundColor;
-                dgvNews.DefaultCellStyle.BackColor = dgvNews.DefaultCellStyle.SelectionBackColor = ShareXResources.DarkBackgroundColor;
-                dgvNews.DefaultCellStyle.ForeColor = dgvNews.DefaultCellStyle.SelectionForeColor = ShareXResources.DarkTextColor;
+                dgvNews.BackgroundColor = ShareXResources.Theme.BackgroundColor;
+                dgvNews.DefaultCellStyle.BackColor = dgvNews.DefaultCellStyle.SelectionBackColor = ShareXResources.Theme.BackgroundColor;
+                dgvNews.DefaultCellStyle.ForeColor = dgvNews.DefaultCellStyle.SelectionForeColor = ShareXResources.Theme.TextColor;
                 dgvNews.AlternatingRowsDefaultCellStyle.BackColor = dgvNews.AlternatingRowsDefaultCellStyle.SelectionBackColor =
-                    ColorHelpers.LighterColor(ShareXResources.DarkBackgroundColor, 0.02f);
-                dgvNews.GridColor = ShareXResources.DarkBorderColor;
+                    ColorHelpers.LighterColor(ShareXResources.Theme.BackgroundColor, 0.02f);
+                dgvNews.GridColor = ShareXResources.Theme.BorderColor;
             }
             else
             {
@@ -69,7 +69,7 @@ namespace ShareX
             foreach (DataGridViewRow row in dgvNews.Rows)
             {
                 row.Cells[2].Style.ForeColor = row.Cells[2].Style.SelectionForeColor =
-                    ShareXResources.UseDarkTheme ? ShareXResources.DarkTextColor : SystemColors.ControlText;
+                    ShareXResources.UseDarkTheme ? ShareXResources.Theme.TextColor : SystemColors.ControlText;
             }
         }
 
@@ -203,7 +203,7 @@ namespace ShareX
                 if (newsItem != null && !string.IsNullOrEmpty(newsItem.URL))
                 {
                     row.Cells[e.ColumnIndex].Style.ForeColor = row.Cells[e.ColumnIndex].Style.SelectionForeColor =
-                        ShareXResources.UseDarkTheme ? ShareXResources.DarkTextColor : SystemColors.ControlText;
+                        ShareXResources.UseDarkTheme ? ShareXResources.Theme.TextColor : SystemColors.ControlText;
                 }
             }
 

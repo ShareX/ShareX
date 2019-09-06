@@ -45,7 +45,7 @@ namespace ShareX.HelpersLib
 
             if (ShareXResources.ExperimentalDarkTheme)
             {
-                lblQuestion.BackColor = ShareXResources.DarkBorderColor;
+                lblQuestion.BackColor = ShareXResources.Theme.BorderColor;
             }
 
             cbDontShowThisWindow.Visible = showCheckBox;

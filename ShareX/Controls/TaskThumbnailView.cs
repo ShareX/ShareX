@@ -122,7 +122,7 @@ namespace ShareX
         {
             if (ShareXResources.UseDarkTheme)
             {
-                BackColor = ShareXResources.DarkBackgroundColor;
+                BackColor = ShareXResources.Theme.BackgroundColor;
             }
             else
             {

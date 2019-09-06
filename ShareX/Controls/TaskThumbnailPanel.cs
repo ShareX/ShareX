@@ -205,11 +205,11 @@ namespace ShareX
         {
             if (ShareXResources.UseDarkTheme)
             {
-                lblTitle.ForeColor = ShareXResources.DarkTextColor;
-                lblTitle.TextShadowColor = ShareXResources.DarkBorderColor;
-                pThumbnail.PanelColor = ShareXResources.DarkBorderColor;
-                ttMain.BackColor = ShareXResources.DarkBackgroundColor;
-                ttMain.ForeColor = ShareXResources.DarkTextColor;
+                lblTitle.ForeColor = ShareXResources.Theme.TextColor;
+                lblTitle.TextShadowColor = ShareXResources.Theme.BorderColor;
+                pThumbnail.PanelColor = ShareXResources.Theme.BorderColor;
+                ttMain.BackColor = ShareXResources.Theme.BackgroundColor;
+                ttMain.ForeColor = ShareXResources.Theme.TextColor;
             }
             else
             {
