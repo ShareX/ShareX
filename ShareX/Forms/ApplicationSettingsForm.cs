@@ -119,6 +119,9 @@ namespace ShareX
             cbCheckPreReleaseUpdates.Checked = Program.Settings.CheckPreReleaseUpdates;
 #endif
 
+            // Theme
+            pgTheme.SelectedObject = Program.Settings.Theme;
+
             // Integration
 #if WindowsStore
             cbShellContextMenu.Visible = false;
@@ -432,6 +435,16 @@ namespace ShareX
         }
 
         #endregion General
+
+        #region Theme
+
+        private void BtnApplyTheme_Click(object sender, EventArgs e)
+        {
+            ShareXResources.ApplyTheme(this);
+            Program.MainForm.UpdateTheme();
+        }
+
+        #endregion
 
         #region Integration
 

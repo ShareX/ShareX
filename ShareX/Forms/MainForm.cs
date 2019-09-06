@@ -780,7 +780,7 @@ namespace ShareX
             }
         }
 
-        private void UpdateTheme()
+        public void UpdateTheme()
         {
             if (IsHandleCreated)
             {

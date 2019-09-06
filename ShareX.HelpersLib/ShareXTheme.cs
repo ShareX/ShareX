@@ -23,7 +23,9 @@
 
 #endregion License Information (GPL v3)
 
+using System.ComponentModel;
 using System.Drawing;
+using System.Drawing.Design;
 using System.Windows.Forms;
 
 namespace ShareX.HelpersLib
@@ -31,13 +33,28 @@ namespace ShareX.HelpersLib
     public class ShareXTheme
     {
         public string Name { get; set; }
+
+        [Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
         public Color BackgroundColor { get; set; }
+
+        [Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
         public Color BackgroundColor2 { get; set; }
+
+        [Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
         public Color TextColor { get; set; }
+
+        [Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
         public Color BorderColor { get; set; }
+
+        [Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
         public Color CheckerColor { get; set; }
+
+        [Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
         public Color CheckerColor2 { get; set; }
+
         public int CheckerSize { get; set; } = 15;
+
+        [Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
         public Color LinkColor { get; set; }
 
         public ShareXTheme()

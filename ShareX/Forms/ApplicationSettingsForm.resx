@@ -125,6 +125,9 @@
   <data name="cbExperimentalDarkTheme.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="cbExperimentalDarkTheme.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="cbExperimentalDarkTheme.Location" type="System.Drawing.Point, System.Drawing">
     <value>248, 96</value>
@@ -153,6 +156,9 @@
   <data name="cbUseWhiteShareXIcon.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="cbUseWhiteShareXIcon.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="cbUseWhiteShareXIcon.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 120</value>
   </data>
@@ -180,6 +186,9 @@
   <data name="cbUseDarkTheme.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="cbUseDarkTheme.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="cbUseDarkTheme.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 96</value>
   </data>
@@ -203,6 +212,9 @@
   </data>
   <data name="&gt;&gt;cbUseDarkTheme.ZOrder" xml:space="preserve">
     <value>2</value>
+  </data>
+  <data name="btnCheckDevBuild.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="btnCheckDevBuild.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 304</value>
@@ -230,6 +242,9 @@
   </data>
   <data name="cbCheckPreReleaseUpdates.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="cbCheckPreReleaseUpdates.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="cbCheckPreReleaseUpdates.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 280</value>
@@ -279,6 +294,9 @@
   <data name="lblTrayMiddleClickAction.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lblTrayMiddleClickAction.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblTrayMiddleClickAction.Location" type="System.Drawing.Point, System.Drawing">
     <value>13, 224</value>
   </data>
@@ -326,6 +344,9 @@
   </data>
   <data name="lblTrayLeftDoubleClickAction.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="lblTrayLeftDoubleClickAction.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="lblTrayLeftDoubleClickAction.Location" type="System.Drawing.Point, System.Drawing">
     <value>13, 200</value>
@@ -375,6 +396,9 @@
   <data name="lblTrayLeftClickAction.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lblTrayLeftClickAction.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblTrayLeftClickAction.Location" type="System.Drawing.Point, System.Drawing">
     <value>13, 176</value>
   </data>
@@ -398,6 +422,9 @@
   </data>
   <data name="&gt;&gt;lblTrayLeftClickAction.ZOrder" xml:space="preserve">
     <value>10</value>
+  </data>
+  <data name="btnEditQuickTaskMenu.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="btnEditQuickTaskMenu.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 248</value>
@@ -520,7 +547,7 @@
     <value>btnLanguages</value>
   </data>
   <data name="&gt;&gt;btnLanguages.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MenuButton, ShareX.HelpersLib, Version=13.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MenuButton, ShareX.HelpersLib, Version=13.0.2.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;btnLanguages.Parent" xml:space="preserve">
     <value>tpGeneral</value>
@@ -705,8 +732,89 @@
   <data name="&gt;&gt;tpGeneral.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="btnApplyTheme.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnApplyTheme.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 336</value>
+  </data>
+  <data name="btnApplyTheme.Size" type="System.Drawing.Size, System.Drawing">
+    <value>128, 24</value>
+  </data>
+  <data name="btnApplyTheme.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="btnApplyTheme.Text" xml:space="preserve">
+    <value>Apply theme</value>
+  </data>
+  <data name="&gt;&gt;btnApplyTheme.Name" xml:space="preserve">
+    <value>btnApplyTheme</value>
+  </data>
+  <data name="&gt;&gt;btnApplyTheme.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnApplyTheme.Parent" xml:space="preserve">
+    <value>tpTheme</value>
+  </data>
+  <data name="&gt;&gt;btnApplyTheme.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="pgTheme.HelpVisible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="pgTheme.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 8</value>
+  </data>
+  <data name="pgTheme.Size" type="System.Drawing.Size, System.Drawing">
+    <value>360, 320</value>
+  </data>
+  <data name="pgTheme.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;pgTheme.Name" xml:space="preserve">
+    <value>pgTheme</value>
+  </data>
+  <data name="&gt;&gt;pgTheme.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PropertyGrid, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pgTheme.Parent" xml:space="preserve">
+    <value>tpTheme</value>
+  </data>
+  <data name="&gt;&gt;pgTheme.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="tpTheme.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tpTheme.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tpTheme.Size" type="System.Drawing.Size, System.Drawing">
+    <value>550, 370</value>
+  </data>
+  <data name="tpTheme.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="tpTheme.Text" xml:space="preserve">
+    <value>Theme</value>
+  </data>
+  <data name="&gt;&gt;tpTheme.Name" xml:space="preserve">
+    <value>tpTheme</value>
+  </data>
+  <data name="&gt;&gt;tpTheme.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tpTheme.Parent" xml:space="preserve">
+    <value>tcSettings</value>
+  </data>
+  <data name="&gt;&gt;tpTheme.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <data name="cbFirefoxAddonSupport.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="cbFirefoxAddonSupport.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="cbFirefoxAddonSupport.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 24</value>
@@ -786,6 +894,9 @@
   <data name="cbSteamShowInApp.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="cbSteamShowInApp.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="cbSteamShowInApp.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 24</value>
   </data>
@@ -837,6 +948,9 @@
   <data name="cbChromeExtensionSupport.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="cbChromeExtensionSupport.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="cbChromeExtensionSupport.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 24</value>
   </data>
@@ -860,6 +974,9 @@
   </data>
   <data name="&gt;&gt;cbChromeExtensionSupport.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="btnChromeOpenExtensionPage.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="btnChromeOpenExtensionPage.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 48</value>
@@ -1075,7 +1192,10 @@
     <value>tcSettings</value>
   </data>
   <data name="&gt;&gt;tpIntegration.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
+  </data>
+  <data name="btnPersonalFolderPathApply.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="btnPersonalFolderPathApply.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 56</value>
@@ -1447,7 +1567,10 @@
     <value>tcSettings</value>
   </data>
   <data name="&gt;&gt;tpPaths.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
+  </data>
+  <data name="btnResetSettings.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="btnResetSettings.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 80</value>
@@ -1473,6 +1596,9 @@
   <data name="&gt;&gt;btnResetSettings.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="pbExportImport.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="pbExportImport.Location" type="System.Drawing.Point, System.Drawing">
     <value>208, 16</value>
   </data>
@@ -1496,6 +1622,9 @@
   </data>
   <data name="&gt;&gt;pbExportImport.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="btnExport.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="btnExport.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 16</value>
@@ -1573,7 +1702,7 @@
     <value>tcSettings</value>
   </data>
   <data name="&gt;&gt;tpExportImport.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="lblUploadLimit.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1846,7 +1975,7 @@
     <value>lvClipboardFormats</value>
   </data>
   <data name="&gt;&gt;lvClipboardFormats.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=13.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=13.0.2.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lvClipboardFormats.Parent" xml:space="preserve">
     <value>gbClipboardFormats</value>
@@ -1921,7 +2050,7 @@
     <value>lvSecondaryFileUploaders</value>
   </data>
   <data name="&gt;&gt;lvSecondaryFileUploaders.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=13.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=13.0.2.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lvSecondaryFileUploaders.Parent" xml:space="preserve">
     <value>gbSecondaryFileUploaders</value>
@@ -1972,7 +2101,7 @@
     <value>lvSecondaryImageUploaders</value>
   </data>
   <data name="&gt;&gt;lvSecondaryImageUploaders.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=13.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=13.0.2.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lvSecondaryImageUploaders.Parent" xml:space="preserve">
     <value>gbSecondaryImageUploaders</value>
@@ -2023,7 +2152,7 @@
     <value>lvSecondaryTextUploaders</value>
   </data>
   <data name="&gt;&gt;lvSecondaryTextUploaders.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=13.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=13.0.2.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lvSecondaryTextUploaders.Parent" xml:space="preserve">
     <value>gbSecondaryTextUploaders</value>
@@ -2218,10 +2347,13 @@
     <value>tcSettings</value>
   </data>
   <data name="&gt;&gt;tpUpload.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="cbHistoryCheckURL.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="cbHistoryCheckURL.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="cbHistoryCheckURL.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 48</value>
@@ -2249,6 +2381,9 @@
   </data>
   <data name="cbHistorySaveTasks.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="cbHistorySaveTasks.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="cbHistorySaveTasks.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 24</value>
@@ -2301,6 +2436,9 @@
   <data name="cbRecentTasksTrayMenuMostRecentFirst.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="cbRecentTasksTrayMenuMostRecentFirst.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="cbRecentTasksTrayMenuMostRecentFirst.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 144</value>
   </data>
@@ -2327,6 +2465,9 @@
   </data>
   <data name="lblRecentTasksMaxCount.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="lblRecentTasksMaxCount.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="lblRecentTasksMaxCount.Location" type="System.Drawing.Point, System.Drawing">
     <value>13, 48</value>
@@ -2409,6 +2550,9 @@
   <data name="cbRecentTasksShowInMainWindow.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="cbRecentTasksShowInMainWindow.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="cbRecentTasksShowInMainWindow.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 96</value>
   </data>
@@ -2435,6 +2579,9 @@
   </data>
   <data name="cbRecentTasksSave.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="cbRecentTasksSave.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="cbRecentTasksSave.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 24</value>
@@ -2509,7 +2656,7 @@
     <value>tcSettings</value>
   </data>
   <data name="&gt;&gt;tpHistory.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="cbPrintDontShowWindowsDialog.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2623,7 +2770,7 @@
     <value>tcSettings</value>
   </data>
   <data name="&gt;&gt;tpPrint.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="cbProxyMethod.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 32</value>
@@ -2908,7 +3055,7 @@
     <value>tcSettings</value>
   </data>
   <data name="&gt;&gt;tpProxy.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="pgSettings.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -2959,7 +3106,7 @@
     <value>tcSettings</value>
   </data>
   <data name="&gt;&gt;tpAdvanced.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="tcSettings.Location" type="System.Drawing.Point, System.Drawing">
     <value>176, 3</value>
@@ -3004,7 +3151,7 @@
     <value>tttvMain</value>
   </data>
   <data name="&gt;&gt;tttvMain.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.TabToTreeView, ShareX.HelpersLib, Version=13.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.TabToTreeView, ShareX.HelpersLib, Version=13.0.2.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;tttvMain.Parent" xml:space="preserve">
     <value>$this</value>
@@ -3020,6 +3167,9 @@
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>737, 402</value>
+  </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>640, 440</value>

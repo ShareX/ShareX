@@ -88,6 +88,12 @@ namespace ShareX
 
         #endregion General
 
+        #region Theme
+
+        public ShareXTheme Theme = new ShareXTheme();
+
+        #endregion
+
         #region Paths
 
         public bool UseCustomScreenshotsPath = false;
@@ -148,9 +154,6 @@ namespace ShareX
         [Browsable(false)]
 #endif
         public bool AutoCheckUpdate { get; set; }
-
-        [Category("Application"), Description("Customize theme colors."), TypeConverter(typeof(ExpandableObjectConverter))]
-        public ShareXTheme Theme { get; set; } = new ShareXTheme();
 
         [Category("Application"), DefaultValue(false), Description("Calculate and show file sizes in binary units (KiB, MiB etc.)")]
         public bool BinaryUnits { get; set; }
