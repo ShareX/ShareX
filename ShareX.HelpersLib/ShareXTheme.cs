@@ -30,6 +30,7 @@ namespace ShareX.HelpersLib
 {
     public class ShareXTheme
     {
+        public string Name { get; set; }
         public Color BackgroundColor { get; set; }
         public Color BackgroundColor2 { get; set; }
         public Color TextColor { get; set; }
@@ -38,6 +39,11 @@ namespace ShareX.HelpersLib
         public Color CheckerColor2 { get; set; }
         public int CheckerSize { get; set; } = 15;
         public Color LinkColor { get; set; }
+
+        public ShareXTheme()
+        {
+            ApplyDarkColors();
+        }
 
         public void ApplySystemColors()
         {
@@ -52,8 +58,9 @@ namespace ShareX.HelpersLib
 
         public void ApplyDarkColors()
         {
+            Name = "Dark";
             BackgroundColor = Color.FromArgb(42, 47, 56);
-            BackgroundColor2 = ColorHelpers.LighterColor(BackgroundColor, 0.05f);
+            BackgroundColor2 = Color.FromArgb(52, 57, 65);
             TextColor = Color.FromArgb(235, 235, 235);
             BorderColor = Color.FromArgb(28, 32, 38);
             CheckerColor = Color.FromArgb(60, 60, 60);

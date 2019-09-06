@@ -52,15 +52,6 @@ namespace ShareX.HelpersLib
             set
             {
                 useDarkTheme = value;
-
-                if (useDarkTheme)
-                {
-                    Theme.ApplyDarkColors();
-                }
-                else
-                {
-                    Theme.ApplySystemColors();
-                }
             }
         }
 

@@ -32,31 +32,31 @@ namespace ShareX.HelpersLib
     {
         public override Color ButtonSelectedHighlight
         {
-            get { return ButtonSelectedGradientMiddle; }
+            get { return Color.FromArgb(255, 30, 34, 40); }
         }
         public override Color ButtonSelectedHighlightBorder
         {
-            get { return ButtonSelectedBorder; }
+            get { return Color.FromArgb(255, 116, 129, 152); }
         }
         public override Color ButtonPressedHighlight
         {
-            get { return ButtonPressedGradientMiddle; }
+            get { return Color.FromArgb(255, 30, 34, 40); }
         }
         public override Color ButtonPressedHighlightBorder
         {
-            get { return ButtonPressedBorder; }
+            get { return Color.FromArgb(255, 116, 129, 152); }
         }
         public override Color ButtonCheckedHighlight
         {
-            get { return ButtonCheckedGradientMiddle; }
+            get { return Color.FromArgb(255, 55, 63, 74); }
         }
         public override Color ButtonCheckedHighlightBorder
         {
-            get { return ButtonSelectedBorder; }
+            get { return Color.FromArgb(255, 116, 129, 152); }
         }
         public override Color ButtonPressedBorder
         {
-            get { return ButtonSelectedBorder; }
+            get { return Color.FromArgb(255, 116, 129, 152); }
         }
         public override Color ButtonSelectedBorder
         {
@@ -120,35 +120,35 @@ namespace ShareX.HelpersLib
         }
         public override Color ImageMarginGradientBegin
         {
-            get { return Color.FromArgb(255, 42, 47, 56); }
+            get { return ShareXResources.Theme.BackgroundColor; }
         }
         public override Color ImageMarginGradientMiddle
         {
-            get { return Color.FromArgb(255, 42, 47, 56); }
+            get { return ShareXResources.Theme.BackgroundColor; }
         }
         public override Color ImageMarginGradientEnd
         {
-            get { return Color.FromArgb(255, 42, 47, 56); }
+            get { return ShareXResources.Theme.BackgroundColor; }
         }
         public override Color ImageMarginRevealedGradientBegin
         {
-            get { return Color.FromArgb(255, 42, 47, 56); }
+            get { return ShareXResources.Theme.BackgroundColor; }
         }
         public override Color ImageMarginRevealedGradientMiddle
         {
-            get { return Color.FromArgb(255, 42, 47, 56); }
+            get { return ShareXResources.Theme.BackgroundColor; }
         }
         public override Color ImageMarginRevealedGradientEnd
         {
-            get { return Color.FromArgb(255, 42, 47, 56); }
+            get { return ShareXResources.Theme.BackgroundColor; }
         }
         public override Color MenuStripGradientBegin
         {
-            get { return Color.FromArgb(255, 42, 47, 56); }
+            get { return ShareXResources.Theme.BackgroundColor; }
         }
         public override Color MenuStripGradientEnd
         {
-            get { return Color.FromArgb(255, 42, 47, 56); }
+            get { return ShareXResources.Theme.BackgroundColor; }
         }
         public override Color MenuItemSelected
         {
@@ -184,11 +184,11 @@ namespace ShareX.HelpersLib
         }
         public override Color RaftingContainerGradientBegin
         {
-            get { return Color.FromArgb(255, 42, 47, 56); }
+            get { return ShareXResources.Theme.BackgroundColor; }
         }
         public override Color RaftingContainerGradientEnd
         {
-            get { return Color.FromArgb(255, 42, 47, 56); }
+            get { return ShareXResources.Theme.BackgroundColor; }
         }
         public override Color SeparatorDark
         {
@@ -200,59 +200,59 @@ namespace ShareX.HelpersLib
         }
         public override Color StatusStripGradientBegin
         {
-            get { return Color.FromArgb(255, 42, 47, 56); }
+            get { return ShareXResources.Theme.BackgroundColor; }
         }
         public override Color StatusStripGradientEnd
         {
-            get { return Color.FromArgb(255, 42, 47, 56); }
+            get { return ShareXResources.Theme.BackgroundColor; }
         }
         public override Color ToolStripBorder
         {
-            get { return Color.FromArgb(255, 42, 47, 56); }
+            get { return ShareXResources.Theme.BackgroundColor; }
         }
         public override Color ToolStripDropDownBackground
         {
-            get { return Color.FromArgb(255, 42, 47, 56); }
+            get { return ShareXResources.Theme.BackgroundColor; }
         }
         public override Color ToolStripGradientBegin
         {
-            get { return Color.FromArgb(255, 42, 47, 56); }
+            get { return ShareXResources.Theme.BackgroundColor; }
         }
         public override Color ToolStripGradientMiddle
         {
-            get { return Color.FromArgb(255, 42, 47, 56); }
+            get { return ShareXResources.Theme.BackgroundColor; }
         }
         public override Color ToolStripGradientEnd
         {
-            get { return Color.FromArgb(255, 42, 47, 56); }
+            get { return ShareXResources.Theme.BackgroundColor; }
         }
         public override Color ToolStripContentPanelGradientBegin
         {
-            get { return Color.FromArgb(255, 42, 47, 56); }
+            get { return ShareXResources.Theme.BackgroundColor; }
         }
         public override Color ToolStripContentPanelGradientEnd
         {
-            get { return Color.FromArgb(255, 42, 47, 56); }
+            get { return ShareXResources.Theme.BackgroundColor; }
         }
         public override Color ToolStripPanelGradientBegin
         {
-            get { return Color.FromArgb(255, 42, 47, 56); }
+            get { return ShareXResources.Theme.BackgroundColor; }
         }
         public override Color ToolStripPanelGradientEnd
         {
-            get { return Color.FromArgb(255, 42, 47, 56); }
+            get { return ShareXResources.Theme.BackgroundColor; }
         }
         public override Color OverflowButtonGradientBegin
         {
-            get { return Color.FromArgb(255, 42, 47, 56); }
+            get { return ShareXResources.Theme.BackgroundColor; }
         }
         public override Color OverflowButtonGradientMiddle
         {
-            get { return Color.FromArgb(255, 42, 47, 56); }
+            get { return ShareXResources.Theme.BackgroundColor; }
         }
         public override Color OverflowButtonGradientEnd
         {
-            get { return Color.FromArgb(255, 42, 47, 56); }
+            get { return ShareXResources.Theme.BackgroundColor; }
         }
     }
 }

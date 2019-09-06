@@ -78,6 +78,7 @@ namespace ShareX
             niTray.Icon = ShareXResources.Icon;
             Text = Program.Title;
 
+            ShareXResources.Theme = Program.Settings.Theme;
             ShareXResources.UseDarkTheme = Program.Settings.UseDarkTheme;
             UpdateTheme();
             cmsTray.IgnoreSeparatorClick();
@@ -875,10 +876,10 @@ namespace ShareX
             if (ShareXResources.UseDarkTheme != Program.Settings.UseDarkTheme)
             {
                 ShareXResources.UseDarkTheme = Program.Settings.UseDarkTheme;
-
-                UpdateTheme();
-                Refresh();
             }
+
+            UpdateTheme();
+            Refresh();
 
             if (ShareXResources.UseWhiteIcon != Program.Settings.UseWhiteShareXIcon)
             {
