@@ -84,5 +84,10 @@ namespace ShareX.HelpersLib
             CheckerColor2 = Color.FromArgb(50, 50, 50);
             LinkColor = Color.FromArgb(166, 212, 255);
         }
+
+        public override string ToString()
+        {
+            return Name;
+        }
     }
 }

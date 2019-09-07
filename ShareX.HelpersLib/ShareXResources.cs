@@ -41,19 +41,7 @@ namespace ShareX.HelpersLib
             }
         }
 
-        private static bool useDarkTheme;
-
-        public static bool UseDarkTheme
-        {
-            get
-            {
-                return useDarkTheme;
-            }
-            set
-            {
-                useDarkTheme = value;
-            }
-        }
+        public static bool UseDarkTheme { get; set; }
 
         private static bool experimentalDarkTheme;
 

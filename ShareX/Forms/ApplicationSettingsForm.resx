@@ -122,43 +122,13 @@
     <value>Top, Bottom, Left, Right</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="cbExperimentalDarkTheme.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="cbExperimentalDarkTheme.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="cbExperimentalDarkTheme.Location" type="System.Drawing.Point, System.Drawing">
-    <value>248, 96</value>
-  </data>
-  <data name="cbExperimentalDarkTheme.Size" type="System.Drawing.Size, System.Drawing">
-    <value>142, 17</value>
-  </data>
-  <data name="cbExperimentalDarkTheme.TabIndex" type="System.Int32, mscorlib">
-    <value>20</value>
-  </data>
-  <data name="cbExperimentalDarkTheme.Text" xml:space="preserve">
-    <value>Experimental dark theme</value>
-  </data>
-  <data name="&gt;&gt;cbExperimentalDarkTheme.Name" xml:space="preserve">
-    <value>cbExperimentalDarkTheme</value>
-  </data>
-  <data name="&gt;&gt;cbExperimentalDarkTheme.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbExperimentalDarkTheme.Parent" xml:space="preserve">
-    <value>tpGeneral</value>
-  </data>
-  <data name="&gt;&gt;cbExperimentalDarkTheme.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="cbUseWhiteShareXIcon.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="cbUseWhiteShareXIcon.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="cbUseWhiteShareXIcon.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 120</value>
   </data>
@@ -181,43 +151,13 @@
     <value>tpGeneral</value>
   </data>
   <data name="&gt;&gt;cbUseWhiteShareXIcon.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="cbUseDarkTheme.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="cbUseDarkTheme.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="cbUseDarkTheme.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 96</value>
-  </data>
-  <data name="cbUseDarkTheme.Size" type="System.Drawing.Size, System.Drawing">
-    <value>101, 17</value>
-  </data>
-  <data name="cbUseDarkTheme.TabIndex" type="System.Int32, mscorlib">
-    <value>18</value>
-  </data>
-  <data name="cbUseDarkTheme.Text" xml:space="preserve">
-    <value>Use dark theme</value>
-  </data>
-  <data name="&gt;&gt;cbUseDarkTheme.Name" xml:space="preserve">
-    <value>cbUseDarkTheme</value>
-  </data>
-  <data name="&gt;&gt;cbUseDarkTheme.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbUseDarkTheme.Parent" xml:space="preserve">
-    <value>tpGeneral</value>
-  </data>
-  <data name="&gt;&gt;cbUseDarkTheme.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>0</value>
   </data>
   <data name="btnCheckDevBuild.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="btnCheckDevBuild.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 304</value>
+    <value>16, 272</value>
   </data>
   <data name="btnCheckDevBuild.Size" type="System.Drawing.Size, System.Drawing">
     <value>288, 23</value>
@@ -238,7 +178,7 @@
     <value>tpGeneral</value>
   </data>
   <data name="&gt;&gt;btnCheckDevBuild.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>1</value>
   </data>
   <data name="cbCheckPreReleaseUpdates.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -247,7 +187,7 @@
     <value>NoControl</value>
   </data>
   <data name="cbCheckPreReleaseUpdates.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 280</value>
+    <value>16, 248</value>
   </data>
   <data name="cbCheckPreReleaseUpdates.Size" type="System.Drawing.Size, System.Drawing">
     <value>168, 17</value>
@@ -268,10 +208,10 @@
     <value>tpGeneral</value>
   </data>
   <data name="&gt;&gt;cbCheckPreReleaseUpdates.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>2</value>
   </data>
   <data name="cbTrayMiddleClickAction.Location" type="System.Drawing.Point, System.Drawing">
-    <value>248, 220</value>
+    <value>248, 188</value>
   </data>
   <data name="cbTrayMiddleClickAction.Size" type="System.Drawing.Size, System.Drawing">
     <value>288, 21</value>
@@ -289,7 +229,7 @@
     <value>tpGeneral</value>
   </data>
   <data name="&gt;&gt;cbTrayMiddleClickAction.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>3</value>
   </data>
   <data name="lblTrayMiddleClickAction.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -298,7 +238,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblTrayMiddleClickAction.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 224</value>
+    <value>13, 192</value>
   </data>
   <data name="lblTrayMiddleClickAction.Size" type="System.Drawing.Size, System.Drawing">
     <value>125, 13</value>
@@ -319,10 +259,10 @@
     <value>tpGeneral</value>
   </data>
   <data name="&gt;&gt;lblTrayMiddleClickAction.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>4</value>
   </data>
   <data name="cbTrayLeftDoubleClickAction.Location" type="System.Drawing.Point, System.Drawing">
-    <value>248, 196</value>
+    <value>248, 164</value>
   </data>
   <data name="cbTrayLeftDoubleClickAction.Size" type="System.Drawing.Size, System.Drawing">
     <value>288, 21</value>
@@ -340,7 +280,7 @@
     <value>tpGeneral</value>
   </data>
   <data name="&gt;&gt;cbTrayLeftDoubleClickAction.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>5</value>
   </data>
   <data name="lblTrayLeftDoubleClickAction.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -349,7 +289,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblTrayLeftDoubleClickAction.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 200</value>
+    <value>13, 168</value>
   </data>
   <data name="lblTrayLeftDoubleClickAction.Size" type="System.Drawing.Size, System.Drawing">
     <value>144, 13</value>
@@ -370,10 +310,10 @@
     <value>tpGeneral</value>
   </data>
   <data name="&gt;&gt;lblTrayLeftDoubleClickAction.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>6</value>
   </data>
   <data name="cbTrayLeftClickAction.Location" type="System.Drawing.Point, System.Drawing">
-    <value>248, 172</value>
+    <value>248, 140</value>
   </data>
   <data name="cbTrayLeftClickAction.Size" type="System.Drawing.Size, System.Drawing">
     <value>288, 21</value>
@@ -391,7 +331,7 @@
     <value>tpGeneral</value>
   </data>
   <data name="&gt;&gt;cbTrayLeftClickAction.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>7</value>
   </data>
   <data name="lblTrayLeftClickAction.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -400,7 +340,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblTrayLeftClickAction.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 176</value>
+    <value>13, 144</value>
   </data>
   <data name="lblTrayLeftClickAction.Size" type="System.Drawing.Size, System.Drawing">
     <value>109, 13</value>
@@ -421,13 +361,13 @@
     <value>tpGeneral</value>
   </data>
   <data name="&gt;&gt;lblTrayLeftClickAction.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>8</value>
   </data>
   <data name="btnEditQuickTaskMenu.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="btnEditQuickTaskMenu.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 248</value>
+    <value>16, 216</value>
   </data>
   <data name="btnEditQuickTaskMenu.Size" type="System.Drawing.Size, System.Drawing">
     <value>288, 23</value>
@@ -448,7 +388,7 @@
     <value>tpGeneral</value>
   </data>
   <data name="&gt;&gt;btnEditQuickTaskMenu.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>9</value>
   </data>
   <data name="cbShowTray.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -478,7 +418,7 @@
     <value>tpGeneral</value>
   </data>
   <data name="&gt;&gt;cbShowTray.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>10</value>
   </data>
   <data name="cbTrayIconProgressEnabled.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -508,7 +448,7 @@
     <value>tpGeneral</value>
   </data>
   <data name="&gt;&gt;cbTrayIconProgressEnabled.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>11</value>
   </data>
   <data name="btnLanguages.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
@@ -553,7 +493,7 @@
     <value>tpGeneral</value>
   </data>
   <data name="&gt;&gt;btnLanguages.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>12</value>
   </data>
   <data name="cbRememberMainFormPosition.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -562,7 +502,7 @@
     <value>NoControl</value>
   </data>
   <data name="cbRememberMainFormPosition.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 144</value>
+    <value>16, 96</value>
   </data>
   <data name="cbRememberMainFormPosition.Size" type="System.Drawing.Size, System.Drawing">
     <value>180, 17</value>
@@ -583,7 +523,7 @@
     <value>tpGeneral</value>
   </data>
   <data name="&gt;&gt;cbRememberMainFormPosition.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>13</value>
   </data>
   <data name="cbSilentRun.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -613,7 +553,7 @@
     <value>tpGeneral</value>
   </data>
   <data name="&gt;&gt;cbSilentRun.ZOrder" xml:space="preserve">
-    <value>16</value>
+    <value>14</value>
   </data>
   <data name="cbTaskbarProgressEnabled.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -643,7 +583,7 @@
     <value>tpGeneral</value>
   </data>
   <data name="&gt;&gt;cbTaskbarProgressEnabled.ZOrder" xml:space="preserve">
-    <value>17</value>
+    <value>15</value>
   </data>
   <data name="cbRememberMainFormSize.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -652,7 +592,7 @@
     <value>NoControl</value>
   </data>
   <data name="cbRememberMainFormSize.Location" type="System.Drawing.Point, System.Drawing">
-    <value>248, 144</value>
+    <value>248, 96</value>
   </data>
   <data name="cbRememberMainFormSize.Size" type="System.Drawing.Size, System.Drawing">
     <value>162, 17</value>
@@ -673,7 +613,7 @@
     <value>tpGeneral</value>
   </data>
   <data name="&gt;&gt;cbRememberMainFormSize.ZOrder" xml:space="preserve">
-    <value>18</value>
+    <value>16</value>
   </data>
   <data name="lblLanguage.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -703,7 +643,7 @@
     <value>tpGeneral</value>
   </data>
   <data name="&gt;&gt;lblLanguage.ZOrder" xml:space="preserve">
-    <value>19</value>
+    <value>17</value>
   </data>
   <data name="tpGeneral.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>
@@ -732,14 +672,65 @@
   <data name="&gt;&gt;tpGeneral.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="cbThemes.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 64</value>
+  </data>
+  <data name="cbThemes.Size" type="System.Drawing.Size, System.Drawing">
+    <value>224, 21</value>
+  </data>
+  <data name="cbThemes.TabIndex" type="System.Int32, mscorlib">
+    <value>21</value>
+  </data>
+  <data name="&gt;&gt;cbThemes.Name" xml:space="preserve">
+    <value>cbThemes</value>
+  </data>
+  <data name="&gt;&gt;cbThemes.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbThemes.Parent" xml:space="preserve">
+    <value>tpTheme</value>
+  </data>
+  <data name="&gt;&gt;cbThemes.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="cbExperimentalDarkTheme.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbExperimentalDarkTheme.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="cbExperimentalDarkTheme.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 40</value>
+  </data>
+  <data name="cbExperimentalDarkTheme.Size" type="System.Drawing.Size, System.Drawing">
+    <value>155, 17</value>
+  </data>
+  <data name="cbExperimentalDarkTheme.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="cbExperimentalDarkTheme.Text" xml:space="preserve">
+    <value>Experimental custom theme</value>
+  </data>
+  <data name="&gt;&gt;cbExperimentalDarkTheme.Name" xml:space="preserve">
+    <value>cbExperimentalDarkTheme</value>
+  </data>
+  <data name="&gt;&gt;cbExperimentalDarkTheme.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbExperimentalDarkTheme.Parent" xml:space="preserve">
+    <value>tpTheme</value>
+  </data>
+  <data name="&gt;&gt;cbExperimentalDarkTheme.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <data name="btnApplyTheme.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="btnApplyTheme.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 336</value>
+    <value>16, 336</value>
   </data>
   <data name="btnApplyTheme.Size" type="System.Drawing.Size, System.Drawing">
-    <value>128, 24</value>
+    <value>136, 24</value>
   </data>
   <data name="btnApplyTheme.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -757,16 +748,16 @@
     <value>tpTheme</value>
   </data>
   <data name="&gt;&gt;btnApplyTheme.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>2</value>
   </data>
   <data name="pgTheme.HelpVisible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
   <data name="pgTheme.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 8</value>
+    <value>16, 96</value>
   </data>
   <data name="pgTheme.Size" type="System.Drawing.Size, System.Drawing">
-    <value>360, 320</value>
+    <value>360, 232</value>
   </data>
   <data name="pgTheme.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -781,7 +772,37 @@
     <value>tpTheme</value>
   </data>
   <data name="&gt;&gt;pgTheme.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>3</value>
+  </data>
+  <data name="cbUseDarkTheme.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbUseDarkTheme.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="cbUseDarkTheme.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 16</value>
+  </data>
+  <data name="cbUseDarkTheme.Size" type="System.Drawing.Size, System.Drawing">
+    <value>114, 17</value>
+  </data>
+  <data name="cbUseDarkTheme.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="cbUseDarkTheme.Text" xml:space="preserve">
+    <value>Use custom theme</value>
+  </data>
+  <data name="&gt;&gt;cbUseDarkTheme.Name" xml:space="preserve">
+    <value>cbUseDarkTheme</value>
+  </data>
+  <data name="&gt;&gt;cbUseDarkTheme.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbUseDarkTheme.Parent" xml:space="preserve">
+    <value>tpTheme</value>
+  </data>
+  <data name="&gt;&gt;cbUseDarkTheme.ZOrder" xml:space="preserve">
+    <value>4</value>
   </data>
   <data name="tpTheme.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>
@@ -3167,9 +3188,6 @@
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>737, 402</value>
-  </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>640, 440</value>

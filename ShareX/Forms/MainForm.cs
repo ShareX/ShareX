@@ -78,8 +78,6 @@ namespace ShareX
             niTray.Icon = ShareXResources.Icon;
             Text = Program.Title;
 
-            ShareXResources.Theme = Program.Settings.Theme;
-            ShareXResources.UseDarkTheme = Program.Settings.UseDarkTheme;
             UpdateTheme();
             cmsTray.IgnoreSeparatorClick();
             cmsTaskInfo.IgnoreSeparatorClick();
@@ -782,6 +780,24 @@ namespace ShareX
 
         public void UpdateTheme()
         {
+            if (Program.Settings.Themes == null || Program.Settings.Themes.Count == 0)
+            {
+                Program.Settings.Themes = new List<ShareXTheme>();
+                ShareXTheme theme = new ShareXTheme();
+                theme.ApplyDarkColors();
+                Program.Settings.Themes.Add(theme);
+                Program.Settings.SelectedTheme = 0;
+            }
+
+            if (!Program.Settings.Themes.IsValidIndex(Program.Settings.SelectedTheme))
+            {
+                Program.Settings.SelectedTheme = 0;
+            }
+
+            ShareXResources.Theme = Program.Settings.Themes[Program.Settings.SelectedTheme];
+            ShareXResources.UseDarkTheme = Program.Settings.UseDarkTheme;
+            ShareXResources.ExperimentalDarkTheme = Program.Settings.ExperimentalDarkTheme;
+
             if (IsHandleCreated)
             {
                 NativeMethods.UseImmersiveDarkMode(Handle, ShareXResources.UseDarkTheme);
@@ -870,13 +886,6 @@ namespace ShareX
             HelpersOptions.RecentColors = Program.Settings.RecentColors;
 
             TaskManager.RecentManager.MaxCount = Program.Settings.RecentTasksMaxCount;
-
-            ShareXResources.ExperimentalDarkTheme = Program.Settings.ExperimentalDarkTheme;
-
-            if (ShareXResources.UseDarkTheme != Program.Settings.UseDarkTheme)
-            {
-                ShareXResources.UseDarkTheme = Program.Settings.UseDarkTheme;
-            }
 
             UpdateTheme();
             Refresh();

@@ -120,7 +120,9 @@ namespace ShareX
 #endif
 
             // Theme
-            pgTheme.SelectedObject = Program.Settings.Theme;
+            cbThemes.Items.AddRange(Program.Settings.Themes.ToArray());
+            cbThemes.SelectedIndex = Program.Settings.SelectedTheme;
+            pgTheme.SelectedObject = Program.Settings.Themes[Program.Settings.SelectedTheme];
 
             // Integration
 #if WindowsStore

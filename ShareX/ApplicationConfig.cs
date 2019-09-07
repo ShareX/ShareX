@@ -90,7 +90,8 @@ namespace ShareX
 
         #region Theme
 
-        public ShareXTheme Theme = new ShareXTheme();
+        public List<ShareXTheme> Themes = new List<ShareXTheme>();
+        public int SelectedTheme = 0;
 
         #endregion
 
