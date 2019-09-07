@@ -672,11 +672,59 @@
   <data name="&gt;&gt;tpGeneral.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="btnThemeRemove.Location" type="System.Drawing.Point, System.Drawing">
+    <value>296, 64</value>
+  </data>
+  <data name="btnThemeRemove.Size" type="System.Drawing.Size, System.Drawing">
+    <value>80, 23</value>
+  </data>
+  <data name="btnThemeRemove.TabIndex" type="System.Int32, mscorlib">
+    <value>23</value>
+  </data>
+  <data name="btnThemeRemove.Text" xml:space="preserve">
+    <value>Remove</value>
+  </data>
+  <data name="&gt;&gt;btnThemeRemove.Name" xml:space="preserve">
+    <value>btnThemeRemove</value>
+  </data>
+  <data name="&gt;&gt;btnThemeRemove.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnThemeRemove.Parent" xml:space="preserve">
+    <value>tpTheme</value>
+  </data>
+  <data name="&gt;&gt;btnThemeRemove.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="btnThemeAdd.Location" type="System.Drawing.Point, System.Drawing">
+    <value>208, 64</value>
+  </data>
+  <data name="btnThemeAdd.Size" type="System.Drawing.Size, System.Drawing">
+    <value>80, 23</value>
+  </data>
+  <data name="btnThemeAdd.TabIndex" type="System.Int32, mscorlib">
+    <value>22</value>
+  </data>
+  <data name="btnThemeAdd.Text" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="&gt;&gt;btnThemeAdd.Name" xml:space="preserve">
+    <value>btnThemeAdd</value>
+  </data>
+  <data name="&gt;&gt;btnThemeAdd.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnThemeAdd.Parent" xml:space="preserve">
+    <value>tpTheme</value>
+  </data>
+  <data name="&gt;&gt;btnThemeAdd.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <data name="cbThemes.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 64</value>
   </data>
   <data name="cbThemes.Size" type="System.Drawing.Size, System.Drawing">
-    <value>224, 21</value>
+    <value>184, 21</value>
   </data>
   <data name="cbThemes.TabIndex" type="System.Int32, mscorlib">
     <value>21</value>
@@ -691,7 +739,7 @@
     <value>tpTheme</value>
   </data>
   <data name="&gt;&gt;cbThemes.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>2</value>
   </data>
   <data name="cbExperimentalDarkTheme.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -721,7 +769,7 @@
     <value>tpTheme</value>
   </data>
   <data name="&gt;&gt;cbExperimentalDarkTheme.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="btnApplyTheme.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -748,7 +796,7 @@
     <value>tpTheme</value>
   </data>
   <data name="&gt;&gt;btnApplyTheme.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>4</value>
   </data>
   <data name="pgTheme.HelpVisible" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -772,7 +820,7 @@
     <value>tpTheme</value>
   </data>
   <data name="&gt;&gt;pgTheme.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>5</value>
   </data>
   <data name="cbUseDarkTheme.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -802,7 +850,7 @@
     <value>tpTheme</value>
   </data>
   <data name="&gt;&gt;cbUseDarkTheme.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>6</value>
   </data>
   <data name="tpTheme.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>

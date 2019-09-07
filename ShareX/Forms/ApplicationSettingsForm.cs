@@ -123,6 +123,7 @@ namespace ShareX
             cbThemes.Items.AddRange(Program.Settings.Themes.ToArray());
             cbThemes.SelectedIndex = Program.Settings.SelectedTheme;
             pgTheme.SelectedObject = Program.Settings.Themes[Program.Settings.SelectedTheme];
+            UpdateThemeControls();
 
             // Integration
 #if WindowsStore
@@ -440,10 +441,73 @@ namespace ShareX
 
         #region Theme
 
+        private void UpdateThemeControls()
+        {
+            cbThemes.Enabled = btnThemeRemove.Enabled = btnApplyTheme.Enabled = cbThemes.Items.Count > 0;
+        }
+
+        private void CbThemes_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Program.Settings.SelectedTheme = cbThemes.SelectedIndex;
+
+            if (cbThemes.SelectedItem != null)
+            {
+                pgTheme.SelectedObject = cbThemes.SelectedItem.Copy();
+            }
+            else
+            {
+                pgTheme.SelectedObject = null;
+            }
+
+            UpdateThemeControls();
+        }
+
+        private void BtnThemeAdd_Click(object sender, EventArgs e)
+        {
+            ShareXTheme theme = new ShareXTheme();
+            theme.ApplyDarkColors();
+            Program.Settings.Themes.Add(theme);
+            cbThemes.Items.Add(theme);
+            int index = Program.Settings.Themes.Count - 1;
+            Program.Settings.SelectedTheme = index;
+            cbThemes.SelectedIndex = index;
+            UpdateThemeControls();
+        }
+
+        private void BtnThemeRemove_Click(object sender, EventArgs e)
+        {
+            int index = cbThemes.SelectedIndex;
+            if (index > -1)
+            {
+                Program.Settings.Themes.RemoveAt(index);
+                cbThemes.Items.RemoveAt(index);
+                if (Program.Settings.Themes.Count > 0)
+                {
+                    index = 0;
+                }
+                else
+                {
+                    index = -1;
+                }
+                Program.Settings.SelectedTheme = index;
+                cbThemes.SelectedIndex = index;
+                pgTheme.SelectedObject = cbThemes.SelectedItem;
+                UpdateThemeControls();
+            }
+        }
+
         private void BtnApplyTheme_Click(object sender, EventArgs e)
         {
-            ShareXResources.ApplyTheme(this);
-            Program.MainForm.UpdateTheme();
+            int index = cbThemes.SelectedIndex;
+            if (index > -1)
+            {
+                Program.Settings.SelectedTheme = index;
+                Program.Settings.Themes[index] = (ShareXTheme)pgTheme.SelectedObject;
+                cbThemes.Items[index] = Program.Settings.Themes[index];
+                UpdateThemeControls();
+                ShareXResources.ApplyTheme(this);
+                Program.MainForm.UpdateTheme();
+            }
         }
 
         #endregion

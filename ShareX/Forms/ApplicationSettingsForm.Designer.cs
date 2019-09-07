@@ -149,6 +149,8 @@ namespace ShareX
             this.tpAdvanced = new System.Windows.Forms.TabPage();
             this.pgSettings = new System.Windows.Forms.PropertyGrid();
             this.tttvMain = new ShareX.HelpersLib.TabToTreeView();
+            this.btnThemeAdd = new System.Windows.Forms.Button();
+            this.btnThemeRemove = new System.Windows.Forms.Button();
             this.tcSettings.SuspendLayout();
             this.tpGeneral.SuspendLayout();
             this.tpTheme.SuspendLayout();
@@ -348,6 +350,8 @@ namespace ShareX
             // 
             // tpTheme
             // 
+            this.tpTheme.Controls.Add(this.btnThemeRemove);
+            this.tpTheme.Controls.Add(this.btnThemeAdd);
             this.tpTheme.Controls.Add(this.cbThemes);
             this.tpTheme.Controls.Add(this.cbExperimentalDarkTheme);
             this.tpTheme.Controls.Add(this.btnApplyTheme);
@@ -363,6 +367,7 @@ namespace ShareX
             this.cbThemes.FormattingEnabled = true;
             resources.ApplyResources(this.cbThemes, "cbThemes");
             this.cbThemes.Name = "cbThemes";
+            this.cbThemes.SelectedIndexChanged += new System.EventHandler(this.CbThemes_SelectedIndexChanged);
             // 
             // cbExperimentalDarkTheme
             // 
@@ -1095,6 +1100,20 @@ namespace ShareX
             this.tttvMain.TreeViewSize = 175;
             this.tttvMain.TabChanged += new ShareX.HelpersLib.TabToTreeView.TabChangedEventHandler(this.tttvMain_TabChanged);
             // 
+            // btnThemeAdd
+            // 
+            resources.ApplyResources(this.btnThemeAdd, "btnThemeAdd");
+            this.btnThemeAdd.Name = "btnThemeAdd";
+            this.btnThemeAdd.UseVisualStyleBackColor = true;
+            this.btnThemeAdd.Click += new System.EventHandler(this.BtnThemeAdd_Click);
+            // 
+            // btnThemeRemove
+            // 
+            resources.ApplyResources(this.btnThemeRemove, "btnThemeRemove");
+            this.btnThemeRemove.Name = "btnThemeRemove";
+            this.btnThemeRemove.UseVisualStyleBackColor = true;
+            this.btnThemeRemove.Click += new System.EventHandler(this.BtnThemeRemove_Click);
+            // 
             // ApplicationSettingsForm
             // 
             resources.ApplyResources(this, "$this");
@@ -1274,5 +1293,7 @@ namespace ShareX
         private System.Windows.Forms.Button btnApplyTheme;
         private System.Windows.Forms.PropertyGrid pgTheme;
         private System.Windows.Forms.ComboBox cbThemes;
+        private System.Windows.Forms.Button btnThemeRemove;
+        private System.Windows.Forms.Button btnThemeAdd;
     }
 }
