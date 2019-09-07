@@ -55,7 +55,7 @@ namespace ShareX.HelpersLib
         private Pen borderPen;
         private Pen borderDisabledPen;
 
-        public ThemedButton()
+        public BlackStyleButton()
         {
             this.SetStyle(ControlStyles.UserPaint | ControlStyles.AllPaintingInWmPaint | ControlStyles.ResizeRedraw | ControlStyles.OptimizedDoubleBuffer | ControlStyles.SupportsTransparentBackColor, true);
             this.ForeColor = Color.White;
