@@ -34,123 +34,118 @@ namespace ShareX.HelpersLib
     public class BlackStyleLabel : Control
     {
         private string text;
+        private ContentAlignment textAlign;
+        private Color textShadowColor;
+        private bool drawBorder;
+        private bool autoEllipsis;
+        private bool wordWrap = true;
+
+        public ThemedLabel()
+        {
+            this.DoubleBuffered = true;
+            this.SetStyle(ControlStyles.UserPaint | ControlStyles.AllPaintingInWmPaint | ControlStyles.ResizeRedraw | ControlStyles.OptimizedDoubleBuffer | ControlStyles.SupportsTransparentBackColor, true);
+            this.TextAlign = ContentAlignment.TopLeft;
+            this.BackColor = Color.Transparent;
+            this.ForeColor = Color.White;
+            this.TextShadowColor = Color.Black;
+            this.Font = new Font("Arial", 12);
+        }
 
         [Editor("System.ComponentModel.Design.MultilineStringEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(UITypeEditor))]
         [SettingsBindable(true)]
         public override string Text
         {
-            get
-            {
-                return text;
-            }
+            get => this.text;
             set
             {
                 if (value == null)
                 {
-                    value = "";
+                    value = string.Empty;
                 }
 
-                if (text != value)
+                if (this.text != value)
                 {
-                    text = value;
+                    this.text = value;
 
-                    OnTextChanged(EventArgs.Empty);
+                    this.OnTextChanged(EventArgs.Empty);
 
-                    Invalidate();
+                    this.Invalidate();
                 }
             }
         }
-
-        private ContentAlignment textAlign;
 
         [DefaultValue(ContentAlignment.TopLeft)]
         public ContentAlignment TextAlign
         {
-            get
-            {
-                return textAlign;
-            }
+            get => this.textAlign;
             set
             {
-                textAlign = value;
+                this.textAlign = value;
 
-                Invalidate();
+                this.Invalidate();
             }
         }
-
-        private Color textShadowColor;
 
         [DefaultValue(typeof(Color), "Black")]
         public Color TextShadowColor
         {
-            get
-            {
-                return textShadowColor;
-            }
+            get => this.textShadowColor;
             set
             {
-                textShadowColor = value;
+                this.textShadowColor = value;
 
-                Invalidate();
+                this.Invalidate();
             }
         }
-
-        private bool drawBorder;
 
         [DefaultValue(false)]
         public bool DrawBorder
         {
-            get
-            {
-                return drawBorder;
-            }
+            get => this.drawBorder;
+
             set
             {
-                drawBorder = value;
+                this.drawBorder = value;
 
-                Invalidate();
+                this.Invalidate();
             }
         }
-
-        private bool autoEllipsis;
 
         [DefaultValue(false)]
         public bool AutoEllipsis
         {
-            get
-            {
-                return autoEllipsis;
-            }
+            get => this.autoEllipsis;
             set
             {
-                autoEllipsis = value;
+                this.autoEllipsis = value;
 
-                Invalidate();
+                this.Invalidate();
             }
         }
 
-        public BlackStyleLabel()
+        [DefaultValue(true)]
+        public bool WordWrap
         {
-            DoubleBuffered = true;
-            SetStyle(ControlStyles.UserPaint | ControlStyles.AllPaintingInWmPaint | ControlStyles.ResizeRedraw | ControlStyles.OptimizedDoubleBuffer | ControlStyles.SupportsTransparentBackColor, true);
-            TextAlign = ContentAlignment.TopLeft;
-            BackColor = Color.Transparent;
-            ForeColor = Color.White;
-            TextShadowColor = Color.Black;
-            Font = new Font("Arial", 12);
+            get => this.wordWrap;
+            set
+            {
+                this.wordWrap = value;
+
+                this.Invalidate();
+            }
         }
 
         protected override void OnPaint(PaintEventArgs pe)
         {
-            Graphics g = pe.Graphics;
+            var g = pe.Graphics;
 
-            if (!string.IsNullOrEmpty(Text))
+            if (!string.IsNullOrEmpty(this.Text))
             {
-                DrawText(g);
+                this.DrawText(g);
 
-                if (drawBorder)
+                if (this.drawBorder)
                 {
-                    g.DrawRectangleProper(Pens.Black, ClientRectangle);
+                    g.DrawRectangle(Pens.Black, this.ClientRectangle);
                 }
             }
         }
@@ -159,7 +154,7 @@ namespace ShareX.HelpersLib
         {
             TextFormatFlags tff;
 
-            switch (TextAlign)
+            switch (this.TextAlign)
             {
                 case ContentAlignment.TopLeft:
                     tff = TextFormatFlags.Top | TextFormatFlags.Left;
@@ -173,7 +168,6 @@ namespace ShareX.HelpersLib
                 case ContentAlignment.TopCenter:
                     tff = TextFormatFlags.Top | TextFormatFlags.HorizontalCenter;
                     break;
-                default:
                 case ContentAlignment.MiddleCenter:
                     tff = TextFormatFlags.VerticalCenter | TextFormatFlags.HorizontalCenter;
                     break;
@@ -189,19 +183,28 @@ namespace ShareX.HelpersLib
                 case ContentAlignment.BottomRight:
                     tff = TextFormatFlags.Bottom | TextFormatFlags.Right;
                     break;
+                // on my program if this is not added; my program will fail compile on c# 8.x.
+                default:
+                    tff = TextFormatFlags.Top | TextFormatFlags.Left;
+                    break;
             }
 
-            if (AutoEllipsis)
+            if (this.AutoEllipsis)
             {
                 tff |= TextFormatFlags.EndEllipsis;
             }
 
-            if (TextShadowColor.A > 0)
+            if (this.WordWrap)
             {
-                TextRenderer.DrawText(g, Text, Font, ClientRectangle.LocationOffset(0, 1), TextShadowColor, tff);
+                tff |= TextFormatFlags.WordBreak;
             }
 
-            TextRenderer.DrawText(g, Text, Font, ClientRectangle, ForeColor, tff);
+            if (this.TextShadowColor.A > 0)
+            {
+                TextRenderer.DrawText(g, this.Text, this.Font, this.ClientRectangle.LocationOffset(0, 1), this.TextShadowColor, tff);
+            }
+
+            TextRenderer.DrawText(g, this.Text, this.Font, this.ClientRectangle, this.ForeColor, tff);
         }
     }
 }
