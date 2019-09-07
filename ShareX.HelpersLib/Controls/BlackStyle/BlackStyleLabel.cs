@@ -40,7 +40,7 @@ namespace ShareX.HelpersLib
         private bool autoEllipsis;
         private bool wordWrap = true;
 
-        public ThemedLabel()
+        public BlackStyleLabel()
         {
             this.DoubleBuffered = true;
             this.SetStyle(ControlStyles.UserPaint | ControlStyles.AllPaintingInWmPaint | ControlStyles.ResizeRedraw | ControlStyles.OptimizedDoubleBuffer | ControlStyles.SupportsTransparentBackColor, true);
