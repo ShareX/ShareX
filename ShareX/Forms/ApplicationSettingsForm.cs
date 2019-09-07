@@ -81,6 +81,8 @@ namespace ShareX
             cbTrayLeftClickAction.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<HotkeyType>());
             cbTrayMiddleClickAction.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<HotkeyType>());
 
+            eiTheme.ObjectType = typeof(ShareXTheme);
+
             CodeMenu.Create<CodeMenuEntryFilename>(txtSaveImageSubFolderPattern, CodeMenuEntryFilename.t, CodeMenuEntryFilename.pn, CodeMenuEntryFilename.i, CodeMenuEntryFilename.width, CodeMenuEntryFilename.height, CodeMenuEntryFilename.n);
 
             cbProxyMethod.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<ProxyMethod>());
@@ -452,6 +454,19 @@ namespace ShareX
             ShareXResources.ApplyTheme(this);
         }
 
+        private void AddTheme(ShareXTheme theme)
+        {
+            if (theme != null)
+            {
+                Program.Settings.Themes.Add(theme);
+                cbThemes.Items.Add(theme);
+                int index = Program.Settings.Themes.Count - 1;
+                Program.Settings.SelectedTheme = index;
+                cbThemes.SelectedIndex = index;
+                UpdateThemeControls();
+            }
+        }
+
         private void CbThemes_SelectedIndexChanged(object sender, EventArgs e)
         {
             Program.Settings.SelectedTheme = cbThemes.SelectedIndex;
@@ -473,12 +488,7 @@ namespace ShareX
         {
             ShareXTheme theme = new ShareXTheme();
             theme.ApplyDarkColors();
-            Program.Settings.Themes.Add(theme);
-            cbThemes.Items.Add(theme);
-            int index = Program.Settings.Themes.Count - 1;
-            Program.Settings.SelectedTheme = index;
-            cbThemes.SelectedIndex = index;
-            UpdateThemeControls();
+            AddTheme(theme);
         }
 
         private void BtnThemeRemove_Click(object sender, EventArgs e)
@@ -514,6 +524,16 @@ namespace ShareX
                 UpdateThemeControls();
                 ApplySelectedTheme();
             }
+        }
+
+        private object EiTheme_ExportRequested()
+        {
+            return pgTheme.SelectedObject as ShareXTheme;
+        }
+
+        private void EiTheme_ImportRequested(object obj)
+        {
+            AddTheme(obj as ShareXTheme);
         }
 
         #endregion
