@@ -446,6 +446,12 @@ namespace ShareX
             cbThemes.Enabled = btnThemeRemove.Enabled = btnApplyTheme.Enabled = cbThemes.Items.Count > 0;
         }
 
+        private void ApplySelectedTheme()
+        {
+            Program.MainForm.UpdateTheme();
+            ShareXResources.ApplyTheme(this);
+        }
+
         private void CbThemes_SelectedIndexChanged(object sender, EventArgs e)
         {
             Program.Settings.SelectedTheme = cbThemes.SelectedIndex;
@@ -460,6 +466,7 @@ namespace ShareX
             }
 
             UpdateThemeControls();
+            ApplySelectedTheme();
         }
 
         private void BtnThemeAdd_Click(object sender, EventArgs e)
@@ -505,8 +512,7 @@ namespace ShareX
                 Program.Settings.Themes[index] = (ShareXTheme)pgTheme.SelectedObject;
                 cbThemes.Items[index] = Program.Settings.Themes[index];
                 UpdateThemeControls();
-                ShareXResources.ApplyTheme(this);
-                Program.MainForm.UpdateTheme();
+                ApplySelectedTheme();
             }
         }
 
