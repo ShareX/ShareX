@@ -124,7 +124,7 @@ namespace ShareX
             // Theme
             cbThemes.Items.AddRange(Program.Settings.Themes.ToArray());
             cbThemes.SelectedIndex = Program.Settings.SelectedTheme;
-            pgTheme.SelectedObject = Program.Settings.Themes[Program.Settings.SelectedTheme];
+            pgTheme.SelectedObject = Program.Settings.Themes[Program.Settings.SelectedTheme].Copy();
             UpdateThemeControls();
 
             // Integration
