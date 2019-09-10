@@ -57,6 +57,27 @@ namespace ShareX.HelpersLib
         [Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
         public Color LinkColor { get; set; }
 
+        [Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
+        public Color MenuHighlightColor { get; set; }
+
+        [Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
+        public Color MenuHighlightBorderColor { get; set; }
+
+        [Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
+        public Color MenuBorderColor { get; set; }
+
+        [Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
+        public Color MenuButtonCheckedColor { get; set; }
+
+        [Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
+        public Color MenuCheckBackgroundColor { get; set; }
+
+        [Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
+        public Color SeparatorDarkColor { get; set; }
+
+        [Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
+        public Color SeparatorLightColor { get; set; }
+
         public ShareXTheme()
         {
             ApplyDarkColors();
@@ -83,6 +104,13 @@ namespace ShareX.HelpersLib
             CheckerColor = Color.FromArgb(60, 60, 60);
             CheckerColor2 = Color.FromArgb(50, 50, 50);
             LinkColor = Color.FromArgb(166, 212, 255);
+            MenuHighlightColor = Color.FromArgb(255, 30, 34, 40);
+            MenuHighlightBorderColor = Color.FromArgb(255, 116, 129, 152);
+            MenuBorderColor = Color.FromArgb(255, 22, 26, 31);
+            MenuButtonCheckedColor = Color.FromArgb(255, 56, 64, 75);
+            MenuCheckBackgroundColor = Color.FromArgb(255, 74, 83, 100);
+            SeparatorDarkColor = Color.FromArgb(255, 22, 26, 31);
+            SeparatorLightColor = Color.FromArgb(255, 56, 64, 75);
         }
 
         public override string ToString()
