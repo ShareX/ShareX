@@ -383,11 +383,13 @@ namespace ShareX
         {
             Program.Settings.UseDarkTheme = cbUseDarkTheme.Checked;
             cbExperimentalDarkTheme.Enabled = Program.Settings.UseDarkTheme;
+            ApplySelectedTheme();
         }
 
         private void CbExperimentalDarkTheme_CheckedChanged(object sender, EventArgs e)
         {
             Program.Settings.ExperimentalDarkTheme = cbExperimentalDarkTheme.Checked;
+            ApplySelectedTheme();
         }
 
         private void CbUseWhiteShareXIcon_CheckedChanged(object sender, EventArgs e)
