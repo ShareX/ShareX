@@ -673,7 +673,7 @@
     <value>0</value>
   </data>
   <data name="eiTheme.Location" type="System.Drawing.Point, System.Drawing">
-    <value>192, 336</value>
+    <value>192, 352</value>
   </data>
   <data name="eiTheme.Size" type="System.Drawing.Size, System.Drawing">
     <value>185, 24</value>
@@ -697,7 +697,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnThemeRemove.Location" type="System.Drawing.Point, System.Drawing">
-    <value>296, 64</value>
+    <value>296, 40</value>
   </data>
   <data name="btnThemeRemove.Size" type="System.Drawing.Size, System.Drawing">
     <value>80, 23</value>
@@ -724,7 +724,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnThemeAdd.Location" type="System.Drawing.Point, System.Drawing">
-    <value>208, 64</value>
+    <value>208, 40</value>
   </data>
   <data name="btnThemeAdd.Size" type="System.Drawing.Size, System.Drawing">
     <value>80, 23</value>
@@ -748,7 +748,7 @@
     <value>2</value>
   </data>
   <data name="cbThemes.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 64</value>
+    <value>16, 40</value>
   </data>
   <data name="cbThemes.Size" type="System.Drawing.Size, System.Drawing">
     <value>184, 21</value>
@@ -775,7 +775,7 @@
     <value>NoControl</value>
   </data>
   <data name="cbExperimentalDarkTheme.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 40</value>
+    <value>208, 16</value>
   </data>
   <data name="cbExperimentalDarkTheme.Size" type="System.Drawing.Size, System.Drawing">
     <value>155, 17</value>
@@ -802,7 +802,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnApplyTheme.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 336</value>
+    <value>16, 352</value>
   </data>
   <data name="btnApplyTheme.Size" type="System.Drawing.Size, System.Drawing">
     <value>168, 24</value>
@@ -829,10 +829,10 @@
     <value>False</value>
   </data>
   <data name="pgTheme.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 96</value>
+    <value>16, 72</value>
   </data>
   <data name="pgTheme.Size" type="System.Drawing.Size, System.Drawing">
-    <value>360, 232</value>
+    <value>360, 272</value>
   </data>
   <data name="pgTheme.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -3263,9 +3263,6 @@
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>737, 402</value>
-  </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>640, 440</value>

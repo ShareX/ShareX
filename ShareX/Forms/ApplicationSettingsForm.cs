@@ -379,19 +379,6 @@ namespace ShareX
             }
         }
 
-        private void CbUseDarkTheme_CheckedChanged(object sender, EventArgs e)
-        {
-            Program.Settings.UseDarkTheme = cbUseDarkTheme.Checked;
-            cbExperimentalDarkTheme.Enabled = Program.Settings.UseDarkTheme;
-            ApplySelectedTheme();
-        }
-
-        private void CbExperimentalDarkTheme_CheckedChanged(object sender, EventArgs e)
-        {
-            Program.Settings.ExperimentalDarkTheme = cbExperimentalDarkTheme.Checked;
-            ApplySelectedTheme();
-        }
-
         private void CbUseWhiteShareXIcon_CheckedChanged(object sender, EventArgs e)
         {
             Program.Settings.UseWhiteShareXIcon = cbUseWhiteShareXIcon.Checked;
@@ -447,7 +434,8 @@ namespace ShareX
 
         private void UpdateThemeControls()
         {
-            cbThemes.Enabled = btnThemeRemove.Enabled = btnApplyTheme.Enabled = cbThemes.Items.Count > 0;
+            cbExperimentalDarkTheme.Enabled = btnThemeAdd.Enabled = pgTheme.Enabled = eiTheme.Enabled = Program.Settings.UseDarkTheme;
+            cbThemes.Enabled = btnThemeRemove.Enabled = btnApplyTheme.Enabled = Program.Settings.UseDarkTheme && cbThemes.Items.Count > 0;
         }
 
         private void ApplySelectedTheme()
@@ -467,6 +455,20 @@ namespace ShareX
                 cbThemes.SelectedIndex = index;
                 UpdateThemeControls();
             }
+        }
+
+        private void CbUseDarkTheme_CheckedChanged(object sender, EventArgs e)
+        {
+            Program.Settings.UseDarkTheme = cbUseDarkTheme.Checked;
+            UpdateThemeControls();
+            ApplySelectedTheme();
+        }
+
+        private void CbExperimentalDarkTheme_CheckedChanged(object sender, EventArgs e)
+        {
+            Program.Settings.ExperimentalDarkTheme = cbExperimentalDarkTheme.Checked;
+            UpdateThemeControls();
+            ApplySelectedTheme();
         }
 
         private void CbThemes_SelectedIndexChanged(object sender, EventArgs e)
