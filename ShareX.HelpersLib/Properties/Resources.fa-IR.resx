@@ -868,4 +868,79 @@
   <data name="AfterUploadTasks_CopyURLToClipboard" xml:space="preserve">
     <value>کپی کردن آدرس به کلیپ بورد</value>
   </data>
+  <data name="PastebinPrivacy_Private" xml:space="preserve">
+    <value>خصوصی (فقط اعضا)</value>
+  </data>
+  <data name="PrintTextForm_LoadSettings_Name___0___Size___1_" xml:space="preserve">
+    <value>نام: {0}، سایز: {1}</value>
+  </data>
+  <data name="ReplCodeMenuCategory_Incremental" xml:space="preserve">
+    <value>افزایشی</value>
+  </data>
+  <data name="ReplCodeMenuCategory_Target" xml:space="preserve">
+    <value>هدف</value>
+  </data>
+  <data name="ReplCodeMenuEntry_guid_Random_guid" xml:space="preserve">
+    <value>GUID تصادفی</value>
+  </data>
+  <data name="ReplCodeMenuEntry_mon_Current_month_name__Local_language_" xml:space="preserve">
+    <value>ماه جاری (زبان محلی)</value>
+  </data>
+  <data name="ReplCodeMenuEntry_mon2_Current_month_name__English_" xml:space="preserve">
+    <value>ماه جاری (انگلیسی)</value>
+  </data>
+  <data name="ReplCodeMenuEntry_pn_Process_name_of_active_window" xml:space="preserve">
+    <value>نام پنجره را پردازش کن</value>
+  </data>
+  <data name="ReplCodeMenuEntry_s_Current_second" xml:space="preserve">
+    <value>ثانیه جاری</value>
+  </data>
+  <data name="ReplCodeMenuEntry_w_Current_week_name__Local_language_" xml:space="preserve">
+    <value>نام هفته جاری (زبان محلی)</value>
+  </data>
+  <data name="ResponseType_LocationHeader" xml:space="preserve">
+    <value>هدر مکان</value>
+  </data>
+  <data name="ResponseType_RedirectionURL" xml:space="preserve">
+    <value>آدرس هدایت</value>
+  </data>
+  <data name="ScreenRecordGIFEncoding_NET" xml:space="preserve">
+    <value>.NET (کیفیت بد)</value>
+  </data>
+  <data name="ScrollingCaptureScrollMethod_KeyPressPageDown" xml:space="preserve">
+    <value>فشردن کلید PageDown را شبیه سازی کن.</value>
+  </data>
+  <data name="ScrollingCaptureScrollMethod_MouseWheel" xml:space="preserve">
+    <value>اسکرول کردن موس را شبیه سازی کن.</value>
+  </data>
+  <data name="ScrollingCaptureScrollMethod_SendMessageScroll" xml:space="preserve">
+    <value>به پنجره یا کنترل پیام اسکرول را بفرست.</value>
+  </data>
+  <data name="ScrollingCaptureScrollTopMethod_All" xml:space="preserve">
+    <value>فشردن کلید Home را شبیه سازی کن سپس پیام اسکرول به بالا را بفرست.</value>
+  </data>
+  <data name="ScrollingCaptureScrollTopMethod_KeyPressHome" xml:space="preserve">
+    <value>فشردن کلید Home را شبیه سازی کن.</value>
+  </data>
+  <data name="ScrollingCaptureScrollTopMethod_None" xml:space="preserve">
+    <value>اسکرول کردن به بالا را غیرفعال کن.</value>
+  </data>
+  <data name="ScrollingCaptureScrollTopMethod_SendMessageTop" xml:space="preserve">
+    <value>پیام اسکرول به بالا را بفرست.</value>
+  </data>
+  <data name="ShapeType_DrawingArrow" xml:space="preserve">
+    <value>جهت نما (A)</value>
+  </data>
+  <data name="ShapeType_DrawingStep" xml:space="preserve">
+    <value>گام (I)</value>
+  </data>
+  <data name="ShapeType_DrawingTextBackground" xml:space="preserve">
+    <value>متن (پس زمینه) (T)</value>
+  </data>
+  <data name="ShapeType_ToolSelect" xml:space="preserve">
+    <value>انتخاب کردن و حرکت دادن (M)</value>
+  </data>
+  <data name="TextDestination_CustomTextUploader" xml:space="preserve">
+    <value>آپلود کننده متن سفارشی</value>
+  </data>
 </root>

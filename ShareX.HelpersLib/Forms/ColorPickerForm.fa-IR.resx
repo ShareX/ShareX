@@ -166,4 +166,16 @@
   <data name="txtX.Text" xml:space="preserve">
     <value>۰</value>
   </data>
+  <data name="rbBlue.Text" xml:space="preserve">
+    <value>آبی:</value>
+  </data>
+  <data name="rbBrightness.Text" xml:space="preserve">
+    <value>روشنی:</value>
+  </data>
+  <data name="rbGreen.Text" xml:space="preserve">
+    <value>سبز:</value>
+  </data>
+  <data name="rbRed.Text" xml:space="preserve">
+    <value>قرمز:</value>
+  </data>
 </root>

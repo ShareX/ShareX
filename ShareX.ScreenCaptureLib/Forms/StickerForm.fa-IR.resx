@@ -129,4 +129,7 @@
   <data name="tslSearch.Text" xml:space="preserve">
     <value>جست و جو:</value>
   </data>
+  <data name="tsbEditStickers.Text" xml:space="preserve">
+    <value>ویرایش بسته های استیکر</value>
+  </data>
 </root>

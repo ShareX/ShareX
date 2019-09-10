@@ -222,4 +222,10 @@
   <data name="btnJsonPathHelp.Text" xml:space="preserve">
     <value>؟</value>
   </data>
+  <data name="tsbResponseTextCopy.Text" xml:space="preserve">
+    <value>کپی کردن پاسخ</value>
+  </data>
+  <data name="tsbResponseTextJSONFormat.Text" xml:space="preserve">
+    <value>فرمت JSON:</value>
+  </data>
 </root>

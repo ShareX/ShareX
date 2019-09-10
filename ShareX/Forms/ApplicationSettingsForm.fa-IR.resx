@@ -324,4 +324,7 @@
   <data name="cbHistoryCheckURL.Text" xml:space="preserve">
     <value>فقط در صورتی آدرس را ذخیره کن که خالی نباشد</value>
   </data>
+  <data name="tpTheme.Text" xml:space="preserve">
+    <value>تم</value>
+  </data>
 </root>
