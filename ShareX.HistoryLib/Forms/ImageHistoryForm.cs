@@ -59,7 +59,7 @@ namespace ShareX.HistoryLib
             if (ShareXResources.ExperimentalDarkTheme)
             {
                 ilvImages.BorderStyle = BorderStyle.None;
-                ilvImages.Colors.BackColor = ShareXResources.Theme.BackgroundColor2;
+                ilvImages.Colors.BackColor = ShareXResources.Theme.LightBackgroundColor;
                 ilvImages.Colors.BorderColor = ShareXResources.Theme.BorderColor;
                 ilvImages.Colors.ForeColor = ShareXResources.Theme.TextColor;
                 ilvImages.Colors.SelectedForeColor = ShareXResources.Theme.TextColor;

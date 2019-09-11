@@ -48,7 +48,7 @@ namespace ShareX.HelpersLib
         }
         public override Color ButtonCheckedHighlight
         {
-            get { return ShareXResources.Theme.MenuButtonCheckedColor; }
+            get { return ShareXResources.Theme.MenuCheckBackgroundColor; }
         }
         public override Color ButtonCheckedHighlightBorder
         {
@@ -64,15 +64,15 @@ namespace ShareX.HelpersLib
         }
         public override Color ButtonCheckedGradientBegin
         {
-            get { return ShareXResources.Theme.MenuButtonCheckedColor; }
+            get { return ShareXResources.Theme.MenuCheckBackgroundColor; }
         }
         public override Color ButtonCheckedGradientMiddle
         {
-            get { return ShareXResources.Theme.MenuButtonCheckedColor; }
+            get { return ShareXResources.Theme.MenuCheckBackgroundColor; }
         }
         public override Color ButtonCheckedGradientEnd
         {
-            get { return ShareXResources.Theme.MenuButtonCheckedColor; }
+            get { return ShareXResources.Theme.MenuCheckBackgroundColor; }
         }
         public override Color ButtonSelectedGradientBegin
         {

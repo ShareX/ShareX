@@ -117,31 +117,31 @@ namespace ShareX.HelpersLib
                     btn.FlatStyle = FlatStyle.Flat;
                     btn.FlatAppearance.BorderColor = Theme.BorderColor;
                     btn.ForeColor = Theme.TextColor;
-                    btn.BackColor = Theme.BackgroundColor2;
+                    btn.BackColor = Theme.LightBackgroundColor;
                     return;
                 case CheckBox cb when cb.Appearance == Appearance.Button:
                     cb.FlatStyle = FlatStyle.Flat;
                     cb.FlatAppearance.BorderColor = Theme.BorderColor;
                     cb.ForeColor = Theme.TextColor;
-                    cb.BackColor = Theme.BackgroundColor2;
+                    cb.BackColor = Theme.LightBackgroundColor;
                     return;
                 case TextBox tb:
                     tb.ForeColor = Theme.TextColor;
-                    tb.BackColor = Theme.BackgroundColor2;
+                    tb.BackColor = Theme.LightBackgroundColor;
                     tb.BorderStyle = BorderStyle.FixedSingle;
                     return;
                 case ComboBox cb:
                     cb.FlatStyle = FlatStyle.Flat;
                     cb.ForeColor = Theme.TextColor;
-                    cb.BackColor = Theme.BackgroundColor2;
+                    cb.BackColor = Theme.LightBackgroundColor;
                     return;
                 case ListBox lb:
                     lb.ForeColor = Theme.TextColor;
-                    lb.BackColor = Theme.BackgroundColor2;
+                    lb.BackColor = Theme.LightBackgroundColor;
                     return;
                 case ListView lv:
                     lv.ForeColor = Theme.TextColor;
-                    lv.BackColor = Theme.BackgroundColor2;
+                    lv.BackColor = Theme.LightBackgroundColor;
                     lv.SupportDarkTheme();
                     return;
                 case SplitContainer sc:
@@ -155,17 +155,17 @@ namespace ShareX.HelpersLib
                     pg.SelectedItemWithFocusForeColor = Theme.BackgroundColor;
                     pg.SelectedItemWithFocusBackColor = Theme.TextColor;
                     pg.ViewForeColor = Theme.TextColor;
-                    pg.ViewBackColor = Theme.BackgroundColor2;
+                    pg.ViewBackColor = Theme.LightBackgroundColor;
                     pg.ViewBorderColor = Theme.BorderColor;
                     pg.HelpForeColor = Theme.TextColor;
                     pg.HelpBackColor = Theme.BackgroundColor;
                     pg.HelpBorderColor = Theme.BorderColor;
                     return;
                 case DataGridView dgv:
-                    dgv.BackgroundColor = Theme.BackgroundColor2;
+                    dgv.BackgroundColor = Theme.LightBackgroundColor;
                     dgv.GridColor = Theme.BorderColor;
-                    dgv.DefaultCellStyle.BackColor = Theme.BackgroundColor2;
-                    dgv.DefaultCellStyle.SelectionBackColor = Theme.BackgroundColor2;
+                    dgv.DefaultCellStyle.BackColor = Theme.LightBackgroundColor;
+                    dgv.DefaultCellStyle.SelectionBackColor = Theme.LightBackgroundColor;
                     dgv.DefaultCellStyle.ForeColor = Theme.TextColor;
                     dgv.DefaultCellStyle.SelectionForeColor = Theme.TextColor;
                     dgv.ColumnHeadersDefaultCellStyle.BackColor = Theme.BackgroundColor;

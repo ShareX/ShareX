@@ -821,7 +821,7 @@ namespace ShareX
                 flpSocialButtons.BackColor = ShareXResources.Theme.BackgroundColor;
                 btnCloseNews.FlatAppearance.BorderColor = ShareXResources.Theme.BorderColor;
                 btnCloseNews.ForeColor = ShareXResources.Theme.TextColor;
-                btnCloseNews.BackColor = ShareXResources.Theme.BackgroundColor2;
+                btnCloseNews.BackColor = ShareXResources.Theme.LightBackgroundColor;
             }
             else
             {

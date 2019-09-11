@@ -38,7 +38,10 @@ namespace ShareX.HelpersLib
         public Color BackgroundColor { get; set; }
 
         [Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
-        public Color BackgroundColor2 { get; set; }
+        public Color LightBackgroundColor { get; set; }
+
+        [Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
+        public Color DarkBackgroundColor { get; set; }
 
         [Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
         public Color TextColor { get; set; }
@@ -67,16 +70,13 @@ namespace ShareX.HelpersLib
         public Color MenuBorderColor { get; set; }
 
         [Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
-        public Color MenuButtonCheckedColor { get; set; }
-
-        [Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
         public Color MenuCheckBackgroundColor { get; set; }
 
         [Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
-        public Color SeparatorDarkColor { get; set; }
+        public Color SeparatorLightColor { get; set; }
 
         [Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
-        public Color SeparatorLightColor { get; set; }
+        public Color SeparatorDarkColor { get; set; }
 
         public ShareXTheme()
         {
@@ -98,7 +98,8 @@ namespace ShareX.HelpersLib
         {
             Name = "Dark";
             BackgroundColor = Color.FromArgb(42, 47, 56);
-            BackgroundColor2 = Color.FromArgb(52, 57, 65);
+            LightBackgroundColor = Color.FromArgb(52, 57, 65);
+            DarkBackgroundColor = Color.FromArgb(28, 32, 38);
             TextColor = Color.FromArgb(235, 235, 235);
             BorderColor = Color.FromArgb(28, 32, 38);
             CheckerColor = Color.FromArgb(60, 60, 60);
@@ -107,10 +108,9 @@ namespace ShareX.HelpersLib
             MenuHighlightColor = Color.FromArgb(255, 30, 34, 40);
             MenuHighlightBorderColor = Color.FromArgb(255, 116, 129, 152);
             MenuBorderColor = Color.FromArgb(255, 22, 26, 31);
-            MenuButtonCheckedColor = Color.FromArgb(255, 56, 64, 75);
-            MenuCheckBackgroundColor = Color.FromArgb(255, 74, 83, 100);
-            SeparatorDarkColor = Color.FromArgb(255, 22, 26, 31);
+            MenuCheckBackgroundColor = Color.FromArgb(255, 56, 64, 75);
             SeparatorLightColor = Color.FromArgb(255, 56, 64, 75);
+            SeparatorDarkColor = Color.FromArgb(255, 22, 26, 31);
         }
 
         public override string ToString()
