@@ -672,8 +672,32 @@
   <data name="&gt;&gt;tpGeneral.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="btnThemeReset.Location" type="System.Drawing.Point, System.Drawing">
+    <value>384, 40</value>
+  </data>
+  <data name="btnThemeReset.Size" type="System.Drawing.Size, System.Drawing">
+    <value>80, 23</value>
+  </data>
+  <data name="btnThemeReset.TabIndex" type="System.Int32, mscorlib">
+    <value>25</value>
+  </data>
+  <data name="btnThemeReset.Text" xml:space="preserve">
+    <value>Reset</value>
+  </data>
+  <data name="&gt;&gt;btnThemeReset.Name" xml:space="preserve">
+    <value>btnThemeReset</value>
+  </data>
+  <data name="&gt;&gt;btnThemeReset.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnThemeReset.Parent" xml:space="preserve">
+    <value>tpTheme</value>
+  </data>
+  <data name="&gt;&gt;btnThemeReset.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="eiTheme.Location" type="System.Drawing.Point, System.Drawing">
-    <value>192, 352</value>
+    <value>280, 352</value>
   </data>
   <data name="eiTheme.Size" type="System.Drawing.Size, System.Drawing">
     <value>185, 24</value>
@@ -691,7 +715,7 @@
     <value>tpTheme</value>
   </data>
   <data name="&gt;&gt;eiTheme.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="btnThemeRemove.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -718,7 +742,7 @@
     <value>tpTheme</value>
   </data>
   <data name="&gt;&gt;btnThemeRemove.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="btnThemeAdd.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -745,7 +769,7 @@
     <value>tpTheme</value>
   </data>
   <data name="&gt;&gt;btnThemeAdd.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="cbThemes.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 40</value>
@@ -766,7 +790,7 @@
     <value>tpTheme</value>
   </data>
   <data name="&gt;&gt;cbThemes.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="cbExperimentalDarkTheme.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -796,7 +820,7 @@
     <value>tpTheme</value>
   </data>
   <data name="&gt;&gt;cbExperimentalDarkTheme.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="btnApplyTheme.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -805,7 +829,7 @@
     <value>16, 352</value>
   </data>
   <data name="btnApplyTheme.Size" type="System.Drawing.Size, System.Drawing">
-    <value>168, 24</value>
+    <value>184, 24</value>
   </data>
   <data name="btnApplyTheme.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -823,7 +847,7 @@
     <value>tpTheme</value>
   </data>
   <data name="&gt;&gt;btnApplyTheme.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="pgTheme.HelpVisible" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -832,7 +856,7 @@
     <value>16, 72</value>
   </data>
   <data name="pgTheme.Size" type="System.Drawing.Size, System.Drawing">
-    <value>360, 272</value>
+    <value>448, 272</value>
   </data>
   <data name="pgTheme.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -847,7 +871,7 @@
     <value>tpTheme</value>
   </data>
   <data name="&gt;&gt;pgTheme.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="cbUseDarkTheme.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -877,7 +901,7 @@
     <value>tpTheme</value>
   </data>
   <data name="&gt;&gt;cbUseDarkTheme.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="tpTheme.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>

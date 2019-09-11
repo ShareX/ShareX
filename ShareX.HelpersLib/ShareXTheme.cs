@@ -23,10 +23,10 @@
 
 #endregion License Information (GPL v3)
 
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Design;
-using System.Windows.Forms;
 
 namespace ShareX.HelpersLib
 {
@@ -80,37 +80,57 @@ namespace ShareX.HelpersLib
 
         public ShareXTheme()
         {
-            ApplyDarkColors();
         }
 
-        public void ApplySystemColors()
-        {
-            BackgroundColor = SystemColors.Window;
-            //BackgroundColor2 = 
-            TextColor = SystemColors.ControlText;
-            BorderColor = ProfessionalColors.SeparatorDark;
-            CheckerColor = SystemColors.ControlLightLight;
-            CheckerColor2 = SystemColors.ControlLight;
-            //LinkColor = 
+        public static ShareXTheme GetDarkTheme()
+        { 
+            return new ShareXTheme()
+            {
+                Name = "Dark",
+                BackgroundColor = Color.FromArgb(42, 47, 56),
+                LightBackgroundColor = Color.FromArgb(52, 57, 65),
+                DarkBackgroundColor = Color.FromArgb(28, 32, 38),
+                TextColor = Color.FromArgb(235, 235, 235),
+                BorderColor = Color.FromArgb(28, 32, 38),
+                CheckerColor = Color.FromArgb(60, 60, 60),
+                CheckerColor2 = Color.FromArgb(50, 50, 50),
+                CheckerSize = 15,
+                LinkColor = Color.FromArgb(166, 212, 255),
+                MenuHighlightColor = Color.FromArgb(30, 34, 40),
+                MenuHighlightBorderColor = Color.FromArgb(116, 129, 152),
+                MenuBorderColor = Color.FromArgb(22, 26, 31),
+                MenuCheckBackgroundColor = Color.FromArgb(56, 64, 75),
+                SeparatorLightColor = Color.FromArgb(56, 64, 75),
+                SeparatorDarkColor = Color.FromArgb(22, 26, 31)
+            };
         }
 
-        public void ApplyDarkColors()
+        public static ShareXTheme GetLightTheme()
         {
-            Name = "Dark";
-            BackgroundColor = Color.FromArgb(42, 47, 56);
-            LightBackgroundColor = Color.FromArgb(52, 57, 65);
-            DarkBackgroundColor = Color.FromArgb(28, 32, 38);
-            TextColor = Color.FromArgb(235, 235, 235);
-            BorderColor = Color.FromArgb(28, 32, 38);
-            CheckerColor = Color.FromArgb(60, 60, 60);
-            CheckerColor2 = Color.FromArgb(50, 50, 50);
-            LinkColor = Color.FromArgb(166, 212, 255);
-            MenuHighlightColor = Color.FromArgb(255, 30, 34, 40);
-            MenuHighlightBorderColor = Color.FromArgb(255, 116, 129, 152);
-            MenuBorderColor = Color.FromArgb(255, 22, 26, 31);
-            MenuCheckBackgroundColor = Color.FromArgb(255, 56, 64, 75);
-            SeparatorLightColor = Color.FromArgb(255, 56, 64, 75);
-            SeparatorDarkColor = Color.FromArgb(255, 22, 26, 31);
+            return new ShareXTheme()
+            {
+                Name = "Light",
+                BackgroundColor = Color.FromArgb(242, 242, 242),
+                LightBackgroundColor = Color.FromArgb(247, 247, 247),
+                DarkBackgroundColor = Color.FromArgb(235, 235, 235),
+                TextColor = Color.FromArgb(69, 69, 69),
+                BorderColor = Color.FromArgb(201, 201, 201),
+                CheckerColor = Color.FromArgb(60, 60, 60),
+                CheckerColor2 = Color.FromArgb(50, 50, 50),
+                CheckerSize = 15,
+                LinkColor = Color.FromArgb(166, 212, 255),
+                MenuHighlightColor = Color.FromArgb(247, 247, 247),
+                MenuHighlightBorderColor = Color.FromArgb(96, 143, 226),
+                MenuBorderColor = Color.FromArgb(201, 201, 201),
+                MenuCheckBackgroundColor = Color.FromArgb(225, 233, 244),
+                SeparatorLightColor = Color.FromArgb(253, 253, 253),
+                SeparatorDarkColor = Color.FromArgb(189, 189, 189)
+            };
+        }
+
+        public static List<ShareXTheme> GetPresets()
+        {
+            return new List<ShareXTheme>() { GetDarkTheme(), GetLightTheme() };
         }
 
         public override string ToString()

@@ -782,10 +782,7 @@ namespace ShareX
         {
             if (Program.Settings.Themes == null || Program.Settings.Themes.Count == 0)
             {
-                Program.Settings.Themes = new List<ShareXTheme>();
-                ShareXTheme theme = new ShareXTheme();
-                theme.ApplyDarkColors();
-                Program.Settings.Themes.Add(theme);
+                Program.Settings.Themes = ShareXTheme.GetPresets();
                 Program.Settings.SelectedTheme = 0;
             }
 

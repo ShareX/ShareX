@@ -434,7 +434,7 @@ namespace ShareX
 
         private void UpdateThemeControls()
         {
-            cbExperimentalDarkTheme.Enabled = btnThemeAdd.Enabled = pgTheme.Enabled = eiTheme.Enabled = Program.Settings.UseDarkTheme;
+            cbExperimentalDarkTheme.Enabled = btnThemeAdd.Enabled = btnThemeReset.Enabled = pgTheme.Enabled = eiTheme.Enabled = Program.Settings.UseDarkTheme;
             cbThemes.Enabled = btnThemeRemove.Enabled = btnApplyTheme.Enabled = Program.Settings.UseDarkTheme && cbThemes.Items.Count > 0;
         }
 
@@ -490,8 +490,7 @@ namespace ShareX
 
         private void BtnThemeAdd_Click(object sender, EventArgs e)
         {
-            ShareXTheme theme = new ShareXTheme();
-            theme.ApplyDarkColors();
+            ShareXTheme theme = ShareXTheme.GetDarkTheme();
             AddTheme(theme);
         }
 
@@ -515,6 +514,17 @@ namespace ShareX
                 pgTheme.SelectedObject = cbThemes.SelectedItem;
                 UpdateThemeControls();
             }
+        }
+
+        private void BtnThemeReset_Click(object sender, EventArgs e)
+        {
+            Program.Settings.Themes = ShareXTheme.GetPresets();
+            Program.Settings.SelectedTheme = 0;
+
+            cbThemes.Items.Clear();
+            cbThemes.Items.AddRange(Program.Settings.Themes.ToArray());
+            cbThemes.SelectedIndex = Program.Settings.SelectedTheme;
+            pgTheme.SelectedObject = Program.Settings.Themes[Program.Settings.SelectedTheme].Copy();
         }
 
         private void BtnApplyTheme_Click(object sender, EventArgs e)

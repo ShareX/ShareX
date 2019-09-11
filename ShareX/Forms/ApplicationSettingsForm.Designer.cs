@@ -152,6 +152,7 @@ namespace ShareX
             this.tpAdvanced = new System.Windows.Forms.TabPage();
             this.pgSettings = new System.Windows.Forms.PropertyGrid();
             this.tttvMain = new ShareX.HelpersLib.TabToTreeView();
+            this.btnThemeReset = new System.Windows.Forms.Button();
             this.tcSettings.SuspendLayout();
             this.tpGeneral.SuspendLayout();
             this.tpTheme.SuspendLayout();
@@ -351,6 +352,7 @@ namespace ShareX
             // 
             // tpTheme
             // 
+            this.tpTheme.Controls.Add(this.btnThemeReset);
             this.tpTheme.Controls.Add(this.eiTheme);
             this.tpTheme.Controls.Add(this.btnThemeRemove);
             this.tpTheme.Controls.Add(this.btnThemeAdd);
@@ -1125,6 +1127,13 @@ namespace ShareX
             this.tttvMain.TreeViewSize = 175;
             this.tttvMain.TabChanged += new ShareX.HelpersLib.TabToTreeView.TabChangedEventHandler(this.tttvMain_TabChanged);
             // 
+            // btnThemeReset
+            // 
+            resources.ApplyResources(this.btnThemeReset, "btnThemeReset");
+            this.btnThemeReset.Name = "btnThemeReset";
+            this.btnThemeReset.UseVisualStyleBackColor = true;
+            this.btnThemeReset.Click += new System.EventHandler(this.BtnThemeReset_Click);
+            // 
             // ApplicationSettingsForm
             // 
             resources.ApplyResources(this, "$this");
@@ -1307,5 +1316,6 @@ namespace ShareX
         private System.Windows.Forms.Button btnThemeRemove;
         private System.Windows.Forms.Button btnThemeAdd;
         private ExportImportControl eiTheme;
+        private System.Windows.Forms.Button btnThemeReset;
     }
 }
