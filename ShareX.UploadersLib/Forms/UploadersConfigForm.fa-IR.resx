@@ -558,4 +558,7 @@
   <data name="btnPhotobucketAddAlbum.Text" xml:space="preserve">
     <value>اضافه کردن آلبوم</value>
   </data>
+  <data name="rbFTPTransferModePassive.Text" xml:space="preserve">
+    <value>غیرفعال</value>
+  </data>
 </root>

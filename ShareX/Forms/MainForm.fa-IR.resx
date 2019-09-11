@@ -679,9 +679,6 @@
   <data name="chElapsed.Text" xml:space="preserve">
     <value>زمان گذشته</value>
   </data>
-  <data name="tsmiOpenURL.ShortcutKeyDisplayString" xml:space="preserve">
-    <value>واردشدن</value>
-  </data>
   <data name="tsmiOpenFile.Text" xml:space="preserve">
     <value>فایل</value>
   </data>
@@ -837,5 +834,14 @@
   </data>
   <data name="tsddbWorkflows.Text" xml:space="preserve">
     <value>گردش کار</value>
+  </data>
+  <data name="pbBitcoinButton.ToolTip" xml:space="preserve">
+    <value>از ما با رمزارز حمایت کنید.</value>
+  </data>
+  <data name="pbSocialHideButton.ToolTip" xml:space="preserve">
+    <value>مخفی کردن کلیدهای شبکه های اجتماعی</value>
+  </data>
+  <data name="pbTwitterButton.ToolTip" xml:space="preserve">
+    <value>ما را در توئیتر دنبال کنید.</value>
   </data>
 </root>

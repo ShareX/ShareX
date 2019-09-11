@@ -480,4 +480,35 @@
   <data name="ChromeForm_btnUnregister_Click_Chrome_support_disabled_" xml:space="preserve">
     <value>پشتیبانی از کروم غیرفعال شد.</value>
   </data>
+  <data name="OCRForm_AutoProcessing" xml:space="preserve">
+    <value>پردازش OCR در حال انجام است.</value>
+  </data>
+  <data name="Program_WritePersonalPathConfig_Cant_access_to_file" xml:space="preserve">
+    <value>نمی توان به فایل «{0}» دسترسی پیدا کرد. 
+لطفا برای تغییر مسیر پوشه شخصی نرم افزار را در حالت ادمین اجرا کنید.</value>
+  </data>
+  <data name="QuickTaskMenuEditorForm_Reset_all_quick_tasks_to_defaults_Confirmation" xml:space="preserve">
+    <value>آیا می خواهید تمام تنظیمات وظایف سریع را به حالت پیش فرض برگردانید؟</value>
+  </data>
+  <data name="RecentManager_UpdateRecentMenu_Left_click_to_copy_URL_to_clipboard__Right_click_to_open_URL_" xml:space="preserve">
+    <value>برای کپی کردن آدرس به کلیپ بورد چپ کلیک کنید. برای بازکردن آدرس راست کلیک کنید.</value>
+  </data>
+  <data name="ScreenRecordForm_DownloaderForm_InstallRequested_FFmpeg_successfully_downloaded_" xml:space="preserve">
+    <value>برنامه با موفقیت دانلود شد.</value>
+  </data>
+  <data name="ScreenRecordForm_StartRecording_FFmpeg_video_and_audio_source_both_can_t_be__None__" xml:space="preserve">
+    <value>نمیتوان منبع هم ویدیو و هم صوت را خالی گذاشت.</value>
+  </data>
+  <data name="ScreenRecordForm_StartRecording_Missing" xml:space="preserve">
+    <value>فایل موجود نیست</value>
+  </data>
+  <data name="SwitchToListView" xml:space="preserve">
+    <value>سوییچ کردن به حالت نمایش لیستی</value>
+  </data>
+  <data name="TaskHelpers_TweetMessage_Unable_to_find_valid_Twitter_account_" xml:space="preserve">
+    <value>نتوانستیم اکانت توئیتر معتبری پیدا کنیم.</value>
+  </data>
+  <data name="TaskSettingsForm_UpdateUploaderMenuNames_After_capture___0_" xml:space="preserve">
+    <value>بعد از ضبط: {0}</value>
+  </data>
 </root>

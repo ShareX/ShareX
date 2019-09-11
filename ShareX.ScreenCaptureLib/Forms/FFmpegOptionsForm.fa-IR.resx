@@ -180,4 +180,17 @@
   <data name="gbCodecs.Text" xml:space="preserve">
     <value>کدک ها</value>
   </data>
+  <data name="tbVorbis_qscale.ToolTip" xml:space="preserve">
+    <value>مقدار باید بین ۰ تا ۱۰ باشد که ۱۰ به معنای بالاترین کیفیت است. برای امتحان میتوانید رنج ۳ تا ۶ را انتخاب کنید. 
+مقدار پیش فرض ۳ است.</value>
+  </data>
+  <data name="pbAudioCodecWarning.ToolTip" xml:space="preserve">
+    <value>کدک صوتی با فرمت ویديویی انتخاب شده ناسازگار است.</value>
+  </data>
+  <data name="tbAACBitrate.ToolTip" xml:space="preserve">
+    <value>مقدار پیش فرض 128K است.</value>
+  </data>
+  <data name="tpGIF.Text" xml:space="preserve">
+    <value>گیف</value>
+  </data>
 </root>

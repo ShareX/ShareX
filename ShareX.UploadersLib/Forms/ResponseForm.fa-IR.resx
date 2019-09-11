@@ -123,4 +123,7 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - پاسخ</value>
   </data>
+  <data name="tpWebBrowser.Text" xml:space="preserve">
+    <value>مرورگر وب</value>
+  </data>
 </root>
