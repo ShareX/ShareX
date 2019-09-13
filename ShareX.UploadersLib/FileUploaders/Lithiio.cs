@@ -39,7 +39,7 @@ namespace ShareX.UploadersLib.FileUploaders
     {
         public override FileDestination EnumValue { get; } = FileDestination.Lithiio;
 
-        public override Icon ServiceIcon => Resources.Lithiio;
+        public override Image ServiceImage => Resources.Lithiio;
 
         public override bool CheckConfig(UploadersConfig config)
         {
