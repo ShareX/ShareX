@@ -39,7 +39,7 @@ namespace ShareX.UploadersLib.FileUploaders
     {
         public override FileDestination EnumValue { get; } = FileDestination.Lithiio;
 
-        public override Icon ServiceIcon => Resources.Lithiio;
+        public override Image ServiceImage => Resources.Lithiio;
 
         public override bool CheckConfig(UploadersConfig config)
         {
@@ -70,9 +70,9 @@ namespace ShareX.UploadersLib.FileUploaders
         public override UploadResult Upload(Stream stream, string fileName)
         {
             Dictionary<string, string> args = new Dictionary<string, string>();
-            args.Add("key", Config.UserAPIKey);
+            args.Add("api_key", Config.UserAPIKey);
 
-            UploadResult result = SendRequestFile("https://upload.lithi.io/v1.php", stream, fileName, "file", args);
+            UploadResult result = SendRequestFile("https://lithi.io/api/v2/upload.php", stream, fileName, "file", args);
 
             if (result.IsSuccess)
             {
@@ -97,7 +97,7 @@ namespace ShareX.UploadersLib.FileUploaders
             args.Add("email", email);
             args.Add("password", password);
 
-            string response = SendRequestMultiPart("https://lithi.io/api/v1/fetch-api-key.php", args);
+            string response = SendRequestMultiPart("https://lithi.io/api/v2/fetch-api-key.php", args);
 
             if (!string.IsNullOrEmpty(response))
             {
@@ -105,7 +105,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
                 if (apiKeyResponse.Success)
                 {
-                    return apiKeyResponse.APIKey;
+                    return apiKeyResponse.API_Key;
                 }
                 else
                 {
@@ -129,7 +129,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
         private class LithiioFetchAPIKeyResponse : LithiioResponse
         {
-            public string APIKey { get; set; }
+            public string API_Key { get; set; }
         }
     }
 
