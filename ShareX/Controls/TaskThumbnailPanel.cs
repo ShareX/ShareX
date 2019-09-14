@@ -34,6 +34,26 @@ namespace ShareX
 {
     public partial class TaskThumbnailPanel : UserControl
     {
+        public new event EventHandler MouseEnter
+        {
+            add
+            {
+                base.MouseEnter += value;
+                lblTitle.MouseEnter += value;
+                pThumbnail.MouseEnter += value;
+                pbThumbnail.MouseEnter += value;
+                pbProgress.MouseEnter += value;
+            }
+            remove
+            {
+                base.MouseEnter -= value;
+                lblTitle.MouseEnter -= value;
+                pThumbnail.MouseEnter -= value;
+                pbThumbnail.MouseEnter -= value;
+                pbProgress.MouseEnter -= value;
+            }
+        }
+
         public new event MouseEventHandler MouseDown
         {
             add

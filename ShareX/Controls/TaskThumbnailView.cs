@@ -138,6 +138,7 @@ namespace ShareX
         private TaskThumbnailPanel CreatePanel(WorkerTask task)
         {
             TaskThumbnailPanel panel = new TaskThumbnailPanel(task);
+            panel.MouseEnter += FlpMain_MouseEnter;
             panel.MouseDown += (sender, e) => SelectedPanel = panel;
             panel.MouseUp += Panel_MouseUp;
             panel.ThumbnailSize = ThumbnailSize;
@@ -188,6 +189,14 @@ namespace ShareX
             if (ContextMenuRequested != null)
             {
                 ContextMenuRequested(sender, e, task);
+            }
+        }
+
+        private void FlpMain_MouseEnter(object sender, System.EventArgs e)
+        {
+            if (!flpMain.Focused)
+            {
+                flpMain.Focus();
             }
         }
 

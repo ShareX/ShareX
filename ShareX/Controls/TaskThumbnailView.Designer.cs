@@ -41,18 +41,20 @@
             this.flpMain.Size = new System.Drawing.Size(242, 8);
             this.flpMain.TabIndex = 0;
             this.flpMain.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FlpMain_MouseDown);
+            this.flpMain.MouseEnter += new System.EventHandler(this.FlpMain_MouseEnter);
             this.flpMain.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Panel_MouseUp);
             // 
-            // TaskView
+            // TaskThumbnailView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(47)))), ((int)(((byte)(56)))));
             this.Controls.Add(this.flpMain);
-            this.Name = "TaskView";
+            this.Name = "TaskThumbnailView";
             this.Size = new System.Drawing.Size(242, 228);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FlpMain_MouseDown);
+            this.MouseEnter += new System.EventHandler(this.FlpMain_MouseEnter);
             this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Panel_MouseUp);
             this.ResumeLayout(false);
             this.PerformLayout();
