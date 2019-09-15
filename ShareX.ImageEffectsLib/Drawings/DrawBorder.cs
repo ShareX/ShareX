@@ -58,22 +58,45 @@ namespace ShareX.ImageEffectsLib
         [DefaultValue(false)]
         public bool UseGradient { get; set; }
 
+        [DefaultValue(LinearGradientMode.Vertical)]
+        public LinearGradientMode GradientType { get; set; }
+
         [DefaultValue(typeof(Color), "White"), Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
         public Color Color2 { get; set; }
 
-        [DefaultValue(LinearGradientMode.Vertical)]
-        public LinearGradientMode GradientType { get; set; }
+        [DefaultValue(false)]
+        public bool UseCustomGradient { get; set; }
+
+        [Editor(typeof(GradientEditor), typeof(UITypeEditor))]
+        public GradientInfo Gradient { get; set; }
 
         public DrawBorder()
         {
             this.ApplyDefaultPropertyValues();
+            AddDefaultGradient();
+        }
+
+        private void AddDefaultGradient()
+        {
+            Gradient = new GradientInfo();
+            Gradient.Colors.Add(new GradientStop(Color.FromArgb(68, 120, 194), 0f));
+            Gradient.Colors.Add(new GradientStop(Color.FromArgb(13, 58, 122), 50f));
+            Gradient.Colors.Add(new GradientStop(Color.FromArgb(6, 36, 78), 50f));
+            Gradient.Colors.Add(new GradientStop(Color.FromArgb(23, 89, 174), 100f));
         }
 
         public override Image Apply(Image img)
         {
             if (UseGradient)
             {
-                return ImageHelpers.DrawBorder(img, Color, Color2, GradientType, Size, Type);
+                if (UseCustomGradient && Gradient != null && Gradient.IsValid)
+                {
+                    return ImageHelpers.DrawBorder(img, Gradient, Size, Type);
+                }
+                else
+                {
+                    return ImageHelpers.DrawBorder(img, Color, Color2, GradientType, Size, Type);
+                }
             }
 
             return ImageHelpers.DrawBorder(img, Color, Size, Type);

@@ -58,13 +58,8 @@ namespace ShareX.HelpersLib
             {
                 try
                 {
-                    using (LinearGradientBrush brush = new LinearGradientBrush(new Rectangle(0, 0, rect.Width, rect.Height), Color.White, Color.White, Type))
+                    using (LinearGradientBrush brush = GetGradientBrush(new Rectangle(0, 0, rect.Width, rect.Height)))
                     {
-                        ColorBlend colorBlend = new ColorBlend();
-                        IEnumerable<GradientStop> gradient = Colors.OrderBy(x => x.Location);
-                        colorBlend.Colors = gradient.Select(x => x.Color).ToArray();
-                        colorBlend.Positions = gradient.Select(x => x.Location / 100).ToArray();
-                        brush.InterpolationColors = colorBlend;
                         g.FillRectangle(brush, rect);
                     }
                 }
@@ -72,6 +67,22 @@ namespace ShareX.HelpersLib
                 {
                 }
             }
+        }
+
+        public ColorBlend GetColorBlend()
+        {
+            ColorBlend colorBlend = new ColorBlend();
+            IEnumerable<GradientStop> gradient = Colors.OrderBy(x => x.Location);
+            colorBlend.Colors = gradient.Select(x => x.Color).ToArray();
+            colorBlend.Positions = gradient.Select(x => x.Location / 100).ToArray();
+            return colorBlend;
+        }
+
+        public LinearGradientBrush GetGradientBrush(Rectangle rect)
+        {
+            LinearGradientBrush brush = new LinearGradientBrush(rect, Color.Transparent, Color.Transparent, Type);
+            brush.InterpolationColors = GetColorBlend();
+            return brush;
         }
 
         public override string ToString()

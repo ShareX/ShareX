@@ -223,7 +223,7 @@
     <value>True</value>
   </data>
   <data name="lblLocation.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 192</value>
+    <value>5, 192</value>
   </data>
   <data name="lblLocation.Size" type="System.Drawing.Size, System.Drawing">
     <value>51, 13</value>
@@ -271,7 +271,7 @@
     <value>True</value>
   </data>
   <data name="lblGradientType.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 88</value>
+    <value>5, 88</value>
   </data>
   <data name="lblGradientType.Size" type="System.Drawing.Size, System.Drawing">
     <value>73, 13</value>
@@ -367,7 +367,7 @@
     <value>True</value>
   </data>
   <data name="lblPreview.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 8</value>
+    <value>5, 8</value>
   </data>
   <data name="lblPreview.Size" type="System.Drawing.Size, System.Drawing">
     <value>48, 13</value>
@@ -406,7 +406,7 @@
     <value>cbtnCurrentColor</value>
   </data>
   <data name="&gt;&gt;cbtnCurrentColor.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.ColorButton, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.ColorButton, ShareX.HelpersLib, Version=13.0.2.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;cbtnCurrentColor.Parent" xml:space="preserve">
     <value>$this</value>

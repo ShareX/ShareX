@@ -619,6 +619,24 @@ namespace ShareX.HelpersLib
             }
         }
 
+        public static Image DrawBorder(Image img, GradientInfo gradientInfo, int borderSize, BorderType borderType)
+        {
+            int width = img.Width;
+            int height = img.Height;
+
+            if (borderType == BorderType.Outside)
+            {
+                width += borderSize * 2;
+                height += borderSize * 2;
+            }
+
+            using (LinearGradientBrush brush = gradientInfo.GetGradientBrush(new Rectangle(0, 0, width, height)))
+            using (Pen borderPen = new Pen(brush, borderSize) { Alignment = PenAlignment.Inset })
+            {
+                return DrawBorder(img, borderPen, borderType);
+            }
+        }
+
         public static Image DrawBorder(Image img, Pen borderPen, BorderType borderType)
         {
             Bitmap bmp;

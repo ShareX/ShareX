@@ -195,12 +195,7 @@ namespace ShareX.ImageEffectsLib
                                 {
                                     if (UseCustomGradient && Gradient != null && Gradient.IsValid)
                                     {
-                                        backgroundBrush = new LinearGradientBrush(watermarkRectangle, Color.Transparent, Color.Transparent, Gradient.Type);
-                                        ColorBlend colorBlend = new ColorBlend();
-                                        IEnumerable<GradientStop> gradient = Gradient.Colors.OrderBy(x => x.Location);
-                                        colorBlend.Colors = gradient.Select(x => x.Color).ToArray();
-                                        colorBlend.Positions = gradient.Select(x => x.Location / 100).ToArray();
-                                        ((LinearGradientBrush)backgroundBrush).InterpolationColors = colorBlend;
+                                        backgroundBrush = Gradient.GetGradientBrush(watermarkRectangle);
                                     }
                                     else
                                     {
