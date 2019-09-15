@@ -700,6 +700,14 @@ namespace ShareX.HelpersLib
             }
         }
 
+        public static Bitmap FillBackground(Image img, GradientInfo gradientInfo)
+        {
+            using (LinearGradientBrush brush = gradientInfo.GetGradientBrush(new Rectangle(0, 0, img.Width, img.Height)))
+            {
+                return FillBackground(img, brush);
+            }
+        }
+
         public static Bitmap FillBackground(Image img, Brush brush)
         {
             Bitmap result = img.CreateEmptyBitmap();
