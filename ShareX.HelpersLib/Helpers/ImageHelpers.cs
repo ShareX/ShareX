@@ -1142,7 +1142,7 @@ namespace ShareX.HelpersLib
                                 {
                                     ColorBgra color = unsafeBitmap.GetPixel(x2, y2);
 
-                                    float pixelWeight = color.Alpha / 255;
+                                    float pixelWeight = (float)color.Alpha / 255;
 
                                     r += color.Red * pixelWeight;
                                     g += color.Green * pixelWeight;
