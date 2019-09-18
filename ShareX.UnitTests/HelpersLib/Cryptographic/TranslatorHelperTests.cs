@@ -1,5 +1,4 @@
-﻿
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using ShareX.HelpersLib;
 
 namespace ShareX.UnitTests.HelpersLib.Cryptographic
