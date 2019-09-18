@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="HelpersLib\Cryptographic\TranslatorHelperTests.cs" />
+    <Compile Include="HelpersLib\Cryptographic\TranslatorTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
