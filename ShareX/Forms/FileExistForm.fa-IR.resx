@@ -133,4 +133,7 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - چگونه ذخیره کنم؟</value>
   </data>
+  <data name="btnOverwrite.Text" xml:space="preserve">
+    <value>بازنویسی:</value>
+  </data>
 </root>
