@@ -265,10 +265,10 @@ namespace ShareX
         {
             try
             {
-                task.KeepImage = false;
-
                 if (task != null)
                 {
+                    task.KeepImage = false;
+
                     if (task.RequestSettingUpdate)
                     {
                         Program.MainForm.UpdateCheckStates();

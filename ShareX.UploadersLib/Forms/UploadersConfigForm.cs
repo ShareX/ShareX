@@ -203,13 +203,14 @@ namespace ShareX.UploadersLib
             if (OAuthInfo.CheckOAuth(Config.PhotobucketOAuthInfo))
             {
                 lblPhotobucketAccountStatus.Text = Resources.UploadersConfigForm_Login_successful;
-                txtPhotobucketDefaultAlbumName.Text = Config.PhotobucketAccountInfo.AlbumID;
-                lblPhotobucketParentAlbumPath.Text = Resources.UploadersConfigForm_LoadSettings_Parent_album_path_e_g_ + " " +
-                    Config.PhotobucketAccountInfo.AlbumID + "/Personal/" + DateTime.Now.Year;
             }
 
             if (Config.PhotobucketAccountInfo != null)
             {
+                txtPhotobucketDefaultAlbumName.Text = Config.PhotobucketAccountInfo.AlbumID;
+                lblPhotobucketParentAlbumPath.Text = Resources.UploadersConfigForm_LoadSettings_Parent_album_path_e_g_ + " " +
+                    Config.PhotobucketAccountInfo.AlbumID + "/Personal/" + DateTime.Now.Year;
+
                 cboPhotobucketAlbumPaths.Items.Clear();
 
                 if (Config.PhotobucketAccountInfo.AlbumList.Count > 0)

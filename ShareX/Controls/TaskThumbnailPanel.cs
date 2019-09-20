@@ -462,15 +462,11 @@ namespace ShareX
             {
                 if (Task.Info != null && !string.IsNullOrEmpty(Task.Info.FilePath) && File.Exists(Task.Info.FilePath))
                 {
+                    Program.MainForm.AllowDrop = false;
                     IDataObject dataObject = new DataObject(DataFormats.FileDrop, new string[] { Task.Info.FilePath });
-
-                    if (dataObject != null)
-                    {
-                        Program.MainForm.AllowDrop = false;
-                        dragBoxFromMouseDown = Rectangle.Empty;
-                        pbThumbnail.DoDragDrop(dataObject, DragDropEffects.Copy | DragDropEffects.Move);
-                        Program.MainForm.AllowDrop = true;
-                    }
+                    dragBoxFromMouseDown = Rectangle.Empty;
+                    pbThumbnail.DoDragDrop(dataObject, DragDropEffects.Copy | DragDropEffects.Move);
+                    Program.MainForm.AllowDrop = true;
                 }
                 else
                 {

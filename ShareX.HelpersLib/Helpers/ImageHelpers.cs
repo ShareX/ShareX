@@ -814,27 +814,21 @@ namespace ShareX.HelpersLib
 
         public static bool AddMetadata(Image img, int id, string text)
         {
-            PropertyItem pi;
-
             try
             {
-                pi = (PropertyItem)typeof(PropertyItem).GetConstructor(BindingFlags.Instance | BindingFlags.NonPublic, null, new Type[] { }, null).Invoke(null);
+                PropertyItem pi = (PropertyItem)typeof(PropertyItem).GetConstructor(BindingFlags.Instance | BindingFlags.NonPublic, null, new Type[] { }, null).Invoke(null);
                 pi.Id = id;
                 pi.Len = text.Length + 1;
                 pi.Type = 2;
                 byte[] bytesText = Encoding.ASCII.GetBytes(text + " ");
                 bytesText[bytesText.Length - 1] = 0;
                 pi.Value = bytesText;
-
-                if (pi != null)
-                {
-                    img.SetPropertyItem(pi);
-                    return true;
-                }
+                img.SetPropertyItem(pi);
+                return true;
             }
             catch (Exception e)
             {
-                DebugHelper.WriteException(e, "Reflection failed.");
+                DebugHelper.WriteException(e, "AddMetadata reflection failed.");
             }
 
             return false;
@@ -1142,7 +1136,7 @@ namespace ShareX.HelpersLib
                                 {
                                     ColorBgra color = unsafeBitmap.GetPixel(x2, y2);
 
-                                    float pixelWeight = (float)color.Alpha / 255;
+                                    float pixelWeight = color.Alpha / 255f;
 
                                     r += color.Red * pixelWeight;
                                     g += color.Green * pixelWeight;

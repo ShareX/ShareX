@@ -284,12 +284,7 @@ namespace ShareX.HelpersLib
                                 {
                                     try
                                     {
-                                        Image img = GetDIBImage(ms);
-
-                                        if (img != null)
-                                        {
-                                            return img;
-                                        }
+                                        return GetDIBImage(ms);
                                     }
                                     catch (Exception e)
                                     {

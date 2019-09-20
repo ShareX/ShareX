@@ -129,9 +129,10 @@ namespace ShareX.UploadersLib.ImageUploaders
                 {
                     string photoid = xele.Value;
                     FlickrPhotosGetSizesResponse photos = PhotosGetSizes(photoid);
-                    FlickrPhotosGetSizesSize photo = photos?.sizes?.size?[photos.sizes.size.Length - 1];
-                    if (photo != null)
+                    if (photos != null && photos.sizes != null && photos.sizes.size != null && photos.sizes.size.Length > 0)
                     {
+                        FlickrPhotosGetSizesSize photo = photos.sizes.size[photos.sizes.size.Length - 1];
+
                         if (Settings.DirectLink)
                         {
                             result.URL = photo.source;
