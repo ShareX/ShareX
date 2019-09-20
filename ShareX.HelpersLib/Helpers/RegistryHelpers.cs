@@ -109,7 +109,7 @@ namespace ShareX.HelpersLib
 
             foreach (string command in commands)
             {
-                string path = string.Format(@"HKEY_CLASSES_ROOT\Applications\{0}\shell\{1}\command", filename, command);
+                string path = $@"HKEY_CLASSES_ROOT\Applications\{filename}\shell\{command}\command";
                 string value = Registry.GetValue(path, null, null) as string;
 
                 if (!string.IsNullOrEmpty(value))
@@ -132,14 +132,22 @@ namespace ShareX.HelpersLib
                 {
                     foreach (string filePath in programs.GetValueNames())
                     {
-                        if (!string.IsNullOrEmpty(filePath) && programs.GetValueKind(filePath) == RegistryValueKind.String)
-                        {
-                            string programName = programs.GetValue(filePath, null) as string;
+                        string programPath = filePath;
 
-                            if (!string.IsNullOrEmpty(programName) && programName.Equals(name, StringComparison.InvariantCultureIgnoreCase) && File.Exists(filePath))
+                        if (!string.IsNullOrEmpty(programPath))
+                        {
+                            foreach (string trim in new string[] { ".ApplicationCompany", ".FriendlyAppName" })
                             {
-                                DebugHelper.WriteLine("Found program with second method: " + filePath);
-                                return new ExternalProgram(name, filePath);
+                                if (programPath.EndsWith(trim, StringComparison.OrdinalIgnoreCase))
+                                {
+                                    programPath = programPath.Remove(programPath.Length - trim.Length);
+                                }
+                            }
+
+                            if (programPath.EndsWith(filename, StringComparison.OrdinalIgnoreCase) && File.Exists(programPath))
+                            {
+                                DebugHelper.WriteLine("Found program with second method: " + programPath);
+                                return new ExternalProgram(name, programPath);
                             }
                         }
                     }

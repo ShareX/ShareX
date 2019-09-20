@@ -608,20 +608,6 @@ namespace ShareX
             AddExternalProgramFromRegistry(taskSettings, "Adobe Photoshop", "Photoshop.exe");
             AddExternalProgramFromRegistry(taskSettings, "IrfanView", "i_view32.exe");
             AddExternalProgramFromRegistry(taskSettings, "XnView", "xnview.exe");
-            AddExternalProgramFromFile(taskSettings, "OptiPNG", "optipng.exe");
-        }
-
-        private static void AddExternalProgramFromFile(TaskSettings taskSettings, string name, string filename, string args = "")
-        {
-            if (!taskSettings.ExternalPrograms.Exists(x => x.Name == name))
-            {
-                if (File.Exists(filename))
-                {
-                    DebugHelper.WriteLine("Found program: " + filename);
-
-                    taskSettings.ExternalPrograms.Add(new ExternalProgram(name, filename, args));
-                }
-            }
         }
 
         private static void AddExternalProgramFromRegistry(TaskSettings taskSettings, string name, string filename)
