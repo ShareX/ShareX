@@ -610,14 +610,15 @@ namespace ShareX
             AddExternalProgramFromRegistry(taskSettings, "XnView", "xnview.exe");
         }
 
-        private static void AddExternalProgramFromRegistry(TaskSettings taskSettings, string name, string filename)
+        private static void AddExternalProgramFromRegistry(TaskSettings taskSettings, string name, string fileName)
         {
             if (!taskSettings.ExternalPrograms.Exists(x => x.Name == name))
             {
-                ExternalProgram externalProgram = RegistryHelpers.FindProgram(name, filename);
+                string filePath = RegistryHelpers.SearchProgramPath(fileName);
 
-                if (externalProgram != null)
+                if (!string.IsNullOrEmpty(filePath))
                 {
+                    ExternalProgram externalProgram = new ExternalProgram(name, filePath);
                     taskSettings.ExternalPrograms.Add(externalProgram);
                 }
             }

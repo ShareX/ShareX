@@ -101,7 +101,7 @@ namespace ShareX.HelpersLib
             return registryValue != null && (value == null || registryValue.Equals(value, StringComparison.InvariantCultureIgnoreCase));
         }
 
-        public static ExternalProgram FindProgram(string name, string filename)
+        public static string SearchProgramPath(string fileName)
         {
             // First method: HKEY_CLASSES_ROOT\Applications\{filename}\shell\{command}\command
 
@@ -109,7 +109,7 @@ namespace ShareX.HelpersLib
 
             foreach (string command in commands)
             {
-                string path = $@"HKEY_CLASSES_ROOT\Applications\{filename}\shell\{command}\command";
+                string path = $@"HKEY_CLASSES_ROOT\Applications\{fileName}\shell\{command}\command";
                 string value = Registry.GetValue(path, null, null) as string;
 
                 if (!string.IsNullOrEmpty(value))
@@ -119,7 +119,7 @@ namespace ShareX.HelpersLib
                     if (File.Exists(filePath))
                     {
                         DebugHelper.WriteLine("Found program with first method: " + filePath);
-                        return new ExternalProgram(name, filePath);
+                        return filePath;
                     }
                 }
             }
@@ -144,10 +144,10 @@ namespace ShareX.HelpersLib
                                 }
                             }
 
-                            if (programPath.EndsWith(filename, StringComparison.OrdinalIgnoreCase) && File.Exists(programPath))
+                            if (programPath.EndsWith(fileName, StringComparison.OrdinalIgnoreCase) && File.Exists(programPath))
                             {
                                 DebugHelper.WriteLine("Found program with second method: " + programPath);
-                                return new ExternalProgram(name, programPath);
+                                return programPath;
                             }
                         }
                     }

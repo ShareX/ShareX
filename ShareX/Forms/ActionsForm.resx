@@ -460,7 +460,7 @@
     <value>True</value>
   </data>
   <data name="cbHiddenWindow.Location" type="System.Drawing.Point, System.Drawing">
-    <value>9, 248</value>
+    <value>8, 248</value>
   </data>
   <data name="cbHiddenWindow.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
