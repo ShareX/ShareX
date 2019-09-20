@@ -616,7 +616,7 @@ namespace ShareX
 
             tsmiStopUpload.Visible = tsmiOpen.Visible = tsmiCopy.Visible = tsmiShowErrors.Visible = tsmiShowResponse.Visible = tsmiSearchImage.Visible =
                 tsmiShowQRCode.Visible = tsmiOCRImage.Visible = tsmiCombineImages.Visible = tsmiUploadSelectedFile.Visible = tsmiDownloadSelectedURL.Visible =
-                tsmiEditSelectedFile.Visible = tsmiDeleteSelectedItem.Visible = tsmiDeleteSelectedFile.Visible = tsmiShortenSelectedURL.Visible =
+                tsmiEditSelectedFile.Visible = tsmiRunAction.Visible = tsmiDeleteSelectedItem.Visible = tsmiDeleteSelectedFile.Visible = tsmiShortenSelectedURL.Visible =
                 tsmiShareSelectedURL.Visible = false;
 
             if (Program.Settings.TaskViewMode == TaskViewMode.ListView)
@@ -724,6 +724,8 @@ namespace ShareX
                     tsmiUploadSelectedFile.Visible = uim.SelectedItem.IsFileExist;
                     tsmiDownloadSelectedURL.Visible = uim.SelectedItem.IsFileURL;
                     tsmiEditSelectedFile.Visible = uim.SelectedItem.IsImageFile;
+                    tsmiRunAction.Visible = uim.SelectedItem.IsFileExist && Program.DefaultTaskSettings.ExternalPrograms.Count > 0;
+                    UpdateActionsMenu(uim.SelectedItem.Info.FilePath);
                     tsmiDeleteSelectedItem.Visible = true;
                     tsmiDeleteSelectedFile.Visible = uim.SelectedItem.IsFileExist;
                     tsmiShortenSelectedURL.Visible = uim.SelectedItem.IsURLExist;
@@ -858,6 +860,41 @@ namespace ShareX
                 using (ToolStripItem tsi = tsmiCopy.DropDownItems[tsmiCopy.DropDownItems.Count - 1])
                 {
                     tsmiCopy.DropDownItems.Remove(tsi);
+                }
+            }
+        }
+
+        private void UpdateActionsMenu(string filePath)
+        {
+            tsmiRunAction.DropDownItems.Clear();
+
+            if (Program.DefaultTaskSettings.ExternalPrograms.Count > 0 && !string.IsNullOrEmpty(filePath) && File.Exists(filePath))
+            {
+                foreach (ExternalProgram action in Program.DefaultTaskSettings.ExternalPrograms)
+                {
+                    if (!string.IsNullOrEmpty(action.Name))
+                    {
+                        string name = action.Name.Truncate(50, "...");
+                        ToolStripMenuItem tsmi = new ToolStripMenuItem(name);
+
+                        try
+                        {
+                            using (Icon icon = NativeMethods.GetFileIcon(action.Path, true))
+                            {
+                                if (icon != null && icon.Width > 0 && icon.Height > 0)
+                                {
+                                    tsmi.Image = icon.ToBitmap();
+                                }
+                            }
+                        }
+                        catch (Exception e)
+                        {
+                            DebugHelper.WriteException(e);
+                        }
+
+                        tsmi.Click += async (sender, e) => await action.RunAsync(filePath);
+                        tsmiRunAction.DropDownItems.Add(tsmi);
+                    }
                 }
             }
         }
@@ -1231,17 +1268,19 @@ namespace ShareX
                     try
                     {
                         string title = window.Text.Truncate(50, "...");
-                        ToolStripItem tsi = tsmiWindow.DropDownItems.Add(title);
-                        tsi.Tag = window;
-                        tsi.Click += handlerWindow;
+                        ToolStripMenuItem tsmi = new ToolStripMenuItem(title);
+                        tsmi.Tag = window;
+                        tsmi.Click += handlerWindow;
 
                         using (Icon icon = window.Icon)
                         {
                             if (icon != null && icon.Width > 0 && icon.Height > 0)
                             {
-                                tsi.Image = icon.ToBitmap();
+                                tsmi.Image = icon.ToBitmap();
                             }
                         }
+
+                        tsmiWindow.DropDownItems.Add(tsmi);
                     }
                     catch (Exception e)
                     {

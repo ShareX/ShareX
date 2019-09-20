@@ -1146,6 +1146,12 @@
   <data name="tsmiEditSelectedFile.Text" xml:space="preserve">
     <value>Edit image...</value>
   </data>
+  <data name="tsmiRunAction.Size" type="System.Drawing.Size, System.Drawing">
+    <value>228, 22</value>
+  </data>
+  <data name="tsmiRunAction.Text" xml:space="preserve">
+    <value>Run action</value>
+  </data>
   <data name="tsmiDeleteSelectedItem.ShortcutKeyDisplayString" xml:space="preserve">
     <value>Del</value>
   </data>
@@ -1228,34 +1234,34 @@
     <value>Hide columns</value>
   </data>
   <data name="tsmiImagePreviewShow.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>130, 22</value>
   </data>
   <data name="tsmiImagePreviewShow.Text" xml:space="preserve">
     <value>Show</value>
   </data>
   <data name="tsmiImagePreviewHide.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>130, 22</value>
   </data>
   <data name="tsmiImagePreviewHide.Text" xml:space="preserve">
     <value>Hide</value>
   </data>
   <data name="tsmiImagePreviewAutomatic.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>130, 22</value>
   </data>
   <data name="tsmiImagePreviewAutomatic.Text" xml:space="preserve">
     <value>Automatic</value>
   </data>
   <data name="tssImagePreview.Size" type="System.Drawing.Size, System.Drawing">
-    <value>177, 6</value>
+    <value>127, 6</value>
   </data>
   <data name="tsmiImagePreviewSide.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>130, 22</value>
   </data>
   <data name="tsmiImagePreviewSide.Text" xml:space="preserve">
     <value>Side</value>
   </data>
   <data name="tsmiImagePreviewBottom.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>130, 22</value>
   </data>
   <data name="tsmiImagePreviewBottom.Text" xml:space="preserve">
     <value>Bottom</value>
@@ -1267,28 +1273,28 @@
     <value>Image preview</value>
   </data>
   <data name="tsmiThumbnailTitleShow.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>114, 22</value>
   </data>
   <data name="tsmiThumbnailTitleShow.Text" xml:space="preserve">
     <value>Show</value>
   </data>
   <data name="tsmiThumbnailTitleHide.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>114, 22</value>
   </data>
   <data name="tsmiThumbnailTitleHide.Text" xml:space="preserve">
     <value>Hide</value>
   </data>
   <data name="tssThumbnailTitle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>177, 6</value>
+    <value>111, 6</value>
   </data>
   <data name="tsmiThumbnailTitleTop.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>114, 22</value>
   </data>
   <data name="tsmiThumbnailTitleTop.Text" xml:space="preserve">
     <value>Top</value>
   </data>
   <data name="tsmiThumbnailTitleBottom.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>114, 22</value>
   </data>
   <data name="tsmiThumbnailTitleBottom.Text" xml:space="preserve">
     <value>Bottom</value>
@@ -1306,7 +1312,7 @@
     <value>Switch to thumbnail view</value>
   </data>
   <data name="cmsTaskInfo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>229, 494</value>
+    <value>229, 516</value>
   </data>
   <data name="&gt;&gt;cmsTaskInfo.Name" xml:space="preserve">
     <value>cmsTaskInfo</value>
@@ -1983,6 +1989,9 @@
   <data name="flpSocialButtons.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
   </data>
+  <data name="pbPatreonButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="pbPatreonButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
@@ -2180,6 +2189,9 @@
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>834, 429</value>
+  </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>500, 250</value>
@@ -3602,6 +3614,12 @@
   </data>
   <data name="&gt;&gt;ttMain.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsmiRunAction.Name" xml:space="preserve">
+    <value>tsmiRunAction</value>
+  </data>
+  <data name="&gt;&gt;tsmiRunAction.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MainForm</value>

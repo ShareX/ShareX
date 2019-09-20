@@ -26,6 +26,7 @@
 using System;
 using System.Diagnostics;
 using System.IO;
+using System.Threading.Tasks;
 
 namespace ShareX.HelpersLib
 {
@@ -131,6 +132,11 @@ namespace ShareX.HelpersLib
             }
 
             return inputPath;
+        }
+
+        public async Task<string> RunAsync(string inputPath)
+        {
+            return await Task.Run(() => Run(inputPath));
         }
 
         private bool CheckExtension(string path, string extensions)
