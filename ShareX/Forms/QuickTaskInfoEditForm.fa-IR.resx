@@ -129,4 +129,7 @@
   <data name="btnOK.Text" xml:space="preserve">
     <value>تایید</value>
   </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX - ویرایش منوی وظایف سریع</value>
+  </data>
 </root>
