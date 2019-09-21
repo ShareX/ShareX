@@ -52,21 +52,13 @@ namespace ShareX.HelpersLib
             Path = path;
         }
 
-        public ExternalProgram(string name, string path, string args) : this(name, path)
-        {
-            if (!string.IsNullOrEmpty(args))
-            {
-                Args += " " + args;
-            }
-        }
-
         public string Run(string inputPath)
         {
             if (!string.IsNullOrEmpty(Path) && File.Exists(Path) && !string.IsNullOrWhiteSpace(inputPath))
             {
                 inputPath = inputPath.Trim('"');
 
-                if (CheckExtension(inputPath, Extensions))
+                if (CheckExtension(inputPath))
                 {
                     try
                     {
@@ -139,7 +131,12 @@ namespace ShareX.HelpersLib
             return await Task.Run(() => Run(inputPath));
         }
 
-        private bool CheckExtension(string path, string extensions)
+        public bool CheckExtension(string path)
+        {
+            return CheckExtension(path, Extensions);
+        }
+
+        public bool CheckExtension(string path, string extensions)
         {
             if (!string.IsNullOrWhiteSpace(path))
             {

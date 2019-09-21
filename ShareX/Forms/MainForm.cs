@@ -724,7 +724,6 @@ namespace ShareX
                     tsmiUploadSelectedFile.Visible = uim.SelectedItem.IsFileExist;
                     tsmiDownloadSelectedURL.Visible = uim.SelectedItem.IsFileURL;
                     tsmiEditSelectedFile.Visible = uim.SelectedItem.IsImageFile;
-                    tsmiRunAction.Visible = uim.SelectedItem.IsFileExist && Program.DefaultTaskSettings.ExternalPrograms.Count > 0;
                     UpdateActionsMenu(uim.SelectedItem.Info.FilePath);
                     tsmiDeleteSelectedItem.Visible = true;
                     tsmiDeleteSelectedFile.Visible = uim.SelectedItem.IsFileExist;
@@ -868,11 +867,16 @@ namespace ShareX
         {
             tsmiRunAction.DropDownItems.Clear();
 
-            if (Program.DefaultTaskSettings.ExternalPrograms.Count > 0 && !string.IsNullOrEmpty(filePath) && File.Exists(filePath))
+            if (!string.IsNullOrEmpty(filePath) && File.Exists(filePath))
             {
-                foreach (ExternalProgram action in Program.DefaultTaskSettings.ExternalPrograms)
+                IEnumerable<ExternalProgram> actions = Program.DefaultTaskSettings.ExternalPrograms.
+                    Where(x => !string.IsNullOrEmpty(x.Name) && x.CheckExtension(filePath));
+
+                if (actions.Count() > 0)
                 {
-                    if (!string.IsNullOrEmpty(action.Name))
+                    tsmiRunAction.Visible = true;
+
+                    foreach (ExternalProgram action in actions)
                     {
                         string name = action.Name.Truncate(50, "...");
                         ToolStripMenuItem tsmi = new ToolStripMenuItem(name);
