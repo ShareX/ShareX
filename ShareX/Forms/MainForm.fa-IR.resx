@@ -844,4 +844,37 @@
   <data name="pbTwitterButton.ToolTip" xml:space="preserve">
     <value>ما را در توئیتر دنبال کنید.</value>
   </data>
+  <data name="tsmiOpenThumbnailURL.Text" xml:space="preserve">
+    <value>آدرس کوچک</value>
+  </data>
+  <data name="tsmiOpenThumbnailFile.Text" xml:space="preserve">
+    <value>فایل کوچک</value>
+  </data>
+  <data name="tsmiCopyThumbnailURL.Text" xml:space="preserve">
+    <value>آدرس کوچک</value>
+  </data>
+  <data name="tsmiCopyThumbnailFile.Text" xml:space="preserve">
+    <value>فایل کوچک</value>
+  </data>
+  <data name="tsmiCopyThumbnailImage.Text" xml:space="preserve">
+    <value>عکس کوچک</value>
+  </data>
+  <data name="tsmiThumbnailTitleShow.Text" xml:space="preserve">
+    <value>نشان دادن</value>
+  </data>
+  <data name="tsmiThumbnailTitleHide.Text" xml:space="preserve">
+    <value>مخفی کردن</value>
+  </data>
+  <data name="tsmiThumbnailTitleTop.Text" xml:space="preserve">
+    <value>بالا</value>
+  </data>
+  <data name="tsmiThumbnailTitleBottom.Text" xml:space="preserve">
+    <value>پایین</value>
+  </data>
+  <data name="tsmiThumbnailTitle.Text" xml:space="preserve">
+    <value>عنوان کوچک</value>
+  </data>
+  <data name="pbPatreonButton.ToolTip" xml:space="preserve">
+    <value>ما را در پترون حمایت کنید.</value>
+  </data>
 </root>

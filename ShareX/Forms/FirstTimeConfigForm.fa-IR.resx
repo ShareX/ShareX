@@ -132,4 +132,7 @@
   <data name="cbShellContextMenuButton.Text" xml:space="preserve">
     <value>منوی آپلود با ShareX را در راست کلیک Windows Explorer اضافه کن</value>
   </data>
+  <data name="lblNote.Text" xml:space="preserve">
+    <value>شما میتوانید این تنظیمات را در تنظیمات برنامه -&gt; تعامل پیدا کنید.</value>
+  </data>
 </root>

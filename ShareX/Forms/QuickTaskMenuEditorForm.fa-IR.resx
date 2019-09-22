@@ -132,4 +132,10 @@
   <data name="btnReset.Text" xml:space="preserve">
     <value>ریست به تنظیمات اولیه ...</value>
   </data>
+  <data name="lblTip.Text" xml:space="preserve">
+    <value>راهنمایی: اگر وظیفه خالی ایجاد کنید، یک خط جدا کننده در منو برایتان ایجاد میشود.</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX - ویرایش منوی وظایف سریع</value>
+  </data>
 </root>
