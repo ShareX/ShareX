@@ -1391,7 +1391,6 @@
     <None Include="Resources\ShareX_Icon.ico" />
     <None Include="Resources\ShareX_Logo.png" />
     <None Include="Resources\cross.png" />
-    <None Include="Resources\ShareX_Logo_Black.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\adjectives.txt" />
