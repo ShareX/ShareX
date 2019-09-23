@@ -53,7 +53,6 @@
     value   : The object must be serialized with 
             : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
             : and then encoded with base64 encoding.
-
     mimetype: application/x-microsoft.net.object.bytearray.base64
     value   : The object must be serialized into a byte array 
             : using a System.ComponentModel.TypeConverter
@@ -118,21 +117,15 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - 傳送電子郵件</value>
+    <value>ShareX - 插入圖片</value>
   </data>
-  <data name="btnCancel.Text" xml:space="preserve">
-    <value>取消</value>
+  <data name="btnCanvasExpandRight.Text" xml:space="preserve">
+    <value>在右方插入圖片（展開畫布）</value>
   </data>
-  <data name="btnSend.Text" xml:space="preserve">
-    <value>傳送</value>
+  <data name="btnCenter.Text" xml:space="preserve">
+    <value>在中央插入圖片</value>
   </data>
-  <data name="lblMessage.Text" xml:space="preserve">
-    <value>訊息：</value>
-  </data>
-  <data name="lblSubject.Text" xml:space="preserve">
-    <value>主旨：</value>
-  </data>
-  <data name="lblToEmail.Text" xml:space="preserve">
-    <value>傳送到電子信箱：</value>
+  <data name="btnCanvasExpandDown.Text" xml:space="preserve">
+    <value>在下方插入圖片（展開畫布）</value>
   </data>
 </root>

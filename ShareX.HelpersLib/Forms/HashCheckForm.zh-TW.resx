@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -127,16 +127,16 @@
     <value>開始</value>
   </data>
   <data name="lblFile.Text" xml:space="preserve">
-    <value>檔案路徑:</value>
+    <value>檔案路徑：</value>
   </data>
   <data name="lblHashType.Text" xml:space="preserve">
-    <value>雜湊類型:</value>
+    <value>雜湊類型：</value>
   </data>
   <data name="lblResult.Text" xml:space="preserve">
-    <value>結果:</value>
+    <value>結果：</value>
   </data>
   <data name="lblTarget.Text" xml:space="preserve">
-    <value>目標:</value>
+    <value>目標：</value>
   </data>
   <data name="tpFileHashCheck.Text" xml:space="preserve">
     <value>檔案雜湊（Hash）檢查</value>
@@ -160,13 +160,13 @@
     <value>文字：</value>
   </data>
   <data name="lblHashCheckBinary.Text" xml:space="preserve">
-    <value>二進位制：</value>
+    <value>二進制：</value>
   </data>
   <data name="btnHashCheckDecodeBinary.Text" xml:space="preserve">
     <value>解碼</value>
   </data>
   <data name="lblHashCheckHex.Text" xml:space="preserve">
-    <value>十六進位制：</value>
+    <value>十六進制：</value>
   </data>
   <data name="btnHashCheckDecodeASCII.Text" xml:space="preserve">
     <value>解碼</value>

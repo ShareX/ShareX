@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -53,7 +53,6 @@
     value   : The object must be serialized with 
             : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
             : and then encoded with base64 encoding.
-
     mimetype: application/x-microsoft.net.object.bytearray.base64
     value   : The object must be serialized into a byte array 
             : using a System.ComponentModel.TypeConverter
@@ -118,7 +117,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="chElapsed.Text" xml:space="preserve">
-    <value>已用</value>
+    <value>已過</value>
   </data>
   <data name="chFilename.Text" xml:space="preserve">
     <value>檔名</value>
@@ -136,7 +135,7 @@
     <value>狀態</value>
   </data>
   <data name="chURL.Text" xml:space="preserve">
-    <value>URL</value>
+    <value>網址</value>
   </data>
   <data name="tsbApplicationSettings.Text" xml:space="preserve">
     <value>應用程式設定...</value>
@@ -145,31 +144,31 @@
     <value>歷史記錄...</value>
   </data>
   <data name="tsbHotkeySettings.Text" xml:space="preserve">
-    <value>快速鍵設定...</value>
+    <value>快捷鍵設定...</value>
   </data>
   <data name="tsbImageHistory.Text" xml:space="preserve">
-    <value>歷史圖片...</value>
+    <value>圖片歷史記錄...</value>
   </data>
   <data name="tsbScreenshotsFolder.Text" xml:space="preserve">
     <value>截圖資料夾...</value>
   </data>
   <data name="tsbTaskSettings.Text" xml:space="preserve">
-    <value>任務設定...</value>
+    <value>工作設定...</value>
   </data>
   <data name="tsddbAfterCaptureTasks.Text" xml:space="preserve">
-    <value>截圖後的動作</value>
+    <value>擷取後的工作</value>
   </data>
   <data name="tsddbAfterUploadTasks.Text" xml:space="preserve">
-    <value>上傳後的動作</value>
+    <value>上傳後的工作</value>
   </data>
   <data name="tsddbCapture.Text" xml:space="preserve">
-    <value>螢幕截圖</value>
+    <value>擷取</value>
   </data>
   <data name="tsddbDebug.Text" xml:space="preserve">
     <value>偵錯</value>
   </data>
   <data name="tsddbDestinations.Text" xml:space="preserve">
-    <value>上傳至...</value>
+    <value>目標</value>
   </data>
   <data name="tsddbTools.Text" xml:space="preserve">
     <value>工具</value>
@@ -184,13 +183,13 @@
     <value>自動擷取...</value>
   </data>
   <data name="tsmiClearList.Text" xml:space="preserve">
-    <value>清除列表</value>
+    <value>清除工作清單</value>
   </data>
   <data name="tsmiCopy.Text" xml:space="preserve">
     <value>複製</value>
   </data>
   <data name="tsmiCopyDeletionURL.Text" xml:space="preserve">
-    <value>刪除URL</value>
+    <value>刪除網址</value>
   </data>
   <data name="tsmiCopyFile.Text" xml:space="preserve">
     <value>檔案</value>
@@ -208,28 +207,28 @@
     <value>資料夾</value>
   </data>
   <data name="tsmiCopyForumImage.Text" xml:space="preserve">
-    <value>論壇（BB程式碼）的圖像</value>
+    <value>論壇（BBCode）圖片</value>
   </data>
   <data name="tsmiCopyForumLink.Text" xml:space="preserve">
-    <value>論壇（BB程式碼）連結</value>
+    <value>論壇（BBCode）連結</value>
   </data>
   <data name="tsmiCopyForumLinkedImage.Text" xml:space="preserve">
-    <value>論壇（BB程式碼）連結的圖像</value>
+    <value>論壇（BBCode）連結的圖片</value>
   </data>
   <data name="tsmiCopyHTMLImage.Text" xml:space="preserve">
-    <value>HTML圖像</value>
+    <value>HTML 圖片</value>
   </data>
   <data name="tsmiCopyHTMLLink.Text" xml:space="preserve">
-    <value>HTML連結</value>
+    <value>HTML 連結</value>
   </data>
   <data name="tsmiCopyHTMLLinkedImage.Text" xml:space="preserve">
-    <value>HTML連結的圖像</value>
+    <value>HTML 連結的圖片</value>
   </data>
   <data name="tsmiCopyImage.Text" xml:space="preserve">
-    <value>圖像</value>
+    <value>圖片</value>
   </data>
   <data name="tsmiCopyShortenedURL.Text" xml:space="preserve">
-    <value>URL短網址</value>
+    <value>縮網址</value>
   </data>
   <data name="tsmiCopyText.Text" xml:space="preserve">
     <value>文字</value>
@@ -244,37 +243,37 @@
     <value>縮圖網址</value>
   </data>
   <data name="tsmiCopyURL.Text" xml:space="preserve">
-    <value>URL</value>
+    <value>網址</value>
   </data>
   <data name="tsmiDeleteSelectedFile.Text" xml:space="preserve">
-    <value>刪除本地檔案</value>
+    <value>刪除本地檔案...</value>
   </data>
   <data name="tsmiDestinationSettings.Text" xml:space="preserve">
-    <value>上傳至...設定</value>
+    <value>目標設定...</value>
   </data>
   <data name="tsmiDNSChanger.Text" xml:space="preserve">
-    <value>更換DNS...</value>
+    <value>更換 DNS...</value>
   </data>
   <data name="tsmiEditSelectedFile.Text" xml:space="preserve">
-    <value>編輯圖像...</value>
+    <value>編輯圖片...</value>
   </data>
   <data name="tsmiFileUploaders.Text" xml:space="preserve">
-    <value>檔案上傳者</value>
+    <value>檔案上傳工具</value>
   </data>
   <data name="tsmiFullscreen.Text" xml:space="preserve">
-    <value>全屏</value>
+    <value>全螢幕</value>
   </data>
   <data name="tsmiHashCheck.Text" xml:space="preserve">
-    <value>雜湊值(Hash)檢查...</value>
+    <value>雜湊（Hash）檢查...</value>
   </data>
   <data name="tsmiHideMenu.Text" xml:space="preserve">
     <value>隱藏選單</value>
   </data>
   <data name="tsmiImageEffects.Text" xml:space="preserve">
-    <value>圖像效果...</value>
+    <value>圖片效果...</value>
   </data>
   <data name="tsmiImagePreview.Text" xml:space="preserve">
-    <value>圖像預覽</value>
+    <value>圖片預覽</value>
   </data>
   <data name="tsmiImagePreviewAutomatic.Text" xml:space="preserve">
     <value>自動</value>
@@ -286,13 +285,13 @@
     <value>顯示</value>
   </data>
   <data name="tsmiImageUploaders.Text" xml:space="preserve">
-    <value>圖片上傳者</value>
+    <value>圖片上傳工具</value>
   </data>
   <data name="tsmiIndexFolder.Text" xml:space="preserve">
     <value>索引資料夾...</value>
   </data>
   <data name="tsmiLastRegion.Text" xml:space="preserve">
-    <value>最後一個區域</value>
+    <value>上個區域</value>
   </data>
   <data name="tsmiMonitor.Text" xml:space="preserve">
     <value>顯示器</value>
@@ -304,7 +303,7 @@
     <value>開啟</value>
   </data>
   <data name="tsmiOpenDeletionURL.Text" xml:space="preserve">
-    <value>刪除URL</value>
+    <value>刪除網址</value>
   </data>
   <data name="tsmiOpenFile.Text" xml:space="preserve">
     <value>檔案</value>
@@ -313,7 +312,7 @@
     <value>資料夾</value>
   </data>
   <data name="tsmiOpenShortenedURL.Text" xml:space="preserve">
-    <value>URL短網址</value>
+    <value>縮網址</value>
   </data>
   <data name="tsmiOpenThumbnailFile.Text" xml:space="preserve">
     <value>縮圖檔案</value>
@@ -322,25 +321,25 @@
     <value>縮圖網址</value>
   </data>
   <data name="tsmiOpenURL.Text" xml:space="preserve">
-    <value>URL</value>
+    <value>網址</value>
   </data>
   <data name="tsmiQRCode.Text" xml:space="preserve">
     <value>二維碼...</value>
   </data>
   <data name="tsmiRectangle.Text" xml:space="preserve">
-    <value>矩形</value>
+    <value>區域</value>
   </data>
   <data name="tsmiRectangleLight.Text" xml:space="preserve">
-    <value>矩形（光）</value>
+    <value>區域（高亮）</value>
   </data>
   <data name="tsmiRuler.Text" xml:space="preserve">
-    <value>尺子...</value>
+    <value>標尺...</value>
   </data>
   <data name="tsmiScreenColorPicker.Text" xml:space="preserve">
-    <value>螢幕顏色選擇器...</value>
+    <value>螢幕檢色器...</value>
   </data>
   <data name="tsmiScreenRecordingFFmpeg.Text" xml:space="preserve">
-    <value>螢幕錄製（FFmpeg）</value>
+    <value>螢幕錄製</value>
   </data>
   <data name="tsmiScreenRecordingGIF.Text" xml:space="preserve">
     <value>螢幕錄製（GIF）</value>
@@ -352,7 +351,7 @@
     <value>分享網址</value>
   </data>
   <data name="tsmiShortenSelectedURL.Text" xml:space="preserve">
-    <value>縮短URL</value>
+    <value>縮網址</value>
   </data>
   <data name="tsmiShowDebugLog.Text" xml:space="preserve">
     <value>偵錯日誌...</value>
@@ -379,76 +378,76 @@
     <value>測試文字上傳</value>
   </data>
   <data name="tsmiTestURLSharing.Text" xml:space="preserve">
-    <value>測試URL共享</value>
+    <value>測試網址分享</value>
   </data>
   <data name="tsmiTestURLShortener.Text" xml:space="preserve">
-    <value>測試URL短鏈</value>
+    <value>測試縮網址</value>
   </data>
   <data name="tsmiTextUploaders.Text" xml:space="preserve">
-    <value>文字上傳者</value>
+    <value>文字上傳工具</value>
   </data>
   <data name="tsmiTrayAbout.Text" xml:space="preserve">
     <value>關於...</value>
   </data>
   <data name="tsmiTrayAfterCaptureTasks.Text" xml:space="preserve">
-    <value>截圖後</value>
+    <value>擷取後的工作</value>
   </data>
   <data name="tsmiTrayAfterUploadTasks.Text" xml:space="preserve">
-    <value>上傳後</value>
+    <value>上傳後的工作</value>
   </data>
   <data name="tsmiTrayApplicationSettings.Text" xml:space="preserve">
     <value>應用程式設定...</value>
   </data>
   <data name="tsmiTrayAutoCapture.Text" xml:space="preserve">
-    <value>自動截圖...</value>
+    <value>自動擷取...</value>
   </data>
   <data name="tsmiTrayCapture.Text" xml:space="preserve">
-    <value>截圖</value>
+    <value>擷取</value>
   </data>
   <data name="tsmiTrayDestinations.Text" xml:space="preserve">
-    <value>上傳至...</value>
+    <value>目標</value>
   </data>
   <data name="tsmiTrayDestinationSettings.Text" xml:space="preserve">
-    <value>上傳至...設定</value>
+    <value>目標設定...</value>
   </data>
   <data name="tsmiTrayDNSChanger.Text" xml:space="preserve">
-    <value>DNS更換...</value>
+    <value>更換 DNS...</value>
   </data>
   <data name="tsmiTrayDonate.Text" xml:space="preserve">
-    <value>捐贈...</value>
+    <value>捐獻...</value>
   </data>
   <data name="tsmiTrayExit.Text" xml:space="preserve">
     <value>退出</value>
   </data>
   <data name="tsmiTrayFileUploaders.Text" xml:space="preserve">
-    <value>檔案上傳者</value>
+    <value>檔案上傳工具</value>
   </data>
   <data name="tsmiTrayFullscreen.Text" xml:space="preserve">
-    <value>全屏</value>
+    <value>全螢幕</value>
   </data>
   <data name="tsmiTrayHashCheck.Text" xml:space="preserve">
-    <value>雜湊值(Hash)檢查...</value>
+    <value>雜湊（Hash）檢查...</value>
   </data>
   <data name="tsmiTrayHistory.Text" xml:space="preserve">
     <value>歷史記錄...</value>
   </data>
   <data name="tsmiTrayHotkeySettings.Text" xml:space="preserve">
-    <value>快速鍵設定...</value>
+    <value>快捷鍵設定...</value>
   </data>
   <data name="tsmiTrayImageEffects.Text" xml:space="preserve">
-    <value>圖像效果...</value>
+    <value>圖片效果...</value>
   </data>
   <data name="tsmiTrayImageHistory.Text" xml:space="preserve">
-    <value>歷史圖片...</value>
+    <value>圖片歷史記錄...</value>
   </data>
   <data name="tsmiTrayImageUploaders.Text" xml:space="preserve">
-    <value>圖片上傳者</value>
+    <value>圖片上傳工具</value>
   </data>
   <data name="tsmiTrayIndexFolder.Text" xml:space="preserve">
     <value>索引資料夾...</value>
   </data>
   <data name="tsmiTrayLastRegion.Text" xml:space="preserve">
-    <value>最後一個區域</value>
+    <value>上個區域</value>
   </data>
   <data name="tsmiTrayMonitor.Text" xml:space="preserve">
     <value>顯示器</value>
@@ -460,31 +459,31 @@
     <value>二維碼...</value>
   </data>
   <data name="tsmiTrayRectangle.Text" xml:space="preserve">
-    <value>矩形</value>
+    <value>區域</value>
   </data>
   <data name="tsmiTrayRectangleLight.Text" xml:space="preserve">
-    <value>矩形（光）</value>
+    <value>區域（高亮）</value>
   </data>
   <data name="tsmiTrayRuler.Text" xml:space="preserve">
-    <value>尺子...</value>
+    <value>標尺...</value>
   </data>
   <data name="tsmiTrayScreenColorPicker.Text" xml:space="preserve">
-    <value>螢幕顏色選擇器...</value>
+    <value>螢幕檢色器...</value>
   </data>
   <data name="tsmiTrayScreenRecordingFFmpeg.Text" xml:space="preserve">
-    <value>螢幕錄製（FFmpeg）</value>
+    <value>螢幕錄製</value>
   </data>
   <data name="tsmiTrayScreenRecordingGIF.Text" xml:space="preserve">
     <value>螢幕錄製（GIF）</value>
   </data>
   <data name="tsmiTrayShow.Text" xml:space="preserve">
-    <value>顯示ShareX視窗</value>
+    <value>開啟主視窗</value>
   </data>
   <data name="tsmiTrayTaskSettings.Text" xml:space="preserve">
-    <value>任務設定...</value>
+    <value>工作設定...</value>
   </data>
   <data name="tsmiTrayTextUploaders.Text" xml:space="preserve">
-    <value>文字上傳者</value>
+    <value>文字上傳工具</value>
   </data>
   <data name="tsmiTrayTools.Text" xml:space="preserve">
     <value>工具</value>
@@ -508,13 +507,13 @@
     <value>上傳資料夾...</value>
   </data>
   <data name="tsmiTrayUploadURL.Text" xml:space="preserve">
-    <value>從URL上傳...</value>
+    <value>從網址上傳...</value>
   </data>
   <data name="tsmiTrayURLSharingServices.Text" xml:space="preserve">
-    <value>URL共享</value>
+    <value>網址分享服務</value>
   </data>
   <data name="tsmiTrayURLShorteners.Text" xml:space="preserve">
-    <value>URL共享</value>
+    <value>縮網址服務</value>
   </data>
   <data name="tsmiTrayWindow.Text" xml:space="preserve">
     <value>視窗</value>
@@ -541,49 +540,49 @@
     <value>上傳</value>
   </data>
   <data name="tsmiUploadURL.Text" xml:space="preserve">
-    <value>從URL上傳...</value>
+    <value>從網址上傳...</value>
   </data>
   <data name="tsmiURLSharingServices.Text" xml:space="preserve">
-    <value>URL共享</value>
+    <value>網址分享服務</value>
   </data>
   <data name="tsmiURLShorteners.Text" xml:space="preserve">
-    <value>URL短鏈</value>
+    <value>縮網址服務</value>
   </data>
   <data name="tsmiWindow.Text" xml:space="preserve">
     <value>視窗</value>
   </data>
   <data name="tsmiRectangleTransparent.Text" xml:space="preserve">
-    <value>矩形（透明）</value>
+    <value>區域（透明）</value>
   </data>
   <data name="tsmiScrollingCapture.Text" xml:space="preserve">
     <value>捲動擷取...</value>
   </data>
   <data name="tsmiColorPicker.Text" xml:space="preserve">
-    <value>顏色選擇器...</value>
+    <value>檢色器...</value>
   </data>
   <data name="tsmiImageCombiner.Text" xml:space="preserve">
-    <value>圖像合併...</value>
+    <value>圖片合併工具...</value>
   </data>
   <data name="tsmiVideoThumbnailer.Text" xml:space="preserve">
-    <value>視訊縮圖...</value>
+    <value>視訊縮圖工具...</value>
   </data>
   <data name="tsmiTrayRectangleTransparent.Text" xml:space="preserve">
-    <value>矩形（透明）</value>
+    <value>區域（透明）</value>
   </data>
   <data name="tsmiTrayScrollingCapture.Text" xml:space="preserve">
     <value>捲動擷取...</value>
   </data>
   <data name="tsmiTrayColorPicker.Text" xml:space="preserve">
-    <value>顏色選擇器...</value>
+    <value>檢色器...</value>
   </data>
   <data name="tsmiTrayImageCombiner.Text" xml:space="preserve">
-    <value>圖像合併...</value>
+    <value>圖片合併工具...</value>
   </data>
   <data name="tsmiTrayVideoThumbnailer.Text" xml:space="preserve">
-    <value>視訊縮圖...</value>
+    <value>視訊縮圖工具...</value>
   </data>
   <data name="tsmiTrayToggleHotkeys.Text" xml:space="preserve">
-    <value>禁用快速鍵</value>
+    <value>停用快捷鍵</value>
   </data>
   <data name="tsmiTrayShowDebugLog.Text" xml:space="preserve">
     <value>偵錯日誌...</value>
@@ -598,10 +597,10 @@
     <value>測試檔案上傳</value>
   </data>
   <data name="tsmiTrayTestURLShortener.Text" xml:space="preserve">
-    <value>測試URL短鏈</value>
+    <value>測試縮網址</value>
   </data>
   <data name="tsmiTrayTestURLSharing.Text" xml:space="preserve">
-    <value>測試URL共享</value>
+    <value>測試網址分享</value>
   </data>
   <data name="tsmiTrayDebug.Text" xml:space="preserve">
     <value>偵錯</value>
@@ -616,24 +615,168 @@
     <value>下載</value>
   </data>
   <data name="tsmiTrayTextCapture.Text" xml:space="preserve">
-    <value>文字擷取（OCR）</value>
+    <value>文字擷取（OCR）...</value>
   </data>
   <data name="tsmiHideColumns.Text" xml:space="preserve">
     <value>隱藏列</value>
   </data>
   <data name="tsmiDeleteSelectedItem.Text" xml:space="preserve">
-    <value>從清單刪除任務</value>
+    <value>從清單移除工作</value>
   </data>
   <data name="tsmiSearchImage.Text" xml:space="preserve">
-    <value>Google 圖片搜尋</value>
+    <value>Google 圖片搜尋...</value>
   </data>
   <data name="tsmiOCRImage.Text" xml:space="preserve">
-    <value>圖轉文字(OCR)...</value>
+    <value>圖轉文字（OCR）...</value>
   </data>
   <data name="tsmiCombineImages.Text" xml:space="preserve">
     <value>合併圖片...</value>
   </data>
   <data name="tsmiOpenActionsToolbar.Text" xml:space="preserve">
-    <value>切換動作工具列</value>
+    <value>顯示工具列</value>
+  </data>
+  <data name="tsmiShowCursor.Text" xml:space="preserve">
+    <value>顯示游標</value>
+  </data>
+  <data name="tsmiScreenshotDelay0.Text" xml:space="preserve">
+    <value>關閉</value>
+  </data>
+  <data name="tsmiScreenshotDelay1.Text" xml:space="preserve">
+    <value>1 秒</value>
+  </data>
+  <data name="tsmiScreenshotDelay2.Text" xml:space="preserve">
+    <value>2 秒</value>
+  </data>
+  <data name="tsmiScreenshotDelay3.Text" xml:space="preserve">
+    <value>3 秒</value>
+  </data>
+  <data name="tsmiScreenshotDelay4.Text" xml:space="preserve">
+    <value>4 秒</value>
+  </data>
+  <data name="tsmiScreenshotDelay5.Text" xml:space="preserve">
+    <value>5 秒</value>
+  </data>
+  <data name="tsmiScreenshotDelay.Text" xml:space="preserve">
+    <value>截圖倒數計時</value>
+  </data>
+  <data name="tsmiUploadText.Text" xml:space="preserve">
+    <value>上傳文字...</value>
+  </data>
+  <data name="tsmiShortenURL.Text" xml:space="preserve">
+    <value>縮網址...</value>
+  </data>
+  <data name="tsmiImageEditor.Text" xml:space="preserve">
+    <value>圖片編輯器...</value>
+  </data>
+  <data name="tsmiImageThumbnailer.Text" xml:space="preserve">
+    <value>圖片縮圖工具...</value>
+  </data>
+  <data name="tsmiCustomUploaderSettings.Text" xml:space="preserve">
+    <value>自訂上傳工具設定...</value>
+  </data>
+  <data name="tsbNews.Text" xml:space="preserve">
+    <value>新聞</value>
+  </data>
+  <data name="tsbDonate.Text" xml:space="preserve">
+    <value>捐獻...</value>
+  </data>
+  <data name="tsbAbout.Text" xml:space="preserve">
+    <value>關於...</value>
+  </data>
+  <data name="tsmiCopyImageDimensions.Text" xml:space="preserve">
+    <value>圖片尺寸</value>
+  </data>
+  <data name="tsmiCopyMarkdownLink.Text" xml:space="preserve">
+    <value>Markdown 連結</value>
+  </data>
+  <data name="tsmiCopyMarkdownImage.Text" xml:space="preserve">
+    <value>Markdown 圖片</value>
+  </data>
+  <data name="tsmiCopyMarkdownLinkedImage.Text" xml:space="preserve">
+    <value>Markdown 連結的圖片</value>
+  </data>
+  <data name="tsmiRunAction.Text" xml:space="preserve">
+    <value>執行動作</value>
+  </data>
+  <data name="tsmiImagePreviewSide.Text" xml:space="preserve">
+    <value>側邊</value>
+  </data>
+  <data name="tsmiImagePreviewBottom.Text" xml:space="preserve">
+    <value>底部</value>
+  </data>
+  <data name="tsmiThumbnailTitleShow.Text" xml:space="preserve">
+    <value>顯示</value>
+  </data>
+  <data name="tsmiThumbnailTitleHide.Text" xml:space="preserve">
+    <value>隱藏</value>
+  </data>
+  <data name="tsmiThumbnailTitleTop.Text" xml:space="preserve">
+    <value>頂端</value>
+  </data>
+  <data name="tsmiThumbnailTitleBottom.Text" xml:space="preserve">
+    <value>底部</value>
+  </data>
+  <data name="tsmiThumbnailTitle.Text" xml:space="preserve">
+    <value>縮圖標題</value>
+  </data>
+  <data name="tsmiSwitchTaskViewMode.Text" xml:space="preserve">
+    <value>切換到縮圖模式</value>
+  </data>
+  <data name="tsmiTrayShowCursor.Text" xml:space="preserve">
+    <value>顯示游標</value>
+  </data>
+  <data name="tsmiTrayScreenshotDelay0.Text" xml:space="preserve">
+    <value>關閉</value>
+  </data>
+  <data name="tsmiTrayScreenshotDelay1.Text" xml:space="preserve">
+    <value>1 秒</value>
+  </data>
+  <data name="tsmiTrayScreenshotDelay2.Text" xml:space="preserve">
+    <value>2 秒</value>
+  </data>
+  <data name="tsmiTrayScreenshotDelay3.Text" xml:space="preserve">
+    <value>3 秒</value>
+  </data>
+  <data name="tsmiTrayScreenshotDelay4.Text" xml:space="preserve">
+    <value>4 秒</value>
+  </data>
+  <data name="tsmiTrayScreenshotDelay5.Text" xml:space="preserve">
+    <value>5 秒</value>
+  </data>
+  <data name="tsmiTrayScreenshotDelay.Text" xml:space="preserve">
+    <value>截圖倒數計時</value>
+  </data>
+  <data name="tsmiTrayUploadText.Text" xml:space="preserve">
+    <value>上傳文字...</value>
+  </data>
+  <data name="tsmiTrayShortenURL.Text" xml:space="preserve">
+    <value>縮網址...</value>
+  </data>
+  <data name="tsmiTrayImageEditor.Text" xml:space="preserve">
+    <value>圖片編輯器...</value>
+  </data>
+  <data name="tsmiTrayImageThumbnailer.Text" xml:space="preserve">
+    <value>圖片縮圖工具...</value>
+  </data>
+  <data name="tsmiTrayCustomUploaderSettings.Text" xml:space="preserve">
+    <value>自訂上傳工具設定...</value>
+  </data>
+  <data name="btnCloseNews.Text" xml:space="preserve">
+    <value>關閉</value>
+  </data>
+  <data name="pbSocialHideButton.ToolTip" xml:space="preserve">
+    <value>隱藏社群媒體按鈕</value>
+  </data>
+  <data name="pbPatreonButton.ToolTip" xml:space="preserve">
+    <value>前往 Patreon 贊助我們</value>
+  </data>
+  <data name="pbBitcoinButton.ToolTip" xml:space="preserve">
+    <value>使用加密貨幣贊助我們</value>
+  </data>
+  <data name="pbTwitterButton.ToolTip" xml:space="preserve">
+    <value>追隨我們的 Twitter</value>
+  </data>
+  <data name="pbDiscordButton.ToolTip" xml:space="preserve">
+    <value>加入我們的 Discord</value>
   </data>
 </root>

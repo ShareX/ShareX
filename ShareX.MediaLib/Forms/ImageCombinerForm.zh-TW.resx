@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="btnAdd.Text" xml:space="preserve">
-    <value>新增</value>
+    <value>新增...</value>
   </data>
   <data name="btnRemove.Text" xml:space="preserve">
     <value>刪除</value>
@@ -130,21 +130,21 @@
     <value>下移</value>
   </data>
   <data name="chFilepath.Text" xml:space="preserve">
-    <value>圖像檔案路徑</value>
+    <value>圖片檔案路徑</value>
   </data>
   <data name="btnCombine.Text" xml:space="preserve">
-    <value>合併圖像和儲存/上傳依賴於截圖後設定</value>
+    <value>根據擷取後設定合併圖片並儲存或上傳</value>
   </data>
   <data name="lblSpace.Text" xml:space="preserve">
-    <value>圖像之間的空隙：</value>
+    <value>圖片之間的空隙：</value>
   </data>
   <data name="lblOrientation.Text" xml:space="preserve">
     <value>合併方向：</value>
   </data>
   <data name="lblSpacePixel.Text" xml:space="preserve">
-    <value>畫素</value>
+    <value>像素</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - 圖像合併</value>
+    <value>ShareX - 圖片合併工具</value>
   </data>
 </root>

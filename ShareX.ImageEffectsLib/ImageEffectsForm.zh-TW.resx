@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -53,7 +53,6 @@
     value   : The object must be serialized with 
             : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
             : and then encoded with base64 encoding.
-
     mimetype: application/x-microsoft.net.object.bytearray.base64
     value   : The object must be serialized into a byte array 
             : using a System.ComponentModel.TypeConverter
@@ -118,7 +117,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - 圖像效果</value>
+    <value>ShareX - 圖片效果</value>
   </data>
   <data name="btnAdd.Text" xml:space="preserve">
     <value>新增</value>
@@ -136,15 +135,33 @@
     <value>刪除</value>
   </data>
   <data name="btnSaveImage.Text" xml:space="preserve">
-    <value>儲存圖像...</value>
+    <value>儲存圖片...</value>
   </data>
   <data name="mbLoadImage.Text" xml:space="preserve">
-    <value>載入圖像...</value>
+    <value>載入圖片</value>
   </data>
   <data name="tsmiLoadImageFromFile.Text" xml:space="preserve">
     <value>從檔案...</value>
   </data>
   <data name="tsmiLoadImageFromClipboard.Text" xml:space="preserve">
-    <value>從剪貼簿...</value>
+    <value>從剪貼簿</value>
+  </data>
+  <data name="btnAddPreset.Text" xml:space="preserve">
+    <value>新預設</value>
+  </data>
+  <data name="btnClose.Text" xml:space="preserve">
+    <value>關閉</value>
+  </data>
+  <data name="btnRefresh.Text" xml:space="preserve">
+    <value>重新整理</value>
+  </data>
+  <data name="btnRemovePreset.Text" xml:space="preserve">
+    <value>刪除預設</value>
+  </data>
+  <data name="btnUploadImage.Text" xml:space="preserve">
+    <value>上傳圖片</value>
+  </data>
+  <data name="lblPresetName.Text" xml:space="preserve">
+    <value>名稱：</value>
   </data>
 </root>

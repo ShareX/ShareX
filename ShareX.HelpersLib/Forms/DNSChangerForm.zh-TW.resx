@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -117,27 +118,27 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - 更換DNS</value>
+    <value>ShareX - 更換 DNS</value>
   </data>
   <data name="btnCancel.Text" xml:space="preserve">
-    <value>&amp;關閉</value>
+    <value>關閉</value>
   </data>
   <data name="btnSave.Text" xml:space="preserve">
-    <value>&amp;應用</value>
+    <value>套用</value>
   </data>
   <data name="cbAutomatic.Text" xml:space="preserve">
-    <value>自動獲得DNS伺服器地址</value>
+    <value>自動獲取 DNS 伺服器位址</value>
   </data>
   <data name="lblAdapters.Text" xml:space="preserve">
-    <value>網路介面卡:</value>
+    <value>網路介面卡：</value>
   </data>
   <data name="lblAlternateDNS.Text" xml:space="preserve">
-    <value>備用DNS伺服器:</value>
+    <value>備用 DNS 伺服器：</value>
   </data>
   <data name="lblDNS.Text" xml:space="preserve">
-    <value>DNS伺服器:</value>
+    <value>DNS 伺服器：</value>
   </data>
   <data name="lblPreferredDNS.Text" xml:space="preserve">
-    <value>首選DNS伺服器:</value>
+    <value>首選 DNS 伺服器：</value>
   </data>
 </root>

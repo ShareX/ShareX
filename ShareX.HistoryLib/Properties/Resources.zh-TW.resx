@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -53,7 +53,6 @@
     value   : The object must be serialized with 
             : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
             : and then encoded with base64 encoding.
-
     mimetype: application/x-microsoft.net.object.bytearray.base64
     value   : The object must be serialized into a byte array 
             : using a System.ComponentModel.TypeConverter
@@ -118,7 +117,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="HistoryForm_UpdateItemCount___Filtered___0_" xml:space="preserve">
-    <value>篩選: {0}</value>
+    <value>已篩選: {0}</value>
   </data>
   <data name="HistoryForm_UpdateItemCount_Total___0_" xml:space="preserve">
     <value>總計: {0}</value>
@@ -127,7 +126,7 @@
     <value>複製</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_Deletion_URL" xml:space="preserve">
-    <value>刪除URL</value>
+    <value>刪除網址</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_File" xml:space="preserve">
     <value>檔案</value>
@@ -136,7 +135,7 @@
     <value>檔名</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_File_name_with_extension" xml:space="preserve">
-    <value>副檔名</value>
+    <value>檔名+副檔名</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_File_path" xml:space="preserve">
     <value>檔案路徑</value>
@@ -145,28 +144,28 @@
     <value>資料夾</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_Forum__BBCode__image" xml:space="preserve">
-    <value>論壇（BBCode）的圖像</value>
+    <value>論壇（BBCode）圖片</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_Forum__BBCode__link" xml:space="preserve">
     <value>論壇（BBCode）連結</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_Forum__BBCode__linked_image" xml:space="preserve">
-    <value>論壇（BBCode）連結的圖像</value>
+    <value>論壇（BBCode）連結的圖片</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_HTML_image" xml:space="preserve">
-    <value>HTML圖像</value>
+    <value>HTML 圖片</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_HTML_link" xml:space="preserve">
-    <value>HTML連結</value>
+    <value>HTML 連結</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_HTML_linked_image" xml:space="preserve">
-    <value>HTML連結的圖像</value>
+    <value>HTML 連結的圖片</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_Image" xml:space="preserve">
-    <value>圖像</value>
+    <value>圖片</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_Image_preview" xml:space="preserve">
-    <value>圖像預覽</value>
+    <value>圖片預覽</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_More_info" xml:space="preserve">
     <value>更多資訊</value>
@@ -175,7 +174,7 @@
     <value>開啟</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_Shortened_URL" xml:space="preserve">
-    <value>URL短鏈</value>
+    <value>縮網址</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_Show" xml:space="preserve">
     <value>顯示</value>
@@ -187,13 +186,13 @@
     <value>縮圖網址</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_URL" xml:space="preserve">
-    <value>URL</value>
+    <value>網址</value>
   </data>
   <data name="HistoryItemManager_UpdateTexts_HTML_link___0__" xml:space="preserve">
-    <value>HTML連結（{0}）</value>
+    <value>HTML 連結 ({0})</value>
   </data>
   <data name="HistoryItemManager_UpdateTexts_URLs___0__" xml:space="preserve">
-    <value>URLs（{0}）</value>
+    <value>網址 ({0})</value>
   </data>
   <data name="ObjectListView_ObjectListView_Copy_name" xml:space="preserve">
     <value>複製名稱</value>
@@ -211,6 +210,42 @@
     <value>錯誤</value>
   </data>
   <data name="HistoryManager_GetHistoryItems_Error_occured_while_reading_XML_file___0_" xml:space="preserve">
-    <value>讀取XML檔案({0})時發生錯誤</value>
+    <value>讀取 XML 檔案 ({0}) 時發生錯誤</value>
+  </data>
+  <data name="BtnShowStats_HideStats" xml:space="preserve">
+    <value>隱藏統計資料</value>
+  </data>
+  <data name="BtnShowStats_ShowStats" xml:space="preserve">
+    <value>顯示統計資料</value>
+  </data>
+  <data name="HistoryItemCounts" xml:space="preserve">
+    <value>歷史項目總數：</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_EditImage" xml:space="preserve">
+    <value>編輯圖片...</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Markdown__image" xml:space="preserve">
+    <value>Markdown 圖片</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Markdown__link" xml:space="preserve">
+    <value>Markdown 連結</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Markdown__linked_image" xml:space="preserve">
+    <value>Markdown 連結的圖片</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_UploadFile" xml:space="preserve">
+    <value>上傳檔案</value>
+  </data>
+  <data name="HistoryStats_FileExtensions" xml:space="preserve">
+    <value>副檔名：</value>
+  </data>
+  <data name="HistoryStats_Hosts" xml:space="preserve">
+    <value>域名：</value>
+  </data>
+  <data name="HistoryStats_Total" xml:space="preserve">
+    <value>總計：</value>
+  </data>
+  <data name="HistoryStats_YearlyUsages" xml:space="preserve">
+    <value>年用量：</value>
   </data>
 </root>
