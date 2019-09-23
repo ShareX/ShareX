@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -118,28 +118,28 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="$this.Text" xml:space="preserve">
-    <value>雜湊（Hash）檢查</value>
+    <value>雜湊檢查</value>
   </data>
   <data name="btnFilePathBrowse.Text" xml:space="preserve">
     <value>瀏覽...</value>
   </data>
   <data name="btnStartHashCheck.Text" xml:space="preserve">
-    <value>開始</value>
+    <value>檢查</value>
   </data>
   <data name="lblFile.Text" xml:space="preserve">
-    <value>檔案路徑:</value>
+    <value>檔案路徑：</value>
   </data>
   <data name="lblHashType.Text" xml:space="preserve">
-    <value>雜湊類型:</value>
+    <value>雜湊類型：</value>
   </data>
   <data name="lblResult.Text" xml:space="preserve">
-    <value>結果:</value>
+    <value>結果：</value>
   </data>
   <data name="lblTarget.Text" xml:space="preserve">
-    <value>目標:</value>
+    <value>目標：</value>
   </data>
   <data name="tpFileHashCheck.Text" xml:space="preserve">
-    <value>檔案雜湊（Hash）檢查</value>
+    <value>檔案雜湊檢查</value>
   </data>
   <data name="btnHashCheckCopyAll.Text" xml:space="preserve">
     <value>複製全部</value>
@@ -160,21 +160,18 @@
     <value>文字：</value>
   </data>
   <data name="lblHashCheckBinary.Text" xml:space="preserve">
-    <value>二進位制：</value>
+    <value>二進制：</value>
   </data>
   <data name="btnHashCheckDecodeBinary.Text" xml:space="preserve">
     <value>解碼</value>
   </data>
   <data name="lblHashCheckHex.Text" xml:space="preserve">
-    <value>十六進位制：</value>
+    <value>十六進制：</value>
   </data>
   <data name="btnHashCheckDecodeASCII.Text" xml:space="preserve">
     <value>解碼</value>
   </data>
-  <data name="lblHashCheckBase64.Text" xml:space="preserve">
-    <value>Base64：</value>
-  </data>
   <data name="lblHashCheckHash.Text" xml:space="preserve">
-    <value>雜湊（Hash）：</value>
+    <value>雜湊：</value>
   </data>
 </root>

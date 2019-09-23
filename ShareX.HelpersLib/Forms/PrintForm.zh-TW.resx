@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -130,18 +130,18 @@
     <value>預覽...</value>
   </data>
   <data name="cbAllowEnlarge.Text" xml:space="preserve">
-    <value>運行圖像被放大</value>
+    <value>允許圖片被放大</value>
   </data>
   <data name="cbAutoRotate.Text" xml:space="preserve">
-    <value>自動旋轉圖像</value>
+    <value>自動旋轉圖片</value>
   </data>
   <data name="cbAutoScale.Text" xml:space="preserve">
-    <value>自動縮放圖像</value>
+    <value>自動縮放圖片</value>
   </data>
   <data name="cbCenterImage.Text" xml:space="preserve">
-    <value>中心圖像位置</value>
+    <value>圖片置中</value>
   </data>
   <data name="lblMargin.Text" xml:space="preserve">
-    <value>邊距:</value>
+    <value>邊距：</value>
   </data>
 </root>

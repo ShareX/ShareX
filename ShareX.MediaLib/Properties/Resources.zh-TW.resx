@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -119,5 +119,8 @@
   </resheader>
   <data name="VideoThumbnailerForm_btnBrowse_Click_Browse_for_media_file" xml:space="preserve">
     <value>瀏覽媒體檔案</value>
+  </data>
+    <data name="ThumbnailsSuccessfullyGenerated" xml:space="preserve">
+    <value>縮圖產生成功。</value>
   </data>
 </root>

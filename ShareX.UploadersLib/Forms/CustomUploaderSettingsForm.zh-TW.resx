@@ -53,7 +53,6 @@
     value   : The object must be serialized with 
             : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
             : and then encoded with base64 encoding.
-
     mimetype: application/x-microsoft.net.object.bytearray.base64
     value   : The object must be serialized into a byte array 
             : using a System.ComponentModel.TypeConverter
@@ -118,21 +117,189 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - 快捷鍵設定</value>
+    <value>ShareX - 自訂上傳工具設定</value>
   </data>
-  <data name="btnAdd.Text" xml:space="preserve">
-    <value>新增...</value>
+  <data name="btnClearUploaders.Text" xml:space="preserve">
+    <value>清除上傳工具...</value>
+  </data>
+  <data name="btnDataBeautify.Text" xml:space="preserve">
+    <value>美化</value>
+  </data>
+  <data name="btnDataMinify.Text" xml:space="preserve">
+    <value>壓縮</value>
   </data>
   <data name="btnDuplicate.Text" xml:space="preserve">
     <value>複製</value>
   </data>
-  <data name="btnEdit.Text" xml:space="preserve">
-    <value>編輯...</value>
+  <data name="btnFileUploaderTest.Text" xml:space="preserve">
+    <value>測試</value>
+  </data>
+  <data name="btnImageUploaderTest.Text" xml:space="preserve">
+    <value>測試</value>
+  </data>
+  <data name="btnJsonAddSyntax.Text" xml:space="preserve">
+    <value>新增語法至網址欄位</value>
+  </data>
+  <data name="btnNew.Text" xml:space="preserve">
+    <value>新增</value>
+  </data>
+  <data name="btnRegexAddSyntax.Text" xml:space="preserve">
+    <value>新增語法至網址欄位</value>
+  </data>
+  <data name="btnXmlAddSyntax.Text" xml:space="preserve">
+    <value>新增語法至網址欄位</value>
   </data>
   <data name="btnRemove.Text" xml:space="preserve">
     <value>移除</value>
   </data>
-  <data name="btnReset.Text" xml:space="preserve">
-    <value>恢復預設快捷鍵...</value>
+  <data name="btnTextUploaderTest.Text" xml:space="preserve">
+    <value>測試</value>
+  </data>
+  <data name="btnURLSharingServiceTest.Text" xml:space="preserve">
+    <value>測試</value>
+  </data>
+  <data name="btnURLShortenerTest.Text" xml:space="preserve">
+    <value>測試</value>
+  </data>
+  <data name="cArgumentsName.HeaderText" xml:space="preserve">
+    <value>名稱</value>
+  </data>
+  <data name="cArgumentsValue.HeaderText" xml:space="preserve">
+    <value>值</value>
+  </data>
+  <data name="cHeadersName.HeaderText" xml:space="preserve">
+    <value>名稱</value>
+  </data>
+  <data name="cParametersName.HeaderText" xml:space="preserve">
+    <value>名稱</value>
+  </data>
+  <data name="cHeadersValue.HeaderText" xml:space="preserve">
+    <value>值</value>
+  </data>
+  <data name="cParametersValue.HeaderText" xml:space="preserve">
+    <value>值</value>
+  </data>
+  <data name="cRegex.HeaderText" xml:space="preserve">
+    <value>正規表達式</value>
+  </data>
+  <data name="gbCustomUploaders.Text" xml:space="preserve">
+    <value>上傳工具</value>
+  </data>
+  <data name="lblBody.Text" xml:space="preserve">
+    <value>主體：</value>
+  </data>
+  <data name="lblDestinationType.Text" xml:space="preserve">
+    <value>目標類型：</value>
+  </data>
+  <data name="lblFileFormName.Text" xml:space="preserve">
+    <value>檔案格式名稱：</value>
+  </data>
+  <data name="lblFileUploader.Text" xml:space="preserve">
+    <value>檔案上傳工具：</value>
+  </data>
+  <data name="lblHeaders.Text" xml:space="preserve">
+    <value>標頭：</value>
+  </data>
+  <data name="lblImageUploader.Text" xml:space="preserve">
+    <value>圖片上傳工具：</value>
+  </data>
+  <data name="lblJsonPathExample.Text" xml:space="preserve">
+    <value>範例：
+
+Files[0].URL
+store.book[0].title</value>
+  </data>
+  <data name="lblName.Text" xml:space="preserve">
+    <value>名稱：</value>
+  </data>
+  <data name="lblParameters.Text" xml:space="preserve">
+    <value>網址參數：</value>
+  </data>
+  <data name="lblParseResponse.Text" xml:space="preserve">
+    <value>解析響應：</value>
+  </data>
+  <data name="lblRegex.Text" xml:space="preserve">
+    <value>正規表達式清單：</value>
+  </data>
+  <data name="lblRequestMethod.Text" xml:space="preserve">
+    <value>方法：</value>
+  </data>
+  <data name="lblRequestURL.Text" xml:space="preserve">
+    <value>網址：</value>
+  </data>
+  <data name="lblResultDeletionURL.Text" xml:space="preserve">
+    <value>刪除網址：</value>
+  </data>
+  <data name="lblResultThumbnailURL.Text" xml:space="preserve">
+    <value>縮圖網址：</value>
+  </data>
+  <data name="lblResultURL.Text" xml:space="preserve">
+    <value>網址：</value>
+  </data>
+  <data name="lblTextUploader.Text" xml:space="preserve">
+    <value>文字上傳工具：</value>
+  </data>
+  <data name="lblURLSharingService.Text" xml:space="preserve">
+    <value>網址分享服務：</value>
+  </data>
+  <data name="lblURLShortener.Text" xml:space="preserve">
+    <value>縮網址服務：</value>
+  </data>
+  <data name="lblJsonPath.Text" xml:space="preserve">
+    <value>JsonPath：</value>
+  </data>
+  <data name="lblXPath.Text" xml:space="preserve">
+    <value>XPath：</value>
+  </data>
+  <data name="lblXPathExample.Text" xml:space="preserve">
+    <value>範例：
+
+/Files/File[1]/URL
+/store/book[1]/title</value>
+  </data>
+  <data name="mbDestinationType.ToolTip" xml:space="preserve">
+    <value>目前當使用者雙擊 .sxcu 檔以匯入自訂上傳工具時便會使用目的地類型。</value>
+  </data>
+  <data name="tpRegexParse.Text" xml:space="preserve">
+    <value>正規表達式</value>
+  </data>
+  <data name="tpRequest.Text" xml:space="preserve">
+    <value>請求</value>
+  </data>
+  <data name="tpResponse.Text" xml:space="preserve">
+    <value>響應</value>
+  </data>
+  <data name="tpResponseInfo.Text" xml:space="preserve">
+    <value>響應資訊</value>
+  </data>
+  <data name="tpResponseText.Text" xml:space="preserve">
+    <value>響應文字</value>
+  </data>
+  <data name="tpResult.Text" xml:space="preserve">
+    <value>結果</value>
+  </data>
+  <data name="tpTest.Text" xml:space="preserve">
+    <value>測試</value>
+  </data>
+  <data name="tsbResponseTextCopy.Text" xml:space="preserve">
+    <value>複製響應</value>
+  </data>
+  <data name="tsbResponseTextJSONFormat.Text" xml:space="preserve">
+    <value>JSON 格式</value>
+  </data>
+  <data name="tsbResponseTextXMLFormat.Text" xml:space="preserve">
+    <value>XML 格式</value>
+  </data>
+  <data name="tsmiCustomUploaderGuide.Text" xml:space="preserve">
+    <value>自訂上傳工具指南...</value>
+  </data>
+  <data name="tsmiCustomUploaders.Text" xml:space="preserve">
+    <value>自訂上傳工具...</value>
+  </data>
+  <data name="tsmiExportAll.Text" xml:space="preserve">
+    <value>匯出全部...</value>
+  </data>
+  <data name="tsmiUpdateFolder.Text" xml:space="preserve">
+    <value>更新資料夾...</value>
   </data>
 </root>
