@@ -278,22 +278,31 @@ namespace ShareX.ImageEffectsLib
                     verticalPadding = 0;
                 }
 
-                using (Bitmap bmp = new Bitmap(pbResult.ClientSize.Width - (horizontalPadding * 2), pbResult.ClientSize.Height - (verticalPadding * 2)))
+                if (PreviewImage != null) PreviewImage.Dispose();
+                PreviewImage = new Bitmap(pbResult.ClientSize.Width - (horizontalPadding * 2), pbResult.ClientSize.Height - (verticalPadding * 2));
+
+                Color backgroundColor;
+
+                if (ShareXResources.UseDarkTheme)
                 {
-                    if (PreviewImage != null) PreviewImage.Dispose();
+                    backgroundColor = ShareXResources.Theme.BackgroundColor;
+                }
+                else
+                {
+                    backgroundColor = Color.DarkGray;
+                }
 
-                    Color backgroundColor;
+                using (Graphics g = Graphics.FromImage(PreviewImage))
+                {
+                    g.Clear(backgroundColor);
 
-                    if (ShareXResources.UseDarkTheme)
+                    if (PreviewImage.Width > 260 && PreviewImage.Height > 260)
                     {
-                        backgroundColor = ShareXResources.Theme.BackgroundColor;
+                        using (Image logo = ShareXResources.Logo)
+                        {
+                            g.DrawImage(logo, (PreviewImage.Width / 2) - (logo.Width / 2), (PreviewImage.Height / 2) - (logo.Height / 2));
+                        }
                     }
-                    else
-                    {
-                        backgroundColor = Color.DarkGray;
-                    }
-
-                    PreviewImage = ImageHelpers.FillBackground(bmp, backgroundColor);
                 }
             }
         }
