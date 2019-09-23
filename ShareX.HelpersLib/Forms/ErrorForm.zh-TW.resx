@@ -127,10 +127,10 @@
     <value>繼續</value>
   </data>
   <data name="btnOpenLogFile.Text" xml:space="preserve">
-    <value>開啟日誌檔案</value>
+    <value>開啟日誌檔案...</value>
   </data>
   <data name="btnSendBugReport.Text" xml:space="preserve">
-    <value>傳送錯誤報告</value>
+    <value>傳送錯誤報告...</value>
   </data>
   <data name="lblErrorMessage.Text" xml:space="preserve">
     <value>錯誤

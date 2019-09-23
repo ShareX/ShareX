@@ -150,10 +150,10 @@
     <value>開始延遲：</value>
   </data>
   <data name="cbStartCaptureAutomatically.Text" xml:space="preserve">
-    <value>選擇擷取區域後立即開始捲動擷取</value>
+    <value>選取擷取區域後立即開始捲動擷取</value>
   </data>
   <data name="cbRemoveDuplicates.Text" xml:space="preserve">
-    <value>刪除重複的圖片</value>
+    <value>移除重複的圖片</value>
   </data>
   <data name="cbAutoDetectScrollEnd.Text" xml:space="preserve">
     <value>偵測捲動結束</value>
@@ -171,7 +171,7 @@
     <value>圖片數量：</value>
   </data>
   <data name="lblIgnoreLast.Text" xml:space="preserve">
-    <value>刪除最後：</value>
+    <value>移除最後：</value>
   </data>
   <data name="btnResetCombine.Text" xml:space="preserve">
     <value>重設輸出選項</value>

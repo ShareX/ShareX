@@ -129,7 +129,7 @@
     <value>停止</value>
   </data>
   <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__Image__Size___0_x_1__" xml:space="preserve">
-    <value>剪貼簿中的內容：圖片（尺寸: {0} X {1}）</value>
+    <value>剪貼簿中的內容：圖片（尺寸: {0} x {1}）</value>
   </data>
   <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__Text__Length___0__" xml:space="preserve">
     <value>剪貼簿中的內容：文字（長度: {0}）</value>
@@ -159,7 +159,7 @@
     <value>關閉</value>
   </data>
   <data name="FolderSelectDialog_Title_Select_a_folder" xml:space="preserve">
-    <value>選擇一個資料夾</value>
+    <value>選擇資料夾</value>
   </data>
   <data name="Start" xml:space="preserve">
     <value>開始</value>
@@ -263,7 +263,7 @@
     <value>八元樹量化 16 色</value>
   </data>
   <data name="GIFQuality_Bit8" xml:space="preserve">
-    <value>八元樹量化 256 色（編碼速度較慢但品質更佳）</value>
+    <value>八元樹量化 256 色（編碼速度較慢但品質較好）</value>
   </data>
   <data name="GIFQuality_Default" xml:space="preserve">
     <value>預設 .NET 編碼（編碼速度較快但品質一般）</value>
@@ -308,7 +308,7 @@
     <value>FTP 客戶端</value>
   </data>
   <data name="HotkeyType_HashCheck" xml:space="preserve">
-    <value>雜湊（Hash）檢查</value>
+    <value>雜湊檢查</value>
   </data>
   <data name="HotkeyType_ImageEffects" xml:space="preserve">
     <value>圖片效果</value>
@@ -317,7 +317,7 @@
     <value>索引資料夾</value>
   </data>
   <data name="HotkeyType_LastRegion" xml:space="preserve">
-    <value>擷取上一個區域</value>
+    <value>擷取上個區域</value>
   </data>
   <data name="HotkeyType_None" xml:space="preserve">
     <value>無</value>
@@ -410,7 +410,7 @@
     <value>刪除本地檔案</value>
   </data>
   <data name="AfterCaptureTasks_PerformActions" xml:space="preserve">
-    <value>執行操作</value>
+    <value>執行動作</value>
   </data>
   <data name="AfterCaptureTasks_SaveImageToFile" xml:space="preserve">
     <value>儲存圖片檔案</value>
@@ -452,10 +452,10 @@
     <value>不要儲存</value>
   </data>
   <data name="FileExistAction_Overwrite" xml:space="preserve">
-    <value>覆蓋檔案</value>
+    <value>覆寫檔案</value>
   </data>
   <data name="FileExistAction_UniqueName" xml:space="preserve">
-    <value>在檔名中附加數字</value>
+    <value>附加數字到檔名</value>
   </data>
   <data name="PopUpNotificationType_BalloonTip" xml:space="preserve">
     <value>顯示系統匣氣球提示</value>
@@ -470,10 +470,10 @@
     <value>自動</value>
   </data>
   <data name="HotkeyType_StartAutoCapture" xml:space="preserve">
-    <value>使用上一個區域開始自動擷取</value>
+    <value>使用上個區域開始自動擷取</value>
   </data>
   <data name="HotkeyType_StartScreenRecorder" xml:space="preserve">
-    <value>開始/停止使用上一個區域錄製螢幕</value>
+    <value>開始/停止使用上個區域錄製螢幕</value>
   </data>
   <data name="UpdateMessageBox_UpdateMessageBox_" xml:space="preserve">
     <value>有新版本 {0} 可用。
@@ -492,7 +492,7 @@
     <value>開始/停止使用自訂區域錄製螢幕（GIF）</value>
   </data>
   <data name="HotkeyType_StartScreenRecorderGIF" xml:space="preserve">
-    <value>開始/停止使用上一個區域錄製螢幕（GIF）</value>
+    <value>開始/停止使用上個區域錄製螢幕（GIF）</value>
   </data>
   <data name="HotkeyType_RectangleTransparent" xml:space="preserve">
     <value>擷取區域（透明）</value>
@@ -754,7 +754,7 @@
     <value>隨機文數字元（用 {n} 來重複）</value>
   </data>
   <data name="ReplCodeMenuEntry_rn_Random_number_0_to_9" xml:space="preserve">
-    <value>隨機數字 0 至 9</value>
+    <value>隨機數字 0 到 9（用 {n} 來重複）</value>
   </data>
   <data name="ReplCodeMenuEntry_s_Current_second" xml:space="preserve">
     <value>目前秒</value>
@@ -790,10 +790,10 @@
     <value>顯示快速任務選單</value>
   </data>
   <data name="HotkeyType_OpenHistory" xml:space="preserve">
-    <value>開啟歷史記錄</value>
+    <value>開啟歷史視窗</value>
   </data>
   <data name="HotkeyType_OpenImageHistory" xml:space="preserve">
-    <value>開啟圖片歷史記錄</value>
+    <value>開啟圖片歷史視窗</value>
   </data>
   <data name="HotkeyType_OpenImageHistory_Category" xml:space="preserve">
     <value>其他</value>
@@ -829,7 +829,7 @@
     <value>螢幕錄製</value>
   </data>
   <data name="AfterCaptureTasks_DoOCR" xml:space="preserve">
-    <value>文字識別（OCR）</value>
+    <value>文字辨識（OCR）</value>
   </data>
   <data name="HotkeyType_TextCapture" xml:space="preserve">
     <value>文字擷取（OCR）</value>
@@ -883,7 +883,7 @@
     <value>繪圖：序號 (I)</value>
   </data>
   <data name="ShapeType_RegionEllipse" xml:space="preserve">
-    <value>區域：橢圓形</value>
+    <value>區域：橢圓</value>
   </data>
   <data name="ShapeType_RegionRectangle" xml:space="preserve">
     <value>區域：矩形</value>
@@ -901,7 +901,7 @@
     <value>螢幕錄製</value>
   </data>
   <data name="HotkeyType_AbortScreenRecording" xml:space="preserve">
-    <value>中止螢幕錄製</value>
+    <value>停止螢幕錄製</value>
   </data>
   <data name="ScrollingCaptureScrollMethod_MouseWheel" xml:space="preserve">
     <value>模擬滑鼠滾輪捲動</value>
@@ -928,16 +928,16 @@
     <value>自動遞增 {n} 進制文數字元（1 &lt; n &lt; 63）</value>
   </data>
   <data name="ScrollingCaptureScrollMethod_SendMessageScroll" xml:space="preserve">
-    <value>傳送捲動訊息至視窗或控制項</value>
+    <value>傳送捲動訊息到視窗或控制項</value>
   </data>
   <data name="ScrollingCaptureScrollTopMethod_All" xml:space="preserve">
-    <value>先模擬按下「Home」鍵，然後傳送捲動至頂端訊息</value>
+    <value>先模擬按下「Home」鍵，然後傳送捲動到頂端訊息</value>
   </data>
   <data name="ScrollingCaptureScrollTopMethod_None" xml:space="preserve">
-    <value>停用捲動至頂端</value>
+    <value>停用捲動到頂端</value>
   </data>
   <data name="ScrollingCaptureScrollTopMethod_SendMessageTop" xml:space="preserve">
-    <value>傳送捲動至頂端訊息</value>
+    <value>傳送捲動到頂端訊息</value>
   </data>
   <data name="ScrollingCaptureScrollMethod_Automatic" xml:space="preserve">
     <value>自動嘗試所有方法，直到有可使用的</value>
@@ -1059,23 +1059,14 @@
   <data name="PNGBitDepth_Default" xml:space="preserve">
     <value>預設</value>
   </data>
-  <data name="ImageEditorInterpolationMode_Bicubic" xml:space="preserve">
-    <value>Bicubic</value>
-  </data>
-  <data name="ImageEditorInterpolationMode_Bilinear" xml:space="preserve">
-    <value>Bilinear</value>
-  </data>
   <data name="ImageEditorInterpolationMode_HighQualityBicubic" xml:space="preserve">
     <value>高品質 Bicubic</value>
   </data>
   <data name="ImageEditorInterpolationMode_HighQualityBilinear" xml:space="preserve">
     <value>高品質 Bilinear</value>
   </data>
-  <data name="ImageEditorInterpolationMode_NearestNeighbor" xml:space="preserve">
-    <value>Nearest Neighbor</value>
-  </data>
   <data name="ImageEditorStartMode_AutoSize" xml:space="preserve">
-    <value>自動大小</value>
+    <value>自動尺寸</value>
   </data>
   <data name="ImageEditorStartMode_Fullscreen" xml:space="preserve">
     <value>全螢幕</value>
@@ -1123,7 +1114,7 @@
     <value>隨機非相似文數字元（用 {n} 來重複）</value>
   </data>
   <data name="ReplCodeMenuEntry_rf_Random_line_from_file" xml:space="preserve">
-    <value>從檔案隨機產生一行（用 {filepath} 來指定檔案）</value>
+    <value>從檔案隨機獲取一行（用 {filepath} 來指定檔案）</value>
   </data>
   <data name="ShapeType_DrawingCursor" xml:space="preserve">
     <value>繪圖：游標</value>

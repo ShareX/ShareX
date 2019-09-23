@@ -124,7 +124,7 @@
     <value>取消</value>
   </data>
   <data name="btnChangeFont.Text" xml:space="preserve">
-    <value>更換字型...</value>
+    <value>更改字型...</value>
   </data>
   <data name="btnPrint.Text" xml:space="preserve">
     <value>列印...</value>

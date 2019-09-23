@@ -153,13 +153,13 @@
     <value>截圖資料夾...</value>
   </data>
   <data name="tsbTaskSettings.Text" xml:space="preserve">
-    <value>工作設定...</value>
+    <value>任務設定...</value>
   </data>
   <data name="tsddbAfterCaptureTasks.Text" xml:space="preserve">
-    <value>擷取後的工作</value>
+    <value>擷取後的任務</value>
   </data>
   <data name="tsddbAfterUploadTasks.Text" xml:space="preserve">
-    <value>上傳後的工作</value>
+    <value>上傳後的任務</value>
   </data>
   <data name="tsddbCapture.Text" xml:space="preserve">
     <value>擷取</value>
@@ -168,7 +168,7 @@
     <value>偵錯</value>
   </data>
   <data name="tsddbDestinations.Text" xml:space="preserve">
-    <value>目標</value>
+    <value>目的地</value>
   </data>
   <data name="tsddbTools.Text" xml:space="preserve">
     <value>工具</value>
@@ -183,7 +183,7 @@
     <value>自動擷取...</value>
   </data>
   <data name="tsmiClearList.Text" xml:space="preserve">
-    <value>清除工作清單</value>
+    <value>清除任務清單</value>
   </data>
   <data name="tsmiCopy.Text" xml:space="preserve">
     <value>複製</value>
@@ -198,7 +198,7 @@
     <value>檔名</value>
   </data>
   <data name="tsmiCopyFileNameWithExtension.Text" xml:space="preserve">
-    <value>帶副檔名的檔名</value>
+    <value>含副檔名的檔名</value>
   </data>
   <data name="tsmiCopyFilePath.Text" xml:space="preserve">
     <value>檔案路徑</value>
@@ -249,7 +249,7 @@
     <value>刪除本地檔案...</value>
   </data>
   <data name="tsmiDestinationSettings.Text" xml:space="preserve">
-    <value>目標設定...</value>
+    <value>目的地設定...</value>
   </data>
   <data name="tsmiDNSChanger.Text" xml:space="preserve">
     <value>更換 DNS...</value>
@@ -264,7 +264,7 @@
     <value>全螢幕</value>
   </data>
   <data name="tsmiHashCheck.Text" xml:space="preserve">
-    <value>雜湊（Hash）檢查...</value>
+    <value>雜湊檢查...</value>
   </data>
   <data name="tsmiHideMenu.Text" xml:space="preserve">
     <value>隱藏選單</value>
@@ -390,10 +390,10 @@
     <value>關於...</value>
   </data>
   <data name="tsmiTrayAfterCaptureTasks.Text" xml:space="preserve">
-    <value>擷取後的工作</value>
+    <value>擷取後的任務</value>
   </data>
   <data name="tsmiTrayAfterUploadTasks.Text" xml:space="preserve">
-    <value>上傳後的工作</value>
+    <value>上傳後的任務</value>
   </data>
   <data name="tsmiTrayApplicationSettings.Text" xml:space="preserve">
     <value>應用程式設定...</value>
@@ -405,10 +405,10 @@
     <value>擷取</value>
   </data>
   <data name="tsmiTrayDestinations.Text" xml:space="preserve">
-    <value>目標</value>
+    <value>目的地</value>
   </data>
   <data name="tsmiTrayDestinationSettings.Text" xml:space="preserve">
-    <value>目標設定...</value>
+    <value>目的地設定...</value>
   </data>
   <data name="tsmiTrayDNSChanger.Text" xml:space="preserve">
     <value>更換 DNS...</value>
@@ -426,7 +426,7 @@
     <value>全螢幕</value>
   </data>
   <data name="tsmiTrayHashCheck.Text" xml:space="preserve">
-    <value>雜湊（Hash）檢查...</value>
+    <value>雜湊檢查...</value>
   </data>
   <data name="tsmiTrayHistory.Text" xml:space="preserve">
     <value>歷史記錄...</value>
@@ -480,7 +480,7 @@
     <value>開啟主視窗</value>
   </data>
   <data name="tsmiTrayTaskSettings.Text" xml:space="preserve">
-    <value>工作設定...</value>
+    <value>任務設定...</value>
   </data>
   <data name="tsmiTrayTextUploaders.Text" xml:space="preserve">
     <value>文字上傳工具</value>
@@ -621,13 +621,13 @@
     <value>隱藏列</value>
   </data>
   <data name="tsmiDeleteSelectedItem.Text" xml:space="preserve">
-    <value>從清單移除工作</value>
+    <value>從清單移除任務</value>
   </data>
   <data name="tsmiSearchImage.Text" xml:space="preserve">
     <value>Google 圖片搜尋...</value>
   </data>
   <data name="tsmiOCRImage.Text" xml:space="preserve">
-    <value>圖轉文字（OCR）...</value>
+    <value>OCR 圖片...</value>
   </data>
   <data name="tsmiCombineImages.Text" xml:space="preserve">
     <value>合併圖片...</value>

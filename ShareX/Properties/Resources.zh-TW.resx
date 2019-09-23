@@ -154,7 +154,7 @@
     <value>不要再顯示此訊息。</value>
   </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_Task___0_" xml:space="preserve">
-    <value>工作：{0}</value>
+    <value>任務：{0}</value>
   </data>
   <data name="ScreenRecordForm_StartRecording_FFmpeg_video_and_audio_source_both_can_t_be__None__" xml:space="preserve">
     <value>FFmpeg 的視訊和音訊源不能皆為「無」。</value>
@@ -169,10 +169,10 @@
     <value>選擇快捷鍵…</value>
   </data>
   <data name="TaskSettingsForm_UpdateWindowTitle_Task_settings" xml:space="preserve">
-    <value>工作設定</value>
+    <value>任務設定</value>
   </data>
   <data name="BeforeUploadForm_BeforeUploadForm_Please_choose_a_destination_" xml:space="preserve">
-    <value>請選擇目標。</value>
+    <value>請選擇目的地。</value>
   </data>
   <data name="UploadTask_Prepare_Starting" xml:space="preserve">
     <value>開始中</value>
@@ -273,7 +273,7 @@
     <value>文字上傳測試</value>
   </data>
   <data name="TaskSettingsForm_UpdateWindowTitle_Task_settings_for__0_" xml:space="preserve">
-    <value>{0} 的工作設定</value>
+    <value>{0} 的任務設定</value>
   </data>
   <data name="UploadTask_DownloadAndUpload_Downloading" xml:space="preserve">
     <value>下載中</value>
@@ -282,7 +282,7 @@
     <value>完成</value>
   </data>
   <data name="BeforeUploadForm_BeforeUploadForm__0__is_about_to_be_uploaded_to__1___You_may_choose_a_different_destination_" xml:space="preserve">
-    <value>{0} 將上傳到 {1}。你可以選擇其他目標。</value>
+    <value>{0} 將上傳到 {1}。你可以選擇其他目的地。</value>
   </data>
   <data name="AboutForm_AboutForm_Website" xml:space="preserve">
     <value>網站</value>
@@ -377,7 +377,7 @@
     <value>停用快捷鍵</value>
   </data>
   <data name="TaskManager_task_UploadCompleted_ShareX___Task_completed" xml:space="preserve">
-    <value>工作完成</value>
+    <value>任務完成</value>
   </data>
   <data name="UploadManager_UploadFolder_Folder_upload" xml:space="preserve">
     <value>資料夾上傳</value>
@@ -433,7 +433,7 @@
     <value>編輯此選單...</value>
   </data>
   <data name="WorkerTask_GetInvalidConfigResult__0__configuration_is_invalid_or_missing__Please_check__Destination_settings__window_to_configure_it_" xml:space="preserve">
-    <value>{0} 設定無效或不存在。請前往「目標設定」視窗進行設定。</value>
+    <value>{0} 設定無效或不存在。請前往「目的地設定」視窗進行設定。</value>
   </data>
   <data name="MainForm_UpdateMainWindowLayout_Hide_columns" xml:space="preserve">
     <value>隱藏列</value>

@@ -158,10 +158,10 @@
     <value>顯示 FPS</value>
   </data>
   <data name="ShapeManager_CreateContextMenu_Height_" xml:space="preserve">
-    <value>高度：</value>
+    <value>高：</value>
   </data>
   <data name="ShapeManager_CreateContextMenu_Width_" xml:space="preserve">
-    <value>寬度：</value>
+    <value>寬：</value>
   </data>
   <data name="ShapeManager_CreateContextMenu_Fixed_size_region_mode" xml:space="preserve">
     <value>固定尺寸區域模式</value>
@@ -239,7 +239,7 @@
     <value>新增圖片效果：</value>
   </data>
   <data name="LightResizeNodes" xml:space="preserve">
-    <value>使用簡單的尺寸調整點</value>
+    <value>使用高亮尺寸調整點</value>
   </data>
   <data name="MagnifyStrength" xml:space="preserve">
     <value>放大程度：</value>
@@ -285,10 +285,10 @@
     <value>註釋選單</value>
   </data>
   <data name="ShapeManager_CreateToolbar_ApplyChangesContinueTaskEnter" xml:space="preserve">
-    <value>套用變更並繼續工作 (Enter)</value>
+    <value>套用變更並繼續任務 (Enter)</value>
   </data>
   <data name="ShapeManager_CreateToolbar_AutoCloseEditorOnTask" xml:space="preserve">
-    <value>在工作中自動關閉編輯器</value>
+    <value>在任務中自動關閉編輯器</value>
   </data>
   <data name="ShapeManager_CreateToolbar_AutoCropImage" xml:space="preserve">
     <value>自動裁切圖片...</value>
@@ -300,7 +300,7 @@
     <value>置於頂層</value>
   </data>
   <data name="ShapeManager_CreateToolbar_CancelTaskEsc" xml:space="preserve">
-    <value>取消工作 (Esc)</value>
+    <value>取消任務 (Esc)</value>
   </data>
   <data name="ShapeManager_CreateToolbar_CanvasSize" xml:space="preserve">
     <value>畫布尺寸...</value>
@@ -309,7 +309,7 @@
     <value>擷取區域</value>
   </data>
   <data name="ShapeManager_CreateToolbar_ContinueTaskSpaceOrRightClick" xml:space="preserve">
-    <value>繼續工作 (空白鍵或滑鼠右鍵)</value>
+    <value>繼續任務 (空白鍵或滑鼠右鍵)</value>
   </data>
   <data name="ShapeManager_CreateToolbar_CopyImageToClipboard" xml:space="preserve">
     <value>將圖片複製到剪貼簿 (Ctrl + Shift + C)</value>
@@ -381,7 +381,7 @@
     <value>逆時針旋轉 90°</value>
   </data>
   <data name="ShapeManager_CreateToolbar_RunAfterCaptureTasks" xml:space="preserve">
-    <value>完成擷取工作後執行 (Enter)</value>
+    <value>完成擷取任務後執行 (Enter)</value>
   </data>
   <data name="ShapeManager_CreateToolbar_SaveImage" xml:space="preserve">
     <value>儲存圖片 (Ctrl + S)</value>

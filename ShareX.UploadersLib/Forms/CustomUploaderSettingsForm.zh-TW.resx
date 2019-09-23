@@ -258,7 +258,7 @@ store.book[0].title</value>
 /store/book[1]/title</value>
   </data>
   <data name="mbDestinationType.ToolTip" xml:space="preserve">
-    <value>目前當使用者雙擊 .sxcu 檔以匯入自訂上傳工具時便會使用目標類型。</value>
+    <value>目前當使用者雙擊 .sxcu 檔以匯入自訂上傳工具時便會使用目的地類型。</value>
   </data>
   <data name="tpRegexParse.Text" xml:space="preserve">
     <value>正規表達式</value>

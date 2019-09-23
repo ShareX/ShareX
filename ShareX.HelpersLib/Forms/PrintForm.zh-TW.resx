@@ -139,7 +139,7 @@
     <value>自動縮放圖片</value>
   </data>
   <data name="cbCenterImage.Text" xml:space="preserve">
-    <value>中心圖片位置</value>
+    <value>圖片置中</value>
   </data>
   <data name="lblMargin.Text" xml:space="preserve">
     <value>邊距：</value>

@@ -120,7 +120,7 @@
     <value>描述：</value>
   </data>
   <data name="tpTask.Text" xml:space="preserve">
-    <value>工作</value>
+    <value>任務</value>
   </data>
   <data name="tpGeneral.Text" xml:space="preserve">
     <value>一般</value>
@@ -180,7 +180,7 @@
     <value>進階</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - 工作設定</value>
+    <value>ShareX - 任務設定</value>
   </data>
   <data name="btnWatchFolderAdd.Text" xml:space="preserve">
     <value>新增...</value>
@@ -312,7 +312,7 @@
     <value>擷取後顯示圖片效果視窗</value>
   </data>
   <data name="lblImageEffectsNote.Text" xml:space="preserve">
-    <value>備註：你可以在「擷取後的工作 -&gt; 新增圖片效果」啟用/停用圖片效果。</value>
+    <value>備註：你可以在「擷取後的任務 -&gt; 新增圖片效果」啟用/停用圖片效果。</value>
   </data>
   <data name="tpEffects.Text" xml:space="preserve">
     <value>效果</value>
@@ -333,13 +333,13 @@
     <value>擷取完畢後播放提示音</value>
   </data>
   <data name="cbPlaySoundAfterUpload.Text" xml:space="preserve">
-    <value>工作完成後播放提示音</value>
+    <value>任務完成後播放提示音</value>
   </data>
   <data name="lblAfterTaskNotification.Text" xml:space="preserve">
-    <value>工作完成後：</value>
+    <value>任務完成後：</value>
   </data>
   <data name="btnTask.Text" xml:space="preserve">
-    <value>工作...</value>
+    <value>任務...</value>
   </data>
   <data name="tsmiURLSharingServices.Text" xml:space="preserve">
     <value>網址分享服務</value>
@@ -357,7 +357,7 @@
     <value>圖片上傳工具</value>
   </data>
   <data name="btnDestinations.Text" xml:space="preserve">
-    <value>目標...</value>
+    <value>目的地...</value>
   </data>
   <data name="btnAfterUpload.Text" xml:space="preserve">
     <value>上傳後...</value>
@@ -462,7 +462,7 @@
     <value>覆寫上傳後設定</value>
   </data>
   <data name="cbOverrideDestinationSettings.Text" xml:space="preserve">
-    <value>覆寫目標</value>
+    <value>覆寫目的地</value>
   </data>
   <data name="chkOverrideAdvancedSettings.Text" xml:space="preserve">
     <value>覆寫進階設定</value>
@@ -507,7 +507,7 @@
     <value>覆寫工具設定</value>
   </data>
   <data name="lblActionsNote.Text" xml:space="preserve">
-    <value>備註：你可以在「擷取後的工作 -&gt; 執行動作」啟用/停用動作。</value>
+    <value>備註：你可以在「擷取後的任務 -&gt; 執行動作」啟用/停用動作。</value>
   </data>
   <data name="lblImagePNGBitDepth.Text" xml:space="preserve">
     <value>PNG 位元深度：</value>

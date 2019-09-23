@@ -132,7 +132,7 @@
     <value>確定</value>
   </data>
   <data name="btnRemove.Text" xml:space="preserve">
-    <value>刪除</value>
+    <value>移除</value>
   </data>
   <data name="btnSaveImage.Text" xml:space="preserve">
     <value>儲存圖片...</value>
@@ -156,7 +156,7 @@
     <value>重新整理</value>
   </data>
   <data name="btnRemovePreset.Text" xml:space="preserve">
-    <value>刪除預設</value>
+    <value>移除預設</value>
   </data>
   <data name="btnUploadImage.Text" xml:space="preserve">
     <value>上傳圖片</value>

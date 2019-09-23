@@ -130,7 +130,7 @@
     <value>確定</value>
   </data>
   <data name="btnRemove.Text" xml:space="preserve">
-    <value>刪除</value>
+    <value>移除</value>
   </data>
   <data name="cbtnCurrentColor.Text" xml:space="preserve">
     <value>顏色</value>

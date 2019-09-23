@@ -120,7 +120,7 @@
     <value>瀏覽憑證檔案...</value>
   </data>
   <data name="UploadersConfigForm_oAuthJira_RefreshButtonClicked_Refresh_authorization_is_not_supported_" xml:space="preserve">
-    <value>不支援重新整理授權。</value>
+    <value>不支援重新整理驗證。</value>
   </data>
   <data name="UploadersConfigForm_LoadSettings_Invalid_device_name" xml:space="preserve">
     <value>無效的裝置名稱</value>
@@ -232,7 +232,7 @@
     <value>必須設定「請求網址」。</value>
   </data>
   <data name="UploadersConfigForm_eiCustomUploaders_ExportRequested_DestinationTypeMustBeConfigured" xml:space="preserve">
-    <value>必須設定「目標類型」。</value>
+    <value>必須設定「目的地類型」。</value>
   </data>
   <data name="UploadersConfigForm_UpdatePastebinStatus_LoggedIn" xml:space="preserve">
     <value>已登入。</value>

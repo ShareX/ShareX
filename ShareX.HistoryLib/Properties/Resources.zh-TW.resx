@@ -135,7 +135,7 @@
     <value>檔名</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_File_name_with_extension" xml:space="preserve">
-    <value>檔名+副檔名</value>
+    <value>含副檔名的檔名</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_File_path" xml:space="preserve">
     <value>檔案路徑</value>
@@ -240,7 +240,7 @@
     <value>副檔名：</value>
   </data>
   <data name="HistoryStats_Hosts" xml:space="preserve">
-    <value>域名：</value>
+    <value>主機：</value>
   </data>
   <data name="HistoryStats_Total" xml:space="preserve">
     <value>總計：</value>

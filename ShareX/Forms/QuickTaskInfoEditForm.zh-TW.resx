@@ -118,16 +118,16 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="lblAfterCaptureTasks.Text" xml:space="preserve">
-    <value>擷取工作後：</value>
+    <value>擷取任務後：</value>
   </data>
   <data name="lblName.Text" xml:space="preserve">
     <value>選單文字：</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - 編輯快速工作選單</value>
+    <value>ShareX - 編輯快速任務選單</value>
   </data>
   <data name="lblAfterUploadTasks.Text" xml:space="preserve">
-    <value>上傳工作後：</value>
+    <value>上傳任務後：</value>
   </data>
   <data name="btnOK.Text" xml:space="preserve">
     <value>確定</value>

@@ -168,7 +168,7 @@
     <value>瀏覽...</value>
   </data>
   <data name="btnClipboardFormatRemove.Text" xml:space="preserve">
-    <value>刪除</value>
+    <value>移除</value>
   </data>
   <data name="btnClipboardFormatAdd.Text" xml:space="preserve">
     <value>新增...</value>
@@ -288,10 +288,10 @@
     <value>匯出/匯入</value>
   </data>
   <data name="cbHistorySaveTasks.Text" xml:space="preserve">
-    <value>儲存工作歷史</value>
+    <value>儲存任務歷史</value>
   </data>
   <data name="lblRecentTasksMaxCount.Text" xml:space="preserve">
-    <value>儲存的最大工作數量：</value>
+    <value>儲存的最大任務數量：</value>
   </data>
   <data name="cbHistoryCheckURL.Text" xml:space="preserve">
     <value>僅在有網址時儲存</value>
@@ -300,22 +300,22 @@
     <value>歷史</value>
   </data>
   <data name="cbRecentTasksTrayMenuMostRecentFirst.Text" xml:space="preserve">
-    <value>在系統匣選單優先顯示最近的工作</value>
+    <value>在系統匣選單優先顯示最近的任務</value>
   </data>
   <data name="cbRecentTasksShowInTrayMenu.Text" xml:space="preserve">
-    <value>在系統匣選單顯示最近的工作</value>
+    <value>在系統匣選單顯示最近的任務</value>
   </data>
   <data name="cbRecentTasksSave.Text" xml:space="preserve">
-    <value>儲存最近的工作</value>
+    <value>儲存最近的任務</value>
   </data>
   <data name="gbRecentLinks.Text" xml:space="preserve">
-    <value>最近的工作</value>
+    <value>最近的任務</value>
   </data>
   <data name="tpHistory.Text" xml:space="preserve">
     <value>歷史</value>
   </data>
   <data name="cbRecentTasksShowInMainWindow.Text" xml:space="preserve">
-    <value>啟動時在主視窗中顯示最近的工作</value>
+    <value>啟動時在主視窗中顯示最近的任務</value>
   </data>
   <data name="cbFirefoxAddonSupport.Text" xml:space="preserve">
     <value>啟用 Firefox 附加元件支援</value>

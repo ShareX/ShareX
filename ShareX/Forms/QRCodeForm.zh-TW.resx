@@ -138,7 +138,7 @@
     <value>識別圖片檔案中的二維碼...</value>
   </data>
   <data name="lblDecodeResult.Text" xml:space="preserve">
-    <value>結果...</value>
+    <value>結果：</value>
   </data>
   <data name="tpDecode.Text" xml:space="preserve">
     <value>識別</value>

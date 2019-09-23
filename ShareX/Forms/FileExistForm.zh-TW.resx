@@ -127,7 +127,7 @@
     <value>使用新名稱：</value>
   </data>
   <data name="btnOverwrite.Text" xml:space="preserve">
-    <value>覆蓋：</value>
+    <value>覆寫：</value>
   </data>
   <data name="btnUniqueName.Text" xml:space="preserve">
     <value>使用唯一名稱：</value>

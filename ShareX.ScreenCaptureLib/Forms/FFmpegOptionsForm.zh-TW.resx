@@ -129,7 +129,7 @@
     <value>重新整理</value>
   </data>
   <data name="btnTest.Text" xml:space="preserve">
-    <value>使用命令提示字元測試</value>
+    <value>使用 CMD 測試</value>
   </data>
   <data name="cbCustomCommands.Text" xml:space="preserve">
     <value>使用自訂命令</value>

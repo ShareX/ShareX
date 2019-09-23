@@ -124,16 +124,16 @@
     <value>套用篩選條件</value>
   </data>
   <data name="btnRemoveFilters.Text" xml:space="preserve">
-    <value>刪除篩選條件</value>
+    <value>移除篩選條件</value>
   </data>
   <data name="cbDateFilter.Text" xml:space="preserve">
-    <value>日期篩選：</value>
+    <value>日期：</value>
   </data>
   <data name="cbHostFilter.Text" xml:space="preserve">
-    <value>主機篩選：</value>
+    <value>主機：</value>
   </data>
   <data name="cbTypeFilter.Text" xml:space="preserve">
-    <value>檔案類型篩選：</value>
+    <value>類型：</value>
   </data>
   <data name="chDateTime.Text" xml:space="preserve">
     <value>日期</value>

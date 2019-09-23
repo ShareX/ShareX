@@ -117,7 +117,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="lblWidth.Text" xml:space="preserve">
-    <value>寬度：</value>
+    <value>寬：</value>
   </data>
   <data name="cbTransparent.Text" xml:space="preserve">
     <value>透明</value>
@@ -135,7 +135,7 @@
     <value>確定</value>
   </data>
   <data name="lblHeight.Text" xml:space="preserve">
-    <value>高度：</value>
+    <value>高：</value>
   </data>
   <data name="btnChangeColor.Text" xml:space="preserve">
     <value>更改顏色...</value>

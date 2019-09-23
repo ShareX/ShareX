@@ -118,13 +118,13 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="$this.Text" xml:space="preserve">
-    <value>雜湊（Hash）檢查</value>
+    <value>雜湊檢查</value>
   </data>
   <data name="btnFilePathBrowse.Text" xml:space="preserve">
     <value>瀏覽...</value>
   </data>
   <data name="btnStartHashCheck.Text" xml:space="preserve">
-    <value>開始</value>
+    <value>檢查</value>
   </data>
   <data name="lblFile.Text" xml:space="preserve">
     <value>檔案路徑：</value>
@@ -139,7 +139,7 @@
     <value>目標：</value>
   </data>
   <data name="tpFileHashCheck.Text" xml:space="preserve">
-    <value>檔案雜湊（Hash）檢查</value>
+    <value>檔案雜湊檢查</value>
   </data>
   <data name="btnHashCheckCopyAll.Text" xml:space="preserve">
     <value>複製全部</value>
@@ -171,10 +171,7 @@
   <data name="btnHashCheckDecodeASCII.Text" xml:space="preserve">
     <value>解碼</value>
   </data>
-  <data name="lblHashCheckBase64.Text" xml:space="preserve">
-    <value>Base64：</value>
-  </data>
   <data name="lblHashCheckHash.Text" xml:space="preserve">
-    <value>雜湊（Hash）：</value>
+    <value>雜湊：</value>
   </data>
 </root>
