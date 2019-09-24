@@ -805,6 +805,8 @@ namespace ShareX
             {
                 tsMain.Renderer = new ToolStripDarkRenderer();
                 tsMain.DrawCustomBorder = false;
+                tsSocialButtons.Renderer = new ToolStripDarkRenderer();
+                tsSocialButtons.DrawCustomBorder = false;
                 cmsTray.Renderer = new ToolStripDarkRenderer();
                 cmsTaskInfo.Renderer = new ToolStripDarkRenderer();
                 ttMain.BackColor = ShareXResources.Theme.BackgroundColor;
@@ -825,6 +827,8 @@ namespace ShareX
             {
                 tsMain.Renderer = new ToolStripCustomRenderer();
                 tsMain.DrawCustomBorder = true;
+                tsSocialButtons.Renderer = new ToolStripCustomRenderer();
+                tsSocialButtons.DrawCustomBorder = true;
                 cmsTray.Renderer = new ToolStripCustomRenderer();
                 cmsTaskInfo.Renderer = new ToolStripCustomRenderer();
                 ttMain.BackColor = SystemColors.Window;

@@ -162,6 +162,7 @@
             this.tsmiUploadSelectedFile = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiDownloadSelectedURL = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiEditSelectedFile = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiRunAction = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiDeleteSelectedItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiDeleteSelectedFile = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiShortenSelectedURL = new System.Windows.Forms.ToolStripMenuItem();
@@ -274,8 +275,10 @@
             this.timerTraySingleClick = new System.Windows.Forms.Timer(this.components);
             this.pNews = new System.Windows.Forms.Panel();
             this.btnCloseNews = new System.Windows.Forms.Button();
+            this.ucNews = new ShareX.NewsListControl();
             this.pThumbnailView = new System.Windows.Forms.Panel();
             this.lblThumbnailViewTip = new System.Windows.Forms.Label();
+            this.ucTaskThumbnailView = new ShareX.TaskThumbnailView();
             this.flpSocialButtons = new System.Windows.Forms.FlowLayoutPanel();
             this.pbPatreonButton = new System.Windows.Forms.PictureBox();
             this.pbBitcoinButton = new System.Windows.Forms.PictureBox();
@@ -283,9 +286,13 @@
             this.pbDiscordButton = new System.Windows.Forms.PictureBox();
             this.pbSocialHideButton = new System.Windows.Forms.PictureBox();
             this.ttMain = new System.Windows.Forms.ToolTip(this.components);
-            this.tsmiRunAction = new System.Windows.Forms.ToolStripMenuItem();
-            this.ucNews = new ShareX.NewsListControl();
-            this.ucTaskThumbnailView = new ShareX.TaskThumbnailView();
+            this.pToolbars = new System.Windows.Forms.Panel();
+            this.tsSocialButtons = new ShareX.HelpersLib.ToolStripBorderRight();
+            this.tsbPatreon = new System.Windows.Forms.ToolStripButton();
+            this.tsbBitcoin = new System.Windows.Forms.ToolStripButton();
+            this.tsbTwitter = new System.Windows.Forms.ToolStripButton();
+            this.tsbDiscord = new System.Windows.Forms.ToolStripButton();
+            this.tsbGitHub = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.scMain)).BeginInit();
             this.scMain.Panel1.SuspendLayout();
             this.scMain.Panel2.SuspendLayout();
@@ -301,6 +308,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbTwitterButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbDiscordButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbSocialHideButton)).BeginInit();
+            this.pToolbars.SuspendLayout();
+            this.tsSocialButtons.SuspendLayout();
             this.SuspendLayout();
             // 
             // scMain
@@ -1324,6 +1333,12 @@
             resources.ApplyResources(this.tsmiEditSelectedFile, "tsmiEditSelectedFile");
             this.tsmiEditSelectedFile.Click += new System.EventHandler(this.tsmiEditSelectedFile_Click);
             // 
+            // tsmiRunAction
+            // 
+            this.tsmiRunAction.Image = global::ShareX.Properties.Resources.application_terminal;
+            this.tsmiRunAction.Name = "tsmiRunAction";
+            resources.ApplyResources(this.tsmiRunAction, "tsmiRunAction");
+            // 
             // tsmiDeleteSelectedItem
             // 
             this.tsmiDeleteSelectedItem.Image = global::ShareX.Properties.Resources.script__minus;
@@ -2174,6 +2189,12 @@
             this.btnCloseNews.UseVisualStyleBackColor = true;
             this.btnCloseNews.Click += new System.EventHandler(this.btnCloseNews_Click);
             // 
+            // ucNews
+            // 
+            this.ucNews.BackColor = System.Drawing.SystemColors.Window;
+            resources.ApplyResources(this.ucNews, "ucNews");
+            this.ucNews.Name = "ucNews";
+            // 
             // pThumbnailView
             // 
             this.pThumbnailView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(47)))), ((int)(((byte)(56)))));
@@ -2190,6 +2211,16 @@
             this.lblThumbnailViewTip.Name = "lblThumbnailViewTip";
             this.lblThumbnailViewTip.UseMnemonic = false;
             this.lblThumbnailViewTip.MouseUp += new System.Windows.Forms.MouseEventHandler(this.LblThumbnailViewTip_MouseUp);
+            // 
+            // ucTaskThumbnailView
+            // 
+            resources.ApplyResources(this.ucTaskThumbnailView, "ucTaskThumbnailView");
+            this.ucTaskThumbnailView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(47)))), ((int)(((byte)(56)))));
+            this.ucTaskThumbnailView.Name = "ucTaskThumbnailView";
+            this.ucTaskThumbnailView.ThumbnailSize = new System.Drawing.Size(200, 150);
+            this.ucTaskThumbnailView.TitleLocation = ShareX.ThumbnailTitleLocation.Top;
+            this.ucTaskThumbnailView.TitleVisible = true;
+            this.ucTaskThumbnailView.ContextMenuRequested += new ShareX.TaskThumbnailView.TaskViewMouseEventHandler(this.UcTaskView_ContextMenuRequested);
             // 
             // flpSocialButtons
             // 
@@ -2259,27 +2290,64 @@
             this.ttMain.ReshowDelay = 100;
             this.ttMain.Draw += new System.Windows.Forms.DrawToolTipEventHandler(this.TtMain_Draw);
             // 
-            // tsmiRunAction
+            // pToolbars
             // 
-            this.tsmiRunAction.Image = global::ShareX.Properties.Resources.application_terminal;
-            this.tsmiRunAction.Name = "tsmiRunAction";
-            resources.ApplyResources(this.tsmiRunAction, "tsmiRunAction");
+            this.pToolbars.Controls.Add(this.tsMain);
+            this.pToolbars.Controls.Add(this.tsSocialButtons);
+            resources.ApplyResources(this.pToolbars, "pToolbars");
+            this.pToolbars.Name = "pToolbars";
             // 
-            // ucNews
+            // tsSocialButtons
             // 
-            this.ucNews.BackColor = System.Drawing.SystemColors.Window;
-            resources.ApplyResources(this.ucNews, "ucNews");
-            this.ucNews.Name = "ucNews";
+            this.tsSocialButtons.CanOverflow = false;
+            resources.ApplyResources(this.tsSocialButtons, "tsSocialButtons");
+            this.tsSocialButtons.DrawCustomBorder = true;
+            this.tsSocialButtons.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.tsSocialButtons.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsbPatreon,
+            this.tsbBitcoin,
+            this.tsbTwitter,
+            this.tsbDiscord,
+            this.tsbGitHub});
+            this.tsSocialButtons.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
+            this.tsSocialButtons.Name = "tsSocialButtons";
             // 
-            // ucTaskThumbnailView
+            // tsbPatreon
             // 
-            resources.ApplyResources(this.ucTaskThumbnailView, "ucTaskThumbnailView");
-            this.ucTaskThumbnailView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(47)))), ((int)(((byte)(56)))));
-            this.ucTaskThumbnailView.Name = "ucTaskThumbnailView";
-            this.ucTaskThumbnailView.ThumbnailSize = new System.Drawing.Size(200, 150);
-            this.ucTaskThumbnailView.TitleLocation = ShareX.ThumbnailTitleLocation.Top;
-            this.ucTaskThumbnailView.TitleVisible = true;
-            this.ucTaskThumbnailView.ContextMenuRequested += new ShareX.TaskThumbnailView.TaskViewMouseEventHandler(this.UcTaskView_ContextMenuRequested);
+            this.tsbPatreon.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbPatreon.Image = global::ShareX.Properties.Resources.Patreon_16x16;
+            resources.ApplyResources(this.tsbPatreon, "tsbPatreon");
+            this.tsbPatreon.Name = "tsbPatreon";
+            // 
+            // tsbBitcoin
+            // 
+            this.tsbBitcoin.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(this.tsbBitcoin, "tsbBitcoin");
+            this.tsbBitcoin.Margin = new System.Windows.Forms.Padding(3, 1, 0, 2);
+            this.tsbBitcoin.Name = "tsbBitcoin";
+            // 
+            // tsbTwitter
+            // 
+            this.tsbTwitter.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(this.tsbTwitter, "tsbTwitter");
+            this.tsbTwitter.Margin = new System.Windows.Forms.Padding(3, 1, 0, 2);
+            this.tsbTwitter.Name = "tsbTwitter";
+            // 
+            // tsbDiscord
+            // 
+            this.tsbDiscord.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbDiscord.Image = global::ShareX.Properties.Resources.Discord_16x16;
+            resources.ApplyResources(this.tsbDiscord, "tsbDiscord");
+            this.tsbDiscord.Margin = new System.Windows.Forms.Padding(3, 1, 0, 2);
+            this.tsbDiscord.Name = "tsbDiscord";
+            // 
+            // tsbGitHub
+            // 
+            this.tsbGitHub.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbGitHub.Image = global::ShareX.Properties.Resources.GitHub_16x16;
+            resources.ApplyResources(this.tsbGitHub, "tsbGitHub");
+            this.tsbGitHub.Margin = new System.Windows.Forms.Padding(3, 1, 0, 2);
+            this.tsbGitHub.Name = "tsbGitHub";
             // 
             // MainForm
             // 
@@ -2291,7 +2359,7 @@
             this.Controls.Add(this.flpSocialButtons);
             this.Controls.Add(this.pThumbnailView);
             this.Controls.Add(this.scMain);
-            this.Controls.Add(this.tsMain);
+            this.Controls.Add(this.pToolbars);
             this.DoubleBuffered = true;
             this.Name = "MainForm";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
@@ -2320,6 +2388,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbTwitterButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbDiscordButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbSocialHideButton)).EndInit();
+            this.pToolbars.ResumeLayout(false);
+            this.pToolbars.PerformLayout();
+            this.tsSocialButtons.ResumeLayout(false);
+            this.tsSocialButtons.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2583,5 +2655,12 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiThumbnailTitleTop;
         private System.Windows.Forms.ToolStripMenuItem tsmiThumbnailTitleBottom;
         private System.Windows.Forms.ToolStripMenuItem tsmiRunAction;
+        private System.Windows.Forms.Panel pToolbars;
+        private HelpersLib.ToolStripBorderRight tsSocialButtons;
+        private System.Windows.Forms.ToolStripButton tsbPatreon;
+        private System.Windows.Forms.ToolStripButton tsbBitcoin;
+        private System.Windows.Forms.ToolStripButton tsbTwitter;
+        private System.Windows.Forms.ToolStripButton tsbDiscord;
+        private System.Windows.Forms.ToolStripButton tsbGitHub;
     }
 }

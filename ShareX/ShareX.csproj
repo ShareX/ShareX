@@ -1679,6 +1679,21 @@
   <ItemGroup>
     <None Include="Resources\ir.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Discord-16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Twitter-16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Patreon-16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bitcoin-16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GitHub-16x16.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>

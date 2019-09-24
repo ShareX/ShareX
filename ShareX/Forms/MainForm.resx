@@ -141,7 +141,7 @@
     <value>10, 0, 10, 0</value>
   </data>
   <data name="lblListViewTip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>320, 366</value>
+    <value>320, 353</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="lblListViewTip.TabIndex" type="System.Int32, mscorlib">
@@ -205,7 +205,7 @@
     <value>0, 0</value>
   </data>
   <data name="lvUploads.Size" type="System.Drawing.Size, System.Drawing">
-    <value>335, 429</value>
+    <value>335, 416</value>
   </data>
   <data name="lvUploads.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -241,7 +241,7 @@
     <value>0, 0</value>
   </data>
   <data name="pbPreview.Size" type="System.Drawing.Size, System.Drawing">
-    <value>333, 429</value>
+    <value>333, 416</value>
   </data>
   <data name="pbPreview.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -271,7 +271,7 @@
     <value>1</value>
   </data>
   <data name="scMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>674, 429</value>
+    <value>674, 416</value>
   </data>
   <data name="scMain.SplitterDistance" type="System.Int32, mscorlib">
     <value>335</value>
@@ -301,7 +301,7 @@
     <value>False</value>
   </data>
   <data name="tsMain.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Left</value>
+    <value>Fill</value>
   </data>
   <data name="tsmiFullscreen.Size" type="System.Drawing.Size, System.Drawing">
     <value>191, 22</value>
@@ -850,7 +850,7 @@
     <value>6, 6, 6, 6</value>
   </data>
   <data name="tsMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>160, 429</value>
+    <value>160, 383</value>
   </data>
   <data name="tsMain.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -862,10 +862,10 @@
     <value>ShareX.HelpersLib.ToolStripBorderRight, ShareX.HelpersLib, Version=13.0.2.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;tsMain.Parent" xml:space="preserve">
-    <value>$this</value>
+    <value>pToolbars</value>
   </data>
   <data name="&gt;&gt;tsMain.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>0</value>
   </data>
   <metadata name="cmsTaskInfo.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>286, 17</value>
@@ -1822,7 +1822,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnCloseNews.Location" type="System.Drawing.Point, System.Drawing">
-    <value>552, 392</value>
+    <value>552, 379</value>
   </data>
   <data name="btnCloseNews.Size" type="System.Drawing.Size, System.Drawing">
     <value>99, 31</value>
@@ -1852,7 +1852,7 @@
     <value>0, 0</value>
   </data>
   <data name="ucNews.Size" type="System.Drawing.Size, System.Drawing">
-    <value>674, 429</value>
+    <value>674, 416</value>
   </data>
   <data name="ucNews.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -1876,7 +1876,7 @@
     <value>160, 0</value>
   </data>
   <data name="pNews.Size" type="System.Drawing.Size, System.Drawing">
-    <value>674, 429</value>
+    <value>674, 416</value>
   </data>
   <data name="pNews.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -1912,7 +1912,7 @@
     <value>20, 20, 20, 20</value>
   </data>
   <data name="lblThumbnailViewTip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>674, 429</value>
+    <value>674, 416</value>
   </data>
   <data name="lblThumbnailViewTip.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -1939,7 +1939,7 @@
     <value>0, 0</value>
   </data>
   <data name="ucTaskThumbnailView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>674, 429</value>
+    <value>674, 416</value>
   </data>
   <data name="ucTaskThumbnailView.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1963,7 +1963,7 @@
     <value>160, 0</value>
   </data>
   <data name="pThumbnailView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>674, 429</value>
+    <value>674, 416</value>
   </data>
   <data name="pThumbnailView.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -2158,7 +2158,7 @@
     <value>4</value>
   </data>
   <data name="flpSocialButtons.Location" type="System.Drawing.Point, System.Drawing">
-    <value>614, 379</value>
+    <value>614, 366</value>
   </data>
   <data name="flpSocialButtons.Size" type="System.Drawing.Size, System.Drawing">
     <value>215, 45</value>
@@ -2178,6 +2178,127 @@
   <data name="&gt;&gt;flpSocialButtons.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
+  <metadata name="tsSocialButtons.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>654, 17</value>
+  </metadata>
+  <data name="tsSocialButtons.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <data name="tsbPatreon.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="tsbPatreon.Size" type="System.Drawing.Size, System.Drawing">
+    <value>23, 20</value>
+  </data>
+  <data name="tsbPatreon.Text" xml:space="preserve">
+    <value>Patreon</value>
+  </data>
+  <data name="tsbBitcoin.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFTSURBVDhPfZI/SwMxGMYP0W8g0kQoToIuKk5+BQc/g+Cu
+        4CYIfoGi10stiFjEwU/gIIrgXHBRnFzUDoo4qLRJ2t5dTN7L0fzTHzzkvbzPk8tdErnQGFUZmeowgoUp
+        WsextvyNNL67QVecoC1ttwmaj+e9OSWaoKaOFbDa5Kdp4K1FGEXaL0aJ2Vfih5U5CHOCZ91m9vEAIUX2
+        difSx3OrXwoW6NYrT6GmIv96FsP2AdRi0PM9R8sTwW9XgszVJtTDdgzProcmeDe4QP9iHQIm+U/H87EE
+        nQYXKP+BqnlrCWr1Oa5P7iDxFijJv1+9OdOnxBvTq5E804Y1ebIgd3CvIyOyl1srrASnoHAbIuXFKHF7
+        peTVvtRxuAtrnqk5IwY32/acIR0dQQnaCRlDEnvRmI7ZdPerKBQo1SOVa239H/mGcXnGGyzBZ4ygGiV4
+        RbccougX1tQ//WcNkRoAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="tsbBitcoin.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="tsbBitcoin.Size" type="System.Drawing.Size, System.Drawing">
+    <value>23, 20</value>
+  </data>
+  <data name="tsbBitcoin.Text" xml:space="preserve">
+    <value>Bitcoin</value>
+  </data>
+  <data name="tsbTwitter.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADaSURBVDhP3Ys9CsJAEEa39AhKsht/EGxs7LQRtPUwHsAD
+        2NumyCSK5AQ2ipVX8AS2wWQ3riBojGZAkowH0AcfZCfvsd9AuNKpwvnKQS7wxKx9UsHPVAAJqTTDZ440
+        SoozHXmwVrKDCmMmRNvsZ3jC0xvh6kExfs8ONSoZrbXmRUGAmnNQ09wd1wQtMM0wnWhnuOpIydQw+9D2
+        LwYlfhtmeeogh5RMbINJHuGqESGXhjqN8NSYQ3Cnwtcs0H1UaRpL1a1BcKNi4cU91MoIiCfcDh5kCJGP
+        2n/C2BMwaA3cWix0BAAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="tsbTwitter.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="tsbTwitter.Size" type="System.Drawing.Size, System.Drawing">
+    <value>23, 20</value>
+  </data>
+  <data name="tsbTwitter.Text" xml:space="preserve">
+    <value>Twitter</value>
+  </data>
+  <data name="tsbDiscord.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="tsbDiscord.Size" type="System.Drawing.Size, System.Drawing">
+    <value>23, 20</value>
+  </data>
+  <data name="tsbDiscord.Text" xml:space="preserve">
+    <value>Discord</value>
+  </data>
+  <data name="tsbGitHub.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="tsbGitHub.Size" type="System.Drawing.Size, System.Drawing">
+    <value>23, 20</value>
+  </data>
+  <data name="tsbGitHub.Text" xml:space="preserve">
+    <value>GitHub</value>
+  </data>
+  <data name="tsSocialButtons.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 383</value>
+  </data>
+  <data name="tsSocialButtons.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>6, 5, 6, 5</value>
+  </data>
+  <data name="tsSocialButtons.Size" type="System.Drawing.Size, System.Drawing">
+    <value>160, 33</value>
+  </data>
+  <data name="tsSocialButtons.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;tsSocialButtons.Name" xml:space="preserve">
+    <value>tsSocialButtons</value>
+  </data>
+  <data name="&gt;&gt;tsSocialButtons.Type" xml:space="preserve">
+    <value>ShareX.HelpersLib.ToolStripBorderRight, ShareX.HelpersLib, Version=13.0.2.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;tsSocialButtons.Parent" xml:space="preserve">
+    <value>pToolbars</value>
+  </data>
+  <data name="&gt;&gt;tsSocialButtons.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="pToolbars.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="pToolbars.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="pToolbars.Size" type="System.Drawing.Size, System.Drawing">
+    <value>160, 416</value>
+  </data>
+  <data name="pToolbars.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;pToolbars.Name" xml:space="preserve">
+    <value>pToolbars</value>
+  </data>
+  <data name="&gt;&gt;pToolbars.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pToolbars.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;pToolbars.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -2188,10 +2309,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>834, 429</value>
-  </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+    <value>834, 416</value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>500, 250</value>
@@ -2955,6 +3073,12 @@
   <data name="&gt;&gt;tsmiEditSelectedFile.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;tsmiRunAction.Name" xml:space="preserve">
+    <value>tsmiRunAction</value>
+  </data>
+  <data name="&gt;&gt;tsmiRunAction.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;tsmiDeleteSelectedItem.Name" xml:space="preserve">
     <value>tsmiDeleteSelectedItem</value>
   </data>
@@ -3615,11 +3739,35 @@
   <data name="&gt;&gt;ttMain.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;tsmiRunAction.Name" xml:space="preserve">
-    <value>tsmiRunAction</value>
+  <data name="&gt;&gt;tsbPatreon.Name" xml:space="preserve">
+    <value>tsbPatreon</value>
   </data>
-  <data name="&gt;&gt;tsmiRunAction.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;tsbPatreon.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsbBitcoin.Name" xml:space="preserve">
+    <value>tsbBitcoin</value>
+  </data>
+  <data name="&gt;&gt;tsbBitcoin.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsbTwitter.Name" xml:space="preserve">
+    <value>tsbTwitter</value>
+  </data>
+  <data name="&gt;&gt;tsbTwitter.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsbDiscord.Name" xml:space="preserve">
+    <value>tsbDiscord</value>
+  </data>
+  <data name="&gt;&gt;tsbDiscord.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsbGitHub.Name" xml:space="preserve">
+    <value>tsbGitHub</value>
+  </data>
+  <data name="&gt;&gt;tsbGitHub.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MainForm</value>
