@@ -740,8 +740,8 @@ namespace ShareX.HelpersLib
 
                         if (e.Bounds.Right < lv.ClientRectangle.Right)
                         {
-                            using (Pen pen = new Pen(Color.FromArgb(22, 26, 31)))
-                            using (Pen pen2 = new Pen(Color.FromArgb(56, 64, 75)))
+                            using (Pen pen = new Pen(ShareXResources.Theme.SeparatorDarkColor))
+                            using (Pen pen2 = new Pen(ShareXResources.Theme.SeparatorLightColor))
                             {
                                 e.Graphics.DrawLine(pen, e.Bounds.Right - 2, e.Bounds.Top, e.Bounds.Right - 2, e.Bounds.Bottom - 1);
                                 e.Graphics.DrawLine(pen2, e.Bounds.Right - 1, e.Bounds.Top, e.Bounds.Right - 1, e.Bounds.Bottom - 1);
