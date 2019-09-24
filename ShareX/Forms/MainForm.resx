@@ -141,7 +141,7 @@
     <value>10, 0, 10, 0</value>
   </data>
   <data name="lblListViewTip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>320, 457</value>
+    <value>320, 402</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="lblListViewTip.TabIndex" type="System.Int32, mscorlib">
@@ -166,7 +166,7 @@
     <value>0, 0</value>
   </data>
   <data name="lvUploads.Size" type="System.Drawing.Size, System.Drawing">
-    <value>335, 520</value>
+    <value>335, 465</value>
   </data>
   <data name="lvUploads.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -202,7 +202,7 @@
     <value>0, 0</value>
   </data>
   <data name="pbPreview.Size" type="System.Drawing.Size, System.Drawing">
-    <value>333, 520</value>
+    <value>333, 465</value>
   </data>
   <data name="pbPreview.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -232,7 +232,7 @@
     <value>1</value>
   </data>
   <data name="scMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>674, 520</value>
+    <value>674, 465</value>
   </data>
   <data name="scMain.SplitterDistance" type="System.Int32, mscorlib">
     <value>335</value>
@@ -253,7 +253,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;scMain.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>4</value>
   </data>
   <data name="chFilename.Text" xml:space="preserve">
     <value>Filename</value>
@@ -310,7 +310,7 @@
     <value>6, 6, 6, 0</value>
   </data>
   <data name="tsMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>160, 484</value>
+    <value>160, 429</value>
   </data>
   <data name="tsMain.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -866,6 +866,9 @@
   </data>
   <data name="tsbAbout.Text" xml:space="preserve">
     <value>About...</value>
+  </data>
+  <data name="tssMain3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>147, 6</value>
   </data>
   <metadata name="cmsTaskInfo.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>286, 17</value>
@@ -1840,7 +1843,7 @@
     <value>160, 0</value>
   </data>
   <data name="pNews.Size" type="System.Drawing.Size, System.Drawing">
-    <value>674, 520</value>
+    <value>674, 465</value>
   </data>
   <data name="pNews.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -1873,7 +1876,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnCloseNews.Location" type="System.Drawing.Point, System.Drawing">
-    <value>552, 483</value>
+    <value>552, 428</value>
   </data>
   <data name="btnCloseNews.Size" type="System.Drawing.Size, System.Drawing">
     <value>99, 31</value>
@@ -1903,7 +1906,7 @@
     <value>0, 0</value>
   </data>
   <data name="ucNews.Size" type="System.Drawing.Size, System.Drawing">
-    <value>674, 520</value>
+    <value>674, 465</value>
   </data>
   <data name="ucNews.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -1951,7 +1954,7 @@
     <value>160, 0</value>
   </data>
   <data name="pThumbnailView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>674, 520</value>
+    <value>674, 465</value>
   </data>
   <data name="pThumbnailView.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -1966,7 +1969,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;pThumbnailView.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>3</value>
   </data>
   <data name="lblThumbnailViewTip.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -1984,7 +1987,7 @@
     <value>20, 20, 20, 20</value>
   </data>
   <data name="lblThumbnailViewTip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>674, 520</value>
+    <value>674, 465</value>
   </data>
   <data name="lblThumbnailViewTip.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -2011,7 +2014,7 @@
     <value>0, 0</value>
   </data>
   <data name="ucTaskThumbnailView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>674, 520</value>
+    <value>674, 465</value>
   </data>
   <data name="ucTaskThumbnailView.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -2028,264 +2031,6 @@
   <data name="&gt;&gt;ucTaskThumbnailView.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="flpSocialButtons.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Right</value>
-  </data>
-  <data name="flpSocialButtons.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="flpSocialButtons.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
-    <value>GrowAndShrink</value>
-  </data>
-  <data name="&gt;&gt;pbPatreonButton.Name" xml:space="preserve">
-    <value>pbPatreonButton</value>
-  </data>
-  <data name="&gt;&gt;pbPatreonButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pbPatreonButton.Parent" xml:space="preserve">
-    <value>flpSocialButtons</value>
-  </data>
-  <data name="&gt;&gt;pbPatreonButton.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;pbBitcoinButton.Name" xml:space="preserve">
-    <value>pbBitcoinButton</value>
-  </data>
-  <data name="&gt;&gt;pbBitcoinButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pbBitcoinButton.Parent" xml:space="preserve">
-    <value>flpSocialButtons</value>
-  </data>
-  <data name="&gt;&gt;pbBitcoinButton.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;pbTwitterButton.Name" xml:space="preserve">
-    <value>pbTwitterButton</value>
-  </data>
-  <data name="&gt;&gt;pbTwitterButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pbTwitterButton.Parent" xml:space="preserve">
-    <value>flpSocialButtons</value>
-  </data>
-  <data name="&gt;&gt;pbTwitterButton.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;pbDiscordButton.Name" xml:space="preserve">
-    <value>pbDiscordButton</value>
-  </data>
-  <data name="&gt;&gt;pbDiscordButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pbDiscordButton.Parent" xml:space="preserve">
-    <value>flpSocialButtons</value>
-  </data>
-  <data name="&gt;&gt;pbDiscordButton.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;pbSocialHideButton.Name" xml:space="preserve">
-    <value>pbSocialHideButton</value>
-  </data>
-  <data name="&gt;&gt;pbSocialHideButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pbSocialHideButton.Parent" xml:space="preserve">
-    <value>flpSocialButtons</value>
-  </data>
-  <data name="&gt;&gt;pbSocialHideButton.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="flpSocialButtons.Location" type="System.Drawing.Point, System.Drawing">
-    <value>614, 470</value>
-  </data>
-  <data name="flpSocialButtons.Size" type="System.Drawing.Size, System.Drawing">
-    <value>215, 45</value>
-  </data>
-  <data name="flpSocialButtons.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;flpSocialButtons.Name" xml:space="preserve">
-    <value>flpSocialButtons</value>
-  </data>
-  <data name="&gt;&gt;flpSocialButtons.Type" xml:space="preserve">
-    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;flpSocialButtons.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;flpSocialButtons.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <metadata name="ttMain.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>567, 17</value>
-  </metadata>
-  <data name="pbPatreonButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="pbPatreonButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="pbPatreonButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="pbPatreonButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>46, 45</value>
-  </data>
-  <data name="pbPatreonButton.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
-    <value>AutoSize</value>
-  </data>
-  <data name="pbPatreonButton.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="pbPatreonButton.ToolTip" xml:space="preserve">
-    <value>Support us on Patreon</value>
-  </data>
-  <data name="&gt;&gt;pbPatreonButton.Name" xml:space="preserve">
-    <value>pbPatreonButton</value>
-  </data>
-  <data name="&gt;&gt;pbPatreonButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pbPatreonButton.Parent" xml:space="preserve">
-    <value>flpSocialButtons</value>
-  </data>
-  <data name="&gt;&gt;pbPatreonButton.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="pbBitcoinButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="pbBitcoinButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>46, 0</value>
-  </data>
-  <data name="pbBitcoinButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="pbBitcoinButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>40, 45</value>
-  </data>
-  <data name="pbBitcoinButton.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
-    <value>AutoSize</value>
-  </data>
-  <data name="pbBitcoinButton.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="pbBitcoinButton.ToolTip" xml:space="preserve">
-    <value>Support us using cryptocurrency</value>
-  </data>
-  <data name="&gt;&gt;pbBitcoinButton.Name" xml:space="preserve">
-    <value>pbBitcoinButton</value>
-  </data>
-  <data name="&gt;&gt;pbBitcoinButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pbBitcoinButton.Parent" xml:space="preserve">
-    <value>flpSocialButtons</value>
-  </data>
-  <data name="&gt;&gt;pbBitcoinButton.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="pbTwitterButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="pbTwitterButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>86, 0</value>
-  </data>
-  <data name="pbTwitterButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="pbTwitterButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>39, 45</value>
-  </data>
-  <data name="pbTwitterButton.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
-    <value>AutoSize</value>
-  </data>
-  <data name="pbTwitterButton.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="pbTwitterButton.ToolTip" xml:space="preserve">
-    <value>Follow us on Twitter</value>
-  </data>
-  <data name="&gt;&gt;pbTwitterButton.Name" xml:space="preserve">
-    <value>pbTwitterButton</value>
-  </data>
-  <data name="&gt;&gt;pbTwitterButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pbTwitterButton.Parent" xml:space="preserve">
-    <value>flpSocialButtons</value>
-  </data>
-  <data name="&gt;&gt;pbTwitterButton.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="pbDiscordButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="pbDiscordButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>125, 0</value>
-  </data>
-  <data name="pbDiscordButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="pbDiscordButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>43, 45</value>
-  </data>
-  <data name="pbDiscordButton.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
-    <value>AutoSize</value>
-  </data>
-  <data name="pbDiscordButton.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="pbDiscordButton.ToolTip" xml:space="preserve">
-    <value>Join our Discord server</value>
-  </data>
-  <data name="&gt;&gt;pbDiscordButton.Name" xml:space="preserve">
-    <value>pbDiscordButton</value>
-  </data>
-  <data name="&gt;&gt;pbDiscordButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pbDiscordButton.Parent" xml:space="preserve">
-    <value>flpSocialButtons</value>
-  </data>
-  <data name="&gt;&gt;pbDiscordButton.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="pbSocialHideButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="pbSocialHideButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>168, 0</value>
-  </data>
-  <data name="pbSocialHideButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="pbSocialHideButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>47, 45</value>
-  </data>
-  <data name="pbSocialHideButton.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
-    <value>AutoSize</value>
-  </data>
-  <data name="pbSocialHideButton.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="pbSocialHideButton.ToolTip" xml:space="preserve">
-    <value>Hide social buttons</value>
-  </data>
-  <data name="&gt;&gt;pbSocialHideButton.Name" xml:space="preserve">
-    <value>pbSocialHideButton</value>
-  </data>
-  <data name="&gt;&gt;pbSocialHideButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pbSocialHideButton.Parent" xml:space="preserve">
-    <value>flpSocialButtons</value>
-  </data>
-  <data name="&gt;&gt;pbSocialHideButton.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
   <metadata name="ttMain.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>567, 17</value>
   </metadata>
@@ -2294,6 +2039,34 @@
   </metadata>
   <data name="tsSocialButtons.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Bottom</value>
+  </data>
+  <data name="tsbTwitter.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADbSURBVDhP3Ys9CsJAEEa39ASCJLvxB8HGxk4bQVsP4wE8
+        gL2dNplEkZzARrHyCp7ALoXJblxB0BiTAUkcD6APPshO3mO/gXCkXYbzlYOc4YlZ+7iEn4kAEhJpgs8c
+        SRQXZ9ryYK1kCxXGTAi32c/ghKcU4eheMU63CDQqGY215kVBgJpyUOPcHVcHLTDNMO1wZzjqSMnUMHvT
+        9C4GJX4bZnmqIPuUTGyDSR7hqAEhfwx1GuGqIQf/ToWvWaC7qNLUlqpdAf9GxcKNOqh9IiAa8bn/IEMI
+        PdT+E8aeGuMN0PSBPMUAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="tsbTwitter.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="tsbTwitter.Size" type="System.Drawing.Size, System.Drawing">
+    <value>24, 24</value>
+  </data>
+  <data name="tsbTwitter.Text" xml:space="preserve">
+    <value>Twitter</value>
+  </data>
+  <data name="tsbDiscord.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="tsbDiscord.Size" type="System.Drawing.Size, System.Drawing">
+    <value>24, 24</value>
+  </data>
+  <data name="tsbDiscord.Text" xml:space="preserve">
+    <value>Discord</value>
   </data>
   <data name="tsbPatreon.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
@@ -2316,6 +2089,9 @@
         RbccougX1tQ//WcNkRoAAAAASUVORK5CYII=
 </value>
   </data>
+  <data name="tsbBitcoin.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>None</value>
+  </data>
   <data name="tsbBitcoin.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
   </data>
@@ -2325,33 +2101,8 @@
   <data name="tsbBitcoin.Text" xml:space="preserve">
     <value>Bitcoin</value>
   </data>
-  <data name="tsbTwitter.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADaSURBVDhP3Ys9CsJAEEa39AhKsht/EGxs7LQRtPUwHsAD
-        2NumyCSK5AQ2ipVX8AS2wWQ3riBojGZAkowH0AcfZCfvsd9AuNKpwvnKQS7wxKx9UsHPVAAJqTTDZ440
-        SoozHXmwVrKDCmMmRNvsZ3jC0xvh6kExfs8ONSoZrbXmRUGAmnNQ09wd1wQtMM0wnWhnuOpIydQw+9D2
-        LwYlfhtmeeogh5RMbINJHuGqESGXhjqN8NSYQ3Cnwtcs0H1UaRpL1a1BcKNi4cU91MoIiCfcDh5kCJGP
-        2n/C2BMwaA3cWix0BAAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="tsbTwitter.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="tsbTwitter.Size" type="System.Drawing.Size, System.Drawing">
-    <value>24, 24</value>
-  </data>
-  <data name="tsbTwitter.Text" xml:space="preserve">
-    <value>Twitter</value>
-  </data>
-  <data name="tsbDiscord.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="tsbDiscord.Size" type="System.Drawing.Size, System.Drawing">
-    <value>24, 24</value>
-  </data>
-  <data name="tsbDiscord.Text" xml:space="preserve">
-    <value>Discord</value>
+  <data name="tsbGitHub.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>None</value>
   </data>
   <data name="tsbGitHub.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
@@ -2363,7 +2114,7 @@
     <value>GitHub</value>
   </data>
   <data name="tsSocialButtons.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 484</value>
+    <value>0, 429</value>
   </data>
   <data name="tsSocialButtons.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>6, 3, 6, 6</value>
@@ -2393,7 +2144,7 @@
     <value>0, 0</value>
   </data>
   <data name="pToolbars.Size" type="System.Drawing.Size, System.Drawing">
-    <value>160, 520</value>
+    <value>160, 465</value>
   </data>
   <data name="pToolbars.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -2408,10 +2159,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;pToolbars.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="tssMain3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>147, 6</value>
+    <value>5</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -2423,7 +2171,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>834, 520</value>
+    <value>834, 465</value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>500, 250</value>
@@ -2922,6 +2670,12 @@
   </data>
   <data name="&gt;&gt;tsbAbout.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tssMain3.Name" xml:space="preserve">
+    <value>tssMain3</value>
+  </data>
+  <data name="&gt;&gt;tssMain3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiShowErrors.Name" xml:space="preserve">
     <value>tsmiShowErrors</value>
@@ -3882,12 +3636,6 @@
   </data>
   <data name="&gt;&gt;tsbGitHub.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tssMain3.Name" xml:space="preserve">
-    <value>tssMain3</value>
-  </data>
-  <data name="&gt;&gt;tssMain3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MainForm</value>

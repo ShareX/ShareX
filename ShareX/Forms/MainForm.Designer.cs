@@ -117,6 +117,7 @@
             this.tsmiTestURLSharing = new System.Windows.Forms.ToolStripMenuItem();
             this.tsbDonate = new ShareX.HelpersLib.ToolStripButtonColorAnimation();
             this.tsbAbout = new System.Windows.Forms.ToolStripButton();
+            this.tssMain3 = new System.Windows.Forms.ToolStripSeparator();
             this.cmsTaskInfo = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tsmiShowErrors = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiStopUpload = new System.Windows.Forms.ToolStripMenuItem();
@@ -279,12 +280,6 @@
             this.pThumbnailView = new System.Windows.Forms.Panel();
             this.lblThumbnailViewTip = new System.Windows.Forms.Label();
             this.ucTaskThumbnailView = new ShareX.TaskThumbnailView();
-            this.flpSocialButtons = new System.Windows.Forms.FlowLayoutPanel();
-            this.pbPatreonButton = new System.Windows.Forms.PictureBox();
-            this.pbBitcoinButton = new System.Windows.Forms.PictureBox();
-            this.pbTwitterButton = new System.Windows.Forms.PictureBox();
-            this.pbDiscordButton = new System.Windows.Forms.PictureBox();
-            this.pbSocialHideButton = new System.Windows.Forms.PictureBox();
             this.ttMain = new System.Windows.Forms.ToolTip(this.components);
             this.pToolbars = new System.Windows.Forms.Panel();
             this.tsSocialButtons = new ShareX.HelpersLib.ToolStripBorderRight();
@@ -293,7 +288,6 @@
             this.tsbTwitter = new System.Windows.Forms.ToolStripButton();
             this.tsbDiscord = new System.Windows.Forms.ToolStripButton();
             this.tsbGitHub = new System.Windows.Forms.ToolStripButton();
-            this.tssMain3 = new System.Windows.Forms.ToolStripSeparator();
             ((System.ComponentModel.ISupportInitialize)(this.scMain)).BeginInit();
             this.scMain.Panel1.SuspendLayout();
             this.scMain.Panel2.SuspendLayout();
@@ -303,12 +297,6 @@
             this.cmsTray.SuspendLayout();
             this.pNews.SuspendLayout();
             this.pThumbnailView.SuspendLayout();
-            this.flpSocialButtons.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbPatreonButton)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbBitcoinButton)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbTwitterButton)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbDiscordButton)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbSocialHideButton)).BeginInit();
             this.pToolbars.SuspendLayout();
             this.tsSocialButtons.SuspendLayout();
             this.SuspendLayout();
@@ -1001,6 +989,11 @@
             resources.ApplyResources(this.tsbAbout, "tsbAbout");
             this.tsbAbout.Name = "tsbAbout";
             this.tsbAbout.Click += new System.EventHandler(this.tsbAbout_Click);
+            // 
+            // tssMain3
+            // 
+            this.tssMain3.Name = "tssMain3";
+            resources.ApplyResources(this.tssMain3, "tssMain3");
             // 
             // cmsTaskInfo
             // 
@@ -2224,66 +2217,6 @@
             this.ucTaskThumbnailView.TitleVisible = true;
             this.ucTaskThumbnailView.ContextMenuRequested += new ShareX.TaskThumbnailView.TaskViewMouseEventHandler(this.UcTaskView_ContextMenuRequested);
             // 
-            // flpSocialButtons
-            // 
-            resources.ApplyResources(this.flpSocialButtons, "flpSocialButtons");
-            this.flpSocialButtons.Controls.Add(this.pbPatreonButton);
-            this.flpSocialButtons.Controls.Add(this.pbBitcoinButton);
-            this.flpSocialButtons.Controls.Add(this.pbTwitterButton);
-            this.flpSocialButtons.Controls.Add(this.pbDiscordButton);
-            this.flpSocialButtons.Controls.Add(this.pbSocialHideButton);
-            this.flpSocialButtons.Name = "flpSocialButtons";
-            // 
-            // pbPatreonButton
-            // 
-            this.pbPatreonButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbPatreonButton.Image = global::ShareX.Properties.Resources.PatreonButton;
-            resources.ApplyResources(this.pbPatreonButton, "pbPatreonButton");
-            this.pbPatreonButton.Name = "pbPatreonButton";
-            this.pbPatreonButton.TabStop = false;
-            this.ttMain.SetToolTip(this.pbPatreonButton, resources.GetString("pbPatreonButton.ToolTip"));
-            this.pbPatreonButton.Click += new System.EventHandler(this.PbPatreonButton_Click);
-            // 
-            // pbBitcoinButton
-            // 
-            this.pbBitcoinButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbBitcoinButton.Image = global::ShareX.Properties.Resources.BitcoinButton;
-            resources.ApplyResources(this.pbBitcoinButton, "pbBitcoinButton");
-            this.pbBitcoinButton.Name = "pbBitcoinButton";
-            this.pbBitcoinButton.TabStop = false;
-            this.ttMain.SetToolTip(this.pbBitcoinButton, resources.GetString("pbBitcoinButton.ToolTip"));
-            this.pbBitcoinButton.Click += new System.EventHandler(this.PbBitcoinButton_Click);
-            // 
-            // pbTwitterButton
-            // 
-            this.pbTwitterButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbTwitterButton.Image = global::ShareX.Properties.Resources.TwitterButton;
-            resources.ApplyResources(this.pbTwitterButton, "pbTwitterButton");
-            this.pbTwitterButton.Name = "pbTwitterButton";
-            this.pbTwitterButton.TabStop = false;
-            this.ttMain.SetToolTip(this.pbTwitterButton, resources.GetString("pbTwitterButton.ToolTip"));
-            this.pbTwitterButton.Click += new System.EventHandler(this.PbTwitterButton_Click);
-            // 
-            // pbDiscordButton
-            // 
-            this.pbDiscordButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbDiscordButton.Image = global::ShareX.Properties.Resources.DiscordButton;
-            resources.ApplyResources(this.pbDiscordButton, "pbDiscordButton");
-            this.pbDiscordButton.Name = "pbDiscordButton";
-            this.pbDiscordButton.TabStop = false;
-            this.ttMain.SetToolTip(this.pbDiscordButton, resources.GetString("pbDiscordButton.ToolTip"));
-            this.pbDiscordButton.Click += new System.EventHandler(this.PbDiscordButton_Click);
-            // 
-            // pbSocialHideButton
-            // 
-            this.pbSocialHideButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbSocialHideButton.Image = global::ShareX.Properties.Resources.SocialHideButton;
-            resources.ApplyResources(this.pbSocialHideButton, "pbSocialHideButton");
-            this.pbSocialHideButton.Name = "pbSocialHideButton";
-            this.pbSocialHideButton.TabStop = false;
-            this.ttMain.SetToolTip(this.pbSocialHideButton, resources.GetString("pbSocialHideButton.ToolTip"));
-            this.pbSocialHideButton.Click += new System.EventHandler(this.PbSocialHideButton_Click);
-            // 
             // ttMain
             // 
             this.ttMain.AutoPopDelay = 5000;
@@ -2306,10 +2239,10 @@
             this.tsSocialButtons.DrawCustomBorder = true;
             this.tsSocialButtons.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.tsSocialButtons.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsbPatreon,
-            this.tsbBitcoin,
             this.tsbTwitter,
             this.tsbDiscord,
+            this.tsbPatreon,
+            this.tsbBitcoin,
             this.tsbGitHub});
             this.tsSocialButtons.Name = "tsSocialButtons";
             // 
@@ -2318,6 +2251,7 @@
             this.tsbPatreon.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.tsbPatreon.Image = global::ShareX.Properties.Resources.Patreon_16x16;
             resources.ApplyResources(this.tsbPatreon, "tsbPatreon");
+            this.tsbPatreon.Margin = new System.Windows.Forms.Padding(2, 1, 0, 2);
             this.tsbPatreon.Name = "tsbPatreon";
             this.tsbPatreon.Padding = new System.Windows.Forms.Padding(2);
             this.tsbPatreon.Click += new System.EventHandler(this.TsbPatreon_Click);
@@ -2326,7 +2260,7 @@
             // 
             this.tsbBitcoin.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             resources.ApplyResources(this.tsbBitcoin, "tsbBitcoin");
-            this.tsbBitcoin.Margin = new System.Windows.Forms.Padding(3, 1, 0, 2);
+            this.tsbBitcoin.Margin = new System.Windows.Forms.Padding(2, 1, 0, 2);
             this.tsbBitcoin.Name = "tsbBitcoin";
             this.tsbBitcoin.Padding = new System.Windows.Forms.Padding(2);
             this.tsbBitcoin.Click += new System.EventHandler(this.TsbBitcoin_Click);
@@ -2335,7 +2269,7 @@
             // 
             this.tsbTwitter.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             resources.ApplyResources(this.tsbTwitter, "tsbTwitter");
-            this.tsbTwitter.Margin = new System.Windows.Forms.Padding(3, 1, 0, 2);
+            this.tsbTwitter.Margin = new System.Windows.Forms.Padding(2, 1, 0, 2);
             this.tsbTwitter.Name = "tsbTwitter";
             this.tsbTwitter.Padding = new System.Windows.Forms.Padding(2);
             this.tsbTwitter.Click += new System.EventHandler(this.TsbTwitter_Click);
@@ -2345,7 +2279,7 @@
             this.tsbDiscord.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.tsbDiscord.Image = global::ShareX.Properties.Resources.Discord_16x16;
             resources.ApplyResources(this.tsbDiscord, "tsbDiscord");
-            this.tsbDiscord.Margin = new System.Windows.Forms.Padding(3, 1, 0, 2);
+            this.tsbDiscord.Margin = new System.Windows.Forms.Padding(2, 1, 0, 2);
             this.tsbDiscord.Name = "tsbDiscord";
             this.tsbDiscord.Padding = new System.Windows.Forms.Padding(2);
             this.tsbDiscord.Click += new System.EventHandler(this.TsbDiscord_Click);
@@ -2355,15 +2289,10 @@
             this.tsbGitHub.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.tsbGitHub.Image = global::ShareX.Properties.Resources.GitHub_16x16;
             resources.ApplyResources(this.tsbGitHub, "tsbGitHub");
-            this.tsbGitHub.Margin = new System.Windows.Forms.Padding(3, 1, 0, 2);
+            this.tsbGitHub.Margin = new System.Windows.Forms.Padding(2, 1, 0, 2);
             this.tsbGitHub.Name = "tsbGitHub";
             this.tsbGitHub.Padding = new System.Windows.Forms.Padding(2);
             this.tsbGitHub.Click += new System.EventHandler(this.TsbGitHub_Click);
-            // 
-            // tssMain3
-            // 
-            this.tssMain3.Name = "tssMain3";
-            resources.ApplyResources(this.tssMain3, "tssMain3");
             // 
             // MainForm
             // 
@@ -2372,7 +2301,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.Controls.Add(this.pNews);
-            this.Controls.Add(this.flpSocialButtons);
             this.Controls.Add(this.pThumbnailView);
             this.Controls.Add(this.scMain);
             this.Controls.Add(this.pToolbars);
@@ -2397,19 +2325,11 @@
             this.cmsTray.ResumeLayout(false);
             this.pNews.ResumeLayout(false);
             this.pThumbnailView.ResumeLayout(false);
-            this.flpSocialButtons.ResumeLayout(false);
-            this.flpSocialButtons.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbPatreonButton)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbBitcoinButton)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbTwitterButton)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbDiscordButton)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbSocialHideButton)).EndInit();
             this.pToolbars.ResumeLayout(false);
             this.pToolbars.PerformLayout();
             this.tsSocialButtons.ResumeLayout(false);
             this.tsSocialButtons.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -2628,7 +2548,6 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiCopyMarkdownImage;
         private System.Windows.Forms.ToolStripMenuItem tsmiCopyMarkdownLinkedImage;
         private System.Windows.Forms.ToolStripSeparator tssCopy6;
-        public System.Windows.Forms.FlowLayoutPanel flpSocialButtons;
         private System.Windows.Forms.ToolStripMenuItem tsmiImagePreviewSide;
         private System.Windows.Forms.ToolStripMenuItem tsmiImagePreviewBottom;
         private System.Windows.Forms.ToolStripSeparator tssImagePreview;
@@ -2658,11 +2577,6 @@
         private TaskThumbnailView ucTaskThumbnailView;
         private System.Windows.Forms.ToolStripMenuItem tsmiSwitchTaskViewMode;
         public System.Windows.Forms.Label lblThumbnailViewTip;
-        private System.Windows.Forms.PictureBox pbPatreonButton;
-        private System.Windows.Forms.PictureBox pbBitcoinButton;
-        private System.Windows.Forms.PictureBox pbTwitterButton;
-        private System.Windows.Forms.PictureBox pbDiscordButton;
-        private System.Windows.Forms.PictureBox pbSocialHideButton;
         private System.Windows.Forms.ToolTip ttMain;
         private System.Windows.Forms.ToolStripMenuItem tsmiThumbnailTitle;
         private System.Windows.Forms.ToolStripMenuItem tsmiThumbnailTitleShow;

@@ -818,7 +818,6 @@ namespace ShareX
                 scMain.SplitterLineColor = ShareXResources.Theme.BorderColor;
                 pThumbnailView.BackColor = ShareXResources.Theme.BackgroundColor;
                 lblThumbnailViewTip.ForeColor = ShareXResources.Theme.TextColor;
-                flpSocialButtons.BackColor = ShareXResources.Theme.BackgroundColor;
                 btnCloseNews.FlatAppearance.BorderColor = ShareXResources.Theme.BorderColor;
                 btnCloseNews.ForeColor = ShareXResources.Theme.TextColor;
                 btnCloseNews.BackColor = ShareXResources.Theme.LightBackgroundColor;
@@ -840,7 +839,6 @@ namespace ShareX
                 scMain.SplitterLineColor = ProfessionalColors.SeparatorDark;
                 pThumbnailView.BackColor = SystemColors.Window;
                 lblThumbnailViewTip.ForeColor = Color.Silver;
-                flpSocialButtons.BackColor = SystemColors.Window;
                 btnCloseNews.FlatAppearance.BorderColor = SystemColors.ControlText;
                 btnCloseNews.ForeColor = SystemColors.ControlText;
                 btnCloseNews.BackColor = SystemColors.Window;
@@ -1610,32 +1608,6 @@ namespace ShareX
             }
         }
 
-        private void PbPatreonButton_Click(object sender, EventArgs e)
-        {
-            URLHelpers.OpenURL(Links.URL_DONATE);
-        }
-
-        private void PbBitcoinButton_Click(object sender, EventArgs e)
-        {
-            URLHelpers.OpenURL(Links.URL_DONATE);
-        }
-
-        private void PbTwitterButton_Click(object sender, EventArgs e)
-        {
-            URLHelpers.OpenURL(Links.URL_TWITTER);
-        }
-
-        private void PbDiscordButton_Click(object sender, EventArgs e)
-        {
-            URLHelpers.OpenURL(Links.URL_DISCORD);
-        }
-
-        private void PbSocialHideButton_Click(object sender, EventArgs e)
-        {
-            Program.Settings.ShowSocialButtons = false;
-            flpSocialButtons.Visible = false;
-        }
-
         private void btnCloseNews_Click(object sender, EventArgs e)
         {
             HideNews();
@@ -2005,16 +1977,6 @@ namespace ShareX
             }
         }
 
-        private void TsbPatreon_Click(object sender, EventArgs e)
-        {
-            URLHelpers.OpenURL(Links.URL_DONATE);
-        }
-
-        private void TsbBitcoin_Click(object sender, EventArgs e)
-        {
-            URLHelpers.OpenURL(Links.URL_DONATE);
-        }
-
         private void TsbTwitter_Click(object sender, EventArgs e)
         {
             URLHelpers.OpenURL(Links.URL_TWITTER);
@@ -2023,6 +1985,16 @@ namespace ShareX
         private void TsbDiscord_Click(object sender, EventArgs e)
         {
             URLHelpers.OpenURL(Links.URL_DISCORD);
+        }
+
+        private void TsbPatreon_Click(object sender, EventArgs e)
+        {
+            URLHelpers.OpenURL(Links.URL_DONATE);
+        }
+
+        private void TsbBitcoin_Click(object sender, EventArgs e)
+        {
+            URLHelpers.OpenURL(Links.URL_DONATE);
         }
 
         private void TsbGitHub_Click(object sender, EventArgs e)
