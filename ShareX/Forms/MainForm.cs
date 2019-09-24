@@ -2005,6 +2005,31 @@ namespace ShareX
             }
         }
 
+        private void TsbPatreon_Click(object sender, EventArgs e)
+        {
+            URLHelpers.OpenURL(Links.URL_DONATE);
+        }
+
+        private void TsbBitcoin_Click(object sender, EventArgs e)
+        {
+            URLHelpers.OpenURL(Links.URL_DONATE);
+        }
+
+        private void TsbTwitter_Click(object sender, EventArgs e)
+        {
+            URLHelpers.OpenURL(Links.URL_TWITTER);
+        }
+
+        private void TsbDiscord_Click(object sender, EventArgs e)
+        {
+            URLHelpers.OpenURL(Links.URL_DISCORD);
+        }
+
+        private void TsbGitHub_Click(object sender, EventArgs e)
+        {
+            URLHelpers.OpenURL(Links.URL_GITHUB);
+        }
+
         #endregion Menu events
 
         #region Tray events

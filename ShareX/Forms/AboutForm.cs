@@ -75,7 +75,7 @@ namespace ShareX
             lblMike.Text = "McoreD (Michael Delpach)";
 
             rtbShareXInfo.Text = $@"{Resources.AboutForm_AboutForm_Website}: {Links.URL_WEBSITE}
-{Resources.AboutForm_AboutForm_Project_page}: {Links.URL_PROJECT}
+{Resources.AboutForm_AboutForm_Project_page}: {Links.URL_GITHUB}
 {Resources.AboutForm_AboutForm_Changelog}: {Links.URL_CHANGELOG}";
 
             rtbCredits.Text = $@"{Resources.AboutForm_AboutForm_Contributors}:
