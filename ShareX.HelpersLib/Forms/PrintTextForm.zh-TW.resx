@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -133,6 +133,6 @@
     <value>預覽...</value>
   </data>
   <data name="lblFont.Text" xml:space="preserve">
-    <value>字型:</value>
+    <value>字型：</value>
   </data>
 </root>
