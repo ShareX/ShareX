@@ -303,6 +303,219 @@
   <data name="tsMain.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
+  <data name="tsddbCapture.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="tsddbCapture.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="tsddbCapture.Size" type="System.Drawing.Size, System.Drawing">
+    <value>147, 20</value>
+  </data>
+  <data name="tsddbCapture.Text" xml:space="preserve">
+    <value>Capture</value>
+  </data>
+  <data name="tsddbUpload.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="tsddbUpload.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="tsddbUpload.Size" type="System.Drawing.Size, System.Drawing">
+    <value>147, 20</value>
+  </data>
+  <data name="tsddbUpload.Text" xml:space="preserve">
+    <value>Upload</value>
+  </data>
+  <data name="tsddbWorkflows.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>BottomLeft</value>
+  </data>
+  <data name="tsddbWorkflows.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="tsddbWorkflows.Size" type="System.Drawing.Size, System.Drawing">
+    <value>147, 20</value>
+  </data>
+  <data name="tsddbWorkflows.Text" xml:space="preserve">
+    <value>Workflows</value>
+  </data>
+  <data name="tsddbTools.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="tsddbTools.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="tsddbTools.Size" type="System.Drawing.Size, System.Drawing">
+    <value>147, 20</value>
+  </data>
+  <data name="tsddbTools.Text" xml:space="preserve">
+    <value>Tools</value>
+  </data>
+  <data name="tssMain1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>147, 6</value>
+  </data>
+  <data name="tsddbAfterCaptureTasks.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="tsddbAfterCaptureTasks.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="tsddbAfterCaptureTasks.Size" type="System.Drawing.Size, System.Drawing">
+    <value>147, 20</value>
+  </data>
+  <data name="tsddbAfterCaptureTasks.Text" xml:space="preserve">
+    <value>After capture tasks</value>
+  </data>
+  <data name="tsddbAfterUploadTasks.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="tsddbAfterUploadTasks.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="tsddbAfterUploadTasks.Size" type="System.Drawing.Size, System.Drawing">
+    <value>147, 20</value>
+  </data>
+  <data name="tsddbAfterUploadTasks.Text" xml:space="preserve">
+    <value>After upload tasks</value>
+  </data>
+  <data name="tsddbDestinations.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="tsddbDestinations.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="tsddbDestinations.Size" type="System.Drawing.Size, System.Drawing">
+    <value>147, 20</value>
+  </data>
+  <data name="tsddbDestinations.Text" xml:space="preserve">
+    <value>Destinations</value>
+  </data>
+  <data name="tsbTaskSettings.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="tsbTaskSettings.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="tsbTaskSettings.Size" type="System.Drawing.Size, System.Drawing">
+    <value>147, 20</value>
+  </data>
+  <data name="tsbTaskSettings.Text" xml:space="preserve">
+    <value>Task settings...</value>
+  </data>
+  <data name="tsbApplicationSettings.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="tsbApplicationSettings.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="tsbApplicationSettings.Size" type="System.Drawing.Size, System.Drawing">
+    <value>147, 20</value>
+  </data>
+  <data name="tsbApplicationSettings.Text" xml:space="preserve">
+    <value>Application settings...</value>
+  </data>
+  <data name="tsbHotkeySettings.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="tsbHotkeySettings.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="tsbHotkeySettings.Size" type="System.Drawing.Size, System.Drawing">
+    <value>147, 20</value>
+  </data>
+  <data name="tsbHotkeySettings.Text" xml:space="preserve">
+    <value>Hotkey settings...</value>
+  </data>
+  <data name="tssMain2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>147, 6</value>
+  </data>
+  <data name="tsbScreenshotsFolder.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="tsbScreenshotsFolder.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="tsbScreenshotsFolder.Size" type="System.Drawing.Size, System.Drawing">
+    <value>147, 20</value>
+  </data>
+  <data name="tsbScreenshotsFolder.Text" xml:space="preserve">
+    <value>Screenshots folder...</value>
+  </data>
+  <data name="tsbHistory.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="tsbHistory.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="tsbHistory.Size" type="System.Drawing.Size, System.Drawing">
+    <value>147, 20</value>
+  </data>
+  <data name="tsbHistory.Text" xml:space="preserve">
+    <value>History...</value>
+  </data>
+  <data name="tsbImageHistory.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="tsbImageHistory.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="tsbImageHistory.Size" type="System.Drawing.Size, System.Drawing">
+    <value>147, 20</value>
+  </data>
+  <data name="tsbImageHistory.Text" xml:space="preserve">
+    <value>Image history...</value>
+  </data>
+  <data name="tsbNews.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="tsbNews.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="tsbNews.Size" type="System.Drawing.Size, System.Drawing">
+    <value>147, 20</value>
+  </data>
+  <data name="tsbNews.Text" xml:space="preserve">
+    <value>News</value>
+  </data>
+  <data name="tsddbDebug.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="tsddbDebug.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="tsddbDebug.Size" type="System.Drawing.Size, System.Drawing">
+    <value>147, 20</value>
+  </data>
+  <data name="tsddbDebug.Text" xml:space="preserve">
+    <value>Debug</value>
+  </data>
+  <data name="tsbDonate.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="tsbDonate.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="tsbDonate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>147, 20</value>
+  </data>
+  <data name="tsbDonate.Text" xml:space="preserve">
+    <value>Donate...</value>
+  </data>
+  <data name="tsbAbout.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="tsbAbout.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="tsbAbout.Size" type="System.Drawing.Size, System.Drawing">
+    <value>147, 20</value>
+  </data>
+  <data name="tsbAbout.Text" xml:space="preserve">
+    <value>About...</value>
+  </data>
+  <data name="tssMain3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>147, 6</value>
+  </data>
   <data name="tsMain.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
@@ -310,7 +523,7 @@
     <value>6, 6, 6, 0</value>
   </data>
   <data name="tsMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>160, 429</value>
+    <value>160, 425</value>
   </data>
   <data name="tsMain.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -326,18 +539,6 @@
   </data>
   <data name="&gt;&gt;tsMain.ZOrder" xml:space="preserve">
     <value>0</value>
-  </data>
-  <data name="tsddbCapture.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="tsddbCapture.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="tsddbCapture.Size" type="System.Drawing.Size, System.Drawing">
-    <value>147, 20</value>
-  </data>
-  <data name="tsddbCapture.Text" xml:space="preserve">
-    <value>Capture</value>
   </data>
   <data name="tsmiFullscreen.Size" type="System.Drawing.Size, System.Drawing">
     <value>191, 22</value>
@@ -462,18 +663,6 @@
   <data name="tsmiScreenshotDelay5.Text" xml:space="preserve">
     <value>5 seconds</value>
   </data>
-  <data name="tsddbUpload.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="tsddbUpload.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="tsddbUpload.Size" type="System.Drawing.Size, System.Drawing">
-    <value>147, 20</value>
-  </data>
-  <data name="tsddbUpload.Text" xml:space="preserve">
-    <value>Upload</value>
-  </data>
   <data name="tsmiUploadFile.Size" type="System.Drawing.Size, System.Drawing">
     <value>203, 22</value>
   </data>
@@ -515,30 +704,6 @@
   </data>
   <data name="tsmiShortenURL.Text" xml:space="preserve">
     <value>Shorten URL...</value>
-  </data>
-  <data name="tsddbWorkflows.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>BottomLeft</value>
-  </data>
-  <data name="tsddbWorkflows.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="tsddbWorkflows.Size" type="System.Drawing.Size, System.Drawing">
-    <value>147, 20</value>
-  </data>
-  <data name="tsddbWorkflows.Text" xml:space="preserve">
-    <value>Workflows</value>
-  </data>
-  <data name="tsddbTools.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="tsddbTools.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="tsddbTools.Size" type="System.Drawing.Size, System.Drawing">
-    <value>147, 20</value>
-  </data>
-  <data name="tsddbTools.Text" xml:space="preserve">
-    <value>Tools</value>
   </data>
   <data name="tsmiColorPicker.Size" type="System.Drawing.Size, System.Drawing">
     <value>184, 22</value>
@@ -624,45 +789,6 @@
   <data name="tsmiMonitorTest.Text" xml:space="preserve">
     <value>Monitor test...</value>
   </data>
-  <data name="tssMain1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>147, 6</value>
-  </data>
-  <data name="tsddbAfterCaptureTasks.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="tsddbAfterCaptureTasks.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="tsddbAfterCaptureTasks.Size" type="System.Drawing.Size, System.Drawing">
-    <value>147, 20</value>
-  </data>
-  <data name="tsddbAfterCaptureTasks.Text" xml:space="preserve">
-    <value>After capture tasks</value>
-  </data>
-  <data name="tsddbAfterUploadTasks.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="tsddbAfterUploadTasks.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="tsddbAfterUploadTasks.Size" type="System.Drawing.Size, System.Drawing">
-    <value>147, 20</value>
-  </data>
-  <data name="tsddbAfterUploadTasks.Text" xml:space="preserve">
-    <value>After upload tasks</value>
-  </data>
-  <data name="tsddbDestinations.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="tsddbDestinations.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="tsddbDestinations.Size" type="System.Drawing.Size, System.Drawing">
-    <value>147, 20</value>
-  </data>
-  <data name="tsddbDestinations.Text" xml:space="preserve">
-    <value>Destinations</value>
-  </data>
   <data name="tsmiImageUploaders.Size" type="System.Drawing.Size, System.Drawing">
     <value>219, 22</value>
   </data>
@@ -708,105 +834,6 @@
   <data name="tsmiCustomUploaderSettings.Text" xml:space="preserve">
     <value>Custom uploader settings...</value>
   </data>
-  <data name="tsbTaskSettings.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="tsbTaskSettings.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="tsbTaskSettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>147, 20</value>
-  </data>
-  <data name="tsbTaskSettings.Text" xml:space="preserve">
-    <value>Task settings...</value>
-  </data>
-  <data name="tsbApplicationSettings.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="tsbApplicationSettings.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="tsbApplicationSettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>147, 20</value>
-  </data>
-  <data name="tsbApplicationSettings.Text" xml:space="preserve">
-    <value>Application settings...</value>
-  </data>
-  <data name="tsbHotkeySettings.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="tsbHotkeySettings.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="tsbHotkeySettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>147, 20</value>
-  </data>
-  <data name="tsbHotkeySettings.Text" xml:space="preserve">
-    <value>Hotkey settings...</value>
-  </data>
-  <data name="tssMain2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>147, 6</value>
-  </data>
-  <data name="tsbScreenshotsFolder.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="tsbScreenshotsFolder.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="tsbScreenshotsFolder.Size" type="System.Drawing.Size, System.Drawing">
-    <value>147, 20</value>
-  </data>
-  <data name="tsbScreenshotsFolder.Text" xml:space="preserve">
-    <value>Screenshots folder...</value>
-  </data>
-  <data name="tsbHistory.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="tsbHistory.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="tsbHistory.Size" type="System.Drawing.Size, System.Drawing">
-    <value>147, 20</value>
-  </data>
-  <data name="tsbHistory.Text" xml:space="preserve">
-    <value>History...</value>
-  </data>
-  <data name="tsbImageHistory.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="tsbImageHistory.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="tsbImageHistory.Size" type="System.Drawing.Size, System.Drawing">
-    <value>147, 20</value>
-  </data>
-  <data name="tsbImageHistory.Text" xml:space="preserve">
-    <value>Image history...</value>
-  </data>
-  <data name="tsbNews.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="tsbNews.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="tsbNews.Size" type="System.Drawing.Size, System.Drawing">
-    <value>147, 20</value>
-  </data>
-  <data name="tsbNews.Text" xml:space="preserve">
-    <value>News</value>
-  </data>
-  <data name="tsddbDebug.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="tsddbDebug.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="tsddbDebug.Size" type="System.Drawing.Size, System.Drawing">
-    <value>147, 20</value>
-  </data>
-  <data name="tsddbDebug.Text" xml:space="preserve">
-    <value>Debug</value>
-  </data>
   <data name="tsmiShowDebugLog.Size" type="System.Drawing.Size, System.Drawing">
     <value>171, 22</value>
   </data>
@@ -842,33 +869,6 @@
   </data>
   <data name="tsmiTestURLSharing.Text" xml:space="preserve">
     <value>Test URL sharing</value>
-  </data>
-  <data name="tsbDonate.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="tsbDonate.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="tsbDonate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>147, 20</value>
-  </data>
-  <data name="tsbDonate.Text" xml:space="preserve">
-    <value>Donate...</value>
-  </data>
-  <data name="tsbAbout.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="tsbAbout.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="tsbAbout.Size" type="System.Drawing.Size, System.Drawing">
-    <value>147, 20</value>
-  </data>
-  <data name="tsbAbout.Text" xml:space="preserve">
-    <value>About...</value>
-  </data>
-  <data name="tssMain3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>147, 6</value>
   </data>
   <metadata name="cmsTaskInfo.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>286, 17</value>
@@ -2040,21 +2040,11 @@
   <data name="tsSocialButtons.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Bottom</value>
   </data>
-  <data name="tsbTwitter.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADbSURBVDhP3Ys9CsJAEEa39ASCJLvxB8HGxk4bQVsP4wE8
-        gL2dNplEkZzARrHyCp7ALoXJblxB0BiTAUkcD6APPshO3mO/gXCkXYbzlYOc4YlZ+7iEn4kAEhJpgs8c
-        SRQXZ9ryYK1kCxXGTAi32c/ghKcU4eheMU63CDQqGY215kVBgJpyUOPcHVcHLTDNMO1wZzjqSMnUMHvT
-        9C4GJX4bZnmqIPuUTGyDSR7hqAEhfwx1GuGqIQf/ToWvWaC7qNLUlqpdAf9GxcKNOqh9IiAa8bn/IEMI
-        PdT+E8aeGuMN0PSBPMUAAAAASUVORK5CYII=
-</value>
-  </data>
   <data name="tsbTwitter.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
   </data>
   <data name="tsbTwitter.Size" type="System.Drawing.Size, System.Drawing">
-    <value>24, 24</value>
+    <value>28, 28</value>
   </data>
   <data name="tsbTwitter.Text" xml:space="preserve">
     <value>Twitter</value>
@@ -2063,7 +2053,7 @@
     <value>Magenta</value>
   </data>
   <data name="tsbDiscord.Size" type="System.Drawing.Size, System.Drawing">
-    <value>24, 24</value>
+    <value>28, 28</value>
   </data>
   <data name="tsbDiscord.Text" xml:space="preserve">
     <value>Discord</value>
@@ -2072,55 +2062,37 @@
     <value>Magenta</value>
   </data>
   <data name="tsbPatreon.Size" type="System.Drawing.Size, System.Drawing">
-    <value>24, 24</value>
+    <value>28, 28</value>
   </data>
   <data name="tsbPatreon.Text" xml:space="preserve">
     <value>Patreon</value>
-  </data>
-  <data name="tsbBitcoin.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFTSURBVDhPfZI/SwMxGMYP0W8g0kQoToIuKk5+BQc/g+Cu
-        4CYIfoGi10stiFjEwU/gIIrgXHBRnFzUDoo4qLRJ2t5dTN7L0fzTHzzkvbzPk8tdErnQGFUZmeowgoUp
-        WsextvyNNL67QVecoC1ttwmaj+e9OSWaoKaOFbDa5Kdp4K1FGEXaL0aJ2Vfih5U5CHOCZ91m9vEAIUX2
-        difSx3OrXwoW6NYrT6GmIv96FsP2AdRi0PM9R8sTwW9XgszVJtTDdgzProcmeDe4QP9iHQIm+U/H87EE
-        nQYXKP+BqnlrCWr1Oa5P7iDxFijJv1+9OdOnxBvTq5E804Y1ebIgd3CvIyOyl1srrASnoHAbIuXFKHF7
-        peTVvtRxuAtrnqk5IwY32/acIR0dQQnaCRlDEnvRmI7ZdPerKBQo1SOVa239H/mGcXnGGyzBZ4ygGiV4
-        RbccougX1tQ//WcNkRoAAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="tsbBitcoin.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>None</value>
   </data>
   <data name="tsbBitcoin.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
   </data>
   <data name="tsbBitcoin.Size" type="System.Drawing.Size, System.Drawing">
-    <value>24, 24</value>
+    <value>28, 28</value>
   </data>
   <data name="tsbBitcoin.Text" xml:space="preserve">
     <value>Bitcoin</value>
-  </data>
-  <data name="tsbGitHub.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>None</value>
   </data>
   <data name="tsbGitHub.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
   </data>
   <data name="tsbGitHub.Size" type="System.Drawing.Size, System.Drawing">
-    <value>24, 24</value>
+    <value>28, 28</value>
   </data>
   <data name="tsbGitHub.Text" xml:space="preserve">
     <value>GitHub</value>
   </data>
   <data name="tsSocialButtons.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 429</value>
+    <value>0, 425</value>
   </data>
   <data name="tsSocialButtons.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>6, 3, 6, 6</value>
   </data>
   <data name="tsSocialButtons.Size" type="System.Drawing.Size, System.Drawing">
-    <value>160, 36</value>
+    <value>160, 40</value>
   </data>
   <data name="tsSocialButtons.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -3607,18 +3579,6 @@
   <data name="&gt;&gt;ttMain.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;tsbPatreon.Name" xml:space="preserve">
-    <value>tsbPatreon</value>
-  </data>
-  <data name="&gt;&gt;tsbPatreon.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tsbBitcoin.Name" xml:space="preserve">
-    <value>tsbBitcoin</value>
-  </data>
-  <data name="&gt;&gt;tsbBitcoin.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;tsbTwitter.Name" xml:space="preserve">
     <value>tsbTwitter</value>
   </data>
@@ -3629,6 +3589,18 @@
     <value>tsbDiscord</value>
   </data>
   <data name="&gt;&gt;tsbDiscord.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsbPatreon.Name" xml:space="preserve">
+    <value>tsbPatreon</value>
+  </data>
+  <data name="&gt;&gt;tsbPatreon.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsbBitcoin.Name" xml:space="preserve">
+    <value>tsbBitcoin</value>
+  </data>
+  <data name="&gt;&gt;tsbBitcoin.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsbGitHub.Name" xml:space="preserve">

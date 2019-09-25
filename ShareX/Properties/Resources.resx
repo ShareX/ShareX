@@ -403,9 +403,6 @@ Would you like to automatically download it?</value>
     <value>Waiting...</value>
     <comment>Text must be equal to or lower than 54 characters because of tray icon text length limit.</comment>
   </data>
-  <data name="DiscordButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\DiscordButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_Image_uploader___0_" xml:space="preserve">
     <value>Image uploader: {0}</value>
   </data>
@@ -444,9 +441,6 @@ Would you like to automatically download it?</value>
   </data>
   <data name="MainForm_UpdateMainWindowLayout_Show_columns" xml:space="preserve">
     <value>Show columns</value>
-  </data>
-  <data name="Patreon_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Patreon-16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="UploadManager_UploadURL_URL_to_download_from_and_upload" xml:space="preserve">
     <value>URL to download and upload</value>
@@ -489,9 +483,6 @@ Would you like to automatically download it?</value>
   </data>
   <data name="document_copy" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\document-copy.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Bitcoin_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Bitcoin-16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ApplicationSettingsForm_cbStartWithWindows_DisabledByUser_Text" xml:space="preserve">
     <value>Startup has been disabled in Task Manager</value>
@@ -543,9 +534,6 @@ Would you like to restart ShareX?</value>
   </data>
   <data name="HotkeyManager_ShowFailedHotkeys_hotkeys" xml:space="preserve">
     <value>hotkeys</value>
-  </data>
-  <data name="PatreonButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\PatreonButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="drive" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\drive.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -743,9 +731,6 @@ Would you like to restart ShareX?</value>
   <data name="UploadInfoManager_ShowErrors_Upload_errors" xml:space="preserve">
     <value>Upload errors</value>
   </data>
-  <data name="BitcoinButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\BitcoinButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="crown" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\crown.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -933,9 +918,6 @@ Middle click to close</value>
   <data name="Twitter" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Twitter.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="TwitterButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\TwitterButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="ScreenRecordForm_DownloaderForm_InstallRequested_FFmpeg_successfully_downloaded_" xml:space="preserve">
     <value>FFmpeg successfully downloaded.</value>
   </data>
@@ -971,9 +953,6 @@ Middle click to close</value>
   </data>
   <data name="application_icon_large" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\application-icon-large.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="SocialHideButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\SocialHideButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="image_pencil" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\image--pencil.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -1011,9 +990,6 @@ Middle click to close</value>
   <data name="AboutForm_AboutForm_Language_es" xml:space="preserve">
     <value>Spanish</value>
   </data>
-  <data name="Discord_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Discord-16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="ApplicationSettingsForm_btnResetSettings_Click_WouldYouLikeToResetShareXSettings" xml:space="preserve">
     <value>Would you like to reset ShareX settings?</value>
   </data>
@@ -1030,10 +1006,19 @@ Middle click to close</value>
   <data name="application_home" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\application-home.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Twitter_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Twitter-16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Bitcoin_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Bitcoin-32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="GitHub_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\GitHub-16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Discord_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Discord-32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GitHub_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GitHub-32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Patreon_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Patreon-32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Twitter_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Twitter-32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

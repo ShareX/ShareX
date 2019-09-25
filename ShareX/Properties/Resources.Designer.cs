@@ -683,19 +683,9 @@ namespace ShareX.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap Bitcoin_16x16 {
+        public static System.Drawing.Bitmap Bitcoin_32x32 {
             get {
-                object obj = ResourceManager.GetObject("Bitcoin_16x16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap BitcoinButton {
-            get {
-                object obj = ResourceManager.GetObject("BitcoinButton", resourceCulture);
+                object obj = ResourceManager.GetObject("Bitcoin_32x32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1020,19 +1010,9 @@ namespace ShareX.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap Discord_16x16 {
+        public static System.Drawing.Bitmap Discord_32x32 {
             get {
-                object obj = ResourceManager.GetObject("Discord_16x16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap DiscordButton {
-            get {
-                object obj = ResourceManager.GetObject("DiscordButton", resourceCulture);
+                object obj = ResourceManager.GetObject("Discord_32x32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1328,9 +1308,9 @@ namespace ShareX.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap GitHub_16x16 {
+        public static System.Drawing.Bitmap GitHub_32x32 {
             get {
-                object obj = ResourceManager.GetObject("GitHub_16x16", resourceCulture);
+                object obj = ResourceManager.GetObject("GitHub_32x32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1977,19 +1957,9 @@ namespace ShareX.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap Patreon_16x16 {
+        public static System.Drawing.Bitmap Patreon_32x32 {
             get {
-                object obj = ResourceManager.GetObject("Patreon_16x16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap PatreonButton {
-            get {
-                object obj = ResourceManager.GetObject("PatreonButton", resourceCulture);
+                object obj = ResourceManager.GetObject("Patreon_32x32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -2298,16 +2268,6 @@ namespace ShareX.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap SocialHideButton {
-            get {
-                object obj = ResourceManager.GetObject("SocialHideButton", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Switch to list view.
         /// </summary>
         public static string SwitchToListView {
@@ -2577,19 +2537,9 @@ namespace ShareX.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap Twitter_16x16 {
+        public static System.Drawing.Bitmap Twitter_32x32 {
             get {
-                object obj = ResourceManager.GetObject("Twitter_16x16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap TwitterButton {
-            get {
-                object obj = ResourceManager.GetObject("TwitterButton", resourceCulture);
+                object obj = ResourceManager.GetObject("Twitter_32x32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

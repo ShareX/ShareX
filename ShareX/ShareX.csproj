@@ -1662,37 +1662,22 @@
     <None Include="Resources\ui-thumbnail-title.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\PatreonButton.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\BitcoinButton.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\TwitterButton.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\DiscordButton.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\SocialHideButton.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\ir.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Discord-16x16.png" />
+    <None Include="Resources\Twitter-32x32.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Twitter-16x16.png" />
+    <None Include="Resources\Discord-32x32.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Patreon-16x16.png" />
+    <None Include="Resources\Patreon-32x32.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Bitcoin-16x16.png" />
+    <None Include="Resources\Bitcoin-32x32.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\GitHub-16x16.png" />
+    <None Include="Resources\GitHub-32x32.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
