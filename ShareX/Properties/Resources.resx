@@ -1012,13 +1012,16 @@ Middle click to close</value>
   <data name="Discord_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Discord-32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="GitHub_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\GitHub-32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Patreon_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Patreon-32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Twitter_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Twitter-32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GitHub_Black_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GitHub-Black-32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GitHub_White_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GitHub-White-32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

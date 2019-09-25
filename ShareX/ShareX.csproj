@@ -1677,7 +1677,10 @@
     <None Include="Resources\Bitcoin-32x32.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\GitHub-32x32.png" />
+    <None Include="Resources\GitHub-White-32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GitHub-Black-32x32.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

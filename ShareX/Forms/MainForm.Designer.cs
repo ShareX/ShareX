@@ -2283,7 +2283,7 @@
             // tsbGitHub
             // 
             this.tsbGitHub.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbGitHub.Image = global::ShareX.Properties.Resources.GitHub_32x32;
+            this.tsbGitHub.Image = global::ShareX.Properties.Resources.GitHub_Black_32x32;
             resources.ApplyResources(this.tsbGitHub, "tsbGitHub");
             this.tsbGitHub.Name = "tsbGitHub";
             this.tsbGitHub.Click += new System.EventHandler(this.TsbGitHub_Click);

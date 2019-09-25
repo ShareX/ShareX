@@ -381,7 +381,12 @@ namespace ShareX.HelpersLib
 
         public static Color VisibleColor(Color color, Color lightColor, Color darkColor)
         {
-            return PerceivedBrightness(color) > 130 ? darkColor : lightColor;
+            return IsLightColor(color) ? darkColor : lightColor;
+        }
+
+        public static bool IsLightColor(Color color)
+        {
+            return PerceivedBrightness(color) > 130;
         }
 
         public static Color Lerp(Color from, Color to, float amount)

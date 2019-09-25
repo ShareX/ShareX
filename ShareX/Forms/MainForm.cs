@@ -821,6 +821,15 @@ namespace ShareX
                 btnCloseNews.FlatAppearance.BorderColor = ShareXResources.Theme.BorderColor;
                 btnCloseNews.ForeColor = ShareXResources.Theme.TextColor;
                 btnCloseNews.BackColor = ShareXResources.Theme.LightBackgroundColor;
+
+                if (ColorHelpers.IsLightColor(ShareXResources.Theme.BackgroundColor))
+                {
+                    tsbGitHub.Image = Resources.GitHub_Black_32x32;
+                }
+                else
+                {
+                    tsbGitHub.Image = Resources.GitHub_White_32x32;
+                }
             }
             else
             {
@@ -842,6 +851,7 @@ namespace ShareX
                 btnCloseNews.FlatAppearance.BorderColor = SystemColors.ControlText;
                 btnCloseNews.ForeColor = SystemColors.ControlText;
                 btnCloseNews.BackColor = SystemColors.Window;
+                tsbGitHub.Image = Resources.GitHub_Black_32x32;
             }
 
             pbPreview.UpdateTheme();
