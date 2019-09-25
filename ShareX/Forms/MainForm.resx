@@ -123,7 +123,7 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="scMain.Location" type="System.Drawing.Point, System.Drawing">
-    <value>160, 0</value>
+    <value>165, 0</value>
   </data>
   <data name="lblListViewTip.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
@@ -241,7 +241,7 @@
     <value>0, 0</value>
   </data>
   <data name="pbPreview.Size" type="System.Drawing.Size, System.Drawing">
-    <value>333, 465</value>
+    <value>328, 465</value>
   </data>
   <data name="pbPreview.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -271,7 +271,7 @@
     <value>1</value>
   </data>
   <data name="scMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>674, 465</value>
+    <value>669, 465</value>
   </data>
   <data name="scMain.SplitterDistance" type="System.Int32, mscorlib">
     <value>335</value>
@@ -297,9 +297,6 @@
   <metadata name="tsMain.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <data name="tsMain.AutoSize" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
   <data name="tsMain.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
@@ -433,7 +430,7 @@
     <value>Magenta</value>
   </data>
   <data name="tsddbCapture.Size" type="System.Drawing.Size, System.Drawing">
-    <value>147, 20</value>
+    <value>152, 20</value>
   </data>
   <data name="tsddbCapture.Text" xml:space="preserve">
     <value>Capture</value>
@@ -487,7 +484,7 @@
     <value>Magenta</value>
   </data>
   <data name="tsddbUpload.Size" type="System.Drawing.Size, System.Drawing">
-    <value>147, 20</value>
+    <value>152, 20</value>
   </data>
   <data name="tsddbUpload.Text" xml:space="preserve">
     <value>Upload</value>
@@ -499,7 +496,7 @@
     <value>Magenta</value>
   </data>
   <data name="tsddbWorkflows.Size" type="System.Drawing.Size, System.Drawing">
-    <value>147, 20</value>
+    <value>152, 20</value>
   </data>
   <data name="tsddbWorkflows.Text" xml:space="preserve">
     <value>Workflows</value>
@@ -595,13 +592,13 @@
     <value>Magenta</value>
   </data>
   <data name="tsddbTools.Size" type="System.Drawing.Size, System.Drawing">
-    <value>147, 20</value>
+    <value>152, 20</value>
   </data>
   <data name="tsddbTools.Text" xml:space="preserve">
     <value>Tools</value>
   </data>
   <data name="tssMain1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>147, 6</value>
+    <value>152, 6</value>
   </data>
   <data name="tsddbAfterCaptureTasks.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
@@ -610,7 +607,7 @@
     <value>Magenta</value>
   </data>
   <data name="tsddbAfterCaptureTasks.Size" type="System.Drawing.Size, System.Drawing">
-    <value>147, 20</value>
+    <value>152, 20</value>
   </data>
   <data name="tsddbAfterCaptureTasks.Text" xml:space="preserve">
     <value>After capture tasks</value>
@@ -622,7 +619,7 @@
     <value>Magenta</value>
   </data>
   <data name="tsddbAfterUploadTasks.Size" type="System.Drawing.Size, System.Drawing">
-    <value>147, 20</value>
+    <value>152, 20</value>
   </data>
   <data name="tsddbAfterUploadTasks.Text" xml:space="preserve">
     <value>After upload tasks</value>
@@ -679,7 +676,7 @@
     <value>Magenta</value>
   </data>
   <data name="tsddbDestinations.Size" type="System.Drawing.Size, System.Drawing">
-    <value>147, 20</value>
+    <value>152, 20</value>
   </data>
   <data name="tsddbDestinations.Text" xml:space="preserve">
     <value>Destinations</value>
@@ -691,7 +688,7 @@
     <value>Magenta</value>
   </data>
   <data name="tsbTaskSettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>147, 20</value>
+    <value>152, 20</value>
   </data>
   <data name="tsbTaskSettings.Text" xml:space="preserve">
     <value>Task settings...</value>
@@ -703,7 +700,7 @@
     <value>Magenta</value>
   </data>
   <data name="tsbApplicationSettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>147, 20</value>
+    <value>152, 20</value>
   </data>
   <data name="tsbApplicationSettings.Text" xml:space="preserve">
     <value>Application settings...</value>
@@ -715,13 +712,13 @@
     <value>Magenta</value>
   </data>
   <data name="tsbHotkeySettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>147, 20</value>
+    <value>152, 20</value>
   </data>
   <data name="tsbHotkeySettings.Text" xml:space="preserve">
     <value>Hotkey settings...</value>
   </data>
   <data name="tssMain2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>147, 6</value>
+    <value>152, 6</value>
   </data>
   <data name="tsbScreenshotsFolder.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
@@ -730,7 +727,7 @@
     <value>Magenta</value>
   </data>
   <data name="tsbScreenshotsFolder.Size" type="System.Drawing.Size, System.Drawing">
-    <value>147, 20</value>
+    <value>152, 20</value>
   </data>
   <data name="tsbScreenshotsFolder.Text" xml:space="preserve">
     <value>Screenshots folder...</value>
@@ -742,7 +739,7 @@
     <value>Magenta</value>
   </data>
   <data name="tsbHistory.Size" type="System.Drawing.Size, System.Drawing">
-    <value>147, 20</value>
+    <value>152, 20</value>
   </data>
   <data name="tsbHistory.Text" xml:space="preserve">
     <value>History...</value>
@@ -754,7 +751,7 @@
     <value>Magenta</value>
   </data>
   <data name="tsbImageHistory.Size" type="System.Drawing.Size, System.Drawing">
-    <value>147, 20</value>
+    <value>152, 20</value>
   </data>
   <data name="tsbImageHistory.Text" xml:space="preserve">
     <value>Image history...</value>
@@ -766,7 +763,7 @@
     <value>Magenta</value>
   </data>
   <data name="tsbNews.Size" type="System.Drawing.Size, System.Drawing">
-    <value>147, 20</value>
+    <value>152, 20</value>
   </data>
   <data name="tsbNews.Text" xml:space="preserve">
     <value>News</value>
@@ -814,7 +811,7 @@
     <value>Magenta</value>
   </data>
   <data name="tsddbDebug.Size" type="System.Drawing.Size, System.Drawing">
-    <value>147, 20</value>
+    <value>152, 20</value>
   </data>
   <data name="tsddbDebug.Text" xml:space="preserve">
     <value>Debug</value>
@@ -826,7 +823,7 @@
     <value>Magenta</value>
   </data>
   <data name="tsbDonate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>147, 20</value>
+    <value>152, 20</value>
   </data>
   <data name="tsbDonate.Text" xml:space="preserve">
     <value>Donate...</value>
@@ -838,22 +835,25 @@
     <value>Magenta</value>
   </data>
   <data name="tsbAbout.Size" type="System.Drawing.Size, System.Drawing">
-    <value>147, 20</value>
+    <value>152, 20</value>
   </data>
   <data name="tsbAbout.Text" xml:space="preserve">
     <value>About...</value>
   </data>
   <data name="tssMain3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>147, 6</value>
+    <value>152, 6</value>
   </data>
   <data name="tsMain.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
+  </data>
+  <data name="tsMain.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>165, 0</value>
   </data>
   <data name="tsMain.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>6, 6, 6, 0</value>
   </data>
   <data name="tsMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>160, 425</value>
+    <value>165, 423</value>
   </data>
   <data name="tsMain.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -1825,7 +1825,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnCloseNews.Location" type="System.Drawing.Point, System.Drawing">
-    <value>552, 428</value>
+    <value>547, 428</value>
   </data>
   <data name="btnCloseNews.Size" type="System.Drawing.Size, System.Drawing">
     <value>99, 31</value>
@@ -1855,7 +1855,7 @@
     <value>0, 0</value>
   </data>
   <data name="ucNews.Size" type="System.Drawing.Size, System.Drawing">
-    <value>674, 465</value>
+    <value>669, 465</value>
   </data>
   <data name="ucNews.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -1876,10 +1876,10 @@
     <value>Fill</value>
   </data>
   <data name="pNews.Location" type="System.Drawing.Point, System.Drawing">
-    <value>160, 0</value>
+    <value>165, 0</value>
   </data>
   <data name="pNews.Size" type="System.Drawing.Size, System.Drawing">
-    <value>674, 465</value>
+    <value>669, 465</value>
   </data>
   <data name="pNews.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -1915,7 +1915,7 @@
     <value>20, 20, 20, 20</value>
   </data>
   <data name="lblThumbnailViewTip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>674, 465</value>
+    <value>669, 465</value>
   </data>
   <data name="lblThumbnailViewTip.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -1942,7 +1942,7 @@
     <value>0, 0</value>
   </data>
   <data name="ucTaskThumbnailView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>674, 465</value>
+    <value>669, 465</value>
   </data>
   <data name="ucTaskThumbnailView.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1963,10 +1963,10 @@
     <value>Fill</value>
   </data>
   <data name="pThumbnailView.Location" type="System.Drawing.Point, System.Drawing">
-    <value>160, 0</value>
+    <value>165, 0</value>
   </data>
   <data name="pThumbnailView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>674, 465</value>
+    <value>669, 465</value>
   </data>
   <data name="pThumbnailView.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -1986,6 +1986,9 @@
   <metadata name="ttMain.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>567, 17</value>
   </metadata>
+  <data name="pToolbars.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
   <metadata name="tsSocialButtons.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>654, 17</value>
   </metadata>
@@ -1996,7 +1999,7 @@
     <value>Magenta</value>
   </data>
   <data name="tsbTwitter.Size" type="System.Drawing.Size, System.Drawing">
-    <value>28, 28</value>
+    <value>30, 30</value>
   </data>
   <data name="tsbTwitter.Text" xml:space="preserve">
     <value>Twitter</value>
@@ -2005,7 +2008,7 @@
     <value>Magenta</value>
   </data>
   <data name="tsbDiscord.Size" type="System.Drawing.Size, System.Drawing">
-    <value>28, 28</value>
+    <value>30, 30</value>
   </data>
   <data name="tsbDiscord.Text" xml:space="preserve">
     <value>Discord</value>
@@ -2014,7 +2017,7 @@
     <value>Magenta</value>
   </data>
   <data name="tsbPatreon.Size" type="System.Drawing.Size, System.Drawing">
-    <value>28, 28</value>
+    <value>30, 30</value>
   </data>
   <data name="tsbPatreon.Text" xml:space="preserve">
     <value>Patreon</value>
@@ -2023,7 +2026,7 @@
     <value>Magenta</value>
   </data>
   <data name="tsbBitcoin.Size" type="System.Drawing.Size, System.Drawing">
-    <value>28, 28</value>
+    <value>30, 30</value>
   </data>
   <data name="tsbBitcoin.Text" xml:space="preserve">
     <value>Bitcoin</value>
@@ -2032,19 +2035,19 @@
     <value>Magenta</value>
   </data>
   <data name="tsbGitHub.Size" type="System.Drawing.Size, System.Drawing">
-    <value>28, 28</value>
+    <value>30, 30</value>
   </data>
   <data name="tsbGitHub.Text" xml:space="preserve">
     <value>GitHub</value>
   </data>
   <data name="tsSocialButtons.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 425</value>
+    <value>0, 423</value>
   </data>
   <data name="tsSocialButtons.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>6, 3, 6, 6</value>
   </data>
   <data name="tsSocialButtons.Size" type="System.Drawing.Size, System.Drawing">
-    <value>160, 40</value>
+    <value>165, 42</value>
   </data>
   <data name="tsSocialButtons.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -2068,7 +2071,7 @@
     <value>0, 0</value>
   </data>
   <data name="pToolbars.Size" type="System.Drawing.Size, System.Drawing">
-    <value>160, 465</value>
+    <value>165, 465</value>
   </data>
   <data name="pToolbars.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>

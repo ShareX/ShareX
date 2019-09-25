@@ -396,8 +396,8 @@
             // 
             // tsMain
             // 
-            resources.ApplyResources(this.tsMain, "tsMain");
             this.tsMain.CanOverflow = false;
+            resources.ApplyResources(this.tsMain, "tsMain");
             this.tsMain.DrawCustomBorder = true;
             this.tsMain.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.tsMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -2227,9 +2227,9 @@
             // 
             // pToolbars
             // 
+            resources.ApplyResources(this.pToolbars, "pToolbars");
             this.pToolbars.Controls.Add(this.tsMain);
             this.pToolbars.Controls.Add(this.tsSocialButtons);
-            resources.ApplyResources(this.pToolbars, "pToolbars");
             this.pToolbars.Name = "pToolbars";
             // 
             // tsSocialButtons
@@ -2254,6 +2254,7 @@
             resources.ApplyResources(this.tsbTwitter, "tsbTwitter");
             this.tsbTwitter.Margin = new System.Windows.Forms.Padding(2, 1, 0, 2);
             this.tsbTwitter.Name = "tsbTwitter";
+            this.tsbTwitter.Padding = new System.Windows.Forms.Padding(1);
             this.tsbTwitter.Click += new System.EventHandler(this.TsbTwitter_Click);
             // 
             // tsbDiscord
@@ -2262,6 +2263,7 @@
             this.tsbDiscord.Image = global::ShareX.Properties.Resources.Discord_32x32;
             resources.ApplyResources(this.tsbDiscord, "tsbDiscord");
             this.tsbDiscord.Name = "tsbDiscord";
+            this.tsbDiscord.Padding = new System.Windows.Forms.Padding(1);
             this.tsbDiscord.Click += new System.EventHandler(this.TsbDiscord_Click);
             // 
             // tsbPatreon
@@ -2270,6 +2272,7 @@
             this.tsbPatreon.Image = global::ShareX.Properties.Resources.Patreon_32x32;
             resources.ApplyResources(this.tsbPatreon, "tsbPatreon");
             this.tsbPatreon.Name = "tsbPatreon";
+            this.tsbPatreon.Padding = new System.Windows.Forms.Padding(1);
             this.tsbPatreon.Click += new System.EventHandler(this.TsbPatreon_Click);
             // 
             // tsbBitcoin
@@ -2278,6 +2281,7 @@
             this.tsbBitcoin.Image = global::ShareX.Properties.Resources.Bitcoin_32x32;
             resources.ApplyResources(this.tsbBitcoin, "tsbBitcoin");
             this.tsbBitcoin.Name = "tsbBitcoin";
+            this.tsbBitcoin.Padding = new System.Windows.Forms.Padding(1);
             this.tsbBitcoin.Click += new System.EventHandler(this.TsbBitcoin_Click);
             // 
             // tsbGitHub
@@ -2286,6 +2290,7 @@
             this.tsbGitHub.Image = global::ShareX.Properties.Resources.GitHub_Black_32x32;
             resources.ApplyResources(this.tsbGitHub, "tsbGitHub");
             this.tsbGitHub.Name = "tsbGitHub";
+            this.tsbGitHub.Padding = new System.Windows.Forms.Padding(1);
             this.tsbGitHub.Click += new System.EventHandler(this.TsbGitHub_Click);
             // 
             // MainForm
@@ -2324,6 +2329,7 @@
             this.tsSocialButtons.ResumeLayout(false);
             this.tsSocialButtons.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
