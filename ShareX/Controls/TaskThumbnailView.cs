@@ -194,7 +194,8 @@ namespace ShareX
 
         private void FlpMain_MouseEnter(object sender, System.EventArgs e)
         {
-            if (!flpMain.Focused)
+            // Workaround to handle mouse wheel scrolling in Windows 7
+            if (NativeMethods.GetForegroundWindow() == ParentForm.Handle && !flpMain.Focused)
             {
                 flpMain.Focus();
             }
