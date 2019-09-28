@@ -1835,6 +1835,11 @@ namespace ShareX
             TaskHelpers.OpenImageCombiner();
         }
 
+        private void TsmiImageSplitter_Click(object sender, EventArgs e)
+        {
+            TaskHelpers.OpenImageSplitter();
+        }
+
         private void tsmiImageThumbnailer_Click(object sender, EventArgs e)
         {
             TaskHelpers.OpenImageThumbnailer();

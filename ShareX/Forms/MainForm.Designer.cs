@@ -84,6 +84,7 @@
             this.tsmiRuler = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiIndexFolder = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiImageCombiner = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiImageSplitter = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiImageThumbnailer = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiVideoThumbnailer = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTweetMessage = new System.Windows.Forms.ToolStripMenuItem();
@@ -288,6 +289,7 @@
             this.tsbPatreon = new System.Windows.Forms.ToolStripButton();
             this.tsbBitcoin = new System.Windows.Forms.ToolStripButton();
             this.tsbGitHub = new System.Windows.Forms.ToolStripButton();
+            this.tsmiTrayImageSplitter = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.scMain)).BeginInit();
             this.scMain.Panel1.SuspendLayout();
             this.scMain.Panel2.SuspendLayout();
@@ -675,6 +677,7 @@
             this.tsmiRuler,
             this.tsmiIndexFolder,
             this.tsmiImageCombiner,
+            this.tsmiImageSplitter,
             this.tsmiImageThumbnailer,
             this.tsmiVideoThumbnailer,
             this.tsmiTweetMessage,
@@ -752,6 +755,12 @@
             this.tsmiImageCombiner.Name = "tsmiImageCombiner";
             resources.ApplyResources(this.tsmiImageCombiner, "tsmiImageCombiner");
             this.tsmiImageCombiner.Click += new System.EventHandler(this.tsmiImageCombiner_Click);
+            // 
+            // tsmiImageSplitter
+            // 
+            this.tsmiImageSplitter.Name = "tsmiImageSplitter";
+            resources.ApplyResources(this.tsmiImageSplitter, "tsmiImageSplitter");
+            this.tsmiImageSplitter.Click += new System.EventHandler(this.TsmiImageSplitter_Click);
             // 
             // tsmiImageThumbnailer
             // 
@@ -1822,6 +1831,7 @@
             this.tsmiTrayRuler,
             this.tsmiTrayIndexFolder,
             this.tsmiTrayImageCombiner,
+            this.tsmiTrayImageSplitter,
             this.tsmiTrayImageThumbnailer,
             this.tsmiTrayVideoThumbnailer,
             this.tsmiTrayTweetMessage,
@@ -2293,6 +2303,12 @@
             this.tsbGitHub.Padding = new System.Windows.Forms.Padding(1);
             this.tsbGitHub.Click += new System.EventHandler(this.TsbGitHub_Click);
             // 
+            // tsmiTrayImageSplitter
+            // 
+            this.tsmiTrayImageSplitter.Name = "tsmiTrayImageSplitter";
+            resources.ApplyResources(this.tsmiTrayImageSplitter, "tsmiTrayImageSplitter");
+            this.tsmiTrayImageSplitter.Click += new System.EventHandler(this.TsmiImageSplitter_Click);
+            // 
             // MainForm
             // 
             this.AllowDrop = true;
@@ -2593,5 +2609,7 @@
         private System.Windows.Forms.ToolStripButton tsbDiscord;
         private System.Windows.Forms.ToolStripButton tsbGitHub;
         private System.Windows.Forms.ToolStripSeparator tssMain3;
+        private System.Windows.Forms.ToolStripMenuItem tsmiImageSplitter;
+        private System.Windows.Forms.ToolStripMenuItem tsmiTrayImageSplitter;
     }
 }

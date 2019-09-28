@@ -60,6 +60,7 @@
             this.chImages});
             this.lvImages.FullRowSelect = true;
             this.lvImages.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
+            this.lvImages.HideSelection = false;
             resources.ApplyResources(this.lvImages, "lvImages");
             this.lvImages.Name = "lvImages";
             this.lvImages.UseCompatibleStateImageBehavior = false;

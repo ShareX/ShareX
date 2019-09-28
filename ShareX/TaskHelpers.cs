@@ -833,6 +833,12 @@ namespace ShareX
             imageCombinerForm.Show();
         }
 
+        public static void OpenImageSplitter()
+        {
+            ImageSplitterForm imageSplitterForm = new ImageSplitterForm();
+            imageSplitterForm.Show();
+        }
+
         public static void OpenImageThumbnailer(TaskSettings taskSettings = null)
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();

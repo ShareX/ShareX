@@ -1746,6 +1746,33 @@ namespace ShareX.HelpersLib
             return bmp;
         }
 
+        public static List<Image> SplitImage(Image img, int rowCount, int columnCount)
+        {
+            List<Image> images = new List<Image>();
+
+            int width = img.Width / columnCount;
+            int height = img.Height / rowCount;
+
+            for (int y = 0; y < rowCount; y++)
+            {
+                for (int x = 0; x < columnCount; x++)
+                {
+                    Bitmap bmp = new Bitmap(width, height);
+
+                    using (Graphics g = Graphics.FromImage(bmp))
+                    {
+                        Rectangle destRect = new Rectangle(0, 0, width, height);
+                        Rectangle srcRect = new Rectangle(x * width, y * height, width, height);
+                        g.DrawImage(img, destRect, srcRect, GraphicsUnit.Pixel);
+                    }
+
+                    images.Add(bmp);
+                }
+            }
+
+            return images;
+        }
+
         public static Image CreateColorPickerIcon(Color color, Rectangle rect, int holeSize = 0)
         {
             Bitmap bmp = new Bitmap(rect.Width, rect.Height);
