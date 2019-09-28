@@ -75,9 +75,12 @@ namespace ShareX.MediaLib
 
                 try
                 {
-                    await SplitImageAsync(filePath, rowCount, columnCount, outputFolder);
+                    List<string> filePaths = await SplitImageAsync(filePath, rowCount, columnCount, outputFolder);
 
-                    Helpers.OpenFolder(outputFolder);
+                    if (filePaths.Count > 0)
+                    {
+                        Helpers.OpenFolderWithFile(filePaths[0]);
+                    }
                 }
                 catch (Exception ex)
                 {
@@ -88,8 +91,10 @@ namespace ShareX.MediaLib
             }
         }
 
-        private void SplitImage(string filePath, int rowCount, int columnCount, string outputFolder)
+        private List<string> SplitImage(string filePath, int rowCount, int columnCount, string outputFolder)
         {
+            List<string> filePaths = new List<string>();
+
             Image img = ImageHelpers.LoadImage(filePath);
 
             if (img != null)
@@ -101,15 +106,18 @@ namespace ShareX.MediaLib
                     string filename = Path.GetFileNameWithoutExtension(filePath) + (i + 1) + ".png";
                     string outputPath = Path.Combine(outputFolder, filename);
                     images[i].Save(outputPath, ImageFormat.Png);
+                    filePaths.Add(outputPath);
                 }
             }
+
+            return filePaths;
         }
 
-        private async Task SplitImageAsync(string filePath, int rowCount, int columnCount, string outputFolder)
+        private async Task<List<string>> SplitImageAsync(string filePath, int rowCount, int columnCount, string outputFolder)
         {
-            await Task.Run(() =>
+            return await Task.Run(() =>
             {
-                SplitImage(filePath, rowCount, columnCount, outputFolder);
+                return SplitImage(filePath, rowCount, columnCount, outputFolder);
             });
         }
     }
