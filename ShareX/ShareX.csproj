@@ -1682,6 +1682,9 @@
   <ItemGroup>
     <None Include="Resources\GitHub-Black-32x32.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image-split.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>

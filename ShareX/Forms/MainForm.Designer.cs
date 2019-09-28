@@ -236,6 +236,7 @@
             this.tsmiTrayRuler = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayIndexFolder = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayImageCombiner = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiTrayImageSplitter = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayImageThumbnailer = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayVideoThumbnailer = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayTweetMessage = new System.Windows.Forms.ToolStripMenuItem();
@@ -289,7 +290,6 @@
             this.tsbPatreon = new System.Windows.Forms.ToolStripButton();
             this.tsbBitcoin = new System.Windows.Forms.ToolStripButton();
             this.tsbGitHub = new System.Windows.Forms.ToolStripButton();
-            this.tsmiTrayImageSplitter = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.scMain)).BeginInit();
             this.scMain.Panel1.SuspendLayout();
             this.scMain.Panel2.SuspendLayout();
@@ -758,6 +758,7 @@
             // 
             // tsmiImageSplitter
             // 
+            this.tsmiImageSplitter.Image = global::ShareX.Properties.Resources.image_split;
             this.tsmiImageSplitter.Name = "tsmiImageSplitter";
             resources.ApplyResources(this.tsmiImageSplitter, "tsmiImageSplitter");
             this.tsmiImageSplitter.Click += new System.EventHandler(this.TsmiImageSplitter_Click);
@@ -1910,6 +1911,12 @@
             resources.ApplyResources(this.tsmiTrayImageCombiner, "tsmiTrayImageCombiner");
             this.tsmiTrayImageCombiner.Click += new System.EventHandler(this.tsmiImageCombiner_Click);
             // 
+            // tsmiTrayImageSplitter
+            // 
+            resources.ApplyResources(this.tsmiTrayImageSplitter, "tsmiTrayImageSplitter");
+            this.tsmiTrayImageSplitter.Name = "tsmiTrayImageSplitter";
+            this.tsmiTrayImageSplitter.Click += new System.EventHandler(this.TsmiImageSplitter_Click);
+            // 
             // tsmiTrayImageThumbnailer
             // 
             this.tsmiTrayImageThumbnailer.Image = global::ShareX.Properties.Resources.image_resize_actual;
@@ -2302,12 +2309,6 @@
             this.tsbGitHub.Name = "tsbGitHub";
             this.tsbGitHub.Padding = new System.Windows.Forms.Padding(1);
             this.tsbGitHub.Click += new System.EventHandler(this.TsbGitHub_Click);
-            // 
-            // tsmiTrayImageSplitter
-            // 
-            this.tsmiTrayImageSplitter.Name = "tsmiTrayImageSplitter";
-            resources.ApplyResources(this.tsmiTrayImageSplitter, "tsmiTrayImageSplitter");
-            this.tsmiTrayImageSplitter.Click += new System.EventHandler(this.TsmiImageSplitter_Click);
             // 
             // MainForm
             // 

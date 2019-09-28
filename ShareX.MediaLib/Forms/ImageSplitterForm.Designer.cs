@@ -137,6 +137,7 @@
             this.btnImageFilePathBrowse.TabIndex = 8;
             this.btnImageFilePathBrowse.Text = "...";
             this.btnImageFilePathBrowse.UseVisualStyleBackColor = true;
+            this.btnImageFilePathBrowse.Click += new System.EventHandler(this.BtnImageFilePathBrowse_Click);
             // 
             // btnOutputFolderBrowse
             // 
@@ -146,6 +147,7 @@
             this.btnOutputFolderBrowse.TabIndex = 9;
             this.btnOutputFolderBrowse.Text = "...";
             this.btnOutputFolderBrowse.UseVisualStyleBackColor = true;
+            this.btnOutputFolderBrowse.Click += new System.EventHandler(this.BtnOutputFolderBrowse_Click);
             // 
             // btnSplitImage
             // 
@@ -174,6 +176,8 @@
             this.Controls.Add(this.lblColumnCount);
             this.Controls.Add(this.lblRowCount);
             this.Controls.Add(this.lblImageFilePath);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "ImageSplitterForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ShareX - Image splitter";

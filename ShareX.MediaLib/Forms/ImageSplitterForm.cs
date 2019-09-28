@@ -46,18 +46,46 @@ namespace ShareX.MediaLib
             ShareXResources.ApplyTheme(this);
         }
 
+        private void BtnImageFilePathBrowse_Click(object sender, EventArgs e)
+        {
+            string filePath = ImageHelpers.OpenImageFileDialog();
+
+            if (!string.IsNullOrEmpty(filePath))
+            {
+                txtImageFilePath.Text = filePath;
+            }
+        }
+
+        private void BtnOutputFolderBrowse_Click(object sender, EventArgs e)
+        {
+            Helpers.BrowseFolder(txtOutputFolder);
+        }
+
         private async void BtnSplitImage_Click(object sender, EventArgs e)
         {
-            btnSplitImage.Enabled = false;
-
             string filePath = txtImageFilePath.Text;
             int rowCount = (int)nudRowCount.Value;
             int columnCount = (int)nudColumnCount.Value;
             string outputFolder = txtOutputFolder.Text;
 
-            await SplitImageAsync(filePath, rowCount, columnCount, outputFolder);
+            if (!string.IsNullOrEmpty(filePath) && File.Exists(filePath) && (rowCount > 1 || columnCount > 1) &&
+                !string.IsNullOrEmpty(outputFolder) && Directory.Exists(outputFolder))
+            {
+                btnSplitImage.Enabled = false;
 
-            btnSplitImage.Enabled = true;
+                try
+                {
+                    await SplitImageAsync(filePath, rowCount, columnCount, outputFolder);
+
+                    Helpers.OpenFolder(outputFolder);
+                }
+                catch (Exception ex)
+                {
+                    ex.ShowError();
+                }
+
+                btnSplitImage.Enabled = true;
+            }
         }
 
         private void SplitImage(string filePath, int rowCount, int columnCount, string outputFolder)

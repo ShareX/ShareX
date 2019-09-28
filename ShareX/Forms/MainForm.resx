@@ -1578,6 +1578,19 @@
   <data name="tsmiTrayImageCombiner.Text" xml:space="preserve">
     <value>Image combiner...</value>
   </data>
+  <data name="tsmiTrayImageSplitter.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAaNJREFUOE+lkN9LU2Ech99/QIQuvNT/YO7CGyUQByE0VhQr5BAJEuiwsYuOMMTN
+        QlAixTQW0Y3uxiVltkajVkK/bqIRUaz8dRNuZZQhTF3Gtqf3nR1FfAOnLzwc3u/383wO5wjgUGiH5SDO
+        9Pa6JO06rJBu9w+XON3T0yFD/zvWm7RHueKk3+8pFIs0DMLRIWi6DsduQONwKVMqMMbgfBguP4K77yCS
+        BOUoVzhNs/NPoYDnDvjuQVCGRp9D98OdghF5vxKHqfew+AM+ZEA5yhXNPp83l8/TF3vNZDJD4jM8+SSR
+        T6tgWoqxj/BiAVLf4MsvUI5yrW88MNphOYj61tZLP3M5jpw4S9Upg2qjDftFk3ozIPdboXOhcTzhKfz3
+        nxJ6lSI+u4pylCvqDKNreWODuvbbNHjHaTIjOINRWq7NbBdcfZbh1ttVJuZ+E00XeCx/ZMmRrqh1u/1f
+        19Z2FRwPPMA9kNguMCPzBKNpBhIrDL9c5+abPMpRrqhxOILfNzdZymb3YBXodspRrqi02y9U2Gz9OqwC
+        3U6h3FLgMGiH+wfxFxF81poGoq2QAAAAAElFTkSuQmCC
+</value>
+  </data>
   <data name="tsmiTrayImageSplitter.Size" type="System.Drawing.Size, System.Drawing">
     <value>184, 22</value>
   </data>
@@ -3312,6 +3325,12 @@
   <data name="&gt;&gt;tsmiTrayImageCombiner.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;tsmiTrayImageSplitter.Name" xml:space="preserve">
+    <value>tsmiTrayImageSplitter</value>
+  </data>
+  <data name="&gt;&gt;tsmiTrayImageSplitter.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;tsmiTrayImageThumbnailer.Name" xml:space="preserve">
     <value>tsmiTrayImageThumbnailer</value>
   </data>
@@ -3581,12 +3600,6 @@
   </data>
   <data name="&gt;&gt;tsbGitHub.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tsmiTrayImageSplitter.Name" xml:space="preserve">
-    <value>tsmiTrayImageSplitter</value>
-  </data>
-  <data name="&gt;&gt;tsmiTrayImageSplitter.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MainForm</value>
