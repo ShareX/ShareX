@@ -1913,8 +1913,9 @@
             // 
             // tsmiTrayImageSplitter
             // 
-            resources.ApplyResources(this.tsmiTrayImageSplitter, "tsmiTrayImageSplitter");
+            this.tsmiTrayImageSplitter.Image = global::ShareX.Properties.Resources.image_split;
             this.tsmiTrayImageSplitter.Name = "tsmiTrayImageSplitter";
+            resources.ApplyResources(this.tsmiTrayImageSplitter, "tsmiTrayImageSplitter");
             this.tsmiTrayImageSplitter.Click += new System.EventHandler(this.TsmiImageSplitter_Click);
             // 
             // tsmiTrayImageThumbnailer
