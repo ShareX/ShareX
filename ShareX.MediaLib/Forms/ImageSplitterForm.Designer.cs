@@ -58,7 +58,7 @@
             this.lblRowCount.Location = new System.Drawing.Point(13, 40);
             this.lblRowCount.Name = "lblRowCount";
             this.lblRowCount.Size = new System.Drawing.Size(62, 13);
-            this.lblRowCount.TabIndex = 1;
+            this.lblRowCount.TabIndex = 3;
             this.lblRowCount.Text = "Row count:";
             // 
             // lblColumnCount
@@ -67,7 +67,7 @@
             this.lblColumnCount.Location = new System.Drawing.Point(13, 64);
             this.lblColumnCount.Name = "lblColumnCount";
             this.lblColumnCount.Size = new System.Drawing.Size(75, 13);
-            this.lblColumnCount.TabIndex = 2;
+            this.lblColumnCount.TabIndex = 5;
             this.lblColumnCount.Text = "Column count:";
             // 
             // nudRowCount
@@ -80,7 +80,7 @@
             0});
             this.nudRowCount.Name = "nudRowCount";
             this.nudRowCount.Size = new System.Drawing.Size(56, 20);
-            this.nudRowCount.TabIndex = 3;
+            this.nudRowCount.TabIndex = 4;
             this.nudRowCount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.nudRowCount.Value = new decimal(new int[] {
             1,
@@ -98,7 +98,7 @@
             0});
             this.nudColumnCount.Name = "nudColumnCount";
             this.nudColumnCount.Size = new System.Drawing.Size(56, 20);
-            this.nudColumnCount.TabIndex = 4;
+            this.nudColumnCount.TabIndex = 6;
             this.nudColumnCount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.nudColumnCount.Value = new decimal(new int[] {
             1,
@@ -111,7 +111,7 @@
             this.txtImageFilePath.Location = new System.Drawing.Point(120, 12);
             this.txtImageFilePath.Name = "txtImageFilePath";
             this.txtImageFilePath.Size = new System.Drawing.Size(280, 20);
-            this.txtImageFilePath.TabIndex = 5;
+            this.txtImageFilePath.TabIndex = 1;
             // 
             // lblOutputFolder
             // 
@@ -119,7 +119,7 @@
             this.lblOutputFolder.Location = new System.Drawing.Point(13, 88);
             this.lblOutputFolder.Name = "lblOutputFolder";
             this.lblOutputFolder.Size = new System.Drawing.Size(71, 13);
-            this.lblOutputFolder.TabIndex = 6;
+            this.lblOutputFolder.TabIndex = 7;
             this.lblOutputFolder.Text = "Output folder:";
             // 
             // txtOutputFolder
@@ -127,14 +127,14 @@
             this.txtOutputFolder.Location = new System.Drawing.Point(120, 84);
             this.txtOutputFolder.Name = "txtOutputFolder";
             this.txtOutputFolder.Size = new System.Drawing.Size(280, 20);
-            this.txtOutputFolder.TabIndex = 7;
+            this.txtOutputFolder.TabIndex = 8;
             // 
             // btnImageFilePathBrowse
             // 
             this.btnImageFilePathBrowse.Location = new System.Drawing.Point(408, 11);
             this.btnImageFilePathBrowse.Name = "btnImageFilePathBrowse";
             this.btnImageFilePathBrowse.Size = new System.Drawing.Size(32, 23);
-            this.btnImageFilePathBrowse.TabIndex = 8;
+            this.btnImageFilePathBrowse.TabIndex = 2;
             this.btnImageFilePathBrowse.Text = "...";
             this.btnImageFilePathBrowse.UseVisualStyleBackColor = true;
             this.btnImageFilePathBrowse.Click += new System.EventHandler(this.BtnImageFilePathBrowse_Click);
