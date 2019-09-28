@@ -197,22 +197,6 @@
   <data name="tsmiShowCursor.Text" xml:space="preserve">
     <value>نمایش کرسر</value>
   </data>
-  <data name="tsmiScreenshotDelay.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAABl0RVh0U29m
-        dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAI4SURBVDhPpZHvaxJxHMfvD7CMHoqPm4igCDLxgYHN
-        o84fCOqT1SSEarL1pAfd9qAHgwqEJgvGKscY5IOspAKpIAnBqEHqGdvKnTd1O+dZ7Mc5fGKPPt3nmIey
-        9aQevO4+fD/v9+u+cAQA/Bfyw+v1Ej6fj/D7/UQgEDgVDAaHJfwS4SNwHsYdZjCLnZMEuqvhcGRheflF
-        oVyuN/f2ugjOeIY7zPxNoLs2Pj6VZZgG12rB7uEhxJ+vwdsvImQZEQqcIL2ZxvVIZAqzAwKPx3P68tjY
-        ZLZYbHzb2oJf7bYsoO+9gvTnNiQzBzCX/AmvP9UgVyo1roRCk9hRBBRF2ebi8VShWoWKIMhlZGL6Kbxb
-        acu8yYlw++EGfChuwsLSUgo7ioAkydGP+fw2Cvpxjd6FRGZHIZrg4M6jPKysrm5jRxE4HI6JAsd1e8Xe
-        DeyeaeUGSCq7CxdvvIcfPN/FjiKw2+03mWpVFvTKFosFaJoGvfMx6MgEDJHP4ByZhKFLL4FtNrvYUQQ2
-        my2UYxi+X7BZr4PVapXfPTiJAstCqVzmsaMIpK+dj83Pp/EPtERxQNKbEdyt8Tw8WVxMY0cRmM3mMxdG
-        Ruiv6+vCzv7+QKmfprT7XqkITqeTxo4iMJlMhMFgMFIuVxQDB53OsTKecbWa4Ha7o5jFzoBAr9cTWq3W
-        bDQaZx7MzmbKLCuInc7vtsSGJI3FYhkpN4MZzJ4o0Gg0hFqtPqtSqSiJWxL3j8CZwh1mjgn+HSD+ABVB
-        iM3ORgOyAAAAAElFTkSuQmCC
-</value>
-  </data>
   <data name="tsmiScreenshotDelay.Size" type="System.Drawing.Size, System.Drawing">
     <value>184, 22</value>
   </data>
@@ -350,22 +334,6 @@
   </data>
   <data name="tsbAbout.Text" xml:space="preserve">
     <value>درباره ما ...</value>
-  </data>
-  <data name="tsmiTrayScreenshotDelay.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAABl0RVh0U29m
-        dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAI4SURBVDhPpZHvaxJxHMfvD7CMHoqPm4igCDLxgYHN
-        o84fCOqT1SSEarL1pAfd9qAHgwqEJgvGKscY5IOspAKpIAnBqEHqGdvKnTd1O+dZ7Mc5fGKPPt3nmIey
-        9aQevO4+fD/v9+u+cAQA/Bfyw+v1Ej6fj/D7/UQgEDgVDAaHJfwS4SNwHsYdZjCLnZMEuqvhcGRheflF
-        oVyuN/f2ugjOeIY7zPxNoLs2Pj6VZZgG12rB7uEhxJ+vwdsvImQZEQqcIL2ZxvVIZAqzAwKPx3P68tjY
-        ZLZYbHzb2oJf7bYsoO+9gvTnNiQzBzCX/AmvP9UgVyo1roRCk9hRBBRF2ebi8VShWoWKIMhlZGL6Kbxb
-        acu8yYlw++EGfChuwsLSUgo7ioAkydGP+fw2Cvpxjd6FRGZHIZrg4M6jPKysrm5jRxE4HI6JAsd1e8Xe
-        DeyeaeUGSCq7CxdvvIcfPN/FjiKw2+03mWpVFvTKFosFaJoGvfMx6MgEDJHP4ByZhKFLL4FtNrvYUQQ2
-        my2UYxi+X7BZr4PVapXfPTiJAstCqVzmsaMIpK+dj83Pp/EPtERxQNKbEdyt8Tw8WVxMY0cRmM3mMxdG
-        Ruiv6+vCzv7+QKmfprT7XqkITqeTxo4iMJlMhMFgMFIuVxQDB53OsTKecbWa4Ha7o5jFzoBAr9cTWq3W
-        bDQaZx7MzmbKLCuInc7vtsSGJI3FYhkpN4MZzJ4o0Gg0hFqtPqtSqSiJWxL3j8CZwh1mjgn+HSD+ABVB
-        iM3ORgOyAAAAAElFTkSuQmCC
-</value>
   </data>
   <data name="tsmiVideoThumbnailer.Text" xml:space="preserve">
     <value>خلاصه کننده ویدئو ...</value>
