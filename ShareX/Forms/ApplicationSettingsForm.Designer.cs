@@ -53,6 +53,7 @@ namespace ShareX
             this.cbRememberMainFormSize = new System.Windows.Forms.CheckBox();
             this.lblLanguage = new System.Windows.Forms.Label();
             this.tpTheme = new System.Windows.Forms.TabPage();
+            this.btnThemeReset = new System.Windows.Forms.Button();
             this.eiTheme = new ShareX.HelpersLib.ExportImportControl();
             this.btnThemeRemove = new System.Windows.Forms.Button();
             this.btnThemeAdd = new System.Windows.Forms.Button();
@@ -152,7 +153,7 @@ namespace ShareX
             this.tpAdvanced = new System.Windows.Forms.TabPage();
             this.pgSettings = new System.Windows.Forms.PropertyGrid();
             this.tttvMain = new ShareX.HelpersLib.TabToTreeView();
-            this.btnThemeReset = new System.Windows.Forms.Button();
+            this.lblExportImportNote = new System.Windows.Forms.Label();
             this.tcSettings.SuspendLayout();
             this.tpGeneral.SuspendLayout();
             this.tpTheme.SuspendLayout();
@@ -364,6 +365,13 @@ namespace ShareX
             resources.ApplyResources(this.tpTheme, "tpTheme");
             this.tpTheme.Name = "tpTheme";
             this.tpTheme.UseVisualStyleBackColor = true;
+            // 
+            // btnThemeReset
+            // 
+            resources.ApplyResources(this.btnThemeReset, "btnThemeReset");
+            this.btnThemeReset.Name = "btnThemeReset";
+            this.btnThemeReset.UseVisualStyleBackColor = true;
+            this.btnThemeReset.Click += new System.EventHandler(this.BtnThemeReset_Click);
             // 
             // eiTheme
             // 
@@ -632,6 +640,7 @@ namespace ShareX
             // tpExportImport
             // 
             this.tpExportImport.BackColor = System.Drawing.SystemColors.Window;
+            this.tpExportImport.Controls.Add(this.lblExportImportNote);
             this.tpExportImport.Controls.Add(this.btnResetSettings);
             this.tpExportImport.Controls.Add(this.pbExportImport);
             this.tpExportImport.Controls.Add(this.btnExport);
@@ -1127,12 +1136,10 @@ namespace ShareX
             this.tttvMain.TreeViewSize = 175;
             this.tttvMain.TabChanged += new ShareX.HelpersLib.TabToTreeView.TabChangedEventHandler(this.tttvMain_TabChanged);
             // 
-            // btnThemeReset
+            // lblExportImportNote
             // 
-            resources.ApplyResources(this.btnThemeReset, "btnThemeReset");
-            this.btnThemeReset.Name = "btnThemeReset";
-            this.btnThemeReset.UseVisualStyleBackColor = true;
-            this.btnThemeReset.Click += new System.EventHandler(this.BtnThemeReset_Click);
+            resources.ApplyResources(this.lblExportImportNote, "lblExportImportNote");
+            this.lblExportImportNote.Name = "lblExportImportNote";
             // 
             // ApplicationSettingsForm
             // 
@@ -1317,5 +1324,6 @@ namespace ShareX
         private System.Windows.Forms.Button btnThemeAdd;
         private ExportImportControl eiTheme;
         private System.Windows.Forms.Button btnThemeReset;
+        private System.Windows.Forms.Label lblExportImportNote;
     }
 }
