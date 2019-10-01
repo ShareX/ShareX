@@ -396,4 +396,31 @@ Bạn có muốn đóng trình chỉnh sửa ảnh không?</value>
   <data name="ShapeManager_CreateContextMenu_Square_shape_magnifier" xml:space="preserve">
     <value>Phóng đại kiểu hình vuông</value>
   </data>
+  <data name="ShapeManager_CreateContextMenu_SwitchToDrawingToolAfterSelection" xml:space="preserve">
+    <value>Chuyển qua công vụ vẽ sau khi chọn hình</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_SwitchToSelectionToolAfterDrawing" xml:space="preserve">
+    <value>Chuyển qua công cụ chọn hình sau khi vẽ hình</value>
+  </data>
+  <data name="CloseEsc" xml:space="preserve">
+    <value>Đóng (Esc)</value>
+  </data>
+  <data name="ImageEffects" xml:space="preserve">
+    <value>Thêm hiệu ứng ảnh...</value>
+  </data>
+  <data name="DropShadowColor" xml:space="preserve">
+    <value>Đổ bóng có màu...</value>
+  </data>
+  <data name="MagnifyStrength" xml:space="preserve">
+    <value>Độ phóng to:</value>
+  </data>
+  <data name="OpenKeybindsPage" xml:space="preserve">
+    <value>Mở trang web chứa thiết lập phím tắt...</value>
+  </data>
+  <data name="LightResizeNodes" xml:space="preserve">
+    <value>Dùng light resize nodes</value>
+  </data>
+  <data name="ThisWindowWillCloseBeforeOpeningKeybindsPageWantContinue" xml:space="preserve">
+    <value>Cửa sổ sẽ được đóng trước khi mở trang web chứa thông tin phím tắt. Bạn có muốn tiếp tục không?</value>
+  </data>
 </root>

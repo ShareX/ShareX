@@ -207,4 +207,49 @@
   <data name="btnScreenColorPicker.ToolTip" xml:space="preserve">
     <value>Chọn màu từ màn hình</value>
   </data>
+  <data name="rbRecentColors.Text" xml:space="preserve">
+    <value>Các màu gần đây</value>
+  </data>
+  <data name="rbStandardColors.Text" xml:space="preserve">
+    <value>Các màu cơ bản</value>
+  </data>
+  <data name="txtY.Text" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="txtX.Text" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblY.Text" xml:space="preserve">
+    <value>Y:</value>
+  </data>
+  <data name="lblX.Text" xml:space="preserve">
+    <value>X:</value>
+  </data>
+  <data name="txtDecimal.Text" xml:space="preserve">
+    <value>12345678</value>
+  </data>
+  <data name="lblCyanPerc.Text" xml:space="preserve">
+    <value>%</value>
+  </data>
+  <data name="lblMagentaPerc.Text" xml:space="preserve">
+    <value>%</value>
+  </data>
+  <data name="lblYellowPerc.Text" xml:space="preserve">
+    <value>%</value>
+  </data>
+  <data name="lblKeyPerc.Text" xml:space="preserve">
+    <value>%</value>
+  </data>
+  <data name="lblBrightnessPerc.Text" xml:space="preserve">
+    <value>%</value>
+  </data>
+  <data name="lblSaturationPerc.Text" xml:space="preserve">
+    <value>%</value>
+  </data>
+  <data name="lblHue.Text" xml:space="preserve">
+    <value>°</value>
+  </data>
+  <data name="txtHex.Text" xml:space="preserve">
+    <value>FF00FF00</value>
+  </data>
 </root>

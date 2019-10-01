@@ -235,4 +235,10 @@ Các thư mục đã tạo:</value>
   <data name="CustomFileUploader_Upload_Response_parse_failed_" xml:space="preserve">
     <value>Xử lý dữ liệu trả về gặp lỗi.</value>
   </data>
+  <data name="DuplicateNameNotAllowed" xml:space="preserve">
+    <value>Không cho phép trùng tên.</value>
+  </data>
+  <data name="txtB2BucketWatermark" xml:space="preserve">
+    <value>Tùy chọn, chỉ dùng nếu bạn không chọn một bucket khi tạo key</value>
+  </data>
 </root>

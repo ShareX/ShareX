@@ -141,4 +141,16 @@
   <data name="btnGenerate.Text" xml:space="preserve">
     <value>Tạo ảnh thu nhỏ/thumbnail</value>
   </data>
+  <data name="txtOutputFilename.Text" xml:space="preserve">
+    <value>$filename_th</value>
+  </data>
+  <data name="btnOutputFolder.Text" xml:space="preserve">
+    <value>...</value>
+  </data>
+  <data name="lblQuality.Text" xml:space="preserve">
+    <value>Chất lượng:</value>
+  </data>
+  <data name="lblQualityPercentage.Text" xml:space="preserve">
+    <value>%</value>
+  </data>
 </root>

@@ -120,4 +120,7 @@
   <data name="VideoThumbnailerForm_btnBrowse_Click_Browse_for_media_file" xml:space="preserve">
     <value>Duyệt tệp tin đa phương tiện</value>
   </data>
+  <data name="ThumbnailsSuccessfullyGenerated" xml:space="preserve">
+    <value>Các ảnh thu nhỏ đã được tạo ra thành công.</value>
+  </data>
 </root>

@@ -132,4 +132,10 @@
   <data name="lblMaximumImageLimit.Text" xml:space="preserve">
     <value>Giới hạn ảnh tối đa:</value>
   </data>
+  <data name="lblThumbnailSizeUnit.Text" xml:space="preserve">
+    <value>px</value>
+  </data>
+  <data name="cbFilterMissingFiles.Text" xml:space="preserve">
+    <value>Lọc các tệp bị thiếu</value>
+  </data>
 </root>
