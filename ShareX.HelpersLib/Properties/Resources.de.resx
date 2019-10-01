@@ -1117,4 +1117,10 @@ Soll sie heruntergeladen werden?</value>
   <data name="ScrollingCaptureScrollMethod_KeyPressPageDown" xml:space="preserve">
     <value>Bild-Ab-Tastendruck simulieren</value>
   </data>
+  <data name="ShapeType_DrawingSticker" xml:space="preserve">
+    <value>Sticker</value>
+  </data>
+  <data name="LinearGradientMode_Horizontal" xml:space="preserve">
+    <value>Horizontal</value>
+  </data>
 </root>

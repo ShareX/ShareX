@@ -120,4 +120,31 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Neues Bild</value>
   </data>
+  <data name="lblHeightPixels.Text" xml:space="preserve">
+    <value>Pixel</value>
+  </data>
+  <data name="lblWidthPixels.Text" xml:space="preserve">
+    <value>Pixel</value>
+  </data>
+  <data name="btnOK.Text" xml:space="preserve">
+    <value>Ok</value>
+  </data>
+  <data name="btnCancel.Text" xml:space="preserve">
+    <value>Abbrechen</value>
+  </data>
+  <data name="lblHeight.Text" xml:space="preserve">
+    <value>Höhe:</value>
+  </data>
+  <data name="lblWidth.Text" xml:space="preserve">
+    <value>Breite:</value>
+  </data>
+  <data name="cbTransparent.Text" xml:space="preserve">
+    <value>Transparent</value>
+  </data>
+  <data name="btnChangeColor.Text" xml:space="preserve">
+    <value>Farbe ändern...</value>
+  </data>
+  <data name="gbBackgroundColor.Text" xml:space="preserve">
+    <value>Hintergrundfarbe</value>
+  </data>
 </root>

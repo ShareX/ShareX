@@ -156,4 +156,10 @@
   <data name="chURL.Text" xml:space="preserve">
     <value>URL</value>
   </data>
+  <data name="btnShowStats.Text" xml:space="preserve">
+    <value>Statistiken anzeigen</value>
+  </data>
+  <data name="lblURLFilter.Text" xml:space="preserve">
+    <value>URL:</value>
+  </data>
 </root>

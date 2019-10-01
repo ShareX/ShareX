@@ -786,4 +786,46 @@
   <data name="tsmiHideThumbnailTitle.Text" xml:space="preserve">
     <value>Thumbnail-Titel ausblenden</value>
   </data>
+  <data name="tsbGitHub.Text" xml:space="preserve">
+    <value>GitHub</value>
+  </data>
+  <data name="tsbBitcoin.Text" xml:space="preserve">
+    <value>Bitcoin</value>
+  </data>
+  <data name="tsbPatreon.Text" xml:space="preserve">
+    <value>Patreon</value>
+  </data>
+  <data name="tsbDiscord.Text" xml:space="preserve">
+    <value>Discord</value>
+  </data>
+  <data name="tsbTwitter.Text" xml:space="preserve">
+    <value>Twitter</value>
+  </data>
+  <data name="niTray.Text" xml:space="preserve">
+    <value>ShareX</value>
+  </data>
+  <data name="tsmiTrayImageSplitter.Text" xml:space="preserve">
+    <value>Bildteiler.....</value>
+  </data>
+  <data name="tsmiThumbnailTitle.Text" xml:space="preserve">
+    <value>Titel der Bildvorschau</value>
+  </data>
+  <data name="tsmiThumbnailTitleBottom.Text" xml:space="preserve">
+    <value>Unten</value>
+  </data>
+  <data name="tsmiThumbnailTitleTop.Text" xml:space="preserve">
+    <value>Oben</value>
+  </data>
+  <data name="tsmiThumbnailTitleHide.Text" xml:space="preserve">
+    <value>Ausblenden</value>
+  </data>
+  <data name="tsmiThumbnailTitleShow.Text" xml:space="preserve">
+    <value>Anzeigen</value>
+  </data>
+  <data name="tsmiRunAction.Text" xml:space="preserve">
+    <value>Aktion ausführen</value>
+  </data>
+  <data name="tsmiImageSplitter.Text" xml:space="preserve">
+    <value>Bildteiler...</value>
+  </data>
 </root>

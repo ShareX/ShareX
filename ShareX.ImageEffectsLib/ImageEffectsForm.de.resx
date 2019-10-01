@@ -162,4 +162,7 @@
   <data name="lblPresetName.Text" xml:space="preserve">
     <value>Name:</value>
   </data>
+  <data name="btnRefresh.Text" xml:space="preserve">
+    <value>Aktualisieren</value>
+  </data>
 </root>

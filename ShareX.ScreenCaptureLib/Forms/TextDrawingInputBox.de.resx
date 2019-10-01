@@ -120,4 +120,49 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Texteingabe</value>
   </data>
+  <data name="lblFont.Text" xml:space="preserve">
+    <value>Schriftart:</value>
+  </data>
+  <data name="lblTextSize.Text" xml:space="preserve">
+    <value>Größe:</value>
+  </data>
+  <data name="btnTextColor.ToolTip" xml:space="preserve">
+    <value>Textfarbe</value>
+  </data>
+  <data name="btnGradient.ToolTip" xml:space="preserve">
+    <value>Gradient</value>
+  </data>
+  <data name="cbBold.ToolTip" xml:space="preserve">
+    <value>Fett</value>
+  </data>
+  <data name="cbItalic.ToolTip" xml:space="preserve">
+    <value>Kursiv</value>
+  </data>
+  <data name="cbUnderline.ToolTip" xml:space="preserve">
+    <value>Unterstrichen</value>
+  </data>
+  <data name="btnAlignmentHorizontal.ToolTip" xml:space="preserve">
+    <value>Horizontale Ausrichtung</value>
+  </data>
+  <data name="btnAlignmentVertical.ToolTip" xml:space="preserve">
+    <value>Vertikale Ausrichtung</value>
+  </data>
+  <data name="btnOK.Text" xml:space="preserve">
+    <value>Ok</value>
+  </data>
+  <data name="tsmiAlignmentLeft.Text" xml:space="preserve">
+    <value>Links</value>
+  </data>
+  <data name="tsmiAlignmentCenter.Text" xml:space="preserve">
+    <value>Zentriert</value>
+  </data>
+  <data name="tsmiAlignmentRight.Text" xml:space="preserve">
+    <value>Rechts</value>
+  </data>
+  <data name="tsmiAlignmentTop.Text" xml:space="preserve">
+    <value>Oben</value>
+  </data>
+  <data name="tsmiAlignmentMiddle.Text" xml:space="preserve">
+    <value>Mittig</value>
+  </data>
 </root>
