@@ -539,4 +539,48 @@ Nhấn chuột giữa để đóng</value>
   <data name="ActionsToolbar_StayTopMost" xml:space="preserve">
     <value>Giữ ở trên cùng</value>
   </data>
+  <data name="OCRForm_AutoCompleteFail" xml:space="preserve">
+    <value>Lỗi xảy ra trong quá trình xử lí nhận diện văn bản (OCR), hoặc không có văn bản được nhận diện.</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_uk" xml:space="preserve">
+    <value>Tiếng Ukraina</value>
+  </data>
+  <data name="ScreenshotDelay0S" xml:space="preserve">
+    <value>Thời gian trễ chụp ảnh màn hình: {0} giây</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_id_ID" xml:space="preserve">
+    <value>Tiếng Indonesia</value>
+  </data>
+  <data name="OCRForm_AutoComplete" xml:space="preserve">
+    <value>Kết quả nhận diện văn bản (OCR) đã được sao chép vào vùng nhớ tạm</value>
+  </data>
+  <data name="ShareXOpticalCharacterRecognition" xml:space="preserve">
+    <value>ShareX - Nhận diện văn bản</value>
+  </data>
+  <data name="OCRForm_AutoProcessing" xml:space="preserve">
+    <value>Đang nhận diện văn bản (OCR)</value>
+  </data>
+  <data name="SwitchToThumbnailView" xml:space="preserve">
+    <value>Chuyển qua xem trước ảnh</value>
+  </data>
+  <data name="ShareXConfirmation" xml:space="preserve">
+    <value>ShareX - Xác nhận</value>
+  </data>
+  <data name="SwitchToListView" xml:space="preserve">
+    <value>Chuyển qua dạng danh sách</value>
+  </data>
+  <data name="ShareXNeedsToBeRestartedForThePersonalFolderChangesToApply" xml:space="preserve">
+    <value>ShareX cần được khởi động lại để thay đổi thư mục cá nhân có hiệu lực.
+
+Bạn có muốn khởi động lại ShareX?</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_es_MX" xml:space="preserve">
+    <value>Tiếng Tây Ban Nha Mexico</value>
+  </data>
+  <data name="PleaseNoteThatShareXIsUsingOCRSpaceSOnlineAPIToPerformOpticalCharacterRecognitionDoYouGivePermissionToShareXToUploadImagesToThisService" xml:space="preserve">
+    <value>Vui lòng lưu ý ShareX đang sử dụng dịch vụ online của OCR.Space để thực hiện nhận diện văn bản. Bạn có muốn cho phép ShareX tải ảnh lên dịch vụ này không?</value>
+  </data>
+  <data name="MainForm_UploadDebugLogWarning" xml:space="preserve">
+    <value>Dữ liệu debug có thể chứa thông tin nhạy cảm. Bạn có chắc muốn tiếp tục không?</value>
+  </data>
 </root>

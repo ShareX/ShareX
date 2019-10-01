@@ -291,7 +291,7 @@ Ví dụ: nếu tên bucket là bucket.example.com thì URL sẽ là http://buck
     <value>Jira host: </value>
   </data>
   <data name="txtJiraConfigHelp.Text" xml:space="preserve">
-    <value>Mẫu biểu</value>
+    <value>Biểu mẫu</value>
   </data>
   <data name="lblJiraIssuePrefix.Text" xml:space="preserve">
     <value>Jira issue prefix:</value>
@@ -348,7 +348,7 @@ Ví dụ: nếu tên bucket là bucket.example.com thì URL sẽ là http://buck
     <value>Dùng liên kết dài có cả tên tệp</value>
   </data>
   <data name="lblOwnCloudHost.Text" xml:space="preserve">
-    <value>Host:</value>
+    <value>URL:</value>
   </data>
   <data name="lblOwnCloudUsername.Text" xml:space="preserve">
     <value>Tên người dùng:</value>
@@ -1048,9 +1048,6 @@ Chỉ có hiệu lực khi không chọn "Cho phép truy cập tới bucket" cho
   <data name="lblFTPText.Text" xml:space="preserve">
     <value>Văn bản:</value>
   </data>
-  <data name="tpTinyPic.Text" xml:space="preserve">
-    <value>TinyPic</value>
-  </data>
   <data name="lblFTPTransferMode.Text" xml:space="preserve">
     <value>Chế độ trao đổi:</value>
   </data>
@@ -1275,5 +1272,65 @@ Lựa chọn này có ích khi sử dụng với dịch vụ như CloudFlare ho�
   </data>
   <data name="cbAmazonS3UsePathStyle.Text" xml:space="preserve">
     <value>Dùng yêu cầu kiểu đường dẫn (path style request)</value>
+  </data>
+  <data name="tpTeknik.Text" xml:space="preserve">
+    <value>Teknik</value>
+  </data>
+  <data name="lblTeknikExpiration.Text" xml:space="preserve">
+    <value>Hết hạn:</value>
+  </data>
+  <data name="lblGooglePhotosCreateAlbumName.Text" xml:space="preserve">
+    <value>Tên album:</value>
+  </data>
+  <data name="btnGooglePhotosCreateAlbum.Text" xml:space="preserve">
+    <value>Tạo</value>
+  </data>
+  <data name="cbGooglePhotosIsPublic.Text" xml:space="preserve">
+    <value>Tải lên công khai</value>
+  </data>
+  <data name="cbGoogleCloudStorageStripExtensionText.Text" xml:space="preserve">
+    <value>Văn bản (Text)</value>
+  </data>
+  <data name="cbGoogleCloudStorageStripExtensionVideo.Text" xml:space="preserve">
+    <value>Video</value>
+  </data>
+  <data name="cbGoogleCloudStorageStripExtensionImage.Text" xml:space="preserve">
+    <value>Ảnh</value>
+  </data>
+  <data name="cbGfycatKeepAudio.Text" xml:space="preserve">
+    <value>Giữ lại âm thanh</value>
+  </data>
+  <data name="cbGoogleCloudStorageSetPublicACL.Text" xml:space="preserve">
+    <value>Đặt quyền công khai cho tệp (public-read ACL)</value>
+  </data>
+  <data name="lblGoogleCloudStorageStripExtension.Text" xml:space="preserve">
+    <value>Xóa phần mở rộng của tệp trên:</value>
+  </data>
+  <data name="lblTeknikUploadAPIUrl.Text" xml:space="preserve">
+    <value>URL tải lên:</value>
+  </data>
+  <data name="cbTeknikEncrypt.Text" xml:space="preserve">
+    <value>Mã hóa phía thiết bị (client side encryption)</value>
+  </data>
+  <data name="cbTeknikGenDeleteKey.Text" xml:space="preserve">
+    <value>Tạo key cho phép xóa</value>
+  </data>
+  <data name="lblTeknikAuthUrl.Text" xml:space="preserve">
+    <value>URL xác thực:</value>
+  </data>
+  <data name="lblTeknikUrlShortenerAPIUrl.Text" xml:space="preserve">
+    <value>API rút gọn URL:</value>
+  </data>
+  <data name="lblTeknikPasteAPIUrl.Text" xml:space="preserve">
+    <value>Dán API URL:</value>
+  </data>
+  <data name="cbAmazonS3SignedPayload.Text" xml:space="preserve">
+    <value>Signed payload - Kèm chữ kí khi gửi lên</value>
+  </data>
+  <data name="lblB2UrlPreviewLabel.Text" xml:space="preserve">
+    <value>URL xem trước:</value>
+  </data>
+  <data name="gbGoogleCloudStorageAdvanced.Text" xml:space="preserve">
+    <value>Nâng cao</value>
   </data>
 </root>

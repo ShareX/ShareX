@@ -417,7 +417,7 @@ Kích thước tệp: {2:n0} / {3:n0} KB</value>
     <value>Xóa tệp trên máy</value>
   </data>
   <data name="AfterCaptureTasks_PerformActions" xml:space="preserve">
-    <value>Thực hiện các hành động</value>
+    <value>Thực hiện các tác vụ</value>
   </data>
   <data name="AfterCaptureTasks_SaveImageToFile" xml:space="preserve">
     <value>Lưu ảnh vào tệp tin</value>
@@ -1073,13 +1073,13 @@ Bạn có muốn tải về không?</value>
     <value>Xóa hình hoặc hủy chụp</value>
   </data>
   <data name="HotkeyType_ToggleActionsToolbar" xml:space="preserve">
-    <value>Bật/Tắt thanh công cụ hành động</value>
+    <value>Bật/Tắt thanh công cụ tác vụ</value>
   </data>
   <data name="ScrollingCaptureScrollMethod_MouseWheel" xml:space="preserve">
     <value>Mô phỏng cuộn chuột</value>
   </data>
   <data name="CustomUploaderDestinationType_ImageUploader" xml:space="preserve">
-    <value>Trình tải lên ảnh</value>
+    <value>Dịch vụ tải lên ảnh</value>
   </data>
   <data name="ShapeType_RegionEllipse" xml:space="preserve">
     <value>Vùng: E-líp</value>
@@ -1146,5 +1146,26 @@ Bạn có muốn tải về không?</value>
   </data>
   <data name="RegionCaptureAction_SwapToolType" xml:space="preserve">
     <value>Hoán đổi kiểu công cụ</value>
+  </data>
+  <data name="Extensions_AddContextMenu_Undo" xml:space="preserve">
+    <value>Hoàn tác</value>
+  </data>
+  <data name="ShapeType_DrawingMagnify" xml:space="preserve">
+    <value>Phóng to</value>
+  </data>
+  <data name="ShapeType_ToolSelect" xml:space="preserve">
+    <value>Chọn và di chuyển (M)</value>
+  </data>
+  <data name="Extensions_AddContextMenu_Delete" xml:space="preserve">
+    <value>Xóa</value>
+  </data>
+  <data name="Extensions_AddContextMenu_SelectAll" xml:space="preserve">
+    <value>Chọn tất cả</value>
+  </data>
+  <data name="Extensions_AddContextMenu_Redo" xml:space="preserve">
+    <value>Làm lại</value>
+  </data>
+  <data name="RandomNonAmbiguousAlphanumericCharRepeatUsingN" xml:space="preserve">
+    <value>Kí tự ngẫu nhiên chứa số và chữ alphabet. Lặp lại dùng {n}</value>
   </data>
 </root>

@@ -162,4 +162,7 @@
   <data name="btnAddPreset.Text" xml:space="preserve">
     <value>Bộ thiết lập mới</value>
   </data>
+  <data name="btnRefresh.Text" xml:space="preserve">
+    <value>Làm mới</value>
+  </data>
 </root>
