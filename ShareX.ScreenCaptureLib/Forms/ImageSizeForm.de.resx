@@ -120,4 +120,28 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Bildgröße</value>
   </data>
+  <data name="lblWidth.Text" xml:space="preserve">
+    <value>Breite:</value>
+  </data>
+  <data name="lblHeight.Text" xml:space="preserve">
+    <value>Höhe:</value>
+  </data>
+  <data name="cbAspectRatio.Text" xml:space="preserve">
+    <value>Seitenverhältnis beibehalten</value>
+  </data>
+  <data name="btnOK.Text" xml:space="preserve">
+    <value>Ok</value>
+  </data>
+  <data name="btnCancel.Text" xml:space="preserve">
+    <value>Abbrechen</value>
+  </data>
+  <data name="lblWidthPixels.Text" xml:space="preserve">
+    <value>Pixel</value>
+  </data>
+  <data name="lblHeightPixels.Text" xml:space="preserve">
+    <value>Pixel</value>
+  </data>
+  <data name="lblResampling.Text" xml:space="preserve">
+    <value>Resampling:</value>
+  </data>
 </root>

@@ -357,4 +357,25 @@
   <data name="btnPersonalFolderPathApply.Text" xml:space="preserve">
     <value>Übernehmen</value>
   </data>
+  <data name="gbSteam.Text" xml:space="preserve">
+    <value>Steam</value>
+  </data>
+  <data name="gbWindows.Text" xml:space="preserve">
+    <value>Windows</value>
+  </data>
+  <data name="btnThemeReset.Text" xml:space="preserve">
+    <value>Zurücksetzen</value>
+  </data>
+  <data name="btnThemeRemove.Text" xml:space="preserve">
+    <value>Entfernen</value>
+  </data>
+  <data name="btnThemeAdd.Text" xml:space="preserve">
+    <value>Hinzufügen</value>
+  </data>
+  <data name="btnApplyTheme.Text" xml:space="preserve">
+    <value>Design anwenden</value>
+  </data>
+  <data name="tpTheme.Text" xml:space="preserve">
+    <value>Design</value>
+  </data>
 </root>

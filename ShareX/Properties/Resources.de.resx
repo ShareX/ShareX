@@ -555,4 +555,31 @@ Soll ShareX neu gestartet werden?</value>
   <data name="PleaseNoteThatShareXIsUsingOCRSpaceSOnlineAPIToPerformOpticalCharacterRecognitionDoYouGivePermissionToShareXToUploadImagesToThisService" xml:space="preserve">
     <value>Bitte beachte, dass ShareX OCR.Space's online API für die Ausführung der Texterkennung benutzt. Gibst du ShareX die Berechtigung, Bilder an diesen Dienst hochzuladen?</value>
   </data>
+  <data name="ApplicationSettingsForm_cbStartWithWindows_EnabledByPolicy_Text" xml:space="preserve">
+    <value>Autostart wurde durch Ihrer Organisation aktiviert.</value>
+  </data>
+  <data name="ApplicationSettingsForm_cbStartWithWindows_DisabledByPolicy_Text" xml:space="preserve">
+    <value>Autostart wurde durch Ihrer Organisation deaktiviert.</value>
+  </data>
+  <data name="SwitchToThumbnailView" xml:space="preserve">
+    <value>Zur Bildvorschau wechseln</value>
+  </data>
+  <data name="SwitchToListView" xml:space="preserve">
+    <value>Zur Listenansicht wechseln</value>
+  </data>
+  <data name="QuickTaskMenuEditorForm_Reset_all_quick_tasks_to_defaults_Confirmation" xml:space="preserve">
+    <value>Alle Quick-Tasks auf die Standardeinstellungen zurücksetzen?</value>
+  </data>
+  <data name="OCRForm_AutoCompleteFail" xml:space="preserve">
+    <value>Bei der OCR-Verarbeitung ist ein Fehler aufgetreten oder es wurde kein Text zurückgegeben.</value>
+  </data>
+  <data name="OCRForm_AutoComplete" xml:space="preserve">
+    <value>Die OCR-Ausgabe wurde in die Zwischenablage kopiert.</value>
+  </data>
+  <data name="ApplicationSettingsForm_cbStartWithWindows_DisabledByUser_Text" xml:space="preserve">
+    <value>Autostart wurde im Task-Manager deaktiviert.</value>
+  </data>
+  <data name="WorkerTask_GetInvalidConfigResult__0__configuration_is_invalid_or_missing__Please_check__Destination_settings__window_to_configure_it_" xml:space="preserve">
+    <value>Konfiguration {0} ist ungültig oder fehlt. Zur Konfiguration überprüfen Sie das Fenster "Zieleinstellungen".</value>
+  </data>
 </root>

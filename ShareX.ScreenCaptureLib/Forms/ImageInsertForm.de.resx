@@ -120,4 +120,13 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Bild einfügen</value>
   </data>
+  <data name="btnCenter.Text" xml:space="preserve">
+    <value>Bild in der Mitte einfügen</value>
+  </data>
+  <data name="btnCanvasExpandDown.Text" xml:space="preserve">
+    <value>Bild unten einfügen (Leinwand vergrößern)</value>
+  </data>
+  <data name="btnCanvasExpandRight.Text" xml:space="preserve">
+    <value>Bild auf der rechten Seite einfügen (Leinwand vergrößern)</value>
+  </data>
 </root>

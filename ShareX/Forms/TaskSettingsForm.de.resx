@@ -558,4 +558,7 @@
   <data name="cbClipboardUploadURLContents.Text" xml:space="preserve">
     <value>Wenn die Zwischenablage eine Datei-URL enthält, lade sie herunter und hoch</value>
   </data>
+  <data name="tpOCR.Text" xml:space="preserve">
+    <value>OCR</value>
+  </data>
 </root>
