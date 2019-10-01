@@ -219,7 +219,7 @@ namespace ShareX
                 Hide();
                 Thread.Sleep(250);
 
-                using (Image img = RegionCaptureTasks.GetRegionImage(null))
+                using (Image img = RegionCaptureTasks.GetRegionImage(TaskSettings.GetDefaultTaskSettings().CaptureSettings.SurfaceOptions))
                 {
                     if (img != null)
                     {
