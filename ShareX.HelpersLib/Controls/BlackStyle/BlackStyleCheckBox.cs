@@ -76,7 +76,11 @@ namespace ShareX.HelpersLib
             }
         }
 
+        [DefaultValue(3)]
         public int SpaceAfterCheckBox { get; set; }
+
+        [DefaultValue(false)]
+        public bool IgnoreClick { get; set; }
 
         private bool isChecked, isHover;
         private string text;
@@ -151,7 +155,10 @@ namespace ShareX.HelpersLib
         {
             base.OnClick(e);
 
-            Checked = !Checked;
+            if (!IgnoreClick)
+            {
+                Checked = !Checked;
+            }
         }
 
         protected virtual void OnCheckedChanged(EventArgs e)
