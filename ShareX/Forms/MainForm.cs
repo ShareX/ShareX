@@ -169,7 +169,7 @@ namespace ShareX
 
             TaskManager.TaskListView = new TaskListView(lvUploads);
             TaskManager.TaskThumbnailView = ucTaskThumbnailView;
-            uim = new UploadInfoManager(lvUploads);
+            uim = new UploadInfoManager();
 
             // Required for BackColor Transparent to work
             lblListViewTip.Parent = lvUploads;
@@ -610,7 +610,7 @@ namespace ShareX
             }
         }
 
-        private void UpdateContextMenu(WorkerTask task = null)
+        private void UpdateContextMenu()
         {
             cmsTaskInfo.SuspendLayout();
 
@@ -622,7 +622,7 @@ namespace ShareX
             if (Program.Settings.TaskViewMode == TaskViewMode.ListView)
             {
                 pbPreview.Reset();
-                uim.RefreshSelectedItems();
+                uim.UpdateSelectedItems(lvUploads.SelectedItems.Cast<ListViewItem>().Select(x => x.Tag as WorkerTask));
 
                 switch (Program.Settings.ImagePreview)
                 {
@@ -647,9 +647,9 @@ namespace ShareX
                         break;
                 }
             }
-            else
+            else if (Program.Settings.TaskViewMode == TaskViewMode.ThumbnailView)
             {
-                uim.SelectItem(task);
+                uim.UpdateSelectedItems(ucTaskThumbnailView.SelectedPanels.Select(x => x.Task));
             }
 
             if (uim.IsItemSelected)
@@ -1126,19 +1126,26 @@ namespace ShareX
 
         private void RemoveTasks(IEnumerable<WorkerTask> tasks)
         {
-            tasks.Where(x => x != null && !x.IsWorking).ForEach(TaskManager.Remove);
+            if (tasks != null)
+            {
+                tasks.Where(x => x != null && !x.IsWorking).ForEach(TaskManager.Remove);
+            }
         }
 
         private void RemoveSelectedItems()
         {
+            IEnumerable<WorkerTask> tasks = null;
+
             if (Program.Settings.TaskViewMode == TaskViewMode.ListView)
             {
-                RemoveTasks(lvUploads.SelectedItems.Cast<ListViewItem>().Select(x => x.Tag as WorkerTask));
+                tasks = lvUploads.SelectedItems.Cast<ListViewItem>().Select(x => x.Tag as WorkerTask);
             }
-            else if (Program.Settings.TaskViewMode == TaskViewMode.ThumbnailView && ucTaskThumbnailView.SelectedPanel != null)
+            else if (Program.Settings.TaskViewMode == TaskViewMode.ThumbnailView)
             {
-                RemoveTasks(new WorkerTask[] { ucTaskThumbnailView.SelectedPanel.Task });
+                tasks = ucTaskThumbnailView.SelectedPanels.Select(x => x.Task);
             }
+
+            RemoveTasks(tasks);
         }
 
         private void RemoveAllItems()
@@ -1539,9 +1546,9 @@ namespace ShareX
             e.Handled = e.SuppressKeyPress = true;
         }
 
-        private void UcTaskView_ContextMenuRequested(object sender, MouseEventArgs e, WorkerTask task)
+        private void UcTaskView_ContextMenuRequested(object sender, MouseEventArgs e)
         {
-            UpdateContextMenu(task);
+            UpdateContextMenu();
             cmsTaskInfo.Show(sender as Control, e.X + 1, e.Y + 1);
         }
 
@@ -1549,7 +1556,7 @@ namespace ShareX
         {
             if (e.Button == MouseButtons.Right)
             {
-                UcTaskView_ContextMenuRequested(lblThumbnailViewTip, e, null);
+                UcTaskView_ContextMenuRequested(lblThumbnailViewTip, e);
             }
         }
 

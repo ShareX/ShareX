@@ -32,28 +32,15 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.lblTitle = new ShareX.HelpersLib.BlackStyleLabel();
             this.ttMain = new System.Windows.Forms.ToolTip(this.components);
             this.pThumbnail = new ShareX.TaskRoundedCornerPanel();
+            this.cbSelected = new ShareX.HelpersLib.BlackStyleCheckBox();
             this.pbProgress = new ShareX.HelpersLib.BlackStyleProgressBar();
             this.pbThumbnail = new System.Windows.Forms.PictureBox();
+            this.lblTitle = new ShareX.HelpersLib.BlackStyleLabel();
             this.pThumbnail.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbThumbnail)).BeginInit();
             this.SuspendLayout();
-            // 
-            // lblTitle
-            // 
-            this.lblTitle.AutoEllipsis = true;
-            this.lblTitle.BackColor = System.Drawing.Color.Transparent;
-            this.lblTitle.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.ForeColor = System.Drawing.Color.White;
-            this.lblTitle.Location = new System.Drawing.Point(0, 0);
-            this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(256, 22);
-            this.lblTitle.TabIndex = 1;
-            this.lblTitle.Text = "Test.png";
-            this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblTitle.MouseClick += new System.Windows.Forms.MouseEventHandler(this.LblTitle_MouseClick);
             // 
             // ttMain
             // 
@@ -66,6 +53,7 @@
             // pThumbnail
             // 
             this.pThumbnail.BackColor = System.Drawing.Color.Transparent;
+            this.pThumbnail.Controls.Add(this.cbSelected);
             this.pThumbnail.Controls.Add(this.pbProgress);
             this.pThumbnail.Controls.Add(this.pbThumbnail);
             this.pThumbnail.Location = new System.Drawing.Point(0, 24);
@@ -74,8 +62,22 @@
             this.pThumbnail.PanelColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(38)))));
             this.pThumbnail.Radius = 5F;
             this.pThumbnail.Size = new System.Drawing.Size(256, 256);
+            this.pThumbnail.StatusLocation = ShareX.ThumbnailTitleLocation.Top;
             this.pThumbnail.TabIndex = 0;
             this.pThumbnail.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PbThumbnail_MouseClick);
+            // 
+            // cbSelected
+            // 
+            this.cbSelected.BackColor = System.Drawing.Color.Transparent;
+            this.cbSelected.Checked = true;
+            this.cbSelected.Font = new System.Drawing.Font("Arial", 8F);
+            this.cbSelected.ForeColor = System.Drawing.Color.White;
+            this.cbSelected.IgnoreClick = true;
+            this.cbSelected.Location = new System.Drawing.Point(4, 4);
+            this.cbSelected.Name = "cbSelected";
+            this.cbSelected.Size = new System.Drawing.Size(13, 13);
+            this.cbSelected.TabIndex = 2;
+            this.cbSelected.Visible = false;
             // 
             // pbProgress
             // 
@@ -106,6 +108,20 @@
             this.pbThumbnail.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PbThumbnail_MouseMove);
             this.pbThumbnail.MouseUp += new System.Windows.Forms.MouseEventHandler(this.PbThumbnail_MouseUp);
             // 
+            // lblTitle
+            // 
+            this.lblTitle.AutoEllipsis = true;
+            this.lblTitle.BackColor = System.Drawing.Color.Transparent;
+            this.lblTitle.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.ForeColor = System.Drawing.Color.White;
+            this.lblTitle.Location = new System.Drawing.Point(0, 0);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(256, 22);
+            this.lblTitle.TabIndex = 1;
+            this.lblTitle.Text = "Test.png";
+            this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblTitle.MouseClick += new System.Windows.Forms.MouseEventHandler(this.LblTitle_MouseClick);
+            // 
             // TaskThumbnailPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -128,5 +144,6 @@
         private HelpersLib.BlackStyleProgressBar pbProgress;
         private System.Windows.Forms.PictureBox pbThumbnail;
         private System.Windows.Forms.ToolTip ttMain;
+        private HelpersLib.BlackStyleCheckBox cbSelected;
     }
 }

@@ -42,7 +42,7 @@
             this.flpMain.TabIndex = 0;
             this.flpMain.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FlpMain_MouseDown);
             this.flpMain.MouseEnter += new System.EventHandler(this.FlpMain_MouseEnter);
-            this.flpMain.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Panel_MouseUp);
+            this.flpMain.MouseUp += new System.Windows.Forms.MouseEventHandler(this.TaskThumbnailView_MouseUp);
             // 
             // TaskThumbnailView
             // 
@@ -55,7 +55,7 @@
             this.Size = new System.Drawing.Size(242, 228);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FlpMain_MouseDown);
             this.MouseEnter += new System.EventHandler(this.FlpMain_MouseEnter);
-            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Panel_MouseUp);
+            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.TaskThumbnailView_MouseUp);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -96,6 +96,25 @@ namespace ShareX
 
         public WorkerTask Task { get; private set; }
 
+        private bool selected;
+
+        public bool Selected
+        {
+            get
+            {
+                return selected;
+            }
+            set
+            {
+                if (selected != value)
+                {
+                    selected = value;
+
+                    cbSelected.Visible = selected;
+                }
+            }
+        }
+
         private string title;
 
         public string Title
@@ -392,7 +411,7 @@ namespace ShareX
 
         private void LblTitle_MouseClick(object sender, MouseEventArgs e)
         {
-            if (e.Button == MouseButtons.Left && Task.Info != null)
+            if (ModifierKeys != Keys.Control && e.Button == MouseButtons.Left && Task.Info != null)
             {
                 if (Task.Info.Result != null)
                 {
@@ -428,7 +447,7 @@ namespace ShareX
 
         private void PbThumbnail_MouseClick(object sender, MouseEventArgs e)
         {
-            if (ThumbnailSupportsClick && e.Button == MouseButtons.Left && Task.Info != null)
+            if (ThumbnailSupportsClick && ModifierKeys != Keys.Control && e.Button == MouseButtons.Left && Task.Info != null)
             {
                 string filePath = Task.Info.FilePath;
 

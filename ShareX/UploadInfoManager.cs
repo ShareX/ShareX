@@ -32,7 +32,6 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace ShareX
 {
@@ -61,33 +60,18 @@ namespace ShareX
             }
         }
 
-        private ListView lv;
         private UploadInfoParser parser;
 
-        public UploadInfoManager(ListView listView)
+        public UploadInfoManager()
         {
-            lv = listView;
             parser = new UploadInfoParser();
         }
 
-        public void RefreshSelectedItems()
+        public void UpdateSelectedItems(IEnumerable<WorkerTask> tasks)
         {
-            if (lv != null && lv.SelectedItems != null && lv.SelectedItems.Count > 0)
+            if (tasks != null && tasks.Count() > 0)
             {
-                SelectedItems = lv.SelectedItems.Cast<ListViewItem>().Select(x => x.Tag as WorkerTask).Where(x => x != null && x.Info != null).
-                    Select(x => new UploadInfoStatus(x)).ToArray();
-            }
-            else
-            {
-                SelectedItems = null;
-            }
-        }
-
-        public void SelectItem(WorkerTask task)
-        {
-            if (task != null && task.Info != null)
-            {
-                SelectedItems = new UploadInfoStatus[] { new UploadInfoStatus(task) };
+                SelectedItems = tasks.Where(x => x != null && x.Info != null).Select(x => new UploadInfoStatus(x)).ToArray();
             }
             else
             {
