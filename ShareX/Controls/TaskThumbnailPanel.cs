@@ -411,7 +411,7 @@ namespace ShareX
 
         private void LblTitle_MouseClick(object sender, MouseEventArgs e)
         {
-            if (e.Button == MouseButtons.Left && Task.Info != null)
+            if (ModifierKeys != Keys.Control && e.Button == MouseButtons.Left && Task.Info != null)
             {
                 if (Task.Info.Result != null)
                 {
