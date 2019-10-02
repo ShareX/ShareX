@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -153,16 +154,7 @@ namespace ShareX
         {
             TaskThumbnailPanel panel = new TaskThumbnailPanel(task);
             panel.MouseEnter += FlpMain_MouseEnter;
-            panel.MouseDown += (sender, e) =>
-            {
-                if (ModifierKeys == Keys.Control)
-                {
-                    SelectedPanels.Clear();
-                }
-
-                SelectedPanels.Add(panel);
-            };
-            panel.MouseUp += Panel_MouseUp;
+            panel.MouseUp += (object sender, MouseEventArgs e) => Panel_MouseUp(sender, e, panel);
             panel.ThumbnailSize = ThumbnailSize;
             panel.TitleVisible = TitleVisible;
             panel.TitleLocation = TitleLocation;
@@ -206,6 +198,16 @@ namespace ShareX
             }
         }
 
+        public void UnselectAllPanels()
+        {
+            SelectedPanels.Clear();
+
+            foreach (TaskThumbnailPanel panel in Panels)
+            {
+                panel.Selected = false;
+            }
+        }
+
         protected void OnContextMenuRequested(object sender, MouseEventArgs e)
         {
             if (ContextMenuRequested != null)
@@ -214,7 +216,7 @@ namespace ShareX
             }
         }
 
-        private void FlpMain_MouseEnter(object sender, System.EventArgs e)
+        private void FlpMain_MouseEnter(object sender, EventArgs e)
         {
             // Workaround to handle mouse wheel scrolling in Windows 7
             if (NativeMethods.GetForegroundWindow() == ParentForm.Handle && !flpMain.Focused)
@@ -225,12 +227,48 @@ namespace ShareX
 
         private void FlpMain_MouseDown(object sender, MouseEventArgs e)
         {
-            SelectedPanels.Clear();
+            UnselectAllPanels();
         }
 
-        private void Panel_MouseUp(object sender, MouseEventArgs e)
+        private void TaskThumbnailView_MouseUp(object sender, MouseEventArgs e)
         {
-            if (e.Button == MouseButtons.Right)
+            Panel_MouseUp(sender, e, null);
+        }
+
+        private void Panel_MouseUp(object sender, MouseEventArgs e, TaskThumbnailPanel panel)
+        {
+            if (panel == null)
+            {
+                UnselectAllPanels();
+            }
+
+            if (panel != null)
+            {
+                if (ModifierKeys == Keys.Control)
+                {
+                    if (panel.Selected)
+                    {
+                        panel.Selected = false;
+                        SelectedPanels.Remove(panel);
+                    }
+                    else
+                    {
+                        panel.Selected = true;
+                        SelectedPanels.Add(panel);
+                    }
+                }
+                else
+                {
+                    if (!panel.Selected)
+                    {
+                        UnselectAllPanels();
+                        panel.Selected = true;
+                        SelectedPanels.Add(panel);
+                    }
+                }
+            }
+
+            if (ModifierKeys != Keys.Control && e.Button == MouseButtons.Right)
             {
                 OnContextMenuRequested(sender, e);
             }

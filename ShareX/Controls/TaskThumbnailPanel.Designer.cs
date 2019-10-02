@@ -34,6 +34,7 @@
             this.components = new System.ComponentModel.Container();
             this.lblTitle = new ShareX.HelpersLib.BlackStyleLabel();
             this.ttMain = new System.Windows.Forms.ToolTip(this.components);
+            this.cbSelected = new ShareX.HelpersLib.BlackStyleCheckBox();
             this.pThumbnail = new ShareX.TaskRoundedCornerPanel();
             this.pbProgress = new ShareX.HelpersLib.BlackStyleProgressBar();
             this.pbThumbnail = new System.Windows.Forms.PictureBox();
@@ -63,9 +64,23 @@
             this.ttMain.ReshowDelay = 100;
             this.ttMain.Draw += new System.Windows.Forms.DrawToolTipEventHandler(this.TtMain_Draw);
             // 
+            // cbSelected
+            // 
+            this.cbSelected.BackColor = System.Drawing.Color.Transparent;
+            this.cbSelected.Checked = true;
+            this.cbSelected.Font = new System.Drawing.Font("Arial", 8F);
+            this.cbSelected.ForeColor = System.Drawing.Color.White;
+            this.cbSelected.Location = new System.Drawing.Point(8, 8);
+            this.cbSelected.Name = "cbSelected";
+            this.cbSelected.Size = new System.Drawing.Size(13, 13);
+            this.cbSelected.SpaceAfterCheckBox = 3;
+            this.cbSelected.TabIndex = 2;
+            this.cbSelected.Visible = false;
+            // 
             // pThumbnail
             // 
             this.pThumbnail.BackColor = System.Drawing.Color.Transparent;
+            this.pThumbnail.Controls.Add(this.cbSelected);
             this.pThumbnail.Controls.Add(this.pbProgress);
             this.pThumbnail.Controls.Add(this.pbThumbnail);
             this.pThumbnail.Location = new System.Drawing.Point(0, 24);
@@ -74,6 +89,7 @@
             this.pThumbnail.PanelColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(38)))));
             this.pThumbnail.Radius = 5F;
             this.pThumbnail.Size = new System.Drawing.Size(256, 256);
+            this.pThumbnail.StatusLocation = ShareX.ThumbnailTitleLocation.Top;
             this.pThumbnail.TabIndex = 0;
             this.pThumbnail.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PbThumbnail_MouseClick);
             // 
@@ -128,5 +144,6 @@
         private HelpersLib.BlackStyleProgressBar pbProgress;
         private System.Windows.Forms.PictureBox pbThumbnail;
         private System.Windows.Forms.ToolTip ttMain;
+        private HelpersLib.BlackStyleCheckBox cbSelected;
     }
 }
