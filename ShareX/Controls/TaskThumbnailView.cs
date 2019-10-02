@@ -34,7 +34,20 @@ namespace ShareX
     public partial class TaskThumbnailView : UserControl
     {
         public List<TaskThumbnailPanel> Panels { get; private set; }
-        public TaskThumbnailPanel SelectedPanel { get; private set; }
+        public List<TaskThumbnailPanel> SelectedPanels { get; private set; }
+
+        public TaskThumbnailPanel SelectedPanel
+        {
+            get
+            {
+                if (SelectedPanels.Count > 0)
+                {
+                    return SelectedPanels[SelectedPanels.Count - 1];
+                }
+
+                return null;
+            }
+        }
 
         private bool titleVisible = true;
 
@@ -102,12 +115,13 @@ namespace ShareX
             }
         }
 
-        public delegate void TaskViewMouseEventHandler(object sender, MouseEventArgs e, WorkerTask task);
+        public delegate void TaskViewMouseEventHandler(object sender, MouseEventArgs e);
         public event TaskViewMouseEventHandler ContextMenuRequested;
 
         public TaskThumbnailView()
         {
             Panels = new List<TaskThumbnailPanel>();
+            SelectedPanels = new List<TaskThumbnailPanel>();
 
             InitializeComponent();
             UpdateTheme();
@@ -139,7 +153,15 @@ namespace ShareX
         {
             TaskThumbnailPanel panel = new TaskThumbnailPanel(task);
             panel.MouseEnter += FlpMain_MouseEnter;
-            panel.MouseDown += (sender, e) => SelectedPanel = panel;
+            panel.MouseDown += (sender, e) =>
+            {
+                if (ModifierKeys == Keys.Control)
+                {
+                    SelectedPanels.Clear();
+                }
+
+                SelectedPanels.Add(panel);
+            };
             panel.MouseUp += Panel_MouseUp;
             panel.ThumbnailSize = ThumbnailSize;
             panel.TitleVisible = TitleVisible;
@@ -184,11 +206,11 @@ namespace ShareX
             }
         }
 
-        protected void OnContextMenuRequested(object sender, MouseEventArgs e, WorkerTask task)
+        protected void OnContextMenuRequested(object sender, MouseEventArgs e)
         {
             if (ContextMenuRequested != null)
             {
-                ContextMenuRequested(sender, e, task);
+                ContextMenuRequested(sender, e);
             }
         }
 
@@ -203,14 +225,14 @@ namespace ShareX
 
         private void FlpMain_MouseDown(object sender, MouseEventArgs e)
         {
-            SelectedPanel = null;
+            SelectedPanels.Clear();
         }
 
         private void Panel_MouseUp(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Right)
             {
-                OnContextMenuRequested(sender, e, SelectedPanel?.Task);
+                OnContextMenuRequested(sender, e);
             }
         }
     }
