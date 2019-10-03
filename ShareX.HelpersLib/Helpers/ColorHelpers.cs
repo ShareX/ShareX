@@ -24,7 +24,9 @@
 #endregion License Information (GPL v3)
 
 using System;
+using System.Collections.Generic;
 using System.Drawing;
+using System.Linq;
 using System.Text.RegularExpressions;
 
 namespace ShareX.HelpersLib
@@ -424,6 +426,25 @@ namespace ShareX.HelpersLib
         public static Color DarkerColor(Color color, float amount)
         {
             return Lerp(color, Color.Black, amount);
+        }
+
+        public static List<Color> GetKnownColors()
+        {
+            List<Color> colors = new List<Color>();
+
+            for (KnownColor knownColor = KnownColor.AliceBlue; knownColor <= KnownColor.YellowGreen; knownColor++)
+            {
+                Color color = Color.FromKnownColor(knownColor);
+                colors.Add(color);
+            }
+
+            return colors;
+        }
+
+        public static Color FindClosestKnownColor(Color color)
+        {
+            List<Color> colors = GetKnownColors();
+            return colors.Aggregate(Color.Black, (accu, curr) => ColorDifference(color, curr) < ColorDifference(color, accu) ? curr : accu);
         }
     }
 }

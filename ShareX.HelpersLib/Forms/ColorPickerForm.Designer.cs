@@ -88,6 +88,8 @@
             this.rbRecentColors = new System.Windows.Forms.RadioButton();
             this.rbStandardColors = new System.Windows.Forms.RadioButton();
             this.flpColorPaletteSelection = new System.Windows.Forms.FlowLayoutPanel();
+            this.lblName = new System.Windows.Forms.Label();
+            this.lblNameValue = new System.Windows.Forms.Label();
             this.mbCopy = new ShareX.HelpersLib.MenuButton();
             this.cbTransparent = new ShareX.HelpersLib.ColorButton();
             this.pbColorPreview = new ShareX.HelpersLib.MyPictureBox();
@@ -551,6 +553,16 @@
             this.flpColorPaletteSelection.Controls.Add(this.rbStandardColors);
             this.flpColorPaletteSelection.Name = "flpColorPaletteSelection";
             // 
+            // lblName
+            // 
+            resources.ApplyResources(this.lblName, "lblName");
+            this.lblName.Name = "lblName";
+            // 
+            // lblNameValue
+            // 
+            resources.ApplyResources(this.lblNameValue, "lblNameValue");
+            this.lblNameValue.Name = "lblNameValue";
+            // 
             // mbCopy
             // 
             resources.ApplyResources(this.mbCopy, "mbCopy");
@@ -575,6 +587,7 @@
             this.pbColorPreview.DrawCheckeredBackground = true;
             resources.ApplyResources(this.pbColorPreview, "pbColorPreview");
             this.pbColorPreview.Name = "pbColorPreview";
+            this.pbColorPreview.PictureBoxBackColor = System.Drawing.SystemColors.Window;
             this.pbColorPreview.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pbColorPreview_MouseClick);
             // 
             // colorPicker
@@ -590,6 +603,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.CancelButton = this.btnCancel;
+            this.Controls.Add(this.lblName);
+            this.Controls.Add(this.lblNameValue);
             this.Controls.Add(this.flpColorPalette);
             this.Controls.Add(this.flpColorPaletteSelection);
             this.Controls.Add(this.btnScreenColorPicker);
@@ -726,5 +741,7 @@
         private System.Windows.Forms.RadioButton rbRecentColors;
         private System.Windows.Forms.RadioButton rbStandardColors;
         private System.Windows.Forms.FlowLayoutPanel flpColorPaletteSelection;
+        private System.Windows.Forms.Label lblName;
+        private System.Windows.Forms.Label lblNameValue;
     }
 }
