@@ -305,7 +305,7 @@ namespace ShareX
             UpdateMainWindowLayout();
             UpdateUploaderMenuNames();
             UpdateDestinationStates();
-            UpdateContextMenu();
+            UpdateInfoManager();
             UpdateToggleHotkeyButton();
             AfterTaskSettingsJobs();
             AfterApplicationSettingsJobs();
@@ -610,7 +610,7 @@ namespace ShareX
             }
         }
 
-        private void UpdateContextMenu()
+        private void UpdateInfoManager()
         {
             cmsTaskInfo.SuspendLayout();
 
@@ -1124,11 +1124,16 @@ namespace ShareX
             return null;
         }
 
-        private void RemoveTasks(IEnumerable<WorkerTask> tasks)
+        private void RemoveTasks(WorkerTask[] tasks)
         {
             if (tasks != null)
             {
-                tasks.Where(x => x != null && !x.IsWorking).ForEach(TaskManager.Remove);
+                foreach (WorkerTask task in tasks.Where(x => x != null && !x.IsWorking))
+                {
+                    TaskManager.Remove(task);
+                }
+
+                UpdateInfoManager();
             }
         }
 
@@ -1145,12 +1150,12 @@ namespace ShareX
                 tasks = ucTaskThumbnailView.SelectedPanels.Select(x => x.Task);
             }
 
-            RemoveTasks(tasks);
+            RemoveTasks(tasks.ToArray());
         }
 
         private void RemoveAllItems()
         {
-            RemoveTasks(lvUploads.Items.Cast<ListViewItem>().Select(x => x.Tag as WorkerTask));
+            RemoveTasks(lvUploads.Items.Cast<ListViewItem>().Select(x => x.Tag as WorkerTask).ToArray());
         }
 
         private void UpdateMainWindowLayout()
@@ -1448,7 +1453,7 @@ namespace ShareX
             }
             else if (e.Button == MouseButtons.Right)
             {
-                UpdateContextMenu();
+                UpdateInfoManager();
                 cmsTaskInfo.Show((Control)sender, e.X + 1, e.Y + 1);
             }
         }
@@ -1458,14 +1463,14 @@ namespace ShareX
             lvUploads.SelectedIndexChanged -= lvUploads_SelectedIndexChanged;
             await Task.Delay(1);
             lvUploads.SelectedIndexChanged += lvUploads_SelectedIndexChanged;
-            UpdateContextMenu();
+            UpdateInfoManager();
         }
 
         private void lvUploads_MouseUp(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Right)
             {
-                UpdateContextMenu();
+                UpdateInfoManager();
                 cmsTaskInfo.Show(lvUploads, e.X + 1, e.Y + 1);
             }
         }
@@ -1536,7 +1541,7 @@ namespace ShareX
                 case Keys.Apps:
                     if (lvUploads.SelectedItems.Count > 0)
                     {
-                        UpdateContextMenu();
+                        UpdateInfoManager();
                         Rectangle rect = lvUploads.GetItemRect(lvUploads.SelectedIndex);
                         cmsTaskInfo.Show(lvUploads, new Point(rect.X, rect.Bottom));
                     }
@@ -1546,9 +1551,13 @@ namespace ShareX
             e.Handled = e.SuppressKeyPress = true;
         }
 
+        private void ucTaskThumbnailView_SelectedPanelChanged(object sender, EventArgs e)
+        {
+            UpdateInfoManager();
+        }
+
         private void UcTaskView_ContextMenuRequested(object sender, MouseEventArgs e)
         {
-            UpdateContextMenu();
             cmsTaskInfo.Show(sender as Control, e.X + 1, e.Y + 1);
         }
 
@@ -2436,35 +2445,35 @@ namespace ShareX
         {
             Program.Settings.ImagePreview = ImagePreviewVisibility.Show;
             tsmiImagePreviewShow.Check();
-            UpdateContextMenu();
+            UpdateInfoManager();
         }
 
         private void tsmiImagePreviewHide_Click(object sender, EventArgs e)
         {
             Program.Settings.ImagePreview = ImagePreviewVisibility.Hide;
             tsmiImagePreviewHide.Check();
-            UpdateContextMenu();
+            UpdateInfoManager();
         }
 
         private void tsmiImagePreviewAutomatic_Click(object sender, EventArgs e)
         {
             Program.Settings.ImagePreview = ImagePreviewVisibility.Automatic;
             tsmiImagePreviewAutomatic.Check();
-            UpdateContextMenu();
+            UpdateInfoManager();
         }
 
         private void tsmiImagePreviewSide_Click(object sender, EventArgs e)
         {
             Program.Settings.ImagePreviewLocation = ImagePreviewLocation.Side;
             tsmiImagePreviewSide.Check();
-            UpdateContextMenu();
+            UpdateInfoManager();
         }
 
         private void tsmiImagePreviewBottom_Click(object sender, EventArgs e)
         {
             Program.Settings.ImagePreviewLocation = ImagePreviewLocation.Bottom;
             tsmiImagePreviewBottom.Check();
-            UpdateContextMenu();
+            UpdateInfoManager();
         }
 
         private void TsmiThumbnailTitleShow_Click(object sender, EventArgs e)
@@ -2511,7 +2520,7 @@ namespace ShareX
 
             UpdateTaskViewMode();
             UpdateMainWindowLayout();
-            UpdateContextMenu();
+            UpdateInfoManager();
         }
 
         #endregion UploadInfoMenu events
