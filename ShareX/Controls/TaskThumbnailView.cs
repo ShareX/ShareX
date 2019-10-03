@@ -119,6 +119,8 @@ namespace ShareX
         public delegate void TaskViewMouseEventHandler(object sender, MouseEventArgs e);
         public event TaskViewMouseEventHandler ContextMenuRequested;
 
+        public event EventHandler SelectedPanelChanged;
+
         public TaskThumbnailView()
         {
             Panels = new List<TaskThumbnailPanel>();
@@ -177,6 +179,7 @@ namespace ShareX
             if (panel != null)
             {
                 Panels.Remove(panel);
+                SelectedPanels.Remove(panel);
                 flpMain.Controls.Remove(panel);
                 panel.Dispose();
             }
@@ -202,6 +205,8 @@ namespace ShareX
         {
             SelectedPanels.Clear();
 
+            OnSelectedPanelChanged();
+
             foreach (TaskThumbnailPanel panel in Panels)
             {
                 panel.Selected = false;
@@ -210,10 +215,12 @@ namespace ShareX
 
         protected void OnContextMenuRequested(object sender, MouseEventArgs e)
         {
-            if (ContextMenuRequested != null)
-            {
-                ContextMenuRequested(sender, e);
-            }
+            ContextMenuRequested?.Invoke(sender, e);
+        }
+
+        protected void OnSelectedPanelChanged()
+        {
+            SelectedPanelChanged?.Invoke(this, EventArgs.Empty);
         }
 
         private void FlpMain_MouseEnter(object sender, EventArgs e)
@@ -268,10 +275,19 @@ namespace ShareX
                 }
             }
 
+            OnSelectedPanelChanged();
+
             if (ModifierKeys != Keys.Control && e.Button == MouseButtons.Right)
             {
                 OnContextMenuRequested(sender, e);
             }
+        }
+
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            OnKeyDown(new KeyEventArgs(keyData));
+
+            return base.ProcessCmdKey(ref msg, keyData);
         }
     }
 }
