@@ -110,7 +110,7 @@ namespace ShareX
                 {
                     selected = value;
 
-                    cbSelected.Visible = selected;
+                    pThumbnail.Selected = selected;
                 }
             }
         }

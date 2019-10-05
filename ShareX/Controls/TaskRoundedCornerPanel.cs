@@ -32,6 +32,25 @@ namespace ShareX
 {
     public class TaskRoundedCornerPanel : RoundedCornerPanel
     {
+        private bool selected;
+
+        public bool Selected
+        {
+            get
+            {
+                return selected;
+            }
+            set
+            {
+                if (selected != value)
+                {
+                    selected = value;
+
+                    Invalidate();
+                }
+            }
+        }
+
         public Color StatusColor { get; private set; } = Color.Transparent;
         public ThumbnailTitleLocation StatusLocation { get; set; }
 
@@ -66,10 +85,20 @@ namespace ShareX
         {
             base.OnPaint(e);
 
+            Graphics g = e.Graphics;
+
+            if (Selected)
+            {
+                g.PixelOffsetMode = PixelOffsetMode.Default;
+
+                using (Pen pen = new Pen(ShareXResources.Theme.TextColor) { DashStyle = DashStyle.Dot })
+                {
+                    g.DrawRoundedRectangle(pen, ClientRectangle, Radius);
+                }
+            }
+
             if (StatusColor.A > 0)
             {
-                Graphics g = e.Graphics;
-
                 g.PixelOffsetMode = PixelOffsetMode.Half;
 
                 int y;
