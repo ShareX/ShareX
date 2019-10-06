@@ -320,7 +320,7 @@ namespace ShareX
                     if (!string.IsNullOrEmpty(filePath) && File.Exists(filePath))
                     {
                         ThumbnailSupportsClick = true;
-                        pThumbnail.Cursor = Cursors.Hand;
+                        pbThumbnail.Cursor = Cursors.Hand;
                     }
 
                     Image img = CreateThumbnail(filePath, image);
@@ -404,7 +404,7 @@ namespace ShareX
             }
 
             ThumbnailSupportsClick = false;
-            pThumbnail.Cursor = Cursors.Default;
+            pbThumbnail.Cursor = Cursors.Default;
 
             ThumbnailExists = false;
         }

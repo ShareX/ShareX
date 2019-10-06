@@ -63,7 +63,6 @@
             this.pThumbnail.Size = new System.Drawing.Size(256, 256);
             this.pThumbnail.StatusLocation = ShareX.ThumbnailTitleLocation.Top;
             this.pThumbnail.TabIndex = 0;
-            this.pThumbnail.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PbThumbnail_MouseClick);
             // 
             // pbProgress
             // 
@@ -78,7 +77,6 @@
             this.pbProgress.TabIndex = 1;
             this.pbProgress.Text = null;
             this.pbProgress.Visible = false;
-            this.pbProgress.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PbThumbnail_MouseClick);
             // 
             // pbThumbnail
             // 
