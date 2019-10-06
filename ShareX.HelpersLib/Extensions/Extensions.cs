@@ -758,16 +758,24 @@ namespace ShareX.HelpersLib
 
         public static List<T> Range<T>(this List<T> source, int start, int end)
         {
+            List<T> list = new List<T>();
+
             if (start > end)
             {
-                int temp = start;
-                start = end;
-                end = temp;
+                for (int i = start; i >= end; i--)
+                {
+                    list.Add(source[i]);
+                }
+            }
+            else
+            {
+                for (int i = start; i <= end; i++)
+                {
+                    list.Add(source[i]);
+                }
             }
 
-            int length = end - start + 1;
-
-            return source.GetRange(start, length);
+            return list;
         }
 
         public static List<T> Range<T>(this List<T> source, T start, T end)

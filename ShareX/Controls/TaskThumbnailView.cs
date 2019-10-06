@@ -268,11 +268,11 @@ namespace ShareX
                 {
                     if (SelectedPanels.Count > 0)
                     {
-                        TaskThumbnailPanel lastPanel = SelectedPanels[SelectedPanels.Count - 1];
+                        TaskThumbnailPanel firstPanel = SelectedPanels[0];
 
                         UnselectAllPanels();
 
-                        foreach (TaskThumbnailPanel p in Panels.Range(panel, lastPanel))
+                        foreach (TaskThumbnailPanel p in Panels.Range(firstPanel, panel))
                         {
                             p.Selected = true;
                             SelectedPanels.Add(p);
