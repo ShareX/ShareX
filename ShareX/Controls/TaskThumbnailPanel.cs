@@ -411,7 +411,7 @@ namespace ShareX
 
         private void LblTitle_MouseClick(object sender, MouseEventArgs e)
         {
-            if (ModifierKeys != Keys.Control && e.Button == MouseButtons.Left && Task.Info != null)
+            if (ModifierKeys == Keys.None && e.Button == MouseButtons.Left && Task.Info != null)
             {
                 if (Task.Info.Result != null)
                 {
@@ -447,7 +447,7 @@ namespace ShareX
 
         private void PbThumbnail_MouseClick(object sender, MouseEventArgs e)
         {
-            if (ThumbnailSupportsClick && ModifierKeys != Keys.Control && e.Button == MouseButtons.Left && Task.Info != null)
+            if (ThumbnailSupportsClick && ModifierKeys == Keys.None && e.Button == MouseButtons.Left && Task.Info != null)
             {
                 string filePath = Task.Info.FilePath;
 

@@ -755,5 +755,30 @@ namespace ShareX.HelpersLib
                 };
             }
         }
+
+        public static List<T> Range<T>(this List<T> source, int start, int end)
+        {
+            if (start > end)
+            {
+                int temp = start;
+                start = end;
+                end = temp;
+            }
+
+            int length = end - start + 1;
+
+            return source.GetRange(start, length);
+        }
+
+        public static List<T> Range<T>(this List<T> source, T start, T end)
+        {
+            int startIndex = source.IndexOf(start);
+            if (startIndex == -1) return new List<T>();
+
+            int endIndex = source.IndexOf(end);
+            if (endIndex == -1) return new List<T>();
+
+            return Range(source, startIndex, endIndex);
+        }
     }
 }

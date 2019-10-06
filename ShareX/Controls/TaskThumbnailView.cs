@@ -205,12 +205,12 @@ namespace ShareX
         {
             SelectedPanels.Clear();
 
-            OnSelectedPanelChanged();
-
             foreach (TaskThumbnailPanel panel in Panels)
             {
                 panel.Selected = false;
             }
+
+            OnSelectedPanelChanged();
         }
 
         protected void OnContextMenuRequested(object sender, MouseEventArgs e)
@@ -264,6 +264,26 @@ namespace ShareX
                         SelectedPanels.Add(panel);
                     }
                 }
+                else if (ModifierKeys == Keys.Shift)
+                {
+                    if (SelectedPanels.Count > 0)
+                    {
+                        TaskThumbnailPanel lastPanel = SelectedPanels[SelectedPanels.Count - 1];
+
+                        UnselectAllPanels();
+
+                        foreach (TaskThumbnailPanel p in Panels.Range(panel, lastPanel))
+                        {
+                            p.Selected = true;
+                            SelectedPanels.Add(p);
+                        }
+                    }
+                    else
+                    {
+                        panel.Selected = true;
+                        SelectedPanels.Add(panel);
+                    }
+                }
                 else
                 {
                     if (!panel.Selected)
@@ -277,7 +297,7 @@ namespace ShareX
 
             OnSelectedPanelChanged();
 
-            if (ModifierKeys != Keys.Control && e.Button == MouseButtons.Right)
+            if (e.Button == MouseButtons.Right)
             {
                 OnContextMenuRequested(sender, e);
             }
