@@ -153,7 +153,6 @@
             this.Controls.Add(this.lblArgs);
             this.Controls.Add(this.lblPath);
             this.Controls.Add(this.lblName);
-            this.MaximizeBox = false;
             this.Name = "ActionsForm";
             this.ResumeLayout(false);
             this.PerformLayout();

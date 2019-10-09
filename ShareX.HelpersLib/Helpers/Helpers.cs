@@ -325,13 +325,18 @@ namespace ShareX.HelpersLib
         public static string GetValidFileName(string fileName, string separator = "")
         {
             char[] invalidFileNameChars = Path.GetInvalidFileNameChars();
+
             if (string.IsNullOrEmpty(separator))
             {
                 return new string(fileName.Where(c => !invalidFileNameChars.Contains(c)).ToArray());
             }
             else
             {
-                invalidFileNameChars.ForEach(x => fileName = fileName.Replace(x.ToString(), separator));
+                foreach (char invalidFileNameChar in invalidFileNameChars)
+                {
+                    fileName = fileName.Replace(invalidFileNameChar.ToString(), separator);
+                }
+
                 return fileName.Trim().Replace(separator + separator, separator);
             }
         }
@@ -730,6 +735,11 @@ namespace ShareX.HelpersLib
                 {
                     string path = tb.Text;
 
+                    if (detectSpecialFolders)
+                    {
+                        path = ExpandFolderVariables(path);
+                    }
+
                     if (!string.IsNullOrEmpty(path))
                     {
                         path = Path.GetDirectoryName(path);
@@ -750,7 +760,15 @@ namespace ShareX.HelpersLib
 
                 if (ofd.ShowDialog() == DialogResult.OK)
                 {
-                    tb.Text = detectSpecialFolders ? GetVariableFolderPath(ofd.FileName) : ofd.FileName;
+                    string fileName = ofd.FileName;
+
+                    if (detectSpecialFolders)
+                    {
+                        fileName = GetVariableFolderPath(fileName);
+                    }
+
+                    tb.Text = fileName;
+
                     return true;
                 }
             }
@@ -796,7 +814,10 @@ namespace ShareX.HelpersLib
             {
                 try
                 {
-                    GetEnums<Environment.SpecialFolder>().ForEach(x => path = path.Replace(Environment.GetFolderPath(x), $"%{x}%", StringComparison.InvariantCultureIgnoreCase));
+                    foreach (Environment.SpecialFolder specialFolder in GetEnums<Environment.SpecialFolder>())
+                    {
+                        path = path.Replace(Environment.GetFolderPath(specialFolder), $"%{specialFolder}%", StringComparison.OrdinalIgnoreCase);
+                    }
                 }
                 catch (Exception e)
                 {
@@ -813,7 +834,11 @@ namespace ShareX.HelpersLib
             {
                 try
                 {
-                    GetEnums<Environment.SpecialFolder>().ForEach(x => path = path.Replace($"%{x}%", Environment.GetFolderPath(x), StringComparison.InvariantCultureIgnoreCase));
+                    foreach (Environment.SpecialFolder specialFolder in GetEnums<Environment.SpecialFolder>())
+                    {
+                        path = path.Replace($"%{specialFolder}%", Environment.GetFolderPath(specialFolder), StringComparison.OrdinalIgnoreCase);
+                    }
+
                     path = Environment.ExpandEnvironmentVariables(path);
                 }
                 catch (Exception e)
@@ -823,6 +848,18 @@ namespace ShareX.HelpersLib
             }
 
             return path;
+        }
+
+        public static string OutputSpecialFolders()
+        {
+            StringBuilder sb = new StringBuilder();
+
+            foreach (Environment.SpecialFolder specialFolder in GetEnums<Environment.SpecialFolder>())
+            {
+                sb.AppendLine(string.Format("{0,-25}{1}", specialFolder, Environment.GetFolderPath(specialFolder)));
+            }
+
+            return sb.ToString();
         }
 
         public static bool WaitWhile(Func<bool> check, int interval, int timeout = -1)

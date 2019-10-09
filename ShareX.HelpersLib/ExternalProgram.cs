@@ -52,9 +52,16 @@ namespace ShareX.HelpersLib
             Path = path;
         }
 
+        public string GetFullPath()
+        {
+            return Helpers.ExpandFolderVariables(Path);
+        }
+
         public string Run(string inputPath)
         {
-            if (!string.IsNullOrEmpty(Path) && File.Exists(Path) && !string.IsNullOrWhiteSpace(inputPath))
+            string path = GetFullPath();
+
+            if (!string.IsNullOrEmpty(path) && File.Exists(path) && !string.IsNullOrWhiteSpace(inputPath))
             {
                 inputPath = inputPath.Trim('"');
 
@@ -91,7 +98,7 @@ namespace ShareX.HelpersLib
                         {
                             ProcessStartInfo psi = new ProcessStartInfo()
                             {
-                                FileName = Path,
+                                FileName = path,
                                 Arguments = arguments,
                                 UseShellExecute = false,
                                 CreateNoWindow = HiddenWindow

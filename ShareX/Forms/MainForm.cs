@@ -895,7 +895,7 @@ namespace ShareX
 
                         try
                         {
-                            using (Icon icon = NativeMethods.GetFileIcon(action.Path, true))
+                            using (Icon icon = NativeMethods.GetFileIcon(action.GetFullPath(), true))
                             {
                                 if (icon != null && icon.Width > 0 && icon.Height > 0)
                                 {

@@ -137,6 +137,8 @@ namespace ShareX.ScreenCaptureLib
 
         protected void DrawLine(Graphics g)
         {
+            int borderSize = Math.Max(BorderSize, 1);
+
             if (Shadow)
             {
                 Point[] shadowPoints = new Point[Points.Length];
@@ -146,10 +148,10 @@ namespace ShareX.ScreenCaptureLib
                     shadowPoints[i] = Points[i].Add(ShadowOffset);
                 }
 
-                DrawLine(g, ShadowColor, Math.Max(BorderSize, 1), shadowPoints);
+                DrawLine(g, ShadowColor, borderSize, shadowPoints);
             }
 
-            DrawLine(g, BorderColor, Math.Max(BorderSize, 1), Points);
+            DrawLine(g, BorderColor, borderSize, Points);
         }
 
         protected void DrawLine(Graphics g, Color borderColor, int borderSize, Point[] points)

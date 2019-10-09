@@ -112,12 +112,14 @@ namespace ShareX.ScreenCaptureLib
 
         protected void DrawFreehand(Graphics g)
         {
+            int borderSize = Math.Max(BorderSize, 1);
+
             if (Shadow)
             {
-                DrawFreehand(g, ShadowColor, Math.Max(BorderSize, 1), positions.Select(x => x.Add(ShadowOffset)).ToArray());
+                DrawFreehand(g, ShadowColor, borderSize, positions.Select(x => x.Add(ShadowOffset)).ToArray());
             }
 
-            DrawFreehand(g, BorderColor, Math.Max(BorderSize, 1), positions.ToArray());
+            DrawFreehand(g, BorderColor, borderSize, positions.ToArray());
         }
 
         protected void DrawFreehand(Graphics g, Color borderColor, int borderSize, Point[] points)
