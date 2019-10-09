@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using System;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 
@@ -145,10 +146,10 @@ namespace ShareX.ScreenCaptureLib
                     shadowPoints[i] = Points[i].Add(ShadowOffset);
                 }
 
-                DrawLine(g, ShadowColor, BorderSize, shadowPoints);
+                DrawLine(g, ShadowColor, Math.Max(BorderSize, 1), shadowPoints);
             }
 
-            DrawLine(g, BorderColor, BorderSize, Points);
+            DrawLine(g, BorderColor, Math.Max(BorderSize, 1), Points);
         }
 
         protected void DrawLine(Graphics g, Color borderColor, int borderSize, Point[] points)

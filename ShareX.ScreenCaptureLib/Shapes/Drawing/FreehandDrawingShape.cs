@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Drawing2D;
@@ -113,10 +114,10 @@ namespace ShareX.ScreenCaptureLib
         {
             if (Shadow)
             {
-                DrawFreehand(g, ShadowColor, BorderSize, positions.Select(x => x.Add(ShadowOffset)).ToArray());
+                DrawFreehand(g, ShadowColor, Math.Max(BorderSize, 1), positions.Select(x => x.Add(ShadowOffset)).ToArray());
             }
 
-            DrawFreehand(g, BorderColor, BorderSize, positions.ToArray());
+            DrawFreehand(g, BorderColor, Math.Max(BorderSize, 1), positions.ToArray());
         }
 
         protected void DrawFreehand(Graphics g, Color borderColor, int borderSize, Point[] points)
