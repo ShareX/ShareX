@@ -31,9 +31,9 @@ namespace ShareX.HelpersLib
 {
     public class WindowState
     {
-        public Point Location { get; private set; }
-        public Size Size { get; private set; }
-        public bool IsMaximized { get; private set; }
+        public Point Location { get; set; }
+        public Size Size { get; set; }
+        public bool IsMaximized { get; set; }
 
         public void ApplyFormState(Form form)
         {

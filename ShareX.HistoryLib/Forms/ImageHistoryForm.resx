@@ -138,7 +138,7 @@
     <value>0, 0</value>
   </data>
   <data name="ilvImages.Size" type="System.Drawing.Size, System.Drawing">
-    <value>834, 636</value>
+    <value>869, 636</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="ilvImages.TabIndex" type="System.Int32, mscorlib">
@@ -157,7 +157,7 @@
     <value>0</value>
   </data>
   <data name="tscMain.ContentPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>834, 636</value>
+    <value>869, 636</value>
   </data>
   <data name="&gt;&gt;tscMain.ContentPanel.Name" xml:space="preserve">
     <value>tscMain.ContentPanel</value>
@@ -202,7 +202,7 @@
     <value>2</value>
   </data>
   <data name="tscMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>834, 661</value>
+    <value>869, 661</value>
   </data>
   <data name="tscMain.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -301,7 +301,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>834, 661</value>
+    <value>869, 661</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>
