@@ -197,40 +197,41 @@ namespace ShareX.HelpersLib
         {
             string typeName = typeof(T).Name;
 
-            if (!string.IsNullOrEmpty(filePath))
+            if (!string.IsNullOrEmpty(filePath) && File.Exists(filePath))
             {
                 DebugHelper.WriteLine($"{typeName} load started: {filePath}");
 
                 try
                 {
-                    if (File.Exists(filePath))
+                    using (FileStream fileStream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read))
                     {
-                        using (FileStream fileStream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read))
+                        if (fileStream.Length > 0)
                         {
-                            if (fileStream.Length > 0)
+                            T settings;
+
+                            using (StreamReader streamReader = new StreamReader(fileStream))
+                            using (JsonTextReader jsonReader = new JsonTextReader(streamReader))
                             {
-                                T settings;
-
-                                using (StreamReader streamReader = new StreamReader(fileStream))
-                                using (JsonTextReader jsonReader = new JsonTextReader(streamReader))
-                                {
-                                    JsonSerializer serializer = new JsonSerializer();
-                                    serializer.Converters.Add(new StringEnumConverter());
-                                    serializer.DateTimeZoneHandling = DateTimeZoneHandling.Local;
-                                    serializer.ObjectCreationHandling = ObjectCreationHandling.Replace;
-                                    serializer.Error += Serializer_Error;
-                                    settings = serializer.Deserialize<T>(jsonReader);
-                                }
-
-                                if (settings == null)
-                                {
-                                    throw new Exception($"{typeName} object is null.");
-                                }
-
-                                DebugHelper.WriteLine($"{typeName} load finished: {filePath}");
-
-                                return settings;
+                                JsonSerializer serializer = new JsonSerializer();
+                                serializer.Converters.Add(new StringEnumConverter());
+                                serializer.DateTimeZoneHandling = DateTimeZoneHandling.Local;
+                                serializer.ObjectCreationHandling = ObjectCreationHandling.Replace;
+                                serializer.Error += Serializer_Error;
+                                settings = serializer.Deserialize<T>(jsonReader);
                             }
+
+                            if (settings == null)
+                            {
+                                throw new Exception($"{typeName} object is null.");
+                            }
+
+                            DebugHelper.WriteLine($"{typeName} load finished: {filePath}");
+
+                            return settings;
+                        }
+                        else
+                        {
+                            throw new Exception($"{typeName} file stream length is 0.");
                         }
                     }
                 }
@@ -238,16 +239,20 @@ namespace ShareX.HelpersLib
                 {
                     DebugHelper.WriteException(e, $"{typeName} load failed: {filePath}");
                 }
-
-                if (!string.IsNullOrEmpty(backupFolder))
-                {
-                    string fileName = Path.GetFileName(filePath);
-                    string backupFilePath = Path.Combine(backupFolder, fileName);
-                    return LoadInternal(backupFilePath);
-                }
+            }
+            else
+            {
+                DebugHelper.WriteLine($"{typeName} file does not exist: {filePath}");
             }
 
-            DebugHelper.WriteLine($"{typeName} not found. Loading new instance.");
+            if (!string.IsNullOrEmpty(backupFolder))
+            {
+                string fileName = Path.GetFileName(filePath);
+                string backupFilePath = Path.Combine(backupFolder, fileName);
+                return LoadInternal(backupFilePath);
+            }
+
+            DebugHelper.WriteLine($"Loading new {typeName} instance.");
 
             return new T();
         }
