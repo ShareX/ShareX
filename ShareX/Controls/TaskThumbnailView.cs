@@ -155,11 +155,12 @@ namespace ShareX
         private TaskThumbnailPanel CreatePanel(WorkerTask task)
         {
             TaskThumbnailPanel panel = new TaskThumbnailPanel(task);
-            panel.MouseEnter += FlpMain_MouseEnter;
-            panel.MouseUp += (object sender, MouseEventArgs e) => Panel_MouseUp(sender, e, panel);
             panel.ThumbnailSize = ThumbnailSize;
             panel.TitleVisible = TitleVisible;
             panel.TitleLocation = TitleLocation;
+            panel.MouseEnter += Panel_MouseEnter;
+            panel.MouseDown += (object sender, MouseEventArgs e) => Panel_MouseDown(sender, e, panel);
+            panel.MouseUp += Panel_MouseUp;
             return panel;
         }
 
@@ -223,7 +224,7 @@ namespace ShareX
             SelectedPanelChanged?.Invoke(this, EventArgs.Empty);
         }
 
-        private void FlpMain_MouseEnter(object sender, EventArgs e)
+        private void Panel_MouseEnter(object sender, EventArgs e)
         {
             // Workaround to handle mouse wheel scrolling in Windows 7
             if (NativeMethods.GetForegroundWindow() == ParentForm.Handle && !flpMain.Focused)
@@ -232,17 +233,12 @@ namespace ShareX
             }
         }
 
-        private void FlpMain_MouseDown(object sender, MouseEventArgs e)
+        private void Panel_MouseDown(object sender, MouseEventArgs e)
         {
-            UnselectAllPanels();
+            Panel_MouseDown(sender, e, null);
         }
 
-        private void TaskThumbnailView_MouseUp(object sender, MouseEventArgs e)
-        {
-            Panel_MouseUp(sender, e, null);
-        }
-
-        private void Panel_MouseUp(object sender, MouseEventArgs e, TaskThumbnailPanel panel)
+        private void Panel_MouseDown(object sender, MouseEventArgs e, TaskThumbnailPanel panel)
         {
             if (panel == null)
             {
@@ -286,7 +282,7 @@ namespace ShareX
                 }
                 else
                 {
-                    if (!panel.Selected)
+                    if (!panel.Selected || e.Button == MouseButtons.Left)
                     {
                         UnselectAllPanels();
                         panel.Selected = true;
@@ -296,7 +292,10 @@ namespace ShareX
             }
 
             OnSelectedPanelChanged();
+        }
 
+        private void Panel_MouseUp(object sender, MouseEventArgs e)
+        {
             if (e.Button == MouseButtons.Right)
             {
                 OnContextMenuRequested(sender, e);

@@ -40,9 +40,9 @@
             this.flpMain.Padding = new System.Windows.Forms.Padding(5, 3, 5, 5);
             this.flpMain.Size = new System.Drawing.Size(242, 8);
             this.flpMain.TabIndex = 0;
-            this.flpMain.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FlpMain_MouseDown);
-            this.flpMain.MouseEnter += new System.EventHandler(this.FlpMain_MouseEnter);
-            this.flpMain.MouseUp += new System.Windows.Forms.MouseEventHandler(this.TaskThumbnailView_MouseUp);
+            this.flpMain.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Panel_MouseDown);
+            this.flpMain.MouseEnter += new System.EventHandler(this.Panel_MouseEnter);
+            this.flpMain.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Panel_MouseUp);
             // 
             // TaskThumbnailView
             // 
@@ -53,9 +53,9 @@
             this.Controls.Add(this.flpMain);
             this.Name = "TaskThumbnailView";
             this.Size = new System.Drawing.Size(242, 228);
-            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FlpMain_MouseDown);
-            this.MouseEnter += new System.EventHandler(this.FlpMain_MouseEnter);
-            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.TaskThumbnailView_MouseUp);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Panel_MouseDown);
+            this.MouseEnter += new System.EventHandler(this.Panel_MouseEnter);
+            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Panel_MouseUp);
             this.ResumeLayout(false);
             this.PerformLayout();
 
