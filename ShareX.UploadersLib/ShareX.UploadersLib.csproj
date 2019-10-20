@@ -248,7 +248,6 @@
     <Compile Include="SharingServices\EmailSharingService.cs" />
     <Compile Include="SharingServices\FacebookSharingService.cs" />
     <Compile Include="SharingServices\GoogleImageSearchSharingService.cs" />
-    <Compile Include="SharingServices\GooglePlusSharingService.cs" />
     <Compile Include="SharingServices\LinkedInSharingService.cs" />
     <Compile Include="SharingServices\PinterestSharingService.cs" />
     <Compile Include="SharingServices\PushbulletSharingService.cs" />
