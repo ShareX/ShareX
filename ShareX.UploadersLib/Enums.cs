@@ -192,8 +192,6 @@ namespace ShareX.UploadersLib
         Twitter,
         [Description("Facebook")]
         Facebook,
-        [Description("Google+")]
-        GooglePlus,
         [Description("Reddit")]
         Reddit,
         [Description("Pinterest")]
