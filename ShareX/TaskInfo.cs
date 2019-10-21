@@ -176,8 +176,8 @@ namespace ShareX
         {
             return new HistoryItem
             {
-                Filename = FileName,
-                Filepath = FilePath,
+                FileName = FileName,
+                FilePath = FilePath,
                 DateTime = TaskEndTime,
                 Type = DataType.ToString(),
                 Host = UploaderHost,

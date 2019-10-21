@@ -95,10 +95,10 @@ namespace ShareX.HistoryLib
                 switch (name)
                 {
                     case "Filename":
-                        hi.Filename = child.Value;
+                        hi.FileName = child.Value;
                         break;
                     case "Filepath":
-                        hi.Filepath = child.Value;
+                        hi.FilePath = child.Value;
                         break;
                     case "DateTimeUtc":
                         DateTime dateTime;
@@ -148,8 +148,8 @@ namespace ShareX.HistoryLib
                         foreach (HistoryItem historyItem in historyItems)
                         {
                             writer.WriteStartElement("HistoryItem");
-                            writer.WriteElementIfNotEmpty("Filename", historyItem.Filename);
-                            writer.WriteElementIfNotEmpty("Filepath", historyItem.Filepath);
+                            writer.WriteElementIfNotEmpty("Filename", historyItem.FileName);
+                            writer.WriteElementIfNotEmpty("Filepath", historyItem.FilePath);
                             writer.WriteElementIfNotEmpty("DateTimeUtc", historyItem.DateTime.ToString("o"));
                             writer.WriteElementIfNotEmpty("Type", historyItem.Type);
                             writer.WriteElementIfNotEmpty("Host", historyItem.Host);

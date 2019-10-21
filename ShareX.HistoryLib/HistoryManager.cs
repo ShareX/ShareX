@@ -80,8 +80,8 @@ namespace ShareX.HistoryLib
 
         private bool IsValidHistoryItem(HistoryItem historyItem)
         {
-            return historyItem != null && !string.IsNullOrEmpty(historyItem.Filename) && historyItem.DateTime != DateTime.MinValue &&
-                (!string.IsNullOrEmpty(historyItem.URL) || !string.IsNullOrEmpty(historyItem.Filepath));
+            return historyItem != null && !string.IsNullOrEmpty(historyItem.FileName) && historyItem.DateTime != DateTime.MinValue &&
+                (!string.IsNullOrEmpty(historyItem.URL) || !string.IsNullOrEmpty(historyItem.FilePath));
         }
 
         public List<HistoryItem> Load()
@@ -123,8 +123,8 @@ namespace ShareX.HistoryLib
         {
             HistoryItem historyItem = new HistoryItem()
             {
-                Filename = "Example.png",
-                Filepath = @"C:\ShareX\Screenshots\Example.png",
+                FileName = "Example.png",
+                FilePath = @"C:\ShareX\Screenshots\Example.png",
                 DateTime = DateTime.Now,
                 Type = "Image",
                 Host = "Imgur",

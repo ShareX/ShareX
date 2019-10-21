@@ -75,10 +75,10 @@ namespace ShareX.HistoryLib
                     IsDeletionURLExist = !string.IsNullOrEmpty(HistoryItem.DeletionURL);
                     IsImageURL = IsURLExist && Helpers.IsImageFile(HistoryItem.URL);
                     IsTextURL = IsURLExist && Helpers.IsTextFile(HistoryItem.URL);
-                    IsFilePathValid = !string.IsNullOrEmpty(HistoryItem.Filepath) && Path.HasExtension(HistoryItem.Filepath);
-                    IsFileExist = IsFilePathValid && File.Exists(HistoryItem.Filepath);
-                    IsImageFile = IsFileExist && Helpers.IsImageFile(HistoryItem.Filepath);
-                    IsTextFile = IsFileExist && Helpers.IsTextFile(HistoryItem.Filepath);
+                    IsFilePathValid = !string.IsNullOrEmpty(HistoryItem.FilePath) && Path.HasExtension(HistoryItem.FilePath);
+                    IsFileExist = IsFilePathValid && File.Exists(HistoryItem.FilePath);
+                    IsImageFile = IsFileExist && Helpers.IsImageFile(HistoryItem.FilePath);
+                    IsTextFile = IsFileExist && Helpers.IsTextFile(HistoryItem.FilePath);
 
                     UpdateButtons();
                     return true;
@@ -135,12 +135,12 @@ namespace ShareX.HistoryLib
 
         public void OpenFile()
         {
-            if (HistoryItem != null && IsFileExist) Helpers.OpenFile(HistoryItem.Filepath);
+            if (HistoryItem != null && IsFileExist) Helpers.OpenFile(HistoryItem.FilePath);
         }
 
         public void OpenFolder()
         {
-            if (HistoryItem != null && IsFileExist) Helpers.OpenFolderWithFile(HistoryItem.Filepath);
+            if (HistoryItem != null && IsFileExist) Helpers.OpenFolderWithFile(HistoryItem.FilePath);
         }
 
         public void TryOpen()
@@ -157,7 +157,7 @@ namespace ShareX.HistoryLib
                 }
                 else if (IsFileExist)
                 {
-                    Helpers.OpenFile(HistoryItem.Filepath);
+                    Helpers.OpenFile(HistoryItem.FilePath);
                 }
             }
         }
@@ -199,17 +199,17 @@ namespace ShareX.HistoryLib
 
         public void CopyFile()
         {
-            if (HistoryItem != null && IsFileExist) ClipboardHelpers.CopyFile(HistoryItem.Filepath);
+            if (HistoryItem != null && IsFileExist) ClipboardHelpers.CopyFile(HistoryItem.FilePath);
         }
 
         public void CopyImage()
         {
-            if (HistoryItem != null && IsImageFile) ClipboardHelpers.CopyImageFromFile(HistoryItem.Filepath);
+            if (HistoryItem != null && IsImageFile) ClipboardHelpers.CopyImageFromFile(HistoryItem.FilePath);
         }
 
         public void CopyText()
         {
-            if (HistoryItem != null && IsTextFile) ClipboardHelpers.CopyTextFromFile(HistoryItem.Filepath);
+            if (HistoryItem != null && IsTextFile) ClipboardHelpers.CopyTextFromFile(HistoryItem.FilePath);
         }
 
         public void CopyHTMLLink()
@@ -265,42 +265,42 @@ namespace ShareX.HistoryLib
 
         public void CopyMarkdownLink()
         {
-            if (HistoryItem != null && IsURLExist) ClipboardHelpers.CopyText(string.Format("[{0}]({1})", HistoryItem.Filename, HistoryItem.URL));
+            if (HistoryItem != null && IsURLExist) ClipboardHelpers.CopyText(string.Format("[{0}]({1})", HistoryItem.FileName, HistoryItem.URL));
         }
 
         public void CopyMarkdownImage()
         {
-            if (HistoryItem != null && IsImageURL) ClipboardHelpers.CopyText(string.Format("![{0}]({1})", HistoryItem.Filename, HistoryItem.URL));
+            if (HistoryItem != null && IsImageURL) ClipboardHelpers.CopyText(string.Format("![{0}]({1})", HistoryItem.FileName, HistoryItem.URL));
         }
 
         public void CopyMarkdownLinkedImage()
         {
-            if (HistoryItem != null && IsImageURL) ClipboardHelpers.CopyText(string.Format("[![{0}]({1})]({2})", HistoryItem.Filename, HistoryItem.URL, HistoryItem.URL));
+            if (HistoryItem != null && IsImageURL) ClipboardHelpers.CopyText(string.Format("[![{0}]({1})]({2})", HistoryItem.FileName, HistoryItem.URL, HistoryItem.URL));
         }
 
         public void CopyFilePath()
         {
-            if (HistoryItem != null && IsFilePathValid) ClipboardHelpers.CopyText(HistoryItem.Filepath);
+            if (HistoryItem != null && IsFilePathValid) ClipboardHelpers.CopyText(HistoryItem.FilePath);
         }
 
         public void CopyFileName()
         {
-            if (HistoryItem != null && IsFilePathValid) ClipboardHelpers.CopyText(Path.GetFileNameWithoutExtension(HistoryItem.Filepath));
+            if (HistoryItem != null && IsFilePathValid) ClipboardHelpers.CopyText(Path.GetFileNameWithoutExtension(HistoryItem.FilePath));
         }
 
         public void CopyFileNameWithExtension()
         {
-            if (HistoryItem != null && IsFilePathValid) ClipboardHelpers.CopyText(Path.GetFileName(HistoryItem.Filepath));
+            if (HistoryItem != null && IsFilePathValid) ClipboardHelpers.CopyText(Path.GetFileName(HistoryItem.FilePath));
         }
 
         public void CopyFolder()
         {
-            if (HistoryItem != null && IsFilePathValid) ClipboardHelpers.CopyText(Path.GetDirectoryName(HistoryItem.Filepath));
+            if (HistoryItem != null && IsFilePathValid) ClipboardHelpers.CopyText(Path.GetDirectoryName(HistoryItem.FilePath));
         }
 
         public void ShowImagePreview()
         {
-            if (HistoryItem != null && IsImageFile) ImageViewer.ShowImage(HistoryItem.Filepath);
+            if (HistoryItem != null && IsImageFile) ImageViewer.ShowImage(HistoryItem.FilePath);
         }
 
         public void ShowMoreInfo()
@@ -310,12 +310,12 @@ namespace ShareX.HistoryLib
 
         public void UploadFile()
         {
-            if (uploadFile != null && HistoryItem != null && IsFileExist) uploadFile(HistoryItem.Filepath);
+            if (uploadFile != null && HistoryItem != null && IsFileExist) uploadFile(HistoryItem.FilePath);
         }
 
         public void EditImage()
         {
-            if (editImage != null && HistoryItem != null && IsImageFile) editImage(HistoryItem.Filepath);
+            if (editImage != null && HistoryItem != null && IsImageFile) editImage(HistoryItem.FilePath);
         }
     }
 }

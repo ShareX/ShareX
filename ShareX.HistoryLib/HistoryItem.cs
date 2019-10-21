@@ -29,8 +29,8 @@ namespace ShareX.HistoryLib
 {
     public class HistoryItem
     {
-        public string Filename { get; set; }
-        public string Filepath { get; set; }
+        public string FileName { get; set; }
+        public string FilePath { get; set; }
         public DateTime DateTime { get; set; }
         public string Type { get; set; }
         public string Host { get; set; }

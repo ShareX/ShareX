@@ -124,8 +124,8 @@ namespace ShareX.HistoryLib
             rtbStats.SetFontRegular();
 
             IEnumerable<string> fileExtensions = historyItems.
-                Where(x => !string.IsNullOrEmpty(x.Filename) && !x.Filename.EndsWith(")")).
-                Select(x => Helpers.GetFilenameExtension(x.Filename)).
+                Where(x => !string.IsNullOrEmpty(x.FileName) && !x.FileName.EndsWith(")")).
+                Select(x => Helpers.GetFilenameExtension(x.FileName)).
                 GroupBy(x => x).
                 OrderByDescending(x => x.Count()).
                 Select(x => string.Format("{0} ({1})", x.Key, x.Count()));
@@ -211,7 +211,7 @@ namespace ShareX.HistoryLib
             {
                 string pattern = Regex.Escape(filenameFilter).Replace("\\?", ".").Replace("\\*", ".*");
                 Regex regex = new Regex(pattern, RegexOptions.IgnoreCase | RegexOptions.CultureInvariant);
-                result = result.Where(x => x.Filename != null && regex.IsMatch(x.Filename));
+                result = result.Where(x => x.FileName != null && regex.IsMatch(x.FileName));
             }
 
             string urlFilter = txtURLFilter.Text;
@@ -265,7 +265,7 @@ namespace ShareX.HistoryLib
                 }
 
                 lvi.SubItems.Add(hi.DateTime.ToString()).Tag = hi.DateTime;
-                lvi.SubItems.Add(hi.Filename);
+                lvi.SubItems.Add(hi.FileName);
                 lvi.SubItems.Add(hi.URL);
                 lvi.Tag = hi;
             }
@@ -330,7 +330,7 @@ namespace ShareX.HistoryLib
             {
                 if (him.IsImageFile)
                 {
-                    pbThumbnail.LoadImageFromFileAsync(him.HistoryItem.Filepath);
+                    pbThumbnail.LoadImageFromFileAsync(him.HistoryItem.FilePath);
                 }
                 else if (him.IsImageURL)
                 {
@@ -461,9 +461,9 @@ namespace ShareX.HistoryLib
             foreach (ListViewItem item in lvHistory.SelectedItems)
             {
                 HistoryItem hi = (HistoryItem)item.Tag;
-                if (File.Exists(hi.Filepath))
+                if (File.Exists(hi.FilePath))
                 {
-                    selection.Add(hi.Filepath);
+                    selection.Add(hi.FilePath);
                 }
             }
 
