@@ -25,12 +25,13 @@
 
 using System;
 using System.Diagnostics;
+using System.Globalization;
 
 namespace ShareX.HelpersLib
 {
     public class DebugTimer : IDisposable
     {
-        public string Text { get; private set; }
+        public string Text { get; set; }
 
         private Stopwatch timer;
 
@@ -40,7 +41,7 @@ namespace ShareX.HelpersLib
             timer = Stopwatch.StartNew();
         }
 
-        private void Write(string text, string timeText)
+        private void Write(string time, string text = null)
         {
             if (string.IsNullOrEmpty(text))
             {
@@ -49,20 +50,22 @@ namespace ShareX.HelpersLib
 
             if (!string.IsNullOrEmpty(text))
             {
-                timeText = text + ": " + timeText;
+                Debug.WriteLine(text + ": " + time);
             }
-
-            Debug.WriteLine(timeText);
-        }
-
-        public void WriteElapsedSeconds(string text = null)
-        {
-            Write(text, timer.Elapsed.TotalSeconds.ToString("0.000") + " seconds.");
+            else
+            {
+                Debug.WriteLine(time);
+            }
         }
 
         public void WriteElapsedMilliseconds(string text = null)
         {
-            Write(text, timer.Elapsed.TotalMilliseconds + " milliseconds.");
+            Write(timer.Elapsed.TotalMilliseconds.ToString("0.000", CultureInfo.InvariantCulture) + " milliseconds.", text);
+        }
+
+        public void WriteElapsedSeconds(string text = null)
+        {
+            Write(timer.Elapsed.TotalSeconds.ToString("0.000", CultureInfo.InvariantCulture) + " seconds.", text);
         }
 
         public void Dispose()
