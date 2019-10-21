@@ -312,14 +312,13 @@ namespace ShareX.HistoryLib
 
         private void UpdateControls()
         {
-            switch (him.RefreshInfo())
+            if (him.RefreshInfo())
             {
-                case HistoryRefreshInfoResult.Success:
-                    UpdatePictureBox();
-                    break;
-                case HistoryRefreshInfoResult.Invalid:
-                    pbThumbnail.Reset();
-                    break;
+                UpdatePictureBox();
+            }
+            else
+            {
+                pbThumbnail.Reset();
             }
         }
 

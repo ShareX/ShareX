@@ -59,7 +59,7 @@ namespace ShareX.HistoryLib
             InitializeComponent();
         }
 
-        public HistoryRefreshInfoResult RefreshInfo()
+        public bool RefreshInfo()
         {
             HistoryItem tempHistoryItem = GetSelectedHistoryItem();
 
@@ -81,14 +81,12 @@ namespace ShareX.HistoryLib
                     IsTextFile = IsFileExist && Helpers.IsTextFile(HistoryItem.Filepath);
 
                     UpdateButtons();
-                    return HistoryRefreshInfoResult.Success;
+                    return true;
                 }
-
-                return HistoryRefreshInfoResult.Same;
             }
 
             cmsHistory.Enabled = false;
-            return HistoryRefreshInfoResult.Invalid;
+            return false;
         }
 
         private HistoryItem GetSelectedHistoryItem()

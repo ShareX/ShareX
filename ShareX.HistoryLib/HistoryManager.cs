@@ -29,6 +29,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
+using System.Threading;
 using System.Windows.Forms;
 using System.Xml;
 using System.Xml.Linq;
@@ -53,7 +54,7 @@ namespace ShareX.HistoryLib
         {
             try
             {
-                return Load();
+                return Load(FilePath);
             }
             catch (Exception e)
             {
@@ -72,7 +73,7 @@ namespace ShareX.HistoryLib
             {
                 if (IsValidHistoryItem(historyItem))
                 {
-                    return Append(historyItem);
+                    return Append(FilePath, historyItem);
                 }
             }
             catch (Exception e)
@@ -89,11 +90,11 @@ namespace ShareX.HistoryLib
                 (!string.IsNullOrEmpty(historyItem.URL) || !string.IsNullOrEmpty(historyItem.Filepath));
         }
 
-        private List<HistoryItem> Load()
+        private List<HistoryItem> Load(string filePath)
         {
             List<HistoryItem> historyItemList = new List<HistoryItem>();
 
-            if (!string.IsNullOrEmpty(FilePath) && File.Exists(FilePath))
+            if (!string.IsNullOrEmpty(filePath) && File.Exists(filePath))
             {
                 lock (thisLock)
                 {
@@ -103,7 +104,7 @@ namespace ShareX.HistoryLib
                         IgnoreWhitespace = true
                     };
 
-                    using (StreamReader streamReader = new StreamReader(FilePath, Encoding.UTF8))
+                    using (StreamReader streamReader = new StreamReader(filePath, Encoding.UTF8))
                     using (XmlReader reader = XmlReader.Create(streamReader, settings))
                     {
                         reader.MoveToContent();
@@ -130,58 +131,6 @@ namespace ShareX.HistoryLib
             }
 
             return historyItemList;
-        }
-
-        private bool Append(params HistoryItem[] historyItems)
-        {
-            if (!string.IsNullOrEmpty(FilePath))
-            {
-                lock (thisLock)
-                {
-                    Helpers.CreateDirectoryFromFilePath(FilePath);
-
-                    using (FileStream fs = File.Open(FilePath, FileMode.Append, FileAccess.Write, FileShare.Read))
-                    using (XmlTextWriter writer = new XmlTextWriter(fs, Encoding.UTF8))
-                    {
-                        writer.Formatting = Formatting.Indented;
-                        writer.Indentation = 4;
-
-                        foreach (HistoryItem historyItem in historyItems)
-                        {
-                            writer.WriteStartElement("HistoryItem");
-                            writer.WriteElementIfNotEmpty("Filename", historyItem.Filename);
-                            writer.WriteElementIfNotEmpty("Filepath", historyItem.Filepath);
-                            writer.WriteElementIfNotEmpty("DateTimeUtc", historyItem.DateTime.ToString("o"));
-                            writer.WriteElementIfNotEmpty("Type", historyItem.Type);
-                            writer.WriteElementIfNotEmpty("Host", historyItem.Host);
-                            writer.WriteElementIfNotEmpty("URL", historyItem.URL);
-                            writer.WriteElementIfNotEmpty("ThumbnailURL", historyItem.ThumbnailURL);
-                            writer.WriteElementIfNotEmpty("DeletionURL", historyItem.DeletionURL);
-                            writer.WriteElementIfNotEmpty("ShortenedURL", historyItem.ShortenedURL);
-                            writer.WriteEndElement();
-                        }
-
-                        writer.WriteWhitespace(Environment.NewLine);
-                    }
-
-                    if (!string.IsNullOrEmpty(BackupFolder))
-                    {
-                        if (CreateBackup)
-                        {
-                            Helpers.CopyFile(FilePath, BackupFolder);
-                        }
-
-                        if (CreateWeeklyBackup)
-                        {
-                            Helpers.BackupFileWeekly(FilePath, BackupFolder);
-                        }
-                    }
-                }
-
-                return true;
-            }
-
-            return false;
         }
 
         private HistoryItem ParseHistoryItem(XElement element)
@@ -229,6 +178,97 @@ namespace ShareX.HistoryLib
             }
 
             return hi;
+        }
+
+        private bool Append(string filePath, params HistoryItem[] historyItems)
+        {
+            if (!string.IsNullOrEmpty(filePath))
+            {
+                lock (thisLock)
+                {
+                    Helpers.CreateDirectoryFromFilePath(filePath);
+
+                    using (FileStream fs = File.Open(filePath, FileMode.Append, FileAccess.Write, FileShare.Read))
+                    using (XmlTextWriter writer = new XmlTextWriter(fs, Encoding.UTF8))
+                    {
+                        writer.Formatting = Formatting.Indented;
+                        writer.Indentation = 4;
+
+                        foreach (HistoryItem historyItem in historyItems)
+                        {
+                            writer.WriteStartElement("HistoryItem");
+                            writer.WriteElementIfNotEmpty("Filename", historyItem.Filename);
+                            writer.WriteElementIfNotEmpty("Filepath", historyItem.Filepath);
+                            writer.WriteElementIfNotEmpty("DateTimeUtc", historyItem.DateTime.ToString("o"));
+                            writer.WriteElementIfNotEmpty("Type", historyItem.Type);
+                            writer.WriteElementIfNotEmpty("Host", historyItem.Host);
+                            writer.WriteElementIfNotEmpty("URL", historyItem.URL);
+                            writer.WriteElementIfNotEmpty("ThumbnailURL", historyItem.ThumbnailURL);
+                            writer.WriteElementIfNotEmpty("DeletionURL", historyItem.DeletionURL);
+                            writer.WriteElementIfNotEmpty("ShortenedURL", historyItem.ShortenedURL);
+                            writer.WriteEndElement();
+                        }
+
+                        writer.WriteWhitespace(Environment.NewLine);
+                    }
+
+                    if (!string.IsNullOrEmpty(BackupFolder))
+                    {
+                        if (CreateBackup)
+                        {
+                            Helpers.CopyFile(filePath, BackupFolder);
+                        }
+
+                        if (CreateWeeklyBackup)
+                        {
+                            Helpers.BackupFileWeekly(filePath, BackupFolder);
+                        }
+                    }
+                }
+
+                return true;
+            }
+
+            return false;
+        }
+
+        public void Test(int itemCount)
+        {
+            Test(FilePath, itemCount);
+        }
+
+        public void Test(string filePath, int itemCount)
+        {
+            HistoryItem historyItem = new HistoryItem()
+            {
+                Filename = "Example.png",
+                Filepath = @"C:\ShareX\Screenshots\Example.png",
+                DateTime = DateTime.Now,
+                Type = "Image",
+                Host = "Imgur",
+                URL = "https://example.com/Example.png",
+                ThumbnailURL = "https://example.com/Example.png",
+                DeletionURL = "https://example.com/Example.png",
+                ShortenedURL = "https://example.com/Example.png"
+            };
+
+            HistoryItem[] historyItems = new HistoryItem[itemCount];
+            for (int i = 0; i < itemCount; i++)
+            {
+                historyItems[i] = historyItem;
+            }
+
+            Thread.Sleep(1000);
+
+            DebugTimer saveTimer = new DebugTimer($"Saved {itemCount} items");
+            Append(filePath, historyItems);
+            saveTimer.WriteElapsedMilliseconds();
+
+            Thread.Sleep(1000);
+
+            DebugTimer loadTimer = new DebugTimer($"Loaded {itemCount} items");
+            Load(filePath);
+            loadTimer.WriteElapsedMilliseconds();
         }
     }
 }
