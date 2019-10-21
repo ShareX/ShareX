@@ -290,15 +290,23 @@ namespace ShareX
             LoadHotkeysConfig();
         }
 
-        public static bool Export(string archivePath)
+        public static bool Export(string archivePath, bool settings, bool history)
         {
             try
             {
                 List<string> files = new List<string>();
-                files.Add(ApplicationConfigFilename);
-                files.Add(HotkeysConfigFilename);
-                files.Add(UploadersConfigFilename);
-                files.Add(Program.HistoryFilename);
+
+                if (settings)
+                {
+                    files.Add(ApplicationConfigFilename);
+                    files.Add(HotkeysConfigFilename);
+                    files.Add(UploadersConfigFilename);
+                }
+
+                if (history)
+                {
+                    files.Add(Program.HistoryFilename);
+                }
 
                 ZipManager.Compress(archivePath, files, Program.PersonalFolder);
                 return true;

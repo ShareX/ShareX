@@ -1385,7 +1385,6 @@
   </data>
   <data name="lblPreviewPersonalFolderPath.Text" xml:space="preserve">
     <value>...</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;lblPreviewPersonalFolderPath.Name" xml:space="preserve">
     <value>lblPreviewPersonalFolderPath</value>
@@ -1629,7 +1628,6 @@
   </data>
   <data name="lblSaveImageSubFolderPatternPreview.Text" xml:space="preserve">
     <value>...</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;lblSaveImageSubFolderPatternPreview.Name" xml:space="preserve">
     <value>lblSaveImageSubFolderPatternPreview</value>
@@ -1691,17 +1689,71 @@
   <data name="&gt;&gt;tpPaths.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
+  <data name="cbExportHistory.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbExportHistory.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 80</value>
+  </data>
+  <data name="cbExportHistory.Size" type="System.Drawing.Size, System.Drawing">
+    <value>58, 17</value>
+  </data>
+  <data name="cbExportHistory.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="cbExportHistory.Text" xml:space="preserve">
+    <value>History</value>
+  </data>
+  <data name="&gt;&gt;cbExportHistory.Name" xml:space="preserve">
+    <value>cbExportHistory</value>
+  </data>
+  <data name="&gt;&gt;cbExportHistory.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbExportHistory.Parent" xml:space="preserve">
+    <value>tpExportImport</value>
+  </data>
+  <data name="&gt;&gt;cbExportHistory.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="cbExportSettings.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbExportSettings.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 56</value>
+  </data>
+  <data name="cbExportSettings.Size" type="System.Drawing.Size, System.Drawing">
+    <value>64, 17</value>
+  </data>
+  <data name="cbExportSettings.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="cbExportSettings.Text" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="&gt;&gt;cbExportSettings.Name" xml:space="preserve">
+    <value>cbExportSettings</value>
+  </data>
+  <data name="&gt;&gt;cbExportSettings.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbExportSettings.Parent" xml:space="preserve">
+    <value>tpExportImport</value>
+  </data>
+  <data name="&gt;&gt;cbExportSettings.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <data name="lblExportImportNote.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 120</value>
+    <value>13, 16</value>
   </data>
   <data name="lblExportImportNote.Size" type="System.Drawing.Size, System.Drawing">
-    <value>528, 88</value>
+    <value>528, 32</value>
   </data>
   <data name="lblExportImportNote.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+    <value>0</value>
   </data>
   <data name="lblExportImportNote.Text" xml:space="preserve">
-    <value>Note: It exports all setting files and history file. It does not export screenshots, logs or backup folders. Do not share this exported file with anyone because it may contain private informations such as your account passwords.</value>
+    <value>Note: Do not share this exported file with anyone because it may contain private informations such as your account passwords.</value>
   </data>
   <data name="&gt;&gt;lblExportImportNote.Name" xml:space="preserve">
     <value>lblExportImportNote</value>
@@ -1713,13 +1765,13 @@
     <value>tpExportImport</value>
   </data>
   <data name="&gt;&gt;lblExportImportNote.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>2</value>
   </data>
   <data name="btnResetSettings.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="btnResetSettings.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 80</value>
+    <value>16, 168</value>
   </data>
   <data name="btnResetSettings.Size" type="System.Drawing.Size, System.Drawing">
     <value>184, 24</value>
@@ -1740,19 +1792,19 @@
     <value>tpExportImport</value>
   </data>
   <data name="&gt;&gt;btnResetSettings.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="pbExportImport.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="pbExportImport.Location" type="System.Drawing.Point, System.Drawing">
-    <value>208, 16</value>
+    <value>208, 104</value>
   </data>
   <data name="pbExportImport.Size" type="System.Drawing.Size, System.Drawing">
     <value>184, 23</value>
   </data>
   <data name="pbExportImport.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+    <value>4</value>
   </data>
   <data name="pbExportImport.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -1767,13 +1819,13 @@
     <value>tpExportImport</value>
   </data>
   <data name="&gt;&gt;pbExportImport.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>4</value>
   </data>
   <data name="btnExport.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="btnExport.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 16</value>
+    <value>16, 104</value>
   </data>
   <data name="btnExport.Size" type="System.Drawing.Size, System.Drawing">
     <value>184, 23</value>
@@ -1782,7 +1834,7 @@
     <value>3</value>
   </data>
   <data name="btnExport.Text" xml:space="preserve">
-    <value>Export settings...</value>
+    <value>Export...</value>
   </data>
   <data name="&gt;&gt;btnExport.Name" xml:space="preserve">
     <value>btnExport</value>
@@ -1794,22 +1846,22 @@
     <value>tpExportImport</value>
   </data>
   <data name="&gt;&gt;btnExport.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>5</value>
   </data>
   <data name="btnImport.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="btnImport.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 48</value>
+    <value>16, 136</value>
   </data>
   <data name="btnImport.Size" type="System.Drawing.Size, System.Drawing">
     <value>184, 23</value>
   </data>
   <data name="btnImport.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="btnImport.Text" xml:space="preserve">
-    <value>Import settings...</value>
+    <value>Import...</value>
   </data>
   <data name="&gt;&gt;btnImport.Name" xml:space="preserve">
     <value>btnImport</value>
@@ -1821,7 +1873,7 @@
     <value>tpExportImport</value>
   </data>
   <data name="&gt;&gt;btnImport.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>6</value>
   </data>
   <data name="tpExportImport.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>

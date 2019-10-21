@@ -91,6 +91,7 @@ namespace ShareX
             this.lblSaveImageSubFolderPatternPreview = new System.Windows.Forms.Label();
             this.txtSaveImageSubFolderPattern = new System.Windows.Forms.TextBox();
             this.tpExportImport = new System.Windows.Forms.TabPage();
+            this.lblExportImportNote = new System.Windows.Forms.Label();
             this.btnResetSettings = new System.Windows.Forms.Button();
             this.pbExportImport = new System.Windows.Forms.ProgressBar();
             this.btnExport = new System.Windows.Forms.Button();
@@ -153,7 +154,8 @@ namespace ShareX
             this.tpAdvanced = new System.Windows.Forms.TabPage();
             this.pgSettings = new System.Windows.Forms.PropertyGrid();
             this.tttvMain = new ShareX.HelpersLib.TabToTreeView();
-            this.lblExportImportNote = new System.Windows.Forms.Label();
+            this.cbExportSettings = new System.Windows.Forms.CheckBox();
+            this.cbExportHistory = new System.Windows.Forms.CheckBox();
             this.tcSettings.SuspendLayout();
             this.tpGeneral.SuspendLayout();
             this.tpTheme.SuspendLayout();
@@ -640,6 +642,8 @@ namespace ShareX
             // tpExportImport
             // 
             this.tpExportImport.BackColor = System.Drawing.SystemColors.Window;
+            this.tpExportImport.Controls.Add(this.cbExportHistory);
+            this.tpExportImport.Controls.Add(this.cbExportSettings);
             this.tpExportImport.Controls.Add(this.lblExportImportNote);
             this.tpExportImport.Controls.Add(this.btnResetSettings);
             this.tpExportImport.Controls.Add(this.pbExportImport);
@@ -647,6 +651,11 @@ namespace ShareX
             this.tpExportImport.Controls.Add(this.btnImport);
             resources.ApplyResources(this.tpExportImport, "tpExportImport");
             this.tpExportImport.Name = "tpExportImport";
+            // 
+            // lblExportImportNote
+            // 
+            resources.ApplyResources(this.lblExportImportNote, "lblExportImportNote");
+            this.lblExportImportNote.Name = "lblExportImportNote";
             // 
             // btnResetSettings
             // 
@@ -1136,10 +1145,23 @@ namespace ShareX
             this.tttvMain.TreeViewSize = 175;
             this.tttvMain.TabChanged += new ShareX.HelpersLib.TabToTreeView.TabChangedEventHandler(this.tttvMain_TabChanged);
             // 
-            // lblExportImportNote
+            // cbExportSettings
             // 
-            resources.ApplyResources(this.lblExportImportNote, "lblExportImportNote");
-            this.lblExportImportNote.Name = "lblExportImportNote";
+            resources.ApplyResources(this.cbExportSettings, "cbExportSettings");
+            this.cbExportSettings.Checked = true;
+            this.cbExportSettings.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbExportSettings.Name = "cbExportSettings";
+            this.cbExportSettings.UseVisualStyleBackColor = true;
+            this.cbExportSettings.CheckedChanged += new System.EventHandler(this.cbExportSettings_CheckedChanged);
+            // 
+            // cbExportHistory
+            // 
+            resources.ApplyResources(this.cbExportHistory, "cbExportHistory");
+            this.cbExportHistory.Checked = true;
+            this.cbExportHistory.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbExportHistory.Name = "cbExportHistory";
+            this.cbExportHistory.UseVisualStyleBackColor = true;
+            this.cbExportHistory.CheckedChanged += new System.EventHandler(this.cbExportHistory_CheckedChanged);
             // 
             // ApplicationSettingsForm
             // 
@@ -1169,6 +1191,7 @@ namespace ShareX
             this.tpPaths.ResumeLayout(false);
             this.tpPaths.PerformLayout();
             this.tpExportImport.ResumeLayout(false);
+            this.tpExportImport.PerformLayout();
             this.tpUpload.ResumeLayout(false);
             this.tcUpload.ResumeLayout(false);
             this.tpPerformance.ResumeLayout(false);
@@ -1325,5 +1348,7 @@ namespace ShareX
         private ExportImportControl eiTheme;
         private System.Windows.Forms.Button btnThemeReset;
         private System.Windows.Forms.Label lblExportImportNote;
+        private System.Windows.Forms.CheckBox cbExportHistory;
+        private System.Windows.Forms.CheckBox cbExportSettings;
     }
 }

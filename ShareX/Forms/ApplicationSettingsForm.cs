@@ -700,39 +700,55 @@ namespace ShareX
 
         #region Export / Import
 
+        private void cbExportSettings_CheckedChanged(object sender, EventArgs e)
+        {
+            btnExport.Enabled = cbExportSettings.Checked || cbExportHistory.Checked;
+        }
+
+        private void cbExportHistory_CheckedChanged(object sender, EventArgs e)
+        {
+            btnExport.Enabled = cbExportSettings.Checked || cbExportHistory.Checked;
+        }
+
         private async void btnExport_Click(object sender, EventArgs e)
         {
-            using (SaveFileDialog sfd = new SaveFileDialog())
+            bool exportSettings = cbExportSettings.Checked;
+            bool exportHistory = cbExportHistory.Checked;
+
+            if (exportSettings || exportHistory)
             {
-                sfd.DefaultExt = "sxb";
-                sfd.FileName = $"ShareX-{Application.ProductVersion}-backup.sxb";
-                sfd.Filter = "ShareX backup (*.sxb)|*.sxb|All files (*.*)|*.*";
-
-                if (sfd.ShowDialog() == DialogResult.OK)
+                using (SaveFileDialog sfd = new SaveFileDialog())
                 {
-                    btnExport.Enabled = false;
-                    btnImport.Enabled = false;
-                    pbExportImport.Location = btnExport.Location;
-                    pbExportImport.Visible = true;
+                    sfd.DefaultExt = "sxb";
+                    sfd.FileName = $"ShareX-{Application.ProductVersion}-backup.sxb";
+                    sfd.Filter = "ShareX backup (*.sxb)|*.sxb|All files (*.*)|*.*";
 
-                    string exportPath = sfd.FileName;
-
-                    DebugHelper.WriteLine($"Export started: {exportPath}");
-
-                    await Task.Run(() =>
+                    if (sfd.ShowDialog() == DialogResult.OK)
                     {
-                        SettingManager.SaveAllSettings();
-                        SettingManager.Export(exportPath);
-                    });
+                        btnExport.Enabled = false;
+                        btnImport.Enabled = false;
+                        pbExportImport.Location = btnExport.Location;
+                        pbExportImport.Visible = true;
 
-                    if (!IsDisposed)
-                    {
-                        pbExportImport.Visible = false;
-                        btnExport.Enabled = true;
-                        btnImport.Enabled = true;
+                        string exportPath = sfd.FileName;
+
+                        DebugHelper.WriteLine($"Export started: {exportPath}");
+
+                        await Task.Run(() =>
+                        {
+                            SettingManager.SaveAllSettings();
+                            SettingManager.Export(exportPath, exportSettings, exportHistory);
+                        });
+
+                        if (!IsDisposed)
+                        {
+                            pbExportImport.Visible = false;
+                            btnExport.Enabled = true;
+                            btnImport.Enabled = true;
+                        }
+
+                        DebugHelper.WriteLine($"Export completed: {exportPath}");
                     }
-
-                    DebugHelper.WriteLine($"Export completed: {exportPath}");
                 }
             }
         }
