@@ -27,6 +27,7 @@ using ShareX.HelpersLib;
 using ShareX.HistoryLib.Properties;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -63,12 +64,14 @@ namespace ShareX.HistoryLib
 
         public bool AppendHistoryItem(HistoryItem historyItem)
         {
+            return AppendHistoryItems(new HistoryItem[] { historyItem });
+        }
+
+        public bool AppendHistoryItems(IEnumerable<HistoryItem> historyItems)
+        {
             try
             {
-                if (IsValidHistoryItem(historyItem))
-                {
-                    return Append(historyItem);
-                }
+                return Append(historyItems.Where(x => IsValidHistoryItem(x)));
             }
             catch (Exception e)
             {
@@ -91,12 +94,12 @@ namespace ShareX.HistoryLib
 
         public abstract List<HistoryItem> Load(string filePath);
 
-        public bool Append(params HistoryItem[] historyItems)
+        public bool Append(IEnumerable<HistoryItem> historyItems)
         {
             return Append(FilePath, historyItems);
         }
 
-        public abstract bool Append(string filePath, params HistoryItem[] historyItems);
+        public abstract bool Append(string filePath, IEnumerable<HistoryItem> historyItems);
 
         protected void Backup(string filePath)
         {

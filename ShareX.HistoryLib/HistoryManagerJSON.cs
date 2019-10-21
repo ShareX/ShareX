@@ -60,7 +60,7 @@ namespace ShareX.HistoryLib
             return new List<HistoryItem>();
         }
 
-        public override bool Append(string filePath, params HistoryItem[] historyItems)
+        public override bool Append(string filePath, IEnumerable<HistoryItem> historyItems)
         {
             if (!string.IsNullOrEmpty(filePath))
             {
@@ -76,18 +76,20 @@ namespace ShareX.HistoryLib
 
                         bool firstObject = fs.Length == 0;
 
-                        for (int i = 0; i < historyItems.Length; i++)
+                        foreach (HistoryItem historyItem in historyItems)
                         {
                             string json = "";
 
-                            if (!firstObject || i > 0)
+                            if (!firstObject)
                             {
                                 json += ",\r\n";
                             }
 
-                            json += JObject.FromObject(historyItems[i], serializer).ToString();
+                            json += JObject.FromObject(historyItem, serializer).ToString();
 
                             sw.Write(json);
+
+                            firstObject = false;
                         }
                     }
 

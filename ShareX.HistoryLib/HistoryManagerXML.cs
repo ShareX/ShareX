@@ -131,7 +131,7 @@ namespace ShareX.HistoryLib
             return hi;
         }
 
-        public override bool Append(string filePath, params HistoryItem[] historyItems)
+        public override bool Append(string filePath, IEnumerable<HistoryItem> historyItems)
         {
             if (!string.IsNullOrEmpty(filePath))
             {
