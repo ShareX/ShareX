@@ -27,19 +27,13 @@ using ShareX.HelpersLib;
 using ShareX.HistoryLib.Properties;
 using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Text;
 using System.Threading;
 using System.Windows.Forms;
-using System.Xml;
-using System.Xml.Linq;
 
 namespace ShareX.HistoryLib
 {
-    public class HistoryManager
+    public abstract class HistoryManager
     {
-        private static readonly object thisLock = new object();
-
         public string FilePath { get; private set; }
         public string BackupFolder { get; set; }
         public bool CreateBackup { get; set; }
@@ -54,7 +48,7 @@ namespace ShareX.HistoryLib
         {
             try
             {
-                return Load(FilePath);
+                return Load();
             }
             catch (Exception e)
             {
@@ -73,7 +67,7 @@ namespace ShareX.HistoryLib
             {
                 if (IsValidHistoryItem(historyItem))
                 {
-                    return Append(FilePath, historyItem);
+                    return Append(historyItem);
                 }
             }
             catch (Exception e)
@@ -90,147 +84,19 @@ namespace ShareX.HistoryLib
                 (!string.IsNullOrEmpty(historyItem.URL) || !string.IsNullOrEmpty(historyItem.Filepath));
         }
 
-        private List<HistoryItem> Load(string filePath)
+        public List<HistoryItem> Load()
         {
-            List<HistoryItem> historyItemList = new List<HistoryItem>();
-
-            if (!string.IsNullOrEmpty(filePath) && File.Exists(filePath))
-            {
-                lock (thisLock)
-                {
-                    XmlReaderSettings settings = new XmlReaderSettings
-                    {
-                        ConformanceLevel = ConformanceLevel.Auto,
-                        IgnoreWhitespace = true
-                    };
-
-                    using (StreamReader streamReader = new StreamReader(filePath, Encoding.UTF8))
-                    using (XmlReader reader = XmlReader.Create(streamReader, settings))
-                    {
-                        reader.MoveToContent();
-
-                        while (!reader.EOF)
-                        {
-                            if (reader.NodeType == XmlNodeType.Element && reader.Name == "HistoryItem")
-                            {
-                                XElement element = XNode.ReadFrom(reader) as XElement;
-
-                                if (element != null)
-                                {
-                                    HistoryItem hi = ParseHistoryItem(element);
-                                    historyItemList.Add(hi);
-                                }
-                            }
-                            else
-                            {
-                                reader.Read();
-                            }
-                        }
-                    }
-                }
-            }
-
-            return historyItemList;
+            return Load(FilePath);
         }
 
-        private HistoryItem ParseHistoryItem(XElement element)
+        public abstract List<HistoryItem> Load(string filePath);
+
+        public bool Append(params HistoryItem[] historyItems)
         {
-            HistoryItem hi = new HistoryItem();
-
-            foreach (XElement child in element.Elements())
-            {
-                string name = child.Name.LocalName;
-
-                switch (name)
-                {
-                    case "Filename":
-                        hi.Filename = child.Value;
-                        break;
-                    case "Filepath":
-                        hi.Filepath = child.Value;
-                        break;
-                    case "DateTimeUtc":
-                        DateTime dateTime;
-                        if (DateTime.TryParse(child.Value, out dateTime))
-                        {
-                            hi.DateTime = dateTime;
-                        }
-                        break;
-                    case "Type":
-                        hi.Type = child.Value;
-                        break;
-                    case "Host":
-                        hi.Host = child.Value;
-                        break;
-                    case "URL":
-                        hi.URL = child.Value;
-                        break;
-                    case "ThumbnailURL":
-                        hi.ThumbnailURL = child.Value;
-                        break;
-                    case "DeletionURL":
-                        hi.DeletionURL = child.Value;
-                        break;
-                    case "ShortenedURL":
-                        hi.ShortenedURL = child.Value;
-                        break;
-                }
-            }
-
-            return hi;
+            return Append(FilePath, historyItems);
         }
 
-        private bool Append(string filePath, params HistoryItem[] historyItems)
-        {
-            if (!string.IsNullOrEmpty(filePath))
-            {
-                lock (thisLock)
-                {
-                    Helpers.CreateDirectoryFromFilePath(filePath);
-
-                    using (FileStream fs = File.Open(filePath, FileMode.Append, FileAccess.Write, FileShare.Read))
-                    using (XmlTextWriter writer = new XmlTextWriter(fs, Encoding.UTF8))
-                    {
-                        writer.Formatting = Formatting.Indented;
-                        writer.Indentation = 4;
-
-                        foreach (HistoryItem historyItem in historyItems)
-                        {
-                            writer.WriteStartElement("HistoryItem");
-                            writer.WriteElementIfNotEmpty("Filename", historyItem.Filename);
-                            writer.WriteElementIfNotEmpty("Filepath", historyItem.Filepath);
-                            writer.WriteElementIfNotEmpty("DateTimeUtc", historyItem.DateTime.ToString("o"));
-                            writer.WriteElementIfNotEmpty("Type", historyItem.Type);
-                            writer.WriteElementIfNotEmpty("Host", historyItem.Host);
-                            writer.WriteElementIfNotEmpty("URL", historyItem.URL);
-                            writer.WriteElementIfNotEmpty("ThumbnailURL", historyItem.ThumbnailURL);
-                            writer.WriteElementIfNotEmpty("DeletionURL", historyItem.DeletionURL);
-                            writer.WriteElementIfNotEmpty("ShortenedURL", historyItem.ShortenedURL);
-                            writer.WriteEndElement();
-                        }
-
-                        writer.WriteWhitespace(Environment.NewLine);
-                    }
-
-                    if (!string.IsNullOrEmpty(BackupFolder))
-                    {
-                        if (CreateBackup)
-                        {
-                            Helpers.CopyFile(filePath, BackupFolder);
-                        }
-
-                        if (CreateWeeklyBackup)
-                        {
-                            Helpers.BackupFileWeekly(filePath, BackupFolder);
-                        }
-                    }
-                }
-
-                return true;
-            }
-
-            return false;
-        }
+        public abstract bool Append(string filePath, params HistoryItem[] historyItems);
 
         public void Test(int itemCount)
         {

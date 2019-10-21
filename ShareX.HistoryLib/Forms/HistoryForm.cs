@@ -154,7 +154,7 @@ namespace ShareX.HistoryLib
         {
             if (history == null)
             {
-                history = new HistoryManager(HistoryPath);
+                history = new HistoryManagerXML(HistoryPath);
             }
 
             IEnumerable<HistoryItem> tempHistoryItems = history.GetHistoryItems();

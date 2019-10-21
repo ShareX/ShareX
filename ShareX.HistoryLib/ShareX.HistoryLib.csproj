@@ -99,6 +99,7 @@
     <Compile Include="Forms\ImageHistorySettingsForm.Designer.cs">
       <DependentUpon>ImageHistorySettingsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="HistoryManagerXML.cs" />
     <Compile Include="HistorySettings.cs" />
     <Compile Include="ImageHistorySettings.cs" />
     <Compile Include="Properties\Resources.Designer.cs">

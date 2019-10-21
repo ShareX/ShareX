@@ -113,7 +113,7 @@ namespace ShareX.HistoryLib
         {
             if (history == null)
             {
-                history = new HistoryManager(HistoryPath);
+                history = new HistoryManagerXML(HistoryPath);
             }
 
             List<HistoryItem> historyItems = history.GetHistoryItems();
