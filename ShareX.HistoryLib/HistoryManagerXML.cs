@@ -163,18 +163,7 @@ namespace ShareX.HistoryLib
                         writer.WriteWhitespace(Environment.NewLine);
                     }
 
-                    if (!string.IsNullOrEmpty(BackupFolder))
-                    {
-                        if (CreateBackup)
-                        {
-                            Helpers.CopyFile(filePath, BackupFolder);
-                        }
-
-                        if (CreateWeeklyBackup)
-                        {
-                            Helpers.BackupFileWeekly(filePath, BackupFolder);
-                        }
-                    }
+                    Backup(FilePath);
                 }
 
                 return true;

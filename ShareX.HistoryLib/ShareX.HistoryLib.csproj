@@ -99,6 +99,7 @@
     <Compile Include="Forms\ImageHistorySettingsForm.Designer.cs">
       <DependentUpon>ImageHistorySettingsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="HistoryManagerJSON.cs" />
     <Compile Include="HistoryManagerXML.cs" />
     <Compile Include="HistorySettings.cs" />
     <Compile Include="ImageHistorySettings.cs" />

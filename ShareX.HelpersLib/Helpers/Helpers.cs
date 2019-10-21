@@ -318,7 +318,7 @@ namespace ShareX.HelpersLib
 
         public static string GetRandomLineFromFile(string path)
         {
-            string text = File.ReadAllText(path);
+            string text = File.ReadAllText(path, Encoding.UTF8);
             return GetRandomLine(text);
         }
 

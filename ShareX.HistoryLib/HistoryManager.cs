@@ -98,6 +98,22 @@ namespace ShareX.HistoryLib
 
         public abstract bool Append(string filePath, params HistoryItem[] historyItems);
 
+        protected void Backup(string filePath)
+        {
+            if (!string.IsNullOrEmpty(BackupFolder))
+            {
+                if (CreateBackup)
+                {
+                    Helpers.CopyFile(filePath, BackupFolder);
+                }
+
+                if (CreateWeeklyBackup)
+                {
+                    Helpers.BackupFileWeekly(filePath, BackupFolder);
+                }
+            }
+        }
+
         public void Test(int itemCount)
         {
             Test(FilePath, itemCount);
