@@ -58,6 +58,7 @@ namespace ShareX.ScreenCaptureLib
 
         // Audio
         public int AAC_bitrate { get; set; } = 128; // kbit/s
+        public int Opus_bitrate { get; set; } = 128; //kbit/s
         public int Vorbis_qscale { get; set; } = 3;
         public int MP3_qscale { get; set; } = 4;
 
@@ -123,6 +124,8 @@ namespace ShareX.ScreenCaptureLib
                     {
                         case FFmpegAudioCodec.libvoaacenc:
                             return "m4a";
+                        case FFmpegAudioCodec.libopus:
+                            return "opus";
                         case FFmpegAudioCodec.libvorbis:
                             return "ogg";
                         case FFmpegAudioCodec.libmp3lame:
