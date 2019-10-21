@@ -950,7 +950,6 @@
     <None Include="Favicons\Streamable.ico" />
     <None Include="Favicons\Sul.png" />
     <None Include="Favicons\Vgyme.ico" />
-    <None Include="Favicons\Lithiio.ico" />
     <None Include="Favicons\puush.ico" />
     <None Include="Resources\puush-256.png" />
     <None Include="Resources\folder-network.png" />
@@ -987,6 +986,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Favicons\Teknik.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Favicons\Lithiio.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
