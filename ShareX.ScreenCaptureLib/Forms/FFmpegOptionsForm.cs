@@ -381,11 +381,14 @@ namespace ShareX.ScreenCaptureLib
                     case FFmpegAudioCodec.libvoaacenc:
                         tcFFmpegAudioCodecs.SelectedIndex = 0;
                         break;
-                    case FFmpegAudioCodec.libvorbis:
+                    case FFmpegAudioCodec.libopus:
                         tcFFmpegAudioCodecs.SelectedIndex = 1;
                         break;
-                    case FFmpegAudioCodec.libmp3lame:
+                    case FFmpegAudioCodec.libvorbis:
                         tcFFmpegAudioCodecs.SelectedIndex = 2;
+                        break;
+                    case FFmpegAudioCodec.libmp3lame:
+                        tcFFmpegAudioCodecs.SelectedIndex = 3;
                         break;
                 }
             }
@@ -593,6 +596,5 @@ namespace ShareX.ScreenCaptureLib
                 await SettingsLoad();
             }
         }
-
     }
 }
