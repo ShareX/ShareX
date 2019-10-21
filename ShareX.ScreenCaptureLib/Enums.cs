@@ -211,6 +211,8 @@ namespace ShareX.ScreenCaptureLib
     {
         [Description("AAC")]
         libvoaacenc,
+        [Description("Opus")]
+        libopus,
         [Description("Vorbis")]
         libvorbis,
         [Description("MP3")]

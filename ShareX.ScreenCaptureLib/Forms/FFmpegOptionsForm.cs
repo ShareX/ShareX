@@ -194,6 +194,7 @@ namespace ShareX.ScreenCaptureLib
                 lblAACQuality.Text = string.Format(Resources.FFmpegOptionsForm_UpdateUI_Bitrate___0_k, Options.FFmpeg.AAC_bitrate);
                 lblVorbisQuality.Text = Resources.FFmpegOptionsForm_UpdateUI_Quality_ + " " + Options.FFmpeg.Vorbis_qscale;
                 lblMP3Quality.Text = Resources.FFmpegOptionsForm_UpdateUI_Quality_ + " " + Options.FFmpeg.MP3_qscale;
+                lblOpusQuality.Text = string.Format(Resources.FFmpegOptionsForm_UpdateUI_Bitrate___0_k, Options.FFmpeg.Opus_bitrate);
 
                 bool isValidAudioCodec = true;
                 FFmpegVideoCodec videoCodec = (FFmpegVideoCodec)cboVideoCodec.SelectedIndex;
@@ -202,7 +203,7 @@ namespace ShareX.ScreenCaptureLib
                 {
                     FFmpegAudioCodec audioCodec = (FFmpegAudioCodec)cboAudioCodec.SelectedIndex;
 
-                    if (audioCodec != FFmpegAudioCodec.libvorbis)
+                    if (audioCodec != FFmpegAudioCodec.libvorbis && audioCodec != FFmpegAudioCodec.libopus)
                     {
                         isValidAudioCodec = false;
                     }
@@ -380,11 +381,14 @@ namespace ShareX.ScreenCaptureLib
                     case FFmpegAudioCodec.libvoaacenc:
                         tcFFmpegAudioCodecs.SelectedIndex = 0;
                         break;
-                    case FFmpegAudioCodec.libvorbis:
+                    case FFmpegAudioCodec.libopus:
                         tcFFmpegAudioCodecs.SelectedIndex = 1;
                         break;
-                    case FFmpegAudioCodec.libmp3lame:
+                    case FFmpegAudioCodec.libvorbis:
                         tcFFmpegAudioCodecs.SelectedIndex = 2;
+                        break;
+                    case FFmpegAudioCodec.libmp3lame:
+                        tcFFmpegAudioCodecs.SelectedIndex = 3;
                         break;
                 }
             }
@@ -467,6 +471,12 @@ namespace ShareX.ScreenCaptureLib
         private void tbAACBitrate_ValueChanged(object sender, EventArgs e)
         {
             Options.FFmpeg.AAC_bitrate = tbAACBitrate.Value * 32;
+            UpdateUI();
+        }
+
+        private void tbOpusBirate_ValueChanged(object sender, EventArgs e)
+        {
+            Options.FFmpeg.Opus_bitrate = tbOpusBitrate.Value * 32;
             UpdateUI();
         }
 
