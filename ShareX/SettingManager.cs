@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.HistoryLib;
 using ShareX.ScreenCaptureLib;
 using ShareX.UploadersLib;
 using ShareX.UploadersLib.FileUploaders;
@@ -145,6 +146,7 @@ namespace ShareX
             Settings.SettingsSaveFailed += Settings_SettingsSaveFailed;
             DefaultTaskSettings = Settings.DefaultTaskSettings;
             ApplicationConfigBackwardCompatibilityTasks();
+            MigrateHistoryFile();
         }
 
         private static void Settings_SettingsSaveFailed(Exception e)
@@ -206,6 +208,28 @@ namespace ShareX
                 {
                     IntegrationHelpers.CreateChromeExtensionSupport(true);
                 }
+            }
+        }
+
+        private static void MigrateHistoryFile()
+        {
+            if (File.Exists(Program.HistoryFilePathOld))
+            {
+                if (!File.Exists(Program.HistoryFilePath))
+                {
+                    DebugHelper.WriteLine($"Migrating XML history file \"{Program.HistoryFilePathOld}\" to JSON history file \"{Program.HistoryFilePath}\"");
+
+                    HistoryManagerXML historyManagerXML = new HistoryManagerXML(Program.HistoryFilePathOld);
+                    List<HistoryItem> historyItems = historyManagerXML.GetHistoryItems();
+
+                    if (historyItems.Count > 0)
+                    {
+                        HistoryManagerJSON historyManagerJSON = new HistoryManagerJSON(Program.HistoryFilePath);
+                        historyManagerJSON.AppendHistoryItems(historyItems);
+                    }
+                }
+
+                Helpers.MoveFile(Program.HistoryFilePathOld, BackupFolder);
             }
         }
 

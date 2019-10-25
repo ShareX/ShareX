@@ -87,19 +87,19 @@ namespace ShareX.HistoryLib
                 (!string.IsNullOrEmpty(historyItem.URL) || !string.IsNullOrEmpty(historyItem.FilePath));
         }
 
-        public List<HistoryItem> Load()
+        protected List<HistoryItem> Load()
         {
             return Load(FilePath);
         }
 
-        public abstract List<HistoryItem> Load(string filePath);
+        protected abstract List<HistoryItem> Load(string filePath);
 
-        public bool Append(IEnumerable<HistoryItem> historyItems)
+        protected bool Append(IEnumerable<HistoryItem> historyItems)
         {
             return Append(FilePath, historyItems);
         }
 
-        public abstract bool Append(string filePath, IEnumerable<HistoryItem> historyItems);
+        protected abstract bool Append(string filePath, IEnumerable<HistoryItem> historyItems);
 
         protected void Backup(string filePath)
         {

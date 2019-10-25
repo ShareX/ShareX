@@ -177,26 +177,6 @@ namespace ShareX.HelpersLib
             return filePath;
         }
 
-        public static string RenameFile(string filePath, string newFileName)
-        {
-            try
-            {
-                if (File.Exists(filePath))
-                {
-                    string directory = Path.GetDirectoryName(filePath);
-                    string newPath = Path.Combine(directory, newFileName);
-                    File.Move(filePath, newPath);
-                    return newPath;
-                }
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show("Rename error:\r\n" + e.ToString(), "ShareX - " + Resources.Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
-            return filePath;
-        }
-
         public static string AppendExtension(string filePath, string extension)
         {
             return filePath.TrimEnd('.') + '.' + extension.TrimStart('.');
@@ -966,15 +946,58 @@ namespace ShareX.HelpersLib
             return fi != null;
         }
 
-        public static void CopyFile(string filePath, string destinationFolder, bool overwrite = true)
+        public static string CopyFile(string filePath, string destinationFolder, bool overwrite = true)
         {
-            if (!string.IsNullOrEmpty(filePath) && !string.IsNullOrEmpty(destinationFolder))
+            if (!string.IsNullOrEmpty(filePath) && File.Exists(filePath) && !string.IsNullOrEmpty(destinationFolder))
             {
                 string fileName = Path.GetFileName(filePath);
                 string destinationFilePath = Path.Combine(destinationFolder, fileName);
                 CreateDirectoryFromDirectoryPath(destinationFolder);
                 File.Copy(filePath, destinationFilePath, overwrite);
+                return destinationFilePath;
             }
+
+            return null;
+        }
+
+        public static string MoveFile(string filePath, string destinationFolder, bool overwrite = true)
+        {
+            if (!string.IsNullOrEmpty(filePath) && File.Exists(filePath) && !string.IsNullOrEmpty(destinationFolder))
+            {
+                string fileName = Path.GetFileName(filePath);
+                string destinationFilePath = Path.Combine(destinationFolder, fileName);
+                CreateDirectoryFromDirectoryPath(destinationFolder);
+
+                if (overwrite && File.Exists(destinationFilePath))
+                {
+                    File.Delete(destinationFilePath);
+                }
+
+                File.Move(filePath, destinationFilePath);
+                return destinationFilePath;
+            }
+
+            return null;
+        }
+
+        public static string RenameFile(string filePath, string newFileName)
+        {
+            try
+            {
+                if (!string.IsNullOrEmpty(filePath) && File.Exists(filePath))
+                {
+                    string directory = Path.GetDirectoryName(filePath);
+                    string newFilePath = Path.Combine(directory, newFileName);
+                    File.Move(filePath, newFilePath);
+                    return newFilePath;
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Rename file error:\r\n" + e.ToString(), "ShareX - " + Resources.Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            return filePath;
         }
 
         public static string BackupFileWeekly(string filePath, string destinationFolder)

@@ -40,7 +40,7 @@ namespace ShareX.HistoryLib
         {
         }
 
-        public override List<HistoryItem> Load(string filePath)
+        protected override List<HistoryItem> Load(string filePath)
         {
             if (!string.IsNullOrEmpty(filePath) && File.Exists(filePath))
             {
@@ -60,7 +60,7 @@ namespace ShareX.HistoryLib
             return new List<HistoryItem>();
         }
 
-        public override bool Append(string filePath, IEnumerable<HistoryItem> historyItems)
+        protected override bool Append(string filePath, IEnumerable<HistoryItem> historyItems)
         {
             if (!string.IsNullOrEmpty(filePath))
             {

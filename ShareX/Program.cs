@@ -148,7 +148,7 @@ namespace ShareX
             }
         }
 
-        public const string HistoryFilename = "History.xml";
+        public const string HistoryFilename = "History.json";
 
         public static string HistoryFilePath
         {
@@ -157,6 +157,18 @@ namespace ShareX
                 if (Sandbox) return null;
 
                 return Path.Combine(PersonalFolder, HistoryFilename);
+            }
+        }
+
+        public const string HistoryFilenameOld = "History.xml";
+
+        public static string HistoryFilePathOld
+        {
+            get
+            {
+                if (Sandbox) return null;
+
+                return Path.Combine(PersonalFolder, HistoryFilenameOld);
             }
         }
 

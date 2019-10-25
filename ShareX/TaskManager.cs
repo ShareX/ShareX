@@ -552,7 +552,7 @@ namespace ShareX
         {
             Task.Run(() =>
             {
-                HistoryManager history = new HistoryManagerXML(Program.HistoryFilePath)
+                HistoryManager history = new HistoryManagerJSON(Program.HistoryFilePath)
                 {
                     BackupFolder = SettingManager.BackupFolder,
                     CreateBackup = false,
