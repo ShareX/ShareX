@@ -59,34 +59,31 @@ namespace ShareX.HistoryLib
             InitializeComponent();
         }
 
-        public bool RefreshInfo()
+        public HistoryItem UpdateSelectedHistoryItem()
         {
-            HistoryItem tempHistoryItem = GetSelectedHistoryItem();
+            HistoryItem = GetSelectedHistoryItem();
 
-            if (tempHistoryItem != null)
+            if (HistoryItem != null)
             {
-                if (HistoryItem != tempHistoryItem)
-                {
-                    HistoryItem = tempHistoryItem;
+                IsURLExist = !string.IsNullOrEmpty(HistoryItem.URL);
+                IsShortenedURLExist = !string.IsNullOrEmpty(HistoryItem.ShortenedURL);
+                IsThumbnailURLExist = !string.IsNullOrEmpty(HistoryItem.ThumbnailURL);
+                IsDeletionURLExist = !string.IsNullOrEmpty(HistoryItem.DeletionURL);
+                IsImageURL = IsURLExist && Helpers.IsImageFile(HistoryItem.URL);
+                IsTextURL = IsURLExist && Helpers.IsTextFile(HistoryItem.URL);
+                IsFilePathValid = !string.IsNullOrEmpty(HistoryItem.FilePath) && Path.HasExtension(HistoryItem.FilePath);
+                IsFileExist = IsFilePathValid && File.Exists(HistoryItem.FilePath);
+                IsImageFile = IsFileExist && Helpers.IsImageFile(HistoryItem.FilePath);
+                IsTextFile = IsFileExist && Helpers.IsTextFile(HistoryItem.FilePath);
 
-                    IsURLExist = !string.IsNullOrEmpty(HistoryItem.URL);
-                    IsShortenedURLExist = !string.IsNullOrEmpty(HistoryItem.ShortenedURL);
-                    IsThumbnailURLExist = !string.IsNullOrEmpty(HistoryItem.ThumbnailURL);
-                    IsDeletionURLExist = !string.IsNullOrEmpty(HistoryItem.DeletionURL);
-                    IsImageURL = IsURLExist && Helpers.IsImageFile(HistoryItem.URL);
-                    IsTextURL = IsURLExist && Helpers.IsTextFile(HistoryItem.URL);
-                    IsFilePathValid = !string.IsNullOrEmpty(HistoryItem.FilePath) && Path.HasExtension(HistoryItem.FilePath);
-                    IsFileExist = IsFilePathValid && File.Exists(HistoryItem.FilePath);
-                    IsImageFile = IsFileExist && Helpers.IsImageFile(HistoryItem.FilePath);
-                    IsTextFile = IsFileExist && Helpers.IsTextFile(HistoryItem.FilePath);
-
-                    UpdateButtons();
-                    return true;
-                }
+                UpdateButtons();
+            }
+            else
+            {
+                cmsHistory.Enabled = false;
             }
 
-            cmsHistory.Enabled = false;
-            return false;
+            return HistoryItem;
         }
 
         private HistoryItem GetSelectedHistoryItem()

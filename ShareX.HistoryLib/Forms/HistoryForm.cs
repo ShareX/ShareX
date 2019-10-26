@@ -312,13 +312,16 @@ namespace ShareX.HistoryLib
 
         private void UpdateControls()
         {
-            if (him.RefreshInfo())
-            {
-                UpdatePictureBox();
-            }
-            else
+            HistoryItem previousHistoryItem = him.HistoryItem;
+            HistoryItem historyItem = him.UpdateSelectedHistoryItem();
+
+            if (historyItem == null)
             {
                 pbThumbnail.Reset();
+            }
+            else if (historyItem != previousHistoryItem)
+            {
+                UpdatePictureBox();
             }
         }
 

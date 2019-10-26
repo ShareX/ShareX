@@ -175,7 +175,7 @@ namespace ShareX.HistoryLib
 
         private void ilvImages_SelectionChanged(object sender, EventArgs e)
         {
-            him.RefreshInfo();
+            him.UpdateSelectedHistoryItem();
         }
 
         private void ilvImages_ItemDoubleClick(object sender, ItemClickEventArgs e)
