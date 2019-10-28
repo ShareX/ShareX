@@ -1199,4 +1199,7 @@ Would you like to download and install it?</value>
   <data name="RandomNonAmbiguousAlphanumericCharRepeatUsingN" xml:space="preserve">
     <value>Random non ambiguous alphanumeric char. Repeat using {n}</value>
   </data>
+  <data name="RandomEmojiRepeatUsingN" xml:space="preserve">
+    <value>Random emoji. Repeat using {n}</value>
+  </data>
 </root>
