@@ -91,6 +91,8 @@ namespace ShareX
             this.lblSaveImageSubFolderPatternPreview = new System.Windows.Forms.Label();
             this.txtSaveImageSubFolderPattern = new System.Windows.Forms.TextBox();
             this.tpExportImport = new System.Windows.Forms.TabPage();
+            this.cbExportHistory = new System.Windows.Forms.CheckBox();
+            this.cbExportSettings = new System.Windows.Forms.CheckBox();
             this.lblExportImportNote = new System.Windows.Forms.Label();
             this.btnResetSettings = new System.Windows.Forms.Button();
             this.pbExportImport = new System.Windows.Forms.ProgressBar();
@@ -154,8 +156,6 @@ namespace ShareX
             this.tpAdvanced = new System.Windows.Forms.TabPage();
             this.pgSettings = new System.Windows.Forms.PropertyGrid();
             this.tttvMain = new ShareX.HelpersLib.TabToTreeView();
-            this.cbExportSettings = new System.Windows.Forms.CheckBox();
-            this.cbExportHistory = new System.Windows.Forms.CheckBox();
             this.tcSettings.SuspendLayout();
             this.tpGeneral.SuspendLayout();
             this.tpTheme.SuspendLayout();
@@ -652,6 +652,24 @@ namespace ShareX
             resources.ApplyResources(this.tpExportImport, "tpExportImport");
             this.tpExportImport.Name = "tpExportImport";
             // 
+            // cbExportHistory
+            // 
+            resources.ApplyResources(this.cbExportHistory, "cbExportHistory");
+            this.cbExportHistory.Checked = true;
+            this.cbExportHistory.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbExportHistory.Name = "cbExportHistory";
+            this.cbExportHistory.UseVisualStyleBackColor = true;
+            this.cbExportHistory.CheckedChanged += new System.EventHandler(this.cbExportHistory_CheckedChanged);
+            // 
+            // cbExportSettings
+            // 
+            resources.ApplyResources(this.cbExportSettings, "cbExportSettings");
+            this.cbExportSettings.Checked = true;
+            this.cbExportSettings.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbExportSettings.Name = "cbExportSettings";
+            this.cbExportSettings.UseVisualStyleBackColor = true;
+            this.cbExportSettings.CheckedChanged += new System.EventHandler(this.cbExportSettings_CheckedChanged);
+            // 
             // lblExportImportNote
             // 
             resources.ApplyResources(this.lblExportImportNote, "lblExportImportNote");
@@ -1144,24 +1162,6 @@ namespace ShareX
             this.tttvMain.TreeViewFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.tttvMain.TreeViewSize = 175;
             this.tttvMain.TabChanged += new ShareX.HelpersLib.TabToTreeView.TabChangedEventHandler(this.tttvMain_TabChanged);
-            // 
-            // cbExportSettings
-            // 
-            resources.ApplyResources(this.cbExportSettings, "cbExportSettings");
-            this.cbExportSettings.Checked = true;
-            this.cbExportSettings.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbExportSettings.Name = "cbExportSettings";
-            this.cbExportSettings.UseVisualStyleBackColor = true;
-            this.cbExportSettings.CheckedChanged += new System.EventHandler(this.cbExportSettings_CheckedChanged);
-            // 
-            // cbExportHistory
-            // 
-            resources.ApplyResources(this.cbExportHistory, "cbExportHistory");
-            this.cbExportHistory.Checked = true;
-            this.cbExportHistory.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbExportHistory.Name = "cbExportHistory";
-            this.cbExportHistory.UseVisualStyleBackColor = true;
-            this.cbExportHistory.CheckedChanged += new System.EventHandler(this.cbExportHistory_CheckedChanged);
             // 
             // ApplicationSettingsForm
             // 

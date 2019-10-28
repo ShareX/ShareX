@@ -1753,7 +1753,7 @@
     <value>0</value>
   </data>
   <data name="lblExportImportNote.Text" xml:space="preserve">
-    <value>Note: Do not share this exported file with anyone because it may contain private informations such as your account passwords.</value>
+    <value>Note: Do not share the exported file with anyone because it might contain private information such as account details and your upload history.</value>
   </data>
   <data name="&gt;&gt;lblExportImportNote.Name" xml:space="preserve">
     <value>lblExportImportNote</value>
@@ -1777,7 +1777,7 @@
     <value>184, 24</value>
   </data>
   <data name="btnResetSettings.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+    <value>5</value>
   </data>
   <data name="btnResetSettings.Text" xml:space="preserve">
     <value>Reset settings...</value>
@@ -1804,7 +1804,7 @@
     <value>184, 23</value>
   </data>
   <data name="pbExportImport.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+    <value>6</value>
   </data>
   <data name="pbExportImport.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -1858,7 +1858,7 @@
     <value>184, 23</value>
   </data>
   <data name="btnImport.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+    <value>4</value>
   </data>
   <data name="btnImport.Text" xml:space="preserve">
     <value>Import...</value>

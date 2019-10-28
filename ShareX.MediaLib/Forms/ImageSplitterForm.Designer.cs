@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ImageSplitterForm));
             this.lblImageFilePath = new System.Windows.Forms.Label();
             this.lblRowCount = new System.Windows.Forms.Label();
             this.lblColumnCount = new System.Windows.Forms.Label();
@@ -45,43 +46,28 @@
             // 
             // lblImageFilePath
             // 
-            this.lblImageFilePath.AutoSize = true;
-            this.lblImageFilePath.Location = new System.Drawing.Point(13, 16);
+            resources.ApplyResources(this.lblImageFilePath, "lblImageFilePath");
             this.lblImageFilePath.Name = "lblImageFilePath";
-            this.lblImageFilePath.Size = new System.Drawing.Size(79, 13);
-            this.lblImageFilePath.TabIndex = 0;
-            this.lblImageFilePath.Text = "Image file path:";
             // 
             // lblRowCount
             // 
-            this.lblRowCount.AutoSize = true;
-            this.lblRowCount.Location = new System.Drawing.Point(13, 40);
+            resources.ApplyResources(this.lblRowCount, "lblRowCount");
             this.lblRowCount.Name = "lblRowCount";
-            this.lblRowCount.Size = new System.Drawing.Size(62, 13);
-            this.lblRowCount.TabIndex = 3;
-            this.lblRowCount.Text = "Row count:";
             // 
             // lblColumnCount
             // 
-            this.lblColumnCount.AutoSize = true;
-            this.lblColumnCount.Location = new System.Drawing.Point(13, 64);
+            resources.ApplyResources(this.lblColumnCount, "lblColumnCount");
             this.lblColumnCount.Name = "lblColumnCount";
-            this.lblColumnCount.Size = new System.Drawing.Size(75, 13);
-            this.lblColumnCount.TabIndex = 5;
-            this.lblColumnCount.Text = "Column count:";
             // 
             // nudRowCount
             // 
-            this.nudRowCount.Location = new System.Drawing.Point(120, 36);
+            resources.ApplyResources(this.nudRowCount, "nudRowCount");
             this.nudRowCount.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
             this.nudRowCount.Name = "nudRowCount";
-            this.nudRowCount.Size = new System.Drawing.Size(56, 20);
-            this.nudRowCount.TabIndex = 4;
-            this.nudRowCount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.nudRowCount.Value = new decimal(new int[] {
             1,
             0,
@@ -90,16 +76,13 @@
             // 
             // nudColumnCount
             // 
-            this.nudColumnCount.Location = new System.Drawing.Point(120, 60);
+            resources.ApplyResources(this.nudColumnCount, "nudColumnCount");
             this.nudColumnCount.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
             this.nudColumnCount.Name = "nudColumnCount";
-            this.nudColumnCount.Size = new System.Drawing.Size(56, 20);
-            this.nudColumnCount.TabIndex = 6;
-            this.nudColumnCount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.nudColumnCount.Value = new decimal(new int[] {
             1,
             0,
@@ -108,63 +91,45 @@
             // 
             // txtImageFilePath
             // 
-            this.txtImageFilePath.Location = new System.Drawing.Point(120, 12);
+            resources.ApplyResources(this.txtImageFilePath, "txtImageFilePath");
             this.txtImageFilePath.Name = "txtImageFilePath";
-            this.txtImageFilePath.Size = new System.Drawing.Size(280, 20);
-            this.txtImageFilePath.TabIndex = 1;
             // 
             // lblOutputFolder
             // 
-            this.lblOutputFolder.AutoSize = true;
-            this.lblOutputFolder.Location = new System.Drawing.Point(13, 88);
+            resources.ApplyResources(this.lblOutputFolder, "lblOutputFolder");
             this.lblOutputFolder.Name = "lblOutputFolder";
-            this.lblOutputFolder.Size = new System.Drawing.Size(71, 13);
-            this.lblOutputFolder.TabIndex = 7;
-            this.lblOutputFolder.Text = "Output folder:";
             // 
             // txtOutputFolder
             // 
-            this.txtOutputFolder.Location = new System.Drawing.Point(120, 84);
+            resources.ApplyResources(this.txtOutputFolder, "txtOutputFolder");
             this.txtOutputFolder.Name = "txtOutputFolder";
-            this.txtOutputFolder.Size = new System.Drawing.Size(280, 20);
-            this.txtOutputFolder.TabIndex = 8;
             // 
             // btnImageFilePathBrowse
             // 
-            this.btnImageFilePathBrowse.Location = new System.Drawing.Point(408, 11);
+            resources.ApplyResources(this.btnImageFilePathBrowse, "btnImageFilePathBrowse");
             this.btnImageFilePathBrowse.Name = "btnImageFilePathBrowse";
-            this.btnImageFilePathBrowse.Size = new System.Drawing.Size(32, 23);
-            this.btnImageFilePathBrowse.TabIndex = 2;
-            this.btnImageFilePathBrowse.Text = "...";
             this.btnImageFilePathBrowse.UseVisualStyleBackColor = true;
             this.btnImageFilePathBrowse.Click += new System.EventHandler(this.BtnImageFilePathBrowse_Click);
             // 
             // btnOutputFolderBrowse
             // 
-            this.btnOutputFolderBrowse.Location = new System.Drawing.Point(408, 83);
+            resources.ApplyResources(this.btnOutputFolderBrowse, "btnOutputFolderBrowse");
             this.btnOutputFolderBrowse.Name = "btnOutputFolderBrowse";
-            this.btnOutputFolderBrowse.Size = new System.Drawing.Size(32, 23);
-            this.btnOutputFolderBrowse.TabIndex = 9;
-            this.btnOutputFolderBrowse.Text = "...";
             this.btnOutputFolderBrowse.UseVisualStyleBackColor = true;
             this.btnOutputFolderBrowse.Click += new System.EventHandler(this.BtnOutputFolderBrowse_Click);
             // 
             // btnSplitImage
             // 
-            this.btnSplitImage.Location = new System.Drawing.Point(16, 112);
+            resources.ApplyResources(this.btnSplitImage, "btnSplitImage");
             this.btnSplitImage.Name = "btnSplitImage";
-            this.btnSplitImage.Size = new System.Drawing.Size(424, 24);
-            this.btnSplitImage.TabIndex = 10;
-            this.btnSplitImage.Text = "Split image";
             this.btnSplitImage.UseVisualStyleBackColor = true;
             this.btnSplitImage.Click += new System.EventHandler(this.BtnSplitImage_Click);
             // 
             // ImageSplitterForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(449, 145);
             this.Controls.Add(this.btnSplitImage);
             this.Controls.Add(this.btnOutputFolderBrowse);
             this.Controls.Add(this.btnImageFilePathBrowse);
@@ -179,8 +144,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "ImageSplitterForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ShareX - Image splitter";
             ((System.ComponentModel.ISupportInitialize)(this.nudRowCount)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudColumnCount)).EndInit();
             this.ResumeLayout(false);
