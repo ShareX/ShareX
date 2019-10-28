@@ -213,4 +213,7 @@
   <data name="rbStandardColors.Text" xml:space="preserve">
     <value>Стандартные цвета</value>
   </data>
+  <data name="lblName.Text" xml:space="preserve">
+    <value>Название:</value>
+  </data>
 </root>

@@ -765,4 +765,28 @@
   <data name="pbSocialHideButton.ToolTip" xml:space="preserve">
     <value>Спрятать кнопки соцсетей</value>
   </data>
+  <data name="tsmiImageSplitter.Text" xml:space="preserve">
+    <value>Разделитель изображений...</value>
+  </data>
+  <data name="tsmiTrayImageSplitter.Text" xml:space="preserve">
+    <value>Разделитель изображений...</value>
+  </data>
+  <data name="tsmiThumbnailTitle.Text" xml:space="preserve">
+    <value>Заголовок миниатюры</value>
+  </data>
+  <data name="tsmiThumbnailTitleHide.Text" xml:space="preserve">
+    <value>Прятать</value>
+  </data>
+  <data name="tsmiThumbnailTitleShow.Text" xml:space="preserve">
+    <value>Показывать</value>
+  </data>
+  <data name="tsmiThumbnailTitleTop.Text" xml:space="preserve">
+    <value>Вверху</value>
+  </data>
+  <data name="tsmiThumbnailTitleBottom.Text" xml:space="preserve">
+    <value>Внизу</value>
+  </data>
+  <data name="tsmiRunAction.Text" xml:space="preserve">
+    <value>Выполнить действие</value>
+  </data>
 </root>

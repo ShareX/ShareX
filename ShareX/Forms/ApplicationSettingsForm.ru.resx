@@ -349,12 +349,36 @@
     <value>Применить</value>
   </data>
   <data name="cbExperimentalDarkTheme.Text" xml:space="preserve">
-    <value>Экспериментальная темная тема</value>
+    <value>Экспериментальная пользовательская тема</value>
   </data>
   <data name="cbUseWhiteShareXIcon.Text" xml:space="preserve">
     <value>Использовать белую иконку ShareX</value>
   </data>
   <data name="cbUseDarkTheme.Text" xml:space="preserve">
     <value>Использовать темную тему</value>
+  </data>
+  <data name="lblExportImportNote.Text" xml:space="preserve">
+    <value>Заметка: Не делитесь этим экспортируемым файлом ни с кем, он может содержать личную информация, например пароли.</value>
+  </data>
+  <data name="cbExportHistory.Text" xml:space="preserve">
+    <value>История</value>
+  </data>
+  <data name="cbExportSettings.Text" xml:space="preserve">
+    <value>Настройки</value>
+  </data>
+  <data name="tpTheme.Text" xml:space="preserve">
+    <value>Тема</value>
+  </data>
+  <data name="btnApplyTheme.Text" xml:space="preserve">
+    <value>Применить тему</value>
+  </data>
+  <data name="btnThemeAdd.Text" xml:space="preserve">
+    <value>Добавить</value>
+  </data>
+  <data name="btnThemeRemove.Text" xml:space="preserve">
+    <value>Удалить</value>
+  </data>
+  <data name="btnThemeReset.Text" xml:space="preserve">
+    <value>Сбросить</value>
   </data>
 </root>
