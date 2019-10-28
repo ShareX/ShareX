@@ -1168,4 +1168,7 @@
   <data name="RandomNonAmbiguousAlphanumericCharRepeatUsingN" xml:space="preserve">
     <value>Случайный недвусмысленный алфавитно-цифровой символ. Повторение задается через {n}</value>
   </data>
+  <data name="RandomEmojiRepeatUsingN" xml:space="preserve">
+    <value>Случайный символ эмодзи. Повторение задается через {n}</value>
+  </data>
 </root>

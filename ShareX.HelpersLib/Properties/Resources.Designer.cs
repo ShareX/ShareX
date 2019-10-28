@@ -2431,6 +2431,15 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Random emoji. Repeat using {n}.
+        /// </summary>
+        internal static string RandomEmojiRepeatUsingN {
+            get {
+                return ResourceManager.GetString("RandomEmojiRepeatUsingN", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Random non ambiguous alphanumeric char. Repeat using {n}.
         /// </summary>
         internal static string RandomNonAmbiguousAlphanumericCharRepeatUsingN {

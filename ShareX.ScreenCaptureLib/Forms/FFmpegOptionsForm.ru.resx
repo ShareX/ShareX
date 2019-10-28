@@ -251,4 +251,7 @@
   <data name="lblAMFUsage.Text" xml:space="preserve">
     <value>Использование:</value>
   </data>
+  <data name="tbOpusBitrate.ToolTip" xml:space="preserve">
+    <value>По умолчанию 128k.</value>
+  </data>
 </root>
