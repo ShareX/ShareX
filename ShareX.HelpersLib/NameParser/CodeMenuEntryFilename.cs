@@ -46,6 +46,7 @@ namespace ShareX.HelpersLib
         public static readonly CodeMenuEntryFilename pm = new CodeMenuEntryFilename("pm", Resources.ReplCodeMenuEntry_pm_Gets_AM_PM, Resources.ReplCodeMenuCategory_Date_and_Time);
         public static readonly CodeMenuEntryFilename w = new CodeMenuEntryFilename("w", Resources.ReplCodeMenuEntry_w_Current_week_name__Local_language_, Resources.ReplCodeMenuCategory_Date_and_Time);
         public static readonly CodeMenuEntryFilename w2 = new CodeMenuEntryFilename("w2", Resources.ReplCodeMenuEntry_w2_Current_week_name__English_, Resources.ReplCodeMenuCategory_Date_and_Time);
+        public static readonly CodeMenuEntryFilename wy = new CodeMenuEntryFilename("wy", Resources.ReplCodeMenuEntry_wy_Week_of_year, Resources.ReplCodeMenuCategory_Date_and_Time);
         public static readonly CodeMenuEntryFilename unix = new CodeMenuEntryFilename("unix", Resources.ReplCodeMenuEntry_unix_Unix_timestamp, Resources.ReplCodeMenuCategory_Date_and_Time);
         public static readonly CodeMenuEntryFilename i = new CodeMenuEntryFilename("i", Resources.ReplCodeMenuEntry_i_Auto_increment_number, Resources.ReplCodeMenuCategory_Incremental);
         public static readonly CodeMenuEntryFilename ia = new CodeMenuEntryFilename("ia", Resources.ReplCodeMenuEntry_ia_Auto_increment_alphanumeric, Resources.ReplCodeMenuCategory_Incremental);

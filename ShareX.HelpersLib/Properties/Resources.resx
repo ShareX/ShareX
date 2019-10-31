@@ -121,7 +121,7 @@
     <value>Freehand region</value>
   </data>
   <data name="ReplCodeMenuEntry_w_Current_week_name__Local_language_" xml:space="preserve">
-    <value>Current week name (Local language)</value>
+    <value>Week name (Local language)</value>
   </data>
   <data name="ExportImportControl_tsmiExportClipboard_Click_Settings_copied_to_your_clipboard_" xml:space="preserve">
     <value>Settings copied to your clipboard.</value>
@@ -130,7 +130,7 @@
     <value>Tools</value>
   </data>
   <data name="ReplCodeMenuEntry_s_Current_second" xml:space="preserve">
-    <value>Current second</value>
+    <value>Second</value>
   </data>
   <data name="TextDestination_CustomTextUploader" xml:space="preserve">
     <value>Custom text uploader</value>
@@ -142,7 +142,7 @@
     <value>None</value>
   </data>
   <data name="ReplCodeMenuEntry_mo_Current_month" xml:space="preserve">
-    <value>Current month</value>
+    <value>Month</value>
   </data>
   <data name="CssFileNameEditor_EditValue_Browse_for_a_Cascading_Style_Sheet___" xml:space="preserve">
     <value>Browse for a Cascading Style Sheet...</value>
@@ -247,7 +247,7 @@
     <value>File uploader</value>
   </data>
   <data name="ReplCodeMenuEntry_h_Current_hour" xml:space="preserve">
-    <value>Current hour</value>
+    <value>Hour</value>
   </data>
   <data name="HotkeyType_DisableHotkeys_Category" xml:space="preserve">
     <value>Other</value>
@@ -259,7 +259,7 @@
     <value>Update check failed</value>
   </data>
   <data name="ReplCodeMenuEntry_ms_Current_millisecond" xml:space="preserve">
-    <value>Current millisecond</value>
+    <value>Millisecond</value>
   </data>
   <data name="ResponseType_RedirectionURL" xml:space="preserve">
     <value>Redirection URL</value>
@@ -277,13 +277,13 @@
     <value>Upload folder</value>
   </data>
   <data name="ReplCodeMenuEntry_mi_Current_minute" xml:space="preserve">
-    <value>Current minute</value>
+    <value>Minute</value>
   </data>
   <data name="ShapeType_EffectPixelate" xml:space="preserve">
     <value>Pixelate (P)</value>
   </data>
   <data name="ReplCodeMenuEntry_d_Current_day" xml:space="preserve">
-    <value>Current day</value>
+    <value>Day</value>
   </data>
   <data name="PastebinExpiration_D1" xml:space="preserve">
     <value>1 Day</value>
@@ -447,7 +447,7 @@ Would you like to download it?</value>
     <value>Yes</value>
   </data>
   <data name="ReplCodeMenuEntry_mon_Current_month_name__Local_language_" xml:space="preserve">
-    <value>Current month name (Local language)</value>
+    <value>Month name (Local language)</value>
   </data>
   <data name="ShareX_Icon_White" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ShareX_Icon_White.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -501,7 +501,7 @@ Would you like to download it?</value>
     <value>Tools</value>
   </data>
   <data name="ReplCodeMenuEntry_yy_Current_year__2_digits_" xml:space="preserve">
-    <value>Current year (2 digits)</value>
+    <value>Year (2 digits)</value>
   </data>
   <data name="ReplCodeMenuEntry_i_Auto_increment_number" xml:space="preserve">
     <value>Auto increment number. 0 pad left using {n}</value>
@@ -552,7 +552,7 @@ Would you like to download it?</value>
     <value>Screen record</value>
   </data>
   <data name="ReplCodeMenuEntry_pm_Gets_AM_PM" xml:space="preserve">
-    <value>Gets AM/PM</value>
+    <value>AM/PM</value>
   </data>
   <data name="DirectoryNameEditor_EditValue_Browse_for_a_folder___" xml:space="preserve">
     <value>Browse for a folder...</value>
@@ -582,7 +582,7 @@ Would you like to download it?</value>
     <value>Abort screen recording</value>
   </data>
   <data name="ReplCodeMenuEntry_y_Current_year" xml:space="preserve">
-    <value>Current year</value>
+    <value>Year</value>
   </data>
   <data name="PastebinExpiration_W2" xml:space="preserve">
     <value>2 Weeks</value>
@@ -909,7 +909,7 @@ Would you like to download and install it?</value>
     <value>Process name of window</value>
   </data>
   <data name="ReplCodeMenuEntry_mon2_Current_month_name__English_" xml:space="preserve">
-    <value>Current month name (English)</value>
+    <value>Month name (English)</value>
   </data>
   <data name="HotkeyType_OpenScreenshotsFolder" xml:space="preserve">
     <value>Open screenshots folder</value>
@@ -921,7 +921,7 @@ Would you like to download and install it?</value>
     <value>Show tray balloon tip</value>
   </data>
   <data name="ReplCodeMenuEntry_w2_Current_week_name__English_" xml:space="preserve">
-    <value>Current week name (English)</value>
+    <value>Week name (English)</value>
   </data>
   <data name="CMYK_ToString_Cyan___0_0_0____Magenta___1_0_0____Yellow___2_0_0____Key___3_0_0__" xml:space="preserve">
     <value>Cyan: {0:0.0}%, Magenta: {1:0.0}%, Yellow: {2:0.0}%, Key: {3:0.0}%</value>
@@ -1201,5 +1201,8 @@ Would you like to download and install it?</value>
   </data>
   <data name="RandomEmojiRepeatUsingN" xml:space="preserve">
     <value>Random emoji. Repeat using {n}</value>
+  </data>
+  <data name="ReplCodeMenuEntry_wy_Week_of_year" xml:space="preserve">
+    <value>Week of year</value>
   </data>
 </root>
