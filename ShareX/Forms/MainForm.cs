@@ -930,6 +930,7 @@ namespace ShareX
 
             HelpersOptions.CurrentProxy = Program.Settings.ProxySettings;
             HelpersOptions.AcceptInvalidSSLCertificates = Program.Settings.AcceptInvalidSSLCertificates;
+            HelpersOptions.URLEncodeIgnoreEmoji = Program.Settings.URLEncodeIgnoreEmoji;
             HelpersOptions.DefaultCopyImageFillBackground = Program.Settings.DefaultClipboardCopyImageFillBackground;
             HelpersOptions.RotateImageByExifOrientationData = Program.Settings.RotateImageByExifOrientationData;
             HelpersOptions.BrowserPath = Program.Settings.BrowserPath;

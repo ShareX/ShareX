@@ -263,7 +263,7 @@ namespace ShareX.UploadersLib.FileUploaders
         {
             if (!string.IsNullOrEmpty(Settings.Endpoint) && !string.IsNullOrEmpty(Settings.Bucket))
             {
-                uploadPath = URLHelpers.URLEncodeIgnoreEmoji(uploadPath, true);
+                uploadPath = URLHelpers.URLEncode(uploadPath, true, HelpersOptions.URLEncodeIgnoreEmoji);
 
                 string url;
 

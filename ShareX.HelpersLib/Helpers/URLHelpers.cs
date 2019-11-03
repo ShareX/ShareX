@@ -82,8 +82,13 @@ namespace ShareX.HelpersLib
             }
         }
 
-        public static string URLEncode(string text, bool isPath = false)
+        public static string URLEncode(string text, bool isPath = false, bool ignoreEmoji = false)
         {
+            if (ignoreEmoji)
+            {
+                return URLEncodeIgnoreEmoji(text, isPath);
+            }
+
             StringBuilder sb = new StringBuilder();
 
             if (!string.IsNullOrEmpty(text))
