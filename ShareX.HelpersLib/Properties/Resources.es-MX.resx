@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="ShapeType_RegionFreehand" xml:space="preserve">
-    <value>Región: A mano libre</value>
+    <value>Forma libre</value>
   </data>
   <data name="ReplCodeMenuEntry_w_Current_week_name__Local_language_" xml:space="preserve">
     <value>Año actual (idioma local)</value>
@@ -139,7 +139,7 @@
     <value>Iniciar o detener grabación de pantalla usando la última región</value>
   </data>
   <data name="TextDestination_CustomTextUploader" xml:space="preserve">
-    <value>Servidor personalizado para texto</value>
+    <value>Servidor personalizado de texto</value>
   </data>
   <data name="ImageEditorInterpolationMode_HighQualityBicubic" xml:space="preserve">
     <value>Bicúbica de alta calidad</value>
@@ -157,7 +157,7 @@
     <value>Generador de miniaturas de video</value>
   </data>
   <data name="ShapeType_EffectBlur" xml:space="preserve">
-    <value>Efecto: Desenfocado (B)</value>
+    <value>Desenfocado (B)</value>
   </data>
   <data name="AfterCaptureTasks_ShowQuickTaskMenu" xml:space="preserve">
     <value>Mostrar menú de tarea rápida</value>
@@ -181,7 +181,7 @@
     <value>Efectos de imágenes</value>
   </data>
   <data name="ShapeType_DrawingImageScreen" xml:space="preserve">
-    <value>Dibujo: Imagen (pantalla)</value>
+    <value>Imagen (pantalla)</value>
   </data>
   <data name="UpdateCheckerLabel_UpdateControls_A_newer_version_of_ShareX_is_available" xml:space="preserve">
     <value>Hay una nueva versión de {0}</value>
@@ -190,7 +190,7 @@
     <value>Mostrar ventana de código QR</value>
   </data>
   <data name="ShapeType_DrawingSpeechBalloon" xml:space="preserve">
-    <value>Dibujo: Globo de diálogo (S)</value>
+    <value>Globo de diálogo (S)</value>
   </data>
   <data name="ProxyMethod_None" xml:space="preserve">
     <value>Ninguno</value>
@@ -235,13 +235,13 @@
     <value>Instalar</value>
   </data>
   <data name="ShapeType_RegionRectangle" xml:space="preserve">
-    <value>Región: Rectángulo</value>
+    <value>Rectángulo</value>
   </data>
   <data name="HotkeyType_FolderUpload_Category" xml:space="preserve">
     <value>Subir</value>
   </data>
   <data name="HotkeyType_MonitorTest" xml:space="preserve">
-    <value>Capturar pantalla</value>
+    <value>Prueba de pantalla</value>
   </data>
   <data name="HotkeyType_QRCode_Category" xml:space="preserve">
     <value>Herramientas</value>
@@ -262,13 +262,13 @@
     <value>Privado</value>
   </data>
   <data name="CustomUploaderDestinationType_FileUploader" xml:space="preserve">
-    <value>Servidor para archivos</value>
+    <value>Servidor de archivos</value>
   </data>
   <data name="HotkeyType_DisableHotkeys_Category" xml:space="preserve">
     <value>Otro</value>
   </data>
   <data name="ScrollingCaptureScrollTopMethod_All" xml:space="preserve">
-    <value>Presionar "Inicio" para simular primero. Después, mandar mensaje de desplazamiento superior</value>
+    <value>Presionar "Inicio" para simular primero, luego mandar mensaje de desplazamiento superior</value>
   </data>
   <data name="UpdateCheckerLabel_UpdateControls_Update_check_failed" xml:space="preserve">
     <value>La comprobación de actualizaciones falló</value>
@@ -286,7 +286,7 @@
     <value>Minuto actual</value>
   </data>
   <data name="ShapeType_EffectPixelate" xml:space="preserve">
-    <value>Efecto: Pixelar (P)</value>
+    <value>Pixelar (P)</value>
   </data>
   <data name="ReplCodeMenuEntry_d_Current_day" xml:space="preserve">
     <value>Día actual</value>
@@ -357,7 +357,7 @@
   </data>
   <data name="UpdateMessageBox_UpdateMessageBox_Portable" xml:space="preserve">
     <value>Hay una nueva versión de {0}.
-¿Desea instalarla?</value>
+¿Desea descargarla?</value>
   </data>
   <data name="HotkeyType_AbortScreenRecording" xml:space="preserve">
     <value>Interrumpir grabación de pantalla</value>
@@ -510,10 +510,10 @@
     <value>Año actual (2 dígitos)</value>
   </data>
   <data name="FileDestination_CustomFileUploader" xml:space="preserve">
-    <value>Servidor personalizado para archivos</value>
+    <value>Servidor personalizado de archivos</value>
   </data>
   <data name="ImageDestination_CustomImageUploader" xml:space="preserve">
-    <value>Servidor personalizado para imágenes</value>
+    <value>Servidor personalizado de imágenes</value>
   </data>
   <data name="URLSharingServices_CustomURLSharingService" xml:space="preserve">
     <value>Servicio personalizado para compartir enlaces</value>
@@ -561,47 +561,46 @@
     <value>Subir con arrastrar y soltar</value>
   </data>
   <data name="ShapeType_DrawingArrow" xml:space="preserve">
-    <value>Dibujo: Flecha (A)</value>
+    <value>Flecha (A)</value>
   </data>
   <data name="ShapeType_DrawingCursor" xml:space="preserve">
-    <value>Dibujo: Puntero</value>
+    <value>Puntero</value>
   </data>
   <data name="ShapeType_DrawingEllipse" xml:space="preserve">
-    <value>Dibujo: Elipse
-</value>
+    <value>Elipse (E)</value>
   </data>
   <data name="ShapeType_DrawingFreehand" xml:space="preserve">
-    <value>Dibujo: A mano libre (F)</value>
+    <value>Forma libre (F)</value>
   </data>
   <data name="ShapeType_DrawingImage" xml:space="preserve">
-    <value>Dibujo: Imagen (achivo)</value>
+    <value>Imagen (archivo)</value>
   </data>
   <data name="ShapeType_DrawingLine" xml:space="preserve">
-    <value>Dibujo: Línea (L)</value>
+    <value>Línea (L)</value>
   </data>
   <data name="ShapeType_DrawingRectangle" xml:space="preserve">
-    <value>Dibujo: Rectángulo (R)</value>
+    <value>Rectángulo (R)</value>
   </data>
   <data name="ShapeType_DrawingStep" xml:space="preserve">
-    <value>Dibujo: Paso (I)</value>
+    <value>Paso (I)</value>
   </data>
   <data name="ShapeType_DrawingSticker" xml:space="preserve">
-    <value>Dibujo: Etiqueta</value>
+    <value>Calcomanía</value>
   </data>
   <data name="ShapeType_DrawingTextBackground" xml:space="preserve">
-    <value>Dibujo: Texto con fondo (T)</value>
+    <value>Texto con fondo (T)</value>
   </data>
   <data name="ShapeType_DrawingTextOutline" xml:space="preserve">
-    <value>Dibujo: Texto con contorno (O)</value>
+    <value>Texto con contorno (O)</value>
   </data>
   <data name="ShapeType_EffectHighlight" xml:space="preserve">
-    <value>Efecto: Resaltar (H)</value>
+    <value>Resaltar (H)</value>
   </data>
   <data name="FileDestination_Email" xml:space="preserve">
-    <value>Coreo electrónico</value>
+    <value>Correo electrónico</value>
   </data>
   <data name="URLSharingServices_Email" xml:space="preserve">
-    <value>Coreo electrónico</value>
+    <value>Correo electrónico</value>
   </data>
   <data name="Error" xml:space="preserve">
     <value>Error</value>
@@ -625,10 +624,10 @@
     <value>Ubicación del archivo sin extensión + "Extensión de archivo final"</value>
   </data>
   <data name="TextDestination_FileUploader" xml:space="preserve">
-    <value>Servidor para archivos</value>
+    <value>Servidor de archivos</value>
   </data>
   <data name="ImageDestination_FileUploader" xml:space="preserve">
-    <value>Servidor para archivos</value>
+    <value>Servidor de archivos</value>
   </data>
   <data name="DownloaderForm_DownloaderForm_Filename___0_" xml:space="preserve">
     <value>Nombre de archivo: {0}</value>
@@ -673,7 +672,7 @@
     <value>Carácter alfanumérico aleatorio. Repetir con {n}</value>
   </data>
   <data name="ReplCodeMenuEntry_guid_Random_guid" xml:space="preserve">
-    <value>Identificador único global (GUID) aleatorio</value>
+    <value>Identificador único universal (GUID) aleatorio</value>
   </data>
   <data name="ReplCodeMenuEntry_rx_Random_hexadecimal" xml:space="preserve">
     <value>Carácter hexadecimal aleatorio. Repetir con {n}</value>
@@ -685,7 +684,7 @@
     <value>Número aleatorio del 0 al 9. Repetir con {n}</value>
   </data>
   <data name="ReplCodeMenuCategory_Target" xml:space="preserve">
-    <value>Objetivo</value>
+    <value>Destino</value>
   </data>
   <data name="ReplCodeMenuEntry_unix_Unix_timestamp" xml:space="preserve">
     <value>Marca de tiempo Unix</value>
@@ -694,7 +693,7 @@
     <value>Nombre de usuario</value>
   </data>
   <data name="ScreenRecordGIFEncoding_NET" xml:space="preserve">
-    <value>.NET (baja calidad)</value>
+    <value>.NET (calidad baja)</value>
   </data>
   <data name="UpdateCheckerLabel_UpdateControls_ShareX_is_up_to_date" xml:space="preserve">
     <value>{0} está actualizado</value>
@@ -763,10 +762,10 @@
     <value>Nombre de animal aleatorio (inglés)</value>
   </data>
   <data name="CustomUploaderDestinationType_ImageUploader" xml:space="preserve">
-    <value>Servidor para imágenes</value>
+    <value>Servidor de imágenes</value>
   </data>
   <data name="CustomUploaderDestinationType_TextUploader" xml:space="preserve">
-    <value>Servidor para textos</value>
+    <value>Servidor de textos</value>
   </data>
   <data name="CustomUploaderDestinationType_URLSharingService" xml:space="preserve">
     <value>Servicio para compartir enlaces</value>
@@ -882,7 +881,7 @@ Tamaño: {2:n0} / {3:n0} KB</value>
     <value>Ninguno</value>
   </data>
   <data name="HotkeyType_OpenHistory" xml:space="preserve">
-    <value>Abrir historial</value>
+    <value>Abrir ventana de historial</value>
   </data>
   <data name="HotkeyType_OpenHistory_Category" xml:space="preserve">
     <value>Otro</value>
@@ -1011,7 +1010,7 @@ Tamaño: {2:n0} / {3:n0} KB</value>
     <value>Simular acción de tecla "Av Pág"</value>
   </data>
   <data name="ScrollingCaptureScrollMethod_MouseWheel" xml:space="preserve">
-    <value>Simular acción de giro de rueda del rarón</value>
+    <value>Simular acción de giro de rueda del ratón</value>
   </data>
   <data name="ScrollingCaptureScrollMethod_SendMessageScroll" xml:space="preserve">
     <value>Enviar mensaje de desplazamiento la venta o control</value>
@@ -1023,10 +1022,10 @@ Tamaño: {2:n0} / {3:n0} KB</value>
     <value>Enviar mensaje de desplazamiento superior</value>
   </data>
   <data name="ShapeType_RegionEllipse" xml:space="preserve">
-    <value>Región: Elipse</value>
+    <value>Elipse</value>
   </data>
   <data name="ShapeType_ToolCrop" xml:space="preserve">
-    <value>Herramienta: Recortar (C)</value>
+    <value>Recortar (C)</value>
   </data>
   <data name="Start" xml:space="preserve">
     <value>Iniciar</value>
@@ -1035,7 +1034,7 @@ Tamaño: {2:n0} / {3:n0} KB</value>
     <value>Público</value>
   </data>
   <data name="YouTubeVideoPrivacy_Unlisted" xml:space="preserve">
-    <value>No listado</value>
+    <value>Sin listar</value>
   </data>
   <data name="HotkeyType_RectangleRegion_Category" xml:space="preserve">
     <value>Capturar pantalla</value>
@@ -1147,5 +1146,32 @@ Tamaño: {2:n0} / {3:n0} KB</value>
   </data>
   <data name="HotkeyType_UploadText" xml:space="preserve">
     <value>Subir texto</value>
+  </data>
+  <data name="Extensions_AddContextMenu_Delete" xml:space="preserve">
+    <value>Eliminar</value>
+  </data>
+  <data name="Extensions_AddContextMenu_Redo" xml:space="preserve">
+    <value>Rehacer</value>
+  </data>
+  <data name="Extensions_AddContextMenu_SelectAll" xml:space="preserve">
+    <value>Seleccionar todo</value>
+  </data>
+  <data name="Extensions_AddContextMenu_Undo" xml:space="preserve">
+    <value>Deshacer</value>
+  </data>
+  <data name="RandomEmojiRepeatUsingN" xml:space="preserve">
+    <value>Emojis aleatorios. Usar {n} para repetir</value>
+  </data>
+  <data name="RandomNonAmbiguousAlphanumericCharRepeatUsingN" xml:space="preserve">
+    <value>Caracteres alfanuméricos no ambiguos. Usar {n} para repetir</value>
+  </data>
+  <data name="ReplCodeMenuEntry_wy_Week_of_year" xml:space="preserve">
+    <value>Semana del año</value>
+  </data>
+  <data name="ShapeType_DrawingMagnify" xml:space="preserve">
+    <value>Ampliar</value>
+  </data>
+  <data name="ShapeType_ToolSelect" xml:space="preserve">
+    <value>Seleccionar y mover (M)</value>
   </data>
 </root>

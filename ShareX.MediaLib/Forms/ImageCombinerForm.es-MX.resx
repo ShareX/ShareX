@@ -124,7 +124,7 @@
     <value>Agregar...</value>
   </data>
   <data name="btnCombine.Text" xml:space="preserve">
-    <value>Acoplar imágenes y guardar o subir, según la configuración de después de capturar</value>
+    <value>Acoplar imágenes y guardar o subir, según la configuración de Después de capturar</value>
   </data>
   <data name="btnMoveDown.Text" xml:space="preserve">
     <value>Bajar</value>
@@ -139,7 +139,7 @@
     <value>Ubicación del archivo de imagen</value>
   </data>
   <data name="lblOrientation.Text" xml:space="preserve">
-    <value>Orientación:</value>
+    <value>Combinar orientación:</value>
   </data>
   <data name="lblSpace.Text" xml:space="preserve">
     <value>Espacio entre imágenes:</value>

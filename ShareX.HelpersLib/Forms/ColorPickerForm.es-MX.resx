@@ -246,4 +246,13 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Selector de color</value>
   </data>
+  <data name="lblName.Text" xml:space="preserve">
+    <value>Nombre:</value>
+  </data>
+  <data name="rbRecentColors.Text" xml:space="preserve">
+    <value>Colores recientes</value>
+  </data>
+  <data name="rbStandardColors.Text" xml:space="preserve">
+    <value>Colores estándar</value>
+  </data>
 </root>

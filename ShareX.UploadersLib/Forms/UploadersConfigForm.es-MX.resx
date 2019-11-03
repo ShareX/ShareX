@@ -184,10 +184,10 @@
     <value>UID de la API:</value>
   </data>
   <data name="lblYourlsAPIURL.Text" xml:space="preserve">
-    <value>URL de la API:</value>
+    <value>Enlace de la API:</value>
   </data>
   <data name="lblSeafileAPIURL.Text" xml:space="preserve">
-    <value>URL de la API:</value>
+    <value>Enlace de la API:</value>
   </data>
   <data name="cbOneDriveCreateShareableLink.Text" xml:space="preserve">
     <value>Crear enlace para compartir</value>
@@ -262,7 +262,7 @@
     <value>Correo electrónico:</value>
   </data>
   <data name="tpFileUploaders.Text" xml:space="preserve">
-    <value>Servidores para archivos:</value>
+    <value>Servidores de archivos:</value>
   </data>
   <data name="lblSharedFolderFiles.Text" xml:space="preserve">
     <value>Archivo:</value>
@@ -289,7 +289,7 @@
     <value>¿Es enlace público?</value>
   </data>
   <data name="cbGfycatIsPublic.Text" xml:space="preserve">
-    <value>¿Es enlace público?</value>
+    <value>Subida pública</value>
   </data>
   <data name="cbImageShackIsPublic.Text" xml:space="preserve">
     <value>¿Es enlace público?</value>
@@ -301,7 +301,7 @@
     <value>¿Es enlace público?</value>
   </data>
   <data name="cbPolrIsSecret.Text" xml:space="preserve">
-    <value>¿Será URL secreta?</value>
+    <value>Es enlace secreto</value>
   </data>
   <data name="btnPastebinLogin.Text" xml:space="preserve">
     <value>Acceder</value>
@@ -403,7 +403,7 @@
     <value>Ubicación:</value>
   </data>
   <data name="lblSeafilePath.Text" xml:space="preserve">
-    <value>Ubicación:</value>
+    <value>Ruta:</value>
   </data>
   <data name="lblOwnCloudPath.Text" xml:space="preserve">
     <value>Ubicación:</value>
@@ -436,7 +436,7 @@
     <value>Región:</value>
   </data>
   <data name="lblAmazonS3Endpoints.Text" xml:space="preserve">
-    <value>Regiones:</value>
+    <value>Direcciones:</value>
   </data>
   <data name="btnPastebinRegister.Text" xml:space="preserve">
     <value>Crear cuenta...</value>
@@ -460,7 +460,7 @@
     <value>Eliminar álbum</value>
   </data>
   <data name="lblPomfResultURL.Text" xml:space="preserve">
-    <value>URL de respuesta:</value>
+    <value>Enlace de respuesta:</value>
   </data>
   <data name="lblBoxFolderID.Text" xml:space="preserve">
     <value>Carpeta seleccionada:</value>
@@ -514,10 +514,10 @@
     <value>Ubicación de subida:</value>
   </data>
   <data name="lblPomfUploadURL.Text" xml:space="preserve">
-    <value>URL de subida:</value>
+    <value>Enlace de subida:</value>
   </data>
   <data name="lblCheveretoUploadURL.Text" xml:space="preserve">
-    <value>URL de subida:</value>
+    <value>Enlace de subida:</value>
   </data>
   <data name="lblCheveretoUploaders.Text" xml:space="preserve">
     <value>Servidores:</value>
@@ -526,22 +526,22 @@
     <value>Servidores:</value>
   </data>
   <data name="lblFTPURLPath.Text" xml:space="preserve">
-    <value>URL:</value>
+    <value>Enlace:</value>
   </data>
   <data name="lblFTPURLPreview.Text" xml:space="preserve">
-    <value>Vista previa de URL:</value>
+    <value>Vista previa de enlace:</value>
   </data>
   <data name="lblAmazonS3PathPreviewLabel.Text" xml:space="preserve">
-    <value>Vista previa de URL:</value>
+    <value>Vista previa de enlace:</value>
   </data>
   <data name="lblGoogleCloudStoragePathPreviewLabel.Text" xml:space="preserve">
-    <value>Vista previa de URL:</value>
+    <value>Vista previa de enlace:</value>
   </data>
   <data name="tpURLShorteners.Text" xml:space="preserve">
     <value>Acortadores de enlaces</value>
   </data>
   <data name="lblOwnCloudHost.Text" xml:space="preserve">
-    <value>URL:</value>
+    <value>Enlace:</value>
   </data>
   <data name="lblSeafileAccInfoUsage.Text" xml:space="preserve">
     <value>Uso:</value>
@@ -568,7 +568,7 @@
     <value>Utilizar enlace directo</value>
   </data>
   <data name="cbLocalhostrDirectURL.Text" xml:space="preserve">
-    <value>Utilizar URL directa si existe</value>
+    <value>Usar enlace directo si existe</value>
   </data>
   <data name="lblUpasteUserKey.Text" xml:space="preserve">
     <value>Clave de usuario:</value>
@@ -712,7 +712,7 @@ Por ejemplo, si el bucket se llama bucket.example.com, la URL será http://bucke
     <value>Crear Gist público</value>
   </data>
   <data name="cbGistUseRawURL.Text" xml:space="preserve">
-    <value>Usar URL "raw"</value>
+    <value>Usar enlace sin dominio</value>
   </data>
   <data name="cbGoogleDriveUseFolder.Text" xml:space="preserve">
     <value>Subir archivos a la carpeta seleccionada</value>
@@ -739,7 +739,7 @@ Por ejemplo, si el bucket se llama bucket.example.com, la URL será http://bucke
     <value>Utilizar enlaces de vista previa (solo NextCloud)</value>
   </data>
   <data name="cbPastebinRaw.Text" xml:space="preserve">
-    <value>Usar URL "raw"</value>
+    <value>Usar enlace sin dominio</value>
   </data>
   <data name="cbPlikComment.Text" xml:space="preserve">
     <value>Comentario (Markdown)</value>
@@ -831,7 +831,7 @@ Por ejemplo, si el bucket se llama bucket.example.com, la URL será http://bucke
     <value>Nombre de bucket:</value>
   </data>
   <data name="lblAmazonS3Endpoint.Text" xml:space="preserve">
-    <value>Extremo (endpoint):</value>
+    <value>Dirección:</value>
   </data>
   <data name="lblAmazonS3SecretKey.Text" xml:space="preserve">
     <value>Clave secreta:</value>
@@ -933,7 +933,7 @@ Por ejemplo, si el bucket se llama bucket.example.com, la URL será http://bucke
     <value>Amazon S3</value>
   </data>
   <data name="lblPolrAPIHostname.Text" xml:space="preserve">
-    <value>URL de la API: (ej. http://demo.polr.me/api/v2/action/shorten)</value>
+    <value>Enlace de la API: (ej. http://demo.polr.me/api/v2/action/shorten)</value>
   </data>
   <data name="tpJira.Text" xml:space="preserve">
     <value>Atlassian Jira</value>
@@ -975,10 +975,10 @@ Por ejemplo, si el bucket se llama bucket.example.com, la URL será http://bucke
     <value>Ejemplo: http://example.com/owncloud</value>
   </data>
   <data name="lblPastebinExpiration.Text" xml:space="preserve">
-    <value>Expiración:</value>
+    <value>Caducidad:</value>
   </data>
   <data name="cbAmazonS3PublicACL.Text" xml:space="preserve">
-    <value>Establecer tipo de acceso public-read al archivo</value>
+    <value>Establecer tipo de acceso de lectura pública al archivo</value>
   </data>
   <data name="lblImgurThumbnailType.Text" xml:space="preserve">
     <value>Tipo de miniatura:</value>
@@ -1002,7 +1002,7 @@ Por ejemplo, si el bucket se llama bucket.example.com, la URL será http://bucke
     <value>Pegar título:</value>
   </data>
   <data name="lblLambdaUploadURL.Text" xml:space="preserve">
-    <value>URL de enlace:</value>
+    <value>Ruta de enlace:</value>
   </data>
   <data name="lblLambdaInfo.Text" xml:space="preserve">
     <value>Para obtener una clave de la API, se debe iniciar sesión en Lambda (https://lambda.ssx), luego seleccionar el nombre de usuario y después la configuración de cuenta.</value>
@@ -1032,7 +1032,7 @@ Por ejemplo, si el bucket se llama bucket.example.com, la URL será http://bucke
     <value>Elegir biblioteca:</value>
   </data>
   <data name="lblSeafileSharePassword.Text" xml:space="preserve">
-    <value>Clave pública:</value>
+    <value>Compartir contraseña:</value>
   </data>
   <data name="lblSeafileWritePermNotif.Text" xml:space="preserve">
     <value>Las bibliotecas sin permisos de escritura están ocultas. Una biblioteca cifrada no permite compartir.</value>
@@ -1137,7 +1137,7 @@ Por ejemplo, si el bucket se llama bucket.example.com, la URL será http://bucke
     <value>Otros servidores</value>
   </data>
   <data name="tpOwnCloud.Text" xml:space="preserve">
-    <value>ownCloud / Nextcloud</value>
+    <value>ownCloud/Nextcloud</value>
   </data>
   <data name="tpPaste_ee.Text" xml:space="preserve">
     <value>Paste.ee</value>
@@ -1210,12 +1210,141 @@ Por ejemplo, si el bucket se llama bucket.example.com, la URL será http://bucke
     <value>PROYECTO-</value>
   </data>
   <data name="lblAzureStorageURLPreviewLabel.Text" xml:space="preserve">
-    <value>Vista previa de URL:</value>
+    <value>Vista previa de enlace:</value>
   </data>
   <data name="lblAzureStorageURLPreview.Text" xml:space="preserve">
     <value>Vista previa</value>
   </data>
   <data name="lblFirebaseDomainExample.Text" xml:space="preserve">
     <value>Ejemplo: google.page.link</value>
+  </data>
+  <data name="cbKuttReuse.Text" xml:space="preserve">
+    <value>Si un enlace hacia el destino indicado existe, devolverlo</value>
+  </data>
+  <data name="lblB2UrlPreviewLabel.Text" xml:space="preserve">
+    <value>Vista previa de enlace:</value>
+  </data>
+  <data name="lblTeknikAuthUrl.Text" xml:space="preserve">
+    <value>Enlace de acceso:</value>
+  </data>
+  <data name="lblTeknikPasteAPIUrl.Text" xml:space="preserve">
+    <value>Enlace de la API para pegar:</value>
+  </data>
+  <data name="lblTeknikUploadAPIUrl.Text" xml:space="preserve">
+    <value>Enlace de la API pata subir:</value>
+  </data>
+  <data name="lblTeknikUrlShortenerAPIUrl.Text" xml:space="preserve">
+    <value>Enlace de la API de acortador de enlaces:</value>
+  </data>
+  <data name="txtB2CustomUrl.ToolTip" xml:space="preserve">
+    <value>Introducir un enlace personalizado que remplazará el host y la ruta que BackBlaze devuelve.</value>
+  </data>
+  <data name="btnGooglePhotosCreateAlbum.Text" xml:space="preserve">
+    <value>Crear</value>
+  </data>
+  <data name="cbAmazonS3SignedPayload.Text" xml:space="preserve">
+    <value>Carga útil firmada</value>
+  </data>
+  <data name="cbB2CustomUrl.Text" xml:space="preserve">
+    <value>Usar enlace personalizado (se permiten patrones de formato):</value>
+  </data>
+  <data name="cbB2CustomUrl.ToolTip" xml:space="preserve">
+    <value>Al habilitarse, el enlace que reciba será la ruta de subida que se añada a tal enlace, lo cual resulta útil al emplearse con servicios como CloudFare o algún otro que actúe como interfaz de B2. Consulte la sección "Creating a Vanity URL with B2" en la base de conocimiento de B2. 
+
+Al deshabilitarse, el enlace recibido será determinado por Backblaze B2.</value>
+  </data>
+  <data name="cbGfycatKeepAudio.Text" xml:space="preserve">
+    <value>Conservar audio</value>
+  </data>
+  <data name="cbGoogleCloudStorageSetPublicACL.Text" xml:space="preserve">
+    <value>Definir permiso de lectura pública al archivo</value>
+  </data>
+  <data name="cbGoogleCloudStorageStripExtensionImage.Text" xml:space="preserve">
+    <value>Imagen</value>
+  </data>
+  <data name="cbGoogleCloudStorageStripExtensionText.Text" xml:space="preserve">
+    <value>Texto</value>
+  </data>
+  <data name="cbGoogleCloudStorageStripExtensionVideo.Text" xml:space="preserve">
+    <value>Video</value>
+  </data>
+  <data name="cbGooglePhotosIsPublic.Text" xml:space="preserve">
+    <value>Subida pública</value>
+  </data>
+  <data name="cbOwnCloudAutoExpire.Text" xml:space="preserve">
+    <value>Vida limitada a enlaces compartidos</value>
+  </data>
+  <data name="cbTeknikEncrypt.Text" xml:space="preserve">
+    <value>Encriptación en extremo del cliente</value>
+  </data>
+  <data name="cbTeknikGenDeleteKey.Text" xml:space="preserve">
+    <value>Generar clave de borrado</value>
+  </data>
+  <data name="gbGoogleCloudStorageAdvanced.Text" xml:space="preserve">
+    <value>Avanzado</value>
+  </data>
+  <data name="lblB2ApplicationKey.Text" xml:space="preserve">
+    <value>Clave de la aplicación (secreta):</value>
+  </data>
+  <data name="lblB2ApplicationKeyId.Text" xml:space="preserve">
+    <value>ID de la clave de la aplicación:</value>
+  </data>
+  <data name="lblB2Bucket.Text" xml:space="preserve">
+    <value>Nombre de Bucket:</value>
+  </data>
+  <data name="lblB2ManageLink.Text" xml:space="preserve">
+    <value>Clic aquí para crear una Clave de aplicación o administrar sus buckets.</value>
+  </data>
+  <data name="lblB2UploadPath.Text" xml:space="preserve">
+    <value>Ruta de subida:</value>
+  </data>
+  <data name="lblB2UrlPreview.Text" xml:space="preserve">
+    <value>Vista previa</value>
+  </data>
+  <data name="lblGoogleCloudStorageStripExtension.Text" xml:space="preserve">
+    <value>Eliminar extensión de archivo:</value>
+  </data>
+  <data name="lblGooglePhotosCreateAlbumName.Text" xml:space="preserve">
+    <value>Nombre del álbum:</value>
+  </data>
+  <data name="lblKuttAPIKey.Text" xml:space="preserve">
+    <value>Clave de la API:</value>
+  </data>
+  <data name="lblKuttHost.Text" xml:space="preserve">
+    <value>Host:</value>
+  </data>
+  <data name="lblKuttPassword.Text" xml:space="preserve">
+    <value>Contraseña:</value>
+  </data>
+  <data name="lblOwnCloudExpiryTime.Text" xml:space="preserve">
+    <value>Caducidad (días):</value>
+  </data>
+  <data name="lblTeknikExpiration.Text" xml:space="preserve">
+    <value>Caducidad:</value>
+  </data>
+  <data name="tpBackblazeB2.Text" xml:space="preserve">
+    <value>Backblaze B2</value>
+  </data>
+  <data name="tpKutt.Text" xml:space="preserve">
+    <value>Kutt</value>
+  </data>
+  <data name="tpTeknik.Text" xml:space="preserve">
+    <value>Teknik</value>
+  </data>
+  <data name="txtB2ApplicationKey.ToolTip" xml:space="preserve">
+    <value>La clave de la aplicación. Es alfanumérica.</value>
+  </data>
+  <data name="txtB2ApplicationKeyId.ToolTip" xml:space="preserve">
+    <value>El ID de la clave de la aplicación. Es una cadena hexadecimal en minúscula.</value>
+  </data>
+  <data name="txtB2Bucket.ToolTip" xml:space="preserve">
+    <value>Dónde almacenar los archivos.
+
+Esto solo resulta bien si "Permitir acceso a los buckets" 
+no se estableció para un bucket a la hora de crear 
+la clave de la aplicación.</value>
+  </data>
+  <data name="txtB2UploadPath.ToolTip" xml:space="preserve">
+    <value>La ruta del archivo. Usa un patrón de formato.</value>
   </data>
 </root>

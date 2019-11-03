@@ -121,7 +121,7 @@
     <value>ShareX - Captura de desplazamiento</value>
   </data>
   <data name="btnCapture.Text" xml:space="preserve">
-    <value>Iniciar captura</value>
+    <value>Iniciar captura de desplazamiento</value>
   </data>
   <data name="btnGuessCombineAdjustments.Text" xml:space="preserve">
     <value>Determinar ajustes necesarios y acoplar</value>
@@ -136,13 +136,13 @@
     <value>Seleccionar venta o control para desplazar...</value>
   </data>
   <data name="btnSelectRectangle.Text" xml:space="preserve">
-    <value>Seleccionar región personalizada en la ventana (opcional)</value>
+    <value>Seleccionar región personalizada en la ventana (opcional)...</value>
   </data>
   <data name="btnStartTask.Text" xml:space="preserve">
     <value>Subir o guardar, según la configuración de después de capturar</value>
   </data>
   <data name="cbAutoCombine.Text" xml:space="preserve">
-    <value>Resolver desfase entre imágenes y acoplar</value>
+    <value>Determinar desfase entre imágenes y acoplar</value>
   </data>
   <data name="cbAutoDetectScrollEnd.Text" xml:space="preserve">
     <value>Detectar final de desplazamiento</value>
@@ -154,10 +154,10 @@
     <value>Iniciar captura de desplazamiento justo después de seleccionar captura de región</value>
   </data>
   <data name="cbStartSelectionAutomatically.Text" xml:space="preserve">
-    <value>Iniciar captura de región antes de abrir esta ventana</value>
+    <value>Iniciar la selección para la captura de región antes de abrir esta ventana</value>
   </data>
   <data name="chkAutoUpload.Text" xml:space="preserve">
-    <value>Subir o guardar, según la configuración de después de capturar</value>
+    <value>Subir o guardar, según la configuración de Después de capturar</value>
   </data>
   <data name="gbAfterCapture.Text" xml:space="preserve">
     <value>Después de capturar</value>
@@ -166,7 +166,7 @@
     <value>Antes de capturar</value>
   </data>
   <data name="gbCombineAdjustments.Text" xml:space="preserve">
-    <value>Configuración de acoplaminento</value>
+    <value>Configuración de acoplamiento</value>
   </data>
   <data name="gbImages.Text" xml:space="preserve">
     <value>Imágenes</value>
@@ -175,7 +175,7 @@
     <value>Recortar bordes</value>
   </data>
   <data name="gbWhileCapturing.Text" xml:space="preserve">
-    <value>Al capturar</value>
+    <value>Durante la captura</value>
   </data>
   <data name="lblCombineLastVertical.Text" xml:space="preserve">
     <value>Última vertical:</value>
@@ -199,7 +199,7 @@
     <value>Procesando...</value>
   </data>
   <data name="lblScrollDelay.Text" xml:space="preserve">
-    <value>Retraso en desplazamiento:</value>
+    <value>Aplazar desplazamiento:</value>
   </data>
   <data name="lblScrollMethod.Text" xml:space="preserve">
     <value>Método de desplazamiento:</value>
@@ -208,7 +208,7 @@
     <value>Método de desplazamiento superior antes de capturar:</value>
   </data>
   <data name="lblStartDelay.Text" xml:space="preserve">
-    <value>Retraso en inicio:</value>
+    <value>Aplazar inicio:</value>
   </data>
   <data name="lblTrimBottom.Text" xml:space="preserve">
     <value>Inferior:</value>
@@ -223,7 +223,7 @@
     <value>Superior:</value>
   </data>
   <data name="tpCapture.Text" xml:space="preserve">
-    <value>Captura</value>
+    <value>Capturar</value>
   </data>
   <data name="tpOutput.Text" xml:space="preserve">
     <value>Resultado</value>
