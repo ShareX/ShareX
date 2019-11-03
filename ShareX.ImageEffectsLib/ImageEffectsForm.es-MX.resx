@@ -162,4 +162,7 @@
   <data name="tsmiLoadImageFromFile.Text" xml:space="preserve">
     <value>Desde archivo...</value>
   </data>
+  <data name="btnRefresh.Text" xml:space="preserve">
+    <value>Actualizar</value>
+  </data>
 </root>

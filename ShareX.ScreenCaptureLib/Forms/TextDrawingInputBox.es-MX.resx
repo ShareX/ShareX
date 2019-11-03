@@ -151,6 +151,48 @@
     <value>Derecha</value>
   </data>
   <data name="tsmiAlignmentTop.Text" xml:space="preserve">
-    <value>Arriba</value>
+    <value>Superior</value>
+  </data>
+  <data name="btnTextColor.ToolTip" xml:space="preserve">
+    <value>Color de texto</value>
+  </data>
+  <data name="btnGradient.ToolTip" xml:space="preserve">
+    <value>Degradado</value>
+  </data>
+  <data name="tsmiEnableGradient.Text" xml:space="preserve">
+    <value>Habilitar degradado</value>
+  </data>
+  <data name="tsmiGradientMode.Text" xml:space="preserve">
+    <value>Modo de degradado</value>
+  </data>
+  <data name="cbBold.ToolTip" xml:space="preserve">
+    <value>Negritas</value>
+  </data>
+  <data name="cbItalic.ToolTip" xml:space="preserve">
+    <value>Cursiva</value>
+  </data>
+  <data name="cbUnderline.ToolTip" xml:space="preserve">
+    <value>Subrayado</value>
+  </data>
+  <data name="btnAlignmentHorizontal.ToolTip" xml:space="preserve">
+    <value>Alineación horizontal</value>
+  </data>
+  <data name="btnAlignmentVertical.ToolTip" xml:space="preserve">
+    <value>Alineación vertical</value>
+  </data>
+  <data name="tsmiSecondColor.Text" xml:space="preserve">
+    <value>Color de texto secundario...</value>
+  </data>
+  <data name="tsrbmiGradientHorizontal.Text" xml:space="preserve">
+    <value>Horizontal</value>
+  </data>
+  <data name="tsrbmiGradientVertical.Text" xml:space="preserve">
+    <value>Vertical</value>
+  </data>
+  <data name="tsrbmiGradientForwardDiagonal.Text" xml:space="preserve">
+    <value>Diagonal</value>
+  </data>
+  <data name="tsrbmiGradientBackwardDiagonal.Text" xml:space="preserve">
+    <value>Diagonal inversa</value>
   </data>
 </root>

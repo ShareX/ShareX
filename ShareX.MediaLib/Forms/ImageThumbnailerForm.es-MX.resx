@@ -140,7 +140,7 @@
     <value>Nombre de archivo final:</value>
   </data>
   <data name="lblOutputFolder.Text" xml:space="preserve">
-    <value>Guardar en carpeta:</value>
+    <value>Guardar en:</value>
   </data>
   <data name="lblWidth.Text" xml:space="preserve">
     <value>Ancho:</value>
@@ -148,5 +148,11 @@
   <data name="txtOutputFilename.Text" xml:space="preserve">
     <value></value>
     <comment>@Invariant</comment>
+  </data>
+  <data name="lblQuality.Text" xml:space="preserve">
+    <value>Calidad:</value>
+  </data>
+  <data name="lblQualityPercentage.Text" xml:space="preserve">
+    <value> %</value>
   </data>
 </root>

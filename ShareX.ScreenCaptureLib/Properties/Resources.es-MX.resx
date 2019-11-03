@@ -216,13 +216,13 @@ Distancia: {6:0.00} px / Ángulo: {7:0.00}°</value>
     <value>Alto:</value>
   </data>
   <data name="ShapeManager_CreateContextMenu_Highlight_color___" xml:space="preserve">
-    <value>Color de resalte:</value>
+    <value>Color de resalto:</value>
   </data>
   <data name="ShapeManager_CreateContextMenu_Magnifier_pixel_count_" xml:space="preserve">
-    <value>Cantidad de píxeles de la lupa:</value>
+    <value>Número de píxeles de la lupa:</value>
   </data>
   <data name="ShapeManager_CreateContextMenu_Magnifier_pixel_size_" xml:space="preserve">
-    <value>Tamaño de píxel de la lupa:</value>
+    <value>Tamaño del píxel de la lupa:</value>
   </data>
   <data name="ShapeManager_CreateContextMenu_Multi_region_mode" xml:space="preserve">
     <value>Modo de varias regiones:</value>
@@ -231,7 +231,7 @@ Distancia: {6:0.00} px / Ángulo: {7:0.00}°</value>
     <value>Opciones</value>
   </data>
   <data name="ShapeManager_CreateContextMenu_Pixel_size_" xml:space="preserve">
-    <value>Tamaño de píxel:</value>
+    <value>Tamaño del píxel:</value>
   </data>
   <data name="ShapeManager_CreateContextMenu_RememberMenuState" xml:space="preserve">
     <value>Recordar estado de menú</value>
@@ -315,13 +315,13 @@ Distancia: {6:0.00} px / Ángulo: {7:0.00}°</value>
     <value>Voltear en vertical</value>
   </data>
   <data name="ShapeManager_CreateToolbar_FontSize" xml:space="preserve">
-    <value>Tamaño de letra:</value>
+    <value>Tamaño de la tipografía:</value>
   </data>
   <data name="ShapeManager_CreateToolbar_Image" xml:space="preserve">
-    <value> Imagen</value>
+    <value>Imagen</value>
   </data>
   <data name="ShapeManager_CreateToolbar_ImageSize" xml:space="preserve">
-    <value>Tamaño de imagen...</value>
+    <value>Tamaño de la imagen...</value>
   </data>
   <data name="ShapeManager_CreateToolbar_InsertImageFile" xml:space="preserve">
     <value>Insertar archivo de imagen...</value>
@@ -391,5 +391,35 @@ Distancia: {6:0.00} px / Ángulo: {7:0.00}°</value>
   </data>
   <data name="WebpageCaptureForm_UpdateControls_Stop" xml:space="preserve">
     <value>Detener</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_StartingStepValue" xml:space="preserve">
+    <value>Valor del primer paso:</value>
+  </data>
+  <data name="CloseEsc" xml:space="preserve">
+    <value>Cerrar (Esc)</value>
+  </data>
+  <data name="DropShadowColor" xml:space="preserve">
+    <value>Color de sombra...</value>
+  </data>
+  <data name="ImageEffects" xml:space="preserve">
+    <value>Agregar efectos...</value>
+  </data>
+  <data name="LightResizeNodes" xml:space="preserve">
+    <value>Usar vértices simples al cambiar el tamaño</value>
+  </data>
+  <data name="MagnifyStrength" xml:space="preserve">
+    <value>Amplitud de la lupa:</value>
+  </data>
+  <data name="OpenKeybindsPage" xml:space="preserve">
+    <value>Abrir página web de atajos de teclado...</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_SwitchToDrawingToolAfterSelection" xml:space="preserve">
+    <value>Cambiar a herramienta de dibujo después de seleccionar la forma</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_SwitchToSelectionToolAfterDrawing" xml:space="preserve">
+    <value>Cambiar a herramienta de selección después de dibujar una forma</value>
+  </data>
+  <data name="ThisWindowWillCloseBeforeOpeningKeybindsPageWantContinue" xml:space="preserve">
+    <value>Esta ventana se cerrará antes de abrir la página web de atajos de teclado. ¿Desea continuar?</value>
   </data>
 </root>

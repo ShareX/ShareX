@@ -235,4 +235,10 @@ Carpetas creadas:</value>
   <data name="UploadersConfigForm_UpdatePastebinStatus_LoggedIn" xml:space="preserve">
     <value>Sesión iniciada.</value>
   </data>
+  <data name="DuplicateNameNotAllowed" xml:space="preserve">
+    <value>No se permiten nombres duplicados.</value>
+  </data>
+  <data name="txtB2BucketWatermark" xml:space="preserve">
+    <value>Opcional, solo se usa cuando no se estableció un bucket al crear la clave</value>
+  </data>
 </root>

@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="btnScreenTearingTest.Text" xml:space="preserve">
-    <value>Prueba de defecto de pantalla partida</value>
+    <value>Iniciar prueba de animación</value>
   </data>
   <data name="btnGradientColor2.Text" xml:space="preserve">
     <value>Color 2</value>
@@ -127,7 +127,7 @@
     <value>Color 1</value>
   </data>
   <data name="lblTip.Text" xml:space="preserve">
-    <value>Clic fuera de este panel panel para ocultarlo o mostrarlo.</value>
+    <value>Clic fuera de este panel para ocultarlo o mostrarlo.</value>
   </data>
   <data name="rbGradient.Text" xml:space="preserve">
     <value>Degradado:</value>
@@ -170,5 +170,20 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Prueba de monitor</value>
+  </data>
+  <data name="lblBlackWhiteValue.Text" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblBlueValue.Text" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblGreenValue.Text" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblRedValue.Text" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblShapeSizeValue.Text" xml:space="preserve">
+    <value>1</value>
   </data>
 </root>

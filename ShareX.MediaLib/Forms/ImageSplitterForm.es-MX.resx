@@ -117,28 +117,28 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="tsmiExportClipboard.Text" xml:space="preserve">
-    <value>Copiar al portapapeles</value>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Share X - Separador de imágenes</value>
   </data>
-  <data name="tsmiExportFile.Text" xml:space="preserve">
-    <value>Guardar en archivo...</value>
+  <data name="btnImageFilePathBrowse.Text" xml:space="preserve">
+    <value>...</value>
   </data>
-  <data name="tsmiExportUpload.Text" xml:space="preserve">
-    <value>Subir como texto</value>
+  <data name="btnOutputFolderBrowse.Text" xml:space="preserve">
+    <value>...</value>
   </data>
-  <data name="tsmiImportClipboard.Text" xml:space="preserve">
-    <value>Desde el portapapeles</value>
+  <data name="btnSplitImage.Text" xml:space="preserve">
+    <value>Separar imagen</value>
   </data>
-  <data name="tsmiImportFile.Text" xml:space="preserve">
-    <value>Desde archivo...</value>
+  <data name="lblColumnCount.Text" xml:space="preserve">
+    <value>Número de columnas:</value>
   </data>
-  <data name="tsmiImportURL.Text" xml:space="preserve">
-    <value>Desde enlace...</value>
+  <data name="lblImageFilePath.Text" xml:space="preserve">
+    <value>Ubicación de imagen:</value>
   </data>
-  <data name="btnImport.Text" xml:space="preserve">
-    <value>Importar</value>
+  <data name="lblOutputFolder.Text" xml:space="preserve">
+    <value>Guardar en:</value>
   </data>
-  <data name="btnExport.Text" xml:space="preserve">
-    <value>Exportar</value>
+  <data name="lblRowCount.Text" xml:space="preserve">
+    <value>Número de filas:</value>
   </data>
 </root>

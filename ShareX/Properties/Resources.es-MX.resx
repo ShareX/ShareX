@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="UploadTask_DoUploadJob_You_are_attempting_to_upload_a_large_file" xml:space="preserve">
-    <value>Está intentando subir un archivo de gran tamaño. ¿Está seguro de que desea continuar?</value>
+    <value>Está intentando subir un archivo de gran tamaño. ¿Desea continuar?</value>
   </data>
   <data name="ScreenRecordForm_StartRecording_Encoding___" xml:space="preserve">
     <value>Codificando...</value>
@@ -127,7 +127,7 @@
     <value>¿Está seguro de que desea subir {0} archivos?</value>
   </data>
   <data name="BeforeUploadControl_AddDestination_Custom" xml:space="preserve">
-    <value>Personalizar</value>
+    <value>Personalizado</value>
   </data>
   <data name="UploadTask_Stop_Stopping" xml:space="preserve">
     <value>Deteniendo</value>
@@ -154,7 +154,7 @@
     <value>Error de FFmpeg</value>
   </data>
   <data name="ActionsToolbar_Edit" xml:space="preserve">
-    <value>Editar..</value>
+    <value>Editar...</value>
   </data>
   <data name="AboutForm_AboutForm_Language_vi_VN" xml:space="preserve">
     <value>Vietnamita</value>
@@ -247,7 +247,7 @@ Por favor seleccione un atajo de teclado diferente o salga de la aplicación que
     <value>Esperando...</value>
   </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_Image_uploader___0_" xml:space="preserve">
-    <value>Servidor para imágenes: {0}</value>
+    <value>Servidor de imágenes: {0}</value>
   </data>
   <data name="TaskHelpers_OpenQuickScreenColorPicker_Copied_to_clipboard___0_" xml:space="preserve">
     <value>Copiado al portapapeles: {0}</value>
@@ -458,10 +458,10 @@ Elija "No" para cancelar y deshabilitar la subida automática.</value>
     <value>La configuración de {0} no es válida o no se encuentra. Favor de revisar "Configuraciones de destinos".</value>
   </data>
   <data name="ChromeForm_btnUnregister_Click_Chrome_support_disabled_" xml:space="preserve">
-    <value>Soporte de Chrome deshabilitado.</value>
+    <value>Soporte para Chrome deshabilitado.</value>
   </data>
   <data name="ChromeForm_btnRegister_Click_Chrome_support_enabled_" xml:space="preserve">
-    <value>Soporte de Chrome habilitado.</value>
+    <value>Soporte para Chrome habilitado.</value>
   </data>
   <data name="ActionsToolbar_Tip" xml:space="preserve">
     <value>Mantener pulsado clic izq. para arrastrar
@@ -530,5 +530,55 @@ Clic medio para cerrar</value>
   </data>
   <data name="ApplicationSettingsForm_btnResetSettings_Click_WouldYouLikeToResetShareXSettings" xml:space="preserve">
     <value>¿Desea restablecer la configuración de ShareX?</value>
+  </data>
+  <data name="ApplicationSettingsForm_cbStartWithWindows_EnabledByPolicy_Text" xml:space="preserve">
+    <value>El inicio ha sido habilitado por su organización</value>
+  </data>
+  <data name="OCRForm_AutoCompleteFail" xml:space="preserve">
+    <value>Ocurrió un error al procesar el OCR, o no se ha producido ningún texto.</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_uk" xml:space="preserve">
+    <value>Ucraniano</value>
+  </data>
+  <data name="OCRForm_AutoComplete" xml:space="preserve">
+    <value>El resultado del OCR ha sido copiado al portapapeles.</value>
+  </data>
+  <data name="ScreenshotDelay0S" xml:space="preserve">
+    <value>Aplazar captura: {0} s</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_id_ID" xml:space="preserve">
+    <value>Indonesio</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_es_MX" xml:space="preserve">
+    <value>Español mexicano</value>
+  </data>
+  <data name="ApplicationSettingsForm_cbStartWithWindows_DisabledByPolicy_Text" xml:space="preserve">
+    <value>El inicio ha sido deshabilitado por su organización</value>
+  </data>
+  <data name="MainForm_UploadDebugLogWarning" xml:space="preserve">
+    <value>El registro de depuración podría contener información sensible. ¿Desea continuar?</value>
+  </data>
+  <data name="OCRForm_AutoProcessing" xml:space="preserve">
+    <value>El OCR está en proceso.</value>
+  </data>
+  <data name="PleaseNoteThatShareXIsUsingOCRSpaceSOnlineAPIToPerformOpticalCharacterRecognitionDoYouGivePermissionToShareXToUploadImagesToThisService" xml:space="preserve">
+    <value>Tome en cuenta que ShareX emplea la API pública de OCR.space para realizar el reconocimiento óptico de caracteres. ¿Desea otorgarle permiso a ShareX de subir imágenes a tal servicio?</value>
+  </data>
+  <data name="ShareXConfirmation" xml:space="preserve">
+    <value>ShareX - Confirmación</value>
+  </data>
+  <data name="ShareXNeedsToBeRestartedForThePersonalFolderChangesToApply" xml:space="preserve">
+    <value>ShareX debe reiniciarse para que los cambios a la carpeta personal surtan efecto.
+
+¿Desea reiniciar ShareX?</value>
+  </data>
+  <data name="ShareXOpticalCharacterRecognition" xml:space="preserve">
+    <value>ShareX - Reconocimiento óptico de caracteres (OCR)</value>
+  </data>
+  <data name="SwitchToListView" xml:space="preserve">
+    <value>Cambiar a vista de lista</value>
+  </data>
+  <data name="SwitchToThumbnailView" xml:space="preserve">
+    <value>Cambiar a vista de miniaturas</value>
   </data>
 </root>

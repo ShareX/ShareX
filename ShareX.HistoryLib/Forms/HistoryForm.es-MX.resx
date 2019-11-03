@@ -153,4 +153,13 @@
   <data name="lblFilterTo.Text" xml:space="preserve">
     <value>A:</value>
   </data>
+  <data name="btnShowStats.Text" xml:space="preserve">
+    <value>Mostrar estadísticas</value>
+  </data>
+  <data name="lblFilenameFilter.Text" xml:space="preserve">
+    <value>Nombre de archivo:</value>
+  </data>
+  <data name="lblURLFilter.Text" xml:space="preserve">
+    <value>Enlace:</value>
+  </data>
 </root>
