@@ -232,6 +232,9 @@ namespace ShareX
         [Category("Upload"), DefaultValue(100), Description("Large file size defined in MB. ShareX will warn before uploading large files. 0 disables this feature.")]
         public int ShowLargeFileSizeWarning { get; set; }
 
+        [Category("Upload"), DefaultValue(false), Description("Remove metadata information for uploaded images. (Local file will also be changed!).")]
+        public bool RemoveUploadedImageMetadata { get; set; }
+
         [Category("Paths"), Description("Custom uploaders configuration path. If you have already configured this setting in another device and you are attempting to use the same location, then backup the file before configuring this setting and restore after exiting ShareX.")]
         [Editor(typeof(DirectoryNameEditor), typeof(UITypeEditor))]
         public string CustomUploadersConfigPath { get; set; }

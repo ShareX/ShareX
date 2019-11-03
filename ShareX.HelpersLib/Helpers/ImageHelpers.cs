@@ -34,6 +34,8 @@ using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Windows.Forms;
+using System.Windows.Media.Imaging;
+using ShareX.HelpersLib.Properties;
 
 namespace ShareX.HelpersLib
 {
@@ -2021,6 +2023,124 @@ namespace ShareX.HelpersLib
             }
 
             return Size.Empty;
+        }
+
+        public static bool StripImageMetadata(string fileName)
+        {
+            bool result = false;
+
+            try
+            {
+                string tempName = Path.Combine(Path.GetDirectoryName(fileName), Guid.NewGuid().ToString());
+                using (FileStream stream = new FileStream(fileName, FileMode.Open, FileAccess.ReadWrite))
+                {
+                    BitmapDecoder original = BitmapDecoder.Create(stream, BitmapCreateOptions.PreservePixelFormat, BitmapCacheOption.None);
+                    BitmapEncoder output = null;
+                    string extension = Path.GetExtension(fileName);
+                    switch (extension)
+                    {
+                        case ".png":
+                            output = new PngBitmapEncoder();
+                            break;
+                        case ".jpeg":
+                        case ".jpg":
+                            output = new JpegBitmapEncoder();
+                            break;
+                        case ".tif":
+                            output = new TiffBitmapEncoder();
+                            break;
+                    }
+
+                    if (original.Frames[0]?.Metadata != null)
+                    {
+                        BitmapFrame copyFrame = (BitmapFrame)original.Frames[0].Clone();
+                        BitmapMetadata metaData = original.Frames[0].Metadata.Clone() as BitmapMetadata;
+
+                        BlankMetadata(metaData);
+
+                        output.Frames.Add(BitmapFrame.Create(copyFrame, copyFrame.Thumbnail, metaData, copyFrame.ColorContexts));
+
+                        using (Stream outputFile = File.Open(tempName, FileMode.Create, FileAccess.Write, FileShare.ReadWrite))
+                        {
+                            output.Save(outputFile);
+                        }
+
+                        result = true;
+                    }
+                }
+
+                if (result)
+                {
+                    File.Delete(fileName);
+                    File.Move(tempName, fileName);
+                }
+                else if (File.Exists(tempName))
+                {
+                    File.Delete(tempName);
+                }
+            }
+            catch (Exception e)
+            {
+                DebugHelper.WriteException(e, @"Error stripping Metadata");
+            }
+
+            return result;
+        }
+
+        private static void BlankMetadata(BitmapMetadata metaData)
+        {
+            foreach (string query in metaData)
+            {
+                object queryData = metaData.GetQuery(query);
+                switch (queryData)
+                {
+                    case null:
+                        continue;
+                    case BitmapMetadata data:
+                        /* RECURSIVE CALL */
+                        BlankMetadata(data);
+                        break;
+                    case string value:
+                    {
+                        if (!string.IsNullOrEmpty(value))
+                            metaData.SetQuery(query, string.Empty);
+                        break;
+                    }
+                    case BitmapMetadataBlob blob:
+                    {
+                        byte[] bytes = blob.GetBlobValue();
+                        Array.Clear(bytes, 0, bytes.Length);
+                        metaData.SetQuery(query, new BitmapMetadataBlob(bytes));
+                        break;
+                    }
+                    case byte[] bytes:
+                    {
+                        Array.Clear(bytes, 0, bytes.Length);
+                        metaData.SetQuery(query, bytes);
+                        break;
+                    }
+                    case ushort[] ushorts:
+                    {
+                        Array.Clear(ushorts, 0, ushorts.Length);
+                        metaData.SetQuery(query, ushorts);
+                        break;
+                    }
+                    default:
+                    {
+                        if (!ulong.TryParse(queryData.ToString(), out ulong _)) continue;
+                        try
+                        {
+                            metaData.SetQuery(query, 0);
+                        }
+                        catch
+                        {
+                            metaData.SetQuery(query, queryData);
+                        }
+
+                        break;
+                    }
+                }
+            }
         }
     }
 }
