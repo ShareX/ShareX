@@ -398,6 +398,17 @@ namespace ShareX
 
                 if (!cancelUpload)
                 {
+                    if (Program.Settings.RemoveUploadedImageMetadata)
+                    {
+                        string[] supportedExtensions = { @".jpg", @".jpeg", @".png", @".tiff" };
+                        if (supportedExtensions.Any(Path.GetExtension(Info.FilePath).Contains))
+                        {
+                            Data.Close();
+                            ImageHelpers.StripImageMetadata(Info.FilePath);
+                            LoadFileStream();
+                        }
+                    }
+
                     OnUploadStarted();
 
                     bool isError = DoUpload();
