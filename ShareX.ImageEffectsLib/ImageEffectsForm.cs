@@ -41,6 +41,7 @@ namespace ShareX.ImageEffectsLib
         public Image PreviewImage { get; private set; }
         public List<ImageEffectPreset> Presets { get; private set; }
         public int SelectedPresetIndex { get; private set; }
+        public string FilePath { get; private set; }
 
         private bool ignorePresetsSelectedIndexChanged = false;
         private bool pauseUpdate = false;
@@ -67,8 +68,9 @@ namespace ShareX.ImageEffectsLib
             AddAllEffectsToContextMenu();
         }
 
-        public void EnableToolMode(Action<Image> imageProcessRequested)
+        public void EnableToolMode(Action<Image> imageProcessRequested, string filePath = null)
         {
+            FilePath = filePath;
             ImageProcessRequested += imageProcessRequested;
             pbResult.AllowDrop = true;
             mbLoadImage.Visible = true;
@@ -603,6 +605,7 @@ namespace ShareX.ImageEffectsLib
             {
                 if (PreviewImage != null) PreviewImage.Dispose();
                 PreviewImage = ImageHelpers.LoadImage(filePath);
+                FilePath = filePath;
                 UpdatePreview();
             }
         }
@@ -615,6 +618,7 @@ namespace ShareX.ImageEffectsLib
             {
                 if (PreviewImage != null) PreviewImage.Dispose();
                 PreviewImage = img;
+                FilePath = null;
                 UpdatePreview();
             }
         }
@@ -627,7 +631,12 @@ namespace ShareX.ImageEffectsLib
                 {
                     if (img != null)
                     {
-                        ImageHelpers.SaveImageFileDialog(img);
+                        string filePath = ImageHelpers.SaveImageFileDialog(img, FilePath);
+
+                        if (!string.IsNullOrEmpty(filePath))
+                        {
+                            FilePath = filePath;
+                        }
                     }
                 }
             }

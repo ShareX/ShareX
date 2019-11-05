@@ -1015,26 +1015,26 @@ namespace ShareX
             if (taskSettings == null) taskSettings = Program.DefaultTaskSettings;
 
             string filePath = ImageHelpers.OpenImageFileDialog();
-            Image img = null;
+
             if (!string.IsNullOrEmpty(filePath))
             {
-                img = ImageHelpers.LoadImage(filePath);
-            }
+                Image img = ImageHelpers.LoadImage(filePath);
 
-            if (img != null)
-            {
-                if (img.PixelFormat.HasFlag(PixelFormat.Indexed))
+                if (img != null)
                 {
-                    MessageBox.Show("Unsupported pixel format: " + img.PixelFormat, "ShareX - Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                else
-                {
-                    using (ImageEffectsForm imageEffectsForm = new ImageEffectsForm(img, taskSettings.ImageSettings.ImageEffectPresets,
-                        taskSettings.ImageSettings.SelectedImageEffectPreset))
+                    if (img.PixelFormat.HasFlag(PixelFormat.Indexed))
                     {
-                        imageEffectsForm.EnableToolMode(x => UploadManager.RunImageTask(x, taskSettings));
-                        imageEffectsForm.ShowDialog();
-                        //taskSettings.ImageSettings.SelectedImageEffectPreset = imageEffectsForm.SelectedPresetIndex;
+                        MessageBox.Show("Unsupported pixel format: " + img.PixelFormat, "ShareX - Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        using (ImageEffectsForm imageEffectsForm = new ImageEffectsForm(img, taskSettings.ImageSettings.ImageEffectPresets,
+                            taskSettings.ImageSettings.SelectedImageEffectPreset))
+                        {
+                            imageEffectsForm.EnableToolMode(x => UploadManager.RunImageTask(x, taskSettings), filePath);
+                            imageEffectsForm.ShowDialog();
+                            //taskSettings.ImageSettings.SelectedImageEffectPreset = imageEffectsForm.SelectedPresetIndex;
+                        }
                     }
                 }
             }
