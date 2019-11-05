@@ -1624,6 +1624,9 @@ namespace ShareX.HelpersLib
         {
             using (SaveFileDialog sfd = new SaveFileDialog())
             {
+                sfd.Filter = "PNG (*.png)|*.png|JPEG (*.jpg, *.jpeg, *.jpe, *.jfif)|*.jpg;*.jpeg;*.jpe;*.jfif|GIF (*.gif)|*.gif|BMP (*.bmp)|*.bmp|TIFF (*.tif, *.tiff)|*.tif;*.tiff";
+                sfd.DefaultExt = "png";
+            
                 string initialDirectory = null;
 
                 if (useLastDirectory && !string.IsNullOrEmpty(HelpersOptions.LastSaveDirectory) && Directory.Exists(HelpersOptions.LastSaveDirectory))
@@ -1640,12 +1643,40 @@ namespace ShareX.HelpersLib
                         initialDirectory = folder;
                     }
 
-                    sfd.FileName = Path.GetFileNameWithoutExtension(filePath);
+                    sfd.FileName = Path.GetFileName(filePath);
+
+                    string ext = Helpers.GetFilenameExtension(filePath);
+
+                    if (!string.IsNullOrEmpty(ext))
+                    {
+                        ext = ext.ToLowerInvariant();
+
+                        switch (ext)
+                        {
+                            case "png":
+                                sfd.FilterIndex = 1;
+                                break;
+                            case "jpg":
+                            case "jpeg":
+                            case "jpe":
+                            case "jfif":
+                                sfd.FilterIndex = 2;
+                                break;
+                            case "gif":
+                                sfd.FilterIndex = 3;
+                                break;
+                            case "bmp":
+                                sfd.FilterIndex = 4;
+                                break;
+                            case "tif":
+                            case "tiff":
+                                sfd.FilterIndex = 5;
+                                break;
+                        }
+                    }
                 }
 
                 sfd.InitialDirectory = initialDirectory;
-                sfd.DefaultExt = "png";
-                sfd.Filter = "PNG (*.png)|*.png|JPEG (*.jpg, *.jpeg, *.jpe, *.jfif)|*.jpg;*.jpeg;*.jpe;*.jfif|GIF (*.gif)|*.gif|BMP (*.bmp)|*.bmp|TIFF (*.tif, *.tiff)|*.tif;*.tiff";
 
                 if (sfd.ShowDialog() == DialogResult.OK && !string.IsNullOrEmpty(sfd.FileName))
                 {
