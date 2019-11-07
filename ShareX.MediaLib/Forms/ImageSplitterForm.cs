@@ -29,6 +29,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
+using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -102,10 +103,12 @@ namespace ShareX.MediaLib
             {
                 List<Image> images = ImageHelpers.SplitImage(img, rowCount, columnCount);
 
+                string originalFileName = Path.GetFileNameWithoutExtension(filePath);
+
                 for (int i = 0; i < images.Count; i++)
                 {
-                    string filename = Path.GetFileNameWithoutExtension(filePath) + (i + 1) + ".png";
-                    string outputPath = Path.Combine(outputFolder, filename);
+                    string fileName = originalFileName + (i + 1) + ".png";
+                    string outputPath = Path.Combine(outputFolder, fileName);
                     images[i].Save(outputPath, ImageFormat.Png);
                     filePaths.Add(outputPath);
                 }
@@ -120,6 +123,34 @@ namespace ShareX.MediaLib
             {
                 return SplitImage(filePath, rowCount, columnCount, outputFolder);
             });
+        }
+
+        private void btnCopyDiscordEmoji_Click(object sender, EventArgs e)
+        {
+            string filePath = txtImageFilePath.Text;
+            string fileName = Path.GetFileNameWithoutExtension(filePath);
+            int rowCount = (int)nudRowCount.Value;
+            int columnCount = (int)nudColumnCount.Value;
+
+            StringBuilder sb = new StringBuilder();
+
+            for (int y = 0; y < rowCount; y++)
+            {
+                for (int x = 0; x < columnCount; x++)
+                {
+                    int index = (y * columnCount) + x + 1;
+                    sb.Append($":{fileName}{index}:");
+                }
+
+                if (y + 1 < rowCount)
+                {
+                    sb.AppendLine();
+                }
+            }
+
+            string text = sb.ToString();
+
+            Clipboard.SetText(text);
         }
     }
 }

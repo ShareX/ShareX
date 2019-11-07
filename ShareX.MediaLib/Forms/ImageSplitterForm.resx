@@ -144,7 +144,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblImageFilePath.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>11</value>
   </data>
   <data name="lblRowCount.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -171,7 +171,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblRowCount.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>10</value>
   </data>
   <data name="lblColumnCount.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -198,7 +198,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblColumnCount.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="nudRowCount.Location" type="System.Drawing.Point, System.Drawing">
     <value>120, 36</value>
@@ -223,7 +223,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;nudRowCount.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="nudColumnCount.Location" type="System.Drawing.Point, System.Drawing">
     <value>120, 60</value>
@@ -247,7 +247,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;nudColumnCount.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="txtImageFilePath.Location" type="System.Drawing.Point, System.Drawing">
     <value>120, 12</value>
@@ -268,7 +268,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;txtImageFilePath.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="lblOutputFolder.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -295,7 +295,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblOutputFolder.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="txtOutputFolder.Location" type="System.Drawing.Point, System.Drawing">
     <value>120, 84</value>
@@ -316,7 +316,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;txtOutputFolder.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="btnImageFilePathBrowse.Location" type="System.Drawing.Point, System.Drawing">
     <value>408, 11</value>
@@ -340,7 +340,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnImageFilePathBrowse.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="btnOutputFolderBrowse.Location" type="System.Drawing.Point, System.Drawing">
     <value>408, 83</value>
@@ -364,13 +364,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnOutputFolderBrowse.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="btnSplitImage.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 112</value>
   </data>
   <data name="btnSplitImage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>424, 24</value>
+    <value>208, 24</value>
   </data>
   <data name="btnSplitImage.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
@@ -388,6 +388,30 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnSplitImage.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="btnCopyDiscordEmoji.Location" type="System.Drawing.Point, System.Drawing">
+    <value>232, 112</value>
+  </data>
+  <data name="btnCopyDiscordEmoji.Size" type="System.Drawing.Size, System.Drawing">
+    <value>208, 24</value>
+  </data>
+  <data name="btnCopyDiscordEmoji.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="btnCopyDiscordEmoji.Text" xml:space="preserve">
+    <value>Copy Discord emoji syntax</value>
+  </data>
+  <data name="&gt;&gt;btnCopyDiscordEmoji.Name" xml:space="preserve">
+    <value>btnCopyDiscordEmoji</value>
+  </data>
+  <data name="&gt;&gt;btnCopyDiscordEmoji.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnCopyDiscordEmoji.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnCopyDiscordEmoji.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">

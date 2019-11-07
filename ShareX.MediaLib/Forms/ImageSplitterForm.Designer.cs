@@ -40,6 +40,7 @@
             this.btnImageFilePathBrowse = new System.Windows.Forms.Button();
             this.btnOutputFolderBrowse = new System.Windows.Forms.Button();
             this.btnSplitImage = new System.Windows.Forms.Button();
+            this.btnCopyDiscordEmoji = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.nudRowCount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudColumnCount)).BeginInit();
             this.SuspendLayout();
@@ -125,11 +126,19 @@
             this.btnSplitImage.UseVisualStyleBackColor = true;
             this.btnSplitImage.Click += new System.EventHandler(this.BtnSplitImage_Click);
             // 
+            // btnCopyDiscordEmoji
+            // 
+            resources.ApplyResources(this.btnCopyDiscordEmoji, "btnCopyDiscordEmoji");
+            this.btnCopyDiscordEmoji.Name = "btnCopyDiscordEmoji";
+            this.btnCopyDiscordEmoji.UseVisualStyleBackColor = true;
+            this.btnCopyDiscordEmoji.Click += new System.EventHandler(this.btnCopyDiscordEmoji_Click);
+            // 
             // ImageSplitterForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
+            this.Controls.Add(this.btnCopyDiscordEmoji);
             this.Controls.Add(this.btnSplitImage);
             this.Controls.Add(this.btnOutputFolderBrowse);
             this.Controls.Add(this.btnImageFilePathBrowse);
@@ -164,5 +173,6 @@
         private System.Windows.Forms.Button btnImageFilePathBrowse;
         private System.Windows.Forms.Button btnOutputFolderBrowse;
         private System.Windows.Forms.Button btnSplitImage;
+        private System.Windows.Forms.Button btnCopyDiscordEmoji;
     }
 }
