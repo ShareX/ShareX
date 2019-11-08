@@ -37,6 +37,8 @@ namespace ShareX.MediaLib
 {
     public partial class ImageSplitterForm : Form
     {
+        public bool IsBusy { get; private set; }
+
         public ImageSplitterForm()
         {
             InitializeComponent();
@@ -45,7 +47,7 @@ namespace ShareX.MediaLib
 
         private void UpdateButtonStates()
         {
-            btnSplitImage.Enabled = btnCopyChatEmoji.Enabled = !string.IsNullOrEmpty(txtImageFilePath.Text) &&
+            btnSplitImage.Enabled = btnCopyChatEmoji.Enabled = !IsBusy && !string.IsNullOrEmpty(txtImageFilePath.Text) &&
                 (nudRowCount.Value > 1 || nudColumnCount.Value > 1) && !string.IsNullOrEmpty(txtOutputFolder.Text);
         }
 
@@ -131,7 +133,8 @@ namespace ShareX.MediaLib
             if (!string.IsNullOrEmpty(filePath) && File.Exists(filePath) && (rowCount > 1 || columnCount > 1) &&
                 !string.IsNullOrEmpty(outputFolder) && Directory.Exists(outputFolder))
             {
-                btnSplitImage.Enabled = false;
+                IsBusy = true;
+                UpdateButtonStates();
 
                 try
                 {
@@ -147,7 +150,8 @@ namespace ShareX.MediaLib
                     ex.ShowError();
                 }
 
-                btnSplitImage.Enabled = true;
+                IsBusy = false;
+                UpdateButtonStates();
             }
         }
 
