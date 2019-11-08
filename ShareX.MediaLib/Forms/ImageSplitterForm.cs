@@ -43,6 +43,49 @@ namespace ShareX.MediaLib
             ShareXResources.ApplyTheme(this);
         }
 
+        private void UpdateButtonStates()
+        {
+            btnSplitImage.Enabled = btnCopyChatEmoji.Enabled = !string.IsNullOrEmpty(txtImageFilePath.Text) &&
+                (nudRowCount.Value > 1 || nudColumnCount.Value > 1) && !string.IsNullOrEmpty(txtOutputFolder.Text);
+        }
+
+        private List<string> SplitImage(string filePath, int rowCount, int columnCount, string outputFolder)
+        {
+            List<string> filePaths = new List<string>();
+
+            Image img = ImageHelpers.LoadImage(filePath);
+
+            if (img != null)
+            {
+                List<Image> images = ImageHelpers.SplitImage(img, rowCount, columnCount);
+
+                string originalFileName = Path.GetFileNameWithoutExtension(filePath);
+
+                for (int i = 0; i < images.Count; i++)
+                {
+                    string fileName = originalFileName + (i + 1) + ".png";
+                    string outputPath = Path.Combine(outputFolder, fileName);
+                    images[i].Save(outputPath, ImageFormat.Png);
+                    filePaths.Add(outputPath);
+                }
+            }
+
+            return filePaths;
+        }
+
+        private async Task<List<string>> SplitImageAsync(string filePath, int rowCount, int columnCount, string outputFolder)
+        {
+            return await Task.Run(() =>
+            {
+                return SplitImage(filePath, rowCount, columnCount, outputFolder);
+            });
+        }
+
+        private void txtImageFilePath_TextChanged(object sender, EventArgs e)
+        {
+            UpdateButtonStates();
+        }
+
         private void BtnImageFilePathBrowse_Click(object sender, EventArgs e)
         {
             string filePath = ImageHelpers.OpenImageFileDialog();
@@ -56,6 +99,21 @@ namespace ShareX.MediaLib
                     txtOutputFolder.Text = Path.GetDirectoryName(filePath);
                 }
             }
+        }
+
+        private void nudRowCount_ValueChanged(object sender, EventArgs e)
+        {
+            UpdateButtonStates();
+        }
+
+        private void nudColumnCount_ValueChanged(object sender, EventArgs e)
+        {
+            UpdateButtonStates();
+        }
+
+        private void txtOutputFolder_TextChanged(object sender, EventArgs e)
+        {
+            UpdateButtonStates();
         }
 
         private void BtnOutputFolderBrowse_Click(object sender, EventArgs e)
@@ -93,39 +151,7 @@ namespace ShareX.MediaLib
             }
         }
 
-        private List<string> SplitImage(string filePath, int rowCount, int columnCount, string outputFolder)
-        {
-            List<string> filePaths = new List<string>();
-
-            Image img = ImageHelpers.LoadImage(filePath);
-
-            if (img != null)
-            {
-                List<Image> images = ImageHelpers.SplitImage(img, rowCount, columnCount);
-
-                string originalFileName = Path.GetFileNameWithoutExtension(filePath);
-
-                for (int i = 0; i < images.Count; i++)
-                {
-                    string fileName = originalFileName + (i + 1) + ".png";
-                    string outputPath = Path.Combine(outputFolder, fileName);
-                    images[i].Save(outputPath, ImageFormat.Png);
-                    filePaths.Add(outputPath);
-                }
-            }
-
-            return filePaths;
-        }
-
-        private async Task<List<string>> SplitImageAsync(string filePath, int rowCount, int columnCount, string outputFolder)
-        {
-            return await Task.Run(() =>
-            {
-                return SplitImage(filePath, rowCount, columnCount, outputFolder);
-            });
-        }
-
-        private void btnCopyDiscordEmoji_Click(object sender, EventArgs e)
+        private void btnCopyChatEmoji_Click(object sender, EventArgs e)
         {
             string filePath = txtImageFilePath.Text;
             string fileName = Path.GetFileNameWithoutExtension(filePath);

@@ -150,13 +150,13 @@
     <value>True</value>
   </data>
   <data name="lblRowCount.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 40</value>
+    <value>13, 64</value>
   </data>
   <data name="lblRowCount.Size" type="System.Drawing.Size, System.Drawing">
     <value>62, 13</value>
   </data>
   <data name="lblRowCount.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>6</value>
   </data>
   <data name="lblRowCount.Text" xml:space="preserve">
     <value>Row count:</value>
@@ -177,13 +177,13 @@
     <value>True</value>
   </data>
   <data name="lblColumnCount.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 64</value>
+    <value>13, 88</value>
   </data>
   <data name="lblColumnCount.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 13</value>
   </data>
   <data name="lblColumnCount.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+    <value>8</value>
   </data>
   <data name="lblColumnCount.Text" xml:space="preserve">
     <value>Column count:</value>
@@ -201,13 +201,13 @@
     <value>9</value>
   </data>
   <data name="nudRowCount.Location" type="System.Drawing.Point, System.Drawing">
-    <value>120, 36</value>
+    <value>120, 60</value>
   </data>
   <data name="nudRowCount.Size" type="System.Drawing.Size, System.Drawing">
     <value>56, 20</value>
   </data>
   <data name="nudRowCount.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+    <value>7</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="nudRowCount.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
@@ -226,13 +226,13 @@
     <value>8</value>
   </data>
   <data name="nudColumnCount.Location" type="System.Drawing.Point, System.Drawing">
-    <value>120, 60</value>
+    <value>120, 84</value>
   </data>
   <data name="nudColumnCount.Size" type="System.Drawing.Size, System.Drawing">
     <value>56, 20</value>
   </data>
   <data name="nudColumnCount.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+    <value>9</value>
   </data>
   <data name="nudColumnCount.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
     <value>Center</value>
@@ -274,13 +274,13 @@
     <value>True</value>
   </data>
   <data name="lblOutputFolder.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 88</value>
+    <value>13, 40</value>
   </data>
   <data name="lblOutputFolder.Size" type="System.Drawing.Size, System.Drawing">
     <value>71, 13</value>
   </data>
   <data name="lblOutputFolder.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+    <value>3</value>
   </data>
   <data name="lblOutputFolder.Text" xml:space="preserve">
     <value>Output folder:</value>
@@ -298,13 +298,13 @@
     <value>5</value>
   </data>
   <data name="txtOutputFolder.Location" type="System.Drawing.Point, System.Drawing">
-    <value>120, 84</value>
+    <value>120, 36</value>
   </data>
   <data name="txtOutputFolder.Size" type="System.Drawing.Size, System.Drawing">
     <value>280, 20</value>
   </data>
   <data name="txtOutputFolder.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
+    <value>4</value>
   </data>
   <data name="&gt;&gt;txtOutputFolder.Name" xml:space="preserve">
     <value>txtOutputFolder</value>
@@ -343,13 +343,13 @@
     <value>3</value>
   </data>
   <data name="btnOutputFolderBrowse.Location" type="System.Drawing.Point, System.Drawing">
-    <value>408, 83</value>
+    <value>408, 35</value>
   </data>
   <data name="btnOutputFolderBrowse.Size" type="System.Drawing.Size, System.Drawing">
     <value>32, 23</value>
   </data>
   <data name="btnOutputFolderBrowse.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
+    <value>5</value>
   </data>
   <data name="btnOutputFolderBrowse.Text" xml:space="preserve">
     <value>...</value>
@@ -365,6 +365,9 @@
   </data>
   <data name="&gt;&gt;btnOutputFolderBrowse.ZOrder" xml:space="preserve">
     <value>2</value>
+  </data>
+  <data name="btnSplitImage.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="btnSplitImage.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 112</value>
@@ -390,28 +393,31 @@
   <data name="&gt;&gt;btnSplitImage.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="btnCopyDiscordEmoji.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="btnCopyChatEmoji.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="btnCopyChatEmoji.Location" type="System.Drawing.Point, System.Drawing">
     <value>232, 112</value>
   </data>
-  <data name="btnCopyDiscordEmoji.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="btnCopyChatEmoji.Size" type="System.Drawing.Size, System.Drawing">
     <value>208, 24</value>
   </data>
-  <data name="btnCopyDiscordEmoji.TabIndex" type="System.Int32, mscorlib">
+  <data name="btnCopyChatEmoji.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
   </data>
-  <data name="btnCopyDiscordEmoji.Text" xml:space="preserve">
-    <value>Copy Discord emoji syntax</value>
+  <data name="btnCopyChatEmoji.Text" xml:space="preserve">
+    <value>Copy chat emoji syntax</value>
   </data>
-  <data name="&gt;&gt;btnCopyDiscordEmoji.Name" xml:space="preserve">
-    <value>btnCopyDiscordEmoji</value>
+  <data name="&gt;&gt;btnCopyChatEmoji.Name" xml:space="preserve">
+    <value>btnCopyChatEmoji</value>
   </data>
-  <data name="&gt;&gt;btnCopyDiscordEmoji.Type" xml:space="preserve">
+  <data name="&gt;&gt;btnCopyChatEmoji.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;btnCopyDiscordEmoji.Parent" xml:space="preserve">
+  <data name="&gt;&gt;btnCopyChatEmoji.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;btnCopyDiscordEmoji.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;btnCopyChatEmoji.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
