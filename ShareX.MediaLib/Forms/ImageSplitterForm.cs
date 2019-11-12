@@ -49,6 +49,9 @@ namespace ShareX.MediaLib
         {
             btnSplitImage.Enabled = btnCopyChatEmoji.Enabled = !IsBusy && !string.IsNullOrEmpty(txtImageFilePath.Text) &&
                 (nudRowCount.Value > 1 || nudColumnCount.Value > 1) && !string.IsNullOrEmpty(txtOutputFolder.Text);
+
+            // TODO: Translate
+            btnSplitImage.Text = string.Format("Split image by {0}x{1}", nudColumnCount.Value, nudRowCount.Value);
         }
 
         private List<string> SplitImage(string filePath, int rowCount, int columnCount, string outputFolder)
