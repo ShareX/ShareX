@@ -41,6 +41,7 @@
             this.btnOutputFolderBrowse = new System.Windows.Forms.Button();
             this.btnSplitImage = new System.Windows.Forms.Button();
             this.btnCopyChatEmoji = new System.Windows.Forms.Button();
+            this.lblColumnRow = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.nudRowCount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudColumnCount)).BeginInit();
             this.SuspendLayout();
@@ -137,11 +138,17 @@
             this.btnCopyChatEmoji.UseVisualStyleBackColor = true;
             this.btnCopyChatEmoji.Click += new System.EventHandler(this.btnCopyChatEmoji_Click);
             // 
+            // lblColumnRow
+            // 
+            resources.ApplyResources(this.lblColumnRow, "lblColumnRow");
+            this.lblColumnRow.Name = "lblColumnRow";
+            // 
             // ImageSplitterForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
+            this.Controls.Add(this.lblColumnRow);
             this.Controls.Add(this.btnCopyChatEmoji);
             this.Controls.Add(this.btnSplitImage);
             this.Controls.Add(this.btnOutputFolderBrowse);
@@ -178,5 +185,6 @@
         private System.Windows.Forms.Button btnOutputFolderBrowse;
         private System.Windows.Forms.Button btnSplitImage;
         private System.Windows.Forms.Button btnCopyChatEmoji;
+        private System.Windows.Forms.Label lblColumnRow;
     }
 }

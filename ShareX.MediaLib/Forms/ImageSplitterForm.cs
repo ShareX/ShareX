@@ -43,15 +43,14 @@ namespace ShareX.MediaLib
         {
             InitializeComponent();
             ShareXResources.ApplyTheme(this);
+            UpdateButtonStates();
         }
 
         private void UpdateButtonStates()
         {
             btnSplitImage.Enabled = btnCopyChatEmoji.Enabled = !IsBusy && !string.IsNullOrEmpty(txtImageFilePath.Text) &&
-                (nudRowCount.Value > 1 || nudColumnCount.Value > 1) && !string.IsNullOrEmpty(txtOutputFolder.Text);
-
-            // TODO: Translate
-            btnSplitImage.Text = string.Format("Split image by {0}x{1}", nudColumnCount.Value, nudRowCount.Value);
+                !string.IsNullOrEmpty(txtOutputFolder.Text) && (nudColumnCount.Value > 1 || nudRowCount.Value > 1);
+            lblColumnRow.Text = nudColumnCount.Value + " x " + nudRowCount.Value;
         }
 
         private List<string> SplitImage(string filePath, int rowCount, int columnCount, string outputFolder)
@@ -106,16 +105,6 @@ namespace ShareX.MediaLib
             }
         }
 
-        private void nudRowCount_ValueChanged(object sender, EventArgs e)
-        {
-            UpdateButtonStates();
-        }
-
-        private void nudColumnCount_ValueChanged(object sender, EventArgs e)
-        {
-            UpdateButtonStates();
-        }
-
         private void txtOutputFolder_TextChanged(object sender, EventArgs e)
         {
             UpdateButtonStates();
@@ -126,15 +115,25 @@ namespace ShareX.MediaLib
             Helpers.BrowseFolder(txtOutputFolder);
         }
 
+        private void nudColumnCount_ValueChanged(object sender, EventArgs e)
+        {
+            UpdateButtonStates();
+        }
+
+        private void nudRowCount_ValueChanged(object sender, EventArgs e)
+        {
+            UpdateButtonStates();
+        }
+
         private async void BtnSplitImage_Click(object sender, EventArgs e)
         {
             string filePath = txtImageFilePath.Text;
-            int rowCount = (int)nudRowCount.Value;
-            int columnCount = (int)nudColumnCount.Value;
             string outputFolder = txtOutputFolder.Text;
+            int columnCount = (int)nudColumnCount.Value;
+            int rowCount = (int)nudRowCount.Value;
 
-            if (!string.IsNullOrEmpty(filePath) && File.Exists(filePath) && (rowCount > 1 || columnCount > 1) &&
-                !string.IsNullOrEmpty(outputFolder) && Directory.Exists(outputFolder))
+            if (!string.IsNullOrEmpty(filePath) && File.Exists(filePath) && !string.IsNullOrEmpty(outputFolder) && Directory.Exists(outputFolder) &&
+                (columnCount > 1 || rowCount > 1))
             {
                 IsBusy = true;
                 UpdateButtonStates();
@@ -162,8 +161,8 @@ namespace ShareX.MediaLib
         {
             string filePath = txtImageFilePath.Text;
             string fileName = Path.GetFileNameWithoutExtension(filePath);
-            int rowCount = (int)nudRowCount.Value;
             int columnCount = (int)nudColumnCount.Value;
+            int rowCount = (int)nudRowCount.Value;
 
             StringBuilder sb = new StringBuilder();
 
