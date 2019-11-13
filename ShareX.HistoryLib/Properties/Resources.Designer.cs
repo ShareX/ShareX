@@ -19,7 +19,7 @@ namespace ShareX.HistoryLib.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -71,6 +71,24 @@ namespace ShareX.HistoryLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Hide stats.
+        /// </summary>
+        internal static string BtnShowStats_HideStats {
+            get {
+                return ResourceManager.GetString("BtnShowStats_HideStats", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Show stats.
+        /// </summary>
+        internal static string BtnShowStats_ShowStats {
+            get {
+                return ResourceManager.GetString("BtnShowStats_ShowStats", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap globe {
@@ -95,6 +113,15 @@ namespace ShareX.HistoryLib.Properties {
         internal static string HistoryForm_UpdateItemCount_Total___0_ {
             get {
                 return ResourceManager.GetString("HistoryForm_UpdateItemCount_Total___0_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to History item counts:.
+        /// </summary>
+        internal static string HistoryItemCounts {
+            get {
+                return ResourceManager.GetString("HistoryItemCounts", resourceCulture);
             }
         }
         
@@ -369,11 +396,38 @@ namespace ShareX.HistoryLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Error occured while reading XML file: {0}.
+        ///   Looks up a localized string similar to File extensions:.
         /// </summary>
-        internal static string HistoryManager_GetHistoryItems_Error_occured_while_reading_XML_file___0_ {
+        internal static string HistoryStats_FileExtensions {
             get {
-                return ResourceManager.GetString("HistoryManager_GetHistoryItems_Error_occured_while_reading_XML_file___0_", resourceCulture);
+                return ResourceManager.GetString("HistoryStats_FileExtensions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hosts:.
+        /// </summary>
+        internal static string HistoryStats_Hosts {
+            get {
+                return ResourceManager.GetString("HistoryStats_Hosts", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Total:.
+        /// </summary>
+        internal static string HistoryStats_Total {
+            get {
+                return ResourceManager.GetString("HistoryStats_Total", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Yearly usages:.
+        /// </summary>
+        internal static string HistoryStats_YearlyUsages {
+            get {
+                return ResourceManager.GetString("HistoryStats_YearlyUsages", resourceCulture);
             }
         }
         
@@ -440,69 +494,6 @@ namespace ShareX.HistoryLib.Properties {
         internal static string ObjectListView_ObjectListView_Value {
             get {
                 return ResourceManager.GetString("ObjectListView_ObjectListView_Value", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to BtnShowStats_ShowStats.
-        /// </summary>
-        internal static string BtnShowStats_ShowStats {
-            get {
-                return ResourceManager.GetString("BtnShowStats_ShowStats", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to BtnShowStats_HideStats.
-        /// </summary>
-        internal static string BtnShowStats_HideStats {
-            get {
-                return ResourceManager.GetString("BtnShowStats_HideStats", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to HistoryItemCounts.
-        /// </summary>
-        internal static string HistoryItemCounts {
-            get {
-                return ResourceManager.GetString("HistoryItemCounts", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to HistoryStats_Total.
-        /// </summary>
-        internal static string HistoryStats_Total {
-            get {
-                return ResourceManager.GetString("HistoryStats_Total", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to HistoryStats_YearlyUsages.
-        /// </summary>
-        internal static string HistoryStats_YearlyUsages {
-            get {
-                return ResourceManager.GetString("HistoryStats_YearlyUsages", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to HistoryStats_FileExtensions.
-        /// </summary>
-        internal static string HistoryStats_FileExtensions {
-            get {
-                return ResourceManager.GetString("HistoryStats_FileExtensions", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to HistoryStats_Hosts.
-        /// </summary>
-        internal static string HistoryStats_Hosts {
-            get {
-                return ResourceManager.GetString("HistoryStats_Hosts", resourceCulture);
             }
         }
     }

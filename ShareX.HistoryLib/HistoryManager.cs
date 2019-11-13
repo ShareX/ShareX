@@ -55,7 +55,8 @@ namespace ShareX.HistoryLib
             {
                 DebugHelper.WriteException(e);
 
-                MessageBox.Show(string.Format(Resources.HistoryManager_GetHistoryItems_Error_occured_while_reading_XML_file___0_, FilePath) + "\r\n\r\n" + e,
+                // TODO: Translate
+                MessageBox.Show(string.Format("Error occured while reading history file: {0}", FilePath) + "\r\n\r\n" + e,
                     "ShareX - " + Resources.HistoryManager_GetHistoryItems_Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
