@@ -39,13 +39,43 @@ namespace ShareX.MediaLib
 {
     public partial class VideoConverterForm : Form
     {
-        public VideoConverterForm()
+        public VideoConverterOptions Options { get; private set; }
+
+        private bool ready;
+
+        public VideoConverterForm(VideoConverterOptions options)
         {
+            Options = options;
+
             InitializeComponent();
             ShareXResources.ApplyTheme(this);
 
             cbVideoCodec.Items.AddRange(Helpers.GetEnumDescriptions<ConverterVideoCodecs>());
-            cbVideoCodec.SelectedIndex = 0;
+            cbVideoCodec.SelectedIndex = (int)Options.VideoCodec;
+            nudVideoQuality.SetValue(Options.VideoQuality);
+
+            ready = true;
+
+            UpdateOptions();
+        }
+
+        private void UpdateOptions()
+        {
+            if (ready)
+            {
+                Options.InputFilePath = txtInputFilePath.Text;
+                Options.OutputFolderPath = txtOutputFolder.Text;
+                Options.OutputFileName = txtOutputFileName.Text;
+                Options.VideoCodec = (ConverterVideoCodecs)cbVideoCodec.SelectedIndex;
+                Options.VideoQuality = (int)nudVideoQuality.Value;
+
+                txtCLI.Text = Options.GetFFmpegArgs();
+            }
+        }
+
+        private void txtInputFilePath_TextChanged(object sender, EventArgs e)
+        {
+            UpdateOptions();
         }
 
         private void btnInputFilePathBrowse_Click(object sender, EventArgs e)
@@ -70,9 +100,29 @@ namespace ShareX.MediaLib
             }
         }
 
+        private void txtOutputFolder_TextChanged(object sender, EventArgs e)
+        {
+            UpdateOptions();
+        }
+
+        private void txtOutputFileName_TextChanged(object sender, EventArgs e)
+        {
+            UpdateOptions();
+        }
+
+        private void cbVideoCodec_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            UpdateOptions();
+        }
+
+        private void nudVideoQuality_ValueChanged(object sender, EventArgs e)
+        {
+            UpdateOptions();
+        }
+
         private void btnEncode_Click(object sender, EventArgs e)
         {
-
+            
         }
     }
 }

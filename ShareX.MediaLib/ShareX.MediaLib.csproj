@@ -120,6 +120,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="VideoConverterOptions.cs" />
     <Compile Include="VideoThumbnailInfo.cs" />
     <Compile Include="VideoInfo.cs" />
     <Compile Include="VideoThumbnailer.cs" />

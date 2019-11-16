@@ -854,7 +854,7 @@ namespace ShareX
                 return;
             }
 
-            VideoConverterForm videoConverterForm = new VideoConverterForm();
+            VideoConverterForm videoConverterForm = new VideoConverterForm(new VideoConverterOptions());
             videoConverterForm.Show();
         }
 

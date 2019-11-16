@@ -43,6 +43,7 @@
             this.btnEncode = new System.Windows.Forms.Button();
             this.lblCLI = new System.Windows.Forms.Label();
             this.txtCLI = new System.Windows.Forms.TextBox();
+            this.lblVideoQualityUnit = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.nudVideoQuality)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,6 +62,7 @@
             this.txtInputFilePath.Name = "txtInputFilePath";
             this.txtInputFilePath.Size = new System.Drawing.Size(280, 20);
             this.txtInputFilePath.TabIndex = 1;
+            this.txtInputFilePath.TextChanged += new System.EventHandler(this.txtInputFilePath_TextChanged);
             // 
             // btnInputFilePathBrowse
             // 
@@ -78,6 +80,7 @@
             this.txtOutputFolder.Name = "txtOutputFolder";
             this.txtOutputFolder.Size = new System.Drawing.Size(280, 20);
             this.txtOutputFolder.TabIndex = 4;
+            this.txtOutputFolder.TextChanged += new System.EventHandler(this.txtOutputFolder_TextChanged);
             // 
             // lblOutputFolder
             // 
@@ -112,6 +115,7 @@
             this.txtOutputFileName.Name = "txtOutputFileName";
             this.txtOutputFileName.Size = new System.Drawing.Size(280, 20);
             this.txtOutputFileName.TabIndex = 7;
+            this.txtOutputFileName.TextChanged += new System.EventHandler(this.txtOutputFileName_TextChanged);
             // 
             // lblVideoCodec
             // 
@@ -130,6 +134,7 @@
             this.cbVideoCodec.Name = "cbVideoCodec";
             this.cbVideoCodec.Size = new System.Drawing.Size(120, 21);
             this.cbVideoCodec.TabIndex = 9;
+            this.cbVideoCodec.SelectedIndexChanged += new System.EventHandler(this.cbVideoCodec_SelectedIndexChanged);
             // 
             // lblVideoQuality
             // 
@@ -147,6 +152,7 @@
             this.nudVideoQuality.Size = new System.Drawing.Size(72, 20);
             this.nudVideoQuality.TabIndex = 11;
             this.nudVideoQuality.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.nudVideoQuality.ValueChanged += new System.EventHandler(this.nudVideoQuality_ValueChanged);
             // 
             // btnEncode
             // 
@@ -169,18 +175,29 @@
             // 
             // txtCLI
             // 
+            this.txtCLI.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCLI.Location = new System.Drawing.Point(16, 152);
             this.txtCLI.Multiline = true;
             this.txtCLI.Name = "txtCLI";
             this.txtCLI.Size = new System.Drawing.Size(424, 104);
             this.txtCLI.TabIndex = 13;
             // 
+            // lblVideoQualityUnit
+            // 
+            this.lblVideoQualityUnit.AutoSize = true;
+            this.lblVideoQualityUnit.Location = new System.Drawing.Point(200, 112);
+            this.lblVideoQualityUnit.Name = "lblVideoQualityUnit";
+            this.lblVideoQualityUnit.Size = new System.Drawing.Size(28, 13);
+            this.lblVideoQualityUnit.TabIndex = 15;
+            this.lblVideoQualityUnit.Text = "CRF";
+            // 
             // VideoConverterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(456, 298);
+            this.ClientSize = new System.Drawing.Size(456, 303);
+            this.Controls.Add(this.lblVideoQualityUnit);
             this.Controls.Add(this.txtCLI);
             this.Controls.Add(this.lblCLI);
             this.Controls.Add(this.btnEncode);
@@ -222,5 +239,6 @@
         private System.Windows.Forms.Button btnEncode;
         private System.Windows.Forms.Label lblCLI;
         private System.Windows.Forms.TextBox txtCLI;
+        private System.Windows.Forms.Label lblVideoQualityUnit;
     }
 }
