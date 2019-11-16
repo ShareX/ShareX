@@ -102,6 +102,12 @@
     <Compile Include="Forms\ImageThumbnailerForm.Designer.cs">
       <DependentUpon>ImageThumbnailerForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\VideoConverterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\VideoConverterForm.Designer.cs">
+      <DependentUpon>VideoConverterForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\VideoThumbnailerForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -219,6 +225,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ImageThumbnailerForm.zh-TW.resx">
       <DependentUpon>ImageThumbnailerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\VideoConverterForm.resx">
+      <DependentUpon>VideoConverterForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\VideoThumbnailerForm.de.resx">
       <DependentUpon>VideoThumbnailerForm.cs</DependentUpon>
