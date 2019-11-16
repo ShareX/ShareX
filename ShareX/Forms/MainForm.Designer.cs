@@ -86,6 +86,7 @@
             this.tsmiImageCombiner = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiImageSplitter = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiImageThumbnailer = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiVideoConverter = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiVideoThumbnailer = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTweetMessage = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiMonitorTest = new System.Windows.Forms.ToolStripMenuItem();
@@ -238,6 +239,7 @@
             this.tsmiTrayImageCombiner = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayImageSplitter = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayImageThumbnailer = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiTrayVideoConverter = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayVideoThumbnailer = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayTweetMessage = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayMonitorTest = new System.Windows.Forms.ToolStripMenuItem();
@@ -679,6 +681,7 @@
             this.tsmiImageCombiner,
             this.tsmiImageSplitter,
             this.tsmiImageThumbnailer,
+            this.tsmiVideoConverter,
             this.tsmiVideoThumbnailer,
             this.tsmiTweetMessage,
             this.tsmiMonitorTest});
@@ -769,6 +772,13 @@
             this.tsmiImageThumbnailer.Name = "tsmiImageThumbnailer";
             resources.ApplyResources(this.tsmiImageThumbnailer, "tsmiImageThumbnailer");
             this.tsmiImageThumbnailer.Click += new System.EventHandler(this.tsmiImageThumbnailer_Click);
+            // 
+            // tsmiVideoConverter
+            // 
+            this.tsmiVideoConverter.Image = global::ShareX.Properties.Resources.camcorder_pencil;
+            this.tsmiVideoConverter.Name = "tsmiVideoConverter";
+            resources.ApplyResources(this.tsmiVideoConverter, "tsmiVideoConverter");
+            this.tsmiVideoConverter.Click += new System.EventHandler(this.tsmiVideoConverter_Click);
             // 
             // tsmiVideoThumbnailer
             // 
@@ -1834,6 +1844,7 @@
             this.tsmiTrayImageCombiner,
             this.tsmiTrayImageSplitter,
             this.tsmiTrayImageThumbnailer,
+            this.tsmiTrayVideoConverter,
             this.tsmiTrayVideoThumbnailer,
             this.tsmiTrayTweetMessage,
             this.tsmiTrayMonitorTest});
@@ -1924,6 +1935,13 @@
             this.tsmiTrayImageThumbnailer.Name = "tsmiTrayImageThumbnailer";
             resources.ApplyResources(this.tsmiTrayImageThumbnailer, "tsmiTrayImageThumbnailer");
             this.tsmiTrayImageThumbnailer.Click += new System.EventHandler(this.tsmiImageThumbnailer_Click);
+            // 
+            // tsmiTrayVideoConverter
+            // 
+            this.tsmiTrayVideoConverter.Image = global::ShareX.Properties.Resources.camcorder_pencil;
+            this.tsmiTrayVideoConverter.Name = "tsmiTrayVideoConverter";
+            resources.ApplyResources(this.tsmiTrayVideoConverter, "tsmiTrayVideoConverter");
+            this.tsmiTrayVideoConverter.Click += new System.EventHandler(this.tsmiVideoConverter_Click);
             // 
             // tsmiTrayVideoThumbnailer
             // 
@@ -2615,5 +2633,7 @@
         private System.Windows.Forms.ToolStripSeparator tssMain3;
         private System.Windows.Forms.ToolStripMenuItem tsmiImageSplitter;
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayImageSplitter;
+        private System.Windows.Forms.ToolStripMenuItem tsmiVideoConverter;
+        private System.Windows.Forms.ToolStripMenuItem tsmiTrayVideoConverter;
     }
 }

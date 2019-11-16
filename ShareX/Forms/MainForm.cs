@@ -1862,6 +1862,11 @@ namespace ShareX
             TaskHelpers.OpenImageThumbnailer();
         }
 
+        private void tsmiVideoConverter_Click(object sender, EventArgs e)
+        {
+            TaskHelpers.OpenVideoConverter();
+        }
+
         private void tsmiVideoThumbnailer_Click(object sender, EventArgs e)
         {
             TaskHelpers.OpenVideoThumbnailer();

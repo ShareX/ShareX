@@ -35,7 +35,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ShareX.MediaLib.Forms
+namespace ShareX.MediaLib
 {
     public partial class VideoConverterForm : Form
     {
@@ -43,6 +43,9 @@ namespace ShareX.MediaLib.Forms
         {
             InitializeComponent();
             ShareXResources.ApplyTheme(this);
+
+            cbVideoCodec.Items.AddRange(Helpers.GetEnumDescriptions<ConverterVideoCodecs>());
+            cbVideoCodec.SelectedIndex = 0;
         }
 
         private void btnInputFilePathBrowse_Click(object sender, EventArgs e)

@@ -839,12 +839,23 @@ namespace ShareX
             imageSplitterForm.Show();
         }
 
-        public static void OpenImageThumbnailer(TaskSettings taskSettings = null)
+        public static void OpenImageThumbnailer()
+        {
+            ImageThumbnailerForm imageThumbnailerForm = new ImageThumbnailerForm();
+            imageThumbnailerForm.Show();
+        }
+
+        public static void OpenVideoConverter(TaskSettings taskSettings = null)
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
-            ImageThumbnailerForm imageThumbnailerForm = new ImageThumbnailerForm();
-            imageThumbnailerForm.Show();
+            if (!CheckFFmpeg(taskSettings))
+            {
+                return;
+            }
+
+            VideoConverterForm videoConverterForm = new VideoConverterForm();
+            videoConverterForm.Show();
         }
 
         public static void OpenVideoThumbnailer(TaskSettings taskSettings = null)

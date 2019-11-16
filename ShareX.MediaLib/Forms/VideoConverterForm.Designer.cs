@@ -1,4 +1,4 @@
-﻿namespace ShareX.MediaLib.Forms
+﻿namespace ShareX.MediaLib
 {
     partial class VideoConverterForm
     {
@@ -128,7 +128,7 @@
             this.cbVideoCodec.FormattingEnabled = true;
             this.cbVideoCodec.Location = new System.Drawing.Point(120, 84);
             this.cbVideoCodec.Name = "cbVideoCodec";
-            this.cbVideoCodec.Size = new System.Drawing.Size(80, 21);
+            this.cbVideoCodec.Size = new System.Drawing.Size(120, 21);
             this.cbVideoCodec.TabIndex = 9;
             // 
             // lblVideoQuality
@@ -144,7 +144,7 @@
             // 
             this.nudVideoQuality.Location = new System.Drawing.Point(120, 108);
             this.nudVideoQuality.Name = "nudVideoQuality";
-            this.nudVideoQuality.Size = new System.Drawing.Size(80, 20);
+            this.nudVideoQuality.Size = new System.Drawing.Size(72, 20);
             this.nudVideoQuality.TabIndex = 11;
             this.nudVideoQuality.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -197,6 +197,7 @@
             this.Controls.Add(this.txtInputFilePath);
             this.Controls.Add(this.lblInputFilePath);
             this.Name = "VideoConverterForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ShareX - Video converter";
             ((System.ComponentModel.ISupportInitialize)(this.nudVideoQuality)).EndInit();
             this.ResumeLayout(false);

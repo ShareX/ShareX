@@ -36,4 +36,22 @@ namespace ShareX.MediaLib
         [Description("Custom folder")]
         CustomFolder
     }
+
+    public enum ConverterVideoCodecs
+    {
+        [Description("H.264 / x264")]
+        x264,
+        [Description("H.265 / x265")]
+        x265,
+        [Description("VP8 (WebM)")]
+        vp8,
+        [Description("VP9 (WebM)")]
+        vp9,
+        [Description("GIF")]
+        gif,
+        [Description("WebP")]
+        webp,
+        [Description("APNG")]
+        apng
+    }
 }
