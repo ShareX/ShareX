@@ -170,7 +170,7 @@ namespace ShareX.ScreenCaptureLib
 
         public override void Close()
         {
-            if (processRunning)
+            if (IsProcessRunning)
             {
                 if (closeTryCount >= 2)
                 {

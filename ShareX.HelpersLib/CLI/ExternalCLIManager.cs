@@ -35,8 +35,9 @@ namespace ShareX.HelpersLib
         public event DataReceivedEventHandler OutputDataReceived;
         public event DataReceivedEventHandler ErrorDataReceived;
 
+        public bool IsProcessRunning { get; private set; }
+
         protected Process process;
-        protected bool processRunning;
 
         public virtual int Open(string path, string args = null)
         {
@@ -71,12 +72,12 @@ namespace ShareX.HelpersLib
 
                     try
                     {
-                        processRunning = true;
+                        IsProcessRunning = true;
                         process.WaitForExit();
                     }
                     finally
                     {
-                        processRunning = false;
+                        IsProcessRunning = false;
                     }
 
                     return process.ExitCode;
@@ -110,7 +111,7 @@ namespace ShareX.HelpersLib
 
         public void WriteInput(string input)
         {
-            if (processRunning && process != null && process.StartInfo != null && process.StartInfo.RedirectStandardInput)
+            if (IsProcessRunning && process != null && process.StartInfo != null && process.StartInfo.RedirectStandardInput)
             {
                 process.StandardInput.WriteLine(input);
             }
@@ -118,7 +119,7 @@ namespace ShareX.HelpersLib
 
         public virtual void Close()
         {
-            if (processRunning && process != null)
+            if (IsProcessRunning && process != null)
             {
                 process.CloseMainWindow();
             }

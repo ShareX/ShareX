@@ -854,7 +854,8 @@ namespace ShareX
                 return;
             }
 
-            VideoConverterForm videoConverterForm = new VideoConverterForm(new VideoConverterOptions());
+            VideoConverterOptions options = new VideoConverterOptions();
+            VideoConverterForm videoConverterForm = new VideoConverterForm(taskSettings.CaptureSettings.FFmpegOptions.FFmpegPath, options);
             videoConverterForm.Show();
         }
 

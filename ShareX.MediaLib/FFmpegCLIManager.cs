@@ -37,6 +37,7 @@ namespace ShareX.MediaLib
     {
         public string FFmpegPath { get; private set; }
         public StringBuilder Output { get; private set; }
+        public bool ShowError { get; set; }
 
         public FFmpegCLIManager(string ffmpegPath)
         {
@@ -58,42 +59,61 @@ namespace ShareX.MediaLib
             }
         }
 
+        public bool Run(string args)
+        {
+            return Run(FFmpegPath, args);
+        }
+
+        private bool Run(string path, string args)
+        {
+            int errorCode = Open(path, args);
+            bool result = errorCode == 0;
+            if (!result && ShowError)
+            {
+                // TODO: Translate
+                new OutputBox(Output.ToString(), "FFmpeg error").ShowDialog();
+            }
+            return result;
+        }
+
         public VideoInfo GetVideoInfo(string videoPath)
         {
             VideoInfo videoInfo = new VideoInfo();
             videoInfo.FilePath = videoPath;
 
-            Open(FFmpegPath, string.Format("-i \"{0}\"", videoPath));
-            string output = Output.ToString();
-
-            Match matchInput = Regex.Match(output, @"Duration: (?<Duration>\d{2}:\d{2}:\d{2}\.\d{2}),.+?start: (?<Start>\d+\.\d+),.+?bitrate: (?<Bitrate>\d+) kb/s", RegexOptions.CultureInvariant);
-
-            if (matchInput.Success)
+            if (Run($"-i \"{videoPath}\""))
             {
-                videoInfo.Duration = TimeSpan.Parse(matchInput.Groups["Duration"].Value);
-                //videoInfo.Start = TimeSpan.Parse(match.Groups["Start"].Value);
-                videoInfo.Bitrate = int.Parse(matchInput.Groups["Bitrate"].Value);
-            }
-            else
-            {
-                return null;
-            }
+                string output = Output.ToString();
 
-            Match matchVideoStream = Regex.Match(output, @"Stream #\d+:\d+(?:\(.+?\))?: Video: (?<Codec>.+?) \(.+?,.+?, (?<Width>\d+)x(?<Height>\d+).+?, (?<FPS>\d+(?:\.\d+)?) fps",
-                RegexOptions.CultureInvariant);
+                Match matchInput = Regex.Match(output, @"Duration: (?<Duration>\d{2}:\d{2}:\d{2}\.\d{2}),.+?start: (?<Start>\d+\.\d+),.+?bitrate: (?<Bitrate>\d+) kb/s", RegexOptions.CultureInvariant);
 
-            if (matchVideoStream.Success)
-            {
-                videoInfo.VideoCodec = matchVideoStream.Groups["Codec"].Value;
-                videoInfo.VideoResolution = new Size(int.Parse(matchVideoStream.Groups["Width"].Value), int.Parse(matchVideoStream.Groups["Height"].Value));
-                videoInfo.VideoFPS = double.Parse(matchVideoStream.Groups["FPS"].Value, CultureInfo.InvariantCulture);
-            }
+                if (matchInput.Success)
+                {
+                    videoInfo.Duration = TimeSpan.Parse(matchInput.Groups["Duration"].Value);
+                    //videoInfo.Start = TimeSpan.Parse(match.Groups["Start"].Value);
+                    videoInfo.Bitrate = int.Parse(matchInput.Groups["Bitrate"].Value);
+                }
+                else
+                {
+                    return null;
+                }
 
-            Match matchAudioStream = Regex.Match(output, @"Stream #\d+:\d+(?:\(.+?\))?: Audio: (?<Codec>.+?)(?: \(|,)", RegexOptions.CultureInvariant);
+                Match matchVideoStream = Regex.Match(output, @"Stream #\d+:\d+(?:\(.+?\))?: Video: (?<Codec>.+?) \(.+?,.+?, (?<Width>\d+)x(?<Height>\d+).+?, (?<FPS>\d+(?:\.\d+)?) fps",
+                    RegexOptions.CultureInvariant);
 
-            if (matchAudioStream.Success)
-            {
-                videoInfo.AudioCodec = matchAudioStream.Groups["Codec"].Value;
+                if (matchVideoStream.Success)
+                {
+                    videoInfo.VideoCodec = matchVideoStream.Groups["Codec"].Value;
+                    videoInfo.VideoResolution = new Size(int.Parse(matchVideoStream.Groups["Width"].Value), int.Parse(matchVideoStream.Groups["Height"].Value));
+                    videoInfo.VideoFPS = double.Parse(matchVideoStream.Groups["FPS"].Value, CultureInfo.InvariantCulture);
+                }
+
+                Match matchAudioStream = Regex.Match(output, @"Stream #\d+:\d+(?:\(.+?\))?: Audio: (?<Codec>.+?)(?: \(|,)", RegexOptions.CultureInvariant);
+
+                if (matchAudioStream.Success)
+                {
+                    videoInfo.AudioCodec = matchAudioStream.Groups["Codec"].Value;
+                }
             }
 
             return videoInfo;

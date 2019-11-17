@@ -23,12 +23,8 @@
 
 #endregion License Information (GPL v3)
 
-using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace ShareX.MediaLib
 {

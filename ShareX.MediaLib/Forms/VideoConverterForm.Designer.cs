@@ -158,7 +158,7 @@
             // 
             this.btnEncode.Location = new System.Drawing.Point(16, 264);
             this.btnEncode.Name = "btnEncode";
-            this.btnEncode.Size = new System.Drawing.Size(424, 23);
+            this.btnEncode.Size = new System.Drawing.Size(424, 24);
             this.btnEncode.TabIndex = 14;
             this.btnEncode.Text = "Start encoding";
             this.btnEncode.UseVisualStyleBackColor = true;

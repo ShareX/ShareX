@@ -25,13 +25,7 @@
 
 using ShareX.HelpersLib;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -39,12 +33,14 @@ namespace ShareX.MediaLib
 {
     public partial class VideoConverterForm : Form
     {
+        public string FFmpegFilePath { get; private set; }
         public VideoConverterOptions Options { get; private set; }
 
         private bool ready;
 
-        public VideoConverterForm(VideoConverterOptions options)
+        public VideoConverterForm(string ffmpegFilePath, VideoConverterOptions options)
         {
+            FFmpegFilePath = ffmpegFilePath;
             Options = options;
 
             InitializeComponent();
@@ -71,6 +67,35 @@ namespace ShareX.MediaLib
 
                 txtCLI.Text = Options.GetFFmpegArgs();
             }
+        }
+
+        private bool StartEncoding()
+        {
+            bool result = false;
+
+            if (!string.IsNullOrEmpty(Options.InputFilePath) && File.Exists(Options.InputFilePath) && !string.IsNullOrEmpty(Options.OutputFilePath))
+            {
+                using (FFmpegCLIManager manager = new FFmpegCLIManager(FFmpegFilePath))
+                {
+                    manager.ShowError = true;
+
+                    string outputFilePath = Options.OutputFilePath;
+                    string args = Options.GetFFmpegArgs();
+                    result = manager.Run(args);
+
+                    if (result)
+                    {
+                        Helpers.OpenFolderWithFile(outputFilePath);
+                    }
+                }
+            }
+
+            return result;
+        }
+
+        private async Task<bool> StartEncodingAsync()
+        {
+            return await Task.Run(StartEncoding);
         }
 
         private void txtInputFilePath_TextChanged(object sender, EventArgs e)
@@ -120,9 +145,13 @@ namespace ShareX.MediaLib
             UpdateOptions();
         }
 
-        private void btnEncode_Click(object sender, EventArgs e)
+        private async void btnEncode_Click(object sender, EventArgs e)
         {
-            
+            btnEncode.Enabled = false;
+
+            await StartEncodingAsync();
+
+            btnEncode.Enabled = true;
         }
     }
 }
