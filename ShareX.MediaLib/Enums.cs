@@ -47,6 +47,8 @@ namespace ShareX.MediaLib
         vp8,
         [Description("VP9 (WebM)")]
         vp9,
+        [Description("MPEG-4 / Xvid")]
+        xvid,
         [Description("GIF")]
         gif,
         [Description("WebP")]

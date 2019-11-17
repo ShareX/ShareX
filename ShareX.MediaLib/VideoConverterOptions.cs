@@ -48,6 +48,8 @@ namespace ShareX.MediaLib
                     case ConverterVideoCodecs.vp8:
                     case ConverterVideoCodecs.vp9:
                         return "webm";
+                    case ConverterVideoCodecs.xvid:
+                        return "avi";
                     case ConverterVideoCodecs.gif:
                         return "gif";
                     case ConverterVideoCodecs.webp:
@@ -93,6 +95,9 @@ namespace ShareX.MediaLib
                 case ConverterVideoCodecs.vp9: // https://trac.ffmpeg.org/wiki/Encode/VP9
                     args.Append($"-c:v libvpx-vp9 -crf {VideoQuality.Clamp(0, 63)} -b:v 0 ");
                     break;
+                case ConverterVideoCodecs.xvid: // https://trac.ffmpeg.org/wiki/Encode/MPEG-4
+                    args.Append($"-c:v libxvid -q:v {VideoQuality.Clamp(1, 31)} ");
+                    break;
                 case ConverterVideoCodecs.gif: // https://ffmpeg.org/ffmpeg-filters.html#palettegen-1
                     args.Append("-lavfi \"palettegen=stats_mode=full[palette],[0:v][palette]paletteuse=dither=sierra2_4a\" ");
                     break;
@@ -114,6 +119,9 @@ namespace ShareX.MediaLib
                 case ConverterVideoCodecs.vp8: // https://trac.ffmpeg.org/wiki/TheoraVorbisEncodingGuide
                 case ConverterVideoCodecs.vp9:
                     args.Append("-c:a libvorbis -q:a 3 ");
+                    break;
+                case ConverterVideoCodecs.xvid: // https://trac.ffmpeg.org/wiki/Encode/MP3
+                    args.Append("-c:a libmp3lame -q:a 4 ");
                     break;
             }
 
