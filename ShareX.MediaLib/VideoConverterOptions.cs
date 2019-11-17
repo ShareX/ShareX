@@ -93,11 +93,14 @@ namespace ShareX.MediaLib
                 case ConverterVideoCodecs.vp9: // https://trac.ffmpeg.org/wiki/Encode/VP9
                     args.Append($"-c:v libvpx-vp9 -crf {VideoQuality.Clamp(0, 63)} -b:v 0 ");
                     break;
-                case ConverterVideoCodecs.gif:
+                case ConverterVideoCodecs.gif: // https://ffmpeg.org/ffmpeg-filters.html#palettegen-1
+                    args.Append("-lavfi \"palettegen=stats_mode=full[palette],[0:v][palette]paletteuse=dither=sierra2_4a\" ");
                     break;
-                case ConverterVideoCodecs.webp:
+                case ConverterVideoCodecs.webp: // https://www.ffmpeg.org/ffmpeg-codecs.html#libwebp
+                    args.Append("-c:v libwebp -lossless 0 -preset default -loop 0 ");
                     break;
                 case ConverterVideoCodecs.apng:
+                    args.Append("-f apng -plays 0 ");
                     break;
             }
 
