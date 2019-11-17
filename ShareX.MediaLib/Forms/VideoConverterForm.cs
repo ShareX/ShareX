@@ -147,11 +147,15 @@ namespace ShareX.MediaLib
 
         private async void btnEncode_Click(object sender, EventArgs e)
         {
-            btnEncode.Enabled = false;
+            UpdateOptions();
+
+            pbProgress.Visible = true;
+            btnEncode.Visible = false;
 
             await StartEncodingAsync();
 
-            btnEncode.Enabled = true;
+            btnEncode.Visible = true;
+            pbProgress.Visible = false;
         }
     }
 }

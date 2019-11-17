@@ -44,6 +44,7 @@
             this.lblCLI = new System.Windows.Forms.Label();
             this.txtCLI = new System.Windows.Forms.TextBox();
             this.lblVideoQualityUnit = new System.Windows.Forms.Label();
+            this.pbProgress = new System.Windows.Forms.ProgressBar();
             ((System.ComponentModel.ISupportInitialize)(this.nudVideoQuality)).BeginInit();
             this.SuspendLayout();
             // 
@@ -191,6 +192,15 @@
             this.lblVideoQualityUnit.TabIndex = 15;
             this.lblVideoQualityUnit.Text = "CRF";
             // 
+            // pbProgress
+            // 
+            this.pbProgress.Location = new System.Drawing.Point(16, 264);
+            this.pbProgress.MarqueeAnimationSpeed = 50;
+            this.pbProgress.Name = "pbProgress";
+            this.pbProgress.Size = new System.Drawing.Size(424, 24);
+            this.pbProgress.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
+            this.pbProgress.TabIndex = 16;
+            // 
             // VideoConverterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -213,6 +223,7 @@
             this.Controls.Add(this.btnInputFilePathBrowse);
             this.Controls.Add(this.txtInputFilePath);
             this.Controls.Add(this.lblInputFilePath);
+            this.Controls.Add(this.pbProgress);
             this.Name = "VideoConverterForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ShareX - Video converter";
@@ -240,5 +251,6 @@
         private System.Windows.Forms.Label lblCLI;
         private System.Windows.Forms.TextBox txtCLI;
         private System.Windows.Forms.Label lblVideoQualityUnit;
+        private System.Windows.Forms.ProgressBar pbProgress;
     }
 }
