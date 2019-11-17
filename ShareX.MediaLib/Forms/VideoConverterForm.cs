@@ -65,7 +65,7 @@ namespace ShareX.MediaLib
                 Options.VideoCodec = (ConverterVideoCodecs)cbVideoCodec.SelectedIndex;
                 Options.VideoQuality = (int)nudVideoQuality.Value;
 
-                txtCLI.Text = Options.GetFFmpegArgs();
+                txtArguments.Text = Options.GetFFmpegArgs();
             }
         }
 

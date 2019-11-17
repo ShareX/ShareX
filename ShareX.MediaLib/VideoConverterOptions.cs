@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.HelpersLib;
 using System.IO;
 using System.Text;
 
@@ -80,17 +81,17 @@ namespace ShareX.MediaLib
             switch (VideoCodec)
             {
                 case ConverterVideoCodecs.x264: // https://trac.ffmpeg.org/wiki/Encode/H.264
-                    args.Append($"-c:v libx264 -preset medium -crf {VideoQuality} ");
+                    args.Append($"-c:v libx264 -preset medium -crf {VideoQuality.Clamp(0, 51)} ");
                     args.Append("-pix_fmt yuv420p -movflags +faststart "); // For browser support
                     break;
                 case ConverterVideoCodecs.x265: // https://trac.ffmpeg.org/wiki/Encode/H.265
-                    args.Append($"-c:v libx265 -preset medium -crf {VideoQuality} ");
+                    args.Append($"-c:v libx265 -preset medium -crf {VideoQuality.Clamp(0, 51)} ");
                     break;
                 case ConverterVideoCodecs.vp8: // https://trac.ffmpeg.org/wiki/Encode/VP8
-                    args.Append("-c:v libvpx ");
+                    args.Append($"-c:v libvpx -crf {VideoQuality.Clamp(0, 63)} -b:v 0 ");
                     break;
                 case ConverterVideoCodecs.vp9: // https://trac.ffmpeg.org/wiki/Encode/VP9
-                    args.Append("-c:v libvpx-vp9 ");
+                    args.Append($"-c:v libvpx-vp9 -crf {VideoQuality.Clamp(0, 63)} -b:v 0 ");
                     break;
                 case ConverterVideoCodecs.gif:
                     break;
@@ -106,6 +107,10 @@ namespace ShareX.MediaLib
                 case ConverterVideoCodecs.x264: // https://trac.ffmpeg.org/wiki/Encode/AAC
                 case ConverterVideoCodecs.x265:
                     args.Append("-c:a aac -b:a 128k ");
+                    break;
+                case ConverterVideoCodecs.vp8: // https://trac.ffmpeg.org/wiki/TheoraVorbisEncodingGuide
+                case ConverterVideoCodecs.vp9:
+                    args.Append("-c:a libvorbis -q:a 3 ");
                     break;
             }
 

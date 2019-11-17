@@ -41,9 +41,9 @@
             this.lblVideoQuality = new System.Windows.Forms.Label();
             this.nudVideoQuality = new System.Windows.Forms.NumericUpDown();
             this.btnEncode = new System.Windows.Forms.Button();
-            this.lblCLI = new System.Windows.Forms.Label();
-            this.txtCLI = new System.Windows.Forms.TextBox();
-            this.lblVideoQualityUnit = new System.Windows.Forms.Label();
+            this.lblArguments = new System.Windows.Forms.Label();
+            this.txtArguments = new System.Windows.Forms.TextBox();
+            this.lblVideoQualityCRF = new System.Windows.Forms.Label();
             this.pbProgress = new System.Windows.Forms.ProgressBar();
             ((System.ComponentModel.ISupportInitialize)(this.nudVideoQuality)).BeginInit();
             this.SuspendLayout();
@@ -157,47 +157,49 @@
             // 
             // btnEncode
             // 
+            this.btnEncode.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEncode.Location = new System.Drawing.Point(16, 264);
             this.btnEncode.Name = "btnEncode";
-            this.btnEncode.Size = new System.Drawing.Size(424, 24);
+            this.btnEncode.Size = new System.Drawing.Size(424, 32);
             this.btnEncode.TabIndex = 14;
             this.btnEncode.Text = "Start encoding";
             this.btnEncode.UseVisualStyleBackColor = true;
             this.btnEncode.Click += new System.EventHandler(this.btnEncode_Click);
             // 
-            // lblCLI
+            // lblArguments
             // 
-            this.lblCLI.AutoSize = true;
-            this.lblCLI.Location = new System.Drawing.Point(13, 136);
-            this.lblCLI.Name = "lblCLI";
-            this.lblCLI.Size = new System.Drawing.Size(26, 13);
-            this.lblCLI.TabIndex = 12;
-            this.lblCLI.Text = "CLI:";
+            this.lblArguments.AutoSize = true;
+            this.lblArguments.Location = new System.Drawing.Point(13, 136);
+            this.lblArguments.Name = "lblArguments";
+            this.lblArguments.Size = new System.Drawing.Size(60, 13);
+            this.lblArguments.TabIndex = 12;
+            this.lblArguments.Text = "Arguments:";
             // 
-            // txtCLI
+            // txtArguments
             // 
-            this.txtCLI.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCLI.Location = new System.Drawing.Point(16, 152);
-            this.txtCLI.Multiline = true;
-            this.txtCLI.Name = "txtCLI";
-            this.txtCLI.Size = new System.Drawing.Size(424, 104);
-            this.txtCLI.TabIndex = 13;
+            this.txtArguments.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtArguments.Location = new System.Drawing.Point(16, 152);
+            this.txtArguments.Multiline = true;
+            this.txtArguments.Name = "txtArguments";
+            this.txtArguments.ReadOnly = true;
+            this.txtArguments.Size = new System.Drawing.Size(424, 104);
+            this.txtArguments.TabIndex = 13;
             // 
-            // lblVideoQualityUnit
+            // lblVideoQualityCRF
             // 
-            this.lblVideoQualityUnit.AutoSize = true;
-            this.lblVideoQualityUnit.Location = new System.Drawing.Point(200, 112);
-            this.lblVideoQualityUnit.Name = "lblVideoQualityUnit";
-            this.lblVideoQualityUnit.Size = new System.Drawing.Size(28, 13);
-            this.lblVideoQualityUnit.TabIndex = 15;
-            this.lblVideoQualityUnit.Text = "CRF";
+            this.lblVideoQualityCRF.AutoSize = true;
+            this.lblVideoQualityCRF.Location = new System.Drawing.Point(200, 112);
+            this.lblVideoQualityCRF.Name = "lblVideoQualityCRF";
+            this.lblVideoQualityCRF.Size = new System.Drawing.Size(28, 13);
+            this.lblVideoQualityCRF.TabIndex = 15;
+            this.lblVideoQualityCRF.Text = "CRF";
             // 
             // pbProgress
             // 
             this.pbProgress.Location = new System.Drawing.Point(16, 264);
             this.pbProgress.MarqueeAnimationSpeed = 50;
             this.pbProgress.Name = "pbProgress";
-            this.pbProgress.Size = new System.Drawing.Size(424, 24);
+            this.pbProgress.Size = new System.Drawing.Size(424, 32);
             this.pbProgress.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
             this.pbProgress.TabIndex = 16;
             // 
@@ -206,11 +208,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(456, 303);
-            this.Controls.Add(this.lblVideoQualityUnit);
-            this.Controls.Add(this.txtCLI);
-            this.Controls.Add(this.lblCLI);
-            this.Controls.Add(this.btnEncode);
+            this.ClientSize = new System.Drawing.Size(456, 311);
+            this.Controls.Add(this.lblVideoQualityCRF);
+            this.Controls.Add(this.txtArguments);
+            this.Controls.Add(this.lblArguments);
             this.Controls.Add(this.nudVideoQuality);
             this.Controls.Add(this.lblVideoQuality);
             this.Controls.Add(this.cbVideoCodec);
@@ -223,6 +224,7 @@
             this.Controls.Add(this.btnInputFilePathBrowse);
             this.Controls.Add(this.txtInputFilePath);
             this.Controls.Add(this.lblInputFilePath);
+            this.Controls.Add(this.btnEncode);
             this.Controls.Add(this.pbProgress);
             this.Name = "VideoConverterForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -248,9 +250,9 @@
         private System.Windows.Forms.Label lblVideoQuality;
         private System.Windows.Forms.NumericUpDown nudVideoQuality;
         private System.Windows.Forms.Button btnEncode;
-        private System.Windows.Forms.Label lblCLI;
-        private System.Windows.Forms.TextBox txtCLI;
-        private System.Windows.Forms.Label lblVideoQualityUnit;
+        private System.Windows.Forms.Label lblArguments;
+        private System.Windows.Forms.TextBox txtArguments;
+        private System.Windows.Forms.Label lblVideoQualityCRF;
         private System.Windows.Forms.ProgressBar pbProgress;
     }
 }
