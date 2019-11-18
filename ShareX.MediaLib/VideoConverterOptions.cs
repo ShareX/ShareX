@@ -35,37 +35,13 @@ namespace ShareX.MediaLib
         public string OutputFolderPath { get; set; }
         public string OutputFileName { get; set; }
 
-        public string OutputFileNameExtension
-        {
-            get
-            {
-                switch (VideoCodec)
-                {
-                    default:
-                    case ConverterVideoCodecs.x264:
-                    case ConverterVideoCodecs.x265:
-                        return "mp4";
-                    case ConverterVideoCodecs.vp8:
-                    case ConverterVideoCodecs.vp9:
-                        return "webm";
-                    case ConverterVideoCodecs.xvid:
-                        return "avi";
-                    case ConverterVideoCodecs.gif:
-                        return "gif";
-                    case ConverterVideoCodecs.webp:
-                        return "webp";
-                    case ConverterVideoCodecs.apng:
-                        return "apng";
-                }
-            }
-        }
-
         public string OutputFilePath
         {
             get
             {
                 string path = Path.Combine(OutputFolderPath, OutputFileName);
-                return Path.ChangeExtension(path, OutputFileNameExtension);
+                string extension = GetFileExtension();
+                return Path.ChangeExtension(path, extension);
             }
         }
 
@@ -129,6 +105,28 @@ namespace ShareX.MediaLib
             args.Append($"-y \"{OutputFilePath}\"");
 
             return args.ToString();
+        }
+
+        public string GetFileExtension()
+        {
+            switch (VideoCodec)
+            {
+                default:
+                case ConverterVideoCodecs.x264:
+                case ConverterVideoCodecs.x265:
+                    return "mp4";
+                case ConverterVideoCodecs.vp8:
+                case ConverterVideoCodecs.vp9:
+                    return "webm";
+                case ConverterVideoCodecs.xvid:
+                    return "avi";
+                case ConverterVideoCodecs.gif:
+                    return "gif";
+                case ConverterVideoCodecs.webp:
+                    return "webp";
+                case ConverterVideoCodecs.apng:
+                    return "apng";
+            }
         }
     }
 }

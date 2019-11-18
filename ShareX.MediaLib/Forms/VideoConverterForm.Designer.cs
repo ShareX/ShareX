@@ -43,7 +43,6 @@
             this.btnEncode = new System.Windows.Forms.Button();
             this.lblArguments = new System.Windows.Forms.Label();
             this.txtArguments = new System.Windows.Forms.TextBox();
-            this.lblVideoQualityCRF = new System.Windows.Forms.Label();
             this.pbProgress = new System.Windows.Forms.ProgressBar();
             ((System.ComponentModel.ISupportInitialize)(this.nudVideoQuality)).BeginInit();
             this.SuspendLayout();
@@ -185,15 +184,6 @@
             this.txtArguments.Size = new System.Drawing.Size(424, 104);
             this.txtArguments.TabIndex = 13;
             // 
-            // lblVideoQualityCRF
-            // 
-            this.lblVideoQualityCRF.AutoSize = true;
-            this.lblVideoQualityCRF.Location = new System.Drawing.Point(200, 112);
-            this.lblVideoQualityCRF.Name = "lblVideoQualityCRF";
-            this.lblVideoQualityCRF.Size = new System.Drawing.Size(28, 13);
-            this.lblVideoQualityCRF.TabIndex = 15;
-            this.lblVideoQualityCRF.Text = "CRF";
-            // 
             // pbProgress
             // 
             this.pbProgress.Location = new System.Drawing.Point(16, 264);
@@ -209,7 +199,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(456, 311);
-            this.Controls.Add(this.lblVideoQualityCRF);
             this.Controls.Add(this.txtArguments);
             this.Controls.Add(this.lblArguments);
             this.Controls.Add(this.nudVideoQuality);
@@ -226,6 +215,8 @@
             this.Controls.Add(this.lblInputFilePath);
             this.Controls.Add(this.btnEncode);
             this.Controls.Add(this.pbProgress);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "VideoConverterForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ShareX - Video converter";
@@ -252,7 +243,6 @@
         private System.Windows.Forms.Button btnEncode;
         private System.Windows.Forms.Label lblArguments;
         private System.Windows.Forms.TextBox txtArguments;
-        private System.Windows.Forms.Label lblVideoQualityCRF;
         private System.Windows.Forms.ProgressBar pbProgress;
     }
 }

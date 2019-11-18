@@ -65,7 +65,14 @@ namespace ShareX.MediaLib
                 Options.VideoCodec = (ConverterVideoCodecs)cbVideoCodec.SelectedIndex;
                 Options.VideoQuality = (int)nudVideoQuality.Value;
 
+                nudVideoQuality.Enabled = Options.VideoCodec == ConverterVideoCodecs.x264 || Options.VideoCodec == ConverterVideoCodecs.x265 ||
+                    Options.VideoCodec == ConverterVideoCodecs.vp8 || Options.VideoCodec == ConverterVideoCodecs.vp9 ||
+                    Options.VideoCodec == ConverterVideoCodecs.xvid;
+
                 txtArguments.Text = Options.GetFFmpegArgs();
+
+                btnEncode.Enabled = !string.IsNullOrEmpty(Options.InputFilePath) && !string.IsNullOrEmpty(Options.OutputFolderPath) &&
+                    !string.IsNullOrEmpty(Options.OutputFileName);
             }
         }
 
@@ -73,7 +80,8 @@ namespace ShareX.MediaLib
         {
             bool result = false;
 
-            if (!string.IsNullOrEmpty(Options.InputFilePath) && File.Exists(Options.InputFilePath) && !string.IsNullOrEmpty(Options.OutputFilePath))
+            if (!string.IsNullOrEmpty(Options.InputFilePath) && File.Exists(Options.InputFilePath) && !string.IsNullOrEmpty(Options.OutputFolderPath) &&
+                !string.IsNullOrEmpty(Options.OutputFileName))
             {
                 using (FFmpegCLIManager manager = new FFmpegCLIManager(FFmpegFilePath))
                 {
