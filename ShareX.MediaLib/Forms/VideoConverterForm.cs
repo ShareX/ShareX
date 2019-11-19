@@ -65,9 +65,37 @@ namespace ShareX.MediaLib
                 Options.VideoCodec = (ConverterVideoCodecs)cbVideoCodec.SelectedIndex;
                 Options.VideoQuality = (int)nudVideoQuality.Value;
 
-                nudVideoQuality.Enabled = Options.VideoCodec == ConverterVideoCodecs.x264 || Options.VideoCodec == ConverterVideoCodecs.x265 ||
-                    Options.VideoCodec == ConverterVideoCodecs.vp8 || Options.VideoCodec == ConverterVideoCodecs.vp9 ||
-                    Options.VideoCodec == ConverterVideoCodecs.xvid;
+                switch (Options.VideoCodec)
+                {
+                    case ConverterVideoCodecs.x264:
+                    case ConverterVideoCodecs.x265:
+                    case ConverterVideoCodecs.vp8:
+                    case ConverterVideoCodecs.vp9:
+                    case ConverterVideoCodecs.xvid:
+                        nudVideoQuality.Enabled = true;
+                        break;
+                    default:
+                        nudVideoQuality.Enabled = false;
+                        break;
+                }
+
+                switch (Options.VideoCodec)
+                {
+                    case ConverterVideoCodecs.x264:
+                    case ConverterVideoCodecs.x265:
+                        nudVideoQuality.Minimum = 0;
+                        nudVideoQuality.Maximum = 51;
+                        break;
+                    case ConverterVideoCodecs.vp8:
+                    case ConverterVideoCodecs.vp9:
+                        nudVideoQuality.Minimum = 0;
+                        nudVideoQuality.Maximum = 63;
+                        break;
+                    case ConverterVideoCodecs.xvid:
+                        nudVideoQuality.Minimum = 1;
+                        nudVideoQuality.Maximum = 31;
+                        break;
+                }
 
                 txtArguments.Text = Options.GetFFmpegArgs();
 
