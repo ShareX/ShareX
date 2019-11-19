@@ -794,9 +794,13 @@ namespace ShareX.ScreenCaptureLib
                     if (!ShapeManager.PreviousHoverRectangle.IsEmpty && ShapeManager.CurrentHoverShape.Rectangle != ShapeManager.PreviousHoverRectangle)
                     {
                         if (regionAnimation.CurrentRectangle.Width > 2 && regionAnimation.CurrentRectangle.Height > 2)
+                        {
                             regionAnimation.FromRectangle = regionAnimation.CurrentRectangle;
+                        }
                         else
+                        {
                             regionAnimation.FromRectangle = ShapeManager.PreviousHoverRectangle;
+                        }
 
                         regionAnimation.ToRectangle = ShapeManager.CurrentHoverShape.Rectangle;
                         regionAnimation.Start();

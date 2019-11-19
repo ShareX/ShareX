@@ -77,9 +77,9 @@ namespace ShareX.MediaLib
             return filePaths;
         }
 
-        private async Task<List<string>> SplitImageAsync(string filePath, int rowCount, int columnCount, string outputFolder)
+        private Task<List<string>> SplitImageAsync(string filePath, int rowCount, int columnCount, string outputFolder)
         {
-            return await Task.Run(() =>
+            return Task.Run(() =>
             {
                 return SplitImage(filePath, rowCount, columnCount, outputFolder);
             });

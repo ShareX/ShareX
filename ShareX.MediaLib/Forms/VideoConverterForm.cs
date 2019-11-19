@@ -101,9 +101,9 @@ namespace ShareX.MediaLib
             return result;
         }
 
-        private async Task<bool> StartEncodingAsync()
+        private Task<bool> StartEncodingAsync()
         {
-            return await Task.Run(StartEncoding);
+            return Task.Run(StartEncoding);
         }
 
         private void txtInputFilePath_TextChanged(object sender, EventArgs e)

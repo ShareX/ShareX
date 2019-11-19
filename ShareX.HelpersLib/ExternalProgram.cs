@@ -133,9 +133,9 @@ namespace ShareX.HelpersLib
             return inputPath;
         }
 
-        public async Task<string> RunAsync(string inputPath)
+        public Task<string> RunAsync(string inputPath)
         {
-            return await Task.Run(() => Run(inputPath));
+            return Task.Run(() => Run(inputPath));
         }
 
         public bool CheckExtension(string path)
