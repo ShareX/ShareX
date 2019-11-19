@@ -1,0 +1,8 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard1.4</TargetFramework>
+    <RootNamespace>ShareX.BridgeLib</RootNamespace>
+  </PropertyGroup>
+
+</Project>

@@ -128,7 +128,10 @@ namespace ShareX
         DoOCR = 1 << 14,
         ShowBeforeUploadWindow = 1 << 15,
         UploadImageToHost = 1 << 16,
-        DeleteFile = 1 << 17
+        DeleteFile = 1 << 17,
+#if WindowsStore || WindowsStoreDebug
+        WindowsShare = 1 << 18,
+#endif
     }
 
     [Flags]

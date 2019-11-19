@@ -99,6 +99,7 @@ namespace ShareX
         internal static WatchFolderManager WatchFolderManager { get; set; }
         internal static GitHubUpdateManager UpdateManager { get; private set; }
         internal static CLIManager CLI { get; private set; }
+        internal static DesktopBridge.Helpers DesktopBridgeHelper { get; private set; } = new DesktopBridge.Helpers();
 
         #region Paths
 
@@ -364,6 +365,9 @@ namespace ShareX
             {
                 Action d = () =>
                 {
+                    CLIManager cli = new CLIManager(args.CommandLineArgs);
+                    cli.ParseCommands();
+
                     if (args.CommandLineArgs == null || args.CommandLineArgs.Length < 1)
                     {
                         if (MainForm.niTray != null && MainForm.niTray.Visible)
@@ -377,14 +381,11 @@ namespace ShareX
                     }
                     else if (MainForm.Visible)
                     {
-                        MainForm.ForceActivate();
+                        if(!cli.IsCommandExist("sharebyjson"))
+                            MainForm.ForceActivate();
                     }
-
-                    CLIManager cli = new CLIManager(args.CommandLineArgs);
-                    cli.ParseCommands();
                     MainForm.UseCommandLineArgs(cli.Commands);
                 };
-
                 MainForm.InvokeSafe(d);
             }
         }

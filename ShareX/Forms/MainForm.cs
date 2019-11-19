@@ -1044,6 +1044,13 @@ namespace ShareX
                     continue;
                 }
 
+                if (command.IsCommand && command.Command.Equals("sharebyjson", StringComparison.InvariantCultureIgnoreCase))
+                {
+                    CheckSharedTarget(command.Parameter, taskSettings);
+
+                    continue;
+                }
+
                 if (command.IsCommand && (CheckCLIHotkey(command) || CheckCLIWorkflow(command)))
                 {
                     continue;
@@ -1057,6 +1064,64 @@ namespace ShareX
                 {
                     UploadManager.UploadFile(command.Command, taskSettings);
                 }
+            }
+        }
+
+        private void CheckSharedTarget(string jsonpath, TaskSettings taskSettings)
+        {
+            if (Program.DesktopBridgeHelper.IsRunningAsUwp())
+            {
+#if WindowsStore || WindowsStoreDebug
+                var path = Windows.Storage.ApplicationData.Current.TemporaryFolder.Path;
+
+                void delfiles()
+                {
+                    foreach (var one in Directory.EnumerateFiles(path))
+                    {
+                        try
+                        {
+                            File.Delete(one);
+                        }
+                        catch
+                        {
+                            System.Diagnostics.Debug.WriteLine("deleting share target error");
+                        }
+                    }
+                }
+                try
+                {
+                    var jsonfilepath = Directory.EnumerateFiles(path).OrderBy((a) => File.GetLastWriteTimeUtc(a)).FirstOrDefault();
+
+                    var sti = Newtonsoft.Json.JsonConvert.DeserializeObject<BridgeLib.ShareTargetInfo>(File.ReadAllText(jsonfilepath));
+                    if (sti.Paths != null)
+                    {
+                        var ls = UploadManager.UploadFileForWorkerTask(sti.Paths.ToArray(), taskSettings).ToList();
+                        ls.ForEach((tk) =>
+                        {
+                            tk.TaskCompleted += complete;
+                        });
+                        void complete(WorkerTask tk)
+                        {
+                            ls.Remove(tk);
+                            tk.TaskCompleted -= complete;
+                            if (ls.Count == 0)
+                            {
+                                delfiles();
+                            }
+                        }
+                    }
+                    else if (sti.Text != null)
+                    {
+                        UploadManager.UploadText(sti.Text,taskSettings,true);
+                        delfiles();
+                    }
+                }
+                catch
+                {
+                    delfiles();
+                    MessageBox.Show(Resources.Program_Run_Error);
+                }
+#endif
             }
         }
 
@@ -1341,7 +1406,7 @@ namespace ShareX
             Close();
         }
 
-        #region Form events
+#region Form events
 
         protected override void SetVisibleCore(bool value)
         {
@@ -1640,7 +1705,7 @@ namespace ShareX
             HideNews();
         }
 
-        #region Menu events
+#region Menu events
 
         private void tsmiFullscreen_Click(object sender, EventArgs e)
         {

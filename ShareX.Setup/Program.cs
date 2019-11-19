@@ -66,7 +66,6 @@ namespace ShareX.Setup
 
         private static SetupJobs Job = SetupJobs.Stable;
         private static bool AppVeyor = false;
-
         private static string ParentDir => AppVeyor ? "." : @"..\..\..\";
         private static string BinDir => Path.Combine(ParentDir, "ShareX", "bin");
         private static string ReleaseDir => Path.Combine(BinDir, "Release");
@@ -91,11 +90,13 @@ namespace ShareX.Setup
         private static string NativeMessagingHostDir => Path.Combine(ParentDir, @"ShareX.NativeMessagingHost\bin\Release");
         private static string RecorderDevicesSetupPath => Path.Combine(OutputDir, "Recorder-devices-setup.exe");
         private static string WindowsStoreAppxPath => Path.Combine(OutputDir, "ShareX.appx");
+        private static string WindowsStoreAppAppxPath => Path.Combine(OutputDir, "ShareXApp.appx");
 
         public static string InnoSetupCompilerPath = @"C:\Program Files (x86)\Inno Setup 6\ISCC.exe";
         public static string FFmpeg32bit => Path.Combine(OutputDir, "ffmpeg.exe");
         public static string FFmpeg64bit => Path.Combine(OutputDir, "ffmpeg-x64.exe");
         public static string MakeAppxPath = @"C:\Program Files (x86)\Windows Kits\10\bin\x64\makeappx.exe";
+        public static string WindowsAppPackagePackagePath = Path.Combine(ParentDir, @"ShareX.WindowsAppPackage\AppPackages");
 
         private static void Main(string[] args)
         {
@@ -270,6 +271,87 @@ namespace ShareX.Setup
             CreateFolder(SteamDir, SteamUpdatesDir, SetupJobs.CreateSteamFolder);
         }
 
+        private static void UnpackAnAppxPackageToAPath(string filepath,string dirpath)
+        {
+            using (Process process = new Process())
+            {
+                ProcessStartInfo psi = new ProcessStartInfo()
+                {
+                    FileName = MakeAppxPath,
+                    Arguments = $"unpack /d \"{dirpath}\" /p \"{filepath}\" /l /o",
+                    UseShellExecute = false,
+                    RedirectStandardOutput = true
+                };
+
+                process.OutputDataReceived += (s, e) => Console.WriteLine(e.Data);
+                process.StartInfo = psi;
+                process.Start();
+                process.BeginOutputReadLine();
+                process.WaitForExit();
+            }
+        }
+
+        private static void UnpackAnAppxBundlePackageToAPath(string filepath, string dirpath)
+        {
+            using (Process process = new Process())
+            {
+                ProcessStartInfo psi = new ProcessStartInfo()
+                {
+                    FileName = MakeAppxPath,
+                    Arguments = $"unbundle /d \"{dirpath}\" /p \"{filepath}\" /l /o",
+                    UseShellExecute = false,
+                    RedirectStandardOutput = true
+                };
+
+                process.OutputDataReceived += (s, e) => Console.WriteLine(e.Data);
+                process.StartInfo = psi;
+                process.Start();
+                process.BeginOutputReadLine();
+                process.WaitForExit();
+            }
+        }
+        private static void RebuildToGetAppx()
+        {
+            throw new NotImplementedException("Can't create an appx package");
+            //maybe do sth like msbuild ShareX.sln /p:AppxBundle=Never /p:Configuration=WindowsStore /p:Platform=x86 /p:AppxPackageSigningEnabled=false
+        }
+        private static string CreateATempFolder()
+        {
+            var path = Path.Combine(Path.GetTempPath(), Path.GetTempFileName());
+            Directory.CreateDirectory(path);
+            return path;
+        }
+        private static void PutAppxFileInPath(string path)
+        {
+            string appxfile = null;
+            if (Directory.Exists(WindowsAppPackagePackagePath))
+            {
+                var dir = Directory.EnumerateDirectories(WindowsAppPackagePackagePath).SingleOrDefault();
+                if (dir != null)
+                {
+                    appxfile = Directory.EnumerateFiles(dir).Where(a=>a.EndsWith(".appx",StringComparison.Ordinal)).SingleOrDefault();
+                    if (appxfile == null)
+                    {
+                        var appxbundlefile = Directory.EnumerateFiles(dir).Where(a => a.EndsWith(".appxbundle", StringComparison.Ordinal)).SingleOrDefault();
+                        if (appxbundlefile != null)
+                        {
+                            var tmpf = CreateATempFolder();
+                            UnpackAnAppxBundlePackageToAPath(appxbundlefile, tmpf);
+                            appxfile = Directory.EnumerateFiles(tmpf).Where(a => a.EndsWith("appx", StringComparison.Ordinal)).SingleOrDefault();
+                        }
+                    }
+                }
+            }
+            if (appxfile == null)
+            {
+                Directory.Delete(WindowsAppPackagePackagePath, true);
+                RebuildToGetAppx();
+                PutAppxFileInPath(path);
+                return;
+            }
+            UnpackAnAppxPackageToAPath(appxfile, path);
+        }
+
         private static void CreateFolder(string source, string destination, SetupJobs job)
         {
             Console.WriteLine("Creating folder: " + destination);
@@ -277,6 +359,15 @@ namespace ShareX.Setup
             if (Directory.Exists(destination))
             {
                 Directory.Delete(destination, true);
+            }
+
+            if (job == SetupJobs.CreateWindowsStoreFolder || job == SetupJobs.CreateWindowsStoreDebugFolder)
+            {
+                PutAppxFileInPath(destination);
+                var sxp = Path.Combine(destination, "ShareX");
+                Directory.Delete(sxp, true);
+                Directory.CreateDirectory(sxp);
+                destination = sxp;
             }
 
             Directory.CreateDirectory(destination);
@@ -316,10 +407,6 @@ namespace ShareX.Setup
             if (job == SetupJobs.CreatePortableAppsFolder)
             {
                 Helpers.CreateEmptyFile(Path.Combine(destination, "PortableApps"));
-            }
-            else if (job == SetupJobs.CreateWindowsStoreFolder || job == SetupJobs.CreateWindowsStoreDebugFolder)
-            {
-                Helpers.CopyAll(WindowsStorePackageFilesDir, destination);
             }
             else if (job == SetupJobs.CreatePortable)
             {

@@ -308,6 +308,15 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Windows Share.
+        /// </summary>
+        internal static string AfterCaptureTasks_WindowsShare {
+            get {
+                return ResourceManager.GetString("AfterCaptureTasks_WindowsShare", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Copy URL to clipboard.
         /// </summary>
         internal static string AfterUploadTasks_CopyURLToClipboard {

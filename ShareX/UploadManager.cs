@@ -73,6 +73,42 @@ namespace ShareX
                 }
             }
         }
+        public static System.Collections.Generic.IEnumerable<WorkerTask> UploadFileForWorkerTask(string filePath, TaskSettings taskSettings = null)
+        {
+            if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
+
+            if (!string.IsNullOrEmpty(filePath))
+            {
+                if (File.Exists(filePath))
+                {
+                    WorkerTask task = WorkerTask.CreateFileUploaderTask(filePath, taskSettings);
+                    TaskManager.Start(task);
+                    return new WorkerTask[] { task };
+                }
+                else if (Directory.Exists(filePath))
+                {
+                    string[] files = Directory.GetFiles(filePath, "*.*", SearchOption.AllDirectories);
+                    return UploadFileForWorkerTask(files, taskSettings);
+                }
+            }
+            return Array.Empty<WorkerTask>();
+        }
+        public static System.Collections.Generic.IEnumerable<WorkerTask> UploadFileForWorkerTask(string[] files, TaskSettings taskSettings = null)
+        {
+            if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
+            System.Collections.Generic.IEnumerable<WorkerTask> rt = Array.Empty<WorkerTask>();
+            if (files != null && files.Length > 0)
+            {
+                if (files.Length <= 10 || IsUploadConfirmed(files.Length))
+                {
+                    foreach (string file in files)
+                    {
+                        rt = rt.Concat(UploadFileForWorkerTask(file, taskSettings));
+                    }
+                }
+            }
+            return rt;
+        }
 
         private static bool IsUploadConfirmed(int length)
         {

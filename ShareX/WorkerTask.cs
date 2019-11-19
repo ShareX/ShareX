@@ -690,6 +690,59 @@ namespace ShareX
                 }
             }
 
+#if WindowsStore || WindowsStoreDebug
+            if (Info.TaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.WindowsShare))
+            {
+                var info = Info;
+                ImageData imageData = null;
+                if (!File.Exists(Info.FilePath))
+                {
+                    imageData = TaskHelpers.PrepareImage(Image, info.TaskSettings);
+                }
+                Action action = async() =>
+                 {
+                     var helper = new DataTransferManagerHelper(Program.MainForm.Handle);
+                     var dataTransferManager = helper.DataTransferManager;
+                     Windows.Foundation.TypedEventHandler<Windows.ApplicationModel.DataTransfer.DataTransferManager, Windows.ApplicationModel.DataTransfer.DataRequestedEventArgs> copy = null;
+#pragma warning disable IDE0039 // Use local function
+                     Windows.Foundation.TypedEventHandler<Windows.ApplicationModel.DataTransfer.DataTransferManager, Windows.ApplicationModel.DataTransfer.DataRequestedEventArgs> handler = async (sender, args) =>
+#pragma warning restore IDE0039 // Use local function
+                     {
+                         var deferral = args.Request.GetDeferral();
+                         try
+                         {
+                             args.Request.Data.Properties.Title = info.FileName;
+                             if (File.Exists(Info.FilePath))
+                             {
+                                 args.Request.Data.SetStorageItems(new Windows.Storage.IStorageItem[] { await Windows.Storage.StorageFile.GetFileFromPathAsync(info.FilePath) });
+                             }
+                             else
+                             {
+                                 async System.Threading.Tasks.Task<Windows.Storage.Streams.IRandomAccessStream> ConvertToRandomAccessStreamAsync(MemoryStream memoryStream)
+                                 {
+                                     var randomAccessStream = new Windows.Storage.Streams.InMemoryRandomAccessStream();
+                                     memoryStream.Seek(0, SeekOrigin.Begin);
+                                     await Windows.Storage.Streams.RandomAccessStream.CopyAsync(memoryStream.AsInputStream(), randomAccessStream);
+                                     return randomAccessStream;
+                                 }
+                                 args.Request.Data.SetBitmap(Windows.Storage.Streams.RandomAccessStreamReference.CreateFromStream(await ConvertToRandomAccessStreamAsync(imageData.ImageStream)));
+                             }
+                         }
+                         finally
+                         {
+                             dataTransferManager.DataRequested -= copy;
+                             deferral.Complete();
+                         }
+                     };
+                     copy = handler;
+                     dataTransferManager.DataRequested += handler;
+                     await System.Threading.Tasks.Task.Delay(50);
+                     helper.ShowShareUI();
+                 };
+                Program.MainForm.Invoke(action);
+            }
+#endif
+
             return true;
         }
 

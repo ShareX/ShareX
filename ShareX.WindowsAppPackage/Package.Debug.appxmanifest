@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities" xmlns:desktop="http://schemas.microsoft.com/appx/manifest/desktop/windows10" xmlns:uap3="http://schemas.microsoft.com/appx/manifest/uap/windows10/3" xmlns:desktop2="http://schemas.microsoft.com/appx/manifest/desktop/windows10/2" IgnorableNamespaces="uap mp rescap desktop2">
+  <Identity Name="ae4d3f38-0402-4776-bdf4-a24f0ea0919d" Publisher="CN=ShareX_Team" Version="1.0.1.0" />
+  <Properties>
+    <DisplayName>ShareX.WindowsAppPackage</DisplayName>
+    <PublisherDisplayName>yinyu</PublisherDisplayName>
+    <Logo>Images\StoreLogo.png</Logo>
+  </Properties>
+  <Dependencies>
+    <TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.14393.0" MaxVersionTested="10.0.17763.0" />
+  </Dependencies>
+  <Resources>
+    <Resource Language="x-generate" />
+  </Resources>
+  <Applications>
+    <Application Id="ShareX" Executable="ShareX\ShareX.exe" EntryPoint="Windows.FullTrustApplication">
+      <uap:VisualElements DisplayName="ShareX.WindowsAppPackage" Description="ShareX.WindowsAppPackage" BackgroundColor="transparent" Square150x150Logo="Images\Square150x150Logo.png" Square44x44Logo="Images\Square44x44Logo.png">
+        <uap:DefaultTile Wide310x150Logo="Images\Wide310x150Logo.png">
+        </uap:DefaultTile>
+      </uap:VisualElements>
+      <Extensions>
+        <desktop:Extension Category="windows.fullTrustProcess" Executable="ShareX\ShareX.exe">
+          <desktop:FullTrustProcess>
+            <desktop:ParameterGroup GroupId="ShareByJson" Parameters="-sharebyjson" />
+          </desktop:FullTrustProcess>
+        </desktop:Extension>
+        <desktop:Extension Category="windows.startupTask" Executable="ShareX\ShareX.exe" EntryPoint="Windows.FullTrustApplication">
+          <desktop:StartupTask TaskId="ShareX" Enabled="false" DisplayName="ShareXDebug" />
+        </desktop:Extension>
+        <uap:Extension Category="windows.shareTarget" Executable="ShareX.App.exe" EntryPoint="App">
+          <uap:ShareTarget Description="Share to ShareX">
+            <uap:SupportedFileTypes>
+              <uap:SupportsAnyFileType />
+            </uap:SupportedFileTypes>
+            <uap:DataFormat>Text</uap:DataFormat>
+            <uap:DataFormat>StorageItems</uap:DataFormat>
+          </uap:ShareTarget>
+        </uap:Extension>
+        <uap:Extension Category="windows.fileTypeAssociation" Executable="ShareX\ShareX.exe" EntryPoint="Windows.FullTrustApplication">
+          <uap3:FileTypeAssociation Name="sharex-custom-uploader" Parameters="-CustomUploader &quot;%1&quot;">
+            <uap:DisplayName>ShareX custom uploader</uap:DisplayName>
+            <uap:SupportedFileTypes>
+              <uap:FileType>.sxcu</uap:FileType>
+            </uap:SupportedFileTypes>
+          </uap3:FileTypeAssociation>
+        </uap:Extension>
+      </Extensions>
+    </Application>
+  </Applications>
+  <Capabilities>
+    <Capability Name="internetClient" />
+    <rescap:Capability Name="runFullTrust" />
+  </Capabilities>
+</Package>
