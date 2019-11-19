@@ -39,6 +39,11 @@ namespace ShareX.MediaLib
         {
             get
             {
+                if (string.IsNullOrEmpty(OutputFolderPath) || string.IsNullOrEmpty(OutputFileName))
+                {
+                    return "";
+                }
+
                 string path = Path.Combine(OutputFolderPath, OutputFileName);
                 string extension = GetFileExtension();
                 return Path.ChangeExtension(path, extension);

@@ -574,6 +574,11 @@ namespace ShareX.HelpersLib
             nud.Value = number.Clamp(nud.Minimum, nud.Maximum);
         }
 
+        public static void SetValue(this TrackBar tb, int number)
+        {
+            tb.Value = number.Clamp(tb.Minimum, tb.Maximum);
+        }
+
         public static bool IsValidImage(this PictureBox pb)
         {
             return pb.Image != null && pb.Image != pb.InitialImage && pb.Image != pb.ErrorImage;

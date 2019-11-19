@@ -46,13 +46,13 @@ namespace ShareX.MediaLib
             InitializeComponent();
             ShareXResources.ApplyTheme(this);
 
+            UpdateOptions();
+
             cbVideoCodec.Items.AddRange(Helpers.GetEnumDescriptions<ConverterVideoCodecs>());
             cbVideoCodec.SelectedIndex = (int)Options.VideoCodec;
-            nudVideoQuality.SetValue(Options.VideoQuality);
+            tbVideoQuality.SetValue(Options.VideoQuality);
 
             ready = true;
-
-            UpdateOptions();
         }
 
         private void UpdateOptions()
@@ -63,45 +63,47 @@ namespace ShareX.MediaLib
                 Options.OutputFolderPath = txtOutputFolder.Text;
                 Options.OutputFileName = txtOutputFileName.Text;
                 Options.VideoCodec = (ConverterVideoCodecs)cbVideoCodec.SelectedIndex;
-                Options.VideoQuality = (int)nudVideoQuality.Value;
-
-                switch (Options.VideoCodec)
-                {
-                    case ConverterVideoCodecs.x264:
-                    case ConverterVideoCodecs.x265:
-                    case ConverterVideoCodecs.vp8:
-                    case ConverterVideoCodecs.vp9:
-                    case ConverterVideoCodecs.xvid:
-                        nudVideoQuality.Enabled = true;
-                        break;
-                    default:
-                        nudVideoQuality.Enabled = false;
-                        break;
-                }
-
-                switch (Options.VideoCodec)
-                {
-                    case ConverterVideoCodecs.x264:
-                    case ConverterVideoCodecs.x265:
-                        nudVideoQuality.Minimum = 0;
-                        nudVideoQuality.Maximum = 51;
-                        break;
-                    case ConverterVideoCodecs.vp8:
-                    case ConverterVideoCodecs.vp9:
-                        nudVideoQuality.Minimum = 0;
-                        nudVideoQuality.Maximum = 63;
-                        break;
-                    case ConverterVideoCodecs.xvid:
-                        nudVideoQuality.Minimum = 1;
-                        nudVideoQuality.Maximum = 31;
-                        break;
-                }
-
-                txtArguments.Text = Options.GetFFmpegArgs();
-
-                btnEncode.Enabled = !string.IsNullOrEmpty(Options.InputFilePath) && !string.IsNullOrEmpty(Options.OutputFolderPath) &&
-                    !string.IsNullOrEmpty(Options.OutputFileName);
+                Options.VideoQuality = tbVideoQuality.Value;
             }
+
+            switch (Options.VideoCodec)
+            {
+                case ConverterVideoCodecs.x264:
+                case ConverterVideoCodecs.x265:
+                case ConverterVideoCodecs.vp8:
+                case ConverterVideoCodecs.vp9:
+                case ConverterVideoCodecs.xvid:
+                    tbVideoQuality.Enabled = true;
+                    break;
+                default:
+                    tbVideoQuality.Enabled = false;
+                    break;
+            }
+
+            switch (Options.VideoCodec)
+            {
+                case ConverterVideoCodecs.x264:
+                case ConverterVideoCodecs.x265:
+                    tbVideoQuality.Minimum = 0;
+                    tbVideoQuality.Maximum = 51;
+                    break;
+                case ConverterVideoCodecs.vp8:
+                case ConverterVideoCodecs.vp9:
+                    tbVideoQuality.Minimum = 0;
+                    tbVideoQuality.Maximum = 63;
+                    break;
+                case ConverterVideoCodecs.xvid:
+                    tbVideoQuality.Minimum = 1;
+                    tbVideoQuality.Maximum = 31;
+                    break;
+            }
+
+            lblVideoQualityValue.Text = tbVideoQuality.Value.ToString();
+
+            txtArguments.Text = Options.GetFFmpegArgs();
+
+            btnEncode.Enabled = !string.IsNullOrEmpty(Options.InputFilePath) && !string.IsNullOrEmpty(Options.OutputFolderPath) &&
+                !string.IsNullOrEmpty(Options.OutputFileName);
         }
 
         private bool StartEncoding()
@@ -176,7 +178,7 @@ namespace ShareX.MediaLib
             UpdateOptions();
         }
 
-        private void nudVideoQuality_ValueChanged(object sender, EventArgs e)
+        private void tbVideoQuality_ValueChanged(object sender, EventArgs e)
         {
             UpdateOptions();
         }
