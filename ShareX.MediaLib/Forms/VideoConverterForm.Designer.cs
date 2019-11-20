@@ -203,25 +203,25 @@
             this.lblVideoQualityValue.Location = new System.Drawing.Point(413, 115);
             this.lblVideoQualityValue.Name = "lblVideoQualityValue";
             this.lblVideoQualityValue.Size = new System.Drawing.Size(13, 13);
-            this.lblVideoQualityValue.TabIndex = 12;
+            this.lblVideoQualityValue.TabIndex = 14;
             this.lblVideoQualityValue.Text = "0";
             // 
             // lblVideoQualityHigher
             // 
-            this.lblVideoQualityHigher.Location = new System.Drawing.Point(120, 134);
+            this.lblVideoQualityHigher.Location = new System.Drawing.Point(264, 134);
             this.lblVideoQualityHigher.Name = "lblVideoQualityHigher";
             this.lblVideoQualityHigher.Size = new System.Drawing.Size(136, 22);
             this.lblVideoQualityHigher.TabIndex = 13;
-            this.lblVideoQualityHigher.Text = "<- Higher quality/size";
+            this.lblVideoQualityHigher.Text = "Higher quality/size ->";
+            this.lblVideoQualityHigher.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // lvlVideoQualityLower
             // 
-            this.lvlVideoQualityLower.Location = new System.Drawing.Point(264, 134);
+            this.lvlVideoQualityLower.Location = new System.Drawing.Point(120, 134);
             this.lvlVideoQualityLower.Name = "lvlVideoQualityLower";
             this.lvlVideoQualityLower.Size = new System.Drawing.Size(136, 22);
-            this.lvlVideoQualityLower.TabIndex = 14;
-            this.lvlVideoQualityLower.Text = "Lower quality/size ->";
-            this.lvlVideoQualityLower.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.lvlVideoQualityLower.TabIndex = 12;
+            this.lvlVideoQualityLower.Text = "<- Lower quality/size";
             // 
             // VideoConverterForm
             // 
@@ -229,7 +229,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(456, 316);
-            this.Controls.Add(this.lvlVideoQualityLower);
             this.Controls.Add(this.lblVideoQualityHigher);
             this.Controls.Add(this.lblVideoQualityValue);
             this.Controls.Add(this.tbVideoQuality);
@@ -248,6 +247,7 @@
             this.Controls.Add(this.lblInputFilePath);
             this.Controls.Add(this.btnEncode);
             this.Controls.Add(this.pbProgress);
+            this.Controls.Add(this.lvlVideoQualityLower);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "VideoConverterForm";

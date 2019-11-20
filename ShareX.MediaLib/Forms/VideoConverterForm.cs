@@ -63,7 +63,6 @@ namespace ShareX.MediaLib
                 Options.OutputFolderPath = txtOutputFolder.Text;
                 Options.OutputFileName = txtOutputFileName.Text;
                 Options.VideoCodec = (ConverterVideoCodecs)cbVideoCodec.SelectedIndex;
-                Options.VideoQuality = tbVideoQuality.Value;
             }
 
             switch (Options.VideoCodec)
@@ -98,7 +97,12 @@ namespace ShareX.MediaLib
                     break;
             }
 
-            lblVideoQualityValue.Text = tbVideoQuality.Value.ToString();
+            if (ready)
+            {
+                Options.VideoQuality = tbVideoQuality.Minimum + tbVideoQuality.Maximum - tbVideoQuality.Value;
+            }
+
+            lblVideoQualityValue.Text = Options.VideoQuality.ToString();
 
             txtArguments.Text = Options.GetFFmpegArgs();
 
