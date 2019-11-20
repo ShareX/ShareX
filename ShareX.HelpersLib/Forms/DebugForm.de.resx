@@ -130,7 +130,7 @@
     <value>Log Datei öffnen...</value>
   </data>
   <data name="btnUploadLog.Text" xml:space="preserve">
-    <value>Upload-Protokoll...</value>
+    <value>Protokoll hochladen...</value>
   </data>
   <data name="lblRunningFrom.Text" xml:space="preserve">
     <value>Startverzeichnis:</value>
