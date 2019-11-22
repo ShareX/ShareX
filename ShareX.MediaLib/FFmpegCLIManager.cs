@@ -38,6 +38,13 @@ namespace ShareX.MediaLib
         public string FFmpegPath { get; private set; }
         public StringBuilder Output { get; private set; }
         public bool ShowError { get; set; }
+        public bool TrackEncodeProgress { get; set; }
+        public TimeSpan VideoDuration { get; set; }
+        public TimeSpan EncodeTime { get; set; }
+        public float EncodePercentage { get; set; }
+
+        public delegate void EncodeProgressChangedEventHandler(float percentage);
+        public event EncodeProgressChangedEventHandler EncodeProgressChanged;
 
         public FFmpegCLIManager(string ffmpegPath)
         {
@@ -52,11 +59,57 @@ namespace ShareX.MediaLib
         {
             lock (this)
             {
-                if (!string.IsNullOrEmpty(e.Data))
+                string data = e.Data;
+
+                if (!string.IsNullOrEmpty(data))
                 {
-                    Output.AppendLine(e.Data);
+                    Output.AppendLine(data);
+
+                    if (TrackEncodeProgress)
+                    {
+                        if (VideoDuration.Ticks == 0)
+                        {
+                            //  Duration: 00:00:15.32, start: 0.000000, bitrate: 1095 kb/s
+                            Match matchInput = Regex.Match(data,
+                                @"\s*Duration: (?<Duration>\d{2}:\d{2}:\d{2}\.\d{2}),\s*start: (?<Start>\d+\.\d+),\s*bitrate: (?<Bitrate>\d+) kb/s", RegexOptions.CultureInvariant);
+
+                            if (matchInput.Success)
+                            {
+                                TimeSpan duration;
+
+                                if (TimeSpan.TryParse(matchInput.Groups["Duration"].Value, out duration))
+                                {
+                                    VideoDuration = duration;
+                                }
+                            }
+                        }
+                        else
+                        {
+                            //frame=  942 fps=187 q=35.0 size=    3072kB time=00:00:38.10 bitrate= 660.5kbits/s speed=7.55x
+                            Match matchInput = Regex.Match(data,
+                                @"frame=\s*(?<Frame>\d+)\s*fps=\s*(?<FPS>\d+).+time=\s*(?<Time>\d{2}:\d{2}:\d{2}\.\d{2})\s*bitrate=", RegexOptions.CultureInvariant);
+
+                            if (matchInput.Success)
+                            {
+                                TimeSpan time;
+
+                                if (TimeSpan.TryParse(matchInput.Groups["Time"].Value, out time))
+                                {
+                                    EncodeTime = time;
+                                    EncodePercentage = ((float)EncodeTime.Ticks / VideoDuration.Ticks) * 100;
+
+                                    OnEncodeProgressChanged(EncodePercentage);
+                                }
+                            }
+                        }
+                    }
                 }
             }
+        }
+
+        protected void OnEncodeProgressChanged(float percentage)
+        {
+            EncodeProgressChanged?.Invoke(percentage);
         }
 
         public bool Run(string args)

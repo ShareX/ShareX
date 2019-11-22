@@ -123,6 +123,8 @@ namespace ShareX.MediaLib
                 using (FFmpegCLIManager manager = new FFmpegCLIManager(FFmpegFilePath))
                 {
                     manager.ShowError = true;
+                    manager.TrackEncodeProgress = true;
+                    manager.EncodeProgressChanged += Manager_EncodeProgressChanged;
 
                     string outputFilePath = Options.OutputFilePath;
                     string args = Options.GetFFmpegArgs();
@@ -136,6 +138,11 @@ namespace ShareX.MediaLib
             }
 
             return result;
+        }
+
+        private void Manager_EncodeProgressChanged(float percentage)
+        {
+            this.InvokeSafe(() => pbProgress.Value = (int)percentage);
         }
 
         private Task<bool> StartEncodingAsync()
@@ -199,6 +206,7 @@ namespace ShareX.MediaLib
         {
             UpdateOptions();
 
+            pbProgress.Value = 0;
             pbProgress.Visible = true;
             btnEncode.Visible = false;
 

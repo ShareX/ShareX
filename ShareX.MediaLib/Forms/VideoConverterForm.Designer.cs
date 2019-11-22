@@ -182,10 +182,8 @@
             // pbProgress
             // 
             this.pbProgress.Location = new System.Drawing.Point(16, 272);
-            this.pbProgress.MarqueeAnimationSpeed = 50;
             this.pbProgress.Name = "pbProgress";
             this.pbProgress.Size = new System.Drawing.Size(424, 32);
-            this.pbProgress.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
             this.pbProgress.TabIndex = 16;
             // 
             // tbVideoQuality
