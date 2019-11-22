@@ -54,14 +54,16 @@ namespace ShareX.HelpersLib
             }
         }
 
-        public static void ShowImage(string filepath)
+        public static void ShowImage(string filePath)
         {
-            if (!string.IsNullOrEmpty(filepath) && File.Exists(filepath))
+            using (Image img = ImageHelpers.LoadImage(filePath))
             {
-                using (Image img = ImageHelpers.LoadImage(filepath))
-                using (ImageViewer viewer = new ImageViewer(img))
+                if (img != null)
                 {
-                    viewer.ShowDialog();
+                    using (ImageViewer viewer = new ImageViewer(img))
+                    {
+                        viewer.ShowDialog();
+                    }
                 }
             }
         }
