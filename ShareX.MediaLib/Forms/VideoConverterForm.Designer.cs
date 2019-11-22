@@ -41,7 +41,6 @@
             this.lblVideoQuality = new System.Windows.Forms.Label();
             this.btnEncode = new System.Windows.Forms.Button();
             this.txtArguments = new System.Windows.Forms.TextBox();
-            this.pbProgress = new System.Windows.Forms.ProgressBar();
             this.tbVideoQuality = new System.Windows.Forms.TrackBar();
             this.lblVideoQualityValue = new System.Windows.Forms.Label();
             this.lblVideoQualityHigher = new System.Windows.Forms.Label();
@@ -50,6 +49,7 @@
             this.tpOptions = new System.Windows.Forms.TabPage();
             this.tpArguments = new System.Windows.Forms.TabPage();
             this.tpAdvanced = new System.Windows.Forms.TabPage();
+            this.pbProgress = new ShareX.HelpersLib.BlackStyleProgressBar();
             ((System.ComponentModel.ISupportInitialize)(this.tbVideoQuality)).BeginInit();
             this.tcMain.SuspendLayout();
             this.tpOptions.SuspendLayout();
@@ -130,7 +130,7 @@
             // lblVideoCodec
             // 
             this.lblVideoCodec.AutoSize = true;
-            this.lblVideoCodec.Location = new System.Drawing.Point(9, 18);
+            this.lblVideoCodec.Location = new System.Drawing.Point(13, 16);
             this.lblVideoCodec.Name = "lblVideoCodec";
             this.lblVideoCodec.Size = new System.Drawing.Size(70, 13);
             this.lblVideoCodec.TabIndex = 8;
@@ -140,7 +140,7 @@
             // 
             this.cbVideoCodec.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbVideoCodec.FormattingEnabled = true;
-            this.cbVideoCodec.Location = new System.Drawing.Point(112, 14);
+            this.cbVideoCodec.Location = new System.Drawing.Point(112, 12);
             this.cbVideoCodec.Name = "cbVideoCodec";
             this.cbVideoCodec.Size = new System.Drawing.Size(120, 21);
             this.cbVideoCodec.TabIndex = 9;
@@ -149,7 +149,7 @@
             // lblVideoQuality
             // 
             this.lblVideoQuality.AutoSize = true;
-            this.lblVideoQuality.Location = new System.Drawing.Point(9, 47);
+            this.lblVideoQuality.Location = new System.Drawing.Point(13, 48);
             this.lblVideoQuality.Name = "lblVideoQuality";
             this.lblVideoQuality.Size = new System.Drawing.Size(70, 13);
             this.lblVideoQuality.TabIndex = 10;
@@ -176,18 +176,11 @@
             this.txtArguments.Size = new System.Drawing.Size(400, 136);
             this.txtArguments.TabIndex = 16;
             // 
-            // pbProgress
-            // 
-            this.pbProgress.Location = new System.Drawing.Point(16, 272);
-            this.pbProgress.Name = "pbProgress";
-            this.pbProgress.Size = new System.Drawing.Size(424, 32);
-            this.pbProgress.TabIndex = 16;
-            // 
             // tbVideoQuality
             // 
             this.tbVideoQuality.AutoSize = false;
             this.tbVideoQuality.BackColor = System.Drawing.SystemColors.Window;
-            this.tbVideoQuality.Location = new System.Drawing.Point(104, 42);
+            this.tbVideoQuality.Location = new System.Drawing.Point(104, 43);
             this.tbVideoQuality.Name = "tbVideoQuality";
             this.tbVideoQuality.Size = new System.Drawing.Size(272, 22);
             this.tbVideoQuality.TabIndex = 11;
@@ -197,7 +190,7 @@
             // lblVideoQualityValue
             // 
             this.lblVideoQualityValue.AutoSize = true;
-            this.lblVideoQualityValue.Location = new System.Drawing.Point(384, 47);
+            this.lblVideoQualityValue.Location = new System.Drawing.Point(382, 46);
             this.lblVideoQualityValue.Name = "lblVideoQualityValue";
             this.lblVideoQualityValue.Size = new System.Drawing.Size(13, 13);
             this.lblVideoQualityValue.TabIndex = 14;
@@ -205,7 +198,7 @@
             // 
             // lblVideoQualityHigher
             // 
-            this.lblVideoQualityHigher.Location = new System.Drawing.Point(240, 68);
+            this.lblVideoQualityHigher.Location = new System.Drawing.Point(240, 66);
             this.lblVideoQualityHigher.Name = "lblVideoQualityHigher";
             this.lblVideoQualityHigher.Size = new System.Drawing.Size(128, 22);
             this.lblVideoQualityHigher.TabIndex = 13;
@@ -214,7 +207,7 @@
             // 
             // lvlVideoQualityLower
             // 
-            this.lvlVideoQualityLower.Location = new System.Drawing.Point(112, 68);
+            this.lvlVideoQualityLower.Location = new System.Drawing.Point(112, 66);
             this.lvlVideoQualityLower.Name = "lvlVideoQualityLower";
             this.lvlVideoQualityLower.Size = new System.Drawing.Size(128, 22);
             this.lvlVideoQualityLower.TabIndex = 12;
@@ -269,6 +262,16 @@
             this.tpAdvanced.Text = "Advanced";
             this.tpAdvanced.UseVisualStyleBackColor = true;
             // 
+            // pbProgress
+            // 
+            this.pbProgress.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pbProgress.ForeColor = System.Drawing.Color.White;
+            this.pbProgress.Location = new System.Drawing.Point(16, 272);
+            this.pbProgress.Name = "pbProgress";
+            this.pbProgress.ShowPercentageText = true;
+            this.pbProgress.Size = new System.Drawing.Size(424, 32);
+            this.pbProgress.TabIndex = 19;
+            // 
             // VideoConverterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -317,7 +320,6 @@
         private System.Windows.Forms.Label lblVideoQuality;
         private System.Windows.Forms.Button btnEncode;
         private System.Windows.Forms.TextBox txtArguments;
-        private System.Windows.Forms.ProgressBar pbProgress;
         private System.Windows.Forms.TrackBar tbVideoQuality;
         private System.Windows.Forms.Label lblVideoQualityValue;
         private System.Windows.Forms.Label lblVideoQualityHigher;
@@ -326,5 +328,6 @@
         private System.Windows.Forms.TabPage tpOptions;
         private System.Windows.Forms.TabPage tpArguments;
         private System.Windows.Forms.TabPage tpAdvanced;
+        private HelpersLib.BlackStyleProgressBar pbProgress;
     }
 }
