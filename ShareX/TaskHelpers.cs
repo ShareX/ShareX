@@ -854,8 +854,8 @@ namespace ShareX
                 return;
             }
 
-            VideoConverterOptions options = new VideoConverterOptions();
-            VideoConverterForm videoConverterForm = new VideoConverterForm(taskSettings.CaptureSettings.FFmpegOptions.FFmpegPath, options);
+            VideoConverterForm videoConverterForm = new VideoConverterForm(taskSettings.CaptureSettings.FFmpegOptions.FFmpegPath,
+                taskSettings.ToolsSettingsReference.VideoConverterOptions);
             videoConverterForm.Show();
         }
 
@@ -869,7 +869,8 @@ namespace ShareX
             }
 
             taskSettings.ToolsSettingsReference.VideoThumbnailOptions.DefaultOutputDirectory = taskSettings.CaptureFolder;
-            VideoThumbnailerForm thumbnailerForm = new VideoThumbnailerForm(taskSettings.CaptureSettings.FFmpegOptions.FFmpegPath, taskSettings.ToolsSettingsReference.VideoThumbnailOptions);
+            VideoThumbnailerForm thumbnailerForm = new VideoThumbnailerForm(taskSettings.CaptureSettings.FFmpegOptions.FFmpegPath,
+                taskSettings.ToolsSettingsReference.VideoThumbnailOptions);
             thumbnailerForm.ThumbnailsTaken += thumbnails =>
             {
                 if (taskSettings.ToolsSettingsReference.VideoThumbnailOptions.UploadThumbnails)

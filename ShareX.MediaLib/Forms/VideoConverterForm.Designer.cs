@@ -102,6 +102,7 @@
             this.btnOutputFolderBrowse.TabIndex = 5;
             this.btnOutputFolderBrowse.Text = "...";
             this.btnOutputFolderBrowse.UseVisualStyleBackColor = true;
+            this.btnOutputFolderBrowse.Click += new System.EventHandler(this.btnOutputFolderBrowse_Click);
             // 
             // lblOutputFileName
             // 

@@ -48,9 +48,12 @@ namespace ShareX.MediaLib
 
             UpdateOptions();
 
+            txtInputFilePath.Text = Options.InputFilePath;
+            txtOutputFolder.Text = Options.OutputFolderPath;
+            txtOutputFileName.Text = Options.OutputFileName;
             cbVideoCodec.Items.AddRange(Helpers.GetEnumDescriptions<ConverterVideoCodecs>());
             cbVideoCodec.SelectedIndex = (int)Options.VideoCodec;
-            tbVideoQuality.SetValue(Options.VideoQuality);
+            tbVideoQuality.SetValue(tbVideoQuality.Minimum + tbVideoQuality.Maximum - Options.VideoQuality);
 
             ready = true;
         }
@@ -170,6 +173,11 @@ namespace ShareX.MediaLib
         private void txtOutputFolder_TextChanged(object sender, EventArgs e)
         {
             UpdateOptions();
+        }
+
+        private void btnOutputFolderBrowse_Click(object sender, EventArgs e)
+        {
+            Helpers.BrowseFolder(txtOutputFolder);
         }
 
         private void txtOutputFileName_TextChanged(object sender, EventArgs e)
