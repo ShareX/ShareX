@@ -149,9 +149,12 @@ namespace ShareX.ScreenCaptureLib
 
             await Task.Run(() =>
             {
-                using (FFmpegHelper ffmpeg = new FFmpegHelper(Options))
+                if (File.Exists(Options.FFmpeg.FFmpegPath))
                 {
-                    devices = ffmpeg.GetDirectShowDevices();
+                    using (FFmpegCLIManager ffmpeg = new FFmpegCLIManager(Options.FFmpeg.FFmpegPath))
+                    {
+                        devices = ffmpeg.GetDirectShowDevices();
+                    }
                 }
             });
 

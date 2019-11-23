@@ -117,18 +117,18 @@ namespace ShareX.MediaLib
         {
             bool result = false;
 
-            if (!string.IsNullOrEmpty(Options.InputFilePath) && File.Exists(Options.InputFilePath) && !string.IsNullOrEmpty(Options.OutputFolderPath) &&
-                !string.IsNullOrEmpty(Options.OutputFileName))
+            if (File.Exists(FFmpegFilePath) && !string.IsNullOrEmpty(Options.InputFilePath) && File.Exists(Options.InputFilePath) &&
+                !string.IsNullOrEmpty(Options.OutputFolderPath) && !string.IsNullOrEmpty(Options.OutputFileName))
             {
-                using (FFmpegCLIManager manager = new FFmpegCLIManager(FFmpegFilePath))
+                using (FFmpegCLIManager ffmpeg = new FFmpegCLIManager(FFmpegFilePath))
                 {
-                    manager.ShowError = true;
-                    manager.TrackEncodeProgress = true;
-                    manager.EncodeProgressChanged += Manager_EncodeProgressChanged;
+                    ffmpeg.ShowError = true;
+                    ffmpeg.TrackEncodeProgress = true;
+                    ffmpeg.EncodeProgressChanged += Manager_EncodeProgressChanged;
 
                     string outputFilePath = Options.OutputFilePath;
                     string args = Options.GetFFmpegArgs();
-                    result = manager.Run(args);
+                    result = ffmpeg.Run(args);
 
                     if (result)
                     {

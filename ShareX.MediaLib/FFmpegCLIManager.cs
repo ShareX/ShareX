@@ -52,6 +52,7 @@ namespace ShareX.MediaLib
             Output = new StringBuilder();
             OutputDataReceived += FFmpeg_DataReceived;
             ErrorDataReceived += FFmpeg_DataReceived;
+
             Helpers.CreateDirectoryFromFilePath(FFmpegPath);
         }
 
@@ -175,6 +176,51 @@ namespace ShareX.MediaLib
             }
 
             return videoInfo;
+        }
+
+        public DirectShowDevices GetDirectShowDevices()
+        {
+            DirectShowDevices devices = new DirectShowDevices();
+
+            Run("-list_devices true -f dshow -i dummy");
+
+            string output = Output.ToString();
+            string[] lines = output.Lines();
+            bool isVideo = true;
+            Regex regex = new Regex(@"\[dshow @ \w+\]  ""(.+)""", RegexOptions.Compiled | RegexOptions.CultureInvariant);
+
+            foreach (string line in lines)
+            {
+                if (line.Contains("] DirectShow video devices", StringComparison.InvariantCulture))
+                {
+                    isVideo = true;
+                    continue;
+                }
+
+                if (line.Contains("] DirectShow audio devices", StringComparison.InvariantCulture))
+                {
+                    isVideo = false;
+                    continue;
+                }
+
+                Match match = regex.Match(line);
+
+                if (match.Success)
+                {
+                    string value = match.Groups[1].Value;
+
+                    if (isVideo)
+                    {
+                        devices.VideoDevices.Add(value);
+                    }
+                    else
+                    {
+                        devices.AudioDevices.Add(value);
+                    }
+                }
+            }
+
+            return devices;
         }
     }
 }

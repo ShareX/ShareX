@@ -81,6 +81,7 @@
     <Compile Include="..\SharedAssemblyInfo.cs">
       <Link>Properties\SharedAssemblyInfo.cs</Link>
     </Compile>
+    <Compile Include="DirectShowDevices.cs" />
     <Compile Include="Enums.cs" />
     <Compile Include="FFmpegCLIManager.cs" />
     <Compile Include="FFmpegDownloader.cs" />

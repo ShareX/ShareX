@@ -54,10 +54,11 @@ namespace ShareX.ScreenCaptureLib
 
         public FFmpegHelper(ScreencastOptions options)
         {
+            Options = options;
             Output = new StringBuilder();
             OutputDataReceived += FFmpegHelper_DataReceived;
             ErrorDataReceived += FFmpegHelper_DataReceived;
-            Options = options;
+
             Helpers.CreateDirectoryFromFilePath(Options.OutputPath);
         }
 
@@ -121,53 +122,6 @@ namespace ShareX.ScreenCaptureLib
             return result;
         }
 
-        public DirectShowDevices GetDirectShowDevices()
-        {
-            DirectShowDevices devices = new DirectShowDevices();
-
-            if (File.Exists(Options.FFmpeg.FFmpegPath))
-            {
-                string arg = "-list_devices true -f dshow -i dummy";
-                Open(Options.FFmpeg.FFmpegPath, arg);
-                string output = Output.ToString();
-                string[] lines = output.Lines();
-                bool isVideo = true;
-                Regex regex = new Regex("\\[dshow @ \\w+\\]  \"(.+)\"", RegexOptions.Compiled | RegexOptions.CultureInvariant);
-                foreach (string line in lines)
-                {
-                    if (line.EndsWith("] DirectShow video devices", StringComparison.InvariantCulture))
-                    {
-                        isVideo = true;
-                        continue;
-                    }
-
-                    if (line.EndsWith("] DirectShow audio devices", StringComparison.InvariantCulture))
-                    {
-                        isVideo = false;
-                        continue;
-                    }
-
-                    Match match = regex.Match(line);
-
-                    if (match.Success)
-                    {
-                        string value = match.Groups[1].Value;
-
-                        if (isVideo)
-                        {
-                            devices.VideoDevices.Add(value);
-                        }
-                        else
-                        {
-                            devices.AudioDevices.Add(value);
-                        }
-                    }
-                }
-            }
-
-            return devices;
-        }
-
         public override void Close()
         {
             if (IsProcessRunning)
@@ -183,11 +137,5 @@ namespace ShareX.ScreenCaptureLib
                 }
             }
         }
-    }
-
-    public class DirectShowDevices
-    {
-        public List<string> VideoDevices = new List<string>();
-        public List<string> AudioDevices = new List<string>();
     }
 }

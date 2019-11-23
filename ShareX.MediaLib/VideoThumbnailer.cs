@@ -48,9 +48,9 @@ namespace ShareX.MediaLib
             FFmpegPath = ffmpegPath;
             Options = options;
 
-            using (FFmpegCLIManager ffmpegCLI = new FFmpegCLIManager(FFmpegPath))
+            using (FFmpegCLIManager ffmpeg = new FFmpegCLIManager(FFmpegPath))
             {
-                VideoInfo = ffmpegCLI.GetVideoInfo(MediaPath);
+                VideoInfo = ffmpeg.GetVideoInfo(MediaPath);
             }
         }
 
