@@ -124,7 +124,7 @@ namespace ShareX.ScreenCaptureLib
             tbVorbis_qscale.Value = Options.FFmpeg.Vorbis_qscale;
 
             // MP3
-            tbMP3_qscale.Value = FFmpegHelper.libmp3lame_qscale_end - Options.FFmpeg.MP3_qscale;
+            tbMP3_qscale.Value = FFmpegCLIManager.libmp3lame_qscale_end - Options.FFmpeg.MP3_qscale;
 
 #if WindowsStore
             btnTest.Visible = false;
@@ -161,10 +161,10 @@ namespace ShareX.ScreenCaptureLib
             if (!IsDisposed)
             {
                 cboVideoSource.Items.Clear();
-                cboVideoSource.Items.Add(FFmpegHelper.SourceNone);
-                cboVideoSource.Items.Add(FFmpegHelper.SourceGDIGrab);
+                cboVideoSource.Items.Add(FFmpegCLIManager.SourceNone);
+                cboVideoSource.Items.Add(FFmpegCLIManager.SourceGDIGrab);
                 cboAudioSource.Items.Clear();
-                cboAudioSource.Items.Add(FFmpegHelper.SourceNone);
+                cboAudioSource.Items.Add(FFmpegCLIManager.SourceNone);
 
                 if (devices != null)
                 {
@@ -172,16 +172,16 @@ namespace ShareX.ScreenCaptureLib
                     cboAudioSource.Items.AddRange(devices.AudioDevices.ToArray());
                 }
 
-                if (selectDevices && cboVideoSource.Items.Contains(FFmpegHelper.SourceVideoDevice))
+                if (selectDevices && cboVideoSource.Items.Contains(FFmpegCLIManager.SourceVideoDevice))
                 {
-                    Options.FFmpeg.VideoSource = FFmpegHelper.SourceVideoDevice;
+                    Options.FFmpeg.VideoSource = FFmpegCLIManager.SourceVideoDevice;
                 }
 
                 cboVideoSource.Text = Options.FFmpeg.VideoSource;
 
-                if (selectDevices && cboAudioSource.Items.Contains(FFmpegHelper.SourceAudioDevice))
+                if (selectDevices && cboAudioSource.Items.Contains(FFmpegCLIManager.SourceAudioDevice))
                 {
-                    Options.FFmpeg.AudioSource = FFmpegHelper.SourceAudioDevice;
+                    Options.FFmpeg.AudioSource = FFmpegCLIManager.SourceAudioDevice;
                 }
 
                 cboAudioSource.Text = Options.FFmpeg.AudioSource;
@@ -291,7 +291,7 @@ namespace ShareX.ScreenCaptureLib
 
         private async void btnInstallHelperDevices_Click(object sender, EventArgs e)
         {
-            string filePath = Helpers.GetAbsolutePath(FFmpegHelper.DeviceSetupPath);
+            string filePath = Helpers.GetAbsolutePath("Recorder-devices-setup.exe");
 
             if (!string.IsNullOrEmpty(filePath) && File.Exists(filePath))
             {
@@ -491,7 +491,7 @@ namespace ShareX.ScreenCaptureLib
 
         private void tbMP3_qscale_ValueChanged(object sender, EventArgs e)
         {
-            Options.FFmpeg.MP3_qscale = FFmpegHelper.libmp3lame_qscale_end - tbMP3_qscale.Value;
+            Options.FFmpeg.MP3_qscale = FFmpegCLIManager.libmp3lame_qscale_end - tbMP3_qscale.Value;
             UpdateUI();
         }
 

@@ -387,15 +387,6 @@ namespace ShareX.ScreenCaptureLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to FFmpeg error.
-        /// </summary>
-        internal static string FFmpegHelper_Record_FFmpeg_error {
-            get {
-                return ResourceManager.GetString("FFmpegHelper_Record_FFmpeg_error", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Browse for ffmpeg.exe.
         /// </summary>
         internal static string FFmpegOptionsForm_buttonFFmpegBrowse_Click_Browse_for_ffmpeg_exe {

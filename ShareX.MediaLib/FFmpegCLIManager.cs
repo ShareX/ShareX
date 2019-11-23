@@ -35,16 +35,28 @@ namespace ShareX.MediaLib
 {
     public class FFmpegCLIManager : ExternalCLIManager
     {
+        public const string SourceNone = "None";
+        public const string SourceGDIGrab = "GDI grab";
+        public const string SourceVideoDevice = "screen-capture-recorder";
+        public const string SourceAudioDevice = "virtual-audio-capturer";
+        public const int libmp3lame_qscale_end = 9;
+
+        public delegate void EncodeStartedEventHandler();
+        public event EncodeStartedEventHandler EncodeStarted;
+
         public delegate void EncodeProgressChangedEventHandler(float percentage);
         public event EncodeProgressChangedEventHandler EncodeProgressChanged;
 
         public string FFmpegPath { get; private set; }
         public StringBuilder Output { get; private set; }
+        public bool IsEncoding { get; set; }
         public bool ShowError { get; set; }
         public bool TrackEncodeProgress { get; set; }
         public TimeSpan VideoDuration { get; set; }
         public TimeSpan EncodeTime { get; set; }
         public float EncodePercentage { get; set; }
+
+        private int closeTryCount = 0;
 
         public FFmpegCLIManager(string ffmpegPath)
         {
@@ -52,8 +64,6 @@ namespace ShareX.MediaLib
             Output = new StringBuilder();
             OutputDataReceived += FFmpeg_DataReceived;
             ErrorDataReceived += FFmpeg_DataReceived;
-
-            Helpers.CreateDirectoryFromFilePath(FFmpegPath);
         }
 
         public bool Run(string args)
@@ -61,16 +71,37 @@ namespace ShareX.MediaLib
             return Run(FFmpegPath, args);
         }
 
-        private bool Run(string path, string args)
+        protected bool Run(string path, string args)
         {
             int errorCode = Open(path, args);
+            IsEncoding = false;
             bool result = errorCode == 0;
             if (!result && ShowError)
             {
                 // TODO: Translate
-                new OutputBox(Output.ToString(), "FFmpeg error").ShowDialog();
+                using (OutputBox outputBox = new OutputBox(Output.ToString(), "FFmpeg error"))
+                {
+                    outputBox.ShowDialog();
+                }
             }
             return result;
+        }
+
+        public override void Close()
+        {
+            if (IsProcessRunning && process != null)
+            {
+                if (closeTryCount >= 2)
+                {
+                    process.Kill();
+                }
+                else
+                {
+                    WriteInput("q");
+
+                    closeTryCount++;
+                }
+            }
         }
 
         private void FFmpeg_DataReceived(object sender, DataReceivedEventArgs e)
@@ -82,6 +113,13 @@ namespace ShareX.MediaLib
                 if (!string.IsNullOrEmpty(data))
                 {
                     Output.AppendLine(data);
+
+                    if (!IsEncoding && data.Contains("Press [q] to stop", StringComparison.InvariantCultureIgnoreCase))
+                    {
+                        IsEncoding = true;
+
+                        OnEncodeStarted();
+                    }
 
                     if (TrackEncodeProgress)
                     {
@@ -126,6 +164,11 @@ namespace ShareX.MediaLib
                     }
                 }
             }
+        }
+
+        protected void OnEncodeStarted()
+        {
+            EncodeStarted?.Invoke();
         }
 
         protected void OnEncodeProgressChanged(float percentage)

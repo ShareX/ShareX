@@ -181,7 +181,6 @@
     <Compile Include="Shapes\Region\RectangleRegionShape.cs" />
     <Compile Include="Shapes\Region\BaseRegionShape.cs" />
     <Compile Include="Screencast\FFmpegOptions.cs" />
-    <Compile Include="Screencast\FFmpegHelper.cs" />
     <Compile Include="Forms\FFmpegOptionsForm.cs">
       <SubType>Form</SubType>
     </Compile>

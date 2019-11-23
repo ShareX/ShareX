@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.MediaLib;
 using System;
 
 namespace ShareX.ScreenCaptureLib
@@ -33,8 +34,8 @@ namespace ShareX.ScreenCaptureLib
         // General
         public bool OverrideCLIPath { get; set; } = false;
         public string CLIPath { get; set; } = "";
-        public string VideoSource { get; set; } = FFmpegHelper.SourceGDIGrab;
-        public string AudioSource { get; set; } = FFmpegHelper.SourceNone;
+        public string VideoSource { get; set; } = FFmpegCLIManager.SourceGDIGrab;
+        public string AudioSource { get; set; } = FFmpegCLIManager.SourceNone;
         public FFmpegVideoCodec VideoCodec { get; set; } = FFmpegVideoCodec.libx264;
         public FFmpegAudioCodec AudioCodec { get; set; } = FFmpegAudioCodec.libvoaacenc;
         public string UserArgs { get; set; } = "";
@@ -93,7 +94,7 @@ namespace ShareX.ScreenCaptureLib
         {
             get
             {
-                if (!VideoSource.Equals(FFmpegHelper.SourceNone, StringComparison.InvariantCultureIgnoreCase))
+                if (!VideoSource.Equals(FFmpegCLIManager.SourceNone, StringComparison.InvariantCultureIgnoreCase))
                 {
                     switch (VideoCodec)
                     {
@@ -118,7 +119,7 @@ namespace ShareX.ScreenCaptureLib
                             return "apng";
                     }
                 }
-                else if (!AudioSource.Equals(FFmpegHelper.SourceNone, StringComparison.InvariantCultureIgnoreCase))
+                else if (!AudioSource.Equals(FFmpegCLIManager.SourceNone, StringComparison.InvariantCultureIgnoreCase))
                 {
                     switch (AudioCodec)
                     {
@@ -139,9 +140,9 @@ namespace ShareX.ScreenCaptureLib
 
         public bool IsSourceSelected => IsVideoSourceSelected || IsAudioSourceSelected;
 
-        public bool IsVideoSourceSelected => !string.IsNullOrEmpty(VideoSource) && !VideoSource.Equals(FFmpegHelper.SourceNone, StringComparison.InvariantCultureIgnoreCase);
+        public bool IsVideoSourceSelected => !string.IsNullOrEmpty(VideoSource) && !VideoSource.Equals(FFmpegCLIManager.SourceNone, StringComparison.InvariantCultureIgnoreCase);
 
-        public bool IsAudioSourceSelected => !string.IsNullOrEmpty(AudioSource) && !AudioSource.Equals(FFmpegHelper.SourceNone, StringComparison.InvariantCultureIgnoreCase) &&
+        public bool IsAudioSourceSelected => !string.IsNullOrEmpty(AudioSource) && !AudioSource.Equals(FFmpegCLIManager.SourceNone, StringComparison.InvariantCultureIgnoreCase) &&
             (!IsVideoSourceSelected || !IsAnimatedImage);
 
         public bool IsAnimatedImage => VideoCodec == FFmpegVideoCodec.gif || VideoCodec == FFmpegVideoCodec.libwebp || VideoCodec == FFmpegVideoCodec.apng;

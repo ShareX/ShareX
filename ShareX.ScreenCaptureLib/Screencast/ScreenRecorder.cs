@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.MediaLib;
 using System;
 using System.Diagnostics;
 using System.Drawing;
@@ -98,7 +99,7 @@ namespace ShareX.ScreenCaptureLib
         private Screenshot screenshot;
         private Rectangle captureRectangle;
         private ImageCache imgCache;
-        private FFmpegHelper ffmpegCli;
+        private FFmpegCLIManager ffmpeg;
         private bool stopRequest;
 
         public ScreenRecorder(ScreenRecordOutput outputType, ScreencastOptions options, Screenshot screenshot, Rectangle captureRectangle)
@@ -120,8 +121,9 @@ namespace ShareX.ScreenCaptureLib
             {
                 default:
                 case ScreenRecordOutput.FFmpeg:
-                    ffmpegCli = new FFmpegHelper(Options);
-                    ffmpegCli.RecordingStarted += OnRecordingStarted;
+                    Helpers.CreateDirectoryFromFilePath(Options.OutputPath);
+                    ffmpeg = new FFmpegCLIManager(Options.FFmpeg.FFmpegPath);
+                    ffmpeg.EncodeStarted += OnRecordingStarted;
                     break;
                 case ScreenRecordOutput.GIF:
                     imgCache = new HardDiskCache(Options);
@@ -146,7 +148,7 @@ namespace ShareX.ScreenCaptureLib
 
                 if (OutputType == ScreenRecordOutput.FFmpeg)
                 {
-                    ffmpegCli.Record();
+                    ffmpeg.Run(Options.GetFFmpegCommands());
                 }
                 else
                 {
@@ -196,9 +198,9 @@ namespace ShareX.ScreenCaptureLib
         {
             stopRequest = true;
 
-            if (ffmpegCli != null)
+            if (ffmpeg != null)
             {
-                ffmpegCli.Close();
+                ffmpeg.Close();
             }
         }
 
@@ -232,21 +234,28 @@ namespace ShareX.ScreenCaptureLib
         public bool FFmpegEncodeVideo(string input, string output)
         {
             Helpers.CreateDirectoryFromFilePath(output);
-            return ffmpegCli.EncodeVideo(input, output);
+
+            Options.IsRecording = false;
+            Options.IsLossless = false;
+            Options.InputPath = input;
+            Options.OutputPath = output;
+
+            return ffmpeg.Run(Options.GetFFmpegCommands());
         }
 
         public bool FFmpegEncodeAsGIF(string input, string output)
         {
             Helpers.CreateDirectoryFromFilePath(output);
-            return ffmpegCli.EncodeGIF(input, output);
+
+            // https://ffmpeg.org/ffmpeg-filters.html#palettegen-1
+            // https://ffmpeg.org/ffmpeg-filters.html#paletteuse
+            return ffmpeg.Run($"-i \"{input}\" -lavfi \"palettegen=stats_mode={Options.FFmpeg.GIFStatsMode}[palette]," +
+                $"[0:v][palette]paletteuse=dither={Options.FFmpeg.GIFDither}\" -y \"{output}\"");
         }
 
         protected void OnRecordingStarted()
         {
-            if (RecordingStarted != null)
-            {
-                RecordingStarted();
-            }
+            RecordingStarted?.Invoke();
         }
 
         protected void OnEncodingProgressChanged(int progress)
@@ -260,6 +269,11 @@ namespace ShareX.ScreenCaptureLib
 
         public void Dispose()
         {
+            if (ffmpeg != null)
+            {
+                ffmpeg.Dispose();
+            }
+
             if (imgCache != null)
             {
                 imgCache.Dispose();
