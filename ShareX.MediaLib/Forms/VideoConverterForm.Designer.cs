@@ -160,7 +160,7 @@
             this.btnEncode.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEncode.Location = new System.Drawing.Point(16, 272);
             this.btnEncode.Name = "btnEncode";
-            this.btnEncode.Size = new System.Drawing.Size(424, 32);
+            this.btnEncode.Size = new System.Drawing.Size(184, 32);
             this.btnEncode.TabIndex = 17;
             this.btnEncode.Text = "Start encoding";
             this.btnEncode.UseVisualStyleBackColor = true;
@@ -266,11 +266,12 @@
             // 
             this.pbProgress.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pbProgress.ForeColor = System.Drawing.Color.White;
-            this.pbProgress.Location = new System.Drawing.Point(16, 272);
+            this.pbProgress.Location = new System.Drawing.Point(208, 272);
             this.pbProgress.Name = "pbProgress";
             this.pbProgress.ShowPercentageText = true;
-            this.pbProgress.Size = new System.Drawing.Size(424, 32);
+            this.pbProgress.Size = new System.Drawing.Size(232, 32);
             this.pbProgress.TabIndex = 19;
+            this.pbProgress.Text = null;
             // 
             // VideoConverterForm
             // 

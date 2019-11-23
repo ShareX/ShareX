@@ -207,13 +207,16 @@ namespace ShareX.MediaLib
             UpdateOptions();
 
             pbProgress.Value = 0;
-            pbProgress.Visible = true;
-            btnEncode.Visible = false;
+            btnEncode.Enabled = false;
 
-            await StartEncodingAsync();
+            bool result = await StartEncodingAsync();
 
-            btnEncode.Visible = true;
-            pbProgress.Visible = false;
+            if (result)
+            {
+                pbProgress.Value = 100;
+            }
+            
+            btnEncode.Enabled = true;
         }
     }
 }
