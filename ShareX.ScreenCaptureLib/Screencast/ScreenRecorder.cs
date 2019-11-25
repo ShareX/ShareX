@@ -100,7 +100,7 @@ namespace ShareX.ScreenCaptureLib
         private Rectangle captureRectangle;
         private ImageCache imgCache;
         private FFmpegCLIManager ffmpeg;
-        private bool stopRequest;
+        private bool stopRequested;
 
         public ScreenRecorder(ScreenRecordOutput outputType, ScreencastOptions options, Screenshot screenshot, Rectangle captureRectangle)
         {
@@ -144,7 +144,7 @@ namespace ShareX.ScreenCaptureLib
             if (!IsRecording)
             {
                 IsRecording = true;
-                stopRequest = false;
+                stopRequested = false;
 
                 if (OutputType == ScreenRecordOutput.FFmpeg)
                 {
@@ -164,7 +164,7 @@ namespace ShareX.ScreenCaptureLib
         {
             try
             {
-                for (int i = 0; !stopRequest && (frameCount == 0 || i < frameCount); i++)
+                for (int i = 0; !stopRequested && (frameCount == 0 || i < frameCount); i++)
                 {
                     Stopwatch timer = Stopwatch.StartNew();
 
@@ -173,7 +173,7 @@ namespace ShareX.ScreenCaptureLib
 
                     imgCache.AddImageAsync(img);
 
-                    if (!stopRequest && (frameCount == 0 || i + 1 < frameCount))
+                    if (!stopRequested && (frameCount == 0 || i + 1 < frameCount))
                     {
                         int sleepTime = delay - (int)timer.ElapsedMilliseconds;
 
@@ -196,7 +196,7 @@ namespace ShareX.ScreenCaptureLib
 
         public void StopRecording()
         {
-            stopRequest = true;
+            stopRequested = true;
 
             if (ffmpeg != null)
             {

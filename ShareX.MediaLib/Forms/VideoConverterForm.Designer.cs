@@ -295,6 +295,7 @@
             this.Name = "VideoConverterForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ShareX - Video converter";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.VideoConverterForm_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.tbVideoQuality)).EndInit();
             this.tcMain.ResumeLayout(false);
             this.tpOptions.ResumeLayout(false);

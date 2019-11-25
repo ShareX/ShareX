@@ -36,7 +36,8 @@ namespace ShareX.MediaLib
         public string FFmpegFilePath { get; private set; }
         public VideoConverterOptions Options { get; private set; }
 
-        private bool ready;
+        private bool formClosing, formReady, encoding;
+        private FFmpegCLIManager ffmpeg;
 
         public VideoConverterForm(string ffmpegFilePath, VideoConverterOptions options)
         {
@@ -55,12 +56,12 @@ namespace ShareX.MediaLib
             cbVideoCodec.SelectedIndex = (int)Options.VideoCodec;
             tbVideoQuality.SetValue(tbVideoQuality.Minimum + tbVideoQuality.Maximum - Options.VideoQuality);
 
-            ready = true;
+            formReady = true;
         }
 
         private void UpdateOptions()
         {
-            if (ready)
+            if (formReady)
             {
                 Options.InputFilePath = txtInputFilePath.Text;
                 Options.OutputFolderPath = txtOutputFolder.Text;
@@ -100,7 +101,7 @@ namespace ShareX.MediaLib
                     break;
             }
 
-            if (ready)
+            if (formReady)
             {
                 Options.VideoQuality = tbVideoQuality.Minimum + tbVideoQuality.Maximum - tbVideoQuality.Value;
             }
@@ -120,7 +121,7 @@ namespace ShareX.MediaLib
             if (File.Exists(FFmpegFilePath) && !string.IsNullOrEmpty(Options.InputFilePath) && File.Exists(Options.InputFilePath) &&
                 !string.IsNullOrEmpty(Options.OutputFolderPath) && !string.IsNullOrEmpty(Options.OutputFileName))
             {
-                using (FFmpegCLIManager ffmpeg = new FFmpegCLIManager(FFmpegFilePath))
+                using (ffmpeg = new FFmpegCLIManager(FFmpegFilePath))
                 {
                     ffmpeg.ShowError = true;
                     ffmpeg.TrackEncodeProgress = true;
@@ -130,7 +131,7 @@ namespace ShareX.MediaLib
                     string args = Options.GetFFmpegArgs();
                     result = ffmpeg.Run(args);
 
-                    if (result)
+                    if (result && !ffmpeg.StopRequested)
                     {
                         Helpers.OpenFolderWithFile(outputFilePath);
                     }
@@ -140,14 +141,17 @@ namespace ShareX.MediaLib
             return result;
         }
 
-        private void Manager_EncodeProgressChanged(float percentage)
-        {
-            this.InvokeSafe(() => pbProgress.Value = (int)percentage);
-        }
-
         private Task<bool> StartEncodingAsync()
         {
             return Task.Run(StartEncoding);
+        }
+
+        private void Manager_EncodeProgressChanged(float percentage)
+        {
+            if (!formClosing)
+            {
+                this.InvokeSafe(() => pbProgress.Value = (int)percentage);
+            }
         }
 
         private void txtInputFilePath_TextChanged(object sender, EventArgs e)
@@ -204,19 +208,49 @@ namespace ShareX.MediaLib
 
         private async void btnEncode_Click(object sender, EventArgs e)
         {
-            UpdateOptions();
-
-            pbProgress.Value = 0;
-            btnEncode.Enabled = false;
-
-            bool result = await StartEncodingAsync();
-
-            if (result)
+            if (!encoding)
             {
-                pbProgress.Value = 100;
+                encoding = true;
+
+                // TODO: Translate
+                btnEncode.Text = "Stop encoding";
+
+                UpdateOptions();
+                pbProgress.Value = 0;
+
+                bool result = await StartEncodingAsync();
+
+                if (!formClosing)
+                {
+                    if (result && ffmpeg != null && !ffmpeg.StopRequested)
+                    {
+                        pbProgress.Value = 100;
+                    }
+                    else
+                    {
+                        pbProgress.Value = 0;
+                    }
+
+                    // TODO: Translate
+                    btnEncode.Text = "Start encoding";
+                }
+
+                encoding = false;
             }
-            
-            btnEncode.Enabled = true;
+            else if (ffmpeg != null)
+            {
+                ffmpeg.Close();
+            }
+        }
+
+        private void VideoConverterForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            formClosing = true;
+
+            if (ffmpeg != null)
+            {
+                ffmpeg.Close();
+            }
         }
     }
 }

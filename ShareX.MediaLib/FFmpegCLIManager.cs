@@ -51,6 +51,7 @@ namespace ShareX.MediaLib
         public StringBuilder Output { get; private set; }
         public bool IsEncoding { get; set; }
         public bool ShowError { get; set; }
+        public bool StopRequested { get; set; }
         public bool TrackEncodeProgress { get; set; }
         public TimeSpan VideoDuration { get; set; }
         public TimeSpan EncodeTime { get; set; }
@@ -73,6 +74,7 @@ namespace ShareX.MediaLib
 
         protected bool Run(string path, string args)
         {
+            StopRequested = false;
             int errorCode = Open(path, args);
             IsEncoding = false;
             bool result = errorCode == 0;
@@ -89,6 +91,8 @@ namespace ShareX.MediaLib
 
         public override void Close()
         {
+            StopRequested = true;
+
             if (IsProcessRunning && process != null)
             {
                 if (closeTryCount >= 2)
