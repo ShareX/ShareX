@@ -803,12 +803,15 @@ namespace ShareX
 
             if (ShareXResources.UseDarkTheme)
             {
+                double cmsOpacity = 0.9;
                 tsMain.Renderer = new ToolStripDarkRenderer();
                 tsMain.DrawCustomBorder = false;
                 tsSocialButtons.Renderer = new ToolStripDarkRenderer();
                 tsSocialButtons.DrawCustomBorder = false;
                 cmsTray.Renderer = new ToolStripDarkRenderer();
+                cmsTray.Opacity = cmsOpacity;
                 cmsTaskInfo.Renderer = new ToolStripDarkRenderer();
+                cmsTaskInfo.Opacity = cmsOpacity;
                 ttMain.BackColor = ShareXResources.Theme.BackgroundColor;
                 ttMain.ForeColor = ShareXResources.Theme.TextColor;
                 lvUploads.BackColor = ShareXResources.Theme.BackgroundColor;
@@ -838,6 +841,7 @@ namespace ShareX
                 tsSocialButtons.Renderer = new ToolStripCustomRenderer();
                 tsSocialButtons.DrawCustomBorder = true;
                 cmsTray.Renderer = new ToolStripCustomRenderer();
+                cmsTray.Opacity = 1;
                 cmsTaskInfo.Renderer = new ToolStripCustomRenderer();
                 ttMain.BackColor = SystemColors.Window;
                 ttMain.ForeColor = SystemColors.ControlText;
