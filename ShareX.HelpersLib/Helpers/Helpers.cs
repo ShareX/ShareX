@@ -624,32 +624,33 @@ namespace ShareX.HelpersLib
             return Regex.IsMatch(ip.Trim(), pattern);
         }
 
-        public static string GetUniqueFilePath(string filepath)
+        public static string GetUniqueFilePath(string filePath)
         {
-            if (File.Exists(filepath))
+            if (File.Exists(filePath))
             {
-                string folder = Path.GetDirectoryName(filepath);
-                string filename = Path.GetFileNameWithoutExtension(filepath);
-                string extension = Path.GetExtension(filepath);
+                string folderPath = Path.GetDirectoryName(filePath);
+                string fileName = Path.GetFileNameWithoutExtension(filePath);
+                string fileExtension = Path.GetExtension(filePath);
                 int number = 1;
 
-                Match regex = Regex.Match(filepath, @"(.+) \((\d+)\)\.\w+");
+                Match regex = Regex.Match(fileName, @"^(.+) \((\d+)\)$");
 
                 if (regex.Success)
                 {
-                    filename = regex.Groups[1].Value;
+                    fileName = regex.Groups[1].Value;
                     number = int.Parse(regex.Groups[2].Value);
                 }
 
                 do
                 {
                     number++;
-                    filepath = Path.Combine(folder, string.Format("{0} ({1}){2}", filename, number, extension));
+                    string newFileName = $"{fileName} ({number}){fileExtension}";
+                    filePath = Path.Combine(folderPath, newFileName);
                 }
-                while (File.Exists(filepath));
+                while (File.Exists(filePath));
             }
 
-            return filepath;
+            return filePath;
         }
 
         public static string ProperTimeSpan(TimeSpan ts)
