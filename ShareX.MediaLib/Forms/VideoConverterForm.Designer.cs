@@ -50,10 +50,12 @@
             this.tpArguments = new System.Windows.Forms.TabPage();
             this.tpAdvanced = new System.Windows.Forms.TabPage();
             this.pbProgress = new ShareX.HelpersLib.BlackStyleProgressBar();
+            this.cbAutoOpenFolder = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.tbVideoQuality)).BeginInit();
             this.tcMain.SuspendLayout();
             this.tpOptions.SuspendLayout();
             this.tpArguments.SuspendLayout();
+            this.tpAdvanced.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblInputFilePath
@@ -254,6 +256,7 @@
             // 
             // tpAdvanced
             // 
+            this.tpAdvanced.Controls.Add(this.cbAutoOpenFolder);
             this.tpAdvanced.Location = new System.Drawing.Point(4, 22);
             this.tpAdvanced.Name = "tpAdvanced";
             this.tpAdvanced.Padding = new System.Windows.Forms.Padding(3);
@@ -272,6 +275,17 @@
             this.pbProgress.Size = new System.Drawing.Size(232, 32);
             this.pbProgress.TabIndex = 19;
             this.pbProgress.Text = null;
+            // 
+            // cbAutoOpenFolder
+            // 
+            this.cbAutoOpenFolder.AutoSize = true;
+            this.cbAutoOpenFolder.Location = new System.Drawing.Point(16, 16);
+            this.cbAutoOpenFolder.Name = "cbAutoOpenFolder";
+            this.cbAutoOpenFolder.Size = new System.Drawing.Size(151, 17);
+            this.cbAutoOpenFolder.TabIndex = 0;
+            this.cbAutoOpenFolder.Text = "After encoding open folder";
+            this.cbAutoOpenFolder.UseVisualStyleBackColor = true;
+            this.cbAutoOpenFolder.CheckedChanged += new System.EventHandler(this.cbAutoOpenFolder_CheckedChanged);
             // 
             // VideoConverterForm
             // 
@@ -302,6 +316,8 @@
             this.tpOptions.PerformLayout();
             this.tpArguments.ResumeLayout(false);
             this.tpArguments.PerformLayout();
+            this.tpAdvanced.ResumeLayout(false);
+            this.tpAdvanced.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -331,5 +347,6 @@
         private System.Windows.Forms.TabPage tpArguments;
         private System.Windows.Forms.TabPage tpAdvanced;
         private HelpersLib.BlackStyleProgressBar pbProgress;
+        private System.Windows.Forms.CheckBox cbAutoOpenFolder;
     }
 }

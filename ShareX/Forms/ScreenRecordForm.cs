@@ -305,7 +305,7 @@ namespace ShareX
 
         public void ChangeStateProgress(int progress)
         {
-            niTray.Text = string.Format("ShareX - {0} ({1}%)", Resources.ScreenRecordForm_StartRecording_Encoding___, progress);
+            niTray.Text = $"ShareX - {Resources.ScreenRecordForm_StartRecording_Encoding___} {progress}%";
         }
     }
 }

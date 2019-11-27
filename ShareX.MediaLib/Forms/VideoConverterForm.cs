@@ -56,6 +56,8 @@ namespace ShareX.MediaLib
             cbVideoCodec.SelectedIndex = (int)Options.VideoCodec;
             tbVideoQuality.SetValue(tbVideoQuality.Minimum + tbVideoQuality.Maximum - Options.VideoQuality);
 
+            cbAutoOpenFolder.Checked = Options.AutoOpenFolder;
+
             formReady = true;
         }
 
@@ -131,7 +133,7 @@ namespace ShareX.MediaLib
                     string args = Options.GetFFmpegArgs();
                     result = ffmpeg.Run(args);
 
-                    if (result && !ffmpeg.StopRequested)
+                    if (Options.AutoOpenFolder && result && !ffmpeg.StopRequested)
                     {
                         Helpers.OpenFolderWithFile(outputFilePath);
                     }
@@ -204,6 +206,11 @@ namespace ShareX.MediaLib
         private void tbVideoQuality_ValueChanged(object sender, EventArgs e)
         {
             UpdateOptions();
+        }
+
+        private void cbAutoOpenFolder_CheckedChanged(object sender, EventArgs e)
+        {
+            Options.AutoOpenFolder = cbAutoOpenFolder.Checked;
         }
 
         private async void btnEncode_Click(object sender, EventArgs e)

@@ -53,6 +53,8 @@ namespace ShareX.MediaLib
         public ConverterVideoCodecs VideoCodec { get; set; } = ConverterVideoCodecs.x264;
         public int VideoQuality { get; set; } = 23;
 
+        public bool AutoOpenFolder { get; set; } = true;
+
         public string GetFFmpegArgs()
         {
             StringBuilder args = new StringBuilder();
