@@ -124,6 +124,7 @@ namespace ShareX.ScreenCaptureLib
                     Helpers.CreateDirectoryFromFilePath(Options.OutputPath);
                     ffmpeg = new FFmpegCLIManager(Options.FFmpeg.FFmpegPath);
                     ffmpeg.EncodeStarted += OnRecordingStarted;
+                    ffmpeg.EncodeProgressChanged += OnEncodingProgressChanged;
                     break;
                 case ScreenRecordOutput.GIF:
                     imgCache = new HardDiskCache(Options);
@@ -240,17 +241,35 @@ namespace ShareX.ScreenCaptureLib
             Options.InputPath = input;
             Options.OutputPath = output;
 
-            return ffmpeg.Run(Options.GetFFmpegCommands());
+            try
+            {
+                ffmpeg.TrackEncodeProgress = true;
+
+                return ffmpeg.Run(Options.GetFFmpegCommands());
+            }
+            finally
+            {
+                ffmpeg.TrackEncodeProgress = false;
+            }
         }
 
         public bool FFmpegEncodeAsGIF(string input, string output)
         {
             Helpers.CreateDirectoryFromFilePath(output);
 
-            // https://ffmpeg.org/ffmpeg-filters.html#palettegen-1
-            // https://ffmpeg.org/ffmpeg-filters.html#paletteuse
-            return ffmpeg.Run($"-i \"{input}\" -lavfi \"palettegen=stats_mode={Options.FFmpeg.GIFStatsMode}[palette]," +
-                $"[0:v][palette]paletteuse=dither={Options.FFmpeg.GIFDither}\" -y \"{output}\"");
+            try
+            {
+                ffmpeg.TrackEncodeProgress = true;
+
+                // https://ffmpeg.org/ffmpeg-filters.html#palettegen-1
+                // https://ffmpeg.org/ffmpeg-filters.html#paletteuse
+                return ffmpeg.Run($"-i \"{input}\" -lavfi \"palettegen=stats_mode={Options.FFmpeg.GIFStatsMode}[palette]," +
+                    $"[0:v][palette]paletteuse=dither={Options.FFmpeg.GIFDither}\" -y \"{output}\"");
+            }
+            finally
+            {
+                ffmpeg.TrackEncodeProgress = false;
+            }
         }
 
         protected void OnRecordingStarted()
@@ -258,12 +277,14 @@ namespace ShareX.ScreenCaptureLib
             RecordingStarted?.Invoke();
         }
 
-        protected void OnEncodingProgressChanged(int progress)
+        protected void OnEncodingProgressChanged(float progress)
         {
-            if (EncodingProgressChanged != null && progress != previousProgress)
+            int currentProgress = (int)progress;
+
+            if (EncodingProgressChanged != null && currentProgress != previousProgress)
             {
-                EncodingProgressChanged(progress);
-                previousProgress = progress;
+                EncodingProgressChanged(currentProgress);
+                previousProgress = currentProgress;
             }
         }
 
