@@ -184,14 +184,14 @@ namespace ShareX.ScreenCaptureLib
                         case FFmpegVideoCodec.libx264: // https://trac.ffmpeg.org/wiki/Encode/H.264
                         case FFmpegVideoCodec.libx265: // https://trac.ffmpeg.org/wiki/Encode/H.265
                             args.AppendFormat("-preset {0} ", FFmpeg.x264_Preset);
-                            args.AppendFormat("-tune {0} ", FFmpegTune.zerolatency);
+                            if (IsRecording) args.AppendFormat("-tune {0} ", FFmpegTune.zerolatency);
                             args.AppendFormat("-crf {0} ", FFmpeg.x264_CRF);
                             args.AppendFormat("-pix_fmt {0} ", "yuv420p"); // -pix_fmt yuv420p required otherwise can't stream in Chrome
                             args.AppendFormat("-movflags {0} ", "+faststart"); // This will move some information to the beginning of your file and allow the video to begin playing before it is completely downloaded by the viewer
                             break;
                         case FFmpegVideoCodec.libvpx: // https://trac.ffmpeg.org/wiki/Encode/VP8
                         case FFmpegVideoCodec.libvpx_vp9: // https://trac.ffmpeg.org/wiki/Encode/VP9
-                            args.AppendFormat("-deadline {0} ", "realtime");
+                            if (IsRecording) args.AppendFormat("-deadline {0} ", "realtime");
                             args.AppendFormat("-b:v {0}k ", FFmpeg.VPx_bitrate);
                             args.AppendFormat("-pix_fmt {0} ", "yuv420p"); // -pix_fmt yuv420p required otherwise causing issues in Chrome related to WebM transparency support
                             break;
