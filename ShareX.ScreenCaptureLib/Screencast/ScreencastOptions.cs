@@ -199,15 +199,6 @@ namespace ShareX.ScreenCaptureLib
                             args.AppendFormat("-b:v {0}k ", FFmpeg.NVENC_bitrate);
                             args.AppendFormat("-pix_fmt {0} ", "yuv420p");
                             break;
-                        case FFmpegVideoCodec.libwebp: // https://www.ffmpeg.org/ffmpeg-codecs.html#libwebp
-                            args.AppendFormat("-lossless {0} ", "0");
-                            args.AppendFormat("-preset {0} ", "default");
-                            args.AppendFormat("-loop {0} ", "0");
-                            break;
-                        case FFmpegVideoCodec.apng:
-                            args.Append("-f apng ");
-                            args.AppendFormat("-plays {0} ", "0");
-                            break;
                         case FFmpegVideoCodec.h264_amf:
                         case FFmpegVideoCodec.hevc_amf:
                             args.AppendFormat("-usage {0} ", FFmpeg.AMF_usage);
@@ -218,6 +209,15 @@ namespace ShareX.ScreenCaptureLib
                         case FFmpegVideoCodec.hevc_qsv:
                             args.AppendFormat("-preset {0} ", FFmpeg.QSV_preset);
                             args.AppendFormat("-b:v {0}k ", FFmpeg.QSV_bitrate);
+                            break;
+                        case FFmpegVideoCodec.libwebp: // https://www.ffmpeg.org/ffmpeg-codecs.html#libwebp
+                            args.AppendFormat("-lossless {0} ", "0");
+                            args.AppendFormat("-preset {0} ", "default");
+                            args.AppendFormat("-loop {0} ", "0");
+                            break;
+                        case FFmpegVideoCodec.apng:
+                            args.Append("-f apng ");
+                            args.AppendFormat("-plays {0} ", "0");
                             break;
                     }
                 }
