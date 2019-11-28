@@ -346,6 +346,7 @@ namespace ShareX.ScreenCaptureLib
                         tcFFmpegVideoCodecs.SelectedIndex = 0;
                         break;
                     case FFmpegVideoCodec.libvpx:
+                    case FFmpegVideoCodec.libvpx_vp9:
                         tcFFmpegVideoCodecs.SelectedIndex = 1;
                         break;
                     case FFmpegVideoCodec.libxvid:
