@@ -46,16 +46,16 @@
             this.lblVideoQualityHigher = new System.Windows.Forms.Label();
             this.lvlVideoQualityLower = new System.Windows.Forms.Label();
             this.tcMain = new System.Windows.Forms.TabControl();
-            this.tpOptions = new System.Windows.Forms.TabPage();
+            this.tpVideoOptions = new System.Windows.Forms.TabPage();
             this.tpArguments = new System.Windows.Forms.TabPage();
-            this.tpAdvanced = new System.Windows.Forms.TabPage();
+            this.tpOptions = new System.Windows.Forms.TabPage();
             this.pbProgress = new ShareX.HelpersLib.BlackStyleProgressBar();
             this.cbAutoOpenFolder = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.tbVideoQuality)).BeginInit();
             this.tcMain.SuspendLayout();
-            this.tpOptions.SuspendLayout();
+            this.tpVideoOptions.SuspendLayout();
             this.tpArguments.SuspendLayout();
-            this.tpAdvanced.SuspendLayout();
+            this.tpOptions.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblInputFilePath
@@ -217,31 +217,31 @@
             // 
             // tcMain
             // 
+            this.tcMain.Controls.Add(this.tpVideoOptions);
             this.tcMain.Controls.Add(this.tpOptions);
             this.tcMain.Controls.Add(this.tpArguments);
-            this.tcMain.Controls.Add(this.tpAdvanced);
             this.tcMain.Location = new System.Drawing.Point(16, 88);
             this.tcMain.Name = "tcMain";
             this.tcMain.SelectedIndex = 0;
             this.tcMain.Size = new System.Drawing.Size(424, 176);
             this.tcMain.TabIndex = 18;
             // 
-            // tpOptions
+            // tpVideoOptions
             // 
-            this.tpOptions.Controls.Add(this.lblVideoQualityHigher);
-            this.tpOptions.Controls.Add(this.lvlVideoQualityLower);
-            this.tpOptions.Controls.Add(this.lblVideoQualityValue);
-            this.tpOptions.Controls.Add(this.lblVideoCodec);
-            this.tpOptions.Controls.Add(this.tbVideoQuality);
-            this.tpOptions.Controls.Add(this.cbVideoCodec);
-            this.tpOptions.Controls.Add(this.lblVideoQuality);
-            this.tpOptions.Location = new System.Drawing.Point(4, 22);
-            this.tpOptions.Name = "tpOptions";
-            this.tpOptions.Padding = new System.Windows.Forms.Padding(3);
-            this.tpOptions.Size = new System.Drawing.Size(416, 150);
-            this.tpOptions.TabIndex = 0;
-            this.tpOptions.Text = "Options";
-            this.tpOptions.UseVisualStyleBackColor = true;
+            this.tpVideoOptions.Controls.Add(this.lblVideoQualityHigher);
+            this.tpVideoOptions.Controls.Add(this.lvlVideoQualityLower);
+            this.tpVideoOptions.Controls.Add(this.lblVideoQualityValue);
+            this.tpVideoOptions.Controls.Add(this.lblVideoCodec);
+            this.tpVideoOptions.Controls.Add(this.tbVideoQuality);
+            this.tpVideoOptions.Controls.Add(this.cbVideoCodec);
+            this.tpVideoOptions.Controls.Add(this.lblVideoQuality);
+            this.tpVideoOptions.Location = new System.Drawing.Point(4, 22);
+            this.tpVideoOptions.Name = "tpVideoOptions";
+            this.tpVideoOptions.Padding = new System.Windows.Forms.Padding(3);
+            this.tpVideoOptions.Size = new System.Drawing.Size(416, 150);
+            this.tpVideoOptions.TabIndex = 0;
+            this.tpVideoOptions.Text = "Video options";
+            this.tpVideoOptions.UseVisualStyleBackColor = true;
             // 
             // tpArguments
             // 
@@ -254,16 +254,16 @@
             this.tpArguments.Text = "Arguments";
             this.tpArguments.UseVisualStyleBackColor = true;
             // 
-            // tpAdvanced
+            // tpOptions
             // 
-            this.tpAdvanced.Controls.Add(this.cbAutoOpenFolder);
-            this.tpAdvanced.Location = new System.Drawing.Point(4, 22);
-            this.tpAdvanced.Name = "tpAdvanced";
-            this.tpAdvanced.Padding = new System.Windows.Forms.Padding(3);
-            this.tpAdvanced.Size = new System.Drawing.Size(416, 150);
-            this.tpAdvanced.TabIndex = 2;
-            this.tpAdvanced.Text = "Advanced";
-            this.tpAdvanced.UseVisualStyleBackColor = true;
+            this.tpOptions.Controls.Add(this.cbAutoOpenFolder);
+            this.tpOptions.Location = new System.Drawing.Point(4, 22);
+            this.tpOptions.Name = "tpOptions";
+            this.tpOptions.Padding = new System.Windows.Forms.Padding(3);
+            this.tpOptions.Size = new System.Drawing.Size(416, 150);
+            this.tpOptions.TabIndex = 2;
+            this.tpOptions.Text = "Options";
+            this.tpOptions.UseVisualStyleBackColor = true;
             // 
             // pbProgress
             // 
@@ -281,9 +281,9 @@
             this.cbAutoOpenFolder.AutoSize = true;
             this.cbAutoOpenFolder.Location = new System.Drawing.Point(16, 16);
             this.cbAutoOpenFolder.Name = "cbAutoOpenFolder";
-            this.cbAutoOpenFolder.Size = new System.Drawing.Size(151, 17);
+            this.cbAutoOpenFolder.Size = new System.Drawing.Size(152, 17);
             this.cbAutoOpenFolder.TabIndex = 0;
-            this.cbAutoOpenFolder.Text = "After encoding open folder";
+            this.cbAutoOpenFolder.Text = "Open folder after encoding";
             this.cbAutoOpenFolder.UseVisualStyleBackColor = true;
             this.cbAutoOpenFolder.CheckedChanged += new System.EventHandler(this.cbAutoOpenFolder_CheckedChanged);
             // 
@@ -312,12 +312,12 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.VideoConverterForm_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.tbVideoQuality)).EndInit();
             this.tcMain.ResumeLayout(false);
-            this.tpOptions.ResumeLayout(false);
-            this.tpOptions.PerformLayout();
+            this.tpVideoOptions.ResumeLayout(false);
+            this.tpVideoOptions.PerformLayout();
             this.tpArguments.ResumeLayout(false);
             this.tpArguments.PerformLayout();
-            this.tpAdvanced.ResumeLayout(false);
-            this.tpAdvanced.PerformLayout();
+            this.tpOptions.ResumeLayout(false);
+            this.tpOptions.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -343,9 +343,9 @@
         private System.Windows.Forms.Label lblVideoQualityHigher;
         private System.Windows.Forms.Label lvlVideoQualityLower;
         private System.Windows.Forms.TabControl tcMain;
-        private System.Windows.Forms.TabPage tpOptions;
+        private System.Windows.Forms.TabPage tpVideoOptions;
         private System.Windows.Forms.TabPage tpArguments;
-        private System.Windows.Forms.TabPage tpAdvanced;
+        private System.Windows.Forms.TabPage tpOptions;
         private HelpersLib.BlackStyleProgressBar pbProgress;
         private System.Windows.Forms.CheckBox cbAutoOpenFolder;
     }
