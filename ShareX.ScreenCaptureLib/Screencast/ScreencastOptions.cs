@@ -233,7 +233,7 @@ namespace ShareX.ScreenCaptureLib
                 switch (FFmpeg.AudioCodec)
                 {
                     case FFmpegAudioCodec.libvoaacenc: // http://trac.ffmpeg.org/wiki/Encode/AAC
-                        args.AppendFormat("-c:a aac -strict -2 -ac 2 -b:a {0}k ", FFmpeg.AAC_bitrate); // -ac 2 required otherwise failing with 7.1
+                        args.AppendFormat("-c:a aac -ac 2 -b:a {0}k ", FFmpeg.AAC_bitrate); // -ac 2 required otherwise failing with 7.1
                         break;
                     case FFmpegAudioCodec.libopus: // https://www.ffmpeg.org/ffmpeg-codecs.html#libopus-1
                         args.AppendFormat("-c:a libopus -b:a {0}k ", FFmpeg.Opus_bitrate);
