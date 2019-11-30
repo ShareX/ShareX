@@ -127,7 +127,7 @@ namespace ShareX.MediaLib
                 txtArguments.Text = Options.GetFFmpegArgs();
             }
 
-            txtArguments.ReadOnly = !Options.UseCustomArguments;
+            txtArguments.Visible = Options.UseCustomArguments;
 
             btnEncode.Enabled = !string.IsNullOrEmpty(Options.InputFilePath) && !string.IsNullOrEmpty(Options.OutputFolderPath) &&
                 !string.IsNullOrEmpty(Options.OutputFileName);

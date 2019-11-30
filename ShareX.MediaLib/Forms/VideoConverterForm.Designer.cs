@@ -45,18 +45,10 @@
             this.lblVideoQualityValue = new System.Windows.Forms.Label();
             this.lblVideoQualityHigher = new System.Windows.Forms.Label();
             this.lvlVideoQualityLower = new System.Windows.Forms.Label();
-            this.tcMain = new System.Windows.Forms.TabControl();
-            this.tpVideoOptions = new System.Windows.Forms.TabPage();
-            this.tpOptions = new System.Windows.Forms.TabPage();
             this.cbAutoOpenFolder = new System.Windows.Forms.CheckBox();
-            this.tpArguments = new System.Windows.Forms.TabPage();
             this.pbProgress = new ShareX.HelpersLib.BlackStyleProgressBar();
             this.cbUseCustomArguments = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.tbVideoQuality)).BeginInit();
-            this.tcMain.SuspendLayout();
-            this.tpVideoOptions.SuspendLayout();
-            this.tpOptions.SuspendLayout();
-            this.tpArguments.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblInputFilePath
@@ -133,7 +125,7 @@
             // lblVideoCodec
             // 
             this.lblVideoCodec.AutoSize = true;
-            this.lblVideoCodec.Location = new System.Drawing.Point(13, 16);
+            this.lblVideoCodec.Location = new System.Drawing.Point(13, 96);
             this.lblVideoCodec.Name = "lblVideoCodec";
             this.lblVideoCodec.Size = new System.Drawing.Size(70, 13);
             this.lblVideoCodec.TabIndex = 8;
@@ -143,7 +135,7 @@
             // 
             this.cbVideoCodec.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbVideoCodec.FormattingEnabled = true;
-            this.cbVideoCodec.Location = new System.Drawing.Point(112, 12);
+            this.cbVideoCodec.Location = new System.Drawing.Point(120, 92);
             this.cbVideoCodec.Name = "cbVideoCodec";
             this.cbVideoCodec.Size = new System.Drawing.Size(120, 21);
             this.cbVideoCodec.TabIndex = 9;
@@ -152,7 +144,7 @@
             // lblVideoQuality
             // 
             this.lblVideoQuality.AutoSize = true;
-            this.lblVideoQuality.Location = new System.Drawing.Point(13, 48);
+            this.lblVideoQuality.Location = new System.Drawing.Point(13, 128);
             this.lblVideoQuality.Name = "lblVideoQuality";
             this.lblVideoQuality.Size = new System.Drawing.Size(70, 13);
             this.lblVideoQuality.TabIndex = 10;
@@ -161,7 +153,7 @@
             // btnEncode
             // 
             this.btnEncode.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEncode.Location = new System.Drawing.Point(16, 272);
+            this.btnEncode.Location = new System.Drawing.Point(16, 232);
             this.btnEncode.Name = "btnEncode";
             this.btnEncode.Size = new System.Drawing.Size(184, 32);
             this.btnEncode.TabIndex = 17;
@@ -172,11 +164,10 @@
             // txtArguments
             // 
             this.txtArguments.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtArguments.Location = new System.Drawing.Point(8, 32);
+            this.txtArguments.Location = new System.Drawing.Point(16, 88);
             this.txtArguments.Multiline = true;
             this.txtArguments.Name = "txtArguments";
-            this.txtArguments.ReadOnly = true;
-            this.txtArguments.Size = new System.Drawing.Size(400, 112);
+            this.txtArguments.Size = new System.Drawing.Size(424, 80);
             this.txtArguments.TabIndex = 16;
             this.txtArguments.TextChanged += new System.EventHandler(this.txtArguments_TextChanged);
             // 
@@ -184,9 +175,9 @@
             // 
             this.tbVideoQuality.AutoSize = false;
             this.tbVideoQuality.BackColor = System.Drawing.SystemColors.Window;
-            this.tbVideoQuality.Location = new System.Drawing.Point(104, 43);
+            this.tbVideoQuality.Location = new System.Drawing.Point(112, 123);
             this.tbVideoQuality.Name = "tbVideoQuality";
-            this.tbVideoQuality.Size = new System.Drawing.Size(272, 22);
+            this.tbVideoQuality.Size = new System.Drawing.Size(296, 22);
             this.tbVideoQuality.TabIndex = 11;
             this.tbVideoQuality.TickStyle = System.Windows.Forms.TickStyle.None;
             this.tbVideoQuality.ValueChanged += new System.EventHandler(this.tbVideoQuality_ValueChanged);
@@ -194,7 +185,7 @@
             // lblVideoQualityValue
             // 
             this.lblVideoQualityValue.AutoSize = true;
-            this.lblVideoQualityValue.Location = new System.Drawing.Point(382, 46);
+            this.lblVideoQualityValue.Location = new System.Drawing.Point(416, 126);
             this.lblVideoQualityValue.Name = "lblVideoQualityValue";
             this.lblVideoQualityValue.Size = new System.Drawing.Size(13, 13);
             this.lblVideoQualityValue.TabIndex = 14;
@@ -202,64 +193,25 @@
             // 
             // lblVideoQualityHigher
             // 
-            this.lblVideoQualityHigher.Location = new System.Drawing.Point(240, 66);
+            this.lblVideoQualityHigher.Location = new System.Drawing.Point(264, 146);
             this.lblVideoQualityHigher.Name = "lblVideoQualityHigher";
-            this.lblVideoQualityHigher.Size = new System.Drawing.Size(128, 22);
+            this.lblVideoQualityHigher.Size = new System.Drawing.Size(136, 22);
             this.lblVideoQualityHigher.TabIndex = 13;
             this.lblVideoQualityHigher.Text = "Higher quality/size ->";
             this.lblVideoQualityHigher.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // lvlVideoQualityLower
             // 
-            this.lvlVideoQualityLower.Location = new System.Drawing.Point(112, 66);
+            this.lvlVideoQualityLower.Location = new System.Drawing.Point(120, 146);
             this.lvlVideoQualityLower.Name = "lvlVideoQualityLower";
-            this.lvlVideoQualityLower.Size = new System.Drawing.Size(128, 22);
+            this.lvlVideoQualityLower.Size = new System.Drawing.Size(136, 22);
             this.lvlVideoQualityLower.TabIndex = 12;
             this.lvlVideoQualityLower.Text = "<- Lower quality/size";
-            // 
-            // tcMain
-            // 
-            this.tcMain.Controls.Add(this.tpVideoOptions);
-            this.tcMain.Controls.Add(this.tpOptions);
-            this.tcMain.Controls.Add(this.tpArguments);
-            this.tcMain.Location = new System.Drawing.Point(16, 88);
-            this.tcMain.Name = "tcMain";
-            this.tcMain.SelectedIndex = 0;
-            this.tcMain.Size = new System.Drawing.Size(424, 176);
-            this.tcMain.TabIndex = 18;
-            // 
-            // tpVideoOptions
-            // 
-            this.tpVideoOptions.Controls.Add(this.lblVideoQualityHigher);
-            this.tpVideoOptions.Controls.Add(this.lvlVideoQualityLower);
-            this.tpVideoOptions.Controls.Add(this.lblVideoQualityValue);
-            this.tpVideoOptions.Controls.Add(this.lblVideoCodec);
-            this.tpVideoOptions.Controls.Add(this.tbVideoQuality);
-            this.tpVideoOptions.Controls.Add(this.cbVideoCodec);
-            this.tpVideoOptions.Controls.Add(this.lblVideoQuality);
-            this.tpVideoOptions.Location = new System.Drawing.Point(4, 22);
-            this.tpVideoOptions.Name = "tpVideoOptions";
-            this.tpVideoOptions.Padding = new System.Windows.Forms.Padding(3);
-            this.tpVideoOptions.Size = new System.Drawing.Size(416, 150);
-            this.tpVideoOptions.TabIndex = 0;
-            this.tpVideoOptions.Text = "Video options";
-            this.tpVideoOptions.UseVisualStyleBackColor = true;
-            // 
-            // tpOptions
-            // 
-            this.tpOptions.Controls.Add(this.cbAutoOpenFolder);
-            this.tpOptions.Location = new System.Drawing.Point(4, 22);
-            this.tpOptions.Name = "tpOptions";
-            this.tpOptions.Padding = new System.Windows.Forms.Padding(3);
-            this.tpOptions.Size = new System.Drawing.Size(416, 150);
-            this.tpOptions.TabIndex = 2;
-            this.tpOptions.Text = "Options";
-            this.tpOptions.UseVisualStyleBackColor = true;
             // 
             // cbAutoOpenFolder
             // 
             this.cbAutoOpenFolder.AutoSize = true;
-            this.cbAutoOpenFolder.Location = new System.Drawing.Point(16, 16);
+            this.cbAutoOpenFolder.Location = new System.Drawing.Point(16, 200);
             this.cbAutoOpenFolder.Name = "cbAutoOpenFolder";
             this.cbAutoOpenFolder.Size = new System.Drawing.Size(152, 17);
             this.cbAutoOpenFolder.TabIndex = 0;
@@ -267,23 +219,11 @@
             this.cbAutoOpenFolder.UseVisualStyleBackColor = true;
             this.cbAutoOpenFolder.CheckedChanged += new System.EventHandler(this.cbAutoOpenFolder_CheckedChanged);
             // 
-            // tpArguments
-            // 
-            this.tpArguments.Controls.Add(this.cbUseCustomArguments);
-            this.tpArguments.Controls.Add(this.txtArguments);
-            this.tpArguments.Location = new System.Drawing.Point(4, 22);
-            this.tpArguments.Name = "tpArguments";
-            this.tpArguments.Padding = new System.Windows.Forms.Padding(3);
-            this.tpArguments.Size = new System.Drawing.Size(416, 150);
-            this.tpArguments.TabIndex = 1;
-            this.tpArguments.Text = "Arguments";
-            this.tpArguments.UseVisualStyleBackColor = true;
-            // 
             // pbProgress
             // 
             this.pbProgress.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pbProgress.ForeColor = System.Drawing.Color.White;
-            this.pbProgress.Location = new System.Drawing.Point(208, 272);
+            this.pbProgress.Location = new System.Drawing.Point(208, 232);
             this.pbProgress.Name = "pbProgress";
             this.pbProgress.ShowPercentageText = true;
             this.pbProgress.Size = new System.Drawing.Size(232, 32);
@@ -293,7 +233,7 @@
             // cbUseCustomArguments
             // 
             this.cbUseCustomArguments.AutoSize = true;
-            this.cbUseCustomArguments.Location = new System.Drawing.Point(8, 8);
+            this.cbUseCustomArguments.Location = new System.Drawing.Point(16, 176);
             this.cbUseCustomArguments.Name = "cbUseCustomArguments";
             this.cbUseCustomArguments.Size = new System.Drawing.Size(134, 17);
             this.cbUseCustomArguments.TabIndex = 17;
@@ -306,12 +246,21 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(456, 316);
-            this.Controls.Add(this.tcMain);
+            this.ClientSize = new System.Drawing.Size(456, 278);
+            this.Controls.Add(this.txtArguments);
+            this.Controls.Add(this.lblVideoQualityValue);
+            this.Controls.Add(this.cbUseCustomArguments);
+            this.Controls.Add(this.cbAutoOpenFolder);
+            this.Controls.Add(this.lblVideoQualityHigher);
+            this.Controls.Add(this.lvlVideoQualityLower);
             this.Controls.Add(this.txtOutputFileName);
             this.Controls.Add(this.lblOutputFileName);
+            this.Controls.Add(this.lblVideoCodec);
+            this.Controls.Add(this.tbVideoQuality);
             this.Controls.Add(this.btnOutputFolderBrowse);
+            this.Controls.Add(this.cbVideoCodec);
             this.Controls.Add(this.lblOutputFolder);
+            this.Controls.Add(this.lblVideoQuality);
             this.Controls.Add(this.txtOutputFolder);
             this.Controls.Add(this.btnInputFilePathBrowse);
             this.Controls.Add(this.txtInputFilePath);
@@ -325,13 +274,6 @@
             this.Text = "ShareX - Video converter";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.VideoConverterForm_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.tbVideoQuality)).EndInit();
-            this.tcMain.ResumeLayout(false);
-            this.tpVideoOptions.ResumeLayout(false);
-            this.tpVideoOptions.PerformLayout();
-            this.tpOptions.ResumeLayout(false);
-            this.tpOptions.PerformLayout();
-            this.tpArguments.ResumeLayout(false);
-            this.tpArguments.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -356,10 +298,6 @@
         private System.Windows.Forms.Label lblVideoQualityValue;
         private System.Windows.Forms.Label lblVideoQualityHigher;
         private System.Windows.Forms.Label lvlVideoQualityLower;
-        private System.Windows.Forms.TabControl tcMain;
-        private System.Windows.Forms.TabPage tpVideoOptions;
-        private System.Windows.Forms.TabPage tpArguments;
-        private System.Windows.Forms.TabPage tpOptions;
         private HelpersLib.BlackStyleProgressBar pbProgress;
         private System.Windows.Forms.CheckBox cbAutoOpenFolder;
         private System.Windows.Forms.CheckBox cbUseCustomArguments;
