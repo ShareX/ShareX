@@ -47,15 +47,16 @@
             this.lvlVideoQualityLower = new System.Windows.Forms.Label();
             this.tcMain = new System.Windows.Forms.TabControl();
             this.tpVideoOptions = new System.Windows.Forms.TabPage();
-            this.tpArguments = new System.Windows.Forms.TabPage();
             this.tpOptions = new System.Windows.Forms.TabPage();
-            this.pbProgress = new ShareX.HelpersLib.BlackStyleProgressBar();
             this.cbAutoOpenFolder = new System.Windows.Forms.CheckBox();
+            this.tpArguments = new System.Windows.Forms.TabPage();
+            this.pbProgress = new ShareX.HelpersLib.BlackStyleProgressBar();
+            this.cbUseCustomArguments = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.tbVideoQuality)).BeginInit();
             this.tcMain.SuspendLayout();
             this.tpVideoOptions.SuspendLayout();
-            this.tpArguments.SuspendLayout();
             this.tpOptions.SuspendLayout();
+            this.tpArguments.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblInputFilePath
@@ -171,12 +172,13 @@
             // txtArguments
             // 
             this.txtArguments.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtArguments.Location = new System.Drawing.Point(8, 8);
+            this.txtArguments.Location = new System.Drawing.Point(8, 32);
             this.txtArguments.Multiline = true;
             this.txtArguments.Name = "txtArguments";
             this.txtArguments.ReadOnly = true;
-            this.txtArguments.Size = new System.Drawing.Size(400, 136);
+            this.txtArguments.Size = new System.Drawing.Size(400, 112);
             this.txtArguments.TabIndex = 16;
+            this.txtArguments.TextChanged += new System.EventHandler(this.txtArguments_TextChanged);
             // 
             // tbVideoQuality
             // 
@@ -243,17 +245,6 @@
             this.tpVideoOptions.Text = "Video options";
             this.tpVideoOptions.UseVisualStyleBackColor = true;
             // 
-            // tpArguments
-            // 
-            this.tpArguments.Controls.Add(this.txtArguments);
-            this.tpArguments.Location = new System.Drawing.Point(4, 22);
-            this.tpArguments.Name = "tpArguments";
-            this.tpArguments.Padding = new System.Windows.Forms.Padding(3);
-            this.tpArguments.Size = new System.Drawing.Size(416, 150);
-            this.tpArguments.TabIndex = 1;
-            this.tpArguments.Text = "Arguments";
-            this.tpArguments.UseVisualStyleBackColor = true;
-            // 
             // tpOptions
             // 
             this.tpOptions.Controls.Add(this.cbAutoOpenFolder);
@@ -264,6 +255,29 @@
             this.tpOptions.TabIndex = 2;
             this.tpOptions.Text = "Options";
             this.tpOptions.UseVisualStyleBackColor = true;
+            // 
+            // cbAutoOpenFolder
+            // 
+            this.cbAutoOpenFolder.AutoSize = true;
+            this.cbAutoOpenFolder.Location = new System.Drawing.Point(16, 16);
+            this.cbAutoOpenFolder.Name = "cbAutoOpenFolder";
+            this.cbAutoOpenFolder.Size = new System.Drawing.Size(152, 17);
+            this.cbAutoOpenFolder.TabIndex = 0;
+            this.cbAutoOpenFolder.Text = "Open folder after encoding";
+            this.cbAutoOpenFolder.UseVisualStyleBackColor = true;
+            this.cbAutoOpenFolder.CheckedChanged += new System.EventHandler(this.cbAutoOpenFolder_CheckedChanged);
+            // 
+            // tpArguments
+            // 
+            this.tpArguments.Controls.Add(this.cbUseCustomArguments);
+            this.tpArguments.Controls.Add(this.txtArguments);
+            this.tpArguments.Location = new System.Drawing.Point(4, 22);
+            this.tpArguments.Name = "tpArguments";
+            this.tpArguments.Padding = new System.Windows.Forms.Padding(3);
+            this.tpArguments.Size = new System.Drawing.Size(416, 150);
+            this.tpArguments.TabIndex = 1;
+            this.tpArguments.Text = "Arguments";
+            this.tpArguments.UseVisualStyleBackColor = true;
             // 
             // pbProgress
             // 
@@ -276,16 +290,16 @@
             this.pbProgress.TabIndex = 19;
             this.pbProgress.Text = null;
             // 
-            // cbAutoOpenFolder
+            // cbUseCustomArguments
             // 
-            this.cbAutoOpenFolder.AutoSize = true;
-            this.cbAutoOpenFolder.Location = new System.Drawing.Point(16, 16);
-            this.cbAutoOpenFolder.Name = "cbAutoOpenFolder";
-            this.cbAutoOpenFolder.Size = new System.Drawing.Size(152, 17);
-            this.cbAutoOpenFolder.TabIndex = 0;
-            this.cbAutoOpenFolder.Text = "Open folder after encoding";
-            this.cbAutoOpenFolder.UseVisualStyleBackColor = true;
-            this.cbAutoOpenFolder.CheckedChanged += new System.EventHandler(this.cbAutoOpenFolder_CheckedChanged);
+            this.cbUseCustomArguments.AutoSize = true;
+            this.cbUseCustomArguments.Location = new System.Drawing.Point(8, 8);
+            this.cbUseCustomArguments.Name = "cbUseCustomArguments";
+            this.cbUseCustomArguments.Size = new System.Drawing.Size(134, 17);
+            this.cbUseCustomArguments.TabIndex = 17;
+            this.cbUseCustomArguments.Text = "Use custom arguments";
+            this.cbUseCustomArguments.UseVisualStyleBackColor = true;
+            this.cbUseCustomArguments.CheckedChanged += new System.EventHandler(this.cbUseCustomArguments_CheckedChanged);
             // 
             // VideoConverterForm
             // 
@@ -314,10 +328,10 @@
             this.tcMain.ResumeLayout(false);
             this.tpVideoOptions.ResumeLayout(false);
             this.tpVideoOptions.PerformLayout();
-            this.tpArguments.ResumeLayout(false);
-            this.tpArguments.PerformLayout();
             this.tpOptions.ResumeLayout(false);
             this.tpOptions.PerformLayout();
+            this.tpArguments.ResumeLayout(false);
+            this.tpArguments.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -348,5 +362,6 @@
         private System.Windows.Forms.TabPage tpOptions;
         private HelpersLib.BlackStyleProgressBar pbProgress;
         private System.Windows.Forms.CheckBox cbAutoOpenFolder;
+        private System.Windows.Forms.CheckBox cbUseCustomArguments;
     }
 }

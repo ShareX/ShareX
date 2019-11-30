@@ -55,6 +55,22 @@ namespace ShareX.MediaLib
 
         public bool AutoOpenFolder { get; set; } = true;
 
+        public bool UseCustomArguments { get; set; } = false;
+        public string CustomArguments { get; set; } = "";
+
+        public string Arguments
+        {
+            get
+            {
+                if (UseCustomArguments)
+                {
+                    return CustomArguments;
+                }
+
+                return GetFFmpegArgs();
+            }
+        }
+
         public string GetFFmpegArgs()
         {
             StringBuilder args = new StringBuilder();

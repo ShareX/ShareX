@@ -58,6 +58,13 @@ namespace ShareX.MediaLib
 
             cbAutoOpenFolder.Checked = Options.AutoOpenFolder;
 
+            cbUseCustomArguments.Checked = Options.UseCustomArguments;
+
+            if (Options.UseCustomArguments)
+            {
+                txtArguments.Text = Options.CustomArguments;
+            }
+
             formReady = true;
         }
 
@@ -69,6 +76,11 @@ namespace ShareX.MediaLib
                 Options.OutputFolderPath = txtOutputFolder.Text;
                 Options.OutputFileName = txtOutputFileName.Text;
                 Options.VideoCodec = (ConverterVideoCodecs)cbVideoCodec.SelectedIndex;
+                Options.UseCustomArguments = cbUseCustomArguments.Checked;
+                if (Options.UseCustomArguments)
+                {
+                    Options.CustomArguments = txtArguments.Text;
+                }
             }
 
             switch (Options.VideoCodec)
@@ -110,7 +122,12 @@ namespace ShareX.MediaLib
 
             lblVideoQualityValue.Text = Options.VideoQuality.ToString();
 
-            txtArguments.Text = Options.GetFFmpegArgs();
+            if (!Options.UseCustomArguments)
+            {
+                txtArguments.Text = Options.GetFFmpegArgs();
+            }
+
+            txtArguments.ReadOnly = !Options.UseCustomArguments;
 
             btnEncode.Enabled = !string.IsNullOrEmpty(Options.InputFilePath) && !string.IsNullOrEmpty(Options.OutputFolderPath) &&
                 !string.IsNullOrEmpty(Options.OutputFileName);
@@ -130,7 +147,7 @@ namespace ShareX.MediaLib
                     ffmpeg.EncodeProgressChanged += Manager_EncodeProgressChanged;
 
                     string outputFilePath = Options.OutputFilePath;
-                    string args = Options.GetFFmpegArgs();
+                    string args = Options.Arguments;
                     result = ffmpeg.Run(args);
 
                     if (Options.AutoOpenFolder && result && !ffmpeg.StopRequested)
@@ -211,6 +228,16 @@ namespace ShareX.MediaLib
         private void cbAutoOpenFolder_CheckedChanged(object sender, EventArgs e)
         {
             Options.AutoOpenFolder = cbAutoOpenFolder.Checked;
+        }
+
+        private void cbUseCustomArguments_CheckedChanged(object sender, EventArgs e)
+        {
+            UpdateOptions();
+        }
+
+        private void txtArguments_TextChanged(object sender, EventArgs e)
+        {
+            UpdateOptions();
         }
 
         private async void btnEncode_Click(object sender, EventArgs e)
