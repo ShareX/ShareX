@@ -44,7 +44,7 @@
             this.tbVideoQuality = new System.Windows.Forms.TrackBar();
             this.lblVideoQualityValue = new System.Windows.Forms.Label();
             this.lblVideoQualityHigher = new System.Windows.Forms.Label();
-            this.lvlVideoQualityLower = new System.Windows.Forms.Label();
+            this.lblVideoQualityLower = new System.Windows.Forms.Label();
             this.cbAutoOpenFolder = new System.Windows.Forms.CheckBox();
             this.pbProgress = new ShareX.HelpersLib.BlackStyleProgressBar();
             this.cbUseCustomArguments = new System.Windows.Forms.CheckBox();
@@ -185,7 +185,7 @@
             // lblVideoQualityValue
             // 
             this.lblVideoQualityValue.AutoSize = true;
-            this.lblVideoQualityValue.Location = new System.Drawing.Point(416, 126);
+            this.lblVideoQualityValue.Location = new System.Drawing.Point(413, 126);
             this.lblVideoQualityValue.Name = "lblVideoQualityValue";
             this.lblVideoQualityValue.Size = new System.Drawing.Size(13, 13);
             this.lblVideoQualityValue.TabIndex = 14;
@@ -200,13 +200,13 @@
             this.lblVideoQualityHigher.Text = "Higher quality/size ->";
             this.lblVideoQualityHigher.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // lvlVideoQualityLower
+            // lblVideoQualityLower
             // 
-            this.lvlVideoQualityLower.Location = new System.Drawing.Point(120, 146);
-            this.lvlVideoQualityLower.Name = "lvlVideoQualityLower";
-            this.lvlVideoQualityLower.Size = new System.Drawing.Size(136, 22);
-            this.lvlVideoQualityLower.TabIndex = 12;
-            this.lvlVideoQualityLower.Text = "<- Lower quality/size";
+            this.lblVideoQualityLower.Location = new System.Drawing.Point(120, 146);
+            this.lblVideoQualityLower.Name = "lblVideoQualityLower";
+            this.lblVideoQualityLower.Size = new System.Drawing.Size(136, 22);
+            this.lblVideoQualityLower.TabIndex = 12;
+            this.lblVideoQualityLower.Text = "<- Lower quality/size";
             // 
             // cbAutoOpenFolder
             // 
@@ -247,12 +247,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(456, 278);
-            this.Controls.Add(this.txtArguments);
             this.Controls.Add(this.lblVideoQualityValue);
             this.Controls.Add(this.cbUseCustomArguments);
             this.Controls.Add(this.cbAutoOpenFolder);
             this.Controls.Add(this.lblVideoQualityHigher);
-            this.Controls.Add(this.lvlVideoQualityLower);
+            this.Controls.Add(this.lblVideoQualityLower);
             this.Controls.Add(this.txtOutputFileName);
             this.Controls.Add(this.lblOutputFileName);
             this.Controls.Add(this.lblVideoCodec);
@@ -267,6 +266,7 @@
             this.Controls.Add(this.lblInputFilePath);
             this.Controls.Add(this.btnEncode);
             this.Controls.Add(this.pbProgress);
+            this.Controls.Add(this.txtArguments);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "VideoConverterForm";
@@ -297,7 +297,7 @@
         private System.Windows.Forms.TrackBar tbVideoQuality;
         private System.Windows.Forms.Label lblVideoQualityValue;
         private System.Windows.Forms.Label lblVideoQualityHigher;
-        private System.Windows.Forms.Label lvlVideoQualityLower;
+        private System.Windows.Forms.Label lblVideoQualityLower;
         private HelpersLib.BlackStyleProgressBar pbProgress;
         private System.Windows.Forms.CheckBox cbAutoOpenFolder;
         private System.Windows.Forms.CheckBox cbUseCustomArguments;

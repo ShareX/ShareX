@@ -105,6 +105,9 @@ namespace ShareX.MediaLib
                     tbVideoQuality.Maximum = 51;
                     break;
                 case ConverterVideoCodecs.vp8:
+                    tbVideoQuality.Minimum = 4;
+                    tbVideoQuality.Maximum = 63;
+                    break;
                 case ConverterVideoCodecs.vp9:
                     tbVideoQuality.Minimum = 0;
                     tbVideoQuality.Maximum = 63;
@@ -127,6 +130,8 @@ namespace ShareX.MediaLib
                 txtArguments.Text = Options.GetFFmpegArgs();
             }
 
+            lblVideoCodec.Visible = cbVideoCodec.Visible = lblVideoQuality.Visible = tbVideoQuality.Visible =
+                lblVideoQualityValue.Visible = lblVideoQualityLower.Visible = lblVideoQualityHigher.Visible = !Options.UseCustomArguments;
             txtArguments.Visible = Options.UseCustomArguments;
 
             btnEncode.Enabled = !string.IsNullOrEmpty(Options.InputFilePath) && !string.IsNullOrEmpty(Options.OutputFolderPath) &&

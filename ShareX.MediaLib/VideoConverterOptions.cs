@@ -53,10 +53,10 @@ namespace ShareX.MediaLib
         public ConverterVideoCodecs VideoCodec { get; set; } = ConverterVideoCodecs.x264;
         public int VideoQuality { get; set; } = 23;
 
-        public bool AutoOpenFolder { get; set; } = true;
-
         public bool UseCustomArguments { get; set; } = false;
         public string CustomArguments { get; set; } = "";
+
+        public bool AutoOpenFolder { get; set; } = true;
 
         public string Arguments
         {
@@ -89,7 +89,7 @@ namespace ShareX.MediaLib
                     args.Append($"-c:v libx265 -preset medium -crf {VideoQuality.Clamp(0, 51)} ");
                     break;
                 case ConverterVideoCodecs.vp8: // https://trac.ffmpeg.org/wiki/Encode/VP8
-                    args.Append($"-c:v libvpx -crf {VideoQuality.Clamp(0, 63)} -b:v 0 ");
+                    args.Append($"-c:v libvpx -crf {VideoQuality.Clamp(4, 63)} -b:v 0 ");
                     break;
                 case ConverterVideoCodecs.vp9: // https://trac.ffmpeg.org/wiki/Encode/VP9
                     args.Append($"-c:v libvpx-vp9 -crf {VideoQuality.Clamp(0, 63)} -b:v 0 ");
