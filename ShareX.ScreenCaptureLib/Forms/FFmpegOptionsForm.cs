@@ -124,7 +124,7 @@ namespace ShareX.ScreenCaptureLib
             tbVorbis_qscale.Value = Options.FFmpeg.Vorbis_qscale;
 
             // MP3
-            tbMP3_qscale.Value = FFmpegCLIManager.libmp3lame_qscale_end - Options.FFmpeg.MP3_qscale;
+            tbMP3_qscale.Value = FFmpegCLIManager.mp3_max - Options.FFmpeg.MP3_qscale;
 
 #if WindowsStore
             btnTest.Visible = false;
@@ -492,7 +492,7 @@ namespace ShareX.ScreenCaptureLib
 
         private void tbMP3_qscale_ValueChanged(object sender, EventArgs e)
         {
-            Options.FFmpeg.MP3_qscale = FFmpegCLIManager.libmp3lame_qscale_end - tbMP3_qscale.Value;
+            Options.FFmpeg.MP3_qscale = FFmpegCLIManager.mp3_max - tbMP3_qscale.Value;
             UpdateUI();
         }
 

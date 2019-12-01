@@ -39,7 +39,19 @@ namespace ShareX.MediaLib
         public const string SourceGDIGrab = "GDI grab";
         public const string SourceVideoDevice = "screen-capture-recorder";
         public const string SourceAudioDevice = "virtual-audio-capturer";
-        public const int libmp3lame_qscale_end = 9;
+
+        public const int x264_min = 0;
+        public const int x264_max = 51;
+        public const int x265_min = 0;
+        public const int x265_max = 51;
+        public const int vp8_min = 4;
+        public const int vp8_max = 63;
+        public const int vp9_min = 0;
+        public const int vp9_max = 63;
+        public const int xvid_min = 1;
+        public const int xvid_max = 31;
+        public const int mp3_min = 0;
+        public const int mp3_max = 9;
 
         public delegate void EncodeStartedEventHandler();
         public event EncodeStartedEventHandler EncodeStarted;

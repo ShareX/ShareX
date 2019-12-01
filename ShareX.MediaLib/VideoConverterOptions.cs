@@ -82,20 +82,20 @@ namespace ShareX.MediaLib
             switch (VideoCodec)
             {
                 case ConverterVideoCodecs.x264: // https://trac.ffmpeg.org/wiki/Encode/H.264
-                    args.Append($"-c:v libx264 -preset medium -crf {VideoQuality.Clamp(0, 51)} ");
+                    args.Append($"-c:v libx264 -preset medium -crf {VideoQuality.Clamp(FFmpegCLIManager.x264_min, FFmpegCLIManager.x264_max)} ");
                     args.Append("-pix_fmt yuv420p -movflags +faststart "); // For browser support
                     break;
                 case ConverterVideoCodecs.x265: // https://trac.ffmpeg.org/wiki/Encode/H.265
-                    args.Append($"-c:v libx265 -preset medium -crf {VideoQuality.Clamp(0, 51)} ");
+                    args.Append($"-c:v libx265 -preset medium -crf {VideoQuality.Clamp(FFmpegCLIManager.x265_min, FFmpegCLIManager.x265_max)} ");
                     break;
                 case ConverterVideoCodecs.vp8: // https://trac.ffmpeg.org/wiki/Encode/VP8
-                    args.Append($"-c:v libvpx -crf {VideoQuality.Clamp(4, 63)} -b:v 0 ");
+                    args.Append($"-c:v libvpx -crf {VideoQuality.Clamp(FFmpegCLIManager.vp8_min, FFmpegCLIManager.vp8_max)} -b:v 0 ");
                     break;
                 case ConverterVideoCodecs.vp9: // https://trac.ffmpeg.org/wiki/Encode/VP9
-                    args.Append($"-c:v libvpx-vp9 -crf {VideoQuality.Clamp(0, 63)} -b:v 0 ");
+                    args.Append($"-c:v libvpx-vp9 -crf {VideoQuality.Clamp(FFmpegCLIManager.vp9_min, FFmpegCLIManager.vp9_max)} -b:v 0 ");
                     break;
                 case ConverterVideoCodecs.xvid: // https://trac.ffmpeg.org/wiki/Encode/MPEG-4
-                    args.Append($"-c:v libxvid -q:v {VideoQuality.Clamp(1, 31)} ");
+                    args.Append($"-c:v libxvid -q:v {VideoQuality.Clamp(FFmpegCLIManager.xvid_min, FFmpegCLIManager.xvid_max)} ");
                     break;
                 case ConverterVideoCodecs.gif: // https://ffmpeg.org/ffmpeg-filters.html#palettegen-1
                     args.Append("-lavfi \"palettegen=stats_mode=full[palette],[0:v][palette]paletteuse=dither=sierra2_4a\" ");

@@ -100,21 +100,24 @@ namespace ShareX.MediaLib
             switch (Options.VideoCodec)
             {
                 case ConverterVideoCodecs.x264:
+                    tbVideoQuality.Minimum = FFmpegCLIManager.x264_min;
+                    tbVideoQuality.Maximum = FFmpegCLIManager.x264_max;
+                    break;
                 case ConverterVideoCodecs.x265:
-                    tbVideoQuality.Minimum = 0;
-                    tbVideoQuality.Maximum = 51;
+                    tbVideoQuality.Minimum = FFmpegCLIManager.x265_min;
+                    tbVideoQuality.Maximum = FFmpegCLIManager.x265_max;
                     break;
                 case ConverterVideoCodecs.vp8:
-                    tbVideoQuality.Minimum = 4;
-                    tbVideoQuality.Maximum = 63;
+                    tbVideoQuality.Minimum = FFmpegCLIManager.vp8_min;
+                    tbVideoQuality.Maximum = FFmpegCLIManager.vp8_max;
                     break;
                 case ConverterVideoCodecs.vp9:
-                    tbVideoQuality.Minimum = 0;
-                    tbVideoQuality.Maximum = 63;
+                    tbVideoQuality.Minimum = FFmpegCLIManager.vp9_min;
+                    tbVideoQuality.Maximum = FFmpegCLIManager.vp9_max;
                     break;
                 case ConverterVideoCodecs.xvid:
-                    tbVideoQuality.Minimum = 1;
-                    tbVideoQuality.Maximum = 31;
+                    tbVideoQuality.Minimum = FFmpegCLIManager.xvid_min;
+                    tbVideoQuality.Maximum = FFmpegCLIManager.xvid_max;
                     break;
             }
 
