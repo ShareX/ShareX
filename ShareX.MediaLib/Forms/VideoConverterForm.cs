@@ -121,6 +121,10 @@ namespace ShareX.MediaLib
                     break;
             }
 
+            // TODO: Translate
+            lblVideoQualityLower.Text = tbVideoQuality.Maximum + "   <- " + "Lower quality/size";
+            lblVideoQualityHigher.Text = "Higher quality/size" + " ->   " + tbVideoQuality.Minimum;
+
             if (formReady)
             {
                 Options.VideoQuality = tbVideoQuality.Minimum + tbVideoQuality.Maximum - tbVideoQuality.Value;

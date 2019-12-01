@@ -193,20 +193,20 @@
             // 
             // lblVideoQualityHigher
             // 
-            this.lblVideoQualityHigher.Location = new System.Drawing.Point(264, 146);
+            this.lblVideoQualityHigher.Location = new System.Drawing.Point(267, 146);
             this.lblVideoQualityHigher.Name = "lblVideoQualityHigher";
             this.lblVideoQualityHigher.Size = new System.Drawing.Size(136, 22);
             this.lblVideoQualityHigher.TabIndex = 13;
-            this.lblVideoQualityHigher.Text = "Higher quality/size ->";
+            this.lblVideoQualityHigher.Text = "->";
             this.lblVideoQualityHigher.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // lblVideoQualityLower
             // 
-            this.lblVideoQualityLower.Location = new System.Drawing.Point(120, 146);
+            this.lblVideoQualityLower.Location = new System.Drawing.Point(117, 146);
             this.lblVideoQualityLower.Name = "lblVideoQualityLower";
             this.lblVideoQualityLower.Size = new System.Drawing.Size(136, 22);
             this.lblVideoQualityLower.TabIndex = 12;
-            this.lblVideoQualityLower.Text = "<- Lower quality/size";
+            this.lblVideoQualityLower.Text = "<-";
             // 
             // cbAutoOpenFolder
             // 
