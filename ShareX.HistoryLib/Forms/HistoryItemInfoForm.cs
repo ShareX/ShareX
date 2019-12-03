@@ -35,7 +35,7 @@ namespace ShareX.HistoryLib
             InitializeComponent();
             ShareXResources.ApplyTheme(this);
 
-            olvMain.SelectObject(hi);
+            olvMain.SelectedObject = hi;
         }
     }
 }

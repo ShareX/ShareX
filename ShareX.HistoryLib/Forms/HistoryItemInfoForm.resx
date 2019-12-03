@@ -136,7 +136,7 @@
     <value>olvMain</value>
   </data>
   <data name="&gt;&gt;olvMain.Type" xml:space="preserve">
-    <value>ShareX.HistoryLib.CustomControls.ObjectListView, ShareX.HistoryLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HistoryLib.ObjectListView, ShareX.HistoryLib, Version=13.0.2.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;olvMain.Parent" xml:space="preserve">
     <value>$this</value>

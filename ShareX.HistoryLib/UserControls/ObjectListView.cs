@@ -26,6 +26,7 @@
 using ShareX.HelpersLib;
 using ShareX.HistoryLib.Properties;
 using System;
+using System.ComponentModel;
 using System.Reflection;
 using System.Windows.Forms;
 
@@ -39,13 +40,22 @@ namespace ShareX.HistoryLib
             Properties
         }
 
+        [DefaultValue(ObjectType.Properties)]
         public ObjectType SetObjectType { get; set; }
+
+        private object selectedObject;
 
         public object SelectedObject
         {
+            get
+            {
+                return selectedObject;
+            }
             set
             {
-                SelectObject(value);
+                selectedObject = value;
+
+                SelectObject(selectedObject);
             }
         }
 
@@ -55,6 +65,7 @@ namespace ShareX.HistoryLib
             MultiSelect = false;
             Columns.Add(Resources.ObjectListView_ObjectListView_Name, 125);
             Columns.Add(Resources.ObjectListView_ObjectListView_Value, 300);
+
             ContextMenuStrip cms = new ContextMenuStrip();
             cms.ShowImageMargin = false;
             cms.Items.Add(Resources.ObjectListView_ObjectListView_Copy_name).Click += PropertyListView_Click_Name;
@@ -77,7 +88,7 @@ namespace ShareX.HistoryLib
 
         private void PropertyListView_Click_Value(object sender, EventArgs e)
         {
-            if (SelectedItems.Count > 0)
+            if (SelectedItems.Count > 0 && SelectedItems[0].SubItems.Count > 1)
             {
                 string text = SelectedItems[0].SubItems[1].Text;
 
@@ -88,7 +99,7 @@ namespace ShareX.HistoryLib
             }
         }
 
-        public void SelectObject(object obj)
+        private void SelectObject(object obj)
         {
             Items.Clear();
 
@@ -98,9 +109,9 @@ namespace ShareX.HistoryLib
 
                 if (SetObjectType == ObjectType.Fields)
                 {
-                    foreach (FieldInfo property in type.GetFields())
+                    foreach (FieldInfo field in type.GetFields())
                     {
-                        AddObject(property.GetValue(obj), property.Name);
+                        AddObject(field.GetValue(obj), field.Name);
                     }
                 }
                 else if (SetObjectType == ObjectType.Properties)
@@ -110,23 +121,16 @@ namespace ShareX.HistoryLib
                         AddObject(property.GetValue(obj, null), property.Name);
                     }
                 }
-
-                FillLastColumn();
             }
         }
 
         private void AddObject(object obj, string name)
         {
-            if (obj is HistoryItem)
-            {
-                SelectObject(obj);
-                return;
-            }
-
             ListViewItem lvi = new ListViewItem(name);
-            lvi.Tag = obj;
+
             if (obj != null)
             {
+                lvi.Tag = obj;
                 lvi.SubItems.Add(obj.ToString());
             }
 

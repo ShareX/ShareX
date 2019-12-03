@@ -28,19 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HistoryItemInfoForm));
             this.olvMain = new ShareX.HistoryLib.ObjectListView();
             this.SuspendLayout();
             // 
             // olvMain
             // 
+            this.olvMain.AutoFillColumn = true;
+            this.olvMain.BorderStyle = System.Windows.Forms.BorderStyle.None;
             resources.ApplyResources(this.olvMain, "olvMain");
             this.olvMain.FullRowSelect = true;
             this.olvMain.GridLines = true;
             this.olvMain.HideSelection = false;
             this.olvMain.MultiSelect = false;
             this.olvMain.Name = "olvMain";
-            this.olvMain.SetObjectType = ShareX.HistoryLib.ObjectListView.ObjectType.Properties;
+            this.olvMain.SelectedObject = null;
             this.olvMain.UseCompatibleStateImageBehavior = false;
             this.olvMain.View = System.Windows.Forms.View.Details;
             // 
@@ -49,8 +52,6 @@
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.olvMain);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
-            this.MaximizeBox = false;
             this.Name = "HistoryItemInfoForm";
             this.ResumeLayout(false);
 
