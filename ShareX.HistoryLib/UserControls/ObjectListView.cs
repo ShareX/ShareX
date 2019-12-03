@@ -55,10 +55,11 @@ namespace ShareX.HistoryLib
             MultiSelect = false;
             Columns.Add(Resources.ObjectListView_ObjectListView_Name, 125);
             Columns.Add(Resources.ObjectListView_ObjectListView_Value, 300);
-            ContextMenu contextMenu = new ContextMenu();
-            contextMenu.MenuItems.Add(Resources.ObjectListView_ObjectListView_Copy_name).Click += PropertyListView_Click_Name;
-            contextMenu.MenuItems.Add(Resources.ObjectListView_ObjectListView_Copy_value).Click += PropertyListView_Click_Value;
-            ContextMenu = contextMenu;
+            ContextMenuStrip cms = new ContextMenuStrip();
+            cms.ShowImageMargin = false;
+            cms.Items.Add(Resources.ObjectListView_ObjectListView_Copy_name).Click += PropertyListView_Click_Name;
+            cms.Items.Add(Resources.ObjectListView_ObjectListView_Copy_value).Click += PropertyListView_Click_Value;
+            ContextMenuStrip = cms;
         }
 
         private void PropertyListView_Click_Name(object sender, EventArgs e)
@@ -66,6 +67,7 @@ namespace ShareX.HistoryLib
             if (SelectedItems.Count > 0)
             {
                 string text = SelectedItems[0].Text;
+
                 if (!string.IsNullOrEmpty(text))
                 {
                     ClipboardHelpers.CopyText(text);
@@ -78,6 +80,7 @@ namespace ShareX.HistoryLib
             if (SelectedItems.Count > 0)
             {
                 string text = SelectedItems[0].SubItems[1].Text;
+
                 if (!string.IsNullOrEmpty(text))
                 {
                     ClipboardHelpers.CopyText(text);

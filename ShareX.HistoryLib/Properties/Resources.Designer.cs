@@ -297,7 +297,7 @@ namespace ShareX.HistoryLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to More info.
+        ///   Looks up a localized string similar to More info....
         /// </summary>
         internal static string HistoryItemManager_InitializeComponent_More_info {
             get {
