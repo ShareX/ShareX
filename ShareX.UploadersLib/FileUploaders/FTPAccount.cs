@@ -178,7 +178,7 @@ namespace ShareX.UploadersLib
                 filename = Path.GetFileNameWithoutExtension(filename);
             }
 
-            filename = URLHelpers.URLEncode(filename, false, HelpersOptions.URLEncodeIgnoreEmoji);
+            filename = URLHelpers.URLEncode(filename);
 
             if (subFolderPath == null)
             {
