@@ -108,9 +108,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\ObjectListView.cs">
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="Forms\HistoryForm.cs">
       <SubType>Form</SubType>
     </Compile>

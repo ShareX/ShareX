@@ -1205,4 +1205,16 @@ Would you like to download and install it?</value>
   <data name="ReplCodeMenuEntry_wy_Week_of_year" xml:space="preserve">
     <value>Week of year</value>
   </data>
+  <data name="ObjectListView_ObjectListView_Copy_name" xml:space="preserve">
+    <value>Copy name</value>
+  </data>
+  <data name="ObjectListView_ObjectListView_Copy_value" xml:space="preserve">
+    <value>Copy value</value>
+  </data>
+  <data name="ObjectListView_ObjectListView_Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="ObjectListView_ObjectListView_Value" xml:space="preserve">
+    <value>Value</value>
+  </data>
 </root>

@@ -103,6 +103,9 @@
     <Compile Include="..\SharedAssemblyInfo.cs">
       <Link>Properties\SharedAssemblyInfo.cs</Link>
     </Compile>
+    <Compile Include="Controls\ObjectListView.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Controls\ToolStripRoundedEdgeRenderer.cs" />
     <Compile Include="Controls\DarkColorTable.cs" />
     <Compile Include="Controls\HotkeySelectionButton.cs">

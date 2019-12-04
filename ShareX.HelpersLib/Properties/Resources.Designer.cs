@@ -2223,6 +2223,42 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Copy name.
+        /// </summary>
+        internal static string ObjectListView_ObjectListView_Copy_name {
+            get {
+                return ResourceManager.GetString("ObjectListView_ObjectListView_Copy_name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Copy value.
+        /// </summary>
+        internal static string ObjectListView_ObjectListView_Copy_value {
+            get {
+                return ResourceManager.GetString("ObjectListView_ObjectListView_Copy_value", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Name.
+        /// </summary>
+        internal static string ObjectListView_ObjectListView_Name {
+            get {
+                return ResourceManager.GetString("ObjectListView_ObjectListView_Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Value.
+        /// </summary>
+        internal static string ObjectListView_ObjectListView_Value {
+            get {
+                return ResourceManager.GetString("ObjectListView_ObjectListView_Value", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to 1 Day.
         /// </summary>
         internal static string PastebinExpiration_D1 {

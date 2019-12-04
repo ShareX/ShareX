@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HistoryItemInfoForm));
-            this.olvMain = new ShareX.HistoryLib.ObjectListView();
+            this.olvMain = new ShareX.HelpersLib.ObjectListView();
             this.SuspendLayout();
             // 
             // olvMain
@@ -59,6 +59,6 @@
 
         #endregion Windows Form Designer generated code
 
-        private ShareX.HistoryLib.ObjectListView olvMain;
+        private ShareX.HelpersLib.ObjectListView olvMain;
     }
 }
