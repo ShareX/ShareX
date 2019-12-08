@@ -50,7 +50,7 @@ namespace ShareX.ImageEffectsLib
             }
             set
             {
-                imageCount = value.Clamp(1, 100);
+                imageCount = value.Clamp(1, 1000);
             }
         }
 
@@ -70,6 +70,7 @@ namespace ShareX.ImageEffectsLib
                 if (files.Length > 0)
                 {
                     using (Graphics g = Graphics.FromImage(img))
+                    using (ImageFilesCache imageCache = new ImageFilesCache())
                     {
                         g.SetHighQuality();
 
@@ -77,16 +78,15 @@ namespace ShareX.ImageEffectsLib
                         {
                             string randomFile = MathHelpers.RandomPick(files);
 
-                            using (Image img2 = ImageHelpers.LoadImage(randomFile))
+                            Image img2 = imageCache.GetImage(randomFile);
+
+                            if (img2 != null)
                             {
-                                if (img2 != null)
-                                {
-                                    int widthOffset = img.Width - img2.Width - 1;
-                                    int heightOffset = img.Height - img2.Height - 1;
-                                    Rectangle rect = new Rectangle(MathHelpers.Random(Math.Min(0, widthOffset), Math.Max(0, widthOffset)),
-                                        MathHelpers.Random(Math.Min(0, heightOffset), Math.Max(0, heightOffset)), img2.Width, img2.Height);
-                                    g.DrawImage(img2, rect);
-                                }
+                                int widthOffset = img.Width - img2.Width - 1;
+                                int heightOffset = img.Height - img2.Height - 1;
+                                Rectangle rect = new Rectangle(MathHelpers.Random(Math.Min(0, widthOffset), Math.Max(0, widthOffset)),
+                                    MathHelpers.Random(Math.Min(0, heightOffset), Math.Max(0, heightOffset)), img2.Width, img2.Height);
+                                g.DrawImage(img2, rect);
                             }
                         }
                     }

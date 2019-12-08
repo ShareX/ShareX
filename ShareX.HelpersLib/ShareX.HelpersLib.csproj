@@ -147,6 +147,7 @@
       <DependentUpon>DebugForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Helpers\JsonHelpers.cs" />
+    <Compile Include="ImageFilesCache.cs" />
     <Compile Include="PointInfo.cs" />
     <Compile Include="SevenZipManager.cs" />
     <Compile Include="Input\HotkeyForm.cs">
