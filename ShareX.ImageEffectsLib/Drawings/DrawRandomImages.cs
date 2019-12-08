@@ -66,6 +66,12 @@ namespace ShareX.ImageEffectsLib
         [DefaultValue(false)]
         public bool RandomRotate { get; set; }
 
+        [DefaultValue(0)]
+        public int RandomRotateMin { get; set; }
+
+        [DefaultValue(360)]
+        public int RandomRotateMax { get; set; }
+
         public DrawRandomImages()
         {
             this.ApplyDefaultPropertyValues();
@@ -94,38 +100,7 @@ namespace ShareX.ImageEffectsLib
 
                             if (img2 != null)
                             {
-                                int xOffset = img.Width - img2.Width - 1;
-                                int yOffset = img.Height - img2.Height - 1;
-                                int width, height;
-
-                                if (RandomSize)
-                                {
-                                    width = height = MathHelpers.Random(Math.Min(RandomSizeMin, RandomSizeMax), Math.Max(RandomSizeMin, RandomSizeMax));
-                                }
-                                else
-                                {
-                                    width = img2.Width;
-                                    height = img2.Height;
-                                }
-
-                                Rectangle rect = new Rectangle(MathHelpers.Random(Math.Min(0, xOffset), Math.Max(0, xOffset)),
-                                    MathHelpers.Random(Math.Min(0, yOffset), Math.Max(0, yOffset)), width, height);
-
-                                if (RandomRotate)
-                                {
-                                    float moveX = rect.X + (rect.Width / 2f);
-                                    float moveY = rect.Y + (rect.Height / 2f);
-                                    g.TranslateTransform(moveX, moveY);
-                                    g.RotateTransform(MathHelpers.Random(0, 360));
-                                    g.TranslateTransform(-moveX, -moveY);
-                                }
-
-                                g.DrawImage(img2, rect);
-
-                                if (RandomRotate)
-                                {
-                                    g.ResetTransform();
-                                }
+                                DrawImage(img, img2, g);
                             }
                         }
                     }
@@ -133,6 +108,42 @@ namespace ShareX.ImageEffectsLib
             }
 
             return img;
+        }
+
+        private void DrawImage(Image img, Image img2, Graphics g)
+        {
+            int xOffset = img.Width - img2.Width - 1;
+            int yOffset = img.Height - img2.Height - 1;
+            int width, height;
+
+            if (RandomSize)
+            {
+                width = height = MathHelpers.Random(Math.Min(RandomSizeMin, RandomSizeMax), Math.Max(RandomSizeMin, RandomSizeMax));
+            }
+            else
+            {
+                width = img2.Width;
+                height = img2.Height;
+            }
+
+            Rectangle rect = new Rectangle(MathHelpers.Random(Math.Min(0, xOffset), Math.Max(0, xOffset)),
+                MathHelpers.Random(Math.Min(0, yOffset), Math.Max(0, yOffset)), width, height);
+
+            if (RandomRotate)
+            {
+                float moveX = rect.X + (rect.Width / 2f);
+                float moveY = rect.Y + (rect.Height / 2f);
+                g.TranslateTransform(moveX, moveY);
+                g.RotateTransform(MathHelpers.Random(Math.Min(RandomRotateMin, RandomRotateMax), Math.Max(RandomRotateMin, RandomRotateMax)));
+                g.TranslateTransform(-moveX, -moveY);
+            }
+
+            g.DrawImage(img2, rect);
+
+            if (RandomRotate)
+            {
+                g.ResetTransform();
+            }
         }
     }
 }
