@@ -28,6 +28,7 @@ using System;
 using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Design;
+using System.Drawing.Drawing2D;
 using System.IO;
 using System.Linq;
 
@@ -90,13 +91,13 @@ namespace ShareX.ImageEffectsLib
                     using (Graphics g = Graphics.FromImage(img))
                     using (ImageFilesCache imageCache = new ImageFilesCache())
                     {
-                        g.SetHighQuality();
+                        g.InterpolationMode = InterpolationMode.HighQualityBicubic;
 
                         for (int i = 0; i < ImageCount; i++)
                         {
-                            string randomFile = MathHelpers.RandomPick(files);
+                            string file = MathHelpers.RandomPick(files);
 
-                            Image img2 = imageCache.GetImage(randomFile);
+                            Image img2 = imageCache.GetImage(file);
 
                             if (img2 != null)
                             {
@@ -124,6 +125,11 @@ namespace ShareX.ImageEffectsLib
             {
                 width = img2.Width;
                 height = img2.Height;
+            }
+
+            if (width < 1 || height < 1)
+            {
+                return;
             }
 
             Rectangle rect = new Rectangle(MathHelpers.Random(Math.Min(0, xOffset), Math.Max(0, xOffset)),
