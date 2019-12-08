@@ -43,9 +43,6 @@ namespace ShareX.ImageEffectsLib
         [DefaultValue(typeof(Point), "5, 5")]
         public Point Offset { get; set; }
 
-        [DefaultValue(false)]
-        public bool RandomPosition { get; set; }
-
         [DefaultValue(DrawImageSizeMode.DontResize), Description("How the image watermark should be rescaled, if at all.")]
         public DrawImageSizeMode SizeMode { get; set; }
 
@@ -87,27 +84,7 @@ namespace ShareX.ImageEffectsLib
                         }
 
                         // Place the image
-                        Point imagePosition;
-                        if (RandomPosition)
-                        {
-                            int x = 0;
-                            if (img.Width - imageSize.Width > 0)
-                            {
-                                x = MathHelpers.Random(0, img.Width - imageSize.Width);
-                            }
-
-                            int y = 0;
-                            if (img.Height - imageSize.Height > 0)
-                            {
-                                y = MathHelpers.Random(0, img.Height - imageSize.Height);
-                            }
-
-                            imagePosition = new Point(x, y);
-                        }
-                        else
-                        {
-                            imagePosition = Helpers.GetPosition(Placement, Offset, img.Size, imageSize);
-                        }
+                        Point imagePosition = Helpers.GetPosition(Placement, Offset, img.Size, imageSize);
 
                         Rectangle imageRectangle = new Rectangle(imagePosition, imageSize);
 
