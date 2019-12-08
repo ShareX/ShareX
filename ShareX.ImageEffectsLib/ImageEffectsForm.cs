@@ -99,7 +99,8 @@ namespace ShareX.ImageEffectsLib
                 typeof(DrawBorder),
                 typeof(DrawCheckerboard),
                 typeof(DrawImage),
-                typeof(DrawText));
+                typeof(DrawText),
+                typeof(DrawRandomImages));
 
             AddEffectToContextMenu(Resources.ImageEffectsForm_AddAllEffectsToTreeView_Manipulations,
                 typeof(AutoCrop),

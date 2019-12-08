@@ -1502,5 +1502,16 @@ namespace ShareX.HelpersLib
                 return sReader.ReadToEnd();
             }
         }
+
+        public static IEnumerable<string> GetFilesByExtensions(string directoryPath, params string[] extensions)
+        {
+            return GetFilesByExtensions(new DirectoryInfo(directoryPath), extensions);
+        }
+
+        public static IEnumerable<string> GetFilesByExtensions(DirectoryInfo directoryInfo, params string[] extensions)
+        {
+            HashSet<string> allowedExtensions = new HashSet<string>(extensions, StringComparer.OrdinalIgnoreCase);
+            return directoryInfo.EnumerateFiles().Where(f => allowedExtensions.Contains(f.Extension)).Select(x => x.FullName);
+        }
     }
 }
