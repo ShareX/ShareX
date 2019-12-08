@@ -113,8 +113,6 @@ namespace ShareX.ImageEffectsLib
 
         private void DrawImage(Image img, Image img2, Graphics g)
         {
-            int xOffset = img.Width - img2.Width - 1;
-            int yOffset = img.Height - img2.Height - 1;
             int width, height;
 
             if (RandomSize)
@@ -131,6 +129,9 @@ namespace ShareX.ImageEffectsLib
             {
                 return;
             }
+
+            int xOffset = img.Width - width - 1;
+            int yOffset = img.Height - height - 1;
 
             Rectangle rect = new Rectangle(MathHelpers.Random(Math.Min(0, xOffset), Math.Max(0, xOffset)),
                 MathHelpers.Random(Math.Min(0, yOffset), Math.Max(0, yOffset)), width, height);
