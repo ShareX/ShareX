@@ -29,6 +29,7 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Design;
 using System.Drawing.Drawing2D;
+using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
 
@@ -72,6 +73,15 @@ namespace ShareX.ImageEffectsLib
 
         [DefaultValue(360)]
         public int RandomRotateMax { get; set; }
+
+        [DefaultValue(false)]
+        public bool RandomOpacity { get; set; }
+
+        [DefaultValue(0)]
+        public int RandomOpacityMin { get; set; }
+
+        [DefaultValue(100)]
+        public int RandomOpacityMax { get; set; }
 
         public DrawRandomImages()
         {
@@ -140,12 +150,29 @@ namespace ShareX.ImageEffectsLib
             {
                 float moveX = rect.X + (rect.Width / 2f);
                 float moveY = rect.Y + (rect.Height / 2f);
+                int rotate = MathHelpers.Random(Math.Min(RandomRotateMin, RandomRotateMax), Math.Max(RandomRotateMin, RandomRotateMax));
+
                 g.TranslateTransform(moveX, moveY);
-                g.RotateTransform(MathHelpers.Random(Math.Min(RandomRotateMin, RandomRotateMax), Math.Max(RandomRotateMin, RandomRotateMax)));
+                g.RotateTransform(rotate);
                 g.TranslateTransform(-moveX, -moveY);
             }
 
-            g.DrawImage(img2, rect);
+            if (RandomOpacity)
+            {
+                float opacity = MathHelpers.Random(Math.Min(RandomOpacityMin, RandomOpacityMax), Math.Max(RandomOpacityMin, RandomOpacityMax)).Clamp(0, 100) / 100f;
+
+                ColorMatrix matrix = new ColorMatrix();
+                matrix.Matrix33 = opacity;
+                using (ImageAttributes attributes = new ImageAttributes())
+                {
+                    attributes.SetColorMatrix(matrix);
+                    g.DrawImage(img2, rect, 0, 0, img2.Width, img2.Height, GraphicsUnit.Pixel, attributes);
+                }
+            }
+            else
+            {
+                g.DrawImage(img2, rect);
+            }
 
             if (RandomRotate)
             {
