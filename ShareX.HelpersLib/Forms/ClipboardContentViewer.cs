@@ -91,9 +91,9 @@ namespace ShareX.HelpersLib
             }
             else if (Clipboard.ContainsFileDropList())
             {
-                string[] files = Clipboard.GetFileDropList().OfType<string>().ToArray();
-
-                if (files.Length > 0)
+                string[] files = ClipboardHelpers.GetFileDropList();
+                
+                if (files != null && files.Length > 0)
                 {
                     ClipboardContentType = EClipboardContentType.Files;
                     ClipboardContent = files;

@@ -81,11 +81,12 @@ namespace ShareX.ScreenCaptureLib
             }
             else if (Clipboard.ContainsFileDropList())
             {
-                string[] files = Clipboard.GetFileDropList().OfType<string>().Where(x => Helpers.IsImageFile(x)).ToArray();
+                string[] files = ClipboardHelpers.GetFileDropList();
 
-                if (files.Length > 0)
+                if (files != null)
                 {
-                    LoadImageFile(files[0]);
+                    string imageFilePath = files.FirstOrDefault(x => Helpers.IsImageFile(x));
+                    LoadImageFile(imageFilePath);
                 }
             }
             else

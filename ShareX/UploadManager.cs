@@ -196,7 +196,7 @@ namespace ShareX
 
         private static void ProcessFilesUpload(string[] files, TaskSettings taskSettings)
         {
-            if (files.Length > 0)
+            if (files != null && files.Length > 0)
             {
                 UploadFile(files, taskSettings);
             }
@@ -220,7 +220,7 @@ namespace ShareX
             }
             else if (Clipboard.ContainsFileDropList())
             {
-                string[] files = Clipboard.GetFileDropList().OfType<string>().ToArray();
+                string[] files = ClipboardHelpers.GetFileDropList();
 
                 ProcessFilesUpload(files, taskSettings);
             }
@@ -373,7 +373,8 @@ namespace ShareX
                 inputText = text;
             }
 
-            string url = InputBox.GetInputText("ShareX - " + ShareX.Properties.Resources.UploadManager_ShowShortenURLDialog_ShortenURL, inputText, ShareX.Properties.Resources.UploadManager_ShowShortenURLDialog_Shorten);
+            string url = InputBox.GetInputText("ShareX - " + Resources.UploadManager_ShowShortenURLDialog_ShortenURL, inputText,
+                Resources.UploadManager_ShowShortenURLDialog_Shorten);
 
             if (!string.IsNullOrEmpty(url))
             {
