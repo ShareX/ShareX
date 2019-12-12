@@ -341,5 +341,25 @@ namespace ShareX.HelpersLib
                 }
             }
         }
+
+        public static string GetText(bool checkContainsText = false)
+        {
+            try
+            {
+                lock (ClipboardLock)
+                {
+                    if (!checkContainsText || Clipboard.ContainsText())
+                    {
+                        return Clipboard.GetText();
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                DebugHelper.WriteException(e, "Clipboard get text failed.");
+            }
+
+            return null;
+        }
     }
 }

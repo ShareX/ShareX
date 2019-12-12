@@ -211,9 +211,10 @@ namespace ShareX.HelpersLib
 
         private void tsmiImportClipboard_Click(object sender, EventArgs e)
         {
-            if (Clipboard.ContainsText())
+            string json = ClipboardHelpers.GetText(true);
+
+            if (!string.IsNullOrEmpty(json))
             {
-                string json = Clipboard.GetText();
                 OnImportRequested(json);
                 OnImportCompleted();
             }

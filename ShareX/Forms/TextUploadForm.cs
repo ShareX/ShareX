@@ -40,7 +40,7 @@ namespace ShareX
 
             if (string.IsNullOrEmpty(content) && Clipboard.ContainsText())
             {
-                content = Clipboard.GetText();
+                content = ClipboardHelpers.GetText();
             }
 
             if (!string.IsNullOrEmpty(content))

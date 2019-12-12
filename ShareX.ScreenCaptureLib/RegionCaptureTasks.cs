@@ -132,11 +132,11 @@ namespace ShareX.ScreenCaptureLib
         {
             Color color = Color.Red;
 
-            if (checkClipboard && Clipboard.ContainsText())
+            if (checkClipboard)
             {
-                string text = Clipboard.GetText();
+                string text = ClipboardHelpers.GetText(true);
 
-                if (ColorHelpers.ParseColor(text, out Color clipboardColor))
+                if (!string.IsNullOrEmpty(text) && ColorHelpers.ParseColor(text, out Color clipboardColor))
                 {
                     color = clipboardColor;
                 }

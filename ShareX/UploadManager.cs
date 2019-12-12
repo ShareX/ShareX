@@ -214,7 +214,7 @@ namespace ShareX
             }
             else if (Clipboard.ContainsText())
             {
-                string text = Clipboard.GetText();
+                string text = ClipboardHelpers.GetText();
 
                 ProcessTextUpload(text, taskSettings);
             }
@@ -345,14 +345,11 @@ namespace ShareX
 
             string inputText = null;
 
-            if (Clipboard.ContainsText())
-            {
-                string text = Clipboard.GetText();
+            string text = ClipboardHelpers.GetText(true);
 
-                if (URLHelpers.IsValidURL(text))
-                {
-                    inputText = text;
-                }
+            if (URLHelpers.IsValidURL(text))
+            {
+                inputText = text;
             }
 
             string url = InputBox.GetInputText("ShareX - " + Resources.UploadManager_UploadURL_URL_to_download_from_and_upload, inputText);
@@ -369,14 +366,11 @@ namespace ShareX
 
             string inputText = null;
 
-            if (Clipboard.ContainsText())
-            {
-                string text = Clipboard.GetText();
+            string text = ClipboardHelpers.GetText(true);
 
-                if (URLHelpers.IsValidURL(text))
-                {
-                    inputText = text;
-                }
+            if (URLHelpers.IsValidURL(text))
+            {
+                inputText = text;
             }
 
             string url = InputBox.GetInputText("ShareX - " + ShareX.Properties.Resources.UploadManager_ShowShortenURLDialog_ShortenURL, inputText, ShareX.Properties.Resources.UploadManager_ShowShortenURLDialog_Shorten);

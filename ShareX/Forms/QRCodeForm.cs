@@ -55,14 +55,11 @@ namespace ShareX
 
         public static QRCodeForm EncodeClipboard()
         {
-            if (Clipboard.ContainsText())
-            {
-                string text = Clipboard.GetText();
+            string text = ClipboardHelpers.GetText(true);
 
-                if (TaskHelpers.CheckQRCodeContent(text))
-                {
-                    return new QRCodeForm(text);
-                }
+            if (!string.IsNullOrEmpty(text) && TaskHelpers.CheckQRCodeContent(text))
+            {
+                return new QRCodeForm(text);
             }
 
             return new QRCodeForm();
