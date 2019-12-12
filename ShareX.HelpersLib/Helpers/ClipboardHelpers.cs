@@ -196,24 +196,6 @@ namespace ShareX.HelpersLib
             return false;
         }
 
-        public static bool CopyTextFromFile(string path)
-        {
-            if (!string.IsNullOrEmpty(path) && File.Exists(path))
-            {
-                try
-                {
-                    string text = File.ReadAllText(path, Encoding.UTF8);
-                    return CopyText(text);
-                }
-                catch (Exception e)
-                {
-                    DebugHelper.WriteException(e, "Clipboard copy text from file failed.");
-                }
-            }
-
-            return false;
-        }
-
         public static bool CopyImageFromFile(string path)
         {
             if (!string.IsNullOrEmpty(path) && File.Exists(path))
@@ -234,13 +216,34 @@ namespace ShareX.HelpersLib
             return false;
         }
 
-        public static Image GetImage()
+        public static bool CopyTextFromFile(string path)
+        {
+            if (!string.IsNullOrEmpty(path) && File.Exists(path))
+            {
+                try
+                {
+                    string text = File.ReadAllText(path, Encoding.UTF8);
+                    return CopyText(text);
+                }
+                catch (Exception e)
+                {
+                    DebugHelper.WriteException(e, "Clipboard copy text from file failed.");
+                }
+            }
+
+            return false;
+        }
+
+        public static Image GetImage(bool checkContainsImage = false)
         {
             try
             {
                 lock (ClipboardLock)
                 {
-                    return Clipboard.GetImage();
+                    if (!checkContainsImage || Clipboard.ContainsImage())
+                    {
+                        return Clipboard.GetImage();
+                    }
                 }
             }
             catch (Exception e)
