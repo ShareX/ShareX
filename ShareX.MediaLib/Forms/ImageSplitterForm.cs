@@ -182,7 +182,7 @@ namespace ShareX.MediaLib
 
             string text = sb.ToString();
 
-            Clipboard.SetText(text);
+            ClipboardHelpers.CopyText(text);
         }
     }
 }

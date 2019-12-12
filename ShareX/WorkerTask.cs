@@ -311,7 +311,7 @@ namespace ShareX
 
                 if (EarlyURLCopied && (StopRequested || Info.Result == null || string.IsNullOrEmpty(Info.Result.URL)) && Clipboard.ContainsText())
                 {
-                    Clipboard.Clear();
+                    ClipboardHelpers.Clear();
                 }
 
                 if (Info.Job == TaskJob.Job && Info.TaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.DeleteFile) && !string.IsNullOrEmpty(Info.FilePath) && File.Exists(Info.FilePath))
