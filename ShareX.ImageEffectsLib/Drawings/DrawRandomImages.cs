@@ -25,6 +25,7 @@
 
 using ShareX.HelpersLib;
 using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Design;
@@ -83,6 +84,11 @@ namespace ShareX.ImageEffectsLib
         [DefaultValue(100)]
         public int RandomOpacityMax { get; set; }
 
+        [DefaultValue(false)]
+        public bool NoOverlap { get; set; }
+
+        private List<Rectangle> imageRectangles = new List<Rectangle>();
+
         public DrawRandomImages()
         {
             this.ApplyDefaultPropertyValues();
@@ -98,6 +104,8 @@ namespace ShareX.ImageEffectsLib
 
                 if (files.Length > 0)
                 {
+                    imageRectangles.Clear();
+
                     using (Graphics g = Graphics.FromImage(img))
                     using (ImageFilesCache imageCache = new ImageFilesCache())
                     {
@@ -143,8 +151,22 @@ namespace ShareX.ImageEffectsLib
             int xOffset = img.Width - width - 1;
             int yOffset = img.Height - height - 1;
 
-            Rectangle rect = new Rectangle(MathHelpers.Random(Math.Min(0, xOffset), Math.Max(0, xOffset)),
-                MathHelpers.Random(Math.Min(0, yOffset), Math.Max(0, yOffset)), width, height);
+            Rectangle rect;
+            int attemptCount = 0;
+
+            do
+            {
+                rect = new Rectangle(MathHelpers.Random(Math.Min(0, xOffset), Math.Max(0, xOffset)),
+                    MathHelpers.Random(Math.Min(0, yOffset), Math.Max(0, yOffset)), width, height);
+
+                attemptCount++;
+                if (attemptCount >= 1000)
+                {
+                    return;
+                }
+            } while (NoOverlap && imageRectangles.Any(x => x.IntersectsWith(rect)));
+
+            imageRectangles.Add(rect);
 
             if (RandomAngle)
             {
