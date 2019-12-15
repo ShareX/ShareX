@@ -66,13 +66,13 @@ namespace ShareX.ImageEffectsLib
         public int RandomSizeMax { get; set; }
 
         [DefaultValue(false)]
-        public bool RandomRotate { get; set; }
+        public bool RandomAngle { get; set; }
 
         [DefaultValue(0)]
-        public int RandomRotateMin { get; set; }
+        public int RandomAngleMin { get; set; }
 
         [DefaultValue(360)]
-        public int RandomRotateMax { get; set; }
+        public int RandomAngleMax { get; set; }
 
         [DefaultValue(false)]
         public bool RandomOpacity { get; set; }
@@ -146,11 +146,11 @@ namespace ShareX.ImageEffectsLib
             Rectangle rect = new Rectangle(MathHelpers.Random(Math.Min(0, xOffset), Math.Max(0, xOffset)),
                 MathHelpers.Random(Math.Min(0, yOffset), Math.Max(0, yOffset)), width, height);
 
-            if (RandomRotate)
+            if (RandomAngle)
             {
                 float moveX = rect.X + (rect.Width / 2f);
                 float moveY = rect.Y + (rect.Height / 2f);
-                int rotate = MathHelpers.Random(Math.Min(RandomRotateMin, RandomRotateMax), Math.Max(RandomRotateMin, RandomRotateMax));
+                int rotate = MathHelpers.Random(Math.Min(RandomAngleMin, RandomAngleMax), Math.Max(RandomAngleMin, RandomAngleMax));
 
                 g.TranslateTransform(moveX, moveY);
                 g.RotateTransform(rotate);
@@ -174,7 +174,7 @@ namespace ShareX.ImageEffectsLib
                 g.DrawImage(img2, rect);
             }
 
-            if (RandomRotate)
+            if (RandomAngle)
             {
                 g.ResetTransform();
             }
