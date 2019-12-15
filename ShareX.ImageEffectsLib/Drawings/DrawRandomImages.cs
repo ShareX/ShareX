@@ -87,6 +87,9 @@ namespace ShareX.ImageEffectsLib
         [DefaultValue(false)]
         public bool NoOverlap { get; set; }
 
+        [DefaultValue(0)]
+        public int NoOverlapOffset { get; set; }
+
         private List<Rectangle> imageRectangles = new List<Rectangle>();
 
         public DrawRandomImages()
@@ -151,20 +154,22 @@ namespace ShareX.ImageEffectsLib
             int xOffset = img.Width - width - 1;
             int yOffset = img.Height - height - 1;
 
-            Rectangle rect;
+            Rectangle rect, overlapRect;
             int attemptCount = 0;
 
             do
             {
-                rect = new Rectangle(MathHelpers.Random(Math.Min(0, xOffset), Math.Max(0, xOffset)),
-                    MathHelpers.Random(Math.Min(0, yOffset), Math.Max(0, yOffset)), width, height);
-
                 attemptCount++;
-                if (attemptCount >= 1000)
+                if (attemptCount > 1000)
                 {
                     return;
                 }
-            } while (NoOverlap && imageRectangles.Any(x => x.IntersectsWith(rect)));
+
+                rect = new Rectangle(MathHelpers.Random(Math.Min(0, xOffset), Math.Max(0, xOffset)),
+                    MathHelpers.Random(Math.Min(0, yOffset), Math.Max(0, yOffset)), width, height);
+
+                overlapRect = rect.Offset(NoOverlapOffset);
+            } while (NoOverlap && imageRectangles.Any(x => x.IntersectsWith(overlapRect)));
 
             imageRectangles.Add(rect);
 
