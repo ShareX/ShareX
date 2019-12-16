@@ -148,7 +148,7 @@ namespace ShareX
             UpdateProgressUI();
         }
 
-        private static void Task_ImageReady(WorkerTask task)
+        private static void Task_ImageReady(WorkerTask task, Image image)
         {
             TaskThumbnailPanel panel = TaskThumbnailView.FindPanel(task);
 
@@ -158,7 +158,7 @@ namespace ShareX
 
                 if (Program.Settings.TaskViewMode == TaskViewMode.ThumbnailView)
                 {
-                    panel.UpdateThumbnail(task.Image);
+                    panel.UpdateThumbnail(image);
                 }
             }
         }

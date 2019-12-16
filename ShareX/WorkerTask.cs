@@ -42,9 +42,11 @@ namespace ShareX
     public class WorkerTask : IDisposable
     {
         public delegate void TaskEventHandler(WorkerTask task);
+        public delegate void TaskImageEventHandler(WorkerTask task, Image image);
         public delegate void UploaderServiceEventHandler(IUploaderService uploaderService);
 
-        public event TaskEventHandler StatusChanged, ImageReady, UploadStarted, UploadProgressChanged, UploadCompleted, TaskCompleted;
+        public event TaskEventHandler StatusChanged, UploadStarted, UploadProgressChanged, UploadCompleted, TaskCompleted;
+        public event TaskImageEventHandler ImageReady;
         public event UploaderServiceEventHandler UploadersConfigWindowRequested;
 
         public TaskInfo Info { get; private set; }
@@ -1069,7 +1071,20 @@ namespace ShareX
         {
             if (ImageReady != null)
             {
-                threadWorker.InvokeAsync(() => ImageReady(this));
+                Image image = null;
+
+                if (Program.Settings.TaskViewMode == TaskViewMode.ThumbnailView && Image != null)
+                {
+                    image = (Image)Image.Clone();
+                }
+
+                threadWorker.InvokeAsync(() =>
+                {
+                    using (image)
+                    {
+                        ImageReady(this, image);
+                    }
+                });
             }
         }
 
