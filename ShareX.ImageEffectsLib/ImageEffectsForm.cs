@@ -516,6 +516,7 @@ namespace ShareX.ImageEffectsLib
             {
                 lvEffects.Items.Clear();
                 preset.Effects.Clear();
+                pgSettings.SelectedObject = null;
                 UpdatePreview();
             }
         }
