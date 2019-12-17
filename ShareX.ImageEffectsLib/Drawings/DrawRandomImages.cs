@@ -138,7 +138,18 @@ namespace ShareX.ImageEffectsLib
 
             if (RandomSize)
             {
-                width = height = MathHelpers.Random(Math.Min(RandomSizeMin, RandomSizeMax), Math.Max(RandomSizeMin, RandomSizeMax));
+                int size = MathHelpers.Random(Math.Min(RandomSizeMin, RandomSizeMax), Math.Max(RandomSizeMin, RandomSizeMax));
+                width = size;
+                height = size;
+
+                if (img2.Width > img2.Height)
+                {
+                    height = (int)(size * ((float)img2.Height / img2.Width));
+                }
+                else if (img2.Width < img2.Height)
+                {
+                    width = (int)(size * ((float)img2.Width / img2.Height));
+                }
             }
             else
             {
