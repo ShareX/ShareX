@@ -36,8 +36,8 @@ using System.Linq;
 
 namespace ShareX.ImageEffectsLib
 {
-    [Description("Random images")]
-    public class DrawRandomImages : ImageEffect
+    [Description("Particles")]
+    public class DrawParticles : ImageEffect
     {
         [DefaultValue(""), Editor(typeof(DirectoryNameEditor), typeof(UITypeEditor))]
         public string ImageFolder { get; set; }
@@ -92,7 +92,7 @@ namespace ShareX.ImageEffectsLib
 
         private List<Rectangle> imageRectangles = new List<Rectangle>();
 
-        public DrawRandomImages()
+        public DrawParticles()
         {
             this.ApplyDefaultPropertyValues();
         }

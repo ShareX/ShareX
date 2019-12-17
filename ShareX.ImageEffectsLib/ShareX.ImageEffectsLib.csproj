@@ -109,7 +109,7 @@
     <Compile Include="Adjustments\MatrixColor.cs" />
     <Compile Include="Drawings\DrawCheckerboard.cs" />
     <Compile Include="Drawings\DrawImage.cs" />
-    <Compile Include="Drawings\DrawRandomImages.cs" />
+    <Compile Include="Drawings\DrawParticles.cs" />
     <Compile Include="Drawings\DrawText.cs" />
     <Compile Include="Enums.cs" />
     <Compile Include="Filters\EdgeDetect.cs" />
