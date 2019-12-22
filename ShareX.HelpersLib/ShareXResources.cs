@@ -103,12 +103,12 @@ namespace ShareX.HelpersLib
         {
             if (control.ContextMenuStrip != null)
             {
-                control.ContextMenuStrip.Renderer = new ToolStripDarkRenderer();
+                ApplyDarkThemeToContextMenuStrip(control.ContextMenuStrip);
             }
 
             if (control is MenuButton mb && mb.Menu != null)
             {
-                mb.Menu.Renderer = new ToolStripDarkRenderer();
+                ApplyDarkThemeToContextMenuStrip(mb.Menu);
             }
 
             switch (control)
@@ -174,6 +174,9 @@ namespace ShareX.HelpersLib
                     dgv.ColumnHeadersDefaultCellStyle.SelectionForeColor = Theme.TextColor;
                     dgv.EnableHeadersVisualStyles = false;
                     break;
+                case ContextMenuStrip cms:
+                    ApplyDarkThemeToContextMenuStrip(cms);
+                    return;
                 case ToolStrip ts:
                     ts.Renderer = new ToolStripDarkRenderer();
                     ApplyDarkThemeToToolStripItemCollection(ts.Items);
@@ -192,6 +195,13 @@ namespace ShareX.HelpersLib
             }
         }
 
+        public static void ApplyDarkThemeToContextMenuStrip(ContextMenuStrip cms)
+        {
+            cms.Renderer = new ToolStripDarkRenderer();
+            cms.Opacity = Theme.ContextMenuOpacityDouble;
+            ApplyDarkThemeToToolStripItemCollection(cms.Items);
+        }
+
         private static void ApplyDarkThemeToToolStripItemCollection(ToolStripItemCollection collection)
         {
             foreach (ToolStripItem tsi in collection)
@@ -202,7 +212,11 @@ namespace ShareX.HelpersLib
                         ApplyDarkThemeToControl(tsch.Control);
                         break;
                     case ToolStripDropDownItem tsddi:
-                        ApplyDarkThemeToToolStripItemCollection(tsddi.DropDownItems);
+                        if (tsddi.DropDown != null)
+                        {
+                            tsddi.DropDown.Opacity = Theme.ContextMenuOpacityDouble;
+                            ApplyDarkThemeToToolStripItemCollection(tsddi.DropDownItems);
+                        }
                         break;
                 }
             }

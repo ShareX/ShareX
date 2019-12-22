@@ -144,11 +144,11 @@ namespace ShareX.ImageEffectsLib
 
                 if (img2.Width > img2.Height)
                 {
-                    height = (int)(size * ((float)img2.Height / img2.Width));
+                    height = (int)Math.Round(size * ((double)img2.Height / img2.Width));
                 }
                 else if (img2.Width < img2.Height)
                 {
-                    width = (int)(size * ((float)img2.Width / img2.Height));
+                    width = (int)Math.Round(size * ((double)img2.Width / img2.Height));
                 }
             }
             else

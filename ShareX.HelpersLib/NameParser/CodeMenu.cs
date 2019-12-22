@@ -61,7 +61,7 @@ namespace ShareX.HelpersLib
             {
                 Font = new Font("Lucida Console", 8),
                 AutoClose = tb == null,
-                Opacity = 0.9,
+                Opacity = ShareXResources.Theme.ContextMenuOpacityDouble,
                 ShowImageMargin = false
             };
 
