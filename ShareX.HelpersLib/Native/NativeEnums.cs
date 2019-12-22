@@ -2084,7 +2084,9 @@ namespace ShareX.HelpersLib
         /// </summary>
         DWMWA_LAST,
         // Undocumented, available since October 2018 update (build 17763)
-        DWMWA_USE_IMMERSIVE_DARK_MODE = 19
+        DWMWA_USE_IMMERSIVE_DARK_MODE_BEFORE_20H1 = 19,
+        // Windows 10 20H1 changed the value of the constant
+        DWMWA_USE_IMMERSIVE_DARK_MODE = 20
     }
 
     public enum InputType : int

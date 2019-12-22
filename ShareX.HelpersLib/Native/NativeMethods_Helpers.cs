@@ -235,16 +235,14 @@ namespace ShareX.HelpersLib
         {
             if (Helpers.IsWindows10OrGreater(17763))
             {
-                try
+                var attribute = DwmWindowAttribute.DWMWA_USE_IMMERSIVE_DARK_MODE_BEFORE_20H1;
+                if (Helpers.IsWindows10OrGreater(18985))
                 {
-                    int useImmersiveDarkMode = enabled ? 1 : 0;
-                    int result = DwmSetWindowAttribute(handle, (int)DwmWindowAttribute.DWMWA_USE_IMMERSIVE_DARK_MODE, ref useImmersiveDarkMode, sizeof(int));
-                    return result == 0;
+                    attribute = DwmWindowAttribute.DWMWA_USE_IMMERSIVE_DARK_MODE;
                 }
-                catch (Exception e)
-                {
-                    DebugHelper.WriteException(e);
-                }
+
+                int useImmersiveDarkMode = enabled ? 1 : 0;
+                return DwmSetWindowAttribute(handle, (int)attribute, ref useImmersiveDarkMode, sizeof(int)) == 0;
             }
 
             return false;
