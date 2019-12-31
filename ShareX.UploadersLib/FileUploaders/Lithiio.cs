@@ -72,7 +72,7 @@ namespace ShareX.UploadersLib.FileUploaders
             Dictionary<string, string> args = new Dictionary<string, string>();
             args.Add("api_key", Config.UserAPIKey);
 
-            UploadResult result = SendRequestFile("https://lithi.io/api/v2/upload.php", stream, fileName, "file", args);
+            UploadResult result = SendRequestFile("https://lithi.io/api/v2/upload", stream, fileName, "file", args);
 
             if (result.IsSuccess)
             {
@@ -97,7 +97,7 @@ namespace ShareX.UploadersLib.FileUploaders
             args.Add("email", email);
             args.Add("password", password);
 
-            string response = SendRequestMultiPart("https://lithi.io/api/v2/fetch-api-key.php", args);
+            string response = SendRequestMultiPart("https://lithi.io/api/v2/fetch-api-key", args);
 
             if (!string.IsNullOrEmpty(response))
             {
