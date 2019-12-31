@@ -1958,7 +1958,7 @@ namespace ShareX.ScreenCaptureLib
         {
             Func<PointInfo> openScreenColorPicker = null;
 
-            if (!Form.IsFullscreen)
+            if (!Form.IsFullscreen || !Options.UseDimming)
             {
                 openScreenColorPicker = () => RegionCaptureTasks.GetPointInfo(Options);
             }
