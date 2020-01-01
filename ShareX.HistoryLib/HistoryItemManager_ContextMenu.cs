@@ -440,7 +440,6 @@ namespace ShareX.HistoryLib
 
         public void UpdateTexts(int itemsCount)
         {
-            UpdateButtons();
             if (itemsCount > 1)
             {
                 tsmiCopyURL.Text = Resources.HistoryItemManager_InitializeComponent_URL + " (" + itemsCount + ")";
@@ -457,16 +456,33 @@ namespace ShareX.HistoryLib
                 tsmiCopyMarkdownLink.Text = Resources.HistoryItemManager_InitializeComponent_Markdown__link + " (" + itemsCount + ")";
                 tsmiCopyMarkdownImage.Text = Resources.HistoryItemManager_InitializeComponent_Markdown__image + " (" + itemsCount + ")";
                 tsmiCopyMarkdownLinkedImage.Text = Resources.HistoryItemManager_InitializeComponent_Markdown__linked_image + " (" + itemsCount + ")";
+            } else
+            {
+                tsmiCopyURL.Text = Resources.HistoryItemManager_InitializeComponent_URL;
+                tsmiCopyShortenedURL.Text = Resources.HistoryItemManager_InitializeComponent_Shortened_URL;
+                tsmiCopyThumbnailURL.Text = Resources.HistoryItemManager_InitializeComponent_Thumbnail_URL;
+                tsmiCopyDeletionURL.Text = Resources.HistoryItemManager_InitializeComponent_Deletion_URL;
+                tsmiCopyHTMLLink.Text = Resources.HistoryItemManager_InitializeComponent_HTML_link;
+                tsmiCopyHTMLImage.Text = Resources.HistoryItemManager_InitializeComponent_HTML_image;
+                tsmiCopyHTMLLinkedImage.Text = Resources.HistoryItemManager_InitializeComponent_HTML_linked_image;
+                tsmiCopyHTMLLinkedImage.Text = Resources.HistoryItemManager_InitializeComponent_HTML_linked_image;
+                tsmiCopyForumLink.Text = Resources.HistoryItemManager_InitializeComponent_Forum__BBCode__link;
+                tsmiCopyForumImage.Text = Resources.HistoryItemManager_InitializeComponent_Forum__BBCode__image;
+                tsmiCopyForumLinkedImage.Text = Resources.HistoryItemManager_InitializeComponent_Forum__BBCode__linked_image;
+                tsmiCopyMarkdownLink.Text = Resources.HistoryItemManager_InitializeComponent_Markdown__link;
+                tsmiCopyMarkdownImage.Text = Resources.HistoryItemManager_InitializeComponent_Markdown__image;
+                tsmiCopyMarkdownLinkedImage.Text = Resources.HistoryItemManager_InitializeComponent_Markdown__linked_image;
             }
+            UpdateButtons();
         }
 
         public void UpdateButtons()
         {
             cmsHistory.SuspendLayout();
             cmsHistory.Enabled = true;
-
-            // Copy
-            if (OnGetHistoryItems().Length == 1)
+            HistoryItem[] historyItem = OnGetHistoryItems();
+            int count = historyItem.Length;
+            if (count == 1)
             {
                 // Open
                 tsmiOpenURL.Enabled = IsURLExist;
@@ -514,7 +530,7 @@ namespace ShareX.HistoryLib
                 // Edit image
                 tsmiEditImage.Enabled = editImage != null && IsImageFile;
             }
-            else if (OnGetHistoryItems().Length > 1)
+            else if (count > 1)
             {
                 // Open
                 tsmiOpenURL.Enabled = false;
