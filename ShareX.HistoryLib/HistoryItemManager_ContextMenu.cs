@@ -456,7 +456,12 @@ namespace ShareX.HistoryLib
                 tsmiCopyMarkdownLink.Text = Resources.HistoryItemManager_InitializeComponent_Markdown__link + " (" + itemsCount + ")";
                 tsmiCopyMarkdownImage.Text = Resources.HistoryItemManager_InitializeComponent_Markdown__image + " (" + itemsCount + ")";
                 tsmiCopyMarkdownLinkedImage.Text = Resources.HistoryItemManager_InitializeComponent_Markdown__linked_image + " (" + itemsCount + ")";
-            } else
+                tsmiCopyFilePath.Text = Resources.HistoryItemManager_InitializeComponent_File_path + " (" + itemsCount + ")";
+                tsmiCopyFileName.Text = Resources.HistoryItemManager_InitializeComponent_File_name + " (" + itemsCount + ")";
+                tsmiCopyFileNameWithExtension.Text = Resources.HistoryItemManager_InitializeComponent_File_name_with_extension + " (" + itemsCount + ")";
+                tsmiCopyFolder.Text = Resources.HistoryItemManager_InitializeComponent_Folder + " (" + itemsCount + ")";
+            }
+            else
             {
                 tsmiCopyURL.Text = Resources.HistoryItemManager_InitializeComponent_URL;
                 tsmiCopyShortenedURL.Text = Resources.HistoryItemManager_InitializeComponent_Shortened_URL;
@@ -472,6 +477,10 @@ namespace ShareX.HistoryLib
                 tsmiCopyMarkdownLink.Text = Resources.HistoryItemManager_InitializeComponent_Markdown__link;
                 tsmiCopyMarkdownImage.Text = Resources.HistoryItemManager_InitializeComponent_Markdown__image;
                 tsmiCopyMarkdownLinkedImage.Text = Resources.HistoryItemManager_InitializeComponent_Markdown__linked_image;
+                tsmiCopyFilePath.Text = Resources.HistoryItemManager_InitializeComponent_File_path;
+                tsmiCopyFileName.Text = Resources.HistoryItemManager_InitializeComponent_File_name;
+                tsmiCopyFileNameWithExtension.Text = Resources.HistoryItemManager_InitializeComponent_File_name_with_extension;
+                tsmiCopyFolder.Text = Resources.HistoryItemManager_InitializeComponent_Folder;
             }
             UpdateButtons();
         }
@@ -563,10 +572,10 @@ namespace ShareX.HistoryLib
                 tsmiCopyMarkdownImage.Enabled = true;
                 tsmiCopyMarkdownLinkedImage.Enabled = true;
 
-                tsmiCopyFilePath.Enabled = false;
-                tsmiCopyFileName.Enabled = false;
-                tsmiCopyFileNameWithExtension.Enabled = false;
-                tsmiCopyFolder.Enabled = false;
+                tsmiCopyFilePath.Enabled = true;
+                tsmiCopyFileName.Enabled = true;
+                tsmiCopyFileNameWithExtension.Enabled = true;
+                tsmiCopyFolder.Enabled = true;
 
                 // Show
                 tsmiShow.Enabled = false;
