@@ -61,7 +61,16 @@ namespace ShareX.HistoryLib
 
         public HistoryItem UpdateSelectedHistoryItem()
         {
-            HistoryItem = GetSelectedHistoryItem();
+            HistoryItem[] historyItems = OnGetHistoryItems();
+
+            if (historyItems != null && historyItems.Length > 0)
+            {
+                HistoryItem = historyItems[0];
+            }
+            else
+            {
+                HistoryItem = null;
+            }
 
             if (HistoryItem != null)
             {
@@ -76,7 +85,7 @@ namespace ShareX.HistoryLib
                 IsImageFile = IsFileExist && Helpers.IsImageFile(HistoryItem.FilePath);
                 IsTextFile = IsFileExist && Helpers.IsTextFile(HistoryItem.FilePath);
 
-                UpdateButtons();
+                UpdateContextMenu(historyItems.Length);
             }
             else
             {
@@ -84,20 +93,6 @@ namespace ShareX.HistoryLib
             }
 
             return HistoryItem;
-        }
-
-        private HistoryItem GetSelectedHistoryItem()
-        {
-            HistoryItem[] historyItems = OnGetHistoryItems();
-
-            if (historyItems != null && historyItems.Length > 0)
-            {
-                UpdateTexts(historyItems.Length);
-
-                return historyItems[0];
-            }
-
-            return null;
         }
 
         public HistoryItem[] OnGetHistoryItems()

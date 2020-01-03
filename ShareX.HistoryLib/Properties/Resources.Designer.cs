@@ -369,24 +369,6 @@ namespace ShareX.HistoryLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to HTML link ({0}).
-        /// </summary>
-        internal static string HistoryItemManager_UpdateTexts_HTML_link___0__ {
-            get {
-                return ResourceManager.GetString("HistoryItemManager_UpdateTexts_HTML_link___0__", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to URLs ({0}).
-        /// </summary>
-        internal static string HistoryItemManager_UpdateTexts_URLs___0__ {
-            get {
-                return ResourceManager.GetString("HistoryItemManager_UpdateTexts_URLs___0__", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Error.
         /// </summary>
         internal static string HistoryManager_GetHistoryItems_Error {

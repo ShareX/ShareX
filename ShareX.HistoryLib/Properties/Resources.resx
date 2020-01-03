@@ -154,9 +154,6 @@
   <data name="HistoryItemManager_InitializeComponent_Show" xml:space="preserve">
     <value>Show</value>
   </data>
-  <data name="HistoryItemManager_UpdateTexts_URLs___0__" xml:space="preserve">
-    <value>URLs ({0})</value>
-  </data>
   <data name="HistoryItemManager_InitializeComponent_HTML_image" xml:space="preserve">
     <value>HTML image</value>
   </data>
@@ -195,9 +192,6 @@
   </data>
   <data name="HistoryItemManager_InitializeComponent_Forum__BBCode__image" xml:space="preserve">
     <value>Forum (BBCode) image</value>
-  </data>
-  <data name="HistoryItemManager_UpdateTexts_HTML_link___0__" xml:space="preserve">
-    <value>HTML link ({0})</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_Text" xml:space="preserve">
     <value>Text</value>

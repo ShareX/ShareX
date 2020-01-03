@@ -423,10 +423,7 @@ namespace ShareX.HistoryLib
 
         private void lvHistory_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
         {
-            if (e.IsSelected)
-            {
-                UpdateControls();
-            }
+            UpdateControls();
         }
 
         private void lvHistory_MouseDoubleClick(object sender, MouseEventArgs e)
