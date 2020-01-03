@@ -75,7 +75,7 @@ namespace ShareX.HelpersLib
         public int ContextMenuOpacity { get; set; } = 100;
 
         [Browsable(false)]
-        public double ContextMenuOpacityDouble => ContextMenuOpacity.Clamp(0, 100) / 100d;
+        public double ContextMenuOpacityDouble => ContextMenuOpacity.Clamp(10, 100) / 100d;
 
         [Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
         public Color SeparatorLightColor { get; set; }
@@ -129,7 +129,7 @@ namespace ShareX.HelpersLib
                 MenuHighlightBorderColor = Color.FromArgb(96, 143, 226),
                 MenuBorderColor = Color.FromArgb(201, 201, 201),
                 MenuCheckBackgroundColor = Color.FromArgb(225, 233, 244),
-                ContextMenuOpacity = 90,
+                ContextMenuOpacity = 95,
                 SeparatorLightColor = Color.FromArgb(253, 253, 253),
                 SeparatorDarkColor = Color.FromArgb(189, 189, 189)
             };
