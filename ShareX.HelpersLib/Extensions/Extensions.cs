@@ -793,5 +793,22 @@ namespace ShareX.HelpersLib
 
             return Range(source, startIndex, endIndex);
         }
+
+        public static Image CloneSafe(this Image img)
+        {
+            try
+            {
+                if (img != null)
+                {
+                    return (Image)img.Clone();
+                }
+            }
+            catch (Exception e)
+            {
+                DebugHelper.WriteException(e);
+            }
+
+            return null;
+        }
     }
 }

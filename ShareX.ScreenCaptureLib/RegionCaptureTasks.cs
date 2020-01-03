@@ -87,13 +87,13 @@ namespace ShareX.ScreenCaptureLib
             return false;
         }
 
-        public static PointInfo GetPointInfo(RegionCaptureOptions options)
+        public static PointInfo GetPointInfo(RegionCaptureOptions options, Image canvas = null)
         {
             RegionCaptureOptions newOptions = GetRegionCaptureOptions(options);
             newOptions.DetectWindows = false;
             newOptions.UseDimming = false;
 
-            using (RegionCaptureForm form = new RegionCaptureForm(RegionCaptureMode.ScreenColorPicker, newOptions))
+            using (RegionCaptureForm form = new RegionCaptureForm(RegionCaptureMode.ScreenColorPicker, newOptions, canvas))
             {
                 form.ShowDialog();
 
