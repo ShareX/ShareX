@@ -94,7 +94,9 @@ namespace ShareX
                     tpUploadClipboard.Enabled = false;
                     tpUploaderFilters.Enabled = false;
                     tpOCR.Enabled = false;
-                } else {
+                }
+                else
+                {
                     tpUpload.Enabled = true;
                     tpUploadMain.Enabled = true;
                     tpFileNaming.Enabled = true;
