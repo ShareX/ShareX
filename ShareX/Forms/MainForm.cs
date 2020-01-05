@@ -889,7 +889,6 @@ namespace ShareX
                 tsmiTrayTestURLShortener.Visible = false;
                 tsmiTrayTestURLSharing.Visible = false;
                 tsmiTrayTextCapture.Visible = false;
-
             }
             else
             {
