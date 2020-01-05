@@ -223,6 +223,19 @@ namespace ShareX
             tttvMain.MainTabControl = tcSettings;
 
             ready = true;
+
+            // Offline mode
+            if (Program.Settings.OfflineMode) {
+                tpPerformance.Enabled = false;
+                tpUploadResults.Enabled = false;
+                tpUploadRetry.Enabled = false;
+                tpProxy.Enabled = false;
+            } else {
+                tpPerformance.Enabled = true;
+                tpUploadResults.Enabled = true;
+                tpUploadRetry.Enabled = true;
+                tpProxy.Enabled = true;
+            }
         }
 
         private void ChangeLanguage(SupportedLanguage language)

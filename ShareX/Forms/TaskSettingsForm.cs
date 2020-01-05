@@ -80,8 +80,29 @@ namespace ShareX
             }
 
             UpdateDefaultSettingVisibility();
+            UpdateOfflineMode();
 
             tttvMain.MainTabControl = tcTaskSettings;
+
+            void UpdateOfflineMode()
+            {
+                if (HelpersOptions.OfflineMode)
+                {
+                    tpUpload.Enabled = false;
+                    tpUploadMain.Enabled = false;
+                    tpFileNaming.Enabled = false;
+                    tpUploadClipboard.Enabled = false;
+                    tpUploaderFilters.Enabled = false;
+                    tpOCR.Enabled = false;
+                } else {
+                    tpUpload.Enabled = true;
+                    tpUploadMain.Enabled = true;
+                    tpFileNaming.Enabled = true;
+                    tpUploadClipboard.Enabled = true;
+                    tpUploaderFilters.Enabled = true;
+                    tpOCR.Enabled = true;
+                }
+            }
 
             #region Task
 

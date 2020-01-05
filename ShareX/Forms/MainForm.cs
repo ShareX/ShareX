@@ -353,7 +353,7 @@ namespace ShareX
             {
                 base.WndProc(ref m);
             }
-        }
+        } 
 
         private void AfterShownJobs()
         {
@@ -861,6 +861,64 @@ namespace ShareX
             ucNews.UpdateTheme();
         }
 
+        private void updateOfflineMode()
+        {
+              if (Program.Settings.OfflineMode) {            
+                tsddbAfterUploadTasks.Visible = false;
+                tsddbDestinations.Visible = false;
+                tsddbUpload.Visible = false;
+                tsmiDNSChanger.Visible = false;
+                tsmiTweetMessage.Visible = false;
+                tsmiTextCapture.Visible = false;
+                tsmiTestImageUpload.Visible = false;
+                tsmiTestTextUpload.Visible = false;
+                tsmiTestFileUpload.Visible = false;
+                tsmiTestURLShortener.Visible = false;
+                tsmiTestURLSharing.Visible = false;
+                tsmiCopyText.Visible = false;
+
+                tsmiTrayAfterUploadTasks.Visible = false;
+                tsmiTrayDestinations.Visible = false;
+                tsmiTrayUpload.Visible = false;
+                tsmiTrayDNSChanger.Visible = false;
+                tsmiTrayTweetMessage.Visible = false;
+                tsmiTrayTextCapture.Visible = false;
+                tsmiTrayTestImageUpload.Visible = false;
+                tsmiTrayTestTextUpload.Visible = false;
+                tsmiTrayTestFileUpload.Visible = false;
+                tsmiTrayTestURLShortener.Visible = false;
+                tsmiTrayTestURLSharing.Visible = false;
+                tsmiTrayTextCapture.Visible = false;
+
+            } else {
+                tsddbAfterUploadTasks.Visible = true;
+                tsddbDestinations.Visible = true;
+                tsddbUpload.Visible = true;
+                tsmiDNSChanger.Visible = true;
+                tsmiTweetMessage.Visible = true;
+                tsmiTextCapture.Visible = true;
+                tsmiTestImageUpload.Visible = true;
+                tsmiTestTextUpload.Visible = true;
+                tsmiTestFileUpload.Visible = true;
+                tsmiTestURLShortener.Visible = true;
+                tsmiTestURLSharing.Visible = true;
+                tsmiCopyText.Visible = true;
+
+                tsmiTrayAfterUploadTasks.Visible = true;
+                tsmiTrayDestinations.Visible = true;
+                tsmiTrayUpload.Visible = true;
+                tsmiTrayDNSChanger.Visible = true;
+                tsmiTrayTweetMessage.Visible = true;
+                tsmiTrayTextCapture.Visible = true;
+                tsmiTrayTestImageUpload.Visible = true;
+                tsmiTrayTestTextUpload.Visible = true;
+                tsmiTrayTestFileUpload.Visible = true;
+                tsmiTrayTestURLShortener.Visible = true;
+                tsmiTrayTestURLSharing.Visible = true;
+                tsmiTrayTextCapture.Visible = true;
+            }
+        }
+
         private void CleanCustomClipboardFormats()
         {
             tssCopy6.Visible = false;
@@ -936,9 +994,11 @@ namespace ShareX
             HelpersOptions.RotateImageByExifOrientationData = Program.Settings.RotateImageByExifOrientationData;
             HelpersOptions.BrowserPath = Program.Settings.BrowserPath;
             HelpersOptions.RecentColors = Program.Settings.RecentColors;
+            HelpersOptions.OfflineMode = Program.Settings.OfflineMode;
 
             TaskManager.RecentManager.MaxCount = Program.Settings.RecentTasksMaxCount;
 
+            updateOfflineMode();
             UpdateTheme();
             Refresh();
 
@@ -962,7 +1022,7 @@ namespace ShareX
 
         private void ConfigureAutoUpdate()
         {
-            Program.UpdateManager.AutoUpdateEnabled = Program.Settings.AutoCheckUpdate && !Program.PortableApps;
+            Program.UpdateManager.AutoUpdateEnabled = Program.Settings.AutoCheckUpdate && !Program.PortableApps && !Program.Settings.OfflineMode;
             Program.UpdateManager.CheckPreReleaseUpdates = Program.Settings.CheckPreReleaseUpdates;
             Program.UpdateManager.ConfigureAutoUpdate();
         }

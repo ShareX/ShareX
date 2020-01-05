@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.HelpersLib;
 using ShareX.HistoryLib.Properties;
 using System;
 using System.Drawing;
@@ -580,6 +581,10 @@ namespace ShareX.HistoryLib
                 tsmiEditImage.Enabled = editImage != null && IsImageFile;
             }
 
+            if (HelpersOptions.OfflineMode) {
+                tsmiUploadFile.Enabled = false;
+            }
+            
             cmsHistory.ResumeLayout();
         }
 
