@@ -230,7 +230,9 @@ namespace ShareX
                 tpUploadResults.Enabled = false;
                 tpUploadRetry.Enabled = false;
                 tpProxy.Enabled = false;
-            } else {
+            }
+            else
+            {
                 tpPerformance.Enabled = true;
                 tpUploadResults.Enabled = true;
                 tpUploadRetry.Enabled = true;

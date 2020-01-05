@@ -890,7 +890,9 @@ namespace ShareX
                 tsmiTrayTestURLSharing.Visible = false;
                 tsmiTrayTextCapture.Visible = false;
 
-            } else {
+            }
+            else
+            {
                 tsddbAfterUploadTasks.Visible = true;
                 tsddbDestinations.Visible = true;
                 tsddbUpload.Visible = true;
