@@ -1127,9 +1127,23 @@ namespace ShareX
             }
         }
 
+        private static bool IsUploadAllowed()
+        {
+            if (Program.Settings.DisableUpload)
+            {
+                // TODO: Translate
+                MessageBox.Show("Because \"DisableUpload\" option is enabled from application settings, this functionality cannnot work.", "ShareX",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                return false;
+            }
+
+            return true;
+        }
+
         public static async Task OCRImage(Image img, TaskSettings taskSettings = null)
         {
-            if (img != null)
+            if (IsUploadAllowed() && img != null)
             {
                 using (Stream stream = SaveImageAsStream(img, EImageFormat.PNG))
                 {
@@ -1140,7 +1154,7 @@ namespace ShareX
 
         public static async Task OCRImage(string filePath, TaskSettings taskSettings = null)
         {
-            if (File.Exists(filePath))
+            if (IsUploadAllowed() && File.Exists(filePath))
             {
                 using (FileStream fs = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read))
                 {
