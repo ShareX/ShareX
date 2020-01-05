@@ -295,7 +295,7 @@ namespace ShareX
 
                 if (!StopRequested)
                 {
-                    if (Info.IsUploadJob && !Program.Settings.DisableUpload)
+                    if (Info.IsUploadJob && TaskHelpers.IsUploadAllowed())
                     {
                         DoUploadJob();
                     }

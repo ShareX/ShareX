@@ -1127,7 +1127,7 @@ namespace ShareX
             }
         }
 
-        private static bool IsUploadAllowed()
+        public static bool IsUploadAllowed()
         {
             if (Program.Settings.DisableUpload)
             {
