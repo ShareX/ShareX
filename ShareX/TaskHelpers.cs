@@ -1119,26 +1119,15 @@ namespace ShareX
 
         public static async Task OCRImage(TaskSettings taskSettings = null)
         {
-            if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
-
-            using (Image img = RegionCaptureTasks.GetRegionImage(taskSettings.CaptureSettings.SurfaceOptions))
+            if (IsUploadAllowed())
             {
-                await OCRImage(img, taskSettings);
+                if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
+
+                using (Image img = RegionCaptureTasks.GetRegionImage(taskSettings.CaptureSettings.SurfaceOptions))
+                {
+                    await OCRImage(img, taskSettings);
+                }
             }
-        }
-
-        public static bool IsUploadAllowed()
-        {
-            if (Program.Settings.DisableUpload)
-            {
-                // TODO: Translate
-                MessageBox.Show("This feature will not work when \"DisableUpload\" option is enabled!", "ShareX",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                return false;
-            }
-
-            return true;
         }
 
         public static async Task OCRImage(Image img, TaskSettings taskSettings = null)
@@ -1204,7 +1193,7 @@ namespace ShareX
             }
         }
 
-        public static async Task AsyncOCRImage(Stream stream, string fileName, string filePath, OCROptions ocrOptions)
+        private static async Task AsyncOCRImage(Stream stream, string fileName, string filePath, OCROptions ocrOptions)
         {
             ShowBalloonTip(Resources.OCRForm_AutoProcessing, ToolTipIcon.None, 3000);
 
@@ -1235,28 +1224,31 @@ namespace ShareX
 
         public static void TweetMessage()
         {
-            if (Program.UploadersConfig != null && Program.UploadersConfig.TwitterOAuthInfoList != null)
+            if (IsUploadAllowed())
             {
-                OAuthInfo twitterOAuth = Program.UploadersConfig.TwitterOAuthInfoList.ReturnIfValidIndex(Program.UploadersConfig.TwitterSelectedAccount);
-
-                if (twitterOAuth != null && OAuthInfo.CheckOAuth(twitterOAuth))
+                if (Program.UploadersConfig != null && Program.UploadersConfig.TwitterOAuthInfoList != null)
                 {
-                    Task.Run(() =>
+                    OAuthInfo twitterOAuth = Program.UploadersConfig.TwitterOAuthInfoList.ReturnIfValidIndex(Program.UploadersConfig.TwitterSelectedAccount);
+
+                    if (twitterOAuth != null && OAuthInfo.CheckOAuth(twitterOAuth))
                     {
-                        using (TwitterTweetForm twitter = new TwitterTweetForm(twitterOAuth))
+                        Task.Run(() =>
                         {
-                            if (twitter.ShowDialog() == DialogResult.OK && twitter.IsTweetSent)
+                            using (TwitterTweetForm twitter = new TwitterTweetForm(twitterOAuth))
                             {
-                                ShowBalloonTip(Resources.TaskHelpers_TweetMessage_Tweet_successfully_sent_, ToolTipIcon.Info, 3000);
+                                if (twitter.ShowDialog() == DialogResult.OK && twitter.IsTweetSent)
+                                {
+                                    ShowBalloonTip(Resources.TaskHelpers_TweetMessage_Tweet_successfully_sent_, ToolTipIcon.Info, 3000);
+                                }
                             }
-                        }
-                    });
+                        });
 
-                    return;
+                        return;
+                    }
                 }
-            }
 
-            MessageBox.Show(Resources.TaskHelpers_TweetMessage_Unable_to_find_valid_Twitter_account_, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(Resources.TaskHelpers_TweetMessage_Unable_to_find_valid_Twitter_account_, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         public static EDataType FindDataType(string filePath, TaskSettings taskSettings)
@@ -1810,6 +1802,20 @@ namespace ShareX
                 Program.MainForm.niTray.Tag = clickAction;
                 Program.MainForm.niTray.ShowBalloonTip(timeout, title, text, icon);
             }
+        }
+
+        public static bool IsUploadAllowed()
+        {
+            if (Program.Settings.DisableUpload)
+            {
+                // TODO: Translate
+                MessageBox.Show("This feature will not work when \"DisableUpload\" option is enabled!", "ShareX",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                return false;
+            }
+
+            return true;
         }
     }
 }
