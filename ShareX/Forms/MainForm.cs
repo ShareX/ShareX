@@ -863,7 +863,7 @@ namespace ShareX
 
         private void updateOfflineMode()
         {
-              if (Program.Settings.OfflineMode) {            
+            if (Program.Settings.OfflineMode) {            
                 tsddbAfterUploadTasks.Visible = false;
                 tsddbDestinations.Visible = false;
                 tsddbUpload.Visible = false;
