@@ -76,6 +76,11 @@ namespace ShareX.ScreenCaptureLib
             TailPosition = Rectangle.Location.Add(Rectangle.Width / 2, Rectangle.Height - 1);
         }
 
+        protected override void UseLightResizeNodes()
+        {
+            Manager.ResizeNodes[(int)NodePosition.Extra].Shape = NodeShape.Circle;
+        }
+
         public override void OnNodeVisible()
         {
             TailNode.Position = TailPosition;
@@ -84,8 +89,6 @@ namespace ShareX.ScreenCaptureLib
 
         public override void OnNodeUpdate()
         {
-            base.OnNodeUpdate();
-
             if (TailNode.IsDragging)
             {
                 TailPosition = InputManager.ClientMousePosition;
@@ -152,6 +155,11 @@ namespace ShareX.ScreenCaptureLib
 
                 if (TailVisible)
                 {
+                    if (Shadow)
+                    {
+                        DrawTail(g, ShadowColor, Rectangle.LocationOffset(ShadowOffset), TailPosition.Add(ShadowOffset));
+                    }
+
                     Color tailColor;
 
                     if (IsBorderVisible)
@@ -161,11 +169,6 @@ namespace ShareX.ScreenCaptureLib
                     else
                     {
                         tailColor = FillColor;
-                    }
-
-                    if (Shadow)
-                    {
-                        DrawTail(g, tailColor, Rectangle.LocationOffset(ShadowOffset), TailPosition.Add(ShadowOffset));
                     }
 
                     DrawTail(g, tailColor, Rectangle, TailPosition);
@@ -196,18 +199,19 @@ namespace ShareX.ScreenCaptureLib
 
         private void DrawTail(Graphics g, Color tailColor, Rectangle rectangle, Point tailPosition)
         {
-            GraphicsPath gpTail = CreateTailPath(rectangle, tailPosition);
-
-            if (gpTail != null)
+            using (GraphicsPath gpTail = CreateTailPath(rectangle, tailPosition))
             {
-                g.SmoothingMode = SmoothingMode.HighQuality;
-
-                using (Brush brush = new SolidBrush(tailColor))
+                if (gpTail != null)
                 {
-                    g.FillPath(brush, gpTail);
-                }
+                    g.SmoothingMode = SmoothingMode.HighQuality;
 
-                g.SmoothingMode = SmoothingMode.None;
+                    using (Brush brush = new SolidBrush(tailColor))
+                    {
+                        g.FillPath(brush, gpTail);
+                    }
+
+                    g.SmoothingMode = SmoothingMode.None;
+                }
             }
         }
 
