@@ -213,12 +213,35 @@ namespace ShareX.HistoryLib
 
         public void CopyDeletionURL()
         {
-            if (HistoryItem != null && IsDeletionURLExist) ClipboardHelpers.CopyText(HistoryItem.DeletionURL);
+            HistoryItem[] historyItems = OnGetHistoryItems();
+            if (historyItems != null)
+            {
+                string[] array = historyItems.Where(x => x != null && !string.IsNullOrEmpty(x.DeletionURL)).Select(x => x.DeletionURL).ToArray();
+
+                if (array != null && array.Length > 0)
+                {
+                    string deletionURLs = string.Join("\r\n", array);
+
+                    if (!string.IsNullOrEmpty(deletionURLs))
+                    {
+                        ClipboardHelpers.CopyText(deletionURLs);
+                    }
+                }
+            }
         }
 
         public void CopyFile()
         {
-            if (HistoryItem != null && IsFileExist) ClipboardHelpers.CopyFile(HistoryItem.FilePath);
+            HistoryItem[] historyItems = OnGetHistoryItems();
+            if (historyItems != null)
+            {
+                string[] array = historyItems.Where(x => x != null && !string.IsNullOrEmpty(x.FilePath) && Path.HasExtension(x.FilePath) && File.Exists(x.FilePath)).Select(x => x.FilePath).ToArray();
+
+                if (array != null && array.Length > 0)
+                {
+                    ClipboardHelpers.CopyFile(array);
+                }
+            }
         }
 
         public void CopyImage()

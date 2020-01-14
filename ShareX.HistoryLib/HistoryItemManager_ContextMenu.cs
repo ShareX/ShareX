@@ -460,7 +460,7 @@ namespace ShareX.HistoryLib
                 tsmiCopyThumbnailURL.Enabled = true;
                 tsmiCopyDeletionURL.Enabled = true;
 
-                tsmiCopyFile.Enabled = false;
+                tsmiCopyFile.Enabled = true;
                 tsmiCopyImage.Enabled = false;
                 tsmiCopyText.Enabled = false;
 
@@ -481,6 +481,7 @@ namespace ShareX.HistoryLib
                 tsmiCopyFileNameWithExtension.Enabled = true;
                 tsmiCopyFolder.Enabled = true;
 
+                tsmiCopyFile.Text = Resources.HistoryItemManager_InitializeComponent_File + " (" + itemCount + ")";
                 tsmiCopyURL.Text = Resources.HistoryItemManager_InitializeComponent_URL + " (" + itemCount + ")";
                 tsmiCopyShortenedURL.Text = Resources.HistoryItemManager_InitializeComponent_Shortened_URL + " (" + itemCount + ")";
                 tsmiCopyThumbnailURL.Text = Resources.HistoryItemManager_InitializeComponent_Thumbnail_URL + " (" + itemCount + ")";
@@ -549,6 +550,7 @@ namespace ShareX.HistoryLib
                 tsmiCopyFileNameWithExtension.Enabled = IsFilePathValid;
                 tsmiCopyFolder.Enabled = IsFilePathValid;
 
+                tsmiCopyFile.Text = Resources.HistoryItemManager_InitializeComponent_File;
                 tsmiCopyURL.Text = Resources.HistoryItemManager_InitializeComponent_URL;
                 tsmiCopyShortenedURL.Text = Resources.HistoryItemManager_InitializeComponent_Shortened_URL;
                 tsmiCopyThumbnailURL.Text = Resources.HistoryItemManager_InitializeComponent_Thumbnail_URL;
