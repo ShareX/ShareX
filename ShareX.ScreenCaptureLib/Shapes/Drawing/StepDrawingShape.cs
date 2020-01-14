@@ -26,6 +26,7 @@
 using ShareX.HelpersLib;
 using System;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Drawing.Text;
 
 namespace ShareX.ScreenCaptureLib
@@ -40,13 +41,31 @@ namespace ShareX.ScreenCaptureLib
         public int Number { get; set; }
         public bool UseLetters { get; set; }
 
+        private Point tailPosition;
+
+        public Point TailPosition
+        {
+            get
+            {
+                return tailPosition;
+            }
+            private set
+            {
+                tailPosition = value;
+                TailNode.Position = tailPosition;
+            }
+        }
+
+        public bool TailVisible => !Rectangle.Contains(TailPosition);
+
+        internal ResizeNode TailNode => Manager.ResizeNodes[(int)NodePosition.Extra];
+
+        // If rectangle average size is 100px then tail width will be 30px
+        protected const float TailWidthMultiplier = 1f;
+
         public StepDrawingShape()
         {
             Rectangle = new Rectangle(0, 0, DefaultSize, DefaultSize);
-        }
-
-        public override void ShowNodes()
-        {
         }
 
         public override void OnCreating()
@@ -54,6 +73,27 @@ namespace ShareX.ScreenCaptureLib
             Manager.IsMoving = true;
             Point pos = InputManager.ClientMousePosition;
             Rectangle = new Rectangle(new Point(pos.X - (Rectangle.Width / 2), pos.Y - (Rectangle.Height / 2)), Rectangle.Size);
+            TailPosition = Rectangle.Location.Add(Rectangle.Width / 2, Rectangle.Height - 1);
+        }
+
+        public override void OnNodeVisible()
+        {
+            TailNode.Position = TailPosition;
+            TailNode.Visible = true;
+        }
+
+        public override void OnNodeUpdate()
+        {
+            base.OnNodeUpdate();
+
+            if (TailNode.IsDragging)
+            {
+                TailPosition = InputManager.ClientMousePosition;
+            }
+        }
+
+        public override void OnNodePositionUpdate()
+        {
         }
 
         public override void OnConfigLoad()
@@ -98,7 +138,40 @@ namespace ShareX.ScreenCaptureLib
                 Point center = Rectangle.Center();
                 Rectangle = new Rectangle(center.X - (maxSize / 2) - padding, center.Y - (maxSize / 2) - padding, maxSize + (padding * 2), maxSize + (padding * 2));
 
-                DrawEllipse(g);
+                if (Shadow)
+                {
+                    if (IsBorderVisible)
+                    {
+                        DrawEllipse(g, ShadowColor, BorderSize, Color.Transparent, Rectangle.LocationOffset(ShadowOffset));
+                    }
+                    else if (FillColor.A == 255)
+                    {
+                        DrawEllipse(g, Color.Transparent, 0, ShadowColor, Rectangle.LocationOffset(ShadowOffset));
+                    }
+                }
+
+                if (TailVisible)
+                {
+                    Color tailColor;
+
+                    if (IsBorderVisible)
+                    {
+                        tailColor = BorderColor;
+                    }
+                    else
+                    {
+                        tailColor = FillColor;
+                    }
+
+                    if (Shadow)
+                    {
+                        DrawTail(g, tailColor, Rectangle.LocationOffset(ShadowOffset), TailPosition.Add(ShadowOffset));
+                    }
+
+                    DrawTail(g, tailColor, Rectangle, TailPosition);
+                }
+
+                DrawEllipse(g, BorderColor, BorderSize, FillColor, Rectangle);
 
                 if (Shadow)
                 {
@@ -121,9 +194,55 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
+        private void DrawTail(Graphics g, Color tailColor, Rectangle rectangle, Point tailPosition)
+        {
+            GraphicsPath gpTail = CreateTailPath(rectangle, tailPosition);
+
+            if (gpTail != null)
+            {
+                g.SmoothingMode = SmoothingMode.HighQuality;
+
+                using (Brush brush = new SolidBrush(tailColor))
+                {
+                    g.FillPath(brush, gpTail);
+                }
+
+                g.SmoothingMode = SmoothingMode.None;
+            }
+        }
+
+        public override void Move(int x, int y)
+        {
+            base.Move(x, y);
+
+            TailPosition = TailPosition.Add(x, y);
+        }
+
         public override void Resize(int x, int y, bool fromBottomRight)
         {
             Move(x, y);
+        }
+
+        protected GraphicsPath CreateTailPath(Rectangle rect, Point tailPosition)
+        {
+            GraphicsPath gpTail = new GraphicsPath();
+            Point center = rect.Center();
+            int rectAverageSize = (rect.Width + rect.Height) / 2;
+            int tailWidth = (int)(TailWidthMultiplier * rectAverageSize);
+            tailWidth = Math.Min(Math.Min(tailWidth, rect.Width), rect.Height);
+            int tailOrigin = tailWidth / 2;
+            int tailLength = (int)MathHelpers.Distance(center, tailPosition);
+            gpTail.AddLine(0, -tailOrigin, 0, tailOrigin);
+            gpTail.AddLine(0, tailOrigin, tailLength, 0);
+            gpTail.CloseFigure();
+            using (Matrix matrix = new Matrix())
+            {
+                matrix.Translate(center.X, center.Y);
+                float tailDegree = MathHelpers.LookAtDegree(center, tailPosition);
+                matrix.Rotate(tailDegree);
+                gpTail.Transform(matrix);
+            }
+            return gpTail;
         }
     }
 }
