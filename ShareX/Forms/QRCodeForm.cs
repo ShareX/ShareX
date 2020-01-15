@@ -115,7 +115,7 @@ namespace ShareX
                 output = string.Join(Environment.NewLine + Environment.NewLine, results);
             }
 
-            txtDecodeResult.Text = output;
+            rtbDecodeResult.Text = output;
         }
 
         private void DecodeFromFile(string filePath)
@@ -237,6 +237,11 @@ namespace ShareX
             string filePath = ImageHelpers.OpenImageFileDialog();
 
             DecodeFromFile(filePath);
+        }
+
+        private void rtbDecodeResult_LinkClicked(object sender, LinkClickedEventArgs e)
+        {
+            URLHelpers.OpenURL(e.LinkText);
         }
     }
 }
