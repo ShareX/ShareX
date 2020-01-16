@@ -972,7 +972,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="FluentFTP">
-      <Version>28.0.1</Version>
+      <Version>29.0.1</Version>
     </PackageReference>
     <PackageReference Include="MegaApiClient">
       <Version>1.7.1</Version>
