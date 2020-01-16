@@ -29,11 +29,10 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.IO;
 using System.Windows.Forms;
-using static Manina.Windows.Forms.ImageListView;
 
 namespace ShareX.ScreenCaptureLib
 {
-    public class StickerImageListViewRenderer : ImageListViewRenderer
+    public class StickerImageListViewRenderer : ImageListView.ImageListViewRenderer
     {
         public override void InitializeGraphics(Graphics g)
         {
@@ -41,8 +40,18 @@ namespace ShareX.ScreenCaptureLib
 
             ItemDrawOrder = ItemDrawOrder.NormalSelectedHovered;
 
-            ImageListView.Colors.SelectedColor1 = ImageListView.Colors.HoverColor1 = ImageListView.Colors.UnFocusedColor1 = Color.Transparent;
-            ImageListView.Colors.SelectedColor2 = ImageListView.Colors.HoverColor2 = ImageListView.Colors.UnFocusedColor2 = Color.FromArgb(252, 221, 132);
+            ImageListView.Colors.SelectedColor1 = ImageListView.Colors.HoverColor1 = ImageListView.Colors.UnFocusedColor1 = Color.FromArgb(252, 221, 132);
+            ImageListView.Colors.SelectedColor2 = ImageListView.Colors.HoverColor2 = ImageListView.Colors.UnFocusedColor2 = Color.Transparent;
+
+            if (ShareXResources.ExperimentalDarkTheme)
+            {
+                ImageListView.BackColor = ShareXResources.Theme.BackgroundColor;
+                ImageListView.Colors.BackColor = ShareXResources.Theme.LightBackgroundColor;
+                ImageListView.Colors.BorderColor = ShareXResources.Theme.BorderColor;
+                ImageListView.Colors.ForeColor = ShareXResources.Theme.TextColor;
+                ImageListView.Colors.SelectedForeColor = ShareXResources.Theme.TextColor;
+                ImageListView.Colors.UnFocusedForeColor = ShareXResources.Theme.TextColor;
+            }
         }
 
         public override void DrawItem(Graphics g, ImageListViewItem item, ItemState state, Rectangle bounds)
@@ -81,7 +90,7 @@ namespace ShareX.ScreenCaptureLib
             {
                 using (Brush bDisabled = new LinearGradientBrush(bounds.Offset(1), ImageListView.Colors.DisabledColor1, ImageListView.Colors.DisabledColor2, LinearGradientMode.Vertical))
                 {
-                    Utility.FillRoundedRectangle(g, bDisabled, bounds, 4);
+                    g.FillRectangle(bDisabled, bounds);
                 }
             }
             else if ((ImageListView.Focused && ((state & ItemState.Selected) != ItemState.None)) ||
@@ -89,14 +98,14 @@ namespace ShareX.ScreenCaptureLib
             {
                 using (Brush bSelected = new LinearGradientBrush(bounds.Offset(1), ImageListView.Colors.SelectedColor1, ImageListView.Colors.SelectedColor2, LinearGradientMode.Vertical))
                 {
-                    Utility.FillRoundedRectangle(g, bSelected, bounds, 4);
+                    g.FillRectangle(bSelected, bounds);
                 }
             }
             else if (!ImageListView.Focused && ((state & ItemState.Selected) != ItemState.None)) // Paint background unfocused
             {
                 using (Brush bGray64 = new LinearGradientBrush(bounds.Offset(1), ImageListView.Colors.UnFocusedColor1, ImageListView.Colors.UnFocusedColor2, LinearGradientMode.Vertical))
                 {
-                    Utility.FillRoundedRectangle(g, bGray64, bounds, 4);
+                    g.FillRectangle(bGray64, bounds);
                 }
             }
 
@@ -105,7 +114,7 @@ namespace ShareX.ScreenCaptureLib
             {
                 using (Brush bHovered = new LinearGradientBrush(bounds.Offset(1), ImageListView.Colors.HoverColor1, ImageListView.Colors.HoverColor2, LinearGradientMode.Vertical))
                 {
-                    Utility.FillRoundedRectangle(g, bHovered, bounds, 4);
+                    g.FillRectangle(bHovered, bounds);
                 }
             }
 
