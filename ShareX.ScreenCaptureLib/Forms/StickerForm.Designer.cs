@@ -61,14 +61,14 @@
             // 
             // ilvStickers
             // 
+            this.ilvStickers.AllowItemReorder = false;
             this.ilvStickers.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.ilvStickers.ColumnHeaderFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             resources.ApplyResources(this.ilvStickers, "ilvStickers");
-            this.ilvStickers.GroupHeaderFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             this.ilvStickers.MultiSelect = false;
             this.ilvStickers.Name = "ilvStickers";
             this.ilvStickers.PersistentCacheDirectory = "";
             this.ilvStickers.PersistentCacheSize = ((long)(100));
+            this.ilvStickers.UseWIC = true;
             this.ilvStickers.ItemClick += new Manina.Windows.Forms.ItemClickEventHandler(this.ilvStickers_ItemClick);
             // 
             // tsMain
@@ -95,8 +95,8 @@
             // tstbSearch
             // 
             this.tstbSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tstbSearch.Name = "tstbSearch";
             resources.ApplyResources(this.tstbSearch, "tstbSearch");
+            this.tstbSearch.Name = "tstbSearch";
             this.tstbSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tstbSearch_KeyDown);
             this.tstbSearch.KeyUp += new System.Windows.Forms.KeyEventHandler(this.tstbSearch_KeyUp);
             this.tstbSearch.TextChanged += new System.EventHandler(this.tstbSearch_TextChanged);

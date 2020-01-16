@@ -148,7 +148,7 @@
     <value>ilvStickers</value>
   </data>
   <data name="&gt;&gt;ilvStickers.Type" xml:space="preserve">
-    <value>Manina.Windows.Forms.ImageListView, ImageListView, Version=11.0.4.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Manina.Windows.Forms.ImageListView, ImageListView, Version=13.7.2.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;ilvStickers.Parent" xml:space="preserve">
     <value>tscMain.ContentPanel</value>
@@ -219,6 +219,9 @@
   <data name="tslSearch.Text" xml:space="preserve">
     <value>Search:</value>
   </data>
+  <data name="tstbSearch.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9pt</value>
+  </data>
   <data name="tstbSearch.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 26</value>
   </data>
@@ -254,7 +257,6 @@
   </data>
   <data name="tsnudSize.Text" xml:space="preserve">
     <value>64</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="tsMain.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
@@ -362,7 +364,7 @@
     <value>tsnudSize</value>
   </data>
   <data name="&gt;&gt;tsnudSize.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.ToolStripNumericUpDown, ShareX.HelpersLib, Version=12.3.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.ToolStripNumericUpDown, ShareX.HelpersLib, Version=13.0.2.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>StickerForm</value>
