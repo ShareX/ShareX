@@ -324,7 +324,7 @@ namespace ShareX.ScreenCaptureLib
             {
                 Form.Pause();
 
-                ShapeType shapeType = CurrentTool;
+                ShapeType shapeType = CurrentShapeTool;
 
                 Color borderColor;
 
@@ -378,7 +378,7 @@ namespace ShareX.ScreenCaptureLib
             {
                 Form.Pause();
 
-                ShapeType shapeType = CurrentTool;
+                ShapeType shapeType = CurrentShapeTool;
 
                 Color fillColor;
 
@@ -457,7 +457,7 @@ namespace ShareX.ScreenCaptureLib
             tslnudBorderSize.Content.Maximum = 20;
             tslnudBorderSize.Content.ValueChanged = (sender, e) =>
             {
-                ShapeType shapeType = CurrentTool;
+                ShapeType shapeType = CurrentShapeTool;
 
                 int borderSize = (int)tslnudBorderSize.Content.Value;
 
@@ -487,7 +487,7 @@ namespace ShareX.ScreenCaptureLib
             tslnudCornerRadius.Content.Maximum = 150;
             tslnudCornerRadius.Content.ValueChanged = (sender, e) =>
             {
-                ShapeType shapeType = CurrentTool;
+                ShapeType shapeType = CurrentShapeTool;
 
                 if (shapeType == ShapeType.RegionRectangle)
                 {
@@ -1263,10 +1263,7 @@ namespace ShareX.ScreenCaptureLib
             }
 
             // use menu of current shape in case of an active select tool.
-            if (CurrentShape != null && shapeType == ShapeType.ToolSelect)
-            {
-                shapeType = CurrentShape.ShapeType;
-            }
+            shapeType = CurrentShapeTool;
 
             Color borderColor;
 

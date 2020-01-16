@@ -113,6 +113,26 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
+        public ShapeType CurrentShapeTool
+        {
+            get
+            {
+                ShapeType tool = CurrentTool;
+
+                if (tool == ShapeType.ToolSelect)
+                {
+                    BaseShape shape = CurrentShape;
+
+                    if (shape != null)
+                    {
+                        tool = shape.ShapeType;
+                    }
+                }
+
+                return tool;
+            }
+        }
+
         public Rectangle CurrentRectangle
         {
             get
