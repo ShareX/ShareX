@@ -117,15 +117,6 @@ namespace ShareX.UploadersLib.TextUploaders
 
             if (!string.IsNullOrEmpty(text) && !string.IsNullOrEmpty(fileName))
             {
-                var gistUploadObject = new
-                {
-                    @public = PublicUpload,
-                    files = new Dictionary<string, object>
-                    {
-                        { fileName, new { content = text } }
-                    }
-                };
-
                 string url;
 
                 if (!string.IsNullOrEmpty(CustomURLAPI))
@@ -139,7 +130,17 @@ namespace ShareX.UploadersLib.TextUploaders
 
                 url = URLHelpers.CombineURL(url, "gists");
 
-                string json = JsonConvert.SerializeObject(gistUploadObject);
+                GistUpload gistUpload = new GistUpload()
+                {
+                    description = "",
+                    @public = PublicUpload,
+                    files = new Dictionary<string, GistUploadFileInfo>()
+                    {
+                        { fileName, new GistUploadFileInfo() { content = text } }
+                    }
+                };
+
+                string json = JsonConvert.SerializeObject(gistUpload);
 
                 Dictionary<string, string> args = new Dictionary<string, string>();
                 args.Add("access_token", AuthInfo.Token.access_token);
@@ -164,13 +165,25 @@ namespace ShareX.UploadersLib.TextUploaders
             return ur;
         }
 
+        private class GistUpload
+        {
+            public string description { get; set; }
+            public bool @public { get; set; }
+            public Dictionary<string, GistUploadFileInfo> files { get; set; }
+        }
+
+        private class GistUploadFileInfo
+        {
+            public string content { get; set; }
+        }
+
         private class GistResponse
         {
             public string html_url { get; set; }
-            public Dictionary<string, GistFileInfo> files { get; set; }
+            public Dictionary<string, GistResponseFileInfo> files { get; set; }
         }
 
-        private class GistFileInfo
+        private class GistResponseFileInfo
         {
             public string filename { get; set; }
             public string raw_url { get; set; }

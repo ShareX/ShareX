@@ -253,7 +253,7 @@ namespace ShareX
         {
             Helpers.CreateDirectoryFromFilePath(filepath);
 
-            var manifest = new
+            ChromeManifest manifest = new ChromeManifest()
             {
                 name = "com.getsharex.sharex",
                 description = "ShareX",
@@ -323,7 +323,7 @@ namespace ShareX
         {
             Helpers.CreateDirectoryFromFilePath(filepath);
 
-            var manifest = new
+            FirefoxManifest manifest = new FirefoxManifest()
             {
                 name = "ShareX",
                 description = "ShareX",

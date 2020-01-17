@@ -149,6 +149,7 @@
     <Compile Include="CaptureHelpers\CaptureMonitor.cs" />
     <Compile Include="CaptureHelpers\CaptureRegion.cs" />
     <Compile Include="CaptureHelpers\CaptureWindow.cs" />
+    <Compile Include="ChromeManifest.cs" />
     <Compile Include="Controls\BeforeUploadControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -178,6 +179,7 @@
     </Compile>
     <Compile Include="EasterEggAboutAnimation.cs" />
     <Compile Include="EasterEggBounce.cs" />
+    <Compile Include="FirefoxManifest.cs" />
     <Compile Include="Forms\TextUploadForm.cs">
       <SubType>Form</SubType>
     </Compile>
