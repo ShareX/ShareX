@@ -117,34 +117,97 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="tsbSelectFolder.Text" xml:space="preserve">
-    <value>Виберіть шлях до поточної теки</value>
+  <data name="btnCancel.Text" xml:space="preserve">
+    <value>Скасувати</value>
   </data>
-  <data name="chFilename.Text" xml:space="preserve">
-    <value>Назва файла</value>
+  <data name="btnOK.Text" xml:space="preserve">
+    <value>Гаразд</value>
   </data>
-  <data name="chSize.Text" xml:space="preserve">
-    <value>Розмір</value>
+  <data name="lblOld.Text" xml:space="preserve">
+    <value>Старий:</value>
   </data>
-  <data name="chModified.Text" xml:space="preserve">
-    <value>Змінено</value>
+  <data name="lblNew.Text" xml:space="preserve">
+    <value>Новий:</value>
   </data>
-  <data name="tsmiCopyPublicLink.Text" xml:space="preserve">
-    <value>Скопіювати загальне посилання</value>
+  <data name="lblHex.Text" xml:space="preserve">
+    <value>Шістнадцятковий:</value>
   </data>
-  <data name="tsmiDownloadFile.Text" xml:space="preserve">
-    <value>Завантажити...</value>
+  <data name="lblKey.Text" xml:space="preserve">
+    <value>Клавіша:</value>
   </data>
-  <data name="tsmiDelete.Text" xml:space="preserve">
-    <value>Видалити...</value>
+  <data name="lblYellow.Text" xml:space="preserve">
+    <value>Жовтий:</value>
   </data>
-  <data name="tsmiRefresh.Text" xml:space="preserve">
-    <value>Оновити</value>
+  <data name="lblMagenta.Text" xml:space="preserve">
+    <value>Пурпуровий:</value>
   </data>
-  <data name="tsmiCreateDirectory.Text" xml:space="preserve">
-    <value>Створити теку...</value>
+  <data name="lblCyan.Text" xml:space="preserve">
+    <value>Блакитний:</value>
+  </data>
+  <data name="rbBlue.Text" xml:space="preserve">
+    <value>Синій:</value>
+  </data>
+  <data name="rbGreen.Text" xml:space="preserve">
+    <value>Зелений:</value>
+  </data>
+  <data name="rbRed.Text" xml:space="preserve">
+    <value>Червоний:</value>
+  </data>
+  <data name="rbBrightness.Text" xml:space="preserve">
+    <value>Яскравість:</value>
+  </data>
+  <data name="rbSaturation.Text" xml:space="preserve">
+    <value>Насиченість:</value>
+  </data>
+  <data name="rbHue.Text" xml:space="preserve">
+    <value>Відтінок:</value>
+  </data>
+  <data name="lblDecimal.Text" xml:space="preserve">
+    <value>Десятковий:</value>
+  </data>
+  <data name="lblAlpha.Text" xml:space="preserve">
+    <value>Альфа:</value>
+  </data>
+  <data name="tsmiCopyAll.Text" xml:space="preserve">
+    <value>Скопіювати все</value>
+  </data>
+  <data name="tsmiCopyRGB.Text" xml:space="preserve">
+    <value>Копіювати RGB</value>
+  </data>
+  <data name="tsmiCopyHexadecimal.Text" xml:space="preserve">
+    <value>Копіювати шістнадцяткове значення</value>
+  </data>
+  <data name="tsmiCopyCMYK.Text" xml:space="preserve">
+    <value>Копіювати CMYK</value>
+  </data>
+  <data name="tsmiCopyHSB.Text" xml:space="preserve">
+    <value>Копіювати HSB</value>
+  </data>
+  <data name="tsmiCopyDecimal.Text" xml:space="preserve">
+    <value>Копіювати десяткове значення</value>
+  </data>
+  <data name="tsmiCopyPosition.Text" xml:space="preserve">
+    <value>Копіювати розташування</value>
+  </data>
+  <data name="btnPickColor.Text" xml:space="preserve">
+    <value>Вибрати колір з екрану...</value>
+  </data>
+  <data name="lblCursorPosition.Text" xml:space="preserve">
+    <value>Позиція курсора:</value>
+  </data>
+  <data name="btnClose.Text" xml:space="preserve">
+    <value>Закрити</value>
+  </data>
+  <data name="lblRecentColors.Text" xml:space="preserve">
+    <value>Останні кольори:</value>
+  </data>
+  <data name="mbCopy.Text" xml:space="preserve">
+    <value>Копіювати</value>
+  </data>
+  <data name="cbTransparent.ToolTip" xml:space="preserve">
+    <value>Прозорий</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX — Dropbox</value>
-  <comment>@Invariant</comment></data>
+    <value>ShareX — Вибір кольору</value>
+  </data>
 </root>

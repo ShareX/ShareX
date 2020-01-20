@@ -117,34 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="tsbSelectFolder.Text" xml:space="preserve">
-    <value>Виберіть шлях до поточної теки</value>
+  <data name="lblFilter.Text" xml:space="preserve">
+    <value>Формат:</value>
   </data>
-  <data name="chFilename.Text" xml:space="preserve">
-    <value>Назва файла</value>
+  <data name="lblFolderPath.Text" xml:space="preserve">
+    <value>Опис:</value>
   </data>
-  <data name="chSize.Text" xml:space="preserve">
-    <value>Розмір</value>
+  <data name="btnCancel.Text" xml:space="preserve">
+    <value>Скасувати</value>
   </data>
-  <data name="chModified.Text" xml:space="preserve">
-    <value>Змінено</value>
-  </data>
-  <data name="tsmiCopyPublicLink.Text" xml:space="preserve">
-    <value>Скопіювати загальне посилання</value>
-  </data>
-  <data name="tsmiDownloadFile.Text" xml:space="preserve">
-    <value>Завантажити...</value>
-  </data>
-  <data name="tsmiDelete.Text" xml:space="preserve">
-    <value>Видалити...</value>
-  </data>
-  <data name="tsmiRefresh.Text" xml:space="preserve">
-    <value>Оновити</value>
-  </data>
-  <data name="tsmiCreateDirectory.Text" xml:space="preserve">
-    <value>Створити теку...</value>
+  <data name="btnOK.Text" xml:space="preserve">
+    <value>Гаразд</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX — Dropbox</value>
-  <comment>@Invariant</comment></data>
+    <value>ShareX — Формат вмісту буфера обміну</value>
+  </data>
 </root>
