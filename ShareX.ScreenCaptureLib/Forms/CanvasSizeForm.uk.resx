@@ -117,19 +117,25 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="tslSearch.Text" xml:space="preserve">
-    <value>Шукати:</value>
+  <data name="lblLeft.Text" xml:space="preserve">
+    <value>Зліва:</value>
   </data>
-  <data name="tsbSearch.Text" xml:space="preserve">
-    <value>Пошук</value>
+  <data name="lblRight.Text" xml:space="preserve">
+    <value>Справа:</value>
   </data>
-  <data name="tsbSearch.ToolTipText" xml:space="preserve">
-    <value>Пошук</value>
+  <data name="lblTop.Text" xml:space="preserve">
+    <value>Вгорі:</value>
   </data>
-  <data name="tsbSettings.Text" xml:space="preserve">
-    <value>Параметри...</value>
+  <data name="lblBottom.Text" xml:space="preserve">
+    <value>Знизу:</value>
+  </data>
+  <data name="btnOK.Text" xml:space="preserve">
+    <value>Гаразд</value>
+  </data>
+  <data name="btnCancel.Text" xml:space="preserve">
+    <value>Скасувати</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX — Історія зображень</value>
+    <value>ShareX — Розмір полотна</value>
   </data>
 </root>

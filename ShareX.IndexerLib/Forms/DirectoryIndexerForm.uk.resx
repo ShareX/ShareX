@@ -117,19 +117,22 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="tslSearch.Text" xml:space="preserve">
-    <value>Шукати:</value>
+  <data name="btnBrowseFolder.Text" xml:space="preserve">
+    <value>Вибір теки...</value>
   </data>
-  <data name="tsbSearch.Text" xml:space="preserve">
-    <value>Пошук</value>
+  <data name="btnIndexFolder.Text" xml:space="preserve">
+    <value>Індексувати вибрану теку</value>
   </data>
-  <data name="tsbSearch.ToolTipText" xml:space="preserve">
-    <value>Пошук</value>
+  <data name="btnUpload.Text" xml:space="preserve">
+    <value>Вивантажити та закрити це вікно</value>
   </data>
-  <data name="tsbSettings.Text" xml:space="preserve">
-    <value>Параметри...</value>
+  <data name="tpPreview.Text" xml:space="preserve">
+    <value>Попередній перегляд</value>
+  </data>
+  <data name="tpSettings.Text" xml:space="preserve">
+    <value>Налаштування</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX — Історія зображень</value>
+    <value>ShareX — Індексація теки</value>
   </data>
 </root>

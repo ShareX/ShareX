@@ -120,16 +120,58 @@
   <data name="btnFilePathBrowse.Text" xml:space="preserve">
     <value>Огляд...</value>
   </data>
+  <data name="lblHashType.Text" xml:space="preserve">
+    <value>Тип хешу:</value>
+  </data>
+  <data name="lblResult.Text" xml:space="preserve">
+    <value>Результат:</value>
+  </data>
+  <data name="lblTarget.Text" xml:space="preserve">
+    <value>Ціль:</value>
+  </data>
+  <data name="btnStartHashCheck.Text" xml:space="preserve">
+    <value>Перевірити</value>
+  </data>
+  <data name="lblFile.Text" xml:space="preserve">
+    <value>Шлях до файла:</value>
+  </data>
+  <data name="tpFileHashCheck.Text" xml:space="preserve">
+    <value>Перевірка хешу файла</value>
+  </data>
   <data name="btnHashCheckCopyAll.Text" xml:space="preserve">
     <value>Скопіювати все</value>
+  </data>
+  <data name="lblHashCheckHash.Text" xml:space="preserve">
+    <value>Хеш:</value>
+  </data>
+  <data name="btnHashCheckDecodeBase64.Text" xml:space="preserve">
+    <value>Декодувати</value>
+  </data>
+  <data name="btnHashCheckDecodeASCII.Text" xml:space="preserve">
+    <value>Декодувати</value>
+  </data>
+  <data name="btnHashCheckDecodeHex.Text" xml:space="preserve">
+    <value>Декодувати</value>
   </data>
   <data name="lblHashCheckHex.Text" xml:space="preserve">
     <value>Шістнадцятковий:</value>
   </data>
+  <data name="btnHashCheckDecodeBinary.Text" xml:space="preserve">
+    <value>Декодувати</value>
+  </data>
   <data name="lblHashCheckBinary.Text" xml:space="preserve">
     <value>Двійковий:</value>
   </data>
+  <data name="btnHashCheckEncodeText.Text" xml:space="preserve">
+    <value>Кодувати</value>
+  </data>
   <data name="lblHashCheckText.Text" xml:space="preserve">
     <value>Текст:</value>
+  </data>
+  <data name="tpTextConversions.Text" xml:space="preserve">
+    <value>Перетворення тексту</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX — Перевірка хешу</value>
   </data>
 </root>

@@ -118,18 +118,18 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="tslSearch.Text" xml:space="preserve">
-    <value>Шукати:</value>
+    <value>Пошук:</value>
   </data>
-  <data name="tsbSearch.Text" xml:space="preserve">
-    <value>Пошук</value>
+  <data name="tslStickers.Text" xml:space="preserve">
+    <value>Наліпки:</value>
   </data>
-  <data name="tsbSearch.ToolTipText" xml:space="preserve">
-    <value>Пошук</value>
+  <data name="tsbEditStickers.Text" xml:space="preserve">
+    <value>Змінити пакунки наліпок</value>
   </data>
-  <data name="tsbSettings.Text" xml:space="preserve">
-    <value>Параметри...</value>
+  <data name="tslSize.Text" xml:space="preserve">
+    <value>Розмір:</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX — Історія зображень</value>
+    <value>ShareX — Вибір наліпки</value>
   </data>
 </root>

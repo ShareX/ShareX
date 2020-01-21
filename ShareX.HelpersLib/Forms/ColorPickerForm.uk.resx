@@ -131,9 +131,9 @@
   </data>
   <data name="lblHex.Text" xml:space="preserve">
     <value>Шістнадцятковий:</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="lblKey.Text" xml:space="preserve">
-    <value>Клавіша:</value>
+    <value>Ключовий:</value>
   </data>
   <data name="lblYellow.Text" xml:space="preserve">
     <value>Жовтий:</value>
@@ -167,6 +167,51 @@
   </data>
   <data name="lblAlpha.Text" xml:space="preserve">
     <value>Альфа:</value>
+  </data>
+  <data name="btnScreenColorPicker.ToolTip" xml:space="preserve">
+    <value>Вибрати колір з екрану</value>
+  </data>
+  <data name="tsmiCopyAll.Text" xml:space="preserve">
+    <value>Скопіювати все</value>
+  </data>
+  <data name="tsmiCopyRGB.Text" xml:space="preserve">
+    <value>Копіювати RGB</value>
+  </data>
+  <data name="tsmiCopyHexadecimal.Text" xml:space="preserve">
+    <value>Копіювати шістнадцяткове значення</value>
+  </data>
+  <data name="tsmiCopyCMYK.Text" xml:space="preserve">
+    <value>Копіювати CMYK</value>
+  </data>
+  <data name="tsmiCopyHSB.Text" xml:space="preserve">
+    <value>Копіювати HSB</value>
+  </data>
+  <data name="tsmiCopyDecimal.Text" xml:space="preserve">
+    <value>Копіювати десяткове значення</value>
+  </data>
+  <data name="tsmiCopyPosition.Text" xml:space="preserve">
+    <value>Копіювати розташування</value>
+  </data>
+  <data name="lblCursorPosition.Text" xml:space="preserve">
+    <value>Позиція вказівника:</value>
+  </data>
+  <data name="btnClose.Text" xml:space="preserve">
+    <value>Закрити</value>
+  </data>
+  <data name="rbRecentColors.Text" xml:space="preserve">
+    <value>Останні кольори</value>
+  </data>
+  <data name="rbStandardColors.Text" xml:space="preserve">
+    <value>Типові кольори</value>
+  </data>
+  <data name="lblName.Text" xml:space="preserve">
+    <value>Назва:</value>
+  </data>
+  <data name="mbCopy.Text" xml:space="preserve">
+    <value>Копіювати</value>
+  </data>
+  <data name="cbTransparent.ToolTip" xml:space="preserve">
+    <value>Прозорий</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX — Вибір кольору</value>
