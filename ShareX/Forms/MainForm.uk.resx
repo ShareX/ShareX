@@ -151,7 +151,7 @@
     <value>Область</value>
   </data>
   <data name="tsmiRectangleLight.Text" xml:space="preserve">
-    <value>Область (світло)</value>
+    <value>Область (спрощено)</value>
   </data>
   <data name="tsmiRectangleTransparent.Text" xml:space="preserve">
     <value>Область (прозорість)</value>
@@ -173,6 +173,30 @@
   </data>
   <data name="tsmiAutoCapture.Text" xml:space="preserve">
     <value>Автоматичне захоплення...</value>
+  </data>
+  <data name="tsmiShowCursor.Text" xml:space="preserve">
+    <value>Показати вказівник</value>
+  </data>
+  <data name="tsmiScreenshotDelay0.Text" xml:space="preserve">
+    <value>Без затримки</value>
+  </data>
+  <data name="tsmiScreenshotDelay1.Text" xml:space="preserve">
+    <value>1 секунда</value>
+  </data>
+  <data name="tsmiScreenshotDelay2.Text" xml:space="preserve">
+    <value>2 секунди</value>
+  </data>
+  <data name="tsmiScreenshotDelay3.Text" xml:space="preserve">
+    <value>3 секунди</value>
+  </data>
+  <data name="tsmiScreenshotDelay4.Text" xml:space="preserve">
+    <value>4 секунди</value>
+  </data>
+  <data name="tsmiScreenshotDelay5.Text" xml:space="preserve">
+    <value>5 секунд</value>
+  </data>
+  <data name="tsmiScreenshotDelay.Text" xml:space="preserve">
+    <value>Затримка для знімка</value>
   </data>
   <data name="tsddbCapture.Text" xml:space="preserve">
     <value>Захопити</value>
@@ -234,14 +258,20 @@
   <data name="tsmiImageCombiner.Text" xml:space="preserve">
     <value>Об’єднувач зображень...</value>
   </data>
+  <data name="tsmiImageSplitter.Text" xml:space="preserve">
+    <value>Розділювач зображень...</value>
+  </data>
   <data name="tsmiImageThumbnailer.Text" xml:space="preserve">
     <value>Генератор мініатюр зображень...</value>
+  </data>
+  <data name="tsmiVideoConverter.Text" xml:space="preserve">
+    <value>Конвертер відео...</value>
   </data>
   <data name="tsmiVideoThumbnailer.Text" xml:space="preserve">
     <value>Генератор мініатюр відео...</value>
   </data>
   <data name="tsmiTweetMessage.Text" xml:space="preserve">
-    <value>Повідомлення у Tweeter...</value>
+    <value>Повідомлення у Twitter...</value>
   </data>
   <data name="tsmiMonitorTest.Text" xml:space="preserve">
     <value>Тест монітора...</value>
@@ -272,6 +302,9 @@
   </data>
   <data name="tsmiDestinationSettings.Text" xml:space="preserve">
     <value>Параметри призначення...</value>
+  </data>
+  <data name="tsmiCustomUploaderSettings.Text" xml:space="preserve">
+    <value>Налаштування вивантажувачів...</value>
   </data>
   <data name="tsddbDestinations.Text" xml:space="preserve">
     <value>Призначення</value>
@@ -372,6 +405,9 @@
   <data name="tsmiCopyImage.Text" xml:space="preserve">
     <value>Зображення</value>
   </data>
+  <data name="tsmiCopyImageDimensions.Text" xml:space="preserve">
+    <value>Розміри зображення</value>
+  </data>
   <data name="tsmiCopyText.Text" xml:space="preserve">
     <value>Текст</value>
   </data>
@@ -432,6 +468,9 @@
   <data name="tsmiEditSelectedFile.Text" xml:space="preserve">
     <value>Редагувати зображення...</value>
   </data>
+  <data name="tsmiRunAction.Text" xml:space="preserve">
+    <value>Виконати дію</value>
+  </data>
   <data name="tsmiDeleteSelectedItem.Text" xml:space="preserve">
     <value>Вилучити завдання зі списку</value>
   </data>
@@ -486,6 +525,24 @@
   <data name="tsmiImagePreview.Text" xml:space="preserve">
     <value>Попередній перегляд зображення</value>
   </data>
+  <data name="tsmiThumbnailTitleShow.Text" xml:space="preserve">
+    <value>Показати</value>
+  </data>
+  <data name="tsmiThumbnailTitleHide.Text" xml:space="preserve">
+    <value>Приховати</value>
+  </data>
+  <data name="tsmiThumbnailTitleTop.Text" xml:space="preserve">
+    <value>Вгорі</value>
+  </data>
+  <data name="tsmiThumbnailTitleBottom.Text" xml:space="preserve">
+    <value>Знизу</value>
+  </data>
+  <data name="tsmiThumbnailTitle.Text" xml:space="preserve">
+    <value>Заголовок мініатюри</value>
+  </data>
+  <data name="tsmiSwitchTaskViewMode.Text" xml:space="preserve">
+    <value>Перемкнутись у режим мініатюр</value>
+  </data>
   <data name="tsmiTrayFullscreen.Text" xml:space="preserve">
     <value>На весь екран</value>
   </data>
@@ -499,7 +556,7 @@
     <value>Область</value>
   </data>
   <data name="tsmiTrayRectangleLight.Text" xml:space="preserve">
-    <value>Область (світло)</value>
+    <value>Область (спрощено)</value>
   </data>
   <data name="tsmiTrayRectangleTransparent.Text" xml:space="preserve">
     <value>Область (прозорість)</value>
@@ -521,6 +578,30 @@
   </data>
   <data name="tsmiTrayAutoCapture.Text" xml:space="preserve">
     <value>Автоматичне захоплення...</value>
+  </data>
+  <data name="tsmiTrayShowCursor.Text" xml:space="preserve">
+    <value>Показати вказівник</value>
+  </data>
+  <data name="tsmiTrayScreenshotDelay0.Text" xml:space="preserve">
+    <value>Без затримки</value>
+  </data>
+  <data name="tsmiTrayScreenshotDelay1.Text" xml:space="preserve">
+    <value>1 секунда</value>
+  </data>
+  <data name="tsmiTrayScreenshotDelay2.Text" xml:space="preserve">
+    <value>2 секунди</value>
+  </data>
+  <data name="tsmiTrayScreenshotDelay3.Text" xml:space="preserve">
+    <value>3 секунди</value>
+  </data>
+  <data name="tsmiTrayScreenshotDelay4.Text" xml:space="preserve">
+    <value>4 секунди</value>
+  </data>
+  <data name="tsmiTrayScreenshotDelay5.Text" xml:space="preserve">
+    <value>5 секунд</value>
+  </data>
+  <data name="tsmiTrayScreenshotDelay.Text" xml:space="preserve">
+    <value>Затримка для знімка</value>
   </data>
   <data name="tsmiTrayCapture.Text" xml:space="preserve">
     <value>Захоплення</value>
@@ -582,14 +663,20 @@
   <data name="tsmiTrayImageCombiner.Text" xml:space="preserve">
     <value>Об’єднувач зображень...</value>
   </data>
+  <data name="tsmiTrayImageSplitter.Text" xml:space="preserve">
+    <value>Розділювач зображень...</value>
+  </data>
   <data name="tsmiTrayImageThumbnailer.Text" xml:space="preserve">
     <value>Генератор мініатюр зображень...</value>
+  </data>
+  <data name="tsmiTrayVideoConverter.Text" xml:space="preserve">
+    <value>Конвертер відео...</value>
   </data>
   <data name="tsmiTrayVideoThumbnailer.Text" xml:space="preserve">
     <value>Генератор мініатюр відео...</value>
   </data>
   <data name="tsmiTrayTweetMessage.Text" xml:space="preserve">
-    <value>Повідомлення у Tweeter...</value>
+    <value>Повідомлення у Twitter...</value>
   </data>
   <data name="tsmiTrayMonitorTest.Text" xml:space="preserve">
     <value>Тест монітора...</value>
@@ -620,6 +707,9 @@
   </data>
   <data name="tsmiTrayDestinationSettings.Text" xml:space="preserve">
     <value>Параметри призначення...</value>
+  </data>
+  <data name="tsmiTrayCustomUploaderSettings.Text" xml:space="preserve">
+    <value>Налаштування вивантажувачів...</value>
   </data>
   <data name="tsmiTrayDestinations.Text" xml:space="preserve">
     <value>Призначення</value>
@@ -686,5 +776,20 @@
   </data>
   <data name="btnCloseNews.Text" xml:space="preserve">
     <value>Закрити</value>
+  </data>
+  <data name="tsbTwitter.ToolTipText" xml:space="preserve">
+    <value>Слідкуйте за нашим Twitter</value>
+  </data>
+  <data name="tsbDiscord.ToolTipText" xml:space="preserve">
+    <value>Приєднуйтесь до нашого Discord</value>
+  </data>
+  <data name="tsbPatreon.ToolTipText" xml:space="preserve">
+    <value>Підтримайте нас про Patreon</value>
+  </data>
+  <data name="tsbBitcoin.ToolTipText" xml:space="preserve">
+    <value>Підтримайте нас з допомогою криптовалют</value>
+  </data>
+  <data name="tsbGitHub.ToolTipText" xml:space="preserve">
+    <value>Зірку нашому GitHub</value>
   </data>
 </root>

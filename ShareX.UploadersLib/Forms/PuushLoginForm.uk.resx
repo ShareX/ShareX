@@ -117,19 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="tslSearch.Text" xml:space="preserve">
-    <value>Шукати:</value>
+  <data name="lblPassword.Text" xml:space="preserve">
+    <value>Пароль:</value>
   </data>
-  <data name="tsbSearch.Text" xml:space="preserve">
-    <value>Пошук</value>
+  <data name="lblEmail.Text" xml:space="preserve">
+    <value>Ел. пошта:</value>
   </data>
-  <data name="tsbSearch.ToolTipText" xml:space="preserve">
-    <value>Пошук</value>
+  <data name="btnLogin.Text" xml:space="preserve">
+    <value>Вхід</value>
   </data>
-  <data name="tsbSettings.Text" xml:space="preserve">
-    <value>Параметри...</value>
+  <data name="llForgottenPassword.Text" xml:space="preserve">
+    <value>Забули пароль?</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX — Історія зображень</value>
+    <value>Вхід у puush</value>
   </data>
 </root>

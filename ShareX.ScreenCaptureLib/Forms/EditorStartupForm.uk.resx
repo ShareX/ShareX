@@ -117,19 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="tslSearch.Text" xml:space="preserve">
-    <value>Шукати:</value>
+  <data name="btnOpenImageFile.Text" xml:space="preserve">
+    <value>Відкрити файл зображення...</value>
   </data>
-  <data name="tsbSearch.Text" xml:space="preserve">
-    <value>Пошук</value>
+  <data name="btnCreateNewImage.Text" xml:space="preserve">
+    <value>Створити нове зображення...</value>
   </data>
-  <data name="tsbSearch.ToolTipText" xml:space="preserve">
-    <value>Пошук</value>
+  <data name="btnLoadImageFromClipboard.Text" xml:space="preserve">
+    <value>Завантажити з буфера обміну</value>
   </data>
-  <data name="tsbSettings.Text" xml:space="preserve">
-    <value>Параметри...</value>
+  <data name="btnCancel.Text" xml:space="preserve">
+    <value>Скасувати</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX — Історія зображень</value>
+    <value>ShareX — Редактор зображень</value>
   </data>
 </root>

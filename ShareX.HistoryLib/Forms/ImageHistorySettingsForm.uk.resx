@@ -117,19 +117,25 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="tslSearch.Text" xml:space="preserve">
-    <value>Шукати:</value>
+  <data name="lblViewMode.Text" xml:space="preserve">
+    <value>Режим перегляду:</value>
   </data>
-  <data name="tsbSearch.Text" xml:space="preserve">
-    <value>Пошук</value>
+  <data name="lblThumbnailSize.Text" xml:space="preserve">
+    <value>Розмір мініатюри:</value>
   </data>
-  <data name="tsbSearch.ToolTipText" xml:space="preserve">
-    <value>Пошук</value>
+  <data name="lblMaximumImageLimit.Text" xml:space="preserve">
+    <value>Максимальна кількість зображень:</value>
   </data>
-  <data name="tsbSettings.Text" xml:space="preserve">
-    <value>Параметри...</value>
+  <data name="lblThumbnailSizeUnit.Text" xml:space="preserve">
+    <value>пікс.</value>
+  </data>
+  <data name="cbRememberSearchText.Text" xml:space="preserve">
+    <value>Запамʼятати пошук</value>
+  </data>
+  <data name="cbFilterMissingFiles.Text" xml:space="preserve">
+    <value>Фільтрувати відсутні файли</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX — Історія зображень</value>
+    <value>ShareX — Налаштування історії зображень</value>
   </data>
 </root>

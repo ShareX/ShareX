@@ -133,7 +133,7 @@
     <value>Центрувати позицію</value>
   </data>
   <data name="btnShowPreview.Text" xml:space="preserve">
-    <value>Попередній перегляд...</value>
+    <value>Перегляд...</value>
   </data>
   <data name="btnPrint.Text" xml:space="preserve">
     <value>Друк...</value>

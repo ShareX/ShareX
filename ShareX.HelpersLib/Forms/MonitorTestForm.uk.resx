@@ -117,25 +117,58 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="btnScreenTearingTest.Text" xml:space="preserve">
+    <value>Почати перевірку анімації</value>
+  </data>
   <data name="btnGradientColor2.Text" xml:space="preserve">
-    <value>&#x41A;&#x43E;&#x43B;&#x456;&#x440; 2</value>
+    <value>Колір 2</value>
   </data>
   <data name="btnGradientColor1.Text" xml:space="preserve">
-    <value>&#x41A;&#x43E;&#x43B;&#x456;&#x440; 1</value>
+    <value>Колір 1</value>
+  </data>
+  <data name="lblTip.Text" xml:space="preserve">
+    <value>Порада: Ви можете натиснути зовні для приховування/показу цієї панелі.</value>
+  </data>
+  <data name="rbGradient.Text" xml:space="preserve">
+    <value>Градієнт:</value>
   </data>
   <data name="btnClose.Text" xml:space="preserve">
-    <value>&#x417;&#x430;&#x43A;&#x440;&#x438;&#x442;&#x438;</value>
+    <value>Закрити</value>
   </data>
   <data name="lblShapeSize.Text" xml:space="preserve">
-    <value>&#x420;&#x43E;&#x437;&#x43C;&#x456;&#x440;:</value>
+    <value>Розмір:</value>
+  </data>
+  <data name="btnColorDialog.Text" xml:space="preserve">
+    <value>Вибір кольору...</value>
+  </data>
+  <data name="cbShapes.Items" xml:space="preserve">
+    <value>Горизонтальні лінії</value>
+  </data>
+  <data name="cbShapes.Items1" xml:space="preserve">
+    <value>Вертикальні лінії</value>
+  </data>
+  <data name="cbShapes.Items2" xml:space="preserve">
+    <value>Шахівниця</value>
+  </data>
+  <data name="rbShapes.Text" xml:space="preserve">
+    <value>Фігура:</value>
   </data>
   <data name="lblBlue.Text" xml:space="preserve">
-    <value>&#x421;:</value>
+    <value>С:</value>
   </data>
   <data name="lblGreen.Text" xml:space="preserve">
-    <value>&#x417;:</value>
+    <value>З:</value>
+  </data>
+  <data name="lblRed.Text" xml:space="preserve">
+    <value>Ч:</value>
+  </data>
+  <data name="rbRedGreenBlue.Text" xml:space="preserve">
+    <value>Червоний, зелений, синій:</value>
   </data>
   <data name="rbBlackWhite.Text" xml:space="preserve">
-    <value>&#x427;&#x43E;&#x440;&#x43D;&#x438;&#x439;, &#x431;&#x456;&#x43B;&#x438;&#x439;:</value>
+    <value>Чорний, білий:</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX — Перевірка монітору</value>
   </data>
 </root>

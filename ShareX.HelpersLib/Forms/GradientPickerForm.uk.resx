@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="chLocation.Text" xml:space="preserve">
-    <value>Позиція</value>
+    <value>Розташування</value>
   </data>
   <data name="btnAdd.Text" xml:space="preserve">
     <value>Додати</value>
@@ -127,7 +127,7 @@
     <value>Вилучити</value>
   </data>
   <data name="lblLocation.Text" xml:space="preserve">
-    <value>Позиція:</value>
+    <value>Розташування:</value>
   </data>
   <data name="lblGradientType.Text" xml:space="preserve">
     <value>Тип градієнта:</value>
@@ -139,7 +139,7 @@
     <value>Скасувати</value>
   </data>
   <data name="lblPreview.Text" xml:space="preserve">
-    <value>Попередній перегляд:</value>
+    <value>Перегляд:</value>
   </data>
   <data name="cbtnCurrentColor.Text" xml:space="preserve">
     <value>Колір</value>

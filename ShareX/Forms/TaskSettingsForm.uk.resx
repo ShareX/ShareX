@@ -60,45 +60,45 @@
             : and then encoded with base64 encoding.
     -->
   <xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
         <xsd:choice maxOccurs="unbounded">
           <xsd:element name="metadata">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
               </xsd:sequence>
-              <xsd:attribute name="name" use="required" type="xsd:string" />
-              <xsd:attribute name="type" type="xsd:string" />
-              <xsd:attribute name="mimetype" type="xsd:string" />
-              <xsd:attribute ref="xml:space" />
+              <xsd:attribute name="name" use="required" type="xsd:string"/>
+              <xsd:attribute name="type" type="xsd:string"/>
+              <xsd:attribute name="mimetype" type="xsd:string"/>
+              <xsd:attribute ref="xml:space"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="assembly">
             <xsd:complexType>
-              <xsd:attribute name="alias" type="xsd:string" />
-              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="alias" type="xsd:string"/>
+              <xsd:attribute name="name" type="xsd:string"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="data">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
-              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-              <xsd:attribute ref="xml:space" />
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
+              <xsd:attribute ref="xml:space"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="resheader">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" />
+              <xsd:attribute name="name" type="xsd:string" use="required"/>
             </xsd:complexType>
           </xsd:element>
         </xsd:choice>
@@ -117,14 +117,95 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="cbOverrideAfterCaptureSettings.Text" xml:space="preserve">
+    <value>Перевизначити налаштування після захоплення</value>
+  </data>
+  <data name="cbOverrideAfterUploadSettings.Text" xml:space="preserve">
+    <value>Перевизначити налаштування після вивантаження</value>
+  </data>
+  <data name="cbOverrideDestinationSettings.Text" xml:space="preserve">
+    <value>Перевизначити призначення</value>
+  </data>
   <data name="lblDescription.Text" xml:space="preserve">
     <value>Опис:</value>
+  </data>
+  <data name="tpTask.Text" xml:space="preserve">
+    <value>Завдання</value>
+  </data>
+  <data name="tpGeneral.Text" xml:space="preserve">
+    <value>Загальні</value>
+  </data>
+  <data name="lblImageEffectsNote.Text" xml:space="preserve">
+    <value>Примітка: Ви можете увімкнути/вимкнути ефекти зображення з „Після завдання захоплення -&gt; Додати ефекти".</value>
+  </data>
+  <data name="chkShowImageEffectsWindowAfterCapture.Text" xml:space="preserve">
+    <value>Показати вікно ефектів зображення після захоплення</value>
+  </data>
+  <data name="cbImageEffectOnlyRegionCapture.Text" xml:space="preserve">
+    <value>Застосовувати ефекти лише при захопленні області</value>
+  </data>
+  <data name="btnImageEffects.Text" xml:space="preserve">
+    <value>Налаштування ефектів зображень...</value>
+  </data>
+  <data name="tpEffects.Text" xml:space="preserve">
+    <value>Ефекти</value>
+  </data>
+  <data name="tpThumbnail.Text" xml:space="preserve">
+    <value>Мініатюра</value>
+  </data>
+  <data name="tpImage.Text" xml:space="preserve">
+    <value>Зображення</value>
+  </data>
+  <data name="tpCapture.Text" xml:space="preserve">
+    <value>Захоплення</value>
+  </data>
+  <data name="tpUpload.Text" xml:space="preserve">
+    <value>Вивантажити</value>
+  </data>
+  <data name="lblActionsNote.Text" xml:space="preserve">
+    <value>Примітка: Ви можете увімкнути/вимкнути дії з „Після завдання захоплення -&gt; Виконати дії".</value>
+  </data>
+  <data name="btnActionsDuplicate.Text" xml:space="preserve">
+    <value>Дублювати</value>
+  </data>
+  <data name="btnActionsAdd.Text" xml:space="preserve">
+    <value>Додати</value>
+  </data>
+  <data name="btnActionsEdit.Text" xml:space="preserve">
+    <value>Змінити</value>
+  </data>
+  <data name="btnActionsRemove.Text" xml:space="preserve">
+    <value>Вилучити</value>
+  </data>
+  <data name="chkOverrideActions.Text" xml:space="preserve">
+    <value>Перевизначити дії</value>
+  </data>
+  <data name="tpActions.Text" xml:space="preserve">
+    <value>Дії</value>
+  </data>
+  <data name="tpWatchFolders.Text" xml:space="preserve">
+    <value>Стежити за теками</value>
+  </data>
+  <data name="tpTools.Text" xml:space="preserve">
+    <value>Інструменти</value>
+  </data>
+  <data name="tpAdvanced.Text" xml:space="preserve">
+    <value>Розширені</value>
+  </data>
+  <data name="chkOverrideCustomUploader.Text" xml:space="preserve">
+    <value>Перевизначити типовий вивантажувач</value>
+  </data>
+  <data name="chkOverrideFTP.Text" xml:space="preserve">
+    <value>Перевизначити типовий обліковий запис FTP</value>
   </data>
   <data name="btnAfterCapture.Text" xml:space="preserve">
     <value>Після захоплення...</value>
   </data>
   <data name="btnAfterUpload.Text" xml:space="preserve">
     <value>Після вивантаження...</value>
+  </data>
+  <data name="btnDestinations.Text" xml:space="preserve">
+    <value>Призначення...</value>
   </data>
   <data name="tsmiImageUploaders.Text" xml:space="preserve">
     <value>Вивантажувачі зображень</value>
@@ -141,14 +222,8 @@
   <data name="tsmiURLSharingServices.Text" xml:space="preserve">
     <value>Служби обміну посиланнями</value>
   </data>
-  <data name="btnDestinations.Text" xml:space="preserve">
-    <value>Призначення...</value>
-  </data>
   <data name="btnTask.Text" xml:space="preserve">
     <value>Завдання...</value>
-  </data>
-  <data name="tpTask.Text" xml:space="preserve">
-    <value>Завдання</value>
   </data>
   <data name="lblAfterTaskNotification.Text" xml:space="preserve">
     <value>Після завершення завдання:</value>
@@ -159,8 +234,14 @@
   <data name="cbPlaySoundAfterCapture.Text" xml:space="preserve">
     <value>Відтворити звук після завершення захоплення</value>
   </data>
-  <data name="tpGeneral.Text" xml:space="preserve">
-    <value>Загальні</value>
+  <data name="chkOverrideGeneralSettings.Text" xml:space="preserve">
+    <value>Перевизначити загальні налаштування</value>
+  </data>
+  <data name="lblImagePNGBitDepth.Text" xml:space="preserve">
+    <value>Розрядність PNG:</value>
+  </data>
+  <data name="cbImageAutoUseJPEG.Text" xml:space="preserve">
+    <value>Якщо розмір зображення більше за зазначений, то використовувати формат JPEG:</value>
   </data>
   <data name="lblImageFormat.Text" xml:space="preserve">
     <value>Формат зображення:</value>
@@ -168,14 +249,20 @@
   <data name="lblImageFileExist.Text" xml:space="preserve">
     <value>Якщо файл існує:</value>
   </data>
+  <data name="lblImageSizeLimitHint.Text" xml:space="preserve">
+    <value>кБ</value>
+  </data>
   <data name="lblImageGIFQuality.Text" xml:space="preserve">
     <value>Якість GIF:</value>
   </data>
   <data name="lblImageJPEGQuality.Text" xml:space="preserve">
     <value>Якість JPEG:</value>
   </data>
-  <data name="tpEffects.Text" xml:space="preserve">
-    <value>Ефекти</value>
+  <data name="chkOverrideImageSettings.Text" xml:space="preserve">
+    <value>Перевизначити налаштування зображень</value>
+  </data>
+  <data name="cbThumbnailIfSmaller.Text" xml:space="preserve">
+    <value>Створювати мініатюри лише коли розмір зображення більше ніж розмір мініатюри</value>
   </data>
   <data name="lblThumbnailNamePreview.Text" xml:space="preserve">
     <value>Попередній перегляд</value>
@@ -189,11 +276,14 @@
   <data name="lblThumbnailWidth.Text" xml:space="preserve">
     <value>Ширина:</value>
   </data>
-  <data name="tpThumbnail.Text" xml:space="preserve">
-    <value>Мініатюра</value>
+  <data name="lblScreenshotDelay.Text" xml:space="preserve">
+    <value>Затримка для знімка:</value>
   </data>
-  <data name="tpImage.Text" xml:space="preserve">
-    <value>Зображення</value>
+  <data name="btnCaptureCustomRegionSelectRectangle.Text" xml:space="preserve">
+    <value>Виберіть область...</value>
+  </data>
+  <data name="lblCaptureCustomRegion.Text" xml:space="preserve">
+    <value>Попередньо налаштована область:</value>
   </data>
   <data name="lblCaptureCustomRegionWidth.Text" xml:space="preserve">
     <value>Ширина</value>
@@ -201,14 +291,113 @@
   <data name="lblCaptureCustomRegionHeight.Text" xml:space="preserve">
     <value>Висота</value>
   </data>
+  <data name="cbShowCursor.Text" xml:space="preserve">
+    <value>Показувати курсор на знімках</value>
+  </data>
   <data name="lblCaptureShadowOffset.Text" xml:space="preserve">
     <value>Зміщення тіні:</value>
+  </data>
+  <data name="cbCaptureTransparent.Text" xml:space="preserve">
+    <value>Захоплювати вікно з прозорістю</value>
+  </data>
+  <data name="cbCaptureAutoHideTaskbar.Text" xml:space="preserve">
+    <value>При захопленні вікна, що перетинається з панеллю завдань, приховувати панель завдань</value>
+  </data>
+  <data name="cbCaptureShadow.Text" xml:space="preserve">
+    <value>Захоплювати вікна з тінями (потрібна прозорість)</value>
   </data>
   <data name="lblScreenshotDelayInfo.Text" xml:space="preserve">
     <value>секунд</value>
   </data>
+  <data name="cbCaptureClientArea.Text" xml:space="preserve">
+    <value>Захоплює клієнтську область при захопленні вікна чи активного вікна</value>
+  </data>
+  <data name="chkOverrideCaptureSettings.Text" xml:space="preserve">
+    <value>Перевизначити налаштування захоплення</value>
+  </data>
   <data name="tpRegionCapture.Text" xml:space="preserve">
     <value>Захоплення області</value>
+  </data>
+  <data name="cbRegionCaptureShowFPS.Text" xml:space="preserve">
+    <value>Показувати FPS у верхньому лівому куті</value>
+  </data>
+  <data name="lblRegionCaptureFixedSizeWidth.Text" xml:space="preserve">
+    <value>Ширина:</value>
+  </data>
+  <data name="lblRegionCaptureFixedSizeHeight.Text" xml:space="preserve">
+    <value>Висота:</value>
+  </data>
+  <data name="cbRegionCaptureIsFixedSize.Text" xml:space="preserve">
+    <value>Режим області фіксованого розміру:</value>
+  </data>
+  <data name="cbRegionCaptureShowCrosshair.Text" xml:space="preserve">
+    <value>Показувати широке перехрестя на екрані</value>
+  </data>
+  <data name="lblRegionCaptureMagnifierPixelSize.Text" xml:space="preserve">
+    <value>Розмір пікселя в лупі:</value>
+  </data>
+  <data name="lblRegionCaptureMagnifierPixelCount.Text" xml:space="preserve">
+    <value>Кількість пікселів у лупі:</value>
+  </data>
+  <data name="cbRegionCaptureUseSquareMagnifier.Text" xml:space="preserve">
+    <value>Використовувати квадратну лупу замість круглої</value>
+  </data>
+  <data name="cbRegionCaptureShowMagnifier.Text" xml:space="preserve">
+    <value>Показувати лупу біля курсора</value>
+  </data>
+  <data name="cbRegionCaptureShowInfo.Text" xml:space="preserve">
+    <value>Показувати інформацію про положення та розмір</value>
+  </data>
+  <data name="lblRegionCaptureSnapSizes.Text" xml:space="preserve">
+    <value>Розміри області для привʼязки, при утриманні клавіші „Alt“:</value>
+  </data>
+  <data name="cbRegionCaptureUseCustomInfoText.Text" xml:space="preserve">
+    <value>Показувати свій текст біля курсора:</value>
+  </data>
+  <data name="cbRegionCaptureDetectControls.Text" xml:space="preserve">
+    <value>Також виявляти елементи керування всередині вікон</value>
+  </data>
+  <data name="cbRegionCaptureDetectWindows.Text" xml:space="preserve">
+    <value>Виявляти області вікна та дозволити захоплення наведенням вказівника</value>
+  </data>
+  <data name="lblRegionCaptureMouse5ClickAction.Text" xml:space="preserve">
+    <value>Дія 5-ої клавіші миші:</value>
+  </data>
+  <data name="lblRegionCaptureMouse4ClickAction.Text" xml:space="preserve">
+    <value>Дія 4-ої клавіші миші:</value>
+  </data>
+  <data name="lblRegionCaptureMouseMiddleClickAction.Text" xml:space="preserve">
+    <value>Дія середньої клавіші миші:</value>
+  </data>
+  <data name="lblRegionCaptureMouseRightClickAction.Text" xml:space="preserve">
+    <value>Дія правої клавіші миші:</value>
+  </data>
+  <data name="cbRegionCaptureMultiRegionMode.Text" xml:space="preserve">
+    <value>Використовувати захоплення кількох областей з підтримкою зміни розмірів та переміщення областей</value>
+  </data>
+  <data name="btnRegionCaptureSnapSizesDialogCancel.Text" xml:space="preserve">
+    <value>Скасувати</value>
+  </data>
+  <data name="btnRegionCaptureSnapSizesDialogAdd.Text" xml:space="preserve">
+    <value>Додати</value>
+  </data>
+  <data name="RegionCaptureSnapSizesHeight.Text" xml:space="preserve">
+    <value>Висота:</value>
+  </data>
+  <data name="lblRegionCaptureSnapSizesWidth.Text" xml:space="preserve">
+    <value>Ширина:</value>
+  </data>
+  <data name="cbRegionCaptureUseDimming.Text" xml:space="preserve">
+    <value>Затьмарювати тло, щоб легше визначати виділення (впливає на час запуску)</value>
+  </data>
+  <data name="tpScreenRecorder.Text" xml:space="preserve">
+    <value>Запис екрану</value>
+  </data>
+  <data name="cbScreenRecordTwoPassEncoding.Text" xml:space="preserve">
+    <value>Записувати без втрат якості, а потім виконати кодування</value>
+  </data>
+  <data name="cbScreenRecordConfirmAbort.Text" xml:space="preserve">
+    <value>Запитувати підтвердження про скасування</value>
   </data>
   <data name="cbScreenRecorderShowCursor.Text" xml:space="preserve">
     <value>Показати курсор у записі</value>
@@ -234,32 +423,98 @@
   <data name="lblGIFFPS.Text" xml:space="preserve">
     <value>Кадрів за секунду в GIF:</value>
   </data>
-  <data name="tpScreenRecorder.Text" xml:space="preserve">
-    <value>Запис екрану</value>
+  <data name="tpOCR.Text" xml:space="preserve">
+    <value>Розпізнавання тексту</value>
   </data>
-  <data name="tpCapture.Text" xml:space="preserve">
-    <value>Захоплення</value>
+  <data name="cbCaptureOCRAutoCopy.Text" xml:space="preserve">
+    <value>Автоматично копіювати результати в буфер обміну</value>
   </data>
-  <data name="lblNameFormatPatternPreview.Text" xml:space="preserve">
-    <value>Перегляд:</value>
+  <data name="cbCaptureOCRProcessOnLoad.Text" xml:space="preserve">
+    <value>Розпізнавати текст при відкритті вікна</value>
   </data>
-  <data name="lblNameFormatPatternPreviewActiveWindow.Text" xml:space="preserve">
-    <value>Перегляд:</value>
+  <data name="cbCaptureOCRSilent.Text" xml:space="preserve">
+    <value>Тихе розпізнання тексту</value>
+  </data>
+  <data name="lblOCRDefaultLanguage.Text" xml:space="preserve">
+    <value>Типова мова:</value>
+  </data>
+  <data name="chkOverrideUploadSettings.Text" xml:space="preserve">
+    <value>Перевизначити налаштування вивантаження</value>
   </data>
   <data name="tpFileNaming.Text" xml:space="preserve">
     <value>Назви файлів</value>
   </data>
+  <data name="btnAutoIncrementNumber.Text" xml:space="preserve">
+    <value>Змінити</value>
+  </data>
+  <data name="lblAutoIncrementNumber.Text" xml:space="preserve">
+    <value>Автоматичне збільшення номера:</value>
+  </data>
+  <data name="cbFileUploadReplaceProblematicCharacters.Text" xml:space="preserve">
+    <value>Замінювати проблемні символи у посиланнях на підкреслення при вивантаженні</value>
+  </data>
+  <data name="cbRegionCaptureUseWindowPattern.Text" xml:space="preserve">
+    <value>Використовувати шаблон назви вікна для захоплення області (ShareX виявляє вікно за виділенням)</value>
+  </data>
+  <data name="cbNameFormatCustomTimeZone.Text" xml:space="preserve">
+    <value>Власний часовий пояс:</value>
+  </data>
+  <data name="lblNameFormatPatternPreview.Text" xml:space="preserve">
+    <value>Перегляд:</value>
+  </data>
+  <data name="lblNameFormatPatternActiveWindow.Text" xml:space="preserve">
+    <value>Шаблон назви для захоплення вікна:</value>
+  </data>
+  <data name="lblNameFormatPatternPreviewActiveWindow.Text" xml:space="preserve">
+    <value>Перегляд:</value>
+  </data>
+  <data name="cbFileUploadUseNamePattern.Text" xml:space="preserve">
+    <value>Використовувати шаблон назви файлу для вивантаження, замість справжньої назви файлу</value>
+  </data>
+  <data name="lblNameFormatPattern.Text" xml:space="preserve">
+    <value>Шаблон назви для захоплення або вивантаження з буфера:</value>
+  </data>
   <data name="tpUploadClipboard.Text" xml:space="preserve">
     <value>Вивантаження з буфера</value>
   </data>
-  <data name="tpUpload.Text" xml:space="preserve">
-    <value>Вивантажити</value>
+  <data name="cbClipboardUploadShareURL.Text" xml:space="preserve">
+    <value>Якщо у буфері посилання, то поділитись ним через службу обміну посиланнями</value>
   </data>
-  <data name="btnActionsDuplicate.Text" xml:space="preserve">
-    <value>Дублювати</value>
+  <data name="cbClipboardUploadURLContents.Text" xml:space="preserve">
+    <value>Якщо у буфері посилання на файл, то завантажити його і вивантажити</value>
   </data>
-  <data name="btnActionsAdd.Text" xml:space="preserve">
+  <data name="cbClipboardUploadAutoIndexFolder.Text" xml:space="preserve">
+    <value>Якщо у буфері шлях до теки, то індексувати цю теку та вивантажити індекс</value>
+  </data>
+  <data name="cbClipboardUploadShortenURL.Text" xml:space="preserve">
+    <value>Якщо у буфері посилання, то використовувати скорочення посилань</value>
+  </data>
+  <data name="tpUploaderFilters.Text" xml:space="preserve">
+    <value>Фільтри вивантажувачів</value>
+  </data>
+  <data name="chUploaderFiltersName.Text" xml:space="preserve">
+    <value>Вивантажувач</value>
+  </data>
+  <data name="chUploaderFiltersExtension.Text" xml:space="preserve">
+    <value>Розширення</value>
+  </data>
+  <data name="btnUploaderFiltersRemove.Text" xml:space="preserve">
+    <value>Вилучити</value>
+  </data>
+  <data name="btnUploaderFiltersUpdate.Text" xml:space="preserve">
+    <value>Оновити</value>
+  </data>
+  <data name="btnUploaderFiltersAdd.Text" xml:space="preserve">
     <value>Додати</value>
+  </data>
+  <data name="lblUploaderFiltersDestination.Text" xml:space="preserve">
+    <value>Вивантажувач:</value>
+  </data>
+  <data name="lblUploaderFiltersExtensionsExample.Text" xml:space="preserve">
+    <value>Наприклад, png, jpg, jpeg</value>
+  </data>
+  <data name="lblUploaderFiltersExtensions.Text" xml:space="preserve">
+    <value>Фільтр за розширенням:</value>
   </data>
   <data name="chActionsName.Text" xml:space="preserve">
     <value>Назва</value>
@@ -273,14 +528,11 @@
   <data name="chActionsExtensions.Text" xml:space="preserve">
     <value>Розширення</value>
   </data>
-  <data name="btnActionsEdit.Text" xml:space="preserve">
-    <value>Змінити</value>
+  <data name="btnWatchFolderEdit.Text" xml:space="preserve">
+    <value>Змінити...</value>
   </data>
-  <data name="btnActionsRemove.Text" xml:space="preserve">
-    <value>Вилучити</value>
-  </data>
-  <data name="tpActions.Text" xml:space="preserve">
-    <value>Дії</value>
+  <data name="cbWatchFolderEnabled.Text" xml:space="preserve">
+    <value>Слідкувати за теками та вивантажувати нові файли, що зʼявляються в них</value>
   </data>
   <data name="chWatchFolderFolderPath.Text" xml:space="preserve">
     <value>Шлях до теки</value>
@@ -297,14 +549,14 @@
   <data name="btnWatchFolderAdd.Text" xml:space="preserve">
     <value>Додати...</value>
   </data>
-  <data name="tpWatchFolders.Text" xml:space="preserve">
-    <value>Стежити за теками</value>
+  <data name="lblToolsScreenColorPickerFormat.Text" xml:space="preserve">
+    <value>Формат вибору кольору з екрана:</value>
   </data>
-  <data name="tpTools.Text" xml:space="preserve">
-    <value>Інструменти</value>
+  <data name="chkOverrideToolsSettings.Text" xml:space="preserve">
+    <value>Перевизначити налаштування інструментів</value>
   </data>
-  <data name="tpAdvanced.Text" xml:space="preserve">
-    <value>Розширені</value>
+  <data name="chkOverrideAdvancedSettings.Text" xml:space="preserve">
+    <value>Перевизначити розширені налаштування</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX — Налаштування завдань</value>

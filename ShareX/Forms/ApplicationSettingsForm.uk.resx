@@ -60,45 +60,45 @@
             : and then encoded with base64 encoding.
     -->
   <xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
         <xsd:choice maxOccurs="unbounded">
           <xsd:element name="metadata">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
               </xsd:sequence>
-              <xsd:attribute name="name" use="required" type="xsd:string" />
-              <xsd:attribute name="type" type="xsd:string" />
-              <xsd:attribute name="mimetype" type="xsd:string" />
-              <xsd:attribute ref="xml:space" />
+              <xsd:attribute name="name" use="required" type="xsd:string"/>
+              <xsd:attribute name="type" type="xsd:string"/>
+              <xsd:attribute name="mimetype" type="xsd:string"/>
+              <xsd:attribute ref="xml:space"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="assembly">
             <xsd:complexType>
-              <xsd:attribute name="alias" type="xsd:string" />
-              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="alias" type="xsd:string"/>
+              <xsd:attribute name="name" type="xsd:string"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="data">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
-              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-              <xsd:attribute ref="xml:space" />
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
+              <xsd:attribute ref="xml:space"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="resheader">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" />
+              <xsd:attribute name="name" type="xsd:string" use="required"/>
             </xsd:complexType>
           </xsd:element>
         </xsd:choice>
@@ -117,6 +117,24 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="cbUseWhiteShareXIcon.Text" xml:space="preserve">
+    <value>Використовувати білу піктограму ShareX</value>
+  </data>
+  <data name="btnCheckDevBuild.Text" xml:space="preserve">
+    <value>Встановити збірку для розробників...</value>
+  </data>
+  <data name="cbCheckPreReleaseUpdates.Text" xml:space="preserve">
+    <value>Перевірити наявність передрелізних онорвлень</value>
+  </data>
+  <data name="lblTrayMiddleClickAction.Text" xml:space="preserve">
+    <value>Середній притиск по піктограмі у лотку:</value>
+  </data>
+  <data name="lblTrayLeftDoubleClickAction.Text" xml:space="preserve">
+    <value>Подвійний лівий притиск по піктограмі у лотку:</value>
+  </data>
+  <data name="lblTrayLeftClickAction.Text" xml:space="preserve">
+    <value>Лівий притиск по піктограмі у лотку:</value>
+  </data>
   <data name="btnEditQuickTaskMenu.Text" xml:space="preserve">
     <value>Змінити меню швидких завдань...</value>
   </data>
@@ -130,7 +148,7 @@
     <value>Запам’ятати позицію головного вікна</value>
   </data>
   <data name="cbSilentRun.Text" xml:space="preserve">
-    <value>Мінімізувати до області сповіщень при запуску</value>
+    <value>Згортати програму в лоток при запуску</value>
   </data>
   <data name="cbTaskbarProgressEnabled.Text" xml:space="preserve">
     <value>Показувати перебіг на кнопці в панелі завдань</value>
@@ -144,8 +162,50 @@
   <data name="tpGeneral.Text" xml:space="preserve">
     <value>Загальні</value>
   </data>
+  <data name="btnThemeReset.Text" xml:space="preserve">
+    <value>Скинути</value>
+  </data>
+  <data name="btnThemeRemove.Text" xml:space="preserve">
+    <value>Вилучити</value>
+  </data>
+  <data name="btnThemeAdd.Text" xml:space="preserve">
+    <value>Додати</value>
+  </data>
+  <data name="cbExperimentalDarkTheme.Text" xml:space="preserve">
+    <value>Власна тема (експериментально)</value>
+  </data>
+  <data name="btnApplyTheme.Text" xml:space="preserve">
+    <value>Застосувати тему</value>
+  </data>
+  <data name="cbUseDarkTheme.Text" xml:space="preserve">
+    <value>Використовувати власну тему</value>
+  </data>
+  <data name="tpTheme.Text" xml:space="preserve">
+    <value>Тема</value>
+  </data>
+  <data name="cbFirefoxAddonSupport.Text" xml:space="preserve">
+    <value>Увімкнути підтримку додатку для Firefox</value>
+  </data>
+  <data name="btnFirefoxOpenAddonPage.Text" xml:space="preserve">
+    <value>Встановити додаток ShareX для Firefox...</value>
+  </data>
+  <data name="gbFirefox.Text" xml:space="preserve">
+    <value>Додаток для Firefox</value>
+  </data>
   <data name="cbSteamShowInApp.Text" xml:space="preserve">
     <value>При відкритому ShareX, показувати „У програмі“ у Steam</value>
+  </data>
+  <data name="cbChromeExtensionSupport.Text" xml:space="preserve">
+    <value>Увімкнути підтримку розширення для Chrome</value>
+  </data>
+  <data name="btnChromeOpenExtensionPage.Text" xml:space="preserve">
+    <value>Встановити розширення ShareX для Chrome...</value>
+  </data>
+  <data name="gbChrome.Text" xml:space="preserve">
+    <value>Розширення Chrome</value>
+  </data>
+  <data name="cbEditWithShareX.Text" xml:space="preserve">
+    <value>Показувати кнопку „Змінити із ShareX“ у контекстному меню Провідника Windows</value>
   </data>
   <data name="cbSendToMenu.Text" xml:space="preserve">
     <value>Показати ShareX в меню „Надіслати“</value>
@@ -155,9 +215,12 @@
   </data>
   <data name="gbWindows.Text" xml:space="preserve">
     <value>Вікна</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="tpIntegration.Text" xml:space="preserve">
     <value>Інтеграція</value>
+  </data>
+  <data name="btnPersonalFolderPathApply.Text" xml:space="preserve">
+    <value>Застосувати</value>
   </data>
   <data name="btnOpenScreenshotsFolder.Text" xml:space="preserve">
     <value>Відкрити...</value>
@@ -182,6 +245,18 @@
   </data>
   <data name="tpPaths.Text" xml:space="preserve">
     <value>Шляхи</value>
+  </data>
+  <data name="cbExportHistory.Text" xml:space="preserve">
+    <value>Історія</value>
+  </data>
+  <data name="cbExportSettings.Text" xml:space="preserve">
+    <value>Налаштування</value>
+  </data>
+  <data name="lblExportImportNote.Text" xml:space="preserve">
+    <value>Примітка: Не діліться експортованим файлом з ким-небудь, тому що він може містити особисту інформацію, штибу даних обліковки та історії вивантаження.</value>
+  </data>
+  <data name="btnResetSettings.Text" xml:space="preserve">
+    <value>Скинути налаштування...</value>
   </data>
   <data name="btnExport.Text" xml:space="preserve">
     <value>Експорт...</value>
@@ -222,17 +297,17 @@
   <data name="tpUploadResults.Text" xml:space="preserve">
     <value>Результати</value>
   </data>
-  <data name="chkUseSecondaryUploaders.Text" xml:space="preserve">
-    <value>При повторній спробі, використовувати вторинні відвантажувачі у зазначеному порядку</value>
+  <data name="gbSecondaryFileUploaders.Text" xml:space="preserve">
+    <value>Вторинні вивантажувачі файлів</value>
   </data>
   <data name="gbSecondaryImageUploaders.Text" xml:space="preserve">
     <value>Вторинні вивантажувачі зображень</value>
   </data>
-  <data name="gbSecondaryFileUploaders.Text" xml:space="preserve">
-    <value>Вторинні вивантажувачі файлів</value>
-  </data>
   <data name="gbSecondaryTextUploaders.Text" xml:space="preserve">
     <value>Вторинні вивантажувачі тексту</value>
+  </data>
+  <data name="chkUseSecondaryUploaders.Text" xml:space="preserve">
+    <value>При повторній спробі, використовувати вторинні відвантажувачі у зазначеному порядку</value>
   </data>
   <data name="cbIfUploadFailRetryOnce.Text" xml:space="preserve">
     <value>Кількість спроб вивантаження при збої:</value>

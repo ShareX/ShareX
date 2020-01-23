@@ -120,4 +120,10 @@
   <data name="tpString.Text" xml:space="preserve">
     <value>Текст</value>
   </data>
+  <data name="tpWebBrowser.Text" xml:space="preserve">
+    <value>Інтернет-оглядач</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX — Відповідь</value>
+  </data>
 </root>

@@ -126,6 +126,9 @@
   <data name="btnStartOCR.Text" xml:space="preserve">
     <value>Запустити ОРС</value>
   </data>
+  <data name="llGoogleTranslate.Text" xml:space="preserve">
+    <value>Відкрити у Перекладачі Google та закрити вікно</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX — Оптичне розпізнавання символів</value>
   </data>
