@@ -130,7 +130,7 @@
     <value>Дублювати</value>
   </data>
   <data name="btnSaveImage.Text" xml:space="preserve">
-    <value>Зберегти зображення...</value>
+    <value>Зберегти...</value>
   </data>
   <data name="tsmiLoadImageFromFile.Text" xml:space="preserve">
     <value>З файла...</value>

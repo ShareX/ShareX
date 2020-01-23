@@ -246,8 +246,23 @@
   <data name="tpPaths.Text" xml:space="preserve">
     <value>Шляхи</value>
   </data>
+  <data name="cbExportHistory.Text" xml:space="preserve">
+    <value>Історія</value>
+  </data>
+  <data name="cbExportSettings.Text" xml:space="preserve">
+    <value>Налаштування</value>
+  </data>
+  <data name="lblExportImportNote.Text" xml:space="preserve">
+    <value>Примітка: Не діліться експортованим файлом з ким-небудь, тому що він може містити особисту інформацію, штибу даних обліковки та історії вивантаження.</value>
+  </data>
   <data name="btnResetSettings.Text" xml:space="preserve">
     <value>Скинути налаштування...</value>
+  </data>
+  <data name="btnExport.Text" xml:space="preserve">
+    <value>Експорт...</value>
+  </data>
+  <data name="btnImport.Text" xml:space="preserve">
+    <value>Імпорт...</value>
   </data>
   <data name="tpExportImport.Text" xml:space="preserve">
     <value>Експорт / імпорт</value>

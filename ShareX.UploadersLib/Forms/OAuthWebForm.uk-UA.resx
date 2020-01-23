@@ -117,34 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="lblAdapters.Text" xml:space="preserve">
-    <value>Мережеві адаптери:</value>
-  </data>
-  <data name="lblPreferredDNS.Text" xml:space="preserve">
-    <value>Бажаний DNS-сервер:</value>
-  </data>
-  <data name="lblAlternateDNS.Text" xml:space="preserve">
-    <value>Альтернативний DNS:</value>
-  </data>
-  <data name="btnSave.Text" xml:space="preserve">
-    <value>Застосувати</value>
-  </data>
-  <data name="btnCancel.Text" xml:space="preserve">
-    <value>Закрити</value>
-  </data>
-  <data name="lblDNS.Text" xml:space="preserve">
-    <value>DNS-сервери:</value>
-  </data>
-  <data name="cbAutomatic.Text" xml:space="preserve">
-    <value>Автоматично отримати адресу DNS-сервера</value>
-  </data>
-  <data name="btnPingPrimary.Text" xml:space="preserve">
-    <value>Пінг</value>
-  </data>
-  <data name="btnPingSecondary.Text" xml:space="preserve">
-    <value>Пінг</value>
-  </data>
+  <data name="tslURL.Text" xml:space="preserve">
+    <value>Посилання:</value>
+  <comment>@Invariant</comment></data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX — Зміна DNS</value>
+    <value>ShareX — Авторизація</value>
   </data>
 </root>

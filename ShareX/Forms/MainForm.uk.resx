@@ -264,11 +264,14 @@
   <data name="tsmiImageThumbnailer.Text" xml:space="preserve">
     <value>Генератор мініатюр зображень...</value>
   </data>
+  <data name="tsmiVideoConverter.Text" xml:space="preserve">
+    <value>Конвертер відео...</value>
+  </data>
   <data name="tsmiVideoThumbnailer.Text" xml:space="preserve">
     <value>Генератор мініатюр відео...</value>
   </data>
   <data name="tsmiTweetMessage.Text" xml:space="preserve">
-    <value>Повідомлення у Tweeter...</value>
+    <value>Повідомлення у Twitter...</value>
   </data>
   <data name="tsmiMonitorTest.Text" xml:space="preserve">
     <value>Тест монітора...</value>
@@ -666,11 +669,14 @@
   <data name="tsmiTrayImageThumbnailer.Text" xml:space="preserve">
     <value>Генератор мініатюр зображень...</value>
   </data>
+  <data name="tsmiTrayVideoConverter.Text" xml:space="preserve">
+    <value>Конвертер відео...</value>
+  </data>
   <data name="tsmiTrayVideoThumbnailer.Text" xml:space="preserve">
     <value>Генератор мініатюр відео...</value>
   </data>
   <data name="tsmiTrayTweetMessage.Text" xml:space="preserve">
-    <value>Повідомлення у Tweeter...</value>
+    <value>Повідомлення у Twitter...</value>
   </data>
   <data name="tsmiTrayMonitorTest.Text" xml:space="preserve">
     <value>Тест монітора...</value>
@@ -770,5 +776,20 @@
   </data>
   <data name="btnCloseNews.Text" xml:space="preserve">
     <value>Закрити</value>
+  </data>
+  <data name="tsbTwitter.ToolTipText" xml:space="preserve">
+    <value>Слідкуйте за нашим Twitter</value>
+  </data>
+  <data name="tsbDiscord.ToolTipText" xml:space="preserve">
+    <value>Приєднуйтесь до нашого Discord</value>
+  </data>
+  <data name="tsbPatreon.ToolTipText" xml:space="preserve">
+    <value>Підтримайте нас про Patreon</value>
+  </data>
+  <data name="tsbBitcoin.ToolTipText" xml:space="preserve">
+    <value>Підтримайте нас з допомогою криптовалют</value>
+  </data>
+  <data name="tsbGitHub.ToolTipText" xml:space="preserve">
+    <value>Зірку нашому GitHub</value>
   </data>
 </root>

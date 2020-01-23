@@ -117,4 +117,25 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="lblImageFilePath.Text" xml:space="preserve">
+    <value>Шлях до файла зображення:</value>
+  </data>
+  <data name="lblRowCount.Text" xml:space="preserve">
+    <value>Кількість рядків:</value>
+  </data>
+  <data name="lblColumnCount.Text" xml:space="preserve">
+    <value>Кількість стовпців:</value>
+  </data>
+  <data name="lblOutputFolder.Text" xml:space="preserve">
+    <value>Тека виведення:</value>
+  </data>
+  <data name="btnSplitImage.Text" xml:space="preserve">
+    <value>Розділити зображення</value>
+  </data>
+  <data name="btnCopyChatEmoji.Text" xml:space="preserve">
+    <value>Копіювати синтаксис емодзі чату</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX — Розділювач зображень</value>
+  </data>
 </root>
