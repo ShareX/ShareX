@@ -475,6 +475,9 @@
     <EmbeddedResource Include="Forms\CustomUploaderSettingsForm.ru.resx">
       <DependentUpon>CustomUploaderSettingsForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CustomUploaderSettingsForm.uk.resx">
+      <DependentUpon>CustomUploaderSettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\CustomUploaderSettingsForm.vi-VN.resx">
       <DependentUpon>CustomUploaderSettingsForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -644,6 +647,9 @@
       <DependentUpon>PuushLoginForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\PuushLoginForm.tr.resx">
+      <DependentUpon>PuushLoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PuushLoginForm.uk.resx">
       <DependentUpon>PuushLoginForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\PuushLoginForm.vi-VN.resx">

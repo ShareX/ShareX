@@ -1366,6 +1366,9 @@
     <EmbeddedResource Include="Forms\TextUploadForm.tr.resx">
       <DependentUpon>TextUploadForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TextUploadForm.uk.resx">
+      <DependentUpon>TextUploadForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\TextUploadForm.vi-VN.resx">
       <DependentUpon>TextUploadForm.cs</DependentUpon>
     </EmbeddedResource>

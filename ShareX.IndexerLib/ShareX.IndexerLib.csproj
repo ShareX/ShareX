@@ -130,6 +130,9 @@
     <EmbeddedResource Include="Forms\DirectoryIndexerForm.tr.resx">
       <DependentUpon>DirectoryIndexerForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DirectoryIndexerForm.uk.resx">
+      <DependentUpon>DirectoryIndexerForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\DirectoryIndexerForm.vi-VN.resx">
       <DependentUpon>DirectoryIndexerForm.cs</DependentUpon>
     </EmbeddedResource>
