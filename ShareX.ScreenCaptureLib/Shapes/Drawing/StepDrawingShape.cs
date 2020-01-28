@@ -41,6 +41,8 @@ namespace ShareX.ScreenCaptureLib
         public int Number { get; set; }
         public bool UseLetters { get; set; }
 
+        public bool IsTailActive { get; set; }
+
         private Point tailPosition;
 
         public Point TailPosition
@@ -60,7 +62,6 @@ namespace ShareX.ScreenCaptureLib
 
         internal ResizeNode TailNode => Manager.ResizeNodes[(int)NodePosition.Extra];
 
-        // If rectangle average size is 100px then tail width will be 30px
         protected const float TailWidthMultiplier = 1f;
 
         public StepDrawingShape()
@@ -73,7 +74,8 @@ namespace ShareX.ScreenCaptureLib
             Manager.IsMoving = true;
             Point pos = InputManager.ClientMousePosition;
             Rectangle = new Rectangle(new Point(pos.X - (Rectangle.Width / 2), pos.Y - (Rectangle.Height / 2)), Rectangle.Size);
-            TailPosition = Rectangle.Location.Add(Rectangle.Width / 2, Rectangle.Height - 1);
+            int tailOffset = 5;
+            TailPosition = Rectangle.Location.Add(Rectangle.Width + tailOffset, Rectangle.Height + tailOffset);
         }
 
         protected override void UseLightResizeNodes()
@@ -91,6 +93,7 @@ namespace ShareX.ScreenCaptureLib
         {
             if (TailNode.IsDragging)
             {
+                IsTailActive = true;
                 TailPosition = InputManager.ClientMousePosition;
             }
         }
@@ -153,7 +156,7 @@ namespace ShareX.ScreenCaptureLib
                     }
                 }
 
-                if (TailVisible)
+                if (IsTailActive && TailVisible)
                 {
                     if (Shadow)
                     {

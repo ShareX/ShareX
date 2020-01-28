@@ -53,7 +53,6 @@ namespace ShareX.ScreenCaptureLib
 
         internal ResizeNode TailNode => Manager.ResizeNodes[(int)NodePosition.Extra];
 
-        // If rectangle average size is 100px then tail width will be 30px
         protected const float TailWidthMultiplier = 0.3f;
 
         public override void OnCreated()
