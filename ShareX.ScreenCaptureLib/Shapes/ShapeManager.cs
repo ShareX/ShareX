@@ -647,7 +647,11 @@ namespace ShareX.ScreenCaptureLib
                     {
                         case Keys.Q:
                             Options.QuickCrop = !Options.QuickCrop;
-                            tsmiQuickCrop.Checked = !Options.QuickCrop;
+
+                            if (tsmiQuickCrop != null)
+                            {
+                                tsmiQuickCrop.Checked = !Options.QuickCrop;
+                            }
                             break;
                     }
                 }
