@@ -141,7 +141,6 @@ namespace ShareX.HelpersLib
         {
             TabPage tabPage = e.Node.Tag as TabPage;
             SelectTab(tabPage);
-            OnTabChanged(tabPage);
         }
 
         public void SelectTab(TabPage tabPage)
@@ -154,6 +153,8 @@ namespace ShareX.HelpersLib
                 tcMain.TabPages.Add(tabPage);
                 tvMain.Focus();
                 tvMain.EndUpdate();
+
+                OnTabChanged(tabPage);
             }
         }
 

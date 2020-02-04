@@ -87,9 +87,8 @@ namespace ShareX.UploadersLib
 
             AddIconToTabs();
 
-            ttlvMain.ImageList = uploadersImageList;
-            ttlvMain.MainTabControl = tcUploaders;
-            ttlvMain.FocusListView();
+            tttvMain.ImageList = uploadersImageList;
+            tttvMain.MainTabControl = tcUploaders;
 
             CodeMenu.Create<CodeMenuEntryFilename>(txtDropboxPath, CodeMenuEntryFilename.n, CodeMenuEntryFilename.t, CodeMenuEntryFilename.pn);
             CodeMenu.Create<CodeMenuEntryFilename>(txtAmazonS3ObjectPrefix, CodeMenuEntryFilename.n, CodeMenuEntryFilename.t, CodeMenuEntryFilename.pn);
@@ -139,11 +138,19 @@ namespace ShareX.UploadersLib
             }
         }
 
+        private void tttvMain_TabChanged(TabPage tabPage)
+        {
+            if (tabPage == tpImageUploaders || tabPage == tpTextUploaders || tabPage == tpFileUploaders || tabPage == tpURLShorteners || tabPage == tpOtherUploaders)
+            {
+                tttvMain.SelectChild();
+            }
+        }
+
         public void NavigateToTabPage(TabPage tp)
         {
             if (tp != null)
             {
-                ttlvMain.NavigateToTabPage(tp);
+                tttvMain.SelectTab(tp);
             }
         }
 
