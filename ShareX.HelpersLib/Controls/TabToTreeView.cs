@@ -144,13 +144,16 @@ namespace ShareX.HelpersLib
         {
             TabPage tabPage = e.Node.Tag as TabPage;
 
-            if (AutoSelectChild && tabPage.Controls.Count == 1 && tabPage.Controls[0] is TabControl)
+            if (tabPage != null)
             {
-                SelectChild();
-            }
-            else
-            {
-                SelectTab(tabPage);
+                if (AutoSelectChild && tabPage.Controls.Count == 1 && tabPage.Controls[0] is TabControl)
+                {
+                    SelectChild();
+                }
+                else
+                {
+                    SelectTab(tabPage);
+                }
             }
         }
 

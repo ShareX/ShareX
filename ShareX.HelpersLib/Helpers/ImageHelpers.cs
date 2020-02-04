@@ -1616,8 +1616,16 @@ namespace ShareX.HelpersLib
         public static void SaveImage(Image img, string filePath)
         {
             Helpers.CreateDirectoryFromFilePath(filePath);
+            ImageFormat imageFormat = GetImageFormat(filePath);
 
-            img.Save(filePath, GetImageFormat(filePath));
+            try
+            {
+                img.Save(filePath, imageFormat);
+            }
+            catch (Exception e)
+            {
+                e.ShowError();
+            }
         }
 
         public static string SaveImageFileDialog(Image img, string filePath = "", bool useLastDirectory = true)
