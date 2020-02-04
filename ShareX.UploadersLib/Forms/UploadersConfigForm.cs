@@ -140,14 +140,6 @@ namespace ShareX.UploadersLib
             }
         }
 
-        private void tttvMain_TabChanged(TabPage tabPage)
-        {
-            if (tabPage == tpImageUploaders || tabPage == tpTextUploaders || tabPage == tpFileUploaders || tabPage == tpURLShorteners || tabPage == tpOtherUploaders)
-            {
-                tttvMain.SelectChild();
-            }
-        }
-
         public void NavigateToTabPage(TabPage tp)
         {
             if (tp != null)

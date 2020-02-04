@@ -94,6 +94,9 @@ namespace ShareX.HelpersLib
             }
         }
 
+        [DefaultValue(false)]
+        public bool AutoSelectChild { get; set; }
+
         public TabToTreeView()
         {
             InitializeComponent();
@@ -140,7 +143,15 @@ namespace ShareX.HelpersLib
         private void tvMain_AfterSelect(object sender, TreeViewEventArgs e)
         {
             TabPage tabPage = e.Node.Tag as TabPage;
-            SelectTab(tabPage);
+
+            if (AutoSelectChild && tabPage.Controls.Count == 1 && tabPage.Controls[0] is TabControl)
+            {
+                SelectChild();
+            }
+            else
+            {
+                SelectTab(tabPage);
+            }
         }
 
         public void SelectTab(TabPage tabPage)
