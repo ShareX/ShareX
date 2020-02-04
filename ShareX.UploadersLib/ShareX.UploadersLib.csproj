@@ -999,6 +999,9 @@
   <ItemGroup>
     <None Include="Favicons\Lithiio.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\navigation-270-button-white.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PreBuildEvent>

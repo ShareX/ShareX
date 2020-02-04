@@ -424,6 +424,16 @@ namespace ShareX.UploadersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap navigation_270_button_white {
+            get {
+                object obj = ResourceManager.GetObject("navigation_270_button_white", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Paste verification code here.
         /// </summary>
         internal static string OAuthControl_OAuthControl_PasteVerificationCodeHere {

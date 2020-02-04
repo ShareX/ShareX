@@ -111,6 +111,8 @@ namespace ShareX.UploadersLib
             uploadersImageList = new ImageList();
             uploadersImageList.ColorDepth = ColorDepth.Depth32Bit;
 
+            uploadersImageList.Images.Add(Resources.navigation_270_button_white);
+
             foreach (IUploaderService uploaderService in UploaderFactory.AllServices)
             {
                 TabPage tp = uploaderService.GetUploadersConfigTabPage(this);
