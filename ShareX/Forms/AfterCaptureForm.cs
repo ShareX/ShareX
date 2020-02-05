@@ -84,6 +84,15 @@ namespace ShareX
             this.ForceActivate();
         }
 
+        private void Continue()
+        {
+            TaskSettings.AfterCaptureJob = GetAfterCaptureTasks();
+            TaskSettings.AfterUploadJob = GetAfterUploadTasks();
+            FileName = txtFileName.Text;
+            DialogResult = DialogResult.OK;
+            Close();
+        }
+
         private void CheckItem(ListViewItem lvi, bool check)
         {
             lvi.ImageIndex = check ? 1 : 0;
@@ -201,11 +210,25 @@ namespace ShareX
             }
         }
 
+        private void txtFileName_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Enter)
+            {
+                e.SuppressKeyPress = true;
+            }
+        }
+
+        private void txtFileName_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Enter)
+            {
+                Continue();
+            }
+        }
+
         private void btnContinue_Click(object sender, EventArgs e)
         {
-            TaskSettings.AfterCaptureJob = GetAfterCaptureTasks();
-            TaskSettings.AfterUploadJob = GetAfterUploadTasks();
-            FileName = txtFileName.Text;
+            Continue();
         }
 
         private void btnCopy_Click(object sender, EventArgs e)
