@@ -112,9 +112,16 @@ namespace ShareX
             {
                 string newFilename = txtNewName.Text;
 
-                if (!string.IsNullOrEmpty(newFilename) && !newFilename.Equals(filename, StringComparison.InvariantCultureIgnoreCase))
+                if (!string.IsNullOrEmpty(newFilename))
                 {
-                    UseNewFilename();
+                    if (newFilename.Equals(filename, StringComparison.InvariantCultureIgnoreCase))
+                    {
+                        Close();
+                    }
+                    else
+                    {
+                        UseNewFilename();
+                    }
                 }
             }
             else if (e.KeyData == Keys.Escape)
