@@ -209,6 +209,11 @@ namespace ShareX
                     IntegrationHelpers.CreateChromeExtensionSupport(true);
                 }
             }
+
+            if (Settings.IsUpgradeFrom("13.0.2"))
+            {
+                Settings.UseCustomTheme = Settings.UseDarkTheme;
+            }
         }
 
         private static void MigrateHistoryFile()
