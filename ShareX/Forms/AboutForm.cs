@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2019 ShareX Team
+    Copyright (c) 2007-2020 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -117,7 +117,7 @@ ZXing.Net: https://github.com/micjahn/ZXing.Net
 MegaApiClient: https://github.com/gpailler/MegaApiClient
 Blob Emoji: http://blobs.gg
 
-Copyright (c) 2007-2019 ShareX Team";
+Copyright (c) 2007-2020 ShareX Team";
 
             easterEgg = new EasterEggAboutAnimation(cLogo, this);
         }
