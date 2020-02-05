@@ -75,6 +75,8 @@
             resources.ApplyResources(this.txtNewName, "txtNewName");
             this.txtNewName.Name = "txtNewName";
             this.txtNewName.TextChanged += new System.EventHandler(this.txtNewName_TextChanged);
+            this.txtNewName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtNewName_KeyDown);
+            this.txtNewName.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtNewName_KeyUp);
             // 
             // FileExistForm
             // 
@@ -87,6 +89,7 @@
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOverwrite);
             this.Controls.Add(this.lblTitle);
+            this.MaximizeBox = false;
             this.Name = "FileExistForm";
             this.TopMost = true;
             this.Shown += new System.EventHandler(this.FileExistForm_Shown);
