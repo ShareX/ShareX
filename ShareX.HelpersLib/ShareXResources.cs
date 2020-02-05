@@ -90,11 +90,11 @@ namespace ShareX.HelpersLib
 
                 if (form.IsHandleCreated)
                 {
-                    NativeMethods.UseImmersiveDarkMode(form.Handle, true);
+                    NativeMethods.UseImmersiveDarkMode(form.Handle, Theme.IsDarkTheme);
                 }
                 else
                 {
-                    form.HandleCreated += (s, e) => NativeMethods.UseImmersiveDarkMode(form.Handle, true);
+                    form.HandleCreated += (s, e) => NativeMethods.UseImmersiveDarkMode(form.Handle, Theme.IsDarkTheme);
                 }
             }
         }

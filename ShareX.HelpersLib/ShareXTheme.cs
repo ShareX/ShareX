@@ -83,6 +83,9 @@ namespace ShareX.HelpersLib
         [Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
         public Color SeparatorDarkColor { get; set; }
 
+        [Browsable(false)]
+        public bool IsDarkTheme => ColorHelpers.IsDarkColor(BackgroundColor);
+
         public ShareXTheme()
         {
         }

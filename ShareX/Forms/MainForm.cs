@@ -56,7 +56,7 @@ namespace ShareX
         {
             RunPuushTasks();
 
-            NativeMethods.UseImmersiveDarkMode(Handle, ShareXResources.UseCustomTheme);
+            NativeMethods.UseImmersiveDarkMode(Handle, ShareXResources.UseCustomTheme && ShareXResources.Theme.IsDarkTheme);
             UpdateControls();
 
             DebugHelper.WriteLine("Startup time: {0} ms", Program.StartTimer.ElapsedMilliseconds);
@@ -798,7 +798,7 @@ namespace ShareX
 
             if (IsHandleCreated)
             {
-                NativeMethods.UseImmersiveDarkMode(Handle, ShareXResources.UseCustomTheme);
+                NativeMethods.UseImmersiveDarkMode(Handle, ShareXResources.UseCustomTheme && ShareXResources.Theme.IsDarkTheme);
             }
 
             if (ShareXResources.UseCustomTheme)
