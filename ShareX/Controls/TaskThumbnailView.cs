@@ -137,7 +137,7 @@ namespace ShareX
 
         public void UpdateTheme()
         {
-            if (ShareXResources.UseDarkTheme)
+            if (ShareXResources.UseCustomTheme)
             {
                 BackColor = ShareXResources.Theme.BackgroundColor;
             }

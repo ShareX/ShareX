@@ -177,7 +177,7 @@ namespace ShareX.HelpersLib
 
         public void UpdateTheme()
         {
-            if (ShareXResources.UseDarkTheme)
+            if (ShareXResources.UseCustomTheme)
             {
                 lblImageSize.BackColor = ShareXResources.Theme.BackgroundColor;
                 lblImageSize.ForeColor = ShareXResources.Theme.TextColor;

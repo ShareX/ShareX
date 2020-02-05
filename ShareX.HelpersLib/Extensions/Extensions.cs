@@ -733,7 +733,7 @@ namespace ShareX.HelpersLib
 
                 lv.DrawColumnHeader += (sender, e) =>
                 {
-                    if (ShareXResources.UseDarkTheme)
+                    if (ShareXResources.UseCustomTheme)
                     {
                         using (Brush brush = new SolidBrush(ShareXResources.Theme.BackgroundColor))
                         {

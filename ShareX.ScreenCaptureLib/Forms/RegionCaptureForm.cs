@@ -151,7 +151,7 @@ namespace ShareX.ScreenCaptureLib
             textInnerBorderPen = new Pen(Color.FromArgb(150, Color.FromArgb(0, 81, 145)));
             markerPen = new Pen(Color.FromArgb(200, Color.Red));
 
-            if (ShareXResources.UseDarkTheme)
+            if (ShareXResources.UseCustomTheme)
             {
                 canvasBackgroundColor = ShareXResources.Theme.BackgroundColor;
                 canvasBorderPen = new Pen(ShareXResources.Theme.BorderColor);

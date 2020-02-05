@@ -103,8 +103,8 @@ namespace ShareX
             cbTrayIconProgressEnabled.Checked = Program.Settings.TrayIconProgressEnabled;
             cbTaskbarProgressEnabled.Enabled = TaskbarManager.IsPlatformSupported;
             cbTaskbarProgressEnabled.Checked = Program.Settings.TaskbarProgressEnabled;
-            cbUseDarkTheme.Checked = Program.Settings.UseDarkTheme;
-            cbExperimentalDarkTheme.Enabled = Program.Settings.UseDarkTheme;
+            cbUseCustomTheme.Checked = Program.Settings.UseCustomTheme;
+            cbExperimentalDarkTheme.Enabled = Program.Settings.UseCustomTheme;
             cbExperimentalDarkTheme.Checked = Program.Settings.ExperimentalDarkTheme;
             cbUseWhiteShareXIcon.Checked = Program.Settings.UseWhiteShareXIcon;
             cbRememberMainFormPosition.Checked = Program.Settings.RememberMainFormPosition;
@@ -434,8 +434,8 @@ namespace ShareX
 
         private void UpdateThemeControls()
         {
-            cbExperimentalDarkTheme.Enabled = btnThemeAdd.Enabled = btnThemeReset.Enabled = pgTheme.Enabled = eiTheme.Enabled = Program.Settings.UseDarkTheme;
-            cbThemes.Enabled = btnThemeRemove.Enabled = btnApplyTheme.Enabled = Program.Settings.UseDarkTheme && cbThemes.Items.Count > 0;
+            cbExperimentalDarkTheme.Enabled = btnThemeAdd.Enabled = btnThemeReset.Enabled = pgTheme.Enabled = eiTheme.Enabled = Program.Settings.UseCustomTheme;
+            cbThemes.Enabled = btnThemeRemove.Enabled = btnApplyTheme.Enabled = Program.Settings.UseCustomTheme && cbThemes.Items.Count > 0;
         }
 
         private void ApplySelectedTheme()
@@ -457,9 +457,9 @@ namespace ShareX
             }
         }
 
-        private void CbUseDarkTheme_CheckedChanged(object sender, EventArgs e)
+        private void CbUseCustomTheme_CheckedChanged(object sender, EventArgs e)
         {
-            Program.Settings.UseDarkTheme = cbUseDarkTheme.Checked;
+            Program.Settings.UseCustomTheme = cbUseCustomTheme.Checked;
             UpdateThemeControls();
             ApplySelectedTheme();
         }

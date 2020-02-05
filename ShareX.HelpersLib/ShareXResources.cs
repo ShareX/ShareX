@@ -43,7 +43,7 @@ namespace ShareX.HelpersLib
 
         private static bool useDarkTheme;
 
-        public static bool UseDarkTheme
+        public static bool UseCustomTheme
         {
             get
             {
@@ -61,7 +61,7 @@ namespace ShareX.HelpersLib
         {
             get
             {
-                return UseDarkTheme && experimentalDarkTheme;
+                return UseCustomTheme && experimentalDarkTheme;
             }
             set
             {

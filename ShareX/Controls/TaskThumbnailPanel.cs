@@ -242,7 +242,7 @@ namespace ShareX
 
         public void UpdateTheme()
         {
-            if (ShareXResources.UseDarkTheme)
+            if (ShareXResources.UseCustomTheme)
             {
                 lblTitle.ForeColor = ShareXResources.Theme.TextColor;
                 lblTitle.TextShadowColor = ShareXResources.Theme.DarkBackgroundColor;

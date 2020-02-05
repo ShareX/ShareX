@@ -873,34 +873,34 @@
   <data name="&gt;&gt;pgTheme.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
-  <data name="cbUseDarkTheme.AutoSize" type="System.Boolean, mscorlib">
+  <data name="cbUseCustomTheme.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="cbUseDarkTheme.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="cbUseCustomTheme.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="cbUseDarkTheme.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="cbUseCustomTheme.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 16</value>
   </data>
-  <data name="cbUseDarkTheme.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="cbUseCustomTheme.Size" type="System.Drawing.Size, System.Drawing">
     <value>114, 17</value>
   </data>
-  <data name="cbUseDarkTheme.TabIndex" type="System.Int32, mscorlib">
+  <data name="cbUseCustomTheme.TabIndex" type="System.Int32, mscorlib">
     <value>18</value>
   </data>
-  <data name="cbUseDarkTheme.Text" xml:space="preserve">
+  <data name="cbUseCustomTheme.Text" xml:space="preserve">
     <value>Use custom theme</value>
   </data>
-  <data name="&gt;&gt;cbUseDarkTheme.Name" xml:space="preserve">
-    <value>cbUseDarkTheme</value>
+  <data name="&gt;&gt;cbUseCustomTheme.Name" xml:space="preserve">
+    <value>cbUseCustomTheme</value>
   </data>
-  <data name="&gt;&gt;cbUseDarkTheme.Type" xml:space="preserve">
+  <data name="&gt;&gt;cbUseCustomTheme.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;cbUseDarkTheme.Parent" xml:space="preserve">
+  <data name="&gt;&gt;cbUseCustomTheme.Parent" xml:space="preserve">
     <value>tpTheme</value>
   </data>
-  <data name="&gt;&gt;cbUseDarkTheme.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;cbUseCustomTheme.ZOrder" xml:space="preserve">
     <value>8</value>
   </data>
   <data name="tpTheme.Location" type="System.Drawing.Point, System.Drawing">

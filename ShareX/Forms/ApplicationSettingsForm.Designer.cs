@@ -61,7 +61,7 @@ namespace ShareX
             this.cbExperimentalDarkTheme = new System.Windows.Forms.CheckBox();
             this.btnApplyTheme = new System.Windows.Forms.Button();
             this.pgTheme = new System.Windows.Forms.PropertyGrid();
-            this.cbUseDarkTheme = new System.Windows.Forms.CheckBox();
+            this.cbUseCustomTheme = new System.Windows.Forms.CheckBox();
             this.tpIntegration = new System.Windows.Forms.TabPage();
             this.gbFirefox = new System.Windows.Forms.GroupBox();
             this.cbFirefoxAddonSupport = new System.Windows.Forms.CheckBox();
@@ -363,7 +363,7 @@ namespace ShareX
             this.tpTheme.Controls.Add(this.cbExperimentalDarkTheme);
             this.tpTheme.Controls.Add(this.btnApplyTheme);
             this.tpTheme.Controls.Add(this.pgTheme);
-            this.tpTheme.Controls.Add(this.cbUseDarkTheme);
+            this.tpTheme.Controls.Add(this.cbUseCustomTheme);
             resources.ApplyResources(this.tpTheme, "tpTheme");
             this.tpTheme.Name = "tpTheme";
             this.tpTheme.UseVisualStyleBackColor = true;
@@ -427,12 +427,12 @@ namespace ShareX
             this.pgTheme.PropertySort = System.Windows.Forms.PropertySort.NoSort;
             this.pgTheme.ToolbarVisible = false;
             // 
-            // cbUseDarkTheme
+            // cbUseCustomTheme
             // 
-            resources.ApplyResources(this.cbUseDarkTheme, "cbUseDarkTheme");
-            this.cbUseDarkTheme.Name = "cbUseDarkTheme";
-            this.cbUseDarkTheme.UseVisualStyleBackColor = true;
-            this.cbUseDarkTheme.CheckedChanged += new System.EventHandler(this.CbUseDarkTheme_CheckedChanged);
+            resources.ApplyResources(this.cbUseCustomTheme, "cbUseCustomTheme");
+            this.cbUseCustomTheme.Name = "cbUseCustomTheme";
+            this.cbUseCustomTheme.UseVisualStyleBackColor = true;
+            this.cbUseCustomTheme.CheckedChanged += new System.EventHandler(this.CbUseCustomTheme_CheckedChanged);
             // 
             // tpIntegration
             // 
@@ -1336,7 +1336,7 @@ namespace ShareX
         private System.Windows.Forms.CheckBox cbEditWithShareX;
         private System.Windows.Forms.Button btnCheckDevBuild;
         private System.Windows.Forms.Button btnPersonalFolderPathApply;
-        private System.Windows.Forms.CheckBox cbUseDarkTheme;
+        private System.Windows.Forms.CheckBox cbUseCustomTheme;
         private System.Windows.Forms.CheckBox cbUseWhiteShareXIcon;
         private System.Windows.Forms.CheckBox cbExperimentalDarkTheme;
         private System.Windows.Forms.TabPage tpTheme;

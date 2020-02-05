@@ -286,7 +286,7 @@ namespace ShareX.ImageEffectsLib
 
                 Color backgroundColor;
 
-                if (ShareXResources.UseDarkTheme)
+                if (ShareXResources.UseCustomTheme)
                 {
                     backgroundColor = ShareXResources.Theme.BackgroundColor;
                 }
