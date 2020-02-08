@@ -822,13 +822,13 @@ namespace ShareX
                 btnCloseNews.ForeColor = ShareXResources.Theme.TextColor;
                 btnCloseNews.BackColor = ShareXResources.Theme.LightBackgroundColor;
 
-                if (ColorHelpers.IsLightColor(ShareXResources.Theme.BackgroundColor))
+                if (ShareXResources.Theme.IsDarkTheme)
                 {
-                    tsbGitHub.Image = Resources.GitHub_Black_32x32;
+                    tsbGitHub.Image = Resources.GitHub_White_32x32;
                 }
                 else
                 {
-                    tsbGitHub.Image = Resources.GitHub_White_32x32;
+                    tsbGitHub.Image = Resources.GitHub_Black_32x32;
                 }
             }
             else

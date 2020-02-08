@@ -383,7 +383,12 @@ namespace ShareX.HelpersLib
 
         public static Color VisibleColor(Color color, Color lightColor, Color darkColor)
         {
-            return IsLightColor(color) ? darkColor : lightColor;
+            if (IsLightColor(color))
+            {
+                return darkColor;
+            }
+
+            return lightColor;
         }
 
         public static bool IsLightColor(Color color)
