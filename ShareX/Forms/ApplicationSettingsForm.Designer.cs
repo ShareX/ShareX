@@ -58,7 +58,6 @@ namespace ShareX
             this.btnThemeRemove = new System.Windows.Forms.Button();
             this.btnThemeAdd = new System.Windows.Forms.Button();
             this.cbThemes = new System.Windows.Forms.ComboBox();
-            this.cbExperimentalDarkTheme = new System.Windows.Forms.CheckBox();
             this.btnApplyTheme = new System.Windows.Forms.Button();
             this.pgTheme = new System.Windows.Forms.PropertyGrid();
             this.cbUseCustomTheme = new System.Windows.Forms.CheckBox();
@@ -156,6 +155,7 @@ namespace ShareX
             this.tpAdvanced = new System.Windows.Forms.TabPage();
             this.pgSettings = new System.Windows.Forms.PropertyGrid();
             this.tttvMain = new ShareX.HelpersLib.TabToTreeView();
+            this.cbExperimentalCustomTheme = new System.Windows.Forms.CheckBox();
             this.tcSettings.SuspendLayout();
             this.tpGeneral.SuspendLayout();
             this.tpTheme.SuspendLayout();
@@ -355,12 +355,12 @@ namespace ShareX
             // 
             // tpTheme
             // 
+            this.tpTheme.Controls.Add(this.cbExperimentalCustomTheme);
             this.tpTheme.Controls.Add(this.btnThemeReset);
             this.tpTheme.Controls.Add(this.eiTheme);
             this.tpTheme.Controls.Add(this.btnThemeRemove);
             this.tpTheme.Controls.Add(this.btnThemeAdd);
             this.tpTheme.Controls.Add(this.cbThemes);
-            this.tpTheme.Controls.Add(this.cbExperimentalDarkTheme);
             this.tpTheme.Controls.Add(this.btnApplyTheme);
             this.tpTheme.Controls.Add(this.pgTheme);
             this.tpTheme.Controls.Add(this.cbUseCustomTheme);
@@ -405,13 +405,6 @@ namespace ShareX
             resources.ApplyResources(this.cbThemes, "cbThemes");
             this.cbThemes.Name = "cbThemes";
             this.cbThemes.SelectedIndexChanged += new System.EventHandler(this.CbThemes_SelectedIndexChanged);
-            // 
-            // cbExperimentalDarkTheme
-            // 
-            resources.ApplyResources(this.cbExperimentalDarkTheme, "cbExperimentalDarkTheme");
-            this.cbExperimentalDarkTheme.Name = "cbExperimentalDarkTheme";
-            this.cbExperimentalDarkTheme.UseVisualStyleBackColor = true;
-            this.cbExperimentalDarkTheme.CheckedChanged += new System.EventHandler(this.CbExperimentalDarkTheme_CheckedChanged);
             // 
             // btnApplyTheme
             // 
@@ -1163,6 +1156,13 @@ namespace ShareX
             this.tttvMain.TreeViewSize = 175;
             this.tttvMain.TabChanged += new ShareX.HelpersLib.TabToTreeView.TabChangedEventHandler(this.tttvMain_TabChanged);
             // 
+            // cbExperimentalCustomTheme
+            // 
+            resources.ApplyResources(this.cbExperimentalCustomTheme, "cbExperimentalCustomTheme");
+            this.cbExperimentalCustomTheme.Name = "cbExperimentalCustomTheme";
+            this.cbExperimentalCustomTheme.UseVisualStyleBackColor = true;
+            this.cbExperimentalCustomTheme.CheckedChanged += new System.EventHandler(this.cbExperimentalCustomTheme_CheckedChanged);
+            // 
             // ApplicationSettingsForm
             // 
             resources.ApplyResources(this, "$this");
@@ -1338,7 +1338,6 @@ namespace ShareX
         private System.Windows.Forms.Button btnPersonalFolderPathApply;
         private System.Windows.Forms.CheckBox cbUseCustomTheme;
         private System.Windows.Forms.CheckBox cbUseWhiteShareXIcon;
-        private System.Windows.Forms.CheckBox cbExperimentalDarkTheme;
         private System.Windows.Forms.TabPage tpTheme;
         private System.Windows.Forms.Button btnApplyTheme;
         private System.Windows.Forms.PropertyGrid pgTheme;
@@ -1350,5 +1349,6 @@ namespace ShareX
         private System.Windows.Forms.Label lblExportImportNote;
         private System.Windows.Forms.CheckBox cbExportHistory;
         private System.Windows.Forms.CheckBox cbExportSettings;
+        private System.Windows.Forms.CheckBox cbExperimentalCustomTheme;
     }
 }

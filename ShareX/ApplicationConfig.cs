@@ -92,7 +92,7 @@ namespace ShareX
         public bool UseDarkTheme = true;
 
         public bool UseCustomTheme = true;
-        public bool ExperimentalDarkTheme = true;
+        public bool ExperimentalCustomTheme = true;
         public List<ShareXTheme> Themes = ShareXTheme.GetPresets();
         public int SelectedTheme = 0;
 

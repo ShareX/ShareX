@@ -41,31 +41,31 @@ namespace ShareX.HelpersLib
             }
         }
 
-        private static bool useDarkTheme;
+        private static bool useCustomTheme;
 
         public static bool UseCustomTheme
         {
             get
             {
-                return useDarkTheme && Theme != null;
+                return useCustomTheme && Theme != null;
             }
             set
             {
-                useDarkTheme = value;
+                useCustomTheme = value;
             }
         }
 
-        private static bool experimentalDarkTheme;
+        private static bool experimentalCustomTheme;
 
-        public static bool ExperimentalDarkTheme
+        public static bool ExperimentalCustomTheme
         {
             get
             {
-                return UseCustomTheme && experimentalDarkTheme;
+                return UseCustomTheme && experimentalCustomTheme;
             }
             set
             {
-                experimentalDarkTheme = value;
+                experimentalCustomTheme = value;
             }
         }
 
@@ -84,9 +84,9 @@ namespace ShareX.HelpersLib
                 form.Icon = Icon;
             }
 
-            if (ExperimentalDarkTheme)
+            if (ExperimentalCustomTheme)
             {
-                ApplyDarkThemeToControl(form);
+                ApplyCustomThemeToControl(form);
 
                 if (form.IsHandleCreated)
                 {
@@ -99,16 +99,16 @@ namespace ShareX.HelpersLib
             }
         }
 
-        private static void ApplyDarkThemeToControl(Control control)
+        private static void ApplyCustomThemeToControl(Control control)
         {
             if (control.ContextMenuStrip != null)
             {
-                ApplyDarkThemeToContextMenuStrip(control.ContextMenuStrip);
+                ApplyCustomThemeToContextMenuStrip(control.ContextMenuStrip);
             }
 
             if (control is MenuButton mb && mb.Menu != null)
             {
-                ApplyDarkThemeToContextMenuStrip(mb.Menu);
+                ApplyCustomThemeToContextMenuStrip(mb.Menu);
             }
 
             switch (control)
@@ -142,7 +142,7 @@ namespace ShareX.HelpersLib
                 case ListView lv:
                     lv.ForeColor = Theme.TextColor;
                     lv.BackColor = Theme.LightBackgroundColor;
-                    lv.SupportDarkTheme();
+                    lv.SupportCustomTheme();
                     return;
                 case SplitContainer sc:
                     sc.Panel1.BackColor = Theme.BackgroundColor;
@@ -175,11 +175,11 @@ namespace ShareX.HelpersLib
                     dgv.EnableHeadersVisualStyles = false;
                     break;
                 case ContextMenuStrip cms:
-                    ApplyDarkThemeToContextMenuStrip(cms);
+                    ApplyCustomThemeToContextMenuStrip(cms);
                     return;
                 case ToolStrip ts:
                     ts.Renderer = new ToolStripDarkRenderer();
-                    ApplyDarkThemeToToolStripItemCollection(ts.Items);
+                    ApplyCustomThemeToToolStripItemCollection(ts.Items);
                     return;
                 case LinkLabel ll:
                     ll.LinkColor = Theme.LinkColor;
@@ -191,31 +191,31 @@ namespace ShareX.HelpersLib
 
             foreach (Control child in control.Controls)
             {
-                ApplyDarkThemeToControl(child);
+                ApplyCustomThemeToControl(child);
             }
         }
 
-        public static void ApplyDarkThemeToContextMenuStrip(ContextMenuStrip cms)
+        public static void ApplyCustomThemeToContextMenuStrip(ContextMenuStrip cms)
         {
             cms.Renderer = new ToolStripDarkRenderer();
             cms.Opacity = Theme.ContextMenuOpacityDouble;
-            ApplyDarkThemeToToolStripItemCollection(cms.Items);
+            ApplyCustomThemeToToolStripItemCollection(cms.Items);
         }
 
-        private static void ApplyDarkThemeToToolStripItemCollection(ToolStripItemCollection collection)
+        private static void ApplyCustomThemeToToolStripItemCollection(ToolStripItemCollection collection)
         {
             foreach (ToolStripItem tsi in collection)
             {
                 switch (tsi)
                 {
                     case ToolStripControlHost tsch:
-                        ApplyDarkThemeToControl(tsch.Control);
+                        ApplyCustomThemeToControl(tsch.Control);
                         break;
                     case ToolStripDropDownItem tsddi:
                         if (tsddi.DropDown != null)
                         {
                             tsddi.DropDown.Opacity = Theme.ContextMenuOpacityDouble;
-                            ApplyDarkThemeToToolStripItemCollection(tsddi.DropDownItems);
+                            ApplyCustomThemeToToolStripItemCollection(tsddi.DropDownItems);
                         }
                         break;
                 }

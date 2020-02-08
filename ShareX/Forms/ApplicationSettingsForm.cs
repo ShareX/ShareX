@@ -104,8 +104,8 @@ namespace ShareX
             cbTaskbarProgressEnabled.Enabled = TaskbarManager.IsPlatformSupported;
             cbTaskbarProgressEnabled.Checked = Program.Settings.TaskbarProgressEnabled;
             cbUseCustomTheme.Checked = Program.Settings.UseCustomTheme;
-            cbExperimentalDarkTheme.Enabled = Program.Settings.UseCustomTheme;
-            cbExperimentalDarkTheme.Checked = Program.Settings.ExperimentalDarkTheme;
+            cbExperimentalCustomTheme.Enabled = Program.Settings.UseCustomTheme;
+            cbExperimentalCustomTheme.Checked = Program.Settings.ExperimentalCustomTheme;
             cbUseWhiteShareXIcon.Checked = Program.Settings.UseWhiteShareXIcon;
             cbRememberMainFormPosition.Checked = Program.Settings.RememberMainFormPosition;
             cbRememberMainFormSize.Checked = Program.Settings.RememberMainFormSize;
@@ -434,7 +434,7 @@ namespace ShareX
 
         private void UpdateThemeControls()
         {
-            cbExperimentalDarkTheme.Enabled = btnThemeAdd.Enabled = btnThemeReset.Enabled = pgTheme.Enabled = eiTheme.Enabled = Program.Settings.UseCustomTheme;
+            cbExperimentalCustomTheme.Enabled = btnThemeAdd.Enabled = btnThemeReset.Enabled = pgTheme.Enabled = eiTheme.Enabled = Program.Settings.UseCustomTheme;
             cbThemes.Enabled = btnThemeRemove.Enabled = btnApplyTheme.Enabled = Program.Settings.UseCustomTheme && cbThemes.Items.Count > 0;
         }
 
@@ -464,9 +464,9 @@ namespace ShareX
             ApplySelectedTheme();
         }
 
-        private void CbExperimentalDarkTheme_CheckedChanged(object sender, EventArgs e)
+        private void cbExperimentalCustomTheme_CheckedChanged(object sender, EventArgs e)
         {
-            Program.Settings.ExperimentalDarkTheme = cbExperimentalDarkTheme.Checked;
+            Program.Settings.ExperimentalCustomTheme = cbExperimentalCustomTheme.Checked;
             UpdateThemeControls();
             ApplySelectedTheme();
         }

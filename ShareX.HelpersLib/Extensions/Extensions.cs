@@ -715,7 +715,7 @@ namespace ShareX.HelpersLib
             rtb.SelectionFont = new Font(rtb.Font, FontStyle.Bold);
         }
 
-        public static void SupportDarkTheme(this ListView lv)
+        public static void SupportCustomTheme(this ListView lv)
         {
             if (!lv.OwnerDraw)
             {

@@ -43,7 +43,7 @@ namespace ShareX.HelpersLib
             InitializeComponent();
             ShareXResources.ApplyTheme(this);
 
-            if (ShareXResources.ExperimentalDarkTheme)
+            if (ShareXResources.ExperimentalCustomTheme)
             {
                 lblQuestion.BackColor = ShareXResources.Theme.BorderColor;
             }

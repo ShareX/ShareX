@@ -156,7 +156,7 @@ namespace ShareX
                 tsmiShareSelectedURL.DropDownItems.Add(tsmi);
             }
 
-            lvUploads.SupportDarkTheme();
+            lvUploads.SupportCustomTheme();
 
             ImageList il = new ImageList();
             il.ColorDepth = ColorDepth.Depth32Bit;
@@ -794,7 +794,7 @@ namespace ShareX
 
             ShareXResources.Theme = Program.Settings.Themes[Program.Settings.SelectedTheme];
             ShareXResources.UseCustomTheme = Program.Settings.UseCustomTheme;
-            ShareXResources.ExperimentalDarkTheme = Program.Settings.ExperimentalDarkTheme;
+            ShareXResources.ExperimentalCustomTheme = Program.Settings.ExperimentalCustomTheme;
 
             if (IsHandleCreated)
             {
@@ -807,8 +807,8 @@ namespace ShareX
                 tsMain.DrawCustomBorder = false;
                 tsSocialButtons.Renderer = new ToolStripDarkRenderer();
                 tsSocialButtons.DrawCustomBorder = false;
-                ShareXResources.ApplyDarkThemeToContextMenuStrip(cmsTray);
-                ShareXResources.ApplyDarkThemeToContextMenuStrip(cmsTaskInfo);
+                ShareXResources.ApplyCustomThemeToContextMenuStrip(cmsTray);
+                ShareXResources.ApplyCustomThemeToContextMenuStrip(cmsTaskInfo);
                 ttMain.BackColor = ShareXResources.Theme.BackgroundColor;
                 ttMain.ForeColor = ShareXResources.Theme.TextColor;
                 lvUploads.BackColor = ShareXResources.Theme.BackgroundColor;

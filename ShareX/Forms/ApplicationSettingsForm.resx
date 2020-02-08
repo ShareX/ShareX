@@ -672,6 +672,33 @@
   <data name="&gt;&gt;tpGeneral.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="cbExperimentalCustomTheme.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbExperimentalCustomTheme.Location" type="System.Drawing.Point, System.Drawing">
+    <value>208, 16</value>
+  </data>
+  <data name="cbExperimentalCustomTheme.Size" type="System.Drawing.Size, System.Drawing">
+    <value>190, 17</value>
+  </data>
+  <data name="cbExperimentalCustomTheme.TabIndex" type="System.Int32, mscorlib">
+    <value>26</value>
+  </data>
+  <data name="cbExperimentalCustomTheme.Text" xml:space="preserve">
+    <value>Apply custom theme to all windows</value>
+  </data>
+  <data name="&gt;&gt;cbExperimentalCustomTheme.Name" xml:space="preserve">
+    <value>cbExperimentalCustomTheme</value>
+  </data>
+  <data name="&gt;&gt;cbExperimentalCustomTheme.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbExperimentalCustomTheme.Parent" xml:space="preserve">
+    <value>tpTheme</value>
+  </data>
+  <data name="&gt;&gt;cbExperimentalCustomTheme.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="btnThemeReset.Location" type="System.Drawing.Point, System.Drawing">
     <value>384, 40</value>
   </data>
@@ -694,7 +721,7 @@
     <value>tpTheme</value>
   </data>
   <data name="&gt;&gt;btnThemeReset.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="eiTheme.Location" type="System.Drawing.Point, System.Drawing">
     <value>280, 352</value>
@@ -715,7 +742,7 @@
     <value>tpTheme</value>
   </data>
   <data name="&gt;&gt;eiTheme.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="btnThemeRemove.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -742,7 +769,7 @@
     <value>tpTheme</value>
   </data>
   <data name="&gt;&gt;btnThemeRemove.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="btnThemeAdd.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -769,7 +796,7 @@
     <value>tpTheme</value>
   </data>
   <data name="&gt;&gt;btnThemeAdd.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="cbThemes.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 40</value>
@@ -790,36 +817,6 @@
     <value>tpTheme</value>
   </data>
   <data name="&gt;&gt;cbThemes.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="cbExperimentalDarkTheme.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="cbExperimentalDarkTheme.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="cbExperimentalDarkTheme.Location" type="System.Drawing.Point, System.Drawing">
-    <value>208, 16</value>
-  </data>
-  <data name="cbExperimentalDarkTheme.Size" type="System.Drawing.Size, System.Drawing">
-    <value>155, 17</value>
-  </data>
-  <data name="cbExperimentalDarkTheme.TabIndex" type="System.Int32, mscorlib">
-    <value>20</value>
-  </data>
-  <data name="cbExperimentalDarkTheme.Text" xml:space="preserve">
-    <value>Experimental custom theme</value>
-  </data>
-  <data name="&gt;&gt;cbExperimentalDarkTheme.Name" xml:space="preserve">
-    <value>cbExperimentalDarkTheme</value>
-  </data>
-  <data name="&gt;&gt;cbExperimentalDarkTheme.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbExperimentalDarkTheme.Parent" xml:space="preserve">
-    <value>tpTheme</value>
-  </data>
-  <data name="&gt;&gt;cbExperimentalDarkTheme.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
   <data name="btnApplyTheme.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">

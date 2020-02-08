@@ -43,7 +43,7 @@ namespace ShareX
                 AutoClose = false
             };
 
-            if (ShareXResources.ExperimentalDarkTheme)
+            if (ShareXResources.ExperimentalCustomTheme)
             {
                 cms.Renderer = new ToolStripDarkRenderer();
             }
