@@ -148,25 +148,23 @@ namespace ShareX.HelpersLib
             {
                 if (AutoSelectChild && tabPage.Controls.Count == 1 && tabPage.Controls[0] is TabControl)
                 {
-                    SelectChild();
+                    SelectChildNode();
                 }
                 else
                 {
-                    SelectTab(tabPage);
+                    SelectTabPage(tabPage);
                 }
             }
         }
 
-        private void SelectTab(TabPage tabPage)
+        private void SelectTabPage(TabPage tabPage)
         {
             if (tabPage != null)
             {
-                tvMain.BeginUpdate();
                 tcMain.Visible = true;
                 tcMain.TabPages.Clear();
                 tcMain.TabPages.Add(tabPage);
                 tvMain.Focus();
-                tvMain.EndUpdate();
 
                 OnTabChanged(tabPage);
             }
@@ -189,11 +187,13 @@ namespace ShareX.HelpersLib
             }
         }
 
-        public void SelectChild()
+        public void SelectChildNode()
         {
-            if (tvMain.SelectedNode.Nodes.Count > 0)
+            TreeNode node = tvMain.SelectedNode;
+
+            if (node != null && node.Nodes.Count > 0)
             {
-                tvMain.SelectedNode = tvMain.SelectedNode.Nodes[0];
+                tvMain.SelectedNode = node.Nodes[0];
             }
         }
 

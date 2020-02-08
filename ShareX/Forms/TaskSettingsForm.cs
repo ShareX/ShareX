@@ -415,7 +415,7 @@ namespace ShareX
         {
             if (IsDefault && tabPage == tpUploadMain)
             {
-                tttvMain.SelectChild();
+                tttvMain.SelectChildNode();
             }
         }
 
