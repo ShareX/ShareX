@@ -810,5 +810,18 @@ namespace ShareX.HelpersLib
 
             return null;
         }
+
+        public static IEnumerable<TreeNode> All(this TreeNodeCollection nodes)
+        {
+            foreach (TreeNode node in nodes)
+            {
+                yield return node;
+
+                foreach (TreeNode child in node.Nodes.All())
+                {
+                    yield return child;
+                }
+            }
+        }
     }
 }

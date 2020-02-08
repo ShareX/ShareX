@@ -144,7 +144,7 @@ namespace ShareX.UploadersLib
         {
             if (tp != null)
             {
-                tttvMain.SelectTab(tp);
+                tttvMain.NavigateToTabPage(tp);
             }
         }
 

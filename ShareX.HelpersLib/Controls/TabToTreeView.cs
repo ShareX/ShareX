@@ -157,7 +157,7 @@ namespace ShareX.HelpersLib
             }
         }
 
-        public void SelectTab(TabPage tabPage)
+        private void SelectTab(TabPage tabPage)
         {
             if (tabPage != null)
             {
@@ -169,6 +169,23 @@ namespace ShareX.HelpersLib
                 tvMain.EndUpdate();
 
                 OnTabChanged(tabPage);
+            }
+        }
+
+        public void NavigateToTabPage(TabPage tabPage)
+        {
+            if (tabPage != null)
+            {
+                foreach (TreeNode node in tvMain.Nodes.All())
+                {
+                    TabPage nodeTabPage = node.Tag as TabPage;
+
+                    if (nodeTabPage == tabPage)
+                    {
+                        tvMain.SelectedNode = node;
+                        return;
+                    }
+                }
             }
         }
 
