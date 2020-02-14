@@ -11883,7 +11883,7 @@ when you made the application key.</value>
     <value>0</value>
   </data>
   <data name="lblJiraHost.Text" xml:space="preserve">
-    <value>Jira host: </value>
+    <value>Jira host:</value>
   </data>
   <data name="&gt;&gt;lblJiraHost.Name" xml:space="preserve">
     <value>lblJiraHost</value>

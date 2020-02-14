@@ -61,6 +61,51 @@ namespace ShareX.MediaLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to FFmpeg error.
+        /// </summary>
+        internal static string FFmpegError {
+            get {
+                return ResourceManager.GetString("FFmpegError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Higher quality/size.
+        /// </summary>
+        internal static string HigherQualitySize {
+            get {
+                return ResourceManager.GetString("HigherQualitySize", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Lower quality/size.
+        /// </summary>
+        internal static string LowerQualitySize {
+            get {
+                return ResourceManager.GetString("LowerQualitySize", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Start encoding.
+        /// </summary>
+        internal static string StartEncoding {
+            get {
+                return ResourceManager.GetString("StartEncoding", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Stop encoding.
+        /// </summary>
+        internal static string StopEncoding {
+            get {
+                return ResourceManager.GetString("StopEncoding", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Thumbnails successfully generated..
         /// </summary>
         internal static string ThumbnailsSuccessfullyGenerated {

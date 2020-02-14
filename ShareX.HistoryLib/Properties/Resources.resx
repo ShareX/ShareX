@@ -244,4 +244,7 @@
   <data name="HistoryStats_Hosts" xml:space="preserve">
     <value>Hosts:</value>
   </data>
+  <data name="ErrorOccuredWhileReadingHistoryFile" xml:space="preserve">
+    <value>Error occured while reading history file:</value>
+  </data>
 </root>

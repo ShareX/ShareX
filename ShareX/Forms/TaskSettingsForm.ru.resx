@@ -304,7 +304,7 @@
     <value>Миниатюра</value>
   </data>
   <data name="btnImageEffects.Text" xml:space="preserve">
-    <value>Настройка эффектов изображений</value>
+    <value>Настройка эффектов изображений...</value>
   </data>
   <data name="cbImageEffectOnlyRegionCapture.Text" xml:space="preserve">
     <value>Применять эффекты только при захвате области</value>

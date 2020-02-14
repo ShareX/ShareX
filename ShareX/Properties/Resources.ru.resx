@@ -297,7 +297,7 @@
 Хотите перезапустить ShareX?</value>
   </data>
   <data name="FileExistForm_txtNewName_TextChanged_Use_new_name__" xml:space="preserve">
-    <value>Использовать новое имя:</value>
+    <value>Использовать новое имя: </value>
   </data>
   <data name="ScreenRecordForm_StartRecording_Missing" xml:space="preserve">
     <value>Отсутствует</value>
@@ -589,5 +589,8 @@
   </data>
   <data name="SwitchToListView" xml:space="preserve">
     <value>Перейти в режим списка</value>
+  </data>
+  <data name="ThisFeatureWillNotWorkWhenDisableUploadOptionIsEnabled" xml:space="preserve">
+    <value>Эта функция не будет работать, когда опция "DisableUpload" включена!</value>
   </data>
 </root>

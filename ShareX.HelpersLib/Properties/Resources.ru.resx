@@ -211,7 +211,7 @@
     <value>DNS успешно задан. Необходима перезагрузка.</value>
   </data>
   <data name="DNSChangerForm_btnSave_Click_Setting_DNS_failed_with_error_code_" xml:space="preserve">
-    <value>Не удалось задать DNS, код ошибки: </value>
+    <value>Не удалось задать DNS, код ошибки:</value>
   </data>
   <data name="DNSChangerForm_btnSave_Click_Setting_DNS_failed_" xml:space="preserve">
     <value>Не удалось задать DNS.</value>
@@ -1170,5 +1170,20 @@
   </data>
   <data name="RandomEmojiRepeatUsingN" xml:space="preserve">
     <value>Случайный символ эмодзи. Повторение задается через {n}</value>
+  </data>
+  <data name="ReplCodeMenuEntry_wy_Week_of_year" xml:space="preserve">
+    <value>Неделя года</value>
+  </data>
+  <data name="ObjectListView_ObjectListView_Copy_name" xml:space="preserve">
+    <value>Скопировать имя</value>
+  </data>
+  <data name="ObjectListView_ObjectListView_Copy_value" xml:space="preserve">
+    <value>Скопировать значение</value>
+  </data>
+  <data name="ObjectListView_ObjectListView_Value" xml:space="preserve">
+    <value>Значение</value>
+  </data>
+  <data name="ObjectListView_ObjectListView_Name" xml:space="preserve">
+    <value>Имя</value>
   </data>
 </root>

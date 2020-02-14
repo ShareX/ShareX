@@ -135,4 +135,7 @@
   <data name="lblOutputFolder.Text" xml:space="preserve">
     <value>Конечная папка:</value>
   </data>
+  <data name="btnCopyChatEmoji.Text" xml:space="preserve">
+    <value>Копировать синтаксис эмодзи</value>
+  </data>
 </root>

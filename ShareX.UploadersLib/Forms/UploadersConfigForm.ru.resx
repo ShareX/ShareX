@@ -364,7 +364,7 @@
     <value>Пароль:</value>
   </data>
   <data name="btnSendSpaceRegister.Text" xml:space="preserve">
-    <value>&amp;Регистрация...</value>
+    <value>Регистрация...</value>
   </data>
   <data name="lblPushbulletUserKey.Text" xml:space="preserve">
     <value>Использовать ключ API:</value>
@@ -418,7 +418,7 @@
     <value>Email:</value>
   </data>
   <data name="lblMegaStatusTitle.Text" xml:space="preserve">
-    <value>Состояние:</value>
+    <value>Состояние: </value>
   </data>
   <data name="lblMegaFolder.Text" xml:space="preserve">
     <value>Папка:</value>
@@ -766,7 +766,7 @@
     <value>Хост</value>
   </data>
   <data name="lblPlikTTL.Text" xml:space="preserve">
-    <value>Файлы автоматически удалятся через</value>
+    <value>Файлы автоматически удалятся через </value>
   </data>
   <data name="cbxPlikTTLUnit.Items1" xml:space="preserve">
     <value>часов</value>
@@ -778,7 +778,7 @@
     <value>дней</value>
   </data>
   <data name="lblPlikAPIKey.Text" xml:space="preserve">
-    <value>Ключи API:</value>
+    <value>Ключи API: </value>
   </data>
   <data name="lblPlikPassword.Text" xml:space="preserve">
     <value>Пароль:</value>

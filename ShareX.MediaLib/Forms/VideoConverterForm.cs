@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.MediaLib.Properties;
 using System;
 using System.IO;
 using System.Threading.Tasks;
@@ -121,9 +122,8 @@ namespace ShareX.MediaLib
                     break;
             }
 
-            // TODO: Translate
-            lblVideoQualityLower.Text = tbVideoQuality.Maximum + "   <- " + "Lower quality/size";
-            lblVideoQualityHigher.Text = "Higher quality/size" + " ->   " + tbVideoQuality.Minimum;
+            lblVideoQualityLower.Text = tbVideoQuality.Maximum + "   <- " + Resources.LowerQualitySize;
+            lblVideoQualityHigher.Text = Resources.HigherQualitySize + " ->   " + tbVideoQuality.Minimum;
 
             if (formReady)
             {
@@ -258,8 +258,7 @@ namespace ShareX.MediaLib
             {
                 encoding = true;
 
-                // TODO: Translate
-                btnEncode.Text = "Stop encoding";
+                btnEncode.Text = Resources.StopEncoding;
 
                 UpdateOptions();
                 pbProgress.Value = 0;
@@ -277,8 +276,7 @@ namespace ShareX.MediaLib
                         pbProgress.Value = 0;
                     }
 
-                    // TODO: Translate
-                    btnEncode.Text = "Start encoding";
+                    btnEncode.Text = Resources.StartEncoding;
                 }
 
                 encoding = false;

@@ -166,7 +166,7 @@
     <value>Хеш:</value>
   </data>
   <data name="lblHashCheckHex.Text" xml:space="preserve">
-    <value>Шестнадцатеричный:	</value>
+    <value>Шестнадцатеричный:</value>
   </data>
   <data name="lblHashCheckText.Text" xml:space="preserve">
     <value>Текст:</value>
