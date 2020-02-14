@@ -381,4 +381,10 @@
   <data name="btnThemeReset.Text" xml:space="preserve">
     <value>Сбросить</value>
   </data>
+  <data name="cbUseCustomTheme.Text" xml:space="preserve">
+    <value>Пользовательская тема</value>
+  </data>
+  <data name="cbExperimentalCustomTheme.Text" xml:space="preserve">
+    <value>Применить пользовательскую тему ко всем окнам</value>
+  </data>
 </root>

@@ -124,7 +124,7 @@
     <value>Выберите ffmpeg.exe</value>
   </data>
   <data name="FFmpegOptionsForm_DownloaderForm_InstallRequested_Successfully_downloaded_FFmpeg_" xml:space="preserve">
-    <value> FFmpeg успешно загружен.</value>
+    <value>FFmpeg успешно загружен.</value>
   </data>
   <data name="FFmpegOptionsForm_UpdateUI_Bitrate___0_k" xml:space="preserve">
     <value>Битрейт: {0}k</value>
@@ -141,7 +141,7 @@
 Расстояние: {6:0.00} px / Угол: {7:0.00}°</value>
   </data>
   <data name="FFmpegOptionsForm_DownloaderForm_InstallRequested_Download_of_FFmpeg_failed_" xml:space="preserve">
-    <value> Загрузка FFmpeg не удалась.</value>
+    <value>Загрузка FFmpeg не удалась.</value>
   </data>
   <data name="RectangleLight_InitializeComponent_Rectangle_capture_light" xml:space="preserve">
     <value>Упрощенный захват области</value>

@@ -187,7 +187,7 @@
     <value>Монитор</value>
   </data>
   <data name="tsmiTrayMonitorTest.Text" xml:space="preserve">
-    <value>Проверка монитора</value>
+    <value>Проверка монитора...</value>
   </data>
   <data name="tsmiTrayWindow.Text" xml:space="preserve">
     <value>Окно</value>
@@ -788,5 +788,26 @@
   </data>
   <data name="tsmiRunAction.Text" xml:space="preserve">
     <value>Выполнить действие</value>
+  </data>
+  <data name="tsbTwitter.ToolTipText" xml:space="preserve">
+    <value>Читайте наш Твиттер</value>
+  </data>
+  <data name="tsbDiscord.ToolTipText" xml:space="preserve">
+    <value>Присоединяйтесь к нашему серверу Discord</value>
+  </data>
+  <data name="tsbPatreon.ToolTipText" xml:space="preserve">
+    <value>Поддержите нас на  Patreon</value>
+  </data>
+  <data name="tsbBitcoin.ToolTipText" xml:space="preserve">
+    <value>Поддержите нас криптовалютой</value>
+  </data>
+  <data name="tsbGitHub.ToolTipText" xml:space="preserve">
+    <value>Ставьте звезды нашему репозиторию GitHub</value>
+  </data>
+  <data name="tsmiTrayVideoConverter.Text" xml:space="preserve">
+    <value>Конвертер видео...</value>
+  </data>
+  <data name="tsmiVideoConverter.Text" xml:space="preserve">
+    <value>Конвертер видео...</value>
   </data>
 </root>
