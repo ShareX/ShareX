@@ -1808,8 +1808,7 @@ namespace ShareX
         {
             if (Program.Settings.DisableUpload)
             {
-                // TODO: Translate
-                MessageBox.Show("This feature will not work when \"DisableUpload\" option is enabled!", "ShareX",
+                MessageBox.Show(Resources.ThisFeatureWillNotWorkWhenDisableUploadOptionIsEnabled, "ShareX",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 return false;

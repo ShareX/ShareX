@@ -1027,4 +1027,7 @@ Middle click to close</value>
   <data name="image_split" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\image-split.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="ThisFeatureWillNotWorkWhenDisableUploadOptionIsEnabled" xml:space="preserve">
+    <value>This feature will not work when "DisableUpload" option is enabled!</value>
+  </data>
 </root>

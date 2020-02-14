@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.MediaLib.Properties;
 using System;
 using System.Diagnostics;
 using System.Drawing;
@@ -92,8 +93,7 @@ namespace ShareX.MediaLib
             bool result = errorCode == 0;
             if (!result && ShowError)
             {
-                // TODO: Translate
-                using (OutputBox outputBox = new OutputBox(Output.ToString(), "FFmpeg error"))
+                using (OutputBox outputBox = new OutputBox(Output.ToString(), Resources.FFmpegError))
                 {
                     outputBox.ShowDialog();
                 }

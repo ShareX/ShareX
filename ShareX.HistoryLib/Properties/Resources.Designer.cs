@@ -89,6 +89,15 @@ namespace ShareX.HistoryLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Error occured while reading history file:.
+        /// </summary>
+        internal static string ErrorOccuredWhileReadingHistoryFile {
+            get {
+                return ResourceManager.GetString("ErrorOccuredWhileReadingHistoryFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap globe {
