@@ -26,7 +26,9 @@
 using Newtonsoft.Json;
 using ShareX.HelpersLib;
 using ShareX.UploadersLib.Properties;
+using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.Drawing;
 using System.Web;
 using System.Windows.Forms;
@@ -64,7 +66,7 @@ namespace ShareX.UploadersLib.URLShorteners
     {
         private const string URLAPI = "https://api-ssl.bitly.com/";
         private const string URLAccessToken = URLAPI + "oauth/access_token";
-        private const string URLShorten = URLAPI + "v3/shorten";
+        private const string URLShorten = URLAPI + "v4/shorten";
 
         public OAuth2Info AuthInfo { get; private set; }
         public string Domain { get; set; }
@@ -107,44 +109,51 @@ namespace ShareX.UploadersLib.URLShorteners
             return false;
         }
 
+        private NameValueCollection GetAuthHeaders()
+        {
+            NameValueCollection headers = new NameValueCollection();
+            headers.Add("Authorization", "Bearer " + AuthInfo.Token.access_token);
+            return headers;
+        }
+
         public override UploadResult ShortenURL(string url)
         {
             UploadResult result = new UploadResult { URL = url };
 
             if (!string.IsNullOrEmpty(url))
             {
-                Dictionary<string, string> arguments = new Dictionary<string, string>();
-                arguments.Add("access_token", AuthInfo.Token.access_token);
-                arguments.Add("longUrl", url);
-                if (!string.IsNullOrEmpty(Domain)) arguments.Add("domain", Domain);
+                BitlyShortenRequestBody requestBody = new BitlyShortenRequestBody();
+                requestBody.long_url = url;
+                if (!string.IsNullOrEmpty(Domain)) requestBody.domain = Domain;
+                string json = JsonConvert.SerializeObject(requestBody);
 
-                result.Response = SendRequest(HttpMethod.GET, URLShorten, arguments);
+                NameValueCollection headers = GetAuthHeaders();
 
-                BitlyShortenResponse shorten = JsonConvert.DeserializeObject<BitlyShortenResponse>(result.Response);
+                result.Response = SendRequest(HttpMethod.POST, URLShorten, json, RequestHelpers.ContentTypeJSON, null, headers);
 
-                if (shorten != null && shorten.data != null && !string.IsNullOrEmpty(shorten.data.url))
+                BitlyShortenResponse responseData = JsonConvert.DeserializeObject<BitlyShortenResponse>(result.Response);
+
+                if (responseData != null && !string.IsNullOrEmpty(responseData.link))
                 {
-                    result.ShortenedURL = shorten.data.url;
+                    result.ShortenedURL = responseData.link;
                 }
             }
 
             return result;
         }
 
-        public class BitlyShortenData
+        private class BitlyShortenRequestBody
         {
-            public string global_hash { get; set; }
-            public string hash { get; set; }
             public string long_url { get; set; }
-            public int new_hash { get; set; }
-            public string url { get; set; }
+            public string domain { get; set; } = "bit.ly";
         }
 
-        public class BitlyShortenResponse
+        private class BitlyShortenResponse
         {
-            public BitlyShortenData data { get; set; }
-            public int status_code { get; set; }
-            public string status_txt { get; set; }
+            public DateTime created_at { get; set; }
+            public string id { get; set; }
+            public string link { get; set; }
+            public string long_url { get; set; }
         }
     }
 }
