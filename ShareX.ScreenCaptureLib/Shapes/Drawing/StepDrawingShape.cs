@@ -160,7 +160,7 @@ namespace ShareX.ScreenCaptureLib
                 {
                     if (Shadow)
                     {
-                        DrawTail(g, ShadowColor, Rectangle.LocationOffset(ShadowOffset), TailPosition.Add(ShadowOffset));
+                        DrawTail(g, ShadowColor, Rectangle.Offset(BorderSize / 2).LocationOffset(ShadowOffset), TailPosition.Add(ShadowOffset));
                     }
 
                     Color tailColor;
@@ -174,7 +174,7 @@ namespace ShareX.ScreenCaptureLib
                         tailColor = FillColor;
                     }
 
-                    DrawTail(g, tailColor, Rectangle, TailPosition);
+                    DrawTail(g, tailColor, Rectangle.Offset(BorderSize / 2), TailPosition);
                 }
 
                 DrawEllipse(g, BorderColor, BorderSize, FillColor, Rectangle);
