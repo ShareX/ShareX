@@ -233,7 +233,19 @@ namespace ShareX
 
         public static string ToolsFolder => Path.Combine(PersonalFolder, "Tools");
         public static string ScreenRecorderCacheFilePath => Path.Combine(PersonalFolder, "ScreenRecorder.avi");
-        public static string DefaultFFmpegFilePath => Path.Combine(ToolsFolder, "ffmpeg.exe");
+        public static string DefaultFFmpegFilePath
+        {
+            get
+            {
+                string ffmpegFilePath = Helpers.GetAbsolutePath("Tools\\ffmpeg.exe");
+                if (!File.Exists(ffmpegFilePath))
+                {
+                    ffmpegFilePath = null;
+                }
+
+                return ffmpegFilePath ?? Path.Combine(ToolsFolder, "ffmpeg.exe");
+            }
+        }
         public static string ChromeHostManifestFilePath => Path.Combine(ToolsFolder, "Chrome-host-manifest.json");
         public static string FirefoxHostManifestFilePath => Path.Combine(ToolsFolder, "Firefox-host-manifest.json");
 
