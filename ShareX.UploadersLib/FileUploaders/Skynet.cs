@@ -2,7 +2,6 @@
 using System;
 using System.IO;
 
-
 namespace ShareX.UploadersLib.FileUploaders
 {
     public class SkynetNewFileUploaderService : FileUploaderService
@@ -40,6 +39,5 @@ namespace ShareX.UploadersLib.FileUploaders
         {
             public string skylink { get; set; }
         }
-
     }
 }
