@@ -367,7 +367,7 @@ namespace ShareX
 
     public class TaskSettingsUpload
     {
-        #region Upload
+        #region Upload / File naming
 
         public bool UseCustomTimeZone = false;
         public TimeZoneInfo CustomTimeZone = TimeZoneInfo.Utc;
@@ -377,7 +377,7 @@ namespace ShareX
         public bool FileUploadUseNamePattern = false;
         public bool FileUploadReplaceProblematicCharacters = false;
 
-        #endregion Upload
+        #endregion Upload / File naming
 
         #region Upload / Clipboard upload
 
@@ -388,7 +388,11 @@ namespace ShareX
 
         #endregion Upload / Clipboard upload
 
+        #region Upload / Uploader filters
+
         public List<UploaderFilter> UploaderFilters = new List<UploaderFilter>();
+
+        #endregion Upload / Uploader filters
     }
 
     public class TaskSettingsTools
