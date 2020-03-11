@@ -68,13 +68,15 @@ namespace ShareX.ScreenCaptureLib
         {
             get
             {
-                if (bmpBackgroundImage != null)
+                Bitmap bmpCanvas = Canvas as Bitmap;
+
+                if (bmpCanvas != null)
                 {
                     Point position = CaptureHelpers.ScreenToClient(CurrentPosition);
 
-                    if (position.X.IsBetween(0, bmpBackgroundImage.Width - 1) && position.Y.IsBetween(0, bmpBackgroundImage.Height - 1))
+                    if (position.X.IsBetween(0, bmpCanvas.Width - 1) && position.Y.IsBetween(0, bmpCanvas.Height - 1))
                     {
-                        return bmpBackgroundImage.GetPixel(position.X, position.Y);
+                        return bmpCanvas.GetPixel(position.X, position.Y);
                     }
                 }
 
@@ -103,7 +105,6 @@ namespace ShareX.ScreenCaptureLib
         private bool pause, isKeyAllowed, forceClose;
         private RectangleAnimation regionAnimation;
         private TextAnimation editorPanTipAnimation;
-        private Bitmap bmpBackgroundImage;
         private Cursor defaultCursor;
         private Color canvasBackgroundColor;
 
@@ -357,12 +358,6 @@ namespace ShareX.ScreenCaptureLib
             else
             {
                 backgroundBrush = new TextureBrush(Canvas) { WrapMode = WrapMode.Clamp };
-            }
-
-            if (Options.UseCustomInfoText || Mode == RegionCaptureMode.ScreenColorPicker)
-            {
-                if (bmpBackgroundImage != null) bmpBackgroundImage.Dispose();
-                bmpBackgroundImage = new Bitmap(Canvas);
             }
         }
 
@@ -1444,7 +1439,6 @@ namespace ShareX.ScreenCaptureLib
             IsClosing = true;
 
             ShapeManager?.Dispose();
-            bmpBackgroundImage?.Dispose();
             backgroundBrush?.Dispose();
             backgroundHighlightBrush?.Dispose();
             borderPen?.Dispose();
