@@ -1096,6 +1096,9 @@ namespace ShareX.ScreenCaptureLib
                 case ShapeType.DrawingCursor:
                     shape = new CursorDrawingShape();
                     break;
+                case ShapeType.DrawingSmartEraser:
+                    shape = new SmartEraserDrawingShape();
+                    break;
                 case ShapeType.EffectBlur:
                     shape = new BlurEffectShape();
                     break;
@@ -1682,12 +1685,9 @@ namespace ShareX.ScreenCaptureLib
         public Image CropImage(Rectangle rect, bool onlyIfSizeDifferent = false)
         {
             rect = CaptureHelpers.ScreenToClient(rect);
-
             Point offset = CaptureHelpers.ScreenToClient(Form.CanvasRectangle.Location);
-
             rect.X -= offset.X;
             rect.Y -= offset.Y;
-
             rect.Intersect(new Rectangle(0, 0, Form.Canvas.Width, Form.Canvas.Height));
 
             if (rect.IsValid() && (!onlyIfSizeDifferent || rect.Size != Form.Canvas.Size))
@@ -1696,6 +1696,31 @@ namespace ShareX.ScreenCaptureLib
             }
 
             return null;
+        }
+
+        public Color GetColor(Point pos)
+        {
+            Bitmap bmpCanvas = Form.Canvas as Bitmap;
+
+            if (bmpCanvas != null)
+            {
+                Point position = CaptureHelpers.ScreenToClient(pos);
+                Point offset = CaptureHelpers.ScreenToClient(Form.CanvasRectangle.Location);
+                position.X -= offset.X;
+                position.Y -= offset.Y;
+
+                if (position.X.IsBetween(0, bmpCanvas.Width - 1) && position.Y.IsBetween(0, bmpCanvas.Height - 1))
+                {
+                    return bmpCanvas.GetPixel(position.X, position.Y);
+                }
+            }
+
+            return Color.Empty;
+        }
+
+        public Color GetCurrentColor()
+        {
+            return GetColor(InputManager.ClientMousePosition);
         }
 
         public void NewImage()

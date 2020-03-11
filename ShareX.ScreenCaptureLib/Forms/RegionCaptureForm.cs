@@ -64,26 +64,6 @@ namespace ShareX.ScreenCaptureLib
         public Point CurrentPosition { get; private set; }
         public Point PanningStrech = new Point();
 
-        public Color CurrentColor
-        {
-            get
-            {
-                Bitmap bmpCanvas = Canvas as Bitmap;
-
-                if (bmpCanvas != null)
-                {
-                    Point position = CaptureHelpers.ScreenToClient(CurrentPosition);
-
-                    if (position.X.IsBetween(0, bmpCanvas.Width - 1) && position.Y.IsBetween(0, bmpCanvas.Height - 1))
-                    {
-                        return bmpCanvas.GetPixel(position.X, position.Y);
-                    }
-                }
-
-                return Color.Empty;
-            }
-        }
-
         public SimpleWindowInfo SelectedWindow { get; private set; }
 
         public Vector2 CanvasCenterOffset { get; set; } = new Vector2(0f, 0f);
@@ -1041,7 +1021,7 @@ namespace ShareX.ScreenCaptureLib
             }
             else if (Mode == RegionCaptureMode.ScreenColorPicker || Options.UseCustomInfoText)
             {
-                Color color = CurrentColor;
+                Color color = ShapeManager.GetCurrentColor();
 
                 if (Mode != RegionCaptureMode.ScreenColorPicker && !string.IsNullOrEmpty(Options.CustomInfoText))
                 {
@@ -1187,7 +1167,7 @@ namespace ShareX.ScreenCaptureLib
 
                 if (Mode == RegionCaptureMode.ScreenColorPicker)
                 {
-                    using (Brush colorBrush = new SolidBrush(CurrentColor))
+                    using (Brush colorBrush = new SolidBrush(ShapeManager.GetCurrentColor()))
                     {
                         g.FillRectangle(colorBrush, colorRect);
                     }

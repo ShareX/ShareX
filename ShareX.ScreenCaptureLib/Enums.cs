@@ -286,6 +286,7 @@ namespace ShareX.ScreenCaptureLib
         DrawingImageScreen,
         DrawingSticker,
         DrawingCursor,
+        DrawingSmartEraser,
         EffectBlur,
         EffectPixelate,
         EffectHighlight,

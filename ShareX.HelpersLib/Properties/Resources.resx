@@ -1217,4 +1217,7 @@ Would you like to download and install it?</value>
   <data name="ObjectListView_ObjectListView_Value" xml:space="preserve">
     <value>Value</value>
   </data>
+  <data name="ShapeType_DrawingSmartEraser" xml:space="preserve">
+    <value>Smart eraser</value>
+  </data>
 </root>

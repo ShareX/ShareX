@@ -101,7 +101,7 @@ namespace ShareX.ScreenCaptureLib
                 {
                     PointInfo pointInfo = new PointInfo();
                     pointInfo.Position = form.CurrentPosition;
-                    pointInfo.Color = form.CurrentColor;
+                    pointInfo.Color = form.ShapeManager.GetCurrentColor();
                     return pointInfo;
                 }
             }
