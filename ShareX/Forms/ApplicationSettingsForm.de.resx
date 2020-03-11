@@ -235,7 +235,7 @@
     <value>Benutzername:</value>
   </data>
   <data name="cbRememberMainFormSize.Text" xml:space="preserve">
-    <value>Größte des Hauptfensters merken</value>
+    <value>Größe des Hauptfensters merken</value>
   </data>
   <data name="lblSaveImageSubFolderPattern.Text" xml:space="preserve">
     <value>Unterordnermuster:</value>
