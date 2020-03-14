@@ -794,13 +794,13 @@ namespace ShareX.HelpersLib
             return Range(source, startIndex, endIndex);
         }
 
-        public static Image CloneSafe(this Image img)
+        public static T CloneSafe<T>(this T obj) where T : class, ICloneable
         {
             try
             {
-                if (img != null)
+                if (obj != null)
                 {
-                    return (Image)img.Clone();
+                    return obj.Clone() as T;
                 }
             }
             catch (Exception e)
