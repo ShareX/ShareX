@@ -95,7 +95,7 @@ namespace ShareX.Setup
         public static string InnoSetupCompilerPath = @"C:\Program Files (x86)\Inno Setup 6\ISCC.exe";
         public static string FFmpeg32bit => Path.Combine(OutputDir, "ffmpeg.exe");
         public static string FFmpeg64bit => Path.Combine(OutputDir, "ffmpeg-x64.exe");
-        public static string MakeAppxPath = @"C:\Program Files (x86)\Windows Kits\10\bin\x64\makeappx.exe";
+        public static string MakeAppxPath = @"C:\Program Files (x86)\Windows Kits\10\bin\10.0.18362.0\x64\makeappx.exe";
 
         private static void Main(string[] args)
         {

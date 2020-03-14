@@ -63,6 +63,7 @@
             // 
             // ilvImages
             // 
+            this.ilvImages.AllowDrop = true;
             this.ilvImages.AllowDuplicateFileNames = true;
             this.ilvImages.AllowItemReorder = false;
             this.ilvImages.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;

@@ -64,24 +64,6 @@ namespace ShareX.ScreenCaptureLib
         public Point CurrentPosition { get; private set; }
         public Point PanningStrech = new Point();
 
-        public Color CurrentColor
-        {
-            get
-            {
-                if (bmpBackgroundImage != null)
-                {
-                    Point position = CaptureHelpers.ScreenToClient(CurrentPosition);
-
-                    if (position.X.IsBetween(0, bmpBackgroundImage.Width - 1) && position.Y.IsBetween(0, bmpBackgroundImage.Height - 1))
-                    {
-                        return bmpBackgroundImage.GetPixel(position.X, position.Y);
-                    }
-                }
-
-                return Color.Empty;
-            }
-        }
-
         public SimpleWindowInfo SelectedWindow { get; private set; }
 
         public Vector2 CanvasCenterOffset { get; set; } = new Vector2(0f, 0f);
@@ -103,7 +85,6 @@ namespace ShareX.ScreenCaptureLib
         private bool pause, isKeyAllowed, forceClose;
         private RectangleAnimation regionAnimation;
         private TextAnimation editorPanTipAnimation;
-        private Bitmap bmpBackgroundImage;
         private Cursor defaultCursor;
         private Color canvasBackgroundColor;
 
@@ -357,12 +338,6 @@ namespace ShareX.ScreenCaptureLib
             else
             {
                 backgroundBrush = new TextureBrush(Canvas) { WrapMode = WrapMode.Clamp };
-            }
-
-            if (Options.UseCustomInfoText || Mode == RegionCaptureMode.ScreenColorPicker)
-            {
-                if (bmpBackgroundImage != null) bmpBackgroundImage.Dispose();
-                bmpBackgroundImage = new Bitmap(Canvas);
             }
         }
 
@@ -1046,7 +1021,7 @@ namespace ShareX.ScreenCaptureLib
             }
             else if (Mode == RegionCaptureMode.ScreenColorPicker || Options.UseCustomInfoText)
             {
-                Color color = CurrentColor;
+                Color color = ShapeManager.GetCurrentColor();
 
                 if (Mode != RegionCaptureMode.ScreenColorPicker && !string.IsNullOrEmpty(Options.CustomInfoText))
                 {
@@ -1192,7 +1167,7 @@ namespace ShareX.ScreenCaptureLib
 
                 if (Mode == RegionCaptureMode.ScreenColorPicker)
                 {
-                    using (Brush colorBrush = new SolidBrush(CurrentColor))
+                    using (Brush colorBrush = new SolidBrush(ShapeManager.GetCurrentColor()))
                     {
                         g.FillRectangle(colorBrush, colorRect);
                     }
@@ -1444,7 +1419,6 @@ namespace ShareX.ScreenCaptureLib
             IsClosing = true;
 
             ShapeManager?.Dispose();
-            bmpBackgroundImage?.Dispose();
             backgroundBrush?.Dispose();
             backgroundHighlightBrush?.Dispose();
             borderPen?.Dispose();

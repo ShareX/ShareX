@@ -282,6 +282,9 @@ namespace ShareX.ScreenCaptureLib
                     case ShapeType.DrawingCursor:
                         img = Resources.stamp_cursor;
                         break;
+                    case ShapeType.DrawingSmartEraser:
+                        img = Resources.eraser;
+                        break;
                     case ShapeType.EffectBlur:
                         img = Resources.layer_shade;
                         break;

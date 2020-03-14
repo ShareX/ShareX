@@ -3115,6 +3115,15 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Smart eraser.
+        /// </summary>
+        internal static string ShapeType_DrawingSmartEraser {
+            get {
+                return ResourceManager.GetString("ShapeType_DrawingSmartEraser", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Speech balloon (S).
         /// </summary>
         internal static string ShapeType_DrawingSpeechBalloon {
