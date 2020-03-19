@@ -184,7 +184,7 @@
     <value>Couleur du texte</value>
   </data>
   <data name="tsmiSecondColor.Text" xml:space="preserve">
-    <value>Couleur secondaire du texte</value>
+    <value>Couleur secondaire du texte...</value>
   </data>
   <data name="cbUnderline.ToolTip" xml:space="preserve">
     <value>Souligner</value>

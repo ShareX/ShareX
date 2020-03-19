@@ -818,7 +818,7 @@ Voulez-vous la télécharger ?</value>
     <value>Titre de la fenêtre active</value>
   </data>
   <data name="ReplCodeMenuEntry_uln_User_login_name" xml:space="preserve">
-    <value>Nom de connexion de l'utilisateur </value>
+    <value>Identifiant de connexion de l'utilisateur</value>
   </data>
   <data name="ReplCodeMenuEntry_unix_Unix_timestamp" xml:space="preserve">
     <value>Heure Unix</value>
@@ -1154,7 +1154,7 @@ Voulez-vous la télécharger ?</value>
     <value>Autocollant</value>
   </data>
   <data name="ScrollingCaptureScrollTopMethod_All" xml:space="preserve">
-    <value>D'abord simule une pression sur la touche "Accueil" puis envoie un message pour défiler vers le haut.</value>
+    <value>Simule d'abord une pression sur la touche "Accueil" puis envoie un message pour défiler vers le haut</value>
   </data>
   <data name="ImageEditorStartMode_Maximized" xml:space="preserve">
     <value>Agrandi</value>
@@ -1167,5 +1167,26 @@ Voulez-vous la télécharger ?</value>
   </data>
   <data name="ScrollingCaptureScrollTopMethod_SendMessageTop" xml:space="preserve">
     <value>Envoyer un message défiler en haut</value>
+  </data>
+  <data name="ObjectListView_ObjectListView_Name" xml:space="preserve">
+    <value>Nom</value>
+  </data>
+  <data name="ObjectListView_ObjectListView_Value" xml:space="preserve">
+    <value>Valeur</value>
+  </data>
+  <data name="ObjectListView_ObjectListView_Copy_value" xml:space="preserve">
+    <value>Copier valeur</value>
+  </data>
+  <data name="ObjectListView_ObjectListView_Copy_name" xml:space="preserve">
+    <value>Copier nom</value>
+  </data>
+  <data name="ReplCodeMenuEntry_wy_Week_of_year" xml:space="preserve">
+    <value>Semaine de l'année</value>
+  </data>
+  <data name="RandomEmojiRepeatUsingN" xml:space="preserve">
+    <value>Emoji aléatoire. Répéter avec {n}</value>
+  </data>
+  <data name="ShapeType_DrawingSmartEraser" xml:space="preserve">
+    <value>Gomme intelligente</value>
   </data>
 </root>

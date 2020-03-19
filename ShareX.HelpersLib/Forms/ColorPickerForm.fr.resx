@@ -211,7 +211,7 @@
     <value>FF00FF00</value>
   </data>
   <data name="lblHue.Text" xml:space="preserve">
-    <value>*</value>
+    <value>°</value>
   </data>
   <data name="txtDecimal.Text" xml:space="preserve">
     <value>12345678</value>
@@ -251,5 +251,8 @@
   </data>
   <data name="btnScreenColorPicker.ToolTip" xml:space="preserve">
     <value>Sélectionner la couleur depuis l'écran</value>
+  </data>
+  <data name="lblName.Text" xml:space="preserve">
+    <value>Nom :</value>
   </data>
 </root>

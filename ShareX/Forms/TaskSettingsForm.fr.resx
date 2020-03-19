@@ -157,7 +157,7 @@
     <value>Capturer la zone client pendant la capture d'une fenêtre ou d'une fenêtre active</value>
   </data>
   <data name="tpRegionCapture.Text" xml:space="preserve">
-    <value>Capture d'une région </value>
+    <value>Capture d'une région</value>
   </data>
   <data name="tpScreenRecorder.Text" xml:space="preserve">
     <value>Enregistreur d'écran</value>
@@ -292,7 +292,7 @@
     <value>Hauteur :</value>
   </data>
   <data name="lblThumbnailName.Text" xml:space="preserve">
-    <value>Nom de la miniature</value>
+    <value>Nom de la miniature :</value>
   </data>
   <data name="lblThumbnailNamePreview.Text" xml:space="preserve">
     <value>Prévisualisation</value>
@@ -367,10 +367,10 @@
     <value>Après la capture...</value>
   </data>
   <data name="chkOverrideFTP.Text" xml:space="preserve">
-    <value>Remplacer le compte FTP par défaut :</value>
+    <value>Remplacer le compte FTP par défaut</value>
   </data>
   <data name="chkOverrideCustomUploader.Text" xml:space="preserve">
-    <value>Remplacer le service de mise en ligne personnalisé par défaut :</value>
+    <value>Remplacer le service de mise en ligne personnalisé par défaut</value>
   </data>
   <data name="btnCaptureCustomRegionSelectRectangle.Text" xml:space="preserve">
     <value>Séléctionner une région...</value>
@@ -516,18 +516,6 @@
   <data name="lblScreenshotDelay.Text" xml:space="preserve">
     <value>Délai de capture d'écran :</value>
   </data>
-  <data name="lblCaptureCustomRegionY.Text" xml:space="preserve">
-    <value>Y</value>
-  </data>
-  <data name="lblCaptureCustomRegionX.Text" xml:space="preserve">
-    <value>X</value>
-  </data>
-  <data name="btnRegionCaptureSnapSizesRemove.Text" xml:space="preserve">
-    <value>-</value>
-  </data>
-  <data name="btnRegionCaptureSnapSizesAdd.Text" xml:space="preserve">
-    <value>+</value>
-  </data>
   <data name="lblImageJPEGQualityHint.Text" xml:space="preserve">
     <value>0 - 100</value>
   </data>
@@ -562,7 +550,7 @@
     <value>Note : Vous pouvez activer/désactiver des actions depuis "Tâches après la capture -&gt; Effectuer des actions".</value>
   </data>
   <data name="lblImagePNGBitDepth.Text" xml:space="preserve">
-    <value>Profondeur de bits PNG</value>
+    <value>Profondeur de bits PNG :</value>
   </data>
   <data name="cbScreenRecordTwoPassEncoding.Text" xml:space="preserve">
     <value>Enregistrer en utilisant un encodage sans perte puis appliquer les options d'encodage de l'utilisateur</value>
