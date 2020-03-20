@@ -269,7 +269,7 @@ Veuillez sélectionner un raccourci différent ou quitter l'application en confl
     <value>X: {0}, Y : {1}, Largeur : {2}, Hauteur : {3}</value>
   </data>
   <data name="UploadManager_IsUploadConfirmed_Don_t_show_this_message_again_" xml:space="preserve">
-    <value>Ne plus afficher ce message</value>
+    <value>Ne plus afficher ce message.</value>
   </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_Task___0_" xml:space="preserve">
     <value>Tâche : {0}</value>
@@ -521,12 +521,6 @@ Clique de la molette pour fermer</value>
   <data name="SwitchToListView" xml:space="preserve">
     <value>Basculer vers la vue liste</value>
   </data>
-  <data name="HideThumbnailTitle" xml:space="preserve">
-    <value>Cacher le titre des miniatures</value>
-  </data>
-  <data name="ShowThumbnailTitle" xml:space="preserve">
-    <value>Afficher le titre des miniatures</value>
-  </data>
   <data name="UploadManager_ShowShortenURLDialog_ShortenURL" xml:space="preserve">
     <value>Raccourcir URL</value>
   </data>
@@ -588,5 +582,8 @@ Voulez-vous redémarrer ShareX ?</value>
   </data>
   <data name="ApplicationSettingsForm_btnResetSettings_Click_WouldYouLikeToResetShareXSettings" xml:space="preserve">
     <value>Voulez-vous réinitialiser les paramètres de ShareX ?</value>
+  </data>
+  <data name="ThisFeatureWillNotWorkWhenDisableUploadOptionIsEnabled" xml:space="preserve">
+    <value>Cette fonctionnalité n'est pas opérationnelle quand l'option "DisableUpload" est activée !</value>
   </data>
 </root>

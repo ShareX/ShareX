@@ -132,4 +132,7 @@
   <data name="tslSize.Text" xml:space="preserve">
     <value>Taille :</value>
   </data>
+  <data name="tsnudSize.Text" xml:space="preserve">
+    <value>64</value>
+  </data>
 </root>

@@ -780,28 +780,70 @@
   <data name="tsmiSwitchTaskViewMode.Text" xml:space="preserve">
     <value>Basculer vers la vue miniatures</value>
   </data>
-  <data name="tsmiHideThumbnailTitle.Text" xml:space="preserve">
-    <value>Cacher le titre des miniatures</value>
-  </data>
-  <data name="pbTwitterButton.ToolTip" xml:space="preserve">
-    <value>Suivez-nous sur Twitter</value>
-  </data>
-  <data name="pbDiscordButton.ToolTip" xml:space="preserve">
-    <value>Rejoignez notre serveur Discord</value>
-  </data>
-  <data name="pbSocialHideButton.ToolTip" xml:space="preserve">
-    <value>Cacher les boutons de réseaux sociaux</value>
-  </data>
-  <data name="pbBitcoinButton.ToolTip" xml:space="preserve">
-    <value>Soutenez-nous en utilisant des cryptomonnaies</value>
-  </data>
-  <data name="pbPatreonButton.ToolTip" xml:space="preserve">
-    <value>Supportez-nous sur Patreon</value>
-  </data>
   <data name="tsmiScreenshotDelay0.Text" xml:space="preserve">
     <value>Aucun délai</value>
   </data>
   <data name="tsmiTrayScreenshotDelay0.Text" xml:space="preserve">
     <value>Aucun délai</value>
+  </data>
+  <data name="tsbTwitter.Text" xml:space="preserve">
+    <value>Twitter</value>
+  </data>
+  <data name="tsbPatreon.Text" xml:space="preserve">
+    <value>Patreon</value>
+  </data>
+  <data name="tsbBitcoin.Text" xml:space="preserve">
+    <value>Bitcoin</value>
+  </data>
+  <data name="tsbGitHub.Text" xml:space="preserve">
+    <value>GitHub</value>
+  </data>
+  <data name="tsbBitcoin.ToolTipText" xml:space="preserve">
+    <value>Nous soutenir en utilisant des cryptomonnaies</value>
+  </data>
+  <data name="tsbDiscord.Text" xml:space="preserve">
+    <value>Discord</value>
+  </data>
+  <data name="tsbTwitter.ToolTipText" xml:space="preserve">
+    <value>Suivez notre compte Twitter</value>
+  </data>
+  <data name="tsbPatreon.ToolTipText" xml:space="preserve">
+    <value>Nous soutenir sur Patreon</value>
+  </data>
+  <data name="tsmiThumbnailTitleTop.Text" xml:space="preserve">
+    <value>Haut</value>
+  </data>
+  <data name="tsmiThumbnailTitleBottom.Text" xml:space="preserve">
+    <value>Bas</value>
+  </data>
+  <data name="tsbDiscord.ToolTipText" xml:space="preserve">
+    <value>Rejoindre notre serveur Discord</value>
+  </data>
+  <data name="tsbGitHub.ToolTipText" xml:space="preserve">
+    <value>Mettre notre dépôt Github en favoris</value>
+  </data>
+  <data name="tsmiThumbnailTitleShow.Text" xml:space="preserve">
+    <value>Afficher</value>
+  </data>
+  <data name="tsmiThumbnailTitleHide.Text" xml:space="preserve">
+    <value>Cacher</value>
+  </data>
+  <data name="tsmiThumbnailTitle.Text" xml:space="preserve">
+    <value>Titre de la miniature</value>
+  </data>
+  <data name="tsmiRunAction.Text" xml:space="preserve">
+    <value>Exécuter action</value>
+  </data>
+  <data name="tsmiVideoConverter.Text" xml:space="preserve">
+    <value>Convertisseur vidéo...</value>
+  </data>
+  <data name="tsmiTrayVideoConverter.Text" xml:space="preserve">
+    <value>Convertisseur vidéo...</value>
+  </data>
+  <data name="tsmiImageSplitter.Text" xml:space="preserve">
+    <value>Découpeur d'image...</value>
+  </data>
+  <data name="tsmiTrayImageSplitter.Text" xml:space="preserve">
+    <value>Découpeur d'image...</value>
   </data>
 </root>
