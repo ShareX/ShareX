@@ -186,6 +186,9 @@
     <EmbeddedResource Include="Forms\ImageSplitterForm.es-MX.resx">
       <DependentUpon>ImageSplitterForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ImageSplitterForm.fr.resx">
+      <DependentUpon>ImageSplitterForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ImageSplitterForm.resx">
       <DependentUpon>ImageSplitterForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -233,6 +236,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ImageThumbnailerForm.zh-TW.resx">
       <DependentUpon>ImageThumbnailerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\VideoConverterForm.fr.resx">
+      <DependentUpon>VideoConverterForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\VideoConverterForm.resx">
       <DependentUpon>VideoConverterForm.cs</DependentUpon>
