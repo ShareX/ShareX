@@ -143,7 +143,7 @@ Une valeur élevée signifie une mauvaise qualité d'image mais un fichier lége
     <value>Copier</value>
   </data>
   <data name="tbAACBitrate.ToolTip" xml:space="preserve">
-    <value>Par défaut : 128k</value>
+    <value>Par défaut : 128k.</value>
   </data>
   <data name="btnDownload.Text" xml:space="preserve">
     <value>Télécharger</value>
@@ -211,10 +211,10 @@ Pour un encodage en temps réel (ex : enregistrement d'écran), le préréglage 
     <value>Installe la source vidéo/audio « screen-capture-recorder » et « virtual-audio-capturer ».</value>
   </data>
   <data name="cbGIFStatsMode.ToolTip" xml:space="preserve">
-    <value>Par défaut : full</value>
+    <value>Par défaut : full.</value>
   </data>
   <data name="cbGIFDither.ToolTip" xml:space="preserve">
-    <value>Par défaut : sierra2_4a</value>
+    <value>Par défaut : sierra2_4a.</value>
   </data>
   <data name="cbOverrideFFmpegPath.Text" xml:space="preserve">
     <value>Utiliser un chemin personnalisé</value>
@@ -288,5 +288,14 @@ Autrement, il ne pourra pas suivre l'enregistrement : il y aura donc beaucoup de
   </data>
   <data name="tbAMF.Text" xml:space="preserve">
     <value>AMF</value>
+  </data>
+  <data name="tbOpusBitrate.ToolTip" xml:space="preserve">
+    <value>Par défaut : 128k.</value>
+  </data>
+  <data name="lblOpusQuality.Text" xml:space="preserve">
+    <value>Débit :</value>
+  </data>
+  <data name="tpOpus.Text" xml:space="preserve">
+    <value>Opus</value>
   </data>
 </root>

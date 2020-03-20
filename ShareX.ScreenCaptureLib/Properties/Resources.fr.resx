@@ -123,9 +123,6 @@
   <data name="FFmpegOptionsForm_buttonFFmpegBrowse_Click_Browse_for_ffmpeg_exe" xml:space="preserve">
     <value>Chercher ffmpeg.exe</value>
   </data>
-  <data name="FFmpegHelper_Record_FFmpeg_error" xml:space="preserve">
-    <value>Erreur FFmpeg</value>
-  </data>
   <data name="RectangleRegion_GetRulerText_Ruler_info" xml:space="preserve">
     <value>X : {0} / Y : {1} / X2 : {2} / Y2 : {3}
 Largeur : {4} px / Hauteur : {5} px
@@ -138,7 +135,7 @@ Distance : {6:0.00} px / Angle : {7:0.00}°</value>
     <value>Qualité :</value>
   </data>
   <data name="BaseRegionForm_InitializeComponent_Region_capture" xml:space="preserve">
-    <value>Capturer une région </value>
+    <value>Capturer une région</value>
   </data>
   <data name="FFmpegOptionsForm_DownloaderForm_InstallRequested_Successfully_downloaded_FFmpeg_" xml:space="preserve">
     <value>FFmpeg téléchargé avec succès.</value>
@@ -237,10 +234,10 @@ Distance : {6:0.00} px / Angle : {7:0.00}°</value>
     <value>Modifier</value>
   </data>
   <data name="ShapeManager_CreateToolbar_SaveImage" xml:space="preserve">
-    <value>Enregistrer l'image...</value>
+    <value>Enregistrer l'image (Ctrl + S)</value>
   </data>
   <data name="ShapeManager_CreateToolbar_SaveImageAs" xml:space="preserve">
-    <value>Enregistrer l'image en tant que...</value>
+    <value>Enregistrer l'image en tant que... (Ctrl + Shift + S)</value>
   </data>
   <data name="ShapeManager_CreateToolbar_Delete" xml:space="preserve">
     <value>Supprimer</value>
@@ -270,7 +267,7 @@ Distance : {6:0.00} px / Angle : {7:0.00}°</value>
     <value>Capturer des régions</value>
   </data>
   <data name="ShapeManager_CreateToolbar_PrintImage" xml:space="preserve">
-    <value>Imprimer une image ...</value>
+    <value>Imprimer une image ... (Ctrl + P)</value>
   </data>
   <data name="ShapeManager_CreateContextMenu_Capture" xml:space="preserve">
     <value>Capturer</value>
@@ -336,7 +333,7 @@ Distance : {6:0.00} px / Angle : {7:0.00}°</value>
     <value>Couleur de l'ombre portée...</value>
   </data>
   <data name="ShapeManager_CreateToolbar_EditorStartMode" xml:space="preserve">
-    <value>Mode de démarrage de l'éditeur</value>
+    <value>Mode de démarrage de l'éditeur :</value>
   </data>
   <data name="ShapeManager_CreateToolbar_FlipHorizontal" xml:space="preserve">
     <value>Miroir horizontal</value>

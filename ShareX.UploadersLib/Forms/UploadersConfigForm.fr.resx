@@ -303,17 +303,11 @@ Utiliser une bibliothèque chiffrée désactive le partage.</value>
   <data name="grpSeafileShareSettings.Text" xml:space="preserve">
     <value>Paramètres de partage Seafile</value>
   </data>
-  <data name="lblPomfUploaders.Text" xml:space="preserve">
-    <value>Services de mise en ligne :</value>
-  </data>
   <data name="lblPomfUploadURL.Text" xml:space="preserve">
     <value>URL de mise en ligne :</value>
   </data>
   <data name="lblPomfResultURL.Text" xml:space="preserve">
     <value>URL du résultat :</value>
-  </data>
-  <data name="btnPomfTest.Text" xml:space="preserve">
-    <value>Tester tout</value>
   </data>
   <data name="lblLambdaUploadURL.Text" xml:space="preserve">
     <value>Lien URL :</value>
@@ -493,7 +487,7 @@ Utiliser une bibliothèque chiffrée désactive le partage.</value>
     <value>Chemin de mise en ligne :</value>
   </data>
   <data name="cbDropboxAutoCreateShareableLink.Text" xml:space="preserve">
-    <value>Créer une URL partageable :</value>
+    <value>Créer un lien partageable</value>
   </data>
   <data name="tpImageUploaders.Text" xml:space="preserve">
     <value>Services de mise en ligne d'images</value>
@@ -516,14 +510,8 @@ Utiliser une bibliothèque chiffrée désactive le partage.</value>
   <data name="cbCheveretoDirectURL.Text" xml:space="preserve">
     <value>URL directe</value>
   </data>
-  <data name="lblCheveretoUploaders.Text" xml:space="preserve">
-    <value>Services de mise en ligne :</value>
-  </data>
   <data name="lblCheveretoUploadURLExample.Text" xml:space="preserve">
     <value>Exemple : http://exemple.com/api/1/upload</value>
-  </data>
-  <data name="btnCheveretoTestAll.Text" xml:space="preserve">
-    <value>Tester tout</value>
   </data>
   <data name="btnPicasaRefreshAlbumList.Text" xml:space="preserve">
     <value>Rafraîchir la liste des albums</value>
@@ -572,18 +560,6 @@ Utiliser une bibliothèque chiffrée désactive le partage.</value>
   </data>
   <data name="gbPhotobucketAlbumPath.Text" xml:space="preserve">
     <value>Mettre en ligne les images vers</value>
-  </data>
-  <data name="btnTinyPicOpenMyImages.Text" xml:space="preserve">
-    <value>Ouvrir ma page d'images...</value>
-  </data>
-  <data name="lblTinyPicUsername.Text" xml:space="preserve">
-    <value>Adresse e-mail</value>
-  </data>
-  <data name="lblTinyPicPassword.Text" xml:space="preserve">
-    <value>Mot de passe :</value>
-  </data>
-  <data name="btnTinyPicLogin.Text" xml:space="preserve">
-    <value>Connexion</value>
   </data>
   <data name="lblImageShackPassword.Text" xml:space="preserve">
     <value>Mot de passe :</value>
@@ -766,7 +742,7 @@ Utiliser une bibliothèque chiffrée désactive le partage.</value>
     <value>Ajouter le répertoire distant au chemin de l'URL</value>
   </data>
   <data name="cbFTPRemoveFileExtension.Text" xml:space="preserve">
-    <value>Supprimer l'extension de fichier du chemin de l'URL</value>
+    <value>Retirer l'extension de fichier du chemin de l'URL</value>
   </data>
   <data name="lblFTPURLPath.Text" xml:space="preserve">
     <value>Chemin de l'URL :</value>
@@ -844,7 +820,7 @@ Utiliser une bibliothèque chiffrée désactive le partage.</value>
     <value>Région :</value>
   </data>
   <data name="cbGfycatIsPublic.Text" xml:space="preserve">
-    <value>Est-ce une mise en ligne publique ?</value>
+    <value>Mise en ligne publique</value>
   </data>
   <data name="lblGistCustomURLExample.Text" xml:space="preserve">
     <value>Exemple : https://api.github.com</value>
@@ -1236,7 +1212,7 @@ par Backblaze B2.</value>
     <value>uPaste</value>
   </data>
   <data name="lblTeknikUploadAPIUrl.Text" xml:space="preserve">
-    <value>URL de l'API de mise en ligne</value>
+    <value>URL de l'API de mise en ligne :</value>
   </data>
   <data name="lblAzureStorageUploadPath.Text" xml:space="preserve">
     <value>Chemin de mise en ligne :</value>
@@ -1251,7 +1227,7 @@ par Backblaze B2.</value>
     <value>Prévisualisation de l'URL :</value>
   </data>
   <data name="lblB2UrlPreview.Text" xml:space="preserve">
-    <value>Prévisualisation de l'URL :</value>
+    <value>Prévisualisation</value>
   </data>
   <data name="lblAzureStorageURLPreviewLabel.Text" xml:space="preserve">
     <value>Prévisualisation de l'URL :</value>
@@ -1337,5 +1313,8 @@ quand vous avez créé la clé d'application.</value>
   </data>
   <data name="txtB2UploadPath.ToolTip" xml:space="preserve">
     <value>Le chemin vers votre fichier. Utilise le format de modèle de nom.</value>
+  </data>
+  <data name="lblB2UrlPreviewLabel.Text" xml:space="preserve">
+    <value>Prévisualisation de l'URL :</value>
   </data>
 </root>
