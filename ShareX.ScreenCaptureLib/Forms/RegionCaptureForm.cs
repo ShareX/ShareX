@@ -71,6 +71,7 @@ namespace ShareX.ScreenCaptureLib
         internal ShapeManager ShapeManager { get; private set; }
         internal bool IsClosing { get; private set; }
 
+        internal Bitmap DimmedCanvas;
         internal Image CustomNodeImage = Resources.CircleNode;
         internal int ToolbarHeight;
 
@@ -324,13 +325,15 @@ namespace ShareX.ScreenCaptureLib
             }
             else if (Options.UseDimming)
             {
-                using (Bitmap darkBackground = (Bitmap)Canvas.Clone())
-                using (Graphics g = Graphics.FromImage(darkBackground))
+                DimmedCanvas?.Dispose();
+                DimmedCanvas = (Bitmap)Canvas.Clone();
+                
+                using (Graphics g = Graphics.FromImage(DimmedCanvas))
                 using (Brush brush = new SolidBrush(Color.FromArgb(30, Color.Black)))
                 {
-                    g.FillRectangle(brush, 0, 0, darkBackground.Width, darkBackground.Height);
+                    g.FillRectangle(brush, 0, 0, DimmedCanvas.Width, DimmedCanvas.Height);
 
-                    backgroundBrush = new TextureBrush(darkBackground) { WrapMode = WrapMode.Clamp };
+                    backgroundBrush = new TextureBrush(DimmedCanvas) { WrapMode = WrapMode.Clamp };
                 }
 
                 backgroundHighlightBrush = new TextureBrush(Canvas) { WrapMode = WrapMode.Clamp };
@@ -1450,6 +1453,7 @@ namespace ShareX.ScreenCaptureLib
             }
 
             regionDrawPath?.Dispose();
+            DimmedCanvas?.Dispose();
             Canvas?.Dispose();
 
             base.Dispose(disposing);

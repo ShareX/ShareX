@@ -1698,29 +1698,32 @@ namespace ShareX.ScreenCaptureLib
             return null;
         }
 
-        public Color GetColor(Point pos)
+        public Color GetColor(Bitmap bmp, Point pos)
         {
-            Bitmap bmpCanvas = Form.Canvas as Bitmap;
-
-            if (bmpCanvas != null)
+            if (bmp != null)
             {
                 Point position = CaptureHelpers.ScreenToClient(pos);
                 Point offset = CaptureHelpers.ScreenToClient(Form.CanvasRectangle.Location);
                 position.X -= offset.X;
                 position.Y -= offset.Y;
 
-                if (position.X.IsBetween(0, bmpCanvas.Width - 1) && position.Y.IsBetween(0, bmpCanvas.Height - 1))
+                if (position.X.IsBetween(0, bmp.Width - 1) && position.Y.IsBetween(0, bmp.Height - 1))
                 {
-                    return bmpCanvas.GetPixel(position.X, position.Y);
+                    return bmp.GetPixel(position.X, position.Y);
                 }
             }
 
             return Color.Empty;
         }
 
+        public Color GetCurrentColor(Bitmap bmp)
+        {
+            return GetColor(bmp, InputManager.ClientMousePosition);
+        }
+
         public Color GetCurrentColor()
         {
-            return GetColor(InputManager.ClientMousePosition);
+            return GetCurrentColor(Form.Canvas);
         }
 
         public void NewImage()

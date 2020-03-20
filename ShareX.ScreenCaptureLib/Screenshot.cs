@@ -111,7 +111,8 @@ namespace ShareX.ScreenCaptureLib
 
         private Bitmap CaptureRectangleNative(Rectangle rect, bool captureCursor = false)
         {
-            return CaptureRectangleNative(NativeMethods.GetDesktopWindow(), rect, captureCursor);
+            IntPtr handle = NativeMethods.GetDesktopWindow();
+            return CaptureRectangleNative(handle, rect, captureCursor);
         }
 
         private Bitmap CaptureRectangleNative(IntPtr handle, Rectangle rect, bool captureCursor = false)
