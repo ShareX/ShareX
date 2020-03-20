@@ -575,7 +575,7 @@ namespace ShareX
 
             if (Info.TaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.AddImageEffects))
             {
-                Image = TaskHelpers.AddImageEffects(Image, Info.TaskSettings.ImageSettingsReference);
+                Image = TaskHelpers.AddImageEffects((Bitmap)Image, Info.TaskSettings.ImageSettingsReference);
 
                 if (Image == null)
                 {
@@ -586,7 +586,7 @@ namespace ShareX
 
             if (Info.TaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.AnnotateImage))
             {
-                Image = TaskHelpers.AnnotateImage(Image, null, Info.TaskSettings, true);
+                Image = TaskHelpers.AnnotateImage((Bitmap)Image, null, Info.TaskSettings, true);
 
                 if (Image == null)
                 {

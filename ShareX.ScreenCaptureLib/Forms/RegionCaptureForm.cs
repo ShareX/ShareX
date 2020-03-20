@@ -48,7 +48,7 @@ namespace ShareX.ScreenCaptureLib
 
         public RegionCaptureOptions Options { get; set; }
         public Rectangle ClientArea { get; private set; }
-        public Image Canvas { get; private set; }
+        public Bitmap Canvas { get; private set; }
         public Rectangle CanvasRectangle { get; internal set; }
         public RegionResult Result { get; private set; }
         public int FPS { get; private set; }
@@ -88,7 +88,7 @@ namespace ShareX.ScreenCaptureLib
         private Cursor defaultCursor;
         private Color canvasBackgroundColor;
 
-        public RegionCaptureForm(RegionCaptureMode mode, RegionCaptureOptions options, Image canvas = null)
+        public RegionCaptureForm(RegionCaptureMode mode, RegionCaptureOptions options, Bitmap canvas = null)
         {
             Mode = mode;
             Options = options;
@@ -264,7 +264,7 @@ namespace ShareX.ScreenCaptureLib
             Text = text;
         }
 
-        private void Prepare(Image canvas = null)
+        private void Prepare(Bitmap canvas = null)
         {
             ShapeManager = new ShapeManager(this);
             ShapeManager.WindowCaptureMode = !IsEditorMode && Options.DetectWindows;
@@ -286,7 +286,7 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        internal void InitBackground(Image canvas, bool centerCanvas = true)
+        internal void InitBackground(Bitmap canvas, bool centerCanvas = true)
         {
             if (Canvas != null) Canvas.Dispose();
             if (backgroundBrush != null) backgroundBrush.Dispose();

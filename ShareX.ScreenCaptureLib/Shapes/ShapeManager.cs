@@ -1659,9 +1659,9 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        public void UpdateCanvas(Image img, bool centerCanvas = true)
+        public void UpdateCanvas(Bitmap canvas, bool centerCanvas = true)
         {
-            Form.InitBackground(img, centerCanvas);
+            Form.InitBackground(canvas, centerCanvas);
 
             foreach (BaseEffectShape effect in EffectShapes)
             {
@@ -1673,16 +1673,16 @@ namespace ShareX.ScreenCaptureLib
 
         public void CropArea(Rectangle rect)
         {
-            Image img = CropImage(rect, true);
+            Bitmap bmp = CropImage(rect, true);
 
-            if (img != null)
+            if (bmp != null)
             {
                 MoveAll(Form.CanvasRectangle.X - rect.X, Form.CanvasRectangle.Y - rect.Y);
-                UpdateCanvas(img);
+                UpdateCanvas(bmp);
             }
         }
 
-        public Image CropImage(Rectangle rect, bool onlyIfSizeDifferent = false)
+        public Bitmap CropImage(Rectangle rect, bool onlyIfSizeDifferent = false)
         {
             rect = CaptureHelpers.ScreenToClient(rect);
             Point offset = CaptureHelpers.ScreenToClient(Form.CanvasRectangle.Location);
@@ -1692,7 +1692,7 @@ namespace ShareX.ScreenCaptureLib
 
             if (rect.IsValid() && (!onlyIfSizeDifferent || rect.Size != Form.Canvas.Size))
             {
-                return ImageHelpers.CropBitmap((Bitmap)Form.Canvas, rect);
+                return ImageHelpers.CropBitmap(Form.Canvas, rect);
             }
 
             return null;
@@ -1727,16 +1727,16 @@ namespace ShareX.ScreenCaptureLib
         {
             Form.Pause();
 
-            Image img = NewImageForm.CreateNewImage(Options, Form);
+            Bitmap bmp = NewImageForm.CreateNewImage(Options, Form);
 
             Form.Resume();
 
-            if (img != null)
+            if (bmp != null)
             {
                 Form.ImageFilePath = "";
                 DeleteAllShapes();
                 UpdateMenu();
-                UpdateCanvas(img);
+                UpdateCanvas(bmp);
             }
         }
 
@@ -1755,14 +1755,14 @@ namespace ShareX.ScreenCaptureLib
         {
             if (!string.IsNullOrEmpty(filePath))
             {
-                Image img = ImageHelpers.LoadImage(filePath);
+                Bitmap bmp = (Bitmap)ImageHelpers.LoadImage(filePath);
 
-                if (img != null)
+                if (bmp != null)
                 {
                     Form.ImageFilePath = filePath;
                     DeleteAllShapes();
                     UpdateMenu();
-                    UpdateCanvas(img);
+                    UpdateCanvas(bmp);
                 }
             }
         }
@@ -1862,11 +1862,11 @@ namespace ShareX.ScreenCaptureLib
                     if (size != oldSize)
                     {
                         InterpolationMode interpolationMode = GetInterpolationMode(Options.ImageEditorResizeInterpolationMode);
-                        Image img = ImageHelpers.ResizeImage(Form.Canvas, size, interpolationMode);
+                        Bitmap bmp = (Bitmap)ImageHelpers.ResizeImage(Form.Canvas, size, interpolationMode);
 
-                        if (img != null)
+                        if (bmp != null)
                         {
-                            UpdateCanvas(img);
+                            UpdateCanvas(bmp);
                         }
                     }
                 }
@@ -1902,12 +1902,12 @@ namespace ShareX.ScreenCaptureLib
                 if (canvasSizeForm.ShowDialog(Form) == DialogResult.OK)
                 {
                     Padding canvas = canvasSizeForm.Canvas;
-                    Image img = ImageHelpers.AddCanvas(Form.Canvas, canvas, Options.EditorCanvasColor);
+                    Bitmap bmp = (Bitmap)ImageHelpers.AddCanvas(Form.Canvas, canvas, Options.EditorCanvasColor);
 
-                    if (img != null)
+                    if (bmp != null)
                     {
                         MoveAll(canvas.Left, canvas.Top);
-                        UpdateCanvas(img);
+                        UpdateCanvas(bmp);
                     }
                 }
             }
@@ -1930,12 +1930,12 @@ namespace ShareX.ScreenCaptureLib
 
         private void ChangeCanvasSize(Padding margin, Color canvasColor)
         {
-            Image img = ImageHelpers.AddCanvas(Form.Canvas, margin, canvasColor);
+            Bitmap bmp = (Bitmap)ImageHelpers.AddCanvas(Form.Canvas, margin, canvasColor);
 
-            if (img != null)
+            if (bmp != null)
             {
                 Form.CanvasRectangle = Form.CanvasRectangle.LocationOffset(-margin.Left, -margin.Top);
-                UpdateCanvas(img, false);
+                UpdateCanvas(bmp, false);
             }
         }
 
@@ -1952,7 +1952,7 @@ namespace ShareX.ScreenCaptureLib
         private void AutoCropImage()
         {
             Rectangle source = new Rectangle(0, 0, Form.Canvas.Width, Form.Canvas.Height);
-            Rectangle rect = ImageHelpers.FindAutoCropRectangle((Bitmap)Form.Canvas);
+            Rectangle rect = ImageHelpers.FindAutoCropRectangle(Form.Canvas);
 
             if (source != rect && rect.X >= 0 && rect.Y >= 0 && rect.Width > 0 && rect.Height > 0)
             {
@@ -1967,9 +1967,9 @@ namespace ShareX.ScreenCaptureLib
 
         private void RotateImage(RotateFlipType type)
         {
-            Image img = (Image)Form.Canvas.Clone();
-            img.RotateFlip(type);
-            UpdateCanvas(img);
+            Bitmap bmp = (Bitmap)Form.Canvas.Clone();
+            bmp.RotateFlip(type);
+            UpdateCanvas(bmp);
         }
 
         private void AddImageEffects()
@@ -1990,11 +1990,11 @@ namespace ShareX.ScreenCaptureLib
 
                     if (preset != null)
                     {
-                        Image img = preset.ApplyEffects(Form.Canvas);
+                        Bitmap bmp = preset.ApplyEffects(Form.Canvas);
 
-                        if (img != null)
+                        if (bmp != null)
                         {
-                            UpdateCanvas(img);
+                            UpdateCanvas(bmp);
                         }
                     }
                 }
@@ -2011,7 +2011,7 @@ namespace ShareX.ScreenCaptureLib
             {
                 openScreenColorPicker = () =>
                 {
-                    using (Image canvas = Form.Canvas.CloneSafe())
+                    using (Bitmap canvas = Form.Canvas.CloneSafe())
                     {
                         return RegionCaptureTasks.GetPointInfo(Options, canvas);
                     }

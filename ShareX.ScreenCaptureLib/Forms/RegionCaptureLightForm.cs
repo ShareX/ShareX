@@ -49,7 +49,7 @@ namespace ShareX.ScreenCaptureLib
             SelectionRectangle.Width, SelectionRectangle.Height);
 
         private Timer timer;
-        private Image backgroundImage;
+        private Bitmap backgroundImage;
         private TextureBrush backgroundBrush;
         private Pen borderDotPen, borderDotPen2;
         private Point currentPosition, positionOnClick;

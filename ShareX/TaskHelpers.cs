@@ -570,13 +570,13 @@ namespace ShareX
             }
         }
 
-        public static Image AddImageEffects(Image img, TaskSettingsImage taskSettingsImage)
+        public static Bitmap AddImageEffects(Bitmap bmp, TaskSettingsImage taskSettingsImage)
         {
-            if (!img.PixelFormat.HasFlag(PixelFormat.Indexed))
+            if (bmp != null && !bmp.PixelFormat.HasFlag(PixelFormat.Indexed))
             {
                 if (taskSettingsImage.ShowImageEffectsWindowAfterCapture)
                 {
-                    using (ImageEffectsForm imageEffectsForm = new ImageEffectsForm(img, taskSettingsImage.ImageEffectPresets,
+                    using (ImageEffectsForm imageEffectsForm = new ImageEffectsForm(bmp, taskSettingsImage.ImageEffectPresets,
                         taskSettingsImage.SelectedImageEffectPreset))
                     {
                         imageEffectsForm.ShowDialog();
@@ -586,14 +586,14 @@ namespace ShareX
 
                 if (taskSettingsImage.ImageEffectPresets.IsValidIndex(taskSettingsImage.SelectedImageEffectPreset))
                 {
-                    using (img)
+                    using (bmp)
                     {
-                        return taskSettingsImage.ImageEffectPresets[taskSettingsImage.SelectedImageEffectPreset].ApplyEffects(img);
+                        return taskSettingsImage.ImageEffectPresets[taskSettingsImage.SelectedImageEffectPreset].ApplyEffects(bmp);
                     }
                 }
             }
 
-            return img;
+            return bmp;
         }
 
         public static void AddDefaultExternalPrograms(TaskSettings taskSettings)
@@ -903,9 +903,9 @@ namespace ShareX
             {
                 if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
-                Image img = ImageHelpers.LoadImage(filePath);
+                Bitmap bmp = (Bitmap)ImageHelpers.LoadImage(filePath);
 
-                AnnotateImageAsync(img, filePath, taskSettings);
+                AnnotateImageAsync(bmp, filePath, taskSettings);
             }
             else
             {
@@ -913,36 +913,36 @@ namespace ShareX
             }
         }
 
-        public static void AnnotateImageAsync(Image img, string filePath, TaskSettings taskSettings)
+        public static void AnnotateImageAsync(Bitmap bmp, string filePath, TaskSettings taskSettings)
         {
             ThreadWorker worker = new ThreadWorker();
 
             worker.DoWork += () =>
             {
-                img = AnnotateImage(img, filePath, taskSettings);
+                bmp = AnnotateImage(bmp, filePath, taskSettings);
             };
 
             worker.Completed += () =>
             {
-                if (img != null)
+                if (bmp != null)
                 {
-                    UploadManager.RunImageTask(img, taskSettings);
+                    UploadManager.RunImageTask(bmp, taskSettings);
                 }
             };
 
             worker.Start(ApartmentState.STA);
         }
 
-        public static Image AnnotateImage(Image img, string filePath, TaskSettings taskSettings, bool taskMode = false)
+        public static Bitmap AnnotateImage(Bitmap bmp, string filePath, TaskSettings taskSettings, bool taskMode = false)
         {
-            if (img != null)
+            if (bmp != null)
             {
-                using (img)
+                using (bmp)
                 {
                     RegionCaptureMode mode = taskMode ? RegionCaptureMode.TaskEditor : RegionCaptureMode.Editor;
                     RegionCaptureOptions options = taskSettings.CaptureSettingsReference.SurfaceOptions;
 
-                    using (RegionCaptureForm form = new RegionCaptureForm(mode, options, img))
+                    using (RegionCaptureForm form = new RegionCaptureForm(mode, options, bmp))
                     {
                         form.ImageFilePath = filePath;
 
@@ -1011,10 +1011,10 @@ namespace ShareX
                                 return null;
                             case RegionResult.Region: // Enter
                             case RegionResult.AnnotateRunAfterCaptureTasks:
-                                return form.GetResultImage();
+                                return (Bitmap)form.GetResultImage();
                             case RegionResult.Fullscreen: // Space or right click
                             case RegionResult.AnnotateContinueTask:
-                                return (Image)form.Canvas.Clone();
+                                return (Bitmap)form.Canvas.Clone();
                         }
                     }
                 }
@@ -1031,17 +1031,17 @@ namespace ShareX
 
             if (!string.IsNullOrEmpty(filePath))
             {
-                Image img = ImageHelpers.LoadImage(filePath);
+                Bitmap bmp = (Bitmap)ImageHelpers.LoadImage(filePath);
 
-                if (img != null)
+                if (bmp != null)
                 {
-                    if (img.PixelFormat.HasFlag(PixelFormat.Indexed))
+                    if (bmp.PixelFormat.HasFlag(PixelFormat.Indexed))
                     {
-                        MessageBox.Show("Unsupported pixel format: " + img.PixelFormat, "ShareX - Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Unsupported pixel format: " + bmp.PixelFormat, "ShareX - Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     else
                     {
-                        using (ImageEffectsForm imageEffectsForm = new ImageEffectsForm(img, taskSettings.ImageSettings.ImageEffectPresets,
+                        using (ImageEffectsForm imageEffectsForm = new ImageEffectsForm(bmp, taskSettings.ImageSettings.ImageEffectPresets,
                             taskSettings.ImageSettings.SelectedImageEffectPreset))
                         {
                             imageEffectsForm.EnableToolMode(x => UploadManager.RunImageTask(x, taskSettings), filePath);

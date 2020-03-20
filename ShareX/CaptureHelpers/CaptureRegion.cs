@@ -76,7 +76,7 @@ namespace ShareX
 
             Screenshot screenshot = TaskHelpers.GetScreenshot(taskSettings);
             screenshot.CaptureCursor = false;
-            Image img = screenshot.CaptureFullscreen();
+            Bitmap bmp = screenshot.CaptureFullscreen();
 
             CursorData cursorData = null;
 
@@ -85,7 +85,7 @@ namespace ShareX
                 cursorData = new CursorData();
             }
 
-            using (RegionCaptureForm form = new RegionCaptureForm(mode, taskSettings.CaptureSettingsReference.SurfaceOptions, img))
+            using (RegionCaptureForm form = new RegionCaptureForm(mode, taskSettings.CaptureSettingsReference.SurfaceOptions, bmp))
             {
                 if (cursorData != null && cursorData.IsVisible)
                 {

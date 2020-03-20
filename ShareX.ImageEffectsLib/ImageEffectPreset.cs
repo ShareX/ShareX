@@ -38,16 +38,16 @@ namespace ShareX.ImageEffectsLib
         [JsonProperty(ItemTypeNameHandling = TypeNameHandling.Auto)]
         public List<ImageEffect> Effects { get; set; } = new List<ImageEffect>();
 
-        public Image ApplyEffects(Image img)
+        public Bitmap ApplyEffects(Bitmap bmp)
         {
-            Image result = (Image)img.Clone();
-            ((Bitmap)result).SetResolution(96f, 96f);
+            Bitmap result = (Bitmap)bmp.Clone();
+            result.SetResolution(96f, 96f);
 
             if (Effects != null && Effects.Count > 0)
             {
                 foreach (ImageEffect effect in Effects.Where(x => x.Enabled))
                 {
-                    result = effect.Apply(result);
+                    result = (Bitmap)effect.Apply(result);
 
                     if (result == null)
                     {

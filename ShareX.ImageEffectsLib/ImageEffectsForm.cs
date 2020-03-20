@@ -38,7 +38,7 @@ namespace ShareX.ImageEffectsLib
         public event Action<Image> ImageProcessRequested;
 
         public bool AutoGeneratePreviewImage { get; set; }
-        public Image PreviewImage { get; private set; }
+        public Bitmap PreviewImage { get; private set; }
         public List<ImageEffectPreset> Presets { get; private set; }
         public int SelectedPresetIndex { get; private set; }
         public string FilePath { get; private set; }
@@ -46,12 +46,12 @@ namespace ShareX.ImageEffectsLib
         private bool ignorePresetsSelectedIndexChanged = false;
         private bool pauseUpdate = false;
 
-        public ImageEffectsForm(Image img, List<ImageEffectPreset> presets, int selectedPresetIndex)
+        public ImageEffectsForm(Bitmap bmp, List<ImageEffectPreset> presets, int selectedPresetIndex)
         {
             InitializeComponent();
             ShareXResources.ApplyTheme(this);
 
-            PreviewImage = img;
+            PreviewImage = bmp;
             if (PreviewImage == null)
             {
                 AutoGeneratePreviewImage = true;
@@ -606,7 +606,7 @@ namespace ShareX.ImageEffectsLib
             if (!string.IsNullOrEmpty(filePath))
             {
                 if (PreviewImage != null) PreviewImage.Dispose();
-                PreviewImage = ImageHelpers.LoadImage(filePath);
+                PreviewImage = (Bitmap)ImageHelpers.LoadImage(filePath);
                 FilePath = filePath;
                 UpdatePreview();
             }
@@ -614,12 +614,12 @@ namespace ShareX.ImageEffectsLib
 
         private void tsmiLoadImageFromClipboard_Click(object sender, EventArgs e)
         {
-            Image img = ClipboardHelpers.GetImage();
+            Bitmap bmp = (Bitmap)ClipboardHelpers.GetImage();
 
-            if (img != null)
+            if (bmp != null)
             {
                 if (PreviewImage != null) PreviewImage.Dispose();
-                PreviewImage = img;
+                PreviewImage = bmp;
                 FilePath = null;
                 UpdatePreview();
             }
@@ -680,19 +680,19 @@ namespace ShareX.ImageEffectsLib
                     if (Helpers.IsImageFile(files[0]))
                     {
                         if (PreviewImage != null) PreviewImage.Dispose();
-                        PreviewImage = ImageHelpers.LoadImage(files[0]);
+                        PreviewImage = (Bitmap)ImageHelpers.LoadImage(files[0]);
                         UpdatePreview();
                     }
                 }
             }
             else if (e.Data.GetDataPresent(DataFormats.Bitmap, false))
             {
-                Image img = e.Data.GetData(DataFormats.Bitmap, false) as Image;
+                Bitmap bmp = e.Data.GetData(DataFormats.Bitmap, false) as Bitmap;
 
-                if (img != null)
+                if (bmp != null)
                 {
                     if (PreviewImage != null) PreviewImage.Dispose();
-                    PreviewImage = img;
+                    PreviewImage = bmp;
                     UpdatePreview();
                 }
             }

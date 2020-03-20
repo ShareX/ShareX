@@ -87,7 +87,7 @@ namespace ShareX.ScreenCaptureLib
             return false;
         }
 
-        public static PointInfo GetPointInfo(RegionCaptureOptions options, Image canvas = null)
+        public static PointInfo GetPointInfo(RegionCaptureOptions options, Bitmap canvas = null)
         {
             RegionCaptureOptions newOptions = GetRegionCaptureOptions(options);
             newOptions.DetectWindows = false;
