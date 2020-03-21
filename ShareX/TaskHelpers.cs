@@ -256,31 +256,31 @@ namespace ShareX
             return imageData;
         }
 
-        public static string CreateThumbnail(Image img, string folder, string filename, TaskSettings taskSettings)
+        public static string CreateThumbnail(Bitmap bmp, string folder, string filename, TaskSettings taskSettings)
         {
             if ((taskSettings.ImageSettings.ThumbnailWidth > 0 || taskSettings.ImageSettings.ThumbnailHeight > 0) && (!taskSettings.ImageSettings.ThumbnailCheckSize ||
-                (img.Width > taskSettings.ImageSettings.ThumbnailWidth && img.Height > taskSettings.ImageSettings.ThumbnailHeight)))
+                (bmp.Width > taskSettings.ImageSettings.ThumbnailWidth && bmp.Height > taskSettings.ImageSettings.ThumbnailHeight)))
             {
                 string thumbnailFileName = Path.GetFileNameWithoutExtension(filename) + taskSettings.ImageSettings.ThumbnailName + ".jpg";
                 string thumbnailFilePath = HandleExistsFile(folder, thumbnailFileName, taskSettings);
 
                 if (!string.IsNullOrEmpty(thumbnailFilePath))
                 {
-                    Image thumbImage = null;
+                    Bitmap thumbnail = null;
 
                     try
                     {
-                        thumbImage = (Image)img.Clone();
-                        thumbImage = new Resize(taskSettings.ImageSettings.ThumbnailWidth, taskSettings.ImageSettings.ThumbnailHeight).Apply(thumbImage);
-                        thumbImage = ImageHelpers.FillBackground(thumbImage, Color.White);
-                        thumbImage.SaveJPG(thumbnailFilePath, 90);
+                        thumbnail = (Bitmap)bmp.Clone();
+                        thumbnail = new Resize(taskSettings.ImageSettings.ThumbnailWidth, taskSettings.ImageSettings.ThumbnailHeight).Apply(thumbnail);
+                        thumbnail = ImageHelpers.FillBackground(thumbnail, Color.White);
+                        thumbnail.SaveJPG(thumbnailFilePath, 90);
                         return thumbnailFilePath;
                     }
                     finally
                     {
-                        if (thumbImage != null)
+                        if (thumbnail != null)
                         {
-                            thumbImage.Dispose();
+                            thumbnail.Dispose();
                         }
                     }
                 }

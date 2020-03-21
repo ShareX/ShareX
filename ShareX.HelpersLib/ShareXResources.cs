@@ -73,7 +73,7 @@ namespace ShareX.HelpersLib
 
         public static Icon Icon => UseWhiteIcon ? Resources.ShareX_Icon_White : Resources.ShareX_Icon;
 
-        public static Image Logo => Resources.ShareX_Logo;
+        public static Bitmap Logo => Resources.ShareX_Logo;
 
         public static ShareXTheme Theme { get; set; } = new ShareXTheme();
 

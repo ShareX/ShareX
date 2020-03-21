@@ -42,14 +42,17 @@ namespace ShareX.ImageEffectsLib
             this.ApplyDefaultPropertyValues();
         }
 
-        public override Image Apply(Image img)
+        public override Bitmap Apply(Bitmap bmp)
         {
-            if (WidthPercentage <= 0 && HeightPercentage <= 0) return img;
+            if (WidthPercentage <= 0 && HeightPercentage <= 0)
+            {
+                return bmp;
+            }
 
             float widthPercentage = WidthPercentage <= 0 ? HeightPercentage : WidthPercentage;
             float heightPercentage = HeightPercentage <= 0 ? WidthPercentage : HeightPercentage;
 
-            return ImageHelpers.ResizeImageByPercentage(img, widthPercentage, heightPercentage);
+            return ImageHelpers.ResizeImageByPercentage(bmp, widthPercentage, heightPercentage);
         }
     }
 }

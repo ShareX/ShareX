@@ -683,7 +683,7 @@ namespace ShareX
                         thumbnailFolder = Info.TaskSettings.CaptureFolder;
                     }
 
-                    Info.ThumbnailFilePath = TaskHelpers.CreateThumbnail(Image, thumbnailFolder, thumbnailFilename, Info.TaskSettings);
+                    Info.ThumbnailFilePath = TaskHelpers.CreateThumbnail((Bitmap)Image, thumbnailFolder, thumbnailFilename, Info.TaskSettings);
 
                     if (!string.IsNullOrEmpty(Info.ThumbnailFilePath))
                     {

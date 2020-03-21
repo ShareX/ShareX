@@ -347,7 +347,7 @@ namespace ShareX
 
     public class NotificationFormConfig : IDisposable
     {
-        public Image Image { get; set; }
+        public Bitmap Image { get; set; }
         public string Text { get; set; }
         public string FilePath { get; set; }
         public string URL { get; set; }

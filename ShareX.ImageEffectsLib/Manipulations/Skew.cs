@@ -42,14 +42,14 @@ namespace ShareX.ImageEffectsLib
             this.ApplyDefaultPropertyValues();
         }
 
-        public override Image Apply(Image img)
+        public override Bitmap Apply(Bitmap bmp)
         {
             if (Horizontally == 0 && Vertically == 0)
             {
-                return img;
+                return bmp;
             }
 
-            return ImageHelpers.AddSkew(img, Horizontally, Vertically);
+            return ImageHelpers.AddSkew(bmp, Horizontally, Vertically);
         }
     }
 }

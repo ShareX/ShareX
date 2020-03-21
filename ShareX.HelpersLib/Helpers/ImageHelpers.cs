@@ -41,18 +41,18 @@ namespace ShareX.HelpersLib
     {
         private const InterpolationMode DefaultInterpolationMode = InterpolationMode.HighQualityBicubic;
 
-        public static Image ResizeImage(Image img, int width, int height, InterpolationMode interpolationMode = DefaultInterpolationMode)
+        public static Bitmap ResizeImage(Bitmap bmp, int width, int height, InterpolationMode interpolationMode = DefaultInterpolationMode)
         {
-            if (width < 1 || height < 1 || (img.Width == width && img.Height == height))
+            if (width < 1 || height < 1 || (bmp.Width == width && bmp.Height == height))
             {
-                return img;
+                return bmp;
             }
 
-            Bitmap bmp = new Bitmap(width, height, PixelFormat.Format32bppArgb);
-            bmp.SetResolution(img.HorizontalResolution, img.VerticalResolution);
+            Bitmap bmpResult = new Bitmap(width, height, PixelFormat.Format32bppArgb);
+            bmpResult.SetResolution(bmp.HorizontalResolution, bmp.VerticalResolution);
 
-            using (img)
-            using (Graphics g = Graphics.FromImage(bmp))
+            using (bmp)
+            using (Graphics g = Graphics.FromImage(bmpResult))
             {
                 g.InterpolationMode = interpolationMode;
                 g.SmoothingMode = SmoothingMode.HighQuality;
@@ -63,28 +63,28 @@ namespace ShareX.HelpersLib
                 using (ImageAttributes ia = new ImageAttributes())
                 {
                     ia.SetWrapMode(WrapMode.TileFlipXY);
-                    g.DrawImage(img, new Rectangle(0, 0, width, height), 0, 0, img.Width, img.Height, GraphicsUnit.Pixel, ia);
+                    g.DrawImage(bmp, new Rectangle(0, 0, width, height), 0, 0, bmp.Width, bmp.Height, GraphicsUnit.Pixel, ia);
                 }
             }
 
-            return bmp;
+            return bmpResult;
         }
 
-        public static Image ResizeImage(Image img, Size size, InterpolationMode interpolationMode = DefaultInterpolationMode)
+        public static Bitmap ResizeImage(Bitmap bmp, Size size, InterpolationMode interpolationMode = DefaultInterpolationMode)
         {
-            return ResizeImage(img, size.Width, size.Height, interpolationMode);
+            return ResizeImage(bmp, size.Width, size.Height, interpolationMode);
         }
 
-        public static Image ResizeImageByPercentage(Image img, float percentageWidth, float percentageHeight, InterpolationMode interpolationMode = DefaultInterpolationMode)
+        public static Bitmap ResizeImageByPercentage(Bitmap bmp, float percentageWidth, float percentageHeight, InterpolationMode interpolationMode = DefaultInterpolationMode)
         {
-            int width = (int)Math.Round(percentageWidth / 100 * img.Width);
-            int height = (int)Math.Round(percentageHeight / 100 * img.Height);
-            return ResizeImage(img, width, height, interpolationMode);
+            int width = (int)Math.Round(percentageWidth / 100 * bmp.Width);
+            int height = (int)Math.Round(percentageHeight / 100 * bmp.Height);
+            return ResizeImage(bmp, width, height, interpolationMode);
         }
 
-        public static Image ResizeImageByPercentage(Image img, float percentage, InterpolationMode interpolationMode = DefaultInterpolationMode)
+        public static Bitmap ResizeImageByPercentage(Bitmap bmp, float percentage, InterpolationMode interpolationMode = DefaultInterpolationMode)
         {
-            return ResizeImageByPercentage(img, percentage, percentage, interpolationMode);
+            return ResizeImageByPercentage(bmp, percentage, percentage, interpolationMode);
         }
 
         public static Image ResizeImage(Image img, Size size, bool allowEnlarge, bool centerImage = true)
@@ -192,36 +192,36 @@ namespace ShareX.HelpersLib
         }
 
         /// <summary>If image size is bigger than specified size then resize it and keep aspect ratio else return image.</summary>
-        public static Image ResizeImageLimit(Image img, int width, int height)
+        public static Bitmap ResizeImageLimit(Bitmap bmp, int width, int height)
         {
-            if (img.Width <= width && img.Height <= height)
+            if (bmp.Width <= width && bmp.Height <= height)
             {
-                return img;
+                return bmp;
             }
 
-            double ratioX = (double)width / img.Width;
-            double ratioY = (double)height / img.Height;
+            double ratioX = (double)width / bmp.Width;
+            double ratioY = (double)height / bmp.Height;
 
             if (ratioX < ratioY)
             {
-                height = (int)Math.Round(img.Height * ratioX);
+                height = (int)Math.Round(bmp.Height * ratioX);
             }
             else if (ratioX > ratioY)
             {
-                width = (int)Math.Round(img.Width * ratioY);
+                width = (int)Math.Round(bmp.Width * ratioY);
             }
 
-            return ResizeImage(img, width, height);
+            return ResizeImage(bmp, width, height);
         }
 
-        public static Image ResizeImageLimit(Image img, Size size)
+        public static Bitmap ResizeImageLimit(Bitmap bmp, Size size)
         {
-            return ResizeImageLimit(img, size.Width, size.Height);
+            return ResizeImageLimit(bmp, size.Width, size.Height);
         }
 
-        public static Image ResizeImageLimit(Image img, int size)
+        public static Bitmap ResizeImageLimit(Bitmap bmp, int size)
         {
-            return ResizeImageLimit(img, size, size);
+            return ResizeImageLimit(bmp, size, size);
         }
 
         public static Bitmap CropBitmap(Bitmap bmp, Rectangle rect)
@@ -445,28 +445,28 @@ namespace ShareX.HelpersLib
             return bmp;
         }
 
-        public static Image RoundedCorners(Image img, int cornerRadius)
+        public static Bitmap RoundedCorners(Bitmap bmp, int cornerRadius)
         {
-            Bitmap bmp = img.CreateEmptyBitmap();
+            Bitmap bmpResult = bmp.CreateEmptyBitmap();
 
-            using (Graphics g = Graphics.FromImage(bmp))
-            using (img)
+            using (bmp)
+            using (Graphics g = Graphics.FromImage(bmpResult))
             {
                 g.SmoothingMode = SmoothingMode.HighQuality;
                 g.PixelOffsetMode = PixelOffsetMode.Half;
 
                 using (GraphicsPath gp = new GraphicsPath())
                 {
-                    gp.AddRoundedRectangleProper(new RectangleF(0, 0, img.Width, img.Height), cornerRadius, 0);
+                    gp.AddRoundedRectangleProper(new RectangleF(0, 0, bmp.Width, bmp.Height), cornerRadius, 0);
 
-                    using (TextureBrush brush = new TextureBrush(img))
+                    using (TextureBrush brush = new TextureBrush(bmp))
                     {
                         g.FillPath(brush, gp);
                     }
                 }
             }
 
-            return bmp;
+            return bmpResult;
         }
 
         public static Bitmap Outline(Bitmap bmp, int borderSize, Color borderColor)
@@ -527,8 +527,8 @@ namespace ShareX.HelpersLib
         {
             Bitmap result = img.CreateEmptyBitmap(Math.Abs(x), Math.Abs(y));
 
-            using (Graphics g = Graphics.FromImage(result))
             using (img)
+            using (Graphics g = Graphics.FromImage(result))
             {
                 g.SetHighQuality();
                 int startX = -Math.Min(0, x);
@@ -699,8 +699,8 @@ namespace ShareX.HelpersLib
         {
             Bitmap result = img.CreateEmptyBitmap();
 
-            using (Graphics g = Graphics.FromImage(result))
             using (img)
+            using (Graphics g = Graphics.FromImage(result))
             {
                 g.FillRectangle(brush, 0, 0, result.Width, result.Height);
                 g.DrawImage(img, 0, 0, result.Width, result.Height);
@@ -847,20 +847,22 @@ namespace ShareX.HelpersLib
         /// Note that this method always returns a new Bitmap object, even if rotation is zero - in
         /// which case the returned object is a clone of the input object.
         /// </summary>
-        /// <param name="img">input Image object, is not modified</param>
+        /// <param name="bmp">input Image object, is not modified</param>
         /// <param name="angleDegrees">angle of rotation, in degrees</param>
         /// <param name="upsize">see comments above</param>
         /// <param name="clip">see comments above, not used if upsizeOk = true</param>
         /// <returns>new Bitmap object, may be larger than input image</returns>
-        public static Bitmap RotateImage(Image img, float angleDegrees, bool upsize, bool clip)
+        public static Bitmap RotateImage(Bitmap bmp, float angleDegrees, bool upsize, bool clip)
         {
             // Test for zero rotation and return a clone of the input image
             if (angleDegrees == 0f)
-                return (Bitmap)img.Clone();
+            {
+                return (Bitmap)bmp.Clone();
+            }
 
             // Set up old and new image dimensions, assuming upsizing not wanted and clipping OK
-            int oldWidth = img.Width;
-            int oldHeight = img.Height;
+            int oldWidth = bmp.Width;
+            int oldHeight = bmp.Height;
             int newWidth = oldWidth;
             int newHeight = oldHeight;
             float scaleFactor = 1f;
@@ -885,10 +887,10 @@ namespace ShareX.HelpersLib
             }
 
             // Create the new bitmap object.
-            Bitmap newBitmap = img.CreateEmptyBitmap();
+            Bitmap bmpResult = bmp.CreateEmptyBitmap();
 
             // Create the Graphics object that does the work
-            using (Graphics g = Graphics.FromImage(newBitmap))
+            using (Graphics g = Graphics.FromImage(bmpResult))
             {
                 g.InterpolationMode = InterpolationMode.HighQualityBicubic;
                 g.PixelOffsetMode = PixelOffsetMode.HighQuality;
@@ -898,16 +900,18 @@ namespace ShareX.HelpersLib
                 g.TranslateTransform(newWidth / 2f, newHeight / 2f);
 
                 if (scaleFactor != 1f)
+                {
                     g.ScaleTransform(scaleFactor, scaleFactor);
+                }
 
                 g.RotateTransform(angleDegrees);
                 g.TranslateTransform(-oldWidth / 2f, -oldHeight / 2f);
 
                 // Draw the result
-                g.DrawImage(img, 0, 0, img.Width, img.Height);
+                g.DrawImage(bmp, 0, 0, bmp.Width, bmp.Height);
             }
 
-            return newBitmap;
+            return bmpResult;
         }
 
         public static Bitmap AddShadow(Bitmap bmp, float opacity, int size)
@@ -1681,7 +1685,7 @@ namespace ShareX.HelpersLib
             return null;
         }
 
-        public static Image LoadImage(string filePath)
+        public static Bitmap LoadImage(string filePath)
         {
             try
             {
@@ -1692,14 +1696,14 @@ namespace ShareX.HelpersLib
                     if (!string.IsNullOrEmpty(filePath) && Helpers.IsImageFile(filePath) && File.Exists(filePath))
                     {
                         // http://stackoverflow.com/questions/788335/why-does-image-fromfile-keep-a-file-handle-open-sometimes
-                        Image img = Image.FromStream(new MemoryStream(File.ReadAllBytes(filePath)));
+                        Bitmap bmp = (Bitmap)Image.FromStream(new MemoryStream(File.ReadAllBytes(filePath)));
 
                         if (HelpersOptions.RotateImageByExifOrientationData)
                         {
-                            RotateImageByExifOrientationData(img);
+                            RotateImageByExifOrientationData(bmp);
                         }
 
-                        return img;
+                        return bmp;
                     }
                 }
             }
@@ -1969,23 +1973,23 @@ namespace ShareX.HelpersLib
             return bmp;
         }
 
-        public static RotateFlipType RotateImageByExifOrientationData(Image img, bool removeExifOrientationData = true)
+        public static RotateFlipType RotateImageByExifOrientationData(Bitmap bmp, bool removeExifOrientationData = true)
         {
             int orientationId = 0x0112;
             RotateFlipType rotateType = RotateFlipType.RotateNoneFlipNone;
 
-            if (img.PropertyIdList.Contains(orientationId))
+            if (bmp.PropertyIdList.Contains(orientationId))
             {
-                PropertyItem propertyItem = img.GetPropertyItem(orientationId);
+                PropertyItem propertyItem = bmp.GetPropertyItem(orientationId);
                 rotateType = GetRotateFlipTypeByExifOrientationData(propertyItem.Value[0]);
 
                 if (rotateType != RotateFlipType.RotateNoneFlipNone)
                 {
-                    img.RotateFlip(rotateType);
+                    bmp.RotateFlip(rotateType);
 
                     if (removeExifOrientationData)
                     {
-                        img.RemovePropertyItem(orientationId);
+                        bmp.RemovePropertyItem(orientationId);
                     }
                 }
             }

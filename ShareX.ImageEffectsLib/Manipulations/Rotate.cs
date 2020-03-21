@@ -45,9 +45,17 @@ namespace ShareX.ImageEffectsLib
             this.ApplyDefaultPropertyValues();
         }
 
-        public override Image Apply(Image img)
+        public override Bitmap Apply(Bitmap bmp)
         {
-            return ImageHelpers.RotateImage(img, Angle, Upsize, Clip);
+            if (Angle == 0)
+            {
+                return bmp;
+            }
+
+            using (bmp)
+            {
+                return ImageHelpers.RotateImage(bmp, Angle, Upsize, Clip);
+            }
         }
     }
 }

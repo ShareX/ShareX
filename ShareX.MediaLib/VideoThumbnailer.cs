@@ -192,7 +192,7 @@ namespace ShareX.MediaLib
 
         private Image CombineScreenshots(List<VideoThumbnailInfo> thumbnails)
         {
-            List<Image> images = new List<Image>();
+            List<Bitmap> images = new List<Bitmap>();
             Image finalImage = null;
 
             try
@@ -212,15 +212,15 @@ namespace ShareX.MediaLib
 
                 foreach (VideoThumbnailInfo thumbnail in thumbnails)
                 {
-                    Image img = ImageHelpers.LoadImage(thumbnail.Filepath);
+                    Bitmap bmp = ImageHelpers.LoadImage(thumbnail.Filepath);
 
-                    if (Options.MaxThumbnailWidth > 0 && img.Width > Options.MaxThumbnailWidth)
+                    if (Options.MaxThumbnailWidth > 0 && bmp.Width > Options.MaxThumbnailWidth)
                     {
-                        int maxThumbnailHeight = (int)((float)Options.MaxThumbnailWidth / img.Width * img.Height);
-                        img = ImageHelpers.ResizeImage(img, Options.MaxThumbnailWidth, maxThumbnailHeight);
+                        int maxThumbnailHeight = (int)((float)Options.MaxThumbnailWidth / bmp.Width * bmp.Height);
+                        bmp = ImageHelpers.ResizeImage(bmp, Options.MaxThumbnailWidth, maxThumbnailHeight);
                     }
 
-                    images.Add(img);
+                    images.Add(bmp);
                 }
 
                 int columnCount = Options.ColumnCount;
@@ -317,7 +317,7 @@ namespace ShareX.MediaLib
             }
             finally
             {
-                foreach (Image image in images)
+                foreach (Bitmap image in images)
                 {
                     if (image != null)
                     {

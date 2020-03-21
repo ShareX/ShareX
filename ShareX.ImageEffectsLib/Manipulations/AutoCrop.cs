@@ -41,9 +41,9 @@ namespace ShareX.ImageEffectsLib
             this.ApplyDefaultPropertyValues();
         }
 
-        public override Image Apply(Image img)
+        public override Bitmap Apply(Bitmap bmp)
         {
-            return ImageHelpers.AutoCropImage((Bitmap)img, false, Sides);
+            return ImageHelpers.AutoCropImage(bmp, false, Sides);
         }
     }
 }

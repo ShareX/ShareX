@@ -390,7 +390,7 @@ namespace ShareX
                                                     RightClickAction = info.TaskSettings.AdvancedSettings.ToastWindowRightClickAction,
                                                     MiddleClickAction = info.TaskSettings.AdvancedSettings.ToastWindowMiddleClickAction,
                                                     FilePath = info.FilePath,
-                                                    Image = task.Image,
+                                                    Image = (Bitmap)task.Image,
                                                     Text = "ShareX - " + Resources.TaskManager_task_UploadCompleted_ShareX___Task_completed + "\r\n" + result,
                                                     URL = result
                                                 };

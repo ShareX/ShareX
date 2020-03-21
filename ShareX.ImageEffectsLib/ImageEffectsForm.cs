@@ -301,7 +301,7 @@ namespace ShareX.ImageEffectsLib
 
                     if (PreviewImage.Width > 260 && PreviewImage.Height > 260)
                     {
-                        using (Image logo = ShareXResources.Logo)
+                        using (Bitmap logo = ShareXResources.Logo)
                         {
                             g.DrawImage(logo, (PreviewImage.Width / 2) - (logo.Width / 2), (PreviewImage.Height / 2) - (logo.Height / 2));
                         }
