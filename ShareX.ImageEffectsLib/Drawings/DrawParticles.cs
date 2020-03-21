@@ -97,7 +97,7 @@ namespace ShareX.ImageEffectsLib
             this.ApplyDefaultPropertyValues();
         }
 
-        public override Image Apply(Image img)
+        public override Bitmap Apply(Bitmap bmp)
         {
             string imageFolder = Helpers.ExpandFolderVariables(ImageFolder);
 
@@ -109,7 +109,7 @@ namespace ShareX.ImageEffectsLib
                 {
                     imageRectangles.Clear();
 
-                    using (Graphics g = Graphics.FromImage(img))
+                    using (Graphics g = Graphics.FromImage(bmp))
                     using (ImageFilesCache imageCache = new ImageFilesCache())
                     {
                         g.InterpolationMode = InterpolationMode.HighQualityBicubic;
@@ -118,18 +118,18 @@ namespace ShareX.ImageEffectsLib
                         {
                             string file = MathHelpers.RandomPick(files);
 
-                            Image img2 = imageCache.GetImage(file);
+                            Image img = imageCache.GetImage(file);
 
-                            if (img2 != null)
+                            if (img != null)
                             {
-                                DrawImage(img, img2, g);
+                                DrawImage(bmp, img, g);
                             }
                         }
                     }
                 }
             }
 
-            return img;
+            return bmp;
         }
 
         private void DrawImage(Image img, Image img2, Graphics g)

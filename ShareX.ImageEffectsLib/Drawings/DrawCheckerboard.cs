@@ -59,9 +59,9 @@ namespace ShareX.ImageEffectsLib
             this.ApplyDefaultPropertyValues();
         }
 
-        public override Image Apply(Image img)
+        public override Bitmap Apply(Bitmap bmp)
         {
-            return ImageHelpers.DrawCheckers(img, Size, Color, Color2);
+            return ImageHelpers.DrawCheckers(bmp, Size, Color, Color2);
         }
     }
 }

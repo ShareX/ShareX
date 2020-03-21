@@ -67,21 +67,21 @@ namespace ShareX.ImageEffectsLib
             Gradient.Colors.Add(new GradientStop(Color.FromArgb(23, 89, 174), 100f));
         }
 
-        public override Image Apply(Image img)
+        public override Bitmap Apply(Bitmap bmp)
         {
             if (UseGradient)
             {
                 if (UseCustomGradient && Gradient != null && Gradient.IsValid)
                 {
-                    return ImageHelpers.FillBackground(img, Gradient);
+                    return ImageHelpers.FillBackground(bmp, Gradient);
                 }
                 else
                 {
-                    return ImageHelpers.FillBackground(img, Color, Color2, GradientType);
+                    return ImageHelpers.FillBackground(bmp, Color, Color2, GradientType);
                 }
             }
 
-            return ImageHelpers.FillBackground(img, Color);
+            return ImageHelpers.FillBackground(bmp, Color);
         }
     }
 }

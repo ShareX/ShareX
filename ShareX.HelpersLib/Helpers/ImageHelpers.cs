@@ -580,18 +580,18 @@ namespace ShareX.HelpersLib
             return reflection;
         }
 
-        public static Image DrawBorder(Image img, Color borderColor, int borderSize, BorderType borderType)
+        public static Bitmap DrawBorder(Bitmap bmp, Color borderColor, int borderSize, BorderType borderType)
         {
             using (Pen borderPen = new Pen(borderColor, borderSize) { Alignment = PenAlignment.Inset })
             {
-                return DrawBorder(img, borderPen, borderType);
+                return DrawBorder(bmp, borderPen, borderType);
             }
         }
 
-        public static Image DrawBorder(Image img, Color fromBorderColor, Color toBorderColor, LinearGradientMode gradientType, int borderSize, BorderType borderType)
+        public static Bitmap DrawBorder(Bitmap bmp, Color fromBorderColor, Color toBorderColor, LinearGradientMode gradientType, int borderSize, BorderType borderType)
         {
-            int width = img.Width;
-            int height = img.Height;
+            int width = bmp.Width;
+            int height = bmp.Height;
 
             if (borderType == BorderType.Outside)
             {
@@ -602,14 +602,14 @@ namespace ShareX.HelpersLib
             using (LinearGradientBrush brush = new LinearGradientBrush(new Rectangle(0, 0, width, height), fromBorderColor, toBorderColor, gradientType))
             using (Pen borderPen = new Pen(brush, borderSize) { Alignment = PenAlignment.Inset })
             {
-                return DrawBorder(img, borderPen, borderType);
+                return DrawBorder(bmp, borderPen, borderType);
             }
         }
 
-        public static Image DrawBorder(Image img, GradientInfo gradientInfo, int borderSize, BorderType borderType)
+        public static Bitmap DrawBorder(Bitmap bmp, GradientInfo gradientInfo, int borderSize, BorderType borderType)
         {
-            int width = img.Width;
-            int height = img.Height;
+            int width = bmp.Width;
+            int height = bmp.Height;
 
             if (borderType == BorderType.Outside)
             {
@@ -620,38 +620,38 @@ namespace ShareX.HelpersLib
             using (LinearGradientBrush brush = gradientInfo.GetGradientBrush(new Rectangle(0, 0, width, height)))
             using (Pen borderPen = new Pen(brush, borderSize) { Alignment = PenAlignment.Inset })
             {
-                return DrawBorder(img, borderPen, borderType);
+                return DrawBorder(bmp, borderPen, borderType);
             }
         }
 
-        public static Image DrawBorder(Image img, Pen borderPen, BorderType borderType)
+        public static Bitmap DrawBorder(Bitmap bmp, Pen borderPen, BorderType borderType)
         {
-            Bitmap bmp;
+            Bitmap bmpResult;
 
             if (borderType == BorderType.Inside)
             {
-                bmp = (Bitmap)img;
+                bmpResult = bmp;
 
-                using (Graphics g = Graphics.FromImage(bmp))
+                using (Graphics g = Graphics.FromImage(bmpResult))
                 {
-                    g.DrawRectangleProper(borderPen, 0, 0, img.Width, img.Height);
+                    g.DrawRectangleProper(borderPen, 0, 0, bmp.Width, bmp.Height);
                 }
             }
             else
             {
                 int borderSize = (int)borderPen.Width;
-                bmp = img.CreateEmptyBitmap(borderSize * 2, borderSize * 2);
+                bmpResult = bmp.CreateEmptyBitmap(borderSize * 2, borderSize * 2);
 
-                using (Graphics g = Graphics.FromImage(bmp))
-                using (img)
+                using (bmp)
+                using (Graphics g = Graphics.FromImage(bmpResult))
                 {
-                    g.DrawRectangleProper(borderPen, 0, 0, bmp.Width, bmp.Height);
+                    g.DrawRectangleProper(borderPen, 0, 0, bmpResult.Width, bmpResult.Height);
                     g.SetHighQuality();
-                    g.DrawImage(img, borderSize, borderSize, img.Width, img.Height);
+                    g.DrawImage(bmp, borderSize, borderSize, bmp.Width, bmp.Height);
                 }
             }
 
-            return bmp;
+            return bmpResult;
         }
 
         public static Bitmap CreateBitmap(int width, int height, Color color)
@@ -709,34 +709,34 @@ namespace ShareX.HelpersLib
             return result;
         }
 
-        public static Image DrawCheckers(Image img)
+        public static Bitmap DrawCheckers(Image img)
         {
             return DrawCheckers(img, 10, SystemColors.ControlLight, SystemColors.ControlLightLight);
         }
 
-        public static Image DrawCheckers(Image img, int checkerSize, Color checkerColor1, Color checkerColor2)
+        public static Bitmap DrawCheckers(Image img, int checkerSize, Color checkerColor1, Color checkerColor2)
         {
-            Bitmap bmp = img.CreateEmptyBitmap();
+            Bitmap bmpResult = img.CreateEmptyBitmap();
 
-            using (Graphics g = Graphics.FromImage(bmp))
+            using (img)
+            using (Graphics g = Graphics.FromImage(bmpResult))
             using (Image checker = CreateCheckerPattern(checkerSize, checkerSize, checkerColor1, checkerColor2))
             using (Brush checkerBrush = new TextureBrush(checker, WrapMode.Tile))
-            using (img)
             {
-                g.FillRectangle(checkerBrush, new Rectangle(0, 0, bmp.Width, bmp.Height));
+                g.FillRectangle(checkerBrush, new Rectangle(0, 0, bmpResult.Width, bmpResult.Height));
                 g.SetHighQuality();
                 g.DrawImage(img, 0, 0, img.Width, img.Height);
             }
 
-            return bmp;
+            return bmpResult;
         }
 
-        public static Image DrawCheckers(int width, int height)
+        public static Bitmap DrawCheckers(int width, int height)
         {
             return DrawCheckers(width, height, 10, SystemColors.ControlLight, SystemColors.ControlLightLight);
         }
 
-        public static Image DrawCheckers(int width, int height, int checkerSize, Color checkerColor1, Color checkerColor2)
+        public static Bitmap DrawCheckers(int width, int height, int checkerSize, Color checkerColor1, Color checkerColor2)
         {
             Bitmap bmp = new Bitmap(width, height);
 

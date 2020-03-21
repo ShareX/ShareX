@@ -24,7 +24,6 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Design;
@@ -143,41 +142,41 @@ namespace ShareX.ImageEffectsLib
             Gradient.Colors.Add(new GradientStop(Color.FromArgb(23, 89, 174), 100f));
         }
 
-        public override Image Apply(Image img)
+        public override Bitmap Apply(Bitmap bmp)
         {
             if (string.IsNullOrEmpty(Text))
             {
-                return img;
+                return bmp;
             }
 
             using (Font textFont = TextFont)
             {
                 if (textFont == null || textFont.Size < 1)
                 {
-                    return img;
+                    return bmp;
                 }
 
                 NameParser parser = new NameParser(NameParserType.Text);
 
-                if (img != null)
+                if (bmp != null)
                 {
-                    parser.ImageWidth = img.Width;
-                    parser.ImageHeight = img.Height;
+                    parser.ImageWidth = bmp.Width;
+                    parser.ImageHeight = bmp.Height;
                 }
 
                 string parsedText = parser.Parse(Text);
 
                 Size textSize = Helpers.MeasureText(parsedText, textFont);
                 Size watermarkSize = new Size(Padding.Left + textSize.Width + Padding.Right, Padding.Top + textSize.Height + Padding.Bottom);
-                Point watermarkPosition = Helpers.GetPosition(Placement, Offset, img.Size, watermarkSize);
+                Point watermarkPosition = Helpers.GetPosition(Placement, Offset, bmp.Size, watermarkSize);
                 Rectangle watermarkRectangle = new Rectangle(watermarkPosition, watermarkSize);
 
-                if (AutoHide && !new Rectangle(0, 0, img.Width, img.Height).Contains(watermarkRectangle))
+                if (AutoHide && !new Rectangle(0, 0, bmp.Width, bmp.Height).Contains(watermarkRectangle))
                 {
-                    return img;
+                    return bmp;
                 }
 
-                using (Graphics g = Graphics.FromImage(img))
+                using (Graphics g = Graphics.FromImage(bmp))
                 {
                     g.SmoothingMode = SmoothingMode.HighQuality;
 
@@ -249,7 +248,7 @@ namespace ShareX.ImageEffectsLib
                 }
             }
 
-            return img;
+            return bmp;
         }
     }
 }
