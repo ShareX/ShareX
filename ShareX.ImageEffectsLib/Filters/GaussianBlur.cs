@@ -63,7 +63,7 @@ namespace ShareX.ImageEffectsLib
             this.ApplyDefaultPropertyValues();
         }
 
-        public override Image Apply(Image img)
+        public override Bitmap Apply(Bitmap bmp)
         {
             ConvolutionMatrix kernelHoriz = ConvolutionMatrixManager.GaussianBlur(1, size, sigma);
 
@@ -77,8 +77,8 @@ namespace ShareX.ImageEffectsLib
                 kernelVert[i, 0] = kernelHoriz[0, i];
             }
 
-            using (img)
-            using (Image horizPass = kernelHoriz.Apply(img))
+            using (bmp)
+            using (Bitmap horizPass = kernelHoriz.Apply(bmp))
             {
                 return kernelVert.Apply(horizPass);
             }

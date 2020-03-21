@@ -30,11 +30,11 @@ namespace ShareX.ImageEffectsLib
 {
     internal class Smooth : ImageEffect
     {
-        public override Image Apply(Image img)
+        public override Bitmap Apply(Bitmap bmp)
         {
-            using (img)
+            using (bmp)
             {
-                return ConvolutionMatrixManager.Smooth().Apply(img);
+                return ConvolutionMatrixManager.Smooth().Apply(bmp);
             }
         }
     }

@@ -56,10 +56,10 @@ namespace ShareX.ImageEffectsLib
             this.ApplyDefaultPropertyValues();
         }
 
-        public override Image Apply(Image img)
+        public override Bitmap Apply(Bitmap bmp)
         {
-            ImageHelpers.BoxBlur((Bitmap)img, Radius);
-            return img;
+            ImageHelpers.BoxBlur(bmp, Radius);
+            return bmp;
         }
     }
 }

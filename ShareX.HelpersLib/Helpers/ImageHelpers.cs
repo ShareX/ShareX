@@ -469,9 +469,9 @@ namespace ShareX.HelpersLib
             return bmp;
         }
 
-        public static Image Outline(Image img, int borderSize, Color borderColor)
+        public static Bitmap Outline(Bitmap bmp, int borderSize, Color borderColor)
         {
-            Bitmap result = img.CreateEmptyBitmap(borderSize * 2, borderSize * 2);
+            Bitmap bmpResult = bmp.CreateEmptyBitmap(borderSize * 2, borderSize * 2);
 
             ColorMatrix maskMatrix = new ColorMatrix();
             maskMatrix.Matrix00 = 0;
@@ -482,9 +482,9 @@ namespace ShareX.HelpersLib
             maskMatrix.Matrix41 = ((float)borderColor.G).Remap(0, 255, 0, 1);
             maskMatrix.Matrix42 = ((float)borderColor.B).Remap(0, 255, 0, 1);
 
-            using (img)
-            using (Image shadow = maskMatrix.Apply(img))
-            using (Graphics g = Graphics.FromImage(result))
+            using (bmp)
+            using (Image shadow = maskMatrix.Apply(bmp))
+            using (Graphics g = Graphics.FromImage(bmpResult))
             {
                 for (int i = 0; i <= borderSize * 2; i++)
                 {
@@ -494,33 +494,33 @@ namespace ShareX.HelpersLib
                     g.DrawImage(shadow, new Rectangle(borderSize * 2, i, shadow.Width, shadow.Height));
                 }
 
-                g.DrawImage(img, new Rectangle(borderSize, borderSize, img.Width, img.Height));
+                g.DrawImage(bmp, new Rectangle(borderSize, borderSize, bmp.Width, bmp.Height));
             }
 
-            return result;
+            return bmpResult;
         }
 
-        public static Image DrawReflection(Image img, int percentage, int maxAlpha, int minAlpha, int offset, bool skew, int skewSize)
+        public static Bitmap DrawReflection(Bitmap bmp, int percentage, int maxAlpha, int minAlpha, int offset, bool skew, int skewSize)
         {
-            Bitmap reflection = AddReflection(img, percentage, maxAlpha, minAlpha);
+            Bitmap reflection = AddReflection(bmp, percentage, maxAlpha, minAlpha);
 
             if (skew)
             {
                 reflection = AddSkew(reflection, skewSize, 0);
             }
 
-            Bitmap result = new Bitmap(reflection.Width, img.Height + reflection.Height + offset);
+            Bitmap bmpResult = new Bitmap(reflection.Width, bmp.Height + reflection.Height + offset);
 
-            using (Graphics g = Graphics.FromImage(result))
-            using (img)
+            using (bmp)
             using (reflection)
+            using (Graphics g = Graphics.FromImage(bmpResult))
             {
                 g.SetHighQuality();
-                g.DrawImage(img, 0, 0, img.Width, img.Height);
-                g.DrawImage(reflection, 0, img.Height + offset, reflection.Width, reflection.Height);
+                g.DrawImage(bmp, 0, 0, bmp.Width, bmp.Height);
+                g.DrawImage(reflection, 0, bmp.Height + offset, reflection.Width, reflection.Height);
             }
 
-            return result;
+            return bmpResult;
         }
 
         public static Bitmap AddSkew(Image img, int x, int y)
@@ -910,18 +910,18 @@ namespace ShareX.HelpersLib
             return newBitmap;
         }
 
-        public static Bitmap AddShadow(Image img, float opacity, int size)
+        public static Bitmap AddShadow(Bitmap bmp, float opacity, int size)
         {
-            return AddShadow(img, opacity, size, 1, Color.Black, new Point(0, 0));
+            return AddShadow(bmp, opacity, size, 1, Color.Black, new Point(0, 0));
         }
 
-        public static Bitmap AddShadow(Image img, float opacity, int size, float darkness, Color color, Point offset)
+        public static Bitmap AddShadow(Bitmap bmp, float opacity, int size, float darkness, Color color, Point offset)
         {
             Bitmap shadowImage = null;
 
             try
             {
-                shadowImage = img.CreateEmptyBitmap(size * 2, size * 2);
+                shadowImage = bmp.CreateEmptyBitmap(size * 2, size * 2);
 
                 ColorMatrix maskMatrix = new ColorMatrix();
                 maskMatrix.Matrix00 = 0;
@@ -932,8 +932,8 @@ namespace ShareX.HelpersLib
                 maskMatrix.Matrix41 = ((float)color.G).Remap(0, 255, 0, 1);
                 maskMatrix.Matrix42 = ((float)color.B).Remap(0, 255, 0, 1);
 
-                Rectangle shadowRectangle = new Rectangle(size, size, img.Width, img.Height);
-                maskMatrix.Apply(img, shadowImage, shadowRectangle);
+                Rectangle shadowRectangle = new Rectangle(size, size, bmp.Width, bmp.Height);
+                maskMatrix.Apply(bmp, shadowImage, shadowRectangle);
 
                 if (size > 0)
                 {
@@ -945,25 +945,25 @@ namespace ShareX.HelpersLib
                     ColorMatrix alphaMatrix = new ColorMatrix();
                     alphaMatrix.Matrix33 = darkness;
 
-                    Bitmap shadowImage2 = (Bitmap)alphaMatrix.Apply(shadowImage);
+                    Bitmap shadowImage2 = alphaMatrix.Apply(shadowImage);
                     shadowImage.Dispose();
                     shadowImage = shadowImage2;
                 }
 
-                Bitmap result = shadowImage.CreateEmptyBitmap(Math.Abs(offset.X), Math.Abs(offset.Y));
+                Bitmap bmpResult = shadowImage.CreateEmptyBitmap(Math.Abs(offset.X), Math.Abs(offset.Y));
 
-                using (Graphics g = Graphics.FromImage(result))
+                using (Graphics g = Graphics.FromImage(bmpResult))
                 {
                     g.SetHighQuality();
                     g.DrawImage(shadowImage, Math.Max(0, offset.X), Math.Max(0, offset.Y), shadowImage.Width, shadowImage.Height);
-                    g.DrawImage(img, Math.Max(size, -offset.X + size), Math.Max(size, -offset.Y + size), img.Width, img.Height);
+                    g.DrawImage(bmp, Math.Max(size, -offset.X + size), Math.Max(size, -offset.Y + size), bmp.Width, bmp.Height);
                 }
 
-                return result;
+                return bmpResult;
             }
             finally
             {
-                if (img != null) img.Dispose();
+                if (bmp != null) bmp.Dispose();
                 if (shadowImage != null) shadowImage.Dispose();
             }
         }
@@ -1416,17 +1416,17 @@ namespace ShareX.HelpersLib
             }
         }
 
-        public static Image TornEdges(Image img, int tornDepth, int tornRange, AnchorStyles sides, bool curvedEdges)
+        public static Bitmap TornEdges(Bitmap bmp, int tornDepth, int tornRange, AnchorStyles sides, bool curvedEdges)
         {
             if (tornDepth < 1 || tornRange < 1 || sides == AnchorStyles.None)
             {
-                return img;
+                return bmp;
             }
 
             List<Point> points = new List<Point>();
 
-            int horizontalTornCount = img.Width / tornRange;
-            int verticalTornCount = img.Height / tornRange;
+            int horizontalTornCount = bmp.Width / tornRange;
+            int verticalTornCount = bmp.Height / tornRange;
 
             if (sides.HasFlag(AnchorStyles.Top))
             {
@@ -1438,53 +1438,53 @@ namespace ShareX.HelpersLib
             else
             {
                 points.Add(new Point(0, 0));
-                points.Add(new Point(img.Width - 1, 0));
+                points.Add(new Point(bmp.Width - 1, 0));
             }
 
             if (sides.HasFlag(AnchorStyles.Right))
             {
                 for (int y = 0; y < verticalTornCount - 1; y++)
                 {
-                    points.Add(new Point(img.Width - 1 - MathHelpers.Random(0, tornDepth), tornRange * y));
+                    points.Add(new Point(bmp.Width - 1 - MathHelpers.Random(0, tornDepth), tornRange * y));
                 }
             }
             else
             {
-                points.Add(new Point(img.Width - 1, 0));
-                points.Add(new Point(img.Width - 1, img.Height - 1));
+                points.Add(new Point(bmp.Width - 1, 0));
+                points.Add(new Point(bmp.Width - 1, bmp.Height - 1));
             }
 
             if (sides.HasFlag(AnchorStyles.Bottom))
             {
                 for (int x = 0; x < horizontalTornCount - 1; x++)
                 {
-                    points.Add(new Point(img.Width - 1 - (tornRange * x), img.Height - 1 - MathHelpers.Random(0, tornDepth)));
+                    points.Add(new Point(bmp.Width - 1 - (tornRange * x), bmp.Height - 1 - MathHelpers.Random(0, tornDepth)));
                 }
             }
             else
             {
-                points.Add(new Point(img.Width - 1, img.Height - 1));
-                points.Add(new Point(0, img.Height - 1));
+                points.Add(new Point(bmp.Width - 1, bmp.Height - 1));
+                points.Add(new Point(0, bmp.Height - 1));
             }
 
             if (sides.HasFlag(AnchorStyles.Left))
             {
                 for (int y = 0; y < verticalTornCount - 1; y++)
                 {
-                    points.Add(new Point(MathHelpers.Random(0, tornDepth), img.Height - 1 - (tornRange * y)));
+                    points.Add(new Point(MathHelpers.Random(0, tornDepth), bmp.Height - 1 - (tornRange * y)));
                 }
             }
             else
             {
-                points.Add(new Point(0, img.Height - 1));
+                points.Add(new Point(0, bmp.Height - 1));
                 points.Add(new Point(0, 0));
             }
 
-            Bitmap result = img.CreateEmptyBitmap();
+            Bitmap bmpResult = bmp.CreateEmptyBitmap();
 
-            using (img)
-            using (Graphics g = Graphics.FromImage(result))
-            using (TextureBrush brush = new TextureBrush(img))
+            using (bmp)
+            using (Graphics g = Graphics.FromImage(bmpResult))
+            using (TextureBrush brush = new TextureBrush(bmp))
             {
                 g.SetHighQuality();
 
@@ -1498,22 +1498,22 @@ namespace ShareX.HelpersLib
                 {
                     g.FillPolygon(brush, fillPoints);
                 }
-
-                return result;
             }
+
+            return bmpResult;
         }
 
-        public static Bitmap Slice(Image img, int minSliceHeight, int maxSliceHeight, int minSliceShift, int maxSliceShift)
+        public static Bitmap Slice(Bitmap bmp, int minSliceHeight, int maxSliceHeight, int minSliceShift, int maxSliceShift)
         {
-            Bitmap result = img.CreateEmptyBitmap();
+            Bitmap bmpResult = bmp.CreateEmptyBitmap();
 
-            using (Graphics g = Graphics.FromImage(result))
+            using (Graphics g = Graphics.FromImage(bmpResult))
             {
                 int y = 0;
 
-                while (y < img.Height)
+                while (y < bmp.Height)
                 {
-                    Rectangle sourceRect = new Rectangle(0, y, img.Width, MathHelpers.Random(minSliceHeight, maxSliceHeight));
+                    Rectangle sourceRect = new Rectangle(0, y, bmp.Width, MathHelpers.Random(minSliceHeight, maxSliceHeight));
                     Rectangle destRect = sourceRect;
 
                     if (MathHelpers.Random(1) == 0) // Shift left
@@ -1525,13 +1525,13 @@ namespace ShareX.HelpersLib
                         destRect.X = MathHelpers.Random(minSliceShift, maxSliceShift);
                     }
 
-                    g.DrawImage(img, destRect, sourceRect, GraphicsUnit.Pixel);
+                    g.DrawImage(bmp, destRect, sourceRect, GraphicsUnit.Pixel);
 
                     y += sourceRect.Height;
                 }
             }
 
-            return result;
+            return bmpResult;
         }
 
         public static string OpenImageFileDialog(Form form = null)

@@ -50,16 +50,16 @@ namespace ShareX.ImageEffectsLib
             this.ApplyDefaultPropertyValues();
         }
 
-        public override Image Apply(Image img)
+        public override Bitmap Apply(Bitmap bmp)
         {
             int minSliceHeight = Math.Min(MinSliceHeight, MaxSliceHeight);
             int maxSliceHeight = Math.Max(MinSliceHeight, MaxSliceHeight);
             int minSliceShift = Math.Min(MinSliceShift, MaxSliceShift);
             int maxSliceShift = Math.Max(MinSliceShift, MaxSliceShift);
 
-            using (img)
+            using (bmp)
             {
-                return ImageHelpers.Slice(img, minSliceHeight, maxSliceHeight, minSliceShift, maxSliceShift);
+                return ImageHelpers.Slice(bmp, minSliceHeight, maxSliceHeight, minSliceShift, maxSliceShift);
             }
         }
     }

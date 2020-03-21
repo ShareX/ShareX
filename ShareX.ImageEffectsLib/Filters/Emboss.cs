@@ -30,11 +30,11 @@ namespace ShareX.ImageEffectsLib
 {
     internal class Emboss : ImageEffect
     {
-        public override Image Apply(Image img)
+        public override Bitmap Apply(Bitmap bmp)
         {
-            using (img)
+            using (bmp)
             {
-                return ConvolutionMatrixManager.Emboss().Apply(img);
+                return ConvolutionMatrixManager.Emboss().Apply(bmp);
             }
         }
     }

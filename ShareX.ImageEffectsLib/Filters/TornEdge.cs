@@ -50,9 +50,9 @@ namespace ShareX.ImageEffectsLib
             this.ApplyDefaultPropertyValues();
         }
 
-        public override Image Apply(Image img)
+        public override Bitmap Apply(Bitmap bmp)
         {
-            return ImageHelpers.TornEdges(img, Depth, Range, Sides, CurvedEdges);
+            return ImageHelpers.TornEdges(bmp, Depth, Range, Sides, CurvedEdges);
         }
     }
 }

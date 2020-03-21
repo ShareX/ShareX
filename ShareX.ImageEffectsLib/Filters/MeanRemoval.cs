@@ -32,11 +32,11 @@ namespace ShareX.ImageEffectsLib
     [Description("Mean removal")]
     internal class MeanRemoval : ImageEffect
     {
-        public override Image Apply(Image img)
+        public override Bitmap Apply(Bitmap bmp)
         {
-            using (img)
+            using (bmp)
             {
-                return ConvolutionMatrixManager.MeanRemoval().Apply(img);
+                return ConvolutionMatrixManager.MeanRemoval().Apply(bmp);
             }
         }
     }

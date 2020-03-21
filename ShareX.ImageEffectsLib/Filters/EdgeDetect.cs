@@ -32,11 +32,11 @@ namespace ShareX.ImageEffectsLib
     [Description("Edge detect")]
     internal class EdgeDetect : ImageEffect
     {
-        public override Image Apply(Image img)
+        public override Bitmap Apply(Bitmap bmp)
         {
-            using (img)
+            using (bmp)
             {
-                return ConvolutionMatrixManager.EdgeDetect().Apply(img);
+                return ConvolutionMatrixManager.EdgeDetect().Apply(bmp);
             }
         }
     }
