@@ -30,11 +30,11 @@ namespace ShareX.ImageEffectsLib
 {
     internal class Polaroid : ImageEffect
     {
-        public override Image Apply(Image img)
+        public override Bitmap Apply(Bitmap bmp)
         {
-            using (img)
+            using (bmp)
             {
-                return ColorMatrixManager.Polaroid().Apply(img);
+                return ColorMatrixManager.Polaroid().Apply(bmp);
             }
         }
     }

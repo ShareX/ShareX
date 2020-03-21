@@ -32,11 +32,11 @@ namespace ShareX.ImageEffectsLib
     [Description("Black & white")]
     internal class BlackWhite : ImageEffect
     {
-        public override Image Apply(Image img)
+        public override Bitmap Apply(Bitmap bmp)
         {
-            using (img)
+            using (bmp)
             {
-                return ColorMatrixManager.BlackWhite().Apply(img);
+                return ColorMatrixManager.BlackWhite().Apply(bmp);
             }
         }
     }

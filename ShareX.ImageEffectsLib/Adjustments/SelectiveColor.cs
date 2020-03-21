@@ -47,10 +47,10 @@ namespace ShareX.ImageEffectsLib
             this.ApplyDefaultPropertyValues();
         }
 
-        public override Image Apply(Image img)
+        public override Bitmap Apply(Bitmap bmp)
         {
-            ImageHelpers.SelectiveColor((Bitmap)img, LightColor, DarkColor, Threshold);
-            return img;
+            ImageHelpers.SelectiveColor(bmp, LightColor, DarkColor, Threshold);
+            return bmp;
         }
     }
 }

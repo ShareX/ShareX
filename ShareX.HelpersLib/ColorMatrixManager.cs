@@ -45,14 +45,14 @@ namespace ShareX.HelpersLib
 
         #endregion Grayscale values
 
-        public static Image Apply(this ColorMatrix matrix, Image img)
+        public static Bitmap Apply(this ColorMatrix matrix, Bitmap bmp)
         {
-            Bitmap dest = img.CreateEmptyBitmap();
+            Bitmap dest = bmp.CreateEmptyBitmap();
             Rectangle destRect = new Rectangle(0, 0, dest.Width, dest.Height);
-            return Apply(matrix, img, dest, destRect);
+            return Apply(matrix, bmp, dest, destRect);
         }
 
-        public static Image Apply(this ColorMatrix matrix, Image src, Image dest, Rectangle destRect)
+        public static Bitmap Apply(this ColorMatrix matrix, Bitmap src, Bitmap dest, Rectangle destRect)
         {
             using (Graphics g = Graphics.FromImage(dest))
             using (ImageAttributes ia = new ImageAttributes())
@@ -68,22 +68,22 @@ namespace ShareX.HelpersLib
 
         /// <param name="img"></param>
         /// <param name="value">1 = No change (Min 0.1, Max 5.0)</param>
-        public static Image ChangeGamma(Image img, float value)
+        public static Bitmap ChangeGamma(Bitmap bmp, float value)
         {
             value = value.Clamp(0.1f, 5.0f);
 
-            Bitmap bmp = img.CreateEmptyBitmap();
+            Bitmap bmpResult = bmp.CreateEmptyBitmap();
 
-            using (Graphics g = Graphics.FromImage(bmp))
+            using (Graphics g = Graphics.FromImage(bmpResult))
             using (ImageAttributes ia = new ImageAttributes())
             {
                 ia.ClearColorMatrix();
                 ia.SetGamma(value, ColorAdjustType.Bitmap);
                 g.SetHighQuality();
-                g.DrawImage(img, new Rectangle(0, 0, img.Width, img.Height), 0, 0, img.Width, img.Height, GraphicsUnit.Pixel, ia);
+                g.DrawImage(bmp, new Rectangle(0, 0, bmp.Width, bmp.Height), 0, 0, bmp.Width, bmp.Height, GraphicsUnit.Pixel, ia);
             }
 
-            return bmp;
+            return bmpResult;
         }
 
         public static ColorMatrix Inverse()

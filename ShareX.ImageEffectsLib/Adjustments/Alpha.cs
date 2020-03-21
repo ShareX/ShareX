@@ -42,11 +42,11 @@ namespace ShareX.ImageEffectsLib
             this.ApplyDefaultPropertyValues();
         }
 
-        public override Image Apply(Image img)
+        public override Bitmap Apply(Bitmap bmp)
         {
-            using (img)
+            using (bmp)
             {
-                return ColorMatrixManager.Alpha(Value, Addition).Apply(img);
+                return ColorMatrixManager.Alpha(Value, Addition).Apply(bmp);
             }
         }
     }
