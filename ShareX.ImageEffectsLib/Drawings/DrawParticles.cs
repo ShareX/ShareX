@@ -118,11 +118,11 @@ namespace ShareX.ImageEffectsLib
                         {
                             string file = MathHelpers.RandomPick(files);
 
-                            Image img = imageCache.GetImage(file);
+                            Bitmap bmpCached = imageCache.GetImage(file);
 
-                            if (img != null)
+                            if (bmpCached != null)
                             {
-                                DrawImage(bmp, img, g);
+                                DrawImage(bmp, bmpCached, g);
                             }
                         }
                     }

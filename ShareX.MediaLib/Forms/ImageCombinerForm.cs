@@ -115,7 +115,7 @@ namespace ShareX.MediaLib
         {
             if (lvImages.Items.Count > 0)
             {
-                List<Image> images = new List<Image>();
+                List<Bitmap> images = new List<Bitmap>();
 
                 try
                 {
@@ -125,11 +125,11 @@ namespace ShareX.MediaLib
 
                         if (File.Exists(filePath))
                         {
-                            Image img = ImageHelpers.LoadImage(filePath);
+                            Bitmap bmp = ImageHelpers.LoadImage(filePath);
 
-                            if (img != null)
+                            if (bmp != null)
                             {
-                                images.Add(img);
+                                images.Add(bmp);
                             }
                         }
                     }
@@ -150,7 +150,7 @@ namespace ShareX.MediaLib
                 {
                     if (images != null)
                     {
-                        foreach (Image image in images)
+                        foreach (Bitmap image in images)
                         {
                             if (image != null)
                             {

@@ -203,9 +203,9 @@ namespace ShareX.HelpersLib
             {
                 try
                 {
-                    using (Image img = ImageHelpers.LoadImage(path))
+                    using (Bitmap bmp = ImageHelpers.LoadImage(path))
                     {
-                        return CopyImage(img);
+                        return CopyImage(bmp);
                     }
                 }
                 catch (Exception e)

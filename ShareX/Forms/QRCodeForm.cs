@@ -122,11 +122,11 @@ namespace ShareX
         {
             if (!string.IsNullOrEmpty(filePath))
             {
-                using (Image img = ImageHelpers.LoadImage(filePath))
+                using (Bitmap bmp = ImageHelpers.LoadImage(filePath))
                 {
-                    if (img != null)
+                    if (bmp != null)
                     {
-                        DecodeImage((Bitmap)img);
+                        DecodeImage(bmp);
                     }
                 }
             }

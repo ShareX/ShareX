@@ -56,11 +56,11 @@ namespace ShareX.HelpersLib
 
         public static void ShowImage(string filePath)
         {
-            using (Image img = ImageHelpers.LoadImage(filePath))
+            using (Bitmap bmp = ImageHelpers.LoadImage(filePath))
             {
-                if (img != null)
+                if (bmp != null)
                 {
-                    using (ImageViewer viewer = new ImageViewer(img))
+                    using (ImageViewer viewer = new ImageViewer(bmp))
                     {
                         viewer.ShowDialog();
                     }

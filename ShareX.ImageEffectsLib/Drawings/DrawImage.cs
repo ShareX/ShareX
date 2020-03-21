@@ -61,12 +61,12 @@ namespace ShareX.ImageEffectsLib
         {
             if (!string.IsNullOrEmpty(ImageLocation) && File.Exists(ImageLocation))
             {
-                using (Image img = ImageHelpers.LoadImage(ImageLocation))
+                using (Bitmap bmp2 = ImageHelpers.LoadImage(ImageLocation))
                 {
-                    if (img != null)
+                    if (bmp2 != null)
                     {
                         // Calculate size first
-                        Size imageSize = img.Size;
+                        Size imageSize = bmp2.Size;
                         if (SizeMode == DrawImageSizeMode.AbsoluteSize)
                         {
                             // Use Size property
@@ -75,7 +75,7 @@ namespace ShareX.ImageEffectsLib
                         else if (SizeMode == DrawImageSizeMode.PercentageOfWatermark)
                         {
                             // Relative size (percentage of watermark)
-                            imageSize = new Size((int)(img.Width * (Size.Width / 100.0)), (int)(img.Height * (Size.Height / 100.0)));
+                            imageSize = new Size((int)(bmp2.Width * (Size.Width / 100.0)), (int)(bmp2.Height * (Size.Height / 100.0)));
                         }
                         else if (SizeMode == DrawImageSizeMode.PercentageOfCanvas)
                         {
@@ -96,7 +96,7 @@ namespace ShareX.ImageEffectsLib
                         using (Graphics g = Graphics.FromImage(bmp))
                         {
                             g.SetHighQuality();
-                            g.DrawImage(img, imageRectangle);
+                            g.DrawImage(bmp2, imageRectangle);
                         }
                     }
                 }

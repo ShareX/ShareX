@@ -903,7 +903,7 @@ namespace ShareX
             {
                 if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
-                Bitmap bmp = (Bitmap)ImageHelpers.LoadImage(filePath);
+                Bitmap bmp = ImageHelpers.LoadImage(filePath);
 
                 AnnotateImageAsync(bmp, filePath, taskSettings);
             }
@@ -1031,7 +1031,7 @@ namespace ShareX
 
             if (!string.IsNullOrEmpty(filePath))
             {
-                Bitmap bmp = (Bitmap)ImageHelpers.LoadImage(filePath);
+                Bitmap bmp = ImageHelpers.LoadImage(filePath);
 
                 if (bmp != null)
                 {

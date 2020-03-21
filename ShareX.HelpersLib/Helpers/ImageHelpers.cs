@@ -87,34 +87,34 @@ namespace ShareX.HelpersLib
             return ResizeImageByPercentage(bmp, percentage, percentage, interpolationMode);
         }
 
-        public static Image ResizeImage(Image img, Size size, bool allowEnlarge, bool centerImage = true)
+        public static Bitmap ResizeImage(Bitmap bmp, Size size, bool allowEnlarge, bool centerImage = true)
         {
-            return ResizeImage(img, size.Width, size.Height, allowEnlarge, centerImage);
+            return ResizeImage(bmp, size.Width, size.Height, allowEnlarge, centerImage);
         }
 
-        public static Image ResizeImage(Image img, int width, int height, bool allowEnlarge, bool centerImage = true)
+        public static Bitmap ResizeImage(Bitmap bmp, int width, int height, bool allowEnlarge, bool centerImage = true)
         {
-            return ResizeImage(img, width, height, allowEnlarge, centerImage, Color.Transparent);
+            return ResizeImage(bmp, width, height, allowEnlarge, centerImage, Color.Transparent);
         }
 
-        public static Image ResizeImage(Image img, int width, int height, bool allowEnlarge, bool centerImage, Color backColor)
+        public static Bitmap ResizeImage(Bitmap bmp, int width, int height, bool allowEnlarge, bool centerImage, Color backColor)
         {
             double ratio;
             int newWidth, newHeight;
 
-            if (!allowEnlarge && img.Width <= width && img.Height <= height)
+            if (!allowEnlarge && bmp.Width <= width && bmp.Height <= height)
             {
                 ratio = 1.0;
-                newWidth = img.Width;
-                newHeight = img.Height;
+                newWidth = bmp.Width;
+                newHeight = bmp.Height;
             }
             else
             {
-                double ratioX = (double)width / img.Width;
-                double ratioY = (double)height / img.Height;
+                double ratioX = (double)width / bmp.Width;
+                double ratioY = (double)height / bmp.Height;
                 ratio = ratioX < ratioY ? ratioX : ratioY;
-                newWidth = (int)(img.Width * ratio);
-                newHeight = (int)(img.Height * ratio);
+                newWidth = (int)(bmp.Width * ratio);
+                newHeight = (int)(bmp.Height * ratio);
             }
 
             int newX = 0;
@@ -122,14 +122,14 @@ namespace ShareX.HelpersLib
 
             if (centerImage)
             {
-                newX += (int)((width - (img.Width * ratio)) / 2);
-                newY += (int)((height - (img.Height * ratio)) / 2);
+                newX += (int)((width - (bmp.Width * ratio)) / 2);
+                newY += (int)((height - (bmp.Height * ratio)) / 2);
             }
 
-            Bitmap bmp = new Bitmap(width, height, PixelFormat.Format32bppArgb);
-            bmp.SetResolution(img.HorizontalResolution, img.VerticalResolution);
+            Bitmap bmpResult = new Bitmap(width, height, PixelFormat.Format32bppArgb);
+            bmpResult.SetResolution(bmp.HorizontalResolution, bmp.VerticalResolution);
 
-            using (Graphics g = Graphics.FromImage(bmp))
+            using (Graphics g = Graphics.FromImage(bmpResult))
             {
                 if (backColor.A > 0)
                 {
@@ -137,15 +137,15 @@ namespace ShareX.HelpersLib
                 }
 
                 g.SetHighQuality();
-                g.DrawImage(img, newX, newY, newWidth, newHeight);
+                g.DrawImage(bmp, newX, newY, newWidth, newHeight);
             }
 
-            return bmp;
+            return bmpResult;
         }
 
-        public static Image CreateThumbnail(Image img, int width, int height)
+        public static Bitmap CreateThumbnail(Bitmap bmp, int width, int height)
         {
-            double srcRatio = (double)img.Width / img.Height;
+            double srcRatio = (double)bmp.Width / bmp.Height;
             double dstRatio = (double)width / height;
             int w, h;
 
@@ -153,42 +153,42 @@ namespace ShareX.HelpersLib
             {
                 if (srcRatio >= 1)
                 {
-                    w = (int)(img.Height * dstRatio);
+                    w = (int)(bmp.Height * dstRatio);
                 }
                 else
                 {
-                    w = (int)(img.Width / srcRatio * dstRatio);
+                    w = (int)(bmp.Width / srcRatio * dstRatio);
                 }
 
-                h = img.Height;
+                h = bmp.Height;
             }
             else
             {
-                w = img.Width;
+                w = bmp.Width;
 
                 if (srcRatio >= 1)
                 {
-                    h = (int)(img.Height / dstRatio * srcRatio);
+                    h = (int)(bmp.Height / dstRatio * srcRatio);
                 }
                 else
                 {
-                    h = (int)(img.Height * srcRatio / dstRatio);
+                    h = (int)(bmp.Height * srcRatio / dstRatio);
                 }
             }
 
-            int x = (img.Width - w) / 2;
-            int y = (img.Height - h) / 2;
+            int x = (bmp.Width - w) / 2;
+            int y = (bmp.Height - h) / 2;
 
-            Bitmap bmp = new Bitmap(width, height, PixelFormat.Format32bppArgb);
-            bmp.SetResolution(img.HorizontalResolution, img.VerticalResolution);
+            Bitmap bmpResult = new Bitmap(width, height, PixelFormat.Format32bppArgb);
+            bmpResult.SetResolution(bmp.HorizontalResolution, bmp.VerticalResolution);
 
-            using (Graphics g = Graphics.FromImage(bmp))
+            using (Graphics g = Graphics.FromImage(bmpResult))
             {
                 g.SetHighQuality();
-                g.DrawImage(img, new Rectangle(0, 0, width, height), new Rectangle(x, y, w, h), GraphicsUnit.Pixel);
+                g.DrawImage(bmp, new Rectangle(0, 0, width, height), new Rectangle(x, y, w, h), GraphicsUnit.Pixel);
             }
 
-            return bmp;
+            return bmpResult;
         }
 
         /// <summary>If image size is bigger than specified size then resize it and keep aspect ratio else return image.</summary>
@@ -750,17 +750,17 @@ namespace ShareX.HelpersLib
             return bmp;
         }
 
-        public static Image CreateCheckerPattern()
+        public static Bitmap CreateCheckerPattern()
         {
             return CreateCheckerPattern(10, 10);
         }
 
-        public static Image CreateCheckerPattern(int width, int height)
+        public static Bitmap CreateCheckerPattern(int width, int height)
         {
             return CreateCheckerPattern(width, height, SystemColors.ControlLight, SystemColors.ControlLightLight);
         }
 
-        public static Image CreateCheckerPattern(int width, int height, Color checkerColor1, Color checkerColor2)
+        public static Bitmap CreateCheckerPattern(int width, int height, Color checkerColor1, Color checkerColor2)
         {
             Bitmap bmp = new Bitmap(width * 2, height * 2);
 
@@ -1715,7 +1715,7 @@ namespace ShareX.HelpersLib
             return null;
         }
 
-        public static Image LoadImageWithFileDialog()
+        public static Bitmap LoadImageWithFileDialog()
         {
             string filepath = OpenImageFileDialog();
 
@@ -1727,7 +1727,7 @@ namespace ShareX.HelpersLib
             return null;
         }
 
-        public static Image CombineImages(IEnumerable<Image> images, Orientation orientation = Orientation.Vertical, int space = 0)
+        public static Bitmap CombineImages(IEnumerable<Image> images, Orientation orientation = Orientation.Vertical, int space = 0)
         {
             int width, height;
 
@@ -1773,9 +1773,9 @@ namespace ShareX.HelpersLib
             return bmp;
         }
 
-        public static List<Image> SplitImage(Image img, int rowCount, int columnCount)
+        public static List<Bitmap> SplitImage(Image img, int rowCount, int columnCount)
         {
-            List<Image> images = new List<Image>();
+            List<Bitmap> images = new List<Bitmap>();
 
             int width = img.Width / columnCount;
             int height = img.Height / rowCount;
@@ -1800,7 +1800,7 @@ namespace ShareX.HelpersLib
             return images;
         }
 
-        public static Image CreateColorPickerIcon(Color color, Rectangle rect, int holeSize = 0)
+        public static Bitmap CreateColorPickerIcon(Color color, Rectangle rect, int holeSize = 0)
         {
             Bitmap bmp = new Bitmap(rect.Width, rect.Height);
 
@@ -2039,11 +2039,11 @@ namespace ShareX.HelpersLib
 
         public static Size GetImageFileDimensions(string filePath)
         {
-            using (Image img = LoadImage(filePath))
+            using (Bitmap bmp = LoadImage(filePath))
             {
-                if (img != null)
+                if (bmp != null)
                 {
-                    return img.Size;
+                    return bmp.Size;
                 }
             }
 

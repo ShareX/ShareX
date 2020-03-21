@@ -31,23 +31,23 @@ namespace ShareX.HelpersLib
 {
     public class ImageFilesCache : IDisposable
     {
-        private Dictionary<string, Image> images = new Dictionary<string, Image>();
+        private Dictionary<string, Bitmap> images = new Dictionary<string, Bitmap>();
 
-        public Image GetImage(string filePath)
+        public Bitmap GetImage(string filePath)
         {
             if (images.ContainsKey(filePath))
             {
                 return images[filePath];
             }
 
-            Image img = ImageHelpers.LoadImage(filePath);
+            Bitmap bmp = ImageHelpers.LoadImage(filePath);
 
-            if (img != null)
+            if (bmp != null)
             {
-                images.Add(filePath, img);
+                images.Add(filePath, bmp);
             }
 
-            return img;
+            return bmp;
         }
 
         public void Clear()
@@ -64,11 +64,11 @@ namespace ShareX.HelpersLib
         {
             if (images != null)
             {
-                foreach (Image img in images.Values)
+                foreach (Bitmap bmp in images.Values)
                 {
-                    if (img != null)
+                    if (bmp != null)
                     {
-                        img.Dispose();
+                        bmp.Dispose();
                     }
                 }
             }

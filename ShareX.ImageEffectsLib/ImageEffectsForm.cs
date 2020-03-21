@@ -606,7 +606,7 @@ namespace ShareX.ImageEffectsLib
             if (!string.IsNullOrEmpty(filePath))
             {
                 if (PreviewImage != null) PreviewImage.Dispose();
-                PreviewImage = (Bitmap)ImageHelpers.LoadImage(filePath);
+                PreviewImage = ImageHelpers.LoadImage(filePath);
                 FilePath = filePath;
                 UpdatePreview();
             }
@@ -680,7 +680,7 @@ namespace ShareX.ImageEffectsLib
                     if (Helpers.IsImageFile(files[0]))
                     {
                         if (PreviewImage != null) PreviewImage.Dispose();
-                        PreviewImage = (Bitmap)ImageHelpers.LoadImage(files[0]);
+                        PreviewImage = ImageHelpers.LoadImage(files[0]);
                         UpdatePreview();
                     }
                 }

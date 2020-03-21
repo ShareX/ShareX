@@ -1608,8 +1608,8 @@ namespace ShareX.ScreenCaptureLib
 
                     if (!string.IsNullOrEmpty(imageFilePath))
                     {
-                        Image img = ImageHelpers.LoadImage(imageFilePath);
-                        InsertImage(img);
+                        Bitmap bmp = ImageHelpers.LoadImage(imageFilePath);
+                        InsertImage(bmp);
                     }
                 }
             }
@@ -1758,7 +1758,7 @@ namespace ShareX.ScreenCaptureLib
         {
             if (!string.IsNullOrEmpty(filePath))
             {
-                Bitmap bmp = (Bitmap)ImageHelpers.LoadImage(filePath);
+                Bitmap bmp = ImageHelpers.LoadImage(filePath);
 
                 if (bmp != null)
                 {
@@ -1780,8 +1780,8 @@ namespace ShareX.ScreenCaptureLib
 
             if (!string.IsNullOrEmpty(filePath))
             {
-                Image img = ImageHelpers.LoadImage(filePath);
-                InsertImage(img);
+                Bitmap bmp = ImageHelpers.LoadImage(filePath);
+                InsertImage(bmp);
             }
         }
 
@@ -1865,7 +1865,7 @@ namespace ShareX.ScreenCaptureLib
                     if (size != oldSize)
                     {
                         InterpolationMode interpolationMode = GetInterpolationMode(Options.ImageEditorResizeInterpolationMode);
-                        Bitmap bmp = (Bitmap)ImageHelpers.ResizeImage(Form.Canvas, size, interpolationMode);
+                        Bitmap bmp = ImageHelpers.ResizeImage(Form.Canvas, size, interpolationMode);
 
                         if (bmp != null)
                         {

@@ -47,7 +47,7 @@ namespace ShareX.ImageEffectsLib
             {
                 foreach (ImageEffect effect in Effects.Where(x => x.Enabled))
                 {
-                    result = (Bitmap)effect.Apply(result);
+                    result = effect.Apply(result);
 
                     if (result == null)
                     {

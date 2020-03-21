@@ -158,7 +158,7 @@ namespace ShareX
 
                 if (Program.Settings.TaskViewMode == TaskViewMode.ThumbnailView)
                 {
-                    panel.UpdateThumbnail(image);
+                    panel.UpdateThumbnail((Bitmap)image);
                 }
             }
         }

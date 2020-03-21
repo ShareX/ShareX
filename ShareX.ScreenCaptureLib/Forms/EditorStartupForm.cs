@@ -50,7 +50,7 @@ namespace ShareX.ScreenCaptureLib
         {
             if (!string.IsNullOrEmpty(imageFilePath))
             {
-                Image = (Bitmap)ImageHelpers.LoadImage(imageFilePath);
+                Image = ImageHelpers.LoadImage(imageFilePath);
 
                 if (Image != null)
                 {

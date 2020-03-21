@@ -69,13 +69,13 @@ namespace ShareX.ScreenCaptureLib
         {
             if (!string.IsNullOrEmpty(filePath))
             {
-                Image img = ImageHelpers.LoadImage(filePath);
+                Bitmap bmp = ImageHelpers.LoadImage(filePath);
 
-                if (img != null)
+                if (bmp != null)
                 {
                     AnnotationOptions.LastImageFilePath = filePath;
 
-                    SetImage(img, centerImage);
+                    SetImage(bmp, centerImage);
 
                     return true;
                 }

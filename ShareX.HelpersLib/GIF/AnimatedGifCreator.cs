@@ -68,9 +68,9 @@ namespace ShareX.HelpersLib
 
         public void AddFrame(string path, GIFQuality quality = GIFQuality.Default)
         {
-            using (Image img = ImageHelpers.LoadImage(path))
+            using (Bitmap bmp = ImageHelpers.LoadImage(path))
             {
-                AddFrame(img, quality);
+                AddFrame(bmp, quality);
             }
         }
 
