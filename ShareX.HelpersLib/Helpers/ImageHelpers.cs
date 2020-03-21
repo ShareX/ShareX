@@ -224,19 +224,6 @@ namespace ShareX.HelpersLib
             return ResizeImageLimit(img, size, size);
         }
 
-        public static Image CropImage(Image img, Rectangle rect)
-        {
-            if (img != null && rect.X >= 0 && rect.Y >= 0 && rect.Width > 0 && rect.Height > 0 && new Rectangle(0, 0, img.Width, img.Height).Contains(rect))
-            {
-                using (Bitmap bmp = new Bitmap(img))
-                {
-                    return bmp.Clone(rect, bmp.PixelFormat);
-                }
-            }
-
-            return null;
-        }
-
         public static Bitmap CropBitmap(Bitmap bmp, Rectangle rect)
         {
             if (bmp != null && rect.X >= 0 && rect.Y >= 0 && rect.Width > 0 && rect.Height > 0 && new Rectangle(0, 0, bmp.Width, bmp.Height).Contains(rect))
@@ -406,12 +393,12 @@ namespace ShareX.HelpersLib
             return bmp;
         }
 
-        public static Image AddCanvas(Image img, Padding margin)
+        public static Bitmap AddCanvas(Image img, Padding margin)
         {
             return AddCanvas(img, margin, Color.Transparent);
         }
 
-        public static Image AddCanvas(Image img, Padding margin, Color canvasColor)
+        public static Bitmap AddCanvas(Image img, Padding margin, Color canvasColor)
         {
             if (margin.All == 0 || img.Width + margin.Horizontal < 1 || img.Height + margin.Vertical < 1)
             {
@@ -930,7 +917,7 @@ namespace ShareX.HelpersLib
 
         public static Bitmap AddShadow(Image img, float opacity, int size, float darkness, Color color, Point offset)
         {
-            Image shadowImage = null;
+            Bitmap shadowImage = null;
 
             try
             {
@@ -950,7 +937,7 @@ namespace ShareX.HelpersLib
 
                 if (size > 0)
                 {
-                    BoxBlur((Bitmap)shadowImage, size);
+                    BoxBlur(shadowImage, size);
                 }
 
                 if (darkness > 1)
@@ -958,7 +945,7 @@ namespace ShareX.HelpersLib
                     ColorMatrix alphaMatrix = new ColorMatrix();
                     alphaMatrix.Matrix33 = darkness;
 
-                    Image shadowImage2 = alphaMatrix.Apply(shadowImage);
+                    Bitmap shadowImage2 = (Bitmap)alphaMatrix.Apply(shadowImage);
                     shadowImage.Dispose();
                     shadowImage = shadowImage2;
                 }
@@ -981,16 +968,15 @@ namespace ShareX.HelpersLib
             }
         }
 
-        public static Bitmap Sharpen(Image img, double strength)
+        public static Bitmap Sharpen(Bitmap bmp, double strength)
         {
-            using (Bitmap bitmap = (Bitmap)img)
+            if (bmp != null)
             {
-                if (bitmap != null)
+                using (bmp)
                 {
-                    Bitmap sharpenImage = bitmap.Clone() as Bitmap;
-
-                    int width = img.Width;
-                    int height = img.Height;
+                    Bitmap sharpenImage = (Bitmap)bmp.Clone();
+                    int width = sharpenImage.Width;
+                    int height = sharpenImage.Height;
 
                     // Create sharpening filter.
                     const int filterSize = 5;
@@ -1009,75 +995,73 @@ namespace ShareX.HelpersLib
 
                     const int s = filterSize / 2;
 
-                    Color[,] result = new Color[img.Width, img.Height];
+                    Color[,] result = new Color[sharpenImage.Width, sharpenImage.Height];
 
                     // Lock image bits for read/write.
-                    if (sharpenImage != null)
+                    BitmapData pbits = sharpenImage.LockBits(new Rectangle(0, 0, width, height), ImageLockMode.ReadWrite, PixelFormat.Format24bppRgb);
+
+                    // Declare an array to hold the bytes of the bitmap.
+                    int bytes = pbits.Stride * height;
+                    byte[] rgbValues = new byte[bytes];
+
+                    // Copy the RGB values into the array.
+                    Marshal.Copy(pbits.Scan0, rgbValues, 0, bytes);
+
+                    int rgb;
+                    // Fill the color array with the new sharpened color values.
+                    for (int x = s; x < width - s; x++)
                     {
-                        BitmapData pbits = sharpenImage.LockBits(new Rectangle(0, 0, width, height), ImageLockMode.ReadWrite, PixelFormat.Format24bppRgb);
-
-                        // Declare an array to hold the bytes of the bitmap.
-                        int bytes = pbits.Stride * height;
-                        byte[] rgbValues = new byte[bytes];
-
-                        // Copy the RGB values into the array.
-                        Marshal.Copy(pbits.Scan0, rgbValues, 0, bytes);
-
-                        int rgb;
-                        // Fill the color array with the new sharpened color values.
-                        for (int x = s; x < width - s; x++)
+                        for (int y = s; y < height - s; y++)
                         {
-                            for (int y = s; y < height - s; y++)
-                            {
-                                double red = 0.0, green = 0.0, blue = 0.0;
+                            double red = 0.0, green = 0.0, blue = 0.0;
 
-                                for (int filterX = 0; filterX < filterSize; filterX++)
+                            for (int filterX = 0; filterX < filterSize; filterX++)
+                            {
+                                for (int filterY = 0; filterY < filterSize; filterY++)
                                 {
-                                    for (int filterY = 0; filterY < filterSize; filterY++)
-                                    {
-                                        int imageX = (x - s + filterX + width) % width;
-                                        int imageY = (y - s + filterY + height) % height;
+                                    int imageX = (x - s + filterX + width) % width;
+                                    int imageY = (y - s + filterY + height) % height;
 
-                                        rgb = (imageY * pbits.Stride) + (3 * imageX);
+                                    rgb = (imageY * pbits.Stride) + (3 * imageX);
 
-                                        red += rgbValues[rgb + 2] * filter[filterX, filterY];
-                                        green += rgbValues[rgb + 1] * filter[filterX, filterY];
-                                        blue += rgbValues[rgb + 0] * filter[filterX, filterY];
-                                    }
-
-                                    rgb = (y * pbits.Stride) + (3 * x);
-
-                                    int r = Math.Min(Math.Max((int)((factor * red) + (bias * rgbValues[rgb + 2])), 0), 255);
-                                    int g = Math.Min(Math.Max((int)((factor * green) + (bias * rgbValues[rgb + 1])), 0), 255);
-                                    int b = Math.Min(Math.Max((int)((factor * blue) + (bias * rgbValues[rgb + 0])), 0), 255);
-
-                                    result[x, y] = Color.FromArgb(r, g, b);
+                                    red += rgbValues[rgb + 2] * filter[filterX, filterY];
+                                    green += rgbValues[rgb + 1] * filter[filterX, filterY];
+                                    blue += rgbValues[rgb + 0] * filter[filterX, filterY];
                                 }
-                            }
-                        }
 
-                        // Update the image with the sharpened pixels.
-                        for (int x = s; x < width - s; x++)
-                        {
-                            for (int y = s; y < height - s; y++)
-                            {
                                 rgb = (y * pbits.Stride) + (3 * x);
 
-                                rgbValues[rgb + 2] = result[x, y].R;
-                                rgbValues[rgb + 1] = result[x, y].G;
-                                rgbValues[rgb + 0] = result[x, y].B;
+                                int r = Math.Min(Math.Max((int)((factor * red) + (bias * rgbValues[rgb + 2])), 0), 255);
+                                int g = Math.Min(Math.Max((int)((factor * green) + (bias * rgbValues[rgb + 1])), 0), 255);
+                                int b = Math.Min(Math.Max((int)((factor * blue) + (bias * rgbValues[rgb + 0])), 0), 255);
+
+                                result[x, y] = Color.FromArgb(r, g, b);
                             }
                         }
-
-                        // Copy the RGB values back to the bitmap.
-                        Marshal.Copy(rgbValues, 0, pbits.Scan0, bytes);
-                        // Release image bits.
-                        sharpenImage.UnlockBits(pbits);
                     }
+
+                    // Update the image with the sharpened pixels.
+                    for (int x = s; x < width - s; x++)
+                    {
+                        for (int y = s; y < height - s; y++)
+                        {
+                            rgb = (y * pbits.Stride) + (3 * x);
+
+                            rgbValues[rgb + 2] = result[x, y].R;
+                            rgbValues[rgb + 1] = result[x, y].G;
+                            rgbValues[rgb + 0] = result[x, y].B;
+                        }
+                    }
+
+                    // Copy the RGB values back to the bitmap.
+                    Marshal.Copy(rgbValues, 0, pbits.Scan0, bytes);
+                    // Release image bits.
+                    sharpenImage.UnlockBits(pbits);
 
                     return sharpenImage;
                 }
             }
+
             return null;
         }
 
@@ -1634,7 +1618,7 @@ namespace ShareX.HelpersLib
             {
                 sfd.Filter = "PNG (*.png)|*.png|JPEG (*.jpg, *.jpeg, *.jpe, *.jfif)|*.jpg;*.jpeg;*.jpe;*.jfif|GIF (*.gif)|*.gif|BMP (*.bmp)|*.bmp|TIFF (*.tif, *.tiff)|*.tif;*.tiff";
                 sfd.DefaultExt = "png";
-            
+
                 string initialDirectory = null;
 
                 if (useLastDirectory && !string.IsNullOrEmpty(HelpersOptions.LastSaveDirectory) && Directory.Exists(HelpersOptions.LastSaveDirectory))

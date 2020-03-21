@@ -59,7 +59,7 @@ namespace ShareX.ImageEffectsLib
         {
             if (Margin.All == 0) return img;
 
-            return ImageHelpers.CropImage(img, new Rectangle(Margin.Left, Margin.Top, img.Width - Margin.Horizontal, img.Height - Margin.Vertical));
+            return ImageHelpers.CropBitmap((Bitmap)img, new Rectangle(Margin.Left, Margin.Top, img.Width - Margin.Horizontal, img.Height - Margin.Vertical));
         }
     }
 }

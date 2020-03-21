@@ -118,22 +118,22 @@ namespace ShareX
 
         protected ImageInfo ExecuteRegionCaptureLight(TaskSettings taskSettings)
         {
-            Image img = null;
+            Bitmap bmp = null;
 
             using (RegionCaptureLightForm rectangleLight = new RegionCaptureLightForm(TaskHelpers.GetScreenshot(taskSettings)))
             {
                 if (rectangleLight.ShowDialog() == DialogResult.OK)
                 {
-                    img = rectangleLight.GetAreaImage();
+                    bmp = rectangleLight.GetAreaImage();
 
-                    if (img != null)
+                    if (bmp != null)
                     {
                         lastRegionCaptureType = RegionCaptureType.Light;
                     }
                 }
             }
 
-            return new ImageInfo(img);
+            return new ImageInfo(bmp);
         }
 
         protected ImageInfo ExecuteRegionCaptureTransparent(TaskSettings taskSettings)

@@ -93,17 +93,17 @@ namespace ShareX.ScreenCaptureLib
                         Thread.Sleep(10);
                         Application.DoEvents();
 
-                        whiteBackground = (Bitmap)CaptureRectangleNative(rect);
+                        whiteBackground = CaptureRectangleNative(rect);
 
                         form.BackColor = Color.Black;
                         Application.DoEvents();
 
-                        blackBackground = (Bitmap)CaptureRectangleNative(rect);
+                        blackBackground = CaptureRectangleNative(rect);
 
                         form.BackColor = Color.White;
                         Application.DoEvents();
 
-                        whiteBackground2 = (Bitmap)CaptureRectangleNative(rect);
+                        whiteBackground2 = CaptureRectangleNative(rect);
 
                         form.Close();
                     }

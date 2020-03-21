@@ -1285,7 +1285,7 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        public Image GetResultImage()
+        public Bitmap GetResultImage()
         {
             if (IsEditorMode)
             {
@@ -1304,9 +1304,9 @@ namespace ShareX.ScreenCaptureLib
                     gp = regionFillPath;
                 }
 
-                using (Image img = RegionCaptureTasks.ApplyRegionPathToImage(Canvas, gp, out Rectangle rect))
+                using (Bitmap bmp = RegionCaptureTasks.ApplyRegionPathToImage(Canvas, gp, out Rectangle rect))
                 {
-                    return ShapeManager.RenderOutputImage(img, rect.Location);
+                    return ShapeManager.RenderOutputImage(bmp, rect.Location);
                 }
             }
             else if (Result == RegionResult.Fullscreen)
@@ -1322,9 +1322,9 @@ namespace ShareX.ScreenCaptureLib
                     Screen screen = screens[MonitorIndex];
                     Rectangle screenRect = CaptureHelpers.ScreenToClient(screen.Bounds);
 
-                    using (Image img = ShapeManager.RenderOutputImage(Canvas))
+                    using (Bitmap bmp = ShapeManager.RenderOutputImage(Canvas))
                     {
-                        return ImageHelpers.CropImage(img, screenRect);
+                        return ImageHelpers.CropBitmap(bmp, screenRect);
                     }
                 }
             }
@@ -1332,9 +1332,9 @@ namespace ShareX.ScreenCaptureLib
             {
                 Rectangle activeScreenRect = CaptureHelpers.GetActiveScreenBounds0Based();
 
-                using (Image img = ShapeManager.RenderOutputImage(Canvas))
+                using (Bitmap bmp = ShapeManager.RenderOutputImage(Canvas))
                 {
-                    return ImageHelpers.CropImage(img, activeScreenRect);
+                    return ImageHelpers.CropBitmap(bmp, activeScreenRect);
                 }
             }
 

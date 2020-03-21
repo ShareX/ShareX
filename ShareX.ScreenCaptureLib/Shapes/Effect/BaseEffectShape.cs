@@ -37,7 +37,7 @@ namespace ShareX.ScreenCaptureLib
         public abstract string OverlayText { get; }
 
         private bool drawCache, isEffectCaching, isCachePending, isDisposePending;
-        private Image cachedEffect;
+        private Bitmap cachedEffect;
 
         public abstract void ApplyEffect(Bitmap bmp);
 
@@ -155,7 +155,7 @@ namespace ShareX.ScreenCaptureLib
 
                     Task.Run(() =>
                     {
-                        ApplyEffect((Bitmap)cachedEffect);
+                        ApplyEffect(cachedEffect);
 
                         isEffectCaching = false;
 

@@ -218,11 +218,11 @@ namespace ShareX
 
                 TaskSettings taskSettings = TaskSettings.GetDefaultTaskSettings();
 
-                using (Image img = RegionCaptureTasks.GetRegionImage(taskSettings.CaptureSettings.SurfaceOptions))
+                using (Bitmap bmp = RegionCaptureTasks.GetRegionImage(taskSettings.CaptureSettings.SurfaceOptions))
                 {
-                    if (img != null)
+                    if (bmp != null)
                     {
-                        DecodeImage((Bitmap)img);
+                        DecodeImage(bmp);
                     }
                 }
             }

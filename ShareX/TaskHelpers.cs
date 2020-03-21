@@ -1011,7 +1011,7 @@ namespace ShareX
                                 return null;
                             case RegionResult.Region: // Enter
                             case RegionResult.AnnotateRunAfterCaptureTasks:
-                                return (Bitmap)form.GetResultImage();
+                                return form.GetResultImage();
                             case RegionResult.Fullscreen: // Space or right click
                             case RegionResult.AnnotateContinueTask:
                                 return (Bitmap)form.Canvas.Clone();
@@ -1123,9 +1123,9 @@ namespace ShareX
             {
                 if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
-                using (Image img = RegionCaptureTasks.GetRegionImage(taskSettings.CaptureSettings.SurfaceOptions))
+                using (Bitmap bmp = RegionCaptureTasks.GetRegionImage(taskSettings.CaptureSettings.SurfaceOptions))
                 {
-                    await OCRImage(img, taskSettings);
+                    await OCRImage(bmp, taskSettings);
                 }
             }
         }
