@@ -78,13 +78,13 @@
             // 
             this.lvImages.AllowDrop = true;
             this.lvImages.AllowItemDrag = true;
+            resources.ApplyResources(this.lvImages, "lvImages");
             this.lvImages.AutoFillColumn = true;
             this.lvImages.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.chFilepath});
             this.lvImages.FullRowSelect = true;
             this.lvImages.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
             this.lvImages.HideSelection = false;
-            resources.ApplyResources(this.lvImages, "lvImages");
             this.lvImages.Name = "lvImages";
             this.lvImages.UseCompatibleStateImageBehavior = false;
             this.lvImages.View = System.Windows.Forms.View.Details;
@@ -125,9 +125,9 @@
             // 
             // cbOrientation
             // 
+            resources.ApplyResources(this.cbOrientation, "cbOrientation");
             this.cbOrientation.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbOrientation.FormattingEnabled = true;
-            resources.ApplyResources(this.cbOrientation, "cbOrientation");
             this.cbOrientation.Name = "cbOrientation";
             this.cbOrientation.SelectedIndexChanged += new System.EventHandler(this.cbOrientation_SelectedIndexChanged);
             // 
@@ -143,9 +143,9 @@
             // 
             // cbAlignment
             // 
+            resources.ApplyResources(this.cbAlignment, "cbAlignment");
             this.cbAlignment.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbAlignment.FormattingEnabled = true;
-            resources.ApplyResources(this.cbAlignment, "cbAlignment");
             this.cbAlignment.Name = "cbAlignment";
             this.cbAlignment.SelectedIndexChanged += new System.EventHandler(this.cbAlignment_SelectedIndexChanged);
             // 
