@@ -1727,11 +1727,12 @@ namespace ShareX.HelpersLib
             return null;
         }
 
-        public static Bitmap CombineImages(IEnumerable<Image> images, Orientation orientation = Orientation.Vertical, int space = 0)
+        public static Bitmap CombineImages(IEnumerable<Image> images, Orientation orientation = Orientation.Vertical,
+            ImageCombinerAlignment alignment = ImageCombinerAlignment.LeftOrTop, int space = 0)
         {
             int width, height;
-
-            int spaceSize = space * (images.Count() - 1);
+            int imageCount = images.Count();
+            int spaceSize = space * (imageCount - 1);
 
             if (orientation == Orientation.Vertical)
             {
@@ -1757,12 +1758,40 @@ namespace ShareX.HelpersLib
 
                     if (orientation == Orientation.Vertical)
                     {
-                        rect = new Rectangle(0, position, image.Width, image.Height);
+                        int x;
+                        switch (alignment)
+                        {
+                            default:
+                            case ImageCombinerAlignment.LeftOrTop:
+                                x = 0;
+                                break;
+                            case ImageCombinerAlignment.Center:
+                                x = width / 2 - image.Width / 2;
+                                break;
+                            case ImageCombinerAlignment.RightOrBottom:
+                                x = width - image.Width;
+                                break;
+                        }
+                        rect = new Rectangle(x, position, image.Width, image.Height);
                         position += image.Height + space;
                     }
                     else
                     {
-                        rect = new Rectangle(position, 0, image.Width, image.Height);
+                        int y;
+                        switch (alignment)
+                        {
+                            default:
+                            case ImageCombinerAlignment.LeftOrTop:
+                                y = 0;
+                                break;
+                            case ImageCombinerAlignment.Center:
+                                y = height / 2 - image.Height / 2;
+                                break;
+                            case ImageCombinerAlignment.RightOrBottom:
+                                y = height - image.Height;
+                                break;
+                        }
+                        rect = new Rectangle(position, y, image.Width, image.Height);
                         position += image.Width + space;
                     }
 

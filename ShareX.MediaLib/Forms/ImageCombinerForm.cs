@@ -47,7 +47,29 @@ namespace ShareX.MediaLib
 
             cbOrientation.Items.AddRange(Enum.GetNames(typeof(Orientation)));
             cbOrientation.SelectedIndex = (int)Options.Orientation;
+            UpdateAlignmentComboBox();
             nudSpace.SetValue(Options.Space);
+        }
+
+        private void UpdateAlignmentComboBox()
+        {
+            cbAlignment.Items.Clear();
+
+            // TODO: Translate
+            if (Options.Orientation == Orientation.Horizontal)
+            {
+                cbAlignment.Items.Add("Top");
+                cbAlignment.Items.Add("Center");
+                cbAlignment.Items.Add("Bottom");
+            }
+            else
+            {
+                cbAlignment.Items.Add("Left");
+                cbAlignment.Items.Add("Center");
+                cbAlignment.Items.Add("Right");
+            }
+
+            cbAlignment.SelectedIndex = (int)Options.Alignment;
         }
 
         public ImageCombinerForm(ImageCombinerOptions options, IEnumerable<string> imageFiles) : this(options)
@@ -104,6 +126,12 @@ namespace ShareX.MediaLib
         private void cbOrientation_SelectedIndexChanged(object sender, EventArgs e)
         {
             Options.Orientation = (Orientation)cbOrientation.SelectedIndex;
+            UpdateAlignmentComboBox();
+        }
+
+        private void cbAlignment_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Options.Alignment = (ImageCombinerAlignment)cbAlignment.SelectedIndex;
         }
 
         private void nudSpace_ValueChanged(object sender, EventArgs e)
@@ -136,7 +164,7 @@ namespace ShareX.MediaLib
 
                     if (images.Count > 1)
                     {
-                        Bitmap output = ImageHelpers.CombineImages(images, Options.Orientation, Options.Space);
+                        Bitmap output = ImageHelpers.CombineImages(images, Options.Orientation, Options.Alignment, Options.Space);
 
                         OnProcessRequested(output);
                     }

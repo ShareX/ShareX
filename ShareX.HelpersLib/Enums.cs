@@ -183,4 +183,11 @@ namespace ShareX.HelpersLib
         Failed,
         NotConfigured
     }
+
+    public enum ImageCombinerAlignment
+    {
+        LeftOrTop,
+        Center,
+        RightOrBottom
+    }
 }
