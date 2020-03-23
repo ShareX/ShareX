@@ -157,7 +157,7 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        public Image GetAreaImage(Screenshot screenshot)
+        public Bitmap GetAreaImage(Screenshot screenshot)
         {
             Rectangle rect = SelectionRectangle0Based;
 

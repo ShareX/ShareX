@@ -26,7 +26,6 @@
 using ShareX.HelpersLib.Properties;
 using System;
 using System.Drawing;
-using System.Linq;
 using System.Windows.Forms;
 
 namespace ShareX.HelpersLib
@@ -62,15 +61,15 @@ namespace ShareX.HelpersLib
 
             if (Clipboard.ContainsImage())
             {
-                using (Image img = ClipboardHelpers.GetImage())
+                using (Bitmap bmp = ClipboardHelpers.GetImage())
                 {
-                    if (img != null)
+                    if (bmp != null)
                     {
                         ClipboardContentType = EClipboardContentType.Image;
-                        ClipboardContent = img.Clone();
-                        pbClipboard.LoadImage(img);
+                        ClipboardContent = bmp.Clone();
+                        pbClipboard.LoadImage(bmp);
                         pbClipboard.Visible = true;
-                        lblQuestion.Text = string.Format(Resources.ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__Image__Size___0_x_1__, img.Width, img.Height);
+                        lblQuestion.Text = string.Format(Resources.ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__Image__Size___0_x_1__, bmp.Width, bmp.Height);
                         return true;
                     }
                 }

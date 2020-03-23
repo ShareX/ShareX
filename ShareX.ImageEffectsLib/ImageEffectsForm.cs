@@ -35,7 +35,7 @@ namespace ShareX.ImageEffectsLib
 {
     public partial class ImageEffectsForm : Form
     {
-        public event Action<Image> ImageProcessRequested;
+        public event Action<Bitmap> ImageProcessRequested;
 
         public bool AutoGeneratePreviewImage { get; set; }
         public Bitmap PreviewImage { get; private set; }
@@ -68,7 +68,7 @@ namespace ShareX.ImageEffectsLib
             AddAllEffectsToContextMenu();
         }
 
-        public void EnableToolMode(Action<Image> imageProcessRequested, string filePath = null)
+        public void EnableToolMode(Action<Bitmap> imageProcessRequested, string filePath = null)
         {
             FilePath = filePath;
             ImageProcessRequested += imageProcessRequested;
@@ -84,11 +84,11 @@ namespace ShareX.ImageEffectsLib
             btnClose.Text = Resources.ImageEffectsForm_EditorMode_Cancel;
         }
 
-        protected void OnImageProcessRequested(Image img)
+        protected void OnImageProcessRequested(Bitmap bmp)
         {
             if (ImageProcessRequested != null)
             {
-                ImageProcessRequested(img);
+                ImageProcessRequested(bmp);
             }
         }
 
@@ -310,7 +310,7 @@ namespace ShareX.ImageEffectsLib
             }
         }
 
-        private Image ApplyEffects()
+        private Bitmap ApplyEffects()
         {
             ImageEffectPreset preset = GetSelectedPreset();
 
@@ -614,7 +614,7 @@ namespace ShareX.ImageEffectsLib
 
         private void tsmiLoadImageFromClipboard_Click(object sender, EventArgs e)
         {
-            Bitmap bmp = (Bitmap)ClipboardHelpers.GetImage();
+            Bitmap bmp = ClipboardHelpers.GetImage();
 
             if (bmp != null)
             {
@@ -648,11 +648,11 @@ namespace ShareX.ImageEffectsLib
         {
             if (PreviewImage != null)
             {
-                Image img = ApplyEffects();
+                Bitmap bmp = ApplyEffects();
 
-                if (img != null)
+                if (bmp != null)
                 {
-                    OnImageProcessRequested(img);
+                    OnImageProcessRequested(bmp);
                 }
             }
         }

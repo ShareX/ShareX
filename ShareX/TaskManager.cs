@@ -148,7 +148,7 @@ namespace ShareX
             UpdateProgressUI();
         }
 
-        private static void Task_ImageReady(WorkerTask task, Image image)
+        private static void Task_ImageReady(WorkerTask task, Bitmap image)
         {
             TaskThumbnailPanel panel = TaskThumbnailView.FindPanel(task);
 
@@ -158,7 +158,7 @@ namespace ShareX
 
                 if (Program.Settings.TaskViewMode == TaskViewMode.ThumbnailView)
                 {
-                    panel.UpdateThumbnail((Bitmap)image);
+                    panel.UpdateThumbnail(image);
                 }
             }
         }
@@ -390,7 +390,7 @@ namespace ShareX
                                                     RightClickAction = info.TaskSettings.AdvancedSettings.ToastWindowRightClickAction,
                                                     MiddleClickAction = info.TaskSettings.AdvancedSettings.ToastWindowMiddleClickAction,
                                                     FilePath = info.FilePath,
-                                                    Image = (Bitmap)task.Image,
+                                                    Image = task.Image,
                                                     Text = "ShareX - " + Resources.TaskManager_task_UploadCompleted_ShareX___Task_completed + "\r\n" + result,
                                                     URL = result
                                                 };

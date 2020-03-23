@@ -442,11 +442,11 @@ namespace ShareX
             }
         }
 
-        public static void SaveImageAsFile(Image img, TaskSettings taskSettings, bool overwriteFile = false)
+        public static void SaveImageAsFile(Bitmap bmp, TaskSettings taskSettings, bool overwriteFile = false)
         {
-            using (ImageData imageData = PrepareImage(img, taskSettings))
+            using (ImageData imageData = PrepareImage(bmp, taskSettings))
             {
-                string fileName = GetFilename(taskSettings, imageData.ImageFormat.GetDescription(), img);
+                string fileName = GetFilename(taskSettings, imageData.ImageFormat.GetDescription(), bmp);
                 string filePath = Path.Combine(taskSettings.CaptureFolder, fileName);
 
                 if (!overwriteFile)
@@ -462,9 +462,9 @@ namespace ShareX
             }
         }
 
-        public static string GetFilename(TaskSettings taskSettings, string extension, Image image)
+        public static string GetFilename(TaskSettings taskSettings, string extension, Bitmap bmp)
         {
-            ImageInfo imageInfo = new ImageInfo(image);
+            ImageInfo imageInfo = new ImageInfo(bmp);
             return GetFilename(taskSettings, extension, imageInfo);
         }
 
@@ -829,7 +829,7 @@ namespace ShareX
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
             ImageCombinerForm imageCombinerForm = new ImageCombinerForm(taskSettings.ToolsSettingsReference.ImageCombinerOptions, imageFiles);
-            imageCombinerForm.ProcessRequested += img => UploadManager.RunImageTask(img, taskSettings);
+            imageCombinerForm.ProcessRequested += bmp => UploadManager.RunImageTask(bmp, taskSettings);
             imageCombinerForm.Show();
         }
 

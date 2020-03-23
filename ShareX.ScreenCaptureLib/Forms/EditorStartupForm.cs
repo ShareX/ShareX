@@ -71,7 +71,7 @@ namespace ShareX.ScreenCaptureLib
         {
             if (Clipboard.ContainsImage())
             {
-                Image = (Bitmap)ClipboardHelpers.GetImage();
+                Image = ClipboardHelpers.GetImage();
 
                 if (Image != null)
                 {

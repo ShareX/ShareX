@@ -42,7 +42,7 @@ namespace ShareX
     public class WorkerTask : IDisposable
     {
         public delegate void TaskEventHandler(WorkerTask task);
-        public delegate void TaskImageEventHandler(WorkerTask task, Image image);
+        public delegate void TaskImageEventHandler(WorkerTask task, Bitmap image);
         public delegate void UploaderServiceEventHandler(IUploaderService uploaderService);
 
         public event TaskEventHandler StatusChanged, UploadStarted, UploadProgressChanged, UploadCompleted, TaskCompleted;
@@ -57,7 +57,7 @@ namespace ShareX
         public bool RequestSettingUpdate { get; private set; }
         public bool EarlyURLCopied { get; private set; }
         public Stream Data { get; private set; }
-        public Image Image { get; private set; }
+        public Bitmap Image { get; private set; }
         public bool KeepImage { get; set; }
         public string Text { get; private set; }
 
@@ -575,7 +575,7 @@ namespace ShareX
 
             if (Info.TaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.AddImageEffects))
             {
-                Image = TaskHelpers.AddImageEffects((Bitmap)Image, Info.TaskSettings.ImageSettingsReference);
+                Image = TaskHelpers.AddImageEffects(Image, Info.TaskSettings.ImageSettingsReference);
 
                 if (Image == null)
                 {
@@ -586,7 +586,7 @@ namespace ShareX
 
             if (Info.TaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.AnnotateImage))
             {
-                Image = TaskHelpers.AnnotateImage((Bitmap)Image, null, Info.TaskSettings, true);
+                Image = TaskHelpers.AnnotateImage(Image, null, Info.TaskSettings, true);
 
                 if (Image == null)
                 {
@@ -683,7 +683,7 @@ namespace ShareX
                         thumbnailFolder = Info.TaskSettings.CaptureFolder;
                     }
 
-                    Info.ThumbnailFilePath = TaskHelpers.CreateThumbnail((Bitmap)Image, thumbnailFolder, thumbnailFilename, Info.TaskSettings);
+                    Info.ThumbnailFilePath = TaskHelpers.CreateThumbnail(Image, thumbnailFolder, thumbnailFilename, Info.TaskSettings);
 
                     if (!string.IsNullOrEmpty(Info.ThumbnailFilePath))
                     {
@@ -1071,11 +1071,11 @@ namespace ShareX
         {
             if (ImageReady != null)
             {
-                Image image = null;
+                Bitmap image = null;
 
                 if (Program.Settings.TaskViewMode == TaskViewMode.ThumbnailView && Image != null)
                 {
-                    image = (Image)Image.Clone();
+                    image = (Bitmap)Image.Clone();
                 }
 
                 threadWorker.InvokeAsync(() =>

@@ -31,7 +31,7 @@ namespace ShareX
 {
     public class ImageInfo : IDisposable
     {
-        public Image Image { get; set; }
+        public Bitmap Image { get; set; }
         public string WindowTitle { get; set; }
         public string ProcessName { get; set; }
 
@@ -39,7 +39,7 @@ namespace ShareX
         {
         }
 
-        public ImageInfo(Image image)
+        public ImageInfo(Bitmap image)
         {
             Image = image;
         }

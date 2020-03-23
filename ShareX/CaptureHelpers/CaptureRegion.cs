@@ -138,22 +138,22 @@ namespace ShareX
 
         protected ImageInfo ExecuteRegionCaptureTransparent(TaskSettings taskSettings)
         {
-            Image img = null;
+            Bitmap bmp = null;
 
             using (RegionCaptureTransparentForm rectangleTransparent = new RegionCaptureTransparentForm())
             {
                 if (rectangleTransparent.ShowDialog() == DialogResult.OK)
                 {
-                    img = rectangleTransparent.GetAreaImage(TaskHelpers.GetScreenshot(taskSettings));
+                    bmp = rectangleTransparent.GetAreaImage(TaskHelpers.GetScreenshot(taskSettings));
 
-                    if (img != null)
+                    if (bmp != null)
                     {
                         lastRegionCaptureType = RegionCaptureType.Transparent;
                     }
                 }
             }
 
-            return new ImageInfo(img);
+            return new ImageInfo(bmp);
         }
     }
 }

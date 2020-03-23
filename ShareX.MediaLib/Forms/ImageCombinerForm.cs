@@ -34,7 +34,7 @@ namespace ShareX.MediaLib
 {
     public partial class ImageCombinerForm : Form
     {
-        public event Action<Image> ProcessRequested;
+        public event Action<Bitmap> ProcessRequested;
 
         public ImageCombinerOptions Options { get; private set; }
 
@@ -136,7 +136,7 @@ namespace ShareX.MediaLib
 
                     if (images.Count > 1)
                     {
-                        Image output = ImageHelpers.CombineImages(images, Options.Orientation, Options.Space);
+                        Bitmap output = ImageHelpers.CombineImages(images, Options.Orientation, Options.Space);
 
                         OnProcessRequested(output);
                     }
@@ -162,11 +162,11 @@ namespace ShareX.MediaLib
             }
         }
 
-        protected void OnProcessRequested(Image image)
+        protected void OnProcessRequested(Bitmap bmp)
         {
             if (ProcessRequested != null)
             {
-                ProcessRequested(image);
+                ProcessRequested(bmp);
             }
         }
 

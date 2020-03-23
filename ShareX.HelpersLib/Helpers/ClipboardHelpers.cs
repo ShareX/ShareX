@@ -235,7 +235,7 @@ namespace ShareX.HelpersLib
             return false;
         }
 
-        public static Image GetImage(bool checkContainsImage = false)
+        public static Bitmap GetImage(bool checkContainsImage = false)
         {
             try
             {
@@ -243,7 +243,7 @@ namespace ShareX.HelpersLib
                 {
                     if (!checkContainsImage || Clipboard.ContainsImage())
                     {
-                        return Clipboard.GetImage();
+                        return (Bitmap)Clipboard.GetImage();
                     }
                 }
             }

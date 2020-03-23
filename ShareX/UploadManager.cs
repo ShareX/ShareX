@@ -30,7 +30,6 @@ using ShareX.UploadersLib;
 using System;
 using System.Drawing;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using System.Windows.Forms;
@@ -143,16 +142,16 @@ namespace ShareX
             }
         }
 
-        private static void ProcessImageUpload(Image img, TaskSettings taskSettings)
+        private static void ProcessImageUpload(Bitmap bmp, TaskSettings taskSettings)
         {
-            if (img != null)
+            if (bmp != null)
             {
                 if (!taskSettings.AdvancedSettings.ProcessImagesDuringClipboardUpload)
                 {
                     taskSettings.AfterCaptureJob = AfterCaptureTasks.UploadImageToHost;
                 }
 
-                RunImageTask(img, taskSettings);
+                RunImageTask(bmp, taskSettings);
             }
         }
 
@@ -208,9 +207,9 @@ namespace ShareX
 
             if (Clipboard.ContainsImage())
             {
-                Image img = ClipboardHelpers.GetImage();
+                Bitmap bmp = ClipboardHelpers.GetImage();
 
-                ProcessImageUpload(img, taskSettings);
+                ProcessImageUpload(bmp, taskSettings);
             }
             else if (Clipboard.ContainsText())
             {
@@ -232,9 +231,9 @@ namespace ShareX
 
             if (ccv.ClipboardContentType == EClipboardContentType.Image)
             {
-                Image img = (Image)ccv.ClipboardContent;
+                Bitmap bmp = (Bitmap)ccv.ClipboardContent;
 
-                ProcessImageUpload(img, taskSettings);
+                ProcessImageUpload(bmp, taskSettings);
             }
             else if (ccv.ClipboardContentType == EClipboardContentType.Text)
             {
@@ -267,7 +266,7 @@ namespace ShareX
             }
             else if (ccv.ClipboardContentType == EClipboardContentType.Image)
             {
-                ((Image)ccv.ClipboardContent).Dispose();
+                ((Bitmap)ccv.ClipboardContent).Dispose();
             }
         }
 
@@ -329,8 +328,8 @@ namespace ShareX
             }
             else if (data.GetDataPresent(DataFormats.Bitmap, false))
             {
-                Image img = data.GetData(DataFormats.Bitmap, false) as Image;
-                RunImageTask(img, taskSettings);
+                Bitmap bmp = data.GetData(DataFormats.Bitmap, false) as Bitmap;
+                RunImageTask(bmp, taskSettings);
             }
             else if (data.GetDataPresent(DataFormats.Text, false))
             {
@@ -382,9 +381,9 @@ namespace ShareX
             }
         }
 
-        public static void RunImageTask(Image img, TaskSettings taskSettings, bool skipQuickTaskMenu = false, bool skipAfterCaptureWindow = false)
+        public static void RunImageTask(Bitmap bmp, TaskSettings taskSettings, bool skipQuickTaskMenu = false, bool skipAfterCaptureWindow = false)
         {
-            ImageInfo imageInfo = new ImageInfo(img);
+            ImageInfo imageInfo = new ImageInfo(bmp);
             RunImageTask(imageInfo, taskSettings, skipQuickTaskMenu, skipAfterCaptureWindow);
         }
 
@@ -429,21 +428,21 @@ namespace ShareX
             }
         }
 
-        public static void UploadImage(Image img)
+        public static void UploadImage(Bitmap bmp)
         {
-            if (img != null)
+            if (bmp != null)
             {
                 TaskSettings taskSettings = TaskSettings.GetDefaultTaskSettings();
                 taskSettings.UseDefaultAfterCaptureJob = false;
                 taskSettings.AfterCaptureJob = AfterCaptureTasks.UploadImageToHost;
 
-                RunImageTask(img, taskSettings);
+                RunImageTask(bmp, taskSettings);
             }
         }
 
-        public static void UploadImage(Image img, ImageDestination imageDestination, FileDestination imageFileDestination)
+        public static void UploadImage(Bitmap bmp, ImageDestination imageDestination, FileDestination imageFileDestination)
         {
-            if (img != null)
+            if (bmp != null)
             {
                 TaskSettings taskSettings = TaskSettings.GetDefaultTaskSettings();
                 taskSettings.UseDefaultAfterCaptureJob = false;
@@ -452,7 +451,7 @@ namespace ShareX
                 taskSettings.ImageDestination = imageDestination;
                 taskSettings.ImageFileDestination = imageFileDestination;
 
-                RunImageTask(img, taskSettings);
+                RunImageTask(bmp, taskSettings);
             }
         }
 

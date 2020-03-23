@@ -1595,8 +1595,8 @@ namespace ShareX.ScreenCaptureLib
         {
             if (Clipboard.ContainsImage())
             {
-                Image img = ClipboardHelpers.GetImage();
-                InsertImage(img);
+                Bitmap bmp = ClipboardHelpers.GetImage();
+                InsertImage(bmp);
             }
             else if (Clipboard.ContainsFileDropList())
             {

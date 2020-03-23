@@ -40,11 +40,11 @@ namespace ShareX.ScreenCaptureLib
     {
         public static GraphicsPath LastRegionFillPath { get; private set; }
 
-        public event Func<Image, string, string> SaveImageRequested;
-        public event Func<Image, string, string> SaveImageAsRequested;
-        public event Action<Image> CopyImageRequested;
-        public event Action<Image> UploadImageRequested;
-        public event Action<Image> PrintImageRequested;
+        public event Func<Bitmap, string, string> SaveImageRequested;
+        public event Func<Bitmap, string, string> SaveImageAsRequested;
+        public event Action<Bitmap> CopyImageRequested;
+        public event Action<Bitmap> UploadImageRequested;
+        public event Action<Bitmap> PrintImageRequested;
 
         public RegionCaptureOptions Options { get; set; }
         public Rectangle ClientArea { get; private set; }
@@ -1341,9 +1341,9 @@ namespace ShareX.ScreenCaptureLib
             return null;
         }
 
-        private Image ReceiveImageForTask()
+        private Bitmap ReceiveImageForTask()
         {
-            Image img = GetResultImage();
+            Bitmap bmp = GetResultImage();
 
             ShapeManager.IsModified = false;
 
@@ -1352,16 +1352,16 @@ namespace ShareX.ScreenCaptureLib
                 CloseWindow();
             }
 
-            return img;
+            return bmp;
         }
 
         internal void OnSaveImageRequested()
         {
             if (SaveImageRequested != null)
             {
-                Image img = ReceiveImageForTask();
+                Bitmap bmp = ReceiveImageForTask();
 
-                string imageFilePath = SaveImageRequested(img, ImageFilePath);
+                string imageFilePath = SaveImageRequested(bmp, ImageFilePath);
 
                 if (!string.IsNullOrEmpty(imageFilePath))
                 {
@@ -1375,9 +1375,9 @@ namespace ShareX.ScreenCaptureLib
         {
             if (SaveImageAsRequested != null)
             {
-                Image img = ReceiveImageForTask();
+                Bitmap bmp = ReceiveImageForTask();
 
-                string imageFilePath = SaveImageAsRequested(img, ImageFilePath);
+                string imageFilePath = SaveImageAsRequested(bmp, ImageFilePath);
 
                 if (!string.IsNullOrEmpty(imageFilePath))
                 {
@@ -1391,9 +1391,9 @@ namespace ShareX.ScreenCaptureLib
         {
             if (CopyImageRequested != null)
             {
-                Image img = ReceiveImageForTask();
+                Bitmap bmp = ReceiveImageForTask();
 
-                CopyImageRequested(img);
+                CopyImageRequested(bmp);
             }
         }
 
@@ -1401,9 +1401,9 @@ namespace ShareX.ScreenCaptureLib
         {
             if (UploadImageRequested != null)
             {
-                Image img = ReceiveImageForTask();
+                Bitmap bmp = ReceiveImageForTask();
 
-                UploadImageRequested(img);
+                UploadImageRequested(bmp);
             }
         }
 
@@ -1411,9 +1411,9 @@ namespace ShareX.ScreenCaptureLib
         {
             if (PrintImageRequested != null)
             {
-                Image img = ReceiveImageForTask();
+                Bitmap bmp = ReceiveImageForTask();
 
-                PrintImageRequested(img);
+                PrintImageRequested(bmp);
             }
         }
 

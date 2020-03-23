@@ -194,8 +194,8 @@ namespace ShareX
         {
             if (pbQRCode.Image != null)
             {
-                Image img = (Image)pbQRCode.Image.Clone();
-                UploadManager.UploadImage(img);
+                Bitmap bmp = (Bitmap)pbQRCode.Image.Clone();
+                UploadManager.UploadImage(bmp);
             }
         }
 

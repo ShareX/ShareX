@@ -37,11 +37,11 @@ namespace ShareX.ScreenCaptureLib
 {
     public partial class ScrollingCaptureForm : Form
     {
-        public event Action<Image> ImageProcessRequested;
+        public event Action<Bitmap> ImageProcessRequested;
 
         public ScrollingCaptureOptions Options { get; private set; }
         public RegionCaptureOptions RegionCaptureOptions { get; private set; }
-        public Image Result { get; private set; }
+        public Bitmap Result { get; private set; }
 
         private WindowInfo selectedWindow;
         private Rectangle selectedRectangle;
@@ -98,11 +98,11 @@ namespace ShareX.ScreenCaptureLib
             base.Dispose(disposing);
         }
 
-        protected void OnImageProcessRequested(Image img)
+        protected void OnImageProcessRequested(Bitmap bmp)
         {
             if (ImageProcessRequested != null)
             {
-                ImageProcessRequested(img);
+                ImageProcessRequested(bmp);
             }
         }
 
@@ -522,7 +522,7 @@ namespace ShareX.ScreenCaptureLib
         {
             if (Result != null)
             {
-                OnImageProcessRequested((Image)Result.Clone());
+                OnImageProcessRequested((Bitmap)Result.Clone());
             }
         }
 
@@ -562,7 +562,7 @@ namespace ShareX.ScreenCaptureLib
             pbOutput.Image = Result;
         }
 
-        private Image CombineImages()
+        private Bitmap CombineImages()
         {
             if (images == null || images.Count == 0)
             {
@@ -613,7 +613,7 @@ namespace ShareX.ScreenCaptureLib
                 output.Add(newImage);
             }
 
-            Image result = ImageHelpers.CombineImages(output);
+            Bitmap bmpResult = ImageHelpers.CombineImages(output);
 
             foreach (Bitmap image in output)
             {
@@ -625,7 +625,7 @@ namespace ShareX.ScreenCaptureLib
 
             output.Clear();
 
-            return result;
+            return bmpResult;
         }
 
         private void GuessEdges()

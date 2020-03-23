@@ -35,7 +35,7 @@ namespace ShareX.ScreenCaptureLib
 {
     public partial class Screenshot
     {
-        public Image CaptureWindowTransparent(IntPtr handle)
+        public Bitmap CaptureWindowTransparent(IntPtr handle)
         {
             if (handle.ToInt32() > 0)
             {
@@ -154,7 +154,7 @@ namespace ShareX.ScreenCaptureLib
             return null;
         }
 
-        public Image CaptureActiveWindowTransparent()
+        public Bitmap CaptureActiveWindowTransparent()
         {
             IntPtr handle = NativeMethods.GetForegroundWindow();
 
