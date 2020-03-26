@@ -87,6 +87,22 @@ namespace ShareX.ScreenCaptureLib
             return false;
         }
 
+
+        public static bool GetRectangleRegionTransparent(out Rectangle rect)
+        {
+            using (RegionCaptureTransparentForm regionCaptureTransparentForm = new RegionCaptureTransparentForm())
+            {
+                if (regionCaptureTransparentForm.ShowDialog() == DialogResult.OK)
+                {
+                    rect = regionCaptureTransparentForm.SelectionRectangle;
+                    return true;
+                }
+            }
+
+            rect = Rectangle.Empty;
+            return false;
+        }
+
         public static PointInfo GetPointInfo(RegionCaptureOptions options, Bitmap canvas = null)
         {
             RegionCaptureOptions newOptions = GetRegionCaptureOptions(options);

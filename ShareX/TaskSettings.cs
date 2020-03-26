@@ -349,6 +349,7 @@ namespace ShareX
         public float ScreenRecordDuration = 3f;
         public bool ScreenRecordTwoPassEncoding = false;
         public bool ScreenRecordAskConfirmationOnAbort = false;
+        public bool ScreenRecordTransparentRegion = false;
 
         #endregion Capture / Screen recorder
 
