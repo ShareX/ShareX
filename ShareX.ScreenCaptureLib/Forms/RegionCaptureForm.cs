@@ -86,7 +86,7 @@ namespace ShareX.ScreenCaptureLib
         private bool pause, isKeyAllowed, forceClose;
         private RectangleAnimation regionAnimation;
         private TextAnimation editorPanTipAnimation;
-        private Cursor defaultCursor;
+        private Cursor defaultCursor, openHandCursor, closedHandCursor;
         private Color canvasBackgroundColor;
 
         public RegionCaptureForm(RegionCaptureMode mode, RegionCaptureOptions options, Bitmap canvas = null)
@@ -155,6 +155,8 @@ namespace ShareX.ScreenCaptureLib
 
             AutoScaleMode = AutoScaleMode.None;
             defaultCursor = Helpers.CreateCursor(Resources.Crosshair);
+            openHandCursor = Helpers.CreateCursor(Resources.openhand);
+            closedHandCursor = Helpers.CreateCursor(Resources.closedhand);
             SetDefaultCursor();
             Icon = ShareXResources.Icon;
             SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.UserPaint | ControlStyles.AllPaintingInWmPaint, true);
@@ -444,6 +446,24 @@ namespace ShareX.ScreenCaptureLib
             if (Cursor != defaultCursor)
             {
                 Cursor = defaultCursor;
+            }
+        }
+
+        public void SetHandCursor(bool grabbing)
+        {
+            if (grabbing)
+            {
+                if (Cursor != closedHandCursor)
+                {
+                    Cursor = closedHandCursor;
+                }
+            }
+            else
+            {
+                if (Cursor != openHandCursor)
+                {
+                    Cursor = openHandCursor;
+                }
             }
         }
 
@@ -1437,6 +1457,8 @@ namespace ShareX.ScreenCaptureLib
             markerPen?.Dispose();
             canvasBorderPen?.Dispose();
             defaultCursor?.Dispose();
+            openHandCursor?.Dispose();
+            closedHandCursor?.Dispose();
             CustomNodeImage?.Dispose();
 
             if (regionFillPath != null)

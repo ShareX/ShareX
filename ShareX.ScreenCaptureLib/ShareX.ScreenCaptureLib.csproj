@@ -236,6 +236,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\openhand.cur" />
     <None Include="Resources\edit-vertical-alignment-white.png" />
     <None Include="Resources\edit-vertical-alignment-top-white.png" />
     <None Include="Resources\edit-vertical-alignment-middle-white.png" />
@@ -330,6 +331,7 @@
     <None Include="Resources\arrow-circle-135-left.png" />
     <None Include="Resources\arrow-circle.png" />
     <None Include="Resources\arrow-circle-double.png" />
+    <None Include="Resources\closedhand.cur" />
     <Content Include="Resources\Crosshair.cur" />
     <None Include="Resources\exclamation-button.png" />
   </ItemGroup>

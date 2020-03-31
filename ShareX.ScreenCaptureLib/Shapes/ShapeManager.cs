@@ -192,8 +192,59 @@ namespace ShareX.ScreenCaptureLib
         public int StartingStepNumber { get; set; } = 1;
 
         public bool IsCreating { get; set; }
-        public bool IsMoving { get; set; }
-        public bool IsPanning { get; set; }
+
+        private bool isMoving;
+
+        public bool IsMoving
+        {
+            get
+            {
+                return isMoving;
+            }
+            set
+            {
+                if (isMoving != value)
+                {
+                    isMoving = value;
+
+                    if (isMoving)
+                    {
+                        Form.SetHandCursor(true);
+                    }
+                    else
+                    {
+                        Form.SetDefaultCursor();
+                    }
+                }
+            }
+        }
+
+        private bool isPanning;
+
+        public bool IsPanning
+        {
+            get
+            {
+                return isPanning;
+            }
+            set
+            {
+                if (isPanning != value)
+                {
+                    isPanning = value;
+
+                    if (isPanning)
+                    {
+                        Form.SetHandCursor(true);
+                    }
+                    else
+                    {
+                        Form.SetDefaultCursor();
+                    }
+                }
+            }
+        }
+
         public bool IsResizing { get; set; }
         // Is holding Ctrl?
         public bool IsCtrlModifier { get; private set; }
@@ -856,7 +907,6 @@ namespace ShareX.ScreenCaptureLib
                 DeselectCurrentShape();
                 IsMoving = true;
                 shape.OnMoving();
-                Form.Cursor = Cursors.SizeAll;
                 CurrentShape = shape;
                 SelectCurrentShape();
             }
@@ -882,7 +932,6 @@ namespace ShareX.ScreenCaptureLib
 
             IsCreating = false;
             IsMoving = false;
-            Form.SetDefaultCursor();
 
             BaseShape shape = CurrentShape;
 
@@ -941,15 +990,12 @@ namespace ShareX.ScreenCaptureLib
         {
             IsPanning = true;
             Form.PanningStrech = new Point(0, 0);
-            Form.Cursor = Cursors.SizeAll;
-
             Options.ShowEditorPanTip = false;
         }
 
         private void EndPanning()
         {
             IsPanning = false;
-            Form.SetDefaultCursor();
         }
 
         internal void UpdateObjects()
