@@ -57,7 +57,7 @@ namespace ShareX
         {
             RunPuushTasks();
 
-            NativeMethods.UseImmersiveDarkMode(Handle, ShareXResources.UseCustomTheme && ShareXResources.Theme.IsDarkTheme);
+            NativeMethods.UseImmersiveDarkMode(Handle, ShareXResources.IsDarkTheme);
             UpdateControls();
 
             DebugHelper.WriteLine("Startup time: {0} ms", Program.StartTimer.ElapsedMilliseconds);
@@ -799,7 +799,7 @@ namespace ShareX
 
             if (IsHandleCreated)
             {
-                NativeMethods.UseImmersiveDarkMode(Handle, ShareXResources.UseCustomTheme && ShareXResources.Theme.IsDarkTheme);
+                NativeMethods.UseImmersiveDarkMode(Handle, ShareXResources.IsDarkTheme);
             }
 
             if (ShareXResources.UseCustomTheme)
@@ -823,7 +823,7 @@ namespace ShareX
                 btnCloseNews.ForeColor = ShareXResources.Theme.TextColor;
                 btnCloseNews.BackColor = ShareXResources.Theme.LightBackgroundColor;
 
-                if (ShareXResources.Theme.IsDarkTheme)
+                if (ShareXResources.IsDarkTheme)
                 {
                     tsbGitHub.Image = Resources.GitHub_White_32x32;
                 }
