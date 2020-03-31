@@ -310,9 +310,6 @@ Please select a different hotkey or quit the conflicting application and reopen 
   <data name="MainForm_tsmiDeleteSelectedFile_Click_File_delete_confirmation" xml:space="preserve">
     <value>File delete confirmation</value>
   </data>
-  <data name="layer_shape_curve" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\layer-shape-curve.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="AutoCaptureForm_Execute_Stop" xml:space="preserve">
     <value>Stop</value>
   </data>
@@ -574,9 +571,6 @@ here</value>
   </data>
   <data name="GitHub_White_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\GitHub-White-32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="layer_shape_polygon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\layer-shape-polygon.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_File_uploader___0_" xml:space="preserve">
     <value>File uploader: {0}</value>

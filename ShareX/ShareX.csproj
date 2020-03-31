@@ -1529,8 +1529,6 @@
     <None Include="Resources\upload-cloud.png" />
     <None Include="Resources\image-export.png" />
     <None Include="Resources\folder-open-image.png" />
-    <None Include="Resources\layer-shape-curve.png" />
-    <None Include="Resources\layer-shape-polygon.png" />
     <None Include="Resources\layer-shape.png" />
     <None Include="Resources\monitor.png" />
     <None Include="Resources\application-blue.png" />
