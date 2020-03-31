@@ -1024,4 +1024,13 @@ Middle click to close</value>
   <data name="ThisFeatureWillNotWorkWhenDisableUploadOptionIsEnabled" xml:space="preserve">
     <value>This feature will not work when "DisableUpload" option is enabled!</value>
   </data>
+  <data name="barcode_2d_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\barcode-2d-white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="edit_drop_cap_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\edit-drop-cap-white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="edit_scale_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\edit-scale-white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

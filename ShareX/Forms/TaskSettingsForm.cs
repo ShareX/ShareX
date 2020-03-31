@@ -50,6 +50,8 @@ namespace ShareX
             InitializeComponent();
             ShareXResources.ApplyTheme(this);
 
+            tsmiURLShorteners.Image = ShareXResources.IsDarkTheme ? Resources.edit_scale_white : Resources.edit_scale;
+
             TaskSettings = hotkeySetting;
             IsDefault = isDefault;
 

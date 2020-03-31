@@ -822,15 +822,6 @@ namespace ShareX
                 btnCloseNews.FlatAppearance.BorderColor = ShareXResources.Theme.BorderColor;
                 btnCloseNews.ForeColor = ShareXResources.Theme.TextColor;
                 btnCloseNews.BackColor = ShareXResources.Theme.LightBackgroundColor;
-
-                if (ShareXResources.IsDarkTheme)
-                {
-                    tsbGitHub.Image = Resources.GitHub_White_32x32;
-                }
-                else
-                {
-                    tsbGitHub.Image = Resources.GitHub_Black_32x32;
-                }
             }
             else
             {
@@ -853,7 +844,41 @@ namespace ShareX
                 btnCloseNews.FlatAppearance.BorderColor = SystemColors.ControlText;
                 btnCloseNews.ForeColor = SystemColors.ControlText;
                 btnCloseNews.BackColor = SystemColors.Window;
+            }
+
+            if (ShareXResources.IsDarkTheme)
+            {
+                tsbGitHub.Image = Resources.GitHub_White_32x32;
+                tsmiQRCode.Image = Resources.barcode_2d_white;
+                tsmiTrayQRCode.Image = Resources.barcode_2d_white;
+                tsmiShowQRCode.Image = Resources.barcode_2d_white;
+                tsmiTextCapture.Image = Resources.edit_drop_cap_white;
+                tsmiTrayTextCapture.Image = Resources.edit_drop_cap_white;
+                tsmiOCRImage.Image = Resources.edit_drop_cap_white;
+                tsmiShortenURL.Image = Resources.edit_scale_white;
+                tsmiTrayShortenURL.Image = Resources.edit_scale_white;
+                tsmiURLShorteners.Image = Resources.edit_scale_white;
+                tsmiTrayURLShorteners.Image = Resources.edit_scale_white;
+                tsmiTestURLShortener.Image = Resources.edit_scale_white;
+                tsmiTrayTestURLShortener.Image = Resources.edit_scale_white;
+                tsmiShortenSelectedURL.Image = Resources.edit_scale_white;
+            }
+            else
+            {
                 tsbGitHub.Image = Resources.GitHub_Black_32x32;
+                tsmiQRCode.Image = Resources.barcode_2d;
+                tsmiTrayQRCode.Image = Resources.barcode_2d;
+                tsmiShowQRCode.Image = Resources.barcode_2d;
+                tsmiTextCapture.Image = Resources.edit_drop_cap;
+                tsmiTrayTextCapture.Image = Resources.edit_drop_cap;
+                tsmiOCRImage.Image = Resources.edit_drop_cap;
+                tsmiShortenURL.Image = Resources.edit_scale;
+                tsmiTrayShortenURL.Image = Resources.edit_scale;
+                tsmiURLShorteners.Image = Resources.edit_scale;
+                tsmiTrayURLShorteners.Image = Resources.edit_scale;
+                tsmiTestURLShortener.Image = Resources.edit_scale;
+                tsmiTrayTestURLShortener.Image = Resources.edit_scale;
+                tsmiShortenSelectedURL.Image = Resources.edit_scale;
             }
 
             pbPreview.UpdateTheme();

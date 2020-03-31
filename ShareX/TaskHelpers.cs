@@ -1479,9 +1479,9 @@ namespace ShareX
                     case AfterCaptureTasks.ShowInExplorer:
                         return Resources.folder_stand;
                     case AfterCaptureTasks.ScanQRCode:
-                        return Resources.barcode_2d;
+                        return ShareXResources.IsDarkTheme ? Resources.barcode_2d_white : Resources.barcode_2d;
                     case AfterCaptureTasks.DoOCR:
-                        return Resources.edit_drop_cap;
+                        return ShareXResources.IsDarkTheme ? Resources.edit_drop_cap_white : Resources.edit_drop_cap;
                     case AfterCaptureTasks.ShowBeforeUploadWindow:
                         return Resources.application__arrow;
                     case AfterCaptureTasks.UploadImageToHost:
@@ -1497,7 +1497,7 @@ namespace ShareX
                     case AfterUploadTasks.ShowAfterUploadWindow:
                         return Resources.application_browser;
                     case AfterUploadTasks.UseURLShortener:
-                        return Resources.edit_scale;
+                        return ShareXResources.IsDarkTheme ? Resources.edit_scale_white : Resources.edit_scale;
                     case AfterUploadTasks.ShareURL:
                         return Resources.globe_share;
                     case AfterUploadTasks.CopyURLToClipboard:
@@ -1505,7 +1505,7 @@ namespace ShareX
                     case AfterUploadTasks.OpenURL:
                         return Resources.globe__arrow;
                     case AfterUploadTasks.ShowQRCode:
-                        return Resources.barcode_2d;
+                        return ShareXResources.IsDarkTheme ? Resources.barcode_2d_white : Resources.barcode_2d;
                 }
             }
 
@@ -1526,7 +1526,7 @@ namespace ShareX
                 case HotkeyType.UploadText: return Resources.notebook;
                 case HotkeyType.UploadURL: return Resources.drive;
                 case HotkeyType.DragDropUpload: return Resources.inbox;
-                case HotkeyType.ShortenURL: return Resources.edit_scale;
+                case HotkeyType.ShortenURL: return ShareXResources.IsDarkTheme ? Resources.edit_scale_white : Resources.edit_scale;
                 case HotkeyType.StopUploads: return Resources.cross_button;
                 // Screen capture
                 case HotkeyType.PrintScreen: return Resources.layer_fullscreen;
@@ -1538,7 +1538,7 @@ namespace ShareX
                 case HotkeyType.CustomRegion: return Resources.layer__arrow;
                 case HotkeyType.LastRegion: return Resources.layers;
                 case HotkeyType.ScrollingCapture: return Resources.ui_scroll_pane_image;
-                case HotkeyType.TextCapture: return Resources.edit_drop_cap;
+                case HotkeyType.TextCapture: return ShareXResources.IsDarkTheme ? Resources.edit_drop_cap_white : Resources.edit_drop_cap;
                 case HotkeyType.AutoCapture: return Resources.clock;
                 case HotkeyType.StartAutoCapture: return Resources.clock__arrow;
                 // Screen record
@@ -1558,7 +1558,7 @@ namespace ShareX
                 case HotkeyType.ImageEffects: return Resources.image_saturation;
                 case HotkeyType.HashCheck: return Resources.application_task;
                 case HotkeyType.DNSChanger: return Resources.network_ip;
-                case HotkeyType.QRCode: return Resources.barcode_2d;
+                case HotkeyType.QRCode: return ShareXResources.IsDarkTheme ? Resources.barcode_2d_white : Resources.barcode_2d;
                 case HotkeyType.Ruler: return Resources.ruler_triangle;
                 case HotkeyType.IndexFolder: return Resources.folder_tree;
                 case HotkeyType.ImageCombiner: return Resources.document_break;

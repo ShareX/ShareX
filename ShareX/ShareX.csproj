@@ -1688,6 +1688,15 @@
   <ItemGroup>
     <None Include="Resources\image-split.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\barcode-2d-white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit-drop-cap-white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit-scale-white.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>
