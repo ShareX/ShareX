@@ -236,6 +236,21 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\edit-vertical-alignment-white.png" />
+    <None Include="Resources\edit-vertical-alignment-top-white.png" />
+    <None Include="Resources\edit-vertical-alignment-middle-white.png" />
+    <None Include="Resources\edit-underline-white.png" />
+    <None Include="Resources\edit-italic-white.png" />
+    <None Include="Resources\edit-bold-white.png" />
+    <None Include="Resources\edit-alignment-white.png" />
+    <None Include="Resources\edit-alignment-right-white.png" />
+    <None Include="Resources\edit-alignment-center-white.png" />
+    <None Include="Resources\edit-shade-white.png" />
+    <None Include="Resources\edit-outline-white.png" />
+    <None Include="Resources\layer-shape-line-white.png" />
+    <None Include="Resources\layer-shape-arrow-white.png" />
+    <None Include="Resources\layer-shade-white.png" />
+    <None Include="Resources\grid-white.png" />
     <None Include="Resources\magnifier-zoom.png" />
     <None Include="Resources\stamp-cursor.png" />
     <None Include="Resources\smiley-yell.png" />
