@@ -83,6 +83,8 @@ namespace ShareX.ScreenCaptureLib
             if (TailNode.IsDragging)
             {
                 TailPosition = InputManager.ClientMousePosition;
+
+                Manager.IsResizing = true;
             }
         }
 
