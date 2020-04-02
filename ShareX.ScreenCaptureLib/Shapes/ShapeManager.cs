@@ -358,6 +358,24 @@ namespace ShareX.ScreenCaptureLib
             {
                 scrollbarManager = new ScrollbarManager(form, this);
             }
+
+            foreach (ImageEditorControl control in DrawableObjects)
+            {
+                control.MouseDown += (sender, e) => Form.SetHandCursor(true);
+                control.MouseUp += (sender, e) =>
+                {
+                    if (control.IsCursorHover)
+                    {
+                        Form.SetHandCursor(false);
+                    }
+                    else
+                    {
+                        Form.SetDefaultCursor();
+                    }
+                };
+                control.MouseEnter += () => Form.SetHandCursor(false);
+                control.MouseLeave += () => Form.SetDefaultCursor();
+            }
         }
 
         private void form_Shown(object sender, EventArgs e)
