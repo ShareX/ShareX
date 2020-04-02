@@ -95,8 +95,6 @@ namespace ShareX.ScreenCaptureLib
             {
                 IsTailActive = true;
                 TailPosition = InputManager.ClientMousePosition;
-
-                Manager.IsResizing = true;
             }
         }
 

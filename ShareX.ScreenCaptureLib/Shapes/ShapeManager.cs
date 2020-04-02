@@ -245,32 +245,7 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        private bool isResizing;
-
-        public bool IsResizing
-        {
-            get
-            {
-                return isResizing;
-            }
-            set
-            {
-                if (isResizing != value)
-                {
-                    isResizing = value;
-
-                    if (isResizing)
-                    {
-                        Form.SetHandCursor(true);
-                    }
-                    else
-                    {
-                        Form.SetDefaultCursor();
-                    }
-                }
-            }
-        }
-
+        public bool IsResizing { get; set; }
         // Is holding Ctrl?
         public bool IsCtrlModifier { get; private set; }
         public bool IsCornerMoving { get; private set; }
