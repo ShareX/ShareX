@@ -1453,139 +1453,120 @@ namespace ShareX
             }
         }
 
-        public static Image FindMenuIcon<T>(int index)
+        public static Image FindMenuIcon<T>(T value) where T : Enum
         {
-            T e = Helpers.GetEnumFromIndex<T>(index);
-
-            if (e is AfterCaptureTasks)
+            if (value is AfterCaptureTasks afterCaptureTask)
             {
-                switch ((AfterCaptureTasks)(object)e)
+                switch (afterCaptureTask)
                 {
-                    case AfterCaptureTasks.ShowQuickTaskMenu:
-                        return Resources.ui_menu_blue;
-                    case AfterCaptureTasks.ShowAfterCaptureWindow:
-                        return Resources.application_text_image;
-                    case AfterCaptureTasks.AddImageEffects:
-                        return Resources.image_saturation;
-                    case AfterCaptureTasks.AnnotateImage:
-                        return Resources.image_pencil;
-                    case AfterCaptureTasks.CopyImageToClipboard:
-                        return Resources.clipboard_paste_image;
-                    case AfterCaptureTasks.SendImageToPrinter:
-                        return Resources.printer;
-                    case AfterCaptureTasks.SaveImageToFile:
-                        return Resources.disk;
-                    case AfterCaptureTasks.SaveImageToFileWithDialog:
-                        return Resources.disk_rename;
-                    case AfterCaptureTasks.SaveThumbnailImageToFile:
-                        return Resources.disk_small;
-                    case AfterCaptureTasks.PerformActions:
-                        return Resources.application_terminal;
-                    case AfterCaptureTasks.CopyFileToClipboard:
-                        return Resources.clipboard_block;
-                    case AfterCaptureTasks.CopyFilePathToClipboard:
-                        return Resources.clipboard_list;
-                    case AfterCaptureTasks.ShowInExplorer:
-                        return Resources.folder_stand;
-                    case AfterCaptureTasks.ScanQRCode:
-                        return ShareXResources.IsDarkTheme ? Resources.barcode_2d_white : Resources.barcode_2d;
-                    case AfterCaptureTasks.DoOCR:
-                        return ShareXResources.IsDarkTheme ? Resources.edit_drop_cap_white : Resources.edit_drop_cap;
-                    case AfterCaptureTasks.ShowBeforeUploadWindow:
-                        return Resources.application__arrow;
-                    case AfterCaptureTasks.UploadImageToHost:
-                        return Resources.upload_cloud;
-                    case AfterCaptureTasks.DeleteFile:
-                        return Resources.bin;
+                    default: throw new Exception("Icon missing for after capture task: " + afterCaptureTask);
+                    case AfterCaptureTasks.ShowQuickTaskMenu: return Resources.ui_menu_blue;
+                    case AfterCaptureTasks.ShowAfterCaptureWindow: return Resources.application_text_image;
+                    case AfterCaptureTasks.AddImageEffects: return Resources.image_saturation;
+                    case AfterCaptureTasks.AnnotateImage: return Resources.image_pencil;
+                    case AfterCaptureTasks.CopyImageToClipboard: return Resources.clipboard_paste_image;
+                    case AfterCaptureTasks.SendImageToPrinter: return Resources.printer;
+                    case AfterCaptureTasks.SaveImageToFile: return Resources.disk;
+                    case AfterCaptureTasks.SaveImageToFileWithDialog: return Resources.disk_rename;
+                    case AfterCaptureTasks.SaveThumbnailImageToFile: return Resources.disk_small;
+                    case AfterCaptureTasks.PerformActions: return Resources.application_terminal;
+                    case AfterCaptureTasks.CopyFileToClipboard: return Resources.clipboard_block;
+                    case AfterCaptureTasks.CopyFilePathToClipboard: return Resources.clipboard_list;
+                    case AfterCaptureTasks.ShowInExplorer: return Resources.folder_stand;
+                    case AfterCaptureTasks.ScanQRCode: return ShareXResources.IsDarkTheme ? Resources.barcode_2d_white : Resources.barcode_2d;
+                    case AfterCaptureTasks.DoOCR: return ShareXResources.IsDarkTheme ? Resources.edit_drop_cap_white : Resources.edit_drop_cap;
+                    case AfterCaptureTasks.ShowBeforeUploadWindow: return Resources.application__arrow;
+                    case AfterCaptureTasks.UploadImageToHost: return Resources.upload_cloud;
+                    case AfterCaptureTasks.DeleteFile: return Resources.bin;
                 }
             }
-            else if (e is AfterUploadTasks)
+            else if (value is AfterUploadTasks afterUploadTask)
             {
-                switch ((AfterUploadTasks)(object)e)
+                switch (afterUploadTask)
                 {
-                    case AfterUploadTasks.ShowAfterUploadWindow:
-                        return Resources.application_browser;
-                    case AfterUploadTasks.UseURLShortener:
-                        return ShareXResources.IsDarkTheme ? Resources.edit_scale_white : Resources.edit_scale;
-                    case AfterUploadTasks.ShareURL:
-                        return Resources.globe_share;
-                    case AfterUploadTasks.CopyURLToClipboard:
-                        return Resources.clipboard_paste_document_text;
-                    case AfterUploadTasks.OpenURL:
-                        return Resources.globe__arrow;
-                    case AfterUploadTasks.ShowQRCode:
-                        return ShareXResources.IsDarkTheme ? Resources.barcode_2d_white : Resources.barcode_2d;
+                    default: throw new Exception("Icon missing for after upload task: " + afterUploadTask);
+                    case AfterUploadTasks.ShowAfterUploadWindow: return Resources.application_browser;
+                    case AfterUploadTasks.UseURLShortener: return ShareXResources.IsDarkTheme ? Resources.edit_scale_white : Resources.edit_scale;
+                    case AfterUploadTasks.ShareURL: return Resources.globe_share;
+                    case AfterUploadTasks.CopyURLToClipboard: return Resources.clipboard_paste_document_text;
+                    case AfterUploadTasks.OpenURL: return Resources.globe__arrow;
+                    case AfterUploadTasks.ShowQRCode: return ShareXResources.IsDarkTheme ? Resources.barcode_2d_white : Resources.barcode_2d;
+                }
+            }
+            else if (value is HotkeyType hotkeyType)
+            {
+                switch (hotkeyType)
+                {
+                    default: throw new Exception("Icon missing for hotkey type: " + hotkeyType);
+                    case HotkeyType.None: return null;
+                    // Upload
+                    case HotkeyType.FileUpload: return Resources.folder_open_document;
+                    case HotkeyType.FolderUpload: return Resources.folder;
+                    case HotkeyType.ClipboardUpload: return Resources.clipboard;
+                    case HotkeyType.ClipboardUploadWithContentViewer: return Resources.clipboard_task;
+                    case HotkeyType.UploadText: return Resources.notebook;
+                    case HotkeyType.UploadURL: return Resources.drive;
+                    case HotkeyType.DragDropUpload: return Resources.inbox;
+                    case HotkeyType.ShortenURL: return ShareXResources.IsDarkTheme ? Resources.edit_scale_white : Resources.edit_scale;
+                    case HotkeyType.StopUploads: return Resources.cross_button;
+                    // Screen capture
+                    case HotkeyType.PrintScreen: return Resources.layer_fullscreen;
+                    case HotkeyType.ActiveWindow: return Resources.application_blue;
+                    case HotkeyType.ActiveMonitor: return Resources.monitor;
+                    case HotkeyType.RectangleRegion: return Resources.layer_shape;
+                    case HotkeyType.RectangleLight: return Resources.Rectangle;
+                    case HotkeyType.RectangleTransparent: return Resources.layer_transparent;
+                    case HotkeyType.CustomRegion: return Resources.layer__arrow;
+                    case HotkeyType.LastRegion: return Resources.layers;
+                    case HotkeyType.ScrollingCapture: return Resources.ui_scroll_pane_image;
+                    case HotkeyType.TextCapture: return ShareXResources.IsDarkTheme ? Resources.edit_drop_cap_white : Resources.edit_drop_cap;
+                    case HotkeyType.AutoCapture: return Resources.clock;
+                    case HotkeyType.StartAutoCapture: return Resources.clock__arrow;
+                    // Screen record
+                    case HotkeyType.ScreenRecorder: return Resources.camcorder_image;
+                    case HotkeyType.ScreenRecorderActiveWindow: return Resources.camcorder__arrow;
+                    case HotkeyType.ScreenRecorderCustomRegion: return Resources.camcorder__arrow;
+                    case HotkeyType.StartScreenRecorder: return Resources.camcorder__arrow;
+                    case HotkeyType.ScreenRecorderGIF: return Resources.film;
+                    case HotkeyType.ScreenRecorderGIFActiveWindow: return Resources.film__arrow;
+                    case HotkeyType.ScreenRecorderGIFCustomRegion: return Resources.film__arrow;
+                    case HotkeyType.StartScreenRecorderGIF: return Resources.film__arrow;
+                    case HotkeyType.AbortScreenRecording: return Resources.camcorder__exclamation;
+                    // Tools
+                    case HotkeyType.ColorPicker: return Resources.color;
+                    case HotkeyType.ScreenColorPicker: return Resources.pipette;
+                    case HotkeyType.ImageEditor: return Resources.image_pencil;
+                    case HotkeyType.ImageEffects: return Resources.image_saturation;
+                    case HotkeyType.HashCheck: return Resources.application_task;
+                    case HotkeyType.DNSChanger: return Resources.network_ip;
+                    case HotkeyType.QRCode: return ShareXResources.IsDarkTheme ? Resources.barcode_2d_white : Resources.barcode_2d;
+                    case HotkeyType.Ruler: return Resources.ruler_triangle;
+                    case HotkeyType.IndexFolder: return Resources.folder_tree;
+                    case HotkeyType.ImageCombiner: return Resources.document_break;
+                    case HotkeyType.ImageSplitter: return Resources.image_split;
+                    case HotkeyType.ImageThumbnailer: return Resources.image_resize_actual;
+                    case HotkeyType.VideoConverter: return Resources.camcorder_pencil;
+                    case HotkeyType.VideoThumbnailer: return Resources.images_stack;
+                    case HotkeyType.TweetMessage: return Resources.Twitter;
+                    case HotkeyType.MonitorTest: return Resources.monitor;
+                    // Other
+                    case HotkeyType.DisableHotkeys: return Resources.keyboard__minus;
+                    case HotkeyType.OpenMainWindow: return Resources.application_home;
+                    case HotkeyType.OpenScreenshotsFolder: return Resources.folder_open_image;
+                    case HotkeyType.OpenHistory: return Resources.application_blog;
+                    case HotkeyType.OpenImageHistory: return Resources.application_icon_large;
+                    case HotkeyType.ToggleActionsToolbar: return Resources.ui_toolbar__arrow;
+                    case HotkeyType.ExitShareX: return Resources.cross;
                 }
             }
 
             return null;
         }
 
-        public static Image GetHotkeyTypeIcon(HotkeyType hotkeyType)
+        public static Image FindMenuIcon<T>(int index) where T : Enum
         {
-            switch (hotkeyType)
-            {
-                default: throw new Exception("Icon missing for hotkey type.");
-                case HotkeyType.None: return null;
-                // Upload
-                case HotkeyType.FileUpload: return Resources.folder_open_document;
-                case HotkeyType.FolderUpload: return Resources.folder;
-                case HotkeyType.ClipboardUpload: return Resources.clipboard;
-                case HotkeyType.ClipboardUploadWithContentViewer: return Resources.clipboard_task;
-                case HotkeyType.UploadText: return Resources.notebook;
-                case HotkeyType.UploadURL: return Resources.drive;
-                case HotkeyType.DragDropUpload: return Resources.inbox;
-                case HotkeyType.ShortenURL: return ShareXResources.IsDarkTheme ? Resources.edit_scale_white : Resources.edit_scale;
-                case HotkeyType.StopUploads: return Resources.cross_button;
-                // Screen capture
-                case HotkeyType.PrintScreen: return Resources.layer_fullscreen;
-                case HotkeyType.ActiveWindow: return Resources.application_blue;
-                case HotkeyType.ActiveMonitor: return Resources.monitor;
-                case HotkeyType.RectangleRegion: return Resources.layer_shape;
-                case HotkeyType.RectangleLight: return Resources.Rectangle;
-                case HotkeyType.RectangleTransparent: return Resources.layer_transparent;
-                case HotkeyType.CustomRegion: return Resources.layer__arrow;
-                case HotkeyType.LastRegion: return Resources.layers;
-                case HotkeyType.ScrollingCapture: return Resources.ui_scroll_pane_image;
-                case HotkeyType.TextCapture: return ShareXResources.IsDarkTheme ? Resources.edit_drop_cap_white : Resources.edit_drop_cap;
-                case HotkeyType.AutoCapture: return Resources.clock;
-                case HotkeyType.StartAutoCapture: return Resources.clock__arrow;
-                // Screen record
-                case HotkeyType.ScreenRecorder: return Resources.camcorder_image;
-                case HotkeyType.ScreenRecorderActiveWindow: return Resources.camcorder__arrow;
-                case HotkeyType.ScreenRecorderCustomRegion: return Resources.camcorder__arrow;
-                case HotkeyType.StartScreenRecorder: return Resources.camcorder__arrow;
-                case HotkeyType.ScreenRecorderGIF: return Resources.film;
-                case HotkeyType.ScreenRecorderGIFActiveWindow: return Resources.film__arrow;
-                case HotkeyType.ScreenRecorderGIFCustomRegion: return Resources.film__arrow;
-                case HotkeyType.StartScreenRecorderGIF: return Resources.film__arrow;
-                case HotkeyType.AbortScreenRecording: return Resources.camcorder__exclamation;
-                // Tools
-                case HotkeyType.ColorPicker: return Resources.color;
-                case HotkeyType.ScreenColorPicker: return Resources.pipette;
-                case HotkeyType.ImageEditor: return Resources.image_pencil;
-                case HotkeyType.ImageEffects: return Resources.image_saturation;
-                case HotkeyType.HashCheck: return Resources.application_task;
-                case HotkeyType.DNSChanger: return Resources.network_ip;
-                case HotkeyType.QRCode: return ShareXResources.IsDarkTheme ? Resources.barcode_2d_white : Resources.barcode_2d;
-                case HotkeyType.Ruler: return Resources.ruler_triangle;
-                case HotkeyType.IndexFolder: return Resources.folder_tree;
-                case HotkeyType.ImageCombiner: return Resources.document_break;
-                case HotkeyType.ImageSplitter: return Resources.image_split;
-                case HotkeyType.ImageThumbnailer: return Resources.image_resize_actual;
-                case HotkeyType.VideoConverter: return Resources.camcorder_pencil;
-                case HotkeyType.VideoThumbnailer: return Resources.images_stack;
-                case HotkeyType.TweetMessage: return Resources.Twitter;
-                case HotkeyType.MonitorTest: return Resources.monitor;
-                // Other
-                case HotkeyType.DisableHotkeys: return Resources.keyboard__minus;
-                case HotkeyType.OpenMainWindow: return Resources.application_home;
-                case HotkeyType.OpenScreenshotsFolder: return Resources.folder_open_image;
-                case HotkeyType.OpenHistory: return Resources.application_blog;
-                case HotkeyType.OpenImageHistory: return Resources.application_icon_large;
-                case HotkeyType.ToggleActionsToolbar: return Resources.ui_toolbar__arrow;
-                case HotkeyType.ExitShareX: return Resources.cross;
-            }
+            T value = Helpers.GetEnumFromIndex<T>(index);
+            return FindMenuIcon(value);
         }
 
         public static Screenshot GetScreenshot(TaskSettings taskSettings = null)

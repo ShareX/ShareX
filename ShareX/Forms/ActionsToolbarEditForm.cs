@@ -54,7 +54,7 @@ namespace ShareX
                 }
                 else
                 {
-                    img = TaskHelpers.GetHotkeyTypeIcon(hotkeyType);
+                    img = TaskHelpers.FindMenuIcon(hotkeyType);
                 }
 
                 ilMain.Images.Add(hotkeyType.ToString(), img);
@@ -89,7 +89,7 @@ namespace ShareX
                     else
                     {
                         text = enumInfo.Description.Replace("&", "&&");
-                        img = TaskHelpers.GetHotkeyTypeIcon(hotkeyType);
+                        img = TaskHelpers.FindMenuIcon(hotkeyType);
                     }
 
                     ToolStripMenuItem tsmi = new ToolStripMenuItem(text);

@@ -324,7 +324,7 @@ namespace ShareX
                     {
                         Text = action.GetLocalizedDescription(),
                         DisplayStyle = ToolStripItemDisplayStyle.Image,
-                        Image = TaskHelpers.GetHotkeyTypeIcon(action)
+                        Image = TaskHelpers.FindMenuIcon(action)
                     };
 
                     tsb.Click += (sender, e) =>

@@ -464,7 +464,7 @@ namespace ShareX
             }
         }
 
-        private void AddEnumItemsContextMenu<T>(Action<T> selectedEnum, params ToolStripDropDown[] parents)
+        private void AddEnumItemsContextMenu<T>(Action<T> selectedEnum, params ToolStripDropDown[] parents) where T : Enum
         {
             EnumInfo[] enums = Helpers.GetEnums<T>().OfType<Enum>().Select(x => new EnumInfo(x)).ToArray();
 
@@ -473,13 +473,14 @@ namespace ShareX
                 foreach (EnumInfo enumInfo in enums)
                 {
                     ToolStripMenuItem tsmi = new ToolStripMenuItem(enumInfo.Description.Replace("&", "&&"));
+                    tsmi.Image = TaskHelpers.FindMenuIcon(enumInfo.Value);
                     tsmi.Tag = enumInfo;
 
                     tsmi.Click += (sender, e) =>
                     {
                         SetEnumCheckedContextMenu(enumInfo, parents);
 
-                        selectedEnum((T)Enum.ToObject(typeof(T), enumInfo.Value));
+                        selectedEnum((T)enumInfo.Value);
 
                         UpdateUploaderMenuNames();
                     };
@@ -534,7 +535,7 @@ namespace ShareX
             }
         }
 
-        private void AddMultiEnumItemsContextMenu<T>(Action<T> selectedEnum, params ToolStripDropDown[] parents)
+        private void AddMultiEnumItemsContextMenu<T>(Action<T> selectedEnum, params ToolStripDropDown[] parents) where T : Enum
         {
             string[] enums = Helpers.GetLocalizedEnumDescriptions<T>().Skip(1).Select(x => x.Replace("&", "&&")).ToArray();
 
