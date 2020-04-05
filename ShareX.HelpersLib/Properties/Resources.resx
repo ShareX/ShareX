@@ -1220,4 +1220,22 @@ Would you like to download and install it?</value>
   <data name="ShapeType_DrawingSmartEraser" xml:space="preserve">
     <value>Smart eraser</value>
   </data>
+  <data name="HotkeyType_ImageSplitter" xml:space="preserve">
+    <value>Image splitter</value>
+  </data>
+  <data name="HotkeyType_ImageSplitter_Category" xml:space="preserve">
+    <value>Tools</value>
+  </data>
+  <data name="HotkeyType_ImageThumbnailer" xml:space="preserve">
+    <value>Image thumbnailer</value>
+  </data>
+  <data name="HotkeyType_ImageThumbnailer_Category" xml:space="preserve">
+    <value>Tools</value>
+  </data>
+  <data name="HotkeyType_VideoConverter" xml:space="preserve">
+    <value>Video converter</value>
+  </data>
+  <data name="HotkeyType_VideoConverter_Category" xml:space="preserve">
+    <value>Tools</value>
+  </data>
 </root>

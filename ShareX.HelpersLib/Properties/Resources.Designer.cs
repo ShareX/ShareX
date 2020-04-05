@@ -1348,6 +1348,42 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Image splitter.
+        /// </summary>
+        internal static string HotkeyType_ImageSplitter {
+            get {
+                return ResourceManager.GetString("HotkeyType_ImageSplitter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tools.
+        /// </summary>
+        internal static string HotkeyType_ImageSplitter_Category {
+            get {
+                return ResourceManager.GetString("HotkeyType_ImageSplitter_Category", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Image thumbnailer.
+        /// </summary>
+        internal static string HotkeyType_ImageThumbnailer {
+            get {
+                return ResourceManager.GetString("HotkeyType_ImageThumbnailer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tools.
+        /// </summary>
+        internal static string HotkeyType_ImageThumbnailer_Category {
+            get {
+                return ResourceManager.GetString("HotkeyType_ImageThumbnailer_Category", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Index folder.
         /// </summary>
         internal static string HotkeyType_IndexFolder {
@@ -1911,6 +1947,24 @@ namespace ShareX.HelpersLib.Properties {
         internal static string HotkeyType_UploadURL_Category {
             get {
                 return ResourceManager.GetString("HotkeyType_UploadURL_Category", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Video converter.
+        /// </summary>
+        internal static string HotkeyType_VideoConverter {
+            get {
+                return ResourceManager.GetString("HotkeyType_VideoConverter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tools.
+        /// </summary>
+        internal static string HotkeyType_VideoConverter_Category {
+            get {
+                return ResourceManager.GetString("HotkeyType_VideoConverter_Category", resourceCulture);
             }
         }
         

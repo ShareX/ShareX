@@ -70,7 +70,7 @@ namespace ShareX.IndexerLib
             sbContent.AppendLine(GetFolderNameRow(dir, level));
 
             string divClass = level > 0 ? "FolderBorder" : "MainFolderBorder";
-            sbContent.AppendLine(HtmlHelper.StartTag("div", "", "class=\"" + divClass + "\""));
+            sbContent.AppendLine(HtmlHelper.StartTag("div", "", $"class=\"{divClass}\""));
 
             if (dir.Files.Count > 0)
             {

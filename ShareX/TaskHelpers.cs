@@ -205,6 +205,15 @@ namespace ShareX
                 case HotkeyType.ImageCombiner:
                     OpenImageCombiner(safeTaskSettings);
                     break;
+                case HotkeyType.ImageSplitter:
+                    OpenImageSplitter();
+                    break;
+                case HotkeyType.ImageThumbnailer:
+                    OpenImageThumbnailer();
+                    break;
+                case HotkeyType.VideoConverter:
+                    OpenVideoConverter(safeTaskSettings);
+                    break;
                 case HotkeyType.VideoThumbnailer:
                     OpenVideoThumbnailer(safeTaskSettings);
                     break;
@@ -1562,6 +1571,9 @@ namespace ShareX
                 case HotkeyType.Ruler: return Resources.ruler_triangle;
                 case HotkeyType.IndexFolder: return Resources.folder_tree;
                 case HotkeyType.ImageCombiner: return Resources.document_break;
+                case HotkeyType.ImageSplitter: return Resources.image_split;
+                case HotkeyType.ImageThumbnailer: return Resources.image_resize_actual;
+                case HotkeyType.VideoConverter: return Resources.camcorder_pencil;
                 case HotkeyType.VideoThumbnailer: return Resources.images_stack;
                 case HotkeyType.TweetMessage: return Resources.Twitter;
                 case HotkeyType.MonitorTest: return Resources.monitor;
