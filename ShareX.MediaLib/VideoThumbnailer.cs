@@ -50,6 +50,7 @@ namespace ShareX.MediaLib
 
             using (FFmpegCLIManager ffmpeg = new FFmpegCLIManager(FFmpegPath))
             {
+                ffmpeg.ShowError = true;
                 VideoInfo = ffmpeg.GetVideoInfo(MediaPath);
             }
         }

@@ -41,7 +41,6 @@ namespace ShareX.ScreenCaptureLib
         public string UserArgs { get; set; } = "";
         public bool UseCustomCommands { get; set; } = false;
         public string CustomCommands { get; set; } = "";
-        public bool ShowError { get; set; } = true;
 
         // Video
         public FFmpegPreset x264_Preset { get; set; } = FFmpegPreset.ultrafast;

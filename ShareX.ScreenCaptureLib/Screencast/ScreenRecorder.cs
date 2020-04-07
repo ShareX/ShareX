@@ -123,6 +123,7 @@ namespace ShareX.ScreenCaptureLib
                 case ScreenRecordOutput.FFmpeg:
                     Helpers.CreateDirectoryFromFilePath(Options.OutputPath);
                     ffmpeg = new FFmpegCLIManager(Options.FFmpeg.FFmpegPath);
+                    ffmpeg.ShowError = true;
                     ffmpeg.EncodeStarted += OnRecordingStarted;
                     ffmpeg.EncodeProgressChanged += OnEncodingProgressChanged;
                     break;
