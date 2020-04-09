@@ -37,26 +37,36 @@ namespace ShareX.MediaLib
         public delegate void ProgressChangedEventHandler(int current, int length);
         public event ProgressChangedEventHandler ProgressChanged;
 
-        public string MediaPath { get; private set; }
         public string FFmpegPath { get; private set; }
         public VideoThumbnailOptions Options { get; private set; }
+        public string MediaPath { get; private set; }
         public VideoInfo VideoInfo { get; private set; }
 
-        public VideoThumbnailer(string mediaPath, string ffmpegPath, VideoThumbnailOptions options)
+        public VideoThumbnailer(string ffmpegPath, VideoThumbnailOptions options)
         {
-            MediaPath = mediaPath;
             FFmpegPath = ffmpegPath;
             Options = options;
+        }
 
+        private void UpdateVideoInfo()
+        {
             using (FFmpegCLIManager ffmpeg = new FFmpegCLIManager(FFmpegPath))
             {
-                ffmpeg.ShowError = true;
                 VideoInfo = ffmpeg.GetVideoInfo(MediaPath);
             }
         }
 
-        public List<VideoThumbnailInfo> TakeThumbnails()
+        public List<VideoThumbnailInfo> TakeThumbnails(string mediaPath)
         {
+            MediaPath = mediaPath;
+
+            UpdateVideoInfo();
+
+            if (VideoInfo == null || VideoInfo.Duration == TimeSpan.Zero)
+            {
+                return null;
+            }
+
             List<VideoThumbnailInfo> tempThumbnails = new List<VideoThumbnailInfo>();
 
             for (int i = 0; i < Options.ThumbnailCount; i++)

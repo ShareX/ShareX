@@ -71,9 +71,9 @@ namespace ShareX.MediaLib
                 {
                     try
                     {
-                        VideoThumbnailer thumbnailer = new VideoThumbnailer(mediaPath, FFmpegPath, Options);
+                        VideoThumbnailer thumbnailer = new VideoThumbnailer(FFmpegPath, Options);
                         thumbnailer.ProgressChanged += Thumbnailer_ProgressChanged;
-                        thumbnails = thumbnailer.TakeThumbnails();
+                        thumbnails = thumbnailer.TakeThumbnails(mediaPath);
                     }
                     catch (Exception ex)
                     {
