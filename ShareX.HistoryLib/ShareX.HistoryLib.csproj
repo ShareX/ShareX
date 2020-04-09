@@ -347,7 +347,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="ImageListView">
-      <Version>13.7.2</Version>
+      <Version>13.8.2</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
