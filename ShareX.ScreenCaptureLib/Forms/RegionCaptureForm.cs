@@ -693,7 +693,10 @@ namespace ShareX.ScreenCaptureLib
                 UpdateCenterOffset();
             }
 
-            borderDotPen.DashOffset = (float)timerStart.Elapsed.TotalSeconds * -15;
+            if (Options.EnableAnimations)
+            {
+                borderDotPen.DashOffset = (float)timerStart.Elapsed.TotalSeconds * -15;
+            }
 
             ShapeManager.Update();
         }
