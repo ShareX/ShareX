@@ -1766,7 +1766,7 @@ namespace ShareX.HelpersLib
                                 x = 0;
                                 break;
                             case ImageCombinerAlignment.Center:
-                                x = width / 2 - image.Width / 2;
+                                x = (width / 2) - (image.Width / 2);
                                 break;
                             case ImageCombinerAlignment.RightOrBottom:
                                 x = width - image.Width;
@@ -1785,7 +1785,7 @@ namespace ShareX.HelpersLib
                                 y = 0;
                                 break;
                             case ImageCombinerAlignment.Center:
-                                y = height / 2 - image.Height / 2;
+                                y = (height / 2) - (image.Height / 2);
                                 break;
                             case ImageCombinerAlignment.RightOrBottom:
                                 y = height - image.Height;

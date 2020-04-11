@@ -87,7 +87,6 @@ namespace ShareX.ScreenCaptureLib
             return false;
         }
 
-
         public static bool GetRectangleRegionTransparent(out Rectangle rect)
         {
             using (RegionCaptureTransparentForm regionCaptureTransparentForm = new RegionCaptureTransparentForm())

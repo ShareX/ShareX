@@ -46,17 +46,29 @@ namespace ShareX.HelpersLib
             if (thread == null)
             {
                 thread = new Thread(WorkThread);
-                thread.SetApartmentState(state);
                 thread.IsBackground = true;
+                thread.SetApartmentState(state);
                 thread.Start();
             }
         }
 
         private void WorkThread()
         {
-            DoWork();
+            OnDoWork();
+            OnCompleted();
+        }
+
+        private void OnDoWork()
+        {
+            DoWork?.Invoke();
+        }
+
+        private void OnCompleted()
+        {
             if (Completed != null)
+            {
                 InvokeAsync(Completed);
+            }
         }
 
         public void Invoke(Action action)
