@@ -55,7 +55,8 @@ namespace ShareX.HelpersLib
         private void WorkThread()
         {
             DoWork();
-            InvokeAsync(Completed);
+            if (Completed != null)
+                InvokeAsync(Completed);
         }
 
         public void Invoke(Action action)
