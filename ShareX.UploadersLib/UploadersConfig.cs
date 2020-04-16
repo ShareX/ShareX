@@ -73,6 +73,7 @@ namespace ShareX.UploadersLib
         #region Google Photos
 
         public OAuth2Info GooglePhotosOAuth2Info = null;
+        public OAuthUserInfo GooglePhotosUserInfo = null;
         public string GooglePhotosAlbumID = "";
         public bool GooglePhotosIsPublic = false;
 

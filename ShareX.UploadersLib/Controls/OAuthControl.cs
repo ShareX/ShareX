@@ -58,25 +58,22 @@ namespace ShareX.UploadersLib
             set
             {
                 status = value;
+                UpdateStatusLabel();
+            }
+        }
 
-                switch (status)
-                {
-                    case OAuthLoginStatus.LoginRequired:
-                        lblStatusValue.Text = Resources.OAuthControl_Status_NotLoggedIn;
-                        lblStatusValue.ForeColor = Color.FromArgb(200, 0, 0);
-                        break;
-                    case OAuthLoginStatus.LoginSuccessful:
-                        lblStatusValue.Text = Resources.OAuthControl_Status_LoggedIn;
-                        lblStatusValue.ForeColor = Color.FromArgb(0, 128, 0);
-                        break;
-                    case OAuthLoginStatus.LoginFailed:
-                        lblStatusValue.Text = Resources.OAuthControl_Status_LoginFailed;
-                        lblStatusValue.ForeColor = Color.FromArgb(200, 0, 0);
-                        break;
-                }
+        private OAuthUserInfo userInfo;
 
-                txtVerificationCode.ResetText();
-                btnClearAuthorization.Enabled = btnRefreshAuthorization.Enabled = status == OAuthLoginStatus.LoginSuccessful;
+        public OAuthUserInfo UserInfo
+        {
+            get
+            {
+                return userInfo;
+            }
+            set
+            {
+                userInfo = value;
+                UpdateStatusLabel();
             }
         }
 
@@ -151,12 +148,43 @@ namespace ShareX.UploadersLib
 
         private void btnClearAuthorization_Click(object sender, EventArgs e)
         {
+            UserInfo = null;
+            Status = OAuthLoginStatus.LoginRequired;
+
             if (ClearButtonClicked != null)
             {
                 ClearButtonClicked();
-
-                Status = OAuthLoginStatus.LoginRequired;
             }
+        }
+
+        private void UpdateStatusLabel()
+        {
+            switch (Status)
+            {
+                case OAuthLoginStatus.LoginRequired:
+                    lblStatusValue.Text = Resources.OAuthControl_Status_NotLoggedIn;
+                    lblStatusValue.ForeColor = Color.FromArgb(200, 0, 0);
+                    break;
+                case OAuthLoginStatus.LoginSuccessful:
+                    if (UserInfo != null && !string.IsNullOrEmpty(UserInfo.name))
+                    {
+                        // TODO: Translate
+                        lblStatusValue.Text = string.Format("Logged in as {0}.", UserInfo.name);
+                    }
+                    else
+                    {
+                        lblStatusValue.Text = Resources.OAuthControl_Status_LoggedIn;
+                    }
+                    lblStatusValue.ForeColor = Color.FromArgb(0, 160, 0);
+                    break;
+                case OAuthLoginStatus.LoginFailed:
+                    lblStatusValue.Text = Resources.OAuthControl_Status_LoginFailed;
+                    lblStatusValue.ForeColor = Color.FromArgb(200, 0, 0);
+                    break;
+            }
+
+            txtVerificationCode.ResetText();
+            btnClearAuthorization.Enabled = btnRefreshAuthorization.Enabled = Status == OAuthLoginStatus.LoginSuccessful;
         }
     }
 }

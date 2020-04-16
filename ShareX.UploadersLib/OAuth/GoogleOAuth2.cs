@@ -33,7 +33,8 @@ namespace ShareX.UploadersLib
     public class GoogleOAuth2 : IOAuth2
     {
         private const string AuthorizationEndpoint = "https://accounts.google.com/o/oauth2/v2/auth";
-        private const string TokenEndpoint = "https://www.googleapis.com/oauth2/v4/token";
+        private const string TokenEndpoint = "https://oauth2.googleapis.com/token";
+        private const string UserInfoEndpoint = "https://www.googleapis.com/oauth2/v3/userinfo";
         private const string RedirectMethod = "urn:ietf:wg:oauth:2.0:oob"; // Manual copy-paste method
 
         public OAuth2Info AuthInfo { get; private set; }
@@ -137,6 +138,18 @@ namespace ShareX.UploadersLib
             NameValueCollection headers = new NameValueCollection();
             headers.Add("Authorization", "Bearer " + AuthInfo.Token.access_token);
             return headers;
+        }
+
+        public OAuthUserInfo GetUserInfo()
+        {
+            string response = GoogleUploader.SendRequest(HttpMethod.GET, UserInfoEndpoint, null, GetAuthHeaders());
+
+            if (!string.IsNullOrEmpty(response))
+            {
+                return JsonConvert.DeserializeObject<OAuthUserInfo>(response);
+            }
+
+            return null;
         }
     }
 }

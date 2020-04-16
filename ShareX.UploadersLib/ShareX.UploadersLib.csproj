@@ -237,6 +237,7 @@
     <Compile Include="OAuth\OAuth2ProofKey.cs" />
     <Compile Include="Helpers\SSLBypassHelper.cs" />
     <Compile Include="BaseServices\URLSharingService.cs" />
+    <Compile Include="OAuth\OAuthUserInfo.cs" />
     <Compile Include="OtherServices\OCRSpace.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>

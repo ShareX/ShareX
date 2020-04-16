@@ -106,7 +106,7 @@ namespace ShareX.UploadersLib
             }
         }
 
-        protected string SendRequest(HttpMethod method, string url, Dictionary<string, string> args = null, NameValueCollection headers = null, CookieCollection cookies = null)
+        internal string SendRequest(HttpMethod method, string url, Dictionary<string, string> args = null, NameValueCollection headers = null, CookieCollection cookies = null)
         {
             return SendRequest(method, url, (Stream)null, null, args, headers, cookies);
         }

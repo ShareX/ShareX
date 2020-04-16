@@ -211,13 +211,13 @@
     <value>3, 0, 0, 0</value>
   </data>
   <data name="btnClearAuthorization.Size" type="System.Drawing.Size, System.Drawing">
-    <value>288, 23</value>
+    <value>288, 25</value>
   </data>
   <data name="btnClearAuthorization.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
   <data name="btnClearAuthorization.Text" xml:space="preserve">
-    <value>Clear authorization</value>
+    <value>Disconnect</value>
   </data>
   <data name="btnClearAuthorization.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
@@ -244,7 +244,7 @@
     <value>3, 0, 0, 0</value>
   </data>
   <data name="btnRefreshAuthorization.Size" type="System.Drawing.Size, System.Drawing">
-    <value>288, 23</value>
+    <value>288, 25</value>
   </data>
   <data name="btnRefreshAuthorization.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -274,13 +274,13 @@
     <value>3, 0, 0, 0</value>
   </data>
   <data name="btnOpenAuthorizePage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>288, 23</value>
+    <value>288, 25</value>
   </data>
   <data name="btnOpenAuthorizePage.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
   <data name="btnOpenAuthorizePage.Text" xml:space="preserve">
-    <value>Step 1: Open authorize page...</value>
+    <value>Connect...</value>
   </data>
   <data name="btnOpenAuthorizePage.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
@@ -334,13 +334,13 @@
     <value>3, 0, 0, 0</value>
   </data>
   <data name="btnCompleteAuthorization.Size" type="System.Drawing.Size, System.Drawing">
-    <value>288, 23</value>
+    <value>288, 25</value>
   </data>
   <data name="btnCompleteAuthorization.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
   <data name="btnCompleteAuthorization.Text" xml:space="preserve">
-    <value>Step 2: Complete authorization</value>
+    <value>Complete authorization</value>
   </data>
   <data name="btnCompleteAuthorization.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
