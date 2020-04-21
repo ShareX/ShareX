@@ -7,6 +7,6 @@
 [![Downloads](https://img.shields.io/github/downloads/ShareX/ShareX/latest/total.svg?label=Downloads&maxAge=60)](https://getsharex.com/downloads/)
 [![Discord](https://discordapp.com/api/guilds/194170124859736065/widget.png)](https://discord.gg/ShareX)
 
-[![Screenshot](https://getsharex.com/img/ShareX_Animation.gif)](https://getsharex.com)
+[![Screenshot](https://getsharex.com/img/ShareX_Screenshot.png)](https://getsharex.com)
 
 ### For further information check [getsharex.com](https://getsharex.com)
