@@ -94,7 +94,6 @@ namespace ShareX.HelpersLib
                     return;
                 }
 
-
                 CreateServer(callback);
             }
             catch (Exception e)
