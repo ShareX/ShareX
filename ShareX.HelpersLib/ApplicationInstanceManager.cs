@@ -23,11 +23,11 @@
 
 #endregion License Information (GPL v3)
 
+using Newtonsoft.Json;
 using System;
-using System.Runtime.Remoting;
-using System.Runtime.Remoting.Channels;
-using System.Runtime.Remoting.Channels.Ipc;
-using System.Security.Permissions;
+using System.IO;
+using System.IO.Pipes;
+using System.Text;
 using System.Threading;
 
 namespace ShareX.HelpersLib
@@ -36,15 +36,15 @@ namespace ShareX.HelpersLib
     {
         private static readonly string MutexName = "82E6AC09-0FEF-4390-AD9F-0DD3F5561EFC";
         private static readonly string AppName = "ShareX";
-        private static readonly string EventName = string.Format("{0}-{1}-{2}", Environment.MachineName, Environment.UserName, AppName);
-        private static readonly string SemaphoreName = string.Format("{0}{1}", EventName, "Semaphore");
+        private static readonly string PipeName = $"{Environment.MachineName}-{Environment.UserName}-{AppName}";
+        private static readonly string SemaphoreName = PipeName + "Semaphore";
 
         public bool IsSingleInstance { get; private set; }
         public bool IsFirstInstance { get; private set; }
 
         private Mutex mutex;
         private Semaphore semaphore;
-        private IpcServerChannel serverChannel;
+        private NamedPipeServerStream pipeServer;
 
         public ApplicationInstanceManager(bool isSingleInstance, string[] args, EventHandler<InstanceCallbackEventArgs> callback)
         {
@@ -75,20 +75,9 @@ namespace ShareX.HelpersLib
         {
             if (IsFirstInstance)
             {
-                if (mutex != null)
-                {
-                    mutex.ReleaseMutex();
-                }
-
-                if (serverChannel != null)
-                {
-                    ChannelServices.UnregisterChannel(serverChannel);
-                }
-
-                if (semaphore != null)
-                {
-                    semaphore.Close();
-                }
+                mutex?.ReleaseMutex();
+                pipeServer?.Dispose();
+                semaphore?.Close();
             }
         }
 
@@ -96,23 +85,17 @@ namespace ShareX.HelpersLib
         {
             try
             {
-                bool createdNew;
-
-                using (EventWaitHandle eventWaitHandle = new EventWaitHandle(false, EventResetMode.AutoReset, EventName, out createdNew))
+                semaphore = new Semaphore(1, 1, SemaphoreName, out var createdNew);
+                // Mixing single instance and multi instance (via command line parameter) copies of the program can
+                //  result in CreateFirstInstance being called if it isn't really the first one. Make sure this is
+                //  really first instance by detecting if the semaphore was created
+                if (!createdNew)
                 {
-                    // Mixing single instance and multi instance (via command line parameter) copies of the program can
-                    //  result in CreateFirstInstance being called if it isn't really the first one. Make sure this is
-                    //  really first instance by detecting if EventWaitHandle was created
-                    if (!createdNew)
-                    {
-                        return;
-                    }
-
-                    semaphore = new Semaphore(1, 1, SemaphoreName);
-                    ThreadPool.RegisterWaitForSingleObject(eventWaitHandle, WaitOrTimerCallback, callback, Timeout.Infinite, false);
-
-                    RegisterRemoteType(AppName);
+                    return;
                 }
+
+
+                CreateServer(callback);
             }
             catch (Exception e)
             {
@@ -124,19 +107,9 @@ namespace ShareX.HelpersLib
         {
             try
             {
-                InstanceProxy.CommandLineArgs = args;
-
-                using (EventWaitHandle eventWaitHandle = EventWaitHandle.OpenExisting(EventName))
-                {
-                    semaphore = Semaphore.OpenExisting(SemaphoreName);
-                    semaphore.WaitOne();
-                    UpdateRemoteObject(AppName);
-
-                    if (eventWaitHandle != null)
-                    {
-                        eventWaitHandle.Set();
-                    }
-                }
+                semaphore = Semaphore.OpenExisting(SemaphoreName);
+                semaphore.WaitOne();
+                SendDataToServer(args);
             }
             catch (Exception e)
             {
@@ -146,69 +119,55 @@ namespace ShareX.HelpersLib
             Environment.Exit(0);
         }
 
-        private void UpdateRemoteObject(string uri)
+        private void SendDataToServer(string[] args)
         {
-            IpcClientChannel clientChannel = new IpcClientChannel();
-            ChannelServices.RegisterChannel(clientChannel, true);
-
-            InstanceProxy proxy = Activator.GetObject(typeof(InstanceProxy), string.Format("ipc://{0}{1}{2}/{2}", Environment.MachineName, Environment.UserName, uri)) as InstanceProxy;
-
-            if (proxy != null)
+            using (var pipeClient = new NamedPipeClientStream(".", PipeName, PipeDirection.Out))
             {
-                proxy.SetCommandLineArgs(InstanceProxy.CommandLineArgs);
-            }
+                pipeClient.Connect();
 
-            ChannelServices.UnregisterChannel(clientChannel);
-        }
-
-        private void RegisterRemoteType(string uri)
-        {
-            serverChannel = new IpcServerChannel(Environment.MachineName + Environment.UserName + uri);
-            ChannelServices.RegisterChannel(serverChannel, true);
-
-            RemotingConfiguration.RegisterWellKnownServiceType(typeof(InstanceProxy), uri, WellKnownObjectMode.Singleton);
-        }
-
-        private void WaitOrTimerCallback(object state, bool timedOut)
-        {
-            EventHandler<InstanceCallbackEventArgs> callback = state as EventHandler<InstanceCallbackEventArgs>;
-
-            if (callback != null)
-            {
-                try
+                var pipeData = new InstanceCallbackEventArgs
                 {
-                    callback(state, new InstanceCallbackEventArgs(InstanceProxy.CommandLineArgs));
-                }
-                finally
-                {
-                    if (semaphore != null)
-                    {
-                        semaphore.Release();
-                    }
-                }
+                    CommandLineArgs = args
+                };
+
+                var bytes = Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(pipeData));
+                pipeClient.Write(bytes, 0, bytes.Length);
             }
         }
-    }
 
-    [Serializable]
-    [PermissionSet(SecurityAction.Demand, Name = "FullTrust")]
-    internal class InstanceProxy : MarshalByRefObject
-    {
-        public static string[] CommandLineArgs { get; internal set; }
-
-        public void SetCommandLineArgs(string[] commandLineArgs)
+        private void CreateServer(EventHandler<InstanceCallbackEventArgs> callback)
         {
-            CommandLineArgs = commandLineArgs;
+            pipeServer?.Dispose();
+            pipeServer = new NamedPipeServerStream(PipeName, PipeDirection.In, 1, PipeTransmissionMode.Byte, PipeOptions.Asynchronous);
+            pipeServer.BeginWaitForConnection(ConnectionCallback, callback);
+        }
+
+        private void ConnectionCallback(IAsyncResult ar)
+        {
+            var callback = ar.AsyncState as EventHandler<InstanceCallbackEventArgs>;
+            var sr = new StreamReader(pipeServer, Encoding.UTF8);
+            try
+            {
+                pipeServer.EndWaitForConnection(ar);
+
+                if (callback != null)
+                {
+                    var data = sr.ReadToEnd();
+                    callback(this, JsonConvert.DeserializeObject<InstanceCallbackEventArgs>(data));
+                }
+            }
+            finally
+            {
+                semaphore?.Release();
+                sr.Dispose();
+                CreateServer(callback);
+            }
         }
     }
 
     public class InstanceCallbackEventArgs : EventArgs
     {
-        public string[] CommandLineArgs { get; private set; }
-
-        internal InstanceCallbackEventArgs(string[] commandLineArgs)
-        {
-            CommandLineArgs = commandLineArgs;
-        }
+        [JsonProperty]
+        public string[] CommandLineArgs { get; internal set; }
     }
 }
