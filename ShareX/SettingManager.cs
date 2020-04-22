@@ -31,6 +31,7 @@ using ShareX.UploadersLib.FileUploaders;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -183,6 +184,7 @@ namespace ShareX
         public static void LoadHotkeysConfig()
         {
             HotkeysConfig = HotkeysConfig.Load(HotkeysConfigFilePath, BackupFolder, true, true);
+            HotkeysConfigBackwardCompatibilityTasks();
         }
 
         public static void LoadAllSettings()
@@ -274,6 +276,22 @@ namespace ShareX
                 foreach (CustomUploaderItem cui in UploadersConfig.CustomUploadersList)
                 {
                     cui.CheckBackwardCompatibility();
+                }
+            }
+        }
+
+        private static void HotkeysConfigBackwardCompatibilityTasks()
+        {
+            if (HotkeysConfig.IsUpgradeFrom("13.1.1"))
+            {
+                foreach (TaskSettings taskSettings in HotkeysConfig.Hotkeys.Select(x => x.TaskSettings))
+                {
+                    if (taskSettings != null && !string.IsNullOrEmpty(taskSettings.AdvancedSettings.CapturePath))
+                    {
+                        taskSettings.OverrideScreenshotsFolder = true;
+                        taskSettings.ScreenshotsFolder = taskSettings.AdvancedSettings.CapturePath;
+                        taskSettings.AdvancedSettings.CapturePath = "";
+                    }
                 }
             }
         }

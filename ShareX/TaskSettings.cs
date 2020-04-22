@@ -70,9 +70,6 @@ namespace ShareX
         public bool OverrideCustomUploader = false;
         public int CustomUploaderIndex = 0;
 
-        // TEMP: For backward compatibility
-        public string CaptureFolder;
-
         public bool OverrideScreenshotsFolder = false;
         public string ScreenshotsFolder = "";
 
@@ -452,10 +449,6 @@ namespace ShareX
         Editor(typeof(WavFileNameEditor), typeof(UITypeEditor))]
         public string CustomErrorSoundPath { get; set; }
 
-        [Category("Paths"), Description("Custom capture path takes precedence over path configured in Application configuration."),
-        Editor(typeof(DirectoryNameEditor), typeof(UITypeEditor))]
-        public string CapturePath { get; set; }
-
         [Category("Capture"), DefaultValue(false), Description("Disable annotation support in region capture.")]
         public bool RegionCaptureDisableAnnotation { get; set; }
 
@@ -570,6 +563,9 @@ namespace ShareX
 
         [Category("Name pattern"), DefaultValue(50), Description("Maximum name pattern title (%t) length for file name.")]
         public int NamePatternMaxTitleLength { get; set; }
+
+        // TEMP: For backward compatibility
+        public string CapturePath;
 
         public TaskSettingsAdvanced()
         {
