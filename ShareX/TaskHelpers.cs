@@ -456,7 +456,7 @@ namespace ShareX
             using (ImageData imageData = PrepareImage(bmp, taskSettings))
             {
                 string fileName = GetFilename(taskSettings, imageData.ImageFormat.GetDescription(), bmp);
-                string filePath = Path.Combine(taskSettings.CaptureFolder, fileName);
+                string filePath = Path.Combine(taskSettings.GetScreenshotsFolder(), fileName);
 
                 if (!overwriteFile)
                 {
@@ -877,7 +877,7 @@ namespace ShareX
                 return;
             }
 
-            taskSettings.ToolsSettingsReference.VideoThumbnailOptions.DefaultOutputDirectory = taskSettings.CaptureFolder;
+            taskSettings.ToolsSettingsReference.VideoThumbnailOptions.DefaultOutputDirectory = taskSettings.GetScreenshotsFolder();
             VideoThumbnailerForm thumbnailerForm = new VideoThumbnailerForm(taskSettings.CaptureSettings.FFmpegOptions.FFmpegPath,
                 taskSettings.ToolsSettingsReference.VideoThumbnailOptions);
             thumbnailerForm.ThumbnailsTaken += thumbnails =>
@@ -962,7 +962,7 @@ namespace ShareX
                                 if (string.IsNullOrEmpty(newFilePath))
                                 {
                                     string fileName = GetFilename(taskSettings, taskSettings.ImageSettings.ImageFormat.GetDescription(), output);
-                                    newFilePath = Path.Combine(taskSettings.CaptureFolder, fileName);
+                                    newFilePath = Path.Combine(taskSettings.GetScreenshotsFolder(), fileName);
                                 }
 
                                 ImageHelpers.SaveImage(output, newFilePath);
@@ -978,7 +978,7 @@ namespace ShareX
                                 if (string.IsNullOrEmpty(newFilePath))
                                 {
                                     string fileName = GetFilename(taskSettings, taskSettings.ImageSettings.ImageFormat.GetDescription(), output);
-                                    newFilePath = Path.Combine(taskSettings.CaptureFolder, fileName);
+                                    newFilePath = Path.Combine(taskSettings.GetScreenshotsFolder(), fileName);
                                 }
 
                                 newFilePath = ImageHelpers.SaveImageFileDialog(output, newFilePath);

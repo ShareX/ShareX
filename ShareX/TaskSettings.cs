@@ -70,6 +70,23 @@ namespace ShareX
         public bool OverrideCustomUploader = false;
         public int CustomUploaderIndex = 0;
 
+        // TEMP: For backward compatibility
+        public string CaptureFolder;
+
+        public bool OverrideScreenshotsFolder = false;
+        public string ScreenshotsFolder = "";
+
+        public string GetScreenshotsFolder()
+        {
+            if (OverrideScreenshotsFolder && !string.IsNullOrEmpty(ScreenshotsFolder))
+            {
+                string screenshotsFolderPath = NameParser.Parse(NameParserType.FolderPath, ScreenshotsFolder);
+                return Helpers.GetAbsolutePath(screenshotsFolderPath);
+            }
+
+            return Program.ScreenshotsFolder;
+        }
+
         public bool UseDefaultGeneralSettings = true;
         public TaskSettingsGeneral GeneralSettings = new TaskSettingsGeneral();
 
@@ -148,20 +165,6 @@ namespace ShareX
                 return UseDefaultAfterCaptureJob && UseDefaultAfterUploadJob && UseDefaultDestinations && !OverrideFTP && !OverrideCustomUploader && UseDefaultGeneralSettings &&
                     UseDefaultImageSettings && UseDefaultCaptureSettings && UseDefaultUploadSettings && UseDefaultActions && UseDefaultToolsSettings &&
                     UseDefaultAdvancedSettings && !WatchFolderEnabled;
-            }
-        }
-
-        public string CaptureFolder
-        {
-            get
-            {
-                if (!string.IsNullOrEmpty(AdvancedSettings.CapturePath))
-                {
-                    string captureFolderPath = NameParser.Parse(NameParserType.FolderPath, AdvancedSettings.CapturePath);
-                    return Helpers.GetAbsolutePath(captureFolderPath);
-                }
-
-                return Program.ScreenshotsFolder;
             }
         }
 
