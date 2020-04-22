@@ -75,10 +75,12 @@ namespace ShareX.HelpersLib
         {
             if (IsFirstInstance)
             {
-                mutex?.ReleaseMutex();
-                pipeServer?.Dispose();
-                semaphore?.Close();
+                mutex.ReleaseMutex();
             }
+
+            mutex.Dispose();
+            semaphore?.Dispose();
+            pipeServer?.Dispose();
         }
 
         private void CreateFirstInstance(EventHandler<InstanceCallbackEventArgs> callback)
@@ -107,6 +109,8 @@ namespace ShareX.HelpersLib
             try
             {
                 semaphore = Semaphore.OpenExisting(SemaphoreName);
+
+                // Wait until the server is ready to accept data
                 semaphore.WaitOne();
                 SendDataToServer(args);
             }
@@ -136,7 +140,6 @@ namespace ShareX.HelpersLib
 
         private void CreateServer(EventHandler<InstanceCallbackEventArgs> callback)
         {
-            pipeServer?.Dispose();
             pipeServer = new NamedPipeServerStream(PipeName, PipeDirection.In, 1, PipeTransmissionMode.Byte, PipeOptions.Asynchronous);
             pipeServer.BeginWaitForConnection(ConnectionCallback, callback);
         }
@@ -157,9 +160,14 @@ namespace ShareX.HelpersLib
             }
             finally
             {
-                semaphore?.Release();
+                // Close the existing server
                 sr.Dispose();
+
+                // Create a new server
                 CreateServer(callback);
+
+                // Signal that we are ready to accept a new connection
+                semaphore.Release();
             }
         }
     }
