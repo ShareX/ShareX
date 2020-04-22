@@ -154,8 +154,6 @@ namespace ShareX.HelpersLib
                     return new SHA384CryptoServiceProvider();
                 case HashType.SHA512:
                     return new SHA512CryptoServiceProvider();
-                case HashType.RIPEMD160:
-                    return new RIPEMD160Managed();
             }
 
             return null;

@@ -40,7 +40,6 @@ using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
-using System.Speech.Synthesis;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -1347,11 +1346,7 @@ namespace ShareX
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
-            if (!string.IsNullOrEmpty(taskSettings.AdvancedSettings.SpeechCapture))
-            {
-                TextToSpeechAsync(taskSettings.AdvancedSettings.SpeechCapture);
-            }
-            else if (taskSettings.AdvancedSettings.UseCustomCaptureSound && !string.IsNullOrEmpty(taskSettings.AdvancedSettings.CustomCaptureSoundPath))
+            if (taskSettings.AdvancedSettings.UseCustomCaptureSound && !string.IsNullOrEmpty(taskSettings.AdvancedSettings.CustomCaptureSoundPath))
             {
                 Helpers.PlaySoundAsync(taskSettings.AdvancedSettings.CustomCaptureSoundPath);
             }
@@ -1365,11 +1360,7 @@ namespace ShareX
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
-            if (!string.IsNullOrEmpty(taskSettings.AdvancedSettings.SpeechTaskCompleted))
-            {
-                TextToSpeechAsync(taskSettings.AdvancedSettings.SpeechTaskCompleted);
-            }
-            else if (taskSettings.AdvancedSettings.UseCustomTaskCompletedSound && !string.IsNullOrEmpty(taskSettings.AdvancedSettings.CustomTaskCompletedSoundPath))
+            if (taskSettings.AdvancedSettings.UseCustomTaskCompletedSound && !string.IsNullOrEmpty(taskSettings.AdvancedSettings.CustomTaskCompletedSoundPath))
             {
                 Helpers.PlaySoundAsync(taskSettings.AdvancedSettings.CustomTaskCompletedSoundPath);
             }
@@ -1391,17 +1382,6 @@ namespace ShareX
             {
                 Helpers.PlaySoundAsync(Resources.ErrorSound);
             }
-        }
-
-        public static void TextToSpeechAsync(string text)
-        {
-            Task.Run(() =>
-            {
-                using (SpeechSynthesizer speaker = new SpeechSynthesizer())
-                {
-                    speaker.Speak(text);
-                }
-            });
         }
 
         public static void OpenUploadersConfigWindow(IUploaderService uploaderService = null)

@@ -87,9 +87,7 @@ namespace ShareX.HelpersLib
         [Description("SHA-384")]
         SHA384,
         [Description("SHA-512")]
-        SHA512,
-        [Description("RIPEMD-160")]
-        RIPEMD160
+        SHA512
     }
 
     public enum BorderType
