@@ -251,7 +251,7 @@ namespace ShareX.HelpersLib
 
         public static char GetRandomChar(string chars)
         {
-            return chars[MathHelpers.CryptoRandom(chars.Length - 1)];
+            return chars[RandomCrypto.Next(chars.Length - 1)];
         }
 
         public static string GetRandomString(string chars, int length)
@@ -289,10 +289,12 @@ namespace ShareX.HelpersLib
         public static string GetRandomLine(string text)
         {
             string[] lines = text.Trim().Lines();
+
             if (lines != null && lines.Length > 0)
             {
-                return lines[MathHelpers.CryptoRandom(0, lines.Length - 1)];
+                return RandomCrypto.Pick(lines);
             }
+
             return null;
         }
 

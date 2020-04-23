@@ -116,7 +116,7 @@ namespace ShareX.ImageEffectsLib
 
                         for (int i = 0; i < ImageCount; i++)
                         {
-                            string file = MathHelpers.RandomPick(files);
+                            string file = RandomFast.Pick(files);
 
                             Bitmap bmpCached = imageCache.GetImage(file);
 
@@ -138,7 +138,7 @@ namespace ShareX.ImageEffectsLib
 
             if (RandomSize)
             {
-                int size = MathHelpers.Random(Math.Min(RandomSizeMin, RandomSizeMax), Math.Max(RandomSizeMin, RandomSizeMax));
+                int size = RandomFast.Next(Math.Min(RandomSizeMin, RandomSizeMax), Math.Max(RandomSizeMin, RandomSizeMax));
                 width = size;
                 height = size;
 
@@ -176,8 +176,8 @@ namespace ShareX.ImageEffectsLib
                     return;
                 }
 
-                rect = new Rectangle(MathHelpers.Random(Math.Min(0, xOffset), Math.Max(0, xOffset)),
-                    MathHelpers.Random(Math.Min(0, yOffset), Math.Max(0, yOffset)), width, height);
+                rect = new Rectangle(RandomFast.Next(Math.Min(0, xOffset), Math.Max(0, xOffset)),
+                    RandomFast.Next(Math.Min(0, yOffset), Math.Max(0, yOffset)), width, height);
 
                 overlapRect = rect.Offset(NoOverlapOffset);
             } while (NoOverlap && imageRectangles.Any(x => x.IntersectsWith(overlapRect)));
@@ -188,7 +188,7 @@ namespace ShareX.ImageEffectsLib
             {
                 float moveX = rect.X + (rect.Width / 2f);
                 float moveY = rect.Y + (rect.Height / 2f);
-                int rotate = MathHelpers.Random(Math.Min(RandomAngleMin, RandomAngleMax), Math.Max(RandomAngleMin, RandomAngleMax));
+                int rotate = RandomFast.Next(Math.Min(RandomAngleMin, RandomAngleMax), Math.Max(RandomAngleMin, RandomAngleMax));
 
                 g.TranslateTransform(moveX, moveY);
                 g.RotateTransform(rotate);
@@ -197,7 +197,7 @@ namespace ShareX.ImageEffectsLib
 
             if (RandomOpacity)
             {
-                float opacity = MathHelpers.Random(Math.Min(RandomOpacityMin, RandomOpacityMax), Math.Max(RandomOpacityMin, RandomOpacityMax)).Clamp(0, 100) / 100f;
+                float opacity = RandomFast.Next(Math.Min(RandomOpacityMin, RandomOpacityMax), Math.Max(RandomOpacityMin, RandomOpacityMax)).Clamp(0, 100) / 100f;
 
                 ColorMatrix matrix = new ColorMatrix();
                 matrix.Matrix33 = opacity;

@@ -72,11 +72,6 @@ namespace ShareX.HelpersLib
             return MathHelpers.IsOddNumber(num);
         }
 
-        public static int RandomAdd(this int num, int min, int max)
-        {
-            return MathHelpers.RandomAdd(num, min, max);
-        }
-
         public static string ToSizeString(this long size, bool binary = false, int decimalPlaces = 2)
         {
             if (size < 1024) return Math.Max(size, 0) + " B";

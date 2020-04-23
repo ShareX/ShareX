@@ -149,6 +149,8 @@
     <Compile Include="Helpers\JsonHelpers.cs" />
     <Compile Include="ImageFilesCache.cs" />
     <Compile Include="PointInfo.cs" />
+    <Compile Include="Random\RandomCrypto.cs" />
+    <Compile Include="Random\RandomFast.cs" />
     <Compile Include="SevenZipManager.cs" />
     <Compile Include="Input\HotkeyForm.cs">
       <SubType>Form</SubType>

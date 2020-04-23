@@ -270,7 +270,7 @@ namespace ShareX.ScreenCaptureLib
                         img = Resources.monitor_image;
                         break;
                     case ShapeType.DrawingSticker:
-                        if (MathHelpers.Random(1, 10) == 1)
+                        if (RandomFast.Next(1, 10) == 1)
                         {
                             img = Resources.smiley_cool;
                         }

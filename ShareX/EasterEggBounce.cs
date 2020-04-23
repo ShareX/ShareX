@@ -60,7 +60,7 @@ namespace ShareX
             {
                 IsWorking = true;
 
-                velocity = new Point(MathHelpers.RandomPick(-Speed, Speed), ApplyGravity ? GravityPower : MathHelpers.RandomPick(-Speed, Speed));
+                velocity = new Point(RandomFast.Pick(-Speed, Speed), ApplyGravity ? GravityPower : RandomFast.Pick(-Speed, Speed));
                 timer.Start();
             }
         }
@@ -104,7 +104,7 @@ namespace ShareX
                     if (y >= windowBottom)
                     {
                         y = windowBottom;
-                        velocity.Y = -BouncePower.RandomAdd(-10, 10);
+                        velocity.Y = -BouncePower + RandomFast.Next(-10, 10);
                     }
                     else
                     {

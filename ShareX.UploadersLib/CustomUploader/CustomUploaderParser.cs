@@ -392,7 +392,7 @@ namespace ShareX.UploadersLib
 
                 if (values.Length > 0)
                 {
-                    return values[MathHelpers.Random(values.Length - 1)];
+                    return RandomFast.Pick(values);
                 }
             }
 
