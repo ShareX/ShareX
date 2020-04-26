@@ -146,12 +146,20 @@ namespace ShareX.HelpersLib
 
         private void ConnectionCallback(IAsyncResult ar)
         {
+            try
+            {
+                pipeServer.EndWaitForConnection(ar);
+            }
+            catch (ObjectDisposedException)
+            {
+                // Operation got aborted as part of program exit.
+                return;
+            }
+
             var callback = ar.AsyncState as EventHandler<InstanceCallbackEventArgs>;
             var sr = new StreamReader(pipeServer, Encoding.UTF8);
             try
             {
-                pipeServer.EndWaitForConnection(ar);
-
                 if (callback != null)
                 {
                     var data = sr.ReadToEnd();
