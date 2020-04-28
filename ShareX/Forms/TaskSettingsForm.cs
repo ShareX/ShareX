@@ -74,7 +74,7 @@ namespace ShareX
                 }, cmsTask);
                 SetEnumCheckedContextMenu(TaskSettings.Job, cmsTask);
 
-                tbDescription.Text = TaskSettings.Description ?? "";
+                tbDescription.Text = TaskSettings.Description;
 
                 cbOverrideAfterCaptureSettings.Checked = !TaskSettings.UseDefaultAfterCaptureJob;
                 btnAfterCapture.Enabled = !TaskSettings.UseDefaultAfterCaptureJob;
@@ -164,6 +164,10 @@ namespace ShareX
                 }
 
                 cbOverrideScreenshotsFolder.Checked = TaskSettings.OverrideScreenshotsFolder;
+                CodeMenu screenshotsFolderMenu = CodeMenu.Create<CodeMenuEntryFilename>(txtScreenshotsFolder, CodeMenuEntryFilename.t, CodeMenuEntryFilename.pn,
+                    CodeMenuEntryFilename.i, CodeMenuEntryFilename.width, CodeMenuEntryFilename.height, CodeMenuEntryFilename.n);
+                screenshotsFolderMenu.MenuLocationBottom = true;
+                txtScreenshotsFolder.Text = TaskSettings.ScreenshotsFolder;
                 txtScreenshotsFolder.Enabled = btnScreenshotsFolderBrowse.Enabled = TaskSettings.OverrideScreenshotsFolder;
 
                 UpdateTaskTabMenuNames();
