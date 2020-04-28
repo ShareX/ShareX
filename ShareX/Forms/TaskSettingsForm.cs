@@ -164,7 +164,9 @@ namespace ShareX
                 }
 
                 cbOverrideScreenshotsFolder.Checked = TaskSettings.OverrideScreenshotsFolder;
-                CodeMenu.Create<CodeMenuEntryFilename>(txtScreenshotsFolder, CodeMenuEntryFilename.t, CodeMenuEntryFilename.pn, CodeMenuEntryFilename.i, CodeMenuEntryFilename.width, CodeMenuEntryFilename.height, CodeMenuEntryFilename.n);
+                CodeMenu screenshotsFolderMenu = CodeMenu.Create<CodeMenuEntryFilename>(txtScreenshotsFolder, CodeMenuEntryFilename.t, CodeMenuEntryFilename.pn,
+                    CodeMenuEntryFilename.i, CodeMenuEntryFilename.width, CodeMenuEntryFilename.height, CodeMenuEntryFilename.n);
+                screenshotsFolderMenu.MenuLocationBottom = true;
                 txtScreenshotsFolder.Text = TaskSettings.ScreenshotsFolder;
                 txtScreenshotsFolder.Enabled = btnScreenshotsFolderBrowse.Enabled = TaskSettings.OverrideScreenshotsFolder;
 

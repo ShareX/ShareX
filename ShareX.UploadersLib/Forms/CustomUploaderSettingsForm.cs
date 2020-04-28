@@ -87,9 +87,9 @@ namespace ShareX.UploadersLib
                 new CodeMenuItem("$base64:input$", "Base64 encode input")
             };
 
-            CodeMenu.Create(rtbResultURL, outputCodeMenuItems);
-            CodeMenu.Create(rtbResultThumbnailURL, outputCodeMenuItems);
-            CodeMenu.Create(rtbResultDeletionURL, outputCodeMenuItems);
+            new CodeMenu(rtbResultURL, outputCodeMenuItems);
+            new CodeMenu(rtbResultThumbnailURL, outputCodeMenuItems);
+            new CodeMenu(rtbResultDeletionURL, outputCodeMenuItems);
 
             rtbRequestURL.AddContextMenu();
             rtbData.AddContextMenu();
