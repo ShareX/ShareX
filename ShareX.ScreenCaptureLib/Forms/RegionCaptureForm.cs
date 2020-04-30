@@ -603,6 +603,13 @@ namespace ShareX.ScreenCaptureLib
 
                 CloseWindow(RegionResult.Region);
             }
+            else
+            {
+                if (MessageBox.Show("Are you sure you want to close region capture/image editor? All unsaved work will be lost.", "ShareX", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+                {
+                    CloseWindow(RegionResult.Region);
+                }
+            }
         }
 
         private void MonitorKey(int index)
