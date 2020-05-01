@@ -1081,6 +1081,9 @@
     <EmbeddedResource Include="Forms\MainForm.zh-TW.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\NotificationForm.resx">
+      <DependentUpon>NotificationForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\QRCodeForm.de.resx">
       <DependentUpon>QRCodeForm.cs</DependentUpon>
     </EmbeddedResource>

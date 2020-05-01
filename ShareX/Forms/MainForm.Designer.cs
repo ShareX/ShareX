@@ -280,10 +280,8 @@
             this.timerTraySingleClick = new System.Windows.Forms.Timer(this.components);
             this.pNews = new System.Windows.Forms.Panel();
             this.btnCloseNews = new System.Windows.Forms.Button();
-            this.ucNews = new ShareX.NewsListControl();
             this.pThumbnailView = new System.Windows.Forms.Panel();
             this.lblThumbnailViewTip = new System.Windows.Forms.Label();
-            this.ucTaskThumbnailView = new ShareX.TaskThumbnailView();
             this.ttMain = new System.Windows.Forms.ToolTip(this.components);
             this.pToolbars = new System.Windows.Forms.Panel();
             this.tsSocialButtons = new ShareX.HelpersLib.ToolStripBorderRight();
@@ -292,6 +290,8 @@
             this.tsbPatreon = new System.Windows.Forms.ToolStripButton();
             this.tsbBitcoin = new System.Windows.Forms.ToolStripButton();
             this.tsbGitHub = new System.Windows.Forms.ToolStripButton();
+            this.ucNews = new ShareX.NewsListControl();
+            this.ucTaskThumbnailView = new ShareX.TaskThumbnailView();
             ((System.ComponentModel.ISupportInitialize)(this.scMain)).BeginInit();
             this.scMain.Panel1.SuspendLayout();
             this.scMain.Panel2.SuspendLayout();
@@ -2219,12 +2219,6 @@
             this.btnCloseNews.UseVisualStyleBackColor = true;
             this.btnCloseNews.Click += new System.EventHandler(this.btnCloseNews_Click);
             // 
-            // ucNews
-            // 
-            this.ucNews.BackColor = System.Drawing.SystemColors.Window;
-            resources.ApplyResources(this.ucNews, "ucNews");
-            this.ucNews.Name = "ucNews";
-            // 
             // pThumbnailView
             // 
             this.pThumbnailView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(47)))), ((int)(((byte)(56)))));
@@ -2241,18 +2235,6 @@
             this.lblThumbnailViewTip.Name = "lblThumbnailViewTip";
             this.lblThumbnailViewTip.UseMnemonic = false;
             this.lblThumbnailViewTip.MouseUp += new System.Windows.Forms.MouseEventHandler(this.LblThumbnailViewTip_MouseUp);
-            // 
-            // ucTaskThumbnailView
-            // 
-            resources.ApplyResources(this.ucTaskThumbnailView, "ucTaskThumbnailView");
-            this.ucTaskThumbnailView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(47)))), ((int)(((byte)(56)))));
-            this.ucTaskThumbnailView.Name = "ucTaskThumbnailView";
-            this.ucTaskThumbnailView.ThumbnailSize = new System.Drawing.Size(200, 150);
-            this.ucTaskThumbnailView.TitleLocation = ShareX.ThumbnailTitleLocation.Top;
-            this.ucTaskThumbnailView.TitleVisible = true;
-            this.ucTaskThumbnailView.ContextMenuRequested += new ShareX.TaskThumbnailView.TaskViewMouseEventHandler(this.UcTaskView_ContextMenuRequested);
-            this.ucTaskThumbnailView.SelectedPanelChanged += new System.EventHandler(this.ucTaskThumbnailView_SelectedPanelChanged);
-            this.ucTaskThumbnailView.KeyDown += new System.Windows.Forms.KeyEventHandler(this.lvUploads_KeyDown);
             // 
             // ttMain
             // 
@@ -2329,6 +2311,24 @@
             this.tsbGitHub.Name = "tsbGitHub";
             this.tsbGitHub.Padding = new System.Windows.Forms.Padding(1);
             this.tsbGitHub.Click += new System.EventHandler(this.TsbGitHub_Click);
+            // 
+            // ucNews
+            // 
+            this.ucNews.BackColor = System.Drawing.SystemColors.Window;
+            resources.ApplyResources(this.ucNews, "ucNews");
+            this.ucNews.Name = "ucNews";
+            // 
+            // ucTaskThumbnailView
+            // 
+            resources.ApplyResources(this.ucTaskThumbnailView, "ucTaskThumbnailView");
+            this.ucTaskThumbnailView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(47)))), ((int)(((byte)(56)))));
+            this.ucTaskThumbnailView.Name = "ucTaskThumbnailView";
+            this.ucTaskThumbnailView.ThumbnailSize = new System.Drawing.Size(200, 150);
+            this.ucTaskThumbnailView.TitleLocation = ShareX.ThumbnailTitleLocation.Top;
+            this.ucTaskThumbnailView.TitleVisible = true;
+            this.ucTaskThumbnailView.ContextMenuRequested += new ShareX.TaskThumbnailView.TaskViewMouseEventHandler(this.UcTaskView_ContextMenuRequested);
+            this.ucTaskThumbnailView.SelectedPanelChanged += new System.EventHandler(this.ucTaskThumbnailView_SelectedPanelChanged);
+            this.ucTaskThumbnailView.KeyDown += new System.Windows.Forms.KeyEventHandler(this.lvUploads_KeyDown);
             // 
             // MainForm
             // 
