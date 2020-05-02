@@ -639,6 +639,8 @@ namespace ShareX.UploadersLib
             txtSeafileLibraryPassword.ReadOnly = Config.SeafileIsLibraryEncrypted;
             btnSeafileLibraryPasswordValidate.Enabled = !Config.SeafileIsLibraryEncrypted;
             cbSeafileCreateShareableURL.Checked = Config.SeafileCreateShareableURL;
+            cbSeafileCreateShareableURLDirect.Checked = Config.SeafileCreateShareableURLDirect;
+            cbSeafileCreateShareableURLDirect.Enabled = cbSeafileCreateShareableURL.Checked;
             cbSeafileIgnoreInvalidCert.Checked = Config.SeafileIgnoreInvalidCert;
             nudSeafileExpireDays.SetValue(Config.SeafileShareDaysToExpire);
             txtSeafileSharePassword.Text = Config.SeafileSharePassword;
@@ -2596,6 +2598,12 @@ namespace ShareX.UploadersLib
         private void cbSeafileCreateShareableURL_CheckedChanged(object sender, EventArgs e)
         {
             Config.SeafileCreateShareableURL = cbSeafileCreateShareableURL.Checked;
+            cbSeafileCreateShareableURLDirect.Enabled = cbSeafileCreateShareableURL.Checked;
+        }
+
+        private void cbSeafileCreateShareableURLDirect_CheckedChanged(object sender, EventArgs e)
+        {
+            Config.SeafileCreateShareableURLDirect = cbSeafileCreateShareableURLDirect.Checked;
         }
 
         private void cbSeafileIgnoreInvalidCert_CheckedChanged(object sender, EventArgs e)

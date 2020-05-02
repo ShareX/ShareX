@@ -359,6 +359,7 @@ namespace ShareX.UploadersLib
         public bool SeafileIsLibraryEncrypted = false;
         public string SeafileEncryptedLibraryPassword = "";
         public bool SeafileCreateShareableURL = true;
+        public bool SeafileCreateShareableURLDirect = false;
         public bool SeafileIgnoreInvalidCert = false;
         public int SeafileShareDaysToExpire = 0;
         public string SeafileSharePassword = "";

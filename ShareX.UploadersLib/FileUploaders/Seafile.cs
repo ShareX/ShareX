@@ -58,6 +58,7 @@ namespace ShareX.UploadersLib.FileUploaders
                 ShareDaysToExpire = config.SeafileShareDaysToExpire,
                 SharePassword = config.SeafileSharePassword,
                 CreateShareableURL = config.SeafileCreateShareableURL,
+                CreateShareableURLDirect = config.SeafileCreateShareableURLDirect,
                 IgnoreInvalidCert = config.SeafileIgnoreInvalidCert
             };
         }
@@ -76,6 +77,7 @@ namespace ShareX.UploadersLib.FileUploaders
         public int ShareDaysToExpire { get; set; }
         public string SharePassword { get; set; }
         public bool CreateShareableURL { get; set; }
+        public bool CreateShareableURLDirect { get; set; }
         public bool IgnoreInvalidCert { get; set; }
 
         public Seafile(string apiurl, string authtoken, string repoid)
@@ -450,6 +452,15 @@ namespace ShareX.UploadersLib.FileUploaders
                     {
                         AllowReportProgress = false;
                         result.URL = ShareFile(Path + fileName);
+
+                        if (CreateShareableURLDirect)
+                        {
+                            var uriBuilder = new UriBuilder(result.URL);
+                            var query = System.Web.HttpUtility.ParseQueryString(uriBuilder.Query);
+                            query["raw"] = "1";
+                            uriBuilder.Query = query.ToString();
+                            result.URL = $"{uriBuilder.Scheme}://{uriBuilder.Host}{uriBuilder.Path}{uriBuilder.Query}";
+                        }
                     }
                     else
                     {
