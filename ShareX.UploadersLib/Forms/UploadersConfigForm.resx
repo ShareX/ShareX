@@ -13365,7 +13365,7 @@ when you made the application key.</value>
     <value>NoControl</value>
   </data>
   <data name="btnSeafileLibraryPasswordValidate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>320, 456</value>
+    <value>320, 479</value>
   </data>
   <data name="btnSeafileLibraryPasswordValidate.Size" type="System.Drawing.Size, System.Drawing">
     <value>71, 22</value>
@@ -13389,7 +13389,7 @@ when you made the application key.</value>
     <value>2</value>
   </data>
   <data name="txtSeafileLibraryPassword.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 457</value>
+    <value>16, 480</value>
   </data>
   <data name="txtSeafileLibraryPassword.Size" type="System.Drawing.Size, System.Drawing">
     <value>297, 20</value>
@@ -13416,7 +13416,7 @@ when you made the application key.</value>
     <value>NoControl</value>
   </data>
   <data name="lblSeafileLibraryPassword.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 441</value>
+    <value>13, 464</value>
   </data>
   <data name="lblSeafileLibraryPassword.Size" type="System.Drawing.Size, System.Drawing">
     <value>89, 13</value>
@@ -13440,7 +13440,7 @@ when you made the application key.</value>
     <value>4</value>
   </data>
   <data name="lvSeafileLibraries.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 162</value>
+    <value>16, 185</value>
   </data>
   <data name="lvSeafileLibraries.Size" type="System.Drawing.Size, System.Drawing">
     <value>375, 194</value>
@@ -13479,7 +13479,7 @@ when you made the application key.</value>
     <value>NoControl</value>
   </data>
   <data name="btnSeafilePathValidate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>320, 414</value>
+    <value>320, 437</value>
   </data>
   <data name="btnSeafilePathValidate.Size" type="System.Drawing.Size, System.Drawing">
     <value>71, 22</value>
@@ -13503,7 +13503,7 @@ when you made the application key.</value>
     <value>6</value>
   </data>
   <data name="txtSeafileDirectoryPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 415</value>
+    <value>16, 438</value>
   </data>
   <data name="txtSeafileDirectoryPath.Size" type="System.Drawing.Size, System.Drawing">
     <value>297, 20</value>
@@ -13530,7 +13530,7 @@ when you made the application key.</value>
     <value>NoControl</value>
   </data>
   <data name="lblSeafileWritePermNotif.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 364</value>
+    <value>13, 387</value>
   </data>
   <data name="lblSeafileWritePermNotif.Size" type="System.Drawing.Size, System.Drawing">
     <value>221, 26</value>
@@ -13561,7 +13561,7 @@ Using an encrypted library disables sharing.</value>
     <value>NoControl</value>
   </data>
   <data name="lblSeafilePath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 398</value>
+    <value>13, 421</value>
   </data>
   <data name="lblSeafilePath.Size" type="System.Drawing.Size, System.Drawing">
     <value>32, 13</value>
@@ -13588,7 +13588,7 @@ Using an encrypted library disables sharing.</value>
     <value>NoControl</value>
   </data>
   <data name="txtSeafileUploadLocationRefresh.Location" type="System.Drawing.Point, System.Drawing">
-    <value>320, 365</value>
+    <value>320, 388</value>
   </data>
   <data name="txtSeafileUploadLocationRefresh.Size" type="System.Drawing.Size, System.Drawing">
     <value>71, 23</value>
@@ -13618,7 +13618,7 @@ Using an encrypted library disables sharing.</value>
     <value>NoControl</value>
   </data>
   <data name="lblSeafileSelectLibrary.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 146</value>
+    <value>13, 169</value>
   </data>
   <data name="lblSeafileSelectLibrary.Size" type="System.Drawing.Size, System.Drawing">
     <value>70, 13</value>
@@ -14128,7 +14128,7 @@ Using an encrypted library disables sharing.</value>
     <value>NoControl</value>
   </data>
   <data name="cbSeafileIgnoreInvalidCert.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 126</value>
+    <value>16, 149</value>
   </data>
   <data name="cbSeafileIgnoreInvalidCert.Size" type="System.Drawing.Size, System.Drawing">
     <value>161, 17</value>
@@ -14188,7 +14188,7 @@ Using an encrypted library disables sharing.</value>
     <value>NoControl</value>
   </data>
   <data name="cbSeafileCreateShareableURLRaw.Location" type="System.Drawing.Point, System.Drawing">
-    <value>160, 103</value>
+    <value>16, 126</value>
   </data>
   <data name="cbSeafileCreateShareableURLRaw.Size" type="System.Drawing.Size, System.Drawing">
     <value>131, 17</value>
