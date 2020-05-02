@@ -13085,16 +13085,16 @@ when you made the application key.</value>
   <data name="&gt;&gt;cbSeafileCreateShareableURL.ZOrder" xml:space="preserve">
     <value>17</value>
   </data>
-  <data name="&gt;&gt;cbSeafileCreateShareableURLDirect.Name" xml:space="preserve">
-    <value>cbSeafileCreateShareableURLDirect</value>
+  <data name="&gt;&gt;cbSeafileCreateShareableURLRaw.Name" xml:space="preserve">
+    <value>cbSeafileCreateShareableURLRaw</value>
   </data>
-  <data name="&gt;&gt;cbSeafileCreateShareableURLDirect.Type" xml:space="preserve">
+  <data name="&gt;&gt;cbSeafileCreateShareableURLRaw.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;cbSeafileCreateShareableURLDirect.Parent" xml:space="preserve">
+  <data name="&gt;&gt;cbSeafileCreateShareableURLRaw.Parent" xml:space="preserve">
     <value>tpSeafile</value>
   </data>
-  <data name="&gt;&gt;cbSeafileCreateShareableURLDirect.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;cbSeafileCreateShareableURLRaw.ZOrder" xml:space="preserve">
     <value>17</value>
   </data>
   <data name="&gt;&gt;txtSeafileAuthToken.Name" xml:space="preserve">
@@ -14181,34 +14181,34 @@ Using an encrypted library disables sharing.</value>
   <data name="&gt;&gt;cbSeafileCreateShareableURL.ZOrder" xml:space="preserve">
     <value>17</value>
   </data>
-  <data name="cbSeafileCreateShareableURLDirect.AutoSize" type="System.Boolean, mscorlib">
+  <data name="cbSeafileCreateShareableURLRaw.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="cbSeafileCreateShareableURLDirect.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="cbSeafileCreateShareableURLRaw.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="cbSeafileCreateShareableURLDirect.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="cbSeafileCreateShareableURLRaw.Location" type="System.Drawing.Point, System.Drawing">
     <value>160, 103</value>
   </data>
-  <data name="cbSeafileCreateShareableURLDirect.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="cbSeafileCreateShareableURLRaw.Size" type="System.Drawing.Size, System.Drawing">
     <value>131, 17</value>
   </data>
-  <data name="cbSeafileCreateShareableURLDirect.TabIndex" type="System.Int32, mscorlib">
+  <data name="cbSeafileCreateShareableURLRaw.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
   </data>
-  <data name="cbSeafileCreateShareableURLDirect.Text" xml:space="preserve">
-    <value>Direct URL</value>
+  <data name="cbSeafileCreateShareableURLRaw.Text" xml:space="preserve">
+    <value>Use raw URL</value>
   </data>
-  <data name="&gt;&gt;cbSeafileCreateShareableURLDirect.Name" xml:space="preserve">
-    <value>cbSeafileCreateShareableURLDirect</value>
+  <data name="&gt;&gt;cbSeafileCreateShareableURLRaw.Name" xml:space="preserve">
+    <value>cbSeafileCreateShareableURLRaw</value>
   </data>
-  <data name="&gt;&gt;cbSeafileCreateShareableURLDirect.Type" xml:space="preserve">
+  <data name="&gt;&gt;cbSeafileCreateShareableURLRaw.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;cbSeafileCreateShareableURLDirect.Parent" xml:space="preserve">
+  <data name="&gt;&gt;cbSeafileCreateShareableURLRaw.Parent" xml:space="preserve">
     <value>tpSeafile</value>
   </data>
-  <data name="&gt;&gt;cbSeafileCreateShareableURLDirect.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;cbSeafileCreateShareableURLRaw.ZOrder" xml:space="preserve">
     <value>17</value>
   </data>
   <data name="txtSeafileAuthToken.Location" type="System.Drawing.Point, System.Drawing">
