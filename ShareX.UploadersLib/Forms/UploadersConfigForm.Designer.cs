@@ -425,6 +425,7 @@ namespace ShareX.UploadersLib
             this.lblSeafilePassword = new System.Windows.Forms.Label();
             this.cbSeafileIgnoreInvalidCert = new System.Windows.Forms.CheckBox();
             this.cbSeafileCreateShareableURL = new System.Windows.Forms.CheckBox();
+            this.cbSeafileCreateShareableURLRaw = new System.Windows.Forms.CheckBox();
             this.txtSeafileAuthToken = new System.Windows.Forms.TextBox();
             this.lblSeafileAuthToken = new System.Windows.Forms.Label();
             this.lblSeafileAPIURL = new System.Windows.Forms.Label();
@@ -3177,6 +3178,7 @@ namespace ShareX.UploadersLib
             this.tpSeafile.Controls.Add(this.grpSeafileObtainAuthToken);
             this.tpSeafile.Controls.Add(this.cbSeafileIgnoreInvalidCert);
             this.tpSeafile.Controls.Add(this.cbSeafileCreateShareableURL);
+            this.tpSeafile.Controls.Add(this.cbSeafileCreateShareableURLRaw);
             this.tpSeafile.Controls.Add(this.txtSeafileAuthToken);
             this.tpSeafile.Controls.Add(this.lblSeafileAuthToken);
             this.tpSeafile.Controls.Add(this.lblSeafileAPIURL);
@@ -3426,6 +3428,13 @@ namespace ShareX.UploadersLib
             this.cbSeafileCreateShareableURL.Name = "cbSeafileCreateShareableURL";
             this.cbSeafileCreateShareableURL.UseVisualStyleBackColor = true;
             this.cbSeafileCreateShareableURL.CheckedChanged += new System.EventHandler(this.cbSeafileCreateShareableURL_CheckedChanged);
+            // 
+            // cbSeafileCreateShareableURLRaw
+            // 
+            resources.ApplyResources(this.cbSeafileCreateShareableURLRaw, "cbSeafileCreateShareableURLRaw");
+            this.cbSeafileCreateShareableURLRaw.Name = "cbSeafileCreateShareableURLRaw";
+            this.cbSeafileCreateShareableURLRaw.UseVisualStyleBackColor = true;
+            this.cbSeafileCreateShareableURLRaw.CheckedChanged += new System.EventHandler(this.cbSeafileCreateShareableURLRaw_CheckedChanged);
             // 
             // txtSeafileAuthToken
             // 
@@ -5309,6 +5318,7 @@ namespace ShareX.UploadersLib
         private System.Windows.Forms.Label lblSeafilePassword;
         private System.Windows.Forms.CheckBox cbSeafileIgnoreInvalidCert;
         private System.Windows.Forms.CheckBox cbSeafileCreateShareableURL;
+        private System.Windows.Forms.CheckBox cbSeafileCreateShareableURLRaw;
         private System.Windows.Forms.TextBox txtSeafileAuthToken;
         private System.Windows.Forms.Label lblSeafileAuthToken;
         private System.Windows.Forms.Label lblSeafileAPIURL;
