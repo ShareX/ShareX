@@ -1110,7 +1110,7 @@ Would you like to download and install it?</value>
     <value>1 Month</value>
   </data>
   <data name="AmazonS3StorageClass_STANDARD" xml:space="preserve">
-    <value>Standard storage</value>
+    <value>Amazon S3 Standard</value>
   </data>
   <data name="ShapeType_DrawingTextBackground" xml:space="preserve">
     <value>Text (Background) (T)</value>
@@ -1191,7 +1191,7 @@ Would you like to download and install it?</value>
     <value>Simulate pressing "Page down" key</value>
   </data>
   <data name="AmazonS3StorageClass_STANDARD_IA" xml:space="preserve">
-    <value>Standard infrequent access storage</value>
+    <value>Amazon S3 Standard-Infrequent Access</value>
   </data>
   <data name="LoadingSmall" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LoadingSmall.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -1237,5 +1237,17 @@ Would you like to download and install it?</value>
   </data>
   <data name="HotkeyType_VideoConverter_Category" xml:space="preserve">
     <value>Tools</value>
+  </data>
+  <data name="AmazonS3StorageClass_DEEP_ARCHIVE" xml:space="preserve">
+    <value>Amazon S3 Glacier Deep Archive</value>
+  </data>
+  <data name="AmazonS3StorageClass_GLACIER" xml:space="preserve">
+    <value>Amazon S3 Glacier</value>
+  </data>
+  <data name="AmazonS3StorageClass_INTELLIGENT_TIERING" xml:space="preserve">
+    <value>Amazon S3 Intelligent-Tiering</value>
+  </data>
+  <data name="AmazonS3StorageClass_ONEZONE_IA" xml:space="preserve">
+    <value>Amazon S3 One Zone-Infrequent Access</value>
   </data>
 </root>

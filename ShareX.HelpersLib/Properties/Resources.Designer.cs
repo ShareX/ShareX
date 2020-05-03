@@ -362,7 +362,43 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Standard storage.
+        ///   Looks up a localized string similar to Amazon S3 Glacier Deep Archive.
+        /// </summary>
+        internal static string AmazonS3StorageClass_DEEP_ARCHIVE {
+            get {
+                return ResourceManager.GetString("AmazonS3StorageClass_DEEP_ARCHIVE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Amazon S3 Glacier.
+        /// </summary>
+        internal static string AmazonS3StorageClass_GLACIER {
+            get {
+                return ResourceManager.GetString("AmazonS3StorageClass_GLACIER", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Amazon S3 Intelligent-Tiering.
+        /// </summary>
+        internal static string AmazonS3StorageClass_INTELLIGENT_TIERING {
+            get {
+                return ResourceManager.GetString("AmazonS3StorageClass_INTELLIGENT_TIERING", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Amazon S3 One Zone-Infrequent Access.
+        /// </summary>
+        internal static string AmazonS3StorageClass_ONEZONE_IA {
+            get {
+                return ResourceManager.GetString("AmazonS3StorageClass_ONEZONE_IA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Amazon S3 Standard.
         /// </summary>
         internal static string AmazonS3StorageClass_STANDARD {
             get {
@@ -371,7 +407,7 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Standard infrequent access storage.
+        ///   Looks up a localized string similar to Amazon S3 Standard-Infrequent Access.
         /// </summary>
         internal static string AmazonS3StorageClass_STANDARD_IA {
             get {
