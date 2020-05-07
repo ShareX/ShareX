@@ -159,7 +159,7 @@ namespace ShareX.HelpersLib
 
                         if (!JsonHelpers.QuickVerifyJsonFile(tempFilePath))
                         {
-                            throw new Exception($"{typeName} file is corrupt.");
+                            throw new Exception($"{typeName} file is corrupt: {tempFilePath}");
                         }
 
                         if (File.Exists(filePath))
