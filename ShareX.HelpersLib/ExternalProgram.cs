@@ -25,6 +25,7 @@
 
 using System;
 using System.Diagnostics;
+using System.Drawing;
 using System.IO;
 using System.Threading.Tasks;
 
@@ -34,12 +35,48 @@ namespace ShareX.HelpersLib
     {
         public bool IsActive { get; set; }
         public string Name { get; set; }
-        public string Path { get; set; }
+        private string _Path { get; set; }
+        public string Path
+        {
+            get => _Path;
+            set
+            {
+                _Path = value;
+                IsIconInitialized = false;
+            }
+        }
         public string Args { get; set; }
         public string OutputExtension { get; set; }
         public string Extensions { get; set; }
         public bool HiddenWindow { get; set; }
         public bool DeleteInputFile { get; set; }
+        private Bitmap _Icon { get; set; }
+        private bool IsIconInitialized = false;
+        public Bitmap Icon
+        {
+            get
+            {
+                if (!IsIconInitialized)
+                {
+                    try
+                    {
+                        using (Icon icon = NativeMethods.GetFileIcon(GetFullPath(), true))
+                        {
+                            if (icon != null && icon.Width > 0 && icon.Height > 0)
+                            {
+                                _Icon = icon.ToBitmap();
+                            }
+                        }
+                    }
+                    catch (Exception e)
+                    {
+                        DebugHelper.WriteException(e);
+                    }
+                    IsIconInitialized = true;
+                }
+                return _Icon;
+            }
+        }
 
         public ExternalProgram()
         {

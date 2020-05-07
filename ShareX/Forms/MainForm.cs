@@ -617,7 +617,7 @@ namespace ShareX
 
             tsmiStopUpload.Visible = tsmiOpen.Visible = tsmiCopy.Visible = tsmiShowErrors.Visible = tsmiShowResponse.Visible = tsmiSearchImage.Visible =
                 tsmiShowQRCode.Visible = tsmiOCRImage.Visible = tsmiCombineImages.Visible = tsmiUploadSelectedFile.Visible = tsmiDownloadSelectedURL.Visible =
-                tsmiEditSelectedFile.Visible = tsmiRunAction.Visible = tsmiDeleteSelectedItem.Visible = tsmiDeleteSelectedFile.Visible = tsmiShortenSelectedURL.Visible =
+                tsmiEditSelectedFile.Visible = tsmiDeleteSelectedItem.Visible = tsmiDeleteSelectedFile.Visible = tsmiShortenSelectedURL.Visible =
                 tsmiShareSelectedURL.Visible = false;
 
             if (Program.Settings.TaskViewMode == TaskViewMode.ListView)
@@ -725,7 +725,6 @@ namespace ShareX
                     tsmiUploadSelectedFile.Visible = uim.SelectedItem.IsFileExist;
                     tsmiDownloadSelectedURL.Visible = uim.SelectedItem.IsFileURL;
                     tsmiEditSelectedFile.Visible = uim.SelectedItem.IsImageFile;
-                    UpdateActionsMenu(uim.SelectedItem.Info.FilePath);
                     tsmiDeleteSelectedItem.Visible = true;
                     tsmiDeleteSelectedFile.Visible = uim.SelectedItem.IsFileExist;
                     tsmiShortenSelectedURL.Visible = uim.SelectedItem.IsURLExist;
@@ -902,8 +901,15 @@ namespace ShareX
             }
         }
 
-        private void UpdateActionsMenu(string filePath)
+        private void UpdateActionsMenu(UploadInfoStatus uploadInfoStatus)
         {
+            if (uploadInfoStatus == null)
+            {
+                tsmiRunAction.Visible = false;
+                return;
+            }
+
+            string filePath = uploadInfoStatus.Info.FilePath;
             tsmiRunAction.DropDownItems.Clear();
 
             if (!string.IsNullOrEmpty(filePath) && File.Exists(filePath))
@@ -919,25 +925,14 @@ namespace ShareX
                     {
                         string name = action.Name.Truncate(50, "...");
                         ToolStripMenuItem tsmi = new ToolStripMenuItem(name);
-
-                        try
-                        {
-                            using (Icon icon = NativeMethods.GetFileIcon(action.GetFullPath(), true))
-                            {
-                                if (icon != null && icon.Width > 0 && icon.Height > 0)
-                                {
-                                    tsmi.Image = icon.ToBitmap();
-                                }
-                            }
-                        }
-                        catch (Exception e)
-                        {
-                            DebugHelper.WriteException(e);
-                        }
-
+                        tsmi.Image = action.Icon;
                         tsmi.Click += async (sender, e) => await action.RunAsync(filePath);
                         tsmiRunAction.DropDownItems.Add(tsmi);
                     }
+                }
+                else
+                {
+                    tsmiRunAction.Visible = false;
                 }
             }
         }
@@ -1499,6 +1494,7 @@ namespace ShareX
             if (e.Button == MouseButtons.Right)
             {
                 UpdateInfoManager();
+                UpdateActionsMenu(uim.SelectedItem);
                 cmsTaskInfo.Show(lvUploads, e.X + 1, e.Y + 1);
             }
         }
@@ -1570,6 +1566,7 @@ namespace ShareX
                     if (lvUploads.SelectedItems.Count > 0)
                     {
                         UpdateInfoManager();
+                        UpdateActionsMenu(uim.SelectedItem);
                         Rectangle rect = lvUploads.GetItemRect(lvUploads.SelectedIndex);
                         cmsTaskInfo.Show(lvUploads, new Point(rect.X, rect.Bottom));
                     }
