@@ -157,6 +157,11 @@ namespace ShareX.HelpersLib
                             jsonWriter.Flush();
                         }
 
+                        if (!JsonHelpers.QuickVerifyJsonFile(tempFilePath))
+                        {
+                            throw new Exception($"{typeName} file is corrupt.");
+                        }
+
                         if (File.Exists(filePath))
                         {
                             if (CreateBackup)
