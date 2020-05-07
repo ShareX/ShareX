@@ -216,7 +216,7 @@ namespace ShareX.UploadersLib.ImageUploaders
     public class FlickrPhotosGetSizesSizes
     {
         public int canblog { get; set; }
-        public int canprint { get; set; }
+        public bool canprint { get; set; }
         public int candownload { get; set; }
         public FlickrPhotosGetSizesSize[] size { get; set; }
     }
