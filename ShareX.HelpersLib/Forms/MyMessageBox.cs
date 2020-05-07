@@ -47,7 +47,6 @@ namespace ShareX.HelpersLib
             Text = caption;
             BackColor = SystemColors.Window;
             FormBorderStyle = FormBorderStyle.FixedDialog;
-            ShowInTaskbar = false;
             TopMost = true;
             StartPosition = FormStartPosition.CenterScreen;
             MinimizeBox = false;
