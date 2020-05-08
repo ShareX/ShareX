@@ -178,6 +178,15 @@ namespace ShareX.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Portuguese.
+        /// </summary>
+        public static string AboutForm_AboutForm_Language_pt_PT {
+            get {
+                return ResourceManager.GetString("AboutForm_AboutForm_Language_pt_PT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Russian.
         /// </summary>
         public static string AboutForm_AboutForm_Language_ru {
@@ -2059,6 +2068,16 @@ namespace ShareX.Properties {
         public static string Program_WritePersonalPathConfig_Cant_access_to_file {
             get {
                 return ResourceManager.GetString("Program_WritePersonalPathConfig_Cant_access_to_file", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap pt {
+            get {
+                object obj = ResourceManager.GetObject("pt", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         

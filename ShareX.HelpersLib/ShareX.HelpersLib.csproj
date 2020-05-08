@@ -159,7 +159,9 @@
     <Compile Include="Input\KeyboardHook.cs" />
     <Compile Include="NameParser\CodeMenuEntryActions.cs" />
     <Compile Include="ClipboardFormat.cs" />
-    <Compile Include="NameParser\CodeMenu.cs" />
+    <Compile Include="NameParser\CodeMenu.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="ColorMatrixManager.cs" />
     <Compile Include="Colors\CMYK.cs" />
     <Compile Include="Colors\ColorEventHandler.cs" />
@@ -1221,6 +1223,7 @@
     <EmbeddedResource Include="Properties\Resources.ko-KR.resx" />
     <EmbeddedResource Include="Properties\Resources.nl-NL.resx" />
     <EmbeddedResource Include="Properties\Resources.pt-BR.resx" />
+    <EmbeddedResource Include="Properties\Resources.pt-PT.resx" />
     <EmbeddedResource Include="Properties\Resources.ru.resx" />
     <EmbeddedResource Include="Properties\Resources.tr.resx" />
     <EmbeddedResource Include="Properties\Resources.uk.resx" />

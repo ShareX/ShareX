@@ -100,6 +100,7 @@ https://github.com/ShareX/ShareX/graphs/contributors
 {Resources.AboutForm_AboutForm_Language_uk}: https://github.com/6c6c6
 {Resources.AboutForm_AboutForm_Language_id_ID}: https://github.com/Nicedward
 {Resources.AboutForm_AboutForm_Language_es_MX}: https://github.com/absay
+{Resources.AboutForm_AboutForm_Language_pt_PT}: https://github.com/FarewellAngelina
 
 {Resources.AboutForm_AboutForm_External_libraries}:
 

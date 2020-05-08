@@ -1760,6 +1760,9 @@
   <ItemGroup>
     <None Include="Resources\edit-scale-white.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pt.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>

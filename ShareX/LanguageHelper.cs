@@ -107,6 +107,9 @@ namespace ShareX
                 case SupportedLanguage.Persian:
                     icon = Resources.ir;
                     break;
+                case SupportedLanguage.Portuguese:
+                    icon = Resources.pt;
+                    break;
                 case SupportedLanguage.PortugueseBrazil:
                     icon = Resources.br;
                     break;
@@ -172,6 +175,9 @@ namespace ShareX
                     break;
                 case SupportedLanguage.Persian:
                     cultureName = "fa-IR";
+                    break;
+                case SupportedLanguage.Portuguese:
+                    cultureName = "pt-PT";
                     break;
                 case SupportedLanguage.PortugueseBrazil:
                     cultureName = "pt-BR";
