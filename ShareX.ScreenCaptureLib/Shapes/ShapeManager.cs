@@ -555,6 +555,7 @@ namespace ShareX.ScreenCaptureLib
                     break;
                 case Keys.ShiftKey:
                     IsProportionalResizing = true;
+                    ChangeCursorIndexDependingOnCurrentTool(4);
                     break;
                 case Keys.Menu:
                     IsSnapResizing = true;
@@ -797,6 +798,7 @@ namespace ShareX.ScreenCaptureLib
                     break;
                 case Keys.ShiftKey:
                     IsProportionalResizing = false;
+                    ChangeCursorIndexDependingOnCurrentTool(3);
                     break;
                 case Keys.Menu:
                     IsSnapResizing = false;
@@ -836,6 +838,15 @@ namespace ShareX.ScreenCaptureLib
                 {
                     shape.OnMoved();
                 }
+            }
+        }
+        private void ChangeCursorIndexDependingOnCurrentTool(int cursorIndex)
+        {
+            switch (CurrentTool)
+            {
+                case ShapeType.DrawingCursor:
+                    setCurrentCursorIndex(cursorIndex);
+                    break;
             }
         }
 

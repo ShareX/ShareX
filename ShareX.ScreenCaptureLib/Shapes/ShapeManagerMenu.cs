@@ -1472,5 +1472,13 @@ namespace ShareX.ScreenCaptureLib
 
             return Cursors.Default;
         }
+
+        internal void setCurrentCursorIndex(int cursorIndex)
+        {
+            if (cursorIndex < Helpers.CursorList.Length)
+            {
+                tscbCursorTypes.Content.SelectedIndex = cursorIndex;
+            }
+        }
     }
 }
