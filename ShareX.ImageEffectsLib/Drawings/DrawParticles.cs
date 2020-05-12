@@ -117,7 +117,6 @@ namespace ShareX.ImageEffectsLib
                         for (int i = 0; i < ImageCount; i++)
                         {
                             string file = RandomFast.Pick(files);
-
                             Bitmap bmpCached = imageCache.GetImage(file);
 
                             if (bmpCached != null)

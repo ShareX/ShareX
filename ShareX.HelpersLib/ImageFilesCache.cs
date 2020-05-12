@@ -35,39 +35,47 @@ namespace ShareX.HelpersLib
 
         public Bitmap GetImage(string filePath)
         {
-            if (images.ContainsKey(filePath))
-            {
-                return images[filePath];
-            }
+            Bitmap bmp = null;
 
-            Bitmap bmp = ImageHelpers.LoadImage(filePath);
-
-            if (bmp != null)
+            if (!string.IsNullOrEmpty(filePath))
             {
-                images.Add(filePath, bmp);
+                if (images.ContainsKey(filePath))
+                {
+                    return images[filePath];
+                }
+
+                bmp = ImageHelpers.LoadImage(filePath);
+
+                if (bmp != null)
+                {
+                    images.Add(filePath, bmp);
+                }
             }
 
             return bmp;
         }
 
-        public Bitmap GetFileIconAsImage(string filePath)
+        public Bitmap GetFileIconAsImage(string filePath, bool isSmallIcon = true)
         {
-            if (images.ContainsKey(filePath))
-            {
-                return images[filePath];
-            }
-
             Bitmap bmp = null;
 
-            using (Icon icon = NativeMethods.GetFileIcon(filePath, true))
+            if (!string.IsNullOrEmpty(filePath))
             {
-                if (icon != null && icon.Width > 0 && icon.Height > 0)
+                if (images.ContainsKey(filePath))
                 {
-                    bmp = icon.ToBitmap();
+                    return images[filePath];
+                }
 
-                    if (bmp != null)
+                using (Icon icon = NativeMethods.GetFileIcon(filePath, isSmallIcon))
+                {
+                    if (icon != null && icon.Width > 0 && icon.Height > 0)
                     {
-                        images.Add(filePath, bmp);
+                        bmp = icon.ToBitmap();
+
+                        if (bmp != null)
+                        {
+                            images.Add(filePath, bmp);
+                        }
                     }
                 }
             }

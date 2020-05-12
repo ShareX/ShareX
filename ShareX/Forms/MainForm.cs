@@ -924,11 +924,7 @@ namespace ShareX
                         try
                         {
                             string actionFilePath = action.GetFullPath();
-
-                            if (!string.IsNullOrEmpty(actionFilePath))
-                            {
-                                tsmi.Image = actionsMenuIconCache.GetFileIconAsImage(actionFilePath);
-                            }
+                            tsmi.Image = actionsMenuIconCache.GetFileIconAsImage(actionFilePath);
                         }
                         catch (Exception e)
                         {
