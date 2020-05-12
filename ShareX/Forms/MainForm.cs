@@ -47,6 +47,7 @@ namespace ShareX
         private int trayClickCount = 0;
         private UploadInfoManager uim;
         private ToolStripDropDownItem tsmiImageFileUploaders, tsmiTrayImageFileUploaders, tsmiTextFileUploaders, tsmiTrayTextFileUploaders;
+        private ImageFilesCache actionsMenuIconCache = new ImageFilesCache();
 
         public MainForm()
         {
@@ -922,12 +923,11 @@ namespace ShareX
 
                         try
                         {
-                            using (Icon icon = NativeMethods.GetFileIcon(action.GetFullPath(), true))
+                            string actionFilePath = action.GetFullPath();
+
+                            if (!string.IsNullOrEmpty(actionFilePath))
                             {
-                                if (icon != null && icon.Width > 0 && icon.Height > 0)
-                                {
-                                    tsmi.Image = icon.ToBitmap();
-                                }
+                                tsmi.Image = actionsMenuIconCache.GetFileIconAsImage(actionFilePath);
                             }
                         }
                         catch (Exception e)

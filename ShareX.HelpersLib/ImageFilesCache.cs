@@ -50,6 +50,31 @@ namespace ShareX.HelpersLib
             return bmp;
         }
 
+        public Bitmap GetFileIconAsImage(string filePath)
+        {
+            if (images.ContainsKey(filePath))
+            {
+                return images[filePath];
+            }
+
+            Bitmap bmp = null;
+
+            using (Icon icon = NativeMethods.GetFileIcon(filePath, true))
+            {
+                if (icon != null && icon.Width > 0 && icon.Height > 0)
+                {
+                    bmp = icon.ToBitmap();
+
+                    if (bmp != null)
+                    {
+                        images.Add(filePath, bmp);
+                    }
+                }
+            }
+
+            return bmp;
+        }
+
         public void Clear()
         {
             if (images != null)
