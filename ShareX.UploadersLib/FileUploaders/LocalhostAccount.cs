@@ -188,6 +188,7 @@ namespace ShareX.UploadersLib
             {
                 return "";
             }
+
             return Path.Combine(Path.Combine(Helpers.ExpandFolderVariables(LocalhostRoot), GetSubFolderPath()), fileName);
         }
 
