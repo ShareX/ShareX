@@ -47,7 +47,17 @@ namespace ShareX.HelpersLib
 
         public Type BindToType(string assemblyName, string typeName)
         {
-            string resolvedTypeName = $"{AppNamespace}.{typeName}, {AppAssembly}";
+            string resolvedTypeName;
+
+            if (!string.IsNullOrEmpty(assemblyName))
+            {
+                resolvedTypeName = $"{typeName}, {assemblyName}";
+            }
+            else
+            {
+                resolvedTypeName = $"{AppNamespace}.{typeName}, {AppAssembly}";
+            }
+
             return Type.GetType(resolvedTypeName, true);
         }
     }
