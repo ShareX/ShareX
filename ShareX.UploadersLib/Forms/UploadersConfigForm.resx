@@ -4121,6 +4121,57 @@ when you made the application key.</value>
   <data name="&gt;&gt;cbBoxShare.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="cbBoxShareAccessLevel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 308</value>
+  </data>
+  <data name="cbBoxShareAccessLevel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 5, 5, 5</value>
+  </data>
+  <data name="cbBoxShareAccessLevel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>250, 24</value>
+  </data>
+  <data name="cbBoxShareAccessLevel.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;cbBoxShareAccessLevel.Name" xml:space="preserve">
+    <value>cbBoxShareAccessLevel</value>
+  </data>
+  <data name="&gt;&gt;cbBoxShareAccessLevel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbBoxShareAccessLevel.Parent" xml:space="preserve">
+    <value>tpBox</value>
+  </data>
+  <data name="&gt;&gt;cbBoxShareAccessLevel.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="lblBoxShareAccessLevel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>18, 290</value>
+  </data>
+  <data name="lblBoxShareAccessLevel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="lblBoxShareAccessLevel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>167, 19</value>
+  </data>
+  <data name="lblBoxShareAccessLevel.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="lblBoxShareAccessLevel.Text" xml:space="preserve">
+    <value>Shared link access level:</value>
+  </data>
+  <data name="&gt;&gt;lblBoxShareAccessLevel.Name" xml:space="preserve">
+    <value>lblBoxShareAccessLevel</value>
+  </data>
+  <data name="&gt;&gt;lblBoxShareAccessLevel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblBoxShareAccessLevel.Parent" xml:space="preserve">
+    <value>tpBox</value>
+  </data>
+  <data name="&gt;&gt;lblBoxShareAccessLevel.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
   <data name="chBoxFoldersName.Text" xml:space="preserve">
     <value>Folder name</value>
   </data>

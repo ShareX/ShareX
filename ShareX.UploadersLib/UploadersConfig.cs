@@ -217,6 +217,7 @@ namespace ShareX.UploadersLib
         public OAuth2Info BoxOAuth2Info = null;
         public BoxFileEntry BoxSelectedFolder = Box.RootFolder;
         public bool BoxShare = true;
+        public BoxShareAccessLevel BoxShareAccessLevel = BoxShareAccessLevel.Open;
 
         #endregion Box
 

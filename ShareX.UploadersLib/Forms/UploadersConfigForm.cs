@@ -415,6 +415,11 @@ namespace ShareX.UploadersLib
             }
 
             cbBoxShare.Checked = Config.BoxShare;
+            cbBoxShareAccessLevel.Items.Clear();
+            cbBoxShareAccessLevel.Items.AddRange(Helpers.GetEnumDescriptions<BoxShareAccessLevel>());
+            cbBoxShareAccessLevel.SelectedIndex = (int)Config.BoxShareAccessLevel;
+            cbBoxShareAccessLevel.Enabled = Config.BoxShare;
+            lblBoxShareAccessLevel.Enabled = Config.BoxShare;
             lblBoxFolderID.Text = Resources.UploadersConfigForm_LoadSettings_Selected_folder_ + " " + Config.BoxSelectedFolder.name;
 
             #endregion Box
@@ -1857,6 +1862,13 @@ namespace ShareX.UploadersLib
         private void cbBoxShare_CheckedChanged(object sender, EventArgs e)
         {
             Config.BoxShare = cbBoxShare.Checked;
+            cbBoxShareAccessLevel.Enabled = Config.BoxShare;
+            lblBoxShareAccessLevel.Enabled = Config.BoxShare;
+        }
+
+        private void cbBoxShareAccessLevel_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Config.BoxShareAccessLevel = (BoxShareAccessLevel)cbBoxShareAccessLevel.SelectedIndex;
         }
 
         private void btnBoxRefreshFolders_Click(object sender, EventArgs e)
