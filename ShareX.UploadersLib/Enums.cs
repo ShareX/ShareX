@@ -353,4 +353,14 @@ namespace ShareX.UploadersLib
         Unlisted,
         Private
     }
+
+    public enum BoxShareAccessLevel
+    {
+        [Description("Public - People with the link")]
+        Open,
+        [Description("Company - People in your company")]
+        Company,
+        [Description("Collaborators - Invited people only")]
+        Collaborators
+    }
 }
