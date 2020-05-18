@@ -206,6 +206,8 @@ namespace ShareX.UploadersLib
             this.tpBox = new System.Windows.Forms.TabPage();
             this.lblBoxFolderTip = new System.Windows.Forms.Label();
             this.cbBoxShare = new System.Windows.Forms.CheckBox();
+            this.cbBoxShareAccessLevel = new System.Windows.Forms.ComboBox();
+            this.lblBoxShareAccessLevel = new System.Windows.Forms.Label();
             this.lvBoxFolders = new ShareX.HelpersLib.MyListView();
             this.chBoxFoldersName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lblBoxFolderID = new System.Windows.Forms.Label();
@@ -1822,6 +1824,8 @@ namespace ShareX.UploadersLib
             this.tpBox.BackColor = System.Drawing.SystemColors.Window;
             this.tpBox.Controls.Add(this.lblBoxFolderTip);
             this.tpBox.Controls.Add(this.cbBoxShare);
+            this.tpBox.Controls.Add(this.cbBoxShareAccessLevel);
+            this.tpBox.Controls.Add(this.lblBoxShareAccessLevel);
             this.tpBox.Controls.Add(this.lvBoxFolders);
             this.tpBox.Controls.Add(this.lblBoxFolderID);
             this.tpBox.Controls.Add(this.btnBoxRefreshFolders);
@@ -1840,6 +1844,19 @@ namespace ShareX.UploadersLib
             this.cbBoxShare.Name = "cbBoxShare";
             this.cbBoxShare.UseVisualStyleBackColor = true;
             this.cbBoxShare.CheckedChanged += new System.EventHandler(this.cbBoxShare_CheckedChanged);
+            // 
+            // cbBoxShareAccessLevel
+            // 
+            this.cbBoxShareAccessLevel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbBoxShareAccessLevel.FormattingEnabled = true;
+            resources.ApplyResources(this.cbBoxShareAccessLevel, "cbBoxShareAccessLevel");
+            this.cbBoxShareAccessLevel.Name = "cbBoxShareAccessLevel";
+            this.cbBoxShareAccessLevel.SelectedIndexChanged += new System.EventHandler(this.cbBoxShareAccessLevel_SelectedIndexChanged);
+            // 
+            // lblBoxShareAccessLevel
+            //
+            resources.ApplyResources(this.lblBoxShareAccessLevel, "lblBoxShareAccessLevel");
+            this.lblBoxShareAccessLevel.Name = "lblBoxShareAccessLevel";
             // 
             // lvBoxFolders
             // 
@@ -5126,6 +5143,8 @@ namespace ShareX.UploadersLib
         private OAuthControl oauth2GoogleDrive;
         private System.Windows.Forms.Label lblBoxFolderTip;
         private System.Windows.Forms.CheckBox cbBoxShare;
+        private System.Windows.Forms.ComboBox cbBoxShareAccessLevel;
+        private System.Windows.Forms.Label lblBoxShareAccessLevel;
         private ShareX.HelpersLib.MyListView lvBoxFolders;
         private System.Windows.Forms.ColumnHeader chBoxFoldersName;
         private System.Windows.Forms.Label lblBoxFolderID;
