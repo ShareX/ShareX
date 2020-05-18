@@ -144,7 +144,7 @@ namespace ShareX.HelpersLib
 
                         string tempFilePath = filePath + ".temp";
 
-                        using (FileStream fileStream = new FileStream(tempFilePath, FileMode.Create, FileAccess.Write, FileShare.Read))
+                        using (FileStream fileStream = new FileStream(tempFilePath, FileMode.Create, FileAccess.Write, FileShare.Read, 4096, FileOptions.WriteThrough))
                         using (StreamWriter streamWriter = new StreamWriter(fileStream))
                         using (JsonTextWriter jsonWriter = new JsonTextWriter(streamWriter))
                         {
@@ -162,17 +162,16 @@ namespace ShareX.HelpersLib
                             throw new Exception($"{typeName} file is corrupt: {tempFilePath}");
                         }
 
-                        if (File.Exists(filePath))
-                        {
-                            if (CreateBackup)
-                            {
-                                Helpers.CopyFile(filePath, BackupFolder);
-                            }
+                        string backupFilePath = null;
 
-                            File.Delete(filePath);
+                        if (CreateBackup)
+                        {
+                            string fileName = Path.GetFileName(filePath);
+                            backupFilePath = Path.Combine(BackupFolder, fileName);
+                            Helpers.CreateDirectoryFromDirectoryPath(BackupFolder);
                         }
 
-                        File.Move(tempFilePath, filePath);
+                        File.Replace(tempFilePath, filePath, backupFilePath);
 
                         if (CreateWeeklyBackup && !string.IsNullOrEmpty(BackupFolder))
                         {
