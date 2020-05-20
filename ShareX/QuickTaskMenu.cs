@@ -43,11 +43,6 @@ namespace ShareX
                 AutoClose = false
             };
 
-            if (ShareXResources.ExperimentalCustomTheme)
-            {
-                cms.Renderer = new ToolStripDarkRenderer();
-            }
-
             cms.KeyUp += (sender, e) =>
             {
                 if (e.KeyCode == Keys.Escape)
@@ -109,6 +104,11 @@ namespace ShareX
             tsmiCancel.Image = Resources.cross;
             tsmiCancel.Click += (sender, e) => cms.Close();
             cms.Items.Add(tsmiCancel);
+
+            if (ShareXResources.UseCustomTheme)
+            {
+                ShareXResources.ApplyCustomThemeToContextMenuStrip(cms);
+            }
 
             Point cursorPosition = CaptureHelpers.GetCursorPosition();
             cursorPosition.Offset(-10, -10);
