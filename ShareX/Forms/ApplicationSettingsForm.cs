@@ -124,7 +124,7 @@ namespace ShareX
             // Theme
             cbThemes.Items.AddRange(Program.Settings.Themes.ToArray());
             cbThemes.SelectedIndex = Program.Settings.SelectedTheme;
-            pgTheme.SelectedObject = Program.Settings.Themes[Program.Settings.SelectedTheme].Copy();
+            pgTheme.SelectedObject = Program.Settings.Themes[Program.Settings.SelectedTheme];
             UpdateThemeControls();
 
             // Integration
@@ -435,7 +435,7 @@ namespace ShareX
         private void UpdateThemeControls()
         {
             cbExperimentalCustomTheme.Enabled = btnThemeAdd.Enabled = btnThemeReset.Enabled = pgTheme.Enabled = eiTheme.Enabled = Program.Settings.UseCustomTheme;
-            cbThemes.Enabled = btnThemeRemove.Enabled = btnApplyTheme.Enabled = Program.Settings.UseCustomTheme && cbThemes.Items.Count > 0;
+            cbThemes.Enabled = btnThemeRemove.Enabled = Program.Settings.UseCustomTheme && cbThemes.Items.Count > 0;
         }
 
         private void ApplySelectedTheme()
@@ -477,7 +477,7 @@ namespace ShareX
 
             if (cbThemes.SelectedItem != null)
             {
-                pgTheme.SelectedObject = cbThemes.SelectedItem.Copy();
+                pgTheme.SelectedObject = cbThemes.SelectedItem;
             }
             else
             {
@@ -524,20 +524,13 @@ namespace ShareX
             cbThemes.Items.Clear();
             cbThemes.Items.AddRange(Program.Settings.Themes.ToArray());
             cbThemes.SelectedIndex = Program.Settings.SelectedTheme;
-            pgTheme.SelectedObject = Program.Settings.Themes[Program.Settings.SelectedTheme].Copy();
+            pgTheme.SelectedObject = Program.Settings.Themes[Program.Settings.SelectedTheme];
         }
 
-        private void BtnApplyTheme_Click(object sender, EventArgs e)
+        private void pgTheme_PropertyValueChanged(object s, PropertyValueChangedEventArgs e)
         {
-            int index = cbThemes.SelectedIndex;
-            if (index > -1)
-            {
-                Program.Settings.SelectedTheme = index;
-                Program.Settings.Themes[index] = (ShareXTheme)pgTheme.SelectedObject;
-                cbThemes.Items[index] = Program.Settings.Themes[index];
-                UpdateThemeControls();
-                ApplySelectedTheme();
-            }
+            UpdateThemeControls();
+            ApplySelectedTheme();
         }
 
         private object EiTheme_ExportRequested()

@@ -487,7 +487,7 @@
     <value>btnLanguages</value>
   </data>
   <data name="&gt;&gt;btnLanguages.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MenuButton, ShareX.HelpersLib, Version=13.0.2.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MenuButton, ShareX.HelpersLib, Version=13.1.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;btnLanguages.Parent" xml:space="preserve">
     <value>tpGeneral</value>
@@ -736,7 +736,7 @@
     <value>eiTheme</value>
   </data>
   <data name="&gt;&gt;eiTheme.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.ExportImportControl, ShareX.HelpersLib, Version=13.0.2.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.ExportImportControl, ShareX.HelpersLib, Version=13.1.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;eiTheme.Parent" xml:space="preserve">
     <value>tpTheme</value>
@@ -819,33 +819,6 @@
   <data name="&gt;&gt;cbThemes.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="btnApplyTheme.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btnApplyTheme.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 352</value>
-  </data>
-  <data name="btnApplyTheme.Size" type="System.Drawing.Size, System.Drawing">
-    <value>184, 24</value>
-  </data>
-  <data name="btnApplyTheme.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="btnApplyTheme.Text" xml:space="preserve">
-    <value>Apply theme</value>
-  </data>
-  <data name="&gt;&gt;btnApplyTheme.Name" xml:space="preserve">
-    <value>btnApplyTheme</value>
-  </data>
-  <data name="&gt;&gt;btnApplyTheme.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnApplyTheme.Parent" xml:space="preserve">
-    <value>tpTheme</value>
-  </data>
-  <data name="&gt;&gt;btnApplyTheme.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
   <data name="pgTheme.HelpVisible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
@@ -868,7 +841,7 @@
     <value>tpTheme</value>
   </data>
   <data name="&gt;&gt;pgTheme.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>6</value>
   </data>
   <data name="cbUseCustomTheme.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -898,7 +871,7 @@
     <value>tpTheme</value>
   </data>
   <data name="&gt;&gt;cbUseCustomTheme.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>7</value>
   </data>
   <data name="tpTheme.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>
@@ -2170,7 +2143,7 @@
     <value>lvClipboardFormats</value>
   </data>
   <data name="&gt;&gt;lvClipboardFormats.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=13.0.2.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=13.1.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lvClipboardFormats.Parent" xml:space="preserve">
     <value>gbClipboardFormats</value>
@@ -2245,7 +2218,7 @@
     <value>lvSecondaryFileUploaders</value>
   </data>
   <data name="&gt;&gt;lvSecondaryFileUploaders.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=13.0.2.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=13.1.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lvSecondaryFileUploaders.Parent" xml:space="preserve">
     <value>gbSecondaryFileUploaders</value>
@@ -2296,7 +2269,7 @@
     <value>lvSecondaryImageUploaders</value>
   </data>
   <data name="&gt;&gt;lvSecondaryImageUploaders.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=13.0.2.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=13.1.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lvSecondaryImageUploaders.Parent" xml:space="preserve">
     <value>gbSecondaryImageUploaders</value>
@@ -2347,7 +2320,7 @@
     <value>lvSecondaryTextUploaders</value>
   </data>
   <data name="&gt;&gt;lvSecondaryTextUploaders.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=13.0.2.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=13.1.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lvSecondaryTextUploaders.Parent" xml:space="preserve">
     <value>gbSecondaryTextUploaders</value>
@@ -3346,7 +3319,7 @@
     <value>tttvMain</value>
   </data>
   <data name="&gt;&gt;tttvMain.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.TabToTreeView, ShareX.HelpersLib, Version=13.0.2.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.TabToTreeView, ShareX.HelpersLib, Version=13.1.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;tttvMain.Parent" xml:space="preserve">
     <value>$this</value>
