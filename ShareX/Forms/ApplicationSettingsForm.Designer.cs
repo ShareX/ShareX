@@ -53,7 +53,6 @@ namespace ShareX
             this.cbRememberMainFormSize = new System.Windows.Forms.CheckBox();
             this.lblLanguage = new System.Windows.Forms.Label();
             this.tpTheme = new System.Windows.Forms.TabPage();
-            this.cbExperimentalCustomTheme = new System.Windows.Forms.CheckBox();
             this.btnThemeReset = new System.Windows.Forms.Button();
             this.eiTheme = new ShareX.HelpersLib.ExportImportControl();
             this.btnThemeRemove = new System.Windows.Forms.Button();
@@ -354,7 +353,6 @@ namespace ShareX
             // 
             // tpTheme
             // 
-            this.tpTheme.Controls.Add(this.cbExperimentalCustomTheme);
             this.tpTheme.Controls.Add(this.btnThemeReset);
             this.tpTheme.Controls.Add(this.eiTheme);
             this.tpTheme.Controls.Add(this.btnThemeRemove);
@@ -365,13 +363,6 @@ namespace ShareX
             resources.ApplyResources(this.tpTheme, "tpTheme");
             this.tpTheme.Name = "tpTheme";
             this.tpTheme.UseVisualStyleBackColor = true;
-            // 
-            // cbExperimentalCustomTheme
-            // 
-            resources.ApplyResources(this.cbExperimentalCustomTheme, "cbExperimentalCustomTheme");
-            this.cbExperimentalCustomTheme.Name = "cbExperimentalCustomTheme";
-            this.cbExperimentalCustomTheme.UseVisualStyleBackColor = true;
-            this.cbExperimentalCustomTheme.CheckedChanged += new System.EventHandler(this.cbExperimentalCustomTheme_CheckedChanged);
             // 
             // btnThemeReset
             // 
@@ -1341,6 +1332,5 @@ namespace ShareX
         private System.Windows.Forms.Label lblExportImportNote;
         private System.Windows.Forms.CheckBox cbExportHistory;
         private System.Windows.Forms.CheckBox cbExportSettings;
-        private System.Windows.Forms.CheckBox cbExperimentalCustomTheme;
     }
 }

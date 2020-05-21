@@ -104,8 +104,6 @@ namespace ShareX
             cbTaskbarProgressEnabled.Enabled = TaskbarManager.IsPlatformSupported;
             cbTaskbarProgressEnabled.Checked = Program.Settings.TaskbarProgressEnabled;
             cbUseCustomTheme.Checked = Program.Settings.UseCustomTheme;
-            cbExperimentalCustomTheme.Enabled = Program.Settings.UseCustomTheme;
-            cbExperimentalCustomTheme.Checked = Program.Settings.ExperimentalCustomTheme;
             cbUseWhiteShareXIcon.Checked = Program.Settings.UseWhiteShareXIcon;
             cbRememberMainFormPosition.Checked = Program.Settings.RememberMainFormPosition;
             cbRememberMainFormSize.Checked = Program.Settings.RememberMainFormSize;
@@ -434,7 +432,7 @@ namespace ShareX
 
         private void UpdateThemeControls()
         {
-            cbExperimentalCustomTheme.Enabled = btnThemeAdd.Enabled = btnThemeReset.Enabled = pgTheme.Enabled = eiTheme.Enabled = Program.Settings.UseCustomTheme;
+            btnThemeAdd.Enabled = eiTheme.Enabled = btnThemeReset.Enabled = pgTheme.Enabled = Program.Settings.UseCustomTheme;
             cbThemes.Enabled = btnThemeRemove.Enabled = Program.Settings.UseCustomTheme && cbThemes.Items.Count > 0;
         }
 
@@ -460,13 +458,6 @@ namespace ShareX
         private void CbUseCustomTheme_CheckedChanged(object sender, EventArgs e)
         {
             Program.Settings.UseCustomTheme = cbUseCustomTheme.Checked;
-            UpdateThemeControls();
-            ApplySelectedTheme();
-        }
-
-        private void cbExperimentalCustomTheme_CheckedChanged(object sender, EventArgs e)
-        {
-            Program.Settings.ExperimentalCustomTheme = cbExperimentalCustomTheme.Checked;
             UpdateThemeControls();
             ApplySelectedTheme();
         }
@@ -516,6 +507,16 @@ namespace ShareX
             }
         }
 
+        private object EiTheme_ExportRequested()
+        {
+            return pgTheme.SelectedObject as ShareXTheme;
+        }
+
+        private void EiTheme_ImportRequested(object obj)
+        {
+            AddTheme(obj as ShareXTheme);
+        }
+
         private void BtnThemeReset_Click(object sender, EventArgs e)
         {
             Program.Settings.Themes = ShareXTheme.GetPresets();
@@ -531,16 +532,6 @@ namespace ShareX
         {
             UpdateThemeControls();
             ApplySelectedTheme();
-        }
-
-        private object EiTheme_ExportRequested()
-        {
-            return pgTheme.SelectedObject as ShareXTheme;
-        }
-
-        private void EiTheme_ImportRequested(object obj)
-        {
-            AddTheme(obj as ShareXTheme);
         }
 
         #endregion
