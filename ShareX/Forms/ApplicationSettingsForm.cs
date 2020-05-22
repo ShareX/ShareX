@@ -519,13 +519,17 @@ namespace ShareX
 
         private void BtnThemeReset_Click(object sender, EventArgs e)
         {
-            Program.Settings.Themes = ShareXTheme.GetPresets();
-            Program.Settings.SelectedTheme = 0;
+            // TODO: Translate
+            if (MessageBox.Show("Would you like to reset themes?", "ShareX", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+            {
+                Program.Settings.Themes = ShareXTheme.GetPresets();
+                Program.Settings.SelectedTheme = 0;
 
-            cbThemes.Items.Clear();
-            cbThemes.Items.AddRange(Program.Settings.Themes.ToArray());
-            cbThemes.SelectedIndex = Program.Settings.SelectedTheme;
-            pgTheme.SelectedObject = Program.Settings.Themes[Program.Settings.SelectedTheme];
+                cbThemes.Items.Clear();
+                cbThemes.Items.AddRange(Program.Settings.Themes.ToArray());
+                cbThemes.SelectedIndex = Program.Settings.SelectedTheme;
+                pgTheme.SelectedObject = Program.Settings.Themes[Program.Settings.SelectedTheme];
+            }
         }
 
         private void pgTheme_PropertyValueChanged(object s, PropertyValueChangedEventArgs e)

@@ -682,7 +682,7 @@
     <value>5</value>
   </data>
   <data name="btnThemeReset.Text" xml:space="preserve">
-    <value>Reset</value>
+    <value>Reset...</value>
   </data>
   <data name="&gt;&gt;btnThemeReset.Name" xml:space="preserve">
     <value>btnThemeReset</value>
