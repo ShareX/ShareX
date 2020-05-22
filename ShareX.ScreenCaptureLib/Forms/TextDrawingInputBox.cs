@@ -327,7 +327,7 @@ namespace ShareX.ScreenCaptureLib
 
         private void UpdateButtonImages()
         {
-            if (ShareXResources.ExperimentalCustomTheme)
+            if (ShareXResources.UseCustomTheme)
             {
                 ShareXResources.ApplyCustomThemeToContextMenuStrip(cmsGradient);
                 ShareXResources.ApplyCustomThemeToContextMenuStrip(cmsAlignmentHorizontal);

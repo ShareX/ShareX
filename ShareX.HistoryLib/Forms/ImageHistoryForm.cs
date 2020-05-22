@@ -56,7 +56,7 @@ namespace ShareX.HistoryLib
             ilvImages.View = (View)Settings.ViewMode;
             ilvImages.ThumbnailSize = Settings.ThumbnailSize;
 
-            if (ShareXResources.ExperimentalCustomTheme)
+            if (ShareXResources.UseCustomTheme)
             {
                 ilvImages.BorderStyle = BorderStyle.None;
                 ilvImages.Colors.BackColor = ShareXResources.Theme.LightBackgroundColor;

@@ -103,7 +103,7 @@ namespace ShareX.HelpersLib
             tsmiClose.Click += (sender, e) => Close();
             Items.Add(tsmiClose);
 
-            if (ShareXResources.ExperimentalCustomTheme)
+            if (ShareXResources.UseCustomTheme)
             {
                 ShareXResources.ApplyCustomThemeToContextMenuStrip(this);
             }

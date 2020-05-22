@@ -796,7 +796,6 @@ namespace ShareX
 
             ShareXResources.Theme = Program.Settings.Themes[Program.Settings.SelectedTheme];
             ShareXResources.UseCustomTheme = Program.Settings.UseCustomTheme;
-            ShareXResources.ExperimentalCustomTheme = Program.Settings.ExperimentalCustomTheme;
 
             if (IsHandleCreated)
             {

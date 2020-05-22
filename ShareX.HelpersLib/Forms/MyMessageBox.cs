@@ -148,7 +148,7 @@ namespace ShareX.HelpersLib
 
             ShareXResources.ApplyTheme(this);
 
-            if (ShareXResources.ExperimentalCustomTheme)
+            if (ShareXResources.UseCustomTheme)
             {
                 panel.BackColor = ShareXResources.Theme.BorderColor;
             }
