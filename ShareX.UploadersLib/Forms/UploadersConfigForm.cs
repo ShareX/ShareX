@@ -581,6 +581,7 @@ namespace ShareX.UploadersLib
             cbOwnCloud81Compatibility.Checked = Config.OwnCloud81Compatibility;
             cbOwnCloudUsePreviewLinks.Checked = Config.OwnCloudUsePreviewLinks;
             cbOwnCloudAutoExpire.Checked = Config.OwnCloudAutoExpire;
+            cbOwnCloudPathFilter.Checked = Config.OwnCloudUsePathFilter;
 
             #endregion ownCloud / Nextcloud
 
@@ -2299,6 +2300,20 @@ namespace ShareX.UploadersLib
         private void cbOwnCloudAutoExpire_CheckedChanged(object sender, EventArgs e)
         {
             Config.OwnCloudAutoExpire = cbOwnCloudAutoExpire.Checked;
+        }
+
+        private void cbOwnCloudPathFilter_CheckedChanged(object sender, EventArgs e)
+        {
+            Config.OwnCloudUsePathFilter = cbOwnCloudPathFilter.Checked;
+
+            lblOwnCloudPathFilter.Visible = cbOwnCloudPathFilter.Checked;
+            lvOwnCloudPathFilter.Visible = cbOwnCloudPathFilter.Checked;
+            btnOwnCloudPathFilterAdd.Visible = cbOwnCloudPathFilter.Checked;
+            btnOwnCloudPathFilterRemove.Visible = cbOwnCloudPathFilter.Checked;
+            lblOwnCloudPathFilterEditPath.Visible = cbOwnCloudPathFilter.Checked;
+            txtOwnCloudPathFilterEditPath.Visible = cbOwnCloudPathFilter.Checked;
+            lblOwnCloudPathFilterEditFilter.Visible = cbOwnCloudPathFilter.Checked;
+            txtOwnCloudPathFilterEditFilter.Visible = cbOwnCloudPathFilter.Checked;
         }
 
         #endregion ownCloud / Nextcloud

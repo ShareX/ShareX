@@ -57,7 +57,8 @@ namespace ShareX.UploadersLib.FileUploaders
                 PreviewLink = config.OwnCloudUsePreviewLinks,
                 IsCompatibility81 = config.OwnCloud81Compatibility,
                 AutoExpireTime = config.OwnCloudExpiryTime,
-                AutoExpire = config.OwnCloudAutoExpire
+                AutoExpire = config.OwnCloudAutoExpire,
+                UsePathFilter = config.OwnCloudUsePathFilter
             };
         }
 
@@ -76,6 +77,7 @@ namespace ShareX.UploadersLib.FileUploaders
         public bool PreviewLink { get; set; }
         public bool IsCompatibility81 { get; set; }
         public bool AutoExpire { get; set; }
+        public bool UsePathFilter { get; set; }
 
         public OwnCloud(string host, string username, string password)
         {
