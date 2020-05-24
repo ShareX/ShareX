@@ -1,4 +1,4 @@
-﻿#region License Information (GPL v3)
+#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -582,6 +582,12 @@ namespace ShareX.UploadersLib
             cbOwnCloudUsePreviewLinks.Checked = Config.OwnCloudUsePreviewLinks;
             cbOwnCloudAutoExpire.Checked = Config.OwnCloudAutoExpire;
             cbOwnCloudPathFilter.Checked = Config.OwnCloudUsePathFilter;
+
+            foreach (OwnCloud.OwnCloudPathFilterItem pathFilterItem in Config.OwnCloudPathFilter)
+            {
+                ListViewItem item = lvOwnCloudPathFilter.Items.Add(pathFilterItem.Path);
+                item.SubItems.Add(pathFilterItem.Filter);
+            }
 
             #endregion ownCloud / Nextcloud
 
@@ -2314,6 +2320,46 @@ namespace ShareX.UploadersLib
             txtOwnCloudPathFilterEditPath.Visible = cbOwnCloudPathFilter.Checked;
             lblOwnCloudPathFilterEditFilter.Visible = cbOwnCloudPathFilter.Checked;
             txtOwnCloudPathFilterEditFilter.Visible = cbOwnCloudPathFilter.Checked;
+        }
+
+        private void btnOwnCloudPathFilterAdd_Click(object sender, EventArgs e)
+        {
+            ListViewItem newPathFilterItem = new ListViewItem("/");
+            newPathFilterItem.SubItems.Add("*.*");
+
+            lvOwnCloudPathFilter.Items.Add(newPathFilterItem);
+            lvOwnCloudPathFilter.SelectSingle(newPathFilterItem);
+
+            OwnCloudSavePathFilters();
+        }
+
+        private void btnOwnCloudPathFilterRemove_Click(object sender, EventArgs e)
+        {
+            ListViewItem removeItem = lvOwnCloudPathFilter.SelectedItems[0];
+            int nextSelectIndex = (removeItem.Index == lvOwnCloudPathFilter.Items.Count - 1) ? removeItem.Index - 1 : removeItem.Index + 1;
+            lvOwnCloudPathFilter.Select(nextSelectIndex);
+            lvOwnCloudPathFilter.Items.Remove(removeItem);
+
+            OwnCloudSavePathFilters();
+        }
+
+        private void OwnCloudSavePathFilters()
+        {
+            Config.OwnCloudPathFilter.Clear();
+
+            foreach (ListViewItem item in lvOwnCloudPathFilter.Items)
+            {
+                Config.OwnCloudPathFilter.Add(new OwnCloud.OwnCloudPathFilterItem()
+                {
+                    Path = item.Text,
+                    Filter = item.SubItems[1].Text
+                });
+            }
+        }
+
+        private void lvOwnCloudPathFilter_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            btnOwnCloudPathFilterRemove.Enabled = lvOwnCloudPathFilter.SelectedIndex >= 0;
         }
 
         #endregion ownCloud / Nextcloud

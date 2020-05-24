@@ -2529,6 +2529,9 @@ namespace ShareX.UploadersLib
             resources.ApplyResources(this.tpOwnCloud, "tpOwnCloud");
             this.tpOwnCloud.Name = "tpOwnCloud";
             // 
+            this.btnOwnCloudPathFilterRemove.Click += new System.EventHandler(this.btnOwnCloudPathFilterRemove_Click);
+            this.btnOwnCloudPathFilterAdd.Click += new System.EventHandler(this.btnOwnCloudPathFilterAdd_Click);
+            this.lvOwnCloudPathFilter.SelectedIndexChanged += new System.EventHandler(this.lvOwnCloudPathFilter_SelectedIndexChanged);
             this.cbOwnCloudPathFilter.CheckedChanged += new System.EventHandler(this.cbOwnCloudPathFilter_CheckedChanged);
             // txtOwnCloudExpiryTime
             // 

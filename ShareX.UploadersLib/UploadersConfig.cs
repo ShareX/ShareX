@@ -296,6 +296,7 @@ namespace ShareX.UploadersLib
         public bool OwnCloudUsePreviewLinks = false;
         public bool OwnCloudAutoExpire = false;
         public bool OwnCloudUsePathFilter = false;
+        public List<OwnCloud.OwnCloudPathFilterItem> OwnCloudPathFilter = new List<OwnCloud.OwnCloudPathFilterItem>();
 
         #endregion ownCloud / Nextcloud
 

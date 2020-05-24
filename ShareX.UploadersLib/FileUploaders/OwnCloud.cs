@@ -58,7 +58,8 @@ namespace ShareX.UploadersLib.FileUploaders
                 IsCompatibility81 = config.OwnCloud81Compatibility,
                 AutoExpireTime = config.OwnCloudExpiryTime,
                 AutoExpire = config.OwnCloudAutoExpire,
-                UsePathFilter = config.OwnCloudUsePathFilter
+                UsePathFilter = config.OwnCloudUsePathFilter,
+                PathFilter = config.OwnCloudPathFilter
             };
         }
 
@@ -78,12 +79,14 @@ namespace ShareX.UploadersLib.FileUploaders
         public bool IsCompatibility81 { get; set; }
         public bool AutoExpire { get; set; }
         public bool UsePathFilter { get; set; }
+        public List<OwnCloudPathFilterItem> PathFilter { get; set; }
 
         public OwnCloud(string host, string username, string password)
         {
             Host = host;
             Username = username;
             Password = password;
+            PathFilter = new List<OwnCloudPathFilterItem>();
         }
 
         public override UploadResult Upload(Stream stream, string fileName)
@@ -226,6 +229,12 @@ namespace ShareX.UploadersLib.FileUploaders
             public int id { get; set; }
             public string url { get; set; }
             public string token { get; set; }
+        }
+
+        public class OwnCloudPathFilterItem
+        {
+            public string Path { get; set; }
+            public string Filter { get; set; }
         }
     }
 }
