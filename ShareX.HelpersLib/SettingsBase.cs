@@ -26,6 +26,7 @@
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
 using System.Threading.Tasks;
@@ -110,23 +111,6 @@ namespace ShareX.HelpersLib
             SaveAsync(FilePath);
         }
 
-        public static T Load(string filePath, string backupFolder = null, bool createBackup = false, bool createWeeklyBackup = false)
-        {
-            T setting = LoadInternal(filePath, backupFolder);
-
-            if (setting != null)
-            {
-                setting.FilePath = filePath;
-                setting.IsFirstTimeRun = string.IsNullOrEmpty(setting.ApplicationVersion);
-                setting.IsUpgrade = !setting.IsFirstTimeRun && Helpers.CompareApplicationVersion(setting.ApplicationVersion) < 0;
-                setting.BackupFolder = backupFolder;
-                setting.CreateBackup = createBackup;
-                setting.CreateWeeklyBackup = createWeeklyBackup;
-            }
-
-            return setting;
-        }
-
         private bool SaveInternal(string filePath)
         {
             string typeName = GetType().Name;
@@ -197,7 +181,35 @@ namespace ShareX.HelpersLib
             return isSuccess;
         }
 
-        private static T LoadInternal(string filePath, string backupFolder = null)
+        public static T Load(string filePath, string backupFolder = null, bool createBackup = false, bool createWeeklyBackup = false)
+        {
+            List<string> fallbackFilePaths = new List<string>();
+            string tempFilePath = filePath + ".temp";
+            fallbackFilePaths.Add(tempFilePath);
+
+            if (!string.IsNullOrEmpty(backupFolder))
+            {
+                string fileName = Path.GetFileName(filePath);
+                string backupFilePath = Path.Combine(backupFolder, fileName);
+                fallbackFilePaths.Add(backupFilePath);
+            }
+
+            T setting = LoadInternal(filePath, fallbackFilePaths);
+
+            if (setting != null)
+            {
+                setting.FilePath = filePath;
+                setting.IsFirstTimeRun = string.IsNullOrEmpty(setting.ApplicationVersion);
+                setting.IsUpgrade = !setting.IsFirstTimeRun && Helpers.CompareApplicationVersion(setting.ApplicationVersion) < 0;
+                setting.BackupFolder = backupFolder;
+                setting.CreateBackup = createBackup;
+                setting.CreateWeeklyBackup = createWeeklyBackup;
+            }
+
+            return setting;
+        }
+
+        private static T LoadInternal(string filePath, List<string> fallbackFilePaths = null)
         {
             string typeName = typeof(T).Name;
 
@@ -249,11 +261,11 @@ namespace ShareX.HelpersLib
                 DebugHelper.WriteLine($"{typeName} file does not exist: {filePath}");
             }
 
-            if (!string.IsNullOrEmpty(backupFolder))
+            if (fallbackFilePaths != null && fallbackFilePaths.Count > 0)
             {
-                string fileName = Path.GetFileName(filePath);
-                string backupFilePath = Path.Combine(backupFolder, fileName);
-                return LoadInternal(backupFilePath);
+                filePath = fallbackFilePaths[0];
+                fallbackFilePaths.RemoveAt(0);
+                return LoadInternal(filePath, fallbackFilePaths);
             }
 
             DebugHelper.WriteLine($"Loading new {typeName} instance.");
