@@ -729,4 +729,22 @@ Das Benutzen einer verschlüsselten Bibliothek deaktiviert das Teilen.</value>
   <data name="cbFTPRemoveFileExtension.Text" xml:space="preserve">
     <value>Dateierweiterung vom URL-Pfad entfernen</value>
   </data>
+  <data name="cbOwnCloudPathFilter.Text" xml:space="preserve">
+    <value>Pfadfilter aktivieren</value>
+  </data>
+  <data name="lblOwnCloudPathFilter.Text" xml:space="preserve">
+    <value>Pfadfilter:</value>
+  </data>
+  <data name="lblOwnCloudPathFilterEditFilter.Text" xml:space="preserve">
+    <value>Filter:</value>
+  </data>
+  <data name="lblOwnCloudPathFilterEditPath.Text" xml:space="preserve">
+    <value>Pfad:</value>
+  </data>
+  <data name="lvOwnCloudPathFilterFilterColumn" xml:space="preserve">
+    <value>Filter</value>
+  </data>
+  <data name="lvOwnCloudPathFilterPathColumn.Text" xml:space="preserve">
+    <value>Pfad</value>
+  </data>
 </root>
