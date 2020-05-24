@@ -606,6 +606,7 @@ namespace ShareX.UploadersLib
             this.lvlVgymeUserKey = new System.Windows.Forms.Label();
             this.tcUploaders = new System.Windows.Forms.TabControl();
             this.tttvMain = new ShareX.HelpersLib.TabToTreeView();
+            this.cbOwnCloudPathFilter = new System.Windows.Forms.CheckBox();
             this.btnOwnCloudPathFilterEditSave = new System.Windows.Forms.Button();
             this.lvOwnCloudPathFilter = new ShareX.HelpersLib.MyListView();
             this.lblOwnCloudPathFilter = new System.Windows.Forms.Label();
@@ -4818,7 +4819,12 @@ namespace ShareX.UploadersLib
             this.lblOwnCloudPathFilterEditFilter.Name = "lblOwnCloudPathFilterEditFilter";
             // 
             // lblOwnCloudPathFilterEditPath
-            // 
+            //
+            resources.ApplyResources(this.lblOwnCloudPathFilterEditPath, "lblOwnCloudPathFilterEditPath");
+            this.lblOwnCloudPathFilterEditPath.Name = "lblOwnCloudPathFilterEditPath";
+            //
+            // btnOwnCloudPathFilterEditSave
+            //
             resources.ApplyResources(this.btnOwnCloudPathFilterEditSave, "btnOwnCloudPathFilterEditSave");
             this.btnOwnCloudPathFilterEditSave.Name = "btnOwnCloudPathFilterEditSave";
             this.btnOwnCloudPathFilterEditSave.UseVisualStyleBackColor = true;
