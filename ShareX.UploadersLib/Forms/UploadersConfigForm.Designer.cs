@@ -606,7 +606,7 @@ namespace ShareX.UploadersLib
             this.lvlVgymeUserKey = new System.Windows.Forms.Label();
             this.tcUploaders = new System.Windows.Forms.TabControl();
             this.tttvMain = new ShareX.HelpersLib.TabToTreeView();
-            this.cbOwnCloudPathFilter = new System.Windows.Forms.CheckBox();
+            this.btnOwnCloudPathFilterEditSave = new System.Windows.Forms.Button();
             this.lvOwnCloudPathFilter = new ShareX.HelpersLib.MyListView();
             this.lblOwnCloudPathFilter = new System.Windows.Forms.Label();
             this.lvOwnCloudPathFilterPathColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -4819,8 +4819,10 @@ namespace ShareX.UploadersLib
             // 
             // lblOwnCloudPathFilterEditPath
             // 
-            resources.ApplyResources(this.lblOwnCloudPathFilterEditPath, "lblOwnCloudPathFilterEditPath");
-            this.lblOwnCloudPathFilterEditPath.Name = "lblOwnCloudPathFilterEditPath";
+            resources.ApplyResources(this.btnOwnCloudPathFilterEditSave, "btnOwnCloudPathFilterEditSave");
+            this.btnOwnCloudPathFilterEditSave.Name = "btnOwnCloudPathFilterEditSave";
+            this.btnOwnCloudPathFilterEditSave.UseVisualStyleBackColor = true;
+            this.btnOwnCloudPathFilterEditSave.Click += new System.EventHandler(this.btnOwnCloudPathFilterEditSave_Click);
             // 
             // atcImgurAccountType
             // 
@@ -5749,5 +5751,6 @@ namespace ShareX.UploadersLib
         private System.Windows.Forms.TextBox txtOwnCloudPathFilterEditPath;
         private System.Windows.Forms.Label lblOwnCloudPathFilterEditFilter;
         private System.Windows.Forms.Label lblOwnCloudPathFilterEditPath;
+        private System.Windows.Forms.Button btnOwnCloudPathFilterEditSave;
     }
 }

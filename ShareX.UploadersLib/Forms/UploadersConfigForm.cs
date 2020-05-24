@@ -2345,7 +2345,33 @@ namespace ShareX.UploadersLib
 
         private void lvOwnCloudPathFilter_SelectedIndexChanged(object sender, EventArgs e)
         {
-            btnOwnCloudPathFilterRemove.Enabled = lvOwnCloudPathFilter.SelectedIndex >= 0;
+            btnOwnCloudPathFilterRemove.Enabled = lblOwnCloudPathFilterEditPath.Enabled = txtOwnCloudPathFilterEditPath.Enabled = lblOwnCloudPathFilterEditFilter.Enabled = txtOwnCloudPathFilterEditFilter.Enabled = btnOwnCloudPathFilterEditSave.Enabled = lvOwnCloudPathFilter.SelectedIndex >= 0;
+
+            if (txtOwnCloudPathFilterEditPath.Enabled)
+            {
+                txtOwnCloudPathFilterEditPath.Text = lvOwnCloudPathFilter.SelectedItems[0].Text;
+            }
+            else
+            {
+                txtOwnCloudPathFilterEditPath.Text = null;
+            }
+
+            if (txtOwnCloudPathFilterEditFilter.Enabled)
+            {
+                txtOwnCloudPathFilterEditFilter.Text = lvOwnCloudPathFilter.SelectedItems[0].SubItems[1].Text;
+            }
+            else
+            {
+                txtOwnCloudPathFilterEditFilter.Text = null;
+            }
+        }
+
+        private void btnOwnCloudPathFilterEditSave_Click(object sender, EventArgs e)
+        {
+            lvOwnCloudPathFilter.SelectedItems[0].Text = txtOwnCloudPathFilterEditPath.Text;
+            lvOwnCloudPathFilter.SelectedItems[0].SubItems[1].Text = txtOwnCloudPathFilterEditFilter.Text;
+
+            OwnCloudSavePathFilters();
         }
 
         #endregion ownCloud / Nextcloud

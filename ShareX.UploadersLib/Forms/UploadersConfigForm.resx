@@ -6695,6 +6695,36 @@ when you made the application key.</value>
   <data name="&gt;&gt;tpMega.ZOrder" xml:space="preserve">
     <value>11</value>
   </data>
+  <data name="btnOwnCloudPathFilterEditSave.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="btnOwnCloudPathFilterEditSave.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnOwnCloudPathFilterEditSave.Location" type="System.Drawing.Point, System.Drawing">
+    <value>732, 473</value>
+  </data>
+  <data name="btnOwnCloudPathFilterEditSave.Size" type="System.Drawing.Size, System.Drawing">
+    <value>65, 23</value>
+  </data>
+  <data name="btnOwnCloudPathFilterEditSave.TabIndex" type="System.Int32, mscorlib">
+    <value>30</value>
+  </data>
+  <data name="btnOwnCloudPathFilterEditSave.Text" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="&gt;&gt;btnOwnCloudPathFilterEditSave.Name" xml:space="preserve">
+    <value>btnOwnCloudPathFilterEditSave</value>
+  </data>
+  <data name="&gt;&gt;btnOwnCloudPathFilterEditSave.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnOwnCloudPathFilterEditSave.Parent" xml:space="preserve">
+    <value>tpOwnCloud</value>
+  </data>
+  <data name="&gt;&gt;btnOwnCloudPathFilterEditSave.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="txtOwnCloudPathFilterEditFilter.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
@@ -6752,6 +6782,9 @@ when you made the application key.</value>
   <data name="lblOwnCloudPathFilterEditFilter.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lblOwnCloudPathFilterEditFilter.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="lblOwnCloudPathFilterEditFilter.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -6784,6 +6817,9 @@ when you made the application key.</value>
   </data>
   <data name="lblOwnCloudPathFilterEditPath.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="lblOwnCloudPathFilterEditPath.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="lblOwnCloudPathFilterEditPath.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>

@@ -747,4 +747,7 @@ Das Benutzen einer verschlüsselten Bibliothek deaktiviert das Teilen.</value>
   <data name="lvOwnCloudPathFilterPathColumn.Text" xml:space="preserve">
     <value>Pfad</value>
   </data>
+  <data name="btnOwnCloudPathFilterEditSave.Text" xml:space="preserve">
+    <value>Speichern</value>
+  </data>
 </root>
