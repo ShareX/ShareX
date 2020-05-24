@@ -6765,7 +6765,7 @@ when you made the application key.</value>
     <value>27</value>
   </data>
   <data name="lblOwnCloudPathFilterEditFilter.Text" xml:space="preserve">
-    <value>Filter:</value>
+    <value>Filter (comma seperated, e.g. "*.jpg, *.png, ..."):</value>
   </data>
   <data name="lblOwnCloudPathFilterEditFilter.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
