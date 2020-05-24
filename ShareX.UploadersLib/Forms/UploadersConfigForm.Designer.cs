@@ -1,4 +1,4 @@
-﻿#region License Information (GPL v3)
+#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -606,6 +606,17 @@ namespace ShareX.UploadersLib
             this.lvlVgymeUserKey = new System.Windows.Forms.Label();
             this.tcUploaders = new System.Windows.Forms.TabControl();
             this.tttvMain = new ShareX.HelpersLib.TabToTreeView();
+            this.cbOwnCloudPathFilter = new System.Windows.Forms.CheckBox();
+            this.lvOwnCloudPathFilter = new ShareX.HelpersLib.MyListView();
+            this.lblOwnCloudPathFilter = new System.Windows.Forms.Label();
+            this.lvOwnCloudPathFilterPathColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.lvOwnCloudPathFilterFilterColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.btnOwnCloudPathFilterAdd = new System.Windows.Forms.Button();
+            this.btnOwnCloudPathFilterRemove = new System.Windows.Forms.Button();
+            this.txtOwnCloudPathFilterEditFilter = new System.Windows.Forms.TextBox();
+            this.txtOwnCloudPathFilterEditPath = new System.Windows.Forms.TextBox();
+            this.lblOwnCloudPathFilterEditFilter = new System.Windows.Forms.Label();
+            this.lblOwnCloudPathFilterEditPath = new System.Windows.Forms.Label();
             this.atcImgurAccountType = new ShareX.UploadersLib.AccountTypeControl();
             this.oauth2Imgur = new ShareX.UploadersLib.OAuthControl();
             this.oauthFlickr = new ShareX.UploadersLib.OAuthControl();
@@ -2490,6 +2501,15 @@ namespace ShareX.UploadersLib
             // tpOwnCloud
             // 
             this.tpOwnCloud.BackColor = System.Drawing.SystemColors.Window;
+            this.tpOwnCloud.Controls.Add(this.txtOwnCloudPathFilterEditFilter);
+            this.tpOwnCloud.Controls.Add(this.txtOwnCloudPathFilterEditPath);
+            this.tpOwnCloud.Controls.Add(this.lblOwnCloudPathFilterEditFilter);
+            this.tpOwnCloud.Controls.Add(this.lblOwnCloudPathFilterEditPath);
+            this.tpOwnCloud.Controls.Add(this.btnOwnCloudPathFilterRemove);
+            this.tpOwnCloud.Controls.Add(this.btnOwnCloudPathFilterAdd);
+            this.tpOwnCloud.Controls.Add(this.lblOwnCloudPathFilter);
+            this.tpOwnCloud.Controls.Add(this.lvOwnCloudPathFilter);
+            this.tpOwnCloud.Controls.Add(this.cbOwnCloudPathFilter);
             this.tpOwnCloud.Controls.Add(this.txtOwnCloudExpiryTime);
             this.tpOwnCloud.Controls.Add(this.cbOwnCloudAutoExpire);
             this.tpOwnCloud.Controls.Add(this.lblOwnCloudExpiryTime);
@@ -4732,6 +4752,72 @@ namespace ShareX.UploadersLib
             this.tttvMain.TreeViewFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.tttvMain.TreeViewSize = 210;
             // 
+            // cbOwnCloudPathFilter
+            // 
+            resources.ApplyResources(this.cbOwnCloudPathFilter, "cbOwnCloudPathFilter");
+            this.cbOwnCloudPathFilter.Name = "cbOwnCloudPathFilter";
+            this.cbOwnCloudPathFilter.UseVisualStyleBackColor = true;
+            // 
+            // lvOwnCloudPathFilter
+            // 
+            this.lvOwnCloudPathFilter.AutoFillColumn = true;
+            this.lvOwnCloudPathFilter.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.lvOwnCloudPathFilterPathColumn,
+            this.lvOwnCloudPathFilterFilterColumn});
+            this.lvOwnCloudPathFilter.FullRowSelect = true;
+            this.lvOwnCloudPathFilter.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.lvOwnCloudPathFilter.HideSelection = false;
+            resources.ApplyResources(this.lvOwnCloudPathFilter, "lvOwnCloudPathFilter");
+            this.lvOwnCloudPathFilter.MultiSelect = false;
+            this.lvOwnCloudPathFilter.Name = "lvOwnCloudPathFilter";
+            this.lvOwnCloudPathFilter.UseCompatibleStateImageBehavior = false;
+            this.lvOwnCloudPathFilter.View = System.Windows.Forms.View.Details;
+            // 
+            // lblOwnCloudPathFilter
+            // 
+            resources.ApplyResources(this.lblOwnCloudPathFilter, "lblOwnCloudPathFilter");
+            this.lblOwnCloudPathFilter.Name = "lblOwnCloudPathFilter";
+            // 
+            // lvOwnCloudPathFilterPathColumn
+            // 
+            resources.ApplyResources(this.lvOwnCloudPathFilterPathColumn, "lvOwnCloudPathFilterPathColumn");
+            // 
+            // lvOwnCloudPathFilterFilterColumn
+            // 
+            resources.ApplyResources(this.lvOwnCloudPathFilterFilterColumn, "lvOwnCloudPathFilterFilterColumn");
+            // 
+            // btnOwnCloudPathFilterAdd
+            // 
+            resources.ApplyResources(this.btnOwnCloudPathFilterAdd, "btnOwnCloudPathFilterAdd");
+            this.btnOwnCloudPathFilterAdd.Name = "btnOwnCloudPathFilterAdd";
+            this.btnOwnCloudPathFilterAdd.UseVisualStyleBackColor = true;
+            // 
+            // btnOwnCloudPathFilterRemove
+            // 
+            resources.ApplyResources(this.btnOwnCloudPathFilterRemove, "btnOwnCloudPathFilterRemove");
+            this.btnOwnCloudPathFilterRemove.Name = "btnOwnCloudPathFilterRemove";
+            this.btnOwnCloudPathFilterRemove.UseVisualStyleBackColor = true;
+            // 
+            // txtOwnCloudPathFilterEditFilter
+            // 
+            resources.ApplyResources(this.txtOwnCloudPathFilterEditFilter, "txtOwnCloudPathFilterEditFilter");
+            this.txtOwnCloudPathFilterEditFilter.Name = "txtOwnCloudPathFilterEditFilter";
+            // 
+            // txtOwnCloudPathFilterEditPath
+            // 
+            resources.ApplyResources(this.txtOwnCloudPathFilterEditPath, "txtOwnCloudPathFilterEditPath");
+            this.txtOwnCloudPathFilterEditPath.Name = "txtOwnCloudPathFilterEditPath";
+            // 
+            // lblOwnCloudPathFilterEditFilter
+            // 
+            resources.ApplyResources(this.lblOwnCloudPathFilterEditFilter, "lblOwnCloudPathFilterEditFilter");
+            this.lblOwnCloudPathFilterEditFilter.Name = "lblOwnCloudPathFilterEditFilter";
+            // 
+            // lblOwnCloudPathFilterEditPath
+            // 
+            resources.ApplyResources(this.lblOwnCloudPathFilterEditPath, "lblOwnCloudPathFilterEditPath");
+            this.lblOwnCloudPathFilterEditPath.Name = "lblOwnCloudPathFilterEditPath";
+            // 
             // atcImgurAccountType
             // 
             resources.ApplyResources(this.atcImgurAccountType, "atcImgurAccountType");
@@ -5648,5 +5734,16 @@ namespace ShareX.UploadersLib
         private System.Windows.Forms.CheckBox cbGoogleCloudStorageStripExtensionImage;
         private System.Windows.Forms.Label lblB2UrlPreview;
         private HelpersLib.TabToTreeView tttvMain;
+        private System.Windows.Forms.CheckBox cbOwnCloudPathFilter;
+        private HelpersLib.MyListView lvOwnCloudPathFilter;
+        private System.Windows.Forms.Label lblOwnCloudPathFilter;
+        private System.Windows.Forms.ColumnHeader lvOwnCloudPathFilterPathColumn;
+        private System.Windows.Forms.ColumnHeader lvOwnCloudPathFilterFilterColumn;
+        private System.Windows.Forms.Button btnOwnCloudPathFilterRemove;
+        private System.Windows.Forms.Button btnOwnCloudPathFilterAdd;
+        private System.Windows.Forms.TextBox txtOwnCloudPathFilterEditFilter;
+        private System.Windows.Forms.TextBox txtOwnCloudPathFilterEditPath;
+        private System.Windows.Forms.Label lblOwnCloudPathFilterEditFilter;
+        private System.Windows.Forms.Label lblOwnCloudPathFilterEditPath;
     }
 }

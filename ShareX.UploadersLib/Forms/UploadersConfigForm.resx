@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -6695,6 +6695,288 @@ when you made the application key.</value>
   <data name="&gt;&gt;tpMega.ZOrder" xml:space="preserve">
     <value>11</value>
   </data>
+  <data name="txtOwnCloudPathFilterEditFilter.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="txtOwnCloudPathFilterEditFilter.Location" type="System.Drawing.Point, System.Drawing">
+    <value>382, 474</value>
+  </data>
+  <data name="txtOwnCloudPathFilterEditFilter.Size" type="System.Drawing.Size, System.Drawing">
+    <value>346, 20</value>
+  </data>
+  <data name="txtOwnCloudPathFilterEditFilter.TabIndex" type="System.Int32, mscorlib">
+    <value>29</value>
+  </data>
+  <data name="txtOwnCloudPathFilterEditFilter.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;txtOwnCloudPathFilterEditFilter.Name" xml:space="preserve">
+    <value>txtOwnCloudPathFilterEditFilter</value>
+  </data>
+  <data name="&gt;&gt;txtOwnCloudPathFilterEditFilter.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtOwnCloudPathFilterEditFilter.Parent" xml:space="preserve">
+    <value>tpOwnCloud</value>
+  </data>
+  <data name="&gt;&gt;txtOwnCloudPathFilterEditFilter.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="txtOwnCloudPathFilterEditPath.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="txtOwnCloudPathFilterEditPath.Location" type="System.Drawing.Point, System.Drawing">
+    <value>382, 426</value>
+  </data>
+  <data name="txtOwnCloudPathFilterEditPath.Size" type="System.Drawing.Size, System.Drawing">
+    <value>346, 20</value>
+  </data>
+  <data name="txtOwnCloudPathFilterEditPath.TabIndex" type="System.Int32, mscorlib">
+    <value>28</value>
+  </data>
+  <data name="txtOwnCloudPathFilterEditPath.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;txtOwnCloudPathFilterEditPath.Name" xml:space="preserve">
+    <value>txtOwnCloudPathFilterEditPath</value>
+  </data>
+  <data name="&gt;&gt;txtOwnCloudPathFilterEditPath.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtOwnCloudPathFilterEditPath.Parent" xml:space="preserve">
+    <value>tpOwnCloud</value>
+  </data>
+  <data name="&gt;&gt;txtOwnCloudPathFilterEditPath.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="lblOwnCloudPathFilterEditFilter.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblOwnCloudPathFilterEditFilter.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblOwnCloudPathFilterEditFilter.Location" type="System.Drawing.Point, System.Drawing">
+    <value>379, 458</value>
+  </data>
+  <data name="lblOwnCloudPathFilterEditFilter.Size" type="System.Drawing.Size, System.Drawing">
+    <value>32, 13</value>
+  </data>
+  <data name="lblOwnCloudPathFilterEditFilter.TabIndex" type="System.Int32, mscorlib">
+    <value>27</value>
+  </data>
+  <data name="lblOwnCloudPathFilterEditFilter.Text" xml:space="preserve">
+    <value>Filter:</value>
+  </data>
+  <data name="lblOwnCloudPathFilterEditFilter.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;lblOwnCloudPathFilterEditFilter.Name" xml:space="preserve">
+    <value>lblOwnCloudPathFilterEditFilter</value>
+  </data>
+  <data name="&gt;&gt;lblOwnCloudPathFilterEditFilter.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblOwnCloudPathFilterEditFilter.Parent" xml:space="preserve">
+    <value>tpOwnCloud</value>
+  </data>
+  <data name="&gt;&gt;lblOwnCloudPathFilterEditFilter.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="lblOwnCloudPathFilterEditPath.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblOwnCloudPathFilterEditPath.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblOwnCloudPathFilterEditPath.Location" type="System.Drawing.Point, System.Drawing">
+    <value>379, 410</value>
+  </data>
+  <data name="lblOwnCloudPathFilterEditPath.Size" type="System.Drawing.Size, System.Drawing">
+    <value>32, 13</value>
+  </data>
+  <data name="lblOwnCloudPathFilterEditPath.TabIndex" type="System.Int32, mscorlib">
+    <value>26</value>
+  </data>
+  <data name="lblOwnCloudPathFilterEditPath.Text" xml:space="preserve">
+    <value>Path:</value>
+  </data>
+  <data name="lblOwnCloudPathFilterEditPath.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;lblOwnCloudPathFilterEditPath.Name" xml:space="preserve">
+    <value>lblOwnCloudPathFilterEditPath</value>
+  </data>
+  <data name="&gt;&gt;lblOwnCloudPathFilterEditPath.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblOwnCloudPathFilterEditPath.Parent" xml:space="preserve">
+    <value>tpOwnCloud</value>
+  </data>
+  <data name="&gt;&gt;lblOwnCloudPathFilterEditPath.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="btnOwnCloudPathFilterRemove.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="btnOwnCloudPathFilterRemove.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnOwnCloudPathFilterRemove.Location" type="System.Drawing.Point, System.Drawing">
+    <value>734, 205</value>
+  </data>
+  <data name="btnOwnCloudPathFilterRemove.Size" type="System.Drawing.Size, System.Drawing">
+    <value>23, 23</value>
+  </data>
+  <data name="btnOwnCloudPathFilterRemove.TabIndex" type="System.Int32, mscorlib">
+    <value>25</value>
+  </data>
+  <data name="btnOwnCloudPathFilterRemove.Text" xml:space="preserve">
+    <value>-</value>
+  </data>
+  <data name="btnOwnCloudPathFilterRemove.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;btnOwnCloudPathFilterRemove.Name" xml:space="preserve">
+    <value>btnOwnCloudPathFilterRemove</value>
+  </data>
+  <data name="&gt;&gt;btnOwnCloudPathFilterRemove.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnOwnCloudPathFilterRemove.Parent" xml:space="preserve">
+    <value>tpOwnCloud</value>
+  </data>
+  <data name="&gt;&gt;btnOwnCloudPathFilterRemove.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="btnOwnCloudPathFilterAdd.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnOwnCloudPathFilterAdd.Location" type="System.Drawing.Point, System.Drawing">
+    <value>734, 176</value>
+  </data>
+  <data name="btnOwnCloudPathFilterAdd.Size" type="System.Drawing.Size, System.Drawing">
+    <value>23, 23</value>
+  </data>
+  <data name="btnOwnCloudPathFilterAdd.TabIndex" type="System.Int32, mscorlib">
+    <value>24</value>
+  </data>
+  <data name="btnOwnCloudPathFilterAdd.Text" xml:space="preserve">
+    <value>+</value>
+  </data>
+  <data name="btnOwnCloudPathFilterAdd.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;btnOwnCloudPathFilterAdd.Name" xml:space="preserve">
+    <value>btnOwnCloudPathFilterAdd</value>
+  </data>
+  <data name="&gt;&gt;btnOwnCloudPathFilterAdd.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnOwnCloudPathFilterAdd.Parent" xml:space="preserve">
+    <value>tpOwnCloud</value>
+  </data>
+  <data name="&gt;&gt;btnOwnCloudPathFilterAdd.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="lblOwnCloudPathFilter.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblOwnCloudPathFilter.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblOwnCloudPathFilter.Location" type="System.Drawing.Point, System.Drawing">
+    <value>379, 160</value>
+  </data>
+  <data name="lblOwnCloudPathFilter.Size" type="System.Drawing.Size, System.Drawing">
+    <value>54, 13</value>
+  </data>
+  <data name="lblOwnCloudPathFilter.TabIndex" type="System.Int32, mscorlib">
+    <value>23</value>
+  </data>
+  <data name="lblOwnCloudPathFilter.Text" xml:space="preserve">
+    <value>Path filter:</value>
+  </data>
+  <data name="lblOwnCloudPathFilter.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;lblOwnCloudPathFilter.Name" xml:space="preserve">
+    <value>lblOwnCloudPathFilter</value>
+  </data>
+  <data name="&gt;&gt;lblOwnCloudPathFilter.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblOwnCloudPathFilter.Parent" xml:space="preserve">
+    <value>tpOwnCloud</value>
+  </data>
+  <data name="&gt;&gt;lblOwnCloudPathFilter.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="lvOwnCloudPathFilterPathColumn.Text" xml:space="preserve">
+    <value>Path</value>
+  </data>
+  <data name="lvOwnCloudPathFilterPathColumn.Width" type="System.Int32, mscorlib">
+    <value>150</value>
+  </data>
+  <data name="lvOwnCloudPathFilterFilterColumn.Text" xml:space="preserve">
+    <value>Filter</value>
+  </data>
+  <data name="lvOwnCloudPathFilterFilterColumn.Width" type="System.Int32, mscorlib">
+    <value>150</value>
+  </data>
+  <data name="lvOwnCloudPathFilter.Location" type="System.Drawing.Point, System.Drawing">
+    <value>382, 176</value>
+  </data>
+  <data name="lvOwnCloudPathFilter.Size" type="System.Drawing.Size, System.Drawing">
+    <value>346, 221</value>
+  </data>
+  <data name="lvOwnCloudPathFilter.TabIndex" type="System.Int32, mscorlib">
+    <value>22</value>
+  </data>
+  <data name="lvOwnCloudPathFilter.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;lvOwnCloudPathFilter.Name" xml:space="preserve">
+    <value>lvOwnCloudPathFilter</value>
+  </data>
+  <data name="&gt;&gt;lvOwnCloudPathFilter.Type" xml:space="preserve">
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=13.1.1.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;lvOwnCloudPathFilter.Parent" xml:space="preserve">
+    <value>tpOwnCloud</value>
+  </data>
+  <data name="&gt;&gt;lvOwnCloudPathFilter.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="cbOwnCloudPathFilter.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbOwnCloudPathFilter.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="cbOwnCloudPathFilter.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 380</value>
+  </data>
+  <data name="cbOwnCloudPathFilter.Size" type="System.Drawing.Size, System.Drawing">
+    <value>105, 17</value>
+  </data>
+  <data name="cbOwnCloudPathFilter.TabIndex" type="System.Int32, mscorlib">
+    <value>21</value>
+  </data>
+  <data name="cbOwnCloudPathFilter.Text" xml:space="preserve">
+    <value>Enable path filter</value>
+  </data>
+  <data name="&gt;&gt;cbOwnCloudPathFilter.Name" xml:space="preserve">
+    <value>cbOwnCloudPathFilter</value>
+  </data>
+  <data name="&gt;&gt;cbOwnCloudPathFilter.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbOwnCloudPathFilter.Parent" xml:space="preserve">
+    <value>tpOwnCloud</value>
+  </data>
+  <data name="&gt;&gt;cbOwnCloudPathFilter.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
   <data name="txtOwnCloudExpiryTime.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 224</value>
   </data>
@@ -7020,13 +7302,13 @@ when you made the application key.</value>
     <value>13, 160</value>
   </data>
   <data name="lblOwnCloudPath.Size" type="System.Drawing.Size, System.Drawing">
-    <value>32, 13</value>
+    <value>75, 13</value>
   </data>
   <data name="lblOwnCloudPath.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
   <data name="lblOwnCloudPath.Text" xml:space="preserve">
-    <value>Path:</value>
+    <value>Common path:</value>
   </data>
   <data name="&gt;&gt;lblOwnCloudPath.Name" xml:space="preserve">
     <value>lblOwnCloudPath</value>
@@ -15049,6 +15331,18 @@ Using an encrypted library disables sharing.</value>
     <value>chPicasaDescription</value>
   </data>
   <data name="&gt;&gt;chPicasaDescription.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lvOwnCloudPathFilterPathColumn.Name" xml:space="preserve">
+    <value>lvOwnCloudPathFilterPathColumn</value>
+  </data>
+  <data name="&gt;&gt;lvOwnCloudPathFilterPathColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lvOwnCloudPathFilterFilterColumn.Name" xml:space="preserve">
+    <value>lvOwnCloudPathFilterFilterColumn</value>
+  </data>
+  <data name="&gt;&gt;lvOwnCloudPathFilterFilterColumn.Type" xml:space="preserve">
     <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
