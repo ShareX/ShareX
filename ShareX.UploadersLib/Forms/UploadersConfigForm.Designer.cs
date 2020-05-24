@@ -2529,6 +2529,7 @@ namespace ShareX.UploadersLib
             resources.ApplyResources(this.tpOwnCloud, "tpOwnCloud");
             this.tpOwnCloud.Name = "tpOwnCloud";
             // 
+            this.cbOwnCloudPathFilter.CheckedChanged += new System.EventHandler(this.cbOwnCloudPathFilter_CheckedChanged);
             // txtOwnCloudExpiryTime
             // 
             resources.ApplyResources(this.txtOwnCloudExpiryTime, "txtOwnCloudExpiryTime");
