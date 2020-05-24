@@ -950,6 +950,24 @@ namespace ShareX.UploadersLib
 
         #endregion Jira
 
+        #region ownCloud / Nextcloud
+
+        private void OwnCloudSavePathFilters()
+        {
+            Config.OwnCloudPathFilter.Clear();
+
+            foreach (ListViewItem item in lvOwnCloudPathFilter.Items)
+            {
+                Config.OwnCloudPathFilter.Add(new OwnCloud.OwnCloudPathFilterItem()
+                {
+                    Path = item.Text,
+                    Filter = item.SubItems[1].Text
+                });
+            }
+        }
+
+        #endregion ownCloud / Nextcloud
+
         #region Shared folder
 
         private void SharedFolderUpdateControls()

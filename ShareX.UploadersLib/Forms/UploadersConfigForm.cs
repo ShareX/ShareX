@@ -2343,20 +2343,6 @@ namespace ShareX.UploadersLib
             OwnCloudSavePathFilters();
         }
 
-        private void OwnCloudSavePathFilters()
-        {
-            Config.OwnCloudPathFilter.Clear();
-
-            foreach (ListViewItem item in lvOwnCloudPathFilter.Items)
-            {
-                Config.OwnCloudPathFilter.Add(new OwnCloud.OwnCloudPathFilterItem()
-                {
-                    Path = item.Text,
-                    Filter = item.SubItems[1].Text
-                });
-            }
-        }
-
         private void lvOwnCloudPathFilter_SelectedIndexChanged(object sender, EventArgs e)
         {
             btnOwnCloudPathFilterRemove.Enabled = lvOwnCloudPathFilter.SelectedIndex >= 0;
