@@ -6824,6 +6824,9 @@ when you made the application key.</value>
   <data name="&gt;&gt;btnOwnCloudPathFilterSortUp.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="btnOwnCloudPathFilterEditSave.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="txtOwnCloudPathFilterEditFilter.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
