@@ -29,6 +29,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
+using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -187,11 +188,18 @@ namespace ShareX.HelpersLib
             string tempFilePath = filePath + ".temp";
             fallbackFilePaths.Add(tempFilePath);
 
-            if (!string.IsNullOrEmpty(backupFolder))
+            if (!string.IsNullOrEmpty(backupFolder) && Directory.Exists(backupFolder))
             {
                 string fileName = Path.GetFileName(filePath);
                 string backupFilePath = Path.Combine(backupFolder, fileName);
                 fallbackFilePaths.Add(backupFilePath);
+
+                string fileNameNoExt = Path.GetFileNameWithoutExtension(fileName);
+                string lastWeeklyBackupFilePath = Directory.GetFiles(backupFolder, fileNameNoExt + "-*").OrderBy(x => x).LastOrDefault();
+                if (!string.IsNullOrEmpty(lastWeeklyBackupFilePath))
+                {
+                    fallbackFilePaths.Add(lastWeeklyBackupFilePath);
+                }
             }
 
             T setting = LoadInternal(filePath, fallbackFilePaths);
