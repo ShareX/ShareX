@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using FluentFTP;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using ShareX.HelpersLib;
@@ -146,16 +147,19 @@ namespace ShareX.UploadersLib.FileUploaders
             {
                 foreach (OwnCloudPathFilterItem pathFilter in PathFilters)
                 {
-                    Match filterMatch = Regex.Match(fileName, pathFilter.Filter);
-
-                    if (filterMatch.Success)
+                    if (pathFilter.Filter.IsValidRegEx())
                     {
-                        string uploadPath = pathFilter.Path;
+                        Match filterMatch = Regex.Match(fileName, pathFilter.Filter);
 
-                        for (int i = 0; i < filterMatch.Groups.Count; i++)
-                            uploadPath = uploadPath.Replace($"%{i}", filterMatch.Groups[i].Value);
+                        if (filterMatch.Success)
+                        {
+                            string uploadPath = pathFilter.Path;
 
-                        return uploadPath;
+                            for (int i = 0; i < filterMatch.Groups.Count; i++)
+                                uploadPath = uploadPath.Replace($"%{i}", filterMatch.Groups[i].Value);
+
+                            return uploadPath;
+                        }
                     }
                 }
             }
