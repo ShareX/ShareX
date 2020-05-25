@@ -54,6 +54,7 @@ namespace ShareX.UploadersLib.FileUploaders
         {
             return new OwnCloud(config.OwnCloudHost, config.OwnCloudUsername, config.OwnCloudPassword)
             {
+                EncryptPassword = config.OwnCloudEncryptPassword,
                 Path = config.OwnCloudPath,
                 CreateShare = config.OwnCloudCreateShare,
                 DirectLink = config.OwnCloudDirectLink,
@@ -75,6 +76,7 @@ namespace ShareX.UploadersLib.FileUploaders
         public string Host { get; set; }
         public string Username { get; set; }
         public string Password { get; set; }
+        public bool EncryptPassword { get; set; }
         public string Path { get; set; }
         public int AutoExpireTime { get; set; }
         public bool CreateShare { get; set; }
@@ -121,7 +123,7 @@ namespace ShareX.UploadersLib.FileUploaders
             string url = URLHelpers.CombineURL(Host, "remote.php/webdav", encodedPath);
             url = URLHelpers.FixPrefix(url);
 
-            NameValueCollection headers = RequestHelpers.CreateAuthenticationHeader(Username, Password);
+            NameValueCollection headers = RequestHelpers.CreateAuthenticationHeader(Username, EncryptPassword ? Password.DPAPIUnprotectAndBase64() : Password);
             headers["OCS-APIREQUEST"] = "true";
 
             // Check if folder exists and if not create it
@@ -164,7 +166,7 @@ namespace ShareX.UploadersLib.FileUploaders
                 if (CreateShare)
                 {
                     AllowReportProgress = false;
-                    result.URL = ShareFile(path);
+                    result.URL = ShareFile(path, headers);
                 }
                 else
                 {
@@ -220,7 +222,7 @@ namespace ShareX.UploadersLib.FileUploaders
         }
 
         // https://doc.owncloud.org/server/10.0/developer_manual/core/ocs-share-api.html#create-a-new-share
-        public string ShareFile(string path)
+        public string ShareFile(string path, NameValueCollection headers)
         {
             Dictionary<string, string> args = new Dictionary<string, string>();
             args.Add("path", path); // path to the file/folder which should be shared
@@ -252,9 +254,6 @@ namespace ShareX.UploadersLib.FileUploaders
 
             string url = URLHelpers.CombineURL(Host, "ocs/v1.php/apps/files_sharing/api/v1/shares?format=json");
             url = URLHelpers.FixPrefix(url);
-
-            NameValueCollection headers = RequestHelpers.CreateAuthenticationHeader(Username, Password);
-            headers["OCS-APIREQUEST"] = "true";
 
             string response = SendRequestMultiPart(url, args, headers);
 

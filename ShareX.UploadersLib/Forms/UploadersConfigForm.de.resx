@@ -765,4 +765,7 @@ Das Benutzen einer verschlüsselten Bibliothek deaktiviert das Teilen.</value>
   <data name="cbOwnCloudCreateFolderIfNonExistent.Text" xml:space="preserve">
     <value>Ordner automatisch erstellen, wenn er nicht existiert</value>
   </data>
+  <data name="cbOwnCloudEncryptPassword.Text" xml:space="preserve">
+    <value>Passwort in der Einstellungsdatei verschlüsseln</value>
+  </data>
 </root>

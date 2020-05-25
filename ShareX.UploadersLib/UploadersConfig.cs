@@ -288,6 +288,7 @@ namespace ShareX.UploadersLib
         public string OwnCloudHost = "";
         public string OwnCloudUsername = "";
         public string OwnCloudPassword = "";
+        public bool OwnCloudEncryptPassword = false;
         public string OwnCloudPath = "/";
         public int OwnCloudExpiryTime = 7;
         public bool OwnCloudCreateShare = true;
@@ -303,8 +304,8 @@ namespace ShareX.UploadersLib
             new OwnCloud.OwnCloudPathFilterItem() { Path = "/Share/Audio", Filter = "\\.(3gp|aa|aa3|aac|aax|aiff|flac|m4a|mp3|ogg|oga|opus|tta|wav|wma)$" },
             new OwnCloud.OwnCloudPathFilterItem() { Path = "/Share/Documents", Filter = "\\.(doc|docm|docx|pages|pdf|ppt|pptx|latex|odp|ods|odt|rtf|tex|xls|xlsx)$" },
             new OwnCloud.OwnCloudPathFilterItem() { Path = "/Share/Images", Filter = "\\.(ai|bmp|dds|eps|gif|ico|jpg|jpeg|png|psd|svg|tga|tiff)$" },
-            new OwnCloud.OwnCloudPathFilterItem() { Path = "/Share/Text", Filter = "\\.(bat|c|cfg|cpp|cs|csv|h|hh|hpp|ini|java|js|log|lua|md|pl|py|rb|sh|txt|vb|xml)$" },
-            new OwnCloud.OwnCloudPathFilterItem() { Path = "/Share/Videos", Filter = "\\.(3g2|3gp|amv|asf|avi|flv|m4v|mkv|mov|mp4||mpg|mpeg|ogv|webm|wmv)$" },
+            new OwnCloud.OwnCloudPathFilterItem() { Path = "/Share/Text", Filter = "\\.(bat|c|cfg|cpp|cs|csv|h|hh|hpp|htm|html|ini|java|js|log|lua|md|php|pl|py|rb|sh|txt|vb|xml)$" },
+            new OwnCloud.OwnCloudPathFilterItem() { Path = "/Share/Videos", Filter = "\\.(3g2|3gp|amv|asf|avi|flv|m4v|mkv|mov|mp4|mpg|mpeg|ogv|webm|wmv)$" },
         };
 
         #endregion ownCloud / Nextcloud
