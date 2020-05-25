@@ -436,7 +436,7 @@ Das Benutzen einer verschlüsselten Bibliothek deaktiviert das Teilen.</value>
     <value>Benutze langen Link, der den Dateinamen beinhaltet</value>
   </data>
   <data name="lblOwnCloudHost.Text" xml:space="preserve">
-    <value>Host:</value>
+    <value>Server-Addresse:</value>
   </data>
   <data name="lblOwnCloudUsername.Text" xml:space="preserve">
     <value>Benutzername:</value>
@@ -448,13 +448,13 @@ Das Benutzen einer verschlüsselten Bibliothek deaktiviert das Teilen.</value>
     <value>Allgemeiner Pfad:</value>
   </data>
   <data name="cbOwnCloudCreateShare.Text" xml:space="preserve">
-    <value>Erstelle teilbare URL</value>
+    <value>Teilbaren Link erstellen</value>
   </data>
   <data name="cbOwnCloudDirectLink.Text" xml:space="preserve">
     <value>Direkter Link (Fügt "&amp;download" zur URL hinzu)</value>
   </data>
   <data name="cbOwnCloud81Compatibility.Text" xml:space="preserve">
-    <value>ownCloud 8.1+ Unterstützung</value>
+    <value>Unterstützung für OwnCloud 8.1+</value>
   </data>
   <data name="lblMegaPassword.Text" xml:space="preserve">
     <value>Passwort:</value>
@@ -760,7 +760,7 @@ Das Benutzen einer verschlüsselten Bibliothek deaktiviert das Teilen.</value>
     <value>Ablaufzeit des geteilten Links (in Tagen):</value>
   </data>
   <data name="lblOwnCloudHostExample.Text" xml:space="preserve">
-    <value>Beispiel: http://example.com/owncloud</value>
+    <value>Beispiel: http://meine-webseite.de/owncloud</value>
   </data>
   <data name="cbOwnCloudCreateFolderIfNonExistent.Text" xml:space="preserve">
     <value>Ordner automatisch erstellen, wenn er nicht existiert</value>
