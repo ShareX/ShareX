@@ -736,7 +736,7 @@ Das Benutzen einer verschlüsselten Bibliothek deaktiviert das Teilen.</value>
     <value>Pfadfilter:</value>
   </data>
   <data name="lblOwnCloudPathFilterEditFilter.Text" xml:space="preserve">
-    <value>Filter (getrennt durch Komma, z.B. "*.jpg, *.png, ..."):</value>
+    <value>Filter (der normale C# Regex kann hier genutzt werden):</value>
   </data>
   <data name="lblOwnCloudPathFilterEditPath.Text" xml:space="preserve">
     <value>Pfad:</value>
