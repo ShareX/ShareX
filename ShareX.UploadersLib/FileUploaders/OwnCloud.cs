@@ -1,4 +1,4 @@
-#region License Information (GPL v3)
+﻿#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -32,6 +32,7 @@ using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Drawing;
 using System.IO;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.FileUploaders
@@ -106,10 +107,12 @@ namespace ShareX.UploadersLib.FileUploaders
                 Path = "/";
             }
 
+            string uploadPath = GetUploadPath(Path, fileName);
+
             // Original, unencoded path. Necessary for shared files
-            string path = URLHelpers.CombineURL(Path, fileName);
+            string path = URLHelpers.CombineURL(uploadPath, fileName);
             // Encoded path, necessary when sent in the URL
-            string encodedPath = URLHelpers.CombineURL(Path, URLHelpers.URLEncode(fileName));
+            string encodedPath = URLHelpers.CombineURL(uploadPath, URLHelpers.URLEncode(fileName));
 
             string url = URLHelpers.CombineURL(Host, "remote.php/webdav", encodedPath);
             url = URLHelpers.FixPrefix(url);
@@ -135,6 +138,24 @@ namespace ShareX.UploadersLib.FileUploaders
             }
 
             return result;
+        }
+
+        private string GetUploadPath(string defaultPath, string fileName)
+        {
+            if (UsePathFilter)
+            {
+                foreach (OwnCloudPathFilterItem pathFilter in PathFilters)
+                {
+                    Match filterMatch = Regex.Match(fileName, pathFilter.Filter);
+
+                    if (filterMatch.Success)
+                    {
+                        return pathFilter.Path;
+                    }
+                }
+            }
+
+            return defaultPath;
         }
 
         // https://doc.owncloud.org/server/10.0/developer_manual/core/ocs-share-api.html#create-a-new-share
