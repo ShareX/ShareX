@@ -150,7 +150,12 @@ namespace ShareX.UploadersLib.FileUploaders
 
                     if (filterMatch.Success)
                     {
-                        return pathFilter.Path;
+                        string uploadPath = pathFilter.Path;
+
+                        for (int i = 0; i < filterMatch.Groups.Count; i++)
+                            uploadPath = uploadPath.Replace($"%{i}", filterMatch.Groups[i].Value);
+
+                        return uploadPath;
                     }
                 }
             }
