@@ -6695,35 +6695,71 @@ when you made the application key.</value>
   <data name="&gt;&gt;tpMega.ZOrder" xml:space="preserve">
     <value>11</value>
   </data>
-  <data name="btnOwnCloudPathFilterEditSave.Enabled" type="System.Boolean, mscorlib">
+  <data name="btnOwnCloudPathFilterSortDown.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="btnOwnCloudPathFilterEditSave.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="btnOwnCloudPathFilterSortDown.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="btnOwnCloudPathFilterEditSave.Location" type="System.Drawing.Point, System.Drawing">
-    <value>732, 473</value>
+  <data name="btnOwnCloudPathFilterSortDown.Location" type="System.Drawing.Point, System.Drawing">
+    <value>734, 374</value>
   </data>
-  <data name="btnOwnCloudPathFilterEditSave.Size" type="System.Drawing.Size, System.Drawing">
-    <value>65, 23</value>
+  <data name="btnOwnCloudPathFilterSortDown.Size" type="System.Drawing.Size, System.Drawing">
+    <value>23, 23</value>
   </data>
-  <data name="btnOwnCloudPathFilterEditSave.TabIndex" type="System.Int32, mscorlib">
-    <value>30</value>
+  <data name="btnOwnCloudPathFilterSortDown.TabIndex" type="System.Int32, mscorlib">
+    <value>31</value>
   </data>
-  <data name="btnOwnCloudPathFilterEditSave.Text" xml:space="preserve">
-    <value>Save</value>
+  <data name="btnOwnCloudPathFilterSortDown.Text" xml:space="preserve">
+    <value>˅</value>
   </data>
-  <data name="&gt;&gt;btnOwnCloudPathFilterEditSave.Name" xml:space="preserve">
-    <value>btnOwnCloudPathFilterEditSave</value>
+  <data name="btnOwnCloudPathFilterSortDown.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
-  <data name="&gt;&gt;btnOwnCloudPathFilterEditSave.Type" xml:space="preserve">
+  <data name="&gt;&gt;btnOwnCloudPathFilterSortDown.Name" xml:space="preserve">
+    <value>btnOwnCloudPathFilterSortDown</value>
+  </data>
+  <data name="&gt;&gt;btnOwnCloudPathFilterSortDown.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;btnOwnCloudPathFilterEditSave.Parent" xml:space="preserve">
+  <data name="&gt;&gt;btnOwnCloudPathFilterSortDown.Parent" xml:space="preserve">
     <value>tpOwnCloud</value>
   </data>
-  <data name="&gt;&gt;btnOwnCloudPathFilterEditSave.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;btnOwnCloudPathFilterSortDown.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="btnOwnCloudPathFilterSortUp.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="btnOwnCloudPathFilterSortUp.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnOwnCloudPathFilterSortUp.Location" type="System.Drawing.Point, System.Drawing">
+    <value>734, 345</value>
+  </data>
+  <data name="btnOwnCloudPathFilterSortUp.Size" type="System.Drawing.Size, System.Drawing">
+    <value>23, 23</value>
+  </data>
+  <data name="btnOwnCloudPathFilterSortUp.TabIndex" type="System.Int32, mscorlib">
+    <value>30</value>
+  </data>
+  <data name="btnOwnCloudPathFilterSortUp.Text" xml:space="preserve">
+    <value>˄</value>
+  </data>
+  <data name="btnOwnCloudPathFilterSortUp.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;btnOwnCloudPathFilterSortUp.Name" xml:space="preserve">
+    <value>btnOwnCloudPathFilterSortUp</value>
+  </data>
+  <data name="&gt;&gt;btnOwnCloudPathFilterSortUp.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnOwnCloudPathFilterSortUp.Parent" xml:space="preserve">
+    <value>tpOwnCloud</value>
+  </data>
+  <data name="&gt;&gt;btnOwnCloudPathFilterSortUp.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="txtOwnCloudPathFilterEditFilter.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -6750,7 +6786,7 @@ when you made the application key.</value>
     <value>tpOwnCloud</value>
   </data>
   <data name="&gt;&gt;txtOwnCloudPathFilterEditFilter.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>2</value>
   </data>
   <data name="txtOwnCloudPathFilterEditPath.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -6777,7 +6813,7 @@ when you made the application key.</value>
     <value>tpOwnCloud</value>
   </data>
   <data name="&gt;&gt;txtOwnCloudPathFilterEditPath.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="lblOwnCloudPathFilterEditFilter.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -6792,7 +6828,7 @@ when you made the application key.</value>
     <value>379, 458</value>
   </data>
   <data name="lblOwnCloudPathFilterEditFilter.Size" type="System.Drawing.Size, System.Drawing">
-    <value>32, 13</value>
+    <value>229, 13</value>
   </data>
   <data name="lblOwnCloudPathFilterEditFilter.TabIndex" type="System.Int32, mscorlib">
     <value>27</value>
@@ -6813,7 +6849,7 @@ when you made the application key.</value>
     <value>tpOwnCloud</value>
   </data>
   <data name="&gt;&gt;lblOwnCloudPathFilterEditFilter.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>4</value>
   </data>
   <data name="lblOwnCloudPathFilterEditPath.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -6849,7 +6885,7 @@ when you made the application key.</value>
     <value>tpOwnCloud</value>
   </data>
   <data name="&gt;&gt;lblOwnCloudPathFilterEditPath.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>5</value>
   </data>
   <data name="btnOwnCloudPathFilterRemove.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -6882,7 +6918,7 @@ when you made the application key.</value>
     <value>tpOwnCloud</value>
   </data>
   <data name="&gt;&gt;btnOwnCloudPathFilterRemove.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>6</value>
   </data>
   <data name="btnOwnCloudPathFilterAdd.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -6912,7 +6948,7 @@ when you made the application key.</value>
     <value>tpOwnCloud</value>
   </data>
   <data name="&gt;&gt;btnOwnCloudPathFilterAdd.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>7</value>
   </data>
   <data name="lblOwnCloudPathFilter.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -6945,7 +6981,7 @@ when you made the application key.</value>
     <value>tpOwnCloud</value>
   </data>
   <data name="&gt;&gt;lblOwnCloudPathFilter.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>8</value>
   </data>
   <data name="lvOwnCloudPathFilterPathColumn.Text" xml:space="preserve">
     <value>Path</value>
@@ -6981,7 +7017,7 @@ when you made the application key.</value>
     <value>tpOwnCloud</value>
   </data>
   <data name="&gt;&gt;lvOwnCloudPathFilter.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>9</value>
   </data>
   <data name="cbOwnCloudPathFilter.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -7011,7 +7047,7 @@ when you made the application key.</value>
     <value>tpOwnCloud</value>
   </data>
   <data name="&gt;&gt;cbOwnCloudPathFilter.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>10</value>
   </data>
   <data name="txtOwnCloudExpiryTime.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 224</value>
@@ -7032,7 +7068,7 @@ when you made the application key.</value>
     <value>tpOwnCloud</value>
   </data>
   <data name="&gt;&gt;txtOwnCloudExpiryTime.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>11</value>
   </data>
   <data name="cbOwnCloudAutoExpire.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -7062,7 +7098,7 @@ when you made the application key.</value>
     <value>tpOwnCloud</value>
   </data>
   <data name="&gt;&gt;cbOwnCloudAutoExpire.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>12</value>
   </data>
   <data name="lblOwnCloudExpiryTime.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -7092,7 +7128,7 @@ when you made the application key.</value>
     <value>tpOwnCloud</value>
   </data>
   <data name="&gt;&gt;lblOwnCloudExpiryTime.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>13</value>
   </data>
   <data name="cbOwnCloudUsePreviewLinks.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -7122,7 +7158,7 @@ when you made the application key.</value>
     <value>tpOwnCloud</value>
   </data>
   <data name="&gt;&gt;cbOwnCloudUsePreviewLinks.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>14</value>
   </data>
   <data name="lblOwnCloudHostExample.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -7152,7 +7188,7 @@ when you made the application key.</value>
     <value>tpOwnCloud</value>
   </data>
   <data name="&gt;&gt;lblOwnCloudHostExample.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>15</value>
   </data>
   <data name="cbOwnCloud81Compatibility.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -7182,7 +7218,7 @@ when you made the application key.</value>
     <value>tpOwnCloud</value>
   </data>
   <data name="&gt;&gt;cbOwnCloud81Compatibility.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>16</value>
   </data>
   <data name="cbOwnCloudDirectLink.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -7212,7 +7248,7 @@ when you made the application key.</value>
     <value>tpOwnCloud</value>
   </data>
   <data name="&gt;&gt;cbOwnCloudDirectLink.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>17</value>
   </data>
   <data name="cbOwnCloudCreateShare.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -7242,7 +7278,7 @@ when you made the application key.</value>
     <value>tpOwnCloud</value>
   </data>
   <data name="&gt;&gt;cbOwnCloudCreateShare.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>18</value>
   </data>
   <data name="txtOwnCloudPath.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 176</value>
@@ -7263,7 +7299,7 @@ when you made the application key.</value>
     <value>tpOwnCloud</value>
   </data>
   <data name="&gt;&gt;txtOwnCloudPath.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>19</value>
   </data>
   <data name="txtOwnCloudPassword.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 128</value>
@@ -7284,7 +7320,7 @@ when you made the application key.</value>
     <value>tpOwnCloud</value>
   </data>
   <data name="&gt;&gt;txtOwnCloudPassword.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>20</value>
   </data>
   <data name="txtOwnCloudUsername.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 80</value>
@@ -7305,7 +7341,7 @@ when you made the application key.</value>
     <value>tpOwnCloud</value>
   </data>
   <data name="&gt;&gt;txtOwnCloudUsername.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>21</value>
   </data>
   <data name="txtOwnCloudHost.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 32</value>
@@ -7326,7 +7362,7 @@ when you made the application key.</value>
     <value>tpOwnCloud</value>
   </data>
   <data name="&gt;&gt;txtOwnCloudHost.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>22</value>
   </data>
   <data name="lblOwnCloudPath.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -7356,7 +7392,7 @@ when you made the application key.</value>
     <value>tpOwnCloud</value>
   </data>
   <data name="&gt;&gt;lblOwnCloudPath.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>23</value>
   </data>
   <data name="lblOwnCloudPassword.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -7386,7 +7422,7 @@ when you made the application key.</value>
     <value>tpOwnCloud</value>
   </data>
   <data name="&gt;&gt;lblOwnCloudPassword.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>24</value>
   </data>
   <data name="lblOwnCloudUsername.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -7416,7 +7452,7 @@ when you made the application key.</value>
     <value>tpOwnCloud</value>
   </data>
   <data name="&gt;&gt;lblOwnCloudUsername.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>25</value>
   </data>
   <data name="lblOwnCloudHost.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -7446,16 +7482,16 @@ when you made the application key.</value>
     <value>tpOwnCloud</value>
   </data>
   <data name="&gt;&gt;lblOwnCloudHost.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>26</value>
   </data>
   <data name="tpOwnCloud.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 40</value>
+    <value>4, 58</value>
   </data>
   <data name="tpOwnCloud.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpOwnCloud.Size" type="System.Drawing.Size, System.Drawing">
-    <value>803, 519</value>
+    <value>803, 501</value>
   </data>
   <data name="tpOwnCloud.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
@@ -15249,6 +15285,30 @@ Using an encrypted library disables sharing.</value>
   <data name="&gt;&gt;tttvMain.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="btnOwnCloudPathFilterEditSave.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="btnOwnCloudPathFilterEditSave.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnOwnCloudPathFilterEditSave.Location" type="System.Drawing.Point, System.Drawing">
+    <value>732, 473</value>
+  </data>
+  <data name="btnOwnCloudPathFilterEditSave.Size" type="System.Drawing.Size, System.Drawing">
+    <value>65, 23</value>
+  </data>
+  <data name="btnOwnCloudPathFilterEditSave.TabIndex" type="System.Int32, mscorlib">
+    <value>30</value>
+  </data>
+  <data name="btnOwnCloudPathFilterEditSave.Text" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="&gt;&gt;btnOwnCloudPathFilterEditSave.Name" xml:space="preserve">
+    <value>btnOwnCloudPathFilterEditSave</value>
+  </data>
+  <data name="&gt;&gt;btnOwnCloudPathFilterEditSave.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="actRapidShareAccountType.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 16</value>
   </data>
@@ -15315,6 +15375,18 @@ Using an encrypted library disables sharing.</value>
   <data name="&gt;&gt;chBoxFoldersName.Type" xml:space="preserve">
     <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;lvOwnCloudPathFilterPathColumn.Name" xml:space="preserve">
+    <value>lvOwnCloudPathFilterPathColumn</value>
+  </data>
+  <data name="&gt;&gt;lvOwnCloudPathFilterPathColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lvOwnCloudPathFilterFilterColumn.Name" xml:space="preserve">
+    <value>lvOwnCloudPathFilterFilterColumn</value>
+  </data>
+  <data name="&gt;&gt;lvOwnCloudPathFilterFilterColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;colSeafileLibraryName.Name" xml:space="preserve">
     <value>colSeafileLibraryName</value>
   </data>
@@ -15367,18 +15439,6 @@ Using an encrypted library disables sharing.</value>
     <value>chPicasaDescription</value>
   </data>
   <data name="&gt;&gt;chPicasaDescription.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lvOwnCloudPathFilterPathColumn.Name" xml:space="preserve">
-    <value>lvOwnCloudPathFilterPathColumn</value>
-  </data>
-  <data name="&gt;&gt;lvOwnCloudPathFilterPathColumn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lvOwnCloudPathFilterFilterColumn.Name" xml:space="preserve">
-    <value>lvOwnCloudPathFilterFilterColumn</value>
-  </data>
-  <data name="&gt;&gt;lvOwnCloudPathFilterFilterColumn.Type" xml:space="preserve">
     <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">

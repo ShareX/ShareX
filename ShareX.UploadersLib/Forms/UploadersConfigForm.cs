@@ -2312,13 +2312,15 @@ namespace ShareX.UploadersLib
         {
             Config.OwnCloudUsePathFilter = cbOwnCloudPathFilter.Checked;
 
-            lblOwnCloudPathFilter.Visible = cbOwnCloudPathFilter.Checked;
-            lvOwnCloudPathFilter.Visible = cbOwnCloudPathFilter.Checked;
-            btnOwnCloudPathFilterAdd.Visible = cbOwnCloudPathFilter.Checked;
-            btnOwnCloudPathFilterRemove.Visible = cbOwnCloudPathFilter.Checked;
-            lblOwnCloudPathFilterEditPath.Visible = cbOwnCloudPathFilter.Checked;
-            txtOwnCloudPathFilterEditPath.Visible = cbOwnCloudPathFilter.Checked;
-            lblOwnCloudPathFilterEditFilter.Visible = cbOwnCloudPathFilter.Checked;
+            lblOwnCloudPathFilter.Visible =
+            lvOwnCloudPathFilter.Visible =
+            btnOwnCloudPathFilterAdd.Visible =
+            btnOwnCloudPathFilterRemove.Visible =
+            btnOwnCloudPathFilterSortUp.Visible =
+            btnOwnCloudPathFilterSortDown.Visible =
+            lblOwnCloudPathFilterEditPath.Visible =
+            txtOwnCloudPathFilterEditPath.Visible =
+            lblOwnCloudPathFilterEditFilter.Visible =
             txtOwnCloudPathFilterEditFilter.Visible = cbOwnCloudPathFilter.Checked;
         }
 
@@ -2343,9 +2345,33 @@ namespace ShareX.UploadersLib
             OwnCloudSavePathFilters();
         }
 
+        private void btnOwnCloudPathFilterSortUp_Click(object sender, EventArgs e)
+        {
+            OwnCloudSwapPathFilters(lvOwnCloudPathFilter.SelectedIndex, lvOwnCloudPathFilter.SelectedIndex - 1, true);
+
+            OwnCloudSavePathFilters();
+        }
+
+        private void btnOwnCloudPathFilterSortDown_Click(object sender, EventArgs e)
+        {
+            OwnCloudSwapPathFilters(lvOwnCloudPathFilter.SelectedIndex, lvOwnCloudPathFilter.SelectedIndex + 1, true);
+
+            OwnCloudSavePathFilters();
+        }
+
         private void lvOwnCloudPathFilter_SelectedIndexChanged(object sender, EventArgs e)
         {
-            btnOwnCloudPathFilterRemove.Enabled = lblOwnCloudPathFilterEditPath.Enabled = txtOwnCloudPathFilterEditPath.Enabled = lblOwnCloudPathFilterEditFilter.Enabled = txtOwnCloudPathFilterEditFilter.Enabled = btnOwnCloudPathFilterEditSave.Enabled = lvOwnCloudPathFilter.SelectedIndex >= 0;
+            btnOwnCloudPathFilterRemove.Enabled =
+            btnOwnCloudPathFilterSortUp.Enabled =
+            btnOwnCloudPathFilterSortDown.Enabled =
+            lblOwnCloudPathFilterEditPath.Enabled =
+            txtOwnCloudPathFilterEditPath.Enabled =
+            lblOwnCloudPathFilterEditFilter.Enabled =
+            txtOwnCloudPathFilterEditFilter.Enabled =
+            btnOwnCloudPathFilterEditSave.Enabled = lvOwnCloudPathFilter.SelectedIndex >= 0;
+
+            btnOwnCloudPathFilterSortUp.Enabled &= lvOwnCloudPathFilter.SelectedIndex > 0;
+            btnOwnCloudPathFilterSortDown.Enabled &= lvOwnCloudPathFilter.SelectedIndex < lvOwnCloudPathFilter.Items.Count - 1;
 
             if (txtOwnCloudPathFilterEditPath.Enabled)
             {

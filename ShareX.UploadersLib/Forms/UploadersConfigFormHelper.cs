@@ -966,6 +966,18 @@ namespace ShareX.UploadersLib
             }
         }
 
+        private void OwnCloudSwapPathFilters(int indexA, int indexB, bool selectIndexB)
+        {
+            ListViewItem selectedItem = lvOwnCloudPathFilter.Items[indexA];
+            lvOwnCloudPathFilter.Items.Remove(selectedItem);
+            lvOwnCloudPathFilter.Items.Insert(indexB, selectedItem);
+
+            if (selectIndexB)
+            {
+                lvOwnCloudPathFilter.Select(indexB);
+            }
+        }
+
         #endregion ownCloud / Nextcloud
 
         #region Shared folder
