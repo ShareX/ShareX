@@ -583,7 +583,7 @@ namespace ShareX.UploadersLib
             cbOwnCloudAutoExpire.Checked = Config.OwnCloudAutoExpire;
             cbOwnCloudPathFilter.Checked = Config.OwnCloudUsePathFilter;
 
-            foreach (OwnCloud.OwnCloudPathFilterItem pathFilterItem in Config.OwnCloudPathFilter)
+            foreach (OwnCloud.OwnCloudPathFilterItem pathFilterItem in Config.OwnCloudPathFilters)
             {
                 ListViewItem item = lvOwnCloudPathFilter.Items.Add(pathFilterItem.Path);
                 item.SubItems.Add(pathFilterItem.Filter);

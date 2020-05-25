@@ -1,4 +1,4 @@
-﻿#region License Information (GPL v3)
+#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -59,7 +59,7 @@ namespace ShareX.UploadersLib.FileUploaders
                 AutoExpireTime = config.OwnCloudExpiryTime,
                 AutoExpire = config.OwnCloudAutoExpire,
                 UsePathFilter = config.OwnCloudUsePathFilter,
-                PathFilter = config.OwnCloudPathFilter
+                PathFilters = config.OwnCloudPathFilters
             };
         }
 
@@ -79,14 +79,14 @@ namespace ShareX.UploadersLib.FileUploaders
         public bool IsCompatibility81 { get; set; }
         public bool AutoExpire { get; set; }
         public bool UsePathFilter { get; set; }
-        public List<OwnCloudPathFilterItem> PathFilter { get; set; }
+        public List<OwnCloudPathFilterItem> PathFilters { get; set; }
 
         public OwnCloud(string host, string username, string password)
         {
             Host = host;
             Username = username;
             Password = password;
-            PathFilter = new List<OwnCloudPathFilterItem>();
+            PathFilters = new List<OwnCloudPathFilterItem>();
         }
 
         public override UploadResult Upload(Stream stream, string fileName)

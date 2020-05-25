@@ -954,11 +954,11 @@ namespace ShareX.UploadersLib
 
         private void OwnCloudSavePathFilters()
         {
-            Config.OwnCloudPathFilter.Clear();
+            Config.OwnCloudPathFilters.Clear();
 
             foreach (ListViewItem item in lvOwnCloudPathFilter.Items)
             {
-                Config.OwnCloudPathFilter.Add(new OwnCloud.OwnCloudPathFilterItem()
+                Config.OwnCloudPathFilters.Add(new OwnCloud.OwnCloudPathFilterItem()
                 {
                     Path = item.Text,
                     Filter = item.SubItems[1].Text
