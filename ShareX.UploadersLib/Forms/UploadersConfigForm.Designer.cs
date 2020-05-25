@@ -2506,6 +2506,7 @@ namespace ShareX.UploadersLib
             this.tpOwnCloud.BackColor = System.Drawing.SystemColors.Window;
             this.tpOwnCloud.Controls.Add(this.btnOwnCloudPathFilterSortDown);
             this.tpOwnCloud.Controls.Add(this.btnOwnCloudPathFilterSortUp);
+            this.tpOwnCloud.Controls.Add(this.btnOwnCloudPathFilterEditSave);
             this.tpOwnCloud.Controls.Add(this.txtOwnCloudPathFilterEditFilter);
             this.tpOwnCloud.Controls.Add(this.txtOwnCloudPathFilterEditPath);
             this.tpOwnCloud.Controls.Add(this.lblOwnCloudPathFilterEditFilter);
