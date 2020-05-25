@@ -640,6 +640,7 @@ namespace ShareX.UploadersLib
             this.oauthTeknik = new ShareX.UploadersLib.OAuthControl();
             this.oauth2YouTube = new ShareX.UploadersLib.OAuthControl();
             this.actRapidShareAccountType = new ShareX.UploadersLib.AccountTypeControl();
+            this.cbOwnCloudCreateFolderIfNonExistent = new System.Windows.Forms.CheckBox();
             this.tpOtherUploaders.SuspendLayout();
             this.tcOtherUploaders.SuspendLayout();
             this.tpTwitter.SuspendLayout();
@@ -2455,6 +2456,7 @@ namespace ShareX.UploadersLib
             // tpOwnCloud
             // 
             this.tpOwnCloud.BackColor = System.Drawing.SystemColors.Window;
+            this.tpOwnCloud.Controls.Add(this.cbOwnCloudCreateFolderIfNonExistent);
             this.tpOwnCloud.Controls.Add(this.lblOwnCloudPathFilterInvalid);
             this.tpOwnCloud.Controls.Add(this.btnOwnCloudPathFilterSortDown);
             this.tpOwnCloud.Controls.Add(this.btnOwnCloudPathFilterSortUp);
@@ -5035,6 +5037,13 @@ namespace ShareX.UploadersLib
             this.actRapidShareAccountType.Name = "actRapidShareAccountType";
             this.actRapidShareAccountType.SelectedAccountType = ShareX.UploadersLib.AccountType.Anonymous;
             // 
+            // cbOwnCloudCreateFolderIfNonExistent
+            // 
+            resources.ApplyResources(this.cbOwnCloudCreateFolderIfNonExistent, "cbOwnCloudCreateFolderIfNonExistent");
+            this.cbOwnCloudCreateFolderIfNonExistent.Name = "cbOwnCloudCreateFolderIfNonExistent";
+            this.cbOwnCloudCreateFolderIfNonExistent.UseVisualStyleBackColor = true;
+            this.cbOwnCloudCreateFolderIfNonExistent.CheckedChanged += new System.EventHandler(this.cbOwnCloudCreateFolderIfNonExistent_CheckedChanged);
+            // 
             // UploadersConfigForm
             // 
             resources.ApplyResources(this, "$this");
@@ -5789,5 +5798,6 @@ namespace ShareX.UploadersLib
         private System.Windows.Forms.Button btnOwnCloudPathFilterSortDown;
         private System.Windows.Forms.Button btnOwnCloudPathFilterSortUp;
         private System.Windows.Forms.Label lblOwnCloudPathFilterInvalid;
+        private System.Windows.Forms.CheckBox cbOwnCloudCreateFolderIfNonExistent;
     }
 }

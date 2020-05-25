@@ -6695,6 +6695,36 @@ when you made the application key.</value>
   <data name="&gt;&gt;tpMega.ZOrder" xml:space="preserve">
     <value>11</value>
   </data>
+  <data name="cbOwnCloudCreateFolderIfNonExistent.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbOwnCloudCreateFolderIfNonExistent.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="cbOwnCloudCreateFolderIfNonExistent.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 380</value>
+  </data>
+  <data name="cbOwnCloudCreateFolderIfNonExistent.Size" type="System.Drawing.Size, System.Drawing">
+    <value>163, 17</value>
+  </data>
+  <data name="cbOwnCloudCreateFolderIfNonExistent.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="cbOwnCloudCreateFolderIfNonExistent.Text" xml:space="preserve">
+    <value>Create folder if it doesn't exist</value>
+  </data>
+  <data name="&gt;&gt;cbOwnCloudCreateFolderIfNonExistent.Name" xml:space="preserve">
+    <value>cbOwnCloudCreateFolderIfNonExistent</value>
+  </data>
+  <data name="&gt;&gt;cbOwnCloudCreateFolderIfNonExistent.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbOwnCloudCreateFolderIfNonExistent.Parent" xml:space="preserve">
+    <value>tpOwnCloud</value>
+  </data>
+  <data name="&gt;&gt;cbOwnCloudCreateFolderIfNonExistent.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="lblOwnCloudPathFilterInvalid.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -7062,7 +7092,7 @@ when you made the application key.</value>
     <value>NoControl</value>
   </data>
   <data name="cbOwnCloudPathFilter.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 380</value>
+    <value>16, 403</value>
   </data>
   <data name="cbOwnCloudPathFilter.Size" type="System.Drawing.Size, System.Drawing">
     <value>105, 17</value>

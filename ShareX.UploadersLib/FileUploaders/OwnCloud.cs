@@ -33,6 +33,7 @@ using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Drawing;
 using System.IO;
+using System.Linq;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
@@ -60,6 +61,7 @@ namespace ShareX.UploadersLib.FileUploaders
                 IsCompatibility81 = config.OwnCloud81Compatibility,
                 AutoExpireTime = config.OwnCloudExpiryTime,
                 AutoExpire = config.OwnCloudAutoExpire,
+                CreateFolderOfNonExistent = config.OwnCloudCreateFolderOfNonExistent,
                 UsePathFilter = config.OwnCloudUsePathFilter,
                 PathFilters = config.OwnCloudPathFilters
             };
@@ -80,6 +82,7 @@ namespace ShareX.UploadersLib.FileUploaders
         public bool PreviewLink { get; set; }
         public bool IsCompatibility81 { get; set; }
         public bool AutoExpire { get; set; }
+        public bool CreateFolderOfNonExistent { get; set; }
         public bool UsePathFilter { get; set; }
         public List<OwnCloudPathFilterItem> PathFilters { get; set; }
 
@@ -120,6 +123,37 @@ namespace ShareX.UploadersLib.FileUploaders
 
             NameValueCollection headers = RequestHelpers.CreateAuthenticationHeader(Username, Password);
             headers["OCS-APIREQUEST"] = "true";
+
+            // Check if folder exists and if not create it
+            AllowReportProgress = false;
+
+            if (CreateFolderOfNonExistent)
+            {
+                string[] pathParts = uploadPath.Split('/');
+                int i = pathParts.Length - 1;
+                bool foldersMissing = false;
+
+                string pathToCreate = pathParts.Take(i + 1).ToArray().Join("/");
+
+                // Go backwards to the first folder that exists
+                while (i > 0 && !FolderExists(pathToCreate, headers))
+                {
+                    i--;
+                    foldersMissing = true;
+                    pathToCreate = pathParts.Take(i + 1).ToArray().Join("/");
+                }
+
+                // Create all non existent folders
+                while (foldersMissing && i < pathParts.Length)
+                {
+                    i++;
+                    pathToCreate = pathParts.Take(i + 1).ToArray().Join("/");
+                    CreateFolder(pathToCreate, headers);
+                }
+            }
+
+            // Upload file
+            AllowReportProgress = true;
 
             string response = SendRequest(HttpMethod.PUT, url, stream, RequestHelpers.GetMimeType(fileName), null, headers);
 
@@ -165,6 +199,24 @@ namespace ShareX.UploadersLib.FileUploaders
             }
 
             return defaultPath;
+        }
+
+        public bool FolderExists(string uploadPath, NameValueCollection headers)
+        {
+            string folderUrl = URLHelpers.CombineURL(Host, "remote.php/webdav", uploadPath);
+            folderUrl = URLHelpers.FixPrefix(folderUrl);
+
+            string folderExistsResponse = SendRequest(HttpMethod.PROPFIND, folderUrl, null, headers, null);
+
+            return !string.IsNullOrWhiteSpace(folderExistsResponse);
+        }
+
+        public void CreateFolder(string uploadPath, NameValueCollection headers)
+        {
+            string folderUrl = URLHelpers.CombineURL(Host, "remote.php/webdav", uploadPath);
+            folderUrl = URLHelpers.FixPrefix(folderUrl);
+
+            string folderCreateResponse = SendRequest(HttpMethod.MKCOL, folderUrl, null, headers, null);
         }
 
         // https://doc.owncloud.org/server/10.0/developer_manual/core/ocs-share-api.html#create-a-new-share

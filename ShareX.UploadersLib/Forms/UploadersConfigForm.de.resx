@@ -762,4 +762,7 @@ Das Benutzen einer verschlüsselten Bibliothek deaktiviert das Teilen.</value>
   <data name="lblOwnCloudHostExample.Text" xml:space="preserve">
     <value>Beispiel: http://example.com/owncloud</value>
   </data>
+  <data name="cbOwnCloudCreateFolderIfNonExistent.Text" xml:space="preserve">
+    <value>Ordner automatisch erstellen, wenn er nicht existiert</value>
+  </data>
 </root>

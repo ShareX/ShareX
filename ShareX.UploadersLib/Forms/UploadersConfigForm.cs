@@ -582,6 +582,7 @@ namespace ShareX.UploadersLib
             cbOwnCloud81Compatibility.Checked = Config.OwnCloud81Compatibility;
             cbOwnCloudUsePreviewLinks.Checked = Config.OwnCloudUsePreviewLinks;
             cbOwnCloudAutoExpire.Checked = Config.OwnCloudAutoExpire;
+            cbOwnCloudCreateFolderIfNonExistent.Checked = Config.OwnCloudCreateFolderOfNonExistent;
             cbOwnCloudPathFilter.Checked = Config.OwnCloudUsePathFilter;
             lblOwnCloudPathFilterInvalid.ForeColor = Color.Red;
 
@@ -2311,6 +2312,11 @@ namespace ShareX.UploadersLib
         private void cbOwnCloudAutoExpire_CheckedChanged(object sender, EventArgs e)
         {
             Config.OwnCloudAutoExpire = cbOwnCloudAutoExpire.Checked;
+        }
+
+        private void cbOwnCloudCreateFolderIfNonExistent_CheckedChanged(object sender, EventArgs e)
+        {
+            Config.OwnCloudCreateFolderOfNonExistent = cbOwnCloudCreateFolderIfNonExistent.Checked;
         }
 
         private void cbOwnCloudPathFilter_CheckedChanged(object sender, EventArgs e)
