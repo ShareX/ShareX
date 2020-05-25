@@ -26,7 +26,9 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
+using System.Text.RegularExpressions;
 
 namespace ShareX.HelpersLib
 {
@@ -336,6 +338,71 @@ namespace ShareX.HelpersLib
         public static string ToBase(this string text, int from, int to, string digits)
         {
             return text.FromBase(from, digits).ToBase(to, digits);
+        }
+
+        public static string DPAPIProtectAndBase64(this string text)
+        {
+            return DPAPIProtectAndBase64(text, null, DataProtectionScope.CurrentUser);
+        }
+
+        public static string DPAPIProtectAndBase64(this string text, byte[] optionalEntropy)
+        {
+            return DPAPIProtectAndBase64(text, optionalEntropy, DataProtectionScope.CurrentUser);
+        }
+
+        public static string DPAPIProtectAndBase64(this string text, byte[] optionalEntropy, DataProtectionScope scope)
+        {
+            return Convert.ToBase64String(ProtectedData.Protect(Encoding.UTF8.GetBytes(text), optionalEntropy, scope));
+        }
+
+        public static string DPAPIUnprotectAndBase64(this string text)
+        {
+            return DPAPIUnprotectAndBase64(text, null, DataProtectionScope.CurrentUser);
+        }
+
+        public static string DPAPIUnprotectAndBase64(this string text, byte[] optionalEntropy)
+        {
+            return DPAPIUnprotectAndBase64(text, optionalEntropy, DataProtectionScope.CurrentUser);
+        }
+
+        public static string DPAPIUnprotectAndBase64(this string text, byte[] optionalEntropy, DataProtectionScope scope)
+        {
+            return Encoding.UTF8.GetString(ProtectedData.Unprotect(Convert.FromBase64String(text), optionalEntropy, scope));
+        }
+
+        public static bool TryDPAPIUnprotectAndBase64(this string text, out string result)
+        {
+            return TryDPAPIUnprotectAndBase64(text, null, DataProtectionScope.CurrentUser, out result);
+        }
+
+        public static bool TryDPAPIUnprotectAndBase64(this string text, byte[] optionalEntropy, out string result)
+        {
+            return TryDPAPIUnprotectAndBase64(text, optionalEntropy, DataProtectionScope.CurrentUser, out result);
+        }
+
+        public static bool TryDPAPIUnprotectAndBase64(this string text, byte[] optionalEntropy, DataProtectionScope scope, out string result)
+        {
+            bool success = text.IsBase64();
+            result = null;
+
+            if (success)
+            {
+                try
+                {
+                    result = DPAPIUnprotectAndBase64(text, optionalEntropy, scope);
+                }
+                catch
+                {
+                    success = false;
+                }
+            }
+
+            return success;
+        }
+
+        public static bool IsBase64(this string text)
+        {
+            return (text.Trim().Length % 4 == 0) && Regex.IsMatch(text.Trim(), @"^[a-zA-Z0-9\+/]*={0,3}$", RegexOptions.None);
         }
     }
 }
