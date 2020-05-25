@@ -2330,7 +2330,7 @@ namespace ShareX.UploadersLib
         private void btnOwnCloudPathFilterAdd_Click(object sender, EventArgs e)
         {
             ListViewItem newPathFilterItem = new ListViewItem("/");
-            newPathFilterItem.SubItems.Add("*.*");
+            newPathFilterItem.SubItems.Add(".*");
 
             newPathFilterItem.UseItemStyleForSubItems = false;
             newPathFilterItem.SubItems[1].Font = txtOwnCloudPathFilterEditFilter.Font;
