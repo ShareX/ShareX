@@ -445,7 +445,7 @@ Das Benutzen einer verschlüsselten Bibliothek deaktiviert das Teilen.</value>
     <value>Passwort:</value>
   </data>
   <data name="lblOwnCloudPath.Text" xml:space="preserve">
-    <value>Pfad:</value>
+    <value>Allgemeiner Pfad:</value>
   </data>
   <data name="cbOwnCloudCreateShare.Text" xml:space="preserve">
     <value>Erstelle teilbare URL</value>
