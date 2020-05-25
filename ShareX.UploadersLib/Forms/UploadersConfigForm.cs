@@ -2342,6 +2342,9 @@ namespace ShareX.UploadersLib
             lvOwnCloudPathFilter.Select(nextSelectIndex);
             lvOwnCloudPathFilter.Items.Remove(removeItem);
 
+            btnOwnCloudPathFilterSortUp.Enabled &= lvOwnCloudPathFilter.SelectedIndex > 0;
+            btnOwnCloudPathFilterSortDown.Enabled &= lvOwnCloudPathFilter.SelectedIndex < lvOwnCloudPathFilter.Items.Count - 1;
+
             OwnCloudSavePathFilters();
         }
 
