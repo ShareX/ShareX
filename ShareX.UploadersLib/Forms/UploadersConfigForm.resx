@@ -6695,6 +6695,36 @@ when you made the application key.</value>
   <data name="&gt;&gt;tpMega.ZOrder" xml:space="preserve">
     <value>11</value>
   </data>
+  <data name="btnOwnCloudRevealPassword.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9pt</value>
+  </data>
+  <data name="btnOwnCloudRevealPassword.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnOwnCloudRevealPassword.Location" type="System.Drawing.Point, System.Drawing">
+    <value>270, 123</value>
+  </data>
+  <data name="btnOwnCloudRevealPassword.Size" type="System.Drawing.Size, System.Drawing">
+    <value>30, 30</value>
+  </data>
+  <data name="btnOwnCloudRevealPassword.TabIndex" type="System.Int32, mscorlib">
+    <value>34</value>
+  </data>
+  <data name="btnOwnCloudRevealPassword.Text" xml:space="preserve">
+    <value>👁</value>
+  </data>
+  <data name="&gt;&gt;btnOwnCloudRevealPassword.Name" xml:space="preserve">
+    <value>btnOwnCloudRevealPassword</value>
+  </data>
+  <data name="&gt;&gt;btnOwnCloudRevealPassword.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnOwnCloudRevealPassword.Parent" xml:space="preserve">
+    <value>tpOwnCloud</value>
+  </data>
+  <data name="&gt;&gt;btnOwnCloudRevealPassword.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="cbOwnCloudEncryptPassword.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>

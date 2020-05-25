@@ -2289,6 +2289,11 @@ namespace ShareX.UploadersLib
             Config.OwnCloudPassword = Config.OwnCloudEncryptPassword ? txtOwnCloudPassword.Text.DPAPIProtectAndBase64() : txtOwnCloudPassword.Text;
         }
 
+        private void btnOwnCloudRevealPassword_Click(object sender, EventArgs e)
+        {
+            txtOwnCloudPassword.UseSystemPasswordChar = !txtOwnCloudPassword.UseSystemPasswordChar;
+        }
+
         private void txtOwnCloudPath_TextChanged(object sender, EventArgs e)
         {
             Config.OwnCloudPath = txtOwnCloudPath.Text;
