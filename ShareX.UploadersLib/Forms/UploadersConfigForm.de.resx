@@ -753,4 +753,13 @@ Das Benutzen einer verschlüsselten Bibliothek deaktiviert das Teilen.</value>
   <data name="lblOwnCloudPathFilterInvalid.Text" xml:space="preserve">
     <value>Ungültiger Regex-Syntax!</value>
   </data>
+  <data name="cbOwnCloudAutoExpire.Text" xml:space="preserve">
+    <value>Geteilte Links automatisch ablaufen lassen</value>
+  </data>
+  <data name="lblOwnCloudExpiryTime.Text" xml:space="preserve">
+    <value>Ablaufzeit des geteilten Links (in Tagen):</value>
+  </data>
+  <data name="lblOwnCloudHostExample.Text" xml:space="preserve">
+    <value>Beispiel: http://example.com/owncloud</value>
+  </data>
 </root>
