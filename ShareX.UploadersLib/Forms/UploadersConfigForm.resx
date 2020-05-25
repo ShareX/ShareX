@@ -6764,6 +6764,9 @@ when you made the application key.</value>
   <data name="txtOwnCloudPathFilterEditFilter.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
+  <data name="txtOwnCloudPathFilterEditFilter.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Consolas, 9.75pt</value>
+  </data>
   <data name="txtOwnCloudPathFilterEditFilter.Location" type="System.Drawing.Point, System.Drawing">
     <value>382, 474</value>
   </data>

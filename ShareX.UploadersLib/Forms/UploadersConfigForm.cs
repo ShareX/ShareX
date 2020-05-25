@@ -587,6 +587,9 @@ namespace ShareX.UploadersLib
             {
                 ListViewItem item = lvOwnCloudPathFilter.Items.Add(pathFilterItem.Path);
                 item.SubItems.Add(pathFilterItem.Filter);
+
+                item.UseItemStyleForSubItems = false;
+                item.SubItems[1].Font = txtOwnCloudPathFilterEditFilter.Font;
             }
 
             #endregion ownCloud / Nextcloud
@@ -2328,6 +2331,9 @@ namespace ShareX.UploadersLib
         {
             ListViewItem newPathFilterItem = new ListViewItem("/");
             newPathFilterItem.SubItems.Add("*.*");
+
+            newPathFilterItem.UseItemStyleForSubItems = false;
+            newPathFilterItem.SubItems[1].Font = txtOwnCloudPathFilterEditFilter.Font;
 
             lvOwnCloudPathFilter.Items.Add(newPathFilterItem);
             lvOwnCloudPathFilter.SelectSingle(newPathFilterItem);
