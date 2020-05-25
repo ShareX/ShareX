@@ -2332,7 +2332,8 @@ namespace ShareX.UploadersLib
             lblOwnCloudPathFilterEditPath.Visible =
             txtOwnCloudPathFilterEditPath.Visible =
             lblOwnCloudPathFilterEditFilter.Visible =
-            txtOwnCloudPathFilterEditFilter.Visible = cbOwnCloudPathFilter.Checked;
+            txtOwnCloudPathFilterEditFilter.Visible =
+            btnOwnCloudPathFilterEditSave.Visible = cbOwnCloudPathFilter.Checked;
         }
 
         private void btnOwnCloudPathFilterAdd_Click(object sender, EventArgs e)
