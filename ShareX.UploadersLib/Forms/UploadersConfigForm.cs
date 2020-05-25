@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using CG.Web.MegaApiClient;
+using FluentFTP;
 using ShareX.HelpersLib;
 using ShareX.UploadersLib.FileUploaders;
 using ShareX.UploadersLib.ImageUploaders;
@@ -582,6 +583,7 @@ namespace ShareX.UploadersLib
             cbOwnCloudUsePreviewLinks.Checked = Config.OwnCloudUsePreviewLinks;
             cbOwnCloudAutoExpire.Checked = Config.OwnCloudAutoExpire;
             cbOwnCloudPathFilter.Checked = Config.OwnCloudUsePathFilter;
+            lblOwnCloudPathFilterInvalid.ForeColor = Color.Red;
 
             foreach (OwnCloud.OwnCloudPathFilterItem pathFilterItem in Config.OwnCloudPathFilters)
             {
@@ -2398,6 +2400,20 @@ namespace ShareX.UploadersLib
             else
             {
                 txtOwnCloudPathFilterEditFilter.Text = null;
+            }
+        }
+
+        private void txtOwnCloudPathFilterEditFilter_TextChanged(object sender, EventArgs e)
+        {
+            if (!txtOwnCloudPathFilterEditFilter.Enabled || txtOwnCloudPathFilterEditFilter.Text.IsValidRegEx())
+            {
+                txtOwnCloudPathFilterEditFilter.BackColor = ShareXResources.Theme.BackgroundColor;
+                lblOwnCloudPathFilterInvalid.Visible = false;
+            }
+            else
+            {
+                txtOwnCloudPathFilterEditFilter.BackColor = Color.DarkRed;
+                lblOwnCloudPathFilterInvalid.Visible = true;
             }
         }
 

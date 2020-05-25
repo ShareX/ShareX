@@ -750,4 +750,7 @@ Das Benutzen einer verschlüsselten Bibliothek deaktiviert das Teilen.</value>
   <data name="btnOwnCloudPathFilterEditSave.Text" xml:space="preserve">
     <value>Speichern</value>
   </data>
+  <data name="lblOwnCloudPathFilterInvalid.Text" xml:space="preserve">
+    <value>Ungültiger Regex-Syntax!</value>
+  </data>
 </root>

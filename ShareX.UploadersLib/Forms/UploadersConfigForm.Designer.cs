@@ -135,7 +135,6 @@ namespace ShareX.UploadersLib
             this.cbFTPRemoveFileExtension = new System.Windows.Forms.CheckBox();
             this.txtFTPName = new System.Windows.Forms.TextBox();
             this.lblFTPHost = new System.Windows.Forms.Label();
-            this.eiFTP = new ShareX.HelpersLib.ExportImportControl();
             this.pFTPTransferMode = new System.Windows.Forms.Panel();
             this.rbFTPTransferModeActive = new System.Windows.Forms.RadioButton();
             this.rbFTPTransferModePassive = new System.Windows.Forms.RadioButton();
@@ -189,9 +188,6 @@ namespace ShareX.UploadersLib
             this.cbGoogleDriveUseFolder = new System.Windows.Forms.CheckBox();
             this.txtGoogleDriveFolderID = new System.Windows.Forms.TextBox();
             this.lblGoogleDriveFolderID = new System.Windows.Forms.Label();
-            this.lvGoogleDriveFoldersList = new ShareX.HelpersLib.MyListView();
-            this.chGoogleDriveTitle = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.chGoogleDriveDescription = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnGoogleDriveRefreshFolders = new System.Windows.Forms.Button();
             this.cbGoogleDriveIsPublic = new System.Windows.Forms.CheckBox();
             this.tpPuush = new System.Windows.Forms.TabPage();
@@ -208,8 +204,6 @@ namespace ShareX.UploadersLib
             this.cbBoxShare = new System.Windows.Forms.CheckBox();
             this.cbBoxShareAccessLevel = new System.Windows.Forms.ComboBox();
             this.lblBoxShareAccessLevel = new System.Windows.Forms.Label();
-            this.lvBoxFolders = new ShareX.HelpersLib.MyListView();
-            this.chBoxFoldersName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lblBoxFolderID = new System.Windows.Forms.Label();
             this.btnBoxRefreshFolders = new System.Windows.Forms.Button();
             this.tpAmazonS3 = new System.Windows.Forms.TabPage();
@@ -298,6 +292,9 @@ namespace ShareX.UploadersLib
             this.txtMegaPassword = new System.Windows.Forms.TextBox();
             this.lblMegaPassword = new System.Windows.Forms.Label();
             this.tpOwnCloud = new System.Windows.Forms.TabPage();
+            this.btnOwnCloudPathFilterSortDown = new System.Windows.Forms.Button();
+            this.btnOwnCloudPathFilterSortUp = new System.Windows.Forms.Button();
+            this.btnOwnCloudPathFilterEditSave = new System.Windows.Forms.Button();
             this.txtOwnCloudPathFilterEditFilter = new System.Windows.Forms.TextBox();
             this.txtOwnCloudPathFilterEditPath = new System.Windows.Forms.TextBox();
             this.lblOwnCloudPathFilterEditFilter = new System.Windows.Forms.Label();
@@ -305,9 +302,6 @@ namespace ShareX.UploadersLib
             this.btnOwnCloudPathFilterRemove = new System.Windows.Forms.Button();
             this.btnOwnCloudPathFilterAdd = new System.Windows.Forms.Button();
             this.lblOwnCloudPathFilter = new System.Windows.Forms.Label();
-            this.lvOwnCloudPathFilter = new ShareX.HelpersLib.MyListView();
-            this.lvOwnCloudPathFilterPathColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.lvOwnCloudPathFilterFilterColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.cbOwnCloudPathFilter = new System.Windows.Forms.CheckBox();
             this.txtOwnCloudExpiryTime = new System.Windows.Forms.NumericUpDown();
             this.cbOwnCloudAutoExpire = new System.Windows.Forms.CheckBox();
@@ -400,10 +394,6 @@ namespace ShareX.UploadersLib
             this.btnSeafileLibraryPasswordValidate = new System.Windows.Forms.Button();
             this.txtSeafileLibraryPassword = new System.Windows.Forms.TextBox();
             this.lblSeafileLibraryPassword = new System.Windows.Forms.Label();
-            this.lvSeafileLibraries = new ShareX.HelpersLib.MyListView();
-            this.colSeafileLibraryName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colSeafileLibrarySize = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colSeafileLibraryEncrypted = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnSeafilePathValidate = new System.Windows.Forms.Button();
             this.txtSeafileDirectoryPath = new System.Windows.Forms.TextBox();
             this.lblSeafileWritePermNotif = new System.Windows.Forms.Label();
@@ -555,10 +545,6 @@ namespace ShareX.UploadersLib
             this.cbImgurUseGIFV = new System.Windows.Forms.CheckBox();
             this.cbImgurUploadSelectedAlbum = new System.Windows.Forms.CheckBox();
             this.cbImgurDirectLink = new System.Windows.Forms.CheckBox();
-            this.lvImgurAlbumList = new ShareX.HelpersLib.MyListView();
-            this.chImgurID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.chImgurTitle = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.chImgurDescription = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnImgurRefreshAlbumList = new System.Windows.Forms.Button();
             this.cbImgurThumbnailType = new System.Windows.Forms.ComboBox();
             this.lblImgurThumbnailType = new System.Windows.Forms.Label();
@@ -616,10 +602,25 @@ namespace ShareX.UploadersLib
             this.txtVgymeUserKey = new System.Windows.Forms.TextBox();
             this.lvlVgymeUserKey = new System.Windows.Forms.Label();
             this.tcUploaders = new System.Windows.Forms.TabControl();
+            this.lvImgurAlbumList = new ShareX.HelpersLib.MyListView();
+            this.chImgurID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chImgurTitle = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chImgurDescription = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.eiFTP = new ShareX.HelpersLib.ExportImportControl();
+            this.lvGoogleDriveFoldersList = new ShareX.HelpersLib.MyListView();
+            this.chGoogleDriveTitle = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chGoogleDriveDescription = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.lvBoxFolders = new ShareX.HelpersLib.MyListView();
+            this.chBoxFoldersName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.lvOwnCloudPathFilter = new ShareX.HelpersLib.MyListView();
+            this.lvOwnCloudPathFilterPathColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.lvOwnCloudPathFilterFilterColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.lvSeafileLibraries = new ShareX.HelpersLib.MyListView();
+            this.colSeafileLibraryName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colSeafileLibrarySize = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colSeafileLibraryEncrypted = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tttvMain = new ShareX.HelpersLib.TabToTreeView();
-            this.btnOwnCloudPathFilterEditSave = new System.Windows.Forms.Button();
-            this.btnOwnCloudPathFilterSortDown = new System.Windows.Forms.Button();
-            this.btnOwnCloudPathFilterSortUp = new System.Windows.Forms.Button();
+            this.lblOwnCloudPathFilterInvalid = new System.Windows.Forms.Label();
             this.atcImgurAccountType = new ShareX.UploadersLib.AccountTypeControl();
             this.oauth2Imgur = new ShareX.UploadersLib.OAuthControl();
             this.oauthFlickr = new ShareX.UploadersLib.OAuthControl();
@@ -1353,15 +1354,6 @@ namespace ShareX.UploadersLib
             resources.ApplyResources(this.lblFTPHost, "lblFTPHost");
             this.lblFTPHost.Name = "lblFTPHost";
             // 
-            // eiFTP
-            // 
-            this.eiFTP.DefaultFileName = null;
-            resources.ApplyResources(this.eiFTP, "eiFTP");
-            this.eiFTP.Name = "eiFTP";
-            this.eiFTP.ObjectType = null;
-            this.eiFTP.ExportRequested += new ShareX.HelpersLib.ExportImportControl.ExportEventHandler(this.eiFTP_ExportRequested);
-            this.eiFTP.ImportRequested += new ShareX.HelpersLib.ExportImportControl.ImportEventHandler(this.eiFTP_ImportRequested);
-            // 
             // pFTPTransferMode
             // 
             resources.ApplyResources(this.pFTPTransferMode, "pFTPTransferMode");
@@ -1735,29 +1727,6 @@ namespace ShareX.UploadersLib
             resources.ApplyResources(this.lblGoogleDriveFolderID, "lblGoogleDriveFolderID");
             this.lblGoogleDriveFolderID.Name = "lblGoogleDriveFolderID";
             // 
-            // lvGoogleDriveFoldersList
-            // 
-            this.lvGoogleDriveFoldersList.AutoFillColumn = true;
-            this.lvGoogleDriveFoldersList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.chGoogleDriveTitle,
-            this.chGoogleDriveDescription});
-            this.lvGoogleDriveFoldersList.FullRowSelect = true;
-            this.lvGoogleDriveFoldersList.HideSelection = false;
-            resources.ApplyResources(this.lvGoogleDriveFoldersList, "lvGoogleDriveFoldersList");
-            this.lvGoogleDriveFoldersList.MultiSelect = false;
-            this.lvGoogleDriveFoldersList.Name = "lvGoogleDriveFoldersList";
-            this.lvGoogleDriveFoldersList.UseCompatibleStateImageBehavior = false;
-            this.lvGoogleDriveFoldersList.View = System.Windows.Forms.View.Details;
-            this.lvGoogleDriveFoldersList.SelectedIndexChanged += new System.EventHandler(this.lvGoogleDriveFoldersList_SelectedIndexChanged);
-            // 
-            // chGoogleDriveTitle
-            // 
-            resources.ApplyResources(this.chGoogleDriveTitle, "chGoogleDriveTitle");
-            // 
-            // chGoogleDriveDescription
-            // 
-            resources.ApplyResources(this.chGoogleDriveDescription, "chGoogleDriveDescription");
-            // 
             // btnGoogleDriveRefreshFolders
             // 
             resources.ApplyResources(this.btnGoogleDriveRefreshFolders, "btnGoogleDriveRefreshFolders");
@@ -1868,27 +1837,9 @@ namespace ShareX.UploadersLib
             this.cbBoxShareAccessLevel.SelectedIndexChanged += new System.EventHandler(this.cbBoxShareAccessLevel_SelectedIndexChanged);
             // 
             // lblBoxShareAccessLevel
-            //
+            // 
             resources.ApplyResources(this.lblBoxShareAccessLevel, "lblBoxShareAccessLevel");
             this.lblBoxShareAccessLevel.Name = "lblBoxShareAccessLevel";
-            // 
-            // lvBoxFolders
-            // 
-            this.lvBoxFolders.AutoFillColumn = true;
-            this.lvBoxFolders.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.chBoxFoldersName});
-            this.lvBoxFolders.FullRowSelect = true;
-            this.lvBoxFolders.HideSelection = false;
-            resources.ApplyResources(this.lvBoxFolders, "lvBoxFolders");
-            this.lvBoxFolders.Name = "lvBoxFolders";
-            this.lvBoxFolders.UseCompatibleStateImageBehavior = false;
-            this.lvBoxFolders.View = System.Windows.Forms.View.Details;
-            this.lvBoxFolders.SelectedIndexChanged += new System.EventHandler(this.lvBoxFolders_SelectedIndexChanged);
-            this.lvBoxFolders.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lvBoxFolders_MouseDoubleClick);
-            // 
-            // chBoxFoldersName
-            // 
-            resources.ApplyResources(this.chBoxFoldersName, "chBoxFoldersName");
             // 
             // lblBoxFolderID
             // 
@@ -2504,6 +2455,7 @@ namespace ShareX.UploadersLib
             // tpOwnCloud
             // 
             this.tpOwnCloud.BackColor = System.Drawing.SystemColors.Window;
+            this.tpOwnCloud.Controls.Add(this.lblOwnCloudPathFilterInvalid);
             this.tpOwnCloud.Controls.Add(this.btnOwnCloudPathFilterSortDown);
             this.tpOwnCloud.Controls.Add(this.btnOwnCloudPathFilterSortUp);
             this.tpOwnCloud.Controls.Add(this.btnOwnCloudPathFilterEditSave);
@@ -2535,10 +2487,32 @@ namespace ShareX.UploadersLib
             resources.ApplyResources(this.tpOwnCloud, "tpOwnCloud");
             this.tpOwnCloud.Name = "tpOwnCloud";
             // 
+            // btnOwnCloudPathFilterSortDown
+            // 
+            resources.ApplyResources(this.btnOwnCloudPathFilterSortDown, "btnOwnCloudPathFilterSortDown");
+            this.btnOwnCloudPathFilterSortDown.Name = "btnOwnCloudPathFilterSortDown";
+            this.btnOwnCloudPathFilterSortDown.UseVisualStyleBackColor = true;
+            this.btnOwnCloudPathFilterSortDown.Click += new System.EventHandler(this.btnOwnCloudPathFilterSortDown_Click);
+            // 
+            // btnOwnCloudPathFilterSortUp
+            // 
+            resources.ApplyResources(this.btnOwnCloudPathFilterSortUp, "btnOwnCloudPathFilterSortUp");
+            this.btnOwnCloudPathFilterSortUp.Name = "btnOwnCloudPathFilterSortUp";
+            this.btnOwnCloudPathFilterSortUp.UseVisualStyleBackColor = true;
+            this.btnOwnCloudPathFilterSortUp.Click += new System.EventHandler(this.btnOwnCloudPathFilterSortUp_Click);
+            // 
+            // btnOwnCloudPathFilterEditSave
+            // 
+            resources.ApplyResources(this.btnOwnCloudPathFilterEditSave, "btnOwnCloudPathFilterEditSave");
+            this.btnOwnCloudPathFilterEditSave.Name = "btnOwnCloudPathFilterEditSave";
+            this.btnOwnCloudPathFilterEditSave.UseVisualStyleBackColor = true;
+            this.btnOwnCloudPathFilterEditSave.Click += new System.EventHandler(this.btnOwnCloudPathFilterEditSave_Click);
+            // 
             // txtOwnCloudPathFilterEditFilter
             // 
             resources.ApplyResources(this.txtOwnCloudPathFilterEditFilter, "txtOwnCloudPathFilterEditFilter");
             this.txtOwnCloudPathFilterEditFilter.Name = "txtOwnCloudPathFilterEditFilter";
+            this.txtOwnCloudPathFilterEditFilter.TextChanged += new System.EventHandler(this.txtOwnCloudPathFilterEditFilter_TextChanged);
             // 
             // txtOwnCloudPathFilterEditPath
             // 
@@ -2573,30 +2547,6 @@ namespace ShareX.UploadersLib
             // 
             resources.ApplyResources(this.lblOwnCloudPathFilter, "lblOwnCloudPathFilter");
             this.lblOwnCloudPathFilter.Name = "lblOwnCloudPathFilter";
-            // 
-            // lvOwnCloudPathFilter
-            // 
-            this.lvOwnCloudPathFilter.AutoFillColumn = true;
-            this.lvOwnCloudPathFilter.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.lvOwnCloudPathFilterPathColumn,
-            this.lvOwnCloudPathFilterFilterColumn});
-            this.lvOwnCloudPathFilter.FullRowSelect = true;
-            this.lvOwnCloudPathFilter.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
-            this.lvOwnCloudPathFilter.HideSelection = false;
-            resources.ApplyResources(this.lvOwnCloudPathFilter, "lvOwnCloudPathFilter");
-            this.lvOwnCloudPathFilter.MultiSelect = false;
-            this.lvOwnCloudPathFilter.Name = "lvOwnCloudPathFilter";
-            this.lvOwnCloudPathFilter.UseCompatibleStateImageBehavior = false;
-            this.lvOwnCloudPathFilter.View = System.Windows.Forms.View.Details;
-            this.lvOwnCloudPathFilter.SelectedIndexChanged += new System.EventHandler(this.lvOwnCloudPathFilter_SelectedIndexChanged);
-            // 
-            // lvOwnCloudPathFilterPathColumn
-            // 
-            resources.ApplyResources(this.lvOwnCloudPathFilterPathColumn, "lvOwnCloudPathFilterPathColumn");
-            // 
-            // lvOwnCloudPathFilterFilterColumn
-            // 
-            resources.ApplyResources(this.lvOwnCloudPathFilterFilterColumn, "lvOwnCloudPathFilterFilterColumn");
             // 
             // cbOwnCloudPathFilter
             // 
@@ -3265,35 +3215,6 @@ namespace ShareX.UploadersLib
             // 
             resources.ApplyResources(this.lblSeafileLibraryPassword, "lblSeafileLibraryPassword");
             this.lblSeafileLibraryPassword.Name = "lblSeafileLibraryPassword";
-            // 
-            // lvSeafileLibraries
-            // 
-            this.lvSeafileLibraries.AllowColumnSort = true;
-            this.lvSeafileLibraries.AutoFillColumn = true;
-            this.lvSeafileLibraries.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.colSeafileLibraryName,
-            this.colSeafileLibrarySize,
-            this.colSeafileLibraryEncrypted});
-            this.lvSeafileLibraries.DisableDeselect = true;
-            this.lvSeafileLibraries.FullRowSelect = true;
-            this.lvSeafileLibraries.HideSelection = false;
-            resources.ApplyResources(this.lvSeafileLibraries, "lvSeafileLibraries");
-            this.lvSeafileLibraries.Name = "lvSeafileLibraries";
-            this.lvSeafileLibraries.UseCompatibleStateImageBehavior = false;
-            this.lvSeafileLibraries.View = System.Windows.Forms.View.Details;
-            this.lvSeafileLibraries.SelectedIndexChanged += new System.EventHandler(this.lvSeafileLibraries_SelectedIndexChanged);
-            // 
-            // colSeafileLibraryName
-            // 
-            resources.ApplyResources(this.colSeafileLibraryName, "colSeafileLibraryName");
-            // 
-            // colSeafileLibrarySize
-            // 
-            resources.ApplyResources(this.colSeafileLibrarySize, "colSeafileLibrarySize");
-            // 
-            // colSeafileLibraryEncrypted
-            // 
-            resources.ApplyResources(this.colSeafileLibraryEncrypted, "colSeafileLibraryEncrypted");
             // 
             // btnSeafilePathValidate
             // 
@@ -4389,35 +4310,6 @@ namespace ShareX.UploadersLib
             this.cbImgurDirectLink.UseVisualStyleBackColor = true;
             this.cbImgurDirectLink.CheckedChanged += new System.EventHandler(this.cbImgurDirectLink_CheckedChanged);
             // 
-            // lvImgurAlbumList
-            // 
-            this.lvImgurAlbumList.AllowColumnSort = true;
-            this.lvImgurAlbumList.AutoFillColumn = true;
-            this.lvImgurAlbumList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.chImgurID,
-            this.chImgurTitle,
-            this.chImgurDescription});
-            this.lvImgurAlbumList.FullRowSelect = true;
-            this.lvImgurAlbumList.HideSelection = false;
-            resources.ApplyResources(this.lvImgurAlbumList, "lvImgurAlbumList");
-            this.lvImgurAlbumList.MultiSelect = false;
-            this.lvImgurAlbumList.Name = "lvImgurAlbumList";
-            this.lvImgurAlbumList.UseCompatibleStateImageBehavior = false;
-            this.lvImgurAlbumList.View = System.Windows.Forms.View.Details;
-            this.lvImgurAlbumList.SelectedIndexChanged += new System.EventHandler(this.lvImgurAlbumList_SelectedIndexChanged);
-            // 
-            // chImgurID
-            // 
-            resources.ApplyResources(this.chImgurID, "chImgurID");
-            // 
-            // chImgurTitle
-            // 
-            resources.ApplyResources(this.chImgurTitle, "chImgurTitle");
-            // 
-            // chImgurDescription
-            // 
-            resources.ApplyResources(this.chImgurDescription, "chImgurDescription");
-            // 
             // btnImgurRefreshAlbumList
             // 
             resources.ApplyResources(this.btnImgurRefreshAlbumList, "btnImgurRefreshAlbumList");
@@ -4818,6 +4710,139 @@ namespace ShareX.UploadersLib
             this.tcUploaders.Name = "tcUploaders";
             this.tcUploaders.SelectedIndex = 0;
             // 
+            // lvImgurAlbumList
+            // 
+            this.lvImgurAlbumList.AllowColumnSort = true;
+            this.lvImgurAlbumList.AutoFillColumn = true;
+            this.lvImgurAlbumList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.chImgurID,
+            this.chImgurTitle,
+            this.chImgurDescription});
+            this.lvImgurAlbumList.FullRowSelect = true;
+            this.lvImgurAlbumList.HideSelection = false;
+            resources.ApplyResources(this.lvImgurAlbumList, "lvImgurAlbumList");
+            this.lvImgurAlbumList.MultiSelect = false;
+            this.lvImgurAlbumList.Name = "lvImgurAlbumList";
+            this.lvImgurAlbumList.UseCompatibleStateImageBehavior = false;
+            this.lvImgurAlbumList.View = System.Windows.Forms.View.Details;
+            this.lvImgurAlbumList.SelectedIndexChanged += new System.EventHandler(this.lvImgurAlbumList_SelectedIndexChanged);
+            // 
+            // chImgurID
+            // 
+            resources.ApplyResources(this.chImgurID, "chImgurID");
+            // 
+            // chImgurTitle
+            // 
+            resources.ApplyResources(this.chImgurTitle, "chImgurTitle");
+            // 
+            // chImgurDescription
+            // 
+            resources.ApplyResources(this.chImgurDescription, "chImgurDescription");
+            // 
+            // eiFTP
+            // 
+            this.eiFTP.DefaultFileName = null;
+            resources.ApplyResources(this.eiFTP, "eiFTP");
+            this.eiFTP.Name = "eiFTP";
+            this.eiFTP.ObjectType = null;
+            this.eiFTP.SerializationBinder = null;
+            this.eiFTP.ExportRequested += new ShareX.HelpersLib.ExportImportControl.ExportEventHandler(this.eiFTP_ExportRequested);
+            this.eiFTP.ImportRequested += new ShareX.HelpersLib.ExportImportControl.ImportEventHandler(this.eiFTP_ImportRequested);
+            // 
+            // lvGoogleDriveFoldersList
+            // 
+            this.lvGoogleDriveFoldersList.AutoFillColumn = true;
+            this.lvGoogleDriveFoldersList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.chGoogleDriveTitle,
+            this.chGoogleDriveDescription});
+            this.lvGoogleDriveFoldersList.FullRowSelect = true;
+            this.lvGoogleDriveFoldersList.HideSelection = false;
+            resources.ApplyResources(this.lvGoogleDriveFoldersList, "lvGoogleDriveFoldersList");
+            this.lvGoogleDriveFoldersList.MultiSelect = false;
+            this.lvGoogleDriveFoldersList.Name = "lvGoogleDriveFoldersList";
+            this.lvGoogleDriveFoldersList.UseCompatibleStateImageBehavior = false;
+            this.lvGoogleDriveFoldersList.View = System.Windows.Forms.View.Details;
+            this.lvGoogleDriveFoldersList.SelectedIndexChanged += new System.EventHandler(this.lvGoogleDriveFoldersList_SelectedIndexChanged);
+            // 
+            // chGoogleDriveTitle
+            // 
+            resources.ApplyResources(this.chGoogleDriveTitle, "chGoogleDriveTitle");
+            // 
+            // chGoogleDriveDescription
+            // 
+            resources.ApplyResources(this.chGoogleDriveDescription, "chGoogleDriveDescription");
+            // 
+            // lvBoxFolders
+            // 
+            this.lvBoxFolders.AutoFillColumn = true;
+            this.lvBoxFolders.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.chBoxFoldersName});
+            this.lvBoxFolders.FullRowSelect = true;
+            this.lvBoxFolders.HideSelection = false;
+            resources.ApplyResources(this.lvBoxFolders, "lvBoxFolders");
+            this.lvBoxFolders.Name = "lvBoxFolders";
+            this.lvBoxFolders.UseCompatibleStateImageBehavior = false;
+            this.lvBoxFolders.View = System.Windows.Forms.View.Details;
+            this.lvBoxFolders.SelectedIndexChanged += new System.EventHandler(this.lvBoxFolders_SelectedIndexChanged);
+            this.lvBoxFolders.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lvBoxFolders_MouseDoubleClick);
+            // 
+            // chBoxFoldersName
+            // 
+            resources.ApplyResources(this.chBoxFoldersName, "chBoxFoldersName");
+            // 
+            // lvOwnCloudPathFilter
+            // 
+            this.lvOwnCloudPathFilter.AutoFillColumn = true;
+            this.lvOwnCloudPathFilter.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.lvOwnCloudPathFilterPathColumn,
+            this.lvOwnCloudPathFilterFilterColumn});
+            this.lvOwnCloudPathFilter.FullRowSelect = true;
+            this.lvOwnCloudPathFilter.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.lvOwnCloudPathFilter.HideSelection = false;
+            resources.ApplyResources(this.lvOwnCloudPathFilter, "lvOwnCloudPathFilter");
+            this.lvOwnCloudPathFilter.MultiSelect = false;
+            this.lvOwnCloudPathFilter.Name = "lvOwnCloudPathFilter";
+            this.lvOwnCloudPathFilter.UseCompatibleStateImageBehavior = false;
+            this.lvOwnCloudPathFilter.View = System.Windows.Forms.View.Details;
+            this.lvOwnCloudPathFilter.SelectedIndexChanged += new System.EventHandler(this.lvOwnCloudPathFilter_SelectedIndexChanged);
+            // 
+            // lvOwnCloudPathFilterPathColumn
+            // 
+            resources.ApplyResources(this.lvOwnCloudPathFilterPathColumn, "lvOwnCloudPathFilterPathColumn");
+            // 
+            // lvOwnCloudPathFilterFilterColumn
+            // 
+            resources.ApplyResources(this.lvOwnCloudPathFilterFilterColumn, "lvOwnCloudPathFilterFilterColumn");
+            // 
+            // lvSeafileLibraries
+            // 
+            this.lvSeafileLibraries.AllowColumnSort = true;
+            this.lvSeafileLibraries.AutoFillColumn = true;
+            this.lvSeafileLibraries.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.colSeafileLibraryName,
+            this.colSeafileLibrarySize,
+            this.colSeafileLibraryEncrypted});
+            this.lvSeafileLibraries.DisableDeselect = true;
+            this.lvSeafileLibraries.FullRowSelect = true;
+            this.lvSeafileLibraries.HideSelection = false;
+            resources.ApplyResources(this.lvSeafileLibraries, "lvSeafileLibraries");
+            this.lvSeafileLibraries.Name = "lvSeafileLibraries";
+            this.lvSeafileLibraries.UseCompatibleStateImageBehavior = false;
+            this.lvSeafileLibraries.View = System.Windows.Forms.View.Details;
+            this.lvSeafileLibraries.SelectedIndexChanged += new System.EventHandler(this.lvSeafileLibraries_SelectedIndexChanged);
+            // 
+            // colSeafileLibraryName
+            // 
+            resources.ApplyResources(this.colSeafileLibraryName, "colSeafileLibraryName");
+            // 
+            // colSeafileLibrarySize
+            // 
+            resources.ApplyResources(this.colSeafileLibrarySize, "colSeafileLibrarySize");
+            // 
+            // colSeafileLibraryEncrypted
+            // 
+            resources.ApplyResources(this.colSeafileLibraryEncrypted, "colSeafileLibraryEncrypted");
+            // 
             // tttvMain
             // 
             this.tttvMain.AutoSelectChild = true;
@@ -4828,26 +4853,10 @@ namespace ShareX.UploadersLib
             this.tttvMain.TreeViewFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.tttvMain.TreeViewSize = 210;
             // 
-            // btnOwnCloudPathFilterEditSave
+            // lblOwnCloudPathFilterInvalid
             // 
-            resources.ApplyResources(this.btnOwnCloudPathFilterEditSave, "btnOwnCloudPathFilterEditSave");
-            this.btnOwnCloudPathFilterEditSave.Name = "btnOwnCloudPathFilterEditSave";
-            this.btnOwnCloudPathFilterEditSave.UseVisualStyleBackColor = true;
-            this.btnOwnCloudPathFilterEditSave.Click += new System.EventHandler(this.btnOwnCloudPathFilterEditSave_Click);
-            // 
-            // btnOwnCloudPathFilterSortDown
-            // 
-            resources.ApplyResources(this.btnOwnCloudPathFilterSortDown, "btnOwnCloudPathFilterSortDown");
-            this.btnOwnCloudPathFilterSortDown.Name = "btnOwnCloudPathFilterSortDown";
-            this.btnOwnCloudPathFilterSortDown.UseVisualStyleBackColor = true;
-            this.btnOwnCloudPathFilterSortDown.Click += new System.EventHandler(this.btnOwnCloudPathFilterSortDown_Click);
-            // 
-            // btnOwnCloudPathFilterSortUp
-            // 
-            resources.ApplyResources(this.btnOwnCloudPathFilterSortUp, "btnOwnCloudPathFilterSortUp");
-            this.btnOwnCloudPathFilterSortUp.Name = "btnOwnCloudPathFilterSortUp";
-            this.btnOwnCloudPathFilterSortUp.UseVisualStyleBackColor = true;
-            this.btnOwnCloudPathFilterSortUp.Click += new System.EventHandler(this.btnOwnCloudPathFilterSortUp_Click);
+            resources.ApplyResources(this.lblOwnCloudPathFilterInvalid, "lblOwnCloudPathFilterInvalid");
+            this.lblOwnCloudPathFilterInvalid.Name = "lblOwnCloudPathFilterInvalid";
             // 
             // atcImgurAccountType
             // 
@@ -5779,5 +5788,6 @@ namespace ShareX.UploadersLib
         private System.Windows.Forms.Button btnOwnCloudPathFilterEditSave;
         private System.Windows.Forms.Button btnOwnCloudPathFilterSortDown;
         private System.Windows.Forms.Button btnOwnCloudPathFilterSortUp;
+        private System.Windows.Forms.Label lblOwnCloudPathFilterInvalid;
     }
 }

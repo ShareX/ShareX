@@ -6695,6 +6695,39 @@ when you made the application key.</value>
   <data name="&gt;&gt;tpMega.ZOrder" xml:space="preserve">
     <value>11</value>
   </data>
+  <data name="lblOwnCloudPathFilterInvalid.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblOwnCloudPathFilterInvalid.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblOwnCloudPathFilterInvalid.Location" type="System.Drawing.Point, System.Drawing">
+    <value>379, 502</value>
+  </data>
+  <data name="lblOwnCloudPathFilterInvalid.Size" type="System.Drawing.Size, System.Drawing">
+    <value>103, 13</value>
+  </data>
+  <data name="lblOwnCloudPathFilterInvalid.TabIndex" type="System.Int32, mscorlib">
+    <value>32</value>
+  </data>
+  <data name="lblOwnCloudPathFilterInvalid.Text" xml:space="preserve">
+    <value>Invalid regex syntax!</value>
+  </data>
+  <data name="lblOwnCloudPathFilterInvalid.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;lblOwnCloudPathFilterInvalid.Name" xml:space="preserve">
+    <value>lblOwnCloudPathFilterInvalid</value>
+  </data>
+  <data name="&gt;&gt;lblOwnCloudPathFilterInvalid.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblOwnCloudPathFilterInvalid.Parent" xml:space="preserve">
+    <value>tpOwnCloud</value>
+  </data>
+  <data name="&gt;&gt;lblOwnCloudPathFilterInvalid.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="btnOwnCloudPathFilterSortDown.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
