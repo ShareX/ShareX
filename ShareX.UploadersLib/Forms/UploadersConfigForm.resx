@@ -7095,7 +7095,7 @@ when you made the application key.</value>
     <value>23</value>
   </data>
   <data name="lblOwnCloudPathFilter.Text" xml:space="preserve">
-    <value>Path filter:</value>
+    <value>Path filters:</value>
   </data>
   <data name="lblOwnCloudPathFilter.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -7164,7 +7164,7 @@ when you made the application key.</value>
     <value>21</value>
   </data>
   <data name="cbOwnCloudPathFilter.Text" xml:space="preserve">
-    <value>Enable path filter</value>
+    <value>Enable path filters</value>
   </data>
   <data name="&gt;&gt;cbOwnCloudPathFilter.Name" xml:space="preserve">
     <value>cbOwnCloudPathFilter</value>
@@ -7626,7 +7626,7 @@ when you made the application key.</value>
     <value>15</value>
   </data>
   <data name="tpOwnCloud.Text" xml:space="preserve">
-    <value>ownCloud / Nextcloud</value>
+    <value>OwnCloud / Nextcloud</value>
   </data>
   <data name="&gt;&gt;tpOwnCloud.Name" xml:space="preserve">
     <value>tpOwnCloud</value>
