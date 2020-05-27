@@ -2272,7 +2272,7 @@ namespace ShareX.UploadersLib
 
         #endregion Amazon S3
 
-        #region ownCloud / Nextcloud
+        #region OwnCloud / Nextcloud
 
         private void txtOwnCloudHost_TextChanged(object sender, EventArgs e)
         {
@@ -2348,7 +2348,10 @@ namespace ShareX.UploadersLib
             txtOwnCloudPathFilterEditPath.Visible =
             lblOwnCloudPathFilterEditFilter.Visible =
             txtOwnCloudPathFilterEditFilter.Visible =
+            lblOwnCloudPathFilterInvalid.Visible =
             btnOwnCloudPathFilterEditSave.Visible = cbOwnCloudPathFilter.Checked;
+
+            lblOwnCloudPathFilterInvalid.Visible &= !(!txtOwnCloudPathFilterEditFilter.Enabled || txtOwnCloudPathFilterEditFilter.Text.IsValidRegEx());
         }
 
         private void cbOwnCloudEncryptPassword_CheckedChanged(object sender, EventArgs e)
@@ -2453,7 +2456,7 @@ namespace ShareX.UploadersLib
             OwnCloudSavePathFilters();
         }
 
-        #endregion ownCloud / Nextcloud
+        #endregion OwnCloud / Nextcloud
 
         #region Pushbullet
 

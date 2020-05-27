@@ -6801,7 +6801,7 @@ when you made the application key.</value>
     <value>32</value>
   </data>
   <data name="lblOwnCloudPathFilterInvalid.Text" xml:space="preserve">
-    <value>Invalid regex syntax!</value>
+    <value>Invalid RegEx syntax!</value>
   </data>
   <data name="lblOwnCloudPathFilterInvalid.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
