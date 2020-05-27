@@ -288,7 +288,7 @@ namespace ShareX.UploadersLib
         public string OwnCloudHost = "";
         public string OwnCloudUsername = "";
         public string OwnCloudPassword = "";
-        public bool OwnCloudEncryptPassword = false;
+        public bool OwnCloudEncryptPassword = true;
         public string OwnCloudPath = "/";
         public int OwnCloudExpiryTime = 7;
         public bool OwnCloudCreateShare = true;

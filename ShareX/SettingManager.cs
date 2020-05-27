@@ -271,6 +271,14 @@ namespace ShareX
                 }
             }
 
+            if (UploadersConfig.IsUpgradeFrom("13.1.0"))
+            {
+                if (UploadersConfig.OwnCloudEncryptPassword)
+                {
+                    UploadersConfig.OwnCloudPassword = UploadersConfig.OwnCloudPassword.DPAPIProtectAndBase64();
+                }
+            }
+
             if (UploadersConfig.CustomUploadersList != null)
             {
                 foreach (CustomUploaderItem cui in UploadersConfig.CustomUploadersList)
