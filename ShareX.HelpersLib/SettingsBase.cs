@@ -147,16 +147,23 @@ namespace ShareX.HelpersLib
                             throw new Exception($"{typeName} file is corrupt: {tempFilePath}");
                         }
 
-                        string backupFilePath = null;
-
-                        if (CreateBackup)
+                        if (File.Exists(filePath))
                         {
-                            string fileName = Path.GetFileName(filePath);
-                            backupFilePath = Path.Combine(BackupFolder, fileName);
-                            Helpers.CreateDirectoryFromDirectoryPath(BackupFolder);
-                        }
+                            string backupFilePath = null;
 
-                        File.Replace(tempFilePath, filePath, backupFilePath);
+                            if (CreateBackup)
+                            {
+                                string fileName = Path.GetFileName(filePath);
+                                backupFilePath = Path.Combine(BackupFolder, fileName);
+                                Helpers.CreateDirectoryFromDirectoryPath(BackupFolder);
+                            }
+
+                            File.Replace(tempFilePath, filePath, backupFilePath);
+                        }
+                        else
+                        {
+                            File.Move(tempFilePath, filePath);
+                        }
 
                         if (CreateWeeklyBackup && !string.IsNullOrEmpty(BackupFolder))
                         {
