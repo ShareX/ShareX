@@ -282,8 +282,8 @@
     <Compile Include="NameParser\CodeMenuEntryFilename.cs" />
     <Compile Include="ShareXTheme.cs" />
     <Compile Include="TextBoxTraceListener.cs" />
-    <Compile Include="SafeStringEnumConverter.cs" />
-    <Compile Include="TypeNameSerializationBinder.cs" />
+    <Compile Include="Settings\SafeStringEnumConverter.cs" />
+    <Compile Include="Settings\TypeNameSerializationBinder.cs" />
     <Compile Include="UITypeEditors\EnumDescriptionConverter.cs" />
     <Compile Include="UITypeEditors\DirectoryNameEditor.cs" />
     <Compile Include="UITypeEditors\GradientEditor.cs" />
@@ -362,7 +362,7 @@
     <Compile Include="GIF\Quantizer.cs" />
     <Compile Include="Helpers\ImageHelpers.cs" />
     <Compile Include="Native\FolderSelectDialog.cs" />
-    <Compile Include="SettingsBase.cs" />
+    <Compile Include="Settings\SettingsBase.cs" />
     <Compile Include="Helpers\ShortcutHelpers.cs" />
     <Compile Include="ShareXResources.cs" />
     <Compile Include="StringLineReader.cs" />
@@ -477,7 +477,7 @@
     <Compile Include="Links.cs" />
     <Compile Include="Vector2.cs" />
     <Compile Include="WindowState.cs" />
-    <Compile Include="WritablePropertiesOnlyResolver.cs" />
+    <Compile Include="Settings\WritablePropertiesOnlyResolver.cs" />
     <Compile Include="XmlColor.cs" />
     <Compile Include="XmlFont.cs" />
     <Compile Include="ZipManager.cs" />

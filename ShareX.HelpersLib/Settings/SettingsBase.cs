@@ -71,18 +71,12 @@ namespace ShareX.HelpersLib
 
         protected virtual void OnSettingsSaved(string filePath, bool result)
         {
-            if (SettingsSaved != null)
-            {
-                SettingsSaved((T)this, filePath, result);
-            }
+            SettingsSaved?.Invoke((T)this, filePath, result);
         }
 
         protected virtual void OnSettingsSaveFailed(Exception e)
         {
-            if (SettingsSaveFailed != null)
-            {
-                SettingsSaveFailed(e);
-            }
+            SettingsSaveFailed?.Invoke(e);
         }
 
         public bool Save(string filePath)
