@@ -91,6 +91,7 @@
     <Reference Include="System.IO.Compression.FileSystem" />
     <Reference Include="System.Management" />
     <Reference Include="System.Runtime.Remoting" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -139,6 +140,7 @@
     <Compile Include="Controls\ToolStripNumericUpDown.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Cryptographic\DPAPI.cs" />
     <Compile Include="Emoji.cs" />
     <Compile Include="Forms\DebugForm.cs">
       <SubType>Form</SubType>
@@ -151,6 +153,9 @@
     <Compile Include="PointInfo.cs" />
     <Compile Include="Random\RandomCrypto.cs" />
     <Compile Include="Random\RandomFast.cs" />
+    <Compile Include="Settings\DPAPIEncryptedStringPropertyResolver.cs" />
+    <Compile Include="Settings\DPAPIEncryptedStringValueProvider.cs" />
+    <Compile Include="Settings\JsonEncryptAttribute.cs" />
     <Compile Include="SevenZipManager.cs" />
     <Compile Include="Input\HotkeyForm.cs">
       <SubType>Form</SubType>

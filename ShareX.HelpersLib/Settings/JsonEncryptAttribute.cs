@@ -23,20 +23,12 @@
 
 #endregion License Information (GPL v3)
 
-using Newtonsoft.Json;
-using Newtonsoft.Json.Serialization;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace ShareX.HelpersLib
 {
-    public class WritablePropertiesOnlyResolver : DefaultContractResolver
+    [AttributeUsage(AttributeTargets.Property)]
+    public class JsonEncryptAttribute : Attribute
     {
-        protected override IList<JsonProperty> CreateProperties(Type type, MemberSerialization memberSerialization)
-        {
-            IList<JsonProperty> props = base.CreateProperties(type, memberSerialization);
-            return props.Where(p => p.Writable).ToList();
-        }
     }
 }

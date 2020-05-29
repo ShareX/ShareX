@@ -28,15 +28,27 @@ using Newtonsoft.Json.Serialization;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 
 namespace ShareX.HelpersLib
 {
-    public class WritablePropertiesOnlyResolver : DefaultContractResolver
+    public class DPAPIEncryptedStringPropertyResolver : WritablePropertiesOnlyResolver
     {
         protected override IList<JsonProperty> CreateProperties(Type type, MemberSerialization memberSerialization)
         {
             IList<JsonProperty> props = base.CreateProperties(type, memberSerialization);
-            return props.Where(p => p.Writable).ToList();
+
+            foreach (JsonProperty prop in props.Where(p => p.PropertyType == typeof(string)))
+            {
+                PropertyInfo pi = type.GetProperty(prop.UnderlyingName);
+
+                if (pi != null && pi.GetCustomAttribute(typeof(JsonEncryptAttribute), true) != null)
+                {
+                    prop.ValueProvider = new DPAPIEncryptedStringValueProvider(pi);
+                }
+            }
+
+            return props;
         }
     }
 }

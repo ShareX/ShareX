@@ -23,20 +23,53 @@
 
 #endregion License Information (GPL v3)
 
-using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+using System.Reflection;
 
 namespace ShareX.HelpersLib
 {
-    public class WritablePropertiesOnlyResolver : DefaultContractResolver
+    public class DPAPIEncryptedStringValueProvider : IValueProvider
     {
-        protected override IList<JsonProperty> CreateProperties(Type type, MemberSerialization memberSerialization)
+        private PropertyInfo targetProperty;
+
+        public DPAPIEncryptedStringValueProvider(PropertyInfo targetProperty)
         {
-            IList<JsonProperty> props = base.CreateProperties(type, memberSerialization);
-            return props.Where(p => p.Writable).ToList();
+            this.targetProperty = targetProperty;
+        }
+
+        public object GetValue(object target)
+        {
+            string value = (string)targetProperty.GetValue(target);
+            string encryptedValue = null;
+
+            if (!string.IsNullOrEmpty(value))
+            {
+                try
+                {
+                    encryptedValue = DPAPI.Encrypt(value);
+                }
+                catch
+                {
+                }
+
+            }
+
+            return encryptedValue;
+        }
+
+        public void SetValue(object target, object value)
+        {
+            string decryptedValue = null;
+
+            try
+            {
+                decryptedValue = DPAPI.Decrypt((string)value);
+            }
+            catch
+            {
+            }
+
+            targetProperty.SetValue(target, decryptedValue);
         }
     }
 }
