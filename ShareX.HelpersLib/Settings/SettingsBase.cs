@@ -128,7 +128,7 @@ namespace ShareX.HelpersLib
                         using (JsonTextWriter jsonWriter = new JsonTextWriter(streamWriter))
                         {
                             JsonSerializer serializer = new JsonSerializer();
-                            serializer.ContractResolver = new WritablePropertiesOnlyResolver();
+                            serializer.ContractResolver = new DPAPIEncryptedStringPropertyResolver();
                             serializer.Converters.Add(new StringEnumConverter());
                             serializer.DateTimeZoneHandling = DateTimeZoneHandling.Utc;
                             serializer.Formatting = Formatting.Indented;
@@ -238,6 +238,7 @@ namespace ShareX.HelpersLib
                             using (JsonTextReader jsonReader = new JsonTextReader(streamReader))
                             {
                                 JsonSerializer serializer = new JsonSerializer();
+                                serializer.ContractResolver = new DPAPIEncryptedStringPropertyResolver();
                                 serializer.Converters.Add(new StringEnumConverter());
                                 serializer.DateTimeZoneHandling = DateTimeZoneHandling.Local;
                                 serializer.ObjectCreationHandling = ObjectCreationHandling.Replace;
