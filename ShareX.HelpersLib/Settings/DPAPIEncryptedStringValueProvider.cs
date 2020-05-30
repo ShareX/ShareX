@@ -30,6 +30,8 @@ namespace ShareX.HelpersLib
 {
     public class DPAPIEncryptedStringValueProvider : IValueProvider
     {
+        private const string encryptedTag = "$DPAPIEncrypted$";
+
         private PropertyInfo targetProperty;
 
         public DPAPIEncryptedStringValueProvider(PropertyInfo targetProperty)
@@ -40,13 +42,12 @@ namespace ShareX.HelpersLib
         public object GetValue(object target)
         {
             string value = (string)targetProperty.GetValue(target);
-            string encryptedValue = null;
 
             if (!string.IsNullOrEmpty(value))
             {
                 try
                 {
-                    encryptedValue = DPAPI.Encrypt(value);
+                    value = encryptedTag + DPAPI.Encrypt(value);
                 }
                 catch
                 {
@@ -54,22 +55,26 @@ namespace ShareX.HelpersLib
 
             }
 
-            return encryptedValue;
+            return value;
         }
 
         public void SetValue(object target, object value)
         {
-            string decryptedValue = null;
+            string text = (string)value;
 
-            try
+            if (!string.IsNullOrEmpty(text) && text.StartsWith(encryptedTag))
             {
-                decryptedValue = DPAPI.Decrypt((string)value);
-            }
-            catch
-            {
+                try
+                {
+                    string encryptedString = text.Substring(encryptedTag.Length);
+                    text = DPAPI.Decrypt(encryptedString);
+                }
+                catch
+                {
+                }
             }
 
-            targetProperty.SetValue(target, decryptedValue);
+            targetProperty.SetValue(target, text);
         }
     }
 }
