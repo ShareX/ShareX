@@ -39,56 +39,57 @@ namespace ShareX.UploadersLib
 
         #region Imgur
 
-        public AccountType ImgurAccountType = AccountType.Anonymous;
-        public bool ImgurDirectLink = true;
-        public ImgurThumbnailType ImgurThumbnailType = ImgurThumbnailType.Medium_Thumbnail;
-        public bool ImgurUseGIFV = true;
-        public OAuth2Info ImgurOAuth2Info = null;
-        public bool ImgurUploadSelectedAlbum = false;
-        public ImgurAlbumData ImgurSelectedAlbum = null;
-        public List<ImgurAlbumData> ImgurAlbumList = null;
+        public AccountType ImgurAccountType { get; set; } = AccountType.Anonymous;
+        public bool ImgurDirectLink { get; set; } = true;
+        public ImgurThumbnailType ImgurThumbnailType { get; set; } = ImgurThumbnailType.Medium_Thumbnail;
+        public bool ImgurUseGIFV { get; set; } = true;
+        public OAuth2Info ImgurOAuth2Info { get; set; } = null;
+        public bool ImgurUploadSelectedAlbum { get; set; } = false;
+        public ImgurAlbumData ImgurSelectedAlbum { get; set; } = null;
+        public List<ImgurAlbumData> ImgurAlbumList { get; set; } = null;
 
         #endregion Imgur
 
         #region ImageShack
 
-        public ImageShackOptions ImageShackSettings = new ImageShackOptions();
+        public ImageShackOptions ImageShackSettings { get; set; } = new ImageShackOptions();
 
         #endregion ImageShack
 
         #region Flickr
 
-        public OAuthInfo FlickrOAuthInfo = null;
-        public FlickrSettings FlickrSettings = new FlickrSettings();
+        public OAuthInfo FlickrOAuthInfo { get; set; } = null;
+        public FlickrSettings FlickrSettings { get; set; } = new FlickrSettings();
 
         #endregion Flickr
 
         #region Photobucket
 
-        public OAuthInfo PhotobucketOAuthInfo = null;
-        public PhotobucketAccountInfo PhotobucketAccountInfo = null;
+        public OAuthInfo PhotobucketOAuthInfo { get; set; } = null;
+        public PhotobucketAccountInfo PhotobucketAccountInfo { get; set; } = null;
 
         #endregion Photobucket
 
         #region Google Photos
 
-        public OAuth2Info GooglePhotosOAuth2Info = null;
-        public OAuthUserInfo GooglePhotosUserInfo = null;
-        public string GooglePhotosAlbumID = "";
-        public bool GooglePhotosIsPublic = false;
+        public OAuth2Info GooglePhotosOAuth2Info { get; set; } = null;
+        public OAuthUserInfo GooglePhotosUserInfo { get; set; } = null;
+        public string GooglePhotosAlbumID { get; set; } = "";
+        public bool GooglePhotosIsPublic { get; set; } = false;
 
         #endregion Google Photos
 
         #region Chevereto
 
-        public CheveretoUploader CheveretoUploader = new CheveretoUploader();
-        public bool CheveretoDirectURL = true;
+        public CheveretoUploader CheveretoUploader { get; set; } = new CheveretoUploader();
+        public bool CheveretoDirectURL { get; set; } = true;
 
         #endregion Chevereto
 
         #region vgy.me
 
-        public string VgymeUserKey = "";
+        [JsonEncrypt]
+        public string VgymeUserKey { get; set; } = "";
 
         #endregion vgy.me
 
