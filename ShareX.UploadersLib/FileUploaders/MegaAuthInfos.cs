@@ -23,24 +23,35 @@
 
 #endregion License Information (GPL v3)
 
+using CG.Web.MegaApiClient;
 using ShareX.HelpersLib;
+using System;
 
-namespace ShareX.UploadersLib.FileUploaders
+namespace ShareX.UploadersLib
 {
-    public class PlikSettings
+    public class MegaAuthInfos
     {
-        public string URL { get; set; } = "";
+        public string Email { get; set; }
         [JsonEncrypt]
-        public string APIKey { get; set; } = "";
-        public bool IsSecured { get; set; } = false;
-        public string Login { get; set; } = "";
+        public string Hash { get; set; }
         [JsonEncrypt]
-        public string Password { get; set; } = "";
-        public bool Removable { get; set; } = false;
-        public bool OneShot { get; set; } = false;
-        public int TTLUnit { get; set; } = 2;
-        public decimal TTL { get; set; } = 30;
-        public bool HasComment { get; set; } = false;
-        public string Comment { get; set; } = "";
+        public string PasswordAesKey { get; set; }
+
+        public MegaAuthInfos()
+        {
+        }
+
+        public MegaAuthInfos(MegaApiClient.AuthInfos authInfos)
+        {
+            Email = authInfos.Email;
+            Hash = authInfos.Hash;
+            PasswordAesKey = Convert.ToBase64String(authInfos.PasswordAesKey);
+        }
+
+        public MegaApiClient.AuthInfos GetMegaApiClientAuthInfos()
+        {
+            byte[] passwordAesKey = Convert.FromBase64String(PasswordAesKey);
+            return new MegaApiClient.AuthInfos(Email, Hash, passwordAesKey);
+        }
     }
 }
