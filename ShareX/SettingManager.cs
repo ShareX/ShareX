@@ -143,7 +143,9 @@ namespace ShareX
 
         public static void LoadApplicationConfig()
         {
-            Settings = ApplicationConfig.Load(ApplicationConfigFilePath, BackupFolder, true, true);
+            Settings = ApplicationConfig.Load(ApplicationConfigFilePath, BackupFolder);
+            Settings.CreateBackup = true;
+            Settings.CreateWeeklyBackup = true;
             Settings.SettingsSaveFailed += Settings_SettingsSaveFailed;
             DefaultTaskSettings = Settings.DefaultTaskSettings;
             ApplicationConfigBackwardCompatibilityTasks();
@@ -177,13 +179,18 @@ namespace ShareX
 
         public static void LoadUploadersConfig()
         {
-            UploadersConfig = UploadersConfig.Load(UploadersConfigFilePath, BackupFolder, true, true);
+            UploadersConfig = UploadersConfig.Load(UploadersConfigFilePath, BackupFolder);
+            UploadersConfig.CreateBackup = true;
+            UploadersConfig.CreateWeeklyBackup = true;
+            UploadersConfig.SupportDPAPIEncryption = true;
             UploadersConfigBackwardCompatibilityTasks();
         }
 
         public static void LoadHotkeysConfig()
         {
-            HotkeysConfig = HotkeysConfig.Load(HotkeysConfigFilePath, BackupFolder, true, true);
+            HotkeysConfig = HotkeysConfig.Load(HotkeysConfigFilePath, BackupFolder);
+            HotkeysConfig.CreateBackup = true;
+            HotkeysConfig.CreateWeeklyBackup = true;
             HotkeysConfigBackwardCompatibilityTasks();
         }
 

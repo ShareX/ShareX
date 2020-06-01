@@ -64,6 +64,9 @@ namespace ShareX.HelpersLib
         [Browsable(false), JsonIgnore]
         public bool CreateWeeklyBackup { get; set; }
 
+        [Browsable(false), JsonIgnore]
+        public bool SupportDPAPIEncryption { get; set; }
+
         public bool IsUpgradeFrom(string version)
         {
             return IsUpgrade && Helpers.CompareVersion(ApplicationVersion, version) <= 0;
@@ -128,7 +131,16 @@ namespace ShareX.HelpersLib
                         using (JsonTextWriter jsonWriter = new JsonTextWriter(streamWriter))
                         {
                             JsonSerializer serializer = new JsonSerializer();
-                            serializer.ContractResolver = new DPAPIEncryptedStringPropertyResolver();
+
+                            if (SupportDPAPIEncryption)
+                            {
+                                serializer.ContractResolver = new DPAPIEncryptedStringPropertyResolver();
+                            }
+                            else
+                            {
+                                serializer.ContractResolver = new WritablePropertiesOnlyResolver();
+                            }
+
                             serializer.Converters.Add(new StringEnumConverter());
                             serializer.DateTimeZoneHandling = DateTimeZoneHandling.Utc;
                             serializer.Formatting = Formatting.Indented;
@@ -183,7 +195,7 @@ namespace ShareX.HelpersLib
             return isSuccess;
         }
 
-        public static T Load(string filePath, string backupFolder = null, bool createBackup = false, bool createWeeklyBackup = false)
+        public static T Load(string filePath, string backupFolder = null)
         {
             List<string> fallbackFilePaths = new List<string>();
             string tempFilePath = filePath + ".temp";
@@ -211,8 +223,6 @@ namespace ShareX.HelpersLib
                 setting.IsFirstTimeRun = string.IsNullOrEmpty(setting.ApplicationVersion);
                 setting.IsUpgrade = !setting.IsFirstTimeRun && Helpers.CompareApplicationVersion(setting.ApplicationVersion) < 0;
                 setting.BackupFolder = backupFolder;
-                setting.CreateBackup = createBackup;
-                setting.CreateWeeklyBackup = createWeeklyBackup;
             }
 
             return setting;
