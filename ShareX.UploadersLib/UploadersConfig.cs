@@ -450,47 +450,52 @@ namespace ShareX.UploadersLib
 
         #region bit.ly
 
-        public OAuth2Info BitlyOAuth2Info = null;
-        public string BitlyDomain = "";
+        public OAuth2Info BitlyOAuth2Info { get; set; } = null;
+        public string BitlyDomain { get; set; } = "";
 
         #endregion bit.ly
 
         #region yourls.org
 
-        public string YourlsAPIURL = "http://yoursite.com/yourls-api.php";
-        public string YourlsSignature = "";
-        public string YourlsUsername = "";
-        public string YourlsPassword = "";
+        public string YourlsAPIURL { get; set; } = "http://yoursite.com/yourls-api.php";
+        [JsonEncrypt]
+        public string YourlsSignature { get; set; } = "";
+        public string YourlsUsername { get; set; } = "";
+        [JsonEncrypt]
+        public string YourlsPassword { get; set; } = "";
 
         #endregion yourls.org
 
         #region adf.ly
 
-        public string AdFlyAPIKEY = "";
-        public string AdFlyAPIUID = "";
+        public string AdFlyAPIUID { get; set; } = "";
+        [JsonEncrypt]
+        public string AdFlyAPIKEY { get; set; } = "";
 
         #endregion adf.ly
 
         #region polr
 
-        public string PolrAPIHostname = "";
-        public string PolrAPIKey = "";
-        public bool PolrIsSecret = false;
-        public bool PolrUseAPIv1 = false;
+        public string PolrAPIHostname { get; set; } = "";
+        [JsonEncrypt]
+        public string PolrAPIKey { get; set; } = "";
+        public bool PolrIsSecret { get; set; } = false;
+        public bool PolrUseAPIv1 { get; set; } = false;
 
         #endregion polr
 
         #region Firebase Dynamic Links
 
-        public string FirebaseWebAPIKey = "";
-        public string FirebaseDynamicLinkDomain = "";
-        public bool FirebaseIsShort = false;
+        [JsonEncrypt]
+        public string FirebaseWebAPIKey { get; set; } = "";
+        public string FirebaseDynamicLinkDomain { get; set; } = "";
+        public bool FirebaseIsShort { get; set; } = false;
 
         #endregion Firebase Dynamic Links
 
         #region Kutt
 
-        public KuttSettings KuttSettings = new KuttSettings();
+        public KuttSettings KuttSettings { get; set; } = new KuttSettings();
 
         #endregion Kutt
 
@@ -500,21 +505,21 @@ namespace ShareX.UploadersLib
 
         #region Twitter
 
-        public List<OAuthInfo> TwitterOAuthInfoList = new List<OAuthInfo>();
-        public int TwitterSelectedAccount = 0;
-        public bool TwitterSkipMessageBox = false;
-        public string TwitterDefaultMessage = "";
+        public List<OAuthInfo> TwitterOAuthInfoList { get; set; } = new List<OAuthInfo>();
+        public int TwitterSelectedAccount { get; set; } = 0;
+        public bool TwitterSkipMessageBox { get; set; } = false;
+        public string TwitterDefaultMessage { get; set; } = "";
 
         #endregion Twitter
 
         #region Custom uploaders
 
-        public List<CustomUploaderItem> CustomUploadersList = new List<CustomUploaderItem>();
-        public int CustomImageUploaderSelected = 0;
-        public int CustomTextUploaderSelected = 0;
-        public int CustomFileUploaderSelected = 0;
-        public int CustomURLShortenerSelected = 0;
-        public int CustomURLSharingServiceSelected = 0;
+        public List<CustomUploaderItem> CustomUploadersList { get; set; } = new List<CustomUploaderItem>();
+        public int CustomImageUploaderSelected { get; set; } = 0;
+        public int CustomTextUploaderSelected { get; set; } = 0;
+        public int CustomFileUploaderSelected { get; set; } = 0;
+        public int CustomURLShortenerSelected { get; set; } = 0;
+        public int CustomURLSharingServiceSelected { get; set; } = 0;
 
         #endregion Custom uploaders
 
