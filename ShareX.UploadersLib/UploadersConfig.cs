@@ -99,51 +99,54 @@ namespace ShareX.UploadersLib
 
         #region Pastebin
 
-        public PastebinSettings PastebinSettings = new PastebinSettings();
+        public PastebinSettings PastebinSettings { get; set; } = new PastebinSettings();
 
         #endregion Pastebin
 
         #region Paste.ee
 
-        public string Paste_eeUserKey = "";
-        public bool Paste_eeEncryptPaste = false;
+        [JsonEncrypt]
+        public string Paste_eeUserKey { get; set; } = "";
+        public bool Paste_eeEncryptPaste { get; set; } = false;
 
         #endregion Paste.ee
 
         #region Gist
 
-        public OAuth2Info GistOAuth2Info = null;
-        public bool GistPublishPublic = false;
-        public bool GistRawURL = false;
-        public string GistCustomURL = "";
+        public OAuth2Info GistOAuth2Info { get; set; } = null;
+        public bool GistPublishPublic { get; set; } = false;
+        public bool GistRawURL { get; set; } = false;
+        public string GistCustomURL { get; set; } = "";
 
         #endregion Gist
 
         #region uPaste
 
-        public string UpasteUserKey = "";
-        public bool UpasteIsPublic = false;
+        [JsonEncrypt]
+        public string UpasteUserKey { get; set; } = "";
+        public bool UpasteIsPublic { get; set; } = false;
 
         #endregion uPaste
 
         #region Hastebin
 
-        public string HastebinCustomDomain = "https://hastebin.com";
-        public string HastebinSyntaxHighlighting = "hs";
-        public bool HastebinUseFileExtension = true;
+        public string HastebinCustomDomain { get; set; } = "https://hastebin.com";
+        public string HastebinSyntaxHighlighting { get; set; } = "hs";
+        public bool HastebinUseFileExtension { get; set; } = true;
 
         #endregion Hastebin
 
         #region OneTimeSecret
 
-        public string OneTimeSecretAPIKey = "";
-        public string OneTimeSecretAPIUsername = "";
+        public string OneTimeSecretAPIUsername { get; set; } = "";
+        [JsonEncrypt]
+        public string OneTimeSecretAPIKey { get; set; } = "";
 
         #endregion OneTimeSecret
 
         #region Pastie
 
-        public bool PastieIsPublic = false;
+        public bool PastieIsPublic { get; set; } = false;
 
         #endregion Pastie
 
