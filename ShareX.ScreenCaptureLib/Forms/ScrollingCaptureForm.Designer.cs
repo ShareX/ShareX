@@ -133,13 +133,28 @@ namespace ShareX.ScreenCaptureLib
             0,
             0,
             0});
+            this.nudScrollDelay.Minimum = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
             this.nudScrollDelay.Name = "nudScrollDelay";
+            this.nudScrollDelay.Value = new decimal(new int[] {
+            500,
+            0,
+            0,
+            0});
             this.nudScrollDelay.ValueChanged += new System.EventHandler(this.nudScrollDelay_ValueChanged);
             // 
             // nudMaximumScrollCount
             // 
             resources.ApplyResources(this.nudMaximumScrollCount, "nudMaximumScrollCount");
             this.nudMaximumScrollCount.Name = "nudMaximumScrollCount";
+            this.nudMaximumScrollCount.Value = new decimal(new int[] {
+            20,
+            0,
+            0,
+            0});
             this.nudMaximumScrollCount.ValueChanged += new System.EventHandler(this.nudMaximumScrollCount_ValueChanged);
             // 
             // lblScrollDelay
@@ -283,7 +298,17 @@ namespace ShareX.ScreenCaptureLib
             0,
             0,
             0});
+            this.nudStartDelay.Minimum = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
             this.nudStartDelay.Name = "nudStartDelay";
+            this.nudStartDelay.Value = new decimal(new int[] {
+            500,
+            0,
+            0,
+            0});
             this.nudStartDelay.ValueChanged += new System.EventHandler(this.nudStartDelay_ValueChanged);
             // 
             // cbStartCaptureAutomatically
