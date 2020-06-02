@@ -55,20 +55,6 @@ namespace ShareX.HelpersLib
             }
         }
 
-        private static bool experimentalCustomTheme;
-
-        public static bool ExperimentalCustomTheme
-        {
-            get
-            {
-                return UseCustomTheme && experimentalCustomTheme;
-            }
-            set
-            {
-                experimentalCustomTheme = value;
-            }
-        }
-
         public static bool IsDarkTheme => UseCustomTheme && Theme.IsDarkTheme;
 
         public static bool UseWhiteIcon { get; set; }
@@ -86,7 +72,7 @@ namespace ShareX.HelpersLib
                 form.Icon = Icon;
             }
 
-            if (ExperimentalCustomTheme)
+            if (UseCustomTheme)
             {
                 ApplyCustomThemeToControl(form);
 

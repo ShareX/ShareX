@@ -139,8 +139,8 @@ namespace ShareX.HistoryLib
                 {
                     Helpers.CreateDirectoryFromFilePath(filePath);
 
-                    using (FileStream fs = File.Open(filePath, FileMode.Append, FileAccess.Write, FileShare.Read))
-                    using (XmlTextWriter writer = new XmlTextWriter(fs, Encoding.UTF8))
+                    using (FileStream fileStream = new FileStream(filePath, FileMode.Append, FileAccess.Write, FileShare.Read, 4096, FileOptions.WriteThrough))
+                    using (XmlTextWriter writer = new XmlTextWriter(fileStream, Encoding.UTF8))
                     {
                         writer.Formatting = Formatting.Indented;
                         writer.Indentation = 4;

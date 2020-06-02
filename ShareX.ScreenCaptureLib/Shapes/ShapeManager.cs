@@ -844,7 +844,7 @@ namespace ShareX.ScreenCaptureLib
             switch (action)
             {
                 case RegionCaptureAction.CancelCapture:
-                    if (Form.Mode == RegionCaptureMode.TaskEditor)
+                    if (Form.IsEditorMode)
                     {
                         if (Form.ShowExitConfirmation())
                         {
@@ -861,7 +861,7 @@ namespace ShareX.ScreenCaptureLib
                     {
                         DeleteIntersectShape();
                     }
-                    else if (Form.Mode == RegionCaptureMode.TaskEditor)
+                    else if (Form.IsEditorMode)
                     {
                         if (Form.ShowExitConfirmation())
                         {

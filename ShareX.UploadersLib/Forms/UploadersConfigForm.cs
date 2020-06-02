@@ -415,6 +415,11 @@ namespace ShareX.UploadersLib
             }
 
             cbBoxShare.Checked = Config.BoxShare;
+            cbBoxShareAccessLevel.Items.Clear();
+            cbBoxShareAccessLevel.Items.AddRange(Helpers.GetEnumDescriptions<BoxShareAccessLevel>());
+            cbBoxShareAccessLevel.SelectedIndex = (int)Config.BoxShareAccessLevel;
+            cbBoxShareAccessLevel.Enabled = Config.BoxShare;
+            lblBoxShareAccessLevel.Enabled = Config.BoxShare;
             lblBoxFolderID.Text = Resources.UploadersConfigForm_LoadSettings_Selected_folder_ + " " + Config.BoxSelectedFolder.name;
 
             #endregion Box
@@ -639,6 +644,8 @@ namespace ShareX.UploadersLib
             txtSeafileLibraryPassword.ReadOnly = Config.SeafileIsLibraryEncrypted;
             btnSeafileLibraryPasswordValidate.Enabled = !Config.SeafileIsLibraryEncrypted;
             cbSeafileCreateShareableURL.Checked = Config.SeafileCreateShareableURL;
+            cbSeafileCreateShareableURLRaw.Checked = Config.SeafileCreateShareableURLRaw;
+            cbSeafileCreateShareableURLRaw.Enabled = cbSeafileCreateShareableURL.Checked;
             cbSeafileIgnoreInvalidCert.Checked = Config.SeafileIgnoreInvalidCert;
             nudSeafileExpireDays.SetValue(Config.SeafileShareDaysToExpire);
             txtSeafileSharePassword.Text = Config.SeafileSharePassword;
@@ -1855,6 +1862,13 @@ namespace ShareX.UploadersLib
         private void cbBoxShare_CheckedChanged(object sender, EventArgs e)
         {
             Config.BoxShare = cbBoxShare.Checked;
+            cbBoxShareAccessLevel.Enabled = Config.BoxShare;
+            lblBoxShareAccessLevel.Enabled = Config.BoxShare;
+        }
+
+        private void cbBoxShareAccessLevel_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Config.BoxShareAccessLevel = (BoxShareAccessLevel)cbBoxShareAccessLevel.SelectedIndex;
         }
 
         private void btnBoxRefreshFolders_Click(object sender, EventArgs e)
@@ -2059,7 +2073,8 @@ namespace ShareX.UploadersLib
             {
                 cbMegaFolder.Items.Clear();
 
-                Mega mega = new Mega(Config.MegaAuthInfos);
+                Mega mega = new Mega(Config.MegaAuthInfos?.GetMegaApiClientAuthInfos());
+
                 if (!tryLogin || mega.TryLogin())
                 {
                     lblMegaStatus.Text = Resources.UploadersConfigForm_MegaConfigureTab_Configured;
@@ -2094,7 +2109,15 @@ namespace ShareX.UploadersLib
                 return;
             }
 
-            Config.MegaAuthInfos = new MegaApiClient().GenerateAuthInfos(txtMegaEmail.Text, txtMegaPassword.Text);
+            MegaApiClient.AuthInfos megaAuthInfos = new MegaApiClient().GenerateAuthInfos(txtMegaEmail.Text, txtMegaPassword.Text);
+            if (megaAuthInfos != null)
+            {
+                Config.MegaAuthInfos = new MegaAuthInfos(megaAuthInfos);
+            }
+            else
+            {
+                Config.MegaAuthInfos = null;
+            }
 
             MegaConfigureTab(true);
         }
@@ -2596,6 +2619,12 @@ namespace ShareX.UploadersLib
         private void cbSeafileCreateShareableURL_CheckedChanged(object sender, EventArgs e)
         {
             Config.SeafileCreateShareableURL = cbSeafileCreateShareableURL.Checked;
+            cbSeafileCreateShareableURLRaw.Enabled = cbSeafileCreateShareableURL.Checked;
+        }
+
+        private void cbSeafileCreateShareableURLRaw_CheckedChanged(object sender, EventArgs e)
+        {
+            Config.SeafileCreateShareableURLRaw = cbSeafileCreateShareableURLRaw.Checked;
         }
 
         private void cbSeafileIgnoreInvalidCert_CheckedChanged(object sender, EventArgs e)

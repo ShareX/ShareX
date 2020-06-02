@@ -68,13 +68,13 @@ namespace ShareX.HistoryLib
                 {
                     Helpers.CreateDirectoryFromFilePath(filePath);
 
-                    using (FileStream fs = File.Open(filePath, FileMode.Append, FileAccess.Write, FileShare.Read))
-                    using (StreamWriter sw = new StreamWriter(fs))
+                    using (FileStream fileStream = new FileStream(filePath, FileMode.Append, FileAccess.Write, FileShare.Read, 4096, FileOptions.WriteThrough))
+                    using (StreamWriter streamWriter = new StreamWriter(fileStream))
                     {
                         JsonSerializer serializer = new JsonSerializer();
                         serializer.DefaultValueHandling = DefaultValueHandling.Ignore;
 
-                        bool firstObject = fs.Length == 0;
+                        bool firstObject = fileStream.Length == 0;
 
                         foreach (HistoryItem historyItem in historyItems)
                         {
@@ -87,7 +87,7 @@ namespace ShareX.HistoryLib
 
                             json += JObject.FromObject(historyItem, serializer).ToString();
 
-                            sw.Write(json);
+                            streamWriter.Write(json);
 
                             firstObject = false;
                         }

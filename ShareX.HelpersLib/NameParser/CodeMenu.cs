@@ -58,12 +58,6 @@ namespace ShareX.HelpersLib
             AutoClose = textBoxBase == null;
             ShowImageMargin = false;
 
-            if (ShareXResources.ExperimentalCustomTheme)
-            {
-                Opacity = ShareXResources.Theme.ContextMenuOpacityDouble;
-                Renderer = new ToolStripDarkRenderer();
-            }
-
             foreach (CodeMenuItem item in items)
             {
                 ToolStripMenuItem tsmi = new ToolStripMenuItem { Text = $"{item.Name} - {item.Description}", Tag = item.Name };
@@ -108,6 +102,11 @@ namespace ShareX.HelpersLib
             ToolStripMenuItem tsmiClose = new ToolStripMenuItem(Resources.CodeMenu_Create_Close);
             tsmiClose.Click += (sender, e) => Close();
             Items.Add(tsmiClose);
+
+            if (ShareXResources.UseCustomTheme)
+            {
+                ShareXResources.ApplyCustomThemeToContextMenuStrip(this);
+            }
 
             if (textBoxBase != null)
             {

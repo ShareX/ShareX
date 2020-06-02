@@ -136,7 +136,9 @@ namespace ShareX.UploadersLib.FileUploaders
     public class Ge_ttLogin
     {
         public string Expires { get; set; }
+        [JsonEncrypt]
         public string AccessToken { get; set; }
+        [JsonEncrypt]
         public string RefreshToken { get; set; }
     }
 

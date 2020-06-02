@@ -39,7 +39,11 @@ namespace ShareX.UploadersLib.FileUploaders
     public enum AmazonS3StorageClass // Localized
     {
         STANDARD,
-        STANDARD_IA
+        STANDARD_IA,
+        ONEZONE_IA,
+        INTELLIGENT_TIERING,
+        //GLACIER,
+        //DEEP_ARCHIVE
     }
 
     public class AmazonS3NewFileUploaderService : FileUploaderService
@@ -146,11 +150,16 @@ namespace ShareX.UploadersLib.FileUploaders
                 ["Content-Type"] = contentType,
                 ["x-amz-date"] = timeStamp,
                 ["x-amz-content-sha256"] = hashedPayload,
+                // If you don't specify, S3 Standard is the default storage class. Amazon S3 supports other storage classes.
+                // Valid Values: STANDARD | REDUCED_REDUNDANCY | STANDARD_IA | ONEZONE_IA | INTELLIGENT_TIERING | GLACIER | DEEP_ARCHIVE
+                // https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html
                 ["x-amz-storage-class"] = Settings.StorageClass.ToString()
             };
 
             if (Settings.SetPublicACL)
             {
+                // The canned ACL to apply to the object. For more information, see Canned ACL.
+                // https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl
                 headers["x-amz-acl"] = "public-read";
             }
 

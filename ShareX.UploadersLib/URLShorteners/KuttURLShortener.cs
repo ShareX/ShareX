@@ -135,8 +135,10 @@ namespace ShareX.UploadersLib.URLShorteners
 
     public class KuttSettings
     {
-        public string APIKey { get; set; }
         public string Host { get; set; } = "https://kutt.it";
+        [JsonEncrypt]
+        public string APIKey { get; set; }
+        [JsonEncrypt]
         public string Password { get; set; }
         public bool Reuse { get; set; }
     }

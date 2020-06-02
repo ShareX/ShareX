@@ -75,5 +75,28 @@ namespace ShareX.HelpersLib
 
             return default(T);
         }
+
+        public static bool QuickVerifyJsonFile(string filePath)
+        {
+            try
+            {
+                if (File.Exists(filePath))
+                {
+                    using (FileStream fs = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read))
+                    {
+                        if (fs.Length > 1 && fs.ReadByte() == (byte)'{')
+                        {
+                            fs.Seek(-1, SeekOrigin.End);
+                            return fs.ReadByte() == (byte)'}';
+                        }
+                    }
+                }
+            }
+            catch
+            {
+            }
+
+            return false;
+        }
     }
 }

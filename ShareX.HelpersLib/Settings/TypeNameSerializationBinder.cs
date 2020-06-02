@@ -23,20 +23,42 @@
 
 #endregion License Information (GPL v3)
 
-using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace ShareX.HelpersLib
 {
-    internal class WritablePropertiesOnlyResolver : DefaultContractResolver
+    public class TypeNameSerializationBinder : ISerializationBinder
     {
-        protected override IList<JsonProperty> CreateProperties(Type type, MemberSerialization memberSerialization)
+        public string AppNamespace { get; private set; }
+        public string AppAssembly { get; private set; }
+
+        public TypeNameSerializationBinder(string appNamespace, string appAssembly)
         {
-            IList<JsonProperty> props = base.CreateProperties(type, memberSerialization);
-            return props.Where(p => p.Writable).ToList();
+            AppNamespace = appNamespace;
+            AppAssembly = appAssembly;
+        }
+
+        public void BindToName(Type serializedType, out string assemblyName, out string typeName)
+        {
+            assemblyName = null;
+            typeName = serializedType.Name;
+        }
+
+        public Type BindToType(string assemblyName, string typeName)
+        {
+            string resolvedTypeName;
+
+            if (!string.IsNullOrEmpty(assemblyName))
+            {
+                resolvedTypeName = $"{typeName}, {assemblyName}";
+            }
+            else
+            {
+                resolvedTypeName = $"{AppNamespace}.{typeName}, {AppAssembly}";
+            }
+
+            return Type.GetType(resolvedTypeName, true);
         }
     }
 }

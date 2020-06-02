@@ -26,8 +26,10 @@
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
+using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -62,6 +64,9 @@ namespace ShareX.HelpersLib
         [Browsable(false), JsonIgnore]
         public bool CreateWeeklyBackup { get; set; }
 
+        [Browsable(false), JsonIgnore]
+        public bool SupportDPAPIEncryption { get; set; }
+
         public bool IsUpgradeFrom(string version)
         {
             return IsUpgrade && Helpers.CompareVersion(ApplicationVersion, version) <= 0;
@@ -69,18 +74,12 @@ namespace ShareX.HelpersLib
 
         protected virtual void OnSettingsSaved(string filePath, bool result)
         {
-            if (SettingsSaved != null)
-            {
-                SettingsSaved((T)this, filePath, result);
-            }
+            SettingsSaved?.Invoke((T)this, filePath, result);
         }
 
         protected virtual void OnSettingsSaveFailed(Exception e)
         {
-            if (SettingsSaveFailed != null)
-            {
-                SettingsSaveFailed(e);
-            }
+            SettingsSaveFailed?.Invoke(e);
         }
 
         public bool Save(string filePath)
@@ -110,23 +109,6 @@ namespace ShareX.HelpersLib
             SaveAsync(FilePath);
         }
 
-        public static T Load(string filePath, string backupFolder = null, bool createBackup = false, bool createWeeklyBackup = false)
-        {
-            T setting = LoadInternal(filePath, backupFolder);
-
-            if (setting != null)
-            {
-                setting.FilePath = filePath;
-                setting.IsFirstTimeRun = string.IsNullOrEmpty(setting.ApplicationVersion);
-                setting.IsUpgrade = !setting.IsFirstTimeRun && Helpers.CompareApplicationVersion(setting.ApplicationVersion) < 0;
-                setting.BackupFolder = backupFolder;
-                setting.CreateBackup = createBackup;
-                setting.CreateWeeklyBackup = createWeeklyBackup;
-            }
-
-            return setting;
-        }
-
         private bool SaveInternal(string filePath)
         {
             string typeName = GetType().Name;
@@ -144,12 +126,21 @@ namespace ShareX.HelpersLib
 
                         string tempFilePath = filePath + ".temp";
 
-                        using (FileStream fileStream = new FileStream(tempFilePath, FileMode.Create, FileAccess.Write, FileShare.Read))
+                        using (FileStream fileStream = new FileStream(tempFilePath, FileMode.Create, FileAccess.Write, FileShare.Read, 4096, FileOptions.WriteThrough))
                         using (StreamWriter streamWriter = new StreamWriter(fileStream))
                         using (JsonTextWriter jsonWriter = new JsonTextWriter(streamWriter))
                         {
                             JsonSerializer serializer = new JsonSerializer();
-                            serializer.ContractResolver = new WritablePropertiesOnlyResolver();
+
+                            if (SupportDPAPIEncryption)
+                            {
+                                serializer.ContractResolver = new DPAPIEncryptedStringPropertyResolver();
+                            }
+                            else
+                            {
+                                serializer.ContractResolver = new WritablePropertiesOnlyResolver();
+                            }
+
                             serializer.Converters.Add(new StringEnumConverter());
                             serializer.DateTimeZoneHandling = DateTimeZoneHandling.Utc;
                             serializer.Formatting = Formatting.Indented;
@@ -157,17 +148,28 @@ namespace ShareX.HelpersLib
                             jsonWriter.Flush();
                         }
 
-                        if (File.Exists(filePath))
+                        if (!JsonHelpers.QuickVerifyJsonFile(tempFilePath))
                         {
-                            if (CreateBackup)
-                            {
-                                Helpers.CopyFile(filePath, BackupFolder);
-                            }
-
-                            File.Delete(filePath);
+                            throw new Exception($"{typeName} file is corrupt: {tempFilePath}");
                         }
 
-                        File.Move(tempFilePath, filePath);
+                        if (File.Exists(filePath))
+                        {
+                            string backupFilePath = null;
+
+                            if (CreateBackup)
+                            {
+                                string fileName = Path.GetFileName(filePath);
+                                backupFilePath = Path.Combine(BackupFolder, fileName);
+                                Helpers.CreateDirectoryFromDirectoryPath(BackupFolder);
+                            }
+
+                            File.Replace(tempFilePath, filePath, backupFilePath);
+                        }
+                        else
+                        {
+                            File.Move(tempFilePath, filePath);
+                        }
 
                         if (CreateWeeklyBackup && !string.IsNullOrEmpty(BackupFolder))
                         {
@@ -193,7 +195,40 @@ namespace ShareX.HelpersLib
             return isSuccess;
         }
 
-        private static T LoadInternal(string filePath, string backupFolder = null)
+        public static T Load(string filePath, string backupFolder = null)
+        {
+            List<string> fallbackFilePaths = new List<string>();
+            string tempFilePath = filePath + ".temp";
+            fallbackFilePaths.Add(tempFilePath);
+
+            if (!string.IsNullOrEmpty(backupFolder) && Directory.Exists(backupFolder))
+            {
+                string fileName = Path.GetFileName(filePath);
+                string backupFilePath = Path.Combine(backupFolder, fileName);
+                fallbackFilePaths.Add(backupFilePath);
+
+                string fileNameNoExt = Path.GetFileNameWithoutExtension(fileName);
+                string lastWeeklyBackupFilePath = Directory.GetFiles(backupFolder, fileNameNoExt + "-*").OrderBy(x => x).LastOrDefault();
+                if (!string.IsNullOrEmpty(lastWeeklyBackupFilePath))
+                {
+                    fallbackFilePaths.Add(lastWeeklyBackupFilePath);
+                }
+            }
+
+            T setting = LoadInternal(filePath, fallbackFilePaths);
+
+            if (setting != null)
+            {
+                setting.FilePath = filePath;
+                setting.IsFirstTimeRun = string.IsNullOrEmpty(setting.ApplicationVersion);
+                setting.IsUpgrade = !setting.IsFirstTimeRun && Helpers.CompareApplicationVersion(setting.ApplicationVersion) < 0;
+                setting.BackupFolder = backupFolder;
+            }
+
+            return setting;
+        }
+
+        private static T LoadInternal(string filePath, List<string> fallbackFilePaths = null)
         {
             string typeName = typeof(T).Name;
 
@@ -213,6 +248,7 @@ namespace ShareX.HelpersLib
                             using (JsonTextReader jsonReader = new JsonTextReader(streamReader))
                             {
                                 JsonSerializer serializer = new JsonSerializer();
+                                serializer.ContractResolver = new DPAPIEncryptedStringPropertyResolver();
                                 serializer.Converters.Add(new StringEnumConverter());
                                 serializer.DateTimeZoneHandling = DateTimeZoneHandling.Local;
                                 serializer.ObjectCreationHandling = ObjectCreationHandling.Replace;
@@ -245,11 +281,11 @@ namespace ShareX.HelpersLib
                 DebugHelper.WriteLine($"{typeName} file does not exist: {filePath}");
             }
 
-            if (!string.IsNullOrEmpty(backupFolder))
+            if (fallbackFilePaths != null && fallbackFilePaths.Count > 0)
             {
-                string fileName = Path.GetFileName(filePath);
-                string backupFilePath = Path.Combine(backupFolder, fileName);
-                return LoadInternal(backupFilePath);
+                filePath = fallbackFilePaths[0];
+                fallbackFilePaths.RemoveAt(0);
+                return LoadInternal(filePath, fallbackFilePaths);
             }
 
             DebugHelper.WriteLine($"Loading new {typeName} instance.");

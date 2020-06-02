@@ -241,16 +241,19 @@ namespace ShareX.UploadersLib.FileUploaders
 
     public class PushbulletSettings
     {
-        public string UserAPIKey = "";
-        public List<PushbulletDevice> DeviceList = new List<PushbulletDevice>();
-        public int SelectedDevice = 0;
+        [JsonEncrypt]
+        public string UserAPIKey { get; set; } = "";
+        public List<PushbulletDevice> DeviceList { get; set; } = new List<PushbulletDevice>();
+        public int SelectedDevice { get; set; } = 0;
 
         public PushbulletDevice CurrentDevice
         {
             get
             {
                 if (DeviceList.IsValidIndex(SelectedDevice))
+                {
                     return DeviceList[SelectedDevice];
+                }
 
                 return null;
             }

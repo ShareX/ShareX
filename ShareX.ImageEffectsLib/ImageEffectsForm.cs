@@ -65,6 +65,7 @@ namespace ShareX.ImageEffectsLib
 
             SelectedPresetIndex = selectedPresetIndex;
             eiImageEffects.ObjectType = typeof(ImageEffectPreset);
+            eiImageEffects.SerializationBinder = new TypeNameSerializationBinder("ShareX.ImageEffectsLib", "ShareX.ImageEffectsLib");
             AddAllEffectsToContextMenu();
         }
 
