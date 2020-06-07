@@ -130,7 +130,7 @@
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="pgSettings.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
+    <value>15</value>
   </data>
   <data name="&gt;&gt;pgSettings.Name" xml:space="preserve">
     <value>pgSettings</value>
@@ -142,16 +142,16 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;pgSettings.ZOrder" xml:space="preserve">
-    <value>19</value>
+    <value>20</value>
   </data>
   <data name="btnAdd.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 40</value>
+    <value>408, 40</value>
   </data>
   <data name="btnAdd.Size" type="System.Drawing.Size, System.Drawing">
     <value>104, 24</value>
   </data>
   <data name="btnAdd.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+    <value>9</value>
   </data>
   <data name="btnAdd.Text" xml:space="preserve">
     <value>Add</value>
@@ -166,13 +166,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnAdd.ZOrder" xml:space="preserve">
-    <value>18</value>
+    <value>19</value>
   </data>
   <data name="lvEffects.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left</value>
-  </data>
-  <data name="chEffect.Width" type="System.Int32, mscorlib">
-    <value>164</value>
   </data>
   <data name="lvEffects.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 72</value>
@@ -181,28 +178,31 @@
     <value>168, 424</value>
   </data>
   <data name="lvEffects.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
+    <value>14</value>
   </data>
   <data name="&gt;&gt;lvEffects.Name" xml:space="preserve">
     <value>lvEffects</value>
   </data>
   <data name="&gt;&gt;lvEffects.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=13.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=13.1.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lvEffects.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lvEffects.ZOrder" xml:space="preserve">
-    <value>20</value>
+    <value>21</value>
+  </data>
+  <data name="chEffect.Width" type="System.Int32, mscorlib">
+    <value>164</value>
   </data>
   <data name="btnRemove.Location" type="System.Drawing.Point, System.Drawing">
-    <value>120, 40</value>
+    <value>520, 40</value>
   </data>
   <data name="btnRemove.Size" type="System.Drawing.Size, System.Drawing">
     <value>104, 24</value>
   </data>
   <data name="btnRemove.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
+    <value>10</value>
   </data>
   <data name="btnRemove.Text" xml:space="preserve">
     <value>Remove</value>
@@ -217,16 +217,16 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnRemove.ZOrder" xml:space="preserve">
-    <value>17</value>
+    <value>18</value>
   </data>
   <data name="btnClear.Location" type="System.Drawing.Point, System.Drawing">
-    <value>344, 40</value>
+    <value>744, 40</value>
   </data>
   <data name="btnClear.Size" type="System.Drawing.Size, System.Drawing">
     <value>104, 24</value>
   </data>
   <data name="btnClear.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
+    <value>12</value>
   </data>
   <data name="btnClear.Text" xml:space="preserve">
     <value>Clear</value>
@@ -241,16 +241,16 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnClear.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>17</value>
   </data>
   <data name="btnDuplicate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>232, 40</value>
+    <value>632, 40</value>
   </data>
   <data name="btnDuplicate.Size" type="System.Drawing.Size, System.Drawing">
     <value>104, 24</value>
   </data>
   <data name="btnDuplicate.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
+    <value>11</value>
   </data>
   <data name="btnDuplicate.Text" xml:space="preserve">
     <value>Duplicate</value>
@@ -265,7 +265,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnDuplicate.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>16</value>
   </data>
   <data name="btnSaveImage.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
@@ -280,7 +280,7 @@
     <value>120, 24</value>
   </data>
   <data name="btnSaveImage.TabIndex" type="System.Int32, mscorlib">
-    <value>16</value>
+    <value>19</value>
   </data>
   <data name="btnSaveImage.Text" xml:space="preserve">
     <value>Save image...</value>
@@ -298,7 +298,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnSaveImage.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>15</value>
   </data>
   <data name="eiImageEffects.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
@@ -310,19 +310,19 @@
     <value>192, 24</value>
   </data>
   <data name="eiImageEffects.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
+    <value>17</value>
   </data>
   <data name="&gt;&gt;eiImageEffects.Name" xml:space="preserve">
     <value>eiImageEffects</value>
   </data>
   <data name="&gt;&gt;eiImageEffects.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.ExportImportControl, ShareX.HelpersLib, Version=13.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.ExportImportControl, ShareX.HelpersLib, Version=13.1.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;eiImageEffects.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
   <data name="&gt;&gt;eiImageEffects.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>14</value>
   </data>
   <data name="pbResult.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
@@ -334,19 +334,19 @@
     <value>432, 424</value>
   </data>
   <data name="pbResult.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
+    <value>16</value>
   </data>
   <data name="&gt;&gt;pbResult.Name" xml:space="preserve">
     <value>pbResult</value>
   </data>
   <data name="&gt;&gt;pbResult.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyPictureBox, ShareX.HelpersLib, Version=13.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyPictureBox, ShareX.HelpersLib, Version=13.1.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;pbResult.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
   <data name="&gt;&gt;pbResult.ZOrder" xml:space="preserve">
-    <value>16</value>
+    <value>22</value>
   </data>
   <metadata name="cmsEffects.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
@@ -369,18 +369,6 @@
   <metadata name="cmsLoadImage.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>126, 17</value>
   </metadata>
-  <data name="tsmiLoadImageFromFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>130, 22</value>
-  </data>
-  <data name="tsmiLoadImageFromFile.Text" xml:space="preserve">
-    <value>From file...</value>
-  </data>
-  <data name="tsmiLoadImageFromClipboard.Size" type="System.Drawing.Size, System.Drawing">
-    <value>130, 22</value>
-  </data>
-  <data name="tsmiLoadImageFromClipboard.Text" xml:space="preserve">
-    <value>From clipboard</value>
-  </data>
   <data name="cmsLoadImage.Size" type="System.Drawing.Size, System.Drawing">
     <value>131, 48</value>
   </data>
@@ -394,7 +382,7 @@
     <value>120, 24</value>
   </data>
   <data name="mbLoadImage.TabIndex" type="System.Int32, mscorlib">
-    <value>15</value>
+    <value>18</value>
   </data>
   <data name="mbLoadImage.Text" xml:space="preserve">
     <value>Load image</value>
@@ -406,22 +394,34 @@
     <value>mbLoadImage</value>
   </data>
   <data name="&gt;&gt;mbLoadImage.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MenuButton, ShareX.HelpersLib, Version=13.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MenuButton, ShareX.HelpersLib, Version=13.1.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;mbLoadImage.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
   <data name="&gt;&gt;mbLoadImage.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>13</value>
+  </data>
+  <data name="tsmiLoadImageFromFile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>130, 22</value>
+  </data>
+  <data name="tsmiLoadImageFromFile.Text" xml:space="preserve">
+    <value>From file...</value>
+  </data>
+  <data name="tsmiLoadImageFromClipboard.Size" type="System.Drawing.Size, System.Drawing">
+    <value>130, 22</value>
+  </data>
+  <data name="tsmiLoadImageFromClipboard.Text" xml:space="preserve">
+    <value>From clipboard</value>
   </data>
   <data name="btnAddPreset.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 8</value>
+    <value>408, 8</value>
   </data>
   <data name="btnAddPreset.Size" type="System.Drawing.Size, System.Drawing">
-    <value>136, 23</value>
+    <value>136, 24</value>
   </data>
   <data name="btnAddPreset.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>4</value>
   </data>
   <data name="btnAddPreset.Text" xml:space="preserve">
     <value>New preset</value>
@@ -436,16 +436,16 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnAddPreset.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>12</value>
   </data>
   <data name="btnRemovePreset.Location" type="System.Drawing.Point, System.Drawing">
-    <value>152, 8</value>
+    <value>552, 8</value>
   </data>
   <data name="btnRemovePreset.Size" type="System.Drawing.Size, System.Drawing">
-    <value>136, 23</value>
+    <value>136, 24</value>
   </data>
   <data name="btnRemovePreset.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>5</value>
   </data>
   <data name="btnRemovePreset.Text" xml:space="preserve">
     <value>Remove preset</value>
@@ -460,16 +460,16 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnRemovePreset.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>11</value>
   </data>
   <data name="cbPresets.Location" type="System.Drawing.Point, System.Drawing">
-    <value>296, 9</value>
+    <value>104, 10</value>
   </data>
   <data name="cbPresets.Size" type="System.Drawing.Size, System.Drawing">
-    <value>304, 21</value>
+    <value>296, 21</value>
   </data>
   <data name="cbPresets.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+    <value>3</value>
   </data>
   <data name="&gt;&gt;cbPresets.Name" xml:space="preserve">
     <value>cbPresets</value>
@@ -481,19 +481,19 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;cbPresets.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>10</value>
   </data>
   <data name="lblPresetName.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="lblPresetName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>608, 13</value>
+    <value>5, 46</value>
   </data>
   <data name="lblPresetName.Size" type="System.Drawing.Size, System.Drawing">
     <value>38, 13</value>
   </data>
   <data name="lblPresetName.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+    <value>7</value>
   </data>
   <data name="lblPresetName.Text" xml:space="preserve">
     <value>Name:</value>
@@ -508,19 +508,19 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblPresetName.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>9</value>
   </data>
   <data name="txtPresetName.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
   </data>
   <data name="txtPresetName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>672, 9</value>
+    <value>104, 42</value>
   </data>
   <data name="txtPresetName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>288, 20</value>
+    <value>296, 20</value>
   </data>
   <data name="txtPresetName.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+    <value>8</value>
   </data>
   <data name="&gt;&gt;txtPresetName.Name" xml:space="preserve">
     <value>txtPresetName</value>
@@ -532,7 +532,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;txtPresetName.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>8</value>
   </data>
   <data name="btnClose.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
@@ -559,7 +559,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnClose.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>7</value>
   </data>
   <data name="btnOK.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
@@ -589,7 +589,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnOK.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>6</value>
   </data>
   <data name="btnUploadImage.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
@@ -601,7 +601,7 @@
     <value>120, 24</value>
   </data>
   <data name="btnUploadImage.TabIndex" type="System.Int32, mscorlib">
-    <value>17</value>
+    <value>20</value>
   </data>
   <data name="btnUploadImage.Text" xml:space="preserve">
     <value>Upload image</value>
@@ -619,16 +619,16 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnUploadImage.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>5</value>
   </data>
   <data name="btnRefresh.Location" type="System.Drawing.Point, System.Drawing">
-    <value>456, 40</value>
+    <value>856, 40</value>
   </data>
   <data name="btnRefresh.Size" type="System.Drawing.Size, System.Drawing">
     <value>104, 24</value>
   </data>
   <data name="btnRefresh.TabIndex" type="System.Int32, mscorlib">
-    <value>18</value>
+    <value>13</value>
   </data>
   <data name="btnRefresh.Text" xml:space="preserve">
     <value>Refresh</value>
@@ -643,6 +643,57 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnRefresh.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="btnDuplicatePreset.Location" type="System.Drawing.Point, System.Drawing">
+    <value>696, 8</value>
+  </data>
+  <data name="btnDuplicatePreset.Size" type="System.Drawing.Size, System.Drawing">
+    <value>136, 24</value>
+  </data>
+  <data name="btnDuplicatePreset.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="btnDuplicatePreset.Text" xml:space="preserve">
+    <value>Duplicate preset</value>
+  </data>
+  <data name="&gt;&gt;btnDuplicatePreset.Name" xml:space="preserve">
+    <value>btnDuplicatePreset</value>
+  </data>
+  <data name="&gt;&gt;btnDuplicatePreset.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnDuplicatePreset.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnDuplicatePreset.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="lblPresets.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblPresets.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 14</value>
+  </data>
+  <data name="lblPresets.Size" type="System.Drawing.Size, System.Drawing">
+    <value>45, 13</value>
+  </data>
+  <data name="lblPresets.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="lblPresets.Text" xml:space="preserve">
+    <value>Presets:</value>
+  </data>
+  <data name="&gt;&gt;lblPresets.Name" xml:space="preserve">
+    <value>lblPresets</value>
+  </data>
+  <data name="&gt;&gt;lblPresets.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblPresets.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblPresets.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">

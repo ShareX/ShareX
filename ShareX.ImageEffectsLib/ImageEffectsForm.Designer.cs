@@ -54,6 +54,8 @@
             this.btnOK = new System.Windows.Forms.Button();
             this.btnUploadImage = new System.Windows.Forms.Button();
             this.btnRefresh = new System.Windows.Forms.Button();
+            this.btnDuplicatePreset = new System.Windows.Forms.Button();
+            this.lblPresets = new System.Windows.Forms.Label();
             this.cmsLoadImage.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -131,6 +133,7 @@
             this.eiImageEffects.DefaultFileName = null;
             this.eiImageEffects.Name = "eiImageEffects";
             this.eiImageEffects.ObjectType = null;
+            this.eiImageEffects.SerializationBinder = null;
             this.eiImageEffects.ExportRequested += new ShareX.HelpersLib.ExportImportControl.ExportEventHandler(this.eiImageEffects_ExportRequested);
             this.eiImageEffects.ImportRequested += new ShareX.HelpersLib.ExportImportControl.ImportEventHandler(this.eiImageEffects_ImportRequested);
             // 
@@ -244,12 +247,26 @@
             this.btnRefresh.UseVisualStyleBackColor = true;
             this.btnRefresh.Click += new System.EventHandler(this.BtnRefresh_Click);
             // 
+            // btnDuplicatePreset
+            // 
+            resources.ApplyResources(this.btnDuplicatePreset, "btnDuplicatePreset");
+            this.btnDuplicatePreset.Name = "btnDuplicatePreset";
+            this.btnDuplicatePreset.UseVisualStyleBackColor = true;
+            this.btnDuplicatePreset.Click += new System.EventHandler(this.btnDuplicatePreset_Click);
+            // 
+            // lblPresets
+            // 
+            resources.ApplyResources(this.lblPresets, "lblPresets");
+            this.lblPresets.Name = "lblPresets";
+            // 
             // ImageEffectsForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.CancelButton = this.btnClose;
+            this.Controls.Add(this.lblPresets);
+            this.Controls.Add(this.btnDuplicatePreset);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.btnUploadImage);
             this.Controls.Add(this.btnOK);
@@ -264,11 +281,11 @@
             this.Controls.Add(this.btnSaveImage);
             this.Controls.Add(this.btnDuplicate);
             this.Controls.Add(this.btnClear);
-            this.Controls.Add(this.pbResult);
             this.Controls.Add(this.btnRemove);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.pgSettings);
             this.Controls.Add(this.lvEffects);
+            this.Controls.Add(this.pbResult);
             this.Name = "ImageEffectsForm";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Shown += new System.EventHandler(this.ImageEffectsForm_Shown);
@@ -304,6 +321,8 @@
         private System.Windows.Forms.Button btnOK;
         private System.Windows.Forms.Button btnUploadImage;
         private System.Windows.Forms.Button btnRefresh;
+        private System.Windows.Forms.Button btnDuplicatePreset;
+        private System.Windows.Forms.Label lblPresets;
     }
 }
 
