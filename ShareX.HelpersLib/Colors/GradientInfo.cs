@@ -51,6 +51,16 @@ namespace ShareX.HelpersLib
             Colors.Sort((x, y) => x.Location.CompareTo(y.Location));
         }
 
+        public void Reverse()
+        {
+            Colors.Reverse();
+
+            foreach (GradientStop color in Colors)
+            {
+                color.Location = 100 - color.Location;
+            }
+        }
+
         public void Draw(Graphics g, Rectangle rect)
         {
             if (IsValid)

@@ -161,6 +161,15 @@ namespace ShareX.HelpersLib
             }
         }
 
+        private void btnReverse_Click(object sender, EventArgs e)
+        {
+            if (Gradient.IsValid)
+            {
+                Gradient.Reverse();
+                UpdateGradientList();
+            }
+        }
+
         private void cbtnCurrentColor_ColorChanged(Color color)
         {
             GradientStop gradientStop = GetSelectedGradientStop(out ListViewItem lvi);
