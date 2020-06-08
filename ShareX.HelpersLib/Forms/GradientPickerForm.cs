@@ -92,7 +92,7 @@ namespace ShareX.HelpersLib
         private void btnAdd_Click(object sender, EventArgs e)
         {
             Color color = cbtnCurrentColor.Color;
-            float offset = (float)(nudLocation.Value / 100);
+            float offset = (float)nudLocation.Value;
             GradientStop gradientStop = new GradientStop(color, offset);
             Gradient.Colors.Add(gradientStop);
             AddGradientStop(gradientStop);

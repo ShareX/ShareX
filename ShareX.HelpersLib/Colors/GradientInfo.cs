@@ -38,13 +38,7 @@ namespace ShareX.HelpersLib
 
         public List<GradientStop> Colors { get; set; }
 
-        public bool IsValid
-        {
-            get
-            {
-                return Colors != null && Colors.Count > 0;
-            }
-        }
+        public bool IsValid => Colors != null && Colors.Count > 0;
 
         public GradientInfo()
         {
