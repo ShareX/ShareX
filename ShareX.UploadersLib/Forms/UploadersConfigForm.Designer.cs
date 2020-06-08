@@ -189,6 +189,7 @@ namespace ShareX.UploadersLib
             this.cbOneDriveCreateShareableLink = new System.Windows.Forms.CheckBox();
             this.oAuth2OneDrive = new ShareX.UploadersLib.OAuthControl();
             this.tpGoogleDrive = new System.Windows.Forms.TabPage();
+            this.cbGoogleDriveSharedDrive = new System.Windows.Forms.ComboBox();
             this.cbGoogleDriveDirectLink = new System.Windows.Forms.CheckBox();
             this.cbGoogleDriveUseFolder = new System.Windows.Forms.CheckBox();
             this.txtGoogleDriveFolderID = new System.Windows.Forms.TextBox();
@@ -1727,6 +1728,7 @@ namespace ShareX.UploadersLib
             // tpGoogleDrive
             // 
             this.tpGoogleDrive.BackColor = System.Drawing.SystemColors.Window;
+            this.tpGoogleDrive.Controls.Add(this.cbGoogleDriveSharedDrive);
             this.tpGoogleDrive.Controls.Add(this.cbGoogleDriveDirectLink);
             this.tpGoogleDrive.Controls.Add(this.cbGoogleDriveUseFolder);
             this.tpGoogleDrive.Controls.Add(this.txtGoogleDriveFolderID);
@@ -1737,6 +1739,14 @@ namespace ShareX.UploadersLib
             this.tpGoogleDrive.Controls.Add(this.oauth2GoogleDrive);
             resources.ApplyResources(this.tpGoogleDrive, "tpGoogleDrive");
             this.tpGoogleDrive.Name = "tpGoogleDrive";
+            // 
+            // cbGoogleDriveSharedDrive
+            // 
+            this.cbGoogleDriveSharedDrive.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbGoogleDriveSharedDrive.FormattingEnabled = true;
+            resources.ApplyResources(this.cbGoogleDriveSharedDrive, "cbGoogleDriveSharedDrive");
+            this.cbGoogleDriveSharedDrive.Name = "cbGoogleDriveSharedDrive";
+            this.cbGoogleDriveSharedDrive.SelectedIndexChanged += new System.EventHandler(this.cbGoogleDriveSharedDrive_SelectedIndexChanged);
             // 
             // cbGoogleDriveDirectLink
             // 
@@ -5651,5 +5661,6 @@ namespace ShareX.UploadersLib
         private System.Windows.Forms.CheckBox cbGoogleCloudStorageStripExtensionImage;
         private System.Windows.Forms.Label lblB2UrlPreview;
         private HelpersLib.TabToTreeView tttvMain;
+        private System.Windows.Forms.ComboBox cbGoogleDriveSharedDrive;
     }
 }
