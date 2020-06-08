@@ -146,6 +146,10 @@
   <data name="&gt;&gt;lvGradientPoints.ZOrder" xml:space="preserve">
     <value>11</value>
   </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="btnAdd.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="btnAdd.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 112</value>
   </data>
@@ -169,6 +173,9 @@
   </data>
   <data name="&gt;&gt;btnAdd.ZOrder" xml:space="preserve">
     <value>9</value>
+  </data>
+  <data name="btnRemove.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="btnRemove.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 136</value>
@@ -195,15 +202,14 @@
     <value>8</value>
   </data>
   <data name="nudLocation.Location" type="System.Drawing.Point, System.Drawing">
-    <value>64, 188</value>
+    <value>8, 216</value>
   </data>
   <data name="nudLocation.Size" type="System.Drawing.Size, System.Drawing">
-    <value>56, 20</value>
+    <value>112, 20</value>
   </data>
   <data name="nudLocation.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="nudLocation.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
     <value>Center</value>
   </data>
@@ -222,8 +228,11 @@
   <data name="lblLocation.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lblLocation.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblLocation.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 192</value>
+    <value>5, 200</value>
   </data>
   <data name="lblLocation.Size" type="System.Drawing.Size, System.Drawing">
     <value>51, 13</value>
@@ -270,6 +279,9 @@
   <data name="lblGradientType.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lblGradientType.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblGradientType.Location" type="System.Drawing.Point, System.Drawing">
     <value>5, 88</value>
   </data>
@@ -293,6 +305,9 @@
   </data>
   <data name="&gt;&gt;lblGradientType.ZOrder" xml:space="preserve">
     <value>4</value>
+  </data>
+  <data name="btnOK.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="btnOK.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 280</value>
@@ -318,6 +333,9 @@
   <data name="&gt;&gt;btnOK.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
+  <data name="btnCancel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="btnCancel.Location" type="System.Drawing.Point, System.Drawing">
     <value>112, 280</value>
   </data>
@@ -341,6 +359,9 @@
   </data>
   <data name="&gt;&gt;btnCancel.ZOrder" xml:space="preserve">
     <value>2</value>
+  </data>
+  <data name="pbPreview.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="pbPreview.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 26</value>
@@ -366,6 +387,9 @@
   <data name="lblPreview.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lblPreview.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblPreview.Location" type="System.Drawing.Point, System.Drawing">
     <value>5, 8</value>
   </data>
@@ -390,8 +414,11 @@
   <data name="&gt;&gt;lblPreview.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="cbtnCurrentColor.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="cbtnCurrentColor.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 160</value>
+    <value>8, 168</value>
   </data>
   <data name="cbtnCurrentColor.Size" type="System.Drawing.Size, System.Drawing">
     <value>112, 24</value>
@@ -406,7 +433,7 @@
     <value>cbtnCurrentColor</value>
   </data>
   <data name="&gt;&gt;cbtnCurrentColor.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.ColorButton, ShareX.HelpersLib, Version=13.0.2.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.ColorButton, ShareX.HelpersLib, Version=13.1.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;cbtnCurrentColor.Parent" xml:space="preserve">
     <value>$this</value>

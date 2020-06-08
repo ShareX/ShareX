@@ -42,7 +42,7 @@ namespace ShareX.HelpersLib
         {
             get
             {
-                return Colors != null && Colors.Count >= 2 && Colors.Any(x => x.Location == 0f) && Colors.Any(x => x.Location == 100f);
+                return Colors != null && Colors.Count > 0;
             }
         }
 
@@ -71,10 +71,21 @@ namespace ShareX.HelpersLib
 
         public ColorBlend GetColorBlend()
         {
+            List<GradientStop> colors = new List<GradientStop>(Colors.OrderBy(x => x.Location));
+
+            if (!colors.Any(x => x.Location == 0))
+            {
+                colors.Insert(0, new GradientStop(colors[0].Color, 0f));
+            }
+
+            if (!colors.Any(x => x.Location == 100))
+            {
+                colors.Add(new GradientStop(colors[colors.Count - 1].Color, 100f));
+            }
+
             ColorBlend colorBlend = new ColorBlend();
-            IEnumerable<GradientStop> gradient = Colors.OrderBy(x => x.Location);
-            colorBlend.Colors = gradient.Select(x => x.Color).ToArray();
-            colorBlend.Positions = gradient.Select(x => x.Location / 100).ToArray();
+            colorBlend.Colors = colors.Select(x => x.Color).ToArray();
+            colorBlend.Positions = colors.Select(x => x.Location / 100).ToArray();
             return colorBlend;
         }
 
