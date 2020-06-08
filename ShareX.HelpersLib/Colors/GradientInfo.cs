@@ -46,6 +46,11 @@ namespace ShareX.HelpersLib
             Colors = new List<GradientStop>();
         }
 
+        public void Sort()
+        {
+            Colors.Sort((x, y) => x.Location.CompareTo(y.Location));
+        }
+
         public void Draw(Graphics g, Rectangle rect)
         {
             if (IsValid)
