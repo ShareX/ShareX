@@ -3572,6 +3572,27 @@ when you made the application key.</value>
   <data name="&gt;&gt;tpOneDrive.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="cbGoogleDriveSharedDrive.Location" type="System.Drawing.Point, System.Drawing">
+    <value>352, 16</value>
+  </data>
+  <data name="cbGoogleDriveSharedDrive.Size" type="System.Drawing.Size, System.Drawing">
+    <value>256, 21</value>
+  </data>
+  <data name="cbGoogleDriveSharedDrive.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;cbGoogleDriveSharedDrive.Name" xml:space="preserve">
+    <value>cbGoogleDriveSharedDrive</value>
+  </data>
+  <data name="&gt;&gt;cbGoogleDriveSharedDrive.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbGoogleDriveSharedDrive.Parent" xml:space="preserve">
+    <value>tpGoogleDrive</value>
+  </data>
+  <data name="&gt;&gt;cbGoogleDriveSharedDrive.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="cbGoogleDriveDirectLink.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -3585,7 +3606,7 @@ when you made the application key.</value>
     <value>93, 17</value>
   </data>
   <data name="cbGoogleDriveDirectLink.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
+    <value>2</value>
   </data>
   <data name="cbGoogleDriveDirectLink.Text" xml:space="preserve">
     <value>Use direct link</value>
@@ -3600,7 +3621,7 @@ when you made the application key.</value>
     <value>tpGoogleDrive</value>
   </data>
   <data name="&gt;&gt;cbGoogleDriveDirectLink.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="cbGoogleDriveUseFolder.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3609,13 +3630,13 @@ when you made the application key.</value>
     <value>NoControl</value>
   </data>
   <data name="cbGoogleDriveUseFolder.Location" type="System.Drawing.Point, System.Drawing">
-    <value>352, 16</value>
+    <value>352, 47</value>
   </data>
   <data name="cbGoogleDriveUseFolder.Size" type="System.Drawing.Size, System.Drawing">
     <value>165, 17</value>
   </data>
   <data name="cbGoogleDriveUseFolder.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
+    <value>5</value>
   </data>
   <data name="cbGoogleDriveUseFolder.Text" xml:space="preserve">
     <value>Upload files to selected folder</value>
@@ -3630,16 +3651,16 @@ when you made the application key.</value>
     <value>tpGoogleDrive</value>
   </data>
   <data name="&gt;&gt;cbGoogleDriveUseFolder.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="txtGoogleDriveFolderID.Location" type="System.Drawing.Point, System.Drawing">
     <value>352, 88</value>
   </data>
   <data name="txtGoogleDriveFolderID.Size" type="System.Drawing.Size, System.Drawing">
-    <value>256, 20</value>
+    <value>432, 20</value>
   </data>
   <data name="txtGoogleDriveFolderID.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
+    <value>7</value>
   </data>
   <data name="&gt;&gt;txtGoogleDriveFolderID.Name" xml:space="preserve">
     <value>txtGoogleDriveFolderID</value>
@@ -3651,7 +3672,7 @@ when you made the application key.</value>
     <value>tpGoogleDrive</value>
   </data>
   <data name="&gt;&gt;txtGoogleDriveFolderID.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="lblGoogleDriveFolderID.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3666,7 +3687,7 @@ when you made the application key.</value>
     <value>53, 13</value>
   </data>
   <data name="lblGoogleDriveFolderID.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
+    <value>6</value>
   </data>
   <data name="lblGoogleDriveFolderID.Text" xml:space="preserve">
     <value>Folder ID:</value>
@@ -3681,7 +3702,7 @@ when you made the application key.</value>
     <value>tpGoogleDrive</value>
   </data>
   <data name="&gt;&gt;lblGoogleDriveFolderID.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="chGoogleDriveTitle.Text" xml:space="preserve">
     <value>Title</value>
@@ -3702,7 +3723,7 @@ when you made the application key.</value>
     <value>432, 352</value>
   </data>
   <data name="lvGoogleDriveFoldersList.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
+    <value>8</value>
   </data>
   <data name="&gt;&gt;lvGoogleDriveFoldersList.Name" xml:space="preserve">
     <value>lvGoogleDriveFoldersList</value>
@@ -3714,7 +3735,7 @@ when you made the application key.</value>
     <value>tpGoogleDrive</value>
   </data>
   <data name="&gt;&gt;lvGoogleDriveFoldersList.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="btnGoogleDriveRefreshFolders.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -3723,13 +3744,13 @@ when you made the application key.</value>
     <value>NoControl</value>
   </data>
   <data name="btnGoogleDriveRefreshFolders.Location" type="System.Drawing.Point, System.Drawing">
-    <value>352, 40</value>
+    <value>616, 15</value>
   </data>
   <data name="btnGoogleDriveRefreshFolders.Size" type="System.Drawing.Size, System.Drawing">
     <value>168, 23</value>
   </data>
   <data name="btnGoogleDriveRefreshFolders.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
+    <value>4</value>
   </data>
   <data name="btnGoogleDriveRefreshFolders.Text" xml:space="preserve">
     <value>Refresh folders list</value>
@@ -3744,7 +3765,7 @@ when you made the application key.</value>
     <value>tpGoogleDrive</value>
   </data>
   <data name="&gt;&gt;btnGoogleDriveRefreshFolders.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="cbGoogleDriveIsPublic.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3774,7 +3795,7 @@ when you made the application key.</value>
     <value>tpGoogleDrive</value>
   </data>
   <data name="&gt;&gt;cbGoogleDriveIsPublic.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="oauth2GoogleDrive.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 16</value>
@@ -3795,7 +3816,7 @@ when you made the application key.</value>
     <value>tpGoogleDrive</value>
   </data>
   <data name="&gt;&gt;oauth2GoogleDrive.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="tpGoogleDrive.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 238</value>
