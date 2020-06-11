@@ -404,5 +404,75 @@ namespace ShareX.HelpersLib
         {
             return (text.Trim().Length % 4 == 0) && Regex.IsMatch(text.Trim(), @"^[a-zA-Z0-9\+/]*={0,3}$", RegexOptions.None);
         }
+
+        public static string ToCamelCase(this string text, string spaceReplacement = "")
+        {
+            text = text.ToPascalCase(spaceReplacement);
+
+            if (!string.IsNullOrWhiteSpace(text))
+            {
+                return char.ToLower(text[0]) + text.Substring(1);
+            }
+
+            return text;
+        }
+
+        public static string ToPascalCase(this string text, string spaceReplacement = "")
+        {
+            if (!string.IsNullOrWhiteSpace(text))
+            {
+                string[] words = text.Trim().ToLower().Split();
+                string result = string.Empty;
+
+                for (int i = 0; i < words.Length; i++)
+                {
+                    if (!string.IsNullOrWhiteSpace(words[i]))
+                    {
+                        if (!string.IsNullOrWhiteSpace(result))
+                            result += spaceReplacement;
+
+                        result += char.ToUpper(words[i][0]) + words[i].Substring(1);
+                    }
+                }
+
+                return result;
+            }
+
+            return text?.Trim();
+        }
+
+        public static string ToInvertedPascalCase(this string text, string spaceReplacement = "")
+        {
+            if (!string.IsNullOrWhiteSpace(text))
+            {
+                string[] words = text.Trim().ToUpper().Split();
+                string result = string.Empty;
+
+                for (int i = 0; i < words.Length; i++)
+                {
+                    if (!string.IsNullOrWhiteSpace(words[i]))
+                    {
+                        if (!string.IsNullOrWhiteSpace(result))
+                            result += spaceReplacement;
+
+                        result += char.ToLower(words[i][0]) + words[i].Substring(1);
+                    }
+                }
+
+                return result;
+            }
+
+            return text?.Trim();
+        }
+
+        public static string ToSnakeCase(this string text, string spaceReplacement = "_")
+        {
+            return text.ToPascalCase(spaceReplacement).ToLower();
+        }
+
+        public static string ToKebabCase(this string text, string spaceReplacement = "-")
+        {
+            return text.ToPascalCase(spaceReplacement).ToLower();
+        }
     }
 }

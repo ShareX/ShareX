@@ -7335,7 +7335,7 @@ when you made the application key.</value>
     <value>11</value>
   </data>
   <data name="cbOwnCloud81Compatibility.Text" xml:space="preserve">
-    <value>ownCloud 8.1+ compatibility</value>
+    <value>OwnCloud 8.1+ compatibility</value>
   </data>
   <data name="&gt;&gt;cbOwnCloud81Compatibility.Name" xml:space="preserve">
     <value>cbOwnCloud81Compatibility</value>
