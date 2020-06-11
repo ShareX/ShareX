@@ -189,18 +189,93 @@ namespace ShareX.UploadersLib.FileUploaders
 
                         if (filterMatch.Success)
                         {
-                            string uploadPath = pathFilter.Path;
-
-                            for (int i = 0; i < filterMatch.Groups.Count; i++)
-                                uploadPath = uploadPath.Replace($"%{i}", filterMatch.Groups[i].Value);
-
-                            return uploadPath;
+                            return ReplaceGroupMatchingInFilter(pathFilter.Path, filterMatch);
                         }
                     }
                 }
             }
 
             return defaultPath;
+        }
+
+        private string ReplaceGroupMatchingInFilter(string path, Match filterMatch)
+        {
+            Match groupMatch = Regex.Match(path, @"%(\d+)(\{([^\}]+)\})?");
+
+            while (groupMatch.Success)
+            {
+                string fullMatch = groupMatch.Groups[0].Value;
+                string caseFunction = groupMatch.Groups[3].Value;
+                int groupNumber = int.Parse(groupMatch.Groups[1].Value);
+
+                if (0 <= groupNumber && groupNumber < filterMatch.Groups.Count)
+                {
+                    string groupValue = filterMatch.Groups[groupNumber].Value;
+
+                    if (!string.IsNullOrWhiteSpace(caseFunction))
+                    {
+                        string[] caseFunctionParams = caseFunction.Split(',');
+
+                        if (caseFunctionParams.Length > 0)
+                        {
+                            switch (caseFunctionParams[0].ToLower())
+                            {
+                                case "l":
+                                case "lower":
+                                    groupValue = groupValue.ToLower();
+
+                                    if (caseFunctionParams.Length > 1)
+                                    {
+                                        groupValue = groupValue.Replace(" ", caseFunctionParams[1]);
+                                    }
+                                    break;
+                                case "u":
+                                case "upper":
+                                    groupValue = groupValue.ToUpper();
+
+                                    if (caseFunctionParams.Length > 1)
+                                    {
+                                        groupValue = groupValue.Replace(" ", caseFunctionParams[1]);
+                                    }
+                                    break;
+                                case "c":
+                                case "camel":
+                                    groupValue = caseFunctionParams.Length > 1 ? groupValue.ToCamelCase(caseFunctionParams[1]) : groupValue.ToCamelCase();
+                                    break;
+                                case "p":
+                                case "pascal":
+                                    groupValue = caseFunctionParams.Length > 1 ? groupValue.ToPascalCase(caseFunctionParams[1]) : groupValue.ToPascalCase();
+                                    break;
+                                case "pi":
+                                case "pinv":
+                                case "pascali":
+                                case "pascalinv":
+                                case "pascalinverted":
+                                    groupValue = caseFunctionParams.Length > 1 ? groupValue.ToInvertedPascalCase(caseFunctionParams[1]) : groupValue.ToInvertedPascalCase();
+                                    break;
+                                case "s":
+                                case "snake":
+                                    groupValue = caseFunctionParams.Length > 1 ? groupValue.ToSnakeCase(caseFunctionParams[1]) : groupValue.ToSnakeCase();
+                                    break;
+                                case "k":
+                                case "kebab":
+                                    groupValue = caseFunctionParams.Length > 1 ? groupValue.ToKebabCase(caseFunctionParams[1]) : groupValue.ToKebabCase();
+                                    break;
+                                default:
+                                    throw new ArgumentException($"Unknown function name \"{ caseFunctionParams[0] }\".");
+                            }
+                        }
+
+                        int k = 0;
+                    }
+
+                    path = path.Replace(fullMatch, groupValue);
+                }
+
+                groupMatch = groupMatch.NextMatch();
+            }
+
+            return path;
         }
 
         public bool FolderExists(string uploadPath, NameValueCollection headers)
