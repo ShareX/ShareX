@@ -131,6 +131,12 @@
   <data name="lvGradientPoints.Size" type="System.Drawing.Size, System.Drawing">
     <value>80, 160</value>
   </data>
+  <metadata name="ilColors.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <data name="ilColors.ImageSize" type="System.Drawing.Size, System.Drawing">
+    <value>16, 16</value>
+  </data>
   <data name="lvGradientPoints.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
   </data>
@@ -488,6 +494,12 @@
   </data>
   <data name="&gt;&gt;chLocation.Type" xml:space="preserve">
     <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ilColors.Name" xml:space="preserve">
+    <value>ilColors</value>
+  </data>
+  <data name="&gt;&gt;ilColors.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ImageList, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>GradientPickerForm</value>

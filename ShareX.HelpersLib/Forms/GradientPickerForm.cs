@@ -87,10 +87,21 @@ namespace ShareX.HelpersLib
         {
             ListViewItem lvi = new ListViewItem();
             lvi.Text = string.Format(" {0:0.##}%", gradientStop.Location);
-            lvi.BackColor = gradientStop.Color;
-            lvi.ForeColor = ColorHelpers.VisibleColor(gradientStop.Color);
+            UpdateListViewItemColor(lvi, gradientStop.Color);
             lvi.Tag = gradientStop;
             lvGradientPoints.Items.Add(lvi);
+        }
+
+        private void UpdateListViewItemColor(ListViewItem lvi, Color color)
+        {
+            string argb = color.ToArgb().ToString();
+
+            if (!ilColors.Images.ContainsKey(argb))
+            {
+                ilColors.Images.Add(argb, ImageHelpers.CreateColorPickerIcon(color, new Rectangle(0, 0, 16, 16)));
+            }
+
+            lvi.ImageKey = argb;
         }
 
         private GradientStop GetSelectedGradientStop()
@@ -177,8 +188,7 @@ namespace ShareX.HelpersLib
             if (gradientStop != null)
             {
                 gradientStop.Color = color;
-                lvi.BackColor = gradientStop.Color;
-                lvi.ForeColor = ColorHelpers.VisibleColor(gradientStop.Color);
+                UpdateListViewItemColor(lvi, gradientStop.Color);
                 UpdatePreview();
             }
         }
