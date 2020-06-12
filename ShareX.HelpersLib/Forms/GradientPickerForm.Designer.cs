@@ -28,9 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GradientPickerForm));
             this.lvGradientPoints = new System.Windows.Forms.ListView();
             this.chLocation = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.ilColors = new System.Windows.Forms.ImageList(this.components);
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnRemove = new System.Windows.Forms.Button();
             this.nudLocation = new System.Windows.Forms.NumericUpDown();
@@ -41,6 +43,7 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.pbPreview = new System.Windows.Forms.PictureBox();
             this.lblPreview = new System.Windows.Forms.Label();
+            this.btnReverse = new System.Windows.Forms.Button();
             this.cbtnCurrentColor = new ShareX.HelpersLib.ColorButton();
             ((System.ComponentModel.ISupportInitialize)(this.nudLocation)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPreview)).BeginInit();
@@ -55,6 +58,7 @@
             this.lvGradientPoints.HideSelection = false;
             resources.ApplyResources(this.lvGradientPoints, "lvGradientPoints");
             this.lvGradientPoints.Name = "lvGradientPoints";
+            this.lvGradientPoints.SmallImageList = this.ilColors;
             this.lvGradientPoints.UseCompatibleStateImageBehavior = false;
             this.lvGradientPoints.View = System.Windows.Forms.View.Details;
             this.lvGradientPoints.SelectedIndexChanged += new System.EventHandler(this.lvGradientPoints_SelectedIndexChanged);
@@ -63,6 +67,12 @@
             // chLocation
             // 
             resources.ApplyResources(this.chLocation, "chLocation");
+            // 
+            // ilColors
+            // 
+            this.ilColors.ColorDepth = System.Windows.Forms.ColorDepth.Depth32Bit;
+            resources.ApplyResources(this.ilColors, "ilColors");
+            this.ilColors.TransparentColor = System.Drawing.Color.Transparent;
             // 
             // btnAdd
             // 
@@ -130,6 +140,13 @@
             resources.ApplyResources(this.lblPreview, "lblPreview");
             this.lblPreview.Name = "lblPreview";
             // 
+            // btnReverse
+            // 
+            resources.ApplyResources(this.btnReverse, "btnReverse");
+            this.btnReverse.Name = "btnReverse";
+            this.btnReverse.UseVisualStyleBackColor = true;
+            this.btnReverse.Click += new System.EventHandler(this.btnReverse_Click);
+            // 
             // cbtnCurrentColor
             // 
             this.cbtnCurrentColor.Color = System.Drawing.Color.White;
@@ -144,6 +161,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.CancelButton = this.btnCancel;
+            this.Controls.Add(this.btnReverse);
             this.Controls.Add(this.pbPreview);
             this.Controls.Add(this.lblPreview);
             this.Controls.Add(this.btnCancel);
@@ -181,5 +199,7 @@
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.PictureBox pbPreview;
         private System.Windows.Forms.Label lblPreview;
+        private System.Windows.Forms.Button btnReverse;
+        private System.Windows.Forms.ImageList ilColors;
     }
 }

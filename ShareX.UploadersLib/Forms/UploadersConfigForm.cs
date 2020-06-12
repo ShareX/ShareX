@@ -386,6 +386,13 @@ namespace ShareX.UploadersLib
 
             #region Google Drive
 
+            cbGoogleDriveSharedDrive.Items.Clear();
+            cbGoogleDriveSharedDrive.Items.Add(GoogleDrive.MyDrive);
+            if (Config.GoogleDriveSelectedDrive?.id != GoogleDrive.MyDrive.id)
+            {
+                cbGoogleDriveSharedDrive.Items.Add(Config.GoogleDriveSelectedDrive);
+            }
+
             if (OAuth2Info.CheckOAuth(Config.GoogleDriveOAuth2Info))
             {
                 oauth2GoogleDrive.Status = OAuthLoginStatus.LoginSuccessful;
@@ -397,6 +404,7 @@ namespace ShareX.UploadersLib
             cbGoogleDriveUseFolder.Checked = Config.GoogleDriveUseFolder;
             txtGoogleDriveFolderID.Enabled = Config.GoogleDriveUseFolder;
             txtGoogleDriveFolderID.Text = Config.GoogleDriveFolderID;
+            GoogleDriveSelectConfigDrive();
 
             #endregion Google Drive
 
@@ -1759,6 +1767,7 @@ namespace ShareX.UploadersLib
         private void btnGoogleDriveRefreshFolders_Click(object sender, EventArgs e)
         {
             GoogleDriveRefreshFolders();
+            GoogleDriveRefreshDrives();
         }
 
         private void lvGoogleDriveFoldersList_SelectedIndexChanged(object sender, EventArgs e)
@@ -1772,6 +1781,12 @@ namespace ShareX.UploadersLib
                     txtGoogleDriveFolderID.Text = folder.id;
                 }
             }
+        }
+
+        private void cbGoogleDriveSharedDrive_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            GoogleDriveSharedDrive selectedDrive = cbGoogleDriveSharedDrive.SelectedItem as GoogleDriveSharedDrive;
+            Config.GoogleDriveSelectedDrive = selectedDrive;
         }
 
         #endregion Google Drive

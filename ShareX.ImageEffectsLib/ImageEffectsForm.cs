@@ -87,10 +87,7 @@ namespace ShareX.ImageEffectsLib
 
         protected void OnImageProcessRequested(Bitmap bmp)
         {
-            if (ImageProcessRequested != null)
-            {
-                ImageProcessRequested(bmp);
-            }
+            ImageProcessRequested?.Invoke(bmp);
         }
 
         private void AddAllEffectsToContextMenu()
@@ -260,7 +257,7 @@ namespace ShareX.ImageEffectsLib
 
         private void UpdateControlStates()
         {
-            btnRemovePreset.Enabled = cbPresets.Enabled = txtPresetName.Enabled = btnAdd.Enabled = cbPresets.SelectedIndex > -1;
+            btnRemovePreset.Enabled = btnDuplicatePreset.Enabled = cbPresets.Enabled = txtPresetName.Enabled = btnAdd.Enabled = cbPresets.SelectedIndex > -1;
             btnRemove.Enabled = btnDuplicate.Enabled = lvEffects.SelectedItems.Count > 0;
             btnClear.Enabled = lvEffects.Items.Count > 0;
         }
@@ -449,6 +446,17 @@ namespace ShareX.ImageEffectsLib
                     ClearFields();
                     btnAddPreset.Focus();
                 }
+            }
+        }
+
+        private void btnDuplicatePreset_Click(object sender, EventArgs e)
+        {
+            ImageEffectPreset preset = GetSelectedPreset();
+
+            if (preset != null)
+            {
+                ImageEffectPreset presetClone = preset.Copy();
+                AddPreset(presetClone);
             }
         }
 

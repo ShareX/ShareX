@@ -198,6 +198,7 @@ namespace ShareX.UploadersLib
         public bool GoogleDriveDirectLink { get; set; } = false;
         public bool GoogleDriveUseFolder { get; set; } = false;
         public string GoogleDriveFolderID { get; set; } = "";
+        public GoogleDriveSharedDrive GoogleDriveSelectedDrive { get; set; } = GoogleDrive.MyDrive;
 
         #endregion Google Drive
 

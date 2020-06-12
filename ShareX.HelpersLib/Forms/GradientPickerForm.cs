@@ -45,10 +45,20 @@ namespace ShareX.HelpersLib
 
             cbGradientType.Items.AddRange(Helpers.GetEnumNamesProper<LinearGradientMode>());
             cbGradientType.SelectedIndex = (int)Gradient.Type;
+            UpdateGradientList();
+        }
+
+        private void UpdateGradientList()
+        {
+            Gradient.Sort();
+
+            isReady = false;
+            lvGradientPoints.Items.Clear();
             foreach (GradientStop gradientStop in Gradient.Colors)
             {
                 AddGradientStop(gradientStop);
             }
+
             isReady = true;
             UpdatePreview();
         }
@@ -73,77 +83,141 @@ namespace ShareX.HelpersLib
             }
         }
 
+        private void AddGradientStop(GradientStop gradientStop)
+        {
+            ListViewItem lvi = new ListViewItem();
+            lvi.Text = string.Format(" {0:0.##}%", gradientStop.Location);
+            UpdateListViewItemColor(lvi, gradientStop.Color);
+            lvi.Tag = gradientStop;
+            lvGradientPoints.Items.Add(lvi);
+        }
+
+        private void UpdateListViewItemColor(ListViewItem lvi, Color color)
+        {
+            string argb = color.ToArgb().ToString();
+
+            if (!ilColors.Images.ContainsKey(argb))
+            {
+                ilColors.Images.Add(argb, ImageHelpers.CreateColorPickerIcon(color, new Rectangle(0, 0, 16, 16)));
+            }
+
+            lvi.ImageKey = argb;
+        }
+
+        private GradientStop GetSelectedGradientStop()
+        {
+            return GetSelectedGradientStop(out _);
+        }
+
+        private GradientStop GetSelectedGradientStop(out ListViewItem lvi)
+        {
+            if (lvGradientPoints.SelectedItems.Count > 0)
+            {
+                lvi = lvGradientPoints.SelectedItems[0];
+                return lvi.Tag as GradientStop;
+            }
+
+            lvi = null;
+            return null;
+        }
+
+        private ListViewItem FindListViewItem(GradientStop gradientStop)
+        {
+            foreach (ListViewItem lvi in lvGradientPoints.Items)
+            {
+                GradientStop itemGradientstop = lvi.Tag as GradientStop;
+                if (itemGradientstop == gradientStop)
+                {
+                    return lvi;
+                }
+            }
+
+            return null;
+        }
+
+        private ListViewItem SelectGradientStop(GradientStop gradientStop)
+        {
+            ListViewItem lvi = FindListViewItem(gradientStop);
+            if (lvi != null)
+            {
+                lvi.Selected = true;
+            }
+            return lvi;
+        }
+
         private void cbGradientType_SelectedIndexChanged(object sender, EventArgs e)
         {
             Gradient.Type = (LinearGradientMode)cbGradientType.SelectedIndex;
             UpdatePreview();
         }
 
-        private void AddGradientStop(GradientStop gradientStop)
-        {
-            ListViewItem lvi = new ListViewItem();
-            lvi.Text = string.Format(" {0:0.##}%", gradientStop.Location);
-            lvi.BackColor = gradientStop.Color;
-            lvi.ForeColor = ColorHelpers.VisibleColor(gradientStop.Color);
-            lvi.Tag = gradientStop;
-            lvGradientPoints.Items.Add(lvi);
-        }
-
         private void btnAdd_Click(object sender, EventArgs e)
         {
             Color color = cbtnCurrentColor.Color;
-            float offset = (float)(nudLocation.Value / 100);
+            float offset = (float)nudLocation.Value;
             GradientStop gradientStop = new GradientStop(color, offset);
             Gradient.Colors.Add(gradientStop);
-            AddGradientStop(gradientStop);
-            UpdatePreview();
+            UpdateGradientList();
+            SelectGradientStop(gradientStop);
         }
 
         private void btnRemove_Click(object sender, EventArgs e)
         {
-            if (lvGradientPoints.SelectedItems.Count > 0)
+            GradientStop gradientStop = GetSelectedGradientStop();
+
+            if (gradientStop != null)
             {
-                ListViewItem lvi = lvGradientPoints.SelectedItems[0];
-                GradientStop gradientStop = (GradientStop)lvi.Tag;
                 Gradient.Colors.Remove(gradientStop);
-                lvGradientPoints.Items.Remove(lvi);
-                UpdatePreview();
+                UpdateGradientList();
+            }
+        }
+
+        private void btnReverse_Click(object sender, EventArgs e)
+        {
+            if (Gradient.IsValid)
+            {
+                Gradient.Reverse();
+                UpdateGradientList();
             }
         }
 
         private void cbtnCurrentColor_ColorChanged(Color color)
         {
-            if (lvGradientPoints.SelectedItems.Count > 0)
+            GradientStop gradientStop = GetSelectedGradientStop(out ListViewItem lvi);
+
+            if (gradientStop != null)
             {
-                ListViewItem lvi = lvGradientPoints.SelectedItems[0];
-                GradientStop gradientStop = (GradientStop)lvi.Tag;
                 gradientStop.Color = color;
-                lvi.BackColor = gradientStop.Color;
-                lvi.ForeColor = ColorHelpers.VisibleColor(gradientStop.Color);
+                UpdateListViewItemColor(lvi, gradientStop.Color);
                 UpdatePreview();
             }
         }
 
         private void nudLocation_ValueChanged(object sender, EventArgs e)
         {
-            if (lvGradientPoints.SelectedItems.Count > 0)
+            if (isReady)
             {
-                ListViewItem lvi = lvGradientPoints.SelectedItems[0];
-                GradientStop gradientStop = (GradientStop)lvi.Tag;
-                gradientStop.Location = (float)nudLocation.Value;
-                lvi.Text = string.Format(" {0:0.##}%", gradientStop.Location);
-                UpdatePreview();
+                GradientStop gradientStop = GetSelectedGradientStop(out ListViewItem lvi);
+
+                if (gradientStop != null)
+                {
+                    gradientStop.Location = (float)nudLocation.Value;
+                    UpdateGradientList();
+                    SelectGradientStop(gradientStop);
+                }
             }
         }
 
         private void lvGradientPoints_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (lvGradientPoints.SelectedItems.Count > 0)
+            GradientStop gradientStop = GetSelectedGradientStop();
+
+            if (gradientStop != null)
             {
-                ListViewItem lvi = lvGradientPoints.SelectedItems[0];
-                GradientStop gradientStop = (GradientStop)lvi.Tag;
+                isReady = false;
                 cbtnCurrentColor.Color = gradientStop.Color;
                 nudLocation.SetValue((decimal)gradientStop.Location);
+                isReady = true;
             }
         }
 
