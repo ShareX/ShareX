@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GradientPickerForm));
             this.lvGradientPoints = new System.Windows.Forms.ListView();
             this.chLocation = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.ilColors = new System.Windows.Forms.ImageList(this.components);
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnRemove = new System.Windows.Forms.Button();
             this.nudLocation = new System.Windows.Forms.NumericUpDown();
@@ -44,7 +45,6 @@
             this.lblPreview = new System.Windows.Forms.Label();
             this.btnReverse = new System.Windows.Forms.Button();
             this.cbtnCurrentColor = new ShareX.HelpersLib.ColorButton();
-            this.ilColors = new System.Windows.Forms.ImageList(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.nudLocation)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPreview)).BeginInit();
             this.SuspendLayout();
@@ -67,6 +67,12 @@
             // chLocation
             // 
             resources.ApplyResources(this.chLocation, "chLocation");
+            // 
+            // ilColors
+            // 
+            this.ilColors.ColorDepth = System.Windows.Forms.ColorDepth.Depth32Bit;
+            resources.ApplyResources(this.ilColors, "ilColors");
+            this.ilColors.TransparentColor = System.Drawing.Color.Transparent;
             // 
             // btnAdd
             // 
@@ -148,12 +154,6 @@
             this.cbtnCurrentColor.Name = "cbtnCurrentColor";
             this.cbtnCurrentColor.UseVisualStyleBackColor = true;
             this.cbtnCurrentColor.ColorChanged += new ShareX.HelpersLib.ColorButton.ColorChangedEventHandler(this.cbtnCurrentColor_ColorChanged);
-            // 
-            // ilColors
-            // 
-            this.ilColors.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
-            resources.ApplyResources(this.ilColors, "ilColors");
-            this.ilColors.TransparentColor = System.Drawing.Color.Transparent;
             // 
             // GradientPickerForm
             // 
