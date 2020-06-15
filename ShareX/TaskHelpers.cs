@@ -578,7 +578,7 @@ namespace ShareX
             }
         }
 
-        public static Bitmap AddImageEffects(Bitmap bmp, TaskSettingsImage taskSettingsImage)
+        public static Bitmap ApplyImageEffects(Bitmap bmp, TaskSettingsImage taskSettingsImage)
         {
             if (bmp != null && !bmp.PixelFormat.HasFlag(PixelFormat.Indexed))
             {
@@ -1595,7 +1595,7 @@ namespace ShareX
                             if (cui.DestinationType.HasFlag(CustomUploaderDestinationType.TextUploader)) destinations.Add("texts");
                             if (cui.DestinationType.HasFlag(CustomUploaderDestinationType.FileUploader)) destinations.Add("files");
                             if (cui.DestinationType.HasFlag(CustomUploaderDestinationType.URLShortener) ||
-                                (cui.DestinationType.HasFlag(CustomUploaderDestinationType.URLSharingService))) destinations.Add("urls");
+                                cui.DestinationType.HasFlag(CustomUploaderDestinationType.URLSharingService)) destinations.Add("urls");
 
                             string destinationsText = string.Join("/", destinations);
 
@@ -1664,6 +1664,11 @@ namespace ShareX
                     DebugHelper.WriteException(e);
                 }
             }
+        }
+
+        public static void AddImageEffect(string filePath)
+        {
+            // TODO
         }
 
         public static void OpenActionsToolbar()

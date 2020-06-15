@@ -1052,16 +1052,26 @@ namespace ShareX
             {
                 DebugHelper.WriteLine("CommandLine: " + command.Command);
 
-                if (command.IsCommand && command.Command.Equals("CustomUploader", StringComparison.InvariantCultureIgnoreCase))
+                if (command.IsCommand)
                 {
-                    TaskHelpers.AddCustomUploader(command.Parameter);
+                    if (command.Command.Equals("CustomUploader", StringComparison.InvariantCultureIgnoreCase))
+                    {
+                        TaskHelpers.AddCustomUploader(command.Parameter);
 
-                    continue;
-                }
+                        continue;
+                    }
 
-                if (command.IsCommand && (CheckCLIHotkey(command) || CheckCLIWorkflow(command)))
-                {
-                    continue;
+                    if (command.Command.Equals("ImageEffect", StringComparison.InvariantCultureIgnoreCase))
+                    {
+                        TaskHelpers.AddImageEffect(command.Parameter);
+
+                        continue;
+                    }
+
+                    if (CheckCLIHotkey(command) || CheckCLIWorkflow(command))
+                    {
+                        continue;
+                    }
                 }
 
                 if (URLHelpers.IsValidURL(command.Command))
