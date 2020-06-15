@@ -474,11 +474,14 @@ namespace ShareX
 
         private static void CreateParentFolders()
         {
-            Helpers.CreateDirectoryFromDirectoryPath(SettingManager.BackupFolder);
-            Helpers.CreateDirectoryFromDirectoryPath(ImageEffectsFolder);
-            Helpers.CreateDirectoryFromDirectoryPath(LogsFolder);
-            Helpers.CreateDirectoryFromDirectoryPath(ScreenshotsParentFolder);
-            Helpers.CreateDirectoryFromDirectoryPath(ToolsFolder);
+            if (Directory.Exists(PersonalFolder))
+            {
+                Helpers.CreateDirectory(SettingManager.BackupFolder);
+                Helpers.CreateDirectory(ImageEffectsFolder);
+                Helpers.CreateDirectory(LogsFolder);
+                Helpers.CreateDirectory(ScreenshotsParentFolder);
+                Helpers.CreateDirectory(ToolsFolder);
+            }
         }
 
         private static void MigratePersonalPathConfig()
