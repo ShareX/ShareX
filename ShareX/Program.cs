@@ -232,6 +232,7 @@ namespace ShareX
         }
 
         public static string ToolsFolder => Path.Combine(PersonalFolder, "Tools");
+        public static string ImageEffectsFolder => Path.Combine(PersonalFolder, "ImageEffects");
         public static string ScreenRecorderCacheFilePath => Path.Combine(PersonalFolder, "ScreenRecorder.avi");
         public static string DefaultFFmpegFilePath => Path.Combine(ToolsFolder, "ffmpeg.exe");
         public static string ChromeHostManifestFilePath => Path.Combine(ToolsFolder, "Chrome-host-manifest.json");
@@ -270,6 +271,7 @@ namespace ShareX
             if (CheckAdminTasks()) return; // If ShareX opened just for be able to execute task as Admin
 
             UpdatePersonalPath();
+            CreateParentFolders();
 
             DebugHelper.Init(LogsFilePath);
 
@@ -468,6 +470,15 @@ namespace ShareX
                     }
                 }
             }
+        }
+
+        private static void CreateParentFolders()
+        {
+            Helpers.CreateDirectoryFromDirectoryPath(SettingManager.BackupFolder);
+            Helpers.CreateDirectoryFromDirectoryPath(ImageEffectsFolder);
+            Helpers.CreateDirectoryFromDirectoryPath(LogsFolder);
+            Helpers.CreateDirectoryFromDirectoryPath(ScreenshotsParentFolder);
+            Helpers.CreateDirectoryFromDirectoryPath(ToolsFolder);
         }
 
         private static void MigratePersonalPathConfig()
