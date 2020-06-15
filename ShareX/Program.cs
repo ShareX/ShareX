@@ -271,7 +271,6 @@ namespace ShareX
             if (CheckAdminTasks()) return; // If ShareX opened just for be able to execute task as Admin
 
             UpdatePersonalPath();
-            CreateParentFolders();
 
             DebugHelper.Init(LogsFilePath);
 
@@ -317,6 +316,8 @@ namespace ShareX
 
             IgnoreHotkeyWarning = CLI.IsCommandExist("NoHotkeys");
 
+            CreateParentFolders();
+            RegisterExtensions();
             CheckPuushMode();
             DebugWriteFlags();
             CleanTempFiles();
@@ -474,7 +475,7 @@ namespace ShareX
 
         private static void CreateParentFolders()
         {
-            if (Directory.Exists(PersonalFolder))
+            if (!Sandbox && Directory.Exists(PersonalFolder))
             {
                 Helpers.CreateDirectory(SettingManager.BackupFolder);
                 Helpers.CreateDirectory(ImageEffectsFolder);
@@ -482,6 +483,24 @@ namespace ShareX
                 Helpers.CreateDirectory(ScreenshotsParentFolder);
                 Helpers.CreateDirectory(ToolsFolder);
             }
+        }
+
+        private static void RegisterExtensions()
+        {
+#if !WindowsStore
+            if (!Portable)
+            {
+                if (!IntegrationHelpers.CheckCustomUploaderExtension())
+                {
+                    IntegrationHelpers.CreateCustomUploaderExtension(true);
+                }
+
+                if (!IntegrationHelpers.CheckImageEffectExtension())
+                {
+                    IntegrationHelpers.CreateImageEffectExtension(true);
+                }
+            }
+#endif
         }
 
         private static void MigratePersonalPathConfig()

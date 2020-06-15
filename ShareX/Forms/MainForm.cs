@@ -315,13 +315,6 @@ namespace ShareX
 
             InitHotkeys();
 
-#if !WindowsStore
-            if (!Program.Portable && !IntegrationHelpers.CheckCustomUploaderExtension())
-            {
-                IntegrationHelpers.CreateCustomUploaderExtension(true);
-            }
-#endif
-
             IsReady = true;
         }
 
