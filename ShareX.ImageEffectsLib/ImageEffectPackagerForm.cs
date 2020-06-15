@@ -25,82 +25,27 @@
 
 using ShareX.HelpersLib;
 using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace ShareX.ImageEffectsLib
 {
     public partial class ImageEffectPackagerForm : Form
     {
-        public string EffectJson { get; private set; }
-        public string EffectName { get; private set; }
-        public string AssetsFolderPath { get; private set; }
+        public ImageEffectPackager Packager { get; set; }
 
         public ImageEffectPackagerForm(string json, string name)
         {
-            EffectJson = json;
-            EffectName = name;
+            Packager = new ImageEffectPackager();
+            Packager.EffectJson = json;
+            Packager.EffectName = name;
 
             InitializeComponent();
             ShareXResources.ApplyTheme(this);
         }
 
-        private void Package()
-        {
-            using (SaveFileDialog sfd = new SaveFileDialog())
-            {
-                sfd.DefaultExt = "sxie";
-                sfd.FileName = EffectName + ".sxie";
-                sfd.Filter = "ShareX image effect (*.sxie)|*.sxie";
-
-                if (sfd.ShowDialog() == DialogResult.OK)
-                {
-                    Package(sfd.FileName);
-                }
-            }
-        }
-
-        private void Package(string outputFilePath)
-        {
-            if (!string.IsNullOrEmpty(outputFilePath))
-            {
-                string outputFolder = Path.GetDirectoryName(outputFilePath);
-                Helpers.CreateDirectory(outputFolder);
-
-                string jsonFilePath = Path.Combine(outputFolder, "ImageEffect.json");
-                File.WriteAllText(jsonFilePath, EffectJson, Encoding.UTF8);
-
-                try
-                {
-                    Dictionary<string, string> files = new Dictionary<string, string>();
-                    files.Add(jsonFilePath, "ImageEffect.json");
-
-                    if (!string.IsNullOrEmpty(AssetsFolderPath) && Directory.Exists(AssetsFolderPath))
-                    {
-                        int entryNamePosition = AssetsFolderPath.Length + 1;
-
-                        foreach (string assetPath in Directory.EnumerateFiles(AssetsFolderPath, "*.*", SearchOption.AllDirectories).Where(x => Helpers.IsImageFile(x)))
-                        {
-                            string entryName = assetPath.Substring(entryNamePosition);
-                            files.Add(assetPath, entryName);
-                        }
-                    }
-
-                    ZipManager.Compress(outputFilePath, files);
-                }
-                finally
-                {
-                    File.Delete(jsonFilePath);
-                }
-            }
-        }
-
         private void txtAssetsFolder_TextChanged(object sender, EventArgs e)
         {
-            AssetsFolderPath = txtAssetsFolder.Text;
+            Packager.AssetsFolderPath = txtAssetsFolder.Text;
         }
 
         private void btnAssetsFolderBrowse_Click(object sender, EventArgs e)
@@ -112,7 +57,7 @@ namespace ShareX.ImageEffectsLib
         {
             try
             {
-                Package();
+                Packager.Package();
             }
             catch (Exception ex)
             {
