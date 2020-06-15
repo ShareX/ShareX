@@ -56,6 +56,7 @@
             this.btnRefresh = new System.Windows.Forms.Button();
             this.btnDuplicatePreset = new System.Windows.Forms.Button();
             this.lblPresets = new System.Windows.Forms.Label();
+            this.btnPackager = new System.Windows.Forms.Button();
             this.cmsLoadImage.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -259,12 +260,20 @@
             resources.ApplyResources(this.lblPresets, "lblPresets");
             this.lblPresets.Name = "lblPresets";
             // 
+            // btnPackager
+            // 
+            resources.ApplyResources(this.btnPackager, "btnPackager");
+            this.btnPackager.Name = "btnPackager";
+            this.btnPackager.UseVisualStyleBackColor = true;
+            this.btnPackager.Click += new System.EventHandler(this.btnPackager_Click);
+            // 
             // ImageEffectsForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.CancelButton = this.btnClose;
+            this.Controls.Add(this.btnPackager);
             this.Controls.Add(this.lblPresets);
             this.Controls.Add(this.btnDuplicatePreset);
             this.Controls.Add(this.btnRefresh);
@@ -323,6 +332,7 @@
         private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.Button btnDuplicatePreset;
         private System.Windows.Forms.Label lblPresets;
+        private System.Windows.Forms.Button btnPackager;
     }
 }
 

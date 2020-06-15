@@ -608,6 +608,24 @@ namespace ShareX.ImageEffectsLib
             }
         }
 
+        private void btnPackager_Click(object sender, EventArgs e)
+        {
+            ImageEffectPreset preset = GetSelectedPreset();
+
+            if (preset != null)
+            {
+                string json = eiImageEffects.Serialize(preset);
+
+                if (!string.IsNullOrEmpty(json))
+                {
+                    using (ImageEffectPackagerForm packagerForm = new ImageEffectPackagerForm(json, preset.Name))
+                    {
+                        packagerForm.ShowDialog();
+                    }
+                }
+            }
+        }
+
         private void tsmiLoadImageFromFile_Click(object sender, EventArgs e)
         {
             string filePath = ImageHelpers.OpenImageFileDialog();
