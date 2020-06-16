@@ -1668,7 +1668,12 @@ namespace ShareX
 
         public static void AddImageEffect(string filePath)
         {
-            // TODO
+            string configFilePath = ImageEffectPackager.ExtractPackage(filePath, Program.ImageEffectsFolder);
+
+            if (!string.IsNullOrEmpty(configFilePath))
+            {
+                // TODO
+            }
         }
 
         public static void OpenActionsToolbar()

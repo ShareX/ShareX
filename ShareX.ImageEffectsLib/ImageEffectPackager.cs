@@ -34,6 +34,8 @@ namespace ShareX.ImageEffectsLib
 {
     public class ImageEffectPackager
     {
+        private const string ConfigFileName = "ImageEffect.json";
+
         public string EffectJson { get; set; }
         public string EffectName { get; set; }
         public string AssetsFolderPath { get; set; }
@@ -60,14 +62,13 @@ namespace ShareX.ImageEffectsLib
                 string outputFolder = Path.GetDirectoryName(outputFilePath);
                 Helpers.CreateDirectory(outputFolder);
 
-                string jsonFileName = "ImageEffect.json";
-                string jsonFilePath = Path.Combine(outputFolder, jsonFileName);
-                File.WriteAllText(jsonFilePath, EffectJson, Encoding.UTF8);
+                string configFilePath = Path.Combine(outputFolder, ConfigFileName);
+                File.WriteAllText(configFilePath, EffectJson, Encoding.UTF8);
 
                 try
                 {
                     Dictionary<string, string> files = new Dictionary<string, string>();
-                    files.Add(jsonFilePath, jsonFileName);
+                    files.Add(configFilePath, ConfigFileName);
 
                     if (!string.IsNullOrEmpty(AssetsFolderPath) && Directory.Exists(AssetsFolderPath))
                     {
@@ -84,9 +85,32 @@ namespace ShareX.ImageEffectsLib
                 }
                 finally
                 {
-                    File.Delete(jsonFilePath);
+                    File.Delete(configFilePath);
                 }
             }
+        }
+
+        public static string ExtractPackage(string packageFilePath, string imageEffectsFolderPath)
+        {
+            if (!string.IsNullOrEmpty(packageFilePath) && File.Exists(packageFilePath) && !string.IsNullOrEmpty(imageEffectsFolderPath))
+            {
+                string packageName = Path.GetFileNameWithoutExtension(packageFilePath);
+
+                if (!string.IsNullOrEmpty(packageName) && !packageName.StartsWith("."))
+                {
+                    string destination = Path.Combine(imageEffectsFolderPath, packageName);
+                    ZipManager.Extract(packageFilePath, destination);
+
+                    string configFilePath = Path.Combine(destination, ConfigFileName);
+
+                    if (File.Exists(configFilePath))
+                    {
+                        return configFilePath;
+                    }
+                }
+            }
+
+            return null;
         }
     }
 }
