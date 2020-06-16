@@ -641,7 +641,8 @@ namespace ShareX.ImageEffectsLib
 
                 if (!string.IsNullOrEmpty(json))
                 {
-                    using (ImageEffectPackagerForm packagerForm = new ImageEffectPackagerForm(json, preset.Name))
+                    using (ImageEffectPackagerForm packagerForm = new ImageEffectPackagerForm(json, preset.Name,
+                        HelpersOptions.ShareXSpecialFolders["ShareXImageEffects"]))
                     {
                         packagerForm.ShowDialog();
                     }

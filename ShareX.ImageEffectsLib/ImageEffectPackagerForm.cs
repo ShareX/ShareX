@@ -34,12 +34,14 @@ namespace ShareX.ImageEffectsLib
     {
         public string ImageEffectJson { get; private set; }
         public string ImageEffectName { get; private set; }
+        public string ShareXImageEffectsFolderPath { get; private set; }
         public string AssetsFolderPath { get; set; }
 
-        public ImageEffectPackagerForm(string json, string name)
+        public ImageEffectPackagerForm(string json, string name, string imageEffectsFolderPath)
         {
             ImageEffectJson = json;
             ImageEffectName = name;
+            ShareXImageEffectsFolderPath = imageEffectsFolderPath;
 
             InitializeComponent();
             ShareXResources.ApplyTheme(this);
@@ -52,7 +54,7 @@ namespace ShareX.ImageEffectsLib
 
         private void btnAssetsFolderBrowse_Click(object sender, EventArgs e)
         {
-            Helpers.BrowseFolder(txtAssetsFolder, HelpersOptions.ShareXSpecialFolders["ShareXImageEffects"]);
+            Helpers.BrowseFolder(txtAssetsFolder, ShareXImageEffectsFolderPath);
         }
 
         private void btnPackage_Click(object sender, EventArgs e)
@@ -60,7 +62,7 @@ namespace ShareX.ImageEffectsLib
             try
             {
                 if (!string.IsNullOrEmpty(AssetsFolderPath) &&
-                    !AssetsFolderPath.StartsWith(HelpersOptions.ShareXSpecialFolders["ShareXImageEffects"] + "\\", StringComparison.OrdinalIgnoreCase))
+                    !AssetsFolderPath.StartsWith(ShareXImageEffectsFolderPath + "\\", StringComparison.OrdinalIgnoreCase))
                 {
                     // TODO: Translate
                     MessageBox.Show("Assets folder must be inside ShareX image effects folder.", "ShareX - " + "Invalid assets folder path",
@@ -73,6 +75,7 @@ namespace ShareX.ImageEffectsLib
                         sfd.DefaultExt = "sxie";
                         sfd.FileName = ImageEffectName + ".sxie";
                         sfd.Filter = "ShareX image effect (*.sxie)|*.sxie";
+                        sfd.InitialDirectory = ShareXImageEffectsFolderPath;
 
                         if (sfd.ShowDialog() == DialogResult.OK)
                         {
