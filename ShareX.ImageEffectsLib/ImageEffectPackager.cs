@@ -34,7 +34,7 @@ namespace ShareX.ImageEffectsLib
 {
     public class ImageEffectPackager
     {
-        private const string ConfigFileName = "ImageEffect.json";
+        private const string ConfigFileName = "Config.json";
 
         public string EffectJson { get; set; }
         public string EffectName { get; set; }
