@@ -477,7 +477,7 @@ Would you like to download it?</value>
     <value>Manual</value>
   </data>
   <data name="AfterCaptureTasks_AddImageEffects" xml:space="preserve">
-    <value>Add image effects / watermark</value>
+    <value>Add image effects</value>
   </data>
   <data name="AfterCaptureTasks_DeleteFile" xml:space="preserve">
     <value>Delete file locally</value>
