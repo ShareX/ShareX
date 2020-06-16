@@ -81,6 +81,7 @@
             this.Controls.Add(this.txtAssetsFolder);
             this.Controls.Add(this.lblAssetsFolder);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "ImageEffectPackagerForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ShareX - Image effect packager";

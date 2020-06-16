@@ -637,14 +637,22 @@ namespace ShareX.ImageEffectsLib
 
             if (preset != null)
             {
-                string json = eiImageEffects.Serialize(preset);
-
-                if (!string.IsNullOrEmpty(json))
+                if (string.IsNullOrEmpty(preset.Name))
                 {
-                    using (ImageEffectPackagerForm packagerForm = new ImageEffectPackagerForm(json, preset.Name,
-                        HelpersOptions.ShareXSpecialFolders["ShareXImageEffects"]))
+                    // TODO: Translate
+                    MessageBox.Show("Preset name cannot be empty.", "ShareX - " + "Missing preset name", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    string json = eiImageEffects.Serialize(preset);
+
+                    if (!string.IsNullOrEmpty(json))
                     {
-                        packagerForm.ShowDialog();
+                        using (ImageEffectPackagerForm packagerForm = new ImageEffectPackagerForm(json, preset.Name,
+                            HelpersOptions.ShareXSpecialFolders["ShareXImageEffects"]))
+                        {
+                            packagerForm.ShowDialog();
+                        }
                     }
                 }
             }
