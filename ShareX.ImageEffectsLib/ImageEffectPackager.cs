@@ -28,6 +28,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Windows.Forms;
 
 namespace ShareX.ImageEffectsLib
 {
@@ -83,6 +84,21 @@ namespace ShareX.ImageEffectsLib
                 if (!string.IsNullOrEmpty(packageName) && !packageName.StartsWith("."))
                 {
                     string destination = Path.Combine(imageEffectsFolderPath, packageName);
+
+                    if (Directory.Exists(destination))
+                    {
+                        // TODO: Translate
+                        if (MessageBox.Show($"Destination folder already exists:\r\n\"{destination}\"\r\n\r\nWould you like to overwrite it?", "ShareX - " +
+                            "Image effect packager", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                        {
+                            Directory.Delete(destination, true);
+                        }
+                        else
+                        {
+                            return null;
+                        }
+                    }
+
                     ZipManager.Extract(packageFilePath, destination);
 
                     return Path.Combine(destination, ConfigFileName);
