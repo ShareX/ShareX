@@ -813,20 +813,7 @@ namespace ShareX
 
         private void btnImageEffects_Click(object sender, EventArgs e)
         {
-            bool firstInstance = !ImageEffectsForm.IsInstanceActive;
-
-            ImageEffectsForm imageEffectsForm = ImageEffectsForm.GetFormInstance(TaskSettings.ImageSettings.ImageEffectPresets,
-                TaskSettings.ImageSettings.SelectedImageEffectPreset);
-
-            if (firstInstance)
-            {
-                imageEffectsForm.FormClosed += (sender2, e2) => TaskSettings.ImageSettings.SelectedImageEffectPreset = imageEffectsForm.SelectedPresetIndex;
-                imageEffectsForm.Show();
-            }
-            else
-            {
-                imageEffectsForm.ForceActivate();
-            }
+            TaskHelpers.OpenImageEffectsSingleton(TaskSettings);
         }
 
         private void nudThumbnailWidth_ValueChanged(object sender, EventArgs e)

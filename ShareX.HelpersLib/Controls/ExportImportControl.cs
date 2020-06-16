@@ -231,6 +231,12 @@ namespace ShareX.HelpersLib
             }
         }
 
+        public void ImportFile(string filePath)
+        {
+            string json = File.ReadAllText(filePath, Encoding.UTF8);
+            OnImportRequested(json);
+        }
+
         private void tsmiImportFile_Click(object sender, EventArgs e)
         {
             string filter = "Settings (*.json)|*.json|All files (*.*)|*.*";
@@ -246,8 +252,7 @@ namespace ShareX.HelpersLib
                 {
                     foreach (string filename in ofd.FileNames)
                     {
-                        string json = File.ReadAllText(filename, Encoding.UTF8);
-                        OnImportRequested(json);
+                        ImportFile(filename);
                     }
 
                     OnImportCompleted();

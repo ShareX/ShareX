@@ -1061,6 +1061,28 @@ namespace ShareX
             }
         }
 
+        public static ImageEffectsForm OpenImageEffectsSingleton(TaskSettings taskSettings = null)
+        {
+            if (taskSettings == null) taskSettings = Program.DefaultTaskSettings;
+
+            bool firstInstance = !ImageEffectsForm.IsInstanceActive;
+
+            ImageEffectsForm imageEffectsForm = ImageEffectsForm.GetFormInstance(taskSettings.ImageSettings.ImageEffectPresets,
+                taskSettings.ImageSettings.SelectedImageEffectPreset);
+
+            if (firstInstance)
+            {
+                imageEffectsForm.FormClosed += (sender, e) => taskSettings.ImageSettings.SelectedImageEffectPreset = imageEffectsForm.SelectedPresetIndex;
+                imageEffectsForm.Show();
+            }
+            else
+            {
+                imageEffectsForm.ForceActivate();
+            }
+
+            return imageEffectsForm;
+        }
+
         public static void OpenMonitorTest()
         {
             using (MonitorTestForm monitorTestForm = new MonitorTestForm())
@@ -1670,9 +1692,14 @@ namespace ShareX
         {
             string configFilePath = ImageEffectPackager.ExtractPackage(filePath, Program.ImageEffectsFolder);
 
-            if (!string.IsNullOrEmpty(configFilePath))
+            if (!string.IsNullOrEmpty(configFilePath) && File.Exists(configFilePath))
             {
-                // TODO
+                ImageEffectsForm imageEffectsForm = OpenImageEffectsSingleton(Program.DefaultTaskSettings);
+
+                if (imageEffectsForm != null)
+                {
+                    imageEffectsForm.ImportImageEffectFromFilePath(configFilePath);
+                }
             }
         }
 

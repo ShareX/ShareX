@@ -71,8 +71,6 @@ namespace ShareX.ImageEffectsLib
             eiImageEffects.ObjectType = typeof(ImageEffectPreset);
             eiImageEffects.SerializationBinder = new TypeNameSerializationBinder("ShareX.ImageEffectsLib", "ShareX.ImageEffectsLib");
             AddAllEffectsToContextMenu();
-
-            LoadSettings();
         }
 
         public static ImageEffectsForm GetFormInstance(List<ImageEffectPreset> presets, int selectedPresetIndex)
@@ -99,6 +97,11 @@ namespace ShareX.ImageEffectsLib
         {
             btnOK.Visible = true;
             btnClose.Text = Resources.ImageEffectsForm_EditorMode_Cancel;
+        }
+
+        public void ImportImageEffectFromFilePath(string filePath)
+        {
+            eiImageEffects.ImportFile(filePath);
         }
 
         protected void OnImageProcessRequested(Bitmap bmp)
@@ -435,6 +438,8 @@ namespace ShareX.ImageEffectsLib
 
         private void ImageEffectsForm_Shown(object sender, EventArgs e)
         {
+            LoadSettings();
+
             this.ForceActivate();
         }
 

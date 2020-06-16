@@ -101,12 +101,7 @@ namespace ShareX.ImageEffectsLib
                     string destination = Path.Combine(imageEffectsFolderPath, packageName);
                     ZipManager.Extract(packageFilePath, destination);
 
-                    string configFilePath = Path.Combine(destination, ConfigFileName);
-
-                    if (File.Exists(configFilePath))
-                    {
-                        return configFilePath;
-                    }
+                    return Path.Combine(destination, ConfigFileName);
                 }
             }
 
