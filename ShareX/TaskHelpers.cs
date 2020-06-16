@@ -1588,7 +1588,7 @@ namespace ShareX
             return screenshot;
         }
 
-        public static void AddCustomUploader(string filePath)
+        public static void ImportCustomUploader(string filePath)
         {
             if (Program.UploadersConfig != null)
             {
@@ -1688,9 +1688,18 @@ namespace ShareX
             }
         }
 
-        public static void AddImageEffect(string filePath)
+        public static void ImportImageEffect(string filePath)
         {
-            string configFilePath = ImageEffectPackager.ExtractPackage(filePath, Program.ImageEffectsFolder);
+            string configFilePath = null;
+
+            try
+            {
+                configFilePath = ImageEffectPackager.ExtractPackage(filePath, Program.ImageEffectsFolder);
+            }
+            catch (Exception ex)
+            {
+                ex.ShowError();
+            }
 
             if (!string.IsNullOrEmpty(configFilePath) && File.Exists(configFilePath))
             {
@@ -1698,7 +1707,7 @@ namespace ShareX
 
                 if (imageEffectsForm != null)
                 {
-                    imageEffectsForm.ImportImageEffectFromFilePath(configFilePath);
+                    imageEffectsForm.ImportImageEffectFromFile(configFilePath);
                 }
             }
         }

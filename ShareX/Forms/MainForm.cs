@@ -1056,14 +1056,14 @@ namespace ShareX
                 {
                     if (command.Command.Equals("CustomUploader", StringComparison.InvariantCultureIgnoreCase))
                     {
-                        TaskHelpers.AddCustomUploader(command.Parameter);
+                        TaskHelpers.ImportCustomUploader(command.Parameter);
 
                         continue;
                     }
 
                     if (command.Command.Equals("ImageEffect", StringComparison.InvariantCultureIgnoreCase))
                     {
-                        TaskHelpers.AddImageEffect(command.Parameter);
+                        TaskHelpers.ImportImageEffect(command.Parameter);
 
                         continue;
                     }

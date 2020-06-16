@@ -106,7 +106,7 @@ namespace ShareX.ImageEffectsLib
             btnClose.Text = Resources.ImageEffectsForm_EditorMode_Cancel;
         }
 
-        public void ImportImageEffectFromFilePath(string filePath)
+        public void ImportImageEffectFromFile(string filePath)
         {
             eiImageEffects.ImportFile(filePath);
         }
