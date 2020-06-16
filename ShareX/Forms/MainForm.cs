@@ -950,6 +950,7 @@ namespace ShareX
             HelpersOptions.RotateImageByExifOrientationData = Program.Settings.RotateImageByExifOrientationData;
             HelpersOptions.BrowserPath = Program.Settings.BrowserPath;
             HelpersOptions.RecentColors = Program.Settings.RecentColors;
+            Program.UpdateHelpersSpecialFolders();
 
             TaskManager.RecentManager.MaxCount = Program.Settings.RecentTasksMaxCount;
 

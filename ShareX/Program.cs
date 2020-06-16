@@ -326,10 +326,9 @@ namespace ShareX
 
             Uploader.UpdateServicePointManager();
             UpdateManager = new GitHubUpdateManager("ShareX", "ShareX", Dev, Portable);
-
             LanguageHelper.ChangeLanguage(Settings.Language);
-
             Helpers.TryFixHandCursor();
+
             DebugHelper.WriteLine("MainForm init started.");
             MainForm = new MainForm();
             DebugHelper.WriteLine("MainForm init finished.");
@@ -501,6 +500,13 @@ namespace ShareX
                 }
             }
 #endif
+        }
+
+        public static void UpdateHelpersSpecialFolders()
+        {
+            Dictionary<string, string> specialFolders = new Dictionary<string, string>();
+            specialFolders.Add("ShareXImageEffects", ImageEffectsFolder);
+            HelpersOptions.ShareXSpecialFolders = specialFolders;
         }
 
         private static void MigratePersonalPathConfig()

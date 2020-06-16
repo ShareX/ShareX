@@ -791,12 +791,20 @@ namespace ShareX.HelpersLib
             return false;
         }
 
-        public static string GetVariableFolderPath(string path)
+        public static string GetVariableFolderPath(string path, bool supportCustomSpecialFolders = false)
         {
             if (!string.IsNullOrEmpty(path))
             {
                 try
                 {
+                    if (supportCustomSpecialFolders)
+                    {
+                        foreach (KeyValuePair<string, string> specialFolder in HelpersOptions.ShareXSpecialFolders)
+                        {
+                            path = path.Replace(specialFolder.Value, $"%{specialFolder.Key}%", StringComparison.OrdinalIgnoreCase);
+                        }
+                    }
+
                     foreach (Environment.SpecialFolder specialFolder in GetEnums<Environment.SpecialFolder>())
                     {
                         path = path.Replace(Environment.GetFolderPath(specialFolder), $"%{specialFolder}%", StringComparison.OrdinalIgnoreCase);
@@ -811,12 +819,20 @@ namespace ShareX.HelpersLib
             return path;
         }
 
-        public static string ExpandFolderVariables(string path)
+        public static string ExpandFolderVariables(string path, bool supportCustomSpecialFolders = false)
         {
             if (!string.IsNullOrEmpty(path))
             {
                 try
                 {
+                    if (supportCustomSpecialFolders)
+                    {
+                        foreach (KeyValuePair<string, string> specialFolder in HelpersOptions.ShareXSpecialFolders)
+                        {
+                            path = path.Replace($"%{specialFolder.Key}%", specialFolder.Value, StringComparison.OrdinalIgnoreCase);
+                        }
+                    }
+
                     foreach (Environment.SpecialFolder specialFolder in GetEnums<Environment.SpecialFolder>())
                     {
                         path = path.Replace($"%{specialFolder}%", Environment.GetFolderPath(specialFolder), StringComparison.OrdinalIgnoreCase);

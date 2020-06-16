@@ -59,7 +59,7 @@ namespace ShareX.ImageEffectsLib
 
         public override Bitmap Apply(Bitmap bmp)
         {
-            string imageFilePath = Helpers.ExpandFolderVariables(ImageLocation);
+            string imageFilePath = Helpers.ExpandFolderVariables(ImageLocation, true);
 
             if (!string.IsNullOrEmpty(imageFilePath) && File.Exists(imageFilePath))
             {
