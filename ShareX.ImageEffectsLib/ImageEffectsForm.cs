@@ -52,6 +52,8 @@ namespace ShareX.ImageEffectsLib
 
         public ImageEffectsForm(Bitmap bmp, List<ImageEffectPreset> presets, int selectedPresetIndex)
         {
+            pauseUpdate = true;
+
             InitializeComponent();
             ShareXResources.ApplyTheme(this);
 
@@ -68,9 +70,14 @@ namespace ShareX.ImageEffectsLib
             }
 
             SelectedPresetIndex = selectedPresetIndex;
+
             eiImageEffects.ObjectType = typeof(ImageEffectPreset);
             eiImageEffects.SerializationBinder = new TypeNameSerializationBinder("ShareX.ImageEffectsLib", "ShareX.ImageEffectsLib");
+
             AddAllEffectsToContextMenu();
+            LoadSettings();
+
+            pauseUpdate = false;
         }
 
         public static ImageEffectsForm GetFormInstance(List<ImageEffectPreset> presets, int selectedPresetIndex)
@@ -180,8 +187,6 @@ namespace ShareX.ImageEffectsLib
 
         private void LoadSettings()
         {
-            pauseUpdate = true;
-
             foreach (ImageEffectPreset preset in Presets)
             {
                 cbPresets.Items.Add(preset);
@@ -193,8 +198,6 @@ namespace ShareX.ImageEffectsLib
             }
 
             UpdateControlStates();
-
-            pauseUpdate = false;
         }
 
         private ImageEffectPreset GetSelectedPreset()
@@ -220,7 +223,9 @@ namespace ShareX.ImageEffectsLib
             {
                 Presets.Add(preset);
                 cbPresets.Items.Add(preset);
+                ignorePresetsSelectedIndexChanged = true;
                 cbPresets.SelectedIndex = cbPresets.Items.Count - 1;
+                ignorePresetsSelectedIndexChanged = false;
                 LoadPreset(preset);
                 txtPresetName.Focus();
             }
@@ -438,8 +443,6 @@ namespace ShareX.ImageEffectsLib
 
         private void ImageEffectsForm_Shown(object sender, EventArgs e)
         {
-            LoadSettings();
-
             this.ForceActivate();
         }
 
@@ -585,7 +588,7 @@ namespace ShareX.ImageEffectsLib
 
         private void lvEffects_ItemChecked(object sender, ItemCheckedEventArgs e)
         {
-            if (e.Item != null && e.Item.Tag is ImageEffect)
+            if (e.Item != null && e.Item.Focused && e.Item.Tag is ImageEffect)
             {
                 ImageEffect imageEffect = (ImageEffect)e.Item.Tag;
                 imageEffect.Enabled = e.Item.Checked;
