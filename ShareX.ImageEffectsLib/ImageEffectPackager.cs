@@ -28,36 +28,14 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
-using System.Windows.Forms;
 
 namespace ShareX.ImageEffectsLib
 {
-    public class ImageEffectPackager
+    public static class ImageEffectPackager
     {
         private const string ConfigFileName = "Config.json";
 
-        public string EffectJson { get; set; }
-        public string EffectName { get; set; }
-        public string AssetsFolderPath { get; set; }
-
-        public string Package()
-        {
-            using (SaveFileDialog sfd = new SaveFileDialog())
-            {
-                sfd.DefaultExt = "sxie";
-                sfd.FileName = EffectName + ".sxie";
-                sfd.Filter = "ShareX image effect (*.sxie)|*.sxie";
-
-                if (sfd.ShowDialog() == DialogResult.OK)
-                {
-                    return Package(sfd.FileName);
-                }
-            }
-
-            return null;
-        }
-
-        public string Package(string outputFilePath)
+        public static string Package(string outputFilePath, string configJson, string assetsFolderPath)
         {
             if (!string.IsNullOrEmpty(outputFilePath))
             {
@@ -65,18 +43,18 @@ namespace ShareX.ImageEffectsLib
                 Helpers.CreateDirectory(outputFolder);
 
                 string configFilePath = Path.Combine(outputFolder, ConfigFileName);
-                File.WriteAllText(configFilePath, EffectJson, Encoding.UTF8);
+                File.WriteAllText(configFilePath, configJson, Encoding.UTF8);
 
                 try
                 {
                     Dictionary<string, string> files = new Dictionary<string, string>();
                     files.Add(configFilePath, ConfigFileName);
 
-                    if (!string.IsNullOrEmpty(AssetsFolderPath) && Directory.Exists(AssetsFolderPath))
+                    if (!string.IsNullOrEmpty(assetsFolderPath) && Directory.Exists(assetsFolderPath))
                     {
-                        int entryNamePosition = AssetsFolderPath.Length + 1;
+                        int entryNamePosition = assetsFolderPath.Length + 1;
 
-                        foreach (string assetPath in Directory.EnumerateFiles(AssetsFolderPath, "*.*", SearchOption.AllDirectories).Where(x => Helpers.IsImageFile(x)))
+                        foreach (string assetPath in Directory.EnumerateFiles(assetsFolderPath, "*.*", SearchOption.AllDirectories).Where(x => Helpers.IsImageFile(x)))
                         {
                             string entryName = assetPath.Substring(entryNamePosition);
                             files.Add(assetPath, entryName);

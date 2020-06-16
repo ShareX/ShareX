@@ -32,13 +32,14 @@ namespace ShareX.ImageEffectsLib
 {
     public partial class ImageEffectPackagerForm : Form
     {
-        public ImageEffectPackager Packager { get; set; }
+        public string ImageEffectJson { get; private set; }
+        public string ImageEffectName { get; private set; }
+        public string AssetsFolderPath { get; set; }
 
         public ImageEffectPackagerForm(string json, string name)
         {
-            Packager = new ImageEffectPackager();
-            Packager.EffectJson = json;
-            Packager.EffectName = name;
+            ImageEffectJson = json;
+            ImageEffectName = name;
 
             InitializeComponent();
             ShareXResources.ApplyTheme(this);
@@ -46,7 +47,7 @@ namespace ShareX.ImageEffectsLib
 
         private void txtAssetsFolder_TextChanged(object sender, EventArgs e)
         {
-            Packager.AssetsFolderPath = txtAssetsFolder.Text;
+            AssetsFolderPath = txtAssetsFolder.Text;
         }
 
         private void btnAssetsFolderBrowse_Click(object sender, EventArgs e)
@@ -58,8 +59,8 @@ namespace ShareX.ImageEffectsLib
         {
             try
             {
-                if (!string.IsNullOrEmpty(Packager.AssetsFolderPath) &&
-                    !Packager.AssetsFolderPath.StartsWith(HelpersOptions.ShareXSpecialFolders["ShareXImageEffects"] + "\\", StringComparison.OrdinalIgnoreCase))
+                if (!string.IsNullOrEmpty(AssetsFolderPath) &&
+                    !AssetsFolderPath.StartsWith(HelpersOptions.ShareXSpecialFolders["ShareXImageEffects"] + "\\", StringComparison.OrdinalIgnoreCase))
                 {
                     // TODO: Translate
                     MessageBox.Show("Assets folder must be inside ShareX image effects folder.", "ShareX - " + "Invalid assets folder path",
@@ -67,11 +68,21 @@ namespace ShareX.ImageEffectsLib
                 }
                 else
                 {
-                    string outputFilePath = Packager.Package();
-
-                    if (!string.IsNullOrEmpty(outputFilePath) && File.Exists(outputFilePath))
+                    using (SaveFileDialog sfd = new SaveFileDialog())
                     {
-                        Helpers.OpenFolderWithFile(outputFilePath);
+                        sfd.DefaultExt = "sxie";
+                        sfd.FileName = ImageEffectName + ".sxie";
+                        sfd.Filter = "ShareX image effect (*.sxie)|*.sxie";
+
+                        if (sfd.ShowDialog() == DialogResult.OK)
+                        {
+                            string outputFilePath = ImageEffectPackager.Package(sfd.FileName, ImageEffectJson, AssetsFolderPath);
+
+                            if (!string.IsNullOrEmpty(outputFilePath) && File.Exists(outputFilePath))
+                            {
+                                Helpers.OpenFolderWithFile(outputFilePath);
+                            }
+                        }
                     }
                 }
             }
