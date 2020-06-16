@@ -56,7 +56,7 @@
             this.btnPackage.Location = new System.Drawing.Point(16, 64);
             this.btnPackage.Name = "btnPackage";
             this.btnPackage.Size = new System.Drawing.Size(128, 23);
-            this.btnPackage.TabIndex = 2;
+            this.btnPackage.TabIndex = 3;
             this.btnPackage.Text = "Package...";
             this.btnPackage.UseVisualStyleBackColor = true;
             this.btnPackage.Click += new System.EventHandler(this.btnPackage_Click);
@@ -66,7 +66,7 @@
             this.btnAssetsFolderBrowse.Location = new System.Drawing.Point(360, 31);
             this.btnAssetsFolderBrowse.Name = "btnAssetsFolderBrowse";
             this.btnAssetsFolderBrowse.Size = new System.Drawing.Size(32, 23);
-            this.btnAssetsFolderBrowse.TabIndex = 3;
+            this.btnAssetsFolderBrowse.TabIndex = 2;
             this.btnAssetsFolderBrowse.Text = "...";
             this.btnAssetsFolderBrowse.UseVisualStyleBackColor = true;
             this.btnAssetsFolderBrowse.Click += new System.EventHandler(this.btnAssetsFolderBrowse_Click);

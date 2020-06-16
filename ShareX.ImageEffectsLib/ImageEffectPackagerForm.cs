@@ -50,14 +50,24 @@ namespace ShareX.ImageEffectsLib
 
         private void btnAssetsFolderBrowse_Click(object sender, EventArgs e)
         {
-            Helpers.BrowseFolder(txtAssetsFolder, "", true);
+            Helpers.BrowseFolder(txtAssetsFolder, HelpersOptions.ShareXSpecialFolders["ShareXImageEffects"]);
         }
 
         private void btnPackage_Click(object sender, EventArgs e)
         {
             try
             {
-                Packager.Package();
+                if (!string.IsNullOrEmpty(Packager.AssetsFolderPath) &&
+                    !Packager.AssetsFolderPath.StartsWith(HelpersOptions.ShareXSpecialFolders["ShareXImageEffects"] + "\\", StringComparison.OrdinalIgnoreCase))
+                {
+                    // TODO: Translate
+                    MessageBox.Show("Assets folder must be inside ShareX image effects folder.", "ShareX - " + "Invalid assets folder path",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    Packager.Package();
+                }
             }
             catch (Exception ex)
             {
