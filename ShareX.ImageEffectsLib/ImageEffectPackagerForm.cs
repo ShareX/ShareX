@@ -25,6 +25,7 @@
 
 using ShareX.HelpersLib;
 using System;
+using System.IO;
 using System.Windows.Forms;
 
 namespace ShareX.ImageEffectsLib
@@ -66,7 +67,12 @@ namespace ShareX.ImageEffectsLib
                 }
                 else
                 {
-                    Packager.Package();
+                    string outputFilePath = Packager.Package();
+
+                    if (!string.IsNullOrEmpty(outputFilePath) && File.Exists(outputFilePath))
+                    {
+                        Helpers.OpenFolderWithFile(outputFilePath);
+                    }
                 }
             }
             catch (Exception ex)

@@ -40,7 +40,7 @@ namespace ShareX.ImageEffectsLib
         public string EffectName { get; set; }
         public string AssetsFolderPath { get; set; }
 
-        public void Package()
+        public string Package()
         {
             using (SaveFileDialog sfd = new SaveFileDialog())
             {
@@ -50,12 +50,14 @@ namespace ShareX.ImageEffectsLib
 
                 if (sfd.ShowDialog() == DialogResult.OK)
                 {
-                    Package(sfd.FileName);
+                    return Package(sfd.FileName);
                 }
             }
+
+            return null;
         }
 
-        public void Package(string outputFilePath)
+        public string Package(string outputFilePath)
         {
             if (!string.IsNullOrEmpty(outputFilePath))
             {
@@ -87,7 +89,11 @@ namespace ShareX.ImageEffectsLib
                 {
                     File.Delete(configFilePath);
                 }
+
+                return outputFilePath;
             }
+
+            return null;
         }
 
         public static string ExtractPackage(string packageFilePath, string imageEffectsFolderPath)
