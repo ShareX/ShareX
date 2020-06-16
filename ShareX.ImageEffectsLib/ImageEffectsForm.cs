@@ -35,6 +35,10 @@ namespace ShareX.ImageEffectsLib
 {
     public partial class ImageEffectsForm : Form
     {
+        public static bool IsInstanceActive => instance != null && !instance.IsDisposed;
+
+        private static ImageEffectsForm instance;
+
         public event Action<Bitmap> ImageProcessRequested;
 
         public bool AutoGeneratePreviewImage { get; set; }
@@ -67,6 +71,18 @@ namespace ShareX.ImageEffectsLib
             eiImageEffects.ObjectType = typeof(ImageEffectPreset);
             eiImageEffects.SerializationBinder = new TypeNameSerializationBinder("ShareX.ImageEffectsLib", "ShareX.ImageEffectsLib");
             AddAllEffectsToContextMenu();
+
+            LoadSettings();
+        }
+
+        public static ImageEffectsForm GetFormInstance(List<ImageEffectPreset> presets, int selectedPresetIndex)
+        {
+            if (!IsInstanceActive)
+            {
+                instance = new ImageEffectsForm(null, presets, selectedPresetIndex);
+            }
+
+            return instance;
         }
 
         public void EnableToolMode(Action<Bitmap> imageProcessRequested, string filePath = null)
@@ -419,7 +435,6 @@ namespace ShareX.ImageEffectsLib
 
         private void ImageEffectsForm_Shown(object sender, EventArgs e)
         {
-            LoadSettings();
             this.ForceActivate();
         }
 
