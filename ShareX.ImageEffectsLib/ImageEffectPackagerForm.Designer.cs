@@ -28,58 +28,91 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblAssetsFolder = new System.Windows.Forms.Label();
-            this.txtAssetsFolder = new System.Windows.Forms.TextBox();
             this.btnPackage = new System.Windows.Forms.Button();
-            this.btnAssetsFolderBrowse = new System.Windows.Forms.Button();
+            this.lblAssetsFolderPath = new System.Windows.Forms.Label();
+            this.lblPackageFilePath = new System.Windows.Forms.Label();
+            this.txtPackageFilePath = new System.Windows.Forms.TextBox();
+            this.btnPackageFilePathBrowse = new System.Windows.Forms.Button();
+            this.txtAssetsFolderPath = new System.Windows.Forms.TextBox();
+            this.btnAssetsFolderPathBrowse = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // lblAssetsFolder
-            // 
-            this.lblAssetsFolder.AutoSize = true;
-            this.lblAssetsFolder.Location = new System.Drawing.Point(13, 16);
-            this.lblAssetsFolder.Name = "lblAssetsFolder";
-            this.lblAssetsFolder.Size = new System.Drawing.Size(118, 13);
-            this.lblAssetsFolder.TabIndex = 0;
-            this.lblAssetsFolder.Text = "Assets folder (Optional):";
-            // 
-            // txtAssetsFolder
-            // 
-            this.txtAssetsFolder.Location = new System.Drawing.Point(16, 32);
-            this.txtAssetsFolder.Name = "txtAssetsFolder";
-            this.txtAssetsFolder.Size = new System.Drawing.Size(336, 20);
-            this.txtAssetsFolder.TabIndex = 1;
-            this.txtAssetsFolder.TextChanged += new System.EventHandler(this.txtAssetsFolder_TextChanged);
             // 
             // btnPackage
             // 
-            this.btnPackage.Location = new System.Drawing.Point(16, 64);
+            this.btnPackage.Location = new System.Drawing.Point(16, 112);
             this.btnPackage.Name = "btnPackage";
             this.btnPackage.Size = new System.Drawing.Size(128, 23);
-            this.btnPackage.TabIndex = 3;
-            this.btnPackage.Text = "Package...";
+            this.btnPackage.TabIndex = 0;
+            this.btnPackage.Text = "Package";
             this.btnPackage.UseVisualStyleBackColor = true;
             this.btnPackage.Click += new System.EventHandler(this.btnPackage_Click);
             // 
-            // btnAssetsFolderBrowse
+            // lblAssetsFolderPath
             // 
-            this.btnAssetsFolderBrowse.Location = new System.Drawing.Point(360, 31);
-            this.btnAssetsFolderBrowse.Name = "btnAssetsFolderBrowse";
-            this.btnAssetsFolderBrowse.Size = new System.Drawing.Size(32, 23);
-            this.btnAssetsFolderBrowse.TabIndex = 2;
-            this.btnAssetsFolderBrowse.Text = "...";
-            this.btnAssetsFolderBrowse.UseVisualStyleBackColor = true;
-            this.btnAssetsFolderBrowse.Click += new System.EventHandler(this.btnAssetsFolderBrowse_Click);
+            this.lblAssetsFolderPath.AutoSize = true;
+            this.lblAssetsFolderPath.Location = new System.Drawing.Point(13, 16);
+            this.lblAssetsFolderPath.Name = "lblAssetsFolderPath";
+            this.lblAssetsFolderPath.Size = new System.Drawing.Size(94, 13);
+            this.lblAssetsFolderPath.TabIndex = 1;
+            this.lblAssetsFolderPath.Text = "Assets folder path:";
+            // 
+            // lblPackageFilePath
+            // 
+            this.lblPackageFilePath.AutoSize = true;
+            this.lblPackageFilePath.Location = new System.Drawing.Point(13, 64);
+            this.lblPackageFilePath.Name = "lblPackageFilePath";
+            this.lblPackageFilePath.Size = new System.Drawing.Size(93, 13);
+            this.lblPackageFilePath.TabIndex = 4;
+            this.lblPackageFilePath.Text = "Package file path:";
+            // 
+            // txtPackageFilePath
+            // 
+            this.txtPackageFilePath.Location = new System.Drawing.Point(16, 80);
+            this.txtPackageFilePath.Name = "txtPackageFilePath";
+            this.txtPackageFilePath.Size = new System.Drawing.Size(344, 20);
+            this.txtPackageFilePath.TabIndex = 5;
+            this.txtPackageFilePath.TextChanged += new System.EventHandler(this.txtPackageFilePath_TextChanged);
+            // 
+            // btnPackageFilePathBrowse
+            // 
+            this.btnPackageFilePathBrowse.Location = new System.Drawing.Point(368, 79);
+            this.btnPackageFilePathBrowse.Name = "btnPackageFilePathBrowse";
+            this.btnPackageFilePathBrowse.Size = new System.Drawing.Size(32, 23);
+            this.btnPackageFilePathBrowse.TabIndex = 6;
+            this.btnPackageFilePathBrowse.Text = "...";
+            this.btnPackageFilePathBrowse.UseVisualStyleBackColor = true;
+            this.btnPackageFilePathBrowse.Click += new System.EventHandler(this.btnPackageFilePathBrowse_Click);
+            // 
+            // txtAssetsFolderPath
+            // 
+            this.txtAssetsFolderPath.Location = new System.Drawing.Point(16, 32);
+            this.txtAssetsFolderPath.Name = "txtAssetsFolderPath";
+            this.txtAssetsFolderPath.Size = new System.Drawing.Size(344, 20);
+            this.txtAssetsFolderPath.TabIndex = 2;
+            this.txtAssetsFolderPath.TextChanged += new System.EventHandler(this.txtAssetsFolderPath_TextChanged);
+            // 
+            // btnAssetsFolderPathBrowse
+            // 
+            this.btnAssetsFolderPathBrowse.Location = new System.Drawing.Point(368, 31);
+            this.btnAssetsFolderPathBrowse.Name = "btnAssetsFolderPathBrowse";
+            this.btnAssetsFolderPathBrowse.Size = new System.Drawing.Size(32, 23);
+            this.btnAssetsFolderPathBrowse.TabIndex = 3;
+            this.btnAssetsFolderPathBrowse.Text = "...";
+            this.btnAssetsFolderPathBrowse.UseVisualStyleBackColor = true;
+            this.btnAssetsFolderPathBrowse.Click += new System.EventHandler(this.btnAssetsFolderPathBrowse_Click);
             // 
             // ImageEffectPackagerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(409, 98);
-            this.Controls.Add(this.btnAssetsFolderBrowse);
+            this.ClientSize = new System.Drawing.Size(417, 145);
+            this.Controls.Add(this.btnAssetsFolderPathBrowse);
+            this.Controls.Add(this.txtAssetsFolderPath);
+            this.Controls.Add(this.btnPackageFilePathBrowse);
+            this.Controls.Add(this.txtPackageFilePath);
+            this.Controls.Add(this.lblPackageFilePath);
+            this.Controls.Add(this.lblAssetsFolderPath);
             this.Controls.Add(this.btnPackage);
-            this.Controls.Add(this.txtAssetsFolder);
-            this.Controls.Add(this.lblAssetsFolder);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "ImageEffectPackagerForm";
@@ -91,10 +124,12 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label lblAssetsFolder;
-        private System.Windows.Forms.TextBox txtAssetsFolder;
         private System.Windows.Forms.Button btnPackage;
-        private System.Windows.Forms.Button btnAssetsFolderBrowse;
+        private System.Windows.Forms.Label lblAssetsFolderPath;
+        private System.Windows.Forms.Label lblPackageFilePath;
+        private System.Windows.Forms.TextBox txtPackageFilePath;
+        private System.Windows.Forms.Button btnPackageFilePathBrowse;
+        private System.Windows.Forms.TextBox txtAssetsFolderPath;
+        private System.Windows.Forms.Button btnAssetsFolderPathBrowse;
     }
 }

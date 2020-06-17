@@ -36,6 +36,7 @@ namespace ShareX.ImageEffectsLib
         public string ImageEffectName { get; private set; }
         public string ShareXImageEffectsFolderPath { get; private set; }
         public string AssetsFolderPath { get; set; }
+        public string PackageFilePath { get; set; }
 
         public ImageEffectPackagerForm(string json, string name, string imageEffectsFolderPath)
         {
@@ -45,24 +46,49 @@ namespace ShareX.ImageEffectsLib
 
             InitializeComponent();
             ShareXResources.ApplyTheme(this);
+
+            AssetsFolderPath = Path.Combine(ShareXImageEffectsFolderPath, ImageEffectName);
+            txtAssetsFolderPath.Text = AssetsFolderPath;
+            PackageFilePath = AssetsFolderPath + ".sxie";
+            txtPackageFilePath.Text = PackageFilePath;
         }
 
-        private void txtAssetsFolder_TextChanged(object sender, EventArgs e)
+        private void txtAssetsFolderPath_TextChanged(object sender, EventArgs e)
         {
-            AssetsFolderPath = txtAssetsFolder.Text;
+            AssetsFolderPath = txtAssetsFolderPath.Text;
         }
 
-        private void btnAssetsFolderBrowse_Click(object sender, EventArgs e)
+        private void btnAssetsFolderPathBrowse_Click(object sender, EventArgs e)
         {
-            Helpers.BrowseFolder(txtAssetsFolder, ShareXImageEffectsFolderPath);
+            Helpers.BrowseFolder(txtAssetsFolderPath, ShareXImageEffectsFolderPath);
+        }
+
+        private void txtPackageFilePath_TextChanged(object sender, EventArgs e)
+        {
+            PackageFilePath = txtPackageFilePath.Text;
+        }
+
+        private void btnPackageFilePathBrowse_Click(object sender, EventArgs e)
+        {
+            using (SaveFileDialog sfd = new SaveFileDialog())
+            {
+                sfd.DefaultExt = "sxie";
+                sfd.FileName = ImageEffectName + ".sxie";
+                sfd.Filter = "ShareX image effect (*.sxie)|*.sxie";
+                sfd.InitialDirectory = ShareXImageEffectsFolderPath;
+
+                if (sfd.ShowDialog() == DialogResult.OK)
+                {
+                    txtPackageFilePath.Text = sfd.FileName;
+                }
+            }
         }
 
         private void btnPackage_Click(object sender, EventArgs e)
         {
             try
             {
-                if (!string.IsNullOrEmpty(AssetsFolderPath) &&
-                    !AssetsFolderPath.StartsWith(ShareXImageEffectsFolderPath + "\\", StringComparison.OrdinalIgnoreCase))
+                if (!string.IsNullOrEmpty(AssetsFolderPath) && !AssetsFolderPath.StartsWith(ShareXImageEffectsFolderPath + "\\", StringComparison.OrdinalIgnoreCase))
                 {
                     // TODO: Translate
                     MessageBox.Show("Assets folder must be inside ShareX image effects folder.", "ShareX - " + "Invalid assets folder path",
@@ -70,22 +96,11 @@ namespace ShareX.ImageEffectsLib
                 }
                 else
                 {
-                    using (SaveFileDialog sfd = new SaveFileDialog())
+                    string outputFilePath = ImageEffectPackager.Package(PackageFilePath, ImageEffectJson, AssetsFolderPath);
+
+                    if (!string.IsNullOrEmpty(outputFilePath) && File.Exists(outputFilePath))
                     {
-                        sfd.DefaultExt = "sxie";
-                        sfd.FileName = ImageEffectName + ".sxie";
-                        sfd.Filter = "ShareX image effect (*.sxie)|*.sxie";
-                        sfd.InitialDirectory = ShareXImageEffectsFolderPath;
-
-                        if (sfd.ShowDialog() == DialogResult.OK)
-                        {
-                            string outputFilePath = ImageEffectPackager.Package(sfd.FileName, ImageEffectJson, AssetsFolderPath);
-
-                            if (!string.IsNullOrEmpty(outputFilePath) && File.Exists(outputFilePath))
-                            {
-                                Helpers.OpenFolderWithFile(outputFilePath);
-                            }
-                        }
+                        Helpers.OpenFolderWithFile(outputFilePath);
                     }
                 }
             }
