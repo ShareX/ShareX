@@ -280,7 +280,7 @@
     <value>120, 24</value>
   </data>
   <data name="btnSaveImage.TabIndex" type="System.Int32, mscorlib">
-    <value>19</value>
+    <value>20</value>
   </data>
   <data name="btnSaveImage.Text" xml:space="preserve">
     <value>Save image...</value>
@@ -394,7 +394,7 @@
     <value>120, 24</value>
   </data>
   <data name="mbLoadImage.TabIndex" type="System.Int32, mscorlib">
-    <value>18</value>
+    <value>19</value>
   </data>
   <data name="mbLoadImage.Text" xml:space="preserve">
     <value>Load image</value>
@@ -598,7 +598,7 @@
     <value>120, 24</value>
   </data>
   <data name="btnUploadImage.TabIndex" type="System.Int32, mscorlib">
-    <value>20</value>
+    <value>21</value>
   </data>
   <data name="btnUploadImage.Text" xml:space="preserve">
     <value>Upload image</value>
@@ -693,6 +693,9 @@
   <data name="&gt;&gt;lblPresets.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
+  <data name="btnPackager.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
   <data name="btnPackager.Location" type="System.Drawing.Point, System.Drawing">
     <value>200, 504</value>
   </data>
@@ -700,7 +703,7 @@
     <value>120, 24</value>
   </data>
   <data name="btnPackager.TabIndex" type="System.Int32, mscorlib">
-    <value>21</value>
+    <value>18</value>
   </data>
   <data name="btnPackager.Text" xml:space="preserve">
     <value>Packager...</value>
