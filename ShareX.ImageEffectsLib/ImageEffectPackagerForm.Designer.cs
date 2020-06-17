@@ -105,7 +105,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(417, 145);
+            this.ClientSize = new System.Drawing.Size(417, 150);
             this.Controls.Add(this.btnAssetsFolderPathBrowse);
             this.Controls.Add(this.txtAssetsFolderPath);
             this.Controls.Add(this.btnPackageFilePathBrowse);
