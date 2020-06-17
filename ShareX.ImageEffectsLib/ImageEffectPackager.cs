@@ -46,22 +46,23 @@ namespace ShareX.ImageEffectsLib
                 string configFilePath = Path.Combine(outputFolder, ConfigFileName);
                 File.WriteAllText(configFilePath, configJson, Encoding.UTF8);
 
+                Dictionary<string, string> files = new Dictionary<string, string>();
+                files.Add(configFilePath, ConfigFileName);
+
+                if (!string.IsNullOrEmpty(assetsFolderPath) && Directory.Exists(assetsFolderPath))
+                {
+                    string parentFolderPath = Directory.GetParent(assetsFolderPath).FullName;
+                    int entryNamePosition = parentFolderPath.Length + 1;
+
+                    foreach (string assetPath in Directory.EnumerateFiles(assetsFolderPath, "*.*", SearchOption.AllDirectories).Where(x => Helpers.IsImageFile(x)))
+                    {
+                        string entryName = assetPath.Substring(entryNamePosition);
+                        files.Add(assetPath, entryName);
+                    }
+                }
+
                 try
                 {
-                    Dictionary<string, string> files = new Dictionary<string, string>();
-                    files.Add(configFilePath, ConfigFileName);
-
-                    if (!string.IsNullOrEmpty(assetsFolderPath) && Directory.Exists(assetsFolderPath))
-                    {
-                        int entryNamePosition = assetsFolderPath.Length + 1;
-
-                        foreach (string assetPath in Directory.EnumerateFiles(assetsFolderPath, "*.*", SearchOption.AllDirectories).Where(x => Helpers.IsImageFile(x)))
-                        {
-                            string entryName = assetPath.Substring(entryNamePosition);
-                            files.Add(assetPath, entryName);
-                        }
-                    }
-
                     ZipManager.Compress(outputFilePath, files);
                 }
                 finally
@@ -75,34 +76,20 @@ namespace ShareX.ImageEffectsLib
             return null;
         }
 
-        public static string ExtractPackage(string packageFilePath, string imageEffectsFolderPath)
+        public static string ExtractPackage(string packageFilePath, string destination)
         {
-            if (!string.IsNullOrEmpty(packageFilePath) && File.Exists(packageFilePath) && !string.IsNullOrEmpty(imageEffectsFolderPath))
+            if (!string.IsNullOrEmpty(packageFilePath) && File.Exists(packageFilePath) && !string.IsNullOrEmpty(destination))
             {
-                string packageName = Path.GetFileNameWithoutExtension(packageFilePath);
+                string configFilePath = Path.Combine(destination, ConfigFileName);
 
-                if (!string.IsNullOrEmpty(packageName) && !packageName.StartsWith("."))
+                if (File.Exists(configFilePath))
                 {
-                    string destination = Path.Combine(imageEffectsFolderPath, packageName);
-
-                    if (Directory.Exists(destination))
-                    {
-                        // TODO: Translate
-                        if (MessageBox.Show($"Destination folder already exists:\r\n\"{destination}\"\r\n\r\nWould you like to overwrite it?", "ShareX - " +
-                            "Image effect packager", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
-                        {
-                            Directory.Delete(destination, true);
-                        }
-                        else
-                        {
-                            return null;
-                        }
-                    }
-
-                    ZipManager.Extract(packageFilePath, destination);
-
-                    return Path.Combine(destination, ConfigFileName);
+                    File.Delete(configFilePath);
                 }
+
+                ZipManager.Extract(packageFilePath, destination);
+
+                return configFilePath;
             }
 
             return null;

@@ -41,7 +41,7 @@
             // 
             this.btnPackage.Location = new System.Drawing.Point(16, 112);
             this.btnPackage.Name = "btnPackage";
-            this.btnPackage.Size = new System.Drawing.Size(128, 23);
+            this.btnPackage.Size = new System.Drawing.Size(384, 24);
             this.btnPackage.TabIndex = 0;
             this.btnPackage.Text = "Package";
             this.btnPackage.UseVisualStyleBackColor = true;

@@ -1707,7 +1707,14 @@ namespace ShareX
 
                 if (imageEffectsForm != null)
                 {
-                    imageEffectsForm.ImportImageEffectFromFile(configFilePath);
+                    try
+                    {
+                        imageEffectsForm.ImportImageEffectFromFile(configFilePath);
+                    }
+                    finally
+                    {
+                        File.Delete(configFilePath);
+                    }
                 }
             }
         }
