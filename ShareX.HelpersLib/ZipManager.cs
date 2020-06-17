@@ -27,6 +27,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.IO.Compression;
+using System.Linq;
 
 namespace ShareX.HelpersLib
 {
@@ -42,23 +43,9 @@ namespace ShareX.HelpersLib
                 {
                     string entryName = entry.Name;
 
-                    if (fileFilter != null)
+                    if (fileFilter != null && !fileFilter.Any(x => x.Equals(entryName, StringComparison.OrdinalIgnoreCase)))
                     {
-                        bool match = false;
-
-                        foreach (string file in fileFilter)
-                        {
-                            if (file.Equals(entryName, StringComparison.OrdinalIgnoreCase))
-                            {
-                                match = true;
-                                break;
-                            }
-                        }
-
-                        if (!match)
-                        {
-                            continue;
-                        }
+                        continue;
                     }
 
                     if (retainDirectoryStructure)
