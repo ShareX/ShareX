@@ -747,20 +747,17 @@
   <data name="tsmiAlignmentBottom.Text" xml:space="preserve">
     <value>Bottom</value>
   </data>
+  <data name="lblTip.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
   <data name="lblTip.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
-  </data>
-  <data name="lblTip.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Bottom</value>
   </data>
   <data name="lblTip.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="lblTip.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 339</value>
-  </data>
-  <data name="lblTip.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 13</value>
+    <value>5, 334</value>
   </data>
   <data name="lblTip.Size" type="System.Drawing.Size, System.Drawing">
     <value>106, 13</value>
