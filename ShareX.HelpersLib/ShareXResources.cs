@@ -132,6 +132,12 @@ namespace ShareX.HelpersLib
                     lv.BackColor = Theme.LightBackgroundColor;
                     lv.SupportCustomTheme();
                     return;
+                case SplitContainerCustomSplitter sccs:
+                    sccs.SplitterColor = Theme.BackgroundColor;
+                    sccs.SplitterLineColor = Theme.BorderColor;
+                    sccs.Panel1.BackColor = Theme.BackgroundColor;
+                    sccs.Panel2.BackColor = Theme.BackgroundColor;
+                    break;
                 case SplitContainer sc:
                     sc.Panel1.BackColor = Theme.BackgroundColor;
                     sc.Panel2.BackColor = Theme.BackgroundColor;

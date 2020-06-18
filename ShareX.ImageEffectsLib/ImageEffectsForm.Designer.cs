@@ -57,7 +57,12 @@
             this.btnDuplicatePreset = new System.Windows.Forms.Button();
             this.lblPresets = new System.Windows.Forms.Label();
             this.btnPackager = new System.Windows.Forms.Button();
+            this.scMain = new ShareX.HelpersLib.SplitContainerCustomSplitter();
             this.cmsLoadImage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.scMain)).BeginInit();
+            this.scMain.Panel1.SuspendLayout();
+            this.scMain.Panel2.SuspendLayout();
+            this.scMain.SuspendLayout();
             this.SuspendLayout();
             // 
             // pgSettings
@@ -140,9 +145,9 @@
             // 
             // pbResult
             // 
-            resources.ApplyResources(this.pbResult, "pbResult");
             this.pbResult.BackColor = System.Drawing.SystemColors.Window;
             this.pbResult.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            resources.ApplyResources(this.pbResult, "pbResult");
             this.pbResult.DrawCheckeredBackground = true;
             this.pbResult.EnableRightClickMenu = true;
             this.pbResult.FullscreenOnClick = true;
@@ -267,12 +272,28 @@
             this.btnPackager.UseVisualStyleBackColor = true;
             this.btnPackager.Click += new System.EventHandler(this.btnPackager_Click);
             // 
+            // scMain
+            // 
+            resources.ApplyResources(this.scMain, "scMain");
+            this.scMain.Name = "scMain";
+            // 
+            // scMain.Panel1
+            // 
+            this.scMain.Panel1.Controls.Add(this.pgSettings);
+            // 
+            // scMain.Panel2
+            // 
+            this.scMain.Panel2.Controls.Add(this.pbResult);
+            this.scMain.SplitterColor = System.Drawing.Color.White;
+            this.scMain.SplitterLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(189)))), ((int)(((byte)(189)))));
+            // 
             // ImageEffectsForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.CancelButton = this.btnClose;
+            this.Controls.Add(this.scMain);
             this.Controls.Add(this.btnPackager);
             this.Controls.Add(this.lblPresets);
             this.Controls.Add(this.btnDuplicatePreset);
@@ -292,13 +313,15 @@
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnRemove);
             this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.pgSettings);
             this.Controls.Add(this.lvEffects);
-            this.Controls.Add(this.pbResult);
             this.Name = "ImageEffectsForm";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Shown += new System.EventHandler(this.ImageEffectsForm_Shown);
             this.cmsLoadImage.ResumeLayout(false);
+            this.scMain.Panel1.ResumeLayout(false);
+            this.scMain.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.scMain)).EndInit();
+            this.scMain.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -333,6 +356,7 @@
         private System.Windows.Forms.Button btnDuplicatePreset;
         private System.Windows.Forms.Label lblPresets;
         private System.Windows.Forms.Button btnPackager;
+        private HelpersLib.SplitContainerCustomSplitter scMain;
     }
 }
 
