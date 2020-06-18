@@ -1193,9 +1193,6 @@ Would you like to download and install it?</value>
   <data name="AmazonS3StorageClass_STANDARD_IA" xml:space="preserve">
     <value>Amazon S3 Standard-Infrequent Access</value>
   </data>
-  <data name="LoadingSmall" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\LoadingSmall.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="RandomNonAmbiguousAlphanumericCharRepeatUsingN" xml:space="preserve">
     <value>Random non ambiguous alphanumeric char. Repeat using {n}</value>
   </data>
@@ -1249,5 +1246,11 @@ Would you like to download and install it?</value>
   </data>
   <data name="AmazonS3StorageClass_ONEZONE_IA" xml:space="preserve">
     <value>Amazon S3 One Zone-Infrequent Access</value>
+  </data>
+  <data name="LoadingSmallBlack" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LoadingSmallBlack.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LoadingSmallWhite" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LoadingSmallWhite.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
