@@ -53,6 +53,9 @@ namespace ShareX.ImageEffectsLib
         [DefaultValue(ImageInterpolationMode.HighQualityBicubic), TypeConverter(typeof(EnumDescriptionConverter))]
         public ImageInterpolationMode InterpolationMode { get; set; }
 
+        [DefaultValue(CompositingMode.SourceOver)]
+        public CompositingMode CompositingMode { get; set; }
+
         [DefaultValue(true), Description("If image watermark size bigger than source image then don't draw it.")]
         public bool AutoHide { get; set; }
 
@@ -103,6 +106,7 @@ namespace ShareX.ImageEffectsLib
                         {
                             g.InterpolationMode = ImageHelpers.GetInterpolationMode(InterpolationMode);
                             g.PixelOffsetMode = PixelOffsetMode.Half;
+                            g.CompositingMode = CompositingMode;
                             g.DrawImage(bmp2, imageRectangle);
                         }
                     }
