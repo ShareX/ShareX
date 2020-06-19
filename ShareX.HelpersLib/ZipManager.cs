@@ -27,13 +27,12 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.IO.Compression;
-using System.Linq;
 
 namespace ShareX.HelpersLib
 {
     public static class ZipManager
     {
-        public static void Extract(string archivePath, string destination, bool retainDirectoryStructure = true, List<string> fileFilter = null)
+        public static void Extract(string archivePath, string destination, bool retainDirectoryStructure = true, Func<string, bool> filter = null)
         {
             using (ZipArchive archive = ZipFile.OpenRead(archivePath))
             {
@@ -43,7 +42,7 @@ namespace ShareX.HelpersLib
                 {
                     string entryName = entry.Name;
 
-                    if (fileFilter != null && !fileFilter.Any(x => x.Equals(entryName, StringComparison.OrdinalIgnoreCase)))
+                    if (filter != null && !filter(entryName))
                     {
                         continue;
                     }
