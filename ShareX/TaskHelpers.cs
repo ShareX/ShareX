@@ -1690,31 +1690,24 @@ namespace ShareX
 
         public static void ImportImageEffect(string filePath)
         {
-            string configFilePath = null;
+            string configJson = null;
 
             try
             {
-                configFilePath = ImageEffectPackager.ExtractPackage(filePath, Program.ImageEffectsFolder);
+                configJson = ImageEffectPackager.ExtractPackage(filePath, Program.ImageEffectsFolder);
             }
             catch (Exception ex)
             {
                 ex.ShowError();
             }
 
-            if (!string.IsNullOrEmpty(configFilePath) && File.Exists(configFilePath))
+            if (!string.IsNullOrEmpty(configJson))
             {
                 ImageEffectsForm imageEffectsForm = OpenImageEffectsSingleton(Program.DefaultTaskSettings);
 
                 if (imageEffectsForm != null)
                 {
-                    try
-                    {
-                        imageEffectsForm.ImportImageEffectFromFile(configFilePath);
-                    }
-                    finally
-                    {
-                        File.Delete(configFilePath);
-                    }
+                    imageEffectsForm.ImportImageEffect(configJson);
                 }
             }
         }

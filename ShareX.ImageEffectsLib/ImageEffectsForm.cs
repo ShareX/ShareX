@@ -106,9 +106,9 @@ namespace ShareX.ImageEffectsLib
             btnClose.Text = Resources.ImageEffectsForm_EditorMode_Cancel;
         }
 
-        public void ImportImageEffectFromFile(string filePath)
+        public void ImportImageEffect(string json)
         {
-            eiImageEffects.ImportFile(filePath);
+            eiImageEffects.ImportJson(json);
         }
 
         protected void OnImageProcessRequested(Bitmap bmp)

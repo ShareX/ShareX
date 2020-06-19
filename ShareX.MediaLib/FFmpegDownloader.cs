@@ -58,7 +58,7 @@ namespace ShareX.MediaLib
         {
             try
             {
-                ZipManager.Extract(archivePath, extractPath, false, entryName => entryName.Equals("ffmpeg.exe", StringComparison.OrdinalIgnoreCase));
+                ZipManager.Extract(archivePath, extractPath, false, entry => entry.Name.Equals("ffmpeg.exe", StringComparison.OrdinalIgnoreCase));
                 return true;
             }
             catch (Exception e)

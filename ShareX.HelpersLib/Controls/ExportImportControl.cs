@@ -220,15 +220,19 @@ namespace ShareX.HelpersLib
             }
         }
 
-        private void tsmiImportClipboard_Click(object sender, EventArgs e)
+        public void ImportJson(string json)
         {
-            string json = ClipboardHelpers.GetText(true);
-
             if (!string.IsNullOrEmpty(json))
             {
                 OnImportRequested(json);
                 OnImportCompleted();
             }
+        }
+
+        private void tsmiImportClipboard_Click(object sender, EventArgs e)
+        {
+            string json = ClipboardHelpers.GetText(true);
+            ImportJson(json);
         }
 
         public void ImportFile(string filePath)

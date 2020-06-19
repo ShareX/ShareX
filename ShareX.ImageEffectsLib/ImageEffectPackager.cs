@@ -24,11 +24,11 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
-using System.Windows.Forms;
 
 namespace ShareX.ImageEffectsLib
 {
@@ -78,21 +78,31 @@ namespace ShareX.ImageEffectsLib
 
         public static string ExtractPackage(string packageFilePath, string destination)
         {
+            string configJson = null;
+
             if (!string.IsNullOrEmpty(packageFilePath) && File.Exists(packageFilePath) && !string.IsNullOrEmpty(destination))
             {
-                string configFilePath = Path.Combine(destination, ConfigFileName);
-
-                if (File.Exists(configFilePath))
+                ZipManager.Extract(packageFilePath, destination, true, entry =>
                 {
-                    File.Delete(configFilePath);
-                }
+                    if (Helpers.IsImageFile(entry.Name))
+                    {
+                        return true;
+                    }
 
-                ZipManager.Extract(packageFilePath, destination);
+                    if (entry.FullName.Equals(ConfigFileName, StringComparison.OrdinalIgnoreCase))
+                    {
+                        using (Stream stream = entry.Open())
+                        using (StreamReader streamReader = new StreamReader(stream, Encoding.UTF8))
+                        {
+                            configJson = streamReader.ReadToEnd();
+                        }
+                    }
 
-                return configFilePath;
+                    return false;
+                });
             }
 
-            return null;
+            return configJson;
         }
     }
 }

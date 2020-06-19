@@ -32,7 +32,7 @@ namespace ShareX.HelpersLib
 {
     public static class ZipManager
     {
-        public static void Extract(string archivePath, string destination, bool retainDirectoryStructure = true, Func<string, bool> filter = null)
+        public static void Extract(string archivePath, string destination, bool retainDirectoryStructure = true, Func<ZipArchiveEntry, bool> filter = null)
         {
             using (ZipArchive archive = ZipFile.OpenRead(archivePath))
             {
@@ -40,16 +40,20 @@ namespace ShareX.HelpersLib
 
                 foreach (ZipArchiveEntry entry in archive.Entries)
                 {
-                    string entryName = entry.Name;
-
-                    if (filter != null && !filter(entryName))
+                    if (filter != null && !filter(entry))
                     {
                         continue;
                     }
 
+                    string entryName;
+
                     if (retainDirectoryStructure)
                     {
                         entryName = entry.FullName;
+                    }
+                    else
+                    {
+                        entryName = entry.Name;
                     }
 
                     string fullPath = Path.GetFullPath(Path.Combine(fullName, entryName));
