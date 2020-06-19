@@ -89,7 +89,7 @@ namespace ShareX.ImageEffectsLib
                         return true;
                     }
 
-                    if (entry.FullName.Equals(ConfigFileName, StringComparison.OrdinalIgnoreCase))
+                    if (configJson == null && entry.FullName.Equals(ConfigFileName, StringComparison.OrdinalIgnoreCase))
                     {
                         using (Stream stream = entry.Open())
                         using (StreamReader streamReader = new StreamReader(stream, Encoding.UTF8))

@@ -1051,7 +1051,7 @@ namespace ShareX
 
             foreach (CLICommand command in commands)
             {
-                DebugHelper.WriteLine("CommandLine: " + command.Command);
+                DebugHelper.WriteLine("CommandLine: " + command);
 
                 if (command.IsCommand)
                 {
