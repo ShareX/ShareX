@@ -485,10 +485,10 @@ namespace ShareX.ImageEffectsLib
 
         private void cbPresets_SelectedIndexChanged(object sender, EventArgs e)
         {
+            SelectedPresetIndex = cbPresets.SelectedIndex;
+
             if (!ignorePresetsSelectedIndexChanged)
             {
-                SelectedPresetIndex = cbPresets.SelectedIndex;
-
                 ImageEffectPreset preset = GetSelectedPreset();
                 if (preset != null)
                 {
