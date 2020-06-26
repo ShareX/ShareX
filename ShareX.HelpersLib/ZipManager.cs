@@ -27,15 +27,25 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.IO.Compression;
+using System.Linq;
 
 namespace ShareX.HelpersLib
 {
     public static class ZipManager
     {
-        public static void Extract(string archivePath, string destination, bool retainDirectoryStructure = true, Func<ZipArchiveEntry, bool> filter = null)
+        public static void Extract(string archivePath, string destination, bool retainDirectoryStructure = true, Func<ZipArchiveEntry, bool> filter = null, long maxLength = 0)
         {
             using (ZipArchive archive = ZipFile.OpenRead(archivePath))
             {
+                if (maxLength > 0)
+                {
+                    long declaredSize = archive.Entries.Sum(entry => entry.Length);
+                    if (declaredSize > maxLength)
+                    {
+                        throw new Exception("Archive is too big.");
+                    }
+                }
+
                 string fullName = Directory.CreateDirectory(Path.GetFullPath(destination)).FullName;
 
                 foreach (ZipArchiveEntry entry in archive.Entries)
@@ -70,11 +80,35 @@ namespace ShareX.HelpersLib
                         else
                         {
                             Directory.CreateDirectory(Path.GetDirectoryName(fullPath));
-                            entry.ExtractToFile(fullPath, true);
+                            ExtractToFile(entry, fullPath, true);
                         }
                     }
                 }
             }
+        }
+
+        private static void ExtractToFile(ZipArchiveEntry source, string destinationFileName, bool overwrite)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException(nameof(source));
+            }
+
+            if (destinationFileName == null)
+            {
+                throw new ArgumentNullException(nameof(destinationFileName));
+            }
+
+            FileMode fMode = overwrite ? FileMode.Create : FileMode.CreateNew;
+
+            using (FileStream fs = new FileStream(destinationFileName, fMode, FileAccess.Write, FileShare.None, bufferSize: 0x1000, useAsync: false))
+            using (Stream es = source.Open())
+            using (MaxLengthStream maxLengthStream = new MaxLengthStream(es, source.Length))
+            {
+                maxLengthStream.CopyTo(fs);
+            }
+
+            File.SetLastWriteTime(destinationFileName, source.LastWriteTime.DateTime);
         }
 
         public static void Compress(string source, string archivePath, CompressionLevel compression = CompressionLevel.Optimal)

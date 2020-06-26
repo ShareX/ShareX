@@ -150,6 +150,7 @@
     </Compile>
     <Compile Include="Helpers\JsonHelpers.cs" />
     <Compile Include="ImageFilesCache.cs" />
+    <Compile Include="MaxLengthStream.cs" />
     <Compile Include="PointInfo.cs" />
     <Compile Include="Random\RandomCrypto.cs" />
     <Compile Include="Random\RandomFast.cs" />
