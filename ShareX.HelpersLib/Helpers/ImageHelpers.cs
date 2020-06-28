@@ -2087,25 +2087,21 @@ namespace ShareX.HelpersLib
 
         public static Size ApplyAspectRatio(int width, int height, Bitmap bmp)
         {
-            int newWidth;
+            int newWidth, newHeight;
 
             if (width == 0)
             {
                 newWidth = (int)Math.Round((float)height / bmp.Height * bmp.Width);
+                newHeight = height;
             }
-            else
+            else if (height == 0)
             {
                 newWidth = width;
-            }
-
-            int newHeight;
-
-            if (height == 0)
-            {
                 newHeight = (int)Math.Round((float)width / bmp.Width * bmp.Height);
             }
             else
             {
+                newWidth = width;
                 newHeight = height;
             }
 

@@ -745,6 +745,42 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Absolute size.
+        /// </summary>
+        internal static string DrawImageSizeMode_AbsoluteSize {
+            get {
+                return ResourceManager.GetString("DrawImageSizeMode_AbsoluteSize", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Don&apos;t resize.
+        /// </summary>
+        internal static string DrawImageSizeMode_DontResize {
+            get {
+                return ResourceManager.GetString("DrawImageSizeMode_DontResize", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Percentage of canvas.
+        /// </summary>
+        internal static string DrawImageSizeMode_PercentageOfCanvas {
+            get {
+                return ResourceManager.GetString("DrawImageSizeMode_PercentageOfCanvas", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Percentage of watermark.
+        /// </summary>
+        internal static string DrawImageSizeMode_PercentageOfWatermark {
+            get {
+                return ResourceManager.GetString("DrawImageSizeMode_PercentageOfWatermark", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Error.
         /// </summary>
         internal static string Error {
@@ -2100,51 +2136,6 @@ namespace ShareX.HelpersLib.Properties {
         internal static string ImageEditorStartMode_PreviousState {
             get {
                 return ResourceManager.GetString("ImageEditorStartMode_PreviousState", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Bicubic.
-        /// </summary>
-        internal static string ImageInterpolationMode_Bicubic {
-            get {
-                return ResourceManager.GetString("ImageInterpolationMode_Bicubic", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Bilinear.
-        /// </summary>
-        internal static string ImageInterpolationMode_Bilinear {
-            get {
-                return ResourceManager.GetString("ImageInterpolationMode_Bilinear", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to High quality bicubic.
-        /// </summary>
-        internal static string ImageInterpolationMode_HighQualityBicubic {
-            get {
-                return ResourceManager.GetString("ImageInterpolationMode_HighQualityBicubic", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to High quality bilinear.
-        /// </summary>
-        internal static string ImageInterpolationMode_HighQualityBilinear {
-            get {
-                return ResourceManager.GetString("ImageInterpolationMode_HighQualityBilinear", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Nearest neighbor.
-        /// </summary>
-        internal static string ImageInterpolationMode_NearestNeighbor {
-            get {
-                return ResourceManager.GetString("ImageInterpolationMode_NearestNeighbor", resourceCulture);
             }
         }
         

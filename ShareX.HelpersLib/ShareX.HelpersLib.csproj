@@ -292,6 +292,7 @@
     <Compile Include="Settings\TypeNameSerializationBinder.cs" />
     <Compile Include="UITypeEditors\EnumDescriptionConverter.cs" />
     <Compile Include="UITypeEditors\DirectoryNameEditor.cs" />
+    <Compile Include="UITypeEditors\EnumProperNameConverter.cs" />
     <Compile Include="UITypeEditors\GradientEditor.cs" />
     <Compile Include="UITypeEditors\JsonFileNameEditor.cs" />
     <Compile Include="UITypeEditors\MyColorConverter.cs" />

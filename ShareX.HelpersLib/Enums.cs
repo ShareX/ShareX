@@ -189,7 +189,7 @@ namespace ShareX.HelpersLib
         RightOrBottom
     }
 
-    public enum ImageInterpolationMode // Localized
+    public enum ImageInterpolationMode
     {
         HighQualityBicubic,
         Bicubic,

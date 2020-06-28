@@ -43,7 +43,7 @@ namespace ShareX.ImageEffectsLib
         ResizeIfSmaller
     }
 
-    public enum DrawImageSizeMode
+    public enum DrawImageSizeMode // Localized
     {
         DontResize,
         AbsoluteSize,

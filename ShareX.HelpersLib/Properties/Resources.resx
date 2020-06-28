@@ -135,9 +135,6 @@
   <data name="TextDestination_CustomTextUploader" xml:space="preserve">
     <value>Custom text uploader</value>
   </data>
-  <data name="ImageInterpolationMode_HighQualityBicubic" xml:space="preserve">
-    <value>High quality bicubic</value>
-  </data>
   <data name="ProxyMethod_None" xml:space="preserve">
     <value>None</value>
   </data>
@@ -683,9 +680,6 @@ Would you like to download and install it?</value>
   <data name="HotkeyType_ScreenRecorderGIF_Category" xml:space="preserve">
     <value>Screen record</value>
   </data>
-  <data name="ImageInterpolationMode_Bilinear" xml:space="preserve">
-    <value>Bilinear</value>
-  </data>
   <data name="WavFileNameEditor_EditValue_Browse_for_a_sound_file___" xml:space="preserve">
     <value>Browse for a sound file...</value>
   </data>
@@ -710,9 +704,6 @@ Would you like to download and install it?</value>
   <data name="Extensions_AddContextMenu_Paste" xml:space="preserve">
     <value>Paste</value>
   </data>
-  <data name="ImageInterpolationMode_HighQualityBilinear" xml:space="preserve">
-    <value>High quality bilinear</value>
-  </data>
   <data name="LinearGradientMode_ForwardDiagonal" xml:space="preserve">
     <value>Forward diagonal</value>
   </data>
@@ -734,9 +725,6 @@ Would you like to download and install it?</value>
   <data name="RegionCaptureAction_RemoveShapeCancelCapture" xml:space="preserve">
     <value>Remove shape or cancel capture</value>
   </data>
-  <data name="ImageInterpolationMode_NearestNeighbor" xml:space="preserve">
-    <value>Nearest neighbor</value>
-  </data>
   <data name="ReplCodeMenuEntry_un_User_name" xml:space="preserve">
     <value>User name</value>
   </data>
@@ -745,9 +733,6 @@ Would you like to download and install it?</value>
   </data>
   <data name="DownloaderForm_ChangeStatus_Status___0_" xml:space="preserve">
     <value>Status: {0}</value>
-  </data>
-  <data name="ImageInterpolationMode_Bicubic" xml:space="preserve">
-    <value>Bicubic</value>
   </data>
   <data name="CodeMenu_Create_Close" xml:space="preserve">
     <value>Close</value>
@@ -1252,5 +1237,17 @@ Would you like to download and install it?</value>
   </data>
   <data name="LoadingSmallWhite" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LoadingSmallWhite.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DrawImageSizeMode_AbsoluteSize" xml:space="preserve">
+    <value>Absolute size</value>
+  </data>
+  <data name="DrawImageSizeMode_DontResize" xml:space="preserve">
+    <value>Don't resize</value>
+  </data>
+  <data name="DrawImageSizeMode_PercentageOfCanvas" xml:space="preserve">
+    <value>Percentage of canvas</value>
+  </data>
+  <data name="DrawImageSizeMode_PercentageOfWatermark" xml:space="preserve">
+    <value>Percentage of watermark</value>
   </data>
 </root>
