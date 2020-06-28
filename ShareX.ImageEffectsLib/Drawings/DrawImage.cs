@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using System;
 using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Design;
@@ -66,35 +67,43 @@ namespace ShareX.ImageEffectsLib
 
         public override Bitmap Apply(Bitmap bmp)
         {
+            if (SizeMode != DrawImageSizeMode.DontResize && Size.Width <= 0 && Size.Height <= 0)
+            {
+                return bmp;
+            }
+
             string imageFilePath = Helpers.ExpandFolderVariables(ImageLocation, true);
 
             if (!string.IsNullOrEmpty(imageFilePath) && File.Exists(imageFilePath))
             {
-                using (Bitmap bmp2 = ImageHelpers.LoadImage(imageFilePath))
+                using (Bitmap bmpWatermark = ImageHelpers.LoadImage(imageFilePath))
                 {
-                    if (bmp2 != null)
+                    if (bmpWatermark != null)
                     {
-                        // Calculate size first
-                        Size imageSize = bmp2.Size;
+                        Size imageSize;
+
                         if (SizeMode == DrawImageSizeMode.AbsoluteSize)
                         {
-                            // Use Size property
-                            imageSize = Size;
+                            imageSize = ImageHelpers.ApplyAspectRatio(Size, bmpWatermark);
                         }
                         else if (SizeMode == DrawImageSizeMode.PercentageOfWatermark)
                         {
-                            // Relative size (percentage of watermark)
-                            imageSize = new Size((int)(bmp2.Width * (Size.Width / 100.0)), (int)(bmp2.Height * (Size.Height / 100.0)));
+                            int width = (int)Math.Round(Size.Width / 100f * bmpWatermark.Width);
+                            int height = (int)Math.Round(Size.Height / 100f * bmpWatermark.Height);
+                            imageSize = ImageHelpers.ApplyAspectRatio(width, height, bmpWatermark);
                         }
                         else if (SizeMode == DrawImageSizeMode.PercentageOfCanvas)
                         {
-                            // Relative size (percentage of image)
-                            imageSize = new Size((int)(bmp.Width * (Size.Width / 100.0)), (int)(bmp.Height * (Size.Height / 100.0)));
+                            int width = (int)Math.Round(Size.Width / 100f * bmp.Width);
+                            int height = (int)Math.Round(Size.Height / 100f * bmp.Height);
+                            imageSize = ImageHelpers.ApplyAspectRatio(width, height, bmp);
+                        }
+                        else
+                        {
+                            imageSize = bmpWatermark.Size;
                         }
 
-                        // Place the image
                         Point imagePosition = Helpers.GetPosition(Placement, Offset, bmp.Size, imageSize);
-
                         Rectangle imageRectangle = new Rectangle(imagePosition, imageSize);
 
                         if (AutoHide && !new Rectangle(0, 0, bmp.Width, bmp.Height).Contains(imageRectangle))
@@ -107,7 +116,7 @@ namespace ShareX.ImageEffectsLib
                             g.InterpolationMode = ImageHelpers.GetInterpolationMode(InterpolationMode);
                             g.PixelOffsetMode = PixelOffsetMode.Half;
                             g.CompositingMode = CompositingMode;
-                            g.DrawImage(bmp2, imageRectangle);
+                            g.DrawImage(bmpWatermark, imageRectangle);
                         }
                     }
                 }

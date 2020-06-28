@@ -75,18 +75,6 @@ namespace ShareX.HelpersLib
             return ResizeImage(bmp, size.Width, size.Height, interpolationMode);
         }
 
-        public static Bitmap ResizeImageByPercentage(Bitmap bmp, float percentageWidth, float percentageHeight, InterpolationMode interpolationMode = DefaultInterpolationMode)
-        {
-            int width = (int)Math.Round(percentageWidth / 100 * bmp.Width);
-            int height = (int)Math.Round(percentageHeight / 100 * bmp.Height);
-            return ResizeImage(bmp, width, height, interpolationMode);
-        }
-
-        public static Bitmap ResizeImageByPercentage(Bitmap bmp, float percentage, InterpolationMode interpolationMode = DefaultInterpolationMode)
-        {
-            return ResizeImageByPercentage(bmp, percentage, percentage, interpolationMode);
-        }
-
         public static Bitmap ResizeImage(Bitmap bmp, Size size, bool allowEnlarge, bool centerImage = true)
         {
             return ResizeImage(bmp, size.Width, size.Height, allowEnlarge, centerImage);
@@ -2095,6 +2083,38 @@ namespace ShareX.HelpersLib
                 case ImageInterpolationMode.NearestNeighbor:
                     return InterpolationMode.NearestNeighbor;
             }
+        }
+
+        public static Size ApplyAspectRatio(int width, int height, Bitmap bmp)
+        {
+            int newWidth;
+
+            if (width == 0)
+            {
+                newWidth = (int)Math.Round((float)height / bmp.Height * bmp.Width);
+            }
+            else
+            {
+                newWidth = width;
+            }
+
+            int newHeight;
+
+            if (height == 0)
+            {
+                newHeight = (int)Math.Round((float)width / bmp.Width * bmp.Height);
+            }
+            else
+            {
+                newHeight = height;
+            }
+
+            return new Size(newWidth, newHeight);
+        }
+
+        public static Size ApplyAspectRatio(Size size, Bitmap bmp)
+        {
+            return ApplyAspectRatio(size.Width, size.Height, bmp);
         }
     }
 }
