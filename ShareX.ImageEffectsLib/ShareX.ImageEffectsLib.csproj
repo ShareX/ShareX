@@ -95,6 +95,7 @@
     <Reference Include="System" />
     <Reference Include="System.Design" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression" />
     <Reference Include="System.Windows.Forms" />
   </ItemGroup>
   <ItemGroup>
@@ -130,6 +131,13 @@
     <Compile Include="Adjustments\Hue.cs" />
     <Compile Include="Adjustments\Inverse.cs" />
     <Compile Include="Adjustments\Saturation.cs" />
+    <Compile Include="ImageEffectPackager.cs" />
+    <Compile Include="ImageEffectPackagerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ImageEffectPackagerForm.Designer.cs">
+      <DependentUpon>ImageEffectPackagerForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ImageEffectPreset.cs" />
     <Compile Include="Manipulations\AutoCrop.cs" />
     <Compile Include="Manipulations\Crop.cs" />
@@ -174,6 +182,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="ImageEffectPackagerForm.resx">
+      <DependentUpon>ImageEffectPackagerForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ImageEffectsForm.de.resx">
       <DependentUpon>ImageEffectsForm.cs</DependentUpon>
     </EmbeddedResource>

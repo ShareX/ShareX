@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.HelpersLib;
 using System.Collections.Generic;
 using System.Drawing;
 
@@ -74,7 +75,7 @@ namespace ShareX.ScreenCaptureLib
         public Color TextFillColor { get; set; } = PrimaryColor;
 
         // Image drawing
-        public ImageEditorInterpolationMode ImageInterpolationMode = ImageEditorInterpolationMode.NearestNeighbor;
+        public ImageInterpolationMode ImageInterpolationMode = ImageInterpolationMode.NearestNeighbor;
         public string LastImageFilePath { get; set; }
 
         // Step drawing

@@ -135,7 +135,7 @@
   <data name="TextDestination_CustomTextUploader" xml:space="preserve">
     <value>Custom text uploader</value>
   </data>
-  <data name="ImageEditorInterpolationMode_HighQualityBicubic" xml:space="preserve">
+  <data name="ImageInterpolationMode_HighQualityBicubic" xml:space="preserve">
     <value>High quality bicubic</value>
   </data>
   <data name="ProxyMethod_None" xml:space="preserve">
@@ -477,7 +477,7 @@ Would you like to download it?</value>
     <value>Manual</value>
   </data>
   <data name="AfterCaptureTasks_AddImageEffects" xml:space="preserve">
-    <value>Add image effects / watermark</value>
+    <value>Add image effects</value>
   </data>
   <data name="AfterCaptureTasks_DeleteFile" xml:space="preserve">
     <value>Delete file locally</value>
@@ -683,7 +683,7 @@ Would you like to download and install it?</value>
   <data name="HotkeyType_ScreenRecorderGIF_Category" xml:space="preserve">
     <value>Screen record</value>
   </data>
-  <data name="ImageEditorInterpolationMode_Bilinear" xml:space="preserve">
+  <data name="ImageInterpolationMode_Bilinear" xml:space="preserve">
     <value>Bilinear</value>
   </data>
   <data name="WavFileNameEditor_EditValue_Browse_for_a_sound_file___" xml:space="preserve">
@@ -710,7 +710,7 @@ Would you like to download and install it?</value>
   <data name="Extensions_AddContextMenu_Paste" xml:space="preserve">
     <value>Paste</value>
   </data>
-  <data name="ImageEditorInterpolationMode_HighQualityBilinear" xml:space="preserve">
+  <data name="ImageInterpolationMode_HighQualityBilinear" xml:space="preserve">
     <value>High quality bilinear</value>
   </data>
   <data name="LinearGradientMode_ForwardDiagonal" xml:space="preserve">
@@ -734,7 +734,7 @@ Would you like to download and install it?</value>
   <data name="RegionCaptureAction_RemoveShapeCancelCapture" xml:space="preserve">
     <value>Remove shape or cancel capture</value>
   </data>
-  <data name="ImageEditorInterpolationMode_NearestNeighbor" xml:space="preserve">
+  <data name="ImageInterpolationMode_NearestNeighbor" xml:space="preserve">
     <value>Nearest neighbor</value>
   </data>
   <data name="ReplCodeMenuEntry_un_User_name" xml:space="preserve">
@@ -746,7 +746,7 @@ Would you like to download and install it?</value>
   <data name="DownloaderForm_ChangeStatus_Status___0_" xml:space="preserve">
     <value>Status: {0}</value>
   </data>
-  <data name="ImageEditorInterpolationMode_Bicubic" xml:space="preserve">
+  <data name="ImageInterpolationMode_Bicubic" xml:space="preserve">
     <value>Bicubic</value>
   </data>
   <data name="CodeMenu_Create_Close" xml:space="preserve">
@@ -1193,9 +1193,6 @@ Would you like to download and install it?</value>
   <data name="AmazonS3StorageClass_STANDARD_IA" xml:space="preserve">
     <value>Amazon S3 Standard-Infrequent Access</value>
   </data>
-  <data name="LoadingSmall" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\LoadingSmall.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="RandomNonAmbiguousAlphanumericCharRepeatUsingN" xml:space="preserve">
     <value>Random non ambiguous alphanumeric char. Repeat using {n}</value>
   </data>
@@ -1249,5 +1246,11 @@ Would you like to download and install it?</value>
   </data>
   <data name="AmazonS3StorageClass_ONEZONE_IA" xml:space="preserve">
     <value>Amazon S3 One Zone-Infrequent Access</value>
+  </data>
+  <data name="LoadingSmallBlack" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LoadingSmallBlack.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LoadingSmallWhite" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LoadingSmallWhite.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -220,15 +220,25 @@ namespace ShareX.HelpersLib
             }
         }
 
-        private void tsmiImportClipboard_Click(object sender, EventArgs e)
+        public void ImportJson(string json)
         {
-            string json = ClipboardHelpers.GetText(true);
-
             if (!string.IsNullOrEmpty(json))
             {
                 OnImportRequested(json);
                 OnImportCompleted();
             }
+        }
+
+        private void tsmiImportClipboard_Click(object sender, EventArgs e)
+        {
+            string json = ClipboardHelpers.GetText(true);
+            ImportJson(json);
+        }
+
+        public void ImportFile(string filePath)
+        {
+            string json = File.ReadAllText(filePath, Encoding.UTF8);
+            OnImportRequested(json);
         }
 
         private void tsmiImportFile_Click(object sender, EventArgs e)
@@ -246,8 +256,7 @@ namespace ShareX.HelpersLib
                 {
                     foreach (string filename in ofd.FileNames)
                     {
-                        string json = File.ReadAllText(filename, Encoding.UTF8);
-                        OnImportRequested(json);
+                        ImportFile(filename);
                     }
 
                     OnImportCompleted();

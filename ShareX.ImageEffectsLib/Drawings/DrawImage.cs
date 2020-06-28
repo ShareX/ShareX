@@ -27,6 +27,7 @@ using ShareX.HelpersLib;
 using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Design;
+using System.Drawing.Drawing2D;
 using System.IO;
 
 namespace ShareX.ImageEffectsLib
@@ -49,6 +50,12 @@ namespace ShareX.ImageEffectsLib
         [DefaultValue(typeof(Size), "0, 0")]
         public Size Size { get; set; }
 
+        [DefaultValue(ImageInterpolationMode.HighQualityBicubic), TypeConverter(typeof(EnumDescriptionConverter))]
+        public ImageInterpolationMode InterpolationMode { get; set; }
+
+        [DefaultValue(CompositingMode.SourceOver)]
+        public CompositingMode CompositingMode { get; set; }
+
         [DefaultValue(true), Description("If image watermark size bigger than source image then don't draw it.")]
         public bool AutoHide { get; set; }
 
@@ -59,7 +66,7 @@ namespace ShareX.ImageEffectsLib
 
         public override Bitmap Apply(Bitmap bmp)
         {
-            string imageFilePath = Helpers.ExpandFolderVariables(ImageLocation);
+            string imageFilePath = Helpers.ExpandFolderVariables(ImageLocation, true);
 
             if (!string.IsNullOrEmpty(imageFilePath) && File.Exists(imageFilePath))
             {
@@ -97,7 +104,9 @@ namespace ShareX.ImageEffectsLib
 
                         using (Graphics g = Graphics.FromImage(bmp))
                         {
-                            g.SetHighQuality();
+                            g.InterpolationMode = ImageHelpers.GetInterpolationMode(InterpolationMode);
+                            g.PixelOffsetMode = PixelOffsetMode.Half;
+                            g.CompositingMode = CompositingMode;
                             g.DrawImage(bmp2, imageRectangle);
                         }
                     }

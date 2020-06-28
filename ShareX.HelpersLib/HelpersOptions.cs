@@ -40,5 +40,6 @@ namespace ShareX.HelpersLib
         public static List<Color> RecentColors { get; set; } = new List<Color>();
         public static string LastSaveDirectory { get; set; } = "";
         public static bool URLEncodeIgnoreEmoji { get; set; } = false;
+        public static Dictionary<string, string> ShareXSpecialFolders { get; set; } = new Dictionary<string, string>();
     }
 }

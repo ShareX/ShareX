@@ -32,7 +32,7 @@ namespace ShareX.HelpersLib
 {
     public static class ZipManager
     {
-        public static void Extract(string archivePath, string destination, bool retainDirectoryStructure = true, List<string> fileFilter = null)
+        public static void Extract(string archivePath, string destination, bool retainDirectoryStructure = true, Func<ZipArchiveEntry, bool> filter = null)
         {
             using (ZipArchive archive = ZipFile.OpenRead(archivePath))
             {
@@ -40,30 +40,20 @@ namespace ShareX.HelpersLib
 
                 foreach (ZipArchiveEntry entry in archive.Entries)
                 {
-                    string entryName = entry.Name;
-
-                    if (fileFilter != null)
+                    if (filter != null && !filter(entry))
                     {
-                        bool match = false;
-
-                        foreach (string file in fileFilter)
-                        {
-                            if (file.Equals(entryName, StringComparison.OrdinalIgnoreCase))
-                            {
-                                match = true;
-                                break;
-                            }
-                        }
-
-                        if (!match)
-                        {
-                            continue;
-                        }
+                        continue;
                     }
+
+                    string entryName;
 
                     if (retainDirectoryStructure)
                     {
                         entryName = entry.FullName;
+                    }
+                    else
+                    {
+                        entryName = entry.Name;
                     }
 
                     string fullPath = Path.GetFullPath(Path.Combine(fullName, entryName));
@@ -97,7 +87,20 @@ namespace ShareX.HelpersLib
             ZipFile.CreateFromDirectory(source, archivePath, compression, false);
         }
 
-        public static void Compress(string archivePath, List<string> files, string workingDirectory = "", CompressionLevel compression = CompressionLevel.Optimal)
+        public static void Compress(string archivePath, List<string> files, CompressionLevel compression = CompressionLevel.Optimal)
+        {
+            Dictionary<string, string> entries = new Dictionary<string, string>();
+
+            foreach (string file in files)
+            {
+                string fileName = Path.GetFileName(file);
+                entries.Add(file, fileName);
+            }
+
+            Compress(archivePath, entries, compression);
+        }
+
+        public static void Compress(string archivePath, Dictionary<string, string> files, CompressionLevel compression = CompressionLevel.Optimal)
         {
             if (File.Exists(archivePath))
             {
@@ -106,13 +109,14 @@ namespace ShareX.HelpersLib
 
             using (ZipArchive archive = ZipFile.Open(archivePath, ZipArchiveMode.Update))
             {
-                foreach (string file in files)
+                foreach (KeyValuePair<string, string> file in files)
                 {
-                    string filePath = Path.Combine(workingDirectory, file);
+                    string sourceFilePath = file.Key;
 
-                    if (File.Exists(filePath))
+                    if (File.Exists(sourceFilePath))
                     {
-                        archive.CreateEntryFromFile(filePath, file, compression);
+                        string entryName = file.Value;
+                        archive.CreateEntryFromFile(sourceFilePath, entryName, compression);
                     }
                 }
             }
