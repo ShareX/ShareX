@@ -178,7 +178,7 @@ namespace ShareX.MediaLib
                     break;
             }
 
-            Helpers.CreateDirectory(directory);
+            Helpers.CreateDirectoryFromDirectoryPath(directory);
 
             return directory;
         }

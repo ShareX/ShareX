@@ -315,6 +315,13 @@ namespace ShareX
 
             InitHotkeys();
 
+#if !WindowsStore
+            if (!Program.Portable && !IntegrationHelpers.CheckCustomUploaderExtension())
+            {
+                IntegrationHelpers.CreateCustomUploaderExtension(true);
+            }
+#endif
+
             IsReady = true;
         }
 
@@ -950,7 +957,6 @@ namespace ShareX
             HelpersOptions.RotateImageByExifOrientationData = Program.Settings.RotateImageByExifOrientationData;
             HelpersOptions.BrowserPath = Program.Settings.BrowserPath;
             HelpersOptions.RecentColors = Program.Settings.RecentColors;
-            Program.UpdateHelpersSpecialFolders();
 
             TaskManager.RecentManager.MaxCount = Program.Settings.RecentTasksMaxCount;
 
@@ -1051,28 +1057,18 @@ namespace ShareX
 
             foreach (CLICommand command in commands)
             {
-                DebugHelper.WriteLine("CommandLine: " + command);
+                DebugHelper.WriteLine("CommandLine: " + command.Command);
 
-                if (command.IsCommand)
+                if (command.IsCommand && command.Command.Equals("CustomUploader", StringComparison.InvariantCultureIgnoreCase))
                 {
-                    if (command.Command.Equals("CustomUploader", StringComparison.InvariantCultureIgnoreCase))
-                    {
-                        TaskHelpers.ImportCustomUploader(command.Parameter);
+                    TaskHelpers.AddCustomUploader(command.Parameter);
 
-                        continue;
-                    }
+                    continue;
+                }
 
-                    if (command.Command.Equals("ImageEffect", StringComparison.InvariantCultureIgnoreCase))
-                    {
-                        TaskHelpers.ImportImageEffect(command.Parameter);
-
-                        continue;
-                    }
-
-                    if (CheckCLIHotkey(command) || CheckCLIWorkflow(command))
-                    {
-                        continue;
-                    }
+                if (command.IsCommand && (CheckCLIHotkey(command) || CheckCLIWorkflow(command)))
+                {
+                    continue;
                 }
 
                 if (URLHelpers.IsValidURL(command.Command))

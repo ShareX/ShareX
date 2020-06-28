@@ -61,8 +61,6 @@ namespace ShareX
 #else
             if (!Program.PortableApps)
             {
-                uclUpdate.UpdateLoadingImage();
-
                 UpdateChecker updateChecker = Program.UpdateManager.CreateUpdateChecker();
                 uclUpdate.CheckUpdate(updateChecker);
             }

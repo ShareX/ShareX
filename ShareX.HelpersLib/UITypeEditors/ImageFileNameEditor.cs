@@ -42,7 +42,7 @@ namespace ShareX.HelpersLib
 
             if (!string.IsNullOrEmpty(filePath))
             {
-                value = Helpers.GetVariableFolderPath(filePath, true);
+                value = Helpers.GetVariableFolderPath(filePath);
             }
 
             return value;

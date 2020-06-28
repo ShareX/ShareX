@@ -813,7 +813,12 @@ namespace ShareX
 
         private void btnImageEffects_Click(object sender, EventArgs e)
         {
-            TaskHelpers.OpenImageEffectsSingleton(TaskSettings);
+            using (ImageEffectsForm imageEffectsForm = new ImageEffectsForm(null, TaskSettings.ImageSettings.ImageEffectPresets,
+                TaskSettings.ImageSettings.SelectedImageEffectPreset))
+            {
+                imageEffectsForm.ShowDialog();
+                TaskSettings.ImageSettings.SelectedImageEffectPreset = imageEffectsForm.SelectedPresetIndex;
+            }
         }
 
         private void nudThumbnailWidth_ValueChanged(object sender, EventArgs e)

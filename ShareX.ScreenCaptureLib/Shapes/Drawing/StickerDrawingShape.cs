@@ -35,7 +35,7 @@ namespace ShareX.ScreenCaptureLib
 
         public override void OnConfigLoad()
         {
-            ImageInterpolationMode = ImageInterpolationMode.NearestNeighbor;
+            ImageInterpolationMode = ImageEditorInterpolationMode.NearestNeighbor;
         }
 
         public override void OnConfigSave()

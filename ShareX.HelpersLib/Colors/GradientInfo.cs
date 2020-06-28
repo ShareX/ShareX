@@ -23,7 +23,6 @@
 
 #endregion License Information (GPL v3)
 
-using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
@@ -39,7 +38,6 @@ namespace ShareX.HelpersLib
 
         public List<GradientStop> Colors { get; set; }
 
-        [JsonIgnore]
         public bool IsValid => Colors != null && Colors.Count > 0;
 
         public GradientInfo()

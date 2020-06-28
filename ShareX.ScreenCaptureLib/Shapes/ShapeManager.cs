@@ -1928,7 +1928,7 @@ namespace ShareX.ScreenCaptureLib
 
                     if (size != oldSize)
                     {
-                        InterpolationMode interpolationMode = ImageHelpers.GetInterpolationMode(Options.ImageEditorResizeInterpolationMode);
+                        InterpolationMode interpolationMode = GetInterpolationMode(Options.ImageEditorResizeInterpolationMode);
                         Bitmap bmp = ImageHelpers.ResizeImage(Form.Canvas, size, interpolationMode);
 
                         if (bmp != null)
@@ -1940,6 +1940,24 @@ namespace ShareX.ScreenCaptureLib
             }
 
             Form.Resume();
+        }
+
+        internal InterpolationMode GetInterpolationMode(ImageEditorInterpolationMode interpolationMode)
+        {
+            switch (interpolationMode)
+            {
+                default:
+                case ImageEditorInterpolationMode.HighQualityBicubic:
+                    return InterpolationMode.HighQualityBicubic;
+                case ImageEditorInterpolationMode.Bicubic:
+                    return InterpolationMode.Bicubic;
+                case ImageEditorInterpolationMode.HighQualityBilinear:
+                    return InterpolationMode.HighQualityBilinear;
+                case ImageEditorInterpolationMode.Bilinear:
+                    return InterpolationMode.Bilinear;
+                case ImageEditorInterpolationMode.NearestNeighbor:
+                    return InterpolationMode.NearestNeighbor;
+            }
         }
 
         private void ChangeCanvasSize()

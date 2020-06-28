@@ -318,6 +318,15 @@ namespace ShareX.ScreenCaptureLib
         Fullscreen
     }
 
+    public enum ImageEditorInterpolationMode // Localized
+    {
+        HighQualityBicubic,
+        Bicubic,
+        HighQualityBilinear,
+        Bilinear,
+        NearestNeighbor
+    }
+
     public enum ImageInsertMethod
     {
         Center,

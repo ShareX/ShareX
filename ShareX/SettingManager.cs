@@ -352,17 +352,17 @@ namespace ShareX
 
                 if (settings)
                 {
-                    files.Add(ApplicationConfigFilePath);
-                    files.Add(HotkeysConfigFilePath);
-                    files.Add(UploadersConfigFilePath);
+                    files.Add(ApplicationConfigFilename);
+                    files.Add(HotkeysConfigFilename);
+                    files.Add(UploadersConfigFilename);
                 }
 
                 if (history)
                 {
-                    files.Add(Program.HistoryFilePath);
+                    files.Add(Program.HistoryFilename);
                 }
 
-                ZipManager.Compress(archivePath, files);
+                ZipManager.Compress(archivePath, files, Program.PersonalFolder);
                 return true;
             }
             catch (Exception e)

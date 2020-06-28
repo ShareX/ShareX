@@ -35,7 +35,7 @@ namespace ShareX.ImageEffectsLib
     public partial class WatermarkForm : Form
     {
         private WatermarkConfig config;
-        private bool isReady;
+        private bool IsGuiReady;
 
         public WatermarkForm(WatermarkConfig watermarkConfig)
         {
@@ -85,7 +85,7 @@ namespace ShareX.ImageEffectsLib
 
             txtWatermarkImageLocation.Text = config.Image.ImageLocation;
 
-            isReady = true;
+            IsGuiReady = true;
             UpdatePreview();
         }
 
@@ -96,7 +96,7 @@ namespace ShareX.ImageEffectsLib
 
         private void UpdatePreview()
         {
-            if (isReady)
+            if (IsGuiReady)
             {
                 using (Bitmap bmp = new Bitmap(pbPreview.ClientSize.Width, pbPreview.ClientSize.Height))
                 {

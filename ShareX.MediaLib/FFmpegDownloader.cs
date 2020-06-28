@@ -25,6 +25,7 @@
 
 using ShareX.HelpersLib;
 using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace ShareX.MediaLib
@@ -58,7 +59,7 @@ namespace ShareX.MediaLib
         {
             try
             {
-                ZipManager.Extract(archivePath, extractPath, false, entry => entry.Name.Equals("ffmpeg.exe", StringComparison.OrdinalIgnoreCase));
+                ZipManager.Extract(archivePath, extractPath, false, new List<string>() { "ffmpeg.exe" });
                 return true;
             }
             catch (Exception e)

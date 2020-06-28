@@ -46,18 +46,11 @@ namespace ShareX.HelpersLib
 
         public override string ToString()
         {
-            string text = "";
-
-            if (IsCommand)
-            {
-                text += "-";
-            }
-
-            text += Command;
+            string text = string.Format("Command: \"{0}\"", Command);
 
             if (!string.IsNullOrEmpty(Parameter))
             {
-                text += " \"" + Parameter + "\"";
+                text += string.Format(" Parameter: \"{0}\"", Parameter);
             }
 
             return text;

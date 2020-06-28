@@ -161,7 +161,7 @@ namespace ShareX.HelpersLib
                             {
                                 string fileName = Path.GetFileName(filePath);
                                 backupFilePath = Path.Combine(BackupFolder, fileName);
-                                Helpers.CreateDirectory(BackupFolder);
+                                Helpers.CreateDirectoryFromDirectoryPath(BackupFolder);
                             }
 
                             File.Replace(tempFilePath, filePath, backupFilePath);

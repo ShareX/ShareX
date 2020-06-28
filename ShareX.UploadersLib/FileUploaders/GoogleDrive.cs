@@ -151,7 +151,7 @@ namespace ShareX.UploadersLib.FileUploaders
         {
             if (!CheckAuthorization()) return;
 
-            string url = string.Format("https://www.googleapis.com/drive/v3/files/{0}/permissions?supportsAllDrives=true", fileID);
+            string url = string.Format("https://www.googleapis.com/drive/v3/files/{0}/permissions", fileID);
 
             string json = JsonConvert.SerializeObject(new
             {

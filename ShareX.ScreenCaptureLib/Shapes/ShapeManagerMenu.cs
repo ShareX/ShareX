@@ -506,10 +506,10 @@ namespace ShareX.ScreenCaptureLib
             tsddbShapeOptions.DropDownItems.Add(tslnudCornerRadius);
 
             tscbImageInterpolationMode = new ToolStripLabeledComboBox(Resources.ShapeManager_CreateToolbar_InterpolationMode);
-            tscbImageInterpolationMode.Content.AddRange(Helpers.GetLocalizedEnumDescriptions<ImageInterpolationMode>());
+            tscbImageInterpolationMode.Content.AddRange(Helpers.GetLocalizedEnumDescriptions<ImageEditorInterpolationMode>());
             tscbImageInterpolationMode.Content.SelectedIndexChanged += (sender, e) =>
             {
-                AnnotationOptions.ImageInterpolationMode = (ImageInterpolationMode)tscbImageInterpolationMode.Content.SelectedIndex;
+                AnnotationOptions.ImageInterpolationMode = (ImageEditorInterpolationMode)tscbImageInterpolationMode.Content.SelectedIndex;
                 tscbImageInterpolationMode.Invalidate();
                 UpdateCurrentShape();
             };

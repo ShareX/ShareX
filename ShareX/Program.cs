@@ -232,7 +232,6 @@ namespace ShareX
         }
 
         public static string ToolsFolder => Path.Combine(PersonalFolder, "Tools");
-        public static string ImageEffectsFolder => Path.Combine(PersonalFolder, "ImageEffects");
         public static string ScreenRecorderCacheFilePath => Path.Combine(PersonalFolder, "ScreenRecorder.avi");
         public static string DefaultFFmpegFilePath => Path.Combine(ToolsFolder, "ffmpeg.exe");
         public static string ChromeHostManifestFilePath => Path.Combine(ToolsFolder, "Chrome-host-manifest.json");
@@ -316,8 +315,6 @@ namespace ShareX
 
             IgnoreHotkeyWarning = CLI.IsCommandExist("NoHotkeys");
 
-            CreateParentFolders();
-            RegisterExtensions();
             CheckPuushMode();
             DebugWriteFlags();
             CleanTempFiles();
@@ -326,9 +323,10 @@ namespace ShareX
 
             Uploader.UpdateServicePointManager();
             UpdateManager = new GitHubUpdateManager("ShareX", "ShareX", Dev, Portable);
-            LanguageHelper.ChangeLanguage(Settings.Language);
-            Helpers.TryFixHandCursor();
 
+            LanguageHelper.ChangeLanguage(Settings.Language);
+
+            Helpers.TryFixHandCursor();
             DebugHelper.WriteLine("MainForm init started.");
             MainForm = new MainForm();
             DebugHelper.WriteLine("MainForm init finished.");
@@ -470,43 +468,6 @@ namespace ShareX
                     }
                 }
             }
-        }
-
-        private static void CreateParentFolders()
-        {
-            if (!Sandbox && Directory.Exists(PersonalFolder))
-            {
-                Helpers.CreateDirectory(SettingManager.BackupFolder);
-                Helpers.CreateDirectory(ImageEffectsFolder);
-                Helpers.CreateDirectory(LogsFolder);
-                Helpers.CreateDirectory(ScreenshotsParentFolder);
-                Helpers.CreateDirectory(ToolsFolder);
-            }
-        }
-
-        private static void RegisterExtensions()
-        {
-#if !WindowsStore
-            if (!Portable)
-            {
-                if (!IntegrationHelpers.CheckCustomUploaderExtension())
-                {
-                    IntegrationHelpers.CreateCustomUploaderExtension(true);
-                }
-
-                if (!IntegrationHelpers.CheckImageEffectExtension())
-                {
-                    IntegrationHelpers.CreateImageEffectExtension(true);
-                }
-            }
-#endif
-        }
-
-        public static void UpdateHelpersSpecialFolders()
-        {
-            Dictionary<string, string> specialFolders = new Dictionary<string, string>();
-            specialFolders.Add("ShareXImageEffects", ImageEffectsFolder);
-            HelpersOptions.ShareXSpecialFolders = specialFolders;
         }
 
         private static void MigratePersonalPathConfig()

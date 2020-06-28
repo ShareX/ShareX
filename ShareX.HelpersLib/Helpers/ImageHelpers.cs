@@ -2078,23 +2078,5 @@ namespace ShareX.HelpersLib
 
             return Size.Empty;
         }
-
-        public static InterpolationMode GetInterpolationMode(ImageInterpolationMode interpolationMode)
-        {
-            switch (interpolationMode)
-            {
-                default:
-                case ImageInterpolationMode.HighQualityBicubic:
-                    return InterpolationMode.HighQualityBicubic;
-                case ImageInterpolationMode.Bicubic:
-                    return InterpolationMode.Bicubic;
-                case ImageInterpolationMode.HighQualityBilinear:
-                    return InterpolationMode.HighQualityBilinear;
-                case ImageInterpolationMode.Bilinear:
-                    return InterpolationMode.Bilinear;
-                case ImageInterpolationMode.NearestNeighbor:
-                    return InterpolationMode.NearestNeighbor;
-            }
-        }
     }
 }

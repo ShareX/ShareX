@@ -60,18 +60,6 @@ namespace ShareX.HelpersLib
             }
         }
 
-        public void UpdateLoadingImage()
-        {
-            if (ShareXResources.IsDarkTheme)
-            {
-                pbLoading.Image = Resources.LoadingSmallWhite;
-            }
-            else
-            {
-                pbLoading.Image = Resources.LoadingSmallBlack;
-            }
-        }
-
         private void CheckingUpdate()
         {
             updateChecker.CheckUpdate();

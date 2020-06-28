@@ -25,6 +25,7 @@
 
 using ShareX.HelpersLib;
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
@@ -342,7 +343,7 @@ namespace ShareX.Setup
                 if (!File.Exists(FFmpeg32bit))
                 {
                     string filename = SetupHelpers.DownloadFile("https://ffmpeg.zeranoe.com/builds/win32/static/ffmpeg-4.2.2-win32-static.zip");
-                    ZipManager.Extract(filename, ".", false, entry => entry.Name.Equals("ffmpeg.exe", StringComparison.OrdinalIgnoreCase));
+                    ZipManager.Extract(filename, ".", false, new List<string>() { "ffmpeg.exe" });
                     File.Move("ffmpeg.exe", FFmpeg32bit);
                 }
 
@@ -354,7 +355,7 @@ namespace ShareX.Setup
                 if (!File.Exists(FFmpeg64bit))
                 {
                     string filename = SetupHelpers.DownloadFile("https://ffmpeg.zeranoe.com/builds/win64/static/ffmpeg-4.2.2-win64-static.zip");
-                    ZipManager.Extract(filename, ".", false, entry => entry.Name.Equals("ffmpeg.exe", StringComparison.OrdinalIgnoreCase));
+                    ZipManager.Extract(filename, ".", false, new List<string>() { "ffmpeg.exe" });
                     File.Move("ffmpeg.exe", FFmpeg64bit);
                 }
 

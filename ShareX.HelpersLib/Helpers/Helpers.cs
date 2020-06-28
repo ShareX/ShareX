@@ -791,20 +791,12 @@ namespace ShareX.HelpersLib
             return false;
         }
 
-        public static string GetVariableFolderPath(string path, bool supportCustomSpecialFolders = false)
+        public static string GetVariableFolderPath(string path)
         {
             if (!string.IsNullOrEmpty(path))
             {
                 try
                 {
-                    if (supportCustomSpecialFolders)
-                    {
-                        foreach (KeyValuePair<string, string> specialFolder in HelpersOptions.ShareXSpecialFolders)
-                        {
-                            path = path.Replace(specialFolder.Value, $"%{specialFolder.Key}%", StringComparison.OrdinalIgnoreCase);
-                        }
-                    }
-
                     foreach (Environment.SpecialFolder specialFolder in GetEnums<Environment.SpecialFolder>())
                     {
                         path = path.Replace(Environment.GetFolderPath(specialFolder), $"%{specialFolder}%", StringComparison.OrdinalIgnoreCase);
@@ -819,20 +811,12 @@ namespace ShareX.HelpersLib
             return path;
         }
 
-        public static string ExpandFolderVariables(string path, bool supportCustomSpecialFolders = false)
+        public static string ExpandFolderVariables(string path)
         {
             if (!string.IsNullOrEmpty(path))
             {
                 try
                 {
-                    if (supportCustomSpecialFolders)
-                    {
-                        foreach (KeyValuePair<string, string> specialFolder in HelpersOptions.ShareXSpecialFolders)
-                        {
-                            path = path.Replace($"%{specialFolder.Key}%", specialFolder.Value, StringComparison.OrdinalIgnoreCase);
-                        }
-                    }
-
                     foreach (Environment.SpecialFolder specialFolder in GetEnums<Environment.SpecialFolder>())
                     {
                         path = path.Replace($"%{specialFolder}%", Environment.GetFolderPath(specialFolder), StringComparison.OrdinalIgnoreCase);
@@ -924,7 +908,7 @@ namespace ShareX.HelpersLib
             return -1;
         }
 
-        public static void CreateDirectory(string directoryPath)
+        public static void CreateDirectoryFromDirectoryPath(string directoryPath)
         {
             if (!string.IsNullOrEmpty(directoryPath) && !Directory.Exists(directoryPath))
             {
@@ -946,7 +930,7 @@ namespace ShareX.HelpersLib
             if (!string.IsNullOrEmpty(filePath))
             {
                 string directoryPath = Path.GetDirectoryName(filePath);
-                CreateDirectory(directoryPath);
+                CreateDirectoryFromDirectoryPath(directoryPath);
             }
         }
 
@@ -971,7 +955,7 @@ namespace ShareX.HelpersLib
             {
                 string fileName = Path.GetFileName(filePath);
                 string destinationFilePath = Path.Combine(destinationFolder, fileName);
-                CreateDirectory(destinationFolder);
+                CreateDirectoryFromDirectoryPath(destinationFolder);
                 File.Copy(filePath, destinationFilePath, overwrite);
                 return destinationFilePath;
             }
@@ -985,7 +969,7 @@ namespace ShareX.HelpersLib
             {
                 string fileName = Path.GetFileName(filePath);
                 string destinationFilePath = Path.Combine(destinationFolder, fileName);
-                CreateDirectory(destinationFolder);
+                CreateDirectoryFromDirectoryPath(destinationFolder);
 
                 if (overwrite && File.Exists(destinationFilePath))
                 {
@@ -1031,7 +1015,7 @@ namespace ShareX.HelpersLib
 
                 if (!File.Exists(newFilePath))
                 {
-                    CreateDirectory(destinationFolder);
+                    CreateDirectoryFromDirectoryPath(destinationFolder);
                     File.Copy(filePath, newFilePath, false);
                     return newFilePath;
                 }
@@ -1051,7 +1035,7 @@ namespace ShareX.HelpersLib
 
                 if (!File.Exists(newFilePath))
                 {
-                    CreateDirectory(destinationFolder);
+                    CreateDirectoryFromDirectoryPath(destinationFolder);
                     File.Copy(filePath, newFilePath, false);
                 }
             }
