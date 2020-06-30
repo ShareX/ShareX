@@ -43,6 +43,14 @@
             </uap:SupportedFileTypes>
           </uap3:FileTypeAssociation>
         </uap:Extension>
+        <uap:Extension Category="windows.fileTypeAssociation">
+          <uap3:FileTypeAssociation Name="sharex-image-effect" desktop2:UseUrl="false" Parameters='-ImageEffect "%1"'>
+            <uap:DisplayName>ShareX image effect</uap:DisplayName>
+            <uap:SupportedFileTypes>
+              <uap:FileType>.sxie</uap:FileType>
+            </uap:SupportedFileTypes>
+          </uap3:FileTypeAssociation>
+        </uap:Extension>
       </Extensions>
     </Application>
   </Applications>
