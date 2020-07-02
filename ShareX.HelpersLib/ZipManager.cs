@@ -33,16 +33,20 @@ namespace ShareX.HelpersLib
 {
     public static class ZipManager
     {
-        public static void Extract(string archivePath, string destination, bool retainDirectoryStructure = true, Func<ZipArchiveEntry, bool> filter = null, long maxLength = 0)
+        public static void Extract(string archivePath, string destination, bool retainDirectoryStructure = true, Func<ZipArchiveEntry, bool> filter = null,
+            long maxUncompressedSize = 0)
         {
             using (ZipArchive archive = ZipFile.OpenRead(archivePath))
             {
-                if (maxLength > 0)
+                if (maxUncompressedSize > 0)
                 {
-                    long declaredSize = archive.Entries.Sum(entry => entry.Length);
-                    if (declaredSize > maxLength)
+                    long totalUncompressedSize = archive.Entries.Sum(entry => entry.Length);
+
+                    if (totalUncompressedSize > maxUncompressedSize)
                     {
-                        throw new Exception("Archive is too big.");
+                        throw new Exception("Uncompressed file size of this archive is bigger than the maximum allowed file size.\r\n\r\n" +
+                            $"Archive uncompressed file size: {totalUncompressedSize.ToSizeString()}\r\n" +
+                            $"Maximum allowed file size: {maxUncompressedSize.ToSizeString()}");
                     }
                 }
 

@@ -1698,7 +1698,7 @@ namespace ShareX
             }
             catch (Exception ex)
             {
-                ex.ShowError();
+                ex.ShowError(false);
             }
 
             if (!string.IsNullOrEmpty(configJson))
