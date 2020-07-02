@@ -99,7 +99,7 @@ namespace ShareX.ImageEffectsLib
                     }
 
                     return false;
-                }, 20000000);
+                }, 20_000_000);
             }
 
             return configJson;

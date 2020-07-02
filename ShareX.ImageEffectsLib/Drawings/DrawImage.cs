@@ -33,7 +33,7 @@ using System.IO;
 
 namespace ShareX.ImageEffectsLib
 {
-    [Description("Image watermark")]
+    [Description("Image")]
     public class DrawImage : ImageEffect
     {
         [DefaultValue(""), Editor(typeof(ImageFileNameEditor), typeof(UITypeEditor))]
