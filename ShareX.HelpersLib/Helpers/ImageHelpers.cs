@@ -1526,9 +1526,9 @@ namespace ShareX.HelpersLib
             return bmpResult;
         }
 
-        public static string OpenImageFileDialog(Form form = null)
+        public static string OpenImageFileDialog(Form form = null, string initialDirectory = null)
         {
-            string[] images = OpenImageFileDialog(false, form);
+            string[] images = OpenImageFileDialog(false, form, initialDirectory);
 
             if (images != null && images.Length > 0)
             {
@@ -1538,7 +1538,7 @@ namespace ShareX.HelpersLib
             return null;
         }
 
-        public static string[] OpenImageFileDialog(bool multiselect, Form form = null)
+        public static string[] OpenImageFileDialog(bool multiselect, Form form = null, string initialDirectory = null)
         {
             using (OpenFileDialog ofd = new OpenFileDialog())
             {
@@ -1546,6 +1546,11 @@ namespace ShareX.HelpersLib
                     "PNG (*.png)|*.png|JPEG (*.jpg, *.jpeg, *.jpe, *.jfif)|*.jpg;*.jpeg;*.jpe;*.jfif|GIF (*.gif)|*.gif|BMP (*.bmp)|*.bmp|TIFF (*.tif, *.tiff)|*.tif;*.tiff";
 
                 ofd.Multiselect = multiselect;
+
+                if (!string.IsNullOrEmpty(initialDirectory))
+                {
+                    ofd.InitialDirectory = initialDirectory;
+                }
 
                 if (ofd.ShowDialog(form) == DialogResult.OK)
                 {
