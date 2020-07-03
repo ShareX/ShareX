@@ -30,19 +30,20 @@ using System.Drawing.Imaging;
 
 namespace ShareX.ImageEffectsLib
 {
-    [Description("RGB Split")]
+    [Description("RGB split")]
     internal class RGBSplit : ImageEffect
     {
-        [DefaultValue(typeof(Point), "5, 0")]
-        public Point OffsetRed { get; set; }
+        [DefaultValue(typeof(Point), "-5, 0")]
+        public Point OffsetRed { get; set; } = new Point(-5, 0);
         [DefaultValue(typeof(Point), "0, 0")]
         public Point OffsetGreen { get; set; }
-        [DefaultValue(typeof(Point), "-5, 0")]
-        public Point OffsetBlue { get; set; }
+        [DefaultValue(typeof(Point), "5, 0")]
+        public Point OffsetBlue { get; set; } = new Point(5, 0);
 
         public override Bitmap Apply(Bitmap bmp)
         {
             Bitmap bmpResult = bmp.CreateEmptyBitmap();
+
             using (UnsafeBitmap source = new UnsafeBitmap(bmp, true, ImageLockMode.ReadOnly))
             using (UnsafeBitmap dest = new UnsafeBitmap(bmpResult, true, ImageLockMode.WriteOnly))
             {
@@ -57,13 +58,15 @@ namespace ShareX.ImageEffectsLib
                         byte colorR_alpha = colorR.Alpha;
                         byte colorG_alpha = colorG.Alpha;
                         byte colorB_alpha = colorB.Alpha;
-                        byte colorA = (byte)((colorR_alpha / 3 + colorG_alpha / 3 + colorB_alpha / 3));
+                        byte colorA = (byte)(colorR_alpha / 3 + colorG_alpha / 3 + colorB_alpha / 3);
 
-                        ColorBgra shiftedcolor = new ColorBgra((byte)(colorB.Blue * colorB_alpha / 255), (byte)(colorG.Green * colorG_alpha / 255), (byte)(colorR.Red * colorR_alpha / 255), colorA);
-                        dest.SetPixel(x, y, shiftedcolor);
+                        ColorBgra shiftedColor = new ColorBgra((byte)(colorB.Blue * colorB_alpha / 255), (byte)(colorG.Green * colorG_alpha / 255),
+                            (byte)(colorR.Red * colorR_alpha / 255), colorA);
+                        dest.SetPixel(x, y, shiftedColor);
                     }
                 }
             }
+
             return bmpResult;
         }
     }
