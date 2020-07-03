@@ -162,6 +162,7 @@ namespace ShareX.ImageEffectsLib
                 typeof(MeanRemoval),
                 typeof(Outline),
                 typeof(Pixelate),
+                typeof(RGBSplit),
                 typeof(Reflection),
                 typeof(Shadow),
                 typeof(Sharpen),
