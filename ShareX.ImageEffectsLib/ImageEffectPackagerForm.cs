@@ -93,8 +93,9 @@ namespace ShareX.ImageEffectsLib
                     // TODO: Translate
                     MessageBox.Show("Assets folder must be inside ShareX image effects folder.", "ShareX - " + "Invalid assets folder path",
                         MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-                else
+                } // TODO: Translate
+                else if (!File.Exists(PackageFilePath) || MessageBox.Show("Package with this file name already exists.\r\nWould you like to overwrite it?", "ShareX",
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     string outputFilePath = ImageEffectPackager.Package(PackageFilePath, ImageEffectJson, AssetsFolderPath);
 
