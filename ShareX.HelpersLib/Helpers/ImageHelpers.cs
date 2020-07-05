@@ -2043,14 +2043,30 @@ namespace ShareX.HelpersLib
             }
         }
 
-        public static void SelectiveColor(Bitmap bmp, Color lightColor, Color darkColor, int threshold)
+        public static void SelectiveColor(Bitmap bmp, Color lightColor, Color darkColor, int paletteSize = 2)
         {
+            paletteSize = Math.Max(paletteSize, 2);
+
+            Dictionary<int, Color> colors = new Dictionary<int, Color>();
+            for (int i = 0; i < paletteSize; i++)
+            {
+                Color color = ColorHelpers.Lerp(lightColor, darkColor, (float)i / (paletteSize - 1));
+                int perceivedBrightness = ColorHelpers.PerceivedBrightness(color);
+                if (!colors.ContainsKey(perceivedBrightness))
+                {
+                    colors.Add(perceivedBrightness, color);
+                }
+            }
+
             using (UnsafeBitmap unsafeBitmap = new UnsafeBitmap(bmp, true))
             {
                 for (int i = 0; i < unsafeBitmap.PixelCount; i++)
                 {
                     ColorBgra color = unsafeBitmap.GetPixel(i);
-                    Color newColor = ColorHelpers.PerceivedBrightness(color.ToColor()) > threshold ? lightColor : darkColor;
+                    int perceivedBrightness = ColorHelpers.PerceivedBrightness(color.ToColor());
+                    KeyValuePair<int, Color> closest =
+                        colors.Aggregate((current, next) => Math.Abs(current.Key - perceivedBrightness) < Math.Abs(next.Key - perceivedBrightness) ? current : next);
+                    Color newColor = closest.Value;
                     color.Red = newColor.R;
                     color.Green = newColor.G;
                     color.Blue = newColor.B;
