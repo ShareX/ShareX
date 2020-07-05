@@ -137,7 +137,6 @@ namespace ShareX.ImageEffectsLib
                 typeof(Outline),
                 typeof(Pixelate),
                 typeof(Reflection),
-                typeof(RGBSplit),
                 typeof(Shadow),
                 typeof(Sharpen),
                 typeof(Slice),

@@ -34,7 +34,8 @@ namespace ShareX.HelpersLib
     {
         private Type enumType;
 
-        public EnumDescriptionConverter(Type type) : base(type)
+        public EnumDescriptionConverter(Type type)
+            : base(type)
         {
             enumType = type;
         }

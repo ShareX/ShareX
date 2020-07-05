@@ -26,7 +26,6 @@
 using ShareX.HelpersLib;
 using System;
 using System.IO;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -85,7 +84,6 @@ namespace ShareX.IndexerLib
             {
                 btnIndexFolder.Enabled = false;
                 btnUpload.Enabled = false;
-                btnSaveAs.Enabled = false;
 
                 await Task.Run(() =>
                 {
@@ -115,7 +113,6 @@ namespace ShareX.IndexerLib
                     }
 
                     btnIndexFolder.Enabled = true;
-                    btnSaveAs.Enabled = true;
                 }
             }
         }
@@ -134,31 +131,6 @@ namespace ShareX.IndexerLib
             if (UploadRequested != null)
             {
                 UploadRequested(source);
-            }
-        }
-
-        private void btnSaveAs_Click(object sender, EventArgs e)
-        {
-            if (!string.IsNullOrEmpty(Source))
-            {
-                using (SaveFileDialog sfd = new SaveFileDialog())
-                {
-                    string indexType = Settings.Output.ToString().ToLower();
-                    sfd.FileName = "Index for " + Path.GetFileNameWithoutExtension(txtFolderPath.Text);
-                    sfd.DefaultExt = indexType;
-                    sfd.Filter = string.Format("*.{0}|*.{0}|All files (*.*)|*.*", indexType);
-
-                    if (!string.IsNullOrEmpty(HelpersOptions.LastSaveDirectory) && Directory.Exists(HelpersOptions.LastSaveDirectory))
-                    {
-                        sfd.InitialDirectory = HelpersOptions.LastSaveDirectory;
-                    }
-
-                    if (sfd.ShowDialog() == DialogResult.OK)
-                    {
-                        File.WriteAllText(sfd.FileName, Source, Encoding.UTF8);
-                        Close();
-                    }
-                }
             }
         }
     }

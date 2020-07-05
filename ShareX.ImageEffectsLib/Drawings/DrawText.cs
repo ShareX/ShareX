@@ -33,7 +33,7 @@ using System.Windows.Forms;
 
 namespace ShareX.ImageEffectsLib
 {
-    [Description("Text")]
+    [Description("Text watermark")]
     public class DrawText : ImageEffect
     {
         [DefaultValue(ContentAlignment.BottomRight)]
@@ -67,7 +67,7 @@ namespace ShareX.ImageEffectsLib
             }
         }
 
-        [DefaultValue(typeof(Color), "235, 235, 235"), Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
+        [DefaultValue(typeof(Color), "White"), Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
         public Color TextColor { get; set; }
 
         [DefaultValue(true)]
@@ -109,7 +109,7 @@ namespace ShareX.ImageEffectsLib
         [DefaultValue(true)]
         public bool DrawBackground { get; set; }
 
-        [DefaultValue(typeof(Color), "42, 47, 56"), Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
+        [DefaultValue(typeof(Color), "10, 110, 230"), Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
         public Color BackgroundColor { get; set; }
 
         [DefaultValue(true)]
@@ -118,7 +118,7 @@ namespace ShareX.ImageEffectsLib
         [DefaultValue(LinearGradientMode.Vertical)]
         public LinearGradientMode GradientType { get; set; }
 
-        [DefaultValue(typeof(Color), "28, 32, 38"), Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
+        [DefaultValue(typeof(Color), "0, 30, 80"), Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
         public Color BackgroundColor2 { get; set; }
 
         [DefaultValue(false)]

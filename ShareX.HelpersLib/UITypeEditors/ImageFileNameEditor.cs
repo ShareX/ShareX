@@ -25,7 +25,6 @@
 
 using System;
 using System.ComponentModel;
-using System.IO;
 using System.Windows.Forms.Design;
 
 namespace ShareX.HelpersLib
@@ -39,21 +38,7 @@ namespace ShareX.HelpersLib
                 return base.EditValue(context, provider, value);
             }
 
-            string filePath = value as string;
-            string initialDirectory = null;
-
-            if (!string.IsNullOrEmpty(filePath))
-            {
-                filePath = Helpers.ExpandFolderVariables(filePath, true);
-                string directoryPath = Path.GetDirectoryName(filePath);
-
-                if (!string.IsNullOrEmpty(directoryPath) && Directory.Exists(directoryPath))
-                {
-                    initialDirectory = directoryPath;
-                }
-            }
-
-            filePath = ImageHelpers.OpenImageFileDialog(null, initialDirectory);
+            string filePath = ImageHelpers.OpenImageFileDialog();
 
             if (!string.IsNullOrEmpty(filePath))
             {

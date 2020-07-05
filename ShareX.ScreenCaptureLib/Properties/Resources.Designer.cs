@@ -1108,6 +1108,17 @@ namespace ShareX.ScreenCaptureLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to X: {0} / Y: {1} / X2: {2} / Y2: {3}
+        ///Width: {4} px / Height: {5} px
+        ///Distance: {6:0.00} px / Angle: {7:0.00}°.
+        /// </summary>
+        internal static string RectangleRegion_GetRulerText_Ruler_info {
+            get {
+                return ResourceManager.GetString("RectangleRegion_GetRulerText_Ruler_info", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Rectangle capture transparent.
         /// </summary>
         internal static string RectangleTransparent_RectangleTransparent_Rectangle_capture_transparent {
