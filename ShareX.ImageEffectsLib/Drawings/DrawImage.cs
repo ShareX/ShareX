@@ -96,7 +96,7 @@ namespace ShareX.ImageEffectsLib
                         {
                             int width = (int)Math.Round(Size.Width / 100f * bmp.Width);
                             int height = (int)Math.Round(Size.Height / 100f * bmp.Height);
-                            imageSize = ImageHelpers.ApplyAspectRatio(width, height, bmp);
+                            imageSize = ImageHelpers.ApplyAspectRatio(width, height, bmpWatermark);
                         }
                         else
                         {

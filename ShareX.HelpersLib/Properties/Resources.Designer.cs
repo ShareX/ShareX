@@ -772,7 +772,7 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Percentage of watermark.
+        ///   Looks up a localized string similar to Percentage of image.
         /// </summary>
         internal static string DrawImageSizeMode_PercentageOfWatermark {
             get {

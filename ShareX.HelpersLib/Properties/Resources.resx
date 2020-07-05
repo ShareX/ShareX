@@ -1248,6 +1248,6 @@ Would you like to download and install it?</value>
     <value>Percentage of canvas</value>
   </data>
   <data name="DrawImageSizeMode_PercentageOfWatermark" xml:space="preserve">
-    <value>Percentage of watermark</value>
+    <value>Percentage of image</value>
   </data>
 </root>
