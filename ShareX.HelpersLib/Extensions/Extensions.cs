@@ -650,6 +650,16 @@ namespace ShareX.HelpersLib
             return new Point(rect.X + (rect.Width / 2), rect.Y + (rect.Height / 2));
         }
 
+        public static int Area(this Rectangle rect)
+        {
+            return rect.Width * rect.Height;
+        }
+
+        public static int Perimeter(this Rectangle rect)
+        {
+            return 2 * (rect.Width + rect.Height);
+        }
+
         public static Point Restrict(this Point point, Rectangle rect)
         {
             point.X = Math.Max(point.X, rect.X);

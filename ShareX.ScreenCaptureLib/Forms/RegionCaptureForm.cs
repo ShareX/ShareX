@@ -339,7 +339,7 @@ namespace ShareX.ScreenCaptureLib
             {
                 DimmedCanvas?.Dispose();
                 DimmedCanvas = (Bitmap)Canvas.Clone();
-                
+
                 using (Graphics g = Graphics.FromImage(DimmedCanvas))
                 using (Brush brush = new SolidBrush(Color.FromArgb(30, Color.Black)))
                 {
@@ -841,7 +841,7 @@ namespace ShareX.ScreenCaptureLib
             {
                 if (Mode == RegionCaptureMode.Ruler)
                 {
-                    using (SolidBrush brush = new SolidBrush(Color.FromArgb(100, 255, 255, 255)))
+                    using (SolidBrush brush = new SolidBrush(Color.FromArgb(50, 255, 255, 255)))
                     {
                         g.FillRectangle(brush, ShapeManager.CurrentRectangle);
                     }
@@ -1032,20 +1032,22 @@ namespace ShareX.ScreenCaptureLib
             DrawTextAnimation(g, textAnimation, textRectangle, padding);
         }
 
-        internal string GetAreaText(Rectangle area)
+        internal string GetAreaText(Rectangle rect)
         {
             if (IsEditorMode)
             {
-                area = new Rectangle(area.X - CanvasRectangle.X, area.Y - CanvasRectangle.Y, area.Width, area.Height);
+                rect = new Rectangle(rect.X - CanvasRectangle.X, rect.Y - CanvasRectangle.Y, rect.Width, rect.Height);
             }
             else if (Mode == RegionCaptureMode.Ruler)
             {
-                Point endPos = new Point(area.Right - 1, area.Bottom - 1);
-                return string.Format(Resources.RectangleRegion_GetRulerText_Ruler_info, area.X, area.Y, endPos.X, endPos.Y,
-                    area.Width, area.Height, MathHelpers.Distance(area.Location, endPos), MathHelpers.LookAtDegree(area.Location, endPos));
+                Point endLocation = new Point(rect.Right - 1, rect.Bottom - 1);
+                string text = $"X: {rect.X} | Y: {rect.Y} | Right: {endLocation.X} | Bottom: {endLocation.Y}\r\n" +
+                    $"Width: {rect.Width} px | Height: {rect.Height} px | Area: {rect.Area()} px | Perimeter: {rect.Perimeter()} px\r\n" +
+                    $"Distance: {MathHelpers.Distance(rect.Location, endLocation):0.00} px | Angle: {MathHelpers.LookAtDegree(rect.Location, endLocation):0.00}°";
+                return text;
             }
 
-            return string.Format(Resources.RectangleRegion_GetAreaText_Area, area.X, area.Y, area.Width, area.Height);
+            return string.Format(Resources.RectangleRegion_GetAreaText_Area, rect.X, rect.Y, rect.Width, rect.Height);
         }
 
         private string GetInfoText()

@@ -27,43 +27,47 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.IO.Compression;
+using System.Linq;
 
 namespace ShareX.HelpersLib
 {
     public static class ZipManager
     {
-        public static void Extract(string archivePath, string destination, bool retainDirectoryStructure = true, List<string> fileFilter = null)
+        public static void Extract(string archivePath, string destination, bool retainDirectoryStructure = true, Func<ZipArchiveEntry, bool> filter = null,
+            long maxUncompressedSize = 0)
         {
             using (ZipArchive archive = ZipFile.OpenRead(archivePath))
             {
+                if (maxUncompressedSize > 0)
+                {
+                    long totalUncompressedSize = archive.Entries.Sum(entry => entry.Length);
+
+                    if (totalUncompressedSize > maxUncompressedSize)
+                    {
+                        throw new Exception("Uncompressed file size of this archive is bigger than the maximum allowed file size.\r\n\r\n" +
+                            $"Archive uncompressed file size: {totalUncompressedSize.ToSizeString()}\r\n" +
+                            $"Maximum allowed file size: {maxUncompressedSize.ToSizeString()}");
+                    }
+                }
+
                 string fullName = Directory.CreateDirectory(Path.GetFullPath(destination)).FullName;
 
                 foreach (ZipArchiveEntry entry in archive.Entries)
                 {
-                    string entryName = entry.Name;
-
-                    if (fileFilter != null)
+                    if (filter != null && !filter(entry))
                     {
-                        bool match = false;
-
-                        foreach (string file in fileFilter)
-                        {
-                            if (file.Equals(entryName, StringComparison.OrdinalIgnoreCase))
-                            {
-                                match = true;
-                                break;
-                            }
-                        }
-
-                        if (!match)
-                        {
-                            continue;
-                        }
+                        continue;
                     }
+
+                    string entryName;
 
                     if (retainDirectoryStructure)
                     {
                         entryName = entry.FullName;
+                    }
+                    else
+                    {
+                        entryName = entry.Name;
                     }
 
                     string fullPath = Path.GetFullPath(Path.Combine(fullName, entryName));
@@ -80,11 +84,35 @@ namespace ShareX.HelpersLib
                         else
                         {
                             Directory.CreateDirectory(Path.GetDirectoryName(fullPath));
-                            entry.ExtractToFile(fullPath, true);
+                            ExtractToFile(entry, fullPath, true);
                         }
                     }
                 }
             }
+        }
+
+        private static void ExtractToFile(ZipArchiveEntry source, string destinationFileName, bool overwrite)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException(nameof(source));
+            }
+
+            if (destinationFileName == null)
+            {
+                throw new ArgumentNullException(nameof(destinationFileName));
+            }
+
+            FileMode fMode = overwrite ? FileMode.Create : FileMode.CreateNew;
+
+            using (FileStream fs = new FileStream(destinationFileName, fMode, FileAccess.Write, FileShare.None, bufferSize: 0x1000, useAsync: false))
+            using (Stream es = source.Open())
+            using (MaxLengthStream maxLengthStream = new MaxLengthStream(es, source.Length))
+            {
+                maxLengthStream.CopyTo(fs);
+            }
+
+            File.SetLastWriteTime(destinationFileName, source.LastWriteTime.DateTime);
         }
 
         public static void Compress(string source, string archivePath, CompressionLevel compression = CompressionLevel.Optimal)
@@ -97,7 +125,20 @@ namespace ShareX.HelpersLib
             ZipFile.CreateFromDirectory(source, archivePath, compression, false);
         }
 
-        public static void Compress(string archivePath, List<string> files, string workingDirectory = "", CompressionLevel compression = CompressionLevel.Optimal)
+        public static void Compress(string archivePath, List<string> files, CompressionLevel compression = CompressionLevel.Optimal)
+        {
+            Dictionary<string, string> entries = new Dictionary<string, string>();
+
+            foreach (string file in files)
+            {
+                string fileName = Path.GetFileName(file);
+                entries.Add(file, fileName);
+            }
+
+            Compress(archivePath, entries, compression);
+        }
+
+        public static void Compress(string archivePath, Dictionary<string, string> files, CompressionLevel compression = CompressionLevel.Optimal)
         {
             if (File.Exists(archivePath))
             {
@@ -106,13 +147,14 @@ namespace ShareX.HelpersLib
 
             using (ZipArchive archive = ZipFile.Open(archivePath, ZipArchiveMode.Update))
             {
-                foreach (string file in files)
+                foreach (KeyValuePair<string, string> file in files)
                 {
-                    string filePath = Path.Combine(workingDirectory, file);
+                    string sourceFilePath = file.Key;
 
-                    if (File.Exists(filePath))
+                    if (File.Exists(sourceFilePath))
                     {
-                        archive.CreateEntryFromFile(filePath, file, compression);
+                        string entryName = file.Value;
+                        archive.CreateEntryFromFile(sourceFilePath, entryName, compression);
                     }
                 }
             }

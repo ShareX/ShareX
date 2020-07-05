@@ -146,7 +146,7 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Add image effects / watermark.
+        ///   Looks up a localized string similar to Add image effects.
         /// </summary>
         internal static string AfterCaptureTasks_AddImageEffects {
             get {
@@ -741,6 +741,42 @@ namespace ShareX.HelpersLib.Properties {
         internal static string DownloaderForm_StartDownload_Getting_file_size_ {
             get {
                 return ResourceManager.GetString("DownloaderForm_StartDownload_Getting_file_size_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Absolute size.
+        /// </summary>
+        internal static string DrawImageSizeMode_AbsoluteSize {
+            get {
+                return ResourceManager.GetString("DrawImageSizeMode_AbsoluteSize", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Don&apos;t resize.
+        /// </summary>
+        internal static string DrawImageSizeMode_DontResize {
+            get {
+                return ResourceManager.GetString("DrawImageSizeMode_DontResize", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Percentage of canvas.
+        /// </summary>
+        internal static string DrawImageSizeMode_PercentageOfCanvas {
+            get {
+                return ResourceManager.GetString("DrawImageSizeMode_PercentageOfCanvas", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Percentage of image.
+        /// </summary>
+        internal static string DrawImageSizeMode_PercentageOfWatermark {
+            get {
+                return ResourceManager.GetString("DrawImageSizeMode_PercentageOfWatermark", resourceCulture);
             }
         }
         
@@ -2059,51 +2095,6 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Bicubic.
-        /// </summary>
-        internal static string ImageEditorInterpolationMode_Bicubic {
-            get {
-                return ResourceManager.GetString("ImageEditorInterpolationMode_Bicubic", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Bilinear.
-        /// </summary>
-        internal static string ImageEditorInterpolationMode_Bilinear {
-            get {
-                return ResourceManager.GetString("ImageEditorInterpolationMode_Bilinear", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to High quality bicubic.
-        /// </summary>
-        internal static string ImageEditorInterpolationMode_HighQualityBicubic {
-            get {
-                return ResourceManager.GetString("ImageEditorInterpolationMode_HighQualityBicubic", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to High quality bilinear.
-        /// </summary>
-        internal static string ImageEditorInterpolationMode_HighQualityBilinear {
-            get {
-                return ResourceManager.GetString("ImageEditorInterpolationMode_HighQualityBilinear", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Nearest neighbor.
-        /// </summary>
-        internal static string ImageEditorInterpolationMode_NearestNeighbor {
-            get {
-                return ResourceManager.GetString("ImageEditorInterpolationMode_NearestNeighbor", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Auto size.
         /// </summary>
         internal static string ImageEditorStartMode_AutoSize {
@@ -2251,9 +2242,19 @@ namespace ShareX.HelpersLib.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap LoadingSmall {
+        internal static System.Drawing.Bitmap LoadingSmallBlack {
             get {
-                object obj = ResourceManager.GetObject("LoadingSmall", resourceCulture);
+                object obj = ResourceManager.GetObject("LoadingSmallBlack", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap LoadingSmallWhite {
+            get {
+                object obj = ResourceManager.GetObject("LoadingSmallWhite", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -10,7 +10,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ShareX.HelpersLib</RootNamespace>
     <AssemblyName>ShareX.HelpersLib</AssemblyName>
-    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <StartupObject>
     </StartupObject>
@@ -150,6 +150,7 @@
     </Compile>
     <Compile Include="Helpers\JsonHelpers.cs" />
     <Compile Include="ImageFilesCache.cs" />
+    <Compile Include="MaxLengthStream.cs" />
     <Compile Include="PointInfo.cs" />
     <Compile Include="Random\RandomCrypto.cs" />
     <Compile Include="Random\RandomFast.cs" />
@@ -291,6 +292,7 @@
     <Compile Include="Settings\TypeNameSerializationBinder.cs" />
     <Compile Include="UITypeEditors\EnumDescriptionConverter.cs" />
     <Compile Include="UITypeEditors\DirectoryNameEditor.cs" />
+    <Compile Include="UITypeEditors\EnumProperNameConverter.cs" />
     <Compile Include="UITypeEditors\GradientEditor.cs" />
     <Compile Include="UITypeEditors\JsonFileNameEditor.cs" />
     <Compile Include="UITypeEditors\MyColorConverter.cs" />

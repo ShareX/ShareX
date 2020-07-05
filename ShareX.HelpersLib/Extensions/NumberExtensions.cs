@@ -74,11 +74,12 @@ namespace ShareX.HelpersLib
 
         public static string ToSizeString(this long size, bool binary = false, int decimalPlaces = 2)
         {
-            if (size < 1024) return Math.Max(size, 0) + " B";
-            int place = (int)Math.Floor(Math.Log(size, 1024));
-            double num = size / Math.Pow(1024, place);
+            int bytes = binary ? 1024 : 1000;
+            if (size < bytes) return Math.Max(size, 0) + " B";
+            int place = (int)Math.Floor(Math.Log(size, bytes));
+            double num = size / Math.Pow(bytes, place);
             string suffix = binary ? suffixBinary[place] : suffixDecimal[place];
-            return string.Format("{0} {1}", num.ToDecimalString(decimalPlaces.Clamp(0, 3)), suffix);
+            return num.ToDecimalString(decimalPlaces.Clamp(0, 3)) + " " + suffix;
         }
 
         public static string ToDecimalString(this double number, int decimalPlaces)

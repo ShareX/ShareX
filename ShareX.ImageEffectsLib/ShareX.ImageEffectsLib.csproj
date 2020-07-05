@@ -10,7 +10,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ShareX.ImageEffectsLib</RootNamespace>
     <AssemblyName>ShareX.ImageEffectsLib</AssemblyName>
-    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
@@ -118,6 +118,7 @@
     <Compile Include="Filters\MatrixConvolution.cs" />
     <Compile Include="Filters\MeanRemoval.cs" />
     <Compile Include="Filters\Outline.cs" />
+    <Compile Include="Filters\RGBSplit.cs" />
     <Compile Include="Filters\Pixelate.cs" />
     <Compile Include="Filters\Sharpen.cs" />
     <Compile Include="Filters\Slice.cs" />

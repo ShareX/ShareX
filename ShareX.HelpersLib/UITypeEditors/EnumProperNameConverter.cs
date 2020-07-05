@@ -30,11 +30,11 @@ using System.Linq;
 
 namespace ShareX.HelpersLib
 {
-    public class EnumDescriptionConverter : EnumConverter
+    public class EnumProperNameConverter : EnumConverter
     {
         private Type enumType;
 
-        public EnumDescriptionConverter(Type type) : base(type)
+        public EnumProperNameConverter(Type type) : base(type)
         {
             enumType = type;
         }
@@ -46,7 +46,7 @@ namespace ShareX.HelpersLib
 
         public override object ConvertTo(ITypeDescriptorContext context, CultureInfo culture, object value, Type destType)
         {
-            return ((Enum)value).GetLocalizedDescription();
+            return Helpers.GetProperName(value.ToString());
         }
 
         public override bool CanConvertFrom(ITypeDescriptorContext context, Type srcType)
@@ -58,7 +58,7 @@ namespace ShareX.HelpersLib
         {
             foreach (Enum e in Enum.GetValues(enumType).OfType<Enum>())
             {
-                if (e.GetLocalizedDescription() == (string)value)
+                if (Helpers.GetProperName(e.ToString()) == (string)value)
                 {
                     return e;
                 }
