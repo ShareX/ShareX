@@ -166,6 +166,7 @@ namespace ShareX.ScreenCaptureLib
         {
             RegionCaptureOptions newOptions = GetRegionCaptureOptions(options);
             newOptions.QuickCrop = false;
+            newOptions.UseLightResizeNodes = true;
 
             using (RegionCaptureForm form = new RegionCaptureForm(RegionCaptureMode.Ruler, newOptions))
             {
