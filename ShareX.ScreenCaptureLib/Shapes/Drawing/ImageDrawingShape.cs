@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.HelpersLib;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 
@@ -33,7 +34,7 @@ namespace ShareX.ScreenCaptureLib
         public override ShapeType ShapeType { get; } = ShapeType.DrawingImage;
 
         public Image Image { get; protected set; }
-        public ImageEditorInterpolationMode ImageInterpolationMode { get; protected set; }
+        public ImageInterpolationMode ImageInterpolationMode { get; protected set; }
 
         public override void OnConfigLoad()
         {
@@ -79,7 +80,7 @@ namespace ShareX.ScreenCaptureLib
             if (Image != null)
             {
                 g.PixelOffsetMode = PixelOffsetMode.Half;
-                g.InterpolationMode = Manager.GetInterpolationMode(ImageInterpolationMode);
+                g.InterpolationMode = ImageHelpers.GetInterpolationMode(ImageInterpolationMode);
 
                 g.DrawImage(Image, Rectangle);
 

@@ -197,7 +197,7 @@ namespace ShareX.HelpersLib
         {
             if (isReady)
             {
-                GradientStop gradientStop = GetSelectedGradientStop(out ListViewItem lvi);
+                GradientStop gradientStop = GetSelectedGradientStop();
 
                 if (gradientStop != null)
                 {

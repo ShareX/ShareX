@@ -35,6 +35,10 @@ namespace ShareX.ImageEffectsLib
 {
     public partial class ImageEffectsForm : Form
     {
+        public static bool IsInstanceActive => instance != null && !instance.IsDisposed;
+
+        private static ImageEffectsForm instance;
+
         public event Action<Bitmap> ImageProcessRequested;
 
         public bool AutoGeneratePreviewImage { get; set; }
@@ -48,6 +52,8 @@ namespace ShareX.ImageEffectsLib
 
         public ImageEffectsForm(Bitmap bmp, List<ImageEffectPreset> presets, int selectedPresetIndex)
         {
+            pauseUpdate = true;
+
             InitializeComponent();
             ShareXResources.ApplyTheme(this);
 
@@ -64,9 +70,24 @@ namespace ShareX.ImageEffectsLib
             }
 
             SelectedPresetIndex = selectedPresetIndex;
+
             eiImageEffects.ObjectType = typeof(ImageEffectPreset);
             eiImageEffects.SerializationBinder = new TypeNameSerializationBinder("ShareX.ImageEffectsLib", "ShareX.ImageEffectsLib");
+
             AddAllEffectsToContextMenu();
+            LoadSettings();
+
+            pauseUpdate = false;
+        }
+
+        public static ImageEffectsForm GetFormInstance(List<ImageEffectPreset> presets, int selectedPresetIndex)
+        {
+            if (!IsInstanceActive)
+            {
+                instance = new ImageEffectsForm(null, presets, selectedPresetIndex);
+            }
+
+            return instance;
         }
 
         public void EnableToolMode(Action<Bitmap> imageProcessRequested, string filePath = null)
@@ -83,6 +104,11 @@ namespace ShareX.ImageEffectsLib
         {
             btnOK.Visible = true;
             btnClose.Text = Resources.ImageEffectsForm_EditorMode_Cancel;
+        }
+
+        public void ImportImageEffect(string json)
+        {
+            eiImageEffects.ImportJson(json);
         }
 
         protected void OnImageProcessRequested(Bitmap bmp)
@@ -162,8 +188,6 @@ namespace ShareX.ImageEffectsLib
 
         private void LoadSettings()
         {
-            pauseUpdate = true;
-
             foreach (ImageEffectPreset preset in Presets)
             {
                 cbPresets.Items.Add(preset);
@@ -175,8 +199,6 @@ namespace ShareX.ImageEffectsLib
             }
 
             UpdateControlStates();
-
-            pauseUpdate = false;
         }
 
         private ImageEffectPreset GetSelectedPreset()
@@ -202,7 +224,9 @@ namespace ShareX.ImageEffectsLib
             {
                 Presets.Add(preset);
                 cbPresets.Items.Add(preset);
+                ignorePresetsSelectedIndexChanged = true;
                 cbPresets.SelectedIndex = cbPresets.Items.Count - 1;
+                ignorePresetsSelectedIndexChanged = false;
                 LoadPreset(preset);
                 txtPresetName.Focus();
             }
@@ -420,7 +444,6 @@ namespace ShareX.ImageEffectsLib
 
         private void ImageEffectsForm_Shown(object sender, EventArgs e)
         {
-            LoadSettings();
             this.ForceActivate();
         }
 
@@ -463,10 +486,10 @@ namespace ShareX.ImageEffectsLib
 
         private void cbPresets_SelectedIndexChanged(object sender, EventArgs e)
         {
+            SelectedPresetIndex = cbPresets.SelectedIndex;
+
             if (!ignorePresetsSelectedIndexChanged)
             {
-                SelectedPresetIndex = cbPresets.SelectedIndex;
-
                 ImageEffectPreset preset = GetSelectedPreset();
                 if (preset != null)
                 {
@@ -566,7 +589,7 @@ namespace ShareX.ImageEffectsLib
 
         private void lvEffects_ItemChecked(object sender, ItemCheckedEventArgs e)
         {
-            if (e.Item != null && e.Item.Tag is ImageEffect)
+            if (e.Item != null && e.Item.Focused && e.Item.Tag is ImageEffect)
             {
                 ImageEffect imageEffect = (ImageEffect)e.Item.Tag;
                 imageEffect.Enabled = e.Item.Checked;
@@ -606,6 +629,33 @@ namespace ShareX.ImageEffectsLib
             if (preset != null && preset.Effects.Count > 0)
             {
                 AddPreset(preset);
+            }
+        }
+
+        private void btnPackager_Click(object sender, EventArgs e)
+        {
+            ImageEffectPreset preset = GetSelectedPreset();
+
+            if (preset != null)
+            {
+                if (string.IsNullOrEmpty(preset.Name))
+                {
+                    // TODO: Translate
+                    MessageBox.Show("Preset name cannot be empty.", "ShareX - " + "Missing preset name", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    string json = eiImageEffects.Serialize(preset);
+
+                    if (!string.IsNullOrEmpty(json))
+                    {
+                        using (ImageEffectPackagerForm packagerForm = new ImageEffectPackagerForm(json, preset.Name,
+                            HelpersOptions.ShareXSpecialFolders["ShareXImageEffects"]))
+                        {
+                            packagerForm.ShowDialog();
+                        }
+                    }
+                }
             }
         }
 
