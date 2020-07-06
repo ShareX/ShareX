@@ -5072,7 +5072,6 @@ namespace ShareX.UploadersLib
             this.tpFlickr.PerformLayout();
             this.tpPhotobucket.ResumeLayout(false);
             this.gbPhotobucketAlbumPath.ResumeLayout(false);
-            this.gbPhotobucketAlbumPath.PerformLayout();
             this.gbPhotobucketAlbums.ResumeLayout(false);
             this.gbPhotobucketAlbums.PerformLayout();
             this.gbPhotobucketUserAccount.ResumeLayout(false);

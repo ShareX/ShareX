@@ -1020,7 +1020,7 @@ when you made the application key.</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpYourls.Size" type="System.Drawing.Size, System.Drawing">
-    <value>803, 537</value>
+    <value>178, 42</value>
   </data>
   <data name="tpYourls.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -1179,7 +1179,7 @@ when you made the application key.</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpAdFly.Size" type="System.Drawing.Size, System.Drawing">
-    <value>803, 537</value>
+    <value>178, 42</value>
   </data>
   <data name="tpAdFly.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -1365,7 +1365,7 @@ when you made the application key.</value>
     <value>4, 22</value>
   </data>
   <data name="tpPolr.Size" type="System.Drawing.Size, System.Drawing">
-    <value>803, 537</value>
+    <value>178, 42</value>
   </data>
   <data name="tpPolr.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -1554,7 +1554,7 @@ when you made the application key.</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpFirebaseDynamicLinks.Size" type="System.Drawing.Size, System.Drawing">
-    <value>803, 537</value>
+    <value>178, 42</value>
   </data>
   <data name="tpFirebaseDynamicLinks.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -1764,7 +1764,7 @@ when you made the application key.</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpKutt.Size" type="System.Drawing.Size, System.Drawing">
-    <value>803, 537</value>
+    <value>178, 42</value>
   </data>
   <data name="tpKutt.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -13805,9 +13805,6 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="&gt;&gt;btnPhotobucketAddAlbum.ZOrder" xml:space="preserve">
     <value>0</value>
-  </data>
-  <data name="btnPhotobucketRemoveAlbum.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
   </data>
   <data name="btnPhotobucketRemoveAlbum.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
