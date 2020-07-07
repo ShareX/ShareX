@@ -435,6 +435,14 @@ namespace ShareX
             }
         }
 
+        private void lblError_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (ModifierKeys == Keys.None && e.Button == MouseButtons.Left)
+            {
+                Task.ShowErrorWindow();
+            }
+        }
+
         private void PbThumbnail_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)

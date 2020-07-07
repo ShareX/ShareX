@@ -83,6 +83,7 @@
             // lblError
             // 
             this.lblError.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblError.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblError.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblError.ForeColor = System.Drawing.Color.White;
             this.lblError.Location = new System.Drawing.Point(96, 8);
@@ -92,6 +93,7 @@
             this.lblError.Text = "Error";
             this.lblError.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblError.Visible = false;
+            this.lblError.MouseClick += new System.Windows.Forms.MouseEventHandler(this.lblError_MouseClick);
             // 
             // pbProgress
             // 

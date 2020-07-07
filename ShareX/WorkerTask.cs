@@ -283,6 +283,22 @@ namespace ShareX
             }
         }
 
+        public void ShowErrorWindow()
+        {
+            if (Info != null && Info.Result != null && Info.Result.IsError)
+            {
+                string errors = Info.Result.ErrorsToString();
+
+                if (!string.IsNullOrEmpty(errors))
+                {
+                    using (ErrorForm form = new ErrorForm(Resources.UploadInfoManager_ShowErrors_Upload_errors, errors, Program.LogsFilePath, Links.URL_ISSUES, false))
+                    {
+                        form.ShowDialog();
+                    }
+                }
+            }
+        }
+
         private void ThreadDoWork()
         {
             CreateTaskReferenceHelper();
