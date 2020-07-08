@@ -71,7 +71,9 @@ namespace ShareX.HelpersLib
 
                 if (value > -1)
                 {
-                    Items[value].Selected = true;
+                    ListViewItem lvi = Items[value];
+                    lvi.EnsureVisible();
+                    lvi.Selected = true;
                 }
             }
         }
