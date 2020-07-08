@@ -130,7 +130,7 @@
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="pgSettings.TabIndex" type="System.Int32, mscorlib">
-    <value>15</value>
+    <value>0</value>
   </data>
   <data name="&gt;&gt;pgSettings.Name" xml:space="preserve">
     <value>pgSettings</value>
@@ -147,6 +147,9 @@
   <data name="lvEffects.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left</value>
   </data>
+  <data name="chEffect.Width" type="System.Int32, mscorlib">
+    <value>164</value>
+  </data>
   <data name="lvEffects.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 322</value>
   </data>
@@ -154,7 +157,7 @@
     <value>168, 222</value>
   </data>
   <data name="lvEffects.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
+    <value>13</value>
   </data>
   <data name="&gt;&gt;lvEffects.Name" xml:space="preserve">
     <value>lvEffects</value>
@@ -167,9 +170,6 @@
   </data>
   <data name="&gt;&gt;lvEffects.ZOrder" xml:space="preserve">
     <value>23</value>
-  </data>
-  <data name="chEffect.Width" type="System.Int32, mscorlib">
-    <value>164</value>
   </data>
   <data name="btnSaveImage.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
@@ -238,7 +238,7 @@
     <value>496, 496</value>
   </data>
   <data name="pbResult.TabIndex" type="System.Int32, mscorlib">
-    <value>16</value>
+    <value>0</value>
   </data>
   <data name="&gt;&gt;pbResult.Name" xml:space="preserve">
     <value>pbResult</value>
@@ -273,6 +273,18 @@
   <metadata name="cmsLoadImage.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>126, 17</value>
   </metadata>
+  <data name="tsmiLoadImageFromFile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>130, 22</value>
+  </data>
+  <data name="tsmiLoadImageFromFile.Text" xml:space="preserve">
+    <value>From file...</value>
+  </data>
+  <data name="tsmiLoadImageFromClipboard.Size" type="System.Drawing.Size, System.Drawing">
+    <value>130, 22</value>
+  </data>
+  <data name="tsmiLoadImageFromClipboard.Text" xml:space="preserve">
+    <value>From clipboard</value>
+  </data>
   <data name="cmsLoadImage.Size" type="System.Drawing.Size, System.Drawing">
     <value>131, 48</value>
   </data>
@@ -306,18 +318,6 @@
   <data name="&gt;&gt;mbLoadImage.ZOrder" xml:space="preserve">
     <value>20</value>
   </data>
-  <data name="tsmiLoadImageFromFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>130, 22</value>
-  </data>
-  <data name="tsmiLoadImageFromFile.Text" xml:space="preserve">
-    <value>From file...</value>
-  </data>
-  <data name="tsmiLoadImageFromClipboard.Size" type="System.Drawing.Size, System.Drawing">
-    <value>130, 22</value>
-  </data>
-  <data name="tsmiLoadImageFromClipboard.Text" xml:space="preserve">
-    <value>From clipboard</value>
-  </data>
   <data name="lblPresetName.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -328,7 +328,7 @@
     <value>69, 13</value>
   </data>
   <data name="lblPresetName.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+    <value>14</value>
   </data>
   <data name="lblPresetName.Text" xml:space="preserve">
     <value>Preset name:</value>
@@ -352,7 +352,7 @@
     <value>168, 20</value>
   </data>
   <data name="txtPresetName.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
+    <value>15</value>
   </data>
   <data name="&gt;&gt;txtPresetName.Name" xml:space="preserve">
     <value>txtPresetName</value>
@@ -547,7 +547,7 @@
     <value>6</value>
   </data>
   <data name="scMain.TabIndex" type="System.Int32, mscorlib">
-    <value>22</value>
+    <value>16</value>
   </data>
   <data name="&gt;&gt;scMain.Name" xml:space="preserve">
     <value>scMain</value>
@@ -568,7 +568,7 @@
     <value>24, 24</value>
   </data>
   <data name="btnPresetNew.TabIndex" type="System.Int32, mscorlib">
-    <value>23</value>
+    <value>3</value>
   </data>
   <data name="&gt;&gt;btnPresetNew.Name" xml:space="preserve">
     <value>btnPresetNew</value>
@@ -589,7 +589,7 @@
     <value>24, 24</value>
   </data>
   <data name="btnPresetRemove.TabIndex" type="System.Int32, mscorlib">
-    <value>24</value>
+    <value>4</value>
   </data>
   <data name="&gt;&gt;btnPresetRemove.Name" xml:space="preserve">
     <value>btnPresetRemove</value>
@@ -610,7 +610,7 @@
     <value>24, 24</value>
   </data>
   <data name="btnPresetDuplicate.TabIndex" type="System.Int32, mscorlib">
-    <value>25</value>
+    <value>5</value>
   </data>
   <data name="&gt;&gt;btnPresetDuplicate.Name" xml:space="preserve">
     <value>btnPresetDuplicate</value>
@@ -634,7 +634,7 @@
     <value>168, 222</value>
   </data>
   <data name="lvPresets.TabIndex" type="System.Int32, mscorlib">
-    <value>26</value>
+    <value>6</value>
   </data>
   <data name="&gt;&gt;lvPresets.Name" xml:space="preserve">
     <value>lvPresets</value>
@@ -658,7 +658,7 @@
     <value>43, 13</value>
   </data>
   <data name="lblEffects.TabIndex" type="System.Int32, mscorlib">
-    <value>27</value>
+    <value>7</value>
   </data>
   <data name="lblEffects.Text" xml:space="preserve">
     <value>Effects:</value>
@@ -682,7 +682,7 @@
     <value>24, 24</value>
   </data>
   <data name="btnEffectAdd.TabIndex" type="System.Int32, mscorlib">
-    <value>28</value>
+    <value>8</value>
   </data>
   <data name="&gt;&gt;btnEffectAdd.Name" xml:space="preserve">
     <value>btnEffectAdd</value>
@@ -703,7 +703,7 @@
     <value>24, 24</value>
   </data>
   <data name="btnEffectRemove.TabIndex" type="System.Int32, mscorlib">
-    <value>29</value>
+    <value>9</value>
   </data>
   <data name="&gt;&gt;btnEffectRemove.Name" xml:space="preserve">
     <value>btnEffectRemove</value>
@@ -724,7 +724,7 @@
     <value>24, 24</value>
   </data>
   <data name="btnEffectDuplicate.TabIndex" type="System.Int32, mscorlib">
-    <value>30</value>
+    <value>10</value>
   </data>
   <data name="&gt;&gt;btnEffectDuplicate.Name" xml:space="preserve">
     <value>btnEffectDuplicate</value>
@@ -745,7 +745,7 @@
     <value>24, 24</value>
   </data>
   <data name="btnEffectClear.TabIndex" type="System.Int32, mscorlib">
-    <value>31</value>
+    <value>11</value>
   </data>
   <data name="&gt;&gt;btnEffectClear.Name" xml:space="preserve">
     <value>btnEffectClear</value>
@@ -766,7 +766,7 @@
     <value>24, 24</value>
   </data>
   <data name="btnEffectRefresh.TabIndex" type="System.Int32, mscorlib">
-    <value>32</value>
+    <value>12</value>
   </data>
   <data name="&gt;&gt;btnEffectRefresh.Name" xml:space="preserve">
     <value>btnEffectRefresh</value>

@@ -284,6 +284,10 @@ namespace ShareX.ImageEffectsLib
                         Cursor = Cursors.Default;
                     }
                 }
+                else
+                {
+                    pbResult.Reset();
+                }
 
                 UpdateControlStates();
             }
