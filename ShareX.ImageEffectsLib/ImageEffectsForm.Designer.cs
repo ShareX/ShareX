@@ -84,6 +84,7 @@
             this.lvEffects.CheckBoxes = true;
             this.lvEffects.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.chEffect});
+            this.lvEffects.DisableDeselect = true;
             this.lvEffects.FullRowSelect = true;
             this.lvEffects.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
             this.lvEffects.HideSelection = false;

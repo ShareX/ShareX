@@ -394,6 +394,11 @@ namespace ShareX.ImageEffectsLib
                     preset.Effects.RemoveAt(index);
                     lvEffects.Items.RemoveAt(index);
 
+                    if (lvEffects.Items.Count > 0)
+                    {
+                        lvEffects.SelectedIndex = index == lvEffects.Items.Count ? lvEffects.Items.Count - 1 : index;
+                    }
+
                     UpdatePreview();
                 }
             }
