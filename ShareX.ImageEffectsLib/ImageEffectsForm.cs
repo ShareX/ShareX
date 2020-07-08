@@ -188,14 +188,14 @@ namespace ShareX.ImageEffectsLib
 
         private void LoadSettings()
         {
-            foreach (ImageEffectPreset preset in Presets)
+            if (Presets != null && Presets.Count > 0)
             {
-                cbPresets.Items.Add(preset);
-            }
+                foreach (ImageEffectPreset preset in Presets)
+                {
+                    cbPresets.Items.Add(preset);
+                }
 
-            if (SelectedPresetIndex > -1 && SelectedPresetIndex < cbPresets.Items.Count)
-            {
-                cbPresets.SelectedIndex = SelectedPresetIndex;
+                cbPresets.SelectedIndex = SelectedPresetIndex.Clamp(0, Presets.Count - 1);
             }
 
             UpdateControlStates();
