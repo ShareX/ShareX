@@ -47,8 +47,7 @@ namespace ShareX.ImageEffectsLib
         public int SelectedPresetIndex { get; private set; }
         public string FilePath { get; private set; }
 
-        private bool ignorePresetsSelectedIndexChanged = false;
-        private bool pauseUpdate = false;
+        private bool pauseUpdate;
 
         public ImageEffectsForm(Bitmap bmp, List<ImageEffectPreset> presets, int selectedPresetIndex)
         {
@@ -81,8 +80,6 @@ namespace ShareX.ImageEffectsLib
 
             AddAllEffectsToContextMenu();
             LoadSettings();
-
-            pauseUpdate = false;
         }
 
         public static ImageEffectsForm GetFormInstance(List<ImageEffectPreset> presets, int selectedPresetIndex)
@@ -238,10 +235,7 @@ namespace ShareX.ImageEffectsLib
                 Presets.Add(preset);
                 ListViewItem lvi = new ListViewItem(preset.ToString());
                 lvPresets.Items.Add(lvi);
-                ignorePresetsSelectedIndexChanged = true;
                 lvPresets.SelectLast();
-                ignorePresetsSelectedIndexChanged = false;
-                LoadPreset(preset);
                 txtPresetName.Focus();
             }
         }
@@ -265,6 +259,8 @@ namespace ShareX.ImageEffectsLib
 
                         if (PreviewImage != null)
                         {
+                            //Debug.WriteLine("Updating preview...");
+
                             Stopwatch timer = Stopwatch.StartNew();
 
                             using (Image preview = ApplyEffects())
@@ -414,8 +410,6 @@ namespace ShareX.ImageEffectsLib
 
         private void AddEffect(ImageEffect imageEffect, ImageEffectPreset preset = null)
         {
-            pauseUpdate = true;
-
             ListViewItem lvi = new ListViewItem(imageEffect.GetType().GetDescription());
             lvi.Checked = imageEffect.Enabled;
             lvi.Tag = imageEffect;
@@ -442,14 +436,10 @@ namespace ShareX.ImageEffectsLib
 
             lvi.EnsureVisible();
             lvi.Selected = true;
-
-            pauseUpdate = false;
         }
 
         private void LoadPreset(ImageEffectPreset preset)
         {
-            pauseUpdate = true;
-
             txtPresetName.Text = preset.Name;
             lvEffects.Items.Clear();
             pgSettings.SelectedObject = null;
@@ -459,8 +449,6 @@ namespace ShareX.ImageEffectsLib
                 AddEffect(imageEffect);
             }
 
-            pauseUpdate = false;
-
             UpdatePreview();
         }
 
@@ -469,6 +457,9 @@ namespace ShareX.ImageEffectsLib
         private void ImageEffectsForm_Shown(object sender, EventArgs e)
         {
             this.ForceActivate();
+
+            pauseUpdate = false;
+            UpdatePreview();
         }
 
         private void btnPresetNew_Click(object sender, EventArgs e)
@@ -512,13 +503,11 @@ namespace ShareX.ImageEffectsLib
         {
             SelectedPresetIndex = lvPresets.SelectedIndex;
 
-            if (!ignorePresetsSelectedIndexChanged)
+            ImageEffectPreset preset = GetSelectedPreset();
+
+            if (preset != null)
             {
-                ImageEffectPreset preset = GetSelectedPreset();
-                if (preset != null)
-                {
-                    LoadPreset(preset);
-                }
+                LoadPreset(preset);
             }
         }
 
