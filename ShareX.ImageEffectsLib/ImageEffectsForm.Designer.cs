@@ -31,12 +31,8 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ImageEffectsForm));
             this.pgSettings = new System.Windows.Forms.PropertyGrid();
-            this.btnAdd = new System.Windows.Forms.Button();
             this.lvEffects = new ShareX.HelpersLib.MyListView();
             this.chEffect = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.btnRemove = new System.Windows.Forms.Button();
-            this.btnClear = new System.Windows.Forms.Button();
-            this.btnDuplicate = new System.Windows.Forms.Button();
             this.btnSaveImage = new System.Windows.Forms.Button();
             this.eiImageEffects = new ShareX.HelpersLib.ExportImportControl();
             this.pbResult = new ShareX.HelpersLib.MyPictureBox();
@@ -45,19 +41,25 @@
             this.cmsLoadImage = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tsmiLoadImageFromFile = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiLoadImageFromClipboard = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnAddPreset = new System.Windows.Forms.Button();
-            this.btnRemovePreset = new System.Windows.Forms.Button();
-            this.cbPresets = new System.Windows.Forms.ComboBox();
             this.lblPresetName = new System.Windows.Forms.Label();
             this.txtPresetName = new System.Windows.Forms.TextBox();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnOK = new System.Windows.Forms.Button();
             this.btnUploadImage = new System.Windows.Forms.Button();
-            this.btnRefresh = new System.Windows.Forms.Button();
-            this.btnDuplicatePreset = new System.Windows.Forms.Button();
             this.lblPresets = new System.Windows.Forms.Label();
             this.btnPackager = new System.Windows.Forms.Button();
             this.scMain = new ShareX.HelpersLib.SplitContainerCustomSplitter();
+            this.btnPresetNew = new System.Windows.Forms.Button();
+            this.btnPresetRemove = new System.Windows.Forms.Button();
+            this.btnPresetDuplicate = new System.Windows.Forms.Button();
+            this.lvPresets = new ShareX.HelpersLib.MyListView();
+            this.chPreset = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.lblEffects = new System.Windows.Forms.Label();
+            this.btnEffectAdd = new System.Windows.Forms.Button();
+            this.btnEffectRemove = new System.Windows.Forms.Button();
+            this.btnEffectDuplicate = new System.Windows.Forms.Button();
+            this.btnEffectClear = new System.Windows.Forms.Button();
+            this.btnEffectRefresh = new System.Windows.Forms.Button();
             this.cmsLoadImage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.scMain)).BeginInit();
             this.scMain.Panel1.SuspendLayout();
@@ -72,13 +74,6 @@
             this.pgSettings.PropertySort = System.Windows.Forms.PropertySort.NoSort;
             this.pgSettings.ToolbarVisible = false;
             this.pgSettings.PropertyValueChanged += new System.Windows.Forms.PropertyValueChangedEventHandler(this.pgSettings_PropertyValueChanged);
-            // 
-            // btnAdd
-            // 
-            resources.ApplyResources(this.btnAdd, "btnAdd");
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // lvEffects
             // 
@@ -104,27 +99,6 @@
             // chEffect
             // 
             resources.ApplyResources(this.chEffect, "chEffect");
-            // 
-            // btnRemove
-            // 
-            resources.ApplyResources(this.btnRemove, "btnRemove");
-            this.btnRemove.Name = "btnRemove";
-            this.btnRemove.UseVisualStyleBackColor = true;
-            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
-            // 
-            // btnClear
-            // 
-            resources.ApplyResources(this.btnClear, "btnClear");
-            this.btnClear.Name = "btnClear";
-            this.btnClear.UseVisualStyleBackColor = true;
-            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
-            // 
-            // btnDuplicate
-            // 
-            resources.ApplyResources(this.btnDuplicate, "btnDuplicate");
-            this.btnDuplicate.Name = "btnDuplicate";
-            this.btnDuplicate.UseVisualStyleBackColor = true;
-            this.btnDuplicate.Click += new System.EventHandler(this.btnDuplicate_Click);
             // 
             // btnSaveImage
             // 
@@ -191,28 +165,6 @@
             resources.ApplyResources(this.tsmiLoadImageFromClipboard, "tsmiLoadImageFromClipboard");
             this.tsmiLoadImageFromClipboard.Click += new System.EventHandler(this.tsmiLoadImageFromClipboard_Click);
             // 
-            // btnAddPreset
-            // 
-            resources.ApplyResources(this.btnAddPreset, "btnAddPreset");
-            this.btnAddPreset.Name = "btnAddPreset";
-            this.btnAddPreset.UseVisualStyleBackColor = true;
-            this.btnAddPreset.Click += new System.EventHandler(this.btnAddPreset_Click);
-            // 
-            // btnRemovePreset
-            // 
-            resources.ApplyResources(this.btnRemovePreset, "btnRemovePreset");
-            this.btnRemovePreset.Name = "btnRemovePreset";
-            this.btnRemovePreset.UseVisualStyleBackColor = true;
-            this.btnRemovePreset.Click += new System.EventHandler(this.btnRemovePreset_Click);
-            // 
-            // cbPresets
-            // 
-            this.cbPresets.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbPresets.FormattingEnabled = true;
-            resources.ApplyResources(this.cbPresets, "cbPresets");
-            this.cbPresets.Name = "cbPresets";
-            this.cbPresets.SelectedIndexChanged += new System.EventHandler(this.cbPresets_SelectedIndexChanged);
-            // 
             // lblPresetName
             // 
             resources.ApplyResources(this.lblPresetName, "lblPresetName");
@@ -246,20 +198,6 @@
             this.btnUploadImage.UseVisualStyleBackColor = true;
             this.btnUploadImage.Click += new System.EventHandler(this.btnUploadImage_Click);
             // 
-            // btnRefresh
-            // 
-            resources.ApplyResources(this.btnRefresh, "btnRefresh");
-            this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.UseVisualStyleBackColor = true;
-            this.btnRefresh.Click += new System.EventHandler(this.BtnRefresh_Click);
-            // 
-            // btnDuplicatePreset
-            // 
-            resources.ApplyResources(this.btnDuplicatePreset, "btnDuplicatePreset");
-            this.btnDuplicatePreset.Name = "btnDuplicatePreset";
-            this.btnDuplicatePreset.UseVisualStyleBackColor = true;
-            this.btnDuplicatePreset.Click += new System.EventHandler(this.btnDuplicatePreset_Click);
-            // 
             // lblPresets
             // 
             resources.ApplyResources(this.lblPresets, "lblPresets");
@@ -287,32 +225,121 @@
             this.scMain.SplitterColor = System.Drawing.Color.White;
             this.scMain.SplitterLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(189)))), ((int)(((byte)(189)))));
             // 
+            // btnPresetNew
+            // 
+            this.btnPresetNew.Image = global::ShareX.ImageEffectsLib.Properties.Resources.plus;
+            resources.ApplyResources(this.btnPresetNew, "btnPresetNew");
+            this.btnPresetNew.Name = "btnPresetNew";
+            this.btnPresetNew.UseVisualStyleBackColor = true;
+            this.btnPresetNew.Click += new System.EventHandler(this.btnPresetNew_Click);
+            // 
+            // btnPresetRemove
+            // 
+            this.btnPresetRemove.Image = global::ShareX.ImageEffectsLib.Properties.Resources.minus;
+            resources.ApplyResources(this.btnPresetRemove, "btnPresetRemove");
+            this.btnPresetRemove.Name = "btnPresetRemove";
+            this.btnPresetRemove.UseVisualStyleBackColor = true;
+            this.btnPresetRemove.Click += new System.EventHandler(this.btnPresetRemove_Click);
+            // 
+            // btnPresetDuplicate
+            // 
+            this.btnPresetDuplicate.Image = global::ShareX.ImageEffectsLib.Properties.Resources.document_copy;
+            resources.ApplyResources(this.btnPresetDuplicate, "btnPresetDuplicate");
+            this.btnPresetDuplicate.Name = "btnPresetDuplicate";
+            this.btnPresetDuplicate.UseVisualStyleBackColor = true;
+            this.btnPresetDuplicate.Click += new System.EventHandler(this.btnPresetDuplicate_Click);
+            // 
+            // lvPresets
+            // 
+            this.lvPresets.AutoFillColumn = true;
+            this.lvPresets.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.chPreset});
+            this.lvPresets.FullRowSelect = true;
+            this.lvPresets.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
+            this.lvPresets.HideSelection = false;
+            resources.ApplyResources(this.lvPresets, "lvPresets");
+            this.lvPresets.MultiSelect = false;
+            this.lvPresets.Name = "lvPresets";
+            this.lvPresets.UseCompatibleStateImageBehavior = false;
+            this.lvPresets.View = System.Windows.Forms.View.Details;
+            this.lvPresets.SelectedIndexChanged += new System.EventHandler(this.lvPresets_SelectedIndexChanged);
+            // 
+            // chPreset
+            // 
+            resources.ApplyResources(this.chPreset, "chPreset");
+            // 
+            // lblEffects
+            // 
+            resources.ApplyResources(this.lblEffects, "lblEffects");
+            this.lblEffects.Name = "lblEffects";
+            // 
+            // btnEffectAdd
+            // 
+            this.btnEffectAdd.Image = global::ShareX.ImageEffectsLib.Properties.Resources.plus;
+            resources.ApplyResources(this.btnEffectAdd, "btnEffectAdd");
+            this.btnEffectAdd.Name = "btnEffectAdd";
+            this.btnEffectAdd.UseVisualStyleBackColor = true;
+            this.btnEffectAdd.Click += new System.EventHandler(this.btnEffectAdd_Click);
+            // 
+            // btnEffectRemove
+            // 
+            this.btnEffectRemove.Image = global::ShareX.ImageEffectsLib.Properties.Resources.minus;
+            resources.ApplyResources(this.btnEffectRemove, "btnEffectRemove");
+            this.btnEffectRemove.Name = "btnEffectRemove";
+            this.btnEffectRemove.UseVisualStyleBackColor = true;
+            this.btnEffectRemove.Click += new System.EventHandler(this.btnEffectRemove_Click);
+            // 
+            // btnEffectDuplicate
+            // 
+            this.btnEffectDuplicate.Image = global::ShareX.ImageEffectsLib.Properties.Resources.document_copy;
+            resources.ApplyResources(this.btnEffectDuplicate, "btnEffectDuplicate");
+            this.btnEffectDuplicate.Name = "btnEffectDuplicate";
+            this.btnEffectDuplicate.UseVisualStyleBackColor = true;
+            this.btnEffectDuplicate.Click += new System.EventHandler(this.btnEffectDuplicate_Click);
+            // 
+            // btnEffectClear
+            // 
+            this.btnEffectClear.Image = global::ShareX.ImageEffectsLib.Properties.Resources.eraser;
+            resources.ApplyResources(this.btnEffectClear, "btnEffectClear");
+            this.btnEffectClear.Name = "btnEffectClear";
+            this.btnEffectClear.UseVisualStyleBackColor = true;
+            this.btnEffectClear.Click += new System.EventHandler(this.btnEffectClear_Click);
+            // 
+            // btnEffectRefresh
+            // 
+            this.btnEffectRefresh.Image = global::ShareX.ImageEffectsLib.Properties.Resources.arrow_circle_double_135;
+            resources.ApplyResources(this.btnEffectRefresh, "btnEffectRefresh");
+            this.btnEffectRefresh.Name = "btnEffectRefresh";
+            this.btnEffectRefresh.UseVisualStyleBackColor = true;
+            this.btnEffectRefresh.Click += new System.EventHandler(this.btnEffectRefresh_Click);
+            // 
             // ImageEffectsForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.CancelButton = this.btnClose;
+            this.Controls.Add(this.btnEffectRefresh);
+            this.Controls.Add(this.btnEffectClear);
+            this.Controls.Add(this.btnEffectDuplicate);
+            this.Controls.Add(this.btnEffectRemove);
+            this.Controls.Add(this.btnEffectAdd);
+            this.Controls.Add(this.lblEffects);
+            this.Controls.Add(this.lvPresets);
+            this.Controls.Add(this.btnPresetDuplicate);
+            this.Controls.Add(this.btnPresetRemove);
+            this.Controls.Add(this.btnPresetNew);
             this.Controls.Add(this.scMain);
             this.Controls.Add(this.btnPackager);
             this.Controls.Add(this.lblPresets);
-            this.Controls.Add(this.btnDuplicatePreset);
-            this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.btnUploadImage);
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.txtPresetName);
             this.Controls.Add(this.lblPresetName);
-            this.Controls.Add(this.cbPresets);
-            this.Controls.Add(this.btnRemovePreset);
-            this.Controls.Add(this.btnAddPreset);
             this.Controls.Add(this.mbLoadImage);
             this.Controls.Add(this.eiImageEffects);
             this.Controls.Add(this.btnSaveImage);
-            this.Controls.Add(this.btnDuplicate);
-            this.Controls.Add(this.btnClear);
-            this.Controls.Add(this.btnRemove);
-            this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.lvEffects);
             this.Name = "ImageEffectsForm";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
@@ -330,13 +357,9 @@
         #endregion
 
         private System.Windows.Forms.PropertyGrid pgSettings;
-        private System.Windows.Forms.Button btnAdd;
         private ShareX.HelpersLib.MyListView lvEffects;
         private System.Windows.Forms.ColumnHeader chEffect;
-        private System.Windows.Forms.Button btnRemove;
         private ShareX.HelpersLib.MyPictureBox pbResult;
-        private System.Windows.Forms.Button btnClear;
-        private System.Windows.Forms.Button btnDuplicate;
         private System.Windows.Forms.Button btnSaveImage;
         private ShareX.HelpersLib.ExportImportControl eiImageEffects;
         private System.Windows.Forms.ContextMenuStrip cmsEffects;
@@ -344,19 +367,25 @@
         private System.Windows.Forms.ContextMenuStrip cmsLoadImage;
         private System.Windows.Forms.ToolStripMenuItem tsmiLoadImageFromFile;
         private System.Windows.Forms.ToolStripMenuItem tsmiLoadImageFromClipboard;
-        private System.Windows.Forms.Button btnAddPreset;
-        private System.Windows.Forms.Button btnRemovePreset;
-        private System.Windows.Forms.ComboBox cbPresets;
         private System.Windows.Forms.Label lblPresetName;
         private System.Windows.Forms.TextBox txtPresetName;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button btnOK;
         private System.Windows.Forms.Button btnUploadImage;
-        private System.Windows.Forms.Button btnRefresh;
-        private System.Windows.Forms.Button btnDuplicatePreset;
         private System.Windows.Forms.Label lblPresets;
         private System.Windows.Forms.Button btnPackager;
         private HelpersLib.SplitContainerCustomSplitter scMain;
+        private System.Windows.Forms.Button btnPresetNew;
+        private System.Windows.Forms.Button btnPresetRemove;
+        private System.Windows.Forms.Button btnPresetDuplicate;
+        private HelpersLib.MyListView lvPresets;
+        private System.Windows.Forms.Label lblEffects;
+        private System.Windows.Forms.Button btnEffectAdd;
+        private System.Windows.Forms.Button btnEffectRemove;
+        private System.Windows.Forms.Button btnEffectDuplicate;
+        private System.Windows.Forms.Button btnEffectClear;
+        private System.Windows.Forms.Button btnEffectRefresh;
+        private System.Windows.Forms.ColumnHeader chPreset;
     }
 }
 

@@ -153,9 +153,9 @@ namespace ShareX.HelpersLib
 
         public void UnselectAll()
         {
-            foreach (ListViewItem lvi in SelectedItems)
+            if (MultiSelect)
             {
-                lvi.Selected = false;
+                SelectedItems.Clear();
             }
         }
 
@@ -324,7 +324,7 @@ namespace ShareX.HelpersLib
                     lvwColumnSorter.Order = SortOrder.Ascending;
                 }
 
-                // if the column is tagged as a DateTime, then sort by date
+                // If the column is tagged as a DateTime, then sort by date
                 lvwColumnSorter.SortByDate = Columns[e.Column].Tag is DateTime;
 
                 Cursor.Current = Cursors.WaitCursor;
@@ -350,6 +350,7 @@ namespace ShareX.HelpersLib
         protected override void ScaleControl(SizeF factor, BoundsSpecified specified)
         {
             base.ScaleControl(factor, specified);
+
             foreach (ColumnHeader column in Columns)
             {
                 column.Width = (int)Math.Round(column.Width * factor.Width);

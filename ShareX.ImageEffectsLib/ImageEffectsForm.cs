@@ -192,10 +192,11 @@ namespace ShareX.ImageEffectsLib
             {
                 foreach (ImageEffectPreset preset in Presets)
                 {
-                    cbPresets.Items.Add(preset);
+                    ListViewItem lvi = new ListViewItem(preset.ToString());
+                    lvPresets.Items.Add(lvi);
                 }
 
-                cbPresets.SelectedIndex = SelectedPresetIndex.Clamp(0, Presets.Count - 1);
+                lvPresets.SelectedIndex = SelectedPresetIndex.Clamp(0, Presets.Count - 1);
             }
 
             UpdateControlStates();
@@ -203,13 +204,20 @@ namespace ShareX.ImageEffectsLib
 
         private ImageEffectPreset GetSelectedPreset()
         {
-            int index = cbPresets.SelectedIndex;
+            return GetSelectedPreset(out _);
+        }
+
+        private ImageEffectPreset GetSelectedPreset(out ListViewItem lvi)
+        {
+            int index = lvPresets.SelectedIndex;
 
             if (Presets.IsValidIndex(index))
             {
+                lvi = lvPresets.Items[index];
                 return Presets[index];
             }
 
+            lvi = null;
             return null;
         }
 
@@ -223,9 +231,10 @@ namespace ShareX.ImageEffectsLib
             if (preset != null)
             {
                 Presets.Add(preset);
-                cbPresets.Items.Add(preset);
+                ListViewItem lvi = new ListViewItem(preset.ToString());
+                lvPresets.Items.Add(lvi);
                 ignorePresetsSelectedIndexChanged = true;
-                cbPresets.SelectedIndex = cbPresets.Items.Count - 1;
+                lvPresets.SelectLast();
                 ignorePresetsSelectedIndexChanged = false;
                 LoadPreset(preset);
                 txtPresetName.Focus();
@@ -282,9 +291,9 @@ namespace ShareX.ImageEffectsLib
 
         private void UpdateControlStates()
         {
-            btnRemovePreset.Enabled = btnDuplicatePreset.Enabled = cbPresets.Enabled = txtPresetName.Enabled = btnAdd.Enabled = cbPresets.SelectedIndex > -1;
-            btnRemove.Enabled = btnDuplicate.Enabled = lvEffects.SelectedItems.Count > 0;
-            btnClear.Enabled = lvEffects.Items.Count > 0;
+            btnPresetRemove.Enabled = btnPresetDuplicate.Enabled = lvPresets.Enabled = txtPresetName.Enabled = btnEffectAdd.Enabled = lvPresets.SelectedItems.Count > 0;
+            btnEffectRemove.Enabled = btnEffectDuplicate.Enabled = lvEffects.SelectedItems.Count > 0;
+            btnEffectClear.Enabled = lvEffects.Items.Count > 0;
         }
 
         private void GeneratePreviewImage(int padding)
@@ -447,33 +456,33 @@ namespace ShareX.ImageEffectsLib
             this.ForceActivate();
         }
 
-        private void btnAddPreset_Click(object sender, EventArgs e)
+        private void btnPresetNew_Click(object sender, EventArgs e)
         {
             AddPreset();
         }
 
-        private void btnRemovePreset_Click(object sender, EventArgs e)
+        private void btnPresetRemove_Click(object sender, EventArgs e)
         {
-            int selected = cbPresets.SelectedIndex;
+            int selected = lvPresets.SelectedIndex;
 
             if (selected > -1)
             {
-                cbPresets.Items.RemoveAt(selected);
+                lvPresets.Items.RemoveAt(selected);
                 Presets.RemoveAt(selected);
 
-                if (cbPresets.Items.Count > 0)
+                if (lvPresets.Items.Count > 0)
                 {
-                    cbPresets.SelectedIndex = selected == cbPresets.Items.Count ? cbPresets.Items.Count - 1 : selected;
+                    lvPresets.SelectedIndex = selected == lvPresets.Items.Count ? lvPresets.Items.Count - 1 : selected;
                 }
                 else
                 {
                     ClearFields();
-                    btnAddPreset.Focus();
+                    btnPresetNew.Focus();
                 }
             }
         }
 
-        private void btnDuplicatePreset_Click(object sender, EventArgs e)
+        private void btnPresetDuplicate_Click(object sender, EventArgs e)
         {
             ImageEffectPreset preset = GetSelectedPreset();
 
@@ -484,9 +493,9 @@ namespace ShareX.ImageEffectsLib
             }
         }
 
-        private void cbPresets_SelectedIndexChanged(object sender, EventArgs e)
+        private void lvPresets_SelectedIndexChanged(object sender, EventArgs e)
         {
-            SelectedPresetIndex = cbPresets.SelectedIndex;
+            SelectedPresetIndex = lvPresets.SelectedIndex;
 
             if (!ignorePresetsSelectedIndexChanged)
             {
@@ -500,27 +509,27 @@ namespace ShareX.ImageEffectsLib
 
         private void txtPresetName_TextChanged(object sender, EventArgs e)
         {
-            ImageEffectPreset preset = GetSelectedPreset();
+            ListViewItem lvi;
+            ImageEffectPreset preset = GetSelectedPreset(out lvi);
+
             if (preset != null)
             {
                 preset.Name = txtPresetName.Text;
-                ignorePresetsSelectedIndexChanged = true;
-                cbPresets.RefreshItems();
-                ignorePresetsSelectedIndexChanged = false;
+                lvi.Text = preset.ToString();
             }
         }
 
-        private void btnAdd_Click(object sender, EventArgs e)
+        private void btnEffectAdd_Click(object sender, EventArgs e)
         {
-            cmsEffects.Show(btnAdd, 0, btnAdd.Height + 1);
+            cmsEffects.Show(btnEffectAdd, 0, btnEffectAdd.Height + 1);
         }
 
-        private void btnRemove_Click(object sender, EventArgs e)
+        private void btnEffectRemove_Click(object sender, EventArgs e)
         {
             RemoveSelectedEffects();
         }
 
-        private void btnDuplicate_Click(object sender, EventArgs e)
+        private void btnEffectDuplicate_Click(object sender, EventArgs e)
         {
             ImageEffectPreset preset = GetSelectedPreset();
 
@@ -541,7 +550,7 @@ namespace ShareX.ImageEffectsLib
             }
         }
 
-        private void btnClear_Click(object sender, EventArgs e)
+        private void btnEffectClear_Click(object sender, EventArgs e)
         {
             ImageEffectPreset preset = GetSelectedPreset();
 
@@ -554,7 +563,7 @@ namespace ShareX.ImageEffectsLib
             }
         }
 
-        private void BtnRefresh_Click(object sender, EventArgs e)
+        private void btnEffectRefresh_Click(object sender, EventArgs e)
         {
             UpdatePreview();
         }
