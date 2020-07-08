@@ -254,6 +254,7 @@
             this.lvPresets.AutoFillColumn = true;
             this.lvPresets.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.chPreset});
+            this.lvPresets.DisableDeselect = true;
             this.lvPresets.FullRowSelect = true;
             this.lvPresets.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
             this.lvPresets.HideSelection = false;

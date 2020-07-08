@@ -291,9 +291,9 @@ namespace ShareX.ImageEffectsLib
 
         private void UpdateControlStates()
         {
-            btnPresetRemove.Enabled = btnPresetDuplicate.Enabled = lvPresets.Enabled = txtPresetName.Enabled = btnEffectAdd.Enabled = lvPresets.SelectedItems.Count > 0;
+            btnPresetRemove.Enabled = btnPresetDuplicate.Enabled = txtPresetName.Enabled = btnEffectAdd.Enabled = lvPresets.SelectedItems.Count > 0;
+            btnEffectClear.Enabled = btnEffectRefresh.Enabled = eiImageEffects.Enabled = btnPackager.Enabled = lvEffects.Items.Count > 0;
             btnEffectRemove.Enabled = btnEffectDuplicate.Enabled = lvEffects.SelectedItems.Count > 0;
-            btnEffectClear.Enabled = lvEffects.Items.Count > 0;
         }
 
         private void GeneratePreviewImage(int padding)
@@ -394,6 +394,7 @@ namespace ShareX.ImageEffectsLib
         {
             txtPresetName.Text = "";
             lvEffects.Items.Clear();
+            pgSettings.SelectedObject = null;
             UpdatePreview();
         }
 

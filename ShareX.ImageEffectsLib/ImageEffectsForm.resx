@@ -147,9 +147,6 @@
   <data name="lvEffects.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left</value>
   </data>
-  <data name="chEffect.Width" type="System.Int32, mscorlib">
-    <value>164</value>
-  </data>
   <data name="lvEffects.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 322</value>
   </data>
@@ -170,6 +167,9 @@
   </data>
   <data name="&gt;&gt;lvEffects.ZOrder" xml:space="preserve">
     <value>23</value>
+  </data>
+  <data name="chEffect.Width" type="System.Int32, mscorlib">
+    <value>164</value>
   </data>
   <data name="btnSaveImage.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
@@ -624,6 +624,9 @@
   <data name="&gt;&gt;btnPresetDuplicate.ZOrder" xml:space="preserve">
     <value>9</value>
   </data>
+  <data name="chPreset.Width" type="System.Int32, mscorlib">
+    <value>164</value>
+  </data>
   <data name="lvPresets.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 50</value>
   </data>
@@ -644,9 +647,6 @@
   </data>
   <data name="&gt;&gt;lvPresets.ZOrder" xml:space="preserve">
     <value>8</value>
-  </data>
-  <data name="chPreset.Width" type="System.Int32, mscorlib">
-    <value>164</value>
   </data>
   <data name="lblEffects.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
