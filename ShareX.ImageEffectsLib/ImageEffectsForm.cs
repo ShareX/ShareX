@@ -459,6 +459,7 @@ namespace ShareX.ImageEffectsLib
             this.ForceActivate();
 
             pauseUpdate = false;
+            lvPresets.EnsureSelectedVisible();
             UpdatePreview();
         }
 

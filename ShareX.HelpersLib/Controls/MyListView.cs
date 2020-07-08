@@ -161,6 +161,14 @@ namespace ShareX.HelpersLib
             }
         }
 
+        public void EnsureSelectedVisible()
+        {
+            if (SelectedItems.Count > 0)
+            {
+                SelectedItems[0].EnsureVisible();
+            }
+        }
+
         protected override void OnKeyDown(KeyEventArgs e)
         {
             if (MultiSelect && e.Control && e.KeyCode == Keys.A)
