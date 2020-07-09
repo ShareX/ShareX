@@ -54,7 +54,6 @@
             this.ttMain = new System.Windows.Forms.ToolTip(this.components);
             this.lvPresets = new ShareX.HelpersLib.MyListView();
             this.chPreset = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.scMain = new ShareX.HelpersLib.SplitContainerCustomSplitter();
             this.pgSettings = new System.Windows.Forms.PropertyGrid();
             this.pbResult = new ShareX.HelpersLib.MyPictureBox();
             this.mbLoadImage = new ShareX.HelpersLib.MenuButton();
@@ -62,10 +61,6 @@
             this.lvEffects = new ShareX.HelpersLib.MyListView();
             this.chEffect = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.cmsLoadImage.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.scMain)).BeginInit();
-            this.scMain.Panel1.SuspendLayout();
-            this.scMain.Panel2.SuspendLayout();
-            this.scMain.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnSaveImage
@@ -234,6 +229,7 @@
             // 
             this.lvPresets.AllowDrop = true;
             this.lvPresets.AllowItemDrag = true;
+            resources.ApplyResources(this.lvPresets, "lvPresets");
             this.lvPresets.AutoFillColumn = true;
             this.lvPresets.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.chPreset});
@@ -241,7 +237,6 @@
             this.lvPresets.FullRowSelect = true;
             this.lvPresets.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
             this.lvPresets.HideSelection = false;
-            resources.ApplyResources(this.lvPresets, "lvPresets");
             this.lvPresets.MultiSelect = false;
             this.lvPresets.Name = "lvPresets";
             this.lvPresets.UseCompatibleStateImageBehavior = false;
@@ -253,21 +248,6 @@
             // 
             resources.ApplyResources(this.chPreset, "chPreset");
             // 
-            // scMain
-            // 
-            resources.ApplyResources(this.scMain, "scMain");
-            this.scMain.Name = "scMain";
-            // 
-            // scMain.Panel1
-            // 
-            this.scMain.Panel1.Controls.Add(this.pgSettings);
-            // 
-            // scMain.Panel2
-            // 
-            this.scMain.Panel2.Controls.Add(this.pbResult);
-            this.scMain.SplitterColor = System.Drawing.Color.White;
-            this.scMain.SplitterLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(189)))), ((int)(((byte)(189)))));
-            // 
             // pgSettings
             // 
             resources.ApplyResources(this.pgSettings, "pgSettings");
@@ -278,9 +258,9 @@
             // 
             // pbResult
             // 
+            resources.ApplyResources(this.pbResult, "pbResult");
             this.pbResult.BackColor = System.Drawing.SystemColors.Window;
             this.pbResult.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            resources.ApplyResources(this.pbResult, "pbResult");
             this.pbResult.DrawCheckeredBackground = true;
             this.pbResult.EnableRightClickMenu = true;
             this.pbResult.FullscreenOnClick = true;
@@ -339,6 +319,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.CancelButton = this.btnClose;
+            this.Controls.Add(this.pbResult);
+            this.Controls.Add(this.pgSettings);
             this.Controls.Add(this.btnEffectRefresh);
             this.Controls.Add(this.btnEffectClear);
             this.Controls.Add(this.btnEffectDuplicate);
@@ -349,7 +331,6 @@
             this.Controls.Add(this.btnPresetDuplicate);
             this.Controls.Add(this.btnPresetRemove);
             this.Controls.Add(this.btnPresetNew);
-            this.Controls.Add(this.scMain);
             this.Controls.Add(this.btnPackager);
             this.Controls.Add(this.lblPresets);
             this.Controls.Add(this.btnUploadImage);
@@ -365,10 +346,6 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Shown += new System.EventHandler(this.ImageEffectsForm_Shown);
             this.cmsLoadImage.ResumeLayout(false);
-            this.scMain.Panel1.ResumeLayout(false);
-            this.scMain.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.scMain)).EndInit();
-            this.scMain.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -394,7 +371,6 @@
         private System.Windows.Forms.Button btnUploadImage;
         private System.Windows.Forms.Label lblPresets;
         private System.Windows.Forms.Button btnPackager;
-        private HelpersLib.SplitContainerCustomSplitter scMain;
         private System.Windows.Forms.Button btnPresetNew;
         private System.Windows.Forms.Button btnPresetRemove;
         private System.Windows.Forms.Button btnPresetDuplicate;
