@@ -133,10 +133,10 @@
     <Compile Include="Adjustments\Inverse.cs" />
     <Compile Include="Adjustments\Saturation.cs" />
     <Compile Include="ImageEffectPackager.cs" />
-    <Compile Include="ImageEffectPackagerForm.cs">
+    <Compile Include="Forms\ImageEffectPackagerForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ImageEffectPackagerForm.Designer.cs">
+    <Compile Include="Forms\ImageEffectPackagerForm.Designer.cs">
       <DependentUpon>ImageEffectPackagerForm.cs</DependentUpon>
     </Compile>
     <Compile Include="ImageEffectPreset.cs" />
@@ -152,10 +152,10 @@
     <Compile Include="Manipulations\Flip.cs" />
     <Compile Include="Manipulations\Scale.cs" />
     <Compile Include="ImageEffect.cs" />
-    <Compile Include="ImageEffectsForm.cs">
+    <Compile Include="Forms\ImageEffectsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ImageEffectsForm.Designer.cs">
+    <Compile Include="Forms\ImageEffectsForm.Designer.cs">
       <DependentUpon>ImageEffectsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Drawings\DrawBorder.cs" />
@@ -169,10 +169,10 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="WatermarkConfig.cs" />
-    <Compile Include="WatermarkForm.cs">
+    <Compile Include="Forms\WatermarkForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="WatermarkForm.Designer.cs">
+    <Compile Include="Forms\WatermarkForm.Designer.cs">
       <DependentUpon>WatermarkForm.cs</DependentUpon>
     </Compile>
   </ItemGroup>
@@ -183,64 +183,64 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="ImageEffectPackagerForm.resx">
+    <EmbeddedResource Include="Forms\ImageEffectPackagerForm.resx">
       <DependentUpon>ImageEffectPackagerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ImageEffectsForm.de.resx">
+    <EmbeddedResource Include="Forms\ImageEffectsForm.de.resx">
       <DependentUpon>ImageEffectsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ImageEffectsForm.es-MX.resx">
+    <EmbeddedResource Include="Forms\ImageEffectsForm.es-MX.resx">
       <DependentUpon>ImageEffectsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ImageEffectsForm.es.resx">
+    <EmbeddedResource Include="Forms\ImageEffectsForm.es.resx">
       <DependentUpon>ImageEffectsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ImageEffectsForm.fa-IR.resx">
+    <EmbeddedResource Include="Forms\ImageEffectsForm.fa-IR.resx">
       <DependentUpon>ImageEffectsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ImageEffectsForm.fr.resx">
+    <EmbeddedResource Include="Forms\ImageEffectsForm.fr.resx">
       <DependentUpon>ImageEffectsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ImageEffectsForm.hu.resx">
+    <EmbeddedResource Include="Forms\ImageEffectsForm.hu.resx">
       <DependentUpon>ImageEffectsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ImageEffectsForm.id-ID.resx">
+    <EmbeddedResource Include="Forms\ImageEffectsForm.id-ID.resx">
       <DependentUpon>ImageEffectsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ImageEffectsForm.it-IT.resx">
+    <EmbeddedResource Include="Forms\ImageEffectsForm.it-IT.resx">
       <DependentUpon>ImageEffectsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ImageEffectsForm.ko-KR.resx">
+    <EmbeddedResource Include="Forms\ImageEffectsForm.ko-KR.resx">
       <DependentUpon>ImageEffectsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ImageEffectsForm.nl-NL.resx">
+    <EmbeddedResource Include="Forms\ImageEffectsForm.nl-NL.resx">
       <DependentUpon>ImageEffectsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ImageEffectsForm.pt-BR.resx">
+    <EmbeddedResource Include="Forms\ImageEffectsForm.pt-BR.resx">
       <DependentUpon>ImageEffectsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ImageEffectsForm.pt-PT.resx">
+    <EmbeddedResource Include="Forms\ImageEffectsForm.pt-PT.resx">
       <DependentUpon>ImageEffectsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ImageEffectsForm.resx">
+    <EmbeddedResource Include="Forms\ImageEffectsForm.resx">
       <DependentUpon>ImageEffectsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ImageEffectsForm.ru.resx">
+    <EmbeddedResource Include="Forms\ImageEffectsForm.ru.resx">
       <DependentUpon>ImageEffectsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ImageEffectsForm.tr.resx">
+    <EmbeddedResource Include="Forms\ImageEffectsForm.tr.resx">
       <DependentUpon>ImageEffectsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ImageEffectsForm.uk.resx">
+    <EmbeddedResource Include="Forms\ImageEffectsForm.uk.resx">
       <DependentUpon>ImageEffectsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ImageEffectsForm.vi-VN.resx">
+    <EmbeddedResource Include="Forms\ImageEffectsForm.vi-VN.resx">
       <DependentUpon>ImageEffectsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ImageEffectsForm.zh-CN.resx">
+    <EmbeddedResource Include="Forms\ImageEffectsForm.zh-CN.resx">
       <DependentUpon>ImageEffectsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ImageEffectsForm.zh-TW.resx">
+    <EmbeddedResource Include="Forms\ImageEffectsForm.zh-TW.resx">
       <DependentUpon>ImageEffectsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.de.resx" />
