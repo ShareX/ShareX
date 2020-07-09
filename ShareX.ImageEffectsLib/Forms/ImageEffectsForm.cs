@@ -396,8 +396,15 @@ namespace ShareX.ImageEffectsLib
         {
             txtPresetName.Text = "";
             lvEffects.Items.Clear();
-            pgSettings.SelectedObject = null;
+            ClearSelectedEffect();
             UpdatePreview();
+        }
+
+        private void ClearSelectedEffect()
+        {
+            // TODO: Translate
+            lblEffect.Text = "Effect:";
+            pgSettings.SelectedObject = null;
         }
 
         private void AddEffect(ImageEffect imageEffect, ImageEffectPreset preset = null)
@@ -434,7 +441,7 @@ namespace ShareX.ImageEffectsLib
         {
             txtPresetName.Text = preset.Name;
             lvEffects.Items.Clear();
-            pgSettings.SelectedObject = null;
+            ClearSelectedEffect();
 
             foreach (ImageEffect imageEffect in preset.Effects)
             {
@@ -560,7 +567,7 @@ namespace ShareX.ImageEffectsLib
             {
                 lvEffects.Items.Clear();
                 preset.Effects.Clear();
-                pgSettings.SelectedObject = null;
+                ClearSelectedEffect();
                 UpdatePreview();
             }
         }
@@ -583,15 +590,16 @@ namespace ShareX.ImageEffectsLib
 
         private void lvEffects_SelectedIndexChanged(object sender, EventArgs e)
         {
-            pgSettings.SelectedObject = null;
+            ClearSelectedEffect();
 
             if (lvEffects.SelectedItems.Count > 0)
             {
                 ListViewItem lvi = lvEffects.SelectedItems[0];
 
-                if (lvi.Tag is ImageEffect)
+                if (lvi.Tag is ImageEffect ie)
                 {
-                    pgSettings.SelectedObject = lvi.Tag;
+                    lblEffect.Text = ie.GetType().GetDescription() + ":";
+                    pgSettings.SelectedObject = ie;
                 }
             }
 

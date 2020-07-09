@@ -60,6 +60,7 @@
             this.eiImageEffects = new ShareX.HelpersLib.ExportImportControl();
             this.lvEffects = new ShareX.HelpersLib.MyListView();
             this.chEffect = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.lblEffect = new System.Windows.Forms.Label();
             this.cmsLoadImage.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -313,12 +314,18 @@
             // 
             resources.ApplyResources(this.chEffect, "chEffect");
             // 
+            // lblEffect
+            // 
+            resources.ApplyResources(this.lblEffect, "lblEffect");
+            this.lblEffect.Name = "lblEffect";
+            // 
             // ImageEffectsForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.CancelButton = this.btnClose;
+            this.Controls.Add(this.lblEffect);
             this.Controls.Add(this.pbResult);
             this.Controls.Add(this.pgSettings);
             this.Controls.Add(this.btnEffectRefresh);
@@ -383,6 +390,7 @@
         private System.Windows.Forms.Button btnEffectRefresh;
         private System.Windows.Forms.ColumnHeader chPreset;
         private System.Windows.Forms.ToolTip ttMain;
+        private System.Windows.Forms.Label lblEffect;
     }
 }
 
