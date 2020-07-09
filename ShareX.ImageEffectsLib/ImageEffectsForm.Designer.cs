@@ -232,6 +232,8 @@
             // 
             // lvPresets
             // 
+            this.lvPresets.AllowDrop = true;
+            this.lvPresets.AllowItemDrag = true;
             this.lvPresets.AutoFillColumn = true;
             this.lvPresets.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.chPreset});
@@ -244,6 +246,7 @@
             this.lvPresets.Name = "lvPresets";
             this.lvPresets.UseCompatibleStateImageBehavior = false;
             this.lvPresets.View = System.Windows.Forms.View.Details;
+            this.lvPresets.ItemMoving += new ShareX.HelpersLib.MyListView.ListViewItemMovedEventHandler(this.lvPresets_ItemMoving);
             this.lvPresets.SelectedIndexChanged += new System.EventHandler(this.lvPresets_SelectedIndexChanged);
             // 
             // chPreset

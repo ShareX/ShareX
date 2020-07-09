@@ -495,6 +495,11 @@ namespace ShareX.ImageEffectsLib
             }
         }
 
+        private void lvPresets_ItemMoving(object sender, int oldIndex, int newIndex)
+        {
+            Presets.Move(oldIndex, newIndex);
+        }
+
         private void lvPresets_SelectedIndexChanged(object sender, EventArgs e)
         {
             SelectedPresetIndex = lvPresets.SelectedIndex;

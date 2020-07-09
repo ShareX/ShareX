@@ -35,6 +35,7 @@ namespace ShareX.HelpersLib
     {
         public delegate void ListViewItemMovedEventHandler(object sender, int oldIndex, int newIndex);
 
+        public event ListViewItemMovedEventHandler ItemMoving;
         public event ListViewItemMovedEventHandler ItemMoved;
 
         [DefaultValue(false)]
@@ -285,6 +286,8 @@ namespace ShareX.HelpersLib
                     newIndex = Items.Count - 1;
                 }
 
+                OnItemMoving(oldIndex, newIndex);
+
                 Items.RemoveAt(oldIndex);
                 Items.Insert(newIndex, lvi);
 
@@ -295,12 +298,14 @@ namespace ShareX.HelpersLib
             Invalidate();
         }
 
+        protected void OnItemMoving(int oldIndex, int newIndex)
+        {
+            ItemMoving?.Invoke(this, oldIndex, newIndex);
+        }
+
         protected void OnItemMoved(int oldIndex, int newIndex)
         {
-            if (ItemMoved != null)
-            {
-                ItemMoved(this, oldIndex, newIndex);
-            }
+            ItemMoved?.Invoke(this, oldIndex, newIndex);
         }
 
         protected override void OnDragLeave(EventArgs e)

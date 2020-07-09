@@ -171,6 +171,15 @@
   <metadata name="cmsLoadImage.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>126, 17</value>
   </metadata>
+  <data name="cmsLoadImage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>131, 48</value>
+  </data>
+  <data name="&gt;&gt;cmsLoadImage.Name" xml:space="preserve">
+    <value>cmsLoadImage</value>
+  </data>
+  <data name="&gt;&gt;cmsLoadImage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="tsmiLoadImageFromFile.Size" type="System.Drawing.Size, System.Drawing">
     <value>130, 22</value>
   </data>
@@ -182,15 +191,6 @@
   </data>
   <data name="tsmiLoadImageFromClipboard.Text" xml:space="preserve">
     <value>From clipboard</value>
-  </data>
-  <data name="cmsLoadImage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>131, 48</value>
-  </data>
-  <data name="&gt;&gt;cmsLoadImage.Name" xml:space="preserve">
-    <value>cmsLoadImage</value>
-  </data>
-  <data name="&gt;&gt;cmsLoadImage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="lblPresetName.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -399,6 +399,9 @@
   <data name="&gt;&gt;btnPackager.ZOrder" xml:space="preserve">
     <value>13</value>
   </data>
+  <metadata name="ttMain.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>260, 17</value>
+  </metadata>
   <data name="btnPresetNew.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -411,9 +414,6 @@
   <data name="btnPresetNew.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
-  <metadata name="ttMain.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>260, 17</value>
-  </metadata>
   <data name="btnPresetNew.ToolTip" xml:space="preserve">
     <value>New</value>
   </data>
@@ -648,6 +648,9 @@
   <data name="&gt;&gt;btnEffectRefresh.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <metadata name="ttMain.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>260, 17</value>
+  </metadata>
   <data name="chPreset.Width" type="System.Int32, mscorlib">
     <value>164</value>
   </data>
@@ -834,9 +837,6 @@
   <data name="lvEffects.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left</value>
   </data>
-  <data name="chEffect.Width" type="System.Int32, mscorlib">
-    <value>164</value>
-  </data>
   <data name="lvEffects.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 323</value>
   </data>
@@ -858,6 +858,9 @@
   <data name="&gt;&gt;lvEffects.ZOrder" xml:space="preserve">
     <value>23</value>
   </data>
+  <data name="chEffect.Width" type="System.Int32, mscorlib">
+    <value>164</value>
+  </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -869,6 +872,9 @@
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>1025, 585</value>
+  </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>
