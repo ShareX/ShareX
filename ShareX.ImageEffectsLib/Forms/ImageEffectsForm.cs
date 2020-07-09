@@ -249,7 +249,7 @@ namespace ShareX.ImageEffectsLib
                     {
                         if (AutoGeneratePreviewImage)
                         {
-                            GeneratePreviewImage(25);
+                            GeneratePreviewImage(24);
                         }
 
                         if (PreviewImage != null)
@@ -300,21 +300,18 @@ namespace ShareX.ImageEffectsLib
         {
             if (pbResult.ClientSize.Width > 0 && pbResult.ClientSize.Height > 0)
             {
-                int horizontalPadding = padding, verticalPadding = padding;
+                int size = Math.Min(pbResult.ClientSize.Width, pbResult.ClientSize.Height);
                 int minSizePadding = 300;
 
-                if (pbResult.ClientSize.Width < (horizontalPadding * 2) + minSizePadding)
+                if (size < minSizePadding + (padding * 2))
                 {
-                    horizontalPadding = 0;
+                    padding = 0;
                 }
 
-                if (pbResult.ClientSize.Height < (verticalPadding * 2) + minSizePadding)
-                {
-                    verticalPadding = 0;
-                }
+                size = size - (padding * 2);
 
                 if (PreviewImage != null) PreviewImage.Dispose();
-                PreviewImage = new Bitmap(pbResult.ClientSize.Width - (horizontalPadding * 2), pbResult.ClientSize.Height - (verticalPadding * 2));
+                PreviewImage = new Bitmap(size, size);
 
                 Color backgroundColor;
 
