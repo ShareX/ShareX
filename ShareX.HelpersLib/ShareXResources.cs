@@ -25,6 +25,7 @@
 
 using ShareX.HelpersLib.Properties;
 using System;
+using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -187,6 +188,33 @@ namespace ShareX.HelpersLib
             {
                 ApplyCustomThemeToControl(child);
             }
+        }
+
+        public static void ApplyCustomThemeToComponents(IContainer container)
+        {
+            foreach (IComponent component in container.Components)
+            {
+                switch (component)
+                {
+                    case ContextMenuStrip cms:
+                        ApplyCustomThemeToContextMenuStrip(cms);
+                        break;
+                    case ToolTip tt:
+                        tt.ForeColor = Theme.TextColor;
+                        tt.BackColor = Theme.BackgroundColor;
+                        tt.OwnerDraw = true;
+                        tt.Draw -= ToolTip_Draw;
+                        tt.Draw += ToolTip_Draw;
+                        break;
+                }
+            }
+        }
+
+        private static void ToolTip_Draw(object sender, DrawToolTipEventArgs e)
+        {
+            e.DrawBackground();
+            e.DrawBorder();
+            e.DrawText();
         }
 
         public static void ApplyCustomThemeToContextMenuStrip(ContextMenuStrip cms)

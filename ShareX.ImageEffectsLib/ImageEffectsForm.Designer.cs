@@ -227,7 +227,7 @@
             // ttMain
             // 
             this.ttMain.AutoPopDelay = 5000;
-            this.ttMain.InitialDelay = 300;
+            this.ttMain.InitialDelay = 200;
             this.ttMain.ReshowDelay = 100;
             // 
             // lvPresets

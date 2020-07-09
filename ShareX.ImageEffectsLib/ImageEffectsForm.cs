@@ -58,7 +58,7 @@ namespace ShareX.ImageEffectsLib
 
             if (ShareXResources.UseCustomTheme)
             {
-                ShareXResources.ApplyCustomThemeToContextMenuStrip(cmsEffects);
+                ShareXResources.ApplyCustomThemeToComponents(components);
             }
 
             PreviewImage = bmp;
