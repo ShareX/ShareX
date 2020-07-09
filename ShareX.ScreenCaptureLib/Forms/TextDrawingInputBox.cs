@@ -327,13 +327,6 @@ namespace ShareX.ScreenCaptureLib
 
         private void UpdateButtonImages()
         {
-            if (ShareXResources.UseCustomTheme)
-            {
-                ShareXResources.ApplyCustomThemeToContextMenuStrip(cmsGradient);
-                ShareXResources.ApplyCustomThemeToContextMenuStrip(cmsAlignmentHorizontal);
-                ShareXResources.ApplyCustomThemeToContextMenuStrip(cmsAlignmentVertical);
-            }
-
             cbBold.Image = ShareXResources.IsDarkTheme ? Resources.edit_bold_white : Resources.edit_bold;
             cbItalic.Image = ShareXResources.IsDarkTheme ? Resources.edit_italic_white : Resources.edit_italic;
             cbUnderline.Image = ShareXResources.IsDarkTheme ? Resources.edit_underline_white : Resources.edit_underline;

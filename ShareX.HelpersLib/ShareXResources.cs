@@ -27,6 +27,7 @@ using ShareX.HelpersLib.Properties;
 using System;
 using System.ComponentModel;
 using System.Drawing;
+using System.Reflection;
 using System.Windows.Forms;
 
 namespace ShareX.HelpersLib
@@ -76,6 +77,9 @@ namespace ShareX.HelpersLib
             if (UseCustomTheme)
             {
                 ApplyCustomThemeToControl(form);
+
+                IContainer components = form.GetType().GetField("components", BindingFlags.NonPublic | BindingFlags.Instance)?.GetValue(form) as IContainer;
+                ApplyCustomThemeToComponents(components);
 
                 if (form.IsHandleCreated)
                 {
@@ -190,22 +194,25 @@ namespace ShareX.HelpersLib
             }
         }
 
-        public static void ApplyCustomThemeToComponents(IContainer container)
+        private static void ApplyCustomThemeToComponents(IContainer container)
         {
-            foreach (IComponent component in container.Components)
+            if (container != null)
             {
-                switch (component)
+                foreach (IComponent component in container.Components)
                 {
-                    case ContextMenuStrip cms:
-                        ApplyCustomThemeToContextMenuStrip(cms);
-                        break;
-                    case ToolTip tt:
-                        tt.ForeColor = Theme.TextColor;
-                        tt.BackColor = Theme.BackgroundColor;
-                        tt.OwnerDraw = true;
-                        tt.Draw -= ToolTip_Draw;
-                        tt.Draw += ToolTip_Draw;
-                        break;
+                    switch (component)
+                    {
+                        case ContextMenuStrip cms:
+                            ApplyCustomThemeToContextMenuStrip(cms);
+                            break;
+                        case ToolTip tt:
+                            tt.ForeColor = Theme.TextColor;
+                            tt.BackColor = Theme.BackgroundColor;
+                            tt.OwnerDraw = true;
+                            tt.Draw -= ToolTip_Draw;
+                            tt.Draw += ToolTip_Draw;
+                            break;
+                    }
                 }
             }
         }
@@ -219,9 +226,12 @@ namespace ShareX.HelpersLib
 
         public static void ApplyCustomThemeToContextMenuStrip(ContextMenuStrip cms)
         {
-            cms.Renderer = new ToolStripDarkRenderer();
-            cms.Opacity = Theme.ContextMenuOpacityDouble;
-            ApplyCustomThemeToToolStripItemCollection(cms.Items);
+            if (cms != null)
+            {
+                cms.Renderer = new ToolStripDarkRenderer();
+                cms.Opacity = Theme.ContextMenuOpacityDouble;
+                ApplyCustomThemeToToolStripItemCollection(cms.Items);
+            }
         }
 
         private static void ApplyCustomThemeToToolStripItemCollection(ToolStripItemCollection collection)

@@ -56,11 +56,6 @@ namespace ShareX.ImageEffectsLib
             InitializeComponent();
             ShareXResources.ApplyTheme(this);
 
-            if (ShareXResources.UseCustomTheme)
-            {
-                ShareXResources.ApplyCustomThemeToComponents(components);
-            }
-
             PreviewImage = bmp;
             if (PreviewImage == null)
             {
