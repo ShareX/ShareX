@@ -4925,6 +4925,7 @@ namespace ShareX.UploadersLib
             // UploadersConfigForm
             // 
             resources.ApplyResources(this, "$this");
+            this.AutoScaleDimensions = new System.Drawing.SizeF(DeviceDpi, DeviceDpi);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.Controls.Add(this.tcUploaders);
