@@ -182,7 +182,7 @@
             // AboutForm
             // 
             resources.ApplyResources(this, "$this");
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.CancelButton = this.btnClose;
             this.Controls.Add(this.lblBuild);
@@ -202,9 +202,7 @@
             this.Controls.Add(this.pbTR);
             this.Controls.Add(this.lblProductName);
             this.Controls.Add(this.cLogo);
-            this.MaximizeBox = false;
             this.Name = "AboutForm";
-            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Shown += new System.EventHandler(this.AboutForm_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.pbMikeURL)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbAU)).EndInit();
