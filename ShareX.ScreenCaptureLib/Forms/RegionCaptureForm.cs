@@ -1047,7 +1047,6 @@ namespace ShareX.ScreenCaptureLib
                 return text;
             }
 
-
             // ASPECT RATIO
             double adx = 1;
             double ady = 1;
