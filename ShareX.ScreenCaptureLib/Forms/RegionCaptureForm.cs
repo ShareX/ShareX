@@ -1047,7 +1047,20 @@ namespace ShareX.ScreenCaptureLib
                 return text;
             }
 
-            return string.Format(Resources.RectangleRegion_GetAreaText_Area, rect.X, rect.Y, rect.Width, rect.Height);
+
+            // ASPECT RATIO
+            double adx = 1;
+            double ady = 1;
+            // the smaller number of W;H will be used as a reference
+            if (rect.Width<rect.Height)
+            {
+                ady = (double)rect.Height / (double)rect.Width;
+            } else if (rect.Height<rect.Width)
+            {
+                adx = (double)rect.Width / (double)rect.Height;
+            }
+
+            return string.Format(Resources.RectangleRegion_GetAreaText_Area, rect.X, rect.Y, rect.Width, rect.Height, adx, ady);
         }
 
         private string GetInfoText()

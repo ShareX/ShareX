@@ -287,7 +287,7 @@
     <value>Capture</value>
   </data>
   <data name="RectangleRegion_GetAreaText_Area" xml:space="preserve">
-    <value>X: {0} Y: {1} W: {2} H: {3}</value>
+    <value>X: {0} Y: {1} W: {2} H: {3} ASPECT: {4:0.##}:{5:0.##}</value>
   </data>
   <data name="control" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\control.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
