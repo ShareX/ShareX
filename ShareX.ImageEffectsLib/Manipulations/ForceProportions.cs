@@ -36,7 +36,7 @@ namespace ShareX.ImageEffectsLib
         private int width = 1;
         private int height = 1;
 
-        //[DefaultValue(typeof(Padding), "0, 0, 0, 0")]
+        [DefaultValue(typeof(int), "1")]
         public int Width
         {
             get {
@@ -47,6 +47,7 @@ namespace ShareX.ImageEffectsLib
                 width = Math.Max(1, value);
             }
         }
+        [DefaultValue(typeof(int), "1")]
         public int Height
         {
             get
@@ -76,18 +77,14 @@ namespace ShareX.ImageEffectsLib
 
         public override Bitmap Apply(Bitmap bmp)
         {
-            // NOTE: I don't know if input bitmap can have 0 as height
-            // TODO: remove this if it can't
-            if (bmp.Width < 1 || bmp.Height < 1)
-                return bmp;
-
-            float target_ratio = (float)width / (float)height;
             float current_ratio = (float)bmp.Width / (float)bmp.Height;
+            float target_ratio = (float)width / (float)height;
+            bool is_target_wider = target_ratio > current_ratio;
+
             int target_width = bmp.Width;
             int target_height = bmp.Height;
 
-            bool is_target_wider = target_ratio > current_ratio;
-            if(Method == ForceMethod.Crop)
+            if (Method == ForceMethod.Crop)
             {
                 if (is_target_wider)
                     target_height = (int)Math.Round(bmp.Width / target_ratio);
@@ -101,28 +98,13 @@ namespace ShareX.ImageEffectsLib
                     : 0;
                 return ImageHelpers.CropBitmap(bmp, new Rectangle(margin_left, margin_top, target_width, target_height));
             }
-            if(Method == ForceMethod.Grow)
+            if (Method == ForceMethod.Grow)
             {
                 if (is_target_wider)
                     target_width = (int)Math.Round(bmp.Height * target_ratio);
                 else
                     target_height = (int)Math.Round(bmp.Width / target_ratio);
-                int margin_hor = is_target_wider
-                    ? (target_width - bmp.Width) / 2
-                    : 0;
-                int margin_ver = is_target_wider
-                    ? 0
-                    : (target_height - bmp.Height) / 2;
-
-                Bitmap bmpResult = ImageHelpers.AddCanvas(bmp, new Padding(margin_hor, margin_ver, margin_hor, margin_ver), GrowFillColor);
-
-                if (bmpResult == null)
-                {
-                    return bmp;
-                }
-
-                bmp.Dispose();
-                return bmpResult;
+                return ImageHelpers.ResizeImage(bmp, target_width, target_height, false, true, GrowFillColor);
             }
 
             return bmp;
