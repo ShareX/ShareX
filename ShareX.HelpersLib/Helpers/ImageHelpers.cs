@@ -457,7 +457,7 @@ namespace ShareX.HelpersLib
             return bmpResult;
         }
 
-        public static Bitmap Outline(Bitmap bmp, int borderSize, Color borderColor)
+        public static Bitmap OutlineOld(Bitmap bmp, int borderSize, Color borderColor)
         {
             Bitmap bmpResult = bmp.CreateEmptyBitmap(borderSize * 2, borderSize * 2);
 
@@ -486,6 +486,93 @@ namespace ShareX.HelpersLib
             }
 
             return bmpResult;
+        }
+
+        public static Bitmap Outline(Bitmap bmp, int borderSize, Color borderColor, int padding = 0, bool outlineOnly = false)
+        {
+            Bitmap outline = MakeOutline(bmp, padding, padding + borderSize + 1, borderColor);
+
+            if (outlineOnly)
+            {
+                bmp.Dispose();
+                return outline;
+            }
+            else
+            {
+                using (outline)
+                using (Graphics g = Graphics.FromImage(bmp))
+                {
+                    g.DrawImage(outline, 0, 0, outline.Width, outline.Height);
+                }
+
+                return bmp;
+            }
+        }
+
+        public static Bitmap MakeOutline(Bitmap bmp, int min_radius, int max_radius, Color color)
+        {
+            Bitmap bmpResult = bmp.CreateEmptyBitmap();
+
+            using (UnsafeBitmap source = new UnsafeBitmap(bmp, true, ImageLockMode.ReadOnly))
+            using (UnsafeBitmap dest = new UnsafeBitmap(bmpResult, true, ImageLockMode.WriteOnly))
+            {
+                for (int x = 0; x < source.Width; x++)
+                {
+                    for (int y = 0; y < source.Height; y++)
+                    {
+                        float dist = DistanceToThreshold(source, x, y, max_radius, 255);
+
+                        if (dist > min_radius && dist < max_radius)
+                        {
+                            byte alpha = 255;
+
+                            if (dist - min_radius < 1)
+                            {
+                                alpha = (byte)(255 * (dist - min_radius));
+                            }
+                            else if (max_radius - dist < 1)
+                            {
+                                alpha = (byte)(255 * (max_radius - dist));
+                            }
+
+                            ColorBgra bgra = new ColorBgra(color.B, color.G, color.R, alpha);
+                            dest.SetPixel(x, y, bgra);
+                        }
+                    }
+                }
+            }
+
+            return bmpResult;
+        }
+
+        private static float DistanceToThreshold(UnsafeBitmap unsafeBitmap, int x, int y, int radius, int threshold)
+        {
+            int minx = Math.Max(x - radius, 0);
+            int maxx = Math.Min(x + radius, unsafeBitmap.Width - 1);
+            int miny = Math.Max(y - radius, 0);
+            int maxy = Math.Min(y + radius, unsafeBitmap.Height - 1);
+            int dist2 = radius * radius + 1;
+
+            for (int tx = minx; tx <= maxx; tx++)
+            {
+                for (int ty = miny; ty <= maxy; ty++)
+                {
+                    ColorBgra color = unsafeBitmap.GetPixel(tx, ty);
+
+                    if (color.Alpha >= threshold)
+                    {
+                        int dx = tx - x;
+                        int dy = ty - y;
+                        int test_dist2 = dx * dx + dy * dy;
+                        if (test_dist2 < dist2)
+                        {
+                            dist2 = test_dist2;
+                        }
+                    }
+                }
+            }
+
+            return (float)Math.Sqrt(dist2);
         }
 
         public static Bitmap DrawReflection(Bitmap bmp, int percentage, int maxAlpha, int minAlpha, int offset, bool skew, int skewSize)
