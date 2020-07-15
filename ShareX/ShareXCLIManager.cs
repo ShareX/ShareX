@@ -51,24 +51,11 @@ namespace ShareX
 
                 if (command.IsCommand)
                 {
-                    if (command.Command.Equals("CustomUploader", StringComparison.InvariantCultureIgnoreCase))
+                    if (CheckCustomUploader(command) || CheckImageEffect(command) || CheckCLIHotkey(command) || CheckCLIWorkflow(command))
                     {
-                        TaskHelpers.ImportCustomUploader(command.Parameter);
-
-                        continue;
                     }
 
-                    if (command.Command.Equals("ImageEffect", StringComparison.InvariantCultureIgnoreCase))
-                    {
-                        TaskHelpers.ImportImageEffect(command.Parameter);
-
-                        continue;
-                    }
-
-                    if (CheckCLIHotkey(command) || CheckCLIWorkflow(command))
-                    {
-                        continue;
-                    }
+                    continue;
                 }
 
                 if (URLHelpers.IsValidURL(command.Command))
@@ -101,6 +88,36 @@ namespace ShareX
             }
 
             return null;
+        }
+
+        private bool CheckCustomUploader(CLICommand command)
+        {
+            if (command.Command.Equals("CustomUploader", StringComparison.InvariantCultureIgnoreCase))
+            {
+                if (!string.IsNullOrEmpty(command.Parameter) && command.Parameter.EndsWith(".sxcu", StringComparison.OrdinalIgnoreCase))
+                {
+                    TaskHelpers.ImportCustomUploader(command.Parameter);
+                }
+
+                return true;
+            }
+
+            return false;
+        }
+
+        private bool CheckImageEffect(CLICommand command)
+        {
+            if (command.Command.Equals("ImageEffect", StringComparison.InvariantCultureIgnoreCase))
+            {
+                if (!string.IsNullOrEmpty(command.Parameter) && command.Parameter.EndsWith(".sxie", StringComparison.OrdinalIgnoreCase))
+                {
+                    TaskHelpers.ImportImageEffect(command.Parameter);
+                }
+
+                return true;
+            }
+
+            return false;
         }
 
         private bool CheckCLIHotkey(CLICommand command)
