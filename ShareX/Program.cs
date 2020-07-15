@@ -98,7 +98,7 @@ namespace ShareX
         internal static HotkeyManager HotkeyManager { get; set; }
         internal static WatchFolderManager WatchFolderManager { get; set; }
         internal static GitHubUpdateManager UpdateManager { get; private set; }
-        internal static CLIManager CLI { get; private set; }
+        internal static ShareXCLIManager CLI { get; private set; }
 
         #region Paths
 
@@ -261,7 +261,7 @@ namespace ShareX
 
             StartTimer = Stopwatch.StartNew(); // For be able to show startup time
 
-            CLI = new CLIManager(args);
+            CLI = new ShareXCLIManager(args);
             CLI.ParseCommands();
 
 #if STEAM
@@ -384,7 +384,8 @@ namespace ShareX
 
                     CLIManager cli = new CLIManager(args.CommandLineArgs);
                     cli.ParseCommands();
-                    MainForm.UseCommandLineArgs(cli.Commands);
+
+                    CLI.UseCommandLineArgs(cli.Commands);
                 };
 
                 MainForm.InvokeSafe(d);

@@ -63,7 +63,7 @@ namespace ShareX
 
             DebugHelper.WriteLine("Startup time: {0} ms", Program.StartTimer.ElapsedMilliseconds);
 
-            UseCommandLineArgs(Program.CLI.Commands);
+            Program.CLI.UseCommandLineArgs();
 
             if (Program.Settings.ActionsToolbarRunAtStartup)
             {
@@ -1044,102 +1044,6 @@ namespace ShareX
 
             tsmiURLSharingServices.Text = tsmiTrayURLSharingServices.Text = string.Format(Resources.TaskSettingsForm_UpdateUploaderMenuNames_URL_sharing_service___0_,
                 Program.DefaultTaskSettings.URLSharingServiceDestination.GetLocalizedDescription());
-        }
-
-        public void UseCommandLineArgs(List<CLICommand> commands)
-        {
-            TaskSettings taskSettings = FindCLITask(commands);
-
-            foreach (CLICommand command in commands)
-            {
-                DebugHelper.WriteLine("CommandLine: " + command);
-
-                if (command.IsCommand)
-                {
-                    if (command.Command.Equals("CustomUploader", StringComparison.InvariantCultureIgnoreCase))
-                    {
-                        TaskHelpers.ImportCustomUploader(command.Parameter);
-
-                        continue;
-                    }
-
-                    if (command.Command.Equals("ImageEffect", StringComparison.InvariantCultureIgnoreCase))
-                    {
-                        TaskHelpers.ImportImageEffect(command.Parameter);
-
-                        continue;
-                    }
-
-                    if (CheckCLIHotkey(command) || CheckCLIWorkflow(command))
-                    {
-                        continue;
-                    }
-                }
-
-                if (URLHelpers.IsValidURL(command.Command))
-                {
-                    UploadManager.DownloadAndUploadFile(command.Command, taskSettings);
-                }
-                else
-                {
-                    UploadManager.UploadFile(command.Command, taskSettings);
-                }
-            }
-        }
-
-        private bool CheckCLIHotkey(CLICommand command)
-        {
-            foreach (HotkeyType job in Helpers.GetEnums<HotkeyType>())
-            {
-                if (command.CheckCommand(job.ToString()))
-                {
-                    TaskHelpers.ExecuteJob(job, command);
-                    return true;
-                }
-            }
-
-            return false;
-        }
-
-        private bool CheckCLIWorkflow(CLICommand command)
-        {
-            if (Program.HotkeysConfig != null && command.CheckCommand("workflow") && !string.IsNullOrEmpty(command.Parameter))
-            {
-                foreach (HotkeySettings hotkeySetting in Program.HotkeysConfig.Hotkeys)
-                {
-                    if (hotkeySetting.TaskSettings.Job != HotkeyType.None)
-                    {
-                        if (command.Parameter == hotkeySetting.TaskSettings.ToString())
-                        {
-                            TaskHelpers.ExecuteJob(hotkeySetting.TaskSettings);
-                            return true;
-                        }
-                    }
-                }
-            }
-
-            return false;
-        }
-
-        private TaskSettings FindCLITask(List<CLICommand> commands)
-        {
-            if (Program.HotkeysConfig != null)
-            {
-                CLICommand command = commands.FirstOrDefault(x => x.CheckCommand("task") && !string.IsNullOrEmpty(x.Parameter));
-
-                if (command != null)
-                {
-                    foreach (HotkeySettings hotkeySetting in Program.HotkeysConfig.Hotkeys)
-                    {
-                        if (command.Parameter == hotkeySetting.TaskSettings.ToString())
-                        {
-                            return hotkeySetting.TaskSettings;
-                        }
-                    }
-                }
-            }
-
-            return null;
         }
 
         private WorkerTask[] GetSelectedTasks()

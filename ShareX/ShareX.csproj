@@ -334,6 +334,7 @@
     </Compile>
     <Compile Include="LanguageHelper.cs" />
     <Compile Include="RecentTaskManager.cs" />
+    <Compile Include="ShareXCLIManager.cs" />
     <Compile Include="StartupManagers\CentennialStartupManager.cs" />
     <Compile Include="StartupManagers\DesktopStartupManager.cs" />
     <Compile Include="StartupManagers\GenericStartupManager.cs" />
