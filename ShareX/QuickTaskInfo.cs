@@ -34,6 +34,7 @@ namespace ShareX
         public string Name { get; set; }
         public AfterCaptureTasks AfterCaptureTasks { get; set; }
         public AfterUploadTasks AfterUploadTasks { get; set; }
+        public int? DefaultImageEffectPresetOverride { get; set; }
 
         public bool IsValid
         {

@@ -407,6 +407,10 @@ namespace ShareX
                         {
                             taskSettings.AfterCaptureJob = taskInfo.AfterCaptureTasks;
                             taskSettings.AfterUploadJob = taskInfo.AfterUploadTasks;
+
+                            if (Program.Settings.AllowQuickTaskImageEffectPresets && taskInfo.DefaultImageEffectPresetOverride.HasValue)
+                                taskSettings.ImageSettingsReference.DefaultImageEffectPresetOverride = taskInfo.DefaultImageEffectPresetOverride.Value;
+
                             RunImageTask(imageInfo, taskSettings, true);
                         }
                     };

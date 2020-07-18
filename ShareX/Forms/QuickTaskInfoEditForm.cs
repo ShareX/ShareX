@@ -65,6 +65,47 @@ namespace ShareX
                     ToolStripMenuItem tsmi = new ToolStripMenuItem(enums[i]);
                     tsmi.Image = TaskHelpers.FindMenuIcon<T>(i + 1);
 
+                    if (enums[i] == "Add image effects" && Program.Settings.AllowQuickTaskImageEffectPresets)
+                    {
+                        var presets = TaskSettings.GetDefaultTaskSettings().ImageSettings.ImageEffectPresets;
+
+                        for (int presetIndex = 0; presetIndex < presets.Count; presetIndex++)
+                        {
+                            ToolStripMenuItem tsmiPreset = new ToolStripMenuItem
+                            {
+                                Text = presets[presetIndex].Name,
+                                Tag = presetIndex
+                            };
+
+                            if (TaskInfo.DefaultImageEffectPresetOverride == presetIndex)
+                                tsmiPreset.Checked = true;
+
+                            tsmiPreset.Click += (sender, e) =>
+                            {
+                                tsmiPreset.Checked = !tsmiPreset.Checked;
+
+                                if (tsmiPreset.Checked)
+                                {
+                                    TaskInfo.DefaultImageEffectPresetOverride = (int)tsmiPreset.Tag;
+
+                                    foreach (ToolStripMenuItem tp in tsmi.DropDownItems)
+                                    {
+                                        if (tp != tsmiPreset)
+                                            tp.Checked = false;
+                                    }
+
+                                    if (!tsmi.Checked)
+                                        tsmi.PerformClick();
+                                }
+                                else
+                                    TaskInfo.DefaultImageEffectPresetOverride = null;
+                            };
+
+                            tsmi.DropDownItems.Add(tsmiPreset);
+                            UpdateUploaderMenuNames();
+                        }
+                    }
+
                     int index = i;
 
                     tsmi.Click += (sender, e) =>

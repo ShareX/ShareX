@@ -112,6 +112,7 @@ namespace ShareX
                     taskSettings.AfterCaptureJob = taskSettings.AfterCaptureJob.Remove(AfterCaptureTasks.AddImageEffects);
                 }
 
+                taskSettings.ImageSettingsReference.DefaultImageEffectPresetOverride = null;
                 UploadManager.RunImageTask(imageInfo, taskSettings);
             }
         }
