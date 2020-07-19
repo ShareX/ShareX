@@ -65,11 +65,19 @@ namespace ShareX
             return new QRCodeForm();
         }
 
-        public static QRCodeForm DecodeFile(string filePath)
+        public static QRCodeForm OpenFormDecodeFromFile(string filePath)
         {
             QRCodeForm form = new QRCodeForm();
             form.tcMain.SelectedTab = form.tpDecode;
             form.DecodeFromFile(filePath);
+            return form;
+        }
+
+        public static QRCodeForm OpenFormDecodeFromScreen()
+        {
+            QRCodeForm form = new QRCodeForm();
+            form.tcMain.SelectedTab = form.tpDecode;
+            form.DecodeFromScreen();
             return form;
         }
 
@@ -129,6 +137,32 @@ namespace ShareX
                         DecodeImage(bmp);
                     }
                 }
+            }
+        }
+
+        private void DecodeFromScreen()
+        {
+            try
+            {
+                if (Visible)
+                {
+                    Hide();
+                    Thread.Sleep(250);
+                }
+
+                TaskSettings taskSettings = TaskSettings.GetDefaultTaskSettings();
+
+                using (Bitmap bmp = RegionCaptureTasks.GetRegionImage(taskSettings.CaptureSettings.SurfaceOptions))
+                {
+                    if (bmp != null)
+                    {
+                        DecodeImage(bmp);
+                    }
+                }
+            }
+            finally
+            {
+                this.ForceActivate();
             }
         }
 
@@ -211,25 +245,7 @@ namespace ShareX
 
         private void btnDecodeFromScreen_Click(object sender, EventArgs e)
         {
-            try
-            {
-                Hide();
-                Thread.Sleep(250);
-
-                TaskSettings taskSettings = TaskSettings.GetDefaultTaskSettings();
-
-                using (Bitmap bmp = RegionCaptureTasks.GetRegionImage(taskSettings.CaptureSettings.SurfaceOptions))
-                {
-                    if (bmp != null)
-                    {
-                        DecodeImage(bmp);
-                    }
-                }
-            }
-            finally
-            {
-                this.ForceActivate();
-            }
+            DecodeFromScreen();
         }
 
         private void btnDecodeFromFile_Click(object sender, EventArgs e)

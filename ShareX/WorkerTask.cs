@@ -751,7 +751,7 @@ namespace ShareX
 
                 if (Info.TaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.ScanQRCode) && Info.DataType == EDataType.Image)
                 {
-                    QRCodeForm.DecodeFile(Info.FilePath).ShowDialog();
+                    QRCodeForm.OpenFormDecodeFromFile(Info.FilePath).ShowDialog();
                 }
             }
         }

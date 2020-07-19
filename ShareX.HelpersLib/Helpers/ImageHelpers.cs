@@ -509,7 +509,7 @@ namespace ShareX.HelpersLib
             }
         }
 
-        public static Bitmap MakeOutline(Bitmap bmp, int min_radius, int max_radius, Color color)
+        public static Bitmap MakeOutline(Bitmap bmp, int minRadius, int maxRadius, Color color)
         {
             Bitmap bmpResult = bmp.CreateEmptyBitmap();
 
@@ -520,19 +520,19 @@ namespace ShareX.HelpersLib
                 {
                     for (int y = 0; y < source.Height; y++)
                     {
-                        float dist = DistanceToThreshold(source, x, y, max_radius, 255);
+                        float dist = DistanceToThreshold(source, x, y, maxRadius, 255);
 
-                        if (dist > min_radius && dist < max_radius)
+                        if (dist > minRadius && dist < maxRadius)
                         {
                             byte alpha = 255;
 
-                            if (dist - min_radius < 1)
+                            if (dist - minRadius < 1)
                             {
-                                alpha = (byte)(255 * (dist - min_radius));
+                                alpha = (byte)(255 * (dist - minRadius));
                             }
-                            else if (max_radius - dist < 1)
+                            else if (maxRadius - dist < 1)
                             {
-                                alpha = (byte)(255 * (max_radius - dist));
+                                alpha = (byte)(255 * (maxRadius - dist));
                             }
 
                             ColorBgra bgra = new ColorBgra(color.B, color.G, color.R, alpha);

@@ -1627,6 +1627,24 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to QR code (Decode from screen).
+        /// </summary>
+        internal static string HotkeyType_QRCodeDecodeFromScreen {
+            get {
+                return ResourceManager.GetString("HotkeyType_QRCodeDecodeFromScreen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tools.
+        /// </summary>
+        internal static string HotkeyType_QRCodeDecodeFromScreen_Category {
+            get {
+                return ResourceManager.GetString("HotkeyType_QRCodeDecodeFromScreen_Category", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Capture region (Light).
         /// </summary>
         internal static string HotkeyType_RectangleLight {

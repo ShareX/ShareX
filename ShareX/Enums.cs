@@ -210,6 +210,7 @@ namespace ShareX
         HashCheck,
         DNSChanger,
         QRCode,
+        QRCodeDecodeFromScreen,
         Ruler,
         IndexFolder,
         ImageCombiner,

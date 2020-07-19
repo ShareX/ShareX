@@ -195,6 +195,9 @@ namespace ShareX
                 case HotkeyType.QRCode:
                     OpenQRCode();
                     break;
+                case HotkeyType.QRCodeDecodeFromScreen:
+                    OpenQRCodeDecodeFromScreen();
+                    break;
                 case HotkeyType.Ruler:
                     OpenRuler(safeTaskSettings);
                     break;
@@ -1135,6 +1138,11 @@ namespace ShareX
             QRCodeForm.EncodeClipboard().Show();
         }
 
+        public static void OpenQRCodeDecodeFromScreen()
+        {
+            QRCodeForm.OpenFormDecodeFromScreen();
+        }
+
         public static void OpenRuler(TaskSettings taskSettings = null)
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
@@ -1542,6 +1550,7 @@ namespace ShareX
                     case HotkeyType.HashCheck: return Resources.application_task;
                     case HotkeyType.DNSChanger: return Resources.network_ip;
                     case HotkeyType.QRCode: return ShareXResources.IsDarkTheme ? Resources.barcode_2d_white : Resources.barcode_2d;
+                    case HotkeyType.QRCodeDecodeFromScreen: return ShareXResources.IsDarkTheme ? Resources.barcode_2d_white : Resources.barcode_2d;
                     case HotkeyType.Ruler: return Resources.ruler_triangle;
                     case HotkeyType.IndexFolder: return Resources.folder_tree;
                     case HotkeyType.ImageCombiner: return Resources.document_break;
