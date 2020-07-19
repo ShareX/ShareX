@@ -49,7 +49,7 @@ namespace ShareX.ImageEffectsLib
         private FontSafe fontSafe = new FontSafe();
 
         // Workaround for "System.AccessViolationException: Attempted to read or write protected memory. This is often an indication that other memory is corrupt."
-        [DefaultValue(typeof(Font), "Arial, 24pt")]
+        [DefaultValue(typeof(Font), "Arial, 36pt")]
         public Font Font
         {
             get
@@ -88,6 +88,15 @@ namespace ShareX.ImageEffectsLib
 
         [Editor(typeof(GradientEditor), typeof(UITypeEditor))]
         public GradientInfo TextOutlineGradient { get; set; }
+
+        [DefaultValue(false)]
+        public bool DrawTextShadow { get; set; }
+
+        [DefaultValue(typeof(Color), "125, 0, 0, 0"), Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
+        public Color TextShadowColor { get; set; }
+
+        [DefaultValue(typeof(Point), "0, 5")]
+        public Point TextShadowOffset { get; set; }
 
         public DrawTextEx()
         {
@@ -171,6 +180,35 @@ namespace ShareX.ImageEffectsLib
                     {
                         matrix.Translate(textRectangle.X - pathRect.X, textRectangle.Y - pathRect.Y);
                         gp.Transform(matrix);
+                    }
+
+                    // Draw text shadow
+                    if (DrawTextShadow)
+                    {
+                        using (Matrix matrix = new Matrix())
+                        {
+                            matrix.Translate(TextShadowOffset.X, TextShadowOffset.Y);
+                            gp.Transform(matrix);
+
+                            if (DrawTextOutline && TextOutlineSize > 0)
+                            {
+                                using (Pen textShadowPen = new Pen(TextShadowColor, TextOutlineSize) { LineJoin = LineJoin.Round })
+                                {
+                                    g.DrawPath(textShadowPen, gp);
+                                }
+                            }
+                            else
+                            {
+                                using (Brush textShadowBrush = new SolidBrush(TextShadowColor))
+                                {
+                                    g.FillPath(textShadowBrush, gp);
+                                }
+                            }
+
+                            matrix.Reset();
+                            matrix.Translate(-TextShadowOffset.X, -TextShadowOffset.Y);
+                            gp.Transform(matrix);
+                        }
                     }
 
                     // Draw text outline
