@@ -121,6 +121,7 @@ namespace ShareX.ImageEffectsLib
                 typeof(DrawCheckerboard),
                 typeof(DrawImage),
                 typeof(DrawText),
+                typeof(DrawTextEx),
                 typeof(DrawParticles));
 
             AddEffectToContextMenu(Resources.ImageEffectsForm_AddAllEffectsToTreeView_Manipulations,
