@@ -74,30 +74,49 @@ namespace ShareX.ImageEffectsLib
         [Editor(typeof(GradientEditor), typeof(UITypeEditor))]
         public GradientInfo TextGradient { get; set; }
 
+        [DefaultValue(false)]
+        public bool DrawTextOutline { get; set; }
+
+        [DefaultValue(5)]
+        public int TextOutlineSize { get; set; }
+
+        [DefaultValue(typeof(Color), "235, 0, 0"), Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
+        public Color TextOutlineColor { get; set; }
+
+        [DefaultValue(false)]
+        public bool TextOutlineUseGradient { get; set; }
+
+        [Editor(typeof(GradientEditor), typeof(UITypeEditor))]
+        public GradientInfo TextOutlineGradient { get; set; }
+
         public DrawTextEx()
         {
             this.ApplyDefaultPropertyValues();
-            AddDefaultGradient();
+
+            TextGradient = new GradientInfo();
+            AddDefaultGradient(TextGradient);
+
+            TextOutlineGradient = new GradientInfo();
+            AddDefaultGradient(TextOutlineGradient);
         }
 
-        private void AddDefaultGradient()
+        private void AddDefaultGradient(GradientInfo gradientInfo)
         {
-            TextGradient = new GradientInfo();
-            TextGradient.Type = LinearGradientMode.Horizontal;
+            gradientInfo.Type = LinearGradientMode.Horizontal;
 
             switch (RandomFast.Next(0, 2))
             {
                 case 0:
-                    TextGradient.Colors.Add(new GradientStop(Color.FromArgb(0, 187, 138), 0f));
-                    TextGradient.Colors.Add(new GradientStop(Color.FromArgb(0, 105, 163), 100f));
+                    gradientInfo.Colors.Add(new GradientStop(Color.FromArgb(0, 187, 138), 0f));
+                    gradientInfo.Colors.Add(new GradientStop(Color.FromArgb(0, 105, 163), 100f));
                     break;
                 case 1:
-                    TextGradient.Colors.Add(new GradientStop(Color.FromArgb(255, 3, 135), 0f));
-                    TextGradient.Colors.Add(new GradientStop(Color.FromArgb(255, 143, 3), 100f));
+                    gradientInfo.Colors.Add(new GradientStop(Color.FromArgb(255, 3, 135), 0f));
+                    gradientInfo.Colors.Add(new GradientStop(Color.FromArgb(255, 143, 3), 100f));
                     break;
                 case 2:
-                    TextGradient.Colors.Add(new GradientStop(Color.FromArgb(184, 11, 195), 0f));
-                    TextGradient.Colors.Add(new GradientStop(Color.FromArgb(98, 54, 255), 100f));
+                    gradientInfo.Colors.Add(new GradientStop(Color.FromArgb(184, 11, 195), 0f));
+                    gradientInfo.Colors.Add(new GradientStop(Color.FromArgb(98, 54, 255), 100f));
                     break;
             }
         }
@@ -154,24 +173,40 @@ namespace ShareX.ImageEffectsLib
                         gp.Transform(matrix);
                     }
 
-                    Brush textBrush = null;
-
-                    try
+                    // Draw text outline
+                    if (DrawTextOutline && TextOutlineSize > 0)
                     {
-                        if (TextUseGradient)
+                        if (TextOutlineUseGradient)
                         {
-                            textBrush = TextGradient.GetGradientBrush(Rectangle.Round(pathRect).Offset(1));
+                            using (LinearGradientBrush textOutlineBrush = TextOutlineGradient.GetGradientBrush(Rectangle.Round(pathRect).Offset(TextOutlineSize + 1)))
+                            using (Pen textOutlinePen = new Pen(textOutlineBrush, TextOutlineSize) { LineJoin = LineJoin.Round })
+                            {
+                                g.DrawPath(textOutlinePen, gp);
+                            }
                         }
                         else
                         {
-                            textBrush = new SolidBrush(TextColor);
+                            using (Pen textOutlinePen = new Pen(TextOutlineColor, TextOutlineSize) { LineJoin = LineJoin.Round })
+                            {
+                                g.DrawPath(textOutlinePen, gp);
+                            }
                         }
-
-                        g.FillPath(textBrush, gp);
                     }
-                    finally
+
+                    // Draw text
+                    if (TextUseGradient)
                     {
-                        textBrush?.Dispose();
+                        using (Brush textBrush = TextGradient.GetGradientBrush(Rectangle.Round(pathRect).Offset(1)))
+                        {
+                            g.FillPath(textBrush, gp);
+                        }
+                    }
+                    else
+                    {
+                        using (Brush textBrush = new SolidBrush(TextColor))
+                        {
+                            g.FillPath(textBrush, gp);
+                        }
                     }
                 }
 
