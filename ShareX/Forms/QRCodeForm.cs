@@ -40,6 +40,21 @@ namespace ShareX
 {
     public partial class QRCodeForm : Form
     {
+        private static QRCodeForm instance;
+
+        public static QRCodeForm Instance
+        {
+            get
+            {
+                if (instance == null || instance.IsDisposed)
+                {
+                    instance = new QRCodeForm();
+                }
+
+                return instance;
+            }
+        }
+
         private bool isReady;
 
         public QRCodeForm(string text = null)
@@ -75,7 +90,7 @@ namespace ShareX
 
         public static QRCodeForm OpenFormDecodeFromScreen()
         {
-            QRCodeForm form = new QRCodeForm();
+            QRCodeForm form = Instance;
             form.tcMain.SelectedTab = form.tpDecode;
             form.DecodeFromScreen();
             return form;
