@@ -789,9 +789,6 @@
   <data name="lvEffects.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left</value>
   </data>
-  <data name="chEffect.Width" type="System.Int32, mscorlib">
-    <value>50</value>
-  </data>
   <data name="lvEffects.Location" type="System.Drawing.Point, System.Drawing">
     <value>184, 101</value>
   </data>
@@ -812,6 +809,9 @@
   </data>
   <data name="&gt;&gt;lvEffects.ZOrder" xml:space="preserve">
     <value>25</value>
+  </data>
+  <data name="chEffect.Width" type="System.Int32, mscorlib">
+    <value>50</value>
   </data>
   <data name="lblEffect.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -851,6 +851,9 @@
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>1089, 585</value>
+  </data>
+  <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>600, 400</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>
