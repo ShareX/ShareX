@@ -216,7 +216,7 @@ namespace ShareX.ImageEffectsLib
                     {
                         if (TextOutlineUseGradient)
                         {
-                            using (LinearGradientBrush textOutlineBrush = TextOutlineGradient.GetGradientBrush(Rectangle.Round(pathRect).Offset(TextOutlineSize + 1)))
+                            using (LinearGradientBrush textOutlineBrush = TextOutlineGradient.GetGradientBrush(Rectangle.Round(textRectangle).Offset(TextOutlineSize + 1)))
                             using (Pen textOutlinePen = new Pen(textOutlineBrush, TextOutlineSize) { LineJoin = LineJoin.Round })
                             {
                                 g.DrawPath(textOutlinePen, gp);
@@ -234,7 +234,7 @@ namespace ShareX.ImageEffectsLib
                     // Draw text
                     if (TextUseGradient)
                     {
-                        using (Brush textBrush = TextGradient.GetGradientBrush(Rectangle.Round(pathRect).Offset(1)))
+                        using (Brush textBrush = TextGradient.GetGradientBrush(Rectangle.Round(textRectangle).Offset(1)))
                         {
                             g.FillPath(textBrush, gp);
                         }
