@@ -33,7 +33,7 @@ using System.Windows.Forms;
 
 namespace ShareX.ImageEffectsLib
 {
-    [Description("Text")]
+    [Description("Text watermark")]
     public class DrawText : ImageEffect
     {
         [DefaultValue(ContentAlignment.BottomRight)]

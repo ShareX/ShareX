@@ -31,7 +31,7 @@ using System.Drawing.Drawing2D;
 
 namespace ShareX.ImageEffectsLib
 {
-    [Description("TextEx")]
+    [Description("Text")]
     public class DrawTextEx : ImageEffect
     {
         [DefaultValue(ContentAlignment.TopLeft)]
