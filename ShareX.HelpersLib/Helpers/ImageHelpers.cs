@@ -1584,6 +1584,16 @@ namespace ShareX.HelpersLib
 
         public static Bitmap Slice(Bitmap bmp, int minSliceHeight, int maxSliceHeight, int minSliceShift, int maxSliceShift)
         {
+            if (minSliceHeight < 1)
+            {
+                throw new ArgumentOutOfRangeException(nameof(minSliceHeight));
+            }
+
+            if (maxSliceHeight < 1)
+            {
+                throw new ArgumentOutOfRangeException(nameof(maxSliceHeight));
+            }
+
             Bitmap bmpResult = bmp.CreateEmptyBitmap();
 
             using (Graphics g = Graphics.FromImage(bmpResult))
