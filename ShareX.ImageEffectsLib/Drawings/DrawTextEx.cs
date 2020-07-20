@@ -43,6 +43,9 @@ namespace ShareX.ImageEffectsLib
         [DefaultValue(typeof(Point), "0, 0")]
         public Point Offset { get; set; }
 
+        [DefaultValue(0)]
+        public int Angle { get; set; }
+
         [DefaultValue(true), Description("If text size bigger than source image then don't draw it.")]
         public bool AutoHide { get; set; }
 
@@ -160,9 +163,21 @@ namespace ShareX.ImageEffectsLib
                 using (Graphics g = Graphics.FromImage(bmp))
                 using (GraphicsPath gp = new GraphicsPath())
                 {
+                    g.SmoothingMode = SmoothingMode.HighQuality;
+                    g.PixelOffsetMode = PixelOffsetMode.Half;
+
                     gp.FillMode = FillMode.Winding;
                     float emSize = g.DpiY * font.SizeInPoints / 72;
                     gp.AddString(parsedText, font.FontFamily, (int)font.Style, emSize, Point.Empty, StringFormat.GenericDefault);
+
+                    if (Angle != 0)
+                    {
+                        using (Matrix matrix = new Matrix())
+                        {
+                            matrix.Rotate(Angle);
+                            gp.Transform(matrix);
+                        }
+                    }
 
                     RectangleF pathRect = gp.GetBounds();
 
@@ -179,9 +194,6 @@ namespace ShareX.ImageEffectsLib
                     {
                         return bmp;
                     }
-
-                    g.SmoothingMode = SmoothingMode.HighQuality;
-                    g.PixelOffsetMode = PixelOffsetMode.Half;
 
                     using (Matrix matrix = new Matrix())
                     {

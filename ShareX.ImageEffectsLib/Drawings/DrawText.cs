@@ -36,6 +36,9 @@ namespace ShareX.ImageEffectsLib
     [Description("Text watermark")]
     public class DrawText : ImageEffect
     {
+        [DefaultValue("Text watermark"), Editor(typeof(NameParserEditor), typeof(UITypeEditor))]
+        public string Text { get; set; }
+
         [DefaultValue(ContentAlignment.BottomRight)]
         public ContentAlignment Placement { get; set; }
 
@@ -44,9 +47,6 @@ namespace ShareX.ImageEffectsLib
 
         [DefaultValue(true), Description("If text watermark size bigger than source image then don't draw it.")]
         public bool AutoHide { get; set; }
-
-        [DefaultValue("Text watermark"), Editor(typeof(NameParserEditor), typeof(UITypeEditor))]
-        public string Text { get; set; }
 
         private FontSafe textFontSafe = new FontSafe();
 
