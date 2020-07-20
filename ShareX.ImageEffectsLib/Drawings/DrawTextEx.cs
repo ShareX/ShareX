@@ -37,7 +37,7 @@ namespace ShareX.ImageEffectsLib
         [DefaultValue("Text"), Editor(typeof(NameParserEditor), typeof(UITypeEditor))]
         public string Text { get; set; }
 
-        [DefaultValue(ContentAlignment.TopLeft)]
+        [DefaultValue(ContentAlignment.TopLeft), TypeConverter(typeof(EnumProperNameConverter))]
         public ContentAlignment Placement { get; set; }
 
         [DefaultValue(typeof(Point), "0, 0")]
@@ -216,10 +216,13 @@ namespace ShareX.ImageEffectsLib
                     {
                         if (TextOutlineUseGradient)
                         {
-                            using (LinearGradientBrush textOutlineBrush = TextOutlineGradient.GetGradientBrush(Rectangle.Round(textRectangle).Offset(TextOutlineSize + 1)))
-                            using (Pen textOutlinePen = new Pen(textOutlineBrush, TextOutlineSize) { LineJoin = LineJoin.Round })
+                            if (TextOutlineGradient.IsVisible)
                             {
-                                g.DrawPath(textOutlinePen, gp);
+                                using (LinearGradientBrush textOutlineBrush = TextOutlineGradient.GetGradientBrush(Rectangle.Round(textRectangle).Offset(TextOutlineSize + 1)))
+                                using (Pen textOutlinePen = new Pen(textOutlineBrush, TextOutlineSize) { LineJoin = LineJoin.Round })
+                                {
+                                    g.DrawPath(textOutlinePen, gp);
+                                }
                             }
                         }
                         else if (TextOutlineColor.A > 0)
@@ -234,9 +237,12 @@ namespace ShareX.ImageEffectsLib
                     // Draw text
                     if (TextUseGradient)
                     {
-                        using (Brush textBrush = TextGradient.GetGradientBrush(Rectangle.Round(textRectangle).Offset(1)))
+                        if (TextGradient.IsVisible)
                         {
-                            g.FillPath(textBrush, gp);
+                            using (Brush textBrush = TextGradient.GetGradientBrush(Rectangle.Round(textRectangle).Offset(1)))
+                            {
+                                g.FillPath(textBrush, gp);
+                            }
                         }
                     }
                     else if (TextColor.A > 0)

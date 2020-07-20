@@ -42,6 +42,9 @@ namespace ShareX.HelpersLib
         [JsonIgnore]
         public bool IsValid => Colors != null && Colors.Count > 0;
 
+        [JsonIgnore]
+        public bool IsVisible => IsValid && Colors.Any(x => x.Color.A > 0);
+
         public GradientInfo()
         {
             Type = LinearGradientMode.Vertical;
