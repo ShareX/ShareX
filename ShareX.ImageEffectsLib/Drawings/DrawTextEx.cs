@@ -69,54 +69,54 @@ namespace ShareX.ImageEffectsLib
         }
 
         [DefaultValue(typeof(Color), "235, 235, 235"), Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
-        public Color TextColor { get; set; }
+        public Color Color { get; set; }
 
         [DefaultValue(false)]
-        public bool TextUseGradient { get; set; }
+        public bool UseGradient { get; set; }
 
         [Editor(typeof(GradientEditor), typeof(UITypeEditor))]
-        public GradientInfo TextGradient { get; set; }
+        public GradientInfo Gradient { get; set; }
 
         [DefaultValue(false)]
-        public bool DrawTextOutline { get; set; }
+        public bool Outline { get; set; }
 
         [DefaultValue(5)]
-        public int TextOutlineSize { get; set; }
+        public int OutlineSize { get; set; }
 
         [DefaultValue(typeof(Color), "235, 0, 0"), Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
-        public Color TextOutlineColor { get; set; }
+        public Color OutlineColor { get; set; }
 
         [DefaultValue(false)]
-        public bool TextOutlineUseGradient { get; set; }
+        public bool OutlineUseGradient { get; set; }
 
         [Editor(typeof(GradientEditor), typeof(UITypeEditor))]
-        public GradientInfo TextOutlineGradient { get; set; }
+        public GradientInfo OutlineGradient { get; set; }
 
         [DefaultValue(false)]
-        public bool DrawTextShadow { get; set; }
+        public bool Shadow { get; set; }
 
         [DefaultValue(typeof(Point), "0, 5")]
-        public Point TextShadowOffset { get; set; }
+        public Point ShadowOffset { get; set; }
 
         [DefaultValue(typeof(Color), "125, 0, 0, 0"), Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
-        public Color TextShadowColor { get; set; }
+        public Color ShadowColor { get; set; }
 
         [DefaultValue(false)]
-        public bool TextShadowUseGradient { get; set; }
+        public bool ShadowUseGradient { get; set; }
 
         [Editor(typeof(GradientEditor), typeof(UITypeEditor))]
-        public GradientInfo TextShadowGradient { get; set; }
+        public GradientInfo ShadowGradient { get; set; }
 
         public DrawTextEx()
         {
             this.ApplyDefaultPropertyValues();
 
-            TextGradient = new GradientInfo();
-            AddDefaultGradient(TextGradient);
-            TextOutlineGradient = new GradientInfo();
-            AddDefaultGradient(TextOutlineGradient);
-            TextShadowGradient = new GradientInfo();
-            AddDefaultGradient(TextShadowGradient);
+            Gradient = new GradientInfo();
+            AddDefaultGradient(Gradient);
+            OutlineGradient = new GradientInfo();
+            AddDefaultGradient(OutlineGradient);
+            ShadowGradient = new GradientInfo();
+            AddDefaultGradient(ShadowGradient);
         }
 
         private void AddDefaultGradient(GradientInfo gradientInfo)
@@ -202,27 +202,27 @@ namespace ShareX.ImageEffectsLib
                     }
 
                     // Draw text shadow
-                    if (DrawTextShadow && ((!TextShadowUseGradient && TextShadowColor.A > 0) || (TextShadowUseGradient && TextShadowGradient.IsVisible)))
+                    if (Shadow && ((!ShadowUseGradient && ShadowColor.A > 0) || (ShadowUseGradient && ShadowGradient.IsVisible)))
                     {
                         using (Matrix matrix = new Matrix())
                         {
-                            matrix.Translate(TextShadowOffset.X, TextShadowOffset.Y);
+                            matrix.Translate(ShadowOffset.X, ShadowOffset.Y);
                             gp.Transform(matrix);
 
-                            if (DrawTextOutline && TextOutlineSize > 0)
+                            if (Outline && OutlineSize > 0)
                             {
-                                if (TextShadowUseGradient)
+                                if (ShadowUseGradient)
                                 {
-                                    using (LinearGradientBrush textShadowBrush = TextShadowGradient.GetGradientBrush(
-                                        Rectangle.Round(textRectangle).Offset(TextOutlineSize + 1).LocationOffset(TextShadowOffset)))
-                                    using (Pen textShadowPen = new Pen(textShadowBrush, TextOutlineSize) { LineJoin = LineJoin.Round })
+                                    using (LinearGradientBrush textShadowBrush = ShadowGradient.GetGradientBrush(
+                                        Rectangle.Round(textRectangle).Offset(OutlineSize + 1).LocationOffset(ShadowOffset)))
+                                    using (Pen textShadowPen = new Pen(textShadowBrush, OutlineSize) { LineJoin = LineJoin.Round })
                                     {
                                         g.DrawPath(textShadowPen, gp);
                                     }
                                 }
                                 else
                                 {
-                                    using (Pen textShadowPen = new Pen(TextShadowColor, TextOutlineSize) { LineJoin = LineJoin.Round })
+                                    using (Pen textShadowPen = new Pen(ShadowColor, OutlineSize) { LineJoin = LineJoin.Round })
                                     {
                                         g.DrawPath(textShadowPen, gp);
                                     }
@@ -230,17 +230,17 @@ namespace ShareX.ImageEffectsLib
                             }
                             else
                             {
-                                if (TextShadowUseGradient)
+                                if (ShadowUseGradient)
                                 {
-                                    using (Brush textShadowBrush = TextShadowGradient.GetGradientBrush(
-                                        Rectangle.Round(textRectangle).Offset(1).LocationOffset(TextShadowOffset)))
+                                    using (Brush textShadowBrush = ShadowGradient.GetGradientBrush(
+                                        Rectangle.Round(textRectangle).Offset(1).LocationOffset(ShadowOffset)))
                                     {
                                         g.FillPath(textShadowBrush, gp);
                                     }
                                 }
                                 else
                                 {
-                                    using (Brush textShadowBrush = new SolidBrush(TextShadowColor))
+                                    using (Brush textShadowBrush = new SolidBrush(ShadowColor))
                                     {
                                         g.FillPath(textShadowBrush, gp);
                                     }
@@ -248,28 +248,28 @@ namespace ShareX.ImageEffectsLib
                             }
 
                             matrix.Reset();
-                            matrix.Translate(-TextShadowOffset.X, -TextShadowOffset.Y);
+                            matrix.Translate(-ShadowOffset.X, -ShadowOffset.Y);
                             gp.Transform(matrix);
                         }
                     }
 
                     // Draw text outline
-                    if (DrawTextOutline && TextOutlineSize > 0)
+                    if (Outline && OutlineSize > 0)
                     {
-                        if (TextOutlineUseGradient)
+                        if (OutlineUseGradient)
                         {
-                            if (TextOutlineGradient.IsVisible)
+                            if (OutlineGradient.IsVisible)
                             {
-                                using (LinearGradientBrush textOutlineBrush = TextOutlineGradient.GetGradientBrush(Rectangle.Round(textRectangle).Offset(TextOutlineSize + 1)))
-                                using (Pen textOutlinePen = new Pen(textOutlineBrush, TextOutlineSize) { LineJoin = LineJoin.Round })
+                                using (LinearGradientBrush textOutlineBrush = OutlineGradient.GetGradientBrush(Rectangle.Round(textRectangle).Offset(OutlineSize + 1)))
+                                using (Pen textOutlinePen = new Pen(textOutlineBrush, OutlineSize) { LineJoin = LineJoin.Round })
                                 {
                                     g.DrawPath(textOutlinePen, gp);
                                 }
                             }
                         }
-                        else if (TextOutlineColor.A > 0)
+                        else if (OutlineColor.A > 0)
                         {
-                            using (Pen textOutlinePen = new Pen(TextOutlineColor, TextOutlineSize) { LineJoin = LineJoin.Round })
+                            using (Pen textOutlinePen = new Pen(OutlineColor, OutlineSize) { LineJoin = LineJoin.Round })
                             {
                                 g.DrawPath(textOutlinePen, gp);
                             }
@@ -277,19 +277,19 @@ namespace ShareX.ImageEffectsLib
                     }
 
                     // Draw text
-                    if (TextUseGradient)
+                    if (UseGradient)
                     {
-                        if (TextGradient.IsVisible)
+                        if (Gradient.IsVisible)
                         {
-                            using (Brush textBrush = TextGradient.GetGradientBrush(Rectangle.Round(textRectangle).Offset(1)))
+                            using (Brush textBrush = Gradient.GetGradientBrush(Rectangle.Round(textRectangle).Offset(1)))
                             {
                                 g.FillPath(textBrush, gp);
                             }
                         }
                     }
-                    else if (TextColor.A > 0)
+                    else if (Color.A > 0)
                     {
-                        using (Brush textBrush = new SolidBrush(TextColor))
+                        using (Brush textBrush = new SolidBrush(Color))
                         {
                             g.FillPath(textBrush, gp);
                         }
