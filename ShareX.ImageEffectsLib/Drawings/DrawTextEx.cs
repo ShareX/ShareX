@@ -34,6 +34,9 @@ namespace ShareX.ImageEffectsLib
     [Description("Text")]
     public class DrawTextEx : ImageEffect
     {
+        [DefaultValue("Text"), Editor(typeof(NameParserEditor), typeof(UITypeEditor))]
+        public string Text { get; set; }
+
         [DefaultValue(ContentAlignment.TopLeft)]
         public ContentAlignment Placement { get; set; }
 
@@ -42,9 +45,6 @@ namespace ShareX.ImageEffectsLib
 
         [DefaultValue(true), Description("If text size bigger than source image then don't draw it.")]
         public bool AutoHide { get; set; }
-
-        [DefaultValue("Text"), Editor(typeof(NameParserEditor), typeof(UITypeEditor))]
-        public string Text { get; set; }
 
         private FontSafe fontSafe = new FontSafe();
 
@@ -183,7 +183,7 @@ namespace ShareX.ImageEffectsLib
                     }
 
                     // Draw text shadow
-                    if (DrawTextShadow)
+                    if (DrawTextShadow && TextShadowColor.A > 0)
                     {
                         using (Matrix matrix = new Matrix())
                         {
@@ -222,7 +222,7 @@ namespace ShareX.ImageEffectsLib
                                 g.DrawPath(textOutlinePen, gp);
                             }
                         }
-                        else
+                        else if (TextOutlineColor.A > 0)
                         {
                             using (Pen textOutlinePen = new Pen(TextOutlineColor, TextOutlineSize) { LineJoin = LineJoin.Round })
                             {
@@ -239,7 +239,7 @@ namespace ShareX.ImageEffectsLib
                             g.FillPath(textBrush, gp);
                         }
                     }
-                    else
+                    else if (TextColor.A > 0)
                     {
                         using (Brush textBrush = new SolidBrush(TextColor))
                         {
