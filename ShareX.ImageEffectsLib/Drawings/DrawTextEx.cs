@@ -92,11 +92,17 @@ namespace ShareX.ImageEffectsLib
         [DefaultValue(false)]
         public bool DrawTextShadow { get; set; }
 
+        [DefaultValue(typeof(Point), "0, 5")]
+        public Point TextShadowOffset { get; set; }
+
         [DefaultValue(typeof(Color), "125, 0, 0, 0"), Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
         public Color TextShadowColor { get; set; }
 
-        [DefaultValue(typeof(Point), "0, 5")]
-        public Point TextShadowOffset { get; set; }
+        [DefaultValue(false)]
+        public bool TextShadowUseGradient { get; set; }
+
+        [Editor(typeof(GradientEditor), typeof(UITypeEditor))]
+        public GradientInfo TextShadowGradient { get; set; }
 
         public DrawTextEx()
         {
@@ -104,9 +110,10 @@ namespace ShareX.ImageEffectsLib
 
             TextGradient = new GradientInfo();
             AddDefaultGradient(TextGradient);
-
             TextOutlineGradient = new GradientInfo();
             AddDefaultGradient(TextOutlineGradient);
+            TextShadowGradient = new GradientInfo();
+            AddDefaultGradient(TextShadowGradient);
         }
 
         private void AddDefaultGradient(GradientInfo gradientInfo)
@@ -183,7 +190,7 @@ namespace ShareX.ImageEffectsLib
                     }
 
                     // Draw text shadow
-                    if (DrawTextShadow && TextShadowColor.A > 0)
+                    if (DrawTextShadow && ((!TextShadowUseGradient && TextShadowColor.A > 0) || (TextShadowUseGradient && TextShadowGradient.IsVisible)))
                     {
                         using (Matrix matrix = new Matrix())
                         {
@@ -192,16 +199,39 @@ namespace ShareX.ImageEffectsLib
 
                             if (DrawTextOutline && TextOutlineSize > 0)
                             {
-                                using (Pen textShadowPen = new Pen(TextShadowColor, TextOutlineSize) { LineJoin = LineJoin.Round })
+                                if (TextShadowUseGradient)
                                 {
-                                    g.DrawPath(textShadowPen, gp);
+                                    using (LinearGradientBrush textShadowBrush = TextShadowGradient.GetGradientBrush(
+                                        Rectangle.Round(textRectangle).Offset(TextOutlineSize + 1).LocationOffset(TextShadowOffset)))
+                                    using (Pen textShadowPen = new Pen(textShadowBrush, TextOutlineSize) { LineJoin = LineJoin.Round })
+                                    {
+                                        g.DrawPath(textShadowPen, gp);
+                                    }
+                                }
+                                else
+                                {
+                                    using (Pen textShadowPen = new Pen(TextShadowColor, TextOutlineSize) { LineJoin = LineJoin.Round })
+                                    {
+                                        g.DrawPath(textShadowPen, gp);
+                                    }
                                 }
                             }
                             else
                             {
-                                using (Brush textShadowBrush = new SolidBrush(TextShadowColor))
+                                if (TextShadowUseGradient)
                                 {
-                                    g.FillPath(textShadowBrush, gp);
+                                    using (Brush textShadowBrush = TextShadowGradient.GetGradientBrush(
+                                        Rectangle.Round(textRectangle).Offset(1).LocationOffset(TextShadowOffset)))
+                                    {
+                                        g.FillPath(textShadowBrush, gp);
+                                    }
+                                }
+                                else
+                                {
+                                    using (Brush textShadowBrush = new SolidBrush(TextShadowColor))
+                                    {
+                                        g.FillPath(textShadowBrush, gp);
+                                    }
                                 }
                             }
 
