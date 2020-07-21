@@ -33,7 +33,7 @@ DisableReadyPage=no
 DisableReadyMemo=no
 DisableFinishedPage=no
 LicenseFile={#MyAppRootDirectory}\LICENSE.txt
-; .NET 4.6.2 is supported only on Windows 7 SP1 and up
+; .NET 4.7.2 is supported only on Windows 7 SP1 and up
 MinVersion=0,6.1.7601
 OutputBaseFilename={#MyAppName}-{#MyAppVersion}-setup
 OutputDir={#MyAppOutputDirectory}
@@ -117,7 +117,7 @@ DependenciesDir=Dependencies
 #include "Scripts\products\winversion.iss"
 #include "Scripts\products\fileversion.iss"
 #include "Scripts\products\dotnetfxversion.iss"
-#include "scripts\products\dotnetfx46.iss"
+#include "scripts\products\dotnetfx47.iss"
 
 [Code]
 function InitializeSetup(): Boolean;
