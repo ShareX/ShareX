@@ -123,7 +123,7 @@ DependenciesDir=Dependencies
 function InitializeSetup(): Boolean;
 begin
   initwinversion();
-  dotnetfx46(62);
+  dotnetfx47(72);
   Result := true;
 end;
 
