@@ -28,6 +28,7 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Design;
 using System.Drawing.Drawing2D;
+using System.Drawing.Text;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -39,7 +40,7 @@ namespace ShareX.ImageEffectsLib
         [DefaultValue("Text watermark"), Editor(typeof(NameParserEditor), typeof(UITypeEditor))]
         public string Text { get; set; }
 
-        [DefaultValue(ContentAlignment.BottomRight)]
+        [DefaultValue(ContentAlignment.BottomRight), TypeConverter(typeof(EnumProperNameConverter))]
         public ContentAlignment Placement { get; set; }
 
         [DefaultValue(typeof(Point), "5, 5")]
@@ -66,6 +67,9 @@ namespace ShareX.ImageEffectsLib
                 }
             }
         }
+
+        [DefaultValue(TextRenderingHint.SystemDefault), TypeConverter(typeof(EnumProperNameConverter))]
+        public TextRenderingHint TextRenderingMode { get; set; }
 
         [DefaultValue(typeof(Color), "235, 235, 235"), Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
         public Color TextColor { get; set; }
@@ -231,6 +235,8 @@ namespace ShareX.ImageEffectsLib
                             g.PixelOffsetMode = PixelOffsetMode.Default;
                         }
                     }
+
+                    g.TextRenderingHint = TextRenderingMode;
 
                     if (DrawTextShadow)
                     {
