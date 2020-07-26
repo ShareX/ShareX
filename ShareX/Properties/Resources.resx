@@ -1039,4 +1039,7 @@ Middle click to close</value>
   <data name="AboutForm_AboutForm_Language_pt_PT" xml:space="preserve">
     <value>Portuguese</value>
   </data>
+  <data name="AboutForm_AboutForm_Language_fa_IR" xml:space="preserve">
+    <value>Persian</value>
+  </data>
 </root>

@@ -115,6 +115,15 @@ namespace ShareX.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Persian.
+        /// </summary>
+        public static string AboutForm_AboutForm_Language_fa_IR {
+            get {
+                return ResourceManager.GetString("AboutForm_AboutForm_Language_fa_IR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to French.
         /// </summary>
         public static string AboutForm_AboutForm_Language_fr {
