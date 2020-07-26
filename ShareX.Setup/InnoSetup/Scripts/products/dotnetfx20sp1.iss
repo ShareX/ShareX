@@ -1,6 +1,6 @@
 ; requires Windows 2000 Service Pack 4, Windows Server 2003, Windows XP Service Pack 2
 ; requires KB 835732 on Windows 2000 Service Pack 4
-; http://www.microsoft.com/downloads/details.aspx?FamilyID=79bc3b77-e02c-4ad3-aacf-a7633f706ba5
+; https://www.microsoft.com/downloads/details.aspx?FamilyID=79bc3b77-e02c-4ad3-aacf-a7633f706ba5
 
 [CustomMessages]
 dotnetfx20sp1_title=.NET Framework 2.0 Service Pack 1

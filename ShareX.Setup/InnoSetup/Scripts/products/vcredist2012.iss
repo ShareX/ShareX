@@ -1,9 +1,9 @@
 ; requires Windows 7 Service Pack 1, Windows 8, Windows 8.1, Windows Server 2003, Windows Server 2008 R2 SP1, Windows Server 2008 Service Pack 2, Windows Server 2012, Windows Vista Service Pack 2, Windows XP
-; http://www.microsoft.com/en-us/download/details.aspx?id=30679
+; https://www.microsoft.com/en-us/download/details.aspx?id=30679
 
 [CustomMessages]
-vcredist2012_title=Visual C++ 2012 Redistributable
-vcredist2012_title_x64=Visual C++ 2012 64-Bit Redistributable
+vcredist2012_title=Visual C++ 2012 Redistributable (x86)
+vcredist2012_title_x64=Visual C++ 2012 Redistributable (x64)
 
 vcredist2012_size=6.3 MB
 vcredist2012_size_x64=6.9 MB
