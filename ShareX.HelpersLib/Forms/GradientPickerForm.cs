@@ -58,6 +58,9 @@ namespace ShareX.HelpersLib
                 new GradientInfo(new GradientStop(Color.FromArgb(0, 187, 138), 0f), new GradientStop(Color.FromArgb(0, 105, 163), 100f))
             };
 
+            lvPresets.Items.Clear();
+            ilPresets.Images.Clear();
+
             for (int i = 0; i < gradients.Length; i++)
             {
                 GradientInfo gradient = gradients[i];
@@ -177,6 +180,7 @@ namespace ShareX.HelpersLib
         {
             Gradient.Type = (LinearGradientMode)cbGradientType.SelectedIndex;
             UpdatePreview();
+            AddPresets();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -265,7 +269,7 @@ namespace ShareX.HelpersLib
                 GradientInfo gradientInfo = lvi.Tag as GradientInfo;
                 if (gradientInfo != null)
                 {
-                    Gradient = gradientInfo;
+                    Gradient = gradientInfo.Copy();
                     UpdateGradientList(true);
                     lvi.Selected = false;
                 }
