@@ -520,7 +520,7 @@ namespace ShareX
         private void BtnThemeReset_Click(object sender, EventArgs e)
         {
             // TODO: Translate
-            if (MessageBox.Show("Would you like to reset themes?", "ShareX", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+            if (MessageBox.Show("Would you like to reset themes?", "ShareX - " + "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
             {
                 Program.Settings.Themes = ShareXTheme.GetPresets();
                 Program.Settings.SelectedTheme = 0;

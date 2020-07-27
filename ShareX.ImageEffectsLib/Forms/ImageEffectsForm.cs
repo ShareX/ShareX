@@ -562,14 +562,18 @@ namespace ShareX.ImageEffectsLib
 
         private void btnEffectClear_Click(object sender, EventArgs e)
         {
-            ImageEffectPreset preset = GetSelectedPreset();
-
-            if (preset != null)
+            // TODO: Translate
+            if (MessageBox.Show("Would you like to clear effects?", "ShareX - " + "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
             {
-                lvEffects.Items.Clear();
-                preset.Effects.Clear();
-                ClearSelectedEffect();
-                UpdatePreview();
+                ImageEffectPreset preset = GetSelectedPreset();
+
+                if (preset != null)
+                {
+                    lvEffects.Items.Clear();
+                    preset.Effects.Clear();
+                    ClearSelectedEffect();
+                    UpdatePreview();
+                }
             }
         }
 
