@@ -46,6 +46,10 @@ namespace ShareX.HelpersLib
             cbGradientType.Items.AddRange(Helpers.GetEnumNamesProper<LinearGradientMode>());
             cbGradientType.SelectedIndex = (int)Gradient.Type;
             UpdateGradientList();
+            if (lvGradientPoints.Items.Count > 0)
+            {
+                lvGradientPoints.SelectedIndex = 0;
+            }
         }
 
         private void UpdateGradientList()

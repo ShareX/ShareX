@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GradientPickerForm));
-            this.lvGradientPoints = new System.Windows.Forms.ListView();
+            this.lvGradientPoints = new ShareX.HelpersLib.MyListView();
             this.chLocation = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ilColors = new System.Windows.Forms.ImageList(this.components);
             this.btnAdd = new System.Windows.Forms.Button();
@@ -53,10 +53,12 @@
             // 
             this.lvGradientPoints.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.chLocation});
+            this.lvGradientPoints.DisableDeselect = true;
             this.lvGradientPoints.FullRowSelect = true;
             this.lvGradientPoints.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
             this.lvGradientPoints.HideSelection = false;
             resources.ApplyResources(this.lvGradientPoints, "lvGradientPoints");
+            this.lvGradientPoints.MultiSelect = false;
             this.lvGradientPoints.Name = "lvGradientPoints";
             this.lvGradientPoints.SmallImageList = this.ilColors;
             this.lvGradientPoints.UseCompatibleStateImageBehavior = false;
@@ -158,7 +160,6 @@
             // GradientPickerForm
             // 
             resources.ApplyResources(this, "$this");
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.CancelButton = this.btnCancel;
@@ -187,7 +188,7 @@
 
         #endregion
 
-        private System.Windows.Forms.ListView lvGradientPoints;
+        private MyListView lvGradientPoints;
         private System.Windows.Forms.ColumnHeader chLocation;
         private ColorButton cbtnCurrentColor;
         private System.Windows.Forms.Button btnAdd;
