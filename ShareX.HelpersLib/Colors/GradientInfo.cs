@@ -51,6 +51,11 @@ namespace ShareX.HelpersLib
             Colors = new List<GradientStop>();
         }
 
+        public GradientInfo(params GradientStop[] colors) : this()
+        {
+            Colors = colors.ToList();
+        }
+
         public void Sort()
         {
             Colors.Sort((x, y) => x.Location.CompareTo(y.Location));
@@ -108,6 +113,21 @@ namespace ShareX.HelpersLib
             LinearGradientBrush brush = new LinearGradientBrush(rect, Color.Transparent, Color.Transparent, Type);
             brush.InterpolationColors = GetColorBlend();
             return brush;
+        }
+
+        public Bitmap CreateGradientPreview(int width, int height)
+        {
+            Bitmap bmp = new Bitmap(width, height);
+            Rectangle rect = new Rectangle(0, 0, width, height);
+
+            using (Graphics g = Graphics.FromImage(bmp))
+            using (LinearGradientBrush brush = GetGradientBrush(rect))
+            {
+                g.FillRectangle(brush, rect);
+                g.DrawRectangleProper(Pens.Black, rect);
+            }
+
+            return bmp;
         }
 
         public override string ToString()

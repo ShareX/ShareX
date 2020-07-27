@@ -45,22 +45,46 @@ namespace ShareX.HelpersLib
 
             cbGradientType.Items.AddRange(Helpers.GetEnumNamesProper<LinearGradientMode>());
             cbGradientType.SelectedIndex = (int)Gradient.Type;
-            UpdateGradientList();
-            if (lvGradientPoints.Items.Count > 0)
+            UpdateGradientList(true);
+            AddPresets();
+        }
+
+        private void AddPresets()
+        {
+            GradientInfo[] gradients = new GradientInfo[]
             {
-                lvGradientPoints.SelectedIndex = 0;
+                new GradientInfo(new GradientStop(Color.FromArgb(184, 11, 195), 0f), new GradientStop(Color.FromArgb(98, 54, 255), 100f)),
+                new GradientInfo(new GradientStop(Color.FromArgb(255, 3, 135), 0f), new GradientStop(Color.FromArgb(255, 143, 3), 100f)),
+                new GradientInfo(new GradientStop(Color.FromArgb(0, 187, 138), 0f), new GradientStop(Color.FromArgb(0, 105, 163), 100f))
+            };
+
+            for (int i = 0; i < gradients.Length; i++)
+            {
+                GradientInfo gradient = gradients[i];
+                gradient.Type = Gradient.Type;
+                ilPresets.Images.Add(gradient.CreateGradientPreview(100, 25));
+
+                ListViewItem lvi = new ListViewItem();
+                lvi.ImageIndex = i;
+                lvi.Tag = gradient;
+                lvPresets.Items.Add(lvi);
             }
         }
 
-        private void UpdateGradientList()
+        private void UpdateGradientList(bool selectFirst = false)
         {
+            isReady = false;
             Gradient.Sort();
 
-            isReady = false;
             lvGradientPoints.Items.Clear();
             foreach (GradientStop gradientStop in Gradient.Colors)
             {
                 AddGradientStop(gradientStop);
+            }
+
+            if (selectFirst && lvGradientPoints.Items.Count > 0)
+            {
+                lvGradientPoints.SelectedIndex = 0;
             }
 
             isReady = true;
@@ -230,6 +254,21 @@ namespace ShareX.HelpersLib
             if (e.Button == MouseButtons.Left && lvGradientPoints.SelectedItems.Count > 0)
             {
                 cbtnCurrentColor.ShowColorDialog();
+            }
+        }
+
+        private void lvPresets_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (isReady && lvPresets.SelectedItems.Count > 0)
+            {
+                ListViewItem lvi = lvPresets.SelectedItems[0];
+                GradientInfo gradientInfo = lvi.Tag as GradientInfo;
+                if (gradientInfo != null)
+                {
+                    Gradient = gradientInfo;
+                    UpdateGradientList(true);
+                    lvi.Selected = false;
+                }
             }
         }
 
