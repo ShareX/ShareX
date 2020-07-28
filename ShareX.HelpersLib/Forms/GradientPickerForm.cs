@@ -56,8 +56,9 @@ namespace ShareX.HelpersLib
                 new GradientInfo(Color.FromArgb(184, 11, 195), Color.FromArgb(98, 54, 255)),
                 new GradientInfo(Color.FromArgb(255, 3, 135), Color.FromArgb(255, 143, 3)),
                 new GradientInfo(Color.FromArgb(0, 187, 138), Color.FromArgb(0, 105, 163)),
+
                 new GradientInfo(Color.FromArgb(46, 49, 146), Color.FromArgb(27, 255, 255)),
-                new GradientInfo(Color.FromArgb(212, 20, 90), Color.FromArgb(251, 176, 59)),
+                //new GradientInfo(Color.FromArgb(212, 20, 90), Color.FromArgb(251, 176, 59)),
                 new GradientInfo(Color.FromArgb(0, 146, 69), Color.FromArgb(252, 238, 33)),
                 new GradientInfo(Color.FromArgb(102, 45, 140), Color.FromArgb(237, 30, 121)),
                 new GradientInfo(Color.FromArgb(238, 156, 167), Color.FromArgb(255, 221, 225)),
@@ -80,7 +81,9 @@ namespace ShareX.HelpersLib
                 new GradientInfo(Color.FromArgb(255, 236, 210), Color.FromArgb(252, 182, 159)),
                 new GradientInfo(Color.FromArgb(161, 196, 253), Color.FromArgb(194, 233, 251)),
                 new GradientInfo(Color.FromArgb(118, 75, 162), Color.FromArgb(102, 126, 234)),
-                new GradientInfo(Color.FromArgb(253, 252, 251), Color.FromArgb(226, 209, 195))
+                new GradientInfo(Color.FromArgb(253, 252, 251), Color.FromArgb(226, 209, 195)),
+
+                new GradientInfo(Color.FromArgb(255, 0, 0), Color.FromArgb(255, 0, 255), Color.FromArgb(0, 0, 255), Color.FromArgb(0, 255, 255), Color.FromArgb(0, 255, 0), Color.FromArgb(255, 255, 0), Color.FromArgb(255, 0, 0))
             };
 
             lvPresets.Items.Clear();

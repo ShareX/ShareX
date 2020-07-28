@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
@@ -60,7 +61,7 @@ namespace ShareX.HelpersLib
         {
             for (int i = 0; i < colors.Length; i++)
             {
-                Colors.Add(new GradientStop(colors[i], 100f / (colors.Length - 1) * i));
+                Colors.Add(new GradientStop(colors[i], (int)Math.Round(100f / (colors.Length - 1) * i)));
             }
         }
 
