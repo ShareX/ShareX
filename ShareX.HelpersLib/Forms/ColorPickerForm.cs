@@ -41,7 +41,7 @@ namespace ShareX.HelpersLib
         private bool oldColorExist;
         private bool controlChangingColor;
 
-        public ColorPickerForm(Color currentColor, bool isScreenColorPickerMode = false)
+        public ColorPickerForm(Color currentColor, bool isScreenColorPickerMode = false, bool checkClipboard = true)
         {
             InitializeComponent();
             ShareXResources.ApplyTheme(this);
@@ -51,6 +51,11 @@ namespace ShareX.HelpersLib
             PrepareColorPalette();
             SetCurrentColor(currentColor, !IsScreenColorPickerMode);
 
+            if (checkClipboard)
+            {
+                CheckClipboard();
+            }
+
             btnOK.Visible = btnCancel.Visible = !IsScreenColorPickerMode;
             mbCopy.Visible = btnClose.Visible = pCursorPosition.Visible = IsScreenColorPickerMode;
         }
@@ -59,6 +64,19 @@ namespace ShareX.HelpersLib
         {
             OpenScreenColorPicker = openScreenColorPicker;
             btnScreenColorPicker.Visible = true;
+        }
+
+        public bool CheckClipboard()
+        {
+            string text = ClipboardHelpers.GetText(true);
+
+            if (!string.IsNullOrEmpty(text) && ColorHelpers.ParseColor(text, out Color clipboardColor))
+            {
+                colorPicker.ChangeColor(clipboardColor);
+                return true;
+            }
+
+            return false;
         }
 
         public static bool PickColor(Color currentColor, out Color newColor, Form owner = null, Func<PointInfo> openScreenColorPicker = null)

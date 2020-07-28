@@ -143,20 +143,9 @@ namespace ShareX.ScreenCaptureLib
             return null;
         }
 
-        public static void ShowScreenColorPickerDialog(RegionCaptureOptions options, bool checkClipboard = true)
+        public static void ShowScreenColorPickerDialog(RegionCaptureOptions options)
         {
             Color color = Color.Red;
-
-            if (checkClipboard)
-            {
-                string text = ClipboardHelpers.GetText(true);
-
-                if (!string.IsNullOrEmpty(text) && ColorHelpers.ParseColor(text, out Color clipboardColor))
-                {
-                    color = clipboardColor;
-                }
-            }
-
             ColorPickerForm colorPickerForm = new ColorPickerForm(color, true);
             colorPickerForm.EnableScreenColorPickerButton(() => GetPointInfo(options));
             colorPickerForm.Show();
