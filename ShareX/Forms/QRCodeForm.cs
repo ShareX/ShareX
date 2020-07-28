@@ -66,6 +66,8 @@ namespace ShareX
             {
                 txtQRCode.Text = text;
             }
+
+            rtbDecodeResult.AddContextMenu();
         }
 
         public static QRCodeForm EncodeClipboard()
