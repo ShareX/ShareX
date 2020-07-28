@@ -60,14 +60,13 @@ namespace ShareX
         public QRCodeForm(string text = null)
         {
             InitializeComponent();
+            rtbDecodeResult.AddContextMenu();
             ShareXResources.ApplyTheme(this);
 
             if (!string.IsNullOrEmpty(text))
             {
                 txtQRCode.Text = text;
             }
-
-            rtbDecodeResult.AddContextMenu();
         }
 
         public static QRCodeForm EncodeClipboard()
