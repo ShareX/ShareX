@@ -56,6 +56,14 @@ namespace ShareX.HelpersLib
             Colors = colors.ToList();
         }
 
+        public GradientInfo(params Color[] colors) : this()
+        {
+            for (int i = 0; i < colors.Length; i++)
+            {
+                Colors.Add(new GradientStop(colors[i], 100f / (colors.Length - 1) * i));
+            }
+        }
+
         public void Sort()
         {
             Colors.Sort((x, y) => x.Location.CompareTo(y.Location));

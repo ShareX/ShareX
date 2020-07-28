@@ -32,7 +32,7 @@ namespace ShareX.HelpersLib
 {
     public partial class GradientPickerForm : Form
     {
-        public GradientInfo Gradient { get; set; }
+        public GradientInfo Gradient { get; private set; }
 
         private bool isReady;
 
@@ -53,9 +53,9 @@ namespace ShareX.HelpersLib
         {
             GradientInfo[] gradients = new GradientInfo[]
             {
-                new GradientInfo(new GradientStop(Color.FromArgb(184, 11, 195), 0f), new GradientStop(Color.FromArgb(98, 54, 255), 100f)),
-                new GradientInfo(new GradientStop(Color.FromArgb(255, 3, 135), 0f), new GradientStop(Color.FromArgb(255, 143, 3), 100f)),
-                new GradientInfo(new GradientStop(Color.FromArgb(0, 187, 138), 0f), new GradientStop(Color.FromArgb(0, 105, 163), 100f))
+                new GradientInfo(Color.FromArgb(184, 11, 195), Color.FromArgb(98, 54, 255)),
+                new GradientInfo(Color.FromArgb(255, 3, 135), Color.FromArgb(255, 143, 3)),
+                new GradientInfo(Color.FromArgb(0, 187, 138), Color.FromArgb(0, 105, 163))
             };
 
             lvPresets.Items.Clear();
@@ -178,9 +178,12 @@ namespace ShareX.HelpersLib
 
         private void cbGradientType_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Gradient.Type = (LinearGradientMode)cbGradientType.SelectedIndex;
-            UpdatePreview();
-            AddPresets();
+            if (isReady)
+            {
+                Gradient.Type = (LinearGradientMode)cbGradientType.SelectedIndex;
+                UpdatePreview();
+                AddPresets();
+            }
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
