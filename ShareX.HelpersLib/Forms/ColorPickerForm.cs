@@ -472,6 +472,11 @@ namespace ShareX.HelpersLib
             }
         }
 
+        private void btnClipboardColorPicker_Click(object sender, EventArgs e)
+        {
+            CheckClipboard();
+        }
+
         #endregion Events
     }
 }
