@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using System;
 using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Design;
@@ -186,7 +187,7 @@ namespace ShareX.ImageEffectsLib
                         return bmp;
                     }
 
-                    Size textSize = pathRect.Size.ToSize();
+                    Size textSize = pathRect.Size.ToSize().Offset(1);
                     Point textPosition = Helpers.GetPosition(Placement, Offset, bmp.Size, textSize);
                     Rectangle textRectangle = new Rectangle(textPosition, textSize);
 
