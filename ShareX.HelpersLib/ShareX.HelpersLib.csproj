@@ -104,6 +104,7 @@
     <Compile Include="..\SharedAssemblyInfo.cs">
       <Link>Properties\SharedAssemblyInfo.cs</Link>
     </Compile>
+    <Compile Include="ControlHider.cs" />
     <Compile Include="Controls\ObjectListView.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -1482,6 +1483,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\clipboard-block.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tick.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

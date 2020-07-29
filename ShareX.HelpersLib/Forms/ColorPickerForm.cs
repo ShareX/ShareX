@@ -40,11 +40,13 @@ namespace ShareX.HelpersLib
 
         private bool oldColorExist;
         private bool controlChangingColor;
+        private ControlHider clipboardStatusHider;
 
         public ColorPickerForm(Color currentColor, bool isScreenColorPickerMode = false, bool checkClipboard = true)
         {
             InitializeComponent();
             ShareXResources.ApplyTheme(this);
+            clipboardStatusHider = new ControlHider(btnClipboardStatus, 2000);
 
             IsScreenColorPickerMode = isScreenColorPickerMode;
 
@@ -70,10 +72,19 @@ namespace ShareX.HelpersLib
         {
             string text = ClipboardHelpers.GetText(true);
 
-            if (!string.IsNullOrEmpty(text) && ColorHelpers.ParseColor(text, out Color clipboardColor))
+            if (!string.IsNullOrEmpty(text))
             {
-                colorPicker.ChangeColor(clipboardColor);
-                return true;
+                text = text.Trim();
+
+                if (ColorHelpers.ParseColor(text, out Color clipboardColor))
+                {
+                    colorPicker.ChangeColor(clipboardColor);
+                    btnClipboardStatus.Text = "Clipboard: " + text;
+                    btnClipboardStatus.Location = new Point(btnClipboardColorPicker.Left + btnClipboardColorPicker.Width / 2 - btnClipboardStatus.Width / 2,
+                        btnClipboardColorPicker.Top - btnClipboardStatus.Height - 5);
+                    clipboardStatusHider.Show();
+                    return true;
+                }
             }
 
             return false;

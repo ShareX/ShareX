@@ -132,6 +132,9 @@
   <data name="ImgurThumbnailType_Big_Square" xml:space="preserve">
     <value>Big square</value>
   </data>
+  <data name="HotkeyType_TweetMessage_Category" xml:space="preserve">
+    <value>Tools</value>
+  </data>
   <data name="ReplCodeMenuEntry_s_Current_second" xml:space="preserve">
     <value>Second</value>
   </data>
@@ -171,9 +174,6 @@
   <data name="ReplCodeMenuEntry_uln_User_login_name" xml:space="preserve">
     <value>User login name</value>
   </data>
-  <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__Image__Size___0_x_1__" xml:space="preserve">
-    <value>Clipboard content: Image (Size: {0}x{1})</value>
-  </data>
   <data name="HotkeyType_ImageEffects" xml:space="preserve">
     <value>Image effects</value>
   </data>
@@ -189,9 +189,8 @@
   <data name="ShapeType_DrawingSpeechBalloon" xml:space="preserve">
     <value>Speech balloon (S)</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="ShareX_Icon_White" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ShareX_Icon_White.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="UpdateCheckerLabel_UpdateControls_ShareX_is_up_to_date" xml:space="preserve">
+    <value>{0} is up to date</value>
   </data>
   <data name="HotkeyType_ScreenRecorder_Category" xml:space="preserve">
     <value>Screen record</value>
@@ -226,14 +225,17 @@
   <data name="AfterCaptureTasks_PerformActions" xml:space="preserve">
     <value>Perform actions</value>
   </data>
-  <data name="HotkeyType_QRCode_Category" xml:space="preserve">
-    <value>Tools</value>
+  <data name="DrawImageSizeMode_PercentageOfCanvas" xml:space="preserve">
+    <value>Percentage of canvas</value>
   </data>
   <data name="ReplCodeMenuCategory_Date_and_Time" xml:space="preserve">
     <value>Date and time</value>
   </data>
   <data name="HotkeyType_ImageCombiner" xml:space="preserve">
     <value>Image combiner</value>
+  </data>
+  <data name="HotkeyType_MonitorTest_Category" xml:space="preserve">
+    <value>Tools</value>
   </data>
   <data name="HotkeyType_RectangleTransparent" xml:space="preserve">
     <value>Capture region (Transparent)</value>
@@ -277,8 +279,8 @@
   <data name="ReplCodeMenuEntry_ix_Auto_increment_hexadecimal" xml:space="preserve">
     <value>Auto increment hexadecimal. 0 pad left using {n}</value>
   </data>
-  <data name="DrawImageSizeMode_DontResize" xml:space="preserve">
-    <value>Don't resize</value>
+  <data name="CMYK_ToString_Cyan___0_0_0____Magenta___1_0_0____Yellow___2_0_0____Key___3_0_0__" xml:space="preserve">
+    <value>Cyan: {0:0.0}%, Magenta: {1:0.0}%, Yellow: {2:0.0}%, Key: {3:0.0}%</value>
   </data>
   <data name="HotkeyType_FolderUpload" xml:space="preserve">
     <value>Upload folder</value>
@@ -291,6 +293,9 @@
   </data>
   <data name="ReplCodeMenuEntry_d_Current_day" xml:space="preserve">
     <value>Day</value>
+  </data>
+  <data name="PastebinExpiration_D1" xml:space="preserve">
+    <value>1 Day</value>
   </data>
   <data name="ShapeType_DrawingArrow" xml:space="preserve">
     <value>Arrow (A)</value>
@@ -352,6 +357,9 @@
   <data name="HotkeyType_ImageThumbnailer_Category" xml:space="preserve">
     <value>Tools</value>
   </data>
+  <data name="HotkeyType_QRCode_Category" xml:space="preserve">
+    <value>Tools</value>
+  </data>
   <data name="HotkeyType_CustomRegion" xml:space="preserve">
     <value>Capture pre configured region</value>
   </data>
@@ -383,14 +391,11 @@ Would you like to download it?</value>
   <data name="Helpers_DownloadString_Download_failed_" xml:space="preserve">
     <value>Download failed:</value>
   </data>
-  <data name="URLSharingServices_GoogleImageSearch" xml:space="preserve">
-    <value>Google image search</value>
-  </data>
-  <data name="ImgurThumbnailType_Medium_Thumbnail" xml:space="preserve">
-    <value>Medium thumbnail</value>
-  </data>
   <data name="ShapeType_DrawingTextOutline" xml:space="preserve">
     <value>Text (Outline) (O)</value>
+  </data>
+  <data name="RegionCaptureAction_CaptureActiveMonitor" xml:space="preserve">
+    <value>Capture active monitor</value>
   </data>
   <data name="ImgurThumbnailType_Small_Thumbnail" xml:space="preserve">
     <value>Small thumbnail</value>
@@ -401,6 +406,10 @@ Would you like to download it?</value>
   <data name="GIFQuality_Bit4" xml:space="preserve">
     <value>Octree quantizer 16 colors</value>
   </data>
+  <data name="AfterUploadTasks_ShowAfterUploadWindow" xml:space="preserve">
+    <value>Show "After upload" window</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="Crosshair" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\crosshair.cur;System.Byte[], mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -413,7 +422,7 @@ Would you like to download it?</value>
   <data name="FileDestination_CustomFileUploader" xml:space="preserve">
     <value>Custom file uploader</value>
   </data>
-  <data name="HotkeyType_TweetMessage_Category" xml:space="preserve">
+  <data name="HotkeyType_VideoConverter_Category" xml:space="preserve">
     <value>Tools</value>
   </data>
   <data name="LinearGradientMode_Vertical" xml:space="preserve">
@@ -430,6 +439,9 @@ Would you like to download it?</value>
   </data>
   <data name="HotkeyType_ScreenRecorderActiveWindow" xml:space="preserve">
     <value>Start/Stop screen recording using active window region</value>
+  </data>
+  <data name="HotkeyType_ImageEditor_Category" xml:space="preserve">
+    <value>Tools</value>
   </data>
   <data name="ReplCodeMenuEntry_rn_Random_number_0_to_9" xml:space="preserve">
     <value>Random number 0 to 9. Repeat using {n}</value>
@@ -470,9 +482,6 @@ Would you like to download it?</value>
   <data name="AmazonS3StorageClass_DEEP_ARCHIVE" xml:space="preserve">
     <value>Amazon S3 Glacier Deep Archive</value>
   </data>
-  <data name="HotkeyType_ActiveMonitor_Category" xml:space="preserve">
-    <value>Screen capture</value>
-  </data>
   <data name="GIFQuality_Bit8" xml:space="preserve">
     <value>Octree quantizer 256 colors (Slow encoding but better quality)</value>
   </data>
@@ -485,8 +494,8 @@ Would you like to download it?</value>
   <data name="ReplCodeMenuEntry_ia_Auto_increment_alphanumeric" xml:space="preserve">
     <value>Auto increment alphanumeric case-insensitive. 0 pad left using {n}</value>
   </data>
-  <data name="HotkeyType_ClipboardUploadWithContentViewer_Category" xml:space="preserve">
-    <value>Upload</value>
+  <data name="DNSChangerForm_btnSave_Click_Setting_DNS_failed_" xml:space="preserve">
+    <value>Setting DNS failed.</value>
   </data>
   <data name="DNSChangerForm_DNSChangerForm_Manual" xml:space="preserve">
     <value>Manual</value>
@@ -530,6 +539,9 @@ Would you like to download it?</value>
   <data name="ShapeType_RegionEllipse" xml:space="preserve">
     <value>Ellipse region</value>
   </data>
+  <data name="ScrollingCaptureScrollMethod_KeyPressPageDown" xml:space="preserve">
+    <value>Simulate pressing "Page down" key</value>
+  </data>
   <data name="HotkeyType_DNSChanger" xml:space="preserve">
     <value>DNS changer</value>
   </data>
@@ -538,9 +550,6 @@ Would you like to download it?</value>
   </data>
   <data name="HotkeyType_ScreenRecorderGIF" xml:space="preserve">
     <value>Start/Stop screen recording (GIF) using custom region</value>
-  </data>
-  <data name="ObjectListView_ObjectListView_Value" xml:space="preserve">
-    <value>Value</value>
   </data>
   <data name="YouTubeVideoPrivacy_Unlisted" xml:space="preserve">
     <value>Unlisted</value>
@@ -623,8 +632,8 @@ Would you like to download it?</value>
   <data name="ActionsCodeMenuEntry_OutputFilePath_File_path_without_extension____Output_file_name_extension_" xml:space="preserve">
     <value>File path without extension + "Output file name extension"</value>
   </data>
-  <data name="PastebinExpiration_D1" xml:space="preserve">
-    <value>1 Day</value>
+  <data name="URLSharingServices_GoogleImageSearch" xml:space="preserve">
+    <value>Google image search</value>
   </data>
   <data name="HotkeyType_RectangleLight_Category" xml:space="preserve">
     <value>Screen capture</value>
@@ -644,11 +653,8 @@ Would you like to download it?</value>
   <data name="HotkeyType_TweetMessage" xml:space="preserve">
     <value>Tweet message</value>
   </data>
-  <data name="HotkeyType_AutoCapture" xml:space="preserve">
-    <value>Auto capture</value>
-  </data>
-  <data name="HotkeyType_VideoConverter" xml:space="preserve">
-    <value>Video converter</value>
+  <data name="DrawImageSizeMode_DontResize" xml:space="preserve">
+    <value>Don't resize</value>
   </data>
   <data name="HotkeyType_StopUploads" xml:space="preserve">
     <value>Stop all active uploads</value>
@@ -661,6 +667,9 @@ Would you like to download it?</value>
   </data>
   <data name="cross" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\cross.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HotkeyType_ClipboardUploadWithContentViewer_Category" xml:space="preserve">
+    <value>Upload</value>
   </data>
   <data name="MyPictureBox_LoadImageAsync_Loading_image___" xml:space="preserve">
     <value>Loading image...</value>
@@ -685,8 +694,8 @@ File size: {2:n0} / {3:n0} KB</value>
   <data name="UpdateMessageBox_UpdateMessageBox_CurrentVersion" xml:space="preserve">
     <value>Current version</value>
   </data>
-  <data name="Helpers_BrowseFolder_Choose_folder" xml:space="preserve">
-    <value>Choose folder</value>
+  <data name="HotkeyType_ActiveMonitor_Category" xml:space="preserve">
+    <value>Screen capture</value>
   </data>
   <data name="FileDestination_Email" xml:space="preserve">
     <value>Email</value>
@@ -700,9 +709,6 @@ File size: {2:n0} / {3:n0} KB</value>
   <data name="UpdateMessageBox_UpdateMessageBox_" xml:space="preserve">
     <value>A newer version of {0} is available.
 Would you like to download and install it?</value>
-  </data>
-  <data name="HotkeyType_VideoConverter_Category" xml:space="preserve">
-    <value>Tools</value>
   </data>
   <data name="HotkeyType_ScreenRecorderGIF_Category" xml:space="preserve">
     <value>Screen record</value>
@@ -718,6 +724,9 @@ Would you like to download and install it?</value>
   </data>
   <data name="Helpers_OpenFile_File_not_exist_" xml:space="preserve">
     <value>File does not exist:</value>
+  </data>
+  <data name="Helpers_BrowseFolder_Choose_folder" xml:space="preserve">
+    <value>Choose folder</value>
   </data>
   <data name="ExportImportControl_Deserialize_Import_failed_" xml:space="preserve">
     <value>Import failed.</value>
@@ -737,8 +746,8 @@ Would you like to download and install it?</value>
   <data name="PNGBitDepth_Bit24" xml:space="preserve">
     <value>24 bit</value>
   </data>
-  <data name="AfterCaptureTasks_CopyFileToClipboard" xml:space="preserve">
-    <value>Copy file to clipboard</value>
+  <data name="ReplCodeMenuEntry_wy_Week_of_year" xml:space="preserve">
+    <value>Week of year</value>
   </data>
   <data name="DrawImageSizeMode_AbsoluteSize" xml:space="preserve">
     <value>Absolute size</value>
@@ -779,20 +788,17 @@ Would you like to download and install it?</value>
   <data name="ShapeType_DrawingSticker" xml:space="preserve">
     <value>Sticker</value>
   </data>
-  <data name="DrawImageSizeMode_PercentageOfCanvas" xml:space="preserve">
-    <value>Percentage of canvas</value>
+  <data name="HotkeyType_QRCode" xml:space="preserve">
+    <value>QR code</value>
   </data>
-  <data name="HotkeyType_AutoCapture_Category" xml:space="preserve">
-    <value>Screen capture</value>
+  <data name="PastebinExpiration_W1" xml:space="preserve">
+    <value>1 Week</value>
   </data>
   <data name="HotkeyType_OpenMainWindow_Category" xml:space="preserve">
     <value>Other</value>
   </data>
   <data name="CustomUploaderDestinationType_URLSharingService" xml:space="preserve">
     <value>URL sharing service</value>
-  </data>
-  <data name="ReplCodeMenuEntry_height_Gets_image_height" xml:space="preserve">
-    <value>Image height</value>
   </data>
   <data name="ScrollingCaptureScrollMethod_Automatic" xml:space="preserve">
     <value>Automatically try all methods until one works</value>
@@ -818,6 +824,9 @@ Would you like to download and install it?</value>
   <data name="HotkeyType_ClipboardUpload_Category" xml:space="preserve">
     <value>Upload</value>
   </data>
+  <data name="HotkeyType_OpenHistory_Category" xml:space="preserve">
+    <value>Other</value>
+  </data>
   <data name="ScrollingCaptureScrollMethod_MouseWheel" xml:space="preserve">
     <value>Simulate mouse wheel scrolling</value>
   </data>
@@ -827,14 +836,17 @@ Would you like to download and install it?</value>
   <data name="Error" xml:space="preserve">
     <value>Error</value>
   </data>
+  <data name="CodeMenuEntryFilename_RandomAnimal" xml:space="preserve">
+    <value>Random animal</value>
+  </data>
   <data name="URLSharingServices_CustomURLSharingService" xml:space="preserve">
     <value>Custom URL sharing service</value>
   </data>
   <data name="RegionCaptureAction_CaptureFullscreen" xml:space="preserve">
     <value>Capture fullscreen</value>
   </data>
-  <data name="DNSChangerForm_btnSave_Click_Setting_DNS_failed_" xml:space="preserve">
-    <value>Setting DNS failed.</value>
+  <data name="ReplCodeMenuEntry_pn_Process_name_of_active_window" xml:space="preserve">
+    <value>Process name of window</value>
   </data>
   <data name="DownloaderForm_DownloaderForm_Waiting_" xml:space="preserve">
     <value>Waiting.</value>
@@ -842,17 +854,14 @@ Would you like to download and install it?</value>
   <data name="HotkeyType_ImageEditor" xml:space="preserve">
     <value>Image editor</value>
   </data>
-  <data name="ProxyMethod_Automatic" xml:space="preserve">
-    <value>Automatic</value>
+  <data name="URLSharingServices_Email" xml:space="preserve">
+    <value>Email</value>
   </data>
   <data name="HotkeyType_OpenHistory" xml:space="preserve">
     <value>Open history window</value>
   </data>
   <data name="HotkeyType_UploadURL_Category" xml:space="preserve">
     <value>Upload</value>
-  </data>
-  <data name="URLSharingServices_Email" xml:space="preserve">
-    <value>Email</value>
   </data>
   <data name="ShapeType_ToolSelect" xml:space="preserve">
     <value>Select and move (M)</value>
@@ -881,8 +890,11 @@ Would you like to download and install it?</value>
   <data name="Loading" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Loading.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="HotkeyType_MonitorTest_Category" xml:space="preserve">
-    <value>Tools</value>
+  <data name="ProxyMethod_Automatic" xml:space="preserve">
+    <value>Automatic</value>
+  </data>
+  <data name="HotkeyType_ScreenRecorderGIFCustomRegion_Category" xml:space="preserve">
+    <value>Screen record</value>
   </data>
   <data name="HotkeyType_FileUpload" xml:space="preserve">
     <value>Upload file</value>
@@ -917,8 +929,8 @@ Would you like to download and install it?</value>
   <data name="HotkeyType_PrintScreen_Category" xml:space="preserve">
     <value>Screen capture</value>
   </data>
-  <data name="HotkeyType_ScreenRecorderGIFCustomRegion_Category" xml:space="preserve">
-    <value>Screen record</value>
+  <data name="HotkeyType_AutoCapture_Category" xml:space="preserve">
+    <value>Screen capture</value>
   </data>
   <data name="MyMessageBox_MyMessageBox_No" xml:space="preserve">
     <value>No</value>
@@ -941,8 +953,8 @@ Would you like to download and install it?</value>
   <data name="ScrollingCaptureScrollTopMethod_None" xml:space="preserve">
     <value>Disable scrolling to top</value>
   </data>
-  <data name="ReplCodeMenuEntry_pn_Process_name_of_active_window" xml:space="preserve">
-    <value>Process name of window</value>
+  <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__Image__Size___0_x_1__" xml:space="preserve">
+    <value>Clipboard content: Image (Size: {0}x{1})</value>
   </data>
   <data name="ReplCodeMenuEntry_mon2_Current_month_name__English_" xml:space="preserve">
     <value>Month name (English)</value>
@@ -956,17 +968,14 @@ Would you like to download and install it?</value>
   <data name="Start" xml:space="preserve">
     <value>Start</value>
   </data>
-  <data name="LoadingSmallWhite" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\LoadingSmallWhite.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="PopUpNotificationType_BalloonTip" xml:space="preserve">
     <value>Show tray balloon tip</value>
   </data>
   <data name="ReplCodeMenuEntry_w2_Current_week_name__English_" xml:space="preserve">
     <value>Week name (English)</value>
   </data>
-  <data name="CMYK_ToString_Cyan___0_0_0____Magenta___1_0_0____Yellow___2_0_0____Key___3_0_0__" xml:space="preserve">
-    <value>Cyan: {0:0.0}%, Magenta: {1:0.0}%, Yellow: {2:0.0}%, Key: {3:0.0}%</value>
+  <data name="LoadingSmallWhite" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LoadingSmallWhite.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ExeFileNameEditor_EditValue_Browse_for_executable___" xml:space="preserve">
     <value>Browse for executable...</value>
@@ -1040,6 +1049,9 @@ Would you like to download and install it?</value>
   <data name="HotkeyType_ToggleActionsToolbar_Category" xml:space="preserve">
     <value>Other</value>
   </data>
+  <data name="clipboard-block" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\clipboard-block.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="DownloaderForm_DownloaderForm_Filename___0_" xml:space="preserve">
     <value>Filename: {0}</value>
   </data>
@@ -1055,8 +1067,8 @@ Would you like to download and install it?</value>
   <data name="AmazonS3StorageClass_GLACIER" xml:space="preserve">
     <value>Amazon S3 Glacier</value>
   </data>
-  <data name="ObjectListView_ObjectListView_Copy_name" xml:space="preserve">
-    <value>Copy name</value>
+  <data name="HotkeyType_ScreenRecorderCustomRegion_Category" xml:space="preserve">
+    <value>Screen record</value>
   </data>
   <data name="Stop" xml:space="preserve">
     <value>Stop</value>
@@ -1073,11 +1085,11 @@ Would you like to download and install it?</value>
   <data name="HotkeyType_StartAutoCapture_Category" xml:space="preserve">
     <value>Screen capture</value>
   </data>
-  <data name="CodeMenuEntryFilename_RandomAnimal" xml:space="preserve">
-    <value>Random animal</value>
+  <data name="ObjectListView_ObjectListView_Value" xml:space="preserve">
+    <value>Value</value>
   </data>
-  <data name="HotkeyType_ScreenRecorderCustomRegion_Category" xml:space="preserve">
-    <value>Screen record</value>
+  <data name="ShareX_Icon_White" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ShareX_Icon_White.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="HotkeyType_DisableHotkeys" xml:space="preserve">
     <value>Disable/Enable hotkeys</value>
@@ -1091,20 +1103,14 @@ Would you like to download and install it?</value>
   <data name="ScrollingCaptureScrollTopMethod_SendMessageTop" xml:space="preserve">
     <value>Send scroll top message</value>
   </data>
-  <data name="HotkeyType_OpenHistory_Category" xml:space="preserve">
-    <value>Other</value>
+  <data name="ObjectListView_ObjectListView_Copy_name" xml:space="preserve">
+    <value>Copy name</value>
   </data>
   <data name="RegionCaptureAction_RemoveShape" xml:space="preserve">
     <value>Remove shape</value>
   </data>
   <data name="ActionsCodeMenuEntry_FilePath_File_path" xml:space="preserve">
     <value>File path</value>
-  </data>
-  <data name="ReplCodeMenuEntry_wy_Week_of_year" xml:space="preserve">
-    <value>Week of year</value>
-  </data>
-  <data name="UpdateCheckerLabel_UpdateControls_ShareX_is_up_to_date" xml:space="preserve">
-    <value>{0} is up to date</value>
   </data>
   <data name="ShareX_Icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ShareX_Icon.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -1115,8 +1121,8 @@ Would you like to download and install it?</value>
   <data name="HotkeyType_ImageEffects_Category" xml:space="preserve">
     <value>Tools</value>
   </data>
-  <data name="RegionCaptureAction_CaptureActiveMonitor" xml:space="preserve">
-    <value>Capture active monitor</value>
+  <data name="HotkeyType_VideoConverter" xml:space="preserve">
+    <value>Video converter</value>
   </data>
   <data name="MyMessageBox_MyMessageBox_Cancel" xml:space="preserve">
     <value>Cancel</value>
@@ -1136,8 +1142,8 @@ Would you like to download and install it?</value>
   <data name="PrintTextForm_LoadSettings_Name___0___Size___1_" xml:space="preserve">
     <value>Name: {0}, Size: {1}</value>
   </data>
-  <data name="PastebinExpiration_W1" xml:space="preserve">
-    <value>1 Week</value>
+  <data name="HotkeyType_AutoCapture" xml:space="preserve">
+    <value>Auto capture</value>
   </data>
   <data name="ShapeType_DrawingRectangle" xml:space="preserve">
     <value>Rectangle (R)</value>
@@ -1154,8 +1160,8 @@ Would you like to download and install it?</value>
   <data name="Helpers_BrowseFile_Choose_file" xml:space="preserve">
     <value>Choose file</value>
   </data>
-  <data name="HotkeyType_QRCode" xml:space="preserve">
-    <value>QR code</value>
+  <data name="ReplCodeMenuEntry_height_Gets_image_height" xml:space="preserve">
+    <value>Image height</value>
   </data>
   <data name="PastebinExpiration_M1" xml:space="preserve">
     <value>1 Month</value>
@@ -1180,9 +1186,6 @@ Would you like to download and install it?</value>
   </data>
   <data name="PastebinPrivacy_Public" xml:space="preserve">
     <value>Public</value>
-  </data>
-  <data name="HotkeyType_ImageSplitter_Category" xml:space="preserve">
-    <value>Tools</value>
   </data>
   <data name="ScrollingCaptureScrollMethod_SendMessageScroll" xml:space="preserve">
     <value>Send scroll message to window or control</value>
@@ -1241,22 +1244,22 @@ Would you like to download and install it?</value>
   <data name="HotkeyType_StartAutoCapture" xml:space="preserve">
     <value>Start auto capture using last region</value>
   </data>
-  <data name="HotkeyType_ImageEditor_Category" xml:space="preserve">
-    <value>Tools</value>
+  <data name="ImgurThumbnailType_Medium_Thumbnail" xml:space="preserve">
+    <value>Medium thumbnail</value>
   </data>
   <data name="Extensions_AddContextMenu_Undo" xml:space="preserve">
     <value>Undo</value>
   </data>
-  <data name="AfterUploadTasks_ShowAfterUploadWindow" xml:space="preserve">
-    <value>Show "After upload" window</value>
+  <data name="AfterCaptureTasks_CopyFileToClipboard" xml:space="preserve">
+    <value>Copy file to clipboard</value>
   </data>
-  <data name="ScrollingCaptureScrollMethod_KeyPressPageDown" xml:space="preserve">
-    <value>Simulate pressing "Page down" key</value>
+  <data name="HotkeyType_ImageSplitter_Category" xml:space="preserve">
+    <value>Tools</value>
   </data>
   <data name="AmazonS3StorageClass_STANDARD_IA" xml:space="preserve">
     <value>Amazon S3 Standard-Infrequent Access</value>
   </data>
-  <data name="clipboard-block" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\clipboard-block.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="tick" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\tick.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
