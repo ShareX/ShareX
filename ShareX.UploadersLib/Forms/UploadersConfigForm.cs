@@ -824,6 +824,7 @@ namespace ShareX.UploadersLib
             txtKuttHost.Text = Config.KuttSettings.Host;
             txtKuttAPIKey.Text = Config.KuttSettings.APIKey;
             txtKuttPassword.Text = Config.KuttSettings.Password;
+            txtKuttDomain.Text = Config.KuttSettings.Domain;
             cbKuttReuse.Checked = Config.KuttSettings.Reuse;
 
             #endregion Kutt
@@ -3287,6 +3288,11 @@ namespace ShareX.UploadersLib
         private void txtKuttPassword_TextChanged(object sender, EventArgs e)
         {
             Config.KuttSettings.Password = txtKuttPassword.Text;
+        }
+
+        private void txtKuttDomain_TextChanged(object sender, EventArgs e)
+        {
+            Config.KuttSettings.Domain = txtKuttDomain.Text;
         }
 
         private void cbKuttReuse_CheckedChanged(object sender, EventArgs e)
