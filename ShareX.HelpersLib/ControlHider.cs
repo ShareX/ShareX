@@ -48,14 +48,22 @@ namespace ShareX.HelpersLib
         private void Timer_Tick(object sender, EventArgs e)
         {
             timer.Stop();
-            Control.Visible = false;
+
+            if (Control != null && !Control.IsDisposed)
+            {
+                Control.Visible = false;
+            }
         }
 
         public void Show()
         {
-            Control.Visible = true;
-            timer.Stop();
-            timer.Start();
+            if (Control != null && !Control.IsDisposed)
+            {
+                Control.Visible = true;
+
+                timer.Stop();
+                timer.Start();
+            }
         }
 
         public void Dispose()
