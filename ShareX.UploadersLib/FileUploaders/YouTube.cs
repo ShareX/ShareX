@@ -111,7 +111,8 @@ namespace ShareX.UploadersLib.FileUploaders
         {
             if (!CheckAuthorization()) return null;
 
-            string metadata = GetMetadata(fileName);
+            string title = Path.GetFileNameWithoutExtension(fileName);
+            string metadata = GetMetadata(title);
 
             UploadResult result = SendRequestFile("https://www.googleapis.com/upload/youtube/v3/videos?part=id,snippet,status", stream, fileName, "file",
                 headers: googleAuth.GetAuthHeaders(), relatedData: metadata);
