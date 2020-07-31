@@ -579,7 +579,16 @@ namespace ShareX.ScreenCaptureLib
                     CloseWindow(RegionResult.ActiveMonitor);
                     break;
                 case Keys.Control | Keys.C:
-                    CopyAreaInfo();
+                    Result = RegionResult.Region;
+                    OnCopyImageRequested();
+                    break;
+                case Keys.Control | Keys.S:
+                    Result = RegionResult.Region;
+                    OnSaveImageRequested();
+                    break;
+                case Keys.Control | Keys.Shift | Keys.S:
+                    Result = RegionResult.Region;
+                    OnSaveImageAsRequested();
                     break;
             }
 

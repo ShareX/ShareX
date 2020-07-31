@@ -26,6 +26,7 @@
 using ShareX.HelpersLib;
 using ShareX.ScreenCaptureLib;
 using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 
 namespace ShareX
@@ -87,6 +88,47 @@ namespace ShareX
 
             using (RegionCaptureForm form = new RegionCaptureForm(mode, taskSettings.CaptureSettingsReference.SurfaceOptions, bmp))
             {
+                form.SaveImageRequested += (output, newFilePath) =>
+                {
+                    using (output)
+                    {
+                        if (string.IsNullOrEmpty(newFilePath))
+                        {
+                            string fileName = TaskHelpers.GetFilename(taskSettings, taskSettings.ImageSettings.ImageFormat.GetDescription(), output);
+                            newFilePath = Path.Combine(taskSettings.GetScreenshotsFolder(), fileName);
+                        }
+
+                        ImageHelpers.SaveImage(output, newFilePath);
+                    }
+
+                    return newFilePath;
+                };
+
+                form.SaveImageAsRequested += (output, newFilePath) =>
+                {
+                    using (output)
+                    {
+                        if (string.IsNullOrEmpty(newFilePath))
+                        {
+                            string fileName = TaskHelpers.GetFilename(taskSettings, taskSettings.ImageSettings.ImageFormat.GetDescription(), output);
+                            newFilePath = Path.Combine(taskSettings.GetScreenshotsFolder(), fileName);
+                        }
+
+                        newFilePath = ImageHelpers.SaveImageFileDialog(output, newFilePath);
+                    }
+
+                    return newFilePath;
+                };
+
+                form.CopyImageRequested += output =>
+                {
+                    Program.MainForm.InvokeSafe(() =>
+                    {
+                        using (output)
+                        { ClipboardHelpers.CopyImage(output); }
+                    });
+                };
+
                 if (cursorData != null && cursorData.IsVisible)
                 {
                     form.AddCursor(cursorData.Handle, CaptureHelpers.ScreenToClient(cursorData.Position));
