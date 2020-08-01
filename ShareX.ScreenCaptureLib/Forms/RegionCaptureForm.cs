@@ -79,7 +79,7 @@ namespace ShareX.ScreenCaptureLib
         private TextureBrush backgroundBrush, backgroundHighlightBrush;
         private GraphicsPath regionFillPath, regionDrawPath;
         private Pen borderPen, borderDotPen, borderDotStaticPen, textOuterBorderPen, textInnerBorderPen, markerPen, canvasBorderPen;
-        private Brush nodeBackgroundBrush, textBackgroundBrush;
+        private Brush textBrush, textShadowBrush, textBackgroundBrush;
         private Font infoFont, infoFontMedium, infoFontBig;
         private Stopwatch timerStart, timerFPS;
         private int frameCount;
@@ -87,7 +87,7 @@ namespace ShareX.ScreenCaptureLib
         private RectangleAnimation regionAnimation;
         private TextAnimation editorPanTipAnimation;
         private Cursor defaultCursor, openHandCursor, closedHandCursor;
-        private Color canvasBackgroundColor;
+        private Color canvasBackgroundColor, canvasBorderColor, textColor, textShadowColor, textBackgroundColor, textOuterBorderColor, textInnerBorderColor;
 
         public RegionCaptureForm(RegionCaptureMode mode, RegionCaptureOptions options, Bitmap canvas = null)
         {
@@ -124,25 +124,38 @@ namespace ShareX.ScreenCaptureLib
             borderPen = new Pen(Color.Black);
             borderDotPen = new Pen(Color.White) { DashPattern = new float[] { 5, 5 } };
             borderDotStaticPen = new Pen(Color.White) { DashPattern = new float[] { 5, 5 } };
-            nodeBackgroundBrush = new SolidBrush(Color.White);
             infoFont = new Font("Verdana", 9);
             infoFontMedium = new Font("Verdana", 12);
             infoFontBig = new Font("Verdana", 16, FontStyle.Bold);
-            textBackgroundBrush = new SolidBrush(Color.FromArgb(150, Color.FromArgb(42, 131, 199)));
-            textOuterBorderPen = new Pen(Color.FromArgb(150, Color.White));
-            textInnerBorderPen = new Pen(Color.FromArgb(150, Color.FromArgb(0, 81, 145)));
             markerPen = new Pen(Color.FromArgb(200, Color.Red));
 
             if (ShareXResources.UseCustomTheme)
             {
                 canvasBackgroundColor = ShareXResources.Theme.BackgroundColor;
-                canvasBorderPen = new Pen(ShareXResources.Theme.BorderColor);
+                canvasBorderColor = ShareXResources.Theme.BorderColor;
+                textColor = ShareXResources.Theme.TextColor;
+                textShadowColor = ShareXResources.Theme.BorderColor;
+                textBackgroundColor = Color.FromArgb(200, ShareXResources.Theme.BackgroundColor);
+                textOuterBorderColor = Color.FromArgb(200, ShareXResources.Theme.SeparatorDarkColor);
+                textInnerBorderColor = Color.FromArgb(200, ShareXResources.Theme.SeparatorLightColor);
             }
             else
             {
                 canvasBackgroundColor = Color.FromArgb(200, 200, 200);
-                canvasBorderPen = new Pen(Color.FromArgb(176, 176, 176));
+                canvasBorderColor = Color.FromArgb(176, 176, 176);
+                textColor = Color.White;
+                textShadowColor = Color.Black;
+                textBackgroundColor = Color.FromArgb(200, Color.FromArgb(42, 131, 199));
+                textOuterBorderColor = Color.FromArgb(200, Color.White);
+                textInnerBorderColor = Color.FromArgb(200, Color.FromArgb(0, 81, 145));
             }
+
+            canvasBorderPen = new Pen(canvasBorderColor);
+            textBrush = new SolidBrush(textColor);
+            textShadowBrush = new SolidBrush(textShadowColor);
+            textBackgroundBrush = new SolidBrush(textBackgroundColor);
+            textOuterBorderPen = new Pen(textOuterBorderColor);
+            textInnerBorderPen = new Pen(textInnerBorderColor);
 
             Prepare(canvas);
 
@@ -954,7 +967,7 @@ namespace ShareX.ScreenCaptureLib
 
         private void DrawInfoText(Graphics g, string text, Rectangle rect, Font font, Point padding)
         {
-            DrawInfoText(g, text, rect, font, padding, textBackgroundBrush, textOuterBorderPen, textInnerBorderPen, Brushes.White, Brushes.Black);
+            DrawInfoText(g, text, rect, font, padding, textBackgroundBrush, textOuterBorderPen, textInnerBorderPen, textBrush, textShadowBrush);
         }
 
         private void DrawInfoText(Graphics g, string text, Rectangle rect, Font font, int padding,
@@ -1011,11 +1024,11 @@ namespace ShareX.ScreenCaptureLib
 
         private void DrawTextAnimation(Graphics g, TextAnimation textAnimation, Rectangle textRectangle, int padding)
         {
-            using (Brush backgroundBrush = new SolidBrush(Color.FromArgb((int)(textAnimation.Opacity * 175), Color.FromArgb(44, 135, 206))))
-            using (Pen outerBorderPen = new Pen(Color.FromArgb((int)(textAnimation.Opacity * 175), Color.White)))
-            using (Pen innerBorderPen = new Pen(Color.FromArgb((int)(textAnimation.Opacity * 175), Color.FromArgb(0, 81, 145))))
-            using (Brush textBrush = new SolidBrush(Color.FromArgb((int)(textAnimation.Opacity * 255), Color.White)))
-            using (Brush textShadowBrush = new SolidBrush(Color.FromArgb((int)(textAnimation.Opacity * 255), Color.Black)))
+            using (Brush backgroundBrush = new SolidBrush(Color.FromArgb((int)(textAnimation.Opacity * 200), textBackgroundColor)))
+            using (Pen outerBorderPen = new Pen(Color.FromArgb((int)(textAnimation.Opacity * 200), textOuterBorderColor)))
+            using (Pen innerBorderPen = new Pen(Color.FromArgb((int)(textAnimation.Opacity * 200), textInnerBorderColor)))
+            using (Brush textBrush = new SolidBrush(Color.FromArgb((int)(textAnimation.Opacity * 255), textColor)))
+            using (Brush textShadowBrush = new SolidBrush(Color.FromArgb((int)(textAnimation.Opacity * 255), textShadowColor)))
             {
                 DrawInfoText(g, textAnimation.Text, textRectangle, infoFontMedium, padding, backgroundBrush, outerBorderPen, innerBorderPen, textBrush, textShadowBrush);
             }
@@ -1462,10 +1475,11 @@ namespace ShareX.ScreenCaptureLib
             borderPen?.Dispose();
             borderDotPen?.Dispose();
             borderDotStaticPen?.Dispose();
-            nodeBackgroundBrush?.Dispose();
             infoFont?.Dispose();
             infoFontMedium?.Dispose();
             infoFontBig?.Dispose();
+            textBrush?.Dispose();
+            textShadowBrush?.Dispose();
             textBackgroundBrush?.Dispose();
             textOuterBorderPen?.Dispose();
             textInnerBorderPen?.Dispose();
