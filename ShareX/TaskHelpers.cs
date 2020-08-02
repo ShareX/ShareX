@@ -184,7 +184,14 @@ namespace ShareX
                     }
                     break;
                 case HotkeyType.ImageEffects:
-                    OpenImageEffects(taskSettings);
+                    if (command != null && !string.IsNullOrEmpty(command.Parameter) && File.Exists(command.Parameter))
+                    {
+                        OpenImageEffects(command.Parameter, taskSettings);
+                    }
+                    else
+                    {
+                        OpenImageEffects(taskSettings);
+                    }
                     break;
                 case HotkeyType.HashCheck:
                     OpenHashCheck();
