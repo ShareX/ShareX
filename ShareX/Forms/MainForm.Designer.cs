@@ -292,6 +292,7 @@
             this.tsbPatreon = new System.Windows.Forms.ToolStripButton();
             this.tsbBitcoin = new System.Windows.Forms.ToolStripButton();
             this.tsbGitHub = new System.Windows.Forms.ToolStripButton();
+            this.tsmiAddImageEffects = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.scMain)).BeginInit();
             this.scMain.Panel1.SuspendLayout();
             this.scMain.Panel2.SuspendLayout();
@@ -1025,6 +1026,7 @@
             this.tsmiUploadSelectedFile,
             this.tsmiDownloadSelectedURL,
             this.tsmiEditSelectedFile,
+            this.tsmiAddImageEffects,
             this.tsmiRunAction,
             this.tsmiDeleteSelectedItem,
             this.tsmiDeleteSelectedFile,
@@ -2330,6 +2332,13 @@
             this.tsbGitHub.Padding = new System.Windows.Forms.Padding(1);
             this.tsbGitHub.Click += new System.EventHandler(this.TsbGitHub_Click);
             // 
+            // tsmiAddImageEffects
+            // 
+            this.tsmiAddImageEffects.Image = global::ShareX.Properties.Resources.image_saturation;
+            this.tsmiAddImageEffects.Name = "tsmiAddImageEffects";
+            resources.ApplyResources(this.tsmiAddImageEffects, "tsmiAddImageEffects");
+            this.tsmiAddImageEffects.Click += new System.EventHandler(this.tsmiAddImageEffects_Click);
+            // 
             // MainForm
             // 
             this.AllowDrop = true;
@@ -2634,5 +2643,6 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayImageSplitter;
         private System.Windows.Forms.ToolStripMenuItem tsmiVideoConverter;
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayVideoConverter;
+        private System.Windows.Forms.ToolStripMenuItem tsmiAddImageEffects;
     }
 }

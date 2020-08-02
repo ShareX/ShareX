@@ -340,6 +340,11 @@ namespace ShareX
             if (IsItemSelected && SelectedItem.IsImageFile) TaskHelpers.AnnotateImageFromFile(SelectedItem.Info.FilePath);
         }
 
+        public void AddImageEffects()
+        {
+            if (IsItemSelected && SelectedItem.IsImageFile) TaskHelpers.OpenImageEffects(SelectedItem.Info.FilePath);
+        }
+
         public void DeleteFiles()
         {
             if (IsItemSelected)

@@ -885,15 +885,6 @@
   <metadata name="cmsTaskInfo.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>286, 17</value>
   </metadata>
-  <data name="cmsTaskInfo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>229, 516</value>
-  </data>
-  <data name="&gt;&gt;cmsTaskInfo.Name" xml:space="preserve">
-    <value>cmsTaskInfo</value>
-  </data>
-  <data name="&gt;&gt;cmsTaskInfo.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="tsmiShowErrors.Size" type="System.Drawing.Size, System.Drawing">
     <value>228, 22</value>
   </data>
@@ -911,6 +902,159 @@
   </data>
   <data name="tsmiOpen.Text" xml:space="preserve">
     <value>Open</value>
+  </data>
+  <data name="tsmiCopy.Size" type="System.Drawing.Size, System.Drawing">
+    <value>228, 22</value>
+  </data>
+  <data name="tsmiCopy.Text" xml:space="preserve">
+    <value>Copy</value>
+  </data>
+  <data name="tsmiUploadSelectedFile.ShortcutKeyDisplayString" xml:space="preserve">
+    <value>Ctrl+U</value>
+  </data>
+  <data name="tsmiUploadSelectedFile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>228, 22</value>
+  </data>
+  <data name="tsmiUploadSelectedFile.Text" xml:space="preserve">
+    <value>Upload</value>
+  </data>
+  <data name="tsmiDownloadSelectedURL.ShortcutKeyDisplayString" xml:space="preserve">
+    <value>Ctrl+D</value>
+  </data>
+  <data name="tsmiDownloadSelectedURL.Size" type="System.Drawing.Size, System.Drawing">
+    <value>228, 22</value>
+  </data>
+  <data name="tsmiDownloadSelectedURL.Text" xml:space="preserve">
+    <value>Download</value>
+  </data>
+  <data name="tsmiEditSelectedFile.ShortcutKeyDisplayString" xml:space="preserve">
+    <value>Ctrl+E</value>
+  </data>
+  <data name="tsmiEditSelectedFile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>228, 22</value>
+  </data>
+  <data name="tsmiEditSelectedFile.Text" xml:space="preserve">
+    <value>Edit image...</value>
+  </data>
+  <data name="tsmiAddImageEffects.Size" type="System.Drawing.Size, System.Drawing">
+    <value>228, 22</value>
+  </data>
+  <data name="tsmiAddImageEffects.Text" xml:space="preserve">
+    <value>Add image effects...</value>
+  </data>
+  <data name="tsmiRunAction.Size" type="System.Drawing.Size, System.Drawing">
+    <value>228, 22</value>
+  </data>
+  <data name="tsmiRunAction.Text" xml:space="preserve">
+    <value>Run action</value>
+  </data>
+  <data name="tsmiDeleteSelectedItem.ShortcutKeyDisplayString" xml:space="preserve">
+    <value>Del</value>
+  </data>
+  <data name="tsmiDeleteSelectedItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>228, 22</value>
+  </data>
+  <data name="tsmiDeleteSelectedItem.Text" xml:space="preserve">
+    <value>Remove task from list</value>
+  </data>
+  <data name="tsmiDeleteSelectedFile.ShortcutKeyDisplayString" xml:space="preserve">
+    <value>Shift+Del</value>
+  </data>
+  <data name="tsmiDeleteSelectedFile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>228, 22</value>
+  </data>
+  <data name="tsmiDeleteSelectedFile.Text" xml:space="preserve">
+    <value>Delete file locally...</value>
+  </data>
+  <data name="tsmiShortenSelectedURL.Size" type="System.Drawing.Size, System.Drawing">
+    <value>228, 22</value>
+  </data>
+  <data name="tsmiShortenSelectedURL.Text" xml:space="preserve">
+    <value>Shorten URL</value>
+  </data>
+  <data name="tsmiShareSelectedURL.Size" type="System.Drawing.Size, System.Drawing">
+    <value>228, 22</value>
+  </data>
+  <data name="tsmiShareSelectedURL.Text" xml:space="preserve">
+    <value>Share URL</value>
+  </data>
+  <data name="tsmiSearchImage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>228, 22</value>
+  </data>
+  <data name="tsmiSearchImage.Text" xml:space="preserve">
+    <value>Google image search...</value>
+  </data>
+  <data name="tsmiShowQRCode.Size" type="System.Drawing.Size, System.Drawing">
+    <value>228, 22</value>
+  </data>
+  <data name="tsmiShowQRCode.Text" xml:space="preserve">
+    <value>Show QR code...</value>
+  </data>
+  <data name="tsmiOCRImage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>228, 22</value>
+  </data>
+  <data name="tsmiOCRImage.Text" xml:space="preserve">
+    <value>OCR image...</value>
+  </data>
+  <data name="tsmiCombineImages.Size" type="System.Drawing.Size, System.Drawing">
+    <value>228, 22</value>
+  </data>
+  <data name="tsmiCombineImages.Text" xml:space="preserve">
+    <value>Combine images...</value>
+  </data>
+  <data name="tsmiShowResponse.Size" type="System.Drawing.Size, System.Drawing">
+    <value>228, 22</value>
+  </data>
+  <data name="tsmiShowResponse.Text" xml:space="preserve">
+    <value>Show response...</value>
+  </data>
+  <data name="tsmiClearList.Size" type="System.Drawing.Size, System.Drawing">
+    <value>228, 22</value>
+  </data>
+  <data name="tsmiClearList.Text" xml:space="preserve">
+    <value>Clear task list</value>
+  </data>
+  <data name="tssUploadInfo1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>225, 6</value>
+  </data>
+  <data name="tsmiHideMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>228, 22</value>
+  </data>
+  <data name="tsmiHideMenu.Text" xml:space="preserve">
+    <value>Hide menu</value>
+  </data>
+  <data name="tsmiHideColumns.Size" type="System.Drawing.Size, System.Drawing">
+    <value>228, 22</value>
+  </data>
+  <data name="tsmiHideColumns.Text" xml:space="preserve">
+    <value>Hide columns</value>
+  </data>
+  <data name="tsmiImagePreview.Size" type="System.Drawing.Size, System.Drawing">
+    <value>228, 22</value>
+  </data>
+  <data name="tsmiImagePreview.Text" xml:space="preserve">
+    <value>Image preview</value>
+  </data>
+  <data name="tsmiThumbnailTitle.Size" type="System.Drawing.Size, System.Drawing">
+    <value>228, 22</value>
+  </data>
+  <data name="tsmiThumbnailTitle.Text" xml:space="preserve">
+    <value>Thumbnail title</value>
+  </data>
+  <data name="tsmiSwitchTaskViewMode.Size" type="System.Drawing.Size, System.Drawing">
+    <value>228, 22</value>
+  </data>
+  <data name="tsmiSwitchTaskViewMode.Text" xml:space="preserve">
+    <value>Switch to thumbnail view</value>
+  </data>
+  <data name="cmsTaskInfo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>229, 560</value>
+  </data>
+  <data name="&gt;&gt;cmsTaskInfo.Name" xml:space="preserve">
+    <value>cmsTaskInfo</value>
+  </data>
+  <data name="&gt;&gt;cmsTaskInfo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="tsmiOpenURL.ShortcutKeyDisplayString" xml:space="preserve">
     <value>Enter</value>
@@ -965,12 +1109,6 @@
   </data>
   <data name="tsmiOpenThumbnailFile.Text" xml:space="preserve">
     <value>Thumbnail file</value>
-  </data>
-  <data name="tsmiCopy.Size" type="System.Drawing.Size, System.Drawing">
-    <value>228, 22</value>
-  </data>
-  <data name="tsmiCopy.Text" xml:space="preserve">
-    <value>Copy</value>
   </data>
   <data name="tsmiCopyURL.ShortcutKeyDisplayString" xml:space="preserve">
     <value>Ctrl+C</value>
@@ -1143,126 +1281,6 @@
   <data name="tssCopy6.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="tsmiUploadSelectedFile.ShortcutKeyDisplayString" xml:space="preserve">
-    <value>Ctrl+U</value>
-  </data>
-  <data name="tsmiUploadSelectedFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>228, 22</value>
-  </data>
-  <data name="tsmiUploadSelectedFile.Text" xml:space="preserve">
-    <value>Upload</value>
-  </data>
-  <data name="tsmiDownloadSelectedURL.ShortcutKeyDisplayString" xml:space="preserve">
-    <value>Ctrl+D</value>
-  </data>
-  <data name="tsmiDownloadSelectedURL.Size" type="System.Drawing.Size, System.Drawing">
-    <value>228, 22</value>
-  </data>
-  <data name="tsmiDownloadSelectedURL.Text" xml:space="preserve">
-    <value>Download</value>
-  </data>
-  <data name="tsmiEditSelectedFile.ShortcutKeyDisplayString" xml:space="preserve">
-    <value>Ctrl+E</value>
-  </data>
-  <data name="tsmiEditSelectedFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>228, 22</value>
-  </data>
-  <data name="tsmiEditSelectedFile.Text" xml:space="preserve">
-    <value>Edit image...</value>
-  </data>
-  <data name="tsmiRunAction.Size" type="System.Drawing.Size, System.Drawing">
-    <value>228, 22</value>
-  </data>
-  <data name="tsmiRunAction.Text" xml:space="preserve">
-    <value>Run action</value>
-  </data>
-  <data name="tsmiDeleteSelectedItem.ShortcutKeyDisplayString" xml:space="preserve">
-    <value>Del</value>
-  </data>
-  <data name="tsmiDeleteSelectedItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>228, 22</value>
-  </data>
-  <data name="tsmiDeleteSelectedItem.Text" xml:space="preserve">
-    <value>Remove task from list</value>
-  </data>
-  <data name="tsmiDeleteSelectedFile.ShortcutKeyDisplayString" xml:space="preserve">
-    <value>Shift+Del</value>
-  </data>
-  <data name="tsmiDeleteSelectedFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>228, 22</value>
-  </data>
-  <data name="tsmiDeleteSelectedFile.Text" xml:space="preserve">
-    <value>Delete file locally...</value>
-  </data>
-  <data name="tsmiShortenSelectedURL.Size" type="System.Drawing.Size, System.Drawing">
-    <value>228, 22</value>
-  </data>
-  <data name="tsmiShortenSelectedURL.Text" xml:space="preserve">
-    <value>Shorten URL</value>
-  </data>
-  <data name="tsmiShareSelectedURL.Size" type="System.Drawing.Size, System.Drawing">
-    <value>228, 22</value>
-  </data>
-  <data name="tsmiShareSelectedURL.Text" xml:space="preserve">
-    <value>Share URL</value>
-  </data>
-  <data name="tsmiSearchImage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>228, 22</value>
-  </data>
-  <data name="tsmiSearchImage.Text" xml:space="preserve">
-    <value>Google image search...</value>
-  </data>
-  <data name="tsmiShowQRCode.Size" type="System.Drawing.Size, System.Drawing">
-    <value>228, 22</value>
-  </data>
-  <data name="tsmiShowQRCode.Text" xml:space="preserve">
-    <value>Show QR code...</value>
-  </data>
-  <data name="tsmiOCRImage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>228, 22</value>
-  </data>
-  <data name="tsmiOCRImage.Text" xml:space="preserve">
-    <value>OCR image...</value>
-  </data>
-  <data name="tsmiCombineImages.Size" type="System.Drawing.Size, System.Drawing">
-    <value>228, 22</value>
-  </data>
-  <data name="tsmiCombineImages.Text" xml:space="preserve">
-    <value>Combine images...</value>
-  </data>
-  <data name="tsmiShowResponse.Size" type="System.Drawing.Size, System.Drawing">
-    <value>228, 22</value>
-  </data>
-  <data name="tsmiShowResponse.Text" xml:space="preserve">
-    <value>Show response...</value>
-  </data>
-  <data name="tsmiClearList.Size" type="System.Drawing.Size, System.Drawing">
-    <value>228, 22</value>
-  </data>
-  <data name="tsmiClearList.Text" xml:space="preserve">
-    <value>Clear task list</value>
-  </data>
-  <data name="tssUploadInfo1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>225, 6</value>
-  </data>
-  <data name="tsmiHideMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>228, 22</value>
-  </data>
-  <data name="tsmiHideMenu.Text" xml:space="preserve">
-    <value>Hide menu</value>
-  </data>
-  <data name="tsmiHideColumns.Size" type="System.Drawing.Size, System.Drawing">
-    <value>228, 22</value>
-  </data>
-  <data name="tsmiHideColumns.Text" xml:space="preserve">
-    <value>Hide columns</value>
-  </data>
-  <data name="tsmiImagePreview.Size" type="System.Drawing.Size, System.Drawing">
-    <value>228, 22</value>
-  </data>
-  <data name="tsmiImagePreview.Text" xml:space="preserve">
-    <value>Image preview</value>
-  </data>
   <data name="tsmiImagePreviewShow.Size" type="System.Drawing.Size, System.Drawing">
     <value>130, 22</value>
   </data>
@@ -1296,12 +1314,6 @@
   <data name="tsmiImagePreviewBottom.Text" xml:space="preserve">
     <value>Bottom</value>
   </data>
-  <data name="tsmiThumbnailTitle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>228, 22</value>
-  </data>
-  <data name="tsmiThumbnailTitle.Text" xml:space="preserve">
-    <value>Thumbnail title</value>
-  </data>
   <data name="tsmiThumbnailTitleShow.Size" type="System.Drawing.Size, System.Drawing">
     <value>114, 22</value>
   </data>
@@ -1328,12 +1340,6 @@
   </data>
   <data name="tsmiThumbnailTitleBottom.Text" xml:space="preserve">
     <value>Bottom</value>
-  </data>
-  <data name="tsmiSwitchTaskViewMode.Size" type="System.Drawing.Size, System.Drawing">
-    <value>228, 22</value>
-  </data>
-  <data name="tsmiSwitchTaskViewMode.Text" xml:space="preserve">
-    <value>Switch to thumbnail view</value>
   </data>
   <metadata name="niTray.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>105, 17</value>
@@ -3689,6 +3695,12 @@
   </data>
   <data name="&gt;&gt;tsbGitHub.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsmiAddImageEffects.Name" xml:space="preserve">
+    <value>tsmiAddImageEffects</value>
+  </data>
+  <data name="&gt;&gt;tsmiAddImageEffects.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MainForm</value>

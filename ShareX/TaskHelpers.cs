@@ -1036,10 +1036,12 @@ namespace ShareX
 
         public static void OpenImageEffects(TaskSettings taskSettings = null)
         {
-            if (taskSettings == null) taskSettings = Program.DefaultTaskSettings;
-
             string filePath = ImageHelpers.OpenImageFileDialog();
+            OpenImageEffects(filePath, taskSettings);
+        }
 
+        public static void OpenImageEffects(string filePath, TaskSettings taskSettings = null)
+        {
             if (!string.IsNullOrEmpty(filePath))
             {
                 Bitmap bmp = ImageHelpers.LoadImage(filePath);
@@ -1052,6 +1054,8 @@ namespace ShareX
                     }
                     else
                     {
+                        if (taskSettings == null) taskSettings = Program.DefaultTaskSettings;
+
                         using (ImageEffectsForm imageEffectsForm = new ImageEffectsForm(bmp, taskSettings.ImageSettings.ImageEffectPresets,
                             taskSettings.ImageSettings.SelectedImageEffectPreset))
                         {
