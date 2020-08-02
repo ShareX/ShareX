@@ -1507,7 +1507,12 @@ namespace ShareX.HelpersLib
             int horizontalTornCount = bmp.Width / tornRange;
             int verticalTornCount = bmp.Height / tornRange;
 
-            if (sides.HasFlag(AnchorStyles.Top))
+            if (horizontalTornCount < 2 && verticalTornCount < 2)
+            {
+                return bmp;
+            }
+
+            if (sides.HasFlag(AnchorStyles.Top) && horizontalTornCount > 1)
             {
                 for (int x = 0; x < horizontalTornCount - 1; x++)
                 {
@@ -1520,7 +1525,7 @@ namespace ShareX.HelpersLib
                 points.Add(new Point(bmp.Width - 1, 0));
             }
 
-            if (sides.HasFlag(AnchorStyles.Right))
+            if (sides.HasFlag(AnchorStyles.Right) && verticalTornCount > 1)
             {
                 for (int y = 0; y < verticalTornCount - 1; y++)
                 {
@@ -1533,7 +1538,7 @@ namespace ShareX.HelpersLib
                 points.Add(new Point(bmp.Width - 1, bmp.Height - 1));
             }
 
-            if (sides.HasFlag(AnchorStyles.Bottom))
+            if (sides.HasFlag(AnchorStyles.Bottom) && horizontalTornCount > 1)
             {
                 for (int x = 0; x < horizontalTornCount - 1; x++)
                 {
@@ -1546,7 +1551,7 @@ namespace ShareX.HelpersLib
                 points.Add(new Point(0, bmp.Height - 1));
             }
 
-            if (sides.HasFlag(AnchorStyles.Left))
+            if (sides.HasFlag(AnchorStyles.Left) && verticalTornCount > 1)
             {
                 for (int y = 0; y < verticalTornCount - 1; y++)
                 {
