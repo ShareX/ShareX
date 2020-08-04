@@ -27,17 +27,18 @@ using ShareX.HelpersLib;
 using System;
 using System.ComponentModel;
 using System.Drawing;
-using System.Windows.Forms;
+using System.Drawing.Design;
 
 namespace ShareX.ImageEffectsLib
 {
+    [Description("Force Proportions")]
     internal class ForceProportions : ImageEffect
     {
         private int width = 1;
         private int height = 1;
 
         [DefaultValue(typeof(int), "1")]
-        public int Width
+        public int ProportionalWidth
         {
             get {
                 return width;
@@ -48,7 +49,7 @@ namespace ShareX.ImageEffectsLib
             }
         }
         [DefaultValue(typeof(int), "1")]
-        public int Height
+        public int ProportionalHeight
         {
             get
             {
@@ -68,6 +69,7 @@ namespace ShareX.ImageEffectsLib
 
         public ForceMethod Method { get; set; } = ForceMethod.Grow;
 
+        [DefaultValue(typeof(Color), "Transparent"), Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
         public Color GrowFillColor { get; set; } = Color.FromArgb(0);
 
         public ForceProportions()
@@ -77,33 +79,40 @@ namespace ShareX.ImageEffectsLib
 
         public override Bitmap Apply(Bitmap bmp)
         {
-            float current_ratio = (float)bmp.Width / (float)bmp.Height;
-            float target_ratio = (float)width / (float)height;
+            float current_ratio = bmp.Width / (float)bmp.Height;
+            float target_ratio = width / (float)height;
+
             bool is_target_wider = target_ratio > current_ratio;
 
             int target_width = bmp.Width;
             int target_height = bmp.Height;
+            int margin_left = 0;
+            int margin_top = 0;
 
             if (Method == ForceMethod.Crop)
             {
                 if (is_target_wider)
+                {
                     target_height = (int)Math.Round(bmp.Width / target_ratio);
+                    margin_top = (bmp.Height - target_height) / 2;
+                }
                 else
+                {
                     target_width = (int)Math.Round(bmp.Height * target_ratio);
-                int margin_left = is_target_wider
-                    ? 0
-                    : (bmp.Width - target_width) / 2;
-                int margin_top = is_target_wider
-                    ? (bmp.Height - target_height) / 2
-                    : 0;
+                    margin_left = (bmp.Width - target_width) / 2;
+                }
                 return ImageHelpers.CropBitmap(bmp, new Rectangle(margin_left, margin_top, target_width, target_height));
             }
             if (Method == ForceMethod.Grow)
             {
                 if (is_target_wider)
+                {
                     target_width = (int)Math.Round(bmp.Height * target_ratio);
+                }
                 else
+                {
                     target_height = (int)Math.Round(bmp.Width / target_ratio);
+                }
                 return ImageHelpers.ResizeImage(bmp, target_width, target_height, false, true, GrowFillColor);
             }
 
