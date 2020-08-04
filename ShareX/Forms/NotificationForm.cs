@@ -85,7 +85,7 @@ namespace ShareX
                 size = new Size(textRenderSize.Width + (textPadding * 2), textRenderSize.Height + (textPadding * 2) + 2);
             }
 
-            Point position = Helpers.GetPosition(placement, new Point(windowOffset, windowOffset), Screen.PrimaryScreen.WorkingArea.Size, size);
+            Point position = Helpers.GetPosition(placement, windowOffset, Screen.PrimaryScreen.WorkingArea.Size, size);
 
             NativeMethods.SetWindowPos(Handle, (IntPtr)SpecialWindowHandles.HWND_TOPMOST, position.X + Screen.PrimaryScreen.WorkingArea.X,
                 position.Y + Screen.PrimaryScreen.WorkingArea.Y, size.Width, size.Height, SetWindowPosFlags.SWP_NOACTIVATE);

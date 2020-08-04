@@ -1062,10 +1062,15 @@ namespace ShareX.HelpersLib
             return Guid.NewGuid().ToString("N");
         }
 
+        public static Point GetPosition(ContentAlignment placement, int offset, Size backgroundSize, Size objectSize)
+        {
+            return GetPosition(placement, new Point(offset, offset), backgroundSize, objectSize);
+        }
+
         public static Point GetPosition(ContentAlignment placement, Point offset, Size backgroundSize, Size objectSize)
         {
-            int midX = (backgroundSize.Width / 2) - (objectSize.Width / 2);
-            int midY = (backgroundSize.Height / 2) - (objectSize.Height / 2);
+            int midX = (int)Math.Round((backgroundSize.Width / 2f) - (objectSize.Width / 2f));
+            int midY = (int)Math.Round((backgroundSize.Height / 2f) - (objectSize.Height / 2f));
             int right = backgroundSize.Width - objectSize.Width;
             int bottom = backgroundSize.Height - objectSize.Height;
 
