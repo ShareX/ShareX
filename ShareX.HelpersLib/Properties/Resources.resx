@@ -312,9 +312,6 @@
   <data name="HotkeyType_CaptureWebpage_Category" xml:space="preserve">
     <value>Screen capture</value>
   </data>
-  <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__File__Count___0__" xml:space="preserve">
-    <value>Clipboard content: File (Count: {0})</value>
-  </data>
   <data name="HotkeyType_FileUpload_Category" xml:space="preserve">
     <value>Upload</value>
   </data>
@@ -953,9 +950,6 @@ Would you like to download and install it?</value>
   <data name="ScrollingCaptureScrollTopMethod_None" xml:space="preserve">
     <value>Disable scrolling to top</value>
   </data>
-  <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__Image__Size___0_x_1__" xml:space="preserve">
-    <value>Clipboard content: Image (Size: {0}x{1})</value>
-  </data>
   <data name="ReplCodeMenuEntry_mon2_Current_month_name__English_" xml:space="preserve">
     <value>Month name (English)</value>
   </data>
@@ -1199,9 +1193,6 @@ Would you like to download and install it?</value>
   <data name="HotkeyType_ShortenURL" xml:space="preserve">
     <value>Shorten URL</value>
   </data>
-  <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__Text__Length___0__" xml:space="preserve">
-    <value>Clipboard content: Text (Length: {0})</value>
-  </data>
   <data name="CustomUploaderDestinationType_TextUploader" xml:space="preserve">
     <value>Text uploader</value>
   </data>
@@ -1228,9 +1219,6 @@ Would you like to download and install it?</value>
   </data>
   <data name="HotkeyType_UploadURL" xml:space="preserve">
     <value>Upload from URL</value>
-  </data>
-  <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_is_empty_or_contains_unknown_data_" xml:space="preserve">
-    <value>Clipboard is empty or contains unknown data.</value>
   </data>
   <data name="HotkeyType_ImageSplitter" xml:space="preserve">
     <value>Image splitter</value>

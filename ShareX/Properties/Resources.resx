@@ -1042,4 +1042,16 @@ Middle click to close</value>
   <data name="AboutForm_AboutForm_Language_fa_IR" xml:space="preserve">
     <value>Persian</value>
   </data>
+  <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__File__Count___0__" xml:space="preserve">
+    <value>Clipboard content: File (Count: {0})</value>
+  </data>
+  <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__Image__Size___0_x_1__" xml:space="preserve">
+    <value>Clipboard content: Image (Size: {0}x{1})</value>
+  </data>
+  <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__Text__Length___0__" xml:space="preserve">
+    <value>Clipboard content: Text (Length: {0})</value>
+  </data>
+  <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_is_empty_or_contains_unknown_data_" xml:space="preserve">
+    <value>Clipboard is empty or contains unknown data.</value>
+  </data>
 </root>

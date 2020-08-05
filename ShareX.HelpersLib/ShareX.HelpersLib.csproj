@@ -347,12 +347,6 @@
     <Compile Include="Extensions\GraphicsPathExtensions.cs" />
     <Compile Include="ExternalProgram.cs" />
     <Compile Include="FixedSizedQueue.cs" />
-    <Compile Include="Forms\ClipboardContentViewer.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\ClipboardContentViewer.Designer.cs">
-      <DependentUpon>ClipboardContentViewer.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\ErrorForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -494,12 +488,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\MyPictureBox.pt-PT.resx">
       <DependentUpon>MyPictureBox.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ClipboardContentViewer.fa-IR.resx">
-      <DependentUpon>ClipboardContentViewer.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ClipboardContentViewer.pt-PT.resx">
-      <DependentUpon>ClipboardContentViewer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ColorPickerForm.de.resx">
       <DependentUpon>ColorPickerForm.cs</DependentUpon>
@@ -785,57 +773,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\DNSChangerForm.zh-TW.resx">
       <DependentUpon>DNSChangerForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ClipboardContentViewer.de.resx">
-      <DependentUpon>ClipboardContentViewer.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ClipboardContentViewer.es-MX.resx">
-      <DependentUpon>ClipboardContentViewer.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ClipboardContentViewer.es.resx">
-      <DependentUpon>ClipboardContentViewer.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ClipboardContentViewer.fr.resx">
-      <DependentUpon>ClipboardContentViewer.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ClipboardContentViewer.hu.resx">
-      <DependentUpon>ClipboardContentViewer.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ClipboardContentViewer.id-ID.resx">
-      <DependentUpon>ClipboardContentViewer.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ClipboardContentViewer.it-IT.resx">
-      <DependentUpon>ClipboardContentViewer.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ClipboardContentViewer.ko-KR.resx">
-      <DependentUpon>ClipboardContentViewer.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ClipboardContentViewer.nl-NL.resx">
-      <DependentUpon>ClipboardContentViewer.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ClipboardContentViewer.pt-BR.resx">
-      <DependentUpon>ClipboardContentViewer.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ClipboardContentViewer.ru.resx">
-      <DependentUpon>ClipboardContentViewer.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ClipboardContentViewer.tr.resx">
-      <DependentUpon>ClipboardContentViewer.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ClipboardContentViewer.uk.resx">
-      <DependentUpon>ClipboardContentViewer.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ClipboardContentViewer.vi-VN.resx">
-      <DependentUpon>ClipboardContentViewer.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ClipboardContentViewer.zh-CN.resx">
-      <DependentUpon>ClipboardContentViewer.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ClipboardContentViewer.zh-TW.resx">
-      <DependentUpon>ClipboardContentViewer.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ClipboardContentViewer.resx">
-      <DependentUpon>ClipboardContentViewer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\DebugForm.de.resx">
       <DependentUpon>DebugForm.cs</DependentUpon>

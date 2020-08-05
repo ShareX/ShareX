@@ -23,21 +23,22 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.HelpersLib.Properties;
+using ShareX.HelpersLib;
+using ShareX.Properties;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace ShareX.HelpersLib
+namespace ShareX
 {
-    public partial class ClipboardContentViewer : Form
+    public partial class ClipboardUploadForm : Form
     {
         public bool IsClipboardContentValid { get; private set; }
         public bool DontShowThisWindow { get; private set; }
         public EClipboardContentType ClipboardContentType { get; private set; }
         public object ClipboardContent { get; private set; }
 
-        public ClipboardContentViewer(bool showCheckBox = false)
+        public ClipboardUploadForm(bool showCheckBox = false)
         {
             InitializeComponent();
             ShareXResources.ApplyTheme(this);
@@ -91,7 +92,7 @@ namespace ShareX.HelpersLib
             else if (Clipboard.ContainsFileDropList())
             {
                 string[] files = ClipboardHelpers.GetFileDropList();
-                
+
                 if (files != null && files.Length > 0)
                 {
                     ClipboardContentType = EClipboardContentType.Files;

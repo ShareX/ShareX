@@ -1,6 +1,6 @@
-﻿namespace ShareX.HelpersLib
+﻿namespace ShareX
 {
-    partial class ClipboardContentViewer
+    partial class ClipboardUploadForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,14 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ClipboardContentViewer));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ClipboardUploadForm));
             this.lblQuestion = new System.Windows.Forms.Label();
-            this.btnOK = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.txtClipboard = new System.Windows.Forms.TextBox();
             this.lbClipboard = new System.Windows.Forms.ListBox();
             this.cbDontShowThisWindow = new System.Windows.Forms.CheckBox();
             this.pbClipboard = new ShareX.HelpersLib.MyPictureBox();
+            this.btnUpload = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblQuestion
@@ -44,13 +44,6 @@
             resources.ApplyResources(this.lblQuestion, "lblQuestion");
             this.lblQuestion.ForeColor = System.Drawing.Color.White;
             this.lblQuestion.Name = "lblQuestion";
-            // 
-            // btnOK
-            // 
-            resources.ApplyResources(this.btnOK, "btnOK");
-            this.btnOK.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnOK.Name = "btnOK";
-            this.btnOK.UseVisualStyleBackColor = true;
             // 
             // btnCancel
             // 
@@ -82,29 +75,36 @@
             // pbClipboard
             // 
             resources.ApplyResources(this.pbClipboard, "pbClipboard");
+            this.pbClipboard.BackColor = System.Drawing.SystemColors.Window;
             this.pbClipboard.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pbClipboard.DrawCheckeredBackground = true;
             this.pbClipboard.FullscreenOnClick = true;
             this.pbClipboard.Name = "pbClipboard";
+            this.pbClipboard.PictureBoxBackColor = System.Drawing.SystemColors.Window;
             this.pbClipboard.ShowImageSizeLabel = true;
             // 
-            // ClipboardContentViewer
+            // btnUpload
             // 
-            this.AcceptButton = this.btnOK;
+            resources.ApplyResources(this.btnUpload, "btnUpload");
+            this.btnUpload.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnUpload.Name = "btnUpload";
+            this.btnUpload.UseVisualStyleBackColor = true;
+            // 
+            // ClipboardUploadForm
+            // 
+            this.AcceptButton = this.btnUpload;
             resources.ApplyResources(this, "$this");
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.CancelButton = this.btnCancel;
+            this.Controls.Add(this.btnUpload);
             this.Controls.Add(this.pbClipboard);
             this.Controls.Add(this.cbDontShowThisWindow);
             this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.btnOK);
             this.Controls.Add(this.lblQuestion);
             this.Controls.Add(this.txtClipboard);
             this.Controls.Add(this.lbClipboard);
-            this.MaximizeBox = false;
-            this.Name = "ClipboardContentViewer";
+            this.Name = "ClipboardUploadForm";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Load += new System.EventHandler(this.ClipboardContentViewer_Load);
             this.Shown += new System.EventHandler(this.ClipboardContentViewer_Shown);
@@ -116,11 +116,11 @@
         #endregion
 
         private System.Windows.Forms.Label lblQuestion;
-        private System.Windows.Forms.Button btnOK;
         private System.Windows.Forms.Button btnCancel;
         public System.Windows.Forms.TextBox txtClipboard;
         private System.Windows.Forms.ListBox lbClipboard;
         private System.Windows.Forms.CheckBox cbDontShowThisWindow;
-        private MyPictureBox pbClipboard;
+        private HelpersLib.MyPictureBox pbClipboard;
+        private System.Windows.Forms.Button btnUpload;
     }
 }
