@@ -142,6 +142,7 @@
     </Compile>
     <Compile Include="ImageEffectPreset.cs" />
     <Compile Include="Manipulations\AutoCrop.cs" />
+    <Compile Include="Manipulations\ForceProportions.cs" />
     <Compile Include="Manipulations\Crop.cs" />
     <Compile Include="Manipulations\RoundedCorners.cs" />
     <Compile Include="Manipulations\Skew.cs" />

@@ -129,6 +129,7 @@ namespace ShareX.ImageEffectsLib
                 typeof(Canvas),
                 typeof(Crop),
                 typeof(Flip),
+                typeof(ForceProportions),
                 typeof(Resize),
                 typeof(Rotate),
                 typeof(RoundedCorners),
