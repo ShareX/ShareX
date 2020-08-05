@@ -31,89 +31,90 @@ using System.Drawing.Design;
 
 namespace ShareX.ImageEffectsLib
 {
-    [Description("Force Proportions")]
+    [Description("Force proportions")]
     internal class ForceProportions : ImageEffect
     {
-        private int width = 1;
-        private int height = 1;
+        private int proportionalWidth = 1;
 
-        [DefaultValue(typeof(int), "1")]
+        [DefaultValue(1)]
         public int ProportionalWidth
         {
-            get {
-                return width;
+            get
+            {
+                return proportionalWidth;
             }
             set
             {
-                width = Math.Max(1, value);
+                proportionalWidth = Math.Max(1, value);
             }
         }
-        [DefaultValue(typeof(int), "1")]
+
+        private int proportionalHeight = 1;
+
+        [DefaultValue(1)]
         public int ProportionalHeight
         {
             get
             {
-                return height;
+                return proportionalHeight;
             }
             set
             {
-                height = Math.Max(1, value);
+                proportionalHeight = Math.Max(1, value);
             }
         }
 
-        public enum ForceMethod
+        public enum ForceProportionsMethod
         {
             Grow,
             Crop
         }
 
-        public ForceMethod Method { get; set; } = ForceMethod.Grow;
+        [DefaultValue(ForceProportionsMethod.Grow)]
+        public ForceProportionsMethod Method { get; set; } = ForceProportionsMethod.Grow;
 
         [DefaultValue(typeof(Color), "Transparent"), Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
-        public Color GrowFillColor { get; set; } = Color.FromArgb(0);
-
-        public ForceProportions()
-        {
-            this.ApplyDefaultPropertyValues();
-        }
+        public Color GrowFillColor { get; set; } = Color.Transparent;
 
         public override Bitmap Apply(Bitmap bmp)
         {
-            float current_ratio = bmp.Width / (float)bmp.Height;
-            float target_ratio = width / (float)height;
+            float currentRatio = bmp.Width / (float)bmp.Height;
+            float targetRatio = proportionalWidth / (float)proportionalHeight;
 
-            bool is_target_wider = target_ratio > current_ratio;
+            bool isTargetWider = targetRatio > currentRatio;
 
-            int target_width = bmp.Width;
-            int target_height = bmp.Height;
-            int margin_left = 0;
-            int margin_top = 0;
+            int targetWidth = bmp.Width;
+            int targetHeight = bmp.Height;
+            int marginLeft = 0;
+            int marginTop = 0;
 
-            if (Method == ForceMethod.Crop)
+            if (Method == ForceProportionsMethod.Crop)
             {
-                if (is_target_wider)
+                if (isTargetWider)
                 {
-                    target_height = (int)Math.Round(bmp.Width / target_ratio);
-                    margin_top = (bmp.Height - target_height) / 2;
+                    targetHeight = (int)Math.Round(bmp.Width / targetRatio);
+                    marginTop = (bmp.Height - targetHeight) / 2;
                 }
                 else
                 {
-                    target_width = (int)Math.Round(bmp.Height * target_ratio);
-                    margin_left = (bmp.Width - target_width) / 2;
+                    targetWidth = (int)Math.Round(bmp.Height * targetRatio);
+                    marginLeft = (bmp.Width - targetWidth) / 2;
                 }
-                return ImageHelpers.CropBitmap(bmp, new Rectangle(margin_left, margin_top, target_width, target_height));
+
+                return ImageHelpers.CropBitmap(bmp, new Rectangle(marginLeft, marginTop, targetWidth, targetHeight));
             }
-            if (Method == ForceMethod.Grow)
+            else if (Method == ForceProportionsMethod.Grow)
             {
-                if (is_target_wider)
+                if (isTargetWider)
                 {
-                    target_width = (int)Math.Round(bmp.Height * target_ratio);
+                    targetWidth = (int)Math.Round(bmp.Height * targetRatio);
                 }
                 else
                 {
-                    target_height = (int)Math.Round(bmp.Width / target_ratio);
+                    targetHeight = (int)Math.Round(bmp.Width / targetRatio);
                 }
-                return ImageHelpers.ResizeImage(bmp, target_width, target_height, false, true, GrowFillColor);
+
+                return ImageHelpers.ResizeImage(bmp, targetWidth, targetHeight, false, true, GrowFillColor);
             }
 
             return bmp;
