@@ -160,10 +160,10 @@
     <value>NoControl</value>
   </data>
   <data name="btnCancel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>331, 328</value>
+    <value>312, 328</value>
   </data>
   <data name="btnCancel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>80, 24</value>
+    <value>99, 24</value>
   </data>
   <data name="btnCancel.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -304,13 +304,13 @@
     <value>NoControl</value>
   </data>
   <data name="btnUpload.Location" type="System.Drawing.Point, System.Drawing">
-    <value>248, 328</value>
+    <value>208, 328</value>
   </data>
   <data name="btnUpload.Size" type="System.Drawing.Size, System.Drawing">
-    <value>80, 24</value>
+    <value>99, 24</value>
   </data>
   <data name="btnUpload.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+    <value>0</value>
   </data>
   <data name="btnUpload.Text" xml:space="preserve">
     <value>Upload</value>
