@@ -35,13 +35,16 @@ namespace ShareX
     {
         public bool IsClipboardContentValid { get; private set; }
         public bool DontShowThisWindow { get; private set; }
-        public EClipboardContentType ClipboardContentType { get; private set; }
         public object ClipboardContent { get; private set; }
+        public bool KeepClipboardContent { get; private set; }
 
-        public ClipboardUploadForm(bool showCheckBox = false)
+        private TaskSettings taskSettings;
+
+        public ClipboardUploadForm(TaskSettings taskSettings, bool showCheckBox = false)
         {
             InitializeComponent();
             ShareXResources.ApplyTheme(this);
+            this.taskSettings = taskSettings;
 
             if (ShareXResources.UseCustomTheme)
             {
@@ -49,14 +52,12 @@ namespace ShareX
             }
 
             cbDontShowThisWindow.Visible = showCheckBox;
+
+            IsClipboardContentValid = CheckClipboardContent();
+            btnUpload.Enabled = IsClipboardContentValid;
         }
 
-        private void ClipboardContentViewer_Load(object sender, EventArgs e)
-        {
-            IsClipboardContentValid = CheckClipboardContents();
-        }
-
-        private bool CheckClipboardContents()
+        private bool CheckClipboardContent()
         {
             pbClipboard.Visible = txtClipboard.Visible = lbClipboard.Visible = false;
 
@@ -66,7 +67,6 @@ namespace ShareX
                 {
                     if (bmp != null)
                     {
-                        ClipboardContentType = EClipboardContentType.Image;
                         ClipboardContent = bmp.Clone();
                         pbClipboard.LoadImage(bmp);
                         pbClipboard.Visible = true;
@@ -81,7 +81,6 @@ namespace ShareX
 
                 if (!string.IsNullOrEmpty(text))
                 {
-                    ClipboardContentType = EClipboardContentType.Text;
                     ClipboardContent = text;
                     txtClipboard.Text = text;
                     txtClipboard.Visible = true;
@@ -95,7 +94,6 @@ namespace ShareX
 
                 if (files != null && files.Length > 0)
                 {
-                    ClipboardContentType = EClipboardContentType.Files;
                     ClipboardContent = files;
                     lbClipboard.Items.AddRange(files);
                     lbClipboard.Visible = true;
@@ -108,14 +106,53 @@ namespace ShareX
             return false;
         }
 
+        private void ClipboardUpload()
+        {
+            if (IsClipboardContentValid)
+            {
+                switch (ClipboardContent)
+                {
+                    case Bitmap bmp:
+                        KeepClipboardContent = true;
+                        UploadManager.ProcessImageUpload(bmp, taskSettings);
+                        break;
+                    case string text:
+                        UploadManager.ProcessTextUpload(text, taskSettings);
+                        break;
+                    case string[] files:
+                        UploadManager.ProcessFilesUpload(files, taskSettings);
+                        break;
+                }
+            }
+        }
+
         private void ClipboardContentViewer_Shown(object sender, EventArgs e)
         {
             this.ForceActivate();
         }
 
+        private void ClipboardUploadForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (!KeepClipboardContent && ClipboardContent is Bitmap bmp)
+            {
+                bmp.Dispose();
+            }
+        }
+
         private void cbDontShowThisWindow_CheckedChanged(object sender, EventArgs e)
         {
             DontShowThisWindow = cbDontShowThisWindow.Checked;
+        }
+
+        private void btnUpload_Click(object sender, EventArgs e)
+        {
+            ClipboardUpload();
+            Close();
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

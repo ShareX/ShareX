@@ -51,6 +51,7 @@
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // txtClipboard
             // 
@@ -89,6 +90,7 @@
             this.btnUpload.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btnUpload.Name = "btnUpload";
             this.btnUpload.UseVisualStyleBackColor = true;
+            this.btnUpload.Click += new System.EventHandler(this.btnUpload_Click);
             // 
             // ClipboardUploadForm
             // 
@@ -106,7 +108,7 @@
             this.Controls.Add(this.lbClipboard);
             this.Name = "ClipboardUploadForm";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
-            this.Load += new System.EventHandler(this.ClipboardContentViewer_Load);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ClipboardUploadForm_FormClosed);
             this.Shown += new System.EventHandler(this.ClipboardContentViewer_Shown);
             this.ResumeLayout(false);
             this.PerformLayout();
