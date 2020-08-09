@@ -127,6 +127,17 @@ namespace ShareX.HelpersLib
             }
         }
 
+        public void Draw(Image img)
+        {
+            if (IsValid)
+            {
+                using (Graphics g = Graphics.FromImage(img))
+                {
+                    Draw(g, new Rectangle(0, 0, img.Width, img.Height));
+                }
+            }
+        }
+
         public Bitmap CreateGradientPreview(int width, int height, bool border = false, bool checkers = false)
         {
             Bitmap bmp = new Bitmap(width, height);
