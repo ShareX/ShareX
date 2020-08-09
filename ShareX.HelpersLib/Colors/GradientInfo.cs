@@ -46,6 +46,9 @@ namespace ShareX.HelpersLib
         [JsonIgnore]
         public bool IsVisible => IsValid && Colors.Any(x => x.Color.A > 0);
 
+        [JsonIgnore]
+        public bool IsTransparent => IsValid && Colors.Any(x => x.Color.A < 255);
+
         public GradientInfo()
         {
             Type = LinearGradientMode.Vertical;
@@ -124,15 +127,28 @@ namespace ShareX.HelpersLib
             }
         }
 
-        public Bitmap CreateGradientPreview(int width, int height)
+        public Bitmap CreateGradientPreview(int width, int height, bool border = false, bool checkers = false)
         {
             Bitmap bmp = new Bitmap(width, height);
             Rectangle rect = new Rectangle(0, 0, width, height);
 
             using (Graphics g = Graphics.FromImage(bmp))
             {
+                if (checkers && IsTransparent)
+                {
+                    using (Image checker = ImageHelpers.CreateCheckerPattern())
+                    using (Brush checkerBrush = new TextureBrush(checker, WrapMode.Tile))
+                    {
+                        g.FillRectangle(checkerBrush, rect);
+                    }
+                }
+
                 Draw(g, rect);
-                g.DrawRectangleProper(Pens.Black, rect);
+
+                if (border)
+                {
+                    g.DrawRectangleProper(Pens.Black, rect);
+                }
             }
 
             return bmp;

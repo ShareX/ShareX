@@ -115,7 +115,6 @@
             // 
             // pbPreview
             // 
-            this.pbPreview.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.pbPreview, "pbPreview");
             this.pbPreview.Name = "pbPreview";
             this.pbPreview.TabStop = false;

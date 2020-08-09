@@ -93,7 +93,7 @@ namespace ShareX.HelpersLib
             {
                 GradientInfo gradient = gradients[i];
                 gradient.Type = Gradient.Type;
-                ilPresets.Images.Add(gradient.CreateGradientPreview(100, 25));
+                ilPresets.Images.Add(gradient.CreateGradientPreview(100, 25, true));
 
                 ListViewItem lvi = new ListViewItem();
                 lvi.ImageIndex = i;
@@ -126,7 +126,7 @@ namespace ShareX.HelpersLib
         {
             if (isReady)
             {
-                Bitmap bmp = Gradient.CreateGradientPreview(pbPreview.ClientRectangle.Width, pbPreview.ClientRectangle.Height);
+                Bitmap bmp = Gradient.CreateGradientPreview(pbPreview.ClientRectangle.Width, pbPreview.ClientRectangle.Height, true);
 
                 if (pbPreview.Image != null)
                 {
