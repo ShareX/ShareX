@@ -34,6 +34,7 @@ namespace ShareX.IndexerLib
     public class IndexerHtml : Indexer
     {
         protected StringBuilder sbContent = new StringBuilder();
+        protected int prePathTrim = 0;
 
         public IndexerHtml(IndexerSettings indexerSettings) : base(indexerSettings)
         {
@@ -51,6 +52,9 @@ namespace ShareX.IndexerLib
             sbHtmlIndex.AppendLine(GetCssStyle());
             sbHtmlIndex.AppendLine(HtmlHelper.EndTag("head"));
             sbHtmlIndex.AppendLine(HtmlHelper.StartTag("body"));
+
+            folderPath = Path.GetFullPath(folderPath).TrimEnd('\\');
+            prePathTrim = folderPath.LastIndexOf(@"\") + 1;
 
             FolderInfo folderInfo = GetFolderInfo(folderPath);
             folderInfo.Update();
@@ -107,7 +111,7 @@ namespace ShareX.IndexerLib
 
                 if (dir.TotalFileCount > 0)
                 {
-                    folderNameRow += dir.TotalFileCount + " file" + (dir.TotalFileCount > 1 ? "s" : "");
+                    folderNameRow += dir.TotalFileCount.ToString("n0") + " file" + (dir.TotalFileCount > 1 ? "s" : "");
                 }
 
                 if (dir.TotalFolderCount > 0)
@@ -117,16 +121,27 @@ namespace ShareX.IndexerLib
                         folderNameRow += ", ";
                     }
 
-                    folderNameRow += dir.TotalFolderCount + " folder" + (dir.TotalFolderCount > 1 ? "s" : "");
+                    folderNameRow += dir.TotalFolderCount.ToString("n0") + " folder" + (dir.TotalFolderCount > 1 ? "s" : "");
                 }
 
                 folderNameRow += ")";
                 folderNameRow = " " + HtmlHelper.Tag("span", folderNameRow, "", "class=\"FolderInfo\"");
             }
 
+            string pathTitle = "";
+
+            if (settings.DisplayPath)
+            {
+                pathTitle = settings.DisplayPathLimited ? dir.FolderPath.Substring(prePathTrim) : dir.FolderPath;
+            }
+            else
+            {
+                pathTitle = dir.FolderName;
+            }
+
             int heading = (level + 1).Clamp(1, 6);
 
-            return HtmlHelper.StartTag("h" + heading) + URLHelpers.HtmlEncode(dir.FolderName) + folderNameRow + HtmlHelper.EndTag("h" + heading);
+            return HtmlHelper.StartTag("h" + heading) + URLHelpers.HtmlEncode(pathTitle) + folderNameRow + HtmlHelper.EndTag("h" + heading);
         }
 
         private string GetFileNameRow(FileInfo fi, int level)
