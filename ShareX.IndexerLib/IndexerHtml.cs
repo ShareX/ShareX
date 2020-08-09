@@ -53,6 +53,7 @@ namespace ShareX.IndexerLib
             sbHtmlIndex.AppendLine(HtmlHelper.EndTag("head"));
             sbHtmlIndex.AppendLine(HtmlHelper.StartTag("body"));
 
+            folderPath = Path.GetFullPath(folderPath).TrimEnd('\\');
             prePathTrim = folderPath.LastIndexOf(@"\");
 
             FolderInfo folderInfo = GetFolderInfo(folderPath);
