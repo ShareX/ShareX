@@ -80,23 +80,6 @@ namespace ShareX.HelpersLib
             }
         }
 
-        public void Draw(Graphics g, Rectangle rect)
-        {
-            if (IsValid)
-            {
-                try
-                {
-                    using (LinearGradientBrush brush = GetGradientBrush(new Rectangle(0, 0, rect.Width, rect.Height)))
-                    {
-                        g.FillRectangle(brush, rect);
-                    }
-                }
-                catch
-                {
-                }
-            }
-        }
-
         public ColorBlend GetColorBlend()
         {
             List<GradientStop> colors = new List<GradientStop>(Colors.OrderBy(x => x.Location));
@@ -124,15 +107,31 @@ namespace ShareX.HelpersLib
             return brush;
         }
 
+        public void Draw(Graphics g, Rectangle rect)
+        {
+            if (IsValid)
+            {
+                try
+                {
+                    using (LinearGradientBrush brush = GetGradientBrush(new Rectangle(0, 0, rect.Width, rect.Height)))
+                    {
+                        g.FillRectangle(brush, rect);
+                    }
+                }
+                catch
+                {
+                }
+            }
+        }
+
         public Bitmap CreateGradientPreview(int width, int height)
         {
             Bitmap bmp = new Bitmap(width, height);
             Rectangle rect = new Rectangle(0, 0, width, height);
 
             using (Graphics g = Graphics.FromImage(bmp))
-            using (LinearGradientBrush brush = GetGradientBrush(rect))
             {
-                g.FillRectangle(brush, rect);
+                Draw(g, rect);
                 g.DrawRectangleProper(Pens.Black, rect);
             }
 
