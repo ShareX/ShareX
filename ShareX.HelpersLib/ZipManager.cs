@@ -159,5 +159,33 @@ namespace ShareX.HelpersLib
                 }
             }
         }
+
+        public static ZipArchiveEntry CreateEntryFromStream(this ZipArchive archive, Stream stream, string entryName, CompressionLevel compressionLevel)
+        {
+            if (archive == null)
+            {
+                throw new ArgumentNullException(nameof(archive));
+            }
+
+            if (stream == null)
+            {
+                throw new ArgumentNullException(nameof(stream));
+            }
+
+            if (entryName == null)
+            {
+                throw new ArgumentNullException(nameof(entryName));
+            }
+
+            ZipArchiveEntry entry = archive.CreateEntry(entryName, compressionLevel);
+            entry.LastWriteTime = DateTime.Now;
+
+            using (Stream entryStream = entry.Open())
+            {
+                stream.CopyTo(entryStream);
+            }
+
+            return entry;
+        }
     }
 }
