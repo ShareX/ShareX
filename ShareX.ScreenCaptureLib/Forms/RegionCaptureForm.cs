@@ -1206,10 +1206,11 @@ namespace ShareX.ScreenCaptureLib
 
                 if (Mode == RegionCaptureMode.ScreenColorPicker)
                 {
-                    int colorBoxOffset = 3;
-                    int colorBoxWidth = 15;
+                    int colorBoxOffset = 2;
+                    int colorBoxWidth = 20;
                     colorRect = new Rectangle(infoTextRect.X + colorBoxOffset, infoTextRect.Y + colorBoxOffset, colorBoxWidth, infoTextRect.Height - (colorBoxOffset * 2));
-                    int colorExtraWidth = colorRect.Width + colorBoxOffset;
+                    int textOffset = 4;
+                    int colorExtraWidth = colorRect.Width + textOffset;
                     infoTextRect.Width += colorExtraWidth;
                     padding.X += colorExtraWidth;
                 }
@@ -1223,7 +1224,7 @@ namespace ShareX.ScreenCaptureLib
                         g.FillRectangle(colorBrush, colorRect);
                     }
 
-                    g.DrawRectangleProper(Pens.White, colorRect);
+                    g.DrawLine(textInnerBorderPen, colorRect.Right, colorRect.Top, colorRect.Right, colorRect.Bottom);
                 }
             }
         }
