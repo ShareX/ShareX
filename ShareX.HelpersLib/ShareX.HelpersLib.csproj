@@ -482,7 +482,7 @@
     <Compile Include="Settings\WritablePropertiesOnlyResolver.cs" />
     <Compile Include="XmlColor.cs" />
     <Compile Include="XmlFont.cs" />
-    <Compile Include="ZipManager.cs" />
+    <Compile Include="Zip\ZipManager.cs" />
     <EmbeddedResource Include="Controls\ExportImportControl.pt-PT.resx">
       <DependentUpon>ExportImportControl.cs</DependentUpon>
     </EmbeddedResource>
