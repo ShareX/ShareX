@@ -40,14 +40,11 @@ namespace ShareX.ImageEffectsLib
         {
             if (!string.IsNullOrEmpty(outputFilePath))
             {
-                string outputFolder = Path.GetDirectoryName(outputFilePath);
-                Helpers.CreateDirectory(outputFolder);
-
-                string configFilePath = Path.Combine(outputFolder, ConfigFileName);
-                File.WriteAllText(configFilePath, configJson, Encoding.UTF8);
-
                 List<ZipEntryInfo> entries = new List<ZipEntryInfo>();
-                entries.Add(new ZipEntryInfo(configFilePath, ConfigFileName));
+
+                byte[] bytes = Encoding.UTF8.GetBytes(configJson);
+                MemoryStream ms = new MemoryStream(bytes);
+                entries.Add(new ZipEntryInfo(ms, ConfigFileName));
 
                 if (!string.IsNullOrEmpty(assetsFolderPath) && Directory.Exists(assetsFolderPath))
                 {
@@ -61,14 +58,7 @@ namespace ShareX.ImageEffectsLib
                     }
                 }
 
-                try
-                {
-                    ZipManager.Compress(outputFilePath, entries);
-                }
-                finally
-                {
-                    File.Delete(configFilePath);
-                }
+                ZipManager.Compress(outputFilePath, entries);
 
                 return outputFilePath;
             }

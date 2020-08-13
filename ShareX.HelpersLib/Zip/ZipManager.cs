@@ -127,12 +127,14 @@ namespace ShareX.HelpersLib
 
         public static void Compress(string archivePath, List<ZipEntryInfo> entries, CompressionLevel compression = CompressionLevel.Optimal)
         {
+            Helpers.CreateDirectoryFromFilePath(archivePath);
+
             if (File.Exists(archivePath))
             {
                 File.Delete(archivePath);
             }
 
-            using (ZipArchive archive = ZipFile.Open(archivePath, ZipArchiveMode.Update))
+            using (ZipArchive archive = ZipFile.Open(archivePath, ZipArchiveMode.Create))
             {
                 foreach (ZipEntryInfo entry in entries)
                 {
@@ -141,7 +143,7 @@ namespace ShareX.HelpersLib
             }
         }
 
-        public static ZipArchiveEntry CreateEntry(this ZipArchive archive, ZipEntryInfo entryInfo, CompressionLevel compressionLevel)
+        private static ZipArchiveEntry CreateEntry(this ZipArchive archive, ZipEntryInfo entryInfo, CompressionLevel compressionLevel)
         {
             if (entryInfo == null)
             {
@@ -163,7 +165,7 @@ namespace ShareX.HelpersLib
             return null;
         }
 
-        public static ZipArchiveEntry CreateEntryFromStream(this ZipArchive archive, Stream stream, string entryName, CompressionLevel compressionLevel)
+        private static ZipArchiveEntry CreateEntryFromStream(this ZipArchive archive, Stream stream, string entryName, CompressionLevel compressionLevel)
         {
             if (archive == null)
             {
