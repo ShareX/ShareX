@@ -1199,32 +1199,34 @@ namespace ShareX.ScreenCaptureLib
 
             if (Options.ShowInfo)
             {
-                infoTextRect.Location = new Point(x + (totalSize.Width / 2) - (infoTextRect.Width / 2), y + infoTextPosition);
-
-                Point padding = new Point(infoTextPadding, infoTextPadding);
-                Rectangle colorRect = Rectangle.Empty;
-
                 if (Mode == RegionCaptureMode.ScreenColorPicker)
                 {
                     int colorBoxOffset = 2;
                     int colorBoxWidth = 20;
-                    colorRect = new Rectangle(infoTextRect.X + colorBoxOffset, infoTextRect.Y + colorBoxOffset, colorBoxWidth, infoTextRect.Height - (colorBoxOffset * 2));
                     int textOffset = 4;
-                    int colorExtraWidth = colorRect.Width + textOffset;
-                    infoTextRect.Width += colorExtraWidth;
-                    padding.X += colorExtraWidth;
-                }
+                    int colorBoxExtraWidth = colorBoxWidth + textOffset;
+                    infoTextRect.Width += colorBoxExtraWidth;
+                    infoTextRect.Location = new Point(x + (totalSize.Width / 2) - (infoTextRect.Width / 2), y + infoTextPosition);
+                    Point padding = new Point(infoTextPadding + colorBoxExtraWidth, infoTextPadding);
 
-                DrawInfoText(g, infoText, infoTextRect, infoFont, padding);
+                    Rectangle colorRect = new Rectangle(infoTextRect.X + colorBoxOffset, infoTextRect.Y + colorBoxOffset,
+                        colorBoxWidth, infoTextRect.Height - (colorBoxOffset * 2));
 
-                if (Mode == RegionCaptureMode.ScreenColorPicker)
-                {
+                    DrawInfoText(g, infoText, infoTextRect, infoFont, padding);
+
                     using (Brush colorBrush = new SolidBrush(ShapeManager.GetCurrentColor()))
                     {
                         g.FillRectangle(colorBrush, colorRect);
                     }
 
-                    g.DrawLine(textInnerBorderPen, colorRect.Right, colorRect.Top, colorRect.Right, colorRect.Bottom);
+                    g.DrawLine(textInnerBorderPen, colorRect.Right, colorRect.Top, colorRect.Right, colorRect.Bottom - 1);
+                }
+                else
+                {
+                    infoTextRect.Location = new Point(x + (totalSize.Width / 2) - (infoTextRect.Width / 2), y + infoTextPosition);
+                    Point padding = new Point(infoTextPadding, infoTextPadding);
+
+                    DrawInfoText(g, infoText, infoTextRect, infoFont, padding);
                 }
             }
         }
