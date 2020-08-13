@@ -348,21 +348,21 @@ namespace ShareX
         {
             try
             {
-                List<string> files = new List<string>();
+                List<ZipEntryInfo> entries = new List<ZipEntryInfo>();
 
                 if (settings)
                 {
-                    files.Add(ApplicationConfigFilePath);
-                    files.Add(HotkeysConfigFilePath);
-                    files.Add(UploadersConfigFilePath);
+                    entries.Add(new ZipEntryInfo(ApplicationConfigFilePath));
+                    entries.Add(new ZipEntryInfo(HotkeysConfigFilePath));
+                    entries.Add(new ZipEntryInfo(UploadersConfigFilePath));
                 }
 
                 if (history)
                 {
-                    files.Add(Program.HistoryFilePath);
+                    entries.Add(new ZipEntryInfo(Program.HistoryFilePath));
                 }
 
-                ZipManager.Compress(archivePath, files);
+                ZipManager.Compress(archivePath, entries);
                 return true;
             }
             catch (Exception e)

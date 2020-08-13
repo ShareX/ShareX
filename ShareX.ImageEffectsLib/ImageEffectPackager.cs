@@ -46,8 +46,8 @@ namespace ShareX.ImageEffectsLib
                 string configFilePath = Path.Combine(outputFolder, ConfigFileName);
                 File.WriteAllText(configFilePath, configJson, Encoding.UTF8);
 
-                Dictionary<string, string> files = new Dictionary<string, string>();
-                files.Add(configFilePath, ConfigFileName);
+                List<ZipEntryInfo> entries = new List<ZipEntryInfo>();
+                entries.Add(new ZipEntryInfo(configFilePath, ConfigFileName));
 
                 if (!string.IsNullOrEmpty(assetsFolderPath) && Directory.Exists(assetsFolderPath))
                 {
@@ -57,13 +57,13 @@ namespace ShareX.ImageEffectsLib
                     foreach (string assetPath in Directory.EnumerateFiles(assetsFolderPath, "*.*", SearchOption.AllDirectories).Where(x => Helpers.IsImageFile(x)))
                     {
                         string entryName = assetPath.Substring(entryNamePosition);
-                        files.Add(assetPath, entryName);
+                        entries.Add(new ZipEntryInfo(assetPath, entryName));
                     }
                 }
 
                 try
                 {
-                    ZipManager.Compress(outputFilePath, files);
+                    ZipManager.Compress(outputFilePath, entries);
                 }
                 finally
                 {

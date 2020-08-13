@@ -125,20 +125,7 @@ namespace ShareX.HelpersLib
             ZipFile.CreateFromDirectory(source, archivePath, compression, false);
         }
 
-        public static void Compress(string archivePath, List<string> files, CompressionLevel compression = CompressionLevel.Optimal)
-        {
-            Dictionary<string, string> entries = new Dictionary<string, string>();
-
-            foreach (string file in files)
-            {
-                string fileName = Path.GetFileName(file);
-                entries.Add(file, fileName);
-            }
-
-            Compress(archivePath, entries, compression);
-        }
-
-        public static void Compress(string archivePath, Dictionary<string, string> files, CompressionLevel compression = CompressionLevel.Optimal)
+        public static void Compress(string archivePath, List<ZipEntryInfo> entries, CompressionLevel compression = CompressionLevel.Optimal)
         {
             if (File.Exists(archivePath))
             {
@@ -147,17 +134,33 @@ namespace ShareX.HelpersLib
 
             using (ZipArchive archive = ZipFile.Open(archivePath, ZipArchiveMode.Update))
             {
-                foreach (KeyValuePair<string, string> file in files)
+                foreach (ZipEntryInfo entry in entries)
                 {
-                    string sourceFilePath = file.Key;
-
-                    if (File.Exists(sourceFilePath))
-                    {
-                        string entryName = file.Value;
-                        archive.CreateEntryFromFile(sourceFilePath, entryName, compression);
-                    }
+                    archive.CreateEntry(entry, compression);
                 }
             }
+        }
+
+        public static ZipArchiveEntry CreateEntry(this ZipArchive archive, ZipEntryInfo entryInfo, CompressionLevel compressionLevel)
+        {
+            if (entryInfo == null)
+            {
+                throw new ArgumentNullException(nameof(entryInfo));
+            }
+
+            if (entryInfo.Data != null)
+            {
+                using (entryInfo.Data)
+                {
+                    return archive.CreateEntryFromStream(entryInfo.Data, entryInfo.EntryName, compressionLevel);
+                }
+            }
+            else if (!string.IsNullOrEmpty(entryInfo.SourcePath) && File.Exists(entryInfo.SourcePath))
+            {
+                return archive.CreateEntryFromFile(entryInfo.SourcePath, entryInfo.EntryName, compressionLevel);
+            }
+
+            return null;
         }
 
         public static ZipArchiveEntry CreateEntryFromStream(this ZipArchive archive, Stream stream, string entryName, CompressionLevel compressionLevel)
