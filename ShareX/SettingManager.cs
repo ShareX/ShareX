@@ -391,7 +391,11 @@ namespace ShareX
         {
             try
             {
-                ZipManager.Extract(archivePath, Program.PersonalFolder);
+                ZipManager.Extract(archivePath, Program.PersonalFolder, true, entry =>
+                {
+                    return Helpers.CheckExtension(entry.Name, new string[] { "json", "xml" });
+                }, 1_000_000_000);
+
                 return true;
             }
             catch (Exception e)

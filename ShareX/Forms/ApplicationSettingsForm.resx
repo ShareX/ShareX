@@ -1660,7 +1660,7 @@
     <value>True</value>
   </data>
   <data name="cbExportHistory.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 80</value>
+    <value>16, 88</value>
   </data>
   <data name="cbExportHistory.Size" type="System.Drawing.Size, System.Drawing">
     <value>58, 17</value>
@@ -1687,7 +1687,7 @@
     <value>True</value>
   </data>
   <data name="cbExportSettings.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 56</value>
+    <value>16, 64</value>
   </data>
   <data name="cbExportSettings.Size" type="System.Drawing.Size, System.Drawing">
     <value>64, 17</value>
@@ -1741,7 +1741,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnResetSettings.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 168</value>
+    <value>16, 176</value>
   </data>
   <data name="btnResetSettings.Size" type="System.Drawing.Size, System.Drawing">
     <value>184, 24</value>
@@ -1768,7 +1768,7 @@
     <value>NoControl</value>
   </data>
   <data name="pbExportImport.Location" type="System.Drawing.Point, System.Drawing">
-    <value>208, 104</value>
+    <value>208, 112</value>
   </data>
   <data name="pbExportImport.Size" type="System.Drawing.Size, System.Drawing">
     <value>184, 23</value>
@@ -1795,7 +1795,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnExport.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 104</value>
+    <value>16, 112</value>
   </data>
   <data name="btnExport.Size" type="System.Drawing.Size, System.Drawing">
     <value>184, 23</value>
@@ -1822,7 +1822,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnImport.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 136</value>
+    <value>16, 144</value>
   </data>
   <data name="btnImport.Size" type="System.Drawing.Size, System.Drawing">
     <value>184, 23</value>
