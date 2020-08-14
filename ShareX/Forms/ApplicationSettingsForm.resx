@@ -1632,6 +1632,30 @@
   <data name="&gt;&gt;tpPaths.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
+  <data name="pbExportImportNote.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 16</value>
+  </data>
+  <data name="pbExportImportNote.Size" type="System.Drawing.Size, System.Drawing">
+    <value>32, 32</value>
+  </data>
+  <data name="pbExportImportNote.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>AutoSize</value>
+  </data>
+  <data name="pbExportImportNote.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;pbExportImportNote.Name" xml:space="preserve">
+    <value>pbExportImportNote</value>
+  </data>
+  <data name="&gt;&gt;pbExportImportNote.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pbExportImportNote.Parent" xml:space="preserve">
+    <value>tpSettings</value>
+  </data>
+  <data name="&gt;&gt;pbExportImportNote.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="cbExportHistory.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1654,10 +1678,10 @@
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;cbExportHistory.Parent" xml:space="preserve">
-    <value>tpExportImport</value>
+    <value>tpSettings</value>
   </data>
   <data name="&gt;&gt;cbExportHistory.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="cbExportSettings.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1681,22 +1705,25 @@
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;cbExportSettings.Parent" xml:space="preserve">
-    <value>tpExportImport</value>
+    <value>tpSettings</value>
   </data>
   <data name="&gt;&gt;cbExportSettings.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="lblExportImportNote.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 16</value>
+    <value>56, 16</value>
   </data>
   <data name="lblExportImportNote.Size" type="System.Drawing.Size, System.Drawing">
-    <value>528, 32</value>
+    <value>488, 32</value>
   </data>
   <data name="lblExportImportNote.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
   <data name="lblExportImportNote.Text" xml:space="preserve">
     <value>Note: Do not share the exported file with anyone because it might contain private information such as account details and your upload history.</value>
+  </data>
+  <data name="lblExportImportNote.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
   </data>
   <data name="&gt;&gt;lblExportImportNote.Name" xml:space="preserve">
     <value>lblExportImportNote</value>
@@ -1705,10 +1732,10 @@
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;lblExportImportNote.Parent" xml:space="preserve">
-    <value>tpExportImport</value>
+    <value>tpSettings</value>
   </data>
   <data name="&gt;&gt;lblExportImportNote.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="btnResetSettings.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -1732,10 +1759,10 @@
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;btnResetSettings.Parent" xml:space="preserve">
-    <value>tpExportImport</value>
+    <value>tpSettings</value>
   </data>
   <data name="&gt;&gt;btnResetSettings.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="pbExportImport.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -1759,10 +1786,10 @@
     <value>System.Windows.Forms.ProgressBar, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;pbExportImport.Parent" xml:space="preserve">
-    <value>tpExportImport</value>
+    <value>tpSettings</value>
   </data>
   <data name="&gt;&gt;pbExportImport.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="btnExport.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -1786,10 +1813,10 @@
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;btnExport.Parent" xml:space="preserve">
-    <value>tpExportImport</value>
+    <value>tpSettings</value>
   </data>
   <data name="&gt;&gt;btnExport.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="btnImport.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -1813,36 +1840,36 @@
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;btnImport.Parent" xml:space="preserve">
-    <value>tpExportImport</value>
+    <value>tpSettings</value>
   </data>
   <data name="&gt;&gt;btnImport.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="tpExportImport.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="tpExportImport.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="tpExportImport.Size" type="System.Drawing.Size, System.Drawing">
-    <value>550, 370</value>
-  </data>
-  <data name="tpExportImport.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
   </data>
-  <data name="tpExportImport.Text" xml:space="preserve">
-    <value>Export / Import</value>
+  <data name="tpSettings.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
   </data>
-  <data name="&gt;&gt;tpExportImport.Name" xml:space="preserve">
-    <value>tpExportImport</value>
+  <data name="tpSettings.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
   </data>
-  <data name="&gt;&gt;tpExportImport.Type" xml:space="preserve">
+  <data name="tpSettings.Size" type="System.Drawing.Size, System.Drawing">
+    <value>550, 370</value>
+  </data>
+  <data name="tpSettings.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="tpSettings.Text" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="&gt;&gt;tpSettings.Name" xml:space="preserve">
+    <value>tpSettings</value>
+  </data>
+  <data name="&gt;&gt;tpSettings.Type" xml:space="preserve">
     <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;tpExportImport.Parent" xml:space="preserve">
+  <data name="&gt;&gt;tpSettings.Parent" xml:space="preserve">
     <value>tcSettings</value>
   </data>
-  <data name="&gt;&gt;tpExportImport.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;tpSettings.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
   <data name="lblUploadLimit.AutoSize" type="System.Boolean, mscorlib">
@@ -3304,7 +3331,7 @@
     <value>True</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
+    <value>96, 96</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>737, 402</value>

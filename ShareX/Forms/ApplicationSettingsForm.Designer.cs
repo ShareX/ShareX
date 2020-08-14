@@ -88,7 +88,8 @@ namespace ShareX
             this.lblSaveImageSubFolderPattern = new System.Windows.Forms.Label();
             this.lblSaveImageSubFolderPatternPreview = new System.Windows.Forms.Label();
             this.txtSaveImageSubFolderPattern = new System.Windows.Forms.TextBox();
-            this.tpExportImport = new System.Windows.Forms.TabPage();
+            this.tpSettings = new System.Windows.Forms.TabPage();
+            this.pbExportImportNote = new System.Windows.Forms.PictureBox();
             this.cbExportHistory = new System.Windows.Forms.CheckBox();
             this.cbExportSettings = new System.Windows.Forms.CheckBox();
             this.lblExportImportNote = new System.Windows.Forms.Label();
@@ -163,7 +164,8 @@ namespace ShareX
             this.gbChrome.SuspendLayout();
             this.gbWindows.SuspendLayout();
             this.tpPaths.SuspendLayout();
-            this.tpExportImport.SuspendLayout();
+            this.tpSettings.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbExportImportNote)).BeginInit();
             this.tpUpload.SuspendLayout();
             this.tcUpload.SuspendLayout();
             this.tpPerformance.SuspendLayout();
@@ -192,7 +194,7 @@ namespace ShareX
             this.tcSettings.Controls.Add(this.tpTheme);
             this.tcSettings.Controls.Add(this.tpIntegration);
             this.tcSettings.Controls.Add(this.tpPaths);
-            this.tcSettings.Controls.Add(this.tpExportImport);
+            this.tcSettings.Controls.Add(this.tpSettings);
             this.tcSettings.Controls.Add(this.tpUpload);
             this.tcSettings.Controls.Add(this.tpHistory);
             this.tcSettings.Controls.Add(this.tpPrint);
@@ -623,18 +625,26 @@ namespace ShareX
             this.txtSaveImageSubFolderPattern.Name = "txtSaveImageSubFolderPattern";
             this.txtSaveImageSubFolderPattern.TextChanged += new System.EventHandler(this.txtSaveImageSubFolderPattern_TextChanged);
             // 
-            // tpExportImport
+            // tpSettings
             // 
-            this.tpExportImport.BackColor = System.Drawing.SystemColors.Window;
-            this.tpExportImport.Controls.Add(this.cbExportHistory);
-            this.tpExportImport.Controls.Add(this.cbExportSettings);
-            this.tpExportImport.Controls.Add(this.lblExportImportNote);
-            this.tpExportImport.Controls.Add(this.btnResetSettings);
-            this.tpExportImport.Controls.Add(this.pbExportImport);
-            this.tpExportImport.Controls.Add(this.btnExport);
-            this.tpExportImport.Controls.Add(this.btnImport);
-            resources.ApplyResources(this.tpExportImport, "tpExportImport");
-            this.tpExportImport.Name = "tpExportImport";
+            this.tpSettings.BackColor = System.Drawing.SystemColors.Window;
+            this.tpSettings.Controls.Add(this.pbExportImportNote);
+            this.tpSettings.Controls.Add(this.cbExportHistory);
+            this.tpSettings.Controls.Add(this.cbExportSettings);
+            this.tpSettings.Controls.Add(this.lblExportImportNote);
+            this.tpSettings.Controls.Add(this.btnResetSettings);
+            this.tpSettings.Controls.Add(this.pbExportImport);
+            this.tpSettings.Controls.Add(this.btnExport);
+            this.tpSettings.Controls.Add(this.btnImport);
+            resources.ApplyResources(this.tpSettings, "tpSettings");
+            this.tpSettings.Name = "tpSettings";
+            // 
+            // pbExportImportNote
+            // 
+            this.pbExportImportNote.Image = global::ShareX.Properties.Resources.exclamation;
+            resources.ApplyResources(this.pbExportImportNote, "pbExportImportNote");
+            this.pbExportImportNote.Name = "pbExportImportNote";
+            this.pbExportImportNote.TabStop = false;
             // 
             // cbExportHistory
             // 
@@ -1150,6 +1160,7 @@ namespace ShareX
             // ApplicationSettingsForm
             // 
             resources.ApplyResources(this, "$this");
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.Controls.Add(this.tcSettings);
             this.Controls.Add(this.tttvMain);
@@ -1173,8 +1184,9 @@ namespace ShareX
             this.gbWindows.PerformLayout();
             this.tpPaths.ResumeLayout(false);
             this.tpPaths.PerformLayout();
-            this.tpExportImport.ResumeLayout(false);
-            this.tpExportImport.PerformLayout();
+            this.tpSettings.ResumeLayout(false);
+            this.tpSettings.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbExportImportNote)).EndInit();
             this.tpUpload.ResumeLayout(false);
             this.tcUpload.ResumeLayout(false);
             this.tpPerformance.ResumeLayout(false);
@@ -1200,8 +1212,6 @@ namespace ShareX
             this.tpProxy.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudProxyPort)).EndInit();
             this.tpAdvanced.ResumeLayout(false);
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ResumeLayout(false);
 
         }
@@ -1289,7 +1299,7 @@ namespace ShareX
         private System.Windows.Forms.CheckBox cbSteamShowInApp;
         private System.Windows.Forms.TabPage tpIntegration;
         private System.Windows.Forms.GroupBox gbSteam;
-        private System.Windows.Forms.TabPage tpExportImport;
+        private System.Windows.Forms.TabPage tpSettings;
         private System.Windows.Forms.Button btnImport;
         private System.Windows.Forms.Button btnExport;
         private System.Windows.Forms.ProgressBar pbExportImport;
@@ -1333,5 +1343,6 @@ namespace ShareX
         private System.Windows.Forms.Label lblExportImportNote;
         private System.Windows.Forms.CheckBox cbExportHistory;
         private System.Windows.Forms.CheckBox cbExportSettings;
+        private System.Windows.Forms.PictureBox pbExportImportNote;
     }
 }
