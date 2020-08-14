@@ -187,6 +187,7 @@ namespace ShareX.HelpersLib
 
             using (Stream entryStream = entry.Open())
             {
+                stream.Position = 0;
                 stream.CopyTo(entryStream);
             }
 

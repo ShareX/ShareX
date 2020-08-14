@@ -30,6 +30,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -109,6 +110,15 @@ namespace ShareX.HelpersLib
             SaveAsync(FilePath);
         }
 
+        public MemoryStream SaveToMemoryStream(bool supportDPAPIEncryption = false)
+        {
+            ApplicationVersion = Application.ProductVersion;
+
+            MemoryStream ms = new MemoryStream();
+            SaveToStream(ms, supportDPAPIEncryption, true);
+            return ms;
+        }
+
         private bool SaveInternal(string filePath)
         {
             string typeName = GetType().Name;
@@ -127,25 +137,8 @@ namespace ShareX.HelpersLib
                         string tempFilePath = filePath + ".temp";
 
                         using (FileStream fileStream = new FileStream(tempFilePath, FileMode.Create, FileAccess.Write, FileShare.Read, 4096, FileOptions.WriteThrough))
-                        using (StreamWriter streamWriter = new StreamWriter(fileStream))
-                        using (JsonTextWriter jsonWriter = new JsonTextWriter(streamWriter))
                         {
-                            JsonSerializer serializer = new JsonSerializer();
-
-                            if (SupportDPAPIEncryption)
-                            {
-                                serializer.ContractResolver = new DPAPIEncryptedStringPropertyResolver();
-                            }
-                            else
-                            {
-                                serializer.ContractResolver = new WritablePropertiesOnlyResolver();
-                            }
-
-                            serializer.Converters.Add(new StringEnumConverter());
-                            serializer.DateTimeZoneHandling = DateTimeZoneHandling.Utc;
-                            serializer.Formatting = Formatting.Indented;
-                            serializer.Serialize(jsonWriter, this);
-                            jsonWriter.Flush();
+                            SaveToStream(fileStream, SupportDPAPIEncryption);
                         }
 
                         if (!JsonHelpers.QuickVerifyJsonFile(tempFilePath))
@@ -193,6 +186,30 @@ namespace ShareX.HelpersLib
             }
 
             return isSuccess;
+        }
+
+        private void SaveToStream(Stream stream, bool supportDPAPIEncryption = false, bool leaveOpen = false)
+        {
+            using (StreamWriter streamWriter = new StreamWriter(stream, new UTF8Encoding(false, true), 1024, leaveOpen))
+            using (JsonTextWriter jsonWriter = new JsonTextWriter(streamWriter))
+            {
+                JsonSerializer serializer = new JsonSerializer();
+
+                if (supportDPAPIEncryption)
+                {
+                    serializer.ContractResolver = new DPAPIEncryptedStringPropertyResolver();
+                }
+                else
+                {
+                    serializer.ContractResolver = new WritablePropertiesOnlyResolver();
+                }
+
+                serializer.Converters.Add(new StringEnumConverter());
+                serializer.DateTimeZoneHandling = DateTimeZoneHandling.Utc;
+                serializer.Formatting = Formatting.Indented;
+                serializer.Serialize(jsonWriter, this);
+                jsonWriter.Flush();
+            }
         }
 
         public static T Load(string filePath, string backupFolder = null)

@@ -346,15 +346,22 @@ namespace ShareX
 
         public static bool Export(string archivePath, bool settings, bool history)
         {
+            MemoryStream msApplicationConfig = null, msUploadersConfig = null, msHotkeysConfig = null;
+
             try
             {
                 List<ZipEntryInfo> entries = new List<ZipEntryInfo>();
 
                 if (settings)
                 {
-                    entries.Add(new ZipEntryInfo(ApplicationConfigFilePath));
-                    entries.Add(new ZipEntryInfo(HotkeysConfigFilePath));
-                    entries.Add(new ZipEntryInfo(UploadersConfigFilePath));
+                    msApplicationConfig = Settings.SaveToMemoryStream(false);
+                    entries.Add(new ZipEntryInfo(msApplicationConfig, ApplicationConfigFilename));
+
+                    msUploadersConfig = UploadersConfig.SaveToMemoryStream(false);
+                    entries.Add(new ZipEntryInfo(msUploadersConfig, UploadersConfigFilename));
+
+                    msHotkeysConfig = HotkeysConfig.SaveToMemoryStream(false);
+                    entries.Add(new ZipEntryInfo(msHotkeysConfig, HotkeysConfigFilename));
                 }
 
                 if (history)
@@ -369,6 +376,12 @@ namespace ShareX
             {
                 DebugHelper.WriteException(e);
                 MessageBox.Show("Error while exporting backup:\r\n" + e, "ShareX - Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                msApplicationConfig?.Dispose();
+                msUploadersConfig?.Dispose();
+                msHotkeysConfig?.Dispose();
             }
 
             return false;
