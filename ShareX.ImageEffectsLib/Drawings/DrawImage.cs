@@ -57,7 +57,7 @@ namespace ShareX.ImageEffectsLib
         [DefaultValue(CompositingMode.SourceOver), TypeConverter(typeof(EnumProperNameConverter))]
         public CompositingMode CompositingMode { get; set; }
 
-        [DefaultValue(true), Description("If image watermark size bigger than source image then don't draw it.")]
+        [DefaultValue(false), Description("If image watermark size bigger than source image then don't draw it.")]
         public bool AutoHide { get; set; }
 
         public DrawImage()

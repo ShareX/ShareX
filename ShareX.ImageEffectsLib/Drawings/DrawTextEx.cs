@@ -47,7 +47,7 @@ namespace ShareX.ImageEffectsLib
         [DefaultValue(0)]
         public int Angle { get; set; }
 
-        [DefaultValue(true), Description("If text size bigger than source image then don't draw it.")]
+        [DefaultValue(false), Description("If text size bigger than source image then don't draw it.")]
         public bool AutoHide { get; set; }
 
         private FontSafe fontSafe = new FontSafe();

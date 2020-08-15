@@ -46,7 +46,7 @@ namespace ShareX.ImageEffectsLib
         [DefaultValue(typeof(Point), "5, 5")]
         public Point Offset { get; set; }
 
-        [DefaultValue(true), Description("If text watermark size bigger than source image then don't draw it.")]
+        [DefaultValue(false), Description("If text watermark size bigger than source image then don't draw it.")]
         public bool AutoHide { get; set; }
 
         private FontSafe textFontSafe = new FontSafe();
