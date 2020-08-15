@@ -684,11 +684,9 @@ namespace ShareX
                 switch (taskSettings.ImageSettings.FileExistAction)
                 {
                     case FileExistAction.Ask:
-                        using (FileExistForm form = new FileExistForm(filepath))
-                        {
-                            form.ShowDialog();
-                            filepath = form.Filepath;
-                        }
+                        FileExistView form = new FileExistView(filepath);
+                        form.ShowDialog();
+                        filepath = form.Filepath;
                         break;
                     case FileExistAction.UniqueName:
                         filepath = Helpers.GetUniqueFilePath(filepath);

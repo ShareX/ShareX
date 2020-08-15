@@ -98,6 +98,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -108,7 +110,9 @@
     <Reference Include="System.IO.Compression" />
     <Reference Include="System.Web" />
     <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(Configuration)' == 'WindowsStore' Or '$(Configuration)' == 'WindowsStoreDebug'">
@@ -150,6 +154,12 @@
     <Compile Include="CaptureHelpers\CaptureRegion.cs" />
     <Compile Include="CaptureHelpers\CaptureWindow.cs" />
     <Compile Include="ChromeManifest.cs" />
+    <Compile Include="Views\FileExistView.xaml.cs">
+      <DependentUpon>FileExistView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ClipboardFormatView.xaml.cs">
+      <DependentUpon>ClipboardFormatView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\BeforeUploadControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -1830,6 +1840,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\exclamation.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Views\FileExistView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ClipboardFormatView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
