@@ -163,7 +163,7 @@
     <value>64, 163</value>
   </data>
   <data name="lblBerk.Size" type="System.Drawing.Size, System.Drawing">
-    <value>0, 13</value>
+    <value>0, 20</value>
   </data>
   <data name="lblBerk.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -190,7 +190,7 @@
     <value>64, 187</value>
   </data>
   <data name="lblMike.Size" type="System.Drawing.Size, System.Drawing">
-    <value>0, 13</value>
+    <value>0, 20</value>
   </data>
   <data name="lblMike.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -379,7 +379,7 @@
     <value>14, 136</value>
   </data>
   <data name="lblTeam.Size" type="System.Drawing.Size, System.Drawing">
-    <value>0, 13</value>
+    <value>0, 20</value>
   </data>
   <data name="lblTeam.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
@@ -429,6 +429,9 @@
   <data name="btnClose.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
   </data>
+  <data name="btnClose.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
   <data name="btnClose.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -436,7 +439,7 @@
     <value>472, 560</value>
   </data>
   <data name="btnClose.Size" type="System.Drawing.Size, System.Drawing">
-    <value>104, 23</value>
+    <value>104, 30</value>
   </data>
   <data name="btnClose.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -459,6 +462,9 @@
   <data name="btnShareXLicense.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
   </data>
+  <data name="btnShareXLicense.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
   <data name="btnShareXLicense.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -466,7 +472,7 @@
     <value>152, 560</value>
   </data>
   <data name="btnShareXLicense.Size" type="System.Drawing.Size, System.Drawing">
-    <value>168, 23</value>
+    <value>168, 30</value>
   </data>
   <data name="btnShareXLicense.TabIndex" type="System.Int32, mscorlib">
     <value>20</value>
@@ -489,6 +495,9 @@
   <data name="btnLicenses.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
   </data>
+  <data name="btnLicenses.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
   <data name="btnLicenses.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -496,7 +505,7 @@
     <value>328, 560</value>
   </data>
   <data name="btnLicenses.Size" type="System.Drawing.Size, System.Drawing">
-    <value>136, 23</value>
+    <value>136, 30</value>
   </data>
   <data name="btnLicenses.TabIndex" type="System.Int32, mscorlib">
     <value>21</value>
