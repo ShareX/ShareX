@@ -174,12 +174,19 @@ namespace ShareX.HelpersLib
 
         private static bool CopyImageAlternative2(Image img)
         {
+            using (Bitmap bmpNonTransparent = img.CreateEmptyBitmap(PixelFormat.Format24bppRgb))
             using (MemoryStream msPNG = new MemoryStream())
             using (MemoryStream msDIB = new MemoryStream())
             {
                 IDataObject dataObject = new DataObject();
 
-                dataObject.SetData(DataFormats.Bitmap, true, img);
+                using (Graphics g = Graphics.FromImage(bmpNonTransparent))
+                {
+                    g.Clear(Color.White);
+                    g.DrawImage(img, 0, 0, img.Width, img.Height);
+                }
+
+                dataObject.SetData(DataFormats.Bitmap, true, bmpNonTransparent);
 
                 img.Save(msPNG, ImageFormat.Png);
                 dataObject.SetData(FORMAT_PNG, false, msPNG);
