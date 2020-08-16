@@ -103,7 +103,7 @@ namespace ShareX.HelpersLib
             return false;
         }
 
-        public static bool CopyImage(Image img)
+        public static bool CopyImage(Image img, string fileName = null)
         {
             if (img != null)
             {
@@ -111,7 +111,7 @@ namespace ShareX.HelpersLib
                 {
                     if (HelpersOptions.UseAlternativeClipboardCopyImage)
                     {
-                        return CopyImageAlternative2(img);
+                        return CopyImageAlternative2(img, fileName);
                     }
 
                     if (HelpersOptions.DefaultCopyImageFillBackground)
@@ -172,7 +172,7 @@ namespace ShareX.HelpersLib
             }
         }
 
-        private static bool CopyImageAlternative2(Image img)
+        private static bool CopyImageAlternative2(Image img, string fileName = null)
         {
             using (Bitmap bmpNonTransparent = img.CreateEmptyBitmap(PixelFormat.Format24bppRgb))
             using (MemoryStream msPNG = new MemoryStream())
@@ -194,6 +194,12 @@ namespace ShareX.HelpersLib
                 byte[] dibData = ClipboardHelpersEx.ConvertToDib(img);
                 msDIB.Write(dibData, 0, dibData.Length);
                 dataObject.SetData(DataFormats.Dib, false, msDIB);
+
+                if (!string.IsNullOrEmpty(fileName))
+                {
+                    string htmlFragment = GenerateHTMLFragment($"<img src=\"{fileName}\"/>");
+                    dataObject.SetData(DataFormats.Html, htmlFragment);
+                }
 
                 return CopyData(dataObject);
             }
@@ -237,7 +243,8 @@ namespace ShareX.HelpersLib
                 {
                     using (Bitmap bmp = ImageHelpers.LoadImage(path))
                     {
-                        return CopyImage(bmp);
+                        string fileName = Path.GetFileName(path);
+                        return CopyImage(bmp, fileName);
                     }
                 }
                 catch (Exception e)
@@ -413,6 +420,37 @@ namespace ShareX.HelpersLib
             }
 
             return null;
+        }
+
+        private static string GenerateHTMLFragment(string html)
+        {
+            StringBuilder sb = new StringBuilder();
+
+            string header = "Version:0.9\r\nStartHTML:<<<<<<<<<1\r\nEndHTML:<<<<<<<<<2\r\nStartFragment:<<<<<<<<<3\r\nEndFragment:<<<<<<<<<4\r\n";
+            string startHTML = "<html>\r\n<body>\r\n";
+            string startFragment = "<!--StartFragment-->";
+            string endFragment = "<!--EndFragment-->";
+            string endHTML = "\r\n</body>\r\n</html>";
+
+            sb.Append(header);
+
+            int startHTMLLength = header.Length;
+            int startFragmentLength = startHTMLLength + startHTML.Length + startFragment.Length;
+            int endFragmentLength = startFragmentLength + Encoding.UTF8.GetByteCount(html);
+            int endHTMLLength = endFragmentLength + endFragment.Length + endHTML.Length;
+
+            sb.Replace("<<<<<<<<<1", startHTMLLength.ToString("D10"));
+            sb.Replace("<<<<<<<<<2", endHTMLLength.ToString("D10"));
+            sb.Replace("<<<<<<<<<3", startFragmentLength.ToString("D10"));
+            sb.Replace("<<<<<<<<<4", endFragmentLength.ToString("D10"));
+
+            sb.Append(startHTML);
+            sb.Append(startFragment);
+            sb.Append(html);
+            sb.Append(endFragment);
+            sb.Append(endHTML);
+
+            return sb.ToString();
         }
     }
 }
