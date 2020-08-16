@@ -79,7 +79,7 @@ namespace ShareX.HelpersLib
             int width = image.Width;
             int height = image.Height;
             // Ensure image is 32bppARGB by painting it on a new 32bppARGB image.
-            using (Bitmap bm32b = new Bitmap(image.Width, image.Height, PixelFormat.Format32bppArgb))
+            using (Bitmap bm32b = new Bitmap(image.Width, image.Height, PixelFormat.Format32bppPArgb))
             {
                 using (Graphics gr = Graphics.FromImage(bm32b))
                     gr.DrawImage(image, new Rectangle(0, 0, bm32b.Width, bm32b.Height));
