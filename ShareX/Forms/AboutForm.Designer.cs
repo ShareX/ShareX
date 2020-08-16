@@ -203,6 +203,7 @@
             this.Controls.Add(this.lblProductName);
             this.Controls.Add(this.cLogo);
             this.Name = "AboutForm";
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Shown += new System.EventHandler(this.AboutForm_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.pbMikeURL)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbAU)).EndInit();

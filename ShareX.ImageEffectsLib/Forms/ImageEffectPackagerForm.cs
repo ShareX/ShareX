@@ -53,6 +53,11 @@ namespace ShareX.ImageEffectsLib
             txtPackageFilePath.Text = PackageFilePath;
         }
 
+        private void btnOpenImageEffectsFolder_Click(object sender, EventArgs e)
+        {
+            Helpers.OpenFolder(ShareXImageEffectsFolderPath);
+        }
+
         private void txtAssetsFolderPath_TextChanged(object sender, EventArgs e)
         {
             AssetsFolderPath = txtAssetsFolderPath.Text;
