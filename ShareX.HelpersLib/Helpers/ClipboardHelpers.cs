@@ -109,6 +109,11 @@ namespace ShareX.HelpersLib
             {
                 try
                 {
+                    if (HelpersOptions.UseAlternativeClipboardCopyImage)
+                    {
+                        return CopyImageAlternative2(img);
+                    }
+
                     if (HelpersOptions.DefaultCopyImageFillBackground)
                     {
                         return CopyImageDefaultFillBackground(img, Color.White);
@@ -157,11 +162,31 @@ namespace ShareX.HelpersLib
                 IDataObject dataObject = new DataObject();
 
                 img.Save(msPNG, ImageFormat.Png);
-                dataObject.SetData("PNG", false, msPNG);
+                dataObject.SetData(FORMAT_PNG, false, msPNG);
 
                 img.Save(msBMP, ImageFormat.Bmp);
                 msBMP.CopyStreamTo(msDIB, 14, (int)msBMP.Length - 14);
                 dataObject.SetData(DataFormats.Dib, true, msDIB);
+
+                return CopyData(dataObject);
+            }
+        }
+
+        private static bool CopyImageAlternative2(Image img)
+        {
+            using (MemoryStream msPNG = new MemoryStream())
+            using (MemoryStream msDIB = new MemoryStream())
+            {
+                IDataObject dataObject = new DataObject();
+
+                dataObject.SetData(DataFormats.Bitmap, true, img);
+
+                img.Save(msPNG, ImageFormat.Png);
+                dataObject.SetData(FORMAT_PNG, false, msPNG);
+
+                byte[] dibData = ClipboardHelpersEx.ConvertToDib(img);
+                msDIB.Write(dibData, 0, dibData.Length);
+                dataObject.SetData(DataFormats.Dib, false, msDIB);
 
                 return CopyData(dataObject);
             }
