@@ -27,7 +27,6 @@ using ShareX.HelpersLib;
 using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Design;
-using System.Drawing.Drawing2D;
 
 namespace ShareX.ImageEffectsLib
 {
@@ -58,15 +57,6 @@ namespace ShareX.ImageEffectsLib
         [DefaultValue(false)]
         public bool UseGradient { get; set; }
 
-        [DefaultValue(LinearGradientMode.Vertical)]
-        public LinearGradientMode GradientType { get; set; }
-
-        [DefaultValue(typeof(Color), "White"), Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
-        public Color Color2 { get; set; }
-
-        [DefaultValue(false)]
-        public bool UseCustomGradient { get; set; }
-
         [Editor(typeof(GradientEditor), typeof(UITypeEditor))]
         public GradientInfo Gradient { get; set; }
 
@@ -87,16 +77,9 @@ namespace ShareX.ImageEffectsLib
 
         public override Bitmap Apply(Bitmap bmp)
         {
-            if (UseGradient)
+            if (UseGradient && Gradient != null && Gradient.IsValid)
             {
-                if (UseCustomGradient && Gradient != null && Gradient.IsValid)
-                {
-                    return ImageHelpers.DrawBorder(bmp, Gradient, Size, Type);
-                }
-                else
-                {
-                    return ImageHelpers.DrawBorder(bmp, Color, Color2, GradientType, Size, Type);
-                }
+                return ImageHelpers.DrawBorder(bmp, Gradient, Size, Type);
             }
 
             return ImageHelpers.DrawBorder(bmp, Color, Size, Type);
