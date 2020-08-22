@@ -1014,10 +1014,10 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="FluentFTP">
-      <Version>32.3.2</Version>
+      <Version>32.4.3</Version>
     </PackageReference>
     <PackageReference Include="MegaApiClient">
-      <Version>1.8.0</Version>
+      <Version>1.8.1</Version>
     </PackageReference>
     <PackageReference Include="Newtonsoft.Json">
       <Version>12.0.3</Version>

@@ -46,7 +46,7 @@ namespace ShareX.ImageEffectsLib
         [DefaultValue(typeof(Point), "5, 5")]
         public Point Offset { get; set; }
 
-        [DefaultValue(true), Description("If text watermark size bigger than source image then don't draw it.")]
+        [DefaultValue(false), Description("If text watermark size bigger than source image then don't draw it.")]
         public bool AutoHide { get; set; }
 
         private FontSafe textFontSafe = new FontSafe();
@@ -116,17 +116,8 @@ namespace ShareX.ImageEffectsLib
         [DefaultValue(typeof(Color), "42, 47, 56"), Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
         public Color BackgroundColor { get; set; }
 
-        [DefaultValue(true)]
-        public bool UseGradient { get; set; }
-
-        [DefaultValue(LinearGradientMode.Vertical)]
-        public LinearGradientMode GradientType { get; set; }
-
-        [DefaultValue(typeof(Color), "28, 32, 38"), Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
-        public Color BackgroundColor2 { get; set; }
-
         [DefaultValue(false)]
-        public bool UseCustomGradient { get; set; }
+        public bool UseGradient { get; set; }
 
         [Editor(typeof(GradientEditor), typeof(UITypeEditor))]
         public GradientInfo Gradient { get; set; }
@@ -194,16 +185,9 @@ namespace ShareX.ImageEffectsLib
 
                             try
                             {
-                                if (UseGradient)
+                                if (UseGradient && Gradient != null && Gradient.IsValid)
                                 {
-                                    if (UseCustomGradient && Gradient != null && Gradient.IsValid)
-                                    {
-                                        backgroundBrush = Gradient.GetGradientBrush(watermarkRectangle);
-                                    }
-                                    else
-                                    {
-                                        backgroundBrush = new LinearGradientBrush(watermarkRectangle, BackgroundColor, BackgroundColor2, GradientType);
-                                    }
+                                    backgroundBrush = Gradient.GetGradientBrush(watermarkRectangle);
                                 }
                                 else
                                 {

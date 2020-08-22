@@ -171,12 +171,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="WatermarkConfig.cs" />
-    <Compile Include="Forms\WatermarkForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\WatermarkForm.Designer.cs">
-      <DependentUpon>WatermarkForm.cs</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ShareX.HelpersLib\ShareX.HelpersLib.csproj">

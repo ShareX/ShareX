@@ -71,6 +71,7 @@ namespace ShareX.HelpersLib
                 }
                 catch
                 {
+                    text = null;
                 }
             }
 

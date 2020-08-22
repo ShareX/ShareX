@@ -149,6 +149,7 @@
     <Compile Include="Forms\DebugForm.Designer.cs">
       <DependentUpon>DebugForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\ClipboardHelpersEx.cs" />
     <Compile Include="Helpers\JsonHelpers.cs" />
     <Compile Include="ImageFilesCache.cs" />
     <Compile Include="MaxLengthStream.cs" />
