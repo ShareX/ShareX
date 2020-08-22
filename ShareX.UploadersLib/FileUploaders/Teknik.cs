@@ -203,6 +203,8 @@ namespace ShareX.UploadersLib.FileUploaders
 
         public override UploadResult Upload(Stream stream, string fileName)
         {
+            if (!CheckAuthorization()) return null;
+
             Dictionary<string, string> args = new Dictionary<string, string>();
             args.Add("encrypt", (!Encryption).ToString());
             args.Add("expirationUnit", ExpirationUnit.ToString());
