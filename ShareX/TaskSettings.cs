@@ -45,6 +45,9 @@ namespace ShareX
         [JsonIgnore]
         public TaskSettings TaskSettingsReference { get; private set; }
 
+        [JsonIgnore]
+        public bool IsSafeTaskSettings => TaskSettingsReference != null;
+
         public string Description = "";
 
         public HotkeyType Job = HotkeyType.None;

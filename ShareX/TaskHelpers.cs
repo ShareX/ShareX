@@ -1008,7 +1008,7 @@ namespace ShareX
                         {
                             Program.MainForm.InvokeSafe(() =>
                             {
-                                UploadManager.UploadImage(output);
+                                UploadManager.UploadImage(output, taskSettings);
                             });
                         };
 
