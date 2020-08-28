@@ -1202,15 +1202,14 @@ namespace ShareX.ScreenCaptureLib
                 if (Mode == RegionCaptureMode.ScreenColorPicker)
                 {
                     int colorBoxOffset = 2;
-                    int colorBoxWidth = 20;
+                    int colorBoxSize = infoTextRect.Height - (colorBoxOffset * 2);
                     int textOffset = 4;
-                    int colorBoxExtraWidth = colorBoxWidth + textOffset;
+                    int colorBoxExtraWidth = colorBoxSize + textOffset;
                     infoTextRect.Width += colorBoxExtraWidth;
                     infoTextRect.Location = new Point(x + (totalSize.Width / 2) - (infoTextRect.Width / 2), y + infoTextPosition);
                     Point padding = new Point(infoTextPadding + colorBoxExtraWidth, infoTextPadding);
 
-                    Rectangle colorRect = new Rectangle(infoTextRect.X + colorBoxOffset, infoTextRect.Y + colorBoxOffset,
-                        colorBoxWidth, infoTextRect.Height - (colorBoxOffset * 2));
+                    Rectangle colorRect = new Rectangle(infoTextRect.X + colorBoxOffset, infoTextRect.Y + colorBoxOffset, colorBoxSize, colorBoxSize);
 
                     DrawInfoText(g, infoText, infoTextRect, infoFont, padding);
 
