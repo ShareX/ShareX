@@ -51,14 +51,29 @@ namespace ShareX.ImageEffectsLib
         [DefaultValue(typeof(Size), "0, 0")]
         public Size Size { get; set; }
 
+        [DefaultValue(false), Description("If image watermark size bigger than source image then don't draw it.")]
+        public bool AutoHide { get; set; }
+
         [DefaultValue(ImageInterpolationMode.HighQualityBicubic), TypeConverter(typeof(EnumProperNameConverter))]
         public ImageInterpolationMode InterpolationMode { get; set; }
 
         [DefaultValue(CompositingMode.SourceOver), TypeConverter(typeof(EnumProperNameConverter))]
         public CompositingMode CompositingMode { get; set; }
 
-        [DefaultValue(false), Description("If image watermark size bigger than source image then don't draw it.")]
-        public bool AutoHide { get; set; }
+        private int opacity;
+
+        [DefaultValue(100)]
+        public int Opacity
+        {
+            get
+            {
+                return opacity;
+            }
+            set
+            {
+                opacity = value.Clamp(0, 100);
+            }
+        }
 
         public DrawImage()
         {
@@ -67,7 +82,7 @@ namespace ShareX.ImageEffectsLib
 
         public override Bitmap Apply(Bitmap bmp)
         {
-            if (SizeMode != DrawImageSizeMode.DontResize && Size.Width <= 0 && Size.Height <= 0)
+            if (Opacity < 1 || (SizeMode != DrawImageSizeMode.DontResize && Size.Width <= 0 && Size.Height <= 0))
             {
                 return bmp;
             }
@@ -116,7 +131,18 @@ namespace ShareX.ImageEffectsLib
                             g.InterpolationMode = ImageHelpers.GetInterpolationMode(InterpolationMode);
                             g.PixelOffsetMode = PixelOffsetMode.Half;
                             g.CompositingMode = CompositingMode;
-                            g.DrawImage(bmpWatermark, imageRectangle);
+
+                            if (Opacity < 100)
+                            {
+                                using (Bitmap bmpWatermarkTransparent = ColorMatrixManager.Alpha(Opacity / 100f).Apply(bmpWatermark))
+                                {
+                                    g.DrawImage(bmpWatermarkTransparent, imageRectangle);
+                                }
+                            }
+                            else
+                            {
+                                g.DrawImage(bmpWatermark, imageRectangle);
+                            }
                         }
                     }
                 }
