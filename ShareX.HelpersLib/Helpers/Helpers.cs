@@ -899,7 +899,7 @@ namespace ShareX.HelpersLib
         {
             try
             {
-                using (FileStream fs = new FileStream(path, FileMode.Open, FileAccess.ReadWrite, FileShare.ReadWrite))
+                using (FileStream fs = new FileStream(path, FileMode.Open, FileAccess.Read, FileShare.Read))
                 {
                 }
             }
