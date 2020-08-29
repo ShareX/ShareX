@@ -29,6 +29,7 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Design;
 using System.Drawing.Drawing2D;
+using System.Drawing.Imaging;
 using System.IO;
 
 namespace ShareX.ImageEffectsLib
@@ -134,9 +135,11 @@ namespace ShareX.ImageEffectsLib
 
                             if (Opacity < 100)
                             {
-                                using (Bitmap bmpWatermarkTransparent = ColorMatrixManager.Alpha(Opacity / 100f).Apply(bmpWatermark))
+                                using (ImageAttributes ia = new ImageAttributes())
                                 {
-                                    g.DrawImage(bmpWatermarkTransparent, imageRectangle);
+                                    ColorMatrix matrix = ColorMatrixManager.Alpha(Opacity / 100f);
+                                    ia.SetColorMatrix(matrix, ColorMatrixFlag.Default, ColorAdjustType.Bitmap);
+                                    g.DrawImage(bmpWatermark, imageRectangle, 0, 0, bmpWatermark.Width, bmpWatermark.Height, GraphicsUnit.Pixel, ia);
                                 }
                             }
                             else
