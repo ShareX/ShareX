@@ -39,10 +39,10 @@ namespace ShareX.ImageEffectsLib
         [DefaultValue(""), Editor(typeof(ImageFileNameEditor), typeof(UITypeEditor))]
         public string ImageLocation { get; set; }
 
-        [DefaultValue(ContentAlignment.BottomRight), TypeConverter(typeof(EnumProperNameConverter))]
+        [DefaultValue(ContentAlignment.TopLeft), TypeConverter(typeof(EnumProperNameConverter))]
         public ContentAlignment Placement { get; set; }
 
-        [DefaultValue(typeof(Point), "5, 5")]
+        [DefaultValue(typeof(Point), "0, 0")]
         public Point Offset { get; set; }
 
         [DefaultValue(DrawImageSizeMode.DontResize), Description("How the image watermark should be rescaled, if at all."), TypeConverter(typeof(EnumDescriptionConverter))]
