@@ -733,14 +733,8 @@ namespace ShareX
                             Info.FilePath = fileAction.Run(Info.FilePath);
                         }
 
-                        if (Path.HasExtension(Info.FilePath))
-                        {
-                            Info.FileName = Path.ChangeExtension(fileName, Path.GetExtension(Info.FilePath));
-                        }
-                        else
-                        {
-                            Info.FileName = Path.GetFileNameWithoutExtension(fileName);
-                        }
+                        string extension = Helpers.GetFilenameExtension(Info.FilePath);
+                        fileName = Helpers.ChangeFilenameExtension(fileName, extension);
 
                         LoadFileStream();
                     }

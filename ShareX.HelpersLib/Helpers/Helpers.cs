@@ -152,17 +152,19 @@ namespace ShareX.HelpersLib
             return filePath;
         }
 
-        public static string ChangeFilenameExtension(string filePath, string extension)
+        public static string ChangeFilenameExtension(string fileName, string extension)
         {
-            if (!string.IsNullOrEmpty(filePath) && !string.IsNullOrEmpty(extension))
+            if (!string.IsNullOrEmpty(fileName))
             {
-                int pos = filePath.LastIndexOf('.');
+                int pos = fileName.LastIndexOf('.');
 
                 if (pos >= 0)
                 {
-                    filePath = filePath.Remove(pos);
+                    fileName = fileName.Remove(pos);
+                }
 
-                    extension = extension.Trim();
+                if (!string.IsNullOrEmpty(extension))
+                {
                     pos = extension.LastIndexOf('.');
 
                     if (pos >= 0)
@@ -170,11 +172,11 @@ namespace ShareX.HelpersLib
                         extension = extension.Substring(pos + 1);
                     }
 
-                    return filePath + "." + extension;
+                    return fileName + "." + extension;
                 }
             }
 
-            return filePath;
+            return fileName;
         }
 
         public static string AppendExtension(string filePath, string extension)
