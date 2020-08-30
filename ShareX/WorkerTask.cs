@@ -734,7 +734,7 @@ namespace ShareX
                         }
 
                         string extension = Helpers.GetFilenameExtension(Info.FilePath);
-                        fileName = Helpers.ChangeFilenameExtension(fileName, extension);
+                        Info.FileName = Helpers.ChangeFilenameExtension(fileName, extension);
 
                         LoadFileStream();
                     }
