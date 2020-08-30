@@ -895,12 +895,13 @@ namespace ShareX.HelpersLib
             if (result) onSuccess();
         }
 
-        public static bool IsFileLocked(string path)
+        public static bool IsFileLocked(string filePath)
         {
             try
             {
-                using (FileStream fs = new FileStream(path, FileMode.Open, FileAccess.Read, FileShare.Read))
+                using (FileStream fs = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.None))
                 {
+                    fs.Close();
                 }
             }
             catch (IOException)
@@ -911,11 +912,11 @@ namespace ShareX.HelpersLib
             return false;
         }
 
-        public static long GetFileSize(string path)
+        public static long GetFileSize(string filePath)
         {
             try
             {
-                return new FileInfo(path).Length;
+                return new FileInfo(filePath).Length;
             }
             catch
             {

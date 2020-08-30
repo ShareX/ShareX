@@ -726,9 +726,20 @@ namespace ShareX
                             Data.Dispose();
                         }
 
+                        string fileName = Info.FileName;
+
                         foreach (ExternalProgram fileAction in actions)
                         {
                             Info.FilePath = fileAction.Run(Info.FilePath);
+                        }
+
+                        if (Path.HasExtension(Info.FilePath))
+                        {
+                            Info.FileName = Path.ChangeExtension(fileName, Path.GetExtension(Info.FilePath));
+                        }
+                        else
+                        {
+                            Info.FileName = Path.GetFileNameWithoutExtension(fileName);
                         }
 
                         LoadFileStream();
