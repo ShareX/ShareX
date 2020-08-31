@@ -119,4 +119,22 @@
   <data name="FFmpegError" xml:space="preserve">
     <value>FFmpeg error</value>
   </data>
+  <data name="AlignmentTop" xml:space="preserve">
+    <value>Top</value>
+  </data>
+  <data name="AlignmentHorizontalCenter" xml:space="preserve">
+    <value>Center</value>
+  </data>
+  <data name="AlignmentBottom" xml:space="preserve">
+    <value>Bottom</value>
+  </data>
+  <data name="AlignmentLeft" xml:space="preserve">
+    <value>Left</value>
+  </data>
+  <data name="AlignmentVerticalCenter" xml:space="preserve">
+    <value>Center</value>
+  </data>
+  <data name="AlignmentRight" xml:space="preserve">
+    <value>Right</value>
+  </data>
 </root>

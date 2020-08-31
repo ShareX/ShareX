@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.ImageEffectsLib.Properties;
 using System;
 using System.IO;
 using System.Windows.Forms;
@@ -95,11 +96,10 @@ namespace ShareX.ImageEffectsLib
             {
                 if (!string.IsNullOrEmpty(AssetsFolderPath) && !AssetsFolderPath.StartsWith(ShareXImageEffectsFolderPath + "\\", StringComparison.OrdinalIgnoreCase))
                 {
-                    // TODO: Translate
-                    MessageBox.Show("Assets folder must be inside ShareX image effects folder.", "ShareX - " + "Invalid assets folder path",
+                    MessageBox.Show(Resources.AssetsFolderMustBeInsideShareXImageEffectsFolder, "ShareX - " + Resources.InvalidAssetsFolderPath,
                         MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                } // TODO: Translate
-                else if (!File.Exists(PackageFilePath) || MessageBox.Show("Package with this file name already exists.\r\nWould you like to overwrite it?", "ShareX",
+                }
+                else if (!File.Exists(PackageFilePath) || MessageBox.Show(Resources.PackageWithThisFileNameAlreadyExistsRNWouldYouLikeToOverwriteIt, "ShareX",
                     MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     string outputFilePath = ImageEffectPackager.Package(PackageFilePath, ImageEffectJson, AssetsFolderPath);

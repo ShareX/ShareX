@@ -117,4 +117,220 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnPackage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 144</value>
+  </data>
+  <data name="btnPackage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>384, 24</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="btnPackage.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="btnPackage.Text" xml:space="preserve">
+    <value>Package</value>
+  </data>
+  <data name="&gt;&gt;btnPackage.Name" xml:space="preserve">
+    <value>btnPackage</value>
+  </data>
+  <data name="&gt;&gt;btnPackage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnPackage.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnPackage.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="lblAssetsFolderPath.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblAssetsFolderPath.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 48</value>
+  </data>
+  <data name="lblAssetsFolderPath.Size" type="System.Drawing.Size, System.Drawing">
+    <value>94, 13</value>
+  </data>
+  <data name="lblAssetsFolderPath.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="lblAssetsFolderPath.Text" xml:space="preserve">
+    <value>Assets folder path:</value>
+  </data>
+  <data name="&gt;&gt;lblAssetsFolderPath.Name" xml:space="preserve">
+    <value>lblAssetsFolderPath</value>
+  </data>
+  <data name="&gt;&gt;lblAssetsFolderPath.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblAssetsFolderPath.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblAssetsFolderPath.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="lblPackageFilePath.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblPackageFilePath.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 96</value>
+  </data>
+  <data name="lblPackageFilePath.Size" type="System.Drawing.Size, System.Drawing">
+    <value>93, 13</value>
+  </data>
+  <data name="lblPackageFilePath.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="lblPackageFilePath.Text" xml:space="preserve">
+    <value>Package file path:</value>
+  </data>
+  <data name="&gt;&gt;lblPackageFilePath.Name" xml:space="preserve">
+    <value>lblPackageFilePath</value>
+  </data>
+  <data name="&gt;&gt;lblPackageFilePath.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblPackageFilePath.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblPackageFilePath.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="txtPackageFilePath.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 112</value>
+  </data>
+  <data name="txtPackageFilePath.Size" type="System.Drawing.Size, System.Drawing">
+    <value>344, 20</value>
+  </data>
+  <data name="txtPackageFilePath.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;txtPackageFilePath.Name" xml:space="preserve">
+    <value>txtPackageFilePath</value>
+  </data>
+  <data name="&gt;&gt;txtPackageFilePath.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtPackageFilePath.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;txtPackageFilePath.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="btnPackageFilePathBrowse.Location" type="System.Drawing.Point, System.Drawing">
+    <value>368, 111</value>
+  </data>
+  <data name="btnPackageFilePathBrowse.Size" type="System.Drawing.Size, System.Drawing">
+    <value>32, 23</value>
+  </data>
+  <data name="btnPackageFilePathBrowse.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="btnPackageFilePathBrowse.Text" xml:space="preserve">
+    <value>...</value>
+  </data>
+  <data name="&gt;&gt;btnPackageFilePathBrowse.Name" xml:space="preserve">
+    <value>btnPackageFilePathBrowse</value>
+  </data>
+  <data name="&gt;&gt;btnPackageFilePathBrowse.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnPackageFilePathBrowse.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnPackageFilePathBrowse.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="txtAssetsFolderPath.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 64</value>
+  </data>
+  <data name="txtAssetsFolderPath.Size" type="System.Drawing.Size, System.Drawing">
+    <value>344, 20</value>
+  </data>
+  <data name="txtAssetsFolderPath.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;txtAssetsFolderPath.Name" xml:space="preserve">
+    <value>txtAssetsFolderPath</value>
+  </data>
+  <data name="&gt;&gt;txtAssetsFolderPath.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtAssetsFolderPath.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;txtAssetsFolderPath.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="btnAssetsFolderPathBrowse.Location" type="System.Drawing.Point, System.Drawing">
+    <value>368, 63</value>
+  </data>
+  <data name="btnAssetsFolderPathBrowse.Size" type="System.Drawing.Size, System.Drawing">
+    <value>32, 23</value>
+  </data>
+  <data name="btnAssetsFolderPathBrowse.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="btnAssetsFolderPathBrowse.Text" xml:space="preserve">
+    <value>...</value>
+  </data>
+  <data name="&gt;&gt;btnAssetsFolderPathBrowse.Name" xml:space="preserve">
+    <value>btnAssetsFolderPathBrowse</value>
+  </data>
+  <data name="&gt;&gt;btnAssetsFolderPathBrowse.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnAssetsFolderPathBrowse.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnAssetsFolderPathBrowse.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="btnOpenImageEffectsFolder.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 16</value>
+  </data>
+  <data name="btnOpenImageEffectsFolder.Size" type="System.Drawing.Size, System.Drawing">
+    <value>384, 24</value>
+  </data>
+  <data name="btnOpenImageEffectsFolder.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="btnOpenImageEffectsFolder.Text" xml:space="preserve">
+    <value>Open image effects folder...</value>
+  </data>
+  <data name="&gt;&gt;btnOpenImageEffectsFolder.Name" xml:space="preserve">
+    <value>btnOpenImageEffectsFolder</value>
+  </data>
+  <data name="&gt;&gt;btnOpenImageEffectsFolder.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnOpenImageEffectsFolder.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnOpenImageEffectsFolder.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>96, 96</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>416, 184</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterScreen</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX - Image effect packager</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>ImageEffectPackagerForm</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>
