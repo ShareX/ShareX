@@ -20,7 +20,7 @@ namespace ShareX
             ClipboardFormat = cbf;
             txtDescription.Text = cbf.Description ?? "";
             txtFormat.Text = cbf.Format ?? "";
-            // CodeMenu.Create<CodeMenuEntryFilename>(txtFormat);
+            // TODO CodeMenu.Create<CodeMenuEntryFilename>(txtFormat);
             lblExample.Text = string.Format("Supported variables: {0} and other variables such as {1} etc.",
                 "$result, $url, $shorturl, $thumbnailurl, $deletionurl, $filepath, $filename, $filenamenoext, $thumbnailfilename, $thumbnailfilenamenoext, $folderpath, $foldername, $uploadtime",
                 "%y, %mo, %d");

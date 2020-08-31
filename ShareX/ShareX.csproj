@@ -143,6 +143,9 @@
     </When>
   </Choose>
   <ItemGroup>
+    <Compile Include="Views\AboutView.xaml.cs">
+      <DependentUpon>AboutView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="BalloonTipAction.cs" />
     <Compile Include="CaptureHelpers\CaptureActiveMonitor.cs" />
     <Compile Include="CaptureHelpers\CaptureActiveWindow.cs" />
@@ -1842,6 +1845,10 @@
     <None Include="Resources\exclamation.png" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Views\AboutView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\FileExistView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
