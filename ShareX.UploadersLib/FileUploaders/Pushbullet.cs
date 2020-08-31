@@ -181,7 +181,7 @@ namespace ShareX.UploadersLib.FileUploaders
             PushbulletResponseDevices devicesResponse = JsonConvert.DeserializeObject<PushbulletResponseDevices>(response);
 
             if (devicesResponse != null && devicesResponse.devices != null)
-                return devicesResponse.devices.Select(x => new PushbulletDevice { Key = x.iden, Name = x.nickname }).ToList();
+                return devicesResponse.devices.Where(x => !String.IsNullOrEmpty(x.nickname)).Select(x1 => new PushbulletDevice { Key = x1.iden, Name = x1.nickname }).ToList();
 
             return new List<PushbulletDevice>();
         }
