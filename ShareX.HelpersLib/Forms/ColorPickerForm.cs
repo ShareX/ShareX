@@ -80,7 +80,7 @@ namespace ShareX.HelpersLib
                 {
                     colorPicker.ChangeColor(clipboardColor);
                     btnClipboardStatus.Text = "Clipboard: " + text;
-                    btnClipboardStatus.Location = new Point(btnClipboardColorPicker.Left + btnClipboardColorPicker.Width / 2 - btnClipboardStatus.Width / 2,
+                    btnClipboardStatus.Location = new Point(btnClipboardColorPicker.Left + (btnClipboardColorPicker.Width / 2) - (btnClipboardStatus.Width / 2),
                         btnClipboardColorPicker.Top - btnClipboardStatus.Height - 5);
                     clipboardStatusHider.Show();
                     return true;

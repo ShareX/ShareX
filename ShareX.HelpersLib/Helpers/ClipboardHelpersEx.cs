@@ -296,7 +296,7 @@ namespace ShareX.HelpersLib
             int targetStride = targetData.Stride;
             long scan0 = targetData.Scan0.ToInt64();
             for (int y = 0; y < height; y++)
-                Marshal.Copy(sourceData, y * stride, new IntPtr(scan0 + y * targetStride), newDataWidth);
+                Marshal.Copy(sourceData, y * stride, new IntPtr(scan0 + (y * targetStride)), newDataWidth);
             newImage.UnlockBits(targetData);
             // Fix negative stride on BMP format.
             if (isFlipped)

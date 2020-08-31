@@ -551,7 +551,7 @@ namespace ShareX.HelpersLib
             int maxx = Math.Min(x + radius, unsafeBitmap.Width - 1);
             int miny = Math.Max(y - radius, 0);
             int maxy = Math.Min(y + radius, unsafeBitmap.Height - 1);
-            int dist2 = radius * radius + 1;
+            int dist2 = (radius * radius) + 1;
 
             for (int tx = minx; tx <= maxx; tx++)
             {
@@ -563,7 +563,7 @@ namespace ShareX.HelpersLib
                     {
                         int dx = tx - x;
                         int dy = ty - y;
-                        int test_dist2 = dx * dx + dy * dy;
+                        int test_dist2 = (dx * dx) + (dy * dy);
                         if (test_dist2 < dist2)
                         {
                             dist2 = test_dist2;
