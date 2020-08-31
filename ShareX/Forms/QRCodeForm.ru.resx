@@ -124,7 +124,7 @@
     <value>ShareX - QR код</value>
   </data>
   <data name="tsmiSaveAs.Text" xml:space="preserve">
-    <value>Сохранить как файл изображения…</value>
+    <value>Сохранить как файл изображения...</value>
   </data>
   <data name="tpEncode.Text" xml:space="preserve">
     <value>Кодировать</value>

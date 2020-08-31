@@ -143,7 +143,7 @@
     <value>Не удалось зарегистрировать горячую клавишу</value>
   </data>
   <data name="TaskHelpers_ToggleHotkeys_Hotkeys_disabled_" xml:space="preserve">
-    <value>Горячие клавиши отключены</value>
+    <value>Горячие клавиши отключены.</value>
   </data>
   <data name="UploadManager_IsUploadConfirmed_Upload_files" xml:space="preserve">
     <value>Загрузить файлы</value>
@@ -163,7 +163,7 @@
 сюда</value>
   </data>
   <data name="TaskHelpers_ToggleHotkeys_Hotkeys_enabled_" xml:space="preserve">
-    <value>Горячие клавиши включены</value>
+    <value>Горячие клавиши включены.</value>
   </data>
   <data name="HotkeyManager_ShowFailedHotkeys_hotkeys" xml:space="preserve">
     <value>горячие клавиши</value>
@@ -246,7 +246,7 @@
     <value>X: {0}, Y: {1}, Ширина: {2}, Высота: {3}</value>
   </data>
   <data name="UploadManager_IsUploadConfirmed_Don_t_show_this_message_again_" xml:space="preserve">
-    <value>Больше не показывать это сообщение</value>
+    <value>Больше не показывать это сообщение.</value>
   </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_Task___0_" xml:space="preserve">
     <value>Задача: {0}</value>
@@ -261,7 +261,7 @@
     <value>горячую клавишу</value>
   </data>
   <data name="HotkeySelectionControl_StartEditing_Select_a_hotkey___" xml:space="preserve">
-    <value>Выберите горячую клавишу…</value>
+    <value>Выберите горячую клавишу...</value>
   </data>
   <data name="TaskSettingsForm_UpdateWindowTitle_Task_settings" xml:space="preserve">
     <value>Настройки задач</value>
@@ -287,7 +287,7 @@
     <value>Нажмите для остановки записи.</value>
   </data>
   <data name="MainForm_UpdateWorkflowsMenu_You_can_add_workflows_from_hotkey_settings___" xml:space="preserve">
-    <value>Операции можно добавить в настройках горячих клавиш…</value>
+    <value>Операции можно добавить в настройках горячих клавиш...</value>
   </data>
   <data name="ImageData_Write_Error" xml:space="preserve">
     <value>Не удалось сохранить изображение по пути {0}.</value>
@@ -592,5 +592,29 @@
   </data>
   <data name="ThisFeatureWillNotWorkWhenDisableUploadOptionIsEnabled" xml:space="preserve">
     <value>Эта функция не будет работать, когда опция "DisableUpload" включена!</value>
+  </data>
+  <data name="WouldYouLikeToResetThemes" xml:space="preserve">
+    <value>Хотите сбросить темы?</value>
+  </data>
+  <data name="Confirmation" xml:space="preserve">
+    <value>Подтверждение</value>
+  </data>
+  <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_is_empty_or_contains_unknown_data_" xml:space="preserve">
+    <value>Буфер обмена пуст или содержит неизвестные данные.</value>
+  </data>
+  <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__File__Count___0__" xml:space="preserve">
+    <value>Содержимое буфера обмена: Файл (Количество: {0})</value>
+  </data>
+  <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__Image__Size___0_x_1__" xml:space="preserve">
+    <value>Содержимое буфера обмена: Изображение (Размер: {0}x{1})</value>
+  </data>
+  <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__Text__Length___0__" xml:space="preserve">
+    <value>Содержимое буфера обмена: Текст (Длина: {0})</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_pt_PT" xml:space="preserve">
+    <value>Португальский</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_fa_IR" xml:space="preserve">
+    <value>Персидский</value>
   </data>
 </root>

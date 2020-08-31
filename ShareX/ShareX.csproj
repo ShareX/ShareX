@@ -421,6 +421,9 @@
     <EmbeddedResource Include="Controls\TaskThumbnailPanel.resx">
       <DependentUpon>TaskThumbnailPanel.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\TaskThumbnailPanel.ru.resx">
+      <DependentUpon>TaskThumbnailPanel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\TaskThumbnailView.resx">
       <DependentUpon>TaskThumbnailView.cs</DependentUpon>
     </EmbeddedResource>

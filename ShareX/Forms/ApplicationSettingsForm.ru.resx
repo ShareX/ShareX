@@ -145,7 +145,7 @@
     <value>Прокси</value>
   </data>
   <data name="btnEditQuickTaskMenu.Text" xml:space="preserve">
-    <value>Редактировать меню быстрых задач</value>
+    <value>Редактировать меню быстрых задач...</value>
   </data>
   <data name="cbShellContextMenu.Text" xml:space="preserve">
     <value>Показывать пункт "Загрузить с помощью ShareX" в контекстном меню проводника Windows</value>
@@ -301,7 +301,7 @@
     <value>Показывать последние задачи первыми в трее</value>
   </data>
   <data name="lblRecentTasksMaxCount.Text" xml:space="preserve">
-    <value>Максимальное количество задач для сохранения</value>
+    <value>Максимальное количество задач для сохранения:</value>
   </data>
   <data name="cbRecentTasksShowInTrayMenu.Text" xml:space="preserve">
     <value>Показывать последние задачи в трее</value>
@@ -379,12 +379,15 @@
     <value>Удалить</value>
   </data>
   <data name="btnThemeReset.Text" xml:space="preserve">
-    <value>Сбросить</value>
+    <value>Сбросить...</value>
   </data>
   <data name="cbUseCustomTheme.Text" xml:space="preserve">
     <value>Пользовательская тема</value>
   </data>
   <data name="cbExperimentalCustomTheme.Text" xml:space="preserve">
     <value>Применить пользовательскую тему ко всем окнам</value>
+  </data>
+  <data name="tpSettings.Text" xml:space="preserve">
+    <value>Настройки</value>
   </data>
 </root>

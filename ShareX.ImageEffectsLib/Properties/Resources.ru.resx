@@ -135,4 +135,28 @@
   <data name="ImageEffectsForm_EditorMode_Cancel" xml:space="preserve">
     <value>Отменить</value>
   </data>
+  <data name="AssetsFolderMustBeInsideShareXImageEffectsFolder" xml:space="preserve">
+    <value>Папка материалов должна быть внутри папки эффектов изображений ShareX.</value>
+  </data>
+  <data name="InvalidAssetsFolderPath" xml:space="preserve">
+    <value>Неверный путь к папке материалов</value>
+  </data>
+  <data name="PackageWithThisFileNameAlreadyExistsRNWouldYouLikeToOverwriteIt" xml:space="preserve">
+    <value>Пакет с таким именем уже существует.\r\nХотите перезаписать его?</value>
+  </data>
+  <data name="Effect" xml:space="preserve">
+    <value>Эффект:</value>
+  </data>
+  <data name="WouldYouLikeToClearEffects" xml:space="preserve">
+    <value>Хотите очистить эффекты?</value>
+  </data>
+  <data name="Confirmation" xml:space="preserve">
+    <value>Подтверждение</value>
+  </data>
+  <data name="PresetNameCannotBeEmpty" xml:space="preserve">
+    <value>Имя шаблона не может быть пустым.</value>
+  </data>
+  <data name="MissingPresetName" xml:space="preserve">
+    <value>Нет имени шаблона</value>
+  </data>
 </root>

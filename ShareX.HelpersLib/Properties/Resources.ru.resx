@@ -396,7 +396,7 @@
     <value>Пользовательский сервис коротких ссылок</value>
   </data>
   <data name="AfterCaptureTasks_AddImageEffects" xml:space="preserve">
-    <value>Добавить эффекты/водяной знак</value>
+    <value>Добавить эффекты изображений</value>
   </data>
   <data name="AfterCaptureTasks_AnnotateImage" xml:space="preserve">
     <value>Открыть в редакторе изображений</value>
@@ -420,7 +420,7 @@
     <value>Сохранить изображение в файл</value>
   </data>
   <data name="AfterCaptureTasks_SaveImageToFileWithDialog" xml:space="preserve">
-    <value>Сохранить изображение в файл как…</value>
+    <value>Сохранить изображение в файл как...</value>
   </data>
   <data name="AfterCaptureTasks_ShowInExplorer" xml:space="preserve">
     <value>Показать файл в проводнике</value>
@@ -652,16 +652,16 @@
     <value>Другие</value>
   </data>
   <data name="ReplCodeMenuEntry_ia_Auto_increment_alphanumeric" xml:space="preserve">
-    <value>Алфавитно-цифровой счетчик. Нули слева, {n} задает длину.</value>
+    <value>Алфавитно-цифровой счетчик. Нули слева, {n} задает длину</value>
   </data>
   <data name="ReplCodeMenuEntry_ix_Auto_increment_hexadecimal" xml:space="preserve">
-    <value>Шестнадцатеричный счетчик. Нули слева, {n} задает длину.</value>
+    <value>Шестнадцатеричный счетчик. Нули слева, {n} задает длину</value>
   </data>
   <data name="ReplCodeMenuEntry_rx_Random_hexadecimal" xml:space="preserve">
     <value>Случайный шестнадцатеричный символ. Повторение задается через {n}</value>
   </data>
   <data name="ReplCodeMenuEntry_iAa_Auto_increment_alphanumeric_all" xml:space="preserve">
-    <value>Алфавитно-цифровой счетчик с учетом регистра. Нули слева, {n} задает длину.</value>
+    <value>Алфавитно-цифровой счетчик с учетом регистра. Нули слева, {n} задает длину</value>
   </data>
   <data name="ReplCodeMenuEntry_ib_Auto_increment_base_alphanumeric" xml:space="preserve">
     <value>Счетчик, прибавляющий базовое алфавитно-цифровое {n} (1 &lt; n &lt; 63)</value>
@@ -788,7 +788,7 @@
     <value>Текущий год (2 цифры)</value>
   </data>
   <data name="ReplCodeMenuEntry_i_Auto_increment_number" xml:space="preserve">
-    <value>Числовой счетчик. Нули слева, {n} задает длину.</value>
+    <value>Числовой счетчик. Нули слева, {n} задает длину</value>
   </data>
   <data name="ReplCodeMenuEntry_w_Current_week_name__Local_language_" xml:space="preserve">
     <value>Текущий день недели (Местный язык)</value>
@@ -932,7 +932,7 @@
     <value>Отправить сообщение "scroll top"</value>
   </data>
   <data name="ScrollingCaptureScrollMethod_SendMessageScroll" xml:space="preserve">
-    <value>Отправить окну или элементу сообщение "scroll"</value>
+    <value>Отправлять окну или элементу сообщение "scroll"</value>
   </data>
   <data name="RegionCaptureAction_None" xml:space="preserve">
     <value>Ничего не делать</value>
@@ -1185,5 +1185,26 @@
   </data>
   <data name="ObjectListView_ObjectListView_Name" xml:space="preserve">
     <value>Имя</value>
+  </data>
+  <data name="DrawImageSizeMode_PercentageOfCanvas" xml:space="preserve">
+    <value>Процент полотна</value>
+  </data>
+  <data name="DrawImageSizeMode_PercentageOfWatermark" xml:space="preserve">
+    <value>Процент изображения</value>
+  </data>
+  <data name="ShapeType_DrawingSmartEraser" xml:space="preserve">
+    <value>Умный ластик</value>
+  </data>
+  <data name="HotkeyType_VideoConverter" xml:space="preserve">
+    <value>Конвертер видео</value>
+  </data>
+  <data name="DrawImageSizeMode_AbsoluteSize" xml:space="preserve">
+    <value>Абсолютный размер</value>
+  </data>
+  <data name="DrawImageSizeMode_DontResize" xml:space="preserve">
+    <value>Не масштабировать</value>
+  </data>
+  <data name="HotkeyType_ImageSplitter" xml:space="preserve">
+    <value>Разделитель изображений</value>
   </data>
 </root>
