@@ -799,8 +799,10 @@ namespace ShareX.UploadersLib
 
                 Config.PushbulletSettings.DeviceList.ForEach(pbDevice =>
                 {
-                    if (!String.IsNullOrEmpty(pbDevice.Name))
+                    if (!string.IsNullOrEmpty(pbDevice.Name))
+                    {
                         cboPushbulletDevices.Items.Add(pbDevice.Name);
+                    }
                 });
 
                 cboPushbulletDevices.SelectedIndex = 0;
