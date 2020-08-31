@@ -147,4 +147,7 @@
   <data name="lblPreview.Text" xml:space="preserve">
     <value>Предпросмотр:</value>
   </data>
+  <data name="lblPresets.Text" xml:space="preserve">
+    <value>Установки:</value>
+  </data>
 </root>

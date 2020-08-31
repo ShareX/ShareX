@@ -153,7 +153,7 @@
     <value>Домен:</value>
   </data>
   <data name="lblYourlsNote.Text" xml:space="preserve">
-    <value>Заметка: Если у вас есть подпись, вам не нужны логин и пароль</value>
+    <value>Заметка: Если у вас есть подпись, вам не нужны логин и пароль.</value>
   </data>
   <data name="lblYourlsPassword.Text" xml:space="preserve">
     <value>Пароль:</value>
@@ -237,7 +237,7 @@
     <value>Игнорировать неверный сертификат SSL</value>
   </data>
   <data name="lblSeafilePassword.Text" xml:space="preserve">
-    <value>Пароль</value>
+    <value>Пароль:</value>
   </data>
   <data name="lblSeafileUsername.Text" xml:space="preserve">
     <value>Email:</value>
@@ -367,7 +367,7 @@
     <value>Регистрация...</value>
   </data>
   <data name="lblPushbulletUserKey.Text" xml:space="preserve">
-    <value>Использовать ключ API:</value>
+    <value>Ключ API пользователя:</value>
   </data>
   <data name="btnPushbulletGetDeviceList.Text" xml:space="preserve">
     <value>Получить список устройств</value>
@@ -400,7 +400,7 @@
     <value>Путь:</value>
   </data>
   <data name="cbOwnCloudCreateShare.Text" xml:space="preserve">
-    <value>Создать общественный URL:</value>
+    <value>Создать общественный URL</value>
   </data>
   <data name="cbOwnCloudDirectLink.Text" xml:space="preserve">
     <value>Прямая ссылка (Добавить "&amp;&amp;download" к адресу)</value>
@@ -496,7 +496,7 @@
     <value>Путь загрузки:</value>
   </data>
   <data name="cbDropboxAutoCreateShareableLink.Text" xml:space="preserve">
-    <value>Создать общественный URL:</value>
+    <value>Создать общественный URL</value>
   </data>
   <data name="tpImageUploaders.Text" xml:space="preserve">
     <value>Сервисы картинок</value>
@@ -547,7 +547,7 @@
     <value>Шаг 2: Завершить авторизацию</value>
   </data>
   <data name="lblPhotobucketVerificationCode.Text" xml:space="preserve">
-    <value>Код подтверждения (Получите код на странице авторизации)</value>
+    <value>Код подтверждения (Получите код на странице авторизации):</value>
   </data>
   <data name="btnPhotobucketAuthOpen.Text" xml:space="preserve">
     <value>Шаг 1: Открыть страницу авторизации...</value>
@@ -673,7 +673,7 @@
     <value>Пароль:</value>
   </data>
   <data name="lblPastebinTitle.Text" xml:space="preserve">
-    <value>Заголовок ставки:</value>
+    <value>Заголовок вставки:</value>
   </data>
   <data name="lblPastebinPrivacy.Text" xml:space="preserve">
     <value>Приватность:</value>
@@ -709,7 +709,7 @@
     <value>Использовать прямую ссылку</value>
   </data>
   <data name="llPuushForgottenPassword.Text" xml:space="preserve">
-    <value>Забыли пароль:</value>
+    <value>Забыли пароль?</value>
   </data>
   <data name="btnPuushLogin.Text" xml:space="preserve">
     <value>Войти</value>
@@ -757,7 +757,7 @@
     <value>Пользовательский домен:</value>
   </data>
   <data name="cbGfycatIsPublic.Text" xml:space="preserve">
-    <value>Публичная загрузка?</value>
+    <value>Публичная загрузка</value>
   </data>
   <data name="lblPlikUsername.Text" xml:space="preserve">
     <value>Имя пользователя:</value>
@@ -841,7 +841,7 @@
     <value>Пассивный</value>
   </data>
   <data name="lblFTPTransferMode.Text" xml:space="preserve">
-    <value>Режим передачи</value>
+    <value>Режим передачи:</value>
   </data>
   <data name="lblFTPPort.Text" xml:space="preserve">
     <value>Порт:</value>
@@ -925,7 +925,7 @@
     <value>Получить ключ API...</value>
   </data>
   <data name="btnLithiioFetchAPIKey.Text" xml:space="preserve">
-    <value>Получить ключ API...</value>
+    <value>Получить ключ API</value>
   </data>
   <data name="gbAmazonS3Advanced.Text" xml:space="preserve">
     <value>Дополнительно</value>
@@ -1094,7 +1094,7 @@
     <value>Путь к вашему файлу. Использует формат шаблонов.</value>
   </data>
   <data name="lblB2UrlPreview.Text" xml:space="preserve">
-    <value>Предпросмотр URL:</value>
+    <value>Предпросмотр</value>
   </data>
   <data name="lblTeknikUrlShortenerAPIUrl.Text" xml:space="preserve">
     <value>URL API сервиса коротких ссылок:</value>
@@ -1126,7 +1126,19 @@
   <data name="tpGoogleDrive.Text" xml:space="preserve">
     <value>Google Диск</value>
   </data>
-  <data name="tpImageShack.Text" xml:space="preserve">
-    <value>Изображение</value>
+  <data name="cbGoogleCloudStorageSetPublicACL.Text" xml:space="preserve">
+    <value>Задавать файлам public-read ACL</value>
+  </data>
+  <data name="lblB2UrlPreviewLabel.Text" xml:space="preserve">
+    <value>Предпросмотр URL:</value>
+  </data>
+  <data name="cbSeafileCreateShareableURLRaw.Text" xml:space="preserve">
+    <value>Использовать «сырую» ссылку</value>
+  </data>
+  <data name="lblKuttDomain.Text" xml:space="preserve">
+    <value>Домен:</value>
+  </data>
+  <data name="lblBoxShareAccessLevel.Text" xml:space="preserve">
+    <value>Уровень доступа ссылки:</value>
   </data>
 </root>

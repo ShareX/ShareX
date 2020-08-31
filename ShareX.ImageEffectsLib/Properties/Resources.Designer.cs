@@ -71,12 +71,39 @@ namespace ShareX.ImageEffectsLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Assets folder must be inside ShareX image effects folder..
+        /// </summary>
+        internal static string AssetsFolderMustBeInsideShareXImageEffectsFolder {
+            get {
+                return ResourceManager.GetString("AssetsFolderMustBeInsideShareXImageEffectsFolder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Confirmation.
+        /// </summary>
+        internal static string Confirmation {
+            get {
+                return ResourceManager.GetString("Confirmation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap document_copy {
             get {
                 object obj = ResourceManager.GetObject("document-copy", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Effect:.
+        /// </summary>
+        internal static string Effect {
+            get {
+                return ResourceManager.GetString("Effect", resourceCulture);
             }
         }
         
@@ -146,6 +173,15 @@ namespace ShareX.ImageEffectsLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Invalid assets folder path.
+        /// </summary>
+        internal static string InvalidAssetsFolderPath {
+            get {
+                return ResourceManager.GetString("InvalidAssetsFolderPath", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap minus {
@@ -156,12 +192,48 @@ namespace ShareX.ImageEffectsLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Missing preset name.
+        /// </summary>
+        internal static string MissingPresetName {
+            get {
+                return ResourceManager.GetString("MissingPresetName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Package with this file name already exists.\r\nWould you like to overwrite it?.
+        /// </summary>
+        internal static string PackageWithThisFileNameAlreadyExistsRNWouldYouLikeToOverwriteIt {
+            get {
+                return ResourceManager.GetString("PackageWithThisFileNameAlreadyExistsRNWouldYouLikeToOverwriteIt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap plus {
             get {
                 object obj = ResourceManager.GetObject("plus", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Preset name cannot be empty..
+        /// </summary>
+        internal static string PresetNameCannotBeEmpty {
+            get {
+                return ResourceManager.GetString("PresetNameCannotBeEmpty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Would you like to clear effects?.
+        /// </summary>
+        internal static string WouldYouLikeToClearEffects {
+            get {
+                return ResourceManager.GetString("WouldYouLikeToClearEffects", resourceCulture);
             }
         }
     }

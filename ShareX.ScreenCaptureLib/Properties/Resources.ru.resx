@@ -195,7 +195,7 @@
     <value>Захват активного монитора</value>
   </data>
   <data name="ShapeManager_CreateContextMenu_Fixed_size_region_mode" xml:space="preserve">
-    <value>Режим области фиксированного размера:</value>
+    <value>Режим области фиксированного размера</value>
   </data>
   <data name="ShapeManager_CreateContextMenu_Capture_fullscreen" xml:space="preserve">
     <value>Захват всего экрана</value>
@@ -219,7 +219,7 @@
     <value>Захват монитора</value>
   </data>
   <data name="ShapeManager_CreateContextMenu_Blur_radius_" xml:space="preserve">
-    <value>Радиус размытия</value>
+    <value>Сила размытия:</value>
   </data>
   <data name="ShapeManager_CreateContextMenu_Highlight_color___" xml:space="preserve">
     <value>Цвет подсветки...</value>
@@ -228,7 +228,7 @@
     <value>Размер пикселя:</value>
   </data>
   <data name="ShapeManager_CreateContextMenu_Corner_radius_" xml:space="preserve">
-    <value>Радиус скругления</value>
+    <value>Радиус скругления:</value>
   </data>
   <data name="ShapeManager_CreateContextMenu_EnableAnimations" xml:space="preserve">
     <value>Включить анимации</value>
@@ -270,7 +270,7 @@
     <value>Сохранить изображение</value>
   </data>
   <data name="ShapeManager_CreateToolbar_SaveImageAs" xml:space="preserve">
-    <value>Сохранить изображение как...</value>
+    <value>Сохранить изображение как... (Ctrl + Shift + S)</value>
   </data>
   <data name="ShapeManager_CreateToolbar_CopyImageToClipboard" xml:space="preserve">
     <value>Скопировать изображение в буфер обмена</value>
@@ -279,7 +279,7 @@
     <value>Загрузить изображение</value>
   </data>
   <data name="ShapeManager_CreateToolbar_PrintImage" xml:space="preserve">
-    <value>Распечатать изображение...</value>
+    <value>Распечатать изображение... (Ctrl + P)</value>
   </data>
   <data name="ShapeManager_CreateToolbar_RunAfterCaptureTasks" xml:space="preserve">
     <value>Выполнить задачи после захвата</value>
@@ -384,7 +384,7 @@
     <value>Использовать буквы</value>
   </data>
   <data name="ShapeManager_CreateToolbar_InterpolationMode" xml:space="preserve">
-    <value>Режим интерполяции</value>
+    <value>Режим интерполяции:</value>
   </data>
   <data name="RegionCaptureForm_ShowExitConfirmation_Text" xml:space="preserve">
     <value>Есть несохраненные изменения.

@@ -172,7 +172,7 @@
     <value>Предпросмотр изображения</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_More_info" xml:space="preserve">
-    <value>Больше информации</value>
+    <value>Больше информации...</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_Open" xml:space="preserve">
     <value>Открыть</value>
@@ -226,7 +226,7 @@
     <value>Загрузить файл</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_EditImage" xml:space="preserve">
-    <value>Редактировать изображение…</value>
+    <value>Редактировать изображение...</value>
   </data>
   <data name="BtnShowStats_ShowStats" xml:space="preserve">
     <value>Показать статистику</value>

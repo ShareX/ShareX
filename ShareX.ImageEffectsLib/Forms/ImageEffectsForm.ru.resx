@@ -139,13 +139,13 @@
     <value>Из буфера обмена</value>
   </data>
   <data name="tsmiLoadImageFromFile.Text" xml:space="preserve">
-    <value>Из файла…</value>
+    <value>Из файла...</value>
   </data>
   <data name="btnSaveImage.Text" xml:space="preserve">
     <value>Сохранить...</value>
   </data>
   <data name="mbLoadImage.Text" xml:space="preserve">
-    <value>Загрузить...</value>
+    <value>Загрузить изображение</value>
   </data>
   <data name="btnAddPreset.Text" xml:space="preserve">
     <value>Новая заготовка</value>
@@ -164,5 +164,38 @@
   </data>
   <data name="btnRefresh.Text" xml:space="preserve">
     <value>Обновить</value>
+  </data>
+  <data name="lblEffect.Text" xml:space="preserve">
+    <value>Эффект:</value>
+  </data>
+  <data name="lblEffects.Text" xml:space="preserve">
+    <value>Эффекты:</value>
+  </data>
+  <data name="lblPresets.Text" xml:space="preserve">
+    <value>Шаблон:</value>
+  </data>
+  <data name="btnPackager.Text" xml:space="preserve">
+    <value>Упаковщик...</value>
+  </data>
+  <data name="btnEffectRefresh.ToolTip" xml:space="preserve">
+    <value>Обновить</value>
+  </data>
+  <data name="btnEffectRemove.ToolTip" xml:space="preserve">
+    <value>Удалить</value>
+  </data>
+  <data name="btnPresetRemove.ToolTip" xml:space="preserve">
+    <value>Удалить</value>
+  </data>
+  <data name="btnEffectClear.ToolTip" xml:space="preserve">
+    <value>Очистить...</value>
+  </data>
+  <data name="btnPresetDuplicate.ToolTip" xml:space="preserve">
+    <value>Дублировать</value>
+  </data>
+  <data name="btnEffectDuplicate.ToolTip" xml:space="preserve">
+    <value>Дублировать</value>
+  </data>
+  <data name="btnEffectAdd.ToolTip" xml:space="preserve">
+    <value>Добавить</value>
   </data>
 </root>
