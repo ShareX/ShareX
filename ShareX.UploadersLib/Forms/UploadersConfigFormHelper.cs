@@ -800,7 +800,7 @@ namespace ShareX.UploadersLib
                 Config.PushbulletSettings.DeviceList.ForEach(pbDevice =>
                 {
                     if (!String.IsNullOrEmpty(pbDevice.Name))
-                        cboPushbulletDevices.Items.Add(pbDevice.Name);// ?? Resources.UploadersConfigForm_LoadSettings_Invalid_device_name);
+                        cboPushbulletDevices.Items.Add(pbDevice.Name);
                 });
 
                 cboPushbulletDevices.SelectedIndex = 0;
