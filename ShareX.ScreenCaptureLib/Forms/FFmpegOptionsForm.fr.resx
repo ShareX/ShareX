@@ -281,7 +281,7 @@ Autrement, il ne pourra pas suivre l'enregistrement : il y aura donc beaucoup de
     <value>Débit :</value>
   </data>
   <data name="lblQSVPreset.Text" xml:space="preserve">
-    <value>Préréglages :</value>
+    <value>Préréglage :</value>
   </data>
   <data name="lblx264CRF.Text" xml:space="preserve">
     <value>CRF :</value>

@@ -120,9 +120,6 @@
   <data name="btnCancel.Text" xml:space="preserve">
     <value>Annuler</value>
   </data>
-  <data name="btnOK.Text" xml:space="preserve">
-    <value>OK</value>
-  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Contenu du presse-papier</value>
   </data>
@@ -131,5 +128,8 @@
   </data>
   <data name="lblQuestion.Text" xml:space="preserve">
     <value>Votre presse-papier contient les éléments suivants :</value>
+  </data>
+  <data name="btnUpload.Text" xml:space="preserve">
+    <value>Mettre en ligne</value>
   </data>
 </root>

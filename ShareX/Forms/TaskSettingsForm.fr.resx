@@ -313,7 +313,7 @@
     <value>Afficher la fenêtre des effets d'image après la capture</value>
   </data>
   <data name="lblImageEffectsNote.Text" xml:space="preserve">
-    <value>Vous pouvez activer/désactiver les effets d'image grâce au menu « Après les tâches de capture » -&gt; « Ajouter des effets d'image ».</value>
+    <value>Remarque : Vous pouvez activer/désactiver les effets d'image grâce au menu « Après les tâches de capture » -&gt; « Ajouter des effets d'image ».</value>
   </data>
   <data name="tpEffects.Text" xml:space="preserve">
     <value>Effets</value>
@@ -388,7 +388,7 @@
     <value>Filtre d'extension :</value>
   </data>
   <data name="lblImageSizeLimitHint.Text" xml:space="preserve">
-    <value>kO</value>
+    <value>ko</value>
   </data>
   <data name="lblRegionCaptureFixedSizeHeight.Text" xml:space="preserve">
     <value>Hauteur :</value>
@@ -563,5 +563,26 @@
   </data>
   <data name="cbCaptureOCRProcessOnLoad.Text" xml:space="preserve">
     <value>Traitement OCR lorsque la boîte de dialogue est ouverte</value>
+  </data>
+  <data name="cbOverrideScreenshotsFolder.Text" xml:space="preserve">
+    <value>Remplacer le dossier des captures d'écran</value>
+  </data>
+  <data name="btnScreenshotsFolderBrowse.Text" xml:space="preserve">
+    <value>Parcourir...</value>
+  </data>
+  <data name="lblCaptureCustomRegionY.Text" xml:space="preserve">
+    <value>Y</value>
+  </data>
+  <data name="lblCaptureCustomRegionX.Text" xml:space="preserve">
+    <value>X</value>
+  </data>
+  <data name="btnRegionCaptureSnapSizesRemove.Text" xml:space="preserve">
+    <value>-</value>
+  </data>
+  <data name="btnRegionCaptureSnapSizesAdd.Text" xml:space="preserve">
+    <value>+</value>
+  </data>
+  <data name="cbScreenRecordTransparentRegion.Text" xml:space="preserve">
+    <value>Utiliser une sélection de région transparente</value>
   </data>
 </root>

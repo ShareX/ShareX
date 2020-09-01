@@ -147,4 +147,13 @@
   <data name="lblGradientType.Text" xml:space="preserve">
     <value>Type de dégradé :</value>
   </data>
+  <data name="btnReverse.Text" xml:space="preserve">
+    <value>Inverser</value>
+  </data>
+  <data name="lblPresets.Text" xml:space="preserve">
+    <value>Préréglages :</value>
+  </data>
+  <data name="chGradient.Text" xml:space="preserve">
+    <value>Dégradé</value>
+  </data>
 </root>
