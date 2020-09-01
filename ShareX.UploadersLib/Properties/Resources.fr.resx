@@ -182,7 +182,7 @@ Dossiers créés :</value>
     <value>Non configuré</value>
   </data>
   <data name="UploadersConfigForm_LoadSettings_Parent_album_path_e_g_" xml:space="preserve">
-    <value>Chemin de l'album parent - Exemple :</value>
+    <value>Chemin de l'album parent p. ex.</value>
   </data>
   <data name="UploadersConfigForm_OneDriveAddFolder_Querying_folders___" xml:space="preserve">
     <value>Demande des dossiers...</value>
@@ -240,5 +240,9 @@ Dossiers créés :</value>
   </data>
   <data name="txtB2BucketWatermark" xml:space="preserve">
     <value>Optionnel, utilisé uniquement si vous n'avez pas défini de bucket quand vous avez créé la clé</value>
+  </data>
+  <data name="GoogleDrive_MyDrive_My_drive" xml:space="preserve">
+    <value>Mon drive</value>
+    <comment>Google conserve l'anglicisme drive quand il parle de son service</comment>
   </data>
 </root>

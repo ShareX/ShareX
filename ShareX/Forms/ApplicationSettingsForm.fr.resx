@@ -123,9 +123,6 @@
   <data name="lblProxyUsername.Text" xml:space="preserve">
     <value>Nom d'utilisateur :</value>
   </data>
-  <data name="tpExportImport.Text" xml:space="preserve">
-    <value>Exporter / Importer</value>
-  </data>
   <data name="btnOpenScreenshotsFolder.Text" xml:space="preserve">
     <value>Ouvrir...</value>
   </data>
@@ -363,20 +360,14 @@
   <data name="cbEditWithShareX.Text" xml:space="preserve">
     <value>Afficher le bouton "Modifier avec ShareX" dans le menu contextuel de l'explorateur Windows</value>
   </data>
-  <data name="cbExperimentalCustomTheme.Text" xml:space="preserve">
-    <value>Appliquer un thème personnalisé à toutes les fenêtres</value>
-  </data>
   <data name="btnThemeReset.Text" xml:space="preserve">
-    <value>Réinitialiser</value>
+    <value>Réinitialiser...</value>
   </data>
   <data name="btnThemeRemove.Text" xml:space="preserve">
     <value>Supprimer</value>
   </data>
   <data name="btnThemeAdd.Text" xml:space="preserve">
     <value>Ajouter</value>
-  </data>
-  <data name="btnApplyTheme.Text" xml:space="preserve">
-    <value>Appliquer thème</value>
   </data>
   <data name="cbUseCustomTheme.Text" xml:space="preserve">
     <value>Utiliser un thème personnalisé</value>
@@ -392,5 +383,8 @@
   </data>
   <data name="lblExportImportNote.Text" xml:space="preserve">
     <value>Note : ne partagez le fichier exporté avec personne car il pourrait contenir des informations privées comme les détails de votre compte et votre historique de mises en ligne.</value>
+  </data>
+  <data name="tpSettings.Text" xml:space="preserve">
+    <value>Paramètres</value>
   </data>
 </root>

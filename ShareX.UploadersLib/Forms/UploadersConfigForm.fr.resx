@@ -409,7 +409,7 @@ Utiliser une bibliothèque chiffrée désactive le partage.</value>
     <value>Adresse e-mail :</value>
   </data>
   <data name="lblMegaStatusTitle.Text" xml:space="preserve">
-    <value>Statut :</value>
+    <value>Statut : </value>
   </data>
   <data name="lblMegaFolder.Text" xml:space="preserve">
     <value>Dossier :</value>
@@ -778,7 +778,7 @@ Utiliser une bibliothèque chiffrée désactive le partage.</value>
     <value>Ajouter</value>
   </data>
   <data name="lblPlikAPIKey.Text" xml:space="preserve">
-    <value>Clé d'API :</value>
+    <value>Clé d'API : </value>
   </data>
   <data name="btnFTPDuplicate.Text" xml:space="preserve">
     <value>Dupliquer</value>
@@ -787,7 +787,7 @@ Utiliser une bibliothèque chiffrée désactive le partage.</value>
     <value>Supprimer</value>
   </data>
   <data name="lblPlikTTL.Text" xml:space="preserve">
-    <value>Les fichiers seront automatiquement supprimés</value>
+    <value>Les fichiers seront automatiquement supprimés dans </value>
   </data>
   <data name="btnFTPTest.Text" xml:space="preserve">
     <value>Tester</value>
@@ -1170,7 +1170,7 @@ un autre service agissant comme un frontal vers B2. Voir l'article
 "Créer une URL de vanité avec B2" dans la base de connaissance B2.
 
 Si désactivé, alors l'URL que vous recevrez sera déterminée
-par Backblaze B2.</value>
+par Backblaze B2. </value>
   </data>
   <data name="cbGfycatKeepAudio.Text" xml:space="preserve">
     <value>Conserver l'audio</value>
@@ -1316,5 +1316,14 @@ quand vous avez créé la clé d'application.</value>
   </data>
   <data name="lblB2UrlPreviewLabel.Text" xml:space="preserve">
     <value>Prévisualisation de l'URL :</value>
+  </data>
+  <data name="lblKuttDomain.Text" xml:space="preserve">
+    <value>Domaine :</value>
+  </data>
+  <data name="lblBoxShareAccessLevel.Text" xml:space="preserve">
+    <value>Niveau d'accès des liens partagés :</value>
+  </data>
+  <data name="cbSeafileCreateShareableURLRaw.Text" xml:space="preserve">
+    <value>Utiliser l'URL brute</value>
   </data>
 </root>

@@ -255,4 +255,7 @@
   <data name="lblName.Text" xml:space="preserve">
     <value>Nom :</value>
   </data>
+  <data name="btnClipboardColorPicker.ToolTip" xml:space="preserve">
+    <value>Sélectionner une couleur depuis le presse-papier</value>
+  </data>
 </root>
