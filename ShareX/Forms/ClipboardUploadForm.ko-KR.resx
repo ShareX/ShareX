@@ -132,4 +132,7 @@
   <data name="cbDontShowThisWindow.Text" xml:space="preserve">
     <value>이 창 표시하지 않기</value>
   </data>
+  <data name="btnUpload.Text" xml:space="preserve">
+    <value>업로드</value>
+  </data>
 </root>

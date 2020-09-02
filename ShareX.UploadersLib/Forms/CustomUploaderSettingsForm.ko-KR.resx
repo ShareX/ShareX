@@ -117,64 +117,46 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="tpJsonParse.Text" xml:space="preserve">
+    <value>JSON</value>
+  </data>
+  <data name="lblResultThumbnailURL.Text" xml:space="preserve">
+    <value>썸네일 URL:</value>
+  </data>
+  <data name="cArgumentsValue.HeaderText" xml:space="preserve">
+    <value>값</value>
+  </data>
+  <data name="cArgumentsName.HeaderText" xml:space="preserve">
+    <value>이름</value>
+  </data>
+  <data name="lblRequestMethod.Text" xml:space="preserve">
+    <value>방법:</value>
+  </data>
+  <data name="lblName.Text" xml:space="preserve">
+    <value>이름:</value>
+  </data>
+  <data name="lblDestinationType.Text" xml:space="preserve">
+    <value>목적지 타입:</value>
+  </data>
+  <data name="tpTest.Text" xml:space="preserve">
+    <value>테스트</value>
+  </data>
+  <data name="lblURLSharingService.Text" xml:space="preserve">
+    <value>URL 공유 서비스:</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - 해시 검사</value>
+    <value>ShareX - 커스텀 업로더 설정</value>
   </data>
-  <data name="btnFilePathBrowse.Text" xml:space="preserve">
-    <value>탐색...</value>
+  <data name="btnURLSharingServiceTest.Text" xml:space="preserve">
+    <value>테스트</value>
   </data>
-  <data name="btnStartHashCheck.Text" xml:space="preserve">
-    <value>시작</value>
+  <data name="lblParameters.Text" xml:space="preserve">
+    <value>URL 파라미터:</value>
   </data>
-  <data name="lblFile.Text" xml:space="preserve">
-    <value>파일 경로:</value>
+  <data name="lblHeaders.Text" xml:space="preserve">
+    <value>헤더:</value>
   </data>
-  <data name="lblHashType.Text" xml:space="preserve">
-    <value>해시 종류:</value>
-  </data>
-  <data name="lblResult.Text" xml:space="preserve">
-    <value>결과:</value>
-  </data>
-  <data name="lblTarget.Text" xml:space="preserve">
-    <value>타겟:</value>
-  </data>
-  <data name="tpFileHashCheck.Text" xml:space="preserve">
-    <value>파일 해시 검사</value>
-  </data>
-  <data name="tpTextConversions.Text" xml:space="preserve">
-    <value>텍스트 변환</value>
-  </data>
-  <data name="lblHashCheckText.Text" xml:space="preserve">
-    <value>텍스트:</value>
-  </data>
-  <data name="btnHashCheckEncodeText.Text" xml:space="preserve">
-    <value>인코드</value>
-  </data>
-  <data name="btnHashCheckDecodeHex.Text" xml:space="preserve">
-    <value>디코드</value>
-  </data>
-  <data name="btnHashCheckDecodeASCII.Text" xml:space="preserve">
-    <value>디코드</value>
-  </data>
-  <data name="btnHashCheckDecodeBinary.Text" xml:space="preserve">
-    <value>디코드</value>
-  </data>
-  <data name="btnHashCheckDecodeBase64.Text" xml:space="preserve">
-    <value>디코드</value>
-  </data>
-  <data name="btnHashCheckCopyAll.Text" xml:space="preserve">
-    <value>모두 복사</value>
-  </data>
-  <data name="lblHashCheckHash.Text" xml:space="preserve">
-    <value>해시:</value>
-  </data>
-  <data name="lblHashCheckHex.Text" xml:space="preserve">
-    <value>16진법:</value>
-  </data>
-  <data name="lblHashCheckBinary.Text" xml:space="preserve">
-    <value>이진법:</value>
-  </data>
-  <data name="lblHashCheckBase64.Text" xml:space="preserve">
-    <value>Base64:</value>
+  <data name="cParametersName.HeaderText" xml:space="preserve">
+    <value>이름</value>
   </data>
 </root>

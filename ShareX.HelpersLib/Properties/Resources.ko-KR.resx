@@ -486,7 +486,7 @@
     <value>이미지를 파일로 저장하기</value>
   </data>
   <data name="AfterCaptureTasks_SaveImageToFileWithDialog" xml:space="preserve">
-    <value>이미지를 다른 이름으로 파일로 저장하기</value>
+    <value>이미지를 다른 이름으로 파일로 저장...</value>
   </data>
   <data name="AfterCaptureTasks_SaveThumbnailImageToFile" xml:space="preserve">
     <value>섬네일 이미지를 파일로 저장하기</value>
@@ -1128,5 +1128,8 @@
   </data>
   <data name="AfterCaptureTasks_ScanQRCode" xml:space="preserve">
     <value>QR코드 스캔</value>
+  </data>
+  <data name="ObjectListView_ObjectListView_Value" xml:space="preserve">
+    <value>값</value>
   </data>
 </root>

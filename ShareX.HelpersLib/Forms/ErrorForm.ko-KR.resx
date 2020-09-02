@@ -127,7 +127,7 @@
     <value>로그 파일 열기...</value>
   </data>
   <data name="btnSendBugReport.Text" xml:space="preserve">
-    <value>버그 리포트 보내기</value>
+    <value>버그 리포트 보내기...</value>
   </data>
   <data name="lblErrorMessage.Text" xml:space="preserve">
     <value>오류
