@@ -380,6 +380,7 @@
     <Compile Include="UnsafeBitmap.cs" />
     <Compile Include="UpdateChecker\AppVeyor.cs" />
     <Compile Include="UpdateChecker\AppVeyorUpdateChecker.cs" />
+    <Compile Include="UpdateChecker\FFmpegUpdateChecker.cs" />
     <Compile Include="UpdateChecker\GitHubUpdateChecker.cs" />
     <Compile Include="UpdateChecker\UpdateChecker.cs" />
     <Compile Include="UpdateChecker\DownloaderForm.cs">

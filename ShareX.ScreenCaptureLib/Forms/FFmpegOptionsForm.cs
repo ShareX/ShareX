@@ -504,12 +504,12 @@ namespace ShareX.ScreenCaptureLib
 
         private void btnDownload_Click(object sender, EventArgs e)
         {
-            FFmpegDownloader.DownloadFFmpeg(true, DownloaderForm_InstallRequested);
+            FFmpegGitHubDownloader.DownloadFFmpeg(true, DownloaderForm_InstallRequested);
         }
 
         private void DownloaderForm_InstallRequested(string filePath)
         {
-            bool result = FFmpegDownloader.ExtractFFmpeg(filePath, DefaultToolsFolder);
+            bool result = FFmpegGitHubDownloader.ExtractFFmpeg(filePath, DefaultToolsFolder);
 
             if (result)
             {

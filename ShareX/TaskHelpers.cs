@@ -1343,7 +1343,7 @@ namespace ShareX
                 if (MessageBox.Show(string.Format(Resources.ScreenRecordForm_StartRecording_does_not_exist, ffmpegPath),
                     "ShareX - " + Resources.ScreenRecordForm_StartRecording_Missing + " ffmpeg.exe", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                 {
-                    DialogResult downloadDialogResult = FFmpegDownloader.DownloadFFmpeg(false, DownloaderForm_InstallRequested);
+                    DialogResult downloadDialogResult = FFmpegGitHubDownloader.DownloadFFmpeg(false, DownloaderForm_InstallRequested);
 
                     if (downloadDialogResult == DialogResult.OK)
                     {
@@ -1371,7 +1371,7 @@ namespace ShareX
 
         private static void DownloaderForm_InstallRequested(string filePath)
         {
-            bool result = FFmpegDownloader.ExtractFFmpeg(filePath, Program.ToolsFolder);
+            bool result = FFmpegGitHubDownloader.ExtractFFmpeg(filePath, Program.ToolsFolder);
 
             if (result)
             {

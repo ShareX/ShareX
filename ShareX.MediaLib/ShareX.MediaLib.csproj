@@ -86,6 +86,7 @@
     <Compile Include="Enums.cs" />
     <Compile Include="FFmpegCLIManager.cs" />
     <Compile Include="FFmpegDownloader.cs" />
+    <Compile Include="FFmpegGitHubDownloader.cs" />
     <Compile Include="Forms\ImageCombinerForm.cs">
       <SubType>Form</SubType>
     </Compile>

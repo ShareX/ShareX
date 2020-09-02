@@ -189,4 +189,11 @@ namespace ShareX.HelpersLib
         Bilinear,
         NearestNeighbor
     }
+
+    public enum FFmpegArchitecture
+    {
+        win64,
+        win32,
+        macos64
+    }
 }
