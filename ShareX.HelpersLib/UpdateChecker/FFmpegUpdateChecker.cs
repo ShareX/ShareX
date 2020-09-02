@@ -31,28 +31,21 @@ namespace ShareX.HelpersLib
     {
         public FFmpegArchitecture Architecture { get; private set; }
 
+        public FFmpegUpdateChecker(string owner, string repo) : base(owner, repo)
+        {
+            if (NativeMethods.Is64Bit())
+            {
+                Architecture = FFmpegArchitecture.win64;
+            }
+            else
+            {
+                Architecture = FFmpegArchitecture.win32;
+            }
+        }
+
         public FFmpegUpdateChecker(string owner, string repo, FFmpegArchitecture architecture) : base(owner, repo)
         {
             Architecture = architecture;
-        }
-
-        public override string GetLatestDownloadURL(bool isBrowserDownloadURL)
-        {
-            try
-            {
-                GitHubRelease latestRelease = GetLatestRelease(IncludePreRelease);
-
-                if (UpdateReleaseInfo(latestRelease, IsPortable, isBrowserDownloadURL))
-                {
-                    return DownloadURL;
-                }
-            }
-            catch (Exception e)
-            {
-                DebugHelper.WriteException(e);
-            }
-
-            return null;
         }
 
         protected override bool UpdateReleaseInfo(GitHubRelease release, bool isPortable, bool isBrowserDownloadURL)

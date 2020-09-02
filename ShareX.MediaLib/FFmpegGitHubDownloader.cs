@@ -29,22 +29,11 @@ using System.Windows.Forms;
 
 namespace ShareX.MediaLib
 {
-    public class FFmpegGitHubDownloader
+    public static class FFmpegGitHubDownloader
     {
         public static DialogResult DownloadFFmpeg(bool async, DownloaderForm.DownloaderInstallEventHandler installRequested)
         {
-            FFmpegArchitecture architecture;
-
-            if (NativeMethods.Is64Bit())
-            {
-                architecture = FFmpegArchitecture.win64;
-            }
-            else
-            {
-                architecture = FFmpegArchitecture.win32;
-            }
-
-            FFmpegUpdateChecker updateChecker = new FFmpegUpdateChecker("ShareX", "FFmpeg", architecture);
+            FFmpegUpdateChecker updateChecker = new FFmpegUpdateChecker("ShareX", "FFmpeg");
             string url = updateChecker.GetLatestDownloadURL(false);
 
             using (DownloaderForm form = new DownloaderForm(url, "ffmpeg.zip"))
