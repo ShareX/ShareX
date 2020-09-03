@@ -334,7 +334,7 @@ For real time encoding (e.g. screen recording), the preset must be as fast as po
     <value>tpGIF</value>
   </data>
   <data name="&gt;&gt;cbGIFStatsMode.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="cbGIFDither.Location" type="System.Drawing.Point, System.Drawing">
     <value>144, 36</value>
@@ -358,7 +358,7 @@ For real time encoding (e.g. screen recording), the preset must be as fast as po
     <value>tpGIF</value>
   </data>
   <data name="&gt;&gt;cbGIFDither.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="pbAudioCodecWarning.Location" type="System.Drawing.Point, System.Drawing">
     <value>550, 22</value>
@@ -452,6 +452,30 @@ Otherwise it can't keep up with recording and a lot of frame drops will happen.<
     <value>tpOpus</value>
   </data>
   <data name="&gt;&gt;tbOpusBitrate.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="nudGIFBayerScale.Location" type="System.Drawing.Point, System.Drawing">
+    <value>254, 36</value>
+  </data>
+  <data name="nudGIFBayerScale.Size" type="System.Drawing.Size, System.Drawing">
+    <value>44, 20</value>
+  </data>
+  <data name="nudGIFBayerScale.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="nudGIFBayerScale.ToolTip" xml:space="preserve">
+    <value>Controls the Bayer Scale index, a higher scale will display more banding. Default is 2.</value>
+  </data>
+  <data name="&gt;&gt;nudGIFBayerScale.Name" xml:space="preserve">
+    <value>nudGIFBayerScale</value>
+  </data>
+  <data name="&gt;&gt;nudGIFBayerScale.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;nudGIFBayerScale.Parent" xml:space="preserve">
+    <value>tpGIF</value>
+  </data>
+  <data name="&gt;&gt;nudGIFBayerScale.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="lblCodec.AutoSize" type="System.Boolean, mscorlib">
@@ -1121,7 +1145,7 @@ Otherwise it can't keep up with recording and a lot of frame drops will happen.<
     <value>tpGIF</value>
   </data>
   <data name="&gt;&gt;lblGIFDither.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="lblGIFStatsMode.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1148,7 +1172,7 @@ Otherwise it can't keep up with recording and a lot of frame drops will happen.<
     <value>tpGIF</value>
   </data>
   <data name="&gt;&gt;lblGIFStatsMode.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="tpGIF.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>
@@ -1561,114 +1585,6 @@ Otherwise it can't keep up with recording and a lot of frame drops will happen.<
   <data name="&gt;&gt;tpAAC.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="lblVorbisQuality.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblVorbisQuality.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 16</value>
-  </data>
-  <data name="lblVorbisQuality.Size" type="System.Drawing.Size, System.Drawing">
-    <value>42, 13</value>
-  </data>
-  <data name="lblVorbisQuality.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="lblVorbisQuality.Text" xml:space="preserve">
-    <value>Quality:</value>
-  </data>
-  <data name="&gt;&gt;lblVorbisQuality.Name" xml:space="preserve">
-    <value>lblVorbisQuality</value>
-  </data>
-  <data name="&gt;&gt;lblVorbisQuality.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblVorbisQuality.Parent" xml:space="preserve">
-    <value>tpVorbis</value>
-  </data>
-  <data name="&gt;&gt;lblVorbisQuality.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="tpVorbis.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="tpVorbis.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="tpVorbis.Size" type="System.Drawing.Size, System.Drawing">
-    <value>304, 70</value>
-  </data>
-  <data name="tpVorbis.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="tpVorbis.Text" xml:space="preserve">
-    <value>Vorbis</value>
-  </data>
-  <data name="&gt;&gt;tpVorbis.Name" xml:space="preserve">
-    <value>tpVorbis</value>
-  </data>
-  <data name="&gt;&gt;tpVorbis.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tpVorbis.Parent" xml:space="preserve">
-    <value>tcFFmpegAudioCodecs</value>
-  </data>
-  <data name="&gt;&gt;tpVorbis.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="lblMP3Quality.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblMP3Quality.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 16</value>
-  </data>
-  <data name="lblMP3Quality.Size" type="System.Drawing.Size, System.Drawing">
-    <value>42, 13</value>
-  </data>
-  <data name="lblMP3Quality.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="lblMP3Quality.Text" xml:space="preserve">
-    <value>Quality:</value>
-  </data>
-  <data name="&gt;&gt;lblMP3Quality.Name" xml:space="preserve">
-    <value>lblMP3Quality</value>
-  </data>
-  <data name="&gt;&gt;lblMP3Quality.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblMP3Quality.Parent" xml:space="preserve">
-    <value>tpMP3</value>
-  </data>
-  <data name="&gt;&gt;lblMP3Quality.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="tpMP3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="tpMP3.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="tpMP3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>304, 70</value>
-  </data>
-  <data name="tpMP3.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="tpMP3.Text" xml:space="preserve">
-    <value>MP3</value>
-  </data>
-  <data name="&gt;&gt;tpMP3.Name" xml:space="preserve">
-    <value>tpMP3</value>
-  </data>
-  <data name="&gt;&gt;tpMP3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tpMP3.Parent" xml:space="preserve">
-    <value>tcFFmpegAudioCodecs</value>
-  </data>
-  <data name="&gt;&gt;tpMP3.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <data name="lblOpusQuality.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1724,6 +1640,114 @@ Otherwise it can't keep up with recording and a lot of frame drops will happen.<
     <value>tcFFmpegAudioCodecs</value>
   </data>
   <data name="&gt;&gt;tpOpus.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="lblVorbisQuality.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblVorbisQuality.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 16</value>
+  </data>
+  <data name="lblVorbisQuality.Size" type="System.Drawing.Size, System.Drawing">
+    <value>42, 13</value>
+  </data>
+  <data name="lblVorbisQuality.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="lblVorbisQuality.Text" xml:space="preserve">
+    <value>Quality:</value>
+  </data>
+  <data name="&gt;&gt;lblVorbisQuality.Name" xml:space="preserve">
+    <value>lblVorbisQuality</value>
+  </data>
+  <data name="&gt;&gt;lblVorbisQuality.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblVorbisQuality.Parent" xml:space="preserve">
+    <value>tpVorbis</value>
+  </data>
+  <data name="&gt;&gt;lblVorbisQuality.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="tpVorbis.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tpVorbis.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tpVorbis.Size" type="System.Drawing.Size, System.Drawing">
+    <value>304, 70</value>
+  </data>
+  <data name="tpVorbis.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="tpVorbis.Text" xml:space="preserve">
+    <value>Vorbis</value>
+  </data>
+  <data name="&gt;&gt;tpVorbis.Name" xml:space="preserve">
+    <value>tpVorbis</value>
+  </data>
+  <data name="&gt;&gt;tpVorbis.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tpVorbis.Parent" xml:space="preserve">
+    <value>tcFFmpegAudioCodecs</value>
+  </data>
+  <data name="&gt;&gt;tpVorbis.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="lblMP3Quality.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblMP3Quality.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 16</value>
+  </data>
+  <data name="lblMP3Quality.Size" type="System.Drawing.Size, System.Drawing">
+    <value>42, 13</value>
+  </data>
+  <data name="lblMP3Quality.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="lblMP3Quality.Text" xml:space="preserve">
+    <value>Quality:</value>
+  </data>
+  <data name="&gt;&gt;lblMP3Quality.Name" xml:space="preserve">
+    <value>lblMP3Quality</value>
+  </data>
+  <data name="&gt;&gt;lblMP3Quality.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblMP3Quality.Parent" xml:space="preserve">
+    <value>tpMP3</value>
+  </data>
+  <data name="&gt;&gt;lblMP3Quality.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="tpMP3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tpMP3.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tpMP3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>304, 70</value>
+  </data>
+  <data name="tpMP3.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="tpMP3.Text" xml:space="preserve">
+    <value>MP3</value>
+  </data>
+  <data name="&gt;&gt;tpMP3.Name" xml:space="preserve">
+    <value>tpMP3</value>
+  </data>
+  <data name="&gt;&gt;tpMP3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tpMP3.Parent" xml:space="preserve">
+    <value>tcFFmpegAudioCodecs</value>
+  </data>
+  <data name="&gt;&gt;tpMP3.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
   <data name="tcFFmpegAudioCodecs.Location" type="System.Drawing.Point, System.Drawing">
@@ -2051,7 +2075,7 @@ Otherwise it can't keep up with recording and a lot of frame drops will happen.<
     <value>eiFFmpeg</value>
   </data>
   <data name="&gt;&gt;eiFFmpeg.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.ExportImportControl, ShareX.HelpersLib, Version=13.0.2.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.ExportImportControl, ShareX.HelpersLib, Version=13.2.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;eiFFmpeg.Parent" xml:space="preserve">
     <value>$this</value>
@@ -2059,12 +2083,12 @@ Otherwise it can't keep up with recording and a lot of frame drops will happen.<
   <data name="&gt;&gt;eiFFmpeg.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <data name="$this.Localizable" type="System.Boolean, mscorlib">
     <value>True</value>
-  </metadata>
-  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  </data>
+  <data name="$this.TrayHeight" type="System.Int32, mscorlib">
     <value>60</value>
-  </metadata>
+  </data>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 13</value>
   </data>
