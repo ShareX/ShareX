@@ -294,7 +294,6 @@
     <None Include="Resources\disk-black.png" />
     <None Include="Resources\tick.png" />
     <None Include="Resources\layer-shape-polygon.png" />
-    <None Include="Resources\layer-shape-curve.png" />
     <None Include="Resources\edit-vertical-alignment.png" />
     <None Include="Resources\edit-vertical-alignment-top.png" />
     <None Include="Resources\edit-alignment-right.png" />
@@ -753,6 +752,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.nl-NL.resx" />
     <EmbeddedResource Include="Properties\Resources.pt-BR.resx" />
+    <EmbeddedResource Include="Properties\Resources.pt-PT.resx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
