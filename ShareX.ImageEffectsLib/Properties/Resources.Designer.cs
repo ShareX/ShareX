@@ -201,7 +201,8 @@ namespace ShareX.ImageEffectsLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Package with this file name already exists.\r\nWould you like to overwrite it?.
+        ///   Looks up a localized string similar to Package with this file name already exists.
+        ///Would you like to overwrite it?.
         /// </summary>
         internal static string PackageWithThisFileNameAlreadyExistsRNWouldYouLikeToOverwriteIt {
             get {
