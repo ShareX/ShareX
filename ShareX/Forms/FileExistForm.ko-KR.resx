@@ -131,7 +131,7 @@
     <value>새 이름 사용:</value>
   </data>
   <data name="btnUniqueName.Text" xml:space="preserve">
-    <value>고유 이름 사용:</value>
+    <value>고유 이름 사용: </value>
   </data>
   <data name="btnCancel.Text" xml:space="preserve">
     <value>저장하지 않음</value>

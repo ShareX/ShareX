@@ -270,7 +270,7 @@
     <value>이미지 저장</value>
   </data>
   <data name="ShapeManager_CreateToolbar_SaveImageAs" xml:space="preserve">
-    <value>다른 이름으로 이미지 저장...</value>
+    <value>다른 이름으로 이미지 저장... (Ctrl + Shift + S)</value>
   </data>
   <data name="ShapeManager_CreateToolbar_CopyImageToClipboard" xml:space="preserve">
     <value>이미지를 클립보드에 복사</value>
@@ -279,7 +279,7 @@
     <value>이미지 업로드</value>
   </data>
   <data name="ShapeManager_CreateToolbar_PrintImage" xml:space="preserve">
-    <value>이미지 인쇄...</value>
+    <value>이미지 인쇄... (Ctrl + P)</value>
   </data>
   <data name="ShapeManager_CreateToolbar_RunAfterCaptureTasks" xml:space="preserve">
     <value>촬영 뒤 할 일 하기</value>
@@ -392,5 +392,8 @@
   </data>
   <data name="ShapeManager_CreateToolbar_UseLetters" xml:space="preserve">
     <value>글자 사용</value>
+  </data>
+  <data name="ThisWindowWillCloseBeforeOpeningKeybindsPageWantContinue" xml:space="preserve">
+    <value>이 창은 keybinds 웹 페이지를 열기 전에 닫힙니다. 계속하시겠습니까?</value>
   </data>
 </root>

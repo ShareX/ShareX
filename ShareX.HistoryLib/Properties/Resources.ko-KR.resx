@@ -160,7 +160,7 @@
     <value>이미지 미리보기</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_More_info" xml:space="preserve">
-    <value>자세한 정보</value>
+    <value>자세한 정보...</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_Open" xml:space="preserve">
     <value>열기</value>
