@@ -158,7 +158,8 @@
     <value>Invalid assets folder path</value>
   </data>
   <data name="PackageWithThisFileNameAlreadyExistsRNWouldYouLikeToOverwriteIt" xml:space="preserve">
-    <value>Package with this file name already exists.\r\nWould you like to overwrite it?</value>
+    <value>Package with this file name already exists.
+Would you like to overwrite it?</value>
   </data>
   <data name="Effect" xml:space="preserve">
     <value>Effect:</value>

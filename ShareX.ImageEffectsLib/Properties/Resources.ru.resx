@@ -142,7 +142,8 @@
     <value>Неверный путь к папке материалов</value>
   </data>
   <data name="PackageWithThisFileNameAlreadyExistsRNWouldYouLikeToOverwriteIt" xml:space="preserve">
-    <value>Пакет с таким именем уже существует.\r\nХотите перезаписать его?</value>
+    <value>Пакет с таким именем уже существует.
+Хотите перезаписать его?</value>
   </data>
   <data name="Effect" xml:space="preserve">
     <value>Эффект:</value>
