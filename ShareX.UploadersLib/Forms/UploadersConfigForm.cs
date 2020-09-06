@@ -2479,6 +2479,11 @@ namespace ShareX.UploadersLib
             Config.TeknikOAuth2Info = null;
         }
 
+        private void oauthTeknik_RefreshButtonClicked()
+        {
+            OAuth2Refresh(new TeknikUploader(Config.TeknikOAuth2Info, Config.TeknikAuthUrl), oauthTeknik);
+        }
+
         private void tbTeknikAuthUrl_TextChanged(object sender, EventArgs e)
         {
             Config.TeknikAuthUrl = tbTeknikAuthUrl.Text;
