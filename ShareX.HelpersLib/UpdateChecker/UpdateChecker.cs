@@ -33,7 +33,7 @@ namespace ShareX.HelpersLib
     public abstract class UpdateChecker
     {
         /// <summary>For testing purposes.</summary>
-        public static bool ForceUpdate { get; private set; } = false;
+        public const bool ForceUpdate = false;
 
         public UpdateStatus Status { get; set; }
         public Version CurrentVersion { get; set; }
