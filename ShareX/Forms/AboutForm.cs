@@ -46,18 +46,14 @@ namespace ShareX
 
             ShareXResources.ApplyTheme(this);
 
-#if STEAM || WindowsStore
+#if STEAM
             uclUpdate.Visible = false;
+            lblBuild.Text = "Steam build";
             lblBuild.Visible = true;
-
-            if (Program.Build == ShareXBuild.Steam)
-            {
-                lblBuild.Text = "Steam build";
-            }
-            else if (Program.Build == ShareXBuild.MicrosoftStore)
-            {
-                lblBuild.Text = "Microsoft Store build";
-            }
+#elif WindowsStore
+            uclUpdate.Visible = false;
+            lblBuild.Text = "Microsoft Store build";
+            lblBuild.Visible = true;
 #else
             if (!Program.PortableApps)
             {
