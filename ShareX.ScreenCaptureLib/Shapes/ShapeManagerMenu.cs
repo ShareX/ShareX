@@ -81,7 +81,7 @@ namespace ShareX.ScreenCaptureLib
 
             menuForm.SuspendLayout();
 
-            int imageScalingSize = Options.MenuIconSize.Clamp(16, 64);
+            int imageScalingSize = Options.MenuIconSize.Clamp((int)(16 * NativeMethods.GetScreenScalingFactor()), 64);
 
             tsMain = new ToolStripEx()
             {
