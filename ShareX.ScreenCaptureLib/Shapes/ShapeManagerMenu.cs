@@ -981,7 +981,7 @@ namespace ShareX.ScreenCaptureLib
 
             // TODO: Translate
             ToolStripLabeledNumericUpDown tslnudMenuIconSize = new ToolStripLabeledNumericUpDown("Menu icon size:");
-            tslnudMenuIconSize.Content.Minimum = 16;
+            tslnudMenuIconSize.Content.Minimum = (int)(16 * NativeMethods.GetScreenScalingFactor());
             tslnudMenuIconSize.Content.Maximum = 64;
             tslnudMenuIconSize.Content.Increment = 16;
             tslnudMenuIconSize.Content.Value = Options.MenuIconSize;
