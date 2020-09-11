@@ -100,7 +100,9 @@ namespace ShareX.ImageEffectsLib
 
                         if (SizeMode == DrawImageSizeMode.AbsoluteSize)
                         {
-                            imageSize = ImageHelpers.ApplyAspectRatio(Size, bmpWatermark);
+                            int width = Size.Width == -1 ? bmp.Width : Size.Width;
+                            int height = Size.Height == -1 ? bmp.Height : Size.Height;
+                            imageSize = ImageHelpers.ApplyAspectRatio(width, height, bmpWatermark);
                         }
                         else if (SizeMode == DrawImageSizeMode.PercentageOfWatermark)
                         {
