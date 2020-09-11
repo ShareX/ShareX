@@ -38,6 +38,7 @@
             this.cbIncludeSubdirectories = new System.Windows.Forms.CheckBox();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnOK = new System.Windows.Forms.Button();
+            this.chkMoveToScreenshotsFolder = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // btnPathBrowse
@@ -81,6 +82,7 @@
             // btnCancel
             // 
             resources.ApplyResources(this.btnCancel, "btnCancel");
+            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -92,14 +94,20 @@
             this.btnOK.UseVisualStyleBackColor = true;
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
+            // chkMoveToScreenshotsDir
+            // 
+            resources.ApplyResources(this.chkMoveToScreenshotsFolder, "chkMoveToScreenshotsDir");
+            this.chkMoveToScreenshotsFolder.Name = "chkMoveToScreenshotsDir";
+            this.chkMoveToScreenshotsFolder.UseVisualStyleBackColor = true;
+            // 
             // WatchFolderForm
             // 
             this.AcceptButton = this.btnOK;
             resources.ApplyResources(this, "$this");
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.CancelButton = this.btnCancel;
+            this.Controls.Add(this.chkMoveToScreenshotsFolder);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.cbIncludeSubdirectories);
@@ -128,5 +136,6 @@
         private System.Windows.Forms.CheckBox cbIncludeSubdirectories;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnOK;
+        private System.Windows.Forms.CheckBox chkMoveToScreenshotsFolder;
     }
 }
