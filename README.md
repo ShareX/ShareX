@@ -5,8 +5,8 @@
 [![License](https://img.shields.io/github/license/ShareX/ShareX?label=License&color=brightgreen&cacheSeconds=3600)](./LICENSE.txt)
 [![Release](https://img.shields.io/github/v/release/ShareX/ShareX?label=Release&color=brightgreen&cacheSeconds=3600)](https://github.com/ShareX/ShareX/releases/latest)
 [![Downloads](https://img.shields.io/github/downloads/ShareX/ShareX/total?label=Downloads&cacheSeconds=3600)](https://getsharex.com/downloads/)
-[![Twitter](https://img.shields.io/twitter/follow/GetShareX?style=flat&label=%40GetShareX&color=brightgreen&cacheSeconds=3600)](https://twitter.com/GetShareX)
 [![Discord](https://img.shields.io/discord/194170124859736065?label=Discord&cacheSeconds=3600)](https://discord.gg/ShareX)
+[![Twitter](https://img.shields.io/twitter/follow/GetShareX?cacheSeconds=3600)](https://twitter.com/GetShareX)
 
 [![Screenshot](https://getsharex.com/img/ShareX_Screenshot.png)](https://getsharex.com)
 
