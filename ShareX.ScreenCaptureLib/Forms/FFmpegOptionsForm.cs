@@ -108,6 +108,7 @@ namespace ShareX.ScreenCaptureLib
             // GIF
             cbGIFStatsMode.SelectedIndex = (int)Options.FFmpeg.GIFStatsMode;
             cbGIFDither.SelectedIndex = (int)Options.FFmpeg.GIFDither;
+            nudGIFBayerScale.SetValue(Options.FFmpeg.GIFBayerScale);
 
             // AMF
             cbAMFUsage.SelectedIndex = (int)Options.FFmpeg.AMF_usage;
@@ -220,6 +221,7 @@ namespace ShareX.ScreenCaptureLib
                     txtCommandLinePreview.Text = Options.GetFFmpegArgs();
                 }
 
+                nudGIFBayerScale.Visible = (Options.FFmpeg.GIFDither == FFmpegPaletteUseDither.bayer);
                 UpdateFFmpegPathUI();
             }
         }
@@ -445,6 +447,12 @@ namespace ShareX.ScreenCaptureLib
         private void cbGIFDither_SelectedIndexChanged(object sender, EventArgs e)
         {
             Options.FFmpeg.GIFDither = (FFmpegPaletteUseDither)cbGIFDither.SelectedIndex;
+            UpdateUI();
+        }
+
+        private void nudGIFBayerScale_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Options.FFmpeg.GIFBayerScale = (int)nudGIFBayerScale.Value;
             UpdateUI();
         }
 
