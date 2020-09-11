@@ -568,5 +568,24 @@ namespace ShareX.HelpersLib
             DestroyIcon(hIcon);
             return icon;
         }
+
+        public static float GetScreenScalingFactor()
+        {
+            float scalingFactor;
+
+            using (Graphics g = Graphics.FromHwnd(IntPtr.Zero))
+            {
+                IntPtr desktop = g.GetHdc();
+                int LogicalScreenHeight = GetDeviceCaps(desktop, (int)DeviceCap.VERTRES);
+                int PhysicalScreenHeight = GetDeviceCaps(desktop, (int)DeviceCap.DESKTOPVERTRES);
+                int logpixelsy = GetDeviceCaps(desktop, (int)DeviceCap.LOGPIXELSY);
+                float screenScalingFactor = (float)PhysicalScreenHeight / LogicalScreenHeight;
+                float dpiScalingFactor = logpixelsy / 96f;
+                scalingFactor = Math.Max(screenScalingFactor, dpiScalingFactor);
+                g.ReleaseHdc(desktop);
+            }
+
+            return scalingFactor;
+        }
     }
 }

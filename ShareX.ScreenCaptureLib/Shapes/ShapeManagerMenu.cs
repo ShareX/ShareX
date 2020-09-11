@@ -81,6 +81,13 @@ namespace ShareX.ScreenCaptureLib
 
             menuForm.SuspendLayout();
 
+            if (Options.MenuIconSize == 0)
+            {
+                Options.MenuIconSize = (int)(16 * NativeMethods.GetScreenScalingFactor());
+            }
+
+            int imageScalingSize = Options.MenuIconSize.Clamp(16, 64);
+
             tsMain = new ToolStripEx()
             {
                 AutoSize = true,
@@ -88,6 +95,7 @@ namespace ShareX.ScreenCaptureLib
                 ClickThrough = true,
                 Dock = DockStyle.None,
                 GripStyle = ToolStripGripStyle.Hidden,
+                ImageScalingSize = new Size(imageScalingSize, imageScalingSize),
                 Location = new Point(0, 0),
                 MinimumSize = new Size(10, 30),
                 Padding = Form.IsEditorMode ? new Padding(5, 1, 3, 0) : new Padding(0, 1, 0, 0),
@@ -975,6 +983,24 @@ namespace ShareX.ScreenCaptureLib
                 Options.SwitchToSelectionToolAfterDrawing = tsmiSwitchToSelectionToolAfterDrawing.Checked;
             };
             tsddbOptions.DropDownItems.Add(tsmiSwitchToSelectionToolAfterDrawing);
+
+            // TODO: Translate
+            ToolStripLabeledNumericUpDown tslnudMenuIconSize = new ToolStripLabeledNumericUpDown("Menu icon size:");
+            tslnudMenuIconSize.Content.Minimum = 16;
+            tslnudMenuIconSize.Content.Maximum = 64;
+            tslnudMenuIconSize.Content.Increment = 16;
+            tslnudMenuIconSize.Content.Value = Options.MenuIconSize;
+            tslnudMenuIconSize.Content.ValueChanged = (sender, e) =>
+            {
+                Options.MenuIconSize = (int)tslnudMenuIconSize.Content.Value;
+                tsMain.SuspendLayout();
+                tsMain.AutoSize = false;
+                tsMain.ImageScalingSize = new Size(Options.MenuIconSize, Options.MenuIconSize);
+                tsMain.AutoSize = true;
+                tsMain.ResumeLayout();
+                UpdateMenuPosition();
+            };
+            tsddbOptions.DropDownItems.Add(tslnudMenuIconSize);
 
             if (!Form.IsEditorMode)
             {
