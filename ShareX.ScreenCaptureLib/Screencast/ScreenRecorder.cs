@@ -266,7 +266,7 @@ namespace ShareX.ScreenCaptureLib
                 // https://ffmpeg.org/ffmpeg-filters.html#paletteuse
                 return ffmpeg.Run($"-i \"{input}\" -lavfi \"palettegen=stats_mode={Options.FFmpeg.GIFStatsMode}[palette]," +
                     $"[0:v][palette]paletteuse=dither={Options.FFmpeg.GIFDither}" +
-                    $"{(Options.FFmpeg.GIFDither == FFmpegPaletteUseDither.bayer ? ":bayer_scale=" + Options.FFmpeg.GIFBayerScale : String.Empty)}\"" +
+                    $"{(Options.FFmpeg.GIFDither == FFmpegPaletteUseDither.bayer ? ":bayer_scale=" + Options.FFmpeg.GIFBayerScale : "")}\"" +
                     $" -y \"{output}\"");
             }
             finally

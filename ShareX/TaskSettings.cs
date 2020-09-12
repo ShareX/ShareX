@@ -380,6 +380,9 @@ namespace ShareX
         public bool RegionCaptureUseWindowPattern = true;
         public bool FileUploadUseNamePattern = false;
         public bool FileUploadReplaceProblematicCharacters = false;
+        public bool URLRegexReplace = false;
+        public string URLRegexReplacePattern = "^https?://(.+)$";
+        public string URLRegexReplaceReplacement = "https://$1";
 
         #endregion Upload / File naming
 

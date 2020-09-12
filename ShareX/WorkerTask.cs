@@ -34,6 +34,7 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -784,6 +785,12 @@ namespace ShareX
         {
             try
             {
+                if (Info.TaskSettings.UploadSettings.URLRegexReplace)
+                {
+                    Info.Result.URL = Regex.Replace(Info.Result.URL, Info.TaskSettings.UploadSettings.URLRegexReplacePattern,
+                        Info.TaskSettings.UploadSettings.URLRegexReplaceReplacement);
+                }
+
                 if (Info.TaskSettings.AdvancedSettings.ResultForceHTTPS)
                 {
                     Info.Result.ForceHTTPS();
