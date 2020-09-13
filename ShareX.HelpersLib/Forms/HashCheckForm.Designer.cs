@@ -128,6 +128,7 @@
             resources.ApplyResources(this.txtTarget, "txtTarget");
             this.txtTarget.Name = "txtTarget";
             this.txtTarget.TextChanged += new System.EventHandler(this.txtTarget_TextChanged);
+            this.txtTarget.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtTarget_KeyDown);
             // 
             // lblFilePath
             // 

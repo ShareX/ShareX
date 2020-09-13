@@ -165,14 +165,6 @@ namespace ShareX.HelpersLib
 
         private void txtTarget_TextChanged(object sender, EventArgs e)
         {
-            string target = txtTarget.Text;
-
-            if (!string.IsNullOrEmpty(target))
-            {
-                txtTarget.Text = target.RemoveWhiteSpaces().ToUpperInvariant();
-                txtTarget.Select(txtTarget.TextLength, 0);
-            }
-
             UpdateResult();
         }
 
@@ -181,6 +173,14 @@ namespace ShareX.HelpersLib
             if (e.Control && e.KeyCode == Keys.A)
             {
                 txtResult.SelectAll();
+            }
+        }
+
+        private void txtTarget_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Control && e.KeyCode == Keys.A)
+            {
+                txtTarget.SelectAll();
             }
         }
 
