@@ -41,6 +41,12 @@
             this.lblFilePath = new System.Windows.Forms.Label();
             this.tcMain = new System.Windows.Forms.TabControl();
             this.tpFileHashCheck = new System.Windows.Forms.TabPage();
+            this.lblFilePath2 = new System.Windows.Forms.Label();
+            this.txtFilePath2 = new System.Windows.Forms.TextBox();
+            this.btnFilePathBrowse2 = new System.Windows.Forms.Button();
+            this.cbCompareTwoFiles = new System.Windows.Forms.CheckBox();
+            this.pbProgress = new System.Windows.Forms.ProgressBar();
+            this.lblProgressPercentage = new System.Windows.Forms.Label();
             this.tpTextConversions = new System.Windows.Forms.TabPage();
             this.btnHashCheckCopyAll = new System.Windows.Forms.Button();
             this.txtHashCheckHash = new System.Windows.Forms.TextBox();
@@ -60,12 +66,6 @@
             this.btnHashCheckEncodeText = new System.Windows.Forms.Button();
             this.txtHashCheckText = new System.Windows.Forms.TextBox();
             this.lblHashCheckText = new System.Windows.Forms.Label();
-            this.cbCompareTwoFiles = new System.Windows.Forms.CheckBox();
-            this.lblFilePath2 = new System.Windows.Forms.Label();
-            this.txtFilePath2 = new System.Windows.Forms.TextBox();
-            this.btnFilePathBrowse2 = new System.Windows.Forms.Button();
-            this.pbProgress = new System.Windows.Forms.ProgressBar();
-            this.lblProgressPercentage = new System.Windows.Forms.Label();
             this.tcMain.SuspendLayout();
             this.tpFileHashCheck.SuspendLayout();
             this.tpTextConversions.SuspendLayout();
@@ -166,6 +166,41 @@
             this.tpFileHashCheck.Name = "tpFileHashCheck";
             this.tpFileHashCheck.DragDrop += new System.Windows.Forms.DragEventHandler(this.tpFileHashCheck_DragDrop);
             this.tpFileHashCheck.DragEnter += new System.Windows.Forms.DragEventHandler(this.tpFileHashCheck_DragEnter);
+            // 
+            // lblFilePath2
+            // 
+            resources.ApplyResources(this.lblFilePath2, "lblFilePath2");
+            this.lblFilePath2.Name = "lblFilePath2";
+            // 
+            // txtFilePath2
+            // 
+            this.txtFilePath2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            resources.ApplyResources(this.txtFilePath2, "txtFilePath2");
+            this.txtFilePath2.Name = "txtFilePath2";
+            // 
+            // btnFilePathBrowse2
+            // 
+            resources.ApplyResources(this.btnFilePathBrowse2, "btnFilePathBrowse2");
+            this.btnFilePathBrowse2.Name = "btnFilePathBrowse2";
+            this.btnFilePathBrowse2.UseVisualStyleBackColor = true;
+            this.btnFilePathBrowse2.Click += new System.EventHandler(this.btnFilePathBrowse2_Click);
+            // 
+            // cbCompareTwoFiles
+            // 
+            resources.ApplyResources(this.cbCompareTwoFiles, "cbCompareTwoFiles");
+            this.cbCompareTwoFiles.Name = "cbCompareTwoFiles";
+            this.cbCompareTwoFiles.UseVisualStyleBackColor = true;
+            this.cbCompareTwoFiles.CheckedChanged += new System.EventHandler(this.cbCompareTwoFiles_CheckedChanged);
+            // 
+            // pbProgress
+            // 
+            resources.ApplyResources(this.pbProgress, "pbProgress");
+            this.pbProgress.Name = "pbProgress";
+            // 
+            // lblProgressPercentage
+            // 
+            resources.ApplyResources(this.lblProgressPercentage, "lblProgressPercentage");
+            this.lblProgressPercentage.Name = "lblProgressPercentage";
             // 
             // tpTextConversions
             // 
@@ -292,41 +327,6 @@
             // 
             resources.ApplyResources(this.lblHashCheckText, "lblHashCheckText");
             this.lblHashCheckText.Name = "lblHashCheckText";
-            // 
-            // cbCompareTwoFiles
-            // 
-            resources.ApplyResources(this.cbCompareTwoFiles, "cbCompareTwoFiles");
-            this.cbCompareTwoFiles.Name = "cbCompareTwoFiles";
-            this.cbCompareTwoFiles.UseVisualStyleBackColor = true;
-            this.cbCompareTwoFiles.CheckedChanged += new System.EventHandler(this.cbCompareTwoFiles_CheckedChanged);
-            // 
-            // lblFilePath2
-            // 
-            resources.ApplyResources(this.lblFilePath2, "lblFilePath2");
-            this.lblFilePath2.Name = "lblFilePath2";
-            // 
-            // txtFilePath2
-            // 
-            this.txtFilePath2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            resources.ApplyResources(this.txtFilePath2, "txtFilePath2");
-            this.txtFilePath2.Name = "txtFilePath2";
-            // 
-            // btnFilePathBrowse2
-            // 
-            resources.ApplyResources(this.btnFilePathBrowse2, "btnFilePathBrowse2");
-            this.btnFilePathBrowse2.Name = "btnFilePathBrowse2";
-            this.btnFilePathBrowse2.UseVisualStyleBackColor = true;
-            this.btnFilePathBrowse2.Click += new System.EventHandler(this.btnFilePathBrowse2_Click);
-            // 
-            // pbProgress
-            // 
-            resources.ApplyResources(this.pbProgress, "pbProgress");
-            this.pbProgress.Name = "pbProgress";
-            // 
-            // lblProgressPercentage
-            // 
-            resources.ApplyResources(this.lblProgressPercentage, "lblProgressPercentage");
-            this.lblProgressPercentage.Name = "lblProgressPercentage";
             // 
             // HashCheckForm
             // 
