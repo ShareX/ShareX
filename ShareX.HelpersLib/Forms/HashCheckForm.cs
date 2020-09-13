@@ -48,7 +48,6 @@ namespace ShareX.HelpersLib
 
             hashCheck = new HashCheck();
             hashCheck.FileCheckProgressChanged += fileCheck_FileCheckProgressChanged;
-            hashCheck.FileCheckCompleted += fileCheck_FileCheckCompleted;
 
             translator = new Translator();
         }
@@ -111,7 +110,7 @@ namespace ShareX.HelpersLib
             UpdateCompareControls();
         }
 
-        private void btnStartHashCheck_Click(object sender, EventArgs e)
+        private async void btnStartHashCheck_Click(object sender, EventArgs e)
         {
             if (hashCheck.IsWorking)
             {
@@ -119,14 +118,16 @@ namespace ShareX.HelpersLib
             }
             else
             {
-                HashType hashType = (HashType)cbHashType.SelectedIndex;
+                btnStartHashCheck.Text = Resources.Stop;
+                pbProgress.Value = 0;
+                txtResult.Text = "";
 
-                if (hashCheck.Start(txtFilePath.Text, hashType))
-                {
-                    btnStartHashCheck.Text = Resources.Stop;
-                    pbProgress.Value = 0;
-                    txtResult.Text = "";
-                }
+                string filePath = txtFilePath.Text;
+                HashType hashType = (HashType)cbHashType.SelectedIndex;
+                string result = await hashCheck.Start(filePath, hashType);
+
+                btnStartHashCheck.Text = Resources.Start;
+                txtResult.Text = result?.ToUpperInvariant();
             }
         }
 
@@ -134,12 +135,6 @@ namespace ShareX.HelpersLib
         {
             pbProgress.Value = (int)progress;
             lblProgressPercentage.Text = (int)progress + "%";
-        }
-
-        private void fileCheck_FileCheckCompleted(string result, bool cancelled)
-        {
-            btnStartHashCheck.Text = Resources.Start;
-            txtResult.Text = result.ToUpperInvariant();
         }
 
         private void txtResult_TextChanged(object sender, EventArgs e)
