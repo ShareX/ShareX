@@ -373,7 +373,7 @@ namespace ShareX.HelpersLib
             {
                 offset += 12;
             }
-            IntPtr scan0 = new IntPtr(handle.AddrOfPinnedObject().ToInt32() + offset);
+            IntPtr scan0 = new IntPtr(handle.AddrOfPinnedObject().ToInt64() + offset);
             Bitmap bitmap = new Bitmap(bmi.bV5Width, bmi.bV5Height, stride, PixelFormat.Format32bppPArgb, scan0);
             handle.Free();
             return bitmap;

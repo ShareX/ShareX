@@ -165,6 +165,7 @@
             this.tsmiUploadSelectedFile = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiDownloadSelectedURL = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiEditSelectedFile = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiAddImageEffects = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiRunAction = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiDeleteSelectedItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiDeleteSelectedFile = new System.Windows.Forms.ToolStripMenuItem();
@@ -292,7 +293,8 @@
             this.tsbPatreon = new System.Windows.Forms.ToolStripButton();
             this.tsbBitcoin = new System.Windows.Forms.ToolStripButton();
             this.tsbGitHub = new System.Windows.Forms.ToolStripButton();
-            this.tsmiAddImageEffects = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiClipboardViewer = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiTrayClipboardViewer = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.scMain)).BeginInit();
             this.scMain.Panel1.SuspendLayout();
             this.scMain.Panel2.SuspendLayout();
@@ -684,6 +686,7 @@
             this.tsmiImageThumbnailer,
             this.tsmiVideoConverter,
             this.tsmiVideoThumbnailer,
+            this.tsmiClipboardViewer,
             this.tsmiTweetMessage,
             this.tsmiMonitorTest});
             this.tsddbTools.Image = global::ShareX.Properties.Resources.toolbox;
@@ -1350,6 +1353,13 @@
             resources.ApplyResources(this.tsmiEditSelectedFile, "tsmiEditSelectedFile");
             this.tsmiEditSelectedFile.Click += new System.EventHandler(this.tsmiEditSelectedFile_Click);
             // 
+            // tsmiAddImageEffects
+            // 
+            this.tsmiAddImageEffects.Image = global::ShareX.Properties.Resources.image_saturation;
+            this.tsmiAddImageEffects.Name = "tsmiAddImageEffects";
+            resources.ApplyResources(this.tsmiAddImageEffects, "tsmiAddImageEffects");
+            this.tsmiAddImageEffects.Click += new System.EventHandler(this.tsmiAddImageEffects_Click);
+            // 
             // tsmiRunAction
             // 
             this.tsmiRunAction.Image = global::ShareX.Properties.Resources.application_terminal;
@@ -1847,6 +1857,7 @@
             this.tsmiTrayImageThumbnailer,
             this.tsmiTrayVideoConverter,
             this.tsmiTrayVideoThumbnailer,
+            this.tsmiTrayClipboardViewer,
             this.tsmiTrayTweetMessage,
             this.tsmiTrayMonitorTest});
             this.tsmiTrayTools.Image = global::ShareX.Properties.Resources.toolbox;
@@ -2332,12 +2343,19 @@
             this.tsbGitHub.Padding = new System.Windows.Forms.Padding(1);
             this.tsbGitHub.Click += new System.EventHandler(this.TsbGitHub_Click);
             // 
-            // tsmiAddImageEffects
+            // tsmiClipboardViewer
             // 
-            this.tsmiAddImageEffects.Image = global::ShareX.Properties.Resources.image_saturation;
-            this.tsmiAddImageEffects.Name = "tsmiAddImageEffects";
-            resources.ApplyResources(this.tsmiAddImageEffects, "tsmiAddImageEffects");
-            this.tsmiAddImageEffects.Click += new System.EventHandler(this.tsmiAddImageEffects_Click);
+            this.tsmiClipboardViewer.Image = global::ShareX.Properties.Resources.clipboard_block;
+            this.tsmiClipboardViewer.Name = "tsmiClipboardViewer";
+            resources.ApplyResources(this.tsmiClipboardViewer, "tsmiClipboardViewer");
+            this.tsmiClipboardViewer.Click += new System.EventHandler(this.tsmiClipboardViewer_Click);
+            // 
+            // tsmiTrayClipboardViewer
+            // 
+            this.tsmiTrayClipboardViewer.Image = global::ShareX.Properties.Resources.clipboard_block;
+            this.tsmiTrayClipboardViewer.Name = "tsmiTrayClipboardViewer";
+            resources.ApplyResources(this.tsmiTrayClipboardViewer, "tsmiTrayClipboardViewer");
+            this.tsmiTrayClipboardViewer.Click += new System.EventHandler(this.tsmiClipboardViewer_Click);
             // 
             // MainForm
             // 
@@ -2644,5 +2662,7 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiVideoConverter;
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayVideoConverter;
         private System.Windows.Forms.ToolStripMenuItem tsmiAddImageEffects;
+        private System.Windows.Forms.ToolStripMenuItem tsmiClipboardViewer;
+        private System.Windows.Forms.ToolStripMenuItem tsmiTrayClipboardViewer;
     }
 }
