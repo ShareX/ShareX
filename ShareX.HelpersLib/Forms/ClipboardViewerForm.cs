@@ -44,6 +44,8 @@ namespace ShareX.HelpersLib
 
         private void RefreshClipboardContentList()
         {
+            ResetSelected();
+
             lvClipboardContentList.Items.Clear();
 
             CurrentDataObject = (DataObject)Clipboard.GetDataObject();
@@ -57,6 +59,8 @@ namespace ShareX.HelpersLib
                         ListViewItem lvi = new ListViewItem(format);
                         lvClipboardContentList.Items.Add(lvi);
                     }
+
+                    lvClipboardContentList.Items[0].Selected = true;
                 }
             }
         }
@@ -80,38 +84,45 @@ namespace ShareX.HelpersLib
                     }
                     else
                     {
-                        switch (data)
+                        try
                         {
-                            case MemoryStream ms:
-                                if (format.Equals(ClipboardHelpers.FORMAT_PNG, StringComparison.OrdinalIgnoreCase))
-                                {
-                                    using (Bitmap bmp = new Bitmap(ms))
+                            switch (data)
+                            {
+                                case MemoryStream ms:
+                                    if (format.Equals(ClipboardHelpers.FORMAT_PNG, StringComparison.OrdinalIgnoreCase))
                                     {
-                                        Bitmap clonedImage = ClipboardHelpersEx.CloneImage(bmp);
-                                        LoadImage(clonedImage);
+                                        using (Bitmap bmp = new Bitmap(ms))
+                                        {
+                                            Bitmap clonedImage = ClipboardHelpersEx.CloneImage(bmp);
+                                            LoadImage(clonedImage);
+                                        }
                                     }
-                                }
-                                else if (format.Equals(DataFormats.Dib, StringComparison.OrdinalIgnoreCase))
-                                {
-                                    Bitmap bmp = ClipboardHelpersEx.ImageFromClipboardDib(ms.ToArray());
+                                    else if (format.Equals(DataFormats.Dib, StringComparison.OrdinalIgnoreCase))
+                                    {
+                                        Bitmap bmp = ClipboardHelpersEx.ImageFromClipboardDib(ms.ToArray());
+                                        LoadImage(bmp);
+                                    }
+                                    else if (format.Equals(ClipboardHelpers.FORMAT_17, StringComparison.OrdinalIgnoreCase))
+                                    {
+                                        Bitmap bmp = ClipboardHelpersEx.DIBV5ToBitmap(ms.ToArray());
+                                        LoadImage(bmp);
+                                    }
+                                    else
+                                    {
+                                        LoadText(data.ToString());
+                                    }
+                                    break;
+                                case Bitmap bmp:
                                     LoadImage(bmp);
-                                }
-                                else if (format.Equals(ClipboardHelpers.FORMAT_17, StringComparison.OrdinalIgnoreCase))
-                                {
-                                    Bitmap bmp = ClipboardHelpersEx.DIBV5ToBitmap(ms.ToArray());
-                                    LoadImage(bmp);
-                                }
-                                else
-                                {
+                                    break;
+                                default:
                                     LoadText(data.ToString());
-                                }
-                                break;
-                            case Bitmap bmp:
-                                LoadImage(bmp);
-                                break;
-                            default:
-                                LoadText(data.ToString());
-                                break;
+                                    break;
+                            }
+                        }
+                        catch (Exception e)
+                        {
+                            e.ShowError();
                         }
                     }
                 }

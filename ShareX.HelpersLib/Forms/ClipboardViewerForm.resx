@@ -147,6 +147,9 @@
   <data name="&gt;&gt;txtSelectedClipboardContent.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
+  <data name="btnRefresh.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="btnRefresh.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 8</value>
   </data>
@@ -170,6 +173,9 @@
   </data>
   <data name="&gt;&gt;btnRefresh.ZOrder" xml:space="preserve">
     <value>3</value>
+  </data>
+  <data name="btnClearClipboard.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="btnClearClipboard.Location" type="System.Drawing.Point, System.Drawing">
     <value>136, 8</value>
@@ -257,6 +263,9 @@
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>784, 561</value>
+  </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>
