@@ -362,5 +362,21 @@ namespace ShareX.HelpersLib
             targetImage.SetResolution(sourceImage.HorizontalResolution, sourceImage.VerticalResolution);
             return targetImage;
         }
+
+        public static Bitmap DIBV5ToBitmap(byte[] data)
+        {
+            GCHandle handle = GCHandle.Alloc(data, GCHandleType.Pinned);
+            BITMAPV5HEADER bmi = (BITMAPV5HEADER)Marshal.PtrToStructure(handle.AddrOfPinnedObject(), typeof(BITMAPV5HEADER));
+            int stride = -(int)(bmi.bV5SizeImage / bmi.bV5Height);
+            long offset = bmi.bV5Size + (bmi.bV5Height - 1) * (int)(bmi.bV5SizeImage / bmi.bV5Height);
+            if (bmi.bV5Compression == (uint)BitmapCompressionMode.BI_BITFIELDS)
+            {
+                offset += 12;
+            }
+            IntPtr scan0 = new IntPtr(handle.AddrOfPinnedObject().ToInt32() + offset);
+            Bitmap bitmap = new Bitmap(bmi.bV5Width, bmi.bV5Height, stride, PixelFormat.Format32bppPArgb, scan0);
+            handle.Free();
+            return bitmap;
+        }
     }
 }
