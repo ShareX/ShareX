@@ -122,12 +122,33 @@ namespace ShareX.HelpersLib
                 pbProgress.Value = 0;
                 txtResult.Text = "";
 
-                string filePath = txtFilePath.Text;
+                if (CompareTwoFiles)
+                {
+                    txtTarget.Text = "";
+                }
+
                 HashType hashType = (HashType)cbHashType.SelectedIndex;
+
+                string filePath = txtFilePath.Text;
                 string result = await hashCheck.Start(filePath, hashType);
 
+                if (!string.IsNullOrEmpty(result))
+                {
+                    txtResult.Text = result.ToUpperInvariant();
+
+                    if (CompareTwoFiles)
+                    {
+                        string filePath2 = txtFilePath2.Text;
+                        string result2 = await hashCheck.Start(filePath2, hashType);
+
+                        if (!string.IsNullOrEmpty(result2))
+                        {
+                            txtTarget.Text = result2.ToUpperInvariant();
+                        }
+                    }
+                }
+
                 btnStartHashCheck.Text = Resources.Start;
-                txtResult.Text = result?.ToUpperInvariant();
             }
         }
 
