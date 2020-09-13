@@ -33,8 +33,7 @@
             this.btnClearClipboard = new System.Windows.Forms.Button();
             this.lvClipboardContentList = new System.Windows.Forms.ListView();
             this.chFormat = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.pbSelectedClipboardContent = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pbSelectedClipboardContent)).BeginInit();
+            this.pbSelectedClipboardContent = new ShareX.HelpersLib.MyPictureBox();
             this.SuspendLayout();
             // 
             // txtSelectedClipboardContent
@@ -97,13 +96,16 @@
             this.pbSelectedClipboardContent.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.pbSelectedClipboardContent.BackColor = System.Drawing.SystemColors.Window;
             this.pbSelectedClipboardContent.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbSelectedClipboardContent.DrawCheckeredBackground = true;
+            this.pbSelectedClipboardContent.FullscreenOnClick = true;
             this.pbSelectedClipboardContent.Location = new System.Drawing.Point(264, 8);
             this.pbSelectedClipboardContent.Name = "pbSelectedClipboardContent";
+            this.pbSelectedClipboardContent.PictureBoxBackColor = System.Drawing.SystemColors.Window;
+            this.pbSelectedClipboardContent.ShowImageSizeLabel = true;
             this.pbSelectedClipboardContent.Size = new System.Drawing.Size(512, 544);
-            this.pbSelectedClipboardContent.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pbSelectedClipboardContent.TabIndex = 4;
-            this.pbSelectedClipboardContent.TabStop = false;
             // 
             // ClipboardViewerForm
             // 
@@ -119,7 +121,6 @@
             this.Name = "ClipboardViewerForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ShareX - Clipboard viewer";
-            ((System.ComponentModel.ISupportInitialize)(this.pbSelectedClipboardContent)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -131,6 +132,6 @@
         private System.Windows.Forms.Button btnClearClipboard;
         private System.Windows.Forms.ListView lvClipboardContentList;
         private System.Windows.Forms.ColumnHeader chFormat;
-        private System.Windows.Forms.PictureBox pbSelectedClipboardContent;
+        private MyPictureBox pbSelectedClipboardContent;
     }
 }

@@ -124,13 +124,12 @@ namespace ShareX.HelpersLib
             txtSelectedClipboardContent.Clear();
 
             pbSelectedClipboardContent.Visible = false;
-            pbSelectedClipboardContent.Image?.Dispose();
-            pbSelectedClipboardContent.Image = null;
+            pbSelectedClipboardContent.Reset();
         }
 
         private void LoadImage(Bitmap bmp)
         {
-            pbSelectedClipboardContent.Image = bmp;
+            pbSelectedClipboardContent.LoadImage(bmp);
             pbSelectedClipboardContent.Visible = true;
         }
 
