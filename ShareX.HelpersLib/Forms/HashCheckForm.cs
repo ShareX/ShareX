@@ -32,6 +32,8 @@ namespace ShareX.HelpersLib
 {
     public partial class HashCheckForm : Form
     {
+        public bool CompareTwoFiles { get; private set; }
+
         private HashCheck hashCheck;
         private Translator translator;
 
@@ -40,6 +42,7 @@ namespace ShareX.HelpersLib
             InitializeComponent();
             ShareXResources.ApplyTheme(this);
 
+            UpdateCompareControls();
             cbHashType.Items.AddRange(Helpers.GetEnumDescriptions<HashType>());
             cbHashType.SelectedIndex = (int)HashType.SHA1;
 
@@ -74,9 +77,38 @@ namespace ShareX.HelpersLib
             }
         }
 
+        private void UpdateCompareControls()
+        {
+            lblFilePath2.Enabled = txtFilePath2.Enabled = btnFilePathBrowse2.Enabled = CompareTwoFiles;
+
+            if (CompareTwoFiles)
+            {
+                lblResult.Text = "Result of first file:";
+                lblTarget.Text = "Result of second file:";
+            }
+            else
+            {
+                lblResult.Text = "Result:";
+                lblTarget.Text = "Target:";
+            }
+
+            txtTarget.ReadOnly = CompareTwoFiles;
+        }
+
         private void btnFilePathBrowse_Click(object sender, EventArgs e)
         {
             Helpers.BrowseFile(txtFilePath);
+        }
+
+        private void btnFilePathBrowse2_Click(object sender, EventArgs e)
+        {
+            Helpers.BrowseFile(txtFilePath2);
+        }
+
+        private void cbCompareTwoFiles_CheckedChanged(object sender, EventArgs e)
+        {
+            CompareTwoFiles = cbCompareTwoFiles.Checked;
+            UpdateCompareControls();
         }
 
         private void btnStartHashCheck_Click(object sender, EventArgs e)
