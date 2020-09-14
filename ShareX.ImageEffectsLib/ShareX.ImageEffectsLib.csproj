@@ -114,6 +114,7 @@
     <Compile Include="Drawings\DrawText.cs" />
     <Compile Include="Drawings\DrawTextEx.cs" />
     <Compile Include="Enums.cs" />
+    <Compile Include="Filters\ColorDepth.cs" />
     <Compile Include="Filters\EdgeDetect.cs" />
     <Compile Include="Filters\Emboss.cs" />
     <Compile Include="Filters\GaussianBlur.cs" />

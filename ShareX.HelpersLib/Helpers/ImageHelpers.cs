@@ -1378,6 +1378,37 @@ namespace ShareX.HelpersLib
             }
         }
 
+        public static void ColorDepth(Bitmap bmp, int bitsPerChannel = 4)
+        {
+            if (bitsPerChannel < 1 || bitsPerChannel > 8)
+            {
+                return;
+            }
+
+            double colorsPerChannel = Math.Pow(2, bitsPerChannel);
+            double colorInterval = 255 / (colorsPerChannel - 1);
+
+            byte Remap(byte color, double interval)
+            {
+                return (byte) Math.Round((Math.Round(color / interval) * interval));
+            }
+
+            using (UnsafeBitmap unsafeBitmap = new UnsafeBitmap(bmp, true))
+            {
+                for (int y = 0; y < unsafeBitmap.Height; y++)
+                {
+                    for (int x = 0; x < unsafeBitmap.Width; x++)
+                    {
+                        ColorBgra color = unsafeBitmap.GetPixel(x, y);
+                        color.Red = Remap(color.Red, colorInterval);
+                        color.Green = Remap(color.Green, colorInterval);
+                        color.Blue = Remap(color.Blue, colorInterval);
+                        unsafeBitmap.SetPixel(x, y, color);
+                    }
+                }
+            }
+        }
+
         // http://incubator.quasimondo.com/processing/superfast_blur.php
         public static void FastBoxBlur(Bitmap bmp, int radius)
         {
