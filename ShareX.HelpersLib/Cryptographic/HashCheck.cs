@@ -62,7 +62,7 @@ namespace ShareX.HelpersLib
                     {
                         return HashCheckThread(filePath, hashType, progress, cts.Token);
                     }
-                    catch (OperationCanceledException e)
+                    catch (OperationCanceledException)
                     {
                     }
 
