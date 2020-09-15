@@ -185,6 +185,22 @@ namespace ShareX.ScreenCaptureLib
             Move(offset.X, offset.Y);
         }
 
+        public void MoveAbsolute(int x, int y, bool center = false)
+        {
+            if (center)
+            {
+                x -= Rectangle.Size.Width / 2;
+                y -= Rectangle.Size.Height / 2;
+            }
+
+            Move(x - Rectangle.X, y - Rectangle.Y);
+        }
+
+        public void MoveAbsolute(Point point, bool center = false)
+        {
+            MoveAbsolute(point.X, point.Y, center);
+        }
+
         public virtual void Resize(int x, int y, bool fromBottomRight)
         {
             if (fromBottomRight)

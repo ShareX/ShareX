@@ -1667,20 +1667,15 @@ namespace ShareX.ScreenCaptureLib
                 BaseShape shapeCopy = shape.Duplicate();
                 if (shapeCopy != null)
                 {
-                    Point offset;
-
                     if (insertMousePosition)
                     {
-                        Point pos = InputManager.ClientMousePosition;
-                        offset = new Point(pos.X - (shapeCopy.Rectangle.Size.Width / 2) - shapeCopy.Rectangle.X,
-                            pos.Y - (shapeCopy.Rectangle.Size.Height / 2) - shapeCopy.Rectangle.Y);
+                        shapeCopy.MoveAbsolute(InputManager.ClientMousePosition, true);
                     }
                     else
                     {
-                        offset = new Point(10, 10);
+                        shapeCopy.Move(10, 10);
                     }
 
-                    shapeCopy.Move(offset);
                     shapeCopy.OnMoved();
                     AddShape(shapeCopy);
                     SelectCurrentShape();
