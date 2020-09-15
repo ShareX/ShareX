@@ -1390,7 +1390,7 @@ namespace ShareX.HelpersLib
 
             byte Remap(byte color, double interval)
             {
-                return (byte) Math.Round((Math.Round(color / interval) * interval));
+                return (byte)Math.Round(Math.Round(color / interval) * interval);
             }
 
             using (UnsafeBitmap unsafeBitmap = new UnsafeBitmap(bmp, true))
