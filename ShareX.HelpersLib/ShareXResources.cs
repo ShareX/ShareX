@@ -229,6 +229,7 @@ namespace ShareX.HelpersLib
             if (cms != null)
             {
                 cms.Renderer = new ToolStripDarkRenderer();
+                cms.Font = Theme.ContextMenuFont;
                 cms.Opacity = Theme.ContextMenuOpacityDouble;
                 ApplyCustomThemeToToolStripItemCollection(cms.Items);
             }

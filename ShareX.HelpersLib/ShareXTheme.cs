@@ -72,6 +72,8 @@ namespace ShareX.HelpersLib
         [Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
         public Color MenuCheckBackgroundColor { get; set; }
 
+        public Font ContextMenuFont { get; set; } = new Font("Segoe UI", 10);
+
         public int ContextMenuOpacity { get; set; } = 100;
 
         [Browsable(false)]
@@ -91,7 +93,7 @@ namespace ShareX.HelpersLib
         }
 
         public static ShareXTheme GetDarkTheme()
-        { 
+        {
             return new ShareXTheme()
             {
                 Name = "Dark",
