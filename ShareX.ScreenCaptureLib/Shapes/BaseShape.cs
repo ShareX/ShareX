@@ -197,6 +197,16 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
+        public virtual BaseShape Duplicate()
+        {
+            ShapeManager manager = Manager;
+            Manager = null;
+            BaseShape shape = this.Copy();
+            Manager = manager;
+            shape.Manager = manager;
+            return shape;
+        }
+
         public virtual void OnCreating()
         {
             Point pos = InputManager.ClientMousePosition;
