@@ -174,7 +174,7 @@ namespace ShareX.MediaLib
 
         private Task<bool> StartEncodingAsync()
         {
-            return Task.Run(StartEncoding);
+            return Task.Run(() => StartEncoding());
         }
 
         private void Manager_EncodeProgressChanged(float percentage)

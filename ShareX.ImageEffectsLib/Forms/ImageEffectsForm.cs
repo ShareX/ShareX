@@ -120,9 +120,9 @@ namespace ShareX.ImageEffectsLib
                 typeof(DrawBorder),
                 typeof(DrawCheckerboard),
                 typeof(DrawImage),
+                typeof(DrawParticles),
                 typeof(DrawTextEx),
-                typeof(DrawText),
-                typeof(DrawParticles));
+                typeof(DrawText));
 
             AddEffectToContextMenu(Resources.ImageEffectsForm_AddAllEffectsToTreeView_Manipulations,
                 typeof(AutoCrop),
@@ -140,13 +140,13 @@ namespace ShareX.ImageEffectsLib
                 typeof(Alpha),
                 typeof(BlackWhite),
                 typeof(Brightness),
+                typeof(MatrixColor), // "Color matrix"
                 typeof(Colorize),
                 typeof(Contrast),
                 typeof(Gamma),
                 typeof(Grayscale),
                 typeof(Hue),
                 typeof(Inverse),
-                typeof(MatrixColor),
                 typeof(Polaroid),
                 typeof(Saturation),
                 typeof(SelectiveColor),
@@ -154,10 +154,11 @@ namespace ShareX.ImageEffectsLib
 
             AddEffectToContextMenu(Resources.ImageEffectsForm_AddAllEffectsToTreeView_Filters,
                 typeof(Blur),
+                typeof(ColorDepth),
+                typeof(MatrixConvolution), // "Convolution matrix"
                 typeof(EdgeDetect),
                 typeof(Emboss),
                 typeof(GaussianBlur),
-                typeof(MatrixConvolution),
                 typeof(MeanRemoval),
                 typeof(Outline),
                 typeof(Pixelate),
