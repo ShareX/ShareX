@@ -1668,6 +1668,7 @@ namespace ShareX.ScreenCaptureLib
                 if (shapeCopy != null)
                 {
                     shapeCopy.Move(10, 10);
+                    shapeCopy.OnMoved();
                     AddShape(shapeCopy);
                     SelectCurrentShape();
                 }
