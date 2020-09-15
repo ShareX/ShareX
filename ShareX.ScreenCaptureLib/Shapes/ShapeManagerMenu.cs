@@ -658,7 +658,7 @@ namespace ShareX.ScreenCaptureLib
             tsmiDuplicate = new ToolStripMenuItem("Duplicate");
             tsmiDuplicate.Image = Resources.document_copy;
             tsmiDuplicate.ShortcutKeyDisplayString = "Ctrl+D";
-            tsmiDuplicate.Click += (sender, e) => DuplicateCurrrentShape();
+            tsmiDuplicate.Click += (sender, e) => DuplicateCurrrentShape(false);
             tsddbEdit.DropDownItems.Add(tsmiDuplicate);
 
             tsddbEdit.DropDownItems.Add(new ToolStripSeparator());

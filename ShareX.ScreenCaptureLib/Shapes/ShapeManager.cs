@@ -663,7 +663,7 @@ namespace ShareX.ScreenCaptureLib
                             CurrentTool = ShapeType.EffectHighlight;
                             break;
                         case Keys.Control | Keys.D:
-                            DuplicateCurrrentShape();
+                            DuplicateCurrrentShape(true);
                             break;
                         case Keys.Control | Keys.V:
                             PasteFromClipboard(true);
@@ -1658,7 +1658,7 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        private void DuplicateCurrrentShape()
+        private void DuplicateCurrrentShape(bool insertMousePosition)
         {
             BaseShape shape = CurrentShape;
 
@@ -1667,7 +1667,20 @@ namespace ShareX.ScreenCaptureLib
                 BaseShape shapeCopy = shape.Duplicate();
                 if (shapeCopy != null)
                 {
-                    shapeCopy.Move(10, 10);
+                    Point offset;
+
+                    if (insertMousePosition)
+                    {
+                        Point pos = InputManager.ClientMousePosition;
+                        offset = new Point(pos.X - (shapeCopy.Rectangle.Size.Width / 2) - shapeCopy.Rectangle.X,
+                            pos.Y - (shapeCopy.Rectangle.Size.Height / 2) - shapeCopy.Rectangle.Y);
+                    }
+                    else
+                    {
+                        offset = new Point(10, 10);
+                    }
+
+                    shapeCopy.Move(offset);
                     shapeCopy.OnMoved();
                     AddShape(shapeCopy);
                     SelectCurrentShape();
