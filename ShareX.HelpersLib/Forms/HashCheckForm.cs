@@ -80,6 +80,7 @@ namespace ShareX.HelpersLib
         {
             lblFilePath2.Enabled = txtFilePath2.Enabled = btnFilePathBrowse2.Enabled = CompareTwoFiles;
 
+            // TODO: Translate
             if (CompareTwoFiles)
             {
                 lblResult.Text = "Result of first file:";

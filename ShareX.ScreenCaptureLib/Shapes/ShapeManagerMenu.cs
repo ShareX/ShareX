@@ -48,8 +48,8 @@ namespace ShareX.ScreenCaptureLib
         private ToolStripEx tsMain;
         private ToolStripButton tsbSaveImage, tsbBorderColor, tsbFillColor, tsbHighlightColor;
         private ToolStripDropDownButton tsddbShapeOptions;
-        private ToolStripMenuItem tsmiArrowHeadsBothSide, tsmiShadow, tsmiShadowColor, tsmiStepUseLetters, tsmiUndo, tsmiDelete, tsmiDeleteAll, tsmiMoveTop,
-            tsmiMoveUp, tsmiMoveDown, tsmiMoveBottom, tsmiRegionCapture, tsmiQuickCrop, tsmiShowMagnifier;
+        private ToolStripMenuItem tsmiArrowHeadsBothSide, tsmiShadow, tsmiShadowColor, tsmiStepUseLetters, tsmiUndo, tsmiDuplicate, tsmiDelete, tsmiDeleteAll,
+            tsmiMoveTop, tsmiMoveUp, tsmiMoveDown, tsmiMoveBottom, tsmiRegionCapture, tsmiQuickCrop, tsmiShowMagnifier;
         private ToolStripLabeledNumericUpDown tslnudBorderSize, tslnudCornerRadius, tslnudCenterPoints, tslnudBlurRadius, tslnudPixelateSize, tslnudStepFontSize,
             tslnudMagnifierPixelCount, tslnudStartingStepValue, tslnudMagnifyStrength;
         private ToolStripLabel tslDragLeft, tslDragRight;
@@ -653,6 +653,13 @@ namespace ShareX.ScreenCaptureLib
             tsmiPaste.ShortcutKeyDisplayString = "Ctrl+V";
             tsmiPaste.Click += (sender, e) => PasteFromClipboard(false);
             tsddbEdit.DropDownItems.Add(tsmiPaste);
+
+            // TODO: Translate
+            tsmiDuplicate = new ToolStripMenuItem("Duplicate");
+            tsmiDuplicate.Image = Resources.document_copy;
+            tsmiDuplicate.ShortcutKeyDisplayString = "Ctrl+D";
+            tsmiDuplicate.Click += (sender, e) => DuplicateCurrrentShape();
+            tsddbEdit.DropDownItems.Add(tsmiDuplicate);
 
             tsddbEdit.DropDownItems.Add(new ToolStripSeparator());
 
@@ -1418,7 +1425,7 @@ namespace ShareX.ScreenCaptureLib
             }
 
             tsmiUndo.Enabled = tsmiDeleteAll.Enabled = Shapes.Count > 0;
-            tsmiDelete.Enabled = tsmiMoveTop.Enabled = tsmiMoveUp.Enabled = tsmiMoveDown.Enabled = tsmiMoveBottom.Enabled = CurrentShape != null;
+            tsmiDuplicate.Enabled = tsmiDelete.Enabled = tsmiMoveTop.Enabled = tsmiMoveUp.Enabled = tsmiMoveDown.Enabled = tsmiMoveBottom.Enabled = CurrentShape != null;
 
             switch (shapeType)
             {
