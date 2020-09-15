@@ -28,24 +28,18 @@ using System.Drawing;
 
 namespace ShareX.ScreenCaptureLib
 {
-    public class CursorDrawingShape : BaseDrawingShape
+    public class CursorDrawingShape : ImageDrawingShape
     {
         public override ShapeType ShapeType { get; } = ShapeType.DrawingCursor;
-
-        private Bitmap cursorBitmap;
-
-        public CursorDrawingShape()
-        {
-        }
 
         public void UpdateCursor(IntPtr cursorHandle, Point position)
         {
             Dispose();
 
             Icon icon = Icon.FromHandle(cursorHandle);
-            cursorBitmap = icon.ToBitmap();
+            Image = icon.ToBitmap();
 
-            Rectangle = new Rectangle(position, cursorBitmap.Size);
+            Rectangle = new Rectangle(position, Image.Size);
         }
 
         public override void ShowNodes()
@@ -61,9 +55,9 @@ namespace ShareX.ScreenCaptureLib
 
         public override void OnDraw(Graphics g)
         {
-            if (cursorBitmap != null)
+            if (Image != null)
             {
-                g.DrawImage(cursorBitmap, Rectangle);
+                g.DrawImage(Image, Rectangle);
 
                 if (!Manager.IsRenderingOutput && Manager.CurrentTool == ShapeType.DrawingCursor)
                 {
@@ -75,14 +69,6 @@ namespace ShareX.ScreenCaptureLib
         public override void Resize(int x, int y, bool fromBottomRight)
         {
             Move(x, y);
-        }
-
-        public override void Dispose()
-        {
-            if (cursorBitmap != null)
-            {
-                cursorBitmap.Dispose();
-            }
         }
     }
 }
