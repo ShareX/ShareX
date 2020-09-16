@@ -588,7 +588,7 @@ namespace ShareX
 
         private void UpdateImageEffectsMenu(ToolStripDropDownItem parent)
         {
-            int indexAddImageEffects = (int)AfterCaptureTasks.AddImageEffects - 1;
+            int indexAddImageEffects = AfterCaptureTasks.AddImageEffects.GetIndex() - 1;
             ToolStripMenuItem tsmiAddImageEffects = (ToolStripMenuItem)parent.DropDownItems[indexAddImageEffects];
             tsmiAddImageEffects.DropDownItems.Clear();
 
