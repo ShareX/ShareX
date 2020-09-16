@@ -566,7 +566,13 @@ namespace ShareX.HelpersLib
 
         public static void DisableMenuCloseOnClick(this ToolStripDropDownItem tsddi)
         {
-            tsddi.DropDown.Closing += (sender, e) => e.Cancel = e.CloseReason == ToolStripDropDownCloseReason.ItemClicked;
+            tsddi.DropDown.Closing -= DisableMenuCloseOnClick_DropDown_Closing;
+            tsddi.DropDown.Closing += DisableMenuCloseOnClick_DropDown_Closing;
+        }
+
+        private static void DisableMenuCloseOnClick_DropDown_Closing(object sender, ToolStripDropDownClosingEventArgs e)
+        {
+            e.Cancel = e.CloseReason == ToolStripDropDownCloseReason.ItemClicked;
         }
 
         public static void SetValue(this NumericUpDown nud, decimal number)

@@ -590,6 +590,7 @@ namespace ShareX
         {
             int indexAddImageEffects = AfterCaptureTasks.AddImageEffects.GetIndex() - 1;
             ToolStripMenuItem tsmiAddImageEffects = (ToolStripMenuItem)parent.DropDownItems[indexAddImageEffects];
+            tsmiAddImageEffects.DisableMenuCloseOnClick();
             tsmiAddImageEffects.DropDownItems.Clear();
 
             for (int i = 0; i < Program.DefaultTaskSettings.ImageSettings.ImageEffectPresets.Count; i++)
