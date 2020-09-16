@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.ImageEffectsLib;
 using ShareX.Properties;
 using ShareX.ScreenCaptureLib;
 using ShareX.UploadersLib;
@@ -96,6 +97,8 @@ namespace ShareX
 
             AddMultiEnumItems<AfterCaptureTasks>(x => Program.DefaultTaskSettings.AfterCaptureJob = Program.DefaultTaskSettings.AfterCaptureJob.Swap(x),
                 tsddbAfterCaptureTasks, tsmiTrayAfterCaptureTasks);
+            tsddbAfterCaptureTasks.DropDownOpening += TsddbAfterCaptureTasks_DropDownOpening;
+            tsmiTrayAfterCaptureTasks.DropDownOpening += TsmiTrayAfterCaptureTasks_DropDownOpening;
             AddMultiEnumItems<AfterUploadTasks>(x => Program.DefaultTaskSettings.AfterUploadJob = Program.DefaultTaskSettings.AfterUploadJob.Swap(x),
                 tsddbAfterUploadTasks, tsmiTrayAfterUploadTasks);
             AddEnumItems<ImageDestination>(x =>
@@ -491,15 +494,16 @@ namespace ShareX
             }
         }
 
-        private void AddEnumItems<T>(Action<T> selectedEnum, params ToolStripDropDownItem[] parents)
+        private void AddEnumItems<T>(Action<T> selectedEnum, params ToolStripDropDownItem[] parents) where T : Enum
         {
-            string[] enums = Helpers.GetLocalizedEnumDescriptions<T>();
+            T[] enums = Helpers.GetEnums<T>();
 
             foreach (ToolStripDropDownItem parent in parents)
             {
                 for (int i = 0; i < enums.Length; i++)
                 {
-                    ToolStripMenuItem tsmi = new ToolStripMenuItem(enums[i]);
+                    T currentEnum = enums[i];
+                    ToolStripMenuItem tsmi = new ToolStripMenuItem(currentEnum.GetLocalizedDescription());
 
                     int index = i;
 
@@ -514,7 +518,7 @@ namespace ShareX
                             }
                         }
 
-                        selectedEnum((T)Enum.ToObject(typeof(T), index));
+                        selectedEnum(currentEnum);
 
                         UpdateUploaderMenuNames();
                     };
@@ -552,14 +556,15 @@ namespace ShareX
 
         private void AddMultiEnumItems<T>(Action<T> selectedEnum, params ToolStripDropDownItem[] parents) where T : Enum
         {
-            string[] enums = Helpers.GetLocalizedEnumDescriptions<T>().Skip(1).ToArray();
+            T[] enums = Helpers.GetEnums<T>().Skip(1).ToArray();
 
             foreach (ToolStripDropDownItem parent in parents)
             {
                 for (int i = 0; i < enums.Length; i++)
                 {
-                    ToolStripMenuItem tsmi = new ToolStripMenuItem(enums[i]);
-                    tsmi.Image = TaskHelpers.FindMenuIcon<T>(i + 1);
+                    T currentEnum = enums[i];
+                    ToolStripMenuItem tsmi = new ToolStripMenuItem(currentEnum.GetLocalizedDescription());
+                    tsmi.Image = TaskHelpers.FindMenuIcon(currentEnum);
 
                     int index = i;
 
@@ -571,13 +576,34 @@ namespace ShareX
                             tsmi2.Checked = !tsmi2.Checked;
                         }
 
-                        selectedEnum((T)Enum.ToObject(typeof(T), 1 << index));
+                        selectedEnum(currentEnum);
 
                         UpdateUploaderMenuNames();
                     };
 
                     parent.DropDownItems.Add(tsmi);
                 }
+            }
+        }
+
+        private void UpdateImageEffectsMenu(ToolStripDropDownItem parent)
+        {
+            int indexAddImageEffects = (int)AfterCaptureTasks.AddImageEffects - 1;
+            ToolStripMenuItem tsmiAddImageEffects = (ToolStripMenuItem)parent.DropDownItems[indexAddImageEffects];
+            tsmiAddImageEffects.DropDownItems.Clear();
+
+            for (int i = 0; i < Program.DefaultTaskSettings.ImageSettings.ImageEffectPresets.Count; i++)
+            {
+                ImageEffectPreset effectPreset = Program.DefaultTaskSettings.ImageSettings.ImageEffectPresets[i];
+                ToolStripMenuItem tsmi = new ToolStripMenuItem(effectPreset.ToString());
+                tsmi.Checked = i == Program.DefaultTaskSettings.ImageSettings.SelectedImageEffectPreset;
+                int indexSelected = i;
+                tsmi.Click += (sender, e) =>
+                {
+                    Program.DefaultTaskSettings.ImageSettings.SelectedImageEffectPreset = indexSelected;
+                    ((ToolStripMenuItem)tsmiAddImageEffects.DropDownItems[indexSelected]).RadioCheck();
+                };
+                tsmiAddImageEffects.DropDownItems.Add(tsmi);
             }
         }
 
@@ -1818,6 +1844,16 @@ namespace ShareX
         private void tsmiMonitorTest_Click(object sender, EventArgs e)
         {
             TaskHelpers.OpenMonitorTest();
+        }
+
+        private void TsddbAfterCaptureTasks_DropDownOpening(object sender, EventArgs e)
+        {
+            UpdateImageEffectsMenu(tsddbAfterCaptureTasks);
+        }
+
+        private void TsmiTrayAfterCaptureTasks_DropDownOpening(object sender, EventArgs e)
+        {
+            UpdateImageEffectsMenu(tsmiTrayAfterCaptureTasks);
         }
 
         private void tsddbDestinations_DropDownOpened(object sender, EventArgs e)
