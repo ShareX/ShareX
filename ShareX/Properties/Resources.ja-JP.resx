@@ -1,0 +1,596 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="UploadTask_DoUploadJob_You_are_attempting_to_upload_a_large_file" xml:space="preserve">
+    <value>大きな容量のファイルをアップロードしようとしています。
+本当に続行しますか？</value>
+  </data>
+  <data name="ScreenRecordForm_StartRecording_Encoding___" xml:space="preserve">
+    <value>エンコードしています...</value>
+  </data>
+  <data name="TaskSettingsForm_UpdateUploaderMenuNames_URL_shortener___0_" xml:space="preserve">
+    <value>URL短縮サービス: {0}</value>
+  </data>
+  <data name="UploadManager_IsUploadConfirmed_Are_you_sure_you_want_to_upload__0__files_" xml:space="preserve">
+    <value>本当に {0} 個のファイルをアップロードしますか？</value>
+  </data>
+  <data name="UploadTask_Stop_Stopping" xml:space="preserve">
+    <value>停止中</value>
+  </data>
+  <data name="ActionsToolbar_StayTopMost" xml:space="preserve">
+    <value>最前面表示</value>
+  </data>
+  <data name="UploadTask_CreateURLShortenerTask_Shorten_URL___0__" xml:space="preserve">
+    <value>短縮URLの作成 ({0})</value>
+  </data>
+  <data name="BeforeUploadControl_AddDestination_Custom" xml:space="preserve">
+    <value>カスタム</value>
+  </data>
+  <data name="ActionsToolbar_OpenAtShareXStartup" xml:space="preserve">
+    <value>ShareX 起動時に開く</value>
+  </data>
+  <data name="UploadTask_DownloadAndUpload_Downloading" xml:space="preserve">
+    <value>ダウンロード中</value>
+  </data>
+  <data name="UploadTask_DoUploadJob_Uploading" xml:space="preserve">
+    <value>アップロード中</value>
+  </data>
+  <data name="ScreenRecordForm_StartRecording_FFmpeg_error" xml:space="preserve">
+    <value>FFmpegのエラー</value>
+  </data>
+  <data name="ActionsToolbar_Edit" xml:space="preserve">
+    <value>編集...</value>
+  </data>
+  <data name="ActionsToolbar__LockPosition" xml:space="preserve">
+    <value>位置を固定</value>
+  </data>
+  <data name="QRCodeForm_InputTextToEncode" xml:space="preserve">
+    <value>エンコードするテキストを入力</value>
+  </data>
+  <data name="AboutForm_AboutForm_Contributors" xml:space="preserve">
+    <value>コントリビューター</value>
+  </data>
+  <data name="TaskManager_task_UploadCompleted_ShareX___Task_completed" xml:space="preserve">
+    <value>タスクの完了</value>
+  </data>
+  <data name="ActionsForm_btnOK_Click_Name_can_t_be_empty_" xml:space="preserve">
+    <value>名前を入力してください。</value>
+  </data>
+  <data name="ApplicationSettingsForm_cbSteamShowInApp_CheckedChanged_For_settings_to_take_effect_ShareX_needs_to_be_reopened_from_Steam_" xml:space="preserve">
+    <value>設定を反映するには、SteamからShareXを開きなおす必要があります。</value>
+  </data>
+  <data name="MainForm_UpdateToggleHotkeyButton_Disable_hotkeys" xml:space="preserve">
+    <value>ホットキーを無効にする</value>
+  </data>
+  <data name="UploadTask_ThreadDoWork_URL_is_empty_" xml:space="preserve">
+    <value>URLを入力してください。</value>
+  </data>
+  <data name="ApplicationSettingsForm_btnBrowsePersonalFolderPath_Click_Choose_ShareX_personal_folder_path" xml:space="preserve">
+    <value>ShareX  個人フォルダー パスの選択</value>
+  </data>
+  <data name="HotkeyManager_ShowFailedHotkeys_Unable_to_register_hotkey" xml:space="preserve">
+    <value>{0} を登録できません:
+
+{1}
+
+別のホットキーを選択するか、競合するアプリケーションを終了し、ShareXを再起動してください。</value>
+  </data>
+  <data name="MainForm_tsmiDeleteSelectedFile_Click_File_delete_confirmation" xml:space="preserve">
+    <value>ファイル削除の確認</value>
+  </data>
+  <data name="AutoCaptureForm_Execute_Stop" xml:space="preserve">
+    <value>停止</value>
+  </data>
+  <data name="RecentManager_UpdateRecentMenu_Left_click_to_copy_URL_to_clipboard__Right_click_to_open_URL_" xml:space="preserve">
+    <value>左クリックでクリップボードにURLをコピー、右クリックでURLを開く。</value>
+  </data>
+  <data name="UploadTask_CreateShareURLTask_Share_URL___0__" xml:space="preserve">
+    <value>共有 URL ({0})</value>
+  </data>
+  <data name="ClipboardFormatForm_ClipboardFormatForm_Supported_variables___0__and_other_variables_such_as__1__etc_" xml:space="preserve">
+    <value>使用可能な変数: {0} とその他の変数、たとえば {1} など。</value>
+  </data>
+  <data name="AutoCaptureForm_UpdateRegion_X___0___Y___1___Width___2___Height___3_" xml:space="preserve">
+    <value>X: {0}, Y: {1}, 幅: {2}, 高さ: {3}</value>
+  </data>
+  <data name="UploadManager_IsUploadConfirmed_Don_t_show_this_message_again_" xml:space="preserve">
+    <value>このメッセージを再表示しない。</value>
+  </data>
+  <data name="ScreenRecordForm_DownloaderForm_InstallRequested_Download_of_FFmpeg_failed_" xml:space="preserve">
+    <value>FFmpeg のダウンロードに失敗しました。</value>
+  </data>
+  <data name="HotkeySettingsForm_Reset_all_hotkeys_to_defaults_Confirmation" xml:space="preserve">
+    <value>すべてのホットキーを既定に戻しますか？</value>
+  </data>
+  <data name="ScreenRecordForm_StartRecording_FFmpeg_video_and_audio_source_both_can_t_be__None__" xml:space="preserve">
+    <value>FFmpeg ビデオとオーディオの両方を「None」にはできません。</value>
+  </data>
+  <data name="AboutForm_AboutForm_Changelog" xml:space="preserve">
+    <value>更新履歴</value>
+  </data>
+  <data name="AutoCaptureForm_Execute_Start" xml:space="preserve">
+    <value>開始</value>
+  </data>
+  <data name="HotkeyManager_ShowFailedHotkeys_hotkey" xml:space="preserve">
+    <value>ホットキー</value>
+  </data>
+  <data name="TaskSettingsForm_UpdateWindowTitle_Task_settings" xml:space="preserve">
+    <value>タスクの設定</value>
+  </data>
+  <data name="BeforeUploadForm_BeforeUploadForm_Please_choose_a_destination_" xml:space="preserve">
+    <value>アップロード先を選択してください。</value>
+  </data>
+  <data name="UploadTask_Prepare_Starting" xml:space="preserve">
+    <value>開始しています</value>
+  </data>
+  <data name="ScreenRecordForm_StartRecording_does_not_exist" xml:space="preserve">
+    <value>{0} がありません。
+
+自動でダウンロードしますか？</value>
+  </data>
+  <data name="AboutForm_AboutForm_Translators" xml:space="preserve">
+    <value>翻訳者</value>
+  </data>
+  <data name="QuickTaskMenu_ShowMenu_Cancel" xml:space="preserve">
+    <value>キャンセル</value>
+  </data>
+  <data name="ScreenRecordForm_StartRecording_Waiting___" xml:space="preserve">
+    <value>待機中...</value>
+  </data>
+  <data name="UploadManager_ShowShortenURLDialog_Shorten" xml:space="preserve">
+    <value>短縮</value>
+  </data>
+  <data name="TaskSettingsForm_UpdateUploaderMenuNames_Image_uploader___0_" xml:space="preserve">
+    <value>画像アップローダー: {0}</value>
+  </data>
+  <data name="TaskHelpers_OpenQuickScreenColorPicker_Copied_to_clipboard___0_" xml:space="preserve">
+    <value>クリップボードにコピー: {0}</value>
+  </data>
+  <data name="MainForm_UpdateMenu_Hide_menu" xml:space="preserve">
+    <value>メニューを隠す</value>
+  </data>
+  <data name="TaskSettingsForm_UpdateWindowTitle_Task_settings_for__0_" xml:space="preserve">
+    <value>{0} のタスク設定</value>
+  </data>
+  <data name="TaskHelpers_TweetMessage_Unable_to_find_valid_Twitter_account_" xml:space="preserve">
+    <value>有効なTwitter アカウントが見つかりません。</value>
+  </data>
+  <data name="MainForm_UpdateMenu_Show_menu" xml:space="preserve">
+    <value>メニューを表示</value>
+  </data>
+  <data name="MainForm_UpdateMainWindowLayout_Show_columns" xml:space="preserve">
+    <value>列を表示</value>
+  </data>
+  <data name="UploadManager_UploadURL_URL_to_download_from_and_upload" xml:space="preserve">
+    <value>ダウンロード後にアップロードするファイルのあるURL</value>
+  </data>
+  <data name="ActionsForm_btnOK_Click_File_path_can_t_be_empty_" xml:space="preserve">
+    <value>ファイルのパスを入力してください。</value>
+  </data>
+  <data name="UploadTask_DoAfterCaptureJobs_Choose_a_folder_to_save" xml:space="preserve">
+    <value>保存フォルダーの選択</value>
+  </data>
+  <data name="MainForm_UpdateToggleHotkeyButton_Enable_hotkeys" xml:space="preserve">
+    <value>ホットキーを有効にする</value>
+  </data>
+  <data name="AutoCaptureForm_UpdateStatus_Timeleft___0_s___1____Total___2_" xml:space="preserve">
+    <value>残り時間: {0}s ({1}%) 合計: {2}</value>
+  </data>
+  <data name="TaskSettingsForm_UpdateUploaderMenuNames_Task___0_" xml:space="preserve">
+    <value>タスク: {0}</value>
+  </data>
+  <data name="HotkeyManager_ShowFailedHotkeys_Hotkey_registration_failed" xml:space="preserve">
+    <value>ホットキーの登録に失敗</value>
+  </data>
+  <data name="TaskHelpers_ToggleHotkeys_Hotkeys_disabled_" xml:space="preserve">
+    <value>ホットキーを無効にしました。</value>
+  </data>
+  <data name="UploadManager_IsUploadConfirmed_Upload_files" xml:space="preserve">
+    <value>ファイルのアップロード</value>
+  </data>
+  <data name="ApplicationSettingsForm_cbStartWithWindows_DisabledByUser_Text" xml:space="preserve">
+    <value>スタートアップの設定はタスクマネージャーで無効にされています</value>
+  </data>
+  <data name="HotkeyManager_ShowFailedHotkeys_These_applications_could_be_conflicting_" xml:space="preserve">
+    <value>アプリケーションの競合:</value>
+  </data>
+  <data name="ActionsToolbarEditForm_Separator" xml:space="preserve">
+    <value>区切り線</value>
+  </data>
+  <data name="TaskManager_task_UploadCompleted_Error" xml:space="preserve">
+    <value>エラー</value>
+  </data>
+  <data name="HotkeySelectionControl_StartEditing_Select_a_hotkey___" xml:space="preserve">
+    <value>ホットキーを入力...</value>
+  </data>
+  <data name="DropForm_DrawDropImage_Drop_here" xml:space="preserve">
+    <value>ここに
+ドロップ</value>
+  </data>
+  <data name="TaskHelpers_ToggleHotkeys_Hotkeys_enabled_" xml:space="preserve">
+    <value>ホットキーを有効にしました。</value>
+  </data>
+  <data name="WorkerTask_GetInvalidConfigResult__0__configuration_is_invalid_or_missing__Please_check__Destination_settings__window_to_configure_it_" xml:space="preserve">
+    <value>{0} の構成が正しくないか存在しません。"アップロード先の設定" ウィンドウで構成を確認してください。</value>
+  </data>
+  <data name="HotkeyManager_ShowFailedHotkeys_hotkeys" xml:space="preserve">
+    <value>ホットキー</value>
+  </data>
+  <data name="TaskSettingsForm_UpdateUploaderMenuNames_File_uploader___0_" xml:space="preserve">
+    <value>ファイル アップローダー: {0}</value>
+  </data>
+  <data name="AboutForm_AboutForm_Project_page" xml:space="preserve">
+    <value>プロジェクト ページ</value>
+  </data>
+  <data name="TaskHelpers_TweetMessage_Tweet_successfully_sent_" xml:space="preserve">
+    <value>ツイートを送信しました。</value>
+  </data>
+  <data name="Program_WritePersonalPathConfig_Cant_access_to_file" xml:space="preserve">
+    <value>ファイル「{0}」にアクセスできません。
+個人フォルダー パスを変更するには、ShareX を管理者で実行してください。</value>
+  </data>
+  <data name="TaskSettingsForm_UpdateUploaderMenuNames_After_upload___0_" xml:space="preserve">
+    <value>アップロード後: {0}</value>
+  </data>
+  <data name="ScreenRecordForm_StartRecording_Click_tray_icon_to_stop_recording_" xml:space="preserve">
+    <value>クリックで録画を停止</value>
+  </data>
+  <data name="MainForm_UpdateWorkflowsMenu_You_can_add_workflows_from_hotkey_settings___" xml:space="preserve">
+    <value>ホットキーの設定からワークフローを追加できます...</value>
+  </data>
+  <data name="ImageData_Write_Error" xml:space="preserve">
+    <value>画像をパス {0} に書き込みできません。</value>
+  </data>
+  <data name="ApplicationSettingsForm_cbLanguage_SelectedIndexChanged_Language_Restart" xml:space="preserve">
+    <value>言語の変更はShareX の再起動後に反映されます。
+ShareX を再起動しますか？</value>
+  </data>
+  <data name="Program_Run_Error" xml:space="preserve">
+    <value>エラー</value>
+  </data>
+  <data name="ApplicationSettingsForm_cbStartWithWindows_Text" xml:space="preserve">
+    <value>Windows開始時にShareXを起動する</value>
+  </data>
+  <data name="BeforeUploadForm_BeforeUploadForm__0__is_about_to_be_uploaded_to__1___You_may_choose_a_different_destination_" xml:space="preserve">
+    <value>{0} を {1} にアップロードしようとしています。別のアップロード先を選択することもできます。</value>
+  </data>
+  <data name="ScreenRecordForm_StartRecording_Missing" xml:space="preserve">
+    <value>参照不可</value>
+  </data>
+  <data name="UploadTask_DoUploadJob_First_time_upload_warning" xml:space="preserve">
+    <value>初回アップロード時の警告</value>
+  </data>
+  <data name="ChromeForm_btnRegister_Click_Chrome_support_enabled_" xml:space="preserve">
+    <value>Chrome サポートを有効にしました。</value>
+  </data>
+  <data name="UploadManager_UploadFolder_Folder_upload" xml:space="preserve">
+    <value>フォルダーのアップロード</value>
+  </data>
+  <data name="AboutForm_AboutForm_External_libraries" xml:space="preserve">
+    <value>外部ライブラリ</value>
+  </data>
+  <data name="TaskSettingsForm_UpdateUploaderMenuNames_After_capture___0_" xml:space="preserve">
+    <value>キャプチャー後: {0}</value>
+  </data>
+  <data name="TaskManager_CreateListViewItem_History" xml:space="preserve">
+    <value>履歴</value>
+  </data>
+  <data name="UploadInfoManager_ShowErrors_Upload_errors" xml:space="preserve">
+    <value>アップロード エラー</value>
+  </data>
+  <data name="Program_Run_Unable_to_create_folder_" xml:space="preserve">
+    <value>フォルダーを作成できません:</value>
+  </data>
+  <data name="ApplicationSettingsForm_btnBrowseCustomScreenshotsPath_Click_Choose_screenshots_folder_path" xml:space="preserve">
+    <value>画像保存フォルダー パスの選択</value>
+  </data>
+  <data name="MainForm_UpdateMainFormTip_Currently_configured_hotkeys_" xml:space="preserve">
+    <value>現在構成済みのホットキー:</value>
+  </data>
+  <data name="TaskManager_CreateListViewItem_In_queue" xml:space="preserve">
+    <value>処理待ち</value>
+  </data>
+  <data name="UploadManager_UploadFile_File_upload" xml:space="preserve">
+    <value>ファイルのアップロード</value>
+  </data>
+  <data name="UploadTask_DoUploadJob_First_time_upload_warning_text" xml:space="preserve">
+    <value>本当にこのスクリーンショットをアップロードしますか？
+「いいえ」をクリックするとアップロードを中止し、画像の自動アップロードを無効にします。</value>
+  </data>
+  <data name="MainForm_tsmiDeleteSelectedFile_Click_Do_you_really_want_to_delete_this_file_" xml:space="preserve">
+    <value>本当にこのファイルを削除しますか？</value>
+  </data>
+  <data name="UploadManager_DownloadAndUploadFile_Download_failed" xml:space="preserve">
+    <value>ダウンロード失敗:
+{0}</value>
+  </data>
+  <data name="TaskSettingsForm_UpdateUploaderMenuNames_Text_uploader___0_" xml:space="preserve">
+    <value>テキスト アップローダー: {0}</value>
+  </data>
+  <data name="IntegrationHelpers_UploadWithShareX" xml:space="preserve">
+    <value>ShareX でアップロード</value>
+  </data>
+  <data name="UploadTask_Prepare_Preparing" xml:space="preserve">
+    <value>準備中</value>
+  </data>
+  <data name="FileExistForm_txtNewName_TextChanged_Use_new_name__" xml:space="preserve">
+    <value>新しい名前を使用:</value>
+  </data>
+  <data name="QuickTaskMenu_ShowMenu_Edit_this_menu___" xml:space="preserve">
+    <value>このメニューを編集...</value>
+  </data>
+  <data name="UploadTask_OnUploadCompleted_Stopped" xml:space="preserve">
+    <value>停止中</value>
+  </data>
+  <data name="TaskSettingsForm_UpdateUploaderMenuNames_URL_sharing_service___0_" xml:space="preserve">
+    <value>URL共有サービス: {0}</value>
+  </data>
+  <data name="ActionsToolbar_Tip" xml:space="preserve">
+    <value>左ドラッグで移動
+右クリックでメニュー表示
+中クリックで閉じる</value>
+  </data>
+  <data name="ChromeForm_btnUnregister_Click_Chrome_support_disabled_" xml:space="preserve">
+    <value>Chrome サポートを無効にしました。</value>
+  </data>
+  <data name="UploadManager_ShowShortenURLDialog_ShortenURL" xml:space="preserve">
+    <value>短縮URLの作成</value>
+  </data>
+  <data name="TaskSettingsForm_txtNameFormatPatternActiveWindow_TextChanged_Preview_" xml:space="preserve">
+    <value>プレビュー:</value>
+  </data>
+  <data name="MainForm_tsmiTestTextUpload_Click_Text_upload_test" xml:space="preserve">
+    <value>テキストアップロードのテスト</value>
+  </data>
+  <data name="MainForm_UpdateMainWindowLayout_Hide_columns" xml:space="preserve">
+    <value>列を隠す</value>
+  </data>
+  <data name="ScreenRecordForm_DownloaderForm_InstallRequested_FFmpeg_successfully_downloaded_" xml:space="preserve">
+    <value>FFmpegのダウンロードが完了しました。</value>
+  </data>
+  <data name="ActionsToolbar_Close" xml:space="preserve">
+    <value>閉じる</value>
+  </data>
+  <data name="QuickTaskMenu_ShowMenu_Continue" xml:space="preserve">
+    <value>続行</value>
+  </data>
+  <data name="UploadTask_OnUploadCompleted_Done" xml:space="preserve">
+    <value>完了</value>
+  </data>
+  <data name="AboutForm_AboutForm_Website" xml:space="preserve">
+    <value>ウェブサイト</value>
+  </data>
+  <data name="QuickTaskMenuEditorForm_Reset_all_quick_tasks_to_defaults_Confirmation" xml:space="preserve">
+    <value>すべてのクイックタスクを既定に戻しますか？</value>
+  </data>
+  <data name="ScreenRecordForm_StartRecording_Click_tray_icon_to_start_recording_" xml:space="preserve">
+    <value>クリックで録画を開始</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_de" xml:space="preserve">
+    <value>ドイツ語</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_es" xml:space="preserve">
+    <value>スペイン語</value>
+  </data>
+  <data name="IntegrationHelpers_EditWithShareX" xml:space="preserve">
+    <value>ShareX で画像編集</value>
+  </data>
+  <data name="SwitchToListView" xml:space="preserve">
+    <value>リストビューに切り替え</value>
+  </data>
+  <data name="SwitchToThumbnailView" xml:space="preserve">
+    <value>サムネイルビューに切り替え</value>
+  </data>
+  <data name="WouldYouLikeToResetThemes" xml:space="preserve">
+    <value>テーマをリセットしますか？</value>
+  </data>
+  <data name="ShowThumbnailTitle" xml:space="preserve">
+    <value>サムネイルのタイトル</value>
+  </data>
+  <data name="ScreenshotDelay0S" xml:space="preserve">
+    <value>スクリーンショットを{0}秒後に起動する</value>
+  </data>
+  <data name="ApplicationSettingsForm_cbStartWithWindows_DisabledByPolicy_Text" xml:space="preserve">
+    <value>スタートアップの設定は組織によって無効にされています</value>
+  </data>
+  <data name="ApplicationSettingsForm_btnResetSettings_Click_WouldYouLikeToResetShareXSettings" xml:space="preserve">
+    <value>ShareXの設定をリセットしますか？</value>
+  </data>
+  <data name="ApplicationSettingsForm_btnCheckDevBuild_Click_DevBuilds_Warning" xml:space="preserve">
+    <value>開発中のバージョンは不安定なことがあります、またテスト目的にしか使えません。開発中バージョンをインストールしますか？</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_fa_IR" xml:space="preserve">
+    <value>ペルシア語</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_es_MX" xml:space="preserve">
+    <value>メキシコのスペイン語</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_fr" xml:space="preserve">
+    <value>フランス語</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_hu" xml:space="preserve">
+    <value>ハンガリー語</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_id_ID" xml:space="preserve">
+    <value>インドネシア語</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_it_IT" xml:space="preserve">
+    <value>イタリア語</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_ko_KR" xml:space="preserve">
+    <value>韓国語</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_nl_NL" xml:space="preserve">
+    <value>オランダ語</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_pt_BR" xml:space="preserve">
+    <value>ポルトガル語（ブラジル）</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_pt_PT" xml:space="preserve">
+    <value>ポルトガル語</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_ru" xml:space="preserve">
+    <value>ロシア語</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_tr" xml:space="preserve">
+    <value>トルコ語</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_uk" xml:space="preserve">
+    <value>ウクライナ語</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_vi_VN" xml:space="preserve">
+    <value>ベトナム語</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_zh_CH" xml:space="preserve">
+    <value>中国語（簡体字）</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_zh_TW" xml:space="preserve">
+    <value>中国語（繁体字）</value>
+  </data>
+  <data name="ApplicationSettingsForm_cbStartWithWindows_EnabledByPolicy_Text" xml:space="preserve">
+    <value>スタートアップの設定は組織によって有効にされています</value>
+  </data>
+  <data name="OCRForm_AutoProcessing" xml:space="preserve">
+    <value>OCR実行中</value>
+  </data>
+  <data name="OCRForm_AutoCompleteFail" xml:space="preserve">
+    <value>OCRでエラーが起きました。もしくはテキストがありません。</value>
+  </data>
+  <data name="OCRForm_AutoComplete" xml:space="preserve">
+    <value>OCRの結果をクリップボードにコピーしました</value>
+  </data>
+  <data name="PleaseNoteThatShareXIsUsingOCRSpaceSOnlineAPIToPerformOpticalCharacterRecognitionDoYouGivePermissionToShareXToUploadImagesToThisService" xml:space="preserve">
+    <value>ShareXのOCRでは、OCR.SpaceのAPIを使います。画像データをOCR.Spaceに転送してもよいですか？</value>
+  </data>
+  <data name="ScreenRecord_ConfirmCancel" xml:space="preserve">
+    <value>録画を中断してもよいですか？</value>
+  </data>
+  <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__Image__Size___0_x_1__" xml:space="preserve">
+    <value>クリップボード内のデータ：画像（サイズ：{0}x{1}）</value>
+  </data>
+  <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_is_empty_or_contains_unknown_data_" xml:space="preserve">
+    <value>クリップボードが空っぽか、読み取れないデータが入っています</value>
+  </data>
+  <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__File__Count___0__" xml:space="preserve">
+    <value>クリップボード内のデータ：ファイル（ファイル数：{0}）</value>
+  </data>
+  <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__Text__Length___0__" xml:space="preserve">
+    <value>クリップボード内のデータ：文字列（{0}文字）</value>
+  </data>
+</root>
