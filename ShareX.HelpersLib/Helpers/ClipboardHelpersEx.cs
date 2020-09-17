@@ -368,7 +368,7 @@ namespace ShareX.HelpersLib
             GCHandle handle = GCHandle.Alloc(data, GCHandleType.Pinned);
             BITMAPV5HEADER bmi = (BITMAPV5HEADER)Marshal.PtrToStructure(handle.AddrOfPinnedObject(), typeof(BITMAPV5HEADER));
             int stride = -(int)(bmi.bV5SizeImage / bmi.bV5Height);
-            long offset = bmi.bV5Size + (bmi.bV5Height - 1) * (int)(bmi.bV5SizeImage / bmi.bV5Height);
+            long offset = bmi.bV5Size + ((bmi.bV5Height - 1) * (int)(bmi.bV5SizeImage / bmi.bV5Height));
             if (bmi.bV5Compression == (uint)BitmapCompressionMode.BI_BITFIELDS)
             {
                 offset += 12;

@@ -34,20 +34,80 @@ namespace ShareX.HelpersLib
     {
         public string Name { get; set; }
 
-        [Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
-        public Color BackgroundColor { get; set; }
+        private Color backgroundColor;
 
         [Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
-        public Color LightBackgroundColor { get; set; }
+        public Color BackgroundColor
+        {
+            get
+            {
+                return backgroundColor;
+            }
+            set
+            {
+                if (!value.IsEmpty) backgroundColor = value;
+            }
+        }
+
+        private Color lightBackgroundColor;
 
         [Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
-        public Color DarkBackgroundColor { get; set; }
+        public Color LightBackgroundColor
+        {
+            get
+            {
+                return lightBackgroundColor;
+            }
+            set
+            {
+                if (!value.IsEmpty) lightBackgroundColor = value;
+            }
+        }
+
+        private Color darkBackgroundColor;
 
         [Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
-        public Color TextColor { get; set; }
+        public Color DarkBackgroundColor
+        {
+            get
+            {
+                return darkBackgroundColor;
+            }
+            set
+            {
+                if (!value.IsEmpty) darkBackgroundColor = value;
+            }
+        }
+
+        private Color textColor;
 
         [Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
-        public Color BorderColor { get; set; }
+        public Color TextColor
+        {
+            get
+            {
+                return textColor;
+            }
+            set
+            {
+                if (!value.IsEmpty) textColor = value;
+            }
+        }
+
+        private Color borderColor;
+
+        [Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
+        public Color BorderColor
+        {
+            get
+            {
+                return borderColor;
+            }
+            set
+            {
+                if (!value.IsEmpty) borderColor = value;
+            }
+        }
 
         [Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
         public Color CheckerColor { get; set; }
