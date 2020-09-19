@@ -1505,5 +1505,11 @@ namespace ShareX.ScreenCaptureLib
 
             return Cursors.Default;
         }
+
+        public void ShowMenuTooltip(string text)
+        {
+            MenuTextAnimation.Text = text;
+            MenuTextAnimation.Start();
+        }
     }
 }
