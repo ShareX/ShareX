@@ -393,10 +393,10 @@
     <value>ShareX - 画像エディタ</value>
   </data>
   <data name="ShapeManager_CreateContextMenu_SwitchToDrawingToolAfterSelection" xml:space="preserve">
-    <value>図形を選択したあと、その図形の描画モードに移行する</value>
+    <value>図形を選択した後は、図形描画モードにする</value>
   </data>
   <data name="ShapeManager_CreateContextMenu_SwitchToSelectionToolAfterDrawing" xml:space="preserve">
-    <value>図形を書いたあとは、選択モードに移行する</value>
+    <value>図形を描いた後は、図形選択モードにする</value>
   </data>
   <data name="ShapeManager_CreateToolbar_StartingStepValue" xml:space="preserve">
     <value>ステップの最初の値</value>

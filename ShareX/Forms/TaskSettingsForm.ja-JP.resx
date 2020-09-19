@@ -229,7 +229,7 @@
     <value>効果</value>
   </data>
   <data name="lblImageEffectsNote.Text" xml:space="preserve">
-    <value>「キャプチャー後のタスク -&gt; 画像の効果/透かしを追加」から画像効果の有効/無効の切り替えができます</value>
+    <value>「キャプチャー後のタスク→ 画像の効果/透かしを追加」から画像効果の有効/無効の切り替えができます</value>
   </data>
   <data name="chkShowImageEffectsWindowAfterCapture.Text" xml:space="preserve">
     <value>キャプチャー後に画像の効果ウィンドウを表示する</value>
@@ -545,5 +545,8 @@
   </data>
   <data name="cbClipboardUploadAutoIndexFolder.Text" xml:space="preserve">
     <value>クリップボードにフォルダパスがあるときは、そのフォルダのindexを作ってアップロードする</value>
+  </data>
+  <data name="lblActionsNote.Text" xml:space="preserve">
+    <value>「キャプチャー後のタスク→アクションの実行」で有効/無効の切り替えができます</value>
   </data>
 </root>
