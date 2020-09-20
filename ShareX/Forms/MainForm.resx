@@ -125,25 +125,25 @@
   <data name="scMain.Location" type="System.Drawing.Point, System.Drawing">
     <value>165, 0</value>
   </data>
-  <data name="lblListViewTip.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="lblListViewTip.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="lblListViewTip.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 12pt</value>
+    <value>Consolas, 9.75pt</value>
   </data>
   <data name="lblListViewTip.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="lblListViewTip.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 40</value>
+    <value>0, 20</value>
   </data>
   <data name="lblListViewTip.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>10, 0, 10, 0</value>
+    <value>10, 10, 10, 10</value>
   </data>
   <data name="lblListViewTip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>320, 408</value>
+    <value>20, 35</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="lblListViewTip.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
@@ -1840,7 +1840,7 @@
     <value>Exit</value>
   </data>
   <data name="cmsTray.Size" type="System.Drawing.Size, System.Drawing">
-    <value>192, 506</value>
+    <value>192, 484</value>
   </data>
   <data name="&gt;&gt;cmsTray.Name" xml:space="preserve">
     <value>cmsTray</value>
@@ -1941,11 +1941,14 @@
   <data name="&gt;&gt;pNews.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="lblThumbnailViewTip.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
   <data name="lblThumbnailViewTip.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
   <data name="lblThumbnailViewTip.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 12pt</value>
+    <value>Consolas, 9.75pt</value>
   </data>
   <data name="lblThumbnailViewTip.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -1954,10 +1957,10 @@
     <value>0, 0</value>
   </data>
   <data name="lblThumbnailViewTip.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>20, 20, 20, 20</value>
+    <value>10, 10, 10, 10</value>
   </data>
   <data name="lblThumbnailViewTip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>679, 471</value>
+    <value>20, 35</value>
   </data>
   <data name="lblThumbnailViewTip.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -2479,6 +2482,12 @@
     <value>tsmiVideoThumbnailer</value>
   </data>
   <data name="&gt;&gt;tsmiVideoThumbnailer.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsmiClipboardViewer.Name" xml:space="preserve">
+    <value>tsmiClipboardViewer</value>
+  </data>
+  <data name="&gt;&gt;tsmiClipboardViewer.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiTweetMessage.Name" xml:space="preserve">
@@ -3393,6 +3402,12 @@
   <data name="&gt;&gt;tsmiTrayVideoThumbnailer.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;tsmiTrayClipboardViewer.Name" xml:space="preserve">
+    <value>tsmiTrayClipboardViewer</value>
+  </data>
+  <data name="&gt;&gt;tsmiTrayClipboardViewer.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;tsmiTrayTweetMessage.Name" xml:space="preserve">
     <value>tsmiTrayTweetMessage</value>
   </data>
@@ -3650,18 +3665,6 @@
   </data>
   <data name="&gt;&gt;tsbGitHub.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tsmiClipboardViewer.Name" xml:space="preserve">
-    <value>tsmiClipboardViewer</value>
-  </data>
-  <data name="&gt;&gt;tsmiClipboardViewer.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tsmiTrayClipboardViewer.Name" xml:space="preserve">
-    <value>tsmiTrayClipboardViewer</value>
-  </data>
-  <data name="&gt;&gt;tsmiTrayClipboardViewer.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MainForm</value>

@@ -88,6 +88,7 @@
             this.tsmiImageThumbnailer = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiVideoConverter = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiVideoThumbnailer = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiClipboardViewer = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTweetMessage = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiMonitorTest = new System.Windows.Forms.ToolStripMenuItem();
             this.tssMain1 = new System.Windows.Forms.ToolStripSeparator();
@@ -242,6 +243,7 @@
             this.tsmiTrayImageThumbnailer = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayVideoConverter = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayVideoThumbnailer = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiTrayClipboardViewer = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayTweetMessage = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayMonitorTest = new System.Windows.Forms.ToolStripMenuItem();
             this.tssTray1 = new System.Windows.Forms.ToolStripSeparator();
@@ -293,8 +295,6 @@
             this.tsbPatreon = new System.Windows.Forms.ToolStripButton();
             this.tsbBitcoin = new System.Windows.Forms.ToolStripButton();
             this.tsbGitHub = new System.Windows.Forms.ToolStripButton();
-            this.tsmiClipboardViewer = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiTrayClipboardViewer = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.scMain)).BeginInit();
             this.scMain.Panel1.SuspendLayout();
             this.scMain.Panel2.SuspendLayout();
@@ -790,6 +790,13 @@
             this.tsmiVideoThumbnailer.Name = "tsmiVideoThumbnailer";
             resources.ApplyResources(this.tsmiVideoThumbnailer, "tsmiVideoThumbnailer");
             this.tsmiVideoThumbnailer.Click += new System.EventHandler(this.tsmiVideoThumbnailer_Click);
+            // 
+            // tsmiClipboardViewer
+            // 
+            this.tsmiClipboardViewer.Image = global::ShareX.Properties.Resources.clipboard_block;
+            this.tsmiClipboardViewer.Name = "tsmiClipboardViewer";
+            resources.ApplyResources(this.tsmiClipboardViewer, "tsmiClipboardViewer");
+            this.tsmiClipboardViewer.Click += new System.EventHandler(this.tsmiClipboardViewer_Click);
             // 
             // tsmiTweetMessage
             // 
@@ -1962,6 +1969,13 @@
             resources.ApplyResources(this.tsmiTrayVideoThumbnailer, "tsmiTrayVideoThumbnailer");
             this.tsmiTrayVideoThumbnailer.Click += new System.EventHandler(this.tsmiVideoThumbnailer_Click);
             // 
+            // tsmiTrayClipboardViewer
+            // 
+            this.tsmiTrayClipboardViewer.Image = global::ShareX.Properties.Resources.clipboard_block;
+            this.tsmiTrayClipboardViewer.Name = "tsmiTrayClipboardViewer";
+            resources.ApplyResources(this.tsmiTrayClipboardViewer, "tsmiTrayClipboardViewer");
+            this.tsmiTrayClipboardViewer.Click += new System.EventHandler(this.tsmiClipboardViewer_Click);
+            // 
             // tsmiTrayTweetMessage
             // 
             this.tsmiTrayTweetMessage.Image = global::ShareX.Properties.Resources.Twitter;
@@ -2248,8 +2262,8 @@
             // 
             // lblThumbnailViewTip
             // 
-            this.lblThumbnailViewTip.BackColor = System.Drawing.Color.Transparent;
             resources.ApplyResources(this.lblThumbnailViewTip, "lblThumbnailViewTip");
+            this.lblThumbnailViewTip.BackColor = System.Drawing.Color.Transparent;
             this.lblThumbnailViewTip.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(228)))), ((int)(((byte)(228)))));
             this.lblThumbnailViewTip.Name = "lblThumbnailViewTip";
             this.lblThumbnailViewTip.UseMnemonic = false;
@@ -2343,20 +2357,6 @@
             this.tsbGitHub.Padding = new System.Windows.Forms.Padding(1);
             this.tsbGitHub.Click += new System.EventHandler(this.TsbGitHub_Click);
             // 
-            // tsmiClipboardViewer
-            // 
-            this.tsmiClipboardViewer.Image = global::ShareX.Properties.Resources.clipboard_block;
-            this.tsmiClipboardViewer.Name = "tsmiClipboardViewer";
-            resources.ApplyResources(this.tsmiClipboardViewer, "tsmiClipboardViewer");
-            this.tsmiClipboardViewer.Click += new System.EventHandler(this.tsmiClipboardViewer_Click);
-            // 
-            // tsmiTrayClipboardViewer
-            // 
-            this.tsmiTrayClipboardViewer.Image = global::ShareX.Properties.Resources.clipboard_block;
-            this.tsmiTrayClipboardViewer.Name = "tsmiTrayClipboardViewer";
-            resources.ApplyResources(this.tsmiTrayClipboardViewer, "tsmiTrayClipboardViewer");
-            this.tsmiTrayClipboardViewer.Click += new System.EventHandler(this.tsmiClipboardViewer_Click);
-            // 
             // MainForm
             // 
             this.AllowDrop = true;
@@ -2379,6 +2379,7 @@
             this.DragEnter += new System.Windows.Forms.DragEventHandler(this.MainForm_DragEnter);
             this.Resize += new System.EventHandler(this.MainForm_Resize);
             this.scMain.Panel1.ResumeLayout(false);
+            this.scMain.Panel1.PerformLayout();
             this.scMain.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.scMain)).EndInit();
             this.scMain.ResumeLayout(false);
@@ -2388,6 +2389,7 @@
             this.cmsTray.ResumeLayout(false);
             this.pNews.ResumeLayout(false);
             this.pThumbnailView.ResumeLayout(false);
+            this.pThumbnailView.PerformLayout();
             this.pToolbars.ResumeLayout(false);
             this.pToolbars.PerformLayout();
             this.tsSocialButtons.ResumeLayout(false);
