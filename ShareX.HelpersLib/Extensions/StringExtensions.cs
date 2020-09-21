@@ -337,5 +337,12 @@ namespace ShareX.HelpersLib
         {
             return text.FromBase(from, digits).ToBase(to, digits);
         }
+
+        public static string PadCenter(this string str, int totalWidth, char paddingChar = ' ')
+        {
+            int padding = totalWidth - str.Length;
+            int padLeft = (padding / 2) + str.Length;
+            return str.PadLeft(padLeft, paddingChar).PadRight(totalWidth, paddingChar);
+        }
     }
 }

@@ -455,7 +455,8 @@ namespace ShareX
                 int maxHotkeyLength = hotkeys.Max(x => x.HotkeyInfo.ToString().Length);
                 int maxDescriptionLength = hotkeys.Max(x => x.TaskSettings.ToString().Length);
 
-                sb.AppendFormat("┌{0}┬{1}┐\r\n", new string('─', maxHotkeyLength + 2), new string('─', maxDescriptionLength + 2));
+                // TODO: Translate
+                sb.AppendFormat("┌{0}┬{1}┐\r\n", "Hotkey".PadCenter(maxHotkeyLength + 2, '─'), "Description".PadCenter(maxDescriptionLength + 2, '─'));
 
                 for (int i = 0; i < hotkeys.Count; i++)
                 {
