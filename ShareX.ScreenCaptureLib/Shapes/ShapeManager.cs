@@ -912,7 +912,7 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        private void StartRegionSelection()
+        public void StartRegionSelection()
         {
             if (IsCursorOnObject)
             {
@@ -946,7 +946,7 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        private void EndRegionSelection()
+        public void EndRegionSelection()
         {
             bool wasCreating = IsCreating;
             bool wasMoving = IsMoving;

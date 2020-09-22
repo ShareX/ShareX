@@ -586,6 +586,12 @@ namespace ShareX.ScreenCaptureLib
                     CloseWindow(RegionResult.Fullscreen);
                     break;
                 case Keys.Enter:
+                    if (ShapeManager.IsCurrentShapeTypeRegion)
+                    {
+                        ShapeManager.StartRegionSelection();
+                        ShapeManager.EndRegionSelection();
+                    }
+
                     CloseWindow(RegionResult.Region);
                     break;
                 case Keys.Oemtilde:
@@ -1354,9 +1360,12 @@ namespace ShareX.ScreenCaptureLib
                     gp = regionFillPath;
                 }
 
-                using (Bitmap bmp = RegionCaptureTasks.ApplyRegionPathToImage(Canvas, gp, out Rectangle rect))
+                if (gp != null)
                 {
-                    return ShapeManager.RenderOutputImage(bmp, rect.Location);
+                    using (Bitmap bmp = RegionCaptureTasks.ApplyRegionPathToImage(Canvas, gp, out Rectangle rect))
+                    {
+                        return ShapeManager.RenderOutputImage(bmp, rect.Location);
+                    }
                 }
             }
             else if (Result == RegionResult.Fullscreen)
