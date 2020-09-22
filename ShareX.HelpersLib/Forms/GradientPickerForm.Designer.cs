@@ -46,6 +46,7 @@
             this.ilPresets = new System.Windows.Forms.ImageList(this.components);
             this.lvPresets = new System.Windows.Forms.ListView();
             this.chGradient = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.btnClear = new System.Windows.Forms.Button();
             this.cbtnCurrentColor = new ShareX.HelpersLib.ColorButton();
             this.lvGradientPoints = new ShareX.HelpersLib.MyListView();
             this.chLocation = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -147,6 +148,7 @@
             this.lvPresets.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.chGradient});
             this.lvPresets.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
+            this.lvPresets.HideSelection = false;
             this.lvPresets.LargeImageList = this.ilPresets;
             resources.ApplyResources(this.lvPresets, "lvPresets");
             this.lvPresets.MultiSelect = false;
@@ -160,6 +162,13 @@
             // chGradient
             // 
             resources.ApplyResources(this.chGradient, "chGradient");
+            // 
+            // btnClear
+            // 
+            resources.ApplyResources(this.btnClear, "btnClear");
+            this.btnClear.Name = "btnClear";
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // cbtnCurrentColor
             // 
@@ -196,6 +205,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.CancelButton = this.btnCancel;
+            this.Controls.Add(this.btnClear);
             this.Controls.Add(this.lvPresets);
             this.Controls.Add(this.lblPresets);
             this.Controls.Add(this.btnReverse);
@@ -242,5 +252,6 @@
         private System.Windows.Forms.ImageList ilPresets;
         private System.Windows.Forms.ListView lvPresets;
         private System.Windows.Forms.ColumnHeader chGradient;
+        private System.Windows.Forms.Button btnClear;
     }
 }
