@@ -103,6 +103,9 @@ namespace ShareX.UploadersLib
         [DefaultValue("")]
         public string DeletionURL { get; set; }
 
+        [DefaultValue("")]
+        public string ErrorMessage { get; set; }
+
         private CustomUploaderItem()
         {
         }

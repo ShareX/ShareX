@@ -340,11 +340,12 @@ namespace ShareX.UploadersLib
         LoginFailed
     }
 
-    public enum URLType
+    public enum CustomUploaderURLType
     {
         URL,
         ThumbnailURL,
-        DeletionURL
+        DeletionURL,
+        ErrorMessage
     }
 
     public enum YouTubeVideoPrivacy // Localized
