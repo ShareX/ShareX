@@ -302,7 +302,7 @@ namespace ShareX.UploadersLib
 
                         if (!string.IsNullOrEmpty(parsedErrorMessage))
                         {
-                            result.Errors.Add("Error message:\r\n" + parsedErrorMessage);
+                            result.Errors.Add("Custom uploader error message:\r\n" + parsedErrorMessage);
                         }
                     }
                 }
