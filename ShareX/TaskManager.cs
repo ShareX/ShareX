@@ -318,10 +318,15 @@ namespace ShareX
                                     TaskHelpers.PlayErrorSound(info.TaskSettings);
                                 }
 
-                                if (info.TaskSettings.GeneralSettings.PopUpNotification != PopUpNotificationType.None && !string.IsNullOrEmpty(errors) &&
-                                    (!info.TaskSettings.AdvancedSettings.DisableNotificationsOnFullscreen || !CaptureHelpers.IsActiveWindowFullscreen()))
+                                if (info.Result.Errors.Count > 0)
                                 {
-                                    TaskHelpers.ShowBalloonTip(errors, ToolTipIcon.Error, 5000, "ShareX - " + Resources.TaskManager_task_UploadCompleted_Error);
+                                    string errorMessage = info.Result.Errors[0];
+
+                                    if (info.TaskSettings.GeneralSettings.PopUpNotification != PopUpNotificationType.None && !string.IsNullOrEmpty(errorMessage) &&
+                                        (!info.TaskSettings.AdvancedSettings.DisableNotificationsOnFullscreen || !CaptureHelpers.IsActiveWindowFullscreen()))
+                                    {
+                                        TaskHelpers.ShowBalloonTip(errorMessage, ToolTipIcon.Error, 5000, "ShareX - " + Resources.TaskManager_task_UploadCompleted_Error);
+                                    }
                                 }
                             }
                         }

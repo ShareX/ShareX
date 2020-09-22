@@ -298,8 +298,12 @@ namespace ShareX.UploadersLib
                 {
                     if (!string.IsNullOrEmpty(ErrorMessage))
                     {
-                        string errorMessage = "Error message:\r\n" + parser.Parse(ErrorMessage);
-                        result.Errors.Add(errorMessage);
+                        string parsedErrorMessage = parser.Parse(ErrorMessage);
+
+                        if (!string.IsNullOrEmpty(parsedErrorMessage))
+                        {
+                            result.Errors.Add("Error message:\r\n" + parsedErrorMessage);
+                        }
                     }
                 }
             }
