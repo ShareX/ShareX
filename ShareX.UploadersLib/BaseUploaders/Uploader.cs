@@ -62,10 +62,7 @@ namespace ShareX.UploadersLib
 
         protected void OnProgressChanged(ProgressManager progress)
         {
-            if (ProgressChanged != null)
-            {
-                ProgressChanged(progress);
-            }
+            ProgressChanged?.Invoke(progress);
         }
 
         protected void OnEarlyURLCopyRequested(string url)

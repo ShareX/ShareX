@@ -260,17 +260,17 @@ namespace ShareX.UploadersLib
             {
                 result.ResponseInfo = responseInfo;
 
+                if (responseInfo.ResponseText == null)
+                {
+                    responseInfo.ResponseText = "";
+                }
+
+                CustomUploaderParser parser = new CustomUploaderParser(responseInfo, RegexList);
+                parser.Filename = input.Filename;
+                parser.URLEncode = true;
+
                 if (responseInfo.IsSuccess)
                 {
-                    if (responseInfo.ResponseText == null)
-                    {
-                        responseInfo.ResponseText = "";
-                    }
-
-                    CustomUploaderParser parser = new CustomUploaderParser(responseInfo, RegexList);
-                    parser.Filename = input.Filename;
-                    parser.URLEncode = true;
-
                     string url;
 
                     if (!string.IsNullOrEmpty(URL))
@@ -293,6 +293,14 @@ namespace ShareX.UploadersLib
 
                     result.ThumbnailURL = parser.Parse(ThumbnailURL);
                     result.DeletionURL = parser.Parse(DeletionURL);
+                }
+                else
+                {
+                    if (!string.IsNullOrEmpty(ErrorMessage))
+                    {
+                        string errorMessage = "Error message:\r\n" + parser.Parse(ErrorMessage);
+                        result.Errors.Add(errorMessage);
+                    }
                 }
             }
         }
