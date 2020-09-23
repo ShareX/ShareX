@@ -1154,7 +1154,7 @@
     <value>選択・移動(M)</value>
   </data>
   <data name="ShapeType_DrawingSmartEraser" xml:space="preserve">
-    <value>描画: スマート消しゴム</value>
+    <value>描画: スマート イレイサー</value>
   </data>
   <data name="ShapeType_DrawingMagnify" xml:space="preserve">
     <value>描画: 虫眼鏡</value>
