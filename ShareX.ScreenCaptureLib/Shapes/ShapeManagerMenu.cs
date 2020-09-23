@@ -98,7 +98,7 @@ namespace ShareX.ScreenCaptureLib
                 ImageScalingSize = new Size(imageScalingSize, imageScalingSize),
                 Location = new Point(0, 0),
                 MinimumSize = new Size(10, 30),
-                Padding = Form.IsEditorMode ? new Padding(5, 1, 3, 0) : new Padding(0, 1, 0, 0),
+                Padding = Form.IsEditorMode ? new Padding(5, 1, 3, 0) : new Padding(2, 1, 0, 0),
                 Renderer = new ToolStripRoundedEdgeRenderer(),
                 TabIndex = 0,
                 ShowItemToolTips = false
@@ -117,7 +117,8 @@ namespace ShareX.ScreenCaptureLib
                     DisplayStyle = ToolStripItemDisplayStyle.Image,
                     Image = Resources.ui_radio_button_uncheck,
                     Margin = new Padding(0, 0, 2, 0),
-                    Padding = new Padding(2)
+                    Padding = new Padding(2),
+                    Visible = !Options.MenuLocked
                 };
 
                 tsMain.Items.Add(tslDragLeft);
@@ -1011,6 +1012,12 @@ namespace ShareX.ScreenCaptureLib
 
             if (!Form.IsEditorMode)
             {
+                ToolStripMenuItem tsmiLockMenu = new ToolStripMenuItem("Lock menu");
+                tsmiLockMenu.Checked = Options.MenuLocked;
+                tsmiLockMenu.CheckOnClick = true;
+                tsmiLockMenu.Click += (sender, e) => Options.MenuLocked = tsmiLockMenu.Checked;
+                tsddbOptions.DropDownItems.Add(tsmiLockMenu);
+
                 ToolStripMenuItem tsmiRememberMenuState = new ToolStripMenuItem(Resources.ShapeManager_CreateContextMenu_RememberMenuState);
                 tsmiRememberMenuState.Checked = Options.RememberMenuState;
                 tsmiRememberMenuState.CheckOnClick = true;
@@ -1050,7 +1057,8 @@ namespace ShareX.ScreenCaptureLib
                     DisplayStyle = ToolStripItemDisplayStyle.Image,
                     Image = Resources.ui_radio_button_uncheck,
                     Margin = new Padding(0, 0, 2, 0),
-                    Padding = new Padding(2)
+                    Padding = new Padding(2),
+                    Visible = !Options.MenuLocked
                 };
 
                 tsMain.Items.Add(tslDragRight);

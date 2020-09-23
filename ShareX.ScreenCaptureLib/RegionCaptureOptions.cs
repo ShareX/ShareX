@@ -72,6 +72,7 @@ namespace ShareX.ScreenCaptureLib
         public Size FixedSize = new Size(250, 250);
         public bool ShowFPS = false;
         public int MenuIconSize = 0;
+        public bool MenuLocked = true;
         public bool RememberMenuState = false;
         public bool MenuCollapsed = false;
         public Point MenuPosition = Point.Empty;
