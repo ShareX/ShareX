@@ -1079,6 +1079,8 @@ namespace ShareX.ScreenCaptureLib
 
                     tsi.MouseLeave += TsMain_MouseLeave;
                 }
+
+                tsi.Padding = new Padding(4);
             }
 
             tsMain.ResumeLayout(false);
@@ -1184,7 +1186,6 @@ namespace ShareX.ScreenCaptureLib
             if (Form.IsFullscreen)
             {
                 rectScreen = CaptureHelpers.GetActiveScreenBounds();
-                rectScreen.Y += 20;
             }
             else
             {
