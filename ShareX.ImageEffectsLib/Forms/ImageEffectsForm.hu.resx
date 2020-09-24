@@ -120,20 +120,8 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Kép effektek</value>
   </data>
-  <data name="btnAdd.Text" xml:space="preserve">
-    <value>Hozzáadás</value>
-  </data>
-  <data name="btnClear.Text" xml:space="preserve">
-    <value>Törlés</value>
-  </data>
-  <data name="btnDuplicate.Text" xml:space="preserve">
-    <value>Duplikálás</value>
-  </data>
   <data name="btnOK.Text" xml:space="preserve">
     <value>OK</value>
-  </data>
-  <data name="btnRemove.Text" xml:space="preserve">
-    <value>Eltávolítás</value>
   </data>
   <data name="btnSaveImage.Text" xml:space="preserve">
     <value>Kép mentése...</value>

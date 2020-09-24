@@ -133,9 +133,6 @@
   <data name="lblFile.Size" type="System.Drawing.Size, System.Drawing">
     <value>57, 13</value>
   </data>
-  <data name="lblFile.Text" xml:space="preserve">
-    <value>مسیر فایل:</value>
-  </data>
   <data name="tpFileHashCheck.Text" xml:space="preserve">
     <value>چک هش فایل</value>
   </data>

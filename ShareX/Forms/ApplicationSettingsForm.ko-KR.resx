@@ -300,9 +300,6 @@
   <data name="btnImport.Text" xml:space="preserve">
     <value>불러오기...</value>
   </data>
-  <data name="tpExportImport.Text" xml:space="preserve">
-    <value>내보내기 / 불러오기</value>
-  </data>
   <data name="cbHistoryCheckURL.Text" xml:space="preserve">
     <value>URL이 비어있지 않을 때만 저장하기</value>
   </data>

@@ -306,17 +306,11 @@
   <data name="grpSeafileShareSettings.Text" xml:space="preserve">
     <value>Настройки публикации</value>
   </data>
-  <data name="lblPomfUploaders.Text" xml:space="preserve">
-    <value>Сервисы:</value>
-  </data>
   <data name="lblPomfUploadURL.Text" xml:space="preserve">
     <value>Ссылка для загрузки:</value>
   </data>
   <data name="lblPomfResultURL.Text" xml:space="preserve">
     <value>Ссылка на результат:</value>
-  </data>
-  <data name="btnPomfTest.Text" xml:space="preserve">
-    <value>Проверить все</value>
   </data>
   <data name="lblLambdaUploadURL.Text" xml:space="preserve">
     <value>URL ссылки:</value>
@@ -519,14 +513,8 @@
   <data name="cbCheveretoDirectURL.Text" xml:space="preserve">
     <value>Прямой URL</value>
   </data>
-  <data name="lblCheveretoUploaders.Text" xml:space="preserve">
-    <value>Сервисы загрузки:</value>
-  </data>
   <data name="lblCheveretoUploadURLExample.Text" xml:space="preserve">
     <value>Пример: http://example.com/api/1/upload</value>
-  </data>
-  <data name="btnCheveretoTestAll.Text" xml:space="preserve">
-    <value>Протестировать все</value>
   </data>
   <data name="btnPicasaRefreshAlbumList.Text" xml:space="preserve">
     <value>Обновить список альбомов</value>
@@ -575,18 +563,6 @@
   </data>
   <data name="gbPhotobucketAlbumPath.Text" xml:space="preserve">
     <value>Загружать картинки в</value>
-  </data>
-  <data name="btnTinyPicOpenMyImages.Text" xml:space="preserve">
-    <value>Открыть мои картинки...</value>
-  </data>
-  <data name="lblTinyPicUsername.Text" xml:space="preserve">
-    <value>Email:</value>
-  </data>
-  <data name="lblTinyPicPassword.Text" xml:space="preserve">
-    <value>Пароль:</value>
-  </data>
-  <data name="btnTinyPicLogin.Text" xml:space="preserve">
-    <value>Войти</value>
   </data>
   <data name="lblImageShackPassword.Text" xml:space="preserve">
     <value>Пароль:</value>

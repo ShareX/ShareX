@@ -219,9 +219,6 @@
   <data name="btnImport.Text" xml:space="preserve">
     <value>Importa...</value>
   </data>
-  <data name="tpExportImport.Text" xml:space="preserve">
-    <value>Esporta / Importa</value>
-  </data>
   <data name="lblUploadLimit.Text" xml:space="preserve">
     <value>Limite di Caricamenti Simultanei:</value>
   </data>

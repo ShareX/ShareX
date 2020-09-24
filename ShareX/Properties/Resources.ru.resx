@@ -578,12 +578,6 @@
   <data name="ShareXOpticalCharacterRecognition" xml:space="preserve">
     <value>ShareX - Распознавание текста</value>
   </data>
-  <data name="HideThumbnailTitle" xml:space="preserve">
-    <value>Спрятать заголовок миниатюры</value>
-  </data>
-  <data name="ShowThumbnailTitle" xml:space="preserve">
-    <value>Показать заголовок миниатюры</value>
-  </data>
   <data name="SwitchToThumbnailView" xml:space="preserve">
     <value>Перейти в режим миниатюр</value>
   </data>

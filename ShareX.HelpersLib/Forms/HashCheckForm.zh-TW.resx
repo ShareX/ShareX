@@ -126,9 +126,6 @@
   <data name="btnStartHashCheck.Text" xml:space="preserve">
     <value>檢查</value>
   </data>
-  <data name="lblFile.Text" xml:space="preserve">
-    <value>檔案路徑：</value>
-  </data>
   <data name="lblHashType.Text" xml:space="preserve">
     <value>雜湊類型：</value>
   </data>

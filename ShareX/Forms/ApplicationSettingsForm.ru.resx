@@ -267,9 +267,6 @@
   <data name="btnOpenPersonalFolderPath.Text" xml:space="preserve">
     <value>Открыть...</value>
   </data>
-  <data name="tpExportImport.Text" xml:space="preserve">
-    <value>Экспорт / Импорт</value>
-  </data>
   <data name="btnExport.Text" xml:space="preserve">
     <value>Экспорт...</value>
   </data>
@@ -348,14 +345,8 @@
   <data name="btnPersonalFolderPathApply.Text" xml:space="preserve">
     <value>Применить</value>
   </data>
-  <data name="cbExperimentalDarkTheme.Text" xml:space="preserve">
-    <value>Экспериментальная пользовательская тема</value>
-  </data>
   <data name="cbUseWhiteShareXIcon.Text" xml:space="preserve">
     <value>Использовать белую иконку ShareX</value>
-  </data>
-  <data name="cbUseDarkTheme.Text" xml:space="preserve">
-    <value>Использовать темную тему</value>
   </data>
   <data name="lblExportImportNote.Text" xml:space="preserve">
     <value>Заметка: Не делитесь этим экспортируемым файлом ни с кем, он может содержать личную информация, например пароли.</value>
@@ -369,9 +360,6 @@
   <data name="tpTheme.Text" xml:space="preserve">
     <value>Тема</value>
   </data>
-  <data name="btnApplyTheme.Text" xml:space="preserve">
-    <value>Применить тему</value>
-  </data>
   <data name="btnThemeAdd.Text" xml:space="preserve">
     <value>Добавить</value>
   </data>
@@ -383,9 +371,6 @@
   </data>
   <data name="cbUseCustomTheme.Text" xml:space="preserve">
     <value>Пользовательская тема</value>
-  </data>
-  <data name="cbExperimentalCustomTheme.Text" xml:space="preserve">
-    <value>Применить пользовательскую тему ко всем окнам</value>
   </data>
   <data name="tpSettings.Text" xml:space="preserve">
     <value>Настройки</value>

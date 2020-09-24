@@ -258,9 +258,6 @@
   <data name="rtbDecodeResult.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="rtbDecodeResult.Text" xml:space="preserve">
-    <value />
-  </data>
   <data name="&gt;&gt;rtbDecodeResult.Name" xml:space="preserve">
     <value>rtbDecodeResult</value>
   </data>

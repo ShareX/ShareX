@@ -126,9 +126,6 @@
   <data name="btnStartHashCheck.Text" xml:space="preserve">
     <value>Start</value>
   </data>
-  <data name="lblFile.Text" xml:space="preserve">
-    <value>Dateipfad:</value>
-  </data>
   <data name="lblHashType.Text" xml:space="preserve">
     <value>Hashtyp:</value>
   </data>

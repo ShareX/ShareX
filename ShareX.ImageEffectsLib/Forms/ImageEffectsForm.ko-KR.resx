@@ -123,9 +123,6 @@
   <data name="btnOK.Text" xml:space="preserve">
     <value>확인</value>
   </data>
-  <data name="btnRemove.Text" xml:space="preserve">
-    <value>삭제</value>
-  </data>
   <data name="btnSaveImage.Text" xml:space="preserve">
     <value>이미지 저장하기...</value>
   </data>
@@ -137,21 +134,6 @@
   </data>
   <data name="tsmiLoadImageFromFile.Text" xml:space="preserve">
     <value>파일에서...</value>
-  </data>
-  <data name="btnDuplicate.Text" xml:space="preserve">
-    <value>복제</value>
-  </data>
-  <data name="btnClear.Text" xml:space="preserve">
-    <value>초기화</value>
-  </data>
-  <data name="btnAdd.Text" xml:space="preserve">
-    <value>추가</value>
-  </data>
-  <data name="btnRemovePreset.Text" xml:space="preserve">
-    <value>프리셋 삭제</value>
-  </data>
-  <data name="btnAddPreset.Text" xml:space="preserve">
-    <value>새 프리셋</value>
   </data>
   <data name="lblPresetName.Text" xml:space="preserve">
     <value>이름:</value>

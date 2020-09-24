@@ -123,9 +123,6 @@
   <data name="btnCancel.Text" xml:space="preserve">
     <value>취소</value>
   </data>
-  <data name="btnOK.Text" xml:space="preserve">
-    <value>확인</value>
-  </data>
   <data name="lblQuestion.Text" xml:space="preserve">
     <value>클립보드에 담긴 내용입니다:</value>
   </data>

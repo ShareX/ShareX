@@ -120,20 +120,8 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Afbeeldingseffecten</value>
   </data>
-  <data name="btnAdd.Text" xml:space="preserve">
-    <value>Toevoegen</value>
-  </data>
-  <data name="btnClear.Text" xml:space="preserve">
-    <value>Legen</value>
-  </data>
-  <data name="btnDuplicate.Text" xml:space="preserve">
-    <value>Dupliceren</value>
-  </data>
   <data name="btnOK.Text" xml:space="preserve">
     <value>OK</value>
-  </data>
-  <data name="btnRemove.Text" xml:space="preserve">
-    <value>Verwijderen</value>
   </data>
   <data name="btnSaveImage.Text" xml:space="preserve">
     <value>Afbeelding opslaan...</value>

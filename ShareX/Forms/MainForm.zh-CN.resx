@@ -759,9 +759,6 @@
   <data name="tsmiCopyImageDimensions.Text" xml:space="preserve">
     <value>图像尺寸</value>
   </data>
-  <data name="tsmiHideThumbnailTitle.Text" xml:space="preserve">
-    <value>隐藏缩略图标题</value>
-  </data>
   <data name="tsmiSwitchTaskViewMode.Text" xml:space="preserve">
     <value>切换至缩略图视图</value>
   </data>

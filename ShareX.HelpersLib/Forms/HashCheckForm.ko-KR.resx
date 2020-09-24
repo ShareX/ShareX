@@ -126,9 +126,6 @@
   <data name="btnStartHashCheck.Text" xml:space="preserve">
     <value>시작</value>
   </data>
-  <data name="lblFile.Text" xml:space="preserve">
-    <value>파일 경로:</value>
-  </data>
   <data name="lblHashType.Text" xml:space="preserve">
     <value>해시 종류:</value>
   </data>

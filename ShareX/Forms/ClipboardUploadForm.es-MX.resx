@@ -120,9 +120,6 @@
   <data name="lblQuestion.Text" xml:space="preserve">
     <value>El portapapeles contiene lo siguiente:</value>
   </data>
-  <data name="btnOK.Text" xml:space="preserve">
-    <value>Aceptar</value>
-  </data>
   <data name="btnCancel.Text" xml:space="preserve">
     <value>Cancelar</value>
   </data>

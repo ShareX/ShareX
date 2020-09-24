@@ -744,26 +744,8 @@
   <data name="tsmiCopyImageDimensions.Text" xml:space="preserve">
     <value>Размеры изображения</value>
   </data>
-  <data name="tsmiHideThumbnailTitle.Text" xml:space="preserve">
-    <value>Прятать заголовок миниатюры</value>
-  </data>
   <data name="tsmiSwitchTaskViewMode.Text" xml:space="preserve">
     <value>Перейти в режим миниатюр</value>
-  </data>
-  <data name="pbPatreonButton.ToolTip" xml:space="preserve">
-    <value>Поддержите нас на  Patreon</value>
-  </data>
-  <data name="pbBitcoinButton.ToolTip" xml:space="preserve">
-    <value>Поддержите нас криптовалютой</value>
-  </data>
-  <data name="pbTwitterButton.ToolTip" xml:space="preserve">
-    <value>Читайте наш Твиттер</value>
-  </data>
-  <data name="pbDiscordButton.ToolTip" xml:space="preserve">
-    <value>Присоединяйтесь к нашему серверу Discord</value>
-  </data>
-  <data name="pbSocialHideButton.ToolTip" xml:space="preserve">
-    <value>Спрятать кнопки соцсетей</value>
   </data>
   <data name="tsmiImageSplitter.Text" xml:space="preserve">
     <value>Разделитель изображений...</value>

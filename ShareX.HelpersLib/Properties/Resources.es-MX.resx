@@ -141,9 +141,6 @@
   <data name="TextDestination_CustomTextUploader" xml:space="preserve">
     <value>Servidor personalizado de texto</value>
   </data>
-  <data name="ImageEditorInterpolationMode_HighQualityBicubic" xml:space="preserve">
-    <value>Bicúbica de alta calidad</value>
-  </data>
   <data name="HotkeyType_AutoCapture" xml:space="preserve">
     <value>Captura automática</value>
   </data>
@@ -173,9 +170,6 @@
   </data>
   <data name="ReplCodeMenuEntry_uln_User_login_name" xml:space="preserve">
     <value>Nombre de acceso</value>
-  </data>
-  <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__Image__Size___0_x_1__" xml:space="preserve">
-    <value>Contenido del portapapeles: Imagen (tamaño: {0}×{1})</value>
   </data>
   <data name="HotkeyType_ImageEffects" xml:space="preserve">
     <value>Efectos de imágenes</value>
@@ -303,9 +297,6 @@
   <data name="HotkeyType_CaptureWebpage_Category" xml:space="preserve">
     <value>Capturar pantalla</value>
   </data>
-  <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__File__Count___0__" xml:space="preserve">
-    <value>Contenido del portapapeles: Archivo (total: {0})</value>
-  </data>
   <data name="HotkeyType_FileUpload_Category" xml:space="preserve">
     <value>Subir</value>
   </data>
@@ -401,12 +392,6 @@
   <data name="LinearGradientMode_BackwardDiagonal" xml:space="preserve">
     <value>Diagonal inversa</value>
   </data>
-  <data name="ImageEditorInterpolationMode_Bicubic" xml:space="preserve">
-    <value>Bicúbica</value>
-  </data>
-  <data name="ImageEditorInterpolationMode_Bilinear" xml:space="preserve">
-    <value>Bilineal</value>
-  </data>
   <data name="DirectoryNameEditor_EditValue_Browse_for_a_folder___" xml:space="preserve">
     <value>Buscar carpeta...</value>
   </data>
@@ -457,12 +442,6 @@
   </data>
   <data name="Helpers_BrowseFolder_Choose_folder" xml:space="preserve">
     <value>Elegir carpeta</value>
-  </data>
-  <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__Text__Length___0__" xml:space="preserve">
-    <value>Contenido del portapapeles: Texto (longitud: {0})</value>
-  </data>
-  <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_is_empty_or_contains_unknown_data_" xml:space="preserve">
-    <value>Portapapeles vacío o contiene datos desconocidos.</value>
   </data>
   <data name="CodeMenu_Create_Close" xml:space="preserve">
     <value>Cerrar</value>
@@ -707,9 +686,6 @@
   <data name="HotkeyType_HashCheck" xml:space="preserve">
     <value>Verificación de hash</value>
   </data>
-  <data name="ImageEditorInterpolationMode_HighQualityBilinear" xml:space="preserve">
-    <value>Bilineal de alta calidad</value>
-  </data>
   <data name="AfterCaptureTasks_AnnotateImage" xml:space="preserve">
     <value>Abrir en el editor de imágenes</value>
   </data>
@@ -912,9 +888,6 @@ Tamaño: {2:n0} / {3:n0} KB</value>
   </data>
   <data name="HSB_ToString_" xml:space="preserve">
     <value>Tono: {0:0.0}°, Saturación: {1:0.0} %, Brillo: {2:0.0} %</value>
-  </data>
-  <data name="ImageEditorInterpolationMode_NearestNeighbor" xml:space="preserve">
-    <value>Vecino más cercano</value>
   </data>
   <data name="ImageEditorStartMode_Maximized" xml:space="preserve">
     <value>Maximizado</value>

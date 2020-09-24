@@ -285,9 +285,6 @@
   <data name="btnImport.Text" xml:space="preserve">
     <value>导入...</value>
   </data>
-  <data name="tpExportImport.Text" xml:space="preserve">
-    <value>导出 / 导入</value>
-  </data>
   <data name="cbHistorySaveTasks.Text" xml:space="preserve">
     <value>保存任务历史</value>
   </data>
@@ -357,14 +354,8 @@
   <data name="cbEditWithShareX.Text" xml:space="preserve">
     <value>在Windows上下文菜单中显示“使用ShareX编辑”</value>
   </data>
-  <data name="cbExperimentalDarkTheme.Text" xml:space="preserve">
-    <value>实验性黑暗主题</value>
-  </data>
   <data name="cbUseWhiteShareXIcon.Text" xml:space="preserve">
     <value>使用白色 ShareX 图标</value>
-  </data>
-  <data name="cbUseDarkTheme.Text" xml:space="preserve">
-    <value>使用黑暗主题</value>
   </data>
   <data name="btnPersonalFolderPathApply.Text" xml:space="preserve">
     <value>应用</value>

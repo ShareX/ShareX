@@ -120,20 +120,8 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - 图像效果</value>
   </data>
-  <data name="btnAdd.Text" xml:space="preserve">
-    <value>添加</value>
-  </data>
-  <data name="btnClear.Text" xml:space="preserve">
-    <value>清除</value>
-  </data>
-  <data name="btnDuplicate.Text" xml:space="preserve">
-    <value>复制</value>
-  </data>
   <data name="btnOK.Text" xml:space="preserve">
     <value>确定</value>
-  </data>
-  <data name="btnRemove.Text" xml:space="preserve">
-    <value>删除</value>
   </data>
   <data name="btnSaveImage.Text" xml:space="preserve">
     <value>保存图像...</value>
@@ -150,19 +138,10 @@
   <data name="btnUploadImage.Text" xml:space="preserve">
     <value>上传图像</value>
   </data>
-  <data name="btnRemovePreset.Text" xml:space="preserve">
-    <value>删除预设</value>
-  </data>
-  <data name="btnAddPreset.Text" xml:space="preserve">
-    <value>新预设</value>
-  </data>
   <data name="lblPresetName.Text" xml:space="preserve">
     <value>名称：</value>
   </data>
   <data name="btnClose.Text" xml:space="preserve">
     <value>关闭</value>
-  </data>
-  <data name="btnRefresh.Text" xml:space="preserve">
-    <value>刷新</value>
   </data>
 </root>

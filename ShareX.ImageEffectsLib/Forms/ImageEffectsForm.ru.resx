@@ -120,20 +120,8 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Эффекты изображений</value>
   </data>
-  <data name="btnAdd.Text" xml:space="preserve">
-    <value>Добавить</value>
-  </data>
-  <data name="btnClear.Text" xml:space="preserve">
-    <value>Очистить</value>
-  </data>
-  <data name="btnDuplicate.Text" xml:space="preserve">
-    <value>Дублировать</value>
-  </data>
   <data name="btnOK.Text" xml:space="preserve">
     <value>ОК</value>
-  </data>
-  <data name="btnRemove.Text" xml:space="preserve">
-    <value>Удалить</value>
   </data>
   <data name="tsmiLoadImageFromClipboard.Text" xml:space="preserve">
     <value>Из буфера обмена</value>
@@ -147,12 +135,6 @@
   <data name="mbLoadImage.Text" xml:space="preserve">
     <value>Загрузить изображение</value>
   </data>
-  <data name="btnAddPreset.Text" xml:space="preserve">
-    <value>Новая заготовка</value>
-  </data>
-  <data name="btnRemovePreset.Text" xml:space="preserve">
-    <value>Удалить заготовку</value>
-  </data>
   <data name="lblPresetName.Text" xml:space="preserve">
     <value>Имя:</value>
   </data>
@@ -161,9 +143,6 @@
   </data>
   <data name="btnUploadImage.Text" xml:space="preserve">
     <value>Загрузить изображение</value>
-  </data>
-  <data name="btnRefresh.Text" xml:space="preserve">
-    <value>Обновить</value>
   </data>
   <data name="lblEffect.Text" xml:space="preserve">
     <value>Эффект:</value>

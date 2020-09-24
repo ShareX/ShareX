@@ -132,18 +132,6 @@
   <data name="Stop" xml:space="preserve">
     <value>Стоп</value>
   </data>
-  <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__Image__Size___0_x_1__" xml:space="preserve">
-    <value>Содержимое буфера: Изображение (Размер: {0} x {1} точек)</value>
-  </data>
-  <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__Text__Length___0__" xml:space="preserve">
-    <value>Содержимое буфера: Текст (Символов: {0})</value>
-  </data>
-  <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__File__Count___0__" xml:space="preserve">
-    <value>Содержимое буфера: Файл(ы) (Количество: {0} шт.)</value>
-  </data>
-  <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_is_empty_or_contains_unknown_data_" xml:space="preserve">
-    <value>Буфер пуст либо содержит неизвестную информацию.</value>
-  </data>
   <data name="PrintTextForm_LoadSettings_Name___0___Size___1_" xml:space="preserve">
     <value>Имя: {0}, Размер: {1}</value>
   </data>
@@ -1104,21 +1092,6 @@
   </data>
   <data name="ImageEditorStartMode_AutoSize" xml:space="preserve">
     <value>Авторазмер</value>
-  </data>
-  <data name="ImageEditorInterpolationMode_NearestNeighbor" xml:space="preserve">
-    <value>Ступенчатая</value>
-  </data>
-  <data name="ImageEditorInterpolationMode_Bicubic" xml:space="preserve">
-    <value>Бикубическая</value>
-  </data>
-  <data name="ImageEditorInterpolationMode_HighQualityBicubic" xml:space="preserve">
-    <value>Бикубическая (высококачественная)</value>
-  </data>
-  <data name="ImageEditorInterpolationMode_HighQualityBilinear" xml:space="preserve">
-    <value>Билинейная (высококачественная)</value>
-  </data>
-  <data name="ImageEditorInterpolationMode_Bilinear" xml:space="preserve">
-    <value>Билинейная</value>
   </data>
   <data name="ShapeType_DrawingSticker" xml:space="preserve">
     <value>Рисование: Стикер</value>
