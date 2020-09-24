@@ -178,7 +178,7 @@ namespace ShareX.UploadersLib
                 filename = Path.GetFileNameWithoutExtension(filename);
             }
 
-            filename = URLHelpers.URLEncode(filename);
+            filename = URLHelpers.URLEncode(filename, false, HelpersOptions.URLEncodeIgnoreEmoji);
 
             if (subFolderPath == null)
             {
@@ -256,7 +256,8 @@ namespace ShareX.UploadersLib
             }
 
             httpHomeUri.Scheme = BrowserProtocol.GetDescription();
-            return httpHomeUri.Uri.OriginalString;
+            return httpHomeUri.Uri.GetComponents( UriComponents.AbsoluteUri & ~UriComponents.Port, UriFormat.Unescaped );
+            //return filename;
         }
 
         public string GetFtpPath(string filemame)
