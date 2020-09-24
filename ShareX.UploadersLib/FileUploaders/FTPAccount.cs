@@ -256,8 +256,12 @@ namespace ShareX.UploadersLib
             }
 
             httpHomeUri.Scheme = BrowserProtocol.GetDescription();
-            return httpHomeUri.Uri.GetComponents( UriComponents.AbsoluteUri & ~UriComponents.Port, UriFormat.Unescaped );
-            //return filename;
+            if (HelpersOptions.URLEncodeIgnoreEmoji) {
+                return httpHomeUri.Uri.GetComponents(UriComponents.AbsoluteUri & ~UriComponents.Port,
+                    UriFormat.Unescaped);
+            }
+
+            return httpHomeUri.Uri.OriginalString;
         }
 
         public string GetFtpPath(string filemame)
