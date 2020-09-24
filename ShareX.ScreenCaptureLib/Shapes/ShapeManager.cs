@@ -713,20 +713,6 @@ namespace ShareX.ScreenCaptureLib
                             break;
                     }
                 }
-                else
-                {
-                    switch (e.KeyData)
-                    {
-                        case Keys.Q:
-                            Options.QuickCrop = !Options.QuickCrop;
-
-                            if (tsmiQuickCrop != null)
-                            {
-                                tsmiQuickCrop.Checked = !Options.QuickCrop;
-                            }
-                            break;
-                    }
-                }
             }
 
             int speed;

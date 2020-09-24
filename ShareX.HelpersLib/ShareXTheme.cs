@@ -170,7 +170,7 @@ namespace ShareX.HelpersLib
                 MenuHighlightBorderColor = Color.FromArgb(116, 129, 152),
                 MenuBorderColor = Color.FromArgb(22, 26, 31),
                 MenuCheckBackgroundColor = Color.FromArgb(56, 64, 75),
-                ContextMenuOpacity = 90,
+                ContextMenuOpacity = 100,
                 SeparatorLightColor = Color.FromArgb(56, 64, 75),
                 SeparatorDarkColor = Color.FromArgb(22, 26, 31)
             };
@@ -194,7 +194,7 @@ namespace ShareX.HelpersLib
                 MenuHighlightBorderColor = Color.FromArgb(96, 143, 226),
                 MenuBorderColor = Color.FromArgb(201, 201, 201),
                 MenuCheckBackgroundColor = Color.FromArgb(225, 233, 244),
-                ContextMenuOpacity = 95,
+                ContextMenuOpacity = 100,
                 SeparatorLightColor = Color.FromArgb(253, 253, 253),
                 SeparatorDarkColor = Color.FromArgb(189, 189, 189)
             };
