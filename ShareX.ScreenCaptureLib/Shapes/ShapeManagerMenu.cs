@@ -889,7 +889,6 @@ namespace ShareX.ScreenCaptureLib
                 tsmiQuickCrop = new ToolStripMenuItem(Resources.ShapeManager_CreateContextMenu_Multi_region_mode);
                 tsmiQuickCrop.Checked = !Options.QuickCrop;
                 tsmiQuickCrop.CheckOnClick = true;
-                tsmiQuickCrop.ShortcutKeyDisplayString = "Q";
                 tsmiQuickCrop.Click += (sender, e) => Options.QuickCrop = !tsmiQuickCrop.Checked;
                 tsddbOptions.DropDownItems.Add(tsmiQuickCrop);
             }
