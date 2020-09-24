@@ -1015,7 +1015,13 @@ namespace ShareX.ScreenCaptureLib
                 ToolStripMenuItem tsmiLockMenu = new ToolStripMenuItem("Lock menu");
                 tsmiLockMenu.Checked = Options.MenuLocked;
                 tsmiLockMenu.CheckOnClick = true;
-                tsmiLockMenu.Click += (sender, e) => Options.MenuLocked = tsmiLockMenu.Checked;
+                tsmiLockMenu.Click += (sender, e) =>
+                {
+                    Options.MenuLocked = tsmiLockMenu.Checked;
+                    if (tslDragLeft != null) tslDragLeft.Visible = !Options.MenuLocked;
+                    if (tslDragRight != null) tslDragRight.Visible = !Options.MenuLocked;
+                    UpdateMenuPosition();
+                };
                 tsddbOptions.DropDownItems.Add(tsmiLockMenu);
 
                 ToolStripMenuItem tsmiRememberMenuState = new ToolStripMenuItem(Resources.ShapeManager_CreateContextMenu_RememberMenuState);
