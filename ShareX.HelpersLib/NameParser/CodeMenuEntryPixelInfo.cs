@@ -35,6 +35,9 @@ namespace ShareX.HelpersLib
         public static readonly CodeMenuEntryPixelInfo r = new CodeMenuEntryPixelInfo("r", "Red color (0-255)");
         public static readonly CodeMenuEntryPixelInfo g = new CodeMenuEntryPixelInfo("g", "Green color (0-255)");
         public static readonly CodeMenuEntryPixelInfo b = new CodeMenuEntryPixelInfo("b", "Blue color (0-255)");
+        public static readonly CodeMenuEntryPixelInfo R = new CodeMenuEntryPixelInfo("R", "Red color (0-1.000)");
+        public static readonly CodeMenuEntryPixelInfo G = new CodeMenuEntryPixelInfo("G", "Green color (0-1.000)");
+        public static readonly CodeMenuEntryPixelInfo B = new CodeMenuEntryPixelInfo("B", "Blue color (0-1.000)");
         public static readonly CodeMenuEntryPixelInfo hex = new CodeMenuEntryPixelInfo("hex", "Hex color value (Lowercase)");
         public static readonly CodeMenuEntryPixelInfo HEX = new CodeMenuEntryPixelInfo("HEX", "Hex color value (Uppercase)");
         public static readonly CodeMenuEntryPixelInfo x = new CodeMenuEntryPixelInfo("x", "X position");
@@ -47,9 +50,12 @@ namespace ShareX.HelpersLib
 
         public static string Parse(string input, Color color, Point position)
         {
-            return input.Replace(r.ToPrefixString(), color.R.ToString(), StringComparison.InvariantCultureIgnoreCase).
-                Replace(g.ToPrefixString(), color.G.ToString(), StringComparison.InvariantCultureIgnoreCase).
-                Replace(b.ToPrefixString(), color.B.ToString(), StringComparison.InvariantCultureIgnoreCase).
+            return input.Replace(r.ToPrefixString(), color.R.ToString(), StringComparison.InvariantCulture).
+                Replace(g.ToPrefixString(), color.G.ToString(), StringComparison.InvariantCulture).
+                Replace(b.ToPrefixString(), color.B.ToString(), StringComparison.InvariantCulture).
+                Replace(R.ToPrefixString(), Math.Round(color.R / 255.0, 3, MidpointRounding.AwayFromZero).ToString(), StringComparison.InvariantCultureIgnoreCase).
+                Replace(G.ToPrefixString(), Math.Round(color.G / 255.0, 3, MidpointRounding.AwayFromZero).ToString(), StringComparison.InvariantCultureIgnoreCase).
+                Replace(B.ToPrefixString(), Math.Round(color.B / 255.0, 3, MidpointRounding.AwayFromZero).ToString(), StringComparison.InvariantCultureIgnoreCase).
                 Replace(HEX.ToPrefixString(), ColorHelpers.ColorToHex(color), StringComparison.InvariantCulture).
                 Replace(hex.ToPrefixString(), ColorHelpers.ColorToHex(color).ToLowerInvariant(), StringComparison.InvariantCultureIgnoreCase).
                 Replace(x.ToPrefixString(), position.X.ToString(), StringComparison.InvariantCultureIgnoreCase).
