@@ -203,7 +203,10 @@ namespace ShareX.UploadersLib
                     url = URLHelpers.CombineURL(url, subFolderPath);
                 }
 
-                url = URLHelpers.CombineURL(url, filename);
+                if (HelpersOptions.URLEncodeIgnoreEmoji)
+                {
+                    url = URLHelpers.CombineURL(url, filename);
+                }
 
                 httpHomeUri = new UriBuilder(url);
                 httpHomeUri.Port = -1; //Since httpHomePath is not set, it's safe to erase UriBuilder's assumed port number
@@ -251,17 +254,20 @@ namespace ShareX.UploadersLib
                         httpHomeUri.Path = URLHelpers.CombineURL(httpHomeUri.Path, subFolderPath);
                     }
 
-                    httpHomeUri.Path = URLHelpers.CombineURL(httpHomeUri.Path, filename);
+                    if (!HelpersOptions.URLEncodeIgnoreEmoji) {
+                        httpHomeUri.Path = URLHelpers.CombineURL(httpHomeUri.Path, filename);
+                    }
                 }
             }
 
             httpHomeUri.Scheme = BrowserProtocol.GetDescription();
-            if (HelpersOptions.URLEncodeIgnoreEmoji) {
-                return httpHomeUri.Uri.GetComponents(UriComponents.AbsoluteUri & ~UriComponents.Port,
-                    UriFormat.Unescaped);
-            }
 
-            return httpHomeUri.Uri.OriginalString;
+            var finalUrl = httpHomeUri.Uri.OriginalString;
+            if (HelpersOptions.URLEncodeIgnoreEmoji)
+            {
+                return finalUrl + (finalUrl.EndsWith("/") ? filename : $"/{filename}");
+            }
+            return finalUrl;
         }
 
         public string GetFtpPath(string filemame)
