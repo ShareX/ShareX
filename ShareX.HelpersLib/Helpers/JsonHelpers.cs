@@ -33,8 +33,8 @@ namespace ShareX.HelpersLib
 {
     public static class JsonHelpers
     {
-        public static void Serialize<T>(T obj, TextWriter textWriter, DefaultValueHandling defaultValueHandling = DefaultValueHandling.Ignore,
-            NullValueHandling nullValueHandling = NullValueHandling.Ignore, ISerializationBinder serializationBinder = null)
+        public static void Serialize<T>(T obj, TextWriter textWriter, DefaultValueHandling defaultValueHandling = DefaultValueHandling.Include,
+            NullValueHandling nullValueHandling = NullValueHandling.Include, ISerializationBinder serializationBinder = null)
         {
             using (JsonTextWriter jsonTextWriter = new JsonTextWriter(textWriter))
             {
@@ -51,8 +51,8 @@ namespace ShareX.HelpersLib
             }
         }
 
-        public static string SerializeToString<T>(T obj, DefaultValueHandling defaultValueHandling = DefaultValueHandling.Ignore,
-            NullValueHandling nullValueHandling = NullValueHandling.Ignore, ISerializationBinder serializationBinder = null)
+        public static string SerializeToString<T>(T obj, DefaultValueHandling defaultValueHandling = DefaultValueHandling.Include,
+            NullValueHandling nullValueHandling = NullValueHandling.Include, ISerializationBinder serializationBinder = null)
         {
             StringBuilder sb = new StringBuilder();
 
@@ -64,8 +64,8 @@ namespace ShareX.HelpersLib
             return sb.ToString();
         }
 
-        public static void SerializeToStream<T>(T obj, Stream stream, DefaultValueHandling defaultValueHandling = DefaultValueHandling.Ignore,
-            NullValueHandling nullValueHandling = NullValueHandling.Ignore, ISerializationBinder serializationBinder = null)
+        public static void SerializeToStream<T>(T obj, Stream stream, DefaultValueHandling defaultValueHandling = DefaultValueHandling.Include,
+            NullValueHandling nullValueHandling = NullValueHandling.Include, ISerializationBinder serializationBinder = null)
         {
             using (StreamWriter streamWriter = new StreamWriter(stream))
             {
@@ -73,16 +73,16 @@ namespace ShareX.HelpersLib
             }
         }
 
-        public static MemoryStream SerializeToMemoryStream<T>(T obj, DefaultValueHandling defaultValueHandling = DefaultValueHandling.Ignore,
-            NullValueHandling nullValueHandling = NullValueHandling.Ignore, ISerializationBinder serializationBinder = null)
+        public static MemoryStream SerializeToMemoryStream<T>(T obj, DefaultValueHandling defaultValueHandling = DefaultValueHandling.Include,
+            NullValueHandling nullValueHandling = NullValueHandling.Include, ISerializationBinder serializationBinder = null)
         {
             MemoryStream memoryStream = new MemoryStream();
             SerializeToStream(obj, memoryStream, defaultValueHandling, nullValueHandling, serializationBinder);
             return memoryStream;
         }
 
-        public static void SerializeToFile<T>(T obj, string filePath, DefaultValueHandling defaultValueHandling = DefaultValueHandling.Ignore,
-            NullValueHandling nullValueHandling = NullValueHandling.Ignore, ISerializationBinder serializationBinder = null)
+        public static void SerializeToFile<T>(T obj, string filePath, DefaultValueHandling defaultValueHandling = DefaultValueHandling.Include,
+            NullValueHandling nullValueHandling = NullValueHandling.Include, ISerializationBinder serializationBinder = null)
         {
             if (!string.IsNullOrEmpty(filePath))
             {

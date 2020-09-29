@@ -29,7 +29,6 @@ using Newtonsoft.Json.Serialization;
 using ShareX.HelpersLib.Properties;
 using System;
 using System.ComponentModel;
-using System.Globalization;
 using System.IO;
 using System.Text;
 using System.Threading.Tasks;
@@ -71,7 +70,7 @@ namespace ShareX.HelpersLib
             InitializeComponent();
         }
 
-        public string Serialize(object obj)
+        private string Serialize(object obj)
         {
             if (obj != null)
             {
@@ -149,7 +148,7 @@ namespace ShareX.HelpersLib
             }
         }
 
-        public object Deserialize(string json)
+        private object Deserialize(string json)
         {
             try
             {
@@ -201,7 +200,7 @@ namespace ShareX.HelpersLib
             }
         }
 
-        public void ImportJson(string json)
+        private void ImportJson(string json)
         {
             if (!string.IsNullOrEmpty(json))
             {
@@ -216,7 +215,7 @@ namespace ShareX.HelpersLib
             ImportJson(json);
         }
 
-        public void ImportFile(string filePath)
+        private void ImportFile(string filePath)
         {
             string json = File.ReadAllText(filePath, Encoding.UTF8);
             OnImportRequested(json);
