@@ -120,7 +120,7 @@ namespace ShareX.HelpersLib
 
             Graphics g = pevent.Graphics;
 
-            if (Color.A < 255)
+            if (Color.IsTransparent())
             {
                 using (Image checker = ImageHelpers.CreateCheckerPattern(boxSize, boxSize))
                 {

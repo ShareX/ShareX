@@ -1972,7 +1972,7 @@ namespace ShareX.HelpersLib
 
         public static void DrawColorPickerIcon(Graphics g, Color color, Rectangle rect, int holeSize = 0)
         {
-            if (color.A < 255)
+            if (color.IsTransparent())
             {
                 using (Image checker = CreateCheckerPattern(rect.Width / 2, rect.Height / 2))
                 {
