@@ -36,18 +36,21 @@ namespace ShareX.HelpersLib
         public static void Serialize<T>(T obj, TextWriter textWriter, DefaultValueHandling defaultValueHandling = DefaultValueHandling.Include,
             NullValueHandling nullValueHandling = NullValueHandling.Include, ISerializationBinder serializationBinder = null)
         {
-            using (JsonTextWriter jsonTextWriter = new JsonTextWriter(textWriter))
+            if (textWriter != null)
             {
-                jsonTextWriter.Formatting = Formatting.Indented;
+                using (JsonTextWriter jsonTextWriter = new JsonTextWriter(textWriter))
+                {
+                    jsonTextWriter.Formatting = Formatting.Indented;
 
-                JsonSerializer serializer = new JsonSerializer();
-                serializer.ContractResolver = new WritablePropertiesOnlyResolver();
-                serializer.Converters.Add(new StringEnumConverter());
-                serializer.DefaultValueHandling = defaultValueHandling;
-                serializer.NullValueHandling = nullValueHandling;
-                serializer.TypeNameHandling = TypeNameHandling.Auto;
-                if (serializationBinder != null) serializer.SerializationBinder = serializationBinder;
-                serializer.Serialize(jsonTextWriter, obj);
+                    JsonSerializer serializer = new JsonSerializer();
+                    serializer.ContractResolver = new WritablePropertiesOnlyResolver();
+                    serializer.Converters.Add(new StringEnumConverter());
+                    serializer.DefaultValueHandling = defaultValueHandling;
+                    serializer.NullValueHandling = nullValueHandling;
+                    serializer.TypeNameHandling = TypeNameHandling.Auto;
+                    if (serializationBinder != null) serializer.SerializationBinder = serializationBinder;
+                    serializer.Serialize(jsonTextWriter, obj);
+                }
             }
         }
 
@@ -67,9 +70,12 @@ namespace ShareX.HelpersLib
         public static void SerializeToStream<T>(T obj, Stream stream, DefaultValueHandling defaultValueHandling = DefaultValueHandling.Include,
             NullValueHandling nullValueHandling = NullValueHandling.Include, ISerializationBinder serializationBinder = null)
         {
-            using (StreamWriter streamWriter = new StreamWriter(stream))
+            if (stream != null)
             {
-                Serialize(obj, streamWriter, defaultValueHandling, nullValueHandling, serializationBinder);
+                using (StreamWriter streamWriter = new StreamWriter(stream))
+                {
+                    Serialize(obj, streamWriter, defaultValueHandling, nullValueHandling, serializationBinder);
+                }
             }
         }
 
@@ -97,16 +103,21 @@ namespace ShareX.HelpersLib
 
         public static T Deserialize<T>(TextReader textReader, ISerializationBinder serializationBinder = null)
         {
-            using (JsonTextReader jsonTextReader = new JsonTextReader(textReader))
+            if (textReader != null)
             {
-                JsonSerializer serializer = new JsonSerializer();
-                serializer.Converters.Add(new StringEnumConverter());
-                serializer.ObjectCreationHandling = ObjectCreationHandling.Replace;
-                serializer.TypeNameHandling = TypeNameHandling.Auto;
-                if (serializationBinder != null) serializer.SerializationBinder = serializationBinder;
-                serializer.Error += (sender, e) => e.ErrorContext.Handled = true;
-                return serializer.Deserialize<T>(jsonTextReader);
+                using (JsonTextReader jsonTextReader = new JsonTextReader(textReader))
+                {
+                    JsonSerializer serializer = new JsonSerializer();
+                    serializer.Converters.Add(new StringEnumConverter());
+                    serializer.ObjectCreationHandling = ObjectCreationHandling.Replace;
+                    serializer.TypeNameHandling = TypeNameHandling.Auto;
+                    if (serializationBinder != null) serializer.SerializationBinder = serializationBinder;
+                    serializer.Error += (sender, e) => e.ErrorContext.Handled = true;
+                    return serializer.Deserialize<T>(jsonTextReader);
+                }
             }
+
+            return default;
         }
 
         public static T DeserializeFromString<T>(string json, ISerializationBinder serializationBinder = null)
@@ -122,6 +133,19 @@ namespace ShareX.HelpersLib
             return default;
         }
 
+        public static T DeserializeFromStream<T>(Stream stream, ISerializationBinder serializationBinder = null)
+        {
+            if (stream != null)
+            {
+                using (StreamReader streamReader = new StreamReader(stream))
+                {
+                    return Deserialize<T>(streamReader, serializationBinder);
+                }
+            }
+
+            return default;
+        }
+
         public static T DeserializeFromFile<T>(string filePath, ISerializationBinder serializationBinder = null)
         {
             if (!string.IsNullOrEmpty(filePath) && File.Exists(filePath))
@@ -130,10 +154,7 @@ namespace ShareX.HelpersLib
                 {
                     if (fileStream.Length > 0)
                     {
-                        using (StreamReader streamReader = new StreamReader(fileStream))
-                        {
-                            return Deserialize<T>(streamReader, serializationBinder);
-                        }
+                        return DeserializeFromStream<T>(fileStream, serializationBinder);
                     }
                 }
             }
