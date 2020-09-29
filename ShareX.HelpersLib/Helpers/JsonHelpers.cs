@@ -64,15 +64,33 @@ namespace ShareX.HelpersLib
             return sb.ToString();
         }
 
+        public static void SerializeToStream<T>(T obj, Stream stream, DefaultValueHandling defaultValueHandling = DefaultValueHandling.Ignore,
+            NullValueHandling nullValueHandling = NullValueHandling.Ignore, ISerializationBinder serializationBinder = null)
+        {
+            using (StreamWriter streamWriter = new StreamWriter(stream))
+            {
+                Serialize(obj, streamWriter, defaultValueHandling, nullValueHandling, serializationBinder);
+            }
+        }
+
+        public static MemoryStream SerializeToMemoryStream<T>(T obj, DefaultValueHandling defaultValueHandling = DefaultValueHandling.Ignore,
+            NullValueHandling nullValueHandling = NullValueHandling.Ignore, ISerializationBinder serializationBinder = null)
+        {
+            MemoryStream memoryStream = new MemoryStream();
+            SerializeToStream(obj, memoryStream, defaultValueHandling, nullValueHandling, serializationBinder);
+            return memoryStream;
+        }
+
         public static void SerializeToFile<T>(T obj, string filePath, DefaultValueHandling defaultValueHandling = DefaultValueHandling.Ignore,
             NullValueHandling nullValueHandling = NullValueHandling.Ignore, ISerializationBinder serializationBinder = null)
         {
             if (!string.IsNullOrEmpty(filePath))
             {
+                Helpers.CreateDirectoryFromFilePath(filePath);
+
                 using (FileStream fileStream = new FileStream(filePath, FileMode.Create, FileAccess.Write, FileShare.Read, 4096, FileOptions.WriteThrough))
-                using (StreamWriter streamWriter = new StreamWriter(fileStream))
                 {
-                    Serialize(obj, streamWriter, defaultValueHandling, nullValueHandling, serializationBinder);
+                    SerializeToStream(obj, fileStream, defaultValueHandling, nullValueHandling, serializationBinder);
                 }
             }
         }
