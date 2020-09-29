@@ -104,7 +104,17 @@ namespace ShareX.ImageEffectsLib
 
         public void ImportImageEffect(string json)
         {
-            ImageEffectPreset preset = JsonHelpers.DeserializeFromString<ImageEffectPreset>(json, serializationBinder);
+            ImageEffectPreset preset = null;
+
+            try
+            {
+                preset = JsonHelpers.DeserializeFromString<ImageEffectPreset>(json, serializationBinder);
+            }
+            catch (Exception e)
+            {
+                DebugHelper.WriteException(e);
+                e.ShowError();
+            }
 
             if (preset != null && preset.Effects.Count > 0)
             {
@@ -657,7 +667,17 @@ namespace ShareX.ImageEffectsLib
                 }
                 else
                 {
-                    string json = JsonHelpers.SerializeToString(preset, serializationBinder: serializationBinder);
+                    string json = null;
+
+                    try
+                    {
+                        json = JsonHelpers.SerializeToString(preset, serializationBinder: serializationBinder);
+                    }
+                    catch (Exception ex)
+                    {
+                        DebugHelper.WriteException(ex);
+                        ex.ShowError();
+                    }
 
                     if (!string.IsNullOrEmpty(json))
                     {
