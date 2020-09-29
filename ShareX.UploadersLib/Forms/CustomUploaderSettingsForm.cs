@@ -328,7 +328,7 @@ namespace ShareX.UploadersLib
                     {
                         foreach (string filePath in files)
                         {
-                            CustomUploaderItem cui = JsonHelpers.DeserializeFromFilePath<CustomUploaderItem>(filePath);
+                            CustomUploaderItem cui = JsonHelpers.DeserializeFromFile<CustomUploaderItem>(filePath);
 
                             if (cui != null)
                             {
@@ -905,7 +905,7 @@ namespace ShareX.UploadersLib
                 {
                     foreach (string filePath in files.Where(x => !string.IsNullOrEmpty(x) && x.EndsWith(".sxcu")))
                     {
-                        CustomUploaderItem cui = JsonHelpers.DeserializeFromFilePath<CustomUploaderItem>(filePath);
+                        CustomUploaderItem cui = JsonHelpers.DeserializeFromFile<CustomUploaderItem>(filePath);
 
                         if (cui != null)
                         {

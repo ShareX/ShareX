@@ -77,27 +77,8 @@ namespace ShareX.HelpersLib
             {
                 try
                 {
-                    StringBuilder sb = new StringBuilder(256);
-                    StringWriter stringWriter = new StringWriter(sb, CultureInfo.InvariantCulture);
-
-                    using (JsonTextWriter textWriter = new JsonTextWriter(stringWriter))
-                    {
-                        textWriter.Formatting = Formatting.Indented;
-
-                        JsonSerializer serializer = new JsonSerializer();
-                        serializer.ContractResolver = new WritablePropertiesOnlyResolver();
-                        serializer.Converters.Add(new StringEnumConverter());
-                        serializer.DefaultValueHandling = ExportIgnoreDefaultValue ? DefaultValueHandling.Ignore : DefaultValueHandling.Include;
-                        serializer.NullValueHandling = ExportIgnoreNull ? NullValueHandling.Ignore : NullValueHandling.Include;
-                        serializer.TypeNameHandling = TypeNameHandling.Auto;
-                        if (SerializationBinder != null)
-                        {
-                            serializer.SerializationBinder = SerializationBinder;
-                        }
-                        serializer.Serialize(textWriter, obj, ObjectType);
-                    }
-
-                    return stringWriter.ToString();
+                    return JsonHelpers.SerializeToString(obj, ExportIgnoreDefaultValue ? DefaultValueHandling.Ignore : DefaultValueHandling.Include,
+                        ExportIgnoreNull ? NullValueHandling.Ignore : NullValueHandling.Include, SerializationBinder);
                 }
                 catch (Exception e)
                 {
@@ -176,13 +157,13 @@ namespace ShareX.HelpersLib
                 {
                     JsonSerializer serializer = new JsonSerializer();
                     serializer.Converters.Add(new StringEnumConverter());
-                    serializer.Error += (sender, e) => e.ErrorContext.Handled = true;
                     serializer.ObjectCreationHandling = ObjectCreationHandling.Replace;
                     serializer.TypeNameHandling = TypeNameHandling.Auto;
                     if (SerializationBinder != null)
                     {
                         serializer.SerializationBinder = SerializationBinder;
                     }
+                    serializer.Error += (sender, e) => e.ErrorContext.Handled = true;
                     return serializer.Deserialize(textReader, ObjectType);
                 }
             }

@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using Newtonsoft.Json.Serialization;
 using ShareX.HelpersLib;
 using ShareX.ImageEffectsLib.Properties;
 using System;
@@ -48,6 +49,7 @@ namespace ShareX.ImageEffectsLib
         public string FilePath { get; private set; }
 
         private bool pauseUpdate;
+        private ISerializationBinder serializationBinder = new TypeNameSerializationBinder("ShareX.ImageEffectsLib", "ShareX.ImageEffectsLib");
 
         public ImageEffectsForm(Bitmap bmp, List<ImageEffectPreset> presets, int selectedPresetIndex)
         {
@@ -69,9 +71,6 @@ namespace ShareX.ImageEffectsLib
             }
 
             SelectedPresetIndex = selectedPresetIndex;
-
-            eiImageEffects.ObjectType = typeof(ImageEffectPreset);
-            eiImageEffects.SerializationBinder = new TypeNameSerializationBinder("ShareX.ImageEffectsLib", "ShareX.ImageEffectsLib");
 
             AddAllEffectsToContextMenu();
             LoadSettings();
@@ -105,7 +104,12 @@ namespace ShareX.ImageEffectsLib
 
         public void ImportImageEffect(string json)
         {
-            eiImageEffects.ImportJson(json);
+            ImageEffectPreset preset = JsonHelpers.DeserializeFromString<ImageEffectPreset>(json, serializationBinder);
+
+            if (preset != null && preset.Effects.Count > 0)
+            {
+                AddPreset(preset);
+            }
         }
 
         protected void OnImageProcessRequested(Bitmap bmp)
@@ -641,21 +645,6 @@ namespace ShareX.ImageEffectsLib
             UpdatePreview();
         }
 
-        private object eiImageEffects_ExportRequested()
-        {
-            return GetSelectedPreset();
-        }
-
-        private void eiImageEffects_ImportRequested(object obj)
-        {
-            ImageEffectPreset preset = obj as ImageEffectPreset;
-
-            if (preset != null && preset.Effects.Count > 0)
-            {
-                AddPreset(preset);
-            }
-        }
-
         private void btnPackager_Click(object sender, EventArgs e)
         {
             ImageEffectPreset preset = GetSelectedPreset();
@@ -668,7 +657,7 @@ namespace ShareX.ImageEffectsLib
                 }
                 else
                 {
-                    string json = eiImageEffects.Serialize(preset);
+                    string json = JsonHelpers.SerializeToString(preset, serializationBinder: serializationBinder);
 
                     if (!string.IsNullOrEmpty(json))
                     {

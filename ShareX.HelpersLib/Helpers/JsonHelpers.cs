@@ -25,13 +25,59 @@
 
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
+using Newtonsoft.Json.Serialization;
 using System.IO;
+using System.Text;
 
 namespace ShareX.HelpersLib
 {
     public static class JsonHelpers
     {
-        public static T Deserialize<T>(TextReader textReader)
+        public static void Serialize<T>(T obj, TextWriter textWriter, DefaultValueHandling defaultValueHandling = DefaultValueHandling.Ignore,
+            NullValueHandling nullValueHandling = NullValueHandling.Ignore, ISerializationBinder serializationBinder = null)
+        {
+            using (JsonTextWriter jsonTextWriter = new JsonTextWriter(textWriter))
+            {
+                jsonTextWriter.Formatting = Formatting.Indented;
+
+                JsonSerializer serializer = new JsonSerializer();
+                serializer.ContractResolver = new WritablePropertiesOnlyResolver();
+                serializer.Converters.Add(new StringEnumConverter());
+                serializer.DefaultValueHandling = defaultValueHandling;
+                serializer.NullValueHandling = nullValueHandling;
+                serializer.TypeNameHandling = TypeNameHandling.Auto;
+                if (serializationBinder != null) serializer.SerializationBinder = serializationBinder;
+                serializer.Serialize(jsonTextWriter, obj);
+            }
+        }
+
+        public static string SerializeToString<T>(T obj, DefaultValueHandling defaultValueHandling = DefaultValueHandling.Ignore,
+            NullValueHandling nullValueHandling = NullValueHandling.Ignore, ISerializationBinder serializationBinder = null)
+        {
+            StringBuilder sb = new StringBuilder();
+
+            using (StringWriter stringWriter = new StringWriter(sb))
+            {
+                Serialize(obj, stringWriter, defaultValueHandling, nullValueHandling, serializationBinder);
+            }
+
+            return sb.ToString();
+        }
+
+        public static void SerializeToFile<T>(T obj, string filePath, DefaultValueHandling defaultValueHandling = DefaultValueHandling.Ignore,
+            NullValueHandling nullValueHandling = NullValueHandling.Ignore, ISerializationBinder serializationBinder = null)
+        {
+            if (!string.IsNullOrEmpty(filePath))
+            {
+                using (FileStream fileStream = new FileStream(filePath, FileMode.Create, FileAccess.Write, FileShare.Read, 4096, FileOptions.WriteThrough))
+                using (StreamWriter streamWriter = new StreamWriter(fileStream))
+                {
+                    Serialize(obj, streamWriter, defaultValueHandling, nullValueHandling, serializationBinder);
+                }
+            }
+        }
+
+        public static T Deserialize<T>(TextReader textReader, ISerializationBinder serializationBinder = null)
         {
             using (JsonTextReader jsonTextReader = new JsonTextReader(textReader))
             {
@@ -39,27 +85,28 @@ namespace ShareX.HelpersLib
                 serializer.Converters.Add(new StringEnumConverter());
                 serializer.ObjectCreationHandling = ObjectCreationHandling.Replace;
                 serializer.TypeNameHandling = TypeNameHandling.Auto;
+                if (serializationBinder != null) serializer.SerializationBinder = serializationBinder;
                 serializer.Error += (sender, e) => e.ErrorContext.Handled = true;
                 return serializer.Deserialize<T>(jsonTextReader);
             }
         }
 
-        public static T DeserializeFromString<T>(string json)
+        public static T DeserializeFromString<T>(string json, ISerializationBinder serializationBinder = null)
         {
             if (!string.IsNullOrEmpty(json))
             {
                 using (StringReader stringReader = new StringReader(json))
                 {
-                    return Deserialize<T>(stringReader);
+                    return Deserialize<T>(stringReader, serializationBinder);
                 }
             }
 
-            return default(T);
+            return default;
         }
 
-        public static T DeserializeFromFilePath<T>(string filePath)
+        public static T DeserializeFromFile<T>(string filePath, ISerializationBinder serializationBinder = null)
         {
-            if (File.Exists(filePath))
+            if (!string.IsNullOrEmpty(filePath) && File.Exists(filePath))
             {
                 using (FileStream fileStream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read))
                 {
@@ -67,27 +114,27 @@ namespace ShareX.HelpersLib
                     {
                         using (StreamReader streamReader = new StreamReader(fileStream))
                         {
-                            return Deserialize<T>(streamReader);
+                            return Deserialize<T>(streamReader, serializationBinder);
                         }
                     }
                 }
             }
 
-            return default(T);
+            return default;
         }
 
         public static bool QuickVerifyJsonFile(string filePath)
         {
             try
             {
-                if (File.Exists(filePath))
+                if (!string.IsNullOrEmpty(filePath) && File.Exists(filePath))
                 {
-                    using (FileStream fs = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read))
+                    using (FileStream fileStream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read))
                     {
-                        if (fs.Length > 1 && fs.ReadByte() == (byte)'{')
+                        if (fileStream.Length > 1 && fileStream.ReadByte() == (byte)'{')
                         {
-                            fs.Seek(-1, SeekOrigin.End);
-                            return fs.ReadByte() == (byte)'}';
+                            fileStream.Seek(-1, SeekOrigin.End);
+                            return fileStream.ReadByte() == (byte)'}';
                         }
                     }
                 }

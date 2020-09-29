@@ -1620,7 +1620,7 @@ namespace ShareX
             {
                 try
                 {
-                    CustomUploaderItem cui = JsonHelpers.DeserializeFromFilePath<CustomUploaderItem>(filePath);
+                    CustomUploaderItem cui = JsonHelpers.DeserializeFromFile<CustomUploaderItem>(filePath);
 
                     if (cui != null)
                     {

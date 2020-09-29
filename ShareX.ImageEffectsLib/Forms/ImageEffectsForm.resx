@@ -130,7 +130,7 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="btnSaveImage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>456, 552</value>
+    <value>264, 552</value>
   </data>
   <data name="btnSaveImage.Size" type="System.Drawing.Size, System.Drawing">
     <value>120, 24</value>
@@ -154,7 +154,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnSaveImage.ZOrder" xml:space="preserve">
-    <value>24</value>
+    <value>23</value>
   </data>
   <metadata name="cmsEffects.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
@@ -313,7 +313,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnUploadImage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>584, 552</value>
+    <value>392, 552</value>
   </data>
   <data name="btnUploadImage.Size" type="System.Drawing.Size, System.Drawing">
     <value>120, 24</value>
@@ -376,7 +376,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnPackager.Location" type="System.Drawing.Point, System.Drawing">
-    <value>200, 552</value>
+    <value>8, 552</value>
   </data>
   <data name="btnPackager.Size" type="System.Drawing.Size, System.Drawing">
     <value>120, 24</value>
@@ -667,7 +667,7 @@
     <value>lvPresets</value>
   </data>
   <data name="&gt;&gt;lvPresets.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=13.1.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=13.2.2.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lvPresets.Parent" xml:space="preserve">
     <value>$this</value>
@@ -718,7 +718,7 @@
     <value>pbResult</value>
   </data>
   <data name="&gt;&gt;pbResult.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyPictureBox, ShareX.HelpersLib, Version=13.1.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyPictureBox, ShareX.HelpersLib, Version=13.2.2.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;pbResult.Parent" xml:space="preserve">
     <value>$this</value>
@@ -733,7 +733,7 @@
     <value>NoControl</value>
   </data>
   <data name="mbLoadImage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>328, 552</value>
+    <value>136, 552</value>
   </data>
   <data name="mbLoadImage.Size" type="System.Drawing.Size, System.Drawing">
     <value>120, 24</value>
@@ -751,37 +751,13 @@
     <value>mbLoadImage</value>
   </data>
   <data name="&gt;&gt;mbLoadImage.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MenuButton, ShareX.HelpersLib, Version=13.1.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MenuButton, ShareX.HelpersLib, Version=13.2.2.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;mbLoadImage.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
   <data name="&gt;&gt;mbLoadImage.ZOrder" xml:space="preserve">
     <value>22</value>
-  </data>
-  <data name="eiImageEffects.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left</value>
-  </data>
-  <data name="eiImageEffects.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 552</value>
-  </data>
-  <data name="eiImageEffects.Size" type="System.Drawing.Size, System.Drawing">
-    <value>192, 24</value>
-  </data>
-  <data name="eiImageEffects.TabIndex" type="System.Int32, mscorlib">
-    <value>19</value>
-  </data>
-  <data name="&gt;&gt;eiImageEffects.Name" xml:space="preserve">
-    <value>eiImageEffects</value>
-  </data>
-  <data name="&gt;&gt;eiImageEffects.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.ExportImportControl, ShareX.HelpersLib, Version=13.1.1.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;eiImageEffects.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;eiImageEffects.ZOrder" xml:space="preserve">
-    <value>23</value>
   </data>
   <data name="lvEffects.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left</value>
@@ -802,13 +778,13 @@
     <value>lvEffects</value>
   </data>
   <data name="&gt;&gt;lvEffects.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=13.1.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=13.2.2.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lvEffects.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lvEffects.ZOrder" xml:space="preserve">
-    <value>25</value>
+    <value>24</value>
   </data>
   <data name="lblEffect.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
