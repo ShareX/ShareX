@@ -239,8 +239,7 @@ namespace ShareX.HelpersLib
                 txtDecimal.Text = ColorHelpers.ColorToDecimal(color).ToString();
             }
 
-            Color knownColor = ColorHelpers.FindClosestKnownColor(color);
-            lblNameValue.Text = Helpers.GetProperName(knownColor.Name);
+            lblNameValue.Text = ColorHelpers.GetColorName(color);
 
             controlChangingColor = false;
         }
