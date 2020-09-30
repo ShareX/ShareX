@@ -48,8 +48,8 @@ namespace ShareX
         public Color TitleColor { get; set; } = Color.FromArgb(240, 240, 240);
 
         public Bitmap Image { get; set; }
-        public string Text { get; set; }
         public string Title { get; set; }
+        public string Text { get; set; }
         public string FilePath { get; set; }
         public string URL { get; set; }
         public ToastClickAction LeftClickAction { get; set; }

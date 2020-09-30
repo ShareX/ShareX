@@ -160,6 +160,7 @@ namespace ShareX
 
             if (e is UnauthorizedAccessException || e is FileNotFoundException)
             {
+                // TODO: Translate
                 message = "Your anti-virus software or the controlled folder access feature in Windows 10 could be blocking ShareX.";
             }
             else
@@ -167,12 +168,8 @@ namespace ShareX
                 message = e.Message;
             }
 
-            BalloonTipAction action = new BalloonTipAction()
-            {
-                ClickAction = BalloonTipClickAction.OpenDebugLog
-            };
-
-            TaskHelpers.ShowBalloonTip(message, ToolTipIcon.Warning, 5000, "ShareX failed to save settings", action);
+            // TODO: Translate
+            TaskHelpers.ShowNotificationTip(message, "ShareX - " + "Failed to save settings", 5000);
 
             settingsSaveFailWarningCount++;
         }

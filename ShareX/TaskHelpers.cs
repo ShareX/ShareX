@@ -814,22 +814,9 @@ namespace ShareX
 
                 ClipboardHelpers.CopyText(text);
 
-                if (!taskSettings.AdvancedSettings.DisableNotifications)
-                {
-                    // TODO: Translate
-                    string tipTitle = "ShareX - " + "Screen color picker";
-                    string tipText = string.Format(Resources.TaskHelpers_OpenQuickScreenColorPicker_Copied_to_clipboard___0_, text);
-
-                    switch (taskSettings.GeneralSettings.PopUpNotification)
-                    {
-                        case PopUpNotificationType.BalloonTip:
-                            ShowBalloonTip(tipText, ToolTipIcon.Info, 3000, tipTitle);
-                            break;
-                        case PopUpNotificationType.ToastNotification:
-                            ShowNotificationTip(tipText, tipTitle);
-                            break;
-                    }
-                }
+                // TODO: Translate
+                ShowNotificationTip(string.Format(Resources.TaskHelpers_OpenQuickScreenColorPicker_Copied_to_clipboard___0_, text),
+                    "ShareX - " + "Screen color picker");
             }
         }
 
@@ -1262,7 +1249,7 @@ namespace ShareX
 
         private static async Task AsyncOCRImage(Stream stream, string fileName, string filePath, OCROptions ocrOptions)
         {
-            ShowBalloonTip(Resources.OCRForm_AutoProcessing, ToolTipIcon.None, 3000);
+            ShowNotificationTip(Resources.OCRForm_AutoProcessing);
 
             string result = null;
 
@@ -1281,11 +1268,11 @@ namespace ShareX
                     File.WriteAllText(textPath, result, Encoding.UTF8);
                 }
 
-                ShowBalloonTip(Resources.OCRForm_AutoComplete, ToolTipIcon.None, 3000);
+                ShowNotificationTip(Resources.OCRForm_AutoComplete);
             }
             else
             {
-                ShowBalloonTip(Resources.OCRForm_AutoCompleteFail, ToolTipIcon.Warning, 3000);
+                ShowNotificationTip(Resources.OCRForm_AutoCompleteFail);
             }
         }
 
@@ -1305,7 +1292,7 @@ namespace ShareX
                             {
                                 if (twitter.ShowDialog() == DialogResult.OK && twitter.IsTweetSent)
                                 {
-                                    ShowBalloonTip(Resources.TaskHelpers_TweetMessage_Tweet_successfully_sent_, ToolTipIcon.Info, 3000);
+                                    ShowNotificationTip(Resources.TaskHelpers_TweetMessage_Tweet_successfully_sent_);
                                 }
                             }
                         });
@@ -1341,8 +1328,7 @@ namespace ShareX
             Program.HotkeyManager.ToggleHotkeys(hotkeysDisabled);
             Program.MainForm.UpdateToggleHotkeyButton();
 
-            string balloonTipText = hotkeysDisabled ? Resources.TaskHelpers_ToggleHotkeys_Hotkeys_disabled_ : Resources.TaskHelpers_ToggleHotkeys_Hotkeys_enabled_;
-            ShowBalloonTip(balloonTipText, ToolTipIcon.Info, 3000);
+            ShowNotificationTip(hotkeysDisabled ? Resources.TaskHelpers_ToggleHotkeys_Hotkeys_disabled_ : Resources.TaskHelpers_ToggleHotkeys_Hotkeys_enabled_);
 
             return hotkeysDisabled;
         }
@@ -1871,16 +1857,21 @@ namespace ShareX
             }
         }
 
-        public static void ShowNotificationTip(string text, string title = "ShareX")
+        public static void ShowNotificationTip(string text, string title = "ShareX", int duration = -1)
         {
+            if (duration < 0)
+            {
+                duration = (int)(Program.DefaultTaskSettings.AdvancedSettings.ToastWindowDuration * 1000);
+            }
+
             NotificationFormConfig toastConfig = new NotificationFormConfig()
             {
-                Duration = (int)(Program.DefaultTaskSettings.AdvancedSettings.ToastWindowDuration * 1000),
+                Duration = duration,
                 FadeDuration = (int)(Program.DefaultTaskSettings.AdvancedSettings.ToastWindowFadeDuration * 1000),
                 Placement = Program.DefaultTaskSettings.AdvancedSettings.ToastWindowPlacement,
                 Size = Program.DefaultTaskSettings.AdvancedSettings.ToastWindowSize,
-                Text = text,
-                Title = title
+                Title = title,
+                Text = text
             };
 
             NotificationForm.Show(toastConfig);

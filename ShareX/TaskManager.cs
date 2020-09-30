@@ -325,7 +325,18 @@ namespace ShareX
                                     if (info.TaskSettings.GeneralSettings.PopUpNotification != PopUpNotificationType.None && !string.IsNullOrEmpty(errorMessage) &&
                                         (!info.TaskSettings.AdvancedSettings.DisableNotificationsOnFullscreen || !CaptureHelpers.IsActiveWindowFullscreen()))
                                     {
-                                        TaskHelpers.ShowBalloonTip(errorMessage, ToolTipIcon.Error, 5000, "ShareX - " + Resources.TaskManager_task_UploadCompleted_Error);
+                                        string tipTitle = "ShareX - " + Resources.TaskManager_task_UploadCompleted_Error;
+                                        string tipText = errorMessage;
+
+                                        switch (info.TaskSettings.GeneralSettings.PopUpNotification)
+                                        {
+                                            case PopUpNotificationType.BalloonTip:
+                                                TaskHelpers.ShowBalloonTip(tipText, ToolTipIcon.Error, 5000, tipTitle);
+                                                break;
+                                            case PopUpNotificationType.ToastNotification:
+                                                TaskHelpers.ShowNotificationTip(tipText, tipTitle, 5000);
+                                                break;
+                                        }
                                     }
                                 }
                             }
@@ -371,9 +382,12 @@ namespace ShareX
                                         result = new UploadInfoParser().Parse(info, info.TaskSettings.AdvancedSettings.BalloonTipContentFormat);
                                     }
 
-                                    if (!string.IsNullOrEmpty(result) &&
+                                    if (info.TaskSettings.GeneralSettings.PopUpNotification != PopUpNotificationType.None && !string.IsNullOrEmpty(result) &&
                                         (!info.TaskSettings.AdvancedSettings.DisableNotificationsOnFullscreen || !CaptureHelpers.IsActiveWindowFullscreen()))
                                     {
+                                        string tipTitle = "ShareX - " + Resources.TaskManager_task_UploadCompleted_ShareX___Task_completed;
+                                        string tipText = result;
+
                                         switch (info.TaskSettings.GeneralSettings.PopUpNotification)
                                         {
                                             case PopUpNotificationType.BalloonTip:
@@ -383,8 +397,7 @@ namespace ShareX
                                                     Text = result
                                                 };
 
-                                                TaskHelpers.ShowBalloonTip(result, ToolTipIcon.Info, 5000,
-                                                    "ShareX - " + Resources.TaskManager_task_UploadCompleted_ShareX___Task_completed, action);
+                                                TaskHelpers.ShowBalloonTip(tipText, ToolTipIcon.Info, 5000, tipTitle, action);
                                                 break;
                                             case PopUpNotificationType.ToastNotification:
                                                 task.KeepImage = true;
@@ -400,7 +413,8 @@ namespace ShareX
                                                     MiddleClickAction = info.TaskSettings.AdvancedSettings.ToastWindowMiddleClickAction,
                                                     FilePath = info.FilePath,
                                                     Image = task.Image,
-                                                    Text = "ShareX - " + Resources.TaskManager_task_UploadCompleted_ShareX___Task_completed + "\r\n" + result,
+                                                    Title = tipTitle,
+                                                    Text = tipText,
                                                     URL = result
                                                 };
 
