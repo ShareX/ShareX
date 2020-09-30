@@ -98,5 +98,8 @@ namespace ShareX.ScreenCaptureLib
         public Color EditorCanvasColor = Color.Transparent;
         public List<ImageEffectPreset> ImageEffectPresets = new List<ImageEffectPreset>();
         public int SelectedImageEffectPreset = 0;
+
+        // Screen color picker
+        public string ScreenColorPickerInfoText = "";
     }
 }
