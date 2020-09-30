@@ -39,6 +39,8 @@ namespace ShareX
         public int Offset { get; set; } = 5;
         public Size Size { get; set; }
         public bool IsValid => (Duration > 0 || FadeDuration > 0) && Size.Width > 0 && Size.Height > 0;
+        public Color BackgroundColor { get; set; } = Color.FromArgb(50, 50, 50);
+        public Color BorderColor { get; set; } = Color.FromArgb(40, 40, 40);
         public int TextPadding { get; set; } = 10;
         public Font TextFont { get; set; } = new Font("Arial", 11);
         public Color TextColor { get; set; } = Color.FromArgb(210, 210, 210);
@@ -109,8 +111,6 @@ namespace ShareX
             if (Config.Image != null)
             {
                 Config.Image = ImageHelpers.ResizeImageLimit(Config.Image, Config.Size);
-                Color backgroundColor = ShareXResources.UseCustomTheme ? ShareXResources.Theme.BackgroundColor : SystemColors.Window;
-                Config.Image = ImageHelpers.FillBackground(Config.Image, backgroundColor);
                 Config.Size = new Size(Config.Image.Width + 2, Config.Image.Height + 2);
             }
             else if (!string.IsNullOrEmpty(Config.Text))
@@ -207,6 +207,7 @@ namespace ShareX
         protected override void OnPaint(PaintEventArgs e)
         {
             Graphics g = e.Graphics;
+            g.Clear(Config.BackgroundColor);
 
             Rectangle rect = ClientRectangle;
 
@@ -223,16 +224,11 @@ namespace ShareX
                         g.FillRectangle(brush, textRect);
                     }
 
-                    TextRenderer.DrawText(g, Config.URL, Config.TextFont, textRect.Offset(-urlPadding), Color.White, TextFormatFlags.Left | TextFormatFlags.EndEllipsis);
+                    TextRenderer.DrawText(g, Config.URL, Config.TextFont, textRect.Offset(-urlPadding), Config.TextColor, TextFormatFlags.Left | TextFormatFlags.EndEllipsis);
                 }
             }
             else if (!string.IsNullOrEmpty(Config.Text))
             {
-                using (LinearGradientBrush brush = new LinearGradientBrush(rect, Color.FromArgb(80, 80, 80), Color.FromArgb(50, 50, 50), LinearGradientMode.Vertical))
-                {
-                    g.FillRectangle(brush, rect);
-                }
-
                 Rectangle textRect;
 
                 if (!string.IsNullOrEmpty(Config.Title))
@@ -249,8 +245,7 @@ namespace ShareX
                 TextRenderer.DrawText(g, Config.Text, Config.TextFont, textRect, Config.TextColor, TextFormatFlags.Left | TextFormatFlags.EndEllipsis);
             }
 
-            Color borderColor = ShareXResources.UseCustomTheme ? ShareXResources.Theme.BorderColor : SystemColors.ControlText;
-            using (Pen borderPen = new Pen(borderColor))
+            using (Pen borderPen = new Pen(Config.BorderColor))
             {
                 g.DrawRectangleProper(borderPen, rect);
             }
