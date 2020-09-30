@@ -36,8 +36,11 @@ namespace ShareX
         public int Duration { get; set; }
         public int FadeDuration { get; set; }
         public ContentAlignment Placement { get; set; }
+        public int Offset { get; set; } = 3;
         public Size Size { get; set; }
         public bool IsValid => (Duration > 0 || FadeDuration > 0) && Size.Width > 0 && Size.Height > 0;
+        public int TextPadding { get; set; } = 8;
+        public Font TextFont { get; set; } = new Font("Arial", 10);
 
         public Bitmap Image { get; set; }
         public string Text { get; set; }
@@ -49,6 +52,11 @@ namespace ShareX
 
         public void Dispose()
         {
+            if (TextFont != null)
+            {
+                TextFont.Dispose();
+            }
+
             if (Image != null)
             {
                 Image.Dispose();
@@ -60,13 +68,10 @@ namespace ShareX
     {
         public NotificationFormConfig Config { get; private set; }
 
-        private int windowOffset = 3;
         private bool isMouseInside;
         private bool isDurationEnd;
         private int fadeInterval = 50;
         private float opacityDecrement;
-        private Font textFont;
-        private int textPadding = 5;
         private int urlPadding = 3;
         private Size textRenderSize;
 
@@ -87,23 +92,22 @@ namespace ShareX
             SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.UserPaint | ControlStyles.AllPaintingInWmPaint, true);
 
             Config = config;
-            textFont = new Font("Arial", 10);
             opacityDecrement = (float)fadeInterval / Config.FadeDuration;
 
-            if (config.Image != null)
+            if (Config.Image != null)
             {
-                config.Image = ImageHelpers.ResizeImageLimit(config.Image, Config.Size);
+                Config.Image = ImageHelpers.ResizeImageLimit(Config.Image, Config.Size);
                 Color backgroundColor = ShareXResources.UseCustomTheme ? ShareXResources.Theme.BackgroundColor : SystemColors.Window;
-                config.Image = ImageHelpers.FillBackground(config.Image, backgroundColor);
-                Config.Size = new Size(config.Image.Width + 2, config.Image.Height + 2);
+                Config.Image = ImageHelpers.FillBackground(Config.Image, backgroundColor);
+                Config.Size = new Size(Config.Image.Width + 2, Config.Image.Height + 2);
             }
-            else if (!string.IsNullOrEmpty(config.Text))
+            else if (!string.IsNullOrEmpty(Config.Text))
             {
-                textRenderSize = TextRenderer.MeasureText(config.Text, textFont, Config.Size.Offset(-textPadding * 2), TextFormatFlags.Left | TextFormatFlags.EndEllipsis);
-                Config.Size = new Size(textRenderSize.Width + (textPadding * 2), textRenderSize.Height + (textPadding * 2) + 2);
+                textRenderSize = TextRenderer.MeasureText(Config.Text, Config.TextFont, Config.Size.Offset(-Config.TextPadding * 2), TextFormatFlags.Left | TextFormatFlags.EndEllipsis);
+                Config.Size = new Size(textRenderSize.Width + (Config.TextPadding * 2), textRenderSize.Height + (Config.TextPadding * 2) + 2);
             }
 
-            Point position = Helpers.GetPosition(Config.Placement, windowOffset, Screen.PrimaryScreen.WorkingArea.Size, Config.Size);
+            Point position = Helpers.GetPosition(Config.Placement, Config.Offset, Screen.PrimaryScreen.WorkingArea.Size, Config.Size);
 
             NativeMethods.SetWindowPos(Handle, (IntPtr)SpecialWindowHandles.HWND_TOPMOST, position.X + Screen.PrimaryScreen.WorkingArea.X,
                 position.Y + Screen.PrimaryScreen.WorkingArea.Y, Config.Size.Width, Config.Size.Height, SetWindowPosFlags.SWP_NOACTIVATE);
@@ -197,7 +201,7 @@ namespace ShareX
                         g.FillRectangle(brush, textRect);
                     }
 
-                    TextRenderer.DrawText(g, Config.URL, textFont, textRect.Offset(-urlPadding), Color.White, TextFormatFlags.Left | TextFormatFlags.EndEllipsis);
+                    TextRenderer.DrawText(g, Config.URL, Config.TextFont, textRect.Offset(-urlPadding), Color.White, TextFormatFlags.Left | TextFormatFlags.EndEllipsis);
                 }
             }
             else if (!string.IsNullOrEmpty(Config.Text))
@@ -207,9 +211,9 @@ namespace ShareX
                     g.FillRectangle(brush, rect);
                 }
 
-                Rectangle textRect = new Rectangle(textPadding, textPadding, textRenderSize.Width + 2, textRenderSize.Height + 2);
-                TextRenderer.DrawText(g, Config.Text, textFont, textRect, Color.Black, TextFormatFlags.Left | TextFormatFlags.EndEllipsis);
-                TextRenderer.DrawText(g, Config.Text, textFont, textRect.LocationOffset(1), Color.White, TextFormatFlags.Left | TextFormatFlags.EndEllipsis);
+                Rectangle textRect = new Rectangle(Config.TextPadding, Config.TextPadding, textRenderSize.Width + 2, textRenderSize.Height + 2);
+                TextRenderer.DrawText(g, Config.Text, Config.TextFont, textRect, Color.Black, TextFormatFlags.Left | TextFormatFlags.EndEllipsis);
+                TextRenderer.DrawText(g, Config.Text, Config.TextFont, textRect.LocationOffset(1), Color.White, TextFormatFlags.Left | TextFormatFlags.EndEllipsis);
             }
 
             Color borderColor = ShareXResources.UseCustomTheme ? ShareXResources.Theme.BorderColor : SystemColors.ControlText;
@@ -318,11 +322,6 @@ namespace ShareX
             if (Config != null)
             {
                 Config.Dispose();
-            }
-
-            if (textFont != null)
-            {
-                textFont.Dispose();
             }
 
             base.Dispose(disposing);
