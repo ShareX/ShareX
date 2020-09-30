@@ -129,4 +129,7 @@
   <data name="lblQuestion.Text" xml:space="preserve">
     <value>Deine Zwischenablage enthält folgendes:</value>
   </data>
+  <data name="btnUpload.Text" xml:space="preserve">
+    <value>Hochladen</value>
+  </data>
 </root>

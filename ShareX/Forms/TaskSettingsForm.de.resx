@@ -139,7 +139,7 @@
     <value>Mauszeiger in Screenshots anzeigen</value>
   </data>
   <data name="lblCaptureShadowOffset.Text" xml:space="preserve">
-    <value>Schattenversetzung</value>
+    <value>Schattenversetzung:</value>
   </data>
   <data name="cbCaptureTransparent.Text" xml:space="preserve">
     <value>Nimm Fenster mit Transparenz auf</value>
@@ -238,7 +238,7 @@
     <value>Upload der Zwischenablage</value>
   </data>
   <data name="lblNameFormatPattern.Text" xml:space="preserve">
-    <value>Namensmuster für Aufnahme oder Zwischenablagen Uploads</value>
+    <value>Namensmuster für Aufnahme oder Zwischenablagen Uploads:</value>
   </data>
   <data name="cbFileUploadUseNamePattern.Text" xml:space="preserve">
     <value>Benutze bei Datei-Uploads statt dem eigentlichen Dateinamen ein Namensmuster</value>
@@ -247,7 +247,7 @@
     <value>Vorschau:</value>
   </data>
   <data name="lblNameFormatPatternActiveWindow.Text" xml:space="preserve">
-    <value>Namensmuster für aktive Fenster Aufnahme</value>
+    <value>Namensmuster für aktive Fenster Aufnahme:</value>
   </data>
   <data name="lblNameFormatPatternPreview.Text" xml:space="preserve">
     <value>Vorschau:</value>
@@ -280,7 +280,7 @@
     <value>Sekunden</value>
   </data>
   <data name="btnScreenRecorderFFmpegOptions.Text" xml:space="preserve">
-    <value>Bildschirmaufzeichnungsoptionen</value>
+    <value>Bildschirmaufzeichnungsoptionen...</value>
   </data>
   <data name="cbScreenRecorderShowCursor.Text" xml:space="preserve">
     <value>Mauszeiger in Aufnahme anzeigen</value>
@@ -370,28 +370,28 @@
     <value>Nach der Aufnahme...</value>
   </data>
   <data name="chkOverrideFTP.Text" xml:space="preserve">
-    <value>Überschreibe das standardmäßige FTP-Konto:</value>
+    <value>Überschreibe das standardmäßige FTP-Konto</value>
   </data>
   <data name="chkOverrideCustomUploader.Text" xml:space="preserve">
-    <value>Überschreibe den standardmäßigen eigenen Uploader:</value>
+    <value>Überschreibe den standardmäßigen eigenen Uploader</value>
   </data>
   <data name="btnCaptureCustomRegionSelectRectangle.Text" xml:space="preserve">
     <value>Bereich auswählen...</value>
   </data>
   <data name="cbImageAutoUseJPEG.Text" xml:space="preserve">
-    <value>Wenn Bild größer als angegeben, nutze das JPEG-Bildformat</value>
+    <value>Wenn Bild größer als angegeben, nutze das JPEG-Bildformat:</value>
   </data>
   <data name="lblCaptureCustomRegion.Text" xml:space="preserve">
     <value>Vordefinierter Bereich:</value>
   </data>
   <data name="lblImagePNGBitDepth.Text" xml:space="preserve">
-    <value>PNG Farbtiefe</value>
+    <value>PNG Farbtiefe:</value>
   </data>
   <data name="btnWatchFolderEdit.Text" xml:space="preserve">
     <value>Bearbeiten...</value>
   </data>
   <data name="lblToolsScreenColorPickerFormat.Text" xml:space="preserve">
-    <value>Bildschirmfarbauswähler-Format</value>
+    <value>Bildschirmfarbauswähler-Format:</value>
   </data>
   <data name="chkOverrideImageSettings.Text" xml:space="preserve">
     <value>Bildeinstellungen überschreiben</value>
@@ -532,7 +532,7 @@
     <value>Ergebnisse automatisch in die Zwischenablage kopieren</value>
   </data>
   <data name="lblAutoIncrementNumber.Text" xml:space="preserve">
-    <value>Automatische Inkrementierungsnummer</value>
+    <value>Automatische Inkrementierungsnummer:</value>
   </data>
   <data name="cbFileUploadReplaceProblematicCharacters.Text" xml:space="preserve">
     <value>In URLs problematische Zeichen beim Upload durch Unterstriche ersetzen</value>
@@ -560,5 +560,26 @@
   </data>
   <data name="tpOCR.Text" xml:space="preserve">
     <value>OCR</value>
+  </data>
+  <data name="cbOverrideScreenshotsFolder.Text" xml:space="preserve">
+    <value>Screenshots-Ordner überschreiben</value>
+  </data>
+  <data name="cbScreenRecordTransparentRegion.Text" xml:space="preserve">
+    <value>Transparente Regionsauswahl verwenden</value>
+  </data>
+  <data name="cbURLRegexReplace.Text" xml:space="preserve">
+    <value>Ergebnis-URL mit regulären Ausdrücken ersetzen</value>
+  </data>
+  <data name="lblURLRegexReplacePattern.Text" xml:space="preserve">
+    <value>Muster:</value>
+  </data>
+  <data name="lblURLRegexReplaceReplacement.Text" xml:space="preserve">
+    <value>Ersetzung:</value>
+  </data>
+  <data name="lblActionsNote.Text" xml:space="preserve">
+    <value>Hinweis: Sie können Aktionen über "Aufgaben nach der Aufnahme -&gt; Aktionen ausführen" aktivieren/deaktivieren.</value>
+  </data>
+  <data name="btnScreenshotsFolderBrowse.Text" xml:space="preserve">
+    <value>Durchsuchen...</value>
   </data>
 </root>
