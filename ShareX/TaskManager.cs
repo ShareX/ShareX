@@ -391,6 +391,10 @@ namespace ShareX
 
                                                 NotificationFormConfig toastConfig = new NotificationFormConfig()
                                                 {
+                                                    Duration = (int)(info.TaskSettings.AdvancedSettings.ToastWindowDuration * 1000),
+                                                    FadeDuration = (int)(info.TaskSettings.AdvancedSettings.ToastWindowFadeDuration * 1000),
+                                                    Placement = info.TaskSettings.AdvancedSettings.ToastWindowPlacement,
+                                                    Size = info.TaskSettings.AdvancedSettings.ToastWindowSize,
                                                     LeftClickAction = info.TaskSettings.AdvancedSettings.ToastWindowClickAction,
                                                     RightClickAction = info.TaskSettings.AdvancedSettings.ToastWindowRightClickAction,
                                                     MiddleClickAction = info.TaskSettings.AdvancedSettings.ToastWindowMiddleClickAction,
@@ -399,10 +403,8 @@ namespace ShareX
                                                     Text = "ShareX - " + Resources.TaskManager_task_UploadCompleted_ShareX___Task_completed + "\r\n" + result,
                                                     URL = result
                                                 };
-                                                NotificationForm.Show((int)(info.TaskSettings.AdvancedSettings.ToastWindowDuration * 1000),
-                                                    (int)(info.TaskSettings.AdvancedSettings.ToastWindowFadeDuration * 1000),
-                                                    info.TaskSettings.AdvancedSettings.ToastWindowPlacement,
-                                                    info.TaskSettings.AdvancedSettings.ToastWindowSize, toastConfig);
+
+                                                NotificationForm.Show(toastConfig);
                                                 break;
                                         }
 

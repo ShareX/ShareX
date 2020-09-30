@@ -31,12 +31,34 @@ using System.Windows.Forms;
 
 namespace ShareX
 {
+    public class NotificationFormConfig : IDisposable
+    {
+        public int Duration { get; set; }
+        public int FadeDuration { get; set; }
+        public ContentAlignment Placement { get; set; }
+        public Size Size { get; set; }
+        public bool IsValid => (Duration > 0 || FadeDuration > 0) && Size.Width > 0 && Size.Height > 0;
+
+        public Bitmap Image { get; set; }
+        public string Text { get; set; }
+        public string FilePath { get; set; }
+        public string URL { get; set; }
+        public ToastClickAction LeftClickAction { get; set; }
+        public ToastClickAction RightClickAction { get; set; }
+        public ToastClickAction MiddleClickAction { get; set; }
+
+        public void Dispose()
+        {
+            if (Image != null)
+            {
+                Image.Dispose();
+            }
+        }
+    }
+
     public class NotificationForm : Form
     {
-        public NotificationFormConfig ToastConfig { get; private set; }
-
-        public int Duration { get; private set; }
-        public int FadeDuration { get; private set; }
+        public NotificationFormConfig Config { get; private set; }
 
         private int windowOffset = 3;
         private bool isMouseInside;
@@ -58,46 +80,59 @@ namespace ShareX
             }
         }
 
-        public NotificationForm(int duration, int fadeDuration, ContentAlignment placement, Size size, NotificationFormConfig config)
+        private NotificationForm(NotificationFormConfig config)
         {
             InitializeComponent();
             Icon = ShareXResources.Icon;
             SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.UserPaint | ControlStyles.AllPaintingInWmPaint, true);
 
-            Duration = duration;
-            FadeDuration = fadeDuration;
-
-            opacityDecrement = (float)fadeInterval / FadeDuration;
-
-            ToastConfig = config;
+            Config = config;
             textFont = new Font("Arial", 10);
+            opacityDecrement = (float)fadeInterval / Config.FadeDuration;
 
             if (config.Image != null)
             {
-                config.Image = ImageHelpers.ResizeImageLimit(config.Image, size);
+                config.Image = ImageHelpers.ResizeImageLimit(config.Image, Config.Size);
                 Color backgroundColor = ShareXResources.UseCustomTheme ? ShareXResources.Theme.BackgroundColor : SystemColors.Window;
                 config.Image = ImageHelpers.FillBackground(config.Image, backgroundColor);
-                size = new Size(config.Image.Width + 2, config.Image.Height + 2);
+                Config.Size = new Size(config.Image.Width + 2, config.Image.Height + 2);
             }
             else if (!string.IsNullOrEmpty(config.Text))
             {
-                textRenderSize = TextRenderer.MeasureText(config.Text, textFont, size.Offset(-textPadding * 2), TextFormatFlags.Left | TextFormatFlags.EndEllipsis);
-                size = new Size(textRenderSize.Width + (textPadding * 2), textRenderSize.Height + (textPadding * 2) + 2);
+                textRenderSize = TextRenderer.MeasureText(config.Text, textFont, Config.Size.Offset(-textPadding * 2), TextFormatFlags.Left | TextFormatFlags.EndEllipsis);
+                Config.Size = new Size(textRenderSize.Width + (textPadding * 2), textRenderSize.Height + (textPadding * 2) + 2);
             }
 
-            Point position = Helpers.GetPosition(placement, windowOffset, Screen.PrimaryScreen.WorkingArea.Size, size);
+            Point position = Helpers.GetPosition(Config.Placement, windowOffset, Screen.PrimaryScreen.WorkingArea.Size, Config.Size);
 
             NativeMethods.SetWindowPos(Handle, (IntPtr)SpecialWindowHandles.HWND_TOPMOST, position.X + Screen.PrimaryScreen.WorkingArea.X,
-                position.Y + Screen.PrimaryScreen.WorkingArea.Y, size.Width, size.Height, SetWindowPosFlags.SWP_NOACTIVATE);
+                position.Y + Screen.PrimaryScreen.WorkingArea.Y, Config.Size.Width, Config.Size.Height, SetWindowPosFlags.SWP_NOACTIVATE);
 
-            if (Duration <= 0)
+            if (Config.Duration <= 0)
             {
                 DurationEnd();
             }
             else
             {
-                tDuration.Interval = Duration;
+                tDuration.Interval = Config.Duration;
                 tDuration.Start();
+            }
+        }
+
+        public static void Show(NotificationFormConfig config)
+        {
+            if (config.IsValid)
+            {
+                if (config.Image == null)
+                {
+                    config.Image = ImageHelpers.LoadImage(config.FilePath);
+                }
+
+                if (config.Image != null || !string.IsNullOrEmpty(config.Text))
+                {
+                    NotificationForm form = new NotificationForm(config);
+                    NativeMethods.ShowWindow(form.Handle, (int)WindowShowStyle.ShowNoActivate);
+                }
             }
         }
 
@@ -119,7 +154,7 @@ namespace ShareX
 
         private void StartClosing()
         {
-            if (FadeDuration <= 0)
+            if (Config.FadeDuration <= 0)
             {
                 Close();
             }
@@ -149,11 +184,11 @@ namespace ShareX
 
             Rectangle rect = ClientRectangle;
 
-            if (ToastConfig.Image != null)
+            if (Config.Image != null)
             {
-                g.DrawImage(ToastConfig.Image, 1, 1, ToastConfig.Image.Width, ToastConfig.Image.Height);
+                g.DrawImage(Config.Image, 1, 1, Config.Image.Width, Config.Image.Height);
 
-                if (isMouseInside && !string.IsNullOrEmpty(ToastConfig.URL))
+                if (isMouseInside && !string.IsNullOrEmpty(Config.URL))
                 {
                     Rectangle textRect = new Rectangle(0, 0, rect.Width, 40);
 
@@ -162,10 +197,10 @@ namespace ShareX
                         g.FillRectangle(brush, textRect);
                     }
 
-                    TextRenderer.DrawText(g, ToastConfig.URL, textFont, textRect.Offset(-urlPadding), Color.White, TextFormatFlags.Left | TextFormatFlags.EndEllipsis);
+                    TextRenderer.DrawText(g, Config.URL, textFont, textRect.Offset(-urlPadding), Color.White, TextFormatFlags.Left | TextFormatFlags.EndEllipsis);
                 }
             }
-            else if (!string.IsNullOrEmpty(ToastConfig.Text))
+            else if (!string.IsNullOrEmpty(Config.Text))
             {
                 using (LinearGradientBrush brush = new LinearGradientBrush(rect, Color.FromArgb(80, 80, 80), Color.FromArgb(50, 50, 50), LinearGradientMode.Vertical))
                 {
@@ -173,31 +208,14 @@ namespace ShareX
                 }
 
                 Rectangle textRect = new Rectangle(textPadding, textPadding, textRenderSize.Width + 2, textRenderSize.Height + 2);
-                TextRenderer.DrawText(g, ToastConfig.Text, textFont, textRect, Color.Black, TextFormatFlags.Left | TextFormatFlags.EndEllipsis);
-                TextRenderer.DrawText(g, ToastConfig.Text, textFont, textRect.LocationOffset(1), Color.White, TextFormatFlags.Left | TextFormatFlags.EndEllipsis);
+                TextRenderer.DrawText(g, Config.Text, textFont, textRect, Color.Black, TextFormatFlags.Left | TextFormatFlags.EndEllipsis);
+                TextRenderer.DrawText(g, Config.Text, textFont, textRect.LocationOffset(1), Color.White, TextFormatFlags.Left | TextFormatFlags.EndEllipsis);
             }
 
             Color borderColor = ShareXResources.UseCustomTheme ? ShareXResources.Theme.BorderColor : SystemColors.ControlText;
             using (Pen borderPen = new Pen(borderColor))
             {
                 g.DrawRectangleProper(borderPen, rect);
-            }
-        }
-
-        public static void Show(int duration, int fadeDuration, ContentAlignment placement, Size size, NotificationFormConfig config)
-        {
-            if ((duration > 0 || fadeDuration > 0) && size.Width > 0 && size.Height > 0)
-            {
-                if (config.Image == null)
-                {
-                    config.Image = ImageHelpers.LoadImage(config.FilePath);
-                }
-
-                if (config.Image != null || !string.IsNullOrEmpty(config.Text))
-                {
-                    NotificationForm form = new NotificationForm(duration, fadeDuration, placement, size, config);
-                    NativeMethods.ShowWindow(form.Handle, (int)WindowShowStyle.ShowNoActivate);
-                }
             }
         }
 
@@ -211,15 +229,15 @@ namespace ShareX
 
             if (e.Button == MouseButtons.Left)
             {
-                action = ToastConfig.LeftClickAction;
+                action = Config.LeftClickAction;
             }
             else if (e.Button == MouseButtons.Right)
             {
-                action = ToastConfig.RightClickAction;
+                action = Config.RightClickAction;
             }
             else if (e.Button == MouseButtons.Middle)
             {
-                action = ToastConfig.MiddleClickAction;
+                action = Config.MiddleClickAction;
             }
 
             ExecuteAction(action);
@@ -230,32 +248,32 @@ namespace ShareX
             switch (action)
             {
                 case ToastClickAction.AnnotateImage:
-                    if (!string.IsNullOrEmpty(ToastConfig.FilePath) && Helpers.IsImageFile(ToastConfig.FilePath))
-                        TaskHelpers.AnnotateImageFromFile(ToastConfig.FilePath);
+                    if (!string.IsNullOrEmpty(Config.FilePath) && Helpers.IsImageFile(Config.FilePath))
+                        TaskHelpers.AnnotateImageFromFile(Config.FilePath);
                     break;
                 case ToastClickAction.CopyImageToClipboard:
-                    if (!string.IsNullOrEmpty(ToastConfig.FilePath))
-                        ClipboardHelpers.CopyImageFromFile(ToastConfig.FilePath);
+                    if (!string.IsNullOrEmpty(Config.FilePath))
+                        ClipboardHelpers.CopyImageFromFile(Config.FilePath);
                     break;
                 case ToastClickAction.CopyUrl:
-                    if (!string.IsNullOrEmpty(ToastConfig.URL))
-                        ClipboardHelpers.CopyText(ToastConfig.URL);
+                    if (!string.IsNullOrEmpty(Config.URL))
+                        ClipboardHelpers.CopyText(Config.URL);
                     break;
                 case ToastClickAction.OpenFile:
-                    if (!string.IsNullOrEmpty(ToastConfig.FilePath))
-                        Helpers.OpenFile(ToastConfig.FilePath);
+                    if (!string.IsNullOrEmpty(Config.FilePath))
+                        Helpers.OpenFile(Config.FilePath);
                     break;
                 case ToastClickAction.OpenFolder:
-                    if (!string.IsNullOrEmpty(ToastConfig.FilePath))
-                        Helpers.OpenFolderWithFile(ToastConfig.FilePath);
+                    if (!string.IsNullOrEmpty(Config.FilePath))
+                        Helpers.OpenFolderWithFile(Config.FilePath);
                     break;
                 case ToastClickAction.OpenUrl:
-                    if (!string.IsNullOrEmpty(ToastConfig.URL))
-                        URLHelpers.OpenURL(ToastConfig.URL);
+                    if (!string.IsNullOrEmpty(Config.URL))
+                        URLHelpers.OpenURL(Config.URL);
                     break;
                 case ToastClickAction.Upload:
-                    if (!string.IsNullOrEmpty(ToastConfig.FilePath))
-                        UploadManager.UploadFile(ToastConfig.FilePath);
+                    if (!string.IsNullOrEmpty(Config.FilePath))
+                        UploadManager.UploadFile(Config.FilePath);
                     break;
             }
         }
@@ -285,8 +303,8 @@ namespace ShareX
 
         #region Windows Form Designer generated code
 
-        private System.Windows.Forms.Timer tDuration;
-        private System.Windows.Forms.Timer tOpacity;
+        private Timer tDuration;
+        private Timer tOpacity;
 
         private System.ComponentModel.IContainer components = null;
 
@@ -297,9 +315,9 @@ namespace ShareX
                 components.Dispose();
             }
 
-            if (ToastConfig != null)
+            if (Config != null)
             {
-                ToastConfig.Dispose();
+                Config.Dispose();
             }
 
             if (textFont != null)
@@ -313,54 +331,35 @@ namespace ShareX
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            tDuration = new System.Windows.Forms.Timer(components);
-            tOpacity = new System.Windows.Forms.Timer(components);
+            tDuration = new Timer(components);
+            tOpacity = new Timer(components);
             SuspendLayout();
             //
             // tDuration
             //
-            tDuration.Tick += new System.EventHandler(tDuration_Tick);
+            tDuration.Tick += new EventHandler(tDuration_Tick);
             //
             // tOpacity
             //
-            tOpacity.Tick += new System.EventHandler(tOpacity_Tick);
+            tOpacity.Tick += new EventHandler(tOpacity_Tick);
             //
             // NotificationForm
             //
-            AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
-            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            ClientSize = new System.Drawing.Size(400, 300);
-            Cursor = System.Windows.Forms.Cursors.Hand;
-            FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            AutoScaleDimensions = new SizeF(96F, 96F);
+            AutoScaleMode = AutoScaleMode.Dpi;
+            ClientSize = new Size(400, 300);
+            Cursor = Cursors.Hand;
+            FormBorderStyle = FormBorderStyle.None;
             Name = "NotificationForm";
             ShowInTaskbar = false;
-            StartPosition = System.Windows.Forms.FormStartPosition.Manual;
+            StartPosition = FormStartPosition.Manual;
             Text = "NotificationForm";
-            MouseClick += new System.Windows.Forms.MouseEventHandler(NotificationForm_MouseClick);
-            MouseEnter += new System.EventHandler(NotificationForm_MouseEnter);
-            MouseLeave += new System.EventHandler(NotificationForm_MouseLeave);
+            MouseClick += new MouseEventHandler(NotificationForm_MouseClick);
+            MouseEnter += new EventHandler(NotificationForm_MouseEnter);
+            MouseLeave += new EventHandler(NotificationForm_MouseLeave);
             ResumeLayout(false);
         }
 
         #endregion Windows Form Designer generated code
-    }
-
-    public class NotificationFormConfig : IDisposable
-    {
-        public Bitmap Image { get; set; }
-        public string Text { get; set; }
-        public string FilePath { get; set; }
-        public string URL { get; set; }
-        public ToastClickAction LeftClickAction { get; set; }
-        public ToastClickAction RightClickAction { get; set; }
-        public ToastClickAction MiddleClickAction { get; set; }
-
-        public void Dispose()
-        {
-            if (Image != null)
-            {
-                Image.Dispose();
-            }
-        }
     }
 }
