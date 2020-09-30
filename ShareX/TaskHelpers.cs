@@ -644,6 +644,11 @@ namespace ShareX
 
         public static Icon GetProgressIcon(int percentage)
         {
+            return GetProgressIcon(percentage, Color.FromArgb(16, 116, 193));
+        }
+
+        public static Icon GetProgressIcon(int percentage, Color color)
+        {
             percentage = percentage.Clamp(0, 99);
 
             Size size = SystemInformation.SmallIconSize;
@@ -654,7 +659,7 @@ namespace ShareX
 
                 if (y > 0)
                 {
-                    using (Brush brush = new SolidBrush(Color.FromArgb(16, 116, 193)))
+                    using (Brush brush = new SolidBrush(color))
                     {
                         g.FillRectangle(brush, 0, size.Height - 1 - y, size.Width, y);
                     }
