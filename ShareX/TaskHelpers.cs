@@ -816,15 +816,17 @@ namespace ShareX
 
                 if (!taskSettings.AdvancedSettings.DisableNotifications)
                 {
+                    // TODO: Translate
+                    string tipTitle = "ShareX - " + "Screen color picker";
                     string tipText = string.Format(Resources.TaskHelpers_OpenQuickScreenColorPicker_Copied_to_clipboard___0_, text);
 
                     switch (taskSettings.GeneralSettings.PopUpNotification)
                     {
                         case PopUpNotificationType.BalloonTip:
-                            ShowBalloonTip(tipText, ToolTipIcon.Info, 3000);
+                            ShowBalloonTip(tipText, ToolTipIcon.Info, 3000, tipTitle);
                             break;
                         case PopUpNotificationType.ToastNotification:
-                            ShowNotificationTip(tipText);
+                            ShowNotificationTip(tipText, tipTitle);
                             break;
                     }
                 }
@@ -1869,7 +1871,7 @@ namespace ShareX
             }
         }
 
-        public static void ShowNotificationTip(string text)
+        public static void ShowNotificationTip(string text, string title = "ShareX")
         {
             NotificationFormConfig toastConfig = new NotificationFormConfig()
             {
@@ -1877,7 +1879,8 @@ namespace ShareX
                 FadeDuration = (int)(Program.DefaultTaskSettings.AdvancedSettings.ToastWindowFadeDuration * 1000),
                 Placement = Program.DefaultTaskSettings.AdvancedSettings.ToastWindowPlacement,
                 Size = Program.DefaultTaskSettings.AdvancedSettings.ToastWindowSize,
-                Text = text
+                Text = text,
+                Title = title
             };
 
             NotificationForm.Show(toastConfig);

@@ -36,14 +36,18 @@ namespace ShareX
         public int Duration { get; set; }
         public int FadeDuration { get; set; }
         public ContentAlignment Placement { get; set; }
-        public int Offset { get; set; } = 3;
+        public int Offset { get; set; } = 5;
         public Size Size { get; set; }
         public bool IsValid => (Duration > 0 || FadeDuration > 0) && Size.Width > 0 && Size.Height > 0;
-        public int TextPadding { get; set; } = 8;
-        public Font TextFont { get; set; } = new Font("Arial", 10);
+        public int TextPadding { get; set; } = 10;
+        public Font TextFont { get; set; } = new Font("Arial", 11);
+        public Color TextColor { get; set; } = Color.FromArgb(210, 210, 210);
+        public Font TitleFont { get; set; } = new Font("Arial", 11, FontStyle.Bold);
+        public Color TitleColor { get; set; } = Color.FromArgb(255, 255, 255);
 
         public Bitmap Image { get; set; }
         public string Text { get; set; }
+        public string Title { get; set; }
         public string FilePath { get; set; }
         public string URL { get; set; }
         public ToastClickAction LeftClickAction { get; set; }
@@ -55,6 +59,11 @@ namespace ShareX
             if (TextFont != null)
             {
                 TextFont.Dispose();
+            }
+
+            if (TitleFont != null)
+            {
+                TitleFont.Dispose();
             }
 
             if (Image != null)
@@ -73,7 +82,10 @@ namespace ShareX
         private int fadeInterval = 50;
         private float opacityDecrement;
         private int urlPadding = 3;
+        private int titleSpace = 3;
+        private Size titleRenderSize;
         private Size textRenderSize;
+        private Size totalRenderSize;
 
         protected override CreateParams CreateParams
         {
@@ -103,8 +115,18 @@ namespace ShareX
             }
             else if (!string.IsNullOrEmpty(Config.Text))
             {
-                textRenderSize = TextRenderer.MeasureText(Config.Text, Config.TextFont, Config.Size.Offset(-Config.TextPadding * 2), TextFormatFlags.Left | TextFormatFlags.EndEllipsis);
-                Config.Size = new Size(textRenderSize.Width + (Config.TextPadding * 2), textRenderSize.Height + (Config.TextPadding * 2) + 2);
+                textRenderSize = TextRenderer.MeasureText(Config.Text, Config.TextFont, Config.Size.Offset(-Config.TextPadding * 2),
+                    TextFormatFlags.Left | TextFormatFlags.EndEllipsis);
+                totalRenderSize = textRenderSize;
+
+                if (!string.IsNullOrEmpty(Config.Title))
+                {
+                    titleRenderSize = TextRenderer.MeasureText(Config.Title, Config.TitleFont, Config.Size.Offset(-Config.TextPadding * 2),
+                        TextFormatFlags.Left | TextFormatFlags.EndEllipsis);
+                    totalRenderSize = new Size(Math.Max(textRenderSize.Width, titleRenderSize.Width), titleRenderSize.Height + titleSpace + textRenderSize.Height);
+                }
+
+                Config.Size = new Size(totalRenderSize.Width + (Config.TextPadding * 2), totalRenderSize.Height + (Config.TextPadding * 2) + 2);
             }
 
             Point position = Helpers.GetPosition(Config.Placement, Config.Offset, Screen.PrimaryScreen.WorkingArea.Size, Config.Size);
@@ -211,9 +233,20 @@ namespace ShareX
                     g.FillRectangle(brush, rect);
                 }
 
-                Rectangle textRect = new Rectangle(Config.TextPadding, Config.TextPadding, textRenderSize.Width + 2, textRenderSize.Height + 2);
-                TextRenderer.DrawText(g, Config.Text, Config.TextFont, textRect, Color.Black, TextFormatFlags.Left | TextFormatFlags.EndEllipsis);
-                TextRenderer.DrawText(g, Config.Text, Config.TextFont, textRect.LocationOffset(1), Color.White, TextFormatFlags.Left | TextFormatFlags.EndEllipsis);
+                Rectangle textRect;
+
+                if (!string.IsNullOrEmpty(Config.Title))
+                {
+                    Rectangle titleRect = new Rectangle(Config.TextPadding, Config.TextPadding, titleRenderSize.Width + 2, titleRenderSize.Height + 2);
+                    TextRenderer.DrawText(g, Config.Title, Config.TitleFont, titleRect, Color.White, TextFormatFlags.Left | TextFormatFlags.EndEllipsis);
+                    textRect = new Rectangle(Config.TextPadding, Config.TextPadding + titleRect.Height + titleSpace, textRenderSize.Width + 2, textRenderSize.Height + 2);
+                }
+                else
+                {
+                    textRect = new Rectangle(Config.TextPadding, Config.TextPadding, textRenderSize.Width + 2, textRenderSize.Height + 2);
+                }
+
+                TextRenderer.DrawText(g, Config.Text, Config.TextFont, textRect, Color.FromArgb(240, 240, 240), TextFormatFlags.Left | TextFormatFlags.EndEllipsis);
             }
 
             Color borderColor = ShareXResources.UseCustomTheme ? ShareXResources.Theme.BorderColor : SystemColors.ControlText;
