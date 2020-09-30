@@ -169,7 +169,7 @@
     <value>Projektseite</value>
   </data>
   <data name="TaskHelpers_TweetMessage_Tweet_successfully_sent_" xml:space="preserve">
-    <value>Tweet erfolgreich gesendet</value>
+    <value>Tweet erfolgreich gesendet.</value>
   </data>
   <data name="Program_WritePersonalPathConfig_Cant_access_to_file" xml:space="preserve">
     <value>Es kann nicht auf die Datei {0} zugegriffen werden.
@@ -179,7 +179,7 @@ Bitte starte ShareX als Administrator, um den Einstellungsordner zu ändern.</va
     <value>Um die Einstellungen zu Übernehmen muss ShareX über Steam neu gestartet werden.</value>
   </data>
   <data name="ActionsForm_btnOK_Click_Name_can_t_be_empty_" xml:space="preserve">
-    <value>Name kann nicht leer sein</value>
+    <value>Name kann nicht leer sein.</value>
   </data>
   <data name="MainForm_UpdateToggleHotkeyButton_Disable_hotkeys" xml:space="preserve">
     <value>Hotkeys deaktivieren</value>
@@ -286,7 +286,7 @@ Möchtest du es automatisch herunterladen?</value>
 Soll ShareX neu gestartet werden?</value>
   </data>
   <data name="FileExistForm_txtNewName_TextChanged_Use_new_name__" xml:space="preserve">
-    <value>Neuen Namen verwenden:</value>
+    <value>Neuen Namen verwenden: </value>
   </data>
   <data name="ScreenRecordForm_StartRecording_Missing" xml:space="preserve">
     <value>Fehlt</value>
@@ -310,10 +310,10 @@ Soll ShareX neu gestartet werden?</value>
     <value>Uploadfehler</value>
   </data>
   <data name="Program_Run_Unable_to_create_folder_" xml:space="preserve">
-    <value>Konnte Ordner nicht erstellen</value>
+    <value>Konnte Ordner nicht erstellen:</value>
   </data>
   <data name="MainForm_UpdateMainFormTip_Currently_configured_hotkeys_" xml:space="preserve">
-    <value>Derzeit konfigurierte Tastenkürzel</value>
+    <value>Derzeit konfigurierte Tastenkürzel:</value>
   </data>
   <data name="RecentManager_UpdateRecentMenu_Left_click_to_copy_URL_to_clipboard__Right_click_to_open_URL_" xml:space="preserve">
     <value>Linksklick um den URL zu kopieren. Rechtsklick um den URL zu öffnen.</value>
@@ -394,7 +394,7 @@ Soll ShareX neu gestartet werden?</value>
     <value>Ordner hochladen</value>
   </data>
   <data name="ScreenRecordForm_DownloaderForm_InstallRequested_FFmpeg_successfully_downloaded_" xml:space="preserve">
-    <value>FFmpeg erfolgreich heruntergeladen</value>
+    <value>FFmpeg erfolgreich heruntergeladen.</value>
   </data>
   <data name="ScreenRecordForm_StartRecording_Encoding___" xml:space="preserve">
     <value>Kodiere...</value>
@@ -556,10 +556,10 @@ Soll ShareX neu gestartet werden?</value>
     <value>Bitte beachte, dass ShareX OCR.Space's online API für die Ausführung der Texterkennung benutzt. Gibst du ShareX die Berechtigung, Bilder an diesen Dienst hochzuladen?</value>
   </data>
   <data name="ApplicationSettingsForm_cbStartWithWindows_EnabledByPolicy_Text" xml:space="preserve">
-    <value>Autostart wurde durch Ihrer Organisation aktiviert.</value>
+    <value>Autostart wurde durch Ihrer Organisation aktiviert</value>
   </data>
   <data name="ApplicationSettingsForm_cbStartWithWindows_DisabledByPolicy_Text" xml:space="preserve">
-    <value>Autostart wurde durch Ihrer Organisation deaktiviert.</value>
+    <value>Autostart wurde durch Ihrer Organisation deaktiviert</value>
   </data>
   <data name="SwitchToThumbnailView" xml:space="preserve">
     <value>Zur Bildvorschau wechseln</value>
@@ -577,9 +577,30 @@ Soll ShareX neu gestartet werden?</value>
     <value>Die OCR-Ausgabe wurde in die Zwischenablage kopiert.</value>
   </data>
   <data name="ApplicationSettingsForm_cbStartWithWindows_DisabledByUser_Text" xml:space="preserve">
-    <value>Autostart wurde im Task-Manager deaktiviert.</value>
+    <value>Autostart wurde im Task-Manager deaktiviert</value>
   </data>
   <data name="WorkerTask_GetInvalidConfigResult__0__configuration_is_invalid_or_missing__Please_check__Destination_settings__window_to_configure_it_" xml:space="preserve">
     <value>Konfiguration {0} ist ungültig oder fehlt. Zur Konfiguration überprüfen Sie das Fenster "Zieleinstellungen".</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_pt_PT" xml:space="preserve">
+    <value>Portugiesisch</value>
+  </data>
+  <data name="Confirmation" xml:space="preserve">
+    <value>Bestätigung</value>
+  </data>
+  <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_is_empty_or_contains_unknown_data_" xml:space="preserve">
+    <value>Die Zwischenablage ist leer oder enthält unbekannte Daten.</value>
+  </data>
+  <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__Text__Length___0__" xml:space="preserve">
+    <value>Inhalt der Zwischenablage: Text (Länge: {0})</value>
+  </data>
+  <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__Image__Size___0_x_1__" xml:space="preserve">
+    <value>Inhalt der Zwischenablage: Bild (Größe: {0}x{1})</value>
+  </data>
+  <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__File__Count___0__" xml:space="preserve">
+    <value>Inhalt der Zwischenablage: Datei (Anzahl: {0})</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_fa_IR" xml:space="preserve">
+    <value>Persisch</value>
   </data>
 </root>
