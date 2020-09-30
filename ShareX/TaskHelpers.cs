@@ -814,9 +814,19 @@ namespace ShareX
 
                 ClipboardHelpers.CopyText(text);
 
-                if (!taskSettings.AdvancedSettings.DisableNotifications && taskSettings.GeneralSettings.PopUpNotification != PopUpNotificationType.None)
+                if (!taskSettings.AdvancedSettings.DisableNotifications)
                 {
-                    ShowBalloonTip(string.Format(Resources.TaskHelpers_OpenQuickScreenColorPicker_Copied_to_clipboard___0_, text), ToolTipIcon.Info, 3000);
+                    string tipText = string.Format(Resources.TaskHelpers_OpenQuickScreenColorPicker_Copied_to_clipboard___0_, text);
+
+                    switch (taskSettings.GeneralSettings.PopUpNotification)
+                    {
+                        case PopUpNotificationType.BalloonTip:
+                            ShowBalloonTip(tipText, ToolTipIcon.Info, 3000);
+                            break;
+                        case PopUpNotificationType.ToastNotification:
+                            ShowNotificationTip(tipText);
+                            break;
+                    }
                 }
             }
         }
@@ -1857,6 +1867,20 @@ namespace ShareX
                 Program.MainForm.niTray.Tag = clickAction;
                 Program.MainForm.niTray.ShowBalloonTip(timeout, title, text, icon);
             }
+        }
+
+        public static void ShowNotificationTip(string text)
+        {
+            NotificationFormConfig toastConfig = new NotificationFormConfig()
+            {
+                Duration = (int)(Program.DefaultTaskSettings.AdvancedSettings.ToastWindowDuration * 1000),
+                FadeDuration = (int)(Program.DefaultTaskSettings.AdvancedSettings.ToastWindowFadeDuration * 1000),
+                Placement = Program.DefaultTaskSettings.AdvancedSettings.ToastWindowPlacement,
+                Size = Program.DefaultTaskSettings.AdvancedSettings.ToastWindowSize,
+                Text = text
+            };
+
+            NotificationForm.Show(toastConfig);
         }
 
         public static bool IsUploadAllowed()
