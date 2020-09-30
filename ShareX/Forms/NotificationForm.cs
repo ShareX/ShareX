@@ -43,7 +43,7 @@ namespace ShareX
         public Font TextFont { get; set; } = new Font("Arial", 11);
         public Color TextColor { get; set; } = Color.FromArgb(210, 210, 210);
         public Font TitleFont { get; set; } = new Font("Arial", 11, FontStyle.Bold);
-        public Color TitleColor { get; set; } = Color.FromArgb(255, 255, 255);
+        public Color TitleColor { get; set; } = Color.FromArgb(240, 240, 240);
 
         public Bitmap Image { get; set; }
         public string Text { get; set; }
@@ -238,7 +238,7 @@ namespace ShareX
                 if (!string.IsNullOrEmpty(Config.Title))
                 {
                     Rectangle titleRect = new Rectangle(Config.TextPadding, Config.TextPadding, titleRenderSize.Width + 2, titleRenderSize.Height + 2);
-                    TextRenderer.DrawText(g, Config.Title, Config.TitleFont, titleRect, Color.White, TextFormatFlags.Left | TextFormatFlags.EndEllipsis);
+                    TextRenderer.DrawText(g, Config.Title, Config.TitleFont, titleRect, Config.TitleColor, TextFormatFlags.Left | TextFormatFlags.EndEllipsis);
                     textRect = new Rectangle(Config.TextPadding, Config.TextPadding + titleRect.Height + titleSpace, textRenderSize.Width + 2, textRenderSize.Height + 2);
                 }
                 else
@@ -246,7 +246,7 @@ namespace ShareX
                     textRect = new Rectangle(Config.TextPadding, Config.TextPadding, textRenderSize.Width + 2, textRenderSize.Height + 2);
                 }
 
-                TextRenderer.DrawText(g, Config.Text, Config.TextFont, textRect, Color.FromArgb(240, 240, 240), TextFormatFlags.Left | TextFormatFlags.EndEllipsis);
+                TextRenderer.DrawText(g, Config.Text, Config.TextFont, textRect, Config.TextColor, TextFormatFlags.Left | TextFormatFlags.EndEllipsis);
             }
 
             Color borderColor = ShareXResources.UseCustomTheme ? ShareXResources.Theme.BorderColor : SystemColors.ControlText;
