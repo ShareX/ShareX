@@ -316,7 +316,7 @@ namespace ShareX
                 {
                     try
                     {
-                        icon = TaskHelpers.GetProgressIcon(progress);
+                        icon = TaskHelpers.GetProgressIcon(progress, Color.FromArgb(140, 0, 36));
                     }
                     catch (Exception e)
                     {
