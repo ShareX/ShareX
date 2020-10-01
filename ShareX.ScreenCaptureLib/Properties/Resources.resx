@@ -136,6 +136,12 @@
   <data name="layer_shape_ellipse_region" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\layer-shape-ellipse-region.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="edit_shade_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\edit-shade-white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_SwitchToDrawingToolAfterSelection" xml:space="preserve">
+    <value>Switch to drawing tool after shape selection</value>
+  </data>
   <data name="image_resize" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\image-resize.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -160,9 +166,6 @@
   <data name="ShapeManager_CreateToolbar_UseLetters" xml:space="preserve">
     <value>Use letters</value>
   </data>
-  <data name="ShapeManager_CreateToolbar_StartingStepValue" xml:space="preserve">
-    <value>Value of first step:</value>
-  </data>
   <data name="ShapeManager_CreateToolbar_ImageSize" xml:space="preserve">
     <value>Image size...</value>
   </data>
@@ -172,20 +175,26 @@
   <data name="ShapeManager_CreateToolbar_ApplyChangesContinueTaskEnter" xml:space="preserve">
     <value>Apply changes &amp; continue task (Enter)</value>
   </data>
+  <data name="gradient" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gradient.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="layer_shape_region" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\layer-shape-region.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="OpenKeybindsPage" xml:space="preserve">
+    <value>Open keybinds web page...</value>
+  </data>
   <data name="arrow_circle_double" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\arrow-circle-double.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="edit_outline_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\edit-outline-white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="exclamation_button" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\exclamation-button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ShapeManager_CreateToolbar_Edit" xml:space="preserve">
     <value>Edit</value>
-  </data>
-  <data name="layout_center" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\layout-center.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ShapeManager_CreateToolbar_AutoCloseEditorOnTask" xml:space="preserve">
     <value>Auto close editor on task</value>
@@ -202,8 +211,8 @@
   <data name="folder_open_image" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\folder-open-image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="disks_black" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\disks-black.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ShapeManager_CreateToolbar_DropShadow" xml:space="preserve">
+    <value>Drop shadow</value>
   </data>
   <data name="edit_alignment" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\edit-alignment.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -226,8 +235,17 @@
   <data name="ShapeManager_CreateToolbar_ShapeOptions" xml:space="preserve">
     <value>Shape options</value>
   </data>
+  <data name="edit_vertical_alignment_top_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\edit-vertical-alignment-top-white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="monitor_image" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\monitor-image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="image_select" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\image-select.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="edit_italic_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\edit-italic-white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ShapeManager_CreateContextMenu_Fixed_size_region_mode" xml:space="preserve">
     <value>Fixed size region mode</value>
@@ -301,6 +319,9 @@
   <data name="layer__minus" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\layer--minus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="CloseEsc" xml:space="preserve">
+    <value>Close (Esc)</value>
+  </data>
   <data name="layer_flip_vertical" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\layer-flip-vertical.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -313,6 +334,12 @@
   <data name="cross" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\cross.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="MagnifyStrength" xml:space="preserve">
+    <value>Magnify strength:</value>
+  </data>
+  <data name="layout_split" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\layout-split.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="ShapeManager_CreateToolbar_CopyImageToClipboard" xml:space="preserve">
     <value>Copy image to clipboard (Ctrl + Shift + C)</value>
   </data>
@@ -322,17 +349,14 @@
   <data name="ShapeManager_CreateContextMenu_Show_FPS" xml:space="preserve">
     <value>Show FPS</value>
   </data>
-  <data name="ShapeManager_CreateContextMenu_SwitchToDrawingToolAfterSelection" xml:space="preserve">
-    <value>Switch to drawing tool after shape selection</value>
-  </data>
-  <data name="ShapeManager_CreateContextMenu_SwitchToSelectionToolAfterDrawing" xml:space="preserve">
-    <value>Switch to selection tool after shape drawing</value>
-  </data>
   <data name="FFmpegOptionsForm_UpdateUI_Quality_" xml:space="preserve">
     <value>Quality:</value>
   </data>
   <data name="edit_underline" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\edit-underline.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="magnifier_zoom" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\magnifier-zoom.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ShapeManager_CursorType" xml:space="preserve">
     <value>Cursor type:</value>
@@ -340,17 +364,29 @@
   <data name="FFmpegOptionsForm_buttonFFmpegBrowse_Click_Browse_for_ffmpeg_exe" xml:space="preserve">
     <value>Browse for ffmpeg.exe</value>
   </data>
-  <data name="ShapeManager_CreateToolbar_DropShadow" xml:space="preserve">
-    <value>Drop shadow</value>
+  <data name="layer_flip" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\layer-flip.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="openhand" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\openhand.cur;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="ShapeManager_CreateContextMenu_Square_shape_magnifier" xml:space="preserve">
     <value>Square shape magnifier</value>
   </data>
+  <data name="document_copy" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\document-copy.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="FFmpegOptionsForm_UpdateUI_Bitrate___0_k" xml:space="preserve">
     <value>Bitrate: {0}k</value>
   </data>
+  <data name="edit_vertical_alignment_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\edit-vertical-alignment-white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="image_empty" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\image-empty.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="edit_bold_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\edit-bold-white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ShapeManager_CreateToolbar_EditorStartMode" xml:space="preserve">
     <value>Editor start mode:</value>
@@ -379,8 +415,14 @@
   <data name="ShapeManager_CreateToolbar_SaveImage" xml:space="preserve">
     <value>Save image (Ctrl + S)</value>
   </data>
+  <data name="grid_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\grid-white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="ShapeManager_CreateToolbar_NewImage" xml:space="preserve">
     <value>New image...</value>
+  </data>
+  <data name="disks_black" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\disks-black.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="layers_stack_arrange" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\layers-stack-arrange.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -390,6 +432,12 @@
   </data>
   <data name="gear" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\gear.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="edit_vertical_alignment_middle_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\edit-vertical-alignment-middle-white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="stamp_cursor" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\stamp-cursor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ShapeManager_CreateContextMenu_EnableAnimations" xml:space="preserve">
     <value>Enable animations</value>
@@ -406,8 +454,8 @@
   <data name="ShapeManager_CreateContextMenu_Height_" xml:space="preserve">
     <value>Height:</value>
   </data>
-  <data name="layers_arrange" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\layers-arrange.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ImageEffects" xml:space="preserve">
+    <value>Add image effects...</value>
   </data>
   <data name="ShapeManager_CreateContextMenu_Fill_color___" xml:space="preserve">
     <value>Fill color...</value>
@@ -415,11 +463,17 @@
   <data name="ShapeManager_CreateToolbar_SaveImageAs" xml:space="preserve">
     <value>Save image as... (Ctrl + Shift + S)</value>
   </data>
+  <data name="smiley_yell" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\smiley-yell.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="ShapeManager_CreateToolbar_ContinueTaskSpaceOrRightClick" xml:space="preserve">
     <value>Continue task (Space or right click)</value>
   </data>
   <data name="ShapeManager_CreateToolbar_CanvasSize" xml:space="preserve">
     <value>Canvas size...</value>
+  </data>
+  <data name="eraser" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\eraser.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="FFmpegOptionsForm_DownloaderForm_InstallRequested_Successfully_downloaded_FFmpeg_" xml:space="preserve">
     <value>Successfully downloaded FFmpeg.</value>
@@ -436,11 +490,17 @@
   <data name="ShapeManager_CreateToolbar_AutoCropImage" xml:space="preserve">
     <value>Auto crop image...</value>
   </data>
+  <data name="layout_center" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\layout-center.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="monitor_window" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\monitor-window.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="cursor" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\cursor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="edit_alignment_right_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\edit-alignment-right-white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="image__pencil" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\image--pencil.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -449,8 +509,8 @@
     <value>There are unsaved changes.
 Would you like to close image editor?</value>
   </data>
-  <data name="layout_split" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\layout-split.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="DropShadowColor" xml:space="preserve">
+    <value>Drop shadow color...</value>
   </data>
   <data name="drive_globe" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\drive-globe.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -458,14 +518,17 @@ Would you like to close image editor?</value>
   <data name="wrench_screwdriver" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\wrench-screwdriver.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="layer_shade_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\layer-shade-white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="ShapeManager_CreateToolbar_BringToFront" xml:space="preserve">
     <value>Bring to front</value>
   </data>
   <data name="ShapeManager_CreateToolbar_Rotate180" xml:space="preserve">
     <value>Rotate 180°</value>
   </data>
-  <data name="ShapeManager_CreateToolbar_LastRegion" xml:space="preserve">
-    <value>Capture last region</value>
+  <data name="LightResizeNodes" xml:space="preserve">
+    <value>Use light resize nodes</value>
   </data>
   <data name="ShapeManager_CreateToolbar_InsertImageFromScreen" xml:space="preserve">
     <value>Insert image from screen...</value>
@@ -478,6 +541,9 @@ Would you like to close image editor?</value>
   </data>
   <data name="ShapeManager_CreateToolbar_DeleteAll" xml:space="preserve">
     <value>Delete all</value>
+  </data>
+  <data name="closedhand" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\closedhand.cur;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="edit_alignment_right" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\edit-alignment-right.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -497,6 +563,9 @@ Would you like to close image editor?</value>
   <data name="layer_fullscreen" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\layer_fullscreen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="layout_split_vertical" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\layout-split-vertical.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="ShapeManager_CreateContextMenu_Border_color___" xml:space="preserve">
     <value>Border color...</value>
   </data>
@@ -506,14 +575,20 @@ Would you like to close image editor?</value>
   <data name="ShapeManager_CreateContextMenu_Show_magnifier" xml:space="preserve">
     <value>Show magnifier</value>
   </data>
-  <data name="edit_shade" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\edit-shade.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ShapeManager_CreateToolbar_StartingStepValue" xml:space="preserve">
+    <value>Value of first step:</value>
   </data>
   <data name="RegionCaptureForm_ShowExitConfirmation_ShareXImageEditor" xml:space="preserve">
     <value>ShareX - Image editor</value>
   </data>
   <data name="arrow_circle_225_left" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\arrow-circle-225-left.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ThisWindowWillCloseBeforeOpeningKeybindsPageWantContinue" xml:space="preserve">
+    <value>This window will close before opening the keybinds web page. Do you want to continue?</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_SwitchToSelectionToolAfterDrawing" xml:space="preserve">
+    <value>Switch to selection tool after shape drawing</value>
   </data>
   <data name="layer_shape_ellipse" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\layer-shape-ellipse.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -523,12 +598,6 @@ Would you like to close image editor?</value>
   </data>
   <data name="RectangleTransparent_RectangleTransparent_Rectangle_capture_transparent" xml:space="preserve">
     <value>Rectangle capture transparent</value>
-  </data>
-  <data name="layer_flip" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\layer-flip.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="FFmpegOptionsForm_DownloaderForm_InstallRequested_Download_of_FFmpeg_failed_" xml:space="preserve">
-    <value>Download of FFmpeg failed.</value>
   </data>
   <data name="image__plus" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\image--plus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -545,11 +614,17 @@ Would you like to close image editor?</value>
   <data name="ScrollingCaptureForm_StartCapture_Stop_capture" xml:space="preserve">
     <value>Stop capture</value>
   </data>
-  <data name="layout_split_vertical" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\layout-split-vertical.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="FFmpegOptionsForm_DownloaderForm_InstallRequested_Download_of_FFmpeg_failed_" xml:space="preserve">
+    <value>Download of FFmpeg failed.</value>
   </data>
   <data name="ShapeManager_CreateContextMenu_Show_screen_wide_crosshair" xml:space="preserve">
     <value>Show screen wide crosshair</value>
+  </data>
+  <data name="edit_shade" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\edit-shade.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="edit_alignment_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\edit-alignment-white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ShapeManager_CreateToolbar_Image" xml:space="preserve">
     <value>Image</value>
@@ -568,6 +643,9 @@ X: {4} Y: {5}</value>
   </data>
   <data name="layer_shape" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\layer-shape.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="edit_underline_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\edit-underline-white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ShapeManager_CreateToolbar_FontSize" xml:space="preserve">
     <value>Font size:</value>
@@ -608,68 +686,17 @@ X: {4} Y: {5}</value>
   <data name="pencil" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pencil.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="image_select" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\image-select.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="layers_arrange" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\layers-arrange.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="eraser" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\eraser.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ShapeManager_CreateToolbar_LastRegion" xml:space="preserve">
+    <value>Capture last region</value>
+  </data>
+  <data name="edit_alignment_center_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\edit-alignment-center-white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="edit_vertical_alignment_middle" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\edit-vertical-alignment-middle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ShapeManager_CreateContextMenu_Pixel_size_" xml:space="preserve">
-    <value>Pixel size:</value>
-  </data>
-  <data name="layer_shape_line" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\layer-shape-line.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="gradient" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\gradient.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="smiley_cool" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\smiley-cool.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="smiley_yell" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\smiley-yell.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="LightResizeNodes" xml:space="preserve">
-    <value>Use light resize nodes</value>
-  </data>
-  <data name="OpenKeybindsPage" xml:space="preserve">
-    <value>Open keybinds web page...</value>
-  </data>
-  <data name="ThisWindowWillCloseBeforeOpeningKeybindsPageWantContinue" xml:space="preserve">
-    <value>This window will close before opening the keybinds web page. Do you want to continue?</value>
-  </data>
-  <data name="DropShadowColor" xml:space="preserve">
-    <value>Drop shadow color...</value>
-  </data>
-  <data name="ImageEffects" xml:space="preserve">
-    <value>Add image effects...</value>
-  </data>
-  <data name="stamp_cursor" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\stamp-cursor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="magnifier_zoom" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\magnifier-zoom.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="MagnifyStrength" xml:space="preserve">
-    <value>Magnify strength:</value>
-  </data>
-  <data name="CloseEsc" xml:space="preserve">
-    <value>Close (Esc)</value>
-  </data>
-  <data name="edit_outline_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\edit-outline-white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="edit_shade_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\edit-shade-white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="grid_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\grid-white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="layer_shade_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\layer-shade-white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="layer_shape_arrow_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\layer-shape-arrow-white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -677,40 +704,16 @@ X: {4} Y: {5}</value>
   <data name="layer_shape_line_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\layer-shape-line-white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="edit_alignment_center_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\edit-alignment-center-white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="smiley_cool" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\smiley-cool.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="edit_alignment_right_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\edit-alignment-right-white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ShapeManager_CreateContextMenu_Pixel_size_" xml:space="preserve">
+    <value>Pixel size:</value>
   </data>
-  <data name="edit_alignment_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\edit-alignment-white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="layer_shape_line" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\layer-shape-line.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="edit_bold_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\edit-bold-white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="edit_italic_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\edit-italic-white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="edit_underline_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\edit-underline-white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="edit_vertical_alignment_middle_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\edit-vertical-alignment-middle-white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="edit_vertical_alignment_top_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\edit-vertical-alignment-top-white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="edit_vertical_alignment_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\edit-vertical-alignment-white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="closedhand" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\closedhand.cur;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="openhand" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\openhand.cur;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="document_copy" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\document-copy.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="keyboard-enter" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\keyboard-enter.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
