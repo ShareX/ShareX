@@ -99,6 +99,7 @@ namespace ShareX.ScreenCaptureLib
             cbUnderline.Checked = Options.Underline;
 
             UpdateButtonImages();
+            UpdateEnterTip();
 
             txtInput.SupportSelectAll();
         }
@@ -113,6 +114,19 @@ namespace ShareX.ScreenCaptureLib
             }
 
             Close();
+        }
+
+        private void UpdateEnterTip()
+        {
+            // TODO: Translate
+            if (Options.EnterKeyNewLine)
+            {
+                lblTip.Text = "New line: Enter, OK: Ctrl + Enter";
+            }
+            else
+            {
+                lblTip.Text = "New line: Ctrl + Enter, OK: Enter";
+            }
         }
 
         private void TextDrawingInputBox_Shown(object sender, EventArgs e)
@@ -245,6 +259,8 @@ namespace ShareX.ScreenCaptureLib
 
         private void txtInput_KeyDown(object sender, KeyEventArgs e)
         {
+            Keys keyOK = Options.EnterKeyNewLine ? Keys.Control | Keys.Enter : Keys.Enter;
+
             // If we get VK_PROCESSKEY, the next KeyUp event will be fired by the IME
             // we should ignore these when checking if enter is pressed (GH-3621)
             if (e.KeyCode == Keys.ProcessKey)
@@ -252,7 +268,7 @@ namespace ShareX.ScreenCaptureLib
                 processKeyCount += 1;
             }
 
-            if (e.KeyData == Keys.Enter || e.KeyData == Keys.Escape)
+            if (e.KeyData == keyOK || e.KeyData == Keys.Escape)
             {
                 e.SuppressKeyPress = true;
             }
@@ -264,7 +280,9 @@ namespace ShareX.ScreenCaptureLib
             // IME suggestion box, not by the user intentionally pressing Enter
             if (processKeyCount == 0)
             {
-                if (e.KeyData == Keys.Enter)
+                Keys keyOK = Options.EnterKeyNewLine ? Keys.Control | Keys.Enter : Keys.Enter;
+
+                if (e.KeyData == keyOK)
                 {
                     Close(DialogResult.OK);
                 }
@@ -275,6 +293,12 @@ namespace ShareX.ScreenCaptureLib
             }
 
             processKeyCount = Math.Max(0, processKeyCount - 1);
+        }
+
+        private void btnSwapEnterKey_Click(object sender, EventArgs e)
+        {
+            Options.EnterKeyNewLine = !Options.EnterKeyNewLine;
+            UpdateEnterTip();
         }
 
         private void btnOK_Click(object sender, EventArgs e)
