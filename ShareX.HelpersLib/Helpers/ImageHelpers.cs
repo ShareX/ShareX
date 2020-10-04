@@ -2269,5 +2269,18 @@ namespace ShareX.HelpersLib
         {
             return ApplyAspectRatio(size.Width, size.Height, bmp);
         }
+
+        public static Bitmap NonIndexedBitmap(Bitmap bmp)
+        {
+            if (bmp != null && bmp.PixelFormat.HasFlag(PixelFormat.Indexed))
+            {
+                using (bmp)
+                {
+                    return bmp.Clone(new Rectangle(0, 0, bmp.Width, bmp.Height), PixelFormat.Format32bppArgb);
+                }
+            }
+
+            return bmp;
+        }
     }
 }
