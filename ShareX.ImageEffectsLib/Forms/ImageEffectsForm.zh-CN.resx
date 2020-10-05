@@ -127,13 +127,13 @@
     <value>保存图像...</value>
   </data>
   <data name="mbLoadImage.Text" xml:space="preserve">
-    <value>加载图像...</value>
+    <value>加载图像</value>
   </data>
   <data name="tsmiLoadImageFromFile.Text" xml:space="preserve">
     <value>从文件...</value>
   </data>
   <data name="tsmiLoadImageFromClipboard.Text" xml:space="preserve">
-    <value>从剪切板...</value>
+    <value>从剪切板</value>
   </data>
   <data name="btnUploadImage.Text" xml:space="preserve">
     <value>上传图像</value>
@@ -143,5 +143,41 @@
   </data>
   <data name="btnClose.Text" xml:space="preserve">
     <value>关闭</value>
+  </data>
+  <data name="btnEffectAdd.ToolTip" xml:space="preserve">
+    <value>添加</value>
+  </data>
+  <data name="btnEffectClear.ToolTip" xml:space="preserve">
+    <value>清除...</value>
+  </data>
+  <data name="btnEffectDuplicate.ToolTip" xml:space="preserve">
+    <value>克隆</value>
+  </data>
+  <data name="btnEffectRefresh.ToolTip" xml:space="preserve">
+    <value>刷新</value>
+  </data>
+  <data name="btnEffectRemove.ToolTip" xml:space="preserve">
+    <value>移除</value>
+  </data>
+  <data name="btnPackager.Text" xml:space="preserve">
+    <value>打包器...</value>
+  </data>
+  <data name="btnPresetDuplicate.ToolTip" xml:space="preserve">
+    <value>克隆</value>
+  </data>
+  <data name="btnPresetNew.ToolTip" xml:space="preserve">
+    <value>新建</value>
+  </data>
+  <data name="btnPresetRemove.ToolTip" xml:space="preserve">
+    <value>移除</value>
+  </data>
+  <data name="lblEffect.Text" xml:space="preserve">
+    <value>效果:</value>
+  </data>
+  <data name="lblEffects.Text" xml:space="preserve">
+    <value>效果:</value>
+  </data>
+  <data name="lblPresets.Text" xml:space="preserve">
+    <value>预设:</value>
   </data>
 </root>

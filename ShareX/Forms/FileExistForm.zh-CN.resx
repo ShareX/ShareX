@@ -127,10 +127,10 @@
     <value>使用新名称:</value>
   </data>
   <data name="btnOverwrite.Text" xml:space="preserve">
-    <value>覆盖：</value>
+    <value>覆盖: </value>
   </data>
   <data name="btnUniqueName.Text" xml:space="preserve">
-    <value>使用唯一名称:</value>
+    <value>使用唯一名称: </value>
   </data>
   <data name="lblTitle.Text" xml:space="preserve">
     <value>在该位置已经存在具有相同名称的文件。

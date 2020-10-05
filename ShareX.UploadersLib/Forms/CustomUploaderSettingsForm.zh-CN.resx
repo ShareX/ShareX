@@ -166,7 +166,7 @@ Files[0].URL
 store.book[0].title</value>
   </data>
   <data name="tsmiExportAll.Text" xml:space="preserve">
-    <value>导出全部：</value>
+    <value>导出全部...</value>
   </data>
   <data name="lblFileFormName.Text" xml:space="preserve">
     <value>文件格式名：</value>
@@ -214,7 +214,7 @@ store.book[0].title</value>
     <value>正则表达式</value>
   </data>
   <data name="lblRegex.Text" xml:space="preserve">
-    <value>正则表达式</value>
+    <value>正则表达式列表:</value>
   </data>
   <data name="btnRemove.Text" xml:space="preserve">
     <value>删除</value>
@@ -293,5 +293,35 @@ store.book[0].title</value>
   </data>
   <data name="btnDataBeautify.Text" xml:space="preserve">
     <value>格式化</value>
+  </data>
+  <data name="btnJsonPathHelp.Text" xml:space="preserve">
+    <value>?</value>
+  </data>
+  <data name="btnXPathHelp.Text" xml:space="preserve">
+    <value>?</value>
+  </data>
+  <data name="mbHelp.Text" xml:space="preserve">
+    <value>?</value>
+  </data>
+  <data name="lblResultErrorMessage.Text" xml:space="preserve">
+    <value>错误消息:</value>
+  </data>
+  <data name="lblResultURL.Text" xml:space="preserve">
+    <value>URL:</value>
+  </data>
+  <data name="lblRequestURL.Text" xml:space="preserve">
+    <value>URL:</value>
+  </data>
+  <data name="lblJsonPath.Text" xml:space="preserve">
+    <value>JsonPath:</value>
+  </data>
+  <data name="tpJsonParse.Text" xml:space="preserve">
+    <value>JSON</value>
+  </data>
+  <data name="tpXmlParse.Text" xml:space="preserve">
+    <value>XML</value>
+  </data>
+  <data name="tscResponseText.Text" xml:space="preserve">
+    <value>toolStripContainer1</value>
   </data>
 </root>

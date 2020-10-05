@@ -121,12 +121,12 @@
     <value>ShareX - 插入图像</value>
   </data>
   <data name="btnCanvasExpandRight.Text" xml:space="preserve">
-    <value>在右侧插入图像（扩展画布）</value>
+    <value>在右侧插入图像（拓展画布）</value>
   </data>
   <data name="btnCenter.Text" xml:space="preserve">
-    <value>在中心插入图图像</value>
+    <value>在中心插入图像</value>
   </data>
   <data name="btnCanvasExpandDown.Text" xml:space="preserve">
-    <value>在下侧插入图像（扩展画布）</value>
+    <value>在下侧插入图像（拓展画布）</value>
   </data>
 </root>

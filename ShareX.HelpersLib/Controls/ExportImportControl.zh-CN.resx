@@ -118,10 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="btnExport.Text" xml:space="preserve">
-    <value>导出</value>
+    <value> 导出</value>
   </data>
   <data name="btnImport.Text" xml:space="preserve">
-    <value>导入</value>
+    <value> 导入</value>
   </data>
   <data name="tsmiExportClipboard.Text" xml:space="preserve">
     <value>复制到剪贴板</value>
