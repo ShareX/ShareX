@@ -1132,7 +1132,7 @@ namespace ShareX
 #endif
         }
 
-        public static void RunShareXAsAdmin(string arguments)
+        public static void RunShareXAsAdmin(string arguments = null)
         {
             try
             {

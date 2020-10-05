@@ -205,6 +205,11 @@ namespace ShareX
             tsmiTrayDNSChanger.Visible = false;
 #endif
 
+            if (Program.Dev && !Helpers.IsAdministrator())
+            {
+                tsmiRestartAsAdmin.Visible = true;
+            }
+
             HandleCreated += MainForm_HandleCreated;
         }
 
@@ -2488,6 +2493,14 @@ namespace ShareX
             Program.Settings.ShowThumbnailTitle = true;
             tsmiThumbnailTitleShow.Check();
             UpdateMainWindowLayout();
+        }
+
+        private void tsmiRestartAsAdmin_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Would you like to restart ShareX as admin?", "ShareX - Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Program.Restart(true);
+            }
         }
 
         private void TsmiThumbnailTitleHide_Click(object sender, EventArgs e)

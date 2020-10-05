@@ -223,7 +223,7 @@ namespace ShareX
                         g.FillRectangle(brush, textRect);
                     }
 
-                    TextRenderer.DrawText(g, Config.URL, Config.TextFont, textRect.Offset(-urlPadding), Config.TextColor, TextFormatFlags.Left | TextFormatFlags.EndEllipsis);
+                    TextRenderer.DrawText(g, Config.URL, Config.TextFont, textRect.Offset(-urlPadding), Color.White, TextFormatFlags.Left | TextFormatFlags.EndEllipsis);
                 }
             }
             else if (!string.IsNullOrEmpty(Config.Text))
