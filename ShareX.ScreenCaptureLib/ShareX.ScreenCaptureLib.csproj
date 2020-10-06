@@ -236,6 +236,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\keyboard-enter.png" />
     <None Include="Resources\document-copy.png" />
     <None Include="Resources\openhand.cur" />
     <None Include="Resources\edit-vertical-alignment-white.png" />

@@ -254,7 +254,7 @@ namespace ShareX
 
         #endregion Paths
 
-        private static bool closeSequenceStarted, restarting;
+        private static bool closeSequenceStarted, restartRequested, restartAsAdmin;
 
         [STAThread]
         private static void Main(string[] args)
@@ -293,10 +293,18 @@ namespace ShareX
                 Run();
             }
 
-            if (restarting)
+            if (restartRequested)
             {
                 DebugHelper.WriteLine("ShareX restarting.");
-                Process.Start(Application.ExecutablePath);
+
+                if (restartAsAdmin)
+                {
+                    TaskHelpers.RunShareXAsAdmin("-silent");
+                }
+                else
+                {
+                    Process.Start(Application.ExecutablePath);
+                }
             }
         }
 
@@ -366,9 +374,10 @@ namespace ShareX
             }
         }
 
-        public static void Restart()
+        public static void Restart(bool asAdmin = false)
         {
-            restarting = true;
+            restartRequested = true;
+            restartAsAdmin = asAdmin;
             Application.Exit();
         }
 

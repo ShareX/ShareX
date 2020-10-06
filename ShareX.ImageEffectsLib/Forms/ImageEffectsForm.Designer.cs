@@ -57,7 +57,6 @@
             this.pgSettings = new System.Windows.Forms.PropertyGrid();
             this.pbResult = new ShareX.HelpersLib.MyPictureBox();
             this.mbLoadImage = new ShareX.HelpersLib.MenuButton();
-            this.eiImageEffects = new ShareX.HelpersLib.ExportImportControl();
             this.lvEffects = new ShareX.HelpersLib.MyListView();
             this.chEffect = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lblEffect = new System.Windows.Forms.Label();
@@ -278,16 +277,6 @@
             this.mbLoadImage.Name = "mbLoadImage";
             this.mbLoadImage.UseVisualStyleBackColor = true;
             // 
-            // eiImageEffects
-            // 
-            resources.ApplyResources(this.eiImageEffects, "eiImageEffects");
-            this.eiImageEffects.DefaultFileName = null;
-            this.eiImageEffects.Name = "eiImageEffects";
-            this.eiImageEffects.ObjectType = null;
-            this.eiImageEffects.SerializationBinder = null;
-            this.eiImageEffects.ExportRequested += new ShareX.HelpersLib.ExportImportControl.ExportEventHandler(this.eiImageEffects_ExportRequested);
-            this.eiImageEffects.ImportRequested += new ShareX.HelpersLib.ExportImportControl.ImportEventHandler(this.eiImageEffects_ImportRequested);
-            // 
             // lvEffects
             // 
             this.lvEffects.AllowDrop = true;
@@ -346,7 +335,6 @@
             this.Controls.Add(this.txtPresetName);
             this.Controls.Add(this.lblPresetName);
             this.Controls.Add(this.mbLoadImage);
-            this.Controls.Add(this.eiImageEffects);
             this.Controls.Add(this.btnSaveImage);
             this.Controls.Add(this.lvEffects);
             this.Name = "ImageEffectsForm";
@@ -365,7 +353,6 @@
         private System.Windows.Forms.ColumnHeader chEffect;
         private ShareX.HelpersLib.MyPictureBox pbResult;
         private System.Windows.Forms.Button btnSaveImage;
-        private ShareX.HelpersLib.ExportImportControl eiImageEffects;
         private System.Windows.Forms.ContextMenuStrip cmsEffects;
         private HelpersLib.MenuButton mbLoadImage;
         private System.Windows.Forms.ContextMenuStrip cmsLoadImage;

@@ -839,5 +839,10 @@ namespace ShareX.HelpersLib
                 }
             }
         }
+
+        public static bool IsTransparent(this Color color)
+        {
+            return color.A < 255;
+        }
     }
 }

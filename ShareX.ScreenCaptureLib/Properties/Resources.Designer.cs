@@ -714,6 +714,16 @@ namespace ShareX.ScreenCaptureLib.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap keyboard_enter {
+            get {
+                object obj = ResourceManager.GetObject("keyboard-enter", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap layer {
             get {
                 object obj = ResourceManager.GetObject("layer", resourceCulture);
@@ -1182,11 +1192,11 @@ namespace ShareX.ScreenCaptureLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Arrows on both ends.
+        ///   Looks up a localized string similar to Arrow points to:.
         /// </summary>
-        internal static string ShapeManager_ArrowsOnBothEnds {
+        internal static string ShapeManager_ArrowHeadDirection {
             get {
-                return ResourceManager.GetString("ShapeManager_ArrowsOnBothEnds", resourceCulture);
+                return ResourceManager.GetString("ShapeManager_ArrowHeadDirection", resourceCulture);
             }
         }
         

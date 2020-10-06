@@ -45,7 +45,7 @@ namespace ShareX.HelpersLib
             }
             set
             {
-                if (!value.IsEmpty) backgroundColor = value;
+                if (!value.IsTransparent()) backgroundColor = value;
             }
         }
 
@@ -60,7 +60,7 @@ namespace ShareX.HelpersLib
             }
             set
             {
-                if (!value.IsEmpty) lightBackgroundColor = value;
+                if (!value.IsTransparent()) lightBackgroundColor = value;
             }
         }
 
@@ -75,7 +75,7 @@ namespace ShareX.HelpersLib
             }
             set
             {
-                if (!value.IsEmpty) darkBackgroundColor = value;
+                if (!value.IsTransparent()) darkBackgroundColor = value;
             }
         }
 
@@ -90,7 +90,7 @@ namespace ShareX.HelpersLib
             }
             set
             {
-                if (!value.IsEmpty) textColor = value;
+                if (!value.IsTransparent()) textColor = value;
             }
         }
 
@@ -105,7 +105,7 @@ namespace ShareX.HelpersLib
             }
             set
             {
-                if (!value.IsEmpty) borderColor = value;
+                if (!value.IsTransparent()) borderColor = value;
             }
         }
 
@@ -150,59 +150,57 @@ namespace ShareX.HelpersLib
 
         public ShareXTheme()
         {
+            SetDarkTheme();
         }
 
-        public static ShareXTheme GetDarkTheme()
+        public void SetDarkTheme()
         {
-            return new ShareXTheme()
-            {
-                Name = "Dark",
-                BackgroundColor = Color.FromArgb(42, 47, 56),
-                LightBackgroundColor = Color.FromArgb(52, 57, 65),
-                DarkBackgroundColor = Color.FromArgb(28, 32, 38),
-                TextColor = Color.FromArgb(235, 235, 235),
-                BorderColor = Color.FromArgb(28, 32, 38),
-                CheckerColor = Color.FromArgb(60, 60, 60),
-                CheckerColor2 = Color.FromArgb(50, 50, 50),
-                CheckerSize = 15,
-                LinkColor = Color.FromArgb(166, 212, 255),
-                MenuHighlightColor = Color.FromArgb(30, 34, 40),
-                MenuHighlightBorderColor = Color.FromArgb(116, 129, 152),
-                MenuBorderColor = Color.FromArgb(22, 26, 31),
-                MenuCheckBackgroundColor = Color.FromArgb(56, 64, 75),
-                ContextMenuOpacity = 100,
-                SeparatorLightColor = Color.FromArgb(56, 64, 75),
-                SeparatorDarkColor = Color.FromArgb(22, 26, 31)
-            };
+            Name = "Dark";
+            BackgroundColor = Color.FromArgb(42, 47, 56);
+            LightBackgroundColor = Color.FromArgb(52, 57, 65);
+            DarkBackgroundColor = Color.FromArgb(28, 32, 38);
+            TextColor = Color.FromArgb(235, 235, 235);
+            BorderColor = Color.FromArgb(28, 32, 38);
+            CheckerColor = Color.FromArgb(60, 60, 60);
+            CheckerColor2 = Color.FromArgb(50, 50, 50);
+            CheckerSize = 15;
+            LinkColor = Color.FromArgb(166, 212, 255);
+            MenuHighlightColor = Color.FromArgb(30, 34, 40);
+            MenuHighlightBorderColor = Color.FromArgb(116, 129, 152);
+            MenuBorderColor = Color.FromArgb(22, 26, 31);
+            MenuCheckBackgroundColor = Color.FromArgb(56, 64, 75);
+            ContextMenuOpacity = 100;
+            SeparatorLightColor = Color.FromArgb(56, 64, 75);
+            SeparatorDarkColor = Color.FromArgb(22, 26, 31);
         }
 
-        public static ShareXTheme GetLightTheme()
+        public void SetLightTheme()
         {
-            return new ShareXTheme()
-            {
-                Name = "Light",
-                BackgroundColor = Color.FromArgb(242, 242, 242),
-                LightBackgroundColor = Color.FromArgb(247, 247, 247),
-                DarkBackgroundColor = Color.FromArgb(235, 235, 235),
-                TextColor = Color.FromArgb(69, 69, 69),
-                BorderColor = Color.FromArgb(201, 201, 201),
-                CheckerColor = Color.FromArgb(247, 247, 247),
-                CheckerColor2 = Color.FromArgb(235, 235, 235),
-                CheckerSize = 15,
-                LinkColor = Color.FromArgb(166, 212, 255),
-                MenuHighlightColor = Color.FromArgb(247, 247, 247),
-                MenuHighlightBorderColor = Color.FromArgb(96, 143, 226),
-                MenuBorderColor = Color.FromArgb(201, 201, 201),
-                MenuCheckBackgroundColor = Color.FromArgb(225, 233, 244),
-                ContextMenuOpacity = 100,
-                SeparatorLightColor = Color.FromArgb(253, 253, 253),
-                SeparatorDarkColor = Color.FromArgb(189, 189, 189)
-            };
+            Name = "Light";
+            BackgroundColor = Color.FromArgb(242, 242, 242);
+            LightBackgroundColor = Color.FromArgb(247, 247, 247);
+            DarkBackgroundColor = Color.FromArgb(235, 235, 235);
+            TextColor = Color.FromArgb(69, 69, 69);
+            BorderColor = Color.FromArgb(201, 201, 201);
+            CheckerColor = Color.FromArgb(247, 247, 247);
+            CheckerColor2 = Color.FromArgb(235, 235, 235);
+            CheckerSize = 15;
+            LinkColor = Color.FromArgb(166, 212, 255);
+            MenuHighlightColor = Color.FromArgb(247, 247, 247);
+            MenuHighlightBorderColor = Color.FromArgb(96, 143, 226);
+            MenuBorderColor = Color.FromArgb(201, 201, 201);
+            MenuCheckBackgroundColor = Color.FromArgb(225, 233, 244);
+            ContextMenuOpacity = 100;
+            SeparatorLightColor = Color.FromArgb(253, 253, 253);
+            SeparatorDarkColor = Color.FromArgb(189, 189, 189);
         }
 
         public static List<ShareXTheme> GetPresets()
         {
-            return new List<ShareXTheme>() { GetDarkTheme(), GetLightTheme() };
+            ShareXTheme darkTheme = new ShareXTheme();
+            ShareXTheme lightTheme = new ShareXTheme();
+            lightTheme.SetLightTheme();
+            return new List<ShareXTheme>() { darkTheme, lightTheme };
         }
 
         public override string ToString()

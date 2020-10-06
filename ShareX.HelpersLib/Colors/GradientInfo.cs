@@ -47,7 +47,7 @@ namespace ShareX.HelpersLib
         public bool IsVisible => IsValid && Colors.Any(x => x.Color.A > 0);
 
         [JsonIgnore]
-        public bool IsTransparent => IsValid && Colors.Any(x => x.Color.A < 255);
+        public bool IsTransparent => IsValid && Colors.Any(x => x.Color.IsTransparent());
 
         public GradientInfo()
         {

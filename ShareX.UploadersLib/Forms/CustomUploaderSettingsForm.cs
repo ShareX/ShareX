@@ -294,6 +294,21 @@ namespace ShareX.UploadersLib
             CustomUploaderLoad(CustomUploaderItem.Init());
         }
 
+        private void CustomUploaderSerialize(CustomUploaderItem cui, string folderPath)
+        {
+            try
+            {
+                string filePath = Path.Combine(folderPath, cui.GetFileName());
+                JsonHelpers.SerializeToFile(cui, filePath, DefaultValueHandling.Ignore, NullValueHandling.Ignore);
+            }
+            catch (Exception e)
+            {
+                DebugHelper.WriteException(e);
+                // TODO: Translate
+                MessageBox.Show("Export failed." + "\n\n" + e, "ShareX - " + "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
         private void CustomUploaderExportAll()
         {
             if (Config.CustomUploadersList != null && Config.CustomUploadersList.Count > 0)
@@ -304,9 +319,7 @@ namespace ShareX.UploadersLib
                     {
                         foreach (CustomUploaderItem cui in Config.CustomUploadersList)
                         {
-                            string json = eiCustomUploaders.Serialize(cui);
-                            string filePath = Path.Combine(fsd.FileName, cui.GetFileName());
-                            File.WriteAllText(filePath, json, Encoding.UTF8);
+                            CustomUploaderSerialize(cui, fsd.FileName);
                         }
                     }
                 }
@@ -328,16 +341,12 @@ namespace ShareX.UploadersLib
                     {
                         foreach (string filePath in files)
                         {
-                            CustomUploaderItem cui = JsonHelpers.DeserializeFromFilePath<CustomUploaderItem>(filePath);
+                            CustomUploaderItem cui = JsonHelpers.DeserializeFromFile<CustomUploaderItem>(filePath);
 
                             if (cui != null)
                             {
                                 cui.CheckBackwardCompatibility();
-
-                                string json = eiCustomUploaders.Serialize(cui);
-                                string newFilePath = Path.Combine(folderPath, cui.GetFileName());
-                                File.WriteAllText(newFilePath, json, Encoding.UTF8);
-
+                                CustomUploaderSerialize(cui, folderPath);
                                 updated++;
                             }
                         }
@@ -905,7 +914,7 @@ namespace ShareX.UploadersLib
                 {
                     foreach (string filePath in files.Where(x => !string.IsNullOrEmpty(x) && x.EndsWith(".sxcu")))
                     {
-                        CustomUploaderItem cui = JsonHelpers.DeserializeFromFilePath<CustomUploaderItem>(filePath);
+                        CustomUploaderItem cui = JsonHelpers.DeserializeFromFile<CustomUploaderItem>(filePath);
 
                         if (cui != null)
                         {

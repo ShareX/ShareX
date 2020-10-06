@@ -1080,7 +1080,14 @@ namespace ShareX.ScreenCaptureLib
             {
                 Color color = ShapeManager.GetCurrentColor();
 
-                if (Mode != RegionCaptureMode.ScreenColorPicker && !string.IsNullOrEmpty(Options.CustomInfoText))
+                if (Mode == RegionCaptureMode.ScreenColorPicker)
+                {
+                    if (!string.IsNullOrEmpty(Options.ScreenColorPickerInfoText))
+                    {
+                        return CodeMenuEntryPixelInfo.Parse(Options.ScreenColorPickerInfoText, color, CurrentPosition);
+                    }
+                }
+                else if (!string.IsNullOrEmpty(Options.CustomInfoText))
                 {
                     return CodeMenuEntryPixelInfo.Parse(Options.CustomInfoText, color, CurrentPosition);
                 }
