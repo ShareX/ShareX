@@ -287,7 +287,7 @@ namespace ShareX
 
                 if (restartAsAdmin)
                 {
-                    TaskHelpers.RunShareXAsAdmin();
+                    TaskHelpers.RunShareXAsAdmin("-silent");
                 }
                 else
                 {
