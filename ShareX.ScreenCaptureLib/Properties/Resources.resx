@@ -277,9 +277,6 @@
   <data name="ShapeManager_CreateToolbar_Rotate90CounterClockwise" xml:space="preserve">
     <value>Rotate 90° counter clockwise</value>
   </data>
-  <data name="ShapeManager_ArrowsOnBothEnds" xml:space="preserve">
-    <value>Arrows on both ends</value>
-  </data>
   <data name="ShapeManager_CreateToolbar_InterpolationMode" xml:space="preserve">
     <value>Interpolation mode:</value>
   </data>
@@ -715,5 +712,8 @@ X: {4} Y: {5}</value>
   </data>
   <data name="keyboard-enter" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\keyboard-enter.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ShapeManager_ArrowHeadDirection" xml:space="preserve">
+    <value>Arrow points to:</value>
   </data>
 </root>
