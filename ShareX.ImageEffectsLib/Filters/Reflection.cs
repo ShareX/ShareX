@@ -90,9 +90,9 @@ namespace ShareX.ImageEffectsLib
             this.ApplyDefaultPropertyValues();
         }
 
-        public override Image Apply(Image img)
+        public override Bitmap Apply(Bitmap bmp)
         {
-            return ImageHelpers.DrawReflection(img, Percentage, MaxAlpha, MinAlpha, Offset, Skew, SkewSize);
+            return ImageHelpers.DrawReflection(bmp, Percentage, MaxAlpha, MinAlpha, Offset, Skew, SkewSize);
         }
     }
 }

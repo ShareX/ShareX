@@ -211,17 +211,8 @@
   <data name="cbExperimentalDarkTheme.Size" type="System.Drawing.Size, System.Drawing">
     <value>113, 17</value>
   </data>
-  <data name="cbExperimentalDarkTheme.Text" xml:space="preserve">
-    <value>تم مشکی آزمایشی</value>
-  </data>
-  <data name="btnApplyTheme.Text" xml:space="preserve">
-    <value>اعمال تم</value>
-  </data>
   <data name="cbUseDarkTheme.Size" type="System.Drawing.Size, System.Drawing">
     <value>124, 17</value>
-  </data>
-  <data name="cbUseDarkTheme.Text" xml:space="preserve">
-    <value>از تم تیره استفاده کن</value>
   </data>
   <data name="tpTheme.Text" xml:space="preserve">
     <value>تم</value>
@@ -318,9 +309,6 @@
   </data>
   <data name="btnImport.Text" xml:space="preserve">
     <value>وارد کردن تنظیمات برنامه ...</value>
-  </data>
-  <data name="tpExportImport.Text" xml:space="preserve">
-    <value>خروجی گرفتن / وارد کردن</value>
   </data>
   <data name="lblUploadLimit.Size" type="System.Drawing.Size, System.Drawing">
     <value>111, 13</value>

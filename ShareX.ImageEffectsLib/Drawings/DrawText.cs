@@ -24,11 +24,11 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Design;
 using System.Drawing.Drawing2D;
+using System.Drawing.Text;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -37,17 +37,17 @@ namespace ShareX.ImageEffectsLib
     [Description("Text watermark")]
     public class DrawText : ImageEffect
     {
-        [DefaultValue(ContentAlignment.BottomRight)]
+        [DefaultValue("Text watermark"), Editor(typeof(NameParserEditor), typeof(UITypeEditor))]
+        public string Text { get; set; }
+
+        [DefaultValue(ContentAlignment.BottomRight), TypeConverter(typeof(EnumProperNameConverter))]
         public ContentAlignment Placement { get; set; }
 
         [DefaultValue(typeof(Point), "5, 5")]
         public Point Offset { get; set; }
 
-        [DefaultValue(true), Description("If text watermark size bigger than source image then don't draw it.")]
+        [DefaultValue(false), Description("If text watermark size bigger than source image then don't draw it.")]
         public bool AutoHide { get; set; }
-
-        [DefaultValue("Text watermark"), Editor(typeof(NameParserEditor), typeof(UITypeEditor))]
-        public string Text { get; set; }
 
         private FontSafe textFontSafe = new FontSafe();
 
@@ -68,7 +68,10 @@ namespace ShareX.ImageEffectsLib
             }
         }
 
-        [DefaultValue(typeof(Color), "White"), Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
+        [DefaultValue(TextRenderingHint.SystemDefault), TypeConverter(typeof(EnumProperNameConverter))]
+        public TextRenderingHint TextRenderingMode { get; set; }
+
+        [DefaultValue(typeof(Color), "235, 235, 235"), Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
         public Color TextColor { get; set; }
 
         [DefaultValue(true)]
@@ -110,20 +113,11 @@ namespace ShareX.ImageEffectsLib
         [DefaultValue(true)]
         public bool DrawBackground { get; set; }
 
-        [DefaultValue(typeof(Color), "10, 110, 230"), Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
+        [DefaultValue(typeof(Color), "42, 47, 56"), Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
         public Color BackgroundColor { get; set; }
 
-        [DefaultValue(true)]
-        public bool UseGradient { get; set; }
-
-        [DefaultValue(LinearGradientMode.Vertical)]
-        public LinearGradientMode GradientType { get; set; }
-
-        [DefaultValue(typeof(Color), "0, 30, 80"), Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
-        public Color BackgroundColor2 { get; set; }
-
         [DefaultValue(false)]
-        public bool UseCustomGradient { get; set; }
+        public bool UseGradient { get; set; }
 
         [Editor(typeof(GradientEditor), typeof(UITypeEditor))]
         public GradientInfo Gradient { get; set; }
@@ -143,41 +137,41 @@ namespace ShareX.ImageEffectsLib
             Gradient.Colors.Add(new GradientStop(Color.FromArgb(23, 89, 174), 100f));
         }
 
-        public override Image Apply(Image img)
+        public override Bitmap Apply(Bitmap bmp)
         {
             if (string.IsNullOrEmpty(Text))
             {
-                return img;
+                return bmp;
             }
 
             using (Font textFont = TextFont)
             {
                 if (textFont == null || textFont.Size < 1)
                 {
-                    return img;
+                    return bmp;
                 }
 
                 NameParser parser = new NameParser(NameParserType.Text);
 
-                if (img != null)
+                if (bmp != null)
                 {
-                    parser.ImageWidth = img.Width;
-                    parser.ImageHeight = img.Height;
+                    parser.ImageWidth = bmp.Width;
+                    parser.ImageHeight = bmp.Height;
                 }
 
                 string parsedText = parser.Parse(Text);
 
                 Size textSize = Helpers.MeasureText(parsedText, textFont);
                 Size watermarkSize = new Size(Padding.Left + textSize.Width + Padding.Right, Padding.Top + textSize.Height + Padding.Bottom);
-                Point watermarkPosition = Helpers.GetPosition(Placement, Offset, img.Size, watermarkSize);
+                Point watermarkPosition = Helpers.GetPosition(Placement, Offset, bmp.Size, watermarkSize);
                 Rectangle watermarkRectangle = new Rectangle(watermarkPosition, watermarkSize);
 
-                if (AutoHide && !new Rectangle(0, 0, img.Width, img.Height).Contains(watermarkRectangle))
+                if (AutoHide && !new Rectangle(0, 0, bmp.Width, bmp.Height).Contains(watermarkRectangle))
                 {
-                    return img;
+                    return bmp;
                 }
 
-                using (Graphics g = Graphics.FromImage(img))
+                using (Graphics g = Graphics.FromImage(bmp))
                 {
                     g.SmoothingMode = SmoothingMode.HighQuality;
 
@@ -191,16 +185,9 @@ namespace ShareX.ImageEffectsLib
 
                             try
                             {
-                                if (UseGradient)
+                                if (UseGradient && Gradient != null && Gradient.IsValid)
                                 {
-                                    if (UseCustomGradient && Gradient != null && Gradient.IsValid)
-                                    {
-                                        backgroundBrush = Gradient.GetGradientBrush(watermarkRectangle);
-                                    }
-                                    else
-                                    {
-                                        backgroundBrush = new LinearGradientBrush(watermarkRectangle, BackgroundColor, BackgroundColor2, GradientType);
-                                    }
+                                    backgroundBrush = Gradient.GetGradientBrush(watermarkRectangle);
                                 }
                                 else
                                 {
@@ -233,6 +220,8 @@ namespace ShareX.ImageEffectsLib
                         }
                     }
 
+                    g.TextRenderingHint = TextRenderingMode;
+
                     if (DrawTextShadow)
                     {
                         using (Brush textShadowBrush = new SolidBrush(TextShadowColor))
@@ -249,7 +238,7 @@ namespace ShareX.ImageEffectsLib
                 }
             }
 
-            return img;
+            return bmp;
         }
     }
 }

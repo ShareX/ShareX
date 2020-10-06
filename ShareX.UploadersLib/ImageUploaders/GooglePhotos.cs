@@ -66,7 +66,7 @@ namespace ShareX.UploadersLib.ImageUploaders
         {
             GoogleAuth = new GoogleOAuth2(oauth, this)
             {
-                Scope = "https://www.googleapis.com/auth/photoslibrary https://www.googleapis.com/auth/photoslibrary.sharing"
+                Scope = "https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/photoslibrary https://www.googleapis.com/auth/photoslibrary.sharing"
             };
         }
 
@@ -90,6 +90,11 @@ namespace ShareX.UploadersLib.ImageUploaders
         public bool GetAccessToken(string code)
         {
             return GoogleAuth.GetAccessToken(code);
+        }
+
+        public OAuthUserInfo GetUserInfo()
+        {
+            return GoogleAuth.GetUserInfo();
         }
 
         public GooglePhotosAlbum CreateAlbum(string albumName)

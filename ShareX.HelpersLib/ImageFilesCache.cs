@@ -31,23 +31,56 @@ namespace ShareX.HelpersLib
 {
     public class ImageFilesCache : IDisposable
     {
-        private Dictionary<string, Image> images = new Dictionary<string, Image>();
+        private Dictionary<string, Bitmap> images = new Dictionary<string, Bitmap>();
 
-        public Image GetImage(string filePath)
+        public Bitmap GetImage(string filePath)
         {
-            if (images.ContainsKey(filePath))
+            Bitmap bmp = null;
+
+            if (!string.IsNullOrEmpty(filePath))
             {
-                return images[filePath];
+                if (images.ContainsKey(filePath))
+                {
+                    return images[filePath];
+                }
+
+                bmp = ImageHelpers.LoadImage(filePath);
+
+                if (bmp != null)
+                {
+                    images.Add(filePath, bmp);
+                }
             }
 
-            Image img = ImageHelpers.LoadImage(filePath);
+            return bmp;
+        }
 
-            if (img != null)
+        public Bitmap GetFileIconAsImage(string filePath, bool isSmallIcon = true)
+        {
+            Bitmap bmp = null;
+
+            if (!string.IsNullOrEmpty(filePath))
             {
-                images.Add(filePath, img);
+                if (images.ContainsKey(filePath))
+                {
+                    return images[filePath];
+                }
+
+                using (Icon icon = NativeMethods.GetFileIcon(filePath, isSmallIcon))
+                {
+                    if (icon != null && icon.Width > 0 && icon.Height > 0)
+                    {
+                        bmp = icon.ToBitmap();
+
+                        if (bmp != null)
+                        {
+                            images.Add(filePath, bmp);
+                        }
+                    }
+                }
             }
 
-            return img;
+            return bmp;
         }
 
         public void Clear()
@@ -64,11 +97,11 @@ namespace ShareX.HelpersLib
         {
             if (images != null)
             {
-                foreach (Image img in images.Values)
+                foreach (Bitmap bmp in images.Values)
                 {
-                    if (img != null)
+                    if (bmp != null)
                     {
-                        img.Dispose();
+                        bmp.Dispose();
                     }
                 }
             }

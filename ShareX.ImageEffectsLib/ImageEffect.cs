@@ -38,6 +38,6 @@ namespace ShareX.ImageEffectsLib
             Enabled = true;
         }
 
-        public abstract Image Apply(Image img);
+        public abstract Bitmap Apply(Bitmap bmp);
     }
 }

@@ -132,9 +132,6 @@
   <data name="btnStartHashCheck.Text" xml:space="preserve">
     <value>Verificar</value>
   </data>
-  <data name="lblFile.Text" xml:space="preserve">
-    <value>Ubicación del archivo:</value>
-  </data>
   <data name="tpFileHashCheck.Text" xml:space="preserve">
     <value>Verificación de hash de archivo</value>
   </data>

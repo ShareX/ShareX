@@ -44,17 +44,17 @@ namespace ShareX.ImageEffectsLib
             this.ApplyDefaultPropertyValues();
         }
 
-        public override Image Apply(Image img)
+        public override Bitmap Apply(Bitmap bmp)
         {
-            Image result = ImageHelpers.AddCanvas(img, Margin, Color);
+            Bitmap bmpResult = ImageHelpers.AddCanvas(bmp, Margin, Color);
 
-            if (result == null)
+            if (bmpResult == null)
             {
-                return img;
+                return bmp;
             }
 
-            img.Dispose();
-            return result;
+            bmp.Dispose();
+            return bmpResult;
         }
     }
 }

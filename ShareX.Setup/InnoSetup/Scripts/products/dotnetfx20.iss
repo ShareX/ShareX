@@ -2,7 +2,7 @@
 ; requires internet explorer 5.0.1 or higher
 ; requires windows installer 2.0 on windows 98, ME
 ; requires Windows Installer 3.1 on windows 2000 or higher
-; http://www.microsoft.com/downloads/details.aspx?FamilyID=0856eacb-4362-4b0d-8edd-aab15c5e04f5
+; https://www.microsoft.com/downloads/details.aspx?FamilyID=0856eacb-4362-4b0d-8edd-aab15c5e04f5
 
 [CustomMessages]
 dotnetfx20_title=.NET Framework 2.0

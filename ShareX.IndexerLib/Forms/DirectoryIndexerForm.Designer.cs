@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DirectoryIndexerForm));
-            this.wbPreview = new System.Windows.Forms.WebBrowser();
             this.txtFolderPath = new System.Windows.Forms.TextBox();
             this.btnBrowseFolder = new System.Windows.Forms.Button();
             this.btnIndexFolder = new System.Windows.Forms.Button();
@@ -39,15 +38,12 @@
             this.txtPreview = new System.Windows.Forms.TextBox();
             this.tpSettings = new System.Windows.Forms.TabPage();
             this.pgSettings = new System.Windows.Forms.PropertyGrid();
+            this.btnSaveAs = new System.Windows.Forms.Button();
+            this.wbPreview = new System.Windows.Forms.WebBrowser();
             this.tcMain.SuspendLayout();
             this.tpPreview.SuspendLayout();
             this.tpSettings.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // wbPreview
-            // 
-            resources.ApplyResources(this.wbPreview, "wbPreview");
-            this.wbPreview.Name = "wbPreview";
             // 
             // txtFolderPath
             // 
@@ -112,11 +108,25 @@
             this.pgSettings.PropertySort = System.Windows.Forms.PropertySort.Categorized;
             this.pgSettings.ToolbarVisible = false;
             // 
+            // btnSaveAs
+            // 
+            resources.ApplyResources(this.btnSaveAs, "btnSaveAs");
+            this.btnSaveAs.Name = "btnSaveAs";
+            this.btnSaveAs.UseVisualStyleBackColor = true;
+            this.btnSaveAs.Click += new System.EventHandler(this.btnSaveAs_Click);
+            // 
+            // wbPreview
+            // 
+            resources.ApplyResources(this.wbPreview, "wbPreview");
+            this.wbPreview.Name = "wbPreview";
+            // 
             // DirectoryIndexerForm
             // 
             resources.ApplyResources(this, "$this");
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.SystemColors.Window;
+            this.Controls.Add(this.btnSaveAs);
             this.Controls.Add(this.tcMain);
             this.Controls.Add(this.btnUpload);
             this.Controls.Add(this.btnIndexFolder);
@@ -145,5 +155,6 @@
         private System.Windows.Forms.PropertyGrid pgSettings;
         private System.Windows.Forms.TabPage tpPreview;
         private System.Windows.Forms.TextBox txtPreview;
+        private System.Windows.Forms.Button btnSaveAs;
     }
 }

@@ -40,6 +40,9 @@
             this.cmsTask = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tcTaskSettings = new System.Windows.Forms.TabControl();
             this.tpTask = new System.Windows.Forms.TabPage();
+            this.btnScreenshotsFolderBrowse = new System.Windows.Forms.Button();
+            this.txtScreenshotsFolder = new System.Windows.Forms.TextBox();
+            this.cbOverrideScreenshotsFolder = new System.Windows.Forms.CheckBox();
             this.cbOverrideCustomUploader = new System.Windows.Forms.ComboBox();
             this.chkOverrideCustomUploader = new System.Windows.Forms.CheckBox();
             this.chkOverrideFTP = new System.Windows.Forms.CheckBox();
@@ -161,6 +164,7 @@
             this.nudRegionCaptureMagnifierPixelCount = new System.Windows.Forms.NumericUpDown();
             this.nudRegionCaptureMagnifierPixelSize = new System.Windows.Forms.NumericUpDown();
             this.tpScreenRecorder = new System.Windows.Forms.TabPage();
+            this.cbScreenRecordTransparentRegion = new System.Windows.Forms.CheckBox();
             this.cbScreenRecordTwoPassEncoding = new System.Windows.Forms.CheckBox();
             this.cbScreenRecordConfirmAbort = new System.Windows.Forms.CheckBox();
             this.cbScreenRecorderShowCursor = new System.Windows.Forms.CheckBox();
@@ -219,6 +223,7 @@
             this.txtUploaderFiltersExtensions = new System.Windows.Forms.TextBox();
             this.tpActions = new System.Windows.Forms.TabPage();
             this.pActions = new System.Windows.Forms.Panel();
+            this.lblActionsNote = new System.Windows.Forms.Label();
             this.btnActionsDuplicate = new System.Windows.Forms.Button();
             this.btnActionsAdd = new System.Windows.Forms.Button();
             this.lvActions = new ShareX.HelpersLib.MyListView();
@@ -247,7 +252,11 @@
             this.pgTaskSettings = new System.Windows.Forms.PropertyGrid();
             this.chkOverrideAdvancedSettings = new System.Windows.Forms.CheckBox();
             this.tttvMain = new ShareX.HelpersLib.TabToTreeView();
-            this.lblActionsNote = new System.Windows.Forms.Label();
+            this.cbURLRegexReplace = new System.Windows.Forms.CheckBox();
+            this.lblURLRegexReplacePattern = new System.Windows.Forms.Label();
+            this.txtURLRegexReplacePattern = new System.Windows.Forms.TextBox();
+            this.lblURLRegexReplaceReplacement = new System.Windows.Forms.Label();
+            this.txtURLRegexReplaceReplacement = new System.Windows.Forms.TextBox();
             this.tcTaskSettings.SuspendLayout();
             this.tpTask.SuspendLayout();
             this.cmsDestinations.SuspendLayout();
@@ -368,6 +377,9 @@
             // tpTask
             // 
             this.tpTask.BackColor = System.Drawing.SystemColors.Window;
+            this.tpTask.Controls.Add(this.btnScreenshotsFolderBrowse);
+            this.tpTask.Controls.Add(this.txtScreenshotsFolder);
+            this.tpTask.Controls.Add(this.cbOverrideScreenshotsFolder);
             this.tpTask.Controls.Add(this.cbOverrideCustomUploader);
             this.tpTask.Controls.Add(this.chkOverrideCustomUploader);
             this.tpTask.Controls.Add(this.chkOverrideFTP);
@@ -383,6 +395,26 @@
             this.tpTask.Controls.Add(this.lblDescription);
             resources.ApplyResources(this.tpTask, "tpTask");
             this.tpTask.Name = "tpTask";
+            // 
+            // btnScreenshotsFolderBrowse
+            // 
+            resources.ApplyResources(this.btnScreenshotsFolderBrowse, "btnScreenshotsFolderBrowse");
+            this.btnScreenshotsFolderBrowse.Name = "btnScreenshotsFolderBrowse";
+            this.btnScreenshotsFolderBrowse.UseVisualStyleBackColor = true;
+            this.btnScreenshotsFolderBrowse.Click += new System.EventHandler(this.btnScreenshotsFolderBrowse_Click);
+            // 
+            // txtScreenshotsFolder
+            // 
+            resources.ApplyResources(this.txtScreenshotsFolder, "txtScreenshotsFolder");
+            this.txtScreenshotsFolder.Name = "txtScreenshotsFolder";
+            this.txtScreenshotsFolder.TextChanged += new System.EventHandler(this.txtScreenshotsFolder_TextChanged);
+            // 
+            // cbOverrideScreenshotsFolder
+            // 
+            resources.ApplyResources(this.cbOverrideScreenshotsFolder, "cbOverrideScreenshotsFolder");
+            this.cbOverrideScreenshotsFolder.Name = "cbOverrideScreenshotsFolder";
+            this.cbOverrideScreenshotsFolder.UseVisualStyleBackColor = true;
+            this.cbOverrideScreenshotsFolder.CheckedChanged += new System.EventHandler(this.cbOverrideScreenshotsFolder_CheckedChanged);
             // 
             // cbOverrideCustomUploader
             // 
@@ -1405,6 +1437,7 @@
             // tpScreenRecorder
             // 
             this.tpScreenRecorder.BackColor = System.Drawing.SystemColors.Window;
+            this.tpScreenRecorder.Controls.Add(this.cbScreenRecordTransparentRegion);
             this.tpScreenRecorder.Controls.Add(this.cbScreenRecordTwoPassEncoding);
             this.tpScreenRecorder.Controls.Add(this.cbScreenRecordConfirmAbort);
             this.tpScreenRecorder.Controls.Add(this.cbScreenRecorderShowCursor);
@@ -1421,6 +1454,13 @@
             this.tpScreenRecorder.Controls.Add(this.lblGIFFPS);
             resources.ApplyResources(this.tpScreenRecorder, "tpScreenRecorder");
             this.tpScreenRecorder.Name = "tpScreenRecorder";
+            // 
+            // cbScreenRecordTransparentRegion
+            // 
+            resources.ApplyResources(this.cbScreenRecordTransparentRegion, "cbScreenRecordTransparentRegion");
+            this.cbScreenRecordTransparentRegion.Name = "cbScreenRecordTransparentRegion";
+            this.cbScreenRecordTransparentRegion.UseVisualStyleBackColor = true;
+            this.cbScreenRecordTransparentRegion.CheckedChanged += new System.EventHandler(this.cbScreenRecordTransparentRegion_CheckedChanged);
             // 
             // cbScreenRecordTwoPassEncoding
             // 
@@ -1656,6 +1696,11 @@
             // tpFileNaming
             // 
             this.tpFileNaming.BackColor = System.Drawing.SystemColors.Window;
+            this.tpFileNaming.Controls.Add(this.txtURLRegexReplaceReplacement);
+            this.tpFileNaming.Controls.Add(this.lblURLRegexReplaceReplacement);
+            this.tpFileNaming.Controls.Add(this.txtURLRegexReplacePattern);
+            this.tpFileNaming.Controls.Add(this.lblURLRegexReplacePattern);
+            this.tpFileNaming.Controls.Add(this.cbURLRegexReplace);
             this.tpFileNaming.Controls.Add(this.btnAutoIncrementNumber);
             this.tpFileNaming.Controls.Add(this.lblAutoIncrementNumber);
             this.tpFileNaming.Controls.Add(this.nudAutoIncrementNumber);
@@ -1905,6 +1950,11 @@
             resources.ApplyResources(this.pActions, "pActions");
             this.pActions.Name = "pActions";
             // 
+            // lblActionsNote
+            // 
+            resources.ApplyResources(this.lblActionsNote, "lblActionsNote");
+            this.lblActionsNote.Name = "lblActionsNote";
+            // 
             // btnActionsDuplicate
             // 
             resources.ApplyResources(this.btnActionsDuplicate, "btnActionsDuplicate");
@@ -2114,15 +2164,39 @@
             this.tttvMain.TreeViewSize = 190;
             this.tttvMain.TabChanged += new ShareX.HelpersLib.TabToTreeView.TabChangedEventHandler(this.tttvMain_TabChanged);
             // 
-            // lblActionsNote
+            // cbURLRegexReplace
             // 
-            resources.ApplyResources(this.lblActionsNote, "lblActionsNote");
-            this.lblActionsNote.Name = "lblActionsNote";
+            resources.ApplyResources(this.cbURLRegexReplace, "cbURLRegexReplace");
+            this.cbURLRegexReplace.Name = "cbURLRegexReplace";
+            this.cbURLRegexReplace.UseVisualStyleBackColor = true;
+            this.cbURLRegexReplace.CheckedChanged += new System.EventHandler(this.cbURLRegexReplace_CheckedChanged);
+            // 
+            // lblURLRegexReplacePattern
+            // 
+            resources.ApplyResources(this.lblURLRegexReplacePattern, "lblURLRegexReplacePattern");
+            this.lblURLRegexReplacePattern.Name = "lblURLRegexReplacePattern";
+            // 
+            // txtURLRegexReplacePattern
+            // 
+            resources.ApplyResources(this.txtURLRegexReplacePattern, "txtURLRegexReplacePattern");
+            this.txtURLRegexReplacePattern.Name = "txtURLRegexReplacePattern";
+            this.txtURLRegexReplacePattern.TextChanged += new System.EventHandler(this.txtURLRegexReplacePattern_TextChanged);
+            // 
+            // lblURLRegexReplaceReplacement
+            // 
+            resources.ApplyResources(this.lblURLRegexReplaceReplacement, "lblURLRegexReplaceReplacement");
+            this.lblURLRegexReplaceReplacement.Name = "lblURLRegexReplaceReplacement";
+            // 
+            // txtURLRegexReplaceReplacement
+            // 
+            resources.ApplyResources(this.txtURLRegexReplaceReplacement, "txtURLRegexReplaceReplacement");
+            this.txtURLRegexReplaceReplacement.Name = "txtURLRegexReplaceReplacement";
+            this.txtURLRegexReplaceReplacement.TextChanged += new System.EventHandler(this.txtURLRegexReplaceReplacement_TextChanged);
             // 
             // TaskSettingsForm
             // 
             resources.ApplyResources(this, "$this");
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.Controls.Add(this.tcTaskSettings);
             this.Controls.Add(this.tttvMain);
@@ -2430,5 +2504,14 @@
         private System.Windows.Forms.NumericUpDown nudAutoIncrementNumber;
         private System.Windows.Forms.Button btnAutoIncrementNumber;
         private System.Windows.Forms.Label lblActionsNote;
+        private System.Windows.Forms.CheckBox cbScreenRecordTransparentRegion;
+        private System.Windows.Forms.CheckBox cbOverrideScreenshotsFolder;
+        private System.Windows.Forms.Button btnScreenshotsFolderBrowse;
+        private System.Windows.Forms.TextBox txtScreenshotsFolder;
+        private System.Windows.Forms.CheckBox cbURLRegexReplace;
+        private System.Windows.Forms.Label lblURLRegexReplacePattern;
+        private System.Windows.Forms.Label lblURLRegexReplaceReplacement;
+        private System.Windows.Forms.TextBox txtURLRegexReplacePattern;
+        private System.Windows.Forms.TextBox txtURLRegexReplaceReplacement;
     }
 }

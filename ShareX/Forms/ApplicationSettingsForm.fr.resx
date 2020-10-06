@@ -123,9 +123,6 @@
   <data name="lblProxyUsername.Text" xml:space="preserve">
     <value>Nom d'utilisateur :</value>
   </data>
-  <data name="tpExportImport.Text" xml:space="preserve">
-    <value>Exporter / Importer</value>
-  </data>
   <data name="btnOpenScreenshotsFolder.Text" xml:space="preserve">
     <value>Ouvrir...</value>
   </data>
@@ -339,14 +336,8 @@
   <data name="gbFirefox.Text" xml:space="preserve">
     <value>Extension Firefox</value>
   </data>
-  <data name="cbExperimentalDarkTheme.Text" xml:space="preserve">
-    <value>Thème sombre expérimental</value>
-  </data>
   <data name="cbUseWhiteShareXIcon.Text" xml:space="preserve">
     <value>Utiliser une icône ShareX blanche</value>
-  </data>
-  <data name="cbUseDarkTheme.Text" xml:space="preserve">
-    <value>Utiliser le thème sombre</value>
   </data>
   <data name="btnPersonalFolderPathApply.Text" xml:space="preserve">
     <value>Appliquer</value>
@@ -367,6 +358,33 @@
     <value>Windows</value>
   </data>
   <data name="cbEditWithShareX.Text" xml:space="preserve">
-    <value>Afficher le bouton "Modifier avec ShareX" dans le menu contextuel de l'explorateur Windows.</value>
+    <value>Afficher le bouton "Modifier avec ShareX" dans le menu contextuel de l'explorateur Windows</value>
+  </data>
+  <data name="btnThemeReset.Text" xml:space="preserve">
+    <value>Réinitialiser...</value>
+  </data>
+  <data name="btnThemeRemove.Text" xml:space="preserve">
+    <value>Supprimer</value>
+  </data>
+  <data name="btnThemeAdd.Text" xml:space="preserve">
+    <value>Ajouter</value>
+  </data>
+  <data name="cbUseCustomTheme.Text" xml:space="preserve">
+    <value>Utiliser un thème personnalisé</value>
+  </data>
+  <data name="tpTheme.Text" xml:space="preserve">
+    <value>Thème</value>
+  </data>
+  <data name="cbExportHistory.Text" xml:space="preserve">
+    <value>Historique</value>
+  </data>
+  <data name="cbExportSettings.Text" xml:space="preserve">
+    <value>Paramètres</value>
+  </data>
+  <data name="lblExportImportNote.Text" xml:space="preserve">
+    <value>Note : ne partagez le fichier exporté avec personne car il pourrait contenir des informations privées comme les détails de votre compte et votre historique de mises en ligne.</value>
+  </data>
+  <data name="tpSettings.Text" xml:space="preserve">
+    <value>Paramètres</value>
   </data>
 </root>

@@ -42,4 +42,12 @@ namespace ShareX.ImageEffectsLib
         [Description("Only resize image if it is smaller than specified size.")]
         ResizeIfSmaller
     }
+
+    public enum DrawImageSizeMode // Localized
+    {
+        DontResize,
+        AbsoluteSize,
+        PercentageOfWatermark,
+        PercentageOfCanvas
+    }
 }

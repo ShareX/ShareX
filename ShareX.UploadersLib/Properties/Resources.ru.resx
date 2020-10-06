@@ -124,7 +124,7 @@
     <value>Неверное имя устройства</value>
   </data>
   <data name="UploadersConfigForm_BoxListFolders_Box_refresh_folders_list_failed" xml:space="preserve">
-    <value>Не удалось обновить список папок Box.</value>
+    <value>Не удалось обновить список папок Box</value>
   </data>
   <data name="UploadersConfigForm_Error" xml:space="preserve">
     <value>Ошибка</value>
@@ -152,7 +152,7 @@
     <value>Подключено!</value>
   </data>
   <data name="UploadersConfigForm_TestCustomUploader_Error__Result_is_empty_" xml:space="preserve">
-    <value>Ошибка: Результат пуст</value>
+    <value>Ошибка: Результат пуст.</value>
   </data>
   <data name="UploadersConfigForm_PhotobucketCreateAlbum__0__successfully_created_" xml:space="preserve">
     <value>{0} успешно создано.</value>
@@ -179,7 +179,7 @@
     <value>Вход успешен.</value>
   </data>
   <data name="UploadersConfigForm_Login_failed" xml:space="preserve">
-    <value>Вход не удался</value>
+    <value>Вход не удался.</value>
   </data>
   <data name="UploadersConfigForm_LoadSettings_Selected_folder_" xml:space="preserve">
     <value>Выбранная папка:</value>

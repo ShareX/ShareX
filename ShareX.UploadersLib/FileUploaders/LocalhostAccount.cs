@@ -46,7 +46,7 @@ namespace ShareX.UploadersLib
         [Category("Localhost")]
         public string UserName { get; set; }
 
-        [Category("Localhost"), PasswordPropertyText(true)]
+        [Category("Localhost"), PasswordPropertyText(true), JsonEncrypt]
         public string Password { get; set; }
 
         [Category("Localhost"), Description("Localhost Sub-folder Path, e.g. screenshots, %y = year, %mo = month. SubFolderPath will be automatically appended to HttpHomePath if HttpHomePath does not start with @")]
@@ -188,6 +188,7 @@ namespace ShareX.UploadersLib
             {
                 return "";
             }
+
             return Path.Combine(Path.Combine(Helpers.ExpandFolderVariables(LocalhostRoot), GetSubFolderPath()), fileName);
         }
 

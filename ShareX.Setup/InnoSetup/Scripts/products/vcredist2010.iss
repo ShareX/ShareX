@@ -1,9 +1,9 @@
 ; requires Windows 7, Windows Server 2003 R2 (32-Bit x86), Windows Server 2003 Service Pack 2, Windows Server 2008 R2, Windows Server 2008 Service Pack 2, Windows Vista Service Pack 2, Windows XP Service Pack 3
-; http://www.microsoft.com/en-us/download/details.aspx?id=5555
+; https://www.microsoft.com/en-us/download/details.aspx?id=5555
 
 [CustomMessages]
-vcredist2010_title=Visual C++ 2010 Redistributable
-vcredist2010_title_x64=Visual C++ 2010 64-Bit Redistributable
+vcredist2010_title=Visual C++ 2010 Redistributable (x86)
+vcredist2010_title_x64=Visual C++ 2010 Redistributable (x64)
 
 vcredist2010_size=8.6 MB
 vcredist2010_size_x64=9.8 MB

@@ -148,7 +148,7 @@
     <value>ilvImages</value>
   </data>
   <data name="&gt;&gt;ilvImages.Type" xml:space="preserve">
-    <value>Manina.Windows.Forms.ImageListView, ImageListView, Version=13.7.2.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Manina.Windows.Forms.ImageListView, ImageListView, Version=13.8.2.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;ilvImages.Parent" xml:space="preserve">
     <value>tscMain.ContentPanel</value>

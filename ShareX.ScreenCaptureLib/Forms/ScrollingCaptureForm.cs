@@ -37,15 +37,15 @@ namespace ShareX.ScreenCaptureLib
 {
     public partial class ScrollingCaptureForm : Form
     {
-        public event Action<Image> ImageProcessRequested;
+        public event Action<Bitmap> ImageProcessRequested;
 
         public ScrollingCaptureOptions Options { get; private set; }
         public RegionCaptureOptions RegionCaptureOptions { get; private set; }
-        public Image Result { get; private set; }
+        public Bitmap Result { get; private set; }
 
         private WindowInfo selectedWindow;
         private Rectangle selectedRectangle;
-        private List<Image> images = new List<Image>();
+        private List<Bitmap> images = new List<Bitmap>();
         private int currentScrollCount;
         private bool isBusy, isCapturing, firstCapture, detectingScrollMethod;
         private ScrollingCaptureScrollMethod currentScrollMethod;
@@ -98,11 +98,11 @@ namespace ShareX.ScreenCaptureLib
             base.Dispose(disposing);
         }
 
-        protected void OnImageProcessRequested(Image img)
+        protected void OnImageProcessRequested(Bitmap bmp)
         {
             if (ImageProcessRequested != null)
             {
-                ImageProcessRequested(img);
+                ImageProcessRequested(bmp);
             }
         }
 
@@ -244,11 +244,11 @@ namespace ShareX.ScreenCaptureLib
 
             if (images != null)
             {
-                foreach (Image image in images)
+                foreach (Bitmap bmp in images)
                 {
-                    if (image != null)
+                    if (bmp != null)
                     {
-                        image.Dispose();
+                        bmp.Dispose();
                     }
                 }
 
@@ -279,13 +279,13 @@ namespace ShareX.ScreenCaptureLib
             {
                 for (int i = images.Count - 1; i > 0; i--)
                 {
-                    bool result = ImageHelpers.IsImagesEqual((Bitmap)images[i], (Bitmap)images[i - 1]);
+                    bool result = ImageHelpers.IsImagesEqual(images[i], images[i - 1]);
 
                     if (result)
                     {
-                        Image img = images[i];
-                        images.Remove(img);
-                        img.Dispose();
+                        Bitmap bmp = images[i];
+                        images.Remove(bmp);
+                        bmp.Dispose();
                     }
                 }
             }
@@ -315,11 +315,11 @@ namespace ShareX.ScreenCaptureLib
             }
 
             Screenshot screenshot = new Screenshot() { CaptureCursor = false };
-            Image image = screenshot.CaptureRectangle(selectedRectangle);
+            Bitmap bmp = screenshot.CaptureRectangle(selectedRectangle);
 
-            if (image != null)
+            if (bmp != null)
             {
-                images.Add(image);
+                images.Add(bmp);
             }
 
             if (Options.ScrollMethod == ScrollingCaptureScrollMethod.Automatic && detectingScrollMethod && images.Count > 1 && IsLastTwoImagesSame())
@@ -433,11 +433,11 @@ namespace ShareX.ScreenCaptureLib
 
             if (images.Count > 1)
             {
-                result = ImageHelpers.IsImagesEqual((Bitmap)images[images.Count - 1], (Bitmap)images[images.Count - 2]);
+                result = ImageHelpers.IsImagesEqual(images[images.Count - 1], images[images.Count - 2]);
 
                 if (result)
                 {
-                    Image last = images[images.Count - 1];
+                    Bitmap last = images[images.Count - 1];
                     images.Remove(last);
                     last.Dispose();
                 }
@@ -522,7 +522,7 @@ namespace ShareX.ScreenCaptureLib
         {
             if (Result != null)
             {
-                OnImageProcessRequested((Image)Result.Clone());
+                OnImageProcessRequested((Bitmap)Result.Clone());
             }
         }
 
@@ -562,7 +562,7 @@ namespace ShareX.ScreenCaptureLib
             pbOutput.Image = Result;
         }
 
-        private Image CombineImages()
+        private Bitmap CombineImages()
         {
             if (images == null || images.Count == 0)
             {
@@ -571,15 +571,15 @@ namespace ShareX.ScreenCaptureLib
 
             if (images.Count == 1)
             {
-                return (Image)images[0].Clone();
+                return (Bitmap)images[0].Clone();
             }
 
-            List<Image> output = new List<Image>();
+            List<Bitmap> output = new List<Bitmap>();
 
             for (int i = 0; i < images.Count - Options.IgnoreLast; i++)
             {
-                Image newImage;
-                Image image = images[i];
+                Bitmap newImage;
+                Bitmap image = images[i];
 
                 if (Options.TrimLeftEdge > 0 || Options.TrimTopEdge > 0 || Options.TrimRightEdge > 0 || Options.TrimBottomEdge > 0 ||
                     Options.CombineAdjustmentVertical > 0 || Options.CombineAdjustmentLastVertical > 0)
@@ -598,7 +598,7 @@ namespace ShareX.ScreenCaptureLib
                         rect.Height -= Options.CombineAdjustmentVertical;
                     }
 
-                    newImage = ImageHelpers.CropImage(image, rect);
+                    newImage = ImageHelpers.CropBitmap(image, rect);
 
                     if (newImage == null)
                     {
@@ -607,15 +607,15 @@ namespace ShareX.ScreenCaptureLib
                 }
                 else
                 {
-                    newImage = (Image)image.Clone();
+                    newImage = (Bitmap)image.Clone();
                 }
 
                 output.Add(newImage);
             }
 
-            Image result = ImageHelpers.CombineImages(output);
+            Bitmap bmpResult = ImageHelpers.CombineImages(output);
 
-            foreach (Image image in output)
+            foreach (Bitmap image in output)
             {
                 if (image != null)
                 {
@@ -625,7 +625,7 @@ namespace ShareX.ScreenCaptureLib
 
             output.Clear();
 
-            return result;
+            return bmpResult;
         }
 
         private void GuessEdges()
@@ -664,13 +664,13 @@ namespace ShareX.ScreenCaptureLib
             Options.AutoUpload = chkAutoUpload.Checked;
         }
 
-        private Padding GuessEdges(Image img1, Image img2)
+        private Padding GuessEdges(Bitmap img1, Bitmap img2)
         {
             Padding result = new Padding();
             Rectangle rect = new Rectangle(0, 0, img1.Width, img1.Height);
 
-            using (UnsafeBitmap bmp1 = new UnsafeBitmap((Bitmap)img1, true, ImageLockMode.ReadOnly))
-            using (UnsafeBitmap bmp2 = new UnsafeBitmap((Bitmap)img2, true, ImageLockMode.ReadOnly))
+            using (UnsafeBitmap bmp1 = new UnsafeBitmap(img1, true, ImageLockMode.ReadOnly))
+            using (UnsafeBitmap bmp2 = new UnsafeBitmap(img2, true, ImageLockMode.ReadOnly))
             {
                 bool valueFound = false;
 
@@ -761,7 +761,7 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        private int CalculateVerticalOffset(Image img1, Image img2, int ignoreRightOffset = 50)
+        private int CalculateVerticalOffset(Bitmap img1, Bitmap img2, int ignoreRightOffset = 50)
         {
             int lastMatchCount = 0;
             int lastMatchOffset = 0;
@@ -770,8 +770,8 @@ namespace ShareX.ScreenCaptureLib
                 img1.Width - Options.TrimLeftEdge - Options.TrimRightEdge - (img1.Width > ignoreRightOffset ? ignoreRightOffset : 0),
                 img1.Height - Options.TrimTopEdge - Options.TrimBottomEdge);
 
-            using (UnsafeBitmap bmp1 = new UnsafeBitmap((Bitmap)img1, true, ImageLockMode.ReadOnly))
-            using (UnsafeBitmap bmp2 = new UnsafeBitmap((Bitmap)img2, true, ImageLockMode.ReadOnly))
+            using (UnsafeBitmap bmp1 = new UnsafeBitmap(img1, true, ImageLockMode.ReadOnly))
+            using (UnsafeBitmap bmp2 = new UnsafeBitmap(img2, true, ImageLockMode.ReadOnly))
             {
                 for (int y = rect.Y; y < rect.Bottom; y++)
                 {

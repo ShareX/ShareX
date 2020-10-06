@@ -85,7 +85,7 @@ namespace ShareX
                 size = new Size(textRenderSize.Width + (textPadding * 2), textRenderSize.Height + (textPadding * 2) + 2);
             }
 
-            Point position = Helpers.GetPosition(placement, new Point(windowOffset, windowOffset), Screen.PrimaryScreen.WorkingArea.Size, size);
+            Point position = Helpers.GetPosition(placement, windowOffset, Screen.PrimaryScreen.WorkingArea.Size, size);
 
             NativeMethods.SetWindowPos(Handle, (IntPtr)SpecialWindowHandles.HWND_TOPMOST, position.X + Screen.PrimaryScreen.WorkingArea.X,
                 position.Y + Screen.PrimaryScreen.WorkingArea.Y, size.Width, size.Height, SetWindowPosFlags.SWP_NOACTIVATE);
@@ -327,8 +327,8 @@ namespace ShareX
             //
             // NotificationForm
             //
-            AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             ClientSize = new System.Drawing.Size(400, 300);
             Cursor = System.Windows.Forms.Cursors.Hand;
             FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -347,7 +347,7 @@ namespace ShareX
 
     public class NotificationFormConfig : IDisposable
     {
-        public Image Image { get; set; }
+        public Bitmap Image { get; set; }
         public string Text { get; set; }
         public string FilePath { get; set; }
         public string URL { get; set; }

@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.HelpersLib;
 using ShareX.UploadersLib.Properties;
 using System;
 using System.ComponentModel;
@@ -59,16 +60,16 @@ namespace ShareX.UploadersLib
         [Browsable(false)]
         public string AuthToken { get; set; }
 
-        [Browsable(false)]
+        [Browsable(false), JsonEncrypt]
         public string AuthSecret { get; set; }
 
-        [Description("Verification Code from the Authorization Page")]
+        [JsonEncrypt, Description("Verification Code from the Authorization Page")]
         public string AuthVerifier { get; set; }
 
         [Browsable(false)]
         public string UserToken { get; set; }
 
-        [Browsable(false)]
+        [Browsable(false), JsonEncrypt]
         public string UserSecret { get; set; }
 
         public OAuthInfo()

@@ -82,7 +82,7 @@ namespace ShareX.ImageEffectsLib
             this.ApplyDefaultPropertyValues();
         }
 
-        public override Image Apply(Image img)
+        public override Bitmap Apply(Bitmap bmp)
         {
             ColorMatrix colorMatrix = new ColorMatrix(new[]
             {
@@ -93,9 +93,9 @@ namespace ShareX.ImageEffectsLib
                 new float[] { Ro, Go, Bo, Ao, 1 }
             });
 
-            using (img)
+            using (bmp)
             {
-                return colorMatrix.Apply(img);
+                return colorMatrix.Apply(bmp);
             }
         }
     }

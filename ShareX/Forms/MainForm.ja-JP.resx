@@ -1,0 +1,780 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="chFilename.Text" xml:space="preserve">
+    <value>ファイル名</value>
+  </data>
+  <data name="chStatus.Text" xml:space="preserve">
+    <value>状態</value>
+  </data>
+  <data name="chProgress.Text" xml:space="preserve">
+    <value>進行状況</value>
+  </data>
+  <data name="chSpeed.Text" xml:space="preserve">
+    <value>速度</value>
+  </data>
+  <data name="chElapsed.Text" xml:space="preserve">
+    <value>経過時間</value>
+  </data>
+  <data name="chRemaining.Text" xml:space="preserve">
+    <value>残り</value>
+  </data>
+  <data name="chURL.Text" xml:space="preserve">
+    <value>URL</value>
+  </data>
+  <data name="tsddbCapture.Text" xml:space="preserve">
+    <value>キャプチャー</value>
+  </data>
+  <data name="tsmiFullscreen.Text" xml:space="preserve">
+    <value>フルスクリーン</value>
+  </data>
+  <data name="tsmiWindow.Text" xml:space="preserve">
+    <value>ウィンドウ</value>
+  </data>
+  <data name="tsmiMonitor.Text" xml:space="preserve">
+    <value>モニター</value>
+  </data>
+  <data name="tsmiRectangle.Text" xml:space="preserve">
+    <value>領域</value>
+  </data>
+  <data name="tsmiRectangleLight.Text" xml:space="preserve">
+    <value>領域 (ライトモード)</value>
+  </data>
+  <data name="tsmiRectangleTransparent.Text" xml:space="preserve">
+    <value>領域 (透過モード)</value>
+  </data>
+  <data name="tsmiLastRegion.Text" xml:space="preserve">
+    <value>最近使用した領域</value>
+  </data>
+  <data name="tsmiScreenRecordingFFmpeg.Text" xml:space="preserve">
+    <value>動画キャプチャー</value>
+  </data>
+  <data name="tsmiScreenRecordingGIF.Text" xml:space="preserve">
+    <value>動画キャプチャー (GIF)</value>
+  </data>
+  <data name="tsmiScrollingCapture.Text" xml:space="preserve">
+    <value>スクロール キャプチャー</value>
+  </data>
+  <data name="tsmiTextCapture.Text" xml:space="preserve">
+    <value>テキスト キャプチャー (OCR)...</value>
+  </data>
+  <data name="tsmiAutoCapture.Text" xml:space="preserve">
+    <value>自動キャプチャー...</value>
+  </data>
+  <data name="tsmiShowCursor.Text" xml:space="preserve">
+    <value>マウスカーソルを表示</value>
+  </data>
+  <data name="tsddbUpload.Text" xml:space="preserve">
+    <value>アップロード</value>
+  </data>
+  <data name="tsmiUploadFile.Text" xml:space="preserve">
+    <value>ファイルをアップロード...</value>
+  </data>
+  <data name="tsmiUploadFolder.Text" xml:space="preserve">
+    <value>フォルダーをアップロード...</value>
+  </data>
+  <data name="tsmiUploadClipboard.Text" xml:space="preserve">
+    <value>クリップボードからアップロード...</value>
+  </data>
+  <data name="tsmiUploadText.Text" xml:space="preserve">
+    <value>テキストをアップロード...</value>
+  </data>
+  <data name="tsmiUploadURL.Text" xml:space="preserve">
+    <value>URL先のファイルをアップロード...</value>
+  </data>
+  <data name="tsmiUploadDragDrop.Text" xml:space="preserve">
+    <value>ドラッグ＆ドロップでアップロード...</value>
+  </data>
+  <data name="tsmiShortenURL.Text" xml:space="preserve">
+    <value>短縮URLの作成...</value>
+  </data>
+  <data name="tsddbWorkflows.Text" xml:space="preserve">
+    <value>ワークフロー</value>
+  </data>
+  <data name="tsddbTools.Text" xml:space="preserve">
+    <value>ツール</value>
+  </data>
+  <data name="tsmiColorPicker.Text" xml:space="preserve">
+    <value>カラー ピッカー...</value>
+  </data>
+  <data name="tsmiScreenColorPicker.Text" xml:space="preserve">
+    <value>カラー ピッカー (ルーペ)...</value>
+  </data>
+  <data name="tsmiImageEditor.Text" xml:space="preserve">
+    <value>画像エディター...</value>
+  </data>
+  <data name="tsmiImageEffects.Text" xml:space="preserve">
+    <value>画像の効果...</value>
+  </data>
+  <data name="tsmiHashCheck.Text" xml:space="preserve">
+    <value>ハッシュ値の照合...</value>
+  </data>
+  <data name="tsmiDNSChanger.Text" xml:space="preserve">
+    <value>DNS チェンジャー...</value>
+  </data>
+  <data name="tsmiQRCode.Text" xml:space="preserve">
+    <value>QR コード...</value>
+  </data>
+  <data name="tsmiRuler.Text" xml:space="preserve">
+    <value>定規...</value>
+  </data>
+  <data name="tsmiIndexFolder.Text" xml:space="preserve">
+    <value>フォルダーのインデックス作成...</value>
+  </data>
+  <data name="tsmiImageCombiner.Text" xml:space="preserve">
+    <value>画像の結合...</value>
+  </data>
+  <data name="tsmiImageThumbnailer.Text" xml:space="preserve">
+    <value>画像のサムネイル作成...</value>
+  </data>
+  <data name="tsmiVideoThumbnailer.Text" xml:space="preserve">
+    <value>動画のサムネイル作成...</value>
+  </data>
+  <data name="tsmiTweetMessage.Text" xml:space="preserve">
+    <value>メッセージをツイート...</value>
+  </data>
+  <data name="tsmiMonitorTest.Text" xml:space="preserve">
+    <value>モニター テスト...</value>
+  </data>
+  <data name="tsddbAfterCaptureTasks.Text" xml:space="preserve">
+    <value>キャプチャー後のタスク</value>
+  </data>
+  <data name="tsddbAfterUploadTasks.Text" xml:space="preserve">
+    <value>アップロード後のタスク</value>
+  </data>
+  <data name="tsddbDestinations.Text" xml:space="preserve">
+    <value>アップロード先</value>
+  </data>
+  <data name="tsmiImageUploaders.Text" xml:space="preserve">
+    <value>画像アップローダー</value>
+  </data>
+  <data name="tsmiTextUploaders.Text" xml:space="preserve">
+    <value>テキスト アップローダー</value>
+  </data>
+  <data name="tsmiFileUploaders.Text" xml:space="preserve">
+    <value>ファイル アップローダー</value>
+  </data>
+  <data name="tsmiURLShorteners.Text" xml:space="preserve">
+    <value>URL短縮サービス</value>
+  </data>
+  <data name="tsmiURLSharingServices.Text" xml:space="preserve">
+    <value>URL共有サービス</value>
+  </data>
+  <data name="tsmiDestinationSettings.Text" xml:space="preserve">
+    <value>アップロード先の設定...</value>
+  </data>
+  <data name="tsbTaskSettings.Text" xml:space="preserve">
+    <value>タスクの設定...</value>
+  </data>
+  <data name="tsbApplicationSettings.Text" xml:space="preserve">
+    <value>アプリの設定...</value>
+  </data>
+  <data name="tsbHotkeySettings.Text" xml:space="preserve">
+    <value>ホットキーの設定...</value>
+  </data>
+  <data name="tsbScreenshotsFolder.Text" xml:space="preserve">
+    <value>画像保存フォルダー...</value>
+  </data>
+  <data name="tsbHistory.Text" xml:space="preserve">
+    <value>履歴...</value>
+  </data>
+  <data name="tsbImageHistory.Text" xml:space="preserve">
+    <value>画像の履歴...</value>
+  </data>
+  <data name="tsbNews.Text" xml:space="preserve">
+    <value>お知らせ</value>
+  </data>
+  <data name="tsddbDebug.Text" xml:space="preserve">
+    <value>デバッグ</value>
+  </data>
+  <data name="tsmiShowDebugLog.Text" xml:space="preserve">
+    <value>デバッグ ログ...</value>
+  </data>
+  <data name="tsmiTestImageUpload.Text" xml:space="preserve">
+    <value>画像アップロードのテスト</value>
+  </data>
+  <data name="tsmiTestTextUpload.Text" xml:space="preserve">
+    <value>テキストアップロードのテスト</value>
+  </data>
+  <data name="tsmiTestFileUpload.Text" xml:space="preserve">
+    <value>ファイルアップロードのテスト</value>
+  </data>
+  <data name="tsmiTestURLShortener.Text" xml:space="preserve">
+    <value>短縮URL作成テスト</value>
+  </data>
+  <data name="tsmiTestURLSharing.Text" xml:space="preserve">
+    <value>URL共有のテスト</value>
+  </data>
+  <data name="tsbDonate.Text" xml:space="preserve">
+    <value>寄付する...</value>
+  </data>
+  <data name="tsbAbout.Text" xml:space="preserve">
+    <value>ShareX について...</value>
+  </data>
+  <data name="tsmiShowErrors.Text" xml:space="preserve">
+    <value>エラーを表示</value>
+  </data>
+  <data name="tsmiStopUpload.Text" xml:space="preserve">
+    <value>アップロードの停止</value>
+  </data>
+  <data name="tsmiOpen.Text" xml:space="preserve">
+    <value>開く</value>
+  </data>
+  <data name="tsmiCopy.Text" xml:space="preserve">
+    <value>コピー</value>
+  </data>
+  <data name="tsmiUploadSelectedFile.Text" xml:space="preserve">
+    <value>アップロード</value>
+  </data>
+  <data name="tsmiDownloadSelectedURL.Text" xml:space="preserve">
+    <value>ダウンロード</value>
+  </data>
+  <data name="tsmiEditSelectedFile.Text" xml:space="preserve">
+    <value>画像編集...</value>
+  </data>
+  <data name="tsmiDeleteSelectedItem.Text" xml:space="preserve">
+    <value>一覧からタスクを取り除く</value>
+  </data>
+  <data name="tsmiDeleteSelectedFile.Text" xml:space="preserve">
+    <value>ローカル ファイルを削除...</value>
+  </data>
+  <data name="tsmiShortenSelectedURL.Text" xml:space="preserve">
+    <value>短縮URLの作成</value>
+  </data>
+  <data name="tsmiShareSelectedURL.Text" xml:space="preserve">
+    <value>URLを共有</value>
+  </data>
+  <data name="tsmiSearchImage.Text" xml:space="preserve">
+    <value>Google 画像検索...</value>
+  </data>
+  <data name="tsmiShowQRCode.Text" xml:space="preserve">
+    <value>QR コードを表示...</value>
+  </data>
+  <data name="tsmiOCRImage.Text" xml:space="preserve">
+    <value>文字認識(OCR)...</value>
+  </data>
+  <data name="tsmiCombineImages.Text" xml:space="preserve">
+    <value>画像の結合...</value>
+  </data>
+  <data name="tsmiShowResponse.Text" xml:space="preserve">
+    <value>応答を表示...</value>
+  </data>
+  <data name="tsmiClearList.Text" xml:space="preserve">
+    <value>一覧を消去</value>
+  </data>
+  <data name="tsmiHideMenu.Text" xml:space="preserve">
+    <value>メニューを隠す</value>
+  </data>
+  <data name="tsmiHideColumns.Text" xml:space="preserve">
+    <value>列を隠す</value>
+  </data>
+  <data name="tsmiImagePreview.Text" xml:space="preserve">
+    <value>画像のプレビュー</value>
+  </data>
+  <data name="tsmiOpenURL.Text" xml:space="preserve">
+    <value>URL</value>
+  </data>
+  <data name="tsmiOpenShortenedURL.Text" xml:space="preserve">
+    <value>短縮URL</value>
+  </data>
+  <data name="tsmiOpenThumbnailURL.Text" xml:space="preserve">
+    <value>サムネイルのURL</value>
+  </data>
+  <data name="tsmiOpenDeletionURL.Text" xml:space="preserve">
+    <value>削除URL</value>
+  </data>
+  <data name="tsmiOpenFile.Text" xml:space="preserve">
+    <value>ファイル</value>
+  </data>
+  <data name="tsmiOpenFolder.Text" xml:space="preserve">
+    <value>フォルダー</value>
+  </data>
+  <data name="tsmiOpenThumbnailFile.Text" xml:space="preserve">
+    <value>サムネイル ファイル</value>
+  </data>
+  <data name="tsmiCopyURL.Text" xml:space="preserve">
+    <value>URL</value>
+  </data>
+  <data name="tsmiCopyShortenedURL.Text" xml:space="preserve">
+    <value>短縮URL</value>
+  </data>
+  <data name="tsmiCopyThumbnailURL.Text" xml:space="preserve">
+    <value>サムネイルのURL</value>
+  </data>
+  <data name="tsmiCopyDeletionURL.Text" xml:space="preserve">
+    <value>削除URL</value>
+  </data>
+  <data name="tsmiCopyFile.Text" xml:space="preserve">
+    <value>ファイル</value>
+  </data>
+  <data name="tsmiCopyImage.Text" xml:space="preserve">
+    <value>画像</value>
+  </data>
+  <data name="tsmiCopyText.Text" xml:space="preserve">
+    <value>テキスト</value>
+  </data>
+  <data name="tsmiCopyThumbnailFile.Text" xml:space="preserve">
+    <value>サムネイル ファイル</value>
+  </data>
+  <data name="tsmiCopyThumbnailImage.Text" xml:space="preserve">
+    <value>サムネイル画像</value>
+  </data>
+  <data name="tsmiCopyHTMLLink.Text" xml:space="preserve">
+    <value>HTML リンク</value>
+  </data>
+  <data name="tsmiCopyHTMLImage.Text" xml:space="preserve">
+    <value>HTML 画像</value>
+  </data>
+  <data name="tsmiCopyHTMLLinkedImage.Text" xml:space="preserve">
+    <value>HTML リンク付き画像</value>
+  </data>
+  <data name="tsmiCopyForumLink.Text" xml:space="preserve">
+    <value>フォーラム (BBCode) リンク</value>
+  </data>
+  <data name="tsmiCopyForumImage.Text" xml:space="preserve">
+    <value>フォーラム (BBCode) 画像</value>
+  </data>
+  <data name="tsmiCopyForumLinkedImage.Text" xml:space="preserve">
+    <value>フォーラム (BBCode) リンク付き画像</value>
+  </data>
+  <data name="tsmiCopyMarkdownLink.Text" xml:space="preserve">
+    <value>Markdown リンク</value>
+  </data>
+  <data name="tsmiCopyMarkdownImage.Text" xml:space="preserve">
+    <value>Markdown 画像</value>
+  </data>
+  <data name="tsmiCopyMarkdownLinkedImage.Text" xml:space="preserve">
+    <value>Markdown リンク付き画像</value>
+  </data>
+  <data name="tsmiCopyFilePath.Text" xml:space="preserve">
+    <value>ファイルのパス</value>
+  </data>
+  <data name="tsmiCopyFileName.Text" xml:space="preserve">
+    <value>ファイル名</value>
+  </data>
+  <data name="tsmiCopyFileNameWithExtension.Text" xml:space="preserve">
+    <value>ファイル名と拡張子</value>
+  </data>
+  <data name="tsmiCopyFolder.Text" xml:space="preserve">
+    <value>フォルダー</value>
+  </data>
+  <data name="tsmiImagePreviewShow.Text" xml:space="preserve">
+    <value>表示</value>
+  </data>
+  <data name="tsmiImagePreviewHide.Text" xml:space="preserve">
+    <value>隠す</value>
+  </data>
+  <data name="tsmiImagePreviewAutomatic.Text" xml:space="preserve">
+    <value>自動</value>
+  </data>
+  <data name="tsmiImagePreviewSide.Text" xml:space="preserve">
+    <value>横</value>
+  </data>
+  <data name="tsmiImagePreviewBottom.Text" xml:space="preserve">
+    <value>下</value>
+  </data>
+  <data name="tsmiTrayCapture.Text" xml:space="preserve">
+    <value>キャプチャー</value>
+  </data>
+  <data name="tsmiTrayFullscreen.Text" xml:space="preserve">
+    <value>フルスクリーン</value>
+  </data>
+  <data name="tsmiTrayWindow.Text" xml:space="preserve">
+    <value>ウィンドウ</value>
+  </data>
+  <data name="tsmiTrayMonitor.Text" xml:space="preserve">
+    <value>モニター</value>
+  </data>
+  <data name="tsmiTrayRectangle.Text" xml:space="preserve">
+    <value>領域</value>
+  </data>
+  <data name="tsmiTrayRectangleLight.Text" xml:space="preserve">
+    <value>領域 (ライトモード)</value>
+  </data>
+  <data name="tsmiTrayRectangleTransparent.Text" xml:space="preserve">
+    <value>領域 (透過モード)</value>
+  </data>
+  <data name="tsmiTrayLastRegion.Text" xml:space="preserve">
+    <value>最近使用した領域</value>
+  </data>
+  <data name="tsmiTrayScreenRecordingFFmpeg.Text" xml:space="preserve">
+    <value>動画キャプチャー</value>
+  </data>
+  <data name="tsmiTrayScreenRecordingGIF.Text" xml:space="preserve">
+    <value>動画キャプチャー (GIF)</value>
+  </data>
+  <data name="tsmiTrayScrollingCapture.Text" xml:space="preserve">
+    <value>スクロール キャプチャー...</value>
+  </data>
+  <data name="tsmiTrayTextCapture.Text" xml:space="preserve">
+    <value>テキスト キャプチャー (OCR)...</value>
+  </data>
+  <data name="tsmiTrayAutoCapture.Text" xml:space="preserve">
+    <value>自動キャプチャー...</value>
+  </data>
+  <data name="tsmiTrayShowCursor.Text" xml:space="preserve">
+    <value>マウスカーソルを表示</value>
+  </data>
+  <data name="tsmiTrayUpload.Text" xml:space="preserve">
+    <value>アップロード</value>
+  </data>
+  <data name="tsmiTrayUploadFile.Text" xml:space="preserve">
+    <value>ファイルをアップロード...</value>
+  </data>
+  <data name="tsmiTrayUploadFolder.Text" xml:space="preserve">
+    <value>フォルダーをアップロード...</value>
+  </data>
+  <data name="tsmiTrayUploadClipboard.Text" xml:space="preserve">
+    <value>クリップボードからアップロード...</value>
+  </data>
+  <data name="tsmiTrayUploadText.Text" xml:space="preserve">
+    <value>テキストをアップロード...</value>
+  </data>
+  <data name="tsmiTrayUploadURL.Text" xml:space="preserve">
+    <value>URL先のファイルをアップロード...</value>
+  </data>
+  <data name="tsmiTrayUploadDragDrop.Text" xml:space="preserve">
+    <value>ドラッグ＆ドロップでアップロード...</value>
+  </data>
+  <data name="tsmiTrayShortenURL.Text" xml:space="preserve">
+    <value>短縮URLの作成...</value>
+  </data>
+  <data name="tsmiTrayWorkflows.Text" xml:space="preserve">
+    <value>ワークフロー</value>
+  </data>
+  <data name="tsmiTrayTools.Text" xml:space="preserve">
+    <value>ツール</value>
+  </data>
+  <data name="tsmiTrayColorPicker.Text" xml:space="preserve">
+    <value>カラー ピッカー...</value>
+  </data>
+  <data name="tsmiTrayScreenColorPicker.Text" xml:space="preserve">
+    <value>カラー ピッカー (ルーペ)...</value>
+  </data>
+  <data name="tsmiTrayImageEditor.Text" xml:space="preserve">
+    <value>画像エディター...</value>
+  </data>
+  <data name="tsmiTrayImageEffects.Text" xml:space="preserve">
+    <value>画像の効果...</value>
+  </data>
+  <data name="tsmiTrayHashCheck.Text" xml:space="preserve">
+    <value>ハッシュ値の照合...</value>
+  </data>
+  <data name="tsmiTrayDNSChanger.Text" xml:space="preserve">
+    <value>DNS チェンジャー...</value>
+  </data>
+  <data name="tsmiTrayQRCode.Text" xml:space="preserve">
+    <value>QR コード...</value>
+  </data>
+  <data name="tsmiTrayRuler.Text" xml:space="preserve">
+    <value>定規...</value>
+  </data>
+  <data name="tsmiTrayIndexFolder.Text" xml:space="preserve">
+    <value>フォルダーのインデックス作成...</value>
+  </data>
+  <data name="tsmiTrayImageCombiner.Text" xml:space="preserve">
+    <value>画像の結合...</value>
+  </data>
+  <data name="tsmiTrayImageThumbnailer.Text" xml:space="preserve">
+    <value>画像のサムネイル作成...</value>
+  </data>
+  <data name="tsmiTrayVideoThumbnailer.Text" xml:space="preserve">
+    <value>動画のサムネイル作成...</value>
+  </data>
+  <data name="tsmiTrayTweetMessage.Text" xml:space="preserve">
+    <value>メッセージをツイート...</value>
+  </data>
+  <data name="tsmiTrayMonitorTest.Text" xml:space="preserve">
+    <value>モニター テスト...</value>
+  </data>
+  <data name="tsmiTrayAfterCaptureTasks.Text" xml:space="preserve">
+    <value>キャプチャー後のタスク</value>
+  </data>
+  <data name="tsmiTrayAfterUploadTasks.Text" xml:space="preserve">
+    <value>アップロード後のタスク</value>
+  </data>
+  <data name="tsmiTrayDestinations.Text" xml:space="preserve">
+    <value>アップロード先</value>
+  </data>
+  <data name="tsmiTrayImageUploaders.Text" xml:space="preserve">
+    <value>画像アップローダー</value>
+  </data>
+  <data name="tsmiTrayTextUploaders.Text" xml:space="preserve">
+    <value>テキスト アップローダー</value>
+  </data>
+  <data name="tsmiTrayFileUploaders.Text" xml:space="preserve">
+    <value>ファイル アップローダー</value>
+  </data>
+  <data name="tsmiTrayURLShorteners.Text" xml:space="preserve">
+    <value>URL短縮サービス</value>
+  </data>
+  <data name="tsmiTrayURLSharingServices.Text" xml:space="preserve">
+    <value>URL共有サービス</value>
+  </data>
+  <data name="tsmiTrayDestinationSettings.Text" xml:space="preserve">
+    <value>アップロード先の設定...</value>
+  </data>
+  <data name="tsmiTrayTaskSettings.Text" xml:space="preserve">
+    <value>タスクの設定...</value>
+  </data>
+  <data name="tsmiTrayApplicationSettings.Text" xml:space="preserve">
+    <value>アプリの設定...</value>
+  </data>
+  <data name="tsmiTrayHotkeySettings.Text" xml:space="preserve">
+    <value>ホットキーの設定...</value>
+  </data>
+  <data name="tsmiTrayToggleHotkeys.Text" xml:space="preserve">
+    <value>ホットキーを無効にする</value>
+  </data>
+  <data name="tsmiScreenshotsFolder.Text" xml:space="preserve">
+    <value>画像保存フォルダー...</value>
+  </data>
+  <data name="tsmiTrayHistory.Text" xml:space="preserve">
+    <value>履歴...</value>
+  </data>
+  <data name="tsmiTrayImageHistory.Text" xml:space="preserve">
+    <value>画像の履歴...</value>
+  </data>
+  <data name="tsmiTrayDebug.Text" xml:space="preserve">
+    <value>デバッグ</value>
+  </data>
+  <data name="tsmiTrayShowDebugLog.Text" xml:space="preserve">
+    <value>デバッグ ログ...</value>
+  </data>
+  <data name="tsmiTrayTestImageUpload.Text" xml:space="preserve">
+    <value>画像アップロードのテスト</value>
+  </data>
+  <data name="tsmiTrayTestTextUpload.Text" xml:space="preserve">
+    <value>テキストアップロードのテスト</value>
+  </data>
+  <data name="tsmiTrayTestFileUpload.Text" xml:space="preserve">
+    <value>ファイルアップロードのテスト</value>
+  </data>
+  <data name="tsmiTrayTestURLShortener.Text" xml:space="preserve">
+    <value>短縮URL作成テスト</value>
+  </data>
+  <data name="tsmiTrayTestURLSharing.Text" xml:space="preserve">
+    <value>URL共有のテスト</value>
+  </data>
+  <data name="tsmiTrayDonate.Text" xml:space="preserve">
+    <value>寄付する...</value>
+  </data>
+  <data name="tsmiTrayAbout.Text" xml:space="preserve">
+    <value>ShareXについて...</value>
+  </data>
+  <data name="tsmiTrayRecentItems.Text" xml:space="preserve">
+    <value>最近使用したリンク</value>
+  </data>
+  <data name="tsmiOpenActionsToolbar.Text" xml:space="preserve">
+    <value>アクション ツールバーを表示/隠す</value>
+  </data>
+  <data name="tsmiTrayShow.Text" xml:space="preserve">
+    <value>ShareX ウィンドウを表示</value>
+  </data>
+  <data name="tsmiTrayExit.Text" xml:space="preserve">
+    <value>終了</value>
+  </data>
+  <data name="btnCloseNews.Text" xml:space="preserve">
+    <value>閉じる</value>
+  </data>
+  <data name="tsmiTrayScreenshotDelay5.Text" xml:space="preserve">
+    <value>5秒</value>
+  </data>
+  <data name="tsmiScreenshotDelay5.Text" xml:space="preserve">
+    <value>5秒</value>
+  </data>
+  <data name="tsmiTrayScreenshotDelay4.Text" xml:space="preserve">
+    <value>4秒</value>
+  </data>
+  <data name="tsmiScreenshotDelay4.Text" xml:space="preserve">
+    <value>4秒</value>
+  </data>
+  <data name="tsmiTrayScreenshotDelay3.Text" xml:space="preserve">
+    <value>3秒</value>
+  </data>
+  <data name="tsmiScreenshotDelay3.Text" xml:space="preserve">
+    <value>3秒</value>
+  </data>
+  <data name="tsmiTrayScreenshotDelay2.Text" xml:space="preserve">
+    <value>2秒</value>
+  </data>
+  <data name="tsmiScreenshotDelay2.Text" xml:space="preserve">
+    <value>2秒</value>
+  </data>
+  <data name="tsmiTrayScreenshotDelay1.Text" xml:space="preserve">
+    <value>1秒</value>
+  </data>
+  <data name="tsmiScreenshotDelay1.Text" xml:space="preserve">
+    <value>1秒</value>
+  </data>
+  <data name="tsmiTrayScreenshotDelay0.Text" xml:space="preserve">
+    <value>遅延なし</value>
+  </data>
+  <data name="tsmiScreenshotDelay0.Text" xml:space="preserve">
+    <value>遅延なし</value>
+  </data>
+  <data name="tsmiScreenshotDelay.Text" xml:space="preserve">
+    <value>キャプチャーを遅らせて起動</value>
+  </data>
+  <data name="tsmiImageSplitter.Text" xml:space="preserve">
+    <value>画像の分割...</value>
+  </data>
+  <data name="tsmiVideoConverter.Text" xml:space="preserve">
+    <value>動画の変換...</value>
+  </data>
+  <data name="tsmiCustomUploaderSettings.Text" xml:space="preserve">
+    <value>アップロード先を自分で設定</value>
+  </data>
+  <data name="tsmiAddImageEffects.Text" xml:space="preserve">
+    <value>画像エフェクトを追加</value>
+  </data>
+  <data name="tsmiRunAction.Text" xml:space="preserve">
+    <value>アクションを実行</value>
+  </data>
+  <data name="tsmiThumbnailTitle.Text" xml:space="preserve">
+    <value>サムネイルのタイトル</value>
+  </data>
+  <data name="tsmiSwitchTaskViewMode.Text" xml:space="preserve">
+    <value>サムネイルビューに切り替える</value>
+  </data>
+  <data name="tsmiThumbnailTitleShow.Text" xml:space="preserve">
+    <value>表示する</value>
+  </data>
+  <data name="tsmiThumbnailTitleHide.Text" xml:space="preserve">
+    <value>表示しない</value>
+  </data>
+  <data name="tsmiThumbnailTitleTop.Text" xml:space="preserve">
+    <value>サムネイルの上に表示</value>
+  </data>
+  <data name="tsmiThumbnailTitleBottom.Text" xml:space="preserve">
+    <value>サムネイルの下に表示</value>
+  </data>
+  <data name="tsmiTrayScreenshotDelay.Text" xml:space="preserve">
+    <value>キャプチャーを遅らせて起動</value>
+  </data>
+  <data name="tsmiTrayImageSplitter.Text" xml:space="preserve">
+    <value>画像の分割...</value>
+  </data>
+  <data name="tsmiTrayVideoConverter.Text" xml:space="preserve">
+    <value>動画の変換...</value>
+  </data>
+  <data name="tsmiTrayCustomUploaderSettings.Text" xml:space="preserve">
+    <value>アップロード先を自分で設定</value>
+  </data>
+</root>

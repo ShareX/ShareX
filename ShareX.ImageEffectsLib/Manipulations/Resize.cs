@@ -51,20 +51,22 @@ namespace ShareX.ImageEffectsLib
             Height = height;
         }
 
-        public override Image Apply(Image img)
+        public override Bitmap Apply(Bitmap bmp)
         {
-            if (Width <= 0 && Height <= 0) return img;
-
-            int width = Width <= 0 ? (int)((float)Height / img.Height * img.Width) : Width;
-            int height = Height <= 0 ? (int)((float)Width / img.Width * img.Height) : Height;
-
-            if ((Mode == ResizeMode.ResizeIfBigger && img.Width <= width && img.Height <= height) ||
-                (Mode == ResizeMode.ResizeIfSmaller && img.Width >= width && img.Height >= height))
+            if (Width <= 0 && Height <= 0)
             {
-                return img;
+                return bmp;
             }
 
-            return ImageHelpers.ResizeImage(img, width, height);
+            Size size = ImageHelpers.ApplyAspectRatio(Width, Height, bmp);
+
+            if ((Mode == ResizeMode.ResizeIfBigger && bmp.Width <= size.Width && bmp.Height <= size.Height) ||
+                (Mode == ResizeMode.ResizeIfSmaller && bmp.Width >= size.Width && bmp.Height >= size.Height))
+            {
+                return bmp;
+            }
+
+            return ImageHelpers.ResizeImage(bmp, size);
         }
     }
 }

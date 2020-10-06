@@ -47,7 +47,6 @@ namespace ShareX.HelpersLib
             Text = caption;
             BackColor = SystemColors.Window;
             FormBorderStyle = FormBorderStyle.FixedDialog;
-            ShowInTaskbar = false;
             TopMost = true;
             StartPosition = FormStartPosition.CenterScreen;
             MinimizeBox = false;
@@ -149,7 +148,7 @@ namespace ShareX.HelpersLib
 
             ShareXResources.ApplyTheme(this);
 
-            if (ShareXResources.ExperimentalCustomTheme)
+            if (ShareXResources.UseCustomTheme)
             {
                 panel.BackColor = ShareXResources.Theme.BorderColor;
             }

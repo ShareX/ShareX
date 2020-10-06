@@ -23,8 +23,10 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.HelpersLib;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 
 namespace ShareX
@@ -76,10 +78,17 @@ namespace ShareX
                 }
 
                 WatchFolder watchFolder = new WatchFolder { Settings = watchFolderSetting, TaskSettings = taskSettings };
-                watchFolder.FileWatcherTrigger += path =>
+                watchFolder.FileWatcherTrigger += origPath =>
                 {
                     TaskSettings taskSettingsCopy = TaskSettings.GetSafeTaskSettings(taskSettings);
-                    UploadManager.UploadFile(path, taskSettingsCopy);
+                    string destPath = origPath;
+                    if (watchFolderSetting.MoveFilesToScreenshotsFolder)
+                    {
+                        destPath = Helpers.GetUniqueFilePath(Path.Combine(Program.ScreenshotsFolder, Path.GetFileName(origPath)));
+                        Helpers.CreateDirectoryFromFilePath(destPath);
+                        File.Move(origPath, destPath);
+                    }
+                    UploadManager.UploadFile(destPath, taskSettingsCopy);
                 };
                 WatchFolders.Add(watchFolder);
 

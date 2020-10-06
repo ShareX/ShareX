@@ -115,7 +115,14 @@ namespace ShareX
             switch (startMethod)
             {
                 case ScreenRecordStartMethod.Region:
-                    RegionCaptureTasks.GetRectangleRegion(out captureRectangle, taskSettings.CaptureSettings.SurfaceOptions);
+                    if (taskSettings.CaptureSettings.ScreenRecordTransparentRegion)
+                    {
+                        RegionCaptureTasks.GetRectangleRegionTransparent(out captureRectangle);
+                    }
+                    else
+                    {
+                        RegionCaptureTasks.GetRectangleRegion(out captureRectangle, taskSettings.CaptureSettings.SurfaceOptions);
+                    }
                     break;
                 case ScreenRecordStartMethod.ActiveWindow:
                     if (taskSettings.CaptureSettings.CaptureClientArea)
@@ -175,7 +182,7 @@ namespace ShareX
                         extension = taskSettings.CaptureSettings.FFmpegOptions.Extension;
                     }
                     string filename = TaskHelpers.GetFilename(taskSettings, extension);
-                    path = TaskHelpers.HandleExistsFile(taskSettings.CaptureFolder, filename, taskSettings);
+                    path = TaskHelpers.HandleExistsFile(taskSettings.GetScreenshotsFolder(), filename, taskSettings);
 
                     if (string.IsNullOrEmpty(path))
                     {
@@ -308,7 +315,7 @@ namespace ShareX
         private static string ProcessTwoPassEncoding(string input, TaskSettings taskSettings, bool deleteInputFile = true)
         {
             string filename = TaskHelpers.GetFilename(taskSettings, taskSettings.CaptureSettings.FFmpegOptions.Extension);
-            string output = Path.Combine(taskSettings.CaptureFolder, filename);
+            string output = Path.Combine(taskSettings.GetScreenshotsFolder(), filename);
 
             try
             {

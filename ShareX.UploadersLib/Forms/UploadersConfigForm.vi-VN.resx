@@ -272,9 +272,6 @@ Ví dụ: nếu tên bucket là bucket.example.com thì URL sẽ là http://buck
   <data name="lblSharedFolderFiles.Text" xml:space="preserve">
     <value>Tệp:</value>
   </data>
-  <data name="lblPomfUploaders.Text" xml:space="preserve">
-    <value>Dịch vụ tải lên:</value>
-  </data>
   <data name="lblPomfUploadURL.Text" xml:space="preserve">
     <value>URL tải lên:</value>
   </data>
@@ -520,18 +517,6 @@ Ví dụ: nếu tên bucket là bucket.example.com thì URL sẽ là http://buck
   </data>
   <data name="gbPhotobucketAlbumPath.Text" xml:space="preserve">
     <value>Tải lên ảnh tới</value>
-  </data>
-  <data name="btnTinyPicOpenMyImages.Text" xml:space="preserve">
-    <value>Mở trang hình ảnh của tôi...</value>
-  </data>
-  <data name="lblTinyPicUsername.Text" xml:space="preserve">
-    <value>Email:</value>
-  </data>
-  <data name="lblTinyPicPassword.Text" xml:space="preserve">
-    <value>Mật khẩu:</value>
-  </data>
-  <data name="btnTinyPicLogin.Text" xml:space="preserve">
-    <value>Đăng nhập</value>
   </data>
   <data name="lblImageShackPassword.Text" xml:space="preserve">
     <value>Mật khẩu:</value>
@@ -1069,12 +1054,6 @@ Chỉ có hiệu lực khi không chọn "Cho phép truy cập tới bucket" cho
   <data name="grpSeafileObtainAuthToken.Text" xml:space="preserve">
     <value>Lấy token xác thực</value>
   </data>
-  <data name="btnCheveretoTestAll.Text" xml:space="preserve">
-    <value>Kiểm tra tất cả</value>
-  </data>
-  <data name="btnPomfTest.Text" xml:space="preserve">
-    <value>Kiểm tra tất cả</value>
-  </data>
   <data name="cbAmazonS3StripExtensionText.Text" xml:space="preserve">
     <value>Văn bản</value>
   </data>
@@ -1095,9 +1074,6 @@ Chỉ có hiệu lực khi không chọn "Cho phép truy cập tới bucket" cho
   </data>
   <data name="lblB2UrlPreview.Text" xml:space="preserve">
     <value>URL xem trước:</value>
-  </data>
-  <data name="lblCheveretoUploaders.Text" xml:space="preserve">
-    <value>Dịch vụ tải lên:</value>
   </data>
   <data name="lblSeafileAccInfoUsage.Text" xml:space="preserve">
     <value>Sử dụng:</value>

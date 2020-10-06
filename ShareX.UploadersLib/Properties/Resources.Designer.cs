@@ -286,6 +286,15 @@ namespace ShareX.UploadersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to My drive.
+        /// </summary>
+        internal static string GoogleDrive_MyDrive_My_drive {
+            get {
+                return ResourceManager.GetString("GoogleDrive_MyDrive_My_drive", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
         internal static System.Drawing.Icon GooglePhotos {

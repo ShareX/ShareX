@@ -181,6 +181,8 @@ namespace ShareX.HelpersLib
             {
                 lblImageSize.BackColor = ShareXResources.Theme.BackgroundColor;
                 lblImageSize.ForeColor = ShareXResources.Theme.TextColor;
+
+                ShareXResources.ApplyCustomThemeToContextMenuStrip(cmsMenu);
             }
             else
             {
@@ -197,8 +199,16 @@ namespace ShareX.HelpersLib
                 {
                     if (pbMain.BackgroundImage != null) pbMain.BackgroundImage.Dispose();
 
-                    pbMain.BackgroundImage = ImageHelpers.CreateCheckerPattern(ShareXResources.Theme.CheckerSize, ShareXResources.Theme.CheckerSize,
-                        ShareXResources.Theme.CheckerColor, ShareXResources.Theme.CheckerColor2);
+                    if (ShareXResources.Theme.CheckerSize > 0)
+                    {
+                        pbMain.BackgroundImage = ImageHelpers.CreateCheckerPattern(ShareXResources.Theme.CheckerSize, ShareXResources.Theme.CheckerSize,
+                            ShareXResources.Theme.CheckerColor, ShareXResources.Theme.CheckerColor2);
+                    }
+                    else
+                    {
+                        pbMain.BackColor = ShareXResources.Theme.CheckerColor;
+                        pbMain.BackgroundImage = null;
+                    }
                 }
             }
             else

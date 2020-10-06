@@ -98,8 +98,7 @@ namespace ShareX.ScreenCaptureLib
             cbItalic.Checked = Options.Italic;
             cbUnderline.Checked = Options.Underline;
 
-            UpdateHorizontalAlignmentImage();
-            UpdateVerticalAlignmentImage();
+            UpdateButtonImages();
 
             txtInput.SupportSelectAll();
         }
@@ -326,19 +325,34 @@ namespace ShareX.ScreenCaptureLib
             txtInput.TextAlign = horizontalAlignment;
         }
 
+        private void UpdateButtonImages()
+        {
+            cbBold.Image = ShareXResources.IsDarkTheme ? Resources.edit_bold_white : Resources.edit_bold;
+            cbItalic.Image = ShareXResources.IsDarkTheme ? Resources.edit_italic_white : Resources.edit_italic;
+            cbUnderline.Image = ShareXResources.IsDarkTheme ? Resources.edit_underline_white : Resources.edit_underline;
+            UpdateHorizontalAlignmentImage();
+            UpdateVerticalAlignmentImage();
+            tsmiAlignmentLeft.Image = ShareXResources.IsDarkTheme ? Resources.edit_alignment_white : Resources.edit_alignment;
+            tsmiAlignmentCenter.Image = ShareXResources.IsDarkTheme ? Resources.edit_alignment_center_white : Resources.edit_alignment_center;
+            tsmiAlignmentRight.Image = ShareXResources.IsDarkTheme ? Resources.edit_alignment_right_white : Resources.edit_alignment_right;
+            tsmiAlignmentTop.Image = ShareXResources.IsDarkTheme ? Resources.edit_vertical_alignment_top_white : Resources.edit_vertical_alignment_top;
+            tsmiAlignmentMiddle.Image = ShareXResources.IsDarkTheme ? Resources.edit_vertical_alignment_middle_white : Resources.edit_vertical_alignment_middle;
+            tsmiAlignmentBottom.Image = ShareXResources.IsDarkTheme ? Resources.edit_vertical_alignment_white : Resources.edit_vertical_alignment;
+        }
+
         private void UpdateHorizontalAlignmentImage()
         {
             switch (Options.AlignmentHorizontal)
             {
                 default:
                 case StringAlignment.Near:
-                    btnAlignmentHorizontal.Image = Resources.edit_alignment;
+                    btnAlignmentHorizontal.Image = ShareXResources.IsDarkTheme ? Resources.edit_alignment_white : Resources.edit_alignment;
                     break;
                 case StringAlignment.Center:
-                    btnAlignmentHorizontal.Image = Resources.edit_alignment_center;
+                    btnAlignmentHorizontal.Image = ShareXResources.IsDarkTheme ? Resources.edit_alignment_center_white : Resources.edit_alignment_center;
                     break;
                 case StringAlignment.Far:
-                    btnAlignmentHorizontal.Image = Resources.edit_alignment_right;
+                    btnAlignmentHorizontal.Image = ShareXResources.IsDarkTheme ? Resources.edit_alignment_right_white : Resources.edit_alignment_right;
                     break;
             }
         }
@@ -349,13 +363,13 @@ namespace ShareX.ScreenCaptureLib
             {
                 default:
                 case StringAlignment.Near:
-                    btnAlignmentVertical.Image = Resources.edit_vertical_alignment_top;
+                    btnAlignmentVertical.Image = ShareXResources.IsDarkTheme ? Resources.edit_vertical_alignment_top_white : Resources.edit_vertical_alignment_top;
                     break;
                 case StringAlignment.Center:
-                    btnAlignmentVertical.Image = Resources.edit_vertical_alignment_middle;
+                    btnAlignmentVertical.Image = ShareXResources.IsDarkTheme ? Resources.edit_vertical_alignment_middle_white : Resources.edit_vertical_alignment_middle;
                     break;
                 case StringAlignment.Far:
-                    btnAlignmentVertical.Image = Resources.edit_vertical_alignment;
+                    btnAlignmentVertical.Image = ShareXResources.IsDarkTheme ? Resources.edit_vertical_alignment_white : Resources.edit_vertical_alignment;
                     break;
             }
         }

@@ -59,6 +59,12 @@ namespace ShareX.IndexerLib
         [Category("Indexer / HTML"), DefaultValue(false), Description("Use custom Cascading Style Sheet file.")]
         public bool UseCustomCSSFile { get; set; }
 
+        [Category("Indexer / HTML"), DefaultValue(false), Description("Display the path for each subfolder.")]
+        public bool DisplayPath { get; set; }
+
+        [Category("Indexer / HTML"), DefaultValue(false), Description("Limit the display path to the selected root folder. Must have DisplayPath enabled.")]
+        public bool DisplayPathLimited { get; set; }
+
         [Category("Indexer / HTML"), DefaultValue(""), Description("Custom Cascading Style Sheet file path."), Editor(typeof(CssFileNameEditor), typeof(UITypeEditor))]
         public string CustomCSSFilePath { get; set; }
 

@@ -181,7 +181,9 @@ namespace ShareX.UploadersLib.FileUploaders
             PushbulletResponseDevices devicesResponse = JsonConvert.DeserializeObject<PushbulletResponseDevices>(response);
 
             if (devicesResponse != null && devicesResponse.devices != null)
-                return devicesResponse.devices.Select(x => new PushbulletDevice { Key = x.iden, Name = x.nickname }).ToList();
+            {
+                return devicesResponse.devices.Where(x => !string.IsNullOrEmpty(x.nickname)).Select(x1 => new PushbulletDevice { Key = x1.iden, Name = x1.nickname }).ToList();
+            }
 
             return new List<PushbulletDevice>();
         }
@@ -241,16 +243,19 @@ namespace ShareX.UploadersLib.FileUploaders
 
     public class PushbulletSettings
     {
-        public string UserAPIKey = "";
-        public List<PushbulletDevice> DeviceList = new List<PushbulletDevice>();
-        public int SelectedDevice = 0;
+        [JsonEncrypt]
+        public string UserAPIKey { get; set; } = "";
+        public List<PushbulletDevice> DeviceList { get; set; } = new List<PushbulletDevice>();
+        public int SelectedDevice { get; set; } = 0;
 
         public PushbulletDevice CurrentDevice
         {
             get
             {
                 if (DeviceList.IsValidIndex(SelectedDevice))
+                {
                     return DeviceList[SelectedDevice];
+                }
 
                 return null;
             }

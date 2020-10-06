@@ -23,6 +23,8 @@
 
 #endregion License Information (GPL v3)
 
+using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
@@ -38,18 +40,79 @@ namespace ShareX.HelpersLib
 
         public List<GradientStop> Colors { get; set; }
 
-        public bool IsValid
-        {
-            get
-            {
-                return Colors != null && Colors.Count >= 2 && Colors.Any(x => x.Location == 0f) && Colors.Any(x => x.Location == 100f);
-            }
-        }
+        [JsonIgnore]
+        public bool IsValid => Colors != null && Colors.Count > 0;
+
+        [JsonIgnore]
+        public bool IsVisible => IsValid && Colors.Any(x => x.Color.A > 0);
+
+        [JsonIgnore]
+        public bool IsTransparent => IsValid && Colors.Any(x => x.Color.A < 255);
 
         public GradientInfo()
         {
             Type = LinearGradientMode.Vertical;
             Colors = new List<GradientStop>();
+        }
+
+        public GradientInfo(params GradientStop[] colors) : this()
+        {
+            Colors = colors.ToList();
+        }
+
+        public GradientInfo(params Color[] colors) : this()
+        {
+            for (int i = 0; i < colors.Length; i++)
+            {
+                Colors.Add(new GradientStop(colors[i], (int)Math.Round(100f / (colors.Length - 1) * i)));
+            }
+        }
+
+        public void Clear()
+        {
+            Colors.Clear();
+        }
+
+        public void Sort()
+        {
+            Colors.Sort((x, y) => x.Location.CompareTo(y.Location));
+        }
+
+        public void Reverse()
+        {
+            Colors.Reverse();
+
+            foreach (GradientStop color in Colors)
+            {
+                color.Location = 100 - color.Location;
+            }
+        }
+
+        public ColorBlend GetColorBlend()
+        {
+            List<GradientStop> colors = new List<GradientStop>(Colors.OrderBy(x => x.Location));
+
+            if (!colors.Any(x => x.Location == 0))
+            {
+                colors.Insert(0, new GradientStop(colors[0].Color, 0f));
+            }
+
+            if (!colors.Any(x => x.Location == 100))
+            {
+                colors.Add(new GradientStop(colors[colors.Count - 1].Color, 100f));
+            }
+
+            ColorBlend colorBlend = new ColorBlend();
+            colorBlend.Colors = colors.Select(x => x.Color).ToArray();
+            colorBlend.Positions = colors.Select(x => x.Location / 100).ToArray();
+            return colorBlend;
+        }
+
+        public LinearGradientBrush GetGradientBrush(Rectangle rect)
+        {
+            LinearGradientBrush brush = new LinearGradientBrush(rect, Color.Transparent, Color.Transparent, Type);
+            brush.InterpolationColors = GetColorBlend();
+            return brush;
         }
 
         public void Draw(Graphics g, Rectangle rect)
@@ -69,20 +132,42 @@ namespace ShareX.HelpersLib
             }
         }
 
-        public ColorBlend GetColorBlend()
+        public void Draw(Image img)
         {
-            ColorBlend colorBlend = new ColorBlend();
-            IEnumerable<GradientStop> gradient = Colors.OrderBy(x => x.Location);
-            colorBlend.Colors = gradient.Select(x => x.Color).ToArray();
-            colorBlend.Positions = gradient.Select(x => x.Location / 100).ToArray();
-            return colorBlend;
+            if (IsValid)
+            {
+                using (Graphics g = Graphics.FromImage(img))
+                {
+                    Draw(g, new Rectangle(0, 0, img.Width, img.Height));
+                }
+            }
         }
 
-        public LinearGradientBrush GetGradientBrush(Rectangle rect)
+        public Bitmap CreateGradientPreview(int width, int height, bool border = false, bool checkers = false)
         {
-            LinearGradientBrush brush = new LinearGradientBrush(rect, Color.Transparent, Color.Transparent, Type);
-            brush.InterpolationColors = GetColorBlend();
-            return brush;
+            Bitmap bmp = new Bitmap(width, height);
+            Rectangle rect = new Rectangle(0, 0, width, height);
+
+            using (Graphics g = Graphics.FromImage(bmp))
+            {
+                if (checkers && IsTransparent)
+                {
+                    using (Image checker = ImageHelpers.CreateCheckerPattern())
+                    using (Brush checkerBrush = new TextureBrush(checker, WrapMode.Tile))
+                    {
+                        g.FillRectangle(checkerBrush, rect);
+                    }
+                }
+
+                Draw(g, rect);
+
+                if (border)
+                {
+                    g.DrawRectangleProper(Pens.Black, rect);
+                }
+            }
+
+            return bmp;
         }
 
         public override string ToString()

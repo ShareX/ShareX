@@ -566,7 +566,13 @@ namespace ShareX.HelpersLib
 
         public static void DisableMenuCloseOnClick(this ToolStripDropDownItem tsddi)
         {
-            tsddi.DropDown.Closing += (sender, e) => e.Cancel = e.CloseReason == ToolStripDropDownCloseReason.ItemClicked;
+            tsddi.DropDown.Closing -= DisableMenuCloseOnClick_DropDown_Closing;
+            tsddi.DropDown.Closing += DisableMenuCloseOnClick_DropDown_Closing;
+        }
+
+        private static void DisableMenuCloseOnClick_DropDown_Closing(object sender, ToolStripDropDownClosingEventArgs e)
+        {
+            e.Cancel = e.CloseReason == ToolStripDropDownCloseReason.ItemClicked;
         }
 
         public static void SetValue(this NumericUpDown nud, decimal number)
@@ -648,6 +654,16 @@ namespace ShareX.HelpersLib
         public static Point Center(this Rectangle rect)
         {
             return new Point(rect.X + (rect.Width / 2), rect.Y + (rect.Height / 2));
+        }
+
+        public static int Area(this Rectangle rect)
+        {
+            return rect.Width * rect.Height;
+        }
+
+        public static int Perimeter(this Rectangle rect)
+        {
+            return 2 * (rect.Width + rect.Height);
         }
 
         public static Point Restrict(this Point point, Rectangle rect)

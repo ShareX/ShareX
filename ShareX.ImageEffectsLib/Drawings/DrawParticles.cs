@@ -97,9 +97,9 @@ namespace ShareX.ImageEffectsLib
             this.ApplyDefaultPropertyValues();
         }
 
-        public override Image Apply(Image img)
+        public override Bitmap Apply(Bitmap bmp)
         {
-            string imageFolder = Helpers.ExpandFolderVariables(ImageFolder);
+            string imageFolder = Helpers.ExpandFolderVariables(ImageFolder, true);
 
             if (!string.IsNullOrEmpty(imageFolder) && Directory.Exists(imageFolder))
             {
@@ -109,27 +109,26 @@ namespace ShareX.ImageEffectsLib
                 {
                     imageRectangles.Clear();
 
-                    using (Graphics g = Graphics.FromImage(img))
+                    using (Graphics g = Graphics.FromImage(bmp))
                     using (ImageFilesCache imageCache = new ImageFilesCache())
                     {
                         g.InterpolationMode = InterpolationMode.HighQualityBicubic;
 
                         for (int i = 0; i < ImageCount; i++)
                         {
-                            string file = MathHelpers.RandomPick(files);
+                            string file = RandomFast.Pick(files);
+                            Bitmap bmpCached = imageCache.GetImage(file);
 
-                            Image img2 = imageCache.GetImage(file);
-
-                            if (img2 != null)
+                            if (bmpCached != null)
                             {
-                                DrawImage(img, img2, g);
+                                DrawImage(bmp, bmpCached, g);
                             }
                         }
                     }
                 }
             }
 
-            return img;
+            return bmp;
         }
 
         private void DrawImage(Image img, Image img2, Graphics g)
@@ -138,7 +137,7 @@ namespace ShareX.ImageEffectsLib
 
             if (RandomSize)
             {
-                int size = MathHelpers.Random(Math.Min(RandomSizeMin, RandomSizeMax), Math.Max(RandomSizeMin, RandomSizeMax));
+                int size = RandomFast.Next(Math.Min(RandomSizeMin, RandomSizeMax), Math.Max(RandomSizeMin, RandomSizeMax));
                 width = size;
                 height = size;
 
@@ -176,8 +175,8 @@ namespace ShareX.ImageEffectsLib
                     return;
                 }
 
-                rect = new Rectangle(MathHelpers.Random(Math.Min(0, xOffset), Math.Max(0, xOffset)),
-                    MathHelpers.Random(Math.Min(0, yOffset), Math.Max(0, yOffset)), width, height);
+                rect = new Rectangle(RandomFast.Next(Math.Min(0, xOffset), Math.Max(0, xOffset)),
+                    RandomFast.Next(Math.Min(0, yOffset), Math.Max(0, yOffset)), width, height);
 
                 overlapRect = rect.Offset(NoOverlapOffset);
             } while (NoOverlap && imageRectangles.Any(x => x.IntersectsWith(overlapRect)));
@@ -188,7 +187,7 @@ namespace ShareX.ImageEffectsLib
             {
                 float moveX = rect.X + (rect.Width / 2f);
                 float moveY = rect.Y + (rect.Height / 2f);
-                int rotate = MathHelpers.Random(Math.Min(RandomAngleMin, RandomAngleMax), Math.Max(RandomAngleMin, RandomAngleMax));
+                int rotate = RandomFast.Next(Math.Min(RandomAngleMin, RandomAngleMax), Math.Max(RandomAngleMin, RandomAngleMax));
 
                 g.TranslateTransform(moveX, moveY);
                 g.RotateTransform(rotate);
@@ -197,7 +196,7 @@ namespace ShareX.ImageEffectsLib
 
             if (RandomOpacity)
             {
-                float opacity = MathHelpers.Random(Math.Min(RandomOpacityMin, RandomOpacityMax), Math.Max(RandomOpacityMin, RandomOpacityMax)).Clamp(0, 100) / 100f;
+                float opacity = RandomFast.Next(Math.Min(RandomOpacityMin, RandomOpacityMax), Math.Max(RandomOpacityMin, RandomOpacityMax)).Clamp(0, 100) / 100f;
 
                 ColorMatrix matrix = new ColorMatrix();
                 matrix.Matrix33 = opacity;

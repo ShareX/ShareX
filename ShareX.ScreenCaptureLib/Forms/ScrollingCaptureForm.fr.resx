@@ -160,7 +160,7 @@
     <value>Nombre d'images :</value>
   </data>
   <data name="gbTrimEdges.Text" xml:space="preserve">
-    <value>Ajuster les contours :</value>
+    <value>Ajuster les contours</value>
   </data>
   <data name="lblCombineVertical.Text" xml:space="preserve">
     <value>Vertical :</value>

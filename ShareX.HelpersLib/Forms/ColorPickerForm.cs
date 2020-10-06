@@ -40,16 +40,23 @@ namespace ShareX.HelpersLib
 
         private bool oldColorExist;
         private bool controlChangingColor;
+        private ControlHider clipboardStatusHider;
 
-        public ColorPickerForm(Color currentColor, bool isScreenColorPickerMode = false)
+        public ColorPickerForm(Color currentColor, bool isScreenColorPickerMode = false, bool checkClipboard = true)
         {
             InitializeComponent();
             ShareXResources.ApplyTheme(this);
+            clipboardStatusHider = new ControlHider(btnClipboardStatus, 2000);
 
             IsScreenColorPickerMode = isScreenColorPickerMode;
 
             PrepareColorPalette();
             SetCurrentColor(currentColor, !IsScreenColorPickerMode);
+
+            if (checkClipboard)
+            {
+                CheckClipboard();
+            }
 
             btnOK.Visible = btnCancel.Visible = !IsScreenColorPickerMode;
             mbCopy.Visible = btnClose.Visible = pCursorPosition.Visible = IsScreenColorPickerMode;
@@ -59,6 +66,28 @@ namespace ShareX.HelpersLib
         {
             OpenScreenColorPicker = openScreenColorPicker;
             btnScreenColorPicker.Visible = true;
+        }
+
+        public bool CheckClipboard()
+        {
+            string text = ClipboardHelpers.GetText(true);
+
+            if (!string.IsNullOrEmpty(text))
+            {
+                text = text.Trim();
+
+                if (ColorHelpers.ParseColor(text, out Color clipboardColor))
+                {
+                    colorPicker.ChangeColor(clipboardColor);
+                    btnClipboardStatus.Text = "Clipboard: " + text;
+                    btnClipboardStatus.Location = new Point(btnClipboardColorPicker.Left + (btnClipboardColorPicker.Width / 2) - (btnClipboardStatus.Width / 2),
+                        btnClipboardColorPicker.Top - btnClipboardStatus.Height - 5);
+                    clipboardStatusHider.Show();
+                    return true;
+                }
+            }
+
+            return false;
         }
 
         public static bool PickColor(Color currentColor, out Color newColor, Form owner = null, Func<PointInfo> openScreenColorPicker = null)
@@ -452,6 +481,11 @@ namespace ShareX.HelpersLib
             {
                 this.ForceActivate();
             }
+        }
+
+        private void btnClipboardColorPicker_Click(object sender, EventArgs e)
+        {
+            CheckClipboard();
         }
 
         #endregion Events

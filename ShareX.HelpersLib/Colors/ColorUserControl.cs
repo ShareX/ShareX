@@ -173,7 +173,7 @@ namespace ShareX.HelpersLib
                 if (SelectedColor.IsTransparent)
                 {
                     if (bmp != null) bmp.Dispose();
-                    bmp = (Bitmap)ImageHelpers.DrawCheckers(clientWidth, clientHeight);
+                    bmp = ImageHelpers.DrawCheckers(clientWidth, clientHeight);
                 }
 
                 DrawColors();

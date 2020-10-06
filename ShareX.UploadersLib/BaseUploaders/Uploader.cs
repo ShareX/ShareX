@@ -62,10 +62,7 @@ namespace ShareX.UploadersLib
 
         protected void OnProgressChanged(ProgressManager progress)
         {
-            if (ProgressChanged != null)
-            {
-                ProgressChanged(progress);
-            }
+            ProgressChanged?.Invoke(progress);
         }
 
         protected void OnEarlyURLCopyRequested(string url)
@@ -106,7 +103,7 @@ namespace ShareX.UploadersLib
             }
         }
 
-        protected string SendRequest(HttpMethod method, string url, Dictionary<string, string> args = null, NameValueCollection headers = null, CookieCollection cookies = null)
+        internal string SendRequest(HttpMethod method, string url, Dictionary<string, string> args = null, NameValueCollection headers = null, CookieCollection cookies = null)
         {
             return SendRequest(method, url, (Stream)null, null, args, headers, cookies);
         }

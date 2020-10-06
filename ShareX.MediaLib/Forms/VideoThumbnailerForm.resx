@@ -117,6 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="txtMediaPath.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="txtMediaPath.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 8</value>
@@ -139,6 +143,9 @@
   </data>
   <data name="&gt;&gt;txtMediaPath.ZOrder" xml:space="preserve">
     <value>2</value>
+  </data>
+  <data name="btnStart.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
   </data>
   <data name="btnStart.Location" type="System.Drawing.Point, System.Drawing">
     <value>544, 6</value>
@@ -164,6 +171,9 @@
   <data name="&gt;&gt;btnStart.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
+  <data name="pgOptions.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
   <data name="pgOptions.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 40</value>
   </data>
@@ -185,6 +195,9 @@
   <data name="&gt;&gt;pgOptions.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="btnBrowse.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
   <data name="btnBrowse.Location" type="System.Drawing.Point, System.Drawing">
     <value>512, 6</value>
   </data>
@@ -196,7 +209,7 @@
   </data>
   <data name="btnBrowse.Text" xml:space="preserve">
     <value>...</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;btnBrowse.Name" xml:space="preserve">
     <value>btnBrowse</value>
   </data>
@@ -242,7 +255,6 @@
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>721, 464</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>
   </data>

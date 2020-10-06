@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using System;
 using System.ComponentModel;
 using System.Drawing;
 
@@ -42,14 +43,18 @@ namespace ShareX.ImageEffectsLib
             this.ApplyDefaultPropertyValues();
         }
 
-        public override Image Apply(Image img)
+        public override Bitmap Apply(Bitmap bmp)
         {
-            if (WidthPercentage <= 0 && HeightPercentage <= 0) return img;
+            if (WidthPercentage <= 0 && HeightPercentage <= 0)
+            {
+                return bmp;
+            }
 
-            float widthPercentage = WidthPercentage <= 0 ? HeightPercentage : WidthPercentage;
-            float heightPercentage = HeightPercentage <= 0 ? WidthPercentage : HeightPercentage;
+            int width = (int)Math.Round(WidthPercentage / 100 * bmp.Width);
+            int height = (int)Math.Round(HeightPercentage / 100 * bmp.Height);
+            Size size = ImageHelpers.ApplyAspectRatio(width, height, bmp);
 
-            return ImageHelpers.ResizeImageByPercentage(img, widthPercentage, heightPercentage);
+            return ImageHelpers.ResizeImage(bmp, size);
         }
     }
 }

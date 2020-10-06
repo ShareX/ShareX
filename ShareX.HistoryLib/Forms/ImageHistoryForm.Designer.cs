@@ -63,7 +63,7 @@
             // 
             // ilvImages
             // 
-            this.ilvImages.AllowDrop = true;
+            this.ilvImages.AllowDrag = true;
             this.ilvImages.AllowDuplicateFileNames = true;
             this.ilvImages.AllowItemReorder = false;
             this.ilvImages.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -151,7 +151,8 @@
             // ImageHistoryForm
             // 
             resources.ApplyResources(this, "$this");
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.Controls.Add(this.tscMain);
             this.KeyPreview = true;

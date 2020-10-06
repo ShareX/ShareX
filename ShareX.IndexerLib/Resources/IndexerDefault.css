@@ -31,7 +31,7 @@ h1, h2, h3, h4, h5, h6 {
     font-family: Arial, Helvetica, sans-serif;
     font-size: large;
     font-weight: normal;
-    text-shadow: 1px 1px 1px #000000;
+    text-shadow: 0px 1px 1px #000000;
 }
 
 h1 {

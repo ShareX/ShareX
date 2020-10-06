@@ -76,9 +76,9 @@ namespace ShareX.ImageEffectsLib
             this.ApplyDefaultPropertyValues();
         }
 
-        public override Image Apply(Image img)
+        public override Bitmap Apply(Bitmap bmp)
         {
-            return ImageHelpers.AddShadow(img, Opacity, Size, Darkness + 1, Color, Offset);
+            return ImageHelpers.AddShadow(bmp, Opacity, Size, Darkness + 1, Color, Offset);
         }
     }
 }

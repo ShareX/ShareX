@@ -41,6 +41,8 @@
             this.lblOrientation = new System.Windows.Forms.Label();
             this.cbOrientation = new System.Windows.Forms.ComboBox();
             this.lblSpacePixel = new System.Windows.Forms.Label();
+            this.lblImageAlignment = new System.Windows.Forms.Label();
+            this.cbAlignment = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.nudSpace)).BeginInit();
             this.SuspendLayout();
             // 
@@ -82,6 +84,7 @@
             this.chFilepath});
             this.lvImages.FullRowSelect = true;
             this.lvImages.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
+            this.lvImages.HideSelection = false;
             this.lvImages.Name = "lvImages";
             this.lvImages.UseCompatibleStateImageBehavior = false;
             this.lvImages.View = System.Windows.Forms.View.Details;
@@ -133,13 +136,29 @@
             resources.ApplyResources(this.lblSpacePixel, "lblSpacePixel");
             this.lblSpacePixel.Name = "lblSpacePixel";
             // 
+            // lblImageAlignment
+            // 
+            resources.ApplyResources(this.lblImageAlignment, "lblImageAlignment");
+            this.lblImageAlignment.Name = "lblImageAlignment";
+            // 
+            // cbAlignment
+            // 
+            resources.ApplyResources(this.cbAlignment, "cbAlignment");
+            this.cbAlignment.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbAlignment.FormattingEnabled = true;
+            this.cbAlignment.Name = "cbAlignment";
+            this.cbAlignment.SelectedIndexChanged += new System.EventHandler(this.cbAlignment_SelectedIndexChanged);
+            // 
             // ImageCombinerForm
             // 
             this.AcceptButton = this.btnCombine;
             this.AllowDrop = true;
             resources.ApplyResources(this, "$this");
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.SystemColors.Window;
+            this.Controls.Add(this.cbAlignment);
+            this.Controls.Add(this.lblImageAlignment);
             this.Controls.Add(this.lblSpacePixel);
             this.Controls.Add(this.cbOrientation);
             this.Controls.Add(this.lblOrientation);
@@ -174,5 +193,7 @@
         private System.Windows.Forms.ComboBox cbOrientation;
         private System.Windows.Forms.ColumnHeader chFilepath;
         private System.Windows.Forms.Label lblSpacePixel;
+        private System.Windows.Forms.Label lblImageAlignment;
+        private System.Windows.Forms.ComboBox cbAlignment;
     }
 }

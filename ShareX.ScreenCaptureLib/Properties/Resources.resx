@@ -139,11 +139,6 @@
   <data name="image_resize" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\image-resize.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="RectangleRegion_GetRulerText_Ruler_info" xml:space="preserve">
-    <value>X: {0} / Y: {1} / X2: {2} / Y2: {3}
-Width: {4} px / Height: {5} px
-Distance: {6:0.00} px / Angle: {7:0.00}°</value>
-  </data>
   <data name="arrow_circle_135_left" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\arrow-circle-135-left.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -663,5 +658,59 @@ X: {4} Y: {5}</value>
   </data>
   <data name="CloseEsc" xml:space="preserve">
     <value>Close (Esc)</value>
+  </data>
+  <data name="edit_outline_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\edit-outline-white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="edit_shade_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\edit-shade-white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="grid_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\grid-white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="layer_shade_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\layer-shade-white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="layer_shape_arrow_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\layer-shape-arrow-white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="layer_shape_line_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\layer-shape-line-white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="edit_alignment_center_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\edit-alignment-center-white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="edit_alignment_right_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\edit-alignment-right-white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="edit_alignment_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\edit-alignment-white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="edit_bold_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\edit-bold-white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="edit_italic_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\edit-italic-white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="edit_underline_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\edit-underline-white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="edit_vertical_alignment_middle_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\edit-vertical-alignment-middle-white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="edit_vertical_alignment_top_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\edit-vertical-alignment-top-white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="edit_vertical_alignment_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\edit-vertical-alignment-white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="closedhand" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\closedhand.cur;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="openhand" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\openhand.cur;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="document_copy" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\document-copy.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

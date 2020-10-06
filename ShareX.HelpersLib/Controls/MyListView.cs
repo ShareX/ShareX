@@ -35,6 +35,7 @@ namespace ShareX.HelpersLib
     {
         public delegate void ListViewItemMovedEventHandler(object sender, int oldIndex, int newIndex);
 
+        public event ListViewItemMovedEventHandler ItemMoving;
         public event ListViewItemMovedEventHandler ItemMoved;
 
         [DefaultValue(false)]
@@ -71,7 +72,9 @@ namespace ShareX.HelpersLib
 
                 if (value > -1)
                 {
-                    Items[value].Selected = true;
+                    ListViewItem lvi = Items[value];
+                    lvi.EnsureVisible();
+                    lvi.Selected = true;
                 }
             }
         }
@@ -153,9 +156,17 @@ namespace ShareX.HelpersLib
 
         public void UnselectAll()
         {
-            foreach (ListViewItem lvi in SelectedItems)
+            if (MultiSelect)
             {
-                lvi.Selected = false;
+                SelectedItems.Clear();
+            }
+        }
+
+        public void EnsureSelectedVisible()
+        {
+            if (SelectedItems.Count > 0)
+            {
+                SelectedItems[0].EnsureVisible();
             }
         }
 
@@ -275,6 +286,8 @@ namespace ShareX.HelpersLib
                     newIndex = Items.Count - 1;
                 }
 
+                OnItemMoving(oldIndex, newIndex);
+
                 Items.RemoveAt(oldIndex);
                 Items.Insert(newIndex, lvi);
 
@@ -285,12 +298,14 @@ namespace ShareX.HelpersLib
             Invalidate();
         }
 
+        protected void OnItemMoving(int oldIndex, int newIndex)
+        {
+            ItemMoving?.Invoke(this, oldIndex, newIndex);
+        }
+
         protected void OnItemMoved(int oldIndex, int newIndex)
         {
-            if (ItemMoved != null)
-            {
-                ItemMoved(this, oldIndex, newIndex);
-            }
+            ItemMoved?.Invoke(this, oldIndex, newIndex);
         }
 
         protected override void OnDragLeave(EventArgs e)
@@ -324,7 +339,7 @@ namespace ShareX.HelpersLib
                     lvwColumnSorter.Order = SortOrder.Ascending;
                 }
 
-                // if the column is tagged as a DateTime, then sort by date
+                // If the column is tagged as a DateTime, then sort by date
                 lvwColumnSorter.SortByDate = Columns[e.Column].Tag is DateTime;
 
                 Cursor.Current = Cursors.WaitCursor;
@@ -350,6 +365,7 @@ namespace ShareX.HelpersLib
         protected override void ScaleControl(SizeF factor, BoundsSpecified specified)
         {
             base.ScaleControl(factor, specified);
+
             foreach (ColumnHeader column in Columns)
             {
                 column.Width = (int)Math.Round(column.Width * factor.Width);

@@ -34,20 +34,80 @@ namespace ShareX.HelpersLib
     {
         public string Name { get; set; }
 
-        [Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
-        public Color BackgroundColor { get; set; }
+        private Color backgroundColor;
 
         [Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
-        public Color LightBackgroundColor { get; set; }
+        public Color BackgroundColor
+        {
+            get
+            {
+                return backgroundColor;
+            }
+            set
+            {
+                if (!value.IsEmpty) backgroundColor = value;
+            }
+        }
+
+        private Color lightBackgroundColor;
 
         [Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
-        public Color DarkBackgroundColor { get; set; }
+        public Color LightBackgroundColor
+        {
+            get
+            {
+                return lightBackgroundColor;
+            }
+            set
+            {
+                if (!value.IsEmpty) lightBackgroundColor = value;
+            }
+        }
+
+        private Color darkBackgroundColor;
 
         [Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
-        public Color TextColor { get; set; }
+        public Color DarkBackgroundColor
+        {
+            get
+            {
+                return darkBackgroundColor;
+            }
+            set
+            {
+                if (!value.IsEmpty) darkBackgroundColor = value;
+            }
+        }
+
+        private Color textColor;
 
         [Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
-        public Color BorderColor { get; set; }
+        public Color TextColor
+        {
+            get
+            {
+                return textColor;
+            }
+            set
+            {
+                if (!value.IsEmpty) textColor = value;
+            }
+        }
+
+        private Color borderColor;
+
+        [Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
+        public Color BorderColor
+        {
+            get
+            {
+                return borderColor;
+            }
+            set
+            {
+                if (!value.IsEmpty) borderColor = value;
+            }
+        }
 
         [Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
         public Color CheckerColor { get; set; }
@@ -72,6 +132,8 @@ namespace ShareX.HelpersLib
         [Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
         public Color MenuCheckBackgroundColor { get; set; }
 
+        public Font ContextMenuFont { get; set; } = new Font("Segoe UI", 10);
+
         public int ContextMenuOpacity { get; set; } = 100;
 
         [Browsable(false)]
@@ -91,7 +153,7 @@ namespace ShareX.HelpersLib
         }
 
         public static ShareXTheme GetDarkTheme()
-        { 
+        {
             return new ShareXTheme()
             {
                 Name = "Dark",
@@ -108,7 +170,7 @@ namespace ShareX.HelpersLib
                 MenuHighlightBorderColor = Color.FromArgb(116, 129, 152),
                 MenuBorderColor = Color.FromArgb(22, 26, 31),
                 MenuCheckBackgroundColor = Color.FromArgb(56, 64, 75),
-                ContextMenuOpacity = 90,
+                ContextMenuOpacity = 100,
                 SeparatorLightColor = Color.FromArgb(56, 64, 75),
                 SeparatorDarkColor = Color.FromArgb(22, 26, 31)
             };
@@ -132,7 +194,7 @@ namespace ShareX.HelpersLib
                 MenuHighlightBorderColor = Color.FromArgb(96, 143, 226),
                 MenuBorderColor = Color.FromArgb(201, 201, 201),
                 MenuCheckBackgroundColor = Color.FromArgb(225, 233, 244),
-                ContextMenuOpacity = 95,
+                ContextMenuOpacity = 100,
                 SeparatorLightColor = Color.FromArgb(253, 253, 253),
                 SeparatorDarkColor = Color.FromArgb(189, 189, 189)
             };

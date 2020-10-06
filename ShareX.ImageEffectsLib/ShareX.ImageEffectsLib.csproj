@@ -10,7 +10,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ShareX.ImageEffectsLib</RootNamespace>
     <AssemblyName>ShareX.ImageEffectsLib</AssemblyName>
-    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
@@ -95,6 +95,7 @@
     <Reference Include="System" />
     <Reference Include="System.Design" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression" />
     <Reference Include="System.Windows.Forms" />
   </ItemGroup>
   <ItemGroup>
@@ -111,13 +112,16 @@
     <Compile Include="Drawings\DrawImage.cs" />
     <Compile Include="Drawings\DrawParticles.cs" />
     <Compile Include="Drawings\DrawText.cs" />
+    <Compile Include="Drawings\DrawTextEx.cs" />
     <Compile Include="Enums.cs" />
+    <Compile Include="Filters\ColorDepth.cs" />
     <Compile Include="Filters\EdgeDetect.cs" />
     <Compile Include="Filters\Emboss.cs" />
     <Compile Include="Filters\GaussianBlur.cs" />
     <Compile Include="Filters\MatrixConvolution.cs" />
     <Compile Include="Filters\MeanRemoval.cs" />
     <Compile Include="Filters\Outline.cs" />
+    <Compile Include="Filters\RGBSplit.cs" />
     <Compile Include="Filters\Pixelate.cs" />
     <Compile Include="Filters\Sharpen.cs" />
     <Compile Include="Filters\Slice.cs" />
@@ -130,8 +134,16 @@
     <Compile Include="Adjustments\Hue.cs" />
     <Compile Include="Adjustments\Inverse.cs" />
     <Compile Include="Adjustments\Saturation.cs" />
+    <Compile Include="ImageEffectPackager.cs" />
+    <Compile Include="Forms\ImageEffectPackagerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ImageEffectPackagerForm.Designer.cs">
+      <DependentUpon>ImageEffectPackagerForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ImageEffectPreset.cs" />
     <Compile Include="Manipulations\AutoCrop.cs" />
+    <Compile Include="Manipulations\ForceProportions.cs" />
     <Compile Include="Manipulations\Crop.cs" />
     <Compile Include="Manipulations\RoundedCorners.cs" />
     <Compile Include="Manipulations\Skew.cs" />
@@ -143,10 +155,10 @@
     <Compile Include="Manipulations\Flip.cs" />
     <Compile Include="Manipulations\Scale.cs" />
     <Compile Include="ImageEffect.cs" />
-    <Compile Include="ImageEffectsForm.cs">
+    <Compile Include="Forms\ImageEffectsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ImageEffectsForm.Designer.cs">
+    <Compile Include="Forms\ImageEffectsForm.Designer.cs">
       <DependentUpon>ImageEffectsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Drawings\DrawBorder.cs" />
@@ -160,12 +172,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="WatermarkConfig.cs" />
-    <Compile Include="WatermarkForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="WatermarkForm.Designer.cs">
-      <DependentUpon>WatermarkForm.cs</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ShareX.HelpersLib\ShareX.HelpersLib.csproj">
@@ -174,63 +180,76 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="ImageEffectsForm.de.resx">
+    <EmbeddedResource Include="Forms\ImageEffectPackagerForm.fr.resx">
+      <DependentUpon>ImageEffectPackagerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ImageEffectPackagerForm.resx">
+      <DependentUpon>ImageEffectPackagerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ImageEffectPackagerForm.ru.resx">
+      <DependentUpon>ImageEffectPackagerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ImageEffectsForm.de.resx">
       <DependentUpon>ImageEffectsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ImageEffectsForm.es-MX.resx">
+    <EmbeddedResource Include="Forms\ImageEffectsForm.es-MX.resx">
       <DependentUpon>ImageEffectsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ImageEffectsForm.es.resx">
+    <EmbeddedResource Include="Forms\ImageEffectsForm.es.resx">
       <DependentUpon>ImageEffectsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ImageEffectsForm.fa-IR.resx">
+    <EmbeddedResource Include="Forms\ImageEffectsForm.fa-IR.resx">
       <DependentUpon>ImageEffectsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ImageEffectsForm.fr.resx">
+    <EmbeddedResource Include="Forms\ImageEffectsForm.fr.resx">
       <DependentUpon>ImageEffectsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ImageEffectsForm.hu.resx">
+    <EmbeddedResource Include="Forms\ImageEffectsForm.hu.resx">
       <DependentUpon>ImageEffectsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ImageEffectsForm.id-ID.resx">
+    <EmbeddedResource Include="Forms\ImageEffectsForm.id-ID.resx">
       <DependentUpon>ImageEffectsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ImageEffectsForm.it-IT.resx">
+    <EmbeddedResource Include="Forms\ImageEffectsForm.it-IT.resx">
       <DependentUpon>ImageEffectsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ImageEffectsForm.ko-KR.resx">
+    <EmbeddedResource Include="Forms\ImageEffectsForm.ko-KR.resx">
       <DependentUpon>ImageEffectsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ImageEffectsForm.nl-NL.resx">
+    <EmbeddedResource Include="Forms\ImageEffectsForm.nl-NL.resx">
       <DependentUpon>ImageEffectsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ImageEffectsForm.pt-BR.resx">
+    <EmbeddedResource Include="Forms\ImageEffectsForm.pt-BR.resx">
       <DependentUpon>ImageEffectsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ImageEffectsForm.resx">
+    <EmbeddedResource Include="Forms\ImageEffectsForm.pt-PT.resx">
       <DependentUpon>ImageEffectsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ImageEffectsForm.ru.resx">
+    <EmbeddedResource Include="Forms\ImageEffectsForm.resx">
       <DependentUpon>ImageEffectsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ImageEffectsForm.tr.resx">
+    <EmbeddedResource Include="Forms\ImageEffectsForm.ru.resx">
       <DependentUpon>ImageEffectsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ImageEffectsForm.uk.resx">
+    <EmbeddedResource Include="Forms\ImageEffectsForm.tr.resx">
       <DependentUpon>ImageEffectsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ImageEffectsForm.vi-VN.resx">
+    <EmbeddedResource Include="Forms\ImageEffectsForm.uk.resx">
       <DependentUpon>ImageEffectsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ImageEffectsForm.zh-CN.resx">
+    <EmbeddedResource Include="Forms\ImageEffectsForm.vi-VN.resx">
       <DependentUpon>ImageEffectsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ImageEffectsForm.zh-TW.resx">
+    <EmbeddedResource Include="Forms\ImageEffectsForm.zh-CN.resx">
+      <DependentUpon>ImageEffectsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ImageEffectsForm.zh-TW.resx">
       <DependentUpon>ImageEffectsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.de.resx" />
     <EmbeddedResource Include="Properties\Resources.es-MX.resx" />
     <EmbeddedResource Include="Properties\Resources.es.resx" />
+    <EmbeddedResource Include="Properties\Resources.fa-IR.resx" />
     <EmbeddedResource Include="Properties\Resources.fr.resx" />
     <EmbeddedResource Include="Properties\Resources.hu.resx" />
     <EmbeddedResource Include="Properties\Resources.id-ID.resx" />
@@ -238,6 +257,7 @@
     <EmbeddedResource Include="Properties\Resources.ko-KR.resx" />
     <EmbeddedResource Include="Properties\Resources.nl-NL.resx" />
     <EmbeddedResource Include="Properties\Resources.pt-BR.resx" />
+    <EmbeddedResource Include="Properties\Resources.pt-PT.resx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -253,6 +273,21 @@
     <PackageReference Include="Newtonsoft.Json">
       <Version>12.0.3</Version>
     </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\document-copy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eraser.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow-circle-double-135.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

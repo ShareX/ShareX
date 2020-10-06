@@ -26,6 +26,7 @@
 // Credits: https://github.com/lithium720
 
 using Newtonsoft.Json;
+using ShareX.HelpersLib;
 using ShareX.UploadersLib.Properties;
 using System;
 using System.Collections.Generic;
@@ -135,6 +136,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
     public class LithiioSettings
     {
+        [JsonEncrypt]
         public string UserAPIKey { get; set; } = "";
     }
 }

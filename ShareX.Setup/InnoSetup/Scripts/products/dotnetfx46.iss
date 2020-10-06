@@ -1,5 +1,5 @@
 ; requires Windows 7 Service Pack 1, Windows 8.1, Windows Server 2008 R2 SP1, Windows Server 2012, Windows Server 2012 R2
-; WARNING: express setup (downloads and installs the components depending on your OS) if you want to deploy it on cd or network download the full bootsrapper on website below
+; express setup (downloads and installs the components depending on your OS) if you want to deploy it locally download the full installer on website below
 ; https://www.microsoft.com/en-US/download/details.aspx?id=53345
 
 [CustomMessages]
@@ -13,7 +13,7 @@ const
 
 procedure dotnetfx46(minVersion: integer);
 begin
-	if (not netfxinstalled(NetFx4x, '') or (netfxspversion(NetFx4x, '') < minVersion)) then
+	if (netfxspversion(NetFx4x, '') < minVersion) then
 		AddProduct('dotnetfx46.exe',
 			'/lcid ' + CustomMessage('lcid') + ' /passive /norestart',
 			CustomMessage('dotnetfx46_title'),

@@ -35,7 +35,7 @@ namespace ShareX.ImageEffectsLib
         public DrawText Text = new DrawText { DrawTextShadow = false };
         public DrawImage Image = new DrawImage();
 
-        public Image Apply(Image img)
+        public Bitmap Apply(Bitmap bmp)
         {
             Text.Placement = Image.Placement = Placement;
             Text.Offset = Image.Offset = new Point(Offset, Offset);
@@ -44,9 +44,9 @@ namespace ShareX.ImageEffectsLib
             {
                 default:
                 case WatermarkType.Text:
-                    return Text.Apply(img);
+                    return Text.Apply(bmp);
                 case WatermarkType.Image:
-                    return Image.Apply(img);
+                    return Image.Apply(bmp);
             }
         }
     }

@@ -121,7 +121,7 @@
     <value>ShareX - 螢幕錄製</value>
   </data>
   <data name="btnAbort.Text" xml:space="preserve">
-    <value>停止</value>
+    <value>中止</value>
   </data>
   <data name="btnStart.Text" xml:space="preserve">
     <value>開始</value>

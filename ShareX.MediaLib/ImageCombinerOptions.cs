@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.HelpersLib;
 using System.Windows.Forms;
 
 namespace ShareX.MediaLib
@@ -30,6 +31,7 @@ namespace ShareX.MediaLib
     public class ImageCombinerOptions
     {
         public Orientation Orientation { get; set; } = Orientation.Vertical;
+        public ImageCombinerAlignment Alignment { get; set; } = ImageCombinerAlignment.LeftOrTop;
         public int Space { get; set; } = 0;
     }
 }

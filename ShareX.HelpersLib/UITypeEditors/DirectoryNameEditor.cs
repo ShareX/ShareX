@@ -38,14 +38,17 @@ namespace ShareX.HelpersLib
             {
                 return base.EditValue(context, provider, value);
             }
+
             using (FolderSelectDialog dlg = new FolderSelectDialog())
             {
                 dlg.Title = Resources.DirectoryNameEditor_EditValue_Browse_for_a_folder___;
+
                 if (dlg.ShowDialog())
                 {
-                    value = Helpers.GetVariableFolderPath(dlg.FileName);
+                    value = Helpers.GetVariableFolderPath(dlg.FileName, true);
                 }
             }
+
             return value;
         }
     }

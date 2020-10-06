@@ -36,10 +36,11 @@ namespace ShareX.HelpersLib
 {
     public static class ClipboardHelpers
     {
+        public const string FORMAT_PNG = "PNG";
+        public const string FORMAT_17 = "Format17";
+
         private const int RetryTimes = 20;
         private const int RetryDelay = 100;
-        private const string FORMAT_PNG = "PNG";
-        private const string FORMAT_17 = "Format17";
 
         private static readonly object ClipboardLock = new object();
 
@@ -103,12 +104,17 @@ namespace ShareX.HelpersLib
             return false;
         }
 
-        public static bool CopyImage(Image img)
+        public static bool CopyImage(Image img, string fileName = null)
         {
             if (img != null)
             {
                 try
                 {
+                    if (HelpersOptions.UseAlternativeClipboardCopyImage)
+                    {
+                        return CopyImageAlternative2(img, fileName);
+                    }
+
                     if (HelpersOptions.DefaultCopyImageFillBackground)
                     {
                         return CopyImageDefaultFillBackground(img, Color.White);
@@ -157,11 +163,44 @@ namespace ShareX.HelpersLib
                 IDataObject dataObject = new DataObject();
 
                 img.Save(msPNG, ImageFormat.Png);
-                dataObject.SetData("PNG", false, msPNG);
+                dataObject.SetData(FORMAT_PNG, false, msPNG);
 
                 img.Save(msBMP, ImageFormat.Bmp);
                 msBMP.CopyStreamTo(msDIB, 14, (int)msBMP.Length - 14);
                 dataObject.SetData(DataFormats.Dib, true, msDIB);
+
+                return CopyData(dataObject);
+            }
+        }
+
+        private static bool CopyImageAlternative2(Image img, string fileName = null)
+        {
+            using (Bitmap bmpNonTransparent = img.CreateEmptyBitmap(PixelFormat.Format24bppRgb))
+            using (MemoryStream msPNG = new MemoryStream())
+            using (MemoryStream msDIB = new MemoryStream())
+            {
+                IDataObject dataObject = new DataObject();
+
+                using (Graphics g = Graphics.FromImage(bmpNonTransparent))
+                {
+                    g.Clear(Color.White);
+                    g.DrawImage(img, 0, 0, img.Width, img.Height);
+                }
+
+                dataObject.SetData(DataFormats.Bitmap, true, bmpNonTransparent);
+
+                img.Save(msPNG, ImageFormat.Png);
+                dataObject.SetData(FORMAT_PNG, false, msPNG);
+
+                byte[] dibData = ClipboardHelpersEx.ConvertToDib(img);
+                msDIB.Write(dibData, 0, dibData.Length);
+                dataObject.SetData(DataFormats.Dib, false, msDIB);
+
+                if (!string.IsNullOrEmpty(fileName))
+                {
+                    string htmlFragment = GenerateHTMLFragment($"<img src=\"{fileName}\"/>");
+                    dataObject.SetData(DataFormats.Html, htmlFragment);
+                }
 
                 return CopyData(dataObject);
             }
@@ -203,9 +242,10 @@ namespace ShareX.HelpersLib
             {
                 try
                 {
-                    using (Image img = ImageHelpers.LoadImage(path))
+                    using (Bitmap bmp = ImageHelpers.LoadImage(path))
                     {
-                        return CopyImage(img);
+                        string fileName = Path.GetFileName(path);
+                        return CopyImage(bmp, fileName);
                     }
                 }
                 catch (Exception e)
@@ -235,7 +275,7 @@ namespace ShareX.HelpersLib
             return false;
         }
 
-        public static Image GetImage(bool checkContainsImage = false)
+        public static Bitmap GetImage(bool checkContainsImage = false)
         {
             try
             {
@@ -243,7 +283,7 @@ namespace ShareX.HelpersLib
                 {
                     if (!checkContainsImage || Clipboard.ContainsImage())
                     {
-                        return Clipboard.GetImage();
+                        return (Bitmap)Clipboard.GetImage();
                     }
                 }
             }
@@ -381,6 +421,37 @@ namespace ShareX.HelpersLib
             }
 
             return null;
+        }
+
+        private static string GenerateHTMLFragment(string html)
+        {
+            StringBuilder sb = new StringBuilder();
+
+            string header = "Version:0.9\r\nStartHTML:<<<<<<<<<1\r\nEndHTML:<<<<<<<<<2\r\nStartFragment:<<<<<<<<<3\r\nEndFragment:<<<<<<<<<4\r\n";
+            string startHTML = "<html>\r\n<body>\r\n";
+            string startFragment = "<!--StartFragment-->";
+            string endFragment = "<!--EndFragment-->";
+            string endHTML = "\r\n</body>\r\n</html>";
+
+            sb.Append(header);
+
+            int startHTMLLength = header.Length;
+            int startFragmentLength = startHTMLLength + startHTML.Length + startFragment.Length;
+            int endFragmentLength = startFragmentLength + Encoding.UTF8.GetByteCount(html);
+            int endHTMLLength = endFragmentLength + endFragment.Length + endHTML.Length;
+
+            sb.Replace("<<<<<<<<<1", startHTMLLength.ToString("D10"));
+            sb.Replace("<<<<<<<<<2", endHTMLLength.ToString("D10"));
+            sb.Replace("<<<<<<<<<3", startFragmentLength.ToString("D10"));
+            sb.Replace("<<<<<<<<<4", endFragmentLength.ToString("D10"));
+
+            sb.Append(startHTML);
+            sb.Append(startFragment);
+            sb.Append(html);
+            sb.Append(endFragment);
+            sb.Append(endHTML);
+
+            return sb.ToString();
         }
     }
 }

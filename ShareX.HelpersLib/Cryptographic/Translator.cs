@@ -97,12 +97,9 @@ namespace ShareX.HelpersLib
         public string SHA384 { get; private set; }
         public string SHA512 { get; private set; }
 
-        // http://en.wikipedia.org/wiki/RIPEMD
-        public string RIPEMD160 { get; private set; }
-
         public void Clear()
         {
-            Text = Base64 = CRC32 = MD5 = SHA1 = SHA256 = SHA384 = SHA512 = RIPEMD160 = null;
+            Text = Base64 = CRC32 = MD5 = SHA1 = SHA256 = SHA384 = SHA512 = null;
             Binary = null;
             Hexadecimal = null;
             ASCII = null;
@@ -127,7 +124,6 @@ namespace ShareX.HelpersLib
                     SHA256 = TranslatorHelper.TextToHash(text, HashType.SHA256, true);
                     SHA384 = TranslatorHelper.TextToHash(text, HashType.SHA384, true);
                     SHA512 = TranslatorHelper.TextToHash(text, HashType.SHA512, true);
-                    RIPEMD160 = TranslatorHelper.TextToHash(text, HashType.RIPEMD160, true);
                     return true;
                 }
             }
@@ -207,7 +203,6 @@ namespace ShareX.HelpersLib
             sb.AppendLine($"SHA-256: {SHA256}");
             sb.AppendLine($"SHA-384: {SHA384}");
             sb.AppendLine($"SHA-512: {SHA512}");
-            sb.Append($"RIPEMD-160: {RIPEMD160}");
             return sb.ToString();
         }
 

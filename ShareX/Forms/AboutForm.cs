@@ -46,21 +46,19 @@ namespace ShareX
 
             ShareXResources.ApplyTheme(this);
 
-#if STEAM || WindowsStore
+#if STEAM
             uclUpdate.Visible = false;
+            lblBuild.Text = "Steam build";
             lblBuild.Visible = true;
-
-            if (Program.Build == ShareXBuild.Steam)
-            {
-                lblBuild.Text = "Steam build";
-            }
-            else if (Program.Build == ShareXBuild.MicrosoftStore)
-            {
-                lblBuild.Text = "Microsoft Store build";
-            }
+#elif WindowsStore
+            uclUpdate.Visible = false;
+            lblBuild.Text = "Microsoft Store build";
+            lblBuild.Visible = true;
 #else
             if (!Program.PortableApps)
             {
+                uclUpdate.UpdateLoadingImage();
+
                 UpdateChecker updateChecker = Program.UpdateManager.CreateUpdateChecker();
                 uclUpdate.CheckUpdate(updateChecker);
             }
@@ -100,6 +98,8 @@ https://github.com/ShareX/ShareX/graphs/contributors
 {Resources.AboutForm_AboutForm_Language_uk}: https://github.com/6c6c6
 {Resources.AboutForm_AboutForm_Language_id_ID}: https://github.com/Nicedward
 {Resources.AboutForm_AboutForm_Language_es_MX}: https://github.com/absay
+{Resources.AboutForm_AboutForm_Language_fa_IR}: https://github.com/pourmand1376
+{Resources.AboutForm_AboutForm_Language_pt_PT}: https://github.com/FarewellAngelina
 
 {Resources.AboutForm_AboutForm_External_libraries}:
 
@@ -108,7 +108,6 @@ SSH.NET: https://github.com/sshnet/SSH.NET
 Icons: http://p.yusukekamiyamane.com
 ImageListView: https://github.com/oozcitak/imagelistview
 FFmpeg: https://www.ffmpeg.org
-Zeranoe FFmpeg: https://ffmpeg.zeranoe.com/builds
 DirectShow video and audio device: https://github.com/rdp/screen-capture-recorder-to-video-windows-free
 FluentFTP: https://github.com/robinrodricks/FluentFTP
 Steamworks.NET: https://github.com/rlabrecque/Steamworks.NET

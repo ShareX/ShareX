@@ -108,16 +108,16 @@ namespace ShareX
 
             if (!rect.IsEmpty)
             {
-                Image img = TaskHelpers.GetScreenshot(TaskSettings).CaptureRectangle(rect);
+                Bitmap bmp = TaskHelpers.GetScreenshot(TaskSettings).CaptureRectangle(rect);
 
-                if (img != null)
+                if (bmp != null)
                 {
                     TaskSettings.UseDefaultAfterCaptureJob = false;
                     TaskSettings.AfterCaptureJob = TaskSettings.AfterCaptureJob.Remove(AfterCaptureTasks.AnnotateImage);
                     TaskSettings.UseDefaultAdvancedSettings = false;
                     TaskSettings.AdvancedSettings.DisableNotifications = true;
 
-                    UploadManager.RunImageTask(img, TaskSettings, true, true);
+                    UploadManager.RunImageTask(bmp, TaskSettings, true, true);
                 }
             }
         }

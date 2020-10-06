@@ -30,11 +30,11 @@ namespace ShareX.ImageEffectsLib
 {
     internal class Inverse : ImageEffect
     {
-        public override Image Apply(Image img)
+        public override Bitmap Apply(Bitmap bmp)
         {
-            using (img)
+            using (bmp)
             {
-                return ColorMatrixManager.Inverse().Apply(img);
+                return ColorMatrixManager.Inverse().Apply(bmp);
             }
         }
     }

@@ -129,18 +129,6 @@
   <data name="Stop" xml:space="preserve">
     <value>Arrêter</value>
   </data>
-  <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__Image__Size___0_x_1__" xml:space="preserve">
-    <value>Contenu du presse-papier : Image (Taille : {0}x{1})</value>
-  </data>
-  <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__Text__Length___0__" xml:space="preserve">
-    <value>Contenu du presse-papier : Texte (Longueur : {0})</value>
-  </data>
-  <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__File__Count___0__" xml:space="preserve">
-    <value>Contenu du presse-papier : Fichier (Quantité : {0})</value>
-  </data>
-  <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_is_empty_or_contains_unknown_data_" xml:space="preserve">
-    <value>Le presse-papier est vide ou contient des données inconnues.</value>
-  </data>
   <data name="PrintTextForm_LoadSettings_Name___0___Size___1_" xml:space="preserve">
     <value>Nom : {0}, taille : {1}</value>
   </data>
@@ -393,7 +381,7 @@ Taille du fichier : {2:n0} / {3:n0} Ko</value>
     <value>Raccourcisseur d'URL personnalisé</value>
   </data>
   <data name="AfterCaptureTasks_AddImageEffects" xml:space="preserve">
-    <value>Ajouter des effets d'image / filigrane</value>
+    <value>Ajouter des effets d'image</value>
   </data>
   <data name="AfterCaptureTasks_AnnotateImage" xml:space="preserve">
     <value>Modifier l'image</value>
@@ -818,7 +806,7 @@ Voulez-vous la télécharger ?</value>
     <value>Titre de la fenêtre active</value>
   </data>
   <data name="ReplCodeMenuEntry_uln_User_login_name" xml:space="preserve">
-    <value>Nom de connexion de l'utilisateur </value>
+    <value>Identifiant de connexion de l'utilisateur</value>
   </data>
   <data name="ReplCodeMenuEntry_unix_Unix_timestamp" xml:space="preserve">
     <value>Heure Unix</value>
@@ -1039,9 +1027,6 @@ Voulez-vous la télécharger ?</value>
   <data name="PNGBitDepth_Bit24" xml:space="preserve">
     <value>24 bits</value>
   </data>
-  <data name="ImageEditorInterpolationMode_Bilinear" xml:space="preserve">
-    <value>Bilinéaire</value>
-  </data>
   <data name="PNGBitDepth_Bit32" xml:space="preserve">
     <value>32 bits</value>
   </data>
@@ -1066,12 +1051,6 @@ Voulez-vous la télécharger ?</value>
   <data name="UpdateMessageBox_UpdateMessageBox_CurrentVersion" xml:space="preserve">
     <value>Version actuelle</value>
   </data>
-  <data name="ImageEditorInterpolationMode_HighQualityBilinear" xml:space="preserve">
-    <value>Bilinéaire haute qualité</value>
-  </data>
-  <data name="ImageEditorInterpolationMode_HighQualityBicubic" xml:space="preserve">
-    <value>Bicubique haute qualité</value>
-  </data>
   <data name="PastebinExpiration_H1" xml:space="preserve">
     <value>1 heure</value>
   </data>
@@ -1086,9 +1065,6 @@ Voulez-vous la télécharger ?</value>
   </data>
   <data name="Extensions_AddContextMenu_Redo" xml:space="preserve">
     <value>Répéter</value>
-  </data>
-  <data name="ImageEditorInterpolationMode_Bicubic" xml:space="preserve">
-    <value>Bicubique</value>
   </data>
   <data name="PastebinExpiration_W1" xml:space="preserve">
     <value>1 semaine</value>
@@ -1123,9 +1099,6 @@ Voulez-vous la télécharger ?</value>
   <data name="Extensions_AddContextMenu_SelectAll" xml:space="preserve">
     <value>Tout sélectionner</value>
   </data>
-  <data name="ImageEditorInterpolationMode_NearestNeighbor" xml:space="preserve">
-    <value>Voisin le plus proche</value>
-  </data>
   <data name="PastebinPrivacy_Private" xml:space="preserve">
     <value>Privé (membres uniquement)</value>
   </data>
@@ -1154,7 +1127,7 @@ Voulez-vous la télécharger ?</value>
     <value>Autocollant</value>
   </data>
   <data name="ScrollingCaptureScrollTopMethod_All" xml:space="preserve">
-    <value>D'abord simule une pression sur la touche "Accueil" puis envoie un message pour défiler vers le haut.</value>
+    <value>Simule d'abord une pression sur la touche "Accueil" puis envoie un message pour défiler vers le haut</value>
   </data>
   <data name="ImageEditorStartMode_Maximized" xml:space="preserve">
     <value>Agrandi</value>
@@ -1167,5 +1140,74 @@ Voulez-vous la télécharger ?</value>
   </data>
   <data name="ScrollingCaptureScrollTopMethod_SendMessageTop" xml:space="preserve">
     <value>Envoyer un message défiler en haut</value>
+  </data>
+  <data name="ObjectListView_ObjectListView_Name" xml:space="preserve">
+    <value>Nom</value>
+  </data>
+  <data name="ObjectListView_ObjectListView_Value" xml:space="preserve">
+    <value>Valeur</value>
+  </data>
+  <data name="ObjectListView_ObjectListView_Copy_value" xml:space="preserve">
+    <value>Copier valeur</value>
+  </data>
+  <data name="ObjectListView_ObjectListView_Copy_name" xml:space="preserve">
+    <value>Copier nom</value>
+  </data>
+  <data name="ReplCodeMenuEntry_wy_Week_of_year" xml:space="preserve">
+    <value>Semaine de l'année</value>
+  </data>
+  <data name="RandomEmojiRepeatUsingN" xml:space="preserve">
+    <value>Emoji aléatoire. Répéter avec {n}</value>
+  </data>
+  <data name="ShapeType_DrawingSmartEraser" xml:space="preserve">
+    <value>Gomme intelligente</value>
+  </data>
+  <data name="DrawImageSizeMode_DontResize" xml:space="preserve">
+    <value>Ne pas redimensionner</value>
+  </data>
+  <data name="AmazonS3StorageClass_INTELLIGENT_TIERING" xml:space="preserve">
+    <value>Amazon S3 Intelligent-Tiering</value>
+  </data>
+  <data name="HotkeyType_ImageThumbnailer_Category" xml:space="preserve">
+    <value>Outils</value>
+  </data>
+  <data name="HotkeyType_QRCodeDecodeFromScreen_Category" xml:space="preserve">
+    <value>Outils</value>
+  </data>
+  <data name="HotkeyType_VideoConverter_Category" xml:space="preserve">
+    <value>Outils</value>
+  </data>
+  <data name="HotkeyType_ImageSplitter_Category" xml:space="preserve">
+    <value>Outils</value>
+  </data>
+  <data name="DrawImageSizeMode_PercentageOfCanvas" xml:space="preserve">
+    <value>Pourcentage du canevas</value>
+  </data>
+  <data name="HotkeyType_ImageThumbnailer" xml:space="preserve">
+    <value>Générateur de miniatures d'image</value>
+  </data>
+  <data name="AmazonS3StorageClass_DEEP_ARCHIVE" xml:space="preserve">
+    <value>Amazon S3 Glacier Deep Archive</value>
+  </data>
+  <data name="HotkeyType_QRCodeDecodeFromScreen" xml:space="preserve">
+    <value>Code QR (Décoder depuis l'écran)</value>
+  </data>
+  <data name="DrawImageSizeMode_AbsoluteSize" xml:space="preserve">
+    <value>Taille absolue</value>
+  </data>
+  <data name="AmazonS3StorageClass_ONEZONE_IA" xml:space="preserve">
+    <value>Amazon S3 One Zone-Infrequent Access</value>
+  </data>
+  <data name="AmazonS3StorageClass_GLACIER" xml:space="preserve">
+    <value>Amazon S3 Glacier</value>
+  </data>
+  <data name="HotkeyType_VideoConverter" xml:space="preserve">
+    <value>Convertisseur vidéo</value>
+  </data>
+  <data name="HotkeyType_ImageSplitter" xml:space="preserve">
+    <value>Découpeur d'image</value>
+  </data>
+  <data name="DrawImageSizeMode_PercentageOfWatermark" xml:space="preserve">
+    <value>Pourcentage de l'image</value>
   </data>
 </root>

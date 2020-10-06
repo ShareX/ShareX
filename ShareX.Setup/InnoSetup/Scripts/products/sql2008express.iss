@@ -3,7 +3,7 @@
 ; requires Windows Installer 4.5 or later
 ; SQL Server Express is supported on x64 and EMT64 systems in Windows On Windows (WOW). SQL Server Express is not supported on IA64 systems
 ; SQLEXPR32.EXE is a smaller package that can be used to install SQL Server Express on 32-bit operating systems only. The larger SQLEXPR.EXE package supports installing onto both 32-bit and 64-bit (WOW install) operating systems. There is no other difference between these packages.
-; http://www.microsoft.com/download/en/details.aspx?id=3743
+; https://www.microsoft.com/download/en/details.aspx?id=3743
 
 [CustomMessages]
 sql2008expressr2_title=SQL Server 2008 Express R2

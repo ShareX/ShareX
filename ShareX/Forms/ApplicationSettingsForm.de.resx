@@ -333,9 +333,6 @@
   <data name="gbChrome.Text" xml:space="preserve">
     <value>Chrome-Erweiterung</value>
   </data>
-  <data name="tpExportImport.Text" xml:space="preserve">
-    <value>Export / Import</value>
-  </data>
   <data name="gbFirefox.Text" xml:space="preserve">
     <value>Firefox-Erweiterung</value>
   </data>
@@ -345,14 +342,8 @@
   <data name="cbEditWithShareX.Text" xml:space="preserve">
     <value>"Mit ShareX bearbeiten"-Eintrag im Kontextmenü anzeigen</value>
   </data>
-  <data name="cbExperimentalDarkTheme.Text" xml:space="preserve">
-    <value>Experimentelles dunkles Design</value>
-  </data>
   <data name="cbUseWhiteShareXIcon.Text" xml:space="preserve">
     <value>Weißes ShareX-Icon verwenden</value>
-  </data>
-  <data name="cbUseDarkTheme.Text" xml:space="preserve">
-    <value>Dunkles Design verwenden</value>
   </data>
   <data name="btnPersonalFolderPathApply.Text" xml:space="preserve">
     <value>Übernehmen</value>
@@ -371,9 +362,6 @@
   </data>
   <data name="btnThemeAdd.Text" xml:space="preserve">
     <value>Hinzufügen</value>
-  </data>
-  <data name="btnApplyTheme.Text" xml:space="preserve">
-    <value>Design anwenden</value>
   </data>
   <data name="tpTheme.Text" xml:space="preserve">
     <value>Design</value>

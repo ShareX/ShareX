@@ -76,7 +76,7 @@ namespace ShareX
 
             Screenshot screenshot = TaskHelpers.GetScreenshot(taskSettings);
             screenshot.CaptureCursor = false;
-            Image img = screenshot.CaptureFullscreen();
+            Bitmap bmp = screenshot.CaptureFullscreen();
 
             CursorData cursorData = null;
 
@@ -85,7 +85,7 @@ namespace ShareX
                 cursorData = new CursorData();
             }
 
-            using (RegionCaptureForm form = new RegionCaptureForm(mode, taskSettings.CaptureSettingsReference.SurfaceOptions, img))
+            using (RegionCaptureForm form = new RegionCaptureForm(mode, taskSettings.CaptureSettingsReference.SurfaceOptions, bmp))
             {
                 if (cursorData != null && cursorData.IsVisible)
                 {
@@ -118,42 +118,42 @@ namespace ShareX
 
         protected ImageInfo ExecuteRegionCaptureLight(TaskSettings taskSettings)
         {
-            Image img = null;
+            Bitmap bmp = null;
 
             using (RegionCaptureLightForm rectangleLight = new RegionCaptureLightForm(TaskHelpers.GetScreenshot(taskSettings)))
             {
                 if (rectangleLight.ShowDialog() == DialogResult.OK)
                 {
-                    img = rectangleLight.GetAreaImage();
+                    bmp = rectangleLight.GetAreaImage();
 
-                    if (img != null)
+                    if (bmp != null)
                     {
                         lastRegionCaptureType = RegionCaptureType.Light;
                     }
                 }
             }
 
-            return new ImageInfo(img);
+            return new ImageInfo(bmp);
         }
 
         protected ImageInfo ExecuteRegionCaptureTransparent(TaskSettings taskSettings)
         {
-            Image img = null;
+            Bitmap bmp = null;
 
             using (RegionCaptureTransparentForm rectangleTransparent = new RegionCaptureTransparentForm())
             {
                 if (rectangleTransparent.ShowDialog() == DialogResult.OK)
                 {
-                    img = rectangleTransparent.GetAreaImage(TaskHelpers.GetScreenshot(taskSettings));
+                    bmp = rectangleTransparent.GetAreaImage(TaskHelpers.GetScreenshot(taskSettings));
 
-                    if (img != null)
+                    if (bmp != null)
                     {
                         lastRegionCaptureType = RegionCaptureType.Transparent;
                     }
                 }
             }
 
-            return new ImageInfo(img);
+            return new ImageInfo(bmp);
         }
     }
 }

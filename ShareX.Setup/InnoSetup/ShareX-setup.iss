@@ -21,7 +21,7 @@ AppSupportURL=https://github.com/ShareX/ShareX/issues
 AppUpdatesURL=https://github.com/ShareX/ShareX/releases
 AppVerName={#MyAppName} {#MyAppVersion}
 AppVersion={#MyAppVersion}
-ArchitecturesAllowed=x86 x64 ia64
+ArchitecturesAllowed=x86 x64 ia64 arm64
 ArchitecturesInstallIn64BitMode=x64 ia64
 DefaultDirName={pf}\{#MyAppName}
 DefaultGroupName={#MyAppName}
@@ -33,7 +33,7 @@ DisableReadyPage=no
 DisableReadyMemo=no
 DisableFinishedPage=no
 LicenseFile={#MyAppRootDirectory}\LICENSE.txt
-; .NET 4.6.2 is supported only on Windows 7 SP1 and up
+; .NET 4.7.2 is supported only on Windows 7 SP1 and up
 MinVersion=0,6.1.7601
 OutputBaseFilename={#MyAppName}-{#MyAppVersion}-setup
 OutputDir={#MyAppOutputDirectory}
@@ -74,6 +74,7 @@ Source: "{#MyAppReleaseDirectory}\it-IT\*.resources.dll"; DestDir: {app}\Languag
 Source: "{#MyAppReleaseDirectory}\ko-KR\*.resources.dll"; DestDir: {app}\Languages\ko-KR; Flags: ignoreversion
 Source: "{#MyAppReleaseDirectory}\nl-NL\*.resources.dll"; DestDir: {app}\Languages\nl-NL; Flags: ignoreversion
 Source: "{#MyAppReleaseDirectory}\pt-BR\*.resources.dll"; DestDir: {app}\Languages\pt-BR; Flags: ignoreversion
+Source: "{#MyAppReleaseDirectory}\pt-PT\*.resources.dll"; DestDir: {app}\Languages\pt-PT; Flags: ignoreversion
 Source: "{#MyAppReleaseDirectory}\ru\*.resources.dll"; DestDir: {app}\Languages\ru; Flags: ignoreversion
 Source: "{#MyAppReleaseDirectory}\tr\*.resources.dll"; DestDir: {app}\Languages\tr; Flags: ignoreversion
 Source: "{#MyAppReleaseDirectory}\uk\*.resources.dll"; DestDir: {app}\Languages\uk; Flags: ignoreversion
@@ -104,6 +105,8 @@ Root: "HKCU"; Subkey: "Software\Classes\*\shell\{#MyAppName}"; Flags: dontcreate
 Root: "HKCU"; Subkey: "Software\Classes\Directory\shell\{#MyAppName}"; Flags: dontcreatekey uninsdeletekey
 Root: "HKCU"; Subkey: "Software\Classes\.sxcu"; Flags: dontcreatekey uninsdeletekey
 Root: "HKCU"; Subkey: "Software\Classes\ShareX.sxcu"; Flags: dontcreatekey uninsdeletekey
+Root: "HKCU"; Subkey: "Software\Classes\.sxie"; Flags: dontcreatekey uninsdeletekey
+Root: "HKCU"; Subkey: "Software\Classes\ShareX.sxie"; Flags: dontcreatekey uninsdeletekey
 Root: "HKCU"; Subkey: "Software\Classes\SystemFileAssociations\image\shell\ShareXImageEditor"; Flags: dontcreatekey uninsdeletekey
 
 [CustomMessages]
@@ -114,13 +117,13 @@ DependenciesDir=Dependencies
 #include "Scripts\products\winversion.iss"
 #include "Scripts\products\fileversion.iss"
 #include "Scripts\products\dotnetfxversion.iss"
-#include "scripts\products\dotnetfx46.iss"
+#include "scripts\products\dotnetfx47.iss"
 
 [Code]
 function InitializeSetup(): Boolean;
 begin
   initwinversion();
-  dotnetfx46(62);
+  dotnetfx47(72);
   Result := true;
 end;
 

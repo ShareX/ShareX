@@ -40,11 +40,27 @@ namespace ShareX
 {
     public partial class QRCodeForm : Form
     {
+        private static QRCodeForm instance;
+
+        public static QRCodeForm Instance
+        {
+            get
+            {
+                if (instance == null || instance.IsDisposed)
+                {
+                    instance = new QRCodeForm();
+                }
+
+                return instance;
+            }
+        }
+
         private bool isReady;
 
         public QRCodeForm(string text = null)
         {
             InitializeComponent();
+            rtbDecodeResult.AddContextMenu();
             ShareXResources.ApplyTheme(this);
 
             if (!string.IsNullOrEmpty(text))
@@ -65,11 +81,19 @@ namespace ShareX
             return new QRCodeForm();
         }
 
-        public static QRCodeForm DecodeFile(string filePath)
+        public static QRCodeForm OpenFormDecodeFromFile(string filePath)
         {
             QRCodeForm form = new QRCodeForm();
             form.tcMain.SelectedTab = form.tpDecode;
             form.DecodeFromFile(filePath);
+            return form;
+        }
+
+        public static QRCodeForm OpenFormDecodeFromScreen()
+        {
+            QRCodeForm form = Instance;
+            form.tcMain.SelectedTab = form.tpDecode;
+            form.DecodeFromScreen();
             return form;
         }
 
@@ -122,13 +146,39 @@ namespace ShareX
         {
             if (!string.IsNullOrEmpty(filePath))
             {
-                using (Image img = ImageHelpers.LoadImage(filePath))
+                using (Bitmap bmp = ImageHelpers.LoadImage(filePath))
                 {
-                    if (img != null)
+                    if (bmp != null)
                     {
-                        DecodeImage((Bitmap)img);
+                        DecodeImage(bmp);
                     }
                 }
+            }
+        }
+
+        private void DecodeFromScreen()
+        {
+            try
+            {
+                if (Visible)
+                {
+                    Hide();
+                    Thread.Sleep(250);
+                }
+
+                TaskSettings taskSettings = TaskSettings.GetDefaultTaskSettings();
+
+                using (Bitmap bmp = RegionCaptureTasks.GetRegionImage(taskSettings.CaptureSettings.SurfaceOptions))
+                {
+                    if (bmp != null)
+                    {
+                        DecodeImage(bmp);
+                    }
+                }
+            }
+            finally
+            {
+                this.ForceActivate();
             }
         }
 
@@ -194,8 +244,8 @@ namespace ShareX
         {
             if (pbQRCode.Image != null)
             {
-                Image img = (Image)pbQRCode.Image.Clone();
-                UploadManager.UploadImage(img);
+                Bitmap bmp = (Bitmap)pbQRCode.Image.Clone();
+                UploadManager.UploadImage(bmp);
             }
         }
 
@@ -211,25 +261,7 @@ namespace ShareX
 
         private void btnDecodeFromScreen_Click(object sender, EventArgs e)
         {
-            try
-            {
-                Hide();
-                Thread.Sleep(250);
-
-                TaskSettings taskSettings = TaskSettings.GetDefaultTaskSettings();
-
-                using (Image img = RegionCaptureTasks.GetRegionImage(taskSettings.CaptureSettings.SurfaceOptions))
-                {
-                    if (img != null)
-                    {
-                        DecodeImage((Bitmap)img);
-                    }
-                }
-            }
-            finally
-            {
-                this.ForceActivate();
-            }
+            DecodeFromScreen();
         }
 
         private void btnDecodeFromFile_Click(object sender, EventArgs e)

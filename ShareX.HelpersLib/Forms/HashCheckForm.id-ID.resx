@@ -123,9 +123,6 @@
   <data name="lblTarget.Text" xml:space="preserve">
     <value>Target:</value>
   </data>
-  <data name="lblFile.Text" xml:space="preserve">
-    <value>Jalur file:</value>
-  </data>
   <data name="btnHashCheckCopyAll.Text" xml:space="preserve">
     <value>Salin semua</value>
   </data>

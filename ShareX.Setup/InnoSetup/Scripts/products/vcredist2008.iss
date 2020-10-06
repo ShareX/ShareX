@@ -1,10 +1,10 @@
 ; requires Windows 2000 Service Pack 4, Windows Server 2003, Windows Vista, Windows XP
 ; requires Windows Installer 3.0
-; http://www.microsoft.com/en-us/download/details.aspx?id=29
+; https://www.microsoft.com/en-us/download/details.aspx?id=29
 
 [CustomMessages]
-vcredist2008_title=Visual C++ 2008 Redistributable
-vcredist2008_title_x64=Visual C++ 2008 64-Bit Redistributable
+vcredist2008_title=Visual C++ 2008 Redistributable (x86)
+vcredist2008_title_x64=Visual C++ 2008 Redistributable (x64)
 
 vcredist2008_size=4.3 MB
 vcredist2008_size_x64=5.0 MB

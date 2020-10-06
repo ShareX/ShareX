@@ -141,9 +141,6 @@
   <data name="rtbStats.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="rtbStats.Text" xml:space="preserve">
-    <value />
-  </data>
   <data name="&gt;&gt;rtbStats.Name" xml:space="preserve">
     <value>rtbStats</value>
   </data>
@@ -185,9 +182,6 @@
   </data>
   <data name="&gt;&gt;pStats.ZOrder" xml:space="preserve">
     <value>0</value>
-  </data>
-  <data name="chIcon.Text" xml:space="preserve">
-    <value />
   </data>
   <data name="chIcon.Width" type="System.Int32, mscorlib">
     <value>24</value>

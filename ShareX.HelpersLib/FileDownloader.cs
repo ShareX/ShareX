@@ -24,16 +24,18 @@
 #endregion License Information (GPL v3)
 
 using System;
-using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
 using System.Net;
 using System.Threading;
+using System.Threading.Tasks;
 
 namespace ShareX.HelpersLib
 {
     public class FileDownloader
     {
+        public event EventHandler FileSizeReceived, DownloadStarted, ProgressChanged, DownloadCompleted, ExceptionThrown;
+
         public string URL { get; private set; }
         public string DownloadLocation { get; private set; }
         public bool IsDownloading { get; private set; }
@@ -60,9 +62,6 @@ namespace ShareX.HelpersLib
         public string AcceptHeader { get; set; }
         public Exception LastException { get; private set; }
 
-        public event EventHandler FileSizeReceived, DownloadStarted, ProgressChanged, DownloadCompleted, ExceptionThrown;
-
-        private BackgroundWorker worker;
         private const int bufferSize = 32768;
 
         public FileDownloader(string url, string downloadLocation, IWebProxy proxy = null, string acceptHeader = null)
@@ -71,23 +70,18 @@ namespace ShareX.HelpersLib
             DownloadLocation = downloadLocation;
             Proxy = proxy;
             AcceptHeader = acceptHeader;
-
-            worker = new BackgroundWorker();
-            worker.WorkerReportsProgress = true;
-            worker.DoWork += worker_DoWork;
-            worker.ProgressChanged += worker_ProgressChanged;
-            worker.RunWorkerCompleted += worker_RunWorkerCompleted;
         }
 
         public void StartDownload()
         {
-            if (!IsDownloading && !string.IsNullOrEmpty(URL) && !worker.IsBusy)
+            if (!IsDownloading && !string.IsNullOrEmpty(URL))
             {
                 IsDownloading = true;
                 IsCanceled = false;
                 IsPaused = false;
 
-                worker.RunWorkerAsync();
+                Progress<EventHandler> progress = new Progress<EventHandler>(OnProgressChanged);
+                Task.Run(() => DoWork(progress));
             }
         }
 
@@ -106,12 +100,12 @@ namespace ShareX.HelpersLib
             IsPaused = false;
         }
 
-        private void ThrowEvent(EventHandler eventHandler)
+        private void OnProgressChanged(EventHandler eventHandler)
         {
-            worker.ReportProgress(0, eventHandler);
+            eventHandler?.Invoke(this, EventArgs.Empty);
         }
 
-        private void worker_DoWork(object sender, DoWorkEventArgs e)
+        private void DoWork(IProgress<EventHandler> progress)
         {
             try
             {
@@ -128,7 +122,7 @@ namespace ShareX.HelpersLib
                 {
                     FileSize = response.ContentLength;
 
-                    ThrowEvent(FileSizeReceived);
+                    progress.Report(FileSizeReceived);
 
                     if (FileSize > 0)
                     {
@@ -142,9 +136,9 @@ namespace ShareX.HelpersLib
                         using (FileStream fs = new FileStream(DownloadLocation, FileMode.Create, FileAccess.Write, FileShare.Read))
                         using (Stream responseStream = response.GetResponseStream())
                         {
-                            ThrowEvent(DownloadStarted);
+                            progress.Report(DownloadStarted);
 
-                            while (DownloadedSize < FileSize && !worker.CancellationPending)
+                            while (DownloadedSize < FileSize && !IsCanceled)
                             {
                                 while (IsPaused && !IsCanceled)
                                 {
@@ -181,14 +175,14 @@ namespace ShareX.HelpersLib
 
                                 if (progressEventTimer.ElapsedMilliseconds > 100)
                                 {
-                                    ThrowEvent(ProgressChanged);
+                                    progress.Report(ProgressChanged);
 
                                     progressEventTimer.Reset();
                                 }
                             }
 
-                            ThrowEvent(ProgressChanged);
-                            ThrowEvent(DownloadCompleted);
+                            progress.Report(ProgressChanged);
+                            progress.Report(DownloadCompleted);
                         }
                     }
                 }
@@ -199,7 +193,7 @@ namespace ShareX.HelpersLib
                 {
                     LastException = ex;
 
-                    ThrowEvent(ExceptionThrown);
+                    progress.Report(ExceptionThrown);
                 }
             }
             finally
@@ -217,22 +211,9 @@ namespace ShareX.HelpersLib
                     {
                     }
                 }
+
+                IsDownloading = false;
             }
-        }
-
-        private void worker_ProgressChanged(object sender, ProgressChangedEventArgs e)
-        {
-            EventHandler eventHandler = e.UserState as EventHandler;
-
-            if (eventHandler != null)
-            {
-                eventHandler(this, EventArgs.Empty);
-            }
-        }
-
-        private void worker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
-        {
-            IsDownloading = false;
         }
     }
 }

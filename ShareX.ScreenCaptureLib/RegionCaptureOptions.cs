@@ -71,6 +71,8 @@ namespace ShareX.ScreenCaptureLib
         public bool IsFixedSize = false;
         public Size FixedSize = new Size(250, 250);
         public bool ShowFPS = false;
+        public int MenuIconSize = 0;
+        public bool MenuLocked = true;
         public bool RememberMenuState = false;
         public bool MenuCollapsed = false;
         public Point MenuPosition = Point.Empty;
@@ -89,7 +91,7 @@ namespace ShareX.ScreenCaptureLib
         public WindowState ImageEditorWindowState = new WindowState();
         public bool AutoCloseEditorOnTask = false;
         public bool ShowEditorPanTip = true;
-        public ImageEditorInterpolationMode ImageEditorResizeInterpolationMode = ImageEditorInterpolationMode.Bicubic;
+        public ImageInterpolationMode ImageEditorResizeInterpolationMode = ImageInterpolationMode.Bicubic;
         public Size EditorNewImageSize = new Size(800, 600);
         public bool EditorNewImageTransparent = false;
         public Color EditorNewImageBackgroundColor = Color.White;

@@ -2,7 +2,7 @@
 Name: "pl"; MessagesFile: "compiler:Languages\Polish.isl"
 
 [CustomMessages]
-;http://www.microsoft.com/globaldev/reference/lcid-all.mspx
+; https://www.microsoft.com/globaldev/reference/lcid-all.mspx
 pl.lcid=1045
 pl.depdownload_msg=Poniższe aplikacje są wymagane przed instalacją aby móc kontynuować:%n%n%1%nCzy pobrać je i zainstalować teraz?
 pl.depdownload_memo_title=Pobierz zależności

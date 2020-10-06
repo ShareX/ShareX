@@ -132,9 +132,6 @@
   <data name="ShapeManager_CreateToolbar_Edit" xml:space="preserve">
     <value>Edit</value>
   </data>
-  <data name="FFmpegHelper_Record_FFmpeg_error" xml:space="preserve">
-    <value>FFmpeg eror</value>
-  </data>
   <data name="WebpageCaptureForm_UpdateControls_Stop" xml:space="preserve">
     <value>Hentikan</value>
   </data>
@@ -279,9 +276,6 @@
   <data name="ShapeManager_CreateToolbar_DropShadow" xml:space="preserve">
     <value>Buat bayangan</value>
   </data>
-  <data name="ShapeManager_CreateToolbar_EditorBackgroundColor" xml:space="preserve">
-    <value>Warna latar belakang editor...</value>
-  </data>
   <data name="ShapeManager_CreateToolbar_EditorStartMode" xml:space="preserve">
     <value>Mode mulai editor:</value>
   </data>
@@ -326,11 +320,6 @@
   </data>
   <data name="RectangleRegion_GetAreaText_Area" xml:space="preserve">
     <value>X: {0} Y: {1} L: {2} T: {3}</value>
-  </data>
-  <data name="RectangleRegion_GetRulerText_Ruler_info" xml:space="preserve">
-    <value>X: {0} / Y: {1} / X2: {2} / Y2: {3}
-Lebar: {4} pksl / Tinggi: {5} pksl
-Distansi: {6:0.00} pksl / Sudut {7:0.00}°</value>
   </data>
   <data name="ScrollingCaptureForm_StopCapture_Start_capture" xml:space="preserve">
     <value>Mulai mengambil</value>

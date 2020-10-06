@@ -27,7 +27,6 @@ using ShareX.HelpersLib;
 using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Design;
-using System.Drawing.Drawing2D;
 
 namespace ShareX.ImageEffectsLib
 {
@@ -39,15 +38,6 @@ namespace ShareX.ImageEffectsLib
 
         [DefaultValue(false)]
         public bool UseGradient { get; set; }
-
-        [DefaultValue(LinearGradientMode.Vertical)]
-        public LinearGradientMode GradientType { get; set; }
-
-        [DefaultValue(typeof(Color), "White"), Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
-        public Color Color2 { get; set; }
-
-        [DefaultValue(false)]
-        public bool UseCustomGradient { get; set; }
 
         [Editor(typeof(GradientEditor), typeof(UITypeEditor))]
         public GradientInfo Gradient { get; set; }
@@ -67,21 +57,14 @@ namespace ShareX.ImageEffectsLib
             Gradient.Colors.Add(new GradientStop(Color.FromArgb(23, 89, 174), 100f));
         }
 
-        public override Image Apply(Image img)
+        public override Bitmap Apply(Bitmap bmp)
         {
-            if (UseGradient)
+            if (UseGradient && Gradient != null && Gradient.IsValid)
             {
-                if (UseCustomGradient && Gradient != null && Gradient.IsValid)
-                {
-                    return ImageHelpers.FillBackground(img, Gradient);
-                }
-                else
-                {
-                    return ImageHelpers.FillBackground(img, Color, Color2, GradientType);
-                }
+                return ImageHelpers.FillBackground(bmp, Gradient);
             }
 
-            return ImageHelpers.FillBackground(img, Color);
+            return ImageHelpers.FillBackground(bmp, Color);
         }
     }
 }

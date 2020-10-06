@@ -50,7 +50,7 @@ namespace ShareX.ScreenCaptureLib
             btnChangeColor.Color = options.EditorNewImageBackgroundColor;
         }
 
-        public static Image CreateNewImage(RegionCaptureOptions options, Form form = null)
+        public static Bitmap CreateNewImage(RegionCaptureOptions options, Form form = null)
         {
             using (NewImageForm newImageForm = new NewImageForm(options))
             {

@@ -299,15 +299,18 @@ namespace ShareX
                 {
                     pThumbnail.Location = new Point(0, 0);
                 }
+
+                lblError.Location = new Point((ClientSize.Width - lblError.Width) / 2, 1);
             }
             else
             {
                 pThumbnail.Location = new Point(0, 0);
                 lblTitle.Location = new Point(0, pThumbnail.Height + 2);
+                lblError.Location = new Point((ClientSize.Width - lblError.Width) / 2, pThumbnail.Height - lblError.Height - 1);
             }
         }
 
-        public void UpdateThumbnail(Image image = null)
+        public void UpdateThumbnail(Bitmap bmp = null)
         {
             ClearThumbnail();
 
@@ -323,11 +326,11 @@ namespace ShareX
                         pbThumbnail.Cursor = Cursors.Hand;
                     }
 
-                    Image img = CreateThumbnail(filePath, image);
+                    Bitmap bmpResult = CreateThumbnail(filePath, bmp);
 
-                    if (img != null)
+                    if (bmpResult != null)
                     {
-                        pbThumbnail.Image = img;
+                        pbThumbnail.Image = bmpResult;
 
                         ThumbnailExists = true;
                     }
@@ -339,11 +342,11 @@ namespace ShareX
             }
         }
 
-        private Image CreateThumbnail(string filePath, Image image = null)
+        private Bitmap CreateThumbnail(string filePath, Bitmap bmp = null)
         {
-            if (image != null)
+            if (bmp != null)
             {
-                return ImageHelpers.ResizeImage(image, ThumbnailSize, false);
+                return ImageHelpers.ResizeImage(bmp, ThumbnailSize, false);
             }
             else
             {
@@ -353,11 +356,11 @@ namespace ShareX
                 }
                 else if (File.Exists(filePath))
                 {
-                    using (Image img = ImageHelpers.LoadImage(filePath))
+                    using (Bitmap bmpResult = ImageHelpers.LoadImage(filePath))
                     {
-                        if (img != null)
+                        if (bmpResult != null)
                         {
-                            return ImageHelpers.ResizeImage(img, ThumbnailSize, false);
+                            return ImageHelpers.ResizeImage(bmpResult, ThumbnailSize, false);
                         }
                     }
                 }
@@ -365,9 +368,9 @@ namespace ShareX
                 if (!string.IsNullOrEmpty(filePath))
                 {
                     using (Icon icon = NativeMethods.GetJumboFileIcon(filePath, false))
-                    using (Image img = icon.ToBitmap())
+                    using (Bitmap bmpResult = icon.ToBitmap())
                     {
-                        return ImageHelpers.ResizeImage(img, ThumbnailSize, false, true);
+                        return ImageHelpers.ResizeImage(bmpResult, ThumbnailSize, false, true);
                     }
                 }
             }
@@ -388,6 +391,7 @@ namespace ShareX
             if (Task.Info != null)
             {
                 pThumbnail.UpdateStatusColor(Task.Status);
+                lblError.Visible = Task.Status == TaskStatus.Failed;
             }
 
             UpdateTitle();
@@ -428,6 +432,14 @@ namespace ShareX
                 {
                     Helpers.OpenFile(Task.Info.FilePath);
                 }
+            }
+        }
+
+        private void lblError_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (ModifierKeys == Keys.None && e.Button == MouseButtons.Left)
+            {
+                Task.ShowErrorWindow();
             }
         }
 

@@ -166,11 +166,11 @@ namespace ShareX.MediaLib
 
                         if (File.Exists(filePath))
                         {
-                            using (Image img = ImageHelpers.LoadImage(filePath))
+                            using (Bitmap bmp = ImageHelpers.LoadImage(filePath))
                             {
-                                if (img != null)
+                                if (bmp != null)
                                 {
-                                    using (Image thumbnail = ImageHelpers.CreateThumbnail(img, width, height))
+                                    using (Bitmap thumbnail = ImageHelpers.CreateThumbnail(bmp, width, height))
                                     {
                                         string filename = Path.GetFileNameWithoutExtension(filePath);
                                         string outputPath = Path.Combine(outputFolder, outputFilename.Replace("$filename", filename));

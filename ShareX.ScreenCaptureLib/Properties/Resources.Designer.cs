@@ -150,6 +150,16 @@ namespace ShareX.ScreenCaptureLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] closedhand {
+            get {
+                object obj = ResourceManager.GetObject("closedhand", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Close (Esc).
         /// </summary>
         internal static string CloseEsc {
@@ -231,6 +241,16 @@ namespace ShareX.ScreenCaptureLib.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap document_copy {
+            get {
+                object obj = ResourceManager.GetObject("document_copy", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap drive_globe {
             get {
                 object obj = ResourceManager.GetObject("drive_globe", resourceCulture);
@@ -270,9 +290,39 @@ namespace ShareX.ScreenCaptureLib.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap edit_alignment_center_white {
+            get {
+                object obj = ResourceManager.GetObject("edit_alignment_center_white", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap edit_alignment_right {
             get {
                 object obj = ResourceManager.GetObject("edit_alignment_right", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap edit_alignment_right_white {
+            get {
+                object obj = ResourceManager.GetObject("edit_alignment_right_white", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap edit_alignment_white {
+            get {
+                object obj = ResourceManager.GetObject("edit_alignment_white", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -290,9 +340,29 @@ namespace ShareX.ScreenCaptureLib.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap edit_bold_white {
+            get {
+                object obj = ResourceManager.GetObject("edit_bold_white", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap edit_italic {
             get {
                 object obj = ResourceManager.GetObject("edit_italic", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap edit_italic_white {
+            get {
+                object obj = ResourceManager.GetObject("edit_italic_white", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -310,6 +380,16 @@ namespace ShareX.ScreenCaptureLib.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap edit_outline_white {
+            get {
+                object obj = ResourceManager.GetObject("edit_outline_white", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap edit_shade {
             get {
                 object obj = ResourceManager.GetObject("edit_shade", resourceCulture);
@@ -320,9 +400,29 @@ namespace ShareX.ScreenCaptureLib.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap edit_shade_white {
+            get {
+                object obj = ResourceManager.GetObject("edit_shade_white", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap edit_underline {
             get {
                 object obj = ResourceManager.GetObject("edit_underline", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap edit_underline_white {
+            get {
+                object obj = ResourceManager.GetObject("edit_underline_white", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -350,9 +450,39 @@ namespace ShareX.ScreenCaptureLib.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap edit_vertical_alignment_middle_white {
+            get {
+                object obj = ResourceManager.GetObject("edit_vertical_alignment_middle_white", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap edit_vertical_alignment_top {
             get {
                 object obj = ResourceManager.GetObject("edit_vertical_alignment_top", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap edit_vertical_alignment_top_white {
+            get {
+                object obj = ResourceManager.GetObject("edit_vertical_alignment_top_white", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap edit_vertical_alignment_white {
+            get {
+                object obj = ResourceManager.GetObject("edit_vertical_alignment_white", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -468,6 +598,16 @@ namespace ShareX.ScreenCaptureLib.Properties {
         internal static System.Drawing.Bitmap grid {
             get {
                 object obj = ResourceManager.GetObject("grid", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap grid_white {
+            get {
+                object obj = ResourceManager.GetObject("grid_white", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -644,6 +784,16 @@ namespace ShareX.ScreenCaptureLib.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap layer_shade_white {
+            get {
+                object obj = ResourceManager.GetObject("layer_shade_white", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap layer_shape {
             get {
                 object obj = ResourceManager.GetObject("layer_shape", resourceCulture);
@@ -657,6 +807,16 @@ namespace ShareX.ScreenCaptureLib.Properties {
         internal static System.Drawing.Bitmap layer_shape_arrow {
             get {
                 object obj = ResourceManager.GetObject("layer_shape_arrow", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap layer_shape_arrow_white {
+            get {
+                object obj = ResourceManager.GetObject("layer_shape_arrow_white", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -687,6 +847,16 @@ namespace ShareX.ScreenCaptureLib.Properties {
         internal static System.Drawing.Bitmap layer_shape_line {
             get {
                 object obj = ResourceManager.GetObject("layer_shape_line", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap layer_shape_line_white {
+            get {
+                object obj = ResourceManager.GetObject("layer_shape_line_white", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -880,6 +1050,16 @@ namespace ShareX.ScreenCaptureLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] openhand {
+            get {
+                object obj = ResourceManager.GetObject("openhand", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Open keybinds web page....
         /// </summary>
         internal static string OpenKeybindsPage {
@@ -934,17 +1114,6 @@ namespace ShareX.ScreenCaptureLib.Properties {
         internal static string RectangleRegion_GetColorPickerText {
             get {
                 return ResourceManager.GetString("RectangleRegion_GetColorPickerText", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to X: {0} / Y: {1} / X2: {2} / Y2: {3}
-        ///Width: {4} px / Height: {5} px
-        ///Distance: {6:0.00} px / Angle: {7:0.00}°.
-        /// </summary>
-        internal static string RectangleRegion_GetRulerText_Ruler_info {
-            get {
-                return ResourceManager.GetString("RectangleRegion_GetRulerText_Ruler_info", resourceCulture);
             }
         }
         

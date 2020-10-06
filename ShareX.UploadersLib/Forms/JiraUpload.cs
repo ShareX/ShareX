@@ -88,7 +88,7 @@ namespace ShareX.UploadersLib
 
         private void UpdateSummaryAsync(Task<string> task)
         {
-            Invoke((Action)(() => UpdateSummary(task.Result)));
+            this.InvokeSafe(() => UpdateSummary(task.Result));
         }
 
         private void UpdateSummary(string summary)

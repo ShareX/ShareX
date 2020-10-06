@@ -25,7 +25,6 @@
 
 using Microsoft.VisualBasic.FileIO;
 using ShareX.HelpersLib;
-using ShareX.Properties;
 using ShareX.UploadersLib;
 using System.Collections.Generic;
 using System.Drawing;
@@ -309,17 +308,9 @@ namespace ShareX
 
         public void ShowErrors()
         {
-            if (IsItemSelected && SelectedItem.Info.Result != null && SelectedItem.Info.Result.IsError)
+            if (IsItemSelected)
             {
-                string errors = SelectedItem.Info.Result.ErrorsToString();
-
-                if (!string.IsNullOrEmpty(errors))
-                {
-                    using (ErrorForm form = new ErrorForm(Resources.UploadInfoManager_ShowErrors_Upload_errors, errors, Program.LogsFilePath, Links.URL_ISSUES, false))
-                    {
-                        form.ShowDialog();
-                    }
-                }
+                SelectedItem.Task.ShowErrorWindow();
             }
         }
 
@@ -347,6 +338,11 @@ namespace ShareX
         public void EditImage()
         {
             if (IsItemSelected && SelectedItem.IsImageFile) TaskHelpers.AnnotateImageFromFile(SelectedItem.Info.FilePath);
+        }
+
+        public void AddImageEffects()
+        {
+            if (IsItemSelected && SelectedItem.IsImageFile) TaskHelpers.OpenImageEffects(SelectedItem.Info.FilePath);
         }
 
         public void DeleteFiles()

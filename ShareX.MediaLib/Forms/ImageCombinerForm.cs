@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.MediaLib.Properties;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -34,7 +35,7 @@ namespace ShareX.MediaLib
 {
     public partial class ImageCombinerForm : Form
     {
-        public event Action<Image> ProcessRequested;
+        public event Action<Bitmap> ProcessRequested;
 
         public ImageCombinerOptions Options { get; private set; }
 
@@ -47,7 +48,28 @@ namespace ShareX.MediaLib
 
             cbOrientation.Items.AddRange(Enum.GetNames(typeof(Orientation)));
             cbOrientation.SelectedIndex = (int)Options.Orientation;
+            UpdateAlignmentComboBox();
             nudSpace.SetValue(Options.Space);
+        }
+
+        private void UpdateAlignmentComboBox()
+        {
+            cbAlignment.Items.Clear();
+
+            if (Options.Orientation == Orientation.Horizontal)
+            {
+                cbAlignment.Items.Add(Resources.AlignmentTop);
+                cbAlignment.Items.Add(Resources.AlignmentHorizontalCenter);
+                cbAlignment.Items.Add(Resources.AlignmentBottom);
+            }
+            else
+            {
+                cbAlignment.Items.Add(Resources.AlignmentLeft);
+                cbAlignment.Items.Add(Resources.AlignmentVerticalCenter);
+                cbAlignment.Items.Add(Resources.AlignmentRight);
+            }
+
+            cbAlignment.SelectedIndex = (int)Options.Alignment;
         }
 
         public ImageCombinerForm(ImageCombinerOptions options, IEnumerable<string> imageFiles) : this(options)
@@ -104,6 +126,12 @@ namespace ShareX.MediaLib
         private void cbOrientation_SelectedIndexChanged(object sender, EventArgs e)
         {
             Options.Orientation = (Orientation)cbOrientation.SelectedIndex;
+            UpdateAlignmentComboBox();
+        }
+
+        private void cbAlignment_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Options.Alignment = (ImageCombinerAlignment)cbAlignment.SelectedIndex;
         }
 
         private void nudSpace_ValueChanged(object sender, EventArgs e)
@@ -115,7 +143,7 @@ namespace ShareX.MediaLib
         {
             if (lvImages.Items.Count > 0)
             {
-                List<Image> images = new List<Image>();
+                List<Bitmap> images = new List<Bitmap>();
 
                 try
                 {
@@ -125,18 +153,18 @@ namespace ShareX.MediaLib
 
                         if (File.Exists(filePath))
                         {
-                            Image img = ImageHelpers.LoadImage(filePath);
+                            Bitmap bmp = ImageHelpers.LoadImage(filePath);
 
-                            if (img != null)
+                            if (bmp != null)
                             {
-                                images.Add(img);
+                                images.Add(bmp);
                             }
                         }
                     }
 
                     if (images.Count > 1)
                     {
-                        Image output = ImageHelpers.CombineImages(images, Options.Orientation, Options.Space);
+                        Bitmap output = ImageHelpers.CombineImages(images, Options.Orientation, Options.Alignment, Options.Space);
 
                         OnProcessRequested(output);
                     }
@@ -150,7 +178,7 @@ namespace ShareX.MediaLib
                 {
                     if (images != null)
                     {
-                        foreach (Image image in images)
+                        foreach (Bitmap image in images)
                         {
                             if (image != null)
                             {
@@ -162,11 +190,11 @@ namespace ShareX.MediaLib
             }
         }
 
-        protected void OnProcessRequested(Image image)
+        protected void OnProcessRequested(Bitmap bmp)
         {
             if (ProcessRequested != null)
             {
-                ProcessRequested(image);
+                ProcessRequested(bmp);
             }
         }
 

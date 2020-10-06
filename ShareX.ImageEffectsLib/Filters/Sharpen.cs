@@ -30,13 +30,13 @@ namespace ShareX.ImageEffectsLib
 {
     internal class Sharpen : ImageEffect
     {
-        public override Image Apply(Image img)
+        public override Bitmap Apply(Bitmap bmp)
         {
-            //return ImageHelpers.Sharpen(img, Strength);
+            //return ImageHelpers.Sharpen(bmp, Strength);
 
-            using (img)
+            using (bmp)
             {
-                return ConvolutionMatrixManager.Sharpen().Apply(img);
+                return ConvolutionMatrixManager.Sharpen().Apply(bmp);
             }
         }
     }

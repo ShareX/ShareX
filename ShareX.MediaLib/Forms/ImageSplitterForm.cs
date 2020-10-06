@@ -57,11 +57,11 @@ namespace ShareX.MediaLib
         {
             List<string> filePaths = new List<string>();
 
-            Image img = ImageHelpers.LoadImage(filePath);
+            Bitmap bmp = ImageHelpers.LoadImage(filePath);
 
-            if (img != null)
+            if (bmp != null)
             {
-                List<Image> images = ImageHelpers.SplitImage(img, rowCount, columnCount);
+                List<Bitmap> images = ImageHelpers.SplitImage(bmp, rowCount, columnCount);
 
                 string originalFileName = Path.GetFileNameWithoutExtension(filePath);
 

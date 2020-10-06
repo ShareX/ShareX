@@ -30,7 +30,6 @@ using ShareX.UploadersLib;
 using System;
 using System.Drawing;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using System.Windows.Forms;
@@ -143,20 +142,20 @@ namespace ShareX
             }
         }
 
-        private static void ProcessImageUpload(Image img, TaskSettings taskSettings)
+        public static void ProcessImageUpload(Bitmap bmp, TaskSettings taskSettings)
         {
-            if (img != null)
+            if (bmp != null)
             {
                 if (!taskSettings.AdvancedSettings.ProcessImagesDuringClipboardUpload)
                 {
                     taskSettings.AfterCaptureJob = AfterCaptureTasks.UploadImageToHost;
                 }
 
-                RunImageTask(img, taskSettings);
+                RunImageTask(bmp, taskSettings);
             }
         }
 
-        private static void ProcessTextUpload(string text, TaskSettings taskSettings)
+        public static void ProcessTextUpload(string text, TaskSettings taskSettings)
         {
             if (!string.IsNullOrEmpty(text))
             {
@@ -194,7 +193,7 @@ namespace ShareX
             }
         }
 
-        private static void ProcessFilesUpload(string[] files, TaskSettings taskSettings)
+        public static void ProcessFilesUpload(string[] files, TaskSettings taskSettings)
         {
             if (files != null && files.Length > 0)
             {
@@ -208,9 +207,9 @@ namespace ShareX
 
             if (Clipboard.ContainsImage())
             {
-                Image img = ClipboardHelpers.GetImage();
+                Bitmap bmp = ClipboardHelpers.GetImage();
 
-                ProcessImageUpload(img, taskSettings);
+                ProcessImageUpload(bmp, taskSettings);
             }
             else if (Clipboard.ContainsText())
             {
@@ -226,58 +225,13 @@ namespace ShareX
             }
         }
 
-        private static void ClipboardUploadCached(ClipboardContentViewer ccv, TaskSettings taskSettings = null)
-        {
-            if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
-
-            if (ccv.ClipboardContentType == EClipboardContentType.Image)
-            {
-                Image img = (Image)ccv.ClipboardContent;
-
-                ProcessImageUpload(img, taskSettings);
-            }
-            else if (ccv.ClipboardContentType == EClipboardContentType.Text)
-            {
-                string text = (string)ccv.ClipboardContent;
-
-                ProcessTextUpload(text, taskSettings);
-            }
-            else if (ccv.ClipboardContentType == EClipboardContentType.Files)
-            {
-                string[] files = (string[])ccv.ClipboardContent;
-
-                ProcessFilesUpload(files, taskSettings);
-            }
-        }
-
-        private static void ProcessClipboardContentViewerDialog(ClipboardContentViewer ccv, TaskSettings taskSettings = null)
-        {
-            if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
-
-            if (ccv.ShowDialog() == DialogResult.OK && ccv.IsClipboardContentValid)
-            {
-                if (ccv.ClipboardContentType != EClipboardContentType.Default)
-                {
-                    ClipboardUploadCached(ccv, taskSettings);
-                }
-                else
-                {
-                    ClipboardUpload(taskSettings);
-                }
-            }
-            else if (ccv.ClipboardContentType == EClipboardContentType.Image)
-            {
-                ((Image)ccv.ClipboardContent).Dispose();
-            }
-        }
-
         public static void ClipboardUploadWithContentViewer(TaskSettings taskSettings = null)
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
-            using (ClipboardContentViewer ccv = new ClipboardContentViewer())
+            using (ClipboardUploadForm clipboardUploadForm = new ClipboardUploadForm(taskSettings))
             {
-                ProcessClipboardContentViewerDialog(ccv, taskSettings);
+                clipboardUploadForm.ShowDialog();
             }
         }
 
@@ -287,11 +241,10 @@ namespace ShareX
 
             if (Program.Settings.ShowClipboardContentViewer)
             {
-                using (ClipboardContentViewer ccv = new ClipboardContentViewer(true))
+                using (ClipboardUploadForm clipboardUploadForm = new ClipboardUploadForm(taskSettings, true))
                 {
-                    ProcessClipboardContentViewerDialog(ccv, taskSettings);
-
-                    Program.Settings.ShowClipboardContentViewer = !ccv.DontShowThisWindow;
+                    clipboardUploadForm.ShowDialog();
+                    Program.Settings.ShowClipboardContentViewer = !clipboardUploadForm.DontShowThisWindow;
                 }
             }
             else
@@ -329,8 +282,8 @@ namespace ShareX
             }
             else if (data.GetDataPresent(DataFormats.Bitmap, false))
             {
-                Image img = data.GetData(DataFormats.Bitmap, false) as Image;
-                RunImageTask(img, taskSettings);
+                Bitmap bmp = data.GetData(DataFormats.Bitmap, false) as Bitmap;
+                RunImageTask(bmp, taskSettings);
             }
             else if (data.GetDataPresent(DataFormats.Text, false))
             {
@@ -382,9 +335,9 @@ namespace ShareX
             }
         }
 
-        public static void RunImageTask(Image img, TaskSettings taskSettings, bool skipQuickTaskMenu = false, bool skipAfterCaptureWindow = false)
+        public static void RunImageTask(Bitmap bmp, TaskSettings taskSettings, bool skipQuickTaskMenu = false, bool skipAfterCaptureWindow = false)
         {
-            ImageInfo imageInfo = new ImageInfo(img);
+            ImageInfo imageInfo = new ImageInfo(bmp);
             RunImageTask(imageInfo, taskSettings, skipQuickTaskMenu, skipAfterCaptureWindow);
         }
 
@@ -429,30 +382,44 @@ namespace ShareX
             }
         }
 
-        public static void UploadImage(Image img)
+        public static void UploadImage(Bitmap bmp, TaskSettings taskSettings = null)
         {
-            if (img != null)
+            if (bmp != null)
             {
-                TaskSettings taskSettings = TaskSettings.GetDefaultTaskSettings();
-                taskSettings.UseDefaultAfterCaptureJob = false;
-                taskSettings.AfterCaptureJob = AfterCaptureTasks.UploadImageToHost;
+                if (taskSettings == null)
+                {
+                    taskSettings = TaskSettings.GetDefaultTaskSettings();
+                }
 
-                RunImageTask(img, taskSettings);
+                if (taskSettings.IsSafeTaskSettings)
+                {
+                    taskSettings.UseDefaultAfterCaptureJob = false;
+                    taskSettings.AfterCaptureJob = AfterCaptureTasks.UploadImageToHost;
+                }
+
+                RunImageTask(bmp, taskSettings);
             }
         }
 
-        public static void UploadImage(Image img, ImageDestination imageDestination, FileDestination imageFileDestination)
+        public static void UploadImage(Bitmap bmp, ImageDestination imageDestination, FileDestination imageFileDestination, TaskSettings taskSettings = null)
         {
-            if (img != null)
+            if (bmp != null)
             {
-                TaskSettings taskSettings = TaskSettings.GetDefaultTaskSettings();
-                taskSettings.UseDefaultAfterCaptureJob = false;
-                taskSettings.AfterCaptureJob = AfterCaptureTasks.UploadImageToHost;
-                taskSettings.UseDefaultDestinations = false;
-                taskSettings.ImageDestination = imageDestination;
-                taskSettings.ImageFileDestination = imageFileDestination;
+                if (taskSettings == null)
+                {
+                    taskSettings = TaskSettings.GetDefaultTaskSettings();
+                }
 
-                RunImageTask(img, taskSettings);
+                if (taskSettings.IsSafeTaskSettings)
+                {
+                    taskSettings.UseDefaultAfterCaptureJob = false;
+                    taskSettings.AfterCaptureJob = AfterCaptureTasks.UploadImageToHost;
+                    taskSettings.UseDefaultDestinations = false;
+                    taskSettings.ImageDestination = imageDestination;
+                    taskSettings.ImageFileDestination = imageFileDestination;
+                }
+
+                RunImageTask(bmp, taskSettings);
             }
         }
 

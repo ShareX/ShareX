@@ -42,7 +42,7 @@ namespace ShareX.ImageEffectsLib
             this.ApplyDefaultPropertyValues();
         }
 
-        public override Image Apply(Image img)
+        public override Bitmap Apply(Bitmap bmp)
         {
             RotateFlipType flipType = RotateFlipType.RotateNoneFlipNone;
 
@@ -61,10 +61,10 @@ namespace ShareX.ImageEffectsLib
 
             if (flipType != RotateFlipType.RotateNoneFlipNone)
             {
-                img.RotateFlip(flipType);
+                bmp.RotateFlip(flipType);
             }
 
-            return img;
+            return bmp;
         }
     }
 }
