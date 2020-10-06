@@ -143,6 +143,8 @@ namespace ShareX.UploadersLib
         Plik,
         [Description("YouTube")]
         YouTube,
+        [Description("Skynet")]
+        Skynet,
         SharedFolder, // Localized
         Email, // Localized
         CustomFileUploader // Localized
