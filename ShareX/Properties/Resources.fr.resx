@@ -320,7 +320,7 @@ Voulez-vous le télécharger automatiquement ?</value>
 Voulez-vous redémarrer ShareX ?</value>
   </data>
   <data name="FileExistForm_txtNewName_TextChanged_Use_new_name__" xml:space="preserve">
-    <value>Utiliser un nouveau nom :</value>
+    <value>Utiliser un nouveau nom : </value>
   </data>
   <data name="ScreenRecordForm_StartRecording_Missing" xml:space="preserve">
     <value>Manquant</value>
@@ -585,5 +585,30 @@ Voulez-vous redémarrer ShareX ?</value>
   </data>
   <data name="ThisFeatureWillNotWorkWhenDisableUploadOptionIsEnabled" xml:space="preserve">
     <value>Cette fonctionnalité n'est pas opérationnelle quand l'option "DisableUpload" est activée !</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_pt_PT" xml:space="preserve">
+    <value>Portugais</value>
+  </data>
+  <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__Image__Size___0_x_1__" xml:space="preserve">
+    <value>Contenu du presse-papier : Image (Taille : {0}x{1})</value>
+  </data>
+  <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__File__Count___0__" xml:space="preserve">
+    <value>Contenu du presse-papier : Fichier (Nombre : {0})</value>
+  </data>
+  <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__Text__Length___0__" xml:space="preserve">
+    <value>Contenu du presse-papier : Texte (Longueur : {0})</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_fa_IR" xml:space="preserve">
+    <value>Persan</value>
+  </data>
+  <data name="Confirmation" xml:space="preserve">
+    <value>Confirmation</value>
+  </data>
+  <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_is_empty_or_contains_unknown_data_" xml:space="preserve">
+    <value>Le presse-papier est vide ou contient des données inconnues.</value>
+    
+  </data>
+  <data name="WouldYouLikeToResetThemes" xml:space="preserve">
+    <value>Voulez-vous réinitialiser les thèmes ?</value>
   </data>
 </root>

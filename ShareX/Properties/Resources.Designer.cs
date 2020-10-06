@@ -996,6 +996,15 @@ namespace ShareX.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Confirmation.
+        /// </summary>
+        public static string Confirmation {
+            get {
+                return ResourceManager.GetString("Confirmation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         public static System.Drawing.Bitmap control {
@@ -2977,6 +2986,15 @@ namespace ShareX.Properties {
             get {
                 return ResourceManager.GetString("WorkerTask_GetInvalidConfigResult__0__configuration_is_invalid_or_missing__Please" +
                         "_check__Destination_settings__window_to_configure_it_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Would you like to reset themes?.
+        /// </summary>
+        public static string WouldYouLikeToResetThemes {
+            get {
+                return ResourceManager.GetString("WouldYouLikeToResetThemes", resourceCulture);
             }
         }
         

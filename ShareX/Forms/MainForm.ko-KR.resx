@@ -181,7 +181,7 @@
     <value>워크플로우</value>
   </data>
   <data name="tsmiAutoCapture.Text" xml:space="preserve">
-    <value>자동 촬영</value>
+    <value>자동 촬영...</value>
   </data>
   <data name="tsmiClearList.Text" xml:space="preserve">
     <value>목록 전부 제거</value>
@@ -731,5 +731,95 @@
   </data>
   <data name="tsmiTrayShowCursor.Text" xml:space="preserve">
     <value>커서 표시</value>
+  </data>
+  <data name="tsmiScreenshotDelay5.Text" xml:space="preserve">
+    <value>5 초</value>
+  </data>
+  <data name="tsmiScreenshotDelay4.Text" xml:space="preserve">
+    <value>4 초</value>
+  </data>
+  <data name="tsmiScreenshotDelay3.Text" xml:space="preserve">
+    <value>3 초</value>
+  </data>
+  <data name="tsmiScreenshotDelay2.Text" xml:space="preserve">
+    <value>2 초</value>
+  </data>
+  <data name="tsmiScreenshotDelay1.Text" xml:space="preserve">
+    <value>1 초</value>
+  </data>
+  <data name="tsmiScreenshotDelay.Text" xml:space="preserve">
+    <value>스크린샷 지연</value>
+  </data>
+  <data name="tsmiScreenshotDelay0.Text" xml:space="preserve">
+    <value>지연 없음</value>
+  </data>
+  <data name="tsmiSwitchTaskViewMode.Text" xml:space="preserve">
+    <value>썸네일 뷰로 전환</value>
+  </data>
+  <data name="tsmiThumbnailTitle.Text" xml:space="preserve">
+    <value>썸네일 제목</value>
+  </data>
+  <data name="tsmiAddImageEffects.Text" xml:space="preserve">
+    <value>이미지 효과 추가...</value>
+  </data>
+  <data name="tsmiCustomUploaderSettings.Text" xml:space="preserve">
+    <value>커스텀 업로더 설정...</value>
+  </data>
+  <data name="tsmiVideoConverter.Text" xml:space="preserve">
+    <value>비디오 컨버터...</value>
+  </data>
+  <data name="tsmiImageSplitter.Text" xml:space="preserve">
+    <value>이미지 분할기...</value>
+  </data>
+  <data name="tsbGitHub.Text" xml:space="preserve">
+    <value>깃헙</value>
+  </data>
+  <data name="tsmiTrayScreenshotDelay.Text" xml:space="preserve">
+    <value>스크린샷 지연</value>
+  </data>
+  <data name="tsmiTrayScreenshotDelay1.Text" xml:space="preserve">
+    <value>1 초</value>
+  </data>
+  <data name="tsbBitcoin.ToolTipText" xml:space="preserve">
+    <value>암호화폐로 지원하기</value>
+  </data>
+  <data name="tsbBitcoin.Text" xml:space="preserve">
+    <value>비트코인</value>
+  </data>
+  <data name="tsbDiscord.ToolTipText" xml:space="preserve">
+    <value>디스코드 서버에 참여해주세요</value>
+  </data>
+  <data name="tsbDiscord.Text" xml:space="preserve">
+    <value>디스코드</value>
+  </data>
+  <data name="tsbTwitter.ToolTipText" xml:space="preserve">
+    <value>트위터 계정을 팔로우해주세요</value>
+  </data>
+  <data name="tsbTwitter.Text" xml:space="preserve">
+    <value>트위터</value>
+  </data>
+  <data name="tsmiTrayCustomUploaderSettings.Text" xml:space="preserve">
+    <value>커스텀 업로더 설정...</value>
+  </data>
+  <data name="tsmiTrayVideoConverter.Text" xml:space="preserve">
+    <value>비디오 컨버터...</value>
+  </data>
+  <data name="tsmiTrayImageSplitter.Text" xml:space="preserve">
+    <value>이미지 분할기...</value>
+  </data>
+  <data name="tsmiTrayScreenshotDelay5.Text" xml:space="preserve">
+    <value>5 초</value>
+  </data>
+  <data name="tsmiTrayScreenshotDelay4.Text" xml:space="preserve">
+    <value>4 초</value>
+  </data>
+  <data name="tsmiTrayScreenshotDelay3.Text" xml:space="preserve">
+    <value>3 초</value>
+  </data>
+  <data name="tsmiTrayScreenshotDelay2.Text" xml:space="preserve">
+    <value>2 초</value>
+  </data>
+  <data name="tsmiTrayScreenshotDelay0.Text" xml:space="preserve">
+    <value>지연 없음</value>
   </data>
 </root>

@@ -52,7 +52,6 @@ namespace ShareX.HelpersLib
                 catch
                 {
                 }
-
             }
 
             return value;

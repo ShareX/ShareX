@@ -117,20 +117,8 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="btnAdd.Text" xml:space="preserve">
-    <value>Aggiungi</value>
-  </data>
-  <data name="btnRemove.Text" xml:space="preserve">
-    <value>Rimuovi</value>
-  </data>
   <data name="btnOK.Text" xml:space="preserve">
     <value>OK</value>
-  </data>
-  <data name="btnClear.Text" xml:space="preserve">
-    <value>Pulisci</value>
-  </data>
-  <data name="btnDuplicate.Text" xml:space="preserve">
-    <value>Duplica</value>
   </data>
   <data name="btnSaveImage.Text" xml:space="preserve">
     <value>Salva Immagine...</value>
@@ -147,14 +135,8 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Effetti Immagine</value>
   </data>
-  <data name="btnAddPreset.Text" xml:space="preserve">
-    <value>Nuovo Preset</value>
-  </data>
   <data name="btnClose.Text" xml:space="preserve">
     <value>Chiudi</value>
-  </data>
-  <data name="btnRemovePreset.Text" xml:space="preserve">
-    <value>Rimuovi Preset</value>
   </data>
   <data name="lblPresetName.Text" xml:space="preserve">
     <value>Nome:</value>

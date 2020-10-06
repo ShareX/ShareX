@@ -120,29 +120,11 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Bildeffekte</value>
   </data>
-  <data name="btnAdd.Text" xml:space="preserve">
-    <value>Hinzufügen</value>
-  </data>
-  <data name="btnAddPreset.Text" xml:space="preserve">
-    <value>Neue Vorlage hinzufügen</value>
-  </data>
-  <data name="btnClear.Text" xml:space="preserve">
-    <value>Löschen</value>
-  </data>
   <data name="btnClose.Text" xml:space="preserve">
     <value>Schließen</value>
   </data>
-  <data name="btnDuplicate.Text" xml:space="preserve">
-    <value>Duplizieren</value>
-  </data>
   <data name="btnOK.Text" xml:space="preserve">
     <value>OK</value>
-  </data>
-  <data name="btnRemove.Text" xml:space="preserve">
-    <value>Entfernen</value>
-  </data>
-  <data name="btnRemovePreset.Text" xml:space="preserve">
-    <value>Vorlage entfernen</value>
   </data>
   <data name="btnSaveImage.Text" xml:space="preserve">
     <value>Bild speichern...</value>
@@ -161,8 +143,5 @@
   </data>
   <data name="lblPresetName.Text" xml:space="preserve">
     <value>Name:</value>
-  </data>
-  <data name="btnRefresh.Text" xml:space="preserve">
-    <value>Aktualisieren</value>
   </data>
 </root>

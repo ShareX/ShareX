@@ -126,26 +126,11 @@
   <data name="btnSaveImage.Text" xml:space="preserve">
     <value>عکس را ذخیره کن ...</value>
   </data>
-  <data name="btnRemove.Text" xml:space="preserve">
-    <value>حذف کردن</value>
-  </data>
-  <data name="btnRefresh.Text" xml:space="preserve">
-    <value>بارگذاری مجدد</value>
-  </data>
   <data name="btnOK.Text" xml:space="preserve">
     <value>تایید</value>
   </data>
   <data name="lblPresetName.Text" xml:space="preserve">
     <value>نام:</value>
-  </data>
-  <data name="btnDuplicate.Text" xml:space="preserve">
-    <value>کپی کردن</value>
-  </data>
-  <data name="btnAdd.Text" xml:space="preserve">
-    <value>اضافه کردن</value>
-  </data>
-  <data name="btnClear.Text" xml:space="preserve">
-    <value>پاک کردن</value>
   </data>
   <data name="tsmiLoadImageFromFile.Text" xml:space="preserve">
     <value>از فایل ...</value>

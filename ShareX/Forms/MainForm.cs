@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.ImageEffectsLib;
 using ShareX.Properties;
 using ShareX.ScreenCaptureLib;
 using ShareX.UploadersLib;
@@ -96,6 +97,8 @@ namespace ShareX
 
             AddMultiEnumItems<AfterCaptureTasks>(x => Program.DefaultTaskSettings.AfterCaptureJob = Program.DefaultTaskSettings.AfterCaptureJob.Swap(x),
                 tsddbAfterCaptureTasks, tsmiTrayAfterCaptureTasks);
+            tsddbAfterCaptureTasks.DropDownOpening += TsddbAfterCaptureTasks_DropDownOpening;
+            tsmiTrayAfterCaptureTasks.DropDownOpening += TsmiTrayAfterCaptureTasks_DropDownOpening;
             AddMultiEnumItems<AfterUploadTasks>(x => Program.DefaultTaskSettings.AfterUploadJob = Program.DefaultTaskSettings.AfterUploadJob.Swap(x),
                 tsddbAfterUploadTasks, tsmiTrayAfterUploadTasks);
             AddEnumItems<ImageDestination>(x =>
@@ -446,15 +449,29 @@ namespace ShareX
             {
                 StringBuilder sb = new StringBuilder();
 
-                sb.AppendLine(Resources.MainForm_UpdateMainFormTip_Currently_configured_hotkeys_);
-                sb.AppendLine();
+                //sb.AppendLine(Resources.MainForm_UpdateMainFormTip_Currently_configured_hotkeys_);
+                //sb.AppendLine();
 
-                foreach (HotkeySettings hotkey in hotkeys)
+                int maxHotkeyLength = hotkeys.Max(x => x.HotkeyInfo.ToString().Length);
+                int maxDescriptionLength = hotkeys.Max(x => x.TaskSettings.ToString().Length);
+
+                // TODO: Translate
+                sb.AppendFormat("┌{0}┬{1}┐\r\n", "Hotkey".PadCenter(maxHotkeyLength + 2, '─'), "Description".PadCenter(maxDescriptionLength + 2, '─'));
+
+                for (int i = 0; i < hotkeys.Count; i++)
                 {
-                    sb.AppendFormat("{0}  |  {1}\r\n", hotkey.HotkeyInfo, hotkey.TaskSettings);
+                    sb.AppendFormat("│ {0} │ {1} │\r\n", hotkeys[i].HotkeyInfo.ToString().PadRight(maxHotkeyLength),
+                        hotkeys[i].TaskSettings.ToString().PadRight(maxDescriptionLength));
+
+                    if (i + 1 < hotkeys.Count)
+                    {
+                        sb.AppendFormat("├{0}┼{1}┤\r\n", new string('─', maxHotkeyLength + 2), new string('─', maxDescriptionLength + 2));
+                    }
                 }
 
-                lblListViewTip.Text = lblThumbnailViewTip.Text = sb.ToString().Trim();
+                sb.AppendFormat("└{0}┴{1}┘", new string('─', maxHotkeyLength + 2), new string('─', maxDescriptionLength + 2));
+
+                lblListViewTip.Text = lblThumbnailViewTip.Text = sb.ToString();
             }
             else
             {
@@ -491,15 +508,16 @@ namespace ShareX
             }
         }
 
-        private void AddEnumItems<T>(Action<T> selectedEnum, params ToolStripDropDownItem[] parents)
+        private void AddEnumItems<T>(Action<T> selectedEnum, params ToolStripDropDownItem[] parents) where T : Enum
         {
-            string[] enums = Helpers.GetLocalizedEnumDescriptions<T>();
+            T[] enums = Helpers.GetEnums<T>();
 
             foreach (ToolStripDropDownItem parent in parents)
             {
                 for (int i = 0; i < enums.Length; i++)
                 {
-                    ToolStripMenuItem tsmi = new ToolStripMenuItem(enums[i]);
+                    T currentEnum = enums[i];
+                    ToolStripMenuItem tsmi = new ToolStripMenuItem(currentEnum.GetLocalizedDescription());
 
                     int index = i;
 
@@ -514,7 +532,7 @@ namespace ShareX
                             }
                         }
 
-                        selectedEnum((T)Enum.ToObject(typeof(T), index));
+                        selectedEnum(currentEnum);
 
                         UpdateUploaderMenuNames();
                     };
@@ -552,14 +570,15 @@ namespace ShareX
 
         private void AddMultiEnumItems<T>(Action<T> selectedEnum, params ToolStripDropDownItem[] parents) where T : Enum
         {
-            string[] enums = Helpers.GetLocalizedEnumDescriptions<T>().Skip(1).ToArray();
+            T[] enums = Helpers.GetEnums<T>().Skip(1).ToArray();
 
             foreach (ToolStripDropDownItem parent in parents)
             {
                 for (int i = 0; i < enums.Length; i++)
                 {
-                    ToolStripMenuItem tsmi = new ToolStripMenuItem(enums[i]);
-                    tsmi.Image = TaskHelpers.FindMenuIcon<T>(i + 1);
+                    T currentEnum = enums[i];
+                    ToolStripMenuItem tsmi = new ToolStripMenuItem(currentEnum.GetLocalizedDescription());
+                    tsmi.Image = TaskHelpers.FindMenuIcon(currentEnum);
 
                     int index = i;
 
@@ -571,13 +590,35 @@ namespace ShareX
                             tsmi2.Checked = !tsmi2.Checked;
                         }
 
-                        selectedEnum((T)Enum.ToObject(typeof(T), 1 << index));
+                        selectedEnum(currentEnum);
 
                         UpdateUploaderMenuNames();
                     };
 
                     parent.DropDownItems.Add(tsmi);
                 }
+            }
+        }
+
+        private void UpdateImageEffectsMenu(ToolStripDropDownItem parent)
+        {
+            int indexAddImageEffects = AfterCaptureTasks.AddImageEffects.GetIndex() - 1;
+            ToolStripMenuItem tsmiAddImageEffects = (ToolStripMenuItem)parent.DropDownItems[indexAddImageEffects];
+            tsmiAddImageEffects.DisableMenuCloseOnClick();
+            tsmiAddImageEffects.DropDownItems.Clear();
+
+            for (int i = 0; i < Program.DefaultTaskSettings.ImageSettings.ImageEffectPresets.Count; i++)
+            {
+                ImageEffectPreset effectPreset = Program.DefaultTaskSettings.ImageSettings.ImageEffectPresets[i];
+                ToolStripMenuItem tsmi = new ToolStripMenuItem(effectPreset.ToString());
+                tsmi.Checked = i == Program.DefaultTaskSettings.ImageSettings.SelectedImageEffectPreset;
+                int indexSelected = i;
+                tsmi.Click += (sender, e) =>
+                {
+                    Program.DefaultTaskSettings.ImageSettings.SelectedImageEffectPreset = indexSelected;
+                    ((ToolStripMenuItem)tsmiAddImageEffects.DropDownItems[indexSelected]).RadioCheck();
+                };
+                tsmiAddImageEffects.DropDownItems.Add(tsmi);
             }
         }
 
@@ -1805,6 +1846,11 @@ namespace ShareX
             TaskHelpers.OpenVideoThumbnailer();
         }
 
+        private void tsmiClipboardViewer_Click(object sender, EventArgs e)
+        {
+            TaskHelpers.OpenClipboardViewer();
+        }
+
         private void tsmiTweetMessage_Click(object sender, EventArgs e)
         {
             TaskHelpers.TweetMessage();
@@ -1813,6 +1859,16 @@ namespace ShareX
         private void tsmiMonitorTest_Click(object sender, EventArgs e)
         {
             TaskHelpers.OpenMonitorTest();
+        }
+
+        private void TsddbAfterCaptureTasks_DropDownOpening(object sender, EventArgs e)
+        {
+            UpdateImageEffectsMenu(tsddbAfterCaptureTasks);
+        }
+
+        private void TsmiTrayAfterCaptureTasks_DropDownOpening(object sender, EventArgs e)
+        {
+            UpdateImageEffectsMenu(tsmiTrayAfterCaptureTasks);
         }
 
         private void tsddbDestinations_DropDownOpened(object sender, EventArgs e)

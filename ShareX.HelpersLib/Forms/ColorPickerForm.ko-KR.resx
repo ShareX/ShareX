@@ -127,7 +127,7 @@
     <value>확인</value>
   </data>
   <data name="lblAlpha.Text" xml:space="preserve">
-    <value>알파</value>
+    <value>알파:</value>
   </data>
   <data name="lblOld.Text" xml:space="preserve">
     <value>기존 색:</value>

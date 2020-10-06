@@ -120,29 +120,11 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Efectos de imagen</value>
   </data>
-  <data name="btnAdd.Text" xml:space="preserve">
-    <value>Agregar</value>
-  </data>
-  <data name="btnAddPreset.Text" xml:space="preserve">
-    <value>Nuevo preajuste</value>
-  </data>
-  <data name="btnClear.Text" xml:space="preserve">
-    <value>Borrar</value>
-  </data>
   <data name="btnClose.Text" xml:space="preserve">
     <value>Cerrar</value>
   </data>
-  <data name="btnDuplicate.Text" xml:space="preserve">
-    <value>Duplicar</value>
-  </data>
   <data name="btnOK.Text" xml:space="preserve">
     <value>Aceptar</value>
-  </data>
-  <data name="btnRemove.Text" xml:space="preserve">
-    <value>Eliminar</value>
-  </data>
-  <data name="btnRemovePreset.Text" xml:space="preserve">
-    <value>Eliminar preajuste</value>
   </data>
   <data name="btnSaveImage.Text" xml:space="preserve">
     <value>Guardar imagen...</value>
@@ -161,8 +143,5 @@
   </data>
   <data name="tsmiLoadImageFromFile.Text" xml:space="preserve">
     <value>Desde archivo...</value>
-  </data>
-  <data name="btnRefresh.Text" xml:space="preserve">
-    <value>Actualizar</value>
   </data>
 </root>

@@ -31,7 +31,7 @@ namespace ShareX.HelpersLib
 {
     public static class ColorMatrixManager
     {
-        #region Grayscale values
+        // Grayscale values
 
         private const float rw = 0.212671f;
         private const float gw = 0.715160f;
@@ -42,8 +42,6 @@ namespace ShareX.HelpersLib
         private const float gw = 0.6094f;
         private const float bw = 0.0820f;
         */
-
-        #endregion Grayscale values
 
         public static Bitmap Apply(this ColorMatrix matrix, Bitmap bmp)
         {

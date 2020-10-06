@@ -230,6 +230,12 @@ namespace ShareX.HelpersLib
             }
         }
 
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            Gradient.Clear();
+            UpdateGradientList();
+        }
+
         private void btnReverse_Click(object sender, EventArgs e)
         {
             if (Gradient.IsValid)

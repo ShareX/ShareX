@@ -152,17 +152,19 @@ namespace ShareX.HelpersLib
             return filePath;
         }
 
-        public static string ChangeFilenameExtension(string filePath, string extension)
+        public static string ChangeFilenameExtension(string fileName, string extension)
         {
-            if (!string.IsNullOrEmpty(filePath) && !string.IsNullOrEmpty(extension))
+            if (!string.IsNullOrEmpty(fileName))
             {
-                int pos = filePath.LastIndexOf('.');
+                int pos = fileName.LastIndexOf('.');
 
                 if (pos >= 0)
                 {
-                    filePath = filePath.Remove(pos);
+                    fileName = fileName.Remove(pos);
+                }
 
-                    extension = extension.Trim();
+                if (!string.IsNullOrEmpty(extension))
+                {
                     pos = extension.LastIndexOf('.');
 
                     if (pos >= 0)
@@ -170,11 +172,11 @@ namespace ShareX.HelpersLib
                         extension = extension.Substring(pos + 1);
                     }
 
-                    return filePath + "." + extension;
+                    return fileName + "." + extension;
                 }
             }
 
-            return filePath;
+            return fileName;
         }
 
         public static string AppendExtension(string filePath, string extension)
@@ -895,12 +897,13 @@ namespace ShareX.HelpersLib
             if (result) onSuccess();
         }
 
-        public static bool IsFileLocked(string path)
+        public static bool IsFileLocked(string filePath)
         {
             try
             {
-                using (FileStream fs = new FileStream(path, FileMode.Open, FileAccess.ReadWrite, FileShare.ReadWrite))
+                using (FileStream fs = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.None))
                 {
+                    fs.Close();
                 }
             }
             catch (IOException)
@@ -911,11 +914,11 @@ namespace ShareX.HelpersLib
             return false;
         }
 
-        public static long GetFileSize(string path)
+        public static long GetFileSize(string filePath)
         {
             try
             {
-                return new FileInfo(path).Length;
+                return new FileInfo(filePath).Length;
             }
             catch
             {

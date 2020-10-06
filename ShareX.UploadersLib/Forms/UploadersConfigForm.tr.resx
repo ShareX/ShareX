@@ -304,17 +304,11 @@
   <data name="grpSeafileShareSettings.Text" xml:space="preserve">
     <value>Paylaşma ayarları</value>
   </data>
-  <data name="lblPomfUploaders.Text" xml:space="preserve">
-    <value>Yükleyiciler:</value>
-  </data>
   <data name="lblPomfUploadURL.Text" xml:space="preserve">
     <value>Yükleme adresi:</value>
   </data>
   <data name="lblPomfResultURL.Text" xml:space="preserve">
     <value>Sonuç adresi:</value>
-  </data>
-  <data name="btnPomfTest.Text" xml:space="preserve">
-    <value>Hepsini test et</value>
   </data>
   <data name="lblLambdaUploadURL.Text" xml:space="preserve">
     <value>Link adresi:</value>
@@ -577,14 +571,8 @@
   <data name="cbCheveretoDirectURL.Text" xml:space="preserve">
     <value>Direkt adres</value>
   </data>
-  <data name="lblCheveretoUploaders.Text" xml:space="preserve">
-    <value>Yükleyiciler:</value>
-  </data>
   <data name="lblCheveretoUploadURLExample.Text" xml:space="preserve">
     <value>Örnek: http://example.com/api/1/upload</value>
-  </data>
-  <data name="btnCheveretoTestAll.Text" xml:space="preserve">
-    <value>Hepsini test et</value>
   </data>
   <data name="btnPicasaRefreshAlbumList.Text" xml:space="preserve">
     <value>Albüm listesini yenile</value>
@@ -633,18 +621,6 @@
   </data>
   <data name="gbPhotobucketAlbumPath.Text" xml:space="preserve">
     <value>Resimleri buraya yükle</value>
-  </data>
-  <data name="btnTinyPicOpenMyImages.Text" xml:space="preserve">
-    <value>Resimlerim sayfasını aç</value>
-  </data>
-  <data name="lblTinyPicUsername.Text" xml:space="preserve">
-    <value>Eposta:</value>
-  </data>
-  <data name="lblTinyPicPassword.Text" xml:space="preserve">
-    <value>Şifre:</value>
-  </data>
-  <data name="btnTinyPicLogin.Text" xml:space="preserve">
-    <value>Giriş</value>
   </data>
   <data name="lblImageShackPassword.Text" xml:space="preserve">
     <value>Şifre:</value>

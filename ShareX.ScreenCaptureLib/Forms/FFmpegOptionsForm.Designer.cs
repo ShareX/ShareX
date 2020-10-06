@@ -43,6 +43,7 @@
             this.pbAudioCodecWarning = new System.Windows.Forms.PictureBox();
             this.pbx264PresetWarning = new System.Windows.Forms.PictureBox();
             this.tbOpusBitrate = new System.Windows.Forms.TrackBar();
+            this.nudGIFBayerScale = new System.Windows.Forms.NumericUpDown();
             this.lblCodec = new System.Windows.Forms.Label();
             this.cboVideoCodec = new System.Windows.Forms.ComboBox();
             this.lblx264Preset = new System.Windows.Forms.Label();
@@ -87,12 +88,12 @@
             this.tcFFmpegAudioCodecs = new System.Windows.Forms.TabControl();
             this.tpAAC = new System.Windows.Forms.TabPage();
             this.lblAACQuality = new System.Windows.Forms.Label();
+            this.tpOpus = new System.Windows.Forms.TabPage();
+            this.lblOpusQuality = new System.Windows.Forms.Label();
             this.tpVorbis = new System.Windows.Forms.TabPage();
             this.lblVorbisQuality = new System.Windows.Forms.Label();
             this.tpMP3 = new System.Windows.Forms.TabPage();
             this.lblMP3Quality = new System.Windows.Forms.Label();
-            this.tpOpus = new System.Windows.Forms.TabPage();
-            this.lblOpusQuality = new System.Windows.Forms.Label();
             this.cboVideoSource = new System.Windows.Forms.ComboBox();
             this.lblVideoSource = new System.Windows.Forms.Label();
             this.cboAudioSource = new System.Windows.Forms.ComboBox();
@@ -114,6 +115,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbAudioCodecWarning)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbx264PresetWarning)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbOpusBitrate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudGIFBayerScale)).BeginInit();
             this.gbFFmpegExe.SuspendLayout();
             this.gbCommandLinePreview.SuspendLayout();
             this.gbCommandLineArgs.SuspendLayout();
@@ -130,9 +132,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudQSVBitrate)).BeginInit();
             this.tcFFmpegAudioCodecs.SuspendLayout();
             this.tpAAC.SuspendLayout();
+            this.tpOpus.SuspendLayout();
             this.tpVorbis.SuspendLayout();
             this.tpMP3.SuspendLayout();
-            this.tpOpus.SuspendLayout();
             this.gbSource.SuspendLayout();
             this.gbCodecs.SuspendLayout();
             this.SuspendLayout();
@@ -283,6 +285,23 @@
             this.ttHelpTip.SetToolTip(this.tbOpusBitrate, resources.GetString("tbOpusBitrate.ToolTip"));
             this.tbOpusBitrate.Value = 4;
             this.tbOpusBitrate.ValueChanged += new System.EventHandler(this.tbOpusBirate_ValueChanged);
+            // 
+            // nudGIFBayerScale
+            // 
+            resources.ApplyResources(this.nudGIFBayerScale, "nudGIFBayerScale");
+            this.nudGIFBayerScale.Maximum = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            this.nudGIFBayerScale.Name = "nudGIFBayerScale";
+            this.ttHelpTip.SetToolTip(this.nudGIFBayerScale, resources.GetString("nudGIFBayerScale.ToolTip"));
+            this.nudGIFBayerScale.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nudGIFBayerScale.ValueChanged += new System.EventHandler(this.nudGIFBayerScale_SelectedIndexChanged);
             // 
             // lblCodec
             // 
@@ -509,6 +528,7 @@
             // tpGIF
             // 
             this.tpGIF.BackColor = System.Drawing.SystemColors.Window;
+            this.tpGIF.Controls.Add(this.nudGIFBayerScale);
             this.tpGIF.Controls.Add(this.cbGIFDither);
             this.tpGIF.Controls.Add(this.lblGIFDither);
             this.tpGIF.Controls.Add(this.cbGIFStatsMode);
@@ -648,6 +668,19 @@
             resources.ApplyResources(this.lblAACQuality, "lblAACQuality");
             this.lblAACQuality.Name = "lblAACQuality";
             // 
+            // tpOpus
+            // 
+            this.tpOpus.Controls.Add(this.tbOpusBitrate);
+            this.tpOpus.Controls.Add(this.lblOpusQuality);
+            resources.ApplyResources(this.tpOpus, "tpOpus");
+            this.tpOpus.Name = "tpOpus";
+            this.tpOpus.UseVisualStyleBackColor = true;
+            // 
+            // lblOpusQuality
+            // 
+            resources.ApplyResources(this.lblOpusQuality, "lblOpusQuality");
+            this.lblOpusQuality.Name = "lblOpusQuality";
+            // 
             // tpVorbis
             // 
             this.tpVorbis.BackColor = System.Drawing.SystemColors.Window;
@@ -673,19 +706,6 @@
             // 
             resources.ApplyResources(this.lblMP3Quality, "lblMP3Quality");
             this.lblMP3Quality.Name = "lblMP3Quality";
-            // 
-            // tpOpus
-            // 
-            this.tpOpus.Controls.Add(this.tbOpusBitrate);
-            this.tpOpus.Controls.Add(this.lblOpusQuality);
-            resources.ApplyResources(this.tpOpus, "tpOpus");
-            this.tpOpus.Name = "tpOpus";
-            this.tpOpus.UseVisualStyleBackColor = true;
-            // 
-            // lblOpusQuality
-            // 
-            resources.ApplyResources(this.lblOpusQuality, "lblOpusQuality");
-            this.lblOpusQuality.Name = "lblOpusQuality";
             // 
             // cboVideoSource
             // 
@@ -817,6 +837,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbAudioCodecWarning)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbx264PresetWarning)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbOpusBitrate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudGIFBayerScale)).EndInit();
             this.gbFFmpegExe.ResumeLayout(false);
             this.gbFFmpegExe.PerformLayout();
             this.gbCommandLinePreview.ResumeLayout(false);
@@ -844,12 +865,12 @@
             this.tcFFmpegAudioCodecs.ResumeLayout(false);
             this.tpAAC.ResumeLayout(false);
             this.tpAAC.PerformLayout();
+            this.tpOpus.ResumeLayout(false);
+            this.tpOpus.PerformLayout();
             this.tpVorbis.ResumeLayout(false);
             this.tpVorbis.PerformLayout();
             this.tpMP3.ResumeLayout(false);
             this.tpMP3.PerformLayout();
-            this.tpOpus.ResumeLayout(false);
-            this.tpOpus.PerformLayout();
             this.gbSource.ResumeLayout(false);
             this.gbSource.PerformLayout();
             this.gbCodecs.ResumeLayout(false);
@@ -937,5 +958,6 @@
         private System.Windows.Forms.TabPage tpOpus;
         private System.Windows.Forms.TrackBar tbOpusBitrate;
         private System.Windows.Forms.Label lblOpusQuality;
+        private System.Windows.Forms.NumericUpDown nudGIFBayerScale;
     }
 }

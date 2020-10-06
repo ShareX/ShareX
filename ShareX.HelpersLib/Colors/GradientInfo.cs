@@ -68,6 +68,11 @@ namespace ShareX.HelpersLib
             }
         }
 
+        public void Clear()
+        {
+            Colors.Clear();
+        }
+
         public void Sort()
         {
             Colors.Sort((x, y) => x.Location.CompareTo(y.Location));

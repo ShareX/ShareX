@@ -138,9 +138,6 @@
   <data name="FFmpegOptionsForm_buttonFFmpegBrowse_Click_Browse_for_ffmpeg_exe" xml:space="preserve">
     <value>Duyệt đến ffmpeg.exe</value>
   </data>
-  <data name="FFmpegHelper_Record_FFmpeg_error" xml:space="preserve">
-    <value>Lỗi FFmpeg</value>
-  </data>
   <data name="FFmpegOptionsForm_DownloaderForm_InstallRequested_Successfully_downloaded_FFmpeg_" xml:space="preserve">
     <value>Tải về FFmpeg thành công.</value>
   </data>
@@ -152,11 +149,6 @@
   </data>
   <data name="RectangleTransparent_RectangleTransparent_Rectangle_capture_transparent" xml:space="preserve">
     <value>Chụp hình chữ nhật kiểu trong suốt</value>
-  </data>
-  <data name="RectangleRegion_GetRulerText_Ruler_info" xml:space="preserve">
-    <value>X: {0} / Y: {1} / X2: {2} / Y2: {3}
-Rộng: {4} px / Cao: {5} px
-Khoảng cách: {6:0.00} px / Góc: {7:0.00}°</value>
   </data>
   <data name="ShapeManager_CreateToolbar_AnnotateMenu" xml:space="preserve">
     <value>Menu chú thích</value>
@@ -247,9 +239,6 @@ Khoảng cách: {6:0.00} px / Góc: {7:0.00}°</value>
   </data>
   <data name="ShapeManager_CreateToolbar_Edit" xml:space="preserve">
     <value>Chỉnh sửa</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_EditorBackgroundColor" xml:space="preserve">
-    <value>Màu nền trình chỉnh sửa...</value>
   </data>
   <data name="ShapeManager_CreateToolbar_EditorStartMode" xml:space="preserve">
     <value>Chế độ bắt đầu trình chỉnh sửa:</value>

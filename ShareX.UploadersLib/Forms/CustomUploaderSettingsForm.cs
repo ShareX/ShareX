@@ -52,7 +52,7 @@ namespace ShareX.UploadersLib
         public UploadersConfig Config { get; private set; }
 
         private bool customUploaderPauseLoad;
-        private URLType customUploaderURLType = URLType.URL;
+        private CustomUploaderURLType customUploaderURLType = CustomUploaderURLType.URL;
 
         public CustomUploaderSettingsForm(UploadersConfig config)
         {
@@ -90,12 +90,14 @@ namespace ShareX.UploadersLib
             new CodeMenu(rtbResultURL, outputCodeMenuItems);
             new CodeMenu(rtbResultThumbnailURL, outputCodeMenuItems);
             new CodeMenu(rtbResultDeletionURL, outputCodeMenuItems);
+            new CodeMenu(rtbResultErrorMessage, outputCodeMenuItems);
 
             rtbRequestURL.AddContextMenu();
             rtbData.AddContextMenu();
             rtbResultURL.AddContextMenu();
             rtbResultThumbnailURL.AddContextMenu();
             rtbResultDeletionURL.AddContextMenu();
+            rtbResultErrorMessage.AddContextMenu();
             rtbResult.AddContextMenu();
             rtbResponseInfo.AddContextMenu();
             rtbResponseText.AddContextMenu();
@@ -216,12 +218,14 @@ namespace ShareX.UploadersLib
                 }
             }
 
-            rtbResultURL.Text = uploader.URL ?? "";
+            rtbResultURL.Text = uploader.URL;
             CustomUploaderSyntaxHighlight(rtbResultURL);
-            rtbResultThumbnailURL.Text = uploader.ThumbnailURL ?? "";
+            rtbResultThumbnailURL.Text = uploader.ThumbnailURL;
             CustomUploaderSyntaxHighlight(rtbResultThumbnailURL);
-            rtbResultDeletionURL.Text = uploader.DeletionURL ?? "";
+            rtbResultDeletionURL.Text = uploader.DeletionURL;
             CustomUploaderSyntaxHighlight(rtbResultDeletionURL);
+            rtbResultErrorMessage.Text = uploader.ErrorMessage;
+            CustomUploaderSyntaxHighlight(rtbResultErrorMessage);
 
             CustomUploaderUpdateStates();
         }
@@ -630,14 +634,17 @@ namespace ShareX.UploadersLib
             switch (customUploaderURLType)
             {
                 default:
-                case URLType.URL:
+                case CustomUploaderURLType.URL:
                     rtb = rtbResultURL;
                     break;
-                case URLType.ThumbnailURL:
+                case CustomUploaderURLType.ThumbnailURL:
                     rtb = rtbResultThumbnailURL;
                     break;
-                case URLType.DeletionURL:
+                case CustomUploaderURLType.DeletionURL:
                     rtb = rtbResultDeletionURL;
+                    break;
+                case CustomUploaderURLType.ErrorMessage:
+                    rtb = rtbResultErrorMessage;
                     break;
             }
 
@@ -1251,7 +1258,7 @@ namespace ShareX.UploadersLib
 
         private void rtbCustomUploaderURL_Enter(object sender, EventArgs e)
         {
-            customUploaderURLType = URLType.URL;
+            customUploaderURLType = CustomUploaderURLType.URL;
         }
 
         private void rtbCustomUploaderURL_TextChanged(object sender, EventArgs e)
@@ -1263,7 +1270,7 @@ namespace ShareX.UploadersLib
 
         private void rtbCustomUploaderThumbnailURL_Enter(object sender, EventArgs e)
         {
-            customUploaderURLType = URLType.ThumbnailURL;
+            customUploaderURLType = CustomUploaderURLType.ThumbnailURL;
         }
 
         private void rtbCustomUploaderThumbnailURL_TextChanged(object sender, EventArgs e)
@@ -1275,7 +1282,7 @@ namespace ShareX.UploadersLib
 
         private void rtbCustomUploaderDeletionURL_Enter(object sender, EventArgs e)
         {
-            customUploaderURLType = URLType.DeletionURL;
+            customUploaderURLType = CustomUploaderURLType.DeletionURL;
         }
 
         private void rtbCustomUploaderDeletionURL_TextChanged(object sender, EventArgs e)
@@ -1283,6 +1290,18 @@ namespace ShareX.UploadersLib
             CustomUploaderItem uploader = CustomUploaderGetSelected();
             if (uploader != null) uploader.DeletionURL = rtbResultDeletionURL.Text;
             CustomUploaderSyntaxHighlight(rtbResultDeletionURL);
+        }
+
+        private void rtbResultErrorMessage_Enter(object sender, EventArgs e)
+        {
+            customUploaderURLType = CustomUploaderURLType.ErrorMessage;
+        }
+
+        private void rtbResultErrorMessage_TextChanged(object sender, EventArgs e)
+        {
+            CustomUploaderItem uploader = CustomUploaderGetSelected();
+            if (uploader != null) uploader.ErrorMessage = rtbResultErrorMessage.Text;
+            CustomUploaderSyntaxHighlight(rtbResultErrorMessage);
         }
 
         private void txtCustomUploaderLog_LinkClicked(object sender, LinkClickedEventArgs e)

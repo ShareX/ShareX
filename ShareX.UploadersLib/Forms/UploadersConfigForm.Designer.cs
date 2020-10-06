@@ -113,6 +113,8 @@ namespace ShareX.UploadersLib
             this.txtFirebaseWebAPIKey = new System.Windows.Forms.TextBox();
             this.lblFirebaseWebAPIKey = new System.Windows.Forms.Label();
             this.tpKutt = new System.Windows.Forms.TabPage();
+            this.txtKuttDomain = new System.Windows.Forms.TextBox();
+            this.lblKuttDomain = new System.Windows.Forms.Label();
             this.lblKuttPassword = new System.Windows.Forms.Label();
             this.txtKuttPassword = new System.Windows.Forms.TextBox();
             this.cbKuttReuse = new System.Windows.Forms.CheckBox();
@@ -626,8 +628,6 @@ namespace ShareX.UploadersLib
             this.tcUploaders = new System.Windows.Forms.TabControl();
             this.tttvMain = new ShareX.HelpersLib.TabToTreeView();
             this.actRapidShareAccountType = new ShareX.UploadersLib.AccountTypeControl();
-            this.lblKuttDomain = new System.Windows.Forms.Label();
-            this.txtKuttDomain = new System.Windows.Forms.TextBox();
             this.tpOtherUploaders.SuspendLayout();
             this.tcOtherUploaders.SuspendLayout();
             this.tpTwitter.SuspendLayout();
@@ -1144,6 +1144,17 @@ namespace ShareX.UploadersLib
             resources.ApplyResources(this.tpKutt, "tpKutt");
             this.tpKutt.Name = "tpKutt";
             this.tpKutt.UseVisualStyleBackColor = true;
+            // 
+            // txtKuttDomain
+            // 
+            resources.ApplyResources(this.txtKuttDomain, "txtKuttDomain");
+            this.txtKuttDomain.Name = "txtKuttDomain";
+            this.txtKuttDomain.TextChanged += new System.EventHandler(this.txtKuttDomain_TextChanged);
+            // 
+            // lblKuttDomain
+            // 
+            resources.ApplyResources(this.lblKuttDomain, "lblKuttDomain");
+            this.lblKuttDomain.Name = "lblKuttDomain";
             // 
             // lblKuttPassword
             // 
@@ -3160,13 +3171,13 @@ namespace ShareX.UploadersLib
             // 
             // oauthTeknik
             // 
-            this.oauthTeknik.IsRefreshable = false;
             resources.ApplyResources(this.oauthTeknik, "oauthTeknik");
             this.oauthTeknik.Name = "oauthTeknik";
             this.oauthTeknik.UserInfo = null;
             this.oauthTeknik.OpenButtonClicked += new ShareX.UploadersLib.OAuthControl.OpenButtonClickedEventHandler(this.oauthTeknik_OpenButtonClicked);
             this.oauthTeknik.CompleteButtonClicked += new ShareX.UploadersLib.OAuthControl.CompleteButtonClickedEventHandler(this.oauthTeknik_CompleteButtonClicked);
             this.oauthTeknik.ClearButtonClicked += new ShareX.UploadersLib.OAuthControl.ClearButtonclickedEventHandler(this.oauthTeknik_ClearButtonClicked);
+            this.oauthTeknik.RefreshButtonClicked += new ShareX.UploadersLib.OAuthControl.RefreshButtonClickedEventHandler(this.oauthTeknik_RefreshButtonClicked);
             // 
             // tpPomf
             // 
@@ -4925,17 +4936,6 @@ namespace ShareX.UploadersLib
             resources.ApplyResources(this.actRapidShareAccountType, "actRapidShareAccountType");
             this.actRapidShareAccountType.Name = "actRapidShareAccountType";
             this.actRapidShareAccountType.SelectedAccountType = ShareX.UploadersLib.AccountType.Anonymous;
-            // 
-            // lblKuttDomain
-            // 
-            resources.ApplyResources(this.lblKuttDomain, "lblKuttDomain");
-            this.lblKuttDomain.Name = "lblKuttDomain";
-            // 
-            // txtKuttDomain
-            // 
-            resources.ApplyResources(this.txtKuttDomain, "txtKuttDomain");
-            this.txtKuttDomain.Name = "txtKuttDomain";
-            this.txtKuttDomain.TextChanged += new System.EventHandler(this.txtKuttDomain_TextChanged);
             // 
             // UploadersConfigForm
             // 

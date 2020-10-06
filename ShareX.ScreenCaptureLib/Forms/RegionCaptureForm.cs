@@ -586,6 +586,12 @@ namespace ShareX.ScreenCaptureLib
                     CloseWindow(RegionResult.Fullscreen);
                     break;
                 case Keys.Enter:
+                    if (ShapeManager.IsCurrentShapeTypeRegion)
+                    {
+                        ShapeManager.StartRegionSelection();
+                        ShapeManager.EndRegionSelection();
+                    }
+
                     CloseWindow(RegionResult.Region);
                     break;
                 case Keys.Oemtilde:
@@ -1202,15 +1208,14 @@ namespace ShareX.ScreenCaptureLib
                 if (Mode == RegionCaptureMode.ScreenColorPicker)
                 {
                     int colorBoxOffset = 2;
-                    int colorBoxWidth = 20;
+                    int colorBoxSize = infoTextRect.Height - (colorBoxOffset * 2);
                     int textOffset = 4;
-                    int colorBoxExtraWidth = colorBoxWidth + textOffset;
+                    int colorBoxExtraWidth = colorBoxSize + textOffset;
                     infoTextRect.Width += colorBoxExtraWidth;
                     infoTextRect.Location = new Point(x + (totalSize.Width / 2) - (infoTextRect.Width / 2), y + infoTextPosition);
                     Point padding = new Point(infoTextPadding + colorBoxExtraWidth, infoTextPadding);
 
-                    Rectangle colorRect = new Rectangle(infoTextRect.X + colorBoxOffset, infoTextRect.Y + colorBoxOffset,
-                        colorBoxWidth, infoTextRect.Height - (colorBoxOffset * 2));
+                    Rectangle colorRect = new Rectangle(infoTextRect.X + colorBoxOffset, infoTextRect.Y + colorBoxOffset, colorBoxSize, colorBoxSize);
 
                     DrawInfoText(g, infoText, infoTextRect, infoFont, padding);
 
@@ -1355,9 +1360,12 @@ namespace ShareX.ScreenCaptureLib
                     gp = regionFillPath;
                 }
 
-                using (Bitmap bmp = RegionCaptureTasks.ApplyRegionPathToImage(Canvas, gp, out Rectangle rect))
+                if (gp != null)
                 {
-                    return ShapeManager.RenderOutputImage(bmp, rect.Location);
+                    using (Bitmap bmp = RegionCaptureTasks.ApplyRegionPathToImage(Canvas, gp, out Rectangle rect))
+                    {
+                        return ShapeManager.RenderOutputImage(bmp, rect.Location);
+                    }
                 }
             }
             else if (Result == RegionResult.Fullscreen)
@@ -1418,6 +1426,8 @@ namespace ShareX.ScreenCaptureLib
                 {
                     ImageFilePath = imageFilePath;
                     UpdateTitle();
+                    // TODO: Translate
+                    ShapeManager.ShowMenuTooltip("Image saved");
                 }
             }
         }
@@ -1434,6 +1444,8 @@ namespace ShareX.ScreenCaptureLib
                 {
                     ImageFilePath = imageFilePath;
                     UpdateTitle();
+                    // TODO: Translate
+                    ShapeManager.ShowMenuTooltip("Image saved");
                 }
             }
         }
@@ -1445,6 +1457,8 @@ namespace ShareX.ScreenCaptureLib
                 Bitmap bmp = ReceiveImageForTask();
 
                 CopyImageRequested(bmp);
+                // TODO: Translate
+                ShapeManager.ShowMenuTooltip("Image copied");
             }
         }
 
@@ -1455,6 +1469,8 @@ namespace ShareX.ScreenCaptureLib
                 Bitmap bmp = ReceiveImageForTask();
 
                 UploadImageRequested(bmp);
+                // TODO: Translate
+                ShapeManager.ShowMenuTooltip("Image uploading");
             }
         }
 

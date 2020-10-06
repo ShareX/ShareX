@@ -61,6 +61,60 @@ namespace ShareX.MediaLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Bottom.
+        /// </summary>
+        internal static string AlignmentBottom {
+            get {
+                return ResourceManager.GetString("AlignmentBottom", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Center.
+        /// </summary>
+        internal static string AlignmentHorizontalCenter {
+            get {
+                return ResourceManager.GetString("AlignmentHorizontalCenter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Left.
+        /// </summary>
+        internal static string AlignmentLeft {
+            get {
+                return ResourceManager.GetString("AlignmentLeft", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Right.
+        /// </summary>
+        internal static string AlignmentRight {
+            get {
+                return ResourceManager.GetString("AlignmentRight", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Top.
+        /// </summary>
+        internal static string AlignmentTop {
+            get {
+                return ResourceManager.GetString("AlignmentTop", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Center.
+        /// </summary>
+        internal static string AlignmentVerticalCenter {
+            get {
+                return ResourceManager.GetString("AlignmentVerticalCenter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to FFmpeg error.
         /// </summary>
         internal static string FFmpegError {

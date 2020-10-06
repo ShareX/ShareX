@@ -120,9 +120,6 @@
   <data name="btnFilePathBrowse.Text" xml:space="preserve">
     <value>Parcourir...</value>
   </data>
-  <data name="lblFile.Text" xml:space="preserve">
-    <value>Chemin du fichier :</value>
-  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Vérifier un hash</value>
   </data>

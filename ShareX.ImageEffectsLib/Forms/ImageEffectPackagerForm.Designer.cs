@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ImageEffectPackagerForm));
             this.btnPackage = new System.Windows.Forms.Button();
             this.lblAssetsFolderPath = new System.Windows.Forms.Label();
             this.lblPackageFilePath = new System.Windows.Forms.Label();
@@ -40,83 +41,58 @@
             // 
             // btnPackage
             // 
-            this.btnPackage.Location = new System.Drawing.Point(16, 144);
+            resources.ApplyResources(this.btnPackage, "btnPackage");
             this.btnPackage.Name = "btnPackage";
-            this.btnPackage.Size = new System.Drawing.Size(384, 24);
-            this.btnPackage.TabIndex = 0;
-            this.btnPackage.Text = "Package";
             this.btnPackage.UseVisualStyleBackColor = true;
             this.btnPackage.Click += new System.EventHandler(this.btnPackage_Click);
             // 
             // lblAssetsFolderPath
             // 
-            this.lblAssetsFolderPath.AutoSize = true;
-            this.lblAssetsFolderPath.Location = new System.Drawing.Point(13, 48);
+            resources.ApplyResources(this.lblAssetsFolderPath, "lblAssetsFolderPath");
             this.lblAssetsFolderPath.Name = "lblAssetsFolderPath";
-            this.lblAssetsFolderPath.Size = new System.Drawing.Size(94, 13);
-            this.lblAssetsFolderPath.TabIndex = 2;
-            this.lblAssetsFolderPath.Text = "Assets folder path:";
             // 
             // lblPackageFilePath
             // 
-            this.lblPackageFilePath.AutoSize = true;
-            this.lblPackageFilePath.Location = new System.Drawing.Point(13, 96);
+            resources.ApplyResources(this.lblPackageFilePath, "lblPackageFilePath");
             this.lblPackageFilePath.Name = "lblPackageFilePath";
-            this.lblPackageFilePath.Size = new System.Drawing.Size(93, 13);
-            this.lblPackageFilePath.TabIndex = 5;
-            this.lblPackageFilePath.Text = "Package file path:";
             // 
             // txtPackageFilePath
             // 
-            this.txtPackageFilePath.Location = new System.Drawing.Point(16, 112);
+            resources.ApplyResources(this.txtPackageFilePath, "txtPackageFilePath");
             this.txtPackageFilePath.Name = "txtPackageFilePath";
-            this.txtPackageFilePath.Size = new System.Drawing.Size(344, 20);
-            this.txtPackageFilePath.TabIndex = 6;
             this.txtPackageFilePath.TextChanged += new System.EventHandler(this.txtPackageFilePath_TextChanged);
             // 
             // btnPackageFilePathBrowse
             // 
-            this.btnPackageFilePathBrowse.Location = new System.Drawing.Point(368, 111);
+            resources.ApplyResources(this.btnPackageFilePathBrowse, "btnPackageFilePathBrowse");
             this.btnPackageFilePathBrowse.Name = "btnPackageFilePathBrowse";
-            this.btnPackageFilePathBrowse.Size = new System.Drawing.Size(32, 23);
-            this.btnPackageFilePathBrowse.TabIndex = 7;
-            this.btnPackageFilePathBrowse.Text = "...";
             this.btnPackageFilePathBrowse.UseVisualStyleBackColor = true;
             this.btnPackageFilePathBrowse.Click += new System.EventHandler(this.btnPackageFilePathBrowse_Click);
             // 
             // txtAssetsFolderPath
             // 
-            this.txtAssetsFolderPath.Location = new System.Drawing.Point(16, 64);
+            resources.ApplyResources(this.txtAssetsFolderPath, "txtAssetsFolderPath");
             this.txtAssetsFolderPath.Name = "txtAssetsFolderPath";
-            this.txtAssetsFolderPath.Size = new System.Drawing.Size(344, 20);
-            this.txtAssetsFolderPath.TabIndex = 3;
             this.txtAssetsFolderPath.TextChanged += new System.EventHandler(this.txtAssetsFolderPath_TextChanged);
             // 
             // btnAssetsFolderPathBrowse
             // 
-            this.btnAssetsFolderPathBrowse.Location = new System.Drawing.Point(368, 63);
+            resources.ApplyResources(this.btnAssetsFolderPathBrowse, "btnAssetsFolderPathBrowse");
             this.btnAssetsFolderPathBrowse.Name = "btnAssetsFolderPathBrowse";
-            this.btnAssetsFolderPathBrowse.Size = new System.Drawing.Size(32, 23);
-            this.btnAssetsFolderPathBrowse.TabIndex = 4;
-            this.btnAssetsFolderPathBrowse.Text = "...";
             this.btnAssetsFolderPathBrowse.UseVisualStyleBackColor = true;
             this.btnAssetsFolderPathBrowse.Click += new System.EventHandler(this.btnAssetsFolderPathBrowse_Click);
             // 
             // btnOpenImageEffectsFolder
             // 
-            this.btnOpenImageEffectsFolder.Location = new System.Drawing.Point(16, 16);
+            resources.ApplyResources(this.btnOpenImageEffectsFolder, "btnOpenImageEffectsFolder");
             this.btnOpenImageEffectsFolder.Name = "btnOpenImageEffectsFolder";
-            this.btnOpenImageEffectsFolder.Size = new System.Drawing.Size(384, 24);
-            this.btnOpenImageEffectsFolder.TabIndex = 1;
-            this.btnOpenImageEffectsFolder.Text = "Open image effects folder...";
             this.btnOpenImageEffectsFolder.UseVisualStyleBackColor = true;
             this.btnOpenImageEffectsFolder.Click += new System.EventHandler(this.btnOpenImageEffectsFolder_Click);
             // 
             // ImageEffectPackagerForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(416, 184);
             this.Controls.Add(this.btnOpenImageEffectsFolder);
             this.Controls.Add(this.btnAssetsFolderPathBrowse);
             this.Controls.Add(this.txtAssetsFolderPath);
@@ -128,8 +104,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "ImageEffectPackagerForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ShareX - Image effect packager";
             this.ResumeLayout(false);
             this.PerformLayout();
 

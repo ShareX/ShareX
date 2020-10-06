@@ -126,9 +126,6 @@
   <data name="btnStartHashCheck.Text" xml:space="preserve">
     <value>开始</value>
   </data>
-  <data name="lblFile.Text" xml:space="preserve">
-    <value>文件路径：</value>
-  </data>
   <data name="lblHashType.Text" xml:space="preserve">
     <value>哈希（Hash）类型：</value>
   </data>

@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.MediaLib.Properties;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -55,18 +56,17 @@ namespace ShareX.MediaLib
         {
             cbAlignment.Items.Clear();
 
-            // TODO: Translate
             if (Options.Orientation == Orientation.Horizontal)
             {
-                cbAlignment.Items.Add("Top");
-                cbAlignment.Items.Add("Center");
-                cbAlignment.Items.Add("Bottom");
+                cbAlignment.Items.Add(Resources.AlignmentTop);
+                cbAlignment.Items.Add(Resources.AlignmentHorizontalCenter);
+                cbAlignment.Items.Add(Resources.AlignmentBottom);
             }
             else
             {
-                cbAlignment.Items.Add("Left");
-                cbAlignment.Items.Add("Center");
-                cbAlignment.Items.Add("Right");
+                cbAlignment.Items.Add(Resources.AlignmentLeft);
+                cbAlignment.Items.Add(Resources.AlignmentVerticalCenter);
+                cbAlignment.Items.Add(Resources.AlignmentRight);
             }
 
             cbAlignment.SelectedIndex = (int)Options.Alignment;

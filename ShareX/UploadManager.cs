@@ -382,28 +382,42 @@ namespace ShareX
             }
         }
 
-        public static void UploadImage(Bitmap bmp)
+        public static void UploadImage(Bitmap bmp, TaskSettings taskSettings = null)
         {
             if (bmp != null)
             {
-                TaskSettings taskSettings = TaskSettings.GetDefaultTaskSettings();
-                taskSettings.UseDefaultAfterCaptureJob = false;
-                taskSettings.AfterCaptureJob = AfterCaptureTasks.UploadImageToHost;
+                if (taskSettings == null)
+                {
+                    taskSettings = TaskSettings.GetDefaultTaskSettings();
+                }
+
+                if (taskSettings.IsSafeTaskSettings)
+                {
+                    taskSettings.UseDefaultAfterCaptureJob = false;
+                    taskSettings.AfterCaptureJob = AfterCaptureTasks.UploadImageToHost;
+                }
 
                 RunImageTask(bmp, taskSettings);
             }
         }
 
-        public static void UploadImage(Bitmap bmp, ImageDestination imageDestination, FileDestination imageFileDestination)
+        public static void UploadImage(Bitmap bmp, ImageDestination imageDestination, FileDestination imageFileDestination, TaskSettings taskSettings = null)
         {
             if (bmp != null)
             {
-                TaskSettings taskSettings = TaskSettings.GetDefaultTaskSettings();
-                taskSettings.UseDefaultAfterCaptureJob = false;
-                taskSettings.AfterCaptureJob = AfterCaptureTasks.UploadImageToHost;
-                taskSettings.UseDefaultDestinations = false;
-                taskSettings.ImageDestination = imageDestination;
-                taskSettings.ImageFileDestination = imageFileDestination;
+                if (taskSettings == null)
+                {
+                    taskSettings = TaskSettings.GetDefaultTaskSettings();
+                }
+
+                if (taskSettings.IsSafeTaskSettings)
+                {
+                    taskSettings.UseDefaultAfterCaptureJob = false;
+                    taskSettings.AfterCaptureJob = AfterCaptureTasks.UploadImageToHost;
+                    taskSettings.UseDefaultDestinations = false;
+                    taskSettings.ImageDestination = imageDestination;
+                    taskSettings.ImageFileDestination = imageFileDestination;
+                }
 
                 RunImageTask(bmp, taskSettings);
             }

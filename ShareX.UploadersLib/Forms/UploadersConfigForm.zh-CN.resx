@@ -579,18 +579,6 @@
   <data name="gbPhotobucketAlbumPath.Text" xml:space="preserve">
     <value>上传图像至</value>
   </data>
-  <data name="btnTinyPicOpenMyImages.Text" xml:space="preserve">
-    <value>打开我的图片页面...</value>
-  </data>
-  <data name="lblTinyPicUsername.Text" xml:space="preserve">
-    <value>邮箱：</value>
-  </data>
-  <data name="lblTinyPicPassword.Text" xml:space="preserve">
-    <value>密码：</value>
-  </data>
-  <data name="btnTinyPicLogin.Text" xml:space="preserve">
-    <value>登录</value>
-  </data>
   <data name="lblImageShackPassword.Text" xml:space="preserve">
     <value>密码：</value>
   </data>

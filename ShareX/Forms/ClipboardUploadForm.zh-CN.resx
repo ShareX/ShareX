@@ -123,9 +123,6 @@
   <data name="btnCancel.Text" xml:space="preserve">
     <value>取消</value>
   </data>
-  <data name="btnOK.Text" xml:space="preserve">
-    <value>确定</value>
-  </data>
   <data name="cbDontShowThisWindow.Text" xml:space="preserve">
     <value>不要显示此窗口</value>
   </data>

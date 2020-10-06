@@ -519,8 +519,7 @@ namespace ShareX
 
         private void BtnThemeReset_Click(object sender, EventArgs e)
         {
-            // TODO: Translate
-            if (MessageBox.Show("Would you like to reset themes?", "ShareX - " + "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+            if (MessageBox.Show(Resources.WouldYouLikeToResetThemes, "ShareX - " + Resources.Confirmation, MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
             {
                 Program.Settings.Themes = ShareXTheme.GetPresets();
                 Program.Settings.SelectedTheme = 0;
@@ -784,8 +783,7 @@ namespace ShareX
 
         private void btnResetSettings_Click(object sender, EventArgs e)
         {
-            // TODO: Translate
-            if (MessageBox.Show(Resources.ApplicationSettingsForm_btnResetSettings_Click_WouldYouLikeToResetShareXSettings, "ShareX - " + "Confirmation",
+            if (MessageBox.Show(Resources.ApplicationSettingsForm_btnResetSettings_Click_WouldYouLikeToResetShareXSettings, "ShareX - " + Resources.Confirmation,
                 MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
             {
                 SettingManager.ResetSettings();

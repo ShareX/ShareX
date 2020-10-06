@@ -46,18 +46,14 @@ namespace ShareX
 
             ShareXResources.ApplyTheme(this);
 
-#if STEAM || WindowsStore
+#if STEAM
             uclUpdate.Visible = false;
+            lblBuild.Text = "Steam build";
             lblBuild.Visible = true;
-
-            if (Program.Build == ShareXBuild.Steam)
-            {
-                lblBuild.Text = "Steam build";
-            }
-            else if (Program.Build == ShareXBuild.MicrosoftStore)
-            {
-                lblBuild.Text = "Microsoft Store build";
-            }
+#elif WindowsStore
+            uclUpdate.Visible = false;
+            lblBuild.Text = "Microsoft Store build";
+            lblBuild.Visible = true;
 #else
             if (!Program.PortableApps)
             {
@@ -112,7 +108,6 @@ SSH.NET: https://github.com/sshnet/SSH.NET
 Icons: http://p.yusukekamiyamane.com
 ImageListView: https://github.com/oozcitak/imagelistview
 FFmpeg: https://www.ffmpeg.org
-Zeranoe FFmpeg: https://ffmpeg.zeranoe.com/builds
 DirectShow video and audio device: https://github.com/rdp/screen-capture-recorder-to-video-windows-free
 FluentFTP: https://github.com/robinrodricks/FluentFTP
 Steamworks.NET: https://github.com/rlabrecque/Steamworks.NET

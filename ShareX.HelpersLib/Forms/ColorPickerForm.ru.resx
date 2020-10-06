@@ -216,4 +216,7 @@
   <data name="lblName.Text" xml:space="preserve">
     <value>Название:</value>
   </data>
+  <data name="btnClipboardColorPicker.ToolTip" xml:space="preserve">
+    <value>Взять цвет из буфера обмена</value>
+  </data>
 </root>

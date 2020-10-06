@@ -662,6 +662,9 @@ namespace ShareX.ScreenCaptureLib
                         case Keys.H:
                             CurrentTool = ShapeType.EffectHighlight;
                             break;
+                        case Keys.Control | Keys.D:
+                            DuplicateCurrrentShape(true);
+                            break;
                         case Keys.Control | Keys.V:
                             PasteFromClipboard(true);
                             break;
@@ -707,20 +710,6 @@ namespace ShareX.ScreenCaptureLib
                             break;
                         case Keys.Control | Keys.P:
                             Form.OnPrintImageRequested();
-                            break;
-                    }
-                }
-                else
-                {
-                    switch (e.KeyData)
-                    {
-                        case Keys.Q:
-                            Options.QuickCrop = !Options.QuickCrop;
-
-                            if (tsmiQuickCrop != null)
-                            {
-                                tsmiQuickCrop.Checked = !Options.QuickCrop;
-                            }
                             break;
                     }
                 }
@@ -909,7 +898,7 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        private void StartRegionSelection()
+        public void StartRegionSelection()
         {
             if (IsCursorOnObject)
             {
@@ -943,7 +932,7 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        private void EndRegionSelection()
+        public void EndRegionSelection()
         {
             bool wasCreating = IsCreating;
             bool wasMoving = IsMoving;
@@ -1655,6 +1644,31 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
+        private void DuplicateCurrrentShape(bool insertMousePosition)
+        {
+            BaseShape shape = CurrentShape;
+
+            if (shape != null && shape.IsHandledBySelectTool)
+            {
+                BaseShape shapeCopy = shape.Duplicate();
+                if (shapeCopy != null)
+                {
+                    if (insertMousePosition)
+                    {
+                        shapeCopy.MoveAbsolute(InputManager.ClientMousePosition, true);
+                    }
+                    else
+                    {
+                        shapeCopy.Move(10, 10);
+                    }
+
+                    shapeCopy.OnMoved();
+                    AddShape(shapeCopy);
+                    SelectCurrentShape();
+                }
+            }
+        }
+
         private void PasteFromClipboard(bool insertMousePosition)
         {
             if (Clipboard.ContainsImage())
@@ -2001,13 +2015,18 @@ namespace ShareX.ScreenCaptureLib
         private void AutoCropImage()
         {
             Rectangle source = new Rectangle(0, 0, Form.Canvas.Width, Form.Canvas.Height);
-            Rectangle rect = ImageHelpers.FindAutoCropRectangle(Form.Canvas);
+            Rectangle crop;
 
-            if (source != rect && rect.X >= 0 && rect.Y >= 0 && rect.Width > 0 && rect.Height > 0)
+            using (Bitmap resultImage = Form.GetResultImage())
+            {
+                crop = ImageHelpers.FindAutoCropRectangle(resultImage);
+            }
+
+            if (source != crop && crop.X >= 0 && crop.Y >= 0 && crop.Width > 0 && crop.Height > 0)
             {
                 CurrentTool = ShapeType.ToolCrop;
                 CropTool tool = (CropTool)CreateShape(ShapeType.ToolCrop);
-                tool.Rectangle = rect.LocationOffset(Form.CanvasRectangle.Location);
+                tool.Rectangle = crop.LocationOffset(Form.CanvasRectangle.Location);
                 tool.OnCreated();
                 AddShape(tool);
                 SelectCurrentShape();

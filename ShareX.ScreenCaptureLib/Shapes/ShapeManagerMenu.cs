@@ -48,8 +48,8 @@ namespace ShareX.ScreenCaptureLib
         private ToolStripEx tsMain;
         private ToolStripButton tsbSaveImage, tsbBorderColor, tsbFillColor, tsbHighlightColor;
         private ToolStripDropDownButton tsddbShapeOptions;
-        private ToolStripMenuItem tsmiArrowHeadsBothSide, tsmiShadow, tsmiShadowColor, tsmiStepUseLetters, tsmiUndo, tsmiDelete, tsmiDeleteAll, tsmiMoveTop,
-            tsmiMoveUp, tsmiMoveDown, tsmiMoveBottom, tsmiRegionCapture, tsmiQuickCrop, tsmiShowMagnifier;
+        private ToolStripMenuItem tsmiArrowHeadsBothSide, tsmiShadow, tsmiShadowColor, tsmiStepUseLetters, tsmiUndo, tsmiDuplicate, tsmiDelete, tsmiDeleteAll,
+            tsmiMoveTop, tsmiMoveUp, tsmiMoveDown, tsmiMoveBottom, tsmiRegionCapture, tsmiQuickCrop, tsmiShowMagnifier;
         private ToolStripLabeledNumericUpDown tslnudBorderSize, tslnudCornerRadius, tslnudCenterPoints, tslnudBlurRadius, tslnudPixelateSize, tslnudStepFontSize,
             tslnudMagnifierPixelCount, tslnudStartingStepValue, tslnudMagnifyStrength;
         private ToolStripLabel tslDragLeft, tslDragRight;
@@ -81,6 +81,13 @@ namespace ShareX.ScreenCaptureLib
 
             menuForm.SuspendLayout();
 
+            if (Options.MenuIconSize == 0)
+            {
+                Options.MenuIconSize = (int)(16 * NativeMethods.GetScreenScalingFactor());
+            }
+
+            int imageScalingSize = Options.MenuIconSize.Clamp(16, 64);
+
             tsMain = new ToolStripEx()
             {
                 AutoSize = true,
@@ -88,9 +95,10 @@ namespace ShareX.ScreenCaptureLib
                 ClickThrough = true,
                 Dock = DockStyle.None,
                 GripStyle = ToolStripGripStyle.Hidden,
+                ImageScalingSize = new Size(imageScalingSize, imageScalingSize),
                 Location = new Point(0, 0),
                 MinimumSize = new Size(10, 30),
-                Padding = Form.IsEditorMode ? new Padding(5, 1, 3, 0) : new Padding(0, 1, 0, 0),
+                Padding = Form.IsEditorMode ? new Padding(5, 1, 3, 0) : new Padding(2, 1, 0, 0),
                 Renderer = new ToolStripRoundedEdgeRenderer(),
                 TabIndex = 0,
                 ShowItemToolTips = false
@@ -109,7 +117,8 @@ namespace ShareX.ScreenCaptureLib
                     DisplayStyle = ToolStripItemDisplayStyle.Image,
                     Image = Resources.ui_radio_button_uncheck,
                     Margin = new Padding(0, 0, 2, 0),
-                    Padding = new Padding(2)
+                    Padding = new Padding(2),
+                    Visible = !Options.MenuLocked
                 };
 
                 tsMain.Items.Add(tslDragLeft);
@@ -646,6 +655,13 @@ namespace ShareX.ScreenCaptureLib
             tsmiPaste.Click += (sender, e) => PasteFromClipboard(false);
             tsddbEdit.DropDownItems.Add(tsmiPaste);
 
+            // TODO: Translate
+            tsmiDuplicate = new ToolStripMenuItem("Duplicate");
+            tsmiDuplicate.Image = Resources.document_copy;
+            tsmiDuplicate.ShortcutKeyDisplayString = "Ctrl+D";
+            tsmiDuplicate.Click += (sender, e) => DuplicateCurrrentShape(false);
+            tsddbEdit.DropDownItems.Add(tsmiDuplicate);
+
             tsddbEdit.DropDownItems.Add(new ToolStripSeparator());
 
             tsmiDelete = new ToolStripMenuItem(Resources.ShapeManager_CreateToolbar_Delete);
@@ -873,7 +889,6 @@ namespace ShareX.ScreenCaptureLib
                 tsmiQuickCrop = new ToolStripMenuItem(Resources.ShapeManager_CreateContextMenu_Multi_region_mode);
                 tsmiQuickCrop.Checked = !Options.QuickCrop;
                 tsmiQuickCrop.CheckOnClick = true;
-                tsmiQuickCrop.ShortcutKeyDisplayString = "Q";
                 tsmiQuickCrop.Click += (sender, e) => Options.QuickCrop = !tsmiQuickCrop.Checked;
                 tsddbOptions.DropDownItems.Add(tsmiQuickCrop);
             }
@@ -976,8 +991,38 @@ namespace ShareX.ScreenCaptureLib
             };
             tsddbOptions.DropDownItems.Add(tsmiSwitchToSelectionToolAfterDrawing);
 
+            // TODO: Translate
+            ToolStripLabeledNumericUpDown tslnudMenuIconSize = new ToolStripLabeledNumericUpDown("Menu icon size:");
+            tslnudMenuIconSize.Content.Minimum = 16;
+            tslnudMenuIconSize.Content.Maximum = 64;
+            tslnudMenuIconSize.Content.Increment = 16;
+            tslnudMenuIconSize.Content.Value = Options.MenuIconSize;
+            tslnudMenuIconSize.Content.ValueChanged = (sender, e) =>
+            {
+                Options.MenuIconSize = (int)tslnudMenuIconSize.Content.Value;
+                tsMain.SuspendLayout();
+                tsMain.AutoSize = false;
+                tsMain.ImageScalingSize = new Size(Options.MenuIconSize, Options.MenuIconSize);
+                tsMain.AutoSize = true;
+                tsMain.ResumeLayout();
+                UpdateMenuPosition();
+            };
+            tsddbOptions.DropDownItems.Add(tslnudMenuIconSize);
+
             if (!Form.IsEditorMode)
             {
+                ToolStripMenuItem tsmiLockMenu = new ToolStripMenuItem("Lock menu");
+                tsmiLockMenu.Checked = Options.MenuLocked;
+                tsmiLockMenu.CheckOnClick = true;
+                tsmiLockMenu.Click += (sender, e) =>
+                {
+                    Options.MenuLocked = tsmiLockMenu.Checked;
+                    if (tslDragLeft != null) tslDragLeft.Visible = !Options.MenuLocked;
+                    if (tslDragRight != null) tslDragRight.Visible = !Options.MenuLocked;
+                    UpdateMenuPosition();
+                };
+                tsddbOptions.DropDownItems.Add(tsmiLockMenu);
+
                 ToolStripMenuItem tsmiRememberMenuState = new ToolStripMenuItem(Resources.ShapeManager_CreateContextMenu_RememberMenuState);
                 tsmiRememberMenuState.Checked = Options.RememberMenuState;
                 tsmiRememberMenuState.CheckOnClick = true;
@@ -1017,7 +1062,8 @@ namespace ShareX.ScreenCaptureLib
                     DisplayStyle = ToolStripItemDisplayStyle.Image,
                     Image = Resources.ui_radio_button_uncheck,
                     Margin = new Padding(0, 0, 2, 0),
-                    Padding = new Padding(2)
+                    Padding = new Padding(2),
+                    Visible = !Options.MenuLocked
                 };
 
                 tsMain.Items.Add(tslDragRight);
@@ -1046,6 +1092,8 @@ namespace ShareX.ScreenCaptureLib
 
                     tsi.MouseLeave += TsMain_MouseLeave;
                 }
+
+                tsi.Padding = new Padding(4);
             }
 
             tsMain.ResumeLayout(false);
@@ -1151,7 +1199,6 @@ namespace ShareX.ScreenCaptureLib
             if (Form.IsFullscreen)
             {
                 rectScreen = CaptureHelpers.GetActiveScreenBounds();
-                rectScreen.Y += 20;
             }
             else
             {
@@ -1392,7 +1439,7 @@ namespace ShareX.ScreenCaptureLib
             }
 
             tsmiUndo.Enabled = tsmiDeleteAll.Enabled = Shapes.Count > 0;
-            tsmiDelete.Enabled = tsmiMoveTop.Enabled = tsmiMoveUp.Enabled = tsmiMoveDown.Enabled = tsmiMoveBottom.Enabled = CurrentShape != null;
+            tsmiDuplicate.Enabled = tsmiDelete.Enabled = tsmiMoveTop.Enabled = tsmiMoveUp.Enabled = tsmiMoveDown.Enabled = tsmiMoveBottom.Enabled = CurrentShape != null;
 
             switch (shapeType)
             {
@@ -1471,6 +1518,12 @@ namespace ShareX.ScreenCaptureLib
             }
 
             return Cursors.Default;
+        }
+
+        public void ShowMenuTooltip(string text)
+        {
+            MenuTextAnimation.Text = text;
+            MenuTextAnimation.Start();
         }
     }
 }

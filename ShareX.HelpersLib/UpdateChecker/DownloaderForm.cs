@@ -218,6 +218,8 @@ namespace ShareX.HelpersLib
                 Helpers.CreateDirectory(folderPath);
                 DownloadLocation = Path.Combine(folderPath, Filename);
 
+                DebugHelper.WriteLine($"Downloading: \"{URL}\" -> \"{DownloadLocation}\"");
+
                 fileDownloader = new FileDownloader(URL, DownloadLocation, Proxy, AcceptHeader);
                 fileDownloader.FileSizeReceived += (v1, v2) => ChangeProgress();
                 fileDownloader.DownloadStarted += (v1, v2) => ChangeStatus(Resources.DownloaderForm_StartDownload_Downloading_);

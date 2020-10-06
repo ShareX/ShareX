@@ -846,4 +846,7 @@
   <data name="tsmiTrayImageSplitter.Text" xml:space="preserve">
     <value>Découpeur d'image...</value>
   </data>
+  <data name="tsmiAddImageEffects.Text" xml:space="preserve">
+    <value>Ajouter des effets d'image...</value>
+  </data>
 </root>

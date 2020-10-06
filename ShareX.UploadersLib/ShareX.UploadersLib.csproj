@@ -477,6 +477,9 @@
     <EmbeddedResource Include="Forms\CustomUploaderSettingsForm.fr.resx">
       <DependentUpon>CustomUploaderSettingsForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CustomUploaderSettingsForm.ko-KR.resx">
+      <DependentUpon>CustomUploaderSettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\CustomUploaderSettingsForm.pt-PT.resx">
       <DependentUpon>CustomUploaderSettingsForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -1014,16 +1017,16 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="FluentFTP">
-      <Version>32.4.3</Version>
+      <Version>32.4.4</Version>
     </PackageReference>
     <PackageReference Include="MegaApiClient">
-      <Version>1.8.1</Version>
+      <Version>1.8.2</Version>
     </PackageReference>
     <PackageReference Include="Newtonsoft.Json">
       <Version>12.0.3</Version>
     </PackageReference>
     <PackageReference Include="SSH.NET">
-      <Version>2016.1.0</Version>
+      <Version>2020.0.0-beta1</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>

@@ -120,16 +120,8 @@
   <data name="RectangleRegion_GetAreaText_Area" xml:space="preserve">
     <value>X: {0} Y: {1} W: {2} H: {3}</value>
   </data>
-  <data name="RectangleRegion_GetRulerText_Ruler_info" xml:space="preserve">
-    <value>X: {0} / Y: {1} / X2: {2} / Y2: {3}
-너비: {4} px / 높이: {5} px
-대각선 길이: {6:0.00} px / 각도: {7:0.00}°</value>
-  </data>
   <data name="FFmpegOptionsForm_UpdateUI_Quality_" xml:space="preserve">
     <value>품질:</value>
-  </data>
-  <data name="FFmpegHelper_Record_FFmpeg_error" xml:space="preserve">
-    <value>FFmpeg 에러</value>
   </data>
   <data name="FFmpegOptionsForm_DownloaderForm_InstallRequested_Successfully_downloaded_FFmpeg_" xml:space="preserve">
     <value>FFmpeg를 성공적으로 다운로드 했습니다.</value>
@@ -270,7 +262,7 @@
     <value>이미지 저장</value>
   </data>
   <data name="ShapeManager_CreateToolbar_SaveImageAs" xml:space="preserve">
-    <value>다른 이름으로 이미지 저장...</value>
+    <value>다른 이름으로 이미지 저장... (Ctrl + Shift + S)</value>
   </data>
   <data name="ShapeManager_CreateToolbar_CopyImageToClipboard" xml:space="preserve">
     <value>이미지를 클립보드에 복사</value>
@@ -279,7 +271,7 @@
     <value>이미지 업로드</value>
   </data>
   <data name="ShapeManager_CreateToolbar_PrintImage" xml:space="preserve">
-    <value>이미지 인쇄...</value>
+    <value>이미지 인쇄... (Ctrl + P)</value>
   </data>
   <data name="ShapeManager_CreateToolbar_RunAfterCaptureTasks" xml:space="preserve">
     <value>촬영 뒤 할 일 하기</value>
@@ -328,9 +320,6 @@
   </data>
   <data name="ShapeManager_CreateToolbar_FlipVertical" xml:space="preserve">
     <value>세로로 뒤집기</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_EditorBackgroundColor" xml:space="preserve">
-    <value>편집기 배경색...</value>
   </data>
   <data name="ShapeManager_CreateToolbar_EditorStartMode" xml:space="preserve">
     <value>편집기 시작 상태:</value>
@@ -392,5 +381,8 @@
   </data>
   <data name="ShapeManager_CreateToolbar_UseLetters" xml:space="preserve">
     <value>글자 사용</value>
+  </data>
+  <data name="ThisWindowWillCloseBeforeOpeningKeybindsPageWantContinue" xml:space="preserve">
+    <value>이 창은 keybinds 웹 페이지를 열기 전에 닫힙니다. 계속하시겠습니까?</value>
   </data>
 </root>

@@ -120,9 +120,9 @@ namespace ShareX.ImageEffectsLib
                 typeof(DrawBorder),
                 typeof(DrawCheckerboard),
                 typeof(DrawImage),
+                typeof(DrawParticles),
                 typeof(DrawTextEx),
-                typeof(DrawText),
-                typeof(DrawParticles));
+                typeof(DrawText));
 
             AddEffectToContextMenu(Resources.ImageEffectsForm_AddAllEffectsToTreeView_Manipulations,
                 typeof(AutoCrop),
@@ -140,13 +140,13 @@ namespace ShareX.ImageEffectsLib
                 typeof(Alpha),
                 typeof(BlackWhite),
                 typeof(Brightness),
+                typeof(MatrixColor), // "Color matrix"
                 typeof(Colorize),
                 typeof(Contrast),
                 typeof(Gamma),
                 typeof(Grayscale),
                 typeof(Hue),
                 typeof(Inverse),
-                typeof(MatrixColor),
                 typeof(Polaroid),
                 typeof(Saturation),
                 typeof(SelectiveColor),
@@ -154,10 +154,11 @@ namespace ShareX.ImageEffectsLib
 
             AddEffectToContextMenu(Resources.ImageEffectsForm_AddAllEffectsToTreeView_Filters,
                 typeof(Blur),
+                typeof(ColorDepth),
+                typeof(MatrixConvolution), // "Convolution matrix"
                 typeof(EdgeDetect),
                 typeof(Emboss),
                 typeof(GaussianBlur),
-                typeof(MatrixConvolution),
                 typeof(MeanRemoval),
                 typeof(Outline),
                 typeof(Pixelate),
@@ -404,8 +405,7 @@ namespace ShareX.ImageEffectsLib
 
         private void ClearSelectedEffect()
         {
-            // TODO: Translate
-            lblEffect.Text = "Effect:";
+            lblEffect.Text = Resources.Effect;
             pgSettings.SelectedObject = null;
         }
 
@@ -563,8 +563,7 @@ namespace ShareX.ImageEffectsLib
 
         private void btnEffectClear_Click(object sender, EventArgs e)
         {
-            // TODO: Translate
-            if (MessageBox.Show("Would you like to clear effects?", "ShareX - " + "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+            if (MessageBox.Show(Resources.WouldYouLikeToClearEffects, "ShareX - " + Resources.Confirmation, MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
             {
                 ImageEffectPreset preset = GetSelectedPreset();
 
@@ -665,8 +664,7 @@ namespace ShareX.ImageEffectsLib
             {
                 if (string.IsNullOrEmpty(preset.Name))
                 {
-                    // TODO: Translate
-                    MessageBox.Show("Preset name cannot be empty.", "ShareX - " + "Missing preset name", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show(Resources.PresetNameCannotBeEmpty, "ShareX - " + Resources.MissingPresetName, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else
                 {

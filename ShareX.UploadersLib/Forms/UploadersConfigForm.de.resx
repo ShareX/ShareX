@@ -363,9 +363,6 @@ Das Benutzen einer verschlüsselten Bibliothek deaktiviert das Teilen.</value>
   <data name="lblPomfResultURL.Text" xml:space="preserve">
     <value>Ergebnis URL:</value>
   </data>
-  <data name="btnPomfTest.Text" xml:space="preserve">
-    <value>Alle testen</value>
-  </data>
   <data name="lblLambdaUploadURL.Text" xml:space="preserve">
     <value>Link URL:</value>
   </data>
@@ -605,18 +602,6 @@ Das Benutzen einer verschlüsselten Bibliothek deaktiviert das Teilen.</value>
   </data>
   <data name="gbPhotobucketAlbumPath.Text" xml:space="preserve">
     <value>Lade Bilder hoch nach</value>
-  </data>
-  <data name="btnTinyPicOpenMyImages.Text" xml:space="preserve">
-    <value>Öffne meine Bilder Seite...</value>
-  </data>
-  <data name="lblTinyPicUsername.Text" xml:space="preserve">
-    <value>E-Mail:</value>
-  </data>
-  <data name="lblTinyPicPassword.Text" xml:space="preserve">
-    <value>Passwort:</value>
-  </data>
-  <data name="btnTinyPicLogin.Text" xml:space="preserve">
-    <value>Einloggen</value>
   </data>
   <data name="lblImageShackPassword.Text" xml:space="preserve">
     <value>Passwort:</value>

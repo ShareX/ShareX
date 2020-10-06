@@ -123,11 +123,6 @@
   <data name="FFmpegOptionsForm_buttonFFmpegBrowse_Click_Browse_for_ffmpeg_exe" xml:space="preserve">
     <value>Chercher ffmpeg.exe</value>
   </data>
-  <data name="RectangleRegion_GetRulerText_Ruler_info" xml:space="preserve">
-    <value>X : {0} / Y : {1} / X2 : {2} / Y2 : {3}
-Largeur : {4} px / Hauteur : {5} px
-Distance : {6:0.00} px / Angle : {7:0.00}°</value>
-  </data>
   <data name="RectangleRegion_GetAreaText_Area" xml:space="preserve">
     <value>X : {0} Y : {1} L : {2} H : {3}</value>
   </data>

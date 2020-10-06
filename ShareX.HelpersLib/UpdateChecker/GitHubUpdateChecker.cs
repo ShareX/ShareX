@@ -37,7 +37,7 @@ namespace ShareX.HelpersLib
         public string Owner { get; private set; }
         public string Repo { get; private set; }
         public bool IncludePreRelease { get; set; }
-        public bool IsPreRelease { get; private set; }
+        public bool IsPreRelease { get; protected set; }
 
         private const string APIURL = "https://api.github.com";
 
@@ -69,13 +69,13 @@ namespace ShareX.HelpersLib
             Status = UpdateStatus.UpdateCheckFailed;
         }
 
-        public string GetLatestDownloadURL(bool includePreRelease, bool isPortable, bool isBrowserDownloadURL)
+        public virtual string GetLatestDownloadURL(bool isBrowserDownloadURL)
         {
             try
             {
-                GitHubRelease latestRelease = GetLatestRelease(includePreRelease);
+                GitHubRelease latestRelease = GetLatestRelease(IncludePreRelease);
 
-                if (UpdateReleaseInfo(latestRelease, isPortable, isBrowserDownloadURL))
+                if (UpdateReleaseInfo(latestRelease, IsPortable, isBrowserDownloadURL))
                 {
                     return DownloadURL;
                 }
@@ -88,7 +88,7 @@ namespace ShareX.HelpersLib
             return null;
         }
 
-        private List<GitHubRelease> GetReleases()
+        protected List<GitHubRelease> GetReleases()
         {
             using (WebClient wc = new WebClient())
             {
@@ -107,7 +107,7 @@ namespace ShareX.HelpersLib
             return null;
         }
 
-        private GitHubRelease GetLatestRelease(bool includePreRelease)
+        protected GitHubRelease GetLatestRelease(bool includePreRelease)
         {
             GitHubRelease latestRelease = null;
 
@@ -128,7 +128,7 @@ namespace ShareX.HelpersLib
             return latestRelease;
         }
 
-        private bool UpdateReleaseInfo(GitHubRelease release, bool isPortable, bool isBrowserDownloadURL)
+        protected virtual bool UpdateReleaseInfo(GitHubRelease release, bool isPortable, bool isBrowserDownloadURL)
         {
             if (release != null && !string.IsNullOrEmpty(release.tag_name) && release.tag_name.Length > 1 && release.tag_name[0] == 'v')
             {
@@ -149,7 +149,7 @@ namespace ShareX.HelpersLib
 
                     foreach (GitHubAsset asset in release.assets)
                     {
-                        if (asset != null && !string.IsNullOrEmpty(asset.name) && asset.name.EndsWith(endsWith, StringComparison.InvariantCultureIgnoreCase))
+                        if (asset != null && !string.IsNullOrEmpty(asset.name) && asset.name.EndsWith(endsWith, StringComparison.OrdinalIgnoreCase))
                         {
                             Filename = asset.name;
 
@@ -173,7 +173,7 @@ namespace ShareX.HelpersLib
             return false;
         }
 
-        private class GitHubRelease
+        protected class GitHubRelease
         {
             public string url { get; set; }
             public string assets_url { get; set; }
@@ -193,7 +193,7 @@ namespace ShareX.HelpersLib
             public string zipball_url { get; set; }
         }
 
-        private class GitHubAsset
+        protected class GitHubAsset
         {
             public string url { get; set; }
             public int id { get; set; }

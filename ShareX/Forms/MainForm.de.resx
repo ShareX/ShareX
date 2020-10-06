@@ -783,9 +783,6 @@
   <data name="tsmiCopyImageDimensions.Text" xml:space="preserve">
     <value>Bildabmessungen</value>
   </data>
-  <data name="tsmiHideThumbnailTitle.Text" xml:space="preserve">
-    <value>Thumbnail-Titel ausblenden</value>
-  </data>
   <data name="tsbGitHub.Text" xml:space="preserve">
     <value>GitHub</value>
   </data>
