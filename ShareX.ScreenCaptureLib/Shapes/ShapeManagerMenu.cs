@@ -48,12 +48,12 @@ namespace ShareX.ScreenCaptureLib
         private ToolStripEx tsMain;
         private ToolStripButton tsbSaveImage, tsbBorderColor, tsbFillColor, tsbHighlightColor;
         private ToolStripDropDownButton tsddbShapeOptions;
-        private ToolStripMenuItem tsmiArrowHeadsBothSide, tsmiShadow, tsmiShadowColor, tsmiStepUseLetters, tsmiUndo, tsmiDuplicate, tsmiDelete, tsmiDeleteAll,
+        private ToolStripMenuItem tsmiShadow, tsmiShadowColor, tsmiStepUseLetters, tsmiUndo, tsmiDuplicate, tsmiDelete, tsmiDeleteAll,
             tsmiMoveTop, tsmiMoveUp, tsmiMoveDown, tsmiMoveBottom, tsmiRegionCapture, tsmiQuickCrop, tsmiShowMagnifier;
         private ToolStripLabeledNumericUpDown tslnudBorderSize, tslnudCornerRadius, tslnudCenterPoints, tslnudBlurRadius, tslnudPixelateSize, tslnudStepFontSize,
             tslnudMagnifierPixelCount, tslnudStartingStepValue, tslnudMagnifyStrength;
         private ToolStripLabel tslDragLeft, tslDragRight;
-        private ToolStripLabeledComboBox tscbImageInterpolationMode, tscbCursorTypes;
+        private ToolStripLabeledComboBox tsmiArrowHeadDirection, tscbImageInterpolationMode, tscbCursorTypes;
 
         internal void CreateToolbar()
         {
@@ -566,14 +566,16 @@ namespace ShareX.ScreenCaptureLib
             };
             tsddbShapeOptions.DropDownItems.Add(tslnudCenterPoints);
 
-            tsmiArrowHeadsBothSide = new ToolStripMenuItem(Resources.ShapeManager_ArrowsOnBothEnds);
-            tsmiArrowHeadsBothSide.CheckOnClick = true;
-            tsmiArrowHeadsBothSide.Click += (sender, e) =>
+            tsmiArrowHeadDirection = new ToolStripLabeledComboBox(null);
+            tsmiArrowHeadDirection.Content.AddRange(Helpers.GetLocalizedEnumDescriptions<ArrowHeadDirection>());
+            tsmiArrowHeadDirection.Content.SelectedIndexChanged += (sender, e) =>
             {
-                AnnotationOptions.ArrowHeadsBothSide = tsmiArrowHeadsBothSide.Checked;
+                AnnotationOptions.ArrowHeadDirection = (ArrowHeadDirection)tsmiArrowHeadDirection.Content.SelectedIndex;
+                tsmiArrowHeadDirection.Invalidate();
                 UpdateCurrentShape();
             };
-            tsddbShapeOptions.DropDownItems.Add(tsmiArrowHeadsBothSide);
+            tsddbShapeOptions.DropDownItems.Add(tsmiArrowHeadDirection);
+
 
             tslnudStepFontSize = new ToolStripLabeledNumericUpDown(Resources.ShapeManager_CreateToolbar_FontSize);
             tslnudStepFontSize.Content.Minimum = 10;
@@ -1411,7 +1413,7 @@ namespace ShareX.ScreenCaptureLib
 
             tslnudCenterPoints.Content.Value = AnnotationOptions.LineCenterPointCount;
 
-            tsmiArrowHeadsBothSide.Checked = AnnotationOptions.ArrowHeadsBothSide;
+            tsmiArrowHeadDirection.Content.SelectedIndex = (int)AnnotationOptions.ArrowHeadDirection;
 
             switch (shapeType)
             {
@@ -1494,7 +1496,7 @@ namespace ShareX.ScreenCaptureLib
             }
 
             tslnudCenterPoints.Visible = shapeType == ShapeType.DrawingLine || shapeType == ShapeType.DrawingArrow;
-            tsmiArrowHeadsBothSide.Visible = shapeType == ShapeType.DrawingArrow;
+            tsmiArrowHeadDirection.Visible = shapeType == ShapeType.DrawingArrow;
             tscbImageInterpolationMode.Visible = shapeType == ShapeType.DrawingImage || shapeType == ShapeType.DrawingImageScreen || shapeType == ShapeType.DrawingMagnify;
             tslnudStartingStepValue.Visible = shapeType == ShapeType.DrawingStep;
             tslnudStepFontSize.Visible = tsmiStepUseLetters.Visible = shapeType == ShapeType.DrawingStep;

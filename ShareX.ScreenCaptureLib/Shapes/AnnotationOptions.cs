@@ -52,7 +52,7 @@ namespace ShareX.ScreenCaptureLib
         public int LineCenterPointCount { get; set; } = 1;
 
         // Arrow drawing
-        public bool ArrowHeadsBothSide { get; set; } = false;
+        public ArrowHeadDirection ArrowHeadDirection { get; set; } = ArrowHeadDirection.End;
 
         // Text (Outline) drawing
         public TextDrawingOptions TextOutlineOptions { get; set; } = new TextDrawingOptions()
