@@ -192,8 +192,8 @@ namespace ShareX.HelpersLib
 
     public enum ArrowHeadDirection
     {
-        Start,
         End,
+        Start,
         Both
     }
 

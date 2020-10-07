@@ -1192,7 +1192,7 @@ namespace ShareX.ScreenCaptureLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Arrow points to:.
+        ///   Looks up a localized string similar to Arrow head direction:.
         /// </summary>
         internal static string ShapeManager_ArrowHeadDirection {
             get {
