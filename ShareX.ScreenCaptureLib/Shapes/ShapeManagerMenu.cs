@@ -91,7 +91,7 @@ namespace ShareX.ScreenCaptureLib
             tsMain = new ToolStripEx()
             {
                 AutoSize = true,
-                CanOverflow = false,
+                CanOverflow = true,
                 ClickThrough = true,
                 Dock = DockStyle.None,
                 GripStyle = ToolStripGripStyle.Hidden,
@@ -1218,6 +1218,11 @@ namespace ShareX.ScreenCaptureLib
             {
                 menuForm.Location = rectScreen.Location;
             }
+        }
+
+        internal void UpdateMenuMaxWidth(int width)
+        {
+            tsMain.MaximumSize = new Size(width, 0);
         }
 
         private void CheckMenuPosition()
