@@ -60,6 +60,7 @@ namespace ShareX
         public int PreviewSplitterDistance = 335;
         public List<int> TaskListViewColumnWidths = new List<int>();
         public DateTime NewsLastReadDate;
+        public bool FirstTimeMinimizeToTray = true;
 
         #endregion Main Form
 

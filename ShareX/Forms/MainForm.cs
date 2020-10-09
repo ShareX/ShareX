@@ -1391,6 +1391,13 @@ namespace ShareX
                 e.Cancel = true;
                 Hide();
                 SettingManager.SaveAllSettingsAsync();
+
+                if (Program.Settings.FirstTimeMinimizeToTray)
+                {
+                    // TODO: Translate
+                    TaskHelpers.ShowNotificationTip("ShareX is minimized to the system tray.", "ShareX", 8000);
+                    Program.Settings.FirstTimeMinimizeToTray = false;
+                }
             }
         }
 
