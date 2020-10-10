@@ -377,6 +377,7 @@ namespace ShareX.ScreenCaptureLib
 
                 if (IsAnnotationMode && ShapeManager.ToolbarCreated)
                 {
+                    ShapeManager.UpdateMenuMaxWidth(ClientSize.Width);
                     ShapeManager.UpdateMenuPosition();
                 }
             }

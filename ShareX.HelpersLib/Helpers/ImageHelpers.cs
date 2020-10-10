@@ -2282,5 +2282,30 @@ namespace ShareX.HelpersLib
 
             return bmp;
         }
+
+        public static Bitmap DrawGrip(Color color, Color shadow)
+        {
+            int size = 16;
+            Bitmap bmp = new Bitmap(size, size);
+
+            using (Graphics g = Graphics.FromImage(bmp))
+            using (SolidBrush brush = new SolidBrush(color))
+            using (SolidBrush shadowBrush = new SolidBrush(shadow))
+            {
+                int x = size / 2;
+                int boxSize = 2;
+
+                for (int i = 0; i < 4; i++)
+                {
+                    g.FillRectangle(shadowBrush, x - boxSize, (i * 4) + 2, boxSize, boxSize);
+                    g.FillRectangle(brush, x - boxSize - 1, (i * 4) + 1, boxSize, boxSize);
+
+                    g.FillRectangle(shadowBrush, x + 2, (i * 4) + 2, boxSize, boxSize);
+                    g.FillRectangle(brush, x + 1, (i * 4) + 1, boxSize, boxSize);
+                }
+            }
+
+            return bmp;
+        }
     }
 }

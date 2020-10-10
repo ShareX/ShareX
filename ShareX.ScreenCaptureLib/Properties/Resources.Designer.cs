@@ -1192,7 +1192,7 @@ namespace ShareX.ScreenCaptureLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Arrow points to:.
+        ///   Looks up a localized string similar to Arrow head direction:.
         /// </summary>
         internal static string ShapeManager_ArrowHeadDirection {
             get {
@@ -1903,16 +1903,6 @@ namespace ShareX.ScreenCaptureLib.Properties {
         internal static System.Drawing.Bitmap tick {
             get {
                 object obj = ResourceManager.GetObject("tick", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap ui_radio_button_uncheck {
-            get {
-                object obj = ResourceManager.GetObject("ui_radio_button_uncheck", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
