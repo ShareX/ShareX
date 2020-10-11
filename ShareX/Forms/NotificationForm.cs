@@ -114,8 +114,10 @@ namespace ShareX
             }
             else if (!string.IsNullOrEmpty(Config.Text))
             {
-                textRenderSize = TextRenderer.MeasureText(Config.Text, Config.TextFont, Config.Size.Offset(-Config.TextPadding * 2),
-                    TextFormatFlags.Left | TextFormatFlags.EndEllipsis);
+                Size size = Config.Size.Offset(-Config.TextPadding * 2);
+                textRenderSize = TextRenderer.MeasureText(Config.Text, Config.TextFont, size,
+                    TextFormatFlags.WordBreak | TextFormatFlags.TextBoxControl | TextFormatFlags.EndEllipsis);
+                textRenderSize = new Size(textRenderSize.Width, Math.Min(textRenderSize.Height, size.Height));
                 totalRenderSize = textRenderSize;
 
                 if (!string.IsNullOrEmpty(Config.Title))
@@ -241,7 +243,8 @@ namespace ShareX
                     textRect = new Rectangle(Config.TextPadding, Config.TextPadding, textRenderSize.Width + 2, textRenderSize.Height + 2);
                 }
 
-                TextRenderer.DrawText(g, Config.Text, Config.TextFont, textRect, Config.TextColor, TextFormatFlags.Left | TextFormatFlags.EndEllipsis);
+                TextRenderer.DrawText(g, Config.Text, Config.TextFont, textRect, Config.TextColor,
+                    TextFormatFlags.WordBreak | TextFormatFlags.TextBoxControl | TextFormatFlags.EndEllipsis);
             }
 
             using (Pen borderPen = new Pen(Config.BorderColor))
