@@ -160,6 +160,15 @@ namespace ShareX.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Japanese.
+        /// </summary>
+        public static string AboutForm_AboutForm_Language_ja_JP {
+            get {
+                return ResourceManager.GetString("AboutForm_AboutForm_Language_ja_JP", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Korean.
         /// </summary>
         public static string AboutForm_AboutForm_Language_ko_KR {
@@ -1712,6 +1721,16 @@ namespace ShareX.Properties {
         public static System.Drawing.Bitmap it {
             get {
                 object obj = ResourceManager.GetObject("it", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap jp {
+            get {
+                object obj = ResourceManager.GetObject("jp", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

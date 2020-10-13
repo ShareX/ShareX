@@ -1910,6 +1910,9 @@
   <ItemGroup>
     <None Include="Resources\user-business.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\jp.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>
