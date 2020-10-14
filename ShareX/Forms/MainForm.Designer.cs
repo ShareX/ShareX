@@ -276,9 +276,9 @@
             this.tsmiTrayDonate = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayAbout = new System.Windows.Forms.ToolStripMenuItem();
             this.tssTray3 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsmiRestartAsAdmin = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayRecentItems = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiOpenActionsToolbar = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiRestartAsAdmin = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayShow = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayExit = new System.Windows.Forms.ToolStripMenuItem();
             this.timerTraySingleClick = new System.Windows.Forms.Timer(this.components);
@@ -2202,6 +2202,13 @@
             this.tssTray3.Name = "tssTray3";
             resources.ApplyResources(this.tssTray3, "tssTray3");
             // 
+            // tsmiRestartAsAdmin
+            // 
+            this.tsmiRestartAsAdmin.Image = global::ShareX.Properties.Resources.user_business;
+            this.tsmiRestartAsAdmin.Name = "tsmiRestartAsAdmin";
+            resources.ApplyResources(this.tsmiRestartAsAdmin, "tsmiRestartAsAdmin");
+            this.tsmiRestartAsAdmin.Click += new System.EventHandler(this.tsmiRestartAsAdmin_Click);
+            // 
             // tsmiTrayRecentItems
             // 
             this.tsmiTrayRecentItems.Image = global::ShareX.Properties.Resources.clipboard_list;
@@ -2214,13 +2221,6 @@
             this.tsmiOpenActionsToolbar.Name = "tsmiOpenActionsToolbar";
             resources.ApplyResources(this.tsmiOpenActionsToolbar, "tsmiOpenActionsToolbar");
             this.tsmiOpenActionsToolbar.Click += new System.EventHandler(this.tsmiOpenActionsToolbar_Click);
-            // 
-            // tsmiRestartAsAdmin
-            // 
-            this.tsmiRestartAsAdmin.Image = global::ShareX.Properties.Resources.user_business;
-            this.tsmiRestartAsAdmin.Name = "tsmiRestartAsAdmin";
-            resources.ApplyResources(this.tsmiRestartAsAdmin, "tsmiRestartAsAdmin");
-            this.tsmiRestartAsAdmin.Click += new System.EventHandler(this.tsmiRestartAsAdmin_Click);
             // 
             // tsmiTrayShow
             // 
