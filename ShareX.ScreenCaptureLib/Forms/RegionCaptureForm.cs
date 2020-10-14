@@ -56,6 +56,9 @@ namespace ShareX.ScreenCaptureLib
         public string ImageFilePath { get; set; }
         public bool IsFullscreen { get; private set; }
 
+        public const int MinWidth = 800;
+        public const int MinHeight = 550;
+
         public RegionCaptureMode Mode { get; private set; }
         public bool IsEditorMode => Mode == RegionCaptureMode.Editor || Mode == RegionCaptureMode.TaskEditor;
         public bool IsAnnotationMode => Mode == RegionCaptureMode.Annotation || IsEditorMode;
@@ -180,7 +183,7 @@ namespace ShareX.ScreenCaptureLib
             else
             {
                 FormBorderStyle = FormBorderStyle.Sizable;
-                MinimumSize = new Size(800, 550);
+                MinimumSize = new Size(MinWidth, MinHeight);
 
                 if (Options.ImageEditorStartMode == ImageEditorStartMode.PreviousState)
                 {

@@ -1067,6 +1067,12 @@ namespace ShareX.ScreenCaptureLib
 
             menuForm.Show(Form);
 
+            //Prevent toolstrip overflow
+            if (Form.MinimumSize.Width < tsMain.DisplayRectangle.Size.Width)
+            {
+                Form.MinimumSize = new Size(tsMain.DisplayRectangle.Size.Width, RegionCaptureForm.MinHeight);
+            }
+
             UpdateMenu();
 
             CurrentShapeChanged += shape => UpdateMenu();
