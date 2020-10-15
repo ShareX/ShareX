@@ -47,12 +47,16 @@
             this.chkOverrideCustomUploader = new System.Windows.Forms.CheckBox();
             this.chkOverrideFTP = new System.Windows.Forms.CheckBox();
             this.cboFTPaccounts = new System.Windows.Forms.ComboBox();
+            this.btnAfterCapture = new ShareX.HelpersLib.MenuButton();
+            this.btnAfterUpload = new ShareX.HelpersLib.MenuButton();
+            this.btnDestinations = new ShareX.HelpersLib.MenuButton();
             this.cmsDestinations = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tsmiImageUploaders = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTextUploaders = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiFileUploaders = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiURLShorteners = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiURLSharingServices = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnTask = new ShareX.HelpersLib.MenuButton();
             this.tpGeneral = new System.Windows.Forms.TabPage();
             this.pGeneral = new System.Windows.Forms.Panel();
             this.lblAfterTaskNotification = new System.Windows.Forms.Label();
@@ -211,6 +215,9 @@
             this.cbClipboardUploadAutoIndexFolder = new System.Windows.Forms.CheckBox();
             this.cbClipboardUploadShortenURL = new System.Windows.Forms.CheckBox();
             this.tpUploaderFilters = new System.Windows.Forms.TabPage();
+            this.lvUploaderFiltersList = new ShareX.HelpersLib.MyListView();
+            this.chUploaderFiltersName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chUploaderFiltersExtension = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnUploaderFiltersRemove = new System.Windows.Forms.Button();
             this.btnUploaderFiltersUpdate = new System.Windows.Forms.Button();
             this.btnUploaderFiltersAdd = new System.Windows.Forms.Button();
@@ -224,6 +231,11 @@
             this.lblActionsNote = new System.Windows.Forms.Label();
             this.btnActionsDuplicate = new System.Windows.Forms.Button();
             this.btnActionsAdd = new System.Windows.Forms.Button();
+            this.lvActions = new ShareX.HelpersLib.MyListView();
+            this.chActionsName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chActionsPath = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chActionsArgs = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chActionsExtensions = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnActionsEdit = new System.Windows.Forms.Button();
             this.btnActionsRemove = new System.Windows.Forms.Button();
             this.chkOverrideActions = new System.Windows.Forms.CheckBox();
@@ -238,27 +250,17 @@
             this.btnWatchFolderAdd = new System.Windows.Forms.Button();
             this.tpTools = new System.Windows.Forms.TabPage();
             this.pTools = new System.Windows.Forms.Panel();
+            this.txtToolsScreenColorPickerInfoText = new System.Windows.Forms.TextBox();
+            this.lblToolsScreenColorPickerInfoText = new System.Windows.Forms.Label();
             this.txtToolsScreenColorPickerFormat = new System.Windows.Forms.TextBox();
             this.lblToolsScreenColorPickerFormat = new System.Windows.Forms.Label();
             this.chkOverrideToolsSettings = new System.Windows.Forms.CheckBox();
             this.tpAdvanced = new System.Windows.Forms.TabPage();
             this.pgTaskSettings = new System.Windows.Forms.PropertyGrid();
             this.chkOverrideAdvancedSettings = new System.Windows.Forms.CheckBox();
-            this.btnAfterCapture = new ShareX.HelpersLib.MenuButton();
-            this.btnAfterUpload = new ShareX.HelpersLib.MenuButton();
-            this.btnDestinations = new ShareX.HelpersLib.MenuButton();
-            this.btnTask = new ShareX.HelpersLib.MenuButton();
-            this.lvUploaderFiltersList = new ShareX.HelpersLib.MyListView();
-            this.chUploaderFiltersName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.chUploaderFiltersExtension = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.lvActions = new ShareX.HelpersLib.MyListView();
-            this.chActionsName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.chActionsPath = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.chActionsArgs = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.chActionsExtensions = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tttvMain = new ShareX.HelpersLib.TabToTreeView();
-            this.lblToolsScreenColorPickerInfoText = new System.Windows.Forms.Label();
-            this.txtToolsScreenColorPickerInfoText = new System.Windows.Forms.TextBox();
+            this.lblToolsScreenColorPickerAltFormat = new System.Windows.Forms.Label();
+            this.txtToolsScreenColorPickerAltFormat = new System.Windows.Forms.TextBox();
             this.tcTaskSettings.SuspendLayout();
             this.tpTask.SuspendLayout();
             this.cmsDestinations.SuspendLayout();
@@ -448,6 +450,30 @@
             this.cboFTPaccounts.Name = "cboFTPaccounts";
             this.cboFTPaccounts.SelectedIndexChanged += new System.EventHandler(this.cboFTPaccounts_SelectedIndexChanged);
             // 
+            // btnAfterCapture
+            // 
+            resources.ApplyResources(this.btnAfterCapture, "btnAfterCapture");
+            this.btnAfterCapture.Menu = this.cmsAfterCapture;
+            this.btnAfterCapture.Name = "btnAfterCapture";
+            this.btnAfterCapture.UseMnemonic = false;
+            this.btnAfterCapture.UseVisualStyleBackColor = true;
+            // 
+            // btnAfterUpload
+            // 
+            resources.ApplyResources(this.btnAfterUpload, "btnAfterUpload");
+            this.btnAfterUpload.Menu = this.cmsAfterUpload;
+            this.btnAfterUpload.Name = "btnAfterUpload";
+            this.btnAfterUpload.UseMnemonic = false;
+            this.btnAfterUpload.UseVisualStyleBackColor = true;
+            // 
+            // btnDestinations
+            // 
+            resources.ApplyResources(this.btnDestinations, "btnDestinations");
+            this.btnDestinations.Menu = this.cmsDestinations;
+            this.btnDestinations.Name = "btnDestinations";
+            this.btnDestinations.UseMnemonic = false;
+            this.btnDestinations.UseVisualStyleBackColor = true;
+            // 
             // cmsDestinations
             // 
             this.cmsDestinations.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -488,6 +514,14 @@
             this.tsmiURLSharingServices.Image = global::ShareX.Properties.Resources.globe_share;
             this.tsmiURLSharingServices.Name = "tsmiURLSharingServices";
             resources.ApplyResources(this.tsmiURLSharingServices, "tsmiURLSharingServices");
+            // 
+            // btnTask
+            // 
+            resources.ApplyResources(this.btnTask, "btnTask");
+            this.btnTask.Menu = this.cmsTask;
+            this.btnTask.Name = "btnTask";
+            this.btnTask.UseMnemonic = false;
+            this.btnTask.UseVisualStyleBackColor = true;
             // 
             // tpGeneral
             // 
@@ -1860,6 +1894,28 @@
             resources.ApplyResources(this.tpUploaderFilters, "tpUploaderFilters");
             this.tpUploaderFilters.Name = "tpUploaderFilters";
             // 
+            // lvUploaderFiltersList
+            // 
+            resources.ApplyResources(this.lvUploaderFiltersList, "lvUploaderFiltersList");
+            this.lvUploaderFiltersList.AutoFillColumn = true;
+            this.lvUploaderFiltersList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.chUploaderFiltersName,
+            this.chUploaderFiltersExtension});
+            this.lvUploaderFiltersList.FullRowSelect = true;
+            this.lvUploaderFiltersList.HideSelection = false;
+            this.lvUploaderFiltersList.Name = "lvUploaderFiltersList";
+            this.lvUploaderFiltersList.UseCompatibleStateImageBehavior = false;
+            this.lvUploaderFiltersList.View = System.Windows.Forms.View.Details;
+            this.lvUploaderFiltersList.SelectedIndexChanged += new System.EventHandler(this.lvUploaderFiltersList_SelectedIndexChanged);
+            // 
+            // chUploaderFiltersName
+            // 
+            resources.ApplyResources(this.chUploaderFiltersName, "chUploaderFiltersName");
+            // 
+            // chUploaderFiltersExtension
+            // 
+            resources.ApplyResources(this.chUploaderFiltersExtension, "chUploaderFiltersExtension");
+            // 
             // btnUploaderFiltersRemove
             // 
             resources.ApplyResources(this.btnUploaderFiltersRemove, "btnUploaderFiltersRemove");
@@ -1945,6 +2001,44 @@
             this.btnActionsAdd.Name = "btnActionsAdd";
             this.btnActionsAdd.UseVisualStyleBackColor = true;
             this.btnActionsAdd.Click += new System.EventHandler(this.btnActionsAdd_Click);
+            // 
+            // lvActions
+            // 
+            this.lvActions.AllowDrop = true;
+            this.lvActions.AllowItemDrag = true;
+            resources.ApplyResources(this.lvActions, "lvActions");
+            this.lvActions.AutoFillColumn = true;
+            this.lvActions.CheckBoxes = true;
+            this.lvActions.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.chActionsName,
+            this.chActionsPath,
+            this.chActionsArgs,
+            this.chActionsExtensions});
+            this.lvActions.FullRowSelect = true;
+            this.lvActions.HideSelection = false;
+            this.lvActions.MultiSelect = false;
+            this.lvActions.Name = "lvActions";
+            this.lvActions.UseCompatibleStateImageBehavior = false;
+            this.lvActions.View = System.Windows.Forms.View.Details;
+            this.lvActions.ItemMoved += new ShareX.HelpersLib.MyListView.ListViewItemMovedEventHandler(this.lvActions_ItemMoved);
+            this.lvActions.ItemChecked += new System.Windows.Forms.ItemCheckedEventHandler(this.lvActions_ItemChecked);
+            this.lvActions.SelectedIndexChanged += new System.EventHandler(this.lvActions_SelectedIndexChanged);
+            // 
+            // chActionsName
+            // 
+            resources.ApplyResources(this.chActionsName, "chActionsName");
+            // 
+            // chActionsPath
+            // 
+            resources.ApplyResources(this.chActionsPath, "chActionsPath");
+            // 
+            // chActionsArgs
+            // 
+            resources.ApplyResources(this.chActionsArgs, "chActionsArgs");
+            // 
+            // chActionsExtensions
+            // 
+            resources.ApplyResources(this.chActionsExtensions, "chActionsExtensions");
             // 
             // btnActionsEdit
             // 
@@ -2044,12 +2138,25 @@
             // 
             // pTools
             // 
+            this.pTools.Controls.Add(this.txtToolsScreenColorPickerAltFormat);
+            this.pTools.Controls.Add(this.lblToolsScreenColorPickerAltFormat);
             this.pTools.Controls.Add(this.txtToolsScreenColorPickerInfoText);
             this.pTools.Controls.Add(this.lblToolsScreenColorPickerInfoText);
             this.pTools.Controls.Add(this.txtToolsScreenColorPickerFormat);
             this.pTools.Controls.Add(this.lblToolsScreenColorPickerFormat);
             resources.ApplyResources(this.pTools, "pTools");
             this.pTools.Name = "pTools";
+            // 
+            // txtToolsScreenColorPickerInfoText
+            // 
+            resources.ApplyResources(this.txtToolsScreenColorPickerInfoText, "txtToolsScreenColorPickerInfoText");
+            this.txtToolsScreenColorPickerInfoText.Name = "txtToolsScreenColorPickerInfoText";
+            this.txtToolsScreenColorPickerInfoText.TextChanged += new System.EventHandler(this.txtToolsScreenColorPickerInfoText_TextChanged);
+            // 
+            // lblToolsScreenColorPickerInfoText
+            // 
+            resources.ApplyResources(this.lblToolsScreenColorPickerInfoText, "lblToolsScreenColorPickerInfoText");
+            this.lblToolsScreenColorPickerInfoText.Name = "lblToolsScreenColorPickerInfoText";
             // 
             // txtToolsScreenColorPickerFormat
             // 
@@ -2095,98 +2202,6 @@
             this.chkOverrideAdvancedSettings.UseVisualStyleBackColor = true;
             this.chkOverrideAdvancedSettings.CheckedChanged += new System.EventHandler(this.chkUseDefaultAdvancedSettings_CheckedChanged);
             // 
-            // btnAfterCapture
-            // 
-            resources.ApplyResources(this.btnAfterCapture, "btnAfterCapture");
-            this.btnAfterCapture.Menu = this.cmsAfterCapture;
-            this.btnAfterCapture.Name = "btnAfterCapture";
-            this.btnAfterCapture.UseMnemonic = false;
-            this.btnAfterCapture.UseVisualStyleBackColor = true;
-            // 
-            // btnAfterUpload
-            // 
-            resources.ApplyResources(this.btnAfterUpload, "btnAfterUpload");
-            this.btnAfterUpload.Menu = this.cmsAfterUpload;
-            this.btnAfterUpload.Name = "btnAfterUpload";
-            this.btnAfterUpload.UseMnemonic = false;
-            this.btnAfterUpload.UseVisualStyleBackColor = true;
-            // 
-            // btnDestinations
-            // 
-            resources.ApplyResources(this.btnDestinations, "btnDestinations");
-            this.btnDestinations.Menu = this.cmsDestinations;
-            this.btnDestinations.Name = "btnDestinations";
-            this.btnDestinations.UseMnemonic = false;
-            this.btnDestinations.UseVisualStyleBackColor = true;
-            // 
-            // btnTask
-            // 
-            resources.ApplyResources(this.btnTask, "btnTask");
-            this.btnTask.Menu = this.cmsTask;
-            this.btnTask.Name = "btnTask";
-            this.btnTask.UseMnemonic = false;
-            this.btnTask.UseVisualStyleBackColor = true;
-            // 
-            // lvUploaderFiltersList
-            // 
-            resources.ApplyResources(this.lvUploaderFiltersList, "lvUploaderFiltersList");
-            this.lvUploaderFiltersList.AutoFillColumn = true;
-            this.lvUploaderFiltersList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.chUploaderFiltersName,
-            this.chUploaderFiltersExtension});
-            this.lvUploaderFiltersList.FullRowSelect = true;
-            this.lvUploaderFiltersList.HideSelection = false;
-            this.lvUploaderFiltersList.Name = "lvUploaderFiltersList";
-            this.lvUploaderFiltersList.UseCompatibleStateImageBehavior = false;
-            this.lvUploaderFiltersList.View = System.Windows.Forms.View.Details;
-            this.lvUploaderFiltersList.SelectedIndexChanged += new System.EventHandler(this.lvUploaderFiltersList_SelectedIndexChanged);
-            // 
-            // chUploaderFiltersName
-            // 
-            resources.ApplyResources(this.chUploaderFiltersName, "chUploaderFiltersName");
-            // 
-            // chUploaderFiltersExtension
-            // 
-            resources.ApplyResources(this.chUploaderFiltersExtension, "chUploaderFiltersExtension");
-            // 
-            // lvActions
-            // 
-            this.lvActions.AllowDrop = true;
-            this.lvActions.AllowItemDrag = true;
-            resources.ApplyResources(this.lvActions, "lvActions");
-            this.lvActions.AutoFillColumn = true;
-            this.lvActions.CheckBoxes = true;
-            this.lvActions.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.chActionsName,
-            this.chActionsPath,
-            this.chActionsArgs,
-            this.chActionsExtensions});
-            this.lvActions.FullRowSelect = true;
-            this.lvActions.HideSelection = false;
-            this.lvActions.MultiSelect = false;
-            this.lvActions.Name = "lvActions";
-            this.lvActions.UseCompatibleStateImageBehavior = false;
-            this.lvActions.View = System.Windows.Forms.View.Details;
-            this.lvActions.ItemMoved += new ShareX.HelpersLib.MyListView.ListViewItemMovedEventHandler(this.lvActions_ItemMoved);
-            this.lvActions.ItemChecked += new System.Windows.Forms.ItemCheckedEventHandler(this.lvActions_ItemChecked);
-            this.lvActions.SelectedIndexChanged += new System.EventHandler(this.lvActions_SelectedIndexChanged);
-            // 
-            // chActionsName
-            // 
-            resources.ApplyResources(this.chActionsName, "chActionsName");
-            // 
-            // chActionsPath
-            // 
-            resources.ApplyResources(this.chActionsPath, "chActionsPath");
-            // 
-            // chActionsArgs
-            // 
-            resources.ApplyResources(this.chActionsArgs, "chActionsArgs");
-            // 
-            // chActionsExtensions
-            // 
-            resources.ApplyResources(this.chActionsExtensions, "chActionsExtensions");
-            // 
             // tttvMain
             // 
             resources.ApplyResources(this.tttvMain, "tttvMain");
@@ -2197,16 +2212,16 @@
             this.tttvMain.TreeViewSize = 190;
             this.tttvMain.TabChanged += new ShareX.HelpersLib.TabToTreeView.TabChangedEventHandler(this.tttvMain_TabChanged);
             // 
-            // lblToolsScreenColorPickerInfoText
+            // lblToolsScreenColorPickerAltFormat
             // 
-            resources.ApplyResources(this.lblToolsScreenColorPickerInfoText, "lblToolsScreenColorPickerInfoText");
-            this.lblToolsScreenColorPickerInfoText.Name = "lblToolsScreenColorPickerInfoText";
+            resources.ApplyResources(this.lblToolsScreenColorPickerAltFormat, "lblToolsScreenColorPickerAltFormat");
+            this.lblToolsScreenColorPickerAltFormat.Name = "lblToolsScreenColorPickerAltFormat";
             // 
-            // txtToolsScreenColorPickerInfoText
+            // txtToolsScreenColorPickerAltFormat
             // 
-            resources.ApplyResources(this.txtToolsScreenColorPickerInfoText, "txtToolsScreenColorPickerInfoText");
-            this.txtToolsScreenColorPickerInfoText.Name = "txtToolsScreenColorPickerInfoText";
-            this.txtToolsScreenColorPickerInfoText.TextChanged += new System.EventHandler(this.txtToolsScreenColorPickerInfoText_TextChanged);
+            resources.ApplyResources(this.txtToolsScreenColorPickerAltFormat, "txtToolsScreenColorPickerAltFormat");
+            this.txtToolsScreenColorPickerAltFormat.Name = "txtToolsScreenColorPickerAltFormat";
+            this.txtToolsScreenColorPickerAltFormat.TextChanged += new System.EventHandler(this.txtToolsScreenColorPickerAltFormat_TextChanged);
             // 
             // TaskSettingsForm
             // 
@@ -2530,5 +2545,7 @@
         private System.Windows.Forms.TextBox txtURLRegexReplaceReplacement;
         private System.Windows.Forms.TextBox txtToolsScreenColorPickerInfoText;
         private System.Windows.Forms.Label lblToolsScreenColorPickerInfoText;
+        private System.Windows.Forms.TextBox txtToolsScreenColorPickerAltFormat;
+        private System.Windows.Forms.Label lblToolsScreenColorPickerAltFormat;
     }
 }

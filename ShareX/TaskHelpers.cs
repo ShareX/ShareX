@@ -819,7 +819,16 @@ namespace ShareX
 
             if (pointInfo != null)
             {
-                string text = CodeMenuEntryPixelInfo.Parse(taskSettings.ToolsSettings.ScreenColorPickerFormat, pointInfo.Color, pointInfo.Position);
+                string text;
+
+                if ((Control.ModifierKeys & Keys.Shift) == Keys.Shift)
+                {
+                    text = CodeMenuEntryPixelInfo.Parse(taskSettings.ToolsSettings.ScreenColorPickerAltFormat, pointInfo.Color, pointInfo.Position);
+                }
+                else
+                {
+                    text = CodeMenuEntryPixelInfo.Parse(taskSettings.ToolsSettings.ScreenColorPickerFormat, pointInfo.Color, pointInfo.Position);
+                }
 
                 ClipboardHelpers.CopyText(text);
 
