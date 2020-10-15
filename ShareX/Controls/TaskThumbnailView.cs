@@ -202,13 +202,16 @@ namespace ShareX
             }
         }
 
-        public void UnselectAllPanels()
+        public void UnselectAllPanels(TaskThumbnailPanel ignorePanel = null)
         {
             SelectedPanels.Clear();
 
             foreach (TaskThumbnailPanel panel in Panels)
             {
-                panel.Selected = false;
+                if (panel != ignorePanel)
+                {
+                    panel.Selected = false;
+                }
             }
 
             OnSelectedPanelChanged();
@@ -244,8 +247,7 @@ namespace ShareX
             {
                 UnselectAllPanels();
             }
-
-            if (panel != null)
+            else
             {
                 if (ModifierKeys == Keys.Control)
                 {
@@ -284,7 +286,7 @@ namespace ShareX
                 {
                     if (!panel.Selected || e.Button == MouseButtons.Left)
                     {
-                        UnselectAllPanels();
+                        UnselectAllPanels(panel);
                         panel.Selected = true;
                         SelectedPanels.Add(panel);
                     }
