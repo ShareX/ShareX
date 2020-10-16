@@ -756,8 +756,59 @@
   <data name="&gt;&gt;tpWatchFolders.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
+  <data name="txtToolsScreenColorPickerAltFormat.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 71</value>
+  </data>
+  <data name="txtToolsScreenColorPickerAltFormat.Size" type="System.Drawing.Size, System.Drawing">
+    <value>288, 20</value>
+  </data>
+  <data name="txtToolsScreenColorPickerAltFormat.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;txtToolsScreenColorPickerAltFormat.Name" xml:space="preserve">
+    <value>txtToolsScreenColorPickerAltFormat</value>
+  </data>
+  <data name="&gt;&gt;txtToolsScreenColorPickerAltFormat.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtToolsScreenColorPickerAltFormat.Parent" xml:space="preserve">
+    <value>pTools</value>
+  </data>
+  <data name="&gt;&gt;txtToolsScreenColorPickerAltFormat.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblToolsScreenColorPickerAltFormat.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblToolsScreenColorPickerAltFormat.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblToolsScreenColorPickerAltFormat.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 55</value>
+  </data>
+  <data name="lblToolsScreenColorPickerAltFormat.Size" type="System.Drawing.Size, System.Drawing">
+    <value>260, 13</value>
+  </data>
+  <data name="lblToolsScreenColorPickerAltFormat.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="lblToolsScreenColorPickerAltFormat.Text" xml:space="preserve">
+    <value>Screen color picker alternative format (SHIFT + click):</value>
+  </data>
+  <data name="&gt;&gt;lblToolsScreenColorPickerAltFormat.Name" xml:space="preserve">
+    <value>lblToolsScreenColorPickerAltFormat</value>
+  </data>
+  <data name="&gt;&gt;lblToolsScreenColorPickerAltFormat.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblToolsScreenColorPickerAltFormat.Parent" xml:space="preserve">
+    <value>pTools</value>
+  </data>
+  <data name="&gt;&gt;lblToolsScreenColorPickerAltFormat.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <data name="txtToolsScreenColorPickerInfoText.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 72</value>
+    <value>8, 118</value>
   </data>
   <data name="txtToolsScreenColorPickerInfoText.Size" type="System.Drawing.Size, System.Drawing">
     <value>288, 20</value>
@@ -775,13 +826,13 @@
     <value>pTools</value>
   </data>
   <data name="&gt;&gt;txtToolsScreenColorPickerInfoText.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>2</value>
   </data>
   <data name="lblToolsScreenColorPickerInfoText.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="lblToolsScreenColorPickerInfoText.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 56</value>
+    <value>5, 102</value>
   </data>
   <data name="lblToolsScreenColorPickerInfoText.Size" type="System.Drawing.Size, System.Drawing">
     <value>142, 13</value>
@@ -802,7 +853,7 @@
     <value>pTools</value>
   </data>
   <data name="&gt;&gt;lblToolsScreenColorPickerInfoText.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="txtToolsScreenColorPickerFormat.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 24</value>
@@ -823,7 +874,7 @@
     <value>pTools</value>
   </data>
   <data name="&gt;&gt;txtToolsScreenColorPickerFormat.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>4</value>
   </data>
   <data name="lblToolsScreenColorPickerFormat.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -853,7 +904,7 @@
     <value>pTools</value>
   </data>
   <data name="&gt;&gt;lblToolsScreenColorPickerFormat.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>5</value>
   </data>
   <data name="pTools.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -1197,6 +1248,72 @@
   <data name="&gt;&gt;cboFTPaccounts.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
+  <data name="btnAfterCapture.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnAfterCapture.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 104</value>
+  </data>
+  <data name="btnAfterCapture.Size" type="System.Drawing.Size, System.Drawing">
+    <value>552, 23</value>
+  </data>
+  <data name="btnAfterCapture.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="btnAfterCapture.Text" xml:space="preserve">
+    <value>After capture...</value>
+  </data>
+  <data name="btnAfterCapture.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;btnAfterCapture.Name" xml:space="preserve">
+    <value>btnAfterCapture</value>
+  </data>
+  <data name="&gt;&gt;btnAfterCapture.Type" xml:space="preserve">
+    <value>ShareX.HelpersLib.MenuButton, ShareX.HelpersLib, Version=13.2.2.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;btnAfterCapture.Parent" xml:space="preserve">
+    <value>tpTask</value>
+  </data>
+  <data name="&gt;&gt;btnAfterCapture.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="btnAfterUpload.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnAfterUpload.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 160</value>
+  </data>
+  <data name="btnAfterUpload.Size" type="System.Drawing.Size, System.Drawing">
+    <value>552, 23</value>
+  </data>
+  <data name="btnAfterUpload.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="btnAfterUpload.Text" xml:space="preserve">
+    <value>After upload...</value>
+  </data>
+  <data name="btnAfterUpload.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;btnAfterUpload.Name" xml:space="preserve">
+    <value>btnAfterUpload</value>
+  </data>
+  <data name="&gt;&gt;btnAfterUpload.Type" xml:space="preserve">
+    <value>ShareX.HelpersLib.MenuButton, ShareX.HelpersLib, Version=13.2.2.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;btnAfterUpload.Parent" xml:space="preserve">
+    <value>tpTask</value>
+  </data>
+  <data name="&gt;&gt;btnAfterUpload.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="btnDestinations.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnDestinations.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 216</value>
+  </data>
   <metadata name="cmsDestinations.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>396, 17</value>
   </metadata>
@@ -1208,6 +1325,30 @@
   </data>
   <data name="&gt;&gt;cmsDestinations.Type" xml:space="preserve">
     <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="btnDestinations.Size" type="System.Drawing.Size, System.Drawing">
+    <value>552, 23</value>
+  </data>
+  <data name="btnDestinations.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="btnDestinations.Text" xml:space="preserve">
+    <value>Destinations...</value>
+  </data>
+  <data name="btnDestinations.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;btnDestinations.Name" xml:space="preserve">
+    <value>btnDestinations</value>
+  </data>
+  <data name="&gt;&gt;btnDestinations.Type" xml:space="preserve">
+    <value>ShareX.HelpersLib.MenuButton, ShareX.HelpersLib, Version=13.2.2.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;btnDestinations.Parent" xml:space="preserve">
+    <value>tpTask</value>
+  </data>
+  <data name="&gt;&gt;btnDestinations.ZOrder" xml:space="preserve">
+    <value>10</value>
   </data>
   <data name="tsmiImageUploaders.Size" type="System.Drawing.Size, System.Drawing">
     <value>181, 22</value>
@@ -1238,6 +1379,36 @@
   </data>
   <data name="tsmiURLSharingServices.Text" xml:space="preserve">
     <value>URL sharing services</value>
+  </data>
+  <data name="btnTask.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnTask.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 8</value>
+  </data>
+  <data name="btnTask.Size" type="System.Drawing.Size, System.Drawing">
+    <value>552, 23</value>
+  </data>
+  <data name="btnTask.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="btnTask.Text" xml:space="preserve">
+    <value>Task...</value>
+  </data>
+  <data name="btnTask.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;btnTask.Name" xml:space="preserve">
+    <value>btnTask</value>
+  </data>
+  <data name="&gt;&gt;btnTask.Type" xml:space="preserve">
+    <value>ShareX.HelpersLib.MenuButton, ShareX.HelpersLib, Version=13.2.2.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;btnTask.Parent" xml:space="preserve">
+    <value>tpTask</value>
+  </data>
+  <data name="&gt;&gt;btnTask.ZOrder" xml:space="preserve">
+    <value>12</value>
   </data>
   <data name="&gt;&gt;lblAfterTaskNotification.Name" xml:space="preserve">
     <value>lblAfterTaskNotification</value>
@@ -7374,6 +7545,42 @@
   <data name="&gt;&gt;tpUploaderFilters.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
+  <data name="lvUploaderFiltersList.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="lvUploaderFiltersList.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 136</value>
+  </data>
+  <data name="lvUploaderFiltersList.Size" type="System.Drawing.Size, System.Drawing">
+    <value>536, 304</value>
+  </data>
+  <data name="lvUploaderFiltersList.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;lvUploaderFiltersList.Name" xml:space="preserve">
+    <value>lvUploaderFiltersList</value>
+  </data>
+  <data name="&gt;&gt;lvUploaderFiltersList.Type" xml:space="preserve">
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=13.2.2.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;lvUploaderFiltersList.Parent" xml:space="preserve">
+    <value>tpUploaderFilters</value>
+  </data>
+  <data name="&gt;&gt;lvUploaderFiltersList.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="chUploaderFiltersName.Text" xml:space="preserve">
+    <value>Uploader</value>
+  </data>
+  <data name="chUploaderFiltersName.Width" type="System.Int32, mscorlib">
+    <value>128</value>
+  </data>
+  <data name="chUploaderFiltersExtension.Text" xml:space="preserve">
+    <value>Extension</value>
+  </data>
+  <data name="chUploaderFiltersExtension.Width" type="System.Int32, mscorlib">
+    <value>98</value>
+  </data>
   <data name="btnUploaderFiltersRemove.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -7773,6 +7980,54 @@
   <data name="&gt;&gt;btnActionsAdd.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="lvActions.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="lvActions.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 64</value>
+  </data>
+  <data name="lvActions.Size" type="System.Drawing.Size, System.Drawing">
+    <value>558, 383</value>
+  </data>
+  <data name="lvActions.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;lvActions.Name" xml:space="preserve">
+    <value>lvActions</value>
+  </data>
+  <data name="&gt;&gt;lvActions.Type" xml:space="preserve">
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=13.2.2.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;lvActions.Parent" xml:space="preserve">
+    <value>pActions</value>
+  </data>
+  <data name="&gt;&gt;lvActions.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="chActionsName.Text" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="chActionsName.Width" type="System.Int32, mscorlib">
+    <value>90</value>
+  </data>
+  <data name="chActionsPath.Text" xml:space="preserve">
+    <value>Path</value>
+  </data>
+  <data name="chActionsPath.Width" type="System.Int32, mscorlib">
+    <value>220</value>
+  </data>
+  <data name="chActionsArgs.Text" xml:space="preserve">
+    <value>Args</value>
+  </data>
+  <data name="chActionsArgs.Width" type="System.Int32, mscorlib">
+    <value>114</value>
+  </data>
+  <data name="chActionsExtensions.Text" xml:space="preserve">
+    <value>Extensions</value>
+  </data>
+  <data name="chActionsExtensions.Width" type="System.Int32, mscorlib">
+    <value>75</value>
+  </data>
   <data name="btnActionsEdit.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
@@ -8082,210 +8337,6 @@
   <data name="&gt;&gt;chkOverrideAdvancedSettings.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="btnAfterCapture.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btnAfterCapture.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 104</value>
-  </data>
-  <data name="btnAfterCapture.Size" type="System.Drawing.Size, System.Drawing">
-    <value>552, 23</value>
-  </data>
-  <data name="btnAfterCapture.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="btnAfterCapture.Text" xml:space="preserve">
-    <value>After capture...</value>
-  </data>
-  <data name="btnAfterCapture.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="&gt;&gt;btnAfterCapture.Name" xml:space="preserve">
-    <value>btnAfterCapture</value>
-  </data>
-  <data name="&gt;&gt;btnAfterCapture.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MenuButton, ShareX.HelpersLib, Version=13.2.2.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;btnAfterCapture.Parent" xml:space="preserve">
-    <value>tpTask</value>
-  </data>
-  <data name="&gt;&gt;btnAfterCapture.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="btnAfterUpload.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btnAfterUpload.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 160</value>
-  </data>
-  <data name="btnAfterUpload.Size" type="System.Drawing.Size, System.Drawing">
-    <value>552, 23</value>
-  </data>
-  <data name="btnAfterUpload.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="btnAfterUpload.Text" xml:space="preserve">
-    <value>After upload...</value>
-  </data>
-  <data name="btnAfterUpload.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="&gt;&gt;btnAfterUpload.Name" xml:space="preserve">
-    <value>btnAfterUpload</value>
-  </data>
-  <data name="&gt;&gt;btnAfterUpload.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MenuButton, ShareX.HelpersLib, Version=13.2.2.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;btnAfterUpload.Parent" xml:space="preserve">
-    <value>tpTask</value>
-  </data>
-  <data name="&gt;&gt;btnAfterUpload.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="btnDestinations.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btnDestinations.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 216</value>
-  </data>
-  <data name="btnDestinations.Size" type="System.Drawing.Size, System.Drawing">
-    <value>552, 23</value>
-  </data>
-  <data name="btnDestinations.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="btnDestinations.Text" xml:space="preserve">
-    <value>Destinations...</value>
-  </data>
-  <data name="btnDestinations.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="&gt;&gt;btnDestinations.Name" xml:space="preserve">
-    <value>btnDestinations</value>
-  </data>
-  <data name="&gt;&gt;btnDestinations.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MenuButton, ShareX.HelpersLib, Version=13.2.2.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;btnDestinations.Parent" xml:space="preserve">
-    <value>tpTask</value>
-  </data>
-  <data name="&gt;&gt;btnDestinations.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
-  <data name="btnTask.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btnTask.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 8</value>
-  </data>
-  <data name="btnTask.Size" type="System.Drawing.Size, System.Drawing">
-    <value>552, 23</value>
-  </data>
-  <data name="btnTask.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="btnTask.Text" xml:space="preserve">
-    <value>Task...</value>
-  </data>
-  <data name="btnTask.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="&gt;&gt;btnTask.Name" xml:space="preserve">
-    <value>btnTask</value>
-  </data>
-  <data name="&gt;&gt;btnTask.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MenuButton, ShareX.HelpersLib, Version=13.2.2.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;btnTask.Parent" xml:space="preserve">
-    <value>tpTask</value>
-  </data>
-  <data name="&gt;&gt;btnTask.ZOrder" xml:space="preserve">
-    <value>12</value>
-  </data>
-  <data name="lvUploaderFiltersList.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
-  </data>
-  <data name="lvUploaderFiltersList.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 136</value>
-  </data>
-  <data name="lvUploaderFiltersList.Size" type="System.Drawing.Size, System.Drawing">
-    <value>536, 304</value>
-  </data>
-  <data name="lvUploaderFiltersList.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="&gt;&gt;lvUploaderFiltersList.Name" xml:space="preserve">
-    <value>lvUploaderFiltersList</value>
-  </data>
-  <data name="&gt;&gt;lvUploaderFiltersList.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=13.2.2.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;lvUploaderFiltersList.Parent" xml:space="preserve">
-    <value>tpUploaderFilters</value>
-  </data>
-  <data name="&gt;&gt;lvUploaderFiltersList.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="chUploaderFiltersName.Text" xml:space="preserve">
-    <value>Uploader</value>
-  </data>
-  <data name="chUploaderFiltersName.Width" type="System.Int32, mscorlib">
-    <value>128</value>
-  </data>
-  <data name="chUploaderFiltersExtension.Text" xml:space="preserve">
-    <value>Extension</value>
-  </data>
-  <data name="chUploaderFiltersExtension.Width" type="System.Int32, mscorlib">
-    <value>98</value>
-  </data>
-  <data name="lvActions.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
-  </data>
-  <data name="lvActions.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 64</value>
-  </data>
-  <data name="lvActions.Size" type="System.Drawing.Size, System.Drawing">
-    <value>558, 383</value>
-  </data>
-  <data name="lvActions.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;lvActions.Name" xml:space="preserve">
-    <value>lvActions</value>
-  </data>
-  <data name="&gt;&gt;lvActions.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=13.2.2.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;lvActions.Parent" xml:space="preserve">
-    <value>pActions</value>
-  </data>
-  <data name="&gt;&gt;lvActions.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="chActionsName.Text" xml:space="preserve">
-    <value>Name</value>
-  </data>
-  <data name="chActionsName.Width" type="System.Int32, mscorlib">
-    <value>90</value>
-  </data>
-  <data name="chActionsPath.Text" xml:space="preserve">
-    <value>Path</value>
-  </data>
-  <data name="chActionsPath.Width" type="System.Int32, mscorlib">
-    <value>220</value>
-  </data>
-  <data name="chActionsArgs.Text" xml:space="preserve">
-    <value>Args</value>
-  </data>
-  <data name="chActionsArgs.Width" type="System.Int32, mscorlib">
-    <value>114</value>
-  </data>
-  <data name="chActionsExtensions.Text" xml:space="preserve">
-    <value>Extensions</value>
-  </data>
-  <data name="chActionsExtensions.Width" type="System.Int32, mscorlib">
-    <value>75</value>
-  </data>
   <data name="tttvMain.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
@@ -8321,9 +8372,6 @@
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>784, 511</value>
-  </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>800, 550</value>
@@ -8367,24 +8415,6 @@
   <data name="&gt;&gt;tsmiURLSharingServices.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;chWatchFolderFolderPath.Name" xml:space="preserve">
-    <value>chWatchFolderFolderPath</value>
-  </data>
-  <data name="&gt;&gt;chWatchFolderFolderPath.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;chWatchFolderFilter.Name" xml:space="preserve">
-    <value>chWatchFolderFilter</value>
-  </data>
-  <data name="&gt;&gt;chWatchFolderFilter.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;chWatchFolderIncludeSubdirectories.Name" xml:space="preserve">
-    <value>chWatchFolderIncludeSubdirectories</value>
-  </data>
-  <data name="&gt;&gt;chWatchFolderIncludeSubdirectories.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;chUploaderFiltersName.Name" xml:space="preserve">
     <value>chUploaderFiltersName</value>
   </data>
@@ -8419,6 +8449,24 @@
     <value>chActionsExtensions</value>
   </data>
   <data name="&gt;&gt;chActionsExtensions.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chWatchFolderFolderPath.Name" xml:space="preserve">
+    <value>chWatchFolderFolderPath</value>
+  </data>
+  <data name="&gt;&gt;chWatchFolderFolderPath.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chWatchFolderFilter.Name" xml:space="preserve">
+    <value>chWatchFolderFilter</value>
+  </data>
+  <data name="&gt;&gt;chWatchFolderFilter.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chWatchFolderIncludeSubdirectories.Name" xml:space="preserve">
+    <value>chWatchFolderIncludeSubdirectories</value>
+  </data>
+  <data name="&gt;&gt;chWatchFolderIncludeSubdirectories.Type" xml:space="preserve">
     <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
