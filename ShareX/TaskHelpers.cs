@@ -819,22 +819,26 @@ namespace ShareX
 
             if (pointInfo != null)
             {
-                string text;
+                string input;
 
-                if ((Control.ModifierKeys & Keys.Shift) == Keys.Shift)
+                if (Control.ModifierKeys == Keys.Control)
                 {
-                    text = CodeMenuEntryPixelInfo.Parse(taskSettings.ToolsSettings.ScreenColorPickerAltFormat, pointInfo.Color, pointInfo.Position);
+                    input = taskSettings.ToolsSettings.ScreenColorPickerFormatCtrl;
                 }
                 else
                 {
-                    text = CodeMenuEntryPixelInfo.Parse(taskSettings.ToolsSettings.ScreenColorPickerFormat, pointInfo.Color, pointInfo.Position);
+                    input = taskSettings.ToolsSettings.ScreenColorPickerFormat;
                 }
 
-                ClipboardHelpers.CopyText(text);
+                if (!string.IsNullOrEmpty(input))
+                {
+                    string text = CodeMenuEntryPixelInfo.Parse(input, pointInfo.Color, pointInfo.Position);
+                    ClipboardHelpers.CopyText(text);
 
-                // TODO: Translate
-                ShowNotificationTip(string.Format(Resources.TaskHelpers_OpenQuickScreenColorPicker_Copied_to_clipboard___0_, text),
-                    "ShareX - " + "Screen color picker");
+                    // TODO: Translate
+                    ShowNotificationTip(string.Format(Resources.TaskHelpers_OpenQuickScreenColorPicker_Copied_to_clipboard___0_, text),
+                        "ShareX - " + "Screen color picker");
+                }
             }
         }
 

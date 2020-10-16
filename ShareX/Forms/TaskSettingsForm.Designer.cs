@@ -250,6 +250,8 @@
             this.btnWatchFolderAdd = new System.Windows.Forms.Button();
             this.tpTools = new System.Windows.Forms.TabPage();
             this.pTools = new System.Windows.Forms.Panel();
+            this.txtToolsScreenColorPickerFormatCtrl = new System.Windows.Forms.TextBox();
+            this.lblToolsScreenColorPickerFormatCtrl = new System.Windows.Forms.Label();
             this.txtToolsScreenColorPickerInfoText = new System.Windows.Forms.TextBox();
             this.lblToolsScreenColorPickerInfoText = new System.Windows.Forms.Label();
             this.txtToolsScreenColorPickerFormat = new System.Windows.Forms.TextBox();
@@ -259,8 +261,6 @@
             this.pgTaskSettings = new System.Windows.Forms.PropertyGrid();
             this.chkOverrideAdvancedSettings = new System.Windows.Forms.CheckBox();
             this.tttvMain = new ShareX.HelpersLib.TabToTreeView();
-            this.lblToolsScreenColorPickerAltFormat = new System.Windows.Forms.Label();
-            this.txtToolsScreenColorPickerAltFormat = new System.Windows.Forms.TextBox();
             this.tcTaskSettings.SuspendLayout();
             this.tpTask.SuspendLayout();
             this.cmsDestinations.SuspendLayout();
@@ -2138,14 +2138,25 @@
             // 
             // pTools
             // 
-            this.pTools.Controls.Add(this.txtToolsScreenColorPickerAltFormat);
-            this.pTools.Controls.Add(this.lblToolsScreenColorPickerAltFormat);
+            this.pTools.Controls.Add(this.txtToolsScreenColorPickerFormatCtrl);
+            this.pTools.Controls.Add(this.lblToolsScreenColorPickerFormatCtrl);
             this.pTools.Controls.Add(this.txtToolsScreenColorPickerInfoText);
             this.pTools.Controls.Add(this.lblToolsScreenColorPickerInfoText);
             this.pTools.Controls.Add(this.txtToolsScreenColorPickerFormat);
             this.pTools.Controls.Add(this.lblToolsScreenColorPickerFormat);
             resources.ApplyResources(this.pTools, "pTools");
             this.pTools.Name = "pTools";
+            // 
+            // txtToolsScreenColorPickerFormatCtrl
+            // 
+            resources.ApplyResources(this.txtToolsScreenColorPickerFormatCtrl, "txtToolsScreenColorPickerFormatCtrl");
+            this.txtToolsScreenColorPickerFormatCtrl.Name = "txtToolsScreenColorPickerFormatCtrl";
+            this.txtToolsScreenColorPickerFormatCtrl.TextChanged += new System.EventHandler(this.txtToolsScreenColorPickerFormatCtrl_TextChanged);
+            // 
+            // lblToolsScreenColorPickerFormatCtrl
+            // 
+            resources.ApplyResources(this.lblToolsScreenColorPickerFormatCtrl, "lblToolsScreenColorPickerFormatCtrl");
+            this.lblToolsScreenColorPickerFormatCtrl.Name = "lblToolsScreenColorPickerFormatCtrl";
             // 
             // txtToolsScreenColorPickerInfoText
             // 
@@ -2211,17 +2222,6 @@
             this.tttvMain.TreeViewFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.tttvMain.TreeViewSize = 190;
             this.tttvMain.TabChanged += new ShareX.HelpersLib.TabToTreeView.TabChangedEventHandler(this.tttvMain_TabChanged);
-            // 
-            // lblToolsScreenColorPickerAltFormat
-            // 
-            resources.ApplyResources(this.lblToolsScreenColorPickerAltFormat, "lblToolsScreenColorPickerAltFormat");
-            this.lblToolsScreenColorPickerAltFormat.Name = "lblToolsScreenColorPickerAltFormat";
-            // 
-            // txtToolsScreenColorPickerAltFormat
-            // 
-            resources.ApplyResources(this.txtToolsScreenColorPickerAltFormat, "txtToolsScreenColorPickerAltFormat");
-            this.txtToolsScreenColorPickerAltFormat.Name = "txtToolsScreenColorPickerAltFormat";
-            this.txtToolsScreenColorPickerAltFormat.TextChanged += new System.EventHandler(this.txtToolsScreenColorPickerAltFormat_TextChanged);
             // 
             // TaskSettingsForm
             // 
@@ -2545,7 +2545,7 @@
         private System.Windows.Forms.TextBox txtURLRegexReplaceReplacement;
         private System.Windows.Forms.TextBox txtToolsScreenColorPickerInfoText;
         private System.Windows.Forms.Label lblToolsScreenColorPickerInfoText;
-        private System.Windows.Forms.TextBox txtToolsScreenColorPickerAltFormat;
-        private System.Windows.Forms.Label lblToolsScreenColorPickerAltFormat;
+        private System.Windows.Forms.TextBox txtToolsScreenColorPickerFormatCtrl;
+        private System.Windows.Forms.Label lblToolsScreenColorPickerFormatCtrl;
     }
 }
