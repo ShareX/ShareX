@@ -5617,7 +5617,7 @@
     <value>Include subdirectories</value>
   </data>
   <data name="chWatchFolderIncludeSubdirectories.Width" type="System.Int32, mscorlib">
-    <value>124</value>
+    <value>182</value>
   </data>
   <data name="lvWatchFolderList.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 64</value>
@@ -5632,7 +5632,7 @@
     <value>lvWatchFolderList</value>
   </data>
   <data name="&gt;&gt;lvWatchFolderList.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ListView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=13.2.2.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lvWatchFolderList.Parent" xml:space="preserve">
     <value>tpWatchFolders</value>
