@@ -1908,10 +1908,10 @@
     <None Include="Resources\exclamation.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\user-business.png" />
+    <None Include="Resources\jp.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\jp.png" />
+    <None Include="Resources\uac.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

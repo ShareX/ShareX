@@ -2702,6 +2702,16 @@ namespace ShareX.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap uac {
+            get {
+                object obj = ResourceManager.GetObject("uac", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap ui_menu_blue {
             get {
                 object obj = ResourceManager.GetObject("ui_menu_blue", resourceCulture);
@@ -2984,16 +2994,6 @@ namespace ShareX.Properties {
         public static System.Drawing.Bitmap us {
             get {
                 object obj = ResourceManager.GetObject("us", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap user_business {
-            get {
-                object obj = ResourceManager.GetObject("user-business", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

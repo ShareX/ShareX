@@ -2204,7 +2204,7 @@
             // 
             // tsmiRestartAsAdmin
             // 
-            this.tsmiRestartAsAdmin.Image = global::ShareX.Properties.Resources.user_business;
+            this.tsmiRestartAsAdmin.Image = global::ShareX.Properties.Resources.uac;
             this.tsmiRestartAsAdmin.Name = "tsmiRestartAsAdmin";
             resources.ApplyResources(this.tsmiRestartAsAdmin, "tsmiRestartAsAdmin");
             this.tsmiRestartAsAdmin.Click += new System.EventHandler(this.tsmiRestartAsAdmin_Click);
