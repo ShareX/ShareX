@@ -205,11 +205,6 @@ namespace ShareX
             tsmiTrayDNSChanger.Visible = false;
 #endif
 
-            if (Program.Dev && !Helpers.IsAdministrator())
-            {
-                tsmiRestartAsAdmin.Visible = true;
-            }
-
             HandleCreated += MainForm_HandleCreated;
         }
 
@@ -999,6 +994,7 @@ namespace ShareX
             HelpersOptions.RotateImageByExifOrientationData = Program.Settings.RotateImageByExifOrientationData;
             HelpersOptions.BrowserPath = Program.Settings.BrowserPath;
             HelpersOptions.RecentColors = Program.Settings.RecentColors;
+            HelpersOptions.DevMode = Program.Settings.DevMode;
             Program.UpdateHelpersSpecialFolders();
 
             TaskManager.RecentManager.MaxCount = Program.Settings.RecentTasksMaxCount;
@@ -1013,6 +1009,8 @@ namespace ShareX
                 Icon = ShareXResources.Icon;
                 niTray.Icon = ShareXResources.Icon;
             }
+
+            tsmiRestartAsAdmin.Visible = HelpersOptions.DevMode && !Helpers.IsAdministrator();
 
 #if RELEASE
             ConfigureAutoUpdate();

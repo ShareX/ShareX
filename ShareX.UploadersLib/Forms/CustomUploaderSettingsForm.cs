@@ -375,10 +375,11 @@ namespace ShareX.UploadersLib
                 CustomUploaderUpdateList();
             }
 
-#if DEBUG
-            tsmiExportAll.Visible = true;
-            tsmiUpdateFolder.Visible = true;
-#endif
+            if (HelpersOptions.DevMode)
+            {
+                tsmiExportAll.Visible = true;
+                tsmiUpdateFolder.Visible = true;
+            }
 
             CustomUploaderClearFields();
 
