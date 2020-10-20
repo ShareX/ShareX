@@ -975,15 +975,6 @@ namespace ShareX
 
         private void AfterApplicationSettingsJobs()
         {
-            if (Program.Settings.TrayTextMoreInfo)
-            {
-                niTray.Text = Program.TitleLong;
-            }
-            else
-            {
-                niTray.Text = "ShareX";
-            }
-
             HotkeyRepeatLimit = Program.Settings.HotkeyRepeatLimit;
 
             HelpersOptions.CurrentProxy = Program.Settings.ProxySettings;
@@ -1008,6 +999,15 @@ namespace ShareX
 
                 Icon = ShareXResources.Icon;
                 niTray.Icon = ShareXResources.Icon;
+            }
+
+            if (HelpersOptions.DevMode)
+            {
+                niTray.Text = Program.TitleLong;
+            }
+            else
+            {
+                niTray.Text = "ShareX";
             }
 
             tsmiRestartAsAdmin.Visible = HelpersOptions.DevMode && !Helpers.IsAdministrator();

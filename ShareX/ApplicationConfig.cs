@@ -178,9 +178,6 @@ namespace ShareX
         [Editor(typeof(ExeFileNameEditor), typeof(UITypeEditor))]
         public string BrowserPath { get; set; }
 
-        [Category("Application"), DefaultValue(false), Description("Show version and build info in tray text so if you are running more than one ShareX build you can differentiate them in tray bar.")]
-        public bool TrayTextMoreInfo { get; set; }
-
         [Category("Application"), DefaultValue(false), Description("Save settings after task completed but only if there is no other active tasks.")]
         public bool SaveSettingsAfterTaskCompleted { get; set; }
 
