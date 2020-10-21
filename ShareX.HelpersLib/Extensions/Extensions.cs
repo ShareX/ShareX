@@ -272,7 +272,7 @@ namespace ShareX.HelpersLib
                     tsmiRedo.Enabled = !rtb.ReadOnly && rtb.CanRedo;
                     tsmiCut.Enabled = !rtb.ReadOnly && rtb.SelectionLength > 0;
                     tsmiCopy.Enabled = rtb.SelectionLength > 0;
-                    tsmiPaste.Enabled = !rtb.ReadOnly && Clipboard.ContainsText();
+                    tsmiPaste.Enabled = !rtb.ReadOnly && ClipboardHelpers.ContainsText();
                     tsmiDelete.Enabled = !rtb.ReadOnly && rtb.SelectionLength > 0;
                     tsmiSelectAll.Enabled = rtb.TextLength > 0 && rtb.SelectionLength < rtb.TextLength;
                 };

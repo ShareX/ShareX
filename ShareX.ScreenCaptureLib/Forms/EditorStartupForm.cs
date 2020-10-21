@@ -69,7 +69,7 @@ namespace ShareX.ScreenCaptureLib
 
         private void btnLoadImageFromClipboard_Click(object sender, EventArgs e)
         {
-            if (Clipboard.ContainsImage())
+            if (ClipboardHelpers.ContainsImage())
             {
                 Image = ClipboardHelpers.GetImage();
 
@@ -79,7 +79,7 @@ namespace ShareX.ScreenCaptureLib
                     Close();
                 }
             }
-            else if (Clipboard.ContainsFileDropList())
+            else if (ClipboardHelpers.ContainsFileDropList())
             {
                 string[] files = ClipboardHelpers.GetFileDropList();
 
