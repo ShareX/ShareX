@@ -656,8 +656,7 @@ namespace ShareX.ScreenCaptureLib
             tsmiPaste.Click += (sender, e) => PasteFromClipboard(false);
             tsddbEdit.DropDownItems.Add(tsmiPaste);
 
-            // TODO: Translate
-            tsmiDuplicate = new ToolStripMenuItem("Duplicate");
+            tsmiDuplicate = new ToolStripMenuItem(Resources.Duplicate);
             tsmiDuplicate.Image = Resources.document_copy;
             tsmiDuplicate.ShortcutKeyDisplayString = "Ctrl+D";
             tsmiDuplicate.Click += (sender, e) => DuplicateCurrrentShape(false);
@@ -992,8 +991,7 @@ namespace ShareX.ScreenCaptureLib
             };
             tsddbOptions.DropDownItems.Add(tsmiSwitchToSelectionToolAfterDrawing);
 
-            // TODO: Translate
-            ToolStripLabeledNumericUpDown tslnudMenuIconSize = new ToolStripLabeledNumericUpDown("Menu icon size:");
+            ToolStripLabeledNumericUpDown tslnudMenuIconSize = new ToolStripLabeledNumericUpDown(Resources.MenuIconSize);
             tslnudMenuIconSize.Content.Minimum = 16;
             tslnudMenuIconSize.Content.Maximum = 64;
             tslnudMenuIconSize.Content.Increment = 16;
@@ -1012,7 +1010,7 @@ namespace ShareX.ScreenCaptureLib
 
             if (!Form.IsEditorMode)
             {
-                ToolStripMenuItem tsmiLockMenu = new ToolStripMenuItem("Lock menu");
+                ToolStripMenuItem tsmiLockMenu = new ToolStripMenuItem(Resources.LockMenu);
                 tsmiLockMenu.Checked = Options.MenuLocked;
                 tsmiLockMenu.CheckOnClick = true;
                 tsmiLockMenu.Click += (sender, e) =>

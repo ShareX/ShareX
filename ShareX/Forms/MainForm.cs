@@ -455,8 +455,7 @@ namespace ShareX
                 int maxHotkeyLength = hotkeys.Max(x => x.HotkeyInfo.ToString().Length);
                 int maxDescriptionLength = hotkeys.Max(x => x.TaskSettings.ToString().Length);
 
-                // TODO: Translate
-                sb.AppendFormat("┌{0}┬{1}┐\r\n", "Hotkey".PadCenter(maxHotkeyLength + 2, '─'), "Description".PadCenter(maxDescriptionLength + 2, '─'));
+                sb.AppendFormat("┌{0}┬{1}┐\r\n", Resources.Hotkey.PadCenter(maxHotkeyLength + 2, '─'), Resources.Description.PadCenter(maxDescriptionLength + 2, '─'));
 
                 for (int i = 0; i < hotkeys.Count; i++)
                 {
@@ -1392,8 +1391,7 @@ namespace ShareX
 
                 if (Program.Settings.FirstTimeMinimizeToTray)
                 {
-                    // TODO: Translate
-                    TaskHelpers.ShowNotificationTip("ShareX is minimized to the system tray.", "ShareX", 8000);
+                    TaskHelpers.ShowNotificationTip(Resources.ShareXIsMinimizedToTheSystemTray, "ShareX", 8000);
                     Program.Settings.FirstTimeMinimizeToTray = false;
                 }
             }

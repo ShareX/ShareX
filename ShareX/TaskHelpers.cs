@@ -835,9 +835,8 @@ namespace ShareX
                     string text = CodeMenuEntryPixelInfo.Parse(input, pointInfo.Color, pointInfo.Position);
                     ClipboardHelpers.CopyText(text);
 
-                    // TODO: Translate
                     ShowNotificationTip(string.Format(Resources.TaskHelpers_OpenQuickScreenColorPicker_Copied_to_clipboard___0_, text),
-                        "ShareX - " + "Screen color picker");
+                        "ShareX - " + Resources.ScreenColorPicker);
                 }
             }
         }
@@ -1754,9 +1753,8 @@ namespace ShareX
                     imageEffectsForm.ImportImageEffect(configJson);
                 }
 
-                // TODO: Translate
                 if (!Program.DefaultTaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.AddImageEffects) &&
-                    MessageBox.Show("Would you like to enable image effects?\r\n\r\nYou can later disable it from \"After capture tasks\" menu.",
+                    MessageBox.Show(Resources.WouldYouLikeToEnableImageEffects,
                     "ShareX", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     Program.DefaultTaskSettings.AfterCaptureJob = Program.DefaultTaskSettings.AfterCaptureJob.Add(AfterCaptureTasks.AddImageEffects);
