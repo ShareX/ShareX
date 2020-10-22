@@ -241,4 +241,10 @@
   <data name="DuplicateNameNotAllowed" xml:space="preserve">
     <value>Повторение имен не разрешено.</value>
   </data>
+  <data name="ExportFailed" xml:space="preserve">
+    <value>Экспорт не удался.</value>
+  </data>
+  <data name="LoggedInAs0" xml:space="preserve">
+    <value>Вход выполнен как {0}.</value>
+  </data>
 </root>
