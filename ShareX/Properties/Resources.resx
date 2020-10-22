@@ -1072,4 +1072,27 @@ Middle click to close</value>
   <data name="uac" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\uac.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="ShareXIsMinimizedToTheSystemTray" xml:space="preserve">
+    <value>ShareX is minimized to the system tray.</value>
+  </data>
+  <data name="YourAntiVirusSoftwareOrTheControlledFolderAccessFeatureInWindows10CouldBeBlockingShareX" xml:space="preserve">
+    <value>Your anti-virus software or the controlled folder access feature in Windows 10 could be blocking ShareX.</value>
+  </data>
+  <data name="FailedToSaveSettings" xml:space="preserve">
+    <value>Failed to save settings</value>
+  </data>
+  <data name="ScreenColorPicker" xml:space="preserve">
+    <value>Screen color picker</value>
+  </data>
+  <data name="WouldYouLikeToEnableImageEffects" xml:space="preserve">
+    <value>Would you like to enable image effects?
+
+You can later disable it from "After capture tasks" menu.</value>
+  </data>
+  <data name="Hotkey" xml:space="preserve">
+    <value>Hotkey</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
 </root>
