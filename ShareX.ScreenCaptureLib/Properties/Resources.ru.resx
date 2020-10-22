@@ -412,4 +412,34 @@
   <data name="CloseEsc" xml:space="preserve">
     <value>Закрыть (Esc)</value>
   </data>
+  <data name="ShapeManager_ArrowHeadDirection" xml:space="preserve">
+    <value>Направление стрелки:</value>
+  </data>
+  <data name="NewLineEnterOKCtrlEnter" xml:space="preserve">
+    <value>Новая строка: Enter, OK: Ctrl + Enter</value>
+  </data>
+  <data name="NewLineCtrlEnterOKEnter" xml:space="preserve">
+    <value>Новая строка: Ctrl + Enter, OK: Enter</value>
+  </data>
+  <data name="LockMenu" xml:space="preserve">
+    <value>Зафиксировать меню</value>
+  </data>
+  <data name="ImageUploading" xml:space="preserve">
+    <value>Изображение загружается</value>
+  </data>
+  <data name="ImageCopied" xml:space="preserve">
+    <value>Изображение скопировано</value>
+  </data>
+  <data name="ImageSaved" xml:space="preserve">
+    <value>Изображение сохранено</value>
+  </data>
+  <data name="ImageSavedAs" xml:space="preserve">
+    <value>Изображение сохранено</value>
+  </data>
+  <data name="Duplicate" xml:space="preserve">
+    <value>Дублировать</value>
+  </data>
+  <data name="MenuIconSize" xml:space="preserve">
+    <value>Размер иконок меню:</value>
+  </data>
 </root>

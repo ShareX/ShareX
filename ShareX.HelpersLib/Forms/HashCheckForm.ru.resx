@@ -174,4 +174,16 @@
   <data name="tpTextConversions.Text" xml:space="preserve">
     <value>Преобразования текста</value>
   </data>
+  <data name="cbCompareTwoFiles.Text" xml:space="preserve">
+    <value>Сравнить два файла</value>
+  </data>
+  <data name="lblFilePath.Text" xml:space="preserve">
+    <value>Путь к файлу:</value>
+  </data>
+  <data name="lblFilePath2.Text" xml:space="preserve">
+    <value>Путь к файлу:</value>
+  </data>
+  <data name="btnFilePathBrowse2.Text" xml:space="preserve">
+    <value>Обзор...</value>
+  </data>
 </root>
