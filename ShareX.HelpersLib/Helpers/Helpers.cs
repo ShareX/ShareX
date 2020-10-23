@@ -1229,6 +1229,24 @@ namespace ShareX.HelpersLib
             }
         }
 
+        public static bool IsMemberOfAdministratorsGroup()
+        {
+            try
+            {
+                using (WindowsIdentity identity = WindowsIdentity.GetCurrent())
+                {
+                    WindowsPrincipal principal = new WindowsPrincipal(identity);
+                    SecurityIdentifier sid = new SecurityIdentifier(WellKnownSidType.BuiltinAdministratorsSid, null);
+                    return principal.UserClaims.Any(x => x.Value.Contains(sid.Value));
+                }
+            }
+            catch
+            {
+            }
+
+            return false;
+        }
+
         public static string RepeatGenerator(int count, Func<string> generator)
         {
             string result = "";

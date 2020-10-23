@@ -168,7 +168,7 @@ namespace ShareX.HelpersLib
                             psi.Arguments += " /VERYSILENT";
                         }
 
-                        if (Helpers.IsDefaultInstallDir())
+                        if (Helpers.IsDefaultInstallDir() && !Helpers.IsMemberOfAdministratorsGroup())
                         {
                             psi.Verb = "runas";
                         }
