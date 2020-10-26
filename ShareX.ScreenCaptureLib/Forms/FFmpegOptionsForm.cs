@@ -177,12 +177,20 @@ namespace ShareX.ScreenCaptureLib
                 {
                     Options.FFmpeg.VideoSource = FFmpegCLIManager.SourceVideoDevice;
                 }
+                else if (!cboVideoCodec.Items.Contains(Options.FFmpeg.VideoSource))
+                {
+                    Options.FFmpeg.VideoSource = FFmpegCLIManager.SourceGDIGrab;
+                }
 
                 cboVideoSource.Text = Options.FFmpeg.VideoSource;
 
                 if (selectDevices && cboAudioSource.Items.Contains(FFmpegCLIManager.SourceAudioDevice))
                 {
                     Options.FFmpeg.AudioSource = FFmpegCLIManager.SourceAudioDevice;
+                }
+                else if (!cboAudioSource.Items.Contains(Options.FFmpeg.AudioSource))
+                {
+                    Options.FFmpeg.AudioSource = FFmpegCLIManager.SourceNone;
                 }
 
                 cboAudioSource.Text = Options.FFmpeg.AudioSource;
