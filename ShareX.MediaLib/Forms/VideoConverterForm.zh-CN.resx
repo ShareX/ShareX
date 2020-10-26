@@ -118,30 +118,45 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - 监视文件夹</value>
+    <value>ShareX - 视频转换器</value>
   </data>
-  <data name="btnCancel.Text" xml:space="preserve">
-    <value>取消</value>
+  <data name="btnEncode.Text" xml:space="preserve">
+    <value>开始编码</value>
   </data>
-  <data name="btnOK.Text" xml:space="preserve">
-    <value>确定</value>
-  </data>
-  <data name="cbIncludeSubdirectories.Text" xml:space="preserve">
-    <value>包括子目录</value>
-  </data>
-  <data name="lblFilter.Text" xml:space="preserve">
-    <value>过滤器：</value>
-  </data>
-  <data name="lblFilterExample.Text" xml:space="preserve">
-    <value>例如: *.png</value>
-  </data>
-  <data name="lblFolderPath.Text" xml:space="preserve">
-    <value>文件夹路径：</value>
-  </data>
-  <data name="btnPathBrowse.Text" xml:space="preserve">
+  <data name="btnInputFilePathBrowse.Text" xml:space="preserve">
     <value>...</value>
   </data>
-  <data name="chkMoveToScreenshotsDir.Text" xml:space="preserve">
-    <value>移动文件到屏幕截图文件夹</value>
+  <data name="btnOutputFolderBrowse.Text" xml:space="preserve">
+    <value>...</value>
+  </data>
+  <data name="cbAutoOpenFolder.Text" xml:space="preserve">
+    <value>编码后打开文件夹</value>
+  </data>
+  <data name="lblVideoQualityHigher.Text" xml:space="preserve">
+    <value>-&gt;</value>
+  </data>
+  <data name="lblVideoQualityLower.Text" xml:space="preserve">
+    <value>&lt;-</value>
+  </data>
+  <data name="lblVideoQualityValue.Text" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblInputFilePath.Text" xml:space="preserve">
+    <value>输入文件路径:</value>
+  </data>
+  <data name="lblOutputFileName.Text" xml:space="preserve">
+    <value>输出文件名:</value>
+  </data>
+  <data name="lblOutputFolder.Text" xml:space="preserve">
+    <value>输出文件夹:</value>
+  </data>
+  <data name="cbUseCustomArguments.Text" xml:space="preserve">
+    <value>使用自定义参数</value>
+  </data>
+  <data name="lblVideoCodec.Text" xml:space="preserve">
+    <value>视频编解码器:</value>
+  </data>
+  <data name="lblVideoQuality.Text" xml:space="preserve">
+    <value>视频品质:</value>
   </data>
 </root>

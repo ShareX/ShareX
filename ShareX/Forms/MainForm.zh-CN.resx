@@ -169,7 +169,7 @@
     <value>调试</value>
   </data>
   <data name="tsddbDestinations.Text" xml:space="preserve">
-    <value>上传至...</value>
+    <value>目标</value>
   </data>
   <data name="tsddbTools.Text" xml:space="preserve">
     <value>工具</value>
@@ -247,7 +247,7 @@
     <value>URL</value>
   </data>
   <data name="tsmiDeleteSelectedFile.Text" xml:space="preserve">
-    <value>删除本地文件</value>
+    <value>删除本地文件...</value>
   </data>
   <data name="tsmiDestinationSettings.Text" xml:space="preserve">
     <value>上传目标设置...</value>
@@ -406,7 +406,7 @@
     <value>截图</value>
   </data>
   <data name="tsmiTrayDestinations.Text" xml:space="preserve">
-    <value>目的地...</value>
+    <value>目标</value>
   </data>
   <data name="tsmiTrayDestinationSettings.Text" xml:space="preserve">
     <value>目的地设置...</value>
@@ -610,13 +610,13 @@
     <value>最近的链接</value>
   </data>
   <data name="tsmiTextCapture.Text" xml:space="preserve">
-    <value>文本识别（OCR）</value>
+    <value>文字识别 (OCR)...</value>
   </data>
   <data name="tsmiDownloadSelectedURL.Text" xml:space="preserve">
     <value>下载</value>
   </data>
   <data name="tsmiTrayTextCapture.Text" xml:space="preserve">
-    <value>文本识别（OCR）</value>
+    <value>文字识别 (OCR)...</value>
   </data>
   <data name="tsmiHideColumns.Text" xml:space="preserve">
     <value>隐藏列</value>
@@ -628,10 +628,10 @@
     <value>从列表中删除任务</value>
   </data>
   <data name="tsmiSearchImage.Text" xml:space="preserve">
-    <value>Google 图片搜索</value>
+    <value>Google 图片搜索...</value>
   </data>
   <data name="tsmiOCRImage.Text" xml:space="preserve">
-    <value>文字识别（OCR）...</value>
+    <value>文字识别 (OCR)...</value>
   </data>
   <data name="tsmiCombineImages.Text" xml:space="preserve">
     <value>合并图像...</value>
@@ -643,10 +643,10 @@
     <value>新闻</value>
   </data>
   <data name="tsbDonate.Text" xml:space="preserve">
-    <value>捐助</value>
+    <value>捐助...</value>
   </data>
   <data name="tsbAbout.Text" xml:space="preserve">
-    <value>关于</value>
+    <value>关于...</value>
   </data>
   <data name="btnCloseNews.Text" xml:space="preserve">
     <value>关闭</value>
@@ -706,7 +706,7 @@
     <value>Enter</value>
   </data>
   <data name="tsmiShortenURL.Text" xml:space="preserve">
-    <value>UR L短链</value>
+    <value>缩短网址...</value>
   </data>
   <data name="tsmiShowCursor.Text" xml:space="preserve">
     <value>显示指针</value>
@@ -761,5 +761,101 @@
   </data>
   <data name="tsmiSwitchTaskViewMode.Text" xml:space="preserve">
     <value>切换至缩略图视图</value>
+  </data>
+  <data name="tsmiRunAction.Text" xml:space="preserve">
+    <value>运行动作</value>
+  </data>
+  <data name="tsmiThumbnailTitleShow.Text" xml:space="preserve">
+    <value>显示</value>
+  </data>
+  <data name="tsmiThumbnailTitleHide.Text" xml:space="preserve">
+    <value>隐藏</value>
+  </data>
+  <data name="tsmiThumbnailTitleTop.Text" xml:space="preserve">
+    <value>顶</value>
+  </data>
+  <data name="tsmiThumbnailTitleBottom.Text" xml:space="preserve">
+    <value>底</value>
+  </data>
+  <data name="tsmiThumbnailTitle.Text" xml:space="preserve">
+    <value>缩略图标题</value>
+  </data>
+  <data name="tsmiTrayScreenshotDelay0.Text" xml:space="preserve">
+    <value>无延迟</value>
+  </data>
+  <data name="tsmiTrayScreenshotDelay1.Text" xml:space="preserve">
+    <value>1 秒</value>
+  </data>
+  <data name="tsmiTrayScreenshotDelay2.Text" xml:space="preserve">
+    <value>2 秒</value>
+  </data>
+  <data name="tsmiTrayScreenshotDelay3.Text" xml:space="preserve">
+    <value>3 秒</value>
+  </data>
+  <data name="tsmiTrayScreenshotDelay4.Text" xml:space="preserve">
+    <value>4 秒</value>
+  </data>
+  <data name="tsmiTrayScreenshotDelay5.Text" xml:space="preserve">
+    <value>5 秒</value>
+  </data>
+  <data name="tsmiTrayScreenshotDelay.Text" xml:space="preserve">
+    <value>屏幕截图延迟</value>
+  </data>
+  <data name="tsmiTrayCustomUploaderSettings.Text" xml:space="preserve">
+    <value>自定上传器设置...</value>
+  </data>
+  <data name="tsbTwitter.Text" xml:space="preserve">
+    <value>Twitter</value>
+  </data>
+  <data name="tsbDiscord.Text" xml:space="preserve">
+    <value>Discord</value>
+  </data>
+  <data name="tsbPatreon.Text" xml:space="preserve">
+    <value>Patreon</value>
+  </data>
+  <data name="tsbBitcoin.Text" xml:space="preserve">
+    <value>比特币</value>
+  </data>
+  <data name="tsbGitHub.Text" xml:space="preserve">
+    <value>GitHub</value>
+  </data>
+  <data name="tsmiAddImageEffects.Text" xml:space="preserve">
+    <value>添加图像效果...</value>
+  </data>
+  <data name="tsmiTrayClipboardViewer.Text" xml:space="preserve">
+    <value>剪贴板查看器...</value>
+  </data>
+  <data name="tsmiClipboardViewer.Text" xml:space="preserve">
+    <value>剪贴板查看器...</value>
+  </data>
+  <data name="tsmiImageSplitter.Text" xml:space="preserve">
+    <value>图像分割器...</value>
+  </data>
+  <data name="tsmiTrayImageSplitter.Text" xml:space="preserve">
+    <value>图像分割器...</value>
+  </data>
+  <data name="tsbTwitter.ToolTipText" xml:space="preserve">
+    <value>关注我们的 Twitter 账号</value>
+  </data>
+  <data name="tsbDiscord.ToolTipText" xml:space="preserve">
+    <value>参与我们的 Discord 服务器</value>
+  </data>
+  <data name="tsmiRestartAsAdmin.Text" xml:space="preserve">
+    <value>用管理员权限重启 ShareX...</value>
+  </data>
+  <data name="tsbGitHub.ToolTipText" xml:space="preserve">
+    <value>给我们的 GitHub 库标星</value>
+  </data>
+  <data name="tsmiTrayVideoConverter.Text" xml:space="preserve">
+    <value>视频转换器...</value>
+  </data>
+  <data name="tsmiVideoConverter.Text" xml:space="preserve">
+    <value>视频转换器...</value>
+  </data>
+  <data name="tsbBitcoin.ToolTipText" xml:space="preserve">
+    <value>用加密货币支持我们</value>
+  </data>
+  <data name="tsbPatreon.ToolTipText" xml:space="preserve">
+    <value>在 Patreon 上支持我们</value>
   </data>
 </root>

@@ -130,7 +130,7 @@
     <value>URL是空的。</value>
   </data>
   <data name="ApplicationSettingsForm_btnBrowsePersonalFolderPath_Click_Choose_ShareX_personal_folder_path" xml:space="preserve">
-    <value>选择ShareX个人文件夹路径</value>
+    <value>选择 ShareX 个人文件夹路径</value>
   </data>
   <data name="HotkeyManager_ShowFailedHotkeys_Unable_to_register_hotkey" xml:space="preserve">
     <value>无法注册快捷键 {0}：
@@ -167,7 +167,7 @@
     <value>快捷键</value>
   </data>
   <data name="HotkeySelectionControl_StartEditing_Select_a_hotkey___" xml:space="preserve">
-    <value>选择快捷键…</value>
+    <value>选择一个快捷键...</value>
   </data>
   <data name="TaskSettingsForm_UpdateWindowTitle_Task_settings" xml:space="preserve">
     <value>任务设置</value>
@@ -184,7 +184,7 @@
 要自动下载吗?</value>
   </data>
   <data name="AboutForm_AboutForm_External_libraries" xml:space="preserve">
-    <value>外部库</value>
+    <value>外部程序库</value>
   </data>
   <data name="Program_Run_Error" xml:space="preserve">
     <value>错误</value>
@@ -203,7 +203,7 @@
 你要重新启动 ShareX ？</value>
   </data>
   <data name="FileExistForm_txtNewName_TextChanged_Use_new_name__" xml:space="preserve">
-    <value>使用新的名字：</value>
+    <value>使用新名称: </value>
   </data>
   <data name="ScreenRecordForm_StartRecording_Missing" xml:space="preserve">
     <value>丢失</value>
@@ -457,7 +457,7 @@
     <value>保持在其他窗口前端</value>
   </data>
   <data name="ActionsToolbar_OpenAtShareXStartup" xml:space="preserve">
-    <value>和 ShareX 同时启动</value>
+    <value>ShareX 启动时打开</value>
   </data>
   <data name="ActionsToolbar_Edit" xml:space="preserve">
     <value>编辑...</value>
@@ -492,7 +492,7 @@
     <value>荷兰语</value>
   </data>
   <data name="AboutForm_AboutForm_Language_pt_BR" xml:space="preserve">
-    <value>葡萄牙语 - 巴西</value>
+    <value>葡萄牙语 (巴西)</value>
   </data>
   <data name="AboutForm_AboutForm_Language_vi_VN" xml:space="preserve">
     <value>越南语</value>
@@ -528,7 +528,7 @@
     <value>使用ShareX编辑</value>
   </data>
   <data name="ApplicationSettingsForm_btnCheckDevBuild_Click_DevBuilds_Warning" xml:space="preserve">
-    <value>开发版并不稳定，仅用于测试目的，要安装吗？</value>
+    <value>开发版可能不稳定，仅用于测试目的。要安装吗？</value>
   </data>
   <data name="ApplicationSettingsForm_btnResetSettings_Click_WouldYouLikeToResetShareXSettings" xml:space="preserve">
     <value>要重置 ShareX 设置项吗？</value>
@@ -558,7 +558,7 @@
     <value>调试日志可能包含敏感信息，确定继续吗？</value>
   </data>
   <data name="AboutForm_AboutForm_Language_es_MX" xml:space="preserve">
-    <value>西班牙语 - 墨西哥</value>
+    <value>西班牙语 (墨西哥)</value>
   </data>
   <data name="ShareXNeedsToBeRestartedForThePersonalFolderChangesToApply" xml:space="preserve">
     <value>ShareX 需要重启以应用个人文件夹更改。
@@ -576,5 +576,64 @@
   </data>
   <data name="ShareXOpticalCharacterRecognition" xml:space="preserve">
     <value>ShareX - 光学字符识别</value>
+  </data>
+  <data name="SwitchToThumbnailView" xml:space="preserve">
+    <value>切换到缩略图视图</value>
+  </data>
+  <data name="SwitchToListView" xml:space="preserve">
+    <value>切换到列表视图</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_fa_IR" xml:space="preserve">
+    <value>波斯语</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_pt_PT" xml:space="preserve">
+    <value>葡萄牙语</value>
+  </data>
+  <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__File__Count___0__" xml:space="preserve">
+    <value>剪贴板内容: 文件 ({0} 个)</value>
+  </data>
+  <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__Image__Size___0_x_1__" xml:space="preserve">
+    <value>剪贴板内容: 图像 (尺寸: {0}x{1})</value>
+  </data>
+  <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__Text__Length___0__" xml:space="preserve">
+    <value>剪贴板内容: 文本(长度: {0})</value>
+  </data>
+  <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_is_empty_or_contains_unknown_data_" xml:space="preserve">
+    <value>剪贴板为空或包含未知数据。</value>
+  </data>
+  <data name="Confirmation" xml:space="preserve">
+    <value>确认</value>
+  </data>
+  <data name="WouldYouLikeToResetThemes" xml:space="preserve">
+    <value>是否重置主题？</value>
+  </data>
+  <data name="ThisFeatureWillNotWorkWhenDisableUploadOptionIsEnabled" xml:space="preserve">
+    <value>"禁用上传" 选项启用时此功能无效！</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_ja_JP" xml:space="preserve">
+    <value>日语</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>描述</value>
+  </data>
+  <data name="FailedToSaveSettings" xml:space="preserve">
+    <value>保存设置失败</value>
+  </data>
+  <data name="Hotkey" xml:space="preserve">
+    <value>热键</value>
+  </data>
+  <data name="ScreenColorPicker" xml:space="preserve">
+    <value>屏幕拾色器</value>
+  </data>
+  <data name="ShareXIsMinimizedToTheSystemTray" xml:space="preserve">
+    <value>ShareX 已最小化到系统托盘。</value>
+  </data>
+  <data name="YourAntiVirusSoftwareOrTheControlledFolderAccessFeatureInWindows10CouldBeBlockingShareX" xml:space="preserve">
+    <value>您的防病毒软件或者 Windows 10 中的“受控制文件夹的访问”功能可能拦截了 ShareX。</value>
+  </data>
+  <data name="WouldYouLikeToEnableImageEffects" xml:space="preserve">
+    <value>您要启用图像效果吗？
+
+您以后可以从“捕获任务后”菜单中禁用它。</value>
   </data>
 </root>

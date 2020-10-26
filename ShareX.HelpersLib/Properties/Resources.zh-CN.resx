@@ -157,7 +157,7 @@
     <value>打印</value>
   </data>
   <data name="ExportImportControl_Serialize_Export_failed_" xml:space="preserve">
-    <value>导出失败</value>
+    <value>导出失败。</value>
   </data>
   <data name="Error" xml:space="preserve">
     <value>错误</value>
@@ -187,7 +187,7 @@
     <value>青色: {0:0.0}%，品红: {1:0.0}%，黄色: {2:0.0}%, 键: {3:0.0}%</value>
   </data>
   <data name="ExportImportControl_Deserialize_Import_failed_" xml:space="preserve">
-    <value>导入失败</value>
+    <value>导入失败。</value>
   </data>
   <data name="DNSChangerForm_btnSave_Click_DNS_successfully_set_" xml:space="preserve">
     <value>DNS 设置成功。</value>
@@ -228,7 +228,7 @@
     <value>取消</value>
   </data>
   <data name="DownloaderForm_StartDownload_Downloading_" xml:space="preserve">
-    <value>下载中</value>
+    <value>正在下载。</value>
   </data>
   <data name="DownloaderForm_StartDownload_Getting_file_size_" xml:space="preserve">
     <value>正在文件大小。</value>
@@ -237,7 +237,7 @@
     <value>加载图像：{0}%</value>
   </data>
   <data name="DownloaderForm_fileDownloader_DownloadCompleted_Download_completed_" xml:space="preserve">
-    <value>下载完成</value>
+    <value>下载完成。</value>
   </data>
   <data name="DownloaderForm_fileDownloader_DownloadCompleted_Install" xml:space="preserve">
     <value>安装</value>
@@ -472,7 +472,7 @@
     <value>更新可用</value>
   </data>
   <data name="Helpers_CreateDirectoryIfNotExist_Create_failed_" xml:space="preserve">
-    <value>无法创建目录</value>
+    <value>未能创建目录。</value>
   </data>
   <data name="HotkeyType_ColorPicker" xml:space="preserve">
     <value>拾色器</value>
@@ -704,7 +704,7 @@
     <value>计算机名称</value>
   </data>
   <data name="ReplCodeMenuEntry_d_Current_day" xml:space="preserve">
-    <value>当前日期</value>
+    <value>当前日</value>
   </data>
   <data name="ReplCodeMenuEntry_h_Current_hour" xml:space="preserve">
     <value>当前小时</value>
@@ -791,7 +791,7 @@
     <value>其他</value>
   </data>
   <data name="Helpers_OpenFile_File_not_exist_" xml:space="preserve">
-    <value>文件不存在</value>
+    <value>文件不存在:</value>
   </data>
   <data name="Helpers_BrowseFolder_Choose_folder" xml:space="preserve">
     <value>选择文件夹</value>
@@ -818,10 +818,10 @@
     <value>屏幕录制</value>
   </data>
   <data name="AfterCaptureTasks_DoOCR" xml:space="preserve">
-    <value>文本识别（OCR）</value>
+    <value>文字识别（OCR）</value>
   </data>
   <data name="HotkeyType_TextCapture" xml:space="preserve">
-    <value>文本捕捉（OCR）</value>
+    <value>文字捕捉（OCR）</value>
   </data>
   <data name="HotkeyType_TextCapture_Category" xml:space="preserve">
     <value>屏幕捕捉</value>
@@ -836,7 +836,7 @@
     <value>捕捉全屏</value>
   </data>
   <data name="RegionCaptureAction_None" xml:space="preserve">
-    <value>什么都不做</value>
+    <value>无操作</value>
   </data>
   <data name="RegionCaptureAction_RemoveShape" xml:space="preserve">
     <value>删除形状</value>
@@ -1007,10 +1007,10 @@
     <value>工具：图像裁剪 (C)</value>
   </data>
   <data name="AmazonS3StorageClass_STANDARD" xml:space="preserve">
-    <value>标准存储</value>
+    <value>亚马逊 S3 标准</value>
   </data>
   <data name="AmazonS3StorageClass_STANDARD_IA" xml:space="preserve">
-    <value>标准非频繁访问存储</value>
+    <value>亚马逊 S3 标准不频繁访问</value>
   </data>
   <data name="ImgurThumbnailType_Small_Thumbnail" xml:space="preserve">
     <value>小缩略图</value>
@@ -1134,5 +1134,80 @@
   </data>
   <data name="ShapeType_DrawingMagnify" xml:space="preserve">
     <value>放大</value>
+  </data>
+  <data name="PastebinExpiration_M10" xml:space="preserve">
+    <value>10 分钟</value>
+  </data>
+  <data name="RandomNonAmbiguousAlphanumericCharRepeatUsingN" xml:space="preserve">
+    <value>随机的非易混淆字母与数字字符。使用 {n} 表示重复次数</value>
+  </data>
+  <data name="AmazonS3StorageClass_DEEP_ARCHIVE" xml:space="preserve">
+    <value>亚马逊 S3 Glacier Deep Archive</value>
+  </data>
+  <data name="AmazonS3StorageClass_GLACIER" xml:space="preserve">
+    <value>亚马逊 S3 Glacier</value>
+  </data>
+  <data name="AmazonS3StorageClass_INTELLIGENT_TIERING" xml:space="preserve">
+    <value>亚马逊 S3 智能分层</value>
+  </data>
+  <data name="AmazonS3StorageClass_ONEZONE_IA" xml:space="preserve">
+    <value>亚马逊 S3 单区 不频繁访问存储</value>
+  </data>
+  <data name="DrawImageSizeMode_DontResize" xml:space="preserve">
+    <value>不调整大小</value>
+  </data>
+  <data name="DrawImageSizeMode_PercentageOfCanvas" xml:space="preserve">
+    <value>画布百分比</value>
+  </data>
+  <data name="DrawImageSizeMode_PercentageOfWatermark" xml:space="preserve">
+    <value>图像百分比</value>
+  </data>
+  <data name="DrawImageSizeMode_AbsoluteSize" xml:space="preserve">
+    <value>绝对大小</value>
+  </data>
+  <data name="ObjectListView_ObjectListView_Copy_value" xml:space="preserve">
+    <value>复制值</value>
+  </data>
+  <data name="ObjectListView_ObjectListView_Copy_name" xml:space="preserve">
+    <value>复制名称</value>
+  </data>
+  <data name="HotkeyType_ImageSplitter" xml:space="preserve">
+    <value>图像分割器</value>
+  </data>
+  <data name="HotkeyType_ImageThumbnailer" xml:space="preserve">
+    <value>图像缩略图工具</value>
+  </data>
+  <data name="HotkeyType_VideoConverter_Category" xml:space="preserve">
+    <value>工具</value>
+  </data>
+  <data name="HotkeyType_ImageSplitter_Category" xml:space="preserve">
+    <value>工具</value>
+  </data>
+  <data name="HotkeyType_QRCodeDecodeFromScreen_Category" xml:space="preserve">
+    <value>工具</value>
+  </data>
+  <data name="HotkeyType_ImageThumbnailer_Category" xml:space="preserve">
+    <value>工具</value>
+  </data>
+  <data name="ObjectListView_ObjectListView_Name" xml:space="preserve">
+    <value>名称</value>
+  </data>
+  <data name="HotkeyType_QRCodeDecodeFromScreen" xml:space="preserve">
+    <value>QR 码 (解码自屏幕)</value>
+  </data>
+  <data name="RandomEmojiRepeatUsingN" xml:space="preserve">
+    <value>随机 emoji 表情。用 {n} 标识重复次数</value>
+  </data>
+  <data name="ShapeType_DrawingSmartEraser" xml:space="preserve">
+    <value>智能擦除</value>
+  </data>
+  <data name="ObjectListView_ObjectListView_Value" xml:space="preserve">
+    <value>值</value>
+  </data>
+  <data name="ReplCodeMenuEntry_wy_Week_of_year" xml:space="preserve">
+    <value>周数</value>
+  </data>
+  <data name="HotkeyType_VideoConverter" xml:space="preserve">
+    <value>视频转换器</value>
   </data>
 </root>

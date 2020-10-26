@@ -199,7 +199,7 @@
     <value>高亮颜色...</value>
   </data>
   <data name="ShapeManager_CreateContextMenu_Pixel_size_" xml:space="preserve">
-    <value>像素尺寸</value>
+    <value>像素尺寸:</value>
   </data>
   <data name="ShapeManager_CreateContextMenu_Blur_radius_" xml:space="preserve">
     <value>模糊半径：</value>
@@ -307,16 +307,16 @@
     <value>画布尺寸...</value>
   </data>
   <data name="ShapeManager_CenterPoints" xml:space="preserve">
-    <value>中心光标</value>
+    <value>中心点:</value>
   </data>
   <data name="EditorStartupForm_ClipboardDoesNotContainAnImage" xml:space="preserve">
-    <value>剪贴板中无图像</value>
+    <value>剪贴板中无图像。</value>
   </data>
   <data name="ShapeManager_CreateToolbar_CropImage" xml:space="preserve">
     <value>裁剪图像...</value>
   </data>
   <data name="ShapeManager_CursorType" xml:space="preserve">
-    <value>指针类型...</value>
+    <value>指针类型:</value>
   </data>
   <data name="ShapeManager_CreateToolbar_EditorStartMode" xml:space="preserve">
     <value>编辑器启动模式：</value>
@@ -349,7 +349,7 @@
     <value>从屏幕中插入图像...</value>
   </data>
   <data name="ShapeManager_CreateToolbar_InterpolationMode" xml:space="preserve">
-    <value>插值模式</value>
+    <value>插值模式:</value>
   </data>
   <data name="ShapeManager_CreateToolbar_NewImage" xml:space="preserve">
     <value>新图像...</value>
@@ -377,7 +377,7 @@
 要关闭图像编辑器吗？</value>
   </data>
   <data name="RegionCaptureForm_TipYouCanPanImageByHoldingMouseMiddleButtonAndDragging" xml:space="preserve">
-    <value>提示：按住鼠标中键拖拽可以平移图像</value>
+    <value>提示：按住鼠标中键并拖拽可以平移图像。</value>
   </data>
   <data name="ShapeManager_CreateToolbar_UseLetters" xml:space="preserve">
     <value>使用字母</value>
@@ -405,5 +405,11 @@
   </data>
   <data name="ShapeManager_CreateToolbar_StartingStepValue" xml:space="preserve">
     <value>第一步的值：</value>
+  </data>
+  <data name="CloseEsc" xml:space="preserve">
+    <value>关闭 (Esc)</value>
+  </data>
+  <data name="MagnifyStrength" xml:space="preserve">
+    <value>放大强度:</value>
   </data>
 </root>
