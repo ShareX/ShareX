@@ -777,4 +777,10 @@
   <data name="tsmiTrayCustomUploaderSettings.Text" xml:space="preserve">
     <value>アップロード先を自分で設定</value>
   </data>
+  <data name="tsmiRestartAsAdmin.Text" xml:space="preserve">
+    <value>管理者権限で再起動する</value>
+  </data>
+  <data name="tsmiTrayClipboardViewer.Text" xml:space="preserve">
+    <value>クリップボードビューアー...</value>
+  </data>
 </root>

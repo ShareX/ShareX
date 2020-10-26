@@ -549,4 +549,22 @@
   <data name="lblActionsNote.Text" xml:space="preserve">
     <value>「キャプチャー後のタスク→アクションの実行」で有効/無効の切り替えができます</value>
   </data>
+  <data name="btnAutoIncrementNumber.Text" xml:space="preserve">
+    <value>変更を確定</value>
+  </data>
+  <data name="cbOverrideScreenshotsFolder.Text" xml:space="preserve">
+    <value>「スクリーンショットのフォルダ」を上書きする</value>
+  </data>
+  <data name="cbURLRegexReplace.Text" xml:space="preserve">
+    <value>正規表現を使ってURLを置換する</value>
+  </data>
+  <data name="lblAutoIncrementNumber.Text" xml:space="preserve">
+    <value>ファイル名で使う連番:</value>
+  </data>
+  <data name="lblURLRegexReplacePattern.Text" xml:space="preserve">
+    <value>正規表現パターン</value>
+  </data>
+  <data name="lblURLRegexReplaceReplacement.Text" xml:space="preserve">
+    <value>置換パターン</value>
+  </data>
 </root>
