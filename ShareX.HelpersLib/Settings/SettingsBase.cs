@@ -215,20 +215,24 @@ namespace ShareX.HelpersLib
         public static T Load(string filePath, string backupFolder = null)
         {
             List<string> fallbackFilePaths = new List<string>();
-            string tempFilePath = filePath + ".temp";
-            fallbackFilePaths.Add(tempFilePath);
 
-            if (!string.IsNullOrEmpty(backupFolder) && Directory.Exists(backupFolder))
+            if (!string.IsNullOrEmpty(filePath))
             {
-                string fileName = Path.GetFileName(filePath);
-                string backupFilePath = Path.Combine(backupFolder, fileName);
-                fallbackFilePaths.Add(backupFilePath);
+                string tempFilePath = filePath + ".temp";
+                fallbackFilePaths.Add(tempFilePath);
 
-                string fileNameNoExt = Path.GetFileNameWithoutExtension(fileName);
-                string lastWeeklyBackupFilePath = Directory.GetFiles(backupFolder, fileNameNoExt + "-*").OrderBy(x => x).LastOrDefault();
-                if (!string.IsNullOrEmpty(lastWeeklyBackupFilePath))
+                if (!string.IsNullOrEmpty(backupFolder) && Directory.Exists(backupFolder))
                 {
-                    fallbackFilePaths.Add(lastWeeklyBackupFilePath);
+                    string fileName = Path.GetFileName(filePath);
+                    string backupFilePath = Path.Combine(backupFolder, fileName);
+                    fallbackFilePaths.Add(backupFilePath);
+
+                    string fileNameNoExt = Path.GetFileNameWithoutExtension(fileName);
+                    string lastWeeklyBackupFilePath = Directory.GetFiles(backupFolder, fileNameNoExt + "-*").OrderBy(x => x).LastOrDefault();
+                    if (!string.IsNullOrEmpty(lastWeeklyBackupFilePath))
+                    {
+                        fallbackFilePaths.Add(lastWeeklyBackupFilePath);
+                    }
                 }
             }
 
