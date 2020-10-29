@@ -1025,7 +1025,11 @@ namespace ShareX.ScreenCaptureLib
                 ToolStripMenuItem tsmiRememberMenuState = new ToolStripMenuItem(Resources.ShapeManager_CreateContextMenu_RememberMenuState);
                 tsmiRememberMenuState.Checked = Options.RememberMenuState;
                 tsmiRememberMenuState.CheckOnClick = true;
-                tsmiRememberMenuState.Click += (sender, e) => Options.RememberMenuState = tsmiRememberMenuState.Checked;
+                tsmiRememberMenuState.Click += (sender, e) =>
+                {
+                    Options.RememberMenuState = tsmiRememberMenuState.Checked;
+                    CheckMenuPosition();
+                };
                 tsddbOptions.DropDownItems.Add(tsmiRememberMenuState);
             }
 
