@@ -1198,4 +1198,13 @@
   <data name="HotkeyType_QRCodeDecodeFromScreen" xml:space="preserve">
     <value>QR код (Считать с экрана)</value>
   </data>
+  <data name="ArrowHeadDirection_End" xml:space="preserve">
+    <value>Конец</value>
+  </data>
+  <data name="ArrowHeadDirection_Start" xml:space="preserve">
+    <value>Начало</value>
+  </data>
+  <data name="ArrowHeadDirection_Both" xml:space="preserve">
+    <value>Оба</value>
+  </data>
 </root>
