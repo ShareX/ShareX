@@ -1262,4 +1262,13 @@ Would you like to download and install it?</value>
   <data name="Target" xml:space="preserve">
     <value>Target:</value>
   </data>
+  <data name="ArrowHeadDirection_End" xml:space="preserve">
+    <value>End</value>
+  </data>
+  <data name="ArrowHeadDirection_Start" xml:space="preserve">
+    <value>Start</value>
+  </data>
+  <data name="ArrowHeadDirection_Both" xml:space="preserve">
+    <value>Both</value>
+  </data>
 </root>

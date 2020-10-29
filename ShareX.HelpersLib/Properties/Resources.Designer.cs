@@ -458,6 +458,33 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Both.
+        /// </summary>
+        internal static string ArrowHeadDirection_Both {
+            get {
+                return ResourceManager.GetString("ArrowHeadDirection_Both", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to End.
+        /// </summary>
+        internal static string ArrowHeadDirection_End {
+            get {
+                return ResourceManager.GetString("ArrowHeadDirection_End", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Start.
+        /// </summary>
+        internal static string ArrowHeadDirection_Start {
+            get {
+                return ResourceManager.GetString("ArrowHeadDirection_Start", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap clipboard_block {
