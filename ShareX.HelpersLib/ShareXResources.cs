@@ -221,7 +221,7 @@ namespace ShareX.HelpersLib
         {
             e.DrawBackground();
             e.DrawBorder();
-            e.DrawText();
+            e.DrawText(TextFormatFlags.VerticalCenter | TextFormatFlags.LeftAndRightPadding);
         }
 
         public static void ApplyCustomThemeToContextMenuStrip(ContextMenuStrip cms)
