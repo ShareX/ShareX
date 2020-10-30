@@ -1171,4 +1171,13 @@
   <data name="HotkeyType_VideoConverter" xml:space="preserve">
     <value>動画の変換</value>
   </data>
+  <data name="ArrowHeadDirection_Both" xml:space="preserve">
+    <value>両端</value>
+  </data>
+  <data name="ArrowHeadDirection_End" xml:space="preserve">
+    <value>終点のみ</value>
+  </data>
+  <data name="ArrowHeadDirection_Start" xml:space="preserve">
+    <value>始点のみ</value>
+  </data>
 </root>

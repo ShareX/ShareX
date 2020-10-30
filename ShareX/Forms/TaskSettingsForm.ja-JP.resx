@@ -508,7 +508,7 @@
     <value>追加...</value>
   </data>
   <data name="lblToolsScreenColorPickerFormat.Text" xml:space="preserve">
-    <value>カラーピッカー (ルーペ)のコピー書式:</value>
+    <value>スクリーン カラーピッカーのコピー書式:</value>
   </data>
   <data name="chkOverrideToolsSettings.Text" xml:space="preserve">
     <value>ツール設定を上書きする</value>
@@ -566,5 +566,11 @@
   </data>
   <data name="lblURLRegexReplaceReplacement.Text" xml:space="preserve">
     <value>置換パターン</value>
+  </data>
+  <data name="lblToolsScreenColorPickerFormatCtrl.Text" xml:space="preserve">
+    <value>スクリーン カラーピッカーのコピー書式(Ctrl＋クリック):</value>
+  </data>
+  <data name="lblToolsScreenColorPickerInfoText.Text" xml:space="preserve">
+    <value>マウスを乗せたときの情報表示:</value>
   </data>
 </root>

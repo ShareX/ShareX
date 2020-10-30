@@ -609,7 +609,7 @@ ShareX を再起動しますか？</value>
     <value>デバッグログには重大な情報が含まれています</value>
   </data>
   <data name="ScreenColorPicker" xml:space="preserve">
-    <value>スクリーンカラーピッカー</value>
+    <value>スクリーン カラーピッカー</value>
   </data>
   <data name="ShareXConfirmation" xml:space="preserve">
     <value>ShareX - 確認</value>
