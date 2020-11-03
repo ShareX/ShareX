@@ -571,6 +571,6 @@
     <value>スクリーン カラーピッカーのコピー書式(Ctrl＋クリック):</value>
   </data>
   <data name="lblToolsScreenColorPickerInfoText.Text" xml:space="preserve">
-    <value>マウスを乗せたときの情報表示:</value>
+    <value>マウスを乗せたときの色表示の形式:</value>
   </data>
 </root>
