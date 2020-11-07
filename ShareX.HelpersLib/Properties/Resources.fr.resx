@@ -447,7 +447,7 @@ Taille du fichier : {2:n0} / {3:n0} Ko</value>
     <value>Ajouter un numéro au nom de fichier</value>
   </data>
   <data name="PopUpNotificationType_BalloonTip" xml:space="preserve">
-    <value>Afficher les astuces dans la barre</value>
+    <value>Afficher des astuces sous forme d'infobulles dans la zone de notification</value>
   </data>
   <data name="PopUpNotificationType_None" xml:space="preserve">
     <value>Ne rien afficher</value>
@@ -1209,5 +1209,26 @@ Voulez-vous la télécharger ?</value>
   </data>
   <data name="DrawImageSizeMode_PercentageOfWatermark" xml:space="preserve">
     <value>Pourcentage de l'image</value>
+  </data>
+  <data name="ArrowHeadDirection_Both" xml:space="preserve">
+    <value>Les deux</value>
+  </data>
+  <data name="ArrowHeadDirection_End" xml:space="preserve">
+    <value>Fin</value>
+  </data>
+  <data name="ArrowHeadDirection_Start" xml:space="preserve">
+    <value>Début</value>
+  </data>
+  <data name="Target" xml:space="preserve">
+    <value>Cible :</value>
+  </data>
+  <data name="Result" xml:space="preserve">
+    <value>Résultat :</value>
+  </data>
+  <data name="ResultOfFirstFile" xml:space="preserve">
+    <value>Résultat du premier fichier :</value>
+  </data>
+  <data name="ResultOfSecondFile" xml:space="preserve">
+    <value>Résultat du second fichier :</value>
   </data>
 </root>
