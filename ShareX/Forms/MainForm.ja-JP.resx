@@ -214,7 +214,7 @@
     <value>カラー ピッカー...</value>
   </data>
   <data name="tsmiScreenColorPicker.Text" xml:space="preserve">
-    <value>カラー ピッカー (ルーペ)...</value>
+    <value>スクリーン カラー ピッカー...</value>
   </data>
   <data name="tsmiImageEditor.Text" xml:space="preserve">
     <value>画像エディター...</value>
@@ -565,7 +565,7 @@
     <value>カラー ピッカー...</value>
   </data>
   <data name="tsmiTrayScreenColorPicker.Text" xml:space="preserve">
-    <value>カラー ピッカー (ルーペ)...</value>
+    <value>スクリーン カラー ピッカー...</value>
   </data>
   <data name="tsmiTrayImageEditor.Text" xml:space="preserve">
     <value>画像エディター...</value>
@@ -781,6 +781,9 @@
     <value>管理者権限で再起動する</value>
   </data>
   <data name="tsmiTrayClipboardViewer.Text" xml:space="preserve">
+    <value>クリップボードビューアー...</value>
+  </data>
+  <data name="tsmiClipboardViewer.Text" xml:space="preserve">
     <value>クリップボードビューアー...</value>
   </data>
 </root>
