@@ -150,9 +150,6 @@
   <data name="btnOK.Text" xml:space="preserve">
     <value>OK</value>
   </data>
-  <data name="lblTip.Text" xml:space="preserve">
-    <value>Nouvelle ligne : Ctrl+Entrée</value>
-  </data>
   <data name="tsrbmiGradientBackwardDiagonal.Text" xml:space="preserve">
     <value>Diagonale en arrière</value>
   </data>

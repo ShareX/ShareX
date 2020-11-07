@@ -585,4 +585,19 @@
   <data name="cbScreenRecordTransparentRegion.Text" xml:space="preserve">
     <value>Utiliser une sélection de région transparente</value>
   </data>
+  <data name="lblURLRegexReplacePattern.Text" xml:space="preserve">
+    <value>Modèle :</value>
+  </data>
+  <data name="lblToolsScreenColorPickerFormatCtrl.Text" xml:space="preserve">
+    <value>Format du sélecteur de couleurs de l'écran (Ctrl + clic) :</value>
+  </data>
+  <data name="lblToolsScreenColorPickerInfoText.Text" xml:space="preserve">
+    <value>Texte du sélecteur de couleurs de l'écran :</value>
+  </data>
+  <data name="lblURLRegexReplaceReplacement.Text" xml:space="preserve">
+    <value>Substitution :</value>
+  </data>
+  <data name="cbURLRegexReplace.Text" xml:space="preserve">
+    <value>Remplacer l'URL résultante en utilisant des substitutions par expression régulière</value>
+  </data>
 </root>

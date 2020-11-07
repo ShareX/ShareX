@@ -174,4 +174,22 @@
   <data name="tpFileHashCheck.Text" xml:space="preserve">
     <value>Vérifier le hash d'un fichier</value>
   </data>
+  <data name="lblFilePath.Text" xml:space="preserve">
+    <value>Chemin du fichier :</value>
+  </data>
+  <data name="lblFilePath2.Text" xml:space="preserve">
+    <value>Chemin du fichier :</value>
+  </data>
+  <data name="btnFilePathBrowse2.Text" xml:space="preserve">
+    <value>Parcourir...</value>
+  </data>
+  <data name="lblHashCheckASCII.Text" xml:space="preserve">
+    <value>ASCII :</value>
+  </data>
+  <data name="lblProgressPercentage.Text" xml:space="preserve">
+    <value>0%</value>
+  </data>
+  <data name="cbCompareTwoFiles.Text" xml:space="preserve">
+    <value>Comparer deux fichiers</value>
+  </data>
 </root>
