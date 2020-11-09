@@ -117,31 +117,16 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="btnCancel.Text" xml:space="preserve">
-    <value>Annuler</value>
-  </data>
-  <data name="lblFilterExample.Text" xml:space="preserve">
-    <value>Exemple : *.png</value>
-  </data>
-  <data name="lblFilter.Text" xml:space="preserve">
-    <value>Filtre :</value>
-  </data>
-  <data name="lblFolderPath.Text" xml:space="preserve">
-    <value>Chemin du dossier :</value>
-  </data>
-  <data name="cbIncludeSubdirectories.Text" xml:space="preserve">
-    <value>Inclure les sous-dossiers</value>
-  </data>
-  <data name="btnOK.Text" xml:space="preserve">
-    <value>OK</value>
+  <data name="btnRefresh.Text" xml:space="preserve">
+    <value>Rafraîchir</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Surveiller un dossier</value>
+    <value>ShareX - Visionneuse de presse-papier</value>
   </data>
-  <data name="btnPathBrowse.Text" xml:space="preserve">
-    <value>...</value>
+  <data name="btnClearClipboard.Text" xml:space="preserve">
+    <value>Effacer le presse-papier</value>
   </data>
-  <data name="chkMoveToScreenshotsDir.Text" xml:space="preserve">
-    <value>Déplacer le fichier vers le dossier des captures d'écran</value>
+  <data name="chFormat.Text" xml:space="preserve">
+    <value>Format</value>
   </data>
 </root>

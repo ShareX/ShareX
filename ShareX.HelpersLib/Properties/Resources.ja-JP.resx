@@ -1010,7 +1010,7 @@
     <value>ShareX ウィンドウを表示</value>
   </data>
   <data name="HotkeyType_ScreenColorPicker" xml:space="preserve">
-    <value>カラー ピッカー (ルーペ)</value>
+    <value>スクリーン カラー ピッカー</value>
   </data>
   <data name="PrintTextForm_LoadSettings_Name___0___Size___1_" xml:space="preserve">
     <value>名前: {0}, サイズ: {1}</value>
@@ -1179,5 +1179,11 @@
   </data>
   <data name="ArrowHeadDirection_Start" xml:space="preserve">
     <value>始点のみ</value>
+  </data>
+  <data name="HotkeyType_ImageSplitter" xml:space="preserve">
+    <value>画像の分割</value>
+  </data>
+  <data name="HotkeyType_ImageThumbnailer" xml:space="preserve">
+    <value>画像のサムネイル作成</value>
   </data>
 </root>

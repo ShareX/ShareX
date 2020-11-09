@@ -181,4 +181,7 @@
   <data name="btnEffectRemove.ToolTip" xml:space="preserve">
     <value>Supprimer</value>
   </data>
+  <data name="btnImageEffects.Text" xml:space="preserve">
+    <value>Effets d'image...</value>
+  </data>
 </root>
