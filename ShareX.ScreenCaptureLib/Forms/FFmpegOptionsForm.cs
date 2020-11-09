@@ -177,7 +177,7 @@ namespace ShareX.ScreenCaptureLib
                 {
                     Options.FFmpeg.VideoSource = FFmpegCLIManager.SourceVideoDevice;
                 }
-                else if (!cboVideoCodec.Items.Contains(Options.FFmpeg.VideoSource))
+                else if (!cboVideoSource.Items.Contains(Options.FFmpeg.VideoSource))
                 {
                     Options.FFmpeg.VideoSource = FFmpegCLIManager.SourceGDIGrab;
                 }
