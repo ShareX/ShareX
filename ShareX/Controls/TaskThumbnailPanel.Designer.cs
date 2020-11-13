@@ -76,9 +76,9 @@
             // 
             // lblError
             // 
+            resources.ApplyResources(this.lblError, "lblError");
             this.lblError.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.lblError.Cursor = System.Windows.Forms.Cursors.Hand;
-            resources.ApplyResources(this.lblError, "lblError");
             this.lblError.ForeColor = System.Drawing.Color.White;
             this.lblError.Name = "lblError";
             this.lblError.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;

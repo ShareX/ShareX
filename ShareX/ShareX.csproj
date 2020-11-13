@@ -192,6 +192,12 @@
     <Compile Include="Forms\TextUploadForm.Designer.cs">
       <DependentUpon>TextUploadForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ThumbnailSizeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ThumbnailSizeForm.Designer.cs">
+      <DependentUpon>ThumbnailSizeForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="NewsItem.cs" />
     <Compile Include="NewsManager.cs" />
     <Compile Include="..\SharedAssemblyInfo.cs">
@@ -1577,6 +1583,9 @@
     <EmbeddedResource Include="Forms\TextUploadForm.zh-TW.resx">
       <DependentUpon>TextUploadForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ThumbnailSizeForm.resx">
+      <DependentUpon>ThumbnailSizeForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\WatchFolderForm.de.resx">
       <DependentUpon>WatchFolderForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -1915,6 +1924,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\uac.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image-resize.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

@@ -214,7 +214,7 @@
     <value>lvUploads</value>
   </data>
   <data name="&gt;&gt;lvUploads.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=13.3.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=13.3.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lvUploads.Parent" xml:space="preserve">
     <value>scMain.Panel1</value>
@@ -250,7 +250,7 @@
     <value>pbPreview</value>
   </data>
   <data name="&gt;&gt;pbPreview.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyPictureBox, ShareX.HelpersLib, Version=13.3.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyPictureBox, ShareX.HelpersLib, Version=13.3.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;pbPreview.Parent" xml:space="preserve">
     <value>scMain.Panel2</value>
@@ -286,7 +286,7 @@
     <value>scMain</value>
   </data>
   <data name="&gt;&gt;scMain.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.SplitContainerCustomSplitter, ShareX.HelpersLib, Version=13.3.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.SplitContainerCustomSplitter, ShareX.HelpersLib, Version=13.3.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;scMain.Parent" xml:space="preserve">
     <value>$this</value>
@@ -880,7 +880,7 @@
     <value>tsMain</value>
   </data>
   <data name="&gt;&gt;tsMain.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.ToolStripBorderRight, ShareX.HelpersLib, Version=13.3.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.ToolStripBorderRight, ShareX.HelpersLib, Version=13.3.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;tsMain.Parent" xml:space="preserve">
     <value>pToolbars</value>
@@ -1300,28 +1300,28 @@
     <value>Image preview</value>
   </data>
   <data name="tsmiThumbnailTitleShow.Size" type="System.Drawing.Size, System.Drawing">
-    <value>114, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="tsmiThumbnailTitleShow.Text" xml:space="preserve">
     <value>Show</value>
   </data>
   <data name="tsmiThumbnailTitleHide.Size" type="System.Drawing.Size, System.Drawing">
-    <value>114, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="tsmiThumbnailTitleHide.Text" xml:space="preserve">
     <value>Hide</value>
   </data>
   <data name="tssThumbnailTitle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>111, 6</value>
+    <value>177, 6</value>
   </data>
   <data name="tsmiThumbnailTitleTop.Size" type="System.Drawing.Size, System.Drawing">
-    <value>114, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="tsmiThumbnailTitleTop.Text" xml:space="preserve">
     <value>Top</value>
   </data>
   <data name="tsmiThumbnailTitleBottom.Size" type="System.Drawing.Size, System.Drawing">
-    <value>114, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="tsmiThumbnailTitleBottom.Text" xml:space="preserve">
     <value>Bottom</value>
@@ -1332,6 +1332,12 @@
   <data name="tsmiThumbnailTitle.Text" xml:space="preserve">
     <value>Thumbnail title</value>
   </data>
+  <data name="tsmiThumbnailSize.Size" type="System.Drawing.Size, System.Drawing">
+    <value>228, 22</value>
+  </data>
+  <data name="tsmiThumbnailSize.Text" xml:space="preserve">
+    <value>Thumbnail size...</value>
+  </data>
   <data name="tsmiSwitchTaskViewMode.Size" type="System.Drawing.Size, System.Drawing">
     <value>228, 22</value>
   </data>
@@ -1339,7 +1345,7 @@
     <value>Switch to thumbnail view</value>
   </data>
   <data name="cmsTaskInfo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>229, 538</value>
+    <value>229, 560</value>
   </data>
   <data name="&gt;&gt;cmsTaskInfo.Name" xml:space="preserve">
     <value>cmsTaskInfo</value>
@@ -1915,7 +1921,7 @@
     <value>ucNews</value>
   </data>
   <data name="&gt;&gt;ucNews.Type" xml:space="preserve">
-    <value>ShareX.NewsListControl, ShareX, Version=13.3.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.NewsListControl, ShareX, Version=13.3.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;ucNews.Parent" xml:space="preserve">
     <value>pNews</value>
@@ -2005,7 +2011,7 @@
     <value>ucTaskThumbnailView</value>
   </data>
   <data name="&gt;&gt;ucTaskThumbnailView.Type" xml:space="preserve">
-    <value>ShareX.TaskThumbnailView, ShareX, Version=13.3.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.TaskThumbnailView, ShareX, Version=13.3.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;ucTaskThumbnailView.Parent" xml:space="preserve">
     <value>pThumbnailView</value>
@@ -2125,7 +2131,7 @@
     <value>tsSocialButtons</value>
   </data>
   <data name="&gt;&gt;tsSocialButtons.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.ToolStripBorderRight, ShareX.HelpersLib, Version=13.3.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.ToolStripBorderRight, ShareX.HelpersLib, Version=13.3.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;tsSocialButtons.Parent" xml:space="preserve">
     <value>pToolbars</value>
@@ -2629,7 +2635,7 @@
     <value>tsbNews</value>
   </data>
   <data name="&gt;&gt;tsbNews.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.ToolStripButtonCounter, ShareX.HelpersLib, Version=13.3.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.ToolStripButtonCounter, ShareX.HelpersLib, Version=13.3.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;tsddbDebug.Name" xml:space="preserve">
     <value>tsddbDebug</value>
@@ -2677,7 +2683,7 @@
     <value>tsbDonate</value>
   </data>
   <data name="&gt;&gt;tsbDonate.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.ToolStripButtonColorAnimation, ShareX.HelpersLib, Version=13.3.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.ToolStripButtonColorAnimation, ShareX.HelpersLib, Version=13.3.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;tsbAbout.Name" xml:space="preserve">
     <value>tsbAbout</value>
@@ -3121,6 +3127,12 @@
     <value>tsmiThumbnailTitleBottom</value>
   </data>
   <data name="&gt;&gt;tsmiThumbnailTitleBottom.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsmiThumbnailSize.Name" xml:space="preserve">
+    <value>tsmiThumbnailSize</value>
+  </data>
+  <data name="&gt;&gt;tsmiThumbnailSize.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiSwitchTaskViewMode.Name" xml:space="preserve">
@@ -3685,6 +3697,6 @@
     <value>MainForm</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.HotkeyForm, ShareX.HelpersLib, Version=13.3.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.HotkeyForm, ShareX.HelpersLib, Version=13.3.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
 </root>

@@ -194,6 +194,7 @@
             this.tssThumbnailTitle = new System.Windows.Forms.ToolStripSeparator();
             this.tsmiThumbnailTitleTop = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiThumbnailTitleBottom = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiThumbnailSize = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiSwitchTaskViewMode = new System.Windows.Forms.ToolStripMenuItem();
             this.niTray = new System.Windows.Forms.NotifyIcon(this.components);
             this.cmsTray = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -1054,6 +1055,7 @@
             this.tsmiHideColumns,
             this.tsmiImagePreview,
             this.tsmiThumbnailTitle,
+            this.tsmiThumbnailSize,
             this.tsmiSwitchTaskViewMode});
             this.cmsTaskInfo.Name = "cmsHistory";
             resources.ApplyResources(this.cmsTaskInfo, "cmsTaskInfo");
@@ -1566,6 +1568,13 @@
             resources.ApplyResources(this.tsmiThumbnailTitleBottom, "tsmiThumbnailTitleBottom");
             this.tsmiThumbnailTitleBottom.Tag = "ThumbnailTitleLocation";
             this.tsmiThumbnailTitleBottom.Click += new System.EventHandler(this.TsmiThumbnailTitleBottom_Click);
+            // 
+            // tsmiThumbnailSize
+            // 
+            this.tsmiThumbnailSize.Image = global::ShareX.Properties.Resources.image_resize;
+            this.tsmiThumbnailSize.Name = "tsmiThumbnailSize";
+            resources.ApplyResources(this.tsmiThumbnailSize, "tsmiThumbnailSize");
+            this.tsmiThumbnailSize.Click += new System.EventHandler(this.tsmiThumbnailSize_Click);
             // 
             // tsmiSwitchTaskViewMode
             // 
@@ -2676,5 +2685,6 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiClipboardViewer;
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayClipboardViewer;
         private System.Windows.Forms.ToolStripMenuItem tsmiRestartAsAdmin;
+        private System.Windows.Forms.ToolStripMenuItem tsmiThumbnailSize;
     }
 }
