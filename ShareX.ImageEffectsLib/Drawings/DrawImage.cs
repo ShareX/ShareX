@@ -83,7 +83,7 @@ namespace ShareX.ImageEffectsLib
 
         public override Bitmap Apply(Bitmap bmp)
         {
-            if (Opacity < 1)
+            if (Opacity < 1 || (SizeMode != DrawImageSizeMode.DontResize && Size.Width <= 0 && Size.Height <= 0))
             {
                 return bmp;
             }
@@ -98,7 +98,7 @@ namespace ShareX.ImageEffectsLib
                     {
                         Size imageSize;
 
-                        if (SizeMode == DrawImageSizeMode.AbsoluteSize || SizeMode == DrawImageSizeMode.Tile)
+                        if (SizeMode == DrawImageSizeMode.AbsoluteSize)
                         {
                             int width = Size.Width == -1 ? bmp.Width : Size.Width;
                             int height = Size.Height == -1 ? bmp.Height : Size.Height;
@@ -135,29 +135,18 @@ namespace ShareX.ImageEffectsLib
                             g.PixelOffsetMode = PixelOffsetMode.Half;
                             g.CompositingMode = CompositingMode;
 
-                            if (SizeMode == DrawImageSizeMode.Tile)
+                            if (Opacity < 100)
                             {
-                                using (TextureBrush brush = new TextureBrush(bmpWatermark, WrapMode.Tile))
+                                using (ImageAttributes ia = new ImageAttributes())
                                 {
-                                    brush.TranslateTransform(imageRectangle.X, imageRectangle.Y);
-                                    g.FillRectangle(brush, imageRectangle);
+                                    ColorMatrix matrix = ColorMatrixManager.Alpha(Opacity / 100f);
+                                    ia.SetColorMatrix(matrix, ColorMatrixFlag.Default, ColorAdjustType.Bitmap);
+                                    g.DrawImage(bmpWatermark, imageRectangle, 0, 0, bmpWatermark.Width, bmpWatermark.Height, GraphicsUnit.Pixel, ia);
                                 }
                             }
                             else
                             {
-                                if (Opacity < 100)
-                                {
-                                    using (ImageAttributes ia = new ImageAttributes())
-                                    {
-                                        ColorMatrix matrix = ColorMatrixManager.Alpha(Opacity / 100f);
-                                        ia.SetColorMatrix(matrix, ColorMatrixFlag.Default, ColorAdjustType.Bitmap);
-                                        g.DrawImage(bmpWatermark, imageRectangle, 0, 0, bmpWatermark.Width, bmpWatermark.Height, GraphicsUnit.Pixel, ia);
-                                    }
-                                }
-                                else
-                                {
-                                    g.DrawImage(bmpWatermark, imageRectangle);
-                                }
+                                g.DrawImage(bmpWatermark, imageRectangle);
                             }
                         }
                     }
