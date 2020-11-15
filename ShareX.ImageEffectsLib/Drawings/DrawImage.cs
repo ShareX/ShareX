@@ -52,6 +52,9 @@ namespace ShareX.ImageEffectsLib
         [DefaultValue(typeof(Size), "0, 0")]
         public Size Size { get; set; }
 
+        [DefaultValue(false)]
+        public bool Tile { get; set; }
+
         [DefaultValue(false), Description("If image watermark size bigger than source image then don't draw it.")]
         public bool AutoHide { get; set; }
 
@@ -135,7 +138,15 @@ namespace ShareX.ImageEffectsLib
                             g.PixelOffsetMode = PixelOffsetMode.Half;
                             g.CompositingMode = CompositingMode;
 
-                            if (Opacity < 100)
+                            if (Tile)
+                            {
+                                using (TextureBrush brush = new TextureBrush(bmpWatermark, WrapMode.Tile))
+                                {
+                                    brush.TranslateTransform(imageRectangle.X, imageRectangle.Y);
+                                    g.FillRectangle(brush, imageRectangle);
+                                }
+                            }
+                            else if (Opacity < 100)
                             {
                                 using (ImageAttributes ia = new ImageAttributes())
                                 {
