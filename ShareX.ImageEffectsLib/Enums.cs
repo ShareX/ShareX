@@ -48,6 +48,7 @@ namespace ShareX.ImageEffectsLib
         DontResize,
         AbsoluteSize,
         PercentageOfWatermark,
-        PercentageOfCanvas
+        PercentageOfCanvas,
+        Tile
     }
 }
