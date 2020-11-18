@@ -318,6 +318,7 @@
             // 
             // ImageEffectsForm
             // 
+            this.AllowDrop = true;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.SystemColors.Window;
@@ -349,6 +350,8 @@
             this.Name = "ImageEffectsForm";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Shown += new System.EventHandler(this.ImageEffectsForm_Shown);
+            this.DragDrop += new System.Windows.Forms.DragEventHandler(this.ImageEffectsForm_DragDrop);
+            this.DragEnter += new System.Windows.Forms.DragEventHandler(this.ImageEffectsForm_DragEnter);
             this.cmsLoadImage.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();

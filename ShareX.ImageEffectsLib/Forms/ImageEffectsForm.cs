@@ -30,6 +30,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace ShareX.ImageEffectsLib
@@ -119,6 +120,23 @@ namespace ShareX.ImageEffectsLib
             if (preset != null && preset.Effects.Count > 0)
             {
                 AddPreset(preset);
+            }
+        }
+
+        public void ImportImageEffectFile(string filePath)
+        {
+            try
+            {
+                string configJson = ImageEffectPackager.ExtractPackage(filePath, HelpersOptions.ShareXSpecialFolders["ShareXImageEffects"]);
+
+                if (!string.IsNullOrEmpty(configJson))
+                {
+                    ImportImageEffect(configJson);
+                }
+            }
+            catch (Exception ex)
+            {
+                ex.ShowError(false);
             }
         }
 
@@ -476,6 +494,43 @@ namespace ShareX.ImageEffectsLib
             pauseUpdate = false;
             lvPresets.EnsureSelectedVisible();
             UpdatePreview();
+        }
+
+        private void ImageEffectsForm_DragEnter(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.FileDrop, false))
+            {
+                string[] files = e.Data.GetData(DataFormats.FileDrop, false) as string[];
+
+                if (files != null && files.Any(x => !string.IsNullOrEmpty(x) && x.EndsWith(".sxie")))
+                {
+                    e.Effect = DragDropEffects.Copy;
+                }
+                else
+                {
+                    e.Effect = DragDropEffects.None;
+                }
+            }
+            else
+            {
+                e.Effect = DragDropEffects.None;
+            }
+        }
+
+        private void ImageEffectsForm_DragDrop(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.FileDrop, false))
+            {
+                string[] files = e.Data.GetData(DataFormats.FileDrop, false) as string[];
+
+                if (files != null)
+                {
+                    foreach (string filePath in files.Where(x => !string.IsNullOrEmpty(x) && x.EndsWith(".sxie")))
+                    {
+                        ImportImageEffectFile(filePath);
+                    }
+                }
+            }
         }
 
         private void btnPresetNew_Click(object sender, EventArgs e)
