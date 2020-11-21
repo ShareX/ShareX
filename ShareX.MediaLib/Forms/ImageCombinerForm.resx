@@ -219,6 +219,12 @@
   <data name="lvImages.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
+  <data name="chFilepath.Text" xml:space="preserve">
+    <value>Image file path</value>
+  </data>
+  <data name="chFilepath.Width" type="System.Int32, mscorlib">
+    <value>487</value>
+  </data>
   <data name="lvImages.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 40</value>
   </data>
@@ -239,12 +245,6 @@
   </data>
   <data name="&gt;&gt;lvImages.ZOrder" xml:space="preserve">
     <value>8</value>
-  </data>
-  <data name="chFilepath.Text" xml:space="preserve">
-    <value>Image file path</value>
-  </data>
-  <data name="chFilepath.Width" type="System.Int32, mscorlib">
-    <value>487</value>
   </data>
   <data name="btnCombine.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left, Right</value>
@@ -514,7 +514,7 @@
     <value>141, 23</value>
   </data>
   <data name="flpOrientation.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
+    <value>6</value>
   </data>
   <data name="&gt;&gt;flpOrientation.Name" xml:space="preserve">
     <value>flpOrientation</value>
