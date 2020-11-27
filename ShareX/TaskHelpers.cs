@@ -1876,15 +1876,18 @@ namespace ShareX
 
         public static void ShowNotificationTip(string text, string title = "ShareX", int duration = -1)
         {
+            if (Program.DefaultTaskSettings.AdvancedSettings.DisableToastWindow)
+                return;
+
             if (duration < 0)
             {
-                duration = (int)(Program.DefaultTaskSettings.AdvancedSettings.ToastWindowDuration * 1000);
+                duration = (int) (Program.DefaultTaskSettings.AdvancedSettings.ToastWindowDuration * 1000);
             }
 
             NotificationFormConfig toastConfig = new NotificationFormConfig()
             {
                 Duration = duration,
-                FadeDuration = (int)(Program.DefaultTaskSettings.AdvancedSettings.ToastWindowFadeDuration * 1000),
+                FadeDuration = (int) (Program.DefaultTaskSettings.AdvancedSettings.ToastWindowFadeDuration * 1000),
                 Placement = Program.DefaultTaskSettings.AdvancedSettings.ToastWindowPlacement,
                 Size = Program.DefaultTaskSettings.AdvancedSettings.ToastWindowSize,
                 Title = title,

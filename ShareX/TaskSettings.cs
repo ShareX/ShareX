@@ -487,6 +487,9 @@ namespace ShareX
         [Category("Notifications"), DefaultValue(false), Description("If active window is fullscreen then toast window or balloon tip won't be shown.")]
         public bool DisableNotificationsOnFullscreen { get; set; }
 
+        [Category("Notifications"), DefaultValue(false), Description("Disable toast window.")]
+        public bool DisableToastWindow { get; set; }
+
         private float toastWindowDuration;
 
         [Category("Notifications"), DefaultValue(3f), Description("Specify how long should toast notification window will stay on screen (in seconds).")]
