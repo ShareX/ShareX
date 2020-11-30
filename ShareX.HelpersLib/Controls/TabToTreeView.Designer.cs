@@ -30,27 +30,26 @@
         {
             this.tvMain = new System.Windows.Forms.TreeView();
             this.scMain = new System.Windows.Forms.SplitContainer();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.tcMain = new HelpersLib.TablessControl();
+            this.tcMain = new ShareX.HelpersLib.TablessControl();
             ((System.ComponentModel.ISupportInitialize)(this.scMain)).BeginInit();
             this.scMain.Panel1.SuspendLayout();
             this.scMain.Panel2.SuspendLayout();
             this.scMain.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tvMain
             // 
-            this.tvMain.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tvMain.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tvMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tvMain.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.tvMain.FullRowSelect = true;
             this.tvMain.HideSelection = false;
-            this.tvMain.Location = new System.Drawing.Point(0, 0);
+            this.tvMain.ItemHeight = 25;
+            this.tvMain.Location = new System.Drawing.Point(8, 8);
             this.tvMain.Name = "tvMain";
             this.tvMain.ShowLines = false;
             this.tvMain.ShowPlusMinus = false;
-            this.tvMain.Size = new System.Drawing.Size(237, 500);
+            this.tvMain.Size = new System.Drawing.Size(221, 484);
             this.tvMain.TabIndex = 0;
             this.tvMain.BeforeCollapse += new System.Windows.Forms.TreeViewCancelEventHandler(this.tvMain_BeforeCollapse);
             this.tvMain.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.tvMain_AfterSelect);
@@ -67,24 +66,15 @@
             // scMain.Panel1
             // 
             this.scMain.Panel1.Controls.Add(this.tvMain);
+            this.scMain.Panel1.Padding = new System.Windows.Forms.Padding(8);
             // 
             // scMain.Panel2
             // 
-            this.scMain.Panel2.Controls.Add(this.panel1);
+            this.scMain.Panel2.Controls.Add(this.tcMain);
             this.scMain.Size = new System.Drawing.Size(700, 500);
             this.scMain.SplitterDistance = 237;
             this.scMain.SplitterWidth = 3;
             this.scMain.TabIndex = 0;
-            // 
-            // panel1
-            // 
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.tcMain);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(460, 500);
-            this.panel1.TabIndex = 1;
             // 
             // tcMain
             // 
@@ -92,7 +82,7 @@
             this.tcMain.Location = new System.Drawing.Point(0, 0);
             this.tcMain.Name = "tcMain";
             this.tcMain.SelectedIndex = 0;
-            this.tcMain.Size = new System.Drawing.Size(458, 498);
+            this.tcMain.Size = new System.Drawing.Size(460, 500);
             this.tcMain.TabIndex = 0;
             this.tcMain.Visible = false;
             // 
@@ -108,7 +98,6 @@
             this.scMain.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.scMain)).EndInit();
             this.scMain.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -118,6 +107,5 @@
         private System.Windows.Forms.TreeView tvMain;
         private System.Windows.Forms.SplitContainer scMain;
         private TablessControl tcMain;
-        private System.Windows.Forms.Panel panel1;
     }
 }
