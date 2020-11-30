@@ -102,8 +102,20 @@ namespace ShareX.HelpersLib
             }
             set
             {
-                scMain.Panel1.BackColor = value;
+                pLeft.BackColor = value;
                 tvMain.BackColor = value;
+            }
+        }
+
+        public Color SeparatorColor
+        {
+            get
+            {
+                return pSeparator.BackColor;
+            }
+            set
+            {
+                pSeparator.BackColor = value;
             }
         }
 

@@ -197,6 +197,7 @@ namespace ShareX.HelpersLib
             {
                 case TabToTreeView tttv:
                     tttv.LeftPanelBackColor = Theme.DarkBackgroundColor;
+                    tttv.SeparatorColor = Theme.SeparatorDarkColor;
                     break;
             }
         }
