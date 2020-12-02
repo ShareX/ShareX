@@ -112,6 +112,8 @@ namespace ShareX
                     {
                         panel.ThumbnailSize = thumbnailSize;
                     }
+
+                    UpdateAllThumbnails(true);
                 }
             }
         }
