@@ -1300,28 +1300,28 @@
     <value>Image preview</value>
   </data>
   <data name="tsmiThumbnailTitleShow.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>114, 22</value>
   </data>
   <data name="tsmiThumbnailTitleShow.Text" xml:space="preserve">
     <value>Show</value>
   </data>
   <data name="tsmiThumbnailTitleHide.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>114, 22</value>
   </data>
   <data name="tsmiThumbnailTitleHide.Text" xml:space="preserve">
     <value>Hide</value>
   </data>
   <data name="tssThumbnailTitle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>177, 6</value>
+    <value>111, 6</value>
   </data>
   <data name="tsmiThumbnailTitleTop.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>114, 22</value>
   </data>
   <data name="tsmiThumbnailTitleTop.Text" xml:space="preserve">
     <value>Top</value>
   </data>
   <data name="tsmiThumbnailTitleBottom.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>114, 22</value>
   </data>
   <data name="tsmiThumbnailTitleBottom.Text" xml:space="preserve">
     <value>Bottom</value>
