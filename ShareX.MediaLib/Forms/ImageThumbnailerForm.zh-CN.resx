@@ -150,4 +150,7 @@
   <data name="lblQuality.Text" xml:space="preserve">
     <value>质量：</value>
   </data>
+  <data name="lblQualityPercentage.Text" xml:space="preserve">
+    <value>%</value>
+  </data>
 </root>

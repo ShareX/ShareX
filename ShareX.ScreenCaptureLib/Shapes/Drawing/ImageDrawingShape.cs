@@ -36,6 +36,16 @@ namespace ShareX.ScreenCaptureLib
         public Image Image { get; protected set; }
         public ImageInterpolationMode ImageInterpolationMode { get; protected set; }
 
+        public override BaseShape Duplicate()
+        {
+            Image imageTemp = Image;
+            Image = null;
+            ImageDrawingShape shape = (ImageDrawingShape)base.Duplicate();
+            shape.Image = imageTemp.CloneSafe();
+            Image = imageTemp;
+            return shape;
+        }
+
         public override void OnConfigLoad()
         {
             ImageInterpolationMode = AnnotationOptions.ImageInterpolationMode;

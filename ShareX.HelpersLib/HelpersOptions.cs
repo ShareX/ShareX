@@ -42,5 +42,6 @@ namespace ShareX.HelpersLib
         public static string LastSaveDirectory { get; set; } = "";
         public static bool URLEncodeIgnoreEmoji { get; set; } = false;
         public static Dictionary<string, string> ShareXSpecialFolders { get; set; } = new Dictionary<string, string>();
+        public static bool DevMode { get; set; } = false;
     }
 }

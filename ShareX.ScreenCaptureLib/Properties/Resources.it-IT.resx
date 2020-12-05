@@ -132,11 +132,6 @@
   <data name="WebpageCaptureForm_UpdateControls_Stop" xml:space="preserve">
     <value>Ferma</value>
   </data>
-  <data name="RectangleRegion_GetRulerText_Ruler_info" xml:space="preserve">
-    <value>X: {0} / Y: {1} / X2: {2} / Y2: {3}
-Larghezza: {4} px / Altezza: {5} px
-Distanza: {6:0.00} px / Angolo: {7:0.00}°</value>
-  </data>
   <data name="FFmpegOptionsForm_buttonFFmpegBrowse_Click_Browse_for_ffmpeg_exe" xml:space="preserve">
     <value>Cerca "ffmpeg.exe"</value>
   </data>
@@ -148,9 +143,6 @@ Distanza: {6:0.00} px / Angolo: {7:0.00}°</value>
   </data>
   <data name="FFmpegOptionsForm_DownloaderForm_InstallRequested_Download_of_FFmpeg_failed_" xml:space="preserve">
     <value>Scaricamento FFmpeg fallito.</value>
-  </data>
-  <data name="FFmpegHelper_Record_FFmpeg_error" xml:space="preserve">
-    <value>Errore FFmpeg</value>
   </data>
   <data name="BaseRegionForm_InitializeComponent_Region_capture" xml:space="preserve">
     <value>Cattura Ragionr</value>

@@ -84,7 +84,7 @@ namespace ShareX.HistoryLib
 
         private void UpdateTitle(int total, int filtered)
         {
-            Text = $"{defaultTitle} (Total: {total.ToString("N0")} - Filtered: {filtered.ToString("N0")})";
+            Text = $"{defaultTitle} (Total: {total:N0} - Filtered: {filtered:N0})";
         }
 
         private void RefreshHistoryItems()

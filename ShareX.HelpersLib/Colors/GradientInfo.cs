@@ -47,7 +47,7 @@ namespace ShareX.HelpersLib
         public bool IsVisible => IsValid && Colors.Any(x => x.Color.A > 0);
 
         [JsonIgnore]
-        public bool IsTransparent => IsValid && Colors.Any(x => x.Color.A < 255);
+        public bool IsTransparent => IsValid && Colors.Any(x => x.Color.IsTransparent());
 
         public GradientInfo()
         {
@@ -66,6 +66,11 @@ namespace ShareX.HelpersLib
             {
                 Colors.Add(new GradientStop(colors[i], (int)Math.Round(100f / (colors.Length - 1) * i)));
             }
+        }
+
+        public void Clear()
+        {
+            Colors.Clear();
         }
 
         public void Sort()

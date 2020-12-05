@@ -117,18 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="btnAdd.Text" xml:space="preserve">
-    <value>Додати</value>
-  </data>
-  <data name="btnRemove.Text" xml:space="preserve">
-    <value>Вилучити</value>
-  </data>
-  <data name="btnClear.Text" xml:space="preserve">
-    <value>Очистити</value>
-  </data>
-  <data name="btnDuplicate.Text" xml:space="preserve">
-    <value>Дублювати</value>
-  </data>
   <data name="btnSaveImage.Text" xml:space="preserve">
     <value>Зберегти...</value>
   </data>
@@ -141,12 +129,6 @@
   <data name="mbLoadImage.Text" xml:space="preserve">
     <value>Завантажити зображення</value>
   </data>
-  <data name="btnAddPreset.Text" xml:space="preserve">
-    <value>Новий шаблон</value>
-  </data>
-  <data name="btnRemovePreset.Text" xml:space="preserve">
-    <value>Вилучити шаблон</value>
-  </data>
   <data name="lblPresetName.Text" xml:space="preserve">
     <value>Назва:</value>
   </data>
@@ -158,9 +140,6 @@
   </data>
   <data name="btnUploadImage.Text" xml:space="preserve">
     <value>Вивантажити зображення</value>
-  </data>
-  <data name="btnRefresh.Text" xml:space="preserve">
-    <value>Оновити</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX — Ефекти зображення</value>

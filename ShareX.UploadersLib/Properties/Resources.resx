@@ -407,4 +407,10 @@ Created folders:</value>
   <data name="GoogleDrive_MyDrive_My_drive" xml:space="preserve">
     <value>My drive</value>
   </data>
+  <data name="ExportFailed" xml:space="preserve">
+    <value>Export failed.</value>
+  </data>
+  <data name="LoggedInAs0" xml:space="preserve">
+    <value>Logged in as {0}.</value>
+  </data>
 </root>

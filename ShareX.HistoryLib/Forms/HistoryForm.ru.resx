@@ -162,4 +162,7 @@
   <data name="btnShowStats.Text" xml:space="preserve">
     <value>Показать статистику</value>
   </data>
+  <data name="lblMaxItemCount.Text" xml:space="preserve">
+    <value>Лимит количества элементов:</value>
+  </data>
 </root>

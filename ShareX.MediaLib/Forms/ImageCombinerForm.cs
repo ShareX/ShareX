@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.MediaLib.Properties;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -45,28 +46,46 @@ namespace ShareX.MediaLib
             InitializeComponent();
             ShareXResources.ApplyTheme(this);
 
-            cbOrientation.Items.AddRange(Enum.GetNames(typeof(Orientation)));
-            cbOrientation.SelectedIndex = (int)Options.Orientation;
+            if (Options.Orientation == Orientation.Horizontal)
+            {
+                rbOrientationHorizontal.Checked = true;
+            }
+            else
+            {
+                rbOrientationVertical.Checked = true;
+            }
+
             UpdateAlignmentComboBox();
             nudSpace.SetValue(Options.Space);
+        }
+
+        private void UpdateOrientation()
+        {
+            if (rbOrientationHorizontal.Checked)
+            {
+                Options.Orientation = Orientation.Horizontal;
+            }
+            else
+            {
+                Options.Orientation = Orientation.Vertical;
+            }
         }
 
         private void UpdateAlignmentComboBox()
         {
             cbAlignment.Items.Clear();
 
-            // TODO: Translate
             if (Options.Orientation == Orientation.Horizontal)
             {
-                cbAlignment.Items.Add("Top");
-                cbAlignment.Items.Add("Center");
-                cbAlignment.Items.Add("Bottom");
+                cbAlignment.Items.Add(Resources.AlignmentTop);
+                cbAlignment.Items.Add(Resources.AlignmentHorizontalCenter);
+                cbAlignment.Items.Add(Resources.AlignmentBottom);
             }
             else
             {
-                cbAlignment.Items.Add("Left");
-                cbAlignment.Items.Add("Center");
-                cbAlignment.Items.Add("Right");
+                cbAlignment.Items.Add(Resources.AlignmentLeft);
+                cbAlignment.Items.Add(Resources.AlignmentVerticalCenter);
+                cbAlignment.Items.Add(Resources.AlignmentRight);
             }
 
             cbAlignment.SelectedIndex = (int)Options.Alignment;
@@ -123,9 +142,15 @@ namespace ShareX.MediaLib
             }
         }
 
-        private void cbOrientation_SelectedIndexChanged(object sender, EventArgs e)
+        private void rbOrientationHorizontal_CheckedChanged(object sender, EventArgs e)
         {
-            Options.Orientation = (Orientation)cbOrientation.SelectedIndex;
+            UpdateOrientation();
+            UpdateAlignmentComboBox();
+        }
+
+        private void rbOrientationVertical_CheckedChanged(object sender, EventArgs e)
+        {
+            UpdateOrientation();
             UpdateAlignmentComboBox();
         }
 

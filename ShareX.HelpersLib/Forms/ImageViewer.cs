@@ -31,11 +31,11 @@ namespace ShareX.HelpersLib
 {
     public class ImageViewer : Form
     {
-        private Image screenshot;
+        private Image image;
 
-        private ImageViewer(Image image)
+        private ImageViewer(Image img)
         {
-            screenshot = image;
+            image = img;
 
             InitializeComponent();
             ShareXResources.ApplyTheme(this);
@@ -45,10 +45,15 @@ namespace ShareX.HelpersLib
         {
             if (img != null)
             {
-                using (Image tempImage = (Image)img.Clone())
-                using (ImageViewer viewer = new ImageViewer(tempImage))
+                using (Image tempImage = img.CloneSafe())
                 {
-                    viewer.ShowDialog();
+                    if (tempImage != null)
+                    {
+                        using (ImageViewer viewer = new ImageViewer(tempImage))
+                        {
+                            viewer.ShowDialog();
+                        }
+                    }
                 }
             }
         }
@@ -108,9 +113,9 @@ namespace ShareX.HelpersLib
                 components.Dispose();
             }
 
-            if (screenshot != null)
+            if (image != null)
             {
-                screenshot.Dispose();
+                image.Dispose();
             }
 
             base.Dispose(disposing);
@@ -135,19 +140,19 @@ namespace ShareX.HelpersLib
             StartPosition = FormStartPosition.Manual;
 
             pbPreview.Cursor = Cursors.Hand;
-            pbPreview.Dock = System.Windows.Forms.DockStyle.Fill;
+            pbPreview.Dock = DockStyle.Fill;
             pbPreview.DrawCheckeredBackground = true;
             pbPreview.FullscreenOnClick = false;
-            pbPreview.Location = new System.Drawing.Point(0, 0);
+            pbPreview.Location = new Point(0, 0);
             pbPreview.Name = "pbPreview";
             pbPreview.ShowImageSizeLabel = true;
-            pbPreview.Size = new System.Drawing.Size(96, 100);
+            pbPreview.Size = new Size(96, 100);
             pbPreview.TabIndex = 0;
-            pbPreview.LoadImage(screenshot);
+            pbPreview.LoadImage(image);
             Controls.Add(pbPreview);
 
-            Shown += new System.EventHandler(ShowScreenshot_Shown);
-            Deactivate += new System.EventHandler(ShowScreenshot_Deactivate);
+            Shown += new EventHandler(ShowScreenshot_Shown);
+            Deactivate += new EventHandler(ShowScreenshot_Deactivate);
             pbPreview.MouseDown += pbPreview_MouseDown;
             pbPreview.KeyDown += pbPreview_KeyDown;
 

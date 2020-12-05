@@ -56,12 +56,15 @@
             this.cbDateFilter = new System.Windows.Forms.CheckBox();
             this.dtpFilterTo = new System.Windows.Forms.DateTimePicker();
             this.txtFilenameFilter = new System.Windows.Forms.TextBox();
+            this.lblMaxItemCount = new System.Windows.Forms.Label();
+            this.nudMaxItemCount = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.scMain)).BeginInit();
             this.scMain.Panel1.SuspendLayout();
             this.scMain.Panel2.SuspendLayout();
             this.scMain.SuspendLayout();
             this.pStats.SuspendLayout();
             this.gbFilters.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMaxItemCount)).BeginInit();
             this.SuspendLayout();
             // 
             // scMain
@@ -77,8 +80,10 @@
             // 
             // scMain.Panel2
             // 
-            this.scMain.Panel2.Controls.Add(this.btnShowStats);
+            this.scMain.Panel2.Controls.Add(this.nudMaxItemCount);
             this.scMain.Panel2.Controls.Add(this.pbThumbnail);
+            this.scMain.Panel2.Controls.Add(this.btnShowStats);
+            this.scMain.Panel2.Controls.Add(this.lblMaxItemCount);
             this.scMain.Panel2.Controls.Add(this.gbFilters);
             this.scMain.SplitterColor = System.Drawing.Color.White;
             this.scMain.SplitterLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(189)))), ((int)(((byte)(189)))));
@@ -257,10 +262,25 @@
             resources.ApplyResources(this.txtFilenameFilter, "txtFilenameFilter");
             this.txtFilenameFilter.Name = "txtFilenameFilter";
             // 
+            // lblMaxItemCount
+            // 
+            resources.ApplyResources(this.lblMaxItemCount, "lblMaxItemCount");
+            this.lblMaxItemCount.Name = "lblMaxItemCount";
+            // 
+            // nudMaxItemCount
+            // 
+            resources.ApplyResources(this.nudMaxItemCount, "nudMaxItemCount");
+            this.nudMaxItemCount.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.nudMaxItemCount.Name = "nudMaxItemCount";
+            this.nudMaxItemCount.ValueChanged += new System.EventHandler(this.nudMaxItemCount_ValueChanged);
+            // 
             // HistoryForm
             // 
             resources.ApplyResources(this, "$this");
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.Controls.Add(this.scMain);
@@ -271,11 +291,13 @@
             this.Resize += new System.EventHandler(this.HistoryForm_Resize);
             this.scMain.Panel1.ResumeLayout(false);
             this.scMain.Panel2.ResumeLayout(false);
+            this.scMain.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.scMain)).EndInit();
             this.scMain.ResumeLayout(false);
             this.pStats.ResumeLayout(false);
             this.gbFilters.ResumeLayout(false);
             this.gbFilters.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMaxItemCount)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -308,5 +330,7 @@
         private System.Windows.Forms.Button btnShowStats;
         private System.Windows.Forms.RichTextBox rtbStats;
         private System.Windows.Forms.Panel pStats;
+        private System.Windows.Forms.Label lblMaxItemCount;
+        private System.Windows.Forms.NumericUpDown nudMaxItemCount;
     }
 }

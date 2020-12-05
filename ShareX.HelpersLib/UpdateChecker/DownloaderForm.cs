@@ -168,7 +168,7 @@ namespace ShareX.HelpersLib
                             psi.Arguments += " /VERYSILENT";
                         }
 
-                        if (Helpers.IsDefaultInstallDir())
+                        if (Helpers.IsDefaultInstallDir() && !Helpers.IsMemberOfAdministratorsGroup())
                         {
                             psi.Verb = "runas";
                         }
@@ -217,6 +217,8 @@ namespace ShareX.HelpersLib
                 string folderPath = Path.Combine(Path.GetTempPath(), "ShareX");
                 Helpers.CreateDirectory(folderPath);
                 DownloadLocation = Path.Combine(folderPath, Filename);
+
+                DebugHelper.WriteLine($"Downloading: \"{URL}\" -> \"{DownloadLocation}\"");
 
                 fileDownloader = new FileDownloader(URL, DownloadLocation, Proxy, AcceptHeader);
                 fileDownloader.FileSizeReceived += (v1, v2) => ChangeProgress();

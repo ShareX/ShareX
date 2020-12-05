@@ -41,6 +41,15 @@ namespace ShareX.ScreenCaptureLib
 
         public abstract void ApplyEffect(Bitmap bmp);
 
+        public override BaseShape Duplicate()
+        {
+            Bitmap cachedEffectTemp = cachedEffect;
+            cachedEffect = null;
+            BaseEffectShape shape = (BaseEffectShape)base.Duplicate();
+            cachedEffect = cachedEffectTemp;
+            return shape;
+        }
+
         public override void OnUpdate()
         {
             base.OnUpdate();

@@ -159,18 +159,6 @@
   <data name="Stop" xml:space="preserve">
     <value>Parar</value>
   </data>
-  <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__Image__Size___0_x_1__" xml:space="preserve">
-    <value>Conteúdo da área de transferência: Imagem (Tamanho: {0}x{1})</value>
-  </data>
-  <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__Text__Length___0__" xml:space="preserve">
-    <value>Conteúdo da área de transferência: Texto (Comprimento: {0})</value>
-  </data>
-  <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__File__Count___0__" xml:space="preserve">
-    <value>Conteúdo da área de transferência: Arquivo (Contagem: {0})</value>
-  </data>
-  <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_is_empty_or_contains_unknown_data_" xml:space="preserve">
-    <value>Área de transferência está vazia ou contém dados desconhecidos.</value>
-  </data>
   <data name="PrintTextForm_LoadSettings_Name___0___Size___1_" xml:space="preserve">
     <value>Nome: {0}, Tamanho: {1}</value>
   </data>
@@ -940,9 +928,6 @@ Gostaria de transferí-la?</value>
   <data name="RegionCaptureAction_CancelCapture" xml:space="preserve">
     <value>Cancelar captura</value>
   </data>
-  <data name="ImageEditorInterpolationMode_HighQualityBicubic" xml:space="preserve">
-    <value>Bicúbico de alta qualidade</value>
-  </data>
   <data name="Extensions_AddContextMenu_Redo" xml:space="preserve">
     <value>Refazer</value>
   </data>
@@ -1039,26 +1024,14 @@ Gostaria de transferí-la?</value>
   <data name="UpdateMessageBox_UpdateMessageBox_CurrentVersion" xml:space="preserve">
     <value>Versão actual</value>
   </data>
-  <data name="ImageEditorInterpolationMode_Bilinear" xml:space="preserve">
-    <value>Bilinear</value>
-  </data>
   <data name="WavFileNameEditor_EditValue_Browse_for_a_sound_file___" xml:space="preserve">
     <value>Procure por um ficheiro de som...</value>
-  </data>
-  <data name="ImageEditorInterpolationMode_HighQualityBilinear" xml:space="preserve">
-    <value>bilinear de alta qualidade</value>
   </data>
   <data name="LinearGradientMode_ForwardDiagonal" xml:space="preserve">
     <value>Diagonal para a frente</value>
   </data>
   <data name="PNGBitDepth_Bit24" xml:space="preserve">
     <value>24 bit</value>
-  </data>
-  <data name="ImageEditorInterpolationMode_NearestNeighbor" xml:space="preserve">
-    <value>Vizinho mais perto</value>
-  </data>
-  <data name="ImageEditorInterpolationMode_Bicubic" xml:space="preserve">
-    <value>Bicúbico</value>
   </data>
   <data name="ShapeType_DrawingSticker" xml:space="preserve">
     <value>Rótulo</value>

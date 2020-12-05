@@ -551,7 +551,7 @@ namespace ShareX.HelpersLib
             int maxx = Math.Min(x + radius, unsafeBitmap.Width - 1);
             int miny = Math.Max(y - radius, 0);
             int maxy = Math.Min(y + radius, unsafeBitmap.Height - 1);
-            int dist2 = radius * radius + 1;
+            int dist2 = (radius * radius) + 1;
 
             for (int tx = minx; tx <= maxx; tx++)
             {
@@ -563,7 +563,7 @@ namespace ShareX.HelpersLib
                     {
                         int dx = tx - x;
                         int dy = ty - y;
-                        int test_dist2 = dx * dx + dy * dy;
+                        int test_dist2 = (dx * dx) + (dy * dy);
                         if (test_dist2 < dist2)
                         {
                             dist2 = test_dist2;
@@ -1378,6 +1378,37 @@ namespace ShareX.HelpersLib
             }
         }
 
+        public static void ColorDepth(Bitmap bmp, int bitsPerChannel = 4)
+        {
+            if (bitsPerChannel < 1 || bitsPerChannel > 8)
+            {
+                return;
+            }
+
+            double colorsPerChannel = Math.Pow(2, bitsPerChannel);
+            double colorInterval = 255 / (colorsPerChannel - 1);
+
+            byte Remap(byte color, double interval)
+            {
+                return (byte)Math.Round(Math.Round(color / interval) * interval);
+            }
+
+            using (UnsafeBitmap unsafeBitmap = new UnsafeBitmap(bmp, true))
+            {
+                for (int y = 0; y < unsafeBitmap.Height; y++)
+                {
+                    for (int x = 0; x < unsafeBitmap.Width; x++)
+                    {
+                        ColorBgra color = unsafeBitmap.GetPixel(x, y);
+                        color.Red = Remap(color.Red, colorInterval);
+                        color.Green = Remap(color.Green, colorInterval);
+                        color.Blue = Remap(color.Blue, colorInterval);
+                        unsafeBitmap.SetPixel(x, y, color);
+                    }
+                }
+            }
+        }
+
         // http://incubator.quasimondo.com/processing/superfast_blur.php
         public static void FastBoxBlur(Bitmap bmp, int radius)
         {
@@ -1696,7 +1727,7 @@ namespace ShareX.HelpersLib
             return imageFormat;
         }
 
-        public static void SaveImage(Image img, string filePath)
+        public static bool SaveImage(Image img, string filePath)
         {
             Helpers.CreateDirectoryFromFilePath(filePath);
             ImageFormat imageFormat = GetImageFormat(filePath);
@@ -1704,11 +1735,14 @@ namespace ShareX.HelpersLib
             try
             {
                 img.Save(filePath, imageFormat);
+                return true;
             }
             catch (Exception e)
             {
                 e.ShowError();
             }
+
+            return false;
         }
 
         public static string SaveImageFileDialog(Image img, string filePath = "", bool useLastDirectory = true)
@@ -1938,7 +1972,7 @@ namespace ShareX.HelpersLib
 
         public static void DrawColorPickerIcon(Graphics g, Color color, Rectangle rect, int holeSize = 0)
         {
-            if (color.A < 255)
+            if (color.IsTransparent())
             {
                 using (Image checker = CreateCheckerPattern(rect.Width / 2, rect.Height / 2))
                 {
@@ -2234,6 +2268,44 @@ namespace ShareX.HelpersLib
         public static Size ApplyAspectRatio(Size size, Bitmap bmp)
         {
             return ApplyAspectRatio(size.Width, size.Height, bmp);
+        }
+
+        public static Bitmap NonIndexedBitmap(Bitmap bmp)
+        {
+            if (bmp != null && bmp.PixelFormat.HasFlag(PixelFormat.Indexed))
+            {
+                using (bmp)
+                {
+                    return bmp.Clone(new Rectangle(0, 0, bmp.Width, bmp.Height), PixelFormat.Format32bppArgb);
+                }
+            }
+
+            return bmp;
+        }
+
+        public static Bitmap DrawGrip(Color color, Color shadow)
+        {
+            int size = 16;
+            Bitmap bmp = new Bitmap(size, size);
+
+            using (Graphics g = Graphics.FromImage(bmp))
+            using (SolidBrush brush = new SolidBrush(color))
+            using (SolidBrush shadowBrush = new SolidBrush(shadow))
+            {
+                int x = size / 2;
+                int boxSize = 2;
+
+                for (int i = 0; i < 4; i++)
+                {
+                    g.FillRectangle(shadowBrush, x - boxSize, (i * 4) + 2, boxSize, boxSize);
+                    g.FillRectangle(brush, x - boxSize - 1, (i * 4) + 1, boxSize, boxSize);
+
+                    g.FillRectangle(shadowBrush, x + 2, (i * 4) + 2, boxSize, boxSize);
+                    g.FillRectangle(brush, x + 1, (i * 4) + 1, boxSize, boxSize);
+                }
+            }
+
+            return bmp;
         }
     }
 }

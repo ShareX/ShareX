@@ -169,7 +169,7 @@
     <value>图像预览</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_More_info" xml:space="preserve">
-    <value>更多信息</value>
+    <value>更多信息...</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_Open" xml:space="preserve">
     <value>打开</value>
@@ -189,29 +189,8 @@
   <data name="HistoryItemManager_InitializeComponent_URL" xml:space="preserve">
     <value>URL</value>
   </data>
-  <data name="HistoryItemManager_UpdateTexts_HTML_link___0__" xml:space="preserve">
-    <value>HTML链接（{0}）</value>
-  </data>
-  <data name="HistoryItemManager_UpdateTexts_URLs___0__" xml:space="preserve">
-    <value>URLs（{0}）</value>
-  </data>
-  <data name="ObjectListView_ObjectListView_Copy_name" xml:space="preserve">
-    <value>复制名称</value>
-  </data>
-  <data name="ObjectListView_ObjectListView_Copy_value" xml:space="preserve">
-    <value>复制值</value>
-  </data>
-  <data name="ObjectListView_ObjectListView_Name" xml:space="preserve">
-    <value>名称</value>
-  </data>
-  <data name="ObjectListView_ObjectListView_Value" xml:space="preserve">
-    <value>值</value>
-  </data>
   <data name="HistoryManager_GetHistoryItems_Error" xml:space="preserve">
     <value>错误</value>
-  </data>
-  <data name="HistoryManager_GetHistoryItems_Error_occured_while_reading_XML_file___0_" xml:space="preserve">
-    <value>读取 XML 文件 {0} 时发生错误</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_Markdown__linked_image" xml:space="preserve">
     <value>Markdown 链接的图像</value>
@@ -227,5 +206,29 @@
   </data>
   <data name="HistoryItemManager_InitializeComponent_UploadFile" xml:space="preserve">
     <value>上传文件</value>
+  </data>
+  <data name="BtnShowStats_ShowStats" xml:space="preserve">
+    <value>显示统计</value>
+  </data>
+  <data name="BtnShowStats_HideStats" xml:space="preserve">
+    <value>隐藏统计</value>
+  </data>
+  <data name="HistoryStats_Total" xml:space="preserve">
+    <value>总计:</value>
+  </data>
+  <data name="HistoryStats_FileExtensions" xml:space="preserve">
+    <value>文件扩展名:</value>
+  </data>
+  <data name="HistoryItemCounts" xml:space="preserve">
+    <value>历史项目数:</value>
+  </data>
+  <data name="HistoryStats_YearlyUsages" xml:space="preserve">
+    <value>年用量:</value>
+  </data>
+  <data name="HistoryStats_Hosts" xml:space="preserve">
+    <value>主机:</value>
+  </data>
+  <data name="ErrorOccuredWhileReadingHistoryFile" xml:space="preserve">
+    <value>读取历史记录文件出错:</value>
   </data>
 </root>

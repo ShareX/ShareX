@@ -50,7 +50,13 @@ namespace ShareX.UploadersLib
 
         public MegaApiClient.AuthInfos GetMegaApiClientAuthInfos()
         {
-            byte[] passwordAesKey = Convert.FromBase64String(PasswordAesKey);
+            byte[] passwordAesKey = null;
+
+            if (!string.IsNullOrEmpty(PasswordAesKey))
+            {
+                passwordAesKey = Convert.FromBase64String(PasswordAesKey);
+            }
+
             return new MegaApiClient.AuthInfos(Email, Hash, passwordAesKey);
         }
     }

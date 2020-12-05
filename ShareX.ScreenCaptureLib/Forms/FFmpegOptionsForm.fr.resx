@@ -281,7 +281,7 @@ Autrement, il ne pourra pas suivre l'enregistrement : il y aura donc beaucoup de
     <value>Débit :</value>
   </data>
   <data name="lblQSVPreset.Text" xml:space="preserve">
-    <value>Préréglages :</value>
+    <value>Préréglage :</value>
   </data>
   <data name="lblx264CRF.Text" xml:space="preserve">
     <value>CRF :</value>
@@ -297,5 +297,8 @@ Autrement, il ne pourra pas suivre l'enregistrement : il y aura donc beaucoup de
   </data>
   <data name="tpOpus.Text" xml:space="preserve">
     <value>Opus</value>
+  </data>
+  <data name="nudGIFBayerScale.ToolTip" xml:space="preserve">
+    <value>Contrôle l'indice d'échelle de Bayer, une échelle plus élevée affichera plus de bandes. La valeur par défaut est 2.</value>
   </data>
 </root>

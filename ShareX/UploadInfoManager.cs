@@ -132,6 +132,8 @@ namespace ShareX
         {
             if (IsItemSelected)
             {
+                SelectedItem.Update();
+
                 if (SelectedItem.IsShortenedURLExist)
                 {
                     URLHelpers.OpenURL(SelectedItem.Info.Result.ShortenedURL);

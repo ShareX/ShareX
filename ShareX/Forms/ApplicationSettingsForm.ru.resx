@@ -145,7 +145,7 @@
     <value>Прокси</value>
   </data>
   <data name="btnEditQuickTaskMenu.Text" xml:space="preserve">
-    <value>Редактировать меню быстрых задач</value>
+    <value>Редактировать меню быстрых задач...</value>
   </data>
   <data name="cbShellContextMenu.Text" xml:space="preserve">
     <value>Показывать пункт "Загрузить с помощью ShareX" в контекстном меню проводника Windows</value>
@@ -267,9 +267,6 @@
   <data name="btnOpenPersonalFolderPath.Text" xml:space="preserve">
     <value>Открыть...</value>
   </data>
-  <data name="tpExportImport.Text" xml:space="preserve">
-    <value>Экспорт / Импорт</value>
-  </data>
   <data name="btnExport.Text" xml:space="preserve">
     <value>Экспорт...</value>
   </data>
@@ -301,7 +298,7 @@
     <value>Показывать последние задачи первыми в трее</value>
   </data>
   <data name="lblRecentTasksMaxCount.Text" xml:space="preserve">
-    <value>Максимальное количество задач для сохранения</value>
+    <value>Максимальное количество задач для сохранения:</value>
   </data>
   <data name="cbRecentTasksShowInTrayMenu.Text" xml:space="preserve">
     <value>Показывать последние задачи в трее</value>
@@ -348,17 +345,11 @@
   <data name="btnPersonalFolderPathApply.Text" xml:space="preserve">
     <value>Применить</value>
   </data>
-  <data name="cbExperimentalDarkTheme.Text" xml:space="preserve">
-    <value>Экспериментальная пользовательская тема</value>
-  </data>
   <data name="cbUseWhiteShareXIcon.Text" xml:space="preserve">
     <value>Использовать белую иконку ShareX</value>
   </data>
-  <data name="cbUseDarkTheme.Text" xml:space="preserve">
-    <value>Использовать темную тему</value>
-  </data>
   <data name="lblExportImportNote.Text" xml:space="preserve">
-    <value>Заметка: Не делитесь этим экспортируемым файлом ни с кем, он может содержать личную информация, например пароли.</value>
+    <value>Заметка: Не делитесь этим экспортируемым файлом ни с кем, он может содержать личную информацию, например пароли.</value>
   </data>
   <data name="cbExportHistory.Text" xml:space="preserve">
     <value>История</value>
@@ -369,9 +360,6 @@
   <data name="tpTheme.Text" xml:space="preserve">
     <value>Тема</value>
   </data>
-  <data name="btnApplyTheme.Text" xml:space="preserve">
-    <value>Применить тему</value>
-  </data>
   <data name="btnThemeAdd.Text" xml:space="preserve">
     <value>Добавить</value>
   </data>
@@ -379,12 +367,12 @@
     <value>Удалить</value>
   </data>
   <data name="btnThemeReset.Text" xml:space="preserve">
-    <value>Сбросить</value>
+    <value>Сбросить...</value>
   </data>
   <data name="cbUseCustomTheme.Text" xml:space="preserve">
     <value>Пользовательская тема</value>
   </data>
-  <data name="cbExperimentalCustomTheme.Text" xml:space="preserve">
-    <value>Применить пользовательскую тему ко всем окнам</value>
+  <data name="tpSettings.Text" xml:space="preserve">
+    <value>Настройки</value>
   </data>
 </root>

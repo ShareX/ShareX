@@ -236,6 +236,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\keyboard-enter.png" />
+    <None Include="Resources\document-copy.png" />
     <None Include="Resources\openhand.cur" />
     <None Include="Resources\edit-vertical-alignment-white.png" />
     <None Include="Resources\edit-vertical-alignment-top-white.png" />
@@ -286,7 +288,6 @@
     <None Include="Resources\test_32.png" />
     <None Include="Resources\layers.png" />
     <None Include="Resources\eraser.png" />
-    <None Include="Resources\ui-radio-button-uncheck.png" />
     <None Include="Resources\layer--pencil.png" />
     <None Include="Resources\printer.png" />
     <None Include="Resources\drive-globe.png" />
@@ -294,7 +295,6 @@
     <None Include="Resources\disk-black.png" />
     <None Include="Resources\tick.png" />
     <None Include="Resources\layer-shape-polygon.png" />
-    <None Include="Resources\layer-shape-curve.png" />
     <None Include="Resources\edit-vertical-alignment.png" />
     <None Include="Resources\edit-vertical-alignment-top.png" />
     <None Include="Resources\edit-alignment-right.png" />
@@ -348,6 +348,9 @@
     <EmbeddedResource Include="Forms\CanvasSizeForm.id-ID.resx">
       <DependentUpon>CanvasSizeForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CanvasSizeForm.ja-JP.resx">
+      <DependentUpon>CanvasSizeForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\CanvasSizeForm.ko-KR.resx">
       <DependentUpon>CanvasSizeForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -390,6 +393,9 @@
     <EmbeddedResource Include="Forms\EditorStartupForm.id-ID.resx">
       <DependentUpon>EditorStartupForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EditorStartupForm.ja-JP.resx">
+      <DependentUpon>EditorStartupForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\EditorStartupForm.ko-KR.resx">
       <DependentUpon>EditorStartupForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -429,6 +435,9 @@
     <EmbeddedResource Include="Forms\FFmpegOptionsForm.it-IT.resx">
       <DependentUpon>FFmpegOptionsForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FFmpegOptionsForm.ja-JP.resx">
+      <DependentUpon>FFmpegOptionsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FFmpegOptionsForm.pt-PT.resx">
       <DependentUpon>FFmpegOptionsForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -448,6 +457,9 @@
       <DependentUpon>ImageInsertForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ImageInsertForm.id-ID.resx">
+      <DependentUpon>ImageInsertForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ImageInsertForm.ja-JP.resx">
       <DependentUpon>ImageInsertForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ImageInsertForm.ko-KR.resx">
@@ -492,6 +504,9 @@
     <EmbeddedResource Include="Forms\ImageSizeForm.id-ID.resx">
       <DependentUpon>ImageSizeForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ImageSizeForm.ja-JP.resx">
+      <DependentUpon>ImageSizeForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ImageSizeForm.pt-PT.resx">
       <DependentUpon>ImageSizeForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -523,6 +538,9 @@
       <DependentUpon>NewImageForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\NewImageForm.id-ID.resx">
+      <DependentUpon>NewImageForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\NewImageForm.ja-JP.resx">
       <DependentUpon>NewImageForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\NewImageForm.ko-KR.resx">
@@ -579,6 +597,9 @@
     <EmbeddedResource Include="Forms\ScrollingCaptureForm.it-IT.resx">
       <DependentUpon>ScrollingCaptureForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ScrollingCaptureForm.ja-JP.resx">
+      <DependentUpon>ScrollingCaptureForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ScrollingCaptureForm.ko-KR.resx">
       <DependentUpon>ScrollingCaptureForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -621,6 +642,9 @@
     <EmbeddedResource Include="Forms\StickerForm.fr.resx">
       <DependentUpon>StickerForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\StickerForm.ja-JP.resx">
+      <DependentUpon>StickerForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\StickerForm.ko-KR.resx">
       <DependentUpon>StickerForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -655,6 +679,9 @@
       <DependentUpon>StickerPackForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\StickerPackForm.fr.resx">
+      <DependentUpon>StickerPackForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\StickerPackForm.ja-JP.resx">
       <DependentUpon>StickerPackForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\StickerPackForm.ko-KR.resx">
@@ -700,6 +727,9 @@
       <DependentUpon>TextDrawingInputBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\TextDrawingInputBox.it-IT.resx">
+      <DependentUpon>TextDrawingInputBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TextDrawingInputBox.ja-JP.resx">
       <DependentUpon>TextDrawingInputBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\TextDrawingInputBox.ko-KR.resx">
@@ -748,11 +778,13 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.id-ID.resx" />
     <EmbeddedResource Include="Properties\Resources.it-IT.resx" />
+    <EmbeddedResource Include="Properties\Resources.ja-JP.resx" />
     <EmbeddedResource Include="Properties\Resources.ko-KR.resx">
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.nl-NL.resx" />
     <EmbeddedResource Include="Properties\Resources.pt-BR.resx" />
+    <EmbeddedResource Include="Properties\Resources.pt-PT.resx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

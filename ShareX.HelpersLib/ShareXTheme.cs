@@ -34,20 +34,80 @@ namespace ShareX.HelpersLib
     {
         public string Name { get; set; }
 
-        [Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
-        public Color BackgroundColor { get; set; }
+        private Color backgroundColor;
 
         [Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
-        public Color LightBackgroundColor { get; set; }
+        public Color BackgroundColor
+        {
+            get
+            {
+                return backgroundColor;
+            }
+            set
+            {
+                if (!value.IsTransparent()) backgroundColor = value;
+            }
+        }
+
+        private Color lightBackgroundColor;
 
         [Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
-        public Color DarkBackgroundColor { get; set; }
+        public Color LightBackgroundColor
+        {
+            get
+            {
+                return lightBackgroundColor;
+            }
+            set
+            {
+                if (!value.IsTransparent()) lightBackgroundColor = value;
+            }
+        }
+
+        private Color darkBackgroundColor;
 
         [Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
-        public Color TextColor { get; set; }
+        public Color DarkBackgroundColor
+        {
+            get
+            {
+                return darkBackgroundColor;
+            }
+            set
+            {
+                if (!value.IsTransparent()) darkBackgroundColor = value;
+            }
+        }
+
+        private Color textColor;
 
         [Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
-        public Color BorderColor { get; set; }
+        public Color TextColor
+        {
+            get
+            {
+                return textColor;
+            }
+            set
+            {
+                if (!value.IsTransparent()) textColor = value;
+            }
+        }
+
+        private Color borderColor;
+
+        [Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
+        public Color BorderColor
+        {
+            get
+            {
+                return borderColor;
+            }
+            set
+            {
+                if (!value.IsTransparent()) borderColor = value;
+            }
+        }
 
         [Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
         public Color CheckerColor { get; set; }
@@ -72,6 +132,8 @@ namespace ShareX.HelpersLib
         [Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
         public Color MenuCheckBackgroundColor { get; set; }
 
+        public Font ContextMenuFont { get; set; } = new Font("Segoe UI", 10);
+
         public int ContextMenuOpacity { get; set; } = 100;
 
         [Browsable(false)]
@@ -88,59 +150,57 @@ namespace ShareX.HelpersLib
 
         public ShareXTheme()
         {
+            SetDarkTheme();
         }
 
-        public static ShareXTheme GetDarkTheme()
-        { 
-            return new ShareXTheme()
-            {
-                Name = "Dark",
-                BackgroundColor = Color.FromArgb(42, 47, 56),
-                LightBackgroundColor = Color.FromArgb(52, 57, 65),
-                DarkBackgroundColor = Color.FromArgb(28, 32, 38),
-                TextColor = Color.FromArgb(235, 235, 235),
-                BorderColor = Color.FromArgb(28, 32, 38),
-                CheckerColor = Color.FromArgb(60, 60, 60),
-                CheckerColor2 = Color.FromArgb(50, 50, 50),
-                CheckerSize = 15,
-                LinkColor = Color.FromArgb(166, 212, 255),
-                MenuHighlightColor = Color.FromArgb(30, 34, 40),
-                MenuHighlightBorderColor = Color.FromArgb(116, 129, 152),
-                MenuBorderColor = Color.FromArgb(22, 26, 31),
-                MenuCheckBackgroundColor = Color.FromArgb(56, 64, 75),
-                ContextMenuOpacity = 90,
-                SeparatorLightColor = Color.FromArgb(56, 64, 75),
-                SeparatorDarkColor = Color.FromArgb(22, 26, 31)
-            };
-        }
-
-        public static ShareXTheme GetLightTheme()
+        public void SetDarkTheme()
         {
-            return new ShareXTheme()
-            {
-                Name = "Light",
-                BackgroundColor = Color.FromArgb(242, 242, 242),
-                LightBackgroundColor = Color.FromArgb(247, 247, 247),
-                DarkBackgroundColor = Color.FromArgb(235, 235, 235),
-                TextColor = Color.FromArgb(69, 69, 69),
-                BorderColor = Color.FromArgb(201, 201, 201),
-                CheckerColor = Color.FromArgb(247, 247, 247),
-                CheckerColor2 = Color.FromArgb(235, 235, 235),
-                CheckerSize = 15,
-                LinkColor = Color.FromArgb(166, 212, 255),
-                MenuHighlightColor = Color.FromArgb(247, 247, 247),
-                MenuHighlightBorderColor = Color.FromArgb(96, 143, 226),
-                MenuBorderColor = Color.FromArgb(201, 201, 201),
-                MenuCheckBackgroundColor = Color.FromArgb(225, 233, 244),
-                ContextMenuOpacity = 95,
-                SeparatorLightColor = Color.FromArgb(253, 253, 253),
-                SeparatorDarkColor = Color.FromArgb(189, 189, 189)
-            };
+            Name = "Dark";
+            BackgroundColor = Color.FromArgb(42, 47, 56);
+            LightBackgroundColor = Color.FromArgb(52, 57, 65);
+            DarkBackgroundColor = Color.FromArgb(28, 32, 38);
+            TextColor = Color.FromArgb(235, 235, 235);
+            BorderColor = Color.FromArgb(28, 32, 38);
+            CheckerColor = Color.FromArgb(60, 60, 60);
+            CheckerColor2 = Color.FromArgb(50, 50, 50);
+            CheckerSize = 15;
+            LinkColor = Color.FromArgb(166, 212, 255);
+            MenuHighlightColor = Color.FromArgb(30, 34, 40);
+            MenuHighlightBorderColor = Color.FromArgb(116, 129, 152);
+            MenuBorderColor = Color.FromArgb(22, 26, 31);
+            MenuCheckBackgroundColor = Color.FromArgb(56, 64, 75);
+            ContextMenuOpacity = 100;
+            SeparatorLightColor = Color.FromArgb(56, 64, 75);
+            SeparatorDarkColor = Color.FromArgb(22, 26, 31);
+        }
+
+        public void SetLightTheme()
+        {
+            Name = "Light";
+            BackgroundColor = Color.FromArgb(242, 242, 242);
+            LightBackgroundColor = Color.FromArgb(247, 247, 247);
+            DarkBackgroundColor = Color.FromArgb(235, 235, 235);
+            TextColor = Color.FromArgb(69, 69, 69);
+            BorderColor = Color.FromArgb(201, 201, 201);
+            CheckerColor = Color.FromArgb(247, 247, 247);
+            CheckerColor2 = Color.FromArgb(235, 235, 235);
+            CheckerSize = 15;
+            LinkColor = Color.FromArgb(166, 212, 255);
+            MenuHighlightColor = Color.FromArgb(247, 247, 247);
+            MenuHighlightBorderColor = Color.FromArgb(96, 143, 226);
+            MenuBorderColor = Color.FromArgb(201, 201, 201);
+            MenuCheckBackgroundColor = Color.FromArgb(225, 233, 244);
+            ContextMenuOpacity = 100;
+            SeparatorLightColor = Color.FromArgb(253, 253, 253);
+            SeparatorDarkColor = Color.FromArgb(189, 189, 189);
         }
 
         public static List<ShareXTheme> GetPresets()
         {
-            return new List<ShareXTheme>() { GetDarkTheme(), GetLightTheme() };
+            ShareXTheme darkTheme = new ShareXTheme();
+            ShareXTheme lightTheme = new ShareXTheme();
+            lightTheme.SetLightTheme();
+            return new List<ShareXTheme>() { darkTheme, lightTheme };
         }
 
         public override string ToString()

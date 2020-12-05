@@ -189,28 +189,7 @@
   <data name="HistoryItemManager_InitializeComponent_URL" xml:space="preserve">
     <value>Link</value>
   </data>
-  <data name="HistoryItemManager_UpdateTexts_HTML_link___0__" xml:space="preserve">
-    <value>HTML link ({0})</value>
-  </data>
-  <data name="HistoryItemManager_UpdateTexts_URLs___0__" xml:space="preserve">
-    <value>Links ({0})</value>
-  </data>
-  <data name="ObjectListView_ObjectListView_Copy_name" xml:space="preserve">
-    <value>Kopieer naam</value>
-  </data>
-  <data name="ObjectListView_ObjectListView_Copy_value" xml:space="preserve">
-    <value>Kopieer waarde</value>
-  </data>
-  <data name="ObjectListView_ObjectListView_Name" xml:space="preserve">
-    <value>Naam</value>
-  </data>
-  <data name="ObjectListView_ObjectListView_Value" xml:space="preserve">
-    <value>Waarde</value>
-  </data>
   <data name="HistoryManager_GetHistoryItems_Error" xml:space="preserve">
     <value>Fout</value>
-  </data>
-  <data name="HistoryManager_GetHistoryItems_Error_occured_while_reading_XML_file___0_" xml:space="preserve">
-    <value>Er trad een fout op tijdens het lezen van een XML bestand: {0}</value>
   </data>
 </root>

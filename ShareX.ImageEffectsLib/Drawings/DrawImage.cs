@@ -29,6 +29,7 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Design;
 using System.Drawing.Drawing2D;
+using System.Drawing.Imaging;
 using System.IO;
 
 namespace ShareX.ImageEffectsLib
@@ -39,10 +40,10 @@ namespace ShareX.ImageEffectsLib
         [DefaultValue(""), Editor(typeof(ImageFileNameEditor), typeof(UITypeEditor))]
         public string ImageLocation { get; set; }
 
-        [DefaultValue(ContentAlignment.BottomRight), TypeConverter(typeof(EnumProperNameConverter))]
+        [DefaultValue(ContentAlignment.TopLeft), TypeConverter(typeof(EnumProperNameConverter))]
         public ContentAlignment Placement { get; set; }
 
-        [DefaultValue(typeof(Point), "5, 5")]
+        [DefaultValue(typeof(Point), "0, 0")]
         public Point Offset { get; set; }
 
         [DefaultValue(DrawImageSizeMode.DontResize), Description("How the image watermark should be rescaled, if at all."), TypeConverter(typeof(EnumDescriptionConverter))]
@@ -51,14 +52,32 @@ namespace ShareX.ImageEffectsLib
         [DefaultValue(typeof(Size), "0, 0")]
         public Size Size { get; set; }
 
+        [DefaultValue(false)]
+        public bool Tile { get; set; }
+
+        [DefaultValue(false), Description("If image watermark size bigger than source image then don't draw it.")]
+        public bool AutoHide { get; set; }
+
         [DefaultValue(ImageInterpolationMode.HighQualityBicubic), TypeConverter(typeof(EnumProperNameConverter))]
         public ImageInterpolationMode InterpolationMode { get; set; }
 
         [DefaultValue(CompositingMode.SourceOver), TypeConverter(typeof(EnumProperNameConverter))]
         public CompositingMode CompositingMode { get; set; }
 
-        [DefaultValue(false), Description("If image watermark size bigger than source image then don't draw it.")]
-        public bool AutoHide { get; set; }
+        private int opacity;
+
+        [DefaultValue(100)]
+        public int Opacity
+        {
+            get
+            {
+                return opacity;
+            }
+            set
+            {
+                opacity = value.Clamp(0, 100);
+            }
+        }
 
         public DrawImage()
         {
@@ -67,7 +86,7 @@ namespace ShareX.ImageEffectsLib
 
         public override Bitmap Apply(Bitmap bmp)
         {
-            if (SizeMode != DrawImageSizeMode.DontResize && Size.Width <= 0 && Size.Height <= 0)
+            if (Opacity < 1 || (SizeMode != DrawImageSizeMode.DontResize && Size.Width <= 0 && Size.Height <= 0))
             {
                 return bmp;
             }
@@ -84,7 +103,9 @@ namespace ShareX.ImageEffectsLib
 
                         if (SizeMode == DrawImageSizeMode.AbsoluteSize)
                         {
-                            imageSize = ImageHelpers.ApplyAspectRatio(Size, bmpWatermark);
+                            int width = Size.Width == -1 ? bmp.Width : Size.Width;
+                            int height = Size.Height == -1 ? bmp.Height : Size.Height;
+                            imageSize = ImageHelpers.ApplyAspectRatio(width, height, bmpWatermark);
                         }
                         else if (SizeMode == DrawImageSizeMode.PercentageOfWatermark)
                         {
@@ -116,7 +137,28 @@ namespace ShareX.ImageEffectsLib
                             g.InterpolationMode = ImageHelpers.GetInterpolationMode(InterpolationMode);
                             g.PixelOffsetMode = PixelOffsetMode.Half;
                             g.CompositingMode = CompositingMode;
-                            g.DrawImage(bmpWatermark, imageRectangle);
+
+                            if (Tile)
+                            {
+                                using (TextureBrush brush = new TextureBrush(bmpWatermark, WrapMode.Tile))
+                                {
+                                    brush.TranslateTransform(imageRectangle.X, imageRectangle.Y);
+                                    g.FillRectangle(brush, imageRectangle);
+                                }
+                            }
+                            else if (Opacity < 100)
+                            {
+                                using (ImageAttributes ia = new ImageAttributes())
+                                {
+                                    ColorMatrix matrix = ColorMatrixManager.Alpha(Opacity / 100f);
+                                    ia.SetColorMatrix(matrix, ColorMatrixFlag.Default, ColorAdjustType.Bitmap);
+                                    g.DrawImage(bmpWatermark, imageRectangle, 0, 0, bmpWatermark.Width, bmpWatermark.Height, GraphicsUnit.Pixel, ia);
+                                }
+                            }
+                            else
+                            {
+                                g.DrawImage(bmpWatermark, imageRectangle);
+                            }
                         }
                     }
                 }

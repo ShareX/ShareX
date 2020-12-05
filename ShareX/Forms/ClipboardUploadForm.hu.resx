@@ -123,9 +123,6 @@
   <data name="btnCancel.Text" xml:space="preserve">
     <value>&amp;Mégsem</value>
   </data>
-  <data name="btnOK.Text" xml:space="preserve">
-    <value>&amp;OK</value>
-  </data>
   <data name="cbDontShowThisWindow.Text" xml:space="preserve">
     <value>Ne mutassa ezt az ablakot</value>
   </data>

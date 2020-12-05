@@ -151,7 +151,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnAdd.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>13</value>
   </data>
   <data name="btnRemove.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -178,7 +178,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnRemove.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>12</value>
   </data>
   <data name="nudLocation.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 144</value>
@@ -187,7 +187,7 @@
     <value>112, 20</value>
   </data>
   <data name="nudLocation.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="nudLocation.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
     <value>Center</value>
@@ -202,7 +202,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;nudLocation.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>11</value>
   </data>
   <data name="lblLocation.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -217,7 +217,7 @@
     <value>51, 13</value>
   </data>
   <data name="lblLocation.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="lblLocation.Text" xml:space="preserve">
     <value>Location:</value>
@@ -232,7 +232,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblLocation.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>10</value>
   </data>
   <data name="cbGradientType.Location" type="System.Drawing.Point, System.Drawing">
     <value>88, 176</value>
@@ -241,7 +241,7 @@
     <value>120, 21</value>
   </data>
   <data name="cbGradientType.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
+    <value>11</value>
   </data>
   <data name="&gt;&gt;cbGradientType.Name" xml:space="preserve">
     <value>cbGradientType</value>
@@ -253,7 +253,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;cbGradientType.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="lblGradientType.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -268,7 +268,7 @@
     <value>73, 13</value>
   </data>
   <data name="lblGradientType.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
+    <value>10</value>
   </data>
   <data name="lblGradientType.Text" xml:space="preserve">
     <value>Gradient type:</value>
@@ -283,7 +283,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblGradientType.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="btnOK.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -310,7 +310,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnOK.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="btnCancel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -337,7 +337,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnCancel.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="pbPreview.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -361,7 +361,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;pbPreview.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="lblPreview.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -376,7 +376,7 @@
     <value>48, 13</value>
   </data>
   <data name="lblPreview.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
+    <value>12</value>
   </data>
   <data name="lblPreview.Text" xml:space="preserve">
     <value>Preview:</value>
@@ -391,19 +391,19 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblPreview.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="btnReverse.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="btnReverse.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 56</value>
+    <value>8, 80</value>
   </data>
   <data name="btnReverse.Size" type="System.Drawing.Size, System.Drawing">
     <value>112, 23</value>
   </data>
   <data name="btnReverse.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="btnReverse.Text" xml:space="preserve">
     <value>Reverse</value>
@@ -418,7 +418,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnReverse.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="lblPresets.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -448,7 +448,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblPresets.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <metadata name="ilPresets.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>109, 17</value>
@@ -481,19 +481,46 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lvPresets.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="btnClear.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnClear.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 56</value>
+  </data>
+  <data name="btnClear.Size" type="System.Drawing.Size, System.Drawing">
+    <value>112, 23</value>
+  </data>
+  <data name="btnClear.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="btnClear.Text" xml:space="preserve">
+    <value>Clear</value>
+  </data>
+  <data name="&gt;&gt;btnClear.Name" xml:space="preserve">
+    <value>btnClear</value>
+  </data>
+  <data name="&gt;&gt;btnClear.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnClear.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnClear.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="cbtnCurrentColor.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="cbtnCurrentColor.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 96</value>
+    <value>8, 104</value>
   </data>
   <data name="cbtnCurrentColor.Size" type="System.Drawing.Size, System.Drawing">
-    <value>112, 24</value>
+    <value>112, 23</value>
   </data>
   <data name="cbtnCurrentColor.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="cbtnCurrentColor.Text" xml:space="preserve">
     <value>Color</value>
@@ -502,13 +529,13 @@
     <value>cbtnCurrentColor</value>
   </data>
   <data name="&gt;&gt;cbtnCurrentColor.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.ColorButton, ShareX.HelpersLib, Version=13.1.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.ColorButton, ShareX.HelpersLib, Version=13.2.2.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;cbtnCurrentColor.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
   <data name="&gt;&gt;cbtnCurrentColor.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>14</value>
   </data>
   <data name="chLocation.Text" xml:space="preserve">
     <value>Location</value>
@@ -523,19 +550,19 @@
     <value>80, 160</value>
   </data>
   <data name="lvGradientPoints.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="&gt;&gt;lvGradientPoints.Name" xml:space="preserve">
     <value>lvGradientPoints</value>
   </data>
   <data name="&gt;&gt;lvGradientPoints.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=13.1.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=13.2.2.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lvGradientPoints.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lvGradientPoints.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>15</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -545,6 +572,9 @@
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>360, 311</value>
+  </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>

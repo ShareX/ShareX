@@ -44,8 +44,8 @@ namespace ShareX.HelpersLib
     {
         public static void ForEach<T>(this IEnumerable<T> source, Action<T> action)
         {
-            if (source == null) throw new ArgumentNullException("source");
-            if (action == null) throw new ArgumentNullException("action");
+            if (source == null) throw new ArgumentNullException(nameof(source));
+            if (action == null) throw new ArgumentNullException(nameof(action));
 
             foreach (T item in source)
             {
@@ -272,7 +272,7 @@ namespace ShareX.HelpersLib
                     tsmiRedo.Enabled = !rtb.ReadOnly && rtb.CanRedo;
                     tsmiCut.Enabled = !rtb.ReadOnly && rtb.SelectionLength > 0;
                     tsmiCopy.Enabled = rtb.SelectionLength > 0;
-                    tsmiPaste.Enabled = !rtb.ReadOnly && Clipboard.ContainsText();
+                    tsmiPaste.Enabled = !rtb.ReadOnly && ClipboardHelpers.ContainsText();
                     tsmiDelete.Enabled = !rtb.ReadOnly && rtb.SelectionLength > 0;
                     tsmiSelectAll.Enabled = rtb.TextLength > 0 && rtb.SelectionLength < rtb.TextLength;
                 };
@@ -566,7 +566,13 @@ namespace ShareX.HelpersLib
 
         public static void DisableMenuCloseOnClick(this ToolStripDropDownItem tsddi)
         {
-            tsddi.DropDown.Closing += (sender, e) => e.Cancel = e.CloseReason == ToolStripDropDownCloseReason.ItemClicked;
+            tsddi.DropDown.Closing -= DisableMenuCloseOnClick_DropDown_Closing;
+            tsddi.DropDown.Closing += DisableMenuCloseOnClick_DropDown_Closing;
+        }
+
+        private static void DisableMenuCloseOnClick_DropDown_Closing(object sender, ToolStripDropDownClosingEventArgs e)
+        {
+            e.Cancel = e.CloseReason == ToolStripDropDownCloseReason.ItemClicked;
         }
 
         public static void SetValue(this NumericUpDown nud, decimal number)
@@ -832,6 +838,11 @@ namespace ShareX.HelpersLib
                     yield return child;
                 }
             }
+        }
+
+        public static bool IsTransparent(this Color color)
+        {
+            return color.A < 255;
         }
     }
 }

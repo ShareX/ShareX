@@ -119,20 +119,8 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - 圖片效果</value>
   </data>
-  <data name="btnAdd.Text" xml:space="preserve">
-    <value>新增</value>
-  </data>
-  <data name="btnClear.Text" xml:space="preserve">
-    <value>清除</value>
-  </data>
-  <data name="btnDuplicate.Text" xml:space="preserve">
-    <value>複製</value>
-  </data>
   <data name="btnOK.Text" xml:space="preserve">
     <value>確定</value>
-  </data>
-  <data name="btnRemove.Text" xml:space="preserve">
-    <value>移除</value>
   </data>
   <data name="btnSaveImage.Text" xml:space="preserve">
     <value>儲存圖片...</value>
@@ -146,17 +134,8 @@
   <data name="tsmiLoadImageFromClipboard.Text" xml:space="preserve">
     <value>從剪貼簿</value>
   </data>
-  <data name="btnAddPreset.Text" xml:space="preserve">
-    <value>新預設</value>
-  </data>
   <data name="btnClose.Text" xml:space="preserve">
     <value>關閉</value>
-  </data>
-  <data name="btnRefresh.Text" xml:space="preserve">
-    <value>重新整理</value>
-  </data>
-  <data name="btnRemovePreset.Text" xml:space="preserve">
-    <value>移除預設</value>
   </data>
   <data name="btnUploadImage.Text" xml:space="preserve">
     <value>上傳圖片</value>

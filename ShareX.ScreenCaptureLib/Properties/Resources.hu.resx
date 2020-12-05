@@ -117,9 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="FFmpegHelper_Record_FFmpeg_error" xml:space="preserve">
-    <value>FFmpeg hiba</value>
-  </data>
   <data name="FFmpegOptionsForm_buttonFFmpegBrowse_Click_Browse_for_ffmpeg_exe" xml:space="preserve">
     <value>Tallózd be az ffmpeg.exe fájlt</value>
   </data>

@@ -57,10 +57,10 @@
             this.pgSettings = new System.Windows.Forms.PropertyGrid();
             this.pbResult = new ShareX.HelpersLib.MyPictureBox();
             this.mbLoadImage = new ShareX.HelpersLib.MenuButton();
-            this.eiImageEffects = new ShareX.HelpersLib.ExportImportControl();
             this.lvEffects = new ShareX.HelpersLib.MyListView();
             this.chEffect = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lblEffect = new System.Windows.Forms.Label();
+            this.btnImageEffects = new System.Windows.Forms.Button();
             this.cmsLoadImage.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -278,16 +278,6 @@
             this.mbLoadImage.Name = "mbLoadImage";
             this.mbLoadImage.UseVisualStyleBackColor = true;
             // 
-            // eiImageEffects
-            // 
-            resources.ApplyResources(this.eiImageEffects, "eiImageEffects");
-            this.eiImageEffects.DefaultFileName = null;
-            this.eiImageEffects.Name = "eiImageEffects";
-            this.eiImageEffects.ObjectType = null;
-            this.eiImageEffects.SerializationBinder = null;
-            this.eiImageEffects.ExportRequested += new ShareX.HelpersLib.ExportImportControl.ExportEventHandler(this.eiImageEffects_ExportRequested);
-            this.eiImageEffects.ImportRequested += new ShareX.HelpersLib.ExportImportControl.ImportEventHandler(this.eiImageEffects_ImportRequested);
-            // 
             // lvEffects
             // 
             this.lvEffects.AllowDrop = true;
@@ -319,12 +309,21 @@
             resources.ApplyResources(this.lblEffect, "lblEffect");
             this.lblEffect.Name = "lblEffect";
             // 
+            // btnImageEffects
+            // 
+            resources.ApplyResources(this.btnImageEffects, "btnImageEffects");
+            this.btnImageEffects.Name = "btnImageEffects";
+            this.btnImageEffects.UseVisualStyleBackColor = true;
+            this.btnImageEffects.Click += new System.EventHandler(this.btnImageEffects_Click);
+            // 
             // ImageEffectsForm
             // 
+            this.AllowDrop = true;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.CancelButton = this.btnClose;
+            this.Controls.Add(this.btnImageEffects);
             this.Controls.Add(this.lblEffect);
             this.Controls.Add(this.pbResult);
             this.Controls.Add(this.pgSettings);
@@ -346,12 +345,13 @@
             this.Controls.Add(this.txtPresetName);
             this.Controls.Add(this.lblPresetName);
             this.Controls.Add(this.mbLoadImage);
-            this.Controls.Add(this.eiImageEffects);
             this.Controls.Add(this.btnSaveImage);
             this.Controls.Add(this.lvEffects);
             this.Name = "ImageEffectsForm";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Shown += new System.EventHandler(this.ImageEffectsForm_Shown);
+            this.DragDrop += new System.Windows.Forms.DragEventHandler(this.ImageEffectsForm_DragDrop);
+            this.DragEnter += new System.Windows.Forms.DragEventHandler(this.ImageEffectsForm_DragEnter);
             this.cmsLoadImage.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -365,7 +365,6 @@
         private System.Windows.Forms.ColumnHeader chEffect;
         private ShareX.HelpersLib.MyPictureBox pbResult;
         private System.Windows.Forms.Button btnSaveImage;
-        private ShareX.HelpersLib.ExportImportControl eiImageEffects;
         private System.Windows.Forms.ContextMenuStrip cmsEffects;
         private HelpersLib.MenuButton mbLoadImage;
         private System.Windows.Forms.ContextMenuStrip cmsLoadImage;
@@ -391,6 +390,7 @@
         private System.Windows.Forms.ColumnHeader chPreset;
         private System.Windows.Forms.ToolTip ttMain;
         private System.Windows.Forms.Label lblEffect;
+        private System.Windows.Forms.Button btnImageEffects;
     }
 }
 

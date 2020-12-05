@@ -126,9 +126,6 @@
   <data name="btnStartHashCheck.Text" xml:space="preserve">
     <value>Старт</value>
   </data>
-  <data name="lblFile.Text" xml:space="preserve">
-    <value>Путь к файлу:</value>
-  </data>
   <data name="lblHashType.Text" xml:space="preserve">
     <value>Тип хеша:</value>
   </data>
@@ -176,5 +173,17 @@
   </data>
   <data name="tpTextConversions.Text" xml:space="preserve">
     <value>Преобразования текста</value>
+  </data>
+  <data name="cbCompareTwoFiles.Text" xml:space="preserve">
+    <value>Сравнить два файла</value>
+  </data>
+  <data name="lblFilePath.Text" xml:space="preserve">
+    <value>Путь к файлу:</value>
+  </data>
+  <data name="lblFilePath2.Text" xml:space="preserve">
+    <value>Путь к файлу:</value>
+  </data>
+  <data name="btnFilePathBrowse2.Text" xml:space="preserve">
+    <value>Обзор...</value>
   </data>
 </root>

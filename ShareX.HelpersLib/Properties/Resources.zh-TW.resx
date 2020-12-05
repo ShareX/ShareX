@@ -128,18 +128,6 @@
   <data name="Stop" xml:space="preserve">
     <value>停止</value>
   </data>
-  <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__Image__Size___0_x_1__" xml:space="preserve">
-    <value>剪貼簿中的內容：圖片（尺寸: {0} x {1}）</value>
-  </data>
-  <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__Text__Length___0__" xml:space="preserve">
-    <value>剪貼簿中的內容：文字（長度: {0}）</value>
-  </data>
-  <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__File__Count___0__" xml:space="preserve">
-    <value>剪貼簿中的內容：檔案（數量: {0}）</value>
-  </data>
-  <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_is_empty_or_contains_unknown_data_" xml:space="preserve">
-    <value>剪貼簿為空或包含未知資料</value>
-  </data>
   <data name="PrintTextForm_LoadSettings_Name___0___Size___1_" xml:space="preserve">
     <value>名稱: {0}，大小: {1}</value>
   </data>
@@ -1058,12 +1046,6 @@
   </data>
   <data name="PNGBitDepth_Default" xml:space="preserve">
     <value>預設</value>
-  </data>
-  <data name="ImageEditorInterpolationMode_HighQualityBicubic" xml:space="preserve">
-    <value>高品質 Bicubic</value>
-  </data>
-  <data name="ImageEditorInterpolationMode_HighQualityBilinear" xml:space="preserve">
-    <value>高品質 Bilinear</value>
   </data>
   <data name="ImageEditorStartMode_AutoSize" xml:space="preserve">
     <value>自動尺寸</value>

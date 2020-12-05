@@ -846,4 +846,16 @@
   <data name="tsmiTrayImageSplitter.Text" xml:space="preserve">
     <value>Découpeur d'image...</value>
   </data>
+  <data name="tsmiAddImageEffects.Text" xml:space="preserve">
+    <value>Ajouter des effets d'image...</value>
+  </data>
+  <data name="tsmiClipboardViewer.Text" xml:space="preserve">
+    <value>Visionneuse de presse-papier...</value>
+  </data>
+  <data name="tsmiTrayClipboardViewer.Text" xml:space="preserve">
+    <value>Visionneuse de presse-papier...</value>
+  </data>
+  <data name="tsmiRestartAsAdmin.Text" xml:space="preserve">
+    <value>Redémarrer ShareX en tant qu'administrateur</value>
+  </data>
 </root>

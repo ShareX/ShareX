@@ -135,4 +135,7 @@
   <data name="btnIndexFolder.Text" xml:space="preserve">
     <value>Indexer le dossier sélectionné</value>
   </data>
+  <data name="btnSaveAs.Text" xml:space="preserve">
+    <value>Enregistrer sous et fermer cette fenêtre...</value>
+  </data>
 </root>

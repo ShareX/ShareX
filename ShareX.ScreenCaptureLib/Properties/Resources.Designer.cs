@@ -241,6 +241,16 @@ namespace ShareX.ScreenCaptureLib.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap document_copy {
+            get {
+                object obj = ResourceManager.GetObject("document_copy", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap drive_globe {
             get {
                 object obj = ResourceManager.GetObject("drive_globe", resourceCulture);
@@ -254,6 +264,15 @@ namespace ShareX.ScreenCaptureLib.Properties {
         internal static string DropShadowColor {
             get {
                 return ResourceManager.GetString("DropShadowColor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Duplicate.
+        /// </summary>
+        internal static string Duplicate {
+            get {
+                return ResourceManager.GetString("Duplicate", resourceCulture);
             }
         }
         
@@ -693,11 +712,57 @@ namespace ShareX.ScreenCaptureLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Image copied.
+        /// </summary>
+        internal static string ImageCopied {
+            get {
+                return ResourceManager.GetString("ImageCopied", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Add image effects....
         /// </summary>
         internal static string ImageEffects {
             get {
                 return ResourceManager.GetString("ImageEffects", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Image saved.
+        /// </summary>
+        internal static string ImageSaved {
+            get {
+                return ResourceManager.GetString("ImageSaved", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Image saved.
+        /// </summary>
+        internal static string ImageSavedAs {
+            get {
+                return ResourceManager.GetString("ImageSavedAs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Image uploading.
+        /// </summary>
+        internal static string ImageUploading {
+            get {
+                return ResourceManager.GetString("ImageUploading", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap keyboard_enter {
+            get {
+                object obj = ResourceManager.GetObject("keyboard-enter", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -991,6 +1056,15 @@ namespace ShareX.ScreenCaptureLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Lock menu.
+        /// </summary>
+        internal static string LockMenu {
+            get {
+                return ResourceManager.GetString("LockMenu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap magnifier_zoom {
@@ -1006,6 +1080,15 @@ namespace ShareX.ScreenCaptureLib.Properties {
         internal static string MagnifyStrength {
             get {
                 return ResourceManager.GetString("MagnifyStrength", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Menu icon size:.
+        /// </summary>
+        internal static string MenuIconSize {
+            get {
+                return ResourceManager.GetString("MenuIconSize", resourceCulture);
             }
         }
         
@@ -1036,6 +1119,24 @@ namespace ShareX.ScreenCaptureLib.Properties {
             get {
                 object obj = ResourceManager.GetObject("monitor_window", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to New line: Ctrl + Enter, OK: Enter.
+        /// </summary>
+        internal static string NewLineCtrlEnterOKEnter {
+            get {
+                return ResourceManager.GetString("NewLineCtrlEnterOKEnter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to New line: Enter, OK: Ctrl + Enter.
+        /// </summary>
+        internal static string NewLineEnterOKCtrlEnter {
+            get {
+                return ResourceManager.GetString("NewLineEnterOKCtrlEnter", resourceCulture);
             }
         }
         
@@ -1172,11 +1273,11 @@ namespace ShareX.ScreenCaptureLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Arrows on both ends.
+        ///   Looks up a localized string similar to Arrow head direction:.
         /// </summary>
-        internal static string ShapeManager_ArrowsOnBothEnds {
+        internal static string ShapeManager_ArrowHeadDirection {
             get {
-                return ResourceManager.GetString("ShapeManager_ArrowsOnBothEnds", resourceCulture);
+                return ResourceManager.GetString("ShapeManager_ArrowHeadDirection", resourceCulture);
             }
         }
         
@@ -1883,16 +1984,6 @@ namespace ShareX.ScreenCaptureLib.Properties {
         internal static System.Drawing.Bitmap tick {
             get {
                 object obj = ResourceManager.GetObject("tick", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap ui_radio_button_uncheck {
-            get {
-                object obj = ResourceManager.GetObject("ui_radio_button_uncheck", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

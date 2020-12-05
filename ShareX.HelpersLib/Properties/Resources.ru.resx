@@ -132,18 +132,6 @@
   <data name="Stop" xml:space="preserve">
     <value>Стоп</value>
   </data>
-  <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__Image__Size___0_x_1__" xml:space="preserve">
-    <value>Содержимое буфера: Изображение (Размер: {0} x {1} точек)</value>
-  </data>
-  <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__Text__Length___0__" xml:space="preserve">
-    <value>Содержимое буфера: Текст (Символов: {0})</value>
-  </data>
-  <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__File__Count___0__" xml:space="preserve">
-    <value>Содержимое буфера: Файл(ы) (Количество: {0} шт.)</value>
-  </data>
-  <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_is_empty_or_contains_unknown_data_" xml:space="preserve">
-    <value>Буфер пуст либо содержит неизвестную информацию.</value>
-  </data>
   <data name="PrintTextForm_LoadSettings_Name___0___Size___1_" xml:space="preserve">
     <value>Имя: {0}, Размер: {1}</value>
   </data>
@@ -396,7 +384,7 @@
     <value>Пользовательский сервис коротких ссылок</value>
   </data>
   <data name="AfterCaptureTasks_AddImageEffects" xml:space="preserve">
-    <value>Добавить эффекты/водяной знак</value>
+    <value>Добавить эффекты изображений</value>
   </data>
   <data name="AfterCaptureTasks_AnnotateImage" xml:space="preserve">
     <value>Открыть в редакторе изображений</value>
@@ -420,7 +408,7 @@
     <value>Сохранить изображение в файл</value>
   </data>
   <data name="AfterCaptureTasks_SaveImageToFileWithDialog" xml:space="preserve">
-    <value>Сохранить изображение в файл как…</value>
+    <value>Сохранить изображение в файл как...</value>
   </data>
   <data name="AfterCaptureTasks_ShowInExplorer" xml:space="preserve">
     <value>Показать файл в проводнике</value>
@@ -652,16 +640,16 @@
     <value>Другие</value>
   </data>
   <data name="ReplCodeMenuEntry_ia_Auto_increment_alphanumeric" xml:space="preserve">
-    <value>Алфавитно-цифровой счетчик. Нули слева, {n} задает длину.</value>
+    <value>Алфавитно-цифровой счетчик. Нули слева, {n} задает длину</value>
   </data>
   <data name="ReplCodeMenuEntry_ix_Auto_increment_hexadecimal" xml:space="preserve">
-    <value>Шестнадцатеричный счетчик. Нули слева, {n} задает длину.</value>
+    <value>Шестнадцатеричный счетчик. Нули слева, {n} задает длину</value>
   </data>
   <data name="ReplCodeMenuEntry_rx_Random_hexadecimal" xml:space="preserve">
     <value>Случайный шестнадцатеричный символ. Повторение задается через {n}</value>
   </data>
   <data name="ReplCodeMenuEntry_iAa_Auto_increment_alphanumeric_all" xml:space="preserve">
-    <value>Алфавитно-цифровой счетчик с учетом регистра. Нули слева, {n} задает длину.</value>
+    <value>Алфавитно-цифровой счетчик с учетом регистра. Нули слева, {n} задает длину</value>
   </data>
   <data name="ReplCodeMenuEntry_ib_Auto_increment_base_alphanumeric" xml:space="preserve">
     <value>Счетчик, прибавляющий базовое алфавитно-цифровое {n} (1 &lt; n &lt; 63)</value>
@@ -788,7 +776,7 @@
     <value>Текущий год (2 цифры)</value>
   </data>
   <data name="ReplCodeMenuEntry_i_Auto_increment_number" xml:space="preserve">
-    <value>Числовой счетчик. Нули слева, {n} задает длину.</value>
+    <value>Числовой счетчик. Нули слева, {n} задает длину</value>
   </data>
   <data name="ReplCodeMenuEntry_w_Current_week_name__Local_language_" xml:space="preserve">
     <value>Текущий день недели (Местный язык)</value>
@@ -932,7 +920,7 @@
     <value>Отправить сообщение "scroll top"</value>
   </data>
   <data name="ScrollingCaptureScrollMethod_SendMessageScroll" xml:space="preserve">
-    <value>Отправить окну или элементу сообщение "scroll"</value>
+    <value>Отправлять окну или элементу сообщение "scroll"</value>
   </data>
   <data name="RegionCaptureAction_None" xml:space="preserve">
     <value>Ничего не делать</value>
@@ -1105,21 +1093,6 @@
   <data name="ImageEditorStartMode_AutoSize" xml:space="preserve">
     <value>Авторазмер</value>
   </data>
-  <data name="ImageEditorInterpolationMode_NearestNeighbor" xml:space="preserve">
-    <value>Ступенчатая</value>
-  </data>
-  <data name="ImageEditorInterpolationMode_Bicubic" xml:space="preserve">
-    <value>Бикубическая</value>
-  </data>
-  <data name="ImageEditorInterpolationMode_HighQualityBicubic" xml:space="preserve">
-    <value>Бикубическая (высококачественная)</value>
-  </data>
-  <data name="ImageEditorInterpolationMode_HighQualityBilinear" xml:space="preserve">
-    <value>Билинейная (высококачественная)</value>
-  </data>
-  <data name="ImageEditorInterpolationMode_Bilinear" xml:space="preserve">
-    <value>Билинейная</value>
-  </data>
   <data name="ShapeType_DrawingSticker" xml:space="preserve">
     <value>Рисование: Стикер</value>
   </data>
@@ -1185,5 +1158,53 @@
   </data>
   <data name="ObjectListView_ObjectListView_Name" xml:space="preserve">
     <value>Имя</value>
+  </data>
+  <data name="DrawImageSizeMode_PercentageOfCanvas" xml:space="preserve">
+    <value>Процент полотна</value>
+  </data>
+  <data name="DrawImageSizeMode_PercentageOfWatermark" xml:space="preserve">
+    <value>Процент изображения</value>
+  </data>
+  <data name="ShapeType_DrawingSmartEraser" xml:space="preserve">
+    <value>Умный ластик</value>
+  </data>
+  <data name="HotkeyType_VideoConverter" xml:space="preserve">
+    <value>Конвертер видео</value>
+  </data>
+  <data name="DrawImageSizeMode_AbsoluteSize" xml:space="preserve">
+    <value>Абсолютный размер</value>
+  </data>
+  <data name="DrawImageSizeMode_DontResize" xml:space="preserve">
+    <value>Не масштабировать</value>
+  </data>
+  <data name="HotkeyType_ImageSplitter" xml:space="preserve">
+    <value>Разделитель изображений</value>
+  </data>
+  <data name="HotkeyType_ImageThumbnailer" xml:space="preserve">
+    <value>Миниатюры изображений</value>
+  </data>
+  <data name="ResultOfFirstFile" xml:space="preserve">
+    <value>Результат первого файла:</value>
+  </data>
+  <data name="ResultOfSecondFile" xml:space="preserve">
+    <value>Результат второго файла:</value>
+  </data>
+  <data name="Result" xml:space="preserve">
+    <value>Результат:</value>
+  </data>
+  <data name="Target" xml:space="preserve">
+    <value>Цель:</value>
+  </data>
+  <data name="HotkeyType_QRCodeDecodeFromScreen" xml:space="preserve">
+    <value>QR код (Считать с экрана)</value>
+  </data>
+  <data name="ArrowHeadDirection_End" xml:space="preserve">
+    <value>Конец</value>
+  </data>
+  <data name="ArrowHeadDirection_Start" xml:space="preserve">
+    <value>Начало</value>
+  </data>
+  <data name="ArrowHeadDirection_Both" xml:space="preserve">
+    <value>Оба</value>
   </data>
 </root>

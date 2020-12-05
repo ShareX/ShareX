@@ -303,7 +303,7 @@ namespace ShareX.Setup
                 SetupHelpers.CopyFile(Path.Combine(NativeMessagingHostDir, "ShareX_NativeMessagingHost.exe"), destination);
             }
 
-            string[] languages = new string[] { "de", "es", "es-MX", "fa-IR", "fr", "hu", "id-ID", "it-IT", "ko-KR", "nl-NL", "pt-BR", "pt-PT", "ru", "tr", "uk", "vi-VN", "zh-CN", "zh-TW" };
+            string[] languages = new string[] { "de", "es", "es-MX", "fa-IR", "fr", "hu", "id-ID", "it-IT", "ja-JP", "ko-KR", "nl-NL", "pt-BR", "pt-PT", "ru", "tr", "uk", "vi-VN", "zh-CN", "zh-TW" };
 
             foreach (string language in languages)
             {
@@ -341,8 +341,8 @@ namespace ShareX.Setup
             {
                 if (!File.Exists(FFmpeg32bit))
                 {
-                    string filename = SetupHelpers.DownloadFile("https://ffmpeg.zeranoe.com/builds/win32/static/ffmpeg-4.3.1-win32-static.zip");
-                    ZipManager.Extract(filename, ".", false, entry => entry.Name.Equals("ffmpeg.exe", StringComparison.OrdinalIgnoreCase), 1_000_000_000);
+                    string filePath = SetupHelpers.DownloadFile("https://github.com/ShareX/FFmpeg/releases/download/v4.3.1/ffmpeg-4.3.1-win32.zip");
+                    ZipManager.Extract(filePath, ".", false, entry => entry.Name.Equals("ffmpeg.exe", StringComparison.OrdinalIgnoreCase), 100_000_000);
                     File.Move("ffmpeg.exe", FFmpeg32bit);
                 }
 
@@ -353,8 +353,8 @@ namespace ShareX.Setup
             {
                 if (!File.Exists(FFmpeg64bit))
                 {
-                    string filename = SetupHelpers.DownloadFile("https://ffmpeg.zeranoe.com/builds/win64/static/ffmpeg-4.3.1-win64-static.zip");
-                    ZipManager.Extract(filename, ".", false, entry => entry.Name.Equals("ffmpeg.exe", StringComparison.OrdinalIgnoreCase), 1_000_000_000);
+                    string filePath = SetupHelpers.DownloadFile("https://github.com/ShareX/FFmpeg/releases/download/v4.3.1/ffmpeg-4.3.1-win64.zip");
+                    ZipManager.Extract(filePath, ".", false, entry => entry.Name.Equals("ffmpeg.exe", StringComparison.OrdinalIgnoreCase), 100_000_000);
                     File.Move("ffmpeg.exe", FFmpeg64bit);
                 }
 

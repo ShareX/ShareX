@@ -120,9 +120,6 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Definições de Aplicação</value>
   </data>
-  <data name="btnApplyTheme.Text" xml:space="preserve">
-    <value>Aplicar Tema</value>
-  </data>
   <data name="btnBrowseCustomScreenshotsPath.Text" xml:space="preserve">
     <value>Procurar...</value>
   </data>
@@ -191,9 +188,6 @@
   </data>
   <data name="cbEditWithShareX.Text" xml:space="preserve">
     <value>Mostrar botão de "Editar com ShareX" no menu de contexto do Windows</value>
-  </data>
-  <data name="cbExperimentalCustomTheme.Text" xml:space="preserve">
-    <value>Aplicar tema personalizado em todas as janelas</value>
   </data>
   <data name="cbExportHistory.Text" xml:space="preserve">
     <value>Histórico</value>
@@ -353,9 +347,6 @@
   </data>
   <data name="tpAdvanced.Text" xml:space="preserve">
     <value>Avançado</value>
-  </data>
-  <data name="tpExportImport.Text" xml:space="preserve">
-    <value>Exportar / Importar</value>
   </data>
   <data name="tpGeneral.Text" xml:space="preserve">
     <value>Geral</value>

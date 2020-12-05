@@ -189,4 +189,18 @@ namespace ShareX.HelpersLib
         Bilinear,
         NearestNeighbor
     }
+
+    public enum ArrowHeadDirection // Localized
+    {
+        End,
+        Start,
+        Both
+    }
+
+    public enum FFmpegArchitecture
+    {
+        win64,
+        win32,
+        macos64
+    }
 }

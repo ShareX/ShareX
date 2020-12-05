@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="cbAutoMinimize.Text" xml:space="preserve">
-    <value>Réduire automatiquement dans la barre des tâches</value>
+    <value>Réduire automatiquement dans la zone de notification</value>
   </data>
   <data name="rbCustomRegion.Text" xml:space="preserve">
     <value>Région personnalisée</value>

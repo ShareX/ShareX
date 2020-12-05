@@ -168,8 +168,7 @@ namespace ShareX.UploadersLib
                 case OAuthLoginStatus.LoginSuccessful:
                     if (UserInfo != null && !string.IsNullOrEmpty(UserInfo.name))
                     {
-                        // TODO: Translate
-                        lblStatusValue.Text = string.Format("Logged in as {0}.", UserInfo.name);
+                        lblStatusValue.Text = string.Format(Resources.LoggedInAs0, UserInfo.name);
                     }
                     else
                     {

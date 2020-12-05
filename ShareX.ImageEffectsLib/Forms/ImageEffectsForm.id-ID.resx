@@ -117,17 +117,11 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="btnClear.Text" xml:space="preserve">
-    <value>Bersihkan</value>
-  </data>
   <data name="btnSaveImage.Text" xml:space="preserve">
     <value>Simpan gambar...</value>
   </data>
   <data name="tsmiLoadImageFromFile.Text" xml:space="preserve">
     <value>Dari file...</value>
-  </data>
-  <data name="btnAddPreset.Text" xml:space="preserve">
-    <value>Pra-atur baru</value>
   </data>
   <data name="lblPresetName.Text" xml:space="preserve">
     <value>Nama:</value>
@@ -141,22 +135,10 @@
   <data name="btnClose.Text" xml:space="preserve">
     <value>Tutup</value>
   </data>
-  <data name="btnRemovePreset.Text" xml:space="preserve">
-    <value>Buang pra-atur</value>
-  </data>
   <data name="tsmiLoadImageFromClipboard.Text" xml:space="preserve">
     <value>Dari papan klip</value>
   </data>
   <data name="mbLoadImage.Text" xml:space="preserve">
     <value>Muat gambar</value>
-  </data>
-  <data name="btnDuplicate.Text" xml:space="preserve">
-    <value>Duplikat</value>
-  </data>
-  <data name="btnRemove.Text" xml:space="preserve">
-    <value>Buang</value>
-  </data>
-  <data name="btnAdd.Text" xml:space="preserve">
-    <value>Tambah</value>
   </data>
 </root>

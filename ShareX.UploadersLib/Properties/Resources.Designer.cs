@@ -196,6 +196,15 @@ namespace ShareX.UploadersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Export failed..
+        /// </summary>
+        internal static string ExportFailed {
+            get {
+                return ResourceManager.GetString("ExportFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
         internal static System.Drawing.Icon Firebase {
@@ -399,6 +408,15 @@ namespace ShareX.UploadersLib.Properties {
             get {
                 object obj = ResourceManager.GetObject("Lithiio", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Logged in as {0}..
+        /// </summary>
+        internal static string LoggedInAs0 {
+            get {
+                return ResourceManager.GetString("LoggedInAs0", resourceCulture);
             }
         }
         

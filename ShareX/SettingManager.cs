@@ -25,6 +25,7 @@
 
 using ShareX.HelpersLib;
 using ShareX.HistoryLib;
+using ShareX.Properties;
 using ShareX.ScreenCaptureLib;
 using ShareX.UploadersLib;
 using ShareX.UploadersLib.FileUploaders;
@@ -160,19 +161,14 @@ namespace ShareX
 
             if (e is UnauthorizedAccessException || e is FileNotFoundException)
             {
-                message = "Your anti-virus software or the controlled folder access feature in Windows 10 could be blocking ShareX.";
+                message = Resources.YourAntiVirusSoftwareOrTheControlledFolderAccessFeatureInWindows10CouldBeBlockingShareX;
             }
             else
             {
                 message = e.Message;
             }
 
-            BalloonTipAction action = new BalloonTipAction()
-            {
-                ClickAction = BalloonTipClickAction.OpenDebugLog
-            };
-
-            TaskHelpers.ShowBalloonTip(message, ToolTipIcon.Warning, 5000, "ShareX failed to save settings", action);
+            TaskHelpers.ShowNotificationTip(message, "ShareX - " + Resources.FailedToSaveSettings, 5000);
 
             settingsSaveFailWarningCount++;
         }

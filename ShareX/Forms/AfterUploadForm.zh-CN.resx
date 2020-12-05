@@ -124,19 +124,19 @@
     <value>关闭</value>
   </data>
   <data name="btnCopyImage.Text" xml:space="preserve">
-    <value>复制图片</value>
+    <value>复制图像</value>
   </data>
   <data name="btnCopyLink.Text" xml:space="preserve">
     <value>复制链接</value>
   </data>
   <data name="btnOpenFile.Text" xml:space="preserve">
-    <value>打开文件</value>
+    <value>打开文件...</value>
   </data>
   <data name="btnOpenFolder.Text" xml:space="preserve">
-    <value>打开文件夹</value>
+    <value>打开文件夹...</value>
   </data>
   <data name="btnOpenLink.Text" xml:space="preserve">
-    <value>打开链接</value>
+    <value>打开链接...</value>
   </data>
   <data name="chDescription.Text" xml:space="preserve">
     <value>描述</value>

@@ -333,9 +333,6 @@
   <data name="gbChrome.Text" xml:space="preserve">
     <value>Chrome-Erweiterung</value>
   </data>
-  <data name="tpExportImport.Text" xml:space="preserve">
-    <value>Export / Import</value>
-  </data>
   <data name="gbFirefox.Text" xml:space="preserve">
     <value>Firefox-Erweiterung</value>
   </data>
@@ -345,14 +342,8 @@
   <data name="cbEditWithShareX.Text" xml:space="preserve">
     <value>"Mit ShareX bearbeiten"-Eintrag im Kontextmenü anzeigen</value>
   </data>
-  <data name="cbExperimentalDarkTheme.Text" xml:space="preserve">
-    <value>Experimentelles dunkles Design</value>
-  </data>
   <data name="cbUseWhiteShareXIcon.Text" xml:space="preserve">
     <value>Weißes ShareX-Icon verwenden</value>
-  </data>
-  <data name="cbUseDarkTheme.Text" xml:space="preserve">
-    <value>Dunkles Design verwenden</value>
   </data>
   <data name="btnPersonalFolderPathApply.Text" xml:space="preserve">
     <value>Übernehmen</value>
@@ -364,7 +355,7 @@
     <value>Windows</value>
   </data>
   <data name="btnThemeReset.Text" xml:space="preserve">
-    <value>Zurücksetzen</value>
+    <value>Zurücksetzen...</value>
   </data>
   <data name="btnThemeRemove.Text" xml:space="preserve">
     <value>Entfernen</value>
@@ -372,10 +363,22 @@
   <data name="btnThemeAdd.Text" xml:space="preserve">
     <value>Hinzufügen</value>
   </data>
-  <data name="btnApplyTheme.Text" xml:space="preserve">
-    <value>Design anwenden</value>
-  </data>
   <data name="tpTheme.Text" xml:space="preserve">
     <value>Design</value>
+  </data>
+  <data name="cbExportHistory.Text" xml:space="preserve">
+    <value>Verlauf</value>
+  </data>
+  <data name="cbExportSettings.Text" xml:space="preserve">
+    <value>Einstellungen</value>
+  </data>
+  <data name="cbUseCustomTheme.Text" xml:space="preserve">
+    <value>Eigenes Thema verwenden</value>
+  </data>
+  <data name="lblExportImportNote.Text" xml:space="preserve">
+    <value>Hinweis: Geben Sie die exportierte Datei an niemanden weiter, da sie private Informationen wie Kontodaten und Ihre Upload-Historie enthalten könnte.</value>
+  </data>
+  <data name="tpSettings.Text" xml:space="preserve">
+    <value>Einstellungen</value>
   </data>
 </root>

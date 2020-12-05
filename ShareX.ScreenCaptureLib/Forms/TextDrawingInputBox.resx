@@ -148,166 +148,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;txtInput.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="flpProperties.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
-  </data>
-  <data name="&gt;&gt;lblFont.Name" xml:space="preserve">
-    <value>lblFont</value>
-  </data>
-  <data name="&gt;&gt;lblFont.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblFont.Parent" xml:space="preserve">
-    <value>flpProperties</value>
-  </data>
-  <data name="&gt;&gt;lblFont.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;cbFonts.Name" xml:space="preserve">
-    <value>cbFonts</value>
-  </data>
-  <data name="&gt;&gt;cbFonts.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbFonts.Parent" xml:space="preserve">
-    <value>flpProperties</value>
-  </data>
-  <data name="&gt;&gt;cbFonts.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;lblTextSize.Name" xml:space="preserve">
-    <value>lblTextSize</value>
-  </data>
-  <data name="&gt;&gt;lblTextSize.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblTextSize.Parent" xml:space="preserve">
-    <value>flpProperties</value>
-  </data>
-  <data name="&gt;&gt;lblTextSize.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;nudTextSize.Name" xml:space="preserve">
-    <value>nudTextSize</value>
-  </data>
-  <data name="&gt;&gt;nudTextSize.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;nudTextSize.Parent" xml:space="preserve">
-    <value>flpProperties</value>
-  </data>
-  <data name="&gt;&gt;nudTextSize.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;btnTextColor.Name" xml:space="preserve">
-    <value>btnTextColor</value>
-  </data>
-  <data name="&gt;&gt;btnTextColor.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.ColorButton, ShareX.HelpersLib, Version=12.2.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;btnTextColor.Parent" xml:space="preserve">
-    <value>flpProperties</value>
-  </data>
-  <data name="&gt;&gt;btnTextColor.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;btnGradient.Name" xml:space="preserve">
-    <value>btnGradient</value>
-  </data>
-  <data name="&gt;&gt;btnGradient.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnGradient.Parent" xml:space="preserve">
-    <value>flpProperties</value>
-  </data>
-  <data name="&gt;&gt;btnGradient.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;cbBold.Name" xml:space="preserve">
-    <value>cbBold</value>
-  </data>
-  <data name="&gt;&gt;cbBold.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbBold.Parent" xml:space="preserve">
-    <value>flpProperties</value>
-  </data>
-  <data name="&gt;&gt;cbBold.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;cbItalic.Name" xml:space="preserve">
-    <value>cbItalic</value>
-  </data>
-  <data name="&gt;&gt;cbItalic.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbItalic.Parent" xml:space="preserve">
-    <value>flpProperties</value>
-  </data>
-  <data name="&gt;&gt;cbItalic.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="&gt;&gt;cbUnderline.Name" xml:space="preserve">
-    <value>cbUnderline</value>
-  </data>
-  <data name="&gt;&gt;cbUnderline.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbUnderline.Parent" xml:space="preserve">
-    <value>flpProperties</value>
-  </data>
-  <data name="&gt;&gt;cbUnderline.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="&gt;&gt;btnAlignmentHorizontal.Name" xml:space="preserve">
-    <value>btnAlignmentHorizontal</value>
-  </data>
-  <data name="&gt;&gt;btnAlignmentHorizontal.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnAlignmentHorizontal.Parent" xml:space="preserve">
-    <value>flpProperties</value>
-  </data>
-  <data name="&gt;&gt;btnAlignmentHorizontal.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="&gt;&gt;btnAlignmentVertical.Name" xml:space="preserve">
-    <value>btnAlignmentVertical</value>
-  </data>
-  <data name="&gt;&gt;btnAlignmentVertical.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnAlignmentVertical.Parent" xml:space="preserve">
-    <value>flpProperties</value>
-  </data>
-  <data name="&gt;&gt;btnAlignmentVertical.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
-  <data name="flpProperties.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 5</value>
-  </data>
-  <data name="flpProperties.Size" type="System.Drawing.Size, System.Drawing">
-    <value>518, 32</value>
-  </data>
-  <data name="flpProperties.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="flpProperties.WrapContents" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;flpProperties.Name" xml:space="preserve">
-    <value>flpProperties</value>
-  </data>
-  <data name="&gt;&gt;flpProperties.Type" xml:space="preserve">
-    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;flpProperties.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;flpProperties.ZOrder" xml:space="preserve">
-    <value>6</value>
   </data>
   <data name="lblFont.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Left</value>
@@ -432,9 +276,6 @@
   <data name="&gt;&gt;nudTextSize.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <metadata name="ttTextInput.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>493, 17</value>
-  </metadata>
   <data name="btnTextColor.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Left</value>
   </data>
@@ -453,6 +294,9 @@
   <data name="btnTextColor.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
   </data>
+  <metadata name="ttTextInput.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>493, 17</value>
+  </metadata>
   <data name="btnTextColor.ToolTip" xml:space="preserve">
     <value>Text color</value>
   </data>
@@ -460,7 +304,7 @@
     <value>btnTextColor</value>
   </data>
   <data name="&gt;&gt;btnTextColor.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.ColorButton, ShareX.HelpersLib, Version=12.2.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.ColorButton, ShareX.HelpersLib, Version=13.2.2.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;btnTextColor.Parent" xml:space="preserve">
     <value>flpProperties</value>
@@ -468,9 +312,6 @@
   <data name="&gt;&gt;btnTextColor.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <metadata name="ttTextInput.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>493, 17</value>
-  </metadata>
   <data name="btnGradient.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -657,6 +498,30 @@
   <data name="&gt;&gt;btnAlignmentVertical.ZOrder" xml:space="preserve">
     <value>10</value>
   </data>
+  <data name="flpProperties.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 5</value>
+  </data>
+  <data name="flpProperties.Size" type="System.Drawing.Size, System.Drawing">
+    <value>518, 32</value>
+  </data>
+  <data name="flpProperties.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="flpProperties.WrapContents" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;flpProperties.Name" xml:space="preserve">
+    <value>flpProperties</value>
+  </data>
+  <data name="&gt;&gt;flpProperties.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;flpProperties.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;flpProperties.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
   <data name="btnOK.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
   </data>
@@ -685,20 +550,11 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnOK.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <metadata name="cmsAlignmentHorizontal.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <data name="cmsAlignmentHorizontal.Size" type="System.Drawing.Size, System.Drawing">
-    <value>110, 70</value>
-  </data>
-  <data name="&gt;&gt;cmsAlignmentHorizontal.Name" xml:space="preserve">
-    <value>cmsAlignmentHorizontal</value>
-  </data>
-  <data name="&gt;&gt;cmsAlignmentHorizontal.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="tsmiAlignmentLeft.Size" type="System.Drawing.Size, System.Drawing">
     <value>109, 22</value>
   </data>
@@ -717,18 +573,18 @@
   <data name="tsmiAlignmentRight.Text" xml:space="preserve">
     <value>Right</value>
   </data>
+  <data name="cmsAlignmentHorizontal.Size" type="System.Drawing.Size, System.Drawing">
+    <value>110, 70</value>
+  </data>
+  <data name="&gt;&gt;cmsAlignmentHorizontal.Name" xml:space="preserve">
+    <value>cmsAlignmentHorizontal</value>
+  </data>
+  <data name="&gt;&gt;cmsAlignmentHorizontal.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <metadata name="cmsAlignmentVertical.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>203, 17</value>
   </metadata>
-  <data name="cmsAlignmentVertical.Size" type="System.Drawing.Size, System.Drawing">
-    <value>115, 70</value>
-  </data>
-  <data name="&gt;&gt;cmsAlignmentVertical.Name" xml:space="preserve">
-    <value>cmsAlignmentVertical</value>
-  </data>
-  <data name="&gt;&gt;cmsAlignmentVertical.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="tsmiAlignmentTop.Size" type="System.Drawing.Size, System.Drawing">
     <value>114, 22</value>
   </data>
@@ -747,6 +603,15 @@
   <data name="tsmiAlignmentBottom.Text" xml:space="preserve">
     <value>Bottom</value>
   </data>
+  <data name="cmsAlignmentVertical.Size" type="System.Drawing.Size, System.Drawing">
+    <value>115, 70</value>
+  </data>
+  <data name="&gt;&gt;cmsAlignmentVertical.Name" xml:space="preserve">
+    <value>cmsAlignmentVertical</value>
+  </data>
+  <data name="&gt;&gt;cmsAlignmentVertical.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="lblTip.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
   </data>
@@ -757,16 +622,13 @@
     <value>NoControl</value>
   </data>
   <data name="lblTip.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 334</value>
+    <value>37, 334</value>
   </data>
   <data name="lblTip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>106, 13</value>
+    <value>0, 13</value>
   </data>
   <data name="lblTip.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
-  </data>
-  <data name="lblTip.Text" xml:space="preserve">
-    <value>New line: Ctrl + Enter</value>
   </data>
   <data name="&gt;&gt;lblTip.Name" xml:space="preserve">
     <value>lblTip</value>
@@ -778,7 +640,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblTip.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="btnCancel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
@@ -808,13 +670,55 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnCancel.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <metadata name="cmsGradient.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>373, 17</value>
   </metadata>
+  <data name="tsmiEnableGradient.Size" type="System.Drawing.Size, System.Drawing">
+    <value>175, 22</value>
+  </data>
+  <data name="tsmiEnableGradient.Text" xml:space="preserve">
+    <value>Enable gradient</value>
+  </data>
+  <data name="tsmiSecondColor.Size" type="System.Drawing.Size, System.Drawing">
+    <value>175, 22</value>
+  </data>
+  <data name="tsmiSecondColor.Text" xml:space="preserve">
+    <value>Second text color...</value>
+  </data>
+  <data name="tsrbmiGradientHorizontal.Size" type="System.Drawing.Size, System.Drawing">
+    <value>174, 22</value>
+  </data>
+  <data name="tsrbmiGradientHorizontal.Text" xml:space="preserve">
+    <value>Horizontal</value>
+  </data>
+  <data name="tsrbmiGradientVertical.Size" type="System.Drawing.Size, System.Drawing">
+    <value>174, 22</value>
+  </data>
+  <data name="tsrbmiGradientVertical.Text" xml:space="preserve">
+    <value>Vertical</value>
+  </data>
+  <data name="tsrbmiGradientForwardDiagonal.Size" type="System.Drawing.Size, System.Drawing">
+    <value>174, 22</value>
+  </data>
+  <data name="tsrbmiGradientForwardDiagonal.Text" xml:space="preserve">
+    <value>Forward diagonal</value>
+  </data>
+  <data name="tsrbmiGradientBackwardDiagonal.Size" type="System.Drawing.Size, System.Drawing">
+    <value>174, 22</value>
+  </data>
+  <data name="tsrbmiGradientBackwardDiagonal.Text" xml:space="preserve">
+    <value>Backward diagonal</value>
+  </data>
+  <data name="tsmiGradientMode.Size" type="System.Drawing.Size, System.Drawing">
+    <value>175, 22</value>
+  </data>
+  <data name="tsmiGradientMode.Text" xml:space="preserve">
+    <value>Gradient mode</value>
+  </data>
   <data name="cmsGradient.Size" type="System.Drawing.Size, System.Drawing">
-    <value>175, 70</value>
+    <value>176, 70</value>
   </data>
   <data name="&gt;&gt;cmsGradient.Name" xml:space="preserve">
     <value>cmsGradient</value>
@@ -822,51 +726,27 @@
   <data name="&gt;&gt;cmsGradient.Type" xml:space="preserve">
     <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="tsmiEnableGradient.Size" type="System.Drawing.Size, System.Drawing">
-    <value>174, 22</value>
+  <data name="btnSwapEnterKey.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 328</value>
   </data>
-  <data name="tsmiEnableGradient.Text" xml:space="preserve">
-    <value>Enable gradient</value>
+  <data name="btnSwapEnterKey.Size" type="System.Drawing.Size, System.Drawing">
+    <value>24, 24</value>
   </data>
-  <data name="tsmiSecondColor.Size" type="System.Drawing.Size, System.Drawing">
-    <value>174, 22</value>
+  <data name="btnSwapEnterKey.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
   </data>
-  <data name="tsmiSecondColor.Text" xml:space="preserve">
-    <value>Second text color...</value>
+  <data name="&gt;&gt;btnSwapEnterKey.Name" xml:space="preserve">
+    <value>btnSwapEnterKey</value>
   </data>
-  <data name="tsmiGradientMode.Size" type="System.Drawing.Size, System.Drawing">
-    <value>174, 22</value>
+  <data name="&gt;&gt;btnSwapEnterKey.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="tsmiGradientMode.Text" xml:space="preserve">
-    <value>Gradient mode</value>
+  <data name="&gt;&gt;btnSwapEnterKey.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
-  <data name="tsrbmiGradientHorizontal.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+  <data name="&gt;&gt;btnSwapEnterKey.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
-  <data name="tsrbmiGradientHorizontal.Text" xml:space="preserve">
-    <value>Horizontal</value>
-  </data>
-  <data name="tsrbmiGradientVertical.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
-  </data>
-  <data name="tsrbmiGradientVertical.Text" xml:space="preserve">
-    <value>Vertical</value>
-  </data>
-  <data name="tsrbmiGradientForwardDiagonal.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
-  </data>
-  <data name="tsrbmiGradientForwardDiagonal.Text" xml:space="preserve">
-    <value>Forward diagonal</value>
-  </data>
-  <data name="tsrbmiGradientBackwardDiagonal.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
-  </data>
-  <data name="tsrbmiGradientBackwardDiagonal.Text" xml:space="preserve">
-    <value>Backward diagonal</value>
-  </data>
-  <metadata name="ttTextInput.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>493, 17</value>
-  </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -940,25 +820,25 @@
     <value>tsrbmiGradientHorizontal</value>
   </data>
   <data name="&gt;&gt;tsrbmiGradientHorizontal.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.ToolStripRadioButtonMenuItem, ShareX.HelpersLib, Version=12.2.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.ToolStripRadioButtonMenuItem, ShareX.HelpersLib, Version=13.2.2.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;tsrbmiGradientVertical.Name" xml:space="preserve">
     <value>tsrbmiGradientVertical</value>
   </data>
   <data name="&gt;&gt;tsrbmiGradientVertical.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.ToolStripRadioButtonMenuItem, ShareX.HelpersLib, Version=12.2.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.ToolStripRadioButtonMenuItem, ShareX.HelpersLib, Version=13.2.2.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;tsrbmiGradientForwardDiagonal.Name" xml:space="preserve">
     <value>tsrbmiGradientForwardDiagonal</value>
   </data>
   <data name="&gt;&gt;tsrbmiGradientForwardDiagonal.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.ToolStripRadioButtonMenuItem, ShareX.HelpersLib, Version=12.2.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.ToolStripRadioButtonMenuItem, ShareX.HelpersLib, Version=13.2.2.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;tsrbmiGradientBackwardDiagonal.Name" xml:space="preserve">
     <value>tsrbmiGradientBackwardDiagonal</value>
   </data>
   <data name="&gt;&gt;tsrbmiGradientBackwardDiagonal.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.ToolStripRadioButtonMenuItem, ShareX.HelpersLib, Version=12.2.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.ToolStripRadioButtonMenuItem, ShareX.HelpersLib, Version=13.2.2.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;ttTextInput.Name" xml:space="preserve">
     <value>ttTextInput</value>

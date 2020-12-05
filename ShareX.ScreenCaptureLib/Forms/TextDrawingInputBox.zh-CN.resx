@@ -150,9 +150,6 @@
   <data name="btnCancel.Text" xml:space="preserve">
     <value>取消</value>
   </data>
-  <data name="lblTip.Text" xml:space="preserve">
-    <value>新起一行：Ctrl + Enter</value>
-  </data>
   <data name="btnAlignmentVertical.ToolTip" xml:space="preserve">
     <value>垂直对齐</value>
   </data>
@@ -166,7 +163,7 @@
     <value>文本颜色</value>
   </data>
   <data name="tsmiSecondColor.Text" xml:space="preserve">
-    <value>第二文本颜色</value>
+    <value>第二文本颜色...</value>
   </data>
   <data name="cbItalic.ToolTip" xml:space="preserve">
     <value>斜体</value>

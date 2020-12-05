@@ -120,20 +120,8 @@
   <data name="btnOK.Text" xml:space="preserve">
     <value>OK</value>
   </data>
-  <data name="btnDuplicate.Text" xml:space="preserve">
-    <value>Duplicar</value>
-  </data>
-  <data name="btnClear.Text" xml:space="preserve">
-    <value>Borrar</value>
-  </data>
-  <data name="btnAdd.Text" xml:space="preserve">
-    <value>Añadir</value>
-  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Efectos de imagen</value>
-  </data>
-  <data name="btnRemove.Text" xml:space="preserve">
-    <value>Quitar</value>
   </data>
   <data name="mbLoadImage.Text" xml:space="preserve">
     <value>Cargar imagen</value>

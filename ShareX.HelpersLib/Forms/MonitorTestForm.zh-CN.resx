@@ -145,7 +145,7 @@
     <value>尺寸：</value>
   </data>
   <data name="lblTip.Text" xml:space="preserve">
-    <value>您可以点击外侧隐藏/显示此面板</value>
+    <value>提示：可以点击外侧来隐藏/显示此面板。</value>
   </data>
   <data name="rbBlackWhite.Text" xml:space="preserve">
     <value>黑色，白色：</value>
@@ -170,5 +170,20 @@
   </data>
   <data name="lblBlue.Text" xml:space="preserve">
     <value>B（蓝）：</value>
+  </data>
+  <data name="lblGreenValue.Text" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblBlackWhiteValue.Text" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblBlueValue.Text" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblRedValue.Text" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblShapeSizeValue.Text" xml:space="preserve">
+    <value>1</value>
   </data>
 </root>

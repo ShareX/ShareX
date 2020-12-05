@@ -36,10 +36,11 @@ namespace ShareX.HelpersLib
 {
     public static class ClipboardHelpers
     {
+        public const string FORMAT_PNG = "PNG";
+        public const string FORMAT_17 = "Format17";
+
         private const int RetryTimes = 20;
         private const int RetryDelay = 100;
-        private const string FORMAT_PNG = "PNG";
-        private const string FORMAT_17 = "Format17";
 
         private static readonly object ClipboardLock = new object();
 
@@ -451,6 +452,48 @@ namespace ShareX.HelpersLib
             sb.Append(endHTML);
 
             return sb.ToString();
+        }
+
+        public static bool ContainsImage()
+        {
+            try
+            {
+                return Clipboard.ContainsImage();
+            }
+            catch (Exception e)
+            {
+                DebugHelper.WriteException(e);
+            }
+
+            return false;
+        }
+
+        public static bool ContainsText()
+        {
+            try
+            {
+                return Clipboard.ContainsText();
+            }
+            catch (Exception e)
+            {
+                DebugHelper.WriteException(e);
+            }
+
+            return false;
+        }
+
+        public static bool ContainsFileDropList()
+        {
+            try
+            {
+                return Clipboard.ContainsFileDropList();
+            }
+            catch (Exception e)
+            {
+                DebugHelper.WriteException(e);
+            }
+
+            return false;
         }
     }
 }

@@ -94,6 +94,31 @@ namespace ShareX.HelpersLib
             }
         }
 
+        public Color LeftPanelBackColor
+        {
+            get
+            {
+                return scMain.Panel1.BackColor;
+            }
+            set
+            {
+                pLeft.BackColor = value;
+                tvMain.BackColor = value;
+            }
+        }
+
+        public Color SeparatorColor
+        {
+            get
+            {
+                return pSeparator.BackColor;
+            }
+            set
+            {
+                pSeparator.BackColor = value;
+            }
+        }
+
         [DefaultValue(false)]
         public bool AutoSelectChild { get; set; }
 

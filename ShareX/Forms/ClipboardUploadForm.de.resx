@@ -123,13 +123,13 @@
   <data name="btnCancel.Text" xml:space="preserve">
     <value>&amp;Abbrechen</value>
   </data>
-  <data name="btnOK.Text" xml:space="preserve">
-    <value>&amp;OK</value>
-  </data>
   <data name="cbDontShowThisWindow.Text" xml:space="preserve">
     <value>Dieses Fenster nicht mehr zeigen</value>
   </data>
   <data name="lblQuestion.Text" xml:space="preserve">
     <value>Deine Zwischenablage enthält folgendes:</value>
+  </data>
+  <data name="btnUpload.Text" xml:space="preserve">
+    <value>Hochladen</value>
   </data>
 </root>

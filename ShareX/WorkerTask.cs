@@ -34,6 +34,7 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -327,7 +328,7 @@ namespace ShareX
 
                 Dispose();
 
-                if (EarlyURLCopied && (StopRequested || Info.Result == null || string.IsNullOrEmpty(Info.Result.URL)) && Clipboard.ContainsText())
+                if (EarlyURLCopied && (StopRequested || Info.Result == null || string.IsNullOrEmpty(Info.Result.URL)) && ClipboardHelpers.ContainsText())
                 {
                     ClipboardHelpers.Clear();
                 }
@@ -726,10 +727,15 @@ namespace ShareX
                             Data.Dispose();
                         }
 
+                        string fileName = Info.FileName;
+
                         foreach (ExternalProgram fileAction in actions)
                         {
                             Info.FilePath = fileAction.Run(Info.FilePath);
                         }
+
+                        string extension = Helpers.GetFilenameExtension(Info.FilePath);
+                        Info.FileName = Helpers.ChangeFilenameExtension(fileName, extension);
 
                         LoadFileStream();
                     }
@@ -779,6 +785,12 @@ namespace ShareX
         {
             try
             {
+                if (Info.TaskSettings.UploadSettings.URLRegexReplace)
+                {
+                    Info.Result.URL = Regex.Replace(Info.Result.URL, Info.TaskSettings.UploadSettings.URLRegexReplacePattern,
+                        Info.TaskSettings.UploadSettings.URLRegexReplaceReplacement);
+                }
+
                 if (Info.TaskSettings.AdvancedSettings.ResultForceHTTPS)
                 {
                     Info.Result.ForceHTTPS();

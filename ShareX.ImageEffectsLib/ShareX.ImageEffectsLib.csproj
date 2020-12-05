@@ -114,6 +114,7 @@
     <Compile Include="Drawings\DrawText.cs" />
     <Compile Include="Drawings\DrawTextEx.cs" />
     <Compile Include="Enums.cs" />
+    <Compile Include="Filters\ColorDepth.cs" />
     <Compile Include="Filters\EdgeDetect.cs" />
     <Compile Include="Filters\Emboss.cs" />
     <Compile Include="Filters\GaussianBlur.cs" />
@@ -179,7 +180,19 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Forms\ImageEffectPackagerForm.fr.resx">
+      <DependentUpon>ImageEffectPackagerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ImageEffectPackagerForm.ja-JP.resx">
+      <DependentUpon>ImageEffectPackagerForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ImageEffectPackagerForm.resx">
+      <DependentUpon>ImageEffectPackagerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ImageEffectPackagerForm.ru.resx">
+      <DependentUpon>ImageEffectPackagerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ImageEffectPackagerForm.zh-CN.resx">
       <DependentUpon>ImageEffectPackagerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ImageEffectsForm.de.resx">
@@ -204,6 +217,9 @@
       <DependentUpon>ImageEffectsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ImageEffectsForm.it-IT.resx">
+      <DependentUpon>ImageEffectsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ImageEffectsForm.ja-JP.resx">
       <DependentUpon>ImageEffectsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ImageEffectsForm.ko-KR.resx">
@@ -242,13 +258,16 @@
     <EmbeddedResource Include="Properties\Resources.de.resx" />
     <EmbeddedResource Include="Properties\Resources.es-MX.resx" />
     <EmbeddedResource Include="Properties\Resources.es.resx" />
+    <EmbeddedResource Include="Properties\Resources.fa-IR.resx" />
     <EmbeddedResource Include="Properties\Resources.fr.resx" />
     <EmbeddedResource Include="Properties\Resources.hu.resx" />
     <EmbeddedResource Include="Properties\Resources.id-ID.resx" />
     <EmbeddedResource Include="Properties\Resources.it-IT.resx" />
+    <EmbeddedResource Include="Properties\Resources.ja-JP.resx" />
     <EmbeddedResource Include="Properties\Resources.ko-KR.resx" />
     <EmbeddedResource Include="Properties\Resources.nl-NL.resx" />
     <EmbeddedResource Include="Properties\Resources.pt-BR.resx" />
+    <EmbeddedResource Include="Properties\Resources.pt-PT.resx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
