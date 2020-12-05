@@ -1514,7 +1514,21 @@ namespace ShareX.ScreenCaptureLib
                     break;
             }
 
-            tscbBorderStyle.Visible = shapeType == ShapeType.DrawingRectangle;
+            switch (shapeType)
+            {
+                default:
+                    tscbBorderStyle.Visible = false;
+                    break;
+                case ShapeType.DrawingRectangle:
+                case ShapeType.DrawingEllipse:
+                case ShapeType.DrawingFreehand:
+                case ShapeType.DrawingLine:
+                case ShapeType.DrawingArrow:
+                case ShapeType.DrawingMagnify:
+                    tscbBorderStyle.Visible = true;
+                    break;
+            }
+
             tslnudCenterPoints.Visible = shapeType == ShapeType.DrawingLine || shapeType == ShapeType.DrawingArrow;
             tscbArrowHeadDirection.Visible = shapeType == ShapeType.DrawingArrow;
             tscbImageInterpolationMode.Visible = shapeType == ShapeType.DrawingImage || shapeType == ShapeType.DrawingImageScreen || shapeType == ShapeType.DrawingMagnify;

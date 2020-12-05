@@ -148,11 +148,11 @@ namespace ShareX.ScreenCaptureLib
                 {
                     if (IsBorderVisible)
                     {
-                        DrawEllipse(g, ShadowColor, BorderSize, Color.Transparent, Rectangle.LocationOffset(ShadowOffset));
+                        DrawEllipse(g, ShadowColor, BorderSize, BorderStyle, Color.Transparent, Rectangle.LocationOffset(ShadowOffset));
                     }
                     else if (FillColor.A == 255)
                     {
-                        DrawEllipse(g, Color.Transparent, 0, ShadowColor, Rectangle.LocationOffset(ShadowOffset));
+                        DrawEllipse(g, Color.Transparent, 0, BorderStyle, ShadowColor, Rectangle.LocationOffset(ShadowOffset));
                     }
                 }
 
@@ -177,7 +177,7 @@ namespace ShareX.ScreenCaptureLib
                     DrawTail(g, tailColor, Rectangle.Offset(BorderSize / 2), TailPosition);
                 }
 
-                DrawEllipse(g, BorderColor, BorderSize, FillColor, Rectangle);
+                DrawEllipse(g, BorderColor, BorderSize, BorderStyle, FillColor, Rectangle);
 
                 if (Shadow)
                 {

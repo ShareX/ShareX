@@ -44,18 +44,18 @@ namespace ShareX.ScreenCaptureLib
             {
                 if (IsBorderVisible)
                 {
-                    DrawEllipse(g, ShadowColor, BorderSize, Color.Transparent, Rectangle.LocationOffset(ShadowOffset));
+                    DrawEllipse(g, ShadowColor, BorderSize, BorderStyle, Color.Transparent, Rectangle.LocationOffset(ShadowOffset));
                 }
                 else if (FillColor.A == 255)
                 {
-                    DrawEllipse(g, Color.Transparent, 0, ShadowColor, Rectangle.LocationOffset(ShadowOffset));
+                    DrawEllipse(g, Color.Transparent, 0, BorderStyle, ShadowColor, Rectangle.LocationOffset(ShadowOffset));
                 }
             }
 
-            DrawEllipse(g, BorderColor, BorderSize, FillColor, Rectangle);
+            DrawEllipse(g, BorderColor, BorderSize, BorderStyle, FillColor, Rectangle);
         }
 
-        protected void DrawEllipse(Graphics g, Color borderColor, int borderSize, Color fillColor, Rectangle rect)
+        protected void DrawEllipse(Graphics g, Color borderColor, int borderSize, BorderStyle borderStyle, Color fillColor, Rectangle rect)
         {
             g.SmoothingMode = SmoothingMode.HighQuality;
 
@@ -71,6 +71,8 @@ namespace ShareX.ScreenCaptureLib
             {
                 using (Pen pen = new Pen(borderColor, borderSize))
                 {
+                    pen.DashStyle = (DashStyle)borderStyle;
+
                     g.DrawEllipse(pen, rect);
                 }
             }

@@ -116,13 +116,13 @@ namespace ShareX.ScreenCaptureLib
 
             if (Shadow)
             {
-                DrawFreehand(g, ShadowColor, borderSize, positions.Select(x => x.Add(ShadowOffset)).ToArray());
+                DrawFreehand(g, ShadowColor, borderSize, BorderStyle, positions.Select(x => x.Add(ShadowOffset)).ToArray());
             }
 
-            DrawFreehand(g, BorderColor, borderSize, positions.ToArray());
+            DrawFreehand(g, BorderColor, borderSize, BorderStyle, positions.ToArray());
         }
 
-        protected void DrawFreehand(Graphics g, Color borderColor, int borderSize, Point[] points)
+        protected void DrawFreehand(Graphics g, Color borderColor, int borderSize, BorderStyle borderStyle, Point[] points)
         {
             if (points.Length > 0 && borderSize > 0 && borderColor.A > 0)
             {
@@ -145,8 +145,13 @@ namespace ShareX.ScreenCaptureLib
                 }
                 else
                 {
-                    using (Pen pen = new Pen(borderColor, borderSize) { StartCap = LineCap.Round, EndCap = LineCap.Round, LineJoin = LineJoin.Round })
+                    using (Pen pen = new Pen(borderColor, borderSize))
                     {
+                        pen.StartCap = LineCap.Round;
+                        pen.EndCap = LineCap.Round;
+                        pen.LineJoin = LineJoin.Round;
+                        pen.DashStyle = (DashStyle)borderStyle;
+
                         g.DrawLines(pen, points.ToArray());
                     }
                 }

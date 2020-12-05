@@ -47,7 +47,7 @@ namespace ShareX.ScreenCaptureLib
             AnnotationOptions.ArrowHeadDirection = ArrowHeadDirection;
         }
 
-        protected override Pen CreatePen(Color borderColor, int borderSize)
+        protected override Pen CreatePen(Color borderColor, int borderSize, BorderStyle borderStyle)
         {
             using (GraphicsPath gp = new GraphicsPath())
             {
@@ -77,6 +77,7 @@ namespace ShareX.ScreenCaptureLib
                 }
 
                 pen.LineJoin = LineJoin.Round;
+                pen.DashStyle = (DashStyle)borderStyle;
                 return pen;
             }
         }
