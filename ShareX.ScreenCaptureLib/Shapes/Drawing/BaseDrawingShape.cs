@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using System.Drawing;
+using System.Drawing.Drawing2D;
 
 namespace ShareX.ScreenCaptureLib
 {
@@ -33,6 +34,7 @@ namespace ShareX.ScreenCaptureLib
 
         public Color BorderColor { get; set; }
         public int BorderSize { get; set; }
+        public DashStyle BorderStyle { get; set; }
         public Color FillColor { get; set; }
 
         public bool Shadow { get; set; }
@@ -47,6 +49,7 @@ namespace ShareX.ScreenCaptureLib
         {
             BorderColor = AnnotationOptions.BorderColor;
             BorderSize = AnnotationOptions.BorderSize;
+            BorderStyle = AnnotationOptions.BorderStyle;
             FillColor = AnnotationOptions.FillColor;
             Shadow = AnnotationOptions.Shadow;
             ShadowColor = AnnotationOptions.ShadowColor;
@@ -57,6 +60,7 @@ namespace ShareX.ScreenCaptureLib
         {
             AnnotationOptions.BorderColor = BorderColor;
             AnnotationOptions.BorderSize = BorderSize;
+            AnnotationOptions.BorderStyle = BorderStyle;
             AnnotationOptions.FillColor = FillColor;
             AnnotationOptions.Shadow = Shadow;
             AnnotationOptions.ShadowColor = ShadowColor;
