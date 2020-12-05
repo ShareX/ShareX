@@ -27,7 +27,6 @@ using ShareX.HelpersLib;
 using ShareX.ScreenCaptureLib.Properties;
 using System;
 using System.Drawing;
-using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -517,10 +516,10 @@ namespace ShareX.ScreenCaptureLib
 
             // TODO: Translate
             tscbBorderStyle = new ToolStripLabeledComboBox("Border style:");
-            tscbBorderStyle.Content.AddRange(Helpers.GetLocalizedEnumDescriptions<DashStyle>());
+            tscbBorderStyle.Content.AddRange(Helpers.GetLocalizedEnumDescriptions<BorderStyle>());
             tscbBorderStyle.Content.SelectedIndexChanged += (sender, e) =>
             {
-                AnnotationOptions.BorderStyle = (DashStyle)tscbBorderStyle.Content.SelectedIndex;
+                AnnotationOptions.BorderStyle = (BorderStyle)tscbBorderStyle.Content.SelectedIndex;
                 tscbBorderStyle.Invalidate();
                 UpdateCurrentShape();
             };
