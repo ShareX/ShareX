@@ -1505,7 +1505,7 @@ namespace ShareX
 
         private void WatchFolderAdd(WatchFolderSettings watchFolderSetting)
         {
-            if (watchFolderSetting != null)
+            if (Program.WatchFolderManager != null && watchFolderSetting != null)
             {
                 Program.WatchFolderManager.AddWatchFolder(watchFolderSetting, TaskSettings);
 
