@@ -846,6 +846,9 @@ namespace ShareX.ScreenCaptureLib
                     }
                     break;
                 case RegionCaptureAction.RemoveShapeCancelCapture:
+                    cms.Show(Cursor.Position);
+                    return;
+
                     if (IsShapeIntersect())
                     {
                         DeleteIntersectShape();

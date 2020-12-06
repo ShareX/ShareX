@@ -46,17 +46,19 @@ namespace ShareX.ScreenCaptureLib
 
         private Form menuForm;
         private ToolStripEx tsMain;
-        private ToolStripButton tsbSaveImage, tsbBorderColor, tsbFillColor, tsbHighlightColor;
-        private ToolStripDropDownButton tsddbShapeOptions;
         private ToolStripMenuItem tsmiShadow, tsmiShadowColor, tsmiStepUseLetters, tsmiUndo, tsmiDuplicate, tsmiDelete, tsmiDeleteAll,
-            tsmiMoveTop, tsmiMoveUp, tsmiMoveDown, tsmiMoveBottom, tsmiRegionCapture, tsmiQuickCrop, tsmiShowMagnifier;
+            tsmiMoveTop, tsmiMoveUp, tsmiMoveDown, tsmiMoveBottom, tsmiRegionCapture, tsmiQuickCrop, tsmiShowMagnifier, tsmiBorderColor, tsmiFillColor, tsmiHighlightColor;
         private ToolStripLabeledNumericUpDown tslnudBorderSize, tslnudCornerRadius, tslnudCenterPoints, tslnudBlurRadius, tslnudPixelateSize, tslnudStepFontSize,
             tslnudMagnifierPixelCount, tslnudStartingStepValue, tslnudMagnifyStrength;
         private ToolStripLabel tslDragLeft, tslDragRight;
         private ToolStripLabeledComboBox tscbBorderStyle, tscbArrowHeadDirection, tscbImageInterpolationMode, tscbCursorTypes;
 
+        private ContextMenuStrip cms;
+
         internal void CreateToolbar()
         {
+            cms = new ContextMenuStrip();
+
             menuForm = new Form()
             {
                 AutoScaleDimensions = new SizeF(6F, 13F),
@@ -161,7 +163,7 @@ namespace ShareX.ScreenCaptureLib
                     tsMain.Items.Add(new ToolStripSeparator());
                 }
 
-                tsbSaveImage = new ToolStripButton(Resources.ShapeManager_CreateToolbar_SaveImage);
+                ToolStripButton tsbSaveImage = new ToolStripButton(Resources.ShapeManager_CreateToolbar_SaveImage);
                 tsbSaveImage.DisplayStyle = ToolStripItemDisplayStyle.Image;
                 tsbSaveImage.Image = Resources.disk_black;
                 tsbSaveImage.Click += (sender, e) => Form.OnSaveImageRequested();
@@ -330,9 +332,8 @@ namespace ShareX.ScreenCaptureLib
 
             tsMain.Items.Add(new ToolStripSeparator());
 
-            tsbBorderColor = new ToolStripButton(Resources.ShapeManager_CreateContextMenu_Border_color___);
-            tsbBorderColor.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            tsbBorderColor.Click += (sender, e) =>
+            tsmiBorderColor = new ToolStripMenuItem(Resources.ShapeManager_CreateContextMenu_Border_color___);
+            tsmiBorderColor.Click += (sender, e) =>
             {
                 Form.Pause();
 
@@ -382,11 +383,10 @@ namespace ShareX.ScreenCaptureLib
 
                 Form.Resume();
             };
-            tsMain.Items.Add(tsbBorderColor);
+            cms.Items.Add(tsmiBorderColor);
 
-            tsbFillColor = new ToolStripButton(Resources.ShapeManager_CreateContextMenu_Fill_color___);
-            tsbFillColor.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            tsbFillColor.Click += (sender, e) =>
+            tsmiFillColor = new ToolStripMenuItem(Resources.ShapeManager_CreateContextMenu_Fill_color___);
+            tsmiFillColor.Click += (sender, e) =>
             {
                 Form.Pause();
 
@@ -428,11 +428,10 @@ namespace ShareX.ScreenCaptureLib
 
                 Form.Resume();
             };
-            tsMain.Items.Add(tsbFillColor);
+            cms.Items.Add(tsmiFillColor);
 
-            tsbHighlightColor = new ToolStripButton(Resources.ShapeManager_CreateContextMenu_Highlight_color___);
-            tsbHighlightColor.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            tsbHighlightColor.Click += (sender, e) =>
+            tsmiHighlightColor = new ToolStripMenuItem(Resources.ShapeManager_CreateContextMenu_Highlight_color___);
+            tsmiHighlightColor.Click += (sender, e) =>
             {
                 Form.Pause();
 
@@ -445,12 +444,7 @@ namespace ShareX.ScreenCaptureLib
 
                 Form.Resume();
             };
-            tsMain.Items.Add(tsbHighlightColor);
-
-            tsddbShapeOptions = new ToolStripDropDownButton(Resources.ShapeManager_CreateToolbar_ShapeOptions);
-            tsddbShapeOptions.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            tsddbShapeOptions.Image = Resources.layer__pencil;
-            tsMain.Items.Add(tsddbShapeOptions);
+            cms.Items.Add(tsmiHighlightColor);
 
             tslnudMagnifyStrength = new ToolStripLabeledNumericUpDown(Resources.MagnifyStrength);
             tslnudMagnifyStrength.Content.Text2 = "%";
@@ -462,7 +456,7 @@ namespace ShareX.ScreenCaptureLib
                 AnnotationOptions.MagnifyStrength = (int)tslnudMagnifyStrength.Content.Value;
                 UpdateCurrentShape();
             };
-            tsddbShapeOptions.DropDownItems.Add(tslnudMagnifyStrength);
+            cms.Items.Add(tslnudMagnifyStrength);
 
             tslnudBorderSize = new ToolStripLabeledNumericUpDown(Resources.ShapeManager_CreateContextMenu_Border_size_);
             tslnudBorderSize.Content.Minimum = 0;
@@ -492,7 +486,7 @@ namespace ShareX.ScreenCaptureLib
 
                 UpdateCurrentShape();
             };
-            tsddbShapeOptions.DropDownItems.Add(tslnudBorderSize);
+            cms.Items.Add(tslnudBorderSize);
 
             tslnudCornerRadius = new ToolStripLabeledNumericUpDown(Resources.ShapeManager_CreateContextMenu_Corner_radius_);
             tslnudCornerRadius.Content.Minimum = 0;
@@ -512,7 +506,7 @@ namespace ShareX.ScreenCaptureLib
 
                 UpdateCurrentShape();
             };
-            tsddbShapeOptions.DropDownItems.Add(tslnudCornerRadius);
+            cms.Items.Add(tslnudCornerRadius);
 
             // TODO: Translate
             tscbBorderStyle = new ToolStripLabeledComboBox("Border style:");
@@ -523,7 +517,7 @@ namespace ShareX.ScreenCaptureLib
                 tscbBorderStyle.Invalidate();
                 UpdateCurrentShape();
             };
-            tsddbShapeOptions.DropDownItems.Add(tscbBorderStyle);
+            cms.Items.Add(tscbBorderStyle);
 
             tscbImageInterpolationMode = new ToolStripLabeledComboBox(Resources.ShapeManager_CreateToolbar_InterpolationMode);
             tscbImageInterpolationMode.Content.AddRange(Helpers.GetLocalizedEnumDescriptions<ImageInterpolationMode>());
@@ -533,7 +527,7 @@ namespace ShareX.ScreenCaptureLib
                 tscbImageInterpolationMode.Invalidate();
                 UpdateCurrentShape();
             };
-            tsddbShapeOptions.DropDownItems.Add(tscbImageInterpolationMode);
+            cms.Items.Add(tscbImageInterpolationMode);
 
             tscbCursorTypes = new ToolStripLabeledComboBox(Resources.ShapeManager_CursorType);
             CursorConverter cursorConverter = new CursorConverter();
@@ -544,7 +538,7 @@ namespace ShareX.ScreenCaptureLib
             }
             tscbCursorTypes.Content.SelectedIndex = 3; // Cursors.Default
             tscbCursorTypes.Content.SelectedIndexChanged += (sender, e) => UpdateCurrentShape();
-            tsddbShapeOptions.DropDownItems.Add(tscbCursorTypes);
+            cms.Items.Add(tscbCursorTypes);
 
             tslnudBlurRadius = new ToolStripLabeledNumericUpDown(Resources.ShapeManager_CreateContextMenu_Blur_radius_);
             tslnudBlurRadius.Content.Minimum = 3;
@@ -555,7 +549,7 @@ namespace ShareX.ScreenCaptureLib
                 AnnotationOptions.BlurRadius = (int)tslnudBlurRadius.Content.Value;
                 UpdateCurrentShape();
             };
-            tsddbShapeOptions.DropDownItems.Add(tslnudBlurRadius);
+            cms.Items.Add(tslnudBlurRadius);
 
             tslnudPixelateSize = new ToolStripLabeledNumericUpDown(Resources.ShapeManager_CreateContextMenu_Pixel_size_);
             tslnudPixelateSize.Content.Minimum = 2;
@@ -565,7 +559,7 @@ namespace ShareX.ScreenCaptureLib
                 AnnotationOptions.PixelateSize = (int)tslnudPixelateSize.Content.Value;
                 UpdateCurrentShape();
             };
-            tsddbShapeOptions.DropDownItems.Add(tslnudPixelateSize);
+            cms.Items.Add(tslnudPixelateSize);
 
             tslnudCenterPoints = new ToolStripLabeledNumericUpDown(Resources.ShapeManager_CenterPoints);
             tslnudCenterPoints.Content.Minimum = 0;
@@ -575,7 +569,7 @@ namespace ShareX.ScreenCaptureLib
                 AnnotationOptions.LineCenterPointCount = (int)tslnudCenterPoints.Content.Value;
                 UpdateCurrentShape();
             };
-            tsddbShapeOptions.DropDownItems.Add(tslnudCenterPoints);
+            cms.Items.Add(tslnudCenterPoints);
 
             tscbArrowHeadDirection = new ToolStripLabeledComboBox(Resources.ShapeManager_ArrowHeadDirection);
             tscbArrowHeadDirection.Content.AddRange(Helpers.GetLocalizedEnumDescriptions<ArrowHeadDirection>());
@@ -585,7 +579,7 @@ namespace ShareX.ScreenCaptureLib
                 tscbArrowHeadDirection.Invalidate();
                 UpdateCurrentShape();
             };
-            tsddbShapeOptions.DropDownItems.Add(tscbArrowHeadDirection);
+            cms.Items.Add(tscbArrowHeadDirection);
 
             tslnudStepFontSize = new ToolStripLabeledNumericUpDown(Resources.ShapeManager_CreateToolbar_FontSize);
             tslnudStepFontSize.Content.Minimum = 10;
@@ -595,7 +589,7 @@ namespace ShareX.ScreenCaptureLib
                 AnnotationOptions.StepFontSize = (int)tslnudStepFontSize.Content.Value;
                 UpdateCurrentShape();
             };
-            tsddbShapeOptions.DropDownItems.Add(tslnudStepFontSize);
+            cms.Items.Add(tslnudStepFontSize);
 
             tslnudStartingStepValue = new ToolStripLabeledNumericUpDown(Resources.ShapeManager_CreateToolbar_StartingStepValue);
             tslnudStartingStepValue.Content.Minimum = 1;
@@ -605,7 +599,7 @@ namespace ShareX.ScreenCaptureLib
                 StartingStepNumber = (int)tslnudStartingStepValue.Content.Value;
                 UpdateCurrentShape();
             };
-            tsddbShapeOptions.DropDownItems.Add(tslnudStartingStepValue);
+            cms.Items.Add(tslnudStartingStepValue);
 
             tsmiStepUseLetters = new ToolStripMenuItem(Resources.ShapeManager_CreateToolbar_UseLetters);
             tsmiStepUseLetters.Checked = false;
@@ -615,7 +609,7 @@ namespace ShareX.ScreenCaptureLib
                 AnnotationOptions.StepUseLetters = tsmiStepUseLetters.Checked;
                 UpdateCurrentShape();
             };
-            tsddbShapeOptions.DropDownItems.Add(tsmiStepUseLetters);
+            cms.Items.Add(tsmiStepUseLetters);
 
             tsmiShadow = new ToolStripMenuItem(Resources.ShapeManager_CreateToolbar_DropShadow);
             tsmiShadow.Checked = true;
@@ -625,7 +619,7 @@ namespace ShareX.ScreenCaptureLib
                 AnnotationOptions.Shadow = tsmiShadow.Checked;
                 UpdateCurrentShape();
             };
-            tsddbShapeOptions.DropDownItems.Add(tsmiShadow);
+            cms.Items.Add(tsmiShadow);
 
             tsmiShadowColor = new ToolStripMenuItem(Resources.DropShadowColor);
             tsmiShadowColor.Click += (sender, e) =>
@@ -641,77 +635,71 @@ namespace ShareX.ScreenCaptureLib
 
                 Form.Resume();
             };
-            tsddbShapeOptions.DropDownItems.Add(tsmiShadowColor);
-
-            // In dropdown menu if only last item is visible then menu opens at 0, 0 position on first open, so need to add dummy item to solve this weird bug...
-            tsddbShapeOptions.DropDownItems.Add(new ToolStripSeparator() { Visible = false });
+            cms.Items.Add(tsmiShadowColor);
 
             #endregion Shape options
 
             #region Edit
 
-            ToolStripDropDownButton tsddbEdit = new ToolStripDropDownButton(Resources.ShapeManager_CreateToolbar_Edit);
-            tsddbEdit.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            tsddbEdit.Image = Resources.wrench_screwdriver;
-            tsMain.Items.Add(tsddbEdit);
+            cms.Items.Add(new ToolStripSeparator());
 
             tsmiUndo = new ToolStripMenuItem(Resources.ShapeManager_CreateToolbar_Undo);
             tsmiUndo.Image = Resources.arrow_circle_225_left;
             tsmiUndo.ShortcutKeyDisplayString = "Ctrl+Z";
             tsmiUndo.Click += (sender, e) => UndoShape();
-            tsddbEdit.DropDownItems.Add(tsmiUndo);
+            cms.Items.Add(tsmiUndo);
 
             ToolStripMenuItem tsmiPaste = new ToolStripMenuItem(Resources.ShapeManager_CreateToolbar_PasteImageText);
             tsmiPaste.Image = Resources.clipboard;
             tsmiPaste.ShortcutKeyDisplayString = "Ctrl+V";
             tsmiPaste.Click += (sender, e) => PasteFromClipboard(false);
-            tsddbEdit.DropDownItems.Add(tsmiPaste);
+            cms.Items.Add(tsmiPaste);
 
             tsmiDuplicate = new ToolStripMenuItem(Resources.Duplicate);
             tsmiDuplicate.Image = Resources.document_copy;
             tsmiDuplicate.ShortcutKeyDisplayString = "Ctrl+D";
             tsmiDuplicate.Click += (sender, e) => DuplicateCurrrentShape(false);
-            tsddbEdit.DropDownItems.Add(tsmiDuplicate);
+            cms.Items.Add(tsmiDuplicate);
 
-            tsddbEdit.DropDownItems.Add(new ToolStripSeparator());
+            cms.Items.Add(new ToolStripSeparator());
 
             tsmiDelete = new ToolStripMenuItem(Resources.ShapeManager_CreateToolbar_Delete);
             tsmiDelete.Image = Resources.layer__minus;
             tsmiDelete.ShortcutKeyDisplayString = "Del";
             tsmiDelete.Click += (sender, e) => DeleteCurrentShape();
-            tsddbEdit.DropDownItems.Add(tsmiDelete);
+            cms.Items.Add(tsmiDelete);
 
             tsmiDeleteAll = new ToolStripMenuItem(Resources.ShapeManager_CreateToolbar_DeleteAll);
             tsmiDeleteAll.Image = Resources.eraser;
             tsmiDeleteAll.ShortcutKeyDisplayString = "Shift+Del";
             tsmiDeleteAll.Click += (sender, e) => DeleteAllShapes();
-            tsddbEdit.DropDownItems.Add(tsmiDeleteAll);
+            cms.Items.Add(tsmiDeleteAll);
 
-            tsddbEdit.DropDownItems.Add(new ToolStripSeparator());
+            cms.Items.Add(new ToolStripSeparator());
 
             tsmiMoveTop = new ToolStripMenuItem(Resources.ShapeManager_CreateToolbar_BringToFront);
             tsmiMoveTop.Image = Resources.layers_stack_arrange;
             tsmiMoveTop.ShortcutKeyDisplayString = "Home";
             tsmiMoveTop.Click += (sender, e) => MoveCurrentShapeTop();
-            tsddbEdit.DropDownItems.Add(tsmiMoveTop);
+            cms.Items.Add(tsmiMoveTop);
 
             tsmiMoveUp = new ToolStripMenuItem(Resources.ShapeManager_CreateToolbar_BringForward);
             tsmiMoveUp.Image = Resources.layers_arrange;
             tsmiMoveUp.ShortcutKeyDisplayString = "Page up";
             tsmiMoveUp.Click += (sender, e) => MoveCurrentShapeUp();
-            tsddbEdit.DropDownItems.Add(tsmiMoveUp);
+            cms.Items.Add(tsmiMoveUp);
 
             tsmiMoveDown = new ToolStripMenuItem(Resources.ShapeManager_CreateToolbar_SendBackward);
             tsmiMoveDown.Image = Resources.layers_arrange_back;
             tsmiMoveDown.ShortcutKeyDisplayString = "Page down";
             tsmiMoveDown.Click += (sender, e) => MoveCurrentShapeDown();
-            tsddbEdit.DropDownItems.Add(tsmiMoveDown);
+            cms.Items.Add(tsmiMoveDown);
 
             tsmiMoveBottom = new ToolStripMenuItem(Resources.ShapeManager_CreateToolbar_SendToBack);
             tsmiMoveBottom.Image = Resources.layers_stack_arrange_back;
             tsmiMoveBottom.ShortcutKeyDisplayString = "End";
             tsmiMoveBottom.Click += (sender, e) => MoveCurrentShapeBottom();
-            tsddbEdit.DropDownItems.Add(tsmiMoveBottom);
+            cms.Items.Add(tsmiMoveBottom);
 
             #endregion Edit
 
@@ -804,8 +792,6 @@ namespace ShareX.ScreenCaptureLib
 
                 #endregion Image
             }
-
-            tsMain.Items.Add(new ToolStripSeparator());
 
             if (!Form.IsEditorMode)
             {
@@ -1115,6 +1101,7 @@ namespace ShareX.ScreenCaptureLib
             menuForm.ResumeLayout(false);
 
             ShareXResources.ApplyTheme(menuForm, false);
+            ShareXResources.ApplyCustomThemeToContextMenuStrip(cms);
 
             menuForm.Show(Form);
 
@@ -1353,8 +1340,8 @@ namespace ShareX.ScreenCaptureLib
                 borderColor = AnnotationOptions.BorderColor;
             }
 
-            if (tsbBorderColor.Image != null) tsbBorderColor.Image.Dispose();
-            tsbBorderColor.Image = ImageHelpers.CreateColorPickerIcon(borderColor, new Rectangle(0, 0, 16, 16), 8);
+            if (tsmiBorderColor.Image != null) tsmiBorderColor.Image.Dispose();
+            tsmiBorderColor.Image = ImageHelpers.CreateColorPickerIcon(borderColor, new Rectangle(0, 0, 16, 16));
 
             int borderSize;
 
@@ -1392,8 +1379,8 @@ namespace ShareX.ScreenCaptureLib
                 fillColor = AnnotationOptions.FillColor;
             }
 
-            if (tsbFillColor.Image != null) tsbFillColor.Image.Dispose();
-            tsbFillColor.Image = ImageHelpers.CreateColorPickerIcon(fillColor, new Rectangle(0, 0, 16, 16));
+            if (tsmiFillColor.Image != null) tsmiFillColor.Image.Dispose();
+            tsmiFillColor.Image = ImageHelpers.CreateColorPickerIcon(fillColor, new Rectangle(0, 0, 16, 16));
 
             int cornerRadius = 0;
 
@@ -1416,8 +1403,8 @@ namespace ShareX.ScreenCaptureLib
 
             tslnudPixelateSize.Content.Value = AnnotationOptions.PixelateSize;
 
-            if (tsbHighlightColor.Image != null) tsbHighlightColor.Image.Dispose();
-            tsbHighlightColor.Image = ImageHelpers.CreateColorPickerIcon(AnnotationOptions.HighlightColor, new Rectangle(0, 0, 16, 16));
+            if (tsmiHighlightColor.Image != null) tsmiHighlightColor.Image.Dispose();
+            tsmiHighlightColor.Image = ImageHelpers.CreateColorPickerIcon(AnnotationOptions.HighlightColor, new Rectangle(0, 0, 16, 16));
 
             tslnudStepFontSize.Content.Value = AnnotationOptions.StepFontSize;
             tslnudStartingStepValue.Content.Value = StartingStepNumber;
@@ -1434,38 +1421,13 @@ namespace ShareX.ScreenCaptureLib
 
             tscbArrowHeadDirection.Content.SelectedIndex = (int)AnnotationOptions.ArrowHeadDirection;
 
-            switch (shapeType)
-            {
-                default:
-                    tsddbShapeOptions.Visible = false;
-                    break;
-                case ShapeType.RegionRectangle:
-                case ShapeType.DrawingRectangle:
-                case ShapeType.DrawingEllipse:
-                case ShapeType.DrawingFreehand:
-                case ShapeType.DrawingLine:
-                case ShapeType.DrawingArrow:
-                case ShapeType.DrawingTextOutline:
-                case ShapeType.DrawingTextBackground:
-                case ShapeType.DrawingSpeechBalloon:
-                case ShapeType.DrawingStep:
-                case ShapeType.DrawingMagnify:
-                case ShapeType.DrawingImage:
-                case ShapeType.DrawingImageScreen:
-                case ShapeType.DrawingCursor:
-                case ShapeType.EffectBlur:
-                case ShapeType.EffectPixelate:
-                    tsddbShapeOptions.Visible = true;
-                    break;
-            }
-
             tsmiUndo.Enabled = tsmiDeleteAll.Enabled = Shapes.Count > 0;
             tsmiDuplicate.Enabled = tsmiDelete.Enabled = tsmiMoveTop.Enabled = tsmiMoveUp.Enabled = tsmiMoveDown.Enabled = tsmiMoveBottom.Enabled = CurrentShape != null;
 
             switch (shapeType)
             {
                 default:
-                    tsbBorderColor.Visible = false;
+                    tsmiBorderColor.Visible = false;
                     tslnudBorderSize.Visible = false;
                     tsmiShadow.Visible = false;
                     tsmiShadowColor.Visible = false;
@@ -1480,7 +1442,7 @@ namespace ShareX.ScreenCaptureLib
                 case ShapeType.DrawingSpeechBalloon:
                 case ShapeType.DrawingStep:
                 case ShapeType.DrawingMagnify:
-                    tsbBorderColor.Visible = true;
+                    tsmiBorderColor.Visible = true;
                     tslnudBorderSize.Visible = true;
                     tsmiShadow.Visible = true;
                     tsmiShadowColor.Visible = true;
@@ -1490,7 +1452,7 @@ namespace ShareX.ScreenCaptureLib
             switch (shapeType)
             {
                 default:
-                    tsbFillColor.Visible = false;
+                    tsmiFillColor.Visible = false;
                     break;
                 case ShapeType.DrawingRectangle:
                 case ShapeType.DrawingEllipse:
@@ -1498,7 +1460,7 @@ namespace ShareX.ScreenCaptureLib
                 case ShapeType.DrawingSpeechBalloon:
                 case ShapeType.DrawingStep:
                 case ShapeType.DrawingMagnify:
-                    tsbFillColor.Visible = true;
+                    tsmiFillColor.Visible = true;
                     break;
             }
 
@@ -1538,7 +1500,7 @@ namespace ShareX.ScreenCaptureLib
             tscbCursorTypes.Visible = shapeType == ShapeType.DrawingCursor;
             tslnudBlurRadius.Visible = shapeType == ShapeType.EffectBlur;
             tslnudPixelateSize.Visible = shapeType == ShapeType.EffectPixelate;
-            tsbHighlightColor.Visible = shapeType == ShapeType.EffectHighlight;
+            tsmiHighlightColor.Visible = shapeType == ShapeType.EffectHighlight;
 
             if (tsmiRegionCapture != null)
             {
