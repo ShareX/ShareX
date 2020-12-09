@@ -481,8 +481,7 @@ namespace ShareX
 
         private void BtnThemeAdd_Click(object sender, EventArgs e)
         {
-            ShareXTheme theme = new ShareXTheme();
-            AddTheme(theme);
+            AddTheme(ShareXTheme.DarkTheme);
         }
 
         private void BtnThemeRemove_Click(object sender, EventArgs e)
@@ -521,7 +520,7 @@ namespace ShareX
         {
             if (MessageBox.Show(Resources.WouldYouLikeToResetThemes, "ShareX - " + Resources.Confirmation, MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
             {
-                Program.Settings.Themes = ShareXTheme.GetPresets();
+                Program.Settings.Themes = ShareXTheme.GetDefaultThemes();
                 Program.Settings.SelectedTheme = 0;
 
                 cbThemes.Items.Clear();

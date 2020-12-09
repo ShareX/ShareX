@@ -148,12 +148,7 @@ namespace ShareX.HelpersLib
         [Browsable(false)]
         public bool IsDarkTheme => ColorHelpers.IsDarkColor(BackgroundColor);
 
-        public ShareXTheme()
-        {
-            SetDarkTheme();
-        }
-
-        public void SetDarkTheme()
+        private ShareXTheme()
         {
             Name = "Dark";
             BackgroundColor = Color.FromArgb(42, 47, 56);
@@ -174,33 +169,32 @@ namespace ShareX.HelpersLib
             SeparatorDarkColor = Color.FromArgb(22, 26, 31);
         }
 
-        public void SetLightTheme()
-        {
-            Name = "Light";
-            BackgroundColor = Color.FromArgb(242, 242, 242);
-            LightBackgroundColor = Color.FromArgb(247, 247, 247);
-            DarkBackgroundColor = Color.FromArgb(235, 235, 235);
-            TextColor = Color.FromArgb(69, 69, 69);
-            BorderColor = Color.FromArgb(201, 201, 201);
-            CheckerColor = Color.FromArgb(247, 247, 247);
-            CheckerColor2 = Color.FromArgb(235, 235, 235);
-            CheckerSize = 15;
-            LinkColor = Color.FromArgb(166, 212, 255);
-            MenuHighlightColor = Color.FromArgb(247, 247, 247);
-            MenuHighlightBorderColor = Color.FromArgb(96, 143, 226);
-            MenuBorderColor = Color.FromArgb(201, 201, 201);
-            MenuCheckBackgroundColor = Color.FromArgb(225, 233, 244);
-            ContextMenuOpacity = 100;
-            SeparatorLightColor = Color.FromArgb(253, 253, 253);
-            SeparatorDarkColor = Color.FromArgb(189, 189, 189);
-        }
+        public static ShareXTheme DarkTheme => new ShareXTheme();
 
-        public static List<ShareXTheme> GetPresets()
+        public static ShareXTheme LightTheme => new ShareXTheme()
         {
-            ShareXTheme darkTheme = new ShareXTheme();
-            ShareXTheme lightTheme = new ShareXTheme();
-            lightTheme.SetLightTheme();
-            return new List<ShareXTheme>() { darkTheme, lightTheme };
+            Name = "Light",
+            BackgroundColor = Color.FromArgb(242, 242, 242),
+            LightBackgroundColor = Color.FromArgb(247, 247, 247),
+            DarkBackgroundColor = Color.FromArgb(235, 235, 235),
+            TextColor = Color.FromArgb(69, 69, 69),
+            BorderColor = Color.FromArgb(201, 201, 201),
+            CheckerColor = Color.FromArgb(247, 247, 247),
+            CheckerColor2 = Color.FromArgb(235, 235, 235),
+            CheckerSize = 15,
+            LinkColor = Color.FromArgb(166, 212, 255),
+            MenuHighlightColor = Color.FromArgb(247, 247, 247),
+            MenuHighlightBorderColor = Color.FromArgb(96, 143, 226),
+            MenuBorderColor = Color.FromArgb(201, 201, 201),
+            MenuCheckBackgroundColor = Color.FromArgb(225, 233, 244),
+            ContextMenuOpacity = 100,
+            SeparatorLightColor = Color.FromArgb(253, 253, 253),
+            SeparatorDarkColor = Color.FromArgb(189, 189, 189)
+        };
+
+        public static List<ShareXTheme> GetDefaultThemes()
+        {
+            return new List<ShareXTheme>() { DarkTheme, LightTheme };
         }
 
         public override string ToString()
