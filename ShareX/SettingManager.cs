@@ -219,6 +219,12 @@ namespace ShareX
             {
                 Settings.UseCustomTheme = Settings.UseDarkTheme;
             }
+
+            if (Settings.IsUpgradeFrom("13.3.1") && Settings.Themes != null)
+            {
+                Settings.Themes.Add(ShareXTheme.NordDarkTheme);
+                Settings.Themes.Add(ShareXTheme.NordLightTheme);
+            }
         }
 
         private static void MigrateHistoryFile()

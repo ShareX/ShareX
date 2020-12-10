@@ -191,10 +191,10 @@ namespace ShareX.HelpersLib
             SeparatorLightColor = Color.FromArgb(253, 253, 253),
             SeparatorDarkColor = Color.FromArgb(189, 189, 189)
         };
-        
-        public static ShareXTheme NordTheme => new ShareXTheme()
+
+        public static ShareXTheme NordDarkTheme => new ShareXTheme()
         {
-            Name = "Nord",
+            Name = "Nord Dark",
             BackgroundColor = Color.FromArgb(46, 52, 64),
             LightBackgroundColor = Color.FromArgb(59, 66, 82),
             DarkBackgroundColor = Color.FromArgb(38, 44, 57),
@@ -233,10 +233,10 @@ namespace ShareX.HelpersLib
             SeparatorLightColor = Color.FromArgb(236, 239, 244),
             SeparatorDarkColor = Color.FromArgb(207, 216, 233)
         };
-        
+
         public static List<ShareXTheme> GetDefaultThemes()
         {
-            return new List<ShareXTheme>() { DarkTheme, LightTheme, NordTheme, NordLightTheme };
+            return new List<ShareXTheme>() { DarkTheme, LightTheme, NordDarkTheme, NordLightTheme };
         }
 
         public override string ToString()
