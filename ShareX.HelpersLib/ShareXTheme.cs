@@ -192,6 +192,7 @@ namespace ShareX.HelpersLib
             SeparatorDarkColor = Color.FromArgb(189, 189, 189)
         };
 
+        // https://www.nordtheme.com
         public static ShareXTheme NordDarkTheme => new ShareXTheme()
         {
             Name = "Nord Dark",
@@ -213,6 +214,7 @@ namespace ShareX.HelpersLib
             SeparatorDarkColor = Color.FromArgb(30, 38, 54)
         };
 
+        // https://www.nordtheme.com
         public static ShareXTheme NordLightTheme => new ShareXTheme()
         {
             Name = "Nord Light",
@@ -234,9 +236,31 @@ namespace ShareX.HelpersLib
             SeparatorDarkColor = Color.FromArgb(207, 216, 233)
         };
 
+        // https://draculatheme.com
+        public static ShareXTheme DraculaTheme => new ShareXTheme()
+        {
+            Name = "Dracula",
+            BackgroundColor = Color.FromArgb(40, 42, 54),
+            LightBackgroundColor = Color.FromArgb(68, 71, 90),
+            DarkBackgroundColor = Color.FromArgb(36, 38, 48),
+            TextColor = Color.FromArgb(248, 248, 242),
+            BorderColor = Color.FromArgb(33, 35, 43),
+            CheckerColor = Color.FromArgb(40, 42, 54),
+            CheckerColor2 = Color.FromArgb(36, 38, 48),
+            CheckerSize = 15,
+            LinkColor = Color.FromArgb(98, 114, 164),
+            MenuHighlightColor = Color.FromArgb(36, 38, 48),
+            MenuHighlightBorderColor = Color.FromArgb(255, 121, 198),
+            MenuBorderColor = Color.FromArgb(33, 35, 43),
+            MenuCheckBackgroundColor = Color.FromArgb(45, 47, 61),
+            ContextMenuOpacity = 100,
+            SeparatorLightColor = Color.FromArgb(45, 47, 61),
+            SeparatorDarkColor = Color.FromArgb(33, 35, 43)
+        };
+
         public static List<ShareXTheme> GetDefaultThemes()
         {
-            return new List<ShareXTheme>() { DarkTheme, LightTheme, NordDarkTheme, NordLightTheme };
+            return new List<ShareXTheme>() { DarkTheme, LightTheme, NordDarkTheme, NordLightTheme, DraculaTheme };
         }
 
         public override string ToString()

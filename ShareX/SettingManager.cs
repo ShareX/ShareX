@@ -224,6 +224,7 @@ namespace ShareX
             {
                 Settings.Themes.Add(ShareXTheme.NordDarkTheme);
                 Settings.Themes.Add(ShareXTheme.NordLightTheme);
+                Settings.Themes.Add(ShareXTheme.DraculaTheme);
             }
         }
 
