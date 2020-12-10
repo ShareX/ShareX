@@ -228,7 +228,7 @@ namespace ShareX.HelpersLib
             CheckerSize = 15,
             LinkColor = Color.FromArgb(106, 162, 178),
             MenuHighlightColor = Color.FromArgb(236, 239, 244),
-            MenuHighlightBorderColor = Color.FromArgb(46, 52, 64),
+            MenuHighlightBorderColor = Color.FromArgb(207, 216, 233),
             MenuBorderColor = Color.FromArgb(216, 222, 233),
             MenuCheckBackgroundColor = Color.FromArgb(229, 233, 240),
             ContextMenuOpacity = 100,
