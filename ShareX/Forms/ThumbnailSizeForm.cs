@@ -47,6 +47,12 @@ namespace ShareX
             nudHeight.SetValue(ThumbnailSize.Height);
         }
 
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            nudWidth.SetValue(200);
+            nudHeight.SetValue(150);
+        }
+
         private void btnOK_Click(object sender, EventArgs e)
         {
             ThumbnailSize = new Size((int)nudWidth.Value, (int)nudHeight.Value);

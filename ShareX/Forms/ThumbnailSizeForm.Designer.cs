@@ -35,6 +35,7 @@ namespace ShareX
             this.nudHeight = new System.Windows.Forms.NumericUpDown();
             this.btnOK = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.btnReset = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.nudWidth)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudHeight)).BeginInit();
             this.SuspendLayout();
@@ -105,10 +106,10 @@ namespace ShareX
             // 
             // btnOK
             // 
-            this.btnOK.Location = new System.Drawing.Point(16, 72);
+            this.btnOK.Location = new System.Drawing.Point(16, 96);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(96, 24);
-            this.btnOK.TabIndex = 4;
+            this.btnOK.TabIndex = 5;
             this.btnOK.Text = "OK";
             this.btnOK.UseVisualStyleBackColor = true;
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
@@ -116,13 +117,23 @@ namespace ShareX
             // btnCancel
             // 
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancel.Location = new System.Drawing.Point(120, 72);
+            this.btnCancel.Location = new System.Drawing.Point(120, 96);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(96, 24);
-            this.btnCancel.TabIndex = 5;
+            this.btnCancel.TabIndex = 6;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // btnReset
+            // 
+            this.btnReset.Location = new System.Drawing.Point(120, 64);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(96, 24);
+            this.btnReset.TabIndex = 4;
+            this.btnReset.Text = "Reset";
+            this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // ThumbnailSizeForm
             // 
@@ -130,7 +141,8 @@ namespace ShareX
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.CancelButton = this.btnCancel;
-            this.ClientSize = new System.Drawing.Size(229, 107);
+            this.ClientSize = new System.Drawing.Size(229, 130);
+            this.Controls.Add(this.btnReset);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.nudHeight);
@@ -158,5 +170,6 @@ namespace ShareX
         private System.Windows.Forms.NumericUpDown nudHeight;
         private System.Windows.Forms.Button btnOK;
         private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Button btnReset;
     }
 }
