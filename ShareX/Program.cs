@@ -327,7 +327,7 @@ namespace ShareX
             RegisterExtensions();
             CheckPuushMode();
             DebugWriteFlags();
-            CleanupManager.Cleanup(20);
+            CleanupManager.CleanupAsync(20);
 
             SettingManager.LoadInitialSettings();
 

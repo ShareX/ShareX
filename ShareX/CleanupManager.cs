@@ -36,14 +36,19 @@ namespace ShareX
     {
         public static void Cleanup(int keepFileCount)
         {
+            CleanupFolder(SettingManager.BackupFolder, "ApplicationConfig-*.json", keepFileCount);
+            CleanupFolder(SettingManager.BackupFolder, "HotkeysConfig-*.json", keepFileCount);
+            CleanupFolder(SettingManager.BackupFolder, "UploadersConfig-*.json", keepFileCount);
+            CleanupFolder(SettingManager.BackupFolder, "History-*.json", keepFileCount);
+            CleanupFolder(Program.LogsFolder, "ShareX-Log-*.txt", keepFileCount);
+            CleanupAppTempFolder();
+        }
+
+        public static void CleanupAsync(int keepFileCount)
+        {
             Task.Run(() =>
             {
-                CleanupFolder(SettingManager.BackupFolder, "ApplicationConfig-*.json", keepFileCount);
-                CleanupFolder(SettingManager.BackupFolder, "HotkeysConfig-*.json", keepFileCount);
-                CleanupFolder(SettingManager.BackupFolder, "UploadersConfig-*.json", keepFileCount);
-                CleanupFolder(SettingManager.BackupFolder, "History-*.json", keepFileCount);
-                CleanupFolder(Program.LogsFolder, "ShareX-Log-*.txt", keepFileCount);
-                CleanupTempFiles();
+                Cleanup(keepFileCount);
             });
         }
 
@@ -57,10 +62,12 @@ namespace ShareX
             foreach (FileInfo file in files)
             {
                 file.Delete();
+
+                DebugHelper.WriteLine($"File deleted: {file.FullName}");
             }
         }
 
-        private static void CleanupTempFiles()
+        private static void CleanupAppTempFolder()
         {
             try
             {
@@ -74,7 +81,7 @@ namespace ShareX
                     {
                         Directory.Delete(folderPath, true);
 
-                        DebugHelper.WriteLine($"Temp files cleaned: {folderPath}");
+                        DebugHelper.WriteLine($"ShareX temp folder cleaned: {folderPath}");
                     }
                 }
             }
