@@ -36,12 +36,21 @@ namespace ShareX
     {
         public static void Cleanup(int keepFileCount)
         {
-            CleanupFolder(SettingManager.BackupFolder, "ApplicationConfig-*.json", keepFileCount);
-            CleanupFolder(SettingManager.BackupFolder, "HotkeysConfig-*.json", keepFileCount);
-            CleanupFolder(SettingManager.BackupFolder, "UploadersConfig-*.json", keepFileCount);
-            CleanupFolder(SettingManager.BackupFolder, "History-*.json", keepFileCount);
-            CleanupFolder(Program.LogsFolder, "ShareX-Log-*.txt", keepFileCount);
-            CleanupAppTempFolder();
+            keepFileCount = Math.Max(keepFileCount, 0);
+
+            try
+            {
+                CleanupAppTempFolder();
+                CleanupFolder(SettingManager.BackupFolder, "ApplicationConfig-*.json", keepFileCount);
+                CleanupFolder(SettingManager.BackupFolder, "HotkeysConfig-*.json", keepFileCount);
+                CleanupFolder(SettingManager.BackupFolder, "UploadersConfig-*.json", keepFileCount);
+                CleanupFolder(SettingManager.BackupFolder, "History-*.json", keepFileCount);
+                CleanupFolder(Program.LogsFolder, "ShareX-Log-*.txt", keepFileCount);
+            }
+            catch (Exception e)
+            {
+                DebugHelper.WriteException(e);
+            }
         }
 
         public static void CleanupAsync(int keepFileCount)
@@ -69,25 +78,18 @@ namespace ShareX
 
         private static void CleanupAppTempFolder()
         {
-            try
-            {
-                string tempFolder = Path.GetTempPath();
+            string tempFolder = Path.GetTempPath();
 
-                if (!string.IsNullOrEmpty(tempFolder))
+            if (!string.IsNullOrEmpty(tempFolder))
+            {
+                string folderPath = Path.Combine(tempFolder, "ShareX");
+
+                if (Directory.Exists(folderPath))
                 {
-                    string folderPath = Path.Combine(tempFolder, "ShareX");
+                    Directory.Delete(folderPath, true);
 
-                    if (Directory.Exists(folderPath))
-                    {
-                        Directory.Delete(folderPath, true);
-
-                        DebugHelper.WriteLine($"ShareX temp folder cleaned: {folderPath}");
-                    }
+                    DebugHelper.WriteLine($"ShareX temp folder cleaned: {folderPath}");
                 }
-            }
-            catch (Exception e)
-            {
-                DebugHelper.WriteException(e);
             }
         }
     }
