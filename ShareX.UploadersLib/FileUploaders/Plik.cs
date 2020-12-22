@@ -113,6 +113,7 @@ namespace ShareX.UploadersLib.FileUploaders
             UploadMetadataResponse fileData = JsonConvert.DeserializeObject<UploadMetadataResponse>(fileDataReq.Response);
             UploadMetadataResponseFile actFile = metaData.files.First().Value;
             result.URL = $"{Settings.URL}/file/{metaData.id}/{actFile.id}/{actFile.fileName}";
+            result.URL = Uri.EscapeUriString($"{Settings.URL}/file/{metaData.id}/{actFile.id}/{actFile.fileName}");
             return result;
         }
 
