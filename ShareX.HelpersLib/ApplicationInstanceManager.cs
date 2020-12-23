@@ -135,6 +135,7 @@ namespace ShareX.HelpersLib
 
                 var bytes = Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(pipeData));
                 pipeClient.Write(bytes, 0, bytes.Length);
+                pipeClient.Flush();
             }
         }
 
