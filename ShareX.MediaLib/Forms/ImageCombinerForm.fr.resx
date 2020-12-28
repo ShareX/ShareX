@@ -150,4 +150,10 @@
   <data name="lblImageAlignment.Text" xml:space="preserve">
     <value>Alignement de l'image :</value>
   </data>
+  <data name="rbOrientationHorizontal.Text" xml:space="preserve">
+    <value>Horizontal</value>
+  </data>
+  <data name="rbOrientationVertical.Text" xml:space="preserve">
+    <value>Vertical</value>
+  </data>
 </root>

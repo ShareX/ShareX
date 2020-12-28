@@ -858,4 +858,7 @@
   <data name="tsmiRestartAsAdmin.Text" xml:space="preserve">
     <value>Redémarrer ShareX en tant qu'administrateur</value>
   </data>
+  <data name="tsmiThumbnailSize.Text" xml:space="preserve">
+    <value>Taille des miniatures...</value>
+  </data>
 </root>

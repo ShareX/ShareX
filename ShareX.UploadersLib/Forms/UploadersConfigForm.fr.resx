@@ -1326,4 +1326,7 @@ quand vous avez créé la clé d'application.</value>
   <data name="cbSeafileCreateShareableURLRaw.Text" xml:space="preserve">
     <value>Utiliser l'URL brute</value>
   </data>
+  <data name="lblGfycatTitle.Text" xml:space="preserve">
+    <value>Titre :</value>
+  </data>
 </root>
