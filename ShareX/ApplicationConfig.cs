@@ -108,6 +108,14 @@ namespace ShareX
 
         #endregion Paths
 
+        #region Settings
+
+        public bool AutoCleanupBackupFiles = true;
+        public bool AutoCleanupLogFiles = true;
+        public int CleanupKeepFileCount = 20;
+
+        #endregion
+
         #region Proxy
 
         public ProxyInfo ProxySettings = new ProxyInfo();

@@ -487,7 +487,7 @@
     <value>btnLanguages</value>
   </data>
   <data name="&gt;&gt;btnLanguages.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MenuButton, ShareX.HelpersLib, Version=13.3.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MenuButton, ShareX.HelpersLib, Version=13.4.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;btnLanguages.Parent" xml:space="preserve">
     <value>tpGeneral</value>
@@ -672,6 +672,9 @@
   <data name="&gt;&gt;tpGeneral.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="btnThemeReset.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="btnThemeReset.Location" type="System.Drawing.Point, System.Drawing">
     <value>400, 40</value>
   </data>
@@ -695,27 +698,6 @@
   </data>
   <data name="&gt;&gt;btnThemeReset.ZOrder" xml:space="preserve">
     <value>0</value>
-  </data>
-  <data name="eiTheme.Location" type="System.Drawing.Point, System.Drawing">
-    <value>208, 40</value>
-  </data>
-  <data name="eiTheme.Size" type="System.Drawing.Size, System.Drawing">
-    <value>185, 24</value>
-  </data>
-  <data name="eiTheme.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;eiTheme.Name" xml:space="preserve">
-    <value>eiTheme</value>
-  </data>
-  <data name="&gt;&gt;eiTheme.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.ExportImportControl, ShareX.HelpersLib, Version=13.3.1.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;eiTheme.Parent" xml:space="preserve">
-    <value>tpTheme</value>
-  </data>
-  <data name="&gt;&gt;eiTheme.ZOrder" xml:space="preserve">
-    <value>1</value>
   </data>
   <data name="btnThemeRemove.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -742,7 +724,7 @@
     <value>tpTheme</value>
   </data>
   <data name="&gt;&gt;btnThemeRemove.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>1</value>
   </data>
   <data name="btnThemeAdd.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -769,7 +751,7 @@
     <value>tpTheme</value>
   </data>
   <data name="&gt;&gt;btnThemeAdd.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>2</value>
   </data>
   <data name="cbThemes.Location" type="System.Drawing.Point, System.Drawing">
     <value>208, 14</value>
@@ -790,7 +772,7 @@
     <value>tpTheme</value>
   </data>
   <data name="&gt;&gt;cbThemes.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>3</value>
   </data>
   <data name="pgTheme.HelpVisible" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -814,7 +796,7 @@
     <value>tpTheme</value>
   </data>
   <data name="&gt;&gt;pgTheme.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>4</value>
   </data>
   <data name="cbUseCustomTheme.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -844,6 +826,27 @@
     <value>tpTheme</value>
   </data>
   <data name="&gt;&gt;cbUseCustomTheme.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="eiTheme.Location" type="System.Drawing.Point, System.Drawing">
+    <value>208, 40</value>
+  </data>
+  <data name="eiTheme.Size" type="System.Drawing.Size, System.Drawing">
+    <value>185, 24</value>
+  </data>
+  <data name="eiTheme.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;eiTheme.Name" xml:space="preserve">
+    <value>eiTheme</value>
+  </data>
+  <data name="&gt;&gt;eiTheme.Type" xml:space="preserve">
+    <value>ShareX.HelpersLib.ExportImportControl, ShareX.HelpersLib, Version=13.4.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;eiTheme.Parent" xml:space="preserve">
+    <value>tpTheme</value>
+  </data>
+  <data name="&gt;&gt;eiTheme.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
   <data name="tpTheme.Location" type="System.Drawing.Point, System.Drawing">
@@ -853,7 +856,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpTheme.Size" type="System.Drawing.Size, System.Drawing">
-    <value>550, 370</value>
+    <value>556, 376</value>
   </data>
   <data name="tpTheme.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -1237,7 +1240,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpIntegration.Size" type="System.Drawing.Size, System.Drawing">
-    <value>550, 370</value>
+    <value>556, 376</value>
   </data>
   <data name="tpIntegration.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -1612,7 +1615,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpPaths.Size" type="System.Drawing.Size, System.Drawing">
-    <value>550, 370</value>
+    <value>556, 376</value>
   </data>
   <data name="tpPaths.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -1631,6 +1634,123 @@
   </data>
   <data name="&gt;&gt;tpPaths.ZOrder" xml:space="preserve">
     <value>3</value>
+  </data>
+  <data name="cbAutomaticallyCleanupLogFiles.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbAutomaticallyCleanupLogFiles.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="cbAutomaticallyCleanupLogFiles.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 240</value>
+  </data>
+  <data name="cbAutomaticallyCleanupLogFiles.Size" type="System.Drawing.Size, System.Drawing">
+    <value>184, 17</value>
+  </data>
+  <data name="cbAutomaticallyCleanupLogFiles.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="cbAutomaticallyCleanupLogFiles.Text" xml:space="preserve">
+    <value>Automatically cleanup old log files</value>
+  </data>
+  <data name="&gt;&gt;cbAutomaticallyCleanupLogFiles.Name" xml:space="preserve">
+    <value>cbAutomaticallyCleanupLogFiles</value>
+  </data>
+  <data name="&gt;&gt;cbAutomaticallyCleanupLogFiles.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbAutomaticallyCleanupLogFiles.Parent" xml:space="preserve">
+    <value>tpSettings</value>
+  </data>
+  <data name="&gt;&gt;cbAutomaticallyCleanupLogFiles.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="nudCleanupKeepFileCount.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 280</value>
+  </data>
+  <data name="nudCleanupKeepFileCount.Size" type="System.Drawing.Size, System.Drawing">
+    <value>72, 20</value>
+  </data>
+  <data name="nudCleanupKeepFileCount.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="nudCleanupKeepFileCount.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
+  </data>
+  <data name="&gt;&gt;nudCleanupKeepFileCount.Name" xml:space="preserve">
+    <value>nudCleanupKeepFileCount</value>
+  </data>
+  <data name="&gt;&gt;nudCleanupKeepFileCount.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;nudCleanupKeepFileCount.Parent" xml:space="preserve">
+    <value>tpSettings</value>
+  </data>
+  <data name="&gt;&gt;nudCleanupKeepFileCount.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="lblCleanupKeepFileCount.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblCleanupKeepFileCount.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblCleanupKeepFileCount.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 264</value>
+  </data>
+  <data name="lblCleanupKeepFileCount.Size" type="System.Drawing.Size, System.Drawing">
+    <value>119, 13</value>
+  </data>
+  <data name="lblCleanupKeepFileCount.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="lblCleanupKeepFileCount.Text" xml:space="preserve">
+    <value>Number of files to keep:</value>
+  </data>
+  <data name="&gt;&gt;lblCleanupKeepFileCount.Name" xml:space="preserve">
+    <value>lblCleanupKeepFileCount</value>
+  </data>
+  <data name="&gt;&gt;lblCleanupKeepFileCount.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblCleanupKeepFileCount.Parent" xml:space="preserve">
+    <value>tpSettings</value>
+  </data>
+  <data name="&gt;&gt;lblCleanupKeepFileCount.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="cbAutomaticallyCleanupBackupFiles.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbAutomaticallyCleanupBackupFiles.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="cbAutomaticallyCleanupBackupFiles.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 216</value>
+  </data>
+  <data name="cbAutomaticallyCleanupBackupFiles.Size" type="System.Drawing.Size, System.Drawing">
+    <value>206, 17</value>
+  </data>
+  <data name="cbAutomaticallyCleanupBackupFiles.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="cbAutomaticallyCleanupBackupFiles.Text" xml:space="preserve">
+    <value>Automatically cleanup old backup files</value>
+  </data>
+  <data name="&gt;&gt;cbAutomaticallyCleanupBackupFiles.Name" xml:space="preserve">
+    <value>cbAutomaticallyCleanupBackupFiles</value>
+  </data>
+  <data name="&gt;&gt;cbAutomaticallyCleanupBackupFiles.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbAutomaticallyCleanupBackupFiles.Parent" xml:space="preserve">
+    <value>tpSettings</value>
+  </data>
+  <data name="&gt;&gt;cbAutomaticallyCleanupBackupFiles.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="pbExportImportNote.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="pbExportImportNote.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 16</value>
@@ -1654,10 +1774,13 @@
     <value>tpSettings</value>
   </data>
   <data name="&gt;&gt;pbExportImportNote.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>4</value>
   </data>
   <data name="cbExportHistory.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="cbExportHistory.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="cbExportHistory.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 88</value>
@@ -1681,10 +1804,13 @@
     <value>tpSettings</value>
   </data>
   <data name="&gt;&gt;cbExportHistory.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>5</value>
   </data>
   <data name="cbExportSettings.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="cbExportSettings.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="cbExportSettings.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 64</value>
@@ -1708,7 +1834,10 @@
     <value>tpSettings</value>
   </data>
   <data name="&gt;&gt;cbExportSettings.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>6</value>
+  </data>
+  <data name="lblExportImportNote.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="lblExportImportNote.Location" type="System.Drawing.Point, System.Drawing">
     <value>56, 16</value>
@@ -1735,7 +1864,7 @@
     <value>tpSettings</value>
   </data>
   <data name="&gt;&gt;lblExportImportNote.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>7</value>
   </data>
   <data name="btnResetSettings.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -1762,7 +1891,7 @@
     <value>tpSettings</value>
   </data>
   <data name="&gt;&gt;btnResetSettings.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>8</value>
   </data>
   <data name="pbExportImport.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -1789,7 +1918,7 @@
     <value>tpSettings</value>
   </data>
   <data name="&gt;&gt;pbExportImport.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>9</value>
   </data>
   <data name="btnExport.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -1816,7 +1945,7 @@
     <value>tpSettings</value>
   </data>
   <data name="&gt;&gt;btnExport.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>10</value>
   </data>
   <data name="btnImport.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -1843,7 +1972,7 @@
     <value>tpSettings</value>
   </data>
   <data name="&gt;&gt;btnImport.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>11</value>
   </data>
   <data name="tpSettings.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>
@@ -1852,7 +1981,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpSettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>550, 370</value>
+    <value>556, 376</value>
   </data>
   <data name="tpSettings.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -2014,7 +2143,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpPerformance.Size" type="System.Drawing.Size, System.Drawing">
-    <value>536, 338</value>
+    <value>542, 344</value>
   </data>
   <data name="tpPerformance.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -2143,7 +2272,7 @@
     <value>lvClipboardFormats</value>
   </data>
   <data name="&gt;&gt;lvClipboardFormats.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=13.3.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=13.4.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lvClipboardFormats.Parent" xml:space="preserve">
     <value>gbClipboardFormats</value>
@@ -2182,7 +2311,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpUploadResults.Size" type="System.Drawing.Size, System.Drawing">
-    <value>536, 338</value>
+    <value>542, 344</value>
   </data>
   <data name="tpUploadResults.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -2218,7 +2347,7 @@
     <value>lvSecondaryFileUploaders</value>
   </data>
   <data name="&gt;&gt;lvSecondaryFileUploaders.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=13.3.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=13.4.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lvSecondaryFileUploaders.Parent" xml:space="preserve">
     <value>gbSecondaryFileUploaders</value>
@@ -2269,7 +2398,7 @@
     <value>lvSecondaryImageUploaders</value>
   </data>
   <data name="&gt;&gt;lvSecondaryImageUploaders.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=13.3.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=13.4.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lvSecondaryImageUploaders.Parent" xml:space="preserve">
     <value>gbSecondaryImageUploaders</value>
@@ -2320,7 +2449,7 @@
     <value>lvSecondaryTextUploaders</value>
   </data>
   <data name="&gt;&gt;lvSecondaryTextUploaders.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=13.3.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=13.4.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lvSecondaryTextUploaders.Parent" xml:space="preserve">
     <value>gbSecondaryTextUploaders</value>
@@ -2446,7 +2575,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpUploadRetry.Size" type="System.Drawing.Size, System.Drawing">
-    <value>536, 338</value>
+    <value>542, 344</value>
   </data>
   <data name="tpUploadRetry.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -2473,7 +2602,7 @@
     <value>3, 3</value>
   </data>
   <data name="tcUpload.Size" type="System.Drawing.Size, System.Drawing">
-    <value>544, 364</value>
+    <value>550, 370</value>
   </data>
   <data name="tcUpload.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -2497,7 +2626,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpUpload.Size" type="System.Drawing.Size, System.Drawing">
-    <value>550, 370</value>
+    <value>556, 376</value>
   </data>
   <data name="tpUpload.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -2806,7 +2935,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpHistory.Size" type="System.Drawing.Size, System.Drawing">
-    <value>550, 370</value>
+    <value>556, 376</value>
   </data>
   <data name="tpHistory.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -2920,7 +3049,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpPrint.Size" type="System.Drawing.Size, System.Drawing">
-    <value>550, 370</value>
+    <value>556, 376</value>
   </data>
   <data name="tpPrint.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -3205,7 +3334,7 @@
     <value>5, 5, 5, 5</value>
   </data>
   <data name="tpProxy.Size" type="System.Drawing.Size, System.Drawing">
-    <value>550, 370</value>
+    <value>556, 376</value>
   </data>
   <data name="tpProxy.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -3232,7 +3361,7 @@
     <value>3, 3</value>
   </data>
   <data name="pgSettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>544, 364</value>
+    <value>550, 370</value>
   </data>
   <data name="pgSettings.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -3256,7 +3385,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tpAdvanced.Size" type="System.Drawing.Size, System.Drawing">
-    <value>550, 370</value>
+    <value>556, 376</value>
   </data>
   <data name="tpAdvanced.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -3319,7 +3448,7 @@
     <value>tttvMain</value>
   </data>
   <data name="&gt;&gt;tttvMain.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.TabToTreeView, ShareX.HelpersLib, Version=13.3.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.TabToTreeView, ShareX.HelpersLib, Version=13.4.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;tttvMain.Parent" xml:space="preserve">
     <value>$this</value>
@@ -3335,6 +3464,9 @@
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>737, 402</value>
+  </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>640, 440</value>
