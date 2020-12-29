@@ -36,25 +36,26 @@ namespace ShareX
     {
         public static void Cleanup()
         {
-            if (Program.Settings == null) return;
-
-            int keepFileCount = Math.Max(Program.Settings.CleanupKeepFileCount, 0);
-
             try
             {
                 CleanupAppTempFolder();
 
-                if (Program.Settings.AutoCleanupBackupFiles)
+                if (Program.Settings != null)
                 {
-                    CleanupFolder(SettingManager.BackupFolder, "ApplicationConfig-*.json", keepFileCount);
-                    CleanupFolder(SettingManager.BackupFolder, "HotkeysConfig-*.json", keepFileCount);
-                    CleanupFolder(SettingManager.BackupFolder, "UploadersConfig-*.json", keepFileCount);
-                    CleanupFolder(SettingManager.BackupFolder, "History-*.json", keepFileCount);
-                }
+                    int keepFileCount = Math.Max(Program.Settings.CleanupKeepFileCount, 0);
 
-                if (Program.Settings.AutoCleanupLogFiles)
-                {
-                    CleanupFolder(Program.LogsFolder, "ShareX-Log-*.txt", keepFileCount);
+                    if (Program.Settings.AutoCleanupBackupFiles)
+                    {
+                        CleanupFolder(SettingManager.BackupFolder, "ApplicationConfig-*.json", keepFileCount);
+                        CleanupFolder(SettingManager.BackupFolder, "HotkeysConfig-*.json", keepFileCount);
+                        CleanupFolder(SettingManager.BackupFolder, "UploadersConfig-*.json", keepFileCount);
+                        CleanupFolder(SettingManager.BackupFolder, "History-*.json", keepFileCount);
+                    }
+
+                    if (Program.Settings.AutoCleanupLogFiles)
+                    {
+                        CleanupFolder(Program.LogsFolder, "ShareX-Log-*.txt", keepFileCount);
+                    }
                 }
             }
             catch (Exception e)
