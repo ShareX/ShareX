@@ -110,9 +110,9 @@ namespace ShareX
 
         #region Settings
 
-        public bool AutoCleanupBackupFiles = true;
-        public bool AutoCleanupLogFiles = true;
-        public int CleanupKeepFileCount = 20;
+        public bool AutoCleanupBackupFiles = false;
+        public bool AutoCleanupLogFiles = false;
+        public int CleanupKeepFileCount = 10;
 
         #endregion
 
