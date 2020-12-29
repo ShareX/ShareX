@@ -150,6 +150,7 @@
     <Compile Include="CaptureHelpers\CaptureRegion.cs" />
     <Compile Include="CaptureHelpers\CaptureWindow.cs" />
     <Compile Include="ChromeManifest.cs" />
+    <Compile Include="CleanupManager.cs" />
     <Compile Include="Controls\BeforeUploadControl.cs">
       <SubType>UserControl</SubType>
     </Compile>

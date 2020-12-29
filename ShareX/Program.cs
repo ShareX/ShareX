@@ -32,7 +32,6 @@ using System.Diagnostics;
 using System.IO;
 using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 #if WindowsStore
@@ -328,13 +327,13 @@ namespace ShareX
             RegisterExtensions();
             CheckPuushMode();
             DebugWriteFlags();
-            CleanTempFiles();
 
             SettingManager.LoadInitialSettings();
 
             Uploader.UpdateServicePointManager();
             UpdateManager = new GitHubUpdateManager("ShareX", "ShareX", Dev, Portable);
             LanguageHelper.ChangeLanguage(Settings.Language);
+            CleanupManager.CleanupAsync();
             Helpers.TryFixHandCursor();
 
             DebugHelper.WriteLine("MainForm init started.");
@@ -664,33 +663,6 @@ namespace ShareX
             {
                 DebugHelper.WriteLine("Flags: " + output);
             }
-        }
-
-        private static void CleanTempFiles()
-        {
-            Task.Run(() =>
-            {
-                try
-                {
-                    string tempFolder = Path.GetTempPath();
-
-                    if (!string.IsNullOrEmpty(tempFolder))
-                    {
-                        string folderPath = Path.Combine(tempFolder, "ShareX");
-
-                        if (Directory.Exists(folderPath))
-                        {
-                            Directory.Delete(folderPath, true);
-
-                            DebugHelper.WriteLine($"Temp files cleaned: {folderPath}");
-                        }
-                    }
-                }
-                catch (Exception e)
-                {
-                    DebugHelper.WriteException(e);
-                }
-            });
         }
     }
 }
