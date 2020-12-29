@@ -34,18 +34,28 @@ namespace ShareX
 {
     public static class CleanupManager
     {
-        public static void Cleanup(int keepFileCount)
+        public static void Cleanup()
         {
-            keepFileCount = Math.Max(keepFileCount, 0);
+            if (Program.Settings == null) return;
+
+            int keepFileCount = Math.Max(Program.Settings.CleanupKeepFileCount, 0);
 
             try
             {
                 CleanupAppTempFolder();
-                CleanupFolder(SettingManager.BackupFolder, "ApplicationConfig-*.json", keepFileCount);
-                CleanupFolder(SettingManager.BackupFolder, "HotkeysConfig-*.json", keepFileCount);
-                CleanupFolder(SettingManager.BackupFolder, "UploadersConfig-*.json", keepFileCount);
-                CleanupFolder(SettingManager.BackupFolder, "History-*.json", keepFileCount);
-                CleanupFolder(Program.LogsFolder, "ShareX-Log-*.txt", keepFileCount);
+
+                if (Program.Settings.AutoCleanupBackupFiles)
+                {
+                    CleanupFolder(SettingManager.BackupFolder, "ApplicationConfig-*.json", keepFileCount);
+                    CleanupFolder(SettingManager.BackupFolder, "HotkeysConfig-*.json", keepFileCount);
+                    CleanupFolder(SettingManager.BackupFolder, "UploadersConfig-*.json", keepFileCount);
+                    CleanupFolder(SettingManager.BackupFolder, "History-*.json", keepFileCount);
+                }
+
+                if (Program.Settings.AutoCleanupLogFiles)
+                {
+                    CleanupFolder(Program.LogsFolder, "ShareX-Log-*.txt", keepFileCount);
+                }
             }
             catch (Exception e)
             {
@@ -53,11 +63,11 @@ namespace ShareX
             }
         }
 
-        public static void CleanupAsync(int keepFileCount)
+        public static void CleanupAsync()
         {
             Task.Run(() =>
             {
-                Cleanup(keepFileCount);
+                Cleanup();
             });
         }
 

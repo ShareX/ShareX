@@ -327,13 +327,13 @@ namespace ShareX
             RegisterExtensions();
             CheckPuushMode();
             DebugWriteFlags();
-            CleanupManager.CleanupAsync(20);
 
             SettingManager.LoadInitialSettings();
 
             Uploader.UpdateServicePointManager();
             UpdateManager = new GitHubUpdateManager("ShareX", "ShareX", Dev, Portable);
             LanguageHelper.ChangeLanguage(Settings.Language);
+            CleanupManager.CleanupAsync();
             Helpers.TryFixHandCursor();
 
             DebugHelper.WriteLine("MainForm init started.");
