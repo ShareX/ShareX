@@ -127,7 +127,7 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="btnDuplicate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>251, 8</value>
+    <value>254, 8</value>
   </data>
   <data name="btnDuplicate.Size" type="System.Drawing.Size, System.Drawing">
     <value>80, 23</value>
@@ -154,10 +154,10 @@
     <value>NoControl</value>
   </data>
   <data name="btnReset.Location" type="System.Drawing.Point, System.Drawing">
-    <value>398, 8</value>
+    <value>404, 8</value>
   </data>
   <data name="btnReset.Size" type="System.Drawing.Size, System.Drawing">
-    <value>202, 23</value>
+    <value>196, 23</value>
   </data>
   <data name="btnReset.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -217,7 +217,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnEdit.Location" type="System.Drawing.Point, System.Drawing">
-    <value>89, 8</value>
+    <value>90, 8</value>
   </data>
   <data name="btnEdit.Size" type="System.Drawing.Size, System.Drawing">
     <value>80, 23</value>
@@ -247,7 +247,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnRemove.Location" type="System.Drawing.Point, System.Drawing">
-    <value>170, 8</value>
+    <value>172, 8</value>
   </data>
   <data name="btnRemove.Size" type="System.Drawing.Size, System.Drawing">
     <value>80, 23</value>
@@ -301,7 +301,7 @@
     <value>False</value>
   </data>
   <data name="btnMoveUp.Location" type="System.Drawing.Point, System.Drawing">
-    <value>332, 8</value>
+    <value>336, 8</value>
   </data>
   <data name="btnMoveUp.Size" type="System.Drawing.Size, System.Drawing">
     <value>32, 23</value>
@@ -331,7 +331,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnMoveDown.Location" type="System.Drawing.Point, System.Drawing">
-    <value>365, 8</value>
+    <value>370, 8</value>
   </data>
   <data name="btnMoveDown.Size" type="System.Drawing.Size, System.Drawing">
     <value>32, 23</value>
