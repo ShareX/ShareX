@@ -94,6 +94,8 @@ namespace ShareX
                     lblHotkeyDescription.BackColor = ShareXResources.Theme.LightBackgroundColor;
                 }
 
+                btnHotkey.BorderColor = ShareXResources.Theme.BorderColor;
+
                 if (EditingHotkey)
                 {
                     btnHotkey.ForeColor = SystemColors.ControlText;
@@ -161,13 +163,13 @@ namespace ShareX
             {
                 default:
                 case HotkeyStatus.NotConfigured:
-                    lblHotkeyStatus.BackColor = Color.LightGoldenrodYellow;
+                    btnHotkey.Color = Color.LightGoldenrodYellow;
                     break;
                 case HotkeyStatus.Failed:
-                    lblHotkeyStatus.BackColor = Color.IndianRed;
+                    btnHotkey.Color = Color.IndianRed;
                     break;
                 case HotkeyStatus.Registered:
-                    lblHotkeyStatus.BackColor = Color.PaleGreen;
+                    btnHotkey.Color = Color.PaleGreen;
                     break;
             }
         }

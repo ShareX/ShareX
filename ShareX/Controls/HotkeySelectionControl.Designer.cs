@@ -29,17 +29,32 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HotkeySelectionControl));
-            this.lblHotkeyStatus = new System.Windows.Forms.Label();
-            this.lblHotkeyDescription = new ShareX.HelpersLib.LabelNoCopy();
-            this.btnHotkey = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
+            this.btnHotkey = new ShareX.HelpersLib.ColorButton();
+            this.lblHotkeyDescription = new ShareX.HelpersLib.LabelNoCopy();
             this.SuspendLayout();
             // 
-            // lblHotkeyStatus
+            // btnEdit
             // 
-            resources.ApplyResources(this.lblHotkeyStatus, "lblHotkeyStatus");
-            this.lblHotkeyStatus.BackColor = System.Drawing.Color.IndianRed;
-            this.lblHotkeyStatus.Name = "lblHotkeyStatus";
+            resources.ApplyResources(this.btnEdit, "btnEdit");
+            this.btnEdit.Image = global::ShareX.Properties.Resources.gear;
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
+            // btnHotkey
+            // 
+            resources.ApplyResources(this.btnHotkey, "btnHotkey");
+            this.btnHotkey.Color = System.Drawing.Color.Empty;
+            this.btnHotkey.ManualButtonClick = true;
+            this.btnHotkey.Name = "btnHotkey";
+            this.btnHotkey.Offset = 0;
+            this.btnHotkey.UseVisualStyleBackColor = true;
+            this.btnHotkey.KeyDown += new System.Windows.Forms.KeyEventHandler(this.btnHotkey_KeyDown);
+            this.btnHotkey.KeyUp += new System.Windows.Forms.KeyEventHandler(this.btnHotkey_KeyUp);
+            this.btnHotkey.Leave += new System.EventHandler(this.btnHotkey_Leave);
+            this.btnHotkey.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnHotkey_MouseClick);
+            this.btnHotkey.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.btnHotkey_PreviewKeyDown);
             // 
             // lblHotkeyDescription
             // 
@@ -52,32 +67,12 @@
             this.lblHotkeyDescription.MouseEnter += new System.EventHandler(this.lblHotkeyDescription_MouseEnter);
             this.lblHotkeyDescription.MouseLeave += new System.EventHandler(this.lblHotkeyDescription_MouseLeave);
             // 
-            // btnHotkey
-            // 
-            resources.ApplyResources(this.btnHotkey, "btnHotkey");
-            this.btnHotkey.Name = "btnHotkey";
-            this.btnHotkey.UseVisualStyleBackColor = true;
-            this.btnHotkey.KeyDown += new System.Windows.Forms.KeyEventHandler(this.btnHotkey_KeyDown);
-            this.btnHotkey.KeyUp += new System.Windows.Forms.KeyEventHandler(this.btnHotkey_KeyUp);
-            this.btnHotkey.Leave += new System.EventHandler(this.btnHotkey_Leave);
-            this.btnHotkey.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnHotkey_MouseClick);
-            this.btnHotkey.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.btnHotkey_PreviewKeyDown);
-            // 
-            // btnEdit
-            // 
-            resources.ApplyResources(this.btnEdit, "btnEdit");
-            this.btnEdit.Image = global::ShareX.Properties.Resources.gear;
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.UseVisualStyleBackColor = true;
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
-            // 
             // HotkeySelectionControl
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnHotkey);
-            this.Controls.Add(this.lblHotkeyStatus);
             this.Controls.Add(this.lblHotkeyDescription);
             this.Name = "HotkeySelectionControl";
             this.ResumeLayout(false);
@@ -85,10 +80,8 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label lblHotkeyStatus;
         private ShareX.HelpersLib.LabelNoCopy lblHotkeyDescription;
-        private System.Windows.Forms.Button btnHotkey;
+        private HelpersLib.ColorButton btnHotkey;
         private System.Windows.Forms.Button btnEdit;
     }
 }
