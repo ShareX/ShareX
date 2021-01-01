@@ -51,29 +51,89 @@ namespace ShareX
             {
                 selected = value;
 
-                if (selected)
-                {
-                    lblHotkeyDescription.BackColor = Color.FromArgb(200, 255, 200);
-                }
-                else
-                {
-                    lblHotkeyDescription.BackColor = SystemColors.Window;
-                }
+                UpdateTheme();
             }
         }
 
         public bool EditingHotkey { get; private set; }
+
+        private bool descriptionHover;
 
         public HotkeySelectionControl(HotkeySettings setting)
         {
             Setting = setting;
 
             InitializeComponent();
-            lblHotkeyDescription.ForeColor = SystemColors.ControlText;
-            btnHotkey.ForeColor = SystemColors.ControlText;
             UpdateDescription();
             UpdateHotkeyText();
+            if (ShareXResources.UseCustomTheme)
+            {
+                ShareXResources.ApplyCustomThemeToControl(this);
+            }
             UpdateHotkeyStatus();
+            UpdateTheme();
+        }
+
+        public void UpdateTheme()
+        {
+            if (ShareXResources.UseCustomTheme)
+            {
+                if (Selected)
+                {
+                    lblHotkeyDescription.ForeColor = SystemColors.ControlText;
+                    lblHotkeyDescription.BackColor = Color.FromArgb(200, 255, 200);
+                }
+                else if (descriptionHover)
+                {
+                    lblHotkeyDescription.ForeColor = SystemColors.ControlText;
+                    lblHotkeyDescription.BackColor = Color.FromArgb(220, 240, 255);
+                }
+                else
+                {
+                    lblHotkeyDescription.ForeColor = ShareXResources.Theme.TextColor;
+                    lblHotkeyDescription.BackColor = ShareXResources.Theme.LightBackgroundColor;
+                }
+
+                if (EditingHotkey)
+                {
+                    btnHotkey.ForeColor = SystemColors.ControlText;
+                    btnHotkey.BackColor = Color.FromArgb(225, 255, 225);
+                }
+                else
+                {
+                    btnHotkey.ForeColor = ShareXResources.Theme.TextColor;
+                    btnHotkey.BackColor = ShareXResources.Theme.LightBackgroundColor;
+                }
+            }
+            else
+            {
+                lblHotkeyDescription.ForeColor = SystemColors.ControlText;
+
+                if (Selected)
+                {
+                    lblHotkeyDescription.BackColor = Color.FromArgb(200, 255, 200);
+                }
+                else if (descriptionHover)
+                {
+                    lblHotkeyDescription.BackColor = Color.FromArgb(220, 240, 255);
+                }
+                else
+                {
+                    lblHotkeyDescription.BackColor = SystemColors.Window;
+                }
+
+                btnHotkey.ForeColor = SystemColors.ControlText;
+
+                if (EditingHotkey)
+                {
+                    btnHotkey.BackColor = Color.FromArgb(225, 255, 225);
+                }
+                else
+                {
+                    btnHotkey.BackColor = SystemColors.Control;
+                    btnHotkey.UseVisualStyleBackColor = true;
+                }
+            }
         }
 
         public void UpdateDescription()
@@ -191,8 +251,8 @@ namespace ShareX
 
             Program.HotkeyManager.IgnoreHotkeys = true;
 
-            btnHotkey.BackColor = Color.FromArgb(225, 255, 225);
             btnHotkey.Text = Resources.HotkeySelectionControl_StartEditing_Select_a_hotkey___;
+            UpdateTheme();
 
             Setting.HotkeyInfo.Hotkey = Keys.None;
             Setting.HotkeyInfo.Win = false;
@@ -211,9 +271,7 @@ namespace ShareX
                 Setting.HotkeyInfo.Hotkey = Keys.None;
             }
 
-            btnHotkey.BackColor = SystemColors.Control;
-            btnHotkey.UseVisualStyleBackColor = true;
-
+            UpdateTheme();
             OnHotkeyChanged();
             UpdateHotkeyStatus();
             UpdateHotkeyText();
@@ -252,16 +310,15 @@ namespace ShareX
         {
             if (!Selected)
             {
-                lblHotkeyDescription.BackColor = Color.FromArgb(220, 240, 255);
+                descriptionHover = true;
+                UpdateTheme();
             }
         }
 
         private void lblHotkeyDescription_MouseLeave(object sender, EventArgs e)
         {
-            if (!Selected)
-            {
-                lblHotkeyDescription.BackColor = SystemColors.Window;
-            }
+            descriptionHover = false;
+            UpdateTheme();
         }
 
         private void lblHotkeyDescription_MouseClick(object sender, MouseEventArgs e)

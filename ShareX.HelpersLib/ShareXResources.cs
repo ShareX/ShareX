@@ -92,7 +92,7 @@ namespace ShareX.HelpersLib
             }
         }
 
-        private static void ApplyCustomThemeToControl(Control control)
+        public static void ApplyCustomThemeToControl(Control control)
         {
             if (control.ContextMenuStrip != null)
             {
