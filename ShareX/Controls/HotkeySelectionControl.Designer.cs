@@ -39,14 +39,12 @@
             // 
             resources.ApplyResources(this.lblHotkeyStatus, "lblHotkeyStatus");
             this.lblHotkeyStatus.BackColor = System.Drawing.Color.IndianRed;
-            this.lblHotkeyStatus.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblHotkeyStatus.Name = "lblHotkeyStatus";
             // 
             // lblHotkeyDescription
             // 
             resources.ApplyResources(this.lblHotkeyDescription, "lblHotkeyDescription");
             this.lblHotkeyDescription.BackColor = System.Drawing.SystemColors.Window;
-            this.lblHotkeyDescription.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblHotkeyDescription.Name = "lblHotkeyDescription";
             this.lblHotkeyDescription.UseMnemonic = false;
             this.lblHotkeyDescription.MouseClick += new System.Windows.Forms.MouseEventHandler(this.lblHotkeyDescription_MouseClick);
@@ -67,8 +65,8 @@
             // 
             // btnEdit
             // 
-            this.btnEdit.Image = global::ShareX.Properties.Resources.gear;
             resources.ApplyResources(this.btnEdit, "btnEdit");
+            this.btnEdit.Image = global::ShareX.Properties.Resources.gear;
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.UseVisualStyleBackColor = true;
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
@@ -76,7 +74,6 @@
             // HotkeySelectionControl
             // 
             resources.ApplyResources(this, "$this");
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnHotkey);

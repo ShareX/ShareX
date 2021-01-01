@@ -154,7 +154,10 @@
     <value>NoControl</value>
   </data>
   <data name="lblHotkeyDescription.Location" type="System.Drawing.Point, System.Drawing">
-    <value>29, 1</value>
+    <value>0, 1</value>
+  </data>
+  <data name="lblHotkeyDescription.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 0, 0, 0</value>
   </data>
   <data name="lblHotkeyDescription.Size" type="System.Drawing.Size, System.Drawing">
     <value>227, 21</value>
@@ -172,7 +175,7 @@
     <value>lblHotkeyDescription</value>
   </data>
   <data name="&gt;&gt;lblHotkeyDescription.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.LabelNoCopy, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.LabelNoCopy, ShareX.HelpersLib, Version=13.4.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lblHotkeyDescription.Parent" xml:space="preserve">
     <value>$this</value>
@@ -207,11 +210,14 @@
   <data name="&gt;&gt;btnHotkey.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="btnEdit.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
   <data name="btnEdit.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="btnEdit.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
+    <value>232, 0</value>
   </data>
   <data name="btnEdit.Size" type="System.Drawing.Size, System.Drawing">
     <value>24, 23</value>
@@ -235,7 +241,7 @@
     <value>True</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
+    <value>96, 96</value>
   </data>
   <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
