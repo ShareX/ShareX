@@ -182,10 +182,11 @@ namespace ShareX.HelpersLib
                             }
 
                             progress.Report(ProgressChanged);
-                            progress.Report(DownloadCompleted);
                         }
                     }
                 }
+
+                progress.Report(DownloadCompleted);
             }
             catch (Exception ex)
             {
