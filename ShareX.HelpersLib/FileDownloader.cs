@@ -180,13 +180,12 @@ namespace ShareX.HelpersLib
                                     progressEventTimer.Reset();
                                 }
                             }
-
-                            progress.Report(ProgressChanged);
                         }
+
+                        progress.Report(ProgressChanged);
+                        progress.Report(DownloadCompleted);
                     }
                 }
-
-                progress.Report(DownloadCompleted);
             }
             catch (Exception ex)
             {
