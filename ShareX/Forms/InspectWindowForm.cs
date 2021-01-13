@@ -76,16 +76,23 @@ namespace ShareX
 
             if (SelectedWindow != null)
             {
-                rtbInfo.SetFontBold();
-                rtbInfo.AppendText("Handle: ");
-                rtbInfo.SetFontRegular();
-                rtbInfo.AppendLine(SelectedWindow.Handle.ToString("X8"));
-
-                rtbInfo.SetFontBold();
-                rtbInfo.AppendText("Title: ");
-                rtbInfo.SetFontRegular();
-                rtbInfo.AppendLine(SelectedWindow.Text);
+                AddInfo("Window handle", SelectedWindow.Handle.ToString("X8"));
+                AddInfo("Window title", SelectedWindow.Text);
+                AddInfo("Class name", SelectedWindow.ClassName);
+                AddInfo("Process name", SelectedWindow.ProcessName);
+                AddInfo("Window rectangle", SelectedWindow.Rectangle.ToString());
+                AddInfo("Client rectangle", SelectedWindow.ClientRectangle.ToString());
+                AddInfo("Window styles", SelectedWindow.Styles.ToString());
             }
+        }
+
+        private void AddInfo(string name, string value)
+        {
+            rtbInfo.SetFontBold();
+            rtbInfo.AppendLine(name + ":");
+            rtbInfo.SetFontRegular();
+            rtbInfo.AppendLine(value);
+            rtbInfo.AppendLine();
         }
     }
 }

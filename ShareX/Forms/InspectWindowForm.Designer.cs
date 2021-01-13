@@ -39,10 +39,11 @@ namespace ShareX
             this.rtbInfo.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.rtbInfo.DetectUrls = false;
             this.rtbInfo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rtbInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rtbInfo.Location = new System.Drawing.Point(2, 2);
+            this.rtbInfo.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rtbInfo.Location = new System.Drawing.Point(3, 3);
             this.rtbInfo.Name = "rtbInfo";
-            this.rtbInfo.Size = new System.Drawing.Size(666, 514);
+            this.rtbInfo.ReadOnly = true;
+            this.rtbInfo.Size = new System.Drawing.Size(664, 512);
             this.rtbInfo.TabIndex = 0;
             this.rtbInfo.Text = "";
             // 
@@ -55,7 +56,7 @@ namespace ShareX
             this.pInfo.Controls.Add(this.rtbInfo);
             this.pInfo.Location = new System.Drawing.Point(8, 8);
             this.pInfo.Name = "pInfo";
-            this.pInfo.Padding = new System.Windows.Forms.Padding(2);
+            this.pInfo.Padding = new System.Windows.Forms.Padding(3);
             this.pInfo.Size = new System.Drawing.Size(672, 520);
             this.pInfo.TabIndex = 1;
             // 
