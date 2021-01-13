@@ -26,13 +26,6 @@
 using ShareX.HelpersLib;
 using ShareX.ScreenCaptureLib;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ShareX
@@ -93,6 +86,21 @@ namespace ShareX
             rtbInfo.SetFontRegular();
             rtbInfo.AppendLine(value);
             rtbInfo.AppendLine();
+        }
+
+        private void btnInspectWindow_Click(object sender, EventArgs e)
+        {
+            RegionCaptureOptions options = new RegionCaptureOptions()
+            {
+                DetectControls = false
+            };
+
+            SelectHandle(options);
+        }
+
+        private void btnInspectControl_Click(object sender, EventArgs e)
+        {
+            SelectHandle();
         }
     }
 }

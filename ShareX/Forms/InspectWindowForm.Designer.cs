@@ -31,6 +31,8 @@ namespace ShareX
         {
             this.rtbInfo = new System.Windows.Forms.RichTextBox();
             this.pInfo = new System.Windows.Forms.Panel();
+            this.btnInspectWindow = new System.Windows.Forms.Button();
+            this.btnInspectControl = new System.Windows.Forms.Button();
             this.pInfo.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -43,7 +45,7 @@ namespace ShareX
             this.rtbInfo.Location = new System.Drawing.Point(3, 3);
             this.rtbInfo.Name = "rtbInfo";
             this.rtbInfo.ReadOnly = true;
-            this.rtbInfo.Size = new System.Drawing.Size(664, 512);
+            this.rtbInfo.Size = new System.Drawing.Size(664, 480);
             this.rtbInfo.TabIndex = 0;
             this.rtbInfo.Text = "";
             // 
@@ -54,17 +56,39 @@ namespace ShareX
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pInfo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pInfo.Controls.Add(this.rtbInfo);
-            this.pInfo.Location = new System.Drawing.Point(8, 8);
+            this.pInfo.Location = new System.Drawing.Point(8, 40);
             this.pInfo.Name = "pInfo";
             this.pInfo.Padding = new System.Windows.Forms.Padding(3);
-            this.pInfo.Size = new System.Drawing.Size(672, 520);
-            this.pInfo.TabIndex = 1;
+            this.pInfo.Size = new System.Drawing.Size(672, 488);
+            this.pInfo.TabIndex = 2;
+            // 
+            // btnInspectWindow
+            // 
+            this.btnInspectWindow.Location = new System.Drawing.Point(8, 8);
+            this.btnInspectWindow.Name = "btnInspectWindow";
+            this.btnInspectWindow.Size = new System.Drawing.Size(144, 24);
+            this.btnInspectWindow.TabIndex = 0;
+            this.btnInspectWindow.Text = "Inspect window...";
+            this.btnInspectWindow.UseVisualStyleBackColor = true;
+            this.btnInspectWindow.Click += new System.EventHandler(this.btnInspectWindow_Click);
+            // 
+            // btnInspectControl
+            // 
+            this.btnInspectControl.Location = new System.Drawing.Point(160, 8);
+            this.btnInspectControl.Name = "btnInspectControl";
+            this.btnInspectControl.Size = new System.Drawing.Size(144, 24);
+            this.btnInspectControl.TabIndex = 1;
+            this.btnInspectControl.Text = "Inspect control...";
+            this.btnInspectControl.UseVisualStyleBackColor = true;
+            this.btnInspectControl.Click += new System.EventHandler(this.btnInspectControl_Click);
             // 
             // InspectWindowForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(689, 536);
+            this.Controls.Add(this.btnInspectControl);
+            this.Controls.Add(this.btnInspectWindow);
             this.Controls.Add(this.pInfo);
             this.Name = "InspectWindowForm";
             this.Text = "ShareX - Inspect window";
@@ -77,5 +101,7 @@ namespace ShareX
 
         private System.Windows.Forms.RichTextBox rtbInfo;
         private System.Windows.Forms.Panel pInfo;
+        private System.Windows.Forms.Button btnInspectWindow;
+        private System.Windows.Forms.Button btnInspectControl;
     }
 }
