@@ -1772,7 +1772,6 @@
     <None Include="Resources\ruler-triangle.png" />
     <None Include="Resources\barcode-2d.png" />
     <None Include="Resources\GitHub.png" />
-    <None Include="Resources\Twitter.ico" />
     <None Include="Resources\folder.png" />
     <None Include="Resources\clipboard.png" />
     <None Include="Resources\drive.png" />
@@ -1946,6 +1945,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\application-search-result.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Twitter-16x16.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
