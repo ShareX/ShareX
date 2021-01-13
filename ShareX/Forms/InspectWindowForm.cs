@@ -44,6 +44,8 @@ namespace ShareX
         public InspectWindowForm()
         {
             InitializeComponent();
+            rtbInfo.AddContextMenu();
+            ShareXResources.ApplyTheme(this);
             SelectHandle();
         }
 
@@ -74,9 +76,15 @@ namespace ShareX
 
             if (SelectedWindow != null)
             {
-                StringBuilder sbWindowInfo = new StringBuilder();
-                sbWindowInfo.Append("Handle: " + SelectedWindow.Handle.ToString("X8"));
-                rtbInfo.Text = sbWindowInfo.ToString();
+                rtbInfo.SetFontBold();
+                rtbInfo.AppendText("Handle: ");
+                rtbInfo.SetFontRegular();
+                rtbInfo.AppendLine(SelectedWindow.Handle.ToString("X8"));
+
+                rtbInfo.SetFontBold();
+                rtbInfo.AppendText("Title: ");
+                rtbInfo.SetFontRegular();
+                rtbInfo.AppendLine(SelectedWindow.Text);
             }
         }
     }
