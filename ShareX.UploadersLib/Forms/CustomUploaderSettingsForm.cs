@@ -553,8 +553,7 @@ namespace ShareX.UploadersLib
                 }
                 else
                 {
-                    mbDestinationType.Text = string.Join(", ", uploader.DestinationType.GetFlags<CustomUploaderDestinationType>().
-                        Select(x => x.GetLocalizedDescription()));
+                    mbDestinationType.Text = string.Join(", ", uploader.DestinationType.GetFlags().Select(x => x.GetLocalizedDescription()));
                 }
             }
         }

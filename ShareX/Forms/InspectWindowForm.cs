@@ -88,7 +88,7 @@ namespace ShareX
         private void AddInfo(string name, string value)
         {
             rtbInfo.SetFontBold();
-            rtbInfo.AppendLine(name + ":");
+            rtbInfo.AppendLine(name);
             rtbInfo.SetFontRegular();
             rtbInfo.AppendLine(value);
             rtbInfo.AppendLine();

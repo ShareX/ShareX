@@ -78,11 +78,11 @@ namespace ShareX
                 return Name;
             }
 
-            string result = string.Join(", ", AfterCaptureTasks.GetFlags<AfterCaptureTasks>().Select(x => x.GetLocalizedDescription()));
+            string result = string.Join(", ", AfterCaptureTasks.GetFlags().Select(x => x.GetLocalizedDescription()));
 
             if (AfterCaptureTasks.HasFlag(AfterCaptureTasks.UploadImageToHost))
             {
-                string[] flags = AfterUploadTasks.GetFlags<AfterUploadTasks>().Select(x => x.GetLocalizedDescription()).ToArray();
+                string[] flags = AfterUploadTasks.GetFlags().Select(x => x.GetLocalizedDescription()).ToArray();
 
                 if (flags != null && flags.Length > 0)
                 {
