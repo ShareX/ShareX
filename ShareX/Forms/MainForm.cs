@@ -1855,6 +1855,11 @@ namespace ShareX
             TaskHelpers.OpenVideoThumbnailer();
         }
 
+        private void tsmiInspectWindow_Click(object sender, EventArgs e)
+        {
+            TaskHelpers.OpenInspectWindow();
+        }
+
         private void tsmiClipboardViewer_Click(object sender, EventArgs e)
         {
             TaskHelpers.OpenClipboardViewer();

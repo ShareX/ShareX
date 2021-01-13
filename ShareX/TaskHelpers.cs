@@ -922,6 +922,12 @@ namespace ShareX
             thumbnailerForm.Show();
         }
 
+        public static void OpenInspectWindow()
+        {
+            InspectWindowForm inspectWindowForm = new InspectWindowForm();
+            inspectWindowForm.Show();
+        }
+
         public static void OpenClipboardViewer()
         {
             ClipboardViewerForm clipboardViewerForm = new ClipboardViewerForm();

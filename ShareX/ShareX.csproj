@@ -187,6 +187,12 @@
     <Compile Include="Forms\ClipboardUploadForm.Designer.cs">
       <DependentUpon>ClipboardUploadForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\InspectWindowForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\InspectWindowForm.Designer.cs">
+      <DependentUpon>InspectWindowForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\TextUploadForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1198,6 +1204,9 @@
     <EmbeddedResource Include="Forms\HotkeySettingsForm.zh-TW.resx">
       <DependentUpon>HotkeySettingsForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\InspectWindowForm.resx">
+      <DependentUpon>InspectWindowForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainForm.de.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -1934,6 +1943,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\image-resize.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\application-search-result.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
