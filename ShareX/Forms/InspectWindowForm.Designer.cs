@@ -33,6 +33,7 @@ namespace ShareX
             this.pInfo = new System.Windows.Forms.Panel();
             this.btnInspectWindow = new System.Windows.Forms.Button();
             this.btnInspectControl = new System.Windows.Forms.Button();
+            this.btnRefresh = new System.Windows.Forms.Button();
             this.pInfo.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -60,7 +61,7 @@ namespace ShareX
             this.pInfo.Name = "pInfo";
             this.pInfo.Padding = new System.Windows.Forms.Padding(3);
             this.pInfo.Size = new System.Drawing.Size(672, 488);
-            this.pInfo.TabIndex = 2;
+            this.pInfo.TabIndex = 3;
             // 
             // btnInspectWindow
             // 
@@ -82,11 +83,22 @@ namespace ShareX
             this.btnInspectControl.UseVisualStyleBackColor = true;
             this.btnInspectControl.Click += new System.EventHandler(this.btnInspectControl_Click);
             // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Location = new System.Drawing.Point(312, 8);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(144, 24);
+            this.btnRefresh.TabIndex = 2;
+            this.btnRefresh.Text = "Refresh";
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
             // InspectWindowForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(689, 536);
+            this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.btnInspectControl);
             this.Controls.Add(this.btnInspectWindow);
             this.Controls.Add(this.pInfo);
@@ -103,5 +115,6 @@ namespace ShareX
         private System.Windows.Forms.Panel pInfo;
         private System.Windows.Forms.Button btnInspectWindow;
         private System.Windows.Forms.Button btnInspectControl;
+        private System.Windows.Forms.Button btnRefresh;
     }
 }

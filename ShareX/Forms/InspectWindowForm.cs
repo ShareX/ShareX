@@ -69,13 +69,19 @@ namespace ShareX
 
             if (SelectedWindow != null)
             {
-                AddInfo("Window handle", SelectedWindow.Handle.ToString("X8"));
-                AddInfo("Window title", SelectedWindow.Text);
-                AddInfo("Class name", SelectedWindow.ClassName);
-                AddInfo("Process name", SelectedWindow.ProcessName);
-                AddInfo("Window rectangle", SelectedWindow.Rectangle.ToString());
-                AddInfo("Client rectangle", SelectedWindow.ClientRectangle.ToString());
-                AddInfo("Window styles", SelectedWindow.Styles.ToString());
+                try
+                {
+                    AddInfo("Window handle", SelectedWindow.Handle.ToString("X8"));
+                    AddInfo("Window title", SelectedWindow.Text);
+                    AddInfo("Class name", SelectedWindow.ClassName);
+                    AddInfo("Process name", SelectedWindow.ProcessName);
+                    AddInfo("Window rectangle", SelectedWindow.Rectangle.ToString());
+                    AddInfo("Client rectangle", SelectedWindow.ClientRectangle.ToString());
+                    AddInfo("Window styles", SelectedWindow.Styles.ToString());
+                }
+                catch
+                {
+                }
             }
         }
 
@@ -101,6 +107,11 @@ namespace ShareX
         private void btnInspectControl_Click(object sender, EventArgs e)
         {
             SelectHandle();
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            UpdateWindowInfo();
         }
     }
 }
