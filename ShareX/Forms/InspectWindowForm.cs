@@ -75,8 +75,10 @@ namespace ShareX
                     AddInfo("Window title", SelectedWindow.Text);
                     AddInfo("Class name", SelectedWindow.ClassName);
                     AddInfo("Process name", SelectedWindow.ProcessName);
-                    AddInfo("Window rectangle", SelectedWindow.Rectangle.ToString());
-                    AddInfo("Client rectangle", SelectedWindow.ClientRectangle.ToString());
+                    AddInfo("Process file name", SelectedWindow.ProcessFileName);
+                    AddInfo("Process identifier", SelectedWindow.ProcessId.ToString());
+                    AddInfo("Window rectangle", SelectedWindow.Rectangle.ToStringProper());
+                    AddInfo("Client rectangle", SelectedWindow.ClientRectangle.ToStringProper());
                     AddInfo("Window styles", SelectedWindow.Styles.ToString());
                 }
                 catch
@@ -89,11 +91,16 @@ namespace ShareX
         {
             if (!string.IsNullOrEmpty(value))
             {
+                if (rtbInfo.TextLength > 0)
+                {
+                    rtbInfo.AppendLine();
+                    rtbInfo.AppendLine();
+                }
+
                 rtbInfo.SetFontBold();
                 rtbInfo.AppendLine(name);
                 rtbInfo.SetFontRegular();
-                rtbInfo.AppendLine(value);
-                rtbInfo.AppendLine();
+                rtbInfo.AppendText(value);
             }
         }
 
