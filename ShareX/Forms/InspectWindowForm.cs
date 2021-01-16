@@ -87,11 +87,14 @@ namespace ShareX
 
         private void AddInfo(string name, string value)
         {
-            rtbInfo.SetFontBold();
-            rtbInfo.AppendLine(name);
-            rtbInfo.SetFontRegular();
-            rtbInfo.AppendLine(value);
-            rtbInfo.AppendLine();
+            if (!string.IsNullOrEmpty(value))
+            {
+                rtbInfo.SetFontBold();
+                rtbInfo.AppendLine(name);
+                rtbInfo.SetFontRegular();
+                rtbInfo.AppendLine(value);
+                rtbInfo.AppendLine();
+            }
         }
 
         private void btnInspectWindow_Click(object sender, EventArgs e)
