@@ -91,10 +91,12 @@ namespace ShareX.MediaLib
                 case ConverterVideoCodecs.vp8:
                 case ConverterVideoCodecs.vp9:
                 case ConverterVideoCodecs.xvid:
-                    tbVideoQuality.Enabled = true;
+                    lblVideoQuality.Visible = tbVideoQuality.Visible = lblVideoQualityValue.Visible = lblVideoQualityLower.Visible =
+                        lblVideoQualityHigher.Visible = !Options.UseCustomArguments;
                     break;
                 default:
-                    tbVideoQuality.Enabled = false;
+                    lblVideoQuality.Visible = tbVideoQuality.Visible = lblVideoQualityValue.Visible = lblVideoQualityLower.Visible =
+                        lblVideoQualityHigher.Visible = false;
                     break;
             }
 
@@ -137,8 +139,7 @@ namespace ShareX.MediaLib
                 txtArguments.Text = Options.GetFFmpegArgs();
             }
 
-            lblVideoCodec.Visible = cbVideoCodec.Visible = lblVideoQuality.Visible = tbVideoQuality.Visible =
-                lblVideoQualityValue.Visible = lblVideoQualityLower.Visible = lblVideoQualityHigher.Visible = !Options.UseCustomArguments;
+            lblVideoCodec.Visible = cbVideoCodec.Visible = !Options.UseCustomArguments;
             txtArguments.Visible = Options.UseCustomArguments;
 
             btnEncode.Enabled = !string.IsNullOrEmpty(Options.InputFilePath) && !string.IsNullOrEmpty(Options.OutputFolderPath) &&
