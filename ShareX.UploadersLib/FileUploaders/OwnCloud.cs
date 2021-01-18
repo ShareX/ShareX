@@ -275,6 +275,8 @@ namespace ShareX.UploadersLib.FileUploaders
                 groupMatch = groupMatch.NextMatch();
             }
 
+            path = NameParser.Parse(NameParserType.FolderPath, path);
+
             return path;
         }
 
