@@ -349,7 +349,7 @@
     <value>Использовать белую иконку ShareX</value>
   </data>
   <data name="lblExportImportNote.Text" xml:space="preserve">
-    <value>Заметка: Не делитесь этим экспортируемым файлом ни с кем, он может содержать личную информация, например пароли.</value>
+    <value>Заметка: Не делитесь этим экспортируемым файлом ни с кем, он может содержать личную информацию, например пароли.</value>
   </data>
   <data name="cbExportHistory.Text" xml:space="preserve">
     <value>История</value>

@@ -190,7 +190,7 @@ namespace ShareX.HelpersLib
         NearestNeighbor
     }
 
-    public enum ArrowHeadDirection
+    public enum ArrowHeadDirection // Localized
     {
         End,
         Start,

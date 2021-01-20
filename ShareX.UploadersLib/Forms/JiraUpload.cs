@@ -56,7 +56,7 @@ namespace ShareX.UploadersLib
         {
             if (getSummary == null)
             {
-                throw new ArgumentNullException("getSummary");
+                throw new ArgumentNullException(nameof(getSummary));
             }
             this.issuePrefix = issuePrefix;
             this.getSummary = getSummary;

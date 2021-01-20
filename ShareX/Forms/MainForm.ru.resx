@@ -795,4 +795,13 @@
   <data name="tsmiAddImageEffects.Text" xml:space="preserve">
     <value>Добавить эффекты изображений...</value>
   </data>
+  <data name="tsmiClipboardViewer.Text" xml:space="preserve">
+    <value>Буфер обмена...</value>
+  </data>
+  <data name="tsmiTrayClipboardViewer.Text" xml:space="preserve">
+    <value>Буфер обмена...</value>
+  </data>
+  <data name="tsmiRestartAsAdmin.Text" xml:space="preserve">
+    <value>Перезапустить ShareX как администратор...</value>
+  </data>
 </root>

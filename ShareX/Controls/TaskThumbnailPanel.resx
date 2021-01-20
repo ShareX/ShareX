@@ -134,11 +134,15 @@
   <data name="lblTitle.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="lblTitle.Text" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
   <data name="&gt;&gt;lblTitle.Name" xml:space="preserve">
     <value>lblTitle</value>
   </data>
   <data name="&gt;&gt;lblTitle.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.BlackStyleLabel, ShareX.HelpersLib, Version=13.1.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.BlackStyleLabel, ShareX.HelpersLib, Version=13.3.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lblTitle.Parent" xml:space="preserve">
     <value>$this</value>
@@ -146,11 +150,14 @@
   <data name="&gt;&gt;lblTitle.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="lblError.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top</value>
+  </data>
   <data name="lblError.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 12pt</value>
   </data>
   <data name="lblError.Location" type="System.Drawing.Point, System.Drawing">
-    <value>96, 8</value>
+    <value>96, 7</value>
   </data>
   <data name="lblError.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 26</value>
@@ -168,7 +175,7 @@
     <value>lblError</value>
   </data>
   <data name="&gt;&gt;lblError.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.BlackStyleLabel, ShareX.HelpersLib, Version=13.1.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.BlackStyleLabel, ShareX.HelpersLib, Version=13.3.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lblError.Parent" xml:space="preserve">
     <value>pThumbnail</value>
@@ -176,7 +183,6 @@
   <data name="&gt;&gt;lblError.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="pbProgress.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left, Right</value>
   </data>
@@ -184,10 +190,10 @@
     <value>Arial, 11.25pt</value>
   </data>
   <data name="pbProgress.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 216</value>
+    <value>7, 217</value>
   </data>
   <data name="pbProgress.Size" type="System.Drawing.Size, System.Drawing">
-    <value>240, 32</value>
+    <value>242, 32</value>
   </data>
   <data name="pbProgress.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -202,7 +208,7 @@
     <value>pbProgress</value>
   </data>
   <data name="&gt;&gt;pbProgress.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.BlackStyleProgressBar, ShareX.HelpersLib, Version=13.1.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.BlackStyleProgressBar, ShareX.HelpersLib, Version=13.3.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;pbProgress.Parent" xml:space="preserve">
     <value>pThumbnail</value>
@@ -214,10 +220,10 @@
     <value>Fill</value>
   </data>
   <data name="pbThumbnail.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 5</value>
+    <value>4, 4</value>
   </data>
   <data name="pbThumbnail.Size" type="System.Drawing.Size, System.Drawing">
-    <value>246, 246</value>
+    <value>248, 248</value>
   </data>
   <data name="pbThumbnail.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -238,7 +244,7 @@
     <value>0, 24</value>
   </data>
   <data name="pThumbnail.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 5, 5, 5</value>
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="pThumbnail.Size" type="System.Drawing.Size, System.Drawing">
     <value>256, 256</value>
@@ -250,7 +256,7 @@
     <value>pThumbnail</value>
   </data>
   <data name="&gt;&gt;pThumbnail.Type" xml:space="preserve">
-    <value>ShareX.TaskRoundedCornerPanel, ShareX, Version=13.1.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.TaskRoundedCornerPanel, ShareX, Version=13.3.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;pThumbnail.Parent" xml:space="preserve">
     <value>$this</value>

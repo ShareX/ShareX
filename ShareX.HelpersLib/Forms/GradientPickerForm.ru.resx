@@ -150,4 +150,7 @@
   <data name="lblPresets.Text" xml:space="preserve">
     <value>Установки:</value>
   </data>
+  <data name="btnClear.Text" xml:space="preserve">
+    <value>Очистить</value>
+  </data>
 </root>

@@ -76,6 +76,7 @@ namespace ShareX.UploadersLib.FileUploaders
         public bool IgnoreExisting { get; set; } = true;
         public bool Private { get; set; } = true;
         public bool KeepAudio { get; set; } = true;
+        public string Title { get; set; } = "ShareX";
 
         private const string URL_AUTHORIZE = "https://gfycat.com/oauth/authorize";
         private const string URL_UPLOAD = "https://filedrop.gfycat.com";
@@ -270,6 +271,7 @@ namespace ShareX.UploadersLib.FileUploaders
             args.Add("noResize", NoResize);
             args.Add("noMd5", IgnoreExisting);
             args.Add("keepAudio", KeepAudio);
+            args.Add("title", Title);
 
             string json = JsonConvert.SerializeObject(args);
 

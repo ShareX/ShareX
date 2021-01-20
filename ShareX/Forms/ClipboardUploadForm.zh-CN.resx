@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - 剪贴板内容</value>
+    <value>ShareX - 剪贴板上传</value>
   </data>
   <data name="btnCancel.Text" xml:space="preserve">
     <value>取消</value>
@@ -128,5 +128,8 @@
   </data>
   <data name="lblQuestion.Text" xml:space="preserve">
     <value>剪贴板包含以下内容：</value>
+  </data>
+  <data name="btnUpload.Text" xml:space="preserve">
+    <value>上传</value>
   </data>
 </root>

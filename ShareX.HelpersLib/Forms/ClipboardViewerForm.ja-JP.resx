@@ -120,4 +120,13 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - クリップボード</value>
   </data>
+  <data name="btnClearClipboard.Text" xml:space="preserve">
+    <value>クリップボードをクリア</value>
+  </data>
+  <data name="chFormat.Text" xml:space="preserve">
+    <value>フォーマット</value>
+  </data>
+  <data name="btnRefresh.Text" xml:space="preserve">
+    <value>再読み込み</value>
+  </data>
 </root>

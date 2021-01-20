@@ -419,4 +419,22 @@
   <data name="OpenKeybindsPage" xml:space="preserve">
     <value>キーバインド一覧のページを開く</value>
   </data>
+  <data name="Duplicate" xml:space="preserve">
+    <value>複製</value>
+  </data>
+  <data name="MenuIconSize" xml:space="preserve">
+    <value>画像エディタのアイコンサイズ</value>
+  </data>
+  <data name="NewLineCtrlEnterOKEnter" xml:space="preserve">
+    <value>Ctrl+Enterで改行　Enterで確定</value>
+  </data>
+  <data name="NewLineEnterOKCtrlEnter" xml:space="preserve">
+    <value>Enterで改行　Ctrl+Enterで確定</value>
+  </data>
+  <data name="ShapeManager_ArrowHeadDirection" xml:space="preserve">
+    <value>矢の先端の方向:</value>
+  </data>
+  <data name="LockMenu" xml:space="preserve">
+    <value>ツールバーメニューを固定する</value>
+  </data>
 </root>

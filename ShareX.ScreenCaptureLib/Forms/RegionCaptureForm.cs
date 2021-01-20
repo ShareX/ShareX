@@ -1434,8 +1434,7 @@ namespace ShareX.ScreenCaptureLib
                 {
                     ImageFilePath = imageFilePath;
                     UpdateTitle();
-                    // TODO: Translate
-                    ShapeManager.ShowMenuTooltip("Image saved");
+                    ShapeManager.ShowMenuTooltip(Resources.ImageSaved);
                 }
             }
         }
@@ -1452,8 +1451,7 @@ namespace ShareX.ScreenCaptureLib
                 {
                     ImageFilePath = imageFilePath;
                     UpdateTitle();
-                    // TODO: Translate
-                    ShapeManager.ShowMenuTooltip("Image saved");
+                    ShapeManager.ShowMenuTooltip(Resources.ImageSavedAs);
                 }
             }
         }
@@ -1465,8 +1463,7 @@ namespace ShareX.ScreenCaptureLib
                 Bitmap bmp = ReceiveImageForTask();
 
                 CopyImageRequested(bmp);
-                // TODO: Translate
-                ShapeManager.ShowMenuTooltip("Image copied");
+                ShapeManager.ShowMenuTooltip(Resources.ImageCopied);
             }
         }
 
@@ -1477,8 +1474,7 @@ namespace ShareX.ScreenCaptureLib
                 Bitmap bmp = ReceiveImageForTask();
 
                 UploadImageRequested(bmp);
-                // TODO: Translate
-                ShapeManager.ShowMenuTooltip("Image uploading");
+                ShapeManager.ShowMenuTooltip(Resources.ImageUploading);
             }
         }
 

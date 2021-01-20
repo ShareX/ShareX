@@ -258,7 +258,7 @@ Par exemple, si votre bucket est appelé bucket.example.com alors l'URL sera htt
     <value>Adresse e-mail :</value>
   </data>
   <data name="btnRefreshSeafileAccInfo.Text" xml:space="preserve">
-    <value>Rafraichir</value>
+    <value>Rafraîchir</value>
   </data>
   <data name="grpSeafileAccInfo.Text" xml:space="preserve">
     <value>Informations du compte</value>
@@ -267,7 +267,7 @@ Par exemple, si votre bucket est appelé bucket.example.com alors l'URL sera htt
     <value>Sélectionnez une librairie :</value>
   </data>
   <data name="txtSeafileUploadLocationRefresh.Text" xml:space="preserve">
-    <value>Rafraichir</value>
+    <value>Rafraîchir</value>
   </data>
   <data name="lblSeafilePath.Text" xml:space="preserve">
     <value>Chemin :</value>
@@ -307,7 +307,7 @@ Utiliser une bibliothèque chiffrée désactive le partage.</value>
     <value>URL de mise en ligne :</value>
   </data>
   <data name="lblPomfResultURL.Text" xml:space="preserve">
-    <value>URL du résultat :</value>
+    <value>URL résultante :</value>
   </data>
   <data name="lblLambdaUploadURL.Text" xml:space="preserve">
     <value>Lien URL :</value>

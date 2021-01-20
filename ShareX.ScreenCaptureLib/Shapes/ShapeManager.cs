@@ -1671,12 +1671,12 @@ namespace ShareX.ScreenCaptureLib
 
         private void PasteFromClipboard(bool insertMousePosition)
         {
-            if (Clipboard.ContainsImage())
+            if (ClipboardHelpers.ContainsImage())
             {
                 Bitmap bmp = ClipboardHelpers.GetImage();
                 InsertImage(bmp);
             }
-            else if (Clipboard.ContainsFileDropList())
+            else if (ClipboardHelpers.ContainsFileDropList())
             {
                 string[] files = ClipboardHelpers.GetFileDropList();
 
@@ -1691,7 +1691,7 @@ namespace ShareX.ScreenCaptureLib
                     }
                 }
             }
-            else if (Clipboard.ContainsText())
+            else if (ClipboardHelpers.ContainsText())
             {
                 string text = ClipboardHelpers.GetText();
 

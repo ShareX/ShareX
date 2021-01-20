@@ -206,39 +206,42 @@
     <value>此处粘贴验证码</value>
   </data>
   <data name="UploadersConfigForm_eiCustomUploaders_ExportRequested_DestinationTypeMustBeConfigured" xml:space="preserve">
-    <value>“目标类型”必须被配置</value>
+    <value>“目标类型”必须配置。</value>
   </data>
   <data name="CustomUploaderItem_GetFileFormName_FileFormNameMustBeConfigured" xml:space="preserve">
-    <value>“文件格式名称”必须被配置</value>
+    <value>“文件格式名称”必须配置。</value>
   </data>
   <data name="UploadersConfigForm_eiCustomUploaders_ExportRequested_RequestURLMustBeConfigured" xml:space="preserve">
-    <value>“请求 URL”必须被配置</value>
+    <value>“请求 URL”必须配置。</value>
   </data>
   <data name="CustomUploaderItem_GetRequestURL_RequestURLMustBeConfigured" xml:space="preserve">
-    <value>“请求 URL”必须被配置</value>
+    <value>“请求 URL”必须配置。</value>
   </data>
   <data name="UploadersConfigForm_ConnectSFTPAccount_Key_file_not_found" xml:space="preserve">
-    <value>密钥文件不存在</value>
+    <value>密钥文件不存在。</value>
   </data>
   <data name="OAuthControl_Status_LoggedIn" xml:space="preserve">
-    <value>已登陆</value>
+    <value>已登录。</value>
   </data>
   <data name="UploadersConfigForm_UpdatePastebinStatus_LoggedIn" xml:space="preserve">
-    <value>已登陆</value>
+    <value>已登录。</value>
   </data>
   <data name="OAuthControl_Status_LoginFailed" xml:space="preserve">
     <value>登录失败。</value>
   </data>
   <data name="UploadersConfigForm_UpdatePastebinStatus_NotLoggedIn" xml:space="preserve">
-    <value>未登陆</value>
+    <value>未登录。</value>
   </data>
   <data name="OAuthControl_Status_NotLoggedIn" xml:space="preserve">
-    <value>未登陆</value>
+    <value>未登录。</value>
   </data>
   <data name="DuplicateNameNotAllowed" xml:space="preserve">
-    <value>复制名称不允许。</value>
+    <value>名称不能重复。</value>
   </data>
   <data name="txtB2BucketWatermark" xml:space="preserve">
-    <value>可选项，仅当创建密钥不设置存储桶时使用</value>
+    <value>可选，仅当创建密钥时未设置存储桶时使用</value>
+  </data>
+  <data name="GoogleDrive_MyDrive_My_drive" xml:space="preserve">
+    <value>我的云端硬盘</value>
   </data>
 </root>

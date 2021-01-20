@@ -53,7 +53,7 @@ namespace ShareX.HelpersLib
         {
             if (maxValue < 0)
             {
-                throw new ArgumentOutOfRangeException("maxValue");
+                throw new ArgumentOutOfRangeException(nameof(maxValue));
             }
 
             return Next(0, maxValue);
@@ -69,7 +69,7 @@ namespace ShareX.HelpersLib
 
             if (minValue > maxValue)
             {
-                throw new ArgumentOutOfRangeException("minValue");
+                throw new ArgumentOutOfRangeException(nameof(minValue));
             }
 
             if (minValue == maxValue)
@@ -115,7 +115,7 @@ namespace ShareX.HelpersLib
         {
             if (buffer == null)
             {
-                throw new ArgumentNullException("buffer");
+                throw new ArgumentNullException(nameof(buffer));
             }
 
             lock (randomLock)
@@ -126,7 +126,22 @@ namespace ShareX.HelpersLib
 
         public static T Pick<T>(params T[] array)
         {
+            if (array == null)
+            {
+                throw new ArgumentNullException(nameof(array));
+            }
+
+            if (array.Length == 0)
+            {
+                throw new ArgumentException(nameof(array));
+            }
+
             return array[Next(array.Length - 1)];
+        }
+
+        public static void Run(params Action[] actions)
+        {
+            Pick(actions)();
         }
     }
 }

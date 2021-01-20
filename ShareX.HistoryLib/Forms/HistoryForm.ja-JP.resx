@@ -156,4 +156,7 @@
   <data name="gbFilters.Text" xml:space="preserve">
     <value>フィルター</value>
   </data>
+  <data name="lblMaxItemCount.Text" xml:space="preserve">
+    <value>履歴の最大保持数:</value>
+  </data>
 </root>

@@ -275,7 +275,7 @@ Veuillez sélectionner un raccourci différent ou quitter l'application en confl
     <value>Tâche : {0}</value>
   </data>
   <data name="ScreenRecordForm_StartRecording_FFmpeg_video_and_audio_source_both_can_t_be__None__" xml:space="preserve">
-    <value>La vidéo ou la piste audio source doit être définie.</value>
+    <value>les sources vidéo et audio FFmpeg ne peuvent être toutes les deux définies sur "Aucun".</value>
   </data>
   <data name="AboutForm_AboutForm_Changelog" xml:space="preserve">
     <value>Historique des modifications</value>
@@ -610,5 +610,31 @@ Voulez-vous redémarrer ShareX ?</value>
   </data>
   <data name="WouldYouLikeToResetThemes" xml:space="preserve">
     <value>Voulez-vous réinitialiser les thèmes ?</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_ja_JP" xml:space="preserve">
+    <value>Japonais</value>
+  </data>
+  <data name="WouldYouLikeToEnableImageEffects" xml:space="preserve">
+    <value>Voulez-vous activer les effets d'image ?
+
+Vous pourrez les désactiver plus tard depuis le manu "Tâches après la capture".</value>
+  </data>
+  <data name="FailedToSaveSettings" xml:space="preserve">
+    <value>Échec de l'enregistrement des paramètres</value>
+  </data>
+  <data name="Hotkey" xml:space="preserve">
+    <value>Raccourci clavier</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="ScreenColorPicker" xml:space="preserve">
+    <value>Sélecteur de couleurs de l'écran</value>
+  </data>
+  <data name="ShareXIsMinimizedToTheSystemTray" xml:space="preserve">
+    <value>ShareX est réduit dans la zone de notification.</value>
+  </data>
+  <data name="YourAntiVirusSoftwareOrTheControlledFolderAccessFeatureInWindows10CouldBeBlockingShareX" xml:space="preserve">
+    <value>Votre antivirus ou la fonctionnalité d'accès contrôlé aux dossiers dans Windows 10 pourrait bloquer ShareX.</value>
   </data>
 </root>

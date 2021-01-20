@@ -177,4 +177,7 @@
   <data name="btnEffectAdd.ToolTip" xml:space="preserve">
     <value>Добавить</value>
   </data>
+  <data name="btnImageEffects.Text" xml:space="preserve">
+    <value>Эффекты изображений...</value>
+  </data>
 </root>

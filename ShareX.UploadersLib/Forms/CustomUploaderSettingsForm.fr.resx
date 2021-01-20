@@ -321,4 +321,7 @@ store.book[0].title</value>
   <data name="tsmiCustomUploaderGuide.Text" xml:space="preserve">
     <value>Mode d'emploi pour les services de mise en ligne personnalisés...</value>
   </data>
+  <data name="lblResultErrorMessage.Text" xml:space="preserve">
+    <value>Message d'erreur :</value>
+  </data>
 </root>

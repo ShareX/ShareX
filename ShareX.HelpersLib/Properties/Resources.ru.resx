@@ -1180,4 +1180,31 @@
   <data name="HotkeyType_ImageSplitter" xml:space="preserve">
     <value>Разделитель изображений</value>
   </data>
+  <data name="HotkeyType_ImageThumbnailer" xml:space="preserve">
+    <value>Миниатюры изображений</value>
+  </data>
+  <data name="ResultOfFirstFile" xml:space="preserve">
+    <value>Результат первого файла:</value>
+  </data>
+  <data name="ResultOfSecondFile" xml:space="preserve">
+    <value>Результат второго файла:</value>
+  </data>
+  <data name="Result" xml:space="preserve">
+    <value>Результат:</value>
+  </data>
+  <data name="Target" xml:space="preserve">
+    <value>Цель:</value>
+  </data>
+  <data name="HotkeyType_QRCodeDecodeFromScreen" xml:space="preserve">
+    <value>QR код (Считать с экрана)</value>
+  </data>
+  <data name="ArrowHeadDirection_End" xml:space="preserve">
+    <value>Конец</value>
+  </data>
+  <data name="ArrowHeadDirection_Start" xml:space="preserve">
+    <value>Начало</value>
+  </data>
+  <data name="ArrowHeadDirection_Both" xml:space="preserve">
+    <value>Оба</value>
+  </data>
 </root>

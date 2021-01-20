@@ -48,20 +48,27 @@ namespace ShareX.HelpersLib
 
             lvClipboardContentList.Items.Clear();
 
-            CurrentDataObject = (DataObject)Clipboard.GetDataObject();
-            if (CurrentDataObject != null)
+            try
             {
-                string[] formats = CurrentDataObject.GetFormats();
-                if (formats != null && formats.Length > 0)
+                CurrentDataObject = (DataObject)Clipboard.GetDataObject();
+                if (CurrentDataObject != null)
                 {
-                    foreach (string format in formats)
+                    string[] formats = CurrentDataObject.GetFormats();
+                    if (formats != null && formats.Length > 0)
                     {
-                        ListViewItem lvi = new ListViewItem(format);
-                        lvClipboardContentList.Items.Add(lvi);
-                    }
+                        foreach (string format in formats)
+                        {
+                            ListViewItem lvi = new ListViewItem(format);
+                            lvClipboardContentList.Items.Add(lvi);
+                        }
 
-                    lvClipboardContentList.Items[0].Selected = true;
+                        lvClipboardContentList.Items[0].Selected = true;
+                    }
                 }
+            }
+            catch (Exception e)
+            {
+                e.ShowError();
             }
         }
 
@@ -157,7 +164,7 @@ namespace ShareX.HelpersLib
 
         private void btnClearClipboard_Click(object sender, EventArgs e)
         {
-            Clipboard.Clear();
+            ClipboardHelpers.Clear();
             RefreshClipboardContentList();
         }
 

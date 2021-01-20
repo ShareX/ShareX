@@ -154,7 +154,7 @@
     <value>Mémoriser la taille de la fenêtre principale</value>
   </data>
   <data name="cbTrayIconProgressEnabled.Text" xml:space="preserve">
-    <value>Afficher la progression sur l'icône de la zone de notifications</value>
+    <value>Afficher la progression sur l'icône dans la zone de notification</value>
   </data>
   <data name="tpPrint.Text" xml:space="preserve">
     <value>Imprimer</value>
@@ -196,10 +196,10 @@
     <value>Paramètres d'impression d'images...</value>
   </data>
   <data name="cbShowTray.Text" xml:space="preserve">
-    <value>Afficher l'icône dans la zone de notifications</value>
+    <value>Afficher l'icône dans la zone de notification</value>
   </data>
   <data name="cbSilentRun.Text" xml:space="preserve">
-    <value>Démarrer ShareX sous forme d'icône dans la zone de notifications</value>
+    <value>Réduire ShareX dans la zone de notification</value>
   </data>
   <data name="lblBufferSize.Text" xml:space="preserve">
     <value>Taille du buffer :</value>
@@ -292,25 +292,25 @@
     <value>Afficher les tâches récentes dans la fenêtre principale au démarrage</value>
   </data>
   <data name="cbRecentTasksShowInTrayMenu.Text" xml:space="preserve">
-    <value>Afficher les tâches récentes dans la zone de notifications</value>
+    <value>Afficher les tâches récentes dans la zone de notification</value>
   </data>
   <data name="cbHistorySaveTasks.Text" xml:space="preserve">
     <value>Enregistrer les tâches dans l'historique</value>
   </data>
   <data name="cbRecentTasksTrayMenuMostRecentFirst.Text" xml:space="preserve">
-    <value>Dans la zone de notifications, afficher les tâches les plus récentes en premier</value>
+    <value>Dans le menu de l'icône dans zone de notifications, afficher les tâches les plus récentes en premier</value>
   </data>
   <data name="lblRecentTasksMaxCount.Text" xml:space="preserve">
     <value>Nombre maximum de tâches à enregistrer :</value>
   </data>
   <data name="lblTrayLeftClickAction.Text" xml:space="preserve">
-    <value>Lors d'un clic gauche sur l'icône :</value>
+    <value>Lors d'un clic gauche sur l'icône dans la zone de notification :</value>
   </data>
   <data name="lblTrayLeftDoubleClickAction.Text" xml:space="preserve">
-    <value>Lors d'un double clic gauche sur l'icône :</value>
+    <value>Lors d'un double clic gauche sur l'icône dans la zone de notification :</value>
   </data>
   <data name="lblTrayMiddleClickAction.Text" xml:space="preserve">
-    <value>Lors d'un clic de la molette sur l'icône :</value>
+    <value>Lors d'un clic de la molette sur l'icône dans la zone de notification :</value>
   </data>
   <data name="cbCheckPreReleaseUpdates.Text" xml:space="preserve">
     <value>Vérifier des mises à jour de pré-version</value>

@@ -458,6 +458,33 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Both.
+        /// </summary>
+        internal static string ArrowHeadDirection_Both {
+            get {
+                return ResourceManager.GetString("ArrowHeadDirection_Both", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to End.
+        /// </summary>
+        internal static string ArrowHeadDirection_End {
+            get {
+                return ResourceManager.GetString("ArrowHeadDirection_End", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Start.
+        /// </summary>
+        internal static string ArrowHeadDirection_Start {
+            get {
+                return ResourceManager.GetString("ArrowHeadDirection_Start", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap clipboard_block {
@@ -3014,6 +3041,33 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Result:.
+        /// </summary>
+        internal static string Result {
+            get {
+                return ResourceManager.GetString("Result", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Result of first file:.
+        /// </summary>
+        internal static string ResultOfFirstFile {
+            get {
+                return ResourceManager.GetString("ResultOfFirstFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Result of second file:.
+        /// </summary>
+        internal static string ResultOfSecondFile {
+            get {
+                return ResourceManager.GetString("ResultOfSecondFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to FFmpeg (Good quality).
         /// </summary>
         internal static string ScreenRecordGIFEncoding_FFmpeg {
@@ -3373,6 +3427,15 @@ namespace ShareX.HelpersLib.Properties {
         internal static string SupportedLanguage_Automatic {
             get {
                 return ResourceManager.GetString("SupportedLanguage_Automatic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Target:.
+        /// </summary>
+        internal static string Target {
+            get {
+                return ResourceManager.GetString("Target", resourceCulture);
             }
         }
         

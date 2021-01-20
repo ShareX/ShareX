@@ -194,6 +194,7 @@
             this.tssThumbnailTitle = new System.Windows.Forms.ToolStripSeparator();
             this.tsmiThumbnailTitleTop = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiThumbnailTitleBottom = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiThumbnailSize = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiSwitchTaskViewMode = new System.Windows.Forms.ToolStripMenuItem();
             this.niTray = new System.Windows.Forms.NotifyIcon(this.components);
             this.cmsTray = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -276,9 +277,9 @@
             this.tsmiTrayDonate = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayAbout = new System.Windows.Forms.ToolStripMenuItem();
             this.tssTray3 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsmiRestartAsAdmin = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayRecentItems = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiOpenActionsToolbar = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiRestartAsAdmin = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayShow = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayExit = new System.Windows.Forms.ToolStripMenuItem();
             this.timerTraySingleClick = new System.Windows.Forms.Timer(this.components);
@@ -1054,6 +1055,7 @@
             this.tsmiHideColumns,
             this.tsmiImagePreview,
             this.tsmiThumbnailTitle,
+            this.tsmiThumbnailSize,
             this.tsmiSwitchTaskViewMode});
             this.cmsTaskInfo.Name = "cmsHistory";
             resources.ApplyResources(this.cmsTaskInfo, "cmsTaskInfo");
@@ -1566,6 +1568,13 @@
             resources.ApplyResources(this.tsmiThumbnailTitleBottom, "tsmiThumbnailTitleBottom");
             this.tsmiThumbnailTitleBottom.Tag = "ThumbnailTitleLocation";
             this.tsmiThumbnailTitleBottom.Click += new System.EventHandler(this.TsmiThumbnailTitleBottom_Click);
+            // 
+            // tsmiThumbnailSize
+            // 
+            this.tsmiThumbnailSize.Image = global::ShareX.Properties.Resources.image_resize;
+            this.tsmiThumbnailSize.Name = "tsmiThumbnailSize";
+            resources.ApplyResources(this.tsmiThumbnailSize, "tsmiThumbnailSize");
+            this.tsmiThumbnailSize.Click += new System.EventHandler(this.tsmiThumbnailSize_Click);
             // 
             // tsmiSwitchTaskViewMode
             // 
@@ -2202,6 +2211,13 @@
             this.tssTray3.Name = "tssTray3";
             resources.ApplyResources(this.tssTray3, "tssTray3");
             // 
+            // tsmiRestartAsAdmin
+            // 
+            this.tsmiRestartAsAdmin.Image = global::ShareX.Properties.Resources.uac;
+            this.tsmiRestartAsAdmin.Name = "tsmiRestartAsAdmin";
+            resources.ApplyResources(this.tsmiRestartAsAdmin, "tsmiRestartAsAdmin");
+            this.tsmiRestartAsAdmin.Click += new System.EventHandler(this.tsmiRestartAsAdmin_Click);
+            // 
             // tsmiTrayRecentItems
             // 
             this.tsmiTrayRecentItems.Image = global::ShareX.Properties.Resources.clipboard_list;
@@ -2214,13 +2230,6 @@
             this.tsmiOpenActionsToolbar.Name = "tsmiOpenActionsToolbar";
             resources.ApplyResources(this.tsmiOpenActionsToolbar, "tsmiOpenActionsToolbar");
             this.tsmiOpenActionsToolbar.Click += new System.EventHandler(this.tsmiOpenActionsToolbar_Click);
-            // 
-            // tsmiRestartAsAdmin
-            // 
-            this.tsmiRestartAsAdmin.Image = global::ShareX.Properties.Resources.user_business;
-            this.tsmiRestartAsAdmin.Name = "tsmiRestartAsAdmin";
-            resources.ApplyResources(this.tsmiRestartAsAdmin, "tsmiRestartAsAdmin");
-            this.tsmiRestartAsAdmin.Click += new System.EventHandler(this.tsmiRestartAsAdmin_Click);
             // 
             // tsmiTrayShow
             // 
@@ -2676,5 +2685,6 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiClipboardViewer;
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayClipboardViewer;
         private System.Windows.Forms.ToolStripMenuItem tsmiRestartAsAdmin;
+        private System.Windows.Forms.ToolStripMenuItem tsmiThumbnailSize;
     }
 }

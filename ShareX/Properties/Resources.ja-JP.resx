@@ -593,4 +593,28 @@ ShareX を再起動しますか？</value>
   <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__Text__Length___0__" xml:space="preserve">
     <value>クリップボード内のデータ：文字列（{0}文字）</value>
   </data>
+  <data name="AboutForm_AboutForm_Language_ja_JP" xml:space="preserve">
+    <value>日本語</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>複製</value>
+  </data>
+  <data name="Confirmation" xml:space="preserve">
+    <value>確認</value>
+  </data>
+  <data name="Hotkey" xml:space="preserve">
+    <value>ホットキー</value>
+  </data>
+  <data name="MainForm_UploadDebugLogWarning" xml:space="preserve">
+    <value>デバッグログには重大な情報が含まれています</value>
+  </data>
+  <data name="ScreenColorPicker" xml:space="preserve">
+    <value>スクリーン カラーピッカー</value>
+  </data>
+  <data name="ShareXConfirmation" xml:space="preserve">
+    <value>ShareX - 確認</value>
+  </data>
+  <data name="ShareXIsMinimizedToTheSystemTray" xml:space="preserve">
+    <value>ShareXはシステムトレイに最小化されています</value>
+  </data>
 </root>

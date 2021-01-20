@@ -304,8 +304,7 @@ namespace ShareX.UploadersLib
             catch (Exception e)
             {
                 DebugHelper.WriteException(e);
-                // TODO: Translate
-                MessageBox.Show("Export failed." + "\n\n" + e, "ShareX - " + "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(Resources.ExportFailed + "\n\n" + e, "ShareX - " + "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -375,10 +374,11 @@ namespace ShareX.UploadersLib
                 CustomUploaderUpdateList();
             }
 
-#if DEBUG
-            tsmiExportAll.Visible = true;
-            tsmiUpdateFolder.Visible = true;
-#endif
+            if (HelpersOptions.DevMode)
+            {
+                tsmiExportAll.Visible = true;
+                tsmiUpdateFolder.Visible = true;
+            }
 
             CustomUploaderClearFields();
 

@@ -46,6 +46,10 @@ namespace ShareX.HelpersLib
         public static readonly CodeMenuEntryPixelInfo b1 = new CodeMenuEntryPixelInfo("b1", "Blue color (0-1). Specify decimal precision with {n}, defaults to 3.");
         public static readonly CodeMenuEntryPixelInfo hex = new CodeMenuEntryPixelInfo("hex", "Hex color value (Lowercase)");
         public static readonly CodeMenuEntryPixelInfo HEX = new CodeMenuEntryPixelInfo("HEX", "Hex color value (Uppercase)");
+        public static readonly CodeMenuEntryPixelInfo c100 = new CodeMenuEntryPixelInfo("c100", "Cyan color (0-100)");
+        public static readonly CodeMenuEntryPixelInfo m100 = new CodeMenuEntryPixelInfo("m100", "Magenta color (0-100)");
+        public static readonly CodeMenuEntryPixelInfo y100 = new CodeMenuEntryPixelInfo("y100", "Yellow color (0-100)");
+        public static readonly CodeMenuEntryPixelInfo k100 = new CodeMenuEntryPixelInfo("k100", "Key color (0-100)");
         public static readonly CodeMenuEntryPixelInfo name = new CodeMenuEntryPixelInfo("name", "Color name");
         public static readonly CodeMenuEntryPixelInfo x = new CodeMenuEntryPixelInfo("x", "X position");
         public static readonly CodeMenuEntryPixelInfo y = new CodeMenuEntryPixelInfo("y", "Y position");
@@ -62,6 +66,10 @@ namespace ShareX.HelpersLib
                 Replace(b255.ToPrefixString(), color.B.ToString(), StringComparison.InvariantCultureIgnoreCase).
                 Replace(HEX.ToPrefixString(), ColorHelpers.ColorToHex(color), StringComparison.InvariantCulture).
                 Replace(hex.ToPrefixString(), ColorHelpers.ColorToHex(color).ToLowerInvariant(), StringComparison.InvariantCultureIgnoreCase).
+                Replace(c100.ToPrefixString(), Math.Round(ColorHelpers.ColorToCMYK(color).Cyan100, 2, MidpointRounding.AwayFromZero).ToString(), StringComparison.InvariantCultureIgnoreCase).
+                Replace(m100.ToPrefixString(), Math.Round(ColorHelpers.ColorToCMYK(color).Magenta100, 2, MidpointRounding.AwayFromZero).ToString(), StringComparison.InvariantCultureIgnoreCase).
+                Replace(y100.ToPrefixString(), Math.Round(ColorHelpers.ColorToCMYK(color).Yellow100, 2, MidpointRounding.AwayFromZero).ToString(), StringComparison.InvariantCultureIgnoreCase).
+                Replace(k100.ToPrefixString(), Math.Round(ColorHelpers.ColorToCMYK(color).Key100, 2, MidpointRounding.AwayFromZero).ToString(), StringComparison.InvariantCultureIgnoreCase).
                 Replace(name.ToPrefixString(), ColorHelpers.GetColorName(color), StringComparison.InvariantCultureIgnoreCase).
                 Replace(x.ToPrefixString(), position.X.ToString(), StringComparison.InvariantCultureIgnoreCase).
                 Replace(y.ToPrefixString(), position.Y.ToString(), StringComparison.InvariantCultureIgnoreCase).

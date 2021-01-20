@@ -162,4 +162,7 @@
   <data name="lblFilenameFilter.Text" xml:space="preserve">
     <value>Nom du fichier :</value>
   </data>
+  <data name="lblMaxItemCount.Text" xml:space="preserve">
+    <value>Limite maximum d'éléments :</value>
+  </data>
 </root>

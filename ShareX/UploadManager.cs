@@ -205,19 +205,19 @@ namespace ShareX
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
-            if (Clipboard.ContainsImage())
+            if (ClipboardHelpers.ContainsImage())
             {
                 Bitmap bmp = ClipboardHelpers.GetImage();
 
                 ProcessImageUpload(bmp, taskSettings);
             }
-            else if (Clipboard.ContainsText())
+            else if (ClipboardHelpers.ContainsText())
             {
                 string text = ClipboardHelpers.GetText();
 
                 ProcessTextUpload(text, taskSettings);
             }
-            else if (Clipboard.ContainsFileDropList())
+            else if (ClipboardHelpers.ContainsFileDropList())
             {
                 string[] files = ClipboardHelpers.GetFileDropList();
 

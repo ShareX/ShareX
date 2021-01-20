@@ -453,5 +453,47 @@ namespace ShareX.HelpersLib
 
             return sb.ToString();
         }
+
+        public static bool ContainsImage()
+        {
+            try
+            {
+                return Clipboard.ContainsImage();
+            }
+            catch (Exception e)
+            {
+                DebugHelper.WriteException(e);
+            }
+
+            return false;
+        }
+
+        public static bool ContainsText()
+        {
+            try
+            {
+                return Clipboard.ContainsText();
+            }
+            catch (Exception e)
+            {
+                DebugHelper.WriteException(e);
+            }
+
+            return false;
+        }
+
+        public static bool ContainsFileDropList()
+        {
+            try
+            {
+                return Clipboard.ContainsFileDropList();
+            }
+            catch (Exception e)
+            {
+                DebugHelper.WriteException(e);
+            }
+
+            return false;
+        }
     }
 }

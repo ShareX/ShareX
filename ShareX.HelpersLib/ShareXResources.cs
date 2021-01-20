@@ -192,6 +192,14 @@ namespace ShareX.HelpersLib
             {
                 ApplyCustomThemeToControl(child);
             }
+
+            switch (control)
+            {
+                case TabToTreeView tttv:
+                    tttv.LeftPanelBackColor = Theme.DarkBackgroundColor;
+                    tttv.SeparatorColor = Theme.SeparatorDarkColor;
+                    break;
+            }
         }
 
         private static void ApplyCustomThemeToComponents(IContainer container)
@@ -221,7 +229,7 @@ namespace ShareX.HelpersLib
         {
             e.DrawBackground();
             e.DrawBorder();
-            e.DrawText();
+            e.DrawText(TextFormatFlags.VerticalCenter | TextFormatFlags.LeftAndRightPadding);
         }
 
         public static void ApplyCustomThemeToContextMenuStrip(ContextMenuStrip cms)

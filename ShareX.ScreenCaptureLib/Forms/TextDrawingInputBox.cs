@@ -118,14 +118,13 @@ namespace ShareX.ScreenCaptureLib
 
         private void UpdateEnterTip()
         {
-            // TODO: Translate
             if (Options.EnterKeyNewLine)
             {
-                lblTip.Text = "New line: Enter, OK: Ctrl + Enter";
+                lblTip.Text = Resources.NewLineEnterOKCtrlEnter;
             }
             else
             {
-                lblTip.Text = "New line: Ctrl + Enter, OK: Enter";
+                lblTip.Text = Resources.NewLineCtrlEnterOKEnter;
             }
         }
 

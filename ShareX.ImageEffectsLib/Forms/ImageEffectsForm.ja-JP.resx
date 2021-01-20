@@ -201,4 +201,7 @@
   <data name="lblPresets.Text" xml:space="preserve">
     <value>プリセット:</value>
   </data>
+  <data name="btnImageEffects.Text" xml:space="preserve">
+    <value>画像効果...</value>
+  </data>
 </root>

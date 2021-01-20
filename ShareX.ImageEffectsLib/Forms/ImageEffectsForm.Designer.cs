@@ -60,6 +60,7 @@
             this.lvEffects = new ShareX.HelpersLib.MyListView();
             this.chEffect = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lblEffect = new System.Windows.Forms.Label();
+            this.btnImageEffects = new System.Windows.Forms.Button();
             this.cmsLoadImage.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -308,12 +309,21 @@
             resources.ApplyResources(this.lblEffect, "lblEffect");
             this.lblEffect.Name = "lblEffect";
             // 
+            // btnImageEffects
+            // 
+            resources.ApplyResources(this.btnImageEffects, "btnImageEffects");
+            this.btnImageEffects.Name = "btnImageEffects";
+            this.btnImageEffects.UseVisualStyleBackColor = true;
+            this.btnImageEffects.Click += new System.EventHandler(this.btnImageEffects_Click);
+            // 
             // ImageEffectsForm
             // 
+            this.AllowDrop = true;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.CancelButton = this.btnClose;
+            this.Controls.Add(this.btnImageEffects);
             this.Controls.Add(this.lblEffect);
             this.Controls.Add(this.pbResult);
             this.Controls.Add(this.pgSettings);
@@ -340,6 +350,8 @@
             this.Name = "ImageEffectsForm";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Shown += new System.EventHandler(this.ImageEffectsForm_Shown);
+            this.DragDrop += new System.Windows.Forms.DragEventHandler(this.ImageEffectsForm_DragDrop);
+            this.DragEnter += new System.Windows.Forms.DragEventHandler(this.ImageEffectsForm_DragEnter);
             this.cmsLoadImage.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -378,6 +390,7 @@
         private System.Windows.Forms.ColumnHeader chPreset;
         private System.Windows.Forms.ToolTip ttMain;
         private System.Windows.Forms.Label lblEffect;
+        private System.Windows.Forms.Button btnImageEffects;
     }
 }
 

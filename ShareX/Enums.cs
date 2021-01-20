@@ -59,6 +59,8 @@ namespace ShareX
         Indonesian,
         [Description("Italiano (Italian)")]
         Italian,
+        [Description("日本語 (Japanese)")]
+        Japanese,
         [Description("한국어 (Korean)")]
         Korean,
         [Description("Español mexicano (Mexican Spanish)")]

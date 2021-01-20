@@ -306,9 +306,6 @@
   <data name="ImageEffects" xml:space="preserve">
     <value>Ajouter des effets d'image...</value>
   </data>
-  <data name="ShapeManager_ArrowsOnBothEnds" xml:space="preserve">
-    <value>Flèches des deux côtés</value>
-  </data>
   <data name="ShapeManager_CreateToolbar_AutoCropImage" xml:space="preserve">
     <value>Rognage automatique de l'image...</value>
   </data>
@@ -411,5 +408,35 @@ Voulez-vous fermer l'éditeur d'image ?</value>
   </data>
   <data name="ShapeManager_CreateToolbar_AutoCloseEditorOnTask" xml:space="preserve">
     <value>Fermer automatiquement l'éditeur lors du lancement d'une tâche</value>
+  </data>
+  <data name="ImageSaved" xml:space="preserve">
+    <value>Image enregistrée</value>
+  </data>
+  <data name="ImageSavedAs" xml:space="preserve">
+    <value>Image enregistrée</value>
+  </data>
+  <data name="Duplicate" xml:space="preserve">
+    <value>Dupliquer</value>
+  </data>
+  <data name="ImageCopied" xml:space="preserve">
+    <value>Image copiée</value>
+  </data>
+  <data name="MenuIconSize" xml:space="preserve">
+    <value>Taille des icônes du menu :</value>
+  </data>
+  <data name="ShapeManager_ArrowHeadDirection" xml:space="preserve">
+    <value>Direction de la tête de flêche :</value>
+  </data>
+  <data name="ImageUploading" xml:space="preserve">
+    <value>Mise en ligne de l'image</value>
+  </data>
+  <data name="NewLineCtrlEnterOKEnter" xml:space="preserve">
+    <value>Nouvelle ligne : Ctrl + Entrée, OK : Entrée</value>
+  </data>
+  <data name="NewLineEnterOKCtrlEnter" xml:space="preserve">
+    <value>Nouvelle ligne : Entrée, OK : Ctrl + Entrée</value>
+  </data>
+  <data name="LockMenu" xml:space="preserve">
+    <value>Verrouiller le menu</value>
   </data>
 </root>

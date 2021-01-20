@@ -46,7 +46,7 @@ namespace ShareX.HelpersLib
                 {
                     if (value < 0)
                     {
-                        throw new ArgumentOutOfRangeException("Minimum");
+                        throw new ArgumentOutOfRangeException(nameof(Minimum));
                     }
 
                     if (maximum < value)
@@ -81,7 +81,7 @@ namespace ShareX.HelpersLib
                 {
                     if (value < 0)
                     {
-                        throw new ArgumentOutOfRangeException("Maximum");
+                        throw new ArgumentOutOfRangeException(nameof(Maximum));
                     }
 
                     if (minimum > value)
@@ -114,9 +114,9 @@ namespace ShareX.HelpersLib
             {
                 if (this.value != value)
                 {
-                    if ((value < minimum) || (value > maximum))
+                    if (value < minimum || value > maximum)
                     {
-                        throw new ArgumentOutOfRangeException("Value");
+                        throw new ArgumentOutOfRangeException(nameof(Value));
                     }
 
                     this.value = value;

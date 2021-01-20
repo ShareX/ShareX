@@ -61,7 +61,7 @@ namespace ShareX
         {
             pbClipboard.Visible = txtClipboard.Visible = lbClipboard.Visible = false;
 
-            if (Clipboard.ContainsImage())
+            if (ClipboardHelpers.ContainsImage())
             {
                 using (Bitmap bmp = ClipboardHelpers.GetImage())
                 {
@@ -75,7 +75,7 @@ namespace ShareX
                     }
                 }
             }
-            else if (Clipboard.ContainsText())
+            else if (ClipboardHelpers.ContainsText())
             {
                 string text = ClipboardHelpers.GetText();
 
@@ -88,7 +88,7 @@ namespace ShareX
                     return true;
                 }
             }
-            else if (Clipboard.ContainsFileDropList())
+            else if (ClipboardHelpers.ContainsFileDropList())
             {
                 string[] files = ClipboardHelpers.GetFileDropList();
 

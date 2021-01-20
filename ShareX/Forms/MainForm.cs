@@ -205,11 +205,6 @@ namespace ShareX
             tsmiTrayDNSChanger.Visible = false;
 #endif
 
-            if (Program.Dev && !Helpers.IsAdministrator())
-            {
-                tsmiRestartAsAdmin.Visible = true;
-            }
-
             HandleCreated += MainForm_HandleCreated;
         }
 
@@ -460,8 +455,7 @@ namespace ShareX
                 int maxHotkeyLength = hotkeys.Max(x => x.HotkeyInfo.ToString().Length);
                 int maxDescriptionLength = hotkeys.Max(x => x.TaskSettings.ToString().Length);
 
-                // TODO: Translate
-                sb.AppendFormat("┌{0}┬{1}┐\r\n", "Hotkey".PadCenter(maxHotkeyLength + 2, '─'), "Description".PadCenter(maxDescriptionLength + 2, '─'));
+                sb.AppendFormat("┌{0}┬{1}┐\r\n", Resources.Hotkey.PadCenter(maxHotkeyLength + 2, '─'), Resources.Description.PadCenter(maxDescriptionLength + 2, '─'));
 
                 for (int i = 0; i < hotkeys.Count; i++)
                 {
@@ -980,15 +974,6 @@ namespace ShareX
 
         private void AfterApplicationSettingsJobs()
         {
-            if (Program.Settings.TrayTextMoreInfo)
-            {
-                niTray.Text = Program.TitleLong;
-            }
-            else
-            {
-                niTray.Text = "ShareX";
-            }
-
             HotkeyRepeatLimit = Program.Settings.HotkeyRepeatLimit;
 
             HelpersOptions.CurrentProxy = Program.Settings.ProxySettings;
@@ -999,6 +984,7 @@ namespace ShareX
             HelpersOptions.RotateImageByExifOrientationData = Program.Settings.RotateImageByExifOrientationData;
             HelpersOptions.BrowserPath = Program.Settings.BrowserPath;
             HelpersOptions.RecentColors = Program.Settings.RecentColors;
+            HelpersOptions.DevMode = Program.Settings.DevMode;
             Program.UpdateHelpersSpecialFolders();
 
             TaskManager.RecentManager.MaxCount = Program.Settings.RecentTasksMaxCount;
@@ -1013,6 +999,17 @@ namespace ShareX
                 Icon = ShareXResources.Icon;
                 niTray.Icon = ShareXResources.Icon;
             }
+
+            if (HelpersOptions.DevMode)
+            {
+                niTray.Text = Program.TitleLong;
+            }
+            else
+            {
+                niTray.Text = "ShareX";
+            }
+
+            tsmiRestartAsAdmin.Visible = HelpersOptions.DevMode && !Helpers.IsAdministrator();
 
 #if RELEASE
             ConfigureAutoUpdate();
@@ -1166,8 +1163,9 @@ namespace ShareX
 
             ucTaskThumbnailView.TitleVisible = Program.Settings.ShowThumbnailTitle;
             ucTaskThumbnailView.TitleLocation = Program.Settings.ThumbnailTitleLocation;
+            ucTaskThumbnailView.ThumbnailSize = Program.Settings.ThumbnailSize;
 
-            tsmiThumbnailTitle.Visible = Program.Settings.TaskViewMode == TaskViewMode.ThumbnailView;
+            tsmiThumbnailTitle.Visible = tsmiThumbnailSize.Visible = Program.Settings.TaskViewMode == TaskViewMode.ThumbnailView;
 
             Refresh();
         }
@@ -1394,8 +1392,7 @@ namespace ShareX
 
                 if (Program.Settings.FirstTimeMinimizeToTray)
                 {
-                    // TODO: Translate
-                    TaskHelpers.ShowNotificationTip("ShareX is minimized to the system tray.", "ShareX", 8000);
+                    TaskHelpers.ShowNotificationTip(Resources.ShareXIsMinimizedToTheSystemTray, "ShareX", 8000);
                     Program.Settings.FirstTimeMinimizeToTray = false;
                 }
             }
@@ -2504,10 +2501,7 @@ namespace ShareX
 
         private void tsmiRestartAsAdmin_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Would you like to restart ShareX as admin?", "ShareX - Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            {
-                Program.Restart(true);
-            }
+            Program.Restart(true);
         }
 
         private void TsmiThumbnailTitleHide_Click(object sender, EventArgs e)
@@ -2529,6 +2523,18 @@ namespace ShareX
             Program.Settings.ThumbnailTitleLocation = ThumbnailTitleLocation.Bottom;
             tsmiThumbnailTitleBottom.Check();
             UpdateMainWindowLayout();
+        }
+
+        private void tsmiThumbnailSize_Click(object sender, EventArgs e)
+        {
+            using (ThumbnailSizeForm form = new ThumbnailSizeForm(Program.Settings.ThumbnailSize))
+            {
+                if (form.ShowDialog() == DialogResult.OK)
+                {
+                    Program.Settings.ThumbnailSize = form.ThumbnailSize;
+                    UpdateMainWindowLayout();
+                }
+            }
         }
 
         private void TsmiSwitchTaskViewMode_Click(object sender, EventArgs e)

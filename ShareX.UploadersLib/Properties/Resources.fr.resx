@@ -130,7 +130,7 @@
     <value>Parcourir pour un fichier clé...</value>
   </data>
   <data name="UploadersConfigForm_MegaConfigureTab_Click_refresh_button" xml:space="preserve">
-    <value>Cliquez sur le bouton « Actualiser »</value>
+    <value>Cliquez sur le bouton « Rafraîchir »</value>
   </data>
   <data name="UploadersConfigForm_MegaConfigureTab_Configured" xml:space="preserve">
     <value>Configuré</value>
@@ -149,7 +149,7 @@ Dossiers créés :</value>
     <value>Nom de périphérique invalide</value>
   </data>
   <data name="UploadersConfigForm_BoxListFolders_Box_refresh_folders_list_failed" xml:space="preserve">
-    <value>Le rafraichissement de la liste des dossiers Box a échoué</value>
+    <value>Le rafraîchissement de la liste des dossiers Box a échoué</value>
   </data>
   <data name="UploadersConfigForm_Error" xml:space="preserve">
     <value>Erreur</value>
@@ -244,5 +244,11 @@ Dossiers créés :</value>
   <data name="GoogleDrive_MyDrive_My_drive" xml:space="preserve">
     <value>Mon drive</value>
     <comment>Google conserve l'anglicisme drive quand il parle de son service</comment>
+  </data>
+  <data name="ExportFailed" xml:space="preserve">
+    <value>Échec de l'export.</value>
+  </data>
+  <data name="LoggedInAs0" xml:space="preserve">
+    <value>Connecté en tant que {0}.</value>
   </data>
 </root>

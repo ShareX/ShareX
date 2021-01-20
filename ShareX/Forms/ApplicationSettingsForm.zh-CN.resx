@@ -199,7 +199,7 @@
     <value>打印</value>
   </data>
   <data name="btnShowImagePrintSettings.Text" xml:space="preserve">
-    <value>图片打印设置..</value>
+    <value>图片打印设置...</value>
   </data>
   <data name="lblProxyHost.Text" xml:space="preserve">
     <value>主机：</value>
@@ -289,7 +289,7 @@
     <value>保存任务历史</value>
   </data>
   <data name="lblRecentTasksMaxCount.Text" xml:space="preserve">
-    <value>保存任务最大数量</value>
+    <value>保存任务最大数量:</value>
   </data>
   <data name="cbHistoryCheckURL.Text" xml:space="preserve">
     <value>仅保存 URL（截图并上传图床之后）</value>
@@ -319,7 +319,7 @@
     <value>Chrome 扩展程序</value>
   </data>
   <data name="btnChromeOpenExtensionPage.Text" xml:space="preserve">
-    <value>安装 ShareX Chrome 扩展程序</value>
+    <value>安装 ShareX 的 Chrome 扩展程序...</value>
   </data>
   <data name="cbChromeExtensionSupport.Text" xml:space="preserve">
     <value>启用 Chrome 扩展程序支持</value>
@@ -328,7 +328,7 @@
     <value>启用 Firefox 扩展程序支持</value>
   </data>
   <data name="btnFirefoxOpenAddonPage.Text" xml:space="preserve">
-    <value>安装 Sharex Firefox 扩展程序支持</value>
+    <value>安装 Sharex 的 Firefox 扩展支持...</value>
   </data>
   <data name="btnResetSettings.Text" xml:space="preserve">
     <value>重置设置...</value>
@@ -349,7 +349,7 @@
     <value>Firefox 扩展程序</value>
   </data>
   <data name="btnCheckDevBuild.Text" xml:space="preserve">
-    <value>安装开发版...</value>
+    <value>安装开发版本...</value>
   </data>
   <data name="cbEditWithShareX.Text" xml:space="preserve">
     <value>在Windows上下文菜单中显示“使用ShareX编辑”</value>
@@ -359,5 +359,32 @@
   </data>
   <data name="btnPersonalFolderPathApply.Text" xml:space="preserve">
     <value>应用</value>
+  </data>
+  <data name="btnThemeReset.Text" xml:space="preserve">
+    <value>重置...</value>
+  </data>
+  <data name="btnThemeRemove.Text" xml:space="preserve">
+    <value>移除</value>
+  </data>
+  <data name="btnThemeAdd.Text" xml:space="preserve">
+    <value>添加</value>
+  </data>
+  <data name="tpTheme.Text" xml:space="preserve">
+    <value>主题</value>
+  </data>
+  <data name="lblExportImportNote.Text" xml:space="preserve">
+    <value>注意：它导出所有设置文件和历史文件，但不导出屏幕截图、日志和备份文件夹。请勿分享导出的文件给其他人，其中可能包含私人信息，例如您的账号和密码。</value>
+  </data>
+  <data name="cbExportHistory.Text" xml:space="preserve">
+    <value>历史记录</value>
+  </data>
+  <data name="cbExportSettings.Text" xml:space="preserve">
+    <value>设置</value>
+  </data>
+  <data name="tpSettings.Text" xml:space="preserve">
+    <value>设置</value>
+  </data>
+  <data name="cbUseCustomTheme.Text" xml:space="preserve">
+    <value>使用自定义主题</value>
   </data>
 </root>

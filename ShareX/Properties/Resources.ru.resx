@@ -465,7 +465,7 @@
   </data>
   <data name="ActionsToolbar_Tip" xml:space="preserve">
     <value>Удерживайте левую кнопку мыши для перемещения
-Кликните правой конопкой мыши, чтобы открыть меню
+Кликните правой кнопкой мыши, чтобы открыть меню
 Средней кнопкой мыши, чтобы закрыть панель</value>
   </data>
   <data name="AboutForm_AboutForm_Language_tr" xml:space="preserve">
@@ -610,5 +610,31 @@
   </data>
   <data name="AboutForm_AboutForm_Language_fa_IR" xml:space="preserve">
     <value>Персидский</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_ja_JP" xml:space="preserve">
+    <value>Японский</value>
+  </data>
+  <data name="ShareXIsMinimizedToTheSystemTray" xml:space="preserve">
+    <value>ShareX свернут в системный трей.</value>
+  </data>
+  <data name="YourAntiVirusSoftwareOrTheControlledFolderAccessFeatureInWindows10CouldBeBlockingShareX" xml:space="preserve">
+    <value>Ваш анитвирус или контролируемый доступ к файлам в Windows 10 могут блокировать ShareX.</value>
+  </data>
+  <data name="FailedToSaveSettings" xml:space="preserve">
+    <value>Не удалось сохранить настройки</value>
+  </data>
+  <data name="ScreenColorPicker" xml:space="preserve">
+    <value>Пипетка</value>
+  </data>
+  <data name="WouldYouLikeToEnableImageEffects" xml:space="preserve">
+    <value>Хотите включить эффекты изображений?
+
+Их можно выключить из меню "После захвата".</value>
+  </data>
+  <data name="Hotkey" xml:space="preserve">
+    <value>Клавиша</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Описание</value>
   </data>
 </root>
