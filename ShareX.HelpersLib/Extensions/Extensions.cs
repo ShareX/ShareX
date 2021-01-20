@@ -844,5 +844,10 @@ namespace ShareX.HelpersLib
         {
             return color.A < 255;
         }
+
+        public static string ToStringProper(this Rectangle rect)
+        {
+            return $"X: {rect.X}, Y: {rect.Y}, Width: {rect.Width}, Height: {rect.Height}";
+        }
     }
 }

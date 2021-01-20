@@ -427,6 +427,9 @@
     <EmbeddedResource Include="Controls\OAuthControl.es.resx">
       <DependentUpon>OAuthControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\OAuthControl.fa-IR.resx">
+      <DependentUpon>OAuthControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\OAuthControl.fr.resx">
       <DependentUpon>OAuthControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -1046,7 +1049,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="FluentFTP">
-      <Version>33.0.2</Version>
+      <Version>33.0.3</Version>
     </PackageReference>
     <PackageReference Include="MegaApiClient">
       <Version>1.8.2</Version>

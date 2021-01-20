@@ -42,6 +42,7 @@ namespace ShareX.ScreenCaptureLib
         // Drawing
         public Color BorderColor { get; set; } = PrimaryColor;
         public int BorderSize { get; set; } = 4;
+        public BorderStyle BorderStyle { get; set; } = BorderStyle.Solid;
         public Color FillColor { get; set; } = TransparentColor;
         public int DrawingCornerRadius { get; set; } = 3;
         public bool Shadow { get; set; } = true;

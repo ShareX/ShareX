@@ -324,4 +324,13 @@ namespace ShareX.ScreenCaptureLib
         CanvasExpandDown,
         CanvasExpandRight
     }
+
+    public enum BorderStyle
+    {
+        Solid,
+        Dash,
+        Dot,
+        DashDot,
+        DashDotDot
+    }
 }

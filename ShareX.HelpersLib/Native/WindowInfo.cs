@@ -52,6 +52,30 @@ namespace ShareX.HelpersLib
             }
         }
 
+        public string ProcessFilePath
+        {
+            get
+            {
+                using (Process process = Process)
+                {
+                    return process?.MainModule?.FileName;
+                }
+            }
+        }
+
+        public string ProcessFileName => Helpers.GetFilenameSafe(ProcessFilePath);
+
+        public int ProcessId
+        {
+            get
+            {
+                using (Process process = Process)
+                {
+                    return process.Id;
+                }
+            }
+        }
+
         public Rectangle Rectangle => CaptureHelpers.GetWindowRectangle(Handle);
 
         public Rectangle ClientRectangle => NativeMethods.GetClientRect(Handle);

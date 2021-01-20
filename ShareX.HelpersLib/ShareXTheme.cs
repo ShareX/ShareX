@@ -148,12 +148,7 @@ namespace ShareX.HelpersLib
         [Browsable(false)]
         public bool IsDarkTheme => ColorHelpers.IsDarkColor(BackgroundColor);
 
-        public ShareXTheme()
-        {
-            SetDarkTheme();
-        }
-
-        public void SetDarkTheme()
+        private ShareXTheme()
         {
             Name = "Dark";
             BackgroundColor = Color.FromArgb(42, 47, 56);
@@ -174,33 +169,98 @@ namespace ShareX.HelpersLib
             SeparatorDarkColor = Color.FromArgb(22, 26, 31);
         }
 
-        public void SetLightTheme()
-        {
-            Name = "Light";
-            BackgroundColor = Color.FromArgb(242, 242, 242);
-            LightBackgroundColor = Color.FromArgb(247, 247, 247);
-            DarkBackgroundColor = Color.FromArgb(235, 235, 235);
-            TextColor = Color.FromArgb(69, 69, 69);
-            BorderColor = Color.FromArgb(201, 201, 201);
-            CheckerColor = Color.FromArgb(247, 247, 247);
-            CheckerColor2 = Color.FromArgb(235, 235, 235);
-            CheckerSize = 15;
-            LinkColor = Color.FromArgb(166, 212, 255);
-            MenuHighlightColor = Color.FromArgb(247, 247, 247);
-            MenuHighlightBorderColor = Color.FromArgb(96, 143, 226);
-            MenuBorderColor = Color.FromArgb(201, 201, 201);
-            MenuCheckBackgroundColor = Color.FromArgb(225, 233, 244);
-            ContextMenuOpacity = 100;
-            SeparatorLightColor = Color.FromArgb(253, 253, 253);
-            SeparatorDarkColor = Color.FromArgb(189, 189, 189);
-        }
+        public static ShareXTheme DarkTheme => new ShareXTheme();
 
-        public static List<ShareXTheme> GetPresets()
+        public static ShareXTheme LightTheme => new ShareXTheme()
         {
-            ShareXTheme darkTheme = new ShareXTheme();
-            ShareXTheme lightTheme = new ShareXTheme();
-            lightTheme.SetLightTheme();
-            return new List<ShareXTheme>() { darkTheme, lightTheme };
+            Name = "Light",
+            BackgroundColor = Color.FromArgb(242, 242, 242),
+            LightBackgroundColor = Color.FromArgb(247, 247, 247),
+            DarkBackgroundColor = Color.FromArgb(235, 235, 235),
+            TextColor = Color.FromArgb(69, 69, 69),
+            BorderColor = Color.FromArgb(201, 201, 201),
+            CheckerColor = Color.FromArgb(247, 247, 247),
+            CheckerColor2 = Color.FromArgb(235, 235, 235),
+            CheckerSize = 15,
+            LinkColor = Color.FromArgb(166, 212, 255),
+            MenuHighlightColor = Color.FromArgb(247, 247, 247),
+            MenuHighlightBorderColor = Color.FromArgb(96, 143, 226),
+            MenuBorderColor = Color.FromArgb(201, 201, 201),
+            MenuCheckBackgroundColor = Color.FromArgb(225, 233, 244),
+            ContextMenuOpacity = 100,
+            SeparatorLightColor = Color.FromArgb(253, 253, 253),
+            SeparatorDarkColor = Color.FromArgb(189, 189, 189)
+        };
+
+        // https://www.nordtheme.com
+        public static ShareXTheme NordDarkTheme => new ShareXTheme()
+        {
+            Name = "Nord Dark",
+            BackgroundColor = Color.FromArgb(46, 52, 64),
+            LightBackgroundColor = Color.FromArgb(59, 66, 82),
+            DarkBackgroundColor = Color.FromArgb(38, 44, 57),
+            TextColor = Color.FromArgb(229, 233, 240),
+            BorderColor = Color.FromArgb(30, 38, 54),
+            CheckerColor = Color.FromArgb(46, 52, 64),
+            CheckerColor2 = Color.FromArgb(36, 42, 54),
+            CheckerSize = 15,
+            LinkColor = Color.FromArgb(136, 192, 208),
+            MenuHighlightColor = Color.FromArgb(36, 42, 54),
+            MenuHighlightBorderColor = Color.FromArgb(24, 30, 42),
+            MenuBorderColor = Color.FromArgb(24, 30, 42),
+            MenuCheckBackgroundColor = Color.FromArgb(59, 66, 82),
+            ContextMenuOpacity = 100,
+            SeparatorLightColor = Color.FromArgb(59, 66, 82),
+            SeparatorDarkColor = Color.FromArgb(30, 38, 54)
+        };
+
+        // https://www.nordtheme.com
+        public static ShareXTheme NordLightTheme => new ShareXTheme()
+        {
+            Name = "Nord Light",
+            BackgroundColor = Color.FromArgb(229, 233, 240),
+            LightBackgroundColor = Color.FromArgb(236, 239, 244),
+            DarkBackgroundColor = Color.FromArgb(216, 222, 233),
+            TextColor = Color.FromArgb(59, 66, 82),
+            BorderColor = Color.FromArgb(207, 216, 233),
+            CheckerColor = Color.FromArgb(229, 233, 240),
+            CheckerColor2 = Color.FromArgb(216, 222, 233),
+            CheckerSize = 15,
+            LinkColor = Color.FromArgb(106, 162, 178),
+            MenuHighlightColor = Color.FromArgb(236, 239, 244),
+            MenuHighlightBorderColor = Color.FromArgb(207, 216, 233),
+            MenuBorderColor = Color.FromArgb(216, 222, 233),
+            MenuCheckBackgroundColor = Color.FromArgb(229, 233, 240),
+            ContextMenuOpacity = 100,
+            SeparatorLightColor = Color.FromArgb(236, 239, 244),
+            SeparatorDarkColor = Color.FromArgb(207, 216, 233)
+        };
+
+        // https://draculatheme.com
+        public static ShareXTheme DraculaTheme => new ShareXTheme()
+        {
+            Name = "Dracula",
+            BackgroundColor = Color.FromArgb(40, 42, 54),
+            LightBackgroundColor = Color.FromArgb(68, 71, 90),
+            DarkBackgroundColor = Color.FromArgb(36, 38, 48),
+            TextColor = Color.FromArgb(248, 248, 242),
+            BorderColor = Color.FromArgb(33, 35, 43),
+            CheckerColor = Color.FromArgb(40, 42, 54),
+            CheckerColor2 = Color.FromArgb(36, 38, 48),
+            CheckerSize = 15,
+            LinkColor = Color.FromArgb(98, 114, 164),
+            MenuHighlightColor = Color.FromArgb(36, 38, 48),
+            MenuHighlightBorderColor = Color.FromArgb(255, 121, 198),
+            MenuBorderColor = Color.FromArgb(33, 35, 43),
+            MenuCheckBackgroundColor = Color.FromArgb(45, 47, 61),
+            ContextMenuOpacity = 100,
+            SeparatorLightColor = Color.FromArgb(45, 47, 61),
+            SeparatorDarkColor = Color.FromArgb(33, 35, 43)
+        };
+
+        public static List<ShareXTheme> GetDefaultThemes()
+        {
+            return new List<ShareXTheme>() { DarkTheme, LightTheme, NordDarkTheme, NordLightTheme, DraculaTheme };
         }
 
         public override string ToString()

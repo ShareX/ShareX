@@ -148,13 +148,13 @@ namespace ShareX.ScreenCaptureLib
                     shadowPoints[i] = Points[i].Add(ShadowOffset);
                 }
 
-                DrawLine(g, ShadowColor, borderSize, shadowPoints);
+                DrawLine(g, ShadowColor, borderSize, BorderStyle, shadowPoints);
             }
 
-            DrawLine(g, BorderColor, borderSize, Points);
+            DrawLine(g, BorderColor, borderSize, BorderStyle, Points);
         }
 
-        protected void DrawLine(Graphics g, Color borderColor, int borderSize, Point[] points)
+        protected void DrawLine(Graphics g, Color borderColor, int borderSize, BorderStyle borderStyle, Point[] points)
         {
             if (borderSize > 0 && borderColor.A > 0)
             {
@@ -165,7 +165,7 @@ namespace ShareX.ScreenCaptureLib
                     g.PixelOffsetMode = PixelOffsetMode.Half;
                 }
 
-                using (Pen pen = CreatePen(borderColor, borderSize))
+                using (Pen pen = CreatePen(borderColor, borderSize, borderStyle))
                 {
                     if (CenterNodeActive && points.Length > 2)
                     {
@@ -182,13 +182,14 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        protected virtual Pen CreatePen(Color borderColor, int borderSize)
+        protected virtual Pen CreatePen(Color borderColor, int borderSize, BorderStyle borderStyle)
         {
             return new Pen(borderColor, borderSize)
             {
                 StartCap = LineCap.Round,
                 EndCap = LineCap.Round,
-                LineJoin = LineJoin.Round
+                LineJoin = LineJoin.Round,
+                DashStyle = (DashStyle)borderStyle
             };
         }
 

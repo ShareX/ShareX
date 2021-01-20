@@ -53,7 +53,7 @@ namespace ShareX.ScreenCaptureLib
         private ToolStripLabeledNumericUpDown tslnudBorderSize, tslnudCornerRadius, tslnudCenterPoints, tslnudBlurRadius, tslnudPixelateSize, tslnudStepFontSize,
             tslnudMagnifierPixelCount, tslnudStartingStepValue, tslnudMagnifyStrength;
         private ToolStripLabel tslDragLeft, tslDragRight;
-        private ToolStripLabeledComboBox tscbArrowHeadDirection, tscbImageInterpolationMode, tscbCursorTypes;
+        private ToolStripLabeledComboBox tscbBorderStyle, tscbArrowHeadDirection, tscbImageInterpolationMode, tscbCursorTypes;
 
         internal void CreateToolbar()
         {
@@ -513,6 +513,17 @@ namespace ShareX.ScreenCaptureLib
                 UpdateCurrentShape();
             };
             tsddbShapeOptions.DropDownItems.Add(tslnudCornerRadius);
+
+            // TODO: Translate
+            tscbBorderStyle = new ToolStripLabeledComboBox("Border style:");
+            tscbBorderStyle.Content.AddRange(Helpers.GetLocalizedEnumDescriptions<BorderStyle>());
+            tscbBorderStyle.Content.SelectedIndexChanged += (sender, e) =>
+            {
+                AnnotationOptions.BorderStyle = (BorderStyle)tscbBorderStyle.Content.SelectedIndex;
+                tscbBorderStyle.Invalidate();
+                UpdateCurrentShape();
+            };
+            tsddbShapeOptions.DropDownItems.Add(tscbBorderStyle);
 
             tscbImageInterpolationMode = new ToolStripLabeledComboBox(Resources.ShapeManager_CreateToolbar_InterpolationMode);
             tscbImageInterpolationMode.Content.AddRange(Helpers.GetLocalizedEnumDescriptions<ImageInterpolationMode>());
@@ -1397,6 +1408,8 @@ namespace ShareX.ScreenCaptureLib
 
             tslnudCornerRadius.Content.Value = cornerRadius;
 
+            tscbBorderStyle.Content.SelectedIndex = (int)AnnotationOptions.BorderStyle;
+
             tscbImageInterpolationMode.Content.SelectedIndex = (int)AnnotationOptions.ImageInterpolationMode;
 
             tslnudBlurRadius.Content.Value = AnnotationOptions.BlurRadius;
@@ -1498,6 +1511,21 @@ namespace ShareX.ScreenCaptureLib
                 case ShapeType.DrawingRectangle:
                 case ShapeType.DrawingTextBackground:
                     tslnudCornerRadius.Visible = true;
+                    break;
+            }
+
+            switch (shapeType)
+            {
+                default:
+                    tscbBorderStyle.Visible = false;
+                    break;
+                case ShapeType.DrawingRectangle:
+                case ShapeType.DrawingEllipse:
+                case ShapeType.DrawingFreehand:
+                case ShapeType.DrawingLine:
+                case ShapeType.DrawingArrow:
+                case ShapeType.DrawingMagnify:
+                    tscbBorderStyle.Visible = true;
                     break;
             }
 

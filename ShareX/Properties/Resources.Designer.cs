@@ -461,6 +461,16 @@ namespace ShareX.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap application_search_result {
+            get {
+                object obj = ResourceManager.GetObject("application-search-result", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap application_task {
             get {
                 object obj = ResourceManager.GetObject("application_task", resourceCulture);
@@ -2727,9 +2737,9 @@ namespace ShareX.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap Twitter {
+        public static System.Drawing.Bitmap Twitter_16x16 {
             get {
-                object obj = ResourceManager.GetObject("Twitter", resourceCulture);
+                object obj = ResourceManager.GetObject("Twitter-16x16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -2739,7 +2749,7 @@ namespace ShareX.Properties {
         /// </summary>
         public static System.Drawing.Bitmap Twitter_32x32 {
             get {
-                object obj = ResourceManager.GetObject("Twitter_32x32", resourceCulture);
+                object obj = ResourceManager.GetObject("Twitter-32x32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
