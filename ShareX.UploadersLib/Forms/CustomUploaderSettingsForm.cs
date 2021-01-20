@@ -235,7 +235,7 @@ namespace ShareX.UploadersLib
             btnRemove.Enabled = btnDuplicate.Enabled = txtName.Enabled = mbDestinationType.Enabled =
                 tcCustomUploader.Enabled = CustomUploaderCheck(lbCustomUploaderList.SelectedIndex);
 
-            btnClearUploaders.Enabled = tsmiExportAll.Enabled = cbImageUploader.Enabled =
+            tsmiExportAll.Enabled = tsmiClearUploaders.Enabled = cbImageUploader.Enabled =
                 btnImageUploaderTest.Enabled = cbTextUploader.Enabled = btnTextUploaderTest.Enabled =
                 cbFileUploader.Enabled = btnFileUploaderTest.Enabled = cbURLShortener.Enabled =
                 btnURLShortenerTest.Enabled = cbURLSharingService.Enabled = btnURLSharingServiceTest.Enabled =
@@ -553,8 +553,7 @@ namespace ShareX.UploadersLib
                 }
                 else
                 {
-                    mbDestinationType.Text = string.Join(", ", uploader.DestinationType.GetFlags<CustomUploaderDestinationType>().
-                        Select(x => x.GetLocalizedDescription()));
+                    mbDestinationType.Text = string.Join(", ", uploader.DestinationType.GetFlags().Select(x => x.GetLocalizedDescription()));
                 }
             }
         }
@@ -979,15 +978,6 @@ namespace ShareX.UploadersLib
             }
         }
 
-        private void btnCustomUploaderClearUploaders_Click(object sender, EventArgs e)
-        {
-            if (MessageBox.Show(Resources.UploadersConfigForm_Remove_all_custom_uploaders_Confirmation, "ShareX",
-                MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            {
-                CustomUploaderClearUploaders();
-            }
-        }
-
         private object eiCustomUploaders_ExportRequested()
         {
             CustomUploaderItem uploader = CustomUploaderGetSelected();
@@ -1036,6 +1026,15 @@ namespace ShareX.UploadersLib
         private void tsmiCustomUploaderExamples_Click(object sender, EventArgs e)
         {
             URLHelpers.OpenURL(Links.URL_CUSTOM_UPLOADERS);
+        }
+
+        private void tsmiClearUploaders_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show(Resources.UploadersConfigForm_Remove_all_custom_uploaders_Confirmation, "ShareX",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                CustomUploaderClearUploaders();
+            }
         }
 
         private void tsmiCustomUploaderExportAll_Click(object sender, EventArgs e)

@@ -32,7 +32,6 @@ using System.Diagnostics;
 using System.IO;
 using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 #if WindowsStore
@@ -234,7 +233,19 @@ namespace ShareX
         public static string ToolsFolder => Path.Combine(PersonalFolder, "Tools");
         public static string ImageEffectsFolder => Path.Combine(PersonalFolder, "ImageEffects");
         public static string ScreenRecorderCacheFilePath => Path.Combine(PersonalFolder, "ScreenRecorder.avi");
-        public static string DefaultFFmpegFilePath => Path.Combine(ToolsFolder, "ffmpeg.exe");
+        public static string DefaultFFmpegFilePath
+        {
+            get
+            {
+                string ffmpegFilePath = Helpers.GetAbsolutePath("Tools\\ffmpeg.exe");
+                if (!File.Exists(ffmpegFilePath))
+                {
+                    ffmpegFilePath = null;
+                }
+
+                return ffmpegFilePath ?? Path.Combine(ToolsFolder, "ffmpeg.exe");
+            }
+        }
         public static string ChromeHostManifestFilePath => Path.Combine(ToolsFolder, "Chrome-host-manifest.json");
         public static string FirefoxHostManifestFilePath => Path.Combine(ToolsFolder, "Firefox-host-manifest.json");
 
@@ -328,13 +339,13 @@ namespace ShareX
             RegisterExtensions();
             CheckPuushMode();
             DebugWriteFlags();
-            CleanTempFiles();
 
             SettingManager.LoadInitialSettings();
 
             Uploader.UpdateServicePointManager();
             UpdateManager = new GitHubUpdateManager("ShareX", "ShareX", Dev, Portable);
             LanguageHelper.ChangeLanguage(Settings.Language);
+            CleanupManager.CleanupAsync();
             Helpers.TryFixHandCursor();
 
             DebugHelper.WriteLine("MainForm init started.");
@@ -664,33 +675,6 @@ namespace ShareX
             {
                 DebugHelper.WriteLine("Flags: " + output);
             }
-        }
-
-        private static void CleanTempFiles()
-        {
-            Task.Run(() =>
-            {
-                try
-                {
-                    string tempFolder = Path.GetTempPath();
-
-                    if (!string.IsNullOrEmpty(tempFolder))
-                    {
-                        string folderPath = Path.Combine(tempFolder, "ShareX");
-
-                        if (Directory.Exists(folderPath))
-                        {
-                            Directory.Delete(folderPath, true);
-
-                            DebugHelper.WriteLine($"Temp files cleaned: {folderPath}");
-                        }
-                    }
-                }
-                catch (Exception e)
-                {
-                    DebugHelper.WriteException(e);
-                }
-            });
         }
     }
 }

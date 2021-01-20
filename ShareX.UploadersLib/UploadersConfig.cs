@@ -188,6 +188,7 @@ namespace ShareX.UploadersLib
         public AccountType GfycatAccountType { get; set; } = AccountType.Anonymous;
         public bool GfycatIsPublic { get; set; } = false;
         public bool GfycatKeepAudio { get; set; } = true;
+        public string GfycatTitle { get; set; } = "ShareX";
 
         #endregion Gfycat
 

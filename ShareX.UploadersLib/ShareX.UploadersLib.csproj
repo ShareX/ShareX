@@ -137,6 +137,7 @@
     <Compile Include="FileUploaders\Plik.cs" />
     <Compile Include="FileUploaders\PlikSettings.cs" />
     <Compile Include="FileUploaders\Puush.cs" />
+    <Compile Include="FileUploaders\Skynet.cs" />
     <Compile Include="FileUploaders\Sul.cs" />
     <Compile Include="FileUploaders\Lambda.cs" />
     <Compile Include="FileUploaders\Copy.cs" />
@@ -424,6 +425,9 @@
       <DependentUpon>OAuthControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\OAuthControl.es.resx">
+      <DependentUpon>OAuthControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\OAuthControl.fa-IR.resx">
       <DependentUpon>OAuthControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\OAuthControl.fr.resx">
@@ -1045,7 +1049,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="FluentFTP">
-      <Version>33.0.2</Version>
+      <Version>33.0.3</Version>
     </PackageReference>
     <PackageReference Include="MegaApiClient">
       <Version>1.8.2</Version>

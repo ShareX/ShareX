@@ -94,7 +94,7 @@ namespace ShareX
         public bool UseDarkTheme = true;
 
         public bool UseCustomTheme = true;
-        public List<ShareXTheme> Themes = ShareXTheme.GetPresets();
+        public List<ShareXTheme> Themes = ShareXTheme.GetDefaultThemes();
         public int SelectedTheme = 0;
 
         #endregion
@@ -107,6 +107,14 @@ namespace ShareX
         public string SaveImageSubFolderPattern = "%y-%mo";
 
         #endregion Paths
+
+        #region Settings
+
+        public bool AutoCleanupBackupFiles = false;
+        public bool AutoCleanupLogFiles = false;
+        public int CleanupKeepFileCount = 10;
+
+        #endregion
 
         #region Proxy
 

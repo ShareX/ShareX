@@ -100,8 +100,8 @@ namespace ShareX
         private void UpdateUploaderMenuNames()
         {
             txtName.SetWatermark(TaskInfo.ToString(), true);
-            mbAfterCaptureTasks.Text = string.Join(", ", TaskInfo.AfterCaptureTasks.GetFlags<AfterCaptureTasks>().Select(x => x.GetLocalizedDescription()));
-            mbAfterUploadTasks.Text = string.Join(", ", TaskInfo.AfterUploadTasks.GetFlags<AfterUploadTasks>().Select(x => x.GetLocalizedDescription()));
+            mbAfterCaptureTasks.Text = string.Join(", ", TaskInfo.AfterCaptureTasks.GetFlags().Select(x => x.GetLocalizedDescription()));
+            mbAfterUploadTasks.Text = string.Join(", ", TaskInfo.AfterUploadTasks.GetFlags().Select(x => x.GetLocalizedDescription()));
         }
     }
 }
