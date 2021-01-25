@@ -258,9 +258,30 @@ namespace ShareX.HelpersLib
             SeparatorDarkColor = Color.FromArgb(33, 35, 43)
         };
 
+        public static ShareXTheme AmoledTheme => new ShareXTheme()
+        {
+            Name = "Amoled",
+            BackgroundColor = Color.FromArgb(0, 0, 0),
+            LightBackgroundColor = Color.FromArgb(3, 3, 3),
+            DarkBackgroundColor = Color.FromArgb(30, 30, 30),
+            TextColor = Color.FromArgb(235, 235, 235),
+            BorderColor = Color.FromArgb(28, 32, 38),
+            CheckerColor = Color.FromArgb(60, 60, 60),
+            CheckerColor2 = Color.FromArgb(50, 50, 50),
+            CheckerSize = 15,
+            LinkColor = Color.FromArgb(166, 212, 255),
+            MenuHighlightColor = Color.FromArgb(30, 34, 40),
+            MenuHighlightBorderColor = Color.FromArgb(60, 60, 60),
+            MenuBorderColor = Color.FromArgb(22, 26, 31),
+            MenuCheckBackgroundColor = Color.FromArgb(20, 20, 20),
+            ContextMenuOpacity = 100,
+            SeparatorLightColor = Color.FromArgb(20, 20, 20),
+            SeparatorDarkColor = Color.FromArgb(22, 26, 31)
+        };
+
         public static List<ShareXTheme> GetDefaultThemes()
         {
-            return new List<ShareXTheme>() { DarkTheme, LightTheme, NordDarkTheme, NordLightTheme, DraculaTheme };
+            return new List<ShareXTheme>() { DarkTheme, LightTheme, NordDarkTheme, NordLightTheme, DraculaTheme, AmoledTheme };
         }
 
         public override string ToString()
