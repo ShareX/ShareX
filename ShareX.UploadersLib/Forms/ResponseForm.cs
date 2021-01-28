@@ -26,7 +26,6 @@
 using Newtonsoft.Json;
 using ShareX.HelpersLib;
 using System;
-using System.Text;
 using System.Windows.Forms;
 
 namespace ShareX.UploadersLib
@@ -50,88 +49,59 @@ namespace ShareX.UploadersLib
             UpdateResult(Result);
         }
 
+        private void AddInfo(RichTextBox rtb, string name, string value)
+        {
+            if (!string.IsNullOrEmpty(value))
+            {
+                if (rtb.TextLength > 0)
+                {
+                    rtb.AppendLine();
+                    rtb.AppendLine();
+                }
+
+                rtb.SetFontBold();
+                rtb.AppendLine(name + ":");
+                rtb.SetFontRegular();
+                rtb.AppendText(value);
+            }
+        }
+
         private void UpdateResult(UploadResult result)
         {
             isBrowserOpened = false;
 
             if (result != null)
             {
-                StringBuilder sbResult = new StringBuilder();
-
-                if (!string.IsNullOrEmpty(result.ShortenedURL))
-                {
-                    sbResult.AppendLine("Shortened URL: " + result.ShortenedURL);
-                }
-
-                if (!string.IsNullOrEmpty(result.URL))
-                {
-                    sbResult.AppendLine("URL: " + result.URL);
-                }
-
-                if (!string.IsNullOrEmpty(result.ThumbnailURL))
-                {
-                    sbResult.AppendLine("Thumbnail URL: " + result.ThumbnailURL);
-                }
-
-                if (!string.IsNullOrEmpty(result.DeletionURL))
-                {
-                    sbResult.AppendLine("Deletion URL: " + result.DeletionURL);
-                }
-
-                if (result.IsError)
-                {
-                    sbResult.AppendLine(result.ErrorsToString());
-                }
-
-                rtbResult.Text = sbResult.ToString();
+                UpdateResultTab(result);
 
                 if (result.ResponseInfo != null)
                 {
-                    rtbResponseText.ResetText();
-                    rtbResponseText.Text = result.ResponseInfo.ResponseText;
+                    UpdateResponseInfoTab(result.ResponseInfo, true);
 
-                    UpdateResponseInfoTextBox(result.ResponseInfo, true);
+                    rtbResponseText.Text = result.ResponseInfo.ResponseText;
                 }
             }
         }
 
-        private void UpdateResponseInfoTextBox(ResponseInfo responseInfo, bool includeResponseText)
+        private void UpdateResultTab(UploadResult result)
+        {
+            rtbResult.ResetText();
+
+            AddInfo(rtbResult, "Shortened URL", result.ShortenedURL);
+            AddInfo(rtbResult, "URL", result.URL);
+            AddInfo(rtbResult, "Thumbnail URL", result.ThumbnailURL);
+            AddInfo(rtbResult, "Deletion URL", result.DeletionURL);
+            if (result.IsError) AddInfo(rtbResult, "Error", result.ErrorsToString());
+        }
+
+        private void UpdateResponseInfoTab(ResponseInfo responseInfo, bool includeResponseText)
         {
             rtbResponseInfo.ResetText();
 
-            rtbResponseInfo.SetFontBold();
-            rtbResponseInfo.AppendText("Status code:\r\n");
-            rtbResponseInfo.SetFontRegular();
-            rtbResponseInfo.AppendText($"({(int)responseInfo.StatusCode}) {responseInfo.StatusDescription}");
-
-            if (!string.IsNullOrEmpty(responseInfo.ResponseURL))
-            {
-                rtbResponseInfo.SetFontBold();
-                rtbResponseInfo.AppendText("\r\n\r\nResponse URL:\r\n");
-                rtbResponseInfo.SetFontRegular();
-                rtbResponseInfo.AppendText(responseInfo.ResponseURL);
-            }
-
-            if (responseInfo.Headers != null && responseInfo.Headers.Count > 0)
-            {
-                rtbResponseInfo.SetFontBold();
-                rtbResponseInfo.AppendText("\r\n\r\nHeaders:\r\n");
-                rtbResponseInfo.SetFontRegular();
-                rtbResponseInfo.AppendText(responseInfo.Headers.ToString().TrimEnd('\r', '\n'));
-            }
-
-            if (includeResponseText && !string.IsNullOrEmpty(responseInfo.ResponseText))
-            {
-                rtbResponseInfo.SetFontBold();
-                rtbResponseInfo.AppendText("\r\n\r\nResponse text:\r\n");
-                rtbResponseInfo.SetFontRegular();
-                rtbResponseInfo.AppendText(responseInfo.ResponseText);
-            }
-        }
-
-        private void ResponseForm_Resize(object sender, EventArgs e)
-        {
-            Refresh();
+            AddInfo(rtbResponseInfo, "Status code", $"({(int)responseInfo.StatusCode}) {responseInfo.StatusDescription}");
+            AddInfo(rtbResponseInfo, "Response URL", responseInfo.ResponseURL);
+            if (responseInfo.Headers != null && responseInfo.Headers.Count > 0) AddInfo(rtbResponseInfo, "Headers", responseInfo.Headers.ToString().TrimEnd('\r', '\n'));
+            if (includeResponseText) AddInfo(rtbResponseInfo, "Response text", responseInfo.ResponseText);
         }
 
         private void tcMain_Selecting(object sender, TabControlCancelEventArgs e)

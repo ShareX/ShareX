@@ -204,7 +204,6 @@
             this.Controls.Add(this.tcMain);
             this.Name = "ResponseForm";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
-            this.Resize += new System.EventHandler(this.ResponseForm_Resize);
             this.tscResponseText.ContentPanel.ResumeLayout(false);
             this.tscResponseText.TopToolStripPanel.ResumeLayout(false);
             this.tscResponseText.TopToolStripPanel.PerformLayout();
