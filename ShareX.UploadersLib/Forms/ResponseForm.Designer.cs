@@ -29,6 +29,13 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ResponseForm));
+            this.tscResponseText = new System.Windows.Forms.ToolStripContainer();
+            this.pResponseText = new System.Windows.Forms.Panel();
+            this.rtbResponseText = new System.Windows.Forms.RichTextBox();
+            this.tsResponseText = new System.Windows.Forms.ToolStrip();
+            this.tsbResponseTextJSONFormat = new System.Windows.Forms.ToolStripButton();
+            this.tsbResponseTextXMLFormat = new System.Windows.Forms.ToolStripButton();
+            this.tsbResponseTextCopy = new System.Windows.Forms.ToolStripButton();
             this.tcMain = new System.Windows.Forms.TabControl();
             this.tpResult = new System.Windows.Forms.TabPage();
             this.pResult = new System.Windows.Forms.Panel();
@@ -37,88 +44,21 @@
             this.pResponseInfo = new System.Windows.Forms.Panel();
             this.rtbResponseInfo = new System.Windows.Forms.RichTextBox();
             this.tpResponseText = new System.Windows.Forms.TabPage();
-            this.tscResponseText = new System.Windows.Forms.ToolStripContainer();
-            this.pResponseText = new System.Windows.Forms.Panel();
-            this.rtbResponseText = new System.Windows.Forms.RichTextBox();
-            this.tsResponseText = new System.Windows.Forms.ToolStrip();
-            this.tsbResponseTextJSONFormat = new System.Windows.Forms.ToolStripButton();
-            this.tsbResponseTextXMLFormat = new System.Windows.Forms.ToolStripButton();
-            this.tsbResponseTextCopy = new System.Windows.Forms.ToolStripButton();
             this.tpWebBrowser = new System.Windows.Forms.TabPage();
             this.wbResponse = new System.Windows.Forms.WebBrowser();
+            this.tscResponseText.ContentPanel.SuspendLayout();
+            this.tscResponseText.TopToolStripPanel.SuspendLayout();
+            this.tscResponseText.SuspendLayout();
+            this.pResponseText.SuspendLayout();
+            this.tsResponseText.SuspendLayout();
             this.tcMain.SuspendLayout();
             this.tpResult.SuspendLayout();
             this.pResult.SuspendLayout();
             this.tpResponseInfo.SuspendLayout();
             this.pResponseInfo.SuspendLayout();
             this.tpResponseText.SuspendLayout();
-            this.tscResponseText.ContentPanel.SuspendLayout();
-            this.tscResponseText.TopToolStripPanel.SuspendLayout();
-            this.tscResponseText.SuspendLayout();
-            this.pResponseText.SuspendLayout();
-            this.tsResponseText.SuspendLayout();
             this.tpWebBrowser.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // tcMain
-            // 
-            this.tcMain.Controls.Add(this.tpResult);
-            this.tcMain.Controls.Add(this.tpResponseInfo);
-            this.tcMain.Controls.Add(this.tpResponseText);
-            this.tcMain.Controls.Add(this.tpWebBrowser);
-            resources.ApplyResources(this.tcMain, "tcMain");
-            this.tcMain.Name = "tcMain";
-            this.tcMain.SelectedIndex = 0;
-            this.tcMain.Selecting += new System.Windows.Forms.TabControlCancelEventHandler(this.tcMain_Selecting);
-            // 
-            // tpResult
-            // 
-            this.tpResult.Controls.Add(this.pResult);
-            resources.ApplyResources(this.tpResult, "tpResult");
-            this.tpResult.Name = "tpResult";
-            this.tpResult.UseVisualStyleBackColor = true;
-            // 
-            // pResult
-            // 
-            this.pResult.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pResult.Controls.Add(this.rtbResult);
-            resources.ApplyResources(this.pResult, "pResult");
-            this.pResult.Name = "pResult";
-            // 
-            // rtbResult
-            // 
-            this.rtbResult.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            resources.ApplyResources(this.rtbResult, "rtbResult");
-            this.rtbResult.Name = "rtbResult";
-            this.rtbResult.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.rtbResult_LinkClicked);
-            // 
-            // tpResponseInfo
-            // 
-            this.tpResponseInfo.Controls.Add(this.pResponseInfo);
-            resources.ApplyResources(this.tpResponseInfo, "tpResponseInfo");
-            this.tpResponseInfo.Name = "tpResponseInfo";
-            this.tpResponseInfo.UseVisualStyleBackColor = true;
-            // 
-            // pResponseInfo
-            // 
-            this.pResponseInfo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pResponseInfo.Controls.Add(this.rtbResponseInfo);
-            resources.ApplyResources(this.pResponseInfo, "pResponseInfo");
-            this.pResponseInfo.Name = "pResponseInfo";
-            // 
-            // rtbResponseInfo
-            // 
-            this.rtbResponseInfo.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            resources.ApplyResources(this.rtbResponseInfo, "rtbResponseInfo");
-            this.rtbResponseInfo.Name = "rtbResponseInfo";
-            this.rtbResponseInfo.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.rtbResult_LinkClicked);
-            // 
-            // tpResponseText
-            // 
-            this.tpResponseText.Controls.Add(this.tscResponseText);
-            resources.ApplyResources(this.tpResponseText, "tpResponseText");
-            this.tpResponseText.Name = "tpResponseText";
-            this.tpResponseText.UseVisualStyleBackColor = true;
             // 
             // tscResponseText
             // 
@@ -183,6 +123,66 @@
             this.tsbResponseTextCopy.Name = "tsbResponseTextCopy";
             this.tsbResponseTextCopy.Click += new System.EventHandler(this.tsbResponseTextCopy_Click);
             // 
+            // tcMain
+            // 
+            this.tcMain.Controls.Add(this.tpResult);
+            this.tcMain.Controls.Add(this.tpResponseInfo);
+            this.tcMain.Controls.Add(this.tpResponseText);
+            this.tcMain.Controls.Add(this.tpWebBrowser);
+            resources.ApplyResources(this.tcMain, "tcMain");
+            this.tcMain.Name = "tcMain";
+            this.tcMain.SelectedIndex = 0;
+            this.tcMain.Selecting += new System.Windows.Forms.TabControlCancelEventHandler(this.tcMain_Selecting);
+            // 
+            // tpResult
+            // 
+            this.tpResult.Controls.Add(this.pResult);
+            resources.ApplyResources(this.tpResult, "tpResult");
+            this.tpResult.Name = "tpResult";
+            this.tpResult.UseVisualStyleBackColor = true;
+            // 
+            // pResult
+            // 
+            this.pResult.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pResult.Controls.Add(this.rtbResult);
+            resources.ApplyResources(this.pResult, "pResult");
+            this.pResult.Name = "pResult";
+            // 
+            // rtbResult
+            // 
+            this.rtbResult.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            resources.ApplyResources(this.rtbResult, "rtbResult");
+            this.rtbResult.Name = "rtbResult";
+            this.rtbResult.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.rtbResult_LinkClicked);
+            // 
+            // tpResponseInfo
+            // 
+            this.tpResponseInfo.Controls.Add(this.pResponseInfo);
+            resources.ApplyResources(this.tpResponseInfo, "tpResponseInfo");
+            this.tpResponseInfo.Name = "tpResponseInfo";
+            this.tpResponseInfo.UseVisualStyleBackColor = true;
+            // 
+            // pResponseInfo
+            // 
+            this.pResponseInfo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pResponseInfo.Controls.Add(this.rtbResponseInfo);
+            resources.ApplyResources(this.pResponseInfo, "pResponseInfo");
+            this.pResponseInfo.Name = "pResponseInfo";
+            // 
+            // rtbResponseInfo
+            // 
+            this.rtbResponseInfo.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            resources.ApplyResources(this.rtbResponseInfo, "rtbResponseInfo");
+            this.rtbResponseInfo.Name = "rtbResponseInfo";
+            this.rtbResponseInfo.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.rtbResult_LinkClicked);
+            // 
+            // tpResponseText
+            // 
+            this.tpResponseText.Controls.Add(this.tscResponseText);
+            resources.ApplyResources(this.tpResponseText, "tpResponseText");
+            this.tpResponseText.Name = "tpResponseText";
+            this.tpResponseText.UseVisualStyleBackColor = true;
+            // 
             // tpWebBrowser
             // 
             this.tpWebBrowser.Controls.Add(this.wbResponse);
@@ -203,13 +203,8 @@
             this.BackColor = System.Drawing.SystemColors.Window;
             this.Controls.Add(this.tcMain);
             this.Name = "ResponseForm";
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Resize += new System.EventHandler(this.ResponseForm_Resize);
-            this.tcMain.ResumeLayout(false);
-            this.tpResult.ResumeLayout(false);
-            this.pResult.ResumeLayout(false);
-            this.tpResponseInfo.ResumeLayout(false);
-            this.pResponseInfo.ResumeLayout(false);
-            this.tpResponseText.ResumeLayout(false);
             this.tscResponseText.ContentPanel.ResumeLayout(false);
             this.tscResponseText.TopToolStripPanel.ResumeLayout(false);
             this.tscResponseText.TopToolStripPanel.PerformLayout();
@@ -218,6 +213,12 @@
             this.pResponseText.ResumeLayout(false);
             this.tsResponseText.ResumeLayout(false);
             this.tsResponseText.PerformLayout();
+            this.tcMain.ResumeLayout(false);
+            this.tpResult.ResumeLayout(false);
+            this.pResult.ResumeLayout(false);
+            this.tpResponseInfo.ResumeLayout(false);
+            this.pResponseInfo.ResumeLayout(false);
+            this.tpResponseText.ResumeLayout(false);
             this.tpWebBrowser.ResumeLayout(false);
             this.ResumeLayout(false);
 

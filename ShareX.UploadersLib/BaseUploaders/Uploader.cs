@@ -228,7 +228,8 @@ namespace ShareX.UploadersLib
 
                 using (HttpWebResponse response = (HttpWebResponse)request.GetResponse())
                 {
-                    result.Response = ProcessWebResponseText(response);
+                    result.ResponseInfo = ProcessWebResponse(response);
+                    result.Response = result.ResponseInfo?.ResponseText;
                 }
 
                 result.IsSuccess = true;
@@ -295,7 +296,8 @@ namespace ShareX.UploadersLib
 
                 using (HttpWebResponse response = (HttpWebResponse)request.GetResponse())
                 {
-                    result.Response = ProcessWebResponseText(response);
+                    result.ResponseInfo = ProcessWebResponse(response);
+                    result.Response = result.ResponseInfo?.ResponseText;
                 }
 
                 result.IsSuccess = true;
