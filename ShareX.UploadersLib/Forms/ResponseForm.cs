@@ -136,7 +136,7 @@ namespace ShareX.UploadersLib
 
         private void tcMain_Selecting(object sender, TabControlCancelEventArgs e)
         {
-            if (e.TabPageIndex == 1 && !isBrowserOpened && Result != null && !string.IsNullOrEmpty(Result.Response))
+            if (e.TabPage == tpWebBrowser && !isBrowserOpened && Result != null && !string.IsNullOrEmpty(Result.Response))
             {
                 wbResponse.DocumentText = Result.Response;
                 isBrowserOpened = true;
