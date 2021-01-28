@@ -401,9 +401,9 @@ namespace ShareX
 
         public void ShowResponse()
         {
-            if (IsItemSelected && SelectedItem.Info.Result != null && !string.IsNullOrEmpty(SelectedItem.Info.Result.Response))
+            if (IsItemSelected && SelectedItem.Info.Result != null)
             {
-                using (ResponseForm form = new ResponseForm(SelectedItem.Info.Result.Response))
+                using (ResponseForm form = new ResponseForm(SelectedItem.Info.Result))
                 {
                     form.ShowDialog();
                 }

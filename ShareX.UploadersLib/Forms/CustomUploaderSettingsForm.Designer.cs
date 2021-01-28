@@ -30,21 +30,14 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomUploaderSettingsForm));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle57 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle58 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle59 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle60 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle61 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle62 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle63 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle64 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.tscResponseText = new System.Windows.Forms.ToolStripContainer();
-            this.pResponseText = new System.Windows.Forms.Panel();
-            this.rtbResponseText = new System.Windows.Forms.RichTextBox();
-            this.tsResponseText = new System.Windows.Forms.ToolStrip();
-            this.tsbResponseTextJSONFormat = new System.Windows.Forms.ToolStripButton();
-            this.tsbResponseTextXMLFormat = new System.Windows.Forms.ToolStripButton();
-            this.tsbResponseTextCopy = new System.Windows.Forms.ToolStripButton();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.cbImageUploader = new System.Windows.Forms.ComboBox();
             this.btnTextUploaderTest = new System.Windows.Forms.Button();
             this.lblURLShortener = new System.Windows.Forms.Label();
@@ -55,6 +48,7 @@
             this.cmsHelp = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tsmiCustomUploaderGuide = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiCustomUploaders = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiClearUploaders = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiExportAll = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiUpdateFolder = new System.Windows.Forms.ToolStripMenuItem();
             this.btnNew = new System.Windows.Forms.Button();
@@ -128,15 +122,6 @@
             this.dgvRegex = new System.Windows.Forms.DataGridView();
             this.cRegex = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnRegexAddSyntax = new System.Windows.Forms.Button();
-            this.tpTest = new System.Windows.Forms.TabPage();
-            this.tcTest = new System.Windows.Forms.TabControl();
-            this.tpResult = new System.Windows.Forms.TabPage();
-            this.pResult = new System.Windows.Forms.Panel();
-            this.rtbResult = new System.Windows.Forms.RichTextBox();
-            this.tpResponseInfo = new System.Windows.Forms.TabPage();
-            this.pResponseInfo = new System.Windows.Forms.Panel();
-            this.rtbResponseInfo = new System.Windows.Forms.RichTextBox();
-            this.tpResponseText = new System.Windows.Forms.TabPage();
             this.lblDestinationType = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
             this.mbDestinationType = new ShareX.HelpersLib.MenuButton();
@@ -147,12 +132,6 @@
             this.btnURLSharingServiceTest = new System.Windows.Forms.Button();
             this.ttHelpTip = new System.Windows.Forms.ToolTip(this.components);
             this.lblUploaders = new System.Windows.Forms.Label();
-            this.tsmiClearUploaders = new System.Windows.Forms.ToolStripMenuItem();
-            this.tscResponseText.ContentPanel.SuspendLayout();
-            this.tscResponseText.TopToolStripPanel.SuspendLayout();
-            this.tscResponseText.SuspendLayout();
-            this.pResponseText.SuspendLayout();
-            this.tsResponseText.SuspendLayout();
             this.cmsHelp.SuspendLayout();
             this.tcCustomUploader.SuspendLayout();
             this.tpRequest.SuspendLayout();
@@ -173,77 +152,7 @@
             this.tpXmlParse.SuspendLayout();
             this.tpRegexParse.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRegex)).BeginInit();
-            this.tpTest.SuspendLayout();
-            this.tcTest.SuspendLayout();
-            this.tpResult.SuspendLayout();
-            this.pResult.SuspendLayout();
-            this.tpResponseInfo.SuspendLayout();
-            this.pResponseInfo.SuspendLayout();
-            this.tpResponseText.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // tscResponseText
-            // 
-            // 
-            // tscResponseText.ContentPanel
-            // 
-            this.tscResponseText.ContentPanel.Controls.Add(this.pResponseText);
-            resources.ApplyResources(this.tscResponseText.ContentPanel, "tscResponseText.ContentPanel");
-            resources.ApplyResources(this.tscResponseText, "tscResponseText");
-            this.tscResponseText.Name = "tscResponseText";
-            // 
-            // tscResponseText.TopToolStripPanel
-            // 
-            this.tscResponseText.TopToolStripPanel.Controls.Add(this.tsResponseText);
-            this.tscResponseText.TopToolStripPanel.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            // 
-            // pResponseText
-            // 
-            this.pResponseText.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pResponseText.Controls.Add(this.rtbResponseText);
-            resources.ApplyResources(this.pResponseText, "pResponseText");
-            this.pResponseText.Name = "pResponseText";
-            // 
-            // rtbResponseText
-            // 
-            this.rtbResponseText.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            resources.ApplyResources(this.rtbResponseText, "rtbResponseText");
-            this.rtbResponseText.Name = "rtbResponseText";
-            this.rtbResponseText.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.txtCustomUploaderLog_LinkClicked);
-            // 
-            // tsResponseText
-            // 
-            resources.ApplyResources(this.tsResponseText, "tsResponseText");
-            this.tsResponseText.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.tsResponseText.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsbResponseTextJSONFormat,
-            this.tsbResponseTextXMLFormat,
-            this.tsbResponseTextCopy});
-            this.tsResponseText.Name = "tsResponseText";
-            this.tsResponseText.ShowItemToolTips = false;
-            // 
-            // tsbResponseTextJSONFormat
-            // 
-            this.tsbResponseTextJSONFormat.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            resources.ApplyResources(this.tsbResponseTextJSONFormat, "tsbResponseTextJSONFormat");
-            this.tsbResponseTextJSONFormat.Name = "tsbResponseTextJSONFormat";
-            this.tsbResponseTextJSONFormat.Click += new System.EventHandler(this.tsbCustomUploaderJSONFormat_Click);
-            // 
-            // tsbResponseTextXMLFormat
-            // 
-            this.tsbResponseTextXMLFormat.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            resources.ApplyResources(this.tsbResponseTextXMLFormat, "tsbResponseTextXMLFormat");
-            this.tsbResponseTextXMLFormat.Margin = new System.Windows.Forms.Padding(3, 1, 0, 2);
-            this.tsbResponseTextXMLFormat.Name = "tsbResponseTextXMLFormat";
-            this.tsbResponseTextXMLFormat.Click += new System.EventHandler(this.tsbCustomUploaderXMLFormat_Click);
-            // 
-            // tsbResponseTextCopy
-            // 
-            this.tsbResponseTextCopy.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            resources.ApplyResources(this.tsbResponseTextCopy, "tsbResponseTextCopy");
-            this.tsbResponseTextCopy.Margin = new System.Windows.Forms.Padding(3, 1, 0, 2);
-            this.tsbResponseTextCopy.Name = "tsbResponseTextCopy";
-            this.tsbResponseTextCopy.Click += new System.EventHandler(this.tsbCustomUploaderCopyResponseText_Click);
             // 
             // cbImageUploader
             // 
@@ -315,6 +224,12 @@
             this.tsmiCustomUploaders.Name = "tsmiCustomUploaders";
             resources.ApplyResources(this.tsmiCustomUploaders, "tsmiCustomUploaders");
             this.tsmiCustomUploaders.Click += new System.EventHandler(this.tsmiCustomUploaderExamples_Click);
+            // 
+            // tsmiClearUploaders
+            // 
+            this.tsmiClearUploaders.Name = "tsmiClearUploaders";
+            resources.ApplyResources(this.tsmiClearUploaders, "tsmiClearUploaders");
+            this.tsmiClearUploaders.Click += new System.EventHandler(this.tsmiClearUploaders_Click);
             // 
             // tsmiExportAll
             // 
@@ -416,7 +331,6 @@
             resources.ApplyResources(this.tcCustomUploader, "tcCustomUploader");
             this.tcCustomUploader.Controls.Add(this.tpRequest);
             this.tcCustomUploader.Controls.Add(this.tpResponse);
-            this.tcCustomUploader.Controls.Add(this.tpTest);
             this.tcCustomUploader.Name = "tcCustomUploader";
             this.tcCustomUploader.SelectedIndex = 0;
             // 
@@ -443,28 +357,28 @@
             this.dgvHeaders.AllowUserToResizeRows = false;
             this.dgvHeaders.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dgvHeaders.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle57.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle57.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle57.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle57.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle57.Padding = new System.Windows.Forms.Padding(0, 2, 0, 2);
-            dataGridViewCellStyle57.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle57.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle57.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvHeaders.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle57;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(0, 2, 0, 2);
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvHeaders.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvHeaders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvHeaders.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.cHeadersName,
             this.cHeadersValue});
-            dataGridViewCellStyle58.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle58.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle58.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle58.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle58.Padding = new System.Windows.Forms.Padding(1, 0, 0, 0);
-            dataGridViewCellStyle58.SelectionBackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle58.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle58.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvHeaders.DefaultCellStyle = dataGridViewCellStyle58;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(1, 0, 0, 0);
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvHeaders.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvHeaders.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.dgvHeaders.GridColor = System.Drawing.SystemColors.ControlLight;
             resources.ApplyResources(this.dgvHeaders, "dgvHeaders");
@@ -492,28 +406,28 @@
             this.dgvParameters.AllowUserToResizeRows = false;
             this.dgvParameters.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dgvParameters.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle59.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle59.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle59.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle59.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle59.Padding = new System.Windows.Forms.Padding(0, 2, 0, 2);
-            dataGridViewCellStyle59.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle59.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle59.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvParameters.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle59;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(0, 2, 0, 2);
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvParameters.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvParameters.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvParameters.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.cParametersName,
             this.cParametersValue});
-            dataGridViewCellStyle60.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle60.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle60.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle60.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle60.Padding = new System.Windows.Forms.Padding(1, 0, 0, 0);
-            dataGridViewCellStyle60.SelectionBackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle60.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle60.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvParameters.DefaultCellStyle = dataGridViewCellStyle60;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(1, 0, 0, 0);
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvParameters.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgvParameters.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.dgvParameters.GridColor = System.Drawing.SystemColors.ControlLight;
             resources.ApplyResources(this.dgvParameters, "dgvParameters");
@@ -606,28 +520,28 @@
             this.dgvArguments.AllowUserToResizeRows = false;
             this.dgvArguments.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dgvArguments.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle61.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle61.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle61.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle61.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle61.Padding = new System.Windows.Forms.Padding(0, 2, 0, 2);
-            dataGridViewCellStyle61.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle61.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle61.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvArguments.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle61;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(0, 2, 0, 2);
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvArguments.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvArguments.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvArguments.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.cArgumentsName,
             this.cArgumentsValue});
-            dataGridViewCellStyle62.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle62.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle62.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle62.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle62.Padding = new System.Windows.Forms.Padding(1, 0, 0, 0);
-            dataGridViewCellStyle62.SelectionBackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle62.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle62.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvArguments.DefaultCellStyle = dataGridViewCellStyle62;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.Padding = new System.Windows.Forms.Padding(1, 0, 0, 0);
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvArguments.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvArguments.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.dgvArguments.GridColor = System.Drawing.SystemColors.ControlLight;
             resources.ApplyResources(this.dgvArguments, "dgvArguments");
@@ -913,28 +827,28 @@
             this.dgvRegex.AllowUserToResizeRows = false;
             this.dgvRegex.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dgvRegex.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle63.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle63.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle63.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle63.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle63.Padding = new System.Windows.Forms.Padding(0, 2, 0, 2);
-            dataGridViewCellStyle63.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle63.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle63.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvRegex.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle63;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle7.Padding = new System.Windows.Forms.Padding(0, 2, 0, 2);
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvRegex.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvRegex.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvRegex.ColumnHeadersVisible = false;
             this.dgvRegex.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.cRegex});
-            dataGridViewCellStyle64.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle64.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle64.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle64.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle64.Padding = new System.Windows.Forms.Padding(1, 0, 0, 0);
-            dataGridViewCellStyle64.SelectionBackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle64.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle64.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvRegex.DefaultCellStyle = dataGridViewCellStyle64;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.Padding = new System.Windows.Forms.Padding(1, 0, 0, 0);
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvRegex.DefaultCellStyle = dataGridViewCellStyle8;
             this.dgvRegex.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.dgvRegex.GridColor = System.Drawing.SystemColors.ControlLight;
             resources.ApplyResources(this.dgvRegex, "dgvRegex");
@@ -957,71 +871,6 @@
             this.btnRegexAddSyntax.Name = "btnRegexAddSyntax";
             this.btnRegexAddSyntax.UseVisualStyleBackColor = true;
             this.btnRegexAddSyntax.Click += new System.EventHandler(this.btnCustomUploaderRegexAddSyntax_Click);
-            // 
-            // tpTest
-            // 
-            this.tpTest.Controls.Add(this.tcTest);
-            resources.ApplyResources(this.tpTest, "tpTest");
-            this.tpTest.Name = "tpTest";
-            this.tpTest.UseVisualStyleBackColor = true;
-            // 
-            // tcTest
-            // 
-            this.tcTest.Controls.Add(this.tpResult);
-            this.tcTest.Controls.Add(this.tpResponseInfo);
-            this.tcTest.Controls.Add(this.tpResponseText);
-            resources.ApplyResources(this.tcTest, "tcTest");
-            this.tcTest.Name = "tcTest";
-            this.tcTest.SelectedIndex = 0;
-            // 
-            // tpResult
-            // 
-            this.tpResult.Controls.Add(this.pResult);
-            resources.ApplyResources(this.tpResult, "tpResult");
-            this.tpResult.Name = "tpResult";
-            this.tpResult.UseVisualStyleBackColor = true;
-            // 
-            // pResult
-            // 
-            this.pResult.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pResult.Controls.Add(this.rtbResult);
-            resources.ApplyResources(this.pResult, "pResult");
-            this.pResult.Name = "pResult";
-            // 
-            // rtbResult
-            // 
-            this.rtbResult.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            resources.ApplyResources(this.rtbResult, "rtbResult");
-            this.rtbResult.Name = "rtbResult";
-            this.rtbResult.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.txtCustomUploaderLog_LinkClicked);
-            // 
-            // tpResponseInfo
-            // 
-            this.tpResponseInfo.Controls.Add(this.pResponseInfo);
-            resources.ApplyResources(this.tpResponseInfo, "tpResponseInfo");
-            this.tpResponseInfo.Name = "tpResponseInfo";
-            this.tpResponseInfo.UseVisualStyleBackColor = true;
-            // 
-            // pResponseInfo
-            // 
-            this.pResponseInfo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pResponseInfo.Controls.Add(this.rtbResponseInfo);
-            resources.ApplyResources(this.pResponseInfo, "pResponseInfo");
-            this.pResponseInfo.Name = "pResponseInfo";
-            // 
-            // rtbResponseInfo
-            // 
-            this.rtbResponseInfo.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            resources.ApplyResources(this.rtbResponseInfo, "rtbResponseInfo");
-            this.rtbResponseInfo.Name = "rtbResponseInfo";
-            this.rtbResponseInfo.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.txtCustomUploaderLog_LinkClicked);
-            // 
-            // tpResponseText
-            // 
-            this.tpResponseText.Controls.Add(this.tscResponseText);
-            resources.ApplyResources(this.tpResponseText, "tpResponseText");
-            this.tpResponseText.Name = "tpResponseText";
-            this.tpResponseText.UseVisualStyleBackColor = true;
             // 
             // lblDestinationType
             // 
@@ -1090,12 +939,6 @@
             resources.ApplyResources(this.lblUploaders, "lblUploaders");
             this.lblUploaders.Name = "lblUploaders";
             // 
-            // tsmiClearUploaders
-            // 
-            this.tsmiClearUploaders.Name = "tsmiClearUploaders";
-            resources.ApplyResources(this.tsmiClearUploaders, "tsmiClearUploaders");
-            this.tsmiClearUploaders.Click += new System.EventHandler(this.tsmiClearUploaders_Click);
-            // 
             // CustomUploaderSettingsForm
             // 
             this.AllowDrop = true;
@@ -1133,14 +976,6 @@
             this.Name = "CustomUploaderSettingsForm";
             this.DragDrop += new System.Windows.Forms.DragEventHandler(this.CustomUploaderSettingsForm_DragDrop);
             this.DragEnter += new System.Windows.Forms.DragEventHandler(this.CustomUploaderSettingsForm_DragEnter);
-            this.tscResponseText.ContentPanel.ResumeLayout(false);
-            this.tscResponseText.TopToolStripPanel.ResumeLayout(false);
-            this.tscResponseText.TopToolStripPanel.PerformLayout();
-            this.tscResponseText.ResumeLayout(false);
-            this.tscResponseText.PerformLayout();
-            this.pResponseText.ResumeLayout(false);
-            this.tsResponseText.ResumeLayout(false);
-            this.tsResponseText.PerformLayout();
             this.cmsHelp.ResumeLayout(false);
             this.tcCustomUploader.ResumeLayout(false);
             this.tpRequest.ResumeLayout(false);
@@ -1167,13 +1002,6 @@
             this.tpRegexParse.ResumeLayout(false);
             this.tpRegexParse.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRegex)).EndInit();
-            this.tpTest.ResumeLayout(false);
-            this.tcTest.ResumeLayout(false);
-            this.tpResult.ResumeLayout(false);
-            this.pResult.ResumeLayout(false);
-            this.tpResponseInfo.ResumeLayout(false);
-            this.pResponseInfo.ResumeLayout(false);
-            this.tpResponseText.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1243,17 +1071,6 @@
         private System.Windows.Forms.TextBox txtXPath;
         private System.Windows.Forms.TabPage tpRegexParse;
         private System.Windows.Forms.Button btnRegexAddSyntax;
-        private System.Windows.Forms.TabPage tpTest;
-        private System.Windows.Forms.TabControl tcTest;
-        private System.Windows.Forms.TabPage tpResult;
-        private System.Windows.Forms.Panel pResult;
-        private System.Windows.Forms.RichTextBox rtbResult;
-        private System.Windows.Forms.TabPage tpResponseText;
-        private System.Windows.Forms.ToolStripContainer tscResponseText;
-        private System.Windows.Forms.ToolStrip tsResponseText;
-        private System.Windows.Forms.ToolStripButton tsbResponseTextJSONFormat;
-        private System.Windows.Forms.ToolStripButton tsbResponseTextXMLFormat;
-        private System.Windows.Forms.ToolStripButton tsbResponseTextCopy;
         private System.Windows.Forms.Label lblDestinationType;
         private System.Windows.Forms.Label lblName;
         private HelpersLib.MenuButton mbDestinationType;
@@ -1280,11 +1097,6 @@
         private System.Windows.Forms.DataGridView dgvRegex;
         private System.Windows.Forms.DataGridViewTextBoxColumn cRegex;
         private System.Windows.Forms.Label lblRegex;
-        private System.Windows.Forms.Panel pResponseText;
-        private System.Windows.Forms.RichTextBox rtbResponseText;
-        private System.Windows.Forms.TabPage tpResponseInfo;
-        private System.Windows.Forms.Panel pResponseInfo;
-        private System.Windows.Forms.RichTextBox rtbResponseInfo;
         private System.Windows.Forms.ToolStripMenuItem tsmiUpdateFolder;
         private System.Windows.Forms.Panel pResultErrorMessage;
         private System.Windows.Forms.RichTextBox rtbResultErrorMessage;
