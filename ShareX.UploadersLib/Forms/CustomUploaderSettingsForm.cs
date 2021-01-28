@@ -719,8 +719,7 @@ namespace ShareX.UploadersLib
             {
                 if (result != null)
                 {
-                    ResponseForm responseForm = new ResponseForm(result);
-                    responseForm.Show();
+                    ResponseForm.ShowInstance(result);
                 }
 
                 btnImageUploaderTest.Enabled = btnTextUploaderTest.Enabled = btnFileUploaderTest.Enabled =
