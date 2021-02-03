@@ -292,7 +292,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;scMain.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <metadata name="tsMain.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
@@ -1560,15 +1560,6 @@
   <data name="tsmiTrayScreenColorPicker.Text" xml:space="preserve">
     <value>Screen color picker...</value>
   </data>
-  <data name="tsmiTrayRuler.Size" type="System.Drawing.Size, System.Drawing">
-    <value>184, 22</value>
-  </data>
-  <data name="tsmiTrayRuler.Text" xml:space="preserve">
-    <value>Ruler...</value>
-  </data>
-  <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>181, 6</value>
-  </data>
   <data name="tsmiTrayImageEditor.Size" type="System.Drawing.Size, System.Drawing">
     <value>184, 22</value>
   </data>
@@ -1580,6 +1571,36 @@
   </data>
   <data name="tsmiTrayImageEffects.Text" xml:space="preserve">
     <value>Image effects...</value>
+  </data>
+  <data name="tsmiTrayHashCheck.Size" type="System.Drawing.Size, System.Drawing">
+    <value>184, 22</value>
+  </data>
+  <data name="tsmiTrayHashCheck.Text" xml:space="preserve">
+    <value>Hash check...</value>
+  </data>
+  <data name="tsmiTrayDNSChanger.Size" type="System.Drawing.Size, System.Drawing">
+    <value>184, 22</value>
+  </data>
+  <data name="tsmiTrayDNSChanger.Text" xml:space="preserve">
+    <value>DNS changer...</value>
+  </data>
+  <data name="tsmiTrayQRCode.Size" type="System.Drawing.Size, System.Drawing">
+    <value>184, 22</value>
+  </data>
+  <data name="tsmiTrayQRCode.Text" xml:space="preserve">
+    <value>QR code...</value>
+  </data>
+  <data name="tsmiTrayRuler.Size" type="System.Drawing.Size, System.Drawing">
+    <value>184, 22</value>
+  </data>
+  <data name="tsmiTrayRuler.Text" xml:space="preserve">
+    <value>Ruler...</value>
+  </data>
+  <data name="tsmiTrayIndexFolder.Size" type="System.Drawing.Size, System.Drawing">
+    <value>184, 22</value>
+  </data>
+  <data name="tsmiTrayIndexFolder.Text" xml:space="preserve">
+    <value>Directory indexer...</value>
   </data>
   <data name="tsmiTrayImageCombiner.Size" type="System.Drawing.Size, System.Drawing">
     <value>184, 22</value>
@@ -1599,9 +1620,6 @@
   <data name="tsmiTrayImageThumbnailer.Text" xml:space="preserve">
     <value>Image thumbnailer...</value>
   </data>
-  <data name="toolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>181, 6</value>
-  </data>
   <data name="tsmiTrayVideoConverter.Size" type="System.Drawing.Size, System.Drawing">
     <value>184, 22</value>
   </data>
@@ -1614,47 +1632,17 @@
   <data name="tsmiTrayVideoThumbnailer.Text" xml:space="preserve">
     <value>Video thumbnailer...</value>
   </data>
-  <data name="tsmiTrayClipboardViewer.Size" type="System.Drawing.Size, System.Drawing">
-    <value>184, 22</value>
-  </data>
-  <data name="tsmiTrayClipboardViewer.Text" xml:space="preserve">
-    <value>Clipboard viewer...</value>
-  </data>
-  <data name="tsmiTrayQRCode.Size" type="System.Drawing.Size, System.Drawing">
-    <value>184, 22</value>
-  </data>
-  <data name="tsmiTrayQRCode.Text" xml:space="preserve">
-    <value>QR code...</value>
-  </data>
-  <data name="toolStripSeparator3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>181, 6</value>
-  </data>
-  <data name="tsmiTrayHashCheck.Size" type="System.Drawing.Size, System.Drawing">
-    <value>184, 22</value>
-  </data>
-  <data name="tsmiTrayHashCheck.Text" xml:space="preserve">
-    <value>Hash check...</value>
-  </data>
-  <data name="tsmiTrayIndexFolder.Size" type="System.Drawing.Size, System.Drawing">
-    <value>184, 22</value>
-  </data>
-  <data name="tsmiTrayIndexFolder.Text" xml:space="preserve">
-    <value>Directory indexer...</value>
-  </data>
-  <data name="tsmiTrayDNSChanger.Size" type="System.Drawing.Size, System.Drawing">
-    <value>184, 22</value>
-  </data>
-  <data name="tsmiTrayDNSChanger.Text" xml:space="preserve">
-    <value>DNS changer...</value>
-  </data>
   <data name="tsmiTrayInspectWindow.Size" type="System.Drawing.Size, System.Drawing">
     <value>184, 22</value>
   </data>
   <data name="tsmiTrayInspectWindow.Text" xml:space="preserve">
     <value>Inspect window...</value>
   </data>
-  <data name="toolStripSeparator4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>181, 6</value>
+  <data name="tsmiTrayClipboardViewer.Size" type="System.Drawing.Size, System.Drawing">
+    <value>184, 22</value>
+  </data>
+  <data name="tsmiTrayClipboardViewer.Text" xml:space="preserve">
+    <value>Clipboard viewer...</value>
   </data>
   <data name="tsmiTrayTweetMessage.Size" type="System.Drawing.Size, System.Drawing">
     <value>184, 22</value>
@@ -1879,7 +1867,7 @@
     <value>Exit</value>
   </data>
   <data name="cmsTray.Size" type="System.Drawing.Size, System.Drawing">
-    <value>201, 528</value>
+    <value>201, 506</value>
   </data>
   <data name="&gt;&gt;cmsTray.Name" xml:space="preserve">
     <value>cmsTray</value>
@@ -1978,7 +1966,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;pNews.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="lblThumbnailViewTip.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2065,7 +2053,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;pThumbnailView.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <metadata name="ttMain.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>567, 17</value>
@@ -2185,7 +2173,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;pToolbars.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -3731,30 +3719,6 @@
   </data>
   <data name="&gt;&gt;tsbGitHub.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator1.Name" xml:space="preserve">
-    <value>toolStripSeparator1</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator2.Name" xml:space="preserve">
-    <value>toolStripSeparator2</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator3.Name" xml:space="preserve">
-    <value>toolStripSeparator3</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator4.Name" xml:space="preserve">
-    <value>toolStripSeparator4</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MainForm</value>
