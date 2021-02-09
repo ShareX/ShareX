@@ -2516,11 +2516,6 @@ namespace ShareX
             UpdateMainWindowLayout();
         }
 
-        private void cmsTray_Opening(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-
-        }
-
         private void TsmiThumbnailTitleTop_Click(object sender, EventArgs e)
         {
             Program.Settings.ThumbnailTitleLocation = ThumbnailTitleLocation.Top;

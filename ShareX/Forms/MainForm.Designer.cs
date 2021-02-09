@@ -1633,7 +1633,6 @@
             this.cmsTray.Name = "cmsTray";
             resources.ApplyResources(this.cmsTray, "cmsTray");
             this.cmsTray.Closed += new System.Windows.Forms.ToolStripDropDownClosedEventHandler(this.cmsTray_Closed);
-            this.cmsTray.Opening += new System.ComponentModel.CancelEventHandler(this.cmsTray_Opening);
             this.cmsTray.Opened += new System.EventHandler(this.cmsTray_Opened);
             // 
             // tsmiTrayCapture
