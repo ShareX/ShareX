@@ -1,0 +1,23 @@
+﻿<Window x:Class="ShareX.FileExistView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ShareX"
+             mc:Ignorable="d" 
+             d:DesignHeight="280" d:DesignWidth="450"
+             Title="ShareX - How to save?" WindowStartupLocation="CenterScreen">
+    <StackPanel Orientation="Vertical">
+        <TextBlock Margin="10">
+            <Run>There is already a file with the same name in this location.</Run>
+            <LineBreak></LineBreak>
+            <Run>Select new file name or action:</Run>
+        </TextBlock>
+
+        <TextBox x:Name="txtNewName" Margin="10" TextChanged="txtNewName_TextChanged" KeyDown="txtNewName_KeyDown" KeyUp="txtNewName_KeyUp"></TextBox>
+        <Button x:Name="btnNewName" Margin="10" HorizontalContentAlignment="Left" Click="btnNewName_Click">Use new name:</Button>
+        <Button x:Name="btnOverwrite" Margin="10" HorizontalContentAlignment="Left" Click="btnOverwrite_Click">Overwrite:</Button>
+        <Button x:Name="btnUniqueName" Margin="10" HorizontalContentAlignment="Left" Click="btnUniqueName_Click">Use a unique name:</Button>
+        <Button Margin="10" HorizontalContentAlignment="Left" Click="Button_Click">Do not save</Button>
+    </StackPanel>
+</Window>
