@@ -403,10 +403,7 @@ namespace ShareX
         {
             if (IsItemSelected && SelectedItem.Info.Result != null)
             {
-                using (ResponseForm form = new ResponseForm(SelectedItem.Info.Result))
-                {
-                    form.ShowDialog();
-                }
+                ResponseForm.ShowInstance(SelectedItem.Info.Result);
             }
         }
 

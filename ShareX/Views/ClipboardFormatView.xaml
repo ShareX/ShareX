@@ -1,0 +1,32 @@
+﻿<Window x:Class="ShareX.ClipboardFormatView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ShareX"
+             mc:Ignorable="d" 
+             d:DesignHeight="260" d:DesignWidth="400"
+             Title="ShareX - Clipboard content format">
+    
+    <StackPanel Orientation="Vertical">
+        <DockPanel Margin="10">
+            <Label MinWidth="100">Description</Label>
+            <TextBox x:Name="txtDescription"></TextBox>
+        </DockPanel>
+        <DockPanel Margin="10">
+            <Label MinWidth="100">Format</Label>
+            <TextBox x:Name="txtFormat"></TextBox>
+        </DockPanel>
+        <TextBlock Margin="10" MinHeight="80" x:Name="lblExample"></TextBlock>
+
+        <Grid Margin="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" x:Name="btnOk" Margin="0,0,5,0">Ok</Button>
+            <Button Grid.Column="1" x:Name="btnCancel" Margin="5,0,0,0">Cancel</Button>
+        </Grid>
+
+    </StackPanel>
+</Window>

@@ -32,11 +32,14 @@ namespace ShareX.UploadersLib
 {
     public partial class ResponseForm : Form
     {
+        private static ResponseForm instance;
+        private static readonly object singletonLock = new object();
+
         public UploadResult Result { get; private set; }
 
-        private bool isBrowserOpened;
+        private bool isBrowserUpdated;
 
-        public ResponseForm(UploadResult result)
+        private ResponseForm(UploadResult result)
         {
             InitializeComponent();
             ShareXResources.ApplyTheme(this);
@@ -45,8 +48,24 @@ namespace ShareX.UploadersLib
             rtbResponseInfo.AddContextMenu();
             rtbResponseText.AddContextMenu();
 
-            Result = result;
-            UpdateResult(Result);
+            UpdateResult(result);
+        }
+
+        public static void ShowInstance(UploadResult result)
+        {
+            lock (singletonLock)
+            {
+                if (instance == null || instance.IsDisposed)
+                {
+                    instance = new ResponseForm(result);
+                }
+                else
+                {
+                    instance.UpdateResult(result);
+                }
+
+                instance.ForceActivate();
+            }
         }
 
         private void AddInfo(RichTextBox rtb, string name, string value)
@@ -68,7 +87,13 @@ namespace ShareX.UploadersLib
 
         private void UpdateResult(UploadResult result)
         {
-            isBrowserOpened = false;
+            Result = result;
+
+            rtbResult.ResetText();
+            rtbResponseInfo.ResetText();
+            rtbResponseText.ResetText();
+            isBrowserUpdated = false;
+            wbResponse.DocumentText = "";
 
             if (result != null)
             {
@@ -85,8 +110,6 @@ namespace ShareX.UploadersLib
 
         private void UpdateResultTab(UploadResult result)
         {
-            rtbResult.ResetText();
-
             AddInfo(rtbResult, "Shortened URL", result.ShortenedURL);
             AddInfo(rtbResult, "URL", result.URL);
             AddInfo(rtbResult, "Thumbnail URL", result.ThumbnailURL);
@@ -96,8 +119,6 @@ namespace ShareX.UploadersLib
 
         private void UpdateResponseInfoTab(ResponseInfo responseInfo, bool includeResponseText)
         {
-            rtbResponseInfo.ResetText();
-
             AddInfo(rtbResponseInfo, "Status code", $"({(int)responseInfo.StatusCode}) {responseInfo.StatusDescription}");
             AddInfo(rtbResponseInfo, "Response URL", responseInfo.ResponseURL);
             if (responseInfo.Headers != null && responseInfo.Headers.Count > 0) AddInfo(rtbResponseInfo, "Headers", responseInfo.Headers.ToString().TrimEnd('\r', '\n'));
@@ -106,10 +127,10 @@ namespace ShareX.UploadersLib
 
         private void tcMain_Selecting(object sender, TabControlCancelEventArgs e)
         {
-            if (e.TabPage == tpWebBrowser && !isBrowserOpened && Result != null && !string.IsNullOrEmpty(Result.Response))
+            if (e.TabPage == tpWebBrowser && !isBrowserUpdated && Result != null && !string.IsNullOrEmpty(Result.Response))
             {
                 wbResponse.DocumentText = Result.Response;
-                isBrowserOpened = true;
+                isBrowserUpdated = true;
             }
         }
 
