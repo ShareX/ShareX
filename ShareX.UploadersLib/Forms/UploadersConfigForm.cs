@@ -2287,7 +2287,7 @@ namespace ShareX.UploadersLib
 
         #endregion Amazon S3
 
-        #region OwnCloud / Nextcloud
+        #region ownCloud / Nextcloud
 
         private void txtOwnCloudHost_TextChanged(object sender, EventArgs e)
         {
@@ -2460,7 +2460,7 @@ namespace ShareX.UploadersLib
             OwnCloudSavePathFilters();
         }
 
-        #endregion OwnCloud / Nextcloud
+        #endregion ownCloud / Nextcloud
 
         #region Pushbullet
 

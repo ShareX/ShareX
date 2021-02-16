@@ -12693,7 +12693,7 @@ when you made the application key.</value>
     <value>15</value>
   </data>
   <data name="tpOwnCloud.Text" xml:space="preserve">
-    <value>OwnCloud / Nextcloud</value>
+    <value>ownCloud / Nextcloud</value>
   </data>
   <data name="&gt;&gt;tpOwnCloud.Name" xml:space="preserve">
     <value>tpOwnCloud</value>
