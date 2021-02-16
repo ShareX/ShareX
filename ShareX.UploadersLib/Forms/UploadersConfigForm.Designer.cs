@@ -629,7 +629,6 @@ namespace ShareX.UploadersLib
             this.txtVgymeUserKey = new System.Windows.Forms.TextBox();
             this.lvlVgymeUserKey = new System.Windows.Forms.Label();
             this.tcUploaders = new System.Windows.Forms.TabControl();
-            this.cbOwnCloudEncryptPassword = new System.Windows.Forms.CheckBox();
             this.lvImgurAlbumList = new ShareX.HelpersLib.MyListView();
             this.chImgurID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chImgurTitle = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -2607,7 +2606,6 @@ namespace ShareX.UploadersLib
             // 
             this.tpOwnCloud.BackColor = System.Drawing.SystemColors.Window;
             this.tpOwnCloud.Controls.Add(this.btnOwnCloudRevealPassword);
-            this.tpOwnCloud.Controls.Add(this.cbOwnCloudEncryptPassword);
             this.tpOwnCloud.Controls.Add(this.cbOwnCloudCreateFolderIfNonExistent);
             this.tpOwnCloud.Controls.Add(this.lblOwnCloudPathFilterInvalid);
             this.tpOwnCloud.Controls.Add(this.btnOwnCloudPathFilterSortDown);
@@ -4990,13 +4988,6 @@ namespace ShareX.UploadersLib
             this.tcUploaders.Name = "tcUploaders";
             this.tcUploaders.SelectedIndex = 0;
             // 
-            // cbOwnCloudEncryptPassword
-            // 
-            resources.ApplyResources(this.cbOwnCloudEncryptPassword, "cbOwnCloudEncryptPassword");
-            this.cbOwnCloudEncryptPassword.Name = "cbOwnCloudEncryptPassword";
-            this.cbOwnCloudEncryptPassword.UseVisualStyleBackColor = true;
-            this.cbOwnCloudEncryptPassword.CheckedChanged += new System.EventHandler(this.cbOwnCloudEncryptPassword_CheckedChanged);
-            // 
             // lvImgurAlbumList
             // 
             this.lvImgurAlbumList.AllowColumnSort = true;
@@ -5918,7 +5909,6 @@ namespace ShareX.UploadersLib
         private System.Windows.Forms.Button btnOwnCloudPathFilterSortUp;
         private System.Windows.Forms.Label lblOwnCloudPathFilterInvalid;
         private System.Windows.Forms.CheckBox cbOwnCloudCreateFolderIfNonExistent;
-        private System.Windows.Forms.CheckBox cbOwnCloudEncryptPassword;
         private System.Windows.Forms.Button btnOwnCloudRevealPassword;
         private System.Windows.Forms.ComboBox cbGoogleDriveSharedDrive;
         private System.Windows.Forms.TextBox txtKuttDomain;

@@ -582,16 +582,7 @@ namespace ShareX.UploadersLib
 
             txtOwnCloudHost.Text = Config.OwnCloudHost;
             txtOwnCloudUsername.Text = Config.OwnCloudUsername;
-
-            if (Config.OwnCloudEncryptPassword && Config.OwnCloudPassword.TryDPAPIUnprotectAndBase64(out string password))
-            {
-                txtOwnCloudPassword.Text = password;
-            }
-            else
-            {
-                txtOwnCloudPassword.Text = Config.OwnCloudPassword;
-            }
-
+            txtOwnCloudPassword.Text = Config.OwnCloudPassword;
             txtOwnCloudPath.Text = Config.OwnCloudPath;
             txtOwnCloudExpiryTime.Value = Config.OwnCloudExpiryTime;
             cbOwnCloudCreateShare.Checked = Config.OwnCloudCreateShare;
@@ -601,7 +592,6 @@ namespace ShareX.UploadersLib
             cbOwnCloudAutoExpire.Checked = Config.OwnCloudAutoExpire;
             cbOwnCloudCreateFolderIfNonExistent.Checked = Config.OwnCloudCreateFolderOfNonExistent;
             cbOwnCloudPathFilter.Checked = Config.OwnCloudUsePathFilter;
-            cbOwnCloudEncryptPassword.Checked = Config.OwnCloudEncryptPassword;
             lblOwnCloudPathFilterInvalid.ForeColor = Color.Red;
 
             foreach (OwnCloud.OwnCloudPathFilterItem pathFilterItem in Config.OwnCloudPathFilters)
@@ -2312,7 +2302,7 @@ namespace ShareX.UploadersLib
 
         private void txtOwnCloudPassword_TextChanged(object sender, EventArgs e)
         {
-            Config.OwnCloudPassword = Config.OwnCloudEncryptPassword ? txtOwnCloudPassword.Text.DPAPIProtectAndBase64() : txtOwnCloudPassword.Text;
+            Config.OwnCloudPassword = txtOwnCloudPassword.Text;
         }
 
         private void btnOwnCloudRevealPassword_Click(object sender, EventArgs e)
@@ -2378,12 +2368,6 @@ namespace ShareX.UploadersLib
             btnOwnCloudPathFilterEditSave.Visible = cbOwnCloudPathFilter.Checked;
 
             lblOwnCloudPathFilterInvalid.Visible &= !(!txtOwnCloudPathFilterEditFilter.Enabled || txtOwnCloudPathFilterEditFilter.Text.IsValidRegEx());
-        }
-
-        private void cbOwnCloudEncryptPassword_CheckedChanged(object sender, EventArgs e)
-        {
-            Config.OwnCloudEncryptPassword = cbOwnCloudEncryptPassword.Checked;
-            Config.OwnCloudPassword = Config.OwnCloudEncryptPassword ? txtOwnCloudPassword.Text.DPAPIProtectAndBase64() : txtOwnCloudPassword.Text;
         }
 
         private void btnOwnCloudPathFilterAdd_Click(object sender, EventArgs e)

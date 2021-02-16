@@ -54,7 +54,6 @@ namespace ShareX.UploadersLib.FileUploaders
         {
             return new OwnCloud(config.OwnCloudHost, config.OwnCloudUsername, config.OwnCloudPassword)
             {
-                EncryptPassword = config.OwnCloudEncryptPassword,
                 Path = config.OwnCloudPath,
                 CreateShare = config.OwnCloudCreateShare,
                 DirectLink = config.OwnCloudDirectLink,
@@ -123,7 +122,7 @@ namespace ShareX.UploadersLib.FileUploaders
             string url = URLHelpers.CombineURL(Host, "remote.php/webdav", encodedPath);
             url = URLHelpers.FixPrefix(url);
 
-            NameValueCollection headers = RequestHelpers.CreateAuthenticationHeader(Username, EncryptPassword ? Password.DPAPIUnprotectAndBase64() : Password);
+            NameValueCollection headers = RequestHelpers.CreateAuthenticationHeader(Username, Password);
             headers["OCS-APIREQUEST"] = "true";
 
             // Check if folder exists and if not create it
