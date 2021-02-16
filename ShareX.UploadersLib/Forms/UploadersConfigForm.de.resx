@@ -448,7 +448,7 @@ Das Benutzen einer verschlüsselten Bibliothek deaktiviert das Teilen.</value>
     <value>Teilbaren Link erstellen</value>
   </data>
   <data name="cbOwnCloudDirectLink.Text" xml:space="preserve">
-    <value>Direkter Link (Fügt "&amp;download" zur URL hinzu)</value>
+    <value>Direkter Link (Fügt "/download" zur URL hinzu)</value>
   </data>
   <data name="cbOwnCloud81Compatibility.Text" xml:space="preserve">
     <value>Unterstützung für OwnCloud 8.1+</value>
