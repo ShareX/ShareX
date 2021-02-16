@@ -136,7 +136,7 @@
     <value>3</value>
   </data>
   <data name="pgOptions.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Üst, Alt, Sol, Sağ</value>
+    <value>Top, Bottom, Left, Right</value>
   </data>
   <data name="pgOptions.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 40</value>
@@ -160,7 +160,7 @@
     <value>1</value>
   </data>
   <data name="btnBrowse.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Üst, Sağ</value>
+    <value>Top, Right</value>
   </data>
   <data name="btnBrowse.Location" type="System.Drawing.Point, System.Drawing">
     <value>512, 6</value>
@@ -220,7 +220,7 @@
     <value>721, 464</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
-    <value>Orta Ekran</value>
+    <value>CenterScreen</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>Video Küçük Resim Formu</value>
