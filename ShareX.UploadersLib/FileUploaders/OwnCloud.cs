@@ -262,8 +262,6 @@ namespace ShareX.UploadersLib.FileUploaders
                                     throw new ArgumentException($"Unknown function name \"{ caseFunctionParams[0] }\".");
                             }
                         }
-
-                        int k = 0;
                     }
 
                     path = path.Replace(fullMatch, groupValue);
