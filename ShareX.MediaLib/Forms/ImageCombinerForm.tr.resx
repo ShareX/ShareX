@@ -190,7 +190,7 @@
     <value>2</value>
   </data>
   <data name="cbAlignment.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Alt, Sol</value>
+    <value>Bottom, Left</value>
   </data>
   <data name="cbAlignment.Location" type="System.Drawing.Point, System.Drawing">
     <value>200, 444</value>
@@ -214,7 +214,7 @@
     <value>1</value>
   </data>
   <data name="flpOrientation.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Alt, Sol</value>
+    <value>Bottom, Left</value>
   </data>
   <data name="flpOrientation.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -235,7 +235,7 @@
     <value>0</value>
   </data>
   <data name="rbOrientationHorizontal.Text" xml:space="preserve">
-    <value>Yatay</value>
+    <value>Horizontal</value>
   </data>
   <data name="&gt;&gt;rbOrientationHorizontal.Name" xml:space="preserve">
     <value>rbOrientationHorizontal</value>
@@ -262,7 +262,7 @@
     <value>1</value>
   </data>
   <data name="rbOrientationVertical.Text" xml:space="preserve">
-    <value>Dikey</value>
+    <value>Vertical</value>
   </data>
   <data name="&gt;&gt;rbOrientationVertical.Name" xml:space="preserve">
     <value>rbOrientationVertical</value>
