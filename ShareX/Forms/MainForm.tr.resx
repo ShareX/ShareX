@@ -576,6 +576,33 @@
   <data name="tsmiVideoThumbnailer.Text" xml:space="preserve">
     <value>Video küçük resim yapıcı...</value>
   </data>
+  <data name="tsmiImageSplitter.Text" xml:space="preserve">
+    <value>Fotoğraf ayırıcı...</value>
+  </data>
+  <data name="tsmiVideoConverter.Text" xml:space="preserve">
+    <value>Video dönüştürücü...</value>
+  </data>
+  <data name="tsmiClipboardViewer.Text" xml:space="preserve">
+    <value>Pano görüntüleyici...</value>
+  </data>
+  <data name="tsmiRunAction.Text" xml:space="preserve">
+    <value>Çalıştır...</value>
+  </data>
+  <data name="tsmiAddImageEffects.Text" xml:space="preserve">
+    <value>Efekler ekle...</value>
+  </data>
+  <data name="tsmiThumbnailTitle.Text" xml:space="preserve">
+    <value>Resim başlığı</value>
+  </data>
+  <data name="tsmiThumbnailSize.Text" xml:space="preserve">
+    <value>Boyutlandır...</value>
+  </data>
+  <data name="tsmiSwitchTaskViewMode.Text" xml:space="preserve">
+    <value>Küçük pencere görünümü</value>
+  </data>
+  <data name="SwitchToListView" xml:space="preserve">
+    <value>Liste görünümüne geç</value>
+  </data>
   <data name="tsmiImageCombiner.Text" xml:space="preserve">
     <value>Resim birleştirici...</value>
   </data>
