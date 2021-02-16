@@ -58,7 +58,6 @@ namespace ShareX.UploadersLib.FileUploaders
                 CreateShare = config.OwnCloudCreateShare,
                 DirectLink = config.OwnCloudDirectLink,
                 PreviewLink = config.OwnCloudUsePreviewLinks,
-                IsCompatibility81 = config.OwnCloud81Compatibility,
                 AutoExpireTime = config.OwnCloudExpiryTime,
                 AutoExpire = config.OwnCloudAutoExpire,
                 CreateFolderOfNonExistent = config.OwnCloudCreateFolderOfNonExistent,
@@ -81,7 +80,6 @@ namespace ShareX.UploadersLib.FileUploaders
         public bool CreateShare { get; set; }
         public bool DirectLink { get; set; }
         public bool PreviewLink { get; set; }
-        public bool IsCompatibility81 { get; set; }
         public bool AutoExpire { get; set; }
         public bool CreateFolderOfNonExistent { get; set; }
         public bool UsePathFilter { get; set; }
@@ -349,7 +347,7 @@ namespace ShareX.UploadersLib.FileUploaders
                         }
                         else if (DirectLink)
                         {
-                            link += (IsCompatibility81 ? "/" : "&") + "download";
+                            link += "/download";
                         }
                         return link;
                     }

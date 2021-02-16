@@ -587,7 +587,6 @@ namespace ShareX.UploadersLib
             txtOwnCloudExpiryTime.Value = Config.OwnCloudExpiryTime;
             cbOwnCloudCreateShare.Checked = Config.OwnCloudCreateShare;
             cbOwnCloudDirectLink.Checked = Config.OwnCloudDirectLink;
-            cbOwnCloud81Compatibility.Checked = Config.OwnCloud81Compatibility;
             cbOwnCloudUsePreviewLinks.Checked = Config.OwnCloudUsePreviewLinks;
             cbOwnCloudAutoExpire.Checked = Config.OwnCloudAutoExpire;
             cbOwnCloudCreateFolderIfNonExistent.Checked = Config.OwnCloudCreateFolderOfNonExistent;
@@ -2328,11 +2327,6 @@ namespace ShareX.UploadersLib
         private void cbOwnCloudDirectLink_CheckedChanged(object sender, EventArgs e)
         {
             Config.OwnCloudDirectLink = cbOwnCloudDirectLink.Checked;
-        }
-
-        private void cbOwnCloud81Compatibility_CheckedChanged(object sender, EventArgs e)
-        {
-            Config.OwnCloud81Compatibility = cbOwnCloud81Compatibility.Checked;
         }
 
         private void cbOwnCloudUsePreviewLinks_CheckedChanged(object sender, EventArgs e)

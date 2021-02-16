@@ -322,7 +322,6 @@ namespace ShareX.UploadersLib
             this.lblOwnCloudExpiryTime = new System.Windows.Forms.Label();
             this.cbOwnCloudUsePreviewLinks = new System.Windows.Forms.CheckBox();
             this.lblOwnCloudHostExample = new System.Windows.Forms.Label();
-            this.cbOwnCloud81Compatibility = new System.Windows.Forms.CheckBox();
             this.cbOwnCloudDirectLink = new System.Windows.Forms.CheckBox();
             this.cbOwnCloudCreateShare = new System.Windows.Forms.CheckBox();
             this.txtOwnCloudPath = new System.Windows.Forms.TextBox();
@@ -2625,7 +2624,6 @@ namespace ShareX.UploadersLib
             this.tpOwnCloud.Controls.Add(this.lblOwnCloudExpiryTime);
             this.tpOwnCloud.Controls.Add(this.cbOwnCloudUsePreviewLinks);
             this.tpOwnCloud.Controls.Add(this.lblOwnCloudHostExample);
-            this.tpOwnCloud.Controls.Add(this.cbOwnCloud81Compatibility);
             this.tpOwnCloud.Controls.Add(this.cbOwnCloudDirectLink);
             this.tpOwnCloud.Controls.Add(this.cbOwnCloudCreateShare);
             this.tpOwnCloud.Controls.Add(this.txtOwnCloudPath);
@@ -2763,13 +2761,6 @@ namespace ShareX.UploadersLib
             // 
             resources.ApplyResources(this.lblOwnCloudHostExample, "lblOwnCloudHostExample");
             this.lblOwnCloudHostExample.Name = "lblOwnCloudHostExample";
-            // 
-            // cbOwnCloud81Compatibility
-            // 
-            resources.ApplyResources(this.cbOwnCloud81Compatibility, "cbOwnCloud81Compatibility");
-            this.cbOwnCloud81Compatibility.Name = "cbOwnCloud81Compatibility";
-            this.cbOwnCloud81Compatibility.UseVisualStyleBackColor = true;
-            this.cbOwnCloud81Compatibility.CheckedChanged += new System.EventHandler(this.cbOwnCloud81Compatibility_CheckedChanged);
             // 
             // cbOwnCloudDirectLink
             // 
@@ -5571,7 +5562,6 @@ namespace ShareX.UploadersLib
         private System.Windows.Forms.Label lblTwitterDefaultMessage;
         private System.Windows.Forms.TextBox txtTwitterDefaultMessage;
         private System.Windows.Forms.CheckBox cbTwitterSkipMessageBox;
-        private System.Windows.Forms.CheckBox cbOwnCloud81Compatibility;
         private System.Windows.Forms.Label lblOneTimeSecretAPIKey;
         private System.Windows.Forms.Label lblOneTimeSecretEmail;
         private System.Windows.Forms.TextBox txtOneTimeSecretAPIKey;

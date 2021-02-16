@@ -302,7 +302,6 @@ namespace ShareX.UploadersLib
         public int OwnCloudExpiryTime { get; set; } = 7;
         public bool OwnCloudCreateShare { get; set; } = true;
         public bool OwnCloudDirectLink { get; set; } = false;
-        public bool OwnCloud81Compatibility { get; set; } = true;
         public bool OwnCloudUsePreviewLinks { get; set; } = false;
         public bool OwnCloudAutoExpire { get; set; } = false;
         public bool OwnCloudCreateFolderOfNonExistent = false;

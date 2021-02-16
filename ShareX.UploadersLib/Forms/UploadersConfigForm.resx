@@ -11829,7 +11829,7 @@ when you made the application key.</value>
     <value>NoControl</value>
   </data>
   <data name="cbOwnCloudCreateFolderIfNonExistent.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 380</value>
+    <value>16, 356</value>
   </data>
   <data name="cbOwnCloudCreateFolderIfNonExistent.Size" type="System.Drawing.Size, System.Drawing">
     <value>163, 17</value>
@@ -12222,7 +12222,7 @@ when you made the application key.</value>
     <value>NoControl</value>
   </data>
   <data name="cbOwnCloudPathFilter.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 403</value>
+    <value>16, 379</value>
   </data>
   <data name="cbOwnCloudPathFilter.Size" type="System.Drawing.Size, System.Drawing">
     <value>105, 17</value>
@@ -12273,7 +12273,7 @@ when you made the application key.</value>
     <value>NoControl</value>
   </data>
   <data name="cbOwnCloudAutoExpire.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 334</value>
+    <value>16, 310</value>
   </data>
   <data name="cbOwnCloudAutoExpire.Size" type="System.Drawing.Size, System.Drawing">
     <value>138, 17</value>
@@ -12333,7 +12333,7 @@ when you made the application key.</value>
     <value>NoControl</value>
   </data>
   <data name="cbOwnCloudUsePreviewLinks.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 357</value>
+    <value>16, 333</value>
   </data>
   <data name="cbOwnCloudUsePreviewLinks.Size" type="System.Drawing.Size, System.Drawing">
     <value>189, 17</value>
