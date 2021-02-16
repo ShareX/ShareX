@@ -285,4 +285,7 @@ store.book[0].title</value>
   <data name="lblBody.Text" xml:space="preserve">
     <value>Тело:</value>
   </data>
+  <data name="lblResultErrorMessage.Text" xml:space="preserve">
+    <value>Ошибка:</value>
+  </data>
 </root>

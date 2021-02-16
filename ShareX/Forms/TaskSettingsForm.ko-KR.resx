@@ -394,7 +394,7 @@
     <value>+</value>
   </data>
   <data name="lblAutoIncrementNumber.Text" xml:space="preserve">
-    <value>0</value>
+    <value>자동 증가 숫자:</value>
   </data>
   <data name="btnUploaderFiltersAdd.Text" xml:space="preserve">
     <value>추가</value>
@@ -542,5 +542,23 @@
   </data>
   <data name="cbFileUploadReplaceProblematicCharacters.Text" xml:space="preserve">
     <value>업로드 할 때 URL에 문제가있는 문자를 밑줄로 바꾸기</value>
+  </data>
+  <data name="cbCaptureOCRSilent.Text" xml:space="preserve">
+    <value>조용히 OCR을 진행</value>
+  </data>
+  <data name="cbCaptureOCRProcessOnLoad.Text" xml:space="preserve">
+    <value>다이얼로그를 열어 OCR을 진행</value>
+  </data>
+  <data name="cbCaptureOCRAutoCopy.Text" xml:space="preserve">
+    <value>자동으로 결과를 클립보드에 복사</value>
+  </data>
+  <data name="lblOCRDefaultLanguage.Text" xml:space="preserve">
+    <value>기본 언어:</value>
+  </data>
+  <data name="tpOCR.Text" xml:space="preserve">
+    <value>OCR</value>
+  </data>
+  <data name="btnScreenshotsFolderBrowse.Text" xml:space="preserve">
+    <value>찾아보기...</value>
   </data>
 </root>

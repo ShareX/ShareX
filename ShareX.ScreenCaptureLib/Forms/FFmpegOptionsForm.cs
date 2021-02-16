@@ -108,6 +108,7 @@ namespace ShareX.ScreenCaptureLib
             // GIF
             cbGIFStatsMode.SelectedIndex = (int)Options.FFmpeg.GIFStatsMode;
             cbGIFDither.SelectedIndex = (int)Options.FFmpeg.GIFDither;
+            nudGIFBayerScale.SetValue(Options.FFmpeg.GIFBayerScale);
 
             // AMF
             cbAMFUsage.SelectedIndex = (int)Options.FFmpeg.AMF_usage;
@@ -176,12 +177,20 @@ namespace ShareX.ScreenCaptureLib
                 {
                     Options.FFmpeg.VideoSource = FFmpegCLIManager.SourceVideoDevice;
                 }
+                else if (!cboVideoSource.Items.Contains(Options.FFmpeg.VideoSource))
+                {
+                    Options.FFmpeg.VideoSource = FFmpegCLIManager.SourceGDIGrab;
+                }
 
                 cboVideoSource.Text = Options.FFmpeg.VideoSource;
 
                 if (selectDevices && cboAudioSource.Items.Contains(FFmpegCLIManager.SourceAudioDevice))
                 {
                     Options.FFmpeg.AudioSource = FFmpegCLIManager.SourceAudioDevice;
+                }
+                else if (!cboAudioSource.Items.Contains(Options.FFmpeg.AudioSource))
+                {
+                    Options.FFmpeg.AudioSource = FFmpegCLIManager.SourceNone;
                 }
 
                 cboAudioSource.Text = Options.FFmpeg.AudioSource;
@@ -220,6 +229,7 @@ namespace ShareX.ScreenCaptureLib
                     txtCommandLinePreview.Text = Options.GetFFmpegArgs();
                 }
 
+                nudGIFBayerScale.Visible = (Options.FFmpeg.GIFDither == FFmpegPaletteUseDither.bayer);
                 UpdateFFmpegPathUI();
             }
         }
@@ -448,6 +458,12 @@ namespace ShareX.ScreenCaptureLib
             UpdateUI();
         }
 
+        private void nudGIFBayerScale_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Options.FFmpeg.GIFBayerScale = (int)nudGIFBayerScale.Value;
+            UpdateUI();
+        }
+
         private void cbAMFUsage_SelectedIndexChanged(object sender, EventArgs e)
         {
             Options.FFmpeg.AMF_usage = (FFmpegAMFUsage)cbAMFUsage.SelectedIndex;
@@ -504,12 +520,12 @@ namespace ShareX.ScreenCaptureLib
 
         private void btnDownload_Click(object sender, EventArgs e)
         {
-            FFmpegDownloader.DownloadFFmpeg(true, DownloaderForm_InstallRequested);
+            FFmpegGitHubDownloader.DownloadFFmpeg(true, DownloaderForm_InstallRequested);
         }
 
         private void DownloaderForm_InstallRequested(string filePath)
         {
-            bool result = FFmpegDownloader.ExtractFFmpeg(filePath, DefaultToolsFolder);
+            bool result = FFmpegGitHubDownloader.ExtractFFmpeg(filePath, DefaultToolsFolder);
 
             if (result)
             {

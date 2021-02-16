@@ -456,5 +456,11 @@ namespace ShareX.HelpersLib
             List<Color> colors = GetKnownColors();
             return colors.Aggregate(Color.Black, (accu, curr) => ColorDifference(color, curr) < ColorDifference(color, accu) ? curr : accu);
         }
+
+        public static string GetColorName(Color color)
+        {
+            Color knownColor = FindClosestKnownColor(color);
+            return Helpers.GetProperName(knownColor.Name);
+        }
     }
 }

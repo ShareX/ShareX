@@ -299,11 +299,14 @@ namespace ShareX
                 {
                     pThumbnail.Location = new Point(0, 0);
                 }
+
+                lblError.Location = new Point((ClientSize.Width - lblError.Width) / 2, 1);
             }
             else
             {
                 pThumbnail.Location = new Point(0, 0);
                 lblTitle.Location = new Point(0, pThumbnail.Height + 2);
+                lblError.Location = new Point((ClientSize.Width - lblError.Width) / 2, pThumbnail.Height - lblError.Height - 1);
             }
         }
 
@@ -388,6 +391,7 @@ namespace ShareX
             if (Task.Info != null)
             {
                 pThumbnail.UpdateStatusColor(Task.Status);
+                lblError.Visible = Task.Status == TaskStatus.Failed;
             }
 
             UpdateTitle();
@@ -428,6 +432,14 @@ namespace ShareX
                 {
                     Helpers.OpenFile(Task.Info.FilePath);
                 }
+            }
+        }
+
+        private void lblError_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (ModifierKeys == Keys.None && e.Button == MouseButtons.Left)
+            {
+                Task.ShowErrorWindow();
             }
         }
 

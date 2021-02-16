@@ -47,6 +47,11 @@ namespace ShareX.HelpersLib
         /// <returns>A 32-bit signed integer that is greater than or equal to 0 and less than or equal to <paramref name="maxValue"/>.</returns>
         public static int Next(int maxValue)
         {
+            if (maxValue < 0)
+            {
+                throw new ArgumentOutOfRangeException(nameof(maxValue));
+            }
+
             lock (randomLock)
             {
                 return random.Next(maxValue + 1);
@@ -59,6 +64,16 @@ namespace ShareX.HelpersLib
         /// <returns>A 32-bit signed integer that is greater than or equal to <paramref name="minValue"/> and less than or equal to <paramref name="maxValue"/>.</returns>
         public static int Next(int minValue, int maxValue)
         {
+            if (minValue > maxValue)
+            {
+                throw new ArgumentOutOfRangeException(nameof(minValue));
+            }
+
+            if (minValue == maxValue)
+            {
+                return minValue;
+            }
+
             lock (randomLock)
             {
                 return random.Next(minValue, maxValue + 1);
@@ -79,6 +94,11 @@ namespace ShareX.HelpersLib
         /// <param name="buffer">An array of bytes to contain random numbers.</param>
         public static void NextBytes(byte[] buffer)
         {
+            if (buffer == null)
+            {
+                throw new ArgumentNullException(nameof(buffer));
+            }
+
             lock (randomLock)
             {
                 random.NextBytes(buffer);
@@ -87,7 +107,22 @@ namespace ShareX.HelpersLib
 
         public static T Pick<T>(params T[] array)
         {
+            if (array == null)
+            {
+                throw new ArgumentNullException(nameof(array));
+            }
+
+            if (array.Length == 0)
+            {
+                throw new ArgumentException(nameof(array));
+            }
+
             return array[Next(array.Length - 1)];
+        }
+
+        public static void Run(params Action[] actions)
+        {
+            Pick(actions)();
         }
     }
 }

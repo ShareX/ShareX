@@ -200,10 +200,10 @@
 ShareX를 재시작할까요?</value>
   </data>
   <data name="FileExistForm_txtNewName_TextChanged_Use_new_name__" xml:space="preserve">
-    <value>새 이름 사용:</value>
+    <value>새 이름 사용: </value>
   </data>
   <data name="ScreenRecordForm_StartRecording_Missing" xml:space="preserve">
-    <value>찾을 수 없음:</value>
+    <value>찾을 수 없음</value>
   </data>
   <data name="AboutForm_AboutForm_Translators" xml:space="preserve">
     <value>번역자</value>
@@ -518,5 +518,26 @@ ShareX를 재시작할까요?</value>
   </data>
   <data name="ScreenRecord_ConfirmCancel" xml:space="preserve">
     <value>중단 하시겠습니까?</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_es_MX" xml:space="preserve">
+    <value>멕시코 스페인어</value>
+  </data>
+  <data name="SwitchToListView" xml:space="preserve">
+    <value>목록 뷰로 전환</value>
+  </data>
+  <data name="UploadManager_ShowShortenURLDialog_ShortenURL" xml:space="preserve">
+    <value>단축된 URL</value>
+  </data>
+  <data name="IntegrationHelpers_EditWithShareX" xml:space="preserve">
+    <value>ShareX로 편집하기</value>
+  </data>
+  <data name="ShareXConfirmation" xml:space="preserve">
+    <value>ShareX - 확인</value>
+  </data>
+  <data name="OCRForm_AutoProcessing" xml:space="preserve">
+    <value>OCR이 진행중입니다.</value>
+  </data>
+  <data name="WouldYouLikeToResetThemes" xml:space="preserve">
+    <value>테마를 초기화할까요?</value>
   </data>
 </root>

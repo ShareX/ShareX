@@ -116,16 +116,16 @@ namespace ShareX.ScreenCaptureLib
 
                         if (FFmpeg.IsAudioSourceSelected)
                         {
-                            args.AppendFormat("-f dshow -i audio=\"{0}\" ", FFmpeg.AudioSource);
+                            args.AppendFormat("-f dshow -i audio={0} ", Helpers.EscapeCLIText(FFmpeg.AudioSource));
                         }
                     }
                     else
                     {
-                        args.AppendFormat("-f dshow -framerate {0} -i video=\"{1}\"", fps, FFmpeg.VideoSource);
+                        args.AppendFormat("-f dshow -framerate {0} -i video={1}", fps, Helpers.EscapeCLIText(FFmpeg.VideoSource));
 
                         if (FFmpeg.IsAudioSourceSelected)
                         {
-                            args.AppendFormat(":audio=\"{0}\" ", FFmpeg.AudioSource);
+                            args.AppendFormat(":audio={0} ", Helpers.EscapeCLIText(FFmpeg.AudioSource));
                         }
                         else
                         {
@@ -135,7 +135,7 @@ namespace ShareX.ScreenCaptureLib
                 }
                 else if (FFmpeg.IsAudioSourceSelected)
                 {
-                    args.AppendFormat("-f dshow -i audio=\"{0}\" ", FFmpeg.AudioSource);
+                    args.AppendFormat("-f dshow -i audio={0} ", Helpers.EscapeCLIText(FFmpeg.AudioSource));
                 }
             }
             else

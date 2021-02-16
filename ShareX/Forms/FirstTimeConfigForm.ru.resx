@@ -133,7 +133,7 @@
     <value>Пока ShareX открыт, показывать в Steam статус "В приложении"</value>
   </data>
   <data name="lblNote.Text" xml:space="preserve">
-    <value>Эти настройки можно найти в "Настройки приложения -&gt; раздел Интеграция"</value>
+    <value>Эти настройки можно найти в "Настройки приложения -&gt; раздел Интеграция".</value>
   </data>
   <data name="lblTitle.Text" xml:space="preserve">
     <value>Настройка ShareX при первом запуске</value>

@@ -224,18 +224,6 @@ For example, if your bucket is called bucket.example.com then URL will be http:/
   <data name="gbPhotobucketAlbumPath.Text" xml:space="preserve">
     <value>Képek feltöltése ide</value>
   </data>
-  <data name="btnTinyPicOpenMyImages.Text" xml:space="preserve">
-    <value>A képeim oldalának megnyitása...</value>
-  </data>
-  <data name="lblTinyPicUsername.Text" xml:space="preserve">
-    <value>Email:</value>
-  </data>
-  <data name="lblTinyPicPassword.Text" xml:space="preserve">
-    <value>Jelszó:</value>
-  </data>
-  <data name="btnTinyPicLogin.Text" xml:space="preserve">
-    <value>Bejelentkezés</value>
-  </data>
   <data name="lblImageShackPassword.Text" xml:space="preserve">
     <value>Jelszó:</value>
   </data>

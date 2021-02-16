@@ -381,17 +381,11 @@ Usar uma biblioteca encriptada desabilita o compartilhamento.</value>
   <data name="cbSeafileAPIURL.Items" xml:space="preserve">
     <value>https://seacloud.cc/api2/</value>
   </data>
-  <data name="lblPomfUploaders.Text" xml:space="preserve">
-    <value>Uploaders:</value>
-  </data>
   <data name="lblPomfUploadURL.Text" xml:space="preserve">
     <value>URL de envio:</value>
   </data>
   <data name="lblPomfResultURL.Text" xml:space="preserve">
     <value>URL do Resultado:</value>
-  </data>
-  <data name="btnPomfTest.Text" xml:space="preserve">
-    <value>Testar todos</value>
   </data>
   <data name="lblLambdaUploadURL.Text" xml:space="preserve">
     <value>URL do Link:</value>
@@ -735,21 +729,6 @@ Usar uma biblioteca encriptada desabilita o compartilhamento.</value>
   <data name="tpFlickr.Text" xml:space="preserve">
     <value>Flicker</value>
   </data>
-  <data name="btnTinyPicOpenMyImages.Text" xml:space="preserve">
-    <value>Abrir minha página de imagens...</value>
-  </data>
-  <data name="lblTinyPicUsername.Text" xml:space="preserve">
-    <value>Email:</value>
-  </data>
-  <data name="lblTinyPicPassword.Text" xml:space="preserve">
-    <value>Senha:</value>
-  </data>
-  <data name="btnTinyPicLogin.Text" xml:space="preserve">
-    <value>Logar</value>
-  </data>
-  <data name="tpTinyPic.Text" xml:space="preserve">
-    <value>TinyPic</value>
-  </data>
   <data name="lblImageShackPassword.Text" xml:space="preserve">
     <value>Senha:</value>
   </data>
@@ -846,14 +825,8 @@ Usar uma biblioteca encriptada desabilita o compartilhamento.</value>
   <data name="cbGistPublishPublic.Text" xml:space="preserve">
     <value>Crira Gist público</value>
   </data>
-  <data name="btnCheveretoTestAll.Text" xml:space="preserve">
-    <value>Testar todos</value>
-  </data>
   <data name="lblCheveretoUploadURLExample.Text" xml:space="preserve">
     <value>Exemplo: http://exemplo.com/api/1/upload</value>
-  </data>
-  <data name="lblCheveretoUploaders.Text" xml:space="preserve">
-    <value>Envios:</value>
   </data>
   <data name="lblCheveretoUploadURL.Text" xml:space="preserve">
     <value>URL de envio:</value>

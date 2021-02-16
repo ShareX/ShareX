@@ -116,9 +116,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="FFmpegHelper_Record_FFmpeg_error" xml:space="preserve">
-    <value>FFmpeg 錯誤</value>
-  </data>
   <data name="FFmpegOptionsForm_buttonFFmpegBrowse_Click_Browse_for_ffmpeg_exe" xml:space="preserve">
     <value>瀏覽 ffmpeg.exe</value>
   </data>
@@ -130,11 +127,6 @@
   </data>
   <data name="FFmpegOptionsForm_UpdateUI_Quality_" xml:space="preserve">
     <value>品質：</value>
-  </data>
-  <data name="RectangleRegion_GetRulerText_Ruler_info" xml:space="preserve">
-    <value>X: {0} / Y: {1} / X2: {2} / Y2: {3}
-寬: {4} px / 高: {5} px
-距離: {6:0.00} px / 角度: {7:0.00}°</value>
   </data>
   <data name="BaseRegionForm_InitializeComponent_Region_capture" xml:space="preserve">
     <value>區域擷取</value>

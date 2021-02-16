@@ -354,6 +354,9 @@ namespace ShareX.HelpersLib
         public static extern IntPtr CreateDIBSection(IntPtr hdc, [In] ref BITMAPINFOHEADER pbmi, uint pila, out IntPtr ppvBits, IntPtr hSection, uint dwOffset);
 
         [DllImport("gdi32.dll")]
+        public static extern int GetDeviceCaps(IntPtr hdc, int nIndex);
+
+        [DllImport("gdi32.dll")]
         public static extern uint GetPixel(IntPtr hdc, int nXPos, int nYPos);
 
         #endregion gdi32.dll

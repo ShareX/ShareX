@@ -177,7 +177,8 @@
             // VideoConverterForm
             // 
             resources.ApplyResources(this, "$this");
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.Controls.Add(this.lblVideoQualityValue);
             this.Controls.Add(this.cbUseCustomArguments);

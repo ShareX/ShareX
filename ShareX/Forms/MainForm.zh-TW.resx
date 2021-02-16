@@ -764,19 +764,4 @@
   <data name="btnCloseNews.Text" xml:space="preserve">
     <value>關閉</value>
   </data>
-  <data name="pbSocialHideButton.ToolTip" xml:space="preserve">
-    <value>隱藏社群媒體按鈕</value>
-  </data>
-  <data name="pbPatreonButton.ToolTip" xml:space="preserve">
-    <value>前往 Patreon 贊助我們</value>
-  </data>
-  <data name="pbBitcoinButton.ToolTip" xml:space="preserve">
-    <value>使用加密貨幣贊助我們</value>
-  </data>
-  <data name="pbTwitterButton.ToolTip" xml:space="preserve">
-    <value>追隨我們的 Twitter</value>
-  </data>
-  <data name="pbDiscordButton.ToolTip" xml:space="preserve">
-    <value>加入我們的 Discord</value>
-  </data>
 </root>

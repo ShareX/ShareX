@@ -120,20 +120,8 @@
   <data name="HistoryItemManager_InitializeComponent_Copy" xml:space="preserve">
     <value>Sao chép</value>
   </data>
-  <data name="ObjectListView_ObjectListView_Copy_name" xml:space="preserve">
-    <value>Sao chép tên</value>
-  </data>
-  <data name="ObjectListView_ObjectListView_Copy_value" xml:space="preserve">
-    <value>Sao chép giá trị</value>
-  </data>
   <data name="HistoryItemManager_InitializeComponent_Open" xml:space="preserve">
     <value>Mở</value>
-  </data>
-  <data name="ObjectListView_ObjectListView_Name" xml:space="preserve">
-    <value>Tên</value>
-  </data>
-  <data name="ObjectListView_ObjectListView_Value" xml:space="preserve">
-    <value>Giá trị</value>
   </data>
   <data name="HistoryForm_UpdateItemCount_Total___0_" xml:space="preserve">
     <value>Tổng cộng: {0}</value>
@@ -177,9 +165,6 @@
   <data name="HistoryItemManager_InitializeComponent_URL" xml:space="preserve">
     <value>URL</value>
   </data>
-  <data name="HistoryItemManager_UpdateTexts_URLs___0__" xml:space="preserve">
-    <value>URL ({0})</value>
-  </data>
   <data name="HistoryItemManager_InitializeComponent_Image" xml:space="preserve">
     <value>Ảnh</value>
   </data>
@@ -195,9 +180,6 @@
   <data name="HistoryItemManager_InitializeComponent_Thumbnail_URL" xml:space="preserve">
     <value>URL ảnh thu nhỏ/thumbnail</value>
   </data>
-  <data name="HistoryManager_GetHistoryItems_Error_occured_while_reading_XML_file___0_" xml:space="preserve">
-    <value>Lỗi xảy ra khi đọc tệp XML: {0}</value>
-  </data>
   <data name="HistoryItemManager_InitializeComponent_HTML_link" xml:space="preserve">
     <value>Liên kết dạng HTML</value>
   </data>
@@ -206,9 +188,6 @@
   </data>
   <data name="HistoryItemManager_InitializeComponent_HTML_linked_image" xml:space="preserve">
     <value>Ảnh kèm đường dẫn HTML</value>
-  </data>
-  <data name="HistoryItemManager_UpdateTexts_HTML_link___0__" xml:space="preserve">
-    <value>Liên kết dạng HTML ({0})</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_More_info" xml:space="preserve">
     <value>Thông tin thêm</value>

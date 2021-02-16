@@ -50,7 +50,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
         public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
         {
-            return new Mega(config.MegaAuthInfos, config.MegaParentNodeId);
+            return new Mega(config.MegaAuthInfos?.GetMegaApiClientAuthInfos(), config.MegaParentNodeId);
         }
 
         public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpMega;

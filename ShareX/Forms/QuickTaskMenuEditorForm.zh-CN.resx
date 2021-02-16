@@ -127,7 +127,7 @@
     <value>删除</value>
   </data>
   <data name="btnReset.Text" xml:space="preserve">
-    <value>还原默认</value>
+    <value>还原默认...</value>
   </data>
   <data name="btnClose.Text" xml:space="preserve">
     <value>关闭</value>

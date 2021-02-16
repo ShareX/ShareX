@@ -186,9 +186,6 @@
   <data name="rtbDebug.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="rtbDebug.Text" xml:space="preserve">
-    <value />
-  </data>
   <data name="rtbDebug.WordWrap" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>

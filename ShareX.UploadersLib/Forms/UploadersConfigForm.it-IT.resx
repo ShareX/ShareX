@@ -231,9 +231,6 @@
   <data name="lblGe_ttEmail.Text" xml:space="preserve">
     <value>Email:</value>
   </data>
-  <data name="lblTinyPicUsername.Text" xml:space="preserve">
-    <value>Email:</value>
-  </data>
   <data name="lblOneTimeSecretEmail.Text" xml:space="preserve">
     <value>Email:</value>
   </data>
@@ -363,9 +360,6 @@
   <data name="btnPastebinLogin.Text" xml:space="preserve">
     <value>Accedi</value>
   </data>
-  <data name="btnTinyPicLogin.Text" xml:space="preserve">
-    <value>Accedi</value>
-  </data>
   <data name="btnGe_ttLogin.Text" xml:space="preserve">
     <value>Accedi</value>
   </data>
@@ -412,9 +406,6 @@
     <value>Password:</value>
   </data>
   <data name="lblStreamablePassword.Text" xml:space="preserve">
-    <value>Password:</value>
-  </data>
-  <data name="lblTinyPicPassword.Text" xml:space="preserve">
     <value>Password:</value>
   </data>
   <data name="lblEmailPassword.Text" xml:space="preserve">
@@ -570,12 +561,6 @@
   <data name="btnFTPTest.Text" xml:space="preserve">
     <value>Prova</value>
   </data>
-  <data name="btnPomfTest.Text" xml:space="preserve">
-    <value>Prova Tutto</value>
-  </data>
-  <data name="btnCheveretoTestAll.Text" xml:space="preserve">
-    <value>Prova Tutto</value>
-  </data>
   <data name="tpTextUploaders.Text" xml:space="preserve">
     <value>Caricamento Testo</value>
   </data>
@@ -623,12 +608,6 @@
   </data>
   <data name="lblCheveretoUploadURL.Text" xml:space="preserve">
     <value>URL Caricamento:</value>
-  </data>
-  <data name="lblCheveretoUploaders.Text" xml:space="preserve">
-    <value>Servizi Caricamento:</value>
-  </data>
-  <data name="lblPomfUploaders.Text" xml:space="preserve">
-    <value>Servizi Caricamento:</value>
   </data>
   <data name="lblFTPURLPath.Text" xml:space="preserve">
     <value>Percorso URL:</value>
@@ -782,9 +761,6 @@
   </data>
   <data name="btnImageShackOpenPublicProfile.Text" xml:space="preserve">
     <value>Apri Profilo Pubblico...</value>
-  </data>
-  <data name="btnTinyPicOpenMyImages.Text" xml:space="preserve">
-    <value>Apri la mia Pagina Immagini...</value>
   </data>
   <data name="btnImageShackOpenMyImages.Text" xml:space="preserve">
     <value>Apri la mia Pagina Immagini...</value>

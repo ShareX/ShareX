@@ -2,7 +2,7 @@
 Name: "ja"; MessagesFile: "compiler:Languages\Japanese.isl"
 
 [CustomMessages]
-;http://www.microsoft.com/globaldev/reference/lcid-all.mspx
+; https://www.microsoft.com/globaldev/reference/lcid-all.mspx
 ja.lcid=1041
 ja.depdownload_msg=処理を継続する前に次のアプリケーションが必要です:%n%n%1%nダウンロード後インストールしてよろしいですか？
 ja.depdownload_memo_title=ダウンロードする依存ファイル

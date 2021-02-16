@@ -686,9 +686,6 @@
   <data name="tsmiHideMenu.Text" xml:space="preserve">
     <value>مخفی کردن منو</value>
   </data>
-  <data name="tsmiHideThumbnailTitle.Text" xml:space="preserve">
-    <value>مخفی کردن عنوان</value>
-  </data>
   <data name="tsmiCopyHTMLImage.Text" xml:space="preserve">
     <value>عکس HTML</value>
   </data>
@@ -803,15 +800,6 @@
   <data name="tsddbWorkflows.Text" xml:space="preserve">
     <value>گردش کار</value>
   </data>
-  <data name="pbBitcoinButton.ToolTip" xml:space="preserve">
-    <value>از ما با رمزارز حمایت کنید.</value>
-  </data>
-  <data name="pbSocialHideButton.ToolTip" xml:space="preserve">
-    <value>مخفی کردن کلیدهای شبکه های اجتماعی</value>
-  </data>
-  <data name="pbTwitterButton.ToolTip" xml:space="preserve">
-    <value>ما را در توئیتر دنبال کنید.</value>
-  </data>
   <data name="tsmiOpenThumbnailURL.Text" xml:space="preserve">
     <value>آدرس کوچک</value>
   </data>
@@ -841,8 +829,5 @@
   </data>
   <data name="tsmiThumbnailTitle.Text" xml:space="preserve">
     <value>عنوان کوچک</value>
-  </data>
-  <data name="pbPatreonButton.ToolTip" xml:space="preserve">
-    <value>ما را در پترون حمایت کنید.</value>
   </data>
 </root>

@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.HelpersLib;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -36,14 +37,18 @@ namespace ShareX.Setup
     {
         public static string DownloadFile(string url)
         {
-            Console.WriteLine("Downloading: " + url);
+            string fileName = Path.GetFileName(url);
+            string filePath = Path.GetFullPath(fileName);
+
+            Console.WriteLine($"Downloading: \"{url}\" -> \"{filePath}\"");
 
             using (WebClient wc = new WebClient())
             {
-                string filename = Path.GetFileName(url);
-                wc.DownloadFile(url, filename);
-                return filename;
+                wc.Headers.Add(HttpRequestHeader.UserAgent, ShareXResources.UserAgent);
+                wc.DownloadFile(url, filePath);
             }
+
+            return filePath;
         }
 
         public static void CopyFile(string path, string toFolder)

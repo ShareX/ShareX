@@ -195,7 +195,7 @@
     <value>Источники</value>
   </data>
   <data name="lblHelperDevices.Text" xml:space="preserve">
-    <value>Установит источники видео/аудио "screen-capture-recorder" и "virtual-audio-capturer"</value>
+    <value>Установит источники видео/аудио "screen-capture-recorder" и "virtual-audio-capturer".</value>
   </data>
   <data name="lblMP3Quality.Text" xml:space="preserve">
     <value>Качество:</value>

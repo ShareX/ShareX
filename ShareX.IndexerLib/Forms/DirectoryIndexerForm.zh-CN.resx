@@ -135,4 +135,7 @@
   <data name="btnUpload.Text" xml:space="preserve">
     <value>上传并关闭此窗口</value>
   </data>
+  <data name="btnSaveAs.Text" xml:space="preserve">
+    <value>另存为并关闭此窗口...</value>
+  </data>
 </root>

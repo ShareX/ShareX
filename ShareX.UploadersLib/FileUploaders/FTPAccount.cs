@@ -48,7 +48,7 @@ namespace ShareX.UploadersLib
         [Category("FTP")]
         public string Username { get; set; }
 
-        [Category("FTP"), PasswordPropertyText(true)]
+        [Category("FTP"), PasswordPropertyText(true), JsonEncrypt]
         public string Password { get; set; }
 
         [Category("FTP"), Description("Set true for active or false for passive"), DefaultValue(false)]
@@ -131,7 +131,7 @@ namespace ShareX.UploadersLib
         [Editor(typeof(KeyFileNameEditor), typeof(UITypeEditor))]
         public string Keypath { get; set; }
 
-        [Category("SFTP"), Description("OpenSSH key passphrase"), PasswordPropertyText(true)]
+        [Category("SFTP"), Description("OpenSSH key passphrase"), PasswordPropertyText(true), JsonEncrypt]
         public string Passphrase { get; set; }
 
         public FTPAccount()

@@ -138,4 +138,22 @@
   <data name="HigherQualitySize" xml:space="preserve">
     <value>Qualité/taille plus haute</value>
   </data>
+  <data name="AlignmentTop" xml:space="preserve">
+    <value>Haut</value>
+  </data>
+  <data name="AlignmentHorizontalCenter" xml:space="preserve">
+    <value>Centre</value>
+  </data>
+  <data name="AlignmentBottom" xml:space="preserve">
+    <value>Bas</value>
+  </data>
+  <data name="AlignmentLeft" xml:space="preserve">
+    <value>Gauche</value>
+  </data>
+  <data name="AlignmentVerticalCenter" xml:space="preserve">
+    <value>Centre</value>
+  </data>
+  <data name="AlignmentRight" xml:space="preserve">
+    <value>Droite</value>
+  </data>
 </root>

@@ -30,6 +30,7 @@ namespace ShareX.UploadersLib
     public class CheveretoUploader
     {
         public string UploadURL { get; set; }
+        [JsonEncrypt]
         public string APIKey { get; set; }
 
         public CheveretoUploader()

@@ -1,4 +1,4 @@
-; http://support.microsoft.com/kb/239114
+; https://support.microsoft.com/kb/239114
 
 [CustomMessages]
 jet4sp8_title=Jet 4

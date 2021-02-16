@@ -60,7 +60,8 @@ namespace ShareX.UploadersLib.FileUploaders
             {
                 UploadMethod = config.GfycatAccountType,
                 Private = !config.GfycatIsPublic,
-                KeepAudio = config.GfycatKeepAudio
+                KeepAudio = config.GfycatKeepAudio,
+                Title = config.GfycatTitle
             };
         }
 
@@ -76,6 +77,7 @@ namespace ShareX.UploadersLib.FileUploaders
         public bool IgnoreExisting { get; set; } = true;
         public bool Private { get; set; } = true;
         public bool KeepAudio { get; set; } = true;
+        public string Title { get; set; }
 
         private const string URL_AUTHORIZE = "https://gfycat.com/oauth/authorize";
         private const string URL_UPLOAD = "https://filedrop.gfycat.com";
@@ -270,6 +272,7 @@ namespace ShareX.UploadersLib.FileUploaders
             args.Add("noResize", NoResize);
             args.Add("noMd5", IgnoreExisting);
             args.Add("keepAudio", KeepAudio);
+            if (!string.IsNullOrEmpty(Title)) args.Add("title", Title);
 
             string json = JsonConvert.SerializeObject(args);
 

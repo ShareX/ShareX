@@ -79,7 +79,7 @@ namespace ShareX.ImageEffectsLib
 
             DrawText text = new DrawText();
             text.Offset = new Point(0, 0);
-            text.UseCustomGradient = true;
+            text.UseGradient = true;
             preset.Effects.Add(text);
 
             return preset;

@@ -24,7 +24,6 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
-using ShareX.ImageEffectsLib;
 using ShareX.Properties;
 using ShareX.ScreenCaptureLib;
 using ShareX.UploadersLib;
@@ -338,7 +337,6 @@ namespace ShareX
             CodeMenu.Create<CodeMenuEntryFilename>(txtNameFormatPatternActiveWindow, CodeMenuEntryFilename.n);
             cbRegionCaptureUseWindowPattern.Checked = TaskSettings.UploadSettings.RegionCaptureUseWindowPattern;
             cbFileUploadUseNamePattern.Checked = TaskSettings.UploadSettings.FileUploadUseNamePattern;
-            cbFileUploadReplaceProblematicCharacters.Checked = TaskSettings.UploadSettings.FileUploadReplaceProblematicCharacters;
             nudAutoIncrementNumber.Value = Program.Settings.NameParserAutoIncrementNumber;
             UpdateNameFormatPreviews();
             cbNameFormatCustomTimeZone.Checked = cbNameFormatTimeZone.Enabled = TaskSettings.UploadSettings.UseCustomTimeZone;
@@ -351,6 +349,12 @@ namespace ShareX
                     break;
                 }
             }
+            cbFileUploadReplaceProblematicCharacters.Checked = TaskSettings.UploadSettings.FileUploadReplaceProblematicCharacters;
+            cbURLRegexReplace.Checked = TaskSettings.UploadSettings.URLRegexReplace;
+            lblURLRegexReplacePattern.Enabled = txtURLRegexReplacePattern.Enabled =
+                lblURLRegexReplaceReplacement.Enabled = txtURLRegexReplaceReplacement.Enabled = TaskSettings.UploadSettings.URLRegexReplace;
+            txtURLRegexReplacePattern.Text = TaskSettings.UploadSettings.URLRegexReplacePattern;
+            txtURLRegexReplaceReplacement.Text = TaskSettings.UploadSettings.URLRegexReplaceReplacement;
 
             #endregion File naming
 
@@ -407,6 +411,12 @@ namespace ShareX
 
             CodeMenu.Create<CodeMenuEntryPixelInfo>(txtToolsScreenColorPickerFormat);
             txtToolsScreenColorPickerFormat.Text = TaskSettings.ToolsSettings.ScreenColorPickerFormat;
+
+            CodeMenu.Create<CodeMenuEntryPixelInfo>(txtToolsScreenColorPickerFormatCtrl);
+            txtToolsScreenColorPickerFormatCtrl.Text = TaskSettings.ToolsSettings.ScreenColorPickerFormatCtrl;
+
+            CodeMenu.Create<CodeMenuEntryPixelInfo>(txtToolsScreenColorPickerInfoText);
+            txtToolsScreenColorPickerInfoText.Text = TaskSettings.ToolsSettings.ScreenColorPickerInfoText;
 
             #endregion Tools
 
@@ -647,10 +657,10 @@ namespace ShareX
             btnTask.Text = string.Format(Resources.TaskSettingsForm_UpdateUploaderMenuNames_Task___0_, TaskSettings.Job.GetLocalizedDescription());
 
             btnAfterCapture.Text = string.Format(Resources.TaskSettingsForm_UpdateUploaderMenuNames_After_capture___0_,
-                string.Join(", ", TaskSettings.AfterCaptureJob.GetFlags<AfterCaptureTasks>().Select(x => x.GetLocalizedDescription())));
+                string.Join(", ", TaskSettings.AfterCaptureJob.GetFlags().Select(x => x.GetLocalizedDescription())));
 
             btnAfterUpload.Text = string.Format(Resources.TaskSettingsForm_UpdateUploaderMenuNames_After_upload___0_,
-                string.Join(", ", TaskSettings.AfterUploadJob.GetFlags<AfterUploadTasks>().Select(x => x.GetLocalizedDescription())));
+                string.Join(", ", TaskSettings.AfterUploadJob.GetFlags().Select(x => x.GetLocalizedDescription())));
 
             string imageUploader = TaskSettings.ImageDestination == ImageDestination.FileUploader ?
                 TaskSettings.ImageFileDestination.GetLocalizedDescription() : TaskSettings.ImageDestination.GetLocalizedDescription();
@@ -813,12 +823,7 @@ namespace ShareX
 
         private void btnImageEffects_Click(object sender, EventArgs e)
         {
-            using (ImageEffectsForm imageEffectsForm = new ImageEffectsForm(null, TaskSettings.ImageSettings.ImageEffectPresets,
-                TaskSettings.ImageSettings.SelectedImageEffectPreset))
-            {
-                imageEffectsForm.ShowDialog();
-                TaskSettings.ImageSettings.SelectedImageEffectPreset = imageEffectsForm.SelectedPresetIndex;
-            }
+            TaskHelpers.OpenImageEffectsSingleton(TaskSettings);
         }
 
         private void nudThumbnailWidth_ValueChanged(object sender, EventArgs e)
@@ -1229,11 +1234,6 @@ namespace ShareX
             TaskSettings.UploadSettings.FileUploadUseNamePattern = cbFileUploadUseNamePattern.Checked;
         }
 
-        private void cbFileUploadReplaceProblematicCharacters_CheckedChanged(object sender, EventArgs e)
-        {
-            TaskSettings.UploadSettings.FileUploadReplaceProblematicCharacters = cbFileUploadReplaceProblematicCharacters.Checked;
-        }
-
         private void btnAutoIncrementNumber_Click(object sender, EventArgs e)
         {
             Program.Settings.NameParserAutoIncrementNumber = (int)nudAutoIncrementNumber.Value;
@@ -1257,6 +1257,28 @@ namespace ShareX
             }
 
             UpdateNameFormatPreviews();
+        }
+
+        private void cbFileUploadReplaceProblematicCharacters_CheckedChanged(object sender, EventArgs e)
+        {
+            TaskSettings.UploadSettings.FileUploadReplaceProblematicCharacters = cbFileUploadReplaceProblematicCharacters.Checked;
+        }
+
+        private void cbURLRegexReplace_CheckedChanged(object sender, EventArgs e)
+        {
+            TaskSettings.UploadSettings.URLRegexReplace = cbURLRegexReplace.Checked;
+            lblURLRegexReplacePattern.Enabled = txtURLRegexReplacePattern.Enabled =
+                lblURLRegexReplaceReplacement.Enabled = txtURLRegexReplaceReplacement.Enabled = TaskSettings.UploadSettings.URLRegexReplace;
+        }
+
+        private void txtURLRegexReplacePattern_TextChanged(object sender, EventArgs e)
+        {
+            TaskSettings.UploadSettings.URLRegexReplacePattern = txtURLRegexReplacePattern.Text;
+        }
+
+        private void txtURLRegexReplaceReplacement_TextChanged(object sender, EventArgs e)
+        {
+            TaskSettings.UploadSettings.URLRegexReplaceReplacement = txtURLRegexReplaceReplacement.Text;
         }
 
         private void cbClipboardUploadContents_CheckedChanged(object sender, EventArgs e)
@@ -1483,7 +1505,7 @@ namespace ShareX
 
         private void WatchFolderAdd(WatchFolderSettings watchFolderSetting)
         {
-            if (watchFolderSetting != null)
+            if (Program.WatchFolderManager != null && watchFolderSetting != null)
             {
                 Program.WatchFolderManager.AddWatchFolder(watchFolderSetting, TaskSettings);
 
@@ -1574,6 +1596,16 @@ namespace ShareX
         private void txtToolsScreenColorPickerFormat_TextChanged(object sender, EventArgs e)
         {
             TaskSettings.ToolsSettings.ScreenColorPickerFormat = txtToolsScreenColorPickerFormat.Text;
+        }
+
+        private void txtToolsScreenColorPickerFormatCtrl_TextChanged(object sender, EventArgs e)
+        {
+            TaskSettings.ToolsSettings.ScreenColorPickerFormatCtrl = txtToolsScreenColorPickerFormatCtrl.Text;
+        }
+
+        private void txtToolsScreenColorPickerInfoText_TextChanged(object sender, EventArgs e)
+        {
+            TaskSettings.ToolsSettings.ScreenColorPickerInfoText = txtToolsScreenColorPickerInfoText.Text;
         }
 
         #endregion Tools

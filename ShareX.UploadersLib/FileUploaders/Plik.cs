@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using Newtonsoft.Json;
+using ShareX.HelpersLib;
 using ShareX.UploadersLib.Properties;
 using System;
 using System.Collections.Generic;
@@ -101,7 +102,7 @@ namespace ShareX.UploadersLib.FileUploaders
             string metaDataResp = SendRequest(HttpMethod.POST, Settings.URL + "/upload", JsonConvert.SerializeObject(metaDataReq), headers: requestHeaders);
             UploadMetadataResponse metaData = JsonConvert.DeserializeObject<UploadMetadataResponse>(metaDataResp);
             requestHeaders["x-uploadtoken"] = metaData.uploadToken;
-            string url = $"{Settings.URL}/file/{metaData.id}/{metaData.files.First().Value.id.ToString()}/{fileName}";
+            string url = $"{Settings.URL}/file/{metaData.id}/{metaData.files.First().Value.id}/{fileName}";
             UploadResult FileDatReq = SendRequestFile(url, stream, fileName, "file", headers: requestHeaders);
 
             return ConvertResult(metaData, FileDatReq);
@@ -112,7 +113,7 @@ namespace ShareX.UploadersLib.FileUploaders
             UploadResult result = new UploadResult(fileDataReq.Response);
             UploadMetadataResponse fileData = JsonConvert.DeserializeObject<UploadMetadataResponse>(fileDataReq.Response);
             UploadMetadataResponseFile actFile = metaData.files.First().Value;
-            result.URL = $"{Settings.URL}/file/{metaData.id}/{actFile.id.ToString()}/{actFile.fileName}";
+            result.URL = $"{Settings.URL}/file/{metaData.id}/{actFile.id}/{URLHelpers.URLEncode(actFile.fileName)}";
             return result;
         }
 

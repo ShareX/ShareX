@@ -36,14 +36,6 @@ namespace ShareX.HelpersLib
         URL
     }
 
-    public enum EClipboardContentType
-    {
-        Default,
-        Image,
-        Text,
-        Files
-    }
-
     public enum PNGBitDepth // Localized
     {
         Default,
@@ -187,5 +179,28 @@ namespace ShareX.HelpersLib
         LeftOrTop,
         Center,
         RightOrBottom
+    }
+
+    public enum ImageInterpolationMode
+    {
+        HighQualityBicubic,
+        Bicubic,
+        HighQualityBilinear,
+        Bilinear,
+        NearestNeighbor
+    }
+
+    public enum ArrowHeadDirection // Localized
+    {
+        End,
+        Start,
+        Both
+    }
+
+    public enum FFmpegArchitecture
+    {
+        win64,
+        win32,
+        macos64
     }
 }

@@ -58,14 +58,23 @@ namespace ShareX.UploadersLib
             ServicePointManager.DefaultConnectionLimit = 25;
             ServicePointManager.Expect100Continue = false;
             ServicePointManager.UseNagleAlgorithm = false;
+
+            if (Helpers.IsWindows7())
+            {
+                try
+                {
+                    ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls12;
+                }
+                catch (NotSupportedException)
+                {
+                    DebugHelper.WriteLine("Unable to configure TLS 1.2 as the default security protocol.");
+                }
+            }
         }
 
         protected void OnProgressChanged(ProgressManager progress)
         {
-            if (ProgressChanged != null)
-            {
-                ProgressChanged(progress);
-            }
+            ProgressChanged?.Invoke(progress);
         }
 
         protected void OnEarlyURLCopyRequested(string url)
@@ -219,7 +228,8 @@ namespace ShareX.UploadersLib
 
                 using (HttpWebResponse response = (HttpWebResponse)request.GetResponse())
                 {
-                    result.Response = ProcessWebResponseText(response);
+                    result.ResponseInfo = ProcessWebResponse(response);
+                    result.Response = result.ResponseInfo?.ResponseText;
                 }
 
                 result.IsSuccess = true;
@@ -286,7 +296,8 @@ namespace ShareX.UploadersLib
 
                 using (HttpWebResponse response = (HttpWebResponse)request.GetResponse())
                 {
-                    result.Response = ProcessWebResponseText(response);
+                    result.ResponseInfo = ProcessWebResponse(response);
+                    result.Response = result.ResponseInfo?.ResponseText;
                 }
 
                 result.IsSuccess = true;

@@ -126,9 +126,6 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Verificación hash</value>
   </data>
-  <data name="lblFile.Text" xml:space="preserve">
-    <value>Ruta de archivo:</value>
-  </data>
   <data name="lblResult.Text" xml:space="preserve">
     <value>Resultado:</value>
   </data>

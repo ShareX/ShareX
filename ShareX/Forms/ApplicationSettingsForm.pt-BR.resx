@@ -288,9 +288,6 @@
   <data name="btnImport.Text" xml:space="preserve">
     <value>Importar...</value>
   </data>
-  <data name="tpExportImport.Text" xml:space="preserve">
-    <value>Exportar / Importar</value>
-  </data>
   <data name="cbHistoryCheckURL.Text" xml:space="preserve">
     <value>Salvar somente se o URL não estiver vazio</value>
   </data>

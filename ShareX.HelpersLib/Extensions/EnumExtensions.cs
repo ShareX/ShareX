@@ -89,7 +89,7 @@ namespace ShareX.HelpersLib
             return Array.IndexOf(values, value);
         }
 
-        public static IEnumerable<T> GetFlags<T>(this Enum value)
+        public static IEnumerable<T> GetFlags<T>(this T value) where T : Enum
         {
             return Helpers.GetEnums<T>().Where(x => Convert.ToUInt64(x) != 0 && value.HasFlag(x));
         }

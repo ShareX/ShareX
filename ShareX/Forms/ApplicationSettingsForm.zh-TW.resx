@@ -284,9 +284,6 @@
   <data name="btnImport.Text" xml:space="preserve">
     <value>匯入設定...</value>
   </data>
-  <data name="tpExportImport.Text" xml:space="preserve">
-    <value>匯出/匯入</value>
-  </data>
   <data name="cbHistorySaveTasks.Text" xml:space="preserve">
     <value>儲存任務歷史</value>
   </data>
@@ -346,15 +343,6 @@
   </data>
   <data name="btnThemeAdd.Text" xml:space="preserve">
     <value>新增</value>
-  </data>
-  <data name="cbExperimentalDarkTheme.Text" xml:space="preserve">
-    <value>實驗性自訂主題</value>
-  </data>
-  <data name="btnApplyTheme.Text" xml:space="preserve">
-    <value>套用主題</value>
-  </data>
-  <data name="cbUseDarkTheme.Text" xml:space="preserve">
-    <value>使用自訂主題</value>
   </data>
   <data name="tpTheme.Text" xml:space="preserve">
     <value>主題</value>

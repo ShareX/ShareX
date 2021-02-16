@@ -174,21 +174,6 @@
   <data name="HistoryItemManager_InitializeComponent_URL" xml:space="preserve">
     <value>URL</value>
   </data>
-  <data name="HistoryItemManager_UpdateTexts_URLs___0__" xml:space="preserve">
-    <value>URLs ({0})</value>
-  </data>
-  <data name="ObjectListView_ObjectListView_Copy_name" xml:space="preserve">
-    <value>Copiar el nombre</value>
-  </data>
-  <data name="ObjectListView_ObjectListView_Copy_value" xml:space="preserve">
-    <value>Copiar el valor</value>
-  </data>
-  <data name="ObjectListView_ObjectListView_Name" xml:space="preserve">
-    <value>Nombre</value>
-  </data>
-  <data name="ObjectListView_ObjectListView_Value" xml:space="preserve">
-    <value>Valor</value>
-  </data>
   <data name="HistoryItemManager_InitializeComponent_Thumbnail_URL" xml:space="preserve">
     <value>URL miniatura</value>
   </data>
@@ -200,9 +185,6 @@
   </data>
   <data name="HistoryItemManager_InitializeComponent_Deletion_URL" xml:space="preserve">
     <value>Supresión URL</value>
-  </data>
-  <data name="HistoryItemManager_UpdateTexts_HTML_link___0__" xml:space="preserve">
-    <value>Enlace HTML ({0})</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_HTML_linked_image" xml:space="preserve">
     <value>Imagen enlazada HTML</value>

@@ -117,18 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="ObjectListView_ObjectListView_Name" xml:space="preserve">
-    <value>Nome</value>
-  </data>
-  <data name="ObjectListView_ObjectListView_Value" xml:space="preserve">
-    <value>Valore</value>
-  </data>
-  <data name="ObjectListView_ObjectListView_Copy_name" xml:space="preserve">
-    <value>Copia Nome</value>
-  </data>
-  <data name="ObjectListView_ObjectListView_Copy_value" xml:space="preserve">
-    <value>Copia Valore</value>
-  </data>
   <data name="HistoryItemManager_InitializeComponent_Open" xml:space="preserve">
     <value>Apri</value>
   </data>
@@ -195,20 +183,11 @@
   <data name="HistoryItemManager_InitializeComponent_More_info" xml:space="preserve">
     <value>Altre Informazioni</value>
   </data>
-  <data name="HistoryItemManager_UpdateTexts_URLs___0__" xml:space="preserve">
-    <value>Url ({0})</value>
-  </data>
-  <data name="HistoryItemManager_UpdateTexts_HTML_link___0__" xml:space="preserve">
-    <value>Collegamento HTML ({0})</value>
-  </data>
   <data name="HistoryForm_UpdateItemCount_Total___0_" xml:space="preserve">
     <value>Totale: {0}</value>
   </data>
   <data name="HistoryForm_UpdateItemCount___Filtered___0_" xml:space="preserve">
     <value>Filtrati: {0}</value>
-  </data>
-  <data name="HistoryManager_GetHistoryItems_Error_occured_while_reading_XML_file___0_" xml:space="preserve">
-    <value>Si è verificato un errore leggenfo il file XML: {0}</value>
   </data>
   <data name="HistoryManager_GetHistoryItems_Error" xml:space="preserve">
     <value>Errore</value>

@@ -97,7 +97,7 @@
             // HotkeySettingsForm
             // 
             resources.ApplyResources(this, "$this");
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.Controls.Add(this.btnMoveDown);
             this.Controls.Add(this.btnMoveUp);
@@ -108,6 +108,7 @@
             this.Controls.Add(this.btnRemove);
             this.Controls.Add(this.btnAdd);
             this.Name = "HotkeySettingsForm";
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.HotkeySettingsForm_FormClosed);
             this.ResumeLayout(false);
 

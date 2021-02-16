@@ -58,18 +58,18 @@ namespace ShareX.ScreenCaptureLib
             {
                 if (IsBorderVisible)
                 {
-                    DrawRectangle(g, ShadowColor, BorderSize, Color.Transparent, Rectangle.LocationOffset(ShadowOffset), CornerRadius);
+                    DrawRectangle(g, ShadowColor, BorderSize, BorderStyle, Color.Transparent, Rectangle.LocationOffset(ShadowOffset), CornerRadius);
                 }
                 else if (FillColor.A == 255)
                 {
-                    DrawRectangle(g, Color.Transparent, 0, ShadowColor, Rectangle.LocationOffset(ShadowOffset), CornerRadius);
+                    DrawRectangle(g, Color.Transparent, 0, BorderStyle, ShadowColor, Rectangle.LocationOffset(ShadowOffset), CornerRadius);
                 }
             }
 
-            DrawRectangle(g, BorderColor, BorderSize, FillColor, Rectangle, CornerRadius);
+            DrawRectangle(g, BorderColor, BorderSize, BorderStyle, FillColor, Rectangle, CornerRadius);
         }
 
-        protected void DrawRectangle(Graphics g, Color borderColor, int borderSize, Color fillColor, Rectangle rect, int cornerRadius)
+        protected void DrawRectangle(Graphics g, Color borderColor, int borderSize, BorderStyle borderStyle, Color fillColor, Rectangle rect, int cornerRadius)
         {
             Brush brush = null;
             Pen pen = null;
@@ -84,6 +84,7 @@ namespace ShareX.ScreenCaptureLib
                 if (borderSize > 0 && borderColor.A > 0)
                 {
                     pen = new Pen(borderColor, borderSize);
+                    pen.DashStyle = (DashStyle)borderStyle;
                 }
 
                 if (cornerRadius > 0)

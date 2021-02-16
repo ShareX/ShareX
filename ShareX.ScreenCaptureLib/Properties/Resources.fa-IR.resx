@@ -183,9 +183,6 @@
   <data name="RegionCaptureForm_InitializeComponent_ImageEditor" xml:space="preserve">
     <value>ویرایشگر عکس</value>
   </data>
-  <data name="FFmpegHelper_Record_FFmpeg_error" xml:space="preserve">
-    <value>خطای FFmpeg</value>
-  </data>
   <data name="ShapeManager_CreateToolbar_BringForward" xml:space="preserve">
     <value>آوردن به جلو</value>
   </data>

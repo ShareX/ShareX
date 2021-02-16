@@ -126,9 +126,6 @@
   <data name="btnStartHashCheck.Text" xml:space="preserve">
     <value>Indítás</value>
   </data>
-  <data name="lblFile.Text" xml:space="preserve">
-    <value>Fájl elérési útvonal:</value>
-  </data>
   <data name="lblHashType.Text" xml:space="preserve">
     <value>Hash típusa:</value>
   </data>

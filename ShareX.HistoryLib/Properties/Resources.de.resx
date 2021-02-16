@@ -189,29 +189,8 @@
   <data name="HistoryItemManager_InitializeComponent_URL" xml:space="preserve">
     <value>URL</value>
   </data>
-  <data name="HistoryItemManager_UpdateTexts_HTML_link___0__" xml:space="preserve">
-    <value>HTML Link ({0})</value>
-  </data>
-  <data name="HistoryItemManager_UpdateTexts_URLs___0__" xml:space="preserve">
-    <value>URLs ({0})</value>
-  </data>
-  <data name="ObjectListView_ObjectListView_Copy_name" xml:space="preserve">
-    <value>Namen kopieren</value>
-  </data>
-  <data name="ObjectListView_ObjectListView_Copy_value" xml:space="preserve">
-    <value>Wert kopieren</value>
-  </data>
-  <data name="ObjectListView_ObjectListView_Name" xml:space="preserve">
-    <value>Name</value>
-  </data>
-  <data name="ObjectListView_ObjectListView_Value" xml:space="preserve">
-    <value>Wert</value>
-  </data>
   <data name="HistoryManager_GetHistoryItems_Error" xml:space="preserve">
     <value>Fehler</value>
-  </data>
-  <data name="HistoryManager_GetHistoryItems_Error_occured_while_reading_XML_file___0_" xml:space="preserve">
-    <value>Fehler beim Lesen der XML Datei: {0}</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_Markdown__link" xml:space="preserve">
     <value>Markdown-Link</value>

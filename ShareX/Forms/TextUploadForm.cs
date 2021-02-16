@@ -38,7 +38,7 @@ namespace ShareX
             InitializeComponent();
             ShareXResources.ApplyTheme(this);
 
-            if (string.IsNullOrEmpty(content) && Clipboard.ContainsText())
+            if (string.IsNullOrEmpty(content) && ClipboardHelpers.ContainsText())
             {
                 content = ClipboardHelpers.GetText();
             }

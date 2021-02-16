@@ -39,8 +39,8 @@ namespace ShareX.ImageEffectsLib
         [DefaultValue(typeof(Color), "Black"), Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
         public Color DarkColor { get; set; }
 
-        [DefaultValue(130)]
-        public int Threshold { get; set; }
+        [DefaultValue(10)]
+        public int PaletteSize { get; set; }
 
         public SelectiveColor()
         {
@@ -49,7 +49,7 @@ namespace ShareX.ImageEffectsLib
 
         public override Bitmap Apply(Bitmap bmp)
         {
-            ImageHelpers.SelectiveColor(bmp, LightColor, DarkColor, Threshold);
+            ImageHelpers.SelectiveColor(bmp, LightColor, DarkColor, MathHelpers.Clamp(PaletteSize, 2, 100));
             return bmp;
         }
     }

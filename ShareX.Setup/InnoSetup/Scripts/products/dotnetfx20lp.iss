@@ -1,4 +1,4 @@
-; http://www.microsoft.com/downloads/details.aspx?familyid=92E0E1CE-8693-4480-84FA-7D85EEF59016
+; https://www.microsoft.com/downloads/details.aspx?familyid=92E0E1CE-8693-4480-84FA-7D85EEF59016
 
 [CustomMessages]
 de.dotnetfx20lp_title=.NET Framework 2.0 Sprachpaket: Deutsch

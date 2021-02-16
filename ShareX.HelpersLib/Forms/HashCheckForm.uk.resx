@@ -132,9 +132,6 @@
   <data name="btnStartHashCheck.Text" xml:space="preserve">
     <value>Перевірити</value>
   </data>
-  <data name="lblFile.Text" xml:space="preserve">
-    <value>Шлях до файла:</value>
-  </data>
   <data name="tpFileHashCheck.Text" xml:space="preserve">
     <value>Перевірка хешу файла</value>
   </data>

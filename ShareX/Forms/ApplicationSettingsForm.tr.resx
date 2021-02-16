@@ -177,9 +177,6 @@
   <data name="btnImport.Text" xml:space="preserve">
     <value>İçeri aktar...</value>
   </data>
-  <data name="tpExportImport.Text" xml:space="preserve">
-    <value>Dışarı / içeri aktar</value>
-  </data>
   <data name="lblUploadLimit.Text" xml:space="preserve">
     <value>Aynı anda yükleme limiti:</value>
   </data>

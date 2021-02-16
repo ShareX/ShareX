@@ -32,7 +32,7 @@ namespace ShareX.HelpersLib
     public class GradientStop
     {
         [DefaultValue(typeof(Color), "Black"), Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
-        public Color Color { get; set; }
+        public Color Color { get; set; } = Color.Black;
 
         private float location;
 
@@ -51,7 +51,6 @@ namespace ShareX.HelpersLib
 
         public GradientStop()
         {
-            this.ApplyDefaultPropertyValues();
         }
 
         public GradientStop(Color color, float offset)

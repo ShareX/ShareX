@@ -181,6 +181,8 @@ namespace ShareX.HelpersLib
             {
                 lblImageSize.BackColor = ShareXResources.Theme.BackgroundColor;
                 lblImageSize.ForeColor = ShareXResources.Theme.TextColor;
+
+                ShareXResources.ApplyCustomThemeToContextMenuStrip(cmsMenu);
             }
             else
             {

@@ -25,6 +25,7 @@
 
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using ShareX.HelpersLib;
 using ShareX.UploadersLib.Properties;
 using System.Collections.Generic;
 using System.Drawing;
@@ -236,6 +237,7 @@ namespace ShareX.UploadersLib.ImageUploaders
     public class ImageShackOptions
     {
         public string Username { get; set; }
+        [JsonEncrypt]
         public string Password { get; set; }
         public bool IsPublic { get; set; }
         public string Auth_token { get; set; }

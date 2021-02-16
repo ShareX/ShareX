@@ -135,9 +135,6 @@
   <data name="btnBoxRefreshFolders.Text" xml:space="preserve">
     <value>Actualizar lista de carpetas</value>
   </data>
-  <data name="btnCheveretoTestAll.Text" xml:space="preserve">
-    <value>Probar todos</value>
-  </data>
   <data name="btnSFTPKeyLocationBrowse.Text" xml:space="preserve">
     <value>...</value>
   </data>
@@ -258,9 +255,6 @@
   <data name="lblEmailFrom.Text" xml:space="preserve">
     <value>Correo electrónico:</value>
   </data>
-  <data name="lblTinyPicUsername.Text" xml:space="preserve">
-    <value>Correo electrónico:</value>
-  </data>
   <data name="tpFileUploaders.Text" xml:space="preserve">
     <value>Servidores de archivos:</value>
   </data>
@@ -318,9 +312,6 @@
   <data name="btnMegaLogin.Text" xml:space="preserve">
     <value>Acceder</value>
   </data>
-  <data name="btnTinyPicLogin.Text" xml:space="preserve">
-    <value>Acceder</value>
-  </data>
   <data name="gbPlikLoginCredentials.Text" xml:space="preserve">
     <value>Datos de acceso</value>
   </data>
@@ -367,9 +358,6 @@
     <value>Contraseña:</value>
   </data>
   <data name="lblImageShackPassword.Text" xml:space="preserve">
-    <value>Contraseña:</value>
-  </data>
-  <data name="lblTinyPicPassword.Text" xml:space="preserve">
     <value>Contraseña:</value>
   </data>
   <data name="lblGe_ttPassword.Text" xml:space="preserve">
@@ -477,9 +465,6 @@
   <data name="btnFTPTest.Text" xml:space="preserve">
     <value>Probar</value>
   </data>
-  <data name="btnPomfTest.Text" xml:space="preserve">
-    <value>Probar todos</value>
-  </data>
   <data name="cbAmazonS3StripExtensionText.Text" xml:space="preserve">
     <value>Texto</value>
   </data>
@@ -518,12 +503,6 @@
   </data>
   <data name="lblCheveretoUploadURL.Text" xml:space="preserve">
     <value>Enlace de subida:</value>
-  </data>
-  <data name="lblCheveretoUploaders.Text" xml:space="preserve">
-    <value>Servidores:</value>
-  </data>
-  <data name="lblPomfUploaders.Text" xml:space="preserve">
-    <value>Servidores:</value>
   </data>
   <data name="lblFTPURLPath.Text" xml:space="preserve">
     <value>Enlace:</value>
@@ -656,9 +635,6 @@
   </data>
   <data name="btnSulGetAPIKey.Text" xml:space="preserve">
     <value>Obtener clave de API...</value>
-  </data>
-  <data name="btnTinyPicOpenMyImages.Text" xml:space="preserve">
-    <value>Abrir mi página de imágenes...</value>
   </data>
   <data name="cbAmazonS3StripExtensionImage.Text" xml:space="preserve">
     <value>Imagen</value>
@@ -1180,9 +1156,6 @@ Por ejemplo, si el bucket se llama bucket.example.com, la URL será http://bucke
   </data>
   <data name="tpSul.Text" xml:space="preserve">
     <value>s-ul</value>
-  </data>
-  <data name="tpTinyPic.Text" xml:space="preserve">
-    <value>TinyPic</value>
   </data>
   <data name="tpTwitter.Text" xml:space="preserve">
     <value>Twitter</value>

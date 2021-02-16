@@ -234,9 +234,6 @@
   <data name="btnImport.Text" xml:space="preserve">
     <value>Impor pengaturan...</value>
   </data>
-  <data name="tpExportImport.Text" xml:space="preserve">
-    <value>Ekspor / Impor</value>
-  </data>
   <data name="lblUploadLimitHint.Text" xml:space="preserve">
     <value>0 - 25 (0 nonaktif)</value>
   </data>

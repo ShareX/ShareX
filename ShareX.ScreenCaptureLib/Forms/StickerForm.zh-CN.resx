@@ -132,4 +132,7 @@
   <data name="tsbEditStickers.Text" xml:space="preserve">
     <value>编辑贴纸包</value>
   </data>
+  <data name="tsnudSize.Text" xml:space="preserve">
+    <value>64</value>
+  </data>
 </root>

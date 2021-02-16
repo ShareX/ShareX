@@ -67,5 +67,6 @@ namespace ShareX.ScreenCaptureLib
         public bool Gradient { get; set; } = false;
         public Color Color2 { get; set; } = Color.FromArgb(240, 240, 240);
         public LinearGradientMode GradientMode { get; set; } = LinearGradientMode.Vertical;
+        public bool EnterKeyNewLine { get; set; } = false;
     }
 }

@@ -156,6 +156,11 @@ namespace ShareX
             txtCustomScreenshotsPath.Text = Program.Settings.CustomScreenshotsPath;
             txtSaveImageSubFolderPattern.Text = Program.Settings.SaveImageSubFolderPattern;
 
+            // Settings
+            cbAutomaticallyCleanupBackupFiles.Checked = Program.Settings.AutoCleanupBackupFiles;
+            cbAutomaticallyCleanupLogFiles.Checked = Program.Settings.AutoCleanupLogFiles;
+            nudCleanupKeepFileCount.SetValue(Program.Settings.CleanupKeepFileCount);
+
             // Proxy
             cbProxyMethod.SelectedIndex = (int)Program.Settings.ProxySettings.ProxyMethod;
             txtProxyUsername.Text = Program.Settings.ProxySettings.Username;
@@ -481,8 +486,7 @@ namespace ShareX
 
         private void BtnThemeAdd_Click(object sender, EventArgs e)
         {
-            ShareXTheme theme = ShareXTheme.GetDarkTheme();
-            AddTheme(theme);
+            AddTheme(ShareXTheme.DarkTheme);
         }
 
         private void BtnThemeRemove_Click(object sender, EventArgs e)
@@ -519,10 +523,9 @@ namespace ShareX
 
         private void BtnThemeReset_Click(object sender, EventArgs e)
         {
-            // TODO: Translate
-            if (MessageBox.Show("Would you like to reset themes?", "ShareX", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+            if (MessageBox.Show(Resources.WouldYouLikeToResetThemes, "ShareX - " + Resources.Confirmation, MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
             {
-                Program.Settings.Themes = ShareXTheme.GetPresets();
+                Program.Settings.Themes = ShareXTheme.GetDefaultThemes();
                 Program.Settings.SelectedTheme = 0;
 
                 cbThemes.Items.Clear();
@@ -686,7 +689,7 @@ namespace ShareX
 
         #endregion Paths
 
-        #region Export / Import
+        #region Settings
 
         private void cbExportSettings_CheckedChanged(object sender, EventArgs e)
         {
@@ -784,7 +787,8 @@ namespace ShareX
 
         private void btnResetSettings_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show(Resources.ApplicationSettingsForm_btnResetSettings_Click_WouldYouLikeToResetShareXSettings, "ShareX", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+            if (MessageBox.Show(Resources.ApplicationSettingsForm_btnResetSettings_Click_WouldYouLikeToResetShareXSettings, "ShareX - " + Resources.Confirmation,
+                MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
             {
                 SettingManager.ResetSettings();
                 SettingManager.SaveAllSettings();
@@ -799,7 +803,22 @@ namespace ShareX
             }
         }
 
-        #endregion Export / Import
+        private void cbAutomaticallyCleanupBackupFiles_CheckedChanged(object sender, EventArgs e)
+        {
+            Program.Settings.AutoCleanupBackupFiles = cbAutomaticallyCleanupBackupFiles.Checked;
+        }
+
+        private void cbAutomaticallyCleanupLogFiles_CheckedChanged(object sender, EventArgs e)
+        {
+            Program.Settings.AutoCleanupLogFiles = cbAutomaticallyCleanupLogFiles.Checked;
+        }
+
+        private void nudCleanupKeepFileCount_ValueChanged(object sender, EventArgs e)
+        {
+            Program.Settings.CleanupKeepFileCount = (int)nudCleanupKeepFileCount.Value;
+        }
+
+        #endregion Settings
 
         #region Proxy
 

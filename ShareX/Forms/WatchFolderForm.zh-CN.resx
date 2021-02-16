@@ -138,4 +138,10 @@
   <data name="lblFolderPath.Text" xml:space="preserve">
     <value>文件夹路径：</value>
   </data>
+  <data name="btnPathBrowse.Text" xml:space="preserve">
+    <value>...</value>
+  </data>
+  <data name="chkMoveToScreenshotsDir.Text" xml:space="preserve">
+    <value>移动文件到屏幕截图文件夹</value>
+  </data>
 </root>

@@ -56,7 +56,7 @@ namespace ShareX.UploadersLib.TextUploaders
         public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpTeknik;
     }
 
-    public sealed class TeknikPaster : TextUploader, IOAuth2Basic
+    public sealed class TeknikPaster : TextUploader, IOAuth2
     {
         public OAuth2Info AuthInfo { get; set; }
         public string APIUrl { get; set; }
@@ -79,6 +79,16 @@ namespace ShareX.UploadersLib.TextUploaders
         public string GetAuthorizationURL()
         {
             return teknik.GetAuthorizationURL();
+        }
+
+        public bool RefreshAccessToken()
+        {
+            return teknik.RefreshAccessToken();
+        }
+
+        public bool CheckAuthorization()
+        {
+            return teknik.CheckAuthorization();
         }
 
         public override UploadResult UploadText(string text, string fileName)

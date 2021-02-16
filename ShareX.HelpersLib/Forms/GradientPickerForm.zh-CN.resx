@@ -147,4 +147,16 @@
   <data name="lblPreview.Text" xml:space="preserve">
     <value>预览：</value>
   </data>
+  <data name="btnClear.Text" xml:space="preserve">
+    <value>清除</value>
+  </data>
+  <data name="btnReverse.Text" xml:space="preserve">
+    <value>反转</value>
+  </data>
+  <data name="chGradient.Text" xml:space="preserve">
+    <value>Gradient</value>
+  </data>
+  <data name="lblPresets.Text" xml:space="preserve">
+    <value>预设:</value>
+  </data>
 </root>

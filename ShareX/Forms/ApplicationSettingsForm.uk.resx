@@ -171,15 +171,6 @@
   <data name="btnThemeAdd.Text" xml:space="preserve">
     <value>Додати</value>
   </data>
-  <data name="cbExperimentalDarkTheme.Text" xml:space="preserve">
-    <value>Власна тема (експериментально)</value>
-  </data>
-  <data name="btnApplyTheme.Text" xml:space="preserve">
-    <value>Застосувати тему</value>
-  </data>
-  <data name="cbUseDarkTheme.Text" xml:space="preserve">
-    <value>Використовувати власну тему</value>
-  </data>
   <data name="tpTheme.Text" xml:space="preserve">
     <value>Тема</value>
   </data>
@@ -263,9 +254,6 @@
   </data>
   <data name="btnImport.Text" xml:space="preserve">
     <value>Імпорт...</value>
-  </data>
-  <data name="tpExportImport.Text" xml:space="preserve">
-    <value>Експорт / імпорт</value>
   </data>
   <data name="lblUploadLimit.Text" xml:space="preserve">
     <value>Межа одночасних відвантажень:</value>

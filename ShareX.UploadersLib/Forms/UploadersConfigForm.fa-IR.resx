@@ -378,9 +378,6 @@
   <data name="lblStreamablePassword.Text" xml:space="preserve">
     <value>کلمه عبور:</value>
   </data>
-  <data name="lblTinyPicPassword.Text" xml:space="preserve">
-    <value>کلمه عبور:</value>
-  </data>
   <data name="lblEmailPassword.Text" xml:space="preserve">
     <value>کلمه عبور:</value>
   </data>
@@ -454,9 +451,6 @@
     <value>ایمیل:</value>
   </data>
   <data name="lblMediaFireEmail.Text" xml:space="preserve">
-    <value>ایمیل:</value>
-  </data>
-  <data name="lblTinyPicUsername.Text" xml:space="preserve">
     <value>ایمیل:</value>
   </data>
   <data name="lblMegaEmail.Text" xml:space="preserve">

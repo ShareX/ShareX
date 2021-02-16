@@ -235,4 +235,7 @@
   <data name="OAuthControl_Status_LoginFailed" xml:space="preserve">
     <value>로그인 실패.</value>
   </data>
+  <data name="GoogleDrive_MyDrive_My_drive" xml:space="preserve">
+    <value>내 드라이브</value>
+  </data>
 </root>

@@ -25,7 +25,9 @@
 
 using ShareX.HelpersLib.Properties;
 using System;
+using System.ComponentModel;
 using System.Drawing;
+using System.Reflection;
 using System.Windows.Forms;
 
 namespace ShareX.HelpersLib
@@ -63,7 +65,7 @@ namespace ShareX.HelpersLib
 
         public static Bitmap Logo => Resources.ShareX_Logo;
 
-        public static ShareXTheme Theme { get; set; } = new ShareXTheme();
+        public static ShareXTheme Theme { get; set; } = ShareXTheme.DarkTheme;
 
         public static void ApplyTheme(Form form, bool setIcon = true)
         {
@@ -76,6 +78,9 @@ namespace ShareX.HelpersLib
             {
                 ApplyCustomThemeToControl(form);
 
+                IContainer components = form.GetType().GetField("components", BindingFlags.NonPublic | BindingFlags.Instance)?.GetValue(form) as IContainer;
+                ApplyCustomThemeToComponents(components);
+
                 if (form.IsHandleCreated)
                 {
                     NativeMethods.UseImmersiveDarkMode(form.Handle, Theme.IsDarkTheme);
@@ -87,7 +92,7 @@ namespace ShareX.HelpersLib
             }
         }
 
-        private static void ApplyCustomThemeToControl(Control control)
+        public static void ApplyCustomThemeToControl(Control control)
         {
             if (control.ContextMenuStrip != null)
             {
@@ -132,6 +137,12 @@ namespace ShareX.HelpersLib
                     lv.BackColor = Theme.LightBackgroundColor;
                     lv.SupportCustomTheme();
                     return;
+                case SplitContainerCustomSplitter sccs:
+                    sccs.SplitterColor = Theme.BackgroundColor;
+                    sccs.SplitterLineColor = Theme.BorderColor;
+                    sccs.Panel1.BackColor = Theme.BackgroundColor;
+                    sccs.Panel2.BackColor = Theme.BackgroundColor;
+                    break;
                 case SplitContainer sc:
                     sc.Panel1.BackColor = Theme.BackgroundColor;
                     sc.Panel2.BackColor = Theme.BackgroundColor;
@@ -181,13 +192,55 @@ namespace ShareX.HelpersLib
             {
                 ApplyCustomThemeToControl(child);
             }
+
+            switch (control)
+            {
+                case TabToTreeView tttv:
+                    tttv.LeftPanelBackColor = Theme.DarkBackgroundColor;
+                    tttv.SeparatorColor = Theme.SeparatorDarkColor;
+                    break;
+            }
+        }
+
+        private static void ApplyCustomThemeToComponents(IContainer container)
+        {
+            if (container != null)
+            {
+                foreach (IComponent component in container.Components)
+                {
+                    switch (component)
+                    {
+                        case ContextMenuStrip cms:
+                            ApplyCustomThemeToContextMenuStrip(cms);
+                            break;
+                        case ToolTip tt:
+                            tt.ForeColor = Theme.TextColor;
+                            tt.BackColor = Theme.BackgroundColor;
+                            tt.OwnerDraw = true;
+                            tt.Draw -= ToolTip_Draw;
+                            tt.Draw += ToolTip_Draw;
+                            break;
+                    }
+                }
+            }
+        }
+
+        private static void ToolTip_Draw(object sender, DrawToolTipEventArgs e)
+        {
+            e.DrawBackground();
+            e.DrawBorder();
+            e.DrawText(TextFormatFlags.VerticalCenter | TextFormatFlags.LeftAndRightPadding);
         }
 
         public static void ApplyCustomThemeToContextMenuStrip(ContextMenuStrip cms)
         {
-            cms.Renderer = new ToolStripDarkRenderer();
-            cms.Opacity = Theme.ContextMenuOpacityDouble;
-            ApplyCustomThemeToToolStripItemCollection(cms.Items);
+            if (cms != null)
+            {
+                cms.Renderer = new ToolStripDarkRenderer();
+                cms.Font = Theme.ContextMenuFont;
+                cms.Opacity = Theme.ContextMenuOpacityDouble;
+                ApplyCustomThemeToToolStripItemCollection(cms.Items);
+            }
         }
 
         private static void ApplyCustomThemeToToolStripItemCollection(ToolStripItemCollection collection)

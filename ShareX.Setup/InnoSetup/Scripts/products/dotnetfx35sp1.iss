@@ -1,7 +1,7 @@
 ; requires Windows Server 2003 Service Pack 1, Windows Server 2008, Windows Vista, Windows XP Service Pack 2
 ; requires Windows Installer 3.1
-; WARNING: express setup (downloads and installs the components depending on your OS) if you want to deploy it on cd or network download the full bootsrapper on website below
-; http://www.microsoft.com/downloads/details.aspx?FamilyID=ab99342f-5d1a-413d-8319-81da479ab0d7
+; express setup (downloads and installs the components depending on your OS) if you want to deploy it locally download the full installer on website below
+; https://www.microsoft.com/downloads/details.aspx?FamilyID=ab99342f-5d1a-413d-8319-81da479ab0d7
 
 [CustomMessages]
 dotnetfx35sp1_title=.NET Framework 3.5 Service Pack 1

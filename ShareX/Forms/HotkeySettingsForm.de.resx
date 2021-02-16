@@ -133,6 +133,6 @@
     <value>Entfernen</value>
   </data>
   <data name="btnReset.Text" xml:space="preserve">
-    <value>Standard-Hotkeys wiederherstellen</value>
+    <value>Standard-Hotkeys wiederherstellen...</value>
   </data>
 </root>

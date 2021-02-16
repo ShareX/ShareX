@@ -33,7 +33,7 @@ DisableReadyPage=no
 DisableReadyMemo=no
 DisableFinishedPage=no
 LicenseFile={#MyAppRootDirectory}\LICENSE.txt
-; .NET 4.6.2 is supported only on Windows 7 SP1 and up
+; .NET 4.7.2 is supported only on Windows 7 SP1 and up
 MinVersion=0,6.1.7601
 OutputBaseFilename={#MyAppName}-{#MyAppVersion}-setup
 OutputDir={#MyAppOutputDirectory}
@@ -71,6 +71,7 @@ Source: "{#MyAppReleaseDirectory}\fr\*.resources.dll"; DestDir: {app}\Languages\
 Source: "{#MyAppReleaseDirectory}\hu\*.resources.dll"; DestDir: {app}\Languages\hu; Flags: ignoreversion
 Source: "{#MyAppReleaseDirectory}\id-ID\*.resources.dll"; DestDir: {app}\Languages\id-ID; Flags: ignoreversion
 Source: "{#MyAppReleaseDirectory}\it-IT\*.resources.dll"; DestDir: {app}\Languages\it-IT; Flags: ignoreversion
+Source: "{#MyAppReleaseDirectory}\ja-JP\*.resources.dll"; DestDir: {app}\Languages\ja-JP; Flags: ignoreversion
 Source: "{#MyAppReleaseDirectory}\ko-KR\*.resources.dll"; DestDir: {app}\Languages\ko-KR; Flags: ignoreversion
 Source: "{#MyAppReleaseDirectory}\nl-NL\*.resources.dll"; DestDir: {app}\Languages\nl-NL; Flags: ignoreversion
 Source: "{#MyAppReleaseDirectory}\pt-BR\*.resources.dll"; DestDir: {app}\Languages\pt-BR; Flags: ignoreversion
@@ -105,6 +106,8 @@ Root: "HKCU"; Subkey: "Software\Classes\*\shell\{#MyAppName}"; Flags: dontcreate
 Root: "HKCU"; Subkey: "Software\Classes\Directory\shell\{#MyAppName}"; Flags: dontcreatekey uninsdeletekey
 Root: "HKCU"; Subkey: "Software\Classes\.sxcu"; Flags: dontcreatekey uninsdeletekey
 Root: "HKCU"; Subkey: "Software\Classes\ShareX.sxcu"; Flags: dontcreatekey uninsdeletekey
+Root: "HKCU"; Subkey: "Software\Classes\.sxie"; Flags: dontcreatekey uninsdeletekey
+Root: "HKCU"; Subkey: "Software\Classes\ShareX.sxie"; Flags: dontcreatekey uninsdeletekey
 Root: "HKCU"; Subkey: "Software\Classes\SystemFileAssociations\image\shell\ShareXImageEditor"; Flags: dontcreatekey uninsdeletekey
 
 [CustomMessages]
@@ -115,13 +118,13 @@ DependenciesDir=Dependencies
 #include "Scripts\products\winversion.iss"
 #include "Scripts\products\fileversion.iss"
 #include "Scripts\products\dotnetfxversion.iss"
-#include "scripts\products\dotnetfx46.iss"
+#include "scripts\products\dotnetfx47.iss"
 
 [Code]
 function InitializeSetup(): Boolean;
 begin
   initwinversion();
-  dotnetfx46(62);
+  dotnetfx47(72);
   Result := true;
 end;
 

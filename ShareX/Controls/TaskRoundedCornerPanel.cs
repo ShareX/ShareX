@@ -65,7 +65,7 @@ namespace ShareX
                     StatusColor = Color.CornflowerBlue;
                     break;
                 case TaskStatus.Failed:
-                    StatusColor = Color.IndianRed;
+                    StatusColor = Color.Red;
                     break;
                 case TaskStatus.History:
                     StatusColor = Color.Transparent;

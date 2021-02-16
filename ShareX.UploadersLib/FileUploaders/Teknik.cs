@@ -42,7 +42,9 @@ namespace ShareX.UploadersLib.FileUploaders
 
         public override bool CheckConfig(UploadersConfig config)
         {
-            return !string.IsNullOrEmpty(config.TeknikUploadAPIUrl) && !string.IsNullOrEmpty(config.TeknikAuthUrl);
+            return !string.IsNullOrEmpty(config.TeknikUploadAPIUrl) &&
+                   !string.IsNullOrEmpty(config.TeknikAuthUrl) &&
+                   OAuth2Info.CheckOAuth(config.TeknikOAuth2Info);
         }
 
         public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
@@ -71,7 +73,7 @@ namespace ShareX.UploadersLib.FileUploaders
         Years
     }
 
-    public class Teknik : Uploader, IOAuth2Basic
+    public class Teknik : Uploader, IOAuth2
     {
         public const string DefaultUploadAPIURL = "https://api.teknik.io/v1/Upload";
         public const string DefaultPasteAPIURL = "https://api.teknik.io/v1/Paste";
@@ -85,6 +87,53 @@ namespace ShareX.UploadersLib.FileUploaders
         {
             AuthInfo = oauth;
             AuthUrl = authUrl;
+        }
+
+        public bool RefreshAccessToken()
+        {
+            if (OAuth2Info.CheckOAuth(AuthInfo) && !string.IsNullOrEmpty(AuthInfo.Token.refresh_token))
+            {
+                Dictionary<string, string> args = new Dictionary<string, string>();
+                args.Add("refresh_token", AuthInfo.Token.refresh_token);
+                args.Add("client_id", AuthInfo.Client_ID);
+                args.Add("client_secret", AuthInfo.Client_Secret);
+                args.Add("grant_type", "refresh_token");
+
+                string response = SendRequestMultiPart(AuthUrl + "/connect/token", args);
+
+                if (!string.IsNullOrEmpty(response))
+                {
+                    OAuth2Token token = JsonConvert.DeserializeObject<OAuth2Token>(response);
+
+                    if (token != null && !string.IsNullOrEmpty(token.access_token))
+                    {
+                        token.UpdateExpireDate();
+                        AuthInfo.Token = token;
+                        return true;
+                    }
+                }
+            }
+
+            return false;
+        }
+
+        public bool CheckAuthorization()
+        {
+            if (OAuth2Info.CheckOAuth(AuthInfo))
+            {
+                if (AuthInfo.Token.IsExpired && !RefreshAccessToken())
+                {
+                    Errors.Add("Refresh access token failed.");
+                    return false;
+                }
+            }
+            else
+            {
+                Errors.Add("Teknik login is required.");
+                return false;
+            }
+
+            return true;
         }
 
         public bool GetAccessToken(string code)
@@ -117,7 +166,7 @@ namespace ShareX.UploadersLib.FileUploaders
             Dictionary<string, string> args = new Dictionary<string, string>();
             args.Add("response_type", "code");
             args.Add("redirect_uri", Links.URL_CALLBACK);
-            args.Add("scope", "openid teknik-api.write");
+            args.Add("scope", "openid teknik-api.write offline_access");
             args.Add("client_id", AuthInfo.Client_ID);
 
             return URLHelpers.CreateQueryString(AuthUrl + "/connect/authorize", args);
@@ -135,7 +184,7 @@ namespace ShareX.UploadersLib.FileUploaders
         }
     }
 
-    public sealed class TeknikUploader : FileUploader, IOAuth2Basic
+    public sealed class TeknikUploader : FileUploader, IOAuth2
     {
         public OAuth2Info AuthInfo { get; set; }
         public string APIUrl { get; set; }
@@ -154,6 +203,8 @@ namespace ShareX.UploadersLib.FileUploaders
 
         public override UploadResult Upload(Stream stream, string fileName)
         {
+            if (!CheckAuthorization()) return null;
+
             Dictionary<string, string> args = new Dictionary<string, string>();
             args.Add("encrypt", (!Encryption).ToString());
             args.Add("expirationUnit", ExpirationUnit.ToString());
@@ -186,6 +237,16 @@ namespace ShareX.UploadersLib.FileUploaders
         public bool GetAccessToken(string code)
         {
             return teknik.GetAccessToken(code);
+        }
+
+        public bool RefreshAccessToken()
+        {
+            return teknik.RefreshAccessToken();
+        }
+
+        public bool CheckAuthorization()
+        {
+            return teknik.CheckAuthorization();
         }
     }
 

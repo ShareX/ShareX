@@ -63,6 +63,7 @@
             this.tsrbmiGradientForwardDiagonal = new ShareX.HelpersLib.ToolStripRadioButtonMenuItem();
             this.tsrbmiGradientBackwardDiagonal = new ShareX.HelpersLib.ToolStripRadioButtonMenuItem();
             this.ttTextInput = new System.Windows.Forms.ToolTip(this.components);
+            this.btnSwapEnterKey = new System.Windows.Forms.Button();
             this.flpProperties.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudTextSize)).BeginInit();
             this.cmsAlignmentHorizontal.SuspendLayout();
@@ -337,12 +338,21 @@
             this.ttTextInput.InitialDelay = 200;
             this.ttTextInput.ReshowDelay = 100;
             // 
+            // btnSwapEnterKey
+            // 
+            this.btnSwapEnterKey.Image = global::ShareX.ScreenCaptureLib.Properties.Resources.keyboard_enter;
+            resources.ApplyResources(this.btnSwapEnterKey, "btnSwapEnterKey");
+            this.btnSwapEnterKey.Name = "btnSwapEnterKey";
+            this.btnSwapEnterKey.UseVisualStyleBackColor = true;
+            this.btnSwapEnterKey.Click += new System.EventHandler(this.btnSwapEnterKey_Click);
+            // 
             // TextDrawingInputBox
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.CancelButton = this.btnCancel;
+            this.Controls.Add(this.btnSwapEnterKey);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.lblTip);
             this.Controls.Add(this.btnOK);
@@ -399,5 +409,6 @@
         private HelpersLib.ToolStripRadioButtonMenuItem tsrbmiGradientForwardDiagonal;
         private HelpersLib.ToolStripRadioButtonMenuItem tsrbmiGradientBackwardDiagonal;
         private System.Windows.Forms.ToolTip ttTextInput;
+        private System.Windows.Forms.Button btnSwapEnterKey;
     }
 }

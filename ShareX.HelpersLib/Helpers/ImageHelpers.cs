@@ -75,18 +75,6 @@ namespace ShareX.HelpersLib
             return ResizeImage(bmp, size.Width, size.Height, interpolationMode);
         }
 
-        public static Bitmap ResizeImageByPercentage(Bitmap bmp, float percentageWidth, float percentageHeight, InterpolationMode interpolationMode = DefaultInterpolationMode)
-        {
-            int width = (int)Math.Round(percentageWidth / 100 * bmp.Width);
-            int height = (int)Math.Round(percentageHeight / 100 * bmp.Height);
-            return ResizeImage(bmp, width, height, interpolationMode);
-        }
-
-        public static Bitmap ResizeImageByPercentage(Bitmap bmp, float percentage, InterpolationMode interpolationMode = DefaultInterpolationMode)
-        {
-            return ResizeImageByPercentage(bmp, percentage, percentage, interpolationMode);
-        }
-
         public static Bitmap ResizeImage(Bitmap bmp, Size size, bool allowEnlarge, bool centerImage = true)
         {
             return ResizeImage(bmp, size.Width, size.Height, allowEnlarge, centerImage);
@@ -469,7 +457,7 @@ namespace ShareX.HelpersLib
             return bmpResult;
         }
 
-        public static Bitmap Outline(Bitmap bmp, int borderSize, Color borderColor)
+        public static Bitmap OutlineOld(Bitmap bmp, int borderSize, Color borderColor)
         {
             Bitmap bmpResult = bmp.CreateEmptyBitmap(borderSize * 2, borderSize * 2);
 
@@ -498,6 +486,93 @@ namespace ShareX.HelpersLib
             }
 
             return bmpResult;
+        }
+
+        public static Bitmap Outline(Bitmap bmp, int borderSize, Color borderColor, int padding = 0, bool outlineOnly = false)
+        {
+            Bitmap outline = MakeOutline(bmp, padding, padding + borderSize + 1, borderColor);
+
+            if (outlineOnly)
+            {
+                bmp.Dispose();
+                return outline;
+            }
+            else
+            {
+                using (outline)
+                using (Graphics g = Graphics.FromImage(bmp))
+                {
+                    g.DrawImage(outline, 0, 0, outline.Width, outline.Height);
+                }
+
+                return bmp;
+            }
+        }
+
+        public static Bitmap MakeOutline(Bitmap bmp, int minRadius, int maxRadius, Color color)
+        {
+            Bitmap bmpResult = bmp.CreateEmptyBitmap();
+
+            using (UnsafeBitmap source = new UnsafeBitmap(bmp, true, ImageLockMode.ReadOnly))
+            using (UnsafeBitmap dest = new UnsafeBitmap(bmpResult, true, ImageLockMode.WriteOnly))
+            {
+                for (int x = 0; x < source.Width; x++)
+                {
+                    for (int y = 0; y < source.Height; y++)
+                    {
+                        float dist = DistanceToThreshold(source, x, y, maxRadius, 255);
+
+                        if (dist > minRadius && dist < maxRadius)
+                        {
+                            byte alpha = 255;
+
+                            if (dist - minRadius < 1)
+                            {
+                                alpha = (byte)(255 * (dist - minRadius));
+                            }
+                            else if (maxRadius - dist < 1)
+                            {
+                                alpha = (byte)(255 * (maxRadius - dist));
+                            }
+
+                            ColorBgra bgra = new ColorBgra(color.B, color.G, color.R, alpha);
+                            dest.SetPixel(x, y, bgra);
+                        }
+                    }
+                }
+            }
+
+            return bmpResult;
+        }
+
+        private static float DistanceToThreshold(UnsafeBitmap unsafeBitmap, int x, int y, int radius, int threshold)
+        {
+            int minx = Math.Max(x - radius, 0);
+            int maxx = Math.Min(x + radius, unsafeBitmap.Width - 1);
+            int miny = Math.Max(y - radius, 0);
+            int maxy = Math.Min(y + radius, unsafeBitmap.Height - 1);
+            int dist2 = (radius * radius) + 1;
+
+            for (int tx = minx; tx <= maxx; tx++)
+            {
+                for (int ty = miny; ty <= maxy; ty++)
+                {
+                    ColorBgra color = unsafeBitmap.GetPixel(tx, ty);
+
+                    if (color.Alpha >= threshold)
+                    {
+                        int dx = tx - x;
+                        int dy = ty - y;
+                        int test_dist2 = (dx * dx) + (dy * dy);
+                        if (test_dist2 < dist2)
+                        {
+                            dist2 = test_dist2;
+                        }
+                    }
+                }
+            }
+
+            return (float)Math.Sqrt(dist2);
         }
 
         public static Bitmap DrawReflection(Bitmap bmp, int percentage, int maxAlpha, int minAlpha, int offset, bool skew, int skewSize)
@@ -1303,6 +1378,37 @@ namespace ShareX.HelpersLib
             }
         }
 
+        public static void ColorDepth(Bitmap bmp, int bitsPerChannel = 4)
+        {
+            if (bitsPerChannel < 1 || bitsPerChannel > 8)
+            {
+                return;
+            }
+
+            double colorsPerChannel = Math.Pow(2, bitsPerChannel);
+            double colorInterval = 255 / (colorsPerChannel - 1);
+
+            byte Remap(byte color, double interval)
+            {
+                return (byte)Math.Round(Math.Round(color / interval) * interval);
+            }
+
+            using (UnsafeBitmap unsafeBitmap = new UnsafeBitmap(bmp, true))
+            {
+                for (int y = 0; y < unsafeBitmap.Height; y++)
+                {
+                    for (int x = 0; x < unsafeBitmap.Width; x++)
+                    {
+                        ColorBgra color = unsafeBitmap.GetPixel(x, y);
+                        color.Red = Remap(color.Red, colorInterval);
+                        color.Green = Remap(color.Green, colorInterval);
+                        color.Blue = Remap(color.Blue, colorInterval);
+                        unsafeBitmap.SetPixel(x, y, color);
+                    }
+                }
+            }
+        }
+
         // http://incubator.quasimondo.com/processing/superfast_blur.php
         public static void FastBoxBlur(Bitmap bmp, int radius)
         {
@@ -1432,7 +1538,12 @@ namespace ShareX.HelpersLib
             int horizontalTornCount = bmp.Width / tornRange;
             int verticalTornCount = bmp.Height / tornRange;
 
-            if (sides.HasFlag(AnchorStyles.Top))
+            if (horizontalTornCount < 2 && verticalTornCount < 2)
+            {
+                return bmp;
+            }
+
+            if (sides.HasFlag(AnchorStyles.Top) && horizontalTornCount > 1)
             {
                 for (int x = 0; x < horizontalTornCount - 1; x++)
                 {
@@ -1445,7 +1556,7 @@ namespace ShareX.HelpersLib
                 points.Add(new Point(bmp.Width - 1, 0));
             }
 
-            if (sides.HasFlag(AnchorStyles.Right))
+            if (sides.HasFlag(AnchorStyles.Right) && verticalTornCount > 1)
             {
                 for (int y = 0; y < verticalTornCount - 1; y++)
                 {
@@ -1458,7 +1569,7 @@ namespace ShareX.HelpersLib
                 points.Add(new Point(bmp.Width - 1, bmp.Height - 1));
             }
 
-            if (sides.HasFlag(AnchorStyles.Bottom))
+            if (sides.HasFlag(AnchorStyles.Bottom) && horizontalTornCount > 1)
             {
                 for (int x = 0; x < horizontalTornCount - 1; x++)
                 {
@@ -1471,7 +1582,7 @@ namespace ShareX.HelpersLib
                 points.Add(new Point(0, bmp.Height - 1));
             }
 
-            if (sides.HasFlag(AnchorStyles.Left))
+            if (sides.HasFlag(AnchorStyles.Left) && verticalTornCount > 1)
             {
                 for (int y = 0; y < verticalTornCount - 1; y++)
                 {
@@ -1509,6 +1620,16 @@ namespace ShareX.HelpersLib
 
         public static Bitmap Slice(Bitmap bmp, int minSliceHeight, int maxSliceHeight, int minSliceShift, int maxSliceShift)
         {
+            if (minSliceHeight < 1)
+            {
+                throw new ArgumentOutOfRangeException(nameof(minSliceHeight));
+            }
+
+            if (maxSliceHeight < 1)
+            {
+                throw new ArgumentOutOfRangeException(nameof(maxSliceHeight));
+            }
+
             Bitmap bmpResult = bmp.CreateEmptyBitmap();
 
             using (Graphics g = Graphics.FromImage(bmpResult))
@@ -1538,9 +1659,9 @@ namespace ShareX.HelpersLib
             return bmpResult;
         }
 
-        public static string OpenImageFileDialog(Form form = null)
+        public static string OpenImageFileDialog(Form form = null, string initialDirectory = null)
         {
-            string[] images = OpenImageFileDialog(false, form);
+            string[] images = OpenImageFileDialog(false, form, initialDirectory);
 
             if (images != null && images.Length > 0)
             {
@@ -1550,7 +1671,7 @@ namespace ShareX.HelpersLib
             return null;
         }
 
-        public static string[] OpenImageFileDialog(bool multiselect, Form form = null)
+        public static string[] OpenImageFileDialog(bool multiselect, Form form = null, string initialDirectory = null)
         {
             using (OpenFileDialog ofd = new OpenFileDialog())
             {
@@ -1558,6 +1679,11 @@ namespace ShareX.HelpersLib
                     "PNG (*.png)|*.png|JPEG (*.jpg, *.jpeg, *.jpe, *.jfif)|*.jpg;*.jpeg;*.jpe;*.jfif|GIF (*.gif)|*.gif|BMP (*.bmp)|*.bmp|TIFF (*.tif, *.tiff)|*.tif;*.tiff";
 
                 ofd.Multiselect = multiselect;
+
+                if (!string.IsNullOrEmpty(initialDirectory))
+                {
+                    ofd.InitialDirectory = initialDirectory;
+                }
 
                 if (ofd.ShowDialog(form) == DialogResult.OK)
                 {
@@ -1601,7 +1727,7 @@ namespace ShareX.HelpersLib
             return imageFormat;
         }
 
-        public static void SaveImage(Image img, string filePath)
+        public static bool SaveImage(Image img, string filePath)
         {
             Helpers.CreateDirectoryFromFilePath(filePath);
             ImageFormat imageFormat = GetImageFormat(filePath);
@@ -1609,11 +1735,14 @@ namespace ShareX.HelpersLib
             try
             {
                 img.Save(filePath, imageFormat);
+                return true;
             }
             catch (Exception e)
             {
                 e.ShowError();
             }
+
+            return false;
         }
 
         public static string SaveImageFileDialog(Image img, string filePath = "", bool useLastDirectory = true)
@@ -1843,7 +1972,7 @@ namespace ShareX.HelpersLib
 
         public static void DrawColorPickerIcon(Graphics g, Color color, Rectangle rect, int holeSize = 0)
         {
-            if (color.A < 255)
+            if (color.IsTransparent())
             {
                 using (Image checker = CreateCheckerPattern(rect.Width / 2, rect.Height / 2))
                 {
@@ -2050,14 +2179,30 @@ namespace ShareX.HelpersLib
             }
         }
 
-        public static void SelectiveColor(Bitmap bmp, Color lightColor, Color darkColor, int threshold)
+        public static void SelectiveColor(Bitmap bmp, Color lightColor, Color darkColor, int paletteSize = 2)
         {
+            paletteSize = Math.Max(paletteSize, 2);
+
+            Dictionary<int, Color> colors = new Dictionary<int, Color>();
+            for (int i = 0; i < paletteSize; i++)
+            {
+                Color color = ColorHelpers.Lerp(lightColor, darkColor, (float)i / (paletteSize - 1));
+                int perceivedBrightness = ColorHelpers.PerceivedBrightness(color);
+                if (!colors.ContainsKey(perceivedBrightness))
+                {
+                    colors.Add(perceivedBrightness, color);
+                }
+            }
+
             using (UnsafeBitmap unsafeBitmap = new UnsafeBitmap(bmp, true))
             {
                 for (int i = 0; i < unsafeBitmap.PixelCount; i++)
                 {
                     ColorBgra color = unsafeBitmap.GetPixel(i);
-                    Color newColor = ColorHelpers.PerceivedBrightness(color.ToColor()) > threshold ? lightColor : darkColor;
+                    int perceivedBrightness = ColorHelpers.PerceivedBrightness(color.ToColor());
+                    KeyValuePair<int, Color> closest =
+                        colors.Aggregate((current, next) => Math.Abs(current.Key - perceivedBrightness) < Math.Abs(next.Key - perceivedBrightness) ? current : next);
+                    Color newColor = closest.Value;
                     color.Red = newColor.R;
                     color.Green = newColor.G;
                     color.Blue = newColor.B;
@@ -2077,6 +2222,90 @@ namespace ShareX.HelpersLib
             }
 
             return Size.Empty;
+        }
+
+        public static InterpolationMode GetInterpolationMode(ImageInterpolationMode interpolationMode)
+        {
+            switch (interpolationMode)
+            {
+                default:
+                case ImageInterpolationMode.HighQualityBicubic:
+                    return InterpolationMode.HighQualityBicubic;
+                case ImageInterpolationMode.Bicubic:
+                    return InterpolationMode.Bicubic;
+                case ImageInterpolationMode.HighQualityBilinear:
+                    return InterpolationMode.HighQualityBilinear;
+                case ImageInterpolationMode.Bilinear:
+                    return InterpolationMode.Bilinear;
+                case ImageInterpolationMode.NearestNeighbor:
+                    return InterpolationMode.NearestNeighbor;
+            }
+        }
+
+        public static Size ApplyAspectRatio(int width, int height, Bitmap bmp)
+        {
+            int newWidth, newHeight;
+
+            if (width == 0)
+            {
+                newWidth = (int)Math.Round((float)height / bmp.Height * bmp.Width);
+                newHeight = height;
+            }
+            else if (height == 0)
+            {
+                newWidth = width;
+                newHeight = (int)Math.Round((float)width / bmp.Width * bmp.Height);
+            }
+            else
+            {
+                newWidth = width;
+                newHeight = height;
+            }
+
+            return new Size(newWidth, newHeight);
+        }
+
+        public static Size ApplyAspectRatio(Size size, Bitmap bmp)
+        {
+            return ApplyAspectRatio(size.Width, size.Height, bmp);
+        }
+
+        public static Bitmap NonIndexedBitmap(Bitmap bmp)
+        {
+            if (bmp != null && bmp.PixelFormat.HasFlag(PixelFormat.Indexed))
+            {
+                using (bmp)
+                {
+                    return bmp.Clone(new Rectangle(0, 0, bmp.Width, bmp.Height), PixelFormat.Format32bppArgb);
+                }
+            }
+
+            return bmp;
+        }
+
+        public static Bitmap DrawGrip(Color color, Color shadow)
+        {
+            int size = 16;
+            Bitmap bmp = new Bitmap(size, size);
+
+            using (Graphics g = Graphics.FromImage(bmp))
+            using (SolidBrush brush = new SolidBrush(color))
+            using (SolidBrush shadowBrush = new SolidBrush(shadow))
+            {
+                int x = size / 2;
+                int boxSize = 2;
+
+                for (int i = 0; i < 4; i++)
+                {
+                    g.FillRectangle(shadowBrush, x - boxSize, (i * 4) + 2, boxSize, boxSize);
+                    g.FillRectangle(brush, x - boxSize - 1, (i * 4) + 1, boxSize, boxSize);
+
+                    g.FillRectangle(shadowBrush, x + 2, (i * 4) + 2, boxSize, boxSize);
+                    g.FillRectangle(brush, x + 1, (i * 4) + 1, boxSize, boxSize);
+                }
+            }
+
+            return bmp;
         }
     }
 }

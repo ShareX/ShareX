@@ -135,4 +135,28 @@
   <data name="ImageEffectsForm_EditorMode_Cancel" xml:space="preserve">
     <value>Annuler</value>
   </data>
+  <data name="PresetNameCannotBeEmpty" xml:space="preserve">
+    <value>Le nom du préréglage ne pas être vide.</value>
+  </data>
+  <data name="MissingPresetName" xml:space="preserve">
+    <value>Le nom du préréglage est manquant</value>
+  </data>
+  <data name="Confirmation" xml:space="preserve">
+    <value>Confirmation</value>
+  </data>
+  <data name="Effect" xml:space="preserve">
+    <value>Effet :</value>
+  </data>
+  <data name="InvalidAssetsFolderPath" xml:space="preserve">
+    <value>Chemin du dossier des ressources invalide</value>
+  </data>
+  <data name="AssetsFolderMustBeInsideShareXImageEffectsFolder" xml:space="preserve">
+    <value>Le dossier des ressources doit être dans le dossier des effets d'image de ShareX.</value>
+  </data>
+  <data name="PackageWithThisFileNameAlreadyExistsRNWouldYouLikeToOverwriteIt" xml:space="preserve">
+    <value>Un paquet avec ce nom de fichier existe déjà.\r\nVoulez-vous l'écraser ?</value>
+  </data>
+  <data name="WouldYouLikeToClearEffects" xml:space="preserve">
+    <value>Voulez-vous effacer les effets ?</value>
+  </data>
 </root>

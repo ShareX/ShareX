@@ -126,11 +126,6 @@
   <data name="ShapeManager_CreateContextMenu_Highlight_color___" xml:space="preserve">
     <value>Cor para realçar...</value>
   </data>
-  <data name="RectangleRegion_GetRulerText_Ruler_info" xml:space="preserve">
-    <value>X: {0} / Y: {1} / X2: {2} / Y2: {3}
-Largura: {4} px / Altura: {5} px
-Distância: {6:0.00} px / Ângulo: {7:0.00}°</value>
-  </data>
   <data name="ShapeManager_CreateToolbar_FlipHorizontal" xml:space="preserve">
     <value>Inversão horizontal</value>
   </data>

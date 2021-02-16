@@ -198,18 +198,6 @@
   <data name="Stop" xml:space="preserve">
     <value>중단</value>
   </data>
-  <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__Image__Size___0_x_1__" xml:space="preserve">
-    <value>클립보드 내용: 이미지 (크기: {0}x{1})</value>
-  </data>
-  <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__Text__Length___0__" xml:space="preserve">
-    <value>클립보드 내용: 텍스트 (길이: {0})</value>
-  </data>
-  <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__File__Count___0__" xml:space="preserve">
-    <value>클립보드 내용: 파일 (개수: {0})</value>
-  </data>
-  <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_is_empty_or_contains_unknown_data_" xml:space="preserve">
-    <value>클립보드 내용이 없거나 알 수 없는 데이터를 포함하고 있음</value>
-  </data>
   <data name="PrintTextForm_LoadSettings_Name___0___Size___1_" xml:space="preserve">
     <value>이름: {0}, 크기: {1}</value>
   </data>
@@ -486,7 +474,7 @@
     <value>이미지를 파일로 저장하기</value>
   </data>
   <data name="AfterCaptureTasks_SaveImageToFileWithDialog" xml:space="preserve">
-    <value>이미지를 다른 이름으로 파일로 저장하기</value>
+    <value>이미지를 다른 이름으로 파일로 저장...</value>
   </data>
   <data name="AfterCaptureTasks_SaveThumbnailImageToFile" xml:space="preserve">
     <value>섬네일 이미지를 파일로 저장하기</value>
@@ -1128,5 +1116,8 @@
   </data>
   <data name="AfterCaptureTasks_ScanQRCode" xml:space="preserve">
     <value>QR코드 스캔</value>
+  </data>
+  <data name="ObjectListView_ObjectListView_Value" xml:space="preserve">
+    <value>값</value>
   </data>
 </root>

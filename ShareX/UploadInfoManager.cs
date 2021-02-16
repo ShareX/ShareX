@@ -25,7 +25,6 @@
 
 using Microsoft.VisualBasic.FileIO;
 using ShareX.HelpersLib;
-using ShareX.Properties;
 using ShareX.UploadersLib;
 using System.Collections.Generic;
 using System.Drawing;
@@ -133,6 +132,8 @@ namespace ShareX
         {
             if (IsItemSelected)
             {
+                SelectedItem.Update();
+
                 if (SelectedItem.IsShortenedURLExist)
                 {
                     URLHelpers.OpenURL(SelectedItem.Info.Result.ShortenedURL);
@@ -309,17 +310,9 @@ namespace ShareX
 
         public void ShowErrors()
         {
-            if (IsItemSelected && SelectedItem.Info.Result != null && SelectedItem.Info.Result.IsError)
+            if (IsItemSelected)
             {
-                string errors = SelectedItem.Info.Result.ErrorsToString();
-
-                if (!string.IsNullOrEmpty(errors))
-                {
-                    using (ErrorForm form = new ErrorForm(Resources.UploadInfoManager_ShowErrors_Upload_errors, errors, Program.LogsFilePath, Links.URL_ISSUES, false))
-                    {
-                        form.ShowDialog();
-                    }
-                }
+                SelectedItem.Task.ShowErrorWindow();
             }
         }
 
@@ -347,6 +340,11 @@ namespace ShareX
         public void EditImage()
         {
             if (IsItemSelected && SelectedItem.IsImageFile) TaskHelpers.AnnotateImageFromFile(SelectedItem.Info.FilePath);
+        }
+
+        public void AddImageEffects()
+        {
+            if (IsItemSelected && SelectedItem.IsImageFile) TaskHelpers.OpenImageEffects(SelectedItem.Info.FilePath);
         }
 
         public void DeleteFiles()
@@ -403,12 +401,9 @@ namespace ShareX
 
         public void ShowResponse()
         {
-            if (IsItemSelected && SelectedItem.Info.Result != null && !string.IsNullOrEmpty(SelectedItem.Info.Result.Response))
+            if (IsItemSelected && SelectedItem.Info.Result != null)
             {
-                using (ResponseForm form = new ResponseForm(SelectedItem.Info.Result.Response))
-                {
-                    form.ShowDialog();
-                }
+                ResponseForm.ShowInstance(SelectedItem.Info.Result);
             }
         }
 

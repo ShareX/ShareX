@@ -279,9 +279,6 @@
   <data name="cbFirefoxAddonSupport.Text" xml:space="preserve">
     <value>Kích hoạt hỗ trợ tiện ích mở rộng cho Firefox</value>
   </data>
-  <data name="tpExportImport.Text" xml:space="preserve">
-    <value>Nhập vào/Xuất ra</value>
-  </data>
   <data name="btnExport.Text" xml:space="preserve">
     <value>Xuất ra các cài đặt...</value>
   </data>
@@ -356,15 +353,6 @@
   </data>
   <data name="btnThemeAdd.Text" xml:space="preserve">
     <value>Thêm</value>
-  </data>
-  <data name="cbExperimentalDarkTheme.Text" xml:space="preserve">
-    <value>Theme tùy chỉnh đang thử nghiệm</value>
-  </data>
-  <data name="btnApplyTheme.Text" xml:space="preserve">
-    <value>Áp dụng theme</value>
-  </data>
-  <data name="cbUseDarkTheme.Text" xml:space="preserve">
-    <value>Dùng theme tùy chỉnh</value>
   </data>
   <data name="tpTheme.Text" xml:space="preserve">
     <value>Theme</value>

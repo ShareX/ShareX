@@ -132,9 +132,6 @@
   <data name="btnStartHashCheck.Text" xml:space="preserve">
     <value>Controlla</value>
   </data>
-  <data name="lblFile.Text" xml:space="preserve">
-    <value>Percorso File:</value>
-  </data>
   <data name="tpFileHashCheck.Text" xml:space="preserve">
     <value>Controlla Hash File</value>
   </data>

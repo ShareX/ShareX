@@ -127,10 +127,10 @@
     <value>Neuen Namen verwenden:</value>
   </data>
   <data name="btnOverwrite.Text" xml:space="preserve">
-    <value>Überschreiben:</value>
+    <value>Überschreiben: </value>
   </data>
   <data name="btnUniqueName.Text" xml:space="preserve">
-    <value>Einzigartigen Namen verwenden:</value>
+    <value>Einzigartigen Namen verwenden: </value>
   </data>
   <data name="lblTitle.Text" xml:space="preserve">
     <value>Es existiert bereits eine Datei mit demselben Namen im Zielverzeichnis.

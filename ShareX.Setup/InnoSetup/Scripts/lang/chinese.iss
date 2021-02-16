@@ -2,7 +2,7 @@
 Name: "chs"; MessagesFile: "compiler:Default.isl"
 
 [CustomMessages]
-;http://www.microsoft.com/globaldev/reference/lcid-all.mspx
+; https://www.microsoft.com/globaldev/reference/lcid-all.mspx
 chs.lcid=2052
 chs.depdownload_msg=安装程序需要下列依赖组建才能继续运行：%n%n%1%n要现在下载并安装吗？
 chs.depdownload_memo_title=下载依赖组建

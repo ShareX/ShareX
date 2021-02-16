@@ -566,14 +566,8 @@ Apakah anda ingin mengunduhnya?</value>
   <data name="ScrollingCaptureScrollMethod_Automatic" xml:space="preserve">
     <value>Secara otomatis mencoba semua metode sampai berhasil</value>
   </data>
-  <data name="ImageEditorInterpolationMode_Bicubic" xml:space="preserve">
-    <value>Bikubik</value>
-  </data>
   <data name="ImgurThumbnailType_Big_Square" xml:space="preserve">
     <value>Persegi besar</value>
-  </data>
-  <data name="ImageEditorInterpolationMode_Bilinear" xml:space="preserve">
-    <value>Bilinier</value>
   </data>
   <data name="Helpers_BrowseFolder_Choose_folder" xml:space="preserve">
     <value>Pilih folder</value>
@@ -583,18 +577,6 @@ Apakah anda ingin mengunduhnya?</value>
   </data>
   <data name="AfterCaptureTasks_CopyFileToClipboard" xml:space="preserve">
     <value>Salin file ke papan klip</value>
-  </data>
-  <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_is_empty_or_contains_unknown_data_" xml:space="preserve">
-    <value>Papan klip kosong atau berisi data yang tidak diketahui.</value>
-  </data>
-  <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__File__Count___0__" xml:space="preserve">
-    <value>Konten papan klip: File (Jumlah: {0})</value>
-  </data>
-  <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__Image__Size___0_x_1__" xml:space="preserve">
-    <value>Konten papan klip: Gambar (Ukuran: {0}x{1})</value>
-  </data>
-  <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__Text__Length___0__" xml:space="preserve">
-    <value>Konten papan klip: Teks (Panjang: {0})</value>
   </data>
   <data name="DirectoryNameEditor_EditValue_Browse_for_a_folder___" xml:space="preserve">
     <value>Jelajahi folder...</value>
@@ -811,12 +793,6 @@ Apakah anda ingin mengunduhnya?</value>
   </data>
   <data name="HotkeyType_HashCheck" xml:space="preserve">
     <value>Periksa hash</value>
-  </data>
-  <data name="ImageEditorInterpolationMode_HighQualityBicubic" xml:space="preserve">
-    <value>Bikubik berkualitas tinggi</value>
-  </data>
-  <data name="ImageEditorInterpolationMode_HighQualityBilinear" xml:space="preserve">
-    <value>Bilinier berkualitas tinggi</value>
   </data>
   <data name="LinearGradientMode_Horizontal" xml:space="preserve">
     <value>Horisontal</value>
@@ -1086,9 +1062,6 @@ Ukuran file: {2:n0} / {3:n0} KB</value>
   </data>
   <data name="PopUpNotificationType_ToastNotification" xml:space="preserve">
     <value>Tampilkan pemberitahuan kecil dengan pratinjau</value>
-  </data>
-  <data name="ImageEditorInterpolationMode_NearestNeighbor" xml:space="preserve">
-    <value>Batasan terdekat</value>
   </data>
   <data name="LinearGradientMode_ForwardDiagonal" xml:space="preserve">
     <value>Maju diagonal</value>

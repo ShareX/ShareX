@@ -27,11 +27,11 @@ using ShareX.HelpersLib;
 using ShareX.UploadersLib.Properties;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Drawing;
 using System.IO;
 using System.Text.RegularExpressions;
 using System.Threading;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
 
@@ -531,26 +531,26 @@ namespace ShareX.UploadersLib.FileUploaders
         public class CheckProgress : IDisposable
         {
             private SendSpace sendSpace;
-            private BackgroundWorker bw;
             private string url;
             private int interval = 1000;
+            private CancellationTokenSource cts;
 
             public CheckProgress(string progressURL, SendSpace sendSpace)
             {
                 url = progressURL;
                 this.sendSpace = sendSpace;
-                bw = new BackgroundWorker { WorkerSupportsCancellation = true };
-                bw.DoWork += bw_DoWork;
-                bw.RunWorkerAsync();
+
+                cts = new CancellationTokenSource();
+                Task.Run(() => DoWork(cts.Token), cts.Token);
             }
 
-            private void bw_DoWork(object sender, DoWorkEventArgs e)
+            private void DoWork(CancellationToken ct)
             {
                 Thread.Sleep(1000);
                 ProgressInfo progressInfo = new ProgressInfo();
                 int progress, elapsed;
                 DateTime time;
-                while (!bw.CancellationPending)
+                while (!ct.IsCancellationRequested)
                 {
                     time = DateTime.Now;
                     try
@@ -620,7 +620,10 @@ namespace ShareX.UploadersLib.FileUploaders
 
             public void Dispose()
             {
-                bw.CancelAsync();
+                if (cts != null)
+                {
+                    cts.Cancel();
+                }
             }
         }
 

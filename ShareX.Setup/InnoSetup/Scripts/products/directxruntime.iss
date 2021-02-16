@@ -1,9 +1,8 @@
 ; requires Windows 7, Windows Server 2003 Service Pack 1, Windows Server 2003 Service Pack 2, Windows Server 2008, Windows Vista, Windows XP Service Pack 2, Windows XP Service Pack 3
-; http://www.microsoft.com/en-US/download/details.aspx?id=35
+; https://www.microsoft.com/en-US/download/details.aspx?id=35
 
 [CustomMessages]
-en.directxruntime_title=DirectX End-User Runtime
-de.directxruntime_title=DirectX Endbenutzer Runtime
+directxruntime_title=DirectX End-User Runtime
 
 directxruntime_size=1 MB - 95.6 MB
 

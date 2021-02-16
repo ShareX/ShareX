@@ -121,10 +121,10 @@
     <value>Скопировать в буфер</value>
   </data>
   <data name="btnExport.Text" xml:space="preserve">
-    <value>Экспорт</value>
+    <value> Экспорт</value>
   </data>
   <data name="btnImport.Text" xml:space="preserve">
-    <value>Импорт</value>
+    <value> Импорт</value>
   </data>
   <data name="tsmiExportFile.Text" xml:space="preserve">
     <value>Сохранить в файл...</value>

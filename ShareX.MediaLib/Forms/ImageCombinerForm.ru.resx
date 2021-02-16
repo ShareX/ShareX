@@ -147,4 +147,7 @@
   <data name="lblSpacePixel.Text" xml:space="preserve">
     <value>пикселей</value>
   </data>
+  <data name="lblImageAlignment.Text" xml:space="preserve">
+    <value>Выравнивание изображения:</value>
+  </data>
 </root>

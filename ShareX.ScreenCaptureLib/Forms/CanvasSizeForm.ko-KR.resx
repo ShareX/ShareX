@@ -127,15 +127,15 @@
     <value>취소</value>
   </data>
   <data name="lblLeft.Text" xml:space="preserve">
-    <value>좌단</value>
+    <value>좌단:</value>
   </data>
   <data name="lblRight.Text" xml:space="preserve">
-    <value>우단</value>
+    <value>우단:</value>
   </data>
   <data name="lblTop.Text" xml:space="preserve">
-    <value>상단</value>
+    <value>상단:</value>
   </data>
   <data name="lblBottom.Text" xml:space="preserve">
-    <value>하단</value>
+    <value>하단:</value>
   </data>
 </root>

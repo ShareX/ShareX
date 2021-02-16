@@ -135,9 +135,6 @@
   <data name="TextDestination_CustomTextUploader" xml:space="preserve">
     <value>Нетиповий вивантажувач тексту</value>
   </data>
-  <data name="ImageEditorInterpolationMode_HighQualityBicubic" xml:space="preserve">
-    <value>Високоякісний бікубічний</value>
-  </data>
   <data name="ProxyMethod_None" xml:space="preserve">
     <value>Немає</value>
   </data>
@@ -170,9 +167,6 @@
   </data>
   <data name="ReplCodeMenuEntry_uln_User_login_name" xml:space="preserve">
     <value>Імʼя користувача</value>
-  </data>
-  <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__Image__Size___0_x_1__" xml:space="preserve">
-    <value>Вміст буфера обміну: Зображення (Розмір: {0}×{1})</value>
   </data>
   <data name="HotkeyType_ImageEffects" xml:space="preserve">
     <value>Ефекти зображення</value>
@@ -290,9 +284,6 @@
   </data>
   <data name="HotkeyType_CaptureWebpage_Category" xml:space="preserve">
     <value>Захоплення екрана</value>
-  </data>
-  <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__File__Count___0__" xml:space="preserve">
-    <value>Clipboard content: File (Count: {0})</value>
   </data>
   <data name="HotkeyType_FileUpload_Category" xml:space="preserve">
     <value>Вивантажити</value>
@@ -652,9 +643,6 @@ File size: {2:n0} / {3:n0} KB</value>
   <data name="HotkeyType_ScreenRecorderGIF_Category" xml:space="preserve">
     <value>Запис екрану</value>
   </data>
-  <data name="ImageEditorInterpolationMode_Bilinear" xml:space="preserve">
-    <value>Білінійне</value>
-  </data>
   <data name="WavFileNameEditor_EditValue_Browse_for_a_sound_file___" xml:space="preserve">
     <value>Знайти звуковий файл...</value>
   </data>
@@ -678,9 +666,6 @@ File size: {2:n0} / {3:n0} KB</value>
   </data>
   <data name="Extensions_AddContextMenu_Paste" xml:space="preserve">
     <value>Вставити</value>
-  </data>
-  <data name="ImageEditorInterpolationMode_HighQualityBilinear" xml:space="preserve">
-    <value>Високоякісний білінійний</value>
   </data>
   <data name="LinearGradientMode_ForwardDiagonal" xml:space="preserve">
     <value>Зворотна діагональ</value>
@@ -708,9 +693,6 @@ File size: {2:n0} / {3:n0} KB</value>
   </data>
   <data name="DownloaderForm_ChangeStatus_Status___0_" xml:space="preserve">
     <value>Стан: {0}</value>
-  </data>
-  <data name="ImageEditorInterpolationMode_Bicubic" xml:space="preserve">
-    <value>Бікубічне</value>
   </data>
   <data name="CodeMenu_Create_Close" xml:space="preserve">
     <value>Закрити</value>
@@ -1072,9 +1054,6 @@ File size: {2:n0} / {3:n0} KB</value>
   <data name="HotkeyType_ShortenURL" xml:space="preserve">
     <value>Скоротити посилання</value>
   </data>
-  <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__Text__Length___0__" xml:space="preserve">
-    <value>Clipboard content: Text (Length: {0})</value>
-  </data>
   <data name="CustomUploaderDestinationType_TextUploader" xml:space="preserve">
     <value>Вивантажувач тексту</value>
   </data>
@@ -1098,9 +1077,6 @@ File size: {2:n0} / {3:n0} KB</value>
   </data>
   <data name="HotkeyType_UploadURL" xml:space="preserve">
     <value>Вивантажити з посилання</value>
-  </data>
-  <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_is_empty_or_contains_unknown_data_" xml:space="preserve">
-    <value>Clipboard is empty or contains unknown data.</value>
   </data>
   <data name="AfterUploadTasks_CopyURLToClipboard" xml:space="preserve">
     <value>Копіювати посилання у буфер обміну</value>

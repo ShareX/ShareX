@@ -119,10 +119,14 @@
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="btnPathBrowse.Location" type="System.Drawing.Point, System.Drawing">
-    <value>272, 31</value>
+    <value>544, 62</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="btnPathBrowse.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>6, 6, 6, 6</value>
   </data>
   <data name="btnPathBrowse.Size" type="System.Drawing.Size, System.Drawing">
-    <value>40, 23</value>
+    <value>80, 46</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="btnPathBrowse.TabIndex" type="System.Int32, mscorlib">
@@ -130,7 +134,7 @@
   </data>
   <data name="btnPathBrowse.Text" xml:space="preserve">
     <value>...</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;btnPathBrowse.Name" xml:space="preserve">
     <value>btnPathBrowse</value>
   </data>
@@ -141,13 +145,16 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnPathBrowse.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="txtFilter.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 80</value>
+    <value>32, 160</value>
+  </data>
+  <data name="txtFilter.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>6, 6, 6, 6</value>
   </data>
   <data name="txtFilter.Size" type="System.Drawing.Size, System.Drawing">
-    <value>296, 20</value>
+    <value>588, 31</value>
   </data>
   <data name="txtFilter.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -162,13 +169,16 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;txtFilter.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="txtFolderPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 32</value>
+    <value>32, 64</value>
+  </data>
+  <data name="txtFolderPath.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>6, 6, 6, 6</value>
   </data>
   <data name="txtFolderPath.Size" type="System.Drawing.Size, System.Drawing">
-    <value>248, 20</value>
+    <value>492, 31</value>
   </data>
   <data name="txtFolderPath.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -183,16 +193,19 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;txtFolderPath.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="lblFilter.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="lblFilter.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 64</value>
+    <value>26, 128</value>
+  </data>
+  <data name="lblFilter.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>6, 0, 6, 0</value>
   </data>
   <data name="lblFilter.Size" type="System.Drawing.Size, System.Drawing">
-    <value>32, 13</value>
+    <value>66, 25</value>
   </data>
   <data name="lblFilter.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -210,16 +223,19 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblFilter.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="lblFolderPath.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="lblFolderPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 16</value>
+    <value>24, 32</value>
+  </data>
+  <data name="lblFolderPath.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>6, 0, 6, 0</value>
   </data>
   <data name="lblFolderPath.Size" type="System.Drawing.Size, System.Drawing">
-    <value>63, 13</value>
+    <value>127, 25</value>
   </data>
   <data name="lblFolderPath.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -237,16 +253,19 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblFolderPath.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="lblFilterExample.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="lblFilterExample.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 103</value>
+    <value>24, 206</value>
+  </data>
+  <data name="lblFilterExample.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>6, 0, 6, 0</value>
   </data>
   <data name="lblFilterExample.Size" type="System.Drawing.Size, System.Drawing">
-    <value>78, 13</value>
+    <value>157, 25</value>
   </data>
   <data name="lblFilterExample.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -264,16 +283,19 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblFilterExample.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="cbIncludeSubdirectories.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="cbIncludeSubdirectories.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 128</value>
+    <value>32, 256</value>
+  </data>
+  <data name="cbIncludeSubdirectories.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>6, 6, 6, 6</value>
   </data>
   <data name="cbIncludeSubdirectories.Size" type="System.Drawing.Size, System.Drawing">
-    <value>129, 17</value>
+    <value>254, 29</value>
   </data>
   <data name="cbIncludeSubdirectories.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -291,13 +313,19 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;cbIncludeSubdirectories.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
+  </data>
+  <data name="btnCancel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
   </data>
   <data name="btnCancel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>232, 160</value>
+    <value>464, 350</value>
+  </data>
+  <data name="btnCancel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>6, 6, 6, 6</value>
   </data>
   <data name="btnCancel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>80, 23</value>
+    <value>160, 46</value>
   </data>
   <data name="btnCancel.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -315,13 +343,19 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnCancel.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
+  </data>
+  <data name="btnOK.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
   </data>
   <data name="btnOK.Location" type="System.Drawing.Point, System.Drawing">
-    <value>144, 160</value>
+    <value>288, 350</value>
+  </data>
+  <data name="btnOK.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>6, 6, 6, 6</value>
   </data>
   <data name="btnOK.Size" type="System.Drawing.Size, System.Drawing">
-    <value>80, 23</value>
+    <value>160, 46</value>
   </data>
   <data name="btnOK.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -339,18 +373,53 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnOK.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
+  </data>
+  <data name="chkMoveToScreenshotsDir.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="chkMoveToScreenshotsDir.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="chkMoveToScreenshotsDir.Location" type="System.Drawing.Point, System.Drawing">
+    <value>32, 296</value>
+  </data>
+  <data name="chkMoveToScreenshotsDir.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>6, 6, 6, 6</value>
+  </data>
+  <data name="chkMoveToScreenshotsDir.Size" type="System.Drawing.Size, System.Drawing">
+    <value>338, 29</value>
+  </data>
+  <data name="chkMoveToScreenshotsDir.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="chkMoveToScreenshotsDir.Text" xml:space="preserve">
+    <value>Move file to screenshots folder</value>
+  </data>
+  <data name="&gt;&gt;chkMoveToScreenshotsDir.Name" xml:space="preserve">
+    <value>chkMoveToScreenshotsDir</value>
+  </data>
+  <data name="&gt;&gt;chkMoveToScreenshotsDir.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chkMoveToScreenshotsDir.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;chkMoveToScreenshotsDir.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
+    <value>192, 192</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>324, 193</value>
+    <value>648, 416</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>6, 6, 6, 6</value>
+  </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>
   </data>

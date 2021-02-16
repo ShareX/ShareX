@@ -474,5 +474,12 @@ namespace ShareX.HelpersLib
         {
             return text.ToPascalCase(spaceReplacement).ToLower();
         }
+
+        public static string PadCenter(this string str, int totalWidth, char paddingChar = ' ')
+        {
+            int padding = totalWidth - str.Length;
+            int padLeft = (padding / 2) + str.Length;
+            return str.PadLeft(padLeft, paddingChar).PadRight(totalWidth, paddingChar);
+        }
     }
 }

@@ -54,7 +54,7 @@ namespace ShareX.UploadersLib.URLShorteners
         public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpTeknik;
     }
 
-    public sealed class TeknikUrlShortener : URLShortener, IOAuth2Basic
+    public sealed class TeknikUrlShortener : URLShortener, IOAuth2
     {
         public OAuth2Info AuthInfo { get; set; }
         public string APIUrl { get; set; }
@@ -92,6 +92,16 @@ namespace ShareX.UploadersLib.URLShorteners
             }
 
             return ur;
+        }
+
+        public bool RefreshAccessToken()
+        {
+            return teknik.RefreshAccessToken();
+        }
+
+        public bool CheckAuthorization()
+        {
+            return teknik.CheckAuthorization();
         }
     }
 

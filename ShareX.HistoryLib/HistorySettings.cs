@@ -30,7 +30,7 @@ namespace ShareX.HistoryLib
     public class HistorySettings
     {
         public WindowState WindowState { get; set; } = new WindowState();
-        public int MaxItemCount { get; set; } = 0;
         public int SplitterDistance { get; set; } = 550;
+        public int MaxItemCount { get; set; } = 0;
     }
 }

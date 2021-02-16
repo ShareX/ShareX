@@ -275,7 +275,7 @@ Veuillez sélectionner un raccourci différent ou quitter l'application en confl
     <value>Tâche : {0}</value>
   </data>
   <data name="ScreenRecordForm_StartRecording_FFmpeg_video_and_audio_source_both_can_t_be__None__" xml:space="preserve">
-    <value>La vidéo ou la piste audio source doit être définie.</value>
+    <value>les sources vidéo et audio FFmpeg ne peuvent être toutes les deux définies sur "Aucun".</value>
   </data>
   <data name="AboutForm_AboutForm_Changelog" xml:space="preserve">
     <value>Historique des modifications</value>
@@ -320,7 +320,7 @@ Voulez-vous le télécharger automatiquement ?</value>
 Voulez-vous redémarrer ShareX ?</value>
   </data>
   <data name="FileExistForm_txtNewName_TextChanged_Use_new_name__" xml:space="preserve">
-    <value>Utiliser un nouveau nom :</value>
+    <value>Utiliser un nouveau nom : </value>
   </data>
   <data name="ScreenRecordForm_StartRecording_Missing" xml:space="preserve">
     <value>Manquant</value>
@@ -585,5 +585,56 @@ Voulez-vous redémarrer ShareX ?</value>
   </data>
   <data name="ThisFeatureWillNotWorkWhenDisableUploadOptionIsEnabled" xml:space="preserve">
     <value>Cette fonctionnalité n'est pas opérationnelle quand l'option "DisableUpload" est activée !</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_pt_PT" xml:space="preserve">
+    <value>Portugais</value>
+  </data>
+  <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__Image__Size___0_x_1__" xml:space="preserve">
+    <value>Contenu du presse-papier : Image (Taille : {0}x{1})</value>
+  </data>
+  <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__File__Count___0__" xml:space="preserve">
+    <value>Contenu du presse-papier : Fichier (Nombre : {0})</value>
+  </data>
+  <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__Text__Length___0__" xml:space="preserve">
+    <value>Contenu du presse-papier : Texte (Longueur : {0})</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_fa_IR" xml:space="preserve">
+    <value>Persan</value>
+  </data>
+  <data name="Confirmation" xml:space="preserve">
+    <value>Confirmation</value>
+  </data>
+  <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_is_empty_or_contains_unknown_data_" xml:space="preserve">
+    <value>Le presse-papier est vide ou contient des données inconnues.</value>
+    
+  </data>
+  <data name="WouldYouLikeToResetThemes" xml:space="preserve">
+    <value>Voulez-vous réinitialiser les thèmes ?</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_ja_JP" xml:space="preserve">
+    <value>Japonais</value>
+  </data>
+  <data name="WouldYouLikeToEnableImageEffects" xml:space="preserve">
+    <value>Voulez-vous activer les effets d'image ?
+
+Vous pourrez les désactiver plus tard depuis le manu "Tâches après la capture".</value>
+  </data>
+  <data name="FailedToSaveSettings" xml:space="preserve">
+    <value>Échec de l'enregistrement des paramètres</value>
+  </data>
+  <data name="Hotkey" xml:space="preserve">
+    <value>Raccourci clavier</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="ScreenColorPicker" xml:space="preserve">
+    <value>Sélecteur de couleurs de l'écran</value>
+  </data>
+  <data name="ShareXIsMinimizedToTheSystemTray" xml:space="preserve">
+    <value>ShareX est réduit dans la zone de notification.</value>
+  </data>
+  <data name="YourAntiVirusSoftwareOrTheControlledFolderAccessFeatureInWindows10CouldBeBlockingShareX" xml:space="preserve">
+    <value>Votre antivirus ou la fonctionnalité d'accès contrôlé aux dossiers dans Windows 10 pourrait bloquer ShareX.</value>
   </data>
 </root>

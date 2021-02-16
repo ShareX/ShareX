@@ -2,7 +2,7 @@
 Name: "de"; MessagesFile: "compiler:Languages\German.isl"
 
 [CustomMessages]
-;http://www.microsoft.com/globaldev/reference/lcid-all.mspx
+; https://www.microsoft.com/globaldev/reference/lcid-all.mspx
 de.lcid=1031
 de.depdownload_msg=Die folgenden Programme werden benötigt bevor das Setup fortfahren kann:%n%n%1%nJetzt downloaden und installieren?
 de.depdownload_memo_title=Abhängigkeiten downloaden

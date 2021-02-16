@@ -45,6 +45,9 @@ namespace ShareX
         [JsonIgnore]
         public TaskSettings TaskSettingsReference { get; private set; }
 
+        [JsonIgnore]
+        public bool IsSafeTaskSettings => TaskSettingsReference != null;
+
         public string Description = "";
 
         public HotkeyType Job = HotkeyType.None;
@@ -159,9 +162,9 @@ namespace ShareX
         {
             get
             {
-                return UseDefaultAfterCaptureJob && UseDefaultAfterUploadJob && UseDefaultDestinations && !OverrideFTP && !OverrideCustomUploader && UseDefaultGeneralSettings &&
-                    UseDefaultImageSettings && UseDefaultCaptureSettings && UseDefaultUploadSettings && UseDefaultActions && UseDefaultToolsSettings &&
-                    UseDefaultAdvancedSettings && !WatchFolderEnabled;
+                return UseDefaultAfterCaptureJob && UseDefaultAfterUploadJob && UseDefaultDestinations && !OverrideFTP && !OverrideCustomUploader &&
+                    !OverrideScreenshotsFolder && UseDefaultGeneralSettings && UseDefaultImageSettings && UseDefaultCaptureSettings && UseDefaultUploadSettings &&
+                    UseDefaultActions && UseDefaultToolsSettings && UseDefaultAdvancedSettings && !WatchFolderEnabled;
             }
         }
 
@@ -377,6 +380,9 @@ namespace ShareX
         public bool RegionCaptureUseWindowPattern = true;
         public bool FileUploadUseNamePattern = false;
         public bool FileUploadReplaceProblematicCharacters = false;
+        public bool URLRegexReplace = false;
+        public string URLRegexReplacePattern = "^https?://(.+)$";
+        public string URLRegexReplaceReplacement = "https://$1";
 
         #endregion Upload / File naming
 
@@ -399,6 +405,8 @@ namespace ShareX
     public class TaskSettingsTools
     {
         public string ScreenColorPickerFormat = "$hex";
+        public string ScreenColorPickerFormatCtrl = "$r255, $g255, $b255";
+        public string ScreenColorPickerInfoText = "RGB: $r255, $g255, $b255$nHex: $hex$nX: $x Y: $y";
         public IndexerSettings IndexerSettings = new IndexerSettings();
         public ImageCombinerOptions ImageCombinerOptions = new ImageCombinerOptions();
         public VideoConverterOptions VideoConverterOptions = new VideoConverterOptions();
@@ -512,15 +520,6 @@ namespace ShareX
         [Category("Notifications"), DefaultValue(ContentAlignment.BottomRight), Description("Specify where should toast notification window appear on the screen.")]
         public ContentAlignment ToastWindowPlacement { get; set; }
 
-        [Category("Notifications"), DefaultValue(ToastClickAction.OpenUrl), Description("Specify action after toast notification window is left clicked."), TypeConverter(typeof(EnumDescriptionConverter))]
-        public ToastClickAction ToastWindowClickAction { get; set; }
-
-        [Category("Notifications"), DefaultValue(ToastClickAction.CloseNotification), Description("Specify action after toast notification window is right clicked."), TypeConverter(typeof(EnumDescriptionConverter))]
-        public ToastClickAction ToastWindowRightClickAction { get; set; }
-
-        [Category("Notifications"), DefaultValue(ToastClickAction.AnnotateImage), Description("Specify action after toast notification window is middle clicked."), TypeConverter(typeof(EnumDescriptionConverter))]
-        public ToastClickAction ToastWindowMiddleClickAction { get; set; }
-
         private Size toastWindowSize;
 
         [Category("Notifications"), DefaultValue(typeof(Size), "400, 300"), Description("Maximum toast notification window size.")]
@@ -535,6 +534,15 @@ namespace ShareX
                 toastWindowSize = new Size(Math.Max(value.Width, 100), Math.Max(value.Height, 100));
             }
         }
+
+        [Category("Notifications"), DefaultValue(ToastClickAction.OpenUrl), Description("Specify action after toast notification window is left clicked."), TypeConverter(typeof(EnumDescriptionConverter))]
+        public ToastClickAction ToastWindowClickAction { get; set; }
+
+        [Category("Notifications"), DefaultValue(ToastClickAction.CloseNotification), Description("Specify action after toast notification window is right clicked."), TypeConverter(typeof(EnumDescriptionConverter))]
+        public ToastClickAction ToastWindowRightClickAction { get; set; }
+
+        [Category("Notifications"), DefaultValue(ToastClickAction.AnnotateImage), Description("Specify action after toast notification window is middle clicked."), TypeConverter(typeof(EnumDescriptionConverter))]
+        public ToastClickAction ToastWindowMiddleClickAction { get; set; }
 
         [Category("After upload"), DefaultValue(false), Description("After upload form will be automatically closed after 60 seconds.")]
         public bool AutoCloseAfterUploadForm { get; set; }

@@ -79,6 +79,8 @@ namespace ShareX.HistoryLib
                 scMain.SplitterDistance = Settings.SplitterDistance;
             }
 
+            nudMaxItemCount.SetValue(Settings.MaxItemCount);
+
             ShareXResources.ApplyTheme(this);
 
             Settings.WindowState.AutoHandleFormState(this);
@@ -157,22 +159,23 @@ namespace ShareX.HistoryLib
                 history = new HistoryManagerJSON(HistoryPath);
             }
 
-            IEnumerable<HistoryItem> tempHistoryItems = history.GetHistoryItems();
-            tempHistoryItems = tempHistoryItems.Reverse();
-
-            if (Settings.MaxItemCount > 0)
-            {
-                tempHistoryItems = tempHistoryItems.Take(Settings.MaxItemCount);
-            }
-
-            return tempHistoryItems.ToArray();
+            List<HistoryItem> historyItems = history.GetHistoryItems();
+            historyItems.Reverse();
+            return historyItems.ToArray();
         }
 
         private void ApplyFiltersAndAdd()
         {
-            if (allHistoryItems.Length > 0)
+            if (allHistoryItems != null && allHistoryItems.Length > 0)
             {
-                AddHistoryItems(ApplyFilters(allHistoryItems));
+                HistoryItem[] historyItems = ApplyFilters(allHistoryItems);
+
+                if (Settings.MaxItemCount > 0 && historyItems.Length > Settings.MaxItemCount)
+                {
+                    historyItems = historyItems.Take(Settings.MaxItemCount).ToArray();
+                }
+
+                AddHistoryItems(historyItems);
             }
         }
 
@@ -419,6 +422,11 @@ namespace ShareX.HistoryLib
                 Cursor = Cursors.Default;
                 showingStats = true;
             }
+        }
+
+        private void nudMaxItemCount_ValueChanged(object sender, EventArgs e)
+        {
+            Settings.MaxItemCount = (int)nudMaxItemCount.Value;
         }
 
         private void lvHistory_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)

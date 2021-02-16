@@ -117,9 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="FFmpegHelper_Record_FFmpeg_error" xml:space="preserve">
-    <value>FFmpeg hatası</value>
-  </data>
   <data name="FFmpegOptionsForm_buttonFFmpegBrowse_Click_Browse_for_ffmpeg_exe" xml:space="preserve">
     <value>ffmpeg.exe için gözat</value>
   </data>
@@ -137,11 +134,6 @@
   </data>
   <data name="RectangleRegion_GetAreaText_Area" xml:space="preserve">
     <value>X: {0} Y: {1} G: {2} Y: {3}</value>
-  </data>
-  <data name="RectangleRegion_GetRulerText_Ruler_info" xml:space="preserve">
-    <value>X: {0} / Y: {1} / X2: {2} / Y2: {3}
-Genişlik: {4} px / Yükseklik: {5} px
-Mesafe: {6:0.00} px / Açı: {7:0.00}°</value>
   </data>
   <data name="RectangleTransparent_RectangleTransparent_Rectangle_capture_transparent" xml:space="preserve">
     <value>Dikdörtgen yakalama saydam</value>

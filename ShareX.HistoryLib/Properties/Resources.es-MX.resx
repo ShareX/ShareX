@@ -198,29 +198,8 @@
   <data name="HistoryItemManager_InitializeComponent_URL" xml:space="preserve">
     <value>Enlace</value>
   </data>
-  <data name="HistoryItemManager_UpdateTexts_HTML_link___0__" xml:space="preserve">
-    <value>Link HTML ({0})</value>
-  </data>
-  <data name="HistoryItemManager_UpdateTexts_URLs___0__" xml:space="preserve">
-    <value>Enlaces ({0})</value>
-  </data>
   <data name="HistoryManager_GetHistoryItems_Error" xml:space="preserve">
     <value>Error</value>
-  </data>
-  <data name="HistoryManager_GetHistoryItems_Error_occured_while_reading_XML_file___0_" xml:space="preserve">
-    <value>Ocurrió un error al leer archivo XML: {0}</value>
-  </data>
-  <data name="ObjectListView_ObjectListView_Copy_name" xml:space="preserve">
-    <value>Copiar nombre</value>
-  </data>
-  <data name="ObjectListView_ObjectListView_Copy_value" xml:space="preserve">
-    <value>Copiar valor</value>
-  </data>
-  <data name="ObjectListView_ObjectListView_Name" xml:space="preserve">
-    <value>Nombre</value>
-  </data>
-  <data name="ObjectListView_ObjectListView_Value" xml:space="preserve">
-    <value>Valor</value>
   </data>
   <data name="BtnShowStats_HideStats" xml:space="preserve">
     <value>Ocultar estadísticas</value>

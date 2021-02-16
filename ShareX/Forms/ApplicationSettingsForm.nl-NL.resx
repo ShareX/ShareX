@@ -300,9 +300,6 @@
   <data name="btnImport.Text" xml:space="preserve">
     <value>Importeer...</value>
   </data>
-  <data name="tpExportImport.Text" xml:space="preserve">
-    <value>Exporteer / Importeer</value>
-  </data>
   <data name="cbHistorySaveTasks.Text" xml:space="preserve">
     <value>Taken opslaan naar geschiedenis</value>
   </data>

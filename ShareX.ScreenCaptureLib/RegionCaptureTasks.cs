@@ -143,20 +143,9 @@ namespace ShareX.ScreenCaptureLib
             return null;
         }
 
-        public static void ShowScreenColorPickerDialog(RegionCaptureOptions options, bool checkClipboard = true)
+        public static void ShowScreenColorPickerDialog(RegionCaptureOptions options)
         {
             Color color = Color.Red;
-
-            if (checkClipboard)
-            {
-                string text = ClipboardHelpers.GetText(true);
-
-                if (!string.IsNullOrEmpty(text) && ColorHelpers.ParseColor(text, out Color clipboardColor))
-                {
-                    color = clipboardColor;
-                }
-            }
-
             ColorPickerForm colorPickerForm = new ColorPickerForm(color, true);
             colorPickerForm.EnableScreenColorPickerButton(() => GetPointInfo(options));
             colorPickerForm.Show();
@@ -166,6 +155,7 @@ namespace ShareX.ScreenCaptureLib
         {
             RegionCaptureOptions newOptions = GetRegionCaptureOptions(options);
             newOptions.QuickCrop = false;
+            newOptions.UseLightResizeNodes = true;
 
             using (RegionCaptureForm form = new RegionCaptureForm(RegionCaptureMode.Ruler, newOptions))
             {
@@ -211,13 +201,15 @@ namespace ShareX.ScreenCaptureLib
             {
                 return new RegionCaptureOptions()
                 {
+                    DetectControls = options.DetectControls,
                     SnapSizes = options.SnapSizes,
                     ShowMagnifier = options.ShowMagnifier,
                     UseSquareMagnifier = options.UseSquareMagnifier,
                     MagnifierPixelCount = options.MagnifierPixelCount,
                     MagnifierPixelSize = options.MagnifierPixelSize,
                     ShowCrosshair = options.ShowCrosshair,
-                    AnnotationOptions = options.AnnotationOptions
+                    AnnotationOptions = options.AnnotationOptions,
+                    ScreenColorPickerInfoText = options.ScreenColorPickerInfoText
                 };
             }
         }

@@ -33,21 +33,21 @@ namespace ShareX.ScreenCaptureLib
     {
         public override ShapeType ShapeType { get; } = ShapeType.DrawingArrow;
 
-        public bool ArrowHeadsBothSide { get; set; }
+        public ArrowHeadDirection ArrowHeadDirection { get; set; }
 
         public override void OnConfigLoad()
         {
             base.OnConfigLoad();
-            ArrowHeadsBothSide = AnnotationOptions.ArrowHeadsBothSide;
+            ArrowHeadDirection = AnnotationOptions.ArrowHeadDirection;
         }
 
         public override void OnConfigSave()
         {
             base.OnConfigSave();
-            AnnotationOptions.ArrowHeadsBothSide = ArrowHeadsBothSide;
+            AnnotationOptions.ArrowHeadDirection = ArrowHeadDirection;
         }
 
-        protected override Pen CreatePen(Color borderColor, int borderSize)
+        protected override Pen CreatePen(Color borderColor, int borderSize, BorderStyle borderStyle)
         {
             using (GraphicsPath gp = new GraphicsPath())
             {
@@ -62,14 +62,22 @@ namespace ShareX.ScreenCaptureLib
                 };
 
                 Pen pen = new Pen(borderColor, borderSize);
-                pen.CustomEndCap = lineCap;
 
-                if (ArrowHeadsBothSide && MathHelpers.Distance(Points[0], Points[Points.Length - 1]) > arrowHeight * borderSize * 2)
+                if (ArrowHeadDirection == ArrowHeadDirection.Both && MathHelpers.Distance(Points[0], Points[Points.Length - 1]) > arrowHeight * borderSize * 2)
+                {
+                    pen.CustomEndCap = pen.CustomStartCap = lineCap;
+                }
+                else if (ArrowHeadDirection == ArrowHeadDirection.Start)
                 {
                     pen.CustomStartCap = lineCap;
                 }
+                else
+                {
+                    pen.CustomEndCap = lineCap;
+                }
 
                 pen.LineJoin = LineJoin.Round;
+                pen.DashStyle = (DashStyle)borderStyle;
                 return pen;
             }
         }

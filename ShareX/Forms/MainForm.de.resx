@@ -346,7 +346,7 @@
     <value>Bild bearbeiten...</value>
   </data>
   <data name="tsmiDeleteSelectedFile.Text" xml:space="preserve">
-    <value>Datei lokal löschen</value>
+    <value>Datei lokal löschen...</value>
   </data>
   <data name="tsmiShortenSelectedURL.Text" xml:space="preserve">
     <value>URL kürzen</value>
@@ -358,7 +358,7 @@
     <value>QR-Code anzeigen...</value>
   </data>
   <data name="tsmiShowResponse.Text" xml:space="preserve">
-    <value>Antwort anzeigen....</value>
+    <value>Antwort anzeigen...</value>
   </data>
   <data name="tsmiClearList.Text" xml:space="preserve">
     <value>Liste leeren</value>
@@ -730,10 +730,10 @@
     <value>Bild-Thumbnailer...</value>
   </data>
   <data name="tsmiCustomUploaderSettings.Text" xml:space="preserve">
-    <value>Benutzerdefinierte Uploader-Einstellungen</value>
+    <value>Benutzerdefinierte Uploader-Einstellungen...</value>
   </data>
   <data name="tsmiTrayCustomUploaderSettings.Text" xml:space="preserve">
-    <value>Benutzerdefinierte Uploader-Einstellungen</value>
+    <value>Benutzerdefinierte Uploader-Einstellungen...</value>
   </data>
   <data name="tsmiTrayScreenshotDelay.Text" xml:space="preserve">
     <value>Screenshot-Verzögerung</value>
@@ -783,9 +783,6 @@
   <data name="tsmiCopyImageDimensions.Text" xml:space="preserve">
     <value>Bildabmessungen</value>
   </data>
-  <data name="tsmiHideThumbnailTitle.Text" xml:space="preserve">
-    <value>Thumbnail-Titel ausblenden</value>
-  </data>
   <data name="tsbGitHub.Text" xml:space="preserve">
     <value>GitHub</value>
   </data>
@@ -805,7 +802,7 @@
     <value>ShareX</value>
   </data>
   <data name="tsmiTrayImageSplitter.Text" xml:space="preserve">
-    <value>Bildteiler.....</value>
+    <value>Bildteiler...</value>
   </data>
   <data name="tsmiThumbnailTitle.Text" xml:space="preserve">
     <value>Titel der Bildvorschau</value>
@@ -827,5 +824,26 @@
   </data>
   <data name="tsmiImageSplitter.Text" xml:space="preserve">
     <value>Bildteiler...</value>
+  </data>
+  <data name="tsbBitcoin.ToolTipText" xml:space="preserve">
+    <value>Unterstützen Sie uns mit Kryptowährung</value>
+  </data>
+  <data name="tsbDiscord.ToolTipText" xml:space="preserve">
+    <value>Unseren Discord-Server beitreten</value>
+  </data>
+  <data name="tsbPatreon.ToolTipText" xml:space="preserve">
+    <value>Unterstützen Sie uns auf Patreon</value>
+  </data>
+  <data name="tsbTwitter.ToolTipText" xml:space="preserve">
+    <value>Folgen Sie uns auf Twitter</value>
+  </data>
+  <data name="tsmiAddImageEffects.Text" xml:space="preserve">
+    <value>Bildeffekte hinzufügen...</value>
+  </data>
+  <data name="tsmiTrayVideoConverter.Text" xml:space="preserve">
+    <value>Videokonverter...</value>
+  </data>
+  <data name="tsmiVideoConverter.Text" xml:space="preserve">
+    <value>Videokonverter...</value>
   </data>
 </root>

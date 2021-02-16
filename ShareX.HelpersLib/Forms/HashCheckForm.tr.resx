@@ -135,9 +135,6 @@
   <data name="lblHashType.Text" xml:space="preserve">
     <value>Hash türü:</value>
   </data>
-  <data name="lblFile.Text" xml:space="preserve">
-    <value>Dosya yolu:</value>
-  </data>
   <data name="btnHashCheckCopyAll.Text" xml:space="preserve">
     <value>Hepsini kopyala</value>
   </data>

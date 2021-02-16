@@ -28,6 +28,7 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Design;
 using System.Drawing.Drawing2D;
+using System.Drawing.Text;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -36,17 +37,17 @@ namespace ShareX.ImageEffectsLib
     [Description("Text watermark")]
     public class DrawText : ImageEffect
     {
-        [DefaultValue(ContentAlignment.BottomRight)]
+        [DefaultValue("Text watermark"), Editor(typeof(NameParserEditor), typeof(UITypeEditor))]
+        public string Text { get; set; }
+
+        [DefaultValue(ContentAlignment.BottomRight), TypeConverter(typeof(EnumProperNameConverter))]
         public ContentAlignment Placement { get; set; }
 
         [DefaultValue(typeof(Point), "5, 5")]
         public Point Offset { get; set; }
 
-        [DefaultValue(true), Description("If text watermark size bigger than source image then don't draw it.")]
+        [DefaultValue(false), Description("If text watermark size bigger than source image then don't draw it.")]
         public bool AutoHide { get; set; }
-
-        [DefaultValue("Text watermark"), Editor(typeof(NameParserEditor), typeof(UITypeEditor))]
-        public string Text { get; set; }
 
         private FontSafe textFontSafe = new FontSafe();
 
@@ -67,7 +68,10 @@ namespace ShareX.ImageEffectsLib
             }
         }
 
-        [DefaultValue(typeof(Color), "White"), Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
+        [DefaultValue(TextRenderingHint.SystemDefault), TypeConverter(typeof(EnumProperNameConverter))]
+        public TextRenderingHint TextRenderingMode { get; set; }
+
+        [DefaultValue(typeof(Color), "235, 235, 235"), Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
         public Color TextColor { get; set; }
 
         [DefaultValue(true)]
@@ -109,20 +113,11 @@ namespace ShareX.ImageEffectsLib
         [DefaultValue(true)]
         public bool DrawBackground { get; set; }
 
-        [DefaultValue(typeof(Color), "10, 110, 230"), Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
+        [DefaultValue(typeof(Color), "42, 47, 56"), Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
         public Color BackgroundColor { get; set; }
 
-        [DefaultValue(true)]
-        public bool UseGradient { get; set; }
-
-        [DefaultValue(LinearGradientMode.Vertical)]
-        public LinearGradientMode GradientType { get; set; }
-
-        [DefaultValue(typeof(Color), "0, 30, 80"), Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
-        public Color BackgroundColor2 { get; set; }
-
         [DefaultValue(false)]
-        public bool UseCustomGradient { get; set; }
+        public bool UseGradient { get; set; }
 
         [Editor(typeof(GradientEditor), typeof(UITypeEditor))]
         public GradientInfo Gradient { get; set; }
@@ -190,16 +185,9 @@ namespace ShareX.ImageEffectsLib
 
                             try
                             {
-                                if (UseGradient)
+                                if (UseGradient && Gradient != null && Gradient.IsValid)
                                 {
-                                    if (UseCustomGradient && Gradient != null && Gradient.IsValid)
-                                    {
-                                        backgroundBrush = Gradient.GetGradientBrush(watermarkRectangle);
-                                    }
-                                    else
-                                    {
-                                        backgroundBrush = new LinearGradientBrush(watermarkRectangle, BackgroundColor, BackgroundColor2, GradientType);
-                                    }
+                                    backgroundBrush = Gradient.GetGradientBrush(watermarkRectangle);
                                 }
                                 else
                                 {
@@ -231,6 +219,8 @@ namespace ShareX.ImageEffectsLib
                             g.PixelOffsetMode = PixelOffsetMode.Default;
                         }
                     }
+
+                    g.TextRenderingHint = TextRenderingMode;
 
                     if (DrawTextShadow)
                     {

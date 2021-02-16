@@ -43,11 +43,23 @@ namespace ShareX.ImageEffectsLib
         ResizeIfSmaller
     }
 
-    public enum DrawImageSizeMode
+    public enum DrawImageSizeMode // Localized
     {
         DontResize,
         AbsoluteSize,
         PercentageOfWatermark,
         PercentageOfCanvas
+    }
+
+    public enum ImageRotateFlipType
+    {
+        None = 0,
+        Rotate90 = 1,
+        Rotate180 = 2,
+        Rotate270 = 3,
+        FlipX = 4,
+        Rotate90FlipX = 5,
+        FlipY = 6,
+        Rotate90FlipY = 7
     }
 }

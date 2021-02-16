@@ -135,4 +135,29 @@
   <data name="ImageEffectsForm_EditorMode_Cancel" xml:space="preserve">
     <value>取消</value>
   </data>
+  <data name="AssetsFolderMustBeInsideShareXImageEffectsFolder" xml:space="preserve">
+    <value>资源文件夹必须位于 ShareX 图像效果文件夹内。</value>
+  </data>
+  <data name="Confirmation" xml:space="preserve">
+    <value>确认</value>
+  </data>
+  <data name="Effect" xml:space="preserve">
+    <value>效果:</value>
+  </data>
+  <data name="MissingPresetName" xml:space="preserve">
+    <value>缺少预设名称</value>
+  </data>
+  <data name="InvalidAssetsFolderPath" xml:space="preserve">
+    <value>无效的资源文件夹路径</value>
+  </data>
+  <data name="PresetNameCannotBeEmpty" xml:space="preserve">
+    <value>预设名称不能为空。</value>
+  </data>
+  <data name="PackageWithThisFileNameAlreadyExistsRNWouldYouLikeToOverwriteIt" xml:space="preserve">
+    <value>同名效果包已存在。
+是否覆盖？</value>
+  </data>
+  <data name="WouldYouLikeToClearEffects" xml:space="preserve">
+    <value>是否清除效果？</value>
+  </data>
 </root>

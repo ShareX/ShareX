@@ -136,6 +136,6 @@
     <value>ShareX - Редактор быстрых задач</value>
   </data>
   <data name="btnReset.Text" xml:space="preserve">
-    <value>Восст. значение по умолчанию</value>
+    <value>Сбросить...</value>
   </data>
 </root>

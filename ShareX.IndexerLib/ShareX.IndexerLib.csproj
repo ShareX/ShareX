@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ShareX.IndexerLib</RootNamespace>
     <AssemblyName>ShareX.IndexerLib</AssemblyName>
-    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
   </PropertyGroup>
@@ -116,6 +116,9 @@
       <DependentUpon>DirectoryIndexerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\DirectoryIndexerForm.fr.resx">
+      <DependentUpon>DirectoryIndexerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DirectoryIndexerForm.ja-JP.resx">
       <DependentUpon>DirectoryIndexerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\DirectoryIndexerForm.ko-KR.resx">

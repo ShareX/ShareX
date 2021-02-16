@@ -2,7 +2,7 @@
 Name: "fr"; MessagesFile: "compiler:Languages\French.isl"
 
 [CustomMessages]
-;http://www.microsoft.com/globaldev/reference/lcid-all.mspx
+; https://www.microsoft.com/globaldev/reference/lcid-all.mspx
 fr.lcid=1036
 fr.depdownload_msg=Les applications suivantes sont nécessaires avant que l'installation puisse continuer :%n%n%1%nTélécharger et installer maintenant ?
 fr.depdownload_memo_title=Télécharger les dépendances
