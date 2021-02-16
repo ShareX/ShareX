@@ -556,7 +556,7 @@ Dosya boyutu: {2:n0} / {3:n0} KB</value>
     <value>Güncelleştirme mevcut</value>
   </data>
   <data name="Helpers_CreateDirectoryIfNotExist_Create_failed_" xml:space="preserve">
-    <value>Klasör yaratılamıyor, yol ayarlarını kontrol ediniz.</value>
+    <value>Klasör oluşturulamıyor, yol ayarlarını kontrol ediniz.</value>
   </data>
   <data name="HotkeyType_ColorPicker" xml:space="preserve">
     <value>Renk seçici</value>
