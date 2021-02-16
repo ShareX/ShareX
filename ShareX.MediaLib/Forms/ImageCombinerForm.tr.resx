@@ -121,7 +121,7 @@
     <value>ShareX - Resim birleştirici</value>
   </data>
   <data name="btnAdd.Text" xml:space="preserve">
-    <value>Ekle...</value>
+    <value>Ekle</value>
   </data>
   <data name="btnCombine.Text" xml:space="preserve">
     <value>Resimleri birleştir ve kaydet/yükle yakalama sonrası ayarlarına göre</value>
@@ -145,6 +145,180 @@
     <value>Resimler arasındaki boşluk:</value>
   </data>
   <data name="lblSpacePixel.Text" xml:space="preserve">
-    <value>piksel olarak</value>
+    <value>Piksel olarak</value>
+  </data>
+  <data name="&gt;&gt;lblSpacePixel.Name" xml:space="preserve">
+    <value>lblSpacePixel</value>
+  </data>
+  <data name="&gt;&gt;lblSpacePixel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblSpacePixel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblSpacePixel.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="lblImageAlignment.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Alt, Sol</value>
+  </data>
+  <data name="lblImageAlignment.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblImageAlignment.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 448</value>
+  </data>
+  <data name="lblImageAlignment.Size" type="System.Drawing.Size, System.Drawing">
+    <value>87, 13</value>
+  </data>
+  <data name="lblImageAlignment.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="lblImageAlignment.Text" xml:space="preserve">
+    <value>Görüntü hizalaması:</value>
+  </data>
+  <data name="&gt;&gt;lblImageAlignment.Name" xml:space="preserve">
+    <value>lblImageAlignment</value>
+  </data>
+  <data name="&gt;&gt;lblImageAlignment.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblImageAlignment.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblImageAlignment.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="cbAlignment.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Alt, Sol</value>
+  </data>
+  <data name="cbAlignment.Location" type="System.Drawing.Point, System.Drawing">
+    <value>200, 444</value>
+  </data>
+  <data name="cbAlignment.Size" type="System.Drawing.Size, System.Drawing">
+    <value>120, 21</value>
+  </data>
+  <data name="cbAlignment.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;cbAlignment.Name" xml:space="preserve">
+    <value>cbAlignment</value>
+  </data>
+  <data name="&gt;&gt;cbAlignment.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbAlignment.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;cbAlignment.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="flpOrientation.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Alt, Sol</value>
+  </data>
+  <data name="flpOrientation.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="rbOrientationHorizontal.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="rbOrientationHorizontal.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 3</value>
+  </data>
+  <data name="rbOrientationHorizontal.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 3, 3, 3</value>
+  </data>
+  <data name="rbOrientationHorizontal.Size" type="System.Drawing.Size, System.Drawing">
+    <value>72, 17</value>
+  </data>
+  <data name="rbOrientationHorizontal.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="rbOrientationHorizontal.Text" xml:space="preserve">
+    <value>Yatay</value>
+  </data>
+  <data name="&gt;&gt;rbOrientationHorizontal.Name" xml:space="preserve">
+    <value>rbOrientationHorizontal</value>
+  </data>
+  <data name="&gt;&gt;rbOrientationHorizontal.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rbOrientationHorizontal.Parent" xml:space="preserve">
+    <value>flpOrientation</value>
+  </data>
+  <data name="&gt;&gt;rbOrientationHorizontal.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="rbOrientationVertical.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="rbOrientationVertical.Location" type="System.Drawing.Point, System.Drawing">
+    <value>78, 3</value>
+  </data>
+  <data name="rbOrientationVertical.Size" type="System.Drawing.Size, System.Drawing">
+    <value>60, 17</value>
+  </data>
+  <data name="rbOrientationVertical.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="rbOrientationVertical.Text" xml:space="preserve">
+    <value>Dikey</value>
+  </data>
+  <data name="&gt;&gt;rbOrientationVertical.Name" xml:space="preserve">
+    <value>rbOrientationVertical</value>
+  </data>
+  <data name="&gt;&gt;rbOrientationVertical.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rbOrientationVertical.Parent" xml:space="preserve">
+    <value>flpOrientation</value>
+  </data>
+  <data name="&gt;&gt;rbOrientationVertical.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="flpOrientation.Location" type="System.Drawing.Point, System.Drawing">
+    <value>200, 419</value>
+  </data>
+  <data name="flpOrientation.Size" type="System.Drawing.Size, System.Drawing">
+    <value>141, 23</value>
+  </data>
+  <data name="flpOrientation.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;flpOrientation.Name" xml:space="preserve">
+    <value>flpOrientation</value>
+  </data>
+  <data name="&gt;&gt;flpOrientation.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;flpOrientation.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;flpOrientation.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>96, 96</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>521, 536</value>
+  </data>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterScreen</value>
+  </data>
+  <data name="&gt;&gt;chFilepath.Name" xml:space="preserve">
+    <value>chFilepath</value>
+  </data>
+  <data name="&gt;&gt;chFilepath.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>ImageCombinerForm</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>
