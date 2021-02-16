@@ -600,9 +600,6 @@
   <data name="tsmiSwitchTaskViewMode.Text" xml:space="preserve">
     <value>Küçük pencere görünümü</value>
   </data>
-  <data name="tsmiSwitchTaskViewMode.Text" xml:space="preserve">
-    <value>Liste görünümüne geç</value>
-  </data>
   <data name="tsmiImageCombiner.Text" xml:space="preserve">
     <value>Resim birleştirici...</value>
   </data>
