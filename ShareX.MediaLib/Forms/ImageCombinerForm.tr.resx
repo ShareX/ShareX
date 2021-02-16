@@ -160,7 +160,7 @@
     <value>3</value>
   </data>
   <data name="lblImageAlignment.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Alt, Sol</value>
+    <value>Bottom, Left</value>
   </data>
   <data name="lblImageAlignment.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>

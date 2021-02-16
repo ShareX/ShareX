@@ -196,7 +196,7 @@
     <value>4</value>
   </data>
   <data name="pbProgress.Visible" type="System.Boolean, mscorlib">
-    <value>Fasle</value>
+    <value>False</value>
   </data>
   <data name="&gt;&gt;pbProgress.Name" xml:space="preserve">
     <value>pbProgress</value>
