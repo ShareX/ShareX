@@ -119,433 +119,329 @@
   </resheader>
   <data name="ShapeManager_CreateToolbar_CancelTaskEsc" xml:space="preserve">
     <value>Görevi iptal et (Esc)</value>
-    <comment/>
   </data>
   <data name="ShapeManager_CreateToolbar_UploadImage" xml:space="preserve">
     <value>Resmi yükle (Ctrl + U)</value>
-    <comment/>
   </data>
   <data name="ShapeManager_CreateContextMenu_Highlight_color___" xml:space="preserve">
     <value>Rengi vurgula...</value>
-    <comment/>
   </data>
   <data name="ShapeManager_CreateContextMenu_SwitchToDrawingToolAfterSelection" xml:space="preserve">
     <value>Şekil seçiminden sonra çizim aracına geç</value>
-    <comment/>
   </data>
   <data name="ShapeManager_CreateToolbar_FlipHorizontal" xml:space="preserve">
     <value>Yatay çevir</value>
-    <comment/>
   </data>
   <data name="WebpageCaptureForm_UpdateControls_Stop" xml:space="preserve">
     <value>Durdur</value>
-    <comment/>
   </data>
   <data name="ShapeManager_CreateContextMenu_Multi_region_mode" xml:space="preserve">
     <value>Çoklu bölge modu</value>
-    <comment/>
   </data>
   <data name="ShapeManager_CreateToolbar_UseLetters" xml:space="preserve">
     <value>Harf kullanın</value>
-    <comment/>
   </data>
   <data name="ShapeManager_CreateToolbar_ImageSize" xml:space="preserve">
     <value>Resim boyutu...</value>
-    <comment/>
   </data>
   <data name="ShapeManager_CreateToolbar_Delete" xml:space="preserve">
     <value>Sil</value>
-    <comment/>
   </data>
   <data name="ShapeManager_CreateToolbar_ApplyChangesContinueTaskEnter" xml:space="preserve">
     <value>Değişiklikleri uygula &amp; göreve devam et (Enter)</value>
-    <comment/>
   </data>
   <data name="OpenKeybindsPage" xml:space="preserve">
     <value>Tuş bağlamaları web sayfasını aç...</value>
-    <comment/>
   </data>
   <data name="ShapeManager_CreateToolbar_Edit" xml:space="preserve">
     <value>Düzenle</value>
-    <comment/>
   </data>
   <data name="ShapeManager_CreateToolbar_AutoCloseEditorOnTask" xml:space="preserve">
     <value>Görevde düzenleyiciyi otomatik kapat</value>
-    <comment/>
   </data>
   <data name="ShapeManager_CreateToolbar_Undo" xml:space="preserve">
     <value>Geri al</value>
-    <comment/>
   </data>
   <data name="ShapeManager_CreateContextMenu_Width_" xml:space="preserve">
     <value>Genişlik:</value>
-    <comment/>
   </data>
   <data name="ShapeManager_CreateToolbar_DropShadow" xml:space="preserve">
     <value>Düşen gölge</value>
-    <comment/>
   </data>
   <data name="RegionCaptureForm_InitializeComponent_ImageEditor" xml:space="preserve">
     <value>Görüntü düzenleyici</value>
-    <comment/>
   </data>
   <data name="BaseRegionForm_InitializeComponent_Region_capture" xml:space="preserve">
     <value>Bölge yakalama</value>
-    <comment/>
   </data>
   <data name="ShapeManager_CreateToolbar_ShapeOptions" xml:space="preserve">
     <value>Şekil seçenekleri</value>
-    <comment/>
   </data>
   <data name="ShapeManager_CreateContextMenu_Fixed_size_region_mode" xml:space="preserve">
     <value>Sabit boyutlu bölge modu</value>
-    <comment/>
   </data>
   <data name="EditorStartupForm_ClipboardDoesNotContainAnImage" xml:space="preserve">
     <value>Pano bir görüntü içermiyor.</value>
-    <comment/>
   </data>
   <data name="ShapeManager_CreateContextMenu_Capture_monitor" xml:space="preserve">
     <value>Ekranı yakala</value>
-    <comment/>
   </data>
   <data name="ShapeManager_CreateToolbar_SendToBack" xml:space="preserve">
     <value>En arkaya gönder</value>
-    <comment/>
   </data>
   <data name="ShapeManager_CreateContextMenu_Capture_active_monitor" xml:space="preserve">
     <value>Aktif ekranı yakalayın</value>
-    <comment/>
   </data>
   <data name="ShapeManager_CreateToolbar_BringForward" xml:space="preserve">
     <value>Öne getir</value>
-    <comment/>
   </data>
   <data name="ShapeManager_CreateToolbar_Rotate90CounterClockwise" xml:space="preserve">
     <value>Saat yönünün tersine 90° döndür</value>
-    <comment/>
   </data>
   <data name="ShapeManager_CreateToolbar_InterpolationMode" xml:space="preserve">
     <value>Enterpolasyon modu:</value>
-    <comment/>
   </data>
   <data name="ShapeManager_CenterPoints" xml:space="preserve">
     <value>Merkez noktalar:</value>
-    <comment/>
   </data>
   <data name="ShapeManager_CreateContextMenu_Options" xml:space="preserve">
     <value>Seçenekler</value>
-    <comment/>
   </data>
   <data name="ShapeManager_CreateContextMenu_Capture" xml:space="preserve">
     <value>Yakala</value>
-    <comment/>
   </data>
   <data name="RectangleRegion_GetAreaText_Area" xml:space="preserve">
     <value>X: {0} Y: {1} W: {2} H: {3}</value>
-    <comment/>
   </data>
   <data name="ShapeManager_CreateToolbar_OpenImageFile" xml:space="preserve">
     <value>Resim dosyasını aç...</value>
-    <comment/>
   </data>
   <data name="ShapeManager_CreateToolbar_Rotate90Clockwise" xml:space="preserve">
     <value>90° saat yönünde döndür</value>
-    <comment/>
   </data>
   <data name="CloseEsc" xml:space="preserve">
     <value>Kapat (Esc)</value>
-    <comment/>
   </data>
   <data name="WebpageCaptureForm_UpdateControls_Capture" xml:space="preserve">
     <value>Yakalananlar</value>
-    <comment/>
   </data>
   <data name="MagnifyStrength" xml:space="preserve">
     <value>Kuvveti büyüt:</value>
-    <comment/>
   </data>
   <data name="ShapeManager_CreateToolbar_CopyImageToClipboard" xml:space="preserve">
     <value>Resmi panoya kopyala (Ctrl + Shift + C)</value>
-    <comment/>
   </data>
   <data name="ShapeManager_CreateToolbar_PrintImage" xml:space="preserve">
     <value>Resmi yazdır... (Ctrl + P)</value>
-    <comment/>
   </data>
   <data name="ShapeManager_CreateContextMenu_Show_FPS" xml:space="preserve">
     <value>FPS'yi Göster</value>
-    <comment/>
   </data>
   <data name="FFmpegOptionsForm_UpdateUI_Quality_" xml:space="preserve">
     <value>Kalite:</value>
-    <comment/>
   </data>
   <data name="ShapeManager_CursorType" xml:space="preserve">
     <value>İmleç türü:</value>
-    <comment/>
   </data>
   <data name="FFmpegOptionsForm_buttonFFmpegBrowse_Click_Browse_for_ffmpeg_exe" xml:space="preserve">
     <value>Ffmpeg.exe dosyasına göz atın</value>
-    <comment/>
   </data>
   <data name="ShapeManager_CreateContextMenu_Square_shape_magnifier" xml:space="preserve">
     <value>Kare şekilli büyüteç</value>
-    <comment/>
   </data>
   <data name="FFmpegOptionsForm_UpdateUI_Bitrate___0_k" xml:space="preserve">
     <value>Bit hızı: {0}k</value>
-    <comment/>
   </data>
   <data name="ShapeManager_CreateToolbar_EditorStartMode" xml:space="preserve">
     <value>Düzenleyici başlangıç modu:</value>
-    <comment/>
   </data>
   <data name="ShapeManager_CreateContextMenu_Capture_fullscreen" xml:space="preserve">
     <value>Tüm ekranı yakala</value>
-    <comment/>
   </data>
   <data name="ShapeManager_CreateToolbar_CaptureRegions" xml:space="preserve">
     <value>Bölgeleri yakala/value>
-    <comment/>
   </data>
   <data name="ScrollingCaptureForm_StopCapture_Start_capture" xml:space="preserve">
     <value>Yakalamayı başlat</value>
-    <comment/>
   </data>
   <data name="RectangleLight_InitializeComponent_Rectangle_capture_light" xml:space="preserve">
     <value>Dikdörtgen yakalama ışığı</value>
-    <comment/>
   </data>
   <data name="ShapeManager_CreateToolbar_SaveImage" xml:space="preserve">
     <value>Resmi kaydet (Ctrl + S)</value>
-    <comment/>
   </data>
   <data name="ShapeManager_CreateToolbar_NewImage" xml:space="preserve">
     <value>Yeni resim...</value>
-    <comment/>
   </data>
   <data name="ShapeManager_CreateContextMenu_Blur_radius_" xml:space="preserve">
     <value>Bulanıklık kuvveti:</value>
-    <comment/>
   </data>
   <data name="ShapeManager_CreateContextMenu_EnableAnimations" xml:space="preserve">
     <value>Animasyonları etkinleştir</value>
-    <comment/>
+      <data name="ShapeManager_CreateContextMenu_EnableAnimations" xml:space="preserve">
+    <value>Enable animations</value>
+  </data>
   </data>
   <data name="ShapeManager_CreateToolbar_SendBackward" xml:space="preserve">
     <value>Arkaya gönder</value>
-    <comment/>
   </data>
   <data name="ShapeManager_CreateContextMenu_Height_" xml:space="preserve">
     <value>Yükseklik:</value>
-    <comment/>
   </data>
   <data name="ImageEffects" xml:space="preserve">
     <value>Görüntü efektleri ekleyin...</value>
-    <comment/>
   </data>
   <data name="ShapeManager_CreateContextMenu_Fill_color___" xml:space="preserve">
     <value>Renk doldur...</value>
-    <comment/>
   </data>
   <data name="ShapeManager_CreateToolbar_SaveImageAs" xml:space="preserve">
     <value>Resmi farklı kaydet... (Ctrl + Shift + S)</value>
-    <comment/>
   </data>
   <data name="ShapeManager_CreateToolbar_ContinueTaskSpaceOrRightClick" xml:space="preserve">
     <value>Göreve devam et (Boşluk veya sağ tıklama)</value>
-    <comment/>
   </data>
   <data name="ShapeManager_CreateToolbar_CanvasSize" xml:space="preserve">
     <value>Tuval Boyutu...</value>
-    <comment/>
   </data>
   <data name="FFmpegOptionsForm_DownloaderForm_InstallRequested_Successfully_downloaded_FFmpeg_" xml:space="preserve">
     <value>FFmpeg başarıyla indirildi.</value>
-    <comment/>
   </data>
   <data name="ShapeManager_CreateToolbar_FlipVertical" xml:space="preserve">
     <value>Dikey Çevir</value>
-    <comment/>
   </data>
   <data name="ShapeManager_CreateToolbar_AutoCropImage" xml:space="preserve">
     <value>Resmi otomatik kırp...</value>
-    <comment/>
   </data>
   <data name="DropShadowColor" xml:space="preserve">
     <value>Alt gölge rengi...</value>
-    <comment/>
   </data>
   <data name="ShapeManager_CreateToolbar_BringToFront" xml:space="preserve">
     <value>En öne getir</value>
-    <comment/>
   </data>
   <data name="ShapeManager_CreateToolbar_Rotate180" xml:space="preserve">
     <value>180° döndür</value>
-    <comment/>
   </data>
   <data name="LightResizeNodes" xml:space="preserve">
     <value>Hafif yeniden boyutlandırma düğümleri kullanın</value>
-    <comment/>
   </data>
   <data name="ShapeManager_CreateToolbar_InsertImageFromScreen" xml:space="preserve">
     <value>Ekrandan resim ekle...</value>
-    <comment/>
   </data>
   <data name="ShapeManager_CreateToolbar_DeleteAll" xml:space="preserve">
     <value>Hepsini sil</value>
-    <comment/>
   </data>
   <data name="ShapeManager_CreateContextMenu_Border_size_" xml:space="preserve">
     <value>Kenarlık boyutu:</value>
-    <comment/>
   </data>
   <data name="ShapeManager_CreateToolbar_AnnotateMenu" xml:space="preserve">
     <value>Açıklama menüsü</value>
-    <comment/>
   </data>
   <data name="ShapeManager_CreateToolbar_PasteImageText" xml:space="preserve">
     <value>Resmi/metni yapıştır</value>
-    <comment/>
   </data>
   <data name="ShapeManager_CreateToolbar_CropImage" xml:space="preserve">
     <value>Görüntüyü kırp...</value>
-    <comment/>
   </data>
   <data name="ShapeManager_CreateContextMenu_Border_color___" xml:space="preserve">
     <value>Sınır rengi...</value>
-    <comment/>
   </data>
   <data name="ShapeManager_CreateContextMenu_Show_magnifier" xml:space="preserve">
     <value>Büyüteci göster</value>
-    <comment/>
   </data>
   <data name="ShapeManager_CreateToolbar_StartingStepValue" xml:space="preserve">
     <value>İlk adımın değeri:</value>
-    <comment/>
   </data>
   <data name="RegionCaptureForm_ShowExitConfirmation_ShareXImageEditor" xml:space="preserve">
     <value>ShareX - Resim düzenleyici</value>
-    <comment/>
   </data>
   <data name="ThisWindowWillCloseBeforeOpeningKeybindsPageWantContinue" xml:space="preserve">
     <value>Bu pencere, keybinds web sayfasını açmadan önce kapanacaktır. Devam etmek istiyor musun?</value>
-    <comment/>
   </data>
   <data name="ShapeManager_CreateContextMenu_SwitchToSelectionToolAfterDrawing" xml:space="preserve">
     <value>Şekil çiziminden sonra seçim aracına geçs</value>
-    <comment/>
   </data>
   <data name="RectangleTransparent_RectangleTransparent_Rectangle_capture_transparent" xml:space="preserve">
     <value>Dikdörtgen yakalama şeffaf</value>
-    <comment/>
   </data>
   <data name="ShapeManager_CreateContextMenu_Show_position_and_size_info" xml:space="preserve">
     <value>Konum ve boyut bilgilerini göster</value>
-    <comment/>
   </data>
   <data name="ScrollingCaptureForm_StartCapture_Stop_capture" xml:space="preserve">
     <value>Yakalamayı durdur</value>
-    <comment/>
   </data>
   <data name="FFmpegOptionsForm_DownloaderForm_InstallRequested_Download_of_FFmpeg_failed_" xml:space="preserve">
     <value>FFmpeg'in indirilmesi başarısız oldu.</value>
-    <comment/>
   </data>
   <data name="ShapeManager_CreateContextMenu_Show_screen_wide_crosshair" xml:space="preserve">
     <value>Ekran geniş artı işaretini göster</value>
-    <comment/>
   </data>
   <data name="ShapeManager_CreateToolbar_Image" xml:space="preserve">
     <value>Resim</value>
-    <comment/>
   </data>
   <data name="RectangleRegion_GetColorPickerText" xml:space="preserve">
     <value>RGB: {0}, {1}, {2}
 Hex: {3}
 X: {4} Y: {5}</value>
     <comment>@Invariant</comment>
-    <comment/>
   </data>
   <data name="ShapeManager_CreateContextMenu_Magnifier_pixel_count_" xml:space="preserve">
     <value>Büyüteç piksel sayısı:</value>
-    <comment/>
   </data>
   <data name="ShapeManager_CreateToolbar_FontSize" xml:space="preserve">
     <value>Yazı boyutu:</value>
-    <comment/>
   </data>
   <data name="ShapeManager_CreateToolbar_InsertImageFile" xml:space="preserve">
     <value>Resim dosyası ekle ...</value>
-    <comment/>
   </data>
   <data name="RegionCaptureForm_TipYouCanPanImageByHoldingMouseMiddleButtonAndDragging" xml:space="preserve">
     <value>İpucu: Farenin orta düğmesini basılı tutup sürükleyerek görüntüyü kaydırabilirsiniz.</value>
-    <comment/>
   </data>
   <data name="ShapeManager_CreateToolbar_RunAfterCaptureTasks" xml:space="preserve">
     <value>Yakalama görevlerinden sonra çalıştır (Enter)</value>
-    <comment/>
   </data>
   <data name="ShapeManager_CreateContextMenu_RememberMenuState" xml:space="preserve">
     <value>Menü durumunu hatırla</value>
-    <comment/>
   </data>
   <data name="ShapeManager_CreateContextMenu_Magnifier_pixel_size_" xml:space="preserve">
     <value>Büyüteç piksel boyutu:</value>
-    <comment/>
   </data>
   <data name="ShapeManager_CreateContextMenu_Corner_radius_" xml:space="preserve">
     <value>Kenar yarıçapı:</value>
-    <comment/>
   </data>
   <data name="ShapeManager_CreateToolbar_LastRegion" xml:space="preserve">
     <value>Son bölgeyi yakala</value>
-    <comment/>
   </data>
   <data name="ShapeManager_CreateContextMenu_Pixel_size_" xml:space="preserve">
     <value>Piksel boyutu:</value>
-    <comment/>
   </data>
   <data name="ShapeManager_ArrowHeadDirection" xml:space="preserve">
     <value>Ok başı yönü:</value>
-    <comment/>
   </data>
   <data name="NewLineEnterOKCtrlEnter" xml:space="preserve">
     <value>Yeni satır: Enter, OK: Ctrl + Enter</value>
-    <comment/>
   </data>
   <data name="NewLineCtrlEnterOKEnter" xml:space="preserve">
     <value>Yeni satır: Ctrl + Enter, OK: Enter</value>
-    <comment/>
   </data>
   <data name="LockMenu" xml:space="preserve">
     <value>Kilit menüsü</value>
-    <comment/>
   </data>
   <data name="ImageUploading" xml:space="preserve">
     <value>Resim yükleme</value>
-    <comment/>
   </data>
   <data name="ImageCopied" xml:space="preserve">
     <value>Resim kopyalandı</value>
-    <comment/>
   </data>
   <data name="ImageSaved" xml:space="preserve">
     <value>Resim kaydedildi</value>
-    <comment/>
   </data>
   <data name="ImageSavedAs" xml:space="preserve">
     <value>Resim kaydedildi</value>
-    <comment/>
   </data>
   <data name="Duplicate" xml:space="preserve">
     <value>Çiftleme</value>
-    <comment/>
   </data>
   <data name="MenuIconSize" xml:space="preserve">
     <value>Menü simgesi boyutu:</value>
-    <comment/>
   </data>
 </root>
