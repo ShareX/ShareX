@@ -127,7 +127,7 @@
     <value>Resim dosyası olarak kaydet...</value>
   </data>
   <data name="tsmiUpload.Text" xml:space="preserve">
-    <value>Resimi yükle</value>
+    <value>Resim yükle</value>
   </data>
   <data name="tpDecode.Text" xml:space="preserve">
     <value>Çöz</value>

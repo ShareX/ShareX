@@ -211,4 +211,37 @@ Oluşturulmuş dizinler:</value>
   <data name="OAuthControl_OAuthControl_PasteVerificationCodeHere" xml:space="preserve">
     <value>Doğrulama kodunu buraya yapıştır</value>
   </data>
+  <data name="UploadersConfigForm_ConnectSFTPAccount_Key_file_not_found" xml:space="preserve">
+    <value>Anahtar dosyası mevcut değil.</value>
+  </data>
+  <data name="UploadersConfigForm_eiCustomUploaders_ExportRequested_RequestURLMustBeConfigured" xml:space="preserve">
+    <value>"İstek URL'si" yapılandırılmalıdır.</value>
+  </data>
+  <data name="UploadersConfigForm_eiCustomUploaders_ExportRequested_DestinationTypeMustBeConfigured" xml:space="preserve">
+    <value>"Hizmet Türü" yapılandırılmalıdır.</value>
+  </data>
+  <data name="CustomUploaderItem_GetRequestURL_RequestURLMustBeConfigured" xml:space="preserve">
+    <value>"İstek URL'si" yapılandırılmalıdır.</value>
+  </data>
+  <data name="CustomUploaderItem_GetFileFormName_FileFormNameMustBeConfigured" xml:space="preserve">
+    <value>"Dosyalı form adı" yapılandırılmalıdır.</value>
+  </data>
+  <data name="UploadersConfigForm_UpdatePastebinStatus_NotLoggedIn" xml:space="preserve">
+    <value>Giriş başarısız.</value>
+  </data>
+  <data name="UploadersConfigForm_UpdatePastebinStatus_LoggedIn" xml:space="preserve">
+    <value>Giriş tamamlandı.</value>
+  </data>
+  <data name="txtB2BucketWatermark" xml:space="preserve">
+    <value>Yalnızca anahtar oluşturulurken paket ayarlanmamışsa çalışır</value>
+  </data>
+  <data name="DuplicateNameNotAllowed" xml:space="preserve">
+    <value>Yinelenen isimlere izin verilmez.</value>
+  </data>
+  <data name="ExportFailed" xml:space="preserve">
+    <value>Dışa aktarma başarısız oldu.</value>
+  </data>
+  <data name="LoggedInAs0" xml:space="preserve">
+    <value>{0} olarak giriş yaptınız.</value>
+  </data>
 </root>

@@ -477,7 +477,7 @@ Dosya boyutu: {2:n0} / {3:n0} KB</value>
     <value>Dosyayı panoya kopyala</value>
   </data>
   <data name="AfterCaptureTasks_CopyImageToClipboard" xml:space="preserve">
-    <value>Resimi panoya kopyala</value>
+    <value>Resmi panoya kopyala</value>
   </data>
   <data name="AfterCaptureTasks_DeleteFile" xml:space="preserve">
     <value>Dosyayı sil</value>
@@ -486,22 +486,22 @@ Dosya boyutu: {2:n0} / {3:n0} KB</value>
     <value>Aksiyonları gerçekleştir</value>
   </data>
   <data name="AfterCaptureTasks_SaveImageToFile" xml:space="preserve">
-    <value>Resimi dosya olarak kaydet</value>
+    <value>Resim dosya olarak kaydet</value>
   </data>
   <data name="AfterCaptureTasks_SaveImageToFileWithDialog" xml:space="preserve">
-    <value>Resimi dosya olarak farklı kaydet...</value>
+    <value>Resim dosyası olarak farklı kaydet...</value>
   </data>
   <data name="AfterCaptureTasks_ShowInExplorer" xml:space="preserve">
     <value>Dosyayı klasörde göster</value>
   </data>
   <data name="AfterCaptureTasks_SaveThumbnailImageToFile" xml:space="preserve">
-    <value>Küçük resimi dosya olarak kaydet</value>
+    <value>Küçük resmi dosya olarak kaydet</value>
   </data>
   <data name="AfterCaptureTasks_SendImageToPrinter" xml:space="preserve">
-    <value>Resimi yazdır</value>
+    <value>Resmi yazdır</value>
   </data>
   <data name="AfterCaptureTasks_UploadImageToHost" xml:space="preserve">
-    <value>Resimi yükle</value>
+    <value>Resim yükle</value>
   </data>
   <data name="AfterUploadTasks_CopyURLToClipboard" xml:space="preserve">
     <value>Adresi panoya kopyala</value>
@@ -980,7 +980,7 @@ Dosya boyutu: {2:n0} / {3:n0} KB</value>
     <value>Dikey</value>
   </data>
   <data name="ShapeType_ToolCrop" xml:space="preserve">
-    <value>Araç: Resimi kırp (C)</value>
+    <value>Araç: Resmi kırp (C)</value>
   </data>
   <data name="CustomUploaderDestinationType_TextUploader" xml:space="preserve">
     <value>Yazı yükleyici</value>

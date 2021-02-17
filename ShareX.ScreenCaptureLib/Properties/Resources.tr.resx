@@ -122,7 +122,7 @@
     <comment/>
   </data>
   <data name="ShapeManager_CreateToolbar_UploadImage" xml:space="preserve">
-    <value>Resim yükle (Ctrl + U)</value>
+    <value>Resmi yükle (Ctrl + U)</value>
     <comment/>
   </data>
   <data name="ShapeManager_CreateContextMenu_Highlight_color___" xml:space="preserve">
@@ -150,7 +150,7 @@
     <comment/>
   </data>
   <data name="ShapeManager_CreateToolbar_ImageSize" xml:space="preserve">
-    <value>Görüntü boyutu...</value>
+    <value>Resim boyutu...</value>
     <comment/>
   </data>
   <data name="ShapeManager_CreateToolbar_Delete" xml:space="preserve">
@@ -218,7 +218,7 @@
     <comment/>
   </data>
   <data name="ShapeManager_CreateToolbar_BringForward" xml:space="preserve">
-    <value>Öne çek</value>
+    <value>Öne getir</value>
     <comment/>
   </data>
   <data name="ShapeManager_CreateToolbar_Rotate90CounterClockwise" xml:space="preserve">
@@ -238,7 +238,7 @@
     <comment/>
   </data>
   <data name="ShapeManager_CreateContextMenu_Capture" xml:space="preserve">
-    <value>Yakalananlar</value>
+    <value>Yakala</value>
     <comment/>
   </data>
   <data name="RectangleRegion_GetAreaText_Area" xml:space="preserve">
@@ -302,15 +302,15 @@
     <comment/>
   </data>
   <data name="ShapeManager_CreateContextMenu_Capture_fullscreen" xml:space="preserve">
-    <value>Tam ekran yakala</value>
+    <value>Tüm ekranı yakala</value>
     <comment/>
   </data>
   <data name="ShapeManager_CreateToolbar_CaptureRegions" xml:space="preserve">
-    <value>Bölgeleri yakalayın</value>
+    <value>Bölgeleri yakala/value>
     <comment/>
   </data>
   <data name="ScrollingCaptureForm_StopCapture_Start_capture" xml:space="preserve">
-    <value>Yakalamayı başlatın</value>
+    <value>Yakalamayı başlat</value>
     <comment/>
   </data>
   <data name="RectangleLight_InitializeComponent_Rectangle_capture_light" xml:space="preserve">
@@ -334,7 +334,7 @@
     <comment/>
   </data>
   <data name="ShapeManager_CreateToolbar_SendBackward" xml:space="preserve">
-    <value>Geri gönder</value>
+    <value>Arkaya gönder</value>
     <comment/>
   </data>
   <data name="ShapeManager_CreateContextMenu_Height_" xml:space="preserve">

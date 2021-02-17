@@ -717,4 +717,19 @@
   <data name="btnCloseNews.Text" xml:space="preserve">
     <value>Kapat</value>
   </data>
+  <data name="tsbTwitter.ToolTipText" xml:space="preserve">
+    <value>Twitter'ımızı takip edin</value>
+  </data>
+  <data name="tsbDiscord.ToolTipText" xml:space="preserve">
+    <value>Discord sunucumuza gel</value>
+  </data>
+  <data name="tsbPatreon.ToolTipText" xml:space="preserve">
+    <value>Patreon hakkında bizi takip edin</value>
+  </data>
+  <data name="tsbBitcoin.ToolTipText" xml:space="preserve">
+    <value>Kripto para birimleri için bizi görün</value>
+  </data>
+  <data name="tsbGitHub.ToolTipText" xml:space="preserve">
+    <value>GitHub depomuza yıldızlayın</value>
+  </data>
 </root>

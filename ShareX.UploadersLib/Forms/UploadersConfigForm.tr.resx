@@ -721,4 +721,317 @@
   <data name="lblFTPUsername.Text" xml:space="preserve">
     <value>Kullanıcı adı:</value>
   </data>
+  <data name="btnFTPTest.Text" xml:space="preserve">
+    <value>Ölçek</value>
+  </data>
+  <data name="lblFTPProtocol.Text" xml:space="preserve">
+    <value>Protokol:</value>
+  </data>
+  <data name="cbFTPAppendRemoteDirectory.Text" xml:space="preserve">
+    <value>URL yoluna uzak dizin ekle</value>
+  </data>
+  <data name="cbFTPRemoveFileExtension.Text" xml:space="preserve">
+    <value>Dosya uzantısını URL yolundan kaldırın</value>
+  </data>
+  <data name="lblFTPHost.Text" xml:space="preserve">
+    <value>Ev sahibi:</value>
+  </data>
+  <data name="rbFTPTransferModeActive.Text" xml:space="preserve">
+    <value>Aktif</value>
+  </data>
+  <data name="rbFTPTransferModePassive.Text" xml:space="preserve">
+    <value>Pasif</value>
+  </data>
+  <data name="lblFTPTransferMode.Text" xml:space="preserve">
+    <value>Transfer modu:</value>
+  </data>
+  <data name="lblFTPURLPath.Text" xml:space="preserve">
+    <value>URL yolu:</value>
+  </data>
+  <data name="lblFTPSCertificateLocation.Text" xml:space="preserve">
+    <value>Sertifika yeri:</value>
+  </data>
+  <data name="lblFTPSEncryption.Text" xml:space="preserve">
+    <value>Şifreleme:</value>
+  </data>
+  <data name="lblFTPAccounts.Text" xml:space="preserve">
+    <value>Hesaplar:</value>
+  </data>
+  <data name="gbFTPAccount.Text" xml:space="preserve">
+    <value>Hesap</value>
+  </data>
+  <data name="lblFTPRemoteDirectory.Text" xml:space="preserve">
+    <value>Uzak dizin:</value>
+  </data>
+  <data name="lblFTPURLPreview.Text" xml:space="preserve">
+    <value>Önizleme URL'si:</value>
+  </data>
+  <data name="lblSFTPKeyLocation.Text" xml:space="preserve">
+    <value>Anahtar konum:</value>
+  </data>
+  <data name="lblSFTPKeyPassphrase.Text" xml:space="preserve">
+    <value>Anahtar şifre:</value>
+  </data>
+  <data name="lblAzureStorageEnvironment.Text" xml:space="preserve">
+    <value>Çevre:</value>
+  </data>
+  <data name="lblAmazonS3Endpoints.Text" xml:space="preserve">
+    <value>Bitiş noktaları:</value>
+  </data>
+  <data name="gbPlikLoginCredentials.Text" xml:space="preserve">
+    <value>Giriş detayları</value>
+  </data>
+  <data name="gbPlikSettings.Text" xml:space="preserve">
+    <value>Diğer ayarlar</value>
+  </data>
+  <data name="gbJiraServer.Text" xml:space="preserve">
+    <value>Sunucu Jira</value>
+  </data>
+  <data name="lblAmazonS3Region.Text" xml:space="preserve">
+    <value>Bölge:</value>
+  </data>
+  <data name="cbAmazonS3UsePathStyle.Text" xml:space="preserve">
+    <value>Yol olarak isteği kullan</value>
+  </data>
+  <data name="cbxPlikTTLUnit.Items3" xml:space="preserve">
+    <value>asla</value>
+  </data>
+  <data name="lblAzureStorageCustomDomain.Text" xml:space="preserve">
+    <value>Özel alan:</value>
+  </data>
+  <data name="lblAmazonS3StorageClass.Text" xml:space="preserve">
+    <value>Depolama sınıfı:</value>
+  </data>
+  <data name="btnPaste_eeGetUserKey.Text" xml:space="preserve">
+    <value>Özel anahtar alın ...</value>
+  </data>
+  <data name="cbFlickrDirectLink.Text" xml:space="preserve">
+    <value>Doğrudan bağlantı kullan</value>
+  </data>
+  <data name="lblLithiioPassword.Text" xml:space="preserve">
+    <value>Şifre:</value>
+  </data>
+  <data name="lblLithiioEmail.Text" xml:space="preserve">
+    <value>Eposta:</value>
+  </data>
+  <data name="btnSulGetAPIKey.Text" xml:space="preserve">
+    <value>API Anahtarını Alın...</value>
+  </data>
+  <data name="btnLithiioFetchAPIKey.Text" xml:space="preserve">
+    <value>API Anahtarını Alın</value>
+  </data>
+  <data name="gbAmazonS3Advanced.Text" xml:space="preserve">
+    <value>bunlara ek olarak</value>
+  </data>
+  <data name="lblAmazonS3StripExtension.Text" xml:space="preserve">
+    <value>Dosya uzantısını kaldırın:</value>
+  </data>
+  <data name="cbAmazonS3StripExtensionImage.Text" xml:space="preserve">
+    <value>Resimler</value>
+  </data>
+  <data name="cbAmazonS3StripExtensionVideo.Text" xml:space="preserve">
+    <value>Video</value>
+  </data>
+  <data name="cbAmazonS3StripExtensionText.Text" xml:space="preserve">
+    <value>Metinler</value>
+  </data>
+  <data name="cbAmazonS3PublicACL.Text" xml:space="preserve">
+    <value>Dosyaları herkesin okuyabileceği ACL'lere ayarlayın</value>
+  </data>
+  <data name="lblGoogleCloudStoragePathPreview.Text" xml:space="preserve">
+    <value>Ön izleme</value>
+  </data>
+  <data name="lblGoogleCloudStoragePathPreviewLabel.Text" xml:space="preserve">
+    <value>Önizleme URL'si:</value>
+  </data>
+  <data name="cbFirebaseIsShort.Text" xml:space="preserve">
+    <value>Kısa bağlantı</value>
+  </data>
+  <data name="lblFirebaseWebAPIKey.Text" xml:space="preserve">
+    <value>Web API Anahtarı:</value>
+  </data>
+  <data name="tpFirebaseDynamicLinks.Text" xml:space="preserve">
+    <value>Firebase Dynamic Links</value>
+  </data>
+  <data name="lblGoogleCloudStorageObjectPrefix.Text" xml:space="preserve">
+    <value>Yol:</value>
+  </data>
+  <data name="lblGoogleCloudStorageDomain.Text" xml:space="preserve">
+    <value>Özel alan:</value>
+  </data>
+  <data name="lblGoogleCloudStorageBucket.Text" xml:space="preserve">
+    <value>Paket adı:</value>
+  </data>
+  <data name="cbOwnCloudUsePreviewLinks.Text" xml:space="preserve">
+    <value>Önizleme için bağlantıları kullanın (yalnızca NextCloud)</value>
+  </data>
+  <data name="btnSharedFolderAdd.Text" xml:space="preserve">
+    <value>Ekle</value>
+  </data>
+  <data name="btnSharedFolderRemove.Text" xml:space="preserve">
+    <value>Kaldır</value>
+  </data>
+  <data name="btnSharedFolderDuplicate.Text" xml:space="preserve">
+    <value>Yinele</value>
+  </data>
+  <data name="lblYouTubePrivacyType.Text" xml:space="preserve">
+    <value>Erişim türü:</value>
+  </data>
+  <data name="cbYouTubeUseShortenedLink.Text" xml:space="preserve">
+    <value>Kısa bağlantı kullanın</value>
+  </data>
+  <data name="lblFirebaseDomainExample.Text" xml:space="preserve">
+    <value>Örnek: google.page.link</value>
+  </data>
+  <data name="lblAzureStorageUploadPath.Text" xml:space="preserve">
+    <value>Yükleme yolu:</value>
+  </data>
+  <data name="lblAzureStorageURLPreviewLabel.Text" xml:space="preserve">
+    <value>Önizleme URL'si:</value>
+  </data>
+  <data name="lblAzureStorageURLPreview.Text" xml:space="preserve">
+    <value>Önizleme</value>
+  </data>
+  <data name="lblFirebaseDomain.Text" xml:space="preserve">
+    <value>Etki Alanı:</value>
+  </data>
+  <data name="lblYourlsAPIURL.Text" xml:space="preserve">
+    <value>API URL'si:</value>
+  </data>
+  <data name="lblAdflyAPIUID.Text" xml:space="preserve">
+    <value>API UID'si:</value>
+  </data>
+  <data name="chImgurID.Text" xml:space="preserve">
+    <value>ID</value>
+  </data>
+  <data name="chPicasaID.Text" xml:space="preserve">
+    <value>ID</value>
+  </data>
+  <data name="cbOwnCloudAutoExpire.Text" xml:space="preserve">
+    <value>Genel bağlantıları otomatik olarak sona erdir</value>
+  </data>
+  <data name="lblOwnCloudExpiryTime.Text" xml:space="preserve">
+    <value>Geçerlilik süresi (gün):</value>
+  </data>
+  <data name="lblKuttPassword.Text" xml:space="preserve">
+    <value>Şifre:</value>
+  </data>
+  <data name="lblKuttAPIKey.Text" xml:space="preserve">
+    <value>API Anahtarı:</value>
+  </data>
+  <data name="lblKuttHost.Text" xml:space="preserve">
+    <value>Barındırıcı:</value>
+  </data>
+  <data name="cbKuttReuse.Text" xml:space="preserve">
+    <value>Belirtilen bağlantıya sahip URL varsa, onu iade edin</value>
+  </data>
+  <data name="lblGoogleCloudStorageStripExtension.Text" xml:space="preserve">
+    <value>Şerit dosya uzantısı:</value>
+  </data>
+  <data name="cbGoogleCloudStorageStripExtensionText.Text" xml:space="preserve">
+    <value>Metinler</value>
+  </data>
+  <data name="cbGoogleCloudStorageStripExtensionVideo.Text" xml:space="preserve">
+    <value>Video</value>
+  </data>
+  <data name="cbGoogleCloudStorageStripExtensionImage.Text" xml:space="preserve">
+    <value>Görseller</value>
+  </data>
+  <data name="lblB2UploadPath.Text" xml:space="preserve">
+    <value>Yükleme yolu:</value>
+  </data>
+  <data name="lblB2ApplicationKeyId.Text" xml:space="preserve">
+    <value>Uygulama Anahtar Kimliği (ID):</value>
+  </data>
+  <data name="lblB2ApplicationKey.Text" xml:space="preserve">
+    <value>Uygulama anahtarı (gizli):</value>
+  </data>
+  <data name="lblB2Bucket.Text" xml:space="preserve">
+    <value>Paket adı:</value>
+  </data>
+  <data name="lblB2ManageLink.Text" xml:space="preserve">
+    <value>Bir uygulama anahtarı oluşturmak veya paketlerinizi yönetmek için burayı tıklayın.</value>
+  </data>
+  <data name="txtB2ApplicationKeyId.ToolTip" xml:space="preserve">
+    <value>Uygulama anahtarı kimliği. Küçük harfli, onaltılık bir dizeye benziyor.</value>
+  </data>
+  <data name="txtB2ApplicationKey.ToolTip" xml:space="preserve">
+    <value>Uygulama anahtarı. Alfasayısal ile benzerdir.</value>
+  </data>
+  <data name="cbB2CustomUrl.Text" xml:space="preserve">
+    <value>Özel URL kullan (şablon biçimini destekler):</value>
+  </data>
+  <data name="cbB2CustomUrl.ToolTip" xml:space="preserve">
+    <value>Etkinleştirilirse, alacağınız URL indirme yolu olacaktır,
+verilen URL'ye eklendi.
+
+Bu, CloudFlare gibi bir hizmetle bağlantılı olarak kullanışlıdır veya
+ön uç B2 olarak başka bir hizmet.
+"B2 ile Özel URL Oluşturma" makalesine göz atın.
+B2 bilgi tabanında.
+
+Devre dışı bırakılırsa, alacağınız URL şuna bağlı olacaktır:
+Backblaze B2'den. </value>
+  </data>
+  <data name="txtB2Bucket.ToolTip" xml:space="preserve">
+    <value>Dosyalarınızı nerede saklayacağınız.
+
+Bu, yalnızca belirtmediyseniz geçerli olacaktır
+"Paketlere erişime izin ver" özelliği
+bir uygulama anahtarı oluştururken</value>
+  </data>
+  <data name="txtB2CustomUrl.ToolTip" xml:space="preserve">
+    <value>BackBlaze tarafından döndürülen ana bilgisayarı ve yolu değiştirecek özel bir URL girin.</value>
+  </data>
+  <data name="txtB2UploadPath.ToolTip" xml:space="preserve">
+    <value>Dosyanızın yolu. Şablon biçimini kullanır.</value>
+  </data>
+  <data name="lblB2UrlPreview.Text" xml:space="preserve">
+    <value>Önizleme</value>
+  </data>
+  <data name="lblTeknikUrlShortenerAPIUrl.Text" xml:space="preserve">
+    <value>Kısa bağlantı hizmeti API'sinin URL'si:</value>
+  </data>
+  <data name="btnGooglePhotosCreateAlbum.Text" xml:space="preserve">
+    <value>Oluştur</value>
+  </data>
+  <data name="lblGooglePhotosCreateAlbumName.Text" xml:space="preserve">
+    <value>Albüm adı:</value>
+  </data>
+  <data name="cbGfycatKeepAudio.Text" xml:space="preserve">
+    <value>Sesi koru</value>
+  </data>
+  <data name="cbGooglePhotosIsPublic.Text" xml:space="preserve">
+    <value>Herkese Açık Yükleme</value>
+  </data>
+  <data name="cbTeknikGenDeleteKey.Text" xml:space="preserve">
+    <value>Silmek için anahtar oluştur</value>
+  </data>
+  <data name="cbTeknikEncrypt.Text" xml:space="preserve">
+    <value>İstemci Tarafı Şifreleme</value>
+  </data>
+  <data name="lblTeknikExpiration.Text" xml:space="preserve">
+    <value>Son Kullanma Tarihi:</value>
+  </data>
+  <data name="lblTeknikAuthUrl.Text" xml:space="preserve">
+    <value>Kimlik doğrulama için URL:</value>
+  </data>
+  <data name="tpGoogleDrive.Text" xml:space="preserve">
+    <value>Google Drive</value>
+  </data>
+  <data name="cbGoogleCloudStorageSetPublicACL.Text" xml:space="preserve">
+    <value>Herkes tarafından okunan ACL dosyalarını ayarlayın</value>
+  </data>
+  <data name="lblB2UrlPreviewLabel.Text" xml:space="preserve">
+    <value>Önizleme URL'si:</value>
+  </data>
+  <data name="cbSeafileCreateShareableURLRaw.Text" xml:space="preserve">
+    <value>Ham bağlantı kullan</value>
+  </data>
+  <data name="lblKuttDomain.Text" xml:space="preserve">
+    <value>Alan:</value>
+  </data>
+  <data name="lblBoxShareAccessLevel.Text" xml:space="preserve">
+    <value>Bağlantı Erişim Düzeyi:</value>
+  </data>
 </root>
