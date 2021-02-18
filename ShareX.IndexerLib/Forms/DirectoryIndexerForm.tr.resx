@@ -135,4 +135,7 @@
   <data name="tpSettings.Text" xml:space="preserve">
     <value>Ayarlar</value>
   </data>
+  <data name="btnSaveAs.Text" xml:space="preserve">
+    <value>Farklı kaydedin ve bu pencereyi kapatın...</value>
+  </data>
 </root>

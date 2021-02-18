@@ -132,4 +132,7 @@
   <data name="lblViewMode.Text" xml:space="preserve">
     <value>Görünüm modu:</value>
   </data>
+  <data name="cbFilterMissingFiles.Text" xml:space="preserve">
+    <value>Eksik dosyaları filtreleyin</value>
+  </data>
 </root>
