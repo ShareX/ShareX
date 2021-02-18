@@ -477,7 +477,7 @@ Dosya boyutu: {2:n0} / {3:n0} KB</value>
     <value>Dosyayı panoya kopyala</value>
   </data>
   <data name="AfterCaptureTasks_CopyImageToClipboard" xml:space="preserve">
-    <value>Resimi panoya kopyala</value>
+    <value>Resmi panoya kopyala</value>
   </data>
   <data name="AfterCaptureTasks_DeleteFile" xml:space="preserve">
     <value>Dosyayı sil</value>
@@ -486,22 +486,22 @@ Dosya boyutu: {2:n0} / {3:n0} KB</value>
     <value>Aksiyonları gerçekleştir</value>
   </data>
   <data name="AfterCaptureTasks_SaveImageToFile" xml:space="preserve">
-    <value>Resimi dosya olarak kaydet</value>
+    <value>Resim dosya olarak kaydet</value>
   </data>
   <data name="AfterCaptureTasks_SaveImageToFileWithDialog" xml:space="preserve">
-    <value>Resimi dosya olarak farklı kaydet...</value>
+    <value>Resim dosyası olarak farklı kaydet...</value>
   </data>
   <data name="AfterCaptureTasks_ShowInExplorer" xml:space="preserve">
     <value>Dosyayı klasörde göster</value>
   </data>
   <data name="AfterCaptureTasks_SaveThumbnailImageToFile" xml:space="preserve">
-    <value>Küçük resimi dosya olarak kaydet</value>
+    <value>Küçük resmi dosya olarak kaydet</value>
   </data>
   <data name="AfterCaptureTasks_SendImageToPrinter" xml:space="preserve">
-    <value>Resimi yazdır</value>
+    <value>Resmi yazdır</value>
   </data>
   <data name="AfterCaptureTasks_UploadImageToHost" xml:space="preserve">
-    <value>Resimi yükle</value>
+    <value>Resim yükle</value>
   </data>
   <data name="AfterUploadTasks_CopyURLToClipboard" xml:space="preserve">
     <value>Adresi panoya kopyala</value>
@@ -556,7 +556,7 @@ Dosya boyutu: {2:n0} / {3:n0} KB</value>
     <value>Güncelleştirme mevcut</value>
   </data>
   <data name="Helpers_CreateDirectoryIfNotExist_Create_failed_" xml:space="preserve">
-    <value>Klasör yaratılamıyor, yol ayarlarını kontrol ediniz.</value>
+    <value>Klasör oluşturulamıyor, yol ayarlarını kontrol ediniz.</value>
   </data>
   <data name="HotkeyType_ColorPicker" xml:space="preserve">
     <value>Renk seçici</value>
@@ -953,7 +953,7 @@ Dosya boyutu: {2:n0} / {3:n0} KB</value>
     <value>Efekt: Vurgula (H)</value>
   </data>
   <data name="ShapeType_EffectPixelate" xml:space="preserve">
-    <value>Efekt: Mozaikle (P)</value>
+    <value>Efekt: Mozaik (P)</value>
   </data>
   <data name="HotkeyType_ShortenURL_Category" xml:space="preserve">
     <value>Yükle</value>
@@ -980,7 +980,7 @@ Dosya boyutu: {2:n0} / {3:n0} KB</value>
     <value>Dikey</value>
   </data>
   <data name="ShapeType_ToolCrop" xml:space="preserve">
-    <value>Araç: Resimi kırp (C)</value>
+    <value>Araç: Resmi kırp (C)</value>
   </data>
   <data name="CustomUploaderDestinationType_TextUploader" xml:space="preserve">
     <value>Yazı yükleyici</value>
@@ -1013,7 +1013,7 @@ Dosya boyutu: {2:n0} / {3:n0} KB</value>
     <value>Dosya yükleyici</value>
   </data>
   <data name="HotkeyType_ExitShareX" xml:space="preserve">
-    <value>ShareX kapat</value>
+    <value>ShareX'ten çık</value>
   </data>
   <data name="RegionCaptureAction_None" xml:space="preserve">
     <value>Hiç birşey yapma</value>
@@ -1119,5 +1119,110 @@ Dosya boyutu: {2:n0} / {3:n0} KB</value>
   </data>
   <data name="PNGBitDepth_Bit32" xml:space="preserve">
     <value>32 bit</value>
+  </data>
+  <data name="HotkeyType_ImageThumbnailer_Category" xml:space="preserve">
+    <value>Araçlar</value>
+  </data>
+  <data name="HotkeyType_QRCodeDecodeFromScreen_Category" xml:space="preserve">
+    <value>Araçlar</value>
+  </data>
+  <data name="Extensions_AddContextMenu_SelectAll" xml:space="preserve">
+    <value>Hepsini seç</value>
+  </data>
+  <data name="HotkeyType_VideoConverter_Category" xml:space="preserve">
+    <value>Araçlar</value>
+  </data>
+  <data name="HotkeyType_ImageThumbnailer" xml:space="preserve">
+    <value>Küçük resim</value>
+  </data>
+  <data name="AmazonS3StorageClass_DEEP_ARCHIVE" xml:space="preserve">
+    <value>Amazon S3 Glacier Deep Archive</value>
+  </data>
+  <data name="ObjectListView_ObjectListView_Name" xml:space="preserve">
+    <value>Ad</value>
+  </data>
+  <data name="DrawImageSizeMode_DontResize" xml:space="preserve">
+    <value>Yeniden boyutlandırma</value>
+  </data>
+  <data name="Extensions_AddContextMenu_Delete" xml:space="preserve">
+    <value>Sil</value>
+  </data>
+  <data name="HotkeyType_QRCodeDecodeFromScreen" xml:space="preserve">
+    <value>QR kodu (Ekrandan kod çözme)</value>
+  </data>
+  <data name="LinearGradientMode_ForwardDiagonal" xml:space="preserve">
+    <value>İleri çapraz</value>
+  </data>
+  <data name="ReplCodeMenuEntry_wy_Week_of_year" xml:space="preserve">
+    <value>Yılın haftası</value>
+  </data>
+  <data name="DrawImageSizeMode_AbsoluteSize" xml:space="preserve">
+    <value>Mutlak boyut</value>
+  </data>
+  <data name="RandomEmojiRepeatUsingN" xml:space="preserve">
+    <value>Rastgele emoji. {N} kullanarak tekrarlayın</value>
+  </data>
+  <data name="AmazonS3StorageClass_ONEZONE_IA" xml:space="preserve">
+    <value>Amazon S3 One Zone-Infrequent Access</value>
+  </data>
+  <data name="ShapeType_DrawingMagnify" xml:space="preserve">
+    <value>Büyüt</value>
+  </data>
+  <data name="ShapeType_ToolSelect" xml:space="preserve">
+    <value>Seç ve taşı (M)</value>
+  </data>
+  <data name="ObjectListView_ObjectListView_Copy_value" xml:space="preserve">
+    <value>Değeri kopyala</value>
+  </data>
+  <data name="AmazonS3StorageClass_GLACIER" xml:space="preserve">
+    <value>Amazon S3 Glacier</value>
+  </data>
+  <data name="TextDestination_FileUploader" xml:space="preserve">
+    <value>Dosya yükleyici</value>
+  </data>
+  <data name="ObjectListView_ObjectListView_Value" xml:space="preserve">
+    <value>Değer</value>
+  </data>
+  <data name="ObjectListView_ObjectListView_Copy_name" xml:space="preserve">
+    <value>Adı kopyala</value>
+  </data>
+  <data name="HotkeyType_VideoConverter" xml:space="preserve">
+    <value>Video dönüştürücü</value>
+  </data>
+  <data name="RandomNonAmbiguousAlphanumericCharRepeatUsingN" xml:space="preserve">
+    <value>Rastgele belirsiz olmayan alfanümerik karakter. {N} kullanarak tekrarlayın</value>
+  </data>
+  <data name="DrawImageSizeMode_PercentageOfWatermark" xml:space="preserve">
+    <value>Görüntünün yüzdesi</value>
+  </data>
+  <data name="HotkeyType_ImageSplitter" xml:space="preserve">
+    <value>Görüntü ayırıcı</value>
+  </data>
+  <data name="Extensions_AddContextMenu_Undo" xml:space="preserve">
+    <value>Geri al</value>
+  </data>
+  <data name="HotkeyType_ImageSplitter_Category" xml:space="preserve">
+    <value>Araçlar</value>
+  </data>
+  <data name="ResultOfFirstFile" xml:space="preserve">
+    <value>İlk dosyanın sonucu:</value>
+  </data>
+  <data name="ResultOfSecondFile" xml:space="preserve">
+    <value>İkinci dosyanın sonucu:</value>
+  </data>
+  <data name="Result" xml:space="preserve">
+    <value>Sonuç:</value>
+  </data>
+  <data name="Target" xml:space="preserve">
+    <value>Hedef:</value>
+  </data>
+  <data name="ArrowHeadDirection_End" xml:space="preserve">
+    <value>Son</value>
+  </data>
+  <data name="ArrowHeadDirection_Start" xml:space="preserve">
+    <value>Başlat</value>
+  </data>
+  <data name="ArrowHeadDirection_Both" xml:space="preserve">
+    <value>Her ikisi de</value>
   </data>
 </root>

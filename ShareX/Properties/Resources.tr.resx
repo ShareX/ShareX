@@ -347,7 +347,7 @@ ShareX'i yeniden başlatmak ister misiniz?</value>
     <value>Yükleme hataları</value>
   </data>
   <data name="Program_Run_Unable_to_create_folder_" xml:space="preserve">
-    <value>Dizin yaratılamadı:</value>
+    <value>Dizin oluşturulamadı:</value>
   </data>
   <data name="MainForm_UpdateMainFormTip_Currently_configured_hotkeys_" xml:space="preserve">
     <value>Şu anda ayarlı olan kısayollar:</value>

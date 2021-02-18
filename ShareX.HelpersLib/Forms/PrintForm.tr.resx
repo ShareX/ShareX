@@ -133,13 +133,13 @@
     <value>Resimin büyümesine izin ver</value>
   </data>
   <data name="cbAutoRotate.Text" xml:space="preserve">
-    <value>Resimi otomatik döndür</value>
+    <value>Resmi otomatik döndür</value>
   </data>
   <data name="cbAutoScale.Text" xml:space="preserve">
-    <value>Resimi otomatik boyutlandır</value>
+    <value>Resmi otomatik boyutlandır</value>
   </data>
   <data name="cbCenterImage.Text" xml:space="preserve">
-    <value>Resimi ortala</value>
+    <value>Resmi ortala</value>
   </data>
   <data name="lblMargin.Text" xml:space="preserve">
     <value>Kenar boşluğu:</value>

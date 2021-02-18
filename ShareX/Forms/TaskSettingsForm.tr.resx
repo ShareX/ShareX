@@ -298,7 +298,7 @@
     <value>Ön izleme</value>
   </data>
   <data name="cbThumbnailIfSmaller.Text" xml:space="preserve">
-    <value>Küçük resimi sadece resim boyutu küçük resim boyutundan büyükse oluştur</value>
+    <value>Görüntü boyutu küçük resim boyutundan büyükse küçük resmi oluştur</value>
   </data>
   <data name="tpThumbnail.Text" xml:space="preserve">
     <value>Küçük resim</value>

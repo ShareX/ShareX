@@ -147,4 +147,10 @@
   <data name="lblGradientType.Text" xml:space="preserve">
     <value>Renk geçişi türü:</value>
   </data>
+  <data name="lblPresets.Text" xml:space="preserve">
+    <value>Kurulumlar:</value>
+  </data>
+  <data name="btnClear.Text" xml:space="preserve">
+    <value>Açık</value>
+  </data>
 </root>

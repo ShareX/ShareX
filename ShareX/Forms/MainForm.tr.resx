@@ -576,6 +576,30 @@
   <data name="tsmiVideoThumbnailer.Text" xml:space="preserve">
     <value>Video küçük resim yapıcı...</value>
   </data>
+  <data name="tsmiImageSplitter.Text" xml:space="preserve">
+    <value>Fotoğraf ayırıcı...</value>
+  </data>
+  <data name="tsmiVideoConverter.Text" xml:space="preserve">
+    <value>Video dönüştürücü...</value>
+  </data>
+  <data name="tsmiClipboardViewer.Text" xml:space="preserve">
+    <value>Pano görüntüleyici...</value>
+  </data>
+  <data name="tsmiRunAction.Text" xml:space="preserve">
+    <value>Çalıştır...</value>
+  </data>
+  <data name="tsmiAddImageEffects.Text" xml:space="preserve">
+    <value>Efekler ekle...</value>
+  </data>
+  <data name="tsmiThumbnailTitle.Text" xml:space="preserve">
+    <value>Resim başlığı</value>
+  </data>
+  <data name="tsmiThumbnailSize.Text" xml:space="preserve">
+    <value>Boyutlandır...</value>
+  </data>
+  <data name="tsmiSwitchTaskViewMode.Text" xml:space="preserve">
+    <value>Küçük pencere görünümü</value>
+  </data>
   <data name="tsmiImageCombiner.Text" xml:space="preserve">
     <value>Resim birleştirici...</value>
   </data>
@@ -692,5 +716,20 @@
   </data>
   <data name="btnCloseNews.Text" xml:space="preserve">
     <value>Kapat</value>
+  </data>
+  <data name="tsbTwitter.ToolTipText" xml:space="preserve">
+    <value>Twitter'ımızı takip edin</value>
+  </data>
+  <data name="tsbDiscord.ToolTipText" xml:space="preserve">
+    <value>Discord sunucumuza gel</value>
+  </data>
+  <data name="tsbPatreon.ToolTipText" xml:space="preserve">
+    <value>Patreon hakkında bizi takip edin</value>
+  </data>
+  <data name="tsbBitcoin.ToolTipText" xml:space="preserve">
+    <value>Kripto para birimleri için bizi görün</value>
+  </data>
+  <data name="tsbGitHub.ToolTipText" xml:space="preserve">
+    <value>GitHub depomuza yıldızlayın</value>
   </data>
 </root>
