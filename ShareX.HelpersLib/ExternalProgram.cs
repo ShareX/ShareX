@@ -130,7 +130,7 @@ namespace ShareX.HelpersLib
                 }
             }
 
-            return inputPath;
+            return null;
         }
 
         public Task<string> RunAsync(string inputPath)

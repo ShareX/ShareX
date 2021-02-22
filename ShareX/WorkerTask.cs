@@ -722,22 +722,32 @@ namespace ShareX
 
                     if (actions.Count() > 0)
                     {
-                        if (Data != null)
-                        {
-                            Data.Dispose();
-                        }
-
+                        bool isFileModified = false;
                         string fileName = Info.FileName;
 
                         foreach (ExternalProgram fileAction in actions)
                         {
-                            Info.FilePath = fileAction.Run(Info.FilePath);
+                            string modifiedPath = fileAction.Run(Info.FilePath);
+
+                            if (!string.IsNullOrEmpty(modifiedPath))
+                            {
+                                isFileModified = true;
+                                Info.FilePath = modifiedPath;
+                            }
                         }
 
-                        string extension = Helpers.GetFilenameExtension(Info.FilePath);
-                        Info.FileName = Helpers.ChangeFilenameExtension(fileName, extension);
+                        if (isFileModified)
+                        {
+                            string extension = Helpers.GetFilenameExtension(Info.FilePath);
+                            Info.FileName = Helpers.ChangeFilenameExtension(fileName, extension);
 
-                        LoadFileStream();
+                            if (Data != null)
+                            {
+                                Data.Dispose();
+                            }
+
+                            LoadFileStream();
+                        }
                     }
                 }
 
