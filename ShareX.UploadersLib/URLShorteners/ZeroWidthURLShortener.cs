@@ -60,7 +60,14 @@ namespace ShareX.UploadersLib.URLShorteners
 
                 if (jsonResponse != null)
                 {
-                    result.ShortenedURL = URLHelpers.CombineURL("https://zws.im", jsonResponse.Short);
+                    if (!string.IsNullOrEmpty(jsonResponse.URL))
+                    {
+                        result.ShortenedURL = jsonResponse.URL;
+                    }
+                    else
+                    {
+                        result.ShortenedURL = URLHelpers.CombineURL("https://zws.im", jsonResponse.Short);
+                    }
                 }
             }
 
@@ -71,5 +78,6 @@ namespace ShareX.UploadersLib.URLShorteners
     public class ZeroWidthURLShortenerResponse
     {
         public string Short { get; set; }
+        public string URL { get; set; }
     }
 }
