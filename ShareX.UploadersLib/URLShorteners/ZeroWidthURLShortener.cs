@@ -47,10 +47,12 @@ namespace ShareX.UploadersLib.URLShorteners
         {
             UploadResult result = new UploadResult { URL = url };
 
-            Dictionary<string, string> args = new Dictionary<string, string>();
-            args.Add("url", url);
+            string json = JsonConvert.SerializeObject(new
+            {
+                url = url
+            });
 
-            string response = SendRequest(HttpMethod.GET, "https://us-central1-zero-width-shortener.cloudfunctions.net/shortenURL", args);
+            string response = SendRequest(HttpMethod.POST, "https://api.zws.im", json, RequestHelpers.ContentTypeJSON);
 
             if (!string.IsNullOrEmpty(response))
             {
