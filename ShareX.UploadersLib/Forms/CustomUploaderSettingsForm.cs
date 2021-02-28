@@ -228,8 +228,7 @@ namespace ShareX.UploadersLib
 
         private void CustomUploaderUpdateStates()
         {
-            btnRemove.Enabled = btnDuplicate.Enabled = txtName.Enabled = mbDestinationType.Enabled =
-                tcCustomUploader.Enabled = CustomUploaderCheck(lbCustomUploaderList.SelectedIndex);
+            btnRemove.Enabled = btnDuplicate.Enabled = pMain.Enabled = CustomUploaderCheck(lbCustomUploaderList.SelectedIndex);
 
             tsmiExportAll.Enabled = tsmiClearUploaders.Enabled = cbImageUploader.Enabled =
                 btnImageUploaderTest.Enabled = cbTextUploader.Enabled = btnTextUploaderTest.Enabled =

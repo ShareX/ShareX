@@ -25,7 +25,6 @@
 
 using Newtonsoft.Json;
 using ShareX.HelpersLib;
-using System.Collections.Generic;
 
 namespace ShareX.UploadersLib.URLShorteners
 {
