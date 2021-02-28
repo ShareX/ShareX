@@ -953,7 +953,6 @@
             this.Controls.Add(this.lblTextUploader);
             this.Controls.Add(this.cbFileUploader);
             this.Controls.Add(this.cbURLShortener);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "CustomUploaderSettingsForm";
             this.DragDrop += new System.Windows.Forms.DragEventHandler(this.CustomUploaderSettingsForm_DragDrop);
             this.DragEnter += new System.Windows.Forms.DragEventHandler(this.CustomUploaderSettingsForm_DragEnter);
