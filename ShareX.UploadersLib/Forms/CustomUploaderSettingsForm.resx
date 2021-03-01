@@ -117,6 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="cbImageUploader.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="cbImageUploader.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 376</value>
@@ -140,7 +144,9 @@
   <data name="&gt;&gt;cbImageUploader.ZOrder" xml:space="preserve">
     <value>13</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="btnTextUploaderTest.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
   <data name="btnTextUploaderTest.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -167,6 +173,9 @@
   </data>
   <data name="&gt;&gt;btnTextUploaderTest.ZOrder" xml:space="preserve">
     <value>14</value>
+  </data>
+  <data name="lblURLShortener.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
   </data>
   <data name="lblURLShortener.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -198,6 +207,9 @@
   <data name="&gt;&gt;lblURLShortener.ZOrder" xml:space="preserve">
     <value>16</value>
   </data>
+  <data name="cbTextUploader.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
   <data name="cbTextUploader.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 416</value>
   </data>
@@ -218,6 +230,9 @@
   </data>
   <data name="&gt;&gt;cbTextUploader.ZOrder" xml:space="preserve">
     <value>18</value>
+  </data>
+  <data name="btnURLShortenerTest.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
   </data>
   <data name="btnURLShortenerTest.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -245,6 +260,9 @@
   </data>
   <data name="&gt;&gt;btnURLShortenerTest.ZOrder" xml:space="preserve">
     <value>20</value>
+  </data>
+  <data name="lblTextUploader.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
   </data>
   <data name="lblTextUploader.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -275,6 +293,9 @@
   </data>
   <data name="&gt;&gt;lblTextUploader.ZOrder" xml:space="preserve">
     <value>22</value>
+  </data>
+  <data name="mbHelp.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
   </data>
   <data name="mbHelp.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -411,6 +432,9 @@
   <data name="&gt;&gt;btnDuplicate.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
+  <data name="eiCustomUploaders.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
   <data name="eiCustomUploaders.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 328</value>
   </data>
@@ -431,6 +455,9 @@
   </data>
   <data name="&gt;&gt;eiCustomUploaders.ZOrder" xml:space="preserve">
     <value>7</value>
+  </data>
+  <data name="lbCustomUploaderList.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
   </data>
   <data name="lbCustomUploaderList.IntegralHeight" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -483,6 +510,9 @@
   <data name="&gt;&gt;btnRemove.ZOrder" xml:space="preserve">
     <value>9</value>
   </data>
+  <data name="cbURLShortener.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
   <data name="cbURLShortener.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 496</value>
   </data>
@@ -504,6 +534,9 @@
   <data name="&gt;&gt;cbURLShortener.ZOrder" xml:space="preserve">
     <value>24</value>
   </data>
+  <data name="cbFileUploader.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
   <data name="cbFileUploader.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 456</value>
   </data>
@@ -524,6 +557,9 @@
   </data>
   <data name="&gt;&gt;cbFileUploader.ZOrder" xml:space="preserve">
     <value>23</value>
+  </data>
+  <data name="btnImageUploaderTest.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
   </data>
   <data name="btnImageUploaderTest.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -551,6 +587,9 @@
   </data>
   <data name="&gt;&gt;btnImageUploaderTest.ZOrder" xml:space="preserve">
     <value>21</value>
+  </data>
+  <data name="lblFileUploader.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
   </data>
   <data name="lblFileUploader.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -582,6 +621,9 @@
   <data name="&gt;&gt;lblFileUploader.ZOrder" xml:space="preserve">
     <value>19</value>
   </data>
+  <data name="btnFileUploaderTest.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
   <data name="btnFileUploaderTest.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -608,6 +650,9 @@
   </data>
   <data name="&gt;&gt;btnFileUploaderTest.ZOrder" xml:space="preserve">
     <value>17</value>
+  </data>
+  <data name="lblImageUploader.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
   </data>
   <data name="lblImageUploader.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2133,6 +2178,9 @@ store.book[0].title</value>
   <data name="&gt;&gt;txtName.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
+  <data name="lblURLSharingService.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
   <data name="lblURLSharingService.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -2163,6 +2211,9 @@ store.book[0].title</value>
   <data name="&gt;&gt;lblURLSharingService.ZOrder" xml:space="preserve">
     <value>12</value>
   </data>
+  <data name="cbURLSharingService.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
   <data name="cbURLSharingService.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 536</value>
   </data>
@@ -2183,6 +2234,9 @@ store.book[0].title</value>
   </data>
   <data name="&gt;&gt;cbURLSharingService.ZOrder" xml:space="preserve">
     <value>11</value>
+  </data>
+  <data name="btnURLSharingServiceTest.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
   </data>
   <data name="btnURLSharingServiceTest.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -2281,7 +2335,7 @@ store.book[0].title</value>
     <value>784, 566</value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>800, 39</value>
+    <value>800, 605</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>

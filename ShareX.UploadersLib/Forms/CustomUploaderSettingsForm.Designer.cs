@@ -152,9 +152,9 @@
             // 
             // cbImageUploader
             // 
+            resources.ApplyResources(this.cbImageUploader, "cbImageUploader");
             this.cbImageUploader.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbImageUploader.FormattingEnabled = true;
-            resources.ApplyResources(this.cbImageUploader, "cbImageUploader");
             this.cbImageUploader.Name = "cbImageUploader";
             this.cbImageUploader.SelectedIndexChanged += new System.EventHandler(this.cbCustomUploaderImageUploader_SelectedIndexChanged);
             // 
@@ -172,9 +172,9 @@
             // 
             // cbTextUploader
             // 
+            resources.ApplyResources(this.cbTextUploader, "cbTextUploader");
             this.cbTextUploader.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbTextUploader.FormattingEnabled = true;
-            resources.ApplyResources(this.cbTextUploader, "cbTextUploader");
             this.cbTextUploader.Name = "cbTextUploader";
             this.cbTextUploader.SelectedIndexChanged += new System.EventHandler(this.cbCustomUploaderTextUploader_SelectedIndexChanged);
             // 
@@ -255,11 +255,11 @@
             // 
             // eiCustomUploaders
             // 
+            resources.ApplyResources(this.eiCustomUploaders, "eiCustomUploaders");
             this.eiCustomUploaders.CustomFilter = "ShareX custom uploader (*.sxcu)|*.sxcu";
             this.eiCustomUploaders.DefaultFileName = null;
             this.eiCustomUploaders.ExportIgnoreDefaultValue = true;
             this.eiCustomUploaders.ExportIgnoreNull = true;
-            resources.ApplyResources(this.eiCustomUploaders, "eiCustomUploaders");
             this.eiCustomUploaders.Name = "eiCustomUploaders";
             this.eiCustomUploaders.ObjectType = null;
             this.eiCustomUploaders.SerializationBinder = null;
@@ -269,9 +269,9 @@
             // 
             // lbCustomUploaderList
             // 
+            resources.ApplyResources(this.lbCustomUploaderList, "lbCustomUploaderList");
             this.lbCustomUploaderList.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lbCustomUploaderList.FormattingEnabled = true;
-            resources.ApplyResources(this.lbCustomUploaderList, "lbCustomUploaderList");
             this.lbCustomUploaderList.Name = "lbCustomUploaderList";
             this.lbCustomUploaderList.SelectedIndexChanged += new System.EventHandler(this.lbCustomUploaderList_SelectedIndexChanged);
             // 
@@ -284,17 +284,17 @@
             // 
             // cbURLShortener
             // 
+            resources.ApplyResources(this.cbURLShortener, "cbURLShortener");
             this.cbURLShortener.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbURLShortener.FormattingEnabled = true;
-            resources.ApplyResources(this.cbURLShortener, "cbURLShortener");
             this.cbURLShortener.Name = "cbURLShortener";
             this.cbURLShortener.SelectedIndexChanged += new System.EventHandler(this.cbCustomUploaderURLShortener_SelectedIndexChanged);
             // 
             // cbFileUploader
             // 
+            resources.ApplyResources(this.cbFileUploader, "cbFileUploader");
             this.cbFileUploader.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbFileUploader.FormattingEnabled = true;
-            resources.ApplyResources(this.cbFileUploader, "cbFileUploader");
             this.cbFileUploader.Name = "cbFileUploader";
             this.cbFileUploader.SelectedIndexChanged += new System.EventHandler(this.cbCustomUploaderFileUploader_SelectedIndexChanged);
             // 
@@ -865,9 +865,9 @@
             // 
             // cbURLSharingService
             // 
+            resources.ApplyResources(this.cbURLSharingService, "cbURLSharingService");
             this.cbURLSharingService.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbURLSharingService.FormattingEnabled = true;
-            resources.ApplyResources(this.cbURLSharingService, "cbURLSharingService");
             this.cbURLSharingService.Name = "cbURLSharingService";
             this.cbURLSharingService.SelectedIndexChanged += new System.EventHandler(this.cbCustomUploaderURLSharingService_SelectedIndexChanged);
             // 
