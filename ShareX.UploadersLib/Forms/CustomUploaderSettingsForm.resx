@@ -658,7 +658,7 @@
     <value>232, 184</value>
   </data>
   <data name="dgvHeaders.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+    <value>11</value>
   </data>
   <data name="&gt;&gt;dgvHeaders.Name" xml:space="preserve">
     <value>dgvHeaders</value>
@@ -691,7 +691,7 @@
     <value>232, 184</value>
   </data>
   <data name="dgvParameters.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+    <value>9</value>
   </data>
   <data name="&gt;&gt;dgvParameters.Name" xml:space="preserve">
     <value>dgvParameters</value>
@@ -718,7 +718,7 @@
     <value>50, 13</value>
   </data>
   <data name="lblHeaders.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+    <value>10</value>
   </data>
   <data name="lblHeaders.Text" xml:space="preserve">
     <value>Headers:</value>
@@ -748,7 +748,7 @@
     <value>87, 13</value>
   </data>
   <data name="lblParameters.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+    <value>8</value>
   </data>
   <data name="lblParameters.Text" xml:space="preserve">
     <value>URL parameters:</value>
@@ -805,7 +805,7 @@
     <value>408, 20</value>
   </data>
   <data name="pRequestURL.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>7</value>
   </data>
   <data name="&gt;&gt;pRequestURL.Name" xml:space="preserve">
     <value>pRequestURL</value>
@@ -826,7 +826,7 @@
     <value>64, 21</value>
   </data>
   <data name="cbRequestMethod.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>5</value>
   </data>
   <data name="&gt;&gt;cbRequestMethod.Name" xml:space="preserve">
     <value>cbRequestMethod</value>
@@ -853,7 +853,7 @@
     <value>75, 13</value>
   </data>
   <data name="lblRequestURL.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>6</value>
   </data>
   <data name="lblRequestURL.Text" xml:space="preserve">
     <value>Request URL:</value>
@@ -877,7 +877,7 @@
     <value>232, 21</value>
   </data>
   <data name="cbBody.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
+    <value>13</value>
   </data>
   <data name="&gt;&gt;cbBody.Name" xml:space="preserve">
     <value>cbBody</value>
@@ -904,7 +904,7 @@
     <value>46, 13</value>
   </data>
   <data name="lblRequestMethod.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+    <value>4</value>
   </data>
   <data name="lblRequestMethod.Text" xml:space="preserve">
     <value>Method:</value>
@@ -934,7 +934,7 @@
     <value>34, 13</value>
   </data>
   <data name="lblBody.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
+    <value>12</value>
   </data>
   <data name="lblBody.Text" xml:space="preserve">
     <value>Body:</value>
@@ -997,7 +997,7 @@
     <value>78, 13</value>
   </data>
   <data name="lblFileFormName.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>0</value>
   </data>
   <data name="lblFileFormName.Text" xml:space="preserve">
     <value>File form name:</value>
@@ -1021,7 +1021,7 @@
     <value>232, 20</value>
   </data>
   <data name="txtFileFormName.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>1</value>
   </data>
   <data name="&gt;&gt;txtFileFormName.Name" xml:space="preserve">
     <value>txtFileFormName</value>
@@ -1171,7 +1171,7 @@
     <value>240, 368</value>
   </data>
   <data name="pBodyData.TabIndex" type="System.Int32, mscorlib">
-    <value>21</value>
+    <value>14</value>
   </data>
   <data name="&gt;&gt;pBodyData.Name" xml:space="preserve">
     <value>pBodyData</value>
@@ -1225,7 +1225,7 @@
     <value>480, 20</value>
   </data>
   <data name="pResultErrorMessage.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
+    <value>24</value>
   </data>
   <data name="&gt;&gt;pResultErrorMessage.Name" xml:space="preserve">
     <value>pResultErrorMessage</value>
@@ -1249,7 +1249,7 @@
     <value>77, 13</value>
   </data>
   <data name="lblResultErrorMessage.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
+    <value>23</value>
   </data>
   <data name="lblResultErrorMessage.Text" xml:space="preserve">
     <value>Error message:</value>
@@ -1279,7 +1279,7 @@
     <value>83, 13</value>
   </data>
   <data name="lblParseResponse.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+    <value>15</value>
   </data>
   <data name="lblParseResponse.Text" xml:space="preserve">
     <value>Parse response:</value>
@@ -1336,7 +1336,7 @@
     <value>480, 20</value>
   </data>
   <data name="pResultDeletionURL.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+    <value>22</value>
   </data>
   <data name="&gt;&gt;pResultDeletionURL.Name" xml:space="preserve">
     <value>pResultDeletionURL</value>
@@ -1363,7 +1363,7 @@
     <value>74, 13</value>
   </data>
   <data name="lblResultDeletionURL.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+    <value>21</value>
   </data>
   <data name="lblResultDeletionURL.Text" xml:space="preserve">
     <value>Deletion URL:</value>
@@ -1420,7 +1420,7 @@
     <value>480, 20</value>
   </data>
   <data name="pResultThumbnailURL.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+    <value>20</value>
   </data>
   <data name="&gt;&gt;pResultThumbnailURL.Name" xml:space="preserve">
     <value>pResultThumbnailURL</value>
@@ -1474,7 +1474,7 @@
     <value>480, 20</value>
   </data>
   <data name="pResultURL.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>18</value>
   </data>
   <data name="&gt;&gt;pResultURL.Name" xml:space="preserve">
     <value>pResultURL</value>
@@ -1501,7 +1501,7 @@
     <value>84, 13</value>
   </data>
   <data name="lblResultThumbnailURL.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+    <value>19</value>
   </data>
   <data name="lblResultThumbnailURL.Text" xml:space="preserve">
     <value>Thumbnail URL:</value>
@@ -1531,7 +1531,7 @@
     <value>32, 13</value>
   </data>
   <data name="lblResultURL.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>17</value>
   </data>
   <data name="lblResultURL.Text" xml:space="preserve">
     <value>URL:</value>
@@ -1993,7 +1993,7 @@ store.book[0].title</value>
     <value>480, 184</value>
   </data>
   <data name="tcResponseParse.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>16</value>
   </data>
   <data name="&gt;&gt;tcResponseParse.Name" xml:space="preserve">
     <value>tcResponseParse</value>
@@ -2020,7 +2020,7 @@ store.book[0].title</value>
     <value>86, 13</value>
   </data>
   <data name="lblDestinationType.TabIndex" type="System.Int32, mscorlib">
-    <value>24</value>
+    <value>2</value>
   </data>
   <data name="lblDestinationType.Text" xml:space="preserve">
     <value>Destination type:</value>
@@ -2050,7 +2050,7 @@ store.book[0].title</value>
     <value>38, 13</value>
   </data>
   <data name="lblName.TabIndex" type="System.Int32, mscorlib">
-    <value>22</value>
+    <value>0</value>
   </data>
   <data name="lblName.Text" xml:space="preserve">
     <value>Name:</value>
@@ -2089,7 +2089,7 @@ store.book[0].title</value>
     <value>232, 23</value>
   </data>
   <data name="mbDestinationType.TabIndex" type="System.Int32, mscorlib">
-    <value>25</value>
+    <value>3</value>
   </data>
   <data name="mbDestinationType.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
@@ -2119,7 +2119,7 @@ store.book[0].title</value>
     <value>232, 20</value>
   </data>
   <data name="txtName.TabIndex" type="System.Int32, mscorlib">
-    <value>23</value>
+    <value>1</value>
   </data>
   <data name="&gt;&gt;txtName.Name" xml:space="preserve">
     <value>txtName</value>
@@ -2254,7 +2254,7 @@ store.book[0].title</value>
     <value>520, 566</value>
   </data>
   <data name="pMain.TabIndex" type="System.Int32, mscorlib">
-    <value>27</value>
+    <value>22</value>
   </data>
   <data name="&gt;&gt;pMain.Name" xml:space="preserve">
     <value>pMain</value>
@@ -2281,7 +2281,7 @@ store.book[0].title</value>
     <value>784, 566</value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>800, 0</value>
+    <value>800, 39</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>
