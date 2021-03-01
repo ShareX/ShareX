@@ -457,7 +457,7 @@
     <value>7</value>
   </data>
   <data name="lbCustomUploaderList.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
+    <value>Top, Bottom, Left</value>
   </data>
   <data name="lbCustomUploaderList.IntegralHeight" type="System.Boolean, mscorlib">
     <value>False</value>

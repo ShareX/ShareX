@@ -161,7 +161,7 @@ namespace ShareX.UploadersLib
         private void CustomUploaderLoad(CustomUploaderItem uploader)
         {
             txtName.Text = uploader.Name ?? "";
-            txtName.SetWatermark(URLHelpers.GetHostName(uploader.RequestURL));
+            txtName.SetWatermark(URLHelpers.GetHostName(uploader.RequestURL) ?? "");
             CustomUploaderSetDestinationType(uploader.DestinationType);
 
             cbRequestMethod.SelectedIndex = (int)uploader.RequestMethod;
@@ -228,7 +228,7 @@ namespace ShareX.UploadersLib
 
         private void CustomUploaderUpdateStates()
         {
-            btnRemove.Enabled = btnDuplicate.Enabled = pMain.Enabled = CustomUploaderCheck(lbCustomUploaderList.SelectedIndex);
+            btnRemove.Enabled = btnDuplicate.Enabled = pMain.Visible = CustomUploaderCheck(lbCustomUploaderList.SelectedIndex);
 
             tsmiExportAll.Enabled = tsmiClearUploaders.Enabled = cbImageUploader.Enabled =
                 btnImageUploaderTest.Enabled = cbTextUploader.Enabled = btnTextUploaderTest.Enabled =
