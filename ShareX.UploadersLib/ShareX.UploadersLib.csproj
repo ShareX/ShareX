@@ -1057,7 +1057,7 @@
       <Version>12.0.3</Version>
     </PackageReference>
     <PackageReference Include="SSH.NET">
-      <Version>2020.0.0-beta1</Version>
+      <Version>2020.0.1</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>

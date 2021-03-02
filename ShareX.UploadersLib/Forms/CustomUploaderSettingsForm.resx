@@ -892,7 +892,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblRequestURL.Location" type="System.Drawing.Point, System.Drawing">
-    <value>77, 52</value>
+    <value>77, 54</value>
   </data>
   <data name="lblRequestURL.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 13</value>
