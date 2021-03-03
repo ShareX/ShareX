@@ -294,7 +294,7 @@ namespace ShareX.HelpersLib
         [StructLayout(LayoutKind.Sequential)]
         public struct BITMAPV5HEADER
         {
-            public uint bV5Size;  // (uint)Marshal.SizeOf(typeof(BITMAPV5HEADER)) == 120
+            public uint bV5Size;  // (uint)Marshal.SizeOf(typeof(BITMAPV5HEADER)) == 124
             public int bV5Width;
             public int bV5Height;
             public ushort bV5Planes;
@@ -323,10 +323,7 @@ namespace ShareX.HelpersLib
         {
             GCHandle handle = GCHandle.Alloc(dibBytes, GCHandleType.Pinned);
             var bmi = (BITMAPV5HEADER)Marshal.PtrToStructure(handle.AddrOfPinnedObject(), typeof(BITMAPV5HEADER));
-            var offset1 = (bmi.bV5Height - 1);
-            var offset2 = (int)(bmi.bV5SizeImage / bmi.bV5Height);
-            var offset3 = offset1 * offset2;
-            IntPtr calculatedAddr = IntPtr.Add(handle.AddrOfPinnedObject(), (int)bmi.bV5Size + offset3);
+            IntPtr calculatedAddr = IntPtr.Add(handle.AddrOfPinnedObject(), (int)bmi.bV5Size + (bmi.bV5Height - 1) * (int)(bmi.bV5SizeImage / bmi.bV5Height));
             Bitmap bitmap = new Bitmap((int)bmi.bV5Width, (int)bmi.bV5Height, -
                                (int)(bmi.bV5SizeImage / bmi.bV5Height), PixelFormat.Format32bppArgb,
                                calculatedAddr);
@@ -345,10 +342,10 @@ namespace ShareX.HelpersLib
                         var retrievedData = Clipboard.GetDataObject() as DataObject;
                         // apparently the following call is required for GetData() to work
                         string[] formats = retrievedData.GetFormats();
-                        // bool hasIt = retrievedData.GetFormats().Contains("Format17");
-                        if (retrievedData.GetDataPresent("Format17") && !(retrievedData.GetData("Format17") as MemoryStream is null))
+                        // bool hasIt = retrievedData.GetFormats().Contains(FORMAT_17);
+                        if (retrievedData.GetDataPresent(FORMAT_17) && !(retrievedData.GetData(FORMAT_17) as MemoryStream is null))
                         {
-                            var dibStream = retrievedData.GetData("Format17") as MemoryStream;
+                            var dibStream = retrievedData.GetData(FORMAT_17) as MemoryStream;
                             Bitmap bmout = ImageFromClipboardFormat17Dib(dibStream.ToArray());
                             if (bmout != null)
                             {
