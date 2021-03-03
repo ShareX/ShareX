@@ -275,6 +275,65 @@ namespace ShareX.HelpersLib
             return false;
         }
 
+        [StructLayout(LayoutKind.Sequential)]
+        public struct CIEXYZ
+        {
+            public int ciexyzX;
+            public int ciexyzY;
+            public int ciexyzZ;
+        }
+
+        [StructLayout(LayoutKind.Sequential)]
+        public struct CIEXYZTRIPLE
+        {
+            public CIEXYZ ciexyzRed;
+            public CIEXYZ ciexyzGreen;
+            public CIEXYZ ciexyzBlue;
+        }
+
+        [StructLayout(LayoutKind.Sequential)]
+        public struct BITMAPV5HEADER
+        {
+            public uint bV5Size;  // (uint)Marshal.SizeOf(typeof(BITMAPV5HEADER)) == 120
+            public int bV5Width;
+            public int bV5Height;
+            public ushort bV5Planes;
+            public ushort bV5BitCount;
+            public uint bV5Compression;
+            public uint bV5SizeImage;
+            public int bV5XPelsPerMeter;
+            public int bV5YPelsPerMeter;
+            public uint bV5ClrUsed;
+            public uint bV5ClrImportant;
+            public uint bV5RedMask;
+            public uint bV5GreenMask;
+            public uint bV5BlueMask;
+            public uint bV5AlphaMask;
+            public uint bV5CSType;
+            public CIEXYZTRIPLE bV5Endpoints;
+            public uint bV5GammaRed;
+            public uint bV5GammaGreen;
+            public uint bV5GammaBlue;
+            public uint bV5Intent;
+            public uint bV5ProfileData;
+            public uint bV5ProfileSize;
+            public uint bV5Reserved;
+        }
+        public static Bitmap ImageFromClipboardFormat17Dib(Byte[] dibBytes)
+        {
+            GCHandle handle = GCHandle.Alloc(dibBytes, GCHandleType.Pinned);
+            var bmi = (BITMAPV5HEADER)Marshal.PtrToStructure(handle.AddrOfPinnedObject(), typeof(BITMAPV5HEADER));
+            var offset1 = (bmi.bV5Height - 1);
+            var offset2 = (int)(bmi.bV5SizeImage / bmi.bV5Height);
+            var offset3 = offset1 * offset2;
+            IntPtr calculatedAddr = IntPtr.Add(handle.AddrOfPinnedObject(), (int)bmi.bV5Size + offset3);
+            Bitmap bitmap = new Bitmap((int)bmi.bV5Width, (int)bmi.bV5Height, -
+                               (int)(bmi.bV5SizeImage / bmi.bV5Height), PixelFormat.Format32bppArgb,
+                               calculatedAddr);
+            handle.Free();
+            return new Bitmap(bitmap);  // avoid exceptions due to locking
+        }
+
         public static Bitmap GetImage(bool checkContainsImage = false)
         {
             try
@@ -283,6 +342,20 @@ namespace ShareX.HelpersLib
                 {
                     if (!checkContainsImage || Clipboard.ContainsImage())
                     {
+                        var retrievedData = Clipboard.GetDataObject() as DataObject;
+                        // apparently the following call is required for GetData() to work
+                        string[] formats = retrievedData.GetFormats();
+                        // bool hasIt = retrievedData.GetFormats().Contains("Format17");
+                        if (retrievedData.GetDataPresent("Format17") && !(retrievedData.GetData("Format17") as MemoryStream is null))
+                        {
+                            var dibStream = retrievedData.GetData("Format17") as MemoryStream;
+                            Bitmap bmout = ImageFromClipboardFormat17Dib(dibStream.ToArray());
+                            if (bmout != null)
+                            {
+                                return bmout;
+                            }
+                        }
+                        // fallback to solid-background rendering
                         return (Bitmap)Clipboard.GetImage();
                     }
                 }
