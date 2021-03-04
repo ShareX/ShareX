@@ -387,4 +387,13 @@
   <data name="gbWindows.Text" xml:space="preserve">
     <value>Windows</value>
   </data>
+  <data name="cbAutomaticallyCleanupBackupFiles.Text" xml:space="preserve">
+    <value>古いバックアップファイルを自動的に削除する</value>
+  </data>
+  <data name="lblCleanupKeepFileCount.Text" xml:space="preserve">
+    <value>残しておくファイル数:</value>
+  </data>
+  <data name="cbAutomaticallyCleanupLogFiles.Text" xml:space="preserve">
+    <value>古いログファイルを自動的に削除する</value>
+  </data>
 </root>

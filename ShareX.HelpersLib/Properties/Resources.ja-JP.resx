@@ -172,7 +172,7 @@
     <value>ユーザー ログイン名</value>
   </data>
   <data name="HotkeyType_ImageEffects" xml:space="preserve">
-    <value>画像の効果</value>
+    <value>画像エフェクト</value>
   </data>
   <data name="ShapeType_DrawingImageScreen" xml:space="preserve">
     <value>描画: 画像 (スクリーン)</value>
@@ -458,7 +458,7 @@
     <value>手動</value>
   </data>
   <data name="AfterCaptureTasks_AddImageEffects" xml:space="preserve">
-    <value>画像の効果/透かしを追加</value>
+    <value>画像エフェクトを追加</value>
   </data>
   <data name="AfterCaptureTasks_DeleteFile" xml:space="preserve">
     <value>ローカル ファイルを削除</value>

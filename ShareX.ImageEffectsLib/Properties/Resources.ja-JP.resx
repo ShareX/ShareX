@@ -124,7 +124,7 @@
     <value>描画</value>
   </data>
   <data name="ImageEffectsForm_UpdatePreview_Image_effects___Width___0___Height___1___Render_time___2__ms" xml:space="preserve">
-    <value>画像の効果 - 幅: {0}, 高さ: {1}, 描画時間: {2} ms</value>
+    <value>画像エフェクト - 幅: {0}, 高さ: {1}, 描画時間: {2} ms</value>
   </data>
   <data name="ImageEffectsForm_AddAllEffectsToTreeView_Manipulations" xml:space="preserve">
     <value>操作</value>
@@ -136,7 +136,7 @@
     <value>調整</value>
   </data>
   <data name="WouldYouLikeToClearEffects" xml:space="preserve">
-    <value>画像効果をクリアしてよいですか？</value>
+    <value>画像エフェクトをクリアしてよいですか？</value>
   </data>
   <data name="PresetNameCannotBeEmpty" xml:space="preserve">
     <value>プリセット名は空白にできません</value>
@@ -148,7 +148,7 @@
     <value>アセットフォルダはShareXの配下に置く必要があります</value>
   </data>
   <data name="Effect" xml:space="preserve">
-    <value>画像の効果:</value>
+    <value>画像エフェクト:</value>
   </data>
   <data name="Confirmation" xml:space="preserve">
     <value>確認</value>

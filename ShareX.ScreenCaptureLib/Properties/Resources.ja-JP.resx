@@ -411,7 +411,7 @@
     <value>影の色</value>
   </data>
   <data name="ImageEffects" xml:space="preserve">
-    <value>画像効果を追加...</value>
+    <value>画像エフェクトを追加...</value>
   </data>
   <data name="LightResizeNodes" xml:space="preserve">
     <value>小さいリサイズ用ハンドルを使う</value>
