@@ -229,16 +229,16 @@
     <value>効果</value>
   </data>
   <data name="lblImageEffectsNote.Text" xml:space="preserve">
-    <value>「キャプチャー後のタスク→ 画像の効果/透かしを追加」から画像効果の有効/無効の切り替えができます</value>
+    <value>「キャプチャー後のタスク→ 画像エフェクトの追加」から画像エフェクトの有効/無効の切り替えができます</value>
   </data>
   <data name="chkShowImageEffectsWindowAfterCapture.Text" xml:space="preserve">
-    <value>キャプチャー後に画像の効果ウィンドウを表示する</value>
+    <value>キャプチャー後に画像エフェクトウィンドウを表示する</value>
   </data>
   <data name="cbImageEffectOnlyRegionCapture.Text" xml:space="preserve">
-    <value>領域キャプチャーにのみ効果を適用する</value>
+    <value>領域キャプチャーにのみ画像エフェクトを適用する</value>
   </data>
   <data name="btnImageEffects.Text" xml:space="preserve">
-    <value>画像効果の構成...</value>
+    <value>画像エフェクトの構成...</value>
   </data>
   <data name="tpThumbnail.Text" xml:space="preserve">
     <value>サムネイル</value>

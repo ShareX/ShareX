@@ -220,7 +220,7 @@
     <value>画像エディター...</value>
   </data>
   <data name="tsmiImageEffects.Text" xml:space="preserve">
-    <value>画像の効果...</value>
+    <value>画像エフェクト...</value>
   </data>
   <data name="tsmiHashCheck.Text" xml:space="preserve">
     <value>ハッシュ値の照合...</value>
@@ -571,7 +571,7 @@
     <value>画像エディター...</value>
   </data>
   <data name="tsmiTrayImageEffects.Text" xml:space="preserve">
-    <value>画像の効果...</value>
+    <value>画像エフェクト...</value>
   </data>
   <data name="tsmiTrayHashCheck.Text" xml:space="preserve">
     <value>ハッシュ値の照合...</value>
@@ -785,5 +785,8 @@
   </data>
   <data name="tsmiClipboardViewer.Text" xml:space="preserve">
     <value>クリップボードビューアー...</value>
+  </data>
+  <data name="tsmiThumbnailSize.Text" xml:space="preserve">
+    <value>サムネイルサイズの変更...</value>
   </data>
 </root>

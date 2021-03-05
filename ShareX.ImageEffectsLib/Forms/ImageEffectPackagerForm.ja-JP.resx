@@ -121,10 +121,10 @@
     <value>パッケージ</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - 画像の効果を保存</value>
+    <value>ShareX - 画像エフェクトを保存</value>
   </data>
   <data name="btnOpenImageEffectsFolder.Text" xml:space="preserve">
-    <value>画像効果フォルダを開く</value>
+    <value>画像エフェクトのフォルダを開く</value>
   </data>
   <data name="lblAssetsFolderPath.Text" xml:space="preserve">
     <value>アセットフォルダのパス:</value>

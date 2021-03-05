@@ -187,21 +187,21 @@
     <value>削除</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - 画像の効果</value>
+    <value>ShareX - 画像エフェクト</value>
   </data>
   <data name="btnUploadImage.Text" xml:space="preserve">
     <value>アップロード</value>
   </data>
   <data name="lblEffects.Text" xml:space="preserve">
-    <value>画像効果</value>
+    <value>画像エフェクト</value>
   </data>
   <data name="lblEffect.Text" xml:space="preserve">
-    <value>画像効果</value>
+    <value>画像エフェクト</value>
   </data>
   <data name="lblPresets.Text" xml:space="preserve">
     <value>プリセット:</value>
   </data>
   <data name="btnImageEffects.Text" xml:space="preserve">
-    <value>画像効果...</value>
+    <value>画像エフェクト...</value>
   </data>
 </root>
