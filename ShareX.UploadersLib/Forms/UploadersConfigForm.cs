@@ -829,6 +829,13 @@ namespace ShareX.UploadersLib
             cbKuttReuse.Checked = Config.KuttSettings.Reuse;
 
             #endregion Kutt
+
+            #region Zero Width Shortener
+
+            txtZWSURL.Text = Config.ZeroWidthShortenerURL;
+            txtZWSToken.Text = Config.ZeroWidthShortenerToken;
+
+            #endregion
         }
 
         private void LoadOtherUploaderSettings()
@@ -3312,6 +3319,20 @@ namespace ShareX.UploadersLib
         }
 
         #endregion Kutt
+
+        #region Zero Width Shortener
+
+        private void txtZWSURL_TextChanged(object sender, EventArgs e)
+        {
+            Config.ZeroWidthShortenerURL = txtZWSURL.Text;
+        }
+
+        private void txtZWSToken_TextChanged(object sender, EventArgs e)
+        {
+            Config.ZeroWidthShortenerToken = txtZWSToken.Text;
+        }
+
+        #endregion
 
         #endregion URL shorteners
 

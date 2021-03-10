@@ -500,6 +500,13 @@ namespace ShareX.UploadersLib
 
         #endregion Kutt
 
+        #region Zero Width Shortener
+
+        public string ZeroWidthShortenerURL { get; set; } = "https://api.zws.im";
+        public string ZeroWidthShortenerToken { get; set; } = "";
+
+        #endregion
+
         #endregion URL shorteners
 
         #region Other uploaders
