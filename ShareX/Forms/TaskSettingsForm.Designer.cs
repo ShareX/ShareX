@@ -290,6 +290,8 @@
             this.chWatchFolderFilter = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chWatchFolderIncludeSubdirectories = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tttvMain = new ShareX.HelpersLib.TabToTreeView();
+            this.lblToastWindowDurationSeconds = new System.Windows.Forms.Label();
+            this.lblToastWindowFadeDurationSeconds = new System.Windows.Forms.Label();
             this.tcTaskSettings.SuspendLayout();
             this.tpTask.SuspendLayout();
             this.cmsDestinations.SuspendLayout();
@@ -641,6 +643,8 @@
             // 
             // gbToastWindow
             // 
+            this.gbToastWindow.Controls.Add(this.lblToastWindowFadeDurationSeconds);
+            this.gbToastWindow.Controls.Add(this.lblToastWindowDurationSeconds);
             this.gbToastWindow.Controls.Add(this.lblToastWindowSizeX);
             this.gbToastWindow.Controls.Add(this.cbToastWindowMiddleClickAction);
             this.gbToastWindow.Controls.Add(this.cbToastWindowRightClickAction);
@@ -2514,6 +2518,16 @@
             this.tttvMain.TreeViewSize = 190;
             this.tttvMain.TabChanged += new ShareX.HelpersLib.TabToTreeView.TabChangedEventHandler(this.tttvMain_TabChanged);
             // 
+            // lblToastWindowDurationSeconds
+            // 
+            resources.ApplyResources(this.lblToastWindowDurationSeconds, "lblToastWindowDurationSeconds");
+            this.lblToastWindowDurationSeconds.Name = "lblToastWindowDurationSeconds";
+            // 
+            // lblToastWindowFadeDurationSeconds
+            // 
+            resources.ApplyResources(this.lblToastWindowFadeDurationSeconds, "lblToastWindowFadeDurationSeconds");
+            this.lblToastWindowFadeDurationSeconds.Name = "lblToastWindowFadeDurationSeconds";
+            // 
             // TaskSettingsForm
             // 
             resources.ApplyResources(this, "$this");
@@ -2875,5 +2889,7 @@
         private System.Windows.Forms.Button btnCustomTaskCompletedSoundPath;
         private System.Windows.Forms.Button btnCustomCaptureSoundPath;
         private System.Windows.Forms.CheckBox cbShowToastNotificationAfterTaskCompleted;
+        private System.Windows.Forms.Label lblToastWindowFadeDurationSeconds;
+        private System.Windows.Forms.Label lblToastWindowDurationSeconds;
     }
 }

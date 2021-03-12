@@ -502,7 +502,7 @@
     <value>242, 17</value>
   </data>
   <data name="cbShowToastNotificationAfterTaskCompleted.TabIndex" type="System.Int32, mscorlib">
-    <value>17</value>
+    <value>2</value>
   </data>
   <data name="cbShowToastNotificationAfterTaskCompleted.Text" xml:space="preserve">
     <value>Show toast notification after task is completed</value>
@@ -529,7 +529,7 @@
     <value>26, 23</value>
   </data>
   <data name="btnCustomErrorSoundPath.TabIndex" type="System.Int32, mscorlib">
-    <value>16</value>
+    <value>12</value>
   </data>
   <data name="btnCustomErrorSoundPath.Text" xml:space="preserve">
     <value>...</value>
@@ -556,7 +556,7 @@
     <value>26, 23</value>
   </data>
   <data name="btnCustomTaskCompletedSoundPath.TabIndex" type="System.Int32, mscorlib">
-    <value>15</value>
+    <value>9</value>
   </data>
   <data name="btnCustomTaskCompletedSoundPath.Text" xml:space="preserve">
     <value>...</value>
@@ -583,7 +583,7 @@
     <value>26, 23</value>
   </data>
   <data name="btnCustomCaptureSoundPath.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
+    <value>6</value>
   </data>
   <data name="btnCustomCaptureSoundPath.Text" xml:space="preserve">
     <value>...</value>
@@ -607,7 +607,7 @@
     <value>280, 20</value>
   </data>
   <data name="txtCustomErrorSoundPath.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
+    <value>11</value>
   </data>
   <data name="&gt;&gt;txtCustomErrorSoundPath.Name" xml:space="preserve">
     <value>txtCustomErrorSoundPath</value>
@@ -628,7 +628,7 @@
     <value>280, 20</value>
   </data>
   <data name="txtCustomTaskCompletedSoundPath.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
+    <value>8</value>
   </data>
   <data name="&gt;&gt;txtCustomTaskCompletedSoundPath.Name" xml:space="preserve">
     <value>txtCustomTaskCompletedSoundPath</value>
@@ -649,7 +649,7 @@
     <value>280, 20</value>
   </data>
   <data name="txtCustomCaptureSoundPath.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
+    <value>5</value>
   </data>
   <data name="&gt;&gt;txtCustomCaptureSoundPath.Name" xml:space="preserve">
     <value>txtCustomCaptureSoundPath</value>
@@ -706,7 +706,7 @@
     <value>192, 17</value>
   </data>
   <data name="cbUseCustomTaskCompletedSound.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
+    <value>7</value>
   </data>
   <data name="cbUseCustomTaskCompletedSound.Text" xml:space="preserve">
     <value>Use custom task completed sound:</value>
@@ -736,7 +736,7 @@
     <value>156, 17</value>
   </data>
   <data name="cbUseCustomCaptureSound.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
+    <value>4</value>
   </data>
   <data name="cbUseCustomCaptureSound.Text" xml:space="preserve">
     <value>Use custom capture sound:</value>
@@ -753,6 +753,81 @@
   <data name="&gt;&gt;cbUseCustomCaptureSound.ZOrder" xml:space="preserve">
     <value>9</value>
   </data>
+  <data name="lblToastWindowFadeDurationSeconds.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblToastWindowFadeDurationSeconds.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblToastWindowFadeDurationSeconds.Location" type="System.Drawing.Point, System.Drawing">
+    <value>237, 48</value>
+  </data>
+  <data name="lblToastWindowFadeDurationSeconds.Size" type="System.Drawing.Size, System.Drawing">
+    <value>47, 13</value>
+  </data>
+  <data name="lblToastWindowFadeDurationSeconds.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="lblToastWindowFadeDurationSeconds.Text" xml:space="preserve">
+    <value>seconds</value>
+  </data>
+  <data name="&gt;&gt;lblToastWindowFadeDurationSeconds.Name" xml:space="preserve">
+    <value>lblToastWindowFadeDurationSeconds</value>
+  </data>
+  <data name="&gt;&gt;lblToastWindowFadeDurationSeconds.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblToastWindowFadeDurationSeconds.Parent" xml:space="preserve">
+    <value>gbToastWindow</value>
+  </data>
+  <data name="&gt;&gt;lblToastWindowFadeDurationSeconds.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblToastWindowDurationSeconds.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblToastWindowDurationSeconds.Location" type="System.Drawing.Point, System.Drawing">
+    <value>237, 24</value>
+  </data>
+  <data name="lblToastWindowDurationSeconds.Size" type="System.Drawing.Size, System.Drawing">
+    <value>47, 13</value>
+  </data>
+  <data name="lblToastWindowDurationSeconds.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="lblToastWindowDurationSeconds.Text" xml:space="preserve">
+    <value>seconds</value>
+  </data>
+  <data name="&gt;&gt;lblToastWindowDurationSeconds.Name" xml:space="preserve">
+    <value>lblToastWindowDurationSeconds</value>
+  </data>
+  <data name="&gt;&gt;lblToastWindowDurationSeconds.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblToastWindowDurationSeconds.Parent" xml:space="preserve">
+    <value>gbToastWindow</value>
+  </data>
+  <data name="&gt;&gt;lblToastWindowDurationSeconds.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="lblToastWindowSizeX.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblToastWindowSizeX.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblToastWindowSizeX.Location" type="System.Drawing.Point, System.Drawing">
+    <value>263, 95</value>
+  </data>
+  <data name="lblToastWindowSizeX.Size" type="System.Drawing.Size, System.Drawing">
+    <value>12, 13</value>
+  </data>
+  <data name="lblToastWindowSizeX.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="lblToastWindowSizeX.Text" xml:space="preserve">
+    <value>x</value>
+  </data>
   <data name="&gt;&gt;lblToastWindowSizeX.Name" xml:space="preserve">
     <value>lblToastWindowSizeX</value>
   </data>
@@ -763,7 +838,16 @@
     <value>gbToastWindow</value>
   </data>
   <data name="&gt;&gt;lblToastWindowSizeX.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>2</value>
+  </data>
+  <data name="cbToastWindowMiddleClickAction.Location" type="System.Drawing.Point, System.Drawing">
+    <value>176, 164</value>
+  </data>
+  <data name="cbToastWindowMiddleClickAction.Size" type="System.Drawing.Size, System.Drawing">
+    <value>184, 21</value>
+  </data>
+  <data name="cbToastWindowMiddleClickAction.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
   </data>
   <data name="&gt;&gt;cbToastWindowMiddleClickAction.Name" xml:space="preserve">
     <value>cbToastWindowMiddleClickAction</value>
@@ -775,7 +859,16 @@
     <value>gbToastWindow</value>
   </data>
   <data name="&gt;&gt;cbToastWindowMiddleClickAction.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>3</value>
+  </data>
+  <data name="cbToastWindowRightClickAction.Location" type="System.Drawing.Point, System.Drawing">
+    <value>176, 140</value>
+  </data>
+  <data name="cbToastWindowRightClickAction.Size" type="System.Drawing.Size, System.Drawing">
+    <value>184, 21</value>
+  </data>
+  <data name="cbToastWindowRightClickAction.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
   </data>
   <data name="&gt;&gt;cbToastWindowRightClickAction.Name" xml:space="preserve">
     <value>cbToastWindowRightClickAction</value>
@@ -787,7 +880,16 @@
     <value>gbToastWindow</value>
   </data>
   <data name="&gt;&gt;cbToastWindowRightClickAction.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>4</value>
+  </data>
+  <data name="cbToastWindowLeftClickAction.Location" type="System.Drawing.Point, System.Drawing">
+    <value>176, 116</value>
+  </data>
+  <data name="cbToastWindowLeftClickAction.Size" type="System.Drawing.Size, System.Drawing">
+    <value>184, 21</value>
+  </data>
+  <data name="cbToastWindowLeftClickAction.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
   </data>
   <data name="&gt;&gt;cbToastWindowLeftClickAction.Name" xml:space="preserve">
     <value>cbToastWindowLeftClickAction</value>
@@ -799,7 +901,19 @@
     <value>gbToastWindow</value>
   </data>
   <data name="&gt;&gt;cbToastWindowLeftClickAction.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>5</value>
+  </data>
+  <data name="nudToastWindowSizeHeight.Location" type="System.Drawing.Point, System.Drawing">
+    <value>280, 92</value>
+  </data>
+  <data name="nudToastWindowSizeHeight.Size" type="System.Drawing.Size, System.Drawing">
+    <value>80, 20</value>
+  </data>
+  <data name="nudToastWindowSizeHeight.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="nudToastWindowSizeHeight.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
   </data>
   <data name="&gt;&gt;nudToastWindowSizeHeight.Name" xml:space="preserve">
     <value>nudToastWindowSizeHeight</value>
@@ -811,7 +925,19 @@
     <value>gbToastWindow</value>
   </data>
   <data name="&gt;&gt;nudToastWindowSizeHeight.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>6</value>
+  </data>
+  <data name="nudToastWindowSizeWidth.Location" type="System.Drawing.Point, System.Drawing">
+    <value>176, 92</value>
+  </data>
+  <data name="nudToastWindowSizeWidth.Size" type="System.Drawing.Size, System.Drawing">
+    <value>80, 20</value>
+  </data>
+  <data name="nudToastWindowSizeWidth.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="nudToastWindowSizeWidth.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
   </data>
   <data name="&gt;&gt;nudToastWindowSizeWidth.Name" xml:space="preserve">
     <value>nudToastWindowSizeWidth</value>
@@ -823,7 +949,16 @@
     <value>gbToastWindow</value>
   </data>
   <data name="&gt;&gt;nudToastWindowSizeWidth.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>7</value>
+  </data>
+  <data name="cbToastWindowPlacement.Location" type="System.Drawing.Point, System.Drawing">
+    <value>176, 68</value>
+  </data>
+  <data name="cbToastWindowPlacement.Size" type="System.Drawing.Size, System.Drawing">
+    <value>184, 21</value>
+  </data>
+  <data name="cbToastWindowPlacement.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
   </data>
   <data name="&gt;&gt;cbToastWindowPlacement.Name" xml:space="preserve">
     <value>cbToastWindowPlacement</value>
@@ -835,7 +970,19 @@
     <value>gbToastWindow</value>
   </data>
   <data name="&gt;&gt;cbToastWindowPlacement.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>8</value>
+  </data>
+  <data name="nudToastWindowFadeDuration.Location" type="System.Drawing.Point, System.Drawing">
+    <value>176, 44</value>
+  </data>
+  <data name="nudToastWindowFadeDuration.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 20</value>
+  </data>
+  <data name="nudToastWindowFadeDuration.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="nudToastWindowFadeDuration.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
   </data>
   <data name="&gt;&gt;nudToastWindowFadeDuration.Name" xml:space="preserve">
     <value>nudToastWindowFadeDuration</value>
@@ -847,7 +994,19 @@
     <value>gbToastWindow</value>
   </data>
   <data name="&gt;&gt;nudToastWindowFadeDuration.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>9</value>
+  </data>
+  <data name="nudToastWindowDuration.Location" type="System.Drawing.Point, System.Drawing">
+    <value>176, 20</value>
+  </data>
+  <data name="nudToastWindowDuration.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 20</value>
+  </data>
+  <data name="nudToastWindowDuration.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="nudToastWindowDuration.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
   </data>
   <data name="&gt;&gt;nudToastWindowDuration.Name" xml:space="preserve">
     <value>nudToastWindowDuration</value>
@@ -859,7 +1018,25 @@
     <value>gbToastWindow</value>
   </data>
   <data name="&gt;&gt;nudToastWindowDuration.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>10</value>
+  </data>
+  <data name="lblToastWindowMiddleClickAction.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblToastWindowMiddleClickAction.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblToastWindowMiddleClickAction.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 168</value>
+  </data>
+  <data name="lblToastWindowMiddleClickAction.Size" type="System.Drawing.Size, System.Drawing">
+    <value>98, 13</value>
+  </data>
+  <data name="lblToastWindowMiddleClickAction.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="lblToastWindowMiddleClickAction.Text" xml:space="preserve">
+    <value>Middle click action:</value>
   </data>
   <data name="&gt;&gt;lblToastWindowMiddleClickAction.Name" xml:space="preserve">
     <value>lblToastWindowMiddleClickAction</value>
@@ -871,7 +1048,25 @@
     <value>gbToastWindow</value>
   </data>
   <data name="&gt;&gt;lblToastWindowMiddleClickAction.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>11</value>
+  </data>
+  <data name="lblToastWindowRightClickAction.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblToastWindowRightClickAction.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblToastWindowRightClickAction.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 144</value>
+  </data>
+  <data name="lblToastWindowRightClickAction.Size" type="System.Drawing.Size, System.Drawing">
+    <value>92, 13</value>
+  </data>
+  <data name="lblToastWindowRightClickAction.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="lblToastWindowRightClickAction.Text" xml:space="preserve">
+    <value>Right click action:</value>
   </data>
   <data name="&gt;&gt;lblToastWindowRightClickAction.Name" xml:space="preserve">
     <value>lblToastWindowRightClickAction</value>
@@ -883,7 +1078,25 @@
     <value>gbToastWindow</value>
   </data>
   <data name="&gt;&gt;lblToastWindowRightClickAction.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>12</value>
+  </data>
+  <data name="lblToastWindowLeftClickAction.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblToastWindowLeftClickAction.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblToastWindowLeftClickAction.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 120</value>
+  </data>
+  <data name="lblToastWindowLeftClickAction.Size" type="System.Drawing.Size, System.Drawing">
+    <value>85, 13</value>
+  </data>
+  <data name="lblToastWindowLeftClickAction.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="lblToastWindowLeftClickAction.Text" xml:space="preserve">
+    <value>Left click action:</value>
   </data>
   <data name="&gt;&gt;lblToastWindowLeftClickAction.Name" xml:space="preserve">
     <value>lblToastWindowLeftClickAction</value>
@@ -895,7 +1108,25 @@
     <value>gbToastWindow</value>
   </data>
   <data name="&gt;&gt;lblToastWindowLeftClickAction.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>13</value>
+  </data>
+  <data name="lblToastWindowSize.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblToastWindowSize.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblToastWindowSize.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 96</value>
+  </data>
+  <data name="lblToastWindowSize.Size" type="System.Drawing.Size, System.Drawing">
+    <value>30, 13</value>
+  </data>
+  <data name="lblToastWindowSize.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="lblToastWindowSize.Text" xml:space="preserve">
+    <value>Size:</value>
   </data>
   <data name="&gt;&gt;lblToastWindowSize.Name" xml:space="preserve">
     <value>lblToastWindowSize</value>
@@ -907,7 +1138,25 @@
     <value>gbToastWindow</value>
   </data>
   <data name="&gt;&gt;lblToastWindowSize.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>14</value>
+  </data>
+  <data name="lblToastWindowPlacement.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblToastWindowPlacement.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblToastWindowPlacement.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 72</value>
+  </data>
+  <data name="lblToastWindowPlacement.Size" type="System.Drawing.Size, System.Drawing">
+    <value>60, 13</value>
+  </data>
+  <data name="lblToastWindowPlacement.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="lblToastWindowPlacement.Text" xml:space="preserve">
+    <value>Placement:</value>
   </data>
   <data name="&gt;&gt;lblToastWindowPlacement.Name" xml:space="preserve">
     <value>lblToastWindowPlacement</value>
@@ -919,7 +1168,25 @@
     <value>gbToastWindow</value>
   </data>
   <data name="&gt;&gt;lblToastWindowPlacement.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>15</value>
+  </data>
+  <data name="lblToastWindowFadeDuration.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblToastWindowFadeDuration.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblToastWindowFadeDuration.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 48</value>
+  </data>
+  <data name="lblToastWindowFadeDuration.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 13</value>
+  </data>
+  <data name="lblToastWindowFadeDuration.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="lblToastWindowFadeDuration.Text" xml:space="preserve">
+    <value>Fade duration:</value>
   </data>
   <data name="&gt;&gt;lblToastWindowFadeDuration.Name" xml:space="preserve">
     <value>lblToastWindowFadeDuration</value>
@@ -931,7 +1198,25 @@
     <value>gbToastWindow</value>
   </data>
   <data name="&gt;&gt;lblToastWindowFadeDuration.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>16</value>
+  </data>
+  <data name="lblToastWindowDuration.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblToastWindowDuration.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblToastWindowDuration.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 24</value>
+  </data>
+  <data name="lblToastWindowDuration.Size" type="System.Drawing.Size, System.Drawing">
+    <value>50, 13</value>
+  </data>
+  <data name="lblToastWindowDuration.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="lblToastWindowDuration.Text" xml:space="preserve">
+    <value>Duration:</value>
   </data>
   <data name="&gt;&gt;lblToastWindowDuration.Name" xml:space="preserve">
     <value>lblToastWindowDuration</value>
@@ -943,7 +1228,7 @@
     <value>gbToastWindow</value>
   </data>
   <data name="&gt;&gt;lblToastWindowDuration.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>17</value>
   </data>
   <data name="gbToastWindow.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 80</value>
@@ -952,7 +1237,7 @@
     <value>552, 200</value>
   </data>
   <data name="gbToastWindow.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+    <value>3</value>
   </data>
   <data name="gbToastWindow.Text" xml:space="preserve">
     <value>Toast notification</value>
@@ -982,7 +1267,7 @@
     <value>183, 17</value>
   </data>
   <data name="cbDisableNotificationsOnFullscreen.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+    <value>14</value>
   </data>
   <data name="cbDisableNotificationsOnFullscreen.Text" xml:space="preserve">
     <value>Disable notifications on fullscreen</value>
@@ -1012,7 +1297,7 @@
     <value>120, 17</value>
   </data>
   <data name="cbDisableNotifications.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+    <value>13</value>
   </data>
   <data name="cbDisableNotifications.Text" xml:space="preserve">
     <value>Disable notifications</value>
@@ -1802,426 +2087,6 @@
   </data>
   <data name="&gt;&gt;chkOverrideGeneralSettings.ZOrder" xml:space="preserve">
     <value>0</value>
-  </data>
-  <data name="lblToastWindowSizeX.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblToastWindowSizeX.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblToastWindowSizeX.Location" type="System.Drawing.Point, System.Drawing">
-    <value>263, 95</value>
-  </data>
-  <data name="lblToastWindowSizeX.Size" type="System.Drawing.Size, System.Drawing">
-    <value>12, 13</value>
-  </data>
-  <data name="lblToastWindowSizeX.TabIndex" type="System.Int32, mscorlib">
-    <value>15</value>
-  </data>
-  <data name="lblToastWindowSizeX.Text" xml:space="preserve">
-    <value>x</value>
-  </data>
-  <data name="&gt;&gt;lblToastWindowSizeX.Name" xml:space="preserve">
-    <value>lblToastWindowSizeX</value>
-  </data>
-  <data name="&gt;&gt;lblToastWindowSizeX.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblToastWindowSizeX.Parent" xml:space="preserve">
-    <value>gbToastWindow</value>
-  </data>
-  <data name="&gt;&gt;lblToastWindowSizeX.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="cbToastWindowMiddleClickAction.Location" type="System.Drawing.Point, System.Drawing">
-    <value>176, 164</value>
-  </data>
-  <data name="cbToastWindowMiddleClickAction.Size" type="System.Drawing.Size, System.Drawing">
-    <value>184, 21</value>
-  </data>
-  <data name="cbToastWindowMiddleClickAction.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
-  </data>
-  <data name="&gt;&gt;cbToastWindowMiddleClickAction.Name" xml:space="preserve">
-    <value>cbToastWindowMiddleClickAction</value>
-  </data>
-  <data name="&gt;&gt;cbToastWindowMiddleClickAction.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbToastWindowMiddleClickAction.Parent" xml:space="preserve">
-    <value>gbToastWindow</value>
-  </data>
-  <data name="&gt;&gt;cbToastWindowMiddleClickAction.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="cbToastWindowRightClickAction.Location" type="System.Drawing.Point, System.Drawing">
-    <value>176, 140</value>
-  </data>
-  <data name="cbToastWindowRightClickAction.Size" type="System.Drawing.Size, System.Drawing">
-    <value>184, 21</value>
-  </data>
-  <data name="cbToastWindowRightClickAction.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
-  </data>
-  <data name="&gt;&gt;cbToastWindowRightClickAction.Name" xml:space="preserve">
-    <value>cbToastWindowRightClickAction</value>
-  </data>
-  <data name="&gt;&gt;cbToastWindowRightClickAction.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbToastWindowRightClickAction.Parent" xml:space="preserve">
-    <value>gbToastWindow</value>
-  </data>
-  <data name="&gt;&gt;cbToastWindowRightClickAction.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="cbToastWindowLeftClickAction.Location" type="System.Drawing.Point, System.Drawing">
-    <value>176, 116</value>
-  </data>
-  <data name="cbToastWindowLeftClickAction.Size" type="System.Drawing.Size, System.Drawing">
-    <value>184, 21</value>
-  </data>
-  <data name="cbToastWindowLeftClickAction.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
-  </data>
-  <data name="&gt;&gt;cbToastWindowLeftClickAction.Name" xml:space="preserve">
-    <value>cbToastWindowLeftClickAction</value>
-  </data>
-  <data name="&gt;&gt;cbToastWindowLeftClickAction.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbToastWindowLeftClickAction.Parent" xml:space="preserve">
-    <value>gbToastWindow</value>
-  </data>
-  <data name="&gt;&gt;cbToastWindowLeftClickAction.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="nudToastWindowSizeHeight.Location" type="System.Drawing.Point, System.Drawing">
-    <value>280, 92</value>
-  </data>
-  <data name="nudToastWindowSizeHeight.Size" type="System.Drawing.Size, System.Drawing">
-    <value>80, 20</value>
-  </data>
-  <data name="nudToastWindowSizeHeight.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
-  </data>
-  <data name="nudToastWindowSizeHeight.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Center</value>
-  </data>
-  <data name="&gt;&gt;nudToastWindowSizeHeight.Name" xml:space="preserve">
-    <value>nudToastWindowSizeHeight</value>
-  </data>
-  <data name="&gt;&gt;nudToastWindowSizeHeight.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;nudToastWindowSizeHeight.Parent" xml:space="preserve">
-    <value>gbToastWindow</value>
-  </data>
-  <data name="&gt;&gt;nudToastWindowSizeHeight.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="nudToastWindowSizeWidth.Location" type="System.Drawing.Point, System.Drawing">
-    <value>176, 92</value>
-  </data>
-  <data name="nudToastWindowSizeWidth.Size" type="System.Drawing.Size, System.Drawing">
-    <value>80, 20</value>
-  </data>
-  <data name="nudToastWindowSizeWidth.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
-  </data>
-  <data name="nudToastWindowSizeWidth.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Center</value>
-  </data>
-  <data name="&gt;&gt;nudToastWindowSizeWidth.Name" xml:space="preserve">
-    <value>nudToastWindowSizeWidth</value>
-  </data>
-  <data name="&gt;&gt;nudToastWindowSizeWidth.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;nudToastWindowSizeWidth.Parent" xml:space="preserve">
-    <value>gbToastWindow</value>
-  </data>
-  <data name="&gt;&gt;nudToastWindowSizeWidth.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="cbToastWindowPlacement.Location" type="System.Drawing.Point, System.Drawing">
-    <value>176, 68</value>
-  </data>
-  <data name="cbToastWindowPlacement.Size" type="System.Drawing.Size, System.Drawing">
-    <value>184, 21</value>
-  </data>
-  <data name="cbToastWindowPlacement.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
-  <data name="&gt;&gt;cbToastWindowPlacement.Name" xml:space="preserve">
-    <value>cbToastWindowPlacement</value>
-  </data>
-  <data name="&gt;&gt;cbToastWindowPlacement.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbToastWindowPlacement.Parent" xml:space="preserve">
-    <value>gbToastWindow</value>
-  </data>
-  <data name="&gt;&gt;cbToastWindowPlacement.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="nudToastWindowFadeDuration.Location" type="System.Drawing.Point, System.Drawing">
-    <value>176, 44</value>
-  </data>
-  <data name="nudToastWindowFadeDuration.Size" type="System.Drawing.Size, System.Drawing">
-    <value>56, 20</value>
-  </data>
-  <data name="nudToastWindowFadeDuration.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="nudToastWindowFadeDuration.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Center</value>
-  </data>
-  <data name="&gt;&gt;nudToastWindowFadeDuration.Name" xml:space="preserve">
-    <value>nudToastWindowFadeDuration</value>
-  </data>
-  <data name="&gt;&gt;nudToastWindowFadeDuration.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;nudToastWindowFadeDuration.Parent" xml:space="preserve">
-    <value>gbToastWindow</value>
-  </data>
-  <data name="&gt;&gt;nudToastWindowFadeDuration.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="nudToastWindowDuration.Location" type="System.Drawing.Point, System.Drawing">
-    <value>176, 20</value>
-  </data>
-  <data name="nudToastWindowDuration.Size" type="System.Drawing.Size, System.Drawing">
-    <value>56, 20</value>
-  </data>
-  <data name="nudToastWindowDuration.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="nudToastWindowDuration.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Center</value>
-  </data>
-  <data name="&gt;&gt;nudToastWindowDuration.Name" xml:space="preserve">
-    <value>nudToastWindowDuration</value>
-  </data>
-  <data name="&gt;&gt;nudToastWindowDuration.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;nudToastWindowDuration.Parent" xml:space="preserve">
-    <value>gbToastWindow</value>
-  </data>
-  <data name="&gt;&gt;nudToastWindowDuration.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="lblToastWindowMiddleClickAction.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblToastWindowMiddleClickAction.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblToastWindowMiddleClickAction.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 168</value>
-  </data>
-  <data name="lblToastWindowMiddleClickAction.Size" type="System.Drawing.Size, System.Drawing">
-    <value>98, 13</value>
-  </data>
-  <data name="lblToastWindowMiddleClickAction.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="lblToastWindowMiddleClickAction.Text" xml:space="preserve">
-    <value>Middle click action:</value>
-  </data>
-  <data name="&gt;&gt;lblToastWindowMiddleClickAction.Name" xml:space="preserve">
-    <value>lblToastWindowMiddleClickAction</value>
-  </data>
-  <data name="&gt;&gt;lblToastWindowMiddleClickAction.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblToastWindowMiddleClickAction.Parent" xml:space="preserve">
-    <value>gbToastWindow</value>
-  </data>
-  <data name="&gt;&gt;lblToastWindowMiddleClickAction.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="lblToastWindowRightClickAction.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblToastWindowRightClickAction.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblToastWindowRightClickAction.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 144</value>
-  </data>
-  <data name="lblToastWindowRightClickAction.Size" type="System.Drawing.Size, System.Drawing">
-    <value>92, 13</value>
-  </data>
-  <data name="lblToastWindowRightClickAction.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="lblToastWindowRightClickAction.Text" xml:space="preserve">
-    <value>Right click action:</value>
-  </data>
-  <data name="&gt;&gt;lblToastWindowRightClickAction.Name" xml:space="preserve">
-    <value>lblToastWindowRightClickAction</value>
-  </data>
-  <data name="&gt;&gt;lblToastWindowRightClickAction.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblToastWindowRightClickAction.Parent" xml:space="preserve">
-    <value>gbToastWindow</value>
-  </data>
-  <data name="&gt;&gt;lblToastWindowRightClickAction.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
-  <data name="lblToastWindowLeftClickAction.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblToastWindowLeftClickAction.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblToastWindowLeftClickAction.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 120</value>
-  </data>
-  <data name="lblToastWindowLeftClickAction.Size" type="System.Drawing.Size, System.Drawing">
-    <value>85, 13</value>
-  </data>
-  <data name="lblToastWindowLeftClickAction.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="lblToastWindowLeftClickAction.Text" xml:space="preserve">
-    <value>Left click action:</value>
-  </data>
-  <data name="&gt;&gt;lblToastWindowLeftClickAction.Name" xml:space="preserve">
-    <value>lblToastWindowLeftClickAction</value>
-  </data>
-  <data name="&gt;&gt;lblToastWindowLeftClickAction.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblToastWindowLeftClickAction.Parent" xml:space="preserve">
-    <value>gbToastWindow</value>
-  </data>
-  <data name="&gt;&gt;lblToastWindowLeftClickAction.ZOrder" xml:space="preserve">
-    <value>11</value>
-  </data>
-  <data name="lblToastWindowSize.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblToastWindowSize.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblToastWindowSize.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 96</value>
-  </data>
-  <data name="lblToastWindowSize.Size" type="System.Drawing.Size, System.Drawing">
-    <value>30, 13</value>
-  </data>
-  <data name="lblToastWindowSize.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="lblToastWindowSize.Text" xml:space="preserve">
-    <value>Size:</value>
-  </data>
-  <data name="&gt;&gt;lblToastWindowSize.Name" xml:space="preserve">
-    <value>lblToastWindowSize</value>
-  </data>
-  <data name="&gt;&gt;lblToastWindowSize.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblToastWindowSize.Parent" xml:space="preserve">
-    <value>gbToastWindow</value>
-  </data>
-  <data name="&gt;&gt;lblToastWindowSize.ZOrder" xml:space="preserve">
-    <value>12</value>
-  </data>
-  <data name="lblToastWindowPlacement.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblToastWindowPlacement.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblToastWindowPlacement.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 72</value>
-  </data>
-  <data name="lblToastWindowPlacement.Size" type="System.Drawing.Size, System.Drawing">
-    <value>60, 13</value>
-  </data>
-  <data name="lblToastWindowPlacement.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="lblToastWindowPlacement.Text" xml:space="preserve">
-    <value>Placement:</value>
-  </data>
-  <data name="&gt;&gt;lblToastWindowPlacement.Name" xml:space="preserve">
-    <value>lblToastWindowPlacement</value>
-  </data>
-  <data name="&gt;&gt;lblToastWindowPlacement.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblToastWindowPlacement.Parent" xml:space="preserve">
-    <value>gbToastWindow</value>
-  </data>
-  <data name="&gt;&gt;lblToastWindowPlacement.ZOrder" xml:space="preserve">
-    <value>13</value>
-  </data>
-  <data name="lblToastWindowFadeDuration.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblToastWindowFadeDuration.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblToastWindowFadeDuration.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 48</value>
-  </data>
-  <data name="lblToastWindowFadeDuration.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 13</value>
-  </data>
-  <data name="lblToastWindowFadeDuration.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="lblToastWindowFadeDuration.Text" xml:space="preserve">
-    <value>Fade duration:</value>
-  </data>
-  <data name="&gt;&gt;lblToastWindowFadeDuration.Name" xml:space="preserve">
-    <value>lblToastWindowFadeDuration</value>
-  </data>
-  <data name="&gt;&gt;lblToastWindowFadeDuration.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblToastWindowFadeDuration.Parent" xml:space="preserve">
-    <value>gbToastWindow</value>
-  </data>
-  <data name="&gt;&gt;lblToastWindowFadeDuration.ZOrder" xml:space="preserve">
-    <value>14</value>
-  </data>
-  <data name="lblToastWindowDuration.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblToastWindowDuration.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblToastWindowDuration.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 24</value>
-  </data>
-  <data name="lblToastWindowDuration.Size" type="System.Drawing.Size, System.Drawing">
-    <value>50, 13</value>
-  </data>
-  <data name="lblToastWindowDuration.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="lblToastWindowDuration.Text" xml:space="preserve">
-    <value>Duration:</value>
-  </data>
-  <data name="&gt;&gt;lblToastWindowDuration.Name" xml:space="preserve">
-    <value>lblToastWindowDuration</value>
-  </data>
-  <data name="&gt;&gt;lblToastWindowDuration.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblToastWindowDuration.Parent" xml:space="preserve">
-    <value>gbToastWindow</value>
-  </data>
-  <data name="&gt;&gt;lblToastWindowDuration.ZOrder" xml:space="preserve">
-    <value>15</value>
   </data>
   <data name="&gt;&gt;tpQuality.Name" xml:space="preserve">
     <value>tpQuality</value>
