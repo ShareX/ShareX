@@ -458,7 +458,7 @@ namespace ShareX
         {
             if (!IsDefault)
             {
-                pGeneral.Enabled = !TaskSettings.UseDefaultGeneralSettings;
+                tpNotifications.Enabled = !TaskSettings.UseDefaultGeneralSettings;
                 pImage.Enabled = tpEffects.Enabled = tpThumbnail.Enabled = !TaskSettings.UseDefaultImageSettings;
                 pCapture.Enabled = tpRegionCapture.Enabled = tpScreenRecorder.Enabled = tpOCR.Enabled = !TaskSettings.UseDefaultCaptureSettings;
                 pActions.Enabled = !TaskSettings.UseDefaultActions;

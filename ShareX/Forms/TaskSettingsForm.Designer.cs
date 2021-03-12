@@ -58,7 +58,6 @@
             this.tsmiURLSharingServices = new System.Windows.Forms.ToolStripMenuItem();
             this.btnTask = new ShareX.HelpersLib.MenuButton();
             this.tpGeneral = new System.Windows.Forms.TabPage();
-            this.pGeneral = new System.Windows.Forms.Panel();
             this.lblAfterTaskNotification = new System.Windows.Forms.Label();
             this.cboPopUpNotification = new System.Windows.Forms.ComboBox();
             this.cbPlaySoundAfterUpload = new System.Windows.Forms.CheckBox();
@@ -261,11 +260,13 @@
             this.pgTaskSettings = new System.Windows.Forms.PropertyGrid();
             this.chkOverrideAdvancedSettings = new System.Windows.Forms.CheckBox();
             this.tttvMain = new ShareX.HelpersLib.TabToTreeView();
+            this.tcGeneral = new System.Windows.Forms.TabControl();
+            this.tpGeneralMain = new System.Windows.Forms.TabPage();
+            this.tpNotifications = new System.Windows.Forms.TabPage();
             this.tcTaskSettings.SuspendLayout();
             this.tpTask.SuspendLayout();
             this.cmsDestinations.SuspendLayout();
             this.tpGeneral.SuspendLayout();
-            this.pGeneral.SuspendLayout();
             this.tpImage.SuspendLayout();
             this.tcImage.SuspendLayout();
             this.tpQuality.SuspendLayout();
@@ -314,6 +315,9 @@
             this.tpTools.SuspendLayout();
             this.pTools.SuspendLayout();
             this.tpAdvanced.SuspendLayout();
+            this.tcGeneral.SuspendLayout();
+            this.tpGeneralMain.SuspendLayout();
+            this.tpNotifications.SuspendLayout();
             this.SuspendLayout();
             // 
             // cmsAfterCapture
@@ -526,19 +530,9 @@
             // tpGeneral
             // 
             this.tpGeneral.BackColor = System.Drawing.SystemColors.Window;
-            this.tpGeneral.Controls.Add(this.pGeneral);
-            this.tpGeneral.Controls.Add(this.chkOverrideGeneralSettings);
+            this.tpGeneral.Controls.Add(this.tcGeneral);
             resources.ApplyResources(this.tpGeneral, "tpGeneral");
             this.tpGeneral.Name = "tpGeneral";
-            // 
-            // pGeneral
-            // 
-            this.pGeneral.Controls.Add(this.lblAfterTaskNotification);
-            this.pGeneral.Controls.Add(this.cboPopUpNotification);
-            this.pGeneral.Controls.Add(this.cbPlaySoundAfterUpload);
-            this.pGeneral.Controls.Add(this.cbPlaySoundAfterCapture);
-            resources.ApplyResources(this.pGeneral, "pGeneral");
-            this.pGeneral.Name = "pGeneral";
             // 
             // lblAfterTaskNotification
             // 
@@ -2221,9 +2215,35 @@
             this.tttvMain.LeftPanelBackColor = System.Drawing.SystemColors.Window;
             this.tttvMain.MainTabControl = null;
             this.tttvMain.Name = "tttvMain";
+            this.tttvMain.SeparatorColor = System.Drawing.SystemColors.ControlDark;
             this.tttvMain.TreeViewFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.tttvMain.TreeViewSize = 190;
             this.tttvMain.TabChanged += new ShareX.HelpersLib.TabToTreeView.TabChangedEventHandler(this.tttvMain_TabChanged);
+            // 
+            // tcGeneral
+            // 
+            this.tcGeneral.Controls.Add(this.tpGeneralMain);
+            this.tcGeneral.Controls.Add(this.tpNotifications);
+            resources.ApplyResources(this.tcGeneral, "tcGeneral");
+            this.tcGeneral.Name = "tcGeneral";
+            this.tcGeneral.SelectedIndex = 0;
+            // 
+            // tpGeneralMain
+            // 
+            this.tpGeneralMain.Controls.Add(this.chkOverrideGeneralSettings);
+            resources.ApplyResources(this.tpGeneralMain, "tpGeneralMain");
+            this.tpGeneralMain.Name = "tpGeneralMain";
+            this.tpGeneralMain.UseVisualStyleBackColor = true;
+            // 
+            // tpNotifications
+            // 
+            this.tpNotifications.Controls.Add(this.cbPlaySoundAfterCapture);
+            this.tpNotifications.Controls.Add(this.lblAfterTaskNotification);
+            this.tpNotifications.Controls.Add(this.cbPlaySoundAfterUpload);
+            this.tpNotifications.Controls.Add(this.cboPopUpNotification);
+            resources.ApplyResources(this.tpNotifications, "tpNotifications");
+            this.tpNotifications.Name = "tpNotifications";
+            this.tpNotifications.UseVisualStyleBackColor = true;
             // 
             // TaskSettingsForm
             // 
@@ -2240,9 +2260,6 @@
             this.tpTask.PerformLayout();
             this.cmsDestinations.ResumeLayout(false);
             this.tpGeneral.ResumeLayout(false);
-            this.tpGeneral.PerformLayout();
-            this.pGeneral.ResumeLayout(false);
-            this.pGeneral.PerformLayout();
             this.tpImage.ResumeLayout(false);
             this.tcImage.ResumeLayout(false);
             this.tpQuality.ResumeLayout(false);
@@ -2312,6 +2329,11 @@
             this.pTools.PerformLayout();
             this.tpAdvanced.ResumeLayout(false);
             this.tpAdvanced.PerformLayout();
+            this.tcGeneral.ResumeLayout(false);
+            this.tpGeneralMain.ResumeLayout(false);
+            this.tpGeneralMain.PerformLayout();
+            this.tpNotifications.ResumeLayout(false);
+            this.tpNotifications.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -2402,7 +2424,6 @@
         private System.Windows.Forms.CheckBox cbPlaySoundAfterCapture;
         private System.Windows.Forms.CheckBox cbPlaySoundAfterUpload;
         private System.Windows.Forms.CheckBox chkOverrideGeneralSettings;
-        private System.Windows.Forms.Panel pGeneral;
         private System.Windows.Forms.TabPage tpTools;
         private System.Windows.Forms.NumericUpDown nudScreenRecorderStartDelay;
         private System.Windows.Forms.Button btnImageEffects;
@@ -2549,5 +2570,8 @@
         private System.Windows.Forms.Label lblToolsScreenColorPickerInfoText;
         private System.Windows.Forms.TextBox txtToolsScreenColorPickerFormatCtrl;
         private System.Windows.Forms.Label lblToolsScreenColorPickerFormatCtrl;
+        private System.Windows.Forms.TabControl tcGeneral;
+        private System.Windows.Forms.TabPage tpGeneralMain;
+        private System.Windows.Forms.TabPage tpNotifications;
     }
 }
