@@ -205,6 +205,12 @@ namespace ShareX
             cbToastWindowRightClickAction.SelectedIndex = (int)TaskSettings.GeneralSettings.ToastWindowRightClickAction;
             cbToastWindowMiddleClickAction.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<ToastClickAction>());
             cbToastWindowMiddleClickAction.SelectedIndex = (int)TaskSettings.GeneralSettings.ToastWindowMiddleClickAction;
+            cbUseCustomCaptureSound.Checked = TaskSettings.GeneralSettings.UseCustomCaptureSound;
+            txtCustomCaptureSoundPath.Text = TaskSettings.GeneralSettings.CustomCaptureSoundPath;
+            cbUseCustomTaskCompletedSound.Checked = TaskSettings.GeneralSettings.UseCustomTaskCompletedSound;
+            txtCustomTaskCompletedSoundPath.Text = TaskSettings.GeneralSettings.CustomTaskCompletedSoundPath;
+            cbUseCustomErrorSound.Checked = TaskSettings.GeneralSettings.UseCustomErrorSound;
+            txtCustomErrorSoundPath.Text = TaskSettings.GeneralSettings.CustomErrorSoundPath;
             cbDisableNotifications.Checked = TaskSettings.GeneralSettings.DisableNotifications;
             cbDisableNotificationsOnFullscreen.Checked = TaskSettings.GeneralSettings.DisableNotificationsOnFullscreen;
 
@@ -793,7 +799,7 @@ namespace ShareX
 
         private void cbToastWindowPlacement_SelectedIndexChanged(object sender, EventArgs e)
         {
-            TaskSettings.GeneralSettings.ToastWindowPlacement = (ContentAlignment)cbToastWindowPlacement.SelectedIndex;
+            TaskSettings.GeneralSettings.ToastWindowPlacement = Helpers.GetEnumFromIndex<ContentAlignment>(cbToastWindowPlacement.SelectedIndex);
         }
 
         private void nudToastWindowSizeWidth_ValueChanged(object sender, EventArgs e)
@@ -819,6 +825,51 @@ namespace ShareX
         private void cbToastWindowMiddleClickAction_SelectedIndexChanged(object sender, EventArgs e)
         {
             TaskSettings.GeneralSettings.ToastWindowMiddleClickAction = (ToastClickAction)cbToastWindowMiddleClickAction.SelectedIndex;
+        }
+
+        private void cbUseCustomCaptureSound_CheckedChanged(object sender, EventArgs e)
+        {
+            TaskSettings.GeneralSettings.UseCustomCaptureSound = cbUseCustomCaptureSound.Checked;
+        }
+
+        private void txtCustomCaptureSoundPath_TextChanged(object sender, EventArgs e)
+        {
+            TaskSettings.GeneralSettings.CustomCaptureSoundPath = txtCustomCaptureSoundPath.Text;
+        }
+
+        private void btnCustomCaptureSoundPath_Click(object sender, EventArgs e)
+        {
+            Helpers.BrowseFile(txtCustomCaptureSoundPath);
+        }
+
+        private void cbUseCustomTaskCompletedSound_CheckedChanged(object sender, EventArgs e)
+        {
+            TaskSettings.GeneralSettings.UseCustomTaskCompletedSound = cbUseCustomTaskCompletedSound.Checked;
+        }
+
+        private void txtCustomTaskCompletedSoundPath_TextChanged(object sender, EventArgs e)
+        {
+            TaskSettings.GeneralSettings.CustomTaskCompletedSoundPath = txtCustomTaskCompletedSoundPath.Text;
+        }
+
+        private void btnCustomTaskCompletedSoundPath_Click(object sender, EventArgs e)
+        {
+            Helpers.BrowseFile(txtCustomTaskCompletedSoundPath);
+        }
+
+        private void cbUseCustomErrorSound_CheckedChanged(object sender, EventArgs e)
+        {
+            TaskSettings.GeneralSettings.UseCustomErrorSound = cbUseCustomErrorSound.Checked;
+        }
+
+        private void txtCustomErrorSoundPath_TextChanged(object sender, EventArgs e)
+        {
+            TaskSettings.GeneralSettings.CustomErrorSoundPath = txtCustomErrorSoundPath.Text;
+        }
+
+        private void btnCustomErrorSoundPath_Click(object sender, EventArgs e)
+        {
+            Helpers.BrowseFile(txtCustomErrorSoundPath);
         }
 
         private void cbDisableNotifications_CheckedChanged(object sender, EventArgs e)

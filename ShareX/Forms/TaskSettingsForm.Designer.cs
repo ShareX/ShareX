@@ -584,51 +584,60 @@
             resources.ApplyResources(this.btnCustomErrorSoundPath, "btnCustomErrorSoundPath");
             this.btnCustomErrorSoundPath.Name = "btnCustomErrorSoundPath";
             this.btnCustomErrorSoundPath.UseVisualStyleBackColor = true;
+            this.btnCustomErrorSoundPath.Click += new System.EventHandler(this.btnCustomErrorSoundPath_Click);
             // 
             // btnCustomTaskCompletedSoundPath
             // 
             resources.ApplyResources(this.btnCustomTaskCompletedSoundPath, "btnCustomTaskCompletedSoundPath");
             this.btnCustomTaskCompletedSoundPath.Name = "btnCustomTaskCompletedSoundPath";
             this.btnCustomTaskCompletedSoundPath.UseVisualStyleBackColor = true;
+            this.btnCustomTaskCompletedSoundPath.Click += new System.EventHandler(this.btnCustomTaskCompletedSoundPath_Click);
             // 
             // btnCustomCaptureSoundPath
             // 
             resources.ApplyResources(this.btnCustomCaptureSoundPath, "btnCustomCaptureSoundPath");
             this.btnCustomCaptureSoundPath.Name = "btnCustomCaptureSoundPath";
             this.btnCustomCaptureSoundPath.UseVisualStyleBackColor = true;
+            this.btnCustomCaptureSoundPath.Click += new System.EventHandler(this.btnCustomCaptureSoundPath_Click);
             // 
             // txtCustomErrorSoundPath
             // 
             resources.ApplyResources(this.txtCustomErrorSoundPath, "txtCustomErrorSoundPath");
             this.txtCustomErrorSoundPath.Name = "txtCustomErrorSoundPath";
+            this.txtCustomErrorSoundPath.TextChanged += new System.EventHandler(this.txtCustomErrorSoundPath_TextChanged);
             // 
             // txtCustomTaskCompletedSoundPath
             // 
             resources.ApplyResources(this.txtCustomTaskCompletedSoundPath, "txtCustomTaskCompletedSoundPath");
             this.txtCustomTaskCompletedSoundPath.Name = "txtCustomTaskCompletedSoundPath";
+            this.txtCustomTaskCompletedSoundPath.TextChanged += new System.EventHandler(this.txtCustomTaskCompletedSoundPath_TextChanged);
             // 
             // txtCustomCaptureSoundPath
             // 
             resources.ApplyResources(this.txtCustomCaptureSoundPath, "txtCustomCaptureSoundPath");
             this.txtCustomCaptureSoundPath.Name = "txtCustomCaptureSoundPath";
+            this.txtCustomCaptureSoundPath.TextChanged += new System.EventHandler(this.txtCustomCaptureSoundPath_TextChanged);
             // 
             // cbUseCustomErrorSound
             // 
             resources.ApplyResources(this.cbUseCustomErrorSound, "cbUseCustomErrorSound");
             this.cbUseCustomErrorSound.Name = "cbUseCustomErrorSound";
             this.cbUseCustomErrorSound.UseVisualStyleBackColor = true;
+            this.cbUseCustomErrorSound.CheckedChanged += new System.EventHandler(this.cbUseCustomErrorSound_CheckedChanged);
             // 
             // cbUseCustomTaskCompletedSound
             // 
             resources.ApplyResources(this.cbUseCustomTaskCompletedSound, "cbUseCustomTaskCompletedSound");
             this.cbUseCustomTaskCompletedSound.Name = "cbUseCustomTaskCompletedSound";
             this.cbUseCustomTaskCompletedSound.UseVisualStyleBackColor = true;
+            this.cbUseCustomTaskCompletedSound.CheckedChanged += new System.EventHandler(this.cbUseCustomTaskCompletedSound_CheckedChanged);
             // 
             // cbUseCustomCaptureSound
             // 
             resources.ApplyResources(this.cbUseCustomCaptureSound, "cbUseCustomCaptureSound");
             this.cbUseCustomCaptureSound.Name = "cbUseCustomCaptureSound";
             this.cbUseCustomCaptureSound.UseVisualStyleBackColor = true;
+            this.cbUseCustomCaptureSound.CheckedChanged += new System.EventHandler(this.cbUseCustomCaptureSound_CheckedChanged);
             // 
             // gbToastWindow
             // 

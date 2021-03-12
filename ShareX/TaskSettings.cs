@@ -289,6 +289,12 @@ namespace ShareX
         public ToastClickAction ToastWindowLeftClickAction = ToastClickAction.OpenUrl;
         public ToastClickAction ToastWindowRightClickAction = ToastClickAction.CloseNotification;
         public ToastClickAction ToastWindowMiddleClickAction = ToastClickAction.AnnotateImage;
+        public bool UseCustomCaptureSound = false;
+        public string CustomCaptureSoundPath = "";
+        public bool UseCustomTaskCompletedSound = false;
+        public string CustomTaskCompletedSoundPath = "";
+        public bool UseCustomErrorSound = false;
+        public string CustomErrorSoundPath = "";
         public bool DisableNotifications = false;
         public bool DisableNotificationsOnFullscreen = false;
 
@@ -441,27 +447,6 @@ namespace ShareX
 
         [Category("General"), DefaultValue(false), Description("If task contains upload job then this setting will clear clipboard when task start.")]
         public bool AutoClearClipboard { get; set; }
-
-        [Category("Sound"), DefaultValue(false), Description("Enable/disable custom capture sound.")]
-        public bool UseCustomCaptureSound { get; set; }
-
-        [Category("Sound"), DefaultValue(""), Description("Capture sound file path."),
-        Editor(typeof(WavFileNameEditor), typeof(UITypeEditor))]
-        public string CustomCaptureSoundPath { get; set; }
-
-        [Category("Sound"), DefaultValue(false), Description("Enable/disable custom task complete sound.")]
-        public bool UseCustomTaskCompletedSound { get; set; }
-
-        [Category("Sound"), DefaultValue(""), Description("Task complete sound file path."),
-        Editor(typeof(WavFileNameEditor), typeof(UITypeEditor))]
-        public string CustomTaskCompletedSoundPath { get; set; }
-
-        [Category("Sound"), DefaultValue(false), Description("Enable/disable custom error sound.")]
-        public bool UseCustomErrorSound { get; set; }
-
-        [Category("Sound"), DefaultValue(""), Description("Error sound file path."),
-        Editor(typeof(WavFileNameEditor), typeof(UITypeEditor))]
-        public string CustomErrorSoundPath { get; set; }
 
         [Category("Capture"), DefaultValue(false), Description("Disable annotation support in region capture.")]
         public bool RegionCaptureDisableAnnotation { get; set; }
