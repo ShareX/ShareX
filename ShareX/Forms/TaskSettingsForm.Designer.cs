@@ -263,6 +263,25 @@
             this.tcGeneral = new System.Windows.Forms.TabControl();
             this.tpGeneralMain = new System.Windows.Forms.TabPage();
             this.tpNotifications = new System.Windows.Forms.TabPage();
+            this.cbDisableNotifications = new System.Windows.Forms.CheckBox();
+            this.cbDisableNotificationsOnFullscreen = new System.Windows.Forms.CheckBox();
+            this.gbToastWindow = new System.Windows.Forms.GroupBox();
+            this.lblToastWindowDuration = new System.Windows.Forms.Label();
+            this.lblToastWindowFadeDuration = new System.Windows.Forms.Label();
+            this.lblToastWindowPlacement = new System.Windows.Forms.Label();
+            this.lblToastWindowSize = new System.Windows.Forms.Label();
+            this.lblToastWindowLeftClickAction = new System.Windows.Forms.Label();
+            this.lblToastWindowRightClickAction = new System.Windows.Forms.Label();
+            this.lblToastWindowMiddleClickAction = new System.Windows.Forms.Label();
+            this.nudToastWindowDuration = new System.Windows.Forms.NumericUpDown();
+            this.nudToastWindowFadeDuration = new System.Windows.Forms.NumericUpDown();
+            this.cbToastWindowPlacement = new System.Windows.Forms.ComboBox();
+            this.nudToastWindowSizeWidth = new System.Windows.Forms.NumericUpDown();
+            this.nudToastWindowSizeHeight = new System.Windows.Forms.NumericUpDown();
+            this.cbToastWindowLeftClickAction = new System.Windows.Forms.ComboBox();
+            this.cbToastWindowRightClickAction = new System.Windows.Forms.ComboBox();
+            this.cbToastWindowMiddleClickAction = new System.Windows.Forms.ComboBox();
+            this.lblToastWindowSizeX = new System.Windows.Forms.Label();
             this.tcTaskSettings.SuspendLayout();
             this.tpTask.SuspendLayout();
             this.cmsDestinations.SuspendLayout();
@@ -318,6 +337,11 @@
             this.tcGeneral.SuspendLayout();
             this.tpGeneralMain.SuspendLayout();
             this.tpNotifications.SuspendLayout();
+            this.gbToastWindow.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudToastWindowDuration)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudToastWindowFadeDuration)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudToastWindowSizeWidth)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudToastWindowSizeHeight)).BeginInit();
             this.SuspendLayout();
             // 
             // cmsAfterCapture
@@ -2237,6 +2261,9 @@
             // 
             // tpNotifications
             // 
+            this.tpNotifications.Controls.Add(this.gbToastWindow);
+            this.tpNotifications.Controls.Add(this.cbDisableNotificationsOnFullscreen);
+            this.tpNotifications.Controls.Add(this.cbDisableNotifications);
             this.tpNotifications.Controls.Add(this.cbPlaySoundAfterCapture);
             this.tpNotifications.Controls.Add(this.lblAfterTaskNotification);
             this.tpNotifications.Controls.Add(this.cbPlaySoundAfterUpload);
@@ -2244,6 +2271,128 @@
             resources.ApplyResources(this.tpNotifications, "tpNotifications");
             this.tpNotifications.Name = "tpNotifications";
             this.tpNotifications.UseVisualStyleBackColor = true;
+            // 
+            // cbDisableNotifications
+            // 
+            resources.ApplyResources(this.cbDisableNotifications, "cbDisableNotifications");
+            this.cbDisableNotifications.Name = "cbDisableNotifications";
+            this.cbDisableNotifications.UseVisualStyleBackColor = true;
+            // 
+            // cbDisableNotificationsOnFullscreen
+            // 
+            resources.ApplyResources(this.cbDisableNotificationsOnFullscreen, "cbDisableNotificationsOnFullscreen");
+            this.cbDisableNotificationsOnFullscreen.Name = "cbDisableNotificationsOnFullscreen";
+            this.cbDisableNotificationsOnFullscreen.UseVisualStyleBackColor = true;
+            // 
+            // gbToastWindow
+            // 
+            this.gbToastWindow.Controls.Add(this.lblToastWindowSizeX);
+            this.gbToastWindow.Controls.Add(this.cbToastWindowMiddleClickAction);
+            this.gbToastWindow.Controls.Add(this.cbToastWindowRightClickAction);
+            this.gbToastWindow.Controls.Add(this.cbToastWindowLeftClickAction);
+            this.gbToastWindow.Controls.Add(this.nudToastWindowSizeHeight);
+            this.gbToastWindow.Controls.Add(this.nudToastWindowSizeWidth);
+            this.gbToastWindow.Controls.Add(this.cbToastWindowPlacement);
+            this.gbToastWindow.Controls.Add(this.nudToastWindowFadeDuration);
+            this.gbToastWindow.Controls.Add(this.nudToastWindowDuration);
+            this.gbToastWindow.Controls.Add(this.lblToastWindowMiddleClickAction);
+            this.gbToastWindow.Controls.Add(this.lblToastWindowRightClickAction);
+            this.gbToastWindow.Controls.Add(this.lblToastWindowLeftClickAction);
+            this.gbToastWindow.Controls.Add(this.lblToastWindowSize);
+            this.gbToastWindow.Controls.Add(this.lblToastWindowPlacement);
+            this.gbToastWindow.Controls.Add(this.lblToastWindowFadeDuration);
+            this.gbToastWindow.Controls.Add(this.lblToastWindowDuration);
+            resources.ApplyResources(this.gbToastWindow, "gbToastWindow");
+            this.gbToastWindow.Name = "gbToastWindow";
+            this.gbToastWindow.TabStop = false;
+            // 
+            // lblToastWindowDuration
+            // 
+            resources.ApplyResources(this.lblToastWindowDuration, "lblToastWindowDuration");
+            this.lblToastWindowDuration.Name = "lblToastWindowDuration";
+            // 
+            // lblToastWindowFadeDuration
+            // 
+            resources.ApplyResources(this.lblToastWindowFadeDuration, "lblToastWindowFadeDuration");
+            this.lblToastWindowFadeDuration.Name = "lblToastWindowFadeDuration";
+            // 
+            // lblToastWindowPlacement
+            // 
+            resources.ApplyResources(this.lblToastWindowPlacement, "lblToastWindowPlacement");
+            this.lblToastWindowPlacement.Name = "lblToastWindowPlacement";
+            // 
+            // lblToastWindowSize
+            // 
+            resources.ApplyResources(this.lblToastWindowSize, "lblToastWindowSize");
+            this.lblToastWindowSize.Name = "lblToastWindowSize";
+            // 
+            // lblToastWindowLeftClickAction
+            // 
+            resources.ApplyResources(this.lblToastWindowLeftClickAction, "lblToastWindowLeftClickAction");
+            this.lblToastWindowLeftClickAction.Name = "lblToastWindowLeftClickAction";
+            // 
+            // lblToastWindowRightClickAction
+            // 
+            resources.ApplyResources(this.lblToastWindowRightClickAction, "lblToastWindowRightClickAction");
+            this.lblToastWindowRightClickAction.Name = "lblToastWindowRightClickAction";
+            // 
+            // lblToastWindowMiddleClickAction
+            // 
+            resources.ApplyResources(this.lblToastWindowMiddleClickAction, "lblToastWindowMiddleClickAction");
+            this.lblToastWindowMiddleClickAction.Name = "lblToastWindowMiddleClickAction";
+            // 
+            // nudToastWindowDuration
+            // 
+            resources.ApplyResources(this.nudToastWindowDuration, "nudToastWindowDuration");
+            this.nudToastWindowDuration.Name = "nudToastWindowDuration";
+            // 
+            // nudToastWindowFadeDuration
+            // 
+            resources.ApplyResources(this.nudToastWindowFadeDuration, "nudToastWindowFadeDuration");
+            this.nudToastWindowFadeDuration.Name = "nudToastWindowFadeDuration";
+            // 
+            // cbToastWindowPlacement
+            // 
+            this.cbToastWindowPlacement.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbToastWindowPlacement.FormattingEnabled = true;
+            resources.ApplyResources(this.cbToastWindowPlacement, "cbToastWindowPlacement");
+            this.cbToastWindowPlacement.Name = "cbToastWindowPlacement";
+            // 
+            // nudToastWindowSizeWidth
+            // 
+            resources.ApplyResources(this.nudToastWindowSizeWidth, "nudToastWindowSizeWidth");
+            this.nudToastWindowSizeWidth.Name = "nudToastWindowSizeWidth";
+            // 
+            // nudToastWindowSizeHeight
+            // 
+            resources.ApplyResources(this.nudToastWindowSizeHeight, "nudToastWindowSizeHeight");
+            this.nudToastWindowSizeHeight.Name = "nudToastWindowSizeHeight";
+            // 
+            // cbToastWindowLeftClickAction
+            // 
+            this.cbToastWindowLeftClickAction.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbToastWindowLeftClickAction.FormattingEnabled = true;
+            resources.ApplyResources(this.cbToastWindowLeftClickAction, "cbToastWindowLeftClickAction");
+            this.cbToastWindowLeftClickAction.Name = "cbToastWindowLeftClickAction";
+            // 
+            // cbToastWindowRightClickAction
+            // 
+            this.cbToastWindowRightClickAction.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbToastWindowRightClickAction.FormattingEnabled = true;
+            resources.ApplyResources(this.cbToastWindowRightClickAction, "cbToastWindowRightClickAction");
+            this.cbToastWindowRightClickAction.Name = "cbToastWindowRightClickAction";
+            // 
+            // cbToastWindowMiddleClickAction
+            // 
+            this.cbToastWindowMiddleClickAction.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbToastWindowMiddleClickAction.FormattingEnabled = true;
+            resources.ApplyResources(this.cbToastWindowMiddleClickAction, "cbToastWindowMiddleClickAction");
+            this.cbToastWindowMiddleClickAction.Name = "cbToastWindowMiddleClickAction";
+            // 
+            // lblToastWindowSizeX
+            // 
+            resources.ApplyResources(this.lblToastWindowSizeX, "lblToastWindowSizeX");
+            this.lblToastWindowSizeX.Name = "lblToastWindowSizeX";
             // 
             // TaskSettingsForm
             // 
@@ -2334,6 +2483,12 @@
             this.tpGeneralMain.PerformLayout();
             this.tpNotifications.ResumeLayout(false);
             this.tpNotifications.PerformLayout();
+            this.gbToastWindow.ResumeLayout(false);
+            this.gbToastWindow.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudToastWindowDuration)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudToastWindowFadeDuration)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudToastWindowSizeWidth)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudToastWindowSizeHeight)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2573,5 +2728,24 @@
         private System.Windows.Forms.TabControl tcGeneral;
         private System.Windows.Forms.TabPage tpGeneralMain;
         private System.Windows.Forms.TabPage tpNotifications;
+        private System.Windows.Forms.CheckBox cbDisableNotificationsOnFullscreen;
+        private System.Windows.Forms.CheckBox cbDisableNotifications;
+        private System.Windows.Forms.GroupBox gbToastWindow;
+        private System.Windows.Forms.Label lblToastWindowLeftClickAction;
+        private System.Windows.Forms.Label lblToastWindowSize;
+        private System.Windows.Forms.Label lblToastWindowPlacement;
+        private System.Windows.Forms.Label lblToastWindowFadeDuration;
+        private System.Windows.Forms.Label lblToastWindowDuration;
+        private System.Windows.Forms.Label lblToastWindowMiddleClickAction;
+        private System.Windows.Forms.Label lblToastWindowRightClickAction;
+        private System.Windows.Forms.Label lblToastWindowSizeX;
+        private System.Windows.Forms.ComboBox cbToastWindowMiddleClickAction;
+        private System.Windows.Forms.ComboBox cbToastWindowRightClickAction;
+        private System.Windows.Forms.ComboBox cbToastWindowLeftClickAction;
+        private System.Windows.Forms.NumericUpDown nudToastWindowSizeHeight;
+        private System.Windows.Forms.NumericUpDown nudToastWindowSizeWidth;
+        private System.Windows.Forms.ComboBox cbToastWindowPlacement;
+        private System.Windows.Forms.NumericUpDown nudToastWindowFadeDuration;
+        private System.Windows.Forms.NumericUpDown nudToastWindowDuration;
     }
 }
