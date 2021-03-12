@@ -282,6 +282,16 @@ namespace ShareX
         public bool PlaySoundAfterCapture = true;
         public bool PlaySoundAfterUpload = true;
         public bool ShowToastNotificationAfterTaskCompleted = true;
+        public float ToastWindowDuration = 3f;
+        public float ToastWindowFadeDuration = 1f;
+        public ContentAlignment ToastWindowPlacement = ContentAlignment.BottomRight;
+        public Size ToastWindowSize = new Size(400, 300);
+        public ToastClickAction ToastWindowLeftClickAction = ToastClickAction.OpenUrl;
+        public ToastClickAction ToastWindowRightClickAction = ToastClickAction.CloseNotification;
+        public ToastClickAction ToastWindowMiddleClickAction = ToastClickAction.AnnotateImage;
+        public bool DisableNotifications = false;
+        public bool DisableNotificationsOnFullscreen = false;
+
         public PopUpNotificationType PopUpNotification = PopUpNotificationType.ToastNotification;
 
         #endregion
@@ -482,69 +492,6 @@ namespace ShareX
 
         [Category("After upload"), DefaultValue(0), Description("Automatically shorten URL if the URL is longer than the specified number of characters. 0 means automatic URL shortening is not active.")]
         public int AutoShortenURLLength { get; set; }
-
-        [Category("Notifications"), DefaultValue(false), Description("Disable notifications.")]
-        public bool DisableNotifications { get; set; }
-
-        [Category("Notifications"), DefaultValue(false), Description("If active window is fullscreen then toast window or balloon tip won't be shown.")]
-        public bool DisableNotificationsOnFullscreen { get; set; }
-
-        private float toastWindowDuration;
-
-        [Category("Notifications"), DefaultValue(3f), Description("Specify how long should toast notification window will stay on screen (in seconds).")]
-        public float ToastWindowDuration
-        {
-            get
-            {
-                return toastWindowDuration;
-            }
-            set
-            {
-                toastWindowDuration = value.Clamp(0, 30);
-            }
-        }
-
-        private float toastWindowFadeDuration;
-
-        [Category("Notifications"), DefaultValue(1f), Description("After toast window duration end, toast window will start fading, specify duration of this fade animation (in seconds).")]
-        public float ToastWindowFadeDuration
-        {
-            get
-            {
-                return toastWindowFadeDuration;
-            }
-            set
-            {
-                toastWindowFadeDuration = value.Clamp(0, 30);
-            }
-        }
-
-        [Category("Notifications"), DefaultValue(ContentAlignment.BottomRight), Description("Specify where should toast notification window appear on the screen.")]
-        public ContentAlignment ToastWindowPlacement { get; set; }
-
-        private Size toastWindowSize;
-
-        [Category("Notifications"), DefaultValue(typeof(Size), "400, 300"), Description("Maximum toast notification window size.")]
-        public Size ToastWindowSize
-        {
-            get
-            {
-                return toastWindowSize;
-            }
-            set
-            {
-                toastWindowSize = new Size(Math.Max(value.Width, 100), Math.Max(value.Height, 100));
-            }
-        }
-
-        [Category("Notifications"), DefaultValue(ToastClickAction.OpenUrl), Description("Specify action after toast notification window is left clicked."), TypeConverter(typeof(EnumDescriptionConverter))]
-        public ToastClickAction ToastWindowClickAction { get; set; }
-
-        [Category("Notifications"), DefaultValue(ToastClickAction.CloseNotification), Description("Specify action after toast notification window is right clicked."), TypeConverter(typeof(EnumDescriptionConverter))]
-        public ToastClickAction ToastWindowRightClickAction { get; set; }
-
-        [Category("Notifications"), DefaultValue(ToastClickAction.AnnotateImage), Description("Specify action after toast notification window is middle clicked."), TypeConverter(typeof(EnumDescriptionConverter))]
-        public ToastClickAction ToastWindowMiddleClickAction { get; set; }
 
         [Category("After upload"), DefaultValue(false), Description("After upload form will be automatically closed after 60 seconds.")]
         public bool AutoCloseAfterUploadForm { get; set; }

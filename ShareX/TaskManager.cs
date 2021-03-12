@@ -311,7 +311,7 @@ namespace ShareX
                                 lvi.ImageIndex = 1;
                             }
 
-                            if (!info.TaskSettings.AdvancedSettings.DisableNotifications)
+                            if (!info.TaskSettings.GeneralSettings.DisableNotifications)
                             {
                                 if (info.TaskSettings.GeneralSettings.PlaySoundAfterUpload)
                                 {
@@ -323,7 +323,7 @@ namespace ShareX
                                     string errorMessage = info.Result.Errors[0];
 
                                     if (info.TaskSettings.GeneralSettings.ShowToastNotificationAfterTaskCompleted && !string.IsNullOrEmpty(errorMessage) &&
-                                        (!info.TaskSettings.AdvancedSettings.DisableNotificationsOnFullscreen || !CaptureHelpers.IsActiveWindowFullscreen()))
+                                        (!info.TaskSettings.GeneralSettings.DisableNotificationsOnFullscreen || !CaptureHelpers.IsActiveWindowFullscreen()))
                                     {
                                         TaskHelpers.ShowNotificationTip(errorMessage, "ShareX - " + Resources.TaskManager_task_UploadCompleted_Error, 5000);
                                     }
@@ -359,7 +359,7 @@ namespace ShareX
 
                                 RecentManager.Add(task);
 
-                                if (!info.TaskSettings.AdvancedSettings.DisableNotifications && info.Job != TaskJob.ShareURL)
+                                if (!info.TaskSettings.GeneralSettings.DisableNotifications && info.Job != TaskJob.ShareURL)
                                 {
                                     if (info.TaskSettings.GeneralSettings.PlaySoundAfterUpload)
                                     {
@@ -372,19 +372,19 @@ namespace ShareX
                                     }
 
                                     if (info.TaskSettings.GeneralSettings.ShowToastNotificationAfterTaskCompleted && !string.IsNullOrEmpty(result) &&
-                                        (!info.TaskSettings.AdvancedSettings.DisableNotificationsOnFullscreen || !CaptureHelpers.IsActiveWindowFullscreen()))
+                                        (!info.TaskSettings.GeneralSettings.DisableNotificationsOnFullscreen || !CaptureHelpers.IsActiveWindowFullscreen()))
                                     {
                                         task.KeepImage = true;
 
                                         NotificationFormConfig toastConfig = new NotificationFormConfig()
                                         {
-                                            Duration = (int)(info.TaskSettings.AdvancedSettings.ToastWindowDuration * 1000),
-                                            FadeDuration = (int)(info.TaskSettings.AdvancedSettings.ToastWindowFadeDuration * 1000),
-                                            Placement = info.TaskSettings.AdvancedSettings.ToastWindowPlacement,
-                                            Size = info.TaskSettings.AdvancedSettings.ToastWindowSize,
-                                            LeftClickAction = info.TaskSettings.AdvancedSettings.ToastWindowClickAction,
-                                            RightClickAction = info.TaskSettings.AdvancedSettings.ToastWindowRightClickAction,
-                                            MiddleClickAction = info.TaskSettings.AdvancedSettings.ToastWindowMiddleClickAction,
+                                            Duration = (int)(info.TaskSettings.GeneralSettings.ToastWindowDuration * 1000),
+                                            FadeDuration = (int)(info.TaskSettings.GeneralSettings.ToastWindowFadeDuration * 1000),
+                                            Placement = info.TaskSettings.GeneralSettings.ToastWindowPlacement,
+                                            Size = info.TaskSettings.GeneralSettings.ToastWindowSize,
+                                            LeftClickAction = info.TaskSettings.GeneralSettings.ToastWindowLeftClickAction,
+                                            RightClickAction = info.TaskSettings.GeneralSettings.ToastWindowRightClickAction,
+                                            MiddleClickAction = info.TaskSettings.GeneralSettings.ToastWindowMiddleClickAction,
                                             FilePath = info.FilePath,
                                             Image = task.Image,
                                             Title = "ShareX - " + Resources.TaskManager_task_UploadCompleted_ShareX___Task_completed,
