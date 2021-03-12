@@ -282,6 +282,15 @@
             this.cbToastWindowRightClickAction = new System.Windows.Forms.ComboBox();
             this.cbToastWindowMiddleClickAction = new System.Windows.Forms.ComboBox();
             this.lblToastWindowSizeX = new System.Windows.Forms.Label();
+            this.cbUseCustomCaptureSound = new System.Windows.Forms.CheckBox();
+            this.cbUseCustomTaskCompletedSound = new System.Windows.Forms.CheckBox();
+            this.cbUseCustomErrorSound = new System.Windows.Forms.CheckBox();
+            this.txtCustomCaptureSoundPath = new System.Windows.Forms.TextBox();
+            this.txtCustomTaskCompletedSoundPath = new System.Windows.Forms.TextBox();
+            this.txtCustomErrorSoundPath = new System.Windows.Forms.TextBox();
+            this.btnCustomCaptureSoundPath = new System.Windows.Forms.Button();
+            this.btnCustomTaskCompletedSoundPath = new System.Windows.Forms.Button();
+            this.btnCustomErrorSoundPath = new System.Windows.Forms.Button();
             this.tcTaskSettings.SuspendLayout();
             this.tpTask.SuspendLayout();
             this.cmsDestinations.SuspendLayout();
@@ -2261,6 +2270,15 @@
             // 
             // tpNotifications
             // 
+            this.tpNotifications.Controls.Add(this.btnCustomErrorSoundPath);
+            this.tpNotifications.Controls.Add(this.btnCustomTaskCompletedSoundPath);
+            this.tpNotifications.Controls.Add(this.btnCustomCaptureSoundPath);
+            this.tpNotifications.Controls.Add(this.txtCustomErrorSoundPath);
+            this.tpNotifications.Controls.Add(this.txtCustomTaskCompletedSoundPath);
+            this.tpNotifications.Controls.Add(this.txtCustomCaptureSoundPath);
+            this.tpNotifications.Controls.Add(this.cbUseCustomErrorSound);
+            this.tpNotifications.Controls.Add(this.cbUseCustomTaskCompletedSound);
+            this.tpNotifications.Controls.Add(this.cbUseCustomCaptureSound);
             this.tpNotifications.Controls.Add(this.gbToastWindow);
             this.tpNotifications.Controls.Add(this.cbDisableNotificationsOnFullscreen);
             this.tpNotifications.Controls.Add(this.cbDisableNotifications);
@@ -2393,6 +2411,57 @@
             // 
             resources.ApplyResources(this.lblToastWindowSizeX, "lblToastWindowSizeX");
             this.lblToastWindowSizeX.Name = "lblToastWindowSizeX";
+            // 
+            // cbUseCustomCaptureSound
+            // 
+            resources.ApplyResources(this.cbUseCustomCaptureSound, "cbUseCustomCaptureSound");
+            this.cbUseCustomCaptureSound.Name = "cbUseCustomCaptureSound";
+            this.cbUseCustomCaptureSound.UseVisualStyleBackColor = true;
+            // 
+            // cbUseCustomTaskCompletedSound
+            // 
+            resources.ApplyResources(this.cbUseCustomTaskCompletedSound, "cbUseCustomTaskCompletedSound");
+            this.cbUseCustomTaskCompletedSound.Name = "cbUseCustomTaskCompletedSound";
+            this.cbUseCustomTaskCompletedSound.UseVisualStyleBackColor = true;
+            // 
+            // cbUseCustomErrorSound
+            // 
+            resources.ApplyResources(this.cbUseCustomErrorSound, "cbUseCustomErrorSound");
+            this.cbUseCustomErrorSound.Name = "cbUseCustomErrorSound";
+            this.cbUseCustomErrorSound.UseVisualStyleBackColor = true;
+            // 
+            // txtCustomCaptureSoundPath
+            // 
+            resources.ApplyResources(this.txtCustomCaptureSoundPath, "txtCustomCaptureSoundPath");
+            this.txtCustomCaptureSoundPath.Name = "txtCustomCaptureSoundPath";
+            // 
+            // txtCustomTaskCompletedSoundPath
+            // 
+            resources.ApplyResources(this.txtCustomTaskCompletedSoundPath, "txtCustomTaskCompletedSoundPath");
+            this.txtCustomTaskCompletedSoundPath.Name = "txtCustomTaskCompletedSoundPath";
+            // 
+            // txtCustomErrorSoundPath
+            // 
+            resources.ApplyResources(this.txtCustomErrorSoundPath, "txtCustomErrorSoundPath");
+            this.txtCustomErrorSoundPath.Name = "txtCustomErrorSoundPath";
+            // 
+            // btnCustomCaptureSoundPath
+            // 
+            resources.ApplyResources(this.btnCustomCaptureSoundPath, "btnCustomCaptureSoundPath");
+            this.btnCustomCaptureSoundPath.Name = "btnCustomCaptureSoundPath";
+            this.btnCustomCaptureSoundPath.UseVisualStyleBackColor = true;
+            // 
+            // btnCustomTaskCompletedSoundPath
+            // 
+            resources.ApplyResources(this.btnCustomTaskCompletedSoundPath, "btnCustomTaskCompletedSoundPath");
+            this.btnCustomTaskCompletedSoundPath.Name = "btnCustomTaskCompletedSoundPath";
+            this.btnCustomTaskCompletedSoundPath.UseVisualStyleBackColor = true;
+            // 
+            // btnCustomErrorSoundPath
+            // 
+            resources.ApplyResources(this.btnCustomErrorSoundPath, "btnCustomErrorSoundPath");
+            this.btnCustomErrorSoundPath.Name = "btnCustomErrorSoundPath";
+            this.btnCustomErrorSoundPath.UseVisualStyleBackColor = true;
             // 
             // TaskSettingsForm
             // 
@@ -2747,5 +2816,14 @@
         private System.Windows.Forms.ComboBox cbToastWindowPlacement;
         private System.Windows.Forms.NumericUpDown nudToastWindowFadeDuration;
         private System.Windows.Forms.NumericUpDown nudToastWindowDuration;
+        private System.Windows.Forms.TextBox txtCustomErrorSoundPath;
+        private System.Windows.Forms.TextBox txtCustomTaskCompletedSoundPath;
+        private System.Windows.Forms.TextBox txtCustomCaptureSoundPath;
+        private System.Windows.Forms.CheckBox cbUseCustomErrorSound;
+        private System.Windows.Forms.CheckBox cbUseCustomTaskCompletedSound;
+        private System.Windows.Forms.CheckBox cbUseCustomCaptureSound;
+        private System.Windows.Forms.Button btnCustomErrorSoundPath;
+        private System.Windows.Forms.Button btnCustomTaskCompletedSoundPath;
+        private System.Windows.Forms.Button btnCustomCaptureSoundPath;
     }
 }
