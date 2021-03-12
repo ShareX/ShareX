@@ -277,12 +277,14 @@ namespace ShareX
 
     public class TaskSettingsGeneral
     {
+        #region General / Notifications
+
         public bool PlaySoundAfterCapture = true;
-        public bool ShowAfterCaptureTasksForm = false;
-        public bool ShowBeforeUploadForm = false;
         public bool PlaySoundAfterUpload = true;
+        public bool ShowToastNotificationAfterTaskCompleted = true;
         public PopUpNotificationType PopUpNotification = PopUpNotificationType.ToastNotification;
-        public bool ShowAfterUploadForm = false;
+
+        #endregion
     }
 
     public class TaskSettingsImage

@@ -58,11 +58,40 @@
             this.tsmiURLSharingServices = new System.Windows.Forms.ToolStripMenuItem();
             this.btnTask = new ShareX.HelpersLib.MenuButton();
             this.tpGeneral = new System.Windows.Forms.TabPage();
-            this.lblAfterTaskNotification = new System.Windows.Forms.Label();
-            this.cboPopUpNotification = new System.Windows.Forms.ComboBox();
-            this.cbPlaySoundAfterUpload = new System.Windows.Forms.CheckBox();
-            this.cbPlaySoundAfterCapture = new System.Windows.Forms.CheckBox();
+            this.tcGeneral = new System.Windows.Forms.TabControl();
+            this.tpGeneralMain = new System.Windows.Forms.TabPage();
             this.chkOverrideGeneralSettings = new System.Windows.Forms.CheckBox();
+            this.tpNotifications = new System.Windows.Forms.TabPage();
+            this.btnCustomErrorSoundPath = new System.Windows.Forms.Button();
+            this.btnCustomTaskCompletedSoundPath = new System.Windows.Forms.Button();
+            this.btnCustomCaptureSoundPath = new System.Windows.Forms.Button();
+            this.txtCustomErrorSoundPath = new System.Windows.Forms.TextBox();
+            this.txtCustomTaskCompletedSoundPath = new System.Windows.Forms.TextBox();
+            this.txtCustomCaptureSoundPath = new System.Windows.Forms.TextBox();
+            this.cbUseCustomErrorSound = new System.Windows.Forms.CheckBox();
+            this.cbUseCustomTaskCompletedSound = new System.Windows.Forms.CheckBox();
+            this.cbUseCustomCaptureSound = new System.Windows.Forms.CheckBox();
+            this.gbToastWindow = new System.Windows.Forms.GroupBox();
+            this.lblToastWindowSizeX = new System.Windows.Forms.Label();
+            this.cbToastWindowMiddleClickAction = new System.Windows.Forms.ComboBox();
+            this.cbToastWindowRightClickAction = new System.Windows.Forms.ComboBox();
+            this.cbToastWindowLeftClickAction = new System.Windows.Forms.ComboBox();
+            this.nudToastWindowSizeHeight = new System.Windows.Forms.NumericUpDown();
+            this.nudToastWindowSizeWidth = new System.Windows.Forms.NumericUpDown();
+            this.cbToastWindowPlacement = new System.Windows.Forms.ComboBox();
+            this.nudToastWindowFadeDuration = new System.Windows.Forms.NumericUpDown();
+            this.nudToastWindowDuration = new System.Windows.Forms.NumericUpDown();
+            this.lblToastWindowMiddleClickAction = new System.Windows.Forms.Label();
+            this.lblToastWindowRightClickAction = new System.Windows.Forms.Label();
+            this.lblToastWindowLeftClickAction = new System.Windows.Forms.Label();
+            this.lblToastWindowSize = new System.Windows.Forms.Label();
+            this.lblToastWindowPlacement = new System.Windows.Forms.Label();
+            this.lblToastWindowFadeDuration = new System.Windows.Forms.Label();
+            this.lblToastWindowDuration = new System.Windows.Forms.Label();
+            this.cbDisableNotificationsOnFullscreen = new System.Windows.Forms.CheckBox();
+            this.cbDisableNotifications = new System.Windows.Forms.CheckBox();
+            this.cbPlaySoundAfterCapture = new System.Windows.Forms.CheckBox();
+            this.cbPlaySoundAfterUpload = new System.Windows.Forms.CheckBox();
             this.tpImage = new System.Windows.Forms.TabPage();
             this.tcImage = new System.Windows.Forms.TabControl();
             this.tpQuality = new System.Windows.Forms.TabPage();
@@ -260,41 +289,19 @@
             this.pgTaskSettings = new System.Windows.Forms.PropertyGrid();
             this.chkOverrideAdvancedSettings = new System.Windows.Forms.CheckBox();
             this.tttvMain = new ShareX.HelpersLib.TabToTreeView();
-            this.tcGeneral = new System.Windows.Forms.TabControl();
-            this.tpGeneralMain = new System.Windows.Forms.TabPage();
-            this.tpNotifications = new System.Windows.Forms.TabPage();
-            this.cbDisableNotifications = new System.Windows.Forms.CheckBox();
-            this.cbDisableNotificationsOnFullscreen = new System.Windows.Forms.CheckBox();
-            this.gbToastWindow = new System.Windows.Forms.GroupBox();
-            this.lblToastWindowDuration = new System.Windows.Forms.Label();
-            this.lblToastWindowFadeDuration = new System.Windows.Forms.Label();
-            this.lblToastWindowPlacement = new System.Windows.Forms.Label();
-            this.lblToastWindowSize = new System.Windows.Forms.Label();
-            this.lblToastWindowLeftClickAction = new System.Windows.Forms.Label();
-            this.lblToastWindowRightClickAction = new System.Windows.Forms.Label();
-            this.lblToastWindowMiddleClickAction = new System.Windows.Forms.Label();
-            this.nudToastWindowDuration = new System.Windows.Forms.NumericUpDown();
-            this.nudToastWindowFadeDuration = new System.Windows.Forms.NumericUpDown();
-            this.cbToastWindowPlacement = new System.Windows.Forms.ComboBox();
-            this.nudToastWindowSizeWidth = new System.Windows.Forms.NumericUpDown();
-            this.nudToastWindowSizeHeight = new System.Windows.Forms.NumericUpDown();
-            this.cbToastWindowLeftClickAction = new System.Windows.Forms.ComboBox();
-            this.cbToastWindowRightClickAction = new System.Windows.Forms.ComboBox();
-            this.cbToastWindowMiddleClickAction = new System.Windows.Forms.ComboBox();
-            this.lblToastWindowSizeX = new System.Windows.Forms.Label();
-            this.cbUseCustomCaptureSound = new System.Windows.Forms.CheckBox();
-            this.cbUseCustomTaskCompletedSound = new System.Windows.Forms.CheckBox();
-            this.cbUseCustomErrorSound = new System.Windows.Forms.CheckBox();
-            this.txtCustomCaptureSoundPath = new System.Windows.Forms.TextBox();
-            this.txtCustomTaskCompletedSoundPath = new System.Windows.Forms.TextBox();
-            this.txtCustomErrorSoundPath = new System.Windows.Forms.TextBox();
-            this.btnCustomCaptureSoundPath = new System.Windows.Forms.Button();
-            this.btnCustomTaskCompletedSoundPath = new System.Windows.Forms.Button();
-            this.btnCustomErrorSoundPath = new System.Windows.Forms.Button();
+            this.cbShowToastNotificationAfterTaskCompleted = new System.Windows.Forms.CheckBox();
             this.tcTaskSettings.SuspendLayout();
             this.tpTask.SuspendLayout();
             this.cmsDestinations.SuspendLayout();
             this.tpGeneral.SuspendLayout();
+            this.tcGeneral.SuspendLayout();
+            this.tpGeneralMain.SuspendLayout();
+            this.tpNotifications.SuspendLayout();
+            this.gbToastWindow.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudToastWindowSizeHeight)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudToastWindowSizeWidth)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudToastWindowFadeDuration)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudToastWindowDuration)).BeginInit();
             this.tpImage.SuspendLayout();
             this.tcImage.SuspendLayout();
             this.tpQuality.SuspendLayout();
@@ -343,14 +350,6 @@
             this.tpTools.SuspendLayout();
             this.pTools.SuspendLayout();
             this.tpAdvanced.SuspendLayout();
-            this.tcGeneral.SuspendLayout();
-            this.tpGeneralMain.SuspendLayout();
-            this.tpNotifications.SuspendLayout();
-            this.gbToastWindow.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudToastWindowDuration)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudToastWindowFadeDuration)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudToastWindowSizeWidth)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudToastWindowSizeHeight)).BeginInit();
             this.SuspendLayout();
             // 
             // cmsAfterCapture
@@ -567,32 +566,20 @@
             resources.ApplyResources(this.tpGeneral, "tpGeneral");
             this.tpGeneral.Name = "tpGeneral";
             // 
-            // lblAfterTaskNotification
+            // tcGeneral
             // 
-            resources.ApplyResources(this.lblAfterTaskNotification, "lblAfterTaskNotification");
-            this.lblAfterTaskNotification.Name = "lblAfterTaskNotification";
+            this.tcGeneral.Controls.Add(this.tpGeneralMain);
+            this.tcGeneral.Controls.Add(this.tpNotifications);
+            resources.ApplyResources(this.tcGeneral, "tcGeneral");
+            this.tcGeneral.Name = "tcGeneral";
+            this.tcGeneral.SelectedIndex = 0;
             // 
-            // cboPopUpNotification
+            // tpGeneralMain
             // 
-            this.cboPopUpNotification.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboPopUpNotification.FormattingEnabled = true;
-            resources.ApplyResources(this.cboPopUpNotification, "cboPopUpNotification");
-            this.cboPopUpNotification.Name = "cboPopUpNotification";
-            this.cboPopUpNotification.SelectedIndexChanged += new System.EventHandler(this.cboPopUpNotification_SelectedIndexChanged);
-            // 
-            // cbPlaySoundAfterUpload
-            // 
-            resources.ApplyResources(this.cbPlaySoundAfterUpload, "cbPlaySoundAfterUpload");
-            this.cbPlaySoundAfterUpload.Name = "cbPlaySoundAfterUpload";
-            this.cbPlaySoundAfterUpload.UseVisualStyleBackColor = true;
-            this.cbPlaySoundAfterUpload.CheckedChanged += new System.EventHandler(this.cbPlaySoundAfterUpload_CheckedChanged);
-            // 
-            // cbPlaySoundAfterCapture
-            // 
-            resources.ApplyResources(this.cbPlaySoundAfterCapture, "cbPlaySoundAfterCapture");
-            this.cbPlaySoundAfterCapture.Name = "cbPlaySoundAfterCapture";
-            this.cbPlaySoundAfterCapture.UseVisualStyleBackColor = true;
-            this.cbPlaySoundAfterCapture.CheckedChanged += new System.EventHandler(this.cbPlaySoundAfterCapture_CheckedChanged);
+            this.tpGeneralMain.Controls.Add(this.chkOverrideGeneralSettings);
+            resources.ApplyResources(this.tpGeneralMain, "tpGeneralMain");
+            this.tpGeneralMain.Name = "tpGeneralMain";
+            this.tpGeneralMain.UseVisualStyleBackColor = true;
             // 
             // chkOverrideGeneralSettings
             // 
@@ -602,6 +589,214 @@
             this.chkOverrideGeneralSettings.Name = "chkOverrideGeneralSettings";
             this.chkOverrideGeneralSettings.UseVisualStyleBackColor = true;
             this.chkOverrideGeneralSettings.CheckedChanged += new System.EventHandler(this.chkUseDefaultGeneralSettings_CheckedChanged);
+            // 
+            // tpNotifications
+            // 
+            this.tpNotifications.Controls.Add(this.cbShowToastNotificationAfterTaskCompleted);
+            this.tpNotifications.Controls.Add(this.btnCustomErrorSoundPath);
+            this.tpNotifications.Controls.Add(this.btnCustomTaskCompletedSoundPath);
+            this.tpNotifications.Controls.Add(this.btnCustomCaptureSoundPath);
+            this.tpNotifications.Controls.Add(this.txtCustomErrorSoundPath);
+            this.tpNotifications.Controls.Add(this.txtCustomTaskCompletedSoundPath);
+            this.tpNotifications.Controls.Add(this.txtCustomCaptureSoundPath);
+            this.tpNotifications.Controls.Add(this.cbUseCustomErrorSound);
+            this.tpNotifications.Controls.Add(this.cbUseCustomTaskCompletedSound);
+            this.tpNotifications.Controls.Add(this.cbUseCustomCaptureSound);
+            this.tpNotifications.Controls.Add(this.gbToastWindow);
+            this.tpNotifications.Controls.Add(this.cbDisableNotificationsOnFullscreen);
+            this.tpNotifications.Controls.Add(this.cbDisableNotifications);
+            this.tpNotifications.Controls.Add(this.cbPlaySoundAfterCapture);
+            this.tpNotifications.Controls.Add(this.cbPlaySoundAfterUpload);
+            resources.ApplyResources(this.tpNotifications, "tpNotifications");
+            this.tpNotifications.Name = "tpNotifications";
+            this.tpNotifications.UseVisualStyleBackColor = true;
+            // 
+            // btnCustomErrorSoundPath
+            // 
+            resources.ApplyResources(this.btnCustomErrorSoundPath, "btnCustomErrorSoundPath");
+            this.btnCustomErrorSoundPath.Name = "btnCustomErrorSoundPath";
+            this.btnCustomErrorSoundPath.UseVisualStyleBackColor = true;
+            // 
+            // btnCustomTaskCompletedSoundPath
+            // 
+            resources.ApplyResources(this.btnCustomTaskCompletedSoundPath, "btnCustomTaskCompletedSoundPath");
+            this.btnCustomTaskCompletedSoundPath.Name = "btnCustomTaskCompletedSoundPath";
+            this.btnCustomTaskCompletedSoundPath.UseVisualStyleBackColor = true;
+            // 
+            // btnCustomCaptureSoundPath
+            // 
+            resources.ApplyResources(this.btnCustomCaptureSoundPath, "btnCustomCaptureSoundPath");
+            this.btnCustomCaptureSoundPath.Name = "btnCustomCaptureSoundPath";
+            this.btnCustomCaptureSoundPath.UseVisualStyleBackColor = true;
+            // 
+            // txtCustomErrorSoundPath
+            // 
+            resources.ApplyResources(this.txtCustomErrorSoundPath, "txtCustomErrorSoundPath");
+            this.txtCustomErrorSoundPath.Name = "txtCustomErrorSoundPath";
+            // 
+            // txtCustomTaskCompletedSoundPath
+            // 
+            resources.ApplyResources(this.txtCustomTaskCompletedSoundPath, "txtCustomTaskCompletedSoundPath");
+            this.txtCustomTaskCompletedSoundPath.Name = "txtCustomTaskCompletedSoundPath";
+            // 
+            // txtCustomCaptureSoundPath
+            // 
+            resources.ApplyResources(this.txtCustomCaptureSoundPath, "txtCustomCaptureSoundPath");
+            this.txtCustomCaptureSoundPath.Name = "txtCustomCaptureSoundPath";
+            // 
+            // cbUseCustomErrorSound
+            // 
+            resources.ApplyResources(this.cbUseCustomErrorSound, "cbUseCustomErrorSound");
+            this.cbUseCustomErrorSound.Name = "cbUseCustomErrorSound";
+            this.cbUseCustomErrorSound.UseVisualStyleBackColor = true;
+            // 
+            // cbUseCustomTaskCompletedSound
+            // 
+            resources.ApplyResources(this.cbUseCustomTaskCompletedSound, "cbUseCustomTaskCompletedSound");
+            this.cbUseCustomTaskCompletedSound.Name = "cbUseCustomTaskCompletedSound";
+            this.cbUseCustomTaskCompletedSound.UseVisualStyleBackColor = true;
+            // 
+            // cbUseCustomCaptureSound
+            // 
+            resources.ApplyResources(this.cbUseCustomCaptureSound, "cbUseCustomCaptureSound");
+            this.cbUseCustomCaptureSound.Name = "cbUseCustomCaptureSound";
+            this.cbUseCustomCaptureSound.UseVisualStyleBackColor = true;
+            // 
+            // gbToastWindow
+            // 
+            this.gbToastWindow.Controls.Add(this.lblToastWindowSizeX);
+            this.gbToastWindow.Controls.Add(this.cbToastWindowMiddleClickAction);
+            this.gbToastWindow.Controls.Add(this.cbToastWindowRightClickAction);
+            this.gbToastWindow.Controls.Add(this.cbToastWindowLeftClickAction);
+            this.gbToastWindow.Controls.Add(this.nudToastWindowSizeHeight);
+            this.gbToastWindow.Controls.Add(this.nudToastWindowSizeWidth);
+            this.gbToastWindow.Controls.Add(this.cbToastWindowPlacement);
+            this.gbToastWindow.Controls.Add(this.nudToastWindowFadeDuration);
+            this.gbToastWindow.Controls.Add(this.nudToastWindowDuration);
+            this.gbToastWindow.Controls.Add(this.lblToastWindowMiddleClickAction);
+            this.gbToastWindow.Controls.Add(this.lblToastWindowRightClickAction);
+            this.gbToastWindow.Controls.Add(this.lblToastWindowLeftClickAction);
+            this.gbToastWindow.Controls.Add(this.lblToastWindowSize);
+            this.gbToastWindow.Controls.Add(this.lblToastWindowPlacement);
+            this.gbToastWindow.Controls.Add(this.lblToastWindowFadeDuration);
+            this.gbToastWindow.Controls.Add(this.lblToastWindowDuration);
+            resources.ApplyResources(this.gbToastWindow, "gbToastWindow");
+            this.gbToastWindow.Name = "gbToastWindow";
+            this.gbToastWindow.TabStop = false;
+            // 
+            // lblToastWindowSizeX
+            // 
+            resources.ApplyResources(this.lblToastWindowSizeX, "lblToastWindowSizeX");
+            this.lblToastWindowSizeX.Name = "lblToastWindowSizeX";
+            // 
+            // cbToastWindowMiddleClickAction
+            // 
+            this.cbToastWindowMiddleClickAction.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbToastWindowMiddleClickAction.FormattingEnabled = true;
+            resources.ApplyResources(this.cbToastWindowMiddleClickAction, "cbToastWindowMiddleClickAction");
+            this.cbToastWindowMiddleClickAction.Name = "cbToastWindowMiddleClickAction";
+            // 
+            // cbToastWindowRightClickAction
+            // 
+            this.cbToastWindowRightClickAction.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbToastWindowRightClickAction.FormattingEnabled = true;
+            resources.ApplyResources(this.cbToastWindowRightClickAction, "cbToastWindowRightClickAction");
+            this.cbToastWindowRightClickAction.Name = "cbToastWindowRightClickAction";
+            // 
+            // cbToastWindowLeftClickAction
+            // 
+            this.cbToastWindowLeftClickAction.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbToastWindowLeftClickAction.FormattingEnabled = true;
+            resources.ApplyResources(this.cbToastWindowLeftClickAction, "cbToastWindowLeftClickAction");
+            this.cbToastWindowLeftClickAction.Name = "cbToastWindowLeftClickAction";
+            // 
+            // nudToastWindowSizeHeight
+            // 
+            resources.ApplyResources(this.nudToastWindowSizeHeight, "nudToastWindowSizeHeight");
+            this.nudToastWindowSizeHeight.Name = "nudToastWindowSizeHeight";
+            // 
+            // nudToastWindowSizeWidth
+            // 
+            resources.ApplyResources(this.nudToastWindowSizeWidth, "nudToastWindowSizeWidth");
+            this.nudToastWindowSizeWidth.Name = "nudToastWindowSizeWidth";
+            // 
+            // cbToastWindowPlacement
+            // 
+            this.cbToastWindowPlacement.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbToastWindowPlacement.FormattingEnabled = true;
+            resources.ApplyResources(this.cbToastWindowPlacement, "cbToastWindowPlacement");
+            this.cbToastWindowPlacement.Name = "cbToastWindowPlacement";
+            // 
+            // nudToastWindowFadeDuration
+            // 
+            resources.ApplyResources(this.nudToastWindowFadeDuration, "nudToastWindowFadeDuration");
+            this.nudToastWindowFadeDuration.Name = "nudToastWindowFadeDuration";
+            // 
+            // nudToastWindowDuration
+            // 
+            resources.ApplyResources(this.nudToastWindowDuration, "nudToastWindowDuration");
+            this.nudToastWindowDuration.Name = "nudToastWindowDuration";
+            // 
+            // lblToastWindowMiddleClickAction
+            // 
+            resources.ApplyResources(this.lblToastWindowMiddleClickAction, "lblToastWindowMiddleClickAction");
+            this.lblToastWindowMiddleClickAction.Name = "lblToastWindowMiddleClickAction";
+            // 
+            // lblToastWindowRightClickAction
+            // 
+            resources.ApplyResources(this.lblToastWindowRightClickAction, "lblToastWindowRightClickAction");
+            this.lblToastWindowRightClickAction.Name = "lblToastWindowRightClickAction";
+            // 
+            // lblToastWindowLeftClickAction
+            // 
+            resources.ApplyResources(this.lblToastWindowLeftClickAction, "lblToastWindowLeftClickAction");
+            this.lblToastWindowLeftClickAction.Name = "lblToastWindowLeftClickAction";
+            // 
+            // lblToastWindowSize
+            // 
+            resources.ApplyResources(this.lblToastWindowSize, "lblToastWindowSize");
+            this.lblToastWindowSize.Name = "lblToastWindowSize";
+            // 
+            // lblToastWindowPlacement
+            // 
+            resources.ApplyResources(this.lblToastWindowPlacement, "lblToastWindowPlacement");
+            this.lblToastWindowPlacement.Name = "lblToastWindowPlacement";
+            // 
+            // lblToastWindowFadeDuration
+            // 
+            resources.ApplyResources(this.lblToastWindowFadeDuration, "lblToastWindowFadeDuration");
+            this.lblToastWindowFadeDuration.Name = "lblToastWindowFadeDuration";
+            // 
+            // lblToastWindowDuration
+            // 
+            resources.ApplyResources(this.lblToastWindowDuration, "lblToastWindowDuration");
+            this.lblToastWindowDuration.Name = "lblToastWindowDuration";
+            // 
+            // cbDisableNotificationsOnFullscreen
+            // 
+            resources.ApplyResources(this.cbDisableNotificationsOnFullscreen, "cbDisableNotificationsOnFullscreen");
+            this.cbDisableNotificationsOnFullscreen.Name = "cbDisableNotificationsOnFullscreen";
+            this.cbDisableNotificationsOnFullscreen.UseVisualStyleBackColor = true;
+            // 
+            // cbDisableNotifications
+            // 
+            resources.ApplyResources(this.cbDisableNotifications, "cbDisableNotifications");
+            this.cbDisableNotifications.Name = "cbDisableNotifications";
+            this.cbDisableNotifications.UseVisualStyleBackColor = true;
+            // 
+            // cbPlaySoundAfterCapture
+            // 
+            resources.ApplyResources(this.cbPlaySoundAfterCapture, "cbPlaySoundAfterCapture");
+            this.cbPlaySoundAfterCapture.Name = "cbPlaySoundAfterCapture";
+            this.cbPlaySoundAfterCapture.UseVisualStyleBackColor = true;
+            this.cbPlaySoundAfterCapture.CheckedChanged += new System.EventHandler(this.cbPlaySoundAfterCapture_CheckedChanged);
+            // 
+            // cbPlaySoundAfterUpload
+            // 
+            resources.ApplyResources(this.cbPlaySoundAfterUpload, "cbPlaySoundAfterUpload");
+            this.cbPlaySoundAfterUpload.Name = "cbPlaySoundAfterUpload";
+            this.cbPlaySoundAfterUpload.UseVisualStyleBackColor = true;
+            this.cbPlaySoundAfterUpload.CheckedChanged += new System.EventHandler(this.cbPlaySoundAfterUpload_CheckedChanged);
             // 
             // tpImage
             // 
@@ -2253,215 +2448,12 @@
             this.tttvMain.TreeViewSize = 190;
             this.tttvMain.TabChanged += new ShareX.HelpersLib.TabToTreeView.TabChangedEventHandler(this.tttvMain_TabChanged);
             // 
-            // tcGeneral
+            // cbShowToastNotificationAfterTaskCompleted
             // 
-            this.tcGeneral.Controls.Add(this.tpGeneralMain);
-            this.tcGeneral.Controls.Add(this.tpNotifications);
-            resources.ApplyResources(this.tcGeneral, "tcGeneral");
-            this.tcGeneral.Name = "tcGeneral";
-            this.tcGeneral.SelectedIndex = 0;
-            // 
-            // tpGeneralMain
-            // 
-            this.tpGeneralMain.Controls.Add(this.chkOverrideGeneralSettings);
-            resources.ApplyResources(this.tpGeneralMain, "tpGeneralMain");
-            this.tpGeneralMain.Name = "tpGeneralMain";
-            this.tpGeneralMain.UseVisualStyleBackColor = true;
-            // 
-            // tpNotifications
-            // 
-            this.tpNotifications.Controls.Add(this.btnCustomErrorSoundPath);
-            this.tpNotifications.Controls.Add(this.btnCustomTaskCompletedSoundPath);
-            this.tpNotifications.Controls.Add(this.btnCustomCaptureSoundPath);
-            this.tpNotifications.Controls.Add(this.txtCustomErrorSoundPath);
-            this.tpNotifications.Controls.Add(this.txtCustomTaskCompletedSoundPath);
-            this.tpNotifications.Controls.Add(this.txtCustomCaptureSoundPath);
-            this.tpNotifications.Controls.Add(this.cbUseCustomErrorSound);
-            this.tpNotifications.Controls.Add(this.cbUseCustomTaskCompletedSound);
-            this.tpNotifications.Controls.Add(this.cbUseCustomCaptureSound);
-            this.tpNotifications.Controls.Add(this.gbToastWindow);
-            this.tpNotifications.Controls.Add(this.cbDisableNotificationsOnFullscreen);
-            this.tpNotifications.Controls.Add(this.cbDisableNotifications);
-            this.tpNotifications.Controls.Add(this.cbPlaySoundAfterCapture);
-            this.tpNotifications.Controls.Add(this.lblAfterTaskNotification);
-            this.tpNotifications.Controls.Add(this.cbPlaySoundAfterUpload);
-            this.tpNotifications.Controls.Add(this.cboPopUpNotification);
-            resources.ApplyResources(this.tpNotifications, "tpNotifications");
-            this.tpNotifications.Name = "tpNotifications";
-            this.tpNotifications.UseVisualStyleBackColor = true;
-            // 
-            // cbDisableNotifications
-            // 
-            resources.ApplyResources(this.cbDisableNotifications, "cbDisableNotifications");
-            this.cbDisableNotifications.Name = "cbDisableNotifications";
-            this.cbDisableNotifications.UseVisualStyleBackColor = true;
-            // 
-            // cbDisableNotificationsOnFullscreen
-            // 
-            resources.ApplyResources(this.cbDisableNotificationsOnFullscreen, "cbDisableNotificationsOnFullscreen");
-            this.cbDisableNotificationsOnFullscreen.Name = "cbDisableNotificationsOnFullscreen";
-            this.cbDisableNotificationsOnFullscreen.UseVisualStyleBackColor = true;
-            // 
-            // gbToastWindow
-            // 
-            this.gbToastWindow.Controls.Add(this.lblToastWindowSizeX);
-            this.gbToastWindow.Controls.Add(this.cbToastWindowMiddleClickAction);
-            this.gbToastWindow.Controls.Add(this.cbToastWindowRightClickAction);
-            this.gbToastWindow.Controls.Add(this.cbToastWindowLeftClickAction);
-            this.gbToastWindow.Controls.Add(this.nudToastWindowSizeHeight);
-            this.gbToastWindow.Controls.Add(this.nudToastWindowSizeWidth);
-            this.gbToastWindow.Controls.Add(this.cbToastWindowPlacement);
-            this.gbToastWindow.Controls.Add(this.nudToastWindowFadeDuration);
-            this.gbToastWindow.Controls.Add(this.nudToastWindowDuration);
-            this.gbToastWindow.Controls.Add(this.lblToastWindowMiddleClickAction);
-            this.gbToastWindow.Controls.Add(this.lblToastWindowRightClickAction);
-            this.gbToastWindow.Controls.Add(this.lblToastWindowLeftClickAction);
-            this.gbToastWindow.Controls.Add(this.lblToastWindowSize);
-            this.gbToastWindow.Controls.Add(this.lblToastWindowPlacement);
-            this.gbToastWindow.Controls.Add(this.lblToastWindowFadeDuration);
-            this.gbToastWindow.Controls.Add(this.lblToastWindowDuration);
-            resources.ApplyResources(this.gbToastWindow, "gbToastWindow");
-            this.gbToastWindow.Name = "gbToastWindow";
-            this.gbToastWindow.TabStop = false;
-            // 
-            // lblToastWindowDuration
-            // 
-            resources.ApplyResources(this.lblToastWindowDuration, "lblToastWindowDuration");
-            this.lblToastWindowDuration.Name = "lblToastWindowDuration";
-            // 
-            // lblToastWindowFadeDuration
-            // 
-            resources.ApplyResources(this.lblToastWindowFadeDuration, "lblToastWindowFadeDuration");
-            this.lblToastWindowFadeDuration.Name = "lblToastWindowFadeDuration";
-            // 
-            // lblToastWindowPlacement
-            // 
-            resources.ApplyResources(this.lblToastWindowPlacement, "lblToastWindowPlacement");
-            this.lblToastWindowPlacement.Name = "lblToastWindowPlacement";
-            // 
-            // lblToastWindowSize
-            // 
-            resources.ApplyResources(this.lblToastWindowSize, "lblToastWindowSize");
-            this.lblToastWindowSize.Name = "lblToastWindowSize";
-            // 
-            // lblToastWindowLeftClickAction
-            // 
-            resources.ApplyResources(this.lblToastWindowLeftClickAction, "lblToastWindowLeftClickAction");
-            this.lblToastWindowLeftClickAction.Name = "lblToastWindowLeftClickAction";
-            // 
-            // lblToastWindowRightClickAction
-            // 
-            resources.ApplyResources(this.lblToastWindowRightClickAction, "lblToastWindowRightClickAction");
-            this.lblToastWindowRightClickAction.Name = "lblToastWindowRightClickAction";
-            // 
-            // lblToastWindowMiddleClickAction
-            // 
-            resources.ApplyResources(this.lblToastWindowMiddleClickAction, "lblToastWindowMiddleClickAction");
-            this.lblToastWindowMiddleClickAction.Name = "lblToastWindowMiddleClickAction";
-            // 
-            // nudToastWindowDuration
-            // 
-            resources.ApplyResources(this.nudToastWindowDuration, "nudToastWindowDuration");
-            this.nudToastWindowDuration.Name = "nudToastWindowDuration";
-            // 
-            // nudToastWindowFadeDuration
-            // 
-            resources.ApplyResources(this.nudToastWindowFadeDuration, "nudToastWindowFadeDuration");
-            this.nudToastWindowFadeDuration.Name = "nudToastWindowFadeDuration";
-            // 
-            // cbToastWindowPlacement
-            // 
-            this.cbToastWindowPlacement.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbToastWindowPlacement.FormattingEnabled = true;
-            resources.ApplyResources(this.cbToastWindowPlacement, "cbToastWindowPlacement");
-            this.cbToastWindowPlacement.Name = "cbToastWindowPlacement";
-            // 
-            // nudToastWindowSizeWidth
-            // 
-            resources.ApplyResources(this.nudToastWindowSizeWidth, "nudToastWindowSizeWidth");
-            this.nudToastWindowSizeWidth.Name = "nudToastWindowSizeWidth";
-            // 
-            // nudToastWindowSizeHeight
-            // 
-            resources.ApplyResources(this.nudToastWindowSizeHeight, "nudToastWindowSizeHeight");
-            this.nudToastWindowSizeHeight.Name = "nudToastWindowSizeHeight";
-            // 
-            // cbToastWindowLeftClickAction
-            // 
-            this.cbToastWindowLeftClickAction.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbToastWindowLeftClickAction.FormattingEnabled = true;
-            resources.ApplyResources(this.cbToastWindowLeftClickAction, "cbToastWindowLeftClickAction");
-            this.cbToastWindowLeftClickAction.Name = "cbToastWindowLeftClickAction";
-            // 
-            // cbToastWindowRightClickAction
-            // 
-            this.cbToastWindowRightClickAction.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbToastWindowRightClickAction.FormattingEnabled = true;
-            resources.ApplyResources(this.cbToastWindowRightClickAction, "cbToastWindowRightClickAction");
-            this.cbToastWindowRightClickAction.Name = "cbToastWindowRightClickAction";
-            // 
-            // cbToastWindowMiddleClickAction
-            // 
-            this.cbToastWindowMiddleClickAction.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbToastWindowMiddleClickAction.FormattingEnabled = true;
-            resources.ApplyResources(this.cbToastWindowMiddleClickAction, "cbToastWindowMiddleClickAction");
-            this.cbToastWindowMiddleClickAction.Name = "cbToastWindowMiddleClickAction";
-            // 
-            // lblToastWindowSizeX
-            // 
-            resources.ApplyResources(this.lblToastWindowSizeX, "lblToastWindowSizeX");
-            this.lblToastWindowSizeX.Name = "lblToastWindowSizeX";
-            // 
-            // cbUseCustomCaptureSound
-            // 
-            resources.ApplyResources(this.cbUseCustomCaptureSound, "cbUseCustomCaptureSound");
-            this.cbUseCustomCaptureSound.Name = "cbUseCustomCaptureSound";
-            this.cbUseCustomCaptureSound.UseVisualStyleBackColor = true;
-            // 
-            // cbUseCustomTaskCompletedSound
-            // 
-            resources.ApplyResources(this.cbUseCustomTaskCompletedSound, "cbUseCustomTaskCompletedSound");
-            this.cbUseCustomTaskCompletedSound.Name = "cbUseCustomTaskCompletedSound";
-            this.cbUseCustomTaskCompletedSound.UseVisualStyleBackColor = true;
-            // 
-            // cbUseCustomErrorSound
-            // 
-            resources.ApplyResources(this.cbUseCustomErrorSound, "cbUseCustomErrorSound");
-            this.cbUseCustomErrorSound.Name = "cbUseCustomErrorSound";
-            this.cbUseCustomErrorSound.UseVisualStyleBackColor = true;
-            // 
-            // txtCustomCaptureSoundPath
-            // 
-            resources.ApplyResources(this.txtCustomCaptureSoundPath, "txtCustomCaptureSoundPath");
-            this.txtCustomCaptureSoundPath.Name = "txtCustomCaptureSoundPath";
-            // 
-            // txtCustomTaskCompletedSoundPath
-            // 
-            resources.ApplyResources(this.txtCustomTaskCompletedSoundPath, "txtCustomTaskCompletedSoundPath");
-            this.txtCustomTaskCompletedSoundPath.Name = "txtCustomTaskCompletedSoundPath";
-            // 
-            // txtCustomErrorSoundPath
-            // 
-            resources.ApplyResources(this.txtCustomErrorSoundPath, "txtCustomErrorSoundPath");
-            this.txtCustomErrorSoundPath.Name = "txtCustomErrorSoundPath";
-            // 
-            // btnCustomCaptureSoundPath
-            // 
-            resources.ApplyResources(this.btnCustomCaptureSoundPath, "btnCustomCaptureSoundPath");
-            this.btnCustomCaptureSoundPath.Name = "btnCustomCaptureSoundPath";
-            this.btnCustomCaptureSoundPath.UseVisualStyleBackColor = true;
-            // 
-            // btnCustomTaskCompletedSoundPath
-            // 
-            resources.ApplyResources(this.btnCustomTaskCompletedSoundPath, "btnCustomTaskCompletedSoundPath");
-            this.btnCustomTaskCompletedSoundPath.Name = "btnCustomTaskCompletedSoundPath";
-            this.btnCustomTaskCompletedSoundPath.UseVisualStyleBackColor = true;
-            // 
-            // btnCustomErrorSoundPath
-            // 
-            resources.ApplyResources(this.btnCustomErrorSoundPath, "btnCustomErrorSoundPath");
-            this.btnCustomErrorSoundPath.Name = "btnCustomErrorSoundPath";
-            this.btnCustomErrorSoundPath.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.cbShowToastNotificationAfterTaskCompleted, "cbShowToastNotificationAfterTaskCompleted");
+            this.cbShowToastNotificationAfterTaskCompleted.Name = "cbShowToastNotificationAfterTaskCompleted";
+            this.cbShowToastNotificationAfterTaskCompleted.UseVisualStyleBackColor = true;
+            this.cbShowToastNotificationAfterTaskCompleted.CheckedChanged += new System.EventHandler(this.cbShowToastNotificationAfterTaskCompleted_CheckedChanged);
             // 
             // TaskSettingsForm
             // 
@@ -2478,6 +2470,17 @@
             this.tpTask.PerformLayout();
             this.cmsDestinations.ResumeLayout(false);
             this.tpGeneral.ResumeLayout(false);
+            this.tcGeneral.ResumeLayout(false);
+            this.tpGeneralMain.ResumeLayout(false);
+            this.tpGeneralMain.PerformLayout();
+            this.tpNotifications.ResumeLayout(false);
+            this.tpNotifications.PerformLayout();
+            this.gbToastWindow.ResumeLayout(false);
+            this.gbToastWindow.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudToastWindowSizeHeight)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudToastWindowSizeWidth)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudToastWindowFadeDuration)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudToastWindowDuration)).EndInit();
             this.tpImage.ResumeLayout(false);
             this.tcImage.ResumeLayout(false);
             this.tpQuality.ResumeLayout(false);
@@ -2547,17 +2550,6 @@
             this.pTools.PerformLayout();
             this.tpAdvanced.ResumeLayout(false);
             this.tpAdvanced.PerformLayout();
-            this.tcGeneral.ResumeLayout(false);
-            this.tpGeneralMain.ResumeLayout(false);
-            this.tpGeneralMain.PerformLayout();
-            this.tpNotifications.ResumeLayout(false);
-            this.tpNotifications.PerformLayout();
-            this.gbToastWindow.ResumeLayout(false);
-            this.gbToastWindow.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudToastWindowDuration)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudToastWindowFadeDuration)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudToastWindowSizeWidth)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudToastWindowSizeHeight)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2655,8 +2647,6 @@
         private System.Windows.Forms.CheckBox chkShowImageEffectsWindowAfterCapture;
         private System.Windows.Forms.CheckBox chkOverrideFTP;
         private System.Windows.Forms.ComboBox cboFTPaccounts;
-        private System.Windows.Forms.ComboBox cboPopUpNotification;
-        private System.Windows.Forms.Label lblAfterTaskNotification;
         private System.Windows.Forms.ContextMenuStrip cmsDestinations;
         private System.Windows.Forms.ToolStripMenuItem tsmiImageUploaders;
         private System.Windows.Forms.ToolStripMenuItem tsmiTextUploaders;
@@ -2825,5 +2815,6 @@
         private System.Windows.Forms.Button btnCustomErrorSoundPath;
         private System.Windows.Forms.Button btnCustomTaskCompletedSoundPath;
         private System.Windows.Forms.Button btnCustomCaptureSoundPath;
+        private System.Windows.Forms.CheckBox cbShowToastNotificationAfterTaskCompleted;
     }
 }

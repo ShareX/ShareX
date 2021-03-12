@@ -324,7 +324,7 @@ namespace ShareX
             }
             finally
             {
-                KeepImage = Image != null && Info.TaskSettings.GeneralSettings.PopUpNotification == PopUpNotificationType.ToastNotification;
+                KeepImage = Image != null && Info.TaskSettings.GeneralSettings.ShowToastNotificationAfterTaskCompleted;
 
                 Dispose();
 

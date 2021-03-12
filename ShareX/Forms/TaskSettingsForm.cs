@@ -188,11 +188,13 @@ namespace ShareX
 
             #region General
 
+            #region Notifications
+
             cbPlaySoundAfterCapture.Checked = TaskSettings.GeneralSettings.PlaySoundAfterCapture;
             cbPlaySoundAfterUpload.Checked = TaskSettings.GeneralSettings.PlaySoundAfterUpload;
-            cboPopUpNotification.Items.Clear();
-            cboPopUpNotification.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<PopUpNotificationType>());
-            cboPopUpNotification.SelectedIndex = (int)TaskSettings.GeneralSettings.PopUpNotification;
+            cbShowToastNotificationAfterTaskCompleted.Checked = TaskSettings.GeneralSettings.ShowToastNotificationAfterTaskCompleted;
+
+            #endregion
 
             #endregion General
 
@@ -760,9 +762,9 @@ namespace ShareX
             TaskSettings.GeneralSettings.PlaySoundAfterUpload = cbPlaySoundAfterUpload.Checked;
         }
 
-        private void cboPopUpNotification_SelectedIndexChanged(object sender, EventArgs e)
+        private void cbShowToastNotificationAfterTaskCompleted_CheckedChanged(object sender, EventArgs e)
         {
-            TaskSettings.GeneralSettings.PopUpNotification = (PopUpNotificationType)cboPopUpNotification.SelectedIndex;
+            TaskSettings.GeneralSettings.ShowToastNotificationAfterTaskCompleted = cbShowToastNotificationAfterTaskCompleted.Checked;
         }
 
         #endregion General
