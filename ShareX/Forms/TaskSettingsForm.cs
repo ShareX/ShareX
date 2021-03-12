@@ -436,7 +436,7 @@ namespace ShareX
 
         private void tttvMain_TabChanged(TabPage tabPage)
         {
-            if (IsDefault && tabPage == tpUploadMain)
+            if (IsDefault && (tabPage == tpGeneralMain || tabPage == tpUploadMain))
             {
                 tttvMain.SelectChildNode();
             }
