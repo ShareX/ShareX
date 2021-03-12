@@ -193,6 +193,7 @@ namespace ShareX
             cbPlaySoundAfterCapture.Checked = TaskSettings.GeneralSettings.PlaySoundAfterCapture;
             cbPlaySoundAfterUpload.Checked = TaskSettings.GeneralSettings.PlaySoundAfterUpload;
             cbShowToastNotificationAfterTaskCompleted.Checked = TaskSettings.GeneralSettings.ShowToastNotificationAfterTaskCompleted;
+            gbToastWindow.Enabled = TaskSettings.GeneralSettings.ShowToastNotificationAfterTaskCompleted;
             nudToastWindowDuration.SetValue((decimal)TaskSettings.GeneralSettings.ToastWindowDuration);
             nudToastWindowFadeDuration.SetValue((decimal)TaskSettings.GeneralSettings.ToastWindowFadeDuration);
             cbToastWindowPlacement.Items.AddRange(Helpers.GetEnumNamesProper<ContentAlignment>());
@@ -206,10 +207,13 @@ namespace ShareX
             cbToastWindowMiddleClickAction.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<ToastClickAction>());
             cbToastWindowMiddleClickAction.SelectedIndex = (int)TaskSettings.GeneralSettings.ToastWindowMiddleClickAction;
             cbUseCustomCaptureSound.Checked = TaskSettings.GeneralSettings.UseCustomCaptureSound;
+            txtCustomCaptureSoundPath.Enabled = btnCustomCaptureSoundPath.Enabled = TaskSettings.GeneralSettings.UseCustomCaptureSound;
             txtCustomCaptureSoundPath.Text = TaskSettings.GeneralSettings.CustomCaptureSoundPath;
             cbUseCustomTaskCompletedSound.Checked = TaskSettings.GeneralSettings.UseCustomTaskCompletedSound;
+            txtCustomTaskCompletedSoundPath.Enabled = btnCustomTaskCompletedSoundPath.Enabled = TaskSettings.GeneralSettings.UseCustomTaskCompletedSound;
             txtCustomTaskCompletedSoundPath.Text = TaskSettings.GeneralSettings.CustomTaskCompletedSoundPath;
             cbUseCustomErrorSound.Checked = TaskSettings.GeneralSettings.UseCustomErrorSound;
+            txtCustomErrorSoundPath.Enabled = btnCustomErrorSoundPath.Enabled = TaskSettings.GeneralSettings.UseCustomErrorSound;
             txtCustomErrorSoundPath.Text = TaskSettings.GeneralSettings.CustomErrorSoundPath;
             cbDisableNotifications.Checked = TaskSettings.GeneralSettings.DisableNotifications;
             cbDisableNotificationsOnFullscreen.Checked = TaskSettings.GeneralSettings.DisableNotificationsOnFullscreen;
@@ -785,6 +789,7 @@ namespace ShareX
         private void cbShowToastNotificationAfterTaskCompleted_CheckedChanged(object sender, EventArgs e)
         {
             TaskSettings.GeneralSettings.ShowToastNotificationAfterTaskCompleted = cbShowToastNotificationAfterTaskCompleted.Checked;
+            gbToastWindow.Enabled = TaskSettings.GeneralSettings.ShowToastNotificationAfterTaskCompleted;
         }
 
         private void nudToastWindowDuration_ValueChanged(object sender, EventArgs e)
@@ -830,6 +835,7 @@ namespace ShareX
         private void cbUseCustomCaptureSound_CheckedChanged(object sender, EventArgs e)
         {
             TaskSettings.GeneralSettings.UseCustomCaptureSound = cbUseCustomCaptureSound.Checked;
+            txtCustomCaptureSoundPath.Enabled = btnCustomCaptureSoundPath.Enabled = TaskSettings.GeneralSettings.UseCustomCaptureSound;
         }
 
         private void txtCustomCaptureSoundPath_TextChanged(object sender, EventArgs e)
@@ -845,6 +851,7 @@ namespace ShareX
         private void cbUseCustomTaskCompletedSound_CheckedChanged(object sender, EventArgs e)
         {
             TaskSettings.GeneralSettings.UseCustomTaskCompletedSound = cbUseCustomTaskCompletedSound.Checked;
+            txtCustomTaskCompletedSoundPath.Enabled = btnCustomTaskCompletedSoundPath.Enabled = TaskSettings.GeneralSettings.UseCustomTaskCompletedSound;
         }
 
         private void txtCustomTaskCompletedSoundPath_TextChanged(object sender, EventArgs e)
@@ -860,6 +867,7 @@ namespace ShareX
         private void cbUseCustomErrorSound_CheckedChanged(object sender, EventArgs e)
         {
             TaskSettings.GeneralSettings.UseCustomErrorSound = cbUseCustomErrorSound.Checked;
+            txtCustomErrorSoundPath.Enabled = btnCustomErrorSoundPath.Enabled = TaskSettings.GeneralSettings.UseCustomErrorSound;
         }
 
         private void txtCustomErrorSoundPath_TextChanged(object sender, EventArgs e)
