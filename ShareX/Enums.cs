@@ -239,24 +239,27 @@ namespace ShareX
         ToastNotification
     }
 
-    [DefaultValue(OpenUrl)]
     public enum ToastClickAction
     {
         [Description("Close notification")]
         CloseNotification,
         [Description("Annotate image")]
         AnnotateImage,
-        [Description("Copy image to clipboard")]
+        [Description("Copy image")]
         CopyImageToClipboard,
-        [Description("Copy URL")]
+        [Description("Copy file")]
+        CopyFile,
+        [Description("Copy file path")]
+        CopyFilePath,
+        [Description("Copy link")]
         CopyUrl,
         [Description("Open file")]
         OpenFile,
         [Description("Open folder")]
         OpenFolder,
-        [Description("Open URL")]
+        [Description("Open link")]
         OpenUrl,
-        [Description("Upload")]
+        [Description("Upload file")]
         Upload
     }
 

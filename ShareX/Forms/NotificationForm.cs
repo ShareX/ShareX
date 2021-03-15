@@ -283,31 +283,57 @@ namespace ShareX
             {
                 case ToastClickAction.AnnotateImage:
                     if (!string.IsNullOrEmpty(Config.FilePath) && Helpers.IsImageFile(Config.FilePath))
+                    {
                         TaskHelpers.AnnotateImageFromFile(Config.FilePath);
+                    }
                     break;
                 case ToastClickAction.CopyImageToClipboard:
                     if (!string.IsNullOrEmpty(Config.FilePath))
+                    {
                         ClipboardHelpers.CopyImageFromFile(Config.FilePath);
+                    }
+                    break;
+                case ToastClickAction.CopyFile:
+                    if (!string.IsNullOrEmpty(Config.FilePath))
+                    {
+                        ClipboardHelpers.CopyFile(Config.FilePath);
+                    }
+                    break;
+                case ToastClickAction.CopyFilePath:
+                    if (!string.IsNullOrEmpty(Config.FilePath))
+                    {
+                        ClipboardHelpers.CopyText(Config.FilePath);
+                    }
                     break;
                 case ToastClickAction.CopyUrl:
                     if (!string.IsNullOrEmpty(Config.URL))
+                    {
                         ClipboardHelpers.CopyText(Config.URL);
+                    }
                     break;
                 case ToastClickAction.OpenFile:
                     if (!string.IsNullOrEmpty(Config.FilePath))
+                    {
                         Helpers.OpenFile(Config.FilePath);
+                    }
                     break;
                 case ToastClickAction.OpenFolder:
                     if (!string.IsNullOrEmpty(Config.FilePath))
+                    {
                         Helpers.OpenFolderWithFile(Config.FilePath);
+                    }
                     break;
                 case ToastClickAction.OpenUrl:
                     if (!string.IsNullOrEmpty(Config.URL))
+                    {
                         URLHelpers.OpenURL(Config.URL);
+                    }
                     break;
                 case ToastClickAction.Upload:
                     if (!string.IsNullOrEmpty(Config.FilePath))
+                    {
                         UploadManager.UploadFile(Config.FilePath);
+                    }
                     break;
             }
         }
