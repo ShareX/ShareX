@@ -226,6 +226,12 @@ namespace ShareX
                 Settings.Themes.Add(ShareXTheme.NordLightTheme);
                 Settings.Themes.Add(ShareXTheme.DraculaTheme);
             }
+
+            if (Settings.IsUpgradeFrom("13.4.0"))
+            {
+                DefaultTaskSettings.GeneralSettings.ShowToastNotificationAfterTaskCompleted =
+                    DefaultTaskSettings.GeneralSettings.PopUpNotification != PopUpNotificationType.None;
+            }
         }
 
         private static void MigrateHistoryFile()
