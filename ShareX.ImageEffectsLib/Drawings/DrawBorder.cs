@@ -27,6 +27,7 @@ using ShareX.HelpersLib;
 using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Design;
+using System.Drawing.Drawing2D;
 
 namespace ShareX.ImageEffectsLib
 {
@@ -54,6 +55,9 @@ namespace ShareX.ImageEffectsLib
         [DefaultValue(typeof(Color), "Black"), Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
         public Color Color { get; set; }
 
+        [DefaultValue(DashStyle.Solid), TypeConverter(typeof(EnumProperNameConverter))]
+        public DashStyle DashStyle { get; set; }
+
         [DefaultValue(false)]
         public bool UseGradient { get; set; }
 
@@ -79,10 +83,10 @@ namespace ShareX.ImageEffectsLib
         {
             if (UseGradient && Gradient != null && Gradient.IsValid)
             {
-                return ImageHelpers.DrawBorder(bmp, Gradient, Size, Type);
+                return ImageHelpers.DrawBorder(bmp, Gradient, Size, Type, DashStyle);
             }
 
-            return ImageHelpers.DrawBorder(bmp, Color, Size, Type);
+            return ImageHelpers.DrawBorder(bmp, Color, Size, Type, DashStyle);
         }
     }
 }

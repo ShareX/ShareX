@@ -655,15 +655,16 @@ namespace ShareX.HelpersLib
             return reflection;
         }
 
-        public static Bitmap DrawBorder(Bitmap bmp, Color borderColor, int borderSize, BorderType borderType)
+        public static Bitmap DrawBorder(Bitmap bmp, Color borderColor, int borderSize, BorderType borderType, DashStyle dashStyle = DashStyle.Solid)
         {
-            using (Pen borderPen = new Pen(borderColor, borderSize) { Alignment = PenAlignment.Inset })
+            using (Pen borderPen = new Pen(borderColor, borderSize) { Alignment = PenAlignment.Inset, DashStyle = dashStyle })
             {
                 return DrawBorder(bmp, borderPen, borderType);
             }
         }
 
-        public static Bitmap DrawBorder(Bitmap bmp, Color fromBorderColor, Color toBorderColor, LinearGradientMode gradientType, int borderSize, BorderType borderType)
+        public static Bitmap DrawBorder(Bitmap bmp, Color fromBorderColor, Color toBorderColor, LinearGradientMode gradientType, int borderSize, BorderType borderType,
+            DashStyle dashStyle = DashStyle.Solid)
         {
             int width = bmp.Width;
             int height = bmp.Height;
@@ -675,13 +676,13 @@ namespace ShareX.HelpersLib
             }
 
             using (LinearGradientBrush brush = new LinearGradientBrush(new Rectangle(0, 0, width, height), fromBorderColor, toBorderColor, gradientType))
-            using (Pen borderPen = new Pen(brush, borderSize) { Alignment = PenAlignment.Inset })
+            using (Pen borderPen = new Pen(brush, borderSize) { Alignment = PenAlignment.Inset, DashStyle = dashStyle })
             {
                 return DrawBorder(bmp, borderPen, borderType);
             }
         }
 
-        public static Bitmap DrawBorder(Bitmap bmp, GradientInfo gradientInfo, int borderSize, BorderType borderType)
+        public static Bitmap DrawBorder(Bitmap bmp, GradientInfo gradientInfo, int borderSize, BorderType borderType, DashStyle dashStyle = DashStyle.Solid)
         {
             int width = bmp.Width;
             int height = bmp.Height;
@@ -693,7 +694,7 @@ namespace ShareX.HelpersLib
             }
 
             using (LinearGradientBrush brush = gradientInfo.GetGradientBrush(new Rectangle(0, 0, width, height)))
-            using (Pen borderPen = new Pen(brush, borderSize) { Alignment = PenAlignment.Inset })
+            using (Pen borderPen = new Pen(brush, borderSize) { Alignment = PenAlignment.Inset, DashStyle = dashStyle })
             {
                 return DrawBorder(bmp, borderPen, borderType);
             }
