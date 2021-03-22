@@ -43,7 +43,7 @@ namespace ShareX.Forms
             this.pgTheme.TabIndex = 7;
             this.pgTheme.ToolbarVisible = false;
             this.pgTheme.PropertyValueChanged += new System.Windows.Forms.PropertyValueChangedEventHandler(this.pgTheme_PropertyValueChanged);
-            this.pgTheme.Click += new System.EventHandler(this.pgTheme_Click);
+          
             // 
             // btnThemeAdd
             // 

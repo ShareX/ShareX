@@ -13,76 +13,63 @@ namespace ShareX.Forms
 {
     public partial class ToAddNewThemeForm : Form
     {
-        
-        Action<ShareXTheme> AddTheme;
-        int currentlySelectedThemeIndex;
-        bool userHasAddedTheme=false;
-        ShareXTheme temporaryThemePreview;
+
+        private Action<ShareXTheme> AddThemeFunction;
+        private int currentlySelectedThemeIndex;
+        private bool RemoveTemporaryThemePreviewHasBeenCalled = false;
         public ToAddNewThemeForm(Action<ShareXTheme> AddThemeFunction)
         {
             InitializeComponent();
-
-          
             ApplySelectedTheme();
-
-            
-           
-            this.AddTheme = AddThemeFunction;
+            this.AddThemeFunction = AddThemeFunction;
             AddTemporaryThemePreview();
-          
-
-        
         }
         private void ApplySelectedTheme()
         {
             Program.MainForm.UpdateTheme();
             ShareXResources.ApplyTheme(this);
         }
-     
+
 
         private void btnThemeAdd_Click(object sender, EventArgs e)
         {
             RemoveTemporaryThemePreview();
+
             ApplySelectedTheme();
-            ShareXTheme newTheme =(ShareXTheme) pgTheme.SelectedObject;
-            AddTheme(newTheme);
-            this.userHasAddedTheme = true;
+            ShareXTheme newTheme = (ShareXTheme)pgTheme.SelectedObject;
+            AddThemeFunction(newTheme);
+
             this.Close();
-           
+
         }
 
         private void pgTheme_PropertyValueChanged(object s, PropertyValueChangedEventArgs e)
         {
-           
             ApplySelectedTheme();
 
-    
         }
 
-        private void pgTheme_Click(object sender, EventArgs e)
-        {
 
-        }
 
         private void ToAddNewThemeForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            
-            if (!userHasAddedTheme)
-            {
-                RemoveTemporaryThemePreview();
-          
-                ApplySelectedTheme();
-            }
-           
-
+            RemoveTemporaryThemePreview();
+            ApplySelectedTheme();
         }
         /// <summary>
         /// Called either when the form is closed or the user adds a new theme
+        /// And Switch back to currently selected theme
         /// </summary>
         private void RemoveTemporaryThemePreview()
         {
-            Program.Settings.Themes.RemoveAt(Program.Settings.Themes.Count - 1);
-            Program.Settings.SelectedTheme = this.currentlySelectedThemeIndex;
+            if (!RemoveTemporaryThemePreviewHasBeenCalled)
+            {
+                Program.Settings.Themes.RemoveAt(Program.Settings.Themes.Count - 1);
+                Program.Settings.SelectedTheme = this.currentlySelectedThemeIndex;
+                this.RemoveTemporaryThemePreviewHasBeenCalled = true;
+            }
+
+
         }
 
         /// <summary>
@@ -94,7 +81,7 @@ namespace ShareX.Forms
             Program.Settings.Themes.Add(ShareXTheme.NewTheme.ShallowCopy());
             Program.Settings.SelectedTheme = Program.Settings.Themes.Count - 1;
             pgTheme.SelectedObject = Program.Settings.Themes[Program.Settings.SelectedTheme];
-            
+
         }
     }
 }
