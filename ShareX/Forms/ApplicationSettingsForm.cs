@@ -488,7 +488,7 @@ namespace ShareX
 
         private void BtnThemeAdd_Click(object sender, EventArgs e)
         {
-            using (ToAddNewThemeForm toAddNewThemeForm = new ToAddNewThemeForm(this,AddTheme))
+            using (ToAddNewThemeForm toAddNewThemeForm = new ToAddNewThemeForm(AddTheme))
             {
                 toAddNewThemeForm.ShowDialog();
             }

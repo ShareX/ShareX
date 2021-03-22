@@ -42,6 +42,7 @@ namespace ShareX.Forms
             this.pgTheme.Size = new System.Drawing.Size(472, 304);
             this.pgTheme.TabIndex = 7;
             this.pgTheme.ToolbarVisible = false;
+            this.pgTheme.PropertyValueChanged += new System.Windows.Forms.PropertyValueChangedEventHandler(this.pgTheme_PropertyValueChanged);
             this.pgTheme.Click += new System.EventHandler(this.pgTheme_Click);
             // 
             // btnThemeAdd
@@ -65,6 +66,7 @@ namespace ShareX.Forms
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "ToAddNewThemeForm";
             this.Text = "Add New Theme";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ToAddNewThemeForm_FormClosed);
             this.ResumeLayout(false);
 
         }
