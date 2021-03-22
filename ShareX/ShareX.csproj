@@ -187,6 +187,12 @@
     <Compile Include="Forms\ClipboardUploadForm.Designer.cs">
       <DependentUpon>ClipboardUploadForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ToAddNewThemeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ToAddNewThemeForm.Designer.cs">
+      <DependentUpon>ToAddNewThemeForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\InspectWindowForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1601,6 +1607,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ThumbnailSizeForm.resx">
       <DependentUpon>ThumbnailSizeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ToAddNewThemeForm.resx">
+      <DependentUpon>ToAddNewThemeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\WatchFolderForm.de.resx">
       <DependentUpon>WatchFolderForm.cs</DependentUpon>

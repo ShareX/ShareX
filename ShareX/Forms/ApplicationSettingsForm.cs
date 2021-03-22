@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.Forms;
 using ShareX.HelpersLib;
 using ShareX.Properties;
 using ShareX.UploadersLib;
@@ -437,6 +438,7 @@ namespace ShareX
 
         private void UpdateThemeControls()
         {
+
             btnThemeAdd.Enabled = eiTheme.Enabled = btnThemeReset.Enabled = pgTheme.Enabled = Program.Settings.UseCustomTheme;
             cbThemes.Enabled = btnThemeRemove.Enabled = Program.Settings.UseCustomTheme && cbThemes.Items.Count > 0;
         }
@@ -486,7 +488,11 @@ namespace ShareX
 
         private void BtnThemeAdd_Click(object sender, EventArgs e)
         {
-            AddTheme(ShareXTheme.DarkTheme);
+            using (ToAddNewThemeForm toAddNewThemeForm = new ToAddNewThemeForm(this,AddTheme))
+            {
+                toAddNewThemeForm.ShowDialog();
+            }
+            //AddTheme(ShareXTheme.DarkTheme);
         }
 
         private void BtnThemeRemove_Click(object sender, EventArgs e)

@@ -257,6 +257,27 @@ namespace ShareX.HelpersLib
             SeparatorLightColor = Color.FromArgb(45, 47, 61),
             SeparatorDarkColor = Color.FromArgb(33, 35, 43)
         };
+        public static ShareXTheme NewTheme => new ShareXTheme()
+        {
+            Name = "New Theme",
+            BackgroundColor = Color.FromArgb(40, 42, 54),
+            LightBackgroundColor = Color.FromArgb(68, 71, 90),
+            DarkBackgroundColor = Color.FromArgb(36, 38, 48),
+            TextColor = Color.FromArgb(248, 248, 242),
+            BorderColor = Color.FromArgb(33, 35, 43),
+            CheckerColor = Color.FromArgb(40, 42, 54),
+            CheckerColor2 = Color.FromArgb(36, 38, 48),
+            CheckerSize = 15,
+            LinkColor = Color.FromArgb(98, 114, 164),
+            MenuHighlightColor = Color.FromArgb(36, 38, 48),
+            MenuHighlightBorderColor = Color.FromArgb(255, 121, 198),
+            MenuBorderColor = Color.FromArgb(33, 35, 43),
+            MenuCheckBackgroundColor = Color.FromArgb(45, 47, 61),
+            ContextMenuOpacity = 100,
+            SeparatorLightColor = Color.FromArgb(45, 47, 61),
+            SeparatorDarkColor = Color.FromArgb(33, 35, 43)
+        };
+
 
         public static List<ShareXTheme> GetDefaultThemes()
         {
@@ -266,6 +287,10 @@ namespace ShareX.HelpersLib
         public override string ToString()
         {
             return Name;
+        }
+        public ShareXTheme ShallowCopy()
+        {
+            return (ShareXTheme)this.MemberwiseClone();
         }
     }
 }

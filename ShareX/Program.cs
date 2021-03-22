@@ -275,10 +275,10 @@ namespace ShareX
 
             MultiInstance = CLI.IsCommandExist("multi", "m");
 
-            using (ApplicationInstanceManager instanceManager = new ApplicationInstanceManager(!MultiInstance, args, SingleInstanceCallback))
-            {
+           // using (ApplicationInstanceManager instanceManager = new ApplicationInstanceManager(!MultiInstance, args, SingleInstanceCallback))
+          //  {
                 Run();
-            }
+         //   }
 
             if (restartRequested)
             {
