@@ -627,7 +627,7 @@ Would you like to download it?</value>
     <value>Save image to file</value>
   </data>
   <data name="ActionsCodeMenuEntry_OutputFilePath_File_path_without_extension____Output_file_name_extension_" xml:space="preserve">
-    <value>File path without extension + "Output file name extension"</value>
+    <value>File path with output file name extension</value>
   </data>
   <data name="URLSharingServices_GoogleImageSearch" xml:space="preserve">
     <value>Google image search</value>

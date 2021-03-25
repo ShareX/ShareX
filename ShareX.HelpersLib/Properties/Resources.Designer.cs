@@ -70,7 +70,7 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to File path without extension + &quot;Output file name extension&quot;.
+        ///   Looks up a localized string similar to File path with output file name extension.
         /// </summary>
         internal static string ActionsCodeMenuEntry_OutputFilePath_File_path_without_extension____Output_file_name_extension_ {
             get {
