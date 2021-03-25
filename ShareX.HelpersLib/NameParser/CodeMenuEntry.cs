@@ -42,7 +42,12 @@ namespace ShareX.HelpersLib
 
         public string ToPrefixString()
         {
-            return Prefix + Value;
+            return ToPrefixString(Prefix);
+        }
+
+        public string ToPrefixString(string prefix)
+        {
+            return prefix + Value;
         }
     }
 }

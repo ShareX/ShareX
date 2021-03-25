@@ -52,11 +52,11 @@ namespace ShareX.ImageEffectsLib
             }
         }
 
-        [DefaultValue(typeof(Color), "Black"), Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
-        public Color Color { get; set; }
-
         [DefaultValue(DashStyle.Solid), TypeConverter(typeof(EnumProperNameConverter))]
         public DashStyle DashStyle { get; set; }
+
+        [DefaultValue(typeof(Color), "Black"), Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
+        public Color Color { get; set; }
 
         [DefaultValue(false)]
         public bool UseGradient { get; set; }

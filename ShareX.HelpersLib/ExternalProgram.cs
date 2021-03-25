@@ -43,7 +43,7 @@ namespace ShareX.HelpersLib
 
         public ExternalProgram()
         {
-            Args = "%input";
+            Args = '"' + CodeMenuEntryActions.input.ToPrefixString() + '"';
         }
 
         public ExternalProgram(string name, string path) : this()
