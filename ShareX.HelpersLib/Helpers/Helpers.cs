@@ -940,6 +940,18 @@ namespace ShareX.HelpersLib
             return -1;
         }
 
+        public static string GetFileSizeReadable(string filePath, bool binaryUnits = false)
+        {
+            long fileSize = GetFileSize(filePath);
+
+            if (fileSize >= 0)
+            {
+                return fileSize.ToSizeString(binaryUnits);
+            }
+
+            return "";
+        }
+
         public static void CreateDirectory(string directoryPath)
         {
             if (!string.IsNullOrEmpty(directoryPath) && !Directory.Exists(directoryPath))
