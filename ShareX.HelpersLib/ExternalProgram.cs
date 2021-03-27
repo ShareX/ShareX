@@ -41,6 +41,8 @@ namespace ShareX.HelpersLib
         public bool HiddenWindow { get; set; }
         public bool DeleteInputFile { get; set; }
 
+        private string pendingInputFilePath;
+
         public ExternalProgram()
         {
             Args = '"' + CodeMenuEntryActions.input.ToPrefixString() + '"';
@@ -59,6 +61,7 @@ namespace ShareX.HelpersLib
 
         public string Run(string inputPath)
         {
+            pendingInputFilePath = null;
             string path = GetFullPath();
 
             if (!string.IsNullOrEmpty(path) && File.Exists(path) && !string.IsNullOrWhiteSpace(inputPath))
@@ -116,10 +119,9 @@ namespace ShareX.HelpersLib
                         {
                             DebugHelper.WriteLine($"Action output: \"{outputPath}\" ({Helpers.GetFileSizeReadable(outputPath)})");
 
-                            if (DeleteInputFile && !inputPath.Equals(outputPath, StringComparison.OrdinalIgnoreCase) && File.Exists(inputPath))
+                            if (DeleteInputFile && !inputPath.Equals(outputPath, StringComparison.OrdinalIgnoreCase))
                             {
-                                DebugHelper.WriteLine("Deleting input file: " + inputPath);
-                                File.Delete(inputPath);
+                                pendingInputFilePath = inputPath;
                             }
 
                             return outputPath;
@@ -178,6 +180,26 @@ namespace ShareX.HelpersLib
             }
 
             return false;
+        }
+
+        public void DeletePendingInputFile()
+        {
+            string inputPath = pendingInputFilePath;
+
+            if (!string.IsNullOrEmpty(inputPath) && File.Exists(inputPath))
+            {
+                DebugHelper.WriteLine($"Deleting input file: \"{inputPath}\"");
+
+                try
+                {
+                    File.Delete(inputPath);
+                    pendingInputFilePath = null;
+                }
+                catch (Exception e)
+                {
+                    DebugHelper.WriteException(e);
+                }
+            }
         }
     }
 }

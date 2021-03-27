@@ -733,6 +733,13 @@ namespace ShareX
                             {
                                 isFileModified = true;
                                 Info.FilePath = modifiedPath;
+
+                                if (Data != null)
+                                {
+                                    Data.Dispose();
+                                }
+
+                                fileAction.DeletePendingInputFile();
                             }
                         }
 
@@ -740,11 +747,6 @@ namespace ShareX
                         {
                             string extension = Helpers.GetFilenameExtension(Info.FilePath);
                             Info.FileName = Helpers.ChangeFilenameExtension(fileName, extension);
-
-                            if (Data != null)
-                            {
-                                Data.Dispose();
-                            }
 
                             LoadFileStream();
                         }
