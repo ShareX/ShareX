@@ -34,6 +34,7 @@ namespace ShareX.HelpersLib
         public const string URL_CHANGELOG = URL_WEBSITE + "/changelog";
         public const string URL_DONATE = URL_WEBSITE + "/donate";
         public const string URL_IMAGE_EFFECTS = URL_WEBSITE + "/image-effects";
+        public const string URL_ACTIONS = URL_WEBSITE + "/actions";
         public const string URL_JAEX = "https://github.com/Jaex";
         public const string URL_MCORED = "https://github.com/McoreD";
         public const string URL_STEAM = "http://store.steampowered.com/app/400040/";

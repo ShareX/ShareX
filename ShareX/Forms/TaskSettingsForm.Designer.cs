@@ -58,6 +58,7 @@
             this.tpGeneralMain = new System.Windows.Forms.TabPage();
             this.chkOverrideGeneralSettings = new System.Windows.Forms.CheckBox();
             this.tpNotifications = new System.Windows.Forms.TabPage();
+            this.cbShowToastNotificationAfterTaskCompleted = new System.Windows.Forms.CheckBox();
             this.btnCustomErrorSoundPath = new System.Windows.Forms.Button();
             this.btnCustomTaskCompletedSoundPath = new System.Windows.Forms.Button();
             this.btnCustomCaptureSoundPath = new System.Windows.Forms.Button();
@@ -68,6 +69,8 @@
             this.cbUseCustomTaskCompletedSound = new System.Windows.Forms.CheckBox();
             this.cbUseCustomCaptureSound = new System.Windows.Forms.CheckBox();
             this.gbToastWindow = new System.Windows.Forms.GroupBox();
+            this.lblToastWindowFadeDurationSeconds = new System.Windows.Forms.Label();
+            this.lblToastWindowDurationSeconds = new System.Windows.Forms.Label();
             this.lblToastWindowSizeX = new System.Windows.Forms.Label();
             this.cbToastWindowMiddleClickAction = new System.Windows.Forms.ComboBox();
             this.cbToastWindowRightClickAction = new System.Windows.Forms.ComboBox();
@@ -272,7 +275,7 @@
             this.tpAdvanced = new System.Windows.Forms.TabPage();
             this.pgTaskSettings = new System.Windows.Forms.PropertyGrid();
             this.chkOverrideAdvancedSettings = new System.Windows.Forms.CheckBox();
-            this.cbShowToastNotificationAfterTaskCompleted = new System.Windows.Forms.CheckBox();
+            this.btnActions = new System.Windows.Forms.Button();
             this.btnAfterCapture = new ShareX.HelpersLib.MenuButton();
             this.btnAfterUpload = new ShareX.HelpersLib.MenuButton();
             this.btnDestinations = new ShareX.HelpersLib.MenuButton();
@@ -290,8 +293,6 @@
             this.chWatchFolderFilter = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chWatchFolderIncludeSubdirectories = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tttvMain = new ShareX.HelpersLib.TabToTreeView();
-            this.lblToastWindowDurationSeconds = new System.Windows.Forms.Label();
-            this.lblToastWindowFadeDurationSeconds = new System.Windows.Forms.Label();
             this.tcTaskSettings.SuspendLayout();
             this.tpTask.SuspendLayout();
             this.cmsDestinations.SuspendLayout();
@@ -581,6 +582,13 @@
             this.tpNotifications.Name = "tpNotifications";
             this.tpNotifications.UseVisualStyleBackColor = true;
             // 
+            // cbShowToastNotificationAfterTaskCompleted
+            // 
+            resources.ApplyResources(this.cbShowToastNotificationAfterTaskCompleted, "cbShowToastNotificationAfterTaskCompleted");
+            this.cbShowToastNotificationAfterTaskCompleted.Name = "cbShowToastNotificationAfterTaskCompleted";
+            this.cbShowToastNotificationAfterTaskCompleted.UseVisualStyleBackColor = true;
+            this.cbShowToastNotificationAfterTaskCompleted.CheckedChanged += new System.EventHandler(this.cbShowToastNotificationAfterTaskCompleted_CheckedChanged);
+            // 
             // btnCustomErrorSoundPath
             // 
             resources.ApplyResources(this.btnCustomErrorSoundPath, "btnCustomErrorSoundPath");
@@ -664,6 +672,16 @@
             resources.ApplyResources(this.gbToastWindow, "gbToastWindow");
             this.gbToastWindow.Name = "gbToastWindow";
             this.gbToastWindow.TabStop = false;
+            // 
+            // lblToastWindowFadeDurationSeconds
+            // 
+            resources.ApplyResources(this.lblToastWindowFadeDurationSeconds, "lblToastWindowFadeDurationSeconds");
+            this.lblToastWindowFadeDurationSeconds.Name = "lblToastWindowFadeDurationSeconds";
+            // 
+            // lblToastWindowDurationSeconds
+            // 
+            resources.ApplyResources(this.lblToastWindowDurationSeconds, "lblToastWindowDurationSeconds");
+            this.lblToastWindowDurationSeconds.Name = "lblToastWindowDurationSeconds";
             // 
             // lblToastWindowSizeX
             // 
@@ -2205,6 +2223,7 @@
             // 
             // pActions
             // 
+            this.pActions.Controls.Add(this.btnActions);
             this.pActions.Controls.Add(this.lblActionsNote);
             this.pActions.Controls.Add(this.btnActionsDuplicate);
             this.pActions.Controls.Add(this.btnActionsAdd);
@@ -2380,12 +2399,12 @@
             this.chkOverrideAdvancedSettings.UseVisualStyleBackColor = true;
             this.chkOverrideAdvancedSettings.CheckedChanged += new System.EventHandler(this.chkUseDefaultAdvancedSettings_CheckedChanged);
             // 
-            // cbShowToastNotificationAfterTaskCompleted
+            // btnActions
             // 
-            resources.ApplyResources(this.cbShowToastNotificationAfterTaskCompleted, "cbShowToastNotificationAfterTaskCompleted");
-            this.cbShowToastNotificationAfterTaskCompleted.Name = "cbShowToastNotificationAfterTaskCompleted";
-            this.cbShowToastNotificationAfterTaskCompleted.UseVisualStyleBackColor = true;
-            this.cbShowToastNotificationAfterTaskCompleted.CheckedChanged += new System.EventHandler(this.cbShowToastNotificationAfterTaskCompleted_CheckedChanged);
+            resources.ApplyResources(this.btnActions, "btnActions");
+            this.btnActions.Name = "btnActions";
+            this.btnActions.UseVisualStyleBackColor = true;
+            this.btnActions.Click += new System.EventHandler(this.btnActions_Click);
             // 
             // btnAfterCapture
             // 
@@ -2517,16 +2536,6 @@
             this.tttvMain.TreeViewFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.tttvMain.TreeViewSize = 190;
             this.tttvMain.TabChanged += new ShareX.HelpersLib.TabToTreeView.TabChangedEventHandler(this.tttvMain_TabChanged);
-            // 
-            // lblToastWindowDurationSeconds
-            // 
-            resources.ApplyResources(this.lblToastWindowDurationSeconds, "lblToastWindowDurationSeconds");
-            this.lblToastWindowDurationSeconds.Name = "lblToastWindowDurationSeconds";
-            // 
-            // lblToastWindowFadeDurationSeconds
-            // 
-            resources.ApplyResources(this.lblToastWindowFadeDurationSeconds, "lblToastWindowFadeDurationSeconds");
-            this.lblToastWindowFadeDurationSeconds.Name = "lblToastWindowFadeDurationSeconds";
             // 
             // TaskSettingsForm
             // 
@@ -2891,5 +2900,6 @@
         private System.Windows.Forms.CheckBox cbShowToastNotificationAfterTaskCompleted;
         private System.Windows.Forms.Label lblToastWindowFadeDurationSeconds;
         private System.Windows.Forms.Label lblToastWindowDurationSeconds;
+        private System.Windows.Forms.Button btnActions;
     }
 }
