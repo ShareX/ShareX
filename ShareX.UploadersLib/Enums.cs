@@ -47,6 +47,8 @@ namespace ShareX.UploadersLib
         Chevereto,
         [Description("vgy.me")]
         Vgyme,
+        [Description("Vault.ooo (encrypted)")]
+        Vault_ooo,
         CustomImageUploader, // Localized
         FileUploader // Localized
     }
@@ -143,6 +145,8 @@ namespace ShareX.UploadersLib
         Plik,
         [Description("YouTube")]
         YouTube,
+        [Description("Vault.ooo (encrypted)")]
+        Vault_ooo,
         SharedFolder, // Localized
         Email, // Localized
         CustomFileUploader // Localized
