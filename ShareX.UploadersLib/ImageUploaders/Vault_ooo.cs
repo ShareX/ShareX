@@ -23,7 +23,6 @@
 
 #endregion License Information (GPL v3)
 
-
 namespace ShareX.UploadersLib.ImageUploaders
 {
     public class Vault_oooUploaderService : ImageUploaderService

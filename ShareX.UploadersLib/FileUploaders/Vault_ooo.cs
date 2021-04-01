@@ -106,7 +106,6 @@ namespace ShareX.UploadersLib.FileUploaders
             postRequestJson.Add("chunks", chunks);
             postRequestJson.Add("fileLength", fullUploadSize);
 
-
             string postResult = SendRequest(HttpMethod.POST, URLHelpers.CombineURL(APIURL, fullFileName), JsonConvert.SerializeObject(postRequestJson), RequestHelpers.ContentTypeJSON, requestHeaders);
             Vault_oooMetaInfo metaInfo = JsonConvert.DeserializeObject<Vault_oooMetaInfo>(postResult);
 
@@ -170,7 +169,6 @@ namespace ShareX.UploadersLib.FileUploaders
 
             #endregion
 
-
             UploadResult res = new UploadResult();
             res.IsURLExpected = true;
             res.URL = URLHelpers.CombineURL(APIURL, metaInfo.UrlPathName) + "#" + randomKey; // Full url with the encryption key
@@ -203,7 +201,6 @@ namespace ShareX.UploadersLib.FileUploaders
         }
 
         #region Crypto
-
 
         private static string GenerateRandomKey()
         {
