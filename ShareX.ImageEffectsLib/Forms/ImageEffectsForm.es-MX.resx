@@ -165,4 +165,40 @@
   <data name="btnRefresh.Text" xml:space="preserve">
     <value>Actualizar</value>
   </data>
+  <data name="btnEffectAdd.ToolTip" xml:space="preserve">
+    <value>Agregar</value>
+  </data>
+  <data name="btnEffectClear.ToolTip" xml:space="preserve">
+    <value>Quitar</value>
+  </data>
+  <data name="btnEffectDuplicate.ToolTip" xml:space="preserve">
+    <value>Duplicar</value>
+  </data>
+  <data name="btnEffectRefresh.ToolTip" xml:space="preserve">
+    <value>Actualizar</value>
+  </data>
+  <data name="btnEffectRemove.ToolTip" xml:space="preserve">
+    <value>Eliminar</value>
+  </data>
+  <data name="btnPackager.Text" xml:space="preserve">
+    <value>Empaquetador...</value>
+  </data>
+  <data name="btnPresetDuplicate.ToolTip" xml:space="preserve">
+    <value>Duplicar</value>
+  </data>
+  <data name="btnPresetNew.ToolTip" xml:space="preserve">
+    <value>Nuevo</value>
+  </data>
+  <data name="btnPresetRemove.ToolTip" xml:space="preserve">
+    <value>Eliminar</value>
+  </data>
+  <data name="lblEffect.Text" xml:space="preserve">
+    <value>Efecto:</value>
+  </data>
+  <data name="lblEffects.Text" xml:space="preserve">
+    <value>Efectos:</value>
+  </data>
+  <data name="lblPresets.Text" xml:space="preserve">
+    <value>Preajustes:</value>
+  </data>
 </root>

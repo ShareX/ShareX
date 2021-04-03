@@ -127,7 +127,7 @@
     <value>Generar miniaturas</value>
   </data>
   <data name="btnOutputFolder.Text" xml:space="preserve">
-    <value></value>
+    <value>...</value>
     <comment>@Invariant</comment>
   </data>
   <data name="btnRemove.Text" xml:space="preserve">
@@ -146,13 +146,13 @@
     <value>Ancho:</value>
   </data>
   <data name="txtOutputFilename.Text" xml:space="preserve">
-    <value></value>
+    <value>$filename_th</value>
     <comment>@Invariant</comment>
   </data>
   <data name="lblQuality.Text" xml:space="preserve">
     <value>Calidad:</value>
   </data>
   <data name="lblQualityPercentage.Text" xml:space="preserve">
-    <value> %</value>
+    <value>%</value>
   </data>
 </root>

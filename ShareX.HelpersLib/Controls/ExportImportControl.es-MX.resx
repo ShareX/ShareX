@@ -136,9 +136,9 @@
     <value>Desde enlace...</value>
   </data>
   <data name="btnImport.Text" xml:space="preserve">
-    <value>Importar</value>
+    <value> Importar</value>
   </data>
   <data name="btnExport.Text" xml:space="preserve">
-    <value>Exportar</value>
+    <value> Exportar</value>
   </data>
 </root>

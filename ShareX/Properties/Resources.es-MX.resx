@@ -224,7 +224,7 @@ Por favor seleccione un atajo de teclado diferente o salga de la aplicación que
     <value>Registro de cambios</value>
   </data>
   <data name="HotkeyManager_ShowFailedHotkeys_hotkey" xml:space="preserve">
-    <value>atajo de teclado</value>
+    <value>Atajo de teclado</value>
   </data>
   <data name="UploadManager_IsUploadConfirmed_Don_t_show_this_message_again_" xml:space="preserve">
     <value>No volver a mostrar este mensaje.</value>
@@ -286,7 +286,7 @@ Por favor seleccione un atajo de teclado diferente o salga de la aplicación que
     <value>No se pudo registrar el atajo de teclado</value>
   </data>
   <data name="TaskHelpers_ToggleHotkeys_Hotkeys_disabled_" xml:space="preserve">
-    <value>Atajos de teclado deshabilitados</value>
+    <value>Atajos de teclado deshabilitados.</value>
   </data>
   <data name="UploadManager_IsUploadConfirmed_Upload_files" xml:space="preserve">
     <value>Subir archivos</value>
@@ -314,10 +314,10 @@ Por favor seleccione un atajo de teclado diferente o salga de la aplicación que
 aquí</value>
   </data>
   <data name="TaskHelpers_ToggleHotkeys_Hotkeys_enabled_" xml:space="preserve">
-    <value>Atajos de teclado habilitados</value>
+    <value>Atajos de teclado habilitados.</value>
   </data>
   <data name="HotkeyManager_ShowFailedHotkeys_hotkeys" xml:space="preserve">
-    <value>atajos de teclado</value>
+    <value>Atajos de teclado</value>
   </data>
   <data name="AboutForm_AboutForm_Language_zh_TW" xml:space="preserve">
     <value>Chino tradicional</value>
@@ -370,7 +370,7 @@ Ejecute ShareX como administrador y cambie la ubicación de la carpeta personal.
     <value>¿Está seguro de eliminar este archivo?</value>
   </data>
   <data name="FileExistForm_txtNewName_TextChanged_Use_new_name__" xml:space="preserve">
-    <value>Usar nuevo nombre:</value>
+    <value>Usar nuevo nombre: </value>
   </data>
   <data name="ScreenRecord_ConfirmCancel" xml:space="preserve">
     <value>¿Está seguro de que desea interrumpir esta grabación?</value>
@@ -452,7 +452,7 @@ Elija "No" para cancelar y deshabilitar la subida automática.</value>
     <value>Editar este menú...</value>
   </data>
   <data name="UploadTask_OnUploadCompleted_Stopped" xml:space="preserve">
-    <value>Detenido...</value>
+    <value>Detenido</value>
   </data>
   <data name="WorkerTask_GetInvalidConfigResult__0__configuration_is_invalid_or_missing__Please_check__Destination_settings__window_to_configure_it_" xml:space="preserve">
     <value>La configuración de {0} no es válida o no se encuentra. Favor de revisar "Configuraciones de destinos".</value>
@@ -580,5 +580,14 @@ Clic medio para cerrar</value>
   </data>
   <data name="SwitchToThumbnailView" xml:space="preserve">
     <value>Cambiar a vista de miniaturas</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_fa_IR" xml:space="preserve">
+    <value>Persa</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_pt_PT" xml:space="preserve">
+    <value>Portugués</value>
+  </data>
+  <data name="ThisFeatureWillNotWorkWhenDisableUploadOptionIsEnabled" xml:space="preserve">
+    <value>¡Esta función no funcionará si la opción "DisableUpload" está habilitada!</value>
   </data>
 </root>

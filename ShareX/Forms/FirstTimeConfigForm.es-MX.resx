@@ -133,7 +133,7 @@
     <value>Aceptar</value>
   </data>
   <data name="lblNote.Text" xml:space="preserve">
-    <value>Esta configuración está en "Configuración de programa -&gt; Pestaña Integración"</value>
+    <value>Esta configuración está en "Configuración de programa -&gt; Pestaña Integración".</value>
   </data>
   <data name="lblTitle.Text" xml:space="preserve">
     <value>Configuración inicial de ShareX</value>

@@ -133,7 +133,7 @@
     <value>Tamaño de la miniatura:</value>
   </data>
   <data name="lblThumbnailSizeUnit.Text" xml:space="preserve">
-    <value> px</value>
+    <value>px</value>
   </data>
   <data name="lblViewMode.Text" xml:space="preserve">
     <value>Modo de vista:</value>

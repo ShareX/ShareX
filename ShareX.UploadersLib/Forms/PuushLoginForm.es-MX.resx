@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="$this.Text" xml:space="preserve">
-    <value>Acceso a puush</value>
+    <value>acceso a puush</value>
   </data>
   <data name="btnLogin.Text" xml:space="preserve">
     <value>Acceder</value>
@@ -130,6 +130,6 @@
     <value>Contraseña:</value>
   </data>
   <data name="llForgottenPassword.Text" xml:space="preserve">
-    <value>Recuperar contraseña</value>
+    <value>¿Recuperar contraseña?</value>
   </data>
 </root>

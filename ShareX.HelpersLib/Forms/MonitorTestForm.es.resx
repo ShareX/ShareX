@@ -121,7 +121,7 @@
     <value>Cerrar</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Prueba del monitor</value>
+    <value>ShareX - Prueba de monitor</value>
   </data>
   <data name="btnGradientColor1.Text" xml:space="preserve">
     <value>Color 1</value>
@@ -130,16 +130,16 @@
     <value>Color 2</value>
   </data>
   <data name="btnColorDialog.Text" xml:space="preserve">
-    <value>Diálogo de color...</value>
+    <value>Seleccionar color...</value>
   </data>
   <data name="cbShapes.Items" xml:space="preserve">
-    <value>Verificador</value>
-  </data>
-  <data name="cbShapes.Items1" xml:space="preserve">
     <value>Líneas horizontales</value>
   </data>
-  <data name="cbShapes.Items2" xml:space="preserve">
+  <data name="cbShapes.Items1" xml:space="preserve">
     <value>Líneas verticales</value>
+  </data>
+  <data name="cbShapes.Items2" xml:space="preserve">
+    <value>Cuadrícula bicolor</value>
   </data>
   <data name="lblBlue.Text" xml:space="preserve">
     <value>B:</value>
@@ -154,7 +154,7 @@
     <value>Tamaño:</value>
   </data>
   <data name="rbGradient.Text" xml:space="preserve">
-    <value>Gradiente:</value>
+    <value>Degradado:</value>
   </data>
   <data name="rbRedGreenBlue.Text" xml:space="preserve">
     <value>Rojo, Verde, Azul:</value>
@@ -163,9 +163,27 @@
     <value>Negro, Blanco:</value>
   </data>
   <data name="lblTip.Text" xml:space="preserve">
-    <value>Puede hacer clic fuera para ocultar / mostrar este panel.</value>
+    <value>Clicar fuera de este panel para ocultarlo o mostrarlo.</value>
   </data>
   <data name="rbShapes.Text" xml:space="preserve">
     <value>Forma:</value>
+  </data>
+  <data name="btnScreenTearingTest.Text" xml:space="preserve">
+    <value>Iniciar prueba de animación</value>
+  </data>
+  <data name="lblBlackWhiteValue.Text" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblBlueValue.Text" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblGreenValue.Text" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblRedValue.Text" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblShapeSizeValue.Text" xml:space="preserve">
+    <value>1</value>
   </data>
 </root>

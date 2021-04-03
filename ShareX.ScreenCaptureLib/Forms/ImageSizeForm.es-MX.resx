@@ -136,7 +136,7 @@
     <value>píxeles</value>
   </data>
   <data name="lblResampling.Text" xml:space="preserve">
-    <value>Remuestreo: </value>
+    <value>Remuestreo:</value>
   </data>
   <data name="lblWidth.Text" xml:space="preserve">
     <value>Ancho:</value>

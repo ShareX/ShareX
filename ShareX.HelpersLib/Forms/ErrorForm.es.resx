@@ -121,19 +121,22 @@
     <value>ShareX - Error</value>
   </data>
   <data name="btnContinue.Text" xml:space="preserve">
-    <value>&amp;OK</value>
+    <value>Continuar</value>
   </data>
   <data name="btnSendBugReport.Text" xml:space="preserve">
-    <value>Enviar informe de error</value>
+    <value>Enviar informe de error...</value>
   </data>
   <data name="btnClose.Text" xml:space="preserve">
-    <value>Salir de la aplicación</value>
+    <value>Salir</value>
   </data>
   <data name="btnOpenLogFile.Text" xml:space="preserve">
-    <value>Abrir archivo de registro</value>
+    <value>Abrir archivo de registro...</value>
   </data>
   <data name="lblErrorMessage.Text" xml:space="preserve">
     <value>Error
 Error 2</value>
+  </data>
+  <data name="btnOK.Text" xml:space="preserve">
+    <value>Aceptar</value>
   </data>
 </root>

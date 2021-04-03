@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="btnFilePathBrowse.Text" xml:space="preserve">
-    <value>Examinar</value>
+    <value>Examinar...</value>
   </data>
   <data name="lblHashType.Text" xml:space="preserve">
     <value>Tipo de hash:</value>
@@ -145,11 +145,11 @@
     <value>Decodificar</value>
   </data>
   <data name="lblHashCheckBase64.Text" xml:space="preserve">
-    <value></value>
+    <value>Base64:</value>
     <comment>@Invariant</comment>
   </data>
   <data name="btnHashCheckDecodeASCII.Text" xml:space="preserve">
-    <value>Decodificar:</value>
+    <value>Decodificar</value>
   </data>
   <data name="btnHashCheckDecodeHex.Text" xml:space="preserve">
     <value>Decodificar</value>
@@ -173,11 +173,11 @@
     <value>ShareX - Verificación de hash</value>
   </data>
   <data name="lblHashCheckHash.Text" xml:space="preserve">
-    <value></value>
+    <value>Hash:</value>
     <comment>@Invariant</comment>
   </data>
   <data name="lblHashCheckHex.Text" xml:space="preserve">
-    <value></value>
+    <value>Hexadecimal:</value>
     <comment>@Invariant</comment>
   </data>
   <data name="lblProgressPercentage.Text" xml:space="preserve">

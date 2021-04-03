@@ -121,7 +121,7 @@
     <value>Cancelar</value>
   </data>
   <data name="btnOK.Text" xml:space="preserve">
-    <value>OK</value>
+    <value>Aceptar</value>
   </data>
   <data name="lblAlpha.Text" xml:space="preserve">
     <value>Alfa:</value>
@@ -136,7 +136,7 @@
     <value>Decimal:</value>
   </data>
   <data name="lblKey.Text" xml:space="preserve">
-    <value>Clave:</value>
+    <value>Negro:</value>
   </data>
   <data name="lblMagenta.Text" xml:space="preserve">
     <value>Magenta:</value>
@@ -160,12 +160,99 @@
     <value>Verde:</value>
   </data>
   <data name="rbHue.Text" xml:space="preserve">
-    <value>Hue:</value>
+    <value>Tono:</value>
   </data>
   <data name="rbRed.Text" xml:space="preserve">
     <value>Rojo:</value>
   </data>
   <data name="rbSaturation.Text" xml:space="preserve">
     <value>Saturación:</value>
+  </data>
+  <data name="btnClose.Text" xml:space="preserve">
+    <value>Cerrar</value>
+  </data>
+  <data name="btnScreenColorPicker.ToolTip" xml:space="preserve">
+    <value>Elegir color de la pantalla</value>
+  </data>
+  <data name="cbTransparent.ToolTip" xml:space="preserve">
+    <value>Transparente</value>
+  </data>
+  <data name="lblBrightnessPerc.Text" xml:space="preserve">
+    <value>%</value>
+  </data>
+  <data name="lblCursorPosition.Text" xml:space="preserve">
+    <value>Posición del puntero:</value>
+  </data>
+  <data name="lblCyanPerc.Text" xml:space="preserve">
+    <value>%</value>
+  </data>
+  <data name="lblHex.Text" xml:space="preserve">
+    <value>Hexadecimal:</value>
+  </data>
+  <data name="lblHue.Text" xml:space="preserve">
+    <value>°</value>
+  </data>
+  <data name="lblKeyPerc.Text" xml:space="preserve">
+    <value>%</value>
+  </data>
+  <data name="lblMagentaPerc.Text" xml:space="preserve">
+    <value>%</value>
+  </data>
+  <data name="lblName.Text" xml:space="preserve">
+    <value>Nombre:</value>
+  </data>
+  <data name="lblSaturationPerc.Text" xml:space="preserve">
+    <value>%</value>
+  </data>
+  <data name="lblX.Text" xml:space="preserve">
+    <value>X:</value>
+  </data>
+  <data name="lblY.Text" xml:space="preserve">
+    <value>Y:</value>
+  </data>
+  <data name="lblYellowPerc.Text" xml:space="preserve">
+    <value>%</value>
+  </data>
+  <data name="mbCopy.Text" xml:space="preserve">
+    <value>Copiar</value>
+  </data>
+  <data name="rbRecentColors.Text" xml:space="preserve">
+    <value>Colores recientes</value>
+  </data>
+  <data name="rbStandardColors.Text" xml:space="preserve">
+    <value>Colores estándar</value>
+  </data>
+  <data name="tsmiCopyAll.Text" xml:space="preserve">
+    <value>Copiar todo</value>
+  </data>
+  <data name="tsmiCopyCMYK.Text" xml:space="preserve">
+    <value>Copiar CMYK</value>
+  </data>
+  <data name="tsmiCopyDecimal.Text" xml:space="preserve">
+    <value>Copiar decimal</value>
+  </data>
+  <data name="tsmiCopyHexadecimal.Text" xml:space="preserve">
+    <value>Copiar hexadecimal</value>
+  </data>
+  <data name="tsmiCopyHSB.Text" xml:space="preserve">
+    <value>Copiar HSB</value>
+  </data>
+  <data name="tsmiCopyPosition.Text" xml:space="preserve">
+    <value>Copiar posición</value>
+  </data>
+  <data name="tsmiCopyRGB.Text" xml:space="preserve">
+    <value>Copiar RGB</value>
+  </data>
+  <data name="txtDecimal.Text" xml:space="preserve">
+    <value>12345678</value>
+  </data>
+  <data name="txtHex.Text" xml:space="preserve">
+    <value>FF00FF00</value>
+  </data>
+  <data name="txtX.Text" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="txtY.Text" xml:space="preserve">
+    <value>0</value>
   </data>
 </root>

@@ -318,4 +318,7 @@ store.book[0].title</value>
   <data name="tsmiUpdateFolder.Text" xml:space="preserve">
     <value>Subir carpeta...</value>
   </data>
+  <data name="tscResponseText.Text" xml:space="preserve">
+    <value>toolStripContainer1</value>
+  </data>
 </root>

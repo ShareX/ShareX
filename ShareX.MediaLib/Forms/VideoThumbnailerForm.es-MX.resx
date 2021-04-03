@@ -123,4 +123,7 @@
   <data name="btnStart.Text" xml:space="preserve">
     <value>Tomar capturas de pantalla</value>
   </data>
+  <data name="btnBrowse.Text" xml:space="preserve">
+    <value>...</value>
+  </data>
 </root>

@@ -130,7 +130,7 @@
     <value>Cambiar tipografía...</value>
   </data>
   <data name="lblFont.Text" xml:space="preserve">
-    <value>Tipografía...</value>
+    <value>Tipografía:</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Opciones de impresión</value>

@@ -124,7 +124,7 @@
     <value>Examinar carpeta...</value>
   </data>
   <data name="btnIndexFolder.Text" xml:space="preserve">
-    <value>Indizar carpeta seleccionada</value>
+    <value>Indexar carpeta seleccionada</value>
   </data>
   <data name="btnUpload.Text" xml:space="preserve">
     <value>Subir y cerrar esta ventana</value>
@@ -134,5 +134,8 @@
   </data>
   <data name="tpSettings.Text" xml:space="preserve">
     <value>Configuración</value>
+  </data>
+  <data name="btnSaveAs.Text" xml:space="preserve">
+    <value>Guardar y cerrar esta ventana...</value>
   </data>
 </root>

@@ -178,7 +178,7 @@
     <value>Enlace de imagen Markdown</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_More_info" xml:space="preserve">
-    <value>Más información</value>
+    <value>Más información...</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_Open" xml:space="preserve">
     <value>Abrir</value>
@@ -199,7 +199,7 @@
     <value>Enlace</value>
   </data>
   <data name="HistoryItemManager_UpdateTexts_HTML_link___0__" xml:space="preserve">
-    <value>Link HTML ({0})</value>
+    <value>Enlace HTML ({0})</value>
   </data>
   <data name="HistoryItemManager_UpdateTexts_URLs___0__" xml:space="preserve">
     <value>Enlaces ({0})</value>
@@ -248,5 +248,8 @@
   </data>
   <data name="HistoryStats_YearlyUsages" xml:space="preserve">
     <value>Usos al año:</value>
+  </data>
+  <data name="ErrorOccuredWhileReadingHistoryFile" xml:space="preserve">
+    <value>Se ha producido un error al leer el archivo histórico:</value>
   </data>
 </root>

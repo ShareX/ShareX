@@ -154,10 +154,10 @@
     <value>Forma:</value>
   </data>
   <data name="lblBlue.Text" xml:space="preserve">
-    <value>A:</value>
+    <value>B:</value>
   </data>
   <data name="lblGreen.Text" xml:space="preserve">
-    <value>V:</value>
+    <value>G:</value>
   </data>
   <data name="lblRed.Text" xml:space="preserve">
     <value>R:</value>

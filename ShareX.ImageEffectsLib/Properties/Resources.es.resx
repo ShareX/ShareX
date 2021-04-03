@@ -127,9 +127,12 @@
     <value>Ajustes</value>
   </data>
   <data name="ImageEffectsForm_AddAllEffectsToTreeView_Manipulations" xml:space="preserve">
-    <value>Manipulaciones</value>
+    <value>Transformación</value>
   </data>
   <data name="ImageEffectsForm_UpdatePreview_Image_effects___Width___0___Height___1___Render_time___2__ms" xml:space="preserve">
-    <value>Efectos de imagen - Anchura {0}, Altura: {1}, Tiempo de renderizado {2} ms</value>
+    <value>Efectos de imágenes - Ancho: {0}, Alto: {1}, Tiempo de procesamiento: {2} ms</value>
+  </data>
+  <data name="ImageEffectsForm_EditorMode_Cancel" xml:space="preserve">
+    <value>Cancelar</value>
   </data>
 </root>

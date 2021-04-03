@@ -121,6 +121,15 @@
     <value>Abortar</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Pantalla ventana región</value>
+    <value>ShareX - Pantalla de grabación</value>
+  </data>
+  <data name="btnStart.Text" xml:space="preserve">
+    <value>Iniciar</value>
+  </data>
+  <data name="tsmiAbort.Text" xml:space="preserve">
+    <value>Detener</value>
+  </data>
+  <data name="tsmiStart.Text" xml:space="preserve">
+    <value>Iniciar</value>
   </data>
 </root>

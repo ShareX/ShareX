@@ -118,16 +118,16 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="btnRefreshSources.Text" xml:space="preserve">
-    <value>Refrescar</value>
+    <value>Actualizar</value>
   </data>
   <data name="btnTest.Text" xml:space="preserve">
-    <value>Prueba con CMD</value>
+    <value>Probar con la ventana de comandos</value>
   </data>
   <data name="btnCopyPreview.Text" xml:space="preserve">
     <value>Copiar</value>
   </data>
   <data name="gbFFmpegExe.Text" xml:space="preserve">
-    <value>ffmpeg.exe</value>
+    <value>Ubicación del códec de FFmpeg</value>
   </data>
   <data name="gbSource.Text" xml:space="preserve">
     <value>Fuentes</value>
@@ -136,13 +136,13 @@
     <value>Tasa de bits:</value>
   </data>
   <data name="gbCodecs.Text" xml:space="preserve">
-    <value>Codecs</value>
+    <value>Códecs</value>
   </data>
   <data name="lblAudioCodec.Text" xml:space="preserve">
-    <value>Codec de audio:</value>
+    <value>Códec de audio:</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Opciones FFmpeg</value>
+    <value>ShareX - Opciones de grabación de pantalla</value>
   </data>
   <data name="btnDownload.Text" xml:space="preserve">
     <value>Descargar</value>
@@ -166,27 +166,136 @@
     <value>Fuente de vídeo:</value>
   </data>
   <data name="gbCommandLinePreview.Text" xml:space="preserve">
-    <value>Línea de comandos vista previa</value>
+    <value>Argumentos de línea de comandos adicionales</value>
   </data>
   <data name="gbCommandLineArgs.Text" xml:space="preserve">
-    <value>Argumentos adicionales de línea de comandos</value>
+    <value>Argumentos de línea de comandos adicionales</value>
   </data>
   <data name="tbAACBitrate.ToolTip" xml:space="preserve">
-    <value>El valor predeterminado es de 128k.</value>
+    <value>Predeterminado: 128k.</value>
   </data>
   <data name="tbMP3_qscale.ToolTip" xml:space="preserve">
-    <value>El rango es de 0 a 9, donde un valor inferior es de mayor calidad.  0-3 normalmente producir resultados transparentes, 
-4 (Predeterminado) debe estar cerca de la transparencia perceptual, y 6 produce una calidad "aceptable".</value>
+    <value>El rango es 0 a 9, el valor más bajo es la calidad más alta. 0 a 3 normalmente producen resultados transparentes, 4 (predeterminado) se acerca la transparencia perceptible y 6 produce una calidad "razonable".</value>
   </data>
   <data name="tbVorbis_qscale.ToolTip" xml:space="preserve">
-    <value>El rango es de 0 a 10, donde 10 es la más alta calidad. 3-6 es un buen rango para probar. El valor predeterminado es 3.</value>
+    <value>El rango es de 0 a 10 donde 10 es la calidad más alta, 3 a 6 es un buen margen para probar. 3 es el valor predeterminado.</value>
   </data>
   <data name="nudx264CRF.ToolTip" xml:space="preserve">
-    <value>Factor Constante de Velocidad (CRF): El rango de la escala del cuantificador es 0-51: donde 0 es sin pérdidas, 23 es predeterminado, y 51 es el peor posible.
-Un valor más bajo es una mayor calidad y un rango subjetivamente cuerdo es 18-28.
-Considere 18 para ser visualmente sin pérdidas o casi: debe mirar el mismo o casi el mismo que el de entrada, pero no es técnicamente sin pérdidas.
-El rango es exponencial, por lo que el aumento del valor CRF 6 es más o menos la mitad de la tasa de bits, mientras que -6 es aproximadamente el doble de la tasa de bits.
-Uso general es elegir el valor más alto de CRF que todavía proporciona una calidad aceptable.
-Si la salida se ve bien, pruebe con un valor más alto y si se ve mal elija un valor inferior.</value>
+    <value>Factor de velocidad constante (CRF): el valor puede estar entre 0 y 51; 0 no tiene pérdida, 30 es el valor predeterminado y 51 es el peor valor posible.
+Un valor alto produce un archivo de mala calidad pero menor tamaño.</value>
+  </data>
+  <data name="btnFFmpegBrowse.Text" xml:space="preserve">
+    <value>...</value>
+  </data>
+  <data name="btnHelperDevicesHelp.Text" xml:space="preserve">
+    <value>?</value>
+  </data>
+  <data name="btnInstallHelperDevices.Text" xml:space="preserve">
+    <value>Instalar dispositivos de grabación</value>
+  </data>
+  <data name="cbGIFDither.ToolTip" xml:space="preserve">
+    <value>Predeterminado: sierra2_4a.</value>
+  </data>
+  <data name="cbGIFStatsMode.ToolTip" xml:space="preserve">
+    <value>Predeterminado: completo.</value>
+  </data>
+  <data name="cbOverrideFFmpegPath.Text" xml:space="preserve">
+    <value>Usar ubicación personalizada</value>
+  </data>
+  <data name="cbx264Preset.ToolTip" xml:space="preserve">
+    <value>Preajuste más rápido: Codificación más rápida pero archivo más grande.
+Preajuste más lento: Codificación más lenta pero archivo más pequeño.
+El preajuste debe ser el más rápido para codificación en tiempo real (ej. grabación de pantalla).</value>
+  </data>
+  <data name="lblAMFQuality.Text" xml:space="preserve">
+    <value>Calidad:</value>
+  </data>
+  <data name="lblAMFUsage.Text" xml:space="preserve">
+    <value>Uso:</value>
+  </data>
+  <data name="lblGIFDither.Text" xml:space="preserve">
+    <value>Modo de difuminado:</value>
+  </data>
+  <data name="lblGIFStatsMode.Text" xml:space="preserve">
+    <value>Modo de paleta:</value>
+  </data>
+  <data name="lblHelperDevices.Text" xml:space="preserve">
+    <value>Instala fuentes de audio y video "screen-capture-recorder" y "virtual-audio-capturer".</value>
+  </data>
+  <data name="lblNVENCBitrate.Text" xml:space="preserve">
+    <value>Tasa de bits:</value>
+  </data>
+  <data name="lblNVENCPreset.Text" xml:space="preserve">
+    <value>Preajuste:</value>
+  </data>
+  <data name="lblOpusQuality.Text" xml:space="preserve">
+    <value>Tasa de bits:</value>
+  </data>
+  <data name="lblQSVBitrate.Text" xml:space="preserve">
+    <value>Tasa de bits:</value>
+  </data>
+  <data name="lblQSVPreset.Text" xml:space="preserve">
+    <value>Preajuste:</value>
+  </data>
+  <data name="lblVP8Bitrate.Text" xml:space="preserve">
+    <value>Tasa de bits variable:</value>
+  </data>
+  <data name="lblVP8BitrateK.Text" xml:space="preserve">
+    <value>kbit/s</value>
+  </data>
+  <data name="lblx264CRF.Text" xml:space="preserve">
+    <value>CRF:</value>
+  </data>
+  <data name="lblx264Preset.Text" xml:space="preserve">
+    <value>Preajuste:</value>
+  </data>
+  <data name="lblXvidQscale.Text" xml:space="preserve">
+    <value>Tasa de bits variable:</value>
+  </data>
+  <data name="nudXvidQscale.ToolTip" xml:space="preserve">
+    <value>1 es la calidad más alta y un archivo más grande, 31 es la calidad más baja y un archivo más pequeño.</value>
+  </data>
+  <data name="pbAudioCodecWarning.ToolTip" xml:space="preserve">
+    <value>El códec de audio no es admitido por el contenedor de video seleccionado.</value>
+  </data>
+  <data name="pbx264PresetWarning.ToolTip" xml:space="preserve">
+    <value>Para realizar una codificación en tiempo real, como la grabación de pantalla, se recomienda utilizar el preajuste más rápido.
+De lo contrario, la grabación se desfasará y se perderán fotogramas.</value>
+  </data>
+  <data name="tbAMF.Text" xml:space="preserve">
+    <value>AMF</value>
+  </data>
+  <data name="tbOpusBitrate.ToolTip" xml:space="preserve">
+    <value>Predeterminado: 128k.</value>
+  </data>
+  <data name="tbQSV.Text" xml:space="preserve">
+    <value>QuickSync</value>
+  </data>
+  <data name="tpAAC.Text" xml:space="preserve">
+    <value>AAC</value>
+  </data>
+  <data name="tpGIF.Text" xml:space="preserve">
+    <value>GIF</value>
+  </data>
+  <data name="tpMP3.Text" xml:space="preserve">
+    <value>MP3</value>
+  </data>
+  <data name="tpNVENC.Text" xml:space="preserve">
+    <value>NVENC</value>
+  </data>
+  <data name="tpOpus.Text" xml:space="preserve">
+    <value>Opus</value>
+  </data>
+  <data name="tpVorbis.Text" xml:space="preserve">
+    <value>Vorbis</value>
+  </data>
+  <data name="tpVpx.Text" xml:space="preserve">
+    <value>VP8</value>
+  </data>
+  <data name="tpX264.Text" xml:space="preserve">
+    <value>x264 / x265</value>
+  </data>
+  <data name="tpXvid.Text" xml:space="preserve">
+    <value>Xvid</value>
   </data>
 </root>

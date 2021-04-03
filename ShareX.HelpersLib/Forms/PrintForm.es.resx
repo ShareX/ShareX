@@ -124,7 +124,7 @@
     <value>Imprimir...</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Opciones de impresión</value>
+    <value>ShareX - Opciones de impresión</value>
   </data>
   <data name="btnShowPreview.Text" xml:space="preserve">
     <value>Vista previa...</value>
@@ -133,13 +133,13 @@
     <value>Márgen:</value>
   </data>
   <data name="cbAutoScale.Text" xml:space="preserve">
-    <value>Escalar la imagen automáticamente</value>
+    <value>Redimensionar imagen automáticamente</value>
   </data>
   <data name="cbAutoRotate.Text" xml:space="preserve">
     <value>Girar imagen automáticamente</value>
   </data>
   <data name="cbAllowEnlarge.Text" xml:space="preserve">
-    <value>Permitir la imagen para ampliar</value>
+    <value>Permitir ampliación de imagen</value>
   </data>
   <data name="cbCenterImage.Text" xml:space="preserve">
     <value>Centrar posición de la imagen</value>

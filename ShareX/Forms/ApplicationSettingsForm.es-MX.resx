@@ -211,7 +211,7 @@
     <value>Examinar...</value>
   </data>
   <data name="btnOpenPersonalFolderPath.Text" xml:space="preserve">
-    <value>Abrir:</value>
+    <value>Abrir...</value>
   </data>
   <data name="cbUseCustomScreenshotsPath.Text" xml:space="preserve">
     <value>Usar carpeta de captura de imágenes personalizada:</value>
@@ -247,7 +247,7 @@
     <value>Tamaño del búfer:</value>
   </data>
   <data name="btnClipboardFormatEdit.Text" xml:space="preserve">
-    <value>Editar:</value>
+    <value>Editar...</value>
   </data>
   <data name="btnClipboardFormatRemove.Text" xml:space="preserve">
     <value>Eliminar</value>
@@ -262,7 +262,7 @@
     <value>Formato</value>
   </data>
   <data name="gbClipboardFormats.Text" xml:space="preserve">
-    <value>Formatos del portapapeles: aparecen debajo de la opción Copiar en el menú contextual de la ventana principal </value>
+    <value>Formatos del portapapeles: aparecen debajo de la opción Copiar en el menú contextual de la ventana principal</value>
   </data>
   <data name="tpUploadResults.Text" xml:space="preserve">
     <value>Resultados</value>
@@ -361,7 +361,7 @@
     <value>Usar icono blanco de ShareX</value>
   </data>
   <data name="btnThemeReset.Text" xml:space="preserve">
-    <value>Restablecer</value>
+    <value>Restablecer...</value>
   </data>
   <data name="btnThemeRemove.Text" xml:space="preserve">
     <value>Quitar</value>
@@ -370,13 +370,13 @@
     <value>Agregar</value>
   </data>
   <data name="cbExperimentalDarkTheme.Text" xml:space="preserve">
-    <value>Apariencia personalizada experimental</value>
+    <value>Apariencia oscura</value>
   </data>
   <data name="btnApplyTheme.Text" xml:space="preserve">
     <value>Establecer apariencia</value>
   </data>
   <data name="cbUseDarkTheme.Text" xml:space="preserve">
-    <value>Usar apariencia personalizada</value>
+    <value>Usar apariencia oscura</value>
   </data>
   <data name="tpTheme.Text" xml:space="preserve">
     <value>Apariencia</value>
@@ -392,5 +392,11 @@
   </data>
   <data name="lblExportImportNote.Text" xml:space="preserve">
     <value>Nota: No comparta con nadie el archivo exportado ya que podría contener información privada, como los detalles de su cuenta y su historial de subidas.</value>
+  </data>
+  <data name="cbExperimentalCustomTheme.Text" xml:space="preserve">
+    <value>Apariencia personalizada experimental</value>
+  </data>
+  <data name="cbUseCustomTheme.Text" xml:space="preserve">
+    <value>Usar apariencia personalizada</value>
   </data>
 </root>

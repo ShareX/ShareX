@@ -118,16 +118,16 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="btnSave.Text" xml:space="preserve">
-    <value>&amp;Aplicar</value>
+    <value>Aplicar</value>
   </data>
   <data name="btnCancel.Text" xml:space="preserve">
-    <value>&amp;Cerrar</value>
+    <value>Cerrar</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX cambiador de DNS</value>
+    <value>ShareX - Configuración de DNS</value>
   </data>
   <data name="lblAdapters.Text" xml:space="preserve">
-    <value>Adaptadores de redes:</value>
+    <value>Adaptadores de red:</value>
   </data>
   <data name="lblDNS.Text" xml:space="preserve">
     <value>Servidores DNS:</value>
@@ -140,5 +140,11 @@
   </data>
   <data name="cbAutomatic.Text" xml:space="preserve">
     <value>Obtener la dirección del servidor DNS automáticamente</value>
+  </data>
+  <data name="btnPingPrimary.Text" xml:space="preserve">
+    <value>Ping</value>
+  </data>
+  <data name="btnPingSecondary.Text" xml:space="preserve">
+    <value>Ping</value>
   </data>
 </root>

@@ -118,10 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="btnExport.Text" xml:space="preserve">
-    <value>Exportar</value>
+    <value> Exportar</value>
   </data>
   <data name="btnImport.Text" xml:space="preserve">
-    <value>Importar</value>
+    <value> Importar</value>
   </data>
   <data name="tsmiExportClipboard.Text" xml:space="preserve">
     <value>Copiar al portapapeles</value>
@@ -133,7 +133,7 @@
     <value>Desde archivo...</value>
   </data>
   <data name="tsmiImportURL.Text" xml:space="preserve">
-    <value>Desde URL...</value>
+    <value>Desde enlace...</value>
   </data>
   <data name="tsmiExportFile.Text" xml:space="preserve">
     <value>Guardar en archivo...</value>

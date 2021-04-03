@@ -132,4 +132,7 @@
   <data name="tslStickers.Text" xml:space="preserve">
     <value>Calcomanías:</value>
   </data>
+  <data name="tsnudSize.Text" xml:space="preserve">
+    <value>64</value>
+  </data>
 </root>

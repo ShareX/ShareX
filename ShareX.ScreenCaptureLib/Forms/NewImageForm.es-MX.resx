@@ -124,7 +124,7 @@
     <value>Cancelar</value>
   </data>
   <data name="btnChangeColor.Text" xml:space="preserve">
-    <value>Cambiar color</value>
+    <value>Cambiar color...</value>
   </data>
   <data name="btnOK.Text" xml:space="preserve">
     <value>Aceptar</value>

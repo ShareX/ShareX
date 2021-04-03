@@ -177,7 +177,7 @@ El preajuste debe ser el más rápido para codificación en tiempo real (ej. gra
     <value>Fuente de audio:</value>
   </data>
   <data name="lblCodec.Text" xml:space="preserve">
-    <value>Códec de video:</value>
+    <value>Códec de vídeo:</value>
   </data>
   <data name="lblGIFDither.Text" xml:space="preserve">
     <value>Modo de difuminado:</value>
@@ -230,7 +230,7 @@ De lo contrario, la grabación se desfasará y se perderán fotogramas.</value>
     <value>Predefinido: 128k.</value>
   </data>
   <data name="tbMP3_qscale.ToolTip" xml:space="preserve">
-    <value>El rango es 0 a 9, el valor más bajo es calidad más alta. 0 a 3 normalmente producen resultados transparentes, 4 (predefinido) se acerca la transparencia perceptible y 6 produce una calidad "razonable"</value>
+    <value>El rango es 0 a 9, el valor más bajo es calidad más alta. 0 a 3 normalmente producen resultados transparentes, 4 (predefinido) se acerca la transparencia perceptible y 6 produce una calidad "razonable".</value>
   </data>
   <data name="tbVorbis_qscale.ToolTip" xml:space="preserve">
     <value>El rango es 0 a 10. 10 es la calidad más alta, 3 a 6 es un buen margen para probar. 3 es el valor predefinido.</value>

@@ -178,7 +178,7 @@
     <value>Clave de la API:</value>
   </data>
   <data name="lblPlikAPIKey.Text" xml:space="preserve">
-    <value>Clave de la API:</value>
+    <value>Clave de la API: </value>
   </data>
   <data name="lblAdflyAPIUID.Text" xml:space="preserve">
     <value>UID de la API:</value>
@@ -262,7 +262,7 @@
     <value>Correo electrónico:</value>
   </data>
   <data name="tpFileUploaders.Text" xml:space="preserve">
-    <value>Servidores de archivos:</value>
+    <value>Servidores de archivos</value>
   </data>
   <data name="lblSharedFolderFiles.Text" xml:space="preserve">
     <value>Archivo:</value>
@@ -472,7 +472,7 @@
     <value>Estado:</value>
   </data>
   <data name="lblMegaStatusTitle.Text" xml:space="preserve">
-    <value>Estado:</value>
+    <value>Estado: </value>
   </data>
   <data name="btnFTPTest.Text" xml:space="preserve">
     <value>Probar</value>
@@ -640,7 +640,7 @@
     <value>Paso 2: Completar autorización</value>
   </data>
   <data name="btnPhotobucketAuthOpen.Text" xml:space="preserve">
-    <value>Paso 2: Ir a página de autorización</value>
+    <value>Paso 2: Ir a página de autorización...</value>
   </data>
   <data name="btnPhotobucketCreateAlbum.Text" xml:space="preserve">
     <value>Crear álbum</value>
@@ -667,19 +667,19 @@
     <value>Video</value>
   </data>
   <data name="cbAzureStorageEnvironment.Items" xml:space="preserve">
-    <value></value>
+    <value>blob.core.windows.net</value>
     <comment>@Invariant</comment>
   </data>
   <data name="cbAzureStorageEnvironment.Items1" xml:space="preserve">
-    <value></value>
+    <value>blob.core.usgovcloudapi.net</value>
     <comment>@Invariant</comment>
   </data>
   <data name="cbAzureStorageEnvironment.Items2" xml:space="preserve">
-    <value></value>
+    <value>blob.core.chinacloudapi.cn</value>
     <comment>@Invariant</comment>
   </data>
   <data name="cbAzureStorageEnvironment.Items3" xml:space="preserve">
-    <value></value>
+    <value>blob.core.cloudapi.de</value>
     <comment>@Invariant</comment>
   </data>
   <data name="cbCheveretoDirectURL.Text" xml:space="preserve">
@@ -754,11 +754,11 @@ Por ejemplo, si el bucket se llama bucket.example.com, la URL será http://bucke
     <value>Permitir eliminar</value>
   </data>
   <data name="cbSeafileAPIURL.Items" xml:space="preserve">
-    <value></value>
+    <value>https://seacloud.cc/api2/</value>
     <comment>@Invariant</comment>
   </data>
   <data name="cbSeafileAPIURL.Items1" xml:space="preserve">
-    <value></value>
+    <value>https://cloud.mein-seafile.de/api2/</value>
     <comment>@Invariant</comment>
   </data>
   <data name="cbSeafileIgnoreInvalidCert.Text" xml:space="preserve">
@@ -858,7 +858,7 @@ Por ejemplo, si el bucket se llama bucket.example.com, la URL será http://bucke
     <value>Dominio:</value>
   </data>
   <data name="lblBoxFolderTip.Text" xml:space="preserve">
-    <value>Nota: para abrir una carpeta, hacer doble clic en su nombre</value>
+    <value>Nota: para abrir una carpeta, hacer doble clic en su nombre.</value>
   </data>
   <data name="lblCheveretoUploadURLExample.Text" xml:space="preserve">
     <value>Ejemplo: http://example.com/api/1/upload</value>
@@ -909,7 +909,7 @@ Por ejemplo, si el bucket se llama bucket.example.com, la URL será http://bucke
     <value>Ejemplo: https://api.github.com</value>
   </data>
   <data name="lblGistOAuthInfo.Text" xml:space="preserve">
-    <value>Nota: GitHub Enterprise no es compatible</value>
+    <value>Nota: GitHub Enterprise no es compatible.</value>
   </data>
   <data name="lblGoogleCloudStorageBucket.Text" xml:space="preserve">
     <value>Nombre de bucket:</value>
@@ -984,7 +984,7 @@ Por ejemplo, si el bucket se llama bucket.example.com, la URL será http://bucke
     <value>Tipo de miniatura:</value>
   </data>
   <data name="lblJiraHost.Text" xml:space="preserve">
-    <value>Host:</value>
+    <value>Host Jira:</value>
   </data>
   <data name="lblJiraIssuePrefix.Text" xml:space="preserve">
     <value>Prefijo de incidencia de Jira:</value>
@@ -1017,7 +1017,7 @@ Por ejemplo, si el bucket se llama bucket.example.com, la URL será http://bucke
     <value>Código de verificación (obtenerlo de la página de autorización):</value>
   </data>
   <data name="lblPlikTTL.Text" xml:space="preserve">
-    <value>Eliminar archivos automáticamente en</value>
+    <value>Eliminar archivos automáticamente en </value>
   </data>
   <data name="lblPlikURL.Text" xml:space="preserve">
     <value>Host</value>
@@ -1056,7 +1056,7 @@ Por ejemplo, si el bucket se llama bucket.example.com, la URL será http://bucke
     <value>Puede encontrar sus clave de API y UID aquí</value>
   </data>
   <data name="llPuushForgottenPassword.Text" xml:space="preserve">
-    <value>Recuperar contraseña</value>
+    <value>¿Recuperar contraseña?</value>
   </data>
   <data name="llVgymeAccountDetailsPage.Text" xml:space="preserve">
     <value>Puede encontrar la clave de usuario en la configuración de cuenta.</value>
@@ -1065,15 +1065,15 @@ Por ejemplo, si el bucket se llama bucket.example.com, la URL será http://bucke
     <value>Pasiva</value>
   </data>
   <data name="rbFTPProtocolFTP.Text" xml:space="preserve">
-    <value></value>
+    <value>FTP</value>
     <comment>@Invariant</comment>
   </data>
   <data name="rbFTPProtocolFTPS.Text" xml:space="preserve">
-    <value></value>
+    <value>FTPS</value>
     <comment>@Invariant</comment>
   </data>
   <data name="rbFTPProtocolSFTP.Text" xml:space="preserve">
-    <value></value>
+    <value>SFTP</value>
     <comment>@Invariant</comment>
   </data>
   <data name="tpFirebaseDynamicLinks.Text" xml:space="preserve">
@@ -1203,7 +1203,7 @@ Por ejemplo, si el bucket se llama bucket.example.com, la URL será http://bucke
     <value>Plantilla</value>
   </data>
   <data name="txtJiraHost.Text" xml:space="preserve">
-    <value></value>
+    <value>http://</value>
     <comment>@Invariant</comment>
   </data>
   <data name="txtJiraIssuePrefix.Text" xml:space="preserve">
@@ -1231,7 +1231,7 @@ Por ejemplo, si el bucket se llama bucket.example.com, la URL será http://bucke
     <value>Enlace de la API para pegar:</value>
   </data>
   <data name="lblTeknikUploadAPIUrl.Text" xml:space="preserve">
-    <value>Enlace de la API pata subir:</value>
+    <value>Enlace de la API para subir:</value>
   </data>
   <data name="lblTeknikUrlShortenerAPIUrl.Text" xml:space="preserve">
     <value>Enlace de la API de acortador de enlaces:</value>
@@ -1249,9 +1249,15 @@ Por ejemplo, si el bucket se llama bucket.example.com, la URL será http://bucke
     <value>Usar enlace personalizado (se permiten patrones de formato):</value>
   </data>
   <data name="cbB2CustomUrl.ToolTip" xml:space="preserve">
-    <value>Al habilitarse, el enlace que reciba será la ruta de subida que se añada a tal enlace, lo cual resulta útil al emplearse con servicios como CloudFare o algún otro que actúe como interfaz de B2. Consulte la sección "Creating a Vanity URL with B2" en la base de conocimiento de B2. 
+    <value>Si se activa, el enlace que recibirás será la ruta de subida más
+el enlace determinado.
 
-Al deshabilitarse, el enlace recibido será determinado por Backblaze B2.</value>
+Esto es útil en conjunto con un servicio como CloudFlare u
+otro servicio que actúe como frontend de B2. Véase el artículo
+"Creating a Vanity URL with B2" en la base de conocimientos de B2.
+
+Si se desactiva, el enlace que recibirás será determinado
+por Backblaze B2.</value>
   </data>
   <data name="cbGfycatKeepAudio.Text" xml:space="preserve">
     <value>Conservar audio</value>
@@ -1346,5 +1352,11 @@ la clave de la aplicación.</value>
   </data>
   <data name="txtB2UploadPath.ToolTip" xml:space="preserve">
     <value>La ruta del archivo. Usa un patrón de formato.</value>
+  </data>
+  <data name="cbSeafileCreateShareableURLRaw.Text" xml:space="preserve">
+    <value>Usar enlace sin dominio</value>
+  </data>
+  <data name="lblBoxShareAccessLevel.Text" xml:space="preserve">
+    <value>Nivel de acceso del enlace compartido:</value>
   </data>
 </root>

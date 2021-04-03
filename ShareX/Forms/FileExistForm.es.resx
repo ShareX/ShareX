@@ -118,22 +118,22 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="btnOverwrite.Text" xml:space="preserve">
-    <value>Sobrescribir:</value>
+    <value>Sobrescribir: </value>
   </data>
   <data name="btnCancel.Text" xml:space="preserve">
     <value>No guardar</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Cómo guardar?</value>
+    <value>ShareX - ¿Cómo guardar?</value>
   </data>
   <data name="lblTitle.Text" xml:space="preserve">
     <value>Esta ubicación ya contiene un archivo con el mismo nombre.
-Escriba otro nombre del archivo o elegir una acción:</value>
+Selecciona otro nombre o acción:</value>
   </data>
   <data name="btnUniqueName.Text" xml:space="preserve">
-    <value>Utilice un nombre único:</value>
+    <value>Usa un nombre único: </value>
   </data>
   <data name="btnNewName.Text" xml:space="preserve">
-    <value>Utilice un nombre nuevo:</value>
+    <value>Usar nombre nuevo:</value>
   </data>
 </root>

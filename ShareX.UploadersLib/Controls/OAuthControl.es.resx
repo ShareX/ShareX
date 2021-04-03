@@ -118,21 +118,24 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="btnClearAuthorization.Text" xml:space="preserve">
-    <value>Borrar autorización</value>
+    <value>Desconectar</value>
   </data>
   <data name="btnCompleteAuthorization.Text" xml:space="preserve">
-    <value>Paso 2: Autorización completa</value>
+    <value>Paso 2: Completar autorización</value>
   </data>
   <data name="btnOpenAuthorizePage.Text" xml:space="preserve">
-    <value>Paso 1: Abrir la página de autorización </value>
+    <value>Conectar...</value>
   </data>
   <data name="gbUserAccount.Text" xml:space="preserve">
     <value>Cuenta de usuario</value>
   </data>
   <data name="btnRefreshAuthorization.Text" xml:space="preserve">
-    <value>Refrescar autorización</value>
+    <value>Actualizar autorización</value>
   </data>
   <data name="lblVerificationCode.Text" xml:space="preserve">
-    <value>Código de verificación (Obtener el código de verificación de la página autorización):</value>
+    <value>Código de verificación:</value>
+  </data>
+  <data name="lblStatus.Text" xml:space="preserve">
+    <value>Estado:</value>
   </data>
 </root>

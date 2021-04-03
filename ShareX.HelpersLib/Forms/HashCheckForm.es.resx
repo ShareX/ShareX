@@ -118,16 +118,16 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="btnFilePathBrowse.Text" xml:space="preserve">
-    <value>Buscar...</value>
+    <value>Examinar...</value>
   </data>
   <data name="btnStartHashCheck.Text" xml:space="preserve">
-    <value>Iniciar</value>
+    <value>Comprobar</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Verificación hash</value>
+    <value>ShareX - Verificación de hash</value>
   </data>
   <data name="lblFile.Text" xml:space="preserve">
-    <value>Ruta de archivo:</value>
+    <value>Ubicación del archivo:</value>
   </data>
   <data name="lblResult.Text" xml:space="preserve">
     <value>Resultado:</value>
@@ -137,5 +137,44 @@
   </data>
   <data name="lblTarget.Text" xml:space="preserve">
     <value>Destino:</value>
+  </data>
+  <data name="btnHashCheckCopyAll.Text" xml:space="preserve">
+    <value>Copiar todo</value>
+  </data>
+  <data name="btnHashCheckDecodeASCII.Text" xml:space="preserve">
+    <value>Decodificar</value>
+  </data>
+  <data name="btnHashCheckDecodeBase64.Text" xml:space="preserve">
+    <value>Decodificar</value>
+  </data>
+  <data name="btnHashCheckDecodeBinary.Text" xml:space="preserve">
+    <value>Decodificar</value>
+  </data>
+  <data name="btnHashCheckDecodeHex.Text" xml:space="preserve">
+    <value>Decodificar</value>
+  </data>
+  <data name="btnHashCheckEncodeText.Text" xml:space="preserve">
+    <value>Decodificar</value>
+  </data>
+  <data name="lblHashCheckBase64.Text" xml:space="preserve">
+    <value>Base64:</value>
+  </data>
+  <data name="lblHashCheckBinary.Text" xml:space="preserve">
+    <value>Binario:</value>
+  </data>
+  <data name="lblHashCheckHash.Text" xml:space="preserve">
+    <value>Hash:</value>
+  </data>
+  <data name="lblHashCheckHex.Text" xml:space="preserve">
+    <value>Hexadecimal:</value>
+  </data>
+  <data name="lblHashCheckText.Text" xml:space="preserve">
+    <value>Texto:</value>
+  </data>
+  <data name="tpFileHashCheck.Text" xml:space="preserve">
+    <value>Verificación de hash de archivo</value>
+  </data>
+  <data name="tpTextConversions.Text" xml:space="preserve">
+    <value>Conversiones de texto</value>
   </data>
 </root>

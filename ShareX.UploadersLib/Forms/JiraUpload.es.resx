@@ -124,7 +124,7 @@
     <value>Subir</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Carga de archivo Jira</value>
+    <value>ShareX - Subir archivo Jira</value>
   </data>
   <data name="gpSummary.Text" xml:space="preserve">
     <value>Resumen</value>

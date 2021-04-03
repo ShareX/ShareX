@@ -121,15 +121,15 @@
     <value>Cancelar</value>
   </data>
   <data name="btnOK.Text" xml:space="preserve">
-    <value>OK</value>
+    <value>Aceptar</value>
   </data>
   <data name="lblFolderPath.Text" xml:space="preserve">
-    <value>Descripción</value>
+    <value>Descripción:</value>
   </data>
   <data name="lblFilter.Text" xml:space="preserve">
     <value>Formato:</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Formato del contenido del portapapeles</value>
+    <value>ShareX - Formato de contenido del portapapeles</value>
   </data>
 </root>

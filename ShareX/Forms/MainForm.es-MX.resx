@@ -172,7 +172,7 @@
     <value>Capturar texto (OCR)...</value>
   </data>
   <data name="tsmiAutoCapture.Text" xml:space="preserve">
-    <value>Capturar automáticamente</value>
+    <value>Capturar automáticamente...</value>
   </data>
   <data name="tsmiShowCursor.Text" xml:space="preserve">
     <value>Incluir puntero</value>
@@ -559,7 +559,7 @@
     <value>Capturar texto (OCR)...</value>
   </data>
   <data name="tsmiTrayAutoCapture.Text" xml:space="preserve">
-    <value>Capturar automáticamente</value>
+    <value>Capturar automáticamente...</value>
   </data>
   <data name="tsmiTrayShowCursor.Text" xml:space="preserve">
     <value>Incluir puntero del ratón</value>
@@ -676,7 +676,7 @@
     <value>Configuración de atajos de teclado...</value>
   </data>
   <data name="tsmiTrayToggleHotkeys.Text" xml:space="preserve">
-    <value>Carpeta de capturas...</value>
+    <value>Deshabilitar atajos de teclado</value>
   </data>
   <data name="tsmiScreenshotsFolder.Text" xml:space="preserve">
     <value>Historial...</value>
@@ -685,7 +685,7 @@
     <value>Historial de imagen...</value>
   </data>
   <data name="tsmiTrayImageHistory.Text" xml:space="preserve">
-    <value>Novedades</value>
+    <value>Historial de la imagen...</value>
   </data>
   <data name="tsmiTrayShowDebugLog.Text" xml:space="preserve">
     <value>Registro de depuración...</value>
@@ -824,5 +824,26 @@
   </data>
   <data name="tsbGitHub.Text" xml:space="preserve">
     <value>GitHub</value>
+  </data>
+  <data name="tsbGitHub.ToolTipText" xml:space="preserve">
+    <value>Repositorio de GitHub</value>
+  </data>
+  <data name="tsbDiscord.ToolTipText" xml:space="preserve">
+    <value>Entra en nuestro servidor de Discord</value>
+  </data>
+  <data name="tsbTwitter.ToolTipText" xml:space="preserve">
+    <value>Síguenos en Twitter</value>
+  </data>
+  <data name="tsmiTrayVideoConverter.Text" xml:space="preserve">
+    <value>Conversor de vídeo...</value>
+  </data>
+  <data name="tsmiVideoConverter.Text" xml:space="preserve">
+    <value>Conversor de vídeo...</value>
+  </data>
+  <data name="tsbPatreon.ToolTipText" xml:space="preserve">
+    <value>Apóyanos en Patreon</value>
+  </data>
+  <data name="tsbBitcoin.ToolTipText" xml:space="preserve">
+    <value>Apóyanos usando criptomonedas</value>
   </data>
 </root>

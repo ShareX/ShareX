@@ -121,16 +121,16 @@
     <value>Cancelar</value>
   </data>
   <data name="lblFont.Text" xml:space="preserve">
-    <value>Fuente:</value>
+    <value>Tipografía:</value>
   </data>
   <data name="btnPrint.Text" xml:space="preserve">
     <value>Imprimir...</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Opciones de impresión</value>
+    <value>ShareX - Opciones de impresión</value>
   </data>
   <data name="btnChangeFont.Text" xml:space="preserve">
-    <value>Cambiar la fuente...</value>
+    <value>Cambiar tipografía...</value>
   </data>
   <data name="btnShowPreview.Text" xml:space="preserve">
     <value>Vista previa...</value>

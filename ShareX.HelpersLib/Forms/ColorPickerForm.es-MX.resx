@@ -151,10 +151,10 @@
     <value>°</value>
   </data>
   <data name="lblBrightnessPerc.Text" xml:space="preserve">
-    <value> %</value>
+    <value>%</value>
   </data>
   <data name="lblSaturationPerc.Text" xml:space="preserve">
-    <value> %</value>
+    <value>%</value>
   </data>
   <data name="rbBlue.Text" xml:space="preserve">
     <value>Azul:</value>
@@ -163,7 +163,7 @@
     <value>Verde:</value>
   </data>
   <data name="rbRed.Text" xml:space="preserve">
-    <value>Rojo</value>
+    <value>Rojo:</value>
   </data>
   <data name="rbBrightness.Text" xml:space="preserve">
     <value>Brillo:</value>
@@ -181,16 +181,16 @@
     <value>12345678</value>
   </data>
   <data name="lblCyanPerc.Text" xml:space="preserve">
-    <value> %</value>
+    <value>%</value>
   </data>
   <data name="lblMagentaPerc.Text" xml:space="preserve">
-    <value> %</value>
+    <value>%</value>
   </data>
   <data name="lblYellowPerc.Text" xml:space="preserve">
-    <value> %</value>
+    <value>%</value>
   </data>
   <data name="lblKeyPerc.Text" xml:space="preserve">
-    <value> %</value>
+    <value>%</value>
   </data>
   <data name="lblAlpha.Text" xml:space="preserve">
     <value>Alfa:</value>

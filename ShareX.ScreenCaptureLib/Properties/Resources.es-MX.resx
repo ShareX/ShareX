@@ -207,7 +207,7 @@ Distancia: {6:0.00} px / Ángulo: {7:0.00}°</value>
     <value>Habilitar animaciones</value>
   </data>
   <data name="ShapeManager_CreateContextMenu_Fill_color___" xml:space="preserve">
-    <value>Color de relleno:</value>
+    <value>Color de relleno...</value>
   </data>
   <data name="ShapeManager_CreateContextMenu_Fixed_size_region_mode" xml:space="preserve">
     <value>Modo de región con tamaño fijo</value>
@@ -216,7 +216,7 @@ Distancia: {6:0.00} px / Ángulo: {7:0.00}°</value>
     <value>Alto:</value>
   </data>
   <data name="ShapeManager_CreateContextMenu_Highlight_color___" xml:space="preserve">
-    <value>Color de resalto:</value>
+    <value>Color de resalto...</value>
   </data>
   <data name="ShapeManager_CreateContextMenu_Magnifier_pixel_count_" xml:space="preserve">
     <value>Número de píxeles de la lupa:</value>
@@ -225,7 +225,7 @@ Distancia: {6:0.00} px / Ángulo: {7:0.00}°</value>
     <value>Tamaño del píxel de la lupa:</value>
   </data>
   <data name="ShapeManager_CreateContextMenu_Multi_region_mode" xml:space="preserve">
-    <value>Modo de varias regiones:</value>
+    <value>Modo de varias regiones</value>
   </data>
   <data name="ShapeManager_CreateContextMenu_Options" xml:space="preserve">
     <value>Opciones</value>
@@ -246,7 +246,7 @@ Distancia: {6:0.00} px / Ángulo: {7:0.00}°</value>
     <value>Mostrar posición y tamaño</value>
   </data>
   <data name="ShapeManager_CreateContextMenu_Show_screen_wide_crosshair" xml:space="preserve">
-    <value>Mostrar retículo:</value>
+    <value>Mostrar retículo</value>
   </data>
   <data name="ShapeManager_CreateContextMenu_Square_shape_magnifier" xml:space="preserve">
     <value>Lupa cuadrada</value>
@@ -276,7 +276,7 @@ Distancia: {6:0.00} px / Ángulo: {7:0.00}°</value>
     <value>Cancelar tarea (Esc)</value>
   </data>
   <data name="ShapeManager_CreateToolbar_CanvasSize" xml:space="preserve">
-    <value>Tamaño del lienzo:</value>
+    <value>Tamaño del lienzo...</value>
   </data>
   <data name="ShapeManager_CreateToolbar_CaptureRegions" xml:space="preserve">
     <value>Capturar regiones</value>
@@ -330,7 +330,7 @@ Distancia: {6:0.00} px / Ángulo: {7:0.00}°</value>
     <value>Insertar imagen desde pantalla...</value>
   </data>
   <data name="ShapeManager_CreateToolbar_InterpolationMode" xml:space="preserve">
-    <value>Modo de interpolación</value>
+    <value>Modo de interpolación:</value>
   </data>
   <data name="ShapeManager_CreateToolbar_LastRegion" xml:space="preserve">
     <value>Capturar última región</value>

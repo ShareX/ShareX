@@ -130,9 +130,15 @@
     <value>Después de capturar</value>
   </data>
   <data name="tpBeforeUpload.Text" xml:space="preserve">
-    <value>Antes de subir</value>
+    <value>Destinos</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Tareas después de capturar</value>
+    <value>ShareX - Después de capturar</value>
+  </data>
+  <data name="lblFileName.Text" xml:space="preserve">
+    <value>Nombre del archivo:</value>
+  </data>
+  <data name="tpAfterUpload.Text" xml:space="preserve">
+    <value>Después de subir</value>
   </data>
 </root>

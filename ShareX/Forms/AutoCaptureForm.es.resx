@@ -139,19 +139,19 @@
     <value>segundos</value>
   </data>
   <data name="lblDuration.Text" xml:space="preserve">
-    <value>Tiempo de repetición</value>
+    <value>Tiempo de repetición:</value>
   </data>
   <data name="cbWaitUploads.Text" xml:space="preserve">
-    <value>Espere hasta completar las tareas</value>
+    <value>Esperar hasta que finalicen las tareas</value>
   </data>
   <data name="cbAutoMinimize.Text" xml:space="preserve">
-    <value>Auto-minimizar a la bandeja</value>
+    <value>Minimizar en el área de notificación automáticamente</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Capturar automáticamente</value>
+    <value>Share X - Captura automática</value>
   </data>
   <data name="niTray.Text" xml:space="preserve">
-    <value>ShareX - Capturar automáticamente</value>
+    <value>Share X - Captura automática</value>
   </data>
   <data name="rbFullscreen.Text" xml:space="preserve">
     <value>Pantalla completa</value>

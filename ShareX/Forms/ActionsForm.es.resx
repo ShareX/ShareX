@@ -124,7 +124,7 @@
     <value>Cancelar</value>
   </data>
   <data name="btnOK.Text" xml:space="preserve">
-    <value>OK</value>
+    <value>Aceptar</value>
   </data>
   <data name="lblArgs.Text" xml:space="preserve">
     <value>Argumentos:</value>
@@ -133,12 +133,18 @@
     <value>Nombre:</value>
   </data>
   <data name="lblExtensions.Text" xml:space="preserve">
-    <value>Filtro de extensión: (Ejemplo: mp4 jpg png)</value>
+    <value>Filtro de extensión: (ejemplo: jpg png mp4)</value>
   </data>
   <data name="lblPath.Text" xml:space="preserve">
-    <value>Ruta de acceso:</value>
+    <value>Ubicación del archivo:</value>
   </data>
   <data name="lblOutputExtension.Text" xml:space="preserve">
-    <value>Extensión de nombre de archivo de salida: (Vacío = Usar el mismo nombre)</value>
+    <value>Extensión del archivo final: (dejar en blanco para usar el mismo nombre)</value>
+  </data>
+  <data name="cbDeleteInputFile.Text" xml:space="preserve">
+    <value>Eliminar archivo de entrada</value>
+  </data>
+  <data name="cbHiddenWindow.Text" xml:space="preserve">
+    <value>Ocultar ventana</value>
   </data>
 </root>

@@ -157,13 +157,13 @@
     <value>Error al tuitear</value>
   </data>
   <data name="UploadersConfigForm_BoxListFolders_Box_refresh_folders_list_failed" xml:space="preserve">
-    <value>La actualización de carpetas de Box falló.</value>
+    <value>La actualización de carpetas de Box falló</value>
   </data>
   <data name="UploadersConfigForm_ConnectSFTPAccount_Key_file_not_found" xml:space="preserve">
     <value>El archivo clave no existe.</value>
   </data>
   <data name="UploadersConfigForm_eiCustomUploaders_ExportRequested_DestinationTypeMustBeConfigured" xml:space="preserve">
-    <value>Debe configurarse "Tipo de destino"</value>
+    <value>Debe configurarse "Tipo de destino".</value>
   </data>
   <data name="UploadersConfigForm_eiCustomUploaders_ExportRequested_RequestURLMustBeConfigured" xml:space="preserve">
     <value>Debe configurarse "Petición de URL".</value>
@@ -193,7 +193,7 @@
     <value>Acceso correcto.</value>
   </data>
   <data name="UploadersConfigForm_MegaConfigureTab_Click_refresh_button" xml:space="preserve">
-    <value>Clic en el botón de actualizar.</value>
+    <value>Clic en el botón de actualizar</value>
   </data>
   <data name="UploadersConfigForm_MegaConfigureTab_Configured" xml:space="preserve">
     <value>Configurado</value>
@@ -240,5 +240,8 @@ Carpetas creadas:</value>
   </data>
   <data name="txtB2BucketWatermark" xml:space="preserve">
     <value>Opcional, solo se usa cuando no se estableció un bucket al crear la clave</value>
+  </data>
+  <data name="GoogleDrive_MyDrive_My_drive" xml:space="preserve">
+    <value>Google Drive</value>
   </data>
 </root>

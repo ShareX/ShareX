@@ -147,4 +147,7 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Degradado</value>
   </data>
+  <data name="btnReverse.Text" xml:space="preserve">
+    <value>Invertir</value>
+  </data>
 </root>

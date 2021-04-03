@@ -124,15 +124,15 @@
     <value>Duplicar</value>
   </data>
   <data name="btnRemove.Text" xml:space="preserve">
-    <value>Quitar</value>
+    <value>Eliminar</value>
   </data>
   <data name="btnEdit.Text" xml:space="preserve">
     <value>Editar...</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Configuración de teclas de acceso rápido</value>
+    <value>ShareX - Configuración de atajos de teclado</value>
   </data>
   <data name="btnReset.Text" xml:space="preserve">
-    <value>Restaurar teclas de acceso rápido predeterminadas</value>
+    <value>Restaurar teclas de acceso rápido predeterminados...</value>
   </data>
 </root>
