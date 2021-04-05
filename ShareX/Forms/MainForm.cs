@@ -981,6 +981,7 @@ namespace ShareX
             HelpersOptions.URLEncodeIgnoreEmoji = Program.Settings.URLEncodeIgnoreEmoji;
             HelpersOptions.DefaultCopyImageFillBackground = Program.Settings.DefaultClipboardCopyImageFillBackground;
             HelpersOptions.UseAlternativeClipboardCopyImage = Program.Settings.UseAlternativeClipboardCopyImage;
+            HelpersOptions.UseAlternativeClipboardGetImage = Program.Settings.UseAlternativeClipboardGetImage;
             HelpersOptions.RotateImageByExifOrientationData = Program.Settings.RotateImageByExifOrientationData;
             HelpersOptions.BrowserPath = Program.Settings.BrowserPath;
             HelpersOptions.RecentColors = Program.Settings.RecentColors;

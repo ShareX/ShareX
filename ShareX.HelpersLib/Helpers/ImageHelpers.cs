@@ -864,7 +864,7 @@ namespace ShareX.HelpersLib
 
         public static bool IsImageTransparent(Bitmap bmp)
         {
-            if (bmp.PixelFormat == PixelFormat.Format32bppArgb)
+            if (bmp.PixelFormat == PixelFormat.Format32bppArgb || bmp.PixelFormat == PixelFormat.Format32bppPArgb)
             {
                 using (UnsafeBitmap unsafeBitmap = new UnsafeBitmap(bmp, true, ImageLockMode.ReadOnly))
                 {
