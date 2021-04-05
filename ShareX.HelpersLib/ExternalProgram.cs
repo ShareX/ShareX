@@ -107,7 +107,7 @@ namespace ShareX.HelpersLib
                                 CreateNoWindow = HiddenWindow
                             };
 
-                            DebugHelper.WriteLine($"Action input: \"{inputPath}\" ({Helpers.GetFileSizeReadable(inputPath)})");
+                            DebugHelper.WriteLine($"Action input: \"{inputPath}\" [{Helpers.GetFileSizeReadable(inputPath)}]");
                             DebugHelper.WriteLine($"Action run: \"{psi.FileName}\" {psi.Arguments}");
 
                             process.StartInfo = psi;
@@ -117,7 +117,7 @@ namespace ShareX.HelpersLib
 
                         if (!string.IsNullOrEmpty(outputPath) && File.Exists(outputPath))
                         {
-                            DebugHelper.WriteLine($"Action output: \"{outputPath}\" ({Helpers.GetFileSizeReadable(outputPath)})");
+                            DebugHelper.WriteLine($"Action output: \"{outputPath}\" [{Helpers.GetFileSizeReadable(outputPath)}]");
 
                             if (DeleteInputFile && !inputPath.Equals(outputPath, StringComparison.OrdinalIgnoreCase))
                             {

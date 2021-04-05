@@ -2466,6 +2466,7 @@
             this.lvActions.AllowItemDrag = true;
             resources.ApplyResources(this.lvActions, "lvActions");
             this.lvActions.AutoFillColumn = true;
+            this.lvActions.AutoFillColumnIndex = 2;
             this.lvActions.CheckBoxes = true;
             this.lvActions.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.chActionsName,
