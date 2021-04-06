@@ -45,6 +45,7 @@
             this.flpOrientation = new System.Windows.Forms.FlowLayoutPanel();
             this.rbOrientationHorizontal = new System.Windows.Forms.RadioButton();
             this.rbOrientationVertical = new System.Windows.Forms.RadioButton();
+            this.cbAutoFillBackground = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.nudSpace)).BeginInit();
             this.flpOrientation.SuspendLayout();
             this.SuspendLayout();
@@ -167,6 +168,13 @@
             this.rbOrientationVertical.UseVisualStyleBackColor = true;
             this.rbOrientationVertical.CheckedChanged += new System.EventHandler(this.rbOrientationVertical_CheckedChanged);
             // 
+            // cbAutoFillBackground
+            // 
+            resources.ApplyResources(this.cbAutoFillBackground, "cbAutoFillBackground");
+            this.cbAutoFillBackground.Name = "cbAutoFillBackground";
+            this.cbAutoFillBackground.UseVisualStyleBackColor = true;
+            this.cbAutoFillBackground.CheckedChanged += new System.EventHandler(this.cbAutoFillBackground_CheckedChanged);
+            // 
             // ImageCombinerForm
             // 
             this.AcceptButton = this.btnCombine;
@@ -174,6 +182,7 @@
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.SystemColors.Window;
+            this.Controls.Add(this.cbAutoFillBackground);
             this.Controls.Add(this.flpOrientation);
             this.Controls.Add(this.cbAlignment);
             this.Controls.Add(this.lblImageAlignment);
@@ -216,5 +225,6 @@
         private System.Windows.Forms.FlowLayoutPanel flpOrientation;
         private System.Windows.Forms.RadioButton rbOrientationHorizontal;
         private System.Windows.Forms.RadioButton rbOrientationVertical;
+        private System.Windows.Forms.CheckBox cbAutoFillBackground;
     }
 }

@@ -1857,11 +1857,11 @@ namespace ShareX.HelpersLib
             return null;
         }
 
-        public static Bitmap CombineImages(IEnumerable<Image> images, Orientation orientation = Orientation.Vertical,
-            ImageCombinerAlignment alignment = ImageCombinerAlignment.LeftOrTop, int space = 0)
+        public static Bitmap CombineImages(List<Bitmap> images, Orientation orientation = Orientation.Vertical,
+            ImageCombinerAlignment alignment = ImageCombinerAlignment.LeftOrTop, int space = 0, bool autoFillBackground = false)
         {
             int width, height;
-            int imageCount = images.Count();
+            int imageCount = images.Count;
             int spaceSize = space * (imageCount - 1);
 
             if (orientation == Orientation.Vertical)
@@ -1882,8 +1882,16 @@ namespace ShareX.HelpersLib
                 g.SetHighQuality();
                 int position = 0;
 
-                foreach (Image image in images)
+                for (int i = 0; i < imageCount; i++)
                 {
+                    Bitmap image = images[i];
+
+                    if (autoFillBackground && i == 0)
+                    {
+                        Color backgroundColor = image.GetPixel(image.Width - 1, image.Height - 1);
+                        g.Clear(backgroundColor);
+                    }
+
                     Rectangle rect;
 
                     if (orientation == Orientation.Vertical)

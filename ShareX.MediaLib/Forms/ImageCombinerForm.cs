@@ -57,6 +57,7 @@ namespace ShareX.MediaLib
 
             UpdateAlignmentComboBox();
             nudSpace.SetValue(Options.Space);
+            cbAutoFillBackground.Checked = Options.AutoFillBackground;
         }
 
         private void UpdateOrientation()
@@ -164,6 +165,11 @@ namespace ShareX.MediaLib
             Options.Space = (int)nudSpace.Value;
         }
 
+        private void cbAutoFillBackground_CheckedChanged(object sender, EventArgs e)
+        {
+            Options.AutoFillBackground = cbAutoFillBackground.Checked;
+        }
+
         private void btnCombine_Click(object sender, EventArgs e)
         {
             if (lvImages.Items.Count > 0)
@@ -189,7 +195,7 @@ namespace ShareX.MediaLib
 
                     if (images.Count > 1)
                     {
-                        Bitmap output = ImageHelpers.CombineImages(images, Options.Orientation, Options.Alignment, Options.Space);
+                        Bitmap output = ImageHelpers.CombineImages(images, Options.Orientation, Options.Alignment, Options.Space, Options.AutoFillBackground);
 
                         OnProcessRequested(output);
                     }
