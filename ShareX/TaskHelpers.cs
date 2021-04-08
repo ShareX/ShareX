@@ -634,12 +634,19 @@ namespace ShareX
         {
             if (!taskSettings.ExternalPrograms.Exists(x => x.Name == name))
             {
-                string filePath = RegistryHelpers.SearchProgramPath(fileName);
-
-                if (!string.IsNullOrEmpty(filePath))
+                try
                 {
-                    ExternalProgram externalProgram = new ExternalProgram(name, filePath);
-                    taskSettings.ExternalPrograms.Add(externalProgram);
+                    string filePath = RegistryHelpers.SearchProgramPath(fileName);
+
+                    if (!string.IsNullOrEmpty(filePath))
+                    {
+                        ExternalProgram externalProgram = new ExternalProgram(name, filePath);
+                        taskSettings.ExternalPrograms.Add(externalProgram);
+                    }
+                }
+                catch (Exception e)
+                {
+                    DebugHelper.WriteException(e);
                 }
             }
         }
