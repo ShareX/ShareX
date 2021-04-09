@@ -1,5 +1,7 @@
 ﻿#region License Information (GPL v3)
 
+using System.Net.Mime;
+using System.Text;
 /*
     ShareX - A program that allows you to take screenshots and share any file type
     Copyright (c) 2007-2020 ShareX Team
@@ -46,21 +48,21 @@ namespace ShareX.HelpersLib
 
         public override string ToString()
         {
-            string text = "";
+            StringBuilder text = new StringBuilder();
 
             if (IsCommand)
             {
-                text += "-";
+                text.Append("-");
             }
 
-            text += Command;
+            text.Append(Command);
 
             if (!string.IsNullOrEmpty(Parameter))
             {
-                text += " \"" + Parameter + "\"";
+                text.Append($" \"{Parameter}\"");
             }
 
-            return text;
+            return text.ToString();
         }
     }
 }
