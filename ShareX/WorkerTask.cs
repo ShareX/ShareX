@@ -816,6 +816,7 @@ namespace ShareX
                     if (result != null)
                     {
                         Info.Result.ShortenedURL = result.ShortenedURL;
+                        Info.Result.DeletionURL = Info.Result.DeletionURL ?? result.DeletionURL;
                         Info.Result.Errors.AddRange(result.Errors);
                     }
                 }
@@ -826,6 +827,7 @@ namespace ShareX
 
                     if (result != null)
                     {
+                        Info.Result.DeletionURL = Info.Result.DeletionURL ?? result.DeletionURL;
                         Info.Result.Errors.AddRange(result.Errors);
                     }
 
