@@ -76,6 +76,7 @@ namespace ShareX.ScreenCaptureLib
         public bool RememberMenuState = false;
         public bool MenuCollapsed = false;
         public Point MenuPosition = Point.Empty;
+        public int InputDelay = 500;
 
         public bool SwitchToDrawingToolAfterSelection = false;
         public bool SwitchToSelectionToolAfterDrawing = false;

@@ -391,12 +391,10 @@ namespace ShareX.ScreenCaptureLib
                 PanningStrech.Y -= deltaY;
             }
 
-            Size panLimitSize = new Size(
-                Math.Min((int)Math.Round(ClientArea.Width * 0.25f), CanvasRectangle.Width),
+            Size panLimitSize = new Size(Math.Min((int)Math.Round(ClientArea.Width * 0.25f), CanvasRectangle.Width),
                 Math.Min((int)Math.Round(ClientArea.Height * 0.25f), CanvasRectangle.Height));
 
-            Rectangle limitRectangle = new Rectangle(
-                ClientArea.X + panLimitSize.Width, ClientArea.Y + panLimitSize.Height,
+            Rectangle limitRectangle = new Rectangle(ClientArea.X + panLimitSize.Width, ClientArea.Y + panLimitSize.Height,
                 ClientArea.Width - (panLimitSize.Width * 2), ClientArea.Height - (panLimitSize.Height * 2));
 
             deltaX = Math.Max(deltaX, limitRectangle.Left - CanvasRectangle.Right);
@@ -454,9 +452,8 @@ namespace ShareX.ScreenCaptureLib
 
         private void UpdateCenterOffset()
         {
-            CanvasCenterOffset = new Vector2(
-                (CanvasRectangle.X + (CanvasRectangle.Width / 2f)) - (ClientArea.Width / 2f),
-                (CanvasRectangle.Y + (CanvasRectangle.Height / 2f)) - (ClientArea.Height / 2f));
+            CanvasCenterOffset = new Vector2(CanvasRectangle.X + (CanvasRectangle.Width / 2f) - (ClientArea.Width / 2f),
+                CanvasRectangle.Y + (CanvasRectangle.Height / 2f) - (ClientArea.Height / 2f));
         }
 
         public void CenterCanvas()
@@ -574,7 +571,7 @@ namespace ShareX.ScreenCaptureLib
                 return;
             }
 
-            if (!isKeyAllowed && timerStart.ElapsedMilliseconds < 1000)
+            if (!isKeyAllowed && timerStart.ElapsedMilliseconds < Options.InputDelay)
             {
                 return;
             }
