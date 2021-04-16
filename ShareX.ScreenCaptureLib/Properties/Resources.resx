@@ -166,6 +166,9 @@
   <data name="ShapeManager_CreateToolbar_UseLetters" xml:space="preserve">
     <value>Use letters</value>
   </data>
+  <data name="ShapeManager_CreateToolbar_UseRomanNumerals" xml:space="preserve">
+    <value>Use Roman Numerals</value>
+  </data>
   <data name="ShapeManager_CreateToolbar_ImageSize" xml:space="preserve">
     <value>Image size...</value>
   </data>

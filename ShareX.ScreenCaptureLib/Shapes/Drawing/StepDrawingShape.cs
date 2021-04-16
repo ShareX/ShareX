@@ -40,7 +40,7 @@ namespace ShareX.ScreenCaptureLib
         public int FontSize { get; set; }
         public int Number { get; set; }
         public bool UseLetters { get; set; }
-
+        public bool UseRomanNumerals { get; set; }
         public bool IsTailActive { get; set; }
 
         private Point tailPosition;
@@ -112,6 +112,7 @@ namespace ShareX.ScreenCaptureLib
             ShadowOffset = AnnotationOptions.ShadowOffset;
             FontSize = AnnotationOptions.StepFontSize;
             UseLetters = AnnotationOptions.StepUseLetters;
+            UseRomanNumerals = AnnotationOptions.StepUseRomanNumerals;
         }
 
         public override void OnConfigSave()
@@ -124,6 +125,7 @@ namespace ShareX.ScreenCaptureLib
             AnnotationOptions.ShadowOffset = ShadowOffset;
             AnnotationOptions.StepFontSize = FontSize;
             AnnotationOptions.StepUseLetters = UseLetters;
+            AnnotationOptions.StepUseRomanNumerals = UseRomanNumerals;
         }
 
         public override void OnDraw(Graphics g)
@@ -134,6 +136,10 @@ namespace ShareX.ScreenCaptureLib
         protected void DrawNumber(Graphics g)
         {
             string text = UseLetters ? Helpers.NumberToLetters(Number) : Number.ToString();
+            if (UseRomanNumerals)
+            {
+                text = Helpers.NumberToRomanNumeral(Number);
+            }
 
             using (Font font = new Font(FontFamily.GenericSansSerif, FontSize, FontStyle.Bold))
             {

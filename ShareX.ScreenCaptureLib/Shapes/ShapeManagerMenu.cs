@@ -48,7 +48,7 @@ namespace ShareX.ScreenCaptureLib
         private ToolStripEx tsMain;
         private ToolStripButton tsbSaveImage, tsbBorderColor, tsbFillColor, tsbHighlightColor;
         private ToolStripDropDownButton tsddbShapeOptions;
-        private ToolStripMenuItem tsmiShadow, tsmiShadowColor, tsmiStepUseLetters, tsmiUndo, tsmiDuplicate, tsmiDelete, tsmiDeleteAll,
+        private ToolStripMenuItem tsmiShadow, tsmiShadowColor, tsmiStepUseLetters, tsmiStepUseRomanNumerals, tsmiUndo, tsmiDuplicate, tsmiDelete, tsmiDeleteAll,
             tsmiMoveTop, tsmiMoveUp, tsmiMoveDown, tsmiMoveBottom, tsmiRegionCapture, tsmiQuickCrop, tsmiShowMagnifier;
         private ToolStripLabeledNumericUpDown tslnudBorderSize, tslnudCornerRadius, tslnudCenterPoints, tslnudBlurRadius, tslnudPixelateSize, tslnudStepFontSize,
             tslnudMagnifierPixelCount, tslnudStartingStepValue, tslnudMagnifyStrength;
@@ -611,11 +611,25 @@ namespace ShareX.ScreenCaptureLib
             tsmiStepUseLetters.Checked = false;
             tsmiStepUseLetters.CheckOnClick = true;
             tsmiStepUseLetters.Click += (sender, e) =>
-            {
+            {                
+                tsmiStepUseRomanNumerals.Checked = false;
                 AnnotationOptions.StepUseLetters = tsmiStepUseLetters.Checked;
+                AnnotationOptions.StepUseRomanNumerals = false;
                 UpdateCurrentShape();
             };
             tsddbShapeOptions.DropDownItems.Add(tsmiStepUseLetters);
+
+            tsmiStepUseRomanNumerals = new ToolStripMenuItem(Resources.ShapeManager_CreateToolbar_UseRomanNumerals);
+            tsmiStepUseRomanNumerals.Checked = false;
+            tsmiStepUseRomanNumerals.CheckOnClick = true;
+            tsmiStepUseRomanNumerals.Click += (sender, e) =>
+            {
+                tsmiStepUseLetters.Checked = false;
+                AnnotationOptions.StepUseRomanNumerals = tsmiStepUseRomanNumerals.Checked;
+                AnnotationOptions.StepUseLetters = false;                
+                UpdateCurrentShape();
+            };
+            tsddbShapeOptions.DropDownItems.Add(tsmiStepUseRomanNumerals);
 
             tsmiShadow = new ToolStripMenuItem(Resources.ShapeManager_CreateToolbar_DropShadow);
             tsmiShadow.Checked = true;

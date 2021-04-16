@@ -1921,6 +1921,15 @@ namespace ShareX.ScreenCaptureLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Use Roman Numerals.
+        /// </summary>
+        internal static string ShapeManager_CreateToolbar_UseRomanNumerals {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateToolbar_UseRomanNumerals", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Cursor type:.
         /// </summary>
         internal static string ShapeManager_CursorType {
