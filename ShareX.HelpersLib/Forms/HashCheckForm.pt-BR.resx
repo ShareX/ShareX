@@ -174,4 +174,16 @@
   <data name="lblHashCheckHex.Text" xml:space="preserve">
     <value>Hexadecimal:</value>
   </data>
+  <data name="btnFilePathBrowse2.Text" xml:space="preserve">
+    <value>Abrir...</value>
+  </data>
+  <data name="cbCompareTwoFiles.Text" xml:space="preserve">
+    <value>Comparar dois arquivos</value>
+  </data>
+  <data name="lblFilePath.Text" xml:space="preserve">
+    <value>Caminho do arquivo:</value>
+  </data>
+  <data name="lblFilePath2.Text" xml:space="preserve">
+    <value>Caminho de arquivo:</value>
+  </data>
 </root>

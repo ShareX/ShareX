@@ -188,7 +188,7 @@ Pastas criadas:</value>
     <value>Procurar por um arquivo de chave...</value>
   </data>
   <data name="UploadersConfigForm_LoadSettings_Parent_album_path_e_g_" xml:space="preserve">
-    <value>Local do álbum pai, por exemplo</value>
+    <value>Local do álbum pai, por exemplo.</value>
   </data>
   <data name="UploadersConfigForm_OneDriveAddFolder_Querying_folders___" xml:space="preserve">
     <value>Consultando pastas...</value>
@@ -201,5 +201,53 @@ Pastas criadas:</value>
   </data>
   <data name="UploadersConfigForm_Remove_all_custom_uploaders_Confirmation" xml:space="preserve">
     <value>Remover todos destinos customizados?</value>
+  </data>
+  <data name="OAuthControl_OAuthControl_PasteVerificationCodeHere" xml:space="preserve">
+    <value>Cole o código de verificação aqui</value>
+  </data>
+  <data name="UploadersConfigForm_ConnectSFTPAccount_Key_file_not_found" xml:space="preserve">
+    <value>O arquivo de chave não existe.</value>
+  </data>
+  <data name="UploadersConfigForm_eiCustomUploaders_ExportRequested_RequestURLMustBeConfigured" xml:space="preserve">
+    <value>"Solicitar URL" deve ser configurado.</value>
+  </data>
+  <data name="UploadersConfigForm_eiCustomUploaders_ExportRequested_DestinationTypeMustBeConfigured" xml:space="preserve">
+    <value>O "Tipo de destino" deve ser configurado.</value>
+  </data>
+  <data name="CustomUploaderItem_GetRequestURL_RequestURLMustBeConfigured" xml:space="preserve">
+    <value>"Solicitar URL" deve ser configurado.</value>
+  </data>
+  <data name="CustomUploaderItem_GetFileFormName_FileFormNameMustBeConfigured" xml:space="preserve">
+    <value>O "nome do formulário do arquivo" deve ser configurado.</value>
+  </data>
+  <data name="UploadersConfigForm_UpdatePastebinStatus_NotLoggedIn" xml:space="preserve">
+    <value>Não conectado.</value>
+  </data>
+  <data name="UploadersConfigForm_UpdatePastebinStatus_LoggedIn" xml:space="preserve">
+    <value>Conectado.</value>
+  </data>
+  <data name="OAuthControl_Status_NotLoggedIn" xml:space="preserve">
+    <value>Não conectado.</value>
+  </data>
+  <data name="OAuthControl_Status_LoggedIn" xml:space="preserve">
+    <value>Conectado.</value>
+  </data>
+  <data name="OAuthControl_Status_LoginFailed" xml:space="preserve">
+    <value>Falha na autenticação.</value>
+  </data>
+  <data name="txtB2BucketWatermark" xml:space="preserve">
+    <value>Opcional, usado apenas se você não definiu um intervalo quando fez a chave</value>
+  </data>
+  <data name="DuplicateNameNotAllowed" xml:space="preserve">
+    <value>Não é permitido nomes duplicados.</value>
+  </data>
+  <data name="GoogleDrive_MyDrive_My_drive" xml:space="preserve">
+    <value>Meu drive</value>
+  </data>
+  <data name="ExportFailed" xml:space="preserve">
+    <value>A exportação falhou.</value>
+  </data>
+  <data name="LoggedInAs0" xml:space="preserve">
+    <value>Conectado como {0}.</value>
   </data>
 </root>

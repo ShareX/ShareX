@@ -144,4 +144,52 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Entrada de texto</value>
   </data>
+  <data name="btnTextColor.ToolTip" xml:space="preserve">
+    <value>Cor do texto</value>
+  </data>
+  <data name="btnGradient.ToolTip" xml:space="preserve">
+    <value>Gradiente</value>
+  </data>
+  <data name="cbBold.ToolTip" xml:space="preserve">
+    <value>Negrito</value>
+  </data>
+  <data name="cbItalic.ToolTip" xml:space="preserve">
+    <value>Itálico</value>
+  </data>
+  <data name="cbUnderline.ToolTip" xml:space="preserve">
+    <value>Sublinhado</value>
+  </data>
+  <data name="btnAlignmentHorizontal.ToolTip" xml:space="preserve">
+    <value>Alinhamento horizontal</value>
+  </data>
+  <data name="btnAlignmentVertical.ToolTip" xml:space="preserve">
+    <value>Alinhamento vertical</value>
+  </data>
+  <data name="btnOK.Text" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="btnCancel.Text" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
+  <data name="tsmiEnableGradient.Text" xml:space="preserve">
+    <value>Habilitar gradiente</value>
+  </data>
+  <data name="tsmiSecondColor.Text" xml:space="preserve">
+    <value>Segunda cor do texto ...</value>
+  </data>
+  <data name="tsrbmiGradientHorizontal.Text" xml:space="preserve">
+    <value>Horizontal</value>
+  </data>
+  <data name="tsrbmiGradientVertical.Text" xml:space="preserve">
+    <value>Vertical</value>
+  </data>
+  <data name="tsrbmiGradientForwardDiagonal.Text" xml:space="preserve">
+    <value>Diagonal para frente</value>
+  </data>
+  <data name="tsrbmiGradientBackwardDiagonal.Text" xml:space="preserve">
+    <value>Diagonal para trás</value>
+  </data>
+  <data name="tsmiGradientMode.Text" xml:space="preserve">
+    <value>Modo gradiente</value>
+  </data>
 </root>
