@@ -48,12 +48,12 @@ namespace ShareX.ScreenCaptureLib
         private ToolStripEx tsMain;
         private ToolStripButton tsbSaveImage, tsbBorderColor, tsbFillColor, tsbHighlightColor;
         private ToolStripDropDownButton tsddbShapeOptions;
-        private ToolStripMenuItem tsmiShadow, tsmiShadowColor, tsmiStepUseLetters, tsmiUndo, tsmiDuplicate, tsmiDelete, tsmiDeleteAll,
+        private ToolStripMenuItem tsmiShadow, tsmiShadowColor, tsmiUndo, tsmiDuplicate, tsmiDelete, tsmiDeleteAll,
             tsmiMoveTop, tsmiMoveUp, tsmiMoveDown, tsmiMoveBottom, tsmiRegionCapture, tsmiQuickCrop, tsmiShowMagnifier;
         private ToolStripLabeledNumericUpDown tslnudBorderSize, tslnudCornerRadius, tslnudCenterPoints, tslnudBlurRadius, tslnudPixelateSize, tslnudStepFontSize,
             tslnudMagnifierPixelCount, tslnudStartingStepValue, tslnudMagnifyStrength;
         private ToolStripLabel tslDragLeft, tslDragRight;
-        private ToolStripLabeledComboBox tscbBorderStyle, tscbArrowHeadDirection, tscbImageInterpolationMode, tscbCursorTypes;
+        private ToolStripLabeledComboBox tscbBorderStyle, tscbArrowHeadDirection, tscbImageInterpolationMode, tscbCursorTypes, tscbStepUseType;
 
         internal void CreateToolbar()
         {
@@ -607,15 +607,16 @@ namespace ShareX.ScreenCaptureLib
             };
             tsddbShapeOptions.DropDownItems.Add(tslnudStartingStepValue);
 
-            tsmiStepUseLetters = new ToolStripMenuItem(Resources.ShapeManager_CreateToolbar_UseLetters);
-            tsmiStepUseLetters.Checked = false;
-            tsmiStepUseLetters.CheckOnClick = true;
-            tsmiStepUseLetters.Click += (sender, e) =>
+            tscbStepUseType = new ToolStripLabeledComboBox(Resources.ShapeManager_CreateToolbar_StepType);
+            tscbStepUseType.Content.AddRange(Helpers.GetLocalizedEnumDescriptions<StepType>());
+            tscbStepUseType.Content.SelectedIndexChanged += (sender, e) =>
             {
-                AnnotationOptions.StepUseLetters = tsmiStepUseLetters.Checked;
+                AnnotationOptions.StepUseType = (StepType)tscbStepUseType.Content.SelectedIndex;
+                tscbStepUseType.Invalidate();
                 UpdateCurrentShape();
             };
-            tsddbShapeOptions.DropDownItems.Add(tsmiStepUseLetters);
+            tscbStepUseType.Content.SelectedIndex = 0;
+            tsddbShapeOptions.DropDownItems.Add(tscbStepUseType);            
 
             tsmiShadow = new ToolStripMenuItem(Resources.ShapeManager_CreateToolbar_DropShadow);
             tsmiShadow.Checked = true;
@@ -1421,7 +1422,7 @@ namespace ShareX.ScreenCaptureLib
 
             tslnudStepFontSize.Content.Value = AnnotationOptions.StepFontSize;
             tslnudStartingStepValue.Content.Value = StartingStepNumber;
-            tsmiStepUseLetters.Checked = AnnotationOptions.StepUseLetters;
+            tscbStepUseType.Content.SelectedIndex = (int)AnnotationOptions.StepUseType;
 
             tslnudMagnifyStrength.Content.Value = AnnotationOptions.MagnifyStrength;
 
@@ -1533,7 +1534,7 @@ namespace ShareX.ScreenCaptureLib
             tscbArrowHeadDirection.Visible = shapeType == ShapeType.DrawingArrow;
             tscbImageInterpolationMode.Visible = shapeType == ShapeType.DrawingImage || shapeType == ShapeType.DrawingImageScreen || shapeType == ShapeType.DrawingMagnify;
             tslnudStartingStepValue.Visible = shapeType == ShapeType.DrawingStep;
-            tslnudStepFontSize.Visible = tsmiStepUseLetters.Visible = shapeType == ShapeType.DrawingStep;
+            tslnudStepFontSize.Visible = tscbStepUseType.Visible = shapeType == ShapeType.DrawingStep;
             tslnudMagnifyStrength.Visible = shapeType == ShapeType.DrawingMagnify;
             tscbCursorTypes.Visible = shapeType == ShapeType.DrawingCursor;
             tslnudBlurRadius.Visible = shapeType == ShapeType.EffectBlur;

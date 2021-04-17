@@ -163,9 +163,6 @@
   <data name="ShapeManager_CreateContextMenu_Multi_region_mode" xml:space="preserve">
     <value>Multi region mode</value>
   </data>
-  <data name="ShapeManager_CreateToolbar_UseLetters" xml:space="preserve">
-    <value>Use letters</value>
-  </data>
   <data name="ShapeManager_CreateToolbar_ImageSize" xml:space="preserve">
     <value>Image size...</value>
   </data>
@@ -739,5 +736,8 @@ X: {4} Y: {5}</value>
   </data>
   <data name="MenuIconSize" xml:space="preserve">
     <value>Menu icon size:</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_StepType" xml:space="preserve">
+    <value>Use type:</value>
   </data>
 </root>

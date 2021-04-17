@@ -1505,6 +1505,35 @@ namespace ShareX.HelpersLib
             return result;
         }
 
+        private static string GetNextRomanNumeralStep(ref int num, int step, string numeral)
+        {
+            string result = "";
+            if (num >= step)
+            {
+                result = numeral.Repeat(num / step);
+                num %= step;
+            }
+            return result;
+        }
+        public static string NumberToRomanNumeral(int num)
+        {
+            string result = "";          
+            result += GetNextRomanNumeralStep(ref num, 1000, "M");
+            result += GetNextRomanNumeralStep(ref num, 900, "CM");
+            result += GetNextRomanNumeralStep(ref num, 500, "D");
+            result += GetNextRomanNumeralStep(ref num, 400, "CD");
+            result += GetNextRomanNumeralStep(ref num, 100, "C");
+            result += GetNextRomanNumeralStep(ref num, 90, "XC");
+            result += GetNextRomanNumeralStep(ref num, 50, "L");
+            result += GetNextRomanNumeralStep(ref num, 40, "XL");
+            result += GetNextRomanNumeralStep(ref num, 10, "X");
+            result += GetNextRomanNumeralStep(ref num, 9, "IX");
+            result += GetNextRomanNumeralStep(ref num, 5, "V");
+            result += GetNextRomanNumeralStep(ref num, 4, "IV");
+            result += GetNextRomanNumeralStep(ref num, 1, "I");
+            return result;
+        }
+
         [ReflectionPermission(SecurityAction.Assert, MemberAccess = true)]
         public static bool TryFixHandCursor()
         {

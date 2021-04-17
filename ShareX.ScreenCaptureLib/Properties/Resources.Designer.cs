@@ -1894,6 +1894,15 @@ namespace ShareX.ScreenCaptureLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Use type:.
+        /// </summary>
+        internal static string ShapeManager_CreateToolbar_StepType {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateToolbar_StepType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Undo.
         /// </summary>
         internal static string ShapeManager_CreateToolbar_Undo {
@@ -1908,15 +1917,6 @@ namespace ShareX.ScreenCaptureLib.Properties {
         internal static string ShapeManager_CreateToolbar_UploadImage {
             get {
                 return ResourceManager.GetString("ShapeManager_CreateToolbar_UploadImage", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Use letters.
-        /// </summary>
-        internal static string ShapeManager_CreateToolbar_UseLetters {
-            get {
-                return ResourceManager.GetString("ShapeManager_CreateToolbar_UseLetters", resourceCulture);
             }
         }
         
