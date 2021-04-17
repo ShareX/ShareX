@@ -53,7 +53,7 @@ namespace ShareX.ScreenCaptureLib
         private ToolStripLabeledNumericUpDown tslnudBorderSize, tslnudCornerRadius, tslnudCenterPoints, tslnudBlurRadius, tslnudPixelateSize, tslnudStepFontSize,
             tslnudMagnifierPixelCount, tslnudStartingStepValue, tslnudMagnifyStrength;
         private ToolStripLabel tslDragLeft, tslDragRight;
-        private ToolStripLabeledComboBox tscbBorderStyle, tscbArrowHeadDirection, tscbImageInterpolationMode, tscbCursorTypes, tscbStepUseType;
+        private ToolStripLabeledComboBox tscbBorderStyle, tscbArrowHeadDirection, tscbImageInterpolationMode, tscbCursorTypes, tscbStepType;
 
         internal void CreateToolbar()
         {
@@ -607,16 +607,15 @@ namespace ShareX.ScreenCaptureLib
             };
             tsddbShapeOptions.DropDownItems.Add(tslnudStartingStepValue);
 
-            tscbStepUseType = new ToolStripLabeledComboBox(Resources.ShapeManager_CreateToolbar_StepType);
-            tscbStepUseType.Content.AddRange(Helpers.GetLocalizedEnumDescriptions<StepType>());
-            tscbStepUseType.Content.SelectedIndexChanged += (sender, e) =>
+            tscbStepType = new ToolStripLabeledComboBox(Resources.ShapeManager_CreateToolbar_StepType);
+            tscbStepType.Content.AddRange(Helpers.GetLocalizedEnumDescriptions<StepType>());
+            tscbStepType.Content.SelectedIndexChanged += (sender, e) =>
             {
-                AnnotationOptions.StepUseType = (StepType)tscbStepUseType.Content.SelectedIndex;
-                tscbStepUseType.Invalidate();
+                AnnotationOptions.StepType = (StepType)tscbStepType.Content.SelectedIndex;
+                tscbStepType.Invalidate();
                 UpdateCurrentShape();
             };
-            tscbStepUseType.Content.SelectedIndex = 0;
-            tsddbShapeOptions.DropDownItems.Add(tscbStepUseType);            
+            tsddbShapeOptions.DropDownItems.Add(tscbStepType);
 
             tsmiShadow = new ToolStripMenuItem(Resources.ShapeManager_CreateToolbar_DropShadow);
             tsmiShadow.Checked = true;
@@ -1422,7 +1421,7 @@ namespace ShareX.ScreenCaptureLib
 
             tslnudStepFontSize.Content.Value = AnnotationOptions.StepFontSize;
             tslnudStartingStepValue.Content.Value = StartingStepNumber;
-            tscbStepUseType.Content.SelectedIndex = (int)AnnotationOptions.StepUseType;
+            tscbStepType.Content.SelectedIndex = (int)AnnotationOptions.StepType;
 
             tslnudMagnifyStrength.Content.Value = AnnotationOptions.MagnifyStrength;
 
@@ -1534,7 +1533,7 @@ namespace ShareX.ScreenCaptureLib
             tscbArrowHeadDirection.Visible = shapeType == ShapeType.DrawingArrow;
             tscbImageInterpolationMode.Visible = shapeType == ShapeType.DrawingImage || shapeType == ShapeType.DrawingImageScreen || shapeType == ShapeType.DrawingMagnify;
             tslnudStartingStepValue.Visible = shapeType == ShapeType.DrawingStep;
-            tslnudStepFontSize.Visible = tscbStepUseType.Visible = shapeType == ShapeType.DrawingStep;
+            tslnudStepFontSize.Visible = tscbStepType.Visible = shapeType == ShapeType.DrawingStep;
             tslnudMagnifyStrength.Visible = shapeType == ShapeType.DrawingMagnify;
             tscbCursorTypes.Visible = shapeType == ShapeType.DrawingCursor;
             tslnudBlurRadius.Visible = shapeType == ShapeType.EffectBlur;

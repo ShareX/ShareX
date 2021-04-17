@@ -1515,9 +1515,10 @@ namespace ShareX.HelpersLib
             }
             return result;
         }
+
         public static string NumberToRomanNumeral(int num)
         {
-            string result = "";          
+            string result = "";
             result += GetNextRomanNumeralStep(ref num, 1000, "M");
             result += GetNextRomanNumeralStep(ref num, 900, "CM");
             result += GetNextRomanNumeralStep(ref num, 500, "D");

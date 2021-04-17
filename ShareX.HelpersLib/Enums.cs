@@ -204,7 +204,8 @@ namespace ShareX.HelpersLib
         macos64
     }
 
-    public enum StepType {
+    public enum StepType
+    {
         Numbers,
         Letters,
         RomanNumerals
