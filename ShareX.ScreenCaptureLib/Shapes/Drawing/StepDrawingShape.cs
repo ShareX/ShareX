@@ -38,9 +38,8 @@ namespace ShareX.ScreenCaptureLib
         public override ShapeType ShapeType { get; } = ShapeType.DrawingStep;
 
         public int FontSize { get; set; }
-        public int Number { get; set; }
-        public bool UseLetters { get; set; }
-        public bool UseRomanNumerals { get; set; }
+        public int Number { get; set; }        
+        public StepType StepUseType { get; set; } = StepType.Numbers;
         public bool IsTailActive { get; set; }
 
         private Point tailPosition;
@@ -111,8 +110,7 @@ namespace ShareX.ScreenCaptureLib
             ShadowColor = AnnotationOptions.ShadowColor;
             ShadowOffset = AnnotationOptions.ShadowOffset;
             FontSize = AnnotationOptions.StepFontSize;
-            UseLetters = AnnotationOptions.StepUseLetters;
-            UseRomanNumerals = AnnotationOptions.StepUseRomanNumerals;
+            StepUseType = AnnotationOptions.StepUseType;     
         }
 
         public override void OnConfigSave()
@@ -124,8 +122,7 @@ namespace ShareX.ScreenCaptureLib
             AnnotationOptions.ShadowColor = ShadowColor;
             AnnotationOptions.ShadowOffset = ShadowOffset;
             AnnotationOptions.StepFontSize = FontSize;
-            AnnotationOptions.StepUseLetters = UseLetters;
-            AnnotationOptions.StepUseRomanNumerals = UseRomanNumerals;
+            AnnotationOptions.StepUseType = StepUseType;
         }
 
         public override void OnDraw(Graphics g)
@@ -133,13 +130,22 @@ namespace ShareX.ScreenCaptureLib
             DrawNumber(g);
         }
 
+        private string GetText()
+        {
+            switch (StepUseType)
+            {                                    
+                case StepType.Letters:
+                    return Helpers.NumberToLetters(Number);
+                case StepType.RomanNumerals:
+                    return Helpers.NumberToRomanNumeral(Number);
+                default:
+                    return Number.ToString();
+            }
+        }
+
         protected void DrawNumber(Graphics g)
         {
-            string text = UseLetters ? Helpers.NumberToLetters(Number) : Number.ToString();
-            if (UseRomanNumerals)
-            {
-                text = Helpers.NumberToRomanNumeral(Number);
-            }
+            string text = GetText();          
 
             using (Font font = new Font(FontFamily.GenericSansSerif, FontSize, FontStyle.Bold))
             {

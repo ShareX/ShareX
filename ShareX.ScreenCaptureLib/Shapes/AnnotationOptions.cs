@@ -28,7 +28,7 @@ using System.Collections.Generic;
 using System.Drawing;
 
 namespace ShareX.ScreenCaptureLib
-{
+{    
     public class AnnotationOptions
     {
         public static readonly string DefaultFont = "Arial";
@@ -84,8 +84,7 @@ namespace ShareX.ScreenCaptureLib
         public int StepBorderSize { get; set; } = 0;
         public Color StepFillColor { get; set; } = PrimaryColor;
         public int StepFontSize { get; set; } = 18;
-        public bool StepUseLetters { get; set; } = false;
-        public bool StepUseRomanNumerals { get; set; } = false;
+        public StepType StepUseType { get; set; } = StepType.Numbers;      
 
         // Magnify drawing
         public int MagnifyStrength { get; set; } = 200;
