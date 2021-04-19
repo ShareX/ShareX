@@ -47,8 +47,6 @@ namespace ShareX.UploadersLib
         Chevereto,
         [Description("vgy.me")]
         Vgyme,
-        [Description("Vault.ooo (encrypted)")]
-        Vault_ooo,
         CustomImageUploader, // Localized
         FileUploader // Localized
     }
