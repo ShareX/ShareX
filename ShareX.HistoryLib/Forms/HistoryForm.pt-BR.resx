@@ -150,4 +150,19 @@
   <data name="lblFilterTo.Text" xml:space="preserve">
     <value>Para:</value>
   </data>
+  <data name="btnShowStats.Text" xml:space="preserve">
+    <value>Mostrar estatísticas</value>
+  </data>
+  <data name="lblFilenameFilter.Text" xml:space="preserve">
+    <value>Nome do arquivo:</value>
+  </data>
+  <data name="lblMaxItemCount.Text" xml:space="preserve">
+    <value>Limite máximo de itens:</value>
+  </data>
+  <data name="chURL.Text" xml:space="preserve">
+    <value>URL</value>
+  </data>
+  <data name="lblURLFilter.Text" xml:space="preserve">
+    <value>URL:</value>
+  </data>
 </root>

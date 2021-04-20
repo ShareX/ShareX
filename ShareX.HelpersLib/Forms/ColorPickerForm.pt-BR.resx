@@ -171,4 +171,49 @@
   <data name="cbTransparent.ToolTip" xml:space="preserve">
     <value>Transparente</value>
   </data>
+  <data name="btnClipboardColorPicker.ToolTip" xml:space="preserve">
+    <value>Escolher cor da área de transferência</value>
+  </data>
+  <data name="btnClose.Text" xml:space="preserve">
+    <value>Fechar</value>
+  </data>
+  <data name="btnScreenColorPicker.ToolTip" xml:space="preserve">
+    <value>Escolha cor da tela</value>
+  </data>
+  <data name="lblCursorPosition.Text" xml:space="preserve">
+    <value>Posição do cursor:</value>
+  </data>
+  <data name="lblName.Text" xml:space="preserve">
+    <value>Nome:</value>
+  </data>
+  <data name="mbCopy.Text" xml:space="preserve">
+    <value>Copiar</value>
+  </data>
+  <data name="rbRecentColors.Text" xml:space="preserve">
+    <value>Cores recentes</value>
+  </data>
+  <data name="rbStandardColors.Text" xml:space="preserve">
+    <value>Cores padrão</value>
+  </data>
+  <data name="tsmiCopyAll.Text" xml:space="preserve">
+    <value>Copiar tudo</value>
+  </data>
+  <data name="tsmiCopyCMYK.Text" xml:space="preserve">
+    <value>Copiar CMYK</value>
+  </data>
+  <data name="tsmiCopyDecimal.Text" xml:space="preserve">
+    <value>Copiar decimal</value>
+  </data>
+  <data name="tsmiCopyHexadecimal.Text" xml:space="preserve">
+    <value>Copiar hexadecimal</value>
+  </data>
+  <data name="tsmiCopyHSB.Text" xml:space="preserve">
+    <value>Copiar HSB</value>
+  </data>
+  <data name="tsmiCopyPosition.Text" xml:space="preserve">
+    <value>Copiar posição</value>
+  </data>
+  <data name="tsmiCopyRGB.Text" xml:space="preserve">
+    <value>Copiar RGB</value>
+  </data>
 </root>
