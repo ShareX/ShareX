@@ -158,6 +158,7 @@
     <Compile Include="FileUploaders\Teknik.cs" />
     <Compile Include="FileUploaders\Transfersh.cs" />
     <Compile Include="FileUploaders\Uguu.cs" />
+    <Compile Include="FileUploaders\Vault_ooo.cs" />
     <Compile Include="FileUploaders\VideoBin.cs" />
     <Compile Include="FileUploaders\YouTube.cs" />
     <Compile Include="Forms\CustomUploaderSettingsForm.cs">
