@@ -738,6 +738,6 @@ X: {4} Y: {5}</value>
     <value>Menu icon size:</value>
   </data>
   <data name="ShapeManager_CreateToolbar_StepType" xml:space="preserve">
-    <value>Use type:</value>
+    <value>Step type:</value>
   </data>
 </root>

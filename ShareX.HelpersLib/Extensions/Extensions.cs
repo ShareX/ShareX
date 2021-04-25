@@ -680,6 +680,21 @@ namespace ShareX.HelpersLib
             typeof(ComboBox).InvokeMember("RefreshItems", BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.InvokeMethod, null, cb, new object[] { });
         }
 
+        public static void AutoSizeDropDown(this ComboBox cb)
+        {
+            int maxWidth = 0;
+            int verticalScrollBarWidth = cb.Items.Count > cb.MaxDropDownItems ? SystemInformation.VerticalScrollBarWidth : 0;
+            foreach (object item in cb.Items)
+            {
+                int tempWidth = TextRenderer.MeasureText(cb.GetItemText(item), cb.Font).Width + verticalScrollBarWidth;
+                if (tempWidth > maxWidth)
+                {
+                    maxWidth = tempWidth;
+                }
+            }
+            cb.DropDownWidth = maxWidth;
+        }
+
         public static void RefreshItem(this ListBox lb, int index)
         {
             typeof(ListBox).InvokeMember("RefreshItem", BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.InvokeMethod, null, lb, new object[] { index });

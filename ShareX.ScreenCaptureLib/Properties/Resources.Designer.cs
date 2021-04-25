@@ -1894,7 +1894,7 @@ namespace ShareX.ScreenCaptureLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Use type:.
+        ///   Looks up a localized string similar to Step type:.
         /// </summary>
         internal static string ShapeManager_CreateToolbar_StepType {
             get {
