@@ -134,10 +134,14 @@ namespace ShareX.ScreenCaptureLib
         {
             switch (StepType)
             {
-                case StepType.Letters:
+                case StepType.LettersUppercase:
                     return Helpers.NumberToLetters(Number);
-                case StepType.RomanNumerals:
+                case StepType.LettersLowercase:
+                    return Helpers.NumberToLetters(Number).ToLowerInvariant();
+                case StepType.RomanNumeralsUppercase:
                     return Helpers.NumberToRomanNumeral(Number);
+                case StepType.RomanNumeralsLowercase:
+                    return Helpers.NumberToRomanNumeral(Number).ToLowerInvariant();
                 default:
                     return Number.ToString();
             }

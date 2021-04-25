@@ -207,7 +207,9 @@ namespace ShareX.HelpersLib
     public enum StepType
     {
         Numbers,
-        Letters,
-        RomanNumerals
+        LettersUppercase,
+        LettersLowercase,
+        RomanNumeralsUppercase,
+        RomanNumeralsLowercase
     }
 }
