@@ -3413,6 +3413,51 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Letters (Lowercase).
+        /// </summary>
+        internal static string StepType_LettersLowercase {
+            get {
+                return ResourceManager.GetString("StepType_LettersLowercase", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Letters (Uppercase).
+        /// </summary>
+        internal static string StepType_LettersUppercase {
+            get {
+                return ResourceManager.GetString("StepType_LettersUppercase", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Numbers.
+        /// </summary>
+        internal static string StepType_Numbers {
+            get {
+                return ResourceManager.GetString("StepType_Numbers", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Roman numerals (Lowercase).
+        /// </summary>
+        internal static string StepType_RomanNumeralsLowercase {
+            get {
+                return ResourceManager.GetString("StepType_RomanNumeralsLowercase", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Roman numerals (Uppercase).
+        /// </summary>
+        internal static string StepType_RomanNumeralsUppercase {
+            get {
+                return ResourceManager.GetString("StepType_RomanNumeralsUppercase", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Stop.
         /// </summary>
         internal static string Stop {

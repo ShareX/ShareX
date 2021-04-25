@@ -204,7 +204,7 @@ namespace ShareX.HelpersLib
         macos64
     }
 
-    public enum StepType
+    public enum StepType // Localized
     {
         Numbers,
         LettersUppercase,
