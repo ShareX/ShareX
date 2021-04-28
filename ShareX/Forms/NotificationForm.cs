@@ -26,6 +26,7 @@
 using ShareX.HelpersLib;
 using System;
 using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 
 namespace ShareX
@@ -361,6 +362,16 @@ namespace ShareX
             }
         }
 
+        private void NotificationForm_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (!string.IsNullOrEmpty(Config.FilePath) && File.Exists(Config.FilePath))
+            {
+                IDataObject dataObject = new DataObject(DataFormats.FileDrop, new string[] { Config.FilePath });
+                DoDragDrop(dataObject, DragDropEffects.Copy | DragDropEffects.Move);
+            }
+            
+        }
+
         #region Windows Form Designer generated code
 
         private Timer tDuration;
@@ -412,6 +423,7 @@ namespace ShareX
             MouseClick += new MouseEventHandler(NotificationForm_MouseClick);
             MouseEnter += new EventHandler(NotificationForm_MouseEnter);
             MouseLeave += new EventHandler(NotificationForm_MouseLeave);
+            MouseDown += new MouseEventHandler(NotificationForm_MouseDown);
             ResumeLayout(false);
         }
 
