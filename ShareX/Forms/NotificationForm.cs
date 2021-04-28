@@ -369,7 +369,6 @@ namespace ShareX
                 IDataObject dataObject = new DataObject(DataFormats.FileDrop, new string[] { Config.FilePath });
                 DoDragDrop(dataObject, DragDropEffects.Copy | DragDropEffects.Move);
             }
-            
         }
 
         #region Windows Form Designer generated code
