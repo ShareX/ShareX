@@ -296,12 +296,6 @@
     <Compile Include="QuickTaskMenu.cs" />
     <Compile Include="RecentTask.cs" />
     <Compile Include="ScreenRecordManager.cs" />
-    <Compile Include="Forms\ScreenRecordForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\ScreenRecordForm.Designer.cs">
-      <DependentUpon>ScreenRecordForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\ApplicationSettingsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1427,77 +1421,17 @@
     <EmbeddedResource Include="Forms\QuickTaskMenuEditorForm.zh-TW.resx">
       <DependentUpon>QuickTaskMenuEditorForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ScreenRecordForm.de.resx">
-      <DependentUpon>ScreenRecordForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ScreenRecordForm.es-MX.resx">
-      <DependentUpon>ScreenRecordForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ScreenRecordForm.es.resx">
-      <DependentUpon>ScreenRecordForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ScreenRecordForm.fa-IR.resx">
-      <DependentUpon>ScreenRecordForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ScreenRecordForm.fr.resx">
-      <DependentUpon>ScreenRecordForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ScreenRecordForm.hu.resx">
-      <DependentUpon>ScreenRecordForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ScreenRecordForm.id-ID.resx">
-      <DependentUpon>ScreenRecordForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ScreenRecordForm.it-IT.resx">
-      <DependentUpon>ScreenRecordForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ScreenRecordForm.ja-JP.resx">
-      <DependentUpon>ScreenRecordForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ScreenRecordForm.ko-KR.resx">
-      <DependentUpon>ScreenRecordForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ScreenRecordForm.nl-NL.resx">
-      <DependentUpon>ScreenRecordForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ScreenRecordForm.pt-BR.resx">
-      <DependentUpon>ScreenRecordForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ScreenRecordForm.pt-PT.resx">
-      <DependentUpon>ScreenRecordForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ScreenRecordForm.resx">
-      <DependentUpon>ScreenRecordForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ApplicationSettingsForm.resx">
       <DependentUpon>ApplicationSettingsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ScreenRecordForm.ru.resx">
-      <DependentUpon>ScreenRecordForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ScreenRecordForm.tr.resx">
-      <DependentUpon>ScreenRecordForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ScreenRecordForm.uk.resx">
-      <DependentUpon>ScreenRecordForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ScreenRecordForm.vi-VN.resx">
-      <DependentUpon>ScreenRecordForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ScreenRecordForm.zh-CN.resx">
-      <DependentUpon>ScreenRecordForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FirstTimeConfigForm.resx">
       <DependentUpon>FirstTimeConfigForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ActionsToolbarEditForm.resx">
       <DependentUpon>ActionsToolbarEditForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ScreenRecordForm.zh-TW.resx">
-      <DependentUpon>ScreenRecordForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\TaskSettingsForm.de.resx">
       <DependentUpon>TaskSettingsForm.cs</DependentUpon>
@@ -1765,7 +1699,6 @@
     <None Include="Resources\monitor.png" />
     <None Include="Resources\application-blue.png" />
     <None Include="Resources\layer.png" />
-    <None Include="Resources\control-record.png" />
     <None Include="Resources\checkbox_uncheck.png" />
     <None Include="Resources\checkbox_check.png" />
     <None Include="Resources\network-ip.png" />
@@ -1863,7 +1796,6 @@
     <None Include="ShareX_Icon.ico" />
     <None Include="Resources\globe--pencil.png" />
     <None Include="Resources\camcorder--pencil.png" />
-    <None Include="Resources\control-record-yellow.png" />
     <None Include="Resources\application-monitor.png" />
     <None Include="Resources\pencil.png" />
     <None Include="Resources\folder-tree.png" />

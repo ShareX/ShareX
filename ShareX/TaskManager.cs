@@ -483,7 +483,7 @@ namespace ShareX
                 {
                     try
                     {
-                        icon = TaskHelpers.GetProgressIcon(progress);
+                        icon = Helpers.GetProgressIcon(progress);
                     }
                     catch (Exception e)
                     {

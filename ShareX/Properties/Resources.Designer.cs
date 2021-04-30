@@ -1036,26 +1036,6 @@ namespace ShareX.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap control_record {
-            get {
-                object obj = ResourceManager.GetObject("control_record", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap control_record_yellow {
-            get {
-                object obj = ResourceManager.GetObject("control_record_yellow", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         public static System.Drawing.Bitmap cross {
             get {
                 object obj = ResourceManager.GetObject("cross", resourceCulture);
@@ -1337,6 +1317,62 @@ namespace ShareX.Properties {
         public static string FailedToSaveSettings {
             get {
                 return ResourceManager.GetString("FailedToSaveSettings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0} does not exist.
+        ///
+        ///Would you like to automatically download it?.
+        /// </summary>
+        public static string FFmpeg_does_not_exist {
+            get {
+                return ResourceManager.GetString("FFmpeg_does_not_exist", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Download of FFmpeg failed..
+        /// </summary>
+        public static string FFmpeg_Download_of_FFmpeg_failed {
+            get {
+                return ResourceManager.GetString("FFmpeg_Download_of_FFmpeg_failed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to FFmpeg error.
+        /// </summary>
+        public static string FFmpeg_FFmpeg_error {
+            get {
+                return ResourceManager.GetString("FFmpeg_FFmpeg_error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to FFmpeg successfully downloaded..
+        /// </summary>
+        public static string FFmpeg_FFmpeg_successfully_downloaded {
+            get {
+                return ResourceManager.GetString("FFmpeg_FFmpeg_successfully_downloaded", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to FFmpeg video and audio source can&apos;t both be &quot;None&quot;..
+        /// </summary>
+        public static string FFmpeg_FFmpeg_video_and_audio_source_both_can_t_be__None__ {
+            get {
+                return ResourceManager.GetString("FFmpeg_FFmpeg_video_and_audio_source_both_can_t_be__None__", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Missing.
+        /// </summary>
+        public static string FFmpeg_Missing {
+            get {
+                return ResourceManager.GetString("FFmpeg_Missing", resourceCulture);
             }
         }
         
@@ -2306,108 +2342,6 @@ namespace ShareX.Properties {
         public static string ScreenColorPicker {
             get {
                 return ResourceManager.GetString("ScreenColorPicker", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Are you sure you want to abort this recording?.
-        /// </summary>
-        public static string ScreenRecord_ConfirmCancel {
-            get {
-                return ResourceManager.GetString("ScreenRecord_ConfirmCancel", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Download of FFmpeg failed..
-        /// </summary>
-        public static string ScreenRecordForm_DownloaderForm_InstallRequested_Download_of_FFmpeg_failed_ {
-            get {
-                return ResourceManager.GetString("ScreenRecordForm_DownloaderForm_InstallRequested_Download_of_FFmpeg_failed_", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to FFmpeg successfully downloaded..
-        /// </summary>
-        public static string ScreenRecordForm_DownloaderForm_InstallRequested_FFmpeg_successfully_downloaded_ {
-            get {
-                return ResourceManager.GetString("ScreenRecordForm_DownloaderForm_InstallRequested_FFmpeg_successfully_downloaded_", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Click to start recording..
-        /// </summary>
-        public static string ScreenRecordForm_StartRecording_Click_tray_icon_to_start_recording_ {
-            get {
-                return ResourceManager.GetString("ScreenRecordForm_StartRecording_Click_tray_icon_to_start_recording_", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Click to stop recording..
-        /// </summary>
-        public static string ScreenRecordForm_StartRecording_Click_tray_icon_to_stop_recording_ {
-            get {
-                return ResourceManager.GetString("ScreenRecordForm_StartRecording_Click_tray_icon_to_stop_recording_", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to {0} does not exist.
-        ///
-        ///Would you like to automatically download it?.
-        /// </summary>
-        public static string ScreenRecordForm_StartRecording_does_not_exist {
-            get {
-                return ResourceManager.GetString("ScreenRecordForm_StartRecording_does_not_exist", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Encoding....
-        /// </summary>
-        public static string ScreenRecordForm_StartRecording_Encoding___ {
-            get {
-                return ResourceManager.GetString("ScreenRecordForm_StartRecording_Encoding___", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to FFmpeg error.
-        /// </summary>
-        public static string ScreenRecordForm_StartRecording_FFmpeg_error {
-            get {
-                return ResourceManager.GetString("ScreenRecordForm_StartRecording_FFmpeg_error", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to FFmpeg video and audio source can&apos;t both be &quot;None&quot;..
-        /// </summary>
-        public static string ScreenRecordForm_StartRecording_FFmpeg_video_and_audio_source_both_can_t_be__None__ {
-            get {
-                return ResourceManager.GetString("ScreenRecordForm_StartRecording_FFmpeg_video_and_audio_source_both_can_t_be__None" +
-                        "__", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Missing.
-        /// </summary>
-        public static string ScreenRecordForm_StartRecording_Missing {
-            get {
-                return ResourceManager.GetString("ScreenRecordForm_StartRecording_Missing", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Waiting....
-        /// </summary>
-        public static string ScreenRecordForm_StartRecording_Waiting___ {
-            get {
-                return ResourceManager.GetString("ScreenRecordForm_StartRecording_Waiting___", resourceCulture);
             }
         }
         
