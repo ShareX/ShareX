@@ -1699,7 +1699,6 @@
     <None Include="Resources\monitor.png" />
     <None Include="Resources\application-blue.png" />
     <None Include="Resources\layer.png" />
-    <None Include="Resources\control-record.png" />
     <None Include="Resources\checkbox_uncheck.png" />
     <None Include="Resources\checkbox_check.png" />
     <None Include="Resources\network-ip.png" />
@@ -1797,7 +1796,6 @@
     <None Include="ShareX_Icon.ico" />
     <None Include="Resources\globe--pencil.png" />
     <None Include="Resources\camcorder--pencil.png" />
-    <None Include="Resources\control-record-yellow.png" />
     <None Include="Resources\application-monitor.png" />
     <None Include="Resources\pencil.png" />
     <None Include="Resources\folder-tree.png" />
