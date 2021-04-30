@@ -333,4 +333,9 @@ namespace ShareX.ScreenCaptureLib
         DashDot,
         DashDotDot
     }
+
+    public enum ScreenRecordState
+    {
+        Waiting, BeforeStart, AfterStart, AfterRecordingStart, Encoding
+    }
 }

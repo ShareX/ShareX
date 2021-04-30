@@ -24,14 +24,14 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
-using ShareX.Properties;
+using ShareX.ScreenCaptureLib.Properties;
 using System;
 using System.Diagnostics;
 using System.Drawing;
 using System.Threading;
 using System.Windows.Forms;
 
-namespace ShareX
+namespace ShareX.ScreenCaptureLib
 {
     public partial class ScreenRecordForm : Form
     {
@@ -46,23 +46,20 @@ namespace ShareX
         public bool IsStopRequested { get; private set; }
         public bool IsAbortRequested { get; private set; }
 
-        private TaskSettings taskSettings;
+        public bool ActivateWindow { get; set; } = true;
+        public float Duration { get; set; } = 0;
+        public bool AskConfirmationOnAbort { get; set; } = false;
+
         private Color borderColor = Color.Red;
         private Rectangle borderRectangle;
         private Rectangle borderRectangle0Based;
-        private bool activateWindow;
-        private float duration;
         private static int lastIconStatus = -1;
 
-        public ScreenRecordForm(Rectangle regionRectangle, TaskSettings taskSettings, bool activateWindow = true, float duration = 0)
+        public ScreenRecordForm(Rectangle regionRectangle)
         {
             InitializeComponent();
             Icon = ShareXResources.Icon;
             niTray.Icon = ShareXResources.Icon;
-
-            this.taskSettings = taskSettings;
-            this.activateWindow = activateWindow;
-            this.duration = duration;
 
             borderRectangle = regionRectangle.Offset(1);
             borderRectangle0Based = new Rectangle(0, 0, borderRectangle.Width, borderRectangle.Height);
@@ -97,7 +94,7 @@ namespace ShareX
         {
             get
             {
-                return !activateWindow;
+                return !ActivateWindow;
             }
         }
 
@@ -131,7 +128,7 @@ namespace ShareX
 
         private void ScreenRegionForm_Shown(object sender, EventArgs e)
         {
-            if (activateWindow)
+            if (ActivateWindow)
             {
                 this.ForceActivate();
             }
@@ -167,8 +164,8 @@ namespace ShareX
 
         public void StartRecordingTimer()
         {
-            IsCountdown = duration > 0;
-            Countdown = TimeSpan.FromSeconds(duration);
+            IsCountdown = Duration > 0;
+            Countdown = TimeSpan.FromSeconds(Duration);
 
             lblTimer.ForeColor = Color.White;
             borderColor = Color.FromArgb(0, 255, 0);
@@ -229,8 +226,8 @@ namespace ShareX
         {
             if (e.Button == MouseButtons.Left)
             {
-                if (!taskSettings.CaptureSettings.ScreenRecordAskConfirmationOnAbort ||
-                    MessageBox.Show(Resources.ScreenRecord_ConfirmCancel, "ShareX", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                if (!AskConfirmationOnAbort || MessageBox.Show(Resources.ScreenRecordForm_ConfirmCancel, "ShareX", MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Warning) == DialogResult.Yes)
                 {
                     AbortRecording();
                 }
@@ -278,7 +275,7 @@ namespace ShareX
                     case ScreenRecordState.BeforeStart:
                         string trayTextBeforeStart = "ShareX - " + Resources.ScreenRecordForm_StartRecording_Click_tray_icon_to_start_recording_;
                         niTray.Text = trayTextBeforeStart.Truncate(63);
-                        tsmiStart.Text = Resources.AutoCaptureForm_Execute_Start;
+                        tsmiStart.Text = Resources.ScreenRecordForm_Start;
                         cmsMain.Enabled = true;
                         break;
                     case ScreenRecordState.AfterStart:
@@ -286,8 +283,8 @@ namespace ShareX
                         string trayTextAfterStart = "ShareX - " + Resources.ScreenRecordForm_StartRecording_Click_tray_icon_to_stop_recording_;
                         niTray.Text = trayTextAfterStart.Truncate(63);
                         niTray.Icon = Resources.control_record.ToIcon();
-                        tsmiStart.Text = Resources.AutoCaptureForm_Execute_Stop;
-                        btnStart.Text = Resources.AutoCaptureForm_Execute_Stop;
+                        tsmiStart.Text = Resources.ScreenRecordForm_Stop;
+                        btnStart.Text = Resources.ScreenRecordForm_Stop;
                         break;
                     case ScreenRecordState.AfterRecordingStart:
                         IsRecording = true;
@@ -297,7 +294,7 @@ namespace ShareX
                         Hide();
                         string trayTextAfterStop = "ShareX - " + Resources.ScreenRecordForm_StartRecording_Encoding___;
                         niTray.Text = trayTextAfterStop.Truncate(63);
-                        niTray.Icon = Resources.camcorder_pencil.ToIcon();
+                        niTray.Icon = Resources.camcorder__pencil.ToIcon();
                         cmsMain.Enabled = false;
                         break;
                 }
@@ -316,19 +313,19 @@ namespace ShareX
                 {
                     try
                     {
-                        icon = TaskHelpers.GetProgressIcon(progress, Color.FromArgb(140, 0, 36));
+                        icon = Helpers.GetProgressIcon(progress, Color.FromArgb(140, 0, 36));
                     }
                     catch (Exception e)
                     {
                         DebugHelper.WriteException(e);
                         progress = -1;
                         if (lastIconStatus == progress) return;
-                        icon = Resources.camcorder_pencil.ToIcon();
+                        icon = Resources.camcorder__pencil.ToIcon();
                     }
                 }
                 else
                 {
-                    icon = Resources.camcorder_pencil.ToIcon();
+                    icon = Resources.camcorder__pencil.ToIcon();
                 }
 
                 using (Icon oldIcon = niTray.Icon)

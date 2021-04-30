@@ -286,11 +286,6 @@ namespace ShareX
         Top, Bottom
     }
 
-    public enum ScreenRecordState
-    {
-        Waiting, BeforeStart, AfterStart, AfterRecordingStart, Encoding
-    }
-
     public enum RegionCaptureType
     {
         Default, Light, Transparent
