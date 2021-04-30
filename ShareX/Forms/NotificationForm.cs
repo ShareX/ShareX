@@ -88,6 +88,8 @@ namespace ShareX
         private Size titleRenderSize;
         private Size textRenderSize;
         private Size totalRenderSize;
+        private bool isMouseDragging;
+        private Point dragStart;
 
         protected override CreateParams CreateParams
         {
@@ -354,6 +356,7 @@ namespace ShareX
         private void NotificationForm_MouseLeave(object sender, EventArgs e)
         {
             isMouseInside = false;
+            isMouseDragging = false;
             Refresh();
 
             if (isDurationEnd)
@@ -364,11 +367,39 @@ namespace ShareX
 
         private void NotificationForm_MouseDown(object sender, MouseEventArgs e)
         {
-            if (!string.IsNullOrEmpty(Config.FilePath) && File.Exists(Config.FilePath))
+            dragStart = e.Location;
+            isMouseDragging = true;
+        }
+
+        private void NotificationForm_MouseMove(object sender, MouseEventArgs e)
+        {
+            // We add a threshold before triggering the drag-drop operation
+            // in order to fix MouseClick
+            if (isMouseDragging)
             {
-                IDataObject dataObject = new DataObject(DataFormats.FileDrop, new string[] { Config.FilePath });
-                DoDragDrop(dataObject, DragDropEffects.Copy | DragDropEffects.Move);
+                // The radius around the mouse, until a drag-drop operation
+                // gets triggered
+                const int dragThreshold = 20;
+               
+                Rectangle dragThresholdRectangle = new Rectangle(dragStart.X - dragThreshold,
+                    dragStart.Y + dragThreshold,
+                    dragThreshold * 2,
+                    dragThreshold * 2);
+
+                bool isOverThreshold = !dragThresholdRectangle.Contains(e.Location);
+                if (isOverThreshold && !string.IsNullOrEmpty(Config.FilePath) && File.Exists(Config.FilePath))
+                {
+                    IDataObject dataObject = new DataObject(DataFormats.FileDrop, new string[] { Config.FilePath });
+                    DoDragDrop(dataObject, DragDropEffects.Copy | DragDropEffects.Move);
+
+                    isMouseDragging = false;
+                }
             }
+        }
+
+        private void NotificationForm_MouseUp(object sender, MouseEventArgs e)
+        {
+            isMouseDragging = false;
         }
 
         #region Windows Form Designer generated code
@@ -423,6 +454,8 @@ namespace ShareX
             MouseEnter += new EventHandler(NotificationForm_MouseEnter);
             MouseLeave += new EventHandler(NotificationForm_MouseLeave);
             MouseDown += new MouseEventHandler(NotificationForm_MouseDown);
+            MouseMove += new MouseEventHandler(NotificationForm_MouseMove);
+            MouseUp += new MouseEventHandler(NotificationForm_MouseUp);
             ResumeLayout(false);
         }
 
