@@ -1319,15 +1319,18 @@ namespace ShareX
 
         public static bool ToggleHotkeys()
         {
-            bool hotkeysDisabled = !Program.Settings.DisableHotkeys;
+            bool disableHotkeys = !Program.Settings.DisableHotkeys;
+            ToggleHotkeys(disableHotkeys);
+            return disableHotkeys;
+        }
 
-            Program.Settings.DisableHotkeys = hotkeysDisabled;
-            Program.HotkeyManager.ToggleHotkeys(hotkeysDisabled);
+        public static void ToggleHotkeys(bool disableHotkeys)
+        {
+            Program.Settings.DisableHotkeys = disableHotkeys;
+            Program.HotkeyManager.ToggleHotkeys(disableHotkeys);
             Program.MainForm.UpdateToggleHotkeyButton();
 
-            ShowNotificationTip(hotkeysDisabled ? Resources.TaskHelpers_ToggleHotkeys_Hotkeys_disabled_ : Resources.TaskHelpers_ToggleHotkeys_Hotkeys_enabled_);
-
-            return hotkeysDisabled;
+            ShowNotificationTip(disableHotkeys ? Resources.TaskHelpers_ToggleHotkeys_Hotkeys_disabled_ : Resources.TaskHelpers_ToggleHotkeys_Hotkeys_enabled_);
         }
 
         public static bool CheckFFmpeg(TaskSettings taskSettings)
