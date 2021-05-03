@@ -367,24 +367,22 @@ namespace ShareX
 
         private void NotificationForm_MouseDown(object sender, MouseEventArgs e)
         {
-            dragStart = e.Location;
-            isMouseDragging = true;
+            if (e.Button == MouseButtons.Left)
+            {
+                dragStart = e.Location;
+                isMouseDragging = true;
+            }
         }
 
         private void NotificationForm_MouseMove(object sender, MouseEventArgs e)
         {
-            // We add a threshold before triggering the drag-drop operation
-            // in order to fix MouseClick
+            // We add a threshold before triggering the drag-drop operation in order to fix MouseClick
             if (isMouseDragging)
             {
-                // The radius around the mouse, until a drag-drop operation
-                // gets triggered
-                const int dragThreshold = 20;
-               
-                Rectangle dragThresholdRectangle = new Rectangle(dragStart.X - dragThreshold,
-                    dragStart.Y + dragThreshold,
-                    dragThreshold * 2,
-                    dragThreshold * 2);
+                // The radius around the mouse, until a drag-drop operation gets triggered
+                int dragThreshold = 20;
+
+                Rectangle dragThresholdRectangle = new Rectangle(dragStart.X - dragThreshold, dragStart.Y - dragThreshold, dragThreshold * 2, dragThreshold * 2);
 
                 bool isOverThreshold = !dragThresholdRectangle.Contains(e.Location);
                 if (isOverThreshold && !string.IsNullOrEmpty(Config.FilePath) && File.Exists(Config.FilePath))
