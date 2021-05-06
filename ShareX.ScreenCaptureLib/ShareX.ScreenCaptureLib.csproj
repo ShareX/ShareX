@@ -3,16 +3,40 @@
     <TargetFramework>net48</TargetFramework>
     <OutputType>Library</OutputType>
     <UseWindowsForms>true</UseWindowsForms>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System.Design" />
+    <Reference Include="System.Design"/>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ShareX.HelpersLib\ShareX.HelpersLib.csproj" />
-    <ProjectReference Include="..\ShareX.ImageEffectsLib\ShareX.ImageEffectsLib.csproj" />
-    <ProjectReference Include="..\ShareX.MediaLib\ShareX.MediaLib.csproj" />
+    <ProjectReference Include="..\ShareX.HelpersLib\ShareX.HelpersLib.csproj"/>
+    <ProjectReference Include="..\ShareX.ImageEffectsLib\ShareX.ImageEffectsLib.csproj"/>
+    <ProjectReference Include="..\ShareX.MediaLib\ShareX.MediaLib.csproj"/>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="ImageListView" Version="13.8.2" />
+    <PackageReference Include="BetterWin32Errors" Version="0.2.0"/>
+    <PackageReference Include="ImageListView" Version="13.8.2"/>
+    <PackageReference Include="Microsoft.HLSL.CSharpVB" Version="1.0.2"/>
+    <PackageReference Include="Microsoft.Windows.SDK.Contracts" Version="10.0.26100.1"/>
+    <PackageReference Include="SharpDX" Version="4.2.0"/>
+    <PackageReference Include="SharpDX.D3DCompiler" Version="4.2.0"/>
+    <PackageReference Include="SharpDX.Direct2D1" Version="4.2.0"/>
+    <PackageReference Include="SharpDX.Direct3D11" Version="4.2.0"/>
+    <PackageReference Include="SharpDX.DXGI" Version="4.2.0" />
+    <PackageReference Include="SharpDX.Mathematics" Version="4.2.0"/>
+  </ItemGroup>
+  <ItemGroup>
+    <PixelShader Include="AdvancedGraphics\Direct3D\Shaders\PostProcessingColor.hlsl"/>
+    <VertexShader Include="AdvancedGraphics\Direct3D\Shaders\PostProcessingQuad.hlsl"/>
+    <None Include="AdvancedGraphics\Direct3D\Shaders\ColorSpace.hlsl"/>
+    <None Include="AdvancedGraphics\Direct3D\Shaders\ShaderInputStructure.hlsl"/>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(IntermediateOutputPath)\AdvancedGraphics\Direct3D\Shaders\PostProcessingColor.cso">
+      <LogicalName>D3D11Shaders.PostProcessingColor.cso</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(IntermediateOutputPath)\AdvancedGraphics\Direct3D\Shaders\PostProcessingQuad.cso">
+      <LogicalName>D3D11Shaders.PostProcessingQuad.cso</LogicalName>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>

@@ -139,6 +139,7 @@
             this.tcCapture = new System.Windows.Forms.TabControl();
             this.tpCaptureGeneral = new System.Windows.Forms.TabPage();
             this.pCapture = new System.Windows.Forms.Panel();
+            this.cbUseWinRTCapture = new System.Windows.Forms.CheckBox();
             this.txtCaptureCustomWindow = new System.Windows.Forms.TextBox();
             this.lblCaptureCustomWindow = new System.Windows.Forms.Label();
             this.lblScreenshotDelay = new System.Windows.Forms.Label();
@@ -261,8 +262,8 @@
             this.cbClipboardUploadShortenURL = new System.Windows.Forms.CheckBox();
             this.tpUploaderFilters = new System.Windows.Forms.TabPage();
             this.lvUploaderFiltersList = new ShareX.HelpersLib.MyListView();
-            this.chUploaderFiltersName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.chUploaderFiltersExtension = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chUploaderFiltersName = new System.Windows.Forms.ColumnHeader();
+            this.chUploaderFiltersExtension = new System.Windows.Forms.ColumnHeader();
             this.btnUploaderFiltersRemove = new System.Windows.Forms.Button();
             this.btnUploaderFiltersUpdate = new System.Windows.Forms.Button();
             this.btnUploaderFiltersAdd = new System.Windows.Forms.Button();
@@ -278,10 +279,10 @@
             this.btnActionsDuplicate = new System.Windows.Forms.Button();
             this.btnActionsAdd = new System.Windows.Forms.Button();
             this.lvActions = new ShareX.HelpersLib.MyListView();
-            this.chActionsName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.chActionsPath = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.chActionsArgs = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.chActionsExtensions = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chActionsName = new System.Windows.Forms.ColumnHeader();
+            this.chActionsPath = new System.Windows.Forms.ColumnHeader();
+            this.chActionsArgs = new System.Windows.Forms.ColumnHeader();
+            this.chActionsExtensions = new System.Windows.Forms.ColumnHeader();
             this.btnActionsEdit = new System.Windows.Forms.Button();
             this.btnActionsRemove = new System.Windows.Forms.Button();
             this.cbOverrideActions = new System.Windows.Forms.CheckBox();
@@ -289,9 +290,9 @@
             this.btnWatchFolderEdit = new System.Windows.Forms.Button();
             this.cbWatchFolderEnabled = new System.Windows.Forms.CheckBox();
             this.lvWatchFolderList = new ShareX.HelpersLib.MyListView();
-            this.chWatchFolderFolderPath = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.chWatchFolderFilter = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.chWatchFolderIncludeSubdirectories = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chWatchFolderFolderPath = new System.Windows.Forms.ColumnHeader();
+            this.chWatchFolderFilter = new System.Windows.Forms.ColumnHeader();
+            this.chWatchFolderIncludeSubdirectories = new System.Windows.Forms.ColumnHeader();
             this.btnWatchFolderRemove = new System.Windows.Forms.Button();
             this.btnWatchFolderAdd = new System.Windows.Forms.Button();
             this.tpTools = new System.Windows.Forms.TabPage();
@@ -537,12 +538,7 @@
             // 
             // cmsDestinations
             // 
-            this.cmsDestinations.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmiImageUploaders,
-            this.tsmiTextUploaders,
-            this.tsmiFileUploaders,
-            this.tsmiURLShorteners,
-            this.tsmiURLSharingServices});
+            this.cmsDestinations.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { this.tsmiImageUploaders, this.tsmiTextUploaders, this.tsmiFileUploaders, this.tsmiURLShorteners, this.tsmiURLSharingServices });
             this.cmsDestinations.Name = "cmsDestinations";
             resources.ApplyResources(this.cmsDestinations, "cmsDestinations");
             // 
@@ -808,43 +804,19 @@
             // nudToastWindowSizeHeight
             // 
             resources.ApplyResources(this.nudToastWindowSizeHeight, "nudToastWindowSizeHeight");
-            this.nudToastWindowSizeHeight.Maximum = new decimal(new int[] {
-            1000,
-            0,
-            0,
-            0});
-            this.nudToastWindowSizeHeight.Minimum = new decimal(new int[] {
-            100,
-            0,
-            0,
-            0});
+            this.nudToastWindowSizeHeight.Maximum = new decimal(new int[] { 1000, 0, 0, 0 });
+            this.nudToastWindowSizeHeight.Minimum = new decimal(new int[] { 100, 0, 0, 0 });
             this.nudToastWindowSizeHeight.Name = "nudToastWindowSizeHeight";
-            this.nudToastWindowSizeHeight.Value = new decimal(new int[] {
-            100,
-            0,
-            0,
-            0});
+            this.nudToastWindowSizeHeight.Value = new decimal(new int[] { 100, 0, 0, 0 });
             this.nudToastWindowSizeHeight.ValueChanged += new System.EventHandler(this.nudToastWindowSizeHeight_ValueChanged);
             // 
             // nudToastWindowSizeWidth
             // 
             resources.ApplyResources(this.nudToastWindowSizeWidth, "nudToastWindowSizeWidth");
-            this.nudToastWindowSizeWidth.Maximum = new decimal(new int[] {
-            1000,
-            0,
-            0,
-            0});
-            this.nudToastWindowSizeWidth.Minimum = new decimal(new int[] {
-            100,
-            0,
-            0,
-            0});
+            this.nudToastWindowSizeWidth.Maximum = new decimal(new int[] { 1000, 0, 0, 0 });
+            this.nudToastWindowSizeWidth.Minimum = new decimal(new int[] { 100, 0, 0, 0 });
             this.nudToastWindowSizeWidth.Name = "nudToastWindowSizeWidth";
-            this.nudToastWindowSizeWidth.Value = new decimal(new int[] {
-            100,
-            0,
-            0,
-            0});
+            this.nudToastWindowSizeWidth.Value = new decimal(new int[] { 100, 0, 0, 0 });
             this.nudToastWindowSizeWidth.ValueChanged += new System.EventHandler(this.nudToastWindowSizeWidth_ValueChanged);
             // 
             // cbToastWindowPlacement
@@ -859,11 +831,7 @@
             // 
             this.nudToastWindowFadeDuration.DecimalPlaces = 1;
             resources.ApplyResources(this.nudToastWindowFadeDuration, "nudToastWindowFadeDuration");
-            this.nudToastWindowFadeDuration.Maximum = new decimal(new int[] {
-            30,
-            0,
-            0,
-            0});
+            this.nudToastWindowFadeDuration.Maximum = new decimal(new int[] { 30, 0, 0, 0 });
             this.nudToastWindowFadeDuration.Name = "nudToastWindowFadeDuration";
             this.nudToastWindowFadeDuration.ValueChanged += new System.EventHandler(this.nudToastWindowFadeDuration_ValueChanged);
             // 
@@ -878,11 +846,7 @@
             // 
             this.nudToastWindowDuration.DecimalPlaces = 1;
             resources.ApplyResources(this.nudToastWindowDuration, "nudToastWindowDuration");
-            this.nudToastWindowDuration.Maximum = new decimal(new int[] {
-            30,
-            0,
-            0,
-            0});
+            this.nudToastWindowDuration.Maximum = new decimal(new int[] { 30, 0, 0, 0 });
             this.nudToastWindowDuration.Name = "nudToastWindowDuration";
             this.nudToastWindowDuration.ValueChanged += new System.EventHandler(this.nudToastWindowDuration_ValueChanged);
             // 
@@ -1027,22 +991,10 @@
             // nudImageAutoUseJPEGSize
             // 
             resources.ApplyResources(this.nudImageAutoUseJPEGSize, "nudImageAutoUseJPEGSize");
-            this.nudImageAutoUseJPEGSize.Maximum = new decimal(new int[] {
-            100000,
-            0,
-            0,
-            0});
-            this.nudImageAutoUseJPEGSize.Minimum = new decimal(new int[] {
-            100,
-            0,
-            0,
-            0});
+            this.nudImageAutoUseJPEGSize.Maximum = new decimal(new int[] { 100000, 0, 0, 0 });
+            this.nudImageAutoUseJPEGSize.Minimum = new decimal(new int[] { 100, 0, 0, 0 });
             this.nudImageAutoUseJPEGSize.Name = "nudImageAutoUseJPEGSize";
-            this.nudImageAutoUseJPEGSize.Value = new decimal(new int[] {
-            2048,
-            0,
-            0,
-            0});
+            this.nudImageAutoUseJPEGSize.Value = new decimal(new int[] { 2048, 0, 0, 0 });
             this.nudImageAutoUseJPEGSize.ValueChanged += new System.EventHandler(this.nudImageAutoUseJPEGSize_ValueChanged);
             // 
             // lblImageSizeLimitHint
@@ -1054,11 +1006,7 @@
             // 
             resources.ApplyResources(this.nudImageJPEGQuality, "nudImageJPEGQuality");
             this.nudImageJPEGQuality.Name = "nudImageJPEGQuality";
-            this.nudImageJPEGQuality.Value = new decimal(new int[] {
-            90,
-            0,
-            0,
-            0});
+            this.nudImageJPEGQuality.Value = new decimal(new int[] { 90, 0, 0, 0 });
             this.nudImageJPEGQuality.ValueChanged += new System.EventHandler(this.nudImageJPEGQuality_ValueChanged);
             // 
             // cbImageFormat
@@ -1195,22 +1143,14 @@
             // nudThumbnailHeight
             // 
             resources.ApplyResources(this.nudThumbnailHeight, "nudThumbnailHeight");
-            this.nudThumbnailHeight.Maximum = new decimal(new int[] {
-            2000,
-            0,
-            0,
-            0});
+            this.nudThumbnailHeight.Maximum = new decimal(new int[] { 2000, 0, 0, 0 });
             this.nudThumbnailHeight.Name = "nudThumbnailHeight";
             this.nudThumbnailHeight.ValueChanged += new System.EventHandler(this.nudThumbnailHeight_ValueChanged);
             // 
             // nudThumbnailWidth
             // 
             resources.ApplyResources(this.nudThumbnailWidth, "nudThumbnailWidth");
-            this.nudThumbnailWidth.Maximum = new decimal(new int[] {
-            2000,
-            0,
-            0,
-            0});
+            this.nudThumbnailWidth.Maximum = new decimal(new int[] { 2000, 0, 0, 0 });
             this.nudThumbnailWidth.Name = "nudThumbnailWidth";
             this.nudThumbnailWidth.ValueChanged += new System.EventHandler(this.nudThumbnailWidth_ValueChanged);
             // 
@@ -1241,6 +1181,7 @@
             // 
             // pCapture
             // 
+            this.pCapture.Controls.Add(this.cbUseWinRTCapture);
             this.pCapture.Controls.Add(this.txtCaptureCustomWindow);
             this.pCapture.Controls.Add(this.lblCaptureCustomWindow);
             this.pCapture.Controls.Add(this.lblScreenshotDelay);
@@ -1265,6 +1206,13 @@
             this.pCapture.Controls.Add(this.nudCaptureShadowOffset);
             resources.ApplyResources(this.pCapture, "pCapture");
             this.pCapture.Name = "pCapture";
+            // 
+            // cbUseWinRTCapture
+            // 
+            resources.ApplyResources(this.cbUseWinRTCapture, "cbUseWinRTCapture");
+            this.cbUseWinRTCapture.Name = "cbUseWinRTCapture";
+            this.cbUseWinRTCapture.UseVisualStyleBackColor = true;
+            this.cbUseWinRTCapture.CheckedChanged += new System.EventHandler(this.cbUseWinRTCapture_CheckedChanged);
             // 
             // txtCaptureCustomWindow
             // 
@@ -1317,64 +1265,32 @@
             // nudCaptureCustomRegionHeight
             // 
             resources.ApplyResources(this.nudCaptureCustomRegionHeight, "nudCaptureCustomRegionHeight");
-            this.nudCaptureCustomRegionHeight.Maximum = new decimal(new int[] {
-            -2147483648,
-            0,
-            0,
-            0});
-            this.nudCaptureCustomRegionHeight.Minimum = new decimal(new int[] {
-            -2147483648,
-            0,
-            0,
-            -2147483648});
+            this.nudCaptureCustomRegionHeight.Maximum = new decimal(new int[] { -2147483648, 0, 0, 0 });
+            this.nudCaptureCustomRegionHeight.Minimum = new decimal(new int[] { -2147483648, 0, 0, -2147483648 });
             this.nudCaptureCustomRegionHeight.Name = "nudCaptureCustomRegionHeight";
             this.nudCaptureCustomRegionHeight.ValueChanged += new System.EventHandler(this.nudScreenRegionHeight_ValueChanged);
             // 
             // nudCaptureCustomRegionWidth
             // 
             resources.ApplyResources(this.nudCaptureCustomRegionWidth, "nudCaptureCustomRegionWidth");
-            this.nudCaptureCustomRegionWidth.Maximum = new decimal(new int[] {
-            -2147483648,
-            0,
-            0,
-            0});
-            this.nudCaptureCustomRegionWidth.Minimum = new decimal(new int[] {
-            -2147483648,
-            0,
-            0,
-            -2147483648});
+            this.nudCaptureCustomRegionWidth.Maximum = new decimal(new int[] { -2147483648, 0, 0, 0 });
+            this.nudCaptureCustomRegionWidth.Minimum = new decimal(new int[] { -2147483648, 0, 0, -2147483648 });
             this.nudCaptureCustomRegionWidth.Name = "nudCaptureCustomRegionWidth";
             this.nudCaptureCustomRegionWidth.ValueChanged += new System.EventHandler(this.nudScreenRegionWidth_ValueChanged);
             // 
             // nudCaptureCustomRegionY
             // 
             resources.ApplyResources(this.nudCaptureCustomRegionY, "nudCaptureCustomRegionY");
-            this.nudCaptureCustomRegionY.Maximum = new decimal(new int[] {
-            -2147483648,
-            0,
-            0,
-            0});
-            this.nudCaptureCustomRegionY.Minimum = new decimal(new int[] {
-            -2147483648,
-            0,
-            0,
-            -2147483648});
+            this.nudCaptureCustomRegionY.Maximum = new decimal(new int[] { -2147483648, 0, 0, 0 });
+            this.nudCaptureCustomRegionY.Minimum = new decimal(new int[] { -2147483648, 0, 0, -2147483648 });
             this.nudCaptureCustomRegionY.Name = "nudCaptureCustomRegionY";
             this.nudCaptureCustomRegionY.ValueChanged += new System.EventHandler(this.nudScreenRegionY_ValueChanged);
             // 
             // nudCaptureCustomRegionX
             // 
             resources.ApplyResources(this.nudCaptureCustomRegionX, "nudCaptureCustomRegionX");
-            this.nudCaptureCustomRegionX.Maximum = new decimal(new int[] {
-            -2147483648,
-            0,
-            0,
-            0});
-            this.nudCaptureCustomRegionX.Minimum = new decimal(new int[] {
-            -2147483648,
-            0,
-            0,
-            -2147483648});
+            this.nudCaptureCustomRegionX.Maximum = new decimal(new int[] { -2147483648, 0, 0, 0 });
+            this.nudCaptureCustomRegionX.Minimum = new decimal(new int[] { -2147483648, 0, 0, -2147483648 });
             this.nudCaptureCustomRegionX.Name = "nudCaptureCustomRegionX";
             this.nudCaptureCustomRegionX.ValueChanged += new System.EventHandler(this.nudScreenRegionX_ValueChanged);
             // 
@@ -1427,28 +1343,16 @@
             // 
             this.nudScreenshotDelay.DecimalPlaces = 1;
             resources.ApplyResources(this.nudScreenshotDelay, "nudScreenshotDelay");
-            this.nudScreenshotDelay.Maximum = new decimal(new int[] {
-            300,
-            0,
-            0,
-            0});
+            this.nudScreenshotDelay.Maximum = new decimal(new int[] { 300, 0, 0, 0 });
             this.nudScreenshotDelay.Name = "nudScreenshotDelay";
             this.nudScreenshotDelay.ValueChanged += new System.EventHandler(this.nudScreenshotDelay_ValueChanged);
             // 
             // nudCaptureShadowOffset
             // 
             resources.ApplyResources(this.nudCaptureShadowOffset, "nudCaptureShadowOffset");
-            this.nudCaptureShadowOffset.Maximum = new decimal(new int[] {
-            200,
-            0,
-            0,
-            0});
+            this.nudCaptureShadowOffset.Maximum = new decimal(new int[] { 200, 0, 0, 0 });
             this.nudCaptureShadowOffset.Name = "nudCaptureShadowOffset";
-            this.nudCaptureShadowOffset.Value = new decimal(new int[] {
-            100,
-            0,
-            0,
-            0});
+            this.nudCaptureShadowOffset.Value = new decimal(new int[] { 100, 0, 0, 0 });
             this.nudCaptureShadowOffset.ValueChanged += new System.EventHandler(this.nudCaptureShadowOffset_ValueChanged);
             // 
             // cbOverrideCaptureSettings
@@ -1509,11 +1413,7 @@
             // nudRegionCaptureBackgroundDimStrength
             // 
             resources.ApplyResources(this.nudRegionCaptureBackgroundDimStrength, "nudRegionCaptureBackgroundDimStrength");
-            this.nudRegionCaptureBackgroundDimStrength.Maximum = new decimal(new int[] {
-            50,
-            0,
-            0,
-            0});
+            this.nudRegionCaptureBackgroundDimStrength.Maximum = new decimal(new int[] { 50, 0, 0, 0 });
             this.nudRegionCaptureBackgroundDimStrength.Name = "nudRegionCaptureBackgroundDimStrength";
             this.nudRegionCaptureBackgroundDimStrength.ValueChanged += new System.EventHandler(this.nudRegionCaptureBackgroundDimStrength_ValueChanged);
             // 
@@ -1532,11 +1432,7 @@
             // nudRegionCaptureFPSLimit
             // 
             resources.ApplyResources(this.nudRegionCaptureFPSLimit, "nudRegionCaptureFPSLimit");
-            this.nudRegionCaptureFPSLimit.Maximum = new decimal(new int[] {
-            300,
-            0,
-            0,
-            0});
+            this.nudRegionCaptureFPSLimit.Maximum = new decimal(new int[] { 300, 0, 0, 0 });
             this.nudRegionCaptureFPSLimit.Name = "nudRegionCaptureFPSLimit";
             this.nudRegionCaptureFPSLimit.ValueChanged += new System.EventHandler(this.nudRegionCaptureFPSLimit_ValueChanged);
             // 
@@ -1568,28 +1464,12 @@
             // 
             // nudRegionCaptureFixedSizeWidth
             // 
-            this.nudRegionCaptureFixedSizeWidth.Increment = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
+            this.nudRegionCaptureFixedSizeWidth.Increment = new decimal(new int[] { 10, 0, 0, 0 });
             resources.ApplyResources(this.nudRegionCaptureFixedSizeWidth, "nudRegionCaptureFixedSizeWidth");
-            this.nudRegionCaptureFixedSizeWidth.Maximum = new decimal(new int[] {
-            10000,
-            0,
-            0,
-            0});
-            this.nudRegionCaptureFixedSizeWidth.Minimum = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
+            this.nudRegionCaptureFixedSizeWidth.Maximum = new decimal(new int[] { 10000, 0, 0, 0 });
+            this.nudRegionCaptureFixedSizeWidth.Minimum = new decimal(new int[] { 10, 0, 0, 0 });
             this.nudRegionCaptureFixedSizeWidth.Name = "nudRegionCaptureFixedSizeWidth";
-            this.nudRegionCaptureFixedSizeWidth.Value = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
+            this.nudRegionCaptureFixedSizeWidth.Value = new decimal(new int[] { 10, 0, 0, 0 });
             this.nudRegionCaptureFixedSizeWidth.ValueChanged += new System.EventHandler(this.nudRegionCaptureFixedSizeWidth_ValueChanged);
             // 
             // lblRegionCaptureFixedSizeHeight
@@ -1599,28 +1479,12 @@
             // 
             // nudRegionCaptureFixedSizeHeight
             // 
-            this.nudRegionCaptureFixedSizeHeight.Increment = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
+            this.nudRegionCaptureFixedSizeHeight.Increment = new decimal(new int[] { 10, 0, 0, 0 });
             resources.ApplyResources(this.nudRegionCaptureFixedSizeHeight, "nudRegionCaptureFixedSizeHeight");
-            this.nudRegionCaptureFixedSizeHeight.Maximum = new decimal(new int[] {
-            10000,
-            0,
-            0,
-            0});
-            this.nudRegionCaptureFixedSizeHeight.Minimum = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
+            this.nudRegionCaptureFixedSizeHeight.Maximum = new decimal(new int[] { 10000, 0, 0, 0 });
+            this.nudRegionCaptureFixedSizeHeight.Minimum = new decimal(new int[] { 10, 0, 0, 0 });
             this.nudRegionCaptureFixedSizeHeight.Name = "nudRegionCaptureFixedSizeHeight";
-            this.nudRegionCaptureFixedSizeHeight.Value = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
+            this.nudRegionCaptureFixedSizeHeight.Value = new decimal(new int[] { 10, 0, 0, 0 });
             this.nudRegionCaptureFixedSizeHeight.ValueChanged += new System.EventHandler(this.nudRegionCaptureFixedSizeHeight_ValueChanged);
             // 
             // cbRegionCaptureIsFixedSize
@@ -1803,22 +1667,10 @@
             // nudRegionCaptureSnapSizesHeight
             // 
             resources.ApplyResources(this.nudRegionCaptureSnapSizesHeight, "nudRegionCaptureSnapSizesHeight");
-            this.nudRegionCaptureSnapSizesHeight.Maximum = new decimal(new int[] {
-            10000,
-            0,
-            0,
-            0});
-            this.nudRegionCaptureSnapSizesHeight.Minimum = new decimal(new int[] {
-            2,
-            0,
-            0,
-            0});
+            this.nudRegionCaptureSnapSizesHeight.Maximum = new decimal(new int[] { 10000, 0, 0, 0 });
+            this.nudRegionCaptureSnapSizesHeight.Minimum = new decimal(new int[] { 2, 0, 0, 0 });
             this.nudRegionCaptureSnapSizesHeight.Name = "nudRegionCaptureSnapSizesHeight";
-            this.nudRegionCaptureSnapSizesHeight.Value = new decimal(new int[] {
-            100,
-            0,
-            0,
-            0});
+            this.nudRegionCaptureSnapSizesHeight.Value = new decimal(new int[] { 100, 0, 0, 0 });
             // 
             // RegionCaptureSnapSizesHeight
             // 
@@ -1828,22 +1680,10 @@
             // nudRegionCaptureSnapSizesWidth
             // 
             resources.ApplyResources(this.nudRegionCaptureSnapSizesWidth, "nudRegionCaptureSnapSizesWidth");
-            this.nudRegionCaptureSnapSizesWidth.Maximum = new decimal(new int[] {
-            10000,
-            0,
-            0,
-            0});
-            this.nudRegionCaptureSnapSizesWidth.Minimum = new decimal(new int[] {
-            2,
-            0,
-            0,
-            0});
+            this.nudRegionCaptureSnapSizesWidth.Maximum = new decimal(new int[] { 10000, 0, 0, 0 });
+            this.nudRegionCaptureSnapSizesWidth.Minimum = new decimal(new int[] { 2, 0, 0, 0 });
             this.nudRegionCaptureSnapSizesWidth.Name = "nudRegionCaptureSnapSizesWidth";
-            this.nudRegionCaptureSnapSizesWidth.Value = new decimal(new int[] {
-            100,
-            0,
-            0,
-            0});
+            this.nudRegionCaptureSnapSizesWidth.Value = new decimal(new int[] { 100, 0, 0, 0 });
             // 
             // lblRegionCaptureSnapSizesWidth
             // 
@@ -1858,11 +1698,7 @@
             // 
             // nudRegionCaptureMagnifierPixelCount
             // 
-            this.nudRegionCaptureMagnifierPixelCount.Increment = new decimal(new int[] {
-            2,
-            0,
-            0,
-            0});
+            this.nudRegionCaptureMagnifierPixelCount.Increment = new decimal(new int[] { 2, 0, 0, 0 });
             resources.ApplyResources(this.nudRegionCaptureMagnifierPixelCount, "nudRegionCaptureMagnifierPixelCount");
             this.nudRegionCaptureMagnifierPixelCount.Name = "nudRegionCaptureMagnifierPixelCount";
             this.nudRegionCaptureMagnifierPixelCount.ValueChanged += new System.EventHandler(this.nudRegionCaptureMagnifierPixelCount_ValueChanged);
@@ -1949,22 +1785,10 @@
             // nudScreenRecordFPS
             // 
             resources.ApplyResources(this.nudScreenRecordFPS, "nudScreenRecordFPS");
-            this.nudScreenRecordFPS.Maximum = new decimal(new int[] {
-            60,
-            0,
-            0,
-            0});
-            this.nudScreenRecordFPS.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
+            this.nudScreenRecordFPS.Maximum = new decimal(new int[] { 60, 0, 0, 0 });
+            this.nudScreenRecordFPS.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             this.nudScreenRecordFPS.Name = "nudScreenRecordFPS";
-            this.nudScreenRecordFPS.Value = new decimal(new int[] {
-            20,
-            0,
-            0,
-            0});
+            this.nudScreenRecordFPS.Value = new decimal(new int[] { 20, 0, 0, 0 });
             this.nudScreenRecordFPS.ValueChanged += new System.EventHandler(this.nudScreenRecordFPS_ValueChanged);
             // 
             // lblScreenRecordFPS
@@ -1975,50 +1799,22 @@
             // nudScreenRecorderDuration
             // 
             this.nudScreenRecorderDuration.DecimalPlaces = 1;
-            this.nudScreenRecorderDuration.Increment = new decimal(new int[] {
-            5,
-            0,
-            0,
-            65536});
+            this.nudScreenRecorderDuration.Increment = new decimal(new int[] { 5, 0, 0, 65536 });
             resources.ApplyResources(this.nudScreenRecorderDuration, "nudScreenRecorderDuration");
-            this.nudScreenRecorderDuration.Maximum = new decimal(new int[] {
-            60,
-            0,
-            0,
-            0});
-            this.nudScreenRecorderDuration.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
+            this.nudScreenRecorderDuration.Maximum = new decimal(new int[] { 60, 0, 0, 0 });
+            this.nudScreenRecorderDuration.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             this.nudScreenRecorderDuration.Name = "nudScreenRecorderDuration";
-            this.nudScreenRecorderDuration.Value = new decimal(new int[] {
-            3,
-            0,
-            0,
-            0});
+            this.nudScreenRecorderDuration.Value = new decimal(new int[] { 3, 0, 0, 0 });
             this.nudScreenRecorderDuration.ValueChanged += new System.EventHandler(this.nudScreenRecorderDuration_ValueChanged);
             // 
             // nudScreenRecorderStartDelay
             // 
             this.nudScreenRecorderStartDelay.DecimalPlaces = 1;
-            this.nudScreenRecorderStartDelay.Increment = new decimal(new int[] {
-            5,
-            0,
-            0,
-            65536});
+            this.nudScreenRecorderStartDelay.Increment = new decimal(new int[] { 5, 0, 0, 65536 });
             resources.ApplyResources(this.nudScreenRecorderStartDelay, "nudScreenRecorderStartDelay");
-            this.nudScreenRecorderStartDelay.Maximum = new decimal(new int[] {
-            60,
-            0,
-            0,
-            0});
+            this.nudScreenRecorderStartDelay.Maximum = new decimal(new int[] { 60, 0, 0, 0 });
             this.nudScreenRecorderStartDelay.Name = "nudScreenRecorderStartDelay";
-            this.nudScreenRecorderStartDelay.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
+            this.nudScreenRecorderStartDelay.Value = new decimal(new int[] { 1, 0, 0, 0 });
             this.nudScreenRecorderStartDelay.ValueChanged += new System.EventHandler(this.nudScreenRecorderStartDelay_ValueChanged);
             // 
             // cbScreenRecorderFixedDuration
@@ -2031,22 +1827,10 @@
             // nudGIFFPS
             // 
             resources.ApplyResources(this.nudGIFFPS, "nudGIFFPS");
-            this.nudGIFFPS.Maximum = new decimal(new int[] {
-            30,
-            0,
-            0,
-            0});
-            this.nudGIFFPS.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
+            this.nudGIFFPS.Maximum = new decimal(new int[] { 30, 0, 0, 0 });
+            this.nudGIFFPS.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             this.nudGIFFPS.Name = "nudGIFFPS";
-            this.nudGIFFPS.Value = new decimal(new int[] {
-            5,
-            0,
-            0,
-            0});
+            this.nudGIFFPS.Value = new decimal(new int[] { 5, 0, 0, 0 });
             this.nudGIFFPS.ValueChanged += new System.EventHandler(this.nudGIFFPS_ValueChanged);
             // 
             // lblGIFFPS
@@ -2209,11 +1993,7 @@
             // nudAutoIncrementNumber
             // 
             resources.ApplyResources(this.nudAutoIncrementNumber, "nudAutoIncrementNumber");
-            this.nudAutoIncrementNumber.Maximum = new decimal(new int[] {
-            1000000000,
-            0,
-            0,
-            0});
+            this.nudAutoIncrementNumber.Maximum = new decimal(new int[] { 1000000000, 0, 0, 0 });
             this.nudAutoIncrementNumber.Name = "nudAutoIncrementNumber";
             // 
             // cbFileUploadReplaceProblematicCharacters
@@ -2334,9 +2114,7 @@
             // 
             resources.ApplyResources(this.lvUploaderFiltersList, "lvUploaderFiltersList");
             this.lvUploaderFiltersList.AutoFillColumn = true;
-            this.lvUploaderFiltersList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.chUploaderFiltersName,
-            this.chUploaderFiltersExtension});
+            this.lvUploaderFiltersList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] { this.chUploaderFiltersName, this.chUploaderFiltersExtension });
             this.lvUploaderFiltersList.FullRowSelect = true;
             this.lvUploaderFiltersList.HideSelection = false;
             this.lvUploaderFiltersList.Name = "lvUploaderFiltersList";
@@ -2454,11 +2232,7 @@
             this.lvActions.AutoFillColumn = true;
             this.lvActions.AutoFillColumnIndex = 2;
             this.lvActions.CheckBoxes = true;
-            this.lvActions.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.chActionsName,
-            this.chActionsPath,
-            this.chActionsArgs,
-            this.chActionsExtensions});
+            this.lvActions.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] { this.chActionsName, this.chActionsPath, this.chActionsArgs, this.chActionsExtensions });
             this.lvActions.FullRowSelect = true;
             this.lvActions.HideSelection = false;
             this.lvActions.MultiSelect = false;
@@ -2537,10 +2311,7 @@
             // 
             resources.ApplyResources(this.lvWatchFolderList, "lvWatchFolderList");
             this.lvWatchFolderList.AutoFillColumn = true;
-            this.lvWatchFolderList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.chWatchFolderFolderPath,
-            this.chWatchFolderFilter,
-            this.chWatchFolderIncludeSubdirectories});
+            this.lvWatchFolderList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] { this.chWatchFolderFolderPath, this.chWatchFolderFilter, this.chWatchFolderIncludeSubdirectories });
             this.lvWatchFolderList.FullRowSelect = true;
             this.lvWatchFolderList.HideSelection = false;
             this.lvWatchFolderList.Name = "lvWatchFolderList";
@@ -2769,7 +2540,6 @@
             this.tpAdvanced.ResumeLayout(false);
             this.tpAdvanced.PerformLayout();
             this.ResumeLayout(false);
-
         }
 
         #endregion
@@ -3051,5 +2821,6 @@
         private System.Windows.Forms.Button btnCustomActionCompletedSoundPath;
         private System.Windows.Forms.TextBox txtCustomActionCompletedSoundPath;
         private System.Windows.Forms.CheckBox cbUseCustomActionCompletedSound;
+        private System.Windows.Forms.CheckBox cbUseWinRTCapture;
     }
 }
