@@ -134,7 +134,7 @@ var
 begin
   if CheckForMutexes('{#MyAppId}') then
   begin
-    if (MsgBox('Uninstall has detected that {#MyAppName} is currently running.' + #13#10#13#10 + 'Would you like to close it?', mbError, MB_YESNO) = IDYES) then
+    if MsgBox('Uninstall has detected that {#MyAppName} is currently running.' + #13#10#13#10 + 'Would you like to close it?', mbError, MB_YESNO) = IDYES then
     begin
       Exec('taskkill.exe', '/f /im {#MyAppFilename}', '', SW_HIDE, ewWaitUntilTerminated, ErrorCode);
     end
