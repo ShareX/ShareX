@@ -132,9 +132,17 @@ function InitializeUninstall(): Boolean;
 var
   ErrorCode: Integer;
 begin
-  if CheckForMutexes('{#MyAppId}') and (MsgBox('Uninstall has detected that {#MyAppName} is currently running.' + #13#10#13#10 + 'Would you like to close it?', mbError, MB_YESNO) = IDYES) then
+  if CheckForMutexes('{#MyAppId}') then
   begin
-    Exec('taskkill.exe', '/f /im {#MyAppFilename}', '', SW_HIDE, ewWaitUntilTerminated, ErrorCode);
+    if (MsgBox('Uninstall has detected that {#MyAppName} is currently running.' + #13#10#13#10 + 'Would you like to close it?', mbError, MB_YESNO) = IDYES) then
+    begin
+      Exec('taskkill.exe', '/f /im {#MyAppFilename}', '', SW_HIDE, ewWaitUntilTerminated, ErrorCode);
+    end
+    else
+    begin
+      Result := False;
+      Exit;
+    end;
   end;
 
   Result := True;
