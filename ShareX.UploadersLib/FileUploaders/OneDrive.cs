@@ -288,7 +288,8 @@ namespace ShareX.UploadersLib.FileUploaders
 
             string json = JsonConvert.SerializeObject(new
             {
-                type = linkTypeValue
+                type = linkTypeValue,
+                scope = "anonymous"
             });
 
             string response = SendRequest(HttpMethod.POST, $"https://graph.microsoft.com/v1.0/me/drive/items/{id}/createLink", json, RequestHelpers.ContentTypeJSON,
