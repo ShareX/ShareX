@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.MediaLib;
 using ShareX.Properties;
 using System;
 using System.Drawing;
@@ -356,11 +357,30 @@ namespace ShareX
                 }
                 else if (File.Exists(filePath))
                 {
-                    using (Bitmap bmpResult = ImageHelpers.LoadImage(filePath))
+                    if (Helpers.IsImageFile(filePath))
                     {
-                        if (bmpResult != null)
+                        using(Bitmap bmpResult = ImageHelpers.LoadImage(filePath))
                         {
-                            return ImageHelpers.ResizeImage(bmpResult, ThumbnailSize, false);
+                            if(bmpResult != null)
+                            {
+                                return ImageHelpers.ResizeImage(bmpResult, ThumbnailSize, false);
+                            }
+                        }
+                    }
+                    else if (Helpers.IsVideoFile(filePath))
+                    {
+                        string outFilename = Path.GetTempFileName() + ".png";
+
+                        VideoThumbnailInfo videoThumbnail = VideoThumbnailer.TakeThumbnailAsync(
+                            TaskSettings.GetDefaultTaskSettings().CaptureSettings.FFmpegOptions.FFmpegPath,
+                            filePath,
+                            outFilename,
+                            0
+                        );
+
+                        if (videoThumbnail != null)
+                        {
+                            return ImageHelpers.ResizeImage(ImageHelpers.LoadImage(outFilename), ThumbnailSize, false, true);
                         }
                     }
                 }

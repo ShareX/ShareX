@@ -29,6 +29,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
+using System.Threading.Tasks;
 
 namespace ShareX.MediaLib
 {
@@ -56,6 +57,43 @@ namespace ShareX.MediaLib
             }
         }
 
+        public static VideoThumbnailInfo TakeThumbnailAsync(
+            string ffmpegPath,
+            string mediaPath,
+            string outFilename,
+            int time
+        )
+        {
+            using(Process process = new Process())
+            {
+                string arguments = $"-ss {time} -i \"{mediaPath}\" -f image2 -vframes 1 -y \"{outFilename}\"";
+
+                ProcessStartInfo psi = new ProcessStartInfo()
+                {
+                    FileName = ffmpegPath,
+                    Arguments = arguments,
+                    UseShellExecute = false,
+                    CreateNoWindow = true
+                };
+
+                process.StartInfo = psi;
+                process.Start();
+                process.WaitForExit(1000 * 30);
+            }
+
+            if(File.Exists(outFilename))
+            {
+                VideoThumbnailInfo screenshotInfo = new VideoThumbnailInfo(outFilename)
+                {
+                    Timestamp = TimeSpan.FromSeconds(time)
+                };
+
+                return screenshotInfo;
+            }
+
+            return null;
+        }
+
         public List<VideoThumbnailInfo> TakeThumbnails(string mediaPath)
         {
             MediaPath = mediaPath;
@@ -72,7 +110,6 @@ namespace ShareX.MediaLib
             for (int i = 0; i < Options.ThumbnailCount; i++)
             {
                 string mediaFileName = Path.GetFileNameWithoutExtension(MediaPath);
-
                 int timeSliceElapsed;
 
                 if (Options.RandomFrame)
@@ -87,28 +124,15 @@ namespace ShareX.MediaLib
                 string filename = string.Format("{0}-{1}.{2}", mediaFileName, timeSliceElapsed, Options.ImageFormat.GetDescription());
                 string tempThumbnailPath = Path.Combine(GetOutputDirectory(), filename);
 
-                using (Process process = new Process())
+                VideoThumbnailInfo screenshotInfo = TakeThumbnailAsync(
+                    FFmpegPath,
+                    MediaPath,
+                    tempThumbnailPath,
+                    timeSliceElapsed
+                );
+
+                if (screenshotInfo != null)
                 {
-                    ProcessStartInfo psi = new ProcessStartInfo()
-                    {
-                        FileName = FFmpegPath,
-                        Arguments = $"-ss {timeSliceElapsed} -i \"{MediaPath}\" -f image2 -vframes 1 -y \"{tempThumbnailPath}\"",
-                        UseShellExecute = false,
-                        CreateNoWindow = true
-                    };
-
-                    process.StartInfo = psi;
-                    process.Start();
-                    process.WaitForExit(1000 * 30);
-                }
-
-                if (File.Exists(tempThumbnailPath))
-                {
-                    VideoThumbnailInfo screenshotInfo = new VideoThumbnailInfo(tempThumbnailPath)
-                    {
-                        Timestamp = TimeSpan.FromSeconds(timeSliceElapsed)
-                    };
-
                     tempThumbnails.Add(screenshotInfo);
                 }
 
