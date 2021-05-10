@@ -20,4 +20,4 @@ jobs:
           stale-pr-label: 'Stale'
           exempt-issue-labels: 'Bug,Enhancement'
           exempt-pr-labels: ''
-          operations-per-run: 500
+          operations-per-run: 300
