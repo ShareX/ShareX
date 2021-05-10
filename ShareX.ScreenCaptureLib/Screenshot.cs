@@ -31,7 +31,6 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Imaging;
-using System.Threading;
 
 namespace ShareX.ScreenCaptureLib
 {
@@ -43,8 +42,7 @@ namespace ShareX.ScreenCaptureLib
         public bool CaptureShadow { get; set; } = false;
         public int ShadowOffset { get; set; } = 20;
         public bool AutoHideTaskbar { get; set; } = false;
-
-        public bool UseD3DCapture { get; set; } = true;
+        public bool UseWinRTCaptureAPI { get; set; } = false;
 
         public Bitmap CaptureRectangle(Rectangle rect)
         {
@@ -129,7 +127,7 @@ namespace ShareX.ScreenCaptureLib
                 return null;
             }
 
-            if (UseD3DCapture)
+            if (UseWinRTCaptureAPI && ModernCaptureSignletonManager.Instance.IsAvailable)
             {
                 return CaptureRectangleDirect3D11(handle, rect, captureCursor);
             }

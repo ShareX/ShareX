@@ -3,6 +3,8 @@ using System.Drawing;
 using System.Reflection;
 using System.IO;
 using System.Threading;
+
+using Windows.Foundation.Metadata;
 using Windows.Graphics.Capture;
 using Windows.Graphics.DirectX.Direct3D11;
 
@@ -24,16 +26,31 @@ namespace ShareX.ScreenCaptureLib.AdvancedGraphics.Direct3D
 
         private SemaphoreSlim _sharedResourceSemaphore;
         private ModernCapture _captureInstance;
+        private bool _apiFullFeatureAvailable;
 
         public ModernCaptureSignletonManager()
         {
             _sharedResourceSemaphore = new SemaphoreSlim(1);
-            _captureInstance = new ModernCapture();
+            // It is possible to use this from 1903+, but cursor control is only added in 2004. Therefore
+            // the base requirement was raised to 2004.
+            _apiFullFeatureAvailable = ApiInformation.IsApiContractPresent("Windows.Foundation.UniversalApiContract", 10, 0);
+        }
+
+        public bool IsAvailable
+        {
+            get
+            {
+                return _apiFullFeatureAvailable;
+            }
         }
 
         public ModernCapture Take()
         {
             _sharedResourceSemaphore.Wait();
+            if (_captureInstance == null)
+            {
+                _captureInstance = new ModernCapture();
+            }
             return _captureInstance;
         }
 

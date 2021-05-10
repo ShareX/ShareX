@@ -76,6 +76,7 @@ namespace ShareX
 
             Screenshot screenshot = TaskHelpers.GetScreenshot(taskSettings);
             screenshot.CaptureCursor = false;
+            screenshot.UseWinRTCaptureAPI = taskSettings.CaptureSettings.UseWinRTGraphicsCaptureAPI;
             Bitmap bmp = screenshot.CaptureFullscreen();
 
             CursorData cursorData = null;

@@ -705,7 +705,7 @@ namespace ShareX
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
             ScrollingCaptureForm scrollingCaptureForm = new ScrollingCaptureForm(taskSettings.CaptureSettingsReference.ScrollingCaptureOptions,
-                taskSettings.CaptureSettings.SurfaceOptions, forceSelection);
+                taskSettings.CaptureSettings.SurfaceOptions, forceSelection, taskSettings.CaptureSettings.UseWinRTGraphicsCaptureAPI);
             scrollingCaptureForm.ImageProcessRequested += img => UploadManager.RunImageTask(img, taskSettings);
             scrollingCaptureForm.Show();
         }
@@ -1606,7 +1606,8 @@ namespace ShareX
                 RemoveOutsideScreenArea = true,
                 CaptureShadow = taskSettings.CaptureSettings.CaptureShadow,
                 ShadowOffset = taskSettings.CaptureSettings.CaptureShadowOffset,
-                AutoHideTaskbar = taskSettings.CaptureSettings.CaptureAutoHideTaskbar
+                AutoHideTaskbar = taskSettings.CaptureSettings.CaptureAutoHideTaskbar,
+                UseWinRTCaptureAPI = taskSettings.CaptureSettings.UseWinRTGraphicsCaptureAPI,
             };
 
             return screenshot;
