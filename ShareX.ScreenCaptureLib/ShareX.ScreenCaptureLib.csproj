@@ -86,7 +86,7 @@
       <Link>Properties\SharedAssemblyInfo.cs</Link>
     </Compile>
     <Compile Include="AdvancedGraphics\Direct3D\ModernCaptureMonitorSession.cs" />
-    <Compile Include="AdvancedGraphics\Direct3D\Shaders\ShaderInput.cs" />
+    <Compile Include="AdvancedGraphics\Direct3D\Shaders\ShaderInputStructure.cs" />
     <Compile Include="AdvancedGraphics\Direct3D\WinRTCaptureHelper.cs" />
     <Compile Include="AdvancedGraphics\Direct3D\WinRTD3D11Helper.cs" />
     <Compile Include="AdvancedGraphics\GDI\MonitorEnumerationHelper.cs" />
@@ -367,7 +367,7 @@
     <PixelShader Include="AdvancedGraphics\Direct3D\Shaders\PostProcessingColor.hlsl" />
     <VertexShader Include="AdvancedGraphics\Direct3D\Shaders\PostProcessingQuad.hlsl" />
     <None Include="AdvancedGraphics\Direct3D\Shaders\ColorSpace.hlsl" />
-    <None Include="AdvancedGraphics\Direct3D\Shaders\Structures.hlsl" />
+    <None Include="AdvancedGraphics\Direct3D\Shaders\ShaderInputStructure.hlsl" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Forms\CanvasSizeForm.es-MX.resx">

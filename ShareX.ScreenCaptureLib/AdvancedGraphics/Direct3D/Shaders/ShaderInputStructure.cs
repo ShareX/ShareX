@@ -2,7 +2,7 @@
 
 namespace ShareX.ScreenCaptureLib.AdvancedGraphics.Direct3D.Shaders
 {
-    public struct ShaderInput
+    public struct ShaderInputStructure
     {
         public Vector3 Position;
         public Vector2 TextureCoord;

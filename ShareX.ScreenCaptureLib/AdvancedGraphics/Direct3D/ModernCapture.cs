@@ -244,35 +244,35 @@ namespace ShareX.ScreenCaptureLib.AdvancedGraphics.Direct3D
                 using (var texture = Direct3D11Helper.CreateSharpDXTexture2D(frame.Surface))
                 {
                     var hdrMetadata = currentSession.HdrMetadata;
-                    var vertices = new ShaderInput[]
+                    var vertices = new ShaderInputStructure[]
                     {
                             // Left-Top
-                            new ShaderInput {
+                            new ShaderInputStructure {
                                 Position = new Vector3(currentSession.DestD3DVsTopLeft.X, currentSession.DestD3DVsTopLeft.Y, 0),
                                 TextureCoord = new Vector2(currentSession.DestD3DPsSamplerTopLeft.X, currentSession.DestD3DPsSamplerTopLeft.Y),
                             },
                             // Right-Top
-                            new ShaderInput {
+                            new ShaderInputStructure {
                                 Position = new Vector3(currentSession.DestD3DVsBottomRight.X, currentSession.DestD3DVsTopLeft.Y, 0),
                                 TextureCoord = new Vector2(currentSession.DestD3DPsSamplerBottomRight.X, currentSession.DestD3DPsSamplerTopLeft.Y)
                             },
                             // Left-Bottom
-                            new ShaderInput {
+                            new ShaderInputStructure {
                                 Position = new Vector3(currentSession.DestD3DVsTopLeft.X, currentSession.DestD3DVsBottomRight.Y, 0),
                                 TextureCoord = new Vector2(currentSession.DestD3DPsSamplerTopLeft.X, currentSession.DestD3DPsSamplerBottomRight.Y)
                             },
                             // Right-Top
-                            new ShaderInput {
+                            new ShaderInputStructure {
                                 Position = new Vector3(currentSession.DestD3DVsBottomRight.X, currentSession.DestD3DVsTopLeft.Y, 0),
                                 TextureCoord = new Vector2(currentSession.DestD3DPsSamplerBottomRight.X, currentSession.DestD3DPsSamplerTopLeft.Y)
                             },
                             // Right-Bottom
-                            new ShaderInput {
+                            new ShaderInputStructure {
                                 Position = new Vector3(currentSession.DestD3DVsBottomRight.X, currentSession.DestD3DVsBottomRight.Y, 0),
                                 TextureCoord = new Vector2(currentSession.DestD3DPsSamplerBottomRight.X, currentSession.DestD3DPsSamplerBottomRight.Y)
                             },
                             // Left-Bottom
-                            new ShaderInput {
+                            new ShaderInputStructure {
                                 Position = new Vector3(currentSession.DestD3DVsTopLeft.X, currentSession.DestD3DVsBottomRight.Y, 0),
                                 TextureCoord = new Vector2(currentSession.DestD3DPsSamplerTopLeft.X, currentSession.DestD3DPsSamplerBottomRight.Y)
                             },
@@ -291,7 +291,7 @@ namespace ShareX.ScreenCaptureLib.AdvancedGraphics.Direct3D
 
                     d3dContext.InputAssembler.PrimitiveTopology = D3D.PrimitiveTopology.TriangleList;
                     d3dContext.InputAssembler.InputLayout = inputLayout;
-                    d3dContext.InputAssembler.SetVertexBuffers(0, new D3D11.VertexBufferBinding(triangleVertexBuffer, Utilities.SizeOf<ShaderInput>(), 0));
+                    d3dContext.InputAssembler.SetVertexBuffers(0, new D3D11.VertexBufferBinding(triangleVertexBuffer, Utilities.SizeOf<ShaderInputStructure>(), 0));
 
                     d3dContext.VertexShader.Set(vsQuad);
                     d3dContext.PixelShader.SetConstantBuffer(0, hdrMetadataBuffer);

@@ -1,4 +1,4 @@
-#include "Structures.hlsl"
+#include "ShaderInputStructure.hlsl"
 #include "ColorSpace.hlsl"
 
 Texture2D screenTexture : register(t0);

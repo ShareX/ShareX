@@ -1,4 +1,4 @@
-#include "Structures.hlsl"
+#include "ShaderInputStructure.hlsl"
 
 VS_OUTPUT VxQuadEntry(VS_INPUT v)
 {
