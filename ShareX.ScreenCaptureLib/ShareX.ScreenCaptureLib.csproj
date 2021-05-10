@@ -94,7 +94,6 @@
     <Compile Include="AdvancedGraphics\HdrMetadataUtility.cs" />
     <Compile Include="AdvancedGraphics\ModernCaptureDescription.cs" />
     <Compile Include="AdvancedGraphics\ShaderHdrMetadata.cs" />
-    <Compile Include="AdvancedGraphics\WrappingStream.cs" />
     <Compile Include="Animations\BaseAnimation.cs" />
     <Compile Include="Animations\PointAnimation.cs" />
     <Compile Include="Animations\RectangleAnimation.cs" />

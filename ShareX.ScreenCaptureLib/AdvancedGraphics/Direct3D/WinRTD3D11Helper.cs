@@ -19,7 +19,7 @@ namespace ShareX.ScreenCaptureLib.AdvancedGraphics.Direct3D
         interface IDirect3DDxgiInterfaceAccess
         {
             IntPtr GetInterface([In] ref Guid iid);
-        };
+        }
 
         [DllImport(
             "d3d11.dll",

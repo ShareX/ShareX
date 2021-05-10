@@ -145,7 +145,7 @@ namespace ShareX.ScreenCaptureLib.AdvancedGraphics.Direct3D
             }
 
             // Process final 8-bit bitmap
-            var gdiPlusBitmap = new Bitmap(new WrappingStream(DumpAndSaveImage()));
+            var gdiPlusBitmap = new Bitmap(DumpAndSaveImage());
             rtvSdrTexture.Dispose();
             textureSDRImage.Dispose();
             description = null;
