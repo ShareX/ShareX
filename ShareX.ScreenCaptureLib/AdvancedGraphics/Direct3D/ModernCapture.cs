@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Reflection;
 using System.IO;
 using System.Threading;
@@ -13,10 +14,35 @@ using WIC = SharpDX.WIC;
 using D3DCompiler = SharpDX.D3DCompiler;
 
 using ShareX.ScreenCaptureLib.AdvancedGraphics.Direct3D.Shaders;
-using System.Drawing;
 
 namespace ShareX.ScreenCaptureLib.AdvancedGraphics.Direct3D
 {
+    public class ModernCaptureSignletonManager
+    {
+        private static ModernCaptureSignletonManager _instance = new ModernCaptureSignletonManager();
+        public static ModernCaptureSignletonManager Instance => _instance;
+
+        private SemaphoreSlim _sharedResourceSemaphore;
+        private ModernCapture _captureInstance;
+
+        public ModernCaptureSignletonManager()
+        {
+            _sharedResourceSemaphore = new SemaphoreSlim(1);
+            _captureInstance = new ModernCapture();
+        }
+
+        public ModernCapture Take()
+        {
+            _sharedResourceSemaphore.Wait();
+            return _captureInstance;
+        }
+
+        public void Release()
+        {
+            _sharedResourceSemaphore.Release();
+        }
+    }
+
     public class ModernCapture : IDisposable
     {
         private ModernCaptureItemDescription description;
@@ -44,9 +70,12 @@ namespace ShareX.ScreenCaptureLib.AdvancedGraphics.Direct3D
 
         private ModernCaptureMonitorSession currentSession;
 
-        public ModernCapture(ModernCaptureItemDescription itemDescription)
+        public ModernCapture()
         {
-            description = itemDescription;
+#if DEBUG
+            // Check memory leaks in debug config
+            Configuration.EnableObjectTracking = true;
+#endif
 
             wrtD3D11Device = Direct3D11Helper.CreateDevice();
             d3dDevice = Direct3D11Helper.CreateSharpDXDevice(wrtD3D11Device);
@@ -54,26 +83,14 @@ namespace ShareX.ScreenCaptureLib.AdvancedGraphics.Direct3D
             wicFactory = new WIC.ImagingFactory2();
 
             InitializeShaders();
+            InitializeSharedComponents();
         }
 
-        private void InitializeShaders()
+        public Bitmap CaptureAndProcess(ModernCaptureItemDescription itemDescription)
         {
-            var assembly = Assembly.GetExecutingAssembly();
-            using (var vxShaderStream = assembly.GetManifestResourceStream($"{ShaderConstant.ResourcePrefix}.PostProcessingQuad.cso"))
-            using (var psShaderStream = assembly.GetManifestResourceStream($"{ShaderConstant.ResourcePrefix}.PostProcessingColor.cso"))
-            {
-                using (var vbc = D3DCompiler.ShaderBytecode.FromStream(vxShaderStream))
-                using (var pbcTm = D3DCompiler.ShaderBytecode.FromStream(psShaderStream))
-                {
-                    psToneMapping = new D3D11.PixelShader(d3dDevice, pbcTm);
-                    vsQuad = new D3D11.VertexShader(d3dDevice, vbc);
-                    shaderInputSigVsQuad = D3DCompiler.ShaderSignature.GetInputSignature(vbc);
-                }
-            }
-        }
+            // Assuming old texture is already disposed
+            description = itemDescription;
 
-        public Bitmap CaptureAndProcess()
-        {
             // Initialize DirectX context (for the canvas)
             textureSDRImage = new D3D11.Texture2D(d3dDevice, new D3D11.Texture2DDescription
             {
@@ -89,18 +106,6 @@ namespace ShareX.ScreenCaptureLib.AdvancedGraphics.Direct3D
                 OptionFlags = D3D11.ResourceOptionFlags.None,
             });
             rtvSdrTexture = new D3D11.RenderTargetView(d3dDevice, textureSDRImage);
-            inputLayout = new D3D11.InputLayout(d3dDevice, shaderInputSigVsQuad, shaderInputElements);
-            samplerState = new D3D11.SamplerState(d3dDevice, new D3D11.SamplerStateDescription
-            {
-                AddressU = D3D11.TextureAddressMode.Wrap,
-                AddressV = D3D11.TextureAddressMode.Wrap,
-                AddressW = D3D11.TextureAddressMode.Wrap,
-                MinimumLod = 0,
-                MipLodBias = 0.0f,
-                MaximumLod = float.MaxValue,
-                BorderColor = new SharpDX.Mathematics.Interop.RawColor4(0.0f, 0.0f, 0.0f, 0.0f),
-                Filter = D3D11.Filter.MinMagMipLinear,
-            });
 
             d3dContext.Rasterizer.SetViewport(new Viewport(0, 0, description.CanvasRect.Width, description.CanvasRect.Height));
             d3dContext.OutputMerger.SetRenderTargets(rtvSdrTexture);
@@ -118,11 +123,52 @@ namespace ShareX.ScreenCaptureLib.AdvancedGraphics.Direct3D
                         Thread.Sleep(1);
                     }
                     ProcessFrame(f);
-                }  
+                    f.Dispose();
+                }
             }
 
             // Process final 8-bit bitmap
-            return new Bitmap(DumpAndSaveImage());
+            var gdiPlusBitmap = new Bitmap(new WrappingStream(DumpAndSaveImage()));
+            rtvSdrTexture.Dispose();
+            textureSDRImage.Dispose();
+            description = null;
+
+#if DEBUG
+            System.Diagnostics.Debug.WriteLine(SharpDX.Diagnostics.ObjectTracker.ReportActiveObjects());
+#endif
+            return gdiPlusBitmap;
+        }
+
+        private void InitializeSharedComponents()
+        {
+            inputLayout = new D3D11.InputLayout(d3dDevice, shaderInputSigVsQuad, shaderInputElements);
+            samplerState = new D3D11.SamplerState(d3dDevice, new D3D11.SamplerStateDescription
+            {
+                AddressU = D3D11.TextureAddressMode.Wrap,
+                AddressV = D3D11.TextureAddressMode.Wrap,
+                AddressW = D3D11.TextureAddressMode.Wrap,
+                MinimumLod = 0,
+                MipLodBias = 0.0f,
+                MaximumLod = float.MaxValue,
+                BorderColor = new SharpDX.Mathematics.Interop.RawColor4(0.0f, 0.0f, 0.0f, 0.0f),
+                Filter = D3D11.Filter.MinMagMipLinear,
+            });
+        }
+
+        private void InitializeShaders()
+        {
+            var assembly = Assembly.GetExecutingAssembly();
+            using (var vxShaderStream = assembly.GetManifestResourceStream($"{ShaderConstant.ResourcePrefix}.PostProcessingQuad.cso"))
+            using (var psShaderStream = assembly.GetManifestResourceStream($"{ShaderConstant.ResourcePrefix}.PostProcessingColor.cso"))
+            {
+                using (var vbc = D3DCompiler.ShaderBytecode.FromStream(vxShaderStream))
+                using (var pbcTm = D3DCompiler.ShaderBytecode.FromStream(psShaderStream))
+                {
+                    psToneMapping = new D3D11.PixelShader(d3dDevice, pbcTm);
+                    vsQuad = new D3D11.VertexShader(d3dDevice, vbc);
+                    shaderInputSigVsQuad = D3DCompiler.ShaderSignature.GetInputSignature(vbc);
+                }
+            }
         }
 
         private Stream DumpAndSaveImage()
@@ -268,11 +314,11 @@ namespace ShareX.ScreenCaptureLib.AdvancedGraphics.Direct3D
 
         public void Dispose()
         {
-            inputLayout?.Dispose();
             rtvSdrTexture?.Dispose();
             textureSDRImage?.Dispose();
-            samplerState?.Dispose();
-
+            
+            inputLayout.Dispose();
+            samplerState.Dispose();
             shaderInputSigVsQuad.Dispose();
             psToneMapping.Dispose();
             vsQuad.Dispose();

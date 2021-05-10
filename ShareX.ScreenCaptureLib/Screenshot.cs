@@ -31,6 +31,7 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Imaging;
+using System.Threading;
 
 namespace ShareX.ScreenCaptureLib
 {
@@ -198,10 +199,9 @@ namespace ShareX.ScreenCaptureLib
             // 3.2 Capture and wait for content
             // 3.3 Shader and draw passes
             // 3.4 Datastream pass, copy
-            using (var d3dCapture = new ModernCapture(catpureItem))
-            {
-                bmp = d3dCapture.CaptureAndProcess();
-            }
+            var d3dCapture = ModernCaptureSignletonManager.Instance.Take();
+            bmp = d3dCapture.CaptureAndProcess(catpureItem);
+            ModernCaptureSignletonManager.Instance.Release();
 
             return bmp;
         }
