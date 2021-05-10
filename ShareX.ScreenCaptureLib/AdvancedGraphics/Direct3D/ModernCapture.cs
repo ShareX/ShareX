@@ -175,8 +175,8 @@ namespace ShareX.ScreenCaptureLib.AdvancedGraphics.Direct3D
         private void InitializeShaders()
         {
             var assembly = Assembly.GetExecutingAssembly();
-            using (var vxShaderStream = assembly.GetManifestResourceStream($"{ShaderConstant.ResourcePrefix}.PostProcessingQuad.cso"))
-            using (var psShaderStream = assembly.GetManifestResourceStream($"{ShaderConstant.ResourcePrefix}.PostProcessingColor.cso"))
+            using (var vxShaderStream = assembly.GetManifestResourceStream("D3D11Shaders.PostProcessingQuad.cso"))
+            using (var psShaderStream = assembly.GetManifestResourceStream("D3D11Shaders.PostProcessingColor.cso"))
             {
                 using (var vbc = D3DCompiler.ShaderBytecode.FromStream(vxShaderStream))
                 using (var pbcTm = D3DCompiler.ShaderBytecode.FromStream(psShaderStream))

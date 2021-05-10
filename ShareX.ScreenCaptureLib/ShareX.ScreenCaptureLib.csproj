@@ -86,8 +86,6 @@
       <Link>Properties\SharedAssemblyInfo.cs</Link>
     </Compile>
     <Compile Include="AdvancedGraphics\Direct3D\ModernCaptureMonitorSession.cs" />
-    <Compile Include="AdvancedGraphics\Direct3D\Shaders\HLSLShaderIncludeHandler.cs" />
-    <Compile Include="AdvancedGraphics\Direct3D\Shaders\ShaderConstant.cs" />
     <Compile Include="AdvancedGraphics\Direct3D\Shaders\ShaderInput.cs" />
     <Compile Include="AdvancedGraphics\Direct3D\WinRTCaptureHelper.cs" />
     <Compile Include="AdvancedGraphics\Direct3D\WinRTD3D11Helper.cs" />
