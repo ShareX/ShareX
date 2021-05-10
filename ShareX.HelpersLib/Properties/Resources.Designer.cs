@@ -1183,6 +1183,24 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Clipboard viewer.
+        /// </summary>
+        internal static string HotkeyType_ClipboardViewer {
+            get {
+                return ResourceManager.GetString("HotkeyType_ClipboardViewer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tools.
+        /// </summary>
+        internal static string HotkeyType_ClipboardViewer_Category {
+            get {
+                return ResourceManager.GetString("HotkeyType_ClipboardViewer_Category", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Color picker.
         /// </summary>
         internal static string HotkeyType_ColorPicker {
@@ -1467,6 +1485,24 @@ namespace ShareX.HelpersLib.Properties {
         internal static string HotkeyType_IndexFolder_Category {
             get {
                 return ResourceManager.GetString("HotkeyType_IndexFolder_Category", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Inspect window.
+        /// </summary>
+        internal static string HotkeyType_InspectWindow {
+            get {
+                return ResourceManager.GetString("HotkeyType_InspectWindow", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tools.
+        /// </summary>
+        internal static string HotkeyType_InspectWindow_Category {
+            get {
+                return ResourceManager.GetString("HotkeyType_InspectWindow_Category", resourceCulture);
             }
         }
         
