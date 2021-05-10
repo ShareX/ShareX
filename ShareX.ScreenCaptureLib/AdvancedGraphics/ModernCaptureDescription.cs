@@ -23,7 +23,6 @@ namespace ShareX.ScreenCaptureLib.AdvancedGraphics
 
         public ModernCaptureMonitorDescription()
         {
-
         }
 
         public ModernCaptureMonitorDescription(ModernCaptureMonitorDescription d)
