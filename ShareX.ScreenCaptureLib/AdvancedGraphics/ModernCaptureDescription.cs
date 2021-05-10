@@ -18,6 +18,9 @@ namespace ShareX.ScreenCaptureLib.AdvancedGraphics
         public SharpDX.Vector2 DestD3DPsSamplerTopLeft { get; set; }
         public SharpDX.Vector2 DestD3DPsSamplerBottomRight { get; set; }
 
+        // For WinRT use
+        public bool CaptureCursor { get; set; }
+
         public ModernCaptureMonitorDescription()
         {
 
@@ -32,6 +35,7 @@ namespace ShareX.ScreenCaptureLib.AdvancedGraphics
             this.DestD3DVsBottomRight = d.DestD3DVsBottomRight;
             this.DestD3DPsSamplerTopLeft = d.DestD3DPsSamplerTopLeft;
             this.DestD3DPsSamplerBottomRight = d.DestD3DPsSamplerBottomRight;
+            this.CaptureCursor = d.CaptureCursor;
         }
     }
 

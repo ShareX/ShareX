@@ -262,12 +262,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="AdvancedGraphics\Direct3D\Shaders\PostProcessingColor.hlsl">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AdvancedGraphics\Direct3D\Shaders\PostProcessingQuad.hlsl">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
     <None Include="Resources\keyboard-enter.png" />
     <None Include="Resources\document-copy.png" />
     <None Include="Resources\openhand.cur" />
@@ -367,14 +361,14 @@
     <None Include="Resources\camcorder--pencil.png" />
     <None Include="Resources\control-record.png" />
     <None Include="Resources\control-record-yellow.png" />
-    <EmbeddedResource Include="AdvancedGraphics\Direct3D\Shaders\ColorSpace.hlsl">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AdvancedGraphics\Direct3D\Shaders\Structures.hlsl">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
     <Content Include="Resources\Crosshair.cur" />
     <None Include="Resources\exclamation-button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <PixelShader Include="AdvancedGraphics\Direct3D\Shaders\PostProcessingColor.hlsl" />
+    <VertexShader Include="AdvancedGraphics\Direct3D\Shaders\PostProcessingQuad.hlsl" />
+    <None Include="AdvancedGraphics\Direct3D\Shaders\ColorSpace.hlsl" />
+    <None Include="AdvancedGraphics\Direct3D\Shaders\Structures.hlsl" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Forms\CanvasSizeForm.es-MX.resx">
@@ -944,6 +938,9 @@
     <PackageReference Include="ImageListView">
       <Version>13.8.2</Version>
     </PackageReference>
+    <PackageReference Include="Microsoft.HLSL.CSharpVB">
+      <Version>1.0.2</Version>
+    </PackageReference>
     <PackageReference Include="Microsoft.Windows.SDK.Contracts">
       <Version>10.0.19041.1</Version>
     </PackageReference>
@@ -968,11 +965,15 @@
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
+  <!-- Include Shader files -->
   <Target Name="BeforeBuild">
+    <ItemGroup>
+      <EmbeddedResource Include="$(IntermediateOutputPath)\AdvancedGraphics\Direct3D\Shaders\PostProcessingColor.cso">
+        <LogicalName>D3D11Shaders.PostProcessingColor.cso</LogicalName>
+      </EmbeddedResource>
+      <EmbeddedResource Include="$(IntermediateOutputPath)\AdvancedGraphics\Direct3D\Shaders\PostProcessingQuad.cso">
+        <LogicalName>D3D11Shaders.PostProcessingQuad.cso</LogicalName>
+      </EmbeddedResource>
+    </ItemGroup>
   </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
 </Project>

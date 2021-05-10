@@ -9,3 +9,8 @@ VS_OUTPUT VxQuadEntry(VS_INPUT v)
 
     return vout;
 }
+
+VS_OUTPUT main(VS_INPUT v)
+{
+    return VxQuadEntry(v);
+}

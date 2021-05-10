@@ -184,7 +184,8 @@ namespace ShareX.ScreenCaptureLib
                     {
                         DestGdiRect = screenBoundCopy,
                         HdrMetadata = HdrMetadataUtility.GetHdrMetadataForMonitor(monitor.DeviceName),
-                        MonitorInfo = monitor
+                        MonitorInfo = monitor,
+                        CaptureCursor = captureCursor,
                     });
                 }
             }

@@ -89,3 +89,13 @@ float4 PsPassthrough(VS_OUTPUT p) : SV_TARGET
 {
     return screenTexture.Sample(simpleSampler, p.TexCoord);
 }
+
+// For fxc
+float4 main(VS_OUTPUT p) : SV_TARGET
+{
+    if (EnableHdrProcessing) {
+        return PsWindowsHDR2SDR(p);
+    }
+
+    return PsPassthrough(p);
+}

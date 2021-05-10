@@ -2,6 +2,6 @@
 {
     static class ShaderConstant
     {
-        public static string ResourcePrefix => "ShareX.ScreenCaptureLib.AdvancedGraphics.Direct3D.Shaders";
+        public static string ResourcePrefix => "D3D11Shaders";
     }
 }

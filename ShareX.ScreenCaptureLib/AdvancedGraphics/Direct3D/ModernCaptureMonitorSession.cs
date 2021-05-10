@@ -20,6 +20,7 @@ namespace ShareX.ScreenCaptureLib.AdvancedGraphics.Direct3D
                 description.HdrMetadata.EnableHdrProcessing ? DirectXPixelFormat.R16G16B16A16Float : DirectXPixelFormat.B8G8R8A8UIntNormalized,
                 2, CaptureItem.Size);
             this.Session = FramePool.CreateCaptureSession(CaptureItem);
+            this.Session.IsCursorCaptureEnabled = description.CaptureCursor;
         }
 
         protected virtual void Dispose(bool disposing)

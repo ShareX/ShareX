@@ -35,7 +35,6 @@ namespace ShareX.ScreenCaptureLib.AdvancedGraphics.Direct3D
         private D3D11.InputLayout inputLayout;
 
         private D3D11.PixelShader psToneMapping;
-        private D3D11.PixelShader psPassthrough;
         private D3D11.SamplerState samplerState;
 
         private D3D11.Texture2D textureSDRImage;
@@ -59,31 +58,17 @@ namespace ShareX.ScreenCaptureLib.AdvancedGraphics.Direct3D
 
         private void InitializeShaders()
         {
-#if DEBUG
-            var shaderFlag = D3DCompiler.ShaderFlags.Debug;
-#else
-            var shaderFlag = D3DCompiler.ShaderFlags.OptimizationLevel2;
-#endif
-
             var assembly = Assembly.GetExecutingAssembly();
-            using (var includeHandler = new HLSLShaderIncludeHandler())
-            using (var vxShaderStream = assembly.GetManifestResourceStream($"{ShaderConstant.ResourcePrefix}.PostProcessingQuad.hlsl"))
-            using (var psShaderStream = assembly.GetManifestResourceStream($"{ShaderConstant.ResourcePrefix}.PostProcessingColor.hlsl"))
-            using (var psShaderStream2 = assembly.GetManifestResourceStream($"{ShaderConstant.ResourcePrefix}.PostProcessingColor.hlsl"))
-            using (var vxStreamReader = new StreamReader(vxShaderStream))
-            using (var psStreamReader = new StreamReader(psShaderStream))
-            using (var psStreamReader2 = new StreamReader(psShaderStream2))
-            using (var vbc = D3DCompiler.ShaderBytecode.Compile(vxStreamReader.ReadToEnd(), "VxQuadEntry", "vs_5_0", shaderFlag,
-                D3DCompiler.EffectFlags.None, null, includeHandler, "ShareX.ScreenCaptureLib.PostProcessingColor.hlsl"))
-            using (var pbcTm = D3DCompiler.ShaderBytecode.Compile(psStreamReader.ReadToEnd(), "PsWindowsHDR2SDR", "ps_5_0", shaderFlag,
-                D3DCompiler.EffectFlags.None, null, includeHandler, "ShareX.ScreenCaptureLib.PostProcessingColor.TM.hlsl"))
-            using (var pbcPs = D3DCompiler.ShaderBytecode.Compile(psStreamReader2.ReadToEnd(), "PsPassthrough", "ps_5_0", shaderFlag,
-                D3DCompiler.EffectFlags.None, null, includeHandler, "ShareX.ScreenCaptureLib.PostProcessingColor.PS.hlsl"))
+            using (var vxShaderStream = assembly.GetManifestResourceStream($"{ShaderConstant.ResourcePrefix}.PostProcessingQuad.cso"))
+            using (var psShaderStream = assembly.GetManifestResourceStream($"{ShaderConstant.ResourcePrefix}.PostProcessingColor.cso"))
             {
-                psToneMapping = new D3D11.PixelShader(d3dDevice, pbcTm);
-                psPassthrough = new D3D11.PixelShader(d3dDevice, pbcPs);
-                vsQuad = new D3D11.VertexShader(d3dDevice, vbc);
-                shaderInputSigVsQuad = D3DCompiler.ShaderSignature.GetInputSignature(vbc);
+                using (var vbc = D3DCompiler.ShaderBytecode.FromStream(vxShaderStream))
+                using (var pbcTm = D3DCompiler.ShaderBytecode.FromStream(psShaderStream))
+                {
+                    psToneMapping = new D3D11.PixelShader(d3dDevice, pbcTm);
+                    vsQuad = new D3D11.VertexShader(d3dDevice, vbc);
+                    shaderInputSigVsQuad = D3DCompiler.ShaderSignature.GetInputSignature(vbc);
+                }
             }
         }
 
@@ -249,53 +234,27 @@ namespace ShareX.ScreenCaptureLib.AdvancedGraphics.Direct3D
                     d3dContext.PixelShader.SetConstantBuffer(0, hdrMetadataBuffer);
                     d3dContext.PixelShader.SetSampler(0, samplerState);
 
-                    // Need HDR tonemapping?
-                    if (currentSession.HdrMetadata.EnableHdrProcessing)
+                    var canvasTexture = new D3D11.Texture2D(d3dDevice, new D3D11.Texture2DDescription
                     {
-                        var hdrTextureShaderCopy = new D3D11.Texture2D(d3dDevice, new D3D11.Texture2DDescription
-                        {
-                            Width = texture.Description.Width,
-                            Height = texture.Description.Height,
-                            MipLevels = 1,
-                            ArraySize = 1,
-                            Format = DXGI.Format.R16G16B16A16_Float,
-                            Usage = D3D11.ResourceUsage.Default,
-                            SampleDescription = new DXGI.SampleDescription(1, 0),
-                            BindFlags = D3D11.BindFlags.ShaderResource,
-                            CpuAccessFlags = D3D11.CpuAccessFlags.None,
-                            OptionFlags = D3D11.ResourceOptionFlags.None,
-                        });
-                        var shaderResView = new D3D11.ShaderResourceView(d3dDevice, hdrTextureShaderCopy);
-                        d3dContext.CopyResource(texture, hdrTextureShaderCopy);
+                        Width = texture.Description.Width,
+                        Height = texture.Description.Height,
+                        MipLevels = 1,
+                        ArraySize = 1,
+                        Format = currentSession.HdrMetadata.EnableHdrProcessing ? DXGI.Format.R16G16B16A16_Float : DXGI.Format.B8G8R8A8_UNorm_SRgb,
+                        Usage = D3D11.ResourceUsage.Default,
+                        SampleDescription = new DXGI.SampleDescription(1, 0),
+                        BindFlags = D3D11.BindFlags.ShaderResource,
+                        CpuAccessFlags = D3D11.CpuAccessFlags.None,
+                        OptionFlags = D3D11.ResourceOptionFlags.None,
+                    });
+
+                    using (canvasTexture)
+                    using (var shaderResView = new D3D11.ShaderResourceView(d3dDevice, canvasTexture))
+                    {
+                        d3dContext.CopyResource(texture, canvasTexture);
                         d3dContext.PixelShader.SetShaderResource(0, shaderResView);
                         d3dContext.PixelShader.Set(psToneMapping);
                         d3dContext.Draw(vertices.Length, 0);
-                        shaderResView.Dispose();
-                        hdrTextureShaderCopy.Dispose();
-                    }
-                    // Or not. Just put it to the screen
-                    else
-                    {
-                        var sdrTextureShaderCopy = new D3D11.Texture2D(d3dDevice, new D3D11.Texture2DDescription
-                        {
-                            Width = texture.Description.Width,
-                            Height = texture.Description.Height,
-                            MipLevels = 1,
-                            ArraySize = 1,
-                            Format = DXGI.Format.B8G8R8A8_UNorm_SRgb,
-                            Usage = D3D11.ResourceUsage.Default,
-                            SampleDescription = new DXGI.SampleDescription(1, 0),
-                            BindFlags = D3D11.BindFlags.ShaderResource,
-                            CpuAccessFlags = D3D11.CpuAccessFlags.None,
-                            OptionFlags = D3D11.ResourceOptionFlags.None,
-                        });
-                        var shaderResView = new D3D11.ShaderResourceView(d3dDevice, sdrTextureShaderCopy);
-                        d3dContext.CopyResource(texture, sdrTextureShaderCopy);
-                        d3dContext.PixelShader.SetShaderResource(0, shaderResView);
-                        d3dContext.PixelShader.Set(psPassthrough);
-                        d3dContext.Draw(vertices.Length, 0);
-                        shaderResView.Dispose();
-                        sdrTextureShaderCopy.Dispose();
                     }
 
                     triangleVertexBuffer.Dispose();
@@ -314,14 +273,13 @@ namespace ShareX.ScreenCaptureLib.AdvancedGraphics.Direct3D
             textureSDRImage?.Dispose();
             samplerState?.Dispose();
 
-            shaderInputSigVsQuad?.Dispose();
-            psToneMapping?.Dispose();
-            psPassthrough?.Dispose();
-            vsQuad?.Dispose();
+            shaderInputSigVsQuad.Dispose();
+            psToneMapping.Dispose();
+            vsQuad.Dispose();
 
-            wrtD3D11Device?.Dispose();
-            d3dDevice?.Dispose();
-            wicFactory?.Dispose();
+            wrtD3D11Device.Dispose();
+            d3dDevice.Dispose();
+            wicFactory.Dispose();
         }
     }
 }
