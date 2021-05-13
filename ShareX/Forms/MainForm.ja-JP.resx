@@ -789,4 +789,13 @@
   <data name="tsmiThumbnailSize.Text" xml:space="preserve">
     <value>サムネイルサイズの変更...</value>
   </data>
+  <data name="tsmiCopyImageDimensions.Text" xml:space="preserve">
+    <value>画像のサイズ</value>
+  </data>
+  <data name="tsmiTrayInspectWindow.Text" xml:space="preserve">
+    <value>ウィンドウの調査...</value>
+  </data>
+  <data name="tsmiInspectWindow.Text" xml:space="preserve">
+    <value>ウィンドウの調査...</value>
+  </data>
 </root>

@@ -123,4 +123,7 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - グラデーション</value>
   </data>
+  <data name="cbtnCurrentColor.Text" xml:space="preserve">
+    <value>色</value>
+  </data>
 </root>

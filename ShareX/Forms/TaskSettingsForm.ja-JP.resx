@@ -573,4 +573,58 @@
   <data name="lblToolsScreenColorPickerInfoText.Text" xml:space="preserve">
     <value>マウスを乗せたときの色表示の形式:</value>
   </data>
+  <data name="cbDisableNotifications.Text" xml:space="preserve">
+    <value>通知を無効にする</value>
+  </data>
+  <data name="cbDisableNotificationsOnFullscreen.Text" xml:space="preserve">
+    <value>フルスクリーンの時に通知を無効にする</value>
+  </data>
+  <data name="cbShowToastNotificationAfterTaskCompleted.Text" xml:space="preserve">
+    <value>タスク完了後に通知を表示する</value>
+  </data>
+  <data name="gbToastWindow.Text" xml:space="preserve">
+    <value>トースター通知</value>
+  </data>
+  <data name="cbUseCustomCaptureSound.Text" xml:space="preserve">
+    <value>キャプチャー時のサウンドを変更する</value>
+  </data>
+  <data name="cbUseCustomErrorSound.Text" xml:space="preserve">
+    <value>エラー発生時のサウンドを変更する</value>
+  </data>
+  <data name="cbUseCustomTaskCompletedSound.Text" xml:space="preserve">
+    <value>カスタムタスク完了時のサウンドを変更する</value>
+  </data>
+  <data name="lblToastWindowDuration.Text" xml:space="preserve">
+    <value>表示している時間</value>
+  </data>
+  <data name="lblToastWindowDurationSeconds.Text" xml:space="preserve">
+    <value>秒</value>
+  </data>
+  <data name="lblToastWindowFadeDuration.Text" xml:space="preserve">
+    <value>消えるまでの時間</value>
+  </data>
+  <data name="lblToastWindowFadeDurationSeconds.Text" xml:space="preserve">
+    <value>秒</value>
+  </data>
+  <data name="lblToastWindowLeftClickAction.Text" xml:space="preserve">
+    <value>左クリック時のアクション:</value>
+  </data>
+  <data name="lblToastWindowMiddleClickAction.Text" xml:space="preserve">
+    <value>中央クリック時のアクション:</value>
+  </data>
+  <data name="lblToastWindowRightClickAction.Text" xml:space="preserve">
+    <value>右クリック時のアクション:</value>
+  </data>
+  <data name="lblToastWindowSize.Text" xml:space="preserve">
+    <value>サイズ:</value>
+  </data>
+  <data name="lblToastWindowSizeX.Text" xml:space="preserve">
+    <value>x</value>
+  </data>
+  <data name="lblToastWindowPlacement.Text" xml:space="preserve">
+    <value>表示位置</value>
+  </data>
+  <data name="tpNotifications.Text" xml:space="preserve">
+    <value>通知</value>
+  </data>
 </root>
