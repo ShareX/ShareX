@@ -1186,4 +1186,16 @@
   <data name="HotkeyType_ImageThumbnailer" xml:space="preserve">
     <value>画像のサムネイル作成</value>
   </data>
+  <data name="HotkeyType_ClipboardViewer" xml:space="preserve">
+    <value>クリップボードビューアー</value>
+  </data>
+  <data name="HotkeyType_ClipboardViewer_Category" xml:space="preserve">
+    <value>ツール</value>
+  </data>
+  <data name="HotkeyType_InspectWindow_Category" xml:space="preserve">
+    <value>ツール</value>
+  </data>
+  <data name="HotkeyType_InspectWindow" xml:space="preserve">
+    <value>ウィンドウの調査</value>
+  </data>
 </root>
