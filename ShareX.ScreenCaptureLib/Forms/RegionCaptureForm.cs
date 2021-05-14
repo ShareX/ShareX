@@ -1057,8 +1057,8 @@ namespace ShareX.ScreenCaptureLib
             }
             else if (Mode == RegionCaptureMode.Ruler)
             {
-                Point endLocation = new Point(rect.Right - 1, rect.Bottom - 1);
-                string text = $"X: {rect.X} | Y: {rect.Y} | Right: {endLocation.X} | Bottom: {endLocation.Y}\r\n" +
+                Point endLocation = new Point(rect.Right, rect.Bottom);
+                string text = $"X: {rect.X} | Y: {rect.Y} | Right: {endLocation.X - 1} | Bottom: {endLocation.Y - 1}\r\n" +
                     $"Width: {rect.Width} px | Height: {rect.Height} px | Area: {rect.Area()} px | Perimeter: {rect.Perimeter()} px\r\n" +
                     $"Distance: {MathHelpers.Distance(rect.Location, endLocation):0.00} px | Angle: {MathHelpers.LookAtDegree(rect.Location, endLocation):0.00}°";
                 return text;
