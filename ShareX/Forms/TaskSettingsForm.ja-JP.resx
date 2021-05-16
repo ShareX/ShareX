@@ -351,8 +351,11 @@
   <data name="lblRegionCaptureMouseRightClickAction.Text" xml:space="preserve">
     <value>右ボタン クリック時の操作:</value>
   </data>
+  <data name="cbRegionCaptureAllowResizeAndMoveRegion.Text" xml:space="preserve">
+    <value>領域のサイズ変更と移動を許可する</value>
+  </data>
   <data name="cbRegionCaptureMultiRegionMode.Text" xml:space="preserve">
-    <value>領域のリサイズ、移動が可能な複数領域選択モードを使用する</value>
+    <value>マルチリージョンモードを使用する</value>
   </data>
   <data name="btnRegionCaptureSnapSizesDialogCancel.Text" xml:space="preserve">
     <value>キャンセル</value>

@@ -493,7 +493,10 @@
     <value>"Alt" tuşuna basılı tutulduğunda bölgeyi bu boyutlara kitle:</value>
   </data>
   <data name="cbRegionCaptureMultiRegionMode.Text" xml:space="preserve">
-    <value>Çoklu bölge modunu kullan, ayrıca bölgeleri yeniden boyutlandırmayı veya taşımayıda sağlar</value>
+    <value>Çoklu bölge modunu kullan</value>
+  </data>
+  <data name="cbRegionCaptureAllowResizeAndMoveRegion.Text" xml:space="preserve">
+    <value>Bölgeyi yeniden boyutlandırmaya ve taşımaya izin ver</value>
   </data>
   <data name="cbOverrideAfterCaptureSettings.Text" xml:space="preserve">
     <value>Yakalama sonrası ayarlarını değiştir</value>

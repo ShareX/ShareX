@@ -379,7 +379,10 @@
     <value>Подготовленная область экрана:</value>
   </data>
   <data name="cbRegionCaptureMultiRegionMode.Text" xml:space="preserve">
-    <value>Включить захват нескольких областей (с поддержкой изменения размера и перемещения областей)</value>
+    <value>Включить захват нескольких областей</value>
+  </data>
+  <data name="cbRegionCaptureAllowResizeAndMoveRegion.Text" xml:space="preserve">
+    <value>Разрешить изменение размера и перемещение области</value>
   </data>
   <data name="lblRegionCaptureMouseRightClickAction.Text" xml:space="preserve">
     <value>Действие правой кнопки мыши:</value>

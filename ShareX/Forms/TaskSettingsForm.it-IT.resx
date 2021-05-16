@@ -477,8 +477,11 @@
   <data name="cbRegionCaptureDetectWindows.Text" xml:space="preserve">
     <value>Determina Regioni Finestra e Consenti Cattura al Passaggio del Cursore</value>
   </data>
+  <data name="cbRegionCaptureAllowResizeAndMoveRegion.Text" xml:space="preserve">
+    <value>Consenti il Ridimensionamento e lo Spostamento della Regione</value>
+  </data>
   <data name="cbRegionCaptureMultiRegionMode.Text" xml:space="preserve">
-    <value>Usa Modalità Multi Regione, che consente anche Ridimensionamento e Spostamento delle Regioni</value>
+    <value>Usa Modalità Multi Regione</value>
   </data>
   <data name="cbRegionCaptureUseDimming.Text" xml:space="preserve">
     <value>Scurisci lo Sfondo per Distinguere meglio la Selezione (Influisce sulla velocità di avvio)</value>

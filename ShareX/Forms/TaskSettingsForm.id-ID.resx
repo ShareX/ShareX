@@ -510,8 +510,11 @@
   <data name="cbWatchFolderEnabled.Text" xml:space="preserve">
     <value>Pantau folder dan bila file baru dibuat lalu unggah</value>
   </data>
+  <data name="cbRegionCaptureAllowResizeAndMoveRegion.Text" xml:space="preserve">
+    <value>Izinkan pengubahan ukuran dan pemindahan wilayah</value>
+  </data>
   <data name="cbRegionCaptureMultiRegionMode.Text" xml:space="preserve">
-    <value>Gunakan mode multi area yang juga mengizinkan mengubah ukuran dan memindahkan area</value>
+    <value>Gunakan mode multi wilayah</value>
   </data>
   <data name="cbRegionCaptureUseDimming.Text" xml:space="preserve">
     <value>Redupkan latar belakang agar pilihan bisa dibedakan dengan mudah (mempengaruhi kecepatan mulai)</value>

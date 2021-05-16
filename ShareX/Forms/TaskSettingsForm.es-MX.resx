@@ -357,8 +357,11 @@
   <data name="lblRegionCaptureMouseRightClickAction.Text" xml:space="preserve">
     <value>Acción al hacer clic derecho:</value>
   </data>
+  <data name="cbRegionCaptureAllowResizeAndMoveRegion.Text" xml:space="preserve">
+    <value>Permitir cambiar el tamaño y mover la región</value>
+  </data>
   <data name="cbRegionCaptureMultiRegionMode.Text" xml:space="preserve">
-    <value>Usar modo de varias regiones que también permite cambiar su tamaño y posición</value>
+    <value>Usar modo de varias regiones</value>
   </data>
   <data name="btnRegionCaptureSnapSizesDialogCancel.Text" xml:space="preserve">
     <value>Cancelar</value>

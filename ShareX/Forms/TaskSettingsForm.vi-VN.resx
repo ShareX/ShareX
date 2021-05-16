@@ -544,7 +544,10 @@
     <value>Dùng mẫu từ tên cửa sổ cho chụp theo vùng (ShareX sẽ cố gắng xác định cửa sổ sau vùng chọn)</value>
   </data>
   <data name="cbRegionCaptureMultiRegionMode.Text" xml:space="preserve">
-    <value>Dùng chế độ đa vùng cho phép thay đổi kích thước và di chuyển các vùng</value>
+    <value>Sử dụng chế độ đa vùng</value>
+  </data>
+  <data name="cbRegionCaptureAllowResizeAndMoveRegion.Text" xml:space="preserve">
+    <value>Cho phép thay đổi kích thước và di chuyển khu vực</value>
   </data>
   <data name="lblRegionCaptureSnapSizes.Text" xml:space="preserve">
     <value>Kích thước vùng sẽ biến đổi thành khi nhấn phím "Alt":</value>

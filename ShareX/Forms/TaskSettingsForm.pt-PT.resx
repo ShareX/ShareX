@@ -264,8 +264,11 @@
   <data name="cbRegionCaptureIsFixedSize.Text" xml:space="preserve">
     <value>Modo de região de tamanho fixo:</value>
   </data>
+  <data name="cbRegionCaptureAllowResizeAndMoveRegion.Text" xml:space="preserve">
+    <value>Permitir redimensionamento e movimentação da região</value>
+  </data>
   <data name="cbRegionCaptureMultiRegionMode.Text" xml:space="preserve">
-    <value>Utilizar modo multiregião que também permitirá redimensionar e reposicionar regiões</value>
+    <value>Use o modo multirregional</value>
   </data>
   <data name="cbRegionCaptureShowCrosshair.Text" xml:space="preserve">
     <value>Mostrar mira do tamanho do ecrã</value>

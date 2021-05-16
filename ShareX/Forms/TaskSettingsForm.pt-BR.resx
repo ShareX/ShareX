@@ -465,8 +465,11 @@
   <data name="lblToolsScreenColorPickerFormat.Text" xml:space="preserve">
     <value>Formato do seletor de cores da tela:</value>
   </data>
+  <data name="cbRegionCaptureAllowResizeAndMoveRegion.Text" xml:space="preserve">
+    <value>Permitir redimensionamento e movimentação da região</value>
+  </data>
   <data name="cbRegionCaptureMultiRegionMode.Text" xml:space="preserve">
-    <value>Usar modo multirregião que também permitirá redimensionar e reposicionar regiões</value>
+    <value>Use o modo multirregional</value>
   </data>
   <data name="cbRegionCaptureUseDimming.Text" xml:space="preserve">
     <value>Escurecer plano de fundo para que a seleção seja diferenciada facilmente (afeta velocidade de inicialização)</value>

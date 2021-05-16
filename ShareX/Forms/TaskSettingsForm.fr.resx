@@ -459,8 +459,11 @@
   <data name="cbRegionCaptureUseDimming.Text" xml:space="preserve">
     <value>Assombrir le fond pour que la sélection soit facilement différentiable (affecte la vitesse de lancement)</value>
   </data>
+  <data name="cbRegionCaptureAllowResizeAndMoveRegion.Text" xml:space="preserve">
+    <value>Autoriser le redimensionnement et le déplacement de la région</value>
+  </data>
   <data name="cbRegionCaptureMultiRegionMode.Text" xml:space="preserve">
-    <value>Utiliser le mode multi région qui permet de redimensionner et de déplacer les régions</value>
+    <value>Utiliser le mode multi régions</value>
   </data>
   <data name="cbRegionCaptureIsFixedSize.Text" xml:space="preserve">
     <value>Mode région à taille fixe :</value>
