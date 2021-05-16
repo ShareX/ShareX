@@ -282,7 +282,9 @@ namespace ShareX
 
             #region Region capture
 
-            cbRegionCaptureMultiRegionMode.Checked = !TaskSettings.CaptureSettings.SurfaceOptions.QuickCrop;
+            cbRegionCaptureAllowResizeAndMoveRegion.Checked = !TaskSettings.CaptureSettings.SurfaceOptions.QuickCrop;
+            cbRegionCaptureMultiRegionMode.Enabled = !TaskSettings.CaptureSettings.SurfaceOptions.QuickCrop;
+            cbRegionCaptureMultiRegionMode.Checked = TaskSettings.CaptureSettings.SurfaceOptions.MultipleRegions;
             cbRegionCaptureMouseRightClickAction.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<RegionCaptureAction>());
             cbRegionCaptureMouseRightClickAction.SelectedIndex = (int)TaskSettings.CaptureSettings.SurfaceOptions.RegionCaptureActionRightClick;
             cbRegionCaptureMouseMiddleClickAction.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<RegionCaptureAction>());
@@ -1057,9 +1059,15 @@ namespace ShareX
 
         #region Region capture
 
+        private void cbRegionCaptureAllowResizeAndMoveRegion_CheckedChanged(object sender, EventArgs e)
+        {
+            TaskSettings.CaptureSettings.SurfaceOptions.QuickCrop = !cbRegionCaptureAllowResizeAndMoveRegion.Checked;
+            cbRegionCaptureMultiRegionMode.Enabled = !TaskSettings.CaptureSettings.SurfaceOptions.QuickCrop;
+        }
+
         private void cbRegionCaptureMultiRegionMode_CheckedChanged(object sender, EventArgs e)
         {
-            TaskSettings.CaptureSettings.SurfaceOptions.QuickCrop = !cbRegionCaptureMultiRegionMode.Checked;
+            TaskSettings.CaptureSettings.SurfaceOptions.MultipleRegions = cbRegionCaptureMultiRegionMode.Checked;
         }
 
         private void cbRegionCaptureMouseRightClickAction_SelectedIndexChanged(object sender, EventArgs e)

@@ -179,6 +179,7 @@
             this.cbRegionCaptureMouseRightClickAction = new System.Windows.Forms.ComboBox();
             this.lblRegionCaptureMouseRightClickAction = new System.Windows.Forms.Label();
             this.cbRegionCaptureMultiRegionMode = new System.Windows.Forms.CheckBox();
+            this.cbRegionCaptureAllowResizeAndMoveRegion = new System.Windows.Forms.CheckBox();
             this.pRegionCaptureSnapSizes = new System.Windows.Forms.Panel();
             this.btnRegionCaptureSnapSizesDialogCancel = new System.Windows.Forms.Button();
             this.btnRegionCaptureSnapSizesDialogAdd = new System.Windows.Forms.Button();
@@ -1366,6 +1367,7 @@
             this.tpRegionCapture.Controls.Add(this.cbRegionCaptureMouseRightClickAction);
             this.tpRegionCapture.Controls.Add(this.lblRegionCaptureMouseRightClickAction);
             this.tpRegionCapture.Controls.Add(this.cbRegionCaptureMultiRegionMode);
+            this.tpRegionCapture.Controls.Add(this.cbRegionCaptureAllowResizeAndMoveRegion);
             this.tpRegionCapture.Controls.Add(this.pRegionCaptureSnapSizes);
             this.tpRegionCapture.Controls.Add(this.cbRegionCaptureUseDimming);
             this.tpRegionCapture.Controls.Add(this.txtRegionCaptureCustomInfoText);
@@ -1602,6 +1604,13 @@
             this.cbRegionCaptureMultiRegionMode.Name = "cbRegionCaptureMultiRegionMode";
             this.cbRegionCaptureMultiRegionMode.UseVisualStyleBackColor = true;
             this.cbRegionCaptureMultiRegionMode.CheckedChanged += new System.EventHandler(this.cbRegionCaptureMultiRegionMode_CheckedChanged);
+            // 
+            // cbRegionCaptureAllowResizeAndMoveRegion
+            // 
+            resources.ApplyResources(this.cbRegionCaptureAllowResizeAndMoveRegion, "cbRegionCaptureAllowResizeAndMoveRegion");
+            this.cbRegionCaptureAllowResizeAndMoveRegion.Name = "cbRegionCaptureAllowResizeAndMoveRegion";
+            this.cbRegionCaptureAllowResizeAndMoveRegion.UseVisualStyleBackColor = true;
+            this.cbRegionCaptureAllowResizeAndMoveRegion.CheckedChanged += new System.EventHandler(this.cbRegionCaptureAllowResizeAndMoveRegion_CheckedChanged);
             // 
             // pRegionCaptureSnapSizes
             // 
@@ -2781,6 +2790,7 @@
         private System.Windows.Forms.TabPage tpFileNaming;
         private System.Windows.Forms.Label lblCaptureCustomRegion;
         private System.Windows.Forms.Button btnCaptureCustomRegionSelectRectangle;
+        private System.Windows.Forms.CheckBox cbRegionCaptureAllowResizeAndMoveRegion;
         private System.Windows.Forms.CheckBox cbRegionCaptureMultiRegionMode;
         private System.Windows.Forms.Label lblRegionCaptureMouseRightClickAction;
         private System.Windows.Forms.ComboBox cbRegionCaptureMouse5ClickAction;
