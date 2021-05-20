@@ -111,13 +111,9 @@ namespace ShareX.HelpersLib
 
                         if (!string.IsNullOrEmpty(extension2))
                         {
-                            foreach (string knownExtension in new string[] { "tar" })
+                            if (extension2.Equals("tar", StringComparison.OrdinalIgnoreCase))
                             {
-                                if (extension2.Equals(knownExtension, StringComparison.OrdinalIgnoreCase))
-                                {
-                                    extension = extension2 + "." + extension;
-                                    break;
-                                }
+                                extension = extension2 + "." + extension;
                             }
                         }
                     }
@@ -218,12 +214,7 @@ namespace ShareX.HelpersLib
                 return EDataType.Image;
             }
 
-            if (IsTextFile(filePath))
-            {
-                return EDataType.Text;
-            }
-
-            return EDataType.File;
+            return IsTextFile(filePath) ? EDataType.Text : EDataType.File;
         }
 
         public static string AddZeroes(string input, int digits = 2)
@@ -243,12 +234,7 @@ namespace ShareX.HelpersLib
                 return 12.ToString();
             }
 
-            if (hour > 12)
-            {
-                return AddZeroes(hour - 12);
-            }
-
-            return AddZeroes(hour);
+            return hour > 12 ? AddZeroes(hour - 12) : AddZeroes(hour);
         }
 
         public static char GetRandomChar(string chars)
@@ -314,15 +300,13 @@ namespace ShareX.HelpersLib
             {
                 return new string(fileName.Where(c => !invalidFileNameChars.Contains(c)).ToArray());
             }
-            else
-            {
-                foreach (char invalidFileNameChar in invalidFileNameChars)
-                {
-                    fileName = fileName.Replace(invalidFileNameChar.ToString(), separator);
-                }
 
-                return fileName.Trim().Replace(separator + separator, separator);
+            foreach (char invalidFileNameChar in invalidFileNameChars)
+            {
+                fileName = fileName.Replace(invalidFileNameChar.ToString(), separator);
             }
+
+            return fileName.Trim().Replace(separator + separator, separator);
         }
 
         public static string GetValidFolderPath(string folderPath)
@@ -428,14 +412,7 @@ namespace ShareX.HelpersLib
                 {
                     sb.Append(' ');
 
-                    if (keepCase)
-                    {
-                        sb.Append(c);
-                    }
-                    else
-                    {
-                        sb.Append(char.ToLowerInvariant(c));
-                    }
+                    sb.Append(keepCase ? c : char.ToLowerInvariant(c));
                 }
                 else
                 {
