@@ -33,10 +33,13 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading;
 using System.Windows.Forms;
+using HttpMethod = System.Net.Http.HttpMethod;
 
 namespace ShareX
 {
@@ -207,8 +210,10 @@ namespace ShareX
 
         public static WorkerTask CreateDownloadTask(string url, bool upload, TaskSettings taskSettings)
         {
-            WorkerTask task = new WorkerTask(taskSettings);
-            task.Info.Job = upload ? TaskJob.DownloadUpload : TaskJob.Download;
+            WorkerTask task = new WorkerTask(taskSettings)
+            {
+                Info = {Job = upload ? TaskJob.DownloadUpload : TaskJob.Download}
+            };
 
             string filename = URLHelpers.URLDecode(url, 10);
             filename = URLHelpers.GetFileName(filename);
@@ -1022,6 +1027,85 @@ namespace ShareX
             return ur;
         }
 
+        private static readonly Dictionary<string, string> MimeTypes = new Dictionary<string, string>() // list is on https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Common_types
+        {
+            {"audio/aac", "aac"},
+            {"application/x-abiword", "abw"},
+            {"application/x-freearc", "arc"},
+            {"video/x-msvideo", "avi"},
+            {"application/vnd.amazon.ebook", "azw"},
+            {"application/octet-stream", "bin"},
+            {"image/bmp", "bmp"},
+            {"application/x-bzip", "bz"},
+            {"application/x-bzip2", "bz2"},
+            {"application/x-csh", "csh"},
+            {"text/css", "css"},
+            {"text/csv", "csv"},
+            {"application/msword", "doc"},
+            {"application/vnd.openxmlformats-officedocument.wordprocessingml.document", "docx"},
+            {"application/vnd.ms-fontobject", "eot"},
+            {"application/epub+zip", "epub"},
+            {"application/gzip", "gz"},
+            {"image/gif", "gif"},
+            {"text/html", "html"},
+            {"image/vnd.microsoft.icon", "ico"},
+            {"text/calendar", "ics"},
+            {"application/java-archive", "jar"},
+            {"image/jpeg", "jpg"},
+            {"text/javascript", "js"},
+            {"application/json", "json"},
+            {"application/ld+json", "jsonld"},
+            {"audio/midi", "midi"},
+            {"audio/x-midi", "midi"},
+            {"audio/mpeg", "mp3"},
+            {"application/x-cdf", "cda"},
+            {"video/mp4", "mp4"},
+            {"video/mpeg", "mpeg"},
+            {"application/vnd.apple.installer+xml", "mpkg"},
+            {"application/vnd.oasis.opendocument.presentation", "odp"},
+            {"application/vnd.oasis.opendocument.spreadsheet", "ods"},
+            {"application/vnd.oasis.opendocument.text", "odt"},
+            {"audio/ogg", "oga"},
+            {"video/ogg", "ogv"},
+            {"application/ogg", "ogx"},
+            {"audio/opus", "opus"},
+            {"font/otf", "otf"},
+            {"image/png", "png"},
+            {"application/pdf", "pdf"},
+            {"application/x-httpd-php", "php"},
+            {"application/vnd.ms-powerpoint", "ppt"},
+            {"application/vnd.openxmlformats-officedocument.presentationml.presentation", "pptx"},
+            {"application/vnd.rar", "rar"},
+            {"application/rtf", "rtf"},
+            {"application/x-sh", "sh"},
+            {"image/svg+xml", "svg"},
+            {"application/x-shockwave-flash", "swf"},
+            {"application/x-tar", "tar"},
+            {"image/tiff", "tif"},
+            {"video/mp2t", "ts"},
+            {"font/ttf", "ttf"},
+            {"text/plain", "txt"},
+            {"application/vnd.visio", "vsd"},
+            {"audio/wav", "wav"},
+            {"audio/webm", "weba"},
+            {"video/webm", "webm"},
+            {"image/webp", "webp"},
+            {"font/woff", "woff"},
+            {"font/woff2", "woff2"},
+            {"application/xhtml+xml", "xthml"},
+            {"application/vnd.ms-excel", "xls"},
+            {"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "xlsx"},
+            {"application/xml", "xml"},
+            {"text/xml", "xml"},
+            {"application/vnd.mozilla.xul+xml", "xul"},
+            {"application/zip", "zip"},
+            {"video/3gpp", "3gp"},
+            {"audio/3gpp", "3gp"},
+            {"video/3gpp2", "3g2"},
+            {"audio/3gpp2", "3g2"},
+            {"application/x-7z-compressed", "7z"}
+        };
+
         private bool DownloadFromURL(bool upload)
         {
             string url = Info.Result.URL.Trim();
@@ -1037,12 +1121,69 @@ namespace ShareX
                 {
                     Helpers.CreateDirectoryFromFilePath(Info.FilePath);
 
+                    IWebProxy proxy = HelpersOptions.CurrentProxy.GetWebProxy();
+                    using (HttpClientHandler handler = new HttpClientHandler
+                    {
+                        Proxy = proxy,
+                        UseProxy = proxy != null
+                    })
+                    {
+                        using (HttpClient httpClient = new HttpClient(handler))
+                        {
+                            HttpRequestMessage requestMessage = new HttpRequestMessage(HttpMethod.Get, url);
+                            requestMessage.Headers.Add("user-agent", ShareXResources.UserAgent);
+                            var resp = httpClient.SendAsync(requestMessage).GetAwaiter().GetResult();
+                            IEnumerable<string> headers;
+                            if (resp.Content.Headers.TryGetValues("content-disposition", out headers))
+                            {
+                                string fileName = headers.First();
+                                if (fileName.Contains("filename="))
+                                {
+                                    int pos = fileName.IndexOf("filename=");
+                                    if (pos != -1)
+                                    {
+                                        fileName = fileName.Substring(pos+9);
+                                        int pos2 = fileName.IndexOf(';');
+                                        if (pos2 != -1)
+                                        {
+                                            fileName = fileName.Substring(0, pos2);
+                                        }
+                                    }
+
+                                    Info.FileName = fileName;
+                                    Info.DataType = TaskHelpers.FindDataType(fileName, Info.TaskSettings);
+                                }
+                            }
+
+                            if (resp.Content.Headers.TryGetValues("content-type", out headers))
+                            {
+                                string mimeType = headers.First();
+                                if (MimeTypes.ContainsKey(mimeType))
+                                {
+                                    string ext = MimeTypes[mimeType];
+                                    int pos = Info.FileName.LastIndexOf('.');
+                                    Info.FileName = pos != -1 ? Info.FileName.Substring(0, pos) + '.' + ext : Info.FileName + '.' + ext;
+                                }
+                            }
+
+                            int posF = Info.FilePath.LastIndexOf('\\');
+                            if (posF != -1)
+                            {
+                                Info.FilePath = Info.FilePath.Substring(0, posF + 1) + Info.FileName;
+                            }
+
+                            File.WriteAllBytes(Info.FilePath, resp.Content.ReadAsByteArrayAsync().GetAwaiter().GetResult());
+                        }
+                    }
+
+                    /*
                     using (WebClient wc = new WebClient())
                     {
                         wc.Headers.Add(HttpRequestHeader.UserAgent, ShareXResources.UserAgent);
                         wc.Proxy = HelpersOptions.CurrentProxy.GetWebProxy();
                         wc.DownloadFile(url, Info.FilePath);
                     }
+                    */
 
                     if (upload)
                     {
