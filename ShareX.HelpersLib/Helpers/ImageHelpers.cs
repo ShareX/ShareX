@@ -1702,6 +1702,29 @@ namespace ShareX.HelpersLib
 
             if (!string.IsNullOrEmpty(ext))
             {
+                switch (ext.ToLower())
+                {
+                    case "png":
+                        imageFormat = ImageFormat.Png;
+                        break;
+                    case "jfif":
+                    case "jpe":
+                    case "jpeg":
+                    case "jpg":
+                        imageFormat = ImageFormat.Jpeg;
+                        break;
+                    case "gif":
+                        imageFormat = ImageFormat.Gif;
+                        break;
+                    case "bmp":
+                        imageFormat = ImageFormat.Bmp;
+                        break;
+                    case "tiff":
+                    case "tif":
+                        imageFormat = ImageFormat.Tiff;
+                        break;
+                }
+                /*
                 if (ext.Equals("png", StringComparison.OrdinalIgnoreCase))
                 {
                     imageFormat = ImageFormat.Png;
@@ -1723,6 +1746,7 @@ namespace ShareX.HelpersLib
                 {
                     imageFormat = ImageFormat.Tiff;
                 }
+                */
             }
 
             return imageFormat;
