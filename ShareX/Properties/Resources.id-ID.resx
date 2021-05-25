@@ -524,4 +524,22 @@ Klik tengah untuk menutup</value>
   <data name="ScreenRecordForm_DownloaderForm_InstallRequested_Download_of_FFmpeg_failed_" xml:space="preserve">
     <value>Unduhan FFmpeg gagal.</value>
   </data>
+  <data name="AboutForm_AboutForm_Language_uk" xml:space="preserve">
+    <value>Bahasa Ukraina</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_id_ID" xml:space="preserve">
+    <value>Bahasa Indonesia</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_es_MX" xml:space="preserve">
+    <value>Bahasa Spanyol(Meksiko)</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_fa_IR" xml:space="preserve">
+    <value>Bahasa Persia</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_pt_PT" xml:space="preserve">
+    <value>Bahasa Portugis</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_ja_JP" xml:space="preserve">
+    <value>Bahasa Jepang</value>
+  </data>
 </root>
