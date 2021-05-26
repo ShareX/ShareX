@@ -395,6 +395,28 @@ namespace ShareX.HistoryLib
             Settings.SplitterDistance = scMain.SplitterDistance;
         }
 
+        private void txtFilenameFilter_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.Handled = true;
+                e.SuppressKeyPress = true;
+                ApplyFiltersAndAdd();
+                txtFilenameFilter.Focus();
+            }
+        }
+
+        private void txtURLFilter_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.Handled = true;
+                e.SuppressKeyPress = true;
+                ApplyFiltersAndAdd();
+                txtURLFilter.Focus();
+            }
+        }
+
         private void btnApplyFilters_Click(object sender, EventArgs e)
         {
             ApplyFiltersAndAdd();
