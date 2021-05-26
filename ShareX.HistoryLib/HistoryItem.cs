@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using System;
+using System.Collections.Generic;
 
 namespace ShareX.HistoryLib
 {
@@ -38,5 +39,6 @@ namespace ShareX.HistoryLib
         public string ThumbnailURL { get; set; }
         public string DeletionURL { get; set; }
         public string ShortenedURL { get; set; }
+        public Dictionary<string, string> Tags { get; set; }
     }
 }

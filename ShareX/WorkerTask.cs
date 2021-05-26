@@ -144,6 +144,7 @@ namespace ShareX
                 task.Info.FileName = TaskHelpers.GetFilename(taskSettings, "bmp", imageInfo);
             }
 
+            task.Info.ImageInfo = imageInfo;
             task.Image = imageInfo.Image;
             return task;
         }

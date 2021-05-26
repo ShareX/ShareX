@@ -120,4 +120,22 @@
   <data name="VideoThumbnailerForm_btnBrowse_Click_Browse_for_media_file" xml:space="preserve">
     <value>メディア ファイルの参照</value>
   </data>
+  <data name="AlignmentBottom" xml:space="preserve">
+    <value>下</value>
+  </data>
+  <data name="AlignmentHorizontalCenter" xml:space="preserve">
+    <value>中央</value>
+  </data>
+  <data name="AlignmentLeft" xml:space="preserve">
+    <value>左</value>
+  </data>
+  <data name="AlignmentRight" xml:space="preserve">
+    <value>右</value>
+  </data>
+  <data name="AlignmentTop" xml:space="preserve">
+    <value>上</value>
+  </data>
+  <data name="AlignmentVerticalCenter" xml:space="preserve">
+    <value>中央</value>
+  </data>
 </root>

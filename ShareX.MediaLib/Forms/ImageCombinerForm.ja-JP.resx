@@ -147,4 +147,13 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - 画像の結合</value>
   </data>
+  <data name="rbOrientationHorizontal.Text" xml:space="preserve">
+    <value>横方向</value>
+  </data>
+  <data name="rbOrientationVertical.Text" xml:space="preserve">
+    <value>縦方向</value>
+  </data>
+  <data name="lblImageAlignment.Text" xml:space="preserve">
+    <value>画像の位置調整</value>
+  </data>
 </root>

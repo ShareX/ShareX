@@ -27,6 +27,7 @@ using ShareX.HelpersLib;
 using ShareX.HistoryLib;
 using ShareX.UploadersLib;
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 
@@ -88,6 +89,7 @@ namespace ShareX
         public string FileName { get; set; }
         public string ThumbnailFilePath { get; set; }
         public EDataType DataType { get; set; }
+        public ImageInfo ImageInfo { get; set; }
 
         public EDataType UploadDestination
         {
@@ -160,6 +162,31 @@ namespace ShareX
             Result = new UploadResult();
         }
 
+        public Dictionary<string, string> GetTags()
+        {
+            if (ImageInfo != null)
+            {
+                Dictionary<string, string> tags = new Dictionary<string, string>();
+
+                if (!string.IsNullOrEmpty(ImageInfo.WindowTitle))
+                {
+                    tags.Add("WindowTitle", ImageInfo.WindowTitle);
+                }
+
+                if (!string.IsNullOrEmpty(ImageInfo.ProcessName))
+                {
+                    tags.Add("ProcessName", ImageInfo.ProcessName);
+                }
+
+                if (tags.Count > 0)
+                {
+                    return tags;
+                }
+            }
+
+            return null;
+        }
+
         public override string ToString()
         {
             string text = Result.ToString();
@@ -184,7 +211,8 @@ namespace ShareX
                 URL = Result.URL,
                 ThumbnailURL = Result.ThumbnailURL,
                 DeletionURL = Result.DeletionURL,
-                ShortenedURL = Result.ShortenedURL
+                ShortenedURL = Result.ShortenedURL,
+                Tags = GetTags()
             };
         }
     }

@@ -250,4 +250,7 @@
   <data name="lblQSVPreset.Text" xml:space="preserve">
     <value>プリセット:</value>
   </data>
+  <data name="lblAMFUsage.Text" xml:space="preserve">
+    <value>使い方:</value>
+  </data>
 </root>

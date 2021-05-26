@@ -150,6 +150,11 @@ namespace ShareX.UploadersLib.FileUploaders
 
         #region IWebClient
 
+        public Stream GetRequestRaw(Uri url)
+        {
+            throw new NotImplementedException();
+        }
+
         public string PostRequestJson(Uri url, string jsonData)
         {
             return SendRequest(HttpMethod.POST, url.ToString(), jsonData, RequestHelpers.ContentTypeJSON);
@@ -168,7 +173,7 @@ namespace ShareX.UploadersLib.FileUploaders
             }
         }
 
-        public Stream GetRequestRaw(Uri url)
+        public Stream PostRequestRawAsStream(Uri url, Stream dataStream)
         {
             throw new NotImplementedException();
         }

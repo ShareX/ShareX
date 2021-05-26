@@ -220,6 +220,8 @@ namespace ShareX
         ImageThumbnailer,
         VideoConverter,
         VideoThumbnailer,
+        InspectWindow,
+        ClipboardViewer,
         TweetMessage,
         MonitorTest,
         // Other
