@@ -872,7 +872,7 @@ Gostaria de baixá-la?</value>
     <value>Desenho: Seta</value>
   </data>
   <data name="ShapeType_EffectBlur" xml:space="preserve">
-    <value>Efeito: Embaçadp</value>
+    <value>Efeito: Embaçado</value>
   </data>
   <data name="ShapeType_DrawingEllipse" xml:space="preserve">
     <value>Desenho: Elipse</value>
