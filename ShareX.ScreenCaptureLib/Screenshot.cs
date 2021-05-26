@@ -24,7 +24,11 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.ScreenCaptureLib.AdvancedGraphics;
+using ShareX.ScreenCaptureLib.AdvancedGraphics.Direct3D;
+using ShareX.ScreenCaptureLib.AdvancedGraphics.GDI;
 using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Imaging;
 
@@ -38,6 +42,7 @@ namespace ShareX.ScreenCaptureLib
         public bool CaptureShadow { get; set; } = false;
         public int ShadowOffset { get; set; } = 20;
         public bool AutoHideTaskbar { get; set; } = false;
+        public bool UseWinRTCaptureAPI { get; set; } = false;
 
         public Bitmap CaptureRectangle(Rectangle rect)
         {
@@ -122,30 +127,79 @@ namespace ShareX.ScreenCaptureLib
                 return null;
             }
 
-            IntPtr hdcSrc = NativeMethods.GetWindowDC(handle);
-            IntPtr hdcDest = NativeMethods.CreateCompatibleDC(hdcSrc);
-            IntPtr hBitmap = NativeMethods.CreateCompatibleBitmap(hdcSrc, rect.Width, rect.Height);
-            IntPtr hOld = NativeMethods.SelectObject(hdcDest, hBitmap);
-            NativeMethods.BitBlt(hdcDest, 0, 0, rect.Width, rect.Height, hdcSrc, rect.X, rect.Y, CopyPixelOperation.SourceCopy | CopyPixelOperation.CaptureBlt);
-
-            if (captureCursor)
+            if (UseWinRTCaptureAPI && ModernCaptureSignletonManager.Instance.IsAvailable)
             {
-                try
+                return CaptureRectangleDirect3D11(handle, rect, captureCursor);
+            }
+            else
+            {
+                IntPtr hdcSrc = NativeMethods.GetWindowDC(handle);
+                IntPtr hdcDest = NativeMethods.CreateCompatibleDC(hdcSrc);
+                IntPtr hBitmap = NativeMethods.CreateCompatibleBitmap(hdcSrc, rect.Width, rect.Height);
+                IntPtr hOld = NativeMethods.SelectObject(hdcDest, hBitmap);
+                NativeMethods.BitBlt(hdcDest, 0, 0, rect.Width, rect.Height, hdcSrc, rect.X, rect.Y, CopyPixelOperation.SourceCopy | CopyPixelOperation.CaptureBlt);
+
+                if (captureCursor)
                 {
-                    CursorData cursorData = new CursorData();
-                    cursorData.DrawCursor(hdcDest, rect.Location);
+                    try
+                    {
+                        CursorData cursorData = new CursorData();
+                        cursorData.DrawCursor(hdcDest, rect.Location);
+                    }
+                    catch (Exception e)
+                    {
+                        DebugHelper.WriteException(e, "Cursor capture failed.");
+                    }
                 }
-                catch (Exception e)
+
+                NativeMethods.SelectObject(hdcDest, hOld);
+                NativeMethods.DeleteDC(hdcDest);
+                NativeMethods.ReleaseDC(handle, hdcSrc);
+                Bitmap bmp = Image.FromHbitmap(hBitmap);
+                NativeMethods.DeleteObject(hBitmap);
+
+                return bmp;
+            }
+        }
+
+        private Bitmap CaptureRectangleDirect3D11(IntPtr handle, Rectangle rect, bool captureCursor = false)
+        {
+            var captureMonRegions = new List<ModernCaptureMonitorDescription>();
+            Bitmap bmp;
+
+            if (rect.Width == 0 || rect.Height == 0)
+            {
+                return null;
+            }
+
+            // 1. Get regions and the HDR metadata information
+            foreach (var monitor in MonitorEnumerationHelper.GetMonitors())
+            {
+                if (monitor.MonitorArea.IntersectsWith(rect))
                 {
-                    DebugHelper.WriteException(e, "Cursor capture failed.");
+                    var screenBoundCopy = monitor.MonitorArea.Copy();
+                    screenBoundCopy.Intersect(rect);
+                    captureMonRegions.Add(new ModernCaptureMonitorDescription
+                    {
+                        DestGdiRect = screenBoundCopy,
+                        HdrMetadata = HdrMetadataUtility.GetHdrMetadataForMonitor(monitor.DeviceName),
+                        MonitorInfo = monitor,
+                        CaptureCursor = captureCursor,
+                    });
                 }
             }
 
-            NativeMethods.SelectObject(hdcDest, hOld);
-            NativeMethods.DeleteDC(hdcDest);
-            NativeMethods.ReleaseDC(handle, hdcSrc);
-            Bitmap bmp = Image.FromHbitmap(hBitmap);
-            NativeMethods.DeleteObject(hBitmap);
+            // 2. Compose a list of rects for capture
+            var catpureItem = new ModernCaptureItemDescription(rect, captureMonRegions);
+
+            // 3. Request capture and wait for bitmap
+            // 3.1 Determine rects and transform them to DirectX coordinate system
+            // 3.2 Capture and wait for content
+            // 3.3 Shader and draw passes
+            // 3.4 Datastream pass, copy
+            var d3dCapture = ModernCaptureSignletonManager.Instance.Take();
+            bmp = d3dCapture.CaptureAndProcess(catpureItem);
+            ModernCaptureSignletonManager.Instance.Release();
 
             return bmp;
         }

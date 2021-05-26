@@ -47,10 +47,10 @@ namespace ShareX.ScreenCaptureLib
         private Rectangle selectedRectangle;
         private List<Bitmap> images = new List<Bitmap>();
         private int currentScrollCount;
-        private bool isBusy, isCapturing, firstCapture, detectingScrollMethod;
+        private bool isBusy, isCapturing, firstCapture, detectingScrollMethod, useWinRTCaptureAPI;
         private ScrollingCaptureScrollMethod currentScrollMethod;
 
-        public ScrollingCaptureForm(ScrollingCaptureOptions options, RegionCaptureOptions regionCaptureOptions, bool forceSelection = false)
+        public ScrollingCaptureForm(ScrollingCaptureOptions options, RegionCaptureOptions regionCaptureOptions, bool forceSelection = false, bool useWinRTAPI = false)
         {
             Options = options;
             RegionCaptureOptions = regionCaptureOptions;
@@ -71,6 +71,7 @@ namespace ShareX.ScreenCaptureLib
             cbRemoveDuplicates.Checked = Options.RemoveDuplicates;
             cbAutoCombine.Checked = Options.AfterCaptureAutomaticallyCombine;
             chkAutoUpload.Checked = Options.AutoUpload;
+            useWinRTCaptureAPI = useWinRTAPI;
 
             if (forceSelection || Options.StartSelectionAutomatically)
             {
@@ -314,7 +315,7 @@ namespace ShareX.ScreenCaptureLib
                 }
             }
 
-            Screenshot screenshot = new Screenshot() { CaptureCursor = false };
+            Screenshot screenshot = new Screenshot() { CaptureCursor = false, UseWinRTCaptureAPI = useWinRTCaptureAPI };
             Bitmap bmp = screenshot.CaptureRectangle(selectedRectangle);
 
             if (bmp != null)
