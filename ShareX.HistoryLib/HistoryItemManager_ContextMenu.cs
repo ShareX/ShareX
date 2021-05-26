@@ -68,7 +68,6 @@ namespace ShareX.HistoryLib
         private ToolStripMenuItem tsmiCopyFileName;
         private ToolStripMenuItem tsmiCopyFileNameWithExtension;
         private ToolStripMenuItem tsmiCopyFolder;
-        private ToolStripMenuItem tsmiShow;
         private ToolStripMenuItem tsmiShowImagePreview;
         private ToolStripMenuItem tsmiShowMoreInfo;
         private ToolStripMenuItem tsmiUploadFile;
@@ -111,7 +110,6 @@ namespace ShareX.HistoryLib
             tsmiCopyFileName = new ToolStripMenuItem();
             tsmiCopyFileNameWithExtension = new ToolStripMenuItem();
             tsmiCopyFolder = new ToolStripMenuItem();
-            tsmiShow = new ToolStripMenuItem();
             tsmiShowImagePreview = new ToolStripMenuItem();
             tsmiShowMoreInfo = new ToolStripMenuItem();
             tsmiUploadFile = new ToolStripMenuItem();
@@ -125,9 +123,10 @@ namespace ShareX.HistoryLib
             {
                 tsmiOpen,
                 tsmiCopy,
-                tsmiShow,
+                tsmiShowImagePreview,
                 tsmiUploadFile,
-                tsmiEditImage
+                tsmiEditImage,
+                tsmiShowMoreInfo
             });
             cmsHistory.Name = "cmsHistory";
             cmsHistory.ShowImageMargin = false;
@@ -396,17 +395,6 @@ namespace ShareX.HistoryLib
             tsmiCopyFolder.Text = Resources.HistoryItemManager_InitializeComponent_Folder;
             tsmiCopyFolder.Click += tsmiCopyFolder_Click;
             //
-            // tsmiShow
-            //
-            tsmiShow.DropDownItems.AddRange(new ToolStripItem[]
-            {
-                tsmiShowImagePreview,
-                tsmiShowMoreInfo
-            });
-            tsmiShow.Name = "tsmiShow";
-            tsmiShow.Size = new Size(127, 22);
-            tsmiShow.Text = Resources.HistoryItemManager_InitializeComponent_Show;
-            //
             // tsmiShowImagePreview
             //
             tsmiShowImagePreview.Name = "tsmiShowImagePreview";
@@ -501,16 +489,11 @@ namespace ShareX.HistoryLib
                 tsmiCopyFileNameWithExtension.Text = Resources.HistoryItemManager_InitializeComponent_File_name_with_extension + " (" + itemCount + ")";
                 tsmiCopyFolder.Text = Resources.HistoryItemManager_InitializeComponent_Folder + " (" + itemCount + ")";
 
-                // Show
-                tsmiShow.Enabled = false;
+                // Other
                 tsmiShowImagePreview.Enabled = false;
-                tsmiShowMoreInfo.Enabled = false;
-
-                // Upload file
                 tsmiUploadFile.Enabled = false;
-
-                // Edit image
                 tsmiEditImage.Enabled = false;
+                tsmiShowMoreInfo.Enabled = false;
             }
             else
             {
@@ -570,16 +553,11 @@ namespace ShareX.HistoryLib
                 tsmiCopyFileNameWithExtension.Text = Resources.HistoryItemManager_InitializeComponent_File_name_with_extension;
                 tsmiCopyFolder.Text = Resources.HistoryItemManager_InitializeComponent_Folder;
 
-                // Show
-                tsmiShow.Enabled = true;
+                // Other
                 tsmiShowImagePreview.Enabled = IsImageFile;
-                tsmiShowMoreInfo.Enabled = true;
-
-                // Upload file
                 tsmiUploadFile.Enabled = uploadFile != null && IsFileExist;
-
-                // Edit image
                 tsmiEditImage.Enabled = editImage != null && IsImageFile;
+                tsmiShowMoreInfo.Enabled = true;
             }
 
             cmsHistory.ResumeLayout();
@@ -720,11 +698,6 @@ namespace ShareX.HistoryLib
             ShowImagePreview();
         }
 
-        private void tsmiShowMoreInfo_Click(object sender, EventArgs e)
-        {
-            ShowMoreInfo();
-        }
-
         private void tsmiUploadFile_Click(object sender, EventArgs e)
         {
             UploadFile();
@@ -733,6 +706,11 @@ namespace ShareX.HistoryLib
         private void tsmiEditImage_Click(object sender, EventArgs e)
         {
             EditImage();
+        }
+
+        private void tsmiShowMoreInfo_Click(object sender, EventArgs e)
+        {
+            ShowMoreInfo();
         }
     }
 }
