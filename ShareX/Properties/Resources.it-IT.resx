@@ -1,6 +1,6 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
-  <!-- 
+	<!-- 
     Microsoft ResX Schema 
     
     Version 2.0
@@ -59,460 +59,603 @@
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
-  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
-    <xsd:element name="root" msdata:IsDataSet="true">
-      <xsd:complexType>
-        <xsd:choice maxOccurs="unbounded">
-          <xsd:element name="metadata">
-            <xsd:complexType>
-              <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" />
-              </xsd:sequence>
-              <xsd:attribute name="name" use="required" type="xsd:string" />
-              <xsd:attribute name="type" type="xsd:string" />
-              <xsd:attribute name="mimetype" type="xsd:string" />
-              <xsd:attribute ref="xml:space" />
-            </xsd:complexType>
-          </xsd:element>
-          <xsd:element name="assembly">
-            <xsd:complexType>
-              <xsd:attribute name="alias" type="xsd:string" />
-              <xsd:attribute name="name" type="xsd:string" />
-            </xsd:complexType>
-          </xsd:element>
-          <xsd:element name="data">
-            <xsd:complexType>
-              <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
-              </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
-              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-              <xsd:attribute ref="xml:space" />
-            </xsd:complexType>
-          </xsd:element>
-          <xsd:element name="resheader">
-            <xsd:complexType>
-              <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-              </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" />
-            </xsd:complexType>
-          </xsd:element>
-        </xsd:choice>
-      </xsd:complexType>
-    </xsd:element>
-  </xsd:schema>
-  <resheader name="resmimetype">
-    <value>text/microsoft-resx</value>
-  </resheader>
-  <resheader name="version">
-    <value>2.0</value>
-  </resheader>
-  <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </resheader>
-  <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </resheader>
-  <data name="UploadTask_DoUploadJob_You_are_attempting_to_upload_a_large_file" xml:space="preserve">
-    <value>Stai cercando di caricare un file di grandi dimensioni.
+	<xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+		<xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+		<xsd:element name="root" msdata:IsDataSet="true">
+			<xsd:complexType>
+				<xsd:choice maxOccurs="unbounded">
+					<xsd:element name="metadata">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" />
+							</xsd:sequence>
+							<xsd:attribute name="name" use="required" type="xsd:string" />
+							<xsd:attribute name="type" type="xsd:string" />
+							<xsd:attribute name="mimetype" type="xsd:string" />
+							<xsd:attribute ref="xml:space" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="assembly">
+						<xsd:complexType>
+							<xsd:attribute name="alias" type="xsd:string" />
+							<xsd:attribute name="name" type="xsd:string" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="data">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+								<xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+							<xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+							<xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+							<xsd:attribute ref="xml:space" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="resheader">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" use="required" />
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:choice>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:schema>
+	<resheader name="resmimetype">
+		<value>text/microsoft-resx</value>
+	</resheader>
+	<resheader name="version">
+		<value>2.0</value>
+	</resheader>
+	<resheader name="reader">
+		<value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<resheader name="writer">
+		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<data name="UploadTask_DoUploadJob_You_are_attempting_to_upload_a_large_file" xml:space="preserve">
+    <value>Stai cercando di effettuare l'uplaod di un file di grandi dimensioni.
 Sei sicuro di voler continuare?</value>
   </data>
-  <data name="ScreenRecordForm_StartRecording_Encoding___" xml:space="preserve">
+	<data name="ScreenRecordForm_StartRecording_Encoding___" xml:space="preserve">
     <value>Codifica</value>
   </data>
-  <data name="UploadManager_IsUploadConfirmed_Are_you_sure_you_want_to_upload__0__files_" xml:space="preserve">
-    <value>Sei sicuro di voler caricare {0} file?</value>
+	<data name="UploadManager_IsUploadConfirmed_Are_you_sure_you_want_to_upload__0__files_" xml:space="preserve">
+    <value>Sei sicuro di voler uploadare {0} file?</value>
   </data>
-  <data name="BeforeUploadControl_AddDestination_Custom" xml:space="preserve">
+	<data name="BeforeUploadControl_AddDestination_Custom" xml:space="preserve">
     <value>Personalizzato</value>
   </data>
-  <data name="UploadTask_Stop_Stopping" xml:space="preserve">
+	<data name="UploadTask_Stop_Stopping" xml:space="preserve">
     <value>Arresto</value>
   </data>
-  <data name="UploadTask_CreateURLShortenerTask_Shorten_URL___0__" xml:space="preserve">
-    <value>Accorcia URL ({0})</value>
+	<data name="UploadTask_CreateURLShortenerTask_Shorten_URL___0__" xml:space="preserve">
+    <value>URL accorciata ({0})</value>
   </data>
-  <data name="UploadTask_DoUploadJob_First_time_upload_warning_text" xml:space="preserve">
-    <value>Sei sicuro di voler caricare questo screenshot?
-Premi "No" per annullare il caricamento e disabilitare il caricamento automatico degli screenshot.</value>
+	<data name="UploadTask_DoUploadJob_First_time_upload_warning_text" xml:space="preserve">
+    <value>Sei sicuro di voler uploadare questo schermata?
+Seleziona "No" per annullare l'upload e disabilitare l'upload automatico delle schermate.</value>
   </data>
-  <data name="UploadTask_DoUploadJob_Uploading" xml:space="preserve">
-    <value>Caricamento</value>
+	<data name="UploadTask_DoUploadJob_Uploading" xml:space="preserve">
+    <value>Upload....</value>
   </data>
-  <data name="ScreenRecordForm_StartRecording_FFmpeg_error" xml:space="preserve">
+	<data name="ScreenRecordForm_StartRecording_FFmpeg_error" xml:space="preserve">
     <value>Errore FFmpeg</value>
   </data>
-  <data name="TaskManager_task_UploadCompleted_ShareX___Task_completed" xml:space="preserve">
-    <value>Operazione completata</value>
+	<data name="TaskManager_task_UploadCompleted_ShareX___Task_completed" xml:space="preserve">
+    <value>Attività completata</value>
   </data>
-  <data name="ActionsForm_btnOK_Click_Name_can_t_be_empty_" xml:space="preserve">
+	<data name="ActionsForm_btnOK_Click_Name_can_t_be_empty_" xml:space="preserve">
     <value>Il nome non può essere vuoto.</value>
   </data>
-  <data name="ApplicationSettingsForm_cbSteamShowInApp_CheckedChanged_For_settings_to_take_effect_ShareX_needs_to_be_reopened_from_Steam_" xml:space="preserve">
-    <value>Riavviare ShareX da Steam per applicare i cambiamenti.</value>
+	<data name="ApplicationSettingsForm_cbSteamShowInApp_CheckedChanged_For_settings_to_take_effect_ShareX_needs_to_be_reopened_from_Steam_" xml:space="preserve">
+    <value>Per applicare le modifiche riapri ShareX da Steam .</value>
   </data>
-  <data name="MainForm_UpdateToggleHotkeyButton_Disable_hotkeys" xml:space="preserve">
-    <value>Disattiva Scorciatoie da Tastiera</value>
+	<data name="MainForm_UpdateToggleHotkeyButton_Disable_hotkeys" xml:space="preserve">
+    <value>Disattiva tasti rapidi</value>
   </data>
-  <data name="UploadTask_ThreadDoWork_URL_is_empty_" xml:space="preserve">
-    <value>L'URL è vuoto.</value>
+	<data name="UploadTask_ThreadDoWork_URL_is_empty_" xml:space="preserve">
+    <value>L'URL è vuota.</value>
   </data>
-  <data name="MainForm_tsmiTestTextUpload_Click_Text_upload_test" xml:space="preserve">
-    <value>Prova Caricamento Testo</value>
+	<data name="MainForm_tsmiTestTextUpload_Click_Text_upload_test" xml:space="preserve">
+    <value>Test upload testo</value>
   </data>
-  <data name="AboutForm_AboutForm_Contributors" xml:space="preserve">
-    <value>Collaboratori</value>
+	<data name="AboutForm_AboutForm_Contributors" xml:space="preserve">
+    <value>Contributori</value>
   </data>
-  <data name="ApplicationSettingsForm_btnBrowsePersonalFolderPath_Click_Choose_ShareX_personal_folder_path" xml:space="preserve">
-    <value>Scegli il Percorso della Cartella Personale di ShareX</value>
+	<data name="ApplicationSettingsForm_btnBrowsePersonalFolderPath_Click_Choose_ShareX_personal_folder_path" xml:space="preserve">
+    <value>Scegli percorso cartella personale di ShareX</value>
   </data>
-  <data name="HotkeyManager_ShowFailedHotkeys_Unable_to_register_hotkey" xml:space="preserve">
+	<data name="HotkeyManager_ShowFailedHotkeys_Unable_to_register_hotkey" xml:space="preserve">
     <value>Impossibile registrare {0}:
 
 {1}
 
-Selezione una scorciatoia diversa o chiudi l'applicazione che crea conflitto e riavvia ShareX.</value>
+Seleziona un tasto rapido diverso o chiudi l'applicazione che crea conflitto e riavvia ShareX.</value>
   </data>
-  <data name="MainForm_tsmiDeleteSelectedFile_Click_File_delete_confirmation" xml:space="preserve">
-    <value>Conferma Eliminazione File</value>
+	<data name="MainForm_tsmiDeleteSelectedFile_Click_File_delete_confirmation" xml:space="preserve">
+    <value>Conferma eliminazione file</value>
   </data>
-  <data name="AutoCaptureForm_Execute_Stop" xml:space="preserve">
-    <value>Ferma</value>
+	<data name="AutoCaptureForm_Execute_Stop" xml:space="preserve">
+    <value>Stop</value>
   </data>
-  <data name="UploadTask_CreateShareURLTask_Share_URL___0__" xml:space="preserve">
+	<data name="UploadTask_CreateShareURLTask_Share_URL___0__" xml:space="preserve">
     <value>Condividi URL ({0})</value>
   </data>
-  <data name="ClipboardFormatForm_ClipboardFormatForm_Supported_variables___0__and_other_variables_such_as__1__etc_" xml:space="preserve">
+	<data name="ClipboardFormatForm_ClipboardFormatForm_Supported_variables___0__and_other_variables_such_as__1__etc_" xml:space="preserve">
     <value>Variabili supportate: {0} e altre variabili come {1} ecc.</value>
   </data>
-  <data name="AutoCaptureForm_UpdateRegion_X___0___Y___1___Width___2___Height___3_" xml:space="preserve">
-    <value>X: {0}, Y: {1}, Larghezza: {2}, Altezza: {3}</value>
+	<data name="AutoCaptureForm_UpdateRegion_X___0___Y___1___Width___2___Height___3_" xml:space="preserve">
+    <value>X: {0}, Y: {1}, larghezza: {2}, altezza: {3}</value>
   </data>
-  <data name="TaskSettingsForm_UpdateUploaderMenuNames_Task___0_" xml:space="preserve">
-    <value>Operazione: {0}</value>
+	<data name="TaskSettingsForm_UpdateUploaderMenuNames_Task___0_" xml:space="preserve">
+    <value>Attività: {0}</value>
   </data>
-  <data name="HotkeySettingsForm_Reset_all_hotkeys_to_defaults_Confirmation" xml:space="preserve">
-    <value>Ripristinare tutte le scorciatoie alle impostazioni predefinite?</value>
+	<data name="HotkeySettingsForm_Reset_all_hotkeys_to_defaults_Confirmation" xml:space="preserve">
+    <value>Vuoi ripristinare tutti i tasti rapidi ai valori predefiniti?</value>
   </data>
-  <data name="ScreenRecordForm_StartRecording_FFmpeg_video_and_audio_source_both_can_t_be__None__" xml:space="preserve">
+	<data name="ScreenRecordForm_StartRecording_FFmpeg_video_and_audio_source_both_can_t_be__None__" xml:space="preserve">
     <value>Le sorgenti audo e video FFmpeg non possono essere entambe "Nessuna".</value>
   </data>
-  <data name="AboutForm_AboutForm_Changelog" xml:space="preserve">
-    <value>Cambiamenti</value>
+	<data name="AboutForm_AboutForm_Changelog" xml:space="preserve">
+    <value>Novità programma</value>
   </data>
-  <data name="HotkeyManager_ShowFailedHotkeys_hotkey" xml:space="preserve">
-    <value>scorciatoia</value>
+	<data name="HotkeyManager_ShowFailedHotkeys_hotkey" xml:space="preserve">
+    <value>tatso rapido</value>
   </data>
-  <data name="UploadManager_IsUploadConfirmed_Don_t_show_this_message_again_" xml:space="preserve">
-    <value>Non mostrare più questo messaggio.</value>
+	<data name="UploadManager_IsUploadConfirmed_Don_t_show_this_message_again_" xml:space="preserve">
+    <value>Non visualizzare più questo messaggio.</value>
   </data>
-  <data name="TaskSettingsForm_UpdateWindowTitle_Task_settings" xml:space="preserve">
-    <value>Impostazioni Operazione</value>
+	<data name="TaskSettingsForm_UpdateWindowTitle_Task_settings" xml:space="preserve">
+    <value>Impostazioni attività</value>
   </data>
-  <data name="BeforeUploadForm_BeforeUploadForm_Please_choose_a_destination_" xml:space="preserve">
-    <value>Scegliere una destinazione.</value>
+	<data name="BeforeUploadForm_BeforeUploadForm_Please_choose_a_destination_" xml:space="preserve">
+    <value>Scegli una destinazione.</value>
   </data>
-  <data name="UploadTask_Prepare_Starting" xml:space="preserve">
+	<data name="UploadTask_Prepare_Starting" xml:space="preserve">
     <value>Avvio</value>
   </data>
-  <data name="ScreenRecordForm_StartRecording_does_not_exist" xml:space="preserve">
+	<data name="ScreenRecordForm_StartRecording_does_not_exist" xml:space="preserve">
     <value>{0} non esiste.
 
 Vuoi scaricarlo automaticamente?</value>
   </data>
-  <data name="ScreenRecordForm_StartRecording_Waiting___" xml:space="preserve">
+	<data name="ScreenRecordForm_StartRecording_Waiting___" xml:space="preserve">
     <value>Attendere...</value>
   </data>
-  <data name="TaskSettingsForm_UpdateUploaderMenuNames_Image_uploader___0_" xml:space="preserve">
-    <value>Servizio di Caricamento Immagini: {0}</value>
+	<data name="TaskSettingsForm_UpdateUploaderMenuNames_Image_uploader___0_" xml:space="preserve">
+    <value>Uploader immagini: {0}</value>
   </data>
-  <data name="MainForm_UpdateMenu_Hide_menu" xml:space="preserve">
-    <value>Nascondi Menu</value>
+	<data name="MainForm_UpdateMenu_Hide_menu" xml:space="preserve">
+    <value>Nascondi menu</value>
   </data>
-  <data name="TaskHelpers_TweetMessage_Unable_to_find_valid_Twitter_account_" xml:space="preserve">
+	<data name="TaskHelpers_TweetMessage_Unable_to_find_valid_Twitter_account_" xml:space="preserve">
     <value>Impossibile trovare un account Twitter valido.</value>
   </data>
-  <data name="MainForm_UpdateMenu_Show_menu" xml:space="preserve">
-    <value>Mostra Menu</value>
+	<data name="MainForm_UpdateMenu_Show_menu" xml:space="preserve">
+    <value>Visualizza menu</value>
   </data>
-  <data name="MainForm_UpdateMainWindowLayout_Show_columns" xml:space="preserve">
-    <value>Mostra Colonne</value>
+	<data name="MainForm_UpdateMainWindowLayout_Show_columns" xml:space="preserve">
+    <value>Visualizza colonne</value>
   </data>
-  <data name="UploadManager_UploadURL_URL_to_download_from_and_upload" xml:space="preserve">
-    <value>URL da Scaricare e Caricare</value>
+	<data name="UploadManager_UploadURL_URL_to_download_from_and_upload" xml:space="preserve">
+    <value>URL per download ed upload</value>
   </data>
-  <data name="ActionsForm_btnOK_Click_File_path_can_t_be_empty_" xml:space="preserve">
+	<data name="ActionsForm_btnOK_Click_File_path_can_t_be_empty_" xml:space="preserve">
     <value>Il percorso file non puù essere vuoto.</value>
   </data>
-  <data name="UploadTask_DoAfterCaptureJobs_Choose_a_folder_to_save" xml:space="preserve">
+	<data name="UploadTask_DoAfterCaptureJobs_Choose_a_folder_to_save" xml:space="preserve">
     <value>Scegli una cartella</value>
   </data>
-  <data name="MainForm_UpdateToggleHotkeyButton_Enable_hotkeys" xml:space="preserve">
-    <value>Attiva Scorciatoie da Tastiera</value>
+	<data name="MainForm_UpdateToggleHotkeyButton_Enable_hotkeys" xml:space="preserve">
+    <value>Attiva tasti rapidi</value>
   </data>
-  <data name="QuickTaskMenu_ShowMenu_Cancel" xml:space="preserve">
+	<data name="QuickTaskMenu_ShowMenu_Cancel" xml:space="preserve">
     <value>Annulla</value>
   </data>
-  <data name="TaskHelpers_OpenQuickScreenColorPicker_Copied_to_clipboard___0_" xml:space="preserve">
+	<data name="TaskHelpers_OpenQuickScreenColorPicker_Copied_to_clipboard___0_" xml:space="preserve">
     <value>Copiato negli Appunti: {0}</value>
   </data>
-  <data name="HotkeyManager_ShowFailedHotkeys_Hotkey_registration_failed" xml:space="preserve">
-    <value>Registrazione scorciatoia fallita.</value>
+	<data name="HotkeyManager_ShowFailedHotkeys_Hotkey_registration_failed" xml:space="preserve">
+    <value>Registrazione tasto rapido fallita.</value>
   </data>
-  <data name="TaskHelpers_ToggleHotkeys_Hotkeys_disabled_" xml:space="preserve">
-    <value>Scorciatoie Disattivate</value>
+	<data name="TaskHelpers_ToggleHotkeys_Hotkeys_disabled_" xml:space="preserve">
+    <value>Tasti rapidi disattivati</value>
   </data>
-  <data name="UploadManager_IsUploadConfirmed_Upload_files" xml:space="preserve">
-    <value>Carica File</value>
+	<data name="UploadManager_IsUploadConfirmed_Upload_files" xml:space="preserve">
+    <value>Upload file</value>
   </data>
-  <data name="DropForm_DrawDropImage_Drop_here" xml:space="preserve">
+	<data name="DropForm_DrawDropImage_Drop_here" xml:space="preserve">
     <value>Trascina
-Qui</value>
+qui</value>
   </data>
-  <data name="TaskHelpers_ToggleHotkeys_Hotkeys_enabled_" xml:space="preserve">
-    <value>Scorciatoie Attivate</value>
+	<data name="TaskHelpers_ToggleHotkeys_Hotkeys_enabled_" xml:space="preserve">
+    <value>Tasti rapidi attivati</value>
   </data>
-  <data name="HotkeyManager_ShowFailedHotkeys_hotkeys" xml:space="preserve">
-    <value>scorciatoie</value>
+	<data name="HotkeyManager_ShowFailedHotkeys_hotkeys" xml:space="preserve">
+    <value>tasti rapidi</value>
   </data>
-  <data name="TaskSettingsForm_UpdateUploaderMenuNames_File_uploader___0_" xml:space="preserve">
-    <value>Servizio Caricamento File: {0}</value>
+	<data name="TaskSettingsForm_UpdateUploaderMenuNames_File_uploader___0_" xml:space="preserve">
+    <value>Uplaoder file: {0}</value>
   </data>
-  <data name="AboutForm_AboutForm_Project_page" xml:space="preserve">
-    <value>Pagina del Progetto</value>
+	<data name="AboutForm_AboutForm_Project_page" xml:space="preserve">
+    <value>Pagina progetto</value>
   </data>
-  <data name="TaskHelpers_TweetMessage_Tweet_successfully_sent_" xml:space="preserve">
+	<data name="TaskHelpers_TweetMessage_Tweet_successfully_sent_" xml:space="preserve">
     <value>Tweet inviato.</value>
   </data>
-  <data name="TaskManager_task_UploadCompleted_Error" xml:space="preserve">
+	<data name="TaskManager_task_UploadCompleted_Error" xml:space="preserve">
     <value>Errore</value>
   </data>
-  <data name="HotkeySelectionControl_StartEditing_Select_a_hotkey___" xml:space="preserve">
-    <value>Seleziona una Scorciatoia...</value>
+	<data name="HotkeySelectionControl_StartEditing_Select_a_hotkey___" xml:space="preserve">
+    <value>Seleziona un tasto rapido...</value>
   </data>
-  <data name="HotkeyManager_ShowFailedHotkeys_These_applications_could_be_conflicting_" xml:space="preserve">
+	<data name="HotkeyManager_ShowFailedHotkeys_These_applications_could_be_conflicting_" xml:space="preserve">
     <value>Potrebbe esserci un conflitto tra applicazioni:</value>
   </data>
-  <data name="Program_WritePersonalPathConfig_Cant_access_to_file" xml:space="preserve">
+	<data name="Program_WritePersonalPathConfig_Cant_access_to_file" xml:space="preserve">
     <value>Impossibile accedere al file "{0}".
-Esegui ShareX come amministratore per cambiare il percorso della cartella personale.</value>
+Per modificare il percorso della cartella personale esegui ShareX come amministratore.</value>
   </data>
-  <data name="TaskSettingsForm_UpdateUploaderMenuNames_URL_sharing_service___0_" xml:space="preserve">
-    <value>Servizio Condivisione URL: {0}</value>
+	<data name="TaskSettingsForm_UpdateUploaderMenuNames_URL_sharing_service___0_" xml:space="preserve">
+    <value>Servizio condivisione URL: {0}</value>
   </data>
-  <data name="TaskManager_CreateListViewItem_History" xml:space="preserve">
+	<data name="TaskManager_CreateListViewItem_History" xml:space="preserve">
     <value>Cronologia</value>
   </data>
-  <data name="ScreenRecordForm_StartRecording_Click_tray_icon_to_stop_recording_" xml:space="preserve">
+	<data name="ScreenRecordForm_StartRecording_Click_tray_icon_to_stop_recording_" xml:space="preserve">
     <value>Clicca per fermare la registrazione.</value>
   </data>
-  <data name="MainForm_UpdateWorkflowsMenu_You_can_add_workflows_from_hotkey_settings___" xml:space="preserve">
-    <value>Puoi aggiungere Workflow da "Impostazioni Scorciatoie"</value>
+	<data name="MainForm_UpdateWorkflowsMenu_You_can_add_workflows_from_hotkey_settings___" xml:space="preserve">
+    <value>Puoi aggiungere workflow nelle "Impostazioni tasti rapidi"</value>
   </data>
-  <data name="ImageData_Write_Error" xml:space="preserve">
-    <value>Impossibile scrivere l'immagine nel percorso {0}</value>
+	<data name="ImageData_Write_Error" xml:space="preserve">
+    <value>Impossibile salvare l'immagine nel percorso {0}</value>
   </data>
-  <data name="ApplicationSettingsForm_cbLanguage_SelectedIndexChanged_Language_Restart" xml:space="preserve">
-    <value>ShareX deve essere riavviato per cambiare lingua.
-Riavviare ShareX?</value>
+	<data name="ApplicationSettingsForm_cbLanguage_SelectedIndexChanged_Language_Restart" xml:space="preserve">
+    <value>Per applicare al modifica della lingua ShareX deve essere riavviato.
+
+Vuoi riavviare ora ShareX?</value>
   </data>
-  <data name="Program_Run_Error" xml:space="preserve">
+	<data name="Program_Run_Error" xml:space="preserve">
     <value>Errore</value>
   </data>
-  <data name="FileExistForm_txtNewName_TextChanged_Use_new_name__" xml:space="preserve">
-    <value>Usa un Nuovo Nome:</value>
+	<data name="FileExistForm_txtNewName_TextChanged_Use_new_name__" xml:space="preserve">
+    <value>Usa nuovo nome:</value>
   </data>
-  <data name="ScreenRecordForm_StartRecording_Missing" xml:space="preserve">
+	<data name="ScreenRecordForm_StartRecording_Missing" xml:space="preserve">
     <value>Mancante</value>
   </data>
-  <data name="AboutForm_AboutForm_Translators" xml:space="preserve">
+	<data name="AboutForm_AboutForm_Translators" xml:space="preserve">
     <value>Traduttori</value>
   </data>
-  <data name="UploadTask_DoUploadJob_First_time_upload_warning" xml:space="preserve">
-    <value>Avvertimento per il Primo Caricamento</value>
+	<data name="UploadTask_DoUploadJob_First_time_upload_warning" xml:space="preserve">
+    <value>Avviso primo upload</value>
   </data>
-  <data name="ChromeForm_btnRegister_Click_Chrome_support_enabled_" xml:space="preserve">
+	<data name="ChromeForm_btnRegister_Click_Chrome_support_enabled_" xml:space="preserve">
     <value>Supporto Chrome abilitato.</value>
   </data>
-  <data name="UploadManager_UploadFolder_Folder_upload" xml:space="preserve">
-    <value>Carica Cartella</value>
+	<data name="UploadManager_UploadFolder_Folder_upload" xml:space="preserve">
+    <value>Upload cartella</value>
   </data>
-  <data name="AboutForm_AboutForm_External_libraries" xml:space="preserve">
-    <value>Librerie Esterne</value>
+	<data name="AboutForm_AboutForm_External_libraries" xml:space="preserve">
+    <value>Librerie esterne</value>
   </data>
-  <data name="TaskSettingsForm_UpdateUploaderMenuNames_After_capture___0_" xml:space="preserve">
-    <value>Dopo la Cattura: {0}</value>
+	<data name="TaskSettingsForm_UpdateUploaderMenuNames_After_capture___0_" xml:space="preserve">
+    <value>Dopo cattura: {0}</value>
   </data>
-  <data name="TaskSettingsForm_UpdateUploaderMenuNames_URL_shortener___0_" xml:space="preserve">
-    <value>Servizio Accorciamento URL: {0}</value>
+	<data name="TaskSettingsForm_UpdateUploaderMenuNames_URL_shortener___0_" xml:space="preserve">
+    <value>URL accorciata: {0}</value>
   </data>
-  <data name="UploadInfoManager_ShowErrors_Upload_errors" xml:space="preserve">
-    <value>Errori di Caricamento</value>
+	<data name="UploadInfoManager_ShowErrors_Upload_errors" xml:space="preserve">
+    <value>Errori upload</value>
   </data>
-  <data name="Program_Run_Unable_to_create_folder_" xml:space="preserve">
+	<data name="Program_Run_Unable_to_create_folder_" xml:space="preserve">
     <value>Impossibile creare la cartella:</value>
   </data>
-  <data name="ApplicationSettingsForm_btnBrowseCustomScreenshotsPath_Click_Choose_screenshots_folder_path" xml:space="preserve">
-    <value>Scegli il Percorso della Cartella delgi Screenshot</value>
+	<data name="ApplicationSettingsForm_btnBrowseCustomScreenshotsPath_Click_Choose_screenshots_folder_path" xml:space="preserve">
+    <value>Scegli percorso cartella schermate</value>
   </data>
-  <data name="MainForm_UpdateMainFormTip_Currently_configured_hotkeys_" xml:space="preserve">
-    <value>Scorciatoie Configurate:</value>
+	<data name="MainForm_UpdateMainFormTip_Currently_configured_hotkeys_" xml:space="preserve">
+    <value>Tasti rapidi configurati:</value>
   </data>
-  <data name="RecentManager_UpdateRecentMenu_Left_click_to_copy_URL_to_clipboard__Right_click_to_open_URL_" xml:space="preserve">
-    <value>Click Sinistro per Copiare URL negli Appunti. Click Destro per Aprire URL</value>
+	<data name="RecentManager_UpdateRecentMenu_Left_click_to_copy_URL_to_clipboard__Right_click_to_open_URL_" xml:space="preserve">
+    <value>Clic sinistro per copiare URL negli Appunti. 
+Clic destro per aprire URL</value>
   </data>
-  <data name="TaskManager_CreateListViewItem_In_queue" xml:space="preserve">
-    <value>In Attesa</value>
+	<data name="TaskManager_CreateListViewItem_In_queue" xml:space="preserve">
+    <value>In coda</value>
   </data>
-  <data name="MainForm_tsmiDeleteSelectedFile_Click_Do_you_really_want_to_delete_this_file_" xml:space="preserve">
-    <value>Vuoi veramente eliminare questo file?</value>
+	<data name="MainForm_tsmiDeleteSelectedFile_Click_Do_you_really_want_to_delete_this_file_" xml:space="preserve">
+    <value>Vuoi eliminare questo file?</value>
   </data>
-  <data name="UploadManager_DownloadAndUploadFile_Download_failed" xml:space="preserve">
-    <value>Scaricamento fallito:
+	<data name="UploadManager_DownloadAndUploadFile_Download_failed" xml:space="preserve">
+    <value>Download fallito:
 {0}</value>
   </data>
-  <data name="TaskSettingsForm_UpdateUploaderMenuNames_Text_uploader___0_" xml:space="preserve">
-    <value>Servizio Caricamento Testo: {0}</value>
+	<data name="TaskSettingsForm_UpdateUploaderMenuNames_Text_uploader___0_" xml:space="preserve">
+    <value>Uploader testo: {0}</value>
   </data>
-  <data name="UploadTask_Prepare_Preparing" xml:space="preserve">
+	<data name="UploadTask_Prepare_Preparing" xml:space="preserve">
     <value>Preparazione</value>
   </data>
-  <data name="AutoCaptureForm_UpdateStatus_Timeleft___0_s___1____Total___2_" xml:space="preserve">
-    <value>Rimasti: {0}s ({1}%) Totale: {2}</value>
+	<data name="AutoCaptureForm_UpdateStatus_Timeleft___0_s___1____Total___2_" xml:space="preserve">
+    <value>Rimasti: {0}s ({1}%) totale: {2}</value>
   </data>
-  <data name="QuickTaskMenu_ShowMenu_Edit_this_menu___" xml:space="preserve">
-    <value>Modifica Questo Menu...</value>
+	<data name="QuickTaskMenu_ShowMenu_Edit_this_menu___" xml:space="preserve">
+    <value>Modifica questo menu...</value>
   </data>
-  <data name="UploadTask_OnUploadCompleted_Stopped" xml:space="preserve">
-    <value>Fermato</value>
+	<data name="UploadTask_OnUploadCompleted_Stopped" xml:space="preserve">
+    <value>Arrestato</value>
   </data>
-  <data name="WorkerTask_GetInvalidConfigResult__0__configuration_is_invalid_or_missing__Please_check__Destination_settings__window_to_configure_it_" xml:space="preserve">
-    <value>{0} configurazione non valida o mancante. Controllare la finestra "Impostazioni Destinazione".</value>
+	<data name="WorkerTask_GetInvalidConfigResult__0__configuration_is_invalid_or_missing__Please_check__Destination_settings__window_to_configure_it_" xml:space="preserve">
+    <value>Configurazione {0} non valida o mancante. 
+Controlla la finestra "Impostazioni destinazione" e le impostazioni.</value>
   </data>
-  <data name="ChromeForm_btnUnregister_Click_Chrome_support_disabled_" xml:space="preserve">
-    <value>Supporto Chrome Disabilitato</value>
+	<data name="ChromeForm_btnUnregister_Click_Chrome_support_disabled_" xml:space="preserve">
+    <value>Supporto Chrome disabilitato</value>
   </data>
-  <data name="AutoCaptureForm_Execute_Start" xml:space="preserve">
+	<data name="AutoCaptureForm_Execute_Start" xml:space="preserve">
     <value>Avvia</value>
   </data>
-  <data name="TaskSettingsForm_txtNameFormatPatternActiveWindow_TextChanged_Preview_" xml:space="preserve">
+	<data name="TaskSettingsForm_txtNameFormatPatternActiveWindow_TextChanged_Preview_" xml:space="preserve">
     <value>Anteprima:</value>
   </data>
-  <data name="MainForm_UpdateMainWindowLayout_Hide_columns" xml:space="preserve">
-    <value>Nascondi Colonne</value>
+	<data name="MainForm_UpdateMainWindowLayout_Hide_columns" xml:space="preserve">
+    <value>Nascondi colonne</value>
   </data>
-  <data name="ScreenRecordForm_DownloaderForm_InstallRequested_FFmpeg_successfully_downloaded_" xml:space="preserve">
+	<data name="ScreenRecordForm_DownloaderForm_InstallRequested_FFmpeg_successfully_downloaded_" xml:space="preserve">
     <value>FFmpeg scaricato con successo.</value>
   </data>
-  <data name="UploadManager_UploadFile_File_upload" xml:space="preserve">
-    <value>Caricamento File</value>
+	<data name="UploadManager_UploadFile_File_upload" xml:space="preserve">
+    <value>Upload file</value>
   </data>
-  <data name="TaskSettingsForm_UpdateWindowTitle_Task_settings_for__0_" xml:space="preserve">
-    <value>Impostazioni Operazione per {0}</value>
+	<data name="TaskSettingsForm_UpdateWindowTitle_Task_settings_for__0_" xml:space="preserve">
+    <value>Impostazioni attività per {0}</value>
   </data>
-  <data name="UploadTask_DownloadAndUpload_Downloading" xml:space="preserve">
-    <value>Scaricamento</value>
+	<data name="UploadTask_DownloadAndUpload_Downloading" xml:space="preserve">
+    <value>Download</value>
   </data>
-  <data name="QuickTaskMenu_ShowMenu_Continue" xml:space="preserve">
+	<data name="QuickTaskMenu_ShowMenu_Continue" xml:space="preserve">
     <value>Continua</value>
   </data>
-  <data name="UploadTask_OnUploadCompleted_Done" xml:space="preserve">
+	<data name="UploadTask_OnUploadCompleted_Done" xml:space="preserve">
     <value>Fatto</value>
   </data>
-  <data name="BeforeUploadForm_BeforeUploadForm__0__is_about_to_be_uploaded_to__1___You_may_choose_a_different_destination_" xml:space="preserve">
-    <value>{0} sta per essere caricato su {1}. È possibile scegliere una destinazione diversa.</value>
+	<data name="BeforeUploadForm_BeforeUploadForm__0__is_about_to_be_uploaded_to__1___You_may_choose_a_different_destination_" xml:space="preserve">
+    <value>Uplaod di {0} su {1}. 
+È possibile scegliere una destinazione diversa.</value>
   </data>
-  <data name="AboutForm_AboutForm_Website" xml:space="preserve">
-    <value>Sito Web</value>
+	<data name="AboutForm_AboutForm_Website" xml:space="preserve">
+    <value>Sito web</value>
   </data>
-  <data name="TaskSettingsForm_UpdateUploaderMenuNames_After_upload___0_" xml:space="preserve">
-    <value>Dopo il Caricamento: {0}</value>
+	<data name="TaskSettingsForm_UpdateUploaderMenuNames_After_upload___0_" xml:space="preserve">
+    <value>Dopo upload: {0}</value>
   </data>
-  <data name="QuickTaskMenuEditorForm_Reset_all_quick_tasks_to_defaults_Confirmation" xml:space="preserve">
-    <value>Ripristinare tutte le operazioni rapide alle impostazioni predefinite?</value>
+	<data name="QuickTaskMenuEditorForm_Reset_all_quick_tasks_to_defaults_Confirmation" xml:space="preserve">
+    <value>Vuoi ripristinare tutte le attività rapide alle impostazioni predefinite?</value>
   </data>
-  <data name="ScreenRecordForm_StartRecording_Click_tray_icon_to_start_recording_" xml:space="preserve">
+	<data name="ScreenRecordForm_StartRecording_Click_tray_icon_to_start_recording_" xml:space="preserve">
     <value>Clicca per registrare.</value>
   </data>
-  <data name="ScreenRecordForm_DownloaderForm_InstallRequested_Download_of_FFmpeg_failed_" xml:space="preserve">
+	<data name="ScreenRecordForm_DownloaderForm_InstallRequested_Download_of_FFmpeg_failed_" xml:space="preserve">
     <value>Scaricamento FFmpeg fallito.</value>
   </data>
-  <data name="IntegrationHelpers_UploadWithShareX" xml:space="preserve">
-    <value>Carica con ShareX</value>
+	<data name="IntegrationHelpers_UploadWithShareX" xml:space="preserve">
+    <value>Upload con ShareX</value>
   </data>
-  <data name="ActionsToolbarEditForm_Separator" xml:space="preserve">
+	<data name="ActionsToolbarEditForm_Separator" xml:space="preserve">
     <value>Separatore</value>
   </data>
-  <data name="ActionsToolbar_Close" xml:space="preserve">
+	<data name="ActionsToolbar_Close" xml:space="preserve">
     <value>Chiudi</value>
   </data>
-  <data name="ActionsToolbar__LockPosition" xml:space="preserve">
-    <value>Blocca Posizione</value>
+	<data name="ActionsToolbar__LockPosition" xml:space="preserve">
+    <value>Blocca posizione</value>
   </data>
-  <data name="ActionsToolbar_OpenAtShareXStartup" xml:space="preserve">
-    <value>Apri all'Avvio di ShareX</value>
+	<data name="ActionsToolbar_OpenAtShareXStartup" xml:space="preserve">
+    <value>Apri all'avvio di ShareX</value>
   </data>
-  <data name="ActionsToolbar_Edit" xml:space="preserve">
-    <value>Modifica</value>
+	<data name="ActionsToolbar_Edit" xml:space="preserve">
+    <value>Modifica...</value>
   </data>
-  <data name="ActionsToolbar_Tip" xml:space="preserve">
-    <value>- Tieni Premuto il Tasto Sinistro per Trascinare
-- Tasto Destro per Aprire il Menu
-- Tasto Centrale per Chiudere</value>
+	<data name="ActionsToolbar_Tip" xml:space="preserve">
+    <value>- Tieni premuto tasto sinistro per trascinare
+- Tasto destro per aprire il menu
+- Tasto centrale per chiudere</value>
   </data>
-  <data name="ActionsToolbar_StayTopMost" xml:space="preserve">
-    <value>Resta in Primo Piano</value>
+	<data name="ActionsToolbar_StayTopMost" xml:space="preserve">
+    <value>Rimani in primo piano</value>
   </data>
-  <data name="AboutForm_AboutForm_Language_tr" xml:space="preserve">
+	<data name="AboutForm_AboutForm_Language_tr" xml:space="preserve">
     <value>Turco</value>
   </data>
-  <data name="AboutForm_AboutForm_Language_de" xml:space="preserve">
+	<data name="AboutForm_AboutForm_Language_de" xml:space="preserve">
     <value>Tedesco</value>
   </data>
-  <data name="AboutForm_AboutForm_Language_fr" xml:space="preserve">
+	<data name="AboutForm_AboutForm_Language_fr" xml:space="preserve">
     <value>Francese</value>
   </data>
-  <data name="AboutForm_AboutForm_Language_zh_CH" xml:space="preserve">
-    <value>Cinese (Semplificato)</value>
+	<data name="AboutForm_AboutForm_Language_zh_CH" xml:space="preserve">
+    <value>Cinese semplificato</value>
   </data>
-  <data name="AboutForm_AboutForm_Language_hu" xml:space="preserve">
+	<data name="AboutForm_AboutForm_Language_hu" xml:space="preserve">
     <value>Ungherese</value>
   </data>
-  <data name="AboutForm_AboutForm_Language_ko_KR" xml:space="preserve">
+	<data name="AboutForm_AboutForm_Language_ko_KR" xml:space="preserve">
     <value>Coreano</value>
   </data>
-  <data name="AboutForm_AboutForm_Language_es" xml:space="preserve">
+	<data name="AboutForm_AboutForm_Language_es" xml:space="preserve">
     <value>Spagnolo</value>
   </data>
-  <data name="AboutForm_AboutForm_Language_nl_NL" xml:space="preserve">
-    <value>Danese</value>
+	<data name="AboutForm_AboutForm_Language_nl_NL" xml:space="preserve">
+    <value>Olandese</value>
   </data>
-  <data name="AboutForm_AboutForm_Language_pt_BR" xml:space="preserve">
+	<data name="AboutForm_AboutForm_Language_pt_BR" xml:space="preserve">
     <value>Portoghese (Brasile)</value>
   </data>
-  <data name="AboutForm_AboutForm_Language_vi_VN" xml:space="preserve">
+	<data name="AboutForm_AboutForm_Language_vi_VN" xml:space="preserve">
     <value>Vietnamita</value>
   </data>
-  <data name="AboutForm_AboutForm_Language_ru" xml:space="preserve">
+	<data name="AboutForm_AboutForm_Language_ru" xml:space="preserve">
     <value>Russo</value>
   </data>
-  <data name="AboutForm_AboutForm_Language_zh_TW" xml:space="preserve">
-    <value>Cinese (Tradizionale)</value>
+	<data name="AboutForm_AboutForm_Language_zh_TW" xml:space="preserve">
+    <value>Cinese tradizionale</value>
   </data>
-  <data name="AboutForm_AboutForm_Language_it_IT" xml:space="preserve">
+	<data name="AboutForm_AboutForm_Language_it_IT" xml:space="preserve">
     <value>Italiano</value>
   </data>
-  <data name="QRCodeForm_InputTextToEncode" xml:space="preserve">
+	<data name="QRCodeForm_InputTextToEncode" xml:space="preserve">
     <value>Inserisci il testo da codificare</value>
   </data>
-  <data name="ApplicationSettingsForm_cbStartWithWindows_Text" xml:space="preserve">
-    <value>Esegui ShareX all'Avvio di Windows</value>
+	<data name="ApplicationSettingsForm_cbStartWithWindows_Text" xml:space="preserve">
+    <value>Esegui ShareX all'avvio di Windows</value>
   </data>
-  <data name="ApplicationSettingsForm_cbStartWithWindows_DisabledByUser_Text" xml:space="preserve">
-    <value>L'avvio automatico è stato disattivato in Gestione Attività</value>
+	<data name="ApplicationSettingsForm_cbStartWithWindows_DisabledByUser_Text" xml:space="preserve">
+    <value>L'avvio automatico è stato disattivato in Gestione attività</value>
   </data>
+	<data name="OCRForm_AutoProcessing" xml:space="preserve">
+		<value>Elaborazione OCR</value>
+	</data>
+	<data name="AboutForm_AboutForm_Language_pt_PT" xml:space="preserve">
+		<value>Portoghese</value>
+	</data>
+	<data name="SwitchToThumbnailView" xml:space="preserve">
+		<value>Passa alla vista anteprime</value>
+	</data>
+	<data name="ApplicationSettingsForm_btnCheckDevBuild_Click_DevBuilds_Warning" xml:space="preserve">
+		<value>Le build di sviluppo possono essere instabili e devono essere usate solo a scopo di test.
+Vuoi installare questa build?
+</value>
+	</data>
+	<data name="MainForm_UploadDebugLogWarning" xml:space="preserve">
+		<value>Il registro debug può contenere informazioni riservate. 
+Sei sicuro di voler procedere?</value>
+	</data>
+	<data name="AboutForm_AboutForm_Language_id_ID" xml:space="preserve">
+		<value>Indonesiano</value>
+	</data>
+	<data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__File__Count___0__" xml:space="preserve">
+		<value>Contenuto Appunti: file (n. {0})</value>
+	</data>
+	<data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__Text__Length___0__" xml:space="preserve">
+		<value>Contenuto Appunti: testo (lunghezza: {0})</value>
+	</data>
+	<data name="ApplicationSettingsForm_btnResetSettings_Click_WouldYouLikeToResetShareXSettings" xml:space="preserve">
+		<value>Vuoi ripristinare le impostazioni di ShareX?</value>
+	</data>
+	<data name="ShareXIsMinimizedToTheSystemTray" xml:space="preserve">
+		<value>ShareX è minimizzato nella barra di sistema.</value>
+	</data>
+	<data name="ApplicationSettingsForm_cbStartWithWindows_DisabledByPolicy_Text" xml:space="preserve">
+		<value>L'avvio è stato disabilitato dalla tua organizzazione.</value>
+	</data>
+	<data name="YourAntiVirusSoftwareOrTheControlledFolderAccessFeatureInWindows10CouldBeBlockingShareX" xml:space="preserve">
+		<value>Il software antivirus o la funzionalità di accesso alle cartelle controllate in Windows 10 potrebbe bloccare ShareX.</value>
+	</data>
+	<data name="ShareXOpticalCharacterRecognition" xml:space="preserve">
+		<value>ShareX - Riconoscimento ottico caratteri</value>
+	</data>
+	<data name="Hotkey" xml:space="preserve">
+		<value>Tasto rapido</value>
+	</data>
+	<data name="ApplicationSettingsForm_cbStartWithWindows_EnabledByPolicy_Text" xml:space="preserve">
+		<value>L'avvio è stato abilitato dalla tua organizzazione.</value>
+	</data>
+	<data name="WouldYouLikeToResetThemes" xml:space="preserve">
+		<value>Vuoi ripristinare i temi?</value>
+	</data>
+	<data name="ThisFeatureWillNotWorkWhenDisableUploadOptionIsEnabled" xml:space="preserve">
+		<value>Quando l'opzione "DisableUpload" è abilitata questa funzione sarà operativa!</value>
+	</data>
+	<data name="WouldYouLikeToEnableImageEffects" xml:space="preserve">
+		<value>Vuoi abilitare gli effetti immagine?
+
+Puoi disabilitarli in seguito dal menu "Attività dopo acquisizione".</value>
+	</data>
+	<data name="AboutForm_AboutForm_Language_fa_IR" xml:space="preserve">
+		<value>Persiano</value>
+	</data>
+	<data name="IntegrationHelpers_EditWithShareX" xml:space="preserve">
+		<value>Modifica con ShareX</value>
+	</data>
+	<data name="AboutForm_AboutForm_Language_ja_JP" xml:space="preserve">
+		<value>Giapponese</value>
+	</data>
+	<data name="AboutForm_AboutForm_Language_es_MX" xml:space="preserve">
+		<value>Spagnolo messicano</value>
+	</data>
+	<data name="ShareXNeedsToBeRestartedForThePersonalFolderChangesToApply" xml:space="preserve">
+		<value>Per applicare le modifiche alla cartella personale ShareX deve essere riavviato.
+
+Vuoi riavviare ora ShareX?</value>
+	</data>
+	<data name="AboutForm_AboutForm_Language_uk" xml:space="preserve">
+		<value>Ucraino</value>
+	</data>
+	<data name="ScreenColorPicker" xml:space="preserve">
+		<value>Selettore colore schermo</value>
+	</data>
+	<data name="UploadManager_ShowShortenURLDialog_Shorten" xml:space="preserve">
+		<value>Accorcia</value>
+	</data>
+	<data name="ShareXConfirmation" xml:space="preserve">
+		<value>ShareX - Conferme</value>
+	</data>
+	<data name="UploadManager_ShowShortenURLDialog_ShortenURL" xml:space="preserve">
+		<value>URL accorciata</value>
+	</data>
+	<data name="Confirmation" xml:space="preserve">
+		<value>Conferma</value>
+	</data>
+	<data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__Image__Size___0_x_1__" xml:space="preserve">
+		<value>Contenuto Appunti: immagine (dimensione {0}x{1}) </value>
+	</data>
+	<data name="SwitchToListView" xml:space="preserve">
+		<value>Passa alla vista elenco</value>
+	</data>
+	<data name="FailedToSaveSettings" xml:space="preserve">
+		<value>Salvataggio impostazioni fallito</value>
+	</data>
+	<data name="OCRForm_AutoCompleteFail" xml:space="preserve">
+		<value>Errore durante elaborazione OCR, o nessun testo restituito.</value>
+	</data>
+	<data name="PleaseNoteThatShareXIsUsingOCRSpaceSOnlineAPIToPerformOpticalCharacterRecognitionDoYouGivePermissionToShareXToUploadImagesToThisService" xml:space="preserve">
+		<value>Per eseguire il riconoscimento ottico dei caratteri ShareX usa l'API online di OCR.Space.
+Autorizzi ShareX ad uploadare immagini su questo servizio?</value>
+	</data>
+	<data name="Description" xml:space="preserve">
+		<value>Descrizione</value>
+	</data>
+	<data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_is_empty_or_contains_unknown_data_" xml:space="preserve">
+		<value>Appunti vuoti o contengono dati sconosciuti.</value>
+	</data>
+	<data name="OCRForm_AutoComplete" xml:space="preserve">
+		<value>Il risultato dell'OCR è stato copiato negli Appunti,</value>
+	</data>
+	<data name="ScreenshotDelay0S" xml:space="preserve">
+		<value>Ritardo schermata: {0}s</value>
+	</data>
+	<data name="FFmpeg_does_not_exist" xml:space="preserve">
+		<value>{0} non esiste.
+
+Vuoi effettuare automaticamente il download?</value>
+	</data>
+	<data name="FFmpeg_Download_of_FFmpeg_failed" xml:space="preserve">
+		<value>Download FFmpeg fallito.</value>
+	</data>
+	<data name="FFmpeg_FFmpeg_error" xml:space="preserve">
+		<value>Errore FFmpeg</value>
+	</data>
+	<data name="FFmpeg_FFmpeg_successfully_downloaded" xml:space="preserve">
+		<value>Download FFmpeg completato.</value>
+	</data>
+	<data name="FFmpeg_FFmpeg_video_and_audio_source_both_can_t_be__None__" xml:space="preserve">
+		<value>La sorgente audio e video FFmpeg non possono essere contemporanemante "Nessuna".</value>
+	</data>
 </root>
