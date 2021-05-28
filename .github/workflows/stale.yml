@@ -13,11 +13,11 @@ jobs:
           stale-issue-message: 'This issue has been automatically marked as stale because it has not had recent activity. It will be closed if no further activity occurs.'
           stale-pr-message: 'This pull request has been automatically marked as stale because it has not had recent activity. It will be closed if no further activity occurs.'
           days-before-issue-stale: 180
-          days-before-pr-stale: 30
+          days-before-pr-stale: 60
           days-before-issue-close: 7
           days-before-pr-close: 7
           stale-issue-label: 'Stale'
           stale-pr-label: 'Stale'
           exempt-issue-labels: 'Bug,Enhancement'
           exempt-pr-labels: ''
-          operations-per-run: 300
+          operations-per-run: 100
