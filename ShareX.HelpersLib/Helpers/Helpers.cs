@@ -1351,18 +1351,17 @@ namespace ShareX.HelpersLib
             }
         }
 
-        public static T[] GetInstances<T>() where T : class
+        public static IEnumerable<T> GetInstances<T>() where T : class
         {
-            IEnumerable<T> instances = from t in Assembly.GetCallingAssembly().GetTypes()
-                                       where t.IsClass && t.IsSubclassOf(typeof(T)) && t.GetConstructor(Type.EmptyTypes) != null
-                                       select Activator.CreateInstance(t) as T;
-
-            return instances.ToArray();
+            Type baseType = typeof(T);
+            Assembly assembly = baseType.Assembly;
+            return assembly.GetTypes().Where(t => t.IsClass && t.IsSubclassOf(baseType) && t.GetConstructor(Type.EmptyTypes) != null).
+                Select(t => Activator.CreateInstance(t) as T);
         }
 
-        public static IEnumerable<Type> FindSubclassesOf<TBaseType>()
+        public static IEnumerable<Type> FindSubclassesOf<T>()
         {
-            Type baseType = typeof(TBaseType);
+            Type baseType = typeof(T);
             Assembly assembly = baseType.Assembly;
             return assembly.GetTypes().Where(t => t.IsSubclassOf(baseType));
         }
