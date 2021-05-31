@@ -297,7 +297,6 @@
     <Compile Include="ShareXTheme.cs" />
     <Compile Include="TextBoxTraceListener.cs" />
     <Compile Include="Settings\SafeStringEnumConverter.cs" />
-    <Compile Include="Settings\TypeNameSerializationBinder.cs" />
     <Compile Include="UITypeEditors\EnumDescriptionConverter.cs" />
     <Compile Include="UITypeEditors\DirectoryNameEditor.cs" />
     <Compile Include="UITypeEditors\EnumProperNameKeepCaseConverter.cs" />

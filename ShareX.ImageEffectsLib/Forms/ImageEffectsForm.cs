@@ -50,7 +50,7 @@ namespace ShareX.ImageEffectsLib
         public string FilePath { get; private set; }
 
         private bool pauseUpdate;
-        private ISerializationBinder serializationBinder = new TypeNameSerializationBinder("ShareX.ImageEffectsLib", "ShareX.ImageEffectsLib");
+        private ISerializationBinder serializationBinder = new ImageEffectsSerializationBinder();
 
         public ImageEffectsForm(Bitmap bmp, List<ImageEffectPreset> presets, int selectedPresetIndex)
         {

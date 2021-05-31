@@ -47,7 +47,6 @@ namespace ShareX.HelpersLib
                     serializer.Converters.Add(new StringEnumConverter());
                     serializer.DefaultValueHandling = defaultValueHandling;
                     serializer.NullValueHandling = nullValueHandling;
-                    serializer.TypeNameHandling = TypeNameHandling.Auto;
                     if (serializationBinder != null) serializer.SerializationBinder = serializationBinder;
                     serializer.Serialize(jsonTextWriter, obj);
                 }
@@ -110,7 +109,6 @@ namespace ShareX.HelpersLib
                     JsonSerializer serializer = new JsonSerializer();
                     serializer.Converters.Add(new StringEnumConverter());
                     serializer.ObjectCreationHandling = ObjectCreationHandling.Replace;
-                    serializer.TypeNameHandling = TypeNameHandling.Auto;
                     if (serializationBinder != null) serializer.SerializationBinder = serializationBinder;
                     serializer.Error += (sender, e) => e.ErrorContext.Handled = true;
                     return serializer.Deserialize<T>(jsonTextReader);

@@ -171,6 +171,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="ImageEffectsSerializationBinder.cs" />
     <Compile Include="WatermarkConfig.cs" />
   </ItemGroup>
   <ItemGroup>

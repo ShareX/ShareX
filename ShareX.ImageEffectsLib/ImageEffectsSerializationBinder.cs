@@ -24,19 +24,20 @@
 #endregion License Information (GPL v3)
 
 using Newtonsoft.Json.Serialization;
+using ShareX.HelpersLib;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 
-namespace ShareX.HelpersLib
+namespace ShareX.ImageEffectsLib
 {
-    public class TypeNameSerializationBinder : ISerializationBinder
+    public class ImageEffectsSerializationBinder : ISerializationBinder
     {
-        public string AppNamespace { get; private set; }
-        public string AppAssembly { get; private set; }
+        public IEnumerable<Type> KnownTypes { get; set; }
 
-        public TypeNameSerializationBinder(string appNamespace, string appAssembly)
+        public ImageEffectsSerializationBinder()
         {
-            AppNamespace = appNamespace;
-            AppAssembly = appAssembly;
+            KnownTypes = Helpers.FindSubclassesOf<ImageEffect>();
         }
 
         public void BindToName(Type serializedType, out string assemblyName, out string typeName)
@@ -47,18 +48,7 @@ namespace ShareX.HelpersLib
 
         public Type BindToType(string assemblyName, string typeName)
         {
-            string resolvedTypeName;
-
-            if (!string.IsNullOrEmpty(assemblyName))
-            {
-                resolvedTypeName = $"{typeName}, {assemblyName}";
-            }
-            else
-            {
-                resolvedTypeName = $"{AppNamespace}.{typeName}, {AppAssembly}";
-            }
-
-            return Type.GetType(resolvedTypeName, true);
+            return KnownTypes.SingleOrDefault(t => t.Name == typeName);
         }
     }
 }

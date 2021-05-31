@@ -1360,6 +1360,13 @@ namespace ShareX.HelpersLib
             return instances.ToArray();
         }
 
+        public static IEnumerable<Type> FindSubclassesOf<TBaseType>()
+        {
+            Type baseType = typeof(TBaseType);
+            Assembly assembly = baseType.Assembly;
+            return assembly.GetTypes().Where(t => t.IsSubclassOf(baseType));
+        }
+
         public static string GetOperatingSystemProductName(bool includeBit = false)
         {
             string productName = null;
