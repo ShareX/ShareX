@@ -165,6 +165,7 @@
     <Compile Include="Settings\DPAPIEncryptedStringPropertyResolver.cs" />
     <Compile Include="Settings\DPAPIEncryptedStringValueProvider.cs" />
     <Compile Include="Settings\JsonEncryptAttribute.cs" />
+    <Compile Include="Settings\KnownTypesSerializationBinder.cs" />
     <Compile Include="SevenZipManager.cs" />
     <Compile Include="Input\HotkeyForm.cs">
       <SubType>Form</SubType>
