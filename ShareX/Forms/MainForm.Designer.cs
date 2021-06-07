@@ -90,7 +90,6 @@
             this.tsmiClipboardViewer = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiInspectWindow = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiDNSChanger = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiTweetMessage = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiMonitorTest = new System.Windows.Forms.ToolStripMenuItem();
             this.tssMain1 = new System.Windows.Forms.ToolStripSeparator();
             this.tsddbAfterCaptureTasks = new System.Windows.Forms.ToolStripDropDownButton();
@@ -247,7 +246,6 @@
             this.tsmiTrayClipboardViewer = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayInspectWindow = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayDNSChanger = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiTrayTweetMessage = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayMonitorTest = new System.Windows.Forms.ToolStripMenuItem();
             this.tssTray1 = new System.Windows.Forms.ToolStripSeparator();
             this.tsmiTrayAfterCaptureTasks = new System.Windows.Forms.ToolStripMenuItem();
@@ -299,6 +297,8 @@
             this.tsbPatreon = new System.Windows.Forms.ToolStripButton();
             this.tsbBitcoin = new System.Windows.Forms.ToolStripButton();
             this.tsbGitHub = new System.Windows.Forms.ToolStripButton();
+            this.tsmiTweetMessage = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiTrayTweetMessage = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.scMain)).BeginInit();
             this.scMain.Panel1.SuspendLayout();
             this.scMain.Panel2.SuspendLayout();
@@ -613,7 +613,8 @@
             this.tsmiUploadText,
             this.tsmiUploadURL,
             this.tsmiUploadDragDrop,
-            this.tsmiShortenURL});
+            this.tsmiShortenURL,
+            this.tsmiTweetMessage});
             this.tsddbUpload.Image = global::ShareX.Properties.Resources.arrow_090;
             resources.ApplyResources(this.tsddbUpload, "tsddbUpload");
             this.tsddbUpload.Name = "tsddbUpload";
@@ -692,8 +693,7 @@
             this.tsmiClipboardViewer,
             this.tsmiInspectWindow,
             this.tsmiMonitorTest,
-            this.tsmiDNSChanger,
-            this.tsmiTweetMessage});
+            this.tsmiDNSChanger});
             this.tsddbTools.Image = global::ShareX.Properties.Resources.toolbox;
             resources.ApplyResources(this.tsddbTools, "tsddbTools");
             this.tsddbTools.Name = "tsddbTools";
@@ -809,13 +809,6 @@
             this.tsmiDNSChanger.Name = "tsmiDNSChanger";
             resources.ApplyResources(this.tsmiDNSChanger, "tsmiDNSChanger");
             this.tsmiDNSChanger.Click += new System.EventHandler(this.tsmiDNSChanger_Click);
-            // 
-            // tsmiTweetMessage
-            // 
-            this.tsmiTweetMessage.Image = global::ShareX.Properties.Resources.Twitter_16x16;
-            this.tsmiTweetMessage.Name = "tsmiTweetMessage";
-            resources.ApplyResources(this.tsmiTweetMessage, "tsmiTweetMessage");
-            this.tsmiTweetMessage.Click += new System.EventHandler(this.tsmiTweetMessage_Click);
             // 
             // tsmiMonitorTest
             // 
@@ -1808,7 +1801,8 @@
             this.tsmiTrayUploadText,
             this.tsmiTrayUploadURL,
             this.tsmiTrayUploadDragDrop,
-            this.tsmiTrayShortenURL});
+            this.tsmiTrayShortenURL,
+            this.tsmiTrayTweetMessage});
             this.tsmiTrayUpload.Image = global::ShareX.Properties.Resources.arrow_090;
             this.tsmiTrayUpload.Name = "tsmiTrayUpload";
             resources.ApplyResources(this.tsmiTrayUpload, "tsmiTrayUpload");
@@ -1887,8 +1881,7 @@
             this.tsmiTrayClipboardViewer,
             this.tsmiTrayInspectWindow,
             this.tsmiTrayMonitorTest,
-            this.tsmiTrayDNSChanger,
-            this.tsmiTrayTweetMessage});
+            this.tsmiTrayDNSChanger});
             this.tsmiTrayTools.Image = global::ShareX.Properties.Resources.toolbox;
             this.tsmiTrayTools.Name = "tsmiTrayTools";
             resources.ApplyResources(this.tsmiTrayTools, "tsmiTrayTools");
@@ -2004,13 +1997,6 @@
             this.tsmiTrayDNSChanger.Name = "tsmiTrayDNSChanger";
             resources.ApplyResources(this.tsmiTrayDNSChanger, "tsmiTrayDNSChanger");
             this.tsmiTrayDNSChanger.Click += new System.EventHandler(this.tsmiDNSChanger_Click);
-            // 
-            // tsmiTrayTweetMessage
-            // 
-            this.tsmiTrayTweetMessage.Image = global::ShareX.Properties.Resources.Twitter_16x16;
-            this.tsmiTrayTweetMessage.Name = "tsmiTrayTweetMessage";
-            resources.ApplyResources(this.tsmiTrayTweetMessage, "tsmiTrayTweetMessage");
-            this.tsmiTrayTweetMessage.Click += new System.EventHandler(this.tsmiTweetMessage_Click);
             // 
             // tsmiTrayMonitorTest
             // 
@@ -2393,6 +2379,20 @@
             this.tsbGitHub.Padding = new System.Windows.Forms.Padding(1);
             this.tsbGitHub.Click += new System.EventHandler(this.TsbGitHub_Click);
             // 
+            // tsmiTweetMessage
+            // 
+            this.tsmiTweetMessage.Image = global::ShareX.Properties.Resources.Twitter_16x16;
+            this.tsmiTweetMessage.Name = "tsmiTweetMessage";
+            resources.ApplyResources(this.tsmiTweetMessage, "tsmiTweetMessage");
+            this.tsmiTweetMessage.Click += new System.EventHandler(this.tsmiTweetMessage_Click);
+            // 
+            // tsmiTrayTweetMessage
+            // 
+            this.tsmiTrayTweetMessage.Image = global::ShareX.Properties.Resources.Twitter_16x16;
+            this.tsmiTrayTweetMessage.Name = "tsmiTrayTweetMessage";
+            resources.ApplyResources(this.tsmiTrayTweetMessage, "tsmiTrayTweetMessage");
+            this.tsmiTrayTweetMessage.Click += new System.EventHandler(this.tsmiTweetMessage_Click);
+            // 
             // MainForm
             // 
             this.AllowDrop = true;
@@ -2578,8 +2578,6 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayQRCode;
         private System.Windows.Forms.ToolStripMenuItem tsmiRectangleLight;
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayRectangleLight;
-        private System.Windows.Forms.ToolStripMenuItem tsmiTweetMessage;
-        private System.Windows.Forms.ToolStripMenuItem tsmiTrayTweetMessage;
         private System.Windows.Forms.ToolStripMenuItem tsmiImagePreviewShow;
         private System.Windows.Forms.ToolStripMenuItem tsmiImagePreviewHide;
         private System.Windows.Forms.ToolStripMenuItem tsmiImagePreviewAutomatic;
@@ -2706,5 +2704,7 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiThumbnailSize;
         private System.Windows.Forms.ToolStripMenuItem tsmiInspectWindow;
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayInspectWindow;
+        private System.Windows.Forms.ToolStripMenuItem tsmiTweetMessage;
+        private System.Windows.Forms.ToolStripMenuItem tsmiTrayTweetMessage;
     }
 }

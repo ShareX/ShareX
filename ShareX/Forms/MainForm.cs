@@ -1786,6 +1786,11 @@ namespace ShareX
             UploadManager.ShowShortenURLDialog();
         }
 
+        private void tsmiTweetMessage_Click(object sender, EventArgs e)
+        {
+            TaskHelpers.TweetMessage();
+        }
+
         private void tsmiColorPicker_Click(object sender, EventArgs e)
         {
             TaskHelpers.ShowScreenColorPickerDialog();
@@ -1796,6 +1801,11 @@ namespace ShareX
             TaskHelpers.OpenScreenColorPicker();
         }
 
+        private void tsmiRuler_Click(object sender, EventArgs e)
+        {
+            TaskHelpers.OpenRuler();
+        }
+
         private void tsmiImageEditor_Click(object sender, EventArgs e)
         {
             TaskHelpers.OpenImageEditor();
@@ -1804,31 +1814,6 @@ namespace ShareX
         private void tsmiImageEffects_Click(object sender, EventArgs e)
         {
             TaskHelpers.OpenImageEffects();
-        }
-
-        private void tsmiHashCheck_Click(object sender, EventArgs e)
-        {
-            TaskHelpers.OpenHashCheck();
-        }
-
-        private void tsmiDNSChanger_Click(object sender, EventArgs e)
-        {
-            TaskHelpers.OpenDNSChanger();
-        }
-
-        private void tsmiQRCode_Click(object sender, EventArgs e)
-        {
-            TaskHelpers.OpenQRCode();
-        }
-
-        private void tsmiRuler_Click(object sender, EventArgs e)
-        {
-            TaskHelpers.OpenRuler();
-        }
-
-        private void tsmiIndexFolder_Click(object sender, EventArgs e)
-        {
-            TaskHelpers.OpenDirectoryIndexer();
         }
 
         private void tsmiImageCombiner_Click(object sender, EventArgs e)
@@ -1856,9 +1841,19 @@ namespace ShareX
             TaskHelpers.OpenVideoThumbnailer();
         }
 
-        private void tsmiInspectWindow_Click(object sender, EventArgs e)
+        private void tsmiQRCode_Click(object sender, EventArgs e)
         {
-            TaskHelpers.OpenInspectWindow();
+            TaskHelpers.OpenQRCode();
+        }
+
+        private void tsmiHashCheck_Click(object sender, EventArgs e)
+        {
+            TaskHelpers.OpenHashCheck();
+        }
+
+        private void tsmiIndexFolder_Click(object sender, EventArgs e)
+        {
+            TaskHelpers.OpenDirectoryIndexer();
         }
 
         private void tsmiClipboardViewer_Click(object sender, EventArgs e)
@@ -1866,14 +1861,19 @@ namespace ShareX
             TaskHelpers.OpenClipboardViewer();
         }
 
-        private void tsmiTweetMessage_Click(object sender, EventArgs e)
+        private void tsmiInspectWindow_Click(object sender, EventArgs e)
         {
-            TaskHelpers.TweetMessage();
+            TaskHelpers.OpenInspectWindow();
         }
 
         private void tsmiMonitorTest_Click(object sender, EventArgs e)
         {
             TaskHelpers.OpenMonitorTest();
+        }
+
+        private void tsmiDNSChanger_Click(object sender, EventArgs e)
+        {
+            TaskHelpers.OpenDNSChanger();
         }
 
         private void TsddbAfterCaptureTasks_DropDownOpening(object sender, EventArgs e)
