@@ -1901,20 +1901,6 @@ namespace ShareX
             TaskHelpers.OpenCustomUploaderSettingsWindow();
         }
 
-        private void tsbTaskSettings_Click(object sender, EventArgs e)
-        {
-            using (TaskSettingsForm taskSettingsForm = new TaskSettingsForm(Program.DefaultTaskSettings, true))
-            {
-                taskSettingsForm.ShowDialog();
-            }
-
-            if (!IsDisposed)
-            {
-                AfterTaskSettingsJobs();
-                SettingManager.SaveApplicationConfigAsync();
-            }
-        }
-
         private void tsbApplicationSettings_Click(object sender, EventArgs e)
         {
             using (ApplicationSettingsForm settingsForm = new ApplicationSettingsForm())
@@ -1926,6 +1912,20 @@ namespace ShareX
             {
                 AfterApplicationSettingsJobs();
                 UpdateWorkflowsMenu();
+                SettingManager.SaveApplicationConfigAsync();
+            }
+        }
+
+        private void tsbTaskSettings_Click(object sender, EventArgs e)
+        {
+            using (TaskSettingsForm taskSettingsForm = new TaskSettingsForm(Program.DefaultTaskSettings, true))
+            {
+                taskSettingsForm.ShowDialog();
+            }
+
+            if (!IsDisposed)
+            {
+                AfterTaskSettingsJobs();
                 SettingManager.SaveApplicationConfigAsync();
             }
         }

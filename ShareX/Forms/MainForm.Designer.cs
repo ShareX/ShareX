@@ -299,6 +299,14 @@
             this.tsbGitHub = new System.Windows.Forms.ToolStripButton();
             this.tsmiTweetMessage = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayTweetMessage = new System.Windows.Forms.ToolStripMenuItem();
+            this.tssTools1 = new System.Windows.Forms.ToolStripSeparator();
+            this.tssTools2 = new System.Windows.Forms.ToolStripSeparator();
+            this.tssTools3 = new System.Windows.Forms.ToolStripSeparator();
+            this.tssTools4 = new System.Windows.Forms.ToolStripSeparator();
+            this.tssTrayTools1 = new System.Windows.Forms.ToolStripSeparator();
+            this.tssTrayTools2 = new System.Windows.Forms.ToolStripSeparator();
+            this.tssTrayTools3 = new System.Windows.Forms.ToolStripSeparator();
+            this.tssTrayTools4 = new System.Windows.Forms.ToolStripSeparator();
             ((System.ComponentModel.ISupportInitialize)(this.scMain)).BeginInit();
             this.scMain.Panel1.SuspendLayout();
             this.scMain.Panel2.SuspendLayout();
@@ -680,16 +688,20 @@
             this.tsmiColorPicker,
             this.tsmiScreenColorPicker,
             this.tsmiRuler,
+            this.tssTools1,
             this.tsmiImageEditor,
             this.tsmiImageEffects,
             this.tsmiImageCombiner,
             this.tsmiImageSplitter,
             this.tsmiImageThumbnailer,
+            this.tssTools2,
             this.tsmiVideoConverter,
             this.tsmiVideoThumbnailer,
+            this.tssTools3,
             this.tsmiQRCode,
             this.tsmiHashCheck,
             this.tsmiIndexFolder,
+            this.tssTools4,
             this.tsmiClipboardViewer,
             this.tsmiInspectWindow,
             this.tsmiMonitorTest,
@@ -1868,16 +1880,20 @@
             this.tsmiTrayColorPicker,
             this.tsmiTrayScreenColorPicker,
             this.tsmiTrayRuler,
+            this.tssTrayTools1,
             this.tsmiTrayImageEditor,
             this.tsmiTrayImageEffects,
             this.tsmiTrayImageCombiner,
             this.tsmiTrayImageSplitter,
             this.tsmiTrayImageThumbnailer,
+            this.tssTrayTools2,
             this.tsmiTrayVideoConverter,
             this.tsmiTrayVideoThumbnailer,
+            this.tssTrayTools3,
             this.tsmiTrayQRCode,
             this.tsmiTrayHashCheck,
             this.tsmiTrayIndexFolder,
+            this.tssTrayTools4,
             this.tsmiTrayClipboardViewer,
             this.tsmiTrayInspectWindow,
             this.tsmiTrayMonitorTest,
@@ -2393,6 +2409,46 @@
             resources.ApplyResources(this.tsmiTrayTweetMessage, "tsmiTrayTweetMessage");
             this.tsmiTrayTweetMessage.Click += new System.EventHandler(this.tsmiTweetMessage_Click);
             // 
+            // tssTools1
+            // 
+            this.tssTools1.Name = "tssTools1";
+            resources.ApplyResources(this.tssTools1, "tssTools1");
+            // 
+            // tssTools2
+            // 
+            this.tssTools2.Name = "tssTools2";
+            resources.ApplyResources(this.tssTools2, "tssTools2");
+            // 
+            // tssTools3
+            // 
+            this.tssTools3.Name = "tssTools3";
+            resources.ApplyResources(this.tssTools3, "tssTools3");
+            // 
+            // tssTools4
+            // 
+            this.tssTools4.Name = "tssTools4";
+            resources.ApplyResources(this.tssTools4, "tssTools4");
+            // 
+            // tssTrayTools1
+            // 
+            this.tssTrayTools1.Name = "tssTrayTools1";
+            resources.ApplyResources(this.tssTrayTools1, "tssTrayTools1");
+            // 
+            // tssTrayTools2
+            // 
+            this.tssTrayTools2.Name = "tssTrayTools2";
+            resources.ApplyResources(this.tssTrayTools2, "tssTrayTools2");
+            // 
+            // tssTrayTools3
+            // 
+            this.tssTrayTools3.Name = "tssTrayTools3";
+            resources.ApplyResources(this.tssTrayTools3, "tssTrayTools3");
+            // 
+            // tssTrayTools4
+            // 
+            this.tssTrayTools4.Name = "tssTrayTools4";
+            resources.ApplyResources(this.tssTrayTools4, "tssTrayTools4");
+            // 
             // MainForm
             // 
             this.AllowDrop = true;
@@ -2706,5 +2762,13 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayInspectWindow;
         private System.Windows.Forms.ToolStripMenuItem tsmiTweetMessage;
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayTweetMessage;
+        private System.Windows.Forms.ToolStripSeparator tssTools1;
+        private System.Windows.Forms.ToolStripSeparator tssTools2;
+        private System.Windows.Forms.ToolStripSeparator tssTools3;
+        private System.Windows.Forms.ToolStripSeparator tssTools4;
+        private System.Windows.Forms.ToolStripSeparator tssTrayTools1;
+        private System.Windows.Forms.ToolStripSeparator tssTrayTools2;
+        private System.Windows.Forms.ToolStripSeparator tssTrayTools3;
+        private System.Windows.Forms.ToolStripSeparator tssTrayTools4;
     }
 }
