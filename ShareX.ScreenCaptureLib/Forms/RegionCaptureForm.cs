@@ -1253,6 +1253,9 @@ namespace ShareX.ScreenCaptureLib
                 pixelSize = 10;
             }
 
+            Rectangle srcRect = new Rectangle(position.X - (horizontalPixelCount / 2) - CanvasRectangle.X,
+                position.Y - (verticalPixelCount / 2) - CanvasRectangle.Y, horizontalPixelCount, verticalPixelCount);
+
             int width = horizontalPixelCount * pixelSize;
             int height = verticalPixelCount * pixelSize;
             Bitmap bmp = new Bitmap(width - 1, height - 1);
@@ -1260,11 +1263,14 @@ namespace ShareX.ScreenCaptureLib
             using (Graphics g = Graphics.FromImage(bmp))
             {
                 g.InterpolationMode = InterpolationMode.NearestNeighbor;
+
+                if (!new Rectangle(0, 0, img.Width, img.Height).Contains(srcRect))
+                {
+                    g.Clear(canvasBackgroundColor);
+                }
+
                 g.PixelOffsetMode = PixelOffsetMode.Half;
-
-                g.DrawImage(img, new Rectangle(0, 0, width, height), new Rectangle(position.X - (horizontalPixelCount / 2) - CanvasRectangle.X,
-                    position.Y - (verticalPixelCount / 2) - CanvasRectangle.Y, horizontalPixelCount, verticalPixelCount), GraphicsUnit.Pixel);
-
+                g.DrawImage(img, new Rectangle(0, 0, width, height), srcRect, GraphicsUnit.Pixel);
                 g.PixelOffsetMode = PixelOffsetMode.None;
 
                 using (SolidBrush crosshairBrush = new SolidBrush(Color.FromArgb(125, Color.LightBlue)))
