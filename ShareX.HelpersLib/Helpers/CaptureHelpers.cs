@@ -135,9 +135,7 @@ namespace ShareX.HelpersLib
 
         public static Point GetCursorPosition()
         {
-            POINT point;
-
-            if (NativeMethods.GetCursorPos(out point))
+            if (NativeMethods.GetCursorPos(out POINT point))
             {
                 return (Point)point;
             }
@@ -311,14 +309,9 @@ namespace ShareX.HelpersLib
         {
             Rectangle rect = Rectangle.Empty;
 
-            if (NativeMethods.IsDWMEnabled())
+            if (NativeMethods.IsDWMEnabled() && NativeMethods.GetExtendedFrameBounds(handle, out Rectangle tempRect))
             {
-                Rectangle tempRect;
-
-                if (NativeMethods.GetExtendedFrameBounds(handle, out tempRect))
-                {
-                    rect = tempRect;
-                }
+                rect = tempRect;
             }
 
             if (rect.IsEmpty)

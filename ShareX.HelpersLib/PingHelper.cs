@@ -69,9 +69,7 @@ namespace ShareX.HelpersLib
 
         private static IPAddress GetIpFromHost(string host)
         {
-            IPAddress address;
-
-            if (!IPAddress.TryParse(host, out address))
+            if (!IPAddress.TryParse(host, out IPAddress address))
             {
                 try
                 {

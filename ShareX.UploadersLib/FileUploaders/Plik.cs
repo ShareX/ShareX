@@ -42,10 +42,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
         public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
         {
-            return new Plik(config.PlikSettings)
-            {
-                Settings = config.PlikSettings
-            };
+            return new Plik(config.PlikSettings);
         }
 
         public override bool CheckConfig(UploadersConfig config)
@@ -60,10 +57,11 @@ namespace ShareX.UploadersLib.FileUploaders
 
     public sealed class Plik : FileUploader
     {
-        public PlikSettings Settings { get; set; }
+        public PlikSettings Settings { get; private set; }
 
-        public Plik(PlikSettings s)
+        public Plik(PlikSettings settings)
         {
+            Settings = settings;
         }
 
         public override UploadResult Upload(Stream stream, string fileName)
@@ -125,7 +123,7 @@ namespace ShareX.UploadersLib.FileUploaders
                 {
                     ttlElement.Value = 1;
                 }
-                ttlElement.Value = ttlElement.Value * GetMultiplyIndex(newUnit, oldUnit);
+                ttlElement.Value *= GetMultiplyIndex(newUnit, oldUnit);
                 ttlElement.ReadOnly = false;
             }
             else

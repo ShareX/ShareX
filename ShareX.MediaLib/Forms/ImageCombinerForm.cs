@@ -223,10 +223,7 @@ namespace ShareX.MediaLib
 
         protected void OnProcessRequested(Bitmap bmp)
         {
-            if (ProcessRequested != null)
-            {
-                ProcessRequested(bmp);
-            }
+            ProcessRequested?.Invoke(bmp);
         }
 
         private void ImageCombinerForm_DragEnter(object sender, DragEventArgs e)
@@ -243,16 +240,11 @@ namespace ShareX.MediaLib
 
         private void ImageCombinerForm_DragDrop(object sender, DragEventArgs e)
         {
-            if (e.Data.GetDataPresent(DataFormats.FileDrop, false))
+            if (e.Data.GetDataPresent(DataFormats.FileDrop, false) && e.Data.GetData(DataFormats.FileDrop, false) is string[] files)
             {
-                string[] files = e.Data.GetData(DataFormats.FileDrop, false) as string[];
-
-                if (files != null)
+                foreach (string file in files)
                 {
-                    foreach (string file in files)
-                    {
-                        lvImages.Items.Add(file);
-                    }
+                    lvImages.Items.Add(file);
                 }
             }
         }

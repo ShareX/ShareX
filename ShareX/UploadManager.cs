@@ -137,7 +137,7 @@ namespace ShareX
                 if (folderDialog.ShowDialog() && !string.IsNullOrEmpty(folderDialog.FileName))
                 {
                     Program.Settings.FileUploadDefaultDirectory = folderDialog.FileName;
-                    UploadFile(folderDialog.FileName);
+                    UploadFile(folderDialog.FileName, taskSettings);
                 }
             }
         }

@@ -1173,10 +1173,7 @@ namespace ShareX
                 Info.Status = Resources.UploadTask_OnUploadCompleted_Done;
             }
 
-            if (TaskCompleted != null)
-            {
-                TaskCompleted(this);
-            }
+            TaskCompleted?.Invoke(this);
 
             Dispose();
         }

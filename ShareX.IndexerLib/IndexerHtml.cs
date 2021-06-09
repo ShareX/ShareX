@@ -128,7 +128,7 @@ namespace ShareX.IndexerLib
                 folderNameRow = " " + HtmlHelper.Tag("span", folderNameRow, "", "class=\"FolderInfo\"");
             }
 
-            string pathTitle = "";
+            string pathTitle;
 
             if (settings.DisplayPath)
             {

@@ -91,10 +91,7 @@ namespace ShareX.HelpersLib
         {
             if (e.Data != null)
             {
-                if (OutputDataReceived != null)
-                {
-                    OutputDataReceived(sender, e);
-                }
+                OutputDataReceived?.Invoke(sender, e);
             }
         }
 
@@ -102,10 +99,7 @@ namespace ShareX.HelpersLib
         {
             if (e.Data != null)
             {
-                if (ErrorDataReceived != null)
-                {
-                    ErrorDataReceived(sender, e);
-                }
+                ErrorDataReceived?.Invoke(sender, e);
             }
         }
 

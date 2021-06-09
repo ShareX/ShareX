@@ -119,10 +119,7 @@ namespace ShareX.HelpersLib
 
         protected void OnKeyPressed(ushort id, Keys key, Modifiers modifier)
         {
-            if (HotkeyPress != null)
-            {
-                HotkeyPress(id, key, modifier);
-            }
+            HotkeyPress?.Invoke(id, key, modifier);
         }
 
         private bool CheckRepeatLimitTime()

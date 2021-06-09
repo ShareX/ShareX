@@ -923,9 +923,9 @@ namespace ShareX.UploadersLib
             if (lvImgurAlbumList.SelectedItems.Count > 0)
             {
                 ListViewItem lvi = lvImgurAlbumList.SelectedItems[0];
-                if (lvi.Tag is ImgurAlbumData)
+                if (lvi.Tag is ImgurAlbumData albumData)
                 {
-                    Config.ImgurSelectedAlbum = (ImgurAlbumData)lvi.Tag;
+                    Config.ImgurSelectedAlbum = albumData;
                 }
             }
             else
@@ -1118,9 +1118,8 @@ namespace ShareX.UploadersLib
             if (lvPicasaAlbumList.SelectedItems.Count > 0)
             {
                 ListViewItem lvi = lvPicasaAlbumList.SelectedItems[0];
-                if (lvi.Tag is GooglePhotosAlbumInfo)
+                if (lvi.Tag is GooglePhotosAlbumInfo album)
                 {
-                    GooglePhotosAlbumInfo album = (GooglePhotosAlbumInfo)lvi.Tag;
                     txtPicasaAlbumID.Text = album.ID;
                 }
             }
@@ -1710,8 +1709,7 @@ namespace ShareX.UploadersLib
 
         private void tvOneDrive_AfterSelect(object sender, TreeViewEventArgs e)
         {
-            OneDriveFileInfo file = e.Node.Tag as OneDriveFileInfo;
-            if (file != null)
+            if (e.Node.Tag is OneDriveFileInfo file)
             {
                 lblOneDriveFolderID.Text = Resources.UploadersConfigForm_LoadSettings_Selected_folder_ + " " + file.name;
                 Config.OneDriveV2SelectedFolder = file;
@@ -1720,8 +1718,7 @@ namespace ShareX.UploadersLib
 
         private void tvOneDrive_AfterExpand(object sender, TreeViewEventArgs e)
         {
-            OneDriveFileInfo file = e.Node.Tag as OneDriveFileInfo;
-            if (file != null)
+            if (e.Node.Tag is OneDriveFileInfo file)
             {
                 OneDriveListFolders(file, e.Node);
             }
@@ -1784,8 +1781,7 @@ namespace ShareX.UploadersLib
             if (lvGoogleDriveFoldersList.SelectedItems.Count > 0)
             {
                 ListViewItem lvi = lvGoogleDriveFoldersList.SelectedItems[0];
-                GoogleDriveFile folder = lvi.Tag as GoogleDriveFile;
-                if (folder != null)
+                if (lvi.Tag is GoogleDriveFile folder)
                 {
                     txtGoogleDriveFolderID.Text = folder.id;
                 }
@@ -1905,8 +1901,7 @@ namespace ShareX.UploadersLib
             if (lvBoxFolders.SelectedItems.Count > 0)
             {
                 ListViewItem lvi = lvBoxFolders.SelectedItems[0];
-                BoxFileEntry file = lvi.Tag as BoxFileEntry;
-                if (file != null)
+                if (lvi.Tag is BoxFileEntry file)
                 {
                     lblBoxFolderID.Text = Resources.UploadersConfigForm_LoadSettings_Selected_folder_ + " " + file.name;
                     Config.BoxSelectedFolder = file;
@@ -1919,8 +1914,7 @@ namespace ShareX.UploadersLib
             if (e.Button == MouseButtons.Left && lvBoxFolders.SelectedItems.Count > 0)
             {
                 ListViewItem lvi = lvBoxFolders.SelectedItems[0];
-                BoxFileEntry file = lvi.Tag as BoxFileEntry;
-                if (file != null)
+                if (lvi.Tag is BoxFileEntry file)
                 {
                     lvBoxFolders.Items.Clear();
                     BoxListFolders(file);
@@ -2148,8 +2142,7 @@ namespace ShareX.UploadersLib
 
         private void cbMegaFolder_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Mega.DisplayNode selectedNode = ((ComboBox)sender).SelectedItem as Mega.DisplayNode;
-            if (selectedNode != null)
+            if (((ComboBox)sender).SelectedItem is Mega.DisplayNode selectedNode)
             {
                 Config.MegaParentNodeId = selectedNode == Mega.DisplayNode.EmptyNode ? null : selectedNode.Node.Id;
             }
@@ -2186,9 +2179,7 @@ namespace ShareX.UploadersLib
 
         private void cbAmazonS3Endpoints_SelectedIndexChanged(object sender, EventArgs e)
         {
-            AmazonS3Endpoint endpoint = cbAmazonS3Endpoints.SelectedItem as AmazonS3Endpoint;
-
-            if (endpoint != null)
+            if (cbAmazonS3Endpoints.SelectedItem is AmazonS3Endpoint endpoint)
             {
                 txtAmazonS3Region.Text = endpoint.Region;
                 txtAmazonS3Endpoint.Text = endpoint.Endpoint;
@@ -2456,14 +2447,9 @@ namespace ShareX.UploadersLib
 
         private void cbLambdaUploadURL_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cbLambdaUploadURL.SelectedIndex > -1)
+            if (cbLambdaUploadURL.SelectedIndex > -1 && cbLambdaUploadURL.SelectedItem is string url)
             {
-                string url = cbLambdaUploadURL.SelectedItem as string;
-
-                if (url != null)
-                {
-                    Config.LambdaSettings.UploadURL = url;
-                }
+                Config.LambdaSettings.UploadURL = url;
             }
         }
 

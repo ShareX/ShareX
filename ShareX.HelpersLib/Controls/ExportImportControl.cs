@@ -190,10 +190,7 @@ namespace ShareX.HelpersLib
 
         private void OnImportCompleted()
         {
-            if (ImportCompleted != null)
-            {
-                ImportCompleted();
-            }
+            ImportCompleted?.Invoke();
         }
 
         private void ImportJson(string json)

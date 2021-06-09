@@ -281,26 +281,17 @@ namespace ShareX
 
         protected void OnHotkeyChanged()
         {
-            if (HotkeyChanged != null)
-            {
-                HotkeyChanged(this, EventArgs.Empty);
-            }
+            HotkeyChanged?.Invoke(this, EventArgs.Empty);
         }
 
         protected void OnSelectedChanged()
         {
-            if (SelectedChanged != null)
-            {
-                SelectedChanged(this, EventArgs.Empty);
-            }
+            SelectedChanged?.Invoke(this, EventArgs.Empty);
         }
 
         protected void OnEditRequested()
         {
-            if (EditRequested != null)
-            {
-                EditRequested(this, EventArgs.Empty);
-            }
+            EditRequested?.Invoke(this, EventArgs.Empty);
         }
 
         private void btnEdit_Click(object sender, EventArgs e)

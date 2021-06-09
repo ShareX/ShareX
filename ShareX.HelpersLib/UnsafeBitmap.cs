@@ -86,7 +86,7 @@ namespace ShareX.HelpersLib
 
         public override bool Equals(object obj)
         {
-            return obj is UnsafeBitmap && Compare((UnsafeBitmap)obj, this);
+            return obj is UnsafeBitmap unsafeBitmap && Compare(unsafeBitmap, this);
         }
 
         public override int GetHashCode()

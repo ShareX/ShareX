@@ -205,10 +205,7 @@ namespace ShareX.HelpersLib
 
         protected void OnColorChanged()
         {
-            if (ColorChanged != null)
-            {
-                ColorChanged(this, new ColorEventArgs(SelectedColor, DrawStyle));
-            }
+            ColorChanged?.Invoke(this, new ColorEventArgs(SelectedColor, DrawStyle));
         }
 
         protected void DrawColors()

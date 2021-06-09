@@ -61,9 +61,7 @@ namespace ShareX.HelpersLib
 
                     if (iconHandle != IntPtr.Zero)
                     {
-                        IconInfo iconInfo;
-
-                        if (NativeMethods.GetIconInfo(iconHandle, out iconInfo))
+                        if (NativeMethods.GetIconInfo(iconHandle, out IconInfo iconInfo))
                         {
                             Position = new Point(Position.X - iconInfo.xHotspot, Position.Y - iconInfo.yHotspot);
 

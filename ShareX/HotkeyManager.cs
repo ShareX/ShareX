@@ -85,10 +85,7 @@ namespace ShareX
 
         protected void OnHotkeyTrigger(HotkeySettings hotkeySetting)
         {
-            if (HotkeyTrigger != null)
-            {
-                HotkeyTrigger(hotkeySetting);
-            }
+            HotkeyTrigger?.Invoke(hotkeySetting);
         }
 
         public void RegisterHotkey(HotkeySettings hotkeySetting)
@@ -173,10 +170,7 @@ namespace ShareX
                 UnregisterAllHotkeys(false, true);
             }
 
-            if (HotkeysToggledTrigger != null)
-            {
-                HotkeysToggledTrigger(hotkeysDisabled);
-            }
+            HotkeysToggledTrigger?.Invoke(hotkeysDisabled);
         }
 
         public void ShowFailedHotkeys()

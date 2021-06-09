@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using System;
+using System.Diagnostics.Contracts;
 
 namespace ShareX.UploadersLib
 {
@@ -33,29 +34,18 @@ namespace ShareX.UploadersLib
         {
             Enum destination = (Enum)Enum.ToObject(typeof(T), index);
 
-            if (destination is ImageDestination)
+            switch (destination)
             {
-                return Validate((ImageDestination)destination, config);
-            }
-
-            if (destination is TextDestination)
-            {
-                return Validate((TextDestination)destination, config);
-            }
-
-            if (destination is FileDestination)
-            {
-                return Validate((FileDestination)destination, config);
-            }
-
-            if (destination is UrlShortenerType)
-            {
-                return Validate((UrlShortenerType)destination, config);
-            }
-
-            if (destination is URLSharingServices)
-            {
-                return Validate((URLSharingServices)destination, config);
+                case ImageDestination imageDestination:
+                    return Validate(imageDestination, config);
+                case TextDestination textDestination:
+                    return Validate(textDestination, config);
+                case FileDestination fileDestination:
+                    return Validate(fileDestination, config);
+                case UrlShortenerType urlShortenerType:
+                    return Validate(urlShortenerType, config);
+                case URLSharingServices urlSharingServices:
+                    return Validate(urlSharingServices, config);
             }
 
             return true;

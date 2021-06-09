@@ -195,9 +195,9 @@ namespace ShareX.HelpersLib
             {
                 XmlDocument xd;
 
-                if (parent is XmlDocument)
+                if (parent is XmlDocument document)
                 {
-                    xd = (XmlDocument)parent;
+                    xd = document;
                 }
                 else
                 {
@@ -230,9 +230,9 @@ namespace ShareX.HelpersLib
             {
                 XmlDocument xd;
 
-                if (parent is XmlDocument)
+                if (parent is XmlDocument document)
                 {
-                    xd = (XmlDocument)parent;
+                    xd = document;
                 }
                 else
                 {

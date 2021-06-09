@@ -109,25 +109,25 @@ namespace ShareX.HelpersLib
         public static T ReturnIfValidIndex<T>(this T[] array, int index)
         {
             if (array.IsValidIndex(index)) return array[index];
-            return default(T);
+            return default;
         }
 
         public static T ReturnIfValidIndex<T>(this List<T> list, int index)
         {
             if (list.IsValidIndex(index)) return list[index];
-            return default(T);
+            return default;
         }
 
         public static T Last<T>(this T[] array, int index = 0)
         {
             if (array.Length > index) return array[array.Length - index - 1];
-            return default(T);
+            return default;
         }
 
         public static T Last<T>(this List<T> list, int index = 0)
         {
             if (list.Count > index) return list[list.Count - index - 1];
-            return default(T);
+            return default;
         }
 
         public static double ToDouble(this Version value)
@@ -445,8 +445,10 @@ namespace ShareX.HelpersLib
         {
             foreach (PropertyDescriptor prop in TypeDescriptor.GetProperties(self))
             {
-                DefaultValueAttribute attr = prop.Attributes[typeof(DefaultValueAttribute)] as DefaultValueAttribute;
-                if (attr != null) prop.SetValue(self, attr.Value);
+                if (prop.Attributes[typeof(DefaultValueAttribute)] is DefaultValueAttribute attr)
+                {
+                    prop.SetValue(self, attr.Value);
+                }
             }
         }
 

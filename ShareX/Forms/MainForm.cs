@@ -1639,8 +1639,7 @@ namespace ShareX
         private void tsmiWindowItems_Click(object sender, EventArgs e)
         {
             ToolStripItem tsi = (ToolStripItem)sender;
-            WindowInfo wi = tsi.Tag as WindowInfo;
-            if (wi != null)
+            if (tsi.Tag is WindowInfo wi)
             {
                 new CaptureWindow(wi.Handle).Capture(true);
             }
@@ -2092,9 +2091,7 @@ namespace ShareX
 
         private void niTray_BalloonTipClicked(object sender, EventArgs e)
         {
-            BalloonTipAction action = niTray.Tag as BalloonTipAction;
-
-            if (action != null)
+            if (niTray.Tag is BalloonTipAction action)
             {
                 switch (action.ClickAction)
                 {
@@ -2130,8 +2127,7 @@ namespace ShareX
         private void tsmiTrayWindowItems_Click(object sender, EventArgs e)
         {
             ToolStripItem tsi = (ToolStripItem)sender;
-            WindowInfo wi = tsi.Tag as WindowInfo;
-            if (wi != null)
+            if (tsi.Tag is WindowInfo wi)
             {
                 new CaptureWindow(wi.Handle).Capture();
             }

@@ -144,10 +144,7 @@ namespace ShareX.ScreenCaptureLib
 
         protected void OnStopRequested()
         {
-            if (StopRequested != null)
-            {
-                StopRequested();
-            }
+            StopRequested?.Invoke();
         }
 
         public void StartCountdown(int milliseconds)

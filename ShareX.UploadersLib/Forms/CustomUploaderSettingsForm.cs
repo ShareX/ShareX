@@ -798,9 +798,7 @@ namespace ShareX.UploadersLib
         {
             if (e.Data.GetDataPresent(DataFormats.FileDrop, false))
             {
-                string[] files = e.Data.GetData(DataFormats.FileDrop, false) as string[];
-
-                if (files != null && files.Any(x => !string.IsNullOrEmpty(x) && x.EndsWith(".sxcu")))
+                if (e.Data.GetData(DataFormats.FileDrop, false) is string[] files && files.Any(x => !string.IsNullOrEmpty(x) && x.EndsWith(".sxcu")))
                 {
                     e.Effect = DragDropEffects.Copy;
                 }
@@ -817,25 +815,20 @@ namespace ShareX.UploadersLib
 
         private void CustomUploaderSettingsForm_DragDrop(object sender, DragEventArgs e)
         {
-            if (e.Data.GetDataPresent(DataFormats.FileDrop, false))
+            if (e.Data.GetDataPresent(DataFormats.FileDrop, false) && e.Data.GetData(DataFormats.FileDrop, false) is string[] files)
             {
-                string[] files = e.Data.GetData(DataFormats.FileDrop, false) as string[];
-
-                if (files != null)
+                foreach (string filePath in files.Where(x => !string.IsNullOrEmpty(x) && x.EndsWith(".sxcu")))
                 {
-                    foreach (string filePath in files.Where(x => !string.IsNullOrEmpty(x) && x.EndsWith(".sxcu")))
+                    CustomUploaderItem cui = JsonHelpers.DeserializeFromFile<CustomUploaderItem>(filePath);
+
+                    if (cui != null)
                     {
-                        CustomUploaderItem cui = JsonHelpers.DeserializeFromFile<CustomUploaderItem>(filePath);
-
-                        if (cui != null)
-                        {
-                            cui.CheckBackwardCompatibility();
-                            CustomUploaderAdd(cui);
-                        }
+                        cui.CheckBackwardCompatibility();
+                        CustomUploaderAdd(cui);
                     }
-
-                    eiCustomUploaders_ImportCompleted();
                 }
+
+                eiCustomUploaders_ImportCompleted();
             }
         }
 

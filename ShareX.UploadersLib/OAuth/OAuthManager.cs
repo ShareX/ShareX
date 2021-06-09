@@ -237,9 +237,7 @@ namespace ShareX.UploadersLib
 
         private static string NormalizeUrl(string url)
         {
-            Uri uri;
-
-            if (Uri.TryCreate(url, UriKind.Absolute, out uri))
+            if (Uri.TryCreate(url, UriKind.Absolute, out Uri uri))
             {
                 string port = "";
 

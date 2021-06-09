@@ -114,10 +114,7 @@ namespace ShareX.HelpersLib
 
         private void OnColorChanged(ColorType colorType = ColorType.None)
         {
-            if (ColorChanged != null)
-            {
-                ColorChanged(this, new ColorEventArgs(SelectedColor, colorType));
-            }
+            ColorChanged?.Invoke(this, new ColorEventArgs(SelectedColor, colorType));
         }
 
         #region Component Designer generated code

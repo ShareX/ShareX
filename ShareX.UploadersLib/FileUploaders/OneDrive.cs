@@ -229,9 +229,9 @@ namespace ShareX.UploadersLib.FileUploaders
         {
             if (!CheckAuthorization()) return null;
 
+            UploadResult result;
             string sessionUrl = CreateSession(fileName);
             long position = 0;
-            UploadResult result = new UploadResult();
 
             do
             {

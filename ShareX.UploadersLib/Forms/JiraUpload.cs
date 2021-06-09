@@ -54,12 +54,8 @@ namespace ShareX.UploadersLib
 
         public JiraUpload(string issuePrefix, GetSummaryHandler getSummary) : this()
         {
-            if (getSummary == null)
-            {
-                throw new ArgumentNullException(nameof(getSummary));
-            }
             this.issuePrefix = issuePrefix;
-            this.getSummary = getSummary;
+            this.getSummary = getSummary ?? throw new ArgumentNullException(nameof(getSummary));
         }
 
         private void JiraUpload_Load(object sender, EventArgs e)

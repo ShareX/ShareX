@@ -23,6 +23,8 @@
 
 #endregion License Information (GPL v3)
 
+using Newtonsoft.Json;
+using ShareX.HelpersLib;
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
@@ -30,8 +32,6 @@ using System.IO;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
-using ShareX.HelpersLib;
-using Newtonsoft.Json;
 
 namespace ShareX.UploadersLib.FileUploaders
 {
@@ -124,9 +124,9 @@ namespace ShareX.UploadersLib.FileUploaders
                 byte[] encryptedBytes = EncryptBytes(cryptoData, plainBytes);
 
                 int prependSize = 0;
-                if(dumpStash.Count > 0)
+                if (dumpStash.Count > 0)
                 {
-                    using(MemoryStream ms = new MemoryStream())
+                    using (MemoryStream ms = new MemoryStream())
                     {
                         ms.Write(dumpStash.ToArray(), 0, dumpStash.Count);
                         ms.Write(encryptedBytes, 0, encryptedBytes.Length);
@@ -137,7 +137,7 @@ namespace ShareX.UploadersLib.FileUploaders
                     dumpStash.Clear();
                 }
 
-                if(encryptedBytes.Length + (i == 0 ? 16 : 0) > BYTE_CHUNK_SIZE) // 16 bytes for the salt header
+                if (encryptedBytes.Length + (i == 0 ? 16 : 0) > BYTE_CHUNK_SIZE) // 16 bytes for the salt header
                 {
                     dumpStash.AddRange(encryptedBytes.Skip(BYTE_CHUNK_SIZE - (i == 0 ? 16 : 0)));
                     encryptedBytes = encryptedBytes.Take(BYTE_CHUNK_SIZE - (i == 0 ? 16 : 0)).ToArray();

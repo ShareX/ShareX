@@ -140,7 +140,7 @@ namespace ShareX.UploadersLib.ImageUploaders
                             string userid = xele.GetElementValue("userid");
                             string mediaid = xele.GetElementValue("mediaid");
                             string mediaurl = xele.GetElementValue("mediaurl");
-                            if (Options.ShowFull) mediaurl = mediaurl + "/full";
+                            if (Options.ShowFull) mediaurl += "/full";
                             result.URL = mediaurl;
                             result.ThumbnailURL = mediaurl + ".th.jpg";
                             break;

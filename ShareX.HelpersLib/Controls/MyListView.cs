@@ -234,9 +234,7 @@ namespace ShareX.HelpersLib
         {
             base.OnDragOver(drgevent);
 
-            ListViewItem lvi = drgevent.Data.GetData(typeof(ListViewItem)) as ListViewItem;
-
-            if (lvi != null && lvi.ListView == this)
+            if (drgevent.Data.GetData(typeof(ListViewItem)) is ListViewItem lvi && lvi.ListView == this)
             {
                 drgevent.Effect = DragDropEffects.Move;
 
@@ -265,9 +263,7 @@ namespace ShareX.HelpersLib
         {
             base.OnDragDrop(drgevent);
 
-            ListViewItem lvi = drgevent.Data.GetData(typeof(ListViewItem)) as ListViewItem;
-
-            if (lvi != null && lvi.ListView == this && lvi != dragOverItem)
+            if (drgevent.Data.GetData(typeof(ListViewItem)) is ListViewItem lvi && lvi.ListView == this && lvi != dragOverItem)
             {
                 int oldIndex = lvi.Index;
                 int newIndex;

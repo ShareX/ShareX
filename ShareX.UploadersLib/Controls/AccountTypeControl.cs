@@ -57,10 +57,7 @@ namespace ShareX.UploadersLib
 
         private void cbAccountType_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (AccountTypeChanged != null)
-            {
-                AccountTypeChanged(SelectedAccountType);
-            }
+            AccountTypeChanged?.Invoke(SelectedAccountType);
         }
     }
 }

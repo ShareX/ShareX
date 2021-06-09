@@ -1042,9 +1042,7 @@ namespace ShareX
 
         private void btnCaptureCustomRegionSelectRectangle_Click(object sender, EventArgs e)
         {
-            Rectangle rect;
-
-            if (RegionCaptureTasks.GetRectangleRegion(out rect, TaskSettings.CaptureSettings.SurfaceOptions))
+            if (RegionCaptureTasks.GetRectangleRegion(out Rectangle rect, TaskSettings.CaptureSettings.SurfaceOptions))
             {
                 nudCaptureCustomRegionX.SetValue(rect.X);
                 nudCaptureCustomRegionY.SetValue(rect.Y);
@@ -1374,9 +1372,7 @@ namespace ShareX
 
         private void cbNameFormatTimeZone_SelectedIndexChanged(object sender, EventArgs e)
         {
-            TimeZoneInfo timeZoneInfo = cbNameFormatTimeZone.SelectedItem as TimeZoneInfo;
-
-            if (timeZoneInfo != null)
+            if (cbNameFormatTimeZone.SelectedItem is TimeZoneInfo timeZoneInfo)
             {
                 TaskSettings.UploadSettings.CustomTimeZone = timeZoneInfo;
             }
@@ -1428,9 +1424,7 @@ namespace ShareX
 
         private UploaderFilter GetUploaderFilterFromFields()
         {
-            IGenericUploaderService service = cbUploaderFiltersDestination.SelectedItem as IGenericUploaderService;
-
-            if (service != null)
+            if (cbUploaderFiltersDestination.SelectedItem is IGenericUploaderService service)
             {
                 UploaderFilter filter = new UploaderFilter();
                 filter.Uploader = service.ServiceIdentifier;
@@ -1462,9 +1456,8 @@ namespace ShareX
 
             for (int i = 0; i < cbUploaderFiltersDestination.Items.Count; i++)
             {
-                IGenericUploaderService service = cbUploaderFiltersDestination.Items[i] as IGenericUploaderService;
-
-                if (service != null && service.ServiceIdentifier.Equals(filter.Uploader, StringComparison.InvariantCultureIgnoreCase))
+                if (cbUploaderFiltersDestination.Items[i] is IGenericUploaderService service &&
+                    service.ServiceIdentifier.Equals(filter.Uploader, StringComparison.InvariantCultureIgnoreCase))
                 {
                     cbUploaderFiltersDestination.SelectedIndex = i;
                     break;
