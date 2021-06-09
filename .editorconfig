@@ -5,6 +5,13 @@ indent_style = space
 end_of_line = crlf
 trim_trailing_whitespace = true
 insert_final_newline = false
+dotnet_style_readonly_field = true:silent
+dotnet_style_object_initializer = true:silent
+dotnet_style_collection_initializer = true:silent
+dotnet_style_prefer_inferred_anonymous_type_member_names = true:silent
+dotnet_naming_rule.non_field_members_should_be_pascal_case.severity = silent
+dotnet_naming_rule.non_field_members_should_be_pascal_case.symbols = non_field_members
+dotnet_naming_rule.non_field_members_should_be_pascal_case.style = pascal_case
 
 # C# files
 [*.cs]
