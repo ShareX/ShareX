@@ -242,9 +242,11 @@ namespace ShareX.HelpersLib
         public ushort atomWindowType;
         public ushort wCreatorVersion;
 
-        public WINDOWINFO(bool? filler) : this() // Allows automatic initialization of "cbSize" with "new WINDOWINFO(null/true/false)".
+        public static WINDOWINFO Create()
         {
-            cbSize = (uint)Marshal.SizeOf(typeof(WINDOWINFO));
+            WINDOWINFO wi = new WINDOWINFO();
+            wi.cbSize = (uint)Marshal.SizeOf(typeof(WINDOWINFO));
+            return wi;
         }
     }
 

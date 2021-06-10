@@ -24,7 +24,6 @@
 #endregion License Information (GPL v3)
 
 using System;
-using System.Diagnostics.Contracts;
 
 namespace ShareX.UploadersLib
 {

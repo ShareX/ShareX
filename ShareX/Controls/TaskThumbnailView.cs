@@ -161,7 +161,7 @@ namespace ShareX
             panel.TitleVisible = TitleVisible;
             panel.TitleLocation = TitleLocation;
             panel.MouseEnter += Panel_MouseEnter;
-            panel.MouseDown += (object sender, MouseEventArgs e) => Panel_MouseDown(sender, e, panel);
+            panel.MouseDown += (object sender, MouseEventArgs e) => Panel_MouseDown(e, panel);
             panel.MouseUp += Panel_MouseUp;
             return panel;
         }
@@ -240,10 +240,10 @@ namespace ShareX
 
         private void Panel_MouseDown(object sender, MouseEventArgs e)
         {
-            Panel_MouseDown(sender, e, null);
+            Panel_MouseDown(e, null);
         }
 
-        private void Panel_MouseDown(object sender, MouseEventArgs e, TaskThumbnailPanel panel)
+        private void Panel_MouseDown(MouseEventArgs e, TaskThumbnailPanel panel)
         {
             if (panel == null)
             {

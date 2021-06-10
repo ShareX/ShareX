@@ -176,8 +176,7 @@ namespace ShareX.HelpersLib
 
         public static bool GetBorderSize(IntPtr handle, out Size size)
         {
-            WINDOWINFO wi = new WINDOWINFO();
-
+            WINDOWINFO wi = WINDOWINFO.Create();
             bool result = GetWindowInfo(handle, ref wi);
 
             if (result)
@@ -505,14 +504,14 @@ namespace ShareX.HelpersLib
 
         public static bool CreateProcess(string path, string arguments, CreateProcessFlags flags = CreateProcessFlags.NORMAL_PRIORITY_CLASS)
         {
-            PROCESS_INFORMATION pInfo = new PROCESS_INFORMATION();
+            //PROCESS_INFORMATION pInfo = new PROCESS_INFORMATION();
             STARTUPINFO sInfo = new STARTUPINFO();
             SECURITY_ATTRIBUTES pSec = new SECURITY_ATTRIBUTES();
             SECURITY_ATTRIBUTES tSec = new SECURITY_ATTRIBUTES();
             pSec.nLength = Marshal.SizeOf(pSec);
             tSec.nLength = Marshal.SizeOf(tSec);
 
-            return CreateProcess(path, $"\"{path}\" {arguments}", ref pSec, ref tSec, false, (uint)flags, IntPtr.Zero, null, ref sInfo, out pInfo);
+            return CreateProcess(path, $"\"{path}\" {arguments}", ref pSec, ref tSec, false, (uint)flags, IntPtr.Zero, null, ref sInfo, out _);
         }
 
         public static Icon GetFileIcon(string filePath, bool isSmallIcon)

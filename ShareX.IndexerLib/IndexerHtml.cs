@@ -82,7 +82,7 @@ namespace ShareX.IndexerLib
 
                 foreach (FileInfo fi in dir.Files)
                 {
-                    sbContent.AppendLine(GetFileNameRow(fi, level));
+                    sbContent.AppendLine(GetFileNameRow(fi));
                 }
 
                 sbContent.AppendLine(HtmlHelper.EndTag("ul"));
@@ -144,7 +144,7 @@ namespace ShareX.IndexerLib
             return HtmlHelper.StartTag("h" + heading) + URLHelpers.HtmlEncode(pathTitle) + folderNameRow + HtmlHelper.EndTag("h" + heading);
         }
 
-        private string GetFileNameRow(FileInfo fi, int level)
+        private string GetFileNameRow(FileInfo fi)
         {
             string fileNameRow = HtmlHelper.StartTag("li") + URLHelpers.HtmlEncode(fi.Name);
 

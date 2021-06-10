@@ -1169,7 +1169,7 @@ namespace ShareX.ScreenCaptureLib
                 totalSize.Width = Math.Max(totalSize.Width, infoTextRect.Width);
 
                 totalSize.Height += infoTextRect.Height;
-                itemCount++;
+                //itemCount++;
             }
 
             int x = mousePos.X + cursorOffsetX;

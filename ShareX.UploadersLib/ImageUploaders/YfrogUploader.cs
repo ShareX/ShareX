@@ -136,16 +136,16 @@ namespace ShareX.UploadersLib.ImageUploaders
                     switch (xele.GetAttributeFirstValue("status", "stat"))
                     {
                         case "ok":
-                            string statusid = xele.GetElementValue("statusid");
-                            string userid = xele.GetElementValue("userid");
-                            string mediaid = xele.GetElementValue("mediaid");
+                            //string statusid = xele.GetElementValue("statusid");
+                            //string userid = xele.GetElementValue("userid");
+                            //string mediaid = xele.GetElementValue("mediaid");
                             string mediaurl = xele.GetElementValue("mediaurl");
                             if (Options.ShowFull) mediaurl += "/full";
                             result.URL = mediaurl;
                             result.ThumbnailURL = mediaurl + ".th.jpg";
                             break;
                         case "fail":
-                            string code = xele.Element("err").Attribute("code").Value;
+                            //string code = xele.Element("err").Attribute("code").Value;
                             string msg = xele.Element("err").Attribute("msg").Value;
                             Errors.Add(msg);
                             break;

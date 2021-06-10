@@ -163,7 +163,7 @@ namespace ShareX.UploadersLib.ImageUploaders
                             return xele.Element(field);
                         case "fail":
                             XElement err = xele.Element("err");
-                            string code = err.GetAttributeValue("code");
+                            //string code = err.GetAttributeValue("code");
                             string msg = err.GetAttributeValue("msg");
                             Errors.Add(msg);
                             break;
