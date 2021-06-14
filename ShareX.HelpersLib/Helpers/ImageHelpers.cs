@@ -1817,9 +1817,9 @@ namespace ShareX.HelpersLib
 
         public static Bitmap LoadImage(string filePath)
         {
-            try
+            if (!string.IsNullOrEmpty(filePath))
             {
-                if (!string.IsNullOrEmpty(filePath))
+                try
                 {
                     filePath = Helpers.GetAbsolutePath(filePath);
 
@@ -1836,10 +1836,10 @@ namespace ShareX.HelpersLib
                         return bmp;
                     }
                 }
-            }
-            catch (Exception e)
-            {
-                DebugHelper.WriteException(e);
+                catch (Exception e)
+                {
+                    DebugHelper.WriteException(e);
+                }
             }
 
             return null;
@@ -1938,6 +1938,42 @@ namespace ShareX.HelpersLib
             }
 
             return bmp;
+        }
+
+        public static Bitmap CombineImages(IEnumerable<string> imageFiles, Orientation orientation = Orientation.Vertical,
+            ImageCombinerAlignment alignment = ImageCombinerAlignment.LeftOrTop, int space = 0, bool autoFillBackground = false)
+        {
+            List<Bitmap> images = new List<Bitmap>();
+
+            try
+            {
+                foreach (string filePath in imageFiles)
+                {
+                    Bitmap bmp = LoadImage(filePath);
+
+                    if (bmp != null)
+                    {
+                        images.Add(bmp);
+                    }
+                }
+
+                if (images.Count > 1)
+                {
+                    return CombineImages(images, orientation, alignment, space, autoFillBackground);
+                }
+            }
+            finally
+            {
+                foreach (Bitmap bmp in images)
+                {
+                    if (bmp != null)
+                    {
+                        bmp.Dispose();
+                    }
+                }
+            }
+
+            return null;
         }
 
         public static List<Bitmap> SplitImage(Image img, int rowCount, int columnCount)

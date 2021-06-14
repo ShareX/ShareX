@@ -394,7 +394,7 @@ namespace ShareX
 
                 if (imageFiles.Count() > 1)
                 {
-                    TaskHelpers.OpenImageCombiner(null, imageFiles);
+                    TaskHelpers.OpenImageCombiner(imageFiles);
                 }
             }
         }

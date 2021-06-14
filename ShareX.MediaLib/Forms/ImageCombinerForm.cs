@@ -28,7 +28,7 @@ using ShareX.MediaLib.Properties;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
-using System.IO;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace ShareX.MediaLib
@@ -174,49 +174,24 @@ namespace ShareX.MediaLib
         {
             if (lvImages.Items.Count > 0)
             {
-                List<Bitmap> images = new List<Bitmap>();
-
                 try
                 {
-                    foreach (ListViewItem lvi in lvImages.Items)
-                    {
-                        string filePath = lvi.Text;
+                    List<string> imageFiles = lvImages.Items.Cast<ListViewItem>().Select(x => x.Text).ToList();
 
-                        if (File.Exists(filePath))
+                    if (imageFiles.Count > 1)
+                    {
+                        Bitmap output = ImageHelpers.CombineImages(imageFiles, Options.Orientation, Options.Alignment, Options.Space, Options.AutoFillBackground);
+
+                        if (output != null)
                         {
-                            Bitmap bmp = ImageHelpers.LoadImage(filePath);
-
-                            if (bmp != null)
-                            {
-                                images.Add(bmp);
-                            }
+                            OnProcessRequested(output);
                         }
-                    }
-
-                    if (images.Count > 1)
-                    {
-                        Bitmap output = ImageHelpers.CombineImages(images, Options.Orientation, Options.Alignment, Options.Space, Options.AutoFillBackground);
-
-                        OnProcessRequested(output);
                     }
                 }
                 catch (Exception ex)
                 {
                     DebugHelper.WriteException(ex);
                     ex.ShowError();
-                }
-                finally
-                {
-                    if (images != null)
-                    {
-                        foreach (Bitmap image in images)
-                        {
-                            if (image != null)
-                            {
-                                image.Dispose();
-                            }
-                        }
-                    }
                 }
             }
         }
