@@ -1245,6 +1245,18 @@
   <data name="tsmiOCRImage.Text" xml:space="preserve">
     <value>OCR image...</value>
   </data>
+  <data name="tsmiCombineImagesHorizontally.Size" type="System.Drawing.Size, System.Drawing">
+    <value>188, 22</value>
+  </data>
+  <data name="tsmiCombineImagesHorizontally.Text" xml:space="preserve">
+    <value>Combine horizontally</value>
+  </data>
+  <data name="tsmiCombineImagesVertically.Size" type="System.Drawing.Size, System.Drawing">
+    <value>188, 22</value>
+  </data>
+  <data name="tsmiCombineImagesVertically.Text" xml:space="preserve">
+    <value>Combine vertically</value>
+  </data>
   <data name="tsmiCombineImages.Size" type="System.Drawing.Size, System.Drawing">
     <value>228, 22</value>
   </data>
@@ -2439,6 +2451,12 @@
   <data name="&gt;&gt;tsmiShortenURL.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;tsmiTweetMessage.Name" xml:space="preserve">
+    <value>tsmiTweetMessage</value>
+  </data>
+  <data name="&gt;&gt;tsmiTweetMessage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;tsddbWorkflows.Name" xml:space="preserve">
     <value>tsddbWorkflows</value>
   </data>
@@ -2468,6 +2486,12 @@
   </data>
   <data name="&gt;&gt;tsmiRuler.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tssTools1.Name" xml:space="preserve">
+    <value>tssTools1</value>
+  </data>
+  <data name="&gt;&gt;tssTools1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiImageEditor.Name" xml:space="preserve">
     <value>tsmiImageEditor</value>
@@ -2499,6 +2523,12 @@
   <data name="&gt;&gt;tsmiImageThumbnailer.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;tssTools2.Name" xml:space="preserve">
+    <value>tssTools2</value>
+  </data>
+  <data name="&gt;&gt;tssTools2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;tsmiVideoConverter.Name" xml:space="preserve">
     <value>tsmiVideoConverter</value>
   </data>
@@ -2510,6 +2540,12 @@
   </data>
   <data name="&gt;&gt;tsmiVideoThumbnailer.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tssTools3.Name" xml:space="preserve">
+    <value>tssTools3</value>
+  </data>
+  <data name="&gt;&gt;tssTools3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiQRCode.Name" xml:space="preserve">
     <value>tsmiQRCode</value>
@@ -2529,6 +2565,12 @@
   <data name="&gt;&gt;tsmiIndexFolder.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;tssTools4.Name" xml:space="preserve">
+    <value>tssTools4</value>
+  </data>
+  <data name="&gt;&gt;tssTools4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;tsmiClipboardViewer.Name" xml:space="preserve">
     <value>tsmiClipboardViewer</value>
   </data>
@@ -2541,16 +2583,16 @@
   <data name="&gt;&gt;tsmiInspectWindow.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;tsmiDNSChanger.Name" xml:space="preserve">
-    <value>tsmiDNSChanger</value>
-  </data>
-  <data name="&gt;&gt;tsmiDNSChanger.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;tsmiMonitorTest.Name" xml:space="preserve">
     <value>tsmiMonitorTest</value>
   </data>
   <data name="&gt;&gt;tsmiMonitorTest.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsmiDNSChanger.Name" xml:space="preserve">
+    <value>tsmiDNSChanger</value>
+  </data>
+  <data name="&gt;&gt;tsmiDNSChanger.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tssMain1.Name" xml:space="preserve">
@@ -3057,6 +3099,18 @@
   <data name="&gt;&gt;tsmiCombineImages.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;tsmiCombineImagesHorizontally.Name" xml:space="preserve">
+    <value>tsmiCombineImagesHorizontally</value>
+  </data>
+  <data name="&gt;&gt;tsmiCombineImagesHorizontally.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsmiCombineImagesVertically.Name" xml:space="preserve">
+    <value>tsmiCombineImagesVertically</value>
+  </data>
+  <data name="&gt;&gt;tsmiCombineImagesVertically.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;tsmiShowResponse.Name" xml:space="preserve">
     <value>tsmiShowResponse</value>
   </data>
@@ -3363,6 +3417,12 @@
   <data name="&gt;&gt;tsmiTrayShortenURL.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;tsmiTrayTweetMessage.Name" xml:space="preserve">
+    <value>tsmiTrayTweetMessage</value>
+  </data>
+  <data name="&gt;&gt;tsmiTrayTweetMessage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;tsmiTrayWorkflows.Name" xml:space="preserve">
     <value>tsmiTrayWorkflows</value>
   </data>
@@ -3392,6 +3452,12 @@
   </data>
   <data name="&gt;&gt;tsmiTrayRuler.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tssTrayTools1.Name" xml:space="preserve">
+    <value>tssTrayTools1</value>
+  </data>
+  <data name="&gt;&gt;tssTrayTools1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiTrayImageEditor.Name" xml:space="preserve">
     <value>tsmiTrayImageEditor</value>
@@ -3423,6 +3489,12 @@
   <data name="&gt;&gt;tsmiTrayImageThumbnailer.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;tssTrayTools2.Name" xml:space="preserve">
+    <value>tssTrayTools2</value>
+  </data>
+  <data name="&gt;&gt;tssTrayTools2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;tsmiTrayVideoConverter.Name" xml:space="preserve">
     <value>tsmiTrayVideoConverter</value>
   </data>
@@ -3434,6 +3506,12 @@
   </data>
   <data name="&gt;&gt;tsmiTrayVideoThumbnailer.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tssTrayTools3.Name" xml:space="preserve">
+    <value>tssTrayTools3</value>
+  </data>
+  <data name="&gt;&gt;tssTrayTools3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiTrayQRCode.Name" xml:space="preserve">
     <value>tsmiTrayQRCode</value>
@@ -3453,6 +3531,12 @@
   <data name="&gt;&gt;tsmiTrayIndexFolder.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;tssTrayTools4.Name" xml:space="preserve">
+    <value>tssTrayTools4</value>
+  </data>
+  <data name="&gt;&gt;tssTrayTools4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;tsmiTrayClipboardViewer.Name" xml:space="preserve">
     <value>tsmiTrayClipboardViewer</value>
   </data>
@@ -3465,16 +3549,16 @@
   <data name="&gt;&gt;tsmiTrayInspectWindow.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;tsmiTrayDNSChanger.Name" xml:space="preserve">
-    <value>tsmiTrayDNSChanger</value>
-  </data>
-  <data name="&gt;&gt;tsmiTrayDNSChanger.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;tsmiTrayMonitorTest.Name" xml:space="preserve">
     <value>tsmiTrayMonitorTest</value>
   </data>
   <data name="&gt;&gt;tsmiTrayMonitorTest.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsmiTrayDNSChanger.Name" xml:space="preserve">
+    <value>tsmiTrayDNSChanger</value>
+  </data>
+  <data name="&gt;&gt;tsmiTrayDNSChanger.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tssTray1.Name" xml:space="preserve">
@@ -3728,66 +3812,6 @@
   </data>
   <data name="&gt;&gt;tsbGitHub.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tsmiTweetMessage.Name" xml:space="preserve">
-    <value>tsmiTweetMessage</value>
-  </data>
-  <data name="&gt;&gt;tsmiTweetMessage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tsmiTrayTweetMessage.Name" xml:space="preserve">
-    <value>tsmiTrayTweetMessage</value>
-  </data>
-  <data name="&gt;&gt;tsmiTrayTweetMessage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tssTools1.Name" xml:space="preserve">
-    <value>tssTools1</value>
-  </data>
-  <data name="&gt;&gt;tssTools1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tssTools2.Name" xml:space="preserve">
-    <value>tssTools2</value>
-  </data>
-  <data name="&gt;&gt;tssTools2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tssTools3.Name" xml:space="preserve">
-    <value>tssTools3</value>
-  </data>
-  <data name="&gt;&gt;tssTools3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tssTools4.Name" xml:space="preserve">
-    <value>tssTools4</value>
-  </data>
-  <data name="&gt;&gt;tssTools4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tssTrayTools1.Name" xml:space="preserve">
-    <value>tssTrayTools1</value>
-  </data>
-  <data name="&gt;&gt;tssTrayTools1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tssTrayTools2.Name" xml:space="preserve">
-    <value>tssTrayTools2</value>
-  </data>
-  <data name="&gt;&gt;tssTrayTools2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tssTrayTools3.Name" xml:space="preserve">
-    <value>tssTrayTools3</value>
-  </data>
-  <data name="&gt;&gt;tssTrayTools3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tssTrayTools4.Name" xml:space="preserve">
-    <value>tssTrayTools4</value>
-  </data>
-  <data name="&gt;&gt;tssTrayTools4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MainForm</value>

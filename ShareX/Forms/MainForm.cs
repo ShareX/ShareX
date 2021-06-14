@@ -2436,6 +2436,16 @@ namespace ShareX
             uim.CombineImages();
         }
 
+        private void tsmiCombineImagesHorizontally_Click(object sender, EventArgs e)
+        {
+            uim.CombineImages(Orientation.Horizontal);
+        }
+
+        private void tsmiCombineImagesVertically_Click(object sender, EventArgs e)
+        {
+            uim.CombineImages(Orientation.Vertical);
+        }
+
         private void tsmiShowResponse_Click(object sender, EventArgs e)
         {
             uim.ShowResponse();

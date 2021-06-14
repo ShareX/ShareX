@@ -1881,6 +1881,12 @@
   <ItemGroup>
     <None Include="Resources\Twitter-16x16.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\application-tile-horizontal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\application-tile-vertical.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>
