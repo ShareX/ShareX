@@ -187,6 +187,12 @@
     <Compile Include="Forms\ClipboardUploadForm.Designer.cs">
       <DependentUpon>ClipboardUploadForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FirstTimeUploadForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FirstTimeUploadForm.Designer.cs">
+      <DependentUpon>FirstTimeUploadForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\InspectWindowForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1140,6 +1146,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FirstTimeConfigForm.zh-TW.resx">
       <DependentUpon>FirstTimeConfigForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FirstTimeUploadForm.resx">
+      <DependentUpon>FirstTimeUploadForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\HotkeySettingsForm.de.resx">
       <DependentUpon>HotkeySettingsForm.cs</DependentUpon>
