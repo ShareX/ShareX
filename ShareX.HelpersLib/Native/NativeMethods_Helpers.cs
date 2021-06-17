@@ -364,6 +364,11 @@ namespace ShareX.HelpersLib
             return false;
         }
 
+        public static bool IsActive(IntPtr handle)
+        {
+            return GetForegroundWindow() == handle;
+        }
+
         public static void RestoreWindow(IntPtr handle)
         {
             WINDOWPLACEMENT wp = new WINDOWPLACEMENT();

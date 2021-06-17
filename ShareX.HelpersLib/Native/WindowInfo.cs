@@ -92,7 +92,7 @@ namespace ShareX.HelpersLib
 
         public bool IsCloaked => NativeMethods.IsWindowCloaked(Handle);
 
-        public bool IsActive => NativeMethods.GetForegroundWindow() == Handle;
+        public bool IsActive => NativeMethods.IsActive(Handle);
 
         public WindowInfo(IntPtr handle)
         {

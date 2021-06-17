@@ -132,7 +132,7 @@
     <value>1</value>
   </data>
   <data name="lblInfo.Text" xml:space="preserve">
-    <value>Are you sure you want to upload screenshots?
+    <value>Do you want ShareX to upload screenshots?
 
 Press "No" to cancel the current upload and disable screenshot auto uploading.</value>
   </data>
@@ -218,7 +218,7 @@ Press "No" to cancel the current upload and disable screenshot auto uploading.</
     <value>0</value>
   </data>
   <data name="lblHeader.Text" xml:space="preserve">
-    <value>Important!</value>
+    <value>Attention!</value>
   </data>
   <data name="lblHeader.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleCenter</value>

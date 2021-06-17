@@ -49,19 +49,16 @@ namespace ShareX
 
         private void UpdateCountdown()
         {
-            if (!IsDisposed)
+            if (countdown < 1)
             {
-                if (countdown < 1)
-                {
-                    btnYes.Text = textYes;
-                    btnYes.Enabled = true;
-                    tCountdown.Stop();
-                }
-                else
-                {
-                    btnYes.Text = textYes + " (" + countdown + ")";
-                    countdown--;
-                }
+                btnYes.Text = textYes;
+                btnYes.Enabled = true;
+                tCountdown.Stop();
+            }
+            else
+            {
+                btnYes.Text = textYes + " (" + countdown + ")";
+                countdown--;
             }
         }
 
@@ -72,7 +69,10 @@ namespace ShareX
 
         private void tCountdown_Tick(object sender, System.EventArgs e)
         {
-            UpdateCountdown();
+            if (!IsDisposed && NativeMethods.IsActive(Handle))
+            {
+                UpdateCountdown();
+            }
         }
 
         private void btnYes_Click(object sender, System.EventArgs e)
