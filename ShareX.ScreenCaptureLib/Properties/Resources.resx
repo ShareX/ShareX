@@ -774,4 +774,7 @@ X: {4} Y: {5}</value>
   <data name="ScreenRecordForm_Stop" xml:space="preserve">
     <value>Stop</value>
   </data>
+  <data name="ShapeManager_BorderStyle" xml:space="preserve">
+    <value>Border style:</value>
+  </data>
 </root>
