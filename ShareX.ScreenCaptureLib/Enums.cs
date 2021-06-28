@@ -325,7 +325,7 @@ namespace ShareX.ScreenCaptureLib
         CanvasExpandRight
     }
 
-    public enum BorderStyle
+    public enum BorderStyle // Localized
     {
         Solid,
         Dash,

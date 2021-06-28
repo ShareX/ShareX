@@ -313,7 +313,7 @@
     <value>すべて削除</value>
   </data>
   <data name="ShapeManager_CreateContextMenu_Border_size_" xml:space="preserve">
-    <value>枠線の太さ:</value>
+    <value>線の太さ:</value>
   </data>
   <data name="ShapeManager_CreateToolbar_AnnotateMenu" xml:space="preserve">
     <value>注釈メニュー</value>
@@ -325,7 +325,7 @@
     <value>画像の切り抜き...</value>
   </data>
   <data name="ShapeManager_CreateContextMenu_Border_color___" xml:space="preserve">
-    <value>枠線の色...</value>
+    <value>線の色...</value>
   </data>
   <data name="ShapeManager_CreateContextMenu_Show_magnifier" xml:space="preserve">
     <value>ルーペを表示</value>
@@ -436,5 +436,8 @@
   </data>
   <data name="LockMenu" xml:space="preserve">
     <value>ツールバーメニューを固定する</value>
+  </data>
+  <data name="ShapeManager_BorderStyle" xml:space="preserve">
+    <value>線の形式:</value>
   </data>
 </root>

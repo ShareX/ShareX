@@ -78,7 +78,7 @@ namespace ShareX.HelpersLib.Properties {
                         "me_extension_", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to abandoned
         ///able
@@ -481,6 +481,51 @@ namespace ShareX.HelpersLib.Properties {
         internal static string ArrowHeadDirection_Start {
             get {
                 return ResourceManager.GetString("ArrowHeadDirection_Start", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dash.
+        /// </summary>
+        internal static string BorderStyle_Dash {
+            get {
+                return ResourceManager.GetString("BorderStyle_Dash", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to DashDot.
+        /// </summary>
+        internal static string BorderStyle_DashDot {
+            get {
+                return ResourceManager.GetString("BorderStyle_DashDot", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to DashDotDot.
+        /// </summary>
+        internal static string BorderStyle_DashDotDot {
+            get {
+                return ResourceManager.GetString("BorderStyle_DashDotDot", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dot.
+        /// </summary>
+        internal static string BorderStyle_Dot {
+            get {
+                return ResourceManager.GetString("BorderStyle_Dot", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Solid.
+        /// </summary>
+        internal static string BorderStyle_Solid {
+            get {
+                return ResourceManager.GetString("BorderStyle_Solid", resourceCulture);
             }
         }
         

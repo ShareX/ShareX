@@ -1298,4 +1298,19 @@ Would you like to download and install it?</value>
   <data name="HotkeyType_InspectWindow_Category" xml:space="preserve">
     <value>Tools</value>
   </data>
+  <data name="BorderStyle_Solid" xml:space="preserve">
+    <value>Solid</value>
+  </data>
+  <data name="BorderStyle_Dash" xml:space="preserve">
+    <value>Dash</value>
+  </data>
+  <data name="BorderStyle_Dot" xml:space="preserve">
+    <value>Dot</value>
+  </data>
+  <data name="BorderStyle_DashDot" xml:space="preserve">
+    <value>DashDot</value>
+  </data>
+  <data name="BorderStyle_DashDotDot" xml:space="preserve">
+    <value>DashDotDot</value>
+  </data>
 </root>

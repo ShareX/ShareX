@@ -1198,4 +1198,19 @@
   <data name="HotkeyType_InspectWindow" xml:space="preserve">
     <value>ウィンドウの調査</value>
   </data>
+  <data name="BorderStyle_Solid" xml:space="preserve">
+    <value>実線</value>
+  </data>
+  <data name="BorderStyle_Dash" xml:space="preserve">
+    <value>破線</value>
+  </data>
+  <data name="BorderStyle_Dot" xml:space="preserve">
+    <value>点線</value>
+  </data>
+  <data name="BorderStyle_DashDot" xml:space="preserve">
+    <value>一点鎖線</value>
+  </data>
+  <data name="BorderStyle_DashDotDot" xml:space="preserve">
+    <value>二点鎖線</value>
+  </data>
 </root>

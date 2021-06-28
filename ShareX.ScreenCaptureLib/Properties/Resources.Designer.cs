@@ -1375,6 +1375,15 @@ namespace ShareX.ScreenCaptureLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Border style:.
+        /// </summary>
+        internal static string ShapeManager_BorderStyle {
+            get {
+                return ResourceManager.GetString("ShapeManager_BorderStyle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Center points:.
         /// </summary>
         internal static string ShapeManager_CenterPoints {
