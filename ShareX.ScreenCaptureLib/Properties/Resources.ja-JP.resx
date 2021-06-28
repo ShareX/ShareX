@@ -440,4 +440,7 @@
   <data name="ShapeManager_BorderStyle" xml:space="preserve">
     <value>線の形式:</value>
   </data>
+  <data name="ShapeManager_CreateToolbar_StepType" xml:space="preserve">
+    <value>文字の種類:</value>
+  </data>
 </root>
