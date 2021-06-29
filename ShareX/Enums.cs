@@ -241,7 +241,7 @@ namespace ShareX
         ToastNotification
     }
 
-    public enum ToastClickAction
+    public enum ToastClickAction  // Localized
     {
         [Description("Close notification")]
         CloseNotification,
