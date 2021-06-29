@@ -1219,7 +1219,6 @@
   <data name="ToastClickAction_AnnotateImage" xml:space="preserve">
     <value>画像編集</value>
   </data>
-
   <data name="ToastClickAction_CloseNotification" xml:space="preserve">
     <value>通知を閉じる</value>
   </data>

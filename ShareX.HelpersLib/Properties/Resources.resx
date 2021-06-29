@@ -1344,30 +1344,30 @@ Would you like to download and install it?</value>
     <value>Upload file</value>
   </data>
   <data name="ContentAlignment_TopLeft" xml:space="preserve">
-    <value>TopLeft</value>
+    <value>Top left</value>
   </data>
   <data name="ContentAlignment_TopCenter" xml:space="preserve">
-    <value>TopCenter</value>
+    <value>Top center</value>
   </data>
   <data name="ContentAlignment_TopRight" xml:space="preserve">
-    <value>TopRight</value>
+    <value>Top right</value>
   </data>
   <data name="ContentAlignment_MiddleLeft" xml:space="preserve">
-    <value>MiddleLeft</value>
+    <value>Middle left</value>
   </data>
   <data name="ContentAlignment_MiddleCenter" xml:space="preserve">
-    <value>MiddleCenter</value>
+    <value>Middle center</value>
   </data>
   <data name="ContentAlignment_MiddleRight" xml:space="preserve">
-    <value>MiddleRight</value>
+    <value>Middle right</value>
   </data>
   <data name="ContentAlignment_BottomLeft" xml:space="preserve">
-    <value>BottomLeft</value>
+    <value>Bottom left</value>
   </data>
   <data name="ContentAlignment_BottomCenter" xml:space="preserve">
-    <value>BottomCenter</value>
+    <value>Bottom center</value>
   </data>
   <data name="ContentAlignment_BottomRight" xml:space="preserve">
-    <value>BottomRight</value>
+    <value>Bottom right</value>
   </data>
 </root>
