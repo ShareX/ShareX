@@ -925,7 +925,11 @@ namespace ShareX.ScreenCaptureLib
             else if (!IsCreating && CurrentTool != ShapeType.ToolSelect) // Create new shape
             {
                 ClearTools();
-                DeselectCurrentShape();
+
+                if (Options.MultipleRegions)
+                    DeselectCurrentShape();
+                else
+                    DeleteCurrentShape();
 
                 shape = AddShape();
                 shape.OnCreating();

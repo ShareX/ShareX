@@ -42,6 +42,7 @@ namespace ShareX.ScreenCaptureLib
         public const int MoveSpeedMaximum = 10;
 
         public bool QuickCrop = true;
+        public bool MultipleRegions = false;
         public int MinimumSize = DefaultMinimumSize;
         public RegionCaptureAction RegionCaptureActionRightClick = RegionCaptureAction.RemoveShapeCancelCapture;
         public RegionCaptureAction RegionCaptureActionMiddleClick = RegionCaptureAction.SwapToolType;

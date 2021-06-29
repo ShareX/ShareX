@@ -462,8 +462,11 @@
   <data name="lblRegionCaptureMagnifierPixelCount.Text" xml:space="preserve">
     <value>Lupe Pixelanzahl:</value>
   </data>
+  <data name="cbRegionCaptureAllowResizeAndMoveRegion.Text" xml:space="preserve">
+    <value>Größenänderung und Verschieben des Bereichs zulassen</value>
+  </data>
   <data name="cbRegionCaptureMultiRegionMode.Text" xml:space="preserve">
-    <value>Verwenden des Mehrbereichs-Modus, welcher ebenfalls eine Größenänderung und das Verschieben von Bereichen ermöglicht</value>
+    <value>Verwenden des Mehrbereichs-Modus</value>
   </data>
   <data name="chkOverrideUploadSettings.Text" xml:space="preserve">
     <value>Upload-Einstellungen überschreiben</value>

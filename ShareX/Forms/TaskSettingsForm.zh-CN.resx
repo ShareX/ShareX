@@ -427,7 +427,10 @@
     <value>鼠标右键单击动作:</value>
   </data>
   <data name="cbRegionCaptureMultiRegionMode.Text" xml:space="preserve">
-    <value>使用多区域模式，将允许调整大小和运动区域</value>
+    <value>使用多区域模式</value>
+  </data>
+  <data name="cbRegionCaptureAllowResizeAndMoveRegion.Text" xml:space="preserve">
+    <value>允许调整大小和移动区域</value>
   </data>
   <data name="btnRegionCaptureSnapSizesDialogCancel.Text" xml:space="preserve">
     <value>取消</value>

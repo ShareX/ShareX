@@ -373,7 +373,10 @@
     <value>Дія правої клавіші миші:</value>
   </data>
   <data name="cbRegionCaptureMultiRegionMode.Text" xml:space="preserve">
-    <value>Використовувати захоплення кількох областей з підтримкою зміни розмірів та переміщення областей</value>
+    <value>Використовуйте багаторегіональний режим</value>
+  </data>
+  <data name="cbRegionCaptureAllowResizeAndMoveRegion.Text" xml:space="preserve">
+    <value>Дозволити зменшення розміру та переміщення області</value>
   </data>
   <data name="btnRegionCaptureSnapSizesDialogCancel.Text" xml:space="preserve">
     <value>Скасувати</value>
