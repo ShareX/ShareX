@@ -345,7 +345,7 @@ namespace ShareX
         public decimal ScreenshotDelay = 0;
         public bool CaptureTransparent = false;
         public bool CaptureShadow = true;
-        public int CaptureShadowOffset = 20;
+        public int CaptureShadowOffset = 100;
         public bool CaptureClientArea = false;
         public bool CaptureAutoHideTaskbar = false;
         public Rectangle CaptureCustomRegion = new Rectangle(0, 0, 0, 0);
