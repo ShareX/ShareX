@@ -1900,6 +1900,8 @@ namespace ShareX.ScreenCaptureLib
                     switch (imageInsertForm.ImageInsertMethod)
                     {
                         default:
+                            img.Dispose();
+                            return;
                         case ImageInsertMethod.Center:
                             pos = Form.ClientArea.Center();
                             centerImage = true;

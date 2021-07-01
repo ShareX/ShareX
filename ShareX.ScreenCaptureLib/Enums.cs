@@ -320,6 +320,7 @@ namespace ShareX.ScreenCaptureLib
 
     public enum ImageInsertMethod
     {
+        None,
         Center,
         CanvasExpandDown,
         CanvasExpandRight
