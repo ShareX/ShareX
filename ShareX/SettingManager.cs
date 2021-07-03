@@ -142,9 +142,9 @@ namespace ShareX
             }
         }
 
-        public static void LoadApplicationConfig()
+        public static void LoadApplicationConfig(bool fallbackSupport = true)
         {
-            Settings = ApplicationConfig.Load(ApplicationConfigFilePath, BackupFolder);
+            Settings = ApplicationConfig.Load(ApplicationConfigFilePath, BackupFolder, fallbackSupport);
             Settings.CreateBackup = true;
             Settings.CreateWeeklyBackup = true;
             Settings.SettingsSaveFailed += Settings_SettingsSaveFailed;
@@ -173,18 +173,18 @@ namespace ShareX
             settingsSaveFailWarningCount++;
         }
 
-        public static void LoadUploadersConfig()
+        public static void LoadUploadersConfig(bool fallbackSupport = true)
         {
-            UploadersConfig = UploadersConfig.Load(UploadersConfigFilePath, BackupFolder);
+            UploadersConfig = UploadersConfig.Load(UploadersConfigFilePath, BackupFolder, fallbackSupport);
             UploadersConfig.CreateBackup = true;
             UploadersConfig.CreateWeeklyBackup = true;
             UploadersConfig.SupportDPAPIEncryption = true;
             UploadersConfigBackwardCompatibilityTasks();
         }
 
-        public static void LoadHotkeysConfig()
+        public static void LoadHotkeysConfig(bool fallbackSupport = true)
         {
-            HotkeysConfig = HotkeysConfig.Load(HotkeysConfigFilePath, BackupFolder);
+            HotkeysConfig = HotkeysConfig.Load(HotkeysConfigFilePath, BackupFolder, fallbackSupport);
             HotkeysConfig.CreateBackup = true;
             HotkeysConfig.CreateWeeklyBackup = true;
             HotkeysConfigBackwardCompatibilityTasks();
@@ -344,13 +344,13 @@ namespace ShareX
         public static void ResetSettings()
         {
             if (File.Exists(ApplicationConfigFilePath)) File.Delete(ApplicationConfigFilePath);
-            LoadApplicationConfig();
+            LoadApplicationConfig(false);
 
             if (File.Exists(UploadersConfigFilePath)) File.Delete(UploadersConfigFilePath);
-            LoadUploadersConfig();
+            LoadUploadersConfig(false);
 
             if (File.Exists(HotkeysConfigFilePath)) File.Delete(HotkeysConfigFilePath);
-            LoadHotkeysConfig();
+            LoadHotkeysConfig(false);
         }
 
         public static bool Export(string archivePath, bool settings, bool history)

@@ -212,11 +212,11 @@ namespace ShareX.HelpersLib
             }
         }
 
-        public static T Load(string filePath, string backupFolder = null)
+        public static T Load(string filePath, string backupFolder = null, bool fallbackSupport = true)
         {
             List<string> fallbackFilePaths = new List<string>();
 
-            if (!string.IsNullOrEmpty(filePath))
+            if (fallbackSupport && !string.IsNullOrEmpty(filePath))
             {
                 string tempFilePath = filePath + ".temp";
                 fallbackFilePaths.Add(tempFilePath);
