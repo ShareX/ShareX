@@ -92,14 +92,7 @@ namespace ShareX.UploadersLib.ImageUploaders
                 throw new Exception("Unsupported request format: " + uploader.Body);
             }
 
-            try
-            {
-                uploader.ParseResponse(result, LastResponseInfo, input);
-            }
-            catch (Exception e)
-            {
-                Errors.Add(Resources.CustomFileUploader_Upload_Response_parse_failed_ + Environment.NewLine + e);
-            }
+            uploader.TryParseResponse(result, LastResponseInfo, input, false, Errors);
 
             return result;
         }

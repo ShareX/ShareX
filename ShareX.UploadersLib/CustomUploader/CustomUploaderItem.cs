@@ -309,6 +309,32 @@ namespace ShareX.UploadersLib
             }
         }
 
+        public void TryParseResponse(UploadResult result, ResponseInfo responseInfo, CustomUploaderInput input, bool isShortenedURL = false, List<string> errors = null)
+        {
+            try
+            {
+                ParseResponse(result, responseInfo, input, isShortenedURL);
+            }
+            catch (JsonReaderException e)
+            {
+                if (errors != null)
+                {
+                    string hostName = URLHelpers.GetHostName(RequestURL);
+                    errors.Add($"Invalid response content is returned from host ({hostName}), expected response content is JSON." +
+                        Environment.NewLine + Environment.NewLine + e);
+                }
+            }
+            catch (Exception e)
+            {
+                if (errors != null)
+                {
+                    string hostName = URLHelpers.GetHostName(RequestURL);
+                    errors.Add($"Unable to parse response content returned from host ({hostName})." +
+                        Environment.NewLine + Environment.NewLine + e);
+                }
+            }
+        }
+
         public void CheckBackwardCompatibility()
         {
             CheckRequestURL();
