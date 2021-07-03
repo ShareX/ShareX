@@ -98,7 +98,7 @@ namespace ShareX.UploadersLib.URLShorteners
                 throw new Exception("Unsupported request format: " + uploader.Body);
             }
 
-            uploader.TryParseResponse(result, LastResponseInfo, input, false, Errors);
+            uploader.TryParseResponse(result, LastResponseInfo, input, true, Errors);
 
             return result;
         }
