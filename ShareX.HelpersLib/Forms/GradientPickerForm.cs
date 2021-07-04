@@ -298,8 +298,7 @@ namespace ShareX.HelpersLib
             if (isReady && lvPresets.SelectedItems.Count > 0)
             {
                 ListViewItem lvi = lvPresets.SelectedItems[0];
-                GradientInfo gradientInfo = lvi.Tag as GradientInfo;
-                if (gradientInfo != null)
+                if (lvi.Tag is GradientInfo gradientInfo)
                 {
                     Gradient = gradientInfo.Copy();
                     UpdateGradientList(true);

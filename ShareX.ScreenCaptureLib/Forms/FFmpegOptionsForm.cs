@@ -606,9 +606,7 @@ namespace ShareX.ScreenCaptureLib
 
         private async void eiFFmpeg_ImportRequested(object obj)
         {
-            FFmpegOptions ffmpegOptions = obj as FFmpegOptions;
-
-            if (ffmpegOptions != null)
+            if (obj is FFmpegOptions ffmpegOptions)
             {
                 string tempFFmpegPath = Options.FFmpeg.CLIPath;
                 Options.FFmpeg = ffmpegOptions;

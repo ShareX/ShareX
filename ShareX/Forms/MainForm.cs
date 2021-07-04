@@ -819,7 +819,7 @@ namespace ShareX
         {
             if (Program.Settings.Themes == null || Program.Settings.Themes.Count == 0)
             {
-                Program.Settings.Themes = ShareXTheme.GetPresets();
+                Program.Settings.Themes = ShareXTheme.GetDefaultThemes();
                 Program.Settings.SelectedTheme = 0;
             }
 
@@ -981,6 +981,7 @@ namespace ShareX
             HelpersOptions.URLEncodeIgnoreEmoji = Program.Settings.URLEncodeIgnoreEmoji;
             HelpersOptions.DefaultCopyImageFillBackground = Program.Settings.DefaultClipboardCopyImageFillBackground;
             HelpersOptions.UseAlternativeClipboardCopyImage = Program.Settings.UseAlternativeClipboardCopyImage;
+            HelpersOptions.UseAlternativeClipboardGetImage = Program.Settings.UseAlternativeClipboardGetImage;
             HelpersOptions.RotateImageByExifOrientationData = Program.Settings.RotateImageByExifOrientationData;
             HelpersOptions.BrowserPath = Program.Settings.BrowserPath;
             HelpersOptions.RecentColors = Program.Settings.RecentColors;
@@ -1638,8 +1639,7 @@ namespace ShareX
         private void tsmiWindowItems_Click(object sender, EventArgs e)
         {
             ToolStripItem tsi = (ToolStripItem)sender;
-            WindowInfo wi = tsi.Tag as WindowInfo;
-            if (wi != null)
+            if (tsi.Tag is WindowInfo wi)
             {
                 new CaptureWindow(wi.Handle).Capture(true);
             }
@@ -1785,6 +1785,11 @@ namespace ShareX
             UploadManager.ShowShortenURLDialog();
         }
 
+        private void tsmiTweetMessage_Click(object sender, EventArgs e)
+        {
+            TaskHelpers.TweetMessage();
+        }
+
         private void tsmiColorPicker_Click(object sender, EventArgs e)
         {
             TaskHelpers.ShowScreenColorPickerDialog();
@@ -1795,6 +1800,11 @@ namespace ShareX
             TaskHelpers.OpenScreenColorPicker();
         }
 
+        private void tsmiRuler_Click(object sender, EventArgs e)
+        {
+            TaskHelpers.OpenRuler();
+        }
+
         private void tsmiImageEditor_Click(object sender, EventArgs e)
         {
             TaskHelpers.OpenImageEditor();
@@ -1803,31 +1813,6 @@ namespace ShareX
         private void tsmiImageEffects_Click(object sender, EventArgs e)
         {
             TaskHelpers.OpenImageEffects();
-        }
-
-        private void tsmiHashCheck_Click(object sender, EventArgs e)
-        {
-            TaskHelpers.OpenHashCheck();
-        }
-
-        private void tsmiDNSChanger_Click(object sender, EventArgs e)
-        {
-            TaskHelpers.OpenDNSChanger();
-        }
-
-        private void tsmiQRCode_Click(object sender, EventArgs e)
-        {
-            TaskHelpers.OpenQRCode();
-        }
-
-        private void tsmiRuler_Click(object sender, EventArgs e)
-        {
-            TaskHelpers.OpenRuler();
-        }
-
-        private void tsmiIndexFolder_Click(object sender, EventArgs e)
-        {
-            TaskHelpers.OpenDirectoryIndexer();
         }
 
         private void tsmiImageCombiner_Click(object sender, EventArgs e)
@@ -1855,19 +1840,39 @@ namespace ShareX
             TaskHelpers.OpenVideoThumbnailer();
         }
 
+        private void tsmiQRCode_Click(object sender, EventArgs e)
+        {
+            TaskHelpers.OpenQRCode();
+        }
+
+        private void tsmiHashCheck_Click(object sender, EventArgs e)
+        {
+            TaskHelpers.OpenHashCheck();
+        }
+
+        private void tsmiIndexFolder_Click(object sender, EventArgs e)
+        {
+            TaskHelpers.OpenDirectoryIndexer();
+        }
+
         private void tsmiClipboardViewer_Click(object sender, EventArgs e)
         {
             TaskHelpers.OpenClipboardViewer();
         }
 
-        private void tsmiTweetMessage_Click(object sender, EventArgs e)
+        private void tsmiInspectWindow_Click(object sender, EventArgs e)
         {
-            TaskHelpers.TweetMessage();
+            TaskHelpers.OpenInspectWindow();
         }
 
         private void tsmiMonitorTest_Click(object sender, EventArgs e)
         {
             TaskHelpers.OpenMonitorTest();
+        }
+
+        private void tsmiDNSChanger_Click(object sender, EventArgs e)
+        {
+            TaskHelpers.OpenDNSChanger();
         }
 
         private void TsddbAfterCaptureTasks_DropDownOpening(object sender, EventArgs e)
@@ -1895,20 +1900,6 @@ namespace ShareX
             TaskHelpers.OpenCustomUploaderSettingsWindow();
         }
 
-        private void tsbTaskSettings_Click(object sender, EventArgs e)
-        {
-            using (TaskSettingsForm taskSettingsForm = new TaskSettingsForm(Program.DefaultTaskSettings, true))
-            {
-                taskSettingsForm.ShowDialog();
-            }
-
-            if (!IsDisposed)
-            {
-                AfterTaskSettingsJobs();
-                SettingManager.SaveApplicationConfigAsync();
-            }
-        }
-
         private void tsbApplicationSettings_Click(object sender, EventArgs e)
         {
             using (ApplicationSettingsForm settingsForm = new ApplicationSettingsForm())
@@ -1920,6 +1911,20 @@ namespace ShareX
             {
                 AfterApplicationSettingsJobs();
                 UpdateWorkflowsMenu();
+                SettingManager.SaveApplicationConfigAsync();
+            }
+        }
+
+        private void tsbTaskSettings_Click(object sender, EventArgs e)
+        {
+            using (TaskSettingsForm taskSettingsForm = new TaskSettingsForm(Program.DefaultTaskSettings, true))
+            {
+                taskSettingsForm.ShowDialog();
+            }
+
+            if (!IsDisposed)
+            {
+                AfterTaskSettingsJobs();
                 SettingManager.SaveApplicationConfigAsync();
             }
         }
@@ -2086,9 +2091,7 @@ namespace ShareX
 
         private void niTray_BalloonTipClicked(object sender, EventArgs e)
         {
-            BalloonTipAction action = niTray.Tag as BalloonTipAction;
-
-            if (action != null)
+            if (niTray.Tag is BalloonTipAction action)
             {
                 switch (action.ClickAction)
                 {
@@ -2124,8 +2127,7 @@ namespace ShareX
         private void tsmiTrayWindowItems_Click(object sender, EventArgs e)
         {
             ToolStripItem tsi = (ToolStripItem)sender;
-            WindowInfo wi = tsi.Tag as WindowInfo;
-            if (wi != null)
+            if (tsi.Tag is WindowInfo wi)
             {
                 new CaptureWindow(wi.Handle).Capture();
             }
@@ -2432,6 +2434,16 @@ namespace ShareX
         private void tsmiCombineImages_Click(object sender, EventArgs e)
         {
             uim.CombineImages();
+        }
+
+        private void tsmiCombineImagesHorizontally_Click(object sender, EventArgs e)
+        {
+            uim.CombineImages(Orientation.Horizontal);
+        }
+
+        private void tsmiCombineImagesVertically_Click(object sender, EventArgs e)
+        {
+            uim.CombineImages(Orientation.Vertical);
         }
 
         private void tsmiShowResponse_Click(object sender, EventArgs e)

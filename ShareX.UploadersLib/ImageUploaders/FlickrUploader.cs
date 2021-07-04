@@ -117,7 +117,7 @@ namespace ShareX.UploadersLib.ImageUploaders
             if (!string.IsNullOrEmpty(Settings.ContentType)) args.Add("content_type", Settings.ContentType);
             if (!string.IsNullOrEmpty(Settings.Hidden)) args.Add("hidden", Settings.Hidden);
 
-            string query = OAuthManager.GenerateQuery(url, args, HttpMethod.POST, AuthInfo, out Dictionary<string, string> parameters);
+            OAuthManager.GenerateQuery(url, args, HttpMethod.POST, AuthInfo, out Dictionary<string, string> parameters);
 
             UploadResult result = SendRequestFile(url, stream, fileName, "photo", parameters);
 
@@ -163,7 +163,7 @@ namespace ShareX.UploadersLib.ImageUploaders
                             return xele.Element(field);
                         case "fail":
                             XElement err = xele.Element("err");
-                            string code = err.GetAttributeValue("code");
+                            //string code = err.GetAttributeValue("code");
                             string msg = err.GetAttributeValue("msg");
                             Errors.Add(msg);
                             break;

@@ -131,10 +131,7 @@ namespace ShareX.IndexerLib
 
         protected void OnUploadRequested(string source)
         {
-            if (UploadRequested != null)
-            {
-                UploadRequested(source);
-            }
+            UploadRequested?.Invoke(source);
         }
 
         private void btnSaveAs_Click(object sender, EventArgs e)

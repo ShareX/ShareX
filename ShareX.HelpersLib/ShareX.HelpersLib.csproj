@@ -165,6 +165,7 @@
     <Compile Include="Settings\DPAPIEncryptedStringPropertyResolver.cs" />
     <Compile Include="Settings\DPAPIEncryptedStringValueProvider.cs" />
     <Compile Include="Settings\JsonEncryptAttribute.cs" />
+    <Compile Include="Settings\KnownTypesSerializationBinder.cs" />
     <Compile Include="SevenZipManager.cs" />
     <Compile Include="Input\HotkeyForm.cs">
       <SubType>Form</SubType>
@@ -297,9 +298,9 @@
     <Compile Include="ShareXTheme.cs" />
     <Compile Include="TextBoxTraceListener.cs" />
     <Compile Include="Settings\SafeStringEnumConverter.cs" />
-    <Compile Include="Settings\TypeNameSerializationBinder.cs" />
     <Compile Include="UITypeEditors\EnumDescriptionConverter.cs" />
     <Compile Include="UITypeEditors\DirectoryNameEditor.cs" />
+    <Compile Include="UITypeEditors\EnumProperNameKeepCaseConverter.cs" />
     <Compile Include="UITypeEditors\EnumProperNameConverter.cs" />
     <Compile Include="UITypeEditors\GradientEditor.cs" />
     <Compile Include="UITypeEditors\JsonFileNameEditor.cs" />
@@ -492,11 +493,17 @@
     <Compile Include="XmlFont.cs" />
     <Compile Include="Zip\ZipEntryInfo.cs" />
     <Compile Include="Zip\ZipManager.cs" />
+    <EmbeddedResource Include="Controls\ExportImportControl.fa-IR.resx">
+      <DependentUpon>ExportImportControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\ExportImportControl.ja-JP.resx">
       <DependentUpon>ExportImportControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\ExportImportControl.pt-PT.resx">
       <DependentUpon>ExportImportControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\MyPictureBox.fa-IR.resx">
+      <DependentUpon>MyPictureBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\MyPictureBox.ja-JP.resx">
       <DependentUpon>MyPictureBox.cs</DependentUpon>
@@ -1330,6 +1337,9 @@
     <EmbeddedResource Include="UpdateChecker\UpdateCheckerLabel.es.resx">
       <DependentUpon>UpdateCheckerLabel.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UpdateChecker\UpdateCheckerLabel.fa-IR.resx">
+      <DependentUpon>UpdateCheckerLabel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UpdateChecker\UpdateCheckerLabel.fr.resx">
       <DependentUpon>UpdateCheckerLabel.cs</DependentUpon>
     </EmbeddedResource>
@@ -1390,6 +1400,9 @@
       <DependentUpon>UpdateMessageBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UpdateChecker\UpdateMessageBox.es.resx">
+      <DependentUpon>UpdateMessageBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateChecker\UpdateMessageBox.fa-IR.resx">
       <DependentUpon>UpdateMessageBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UpdateChecker\UpdateMessageBox.fr.resx">
@@ -1476,7 +1489,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json">
-      <Version>12.0.3</Version>
+      <Version>13.0.1</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>

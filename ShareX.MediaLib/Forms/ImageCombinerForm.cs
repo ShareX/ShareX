@@ -28,7 +28,7 @@ using ShareX.MediaLib.Properties;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
-using System.IO;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace ShareX.MediaLib
@@ -57,6 +57,7 @@ namespace ShareX.MediaLib
 
             UpdateAlignmentComboBox();
             nudSpace.SetValue(Options.Space);
+            cbAutoFillBackground.Checked = Options.AutoFillBackground;
         }
 
         private void UpdateOrientation()
@@ -164,34 +165,27 @@ namespace ShareX.MediaLib
             Options.Space = (int)nudSpace.Value;
         }
 
+        private void cbAutoFillBackground_CheckedChanged(object sender, EventArgs e)
+        {
+            Options.AutoFillBackground = cbAutoFillBackground.Checked;
+        }
+
         private void btnCombine_Click(object sender, EventArgs e)
         {
             if (lvImages.Items.Count > 0)
             {
-                List<Bitmap> images = new List<Bitmap>();
-
                 try
                 {
-                    foreach (ListViewItem lvi in lvImages.Items)
-                    {
-                        string filePath = lvi.Text;
+                    List<string> imageFiles = lvImages.Items.Cast<ListViewItem>().Select(x => x.Text).ToList();
 
-                        if (File.Exists(filePath))
+                    if (imageFiles.Count > 1)
+                    {
+                        Bitmap output = ImageHelpers.CombineImages(imageFiles, Options.Orientation, Options.Alignment, Options.Space, Options.AutoFillBackground);
+
+                        if (output != null)
                         {
-                            Bitmap bmp = ImageHelpers.LoadImage(filePath);
-
-                            if (bmp != null)
-                            {
-                                images.Add(bmp);
-                            }
+                            OnProcessRequested(output);
                         }
-                    }
-
-                    if (images.Count > 1)
-                    {
-                        Bitmap output = ImageHelpers.CombineImages(images, Options.Orientation, Options.Alignment, Options.Space);
-
-                        OnProcessRequested(output);
                     }
                 }
                 catch (Exception ex)
@@ -199,28 +193,12 @@ namespace ShareX.MediaLib
                     DebugHelper.WriteException(ex);
                     ex.ShowError();
                 }
-                finally
-                {
-                    if (images != null)
-                    {
-                        foreach (Bitmap image in images)
-                        {
-                            if (image != null)
-                            {
-                                image.Dispose();
-                            }
-                        }
-                    }
-                }
             }
         }
 
         protected void OnProcessRequested(Bitmap bmp)
         {
-            if (ProcessRequested != null)
-            {
-                ProcessRequested(bmp);
-            }
+            ProcessRequested?.Invoke(bmp);
         }
 
         private void ImageCombinerForm_DragEnter(object sender, DragEventArgs e)
@@ -237,16 +215,11 @@ namespace ShareX.MediaLib
 
         private void ImageCombinerForm_DragDrop(object sender, DragEventArgs e)
         {
-            if (e.Data.GetDataPresent(DataFormats.FileDrop, false))
+            if (e.Data.GetDataPresent(DataFormats.FileDrop, false) && e.Data.GetData(DataFormats.FileDrop, false) is string[] files)
             {
-                string[] files = e.Data.GetData(DataFormats.FileDrop, false) as string[];
-
-                if (files != null)
+                foreach (string file in files)
                 {
-                    foreach (string file in files)
-                    {
-                        lvImages.Items.Add(file);
-                    }
+                    lvImages.Items.Add(file);
                 }
             }
         }

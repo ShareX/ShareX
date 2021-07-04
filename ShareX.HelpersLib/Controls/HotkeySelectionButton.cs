@@ -187,10 +187,7 @@ namespace ShareX.HelpersLib
 
         protected void OnHotkeyChanged()
         {
-            if (HotkeyChanged != null)
-            {
-                HotkeyChanged(this, EventArgs.Empty);
-            }
+            HotkeyChanged?.Invoke(this, EventArgs.Empty);
         }
     }
 }

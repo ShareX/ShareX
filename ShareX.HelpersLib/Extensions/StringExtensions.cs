@@ -277,8 +277,7 @@ namespace ShareX.HelpersLib
 
         public static bool IsNumber(this string text)
         {
-            int num;
-            return int.TryParse(text, out num);
+            return int.TryParse(text, out _);
         }
 
         public static string[] Lines(this string text)
@@ -289,7 +288,7 @@ namespace ShareX.HelpersLib
         public static IEnumerable<Tuple<string, string>> ForEachBetween(this string text, string front, string back)
         {
             int f = 0;
-            int b = 0;
+            int b;
             while (text.Length > f && (f = text.IndexOf(front, f)) >= 0 && (b = text.IndexOf(back, f + front.Length)) >= 0)
             {
                 string result = text.Substring(f, (b + back.Length) - f);

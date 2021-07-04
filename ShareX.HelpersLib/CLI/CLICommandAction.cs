@@ -71,9 +71,7 @@ namespace ShareX.HelpersLib
                 }
                 else if (NumberAction != null)
                 {
-                    int num;
-
-                    if (int.TryParse(parameter, out num))
+                    if (int.TryParse(parameter, out int num))
                     {
                         NumberAction(num);
                     }

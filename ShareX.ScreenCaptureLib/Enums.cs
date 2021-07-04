@@ -320,8 +320,23 @@ namespace ShareX.ScreenCaptureLib
 
     public enum ImageInsertMethod
     {
+        None,
         Center,
         CanvasExpandDown,
         CanvasExpandRight
+    }
+
+    public enum BorderStyle // Localized
+    {
+        Solid,
+        Dash,
+        Dot,
+        DashDot,
+        DashDotDot
+    }
+
+    public enum ScreenRecordState
+    {
+        Waiting, BeforeStart, AfterStart, AfterRecordingStart, Encoding
     }
 }

@@ -39,8 +39,7 @@ namespace ShareX.ScreenCaptureLib
 
         public int FontSize { get; set; }
         public int Number { get; set; }
-        public bool UseLetters { get; set; }
-
+        public StepType StepType { get; set; } = StepType.Numbers;
         public bool IsTailActive { get; set; }
 
         private Point tailPosition;
@@ -111,7 +110,7 @@ namespace ShareX.ScreenCaptureLib
             ShadowColor = AnnotationOptions.ShadowColor;
             ShadowOffset = AnnotationOptions.ShadowOffset;
             FontSize = AnnotationOptions.StepFontSize;
-            UseLetters = AnnotationOptions.StepUseLetters;
+            StepType = AnnotationOptions.StepType;
         }
 
         public override void OnConfigSave()
@@ -123,7 +122,7 @@ namespace ShareX.ScreenCaptureLib
             AnnotationOptions.ShadowColor = ShadowColor;
             AnnotationOptions.ShadowOffset = ShadowOffset;
             AnnotationOptions.StepFontSize = FontSize;
-            AnnotationOptions.StepUseLetters = UseLetters;
+            AnnotationOptions.StepType = StepType;
         }
 
         public override void OnDraw(Graphics g)
@@ -131,9 +130,26 @@ namespace ShareX.ScreenCaptureLib
             DrawNumber(g);
         }
 
+        private string GetText()
+        {
+            switch (StepType)
+            {
+                case StepType.LettersUppercase:
+                    return Helpers.NumberToLetters(Number);
+                case StepType.LettersLowercase:
+                    return Helpers.NumberToLetters(Number).ToLowerInvariant();
+                case StepType.RomanNumeralsUppercase:
+                    return Helpers.NumberToRomanNumeral(Number);
+                case StepType.RomanNumeralsLowercase:
+                    return Helpers.NumberToRomanNumeral(Number).ToLowerInvariant();
+                default:
+                    return Number.ToString();
+            }
+        }
+
         protected void DrawNumber(Graphics g)
         {
-            string text = UseLetters ? Helpers.NumberToLetters(Number) : Number.ToString();
+            string text = GetText();
 
             using (Font font = new Font(FontFamily.GenericSansSerif, FontSize, FontStyle.Bold))
             {
@@ -148,11 +164,11 @@ namespace ShareX.ScreenCaptureLib
                 {
                     if (IsBorderVisible)
                     {
-                        DrawEllipse(g, ShadowColor, BorderSize, Color.Transparent, Rectangle.LocationOffset(ShadowOffset));
+                        DrawEllipse(g, ShadowColor, BorderSize, BorderStyle, Color.Transparent, Rectangle.LocationOffset(ShadowOffset));
                     }
                     else if (FillColor.A == 255)
                     {
-                        DrawEllipse(g, Color.Transparent, 0, ShadowColor, Rectangle.LocationOffset(ShadowOffset));
+                        DrawEllipse(g, Color.Transparent, 0, BorderStyle, ShadowColor, Rectangle.LocationOffset(ShadowOffset));
                     }
                 }
 
@@ -177,7 +193,7 @@ namespace ShareX.ScreenCaptureLib
                     DrawTail(g, tailColor, Rectangle.Offset(BorderSize / 2), TailPosition);
                 }
 
-                DrawEllipse(g, BorderColor, BorderSize, FillColor, Rectangle);
+                DrawEllipse(g, BorderColor, BorderSize, BorderStyle, FillColor, Rectangle);
 
                 if (Shadow)
                 {

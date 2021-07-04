@@ -106,9 +106,7 @@ namespace ShareX
         {
             foreach (ListViewItem lvi in ListViewControl.Items)
             {
-                WorkerTask tag = lvi.Tag as WorkerTask;
-
-                if (tag != null && tag == task)
+                if (lvi.Tag is WorkerTask tag && tag == task)
                 {
                     return lvi;
                 }

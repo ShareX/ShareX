@@ -203,4 +203,13 @@ namespace ShareX.HelpersLib
         win32,
         macos64
     }
+
+    public enum StepType // Localized
+    {
+        Numbers,
+        LettersUppercase,
+        LettersLowercase,
+        RomanNumeralsUppercase,
+        RomanNumeralsLowercase
+    }
 }

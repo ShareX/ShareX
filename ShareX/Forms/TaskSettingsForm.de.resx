@@ -502,7 +502,7 @@
     <value>Dateierweiterungsfilter:</value>
   </data>
   <data name="tpUploaderFilters.Text" xml:space="preserve">
-    <value>Uploader-Filter</value>
+    <value>Uploadfilter</value>
   </data>
   <data name="lblScreenshotDelay.Text" xml:space="preserve">
     <value>Screenshot-Verzögerung:</value>

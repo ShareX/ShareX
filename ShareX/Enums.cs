@@ -220,6 +220,8 @@ namespace ShareX
         ImageThumbnailer,
         VideoConverter,
         VideoThumbnailer,
+        InspectWindow,
+        ClipboardViewer,
         TweetMessage,
         MonitorTest,
         // Other
@@ -239,24 +241,27 @@ namespace ShareX
         ToastNotification
     }
 
-    [DefaultValue(OpenUrl)]
-    public enum ToastClickAction
+    public enum ToastClickAction  // Localized
     {
         [Description("Close notification")]
         CloseNotification,
         [Description("Annotate image")]
         AnnotateImage,
-        [Description("Copy image to clipboard")]
+        [Description("Copy image")]
         CopyImageToClipboard,
-        [Description("Copy URL")]
+        [Description("Copy file")]
+        CopyFile,
+        [Description("Copy file path")]
+        CopyFilePath,
+        [Description("Copy link")]
         CopyUrl,
         [Description("Open file")]
         OpenFile,
         [Description("Open folder")]
         OpenFolder,
-        [Description("Open URL")]
+        [Description("Open link")]
         OpenUrl,
-        [Description("Upload")]
+        [Description("Upload file")]
         Upload
     }
 
@@ -281,11 +286,6 @@ namespace ShareX
     public enum ThumbnailTitleLocation
     {
         Top, Bottom
-    }
-
-    public enum ScreenRecordState
-    {
-        Waiting, BeforeStart, AfterStart, AfterRecordingStart, Encoding
     }
 
     public enum RegionCaptureType

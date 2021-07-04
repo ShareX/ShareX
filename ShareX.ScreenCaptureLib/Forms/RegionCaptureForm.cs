@@ -391,12 +391,10 @@ namespace ShareX.ScreenCaptureLib
                 PanningStrech.Y -= deltaY;
             }
 
-            Size panLimitSize = new Size(
-                Math.Min((int)Math.Round(ClientArea.Width * 0.25f), CanvasRectangle.Width),
+            Size panLimitSize = new Size(Math.Min((int)Math.Round(ClientArea.Width * 0.25f), CanvasRectangle.Width),
                 Math.Min((int)Math.Round(ClientArea.Height * 0.25f), CanvasRectangle.Height));
 
-            Rectangle limitRectangle = new Rectangle(
-                ClientArea.X + panLimitSize.Width, ClientArea.Y + panLimitSize.Height,
+            Rectangle limitRectangle = new Rectangle(ClientArea.X + panLimitSize.Width, ClientArea.Y + panLimitSize.Height,
                 ClientArea.Width - (panLimitSize.Width * 2), ClientArea.Height - (panLimitSize.Height * 2));
 
             deltaX = Math.Max(deltaX, limitRectangle.Left - CanvasRectangle.Right);
@@ -454,9 +452,8 @@ namespace ShareX.ScreenCaptureLib
 
         private void UpdateCenterOffset()
         {
-            CanvasCenterOffset = new Vector2(
-                (CanvasRectangle.X + (CanvasRectangle.Width / 2f)) - (ClientArea.Width / 2f),
-                (CanvasRectangle.Y + (CanvasRectangle.Height / 2f)) - (ClientArea.Height / 2f));
+            CanvasCenterOffset = new Vector2(CanvasRectangle.X + (CanvasRectangle.Width / 2f) - (ClientArea.Width / 2f),
+                CanvasRectangle.Y + (CanvasRectangle.Height / 2f) - (ClientArea.Height / 2f));
         }
 
         public void CenterCanvas()
@@ -574,7 +571,7 @@ namespace ShareX.ScreenCaptureLib
                 return;
             }
 
-            if (!isKeyAllowed && timerStart.ElapsedMilliseconds < 1000)
+            if (!isKeyAllowed && timerStart.ElapsedMilliseconds < Options.InputDelay)
             {
                 return;
             }
@@ -1172,7 +1169,7 @@ namespace ShareX.ScreenCaptureLib
                 totalSize.Width = Math.Max(totalSize.Width, infoTextRect.Width);
 
                 totalSize.Height += infoTextRect.Height;
-                itemCount++;
+                //itemCount++;
             }
 
             int x = mousePos.X + cursorOffsetX;
@@ -1256,6 +1253,9 @@ namespace ShareX.ScreenCaptureLib
                 pixelSize = 10;
             }
 
+            Rectangle srcRect = new Rectangle(position.X - (horizontalPixelCount / 2) - CanvasRectangle.X,
+                position.Y - (verticalPixelCount / 2) - CanvasRectangle.Y, horizontalPixelCount, verticalPixelCount);
+
             int width = horizontalPixelCount * pixelSize;
             int height = verticalPixelCount * pixelSize;
             Bitmap bmp = new Bitmap(width - 1, height - 1);
@@ -1263,11 +1263,14 @@ namespace ShareX.ScreenCaptureLib
             using (Graphics g = Graphics.FromImage(bmp))
             {
                 g.InterpolationMode = InterpolationMode.NearestNeighbor;
+
+                if (!new Rectangle(0, 0, img.Width, img.Height).Contains(srcRect))
+                {
+                    g.Clear(canvasBackgroundColor);
+                }
+
                 g.PixelOffsetMode = PixelOffsetMode.Half;
-
-                g.DrawImage(img, new Rectangle(0, 0, width, height), new Rectangle(position.X - (horizontalPixelCount / 2) - CanvasRectangle.X,
-                    position.Y - (verticalPixelCount / 2) - CanvasRectangle.Y, horizontalPixelCount, verticalPixelCount), GraphicsUnit.Pixel);
-
+                g.DrawImage(img, new Rectangle(0, 0, width, height), srcRect, GraphicsUnit.Pixel);
                 g.PixelOffsetMode = PixelOffsetMode.None;
 
                 using (SolidBrush crosshairBrush = new SolidBrush(Color.FromArgb(125, Color.LightBlue)))

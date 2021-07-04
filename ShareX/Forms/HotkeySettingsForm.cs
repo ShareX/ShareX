@@ -44,6 +44,8 @@ namespace ShareX
             InitializeComponent();
             ShareXResources.ApplyTheme(this);
 
+            btnHotkeysDisabled.Visible = Program.Settings.DisableHotkeys;
+
             PrepareHotkeys(hotkeyManager);
         }
 
@@ -276,6 +278,12 @@ namespace ShareX
                 Selected = null;
                 UpdateButtons();
             }
+        }
+
+        private void btnHotkeysDisabled_Click(object sender, EventArgs e)
+        {
+            TaskHelpers.ToggleHotkeys(false);
+            btnHotkeysDisabled.Visible = false;
         }
     }
 }

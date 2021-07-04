@@ -135,4 +135,52 @@
   <data name="tsmiLoadImageFromClipboard.Text" xml:space="preserve">
     <value>Da área de transferência</value>
   </data>
+  <data name="btnClose.Text" xml:space="preserve">
+    <value>Fechar</value>
+  </data>
+  <data name="btnEffectAdd.ToolTip" xml:space="preserve">
+    <value>Adicionar</value>
+  </data>
+  <data name="btnEffectClear.ToolTip" xml:space="preserve">
+    <value>Limpar...</value>
+  </data>
+  <data name="btnEffectDuplicate.ToolTip" xml:space="preserve">
+    <value>Duplicara</value>
+  </data>
+  <data name="btnEffectRefresh.ToolTip" xml:space="preserve">
+    <value>Atualizar</value>
+  </data>
+  <data name="btnEffectRemove.ToolTip" xml:space="preserve">
+    <value>Remover</value>
+  </data>
+  <data name="btnImageEffects.Text" xml:space="preserve">
+    <value>Efeitos de imagem ...</value>
+  </data>
+  <data name="btnPackager.Text" xml:space="preserve">
+    <value>Empacotador...</value>
+  </data>
+  <data name="btnPresetDuplicate.ToolTip" xml:space="preserve">
+    <value>Duplicar</value>
+  </data>
+  <data name="btnPresetNew.ToolTip" xml:space="preserve">
+    <value>Novo</value>
+  </data>
+  <data name="btnPresetRemove.ToolTip" xml:space="preserve">
+    <value>Remover</value>
+  </data>
+  <data name="btnUploadImage.Text" xml:space="preserve">
+    <value>Enviar imagem</value>
+  </data>
+  <data name="lblEffect.Text" xml:space="preserve">
+    <value>Efeitos:</value>
+  </data>
+  <data name="lblEffects.Text" xml:space="preserve">
+    <value>Efeitos:</value>
+  </data>
+  <data name="lblPresetName.Text" xml:space="preserve">
+    <value>Nome da predefinição:</value>
+  </data>
+  <data name="lblPresets.Text" xml:space="preserve">
+    <value>Predefinições:</value>
+  </data>
 </root>

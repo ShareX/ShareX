@@ -41,7 +41,7 @@ namespace ShareX.UploadersLib
 
         private static Dictionary<T, T2> CacheServices<T, T2>() where T2 : UploaderService<T>
         {
-            T2[] instances = Helpers.GetInstances<T2>();
+            IEnumerable<T2> instances = Helpers.GetInstances<T2>();
 
             AllServices.AddRange(instances.OfType<IUploaderService>());
             AllGenericUploaderServices.AddRange(instances.OfType<IGenericUploaderService>());

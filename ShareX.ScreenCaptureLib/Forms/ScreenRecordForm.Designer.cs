@@ -1,4 +1,4 @@
-﻿namespace ShareX
+﻿namespace ShareX.ScreenCaptureLib
 {
     partial class ScreenRecordForm
     {
@@ -75,14 +75,14 @@
             // 
             // tsmiStart
             // 
-            this.tsmiStart.Image = global::ShareX.Properties.Resources.control_record;
+            this.tsmiStart.Image = global::ShareX.ScreenCaptureLib.Properties.Resources.control_record;
             this.tsmiStart.Name = "tsmiStart";
             resources.ApplyResources(this.tsmiStart, "tsmiStart");
             this.tsmiStart.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnStart_MouseClick);
             // 
             // tsmiAbort
             // 
-            this.tsmiAbort.Image = global::ShareX.Properties.Resources.cross;
+            this.tsmiAbort.Image = global::ShareX.ScreenCaptureLib.Properties.Resources.cross;
             this.tsmiAbort.Name = "tsmiAbort";
             resources.ApplyResources(this.tsmiAbort, "tsmiAbort");
             this.tsmiAbort.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnAbort_MouseClick);

@@ -188,11 +188,37 @@ namespace ShareX
 
             #region General
 
+            #region Notifications
+
             cbPlaySoundAfterCapture.Checked = TaskSettings.GeneralSettings.PlaySoundAfterCapture;
             cbPlaySoundAfterUpload.Checked = TaskSettings.GeneralSettings.PlaySoundAfterUpload;
-            cboPopUpNotification.Items.Clear();
-            cboPopUpNotification.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<PopUpNotificationType>());
-            cboPopUpNotification.SelectedIndex = (int)TaskSettings.GeneralSettings.PopUpNotification;
+            cbShowToastNotificationAfterTaskCompleted.Checked = TaskSettings.GeneralSettings.ShowToastNotificationAfterTaskCompleted;
+            gbToastWindow.Enabled = TaskSettings.GeneralSettings.ShowToastNotificationAfterTaskCompleted;
+            nudToastWindowDuration.SetValue((decimal)TaskSettings.GeneralSettings.ToastWindowDuration);
+            nudToastWindowFadeDuration.SetValue((decimal)TaskSettings.GeneralSettings.ToastWindowFadeDuration);
+            cbToastWindowPlacement.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<ContentAlignment>());
+            cbToastWindowPlacement.SelectedIndex = TaskSettings.GeneralSettings.ToastWindowPlacement.GetIndex();
+            nudToastWindowSizeWidth.SetValue(TaskSettings.GeneralSettings.ToastWindowSize.Width);
+            nudToastWindowSizeHeight.SetValue(TaskSettings.GeneralSettings.ToastWindowSize.Height);
+            cbToastWindowLeftClickAction.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<ToastClickAction>());
+            cbToastWindowLeftClickAction.SelectedIndex = (int)TaskSettings.GeneralSettings.ToastWindowLeftClickAction;
+            cbToastWindowRightClickAction.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<ToastClickAction>());
+            cbToastWindowRightClickAction.SelectedIndex = (int)TaskSettings.GeneralSettings.ToastWindowRightClickAction;
+            cbToastWindowMiddleClickAction.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<ToastClickAction>());
+            cbToastWindowMiddleClickAction.SelectedIndex = (int)TaskSettings.GeneralSettings.ToastWindowMiddleClickAction;
+            cbUseCustomCaptureSound.Checked = TaskSettings.GeneralSettings.UseCustomCaptureSound;
+            txtCustomCaptureSoundPath.Enabled = btnCustomCaptureSoundPath.Enabled = TaskSettings.GeneralSettings.UseCustomCaptureSound;
+            txtCustomCaptureSoundPath.Text = TaskSettings.GeneralSettings.CustomCaptureSoundPath;
+            cbUseCustomTaskCompletedSound.Checked = TaskSettings.GeneralSettings.UseCustomTaskCompletedSound;
+            txtCustomTaskCompletedSoundPath.Enabled = btnCustomTaskCompletedSoundPath.Enabled = TaskSettings.GeneralSettings.UseCustomTaskCompletedSound;
+            txtCustomTaskCompletedSoundPath.Text = TaskSettings.GeneralSettings.CustomTaskCompletedSoundPath;
+            cbUseCustomErrorSound.Checked = TaskSettings.GeneralSettings.UseCustomErrorSound;
+            txtCustomErrorSoundPath.Enabled = btnCustomErrorSoundPath.Enabled = TaskSettings.GeneralSettings.UseCustomErrorSound;
+            txtCustomErrorSoundPath.Text = TaskSettings.GeneralSettings.CustomErrorSoundPath;
+            cbDisableNotifications.Checked = TaskSettings.GeneralSettings.DisableNotifications;
+            cbDisableNotificationsOnFullscreen.Checked = TaskSettings.GeneralSettings.DisableNotificationsOnFullscreen;
+
+            #endregion
 
             #endregion General
 
@@ -436,7 +462,7 @@ namespace ShareX
 
         private void tttvMain_TabChanged(TabPage tabPage)
         {
-            if (IsDefault && tabPage == tpUploadMain)
+            if (IsDefault && (tabPage == tpGeneralMain || tabPage == tpUploadMain))
             {
                 tttvMain.SelectChildNode();
             }
@@ -458,7 +484,7 @@ namespace ShareX
         {
             if (!IsDefault)
             {
-                pGeneral.Enabled = !TaskSettings.UseDefaultGeneralSettings;
+                tpNotifications.Enabled = !TaskSettings.UseDefaultGeneralSettings;
                 pImage.Enabled = tpEffects.Enabled = tpThumbnail.Enabled = !TaskSettings.UseDefaultImageSettings;
                 pCapture.Enabled = tpRegionCapture.Enabled = tpScreenRecorder.Enabled = tpOCR.Enabled = !TaskSettings.UseDefaultCaptureSettings;
                 pActions.Enabled = !TaskSettings.UseDefaultActions;
@@ -657,10 +683,10 @@ namespace ShareX
             btnTask.Text = string.Format(Resources.TaskSettingsForm_UpdateUploaderMenuNames_Task___0_, TaskSettings.Job.GetLocalizedDescription());
 
             btnAfterCapture.Text = string.Format(Resources.TaskSettingsForm_UpdateUploaderMenuNames_After_capture___0_,
-                string.Join(", ", TaskSettings.AfterCaptureJob.GetFlags<AfterCaptureTasks>().Select(x => x.GetLocalizedDescription())));
+                string.Join(", ", TaskSettings.AfterCaptureJob.GetFlags().Select(x => x.GetLocalizedDescription())));
 
             btnAfterUpload.Text = string.Format(Resources.TaskSettingsForm_UpdateUploaderMenuNames_After_upload___0_,
-                string.Join(", ", TaskSettings.AfterUploadJob.GetFlags<AfterUploadTasks>().Select(x => x.GetLocalizedDescription())));
+                string.Join(", ", TaskSettings.AfterUploadJob.GetFlags().Select(x => x.GetLocalizedDescription())));
 
             string imageUploader = TaskSettings.ImageDestination == ImageDestination.FileUploader ?
                 TaskSettings.ImageFileDestination.GetLocalizedDescription() : TaskSettings.ImageDestination.GetLocalizedDescription();
@@ -760,9 +786,108 @@ namespace ShareX
             TaskSettings.GeneralSettings.PlaySoundAfterUpload = cbPlaySoundAfterUpload.Checked;
         }
 
-        private void cboPopUpNotification_SelectedIndexChanged(object sender, EventArgs e)
+        private void cbShowToastNotificationAfterTaskCompleted_CheckedChanged(object sender, EventArgs e)
         {
-            TaskSettings.GeneralSettings.PopUpNotification = (PopUpNotificationType)cboPopUpNotification.SelectedIndex;
+            TaskSettings.GeneralSettings.ShowToastNotificationAfterTaskCompleted = cbShowToastNotificationAfterTaskCompleted.Checked;
+            gbToastWindow.Enabled = TaskSettings.GeneralSettings.ShowToastNotificationAfterTaskCompleted;
+        }
+
+        private void nudToastWindowDuration_ValueChanged(object sender, EventArgs e)
+        {
+            TaskSettings.GeneralSettings.ToastWindowDuration = (float)nudToastWindowDuration.Value;
+        }
+
+        private void nudToastWindowFadeDuration_ValueChanged(object sender, EventArgs e)
+        {
+            TaskSettings.GeneralSettings.ToastWindowFadeDuration = (float)nudToastWindowFadeDuration.Value;
+        }
+
+        private void cbToastWindowPlacement_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            TaskSettings.GeneralSettings.ToastWindowPlacement = Helpers.GetEnumFromIndex<ContentAlignment>(cbToastWindowPlacement.SelectedIndex);
+        }
+
+        private void nudToastWindowSizeWidth_ValueChanged(object sender, EventArgs e)
+        {
+            TaskSettings.GeneralSettings.ToastWindowSize = new Size((int)nudToastWindowSizeWidth.Value, TaskSettings.GeneralSettings.ToastWindowSize.Height);
+        }
+
+        private void nudToastWindowSizeHeight_ValueChanged(object sender, EventArgs e)
+        {
+            TaskSettings.GeneralSettings.ToastWindowSize = new Size(TaskSettings.GeneralSettings.ToastWindowSize.Width, (int)nudToastWindowSizeHeight.Value);
+        }
+
+        private void cbToastWindowLeftClickAction_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            TaskSettings.GeneralSettings.ToastWindowLeftClickAction = (ToastClickAction)cbToastWindowLeftClickAction.SelectedIndex;
+        }
+
+        private void cbToastWindowRightClickAction_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            TaskSettings.GeneralSettings.ToastWindowRightClickAction = (ToastClickAction)cbToastWindowRightClickAction.SelectedIndex;
+        }
+
+        private void cbToastWindowMiddleClickAction_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            TaskSettings.GeneralSettings.ToastWindowMiddleClickAction = (ToastClickAction)cbToastWindowMiddleClickAction.SelectedIndex;
+        }
+
+        private void cbUseCustomCaptureSound_CheckedChanged(object sender, EventArgs e)
+        {
+            TaskSettings.GeneralSettings.UseCustomCaptureSound = cbUseCustomCaptureSound.Checked;
+            txtCustomCaptureSoundPath.Enabled = btnCustomCaptureSoundPath.Enabled = TaskSettings.GeneralSettings.UseCustomCaptureSound;
+        }
+
+        private void txtCustomCaptureSoundPath_TextChanged(object sender, EventArgs e)
+        {
+            TaskSettings.GeneralSettings.CustomCaptureSoundPath = txtCustomCaptureSoundPath.Text;
+        }
+
+        private void btnCustomCaptureSoundPath_Click(object sender, EventArgs e)
+        {
+            Helpers.BrowseFile(txtCustomCaptureSoundPath);
+        }
+
+        private void cbUseCustomTaskCompletedSound_CheckedChanged(object sender, EventArgs e)
+        {
+            TaskSettings.GeneralSettings.UseCustomTaskCompletedSound = cbUseCustomTaskCompletedSound.Checked;
+            txtCustomTaskCompletedSoundPath.Enabled = btnCustomTaskCompletedSoundPath.Enabled = TaskSettings.GeneralSettings.UseCustomTaskCompletedSound;
+        }
+
+        private void txtCustomTaskCompletedSoundPath_TextChanged(object sender, EventArgs e)
+        {
+            TaskSettings.GeneralSettings.CustomTaskCompletedSoundPath = txtCustomTaskCompletedSoundPath.Text;
+        }
+
+        private void btnCustomTaskCompletedSoundPath_Click(object sender, EventArgs e)
+        {
+            Helpers.BrowseFile(txtCustomTaskCompletedSoundPath);
+        }
+
+        private void cbUseCustomErrorSound_CheckedChanged(object sender, EventArgs e)
+        {
+            TaskSettings.GeneralSettings.UseCustomErrorSound = cbUseCustomErrorSound.Checked;
+            txtCustomErrorSoundPath.Enabled = btnCustomErrorSoundPath.Enabled = TaskSettings.GeneralSettings.UseCustomErrorSound;
+        }
+
+        private void txtCustomErrorSoundPath_TextChanged(object sender, EventArgs e)
+        {
+            TaskSettings.GeneralSettings.CustomErrorSoundPath = txtCustomErrorSoundPath.Text;
+        }
+
+        private void btnCustomErrorSoundPath_Click(object sender, EventArgs e)
+        {
+            Helpers.BrowseFile(txtCustomErrorSoundPath);
+        }
+
+        private void cbDisableNotifications_CheckedChanged(object sender, EventArgs e)
+        {
+            TaskSettings.GeneralSettings.DisableNotifications = cbDisableNotifications.Checked;
+        }
+
+        private void cbDisableNotificationsOnFullscreen_CheckedChanged(object sender, EventArgs e)
+        {
+            TaskSettings.GeneralSettings.DisableNotificationsOnFullscreen = cbDisableNotificationsOnFullscreen.Checked;
         }
 
         #endregion General
@@ -917,9 +1042,7 @@ namespace ShareX
 
         private void btnCaptureCustomRegionSelectRectangle_Click(object sender, EventArgs e)
         {
-            Rectangle rect;
-
-            if (RegionCaptureTasks.GetRectangleRegion(out rect, TaskSettings.CaptureSettings.SurfaceOptions))
+            if (RegionCaptureTasks.GetRectangleRegion(out Rectangle rect, TaskSettings.CaptureSettings.SurfaceOptions))
             {
                 nudCaptureCustomRegionX.SetValue(rect.X);
                 nudCaptureCustomRegionY.SetValue(rect.Y);
@@ -1249,9 +1372,7 @@ namespace ShareX
 
         private void cbNameFormatTimeZone_SelectedIndexChanged(object sender, EventArgs e)
         {
-            TimeZoneInfo timeZoneInfo = cbNameFormatTimeZone.SelectedItem as TimeZoneInfo;
-
-            if (timeZoneInfo != null)
+            if (cbNameFormatTimeZone.SelectedItem is TimeZoneInfo timeZoneInfo)
             {
                 TaskSettings.UploadSettings.CustomTimeZone = timeZoneInfo;
             }
@@ -1303,9 +1424,7 @@ namespace ShareX
 
         private UploaderFilter GetUploaderFilterFromFields()
         {
-            IGenericUploaderService service = cbUploaderFiltersDestination.SelectedItem as IGenericUploaderService;
-
-            if (service != null)
+            if (cbUploaderFiltersDestination.SelectedItem is IGenericUploaderService service)
             {
                 UploaderFilter filter = new UploaderFilter();
                 filter.Uploader = service.ServiceIdentifier;
@@ -1337,9 +1456,8 @@ namespace ShareX
 
             for (int i = 0; i < cbUploaderFiltersDestination.Items.Count; i++)
             {
-                IGenericUploaderService service = cbUploaderFiltersDestination.Items[i] as IGenericUploaderService;
-
-                if (service != null && service.ServiceIdentifier.Equals(filter.Uploader, StringComparison.InvariantCultureIgnoreCase))
+                if (cbUploaderFiltersDestination.Items[i] is IGenericUploaderService service &&
+                    service.ServiceIdentifier.Equals(filter.Uploader, StringComparison.InvariantCultureIgnoreCase))
                 {
                     cbUploaderFiltersDestination.SelectedIndex = i;
                     break;
@@ -1483,6 +1601,11 @@ namespace ShareX
             }
         }
 
+        private void btnActions_Click(object sender, EventArgs e)
+        {
+            URLHelpers.OpenURL(Links.URL_ACTIONS);
+        }
+
         private void lvActions_SelectedIndexChanged(object sender, EventArgs e)
         {
             btnActionsEdit.Enabled = btnActionsDuplicate.Enabled = btnActionsRemove.Enabled = lvActions.SelectedItems.Count > 0;
@@ -1505,7 +1628,7 @@ namespace ShareX
 
         private void WatchFolderAdd(WatchFolderSettings watchFolderSetting)
         {
-            if (watchFolderSetting != null)
+            if (Program.WatchFolderManager != null && watchFolderSetting != null)
             {
                 Program.WatchFolderManager.AddWatchFolder(watchFolderSetting, TaskSettings);
 

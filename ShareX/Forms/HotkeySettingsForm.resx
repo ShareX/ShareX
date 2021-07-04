@@ -127,7 +127,7 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="btnDuplicate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>248, 8</value>
+    <value>254, 8</value>
   </data>
   <data name="btnDuplicate.Size" type="System.Drawing.Size, System.Drawing">
     <value>80, 23</value>
@@ -148,16 +148,16 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnDuplicate.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="btnReset.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="btnReset.Location" type="System.Drawing.Point, System.Drawing">
-    <value>392, 8</value>
+    <value>404, 8</value>
   </data>
   <data name="btnReset.Size" type="System.Drawing.Size, System.Drawing">
-    <value>208, 23</value>
+    <value>196, 23</value>
   </data>
   <data name="btnReset.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -175,7 +175,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnReset.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="flpHotkeys.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
@@ -208,7 +208,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;flpHotkeys.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="btnEdit.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -217,7 +217,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnEdit.Location" type="System.Drawing.Point, System.Drawing">
-    <value>88, 8</value>
+    <value>90, 8</value>
   </data>
   <data name="btnEdit.Size" type="System.Drawing.Size, System.Drawing">
     <value>80, 23</value>
@@ -238,7 +238,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnEdit.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="btnRemove.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -247,7 +247,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnRemove.Location" type="System.Drawing.Point, System.Drawing">
-    <value>168, 8</value>
+    <value>172, 8</value>
   </data>
   <data name="btnRemove.Size" type="System.Drawing.Size, System.Drawing">
     <value>80, 23</value>
@@ -268,7 +268,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnRemove.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="btnAdd.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -295,13 +295,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnAdd.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="btnMoveUp.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
   <data name="btnMoveUp.Location" type="System.Drawing.Point, System.Drawing">
-    <value>328, 8</value>
+    <value>336, 8</value>
   </data>
   <data name="btnMoveUp.Size" type="System.Drawing.Size, System.Drawing">
     <value>32, 23</value>
@@ -311,7 +311,7 @@
   </data>
   <data name="btnMoveUp.Text" xml:space="preserve">
     <value>↑</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;btnMoveUp.Name" xml:space="preserve">
     <value>btnMoveUp</value>
   </data>
@@ -322,7 +322,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnMoveUp.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="btnMoveDown.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -331,7 +331,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnMoveDown.Location" type="System.Drawing.Point, System.Drawing">
-    <value>360, 8</value>
+    <value>370, 8</value>
   </data>
   <data name="btnMoveDown.Size" type="System.Drawing.Size, System.Drawing">
     <value>32, 23</value>
@@ -341,7 +341,7 @@
   </data>
   <data name="btnMoveDown.Text" xml:space="preserve">
     <value>↓</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;btnMoveDown.Name" xml:space="preserve">
     <value>btnMoveDown</value>
   </data>
@@ -352,13 +352,40 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnMoveDown.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="btnHotkeysDisabled.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left, Right</value>
+  </data>
+  <data name="btnHotkeysDisabled.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 424</value>
+  </data>
+  <data name="btnHotkeysDisabled.Size" type="System.Drawing.Size, System.Drawing">
+    <value>591, 30</value>
+  </data>
+  <data name="btnHotkeysDisabled.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="btnHotkeysDisabled.Text" xml:space="preserve">
+    <value>Hotkeys are disabled. You can click here to enable them.</value>
+  </data>
+  <data name="&gt;&gt;btnHotkeysDisabled.Name" xml:space="preserve">
+    <value>btnHotkeysDisabled</value>
+  </data>
+  <data name="&gt;&gt;btnHotkeysDisabled.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnHotkeysDisabled.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnHotkeysDisabled.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
+    <value>96, 96</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>607, 461</value>

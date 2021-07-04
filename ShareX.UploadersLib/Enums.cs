@@ -143,6 +143,8 @@ namespace ShareX.UploadersLib
         Plik,
         [Description("YouTube")]
         YouTube,
+        [Description("Vault.ooo")]
+        Vault_ooo,
         SharedFolder, // Localized
         Email, // Localized
         CustomFileUploader // Localized

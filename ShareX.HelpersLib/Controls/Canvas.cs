@@ -97,10 +97,7 @@ namespace ShareX.HelpersLib
 
         protected void OnDraw(Graphics g)
         {
-            if (Draw != null)
-            {
-                Draw(g);
-            }
+            Draw?.Invoke(g);
         }
     }
 }

@@ -655,15 +655,16 @@ namespace ShareX.HelpersLib
             return reflection;
         }
 
-        public static Bitmap DrawBorder(Bitmap bmp, Color borderColor, int borderSize, BorderType borderType)
+        public static Bitmap DrawBorder(Bitmap bmp, Color borderColor, int borderSize, BorderType borderType, DashStyle dashStyle = DashStyle.Solid)
         {
-            using (Pen borderPen = new Pen(borderColor, borderSize) { Alignment = PenAlignment.Inset })
+            using (Pen borderPen = new Pen(borderColor, borderSize) { Alignment = PenAlignment.Inset, DashStyle = dashStyle })
             {
                 return DrawBorder(bmp, borderPen, borderType);
             }
         }
 
-        public static Bitmap DrawBorder(Bitmap bmp, Color fromBorderColor, Color toBorderColor, LinearGradientMode gradientType, int borderSize, BorderType borderType)
+        public static Bitmap DrawBorder(Bitmap bmp, Color fromBorderColor, Color toBorderColor, LinearGradientMode gradientType, int borderSize, BorderType borderType,
+            DashStyle dashStyle = DashStyle.Solid)
         {
             int width = bmp.Width;
             int height = bmp.Height;
@@ -675,13 +676,13 @@ namespace ShareX.HelpersLib
             }
 
             using (LinearGradientBrush brush = new LinearGradientBrush(new Rectangle(0, 0, width, height), fromBorderColor, toBorderColor, gradientType))
-            using (Pen borderPen = new Pen(brush, borderSize) { Alignment = PenAlignment.Inset })
+            using (Pen borderPen = new Pen(brush, borderSize) { Alignment = PenAlignment.Inset, DashStyle = dashStyle })
             {
                 return DrawBorder(bmp, borderPen, borderType);
             }
         }
 
-        public static Bitmap DrawBorder(Bitmap bmp, GradientInfo gradientInfo, int borderSize, BorderType borderType)
+        public static Bitmap DrawBorder(Bitmap bmp, GradientInfo gradientInfo, int borderSize, BorderType borderType, DashStyle dashStyle = DashStyle.Solid)
         {
             int width = bmp.Width;
             int height = bmp.Height;
@@ -693,7 +694,7 @@ namespace ShareX.HelpersLib
             }
 
             using (LinearGradientBrush brush = gradientInfo.GetGradientBrush(new Rectangle(0, 0, width, height)))
-            using (Pen borderPen = new Pen(brush, borderSize) { Alignment = PenAlignment.Inset })
+            using (Pen borderPen = new Pen(brush, borderSize) { Alignment = PenAlignment.Inset, DashStyle = dashStyle })
             {
                 return DrawBorder(bmp, borderPen, borderType);
             }
@@ -863,7 +864,7 @@ namespace ShareX.HelpersLib
 
         public static bool IsImageTransparent(Bitmap bmp)
         {
-            if (bmp.PixelFormat == PixelFormat.Format32bppArgb)
+            if (bmp.PixelFormat == PixelFormat.Format32bppArgb || bmp.PixelFormat == PixelFormat.Format32bppPArgb)
             {
                 using (UnsafeBitmap unsafeBitmap = new UnsafeBitmap(bmp, true, ImageLockMode.ReadOnly))
                 {
@@ -1816,9 +1817,9 @@ namespace ShareX.HelpersLib
 
         public static Bitmap LoadImage(string filePath)
         {
-            try
+            if (!string.IsNullOrEmpty(filePath))
             {
-                if (!string.IsNullOrEmpty(filePath))
+                try
                 {
                     filePath = Helpers.GetAbsolutePath(filePath);
 
@@ -1835,10 +1836,10 @@ namespace ShareX.HelpersLib
                         return bmp;
                     }
                 }
-            }
-            catch (Exception e)
-            {
-                DebugHelper.WriteException(e);
+                catch (Exception e)
+                {
+                    DebugHelper.WriteException(e);
+                }
             }
 
             return null;
@@ -1856,11 +1857,11 @@ namespace ShareX.HelpersLib
             return null;
         }
 
-        public static Bitmap CombineImages(IEnumerable<Image> images, Orientation orientation = Orientation.Vertical,
-            ImageCombinerAlignment alignment = ImageCombinerAlignment.LeftOrTop, int space = 0)
+        public static Bitmap CombineImages(List<Bitmap> images, Orientation orientation = Orientation.Vertical,
+            ImageCombinerAlignment alignment = ImageCombinerAlignment.LeftOrTop, int space = 0, bool autoFillBackground = false)
         {
             int width, height;
-            int imageCount = images.Count();
+            int imageCount = images.Count;
             int spaceSize = space * (imageCount - 1);
 
             if (orientation == Orientation.Vertical)
@@ -1881,8 +1882,16 @@ namespace ShareX.HelpersLib
                 g.SetHighQuality();
                 int position = 0;
 
-                foreach (Image image in images)
+                for (int i = 0; i < imageCount; i++)
                 {
+                    Bitmap image = images[i];
+
+                    if (autoFillBackground && i == 0)
+                    {
+                        Color backgroundColor = image.GetPixel(image.Width - 1, image.Height - 1);
+                        g.Clear(backgroundColor);
+                    }
+
                     Rectangle rect;
 
                     if (orientation == Orientation.Vertical)
@@ -1929,6 +1938,42 @@ namespace ShareX.HelpersLib
             }
 
             return bmp;
+        }
+
+        public static Bitmap CombineImages(IEnumerable<string> imageFiles, Orientation orientation = Orientation.Vertical,
+            ImageCombinerAlignment alignment = ImageCombinerAlignment.LeftOrTop, int space = 0, bool autoFillBackground = false)
+        {
+            List<Bitmap> images = new List<Bitmap>();
+
+            try
+            {
+                foreach (string filePath in imageFiles)
+                {
+                    Bitmap bmp = LoadImage(filePath);
+
+                    if (bmp != null)
+                    {
+                        images.Add(bmp);
+                    }
+                }
+
+                if (images.Count > 1)
+                {
+                    return CombineImages(images, orientation, alignment, space, autoFillBackground);
+                }
+            }
+            finally
+            {
+                foreach (Bitmap bmp in images)
+                {
+                    if (bmp != null)
+                    {
+                        bmp.Dispose();
+                    }
+                }
+            }
+
+            return null;
         }
 
         public static List<Bitmap> SplitImage(Image img, int rowCount, int columnCount)

@@ -117,65 +117,575 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="&gt;&gt;tscResponseText.BottomToolStripPanel.Name" xml:space="preserve">
+    <value>tscResponseText.BottomToolStripPanel</value>
+  </data>
+  <data name="&gt;&gt;tscResponseText.BottomToolStripPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tscResponseText.BottomToolStripPanel.Parent" xml:space="preserve">
+    <value>tscResponseText</value>
+  </data>
+  <data name="&gt;&gt;tscResponseText.BottomToolStripPanel.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;rtbResponseText.Name" xml:space="preserve">
+    <value>rtbResponseText</value>
+  </data>
+  <data name="&gt;&gt;rtbResponseText.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rtbResponseText.Parent" xml:space="preserve">
+    <value>pResponseText</value>
+  </data>
+  <data name="&gt;&gt;rtbResponseText.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="txtSource.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="pResponseText.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="txtSource.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
+  <data name="pResponseText.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="pResponseText.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="pResponseText.Size" type="System.Drawing.Size, System.Drawing">
+    <value>746, 456</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="txtSource.Multiline" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="pResponseText.TabIndex" type="System.Int32, mscorlib">
+    <value>42</value>
   </data>
-  <data name="txtSource.ScrollBars" type="System.Windows.Forms.ScrollBars, System.Windows.Forms">
-    <value>Both</value>
+  <data name="&gt;&gt;pResponseText.Name" xml:space="preserve">
+    <value>pResponseText</value>
   </data>
-  <data name="txtSource.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="&gt;&gt;pResponseText.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pResponseText.Parent" xml:space="preserve">
+    <value>tscResponseText.ContentPanel</value>
+  </data>
+  <data name="&gt;&gt;pResponseText.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tscResponseText.ContentPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>746, 456</value>
+  </data>
+  <data name="&gt;&gt;tscResponseText.ContentPanel.Name" xml:space="preserve">
+    <value>tscResponseText.ContentPanel</value>
+  </data>
+  <data name="&gt;&gt;tscResponseText.ContentPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripContentPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tscResponseText.ContentPanel.Parent" xml:space="preserve">
+    <value>tscResponseText</value>
+  </data>
+  <data name="&gt;&gt;tscResponseText.ContentPanel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tscResponseText.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="&gt;&gt;tscResponseText.LeftToolStripPanel.Name" xml:space="preserve">
+    <value>tscResponseText.LeftToolStripPanel</value>
+  </data>
+  <data name="&gt;&gt;tscResponseText.LeftToolStripPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tscResponseText.LeftToolStripPanel.Parent" xml:space="preserve">
+    <value>tscResponseText</value>
+  </data>
+  <data name="&gt;&gt;tscResponseText.LeftToolStripPanel.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="tscResponseText.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="&gt;&gt;tscResponseText.RightToolStripPanel.Name" xml:space="preserve">
+    <value>tscResponseText.RightToolStripPanel</value>
+  </data>
+  <data name="&gt;&gt;tscResponseText.RightToolStripPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tscResponseText.RightToolStripPanel.Parent" xml:space="preserve">
+    <value>tscResponseText</value>
+  </data>
+  <data name="&gt;&gt;tscResponseText.RightToolStripPanel.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="tscResponseText.Size" type="System.Drawing.Size, System.Drawing">
     <value>746, 481</value>
   </data>
-  <data name="txtSource.TabIndex" type="System.Int32, mscorlib">
+  <data name="tscResponseText.TabIndex" type="System.Int32, mscorlib">
+    <value>44</value>
+  </data>
+  <data name="tscResponseText.Text" xml:space="preserve">
+    <value>toolStripContainer1</value>
+  </data>
+  <metadata name="tsResponseText.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <data name="tsResponseText.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="tsResponseText.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 0</value>
+  </data>
+  <data name="tsResponseText.Size" type="System.Drawing.Size, System.Drawing">
+    <value>250, 25</value>
+  </data>
+  <data name="tsResponseText.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;txtSource.Name" xml:space="preserve">
-    <value>txtSource</value>
+  <data name="&gt;&gt;tsResponseText.Name" xml:space="preserve">
+    <value>tsResponseText</value>
   </data>
-  <data name="&gt;&gt;txtSource.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;tsResponseText.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;txtSource.Parent" xml:space="preserve">
-    <value>tpString</value>
+  <data name="&gt;&gt;tsResponseText.Parent" xml:space="preserve">
+    <value>tscResponseText.TopToolStripPanel</value>
   </data>
-  <data name="&gt;&gt;txtSource.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;tsResponseText.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="tpString.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
+  <data name="&gt;&gt;tscResponseText.TopToolStripPanel.Name" xml:space="preserve">
+    <value>tscResponseText.TopToolStripPanel</value>
   </data>
-  <data name="tpString.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
+  <data name="&gt;&gt;tscResponseText.TopToolStripPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="tpString.Size" type="System.Drawing.Size, System.Drawing">
-    <value>752, 487</value>
+  <data name="&gt;&gt;tscResponseText.TopToolStripPanel.Parent" xml:space="preserve">
+    <value>tscResponseText</value>
   </data>
-  <data name="tpString.TabIndex" type="System.Int32, mscorlib">
+  <data name="&gt;&gt;tscResponseText.TopToolStripPanel.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;tscResponseText.Name" xml:space="preserve">
+    <value>tscResponseText</value>
+  </data>
+  <data name="&gt;&gt;tscResponseText.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripContainer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tscResponseText.Parent" xml:space="preserve">
+    <value>tpResponseText</value>
+  </data>
+  <data name="&gt;&gt;tscResponseText.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="tpString.Text" xml:space="preserve">
-    <value>Text</value>
+  <data name="rtbResponseText.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
   </data>
-  <data name="&gt;&gt;tpString.Name" xml:space="preserve">
-    <value>tpString</value>
+  <data name="rtbResponseText.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 9pt</value>
   </data>
-  <data name="&gt;&gt;tpString.Type" xml:space="preserve">
+  <data name="rtbResponseText.Location" type="System.Drawing.Point, System.Drawing">
+    <value>2, 2</value>
+  </data>
+  <data name="rtbResponseText.Size" type="System.Drawing.Size, System.Drawing">
+    <value>740, 450</value>
+  </data>
+  <data name="rtbResponseText.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="rtbResponseText.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;rtbResponseText.Name" xml:space="preserve">
+    <value>rtbResponseText</value>
+  </data>
+  <data name="&gt;&gt;rtbResponseText.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rtbResponseText.Parent" xml:space="preserve">
+    <value>pResponseText</value>
+  </data>
+  <data name="&gt;&gt;rtbResponseText.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tsbResponseTextJSONFormat.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="tsbResponseTextJSONFormat.Size" type="System.Drawing.Size, System.Drawing">
+    <value>78, 22</value>
+  </data>
+  <data name="tsbResponseTextJSONFormat.Text" xml:space="preserve">
+    <value>JSON format</value>
+  </data>
+  <data name="tsbResponseTextXMLFormat.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="tsbResponseTextXMLFormat.Size" type="System.Drawing.Size, System.Drawing">
+    <value>74, 22</value>
+  </data>
+  <data name="tsbResponseTextXMLFormat.Text" xml:space="preserve">
+    <value>XML format</value>
+  </data>
+  <data name="tsbResponseTextCopy.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="tsbResponseTextCopy.Size" type="System.Drawing.Size, System.Drawing">
+    <value>89, 22</value>
+  </data>
+  <data name="tsbResponseTextCopy.Text" xml:space="preserve">
+    <value>Copy response</value>
+  </data>
+  <data name="&gt;&gt;tpResult.Name" xml:space="preserve">
+    <value>tpResult</value>
+  </data>
+  <data name="&gt;&gt;tpResult.Type" xml:space="preserve">
     <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;tpString.Parent" xml:space="preserve">
-    <value>tcResponse</value>
+  <data name="&gt;&gt;tpResult.Parent" xml:space="preserve">
+    <value>tcMain</value>
   </data>
-  <data name="&gt;&gt;tpString.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;tpResult.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="&gt;&gt;tpResponseInfo.Name" xml:space="preserve">
+    <value>tpResponseInfo</value>
+  </data>
+  <data name="&gt;&gt;tpResponseInfo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tpResponseInfo.Parent" xml:space="preserve">
+    <value>tcMain</value>
+  </data>
+  <data name="&gt;&gt;tpResponseInfo.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;tpResponseText.Name" xml:space="preserve">
+    <value>tpResponseText</value>
+  </data>
+  <data name="&gt;&gt;tpResponseText.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tpResponseText.Parent" xml:space="preserve">
+    <value>tcMain</value>
+  </data>
+  <data name="&gt;&gt;tpResponseText.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;tpWebBrowser.Name" xml:space="preserve">
+    <value>tpWebBrowser</value>
+  </data>
+  <data name="&gt;&gt;tpWebBrowser.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tpWebBrowser.Parent" xml:space="preserve">
+    <value>tcMain</value>
+  </data>
+  <data name="&gt;&gt;tpWebBrowser.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="tcMain.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="tcMain.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 5</value>
+  </data>
+  <data name="tcMain.Size" type="System.Drawing.Size, System.Drawing">
+    <value>760, 513</value>
+  </data>
+  <data name="tcMain.TabIndex" type="System.Int32, mscorlib">
+    <value>45</value>
+  </data>
+  <data name="&gt;&gt;tcMain.Name" xml:space="preserve">
+    <value>tcMain</value>
+  </data>
+  <data name="&gt;&gt;tcMain.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tcMain.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;tcMain.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;pResult.Name" xml:space="preserve">
+    <value>pResult</value>
+  </data>
+  <data name="&gt;&gt;pResult.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pResult.Parent" xml:space="preserve">
+    <value>tpResult</value>
+  </data>
+  <data name="&gt;&gt;pResult.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tpResult.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tpResult.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tpResult.Size" type="System.Drawing.Size, System.Drawing">
+    <value>752, 487</value>
+  </data>
+  <data name="tpResult.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="tpResult.Text" xml:space="preserve">
+    <value>Result</value>
+  </data>
+  <data name="&gt;&gt;tpResult.Name" xml:space="preserve">
+    <value>tpResult</value>
+  </data>
+  <data name="&gt;&gt;tpResult.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tpResult.Parent" xml:space="preserve">
+    <value>tcMain</value>
+  </data>
+  <data name="&gt;&gt;tpResult.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;rtbResult.Name" xml:space="preserve">
+    <value>rtbResult</value>
+  </data>
+  <data name="&gt;&gt;rtbResult.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rtbResult.Parent" xml:space="preserve">
+    <value>pResult</value>
+  </data>
+  <data name="&gt;&gt;rtbResult.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="pResult.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="pResult.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="pResult.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="pResult.Size" type="System.Drawing.Size, System.Drawing">
+    <value>746, 481</value>
+  </data>
+  <data name="pResult.TabIndex" type="System.Int32, mscorlib">
+    <value>41</value>
+  </data>
+  <data name="&gt;&gt;pResult.Name" xml:space="preserve">
+    <value>pResult</value>
+  </data>
+  <data name="&gt;&gt;pResult.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pResult.Parent" xml:space="preserve">
+    <value>tpResult</value>
+  </data>
+  <data name="&gt;&gt;pResult.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="rtbResult.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="rtbResult.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 9pt</value>
+  </data>
+  <data name="rtbResult.Location" type="System.Drawing.Point, System.Drawing">
+    <value>2, 2</value>
+  </data>
+  <data name="rtbResult.Size" type="System.Drawing.Size, System.Drawing">
+    <value>740, 475</value>
+  </data>
+  <data name="rtbResult.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="rtbResult.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;rtbResult.Name" xml:space="preserve">
+    <value>rtbResult</value>
+  </data>
+  <data name="&gt;&gt;rtbResult.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rtbResult.Parent" xml:space="preserve">
+    <value>pResult</value>
+  </data>
+  <data name="&gt;&gt;rtbResult.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;pResponseInfo.Name" xml:space="preserve">
+    <value>pResponseInfo</value>
+  </data>
+  <data name="&gt;&gt;pResponseInfo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pResponseInfo.Parent" xml:space="preserve">
+    <value>tpResponseInfo</value>
+  </data>
+  <data name="&gt;&gt;pResponseInfo.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tpResponseInfo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tpResponseInfo.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tpResponseInfo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>752, 487</value>
+  </data>
+  <data name="tpResponseInfo.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="tpResponseInfo.Text" xml:space="preserve">
+    <value>Response info</value>
+  </data>
+  <data name="&gt;&gt;tpResponseInfo.Name" xml:space="preserve">
+    <value>tpResponseInfo</value>
+  </data>
+  <data name="&gt;&gt;tpResponseInfo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tpResponseInfo.Parent" xml:space="preserve">
+    <value>tcMain</value>
+  </data>
+  <data name="&gt;&gt;tpResponseInfo.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;rtbResponseInfo.Name" xml:space="preserve">
+    <value>rtbResponseInfo</value>
+  </data>
+  <data name="&gt;&gt;rtbResponseInfo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rtbResponseInfo.Parent" xml:space="preserve">
+    <value>pResponseInfo</value>
+  </data>
+  <data name="&gt;&gt;rtbResponseInfo.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="pResponseInfo.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="pResponseInfo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="pResponseInfo.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="pResponseInfo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>746, 481</value>
+  </data>
+  <data name="pResponseInfo.TabIndex" type="System.Int32, mscorlib">
+    <value>43</value>
+  </data>
+  <data name="&gt;&gt;pResponseInfo.Name" xml:space="preserve">
+    <value>pResponseInfo</value>
+  </data>
+  <data name="&gt;&gt;pResponseInfo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pResponseInfo.Parent" xml:space="preserve">
+    <value>tpResponseInfo</value>
+  </data>
+  <data name="&gt;&gt;pResponseInfo.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="rtbResponseInfo.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="rtbResponseInfo.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 9pt</value>
+  </data>
+  <data name="rtbResponseInfo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>2, 2</value>
+  </data>
+  <data name="rtbResponseInfo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>740, 475</value>
+  </data>
+  <data name="rtbResponseInfo.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="rtbResponseInfo.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;rtbResponseInfo.Name" xml:space="preserve">
+    <value>rtbResponseInfo</value>
+  </data>
+  <data name="&gt;&gt;rtbResponseInfo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rtbResponseInfo.Parent" xml:space="preserve">
+    <value>pResponseInfo</value>
+  </data>
+  <data name="&gt;&gt;rtbResponseInfo.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tpResponseText.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tpResponseText.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tpResponseText.Size" type="System.Drawing.Size, System.Drawing">
+    <value>752, 487</value>
+  </data>
+  <data name="tpResponseText.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="tpResponseText.Text" xml:space="preserve">
+    <value>Response text</value>
+  </data>
+  <data name="&gt;&gt;tpResponseText.Name" xml:space="preserve">
+    <value>tpResponseText</value>
+  </data>
+  <data name="&gt;&gt;tpResponseText.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tpResponseText.Parent" xml:space="preserve">
+    <value>tcMain</value>
+  </data>
+  <data name="&gt;&gt;tpResponseText.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;wbResponse.Name" xml:space="preserve">
+    <value>wbResponse</value>
+  </data>
+  <data name="&gt;&gt;wbResponse.Type" xml:space="preserve">
+    <value>System.Windows.Forms.WebBrowser, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;wbResponse.Parent" xml:space="preserve">
+    <value>tpWebBrowser</value>
+  </data>
+  <data name="&gt;&gt;wbResponse.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tpWebBrowser.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tpWebBrowser.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tpWebBrowser.Size" type="System.Drawing.Size, System.Drawing">
+    <value>752, 487</value>
+  </data>
+  <data name="tpWebBrowser.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="tpWebBrowser.Text" xml:space="preserve">
+    <value>Web browser</value>
+  </data>
+  <data name="&gt;&gt;tpWebBrowser.Name" xml:space="preserve">
+    <value>tpWebBrowser</value>
+  </data>
+  <data name="&gt;&gt;tpWebBrowser.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tpWebBrowser.Parent" xml:space="preserve">
+    <value>tcMain</value>
+  </data>
+  <data name="&gt;&gt;tpWebBrowser.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
   <data name="wbResponse.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -204,62 +714,11 @@
   <data name="&gt;&gt;wbResponse.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="tpWebBrowser.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="tpWebBrowser.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="tpWebBrowser.Size" type="System.Drawing.Size, System.Drawing">
-    <value>752, 487</value>
-  </data>
-  <data name="tpWebBrowser.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="tpWebBrowser.Text" xml:space="preserve">
-    <value>Web browser</value>
-  </data>
-  <data name="&gt;&gt;tpWebBrowser.Name" xml:space="preserve">
-    <value>tpWebBrowser</value>
-  </data>
-  <data name="&gt;&gt;tpWebBrowser.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tpWebBrowser.Parent" xml:space="preserve">
-    <value>tcResponse</value>
-  </data>
-  <data name="&gt;&gt;tpWebBrowser.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="tcResponse.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="tcResponse.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 5</value>
-  </data>
-  <data name="tcResponse.Size" type="System.Drawing.Size, System.Drawing">
-    <value>760, 513</value>
-  </data>
-  <data name="tcResponse.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;tcResponse.Name" xml:space="preserve">
-    <value>tcResponse</value>
-  </data>
-  <data name="&gt;&gt;tcResponse.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tcResponse.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;tcResponse.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
+    <value>96, 96</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>770, 523</value>
@@ -272,6 +731,24 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Response</value>
+  </data>
+  <data name="&gt;&gt;tsbResponseTextJSONFormat.Name" xml:space="preserve">
+    <value>tsbResponseTextJSONFormat</value>
+  </data>
+  <data name="&gt;&gt;tsbResponseTextJSONFormat.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsbResponseTextXMLFormat.Name" xml:space="preserve">
+    <value>tsbResponseTextXMLFormat</value>
+  </data>
+  <data name="&gt;&gt;tsbResponseTextXMLFormat.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsbResponseTextCopy.Name" xml:space="preserve">
+    <value>tsbResponseTextCopy</value>
+  </data>
+  <data name="&gt;&gt;tsbResponseTextCopy.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>ResponseForm</value>

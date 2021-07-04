@@ -115,7 +115,7 @@ namespace ShareX
                     TaskSettings.UseDefaultAfterCaptureJob = false;
                     TaskSettings.AfterCaptureJob = TaskSettings.AfterCaptureJob.Remove(AfterCaptureTasks.AnnotateImage);
                     TaskSettings.UseDefaultAdvancedSettings = false;
-                    TaskSettings.AdvancedSettings.DisableNotifications = true;
+                    TaskSettings.GeneralSettings.DisableNotifications = true;
 
                     UploadManager.RunImageTask(bmp, TaskSettings, true, true);
                 }
@@ -124,9 +124,7 @@ namespace ShareX
 
         private void SelectRegion()
         {
-            Rectangle rect;
-
-            if (RegionCaptureTasks.GetRectangleRegion(out rect, TaskSettings.CaptureSettings.SurfaceOptions))
+            if (RegionCaptureTasks.GetRectangleRegion(out Rectangle rect, TaskSettings.CaptureSettings.SurfaceOptions))
             {
                 Program.Settings.AutoCaptureRegion = rect;
                 UpdateRegion();

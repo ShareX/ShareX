@@ -32,7 +32,6 @@ using System.Diagnostics;
 using System.IO;
 using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 #if WindowsStore
@@ -328,13 +327,13 @@ namespace ShareX
             RegisterExtensions();
             CheckPuushMode();
             DebugWriteFlags();
-            CleanTempFiles();
 
             SettingManager.LoadInitialSettings();
 
             Uploader.UpdateServicePointManager();
             UpdateManager = new GitHubUpdateManager("ShareX", "ShareX", Dev, Portable);
             LanguageHelper.ChangeLanguage(Settings.Language);
+            CleanupManager.CleanupAsync();
             Helpers.TryFixHandCursor();
 
             DebugHelper.WriteLine("MainForm init started.");
@@ -373,31 +372,7 @@ namespace ShareX
         {
             if (WaitFormLoad(5000))
             {
-                Action d = () =>
-                {
-                    if (args.CommandLineArgs == null || args.CommandLineArgs.Length < 1)
-                    {
-                        if (MainForm.niTray != null && MainForm.niTray.Visible)
-                        {
-                            // Workaround for Windows startup tray icon bug
-                            MainForm.niTray.Visible = false;
-                            MainForm.niTray.Visible = true;
-                        }
-
-                        MainForm.ForceActivate();
-                    }
-                    else if (MainForm.Visible)
-                    {
-                        MainForm.ForceActivate();
-                    }
-
-                    CLIManager cli = new CLIManager(args.CommandLineArgs);
-                    cli.ParseCommands();
-
-                    CLI.UseCommandLineArgs(cli.Commands);
-                };
-
-                MainForm.InvokeSafe(d);
+                MainForm.InvokeSafe(() => UseCommandLineArgs(args.CommandLineArgs));
             }
         }
 
@@ -413,6 +388,30 @@ namespace ShareX
             }
 
             return false;
+        }
+
+        private static void UseCommandLineArgs(string[] args)
+        {
+            if (args == null || args.Length < 1)
+            {
+                if (MainForm.niTray != null && MainForm.niTray.Visible)
+                {
+                    // Workaround for Windows startup tray icon bug
+                    MainForm.niTray.Visible = false;
+                    MainForm.niTray.Visible = true;
+                }
+
+                MainForm.ForceActivate();
+            }
+            else if (MainForm.Visible)
+            {
+                MainForm.ForceActivate();
+            }
+
+            CLIManager cli = new CLIManager(args);
+            cli.ParseCommands();
+
+            CLI.UseCommandLineArgs(cli.Commands);
         }
 
         private static void UpdatePersonalPath()
@@ -664,33 +663,6 @@ namespace ShareX
             {
                 DebugHelper.WriteLine("Flags: " + output);
             }
-        }
-
-        private static void CleanTempFiles()
-        {
-            Task.Run(() =>
-            {
-                try
-                {
-                    string tempFolder = Path.GetTempPath();
-
-                    if (!string.IsNullOrEmpty(tempFolder))
-                    {
-                        string folderPath = Path.Combine(tempFolder, "ShareX");
-
-                        if (Directory.Exists(folderPath))
-                        {
-                            Directory.Delete(folderPath, true);
-
-                            DebugHelper.WriteLine($"Temp files cleaned: {folderPath}");
-                        }
-                    }
-                }
-                catch (Exception e)
-                {
-                    DebugHelper.WriteException(e);
-                }
-            });
         }
     }
 }

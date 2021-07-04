@@ -163,10 +163,7 @@ namespace ShareX.HelpersLib
 
         protected virtual void OnCheckedChanged(EventArgs e)
         {
-            if (CheckedChanged != null)
-            {
-                CheckedChanged(this, e);
-            }
+            CheckedChanged?.Invoke(this, e);
         }
 
         private void DrawBackground(Graphics g)

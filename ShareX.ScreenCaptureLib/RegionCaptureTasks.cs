@@ -201,6 +201,7 @@ namespace ShareX.ScreenCaptureLib
             {
                 return new RegionCaptureOptions()
                 {
+                    DetectControls = options.DetectControls,
                     SnapSizes = options.SnapSizes,
                     ShowMagnifier = options.ShowMagnifier,
                     UseSquareMagnifier = options.UseSquareMagnifier,

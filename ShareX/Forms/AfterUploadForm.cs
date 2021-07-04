@@ -146,7 +146,7 @@ namespace ShareX
         {
             if (lvClipboardFormats.Items.Count > 0)
             {
-                string url = null;
+                string url;
 
                 if (lvClipboardFormats.SelectedItems.Count == 0)
                 {

@@ -50,7 +50,7 @@ namespace ShareX.ImageEffectsLib
         public string FilePath { get; private set; }
 
         private bool pauseUpdate;
-        private ISerializationBinder serializationBinder = new TypeNameSerializationBinder("ShareX.ImageEffectsLib", "ShareX.ImageEffectsLib");
+        private ISerializationBinder serializationBinder = new ImageEffectsSerializationBinder();
 
         public ImageEffectsForm(Bitmap bmp, List<ImageEffectPreset> presets, int selectedPresetIndex)
         {
@@ -343,7 +343,7 @@ namespace ShareX.ImageEffectsLib
                     padding = 0;
                 }
 
-                size = size - (padding * 2);
+                size -= padding * 2;
 
                 if (PreviewImage != null) PreviewImage.Dispose();
                 PreviewImage = new Bitmap(size, size);
@@ -392,11 +392,8 @@ namespace ShareX.ImageEffectsLib
 
             if (preset != null)
             {
-                ToolStripMenuItem tsmi = sender as ToolStripMenuItem;
-
-                if (tsmi != null && tsmi.Tag is Type)
+                if (sender is ToolStripMenuItem tsmi && tsmi.Tag is Type type)
                 {
-                    Type type = (Type)tsmi.Tag;
                     ImageEffect imageEffect = (ImageEffect)Activator.CreateInstance(type);
                     AddEffect(imageEffect, preset);
                     UpdatePreview();
@@ -500,9 +497,7 @@ namespace ShareX.ImageEffectsLib
         {
             if (e.Data.GetDataPresent(DataFormats.FileDrop, false))
             {
-                string[] files = e.Data.GetData(DataFormats.FileDrop, false) as string[];
-
-                if (files != null && files.Any(x => !string.IsNullOrEmpty(x) && x.EndsWith(".sxie")))
+                if (e.Data.GetData(DataFormats.FileDrop, false) is string[] files && files.Any(x => !string.IsNullOrEmpty(x) && x.EndsWith(".sxie")))
                 {
                     e.Effect = DragDropEffects.Copy;
                 }
@@ -519,16 +514,11 @@ namespace ShareX.ImageEffectsLib
 
         private void ImageEffectsForm_DragDrop(object sender, DragEventArgs e)
         {
-            if (e.Data.GetDataPresent(DataFormats.FileDrop, false))
+            if (e.Data.GetDataPresent(DataFormats.FileDrop, false) && e.Data.GetData(DataFormats.FileDrop, false) is string[] files)
             {
-                string[] files = e.Data.GetData(DataFormats.FileDrop, false) as string[];
-
-                if (files != null)
+                foreach (string filePath in files.Where(x => !string.IsNullOrEmpty(x) && x.EndsWith(".sxie")))
                 {
-                    foreach (string filePath in files.Where(x => !string.IsNullOrEmpty(x) && x.EndsWith(".sxie")))
-                    {
-                        ImportImageEffectFile(filePath);
-                    }
+                    ImportImageEffectFile(filePath);
                 }
             }
         }
@@ -589,8 +579,7 @@ namespace ShareX.ImageEffectsLib
 
         private void txtPresetName_TextChanged(object sender, EventArgs e)
         {
-            ListViewItem lvi;
-            ImageEffectPreset preset = GetSelectedPreset(out lvi);
+            ImageEffectPreset preset = GetSelectedPreset(out ListViewItem lvi);
 
             if (preset != null)
             {
@@ -619,9 +608,8 @@ namespace ShareX.ImageEffectsLib
                 {
                     ListViewItem lvi = lvEffects.SelectedItems[0];
 
-                    if (lvi.Tag is ImageEffect)
+                    if (lvi.Tag is ImageEffect imageEffect)
                     {
-                        ImageEffect imageEffect = (ImageEffect)lvi.Tag;
                         ImageEffect imageEffectClone = imageEffect.Copy();
                         AddEffect(imageEffectClone, preset);
                         UpdatePreview();
@@ -682,9 +670,8 @@ namespace ShareX.ImageEffectsLib
 
         private void lvEffects_ItemChecked(object sender, ItemCheckedEventArgs e)
         {
-            if (e.Item != null && e.Item.Focused && e.Item.Tag is ImageEffect)
+            if (e.Item != null && e.Item.Focused && e.Item.Tag is ImageEffect imageEffect)
             {
-                ImageEffect imageEffect = (ImageEffect)e.Item.Tag;
                 imageEffect.Enabled = e.Item.Checked;
                 UpdatePreview();
             }
@@ -825,23 +812,16 @@ namespace ShareX.ImageEffectsLib
         {
             if (e.Data.GetDataPresent(DataFormats.FileDrop, false))
             {
-                string[] files = e.Data.GetData(DataFormats.FileDrop, false) as string[];
-
-                if (files != null && files.Length > 0)
+                if (e.Data.GetData(DataFormats.FileDrop, false) is string[] files && files.Length > 0 && Helpers.IsImageFile(files[0]))
                 {
-                    if (Helpers.IsImageFile(files[0]))
-                    {
-                        if (PreviewImage != null) PreviewImage.Dispose();
-                        PreviewImage = ImageHelpers.LoadImage(files[0]);
-                        UpdatePreview();
-                    }
+                    if (PreviewImage != null) PreviewImage.Dispose();
+                    PreviewImage = ImageHelpers.LoadImage(files[0]);
+                    UpdatePreview();
                 }
             }
             else if (e.Data.GetDataPresent(DataFormats.Bitmap, false))
             {
-                Bitmap bmp = e.Data.GetData(DataFormats.Bitmap, false) as Bitmap;
-
-                if (bmp != null)
+                if (e.Data.GetData(DataFormats.Bitmap, false) is Bitmap bmp)
                 {
                     if (PreviewImage != null) PreviewImage.Dispose();
                     PreviewImage = bmp;

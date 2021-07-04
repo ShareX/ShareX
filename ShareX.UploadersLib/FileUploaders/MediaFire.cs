@@ -89,8 +89,11 @@ namespace ShareX.UploadersLib.FileUploaders
             AllowReportProgress = true;
             string key = SimpleUpload(stream, fileName);
             AllowReportProgress = false;
-            string url = null;
-            while ((url = PollUpload(key, fileName)) == null) Thread.Sleep(pollInterval);
+            string url;
+            while ((url = PollUpload(key, fileName)) == null)
+            {
+                Thread.Sleep(pollInterval);
+            }
             return new UploadResult() { IsSuccess = true, URL = url };
         }
 

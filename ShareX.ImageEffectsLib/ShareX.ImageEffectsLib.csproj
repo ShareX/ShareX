@@ -171,6 +171,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="ImageEffectsSerializationBinder.cs" />
     <Compile Include="WatermarkConfig.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -281,7 +282,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json">
-      <Version>12.0.3</Version>
+      <Version>13.0.1</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>

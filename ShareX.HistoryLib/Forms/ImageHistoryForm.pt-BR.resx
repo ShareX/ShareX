@@ -120,4 +120,16 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Histórico de imagem</value>
   </data>
+  <data name="tsbSearch.Text" xml:space="preserve">
+    <value>Procurar</value>
+  </data>
+  <data name="tsbSearch.ToolTipText" xml:space="preserve">
+    <value>Procurar</value>
+  </data>
+  <data name="tslSearch.Text" xml:space="preserve">
+    <value>Procurar:</value>
+  </data>
+  <data name="tsbSettings.Text" xml:space="preserve">
+    <value>Configurações...</value>
+  </data>
 </root>

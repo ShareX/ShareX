@@ -212,7 +212,7 @@ namespace ShareX
                     UploadManager.IndexFolder();
                     break;
                 case HotkeyType.ImageCombiner:
-                    OpenImageCombiner(safeTaskSettings);
+                    OpenImageCombiner(null, safeTaskSettings);
                     break;
                 case HotkeyType.ImageSplitter:
                     OpenImageSplitter();
@@ -225,6 +225,12 @@ namespace ShareX
                     break;
                 case HotkeyType.VideoThumbnailer:
                     OpenVideoThumbnailer(safeTaskSettings);
+                    break;
+                case HotkeyType.InspectWindow:
+                    OpenInspectWindow();
+                    break;
+                case HotkeyType.ClipboardViewer:
+                    OpenClipboardViewer();
                     break;
                 case HotkeyType.TweetMessage:
                     TweetMessage();
@@ -634,47 +640,20 @@ namespace ShareX
         {
             if (!taskSettings.ExternalPrograms.Exists(x => x.Name == name))
             {
-                string filePath = RegistryHelpers.SearchProgramPath(fileName);
-
-                if (!string.IsNullOrEmpty(filePath))
+                try
                 {
-                    ExternalProgram externalProgram = new ExternalProgram(name, filePath);
-                    taskSettings.ExternalPrograms.Add(externalProgram);
-                }
-            }
-        }
+                    string filePath = RegistryHelpers.SearchProgramPath(fileName);
 
-        public static Icon GetProgressIcon(int percentage)
-        {
-            return GetProgressIcon(percentage, Color.FromArgb(16, 116, 193));
-        }
-
-        public static Icon GetProgressIcon(int percentage, Color color)
-        {
-            percentage = percentage.Clamp(0, 99);
-
-            Size size = SystemInformation.SmallIconSize;
-            using (Bitmap bmp = new Bitmap(size.Width, size.Height))
-            using (Graphics g = Graphics.FromImage(bmp))
-            {
-                int y = (int)(size.Height * (percentage / 100f));
-
-                if (y > 0)
-                {
-                    using (Brush brush = new SolidBrush(color))
+                    if (!string.IsNullOrEmpty(filePath))
                     {
-                        g.FillRectangle(brush, 0, size.Height - 1 - y, size.Width, y);
+                        ExternalProgram externalProgram = new ExternalProgram(name, filePath);
+                        taskSettings.ExternalPrograms.Add(externalProgram);
                     }
                 }
-
-                using (Font font = new Font("Arial", 10))
-                using (StringFormat sf = new StringFormat { Alignment = StringAlignment.Center, LineAlignment = StringAlignment.Center })
+                catch (Exception e)
                 {
-                    g.DrawString(percentage.ToString(), font, Brushes.Black, size.Width / 2f, size.Height / 2f, sf);
-                    g.DrawString(percentage.ToString(), font, Brushes.White, size.Width / 2f, (size.Height / 2f) - 1, sf);
+                    DebugHelper.WriteException(e);
                 }
-
-                return Icon.FromHandle(bmp.GetHicon());
             }
         }
 
@@ -860,13 +839,26 @@ namespace ShareX
             form.Show();
         }
 
-        public static void OpenImageCombiner(TaskSettings taskSettings = null, IEnumerable<string> imageFiles = null)
+        public static void OpenImageCombiner(IEnumerable<string> imageFiles = null, TaskSettings taskSettings = null)
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
             ImageCombinerForm imageCombinerForm = new ImageCombinerForm(taskSettings.ToolsSettingsReference.ImageCombinerOptions, imageFiles);
             imageCombinerForm.ProcessRequested += bmp => UploadManager.RunImageTask(bmp, taskSettings);
             imageCombinerForm.Show();
+        }
+
+        public static void CombineImages(IEnumerable<string> imageFiles, Orientation orientation, TaskSettings taskSettings = null)
+        {
+            if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
+
+            Bitmap output = ImageHelpers.CombineImages(imageFiles, orientation, taskSettings.ToolsSettings.ImageCombinerOptions.Alignment,
+                taskSettings.ToolsSettings.ImageCombinerOptions.Space, taskSettings.ToolsSettings.ImageCombinerOptions.AutoFillBackground);
+
+            if (output != null)
+            {
+                UploadManager.RunImageTask(output, taskSettings);
+            }
         }
 
         public static void OpenImageSplitter()
@@ -918,6 +910,12 @@ namespace ShareX
                 }
             };
             thumbnailerForm.Show();
+        }
+
+        public static void OpenInspectWindow()
+        {
+            InspectWindowForm inspectWindowForm = new InspectWindowForm();
+            inspectWindowForm.Show();
         }
 
         public static void OpenClipboardViewer()
@@ -1338,15 +1336,18 @@ namespace ShareX
 
         public static bool ToggleHotkeys()
         {
-            bool hotkeysDisabled = !Program.Settings.DisableHotkeys;
+            bool disableHotkeys = !Program.Settings.DisableHotkeys;
+            ToggleHotkeys(disableHotkeys);
+            return disableHotkeys;
+        }
 
-            Program.Settings.DisableHotkeys = hotkeysDisabled;
-            Program.HotkeyManager.ToggleHotkeys(hotkeysDisabled);
+        public static void ToggleHotkeys(bool disableHotkeys)
+        {
+            Program.Settings.DisableHotkeys = disableHotkeys;
+            Program.HotkeyManager.ToggleHotkeys(disableHotkeys);
             Program.MainForm.UpdateToggleHotkeyButton();
 
-            ShowNotificationTip(hotkeysDisabled ? Resources.TaskHelpers_ToggleHotkeys_Hotkeys_disabled_ : Resources.TaskHelpers_ToggleHotkeys_Hotkeys_enabled_);
-
-            return hotkeysDisabled;
+            ShowNotificationTip(disableHotkeys ? Resources.TaskHelpers_ToggleHotkeys_Hotkeys_disabled_ : Resources.TaskHelpers_ToggleHotkeys_Hotkeys_enabled_);
         }
 
         public static bool CheckFFmpeg(TaskSettings taskSettings)
@@ -1360,8 +1361,8 @@ namespace ShareX
 
             if (!File.Exists(ffmpegPath))
             {
-                if (MessageBox.Show(string.Format(Resources.ScreenRecordForm_StartRecording_does_not_exist, ffmpegPath),
-                    "ShareX - " + Resources.ScreenRecordForm_StartRecording_Missing + " ffmpeg.exe", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                if (MessageBox.Show(string.Format(Resources.FFmpeg_does_not_exist, ffmpegPath),
+                    "ShareX - " + Resources.FFmpeg_Missing + " ffmpeg.exe", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                 {
                     DialogResult downloadDialogResult = FFmpegGitHubDownloader.DownloadFFmpeg(false, DownloaderForm_InstallRequested);
 
@@ -1395,11 +1396,11 @@ namespace ShareX
 
             if (result)
             {
-                MessageBox.Show(Resources.ScreenRecordForm_DownloaderForm_InstallRequested_FFmpeg_successfully_downloaded_, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(Resources.FFmpeg_FFmpeg_successfully_downloaded, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                MessageBox.Show(Resources.ScreenRecordForm_DownloaderForm_InstallRequested_Download_of_FFmpeg_failed_, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(Resources.FFmpeg_Download_of_FFmpeg_failed, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -1407,9 +1408,9 @@ namespace ShareX
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
-            if (taskSettings.AdvancedSettings.UseCustomCaptureSound && !string.IsNullOrEmpty(taskSettings.AdvancedSettings.CustomCaptureSoundPath))
+            if (taskSettings.GeneralSettings.UseCustomCaptureSound && !string.IsNullOrEmpty(taskSettings.GeneralSettings.CustomCaptureSoundPath))
             {
-                Helpers.PlaySoundAsync(taskSettings.AdvancedSettings.CustomCaptureSoundPath);
+                Helpers.PlaySoundAsync(taskSettings.GeneralSettings.CustomCaptureSoundPath);
             }
             else
             {
@@ -1421,9 +1422,9 @@ namespace ShareX
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
-            if (taskSettings.AdvancedSettings.UseCustomTaskCompletedSound && !string.IsNullOrEmpty(taskSettings.AdvancedSettings.CustomTaskCompletedSoundPath))
+            if (taskSettings.GeneralSettings.UseCustomTaskCompletedSound && !string.IsNullOrEmpty(taskSettings.GeneralSettings.CustomTaskCompletedSoundPath))
             {
-                Helpers.PlaySoundAsync(taskSettings.AdvancedSettings.CustomTaskCompletedSoundPath);
+                Helpers.PlaySoundAsync(taskSettings.GeneralSettings.CustomTaskCompletedSoundPath);
             }
             else
             {
@@ -1435,9 +1436,9 @@ namespace ShareX
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
-            if (taskSettings.AdvancedSettings.UseCustomErrorSound && !string.IsNullOrEmpty(taskSettings.AdvancedSettings.CustomErrorSoundPath))
+            if (taskSettings.GeneralSettings.UseCustomErrorSound && !string.IsNullOrEmpty(taskSettings.GeneralSettings.CustomErrorSoundPath))
             {
-                Helpers.PlaySoundAsync(taskSettings.AdvancedSettings.CustomErrorSoundPath);
+                Helpers.PlaySoundAsync(taskSettings.GeneralSettings.CustomErrorSoundPath);
             }
             else
             {
@@ -1589,7 +1590,9 @@ namespace ShareX
                     case HotkeyType.ImageThumbnailer: return Resources.image_resize_actual;
                     case HotkeyType.VideoConverter: return Resources.camcorder_pencil;
                     case HotkeyType.VideoThumbnailer: return Resources.images_stack;
-                    case HotkeyType.TweetMessage: return Resources.Twitter;
+                    case HotkeyType.InspectWindow: return Resources.application_search_result;
+                    case HotkeyType.ClipboardViewer: return Resources.clipboard_block;
+                    case HotkeyType.TweetMessage: return Resources.Twitter_16x16;
                     case HotkeyType.MonitorTest: return Resources.monitor;
                     // Other
                     case HotkeyType.DisableHotkeys: return Resources.keyboard__minus;
@@ -1876,15 +1879,15 @@ namespace ShareX
         {
             if (duration < 0)
             {
-                duration = (int)(Program.DefaultTaskSettings.AdvancedSettings.ToastWindowDuration * 1000);
+                duration = (int)(Program.DefaultTaskSettings.GeneralSettings.ToastWindowDuration * 1000);
             }
 
             NotificationFormConfig toastConfig = new NotificationFormConfig()
             {
                 Duration = duration,
-                FadeDuration = (int)(Program.DefaultTaskSettings.AdvancedSettings.ToastWindowFadeDuration * 1000),
-                Placement = Program.DefaultTaskSettings.AdvancedSettings.ToastWindowPlacement,
-                Size = Program.DefaultTaskSettings.AdvancedSettings.ToastWindowSize,
+                FadeDuration = (int)(Program.DefaultTaskSettings.GeneralSettings.ToastWindowFadeDuration * 1000),
+                Placement = Program.DefaultTaskSettings.GeneralSettings.ToastWindowPlacement,
+                Size = Program.DefaultTaskSettings.GeneralSettings.ToastWindowSize,
                 Title = title,
                 Text = text
             };

@@ -111,7 +111,7 @@ namespace ShareX.HelpersLib
                     }
                     else
                     {
-                        entry = entry >> 1;
+                        entry >>= 1;
                     }
                 }
                 createTable[i] = entry;

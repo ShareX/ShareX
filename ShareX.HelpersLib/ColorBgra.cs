@@ -74,7 +74,7 @@ namespace ShareX.HelpersLib
 
         public override bool Equals(object obj)
         {
-            return obj is ColorBgra && ((ColorBgra)obj).Bgra == Bgra;
+            return obj is ColorBgra color && color.Bgra == Bgra;
         }
 
         public override int GetHashCode()

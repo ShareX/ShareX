@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using Newtonsoft.Json;
 using ShareX.HelpersLib;
 using System;
 using System.Windows.Forms;
@@ -31,31 +32,154 @@ namespace ShareX.UploadersLib
 {
     public partial class ResponseForm : Form
     {
-        public string Response { get; private set; }
+        private static ResponseForm instance;
+        private static readonly object singletonLock = new object();
 
-        private bool isOpened;
+        public UploadResult Result { get; private set; }
 
-        public ResponseForm(string response)
+        private bool isBrowserUpdated;
+
+        private ResponseForm(UploadResult result)
         {
             InitializeComponent();
             ShareXResources.ApplyTheme(this);
 
-            Response = response;
-            txtSource.Text = Response;
+            rtbResult.AddContextMenu();
+            rtbResponseInfo.AddContextMenu();
+            rtbResponseText.AddContextMenu();
+
+            UpdateResult(result);
         }
 
-        private void tcResponse_Selecting(object sender, TabControlCancelEventArgs e)
+        public static void ShowInstance(UploadResult result)
         {
-            if (e.TabPageIndex == 1 && !isOpened)
+            lock (singletonLock)
             {
-                wbResponse.DocumentText = Response;
-                isOpened = true;
+                if (instance == null || instance.IsDisposed)
+                {
+                    instance = new ResponseForm(result);
+                }
+                else
+                {
+                    instance.UpdateResult(result);
+                }
+
+                instance.ForceActivate();
             }
         }
 
-        private void ResponseForm_Resize(object sender, EventArgs e)
+        private void AddInfo(RichTextBox rtb, string name, string value)
         {
-            Refresh();
+            if (!string.IsNullOrEmpty(value))
+            {
+                if (rtb.TextLength > 0)
+                {
+                    rtb.AppendLine();
+                    rtb.AppendLine();
+                }
+
+                rtb.SetFontBold();
+                rtb.AppendLine(name + ":");
+                rtb.SetFontRegular();
+                rtb.AppendText(value);
+            }
+        }
+
+        private void UpdateResult(UploadResult result)
+        {
+            Result = result;
+
+            rtbResult.ResetText();
+            rtbResponseInfo.ResetText();
+            rtbResponseText.ResetText();
+            isBrowserUpdated = false;
+            wbResponse.DocumentText = "";
+
+            if (result != null)
+            {
+                UpdateResultTab(result);
+
+                if (result.ResponseInfo != null)
+                {
+                    UpdateResponseInfoTab(result.ResponseInfo, true);
+
+                    rtbResponseText.Text = result.ResponseInfo.ResponseText;
+                }
+            }
+        }
+
+        private void UpdateResultTab(UploadResult result)
+        {
+            AddInfo(rtbResult, "Shortened URL", result.ShortenedURL);
+            AddInfo(rtbResult, "URL", result.URL);
+            AddInfo(rtbResult, "Thumbnail URL", result.ThumbnailURL);
+            AddInfo(rtbResult, "Deletion URL", result.DeletionURL);
+            if (result.IsError) AddInfo(rtbResult, "Error", result.ErrorsToString());
+        }
+
+        private void UpdateResponseInfoTab(ResponseInfo responseInfo, bool includeResponseText)
+        {
+            AddInfo(rtbResponseInfo, "Status code", $"({(int)responseInfo.StatusCode}) {responseInfo.StatusDescription}");
+            AddInfo(rtbResponseInfo, "Response URL", responseInfo.ResponseURL);
+            if (responseInfo.Headers != null && responseInfo.Headers.Count > 0) AddInfo(rtbResponseInfo, "Headers", responseInfo.Headers.ToString().TrimEnd('\r', '\n'));
+            if (includeResponseText) AddInfo(rtbResponseInfo, "Response text", responseInfo.ResponseText);
+        }
+
+        private void tcMain_Selecting(object sender, TabControlCancelEventArgs e)
+        {
+            if (e.TabPage == tpWebBrowser && !isBrowserUpdated && Result != null && !string.IsNullOrEmpty(Result.Response))
+            {
+                wbResponse.DocumentText = Result.Response;
+                isBrowserUpdated = true;
+            }
+        }
+
+        private void rtbResult_LinkClicked(object sender, LinkClickedEventArgs e)
+        {
+            URLHelpers.OpenURL(e.LinkText);
+        }
+
+        private void tsbResponseTextJSONFormat_Click(object sender, EventArgs e)
+        {
+            string response = rtbResponseText.Text;
+            if (!string.IsNullOrEmpty(response))
+            {
+                try
+                {
+                    response = Helpers.JSONFormat(response, Formatting.Indented);
+                    rtbResponseText.Text = response;
+                }
+                catch
+                {
+                    MessageBox.Show("Formatting failed.", "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void tsbResponseTextXMLFormat_Click(object sender, EventArgs e)
+        {
+            string response = rtbResponseText.Text;
+            if (!string.IsNullOrEmpty(response))
+            {
+                try
+                {
+                    response = Helpers.XMLFormat(response);
+                    rtbResponseText.Text = response;
+                }
+                catch
+                {
+                    MessageBox.Show("Formatting failed.", "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void tsbResponseTextCopy_Click(object sender, EventArgs e)
+        {
+            string response = rtbResponseText.Text;
+            if (!string.IsNullOrEmpty(response))
+            {
+                ClipboardHelpers.CopyText(response);
+            }
         }
     }
 }

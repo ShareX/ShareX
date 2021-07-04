@@ -270,7 +270,7 @@ namespace ShareX.HistoryLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Image preview.
+        ///   Looks up a localized string similar to Image preview....
         /// </summary>
         internal static string HistoryItemManager_InitializeComponent_Image_preview {
             get {
@@ -329,15 +329,6 @@ namespace ShareX.HistoryLib.Properties {
         internal static string HistoryItemManager_InitializeComponent_Shortened_URL {
             get {
                 return ResourceManager.GetString("HistoryItemManager_InitializeComponent_Shortened_URL", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Show.
-        /// </summary>
-        internal static string HistoryItemManager_InitializeComponent_Show {
-            get {
-                return ResourceManager.GetString("HistoryItemManager_InitializeComponent_Show", resourceCulture);
             }
         }
         

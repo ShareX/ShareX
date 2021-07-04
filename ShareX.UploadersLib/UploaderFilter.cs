@@ -26,7 +26,6 @@
 using ShareX.HelpersLib;
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 
 namespace ShareX.UploadersLib
@@ -47,7 +46,7 @@ namespace ShareX.UploadersLib
             Extensions = extensions.ToList();
         }
 
-        public bool IsValidFilter(string filename, Stream stream)
+        public bool IsValidFilter(string filename)
         {
             string extension = Helpers.GetFilenameExtension(filename);
 

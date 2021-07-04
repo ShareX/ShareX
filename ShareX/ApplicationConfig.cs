@@ -94,7 +94,7 @@ namespace ShareX
         public bool UseDarkTheme = true;
 
         public bool UseCustomTheme = true;
-        public List<ShareXTheme> Themes = ShareXTheme.GetPresets();
+        public List<ShareXTheme> Themes = ShareXTheme.GetDefaultThemes();
         public int SelectedTheme = 0;
 
         #endregion
@@ -107,6 +107,14 @@ namespace ShareX
         public string SaveImageSubFolderPattern = "%y-%mo";
 
         #endregion Paths
+
+        #region Settings
+
+        public bool AutoCleanupBackupFiles = false;
+        public bool AutoCleanupLogFiles = false;
+        public int CleanupKeepFileCount = 10;
+
+        #endregion
 
         #region Proxy
 
@@ -217,6 +225,9 @@ namespace ShareX
 
         [Category("Clipboard"), DefaultValue(false), Description("Default .NET method can't copy image with alpha channel to clipboard. When this setting is true, ShareX copies \"PNG\" and 32 bit \"DIB\" to clipboard in order to retain image transparency.")]
         public bool UseAlternativeClipboardCopyImage { get; set; }
+
+        [Category("Clipboard"), DefaultValue(false), Description("Default .NET method can't get image with alpha channel from clipboard. When this setting is true, ShareX checks if clipboard contains \"PNG\" or 32 bit \"DIB\" in order to retain image transparency.")]
+        public bool UseAlternativeClipboardGetImage { get; set; }
 
         [Category("Image"), DefaultValue(true), Description("If JPEG exif contains orientation data then rotate image accordingly.")]
         public bool RotateImageByExifOrientationData { get; set; }

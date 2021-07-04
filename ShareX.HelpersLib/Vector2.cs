@@ -66,9 +66,8 @@ namespace ShareX.HelpersLib
 
         public override bool Equals(object obj)
         {
-            if (obj is Vector2)
+            if (obj is Vector2 v)
             {
-                Vector2 v = (Vector2)obj;
                 return v.x == x && v.y == y;
             }
 

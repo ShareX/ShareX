@@ -157,11 +157,7 @@ namespace ShareX.HelpersLib
                     JsonSerializer serializer = new JsonSerializer();
                     serializer.Converters.Add(new StringEnumConverter());
                     serializer.ObjectCreationHandling = ObjectCreationHandling.Replace;
-                    serializer.TypeNameHandling = TypeNameHandling.Auto;
-                    if (SerializationBinder != null)
-                    {
-                        serializer.SerializationBinder = SerializationBinder;
-                    }
+                    if (SerializationBinder != null) serializer.SerializationBinder = SerializationBinder;
                     serializer.Error += (sender, e) => e.ErrorContext.Handled = true;
                     return serializer.Deserialize(textReader, ObjectType);
                 }
@@ -194,10 +190,7 @@ namespace ShareX.HelpersLib
 
         private void OnImportCompleted()
         {
-            if (ImportCompleted != null)
-            {
-                ImportCompleted();
-            }
+            ImportCompleted?.Invoke();
         }
 
         private void ImportJson(string json)

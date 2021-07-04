@@ -177,4 +177,10 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - ハッシュ値の照合</value>
   </data>
+  <data name="btnFilePathBrowse2.Text" xml:space="preserve">
+    <value>参照...</value>
+  </data>
+  <data name="cbCompareTwoFiles.Text" xml:space="preserve">
+    <value>2つのファイルを比較する</value>
+  </data>
 </root>

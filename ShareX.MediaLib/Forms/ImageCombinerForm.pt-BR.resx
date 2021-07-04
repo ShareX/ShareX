@@ -147,4 +147,16 @@
   <data name="lblSpacePixel.Text" xml:space="preserve">
     <value>pixels</value>
   </data>
+  <data name="cbAutoFillBackground.Text" xml:space="preserve">
+    <value>Preencher fundo automaticamente</value>
+  </data>
+  <data name="lblImageAlignment.Text" xml:space="preserve">
+    <value>Alinhamento da imagem:</value>
+  </data>
+  <data name="rbOrientationHorizontal.Text" xml:space="preserve">
+    <value>Horizontal</value>
+  </data>
+  <data name="rbOrientationVertical.Text" xml:space="preserve">
+    <value>Vertical</value>
+  </data>
 </root>

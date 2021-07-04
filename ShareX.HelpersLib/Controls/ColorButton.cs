@@ -70,10 +70,7 @@ namespace ShareX.HelpersLib
 
         protected void OnColorChanged(Color color)
         {
-            if (ColorChanged != null)
-            {
-                ColorChanged(color);
-            }
+            ColorChanged?.Invoke(color);
         }
 
         protected override void OnMouseClick(MouseEventArgs mevent)
@@ -110,10 +107,7 @@ namespace ShareX.HelpersLib
 
         protected override void OnPaint(PaintEventArgs pevent)
         {
-            if (Offset > 0)
-            {
-                base.OnPaint(pevent);
-            }
+            base.OnPaint(pevent);
 
             int boxSize = ClientRectangle.Height - (Offset * 2);
             Rectangle boxRectangle = new Rectangle(ClientRectangle.Width - Offset - boxSize, Offset, boxSize, boxSize);

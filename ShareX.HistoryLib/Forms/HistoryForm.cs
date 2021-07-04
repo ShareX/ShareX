@@ -39,6 +39,7 @@ namespace ShareX.HistoryLib
     {
         public string HistoryPath { get; private set; }
         public HistorySettings Settings { get; private set; }
+        public bool SearchInTags { get; set; } = true;
 
         private HistoryManager history;
         private HistoryItemManager him;
@@ -213,8 +214,9 @@ namespace ShareX.HistoryLib
             if (!string.IsNullOrEmpty(filenameFilter))
             {
                 string pattern = Regex.Escape(filenameFilter).Replace("\\?", ".").Replace("\\*", ".*");
-                Regex regex = new Regex(pattern, RegexOptions.IgnoreCase | RegexOptions.CultureInvariant);
-                result = result.Where(x => x.FileName != null && regex.IsMatch(x.FileName));
+                Regex regex = new Regex(pattern, RegexOptions.Compiled | RegexOptions.IgnoreCase | RegexOptions.CultureInvariant);
+                result = result.Where(x => (x.FileName != null && regex.IsMatch(x.FileName)) ||
+                    (SearchInTags && x.Tags != null && x.Tags.Any(tag => regex.IsMatch(tag.Value))));
             }
 
             string urlFilter = txtURLFilter.Text;
@@ -391,6 +393,28 @@ namespace ShareX.HistoryLib
         private void scMain_SplitterMoved(object sender, SplitterEventArgs e)
         {
             Settings.SplitterDistance = scMain.SplitterDistance;
+        }
+
+        private void txtFilenameFilter_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.Handled = true;
+                e.SuppressKeyPress = true;
+                ApplyFiltersAndAdd();
+                txtFilenameFilter.Focus();
+            }
+        }
+
+        private void txtURLFilter_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.Handled = true;
+                e.SuppressKeyPress = true;
+                ApplyFiltersAndAdd();
+                txtURLFilter.Focus();
+            }
         }
 
         private void btnApplyFilters_Click(object sender, EventArgs e)

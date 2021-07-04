@@ -277,12 +277,30 @@ namespace ShareX
 
     public class TaskSettingsGeneral
     {
+        #region General / Notifications
+
         public bool PlaySoundAfterCapture = true;
-        public bool ShowAfterCaptureTasksForm = false;
-        public bool ShowBeforeUploadForm = false;
         public bool PlaySoundAfterUpload = true;
+        public bool ShowToastNotificationAfterTaskCompleted = true;
+        public float ToastWindowDuration = 3f;
+        public float ToastWindowFadeDuration = 1f;
+        public ContentAlignment ToastWindowPlacement = ContentAlignment.BottomRight;
+        public Size ToastWindowSize = new Size(400, 300);
+        public ToastClickAction ToastWindowLeftClickAction = ToastClickAction.OpenUrl;
+        public ToastClickAction ToastWindowRightClickAction = ToastClickAction.CloseNotification;
+        public ToastClickAction ToastWindowMiddleClickAction = ToastClickAction.AnnotateImage;
+        public bool UseCustomCaptureSound = false;
+        public string CustomCaptureSoundPath = "";
+        public bool UseCustomTaskCompletedSound = false;
+        public string CustomTaskCompletedSoundPath = "";
+        public bool UseCustomErrorSound = false;
+        public string CustomErrorSoundPath = "";
+        public bool DisableNotifications = false;
+        public bool DisableNotificationsOnFullscreen = false;
+
         public PopUpNotificationType PopUpNotification = PopUpNotificationType.ToastNotification;
-        public bool ShowAfterUploadForm = false;
+
+        #endregion
     }
 
     public class TaskSettingsImage
@@ -327,7 +345,7 @@ namespace ShareX
         public decimal ScreenshotDelay = 0;
         public bool CaptureTransparent = false;
         public bool CaptureShadow = true;
-        public int CaptureShadowOffset = 20;
+        public int CaptureShadowOffset = 100;
         public bool CaptureClientArea = false;
         public bool CaptureAutoHideTaskbar = false;
         public Rectangle CaptureCustomRegion = new Rectangle(0, 0, 0, 0);
@@ -430,27 +448,6 @@ namespace ShareX
         [Category("General"), DefaultValue(false), Description("If task contains upload job then this setting will clear clipboard when task start.")]
         public bool AutoClearClipboard { get; set; }
 
-        [Category("Sound"), DefaultValue(false), Description("Enable/disable custom capture sound.")]
-        public bool UseCustomCaptureSound { get; set; }
-
-        [Category("Sound"), DefaultValue(""), Description("Capture sound file path."),
-        Editor(typeof(WavFileNameEditor), typeof(UITypeEditor))]
-        public string CustomCaptureSoundPath { get; set; }
-
-        [Category("Sound"), DefaultValue(false), Description("Enable/disable custom task complete sound.")]
-        public bool UseCustomTaskCompletedSound { get; set; }
-
-        [Category("Sound"), DefaultValue(""), Description("Task complete sound file path."),
-        Editor(typeof(WavFileNameEditor), typeof(UITypeEditor))]
-        public string CustomTaskCompletedSoundPath { get; set; }
-
-        [Category("Sound"), DefaultValue(false), Description("Enable/disable custom error sound.")]
-        public bool UseCustomErrorSound { get; set; }
-
-        [Category("Sound"), DefaultValue(""), Description("Error sound file path."),
-        Editor(typeof(WavFileNameEditor), typeof(UITypeEditor))]
-        public string CustomErrorSoundPath { get; set; }
-
         [Category("Capture"), DefaultValue(false), Description("Disable annotation support in region capture.")]
         public bool RegionCaptureDisableAnnotation { get; set; }
 
@@ -480,69 +477,6 @@ namespace ShareX
 
         [Category("After upload"), DefaultValue(0), Description("Automatically shorten URL if the URL is longer than the specified number of characters. 0 means automatic URL shortening is not active.")]
         public int AutoShortenURLLength { get; set; }
-
-        [Category("Notifications"), DefaultValue(false), Description("Disable notifications.")]
-        public bool DisableNotifications { get; set; }
-
-        [Category("Notifications"), DefaultValue(false), Description("If active window is fullscreen then toast window or balloon tip won't be shown.")]
-        public bool DisableNotificationsOnFullscreen { get; set; }
-
-        private float toastWindowDuration;
-
-        [Category("Notifications"), DefaultValue(3f), Description("Specify how long should toast notification window will stay on screen (in seconds).")]
-        public float ToastWindowDuration
-        {
-            get
-            {
-                return toastWindowDuration;
-            }
-            set
-            {
-                toastWindowDuration = value.Clamp(0, 30);
-            }
-        }
-
-        private float toastWindowFadeDuration;
-
-        [Category("Notifications"), DefaultValue(1f), Description("After toast window duration end, toast window will start fading, specify duration of this fade animation (in seconds).")]
-        public float ToastWindowFadeDuration
-        {
-            get
-            {
-                return toastWindowFadeDuration;
-            }
-            set
-            {
-                toastWindowFadeDuration = value.Clamp(0, 30);
-            }
-        }
-
-        [Category("Notifications"), DefaultValue(ContentAlignment.BottomRight), Description("Specify where should toast notification window appear on the screen.")]
-        public ContentAlignment ToastWindowPlacement { get; set; }
-
-        private Size toastWindowSize;
-
-        [Category("Notifications"), DefaultValue(typeof(Size), "400, 300"), Description("Maximum toast notification window size.")]
-        public Size ToastWindowSize
-        {
-            get
-            {
-                return toastWindowSize;
-            }
-            set
-            {
-                toastWindowSize = new Size(Math.Max(value.Width, 100), Math.Max(value.Height, 100));
-            }
-        }
-
-        [Category("Notifications"), DefaultValue(ToastClickAction.OpenUrl), Description("Specify action after toast notification window is left clicked."), TypeConverter(typeof(EnumDescriptionConverter))]
-        public ToastClickAction ToastWindowClickAction { get; set; }
-
-        [Category("Notifications"), DefaultValue(ToastClickAction.CloseNotification), Description("Specify action after toast notification window is right clicked."), TypeConverter(typeof(EnumDescriptionConverter))]
-        public ToastClickAction ToastWindowRightClickAction { get; set; }
-
-        [Category("Notifications"), DefaultValue(ToastClickAction.AnnotateImage), Description("Specify action after toast notification window is middle clicked."), TypeConverter(typeof(EnumDescriptionConverter))]
-        public ToastClickAction ToastWindowMiddleClickAction { get; set; }
 
         [Category("After upload"), DefaultValue(false), Description("After upload form will be automatically closed after 60 seconds.")]
         public bool AutoCloseAfterUploadForm { get; set; }

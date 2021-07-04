@@ -188,6 +188,7 @@ namespace ShareX.UploadersLib
         public AccountType GfycatAccountType { get; set; } = AccountType.Anonymous;
         public bool GfycatIsPublic { get; set; } = false;
         public bool GfycatKeepAudio { get; set; } = true;
+        public string GfycatTitle { get; set; } = "ShareX";
 
         #endregion Gfycat
 
@@ -498,6 +499,13 @@ namespace ShareX.UploadersLib
         public KuttSettings KuttSettings { get; set; } = new KuttSettings();
 
         #endregion Kutt
+
+        #region Zero Width Shortener
+
+        public string ZeroWidthShortenerURL { get; set; } = "https://api.zws.im";
+        public string ZeroWidthShortenerToken { get; set; } = "";
+
+        #endregion
 
         #endregion URL shorteners
 

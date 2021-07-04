@@ -70,7 +70,7 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to File path without extension + &quot;Output file name extension&quot;.
+        ///   Looks up a localized string similar to File path with output file name extension.
         /// </summary>
         internal static string ActionsCodeMenuEntry_OutputFilePath_File_path_without_extension____Output_file_name_extension_ {
             get {
@@ -485,6 +485,51 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Dash.
+        /// </summary>
+        internal static string BorderStyle_Dash {
+            get {
+                return ResourceManager.GetString("BorderStyle_Dash", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to DashDot.
+        /// </summary>
+        internal static string BorderStyle_DashDot {
+            get {
+                return ResourceManager.GetString("BorderStyle_DashDot", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to DashDotDot.
+        /// </summary>
+        internal static string BorderStyle_DashDotDot {
+            get {
+                return ResourceManager.GetString("BorderStyle_DashDotDot", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dot.
+        /// </summary>
+        internal static string BorderStyle_Dot {
+            get {
+                return ResourceManager.GetString("BorderStyle_Dot", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Solid.
+        /// </summary>
+        internal static string BorderStyle_Solid {
+            get {
+                return ResourceManager.GetString("BorderStyle_Solid", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap clipboard_block {
@@ -527,6 +572,87 @@ namespace ShareX.HelpersLib.Properties {
         internal static string CodeMenuEntryFilename_RandomAnimal {
             get {
                 return ResourceManager.GetString("CodeMenuEntryFilename_RandomAnimal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to BottomCenter.
+        /// </summary>
+        internal static string ContentAlignment_BottomCenter {
+            get {
+                return ResourceManager.GetString("ContentAlignment_BottomCenter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to BottomLeft.
+        /// </summary>
+        internal static string ContentAlignment_BottomLeft {
+            get {
+                return ResourceManager.GetString("ContentAlignment_BottomLeft", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to BottomRight.
+        /// </summary>
+        internal static string ContentAlignment_BottomRight {
+            get {
+                return ResourceManager.GetString("ContentAlignment_BottomRight", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to MiddleCenter.
+        /// </summary>
+        internal static string ContentAlignment_MiddleCenter {
+            get {
+                return ResourceManager.GetString("ContentAlignment_MiddleCenter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to MiddleLeft.
+        /// </summary>
+        internal static string ContentAlignment_MiddleLeft {
+            get {
+                return ResourceManager.GetString("ContentAlignment_MiddleLeft", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to MiddleRight.
+        /// </summary>
+        internal static string ContentAlignment_MiddleRight {
+            get {
+                return ResourceManager.GetString("ContentAlignment_MiddleRight", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to TopCenter.
+        /// </summary>
+        internal static string ContentAlignment_TopCenter {
+            get {
+                return ResourceManager.GetString("ContentAlignment_TopCenter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to TopLeft.
+        /// </summary>
+        internal static string ContentAlignment_TopLeft {
+            get {
+                return ResourceManager.GetString("ContentAlignment_TopLeft", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to TopRight.
+        /// </summary>
+        internal static string ContentAlignment_TopRight {
+            get {
+                return ResourceManager.GetString("ContentAlignment_TopRight", resourceCulture);
             }
         }
         
@@ -1183,6 +1309,24 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Clipboard viewer.
+        /// </summary>
+        internal static string HotkeyType_ClipboardViewer {
+            get {
+                return ResourceManager.GetString("HotkeyType_ClipboardViewer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tools.
+        /// </summary>
+        internal static string HotkeyType_ClipboardViewer_Category {
+            get {
+                return ResourceManager.GetString("HotkeyType_ClipboardViewer_Category", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Color picker.
         /// </summary>
         internal static string HotkeyType_ColorPicker {
@@ -1467,6 +1611,24 @@ namespace ShareX.HelpersLib.Properties {
         internal static string HotkeyType_IndexFolder_Category {
             get {
                 return ResourceManager.GetString("HotkeyType_IndexFolder_Category", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Inspect window.
+        /// </summary>
+        internal static string HotkeyType_InspectWindow {
+            get {
+                return ResourceManager.GetString("HotkeyType_InspectWindow", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tools.
+        /// </summary>
+        internal static string HotkeyType_InspectWindow_Category {
+            get {
+                return ResourceManager.GetString("HotkeyType_InspectWindow_Category", resourceCulture);
             }
         }
         
@@ -3413,6 +3575,51 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Letters (Lowercase).
+        /// </summary>
+        internal static string StepType_LettersLowercase {
+            get {
+                return ResourceManager.GetString("StepType_LettersLowercase", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Letters (Uppercase).
+        /// </summary>
+        internal static string StepType_LettersUppercase {
+            get {
+                return ResourceManager.GetString("StepType_LettersUppercase", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Numbers.
+        /// </summary>
+        internal static string StepType_Numbers {
+            get {
+                return ResourceManager.GetString("StepType_Numbers", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Roman numerals (Lowercase).
+        /// </summary>
+        internal static string StepType_RomanNumeralsLowercase {
+            get {
+                return ResourceManager.GetString("StepType_RomanNumeralsLowercase", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Roman numerals (Uppercase).
+        /// </summary>
+        internal static string StepType_RomanNumeralsUppercase {
+            get {
+                return ResourceManager.GetString("StepType_RomanNumeralsUppercase", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Stop.
         /// </summary>
         internal static string Stop {
@@ -3464,6 +3671,96 @@ namespace ShareX.HelpersLib.Properties {
             get {
                 object obj = ResourceManager.GetObject("tick", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Annotate image.
+        /// </summary>
+        internal static string ToastClickAction_AnnotateImage {
+            get {
+                return ResourceManager.GetString("ToastClickAction_AnnotateImage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Close notification.
+        /// </summary>
+        internal static string ToastClickAction_CloseNotification {
+            get {
+                return ResourceManager.GetString("ToastClickAction_CloseNotification", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Copy file.
+        /// </summary>
+        internal static string ToastClickAction_CopyFile {
+            get {
+                return ResourceManager.GetString("ToastClickAction_CopyFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Copy file path.
+        /// </summary>
+        internal static string ToastClickAction_CopyFilePath {
+            get {
+                return ResourceManager.GetString("ToastClickAction_CopyFilePath", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Copy image.
+        /// </summary>
+        internal static string ToastClickAction_CopyImageToClipboard {
+            get {
+                return ResourceManager.GetString("ToastClickAction_CopyImageToClipboard", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Copy link.
+        /// </summary>
+        internal static string ToastClickAction_CopyUrl {
+            get {
+                return ResourceManager.GetString("ToastClickAction_CopyUrl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Open file.
+        /// </summary>
+        internal static string ToastClickAction_OpenFile {
+            get {
+                return ResourceManager.GetString("ToastClickAction_OpenFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Open folder.
+        /// </summary>
+        internal static string ToastClickAction_OpenFolder {
+            get {
+                return ResourceManager.GetString("ToastClickAction_OpenFolder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Open link.
+        /// </summary>
+        internal static string ToastClickAction_OpenUrl {
+            get {
+                return ResourceManager.GetString("ToastClickAction_OpenUrl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Upload file.
+        /// </summary>
+        internal static string ToastClickAction_Upload {
+            get {
+                return ResourceManager.GetString("ToastClickAction_Upload", resourceCulture);
             }
         }
         
