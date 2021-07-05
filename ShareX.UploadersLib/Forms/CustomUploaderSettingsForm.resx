@@ -370,7 +370,7 @@
     <value>mbHelp</value>
   </data>
   <data name="&gt;&gt;mbHelp.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MenuButton, ShareX.HelpersLib, Version=13.4.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MenuButton, ShareX.HelpersLib, Version=13.5.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;mbHelp.Parent" xml:space="preserve">
     <value>$this</value>
@@ -448,7 +448,7 @@
     <value>eiCustomUploaders</value>
   </data>
   <data name="&gt;&gt;eiCustomUploaders.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.ExportImportControl, ShareX.HelpersLib, Version=13.4.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.ExportImportControl, ShareX.HelpersLib, Version=13.5.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;eiCustomUploaders.Parent" xml:space="preserve">
     <value>$this</value>
@@ -2149,7 +2149,7 @@ store.book[0].title</value>
     <value>mbDestinationType</value>
   </data>
   <data name="&gt;&gt;mbDestinationType.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MenuButton, ShareX.HelpersLib, Version=13.4.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MenuButton, ShareX.HelpersLib, Version=13.5.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;mbDestinationType.Parent" xml:space="preserve">
     <value>pMain</value>
@@ -2397,18 +2397,6 @@ store.book[0].title</value>
   <data name="&gt;&gt;cParametersValue.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;cArgumentsName.Name" xml:space="preserve">
-    <value>cArgumentsName</value>
-  </data>
-  <data name="&gt;&gt;cArgumentsName.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cArgumentsValue.Name" xml:space="preserve">
-    <value>cArgumentsValue</value>
-  </data>
-  <data name="&gt;&gt;cArgumentsValue.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;cRegex.Name" xml:space="preserve">
     <value>cRegex</value>
   </data>
@@ -2420,6 +2408,18 @@ store.book[0].title</value>
   </data>
   <data name="&gt;&gt;ttHelpTip.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cArgumentsName.Name" xml:space="preserve">
+    <value>cArgumentsName</value>
+  </data>
+  <data name="&gt;&gt;cArgumentsName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cArgumentsValue.Name" xml:space="preserve">
+    <value>cArgumentsValue</value>
+  </data>
+  <data name="&gt;&gt;cArgumentsValue.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>CustomUploaderSettingsForm</value>
