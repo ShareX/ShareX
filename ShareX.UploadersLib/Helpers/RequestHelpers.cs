@@ -167,7 +167,7 @@ namespace ShareX.UploadersLib
 
                     foreach (KeyValuePair<string, string> content in contents)
                     {
-                        if (!string.IsNullOrEmpty(content.Key) && !string.IsNullOrEmpty(content.Value))
+                        if (!string.IsNullOrEmpty(content.Key))
                         {
                             bytes = MakeInputContent(boundary, content.Key, content.Value);
                             stream.Write(bytes, 0, bytes.Length);
