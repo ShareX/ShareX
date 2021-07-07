@@ -582,7 +582,7 @@ namespace ShareX.ScreenCaptureLib
                     Rectangle rect = new Rectangle(Options.TrimLeftEdge, Options.TrimTopEdge, image.Width - Options.TrimLeftEdge - Options.TrimRightEdge,
                         image.Height - Options.TrimTopEdge - Options.TrimBottomEdge);
 
-                    if (i == images.Count - 1)
+                    if (i == images.Count - Options.IgnoreLast - 1)
                     {
                         rect.Y += Options.CombineAdjustmentLastVertical;
                         rect.Height -= Options.CombineAdjustmentLastVertical;
