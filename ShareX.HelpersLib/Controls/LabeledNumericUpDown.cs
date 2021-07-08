@@ -112,10 +112,7 @@ namespace ShareX.HelpersLib
 
         private void OnValueChanged(object sender, EventArgs e)
         {
-            if (ValueChanged != null)
-            {
-                ValueChanged(sender, e);
-            }
+            ValueChanged?.Invoke(sender, e);
         }
     }
 }

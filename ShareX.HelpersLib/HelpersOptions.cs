@@ -36,6 +36,7 @@ namespace ShareX.HelpersLib
         public static bool AcceptInvalidSSLCertificates { get; set; } = false;
         public static bool DefaultCopyImageFillBackground { get; set; } = true;
         public static bool UseAlternativeClipboardCopyImage { get; set; } = false;
+        public static bool UseAlternativeClipboardGetImage { get; set; } = false;
         public static bool RotateImageByExifOrientationData { get; set; } = true;
         public static string BrowserPath { get; set; } = "";
         public static List<Color> RecentColors { get; set; } = new List<Color>();

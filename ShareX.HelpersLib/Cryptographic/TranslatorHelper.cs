@@ -183,8 +183,7 @@ namespace ShareX.HelpersLib
             {
                 foreach (string number in numbers)
                 {
-                    byte b;
-                    if (byte.TryParse(number, out b))
+                    if (byte.TryParse(number, out byte b))
                     {
                         stream.WriteByte(b);
                     }

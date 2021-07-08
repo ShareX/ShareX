@@ -161,7 +161,7 @@ namespace ShareX.UploadersLib
         private void CustomUploaderLoad(CustomUploaderItem uploader)
         {
             txtName.Text = uploader.Name ?? "";
-            txtName.SetWatermark(URLHelpers.GetHostName(uploader.RequestURL));
+            txtName.SetWatermark(URLHelpers.GetHostName(uploader.RequestURL) ?? "");
             CustomUploaderSetDestinationType(uploader.DestinationType);
 
             cbRequestMethod.SelectedIndex = (int)uploader.RequestMethod;
@@ -228,8 +228,7 @@ namespace ShareX.UploadersLib
 
         private void CustomUploaderUpdateStates()
         {
-            btnRemove.Enabled = btnDuplicate.Enabled = txtName.Enabled = mbDestinationType.Enabled =
-                tcCustomUploader.Enabled = CustomUploaderCheck(lbCustomUploaderList.SelectedIndex);
+            btnRemove.Enabled = btnDuplicate.Enabled = pMain.Visible = CustomUploaderCheck(lbCustomUploaderList.SelectedIndex);
 
             tsmiExportAll.Enabled = tsmiClearUploaders.Enabled = cbImageUploader.Enabled =
                 btnImageUploaderTest.Enabled = cbTextUploader.Enabled = btnTextUploaderTest.Enabled =
@@ -680,31 +679,31 @@ namespace ShareX.UploadersLib
                             {
                                 CustomImageUploader imageUploader = new CustomImageUploader(item);
                                 result = imageUploader.Upload(stream, "Test.png");
-                                result.Errors = imageUploader.Errors;
+                                result.Errors.AddRange(imageUploader.Errors);
                             }
                             break;
                         case CustomUploaderDestinationType.TextUploader:
                             CustomTextUploader textUploader = new CustomTextUploader(item);
                             result = textUploader.UploadText("ShareX text upload test", "Test.txt");
-                            result.Errors = textUploader.Errors;
+                            result.Errors.AddRange(textUploader.Errors);
                             break;
                         case CustomUploaderDestinationType.FileUploader:
                             using (Stream stream = ShareXResources.Logo.GetStream())
                             {
                                 CustomFileUploader fileUploader = new CustomFileUploader(item);
                                 result = fileUploader.Upload(stream, "Test.png");
-                                result.Errors = fileUploader.Errors;
+                                result.Errors.AddRange(fileUploader.Errors);
                             }
                             break;
                         case CustomUploaderDestinationType.URLShortener:
                             CustomURLShortener urlShortener = new CustomURLShortener(item);
                             result = urlShortener.ShortenURL(Links.URL_WEBSITE);
-                            result.Errors = urlShortener.Errors;
+                            result.Errors.AddRange(urlShortener.Errors);
                             break;
                         case CustomUploaderDestinationType.URLSharingService:
                             CustomURLSharer urlSharer = new CustomURLSharer(item);
                             result = urlSharer.ShareURL(Links.URL_WEBSITE);
-                            result.Errors = urlSharer.Errors;
+                            result.Errors.AddRange(urlSharer.Errors);
                             break;
                     }
                 }
@@ -799,9 +798,7 @@ namespace ShareX.UploadersLib
         {
             if (e.Data.GetDataPresent(DataFormats.FileDrop, false))
             {
-                string[] files = e.Data.GetData(DataFormats.FileDrop, false) as string[];
-
-                if (files != null && files.Any(x => !string.IsNullOrEmpty(x) && x.EndsWith(".sxcu")))
+                if (e.Data.GetData(DataFormats.FileDrop, false) is string[] files && files.Any(x => !string.IsNullOrEmpty(x) && x.EndsWith(".sxcu")))
                 {
                     e.Effect = DragDropEffects.Copy;
                 }
@@ -818,25 +815,20 @@ namespace ShareX.UploadersLib
 
         private void CustomUploaderSettingsForm_DragDrop(object sender, DragEventArgs e)
         {
-            if (e.Data.GetDataPresent(DataFormats.FileDrop, false))
+            if (e.Data.GetDataPresent(DataFormats.FileDrop, false) && e.Data.GetData(DataFormats.FileDrop, false) is string[] files)
             {
-                string[] files = e.Data.GetData(DataFormats.FileDrop, false) as string[];
-
-                if (files != null)
+                foreach (string filePath in files.Where(x => !string.IsNullOrEmpty(x) && x.EndsWith(".sxcu")))
                 {
-                    foreach (string filePath in files.Where(x => !string.IsNullOrEmpty(x) && x.EndsWith(".sxcu")))
+                    CustomUploaderItem cui = JsonHelpers.DeserializeFromFile<CustomUploaderItem>(filePath);
+
+                    if (cui != null)
                     {
-                        CustomUploaderItem cui = JsonHelpers.DeserializeFromFile<CustomUploaderItem>(filePath);
-
-                        if (cui != null)
-                        {
-                            cui.CheckBackwardCompatibility();
-                            CustomUploaderAdd(cui);
-                        }
+                        cui.CheckBackwardCompatibility();
+                        CustomUploaderAdd(cui);
                     }
-
-                    eiCustomUploaders_ImportCompleted();
                 }
+
+                eiCustomUploaders_ImportCompleted();
             }
         }
 

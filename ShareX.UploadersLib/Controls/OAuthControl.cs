@@ -117,10 +117,7 @@ namespace ShareX.UploadersLib
 
         private void btnOpenAuthorizePage_Click(object sender, EventArgs e)
         {
-            if (OpenButtonClicked != null)
-            {
-                OpenButtonClicked();
-            }
+            OpenButtonClicked?.Invoke();
         }
 
         private void txtVerificationCode_TextChanged(object sender, EventArgs e)
@@ -140,10 +137,7 @@ namespace ShareX.UploadersLib
 
         private void btnRefreshAuthorization_Click(object sender, EventArgs e)
         {
-            if (RefreshButtonClicked != null)
-            {
-                RefreshButtonClicked();
-            }
+            RefreshButtonClicked?.Invoke();
         }
 
         private void btnClearAuthorization_Click(object sender, EventArgs e)
@@ -151,10 +145,7 @@ namespace ShareX.UploadersLib
             UserInfo = null;
             Status = OAuthLoginStatus.LoginRequired;
 
-            if (ClearButtonClicked != null)
-            {
-                ClearButtonClicked();
-            }
+            ClearButtonClicked?.Invoke();
         }
 
         private void UpdateStatusLabel()

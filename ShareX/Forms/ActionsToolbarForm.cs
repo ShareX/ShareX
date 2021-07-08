@@ -307,7 +307,7 @@ namespace ShareX
 
             tsMain.Items.Add(tslTitle);
 
-            foreach (HotkeyType action in Program.Settings.ActionsToolbarList)
+            foreach (HotkeyType action in actions)
             {
                 if (action == HotkeyType.None)
                 {

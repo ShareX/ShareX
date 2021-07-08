@@ -64,9 +64,7 @@ namespace ShareX.HistoryLib
                         {
                             if (reader.NodeType == XmlNodeType.Element && reader.Name == "HistoryItem")
                             {
-                                XElement element = XNode.ReadFrom(reader) as XElement;
-
-                                if (element != null)
+                                if (XNode.ReadFrom(reader) is XElement element)
                                 {
                                     HistoryItem hi = ParseHistoryItem(element);
                                     historyItemList.Add(hi);

@@ -127,10 +127,10 @@
     <value>&amp;OK</value>
   </data>
   <data name="btnOpenLogFile.Text" xml:space="preserve">
-    <value>Abrir arquivo de log</value>
+    <value>Abrir arquivo de log...</value>
   </data>
   <data name="btnSendBugReport.Text" xml:space="preserve">
-    <value>Enviar relatório de bug</value>
+    <value>Enviar relatório de bug...</value>
   </data>
   <data name="lblErrorMessage.Text" xml:space="preserve">
     <value>Erro

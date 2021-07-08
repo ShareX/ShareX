@@ -140,15 +140,6 @@ namespace ShareX.UploadersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Response parse failed..
-        /// </summary>
-        internal static string CustomFileUploader_Upload_Response_parse_failed_ {
-            get {
-                return ResourceManager.GetString("CustomFileUploader_Upload_Response_parse_failed_", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to &quot;File form name&quot; must be configured..
         /// </summary>
         internal static string CustomUploaderItem_GetFileFormName_FileFormNameMustBeConfigured {
@@ -996,6 +987,16 @@ namespace ShareX.UploadersLib.Properties {
             get {
                 object obj = ResourceManager.GetObject("YouTube", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ZeroWidthShortener {
+            get {
+                object obj = ResourceManager.GetObject("ZeroWidthShortener", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
     }

@@ -62,10 +62,7 @@ namespace ShareX.HelpersLib
 
         protected void OnMessageAdded(string message)
         {
-            if (MessageAdded != null)
-            {
-                MessageAdded(message);
-            }
+            MessageAdded?.Invoke(message);
         }
 
         private void ProcessMessageQueue()

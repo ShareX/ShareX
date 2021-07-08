@@ -1903,6 +1903,8 @@ namespace ShareX.ScreenCaptureLib
                     switch (imageInsertForm.ImageInsertMethod)
                     {
                         default:
+                            img.Dispose();
+                            return;
                         case ImageInsertMethod.Center:
                             pos = Form.ClientArea.Center();
                             centerImage = true;
@@ -2098,26 +2100,17 @@ namespace ShareX.ScreenCaptureLib
 
         private void OnCurrentShapeChanged(BaseShape shape)
         {
-            if (CurrentShapeChanged != null)
-            {
-                CurrentShapeChanged(shape);
-            }
+            CurrentShapeChanged?.Invoke(shape);
         }
 
         private void OnCurrentShapeTypeChanged(ShapeType shapeType)
         {
-            if (CurrentShapeTypeChanged != null)
-            {
-                CurrentShapeTypeChanged(shapeType);
-            }
+            CurrentShapeTypeChanged?.Invoke(shapeType);
         }
 
         private void OnShapeCreated(BaseShape shape)
         {
-            if (ShapeCreated != null)
-            {
-                ShapeCreated(shape);
-            }
+            ShapeCreated?.Invoke(shape);
         }
 
         public void Dispose()

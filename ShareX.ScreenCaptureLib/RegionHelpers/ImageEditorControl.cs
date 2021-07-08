@@ -85,38 +85,26 @@ namespace ShareX.ScreenCaptureLib
 
         public virtual void OnMouseEnter()
         {
-            if (MouseEnter != null)
-            {
-                MouseEnter();
-            }
+            MouseEnter?.Invoke();
         }
 
         public virtual void OnMouseLeave()
         {
-            if (MouseLeave != null)
-            {
-                MouseLeave();
-            }
+            MouseLeave?.Invoke();
         }
 
         public virtual void OnMouseDown(Point position)
         {
             IsDragging = true;
 
-            if (MouseDown != null)
-            {
-                MouseDown(this, new MouseEventArgs(MouseButtons.Left, 1, position.X, position.Y, 0));
-            }
+            MouseDown?.Invoke(this, new MouseEventArgs(MouseButtons.Left, 1, position.X, position.Y, 0));
         }
 
         public virtual void OnMouseUp(Point position)
         {
             IsDragging = false;
 
-            if (MouseUp != null)
-            {
-                MouseUp(this, new MouseEventArgs(MouseButtons.Left, 1, position.X, position.Y, 0));
-            }
+            MouseUp?.Invoke(this, new MouseEventArgs(MouseButtons.Left, 1, position.X, position.Y, 0));
         }
     }
 }

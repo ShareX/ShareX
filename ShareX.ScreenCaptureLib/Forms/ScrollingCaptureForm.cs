@@ -100,10 +100,7 @@ namespace ShareX.ScreenCaptureLib
 
         protected void OnImageProcessRequested(Bitmap bmp)
         {
-            if (ImageProcessRequested != null)
-            {
-                ImageProcessRequested(bmp);
-            }
+            ImageProcessRequested?.Invoke(bmp);
         }
 
         private void btnSelectHandle_Click(object sender, EventArgs e)
@@ -161,9 +158,7 @@ namespace ShareX.ScreenCaptureLib
             {
                 Thread.Sleep(250);
 
-                Rectangle rect;
-
-                if (RegionCaptureTasks.GetRectangleRegion(out rect, RegionCaptureOptions))
+                if (RegionCaptureTasks.GetRectangleRegion(out Rectangle rect, RegionCaptureOptions))
                 {
                     selectedRectangle = rect;
                     lblSelectedRectangle.Text = selectedRectangle.ToString();

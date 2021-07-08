@@ -62,8 +62,6 @@
             this.lblFileUploader = new System.Windows.Forms.Label();
             this.btnFileUploaderTest = new System.Windows.Forms.Button();
             this.lblImageUploader = new System.Windows.Forms.Label();
-            this.tcCustomUploader = new System.Windows.Forms.TabControl();
-            this.tpRequest = new System.Windows.Forms.TabPage();
             this.dgvHeaders = new System.Windows.Forms.DataGridView();
             this.cHeadersName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cHeadersValue = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -90,7 +88,6 @@
             this.btnDataMinify = new System.Windows.Forms.Button();
             this.pData = new System.Windows.Forms.Panel();
             this.rtbData = new System.Windows.Forms.RichTextBox();
-            this.tpResponse = new System.Windows.Forms.TabPage();
             this.pResultErrorMessage = new System.Windows.Forms.Panel();
             this.rtbResultErrorMessage = new System.Windows.Forms.RichTextBox();
             this.lblResultErrorMessage = new System.Windows.Forms.Label();
@@ -132,9 +129,8 @@
             this.btnURLSharingServiceTest = new System.Windows.Forms.Button();
             this.ttHelpTip = new System.Windows.Forms.ToolTip(this.components);
             this.lblUploaders = new System.Windows.Forms.Label();
+            this.pMain = new System.Windows.Forms.Panel();
             this.cmsHelp.SuspendLayout();
-            this.tcCustomUploader.SuspendLayout();
-            this.tpRequest.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHeaders)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvParameters)).BeginInit();
             this.pRequestURL.SuspendLayout();
@@ -142,7 +138,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvArguments)).BeginInit();
             this.pBodyData.SuspendLayout();
             this.pData.SuspendLayout();
-            this.tpResponse.SuspendLayout();
             this.pResultErrorMessage.SuspendLayout();
             this.pResultDeletionURL.SuspendLayout();
             this.pResultThumbnailURL.SuspendLayout();
@@ -152,13 +147,14 @@
             this.tpXmlParse.SuspendLayout();
             this.tpRegexParse.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRegex)).BeginInit();
+            this.pMain.SuspendLayout();
             this.SuspendLayout();
             // 
             // cbImageUploader
             // 
+            resources.ApplyResources(this.cbImageUploader, "cbImageUploader");
             this.cbImageUploader.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbImageUploader.FormattingEnabled = true;
-            resources.ApplyResources(this.cbImageUploader, "cbImageUploader");
             this.cbImageUploader.Name = "cbImageUploader";
             this.cbImageUploader.SelectedIndexChanged += new System.EventHandler(this.cbCustomUploaderImageUploader_SelectedIndexChanged);
             // 
@@ -176,9 +172,9 @@
             // 
             // cbTextUploader
             // 
+            resources.ApplyResources(this.cbTextUploader, "cbTextUploader");
             this.cbTextUploader.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbTextUploader.FormattingEnabled = true;
-            resources.ApplyResources(this.cbTextUploader, "cbTextUploader");
             this.cbTextUploader.Name = "cbTextUploader";
             this.cbTextUploader.SelectedIndexChanged += new System.EventHandler(this.cbCustomUploaderTextUploader_SelectedIndexChanged);
             // 
@@ -259,11 +255,11 @@
             // 
             // eiCustomUploaders
             // 
+            resources.ApplyResources(this.eiCustomUploaders, "eiCustomUploaders");
             this.eiCustomUploaders.CustomFilter = "ShareX custom uploader (*.sxcu)|*.sxcu";
             this.eiCustomUploaders.DefaultFileName = null;
             this.eiCustomUploaders.ExportIgnoreDefaultValue = true;
             this.eiCustomUploaders.ExportIgnoreNull = true;
-            resources.ApplyResources(this.eiCustomUploaders, "eiCustomUploaders");
             this.eiCustomUploaders.Name = "eiCustomUploaders";
             this.eiCustomUploaders.ObjectType = null;
             this.eiCustomUploaders.SerializationBinder = null;
@@ -273,9 +269,9 @@
             // 
             // lbCustomUploaderList
             // 
+            resources.ApplyResources(this.lbCustomUploaderList, "lbCustomUploaderList");
             this.lbCustomUploaderList.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lbCustomUploaderList.FormattingEnabled = true;
-            resources.ApplyResources(this.lbCustomUploaderList, "lbCustomUploaderList");
             this.lbCustomUploaderList.Name = "lbCustomUploaderList";
             this.lbCustomUploaderList.SelectedIndexChanged += new System.EventHandler(this.lbCustomUploaderList_SelectedIndexChanged);
             // 
@@ -288,17 +284,17 @@
             // 
             // cbURLShortener
             // 
+            resources.ApplyResources(this.cbURLShortener, "cbURLShortener");
             this.cbURLShortener.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbURLShortener.FormattingEnabled = true;
-            resources.ApplyResources(this.cbURLShortener, "cbURLShortener");
             this.cbURLShortener.Name = "cbURLShortener";
             this.cbURLShortener.SelectedIndexChanged += new System.EventHandler(this.cbCustomUploaderURLShortener_SelectedIndexChanged);
             // 
             // cbFileUploader
             // 
+            resources.ApplyResources(this.cbFileUploader, "cbFileUploader");
             this.cbFileUploader.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbFileUploader.FormattingEnabled = true;
-            resources.ApplyResources(this.cbFileUploader, "cbFileUploader");
             this.cbFileUploader.Name = "cbFileUploader";
             this.cbFileUploader.SelectedIndexChanged += new System.EventHandler(this.cbCustomUploaderFileUploader_SelectedIndexChanged);
             // 
@@ -325,32 +321,6 @@
             // 
             resources.ApplyResources(this.lblImageUploader, "lblImageUploader");
             this.lblImageUploader.Name = "lblImageUploader";
-            // 
-            // tcCustomUploader
-            // 
-            resources.ApplyResources(this.tcCustomUploader, "tcCustomUploader");
-            this.tcCustomUploader.Controls.Add(this.tpRequest);
-            this.tcCustomUploader.Controls.Add(this.tpResponse);
-            this.tcCustomUploader.Name = "tcCustomUploader";
-            this.tcCustomUploader.SelectedIndex = 0;
-            // 
-            // tpRequest
-            // 
-            this.tpRequest.Controls.Add(this.dgvHeaders);
-            this.tpRequest.Controls.Add(this.dgvParameters);
-            this.tpRequest.Controls.Add(this.lblHeaders);
-            this.tpRequest.Controls.Add(this.lblParameters);
-            this.tpRequest.Controls.Add(this.pRequestURL);
-            this.tpRequest.Controls.Add(this.cbRequestMethod);
-            this.tpRequest.Controls.Add(this.lblRequestURL);
-            this.tpRequest.Controls.Add(this.cbBody);
-            this.tpRequest.Controls.Add(this.lblRequestMethod);
-            this.tpRequest.Controls.Add(this.lblBody);
-            this.tpRequest.Controls.Add(this.pBodyArguments);
-            this.tpRequest.Controls.Add(this.pBodyData);
-            resources.ApplyResources(this.tpRequest, "tpRequest");
-            this.tpRequest.Name = "tpRequest";
-            this.tpRequest.UseVisualStyleBackColor = true;
             // 
             // dgvHeaders
             // 
@@ -611,22 +581,6 @@
             resources.ApplyResources(this.rtbData, "rtbData");
             this.rtbData.Name = "rtbData";
             this.rtbData.TextChanged += new System.EventHandler(this.rtbCustomUploaderData_TextChanged);
-            // 
-            // tpResponse
-            // 
-            this.tpResponse.Controls.Add(this.pResultErrorMessage);
-            this.tpResponse.Controls.Add(this.lblResultErrorMessage);
-            this.tpResponse.Controls.Add(this.lblParseResponse);
-            this.tpResponse.Controls.Add(this.pResultDeletionURL);
-            this.tpResponse.Controls.Add(this.lblResultDeletionURL);
-            this.tpResponse.Controls.Add(this.pResultThumbnailURL);
-            this.tpResponse.Controls.Add(this.pResultURL);
-            this.tpResponse.Controls.Add(this.lblResultThumbnailURL);
-            this.tpResponse.Controls.Add(this.lblResultURL);
-            this.tpResponse.Controls.Add(this.tcResponseParse);
-            resources.ApplyResources(this.tpResponse, "tpResponse");
-            this.tpResponse.Name = "tpResponse";
-            this.tpResponse.UseVisualStyleBackColor = true;
             // 
             // pResultErrorMessage
             // 
@@ -911,9 +865,9 @@
             // 
             // cbURLSharingService
             // 
+            resources.ApplyResources(this.cbURLSharingService, "cbURLSharingService");
             this.cbURLSharingService.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbURLSharingService.FormattingEnabled = true;
-            resources.ApplyResources(this.cbURLSharingService, "cbURLSharingService");
             this.cbURLSharingService.Name = "cbURLSharingService";
             this.cbURLSharingService.SelectedIndexChanged += new System.EventHandler(this.cbCustomUploaderURLSharingService_SelectedIndexChanged);
             // 
@@ -939,25 +893,52 @@
             resources.ApplyResources(this.lblUploaders, "lblUploaders");
             this.lblUploaders.Name = "lblUploaders";
             // 
+            // pMain
+            // 
+            resources.ApplyResources(this.pMain, "pMain");
+            this.pMain.Controls.Add(this.pResultErrorMessage);
+            this.pMain.Controls.Add(this.dgvHeaders);
+            this.pMain.Controls.Add(this.lblResultErrorMessage);
+            this.pMain.Controls.Add(this.txtName);
+            this.pMain.Controls.Add(this.lblParseResponse);
+            this.pMain.Controls.Add(this.dgvParameters);
+            this.pMain.Controls.Add(this.pResultDeletionURL);
+            this.pMain.Controls.Add(this.lblName);
+            this.pMain.Controls.Add(this.lblResultDeletionURL);
+            this.pMain.Controls.Add(this.lblHeaders);
+            this.pMain.Controls.Add(this.pResultThumbnailURL);
+            this.pMain.Controls.Add(this.mbDestinationType);
+            this.pMain.Controls.Add(this.pResultURL);
+            this.pMain.Controls.Add(this.lblParameters);
+            this.pMain.Controls.Add(this.lblResultThumbnailURL);
+            this.pMain.Controls.Add(this.lblDestinationType);
+            this.pMain.Controls.Add(this.lblResultURL);
+            this.pMain.Controls.Add(this.pRequestURL);
+            this.pMain.Controls.Add(this.tcResponseParse);
+            this.pMain.Controls.Add(this.cbRequestMethod);
+            this.pMain.Controls.Add(this.pBodyData);
+            this.pMain.Controls.Add(this.lblRequestURL);
+            this.pMain.Controls.Add(this.pBodyArguments);
+            this.pMain.Controls.Add(this.cbBody);
+            this.pMain.Controls.Add(this.lblBody);
+            this.pMain.Controls.Add(this.lblRequestMethod);
+            this.pMain.Name = "pMain";
+            // 
             // CustomUploaderSettingsForm
             // 
             this.AllowDrop = true;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.SystemColors.Window;
+            this.Controls.Add(this.pMain);
             this.Controls.Add(this.lblUploaders);
             this.Controls.Add(this.mbHelp);
             this.Controls.Add(this.btnNew);
             this.Controls.Add(this.btnDuplicate);
-            this.Controls.Add(this.tcCustomUploader);
             this.Controls.Add(this.eiCustomUploaders);
-            this.Controls.Add(this.lblDestinationType);
             this.Controls.Add(this.lbCustomUploaderList);
-            this.Controls.Add(this.mbDestinationType);
             this.Controls.Add(this.btnRemove);
-            this.Controls.Add(this.lblName);
             this.Controls.Add(this.btnURLSharingServiceTest);
-            this.Controls.Add(this.txtName);
             this.Controls.Add(this.cbURLSharingService);
             this.Controls.Add(this.lblURLSharingService);
             this.Controls.Add(this.cbImageUploader);
@@ -972,14 +953,10 @@
             this.Controls.Add(this.lblTextUploader);
             this.Controls.Add(this.cbFileUploader);
             this.Controls.Add(this.cbURLShortener);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "CustomUploaderSettingsForm";
             this.DragDrop += new System.Windows.Forms.DragEventHandler(this.CustomUploaderSettingsForm_DragDrop);
             this.DragEnter += new System.Windows.Forms.DragEventHandler(this.CustomUploaderSettingsForm_DragEnter);
             this.cmsHelp.ResumeLayout(false);
-            this.tcCustomUploader.ResumeLayout(false);
-            this.tpRequest.ResumeLayout(false);
-            this.tpRequest.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHeaders)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvParameters)).EndInit();
             this.pRequestURL.ResumeLayout(false);
@@ -988,8 +965,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvArguments)).EndInit();
             this.pBodyData.ResumeLayout(false);
             this.pData.ResumeLayout(false);
-            this.tpResponse.ResumeLayout(false);
-            this.tpResponse.PerformLayout();
             this.pResultErrorMessage.ResumeLayout(false);
             this.pResultDeletionURL.ResumeLayout(false);
             this.pResultThumbnailURL.ResumeLayout(false);
@@ -1002,6 +977,8 @@
             this.tpRegexParse.ResumeLayout(false);
             this.tpRegexParse.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRegex)).EndInit();
+            this.pMain.ResumeLayout(false);
+            this.pMain.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1026,8 +1003,6 @@
         private System.Windows.Forms.Label lblFileUploader;
         private System.Windows.Forms.Button btnFileUploaderTest;
         private System.Windows.Forms.Label lblImageUploader;
-        private System.Windows.Forms.TabControl tcCustomUploader;
-        private System.Windows.Forms.TabPage tpRequest;
         private System.Windows.Forms.Label lblHeaders;
         private System.Windows.Forms.Label lblParameters;
         private System.Windows.Forms.Panel pRequestURL;
@@ -1045,7 +1020,6 @@
         private System.Windows.Forms.Button btnDataMinify;
         private System.Windows.Forms.Panel pData;
         private System.Windows.Forms.RichTextBox rtbData;
-        private System.Windows.Forms.TabPage tpResponse;
         private System.Windows.Forms.Label lblParseResponse;
         private System.Windows.Forms.Panel pResultDeletionURL;
         private System.Windows.Forms.RichTextBox rtbResultDeletionURL;
@@ -1103,5 +1077,6 @@
         private System.Windows.Forms.Label lblResultErrorMessage;
         private System.Windows.Forms.Label lblUploaders;
         private System.Windows.Forms.ToolStripMenuItem tsmiClearUploaders;
+        private System.Windows.Forms.Panel pMain;
     }
 }

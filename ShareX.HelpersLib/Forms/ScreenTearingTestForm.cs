@@ -35,7 +35,7 @@ namespace ShareX.HelpersLib
     {
         public ScreenTearingTestMode Mode { get; set; } = ScreenTearingTestMode.VerticalLines;
 
-        private Rectangle screenRectangle, screenRectangle0Based;
+        private Rectangle screenRectangle;
         private Stopwatch animationTime;
         private TimeSpan lastElapsed;
         private int rectangleSize = 50;
@@ -44,7 +44,6 @@ namespace ShareX.HelpersLib
         public ScreenTearingTestForm()
         {
             screenRectangle = CaptureHelpers.GetScreenBounds();
-            screenRectangle0Based = new Rectangle(0, 0, screenRectangle.Width, screenRectangle.Height);
 
             SuspendLayout();
 

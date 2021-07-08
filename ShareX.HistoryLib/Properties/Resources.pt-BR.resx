@@ -169,7 +169,7 @@
     <value>Pré-visualização da imagem</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_More_info" xml:space="preserve">
-    <value>Mais informações</value>
+    <value>Mais informações...</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_Open" xml:space="preserve">
     <value>Abrir</value>
@@ -191,5 +191,44 @@
   </data>
   <data name="HistoryManager_GetHistoryItems_Error" xml:space="preserve">
     <value>Erro</value>
+  </data>
+  <data name="BtnShowStats_HideStats" xml:space="preserve">
+    <value>Ocultar estatísticas</value>
+  </data>
+  <data name="BtnShowStats_ShowStats" xml:space="preserve">
+    <value>Mostrar estatísticas</value>
+  </data>
+  <data name="ErrorOccuredWhileReadingHistoryFile" xml:space="preserve">
+    <value>Ocorreu um erro ao ler o arquivo de histórico:</value>
+  </data>
+  <data name="HistoryItemCounts" xml:space="preserve">
+    <value>Contagens de itens do histórico:</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_EditImage" xml:space="preserve">
+    <value>Editar imagem...</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Markdown__image" xml:space="preserve">
+    <value>Imagem Markdown</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Markdown__link" xml:space="preserve">
+    <value>Link Markdown</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Markdown__linked_image" xml:space="preserve">
+    <value>Imagem vinculada de Markdown</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_UploadFile" xml:space="preserve">
+    <value>Enviar arquivo</value>
+  </data>
+  <data name="HistoryStats_FileExtensions" xml:space="preserve">
+    <value>Extensões de arquivo:</value>
+  </data>
+  <data name="HistoryStats_Total" xml:space="preserve">
+    <value>Total:</value>
+  </data>
+  <data name="HistoryStats_Hosts" xml:space="preserve">
+    <value>Hosts:</value>
+  </data>
+  <data name="HistoryStats_YearlyUsages" xml:space="preserve">
+    <value>Usos anuais:</value>
   </data>
 </root>

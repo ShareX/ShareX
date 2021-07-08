@@ -84,7 +84,7 @@ namespace ShareX.ScreenCaptureLib
         public int StepBorderSize { get; set; } = 0;
         public Color StepFillColor { get; set; } = PrimaryColor;
         public int StepFontSize { get; set; } = 18;
-        public bool StepUseLetters { get; set; } = false;
+        public StepType StepType { get; set; } = StepType.Numbers;
 
         // Magnify drawing
         public int MagnifyStrength { get; set; } = 200;

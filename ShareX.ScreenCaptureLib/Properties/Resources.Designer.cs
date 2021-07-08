@@ -122,6 +122,16 @@ namespace ShareX.ScreenCaptureLib.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap camcorder__pencil {
+            get {
+                object obj = ResourceManager.GetObject("camcorder__pencil", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap camera {
             get {
                 object obj = ResourceManager.GetObject("camera", resourceCulture);
@@ -174,6 +184,26 @@ namespace ShareX.ScreenCaptureLib.Properties {
         internal static System.Drawing.Bitmap control {
             get {
                 object obj = ResourceManager.GetObject("control", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap control_record {
+            get {
+                object obj = ResourceManager.GetObject("control_record", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap control_record_yellow {
+            get {
+                object obj = ResourceManager.GetObject("control_record_yellow", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1255,6 +1285,69 @@ namespace ShareX.ScreenCaptureLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Are you sure you want to abort this recording?.
+        /// </summary>
+        internal static string ScreenRecordForm_ConfirmCancel {
+            get {
+                return ResourceManager.GetString("ScreenRecordForm_ConfirmCancel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Start.
+        /// </summary>
+        internal static string ScreenRecordForm_Start {
+            get {
+                return ResourceManager.GetString("ScreenRecordForm_Start", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Click to start recording..
+        /// </summary>
+        internal static string ScreenRecordForm_StartRecording_Click_tray_icon_to_start_recording_ {
+            get {
+                return ResourceManager.GetString("ScreenRecordForm_StartRecording_Click_tray_icon_to_start_recording_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Click to stop recording..
+        /// </summary>
+        internal static string ScreenRecordForm_StartRecording_Click_tray_icon_to_stop_recording_ {
+            get {
+                return ResourceManager.GetString("ScreenRecordForm_StartRecording_Click_tray_icon_to_stop_recording_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Encoding....
+        /// </summary>
+        internal static string ScreenRecordForm_StartRecording_Encoding___ {
+            get {
+                return ResourceManager.GetString("ScreenRecordForm_StartRecording_Encoding___", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Waiting....
+        /// </summary>
+        internal static string ScreenRecordForm_StartRecording_Waiting___ {
+            get {
+                return ResourceManager.GetString("ScreenRecordForm_StartRecording_Waiting___", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Stop.
+        /// </summary>
+        internal static string ScreenRecordForm_Stop {
+            get {
+                return ResourceManager.GetString("ScreenRecordForm_Stop", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Stop capture.
         /// </summary>
         internal static string ScrollingCaptureForm_StartCapture_Stop_capture {
@@ -1278,6 +1371,15 @@ namespace ShareX.ScreenCaptureLib.Properties {
         internal static string ShapeManager_ArrowHeadDirection {
             get {
                 return ResourceManager.GetString("ShapeManager_ArrowHeadDirection", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Border style:.
+        /// </summary>
+        internal static string ShapeManager_BorderStyle {
+            get {
+                return ResourceManager.GetString("ShapeManager_BorderStyle", resourceCulture);
             }
         }
         
@@ -1894,6 +1996,15 @@ namespace ShareX.ScreenCaptureLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Step type:.
+        /// </summary>
+        internal static string ShapeManager_CreateToolbar_StepType {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateToolbar_StepType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Undo.
         /// </summary>
         internal static string ShapeManager_CreateToolbar_Undo {
@@ -1908,15 +2019,6 @@ namespace ShareX.ScreenCaptureLib.Properties {
         internal static string ShapeManager_CreateToolbar_UploadImage {
             get {
                 return ResourceManager.GetString("ShapeManager_CreateToolbar_UploadImage", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Use letters.
-        /// </summary>
-        internal static string ShapeManager_CreateToolbar_UseLetters {
-            get {
-                return ResourceManager.GetString("ShapeManager_CreateToolbar_UseLetters", resourceCulture);
             }
         }
         

@@ -23,42 +23,48 @@
 
 #endregion License Information (GPL v3)
 
-using Newtonsoft.Json.Serialization;
 using System;
+using System.ComponentModel;
+using System.Globalization;
+using System.Linq;
 
 namespace ShareX.HelpersLib
 {
-    public class TypeNameSerializationBinder : ISerializationBinder
+    public class EnumProperNameKeepCaseConverter : EnumConverter
     {
-        public string AppNamespace { get; private set; }
-        public string AppAssembly { get; private set; }
+        private Type enumType;
 
-        public TypeNameSerializationBinder(string appNamespace, string appAssembly)
+        public EnumProperNameKeepCaseConverter(Type type) : base(type)
         {
-            AppNamespace = appNamespace;
-            AppAssembly = appAssembly;
+            enumType = type;
         }
 
-        public void BindToName(Type serializedType, out string assemblyName, out string typeName)
+        public override bool CanConvertTo(ITypeDescriptorContext context, Type destType)
         {
-            assemblyName = null;
-            typeName = serializedType.Name;
+            return destType == typeof(string);
         }
 
-        public Type BindToType(string assemblyName, string typeName)
+        public override object ConvertTo(ITypeDescriptorContext context, CultureInfo culture, object value, Type destType)
         {
-            string resolvedTypeName;
+            return Helpers.GetProperName(value.ToString(), true);
+        }
 
-            if (!string.IsNullOrEmpty(assemblyName))
+        public override bool CanConvertFrom(ITypeDescriptorContext context, Type srcType)
+        {
+            return srcType == typeof(string);
+        }
+
+        public override object ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, object value)
+        {
+            foreach (Enum e in Enum.GetValues(enumType).OfType<Enum>())
             {
-                resolvedTypeName = $"{typeName}, {assemblyName}";
-            }
-            else
-            {
-                resolvedTypeName = $"{AppNamespace}.{typeName}, {AppAssembly}";
+                if (Helpers.GetProperName(e.ToString(), true) == (string)value)
+                {
+                    return e;
+                }
             }
 
-            return Type.GetType(resolvedTypeName, true);
+            return Enum.Parse(enumType, (string)value);
         }
     }
 }

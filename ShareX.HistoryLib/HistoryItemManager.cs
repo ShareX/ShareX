@@ -506,11 +506,6 @@ namespace ShareX.HistoryLib
             if (HistoryItem != null && IsImageFile) ImageViewer.ShowImage(HistoryItem.FilePath);
         }
 
-        public void ShowMoreInfo()
-        {
-            new HistoryItemInfoForm(HistoryItem).Show();
-        }
-
         public void UploadFile()
         {
             if (uploadFile != null && HistoryItem != null && IsFileExist) uploadFile(HistoryItem.FilePath);
@@ -519,6 +514,11 @@ namespace ShareX.HistoryLib
         public void EditImage()
         {
             if (editImage != null && HistoryItem != null && IsImageFile) editImage(HistoryItem.FilePath);
+        }
+
+        public void ShowMoreInfo()
+        {
+            new HistoryItemInfoForm(HistoryItem).Show();
         }
     }
 }

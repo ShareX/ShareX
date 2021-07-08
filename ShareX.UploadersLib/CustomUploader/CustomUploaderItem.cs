@@ -302,10 +302,30 @@ namespace ShareX.UploadersLib
 
                         if (!string.IsNullOrEmpty(parsedErrorMessage))
                         {
-                            result.Errors.Add("Custom uploader error message:\r\n" + parsedErrorMessage);
+                            result.Errors.Add("Custom uploader error message:" + Environment.NewLine + parsedErrorMessage);
                         }
                     }
                 }
+            }
+        }
+
+        public void TryParseResponse(UploadResult result, ResponseInfo responseInfo, CustomUploaderInput input, bool isShortenedURL = false)
+        {
+            try
+            {
+                ParseResponse(result, responseInfo, input, isShortenedURL);
+            }
+            catch (JsonReaderException e)
+            {
+                string hostName = URLHelpers.GetHostName(RequestURL);
+                result.Errors.Add($"Custom uploader error. Invalid response content is returned from host ({hostName}), expected response content is JSON." +
+                    Environment.NewLine + Environment.NewLine + e);
+            }
+            catch (Exception e)
+            {
+                string hostName = URLHelpers.GetHostName(RequestURL);
+                result.Errors.Add($"Custom uploader error. Unable to parse response content returned from host ({hostName})." +
+                    Environment.NewLine + Environment.NewLine + e);
             }
         }
 

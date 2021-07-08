@@ -617,4 +617,12 @@ ShareX を再起動しますか？</value>
   <data name="ShareXIsMinimizedToTheSystemTray" xml:space="preserve">
     <value>ShareXはシステムトレイに最小化されています</value>
   </data>
+  <data name="WouldYouLikeToEnableImageEffects" xml:space="preserve">
+    <value>インストールした画像エフェクトを有効にしますか？
+キャプチャー後のタスクから無効に設定しなおすことができます</value>
+  </data>
+  <data name="ShareXNeedsToBeRestartedForThePersonalFolderChangesToApply" xml:space="preserve">
+    <value>ShareXの再起動が必要です。
+再起動してもいいですか？</value>
+  </data>
 </root>

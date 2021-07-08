@@ -117,9 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="HistoryItemManager_InitializeComponent_Show" xml:space="preserve">
-    <value>Göster</value>
-  </data>
   <data name="HistoryForm_UpdateItemCount___Filtered___0_" xml:space="preserve">
     <value>Filtrelenmiş: {0}</value>
   </data>
@@ -169,7 +166,7 @@
     <value>Resim</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_Image_preview" xml:space="preserve">
-    <value>Resim önizleme</value>
+    <value>Resim önizleme...</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_More_info" xml:space="preserve">
     <value>Daha fazla bilgi</value>

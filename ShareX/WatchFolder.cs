@@ -64,10 +64,7 @@ namespace ShareX
 
         protected void OnFileWatcherTrigger(string path)
         {
-            if (FileWatcherTrigger != null)
-            {
-                FileWatcherTrigger(path);
-            }
+            FileWatcherTrigger?.Invoke(path);
         }
 
         private async void fileWatcher_Created(object sender, FileSystemEventArgs e)

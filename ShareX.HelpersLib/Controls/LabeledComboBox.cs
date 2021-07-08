@@ -73,6 +73,7 @@ namespace ShareX.HelpersLib
         public void AddRange(object[] items)
         {
             cbList.Items.AddRange(items);
+            cbList.AutoSizeDropDown();
         }
     }
 }

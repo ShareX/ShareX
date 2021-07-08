@@ -57,7 +57,7 @@ namespace ShareX.HelpersLib
             return num.CompareTo(min) >= 0 && num.CompareTo(max) <= 0;
         }
 
-        public static T BetweenOrDefault<T>(T num, T min, T max, T defaultValue = default(T)) where T : IComparable<T>
+        public static T BetweenOrDefault<T>(T num, T min, T max, T defaultValue = default) where T : IComparable<T>
         {
             if (num.CompareTo(min) >= 0 && num.CompareTo(max) <= 0) return num;
             return defaultValue;

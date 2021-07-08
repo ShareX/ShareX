@@ -118,10 +118,7 @@ namespace ShareX
 
         protected void OnTaskInfoSelected(QuickTaskInfo taskInfo)
         {
-            if (TaskInfoSelected != null)
-            {
-                TaskInfoSelected(taskInfo);
-            }
+            TaskInfoSelected?.Invoke(taskInfo);
         }
 
         public Image FindSuitableIcon(QuickTaskInfo taskInfo)

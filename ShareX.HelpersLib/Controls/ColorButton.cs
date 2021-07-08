@@ -70,10 +70,7 @@ namespace ShareX.HelpersLib
 
         protected void OnColorChanged(Color color)
         {
-            if (ColorChanged != null)
-            {
-                ColorChanged(color);
-            }
+            ColorChanged?.Invoke(color);
         }
 
         protected override void OnMouseClick(MouseEventArgs mevent)

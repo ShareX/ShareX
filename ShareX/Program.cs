@@ -384,31 +384,7 @@ namespace ShareX
         {
             if (WaitFormLoad(5000))
             {
-                Action d = () =>
-                {
-                    if (args.CommandLineArgs == null || args.CommandLineArgs.Length < 1)
-                    {
-                        if (MainForm.niTray != null && MainForm.niTray.Visible)
-                        {
-                            // Workaround for Windows startup tray icon bug
-                            MainForm.niTray.Visible = false;
-                            MainForm.niTray.Visible = true;
-                        }
-
-                        MainForm.ForceActivate();
-                    }
-                    else if (MainForm.Visible)
-                    {
-                        MainForm.ForceActivate();
-                    }
-
-                    CLIManager cli = new CLIManager(args.CommandLineArgs);
-                    cli.ParseCommands();
-
-                    CLI.UseCommandLineArgs(cli.Commands);
-                };
-
-                MainForm.InvokeSafe(d);
+                MainForm.InvokeSafe(() => UseCommandLineArgs(args.CommandLineArgs));
             }
         }
 
@@ -424,6 +400,30 @@ namespace ShareX
             }
 
             return false;
+        }
+
+        private static void UseCommandLineArgs(string[] args)
+        {
+            if (args == null || args.Length < 1)
+            {
+                if (MainForm.niTray != null && MainForm.niTray.Visible)
+                {
+                    // Workaround for Windows startup tray icon bug
+                    MainForm.niTray.Visible = false;
+                    MainForm.niTray.Visible = true;
+                }
+
+                MainForm.ForceActivate();
+            }
+            else if (MainForm.Visible)
+            {
+                MainForm.ForceActivate();
+            }
+
+            CLIManager cli = new CLIManager(args);
+            cli.ParseCommands();
+
+            CLI.UseCommandLineArgs(cli.Commands);
         }
 
         private static void UpdatePersonalPath()

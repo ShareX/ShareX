@@ -548,7 +548,6 @@ namespace ShareX.UploadersLib.FileUploaders
             {
                 Thread.Sleep(1000);
                 ProgressInfo progressInfo = new ProgressInfo();
-                int progress, elapsed;
                 DateTime time;
                 while (!ct.IsCancellationRequested)
                 {
@@ -561,7 +560,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
                         if (progressInfo.Status != "fail" && !string.IsNullOrEmpty(progressInfo.Meter))
                         {
-                            if (int.TryParse(progressInfo.Meter, out progress))
+                            if (int.TryParse(progressInfo.Meter, out int progress))
                             {
                                 //sendSpace.OnProgressChanged(0, 0);
                             }
@@ -570,7 +569,7 @@ namespace ShareX.UploadersLib.FileUploaders
                     catch
                     {
                     }
-                    elapsed = (int)(DateTime.Now - time).TotalMilliseconds;
+                    int elapsed = (int)(DateTime.Now - time).TotalMilliseconds;
                     if (elapsed < interval)
                     {
                         Thread.Sleep(interval - elapsed);

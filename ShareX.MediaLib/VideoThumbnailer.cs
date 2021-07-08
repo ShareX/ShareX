@@ -154,10 +154,7 @@ namespace ShareX.MediaLib
 
         protected void OnProgressChanged(int current, int length)
         {
-            if (ProgressChanged != null)
-            {
-                ProgressChanged(current, length);
-            }
+            ProgressChanged?.Invoke(current, length);
         }
 
         private string GetOutputDirectory()

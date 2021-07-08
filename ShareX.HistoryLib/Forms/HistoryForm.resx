@@ -226,7 +226,7 @@
     <value>lvHistory</value>
   </data>
   <data name="&gt;&gt;lvHistory.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=13.2.2.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=13.5.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lvHistory.Parent" xml:space="preserve">
     <value>scMain.Panel1</value>
@@ -283,7 +283,7 @@
     <value>8, 8</value>
   </data>
   <data name="pbThumbnail.Size" type="System.Drawing.Size, System.Drawing">
-    <value>404, 352</value>
+    <value>402, 352</value>
   </data>
   <data name="pbThumbnail.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -292,7 +292,7 @@
     <value>pbThumbnail</value>
   </data>
   <data name="&gt;&gt;pbThumbnail.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyPictureBox, ShareX.HelpersLib, Version=13.2.2.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyPictureBox, ShareX.HelpersLib, Version=13.5.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;pbThumbnail.Parent" xml:space="preserve">
     <value>scMain.Panel2</value>
@@ -808,7 +808,7 @@
     <value>scMain</value>
   </data>
   <data name="&gt;&gt;scMain.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.SplitContainerCustomSplitter, ShareX.HelpersLib, Version=13.2.2.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.SplitContainerCustomSplitter, ShareX.HelpersLib, Version=13.5.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;scMain.Parent" xml:space="preserve">
     <value>$this</value>

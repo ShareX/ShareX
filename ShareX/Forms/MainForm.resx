@@ -214,7 +214,7 @@
     <value>lvUploads</value>
   </data>
   <data name="&gt;&gt;lvUploads.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=13.4.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=13.5.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lvUploads.Parent" xml:space="preserve">
     <value>scMain.Panel1</value>
@@ -250,7 +250,7 @@
     <value>pbPreview</value>
   </data>
   <data name="&gt;&gt;pbPreview.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyPictureBox, ShareX.HelpersLib, Version=13.4.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyPictureBox, ShareX.HelpersLib, Version=13.5.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;pbPreview.Parent" xml:space="preserve">
     <value>scMain.Panel2</value>
@@ -286,7 +286,7 @@
     <value>scMain</value>
   </data>
   <data name="&gt;&gt;scMain.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.SplitContainerCustomSplitter, ShareX.HelpersLib, Version=13.4.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.SplitContainerCustomSplitter, ShareX.HelpersLib, Version=13.5.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;scMain.Parent" xml:space="preserve">
     <value>$this</value>
@@ -477,6 +477,12 @@
   <data name="tsmiShortenURL.Text" xml:space="preserve">
     <value>Shorten URL...</value>
   </data>
+  <data name="tsmiTweetMessage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>203, 22</value>
+  </data>
+  <data name="tsmiTweetMessage.Text" xml:space="preserve">
+    <value>Tweet message...</value>
+  </data>
   <data name="tsddbUpload.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
   </data>
@@ -513,6 +519,15 @@
   <data name="tsmiScreenColorPicker.Text" xml:space="preserve">
     <value>Screen color picker...</value>
   </data>
+  <data name="tsmiRuler.Size" type="System.Drawing.Size, System.Drawing">
+    <value>184, 22</value>
+  </data>
+  <data name="tsmiRuler.Text" xml:space="preserve">
+    <value>Ruler...</value>
+  </data>
+  <data name="tssTools1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>181, 6</value>
+  </data>
   <data name="tsmiImageEditor.Size" type="System.Drawing.Size, System.Drawing">
     <value>184, 22</value>
   </data>
@@ -524,36 +539,6 @@
   </data>
   <data name="tsmiImageEffects.Text" xml:space="preserve">
     <value>Image effects...</value>
-  </data>
-  <data name="tsmiHashCheck.Size" type="System.Drawing.Size, System.Drawing">
-    <value>184, 22</value>
-  </data>
-  <data name="tsmiHashCheck.Text" xml:space="preserve">
-    <value>Hash check...</value>
-  </data>
-  <data name="tsmiDNSChanger.Size" type="System.Drawing.Size, System.Drawing">
-    <value>184, 22</value>
-  </data>
-  <data name="tsmiDNSChanger.Text" xml:space="preserve">
-    <value>DNS changer...</value>
-  </data>
-  <data name="tsmiQRCode.Size" type="System.Drawing.Size, System.Drawing">
-    <value>184, 22</value>
-  </data>
-  <data name="tsmiQRCode.Text" xml:space="preserve">
-    <value>QR code...</value>
-  </data>
-  <data name="tsmiRuler.Size" type="System.Drawing.Size, System.Drawing">
-    <value>184, 22</value>
-  </data>
-  <data name="tsmiRuler.Text" xml:space="preserve">
-    <value>Ruler...</value>
-  </data>
-  <data name="tsmiIndexFolder.Size" type="System.Drawing.Size, System.Drawing">
-    <value>184, 22</value>
-  </data>
-  <data name="tsmiIndexFolder.Text" xml:space="preserve">
-    <value>Directory indexer...</value>
   </data>
   <data name="tsmiImageCombiner.Size" type="System.Drawing.Size, System.Drawing">
     <value>184, 22</value>
@@ -573,6 +558,9 @@
   <data name="tsmiImageThumbnailer.Text" xml:space="preserve">
     <value>Image thumbnailer...</value>
   </data>
+  <data name="tssTools2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>181, 6</value>
+  </data>
   <data name="tsmiVideoConverter.Size" type="System.Drawing.Size, System.Drawing">
     <value>184, 22</value>
   </data>
@@ -585,11 +573,29 @@
   <data name="tsmiVideoThumbnailer.Text" xml:space="preserve">
     <value>Video thumbnailer...</value>
   </data>
-  <data name="tsmiInspectWindow.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="tssTools3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>181, 6</value>
+  </data>
+  <data name="tsmiQRCode.Size" type="System.Drawing.Size, System.Drawing">
     <value>184, 22</value>
   </data>
-  <data name="tsmiInspectWindow.Text" xml:space="preserve">
-    <value>Inspect window...</value>
+  <data name="tsmiQRCode.Text" xml:space="preserve">
+    <value>QR code...</value>
+  </data>
+  <data name="tsmiHashCheck.Size" type="System.Drawing.Size, System.Drawing">
+    <value>184, 22</value>
+  </data>
+  <data name="tsmiHashCheck.Text" xml:space="preserve">
+    <value>Hash check...</value>
+  </data>
+  <data name="tsmiIndexFolder.Size" type="System.Drawing.Size, System.Drawing">
+    <value>184, 22</value>
+  </data>
+  <data name="tsmiIndexFolder.Text" xml:space="preserve">
+    <value>Directory indexer...</value>
+  </data>
+  <data name="tssTools4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>181, 6</value>
   </data>
   <data name="tsmiClipboardViewer.Size" type="System.Drawing.Size, System.Drawing">
     <value>184, 22</value>
@@ -597,17 +603,23 @@
   <data name="tsmiClipboardViewer.Text" xml:space="preserve">
     <value>Clipboard viewer...</value>
   </data>
-  <data name="tsmiTweetMessage.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="tsmiInspectWindow.Size" type="System.Drawing.Size, System.Drawing">
     <value>184, 22</value>
   </data>
-  <data name="tsmiTweetMessage.Text" xml:space="preserve">
-    <value>Tweet message...</value>
+  <data name="tsmiInspectWindow.Text" xml:space="preserve">
+    <value>Inspect window...</value>
   </data>
   <data name="tsmiMonitorTest.Size" type="System.Drawing.Size, System.Drawing">
     <value>184, 22</value>
   </data>
   <data name="tsmiMonitorTest.Text" xml:space="preserve">
     <value>Monitor test...</value>
+  </data>
+  <data name="tsmiDNSChanger.Size" type="System.Drawing.Size, System.Drawing">
+    <value>184, 22</value>
+  </data>
+  <data name="tsmiDNSChanger.Text" xml:space="preserve">
+    <value>DNS changer...</value>
   </data>
   <data name="tsddbTools.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
@@ -886,7 +898,7 @@
     <value>tsMain</value>
   </data>
   <data name="&gt;&gt;tsMain.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.ToolStripBorderRight, ShareX.HelpersLib, Version=13.4.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.ToolStripBorderRight, ShareX.HelpersLib, Version=13.5.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;tsMain.Parent" xml:space="preserve">
     <value>pToolbars</value>
@@ -1233,6 +1245,18 @@
   <data name="tsmiOCRImage.Text" xml:space="preserve">
     <value>OCR image...</value>
   </data>
+  <data name="tsmiCombineImagesHorizontally.Size" type="System.Drawing.Size, System.Drawing">
+    <value>188, 22</value>
+  </data>
+  <data name="tsmiCombineImagesHorizontally.Text" xml:space="preserve">
+    <value>Combine horizontally</value>
+  </data>
+  <data name="tsmiCombineImagesVertically.Size" type="System.Drawing.Size, System.Drawing">
+    <value>188, 22</value>
+  </data>
+  <data name="tsmiCombineImagesVertically.Text" xml:space="preserve">
+    <value>Combine vertically</value>
+  </data>
   <data name="tsmiCombineImages.Size" type="System.Drawing.Size, System.Drawing">
     <value>228, 22</value>
   </data>
@@ -1536,6 +1560,12 @@
   <data name="tsmiTrayShortenURL.Text" xml:space="preserve">
     <value>Shorten URL...</value>
   </data>
+  <data name="tsmiTrayTweetMessage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>203, 22</value>
+  </data>
+  <data name="tsmiTrayTweetMessage.Text" xml:space="preserve">
+    <value>Tweet message...</value>
+  </data>
   <data name="tsmiTrayUpload.Size" type="System.Drawing.Size, System.Drawing">
     <value>200, 22</value>
   </data>
@@ -1560,6 +1590,15 @@
   <data name="tsmiTrayScreenColorPicker.Text" xml:space="preserve">
     <value>Screen color picker...</value>
   </data>
+  <data name="tsmiTrayRuler.Size" type="System.Drawing.Size, System.Drawing">
+    <value>184, 22</value>
+  </data>
+  <data name="tsmiTrayRuler.Text" xml:space="preserve">
+    <value>Ruler...</value>
+  </data>
+  <data name="tssTrayTools1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>181, 6</value>
+  </data>
   <data name="tsmiTrayImageEditor.Size" type="System.Drawing.Size, System.Drawing">
     <value>184, 22</value>
   </data>
@@ -1571,36 +1610,6 @@
   </data>
   <data name="tsmiTrayImageEffects.Text" xml:space="preserve">
     <value>Image effects...</value>
-  </data>
-  <data name="tsmiTrayHashCheck.Size" type="System.Drawing.Size, System.Drawing">
-    <value>184, 22</value>
-  </data>
-  <data name="tsmiTrayHashCheck.Text" xml:space="preserve">
-    <value>Hash check...</value>
-  </data>
-  <data name="tsmiTrayDNSChanger.Size" type="System.Drawing.Size, System.Drawing">
-    <value>184, 22</value>
-  </data>
-  <data name="tsmiTrayDNSChanger.Text" xml:space="preserve">
-    <value>DNS changer...</value>
-  </data>
-  <data name="tsmiTrayQRCode.Size" type="System.Drawing.Size, System.Drawing">
-    <value>184, 22</value>
-  </data>
-  <data name="tsmiTrayQRCode.Text" xml:space="preserve">
-    <value>QR code...</value>
-  </data>
-  <data name="tsmiTrayRuler.Size" type="System.Drawing.Size, System.Drawing">
-    <value>184, 22</value>
-  </data>
-  <data name="tsmiTrayRuler.Text" xml:space="preserve">
-    <value>Ruler...</value>
-  </data>
-  <data name="tsmiTrayIndexFolder.Size" type="System.Drawing.Size, System.Drawing">
-    <value>184, 22</value>
-  </data>
-  <data name="tsmiTrayIndexFolder.Text" xml:space="preserve">
-    <value>Directory indexer...</value>
   </data>
   <data name="tsmiTrayImageCombiner.Size" type="System.Drawing.Size, System.Drawing">
     <value>184, 22</value>
@@ -1620,6 +1629,9 @@
   <data name="tsmiTrayImageThumbnailer.Text" xml:space="preserve">
     <value>Image thumbnailer...</value>
   </data>
+  <data name="tssTrayTools2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>181, 6</value>
+  </data>
   <data name="tsmiTrayVideoConverter.Size" type="System.Drawing.Size, System.Drawing">
     <value>184, 22</value>
   </data>
@@ -1632,11 +1644,29 @@
   <data name="tsmiTrayVideoThumbnailer.Text" xml:space="preserve">
     <value>Video thumbnailer...</value>
   </data>
-  <data name="tsmiTrayInspectWindow.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="tssTrayTools3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>181, 6</value>
+  </data>
+  <data name="tsmiTrayQRCode.Size" type="System.Drawing.Size, System.Drawing">
     <value>184, 22</value>
   </data>
-  <data name="tsmiTrayInspectWindow.Text" xml:space="preserve">
-    <value>Inspect window...</value>
+  <data name="tsmiTrayQRCode.Text" xml:space="preserve">
+    <value>QR code...</value>
+  </data>
+  <data name="tsmiTrayHashCheck.Size" type="System.Drawing.Size, System.Drawing">
+    <value>184, 22</value>
+  </data>
+  <data name="tsmiTrayHashCheck.Text" xml:space="preserve">
+    <value>Hash check...</value>
+  </data>
+  <data name="tsmiTrayIndexFolder.Size" type="System.Drawing.Size, System.Drawing">
+    <value>184, 22</value>
+  </data>
+  <data name="tsmiTrayIndexFolder.Text" xml:space="preserve">
+    <value>Directory indexer...</value>
+  </data>
+  <data name="tssTrayTools4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>181, 6</value>
   </data>
   <data name="tsmiTrayClipboardViewer.Size" type="System.Drawing.Size, System.Drawing">
     <value>184, 22</value>
@@ -1644,17 +1674,23 @@
   <data name="tsmiTrayClipboardViewer.Text" xml:space="preserve">
     <value>Clipboard viewer...</value>
   </data>
-  <data name="tsmiTrayTweetMessage.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="tsmiTrayInspectWindow.Size" type="System.Drawing.Size, System.Drawing">
     <value>184, 22</value>
   </data>
-  <data name="tsmiTrayTweetMessage.Text" xml:space="preserve">
-    <value>Tweet message...</value>
+  <data name="tsmiTrayInspectWindow.Text" xml:space="preserve">
+    <value>Inspect window...</value>
   </data>
   <data name="tsmiTrayMonitorTest.Size" type="System.Drawing.Size, System.Drawing">
     <value>184, 22</value>
   </data>
   <data name="tsmiTrayMonitorTest.Text" xml:space="preserve">
     <value>Monitor test...</value>
+  </data>
+  <data name="tsmiTrayDNSChanger.Size" type="System.Drawing.Size, System.Drawing">
+    <value>184, 22</value>
+  </data>
+  <data name="tsmiTrayDNSChanger.Text" xml:space="preserve">
+    <value>DNS changer...</value>
   </data>
   <data name="tsmiTrayTools.Size" type="System.Drawing.Size, System.Drawing">
     <value>200, 22</value>
@@ -1933,7 +1969,7 @@
     <value>ucNews</value>
   </data>
   <data name="&gt;&gt;ucNews.Type" xml:space="preserve">
-    <value>ShareX.NewsListControl, ShareX, Version=13.4.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.NewsListControl, ShareX, Version=13.5.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;ucNews.Parent" xml:space="preserve">
     <value>pNews</value>
@@ -2023,7 +2059,7 @@
     <value>ucTaskThumbnailView</value>
   </data>
   <data name="&gt;&gt;ucTaskThumbnailView.Type" xml:space="preserve">
-    <value>ShareX.TaskThumbnailView, ShareX, Version=13.4.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.TaskThumbnailView, ShareX, Version=13.5.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;ucTaskThumbnailView.Parent" xml:space="preserve">
     <value>pThumbnailView</value>
@@ -2143,7 +2179,7 @@
     <value>tsSocialButtons</value>
   </data>
   <data name="&gt;&gt;tsSocialButtons.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.ToolStripBorderRight, ShareX.HelpersLib, Version=13.4.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.ToolStripBorderRight, ShareX.HelpersLib, Version=13.5.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;tsSocialButtons.Parent" xml:space="preserve">
     <value>pToolbars</value>
@@ -2186,9 +2222,6 @@
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>844, 471</value>
-  </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>510, 250</value>
@@ -2418,6 +2451,12 @@
   <data name="&gt;&gt;tsmiShortenURL.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;tsmiTweetMessage.Name" xml:space="preserve">
+    <value>tsmiTweetMessage</value>
+  </data>
+  <data name="&gt;&gt;tsmiTweetMessage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;tsddbWorkflows.Name" xml:space="preserve">
     <value>tsddbWorkflows</value>
   </data>
@@ -2442,6 +2481,18 @@
   <data name="&gt;&gt;tsmiScreenColorPicker.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;tsmiRuler.Name" xml:space="preserve">
+    <value>tsmiRuler</value>
+  </data>
+  <data name="&gt;&gt;tsmiRuler.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tssTools1.Name" xml:space="preserve">
+    <value>tssTools1</value>
+  </data>
+  <data name="&gt;&gt;tssTools1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;tsmiImageEditor.Name" xml:space="preserve">
     <value>tsmiImageEditor</value>
   </data>
@@ -2452,36 +2503,6 @@
     <value>tsmiImageEffects</value>
   </data>
   <data name="&gt;&gt;tsmiImageEffects.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tsmiHashCheck.Name" xml:space="preserve">
-    <value>tsmiHashCheck</value>
-  </data>
-  <data name="&gt;&gt;tsmiHashCheck.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tsmiDNSChanger.Name" xml:space="preserve">
-    <value>tsmiDNSChanger</value>
-  </data>
-  <data name="&gt;&gt;tsmiDNSChanger.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tsmiQRCode.Name" xml:space="preserve">
-    <value>tsmiQRCode</value>
-  </data>
-  <data name="&gt;&gt;tsmiQRCode.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tsmiRuler.Name" xml:space="preserve">
-    <value>tsmiRuler</value>
-  </data>
-  <data name="&gt;&gt;tsmiRuler.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tsmiIndexFolder.Name" xml:space="preserve">
-    <value>tsmiIndexFolder</value>
-  </data>
-  <data name="&gt;&gt;tsmiIndexFolder.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiImageCombiner.Name" xml:space="preserve">
@@ -2502,6 +2523,12 @@
   <data name="&gt;&gt;tsmiImageThumbnailer.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;tssTools2.Name" xml:space="preserve">
+    <value>tssTools2</value>
+  </data>
+  <data name="&gt;&gt;tssTools2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;tsmiVideoConverter.Name" xml:space="preserve">
     <value>tsmiVideoConverter</value>
   </data>
@@ -2514,11 +2541,35 @@
   <data name="&gt;&gt;tsmiVideoThumbnailer.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;tsmiInspectWindow.Name" xml:space="preserve">
-    <value>tsmiInspectWindow</value>
+  <data name="&gt;&gt;tssTools3.Name" xml:space="preserve">
+    <value>tssTools3</value>
   </data>
-  <data name="&gt;&gt;tsmiInspectWindow.Type" xml:space="preserve">
+  <data name="&gt;&gt;tssTools3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsmiQRCode.Name" xml:space="preserve">
+    <value>tsmiQRCode</value>
+  </data>
+  <data name="&gt;&gt;tsmiQRCode.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsmiHashCheck.Name" xml:space="preserve">
+    <value>tsmiHashCheck</value>
+  </data>
+  <data name="&gt;&gt;tsmiHashCheck.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsmiIndexFolder.Name" xml:space="preserve">
+    <value>tsmiIndexFolder</value>
+  </data>
+  <data name="&gt;&gt;tsmiIndexFolder.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tssTools4.Name" xml:space="preserve">
+    <value>tssTools4</value>
+  </data>
+  <data name="&gt;&gt;tssTools4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiClipboardViewer.Name" xml:space="preserve">
     <value>tsmiClipboardViewer</value>
@@ -2526,16 +2577,22 @@
   <data name="&gt;&gt;tsmiClipboardViewer.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;tsmiTweetMessage.Name" xml:space="preserve">
-    <value>tsmiTweetMessage</value>
+  <data name="&gt;&gt;tsmiInspectWindow.Name" xml:space="preserve">
+    <value>tsmiInspectWindow</value>
   </data>
-  <data name="&gt;&gt;tsmiTweetMessage.Type" xml:space="preserve">
+  <data name="&gt;&gt;tsmiInspectWindow.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiMonitorTest.Name" xml:space="preserve">
     <value>tsmiMonitorTest</value>
   </data>
   <data name="&gt;&gt;tsmiMonitorTest.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsmiDNSChanger.Name" xml:space="preserve">
+    <value>tsmiDNSChanger</value>
+  </data>
+  <data name="&gt;&gt;tsmiDNSChanger.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tssMain1.Name" xml:space="preserve">
@@ -2656,7 +2713,7 @@
     <value>tsbNews</value>
   </data>
   <data name="&gt;&gt;tsbNews.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.ToolStripButtonCounter, ShareX.HelpersLib, Version=13.4.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.ToolStripButtonCounter, ShareX.HelpersLib, Version=13.5.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;tsddbDebug.Name" xml:space="preserve">
     <value>tsddbDebug</value>
@@ -2704,7 +2761,7 @@
     <value>tsbDonate</value>
   </data>
   <data name="&gt;&gt;tsbDonate.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.ToolStripButtonColorAnimation, ShareX.HelpersLib, Version=13.4.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.ToolStripButtonColorAnimation, ShareX.HelpersLib, Version=13.5.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;tsbAbout.Name" xml:space="preserve">
     <value>tsbAbout</value>
@@ -3042,6 +3099,18 @@
   <data name="&gt;&gt;tsmiCombineImages.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;tsmiCombineImagesHorizontally.Name" xml:space="preserve">
+    <value>tsmiCombineImagesHorizontally</value>
+  </data>
+  <data name="&gt;&gt;tsmiCombineImagesHorizontally.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsmiCombineImagesVertically.Name" xml:space="preserve">
+    <value>tsmiCombineImagesVertically</value>
+  </data>
+  <data name="&gt;&gt;tsmiCombineImagesVertically.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;tsmiShowResponse.Name" xml:space="preserve">
     <value>tsmiShowResponse</value>
   </data>
@@ -3348,6 +3417,12 @@
   <data name="&gt;&gt;tsmiTrayShortenURL.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;tsmiTrayTweetMessage.Name" xml:space="preserve">
+    <value>tsmiTrayTweetMessage</value>
+  </data>
+  <data name="&gt;&gt;tsmiTrayTweetMessage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;tsmiTrayWorkflows.Name" xml:space="preserve">
     <value>tsmiTrayWorkflows</value>
   </data>
@@ -3372,6 +3447,18 @@
   <data name="&gt;&gt;tsmiTrayScreenColorPicker.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;tsmiTrayRuler.Name" xml:space="preserve">
+    <value>tsmiTrayRuler</value>
+  </data>
+  <data name="&gt;&gt;tsmiTrayRuler.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tssTrayTools1.Name" xml:space="preserve">
+    <value>tssTrayTools1</value>
+  </data>
+  <data name="&gt;&gt;tssTrayTools1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;tsmiTrayImageEditor.Name" xml:space="preserve">
     <value>tsmiTrayImageEditor</value>
   </data>
@@ -3382,36 +3469,6 @@
     <value>tsmiTrayImageEffects</value>
   </data>
   <data name="&gt;&gt;tsmiTrayImageEffects.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tsmiTrayHashCheck.Name" xml:space="preserve">
-    <value>tsmiTrayHashCheck</value>
-  </data>
-  <data name="&gt;&gt;tsmiTrayHashCheck.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tsmiTrayDNSChanger.Name" xml:space="preserve">
-    <value>tsmiTrayDNSChanger</value>
-  </data>
-  <data name="&gt;&gt;tsmiTrayDNSChanger.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tsmiTrayQRCode.Name" xml:space="preserve">
-    <value>tsmiTrayQRCode</value>
-  </data>
-  <data name="&gt;&gt;tsmiTrayQRCode.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tsmiTrayRuler.Name" xml:space="preserve">
-    <value>tsmiTrayRuler</value>
-  </data>
-  <data name="&gt;&gt;tsmiTrayRuler.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tsmiTrayIndexFolder.Name" xml:space="preserve">
-    <value>tsmiTrayIndexFolder</value>
-  </data>
-  <data name="&gt;&gt;tsmiTrayIndexFolder.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiTrayImageCombiner.Name" xml:space="preserve">
@@ -3432,6 +3489,12 @@
   <data name="&gt;&gt;tsmiTrayImageThumbnailer.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;tssTrayTools2.Name" xml:space="preserve">
+    <value>tssTrayTools2</value>
+  </data>
+  <data name="&gt;&gt;tssTrayTools2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;tsmiTrayVideoConverter.Name" xml:space="preserve">
     <value>tsmiTrayVideoConverter</value>
   </data>
@@ -3444,11 +3507,35 @@
   <data name="&gt;&gt;tsmiTrayVideoThumbnailer.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;tsmiTrayInspectWindow.Name" xml:space="preserve">
-    <value>tsmiTrayInspectWindow</value>
+  <data name="&gt;&gt;tssTrayTools3.Name" xml:space="preserve">
+    <value>tssTrayTools3</value>
   </data>
-  <data name="&gt;&gt;tsmiTrayInspectWindow.Type" xml:space="preserve">
+  <data name="&gt;&gt;tssTrayTools3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsmiTrayQRCode.Name" xml:space="preserve">
+    <value>tsmiTrayQRCode</value>
+  </data>
+  <data name="&gt;&gt;tsmiTrayQRCode.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsmiTrayHashCheck.Name" xml:space="preserve">
+    <value>tsmiTrayHashCheck</value>
+  </data>
+  <data name="&gt;&gt;tsmiTrayHashCheck.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsmiTrayIndexFolder.Name" xml:space="preserve">
+    <value>tsmiTrayIndexFolder</value>
+  </data>
+  <data name="&gt;&gt;tsmiTrayIndexFolder.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tssTrayTools4.Name" xml:space="preserve">
+    <value>tssTrayTools4</value>
+  </data>
+  <data name="&gt;&gt;tssTrayTools4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiTrayClipboardViewer.Name" xml:space="preserve">
     <value>tsmiTrayClipboardViewer</value>
@@ -3456,16 +3543,22 @@
   <data name="&gt;&gt;tsmiTrayClipboardViewer.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;tsmiTrayTweetMessage.Name" xml:space="preserve">
-    <value>tsmiTrayTweetMessage</value>
+  <data name="&gt;&gt;tsmiTrayInspectWindow.Name" xml:space="preserve">
+    <value>tsmiTrayInspectWindow</value>
   </data>
-  <data name="&gt;&gt;tsmiTrayTweetMessage.Type" xml:space="preserve">
+  <data name="&gt;&gt;tsmiTrayInspectWindow.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiTrayMonitorTest.Name" xml:space="preserve">
     <value>tsmiTrayMonitorTest</value>
   </data>
   <data name="&gt;&gt;tsmiTrayMonitorTest.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsmiTrayDNSChanger.Name" xml:space="preserve">
+    <value>tsmiTrayDNSChanger</value>
+  </data>
+  <data name="&gt;&gt;tsmiTrayDNSChanger.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tssTray1.Name" xml:space="preserve">
@@ -3724,6 +3817,6 @@
     <value>MainForm</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.HotkeyForm, ShareX.HelpersLib, Version=13.4.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.HotkeyForm, ShareX.HelpersLib, Version=13.5.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
 </root>

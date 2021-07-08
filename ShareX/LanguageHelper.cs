@@ -216,9 +216,9 @@ namespace ShareX
 
         private static void ApplyResourceToControl(Control control, ComponentResourceManager resource, CultureInfo culture)
         {
-            if (control is ToolStrip)
+            if (control is ToolStrip ts)
             {
-                ApplyResourceToToolStripItemCollection(((ToolStrip)control).Items, resource, culture);
+                ApplyResourceToToolStripItemCollection(ts.Items, resource, culture);
             }
             else
             {
@@ -235,9 +235,9 @@ namespace ShareX
         {
             foreach (ToolStripItem item in collection)
             {
-                if (item is ToolStripDropDownItem)
+                if (item is ToolStripDropDownItem tsddi)
                 {
-                    ApplyResourceToToolStripItemCollection(((ToolStripDropDownItem)item).DropDownItems, resource, culture);
+                    ApplyResourceToToolStripItemCollection(tsddi.DropDownItems, resource, culture);
                 }
 
                 resource.ApplyResources(item, item.Name, culture);

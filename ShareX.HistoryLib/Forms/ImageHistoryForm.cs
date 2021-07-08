@@ -40,6 +40,7 @@ namespace ShareX.HistoryLib
         public string HistoryPath { get; private set; }
         public ImageHistorySettings Settings { get; private set; }
         public string SearchText { get; set; }
+        public bool SearchInTags { get; set; } = true;
 
         private HistoryManager history;
         private HistoryItemManager him;
@@ -124,7 +125,7 @@ namespace ShareX.HistoryLib
             if (!string.IsNullOrEmpty(SearchText))
             {
                 string pattern = Regex.Escape(SearchText).Replace("\\?", ".").Replace("\\*", ".*");
-                regex = new Regex(pattern, RegexOptions.IgnoreCase | RegexOptions.CultureInvariant);
+                regex = new Regex(pattern, RegexOptions.Compiled | RegexOptions.IgnoreCase | RegexOptions.CultureInvariant);
             }
 
             for (int i = historyItems.Count - 1; i >= 0; i--)
@@ -132,7 +133,7 @@ namespace ShareX.HistoryLib
                 HistoryItem hi = historyItems[i];
 
                 if (!string.IsNullOrEmpty(hi.FilePath) && Helpers.IsImageFile(hi.FilePath) &&
-                    (regex == null || regex.IsMatch(hi.FileName)) &&
+                    (regex == null || regex.IsMatch(hi.FileName) || (SearchInTags && hi.Tags != null && hi.Tags.Any(tag => regex.IsMatch(tag.Value)))) &&
                     (!Settings.FilterMissingFiles || File.Exists(hi.FilePath)))
                 {
                     filteredHistoryItems.Add(hi);

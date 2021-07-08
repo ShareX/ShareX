@@ -89,9 +89,7 @@ namespace ShareX.ScreenCaptureLib
             imageFiles = null;
             ilvStickers.Items.Clear();
 
-            StickerPackInfo stickerPack = tscbStickers.SelectedItem as StickerPackInfo;
-
-            if (stickerPack != null && !string.IsNullOrEmpty(stickerPack.FolderPath))
+            if (tscbStickers.SelectedItem is StickerPackInfo stickerPack && !string.IsNullOrEmpty(stickerPack.FolderPath))
             {
                 string folderPath = Helpers.GetAbsolutePath(stickerPack.FolderPath);
 

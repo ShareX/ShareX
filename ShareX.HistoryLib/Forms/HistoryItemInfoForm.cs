@@ -34,8 +34,7 @@ namespace ShareX.HistoryLib
         {
             InitializeComponent();
             ShareXResources.ApplyTheme(this);
-
-            olvMain.SelectedObject = hi;
+            pgHistoryItem.SelectedObject = hi;
         }
     }
 }

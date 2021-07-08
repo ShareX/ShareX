@@ -98,10 +98,7 @@ namespace ShareX.MediaLib
 
         protected void OnThumbnailsTaken(List<VideoThumbnailInfo> thumbnails)
         {
-            if (ThumbnailsTaken != null)
-            {
-                ThumbnailsTaken(thumbnails);
-            }
+            ThumbnailsTaken?.Invoke(thumbnails);
         }
 
         private void btnBrowse_Click(object sender, EventArgs e)

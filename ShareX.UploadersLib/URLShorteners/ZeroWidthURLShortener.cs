@@ -25,7 +25,10 @@
 
 using Newtonsoft.Json;
 using ShareX.HelpersLib;
-using System.Collections.Generic;
+using ShareX.UploadersLib.Properties;
+using System.Collections.Specialized;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.URLShorteners
 {
@@ -33,24 +36,56 @@ namespace ShareX.UploadersLib.URLShorteners
     {
         public override UrlShortenerType EnumValue { get; } = UrlShortenerType.ZeroWidthShortener;
 
+        public override Image ServiceImage => Resources.ZeroWidthShortener;
+
         public override bool CheckConfig(UploadersConfig config) => true;
 
         public override URLShortener CreateShortener(UploadersConfig config, TaskReferenceHelper taskInfo)
         {
-            return new ZeroWidthURLShortener();
+            return new ZeroWidthURLShortener()
+            {
+                RequestURL = config.ZeroWidthShortenerURL,
+                Token = config.ZeroWidthShortenerToken
+            };
         }
+
+        public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpZeroWidthShortener;
     }
 
     public sealed class ZeroWidthURLShortener : URLShortener
     {
+        public string RequestURL { get; set; }
+        public string Token { get; set; }
+
+        private NameValueCollection GetAuthHeaders()
+        {
+            if (!string.IsNullOrEmpty(Token))
+            {
+                NameValueCollection headers = new NameValueCollection();
+                headers.Add("Authorization", "Bearer " + Token);
+                return headers;
+            }
+
+            return null;
+        }
+
         public override UploadResult ShortenURL(string url)
         {
             UploadResult result = new UploadResult { URL = url };
 
-            Dictionary<string, string> args = new Dictionary<string, string>();
-            args.Add("url", url);
+            string json = JsonConvert.SerializeObject(new
+            {
+                url = url
+            });
 
-            string response = SendRequest(HttpMethod.GET, "https://us-central1-zero-width-shortener.cloudfunctions.net/shortenURL", args);
+            if (string.IsNullOrEmpty(RequestURL))
+            {
+                RequestURL = "https://api.zws.im";
+            }
+
+            NameValueCollection headers = GetAuthHeaders();
+
+            string response = SendRequest(HttpMethod.POST, RequestURL, json, RequestHelpers.ContentTypeJSON, null, headers);
 
             if (!string.IsNullOrEmpty(response))
             {
@@ -58,7 +93,14 @@ namespace ShareX.UploadersLib.URLShorteners
 
                 if (jsonResponse != null)
                 {
-                    result.ShortenedURL = URLHelpers.CombineURL("https://zws.im", jsonResponse.Short);
+                    if (!string.IsNullOrEmpty(jsonResponse.URL))
+                    {
+                        result.ShortenedURL = jsonResponse.URL;
+                    }
+                    else
+                    {
+                        result.ShortenedURL = URLHelpers.CombineURL("https://zws.im", jsonResponse.Short);
+                    }
                 }
             }
 
@@ -69,5 +111,6 @@ namespace ShareX.UploadersLib.URLShorteners
     public class ZeroWidthURLShortenerResponse
     {
         public string Short { get; set; }
+        public string URL { get; set; }
     }
 }

@@ -62,15 +62,15 @@ namespace ShareX.IndexerLib
         {
             if (settings.CreateParseableJson)
             {
-                IndexFolderParseable(dir, level);
+                IndexFolderParseable(dir);
             }
             else
             {
-                IndexFolderSimple(dir, level);
+                IndexFolderSimple(dir);
             }
         }
 
-        private void IndexFolderSimple(FolderInfo dir, int level)
+        private void IndexFolderSimple(FolderInfo dir)
         {
             jsonWriter.WritePropertyName(dir.FolderName);
             jsonWriter.WriteStartArray();
@@ -90,7 +90,7 @@ namespace ShareX.IndexerLib
             jsonWriter.WriteEnd();
         }
 
-        private void IndexFolderParseable(FolderInfo dir, int level)
+        private void IndexFolderParseable(FolderInfo dir)
         {
             jsonWriter.WritePropertyName("Name");
             jsonWriter.WriteValue(dir.FolderName);

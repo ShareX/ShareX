@@ -41,9 +41,7 @@ namespace ShareX.UploadersLib
                     ext = ext.Substring(1);
                 }
 
-                string mime;
-
-                if (Mappings.TryGetValue(ext, out mime))
+                if (Mappings.TryGetValue(ext, out string mime))
                 {
                     return mime;
                 }

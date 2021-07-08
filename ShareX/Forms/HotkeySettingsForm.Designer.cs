@@ -37,6 +37,7 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnMoveUp = new System.Windows.Forms.Button();
             this.btnMoveDown = new System.Windows.Forms.Button();
+            this.btnHotkeysDisabled = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnDuplicate
@@ -94,11 +95,19 @@
             this.btnMoveDown.UseVisualStyleBackColor = true;
             this.btnMoveDown.Click += new System.EventHandler(this.btnMoveDown_Click);
             // 
+            // btnHotkeysDisabled
+            // 
+            resources.ApplyResources(this.btnHotkeysDisabled, "btnHotkeysDisabled");
+            this.btnHotkeysDisabled.Name = "btnHotkeysDisabled";
+            this.btnHotkeysDisabled.UseVisualStyleBackColor = true;
+            this.btnHotkeysDisabled.Click += new System.EventHandler(this.btnHotkeysDisabled_Click);
+            // 
             // HotkeySettingsForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.SystemColors.Window;
+            this.Controls.Add(this.btnHotkeysDisabled);
             this.Controls.Add(this.btnMoveDown);
             this.Controls.Add(this.btnMoveUp);
             this.Controls.Add(this.btnDuplicate);
@@ -124,5 +133,6 @@
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnMoveUp;
         private System.Windows.Forms.Button btnMoveDown;
+        private System.Windows.Forms.Button btnHotkeysDisabled;
     }
 }

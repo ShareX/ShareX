@@ -152,14 +152,9 @@ namespace ShareX.MediaLib
                 //  Duration: 00:00:15.32, start: 0.000000, bitrate: 1095 kb/s
                 Match match = Regex.Match(data, @"Duration:\s*(\d+:\d+:\d+\.\d+),\s*start:", RegexOptions.IgnoreCase | RegexOptions.CultureInvariant);
 
-                if (match.Success)
+                if (match.Success && TimeSpan.TryParse(match.Groups[1].Value, out TimeSpan duration))
                 {
-                    TimeSpan duration;
-
-                    if (TimeSpan.TryParse(match.Groups[1].Value, out duration))
-                    {
-                        VideoDuration = duration;
-                    }
+                    VideoDuration = duration;
                 }
             }
             else
@@ -167,17 +162,12 @@ namespace ShareX.MediaLib
                 //frame=  942 fps=187 q=35.0 size=    3072kB time=00:00:38.10 bitrate= 660.5kbits/s speed=7.55x
                 Match match = Regex.Match(data, @"time=\s*(\d+:\d+:\d+\.\d+)\s*bitrate=", RegexOptions.IgnoreCase | RegexOptions.CultureInvariant);
 
-                if (match.Success)
+                if (match.Success && TimeSpan.TryParse(match.Groups[1].Value, out TimeSpan time))
                 {
-                    TimeSpan time;
+                    EncodeTime = time;
+                    EncodePercentage = ((float)EncodeTime.Ticks / VideoDuration.Ticks) * 100;
 
-                    if (TimeSpan.TryParse(match.Groups[1].Value, out time))
-                    {
-                        EncodeTime = time;
-                        EncodePercentage = ((float)EncodeTime.Ticks / VideoDuration.Ticks) * 100;
-
-                        OnEncodeProgressChanged(EncodePercentage);
-                    }
+                    OnEncodeProgressChanged(EncodePercentage);
                 }
             }
         }

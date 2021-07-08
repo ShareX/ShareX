@@ -105,19 +105,14 @@ namespace ShareX.MediaLib
 
         private void lvImages_DragDrop(object sender, DragEventArgs e)
         {
-            if (e.Data.GetDataPresent(DataFormats.FileDrop, false))
+            if (e.Data.GetDataPresent(DataFormats.FileDrop, false) && e.Data.GetData(DataFormats.FileDrop, false) is string[] files)
             {
-                string[] files = e.Data.GetData(DataFormats.FileDrop, false) as string[];
-
-                if (files != null)
+                foreach (string file in files)
                 {
-                    foreach (string file in files)
-                    {
-                        AddFile(file);
-                    }
-
-                    UpdateEnabled();
+                    AddFile(file);
                 }
+
+                UpdateEnabled();
             }
         }
 

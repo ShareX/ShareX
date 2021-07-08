@@ -106,10 +106,7 @@ namespace ShareX
 
         protected void OnNewsLoaded()
         {
-            if (NewsLoaded != null)
-            {
-                NewsLoaded(this, EventArgs.Empty);
-            }
+            NewsLoaded?.Invoke(this, EventArgs.Empty);
         }
 
         public void MarkRead()
@@ -167,8 +164,7 @@ namespace ShareX
         {
             foreach (DataGridViewRow row in dgvNews.Rows)
             {
-                NewsItem newsItem = row.Tag as NewsItem;
-                if (newsItem != null && newsItem.IsUnread)
+                if (row.Tag is NewsItem newsItem && newsItem.IsUnread)
                 {
                     row.Cells[0].Style.BackColor = row.Cells[0].Style.SelectionBackColor = Color.LimeGreen;
                 }
@@ -184,8 +180,7 @@ namespace ShareX
             if (e.ColumnIndex == 2)
             {
                 DataGridViewRow row = dgvNews.Rows[e.RowIndex];
-                NewsItem newsItem = row.Tag as NewsItem;
-                if (newsItem != null && !string.IsNullOrEmpty(newsItem.URL))
+                if (row.Tag is NewsItem newsItem && !string.IsNullOrEmpty(newsItem.URL))
                 {
                     dgvNews.Cursor = Cursors.Hand;
                     row.Cells[e.ColumnIndex].Style.ForeColor = row.Cells[e.ColumnIndex].Style.SelectionForeColor =
@@ -199,8 +194,7 @@ namespace ShareX
             if (e.ColumnIndex == 2)
             {
                 DataGridViewRow row = dgvNews.Rows[e.RowIndex];
-                NewsItem newsItem = row.Tag as NewsItem;
-                if (newsItem != null && !string.IsNullOrEmpty(newsItem.URL))
+                if (row.Tag is NewsItem newsItem && !string.IsNullOrEmpty(newsItem.URL))
                 {
                     row.Cells[e.ColumnIndex].Style.ForeColor = row.Cells[e.ColumnIndex].Style.SelectionForeColor =
                         ShareXResources.UseCustomTheme ? ShareXResources.Theme.TextColor : SystemColors.ControlText;
@@ -215,8 +209,7 @@ namespace ShareX
             if (e.Button == MouseButtons.Left && e.ColumnIndex == 2)
             {
                 DataGridViewRow row = dgvNews.Rows[e.RowIndex];
-                NewsItem newsItem = row.Tag as NewsItem;
-                if (newsItem != null && URLHelpers.IsValidURL(newsItem.URL))
+                if (row.Tag is NewsItem newsItem && URLHelpers.IsValidURL(newsItem.URL))
                 {
                     URLHelpers.OpenURL(newsItem.URL);
                 }

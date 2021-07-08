@@ -31,6 +31,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace ShareX
 {
@@ -394,7 +395,20 @@ namespace ShareX
 
                 if (imageFiles.Count() > 1)
                 {
-                    TaskHelpers.OpenImageCombiner(null, imageFiles);
+                    TaskHelpers.OpenImageCombiner(imageFiles);
+                }
+            }
+        }
+
+        public void CombineImages(Orientation orientation)
+        {
+            if (IsItemSelected)
+            {
+                IEnumerable<string> imageFiles = SelectedItems.Where(x => x.IsImageFile).Select(x => x.Info.FilePath);
+
+                if (imageFiles.Count() > 1)
+                {
+                    TaskHelpers.CombineImages(imageFiles, orientation);
                 }
             }
         }
