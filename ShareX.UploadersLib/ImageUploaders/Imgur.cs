@@ -329,7 +329,8 @@ namespace ShareX.UploadersLib.ImageUploaders
                                 }
                                 else
                                 {
-                                    result.URL = imageData.link;
+                                    // webm uploads returns link with dot at the end
+                                    result.URL = imageData.link.TrimEnd('.');
                                 }
                             }
                             else
