@@ -46,6 +46,12 @@
             this.tpResponseText = new System.Windows.Forms.TabPage();
             this.tpWebBrowser = new System.Windows.Forms.TabPage();
             this.wbResponse = new System.Windows.Forms.WebBrowser();
+            this.tscResult = new System.Windows.Forms.ToolStripContainer();
+            this.tsResult = new System.Windows.Forms.ToolStrip();
+            this.tsbCopyURL = new System.Windows.Forms.ToolStripButton();
+            this.tsbCopyThumbnailURL = new System.Windows.Forms.ToolStripButton();
+            this.tsbCopyDeletionURL = new System.Windows.Forms.ToolStripButton();
+            this.tsbCopyShortenedURL = new System.Windows.Forms.ToolStripButton();
             this.tscResponseText.ContentPanel.SuspendLayout();
             this.tscResponseText.TopToolStripPanel.SuspendLayout();
             this.tscResponseText.SuspendLayout();
@@ -58,6 +64,10 @@
             this.pResponseInfo.SuspendLayout();
             this.tpResponseText.SuspendLayout();
             this.tpWebBrowser.SuspendLayout();
+            this.tscResult.ContentPanel.SuspendLayout();
+            this.tscResult.TopToolStripPanel.SuspendLayout();
+            this.tscResult.SuspendLayout();
+            this.tsResult.SuspendLayout();
             this.SuspendLayout();
             // 
             // tscResponseText
@@ -136,7 +146,7 @@
             // 
             // tpResult
             // 
-            this.tpResult.Controls.Add(this.pResult);
+            this.tpResult.Controls.Add(this.tscResult);
             resources.ApplyResources(this.tpResult, "tpResult");
             this.tpResult.Name = "tpResult";
             this.tpResult.UseVisualStyleBackColor = true;
@@ -196,6 +206,60 @@
             this.wbResponse.Name = "wbResponse";
             this.wbResponse.ScriptErrorsSuppressed = true;
             // 
+            // tscResult
+            // 
+            // 
+            // tscResult.ContentPanel
+            // 
+            this.tscResult.ContentPanel.Controls.Add(this.pResult);
+            resources.ApplyResources(this.tscResult.ContentPanel, "tscResult.ContentPanel");
+            resources.ApplyResources(this.tscResult, "tscResult");
+            this.tscResult.Name = "tscResult";
+            // 
+            // tscResult.TopToolStripPanel
+            // 
+            this.tscResult.TopToolStripPanel.Controls.Add(this.tsResult);
+            // 
+            // tsResult
+            // 
+            resources.ApplyResources(this.tsResult, "tsResult");
+            this.tsResult.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.tsResult.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsbCopyShortenedURL,
+            this.tsbCopyURL,
+            this.tsbCopyThumbnailURL,
+            this.tsbCopyDeletionURL});
+            this.tsResult.Name = "tsResult";
+            this.tsResult.ShowItemToolTips = false;
+            // 
+            // tsbCopyURL
+            // 
+            this.tsbCopyURL.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            resources.ApplyResources(this.tsbCopyURL, "tsbCopyURL");
+            this.tsbCopyURL.Name = "tsbCopyURL";
+            this.tsbCopyURL.Click += new System.EventHandler(this.tsbCopyURL_Click);
+            // 
+            // tsbCopyThumbnailURL
+            // 
+            this.tsbCopyThumbnailURL.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            resources.ApplyResources(this.tsbCopyThumbnailURL, "tsbCopyThumbnailURL");
+            this.tsbCopyThumbnailURL.Name = "tsbCopyThumbnailURL";
+            this.tsbCopyThumbnailURL.Click += new System.EventHandler(this.tsbCopyThumbnailURL_Click);
+            // 
+            // tsbCopyDeletionURL
+            // 
+            this.tsbCopyDeletionURL.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            resources.ApplyResources(this.tsbCopyDeletionURL, "tsbCopyDeletionURL");
+            this.tsbCopyDeletionURL.Name = "tsbCopyDeletionURL";
+            this.tsbCopyDeletionURL.Click += new System.EventHandler(this.tsbCopyDeletionURL_Click);
+            // 
+            // tsbCopyShortenedURL
+            // 
+            this.tsbCopyShortenedURL.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            resources.ApplyResources(this.tsbCopyShortenedURL, "tsbCopyShortenedURL");
+            this.tsbCopyShortenedURL.Name = "tsbCopyShortenedURL";
+            this.tsbCopyShortenedURL.Click += new System.EventHandler(this.tsbCopyShortenedURL_Click);
+            // 
             // ResponseForm
             // 
             resources.ApplyResources(this, "$this");
@@ -219,6 +283,13 @@
             this.pResponseInfo.ResumeLayout(false);
             this.tpResponseText.ResumeLayout(false);
             this.tpWebBrowser.ResumeLayout(false);
+            this.tscResult.ContentPanel.ResumeLayout(false);
+            this.tscResult.TopToolStripPanel.ResumeLayout(false);
+            this.tscResult.TopToolStripPanel.PerformLayout();
+            this.tscResult.ResumeLayout(false);
+            this.tscResult.PerformLayout();
+            this.tsResult.ResumeLayout(false);
+            this.tsResult.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -242,5 +313,11 @@
         private System.Windows.Forms.ToolStripButton tsbResponseTextCopy;
         private System.Windows.Forms.TabPage tpWebBrowser;
         private System.Windows.Forms.WebBrowser wbResponse;
+        private System.Windows.Forms.ToolStripContainer tscResult;
+        private System.Windows.Forms.ToolStrip tsResult;
+        private System.Windows.Forms.ToolStripButton tsbCopyURL;
+        private System.Windows.Forms.ToolStripButton tsbCopyThumbnailURL;
+        private System.Windows.Forms.ToolStripButton tsbCopyDeletionURL;
+        private System.Windows.Forms.ToolStripButton tsbCopyShortenedURL;
     }
 }

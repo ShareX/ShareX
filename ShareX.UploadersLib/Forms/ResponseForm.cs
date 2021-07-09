@@ -111,9 +111,13 @@ namespace ShareX.UploadersLib
 
         private void UpdateResultTab(UploadResult result)
         {
+            tsbCopyShortenedURL.Visible = !string.IsNullOrEmpty(result.ShortenedURL);
             AddInfo(rtbResult, "Shortened URL", result.ShortenedURL);
+            tsbCopyURL.Visible = !string.IsNullOrEmpty(result.URL);
             AddInfo(rtbResult, "URL", result.URL);
+            tsbCopyThumbnailURL.Visible = !string.IsNullOrEmpty(result.ThumbnailURL);
             AddInfo(rtbResult, "Thumbnail URL", result.ThumbnailURL);
+            tsbCopyDeletionURL.Visible = !string.IsNullOrEmpty(result.DeletionURL);
             AddInfo(rtbResult, "Deletion URL", result.DeletionURL);
             if (result.IsError) AddInfo(rtbResult, "Error", result.ErrorsToString());
         }
@@ -133,6 +137,26 @@ namespace ShareX.UploadersLib
                 wbResponse.DocumentText = Result.Response;
                 isBrowserUpdated = true;
             }
+        }
+
+        private void tsbCopyShortenedURL_Click(object sender, EventArgs e)
+        {
+            ClipboardHelpers.CopyText(Result.ShortenedURL);
+        }
+
+        private void tsbCopyURL_Click(object sender, EventArgs e)
+        {
+            ClipboardHelpers.CopyText(Result.URL);
+        }
+
+        private void tsbCopyThumbnailURL_Click(object sender, EventArgs e)
+        {
+            ClipboardHelpers.CopyText(Result.ThumbnailURL);
+        }
+
+        private void tsbCopyDeletionURL_Click(object sender, EventArgs e)
+        {
+            ClipboardHelpers.CopyText(Result.DeletionURL);
         }
 
         private void rtbResult_LinkClicked(object sender, LinkClickedEventArgs e)
@@ -176,11 +200,7 @@ namespace ShareX.UploadersLib
 
         private void tsbResponseTextCopy_Click(object sender, EventArgs e)
         {
-            string response = rtbResponseText.Text;
-            if (!string.IsNullOrEmpty(response))
-            {
-                ClipboardHelpers.CopyText(response);
-            }
+            ClipboardHelpers.CopyText(rtbResponseText.Text);
         }
     }
 }
