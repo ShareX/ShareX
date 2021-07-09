@@ -42,11 +42,12 @@ namespace ShareX.UploadersLib
         private ResponseForm(UploadResult result)
         {
             InitializeComponent();
-            ShareXResources.ApplyTheme(this);
 
             rtbResult.AddContextMenu();
             rtbResponseInfo.AddContextMenu();
             rtbResponseText.AddContextMenu();
+
+            ShareXResources.ApplyTheme(this);
 
             UpdateResult(result);
         }
