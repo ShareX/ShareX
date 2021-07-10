@@ -406,7 +406,7 @@
     <value>3</value>
   </data>
   <data name="cbShowTray.Text" xml:space="preserve">
-    <value>Show tray icon</value>
+    <value>Minimize to Tray</value>
   </data>
   <data name="&gt;&gt;cbShowTray.Name" xml:space="preserve">
     <value>cbShowTray</value>
