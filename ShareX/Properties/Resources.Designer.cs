@@ -90,9 +90,9 @@ namespace ShareX.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Czech.
         /// </summary>
-        public static string AboutForm_AboutForm_Language_cs {
+        public static string AboutForm_AboutForm_Language_cs_CZ {
             get {
-                return ResourceManager.GetString("AboutForm_AboutForm_Language_cs", resourceCulture);
+                return ResourceManager.GetString("AboutForm_AboutForm_Language_cs_CZ", resourceCulture);
             }
         }
         

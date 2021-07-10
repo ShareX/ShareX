@@ -101,6 +101,7 @@ https://github.com/ShareX/ShareX/graphs/contributors
 {Resources.AboutForm_AboutForm_Language_fa_IR}: https://github.com/pourmand1376
 {Resources.AboutForm_AboutForm_Language_pt_PT}: https://github.com/FarewellAngelina
 {Resources.AboutForm_AboutForm_Language_ja_JP}: https://github.com/kanaxx
+{Resources.AboutForm_AboutForm_Language_cs_CZ}: https://github.com/choutkamartin
 
 {Resources.AboutForm_AboutForm_External_libraries}:
 
