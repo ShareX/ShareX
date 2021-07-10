@@ -88,6 +88,15 @@ namespace ShareX.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Czech.
+        /// </summary>
+        public static string AboutForm_AboutForm_Language_cs {
+            get {
+                return ResourceManager.GetString("AboutForm_AboutForm_Language_cs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to German.
         /// </summary>
         public static string AboutForm_AboutForm_Language_de {
@@ -1079,6 +1088,16 @@ namespace ShareX.Properties {
         public static System.Drawing.Bitmap crown {
             get {
                 object obj = ResourceManager.GetObject("crown", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap cs {
+            get {
+                object obj = ResourceManager.GetObject("cs", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -77,6 +77,9 @@ namespace ShareX
                 case SupportedLanguage.Automatic:
                     icon = Resources.globe;
                     break;
+                case SupportedLanguage.Czech:
+                    icon = Resources.cs;
+                    break;
                 case SupportedLanguage.Dutch:
                     icon = Resources.nl;
                     break;
@@ -148,6 +151,9 @@ namespace ShareX
 
             switch (language)
             {
+                case SupportedLanguage.Czech:
+                    cultureName = "cs-CZ";
+                    break;
                 case SupportedLanguage.Dutch:
                     cultureName = "nl-NL";
                     break;
