@@ -138,4 +138,7 @@
   <data name="AlignmentVerticalCenter" xml:space="preserve">
     <value>中央</value>
   </data>
+  <data name="FFmpegError" xml:space="preserve">
+    <value>FFmpegのエラーです</value>
+  </data>
 </root>
