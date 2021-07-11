@@ -634,4 +634,12 @@ ShareX を再起動しますか？</value>
   <data name="FFmpeg_FFmpeg_successfully_downloaded" xml:space="preserve">
     <value>FFmpegのダウンロードに成功しました。</value>
   </data>
+  <data name="FFmpeg_does_not_exist" xml:space="preserve">
+    <value>FFmpegが見つかりません。
+{0}
+ダウンロードしますか？</value>
+  </data>
+  <data name="FFmpeg_Missing" xml:space="preserve">
+    <value>FFmpegがインストールされていない</value>
+  </data>
 </root>
