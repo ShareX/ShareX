@@ -538,10 +538,10 @@
     <value>OCRの結果をクリップボードにコピーする</value>
   </data>
   <data name="cbCaptureOCRProcessOnLoad.Text" xml:space="preserve">
-    <value>OCR開始時にダイアログを開く</value>
+    <value>OCRダイアログを開くと同時にOCRを開始する</value>
   </data>
   <data name="cbCaptureOCRSilent.Text" xml:space="preserve">
-    <value>OCR開始時にダイアログを開かない</value>
+    <value>OCR実行時にダイアログを開かない（サイレント実行）</value>
   </data>
   <data name="cbClipboardUploadAutoIndexFolder.Text" xml:space="preserve">
     <value>クリップボードにフォルダパスがあるときは、そのフォルダのindexを作ってアップロードする</value>
