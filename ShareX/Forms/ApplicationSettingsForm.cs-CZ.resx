@@ -1,0 +1,306 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="lblLanguage.Text" xml:space="preserve">
+    <value>Jazyk:</value>
+  </data>
+  <data name="btnBrowseCustomScreenshotsPath.Text" xml:space="preserve">
+    <value>Procházet...</value>
+  </data>
+  <data name="btnBrowsePersonalFolderPath.Text" xml:space="preserve">
+    <value>Procházet...</value>
+  </data>
+  <data name="btnClipboardFormatAdd.Text" xml:space="preserve">
+    <value>Přidat...</value>
+  </data>
+  <data name="btnClipboardFormatEdit.Text" xml:space="preserve">
+    <value>Upravit...</value>
+  </data>
+  <data name="btnClipboardFormatRemove.Text" xml:space="preserve">
+    <value>Odebrat</value>
+  </data>
+  <data name="btnEditQuickTaskMenu.Text" xml:space="preserve">
+    <value>Upravit nabídku rychlých úkolů...</value>
+  </data>
+  <data name="btnExport.Text" xml:space="preserve">
+    <value>Exportovat...</value>
+  </data>
+  <data name="btnFirefoxOpenAddonPage.Text" xml:space="preserve">
+    <value>Nainstalovat doplněk ShareX pro Firefox...</value>
+  </data>
+  <data name="btnCheckDevBuild.Text" xml:space="preserve">
+    <value>Nainstalovat vývojářské sestavení...</value>
+  </data>
+  <data name="btnChromeOpenExtensionPage.Text" xml:space="preserve">
+    <value>Nainstalovat rozšíření ShareX pro Chrome...</value>
+  </data>
+  <data name="btnImport.Text" xml:space="preserve">
+    <value>Importovat...</value>
+  </data>
+  <data name="btnOpenPersonalFolderPath.Text" xml:space="preserve">
+    <value>Otevřít...</value>
+  </data>
+  <data name="btnOpenScreenshotsFolder.Text" xml:space="preserve">
+    <value>Otevřít...</value>
+  </data>
+  <data name="btnPersonalFolderPathApply.Text" xml:space="preserve">
+    <value>Použít</value>
+  </data>
+  <data name="btnResetSettings.Text" xml:space="preserve">
+    <value>Obnovit nastavení...</value>
+  </data>
+  <data name="btnShowImagePrintSettings.Text" xml:space="preserve">
+    <value>Nastavení tisku obrázků...</value>
+  </data>
+  <data name="btnThemeAdd.Text" xml:space="preserve">
+    <value>Přidat</value>
+  </data>
+  <data name="btnThemeRemove.Text" xml:space="preserve">
+    <value>Odebrat</value>
+  </data>
+  <data name="btnThemeReset.Text" xml:space="preserve">
+    <value>Resetovat...</value>
+  </data>
+  <data name="tpAdvanced.Text" xml:space="preserve">
+    <value>Pokročilé</value>
+  </data>
+  <data name="lblUploadLimitHint.Text" xml:space="preserve">
+    <value>0 - 25 (0 deaktivuje)</value>
+  </data>
+  <data name="lblSaveImageSubFolderPatternPreview.Text" xml:space="preserve">
+    <value>...</value>
+  </data>
+  <data name="lblPreviewPersonalFolderPath.Text" xml:space="preserve">
+    <value>...</value>
+  </data>
+  <data name="lblBufferSize.Text" xml:space="preserve">
+    <value>Velikost bufferu:</value>
+  </data>
+  <data name="chDescription.Text" xml:space="preserve">
+    <value>Popis</value>
+  </data>
+  <data name="cbPrintDontShowWindowsDialog.Text" xml:space="preserve">
+    <value>Nezobrazovat dialogové okno tisku systému Windows</value>
+  </data>
+  <data name="cbFirefoxAddonSupport.Text" xml:space="preserve">
+    <value>Povolit podporu doplňků Firefox</value>
+  </data>
+  <data name="cbChromeExtensionSupport.Text" xml:space="preserve">
+    <value>Povolte podporu rozšíření Chrome</value>
+  </data>
+  <data name="gbFirefox.Text" xml:space="preserve">
+    <value>Doplněk Firefox</value>
+  </data>
+  <data name="tpGeneral.Text" xml:space="preserve">
+    <value>Všeobecné</value>
+  </data>
+  <data name="cbExportHistory.Text" xml:space="preserve">
+    <value>Historie</value>
+  </data>
+  <data name="tpHistory.Text" xml:space="preserve">
+    <value>Historie</value>
+  </data>
+  <data name="gbHistory.Text" xml:space="preserve">
+    <value>Historie</value>
+  </data>
+  <data name="gbChrome.Text" xml:space="preserve">
+    <value>Rozšíření Chrome</value>
+  </data>
+  <data name="lblProxyPassword.Text" xml:space="preserve">
+    <value>Heslo:</value>
+  </data>
+  <data name="tpPaths.Text" xml:space="preserve">
+    <value>Cesty</value>
+  </data>
+  <data name="gbWindows.Text" xml:space="preserve">
+    <value>Okna</value>
+  </data>
+  <data name="tpUpload.Text" xml:space="preserve">
+    <value>Nahrát</value>
+  </data>
+  <data name="tpTheme.Text" xml:space="preserve">
+    <value>Téma</value>
+  </data>
+  <data name="gbSteam.Text" xml:space="preserve">
+    <value>Steam</value>
+  </data>
+  <data name="lblUploadLimit.Text" xml:space="preserve">
+    <value>Limit současného nahrávání:</value>
+  </data>
+  <data name="cbShowTray.Text" xml:space="preserve">
+    <value>Zobrazit ikonu na liště</value>
+  </data>
+  <data name="lblPersonalFolderPath.Text" xml:space="preserve">
+    <value>Osobní ShareX složka:</value>
+  </data>
+  <data name="cbExportSettings.Text" xml:space="preserve">
+    <value>Nastavení</value>
+  </data>
+  <data name="tpSettings.Text" xml:space="preserve">
+    <value>Nastavení</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX - Nastavení aplikace</value>
+  </data>
+  <data name="cbRecentTasksSave.Text" xml:space="preserve">
+    <value>Uložit nedávné ulohy</value>
+  </data>
+  <data name="cbHistorySaveTasks.Text" xml:space="preserve">
+    <value>Uložit úlohy do historie</value>
+  </data>
+  <data name="tpUploadResults.Text" xml:space="preserve">
+    <value>Výsledky</value>
+  </data>
+  <data name="tpUploadRetry.Text" xml:space="preserve">
+    <value>Zkusit znovu</value>
+  </data>
+  <data name="gbRecentLinks.Text" xml:space="preserve">
+    <value>Nedávné úlohy</value>
+  </data>
+  <data name="cbAutomaticallyCleanupBackupFiles.Text" xml:space="preserve">
+    <value>Automaticky vyčistit staré záložní soubory</value>
+  </data>
+  <data name="cbAutomaticallyCleanupLogFiles.Text" xml:space="preserve">
+    <value>Automaticky vyčistit staré soubory protokolu</value>
+  </data>
+  <data name="cbDontShowPrintSettingDialog.Text" xml:space="preserve">
+    <value>Nezobrazovat dialogové okno nastavení tisku obrázků</value>
+  </data>
+  <data name="chFormat.Text" xml:space="preserve">
+    <value>Formát</value>
+  </data>
+  <data name="lblProxyHost.Text" xml:space="preserve">
+    <value>Hostitel:</value>
+  </data>
+  <data name="cbCheckPreReleaseUpdates.Text" xml:space="preserve">
+    <value>Zkontrolovat aktualizace před vydáním</value>
+  </data>
+  <data name="cbRecentTasksTrayMenuMostRecentFirst.Text" xml:space="preserve">
+    <value>V nabídce stavové lišty zobrazit nejdříve nejnovější úkoly</value>
+  </data>
+  <data name="tpIntegration.Text" xml:space="preserve">
+    <value>Integrace</value>
+  </data>
+  <data name="lblRecentTasksMaxCount.Text" xml:space="preserve">
+    <value>Maximální počet úloh k uložení:</value>
+  </data>
+  <data name="cbSilentRun.Text" xml:space="preserve">
+    <value>Minimalizovat do systémové lišty při startu</value>
+  </data>
+</root>

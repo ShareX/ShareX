@@ -118,7 +118,7 @@ ZXing.Net: https://github.com/micjahn/ZXing.Net
 MegaApiClient: https://github.com/gpailler/MegaApiClient
 Blob Emoji: http://blobs.gg
 
-Copyright (c) 2007-2020 ShareX Team";
+Copyright (c) 2007-2021 ShareX Team";
 
             easterEgg = new EasterEggAboutAnimation(cLogo, this);
         }
