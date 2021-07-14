@@ -294,52 +294,6 @@ namespace ShareX.HelpersLib
             };
         }
 
-        public static void SaveJPG(this Image img, Stream stream, int quality)
-        {
-            quality = quality.Clamp(0, 100);
-            EncoderParameters encoderParameters = new EncoderParameters(1);
-            encoderParameters.Param[0] = new EncoderParameter(Encoder.Quality, quality);
-            img.Save(stream, ImageFormat.Jpeg.GetCodecInfo(), encoderParameters);
-        }
-
-        public static void SaveJPG(this Image img, string filepath, int quality)
-        {
-            using (FileStream fs = new FileStream(filepath, FileMode.Create, FileAccess.Write, FileShare.Read))
-            {
-                SaveJPG(img, fs, quality);
-            }
-        }
-
-        public static void SaveGIF(this Image img, Stream stream, GIFQuality quality)
-        {
-            if (quality == GIFQuality.Default)
-            {
-                img.Save(stream, ImageFormat.Gif);
-            }
-            else
-            {
-                Quantizer quantizer;
-                switch (quality)
-                {
-                    case GIFQuality.Grayscale:
-                        quantizer = new GrayscaleQuantizer();
-                        break;
-                    case GIFQuality.Bit4:
-                        quantizer = new OctreeQuantizer(15, 4);
-                        break;
-                    default:
-                    case GIFQuality.Bit8:
-                        quantizer = new OctreeQuantizer(255, 4);
-                        break;
-                }
-
-                using (Bitmap quantized = quantizer.Quantize(img))
-                {
-                    quantized.Save(stream, ImageFormat.Gif);
-                }
-            }
-        }
-
         public static long ToUnix(this DateTime dateTime)
         {
             return Helpers.DateTimeToUnix(dateTime);

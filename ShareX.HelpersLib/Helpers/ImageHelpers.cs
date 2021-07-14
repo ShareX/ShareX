@@ -34,6 +34,7 @@ using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Windows.Forms;
+using Encoder = System.Drawing.Imaging.Encoder;
 
 namespace ShareX.HelpersLib
 {
@@ -2351,6 +2352,182 @@ namespace ShareX.HelpersLib
             }
 
             return bmp;
+        }
+
+        public static MemoryStream SaveImageAsJPEG(Image img, int quality)
+        {
+            MemoryStream ms = new MemoryStream();
+            SaveImageAsJPEG(img, ms, quality);
+            return ms;
+        }
+
+        public static void SaveImageAsJPEG(Image img, string filePath, int quality)
+        {
+            using (FileStream fs = new FileStream(filePath, FileMode.Create, FileAccess.Write, FileShare.Read))
+            {
+                SaveImageAsJPEG(img, fs, quality);
+            }
+        }
+
+        public static void SaveImageAsJPEG(Image img, Stream stream, int quality)
+        {
+            try
+            {
+                img = (Image)img.Clone();
+                img = FillBackground(img, Color.White);
+
+                quality = quality.Clamp(0, 100);
+                EncoderParameters encoderParameters = new EncoderParameters(1);
+                encoderParameters.Param[0] = new EncoderParameter(Encoder.Quality, quality);
+                img.Save(stream, ImageFormat.Jpeg.GetCodecInfo(), encoderParameters);
+            }
+            finally
+            {
+                if (img != null) img.Dispose();
+            }
+        }
+
+        public static MemoryStream SaveImageAsPNG(Image img, PNGBitDepth bitDepth)
+        {
+            MemoryStream ms = new MemoryStream();
+            SaveImageAsPNG(img, ms, bitDepth);
+            return ms;
+        }
+
+        public static void SaveImageAsPNG(Image img, Stream stream, PNGBitDepth bitDepth)
+        {
+            if (bitDepth == PNGBitDepth.Automatic)
+            {
+                if (IsImageTransparent((Bitmap)img))
+                {
+                    bitDepth = PNGBitDepth.Bit32;
+                }
+                else
+                {
+                    bitDepth = PNGBitDepth.Bit24;
+                }
+            }
+
+            if (bitDepth == PNGBitDepth.Bit32)
+            {
+                if (img.PixelFormat != PixelFormat.Format32bppArgb && img.PixelFormat != PixelFormat.Format32bppRgb)
+                {
+                    using (Bitmap bmpNew = ((Bitmap)img).Clone(new Rectangle(0, 0, img.Width, img.Height), PixelFormat.Format32bppArgb))
+                    {
+                        bmpNew.Save(stream, ImageFormat.Png);
+                        return;
+                    }
+                }
+            }
+            else if (bitDepth == PNGBitDepth.Bit24)
+            {
+                if (img.PixelFormat != PixelFormat.Format24bppRgb)
+                {
+                    using (Bitmap bmpNew = ((Bitmap)img).Clone(new Rectangle(0, 0, img.Width, img.Height), PixelFormat.Format24bppRgb))
+                    {
+                        bmpNew.Save(stream, ImageFormat.Png);
+                        return;
+                    }
+                }
+            }
+
+            img.Save(stream, ImageFormat.Png);
+        }
+
+        public static MemoryStream PNGStripChunks(MemoryStream stream, params string[] chunks)
+        {
+            MemoryStream output = new MemoryStream();
+            stream.Seek(0, SeekOrigin.Begin);
+
+            byte[] signature = new byte[8];
+            stream.Read(signature, 0, 8);
+            output.Write(signature, 0, 8);
+
+            while (true)
+            {
+                byte[] lenBytes = new byte[4];
+                if (stream.Read(lenBytes, 0, 4) != 4)
+                {
+                    break;
+                }
+
+                if (BitConverter.IsLittleEndian)
+                {
+                    Array.Reverse(lenBytes);
+                }
+
+                int len = BitConverter.ToInt32(lenBytes, 0);
+
+                if (BitConverter.IsLittleEndian)
+                {
+                    Array.Reverse(lenBytes);
+                }
+
+                byte[] type = new byte[4];
+                stream.Read(type, 0, 4);
+
+                byte[] data = new byte[len + 4];
+                stream.Read(data, 0, data.Length);
+
+                string strType = Encoding.ASCII.GetString(type);
+
+                if (!chunks.Contains(strType))
+                {
+                    output.Write(lenBytes, 0, lenBytes.Length);
+                    output.Write(type, 0, type.Length);
+                    output.Write(data, 0, data.Length);
+                }
+            }
+
+            return output;
+        }
+
+        public static MemoryStream PNGStripColorSpaceInformation(MemoryStream stream)
+        {
+            // http://www.libpng.org/pub/png/spec/1.2/PNG-Chunks.html
+            // 4.2.2.1. gAMA Image gamma
+            // 4.2.2.2. cHRM Primary chromaticities
+            // 4.2.2.3. sRGB Standard RGB color space
+            // 4.2.2.4. iCCP Embedded ICC profile
+            return PNGStripChunks(stream, "gAMA", "cHRM", "sRGB", "iCCP");
+        }
+
+        public static MemoryStream SaveImageAsGIF(Image img, GIFQuality quality)
+        {
+            MemoryStream ms = new MemoryStream();
+            SaveImageAsGIF(img, ms, quality);
+            return ms;
+        }
+
+        public static void SaveImageAsGIF(Image img, Stream stream, GIFQuality quality)
+        {
+            if (quality == GIFQuality.Default)
+            {
+                img.Save(stream, ImageFormat.Gif);
+            }
+            else
+            {
+                Quantizer quantizer;
+
+                switch (quality)
+                {
+                    case GIFQuality.Grayscale:
+                        quantizer = new GrayscaleQuantizer();
+                        break;
+                    case GIFQuality.Bit4:
+                        quantizer = new OctreeQuantizer(15, 4);
+                        break;
+                    default:
+                    case GIFQuality.Bit8:
+                        quantizer = new OctreeQuantizer(255, 4);
+                        break;
+                }
+
+                using (Bitmap quantized = quantizer.Quantize(img))
+                {
+                    quantized.Save(stream, ImageFormat.Gif);
+                }
+            }
         }
     }
 }

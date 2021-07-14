@@ -418,14 +418,14 @@ namespace ShareX
                 {
                     OnUploadStarted();
 
-                    bool isError = DoUpload();
+                    bool isError = DoUpload(Data, Info.FileName);
 
                     if (isError && Program.Settings.MaxUploadFailRetry > 0)
                     {
                         for (int retry = 1; !StopRequested && isError && retry <= Program.Settings.MaxUploadFailRetry; retry++)
                         {
                             DebugHelper.WriteLine("Upload failed. Retrying upload.");
-                            isError = DoUpload(retry);
+                            isError = DoUpload(Data, Info.FileName, retry);
                         }
                     }
 
@@ -441,7 +441,7 @@ namespace ShareX
             }
         }
 
-        private bool DoUpload(int retry = 0)
+        private bool DoUpload(Stream data, string filename, int retry = 0)
         {
             bool isError = false;
 
@@ -470,18 +470,18 @@ namespace ShareX
                     sslBypassHelper = new SSLBypassHelper();
                 }
 
-                if (!CheckUploadFilters(Data, Info.FileName))
+                if (!CheckUploadFilters(data, filename))
                 {
                     switch (Info.UploadDestination)
                     {
                         case EDataType.Image:
-                            Info.Result = UploadImage(Data, Info.FileName);
+                            Info.Result = UploadImage(data, filename);
                             break;
                         case EDataType.Text:
-                            Info.Result = UploadText(Data, Info.FileName);
+                            Info.Result = UploadText(data, filename);
                             break;
                         case EDataType.File:
-                            Info.Result = UploadFile(Data, Info.FileName);
+                            Info.Result = UploadFile(data, filename);
                             break;
                     }
                 }

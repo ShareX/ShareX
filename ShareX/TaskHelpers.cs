@@ -297,7 +297,7 @@ namespace ShareX
                         thumbnail = (Bitmap)bmp.Clone();
                         thumbnail = new Resize(taskSettings.ImageSettings.ThumbnailWidth, taskSettings.ImageSettings.ThumbnailHeight).Apply(thumbnail);
                         thumbnail = ImageHelpers.FillBackground(thumbnail, Color.White);
-                        thumbnail.SaveJPG(thumbnailFilePath, 90);
+                        ImageHelpers.SaveImageAsJPEG(thumbnail, thumbnailFilePath, 90);
                         return thumbnailFilePath;
                     }
                     finally
@@ -327,21 +327,21 @@ namespace ShareX
             switch (imageFormat)
             {
                 case EImageFormat.PNG:
-                    SaveImageAsPNGStream(img, stream, pngBitDepth);
+                    ImageHelpers.SaveImageAsPNG(img, stream, pngBitDepth);
 
                     if (Program.Settings.PNGStripColorSpaceInformation)
                     {
                         using (stream)
                         {
-                            return PNGStripColorSpaceInformation(stream);
+                            return ImageHelpers.PNGStripColorSpaceInformation(stream);
                         }
                     }
                     break;
                 case EImageFormat.JPEG:
-                    SaveImageAsJPEGStream(img, stream, jpegQuality);
+                    ImageHelpers.SaveImageAsJPEG(img, stream, jpegQuality);
                     break;
                 case EImageFormat.GIF:
-                    img.SaveGIF(stream, gifQuality);
+                    ImageHelpers.SaveImageAsGIF(img, stream, gifQuality);
                     break;
                 case EImageFormat.BMP:
                     img.Save(stream, ImageFormat.Bmp);
@@ -352,118 +352,6 @@ namespace ShareX
             }
 
             return stream;
-        }
-
-        private static void SaveImageAsPNGStream(Image img, Stream stream, PNGBitDepth bitDepth)
-        {
-            if (bitDepth == PNGBitDepth.Automatic)
-            {
-                if (ImageHelpers.IsImageTransparent((Bitmap)img))
-                {
-                    bitDepth = PNGBitDepth.Bit32;
-                }
-                else
-                {
-                    bitDepth = PNGBitDepth.Bit24;
-                }
-            }
-
-            if (bitDepth == PNGBitDepth.Bit32)
-            {
-                if (img.PixelFormat != PixelFormat.Format32bppArgb && img.PixelFormat != PixelFormat.Format32bppRgb)
-                {
-                    using (Bitmap bmpNew = ((Bitmap)img).Clone(new Rectangle(0, 0, img.Width, img.Height), PixelFormat.Format32bppArgb))
-                    {
-                        bmpNew.Save(stream, ImageFormat.Png);
-                        return;
-                    }
-                }
-            }
-            else if (bitDepth == PNGBitDepth.Bit24)
-            {
-                if (img.PixelFormat != PixelFormat.Format24bppRgb)
-                {
-                    using (Bitmap bmpNew = ((Bitmap)img).Clone(new Rectangle(0, 0, img.Width, img.Height), PixelFormat.Format24bppRgb))
-                    {
-                        bmpNew.Save(stream, ImageFormat.Png);
-                        return;
-                    }
-                }
-            }
-
-            img.Save(stream, ImageFormat.Png);
-        }
-
-        private static MemoryStream PNGStripChunks(MemoryStream stream, params string[] chunks)
-        {
-            MemoryStream output = new MemoryStream();
-            stream.Seek(0, SeekOrigin.Begin);
-
-            byte[] signature = new byte[8];
-            stream.Read(signature, 0, 8);
-            output.Write(signature, 0, 8);
-
-            while (true)
-            {
-                byte[] lenBytes = new byte[4];
-                if (stream.Read(lenBytes, 0, 4) != 4)
-                {
-                    break;
-                }
-
-                if (BitConverter.IsLittleEndian)
-                {
-                    Array.Reverse(lenBytes);
-                }
-
-                int len = BitConverter.ToInt32(lenBytes, 0);
-
-                if (BitConverter.IsLittleEndian)
-                {
-                    Array.Reverse(lenBytes);
-                }
-
-                byte[] type = new byte[4];
-                stream.Read(type, 0, 4);
-
-                byte[] data = new byte[len + 4];
-                stream.Read(data, 0, data.Length);
-
-                string strType = Encoding.ASCII.GetString(type);
-
-                if (!chunks.Contains(strType))
-                {
-                    output.Write(lenBytes, 0, lenBytes.Length);
-                    output.Write(type, 0, type.Length);
-                    output.Write(data, 0, data.Length);
-                }
-            }
-
-            return output;
-        }
-
-        private static MemoryStream PNGStripColorSpaceInformation(MemoryStream stream)
-        {
-            // http://www.libpng.org/pub/png/spec/1.2/PNG-Chunks.html
-            // 4.2.2.1. gAMA Image gamma
-            // 4.2.2.2. cHRM Primary chromaticities
-            // 4.2.2.3. sRGB Standard RGB color space
-            // 4.2.2.4. iCCP Embedded ICC profile
-            return PNGStripChunks(stream, "gAMA", "cHRM", "sRGB", "iCCP");
-        }
-
-        private static void SaveImageAsJPEGStream(Image img, Stream stream, int jpegQuality)
-        {
-            try
-            {
-                img = (Image)img.Clone();
-                img = ImageHelpers.FillBackground(img, Color.White);
-                img.SaveJPG(stream, jpegQuality);
-            }
-            finally
-            {
-                if (img != null) img.Dispose();
-            }
         }
 
         public static void SaveImageAsFile(Bitmap bmp, TaskSettings taskSettings, bool overwriteFile = false)

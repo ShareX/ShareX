@@ -455,12 +455,25 @@ namespace ShareX
         Editor("System.Windows.Forms.Design.StringCollectionEditor,System.Design, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(UITypeEditor))]
         public List<string> ImageExtensions { get; set; }
 
-        [Category("Upload"), DefaultValue(false), Description("Copy URL before start upload. Only works for FTP, FTPS, SFTP, Amazon S3, Google Cloud Storage and Azure Storage.")]
-        public bool EarlyCopyURL { get; set; }
-
         [Category("Upload"), Description("Files with these file extensions will be uploaded using text uploader."),
         Editor("System.Windows.Forms.Design.StringCollectionEditor,System.Design, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(UITypeEditor))]
         public List<string> TextExtensions { get; set; }
+
+        [Category("Upload"), DefaultValue(false), Description("Copy URL before start upload. Only works for FTP, FTPS, SFTP, Amazon S3, Google Cloud Storage and Azure Storage.")]
+        public bool EarlyCopyURL { get; set; }
+
+        [Category("Upload text"), DefaultValue("txt"), Description("File extension when saving text to the local hard disk.")]
+        public string TextFileExtension { get; set; }
+
+        [Category("Upload text"), DefaultValue("text"), Description("Text format e.g. csharp, cpp, etc.")]
+        public string TextFormat { get; set; }
+
+        [Category("Upload text"), DefaultValue(""), Description("Custom text input. Use %input for text input. Example you can create web page with your text in it."),
+        Editor(typeof(MultilineStringEditor), typeof(UITypeEditor))]
+        public string TextCustom { get; set; }
+
+        [Category("Upload text"), DefaultValue(true), Description("HTML encode custom text input.")]
+        public bool TextCustomEncodeInput { get; set; }
 
         [Category("After upload"), DefaultValue(false), Description("If result URL starts with \"http://\" then replace it with \"https://\".")]
         public bool ResultForceHTTPS { get; set; }
@@ -480,19 +493,6 @@ namespace ShareX
 
         [Category("After upload"), DefaultValue(false), Description("After upload form will be automatically closed after 60 seconds.")]
         public bool AutoCloseAfterUploadForm { get; set; }
-
-        [Category("Upload text"), DefaultValue("txt"), Description("File extension when saving text to the local hard disk.")]
-        public string TextFileExtension { get; set; }
-
-        [Category("Upload text"), DefaultValue("text"), Description("Text format e.g. csharp, cpp, etc.")]
-        public string TextFormat { get; set; }
-
-        [Category("Upload text"), DefaultValue(""), Description("Custom text input. Use %input for text input. Example you can create web page with your text in it."),
-        Editor(typeof(MultilineStringEditor), typeof(UITypeEditor))]
-        public string TextCustom { get; set; }
-
-        [Category("Upload text"), DefaultValue(true), Description("HTML encode custom text input.")]
-        public bool TextCustomEncodeInput { get; set; }
 
         [Category("Name pattern"), DefaultValue(100), Description("Maximum name pattern length for file name.")]
         public int NamePatternMaxLength { get; set; }
