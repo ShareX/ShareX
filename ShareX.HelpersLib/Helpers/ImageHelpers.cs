@@ -2492,6 +2492,39 @@ namespace ShareX.HelpersLib
             }
         }
 
+        public static MemoryStream SaveJPEGAutoQuality(Image img, int sizeLimit, int qualityDecrement = 5, int minQuality = 0, int maxQuality = 100)
+        {
+            qualityDecrement = qualityDecrement.Clamp(1, 100);
+            minQuality = minQuality.Clamp(0, 100);
+            maxQuality = maxQuality.Clamp(0, 100);
+
+            if (minQuality >= maxQuality)
+            {
+                return SaveJPEG(img, minQuality);
+            }
+
+            MemoryStream ms = null;
+
+            for (int quality = maxQuality; quality >= minQuality; quality -= qualityDecrement)
+            {
+                if (ms != null)
+                {
+                    ms.Dispose();
+                }
+
+                ms = SaveJPEG(img, quality);
+
+                //Console.WriteLine($"Quality: {quality} - Size: {ms.Length.ToSizeString()}");
+
+                if (ms.Length <= sizeLimit)
+                {
+                    break;
+                }
+            }
+
+            return ms;
+        }
+
         public static MemoryStream SaveGIF(Image img, GIFQuality quality)
         {
             MemoryStream ms = new MemoryStream();
