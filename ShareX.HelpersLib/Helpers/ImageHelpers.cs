@@ -2354,47 +2354,14 @@ namespace ShareX.HelpersLib
             return bmp;
         }
 
-        public static MemoryStream SaveImageAsJPEG(Image img, int quality)
+        public static MemoryStream SavePNG(Image img, PNGBitDepth bitDepth)
         {
             MemoryStream ms = new MemoryStream();
-            SaveImageAsJPEG(img, ms, quality);
+            SavePNG(img, ms, bitDepth);
             return ms;
         }
 
-        public static void SaveImageAsJPEG(Image img, string filePath, int quality)
-        {
-            using (FileStream fs = new FileStream(filePath, FileMode.Create, FileAccess.Write, FileShare.Read))
-            {
-                SaveImageAsJPEG(img, fs, quality);
-            }
-        }
-
-        public static void SaveImageAsJPEG(Image img, Stream stream, int quality)
-        {
-            try
-            {
-                img = (Image)img.Clone();
-                img = FillBackground(img, Color.White);
-
-                quality = quality.Clamp(0, 100);
-                EncoderParameters encoderParameters = new EncoderParameters(1);
-                encoderParameters.Param[0] = new EncoderParameter(Encoder.Quality, quality);
-                img.Save(stream, ImageFormat.Jpeg.GetCodecInfo(), encoderParameters);
-            }
-            finally
-            {
-                if (img != null) img.Dispose();
-            }
-        }
-
-        public static MemoryStream SaveImageAsPNG(Image img, PNGBitDepth bitDepth)
-        {
-            MemoryStream ms = new MemoryStream();
-            SaveImageAsPNG(img, ms, bitDepth);
-            return ms;
-        }
-
-        public static void SaveImageAsPNG(Image img, Stream stream, PNGBitDepth bitDepth)
+        public static void SavePNG(Image img, Stream stream, PNGBitDepth bitDepth)
         {
             if (bitDepth == PNGBitDepth.Automatic)
             {
@@ -2492,14 +2459,47 @@ namespace ShareX.HelpersLib
             return PNGStripChunks(stream, "gAMA", "cHRM", "sRGB", "iCCP");
         }
 
-        public static MemoryStream SaveImageAsGIF(Image img, GIFQuality quality)
+        public static MemoryStream SaveJPEG(Image img, int quality)
         {
             MemoryStream ms = new MemoryStream();
-            SaveImageAsGIF(img, ms, quality);
+            SaveJPEG(img, ms, quality);
             return ms;
         }
 
-        public static void SaveImageAsGIF(Image img, Stream stream, GIFQuality quality)
+        public static void SaveJPEG(Image img, string filePath, int quality)
+        {
+            using (FileStream fs = new FileStream(filePath, FileMode.Create, FileAccess.Write, FileShare.Read))
+            {
+                SaveJPEG(img, fs, quality);
+            }
+        }
+
+        public static void SaveJPEG(Image img, Stream stream, int quality)
+        {
+            try
+            {
+                img = (Image)img.Clone();
+                img = FillBackground(img, Color.White);
+
+                quality = quality.Clamp(0, 100);
+                EncoderParameters encoderParameters = new EncoderParameters(1);
+                encoderParameters.Param[0] = new EncoderParameter(Encoder.Quality, quality);
+                img.Save(stream, ImageFormat.Jpeg.GetCodecInfo(), encoderParameters);
+            }
+            finally
+            {
+                if (img != null) img.Dispose();
+            }
+        }
+
+        public static MemoryStream SaveGIF(Image img, GIFQuality quality)
+        {
+            MemoryStream ms = new MemoryStream();
+            SaveGIF(img, ms, quality);
+            return ms;
+        }
+
+        public static void SaveGIF(Image img, Stream stream, GIFQuality quality)
         {
             if (quality == GIFQuality.Default)
             {

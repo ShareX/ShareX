@@ -297,7 +297,7 @@ namespace ShareX
                         thumbnail = (Bitmap)bmp.Clone();
                         thumbnail = new Resize(taskSettings.ImageSettings.ThumbnailWidth, taskSettings.ImageSettings.ThumbnailHeight).Apply(thumbnail);
                         thumbnail = ImageHelpers.FillBackground(thumbnail, Color.White);
-                        ImageHelpers.SaveImageAsJPEG(thumbnail, thumbnailFilePath, 90);
+                        ImageHelpers.SaveJPEG(thumbnail, thumbnailFilePath, 90);
                         return thumbnailFilePath;
                     }
                     finally
@@ -327,7 +327,7 @@ namespace ShareX
             switch (imageFormat)
             {
                 case EImageFormat.PNG:
-                    ImageHelpers.SaveImageAsPNG(img, stream, pngBitDepth);
+                    ImageHelpers.SavePNG(img, stream, pngBitDepth);
 
                     if (Program.Settings.PNGStripColorSpaceInformation)
                     {
@@ -338,10 +338,10 @@ namespace ShareX
                     }
                     break;
                 case EImageFormat.JPEG:
-                    ImageHelpers.SaveImageAsJPEG(img, stream, jpegQuality);
+                    ImageHelpers.SaveJPEG(img, stream, jpegQuality);
                     break;
                 case EImageFormat.GIF:
-                    ImageHelpers.SaveImageAsGIF(img, stream, gifQuality);
+                    ImageHelpers.SaveGIF(img, stream, gifQuality);
                     break;
                 case EImageFormat.BMP:
                     img.Save(stream, ImageFormat.Bmp);

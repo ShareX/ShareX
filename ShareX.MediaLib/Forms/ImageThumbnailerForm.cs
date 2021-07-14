@@ -170,7 +170,7 @@ namespace ShareX.MediaLib
                                         string filename = Path.GetFileNameWithoutExtension(filePath);
                                         string outputPath = Path.Combine(outputFolder, outputFilename.Replace("$filename", filename));
                                         outputPath = Path.ChangeExtension(outputPath, "jpg");
-                                        ImageHelpers.SaveImageAsJPEG(thumbnail, outputPath, quality);
+                                        ImageHelpers.SaveJPEG(thumbnail, outputPath, quality);
                                     }
                                 }
                             }

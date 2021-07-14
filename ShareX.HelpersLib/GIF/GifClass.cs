@@ -58,7 +58,7 @@ namespace ShareX.HelpersLib
 
             using (MemoryStream ms = new MemoryStream())
             {
-                ImageHelpers.SaveImageAsGIF(img, ms, quality);
+                ImageHelpers.SaveGIF(img, ms, quality);
                 dataList = new List<byte>(ms.ToArray());
             }
 
