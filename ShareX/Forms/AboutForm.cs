@@ -84,7 +84,7 @@ https://github.com/ShareX/ShareX/graphs/contributors
 
 {Resources.AboutForm_AboutForm_Language_tr}: https://github.com/Jaex & https://github.com/muratmoon
 {Resources.AboutForm_AboutForm_Language_de}: https://github.com/Starbug2 & https://github.com/Kaeltis
-{Resources.AboutForm_AboutForm_Language_fr}: https://github.com/nwies & https://github.com/Shadorc
+{Resources.AboutForm_AboutForm_Language_fr}: https://github.com/simonporte & https://github.com/nwies & https://github.com/Shadorc
 {Resources.AboutForm_AboutForm_Language_zh_CH}: https://github.com/jiajiechan
 {Resources.AboutForm_AboutForm_Language_hu}: https://github.com/devBluestar
 {Resources.AboutForm_AboutForm_Language_ko_KR}: https://github.com/123jimin
