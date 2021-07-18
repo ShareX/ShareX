@@ -299,22 +299,12 @@ namespace ShareX
 
                 if (!string.IsNullOrEmpty(thumbnailFilePath))
                 {
-                    Bitmap thumbnail = null;
-
-                    try
+                    using (Bitmap thumbnail = (Bitmap)bmp.Clone())
+                    using (Bitmap resizedImage = new Resize(taskSettings.ImageSettings.ThumbnailWidth, taskSettings.ImageSettings.ThumbnailHeight).Apply(thumbnail))
+                    using (Bitmap newImage = ImageHelpers.FillBackground(resizedImage, Color.White))
                     {
-                        thumbnail = (Bitmap)bmp.Clone();
-                        thumbnail = new Resize(taskSettings.ImageSettings.ThumbnailWidth, taskSettings.ImageSettings.ThumbnailHeight).Apply(thumbnail);
-                        thumbnail = ImageHelpers.FillBackground(thumbnail, Color.White);
-                        ImageHelpers.SaveJPEG(thumbnail, thumbnailFilePath, 90);
+                        ImageHelpers.SaveJPEG(newImage, thumbnailFilePath, 90);
                         return thumbnailFilePath;
-                    }
-                    finally
-                    {
-                        if (thumbnail != null)
-                        {
-                            thumbnail.Dispose();
-                        }
                     }
                 }
             }

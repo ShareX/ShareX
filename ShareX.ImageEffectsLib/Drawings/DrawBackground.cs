@@ -59,12 +59,15 @@ namespace ShareX.ImageEffectsLib
 
         public override Bitmap Apply(Bitmap bmp)
         {
-            if (UseGradient && Gradient != null && Gradient.IsValid)
+            using (bmp)
             {
-                return ImageHelpers.FillBackground(bmp, Gradient);
-            }
+                if (UseGradient && Gradient != null && Gradient.IsValid)
+                {
+                    return ImageHelpers.FillBackground(bmp, Gradient);
+                }
 
-            return ImageHelpers.FillBackground(bmp, Color);
+                return ImageHelpers.FillBackground(bmp, Color);
+            }
         }
     }
 }

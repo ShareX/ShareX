@@ -776,7 +776,6 @@ namespace ShareX.HelpersLib
         {
             Bitmap result = img.CreateEmptyBitmap();
 
-            using (img)
             using (Graphics g = Graphics.FromImage(result))
             {
                 g.FillRectangle(brush, 0, 0, result.Width, result.Height);
@@ -2478,16 +2477,9 @@ namespace ShareX.HelpersLib
         {
             if (fillBackgroundWhite)
             {
-                try
+                using (Image newImage = FillBackground(img, Color.White))
                 {
-                    img = (Image)img.Clone();
-                    img = FillBackground(img, Color.White);
-
-                    SaveJPEGInternal(img, stream, quality);
-                }
-                finally
-                {
-                    if (img != null) img.Dispose();
+                    SaveJPEGInternal(newImage, stream, quality);
                 }
             }
             else
