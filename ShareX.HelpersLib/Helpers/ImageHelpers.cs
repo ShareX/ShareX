@@ -2529,7 +2529,7 @@ namespace ShareX.HelpersLib
 
                 ms = SaveJPEG(img, quality, false);
 
-                //Console.WriteLine($"Quality: {quality} - Size: {ms.Length.ToSizeString()}");
+                //DebugHelper.WriteLine($"Quality: {quality}% - Size: {ms.Length.ToSizeString()}");
 
                 if (ms.Length <= sizeLimit)
                 {

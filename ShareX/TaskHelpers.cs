@@ -273,7 +273,16 @@ namespace ShareX
                 imageData.ImageStream.Length > taskSettings.ImageSettings.ImageAutoUseJPEGSize * 1000)
             {
                 imageData.ImageStream.Dispose();
-                imageData.ImageStream = SaveImageAsStream(img, EImageFormat.JPEG, taskSettings);
+
+                if (taskSettings.ImageSettings.ImageAutoJPEGQuality)
+                {
+                    imageData.ImageStream = ImageHelpers.SaveJPEGAutoQuality(img, taskSettings.ImageSettings.ImageAutoUseJPEGSize * 1000, 2, 70, 100);
+                }
+                else
+                {
+                    imageData.ImageStream = ImageHelpers.SaveJPEG(img, taskSettings.ImageSettings.ImageJPEGQuality);
+                }
+
                 imageData.ImageFormat = EImageFormat.JPEG;
             }
 

@@ -293,6 +293,7 @@
             this.pgTaskSettings = new System.Windows.Forms.PropertyGrid();
             this.chkOverrideAdvancedSettings = new System.Windows.Forms.CheckBox();
             this.tttvMain = new ShareX.HelpersLib.TabToTreeView();
+            this.cbImageAutoJPEGQuality = new System.Windows.Forms.CheckBox();
             this.tcTaskSettings.SuspendLayout();
             this.tpTask.SuspendLayout();
             this.cmsDestinations.SuspendLayout();
@@ -905,6 +906,7 @@
             // 
             // pImage
             // 
+            this.pImage.Controls.Add(this.cbImageAutoJPEGQuality);
             this.pImage.Controls.Add(this.cbImagePNGBitDepth);
             this.pImage.Controls.Add(this.lblImagePNGBitDepth);
             this.pImage.Controls.Add(this.cbImageAutoUseJPEG);
@@ -2543,6 +2545,13 @@
             this.tttvMain.TreeViewSize = 190;
             this.tttvMain.TabChanged += new ShareX.HelpersLib.TabToTreeView.TabChangedEventHandler(this.tttvMain_TabChanged);
             // 
+            // cbImageAutoJPEGQuality
+            // 
+            resources.ApplyResources(this.cbImageAutoJPEGQuality, "cbImageAutoJPEGQuality");
+            this.cbImageAutoJPEGQuality.Name = "cbImageAutoJPEGQuality";
+            this.cbImageAutoJPEGQuality.UseVisualStyleBackColor = true;
+            this.cbImageAutoJPEGQuality.CheckedChanged += new System.EventHandler(this.cbImageAutoJPEGQuality_CheckedChanged);
+            // 
             // TaskSettingsForm
             // 
             resources.ApplyResources(this, "$this");
@@ -2907,5 +2916,6 @@
         private System.Windows.Forms.Label lblToastWindowFadeDurationSeconds;
         private System.Windows.Forms.Label lblToastWindowDurationSeconds;
         private System.Windows.Forms.Button btnActions;
+        private System.Windows.Forms.CheckBox cbImageAutoJPEGQuality;
     }
 }
