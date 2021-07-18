@@ -2459,10 +2459,10 @@ namespace ShareX.HelpersLib
             return PNGStripChunks(stream, "gAMA", "cHRM", "sRGB", "iCCP");
         }
 
-        public static MemoryStream SaveJPEG(Image img, int quality)
+        public static MemoryStream SaveJPEG(Image img, int quality, bool fillBackgroundWhite = true)
         {
             MemoryStream ms = new MemoryStream();
-            SaveJPEG(img, ms, quality);
+            SaveJPEG(img, ms, quality, fillBackgroundWhite);
             return ms;
         }
 
@@ -2474,21 +2474,36 @@ namespace ShareX.HelpersLib
             }
         }
 
-        public static void SaveJPEG(Image img, Stream stream, int quality)
+        public static void SaveJPEG(Image img, Stream stream, int quality, bool fillBackgroundWhite = true)
         {
-            try
+            if (fillBackgroundWhite)
             {
-                img = (Image)img.Clone();
-                img = FillBackground(img, Color.White);
+                try
+                {
+                    img = (Image)img.Clone();
+                    img = FillBackground(img, Color.White);
 
-                quality = quality.Clamp(0, 100);
-                EncoderParameters encoderParameters = new EncoderParameters(1);
+                    SaveJPEGInternal(img, stream, quality);
+                }
+                finally
+                {
+                    if (img != null) img.Dispose();
+                }
+            }
+            else
+            {
+                SaveJPEGInternal(img, stream, quality);
+            }
+        }
+
+        private static void SaveJPEGInternal(Image img, Stream stream, int quality)
+        {
+            quality = quality.Clamp(0, 100);
+
+            using (EncoderParameters encoderParameters = new EncoderParameters(1))
+            {
                 encoderParameters.Param[0] = new EncoderParameter(Encoder.Quality, quality);
                 img.Save(stream, ImageFormat.Jpeg.GetCodecInfo(), encoderParameters);
-            }
-            finally
-            {
-                if (img != null) img.Dispose();
             }
         }
 
@@ -2500,7 +2515,7 @@ namespace ShareX.HelpersLib
 
             if (minQuality >= maxQuality)
             {
-                return SaveJPEG(img, minQuality);
+                return SaveJPEG(img, minQuality, false);
             }
 
             MemoryStream ms = null;
@@ -2512,7 +2527,7 @@ namespace ShareX.HelpersLib
                     ms.Dispose();
                 }
 
-                ms = SaveJPEG(img, quality);
+                ms = SaveJPEG(img, quality, false);
 
                 //Console.WriteLine($"Quality: {quality} - Size: {ms.Length.ToSizeString()}");
 
