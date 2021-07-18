@@ -274,13 +274,16 @@ namespace ShareX
             {
                 imageData.ImageStream.Dispose();
 
-                if (taskSettings.ImageSettings.ImageAutoJPEGQuality)
+                using (Bitmap newImage = ImageHelpers.FillBackground(img, Color.White))
                 {
-                    imageData.ImageStream = ImageHelpers.SaveJPEGAutoQuality(img, taskSettings.ImageSettings.ImageAutoUseJPEGSize * 1000, 2, 70, 100);
-                }
-                else
-                {
-                    imageData.ImageStream = ImageHelpers.SaveJPEG(img, taskSettings.ImageSettings.ImageJPEGQuality);
+                    if (taskSettings.ImageSettings.ImageAutoJPEGQuality)
+                    {
+                        imageData.ImageStream = ImageHelpers.SaveJPEGAutoQuality(newImage, taskSettings.ImageSettings.ImageAutoUseJPEGSize * 1000, 2, 70, 100);
+                    }
+                    else
+                    {
+                        imageData.ImageStream = ImageHelpers.SaveJPEG(newImage, taskSettings.ImageSettings.ImageJPEGQuality);
+                    }
                 }
 
                 imageData.ImageFormat = EImageFormat.JPEG;
@@ -321,36 +324,39 @@ namespace ShareX
         public static MemoryStream SaveImageAsStream(Image img, EImageFormat imageFormat, PNGBitDepth pngBitDepth = PNGBitDepth.Automatic,
             int jpegQuality = 90, GIFQuality gifQuality = GIFQuality.Default)
         {
-            MemoryStream stream = new MemoryStream();
+            MemoryStream ms = new MemoryStream();
 
             switch (imageFormat)
             {
                 case EImageFormat.PNG:
-                    ImageHelpers.SavePNG(img, stream, pngBitDepth);
+                    ImageHelpers.SavePNG(img, ms, pngBitDepth);
 
                     if (Program.Settings.PNGStripColorSpaceInformation)
                     {
-                        using (stream)
+                        using (ms)
                         {
-                            return ImageHelpers.PNGStripColorSpaceInformation(stream);
+                            return ImageHelpers.PNGStripColorSpaceInformation(ms);
                         }
                     }
                     break;
                 case EImageFormat.JPEG:
-                    ImageHelpers.SaveJPEG(img, stream, jpegQuality);
+                    using (Bitmap newImage = ImageHelpers.FillBackground(img, Color.White))
+                    {
+                        ImageHelpers.SaveJPEG(newImage, ms, jpegQuality);
+                    }
                     break;
                 case EImageFormat.GIF:
-                    ImageHelpers.SaveGIF(img, stream, gifQuality);
+                    ImageHelpers.SaveGIF(img, ms, gifQuality);
                     break;
                 case EImageFormat.BMP:
-                    img.Save(stream, ImageFormat.Bmp);
+                    img.Save(ms, ImageFormat.Bmp);
                     break;
                 case EImageFormat.TIFF:
-                    img.Save(stream, ImageFormat.Tiff);
+                    img.Save(ms, ImageFormat.Tiff);
                     break;
             }
 
-            return stream;
+            return ms;
         }
 
         public static void SaveImageAsFile(Bitmap bmp, TaskSettings taskSettings, bool overwriteFile = false)
