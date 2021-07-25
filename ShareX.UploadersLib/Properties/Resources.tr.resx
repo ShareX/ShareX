@@ -155,7 +155,7 @@
 Oluşturulmuş dizinler:</value>
   </data>
   <data name="KeyFileNameEditor_EditValue_Browse_for_a_key_file___" xml:space="preserve">
-    <value>Anahtar dosyası için gözat...</value>
+    <value>Anahtar dosyası için göz at...</value>
   </data>
   <data name="OAuthInfo_OAuthInfo_New_account" xml:space="preserve">
     <value>Yeni hesap</value>
@@ -188,10 +188,10 @@ Oluşturulmuş dizinler:</value>
     <value>Yanıt çözümleme başarısız oldu.</value>
   </data>
   <data name="CertFileNameEditor_EditValue_Browse_for_a_certificate_file___" xml:space="preserve">
-    <value>Sertifika dosyası için gözat...</value>
+    <value>Sertifika dosyası için göz at...</value>
   </data>
   <data name="UploadersConfigForm_LoadSettings_Parent_album_path_e_g_" xml:space="preserve">
-    <value>Ana album yolu, örneğin:</value>
+    <value>Ana albüm yolu, örneğin:</value>
   </data>
   <data name="UploadersConfigForm_OneDriveAddFolder_Querying_folders___" xml:space="preserve">
     <value>Klasörler isteniyor...</value>
