@@ -86,6 +86,7 @@
     <Compile Include="..\SharedAssemblyInfo.cs">
       <Link>Properties\SharedAssemblyInfo.cs</Link>
     </Compile>
+    <Compile Include="HistoryFilter.cs" />
     <Compile Include="HistoryItemManager_ContextMenu.cs" />
     <Compile Include="Forms\ImageHistoryForm.cs">
       <SubType>Form</SubType>

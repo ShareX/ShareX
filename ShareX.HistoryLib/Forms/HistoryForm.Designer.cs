@@ -31,8 +31,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HistoryForm));
             this.scMain = new ShareX.HelpersLib.SplitContainerCustomSplitter();
-            this.pStats = new System.Windows.Forms.Panel();
-            this.rtbStats = new System.Windows.Forms.RichTextBox();
             this.lvHistory = new ShareX.HelpersLib.MyListView();
             this.chIcon = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chDateTime = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -40,7 +38,6 @@
             this.chURL = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.nudMaxItemCount = new System.Windows.Forms.NumericUpDown();
             this.pbThumbnail = new ShareX.HelpersLib.MyPictureBox();
-            this.btnShowStats = new System.Windows.Forms.Button();
             this.lblMaxItemCount = new System.Windows.Forms.Label();
             this.gbFilters = new System.Windows.Forms.GroupBox();
             this.lblURLFilter = new System.Windows.Forms.Label();
@@ -58,13 +55,22 @@
             this.cbDateFilter = new System.Windows.Forms.CheckBox();
             this.dtpFilterTo = new System.Windows.Forms.DateTimePicker();
             this.txtFilenameFilter = new System.Windows.Forms.TextBox();
+            this.tscHistory = new System.Windows.Forms.ToolStripContainer();
+            this.tssHistory = new System.Windows.Forms.ToolStrip();
+            this.tslSearch = new System.Windows.Forms.ToolStripLabel();
+            this.tstbSearch = new System.Windows.Forms.ToolStripTextBox();
+            this.tsbSearch = new System.Windows.Forms.ToolStripButton();
+            this.btnCopyStats = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.scMain)).BeginInit();
             this.scMain.Panel1.SuspendLayout();
             this.scMain.Panel2.SuspendLayout();
             this.scMain.SuspendLayout();
-            this.pStats.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudMaxItemCount)).BeginInit();
             this.gbFilters.SuspendLayout();
+            this.tscHistory.ContentPanel.SuspendLayout();
+            this.tscHistory.TopToolStripPanel.SuspendLayout();
+            this.tscHistory.SuspendLayout();
+            this.tssHistory.SuspendLayout();
             this.SuspendLayout();
             // 
             // scMain
@@ -75,31 +81,18 @@
             // 
             // scMain.Panel1
             // 
-            this.scMain.Panel1.Controls.Add(this.pStats);
-            this.scMain.Panel1.Controls.Add(this.lvHistory);
+            this.scMain.Panel1.Controls.Add(this.tscHistory);
             // 
             // scMain.Panel2
             // 
+            this.scMain.Panel2.Controls.Add(this.btnCopyStats);
             this.scMain.Panel2.Controls.Add(this.nudMaxItemCount);
             this.scMain.Panel2.Controls.Add(this.pbThumbnail);
-            this.scMain.Panel2.Controls.Add(this.btnShowStats);
             this.scMain.Panel2.Controls.Add(this.lblMaxItemCount);
             this.scMain.Panel2.Controls.Add(this.gbFilters);
             this.scMain.SplitterColor = System.Drawing.Color.White;
             this.scMain.SplitterLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(189)))), ((int)(((byte)(189)))));
             this.scMain.SplitterMoved += new System.Windows.Forms.SplitterEventHandler(this.scMain_SplitterMoved);
-            // 
-            // pStats
-            // 
-            this.pStats.Controls.Add(this.rtbStats);
-            resources.ApplyResources(this.pStats, "pStats");
-            this.pStats.Name = "pStats";
-            // 
-            // rtbStats
-            // 
-            this.rtbStats.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            resources.ApplyResources(this.rtbStats, "rtbStats");
-            this.rtbStats.Name = "rtbStats";
             // 
             // lvHistory
             // 
@@ -159,13 +152,6 @@
             this.pbThumbnail.Name = "pbThumbnail";
             this.pbThumbnail.PictureBoxBackColor = System.Drawing.SystemColors.Control;
             this.pbThumbnail.ShowImageSizeLabel = true;
-            // 
-            // btnShowStats
-            // 
-            resources.ApplyResources(this.btnShowStats, "btnShowStats");
-            this.btnShowStats.Name = "btnShowStats";
-            this.btnShowStats.UseVisualStyleBackColor = true;
-            this.btnShowStats.Click += new System.EventHandler(this.BtnShowStats_Click);
             // 
             // lblMaxItemCount
             // 
@@ -280,6 +266,58 @@
             this.txtFilenameFilter.Name = "txtFilenameFilter";
             this.txtFilenameFilter.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtFilenameFilter_KeyDown);
             // 
+            // tscHistory
+            // 
+            // 
+            // tscHistory.ContentPanel
+            // 
+            this.tscHistory.ContentPanel.Controls.Add(this.lvHistory);
+            resources.ApplyResources(this.tscHistory.ContentPanel, "tscHistory.ContentPanel");
+            resources.ApplyResources(this.tscHistory, "tscHistory");
+            this.tscHistory.Name = "tscHistory";
+            // 
+            // tscHistory.TopToolStripPanel
+            // 
+            this.tscHistory.TopToolStripPanel.Controls.Add(this.tssHistory);
+            // 
+            // tssHistory
+            // 
+            resources.ApplyResources(this.tssHistory, "tssHistory");
+            this.tssHistory.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.tssHistory.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tslSearch,
+            this.tstbSearch,
+            this.tsbSearch});
+            this.tssHistory.Name = "tssHistory";
+            this.tssHistory.ShowItemToolTips = false;
+            // 
+            // tslSearch
+            // 
+            this.tslSearch.Name = "tslSearch";
+            resources.ApplyResources(this.tslSearch, "tslSearch");
+            // 
+            // tstbSearch
+            // 
+            this.tstbSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            resources.ApplyResources(this.tstbSearch, "tstbSearch");
+            this.tstbSearch.Name = "tstbSearch";
+            this.tstbSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tstbSearch_KeyDown);
+            // 
+            // tsbSearch
+            // 
+            this.tsbSearch.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbSearch.Image = global::ShareX.HistoryLib.Properties.Resources.magnifier;
+            resources.ApplyResources(this.tsbSearch, "tsbSearch");
+            this.tsbSearch.Name = "tsbSearch";
+            this.tsbSearch.Click += new System.EventHandler(this.tsbSearch_Click);
+            // 
+            // btnCopyStats
+            // 
+            resources.ApplyResources(this.btnCopyStats, "btnCopyStats");
+            this.btnCopyStats.Name = "btnCopyStats";
+            this.btnCopyStats.UseVisualStyleBackColor = true;
+            this.btnCopyStats.Click += new System.EventHandler(this.btnCopyStats_Click);
+            // 
             // HistoryForm
             // 
             resources.ApplyResources(this, "$this");
@@ -296,10 +334,16 @@
             this.scMain.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.scMain)).EndInit();
             this.scMain.ResumeLayout(false);
-            this.pStats.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.nudMaxItemCount)).EndInit();
             this.gbFilters.ResumeLayout(false);
             this.gbFilters.PerformLayout();
+            this.tscHistory.ContentPanel.ResumeLayout(false);
+            this.tscHistory.TopToolStripPanel.ResumeLayout(false);
+            this.tscHistory.TopToolStripPanel.PerformLayout();
+            this.tscHistory.ResumeLayout(false);
+            this.tscHistory.PerformLayout();
+            this.tssHistory.ResumeLayout(false);
+            this.tssHistory.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -329,10 +373,13 @@
         private System.Windows.Forms.Label lblFilenameFilter;
         private System.Windows.Forms.Label lblURLFilter;
         private System.Windows.Forms.TextBox txtURLFilter;
-        private System.Windows.Forms.Button btnShowStats;
-        private System.Windows.Forms.RichTextBox rtbStats;
-        private System.Windows.Forms.Panel pStats;
         private System.Windows.Forms.Label lblMaxItemCount;
         private System.Windows.Forms.NumericUpDown nudMaxItemCount;
+        private System.Windows.Forms.ToolStripContainer tscHistory;
+        private System.Windows.Forms.ToolStrip tssHistory;
+        private System.Windows.Forms.ToolStripLabel tslSearch;
+        private System.Windows.Forms.ToolStripTextBox tstbSearch;
+        private System.Windows.Forms.ToolStripButton tsbSearch;
+        private System.Windows.Forms.Button btnCopyStats;
     }
 }
