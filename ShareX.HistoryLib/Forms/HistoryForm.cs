@@ -88,7 +88,7 @@ namespace ShareX.HistoryLib
         private void RefreshHistoryItems()
         {
             allHistoryItems = GetHistoryItems();
-            ApplyFilter();
+            ApplyFilterAdvanced();
         }
 
         private void OutputStats(HistoryItem[] historyItems)
@@ -163,7 +163,28 @@ namespace ShareX.HistoryLib
             return historyItems.ToArray();
         }
 
-        private void ApplyFilter()
+        private void ApplyFilter(HistoryFilter filter)
+        {
+            if (allHistoryItems != null && allHistoryItems.Length > 0)
+            {
+                IEnumerable<HistoryItem> historyItems = filter.ApplyFilter(allHistoryItems);
+
+                AddHistoryItems(historyItems.ToArray());
+            }
+        }
+
+        private void ApplyFilterSimple()
+        {
+            HistoryFilter filter = new HistoryFilter()
+            {
+                FileName = tstbSearch.Text,
+                MaxItemCount = Settings.MaxItemCount
+            };
+
+            ApplyFilter(filter);
+        }
+
+        private void ApplyFilterAdvanced()
         {
             HistoryFilter filter = new HistoryFilter()
             {
@@ -175,32 +196,11 @@ namespace ShareX.HistoryLib
                 FilterType = cbTypeFilter.Checked,
                 Type = cbTypeFilterSelection.Text,
                 FilterHost = cbHostFilter.Checked,
-                Host = cbHostFilterSelection.Text
+                Host = cbHostFilterSelection.Text,
+                MaxItemCount = Settings.MaxItemCount
             };
 
             ApplyFilter(filter);
-        }
-
-        private void ApplyFilterSimple()
-        {
-            HistoryFilter filter = new HistoryFilter(tstbSearch.Text);
-
-            ApplyFilter(filter);
-        }
-
-        private void ApplyFilter(HistoryFilter filter)
-        {
-            if (allHistoryItems != null && allHistoryItems.Length > 0)
-            {
-                HistoryItem[] historyItems = filter.ApplyFilter(allHistoryItems);
-
-                if (Settings.MaxItemCount > 0 && historyItems.Length > Settings.MaxItemCount)
-                {
-                    historyItems = historyItems.Take(Settings.MaxItemCount).ToArray();
-                }
-
-                AddHistoryItems(historyItems);
-            }
         }
 
         private void AddHistoryItems(HistoryItem[] historyItems)
@@ -382,7 +382,7 @@ namespace ShareX.HistoryLib
             {
                 e.Handled = true;
                 e.SuppressKeyPress = true;
-                ApplyFilter();
+                ApplyFilterAdvanced();
                 txtFilenameFilter.Focus();
             }
         }
@@ -393,14 +393,14 @@ namespace ShareX.HistoryLib
             {
                 e.Handled = true;
                 e.SuppressKeyPress = true;
-                ApplyFilter();
+                ApplyFilterAdvanced();
                 txtURLFilter.Focus();
             }
         }
 
         private void btnApplyFilters_Click(object sender, EventArgs e)
         {
-            ApplyFilter();
+            ApplyFilterAdvanced();
         }
 
         private void btnRemoveFilters_Click(object sender, EventArgs e)

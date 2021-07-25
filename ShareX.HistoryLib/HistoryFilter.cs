@@ -43,64 +43,49 @@ namespace ShareX.HistoryLib
         public bool FilterHost { get; set; }
         public string Host { get; set; }
 
+        public int MaxItemCount { get; set; }
         public bool SearchInTags { get; set; } = true;
-
-        public bool IsFiltered
-        {
-            get
-            {
-                return !string.IsNullOrEmpty(FileName) || !string.IsNullOrEmpty(URL) || FilterDate ||
-                    (FilterType && !string.IsNullOrEmpty(Type)) || (FilterHost && !string.IsNullOrEmpty(Host));
-            }
-        }
 
         public HistoryFilter()
         {
         }
 
-        public HistoryFilter(string filename)
+        public IEnumerable<HistoryItem> ApplyFilter(IEnumerable<HistoryItem> historyItems)
         {
-            FileName = filename;
-        }
-
-        public HistoryItem[] ApplyFilter(HistoryItem[] historyItems)
-        {
-            if (!IsFiltered)
-            {
-                return historyItems;
-            }
-
-            IEnumerable<HistoryItem> result = historyItems.AsEnumerable();
-
             if (FilterType && !string.IsNullOrEmpty(Type))
             {
-                result = result.Where(x => !string.IsNullOrEmpty(x.Type) && x.Type.Equals(Type, StringComparison.InvariantCultureIgnoreCase));
+                historyItems = historyItems.Where(x => !string.IsNullOrEmpty(x.Type) && x.Type.Equals(Type, StringComparison.InvariantCultureIgnoreCase));
             }
 
             if (FilterHost && !string.IsNullOrEmpty(Host))
             {
-                result = result.Where(x => !string.IsNullOrEmpty(x.Host) && x.Host.Contains(Host, StringComparison.InvariantCultureIgnoreCase));
+                historyItems = historyItems.Where(x => !string.IsNullOrEmpty(x.Host) && x.Host.Contains(Host, StringComparison.InvariantCultureIgnoreCase));
             }
 
             if (!string.IsNullOrEmpty(FileName))
             {
                 string pattern = Regex.Escape(FileName).Replace("\\?", ".").Replace("\\*", ".*");
                 Regex regex = new Regex(pattern, RegexOptions.Compiled | RegexOptions.IgnoreCase | RegexOptions.CultureInvariant);
-                result = result.Where(x => (x.FileName != null && regex.IsMatch(x.FileName)) ||
+                historyItems = historyItems.Where(x => (x.FileName != null && regex.IsMatch(x.FileName)) ||
                     (SearchInTags && x.Tags != null && x.Tags.Any(tag => regex.IsMatch(tag.Value))));
             }
 
             if (!string.IsNullOrEmpty(URL))
             {
-                result = result.Where(x => x.URL != null && x.URL.Contains(URL, StringComparison.InvariantCultureIgnoreCase));
+                historyItems = historyItems.Where(x => x.URL != null && x.URL.Contains(URL, StringComparison.InvariantCultureIgnoreCase));
             }
 
             if (FilterDate)
             {
-                result = result.Where(x => x.DateTime.Date >= FromDate && x.DateTime.Date <= ToDate);
+                historyItems = historyItems.Where(x => x.DateTime.Date >= FromDate && x.DateTime.Date <= ToDate);
             }
 
-            return result.ToArray();
+            if (MaxItemCount > 0)
+            {
+                historyItems = historyItems.Take(MaxItemCount);
+            }
+
+            return historyItems;
         }
     }
 }
