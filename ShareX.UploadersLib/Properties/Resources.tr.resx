@@ -191,7 +191,7 @@ Oluşturulmuş dizinler:</value>
     <value>Sertifika dosyası için gözat...</value>
   </data>
   <data name="UploadersConfigForm_LoadSettings_Parent_album_path_e_g_" xml:space="preserve">
-    <value>Ana album yolu, örneğin:</value>
+    <value>Ana albüm yolu, örneğin:</value>
   </data>
   <data name="UploadersConfigForm_OneDriveAddFolder_Querying_folders___" xml:space="preserve">
     <value>Klasörler isteniyor...</value>

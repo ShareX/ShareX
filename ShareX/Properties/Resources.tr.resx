@@ -131,7 +131,7 @@
   </data>
   <data name="UploadTask_DoUploadJob_First_time_upload_warning_text" xml:space="preserve">
     <value>Ekran görüntüsünü yüklemek istediğinize emin misiniz?
-'Hayır' tuşuna basarak şuanki yüklemeyi iptal edebilir ve otomatik ekran görüntüsü yüklemeyi iptal edebilirsiniz.</value>
+'Hayır' tuşuna basarak şu anki yüklemeyi iptal edebilir ve otomatik ekran görüntüsü yüklemeyi iptal edebilirsiniz.</value>
   </data>
   <data name="UploadTask_DoUploadJob_Uploading" xml:space="preserve">
     <value>Yükleniyor</value>
@@ -420,7 +420,7 @@ ShareX'i yeniden başlatmak ister misiniz?</value>
     <value>Yükleme sonrası: {0}</value>
   </data>
   <data name="ApplicationSettingsForm_btnBrowseCustomScreenshotsPath_Click_Choose_screenshots_folder_path" xml:space="preserve">
-    <value>Ekren görüntüsü dizini seç</value>
+    <value>Ekran görüntüsü dizini seç</value>
   </data>
   <data name="ScreenRecordForm_StartRecording_Click_tray_icon_to_start_recording_" xml:space="preserve">
     <value>Kaydı başlatmak için simge ikonuna tıklayın.</value>
