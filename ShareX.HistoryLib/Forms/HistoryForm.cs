@@ -85,7 +85,7 @@ namespace ShareX.HistoryLib
         private void RefreshHistoryItems()
         {
             allHistoryItems = GetHistoryItems();
-            ApplyFilterAdvanced();
+            ApplyFilterSimple();
         }
 
         private HistoryItem[] him_GetHistoryItems()
@@ -362,6 +362,7 @@ namespace ShareX.HistoryLib
                 e.Handled = true;
                 e.SuppressKeyPress = true;
                 ApplyFilterSimple();
+                tstbSearch.Focus();
             }
         }
 
