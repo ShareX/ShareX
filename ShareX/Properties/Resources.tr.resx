@@ -420,7 +420,7 @@ ShareX'i yeniden başlatmak ister misiniz?</value>
     <value>Yükleme sonrası: {0}</value>
   </data>
   <data name="ApplicationSettingsForm_btnBrowseCustomScreenshotsPath_Click_Choose_screenshots_folder_path" xml:space="preserve">
-    <value>Ekren görüntüsü dizini seç</value>
+    <value>Ekran görüntüsü dizini seç</value>
   </data>
   <data name="ScreenRecordForm_StartRecording_Click_tray_icon_to_start_recording_" xml:space="preserve">
     <value>Kaydı başlatmak için simge ikonuna tıklayın.</value>
