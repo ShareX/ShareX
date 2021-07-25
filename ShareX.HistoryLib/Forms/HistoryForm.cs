@@ -245,6 +245,11 @@ namespace ShareX.HistoryLib
             lvHistory.FillLastColumn();
             lvHistory.Focus();
 
+            if (lvHistory.Items.Count > 0)
+            {
+                lvHistory.Items[0].Selected = true;
+            }
+
             Cursor = Cursors.Default;
         }
 
@@ -323,8 +328,6 @@ namespace ShareX.HistoryLib
 
             if (lvHistory.Items.Count > 0)
             {
-                lvHistory.Items[0].Selected = true;
-
                 cbTypeFilterSelection.Items.Clear();
                 cbTypeFilterSelection.Items.AddRange(allHistoryItems.Select(x => x.Type).Distinct().Where(x => !string.IsNullOrEmpty(x)).ToArray());
 
