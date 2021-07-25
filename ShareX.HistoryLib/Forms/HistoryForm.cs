@@ -381,6 +381,11 @@ namespace ShareX.HistoryLib
             RefreshHistoryItems();
         }
 
+        private void tsbAdvancedSearch_Click(object sender, EventArgs e)
+        {
+            gbAdvancedSearch.Visible = !gbAdvancedSearch.Visible;
+        }
+
         private void txtFilenameFilter_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -403,12 +408,13 @@ namespace ShareX.HistoryLib
             }
         }
 
-        private void btnApplyFilters_Click(object sender, EventArgs e)
+        private void btnAdvancedSearch_Click(object sender, EventArgs e)
         {
+            gbAdvancedSearch.Visible = false;
             ApplyFilterAdvanced();
         }
 
-        private void btnRemoveFilters_Click(object sender, EventArgs e)
+        private void btnAdvancedSearchReset_Click(object sender, EventArgs e)
         {
             AddHistoryItems(allHistoryItems);
         }
