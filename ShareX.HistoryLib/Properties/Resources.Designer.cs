@@ -71,24 +71,6 @@ namespace ShareX.HistoryLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Hide stats.
-        /// </summary>
-        internal static string BtnShowStats_HideStats {
-            get {
-                return ResourceManager.GetString("BtnShowStats_HideStats", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Show stats.
-        /// </summary>
-        internal static string BtnShowStats_ShowStats {
-            get {
-                return ResourceManager.GetString("BtnShowStats_ShowStats", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Error occured while reading history file:.
         /// </summary>
         internal static string ErrorOccuredWhileReadingHistoryFile {

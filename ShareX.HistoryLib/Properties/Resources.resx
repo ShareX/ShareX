@@ -220,12 +220,6 @@
   <data name="HistoryItemManager_InitializeComponent_EditImage" xml:space="preserve">
     <value>Edit image...</value>
   </data>
-  <data name="BtnShowStats_ShowStats" xml:space="preserve">
-    <value>Show stats</value>
-  </data>
-  <data name="BtnShowStats_HideStats" xml:space="preserve">
-    <value>Hide stats</value>
-  </data>
   <data name="HistoryItemCounts" xml:space="preserve">
     <value>History item counts:</value>
   </data>

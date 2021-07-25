@@ -43,7 +43,6 @@ namespace ShareX.HistoryLib
         private HistoryItemManager him;
         private HistoryItem[] allHistoryItems;
         private string defaultTitle;
-        private bool showingStats;
 
         public HistoryForm(string historyPath, HistorySettings settings, Action<string> uploadFile = null, Action<string> editImage = null)
         {
@@ -89,61 +88,6 @@ namespace ShareX.HistoryLib
         {
             allHistoryItems = GetHistoryItems();
             ApplyFilterAdvanced();
-        }
-
-        private void OutputStats(HistoryItem[] historyItems)
-        {
-            /*rtbStats.ResetText();
-
-            rtbStats.SetFontBold();
-            rtbStats.AppendLine(Resources.HistoryItemCounts);
-            rtbStats.SetFontRegular();
-            rtbStats.AppendLine(Resources.HistoryStats_Total + " " + historyItems.Length);
-
-            IEnumerable<string> types = historyItems.
-                GroupBy(x => x.Type).
-                OrderByDescending(x => x.Count()).
-                Select(x => string.Format("{0}: {1} ({2:N0}%)", x.Key, x.Count(), x.Count() / (float)historyItems.Length * 100));
-
-            rtbStats.AppendLine(string.Join(Environment.NewLine, types));
-
-            rtbStats.AppendLine();
-            rtbStats.SetFontBold();
-            rtbStats.AppendLine(Resources.HistoryStats_YearlyUsages);
-            rtbStats.SetFontRegular();
-
-            IEnumerable<string> yearlyUsages = historyItems.
-                GroupBy(x => x.DateTime.Year).
-                OrderByDescending(x => x.Key).
-                Select(x => string.Format("{0}: {1} ({2:N0}%)", x.Key, x.Count(), x.Count() / (float)historyItems.Length * 100));
-
-            rtbStats.AppendLine(string.Join(Environment.NewLine, yearlyUsages));
-
-            rtbStats.AppendLine();
-            rtbStats.SetFontBold();
-            rtbStats.AppendLine(Resources.HistoryStats_FileExtensions);
-            rtbStats.SetFontRegular();
-
-            IEnumerable<string> fileExtensions = historyItems.
-                Where(x => !string.IsNullOrEmpty(x.FileName) && !x.FileName.EndsWith(")")).
-                Select(x => Helpers.GetFilenameExtension(x.FileName)).
-                GroupBy(x => x).
-                OrderByDescending(x => x.Count()).
-                Select(x => string.Format("{0} ({1})", x.Key, x.Count()));
-
-            rtbStats.AppendLine(string.Join(Environment.NewLine, fileExtensions));
-
-            rtbStats.AppendLine();
-            rtbStats.SetFontBold();
-            rtbStats.AppendLine(Resources.HistoryStats_Hosts);
-            rtbStats.SetFontRegular();
-
-            IEnumerable<string> hosts = historyItems.
-                GroupBy(x => x.Host).
-                OrderByDescending(x => x.Count()).
-                Select(x => string.Format("{0} ({1})", x.Key, x.Count()));
-
-            rtbStats.AppendLine(string.Join(Environment.NewLine, hosts));*/
         }
 
         private HistoryItem[] him_GetHistoryItems()
@@ -318,6 +262,55 @@ namespace ShareX.HistoryLib
             }
         }
 
+        private string OutputStats(HistoryItem[] historyItems)
+        {
+            StringBuilder sb = new StringBuilder();
+
+            sb.AppendLine(Resources.HistoryItemCounts);
+            sb.AppendLine(Resources.HistoryStats_Total + " " + historyItems.Length);
+
+            IEnumerable<string> types = historyItems.
+                GroupBy(x => x.Type).
+                OrderByDescending(x => x.Count()).
+                Select(x => string.Format("{0}: {1} ({2:N0}%)", x.Key, x.Count(), x.Count() / (float)historyItems.Length * 100));
+
+            sb.AppendLine(string.Join(Environment.NewLine, types));
+
+            sb.AppendLine();
+            sb.AppendLine(Resources.HistoryStats_YearlyUsages);
+
+            IEnumerable<string> yearlyUsages = historyItems.
+                GroupBy(x => x.DateTime.Year).
+                OrderByDescending(x => x.Key).
+                Select(x => string.Format("{0}: {1} ({2:N0}%)", x.Key, x.Count(), x.Count() / (float)historyItems.Length * 100));
+
+            sb.AppendLine(string.Join(Environment.NewLine, yearlyUsages));
+
+            sb.AppendLine();
+            sb.AppendLine(Resources.HistoryStats_FileExtensions);
+
+            IEnumerable<string> fileExtensions = historyItems.
+                Where(x => !string.IsNullOrEmpty(x.FileName) && !x.FileName.EndsWith(")")).
+                Select(x => Helpers.GetFilenameExtension(x.FileName)).
+                GroupBy(x => x).
+                OrderByDescending(x => x.Count()).
+                Select(x => string.Format("{0} ({1})", x.Key, x.Count()));
+
+            sb.AppendLine(string.Join(Environment.NewLine, fileExtensions));
+
+            sb.AppendLine();
+            sb.AppendLine(Resources.HistoryStats_Hosts);
+
+            IEnumerable<string> hosts = historyItems.
+                GroupBy(x => x.Host).
+                OrderByDescending(x => x.Count()).
+                Select(x => string.Format("{0} ({1})", x.Key, x.Count()));
+
+            sb.Append(string.Join(Environment.NewLine, hosts));
+
+            return sb.ToString();
+        }
+
         #region Form events
 
         private void HistoryForm_Shown(object sender, EventArgs e)
@@ -411,30 +404,15 @@ namespace ShareX.HistoryLib
             AddHistoryItems(allHistoryItems);
         }
 
-        private void btnCopyStats_Click(object sender, EventArgs e)
-        {
-            /*if (showingStats)
-            {
-                lvHistory.Visible = true;
-                pStats.Visible = false;
-                btnShowStats.Text = Resources.BtnShowStats_ShowStats;
-                showingStats = false;
-            }
-            else
-            {
-                pStats.Visible = true;
-                lvHistory.Visible = false;
-                btnShowStats.Text = Resources.BtnShowStats_HideStats;
-                Cursor = Cursors.WaitCursor;
-                OutputStats(allHistoryItems);
-                Cursor = Cursors.Default;
-                showingStats = true;
-            }*/
-        }
-
         private void nudMaxItemCount_ValueChanged(object sender, EventArgs e)
         {
             Settings.MaxItemCount = (int)nudMaxItemCount.Value;
+        }
+
+        private void btnCopyStats_Click(object sender, EventArgs e)
+        {
+            string stats = OutputStats(allHistoryItems);
+            ClipboardHelpers.CopyText(stats);
         }
 
         private void lvHistory_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
