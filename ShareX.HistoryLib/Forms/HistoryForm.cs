@@ -82,9 +82,9 @@ namespace ShareX.HistoryLib
             Settings.WindowState.AutoHandleFormState(this);
         }
 
-        private void RefreshHistoryItems()
+        private void RefreshHistoryItems(bool mockData = false)
         {
-            allHistoryItems = GetHistoryItems();
+            allHistoryItems = GetHistoryItems(mockData);
             ApplyFilterSimple();
         }
 
@@ -93,9 +93,13 @@ namespace ShareX.HistoryLib
             return lvHistory.SelectedItems.Cast<ListViewItem>().Select(x => x.Tag as HistoryItem).ToArray();
         }
 
-        private HistoryItem[] GetHistoryItems()
+        private HistoryItem[] GetHistoryItems(bool mockData = false)
         {
-            if (history == null)
+            if (mockData)
+            {
+                history = new HistoryManagerMock(HistoryPath);
+            }
+            else
             {
                 history = new HistoryManagerJSON(HistoryPath);
             }
@@ -347,6 +351,12 @@ namespace ShareX.HistoryLib
                     RefreshHistoryItems();
                     e.Handled = true;
                     break;
+#if DEBUG
+                case Keys.Control | Keys.F5:
+                    RefreshHistoryItems(true);
+                    e.Handled = true;
+                    break;
+#endif
             }
         }
 
