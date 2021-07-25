@@ -33,7 +33,7 @@ namespace ShareX.HistoryLib
 {
     public class HistoryFilter
     {
-        public string FileName { get; set; }
+        public string Filename { get; set; }
         public string URL { get; set; }
         public bool FilterDate { get; set; }
         public DateTime FromDate { get; set; }
@@ -62,9 +62,9 @@ namespace ShareX.HistoryLib
                 historyItems = historyItems.Where(x => !string.IsNullOrEmpty(x.Host) && x.Host.Contains(Host, StringComparison.InvariantCultureIgnoreCase));
             }
 
-            if (!string.IsNullOrEmpty(FileName))
+            if (!string.IsNullOrEmpty(Filename))
             {
-                string pattern = Regex.Escape(FileName).Replace("\\?", ".").Replace("\\*", ".*");
+                string pattern = Regex.Escape(Filename).Replace("\\?", ".").Replace("\\*", ".*");
                 Regex regex = new Regex(pattern, RegexOptions.Compiled | RegexOptions.IgnoreCase | RegexOptions.CultureInvariant);
                 historyItems = historyItems.Where(x => (x.FileName != null && regex.IsMatch(x.FileName)) ||
                     (SearchInTags && x.Tags != null && x.Tags.Any(tag => regex.IsMatch(tag.Value))));

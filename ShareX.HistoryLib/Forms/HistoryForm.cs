@@ -77,8 +77,6 @@ namespace ShareX.HistoryLib
                 scMain.SplitterDistance = Settings.SplitterDistance;
             }
 
-            nudMaxItemCount.SetValue(Settings.MaxItemCount);
-
             ShareXResources.ApplyTheme(this);
 
             Settings.WindowState.AutoHandleFormState(this);
@@ -121,7 +119,7 @@ namespace ShareX.HistoryLib
         {
             HistoryFilter filter = new HistoryFilter()
             {
-                FileName = tstbSearch.Text,
+                Filename = tstbSearch.Text,
                 MaxItemCount = Settings.MaxItemCount
             };
 
@@ -132,7 +130,7 @@ namespace ShareX.HistoryLib
         {
             HistoryFilter filter = new HistoryFilter()
             {
-                FileName = txtFilenameFilter.Text,
+                Filename = txtFilenameFilter.Text,
                 URL = txtURLFilter.Text,
                 FilterDate = cbDateFilter.Checked,
                 FromDate = dtpFilterFrom.Value.Date,
@@ -372,6 +370,16 @@ namespace ShareX.HistoryLib
             ApplyFilterSimple();
         }
 
+        private void tsbSettings_Click(object sender, EventArgs e)
+        {
+            using (HistorySettingsForm form = new HistorySettingsForm(Settings))
+            {
+                form.ShowDialog();
+            }
+
+            RefreshHistoryItems();
+        }
+
         private void txtFilenameFilter_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -402,11 +410,6 @@ namespace ShareX.HistoryLib
         private void btnRemoveFilters_Click(object sender, EventArgs e)
         {
             AddHistoryItems(allHistoryItems);
-        }
-
-        private void nudMaxItemCount_ValueChanged(object sender, EventArgs e)
-        {
-            Settings.MaxItemCount = (int)nudMaxItemCount.Value;
         }
 
         private void btnCopyStats_Click(object sender, EventArgs e)

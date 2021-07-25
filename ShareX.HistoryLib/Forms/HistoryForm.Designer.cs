@@ -30,15 +30,21 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HistoryForm));
-            this.scMain = new ShareX.HelpersLib.SplitContainerCustomSplitter();
+            this.tscHistory = new System.Windows.Forms.ToolStripContainer();
             this.lvHistory = new ShareX.HelpersLib.MyListView();
             this.chIcon = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chDateTime = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chFilename = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chURL = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.nudMaxItemCount = new System.Windows.Forms.NumericUpDown();
+            this.tssHistory = new System.Windows.Forms.ToolStrip();
+            this.tslSearch = new System.Windows.Forms.ToolStripLabel();
+            this.tstbSearch = new System.Windows.Forms.ToolStripTextBox();
+            this.tsbSearch = new System.Windows.Forms.ToolStripButton();
+            this.tss1 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsbSettings = new System.Windows.Forms.ToolStripButton();
+            this.scMain = new ShareX.HelpersLib.SplitContainerCustomSplitter();
+            this.btnCopyStats = new System.Windows.Forms.Button();
             this.pbThumbnail = new ShareX.HelpersLib.MyPictureBox();
-            this.lblMaxItemCount = new System.Windows.Forms.Label();
             this.gbFilters = new System.Windows.Forms.GroupBox();
             this.lblURLFilter = new System.Windows.Forms.Label();
             this.txtURLFilter = new System.Windows.Forms.TextBox();
@@ -55,44 +61,30 @@
             this.cbDateFilter = new System.Windows.Forms.CheckBox();
             this.dtpFilterTo = new System.Windows.Forms.DateTimePicker();
             this.txtFilenameFilter = new System.Windows.Forms.TextBox();
-            this.tscHistory = new System.Windows.Forms.ToolStripContainer();
-            this.tssHistory = new System.Windows.Forms.ToolStrip();
-            this.tslSearch = new System.Windows.Forms.ToolStripLabel();
-            this.tstbSearch = new System.Windows.Forms.ToolStripTextBox();
-            this.tsbSearch = new System.Windows.Forms.ToolStripButton();
-            this.btnCopyStats = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.scMain)).BeginInit();
-            this.scMain.Panel1.SuspendLayout();
-            this.scMain.Panel2.SuspendLayout();
-            this.scMain.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudMaxItemCount)).BeginInit();
-            this.gbFilters.SuspendLayout();
             this.tscHistory.ContentPanel.SuspendLayout();
             this.tscHistory.TopToolStripPanel.SuspendLayout();
             this.tscHistory.SuspendLayout();
             this.tssHistory.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.scMain)).BeginInit();
+            this.scMain.Panel1.SuspendLayout();
+            this.scMain.Panel2.SuspendLayout();
+            this.scMain.SuspendLayout();
+            this.gbFilters.SuspendLayout();
             this.SuspendLayout();
             // 
-            // scMain
+            // tscHistory
             // 
-            resources.ApplyResources(this.scMain, "scMain");
-            this.scMain.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
-            this.scMain.Name = "scMain";
             // 
-            // scMain.Panel1
+            // tscHistory.ContentPanel
             // 
-            this.scMain.Panel1.Controls.Add(this.tscHistory);
+            this.tscHistory.ContentPanel.Controls.Add(this.lvHistory);
+            resources.ApplyResources(this.tscHistory.ContentPanel, "tscHistory.ContentPanel");
+            resources.ApplyResources(this.tscHistory, "tscHistory");
+            this.tscHistory.Name = "tscHistory";
             // 
-            // scMain.Panel2
+            // tscHistory.TopToolStripPanel
             // 
-            this.scMain.Panel2.Controls.Add(this.btnCopyStats);
-            this.scMain.Panel2.Controls.Add(this.nudMaxItemCount);
-            this.scMain.Panel2.Controls.Add(this.pbThumbnail);
-            this.scMain.Panel2.Controls.Add(this.lblMaxItemCount);
-            this.scMain.Panel2.Controls.Add(this.gbFilters);
-            this.scMain.SplitterColor = System.Drawing.Color.White;
-            this.scMain.SplitterLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(189)))), ((int)(((byte)(189)))));
-            this.scMain.SplitterMoved += new System.Windows.Forms.SplitterEventHandler(this.scMain_SplitterMoved);
+            this.tscHistory.TopToolStripPanel.Controls.Add(this.tssHistory);
             // 
             // lvHistory
             // 
@@ -131,16 +123,76 @@
             // 
             resources.ApplyResources(this.chURL, "chURL");
             // 
-            // nudMaxItemCount
+            // tssHistory
             // 
-            resources.ApplyResources(this.nudMaxItemCount, "nudMaxItemCount");
-            this.nudMaxItemCount.Maximum = new decimal(new int[] {
-            10000,
-            0,
-            0,
-            0});
-            this.nudMaxItemCount.Name = "nudMaxItemCount";
-            this.nudMaxItemCount.ValueChanged += new System.EventHandler(this.nudMaxItemCount_ValueChanged);
+            resources.ApplyResources(this.tssHistory, "tssHistory");
+            this.tssHistory.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.tssHistory.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tslSearch,
+            this.tstbSearch,
+            this.tsbSearch,
+            this.tss1,
+            this.tsbSettings});
+            this.tssHistory.Name = "tssHistory";
+            this.tssHistory.ShowItemToolTips = false;
+            // 
+            // tslSearch
+            // 
+            this.tslSearch.Name = "tslSearch";
+            resources.ApplyResources(this.tslSearch, "tslSearch");
+            // 
+            // tstbSearch
+            // 
+            this.tstbSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            resources.ApplyResources(this.tstbSearch, "tstbSearch");
+            this.tstbSearch.Name = "tstbSearch";
+            this.tstbSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tstbSearch_KeyDown);
+            // 
+            // tsbSearch
+            // 
+            this.tsbSearch.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbSearch.Image = global::ShareX.HistoryLib.Properties.Resources.magnifier;
+            resources.ApplyResources(this.tsbSearch, "tsbSearch");
+            this.tsbSearch.Name = "tsbSearch";
+            this.tsbSearch.Click += new System.EventHandler(this.tsbSearch_Click);
+            // 
+            // tss1
+            // 
+            this.tss1.Name = "tss1";
+            resources.ApplyResources(this.tss1, "tss1");
+            // 
+            // tsbSettings
+            // 
+            this.tsbSettings.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            resources.ApplyResources(this.tsbSettings, "tsbSettings");
+            this.tsbSettings.Name = "tsbSettings";
+            this.tsbSettings.Click += new System.EventHandler(this.tsbSettings_Click);
+            // 
+            // scMain
+            // 
+            resources.ApplyResources(this.scMain, "scMain");
+            this.scMain.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
+            this.scMain.Name = "scMain";
+            // 
+            // scMain.Panel1
+            // 
+            this.scMain.Panel1.Controls.Add(this.tscHistory);
+            // 
+            // scMain.Panel2
+            // 
+            this.scMain.Panel2.Controls.Add(this.btnCopyStats);
+            this.scMain.Panel2.Controls.Add(this.pbThumbnail);
+            this.scMain.Panel2.Controls.Add(this.gbFilters);
+            this.scMain.SplitterColor = System.Drawing.Color.White;
+            this.scMain.SplitterLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(189)))), ((int)(((byte)(189)))));
+            this.scMain.SplitterMoved += new System.Windows.Forms.SplitterEventHandler(this.scMain_SplitterMoved);
+            // 
+            // btnCopyStats
+            // 
+            resources.ApplyResources(this.btnCopyStats, "btnCopyStats");
+            this.btnCopyStats.Name = "btnCopyStats";
+            this.btnCopyStats.UseVisualStyleBackColor = true;
+            this.btnCopyStats.Click += new System.EventHandler(this.btnCopyStats_Click);
             // 
             // pbThumbnail
             // 
@@ -152,11 +204,6 @@
             this.pbThumbnail.Name = "pbThumbnail";
             this.pbThumbnail.PictureBoxBackColor = System.Drawing.SystemColors.Control;
             this.pbThumbnail.ShowImageSizeLabel = true;
-            // 
-            // lblMaxItemCount
-            // 
-            resources.ApplyResources(this.lblMaxItemCount, "lblMaxItemCount");
-            this.lblMaxItemCount.Name = "lblMaxItemCount";
             // 
             // gbFilters
             // 
@@ -266,58 +313,6 @@
             this.txtFilenameFilter.Name = "txtFilenameFilter";
             this.txtFilenameFilter.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtFilenameFilter_KeyDown);
             // 
-            // tscHistory
-            // 
-            // 
-            // tscHistory.ContentPanel
-            // 
-            this.tscHistory.ContentPanel.Controls.Add(this.lvHistory);
-            resources.ApplyResources(this.tscHistory.ContentPanel, "tscHistory.ContentPanel");
-            resources.ApplyResources(this.tscHistory, "tscHistory");
-            this.tscHistory.Name = "tscHistory";
-            // 
-            // tscHistory.TopToolStripPanel
-            // 
-            this.tscHistory.TopToolStripPanel.Controls.Add(this.tssHistory);
-            // 
-            // tssHistory
-            // 
-            resources.ApplyResources(this.tssHistory, "tssHistory");
-            this.tssHistory.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.tssHistory.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tslSearch,
-            this.tstbSearch,
-            this.tsbSearch});
-            this.tssHistory.Name = "tssHistory";
-            this.tssHistory.ShowItemToolTips = false;
-            // 
-            // tslSearch
-            // 
-            this.tslSearch.Name = "tslSearch";
-            resources.ApplyResources(this.tslSearch, "tslSearch");
-            // 
-            // tstbSearch
-            // 
-            this.tstbSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            resources.ApplyResources(this.tstbSearch, "tstbSearch");
-            this.tstbSearch.Name = "tstbSearch";
-            this.tstbSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tstbSearch_KeyDown);
-            // 
-            // tsbSearch
-            // 
-            this.tsbSearch.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbSearch.Image = global::ShareX.HistoryLib.Properties.Resources.magnifier;
-            resources.ApplyResources(this.tsbSearch, "tsbSearch");
-            this.tsbSearch.Name = "tsbSearch";
-            this.tsbSearch.Click += new System.EventHandler(this.tsbSearch_Click);
-            // 
-            // btnCopyStats
-            // 
-            resources.ApplyResources(this.btnCopyStats, "btnCopyStats");
-            this.btnCopyStats.Name = "btnCopyStats";
-            this.btnCopyStats.UseVisualStyleBackColor = true;
-            this.btnCopyStats.Click += new System.EventHandler(this.btnCopyStats_Click);
-            // 
             // HistoryForm
             // 
             resources.ApplyResources(this, "$this");
@@ -329,14 +324,6 @@
             this.Shown += new System.EventHandler(this.HistoryForm_Shown);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.HistoryForm_KeyDown);
             this.Resize += new System.EventHandler(this.HistoryForm_Resize);
-            this.scMain.Panel1.ResumeLayout(false);
-            this.scMain.Panel2.ResumeLayout(false);
-            this.scMain.Panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.scMain)).EndInit();
-            this.scMain.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.nudMaxItemCount)).EndInit();
-            this.gbFilters.ResumeLayout(false);
-            this.gbFilters.PerformLayout();
             this.tscHistory.ContentPanel.ResumeLayout(false);
             this.tscHistory.TopToolStripPanel.ResumeLayout(false);
             this.tscHistory.TopToolStripPanel.PerformLayout();
@@ -344,6 +331,12 @@
             this.tscHistory.PerformLayout();
             this.tssHistory.ResumeLayout(false);
             this.tssHistory.PerformLayout();
+            this.scMain.Panel1.ResumeLayout(false);
+            this.scMain.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.scMain)).EndInit();
+            this.scMain.ResumeLayout(false);
+            this.gbFilters.ResumeLayout(false);
+            this.gbFilters.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -373,13 +366,13 @@
         private System.Windows.Forms.Label lblFilenameFilter;
         private System.Windows.Forms.Label lblURLFilter;
         private System.Windows.Forms.TextBox txtURLFilter;
-        private System.Windows.Forms.Label lblMaxItemCount;
-        private System.Windows.Forms.NumericUpDown nudMaxItemCount;
         private System.Windows.Forms.ToolStripContainer tscHistory;
         private System.Windows.Forms.ToolStrip tssHistory;
         private System.Windows.Forms.ToolStripLabel tslSearch;
         private System.Windows.Forms.ToolStripTextBox tstbSearch;
         private System.Windows.Forms.ToolStripButton tsbSearch;
         private System.Windows.Forms.Button btnCopyStats;
+        private System.Windows.Forms.ToolStripSeparator tss1;
+        private System.Windows.Forms.ToolStripButton tsbSettings;
     }
 }

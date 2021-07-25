@@ -86,6 +86,12 @@
     <Compile Include="..\SharedAssemblyInfo.cs">
       <Link>Properties\SharedAssemblyInfo.cs</Link>
     </Compile>
+    <Compile Include="Forms\HistorySettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\HistorySettingsForm.Designer.cs">
+      <DependentUpon>HistorySettingsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="HistoryFilter.cs" />
     <Compile Include="HistoryItemManager_ContextMenu.cs" />
     <Compile Include="Forms\ImageHistoryForm.cs">
@@ -246,6 +252,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\HistoryItemInfoForm.zh-TW.resx">
       <DependentUpon>HistoryItemInfoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\HistorySettingsForm.resx">
+      <DependentUpon>HistorySettingsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ImageHistoryForm.de.resx">
       <DependentUpon>ImageHistoryForm.cs</DependentUpon>
