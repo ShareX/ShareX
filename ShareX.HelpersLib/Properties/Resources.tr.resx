@@ -160,7 +160,7 @@
     <value>Güncel saat</value>
   </data>
   <data name="ExeFileNameEditor_EditValue_Browse_for_executable___" xml:space="preserve">
-    <value>Çalıştırılabilir dosya için gözat...</value>
+    <value>Çalıştırılabilir dosya için göz at...</value>
   </data>
   <data name="ReplCodeMenuEntry_height_Gets_image_height" xml:space="preserve">
     <value>Resim yüksekliği</value>
@@ -199,7 +199,7 @@
     <value>Elle</value>
   </data>
   <data name="DirectoryNameEditor_EditValue_Browse_for_a_folder___" xml:space="preserve">
-    <value>Dizin için gözat...</value>
+    <value>Dizin için göz at...</value>
   </data>
   <data name="ReplCodeMenuEntry_yy_Current_year__2_digits_" xml:space="preserve">
     <value>Güncel yıl (2 hane)</value>
@@ -208,7 +208,7 @@
     <value>AM/PM al</value>
   </data>
   <data name="CssFileNameEditor_EditValue_Browse_for_a_Cascading_Style_Sheet___" xml:space="preserve">
-    <value>CSS için gözat...</value>
+    <value>CSS için göz at...</value>
   </data>
   <data name="Stop" xml:space="preserve">
     <value>Durdur</value>
@@ -534,7 +534,7 @@ Dosya boyutu: {2:n0} / {3:n0} KB</value>
     <value>Balon uyarısı göster</value>
   </data>
   <data name="PopUpNotificationType_None" xml:space="preserve">
-    <value>Hiç bişey gösterme</value>
+    <value>Hiçbir şey gösterme</value>
   </data>
   <data name="PopUpNotificationType_ToastNotification" xml:space="preserve">
     <value>Önizlemeli uyarı penceresi göster</value>
@@ -890,7 +890,7 @@ Dosya boyutu: {2:n0} / {3:n0} KB</value>
     <value>Büyük kare</value>
   </data>
   <data name="WavFileNameEditor_EditValue_Browse_for_a_sound_file___" xml:space="preserve">
-    <value>Ses dosyası için gözat...</value>
+    <value>Ses dosyası için göz at...</value>
   </data>
   <data name="RegionCaptureAction_CancelCapture" xml:space="preserve">
     <value>Yakalamayı iptal et</value>
@@ -1016,7 +1016,7 @@ Dosya boyutu: {2:n0} / {3:n0} KB</value>
     <value>ShareX kapat</value>
   </data>
   <data name="RegionCaptureAction_None" xml:space="preserve">
-    <value>Hiç birşey yapma</value>
+    <value>Hiçbir şey yapma</value>
   </data>
   <data name="URLSharingServices_CustomURLSharingService" xml:space="preserve">
     <value>Özel adres paylaşma servisi</value>
