@@ -687,11 +687,23 @@
   <data name="tss1.Size" type="System.Drawing.Size, System.Drawing">
     <value>6, 25</value>
   </data>
+  <data name="tsbCopyStats.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="tsbCopyStats.Size" type="System.Drawing.Size, System.Drawing">
+    <value>23, 22</value>
+  </data>
+  <data name="tsbCopyStats.Text" xml:space="preserve">
+    <value>Copy stats</value>
+  </data>
+  <data name="tss2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>6, 25</value>
+  </data>
   <data name="tsbSettings.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
   </data>
   <data name="tsbSettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>62, 22</value>
+    <value>23, 22</value>
   </data>
   <data name="tsbSettings.Text" xml:space="preserve">
     <value>Settings...</value>
@@ -700,7 +712,7 @@
     <value>3, 0</value>
   </data>
   <data name="tssHistory.Size" type="System.Drawing.Size, System.Drawing">
-    <value>464, 25</value>
+    <value>454, 25</value>
   </data>
   <data name="tssHistory.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -762,33 +774,6 @@
   <data name="scMain.Panel1MinSize" type="System.Int32, mscorlib">
     <value>100</value>
   </data>
-  <data name="btnCopyStats.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left</value>
-  </data>
-  <data name="btnCopyStats.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 608</value>
-  </data>
-  <data name="btnCopyStats.Size" type="System.Drawing.Size, System.Drawing">
-    <value>144, 23</value>
-  </data>
-  <data name="btnCopyStats.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="btnCopyStats.Text" xml:space="preserve">
-    <value>Copy stats</value>
-  </data>
-  <data name="&gt;&gt;btnCopyStats.Name" xml:space="preserve">
-    <value>btnCopyStats</value>
-  </data>
-  <data name="&gt;&gt;btnCopyStats.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnCopyStats.Parent" xml:space="preserve">
-    <value>scMain.Panel2</value>
-  </data>
-  <data name="&gt;&gt;btnCopyStats.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="pbThumbnail.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
@@ -796,7 +781,7 @@
     <value>8, 8</value>
   </data>
   <data name="pbThumbnail.Size" type="System.Drawing.Size, System.Drawing">
-    <value>402, 352</value>
+    <value>406, 352</value>
   </data>
   <data name="pbThumbnail.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -811,7 +796,7 @@
     <value>scMain.Panel2</value>
   </data>
   <data name="&gt;&gt;pbThumbnail.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>0</value>
   </data>
   <data name="&gt;&gt;scMain.Panel2.Name" xml:space="preserve">
     <value>scMain.Panel2</value>
@@ -922,6 +907,18 @@
     <value>tss1</value>
   </data>
   <data name="&gt;&gt;tss1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsbCopyStats.Name" xml:space="preserve">
+    <value>tsbCopyStats</value>
+  </data>
+  <data name="&gt;&gt;tsbCopyStats.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tss2.Name" xml:space="preserve">
+    <value>tss2</value>
+  </data>
+  <data name="&gt;&gt;tss2.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsbSettings.Name" xml:space="preserve">

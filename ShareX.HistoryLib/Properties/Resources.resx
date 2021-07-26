@@ -139,17 +139,17 @@
   <data name="HistoryItemManager_InitializeComponent_File" xml:space="preserve">
     <value>File</value>
   </data>
-  <data name="HistoryStats_FileExtensions" xml:space="preserve">
-    <value>File extensions:</value>
-  </data>
   <data name="HistoryForm_UpdateItemCount___Filtered___0_" xml:space="preserve">
     <value>Filtered: {0}</value>
+  </data>
+  <data name="HistoryItemManager_InitializeComponent_Shortened_URL" xml:space="preserve">
+    <value>Shortened URL</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_Markdown__link" xml:space="preserve">
     <value>Markdown link</value>
   </data>
-  <data name="HistoryStats_YearlyUsages" xml:space="preserve">
-    <value>Yearly usages:</value>
+  <data name="HistoryStats_FileExtensions" xml:space="preserve">
+    <value>File extensions:</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_Folder" xml:space="preserve">
     <value>Folder</value>
@@ -163,6 +163,9 @@
   <data name="HistoryItemManager_InitializeComponent_Copy" xml:space="preserve">
     <value>Copy</value>
   </data>
+  <data name="HistoryItemManager_InitializeComponent_Forum__BBCode__image" xml:space="preserve">
+    <value>Forum (BBCode) image</value>
+  </data>
   <data name="HistoryItemManager_InitializeComponent_HTML_image" xml:space="preserve">
     <value>HTML image</value>
   </data>
@@ -175,11 +178,17 @@
   <data name="globe" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\globe.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="clipboard-list" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\clipboard-list.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="HistoryItemManager_InitializeComponent_Open" xml:space="preserve">
     <value>Open</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_More_info" xml:space="preserve">
     <value>More info...</value>
+  </data>
+  <data name="magnifier--plus" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\magnifier--plus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_HTML_link" xml:space="preserve">
     <value>HTML link</value>
@@ -208,11 +217,8 @@
   <data name="HistoryItemManager_InitializeComponent_Deletion_URL" xml:space="preserve">
     <value>Deletion URL</value>
   </data>
-  <data name="HistoryItemManager_InitializeComponent_Forum__BBCode__image" xml:space="preserve">
-    <value>Forum (BBCode) image</value>
-  </data>
-  <data name="ErrorOccuredWhileReadingHistoryFile" xml:space="preserve">
-    <value>Error occured while reading history file:</value>
+  <data name="HistoryItemManager_InitializeComponent_UploadFile" xml:space="preserve">
+    <value>Upload file</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_Text" xml:space="preserve">
     <value>Text</value>
@@ -223,14 +229,14 @@
   <data name="image" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="HistoryItemManager_InitializeComponent_Shortened_URL" xml:space="preserve">
-    <value>Shortened URL</value>
-  </data>
-  <data name="HistoryItemManager_InitializeComponent_UploadFile" xml:space="preserve">
-    <value>Upload file</value>
-  </data>
   <data name="application_block" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\application-block.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ErrorOccuredWhileReadingHistoryFile" xml:space="preserve">
+    <value>Error occured while reading history file:</value>
+  </data>
+  <data name="HistoryStats_YearlyUsages" xml:space="preserve">
+    <value>Yearly usages:</value>
   </data>
   <data name="HistoryItemManager_InitializeComponent_URL" xml:space="preserve">
     <value>URL</value>
@@ -238,7 +244,7 @@
   <data name="HistoryItemManager_InitializeComponent_Forum__BBCode__link" xml:space="preserve">
     <value>Forum (BBCode) link</value>
   </data>
-  <data name="magnifier--plus" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\magnifier--plus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="gear" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gear.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

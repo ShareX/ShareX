@@ -381,6 +381,17 @@ namespace ShareX.HistoryLib
             ApplyFilterSimple();
         }
 
+        private void tsbAdvancedSearch_Click(object sender, EventArgs e)
+        {
+            gbAdvancedSearch.Visible = !gbAdvancedSearch.Visible;
+        }
+
+        private void tsbCopyStats_Click(object sender, EventArgs e)
+        {
+            string stats = OutputStats(allHistoryItems);
+            ClipboardHelpers.CopyText(stats);
+        }
+
         private void tsbSettings_Click(object sender, EventArgs e)
         {
             using (HistorySettingsForm form = new HistorySettingsForm(Settings))
@@ -389,11 +400,6 @@ namespace ShareX.HistoryLib
             }
 
             RefreshHistoryItems();
-        }
-
-        private void tsbAdvancedSearch_Click(object sender, EventArgs e)
-        {
-            gbAdvancedSearch.Visible = !gbAdvancedSearch.Visible;
         }
 
         private void txtFilenameFilter_KeyDown(object sender, KeyEventArgs e)
@@ -427,12 +433,6 @@ namespace ShareX.HistoryLib
         private void btnAdvancedSearchReset_Click(object sender, EventArgs e)
         {
             AddHistoryItems(allHistoryItems);
-        }
-
-        private void btnCopyStats_Click(object sender, EventArgs e)
-        {
-            string stats = OutputStats(allHistoryItems);
-            ClipboardHelpers.CopyText(stats);
         }
 
         private void lvHistory_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)

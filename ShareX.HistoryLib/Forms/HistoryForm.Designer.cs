@@ -58,9 +58,10 @@
             this.tsbSearch = new System.Windows.Forms.ToolStripButton();
             this.tsbAdvancedSearch = new System.Windows.Forms.ToolStripButton();
             this.tss1 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsbCopyStats = new System.Windows.Forms.ToolStripButton();
+            this.tss2 = new System.Windows.Forms.ToolStripSeparator();
             this.tsbSettings = new System.Windows.Forms.ToolStripButton();
             this.scMain = new ShareX.HelpersLib.SplitContainerCustomSplitter();
-            this.btnCopyStats = new System.Windows.Forms.Button();
             this.pbThumbnail = new ShareX.HelpersLib.MyPictureBox();
             this.tscHistory.ContentPanel.SuspendLayout();
             this.tscHistory.TopToolStripPanel.SuspendLayout();
@@ -243,9 +244,10 @@
             this.tsbSearch,
             this.tsbAdvancedSearch,
             this.tss1,
+            this.tsbCopyStats,
+            this.tss2,
             this.tsbSettings});
             this.tssHistory.Name = "tssHistory";
-            this.tssHistory.ShowItemToolTips = false;
             // 
             // tslSearch
             // 
@@ -280,9 +282,23 @@
             this.tss1.Name = "tss1";
             resources.ApplyResources(this.tss1, "tss1");
             // 
+            // tsbCopyStats
+            // 
+            this.tsbCopyStats.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbCopyStats.Image = global::ShareX.HistoryLib.Properties.Resources.clipboard_list;
+            resources.ApplyResources(this.tsbCopyStats, "tsbCopyStats");
+            this.tsbCopyStats.Name = "tsbCopyStats";
+            this.tsbCopyStats.Click += new System.EventHandler(this.tsbCopyStats_Click);
+            // 
+            // tss2
+            // 
+            this.tss2.Name = "tss2";
+            resources.ApplyResources(this.tss2, "tss2");
+            // 
             // tsbSettings
             // 
-            this.tsbSettings.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.tsbSettings.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbSettings.Image = global::ShareX.HistoryLib.Properties.Resources.gear;
             resources.ApplyResources(this.tsbSettings, "tsbSettings");
             this.tsbSettings.Name = "tsbSettings";
             this.tsbSettings.Click += new System.EventHandler(this.tsbSettings_Click);
@@ -299,18 +315,10 @@
             // 
             // scMain.Panel2
             // 
-            this.scMain.Panel2.Controls.Add(this.btnCopyStats);
             this.scMain.Panel2.Controls.Add(this.pbThumbnail);
             this.scMain.SplitterColor = System.Drawing.Color.White;
             this.scMain.SplitterLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(189)))), ((int)(((byte)(189)))));
             this.scMain.SplitterMoved += new System.Windows.Forms.SplitterEventHandler(this.scMain_SplitterMoved);
-            // 
-            // btnCopyStats
-            // 
-            resources.ApplyResources(this.btnCopyStats, "btnCopyStats");
-            this.btnCopyStats.Name = "btnCopyStats";
-            this.btnCopyStats.UseVisualStyleBackColor = true;
-            this.btnCopyStats.Click += new System.EventHandler(this.btnCopyStats_Click);
             // 
             // pbThumbnail
             // 
@@ -379,11 +387,12 @@
         private System.Windows.Forms.ToolStripLabel tslSearch;
         private System.Windows.Forms.ToolStripTextBox tstbSearch;
         private System.Windows.Forms.ToolStripButton tsbSearch;
-        private System.Windows.Forms.Button btnCopyStats;
         private System.Windows.Forms.ToolStripSeparator tss1;
         private System.Windows.Forms.ToolStripButton tsbSettings;
         private System.Windows.Forms.ToolStripButton tsbAdvancedSearch;
         private System.Windows.Forms.Button btnAdvancedSearch;
         private System.Windows.Forms.Button btnAdvancedSearchReset;
+        private System.Windows.Forms.ToolStripButton tsbCopyStats;
+        private System.Windows.Forms.ToolStripSeparator tss2;
     }
 }

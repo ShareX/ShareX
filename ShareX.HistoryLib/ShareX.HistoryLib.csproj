@@ -393,6 +393,12 @@
   <ItemGroup>
     <None Include="Resources\magnifier--plus.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clipboard-list.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gear.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>
