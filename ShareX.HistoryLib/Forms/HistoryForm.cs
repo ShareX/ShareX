@@ -82,6 +82,23 @@ namespace ShareX.HistoryLib
             Settings.WindowState.AutoHandleFormState(this);
         }
 
+        private void ResetFilters()
+        {
+            tstbSearch.Text = "";
+            txtFilenameFilter.ResetText();
+            txtURLFilter.ResetText();
+            cbDateFilter.Checked = false;
+            dtpFilterFrom.ResetText();
+            dtpFilterTo.ResetText();
+            cbTypeFilter.Checked = false;
+            if (cbTypeFilterSelection.Items.Count > 0)
+            {
+                cbTypeFilterSelection.SelectedIndex = 0;
+            }
+            cbHostFilter.Checked = false;
+            cbHostFilterSelection.ResetText();
+        }
+
         private void RefreshHistoryItems(bool mockData = false)
         {
             allHistoryItems = GetHistoryItems(mockData);
@@ -325,14 +342,9 @@ namespace ShareX.HistoryLib
             {
                 cbTypeFilterSelection.Items.Clear();
                 cbTypeFilterSelection.Items.AddRange(allHistoryItems.Select(x => x.Type).Distinct().Where(x => !string.IsNullOrEmpty(x)).ToArray());
-
-                if (cbTypeFilterSelection.Items.Count > 0)
-                {
-                    cbTypeFilterSelection.SelectedIndex = 0;
-                }
-
                 cbHostFilterSelection.Items.Clear();
                 cbHostFilterSelection.Items.AddRange(allHistoryItems.Select(x => x.Host).Distinct().Where(x => !string.IsNullOrEmpty(x)).ToArray());
+                ResetFilters();
             }
 
             this.ForceActivate();
@@ -432,7 +444,8 @@ namespace ShareX.HistoryLib
 
         private void btnAdvancedSearchReset_Click(object sender, EventArgs e)
         {
-            AddHistoryItems(allHistoryItems);
+            ResetFilters();
+            ApplyFilterAdvanced();
         }
 
         private void lvHistory_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
