@@ -322,9 +322,8 @@
             // 
             // pbThumbnail
             // 
-            resources.ApplyResources(this.pbThumbnail, "pbThumbnail");
             this.pbThumbnail.BackColor = System.Drawing.SystemColors.Window;
-            this.pbThumbnail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            resources.ApplyResources(this.pbThumbnail, "pbThumbnail");
             this.pbThumbnail.DrawCheckeredBackground = true;
             this.pbThumbnail.FullscreenOnClick = true;
             this.pbThumbnail.Name = "pbThumbnail";
