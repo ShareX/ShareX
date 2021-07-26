@@ -71,20 +71,12 @@ namespace ShareX.HistoryLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Hide stats.
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static string BtnShowStats_HideStats {
+        internal static System.Drawing.Bitmap clipboard_list {
             get {
-                return ResourceManager.GetString("BtnShowStats_HideStats", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Show stats.
-        /// </summary>
-        internal static string BtnShowStats_ShowStats {
-            get {
-                return ResourceManager.GetString("BtnShowStats_ShowStats", resourceCulture);
+                object obj = ResourceManager.GetObject("clipboard-list", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -94,6 +86,16 @@ namespace ShareX.HistoryLib.Properties {
         internal static string ErrorOccuredWhileReadingHistoryFile {
             get {
                 return ResourceManager.GetString("ErrorOccuredWhileReadingHistoryFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap gear {
+            get {
+                object obj = ResourceManager.GetObject("gear", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -429,6 +431,16 @@ namespace ShareX.HistoryLib.Properties {
         internal static System.Drawing.Bitmap magnifier {
             get {
                 object obj = ResourceManager.GetObject("magnifier", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap magnifier__plus {
+            get {
+                object obj = ResourceManager.GetObject("magnifier--plus", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

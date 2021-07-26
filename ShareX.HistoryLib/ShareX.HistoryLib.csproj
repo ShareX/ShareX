@@ -86,6 +86,13 @@
     <Compile Include="..\SharedAssemblyInfo.cs">
       <Link>Properties\SharedAssemblyInfo.cs</Link>
     </Compile>
+    <Compile Include="Forms\HistorySettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\HistorySettingsForm.Designer.cs">
+      <DependentUpon>HistorySettingsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HistoryFilter.cs" />
     <Compile Include="HistoryItemManager_ContextMenu.cs" />
     <Compile Include="Forms\ImageHistoryForm.cs">
       <SubType>Form</SubType>
@@ -100,6 +107,7 @@
       <DependentUpon>ImageHistorySettingsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="HistoryManagerJSON.cs" />
+    <Compile Include="HistoryManagerMock.cs" />
     <Compile Include="HistoryManagerXML.cs" />
     <Compile Include="HistorySettings.cs" />
     <Compile Include="ImageHistorySettings.cs" />
@@ -246,6 +254,9 @@
     <EmbeddedResource Include="Forms\HistoryItemInfoForm.zh-TW.resx">
       <DependentUpon>HistoryItemInfoForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\HistorySettingsForm.resx">
+      <DependentUpon>HistorySettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ImageHistoryForm.de.resx">
       <DependentUpon>ImageHistoryForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -378,6 +389,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\magnifier.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\magnifier--plus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clipboard-list.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gear.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

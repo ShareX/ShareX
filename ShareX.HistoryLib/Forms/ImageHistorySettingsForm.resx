@@ -123,7 +123,7 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="lblViewMode.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 8</value>
+    <value>13, 16</value>
   </data>
   <data name="lblViewMode.Size" type="System.Drawing.Size, System.Drawing">
     <value>62, 13</value>
@@ -150,7 +150,7 @@
     <value>True</value>
   </data>
   <data name="lblThumbnailSize.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 56</value>
+    <value>13, 64</value>
   </data>
   <data name="lblThumbnailSize.Size" type="System.Drawing.Size, System.Drawing">
     <value>80, 13</value>
@@ -177,7 +177,7 @@
     <value>True</value>
   </data>
   <data name="lblMaximumImageLimit.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 104</value>
+    <value>13, 112</value>
   </data>
   <data name="lblMaximumImageLimit.Size" type="System.Drawing.Size, System.Drawing">
     <value>105, 13</value>
@@ -201,7 +201,7 @@
     <value>6</value>
   </data>
   <data name="cbViewMode.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 24</value>
+    <value>16, 32</value>
   </data>
   <data name="cbViewMode.Size" type="System.Drawing.Size, System.Drawing">
     <value>120, 21</value>
@@ -222,7 +222,7 @@
     <value>5</value>
   </data>
   <data name="nudThumbnailSize.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 72</value>
+    <value>16, 80</value>
   </data>
   <data name="nudThumbnailSize.Size" type="System.Drawing.Size, System.Drawing">
     <value>64, 20</value>
@@ -247,7 +247,7 @@
     <value>4</value>
   </data>
   <data name="nudMaximumImageLimit.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 120</value>
+    <value>16, 128</value>
   </data>
   <data name="nudMaximumImageLimit.Size" type="System.Drawing.Size, System.Drawing">
     <value>64, 20</value>
@@ -274,7 +274,7 @@
     <value>True</value>
   </data>
   <data name="lblThumbnailSizeUnit.Location" type="System.Drawing.Point, System.Drawing">
-    <value>77, 76</value>
+    <value>85, 84</value>
   </data>
   <data name="lblThumbnailSizeUnit.Size" type="System.Drawing.Size, System.Drawing">
     <value>18, 13</value>
@@ -304,7 +304,7 @@
     <value>NoControl</value>
   </data>
   <data name="cbRememberSearchText.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 176</value>
+    <value>16, 184</value>
   </data>
   <data name="cbRememberSearchText.Size" type="System.Drawing.Size, System.Drawing">
     <value>138, 17</value>
@@ -331,7 +331,7 @@
     <value>True</value>
   </data>
   <data name="cbFilterMissingFiles.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 152</value>
+    <value>16, 160</value>
   </data>
   <data name="cbFilterMissingFiles.Size" type="System.Drawing.Size, System.Drawing">
     <value>106, 17</value>
@@ -358,10 +358,10 @@
     <value>True</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
+    <value>96, 96</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>344, 226</value>
+    <value>344, 218</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>
