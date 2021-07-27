@@ -40,11 +40,17 @@ namespace ShareX.HistoryLib
 
             Settings = settings;
             nudMaximumItemLimit.SetValue(Settings.MaxItemCount);
+            cbRememberSearchText.Checked = Settings.RememberSearchText;
         }
 
         private void nudMaximumItemLimit_ValueChanged(object sender, EventArgs e)
         {
             Settings.MaxItemCount = (int)nudMaximumItemLimit.Value;
+        }
+
+        private void cbRememberSearchText_CheckedChanged(object sender, EventArgs e)
+        {
+            Settings.RememberSearchText = cbRememberSearchText.Checked;
         }
     }
 }

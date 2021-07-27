@@ -156,7 +156,7 @@
     <value>80, 13</value>
   </data>
   <data name="lblThumbnailSize.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="lblThumbnailSize.Text" xml:space="preserve">
     <value>Thumbnail size:</value>
@@ -183,7 +183,7 @@
     <value>105, 13</value>
   </data>
   <data name="lblMaximumImageLimit.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>5</value>
   </data>
   <data name="lblMaximumImageLimit.Text" xml:space="preserve">
     <value>Maximum image limit:</value>
@@ -207,7 +207,7 @@
     <value>120, 21</value>
   </data>
   <data name="cbViewMode.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>1</value>
   </data>
   <data name="&gt;&gt;cbViewMode.Name" xml:space="preserve">
     <value>cbViewMode</value>
@@ -228,7 +228,7 @@
     <value>64, 20</value>
   </data>
   <data name="nudThumbnailSize.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+    <value>3</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="nudThumbnailSize.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
@@ -253,7 +253,7 @@
     <value>64, 20</value>
   </data>
   <data name="nudMaximumImageLimit.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="nudMaximumImageLimit.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
     <value>Center</value>
@@ -280,7 +280,7 @@
     <value>18, 13</value>
   </data>
   <data name="lblThumbnailSizeUnit.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+    <value>4</value>
   </data>
   <data name="lblThumbnailSizeUnit.Text" xml:space="preserve">
     <value>px</value>
@@ -310,7 +310,7 @@
     <value>138, 17</value>
   </data>
   <data name="cbRememberSearchText.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="cbRememberSearchText.Text" xml:space="preserve">
     <value>Remember search input</value>
@@ -337,7 +337,7 @@
     <value>106, 17</value>
   </data>
   <data name="cbFilterMissingFiles.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
+    <value>7</value>
   </data>
   <data name="cbFilterMissingFiles.Text" xml:space="preserve">
     <value>Filter missing files</value>

@@ -77,6 +77,11 @@ namespace ShareX.HistoryLib
                 scMain.SplitterDistance = Settings.SplitterDistance;
             }
 
+            if (Settings.RememberSearchText)
+            {
+                tstbSearch.Text = Settings.SearchText;
+            }
+
             ShareXResources.ApplyTheme(this);
 
             Settings.WindowState.AutoHandleFormState(this);
@@ -84,7 +89,6 @@ namespace ShareX.HistoryLib
 
         private void ResetFilters()
         {
-            tstbSearch.Text = "";
             txtFilenameFilter.ResetText();
             txtURLFilter.ResetText();
             cbDateFilter.Checked = false;
@@ -138,9 +142,20 @@ namespace ShareX.HistoryLib
 
         private void ApplyFilterSimple()
         {
+            string searchText = tstbSearch.Text;
+
+            if (Settings.RememberSearchText)
+            {
+                Settings.SearchText = searchText;
+            }
+            else
+            {
+                Settings.SearchText = "";
+            }
+
             HistoryFilter filter = new HistoryFilter()
             {
-                Filename = tstbSearch.Text,
+                Filename = searchText,
                 MaxItemCount = Settings.MaxItemCount
             };
 
