@@ -648,10 +648,10 @@
   <data name="tscHistory.Text" xml:space="preserve">
     <value>toolStripContainer1</value>
   </data>
-  <metadata name="tssHistory.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="tsHistory.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <data name="tssHistory.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="tsHistory.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>None</value>
   </data>
   <data name="tslSearch.Size" type="System.Drawing.Size, System.Drawing">
@@ -708,25 +708,25 @@
   <data name="tsbSettings.Text" xml:space="preserve">
     <value>Settings...</value>
   </data>
-  <data name="tssHistory.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="tsHistory.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 0</value>
   </data>
-  <data name="tssHistory.Size" type="System.Drawing.Size, System.Drawing">
-    <value>454, 25</value>
+  <data name="tsHistory.Size" type="System.Drawing.Size, System.Drawing">
+    <value>485, 25</value>
   </data>
-  <data name="tssHistory.TabIndex" type="System.Int32, mscorlib">
+  <data name="tsHistory.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;tssHistory.Name" xml:space="preserve">
-    <value>tssHistory</value>
+  <data name="&gt;&gt;tsHistory.Name" xml:space="preserve">
+    <value>tsHistory</value>
   </data>
-  <data name="&gt;&gt;tssHistory.Type" xml:space="preserve">
+  <data name="&gt;&gt;tsHistory.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;tssHistory.Parent" xml:space="preserve">
+  <data name="&gt;&gt;tsHistory.Parent" xml:space="preserve">
     <value>tscHistory.TopToolStripPanel</value>
   </data>
-  <data name="&gt;&gt;tssHistory.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;tsHistory.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="&gt;&gt;tscHistory.TopToolStripPanel.Name" xml:space="preserve">

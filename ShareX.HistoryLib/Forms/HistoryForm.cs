@@ -50,6 +50,7 @@ namespace ShareX.HistoryLib
             Settings = settings;
 
             InitializeComponent();
+            tsHistory.Renderer = new ToolStripRoundedEdgeRenderer();
 
             defaultTitle = Text;
             UpdateTitle();

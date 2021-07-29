@@ -52,7 +52,7 @@
             this.chDateTime = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chFilename = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chURL = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.tssHistory = new System.Windows.Forms.ToolStrip();
+            this.tsHistory = new System.Windows.Forms.ToolStrip();
             this.tslSearch = new System.Windows.Forms.ToolStripLabel();
             this.tstbSearch = new System.Windows.Forms.ToolStripTextBox();
             this.tsbSearch = new System.Windows.Forms.ToolStripButton();
@@ -67,7 +67,7 @@
             this.tscHistory.TopToolStripPanel.SuspendLayout();
             this.tscHistory.SuspendLayout();
             this.gbAdvancedSearch.SuspendLayout();
-            this.tssHistory.SuspendLayout();
+            this.tsHistory.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.scMain)).BeginInit();
             this.scMain.Panel1.SuspendLayout();
             this.scMain.Panel2.SuspendLayout();
@@ -87,7 +87,7 @@
             // 
             // tscHistory.TopToolStripPanel
             // 
-            this.tscHistory.TopToolStripPanel.Controls.Add(this.tssHistory);
+            this.tscHistory.TopToolStripPanel.Controls.Add(this.tsHistory);
             // 
             // gbAdvancedSearch
             // 
@@ -234,11 +234,11 @@
             // 
             resources.ApplyResources(this.chURL, "chURL");
             // 
-            // tssHistory
+            // tsHistory
             // 
-            resources.ApplyResources(this.tssHistory, "tssHistory");
-            this.tssHistory.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.tssHistory.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            resources.ApplyResources(this.tsHistory, "tsHistory");
+            this.tsHistory.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.tsHistory.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tslSearch,
             this.tstbSearch,
             this.tsbSearch,
@@ -247,7 +247,7 @@
             this.tsbCopyStats,
             this.tss2,
             this.tsbSettings});
-            this.tssHistory.Name = "tssHistory";
+            this.tsHistory.Name = "tsHistory";
             // 
             // tslSearch
             // 
@@ -348,8 +348,8 @@
             this.tscHistory.PerformLayout();
             this.gbAdvancedSearch.ResumeLayout(false);
             this.gbAdvancedSearch.PerformLayout();
-            this.tssHistory.ResumeLayout(false);
-            this.tssHistory.PerformLayout();
+            this.tsHistory.ResumeLayout(false);
+            this.tsHistory.PerformLayout();
             this.scMain.Panel1.ResumeLayout(false);
             this.scMain.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.scMain)).EndInit();
@@ -382,7 +382,7 @@
         private System.Windows.Forms.Label lblURLFilter;
         private System.Windows.Forms.TextBox txtURLFilter;
         private System.Windows.Forms.ToolStripContainer tscHistory;
-        private System.Windows.Forms.ToolStrip tssHistory;
+        private System.Windows.Forms.ToolStrip tsHistory;
         private System.Windows.Forms.ToolStripLabel tslSearch;
         private System.Windows.Forms.ToolStripTextBox tstbSearch;
         private System.Windows.Forms.ToolStripButton tsbSearch;

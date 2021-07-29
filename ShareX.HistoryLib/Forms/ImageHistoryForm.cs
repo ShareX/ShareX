@@ -27,6 +27,7 @@ using Manina.Windows.Forms;
 using ShareX.HelpersLib;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
@@ -63,6 +64,8 @@ namespace ShareX.HistoryLib
                 ilvImages.Colors.BackColor = ShareXResources.Theme.DarkBackgroundColor;
                 ilvImages.Colors.BorderColor = ShareXResources.Theme.DarkBackgroundColor;
                 ilvImages.Colors.ForeColor = ShareXResources.Theme.TextColor;
+                ilvImages.Colors.ImageInnerBorderColor = Color.Transparent;
+                ilvImages.Colors.ImageOuterBorderColor = Color.Transparent;
                 ilvImages.Colors.SelectedForeColor = ShareXResources.Theme.TextColor;
                 ilvImages.Colors.UnFocusedForeColor = ShareXResources.Theme.TextColor;
             }
