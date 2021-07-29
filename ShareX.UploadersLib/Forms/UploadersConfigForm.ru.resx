@@ -339,18 +339,6 @@
   <data name="cbLocalhostrDirectURL.Text" xml:space="preserve">
     <value>Использовать прямой URL, если он существует</value>
   </data>
-  <data name="btnGe_ttLogin.Text" xml:space="preserve">
-    <value>Войти</value>
-  </data>
-  <data name="lblGe_ttEmail.Text" xml:space="preserve">
-    <value>Email:</value>
-  </data>
-  <data name="lblGe_ttPassword.Text" xml:space="preserve">
-    <value>Пароль:</value>
-  </data>
-  <data name="lblGe_ttStatus.Text" xml:space="preserve">
-    <value>Необходимо войти.</value>
-  </data>
   <data name="lblSendSpaceUsername.Text" xml:space="preserve">
     <value>Имя пользователя:</value>
   </data>

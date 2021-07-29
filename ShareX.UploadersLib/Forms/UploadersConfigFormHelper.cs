@@ -718,27 +718,6 @@ namespace ShareX.UploadersLib
 
         #endregion SendSpace
 
-        #region Ge.tt
-
-        public void Ge_ttLogin()
-        {
-            try
-            {
-                Ge_tt gett = new Ge_tt(APIKeys.Ge_ttKey);
-                Ge_ttLogin login = gett.Login(txtGe_ttEmail.Text, txtGe_ttPassword.Text);
-                Config.Ge_ttLogin = login;
-                lblGe_ttStatus.Text = Resources.UploadersConfigForm_Login_successful;
-            }
-            catch (Exception ex)
-            {
-                Config.Ge_ttLogin = null;
-                lblGe_ttStatus.Text = Resources.UploadersConfigForm_Login_failed;
-                ex.ShowError();
-            }
-        }
-
-        #endregion Ge.tt
-
         #region Pastebin
 
         public void PastebinLogin()

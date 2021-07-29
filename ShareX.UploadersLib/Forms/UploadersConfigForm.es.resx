@@ -356,18 +356,6 @@ Por ejemplo, si el balde se llama balde.ejemplo.com entonces URL será http://ba
   <data name="cbLocalhostrDirectURL.Text" xml:space="preserve">
     <value>Utilice URL directa si existe</value>
   </data>
-  <data name="btnGe_ttLogin.Text" xml:space="preserve">
-    <value>Login</value>
-  </data>
-  <data name="lblGe_ttEmail.Text" xml:space="preserve">
-    <value>Email:</value>
-  </data>
-  <data name="lblGe_ttPassword.Text" xml:space="preserve">
-    <value>Contraseña:</value>
-  </data>
-  <data name="lblGe_ttStatus.Text" xml:space="preserve">
-    <value>Inicio de sesión necesario.</value>
-  </data>
   <data name="lblSendSpaceUsername.Text" xml:space="preserve">
     <value>Nombre de usuario:</value>
   </data>

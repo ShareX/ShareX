@@ -378,18 +378,6 @@
   <data name="cbLocalhostrDirectURL.Text" xml:space="preserve">
     <value>如果存在则使用直链</value>
   </data>
-  <data name="btnGe_ttLogin.Text" xml:space="preserve">
-    <value>登录</value>
-  </data>
-  <data name="lblGe_ttEmail.Text" xml:space="preserve">
-    <value>邮箱：</value>
-  </data>
-  <data name="lblGe_ttPassword.Text" xml:space="preserve">
-    <value>密码：</value>
-  </data>
-  <data name="lblGe_ttStatus.Text" xml:space="preserve">
-    <value>需要登录。</value>
-  </data>
   <data name="lblSendSpaceUsername.Text" xml:space="preserve">
     <value>用户名：</value>
   </data>
@@ -1201,9 +1189,6 @@
   </data>
   <data name="tpFlickr.Text" xml:space="preserve">
     <value>Flickr</value>
-  </data>
-  <data name="tpGe_tt.Text" xml:space="preserve">
-    <value>Ge.tt</value>
   </data>
   <data name="tpGfycat.Text" xml:space="preserve">
     <value>Gfycat</value>

@@ -228,12 +228,6 @@ namespace ShareX.UploadersLib
 
         #endregion Box
 
-        #region Ge.tt
-
-        public Ge_ttLogin Ge_ttLogin { get; set; } = null;
-
-        #endregion Ge.tt
-
         #region Localhostr
 
         public string LocalhostrEmail { get; set; } = "";

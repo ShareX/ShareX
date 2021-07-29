@@ -617,18 +617,6 @@ Isto apenas têm efeito se não tiver permitido acesso ao B2.Bucket quando foi c
   <data name="lblSendSpaceUsername.Text" xml:space="preserve">
     <value>Utilizador:</value>
   </data>
-  <data name="lblGe_ttStatus.Text" xml:space="preserve">
-    <value>Necessário iniciar sessão.</value>
-  </data>
-  <data name="lblGe_ttPassword.Text" xml:space="preserve">
-    <value>Palavra-passe:</value>
-  </data>
-  <data name="lblGe_ttEmail.Text" xml:space="preserve">
-    <value>Email:</value>
-  </data>
-  <data name="btnGe_ttLogin.Text" xml:space="preserve">
-    <value>Iniciar sessão</value>
-  </data>
   <data name="cbLocalhostrDirectURL.Text" xml:space="preserve">
     <value>Utilizar hiperligação directa se disponível</value>
   </data>

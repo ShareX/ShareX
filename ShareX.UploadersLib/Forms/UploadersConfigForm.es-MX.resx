@@ -243,9 +243,6 @@
   <data name="lblMediaFireEmail.Text" xml:space="preserve">
     <value>Correo electrónico:</value>
   </data>
-  <data name="lblGe_ttEmail.Text" xml:space="preserve">
-    <value>Correo electrónico:</value>
-  </data>
   <data name="lblMegaEmail.Text" xml:space="preserve">
     <value>Correo electrónico:</value>
   </data>
@@ -300,9 +297,6 @@
   <data name="btnPastebinLogin.Text" xml:space="preserve">
     <value>Acceder</value>
   </data>
-  <data name="btnGe_ttLogin.Text" xml:space="preserve">
-    <value>Acceder</value>
-  </data>
   <data name="btnImageShackLogin.Text" xml:space="preserve">
     <value>Acceder</value>
   </data>
@@ -316,9 +310,6 @@
     <value>Datos de acceso</value>
   </data>
   <data name="lblPhotobucketAccountStatus.Text" xml:space="preserve">
-    <value>Acceso requerido.</value>
-  </data>
-  <data name="lblGe_ttStatus.Text" xml:space="preserve">
     <value>Acceso requerido.</value>
   </data>
   <data name="cbxPlikTTLUnit.Items2" xml:space="preserve">
@@ -358,9 +349,6 @@
     <value>Contraseña:</value>
   </data>
   <data name="lblImageShackPassword.Text" xml:space="preserve">
-    <value>Contraseña:</value>
-  </data>
-  <data name="lblGe_ttPassword.Text" xml:space="preserve">
     <value>Contraseña:</value>
   </data>
   <data name="lblFTPPassword.Text" xml:space="preserve">
@@ -1060,9 +1048,6 @@ Por ejemplo, si el bucket se llama bucket.example.com, la URL será http://bucke
   </data>
   <data name="tpFTP.Text" xml:space="preserve">
     <value>FTP / FTPS / SFTP</value>
-  </data>
-  <data name="tpGe_tt.Text" xml:space="preserve">
-    <value>Ge.tt</value>
   </data>
   <data name="tpGfycat.Text" xml:space="preserve">
     <value>Gfycat</value>

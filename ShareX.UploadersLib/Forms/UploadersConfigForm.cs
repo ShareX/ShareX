@@ -432,15 +432,6 @@ namespace ShareX.UploadersLib
 
             #endregion Box
 
-            #region Ge.tt
-
-            if (Config.Ge_ttLogin != null && !string.IsNullOrEmpty(Config.Ge_ttLogin.AccessToken))
-            {
-                lblGe_ttStatus.Text = Resources.UploadersConfigForm_Login_successful;
-            }
-
-            #endregion Ge.tt
-
             #region Localhostr
 
             txtLocalhostrEmail.Text = Config.LocalhostrEmail;
@@ -2006,14 +1997,6 @@ namespace ShareX.UploadersLib
 
         #endregion SendSpace
 
-        #region Ge.tt
-
-        private void btnGe_ttLogin_Click(object sender, EventArgs e)
-        {
-            Ge_ttLogin();
-        }
-
-        #endregion Ge.tt
 
         #region Localhostr
 

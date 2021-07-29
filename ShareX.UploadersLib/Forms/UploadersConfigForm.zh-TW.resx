@@ -380,18 +380,6 @@
   <data name="cbLocalhostrDirectURL.Text" xml:space="preserve">
     <value>如果存在則使用直接網址</value>
   </data>
-  <data name="btnGe_ttLogin.Text" xml:space="preserve">
-    <value>登入</value>
-  </data>
-  <data name="lblGe_ttEmail.Text" xml:space="preserve">
-    <value>電子信箱：</value>
-  </data>
-  <data name="lblGe_ttPassword.Text" xml:space="preserve">
-    <value>密碼：</value>
-  </data>
-  <data name="lblGe_ttStatus.Text" xml:space="preserve">
-    <value>需要登入。</value>
-  </data>
   <data name="lblSendSpaceUsername.Text" xml:space="preserve">
     <value>使用者名稱：</value>
   </data>

@@ -476,18 +476,6 @@
   <data name="lblSendSpaceUsername.Text" xml:space="preserve">
     <value>ユーザー名:</value>
   </data>
-  <data name="lblGe_ttStatus.Text" xml:space="preserve">
-    <value>ログインが必要です。</value>
-  </data>
-  <data name="lblGe_ttPassword.Text" xml:space="preserve">
-    <value>パスワード:</value>
-  </data>
-  <data name="lblGe_ttEmail.Text" xml:space="preserve">
-    <value>Eメール:</value>
-  </data>
-  <data name="btnGe_ttLogin.Text" xml:space="preserve">
-    <value>ログイン</value>
-  </data>
   <data name="cbLocalhostrDirectURL.Text" xml:space="preserve">
     <value>存在する場合はダイレクト リンクを使用</value>
   </data>

@@ -337,18 +337,6 @@
   <data name="cbLocalhostrDirectURL.Text" xml:space="preserve">
     <value>Varsa direkt adres kullan</value>
   </data>
-  <data name="btnGe_ttLogin.Text" xml:space="preserve">
-    <value>Giriş</value>
-  </data>
-  <data name="lblGe_ttEmail.Text" xml:space="preserve">
-    <value>Eposta:</value>
-  </data>
-  <data name="lblGe_ttPassword.Text" xml:space="preserve">
-    <value>Şifre:</value>
-  </data>
-  <data name="lblGe_ttStatus.Text" xml:space="preserve">
-    <value>Giriş gereklidir.</value>
-  </data>
   <data name="lblSendSpaceUsername.Text" xml:space="preserve">
     <value>Kullanıcı adı:</value>
   </data>

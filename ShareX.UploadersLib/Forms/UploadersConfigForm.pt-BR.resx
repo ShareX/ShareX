@@ -161,9 +161,6 @@ Por exemplo, se o seu bucket é chamado bucket.example.com então o URL será ht
   <data name="tpSendSpace.Text" xml:space="preserve">
     <value>SendSpace</value>
   </data>
-  <data name="tpGe_tt.Text" xml:space="preserve">
-    <value>Ge.tt</value>
-  </data>
   <data name="tpHostr.Text" xml:space="preserve">
     <value>Hostr</value>
   </data>
@@ -419,18 +416,6 @@ Usar uma biblioteca encriptada desabilita o compartilhamento.</value>
   </data>
   <data name="cbLocalhostrDirectURL.Text" xml:space="preserve">
     <value>Usar URL direto se existir</value>
-  </data>
-  <data name="btnGe_ttLogin.Text" xml:space="preserve">
-    <value>Logar</value>
-  </data>
-  <data name="lblGe_ttEmail.Text" xml:space="preserve">
-    <value>Email:</value>
-  </data>
-  <data name="lblGe_ttPassword.Text" xml:space="preserve">
-    <value>Senha:</value>
-  </data>
-  <data name="lblGe_ttStatus.Text" xml:space="preserve">
-    <value>Login exigido.</value>
   </data>
   <data name="lblSendSpaceUsername.Text" xml:space="preserve">
     <value>Usuário:</value>

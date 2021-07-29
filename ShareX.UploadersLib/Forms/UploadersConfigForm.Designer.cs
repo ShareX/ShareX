@@ -333,13 +333,6 @@ namespace ShareX.UploadersLib
             this.lblSendSpaceUsername = new System.Windows.Forms.Label();
             this.txtSendSpacePassword = new System.Windows.Forms.TextBox();
             this.txtSendSpaceUserName = new System.Windows.Forms.TextBox();
-            this.tpGe_tt = new System.Windows.Forms.TabPage();
-            this.lblGe_ttStatus = new System.Windows.Forms.Label();
-            this.lblGe_ttPassword = new System.Windows.Forms.Label();
-            this.lblGe_ttEmail = new System.Windows.Forms.Label();
-            this.btnGe_ttLogin = new System.Windows.Forms.Button();
-            this.txtGe_ttPassword = new System.Windows.Forms.TextBox();
-            this.txtGe_ttEmail = new System.Windows.Forms.TextBox();
             this.tpHostr = new System.Windows.Forms.TabPage();
             this.cbLocalhostrDirectURL = new System.Windows.Forms.CheckBox();
             this.lblLocalhostrPassword = new System.Windows.Forms.Label();
@@ -673,7 +666,6 @@ namespace ShareX.UploadersLib
             this.tpMediaFire.SuspendLayout();
             this.tpPushbullet.SuspendLayout();
             this.tpSendSpace.SuspendLayout();
-            this.tpGe_tt.SuspendLayout();
             this.tpHostr.SuspendLayout();
             this.tpJira.SuspendLayout();
             this.gbJiraServer.SuspendLayout();
@@ -1211,7 +1203,6 @@ namespace ShareX.UploadersLib
             this.tcFileUploaders.Controls.Add(this.tpMediaFire);
             this.tcFileUploaders.Controls.Add(this.tpPushbullet);
             this.tcFileUploaders.Controls.Add(this.tpSendSpace);
-            this.tcFileUploaders.Controls.Add(this.tpGe_tt);
             this.tcFileUploaders.Controls.Add(this.tpHostr);
             this.tcFileUploaders.Controls.Add(this.tpJira);
             this.tcFileUploaders.Controls.Add(this.tpLambda);
@@ -2756,51 +2747,6 @@ namespace ShareX.UploadersLib
             resources.ApplyResources(this.txtSendSpaceUserName, "txtSendSpaceUserName");
             this.txtSendSpaceUserName.Name = "txtSendSpaceUserName";
             this.txtSendSpaceUserName.TextChanged += new System.EventHandler(this.txtSendSpaceUserName_TextChanged);
-            // 
-            // tpGe_tt
-            // 
-            this.tpGe_tt.BackColor = System.Drawing.SystemColors.Window;
-            this.tpGe_tt.Controls.Add(this.lblGe_ttStatus);
-            this.tpGe_tt.Controls.Add(this.lblGe_ttPassword);
-            this.tpGe_tt.Controls.Add(this.lblGe_ttEmail);
-            this.tpGe_tt.Controls.Add(this.btnGe_ttLogin);
-            this.tpGe_tt.Controls.Add(this.txtGe_ttPassword);
-            this.tpGe_tt.Controls.Add(this.txtGe_ttEmail);
-            resources.ApplyResources(this.tpGe_tt, "tpGe_tt");
-            this.tpGe_tt.Name = "tpGe_tt";
-            // 
-            // lblGe_ttStatus
-            // 
-            resources.ApplyResources(this.lblGe_ttStatus, "lblGe_ttStatus");
-            this.lblGe_ttStatus.Name = "lblGe_ttStatus";
-            // 
-            // lblGe_ttPassword
-            // 
-            resources.ApplyResources(this.lblGe_ttPassword, "lblGe_ttPassword");
-            this.lblGe_ttPassword.Name = "lblGe_ttPassword";
-            // 
-            // lblGe_ttEmail
-            // 
-            resources.ApplyResources(this.lblGe_ttEmail, "lblGe_ttEmail");
-            this.lblGe_ttEmail.Name = "lblGe_ttEmail";
-            // 
-            // btnGe_ttLogin
-            // 
-            resources.ApplyResources(this.btnGe_ttLogin, "btnGe_ttLogin");
-            this.btnGe_ttLogin.Name = "btnGe_ttLogin";
-            this.btnGe_ttLogin.UseVisualStyleBackColor = true;
-            this.btnGe_ttLogin.Click += new System.EventHandler(this.btnGe_ttLogin_Click);
-            // 
-            // txtGe_ttPassword
-            // 
-            resources.ApplyResources(this.txtGe_ttPassword, "txtGe_ttPassword");
-            this.txtGe_ttPassword.Name = "txtGe_ttPassword";
-            this.txtGe_ttPassword.UseSystemPasswordChar = true;
-            // 
-            // txtGe_ttEmail
-            // 
-            resources.ApplyResources(this.txtGe_ttEmail, "txtGe_ttEmail");
-            this.txtGe_ttEmail.Name = "txtGe_ttEmail";
             // 
             // tpHostr
             // 
@@ -5071,8 +5017,6 @@ namespace ShareX.UploadersLib
             this.tpPushbullet.PerformLayout();
             this.tpSendSpace.ResumeLayout(false);
             this.tpSendSpace.PerformLayout();
-            this.tpGe_tt.ResumeLayout(false);
-            this.tpGe_tt.PerformLayout();
             this.tpHostr.ResumeLayout(false);
             this.tpHostr.PerformLayout();
             this.tpJira.ResumeLayout(false);
@@ -5238,12 +5182,6 @@ namespace ShareX.UploadersLib
         private System.Windows.Forms.TextBox txtSendSpacePassword;
         private System.Windows.Forms.TextBox txtSendSpaceUserName;
         private AccountTypeControl atcSendSpaceAccountType;
-        private System.Windows.Forms.Label lblGe_ttStatus;
-        private System.Windows.Forms.Label lblGe_ttPassword;
-        private System.Windows.Forms.Label lblGe_ttEmail;
-        private System.Windows.Forms.Button btnGe_ttLogin;
-        private System.Windows.Forms.TextBox txtGe_ttPassword;
-        private System.Windows.Forms.TextBox txtGe_ttEmail;
         private System.Windows.Forms.CheckBox cbLocalhostrDirectURL;
         private System.Windows.Forms.Label lblLocalhostrPassword;
         private System.Windows.Forms.Label lblLocalhostrEmail;
@@ -5500,7 +5438,6 @@ namespace ShareX.UploadersLib
         internal System.Windows.Forms.TabPage tpMediaFire;
         internal System.Windows.Forms.TabPage tpPushbullet;
         internal System.Windows.Forms.TabPage tpSendSpace;
-        internal System.Windows.Forms.TabPage tpGe_tt;
         internal System.Windows.Forms.TabPage tpHostr;
         internal System.Windows.Forms.TabPage tpJira;
         internal System.Windows.Forms.TabPage tpLambda;

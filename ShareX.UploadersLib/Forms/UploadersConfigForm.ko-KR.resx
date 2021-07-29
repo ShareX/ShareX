@@ -356,18 +356,6 @@
   <data name="cbLocalhostrDirectURL.Text" xml:space="preserve">
     <value>존재한다면 핫링크 사용하기</value>
   </data>
-  <data name="btnGe_ttLogin.Text" xml:space="preserve">
-    <value>로그인</value>
-  </data>
-  <data name="lblGe_ttEmail.Text" xml:space="preserve">
-    <value>이메일:</value>
-  </data>
-  <data name="lblGe_ttPassword.Text" xml:space="preserve">
-    <value>비밀번호:</value>
-  </data>
-  <data name="lblGe_ttStatus.Text" xml:space="preserve">
-    <value>로그인 필요.</value>
-  </data>
   <data name="lblSendSpaceUsername.Text" xml:space="preserve">
     <value>사용자 ID:</value>
   </data>
@@ -829,9 +817,6 @@
   </data>
   <data name="tpSendSpace.Text" xml:space="preserve">
     <value>SendSpace</value>
-  </data>
-  <data name="tpGe_tt.Text" xml:space="preserve">
-    <value>Ge.tt</value>
   </data>
   <data name="tpHostr.Text" xml:space="preserve">
     <value>Hostr</value>
