@@ -114,7 +114,6 @@
             this.tss1,
             this.tsbSettings});
             this.tsMain.Name = "tsMain";
-            this.tsMain.ShowItemToolTips = false;
             // 
             // tslSearch
             // 
@@ -143,7 +142,8 @@
             // 
             // tsbSettings
             // 
-            this.tsbSettings.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.tsbSettings.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbSettings.Image = global::ShareX.HistoryLib.Properties.Resources.gear;
             resources.ApplyResources(this.tsbSettings, "tsbSettings");
             this.tsbSettings.Name = "tsbSettings";
             this.tsbSettings.Click += new System.EventHandler(this.tsbSettings_Click);
@@ -151,7 +151,6 @@
             // ImageHistoryForm
             // 
             resources.ApplyResources(this, "$this");
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.Controls.Add(this.tscMain);
