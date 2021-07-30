@@ -1997,7 +1997,6 @@ namespace ShareX.UploadersLib
 
         #endregion SendSpace
 
-
         #region Localhostr
 
         private void txtLocalhostrEmail_TextChanged(object sender, EventArgs e)
