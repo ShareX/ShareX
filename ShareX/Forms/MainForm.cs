@@ -649,7 +649,7 @@ namespace ShareX
         {
             cmsTaskInfo.SuspendLayout();
 
-            tsmiStopUpload.Visible = tsmiOpen.Visible = tsmiCopy.Visible = tsmiShowErrors.Visible = tsmiShowResponse.Visible = tsmiSearchImage.Visible =
+            tsmiStopUpload.Visible = tsmiOpen.Visible = tsmiCopy.Visible = tsmiShowErrors.Visible = tsmiShowResponse.Visible = tsmiGoogleImageSearch.Visible =
                 tsmiShowQRCode.Visible = tsmiOCRImage.Visible = tsmiCombineImages.Visible = tsmiUploadSelectedFile.Visible = tsmiDownloadSelectedURL.Visible =
                 tsmiEditSelectedFile.Visible = tsmiAddImageEffects.Visible = tsmiRunAction.Visible = tsmiDeleteSelectedItem.Visible = tsmiDeleteSelectedFile.Visible =
                 tsmiShortenSelectedURL.Visible = tsmiShareSelectedURL.Visible = false;
@@ -765,7 +765,7 @@ namespace ShareX
                     tsmiDeleteSelectedFile.Visible = uim.SelectedItem.IsFileExist;
                     tsmiShortenSelectedURL.Visible = uim.SelectedItem.IsURLExist;
                     tsmiShareSelectedURL.Visible = uim.SelectedItem.IsURLExist;
-                    tsmiSearchImage.Visible = uim.SelectedItem.IsURLExist;
+                    tsmiGoogleImageSearch.Visible = uim.SelectedItem.IsURLExist;
                     tsmiShowQRCode.Visible = uim.SelectedItem.IsURLExist;
                     tsmiOCRImage.Visible = uim.SelectedItem.IsImageFile;
                     tsmiCombineImages.Visible = uim.SelectedItems.Count(x => x.IsImageFile) > 1;
@@ -2416,9 +2416,14 @@ namespace ShareX
             uim.AddImageEffects();
         }
 
-        private void tsmiSearchImage_Click(object sender, EventArgs e)
+        private void tsmiGoogleImageSearch_Click(object sender, EventArgs e)
         {
-            uim.SearchImage();
+            uim.SearchImageUsingGoogle();
+        }
+
+        private void tsmiBingVisualSearch_Click(object sender, EventArgs e)
+        {
+            uim.SearchImageUsingBing();
         }
 
         private void tsmiShowQRCode_Click(object sender, EventArgs e)

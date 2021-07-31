@@ -1896,6 +1896,9 @@
   <ItemGroup>
     <None Include="Resources\application-tile-vertical.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bing.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>

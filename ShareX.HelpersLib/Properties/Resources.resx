@@ -1370,4 +1370,7 @@ Would you like to download and install it?</value>
   <data name="ContentAlignment_BottomRight" xml:space="preserve">
     <value>Bottom right</value>
   </data>
+  <data name="URLSharingServices_BingVisualSearch" xml:space="preserve">
+    <value>Bing visual search</value>
+  </data>
 </root>

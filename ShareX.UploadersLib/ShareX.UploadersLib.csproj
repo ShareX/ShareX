@@ -246,6 +246,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="SharingServices\BingVisualSearchSharingService.cs" />
     <Compile Include="SharingServices\CustomURLSharingService.cs" />
     <Compile Include="SharingServices\DeliciousSharingService.cs" />
     <Compile Include="SharingServices\EmailSharingService.cs" />

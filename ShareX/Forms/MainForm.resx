@@ -1227,11 +1227,17 @@
   <data name="tsmiShareSelectedURL.Text" xml:space="preserve">
     <value>Share URL</value>
   </data>
-  <data name="tsmiSearchImage.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="tsmiGoogleImageSearch.Size" type="System.Drawing.Size, System.Drawing">
     <value>228, 22</value>
   </data>
-  <data name="tsmiSearchImage.Text" xml:space="preserve">
+  <data name="tsmiGoogleImageSearch.Text" xml:space="preserve">
     <value>Google image search...</value>
+  </data>
+  <data name="tsmiBingVisualSearch.Size" type="System.Drawing.Size, System.Drawing">
+    <value>228, 22</value>
+  </data>
+  <data name="tsmiBingVisualSearch.Text" xml:space="preserve">
+    <value>Bing visual search...</value>
   </data>
   <data name="tsmiShowQRCode.Size" type="System.Drawing.Size, System.Drawing">
     <value>228, 22</value>
@@ -1375,7 +1381,7 @@
     <value>Switch to thumbnail view</value>
   </data>
   <data name="cmsTaskInfo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>229, 560</value>
+    <value>229, 582</value>
   </data>
   <data name="&gt;&gt;cmsTaskInfo.Name" xml:space="preserve">
     <value>cmsTaskInfo</value>
@@ -3075,10 +3081,16 @@
   <data name="&gt;&gt;tsmiShareSelectedURL.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;tsmiSearchImage.Name" xml:space="preserve">
-    <value>tsmiSearchImage</value>
+  <data name="&gt;&gt;tsmiGoogleImageSearch.Name" xml:space="preserve">
+    <value>tsmiGoogleImageSearch</value>
   </data>
-  <data name="&gt;&gt;tsmiSearchImage.Type" xml:space="preserve">
+  <data name="&gt;&gt;tsmiGoogleImageSearch.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsmiBingVisualSearch.Name" xml:space="preserve">
+    <value>tsmiBingVisualSearch</value>
+  </data>
+  <data name="&gt;&gt;tsmiBingVisualSearch.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiShowQRCode.Name" xml:space="preserve">

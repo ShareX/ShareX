@@ -1075,9 +1075,14 @@ namespace ShareX
             RegionCaptureTasks.ShowScreenRuler(taskSettings.CaptureSettings.SurfaceOptions);
         }
 
-        public static void SearchImage(string url)
+        public static void SearchImageUsingGoogle(string url)
         {
             new GoogleImageSearchSharingService().CreateSharer(null, null).ShareURL(url);
+        }
+
+        public static void SearchImageUsingBing(string url)
+        {
+            new BingVisualSearchSharingService().CreateSharer(null, null).ShareURL(url);
         }
 
         public static async Task OCRImage(TaskSettings taskSettings = null)

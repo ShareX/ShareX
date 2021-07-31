@@ -211,6 +211,7 @@ namespace ShareX.UploadersLib
         [Description("Pushbullet")]
         Pushbullet,
         GoogleImageSearch, // Localized
+        BingVisualSearch, // Localized
         CustomURLSharingService // Localized
     }
 

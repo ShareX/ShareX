@@ -177,7 +177,8 @@
             this.tsmiDeleteSelectedFile = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiShortenSelectedURL = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiShareSelectedURL = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiSearchImage = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiGoogleImageSearch = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiBingVisualSearch = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiShowQRCode = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiOCRImage = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiCombineImages = new System.Windows.Forms.ToolStripMenuItem();
@@ -1088,7 +1089,8 @@
             this.tsmiDeleteSelectedFile,
             this.tsmiShortenSelectedURL,
             this.tsmiShareSelectedURL,
-            this.tsmiSearchImage,
+            this.tsmiGoogleImageSearch,
+            this.tsmiBingVisualSearch,
             this.tsmiShowQRCode,
             this.tsmiOCRImage,
             this.tsmiCombineImages,
@@ -1446,12 +1448,19 @@
             this.tsmiShareSelectedURL.Name = "tsmiShareSelectedURL";
             resources.ApplyResources(this.tsmiShareSelectedURL, "tsmiShareSelectedURL");
             // 
-            // tsmiSearchImage
+            // tsmiGoogleImageSearch
             // 
-            this.tsmiSearchImage.Image = global::ShareX.Properties.Resources.Google;
-            this.tsmiSearchImage.Name = "tsmiSearchImage";
-            resources.ApplyResources(this.tsmiSearchImage, "tsmiSearchImage");
-            this.tsmiSearchImage.Click += new System.EventHandler(this.tsmiSearchImage_Click);
+            this.tsmiGoogleImageSearch.Image = global::ShareX.Properties.Resources.Google;
+            this.tsmiGoogleImageSearch.Name = "tsmiGoogleImageSearch";
+            resources.ApplyResources(this.tsmiGoogleImageSearch, "tsmiGoogleImageSearch");
+            this.tsmiGoogleImageSearch.Click += new System.EventHandler(this.tsmiGoogleImageSearch_Click);
+            // 
+            // tsmiBingVisualSearch
+            // 
+            this.tsmiBingVisualSearch.Image = global::ShareX.Properties.Resources.Bing;
+            this.tsmiBingVisualSearch.Name = "tsmiBingVisualSearch";
+            resources.ApplyResources(this.tsmiBingVisualSearch, "tsmiBingVisualSearch");
+            this.tsmiBingVisualSearch.Click += new System.EventHandler(this.tsmiBingVisualSearch_Click);
             // 
             // tsmiShowQRCode
             // 
@@ -2709,7 +2718,7 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiCombineImages;
         private System.Windows.Forms.ToolStripMenuItem tsmiOpenActionsToolbar;
         private System.Windows.Forms.ToolStripMenuItem tsmiDeleteSelectedItem;
-        private System.Windows.Forms.ToolStripMenuItem tsmiSearchImage;
+        private System.Windows.Forms.ToolStripMenuItem tsmiGoogleImageSearch;
         private System.Windows.Forms.Panel pNews;
         private System.Windows.Forms.Button btnCloseNews;
         private System.Windows.Forms.ToolStripMenuItem tsmiImageThumbnailer;
@@ -2791,5 +2800,6 @@
         private System.Windows.Forms.ToolStripSeparator tssTrayTools4;
         private System.Windows.Forms.ToolStripMenuItem tsmiCombineImagesHorizontally;
         private System.Windows.Forms.ToolStripMenuItem tsmiCombineImagesVertically;
+        private System.Windows.Forms.ToolStripMenuItem tsmiBingVisualSearch;
     }
 }

@@ -372,9 +372,14 @@ namespace ShareX
             if (IsItemSelected && SelectedItem.IsURLExist) UploadManager.ShareURL(SelectedItem.Info.Result.ToString(), urlSharingService);
         }
 
-        public void SearchImage()
+        public void SearchImageUsingGoogle()
         {
-            if (IsItemSelected && SelectedItem.IsURLExist) TaskHelpers.SearchImage(SelectedItem.Info.Result.URL);
+            if (IsItemSelected && SelectedItem.IsURLExist) TaskHelpers.SearchImageUsingGoogle(SelectedItem.Info.Result.URL);
+        }
+
+        public void SearchImageUsingBing()
+        {
+            if (IsItemSelected && SelectedItem.IsURLExist) TaskHelpers.SearchImageUsingBing(SelectedItem.Info.Result.URL);
         }
 
         public void ShowQRCode()
