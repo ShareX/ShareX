@@ -1237,7 +1237,7 @@
     <value>228, 22</value>
   </data>
   <data name="tsmiBingVisualSearch.Text" xml:space="preserve">
-    <value>Bing visual search...</value>
+    <value>Bing visual search (OCR)...</value>
   </data>
   <data name="tsmiShowQRCode.Size" type="System.Drawing.Size, System.Drawing">
     <value>228, 22</value>
