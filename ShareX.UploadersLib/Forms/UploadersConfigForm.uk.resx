@@ -510,18 +510,6 @@
   <data name="lblSendSpaceUsername.Text" xml:space="preserve">
     <value>Ім’я користувача:</value>
   </data>
-  <data name="lblGe_ttStatus.Text" xml:space="preserve">
-    <value>Треба увійти.</value>
-  </data>
-  <data name="lblGe_ttPassword.Text" xml:space="preserve">
-    <value>Пароль:</value>
-  </data>
-  <data name="lblGe_ttEmail.Text" xml:space="preserve">
-    <value>Ел. пошта:</value>
-  </data>
-  <data name="btnGe_ttLogin.Text" xml:space="preserve">
-    <value>Вхід</value>
-  </data>
   <data name="lblLocalhostrPassword.Text" xml:space="preserve">
     <value>Пароль:</value>
   </data>

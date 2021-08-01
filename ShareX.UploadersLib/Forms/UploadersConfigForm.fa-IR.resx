@@ -402,9 +402,6 @@
   <data name="lblOwnCloudPassword.Text" xml:space="preserve">
     <value>کلمه عبور:</value>
   </data>
-  <data name="lblGe_ttPassword.Text" xml:space="preserve">
-    <value>کلمه عبور:</value>
-  </data>
   <data name="lblSendSpacePassword.Text" xml:space="preserve">
     <value>کلمه عبور:</value>
   </data>
@@ -466,9 +463,6 @@
     <value>ایمیل:</value>
   </data>
   <data name="lblLithiioEmail.Text" xml:space="preserve">
-    <value>ایمیل:</value>
-  </data>
-  <data name="lblGe_ttEmail.Text" xml:space="preserve">
     <value>ایمیل:</value>
   </data>
   <data name="lblLocalhostrEmail.Text" xml:space="preserve">

@@ -141,7 +141,6 @@
     <Compile Include="FileUploaders\Lambda.cs" />
     <Compile Include="FileUploaders\Copy.cs" />
     <Compile Include="FileUploaders\Email.cs" />
-    <Compile Include="FileUploaders\Ge_tt.cs" />
     <Compile Include="FileUploaders\GoogleDrive.cs" />
     <Compile Include="FileUploaders\Jira.cs" />
     <Compile Include="FileUploaders\Hostr.cs" />

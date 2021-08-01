@@ -390,18 +390,6 @@ Das Benutzen einer verschlüsselten Bibliothek deaktiviert das Teilen.</value>
   <data name="cbLocalhostrDirectURL.Text" xml:space="preserve">
     <value>Benutze direkte URL, wenn sie existiert </value>
   </data>
-  <data name="btnGe_ttLogin.Text" xml:space="preserve">
-    <value>Einloggen</value>
-  </data>
-  <data name="lblGe_ttEmail.Text" xml:space="preserve">
-    <value>E-Mail:</value>
-  </data>
-  <data name="lblGe_ttPassword.Text" xml:space="preserve">
-    <value>Passwort:</value>
-  </data>
-  <data name="lblGe_ttStatus.Text" xml:space="preserve">
-    <value>Login erforderlich.</value>
-  </data>
   <data name="lblSendSpaceUsername.Text" xml:space="preserve">
     <value>Benutzername:</value>
   </data>

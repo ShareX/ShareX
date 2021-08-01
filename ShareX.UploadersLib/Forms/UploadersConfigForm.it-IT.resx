@@ -228,9 +228,6 @@
   <data name="lblEmailFrom.Text" xml:space="preserve">
     <value>Email:</value>
   </data>
-  <data name="lblGe_ttEmail.Text" xml:space="preserve">
-    <value>Email:</value>
-  </data>
   <data name="lblOneTimeSecretEmail.Text" xml:space="preserve">
     <value>Email:</value>
   </data>
@@ -360,9 +357,6 @@
   <data name="btnPastebinLogin.Text" xml:space="preserve">
     <value>Accedi</value>
   </data>
-  <data name="btnGe_ttLogin.Text" xml:space="preserve">
-    <value>Accedi</value>
-  </data>
   <data name="btnPuushLogin.Text" xml:space="preserve">
     <value>Accedi</value>
   </data>
@@ -370,9 +364,6 @@
     <value>Credenziali Accesso</value>
   </data>
   <data name="lblPhotobucketAccountStatus.Text" xml:space="preserve">
-    <value>Accesso richiesto.</value>
-  </data>
-  <data name="lblGe_ttStatus.Text" xml:space="preserve">
     <value>Accesso richiesto.</value>
   </data>
   <data name="cbxPlikTTLUnit.Items2" xml:space="preserve">
@@ -409,9 +400,6 @@
     <value>Password:</value>
   </data>
   <data name="lblEmailPassword.Text" xml:space="preserve">
-    <value>Password:</value>
-  </data>
-  <data name="lblGe_ttPassword.Text" xml:space="preserve">
     <value>Password:</value>
   </data>
   <data name="lblMediaFirePassword.Text" xml:space="preserve">
