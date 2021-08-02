@@ -83,7 +83,10 @@ namespace ShareX.HistoryLib
 
             ShareXResources.ApplyTheme(this);
 
-            Settings.WindowState.AutoHandleFormState(this);
+            if (Settings.RememberWindowState)
+            {
+                Settings.WindowState.ApplyFormState(this);
+            }
         }
 
         private void UpdateTitle(int total, int filtered)
@@ -166,6 +169,14 @@ namespace ShareX.HistoryLib
             Application.DoEvents();
             this.ForceActivate();
             RefreshHistoryItems();
+        }
+
+        private void ImageHistoryForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (Settings.RememberWindowState)
+            {
+                Settings.WindowState.UpdateFormState(this);
+            }
         }
 
         private void ImageHistoryForm_KeyDown(object sender, KeyEventArgs e)

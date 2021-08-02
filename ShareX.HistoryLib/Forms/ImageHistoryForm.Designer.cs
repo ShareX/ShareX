@@ -156,6 +156,7 @@
             this.Controls.Add(this.tscMain);
             this.KeyPreview = true;
             this.Name = "ImageHistoryForm";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ImageHistoryForm_FormClosing);
             this.Shown += new System.EventHandler(this.ImageHistoryForm_Shown);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ImageHistoryForm_KeyDown);
             this.tscMain.ContentPanel.ResumeLayout(false);

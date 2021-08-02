@@ -30,6 +30,7 @@ namespace ShareX.HistoryLib
 {
     public class ImageHistorySettings
     {
+        public bool RememberWindowState { get; set; } = true;
         public WindowState WindowState { get; set; } = new WindowState();
         public int ViewMode { get; set; } = 3;
         public Size ThumbnailSize { get; set; } = new Size(150, 150);

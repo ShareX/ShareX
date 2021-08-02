@@ -73,11 +73,6 @@ namespace ShareX.HistoryLib
             pbThumbnail.Reset();
             lvHistory.FillLastColumn();
 
-            if (Settings.SplitterDistance > 0)
-            {
-                scMain.SplitterDistance = Settings.SplitterDistance;
-            }
-
             if (Settings.RememberSearchText)
             {
                 tstbSearch.Text = Settings.SearchText;
@@ -85,7 +80,15 @@ namespace ShareX.HistoryLib
 
             ShareXResources.ApplyTheme(this);
 
-            Settings.WindowState.AutoHandleFormState(this);
+            if (Settings.RememberWindowState)
+            {
+                Settings.WindowState.ApplyFormState(this);
+
+                if (Settings.SplitterDistance > 0)
+                {
+                    scMain.SplitterDistance = Settings.SplitterDistance;
+                }
+            }
         }
 
         private void ResetFilters()
@@ -369,6 +372,14 @@ namespace ShareX.HistoryLib
         private void HistoryForm_Resize(object sender, EventArgs e)
         {
             Refresh();
+        }
+
+        private void HistoryForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (Settings.RememberWindowState)
+            {
+                Settings.WindowState.UpdateFormState(this);
+            }
         }
 
         private void HistoryForm_KeyDown(object sender, KeyEventArgs e)
