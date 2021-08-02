@@ -43,7 +43,6 @@ namespace ShareX.HistoryLib
         public string SearchText { get; set; }
         public bool SearchInTags { get; set; } = true;
 
-        private HistoryManager history;
         private HistoryItemManager him;
         private string defaultTitle;
 
@@ -94,11 +93,12 @@ namespace ShareX.HistoryLib
             Text = $"{defaultTitle} (Total: {total:N0} - Filtered: {filtered:N0})";
         }
 
-        private void RefreshHistoryItems()
+        private void RefreshHistoryItems(bool mockData = false)
         {
             UpdateSearchText();
             ilvImages.Items.Clear();
-            ImageListViewItem[] ilvItems = GetHistoryItems().Select(hi => new ImageListViewItem(hi.FilePath) { Tag = hi }).ToArray();
+            IEnumerable<HistoryItem> historyItems = GetHistoryItems(mockData);
+            ImageListViewItem[] ilvItems = historyItems.Select(hi => new ImageListViewItem(hi.FilePath) { Tag = hi }).ToArray();
             ilvImages.Items.AddRange(ilvItems);
         }
 
@@ -116,9 +116,15 @@ namespace ShareX.HistoryLib
             }
         }
 
-        private IEnumerable<HistoryItem> GetHistoryItems()
+        private IEnumerable<HistoryItem> GetHistoryItems(bool mockData = false)
         {
-            if (history == null)
+            HistoryManager history;
+
+            if (mockData)
+            {
+                history = new HistoryManagerMock(HistoryPath);
+            }
+            else
             {
                 history = new HistoryManagerJSON(HistoryPath);
             }
@@ -181,10 +187,18 @@ namespace ShareX.HistoryLib
 
         private void ImageHistoryForm_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.F5)
+            switch (e.KeyData)
             {
-                RefreshHistoryItems();
-                e.Handled = true;
+                case Keys.F5:
+                    RefreshHistoryItems();
+                    e.Handled = true;
+                    break;
+#if DEBUG
+                case Keys.Control | Keys.F5:
+                    RefreshHistoryItems(true);
+                    e.Handled = true;
+                    break;
+#endif
             }
         }
 

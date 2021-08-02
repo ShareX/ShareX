@@ -39,7 +39,6 @@ namespace ShareX.HistoryLib
         public string HistoryPath { get; private set; }
         public HistorySettings Settings { get; private set; }
 
-        private HistoryManager history;
         private HistoryItemManager him;
         private HistoryItem[] allHistoryItems;
         private string defaultTitle;
@@ -120,6 +119,8 @@ namespace ShareX.HistoryLib
 
         private HistoryItem[] GetHistoryItems(bool mockData = false)
         {
+            HistoryManager history;
+
             if (mockData)
             {
                 history = new HistoryManagerMock(HistoryPath);
