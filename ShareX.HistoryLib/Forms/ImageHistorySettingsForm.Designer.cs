@@ -38,6 +38,7 @@
             this.lblThumbnailSizeUnit = new System.Windows.Forms.Label();
             this.cbRememberSearchText = new System.Windows.Forms.CheckBox();
             this.cbFilterMissingFiles = new System.Windows.Forms.CheckBox();
+            this.cbRememberWindowState = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.nudThumbnailSize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudMaximumImageLimit)).BeginInit();
             this.SuspendLayout();
@@ -116,11 +117,19 @@
             this.cbFilterMissingFiles.UseVisualStyleBackColor = true;
             this.cbFilterMissingFiles.CheckedChanged += new System.EventHandler(this.cbFilterMissingFiles_CheckedChanged);
             // 
+            // cbRememberWindowState
+            // 
+            resources.ApplyResources(this.cbRememberWindowState, "cbRememberWindowState");
+            this.cbRememberWindowState.Name = "cbRememberWindowState";
+            this.cbRememberWindowState.UseVisualStyleBackColor = true;
+            this.cbRememberWindowState.CheckedChanged += new System.EventHandler(this.cbRememberWindowState_CheckedChanged);
+            // 
             // ImageHistorySettingsForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.SystemColors.Window;
+            this.Controls.Add(this.cbRememberWindowState);
             this.Controls.Add(this.cbFilterMissingFiles);
             this.Controls.Add(this.cbRememberSearchText);
             this.Controls.Add(this.lblThumbnailSizeUnit);
@@ -151,5 +160,6 @@
         private System.Windows.Forms.Label lblThumbnailSizeUnit;
         private System.Windows.Forms.CheckBox cbRememberSearchText;
         private System.Windows.Forms.CheckBox cbFilterMissingFiles;
+        private System.Windows.Forms.CheckBox cbRememberWindowState;
     }
 }

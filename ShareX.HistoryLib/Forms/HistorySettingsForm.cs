@@ -41,6 +41,7 @@ namespace ShareX.HistoryLib
             Settings = settings;
             nudMaximumItemLimit.SetValue(Settings.MaxItemCount);
             cbRememberSearchText.Checked = Settings.RememberSearchText;
+            cbRememberWindowState.Checked = Settings.RememberWindowState;
         }
 
         private void nudMaximumItemLimit_ValueChanged(object sender, EventArgs e)
@@ -51,6 +52,11 @@ namespace ShareX.HistoryLib
         private void cbRememberSearchText_CheckedChanged(object sender, EventArgs e)
         {
             Settings.RememberSearchText = cbRememberSearchText.Checked;
+        }
+
+        private void cbRememberWindowState_CheckedChanged(object sender, EventArgs e)
+        {
+            Settings.RememberWindowState = cbRememberWindowState.Checked;
         }
     }
 }

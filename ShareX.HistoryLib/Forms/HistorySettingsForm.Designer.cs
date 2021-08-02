@@ -33,6 +33,7 @@ namespace ShareX.HistoryLib
             this.lblMaximumItemLimit = new System.Windows.Forms.Label();
             this.nudMaximumItemLimit = new System.Windows.Forms.NumericUpDown();
             this.cbRememberSearchText = new System.Windows.Forms.CheckBox();
+            this.cbRememberWindowState = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.nudMaximumItemLimit)).BeginInit();
             this.SuspendLayout();
             // 
@@ -59,10 +60,19 @@ namespace ShareX.HistoryLib
             this.cbRememberSearchText.UseVisualStyleBackColor = true;
             this.cbRememberSearchText.CheckedChanged += new System.EventHandler(this.cbRememberSearchText_CheckedChanged);
             // 
+            // cbRememberWindowState
+            // 
+            resources.ApplyResources(this.cbRememberWindowState, "cbRememberWindowState");
+            this.cbRememberWindowState.Name = "cbRememberWindowState";
+            this.cbRememberWindowState.UseVisualStyleBackColor = true;
+            this.cbRememberWindowState.CheckedChanged += new System.EventHandler(this.cbRememberWindowState_CheckedChanged);
+            // 
             // HistorySettingsForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.BackColor = System.Drawing.SystemColors.Window;
+            this.Controls.Add(this.cbRememberWindowState);
             this.Controls.Add(this.cbRememberSearchText);
             this.Controls.Add(this.nudMaximumItemLimit);
             this.Controls.Add(this.lblMaximumItemLimit);
@@ -80,5 +90,6 @@ namespace ShareX.HistoryLib
         private System.Windows.Forms.Label lblMaximumItemLimit;
         private System.Windows.Forms.NumericUpDown nudMaximumItemLimit;
         private System.Windows.Forms.CheckBox cbRememberSearchText;
+        private System.Windows.Forms.CheckBox cbRememberWindowState;
     }
 }

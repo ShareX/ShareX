@@ -379,6 +379,7 @@ namespace ShareX.HistoryLib
             if (Settings.RememberWindowState)
             {
                 Settings.WindowState.UpdateFormState(this);
+                Settings.SplitterDistance = scMain.SplitterDistance;
             }
         }
 
@@ -397,11 +398,6 @@ namespace ShareX.HistoryLib
                     break;
 #endif
             }
-        }
-
-        private void scMain_SplitterMoved(object sender, SplitterEventArgs e)
-        {
-            Settings.SplitterDistance = scMain.SplitterDistance;
         }
 
         private void tstbSearch_KeyDown(object sender, KeyEventArgs e)

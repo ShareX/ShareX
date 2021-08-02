@@ -46,6 +46,7 @@ namespace ShareX.HistoryLib
             nudMaximumImageLimit.SetValue(Settings.MaxItemCount);
             cbFilterMissingFiles.Checked = Settings.FilterMissingFiles;
             cbRememberSearchText.Checked = Settings.RememberSearchText;
+            cbRememberWindowState.Checked = Settings.RememberWindowState;
         }
 
         private void cbViewMode_SelectedIndexChanged(object sender, EventArgs e)
@@ -71,6 +72,11 @@ namespace ShareX.HistoryLib
         private void cbRememberSearchText_CheckedChanged(object sender, EventArgs e)
         {
             Settings.RememberSearchText = cbRememberSearchText.Checked;
+        }
+
+        private void cbRememberWindowState_CheckedChanged(object sender, EventArgs e)
+        {
+            Settings.RememberWindowState = cbRememberWindowState.Checked;
         }
     }
 }

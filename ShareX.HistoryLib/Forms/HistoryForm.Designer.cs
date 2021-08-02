@@ -318,7 +318,6 @@
             this.scMain.Panel2.Controls.Add(this.pbThumbnail);
             this.scMain.SplitterColor = System.Drawing.Color.White;
             this.scMain.SplitterLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(189)))), ((int)(((byte)(189)))));
-            this.scMain.SplitterMoved += new System.Windows.Forms.SplitterEventHandler(this.scMain_SplitterMoved);
             // 
             // pbThumbnail
             // 

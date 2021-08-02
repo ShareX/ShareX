@@ -129,14 +129,351 @@
   <data name="&gt;&gt;tscHistory.BottomToolStripPanel.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
+  <data name="&gt;&gt;btnAdvancedSearchReset.Name" xml:space="preserve">
+    <value>btnAdvancedSearchReset</value>
+  </data>
+  <data name="&gt;&gt;btnAdvancedSearchReset.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnAdvancedSearchReset.Parent" xml:space="preserve">
+    <value>gbAdvancedSearch</value>
+  </data>
+  <data name="&gt;&gt;btnAdvancedSearchReset.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;btnAdvancedSearch.Name" xml:space="preserve">
+    <value>btnAdvancedSearch</value>
+  </data>
+  <data name="&gt;&gt;btnAdvancedSearch.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnAdvancedSearch.Parent" xml:space="preserve">
+    <value>gbAdvancedSearch</value>
+  </data>
+  <data name="&gt;&gt;btnAdvancedSearch.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;lblURLFilter.Name" xml:space="preserve">
+    <value>lblURLFilter</value>
+  </data>
+  <data name="&gt;&gt;lblURLFilter.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblURLFilter.Parent" xml:space="preserve">
+    <value>gbAdvancedSearch</value>
+  </data>
+  <data name="&gt;&gt;lblURLFilter.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;txtURLFilter.Name" xml:space="preserve">
+    <value>txtURLFilter</value>
+  </data>
+  <data name="&gt;&gt;txtURLFilter.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtURLFilter.Parent" xml:space="preserve">
+    <value>gbAdvancedSearch</value>
+  </data>
+  <data name="&gt;&gt;txtURLFilter.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;lblFilenameFilter.Name" xml:space="preserve">
+    <value>lblFilenameFilter</value>
+  </data>
+  <data name="&gt;&gt;lblFilenameFilter.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblFilenameFilter.Parent" xml:space="preserve">
+    <value>gbAdvancedSearch</value>
+  </data>
+  <data name="&gt;&gt;lblFilenameFilter.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;cbHostFilterSelection.Name" xml:space="preserve">
+    <value>cbHostFilterSelection</value>
+  </data>
+  <data name="&gt;&gt;cbHostFilterSelection.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbHostFilterSelection.Parent" xml:space="preserve">
+    <value>gbAdvancedSearch</value>
+  </data>
+  <data name="&gt;&gt;cbHostFilterSelection.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;cbTypeFilterSelection.Name" xml:space="preserve">
+    <value>cbTypeFilterSelection</value>
+  </data>
+  <data name="&gt;&gt;cbTypeFilterSelection.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbTypeFilterSelection.Parent" xml:space="preserve">
+    <value>gbAdvancedSearch</value>
+  </data>
+  <data name="&gt;&gt;cbTypeFilterSelection.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;cbHostFilter.Name" xml:space="preserve">
+    <value>cbHostFilter</value>
+  </data>
+  <data name="&gt;&gt;cbHostFilter.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbHostFilter.Parent" xml:space="preserve">
+    <value>gbAdvancedSearch</value>
+  </data>
+  <data name="&gt;&gt;cbHostFilter.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;cbTypeFilter.Name" xml:space="preserve">
+    <value>cbTypeFilter</value>
+  </data>
+  <data name="&gt;&gt;cbTypeFilter.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbTypeFilter.Parent" xml:space="preserve">
+    <value>gbAdvancedSearch</value>
+  </data>
+  <data name="&gt;&gt;cbTypeFilter.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;dtpFilterFrom.Name" xml:space="preserve">
+    <value>dtpFilterFrom</value>
+  </data>
+  <data name="&gt;&gt;dtpFilterFrom.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DateTimePicker, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dtpFilterFrom.Parent" xml:space="preserve">
+    <value>gbAdvancedSearch</value>
+  </data>
+  <data name="&gt;&gt;dtpFilterFrom.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;lblFilterFrom.Name" xml:space="preserve">
+    <value>lblFilterFrom</value>
+  </data>
+  <data name="&gt;&gt;lblFilterFrom.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblFilterFrom.Parent" xml:space="preserve">
+    <value>gbAdvancedSearch</value>
+  </data>
+  <data name="&gt;&gt;lblFilterFrom.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;lblFilterTo.Name" xml:space="preserve">
+    <value>lblFilterTo</value>
+  </data>
+  <data name="&gt;&gt;lblFilterTo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblFilterTo.Parent" xml:space="preserve">
+    <value>gbAdvancedSearch</value>
+  </data>
+  <data name="&gt;&gt;lblFilterTo.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;cbDateFilter.Name" xml:space="preserve">
+    <value>cbDateFilter</value>
+  </data>
+  <data name="&gt;&gt;cbDateFilter.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbDateFilter.Parent" xml:space="preserve">
+    <value>gbAdvancedSearch</value>
+  </data>
+  <data name="&gt;&gt;cbDateFilter.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="&gt;&gt;dtpFilterTo.Name" xml:space="preserve">
+    <value>dtpFilterTo</value>
+  </data>
+  <data name="&gt;&gt;dtpFilterTo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DateTimePicker, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dtpFilterTo.Parent" xml:space="preserve">
+    <value>gbAdvancedSearch</value>
+  </data>
+  <data name="&gt;&gt;dtpFilterTo.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;txtFilenameFilter.Name" xml:space="preserve">
+    <value>txtFilenameFilter</value>
+  </data>
+  <data name="&gt;&gt;txtFilenameFilter.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtFilenameFilter.Parent" xml:space="preserve">
+    <value>gbAdvancedSearch</value>
+  </data>
+  <data name="&gt;&gt;txtFilenameFilter.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="gbAdvancedSearch.Location" type="System.Drawing.Point, System.Drawing">
+    <value>71, 3</value>
+  </data>
+  <data name="gbAdvancedSearch.Size" type="System.Drawing.Size, System.Drawing">
+    <value>409, 213</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="gbAdvancedSearch.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="gbAdvancedSearch.Text" xml:space="preserve">
+    <value>Advanced search</value>
+  </data>
+  <data name="gbAdvancedSearch.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;gbAdvancedSearch.Name" xml:space="preserve">
+    <value>gbAdvancedSearch</value>
+  </data>
+  <data name="&gt;&gt;gbAdvancedSearch.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;gbAdvancedSearch.Parent" xml:space="preserve">
+    <value>tscHistory.ContentPanel</value>
+  </data>
+  <data name="&gt;&gt;gbAdvancedSearch.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="lvHistory.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="lvHistory.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="lvHistory.Size" type="System.Drawing.Size, System.Drawing">
+    <value>550, 636</value>
+  </data>
+  <data name="lvHistory.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;lvHistory.Name" xml:space="preserve">
+    <value>lvHistory</value>
+  </data>
+  <data name="&gt;&gt;lvHistory.Type" xml:space="preserve">
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=13.5.1.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;lvHistory.Parent" xml:space="preserve">
+    <value>tscHistory.ContentPanel</value>
+  </data>
+  <data name="&gt;&gt;lvHistory.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="tscHistory.ContentPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>550, 636</value>
+  </data>
+  <data name="&gt;&gt;tscHistory.ContentPanel.Name" xml:space="preserve">
+    <value>tscHistory.ContentPanel</value>
+  </data>
+  <data name="&gt;&gt;tscHistory.ContentPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripContentPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tscHistory.ContentPanel.Parent" xml:space="preserve">
+    <value>tscHistory</value>
+  </data>
+  <data name="&gt;&gt;tscHistory.ContentPanel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tscHistory.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="&gt;&gt;tscHistory.LeftToolStripPanel.Name" xml:space="preserve">
+    <value>tscHistory.LeftToolStripPanel</value>
+  </data>
+  <data name="&gt;&gt;tscHistory.LeftToolStripPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tscHistory.LeftToolStripPanel.Parent" xml:space="preserve">
+    <value>tscHistory</value>
+  </data>
+  <data name="&gt;&gt;tscHistory.LeftToolStripPanel.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="tscHistory.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="&gt;&gt;tscHistory.RightToolStripPanel.Name" xml:space="preserve">
+    <value>tscHistory.RightToolStripPanel</value>
+  </data>
+  <data name="&gt;&gt;tscHistory.RightToolStripPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tscHistory.RightToolStripPanel.Parent" xml:space="preserve">
+    <value>tscHistory</value>
+  </data>
+  <data name="&gt;&gt;tscHistory.RightToolStripPanel.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="tscHistory.Size" type="System.Drawing.Size, System.Drawing">
+    <value>550, 661</value>
+  </data>
+  <data name="tscHistory.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="tscHistory.Text" xml:space="preserve">
+    <value>toolStripContainer1</value>
+  </data>
+  <metadata name="tsHistory.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <data name="tsHistory.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="tsHistory.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 0</value>
+  </data>
+  <data name="tsHistory.Size" type="System.Drawing.Size, System.Drawing">
+    <value>454, 25</value>
+  </data>
+  <data name="tsHistory.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;tsHistory.Name" xml:space="preserve">
+    <value>tsHistory</value>
+  </data>
+  <data name="&gt;&gt;tsHistory.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsHistory.Parent" xml:space="preserve">
+    <value>tscHistory.TopToolStripPanel</value>
+  </data>
+  <data name="&gt;&gt;tsHistory.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;tscHistory.TopToolStripPanel.Name" xml:space="preserve">
+    <value>tscHistory.TopToolStripPanel</value>
+  </data>
+  <data name="&gt;&gt;tscHistory.TopToolStripPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tscHistory.TopToolStripPanel.Parent" xml:space="preserve">
+    <value>tscHistory</value>
+  </data>
+  <data name="&gt;&gt;tscHistory.TopToolStripPanel.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;tscHistory.Name" xml:space="preserve">
+    <value>tscHistory</value>
+  </data>
+  <data name="&gt;&gt;tscHistory.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripContainer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tscHistory.Parent" xml:space="preserve">
+    <value>scMain.Panel1</value>
+  </data>
+  <data name="&gt;&gt;tscHistory.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="btnAdvancedSearchReset.Location" type="System.Drawing.Point, System.Drawing">
     <value>272, 176</value>
   </data>
   <data name="btnAdvancedSearchReset.Size" type="System.Drawing.Size, System.Drawing">
     <value>120, 24</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="btnAdvancedSearchReset.TabIndex" type="System.Int32, mscorlib">
     <value>22</value>
   </data>
@@ -155,7 +492,6 @@
   <data name="&gt;&gt;btnAdvancedSearchReset.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="btnAdvancedSearch.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -519,33 +855,6 @@
   <data name="&gt;&gt;txtFilenameFilter.ZOrder" xml:space="preserve">
     <value>14</value>
   </data>
-  <data name="gbAdvancedSearch.Location" type="System.Drawing.Point, System.Drawing">
-    <value>71, 3</value>
-  </data>
-  <data name="gbAdvancedSearch.Size" type="System.Drawing.Size, System.Drawing">
-    <value>409, 213</value>
-  </data>
-  <data name="gbAdvancedSearch.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="gbAdvancedSearch.Text" xml:space="preserve">
-    <value>Advanced search</value>
-  </data>
-  <data name="gbAdvancedSearch.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;gbAdvancedSearch.Name" xml:space="preserve">
-    <value>gbAdvancedSearch</value>
-  </data>
-  <data name="&gt;&gt;gbAdvancedSearch.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;gbAdvancedSearch.Parent" xml:space="preserve">
-    <value>tscHistory.ContentPanel</value>
-  </data>
-  <data name="&gt;&gt;gbAdvancedSearch.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="chIcon.Text" xml:space="preserve">
     <value />
   </data>
@@ -569,90 +878,6 @@
   </data>
   <data name="chURL.Width" type="System.Int32, mscorlib">
     <value>230</value>
-  </data>
-  <data name="lvHistory.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="lvHistory.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="lvHistory.Size" type="System.Drawing.Size, System.Drawing">
-    <value>550, 636</value>
-  </data>
-  <data name="lvHistory.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;lvHistory.Name" xml:space="preserve">
-    <value>lvHistory</value>
-  </data>
-  <data name="&gt;&gt;lvHistory.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=13.5.1.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;lvHistory.Parent" xml:space="preserve">
-    <value>tscHistory.ContentPanel</value>
-  </data>
-  <data name="&gt;&gt;lvHistory.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="tscHistory.ContentPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>550, 636</value>
-  </data>
-  <data name="&gt;&gt;tscHistory.ContentPanel.Name" xml:space="preserve">
-    <value>tscHistory.ContentPanel</value>
-  </data>
-  <data name="&gt;&gt;tscHistory.ContentPanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripContentPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tscHistory.ContentPanel.Parent" xml:space="preserve">
-    <value>tscHistory</value>
-  </data>
-  <data name="&gt;&gt;tscHistory.ContentPanel.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="tscHistory.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="&gt;&gt;tscHistory.LeftToolStripPanel.Name" xml:space="preserve">
-    <value>tscHistory.LeftToolStripPanel</value>
-  </data>
-  <data name="&gt;&gt;tscHistory.LeftToolStripPanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tscHistory.LeftToolStripPanel.Parent" xml:space="preserve">
-    <value>tscHistory</value>
-  </data>
-  <data name="&gt;&gt;tscHistory.LeftToolStripPanel.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="tscHistory.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="&gt;&gt;tscHistory.RightToolStripPanel.Name" xml:space="preserve">
-    <value>tscHistory.RightToolStripPanel</value>
-  </data>
-  <data name="&gt;&gt;tscHistory.RightToolStripPanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tscHistory.RightToolStripPanel.Parent" xml:space="preserve">
-    <value>tscHistory</value>
-  </data>
-  <data name="&gt;&gt;tscHistory.RightToolStripPanel.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="tscHistory.Size" type="System.Drawing.Size, System.Drawing">
-    <value>550, 661</value>
-  </data>
-  <data name="tscHistory.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="tscHistory.Text" xml:space="preserve">
-    <value>toolStripContainer1</value>
-  </data>
-  <metadata name="tsHistory.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <data name="tsHistory.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>None</value>
   </data>
   <data name="tslSearch.Size" type="System.Drawing.Size, System.Drawing">
     <value>45, 22</value>
@@ -708,51 +933,6 @@
   <data name="tsbSettings.Text" xml:space="preserve">
     <value>Settings...</value>
   </data>
-  <data name="tsHistory.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 0</value>
-  </data>
-  <data name="tsHistory.Size" type="System.Drawing.Size, System.Drawing">
-    <value>454, 25</value>
-  </data>
-  <data name="tsHistory.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;tsHistory.Name" xml:space="preserve">
-    <value>tsHistory</value>
-  </data>
-  <data name="&gt;&gt;tsHistory.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tsHistory.Parent" xml:space="preserve">
-    <value>tscHistory.TopToolStripPanel</value>
-  </data>
-  <data name="&gt;&gt;tsHistory.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;tscHistory.TopToolStripPanel.Name" xml:space="preserve">
-    <value>tscHistory.TopToolStripPanel</value>
-  </data>
-  <data name="&gt;&gt;tscHistory.TopToolStripPanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tscHistory.TopToolStripPanel.Parent" xml:space="preserve">
-    <value>tscHistory</value>
-  </data>
-  <data name="&gt;&gt;tscHistory.TopToolStripPanel.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;tscHistory.Name" xml:space="preserve">
-    <value>tscHistory</value>
-  </data>
-  <data name="&gt;&gt;tscHistory.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripContainer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tscHistory.Parent" xml:space="preserve">
-    <value>scMain.Panel1</value>
-  </data>
-  <data name="&gt;&gt;tscHistory.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="scMain.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
@@ -781,7 +961,7 @@
     <value>0, 0</value>
   </data>
   <data name="pbThumbnail.Size" type="System.Drawing.Size, System.Drawing">
-    <value>428, 661</value>
+    <value>628, 661</value>
   </data>
   <data name="pbThumbnail.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -814,7 +994,7 @@
     <value>100</value>
   </data>
   <data name="scMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>984, 661</value>
+    <value>1184, 661</value>
   </data>
   <data name="scMain.SplitterDistance" type="System.Int32, mscorlib">
     <value>550</value>
@@ -844,7 +1024,7 @@
     <value>96, 96</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>984, 661</value>
+    <value>1184, 661</value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>500, 500</value>

@@ -144,7 +144,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblViewMode.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="lblThumbnailSize.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -171,7 +171,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblThumbnailSize.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="lblMaximumImageLimit.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -198,7 +198,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblMaximumImageLimit.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="cbViewMode.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 32</value>
@@ -219,7 +219,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;cbViewMode.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="nudThumbnailSize.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 80</value>
@@ -244,7 +244,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;nudThumbnailSize.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="nudMaximumImageLimit.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 128</value>
@@ -268,7 +268,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;nudMaximumImageLimit.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="lblThumbnailSizeUnit.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -295,7 +295,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblThumbnailSizeUnit.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="cbRememberSearchText.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -325,7 +325,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;cbRememberSearchText.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="cbFilterMissingFiles.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -352,6 +352,33 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;cbFilterMissingFiles.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="cbRememberWindowState.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbRememberWindowState.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 208</value>
+  </data>
+  <data name="cbRememberWindowState.Size" type="System.Drawing.Size, System.Drawing">
+    <value>142, 17</value>
+  </data>
+  <data name="cbRememberWindowState.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="cbRememberWindowState.Text" xml:space="preserve">
+    <value>Remember window state</value>
+  </data>
+  <data name="&gt;&gt;cbRememberWindowState.Name" xml:space="preserve">
+    <value>cbRememberWindowState</value>
+  </data>
+  <data name="&gt;&gt;cbRememberWindowState.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbRememberWindowState.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;cbRememberWindowState.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -361,7 +388,7 @@
     <value>96, 96</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>344, 218</value>
+    <value>344, 237</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>

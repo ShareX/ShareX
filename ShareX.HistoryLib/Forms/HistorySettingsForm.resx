@@ -144,7 +144,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblMaximumItemLimit.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="nudMaximumItemLimit.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 32</value>
@@ -169,7 +169,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;nudMaximumItemLimit.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="cbRememberSearchText.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -196,6 +196,33 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;cbRememberSearchText.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="cbRememberWindowState.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbRememberWindowState.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 88</value>
+  </data>
+  <data name="cbRememberWindowState.Size" type="System.Drawing.Size, System.Drawing">
+    <value>142, 17</value>
+  </data>
+  <data name="cbRememberWindowState.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="cbRememberWindowState.Text" xml:space="preserve">
+    <value>Remember window state</value>
+  </data>
+  <data name="&gt;&gt;cbRememberWindowState.Name" xml:space="preserve">
+    <value>cbRememberWindowState</value>
+  </data>
+  <data name="&gt;&gt;cbRememberWindowState.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbRememberWindowState.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;cbRememberWindowState.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
