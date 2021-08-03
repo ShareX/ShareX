@@ -5101,7 +5101,7 @@
     <value>0</value>
   </data>
   <data name="txtURLRegexReplaceReplacement.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 392</value>
+    <value>8, 368</value>
   </data>
   <data name="txtURLRegexReplaceReplacement.Size" type="System.Drawing.Size, System.Drawing">
     <value>352, 20</value>
@@ -5128,7 +5128,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblURLRegexReplaceReplacement.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 376</value>
+    <value>5, 352</value>
   </data>
   <data name="lblURLRegexReplaceReplacement.Size" type="System.Drawing.Size, System.Drawing">
     <value>73, 13</value>
@@ -5152,7 +5152,7 @@
     <value>1</value>
   </data>
   <data name="txtURLRegexReplacePattern.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 352</value>
+    <value>8, 328</value>
   </data>
   <data name="txtURLRegexReplacePattern.Size" type="System.Drawing.Size, System.Drawing">
     <value>352, 20</value>
@@ -5179,7 +5179,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblURLRegexReplacePattern.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 336</value>
+    <value>5, 312</value>
   </data>
   <data name="lblURLRegexReplacePattern.Size" type="System.Drawing.Size, System.Drawing">
     <value>44, 13</value>
@@ -5209,7 +5209,7 @@
     <value>NoControl</value>
   </data>
   <data name="cbURLRegexReplace.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 312</value>
+    <value>8, 288</value>
   </data>
   <data name="cbURLRegexReplace.Size" type="System.Drawing.Size, System.Drawing">
     <value>296, 17</value>
@@ -5236,7 +5236,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnAutoIncrementNumber.Location" type="System.Drawing.Point, System.Drawing">
-    <value>104, 200</value>
+    <value>104, 176</value>
   </data>
   <data name="btnAutoIncrementNumber.Size" type="System.Drawing.Size, System.Drawing">
     <value>96, 23</value>
@@ -5266,7 +5266,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblAutoIncrementNumber.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 184</value>
+    <value>5, 160</value>
   </data>
   <data name="lblAutoIncrementNumber.Size" type="System.Drawing.Size, System.Drawing">
     <value>119, 13</value>
@@ -5290,7 +5290,7 @@
     <value>6</value>
   </data>
   <data name="nudAutoIncrementNumber.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 201</value>
+    <value>8, 177</value>
   </data>
   <data name="nudAutoIncrementNumber.Size" type="System.Drawing.Size, System.Drawing">
     <value>88, 20</value>
@@ -5320,7 +5320,7 @@
     <value>NoControl</value>
   </data>
   <data name="cbFileUploadReplaceProblematicCharacters.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 288</value>
+    <value>8, 264</value>
   </data>
   <data name="cbFileUploadReplaceProblematicCharacters.Size" type="System.Drawing.Size, System.Drawing">
     <value>370, 17</value>
@@ -5343,36 +5343,6 @@
   <data name="&gt;&gt;cbFileUploadReplaceProblematicCharacters.ZOrder" xml:space="preserve">
     <value>8</value>
   </data>
-  <data name="cbRegionCaptureUseWindowPattern.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="cbRegionCaptureUseWindowPattern.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="cbRegionCaptureUseWindowPattern.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 136</value>
-  </data>
-  <data name="cbRegionCaptureUseWindowPattern.Size" type="System.Drawing.Size, System.Drawing">
-    <value>474, 17</value>
-  </data>
-  <data name="cbRegionCaptureUseWindowPattern.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
-  </data>
-  <data name="cbRegionCaptureUseWindowPattern.Text" xml:space="preserve">
-    <value>Use window name pattern for region capture (ShareX will try to detect window behind selection)</value>
-  </data>
-  <data name="&gt;&gt;cbRegionCaptureUseWindowPattern.Name" xml:space="preserve">
-    <value>cbRegionCaptureUseWindowPattern</value>
-  </data>
-  <data name="&gt;&gt;cbRegionCaptureUseWindowPattern.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbRegionCaptureUseWindowPattern.Parent" xml:space="preserve">
-    <value>tpFileNaming</value>
-  </data>
-  <data name="&gt;&gt;cbRegionCaptureUseWindowPattern.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
   <data name="cbNameFormatCustomTimeZone.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -5380,7 +5350,7 @@
     <value>NoControl</value>
   </data>
   <data name="cbNameFormatCustomTimeZone.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 232</value>
+    <value>8, 208</value>
   </data>
   <data name="cbNameFormatCustomTimeZone.Size" type="System.Drawing.Size, System.Drawing">
     <value>133, 17</value>
@@ -5401,7 +5371,7 @@
     <value>tpFileNaming</value>
   </data>
   <data name="&gt;&gt;cbNameFormatCustomTimeZone.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>9</value>
   </data>
   <data name="lblNameFormatPatternPreview.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -5431,7 +5401,7 @@
     <value>tpFileNaming</value>
   </data>
   <data name="&gt;&gt;lblNameFormatPatternPreview.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>10</value>
   </data>
   <data name="lblNameFormatPatternActiveWindow.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -5461,7 +5431,7 @@
     <value>tpFileNaming</value>
   </data>
   <data name="&gt;&gt;lblNameFormatPatternActiveWindow.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>11</value>
   </data>
   <data name="lblNameFormatPatternPreviewActiveWindow.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -5491,10 +5461,10 @@
     <value>tpFileNaming</value>
   </data>
   <data name="&gt;&gt;lblNameFormatPatternPreviewActiveWindow.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>12</value>
   </data>
   <data name="cbNameFormatTimeZone.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 256</value>
+    <value>8, 232</value>
   </data>
   <data name="cbNameFormatTimeZone.Size" type="System.Drawing.Size, System.Drawing">
     <value>288, 21</value>
@@ -5512,7 +5482,7 @@
     <value>tpFileNaming</value>
   </data>
   <data name="&gt;&gt;cbNameFormatTimeZone.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>13</value>
   </data>
   <data name="txtNameFormatPatternActiveWindow.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 88</value>
@@ -5533,7 +5503,7 @@
     <value>tpFileNaming</value>
   </data>
   <data name="&gt;&gt;txtNameFormatPatternActiveWindow.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>14</value>
   </data>
   <data name="cbFileUploadUseNamePattern.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -5542,7 +5512,7 @@
     <value>NoControl</value>
   </data>
   <data name="cbFileUploadUseNamePattern.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 160</value>
+    <value>8, 136</value>
   </data>
   <data name="cbFileUploadUseNamePattern.Size" type="System.Drawing.Size, System.Drawing">
     <value>295, 17</value>
@@ -5563,7 +5533,7 @@
     <value>tpFileNaming</value>
   </data>
   <data name="&gt;&gt;cbFileUploadUseNamePattern.ZOrder" xml:space="preserve">
-    <value>16</value>
+    <value>15</value>
   </data>
   <data name="lblNameFormatPattern.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -5593,7 +5563,7 @@
     <value>tpFileNaming</value>
   </data>
   <data name="&gt;&gt;lblNameFormatPattern.ZOrder" xml:space="preserve">
-    <value>17</value>
+    <value>16</value>
   </data>
   <data name="txtNameFormatPattern.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 24</value>
@@ -5614,7 +5584,7 @@
     <value>tpFileNaming</value>
   </data>
   <data name="&gt;&gt;txtNameFormatPattern.ZOrder" xml:space="preserve">
-    <value>18</value>
+    <value>17</value>
   </data>
   <data name="tpFileNaming.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>

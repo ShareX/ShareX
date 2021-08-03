@@ -103,7 +103,7 @@ namespace ShareX
                         AllowAnnotation = false;
                     }
 
-                    if (form.Result == RegionResult.Region && taskSettings.UploadSettings.RegionCaptureUseWindowPattern)
+                    if (form.Result == RegionResult.Region)
                     {
                         WindowInfo windowInfo = form.GetWindowInfo();
                         imageInfo.UpdateInfo(windowInfo);
