@@ -285,10 +285,7 @@ namespace ShareX.HistoryLib
                 UpdatePictureBox();
             }
 
-            if (!scHistoryItemInfo.Panel2Collapsed)
-            {
-                pgHistoryItemInfo.SelectedObject = historyItem;
-            }
+            pgHistoryItemInfo.SelectedObject = historyItem;
         }
 
         private void UpdatePictureBox()
@@ -355,6 +352,11 @@ namespace ShareX.HistoryLib
             sb.Append(string.Join(Environment.NewLine, hosts));
 
             return sb.ToString();
+        }
+
+        private void ShowMoreInfo(HistoryItem historyItem)
+        {
+            scHistoryItemInfo.Panel2Collapsed = !scHistoryItemInfo.Panel2Collapsed;
         }
 
         #region Form events
@@ -530,12 +532,6 @@ namespace ShareX.HistoryLib
                 DataObject data = new DataObject(DataFormats.FileDrop, selection.ToArray());
                 DoDragDrop(data, DragDropEffects.Copy);
             }
-        }
-
-        private void ShowMoreInfo(HistoryItem historyItem)
-        {
-            pgHistoryItemInfo.SelectedObject = historyItem;
-            scHistoryItemInfo.Panel2Collapsed = false;
         }
 
         #endregion Form events
