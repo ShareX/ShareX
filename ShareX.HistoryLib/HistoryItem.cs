@@ -23,8 +23,10 @@
 
 #endregion License Information (GPL v3)
 
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace ShareX.HistoryLib
 {
@@ -39,6 +41,14 @@ namespace ShareX.HistoryLib
         public string ThumbnailURL { get; set; }
         public string DeletionURL { get; set; }
         public string ShortenedURL { get; set; }
+
+        [Browsable(false)]
         public Dictionary<string, string> Tags { get; set; }
+
+        [JsonIgnore, DisplayName("Tags[WindowTitle]")]
+        public string TagsWindowTitle => Tags?["WindowTitle"];
+
+        [JsonIgnore, DisplayName("Tags[ProcessName]")]
+        public string TagsProcessName => Tags?["ProcessName"];
     }
 }
