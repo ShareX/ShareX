@@ -50,11 +50,13 @@ namespace ShareX.HistoryLib
         public bool IsTextFile { get; private set; }
 
         private Action<string> uploadFile, editImage;
+        private Action<HistoryItem> showMoreInfo;
 
-        public HistoryItemManager(Action<string> uploadFile, Action<string> editImage)
+        public HistoryItemManager(Action<string> uploadFile, Action<string> editImage, Action<HistoryItem> showMoreInfo = null)
         {
             this.uploadFile = uploadFile;
             this.editImage = editImage;
+            this.showMoreInfo = showMoreInfo;
 
             InitializeComponent();
         }
@@ -518,7 +520,14 @@ namespace ShareX.HistoryLib
 
         public void ShowMoreInfo()
         {
-            new HistoryItemInfoForm(HistoryItem).Show();
+            if (showMoreInfo != null)
+            {
+                showMoreInfo(HistoryItem);
+            }
+            else
+            {
+                new HistoryItemInfoForm(HistoryItem).Show();
+            }
         }
     }
 }

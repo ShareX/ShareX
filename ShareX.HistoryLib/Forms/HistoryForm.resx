@@ -954,6 +954,18 @@
   <data name="scMain.Panel1MinSize" type="System.Int32, mscorlib">
     <value>100</value>
   </data>
+  <data name="scHistoryItemInfo.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="scHistoryItemInfo.IsSplitterFixed" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="scHistoryItemInfo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="scHistoryItemInfo.Orientation" type="System.Windows.Forms.Orientation, System.Windows.Forms">
+    <value>Horizontal</value>
+  </data>
   <data name="pbThumbnail.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
@@ -961,7 +973,7 @@
     <value>0, 0</value>
   </data>
   <data name="pbThumbnail.Size" type="System.Drawing.Size, System.Drawing">
-    <value>628, 661</value>
+    <value>627, 475</value>
   </data>
   <data name="pbThumbnail.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -973,9 +985,84 @@
     <value>ShareX.HelpersLib.MyPictureBox, ShareX.HelpersLib, Version=13.5.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;pbThumbnail.Parent" xml:space="preserve">
-    <value>scMain.Panel2</value>
+    <value>scHistoryItemInfo.Panel1</value>
   </data>
   <data name="&gt;&gt;pbThumbnail.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;scHistoryItemInfo.Panel1.Name" xml:space="preserve">
+    <value>scHistoryItemInfo.Panel1</value>
+  </data>
+  <data name="&gt;&gt;scHistoryItemInfo.Panel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;scHistoryItemInfo.Panel1.Parent" xml:space="preserve">
+    <value>scHistoryItemInfo</value>
+  </data>
+  <data name="&gt;&gt;scHistoryItemInfo.Panel1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="pgHistoryItemInfo.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="pgHistoryItemInfo.HelpVisible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="pgHistoryItemInfo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="pgHistoryItemInfo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>627, 179</value>
+  </data>
+  <data name="pgHistoryItemInfo.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;pgHistoryItemInfo.Name" xml:space="preserve">
+    <value>pgHistoryItemInfo</value>
+  </data>
+  <data name="&gt;&gt;pgHistoryItemInfo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PropertyGrid, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pgHistoryItemInfo.Parent" xml:space="preserve">
+    <value>scHistoryItemInfo.Panel2</value>
+  </data>
+  <data name="&gt;&gt;pgHistoryItemInfo.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;scHistoryItemInfo.Panel2.Name" xml:space="preserve">
+    <value>scHistoryItemInfo.Panel2</value>
+  </data>
+  <data name="&gt;&gt;scHistoryItemInfo.Panel2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;scHistoryItemInfo.Panel2.Parent" xml:space="preserve">
+    <value>scHistoryItemInfo</value>
+  </data>
+  <data name="&gt;&gt;scHistoryItemInfo.Panel2.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="scHistoryItemInfo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>627, 661</value>
+  </data>
+  <data name="scHistoryItemInfo.SplitterDistance" type="System.Int32, mscorlib">
+    <value>475</value>
+  </data>
+  <data name="scHistoryItemInfo.SplitterWidth" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="scHistoryItemInfo.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;scHistoryItemInfo.Name" xml:space="preserve">
+    <value>scHistoryItemInfo</value>
+  </data>
+  <data name="&gt;&gt;scHistoryItemInfo.Type" xml:space="preserve">
+    <value>ShareX.HelpersLib.SplitContainerCustomSplitter, ShareX.HelpersLib, Version=13.5.1.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;scHistoryItemInfo.Parent" xml:space="preserve">
+    <value>scMain.Panel2</value>
+  </data>
+  <data name="&gt;&gt;scHistoryItemInfo.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="&gt;&gt;scMain.Panel2.Name" xml:space="preserve">
@@ -1000,7 +1087,7 @@
     <value>550</value>
   </data>
   <data name="scMain.SplitterWidth" type="System.Int32, mscorlib">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="scMain.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>

@@ -65,12 +65,14 @@ namespace ShareX.HistoryLib
             il.Images.Add(Resources.globe);
             lvHistory.SmallImageList = il;
 
-            him = new HistoryItemManager(uploadFile, editImage);
+            him = new HistoryItemManager(uploadFile, editImage, ShowMoreInfo);
             him.GetHistoryItems += him_GetHistoryItems;
             lvHistory.ContextMenuStrip = him.cmsHistory;
 
             pbThumbnail.Reset();
             lvHistory.FillLastColumn();
+            scHistoryItemInfo.SplitterWidth = 7; // Because of bug must be assigned here again
+            scHistoryItemInfo.Panel2Collapsed = true;
 
             if (Settings.RememberSearchText)
             {
@@ -281,6 +283,11 @@ namespace ShareX.HistoryLib
             else if (historyItem != previousHistoryItem)
             {
                 UpdatePictureBox();
+            }
+
+            if (!scHistoryItemInfo.Panel2Collapsed)
+            {
+                pgHistoryItemInfo.SelectedObject = historyItem;
             }
         }
 
@@ -523,6 +530,12 @@ namespace ShareX.HistoryLib
                 DataObject data = new DataObject(DataFormats.FileDrop, selection.ToArray());
                 DoDragDrop(data, DragDropEffects.Copy);
             }
+        }
+
+        private void ShowMoreInfo(HistoryItem historyItem)
+        {
+            pgHistoryItemInfo.SelectedObject = historyItem;
+            scHistoryItemInfo.Panel2Collapsed = false;
         }
 
         #endregion Form events

@@ -63,6 +63,8 @@
             this.tsbSettings = new System.Windows.Forms.ToolStripButton();
             this.scMain = new ShareX.HelpersLib.SplitContainerCustomSplitter();
             this.pbThumbnail = new ShareX.HelpersLib.MyPictureBox();
+            this.pgHistoryItemInfo = new System.Windows.Forms.PropertyGrid();
+            this.scHistoryItemInfo = new ShareX.HelpersLib.SplitContainerCustomSplitter();
             this.tscHistory.ContentPanel.SuspendLayout();
             this.tscHistory.TopToolStripPanel.SuspendLayout();
             this.tscHistory.SuspendLayout();
@@ -72,6 +74,10 @@
             this.scMain.Panel1.SuspendLayout();
             this.scMain.Panel2.SuspendLayout();
             this.scMain.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.scHistoryItemInfo)).BeginInit();
+            this.scHistoryItemInfo.Panel1.SuspendLayout();
+            this.scHistoryItemInfo.Panel2.SuspendLayout();
+            this.scHistoryItemInfo.SuspendLayout();
             this.SuspendLayout();
             // 
             // tscHistory
@@ -315,7 +321,7 @@
             // 
             // scMain.Panel2
             // 
-            this.scMain.Panel2.Controls.Add(this.pbThumbnail);
+            this.scMain.Panel2.Controls.Add(this.scHistoryItemInfo);
             this.scMain.SplitterColor = System.Drawing.Color.White;
             this.scMain.SplitterLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(189)))), ((int)(((byte)(189)))));
             // 
@@ -328,6 +334,29 @@
             this.pbThumbnail.Name = "pbThumbnail";
             this.pbThumbnail.PictureBoxBackColor = System.Drawing.SystemColors.Control;
             this.pbThumbnail.ShowImageSizeLabel = true;
+            // 
+            // pgHistoryItemInfo
+            // 
+            resources.ApplyResources(this.pgHistoryItemInfo, "pgHistoryItemInfo");
+            this.pgHistoryItemInfo.Name = "pgHistoryItemInfo";
+            this.pgHistoryItemInfo.PropertySort = System.Windows.Forms.PropertySort.NoSort;
+            this.pgHistoryItemInfo.ToolbarVisible = false;
+            // 
+            // scHistoryItemInfo
+            // 
+            resources.ApplyResources(this.scHistoryItemInfo, "scHistoryItemInfo");
+            this.scHistoryItemInfo.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
+            this.scHistoryItemInfo.Name = "scHistoryItemInfo";
+            // 
+            // scHistoryItemInfo.Panel1
+            // 
+            this.scHistoryItemInfo.Panel1.Controls.Add(this.pbThumbnail);
+            // 
+            // scHistoryItemInfo.Panel2
+            // 
+            this.scHistoryItemInfo.Panel2.Controls.Add(this.pgHistoryItemInfo);
+            this.scHistoryItemInfo.SplitterColor = System.Drawing.Color.White;
+            this.scHistoryItemInfo.SplitterLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(189)))), ((int)(((byte)(189)))));
             // 
             // HistoryForm
             // 
@@ -354,6 +383,10 @@
             this.scMain.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.scMain)).EndInit();
             this.scMain.ResumeLayout(false);
+            this.scHistoryItemInfo.Panel1.ResumeLayout(false);
+            this.scHistoryItemInfo.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.scHistoryItemInfo)).EndInit();
+            this.scHistoryItemInfo.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -393,5 +426,7 @@
         private System.Windows.Forms.Button btnAdvancedSearchReset;
         private System.Windows.Forms.ToolStripButton tsbCopyStats;
         private System.Windows.Forms.ToolStripSeparator tss2;
+        private System.Windows.Forms.PropertyGrid pgHistoryItemInfo;
+        private HelpersLib.SplitContainerCustomSplitter scHistoryItemInfo;
     }
 }
