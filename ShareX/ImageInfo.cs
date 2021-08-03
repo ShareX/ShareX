@@ -32,8 +32,34 @@ namespace ShareX
     public class ImageInfo : IDisposable
     {
         public Bitmap Image { get; set; }
-        public string WindowTitle { get; set; }
-        public string ProcessName { get; set; }
+
+        private string windowTitle;
+
+        public string WindowTitle
+        {
+            get
+            {
+                return windowTitle;
+            }
+            set
+            {
+                windowTitle = value.Truncate(255);
+            }
+        }
+
+        private string processName;
+
+        public string ProcessName
+        {
+            get
+            {
+                return processName;
+            }
+            set
+            {
+                processName = value.Truncate(255);
+            }
+        }
 
         public ImageInfo()
         {

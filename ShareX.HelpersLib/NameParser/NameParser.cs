@@ -84,9 +84,9 @@ namespace ShareX.HelpersLib
             if (WindowText != null)
             {
                 string windowText = WindowText.Trim().Replace(' ', '_');
-                if (MaxTitleLength > 0 && windowText.Length > MaxTitleLength)
+                if (MaxTitleLength > 0)
                 {
-                    windowText = windowText.Remove(MaxTitleLength);
+                    windowText = windowText.Truncate(MaxTitleLength);
                 }
                 sb.Replace(CodeMenuEntryFilename.t.ToPrefixString(), windowText);
             }
@@ -322,9 +322,9 @@ namespace ShareX.HelpersLib
                 result = Helpers.GetValidURL(result);
             }
 
-            if (MaxNameLength > 0 && result.Length > MaxNameLength)
+            if (MaxNameLength > 0)
             {
-                result = result.Remove(MaxNameLength);
+                result = result.Truncate(MaxNameLength);
             }
 
             return result;
