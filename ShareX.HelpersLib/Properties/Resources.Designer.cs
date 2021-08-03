@@ -2861,11 +2861,11 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Target.
+        ///   Looks up a localized string similar to Window.
         /// </summary>
-        internal static string ReplCodeMenuCategory_Target {
+        internal static string ReplCodeMenuCategory_Window {
             get {
-                return ResourceManager.GetString("ReplCodeMenuCategory_Target", resourceCulture);
+                return ResourceManager.GetString("ReplCodeMenuCategory_Window", resourceCulture);
             }
         }
         

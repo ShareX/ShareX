@@ -554,8 +554,8 @@ Would you like to download it?</value>
   <data name="ObjectListView_ObjectListView_Name" xml:space="preserve">
     <value>Name</value>
   </data>
-  <data name="ReplCodeMenuCategory_Target" xml:space="preserve">
-    <value>Target</value>
+  <data name="ReplCodeMenuCategory_Window" xml:space="preserve">
+    <value>Window</value>
   </data>
   <data name="HotkeyType_Ruler" xml:space="preserve">
     <value>Ruler</value>
