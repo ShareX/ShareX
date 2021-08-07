@@ -65,7 +65,7 @@ namespace ShareX.HistoryLib
             il.Images.Add(Resources.globe);
             lvHistory.SmallImageList = il;
 
-            him = new HistoryItemManager(uploadFile, editImage, ShowMoreInfo);
+            him = new HistoryItemManager(uploadFile, editImage, true);
             him.GetHistoryItems += him_GetHistoryItems;
             lvHistory.ContextMenuStrip = him.cmsHistory;
 
@@ -354,11 +354,6 @@ namespace ShareX.HistoryLib
             return sb.ToString();
         }
 
-        private void ShowMoreInfo(HistoryItem historyItem)
-        {
-            scHistoryItemInfo.Panel2Collapsed = !scHistoryItemInfo.Panel2Collapsed;
-        }
-
         #region Form events
 
         private void HistoryForm_Shown(object sender, EventArgs e)
@@ -429,6 +424,11 @@ namespace ShareX.HistoryLib
         private void tsbAdvancedSearch_Click(object sender, EventArgs e)
         {
             gbAdvancedSearch.Visible = !gbAdvancedSearch.Visible;
+        }
+
+        private void tsbToggleMoreInfo_Click(object sender, EventArgs e)
+        {
+            scHistoryItemInfo.Panel2Collapsed = !scHistoryItemInfo.Panel2Collapsed;
         }
 
         private void tsbCopyStats_Click(object sender, EventArgs e)

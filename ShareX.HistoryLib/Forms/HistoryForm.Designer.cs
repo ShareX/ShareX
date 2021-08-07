@@ -61,10 +61,11 @@
             this.tsbCopyStats = new System.Windows.Forms.ToolStripButton();
             this.tss2 = new System.Windows.Forms.ToolStripSeparator();
             this.tsbSettings = new System.Windows.Forms.ToolStripButton();
+            this.tsbToggleMoreInfo = new System.Windows.Forms.ToolStripButton();
             this.scMain = new ShareX.HelpersLib.SplitContainerCustomSplitter();
+            this.scHistoryItemInfo = new ShareX.HelpersLib.SplitContainerCustomSplitter();
             this.pbThumbnail = new ShareX.HelpersLib.MyPictureBox();
             this.pgHistoryItemInfo = new System.Windows.Forms.PropertyGrid();
-            this.scHistoryItemInfo = new ShareX.HelpersLib.SplitContainerCustomSplitter();
             this.tscHistory.ContentPanel.SuspendLayout();
             this.tscHistory.TopToolStripPanel.SuspendLayout();
             this.tscHistory.SuspendLayout();
@@ -250,6 +251,7 @@
             this.tsbSearch,
             this.tsbAdvancedSearch,
             this.tss1,
+            this.tsbToggleMoreInfo,
             this.tsbCopyStats,
             this.tss2,
             this.tsbSettings});
@@ -309,6 +311,14 @@
             this.tsbSettings.Name = "tsbSettings";
             this.tsbSettings.Click += new System.EventHandler(this.tsbSettings_Click);
             // 
+            // tsbToggleMoreInfo
+            // 
+            this.tsbToggleMoreInfo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbToggleMoreInfo.Image = global::ShareX.HistoryLib.Properties.Resources.layout_header_3_mix;
+            resources.ApplyResources(this.tsbToggleMoreInfo, "tsbToggleMoreInfo");
+            this.tsbToggleMoreInfo.Name = "tsbToggleMoreInfo";
+            this.tsbToggleMoreInfo.Click += new System.EventHandler(this.tsbToggleMoreInfo_Click);
+            // 
             // scMain
             // 
             resources.ApplyResources(this.scMain, "scMain");
@@ -324,6 +334,22 @@
             this.scMain.Panel2.Controls.Add(this.scHistoryItemInfo);
             this.scMain.SplitterColor = System.Drawing.Color.White;
             this.scMain.SplitterLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(189)))), ((int)(((byte)(189)))));
+            // 
+            // scHistoryItemInfo
+            // 
+            resources.ApplyResources(this.scHistoryItemInfo, "scHistoryItemInfo");
+            this.scHistoryItemInfo.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
+            this.scHistoryItemInfo.Name = "scHistoryItemInfo";
+            // 
+            // scHistoryItemInfo.Panel1
+            // 
+            this.scHistoryItemInfo.Panel1.Controls.Add(this.pbThumbnail);
+            // 
+            // scHistoryItemInfo.Panel2
+            // 
+            this.scHistoryItemInfo.Panel2.Controls.Add(this.pgHistoryItemInfo);
+            this.scHistoryItemInfo.SplitterColor = System.Drawing.Color.White;
+            this.scHistoryItemInfo.SplitterLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(189)))), ((int)(((byte)(189)))));
             // 
             // pbThumbnail
             // 
@@ -341,22 +367,6 @@
             this.pgHistoryItemInfo.Name = "pgHistoryItemInfo";
             this.pgHistoryItemInfo.PropertySort = System.Windows.Forms.PropertySort.NoSort;
             this.pgHistoryItemInfo.ToolbarVisible = false;
-            // 
-            // scHistoryItemInfo
-            // 
-            resources.ApplyResources(this.scHistoryItemInfo, "scHistoryItemInfo");
-            this.scHistoryItemInfo.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
-            this.scHistoryItemInfo.Name = "scHistoryItemInfo";
-            // 
-            // scHistoryItemInfo.Panel1
-            // 
-            this.scHistoryItemInfo.Panel1.Controls.Add(this.pbThumbnail);
-            // 
-            // scHistoryItemInfo.Panel2
-            // 
-            this.scHistoryItemInfo.Panel2.Controls.Add(this.pgHistoryItemInfo);
-            this.scHistoryItemInfo.SplitterColor = System.Drawing.Color.White;
-            this.scHistoryItemInfo.SplitterLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(189)))), ((int)(((byte)(189)))));
             // 
             // HistoryForm
             // 
@@ -428,5 +438,6 @@
         private System.Windows.Forms.ToolStripSeparator tss2;
         private System.Windows.Forms.PropertyGrid pgHistoryItemInfo;
         private HelpersLib.SplitContainerCustomSplitter scHistoryItemInfo;
+        private System.Windows.Forms.ToolStripButton tsbToggleMoreInfo;
     }
 }
