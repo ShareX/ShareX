@@ -445,12 +445,17 @@ namespace ShareX.HistoryLib
 
         private void tsbSettings_Click(object sender, EventArgs e)
         {
+            int maxItemCount = Settings.MaxItemCount;
+
             using (HistorySettingsForm form = new HistorySettingsForm(Settings))
             {
                 form.ShowDialog();
             }
 
-            RefreshHistoryItems();
+            if (maxItemCount != Settings.MaxItemCount)
+            {
+                RefreshHistoryItems();
+            }
         }
 
         private void txtFilenameFilter_KeyDown(object sender, KeyEventArgs e)
