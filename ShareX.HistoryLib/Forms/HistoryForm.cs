@@ -423,12 +423,16 @@ namespace ShareX.HistoryLib
 
         private void tsbAdvancedSearch_Click(object sender, EventArgs e)
         {
-            gbAdvancedSearch.Visible = !gbAdvancedSearch.Visible;
+            bool isPanelVisible = gbAdvancedSearch.Visible;
+            gbAdvancedSearch.Visible = !isPanelVisible;
+            tsbAdvancedSearch.Checked = !isPanelVisible;
         }
 
         private void tsbToggleMoreInfo_Click(object sender, EventArgs e)
         {
-            scHistoryItemInfo.Panel2Collapsed = !scHistoryItemInfo.Panel2Collapsed;
+            bool isPanelVisible = !scHistoryItemInfo.Panel2Collapsed;
+            scHistoryItemInfo.Panel2Collapsed = isPanelVisible;
+            tsbToggleMoreInfo.Checked = !isPanelVisible;
         }
 
         private void tsbCopyStats_Click(object sender, EventArgs e)
@@ -472,6 +476,7 @@ namespace ShareX.HistoryLib
         private void btnAdvancedSearch_Click(object sender, EventArgs e)
         {
             gbAdvancedSearch.Visible = false;
+            tsbAdvancedSearch.Checked = false;
             ApplyFilterAdvanced();
         }
 
