@@ -25,6 +25,7 @@
 
 using Manina.Windows.Forms;
 using ShareX.HelpersLib;
+using ShareX.HistoryLib.Properties;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -74,6 +75,8 @@ namespace ShareX.HistoryLib
             ilvImages.ContextMenuStrip = him.cmsHistory;
 
             defaultTitle = Text;
+
+            tstbSearch.TextBox.HandleCreated += (sender, e) => tstbSearch.TextBox.SetWatermark(Resources.HistoryForm_Search_Watermark, true);
 
             if (Settings.RememberSearchText)
             {

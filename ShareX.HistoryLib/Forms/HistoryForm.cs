@@ -74,6 +74,8 @@ namespace ShareX.HistoryLib
             scHistoryItemInfo.SplitterWidth = 7; // Because of bug must be assigned here again
             scHistoryItemInfo.Panel2Collapsed = true;
 
+            tstbSearch.TextBox.HandleCreated += (sender, e) => tstbSearch.TextBox.SetWatermark(Resources.HistoryForm_Search_Watermark, true);
+
             if (Settings.RememberSearchText)
             {
                 tstbSearch.Text = Settings.SearchText;

@@ -110,6 +110,15 @@ namespace ShareX.HistoryLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to File name, window title, process name etc..
+        /// </summary>
+        internal static string HistoryForm_Search_Watermark {
+            get {
+                return ResourceManager.GetString("HistoryForm_Search_Watermark", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Filtered: {0}.
         /// </summary>
         internal static string HistoryForm_UpdateItemCount___Filtered___0_ {
