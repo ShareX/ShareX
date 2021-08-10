@@ -40,18 +40,11 @@ namespace ShareX.HistoryLib
             ShareXResources.ApplyTheme(this);
 
             Settings = settings;
-            cbViewMode.Items.AddRange(Enum.GetNames(typeof(Manina.Windows.Forms.View)));
-            cbViewMode.SelectedIndex = Settings.ViewMode;
             nudThumbnailSize.SetValue(Settings.ThumbnailSize.Width);
             nudMaximumImageLimit.SetValue(Settings.MaxItemCount);
             cbFilterMissingFiles.Checked = Settings.FilterMissingFiles;
             cbRememberSearchText.Checked = Settings.RememberSearchText;
             cbRememberWindowState.Checked = Settings.RememberWindowState;
-        }
-
-        private void cbViewMode_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            Settings.ViewMode = cbViewMode.SelectedIndex;
         }
 
         private void nudThumbnailSize_ValueChanged(object sender, EventArgs e)

@@ -33,7 +33,6 @@ using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
-using View = Manina.Windows.Forms.View;
 
 namespace ShareX.HistoryLib
 {
@@ -55,7 +54,6 @@ namespace ShareX.HistoryLib
             HistoryPath = historyPath;
             Settings = settings;
 
-            ilvImages.View = (View)Settings.ViewMode;
             ilvImages.ThumbnailSize = Settings.ThumbnailSize;
 
             if (ShareXResources.UseCustomTheme)
@@ -237,7 +235,6 @@ namespace ShareX.HistoryLib
                 form.ShowDialog();
             }
 
-            ilvImages.View = (View)Settings.ViewMode;
             ilvImages.ThumbnailSize = Settings.ThumbnailSize;
             RefreshHistoryItems();
         }

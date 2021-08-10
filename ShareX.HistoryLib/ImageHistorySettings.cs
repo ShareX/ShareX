@@ -32,7 +32,6 @@ namespace ShareX.HistoryLib
     {
         public bool RememberWindowState { get; set; } = true;
         public WindowState WindowState { get; set; } = new WindowState();
-        public int ViewMode { get; set; } = 3;
         public Size ThumbnailSize { get; set; } = new Size(150, 150);
         public int MaxItemCount { get; set; } = 250;
         public bool FilterMissingFiles { get; set; } = false;

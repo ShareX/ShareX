@@ -29,10 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ImageHistorySettingsForm));
-            this.lblViewMode = new System.Windows.Forms.Label();
             this.lblThumbnailSize = new System.Windows.Forms.Label();
             this.lblMaximumImageLimit = new System.Windows.Forms.Label();
-            this.cbViewMode = new System.Windows.Forms.ComboBox();
             this.nudThumbnailSize = new System.Windows.Forms.NumericUpDown();
             this.nudMaximumImageLimit = new System.Windows.Forms.NumericUpDown();
             this.lblThumbnailSizeUnit = new System.Windows.Forms.Label();
@@ -43,11 +41,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudMaximumImageLimit)).BeginInit();
             this.SuspendLayout();
             // 
-            // lblViewMode
-            // 
-            resources.ApplyResources(this.lblViewMode, "lblViewMode");
-            this.lblViewMode.Name = "lblViewMode";
-            // 
             // lblThumbnailSize
             // 
             resources.ApplyResources(this.lblThumbnailSize, "lblThumbnailSize");
@@ -57,14 +50,6 @@
             // 
             resources.ApplyResources(this.lblMaximumImageLimit, "lblMaximumImageLimit");
             this.lblMaximumImageLimit.Name = "lblMaximumImageLimit";
-            // 
-            // cbViewMode
-            // 
-            this.cbViewMode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbViewMode.FormattingEnabled = true;
-            resources.ApplyResources(this.cbViewMode, "cbViewMode");
-            this.cbViewMode.Name = "cbViewMode";
-            this.cbViewMode.SelectedIndexChanged += new System.EventHandler(this.cbViewMode_SelectedIndexChanged);
             // 
             // nudThumbnailSize
             // 
@@ -81,7 +66,7 @@
             0});
             this.nudThumbnailSize.Name = "nudThumbnailSize";
             this.nudThumbnailSize.Value = new decimal(new int[] {
-            50,
+            100,
             0,
             0,
             0});
@@ -135,10 +120,8 @@
             this.Controls.Add(this.lblThumbnailSizeUnit);
             this.Controls.Add(this.nudMaximumImageLimit);
             this.Controls.Add(this.nudThumbnailSize);
-            this.Controls.Add(this.cbViewMode);
             this.Controls.Add(this.lblMaximumImageLimit);
             this.Controls.Add(this.lblThumbnailSize);
-            this.Controls.Add(this.lblViewMode);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "ImageHistorySettingsForm";
@@ -150,11 +133,8 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label lblViewMode;
         private System.Windows.Forms.Label lblThumbnailSize;
         private System.Windows.Forms.Label lblMaximumImageLimit;
-        private System.Windows.Forms.ComboBox cbViewMode;
         private System.Windows.Forms.NumericUpDown nudThumbnailSize;
         private System.Windows.Forms.NumericUpDown nudMaximumImageLimit;
         private System.Windows.Forms.Label lblThumbnailSizeUnit;
