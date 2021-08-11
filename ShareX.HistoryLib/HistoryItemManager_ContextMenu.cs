@@ -152,6 +152,7 @@ namespace ShareX.HistoryLib
             // tsmiOpenURL
             //
             tsmiOpenURL.Name = "tsmiOpenURL";
+            tsmiOpenURL.ShortcutKeyDisplayString = "Enter";
             tsmiOpenURL.Size = new Size(156, 22);
             tsmiOpenURL.Text = Resources.HistoryItemManager_InitializeComponent_URL;
             tsmiOpenURL.Click += tsmiOpenURL_Click;
@@ -185,6 +186,7 @@ namespace ShareX.HistoryLib
             // tsmiOpenFile
             //
             tsmiOpenFile.Name = "tsmiOpenFile";
+            tsmiOpenFile.ShortcutKeyDisplayString = "Ctrl+Enter";
             tsmiOpenFile.Size = new Size(156, 22);
             tsmiOpenFile.Text = Resources.HistoryItemManager_InitializeComponent_File;
             tsmiOpenFile.Click += tsmiOpenFile_Click;
@@ -192,6 +194,7 @@ namespace ShareX.HistoryLib
             // tsmiOpenFolder
             //
             tsmiOpenFolder.Name = "tsmiOpenFolder";
+            tsmiOpenFolder.ShortcutKeyDisplayString = "Shift+Enter";
             tsmiOpenFolder.Size = new Size(156, 22);
             tsmiOpenFolder.Text = Resources.HistoryItemManager_InitializeComponent_Folder;
             tsmiOpenFolder.Click += tsmiOpenFolder_Click;
@@ -233,6 +236,7 @@ namespace ShareX.HistoryLib
             // tsmiCopyURL
             //
             tsmiCopyURL.Name = "tsmiCopyURL";
+            tsmiCopyURL.ShortcutKeyDisplayString = "Ctrl+C";
             tsmiCopyURL.Size = new Size(233, 22);
             tsmiCopyURL.Text = Resources.HistoryItemManager_InitializeComponent_URL;
             tsmiCopyURL.Click += tsmiCopyURL_Click;
@@ -266,6 +270,7 @@ namespace ShareX.HistoryLib
             // tsmiCopyFile
             //
             tsmiCopyFile.Name = "tsmiCopyFile";
+            tsmiCopyFile.ShortcutKeyDisplayString = "Shift+C";
             tsmiCopyFile.Size = new Size(233, 22);
             tsmiCopyFile.Text = Resources.HistoryItemManager_InitializeComponent_File;
             tsmiCopyFile.Click += tsmiCopyFile_Click;
@@ -273,6 +278,7 @@ namespace ShareX.HistoryLib
             // tsmiCopyImage
             //
             tsmiCopyImage.Name = "tsmiCopyImage";
+            tsmiCopyImage.ShortcutKeyDisplayString = "Alt+C";
             tsmiCopyImage.Size = new Size(233, 22);
             tsmiCopyImage.Text = Resources.HistoryItemManager_InitializeComponent_Image;
             tsmiCopyImage.Click += tsmiCopyImage_Click;
@@ -370,6 +376,7 @@ namespace ShareX.HistoryLib
             // tsmiCopyFilePath
             //
             tsmiCopyFilePath.Name = "tsmiCopyFilePath";
+            tsmiCopyFilePath.ShortcutKeyDisplayString = "Ctrl+Shift+C";
             tsmiCopyFilePath.Size = new Size(233, 22);
             tsmiCopyFilePath.Text = Resources.HistoryItemManager_InitializeComponent_File_path;
             tsmiCopyFilePath.Click += tsmiCopyFilePath_Click;
@@ -412,6 +419,7 @@ namespace ShareX.HistoryLib
             // tsmiUploadFile
             //
             tsmiUploadFile.Name = "tsmiUploadFile";
+            tsmiUploadFile.ShortcutKeyDisplayString = "Ctrl+U";
             tsmiUploadFile.Size = new Size(127, 22);
             tsmiUploadFile.Text = Resources.HistoryItemManager_InitializeComponent_UploadFile;
             tsmiUploadFile.Click += tsmiUploadFile_Click;
@@ -419,6 +427,7 @@ namespace ShareX.HistoryLib
             // tsmiEditImage
             //
             tsmiEditImage.Name = "tsmiEditImage";
+            tsmiEditImage.ShortcutKeyDisplayString = "Ctrl+E";
             tsmiEditImage.Size = new Size(127, 22);
             tsmiEditImage.Text = Resources.HistoryItemManager_InitializeComponent_EditImage;
             tsmiEditImage.Click += tsmiEditImage_Click;
