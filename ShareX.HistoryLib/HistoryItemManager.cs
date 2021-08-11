@@ -61,6 +61,8 @@ namespace ShareX.HistoryLib
 
             tsmiOpen.HideImageMargin();
             tsmiCopy.HideImageMargin();
+            tsmiUploadFile.Visible = uploadFile != null;
+            tsmiEditImage.Visible = editImage != null;
             tsmiShowMoreInfo.Visible = !hideShowMoreInfoButton;
         }
 
