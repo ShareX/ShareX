@@ -59,6 +59,8 @@ namespace ShareX.HistoryLib
 
             InitializeComponent();
 
+            tsmiOpen.HideImageMargin();
+            tsmiCopy.HideImageMargin();
             tsmiShowMoreInfo.Visible = !hideShowMoreInfoButton;
         }
 
