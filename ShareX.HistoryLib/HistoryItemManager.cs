@@ -27,6 +27,7 @@ using ShareX.HelpersLib;
 using System;
 using System.IO;
 using System.Linq;
+using System.Windows.Forms;
 
 namespace ShareX.HistoryLib
 {
@@ -105,6 +106,35 @@ namespace ShareX.HistoryLib
             }
 
             return null;
+        }
+
+        public bool HandleKeyInput(KeyEventArgs e)
+        {
+            switch (e.KeyData)
+            {
+                default:
+                    return false;
+                case Keys.Enter:
+                    TryOpen();
+                    break;
+                case Keys.Control | Keys.Enter:
+                    OpenFile();
+                    break;
+                case Keys.Control | Keys.C:
+                    CopyURL();
+                    break;
+                case Keys.Shift | Keys.C:
+                    CopyFile();
+                    break;
+                case Keys.Alt | Keys.C:
+                    CopyImage();
+                    break;
+                case Keys.Control | Keys.E:
+                    EditImage();
+                    break;
+            }
+
+            return true;
         }
 
         public void OpenURL()

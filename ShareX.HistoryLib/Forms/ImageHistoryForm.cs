@@ -241,22 +241,7 @@ namespace ShareX.HistoryLib
 
         private void ilvImages_KeyDown(object sender, KeyEventArgs e)
         {
-            switch (e.KeyData)
-            {
-                default:
-                    return;
-                case Keys.Enter:
-                    him.OpenURL();
-                    break;
-                case Keys.Control | Keys.Enter:
-                    him.OpenFile();
-                    break;
-                case Keys.Control | Keys.C:
-                    him.CopyURL();
-                    break;
-            }
-
-            e.Handled = true;
+            e.Handled = e.SuppressKeyPress = him.HandleKeyInput(e);
         }
 
         #endregion Form events
