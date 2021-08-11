@@ -46,9 +46,31 @@ namespace ShareX.HistoryLib
         public Dictionary<string, string> Tags { get; set; }
 
         [JsonIgnore, DisplayName("Tags[WindowTitle]")]
-        public string TagsWindowTitle => Tags?["WindowTitle"];
+        public string TagsWindowTitle
+        {
+            get
+            {
+                if (Tags != null && Tags.TryGetValue("WindowTitle", out string value))
+                {
+                    return value;
+                }
+
+                return null;
+            }
+        }
 
         [JsonIgnore, DisplayName("Tags[ProcessName]")]
-        public string TagsProcessName => Tags?["ProcessName"];
+        public string TagsProcessName
+        {
+            get
+            {
+                if (Tags != null && Tags.TryGetValue("ProcessName", out string value))
+                {
+                    return value;
+                }
+
+                return null;
+            }
+        }
     }
 }
