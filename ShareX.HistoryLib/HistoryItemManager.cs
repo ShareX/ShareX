@@ -120,6 +120,9 @@ namespace ShareX.HistoryLib
                 case Keys.Control | Keys.Enter:
                     OpenFile();
                     break;
+                case Keys.Shift | Keys.Enter:
+                    OpenFolder();
+                    break;
                 case Keys.Control | Keys.C:
                     CopyURL();
                     break;
@@ -128,6 +131,12 @@ namespace ShareX.HistoryLib
                     break;
                 case Keys.Alt | Keys.C:
                     CopyImage();
+                    break;
+                case Keys.Control | Keys.Shift | Keys.C:
+                    CopyFilePath();
+                    break;
+                case Keys.Control | Keys.U:
+                    UploadFile();
                     break;
                 case Keys.Control | Keys.E:
                     EditImage();
