@@ -48,8 +48,6 @@ WizardImageFile=WizardImageFile.bmp
 WizardImageStretch=no
 WizardSmallImageFile=WizardSmallImageFile.bmp
 
-#include "Scripts\lang\english.iss"
-
 [Tasks]
 Name: "CreateDesktopIcon"; Description: "Create a desktop shortcut"; GroupDescription: "Additional shortcuts:"; Check: not IsUpdating and not DesktopIconExists
 Name: "CreateContextMenuButton"; Description: "Show ""Upload with ShareX"" button in Windows Explorer context menu"; GroupDescription: "Additional shortcuts:"; Check: not IsUpdating
@@ -110,21 +108,32 @@ Root: "HKCU"; Subkey: "Software\Classes\.sxie"; Flags: dontcreatekey uninsdelete
 Root: "HKCU"; Subkey: "Software\Classes\ShareX.sxie"; Flags: dontcreatekey uninsdeletekey
 Root: "HKCU"; Subkey: "Software\Classes\SystemFileAssociations\image\shell\ShareXImageEditor"; Flags: dontcreatekey uninsdeletekey
 
-[CustomMessages]
-DependenciesDir=Dependencies
-
-#include "Scripts\products.iss"
-#include "Scripts\products\stringversion.iss"
-#include "Scripts\products\winversion.iss"
-#include "Scripts\products\fileversion.iss"
-#include "Scripts\products\dotnetfxversion.iss"
-#include "scripts\products\dotnetfx47.iss"
+#include "CodeDependencies.iss"
 
 [Code]
+procedure InitializeWizard;
+begin
+  Dependency_InitializeWizard;
+end;
+
+function PrepareToInstall(var NeedsRestart: Boolean): String;
+begin
+  Result := Dependency_PrepareToInstall(NeedsRestart);
+end;
+
+function NeedRestart: Boolean;
+begin
+  Result := Dependency_NeedRestart;
+end;
+
+function UpdateReadyMemo(const Space, NewLine, MemoUserInfoInfo, MemoDirInfo, MemoTypeInfo, MemoComponentsInfo, MemoGroupInfo, MemoTasksInfo: String): String;
+begin
+  Result := Dependency_UpdateReadyMemo(Space, NewLine, MemoUserInfoInfo, MemoDirInfo, MemoTypeInfo, MemoComponentsInfo, MemoGroupInfo, MemoTasksInfo);
+end;
+
 function InitializeSetup(): Boolean;
 begin
-  initwinversion();
-  dotnetfx47(72);
+  Dependency_AddDotNet47;
   Result := true;
 end;
 
