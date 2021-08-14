@@ -36,7 +36,6 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Encoder = System.Drawing.Imaging.Encoder;
 
 namespace ShareX.HelpersLib
 {
