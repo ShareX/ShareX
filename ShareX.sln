@@ -133,11 +133,15 @@ Global
 		{1A190E53-1419-4CC2-B0E5-3BC7EA861C8B}.WindowsStoreDebug|Any CPU.ActiveCfg = WindowsStoreDebug|Any CPU
 		{1A190E53-1419-4CC2-B0E5-3BC7EA861C8B}.WindowsStoreDebug|Any CPU.Build.0 = WindowsStoreDebug|Any CPU
 		{7F6ADFC5-2563-4A5F-B202-93B553578719}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F6ADFC5-2563-4A5F-B202-93B553578719}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7F6ADFC5-2563-4A5F-B202-93B553578719}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F6ADFC5-2563-4A5F-B202-93B553578719}.Release|Any CPU.Build.0 = Release|Any CPU
 		{7F6ADFC5-2563-4A5F-B202-93B553578719}.Steam|Any CPU.ActiveCfg = Release|Any CPU
 		{7F6ADFC5-2563-4A5F-B202-93B553578719}.Steam|Any CPU.Build.0 = Release|Any CPU
 		{7F6ADFC5-2563-4A5F-B202-93B553578719}.WindowsStore|Any CPU.ActiveCfg = Release|Any CPU
+		{7F6ADFC5-2563-4A5F-B202-93B553578719}.WindowsStore|Any CPU.Build.0 = Release|Any CPU
 		{7F6ADFC5-2563-4A5F-B202-93B553578719}.WindowsStoreDebug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F6ADFC5-2563-4A5F-B202-93B553578719}.WindowsStoreDebug|Any CPU.Build.0 = Debug|Any CPU
 		{254E398D-F7F5-4B2A-9024-5C121EA6C564}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{254E398D-F7F5-4B2A-9024-5C121EA6C564}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{254E398D-F7F5-4B2A-9024-5C121EA6C564}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -145,7 +149,9 @@ Global
 		{254E398D-F7F5-4B2A-9024-5C121EA6C564}.Steam|Any CPU.ActiveCfg = Release|Any CPU
 		{254E398D-F7F5-4B2A-9024-5C121EA6C564}.Steam|Any CPU.Build.0 = Release|Any CPU
 		{254E398D-F7F5-4B2A-9024-5C121EA6C564}.WindowsStore|Any CPU.ActiveCfg = Release|Any CPU
+		{254E398D-F7F5-4B2A-9024-5C121EA6C564}.WindowsStore|Any CPU.Build.0 = Release|Any CPU
 		{254E398D-F7F5-4B2A-9024-5C121EA6C564}.WindowsStoreDebug|Any CPU.ActiveCfg = Debug|Any CPU
+		{254E398D-F7F5-4B2A-9024-5C121EA6C564}.WindowsStoreDebug|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
