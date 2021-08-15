@@ -107,35 +107,7 @@ Root: "HKCU"; Subkey: "Software\Classes\.sxie"; Flags: dontcreatekey uninsdelete
 Root: "HKCU"; Subkey: "Software\Classes\ShareX.sxie"; Flags: dontcreatekey uninsdeletekey
 Root: "HKCU"; Subkey: "Software\Classes\SystemFileAssociations\image\shell\ShareXImageEditor"; Flags: dontcreatekey uninsdeletekey
 
-#include "CodeDependencies.iss"
-
 [Code]
-procedure InitializeWizard;
-begin
-  Dependency_InitializeWizard;
-end;
-
-function PrepareToInstall(var NeedsRestart: Boolean): String;
-begin
-  Result := Dependency_PrepareToInstall(NeedsRestart);
-end;
-
-function NeedRestart: Boolean;
-begin
-  Result := Dependency_NeedRestart;
-end;
-
-function UpdateReadyMemo(const Space, NewLine, MemoUserInfoInfo, MemoDirInfo, MemoTypeInfo, MemoComponentsInfo, MemoGroupInfo, MemoTasksInfo: String): String;
-begin
-  Result := Dependency_UpdateReadyMemo(Space, NewLine, MemoUserInfoInfo, MemoDirInfo, MemoTypeInfo, MemoComponentsInfo, MemoGroupInfo, MemoTasksInfo);
-end;
-
-function InitializeSetup(): Boolean;
-begin
-  Dependency_AddDotNet48;
-  Result := true;
-end;
-
 function InitializeUninstall(): Boolean;
 var
   ErrorCode: Integer;
