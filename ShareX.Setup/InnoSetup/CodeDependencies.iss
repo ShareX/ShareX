@@ -82,7 +82,7 @@ begin
           try
             Dependency_DownloadPage.Download;
           except
-            if GetExceptionMessage = SetupMessage(msgErrorDownloadAborted) then begin
+            if Dependency_DownloadPage.AbortedByUser then begin
               Result := Dependency_List[DependencyIndex].Title;
               DependencyIndex := DependencyCount;
             end else begin
