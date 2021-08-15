@@ -132,7 +132,7 @@ end;
 
 function InitializeSetup(): Boolean;
 begin
-  Dependency_AddDotNet47;
+  Dependency_AddDotNet48;
   Result := true;
 end;
 
