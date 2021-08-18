@@ -191,6 +191,7 @@ namespace ShareX.ImageEffectsLib
                 typeof(EdgeDetect),
                 typeof(Emboss),
                 typeof(GaussianBlur),
+                typeof(Glow),
                 typeof(MeanRemoval),
                 typeof(Outline),
                 typeof(Pixelate),

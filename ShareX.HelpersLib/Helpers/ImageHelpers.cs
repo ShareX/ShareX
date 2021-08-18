@@ -1012,10 +1012,7 @@ namespace ShareX.HelpersLib
 
                 if (darkness > 1)
                 {
-                    ColorMatrix alphaMatrix = new ColorMatrix();
-                    alphaMatrix.Matrix33 = darkness;
-
-                    Bitmap shadowImage2 = alphaMatrix.Apply(shadowImage);
+                    Bitmap shadowImage2 = ColorMatrixManager.Alpha(darkness).Apply(shadowImage);
                     shadowImage.Dispose();
                     shadowImage = shadowImage2;
                 }
@@ -1036,6 +1033,79 @@ namespace ShareX.HelpersLib
                 if (bmp != null) bmp.Dispose();
                 if (shadowImage != null) shadowImage.Dispose();
             }
+        }
+
+        public static Bitmap AddGlow(Bitmap bmp, int size, float strength, Color color, Point offset, GradientInfo gradient = null)
+        {
+            if (size < 1 || strength < 0.1f)
+            {
+                return bmp;
+            }
+
+            Bitmap glowImage = null;
+
+            try
+            {
+                glowImage = AddCanvas(bmp, new Padding(size));
+                BoxBlur(glowImage, size);
+
+                if (gradient != null && gradient.IsValid)
+                {
+                    Bitmap glowImage2 = CreateGradientMask(glowImage, gradient, strength);
+                    glowImage.Dispose();
+                    glowImage = glowImage2;
+                }
+                else
+                {
+                    Bitmap glowImage2 = ColorMatrixManager.Mask(strength, color).Apply(glowImage);
+                    glowImage.Dispose();
+                    glowImage = glowImage2;
+                }
+
+                Bitmap bmpResult = glowImage.CreateEmptyBitmap(Math.Abs(offset.X), Math.Abs(offset.Y));
+
+                using (Graphics g = Graphics.FromImage(bmpResult))
+                {
+                    g.SetHighQuality();
+                    g.DrawImage(glowImage, Math.Max(0, offset.X), Math.Max(0, offset.Y), glowImage.Width, glowImage.Height);
+                    g.DrawImage(bmp, Math.Max(size, -offset.X + size), Math.Max(size, -offset.Y + size), bmp.Width, bmp.Height);
+                }
+
+                return bmpResult;
+            }
+            finally
+            {
+                if (bmp != null) bmp.Dispose();
+                if (glowImage != null) glowImage.Dispose();
+            }
+        }
+
+        public static Bitmap CreateGradientMask(Bitmap bmp, GradientInfo gradient, float opacity = 1f)
+        {
+            Bitmap mask = bmp.CreateEmptyBitmap();
+
+            if (opacity <= 0)
+            {
+                return mask;
+            }
+
+            gradient.Draw(mask);
+
+            using (UnsafeBitmap sourceBmp = new UnsafeBitmap(bmp, true))
+            using (UnsafeBitmap maskBmp = new UnsafeBitmap(mask, true))
+            {
+                int pixelCount = sourceBmp.PixelCount;
+
+                for (int i = 0; i < pixelCount; i++)
+                {
+                    ColorBgra sourceColor = sourceBmp.GetPixel(i);
+                    ColorBgra maskColor = maskBmp.GetPixel(i);
+                    maskColor.Alpha = (byte)Math.Min(255, sourceColor.Alpha * opacity);
+                    maskBmp.SetPixel(i, maskColor);
+                }
+            }
+
+            return mask;
         }
 
         public static Bitmap Sharpen(Bitmap bmp, double strength)

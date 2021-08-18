@@ -73,7 +73,10 @@ namespace ShareX.HelpersLib
         {
             Graphics g = e.Graphics;
             GradientInfo gradient = (GradientInfo)e.Value;
-            gradient.Draw(g, e.Bounds);
+            if (gradient != null)
+            {
+                gradient.Draw(g, e.Bounds);
+            }
             g.DrawRectangleProper(Pens.Black, e.Bounds);
         }
     }

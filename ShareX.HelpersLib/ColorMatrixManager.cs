@@ -47,10 +47,11 @@ namespace ShareX.HelpersLib
         {
             Bitmap dest = bmp.CreateEmptyBitmap();
             Rectangle destRect = new Rectangle(0, 0, dest.Width, dest.Height);
-            return Apply(matrix, bmp, dest, destRect);
+            Apply(matrix, bmp, dest, destRect);
+            return dest;
         }
 
-        public static Bitmap Apply(this ColorMatrix matrix, Bitmap src, Bitmap dest, Rectangle destRect)
+        public static void Apply(this ColorMatrix matrix, Bitmap src, Bitmap dest, Rectangle destRect)
         {
             using (Graphics g = Graphics.FromImage(dest))
             using (ImageAttributes ia = new ImageAttributes())
@@ -60,8 +61,6 @@ namespace ShareX.HelpersLib
                 g.SetHighQuality();
                 g.DrawImage(src, destRect, 0, 0, src.Width, src.Height, GraphicsUnit.Pixel, ia);
             }
-
-            return dest;
         }
 
         /// <param name="img"></param>
@@ -238,7 +237,7 @@ namespace ShareX.HelpersLib
         public static ColorMatrix Mask(float opacity, Color color)
         {
             return new ColorMatrix(new[]
-{
+            {
                 new float[] { 0, 0, 0, 0, 0 },
                 new float[] { 0, 0, 0, 0, 0 },
                 new float[] { 0, 0, 0, 0, 0 },

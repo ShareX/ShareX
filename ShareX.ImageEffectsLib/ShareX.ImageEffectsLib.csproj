@@ -118,6 +118,7 @@
     <Compile Include="Filters\EdgeDetect.cs" />
     <Compile Include="Filters\Emboss.cs" />
     <Compile Include="Filters\GaussianBlur.cs" />
+    <Compile Include="Filters\Glow.cs" />
     <Compile Include="Filters\MatrixConvolution.cs" />
     <Compile Include="Filters\MeanRemoval.cs" />
     <Compile Include="Filters\Outline.cs" />
