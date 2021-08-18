@@ -234,5 +234,17 @@ namespace ShareX.HelpersLib
                 new float[] { 0, 0, 0, 0, 1 }
             });
         }
+
+        public static ColorMatrix Mask(float opacity, Color color)
+        {
+            return new ColorMatrix(new[]
+{
+                new float[] { 0, 0, 0, 0, 0 },
+                new float[] { 0, 0, 0, 0, 0 },
+                new float[] { 0, 0, 0, 0, 0 },
+                new float[] { 0, 0, 0, opacity, 0 },
+                new float[] { ((float)color.R).Remap(0, 255, 0, 1), ((float)color.G).Remap(0, 255, 0, 1), ((float)color.B).Remap(0, 255, 0, 1), 0, 1 }
+            });
+        }
     }
 }

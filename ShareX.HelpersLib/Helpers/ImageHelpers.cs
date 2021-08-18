@@ -1002,18 +1002,8 @@ namespace ShareX.HelpersLib
             try
             {
                 shadowImage = bmp.CreateEmptyBitmap(size * 2, size * 2);
-
-                ColorMatrix maskMatrix = new ColorMatrix();
-                maskMatrix.Matrix00 = 0;
-                maskMatrix.Matrix11 = 0;
-                maskMatrix.Matrix22 = 0;
-                maskMatrix.Matrix33 = opacity;
-                maskMatrix.Matrix40 = ((float)color.R).Remap(0, 255, 0, 1);
-                maskMatrix.Matrix41 = ((float)color.G).Remap(0, 255, 0, 1);
-                maskMatrix.Matrix42 = ((float)color.B).Remap(0, 255, 0, 1);
-
                 Rectangle shadowRectangle = new Rectangle(size, size, bmp.Width, bmp.Height);
-                maskMatrix.Apply(bmp, shadowImage, shadowRectangle);
+                ColorMatrixManager.Mask(opacity, color).Apply(bmp, shadowImage, shadowRectangle);
 
                 if (size > 0)
                 {
