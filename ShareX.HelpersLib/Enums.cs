@@ -27,7 +27,7 @@ using System.ComponentModel;
 
 namespace ShareX.HelpersLib
 {
-    public enum EDataType
+    public enum EDataType // Localized
     {
         Default,
         File,
