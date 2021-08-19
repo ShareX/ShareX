@@ -205,7 +205,7 @@
     <value>Удалить</value>
   </data>
   <data name="btnActionsEdit.Text" xml:space="preserve">
-    <value>Изменить</value>
+    <value>Изменить...</value>
   </data>
   <data name="chActionsExtensions.Text" xml:space="preserve">
     <value>Расширения</value>
@@ -220,7 +220,7 @@
     <value>Имя</value>
   </data>
   <data name="btnActionsAdd.Text" xml:space="preserve">
-    <value>Добавить</value>
+    <value>Добавить...</value>
   </data>
   <data name="btnActionsDuplicate.Text" xml:space="preserve">
     <value>Дублировать</value>
@@ -566,5 +566,74 @@
   </data>
   <data name="btnScreenshotsFolderBrowse.Text" xml:space="preserve">
     <value>Выбрать...</value>
+  </data>
+  <data name="cbUseCustomTaskCompletedSound.Text" xml:space="preserve">
+    <value>Пользовательский звук успешной задачи:</value>
+  </data>
+  <data name="cbUseCustomErrorSound.Text" xml:space="preserve">
+    <value>Пользовательский звук ошибки:</value>
+  </data>
+  <data name="cbUseCustomCaptureSound.Text" xml:space="preserve">
+    <value>Пользовательский звук захвата:</value>
+  </data>
+  <data name="tpNotifications.Text" xml:space="preserve">
+    <value>Уведомления</value>
+  </data>
+  <data name="cbDisableNotifications.Text" xml:space="preserve">
+    <value>Отключить уведомления</value>
+  </data>
+  <data name="gbToastWindow.Text" xml:space="preserve">
+    <value>Уведомление с предпросмотром</value>
+  </data>
+  <data name="cbShowToastNotificationAfterTaskCompleted.Text" xml:space="preserve">
+    <value>Показывать уведомление с предпросмотром после выполнения задачи</value>
+  </data>
+  <data name="lblToastWindowFadeDurationSeconds.Text" xml:space="preserve">
+    <value>секунд</value>
+  </data>
+  <data name="lblToastWindowDurationSeconds.Text" xml:space="preserve">
+    <value>секунд</value>
+  </data>
+  <data name="lblToastWindowDuration.Text" xml:space="preserve">
+    <value>Продолжительность:</value>
+  </data>
+  <data name="lblToastWindowFadeDuration.Text" xml:space="preserve">
+    <value>Длительность растворения:</value>
+  </data>
+  <data name="cbDisableNotificationsOnFullscreen.Text" xml:space="preserve">
+    <value>Отключить уведомления в полноэкранном режиме</value>
+  </data>
+  <data name="lblToastWindowPlacement.Text" xml:space="preserve">
+    <value>Положение:</value>
+  </data>
+  <data name="lblToastWindowSize.Text" xml:space="preserve">
+    <value>Размер:</value>
+  </data>
+  <data name="lblToastWindowLeftClickAction.Text" xml:space="preserve">
+    <value>Действие ЛКМ:</value>
+  </data>
+  <data name="lblToastWindowRightClickAction.Text" xml:space="preserve">
+    <value>Действие ПКМ:</value>
+  </data>
+  <data name="lblToastWindowMiddleClickAction.Text" xml:space="preserve">
+    <value>Действие СКМ:</value>
+  </data>
+  <data name="cbImageAutoJPEGQuality.Text" xml:space="preserve">
+    <value>Автоматически подстраивать качество JPEG, чтобы размер файла держался ближе к заданному</value>
+  </data>
+  <data name="lblToolsScreenColorPickerFormatCtrl.Text" xml:space="preserve">
+    <value>Форматирование пипетки (Ctrl + клик):</value>
+  </data>
+  <data name="lblToolsScreenColorPickerInfoText.Text" xml:space="preserve">
+    <value>Инфо-текст пипетки:</value>
+  </data>
+  <data name="lblURLRegexReplacePattern.Text" xml:space="preserve">
+    <value>Шаблон:</value>
+  </data>
+  <data name="lblURLRegexReplaceReplacement.Text" xml:space="preserve">
+    <value>Замена:</value>
+  </data>
+  <data name="cbOverrideScreenshotsFolder.Text" xml:space="preserve">
+    <value>Переопределить папку скриншотов</value>
   </data>
 </root>

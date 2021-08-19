@@ -802,6 +802,12 @@
     <value>Буфер обмена...</value>
   </data>
   <data name="tsmiRestartAsAdmin.Text" xml:space="preserve">
-    <value>Перезапустить ShareX как администратор...</value>
+    <value>Перезапустить ShareX как администратор</value>
+  </data>
+  <data name="tsmiInspectWindow.Text" xml:space="preserve">
+    <value>Исследовать окно...</value>
+  </data>
+  <data name="tsmiTrayInspectWindow.Text" xml:space="preserve">
+    <value>Исследовать окно...</value>
   </data>
 </root>
