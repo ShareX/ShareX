@@ -1801,6 +1801,87 @@ namespace ShareX.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Class name.
+        /// </summary>
+        public static string InspectWindow_ClassName {
+            get {
+                return ResourceManager.GetString("InspectWindow_ClassName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Client rectangle.
+        /// </summary>
+        public static string InspectWindow_ClientRectangle {
+            get {
+                return ResourceManager.GetString("InspectWindow_ClientRectangle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Process file name.
+        /// </summary>
+        public static string InspectWindow_ProcessFileName {
+            get {
+                return ResourceManager.GetString("InspectWindow_ProcessFileName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Process identifier.
+        /// </summary>
+        public static string InspectWindow_ProcessIdentifier {
+            get {
+                return ResourceManager.GetString("InspectWindow_ProcessIdentifier", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Process name.
+        /// </summary>
+        public static string InspectWindow_ProcessName {
+            get {
+                return ResourceManager.GetString("InspectWindow_ProcessName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Window handle.
+        /// </summary>
+        public static string InspectWindow_WindowHandle {
+            get {
+                return ResourceManager.GetString("InspectWindow_WindowHandle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Window rectangle.
+        /// </summary>
+        public static string InspectWindow_WindowRectangle {
+            get {
+                return ResourceManager.GetString("InspectWindow_WindowRectangle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Window styles.
+        /// </summary>
+        public static string InspectWindow_WindowStyles {
+            get {
+                return ResourceManager.GetString("InspectWindow_WindowStyles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Window title.
+        /// </summary>
+        public static string InspectWindow_WindowTitle {
+            get {
+                return ResourceManager.GetString("InspectWindow_WindowTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Edit with ShareX.
         /// </summary>
         public static string IntegrationHelpers_EditWithShareX {

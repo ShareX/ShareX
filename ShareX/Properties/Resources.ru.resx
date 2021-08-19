@@ -637,4 +637,31 @@
   <data name="Description" xml:space="preserve">
     <value>Описание</value>
   </data>
+  <data name="InspectWindow_WindowTitle" xml:space="preserve">
+    <value>Заголовок окна</value>
+  </data>
+  <data name="InspectWindow_WindowHandle" xml:space="preserve">
+    <value>Дескриптор окна</value>
+  </data>
+  <data name="InspectWindow_ClassName" xml:space="preserve">
+    <value>Имя класса</value>
+  </data>
+  <data name="InspectWindow_ProcessName" xml:space="preserve">
+    <value>Имя процесса</value>
+  </data>
+  <data name="InspectWindow_ProcessFileName" xml:space="preserve">
+    <value>Имя файла процесса</value>
+  </data>
+  <data name="InspectWindow_ProcessIdentifier" xml:space="preserve">
+    <value>Идентификатор процесса</value>
+  </data>
+  <data name="InspectWindow_WindowStyles" xml:space="preserve">
+    <value>Стили окна</value>
+  </data>
+  <data name="InspectWindow_WindowRectangle" xml:space="preserve">
+    <value>Прямоугольник окна</value>
+  </data>
+  <data name="InspectWindow_ClientRectangle" xml:space="preserve">
+    <value>Клиентский прямоугольник</value>
+  </data>
 </root>

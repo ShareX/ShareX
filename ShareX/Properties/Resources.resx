@@ -1085,4 +1085,31 @@ Please run ShareX as administrator to change personal folder path.</value>
   <data name="Bing" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Bing.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="InspectWindow_WindowHandle" xml:space="preserve">
+    <value>Window handle</value>
+  </data>
+  <data name="InspectWindow_WindowTitle" xml:space="preserve">
+    <value>Window title</value>
+  </data>
+  <data name="InspectWindow_ClassName" xml:space="preserve">
+    <value>Class name</value>
+  </data>
+  <data name="InspectWindow_ProcessName" xml:space="preserve">
+    <value>Process name</value>
+  </data>
+  <data name="InspectWindow_ProcessFileName" xml:space="preserve">
+    <value>Process file name</value>
+  </data>
+  <data name="InspectWindow_ProcessIdentifier" xml:space="preserve">
+    <value>Process identifier</value>
+  </data>
+  <data name="InspectWindow_WindowRectangle" xml:space="preserve">
+    <value>Window rectangle</value>
+  </data>
+  <data name="InspectWindow_ClientRectangle" xml:space="preserve">
+    <value>Client rectangle</value>
+  </data>
+  <data name="InspectWindow_WindowStyles" xml:space="preserve">
+    <value>Window styles</value>
+  </data>
 </root>

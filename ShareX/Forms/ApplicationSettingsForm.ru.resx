@@ -375,4 +375,13 @@
   <data name="tpSettings.Text" xml:space="preserve">
     <value>Настройки</value>
   </data>
+  <data name="cbAutomaticallyCleanupLogFiles.Text" xml:space="preserve">
+    <value>Автоматически очищать старые логи</value>
+  </data>
+  <data name="cbAutomaticallyCleanupBackupFiles.Text" xml:space="preserve">
+    <value>Автоматически очищать старые бекапы</value>
+  </data>
+  <data name="lblCleanupKeepFileCount.Text" xml:space="preserve">
+    <value>Оставлять файлов:</value>
+  </data>
 </root>
