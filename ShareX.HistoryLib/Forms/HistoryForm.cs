@@ -256,10 +256,15 @@ namespace ShareX.HistoryLib
                     status.AppendFormat(" - " + Resources.HistoryForm_UpdateItemCount___Filtered___0_, historyItems.Length.ToString("N0"));
                 }
 
+                string[] typeNames = Enum.GetNames(typeof(EDataType));
+                string[] typeTranslations = Helpers.GetLocalizedEnumDescriptions<EDataType>();
+                Dictionary<string, string> lookup = Enumerable.Zip(typeNames, typeTranslations, (key, val) => new { key, val } )
+                    .ToDictionary(e => e.key, e => e.val);
+
                 IEnumerable<string> types = historyItems.
                     GroupBy(x => x.Type).
                     OrderByDescending(x => x.Count()).
-                    Select(x => string.Format(" - {0}: {1}", x.Key, x.Count()));
+                    Select(x => string.Format(" - {0}: {1}", lookup.TryGetValue(x.Key, out string value) ? value : x.Key, x.Count()));
 
                 foreach (string type in types)
                 {

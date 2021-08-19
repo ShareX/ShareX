@@ -1373,4 +1373,19 @@ Would you like to download and install it?</value>
   <data name="URLSharingServices_BingVisualSearch" xml:space="preserve">
     <value>Bing visual search</value>
   </data>
+  <data name="EDataType_Default" xml:space="preserve">
+    <value>Default</value>
+  </data>
+  <data name="EDataType_File" xml:space="preserve">
+    <value>File</value>
+  </data>
+  <data name="EDataType_Image" xml:space="preserve">
+    <value>Image</value>
+  </data>
+  <data name="EDataType_Text" xml:space="preserve">
+    <value>Text</value>
+  </data>
+  <data name="EDataType_URL" xml:space="preserve">
+    <value>URL</value>
+  </data>
 </root>
