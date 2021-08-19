@@ -904,6 +904,51 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Default.
+        /// </summary>
+        internal static string EDataType_Default {
+            get {
+                return ResourceManager.GetString("EDataType_Default", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to File.
+        /// </summary>
+        internal static string EDataType_File {
+            get {
+                return ResourceManager.GetString("EDataType_File", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Image.
+        /// </summary>
+        internal static string EDataType_Image {
+            get {
+                return ResourceManager.GetString("EDataType_Image", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Text.
+        /// </summary>
+        internal static string EDataType_Text {
+            get {
+                return ResourceManager.GetString("EDataType_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to URL.
+        /// </summary>
+        internal static string EDataType_URL {
+            get {
+                return ResourceManager.GetString("EDataType_URL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Error.
         /// </summary>
         internal static string Error {
