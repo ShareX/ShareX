@@ -1109,7 +1109,7 @@ namespace ShareX.HelpersLib
                 {
                     ColorBgra sourceColor = bmpSource.GetPixel(i);
                     ColorBgra maskColor = bmpMask.GetPixel(i);
-                    maskColor.Alpha = (byte)Math.Min(255, sourceColor.Alpha * opacity);
+                    maskColor.Alpha = (byte)Math.Min(255, sourceColor.Alpha * (maskColor.Alpha / 255f) * opacity);
                     bmpMask.SetPixel(i, maskColor);
                 }
             }
