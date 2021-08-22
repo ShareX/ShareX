@@ -58,7 +58,7 @@ namespace ShareX.ImageEffectsLib
 
         public override Bitmap Apply(Bitmap bmp)
         {
-            ImageHelpers.BoxBlur(bmp, Radius);
+            ImageHelpers.ApplyBoxBlur(bmp, Radius);
             return bmp;
         }
     }

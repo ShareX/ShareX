@@ -997,32 +997,32 @@ namespace ShareX.HelpersLib
 
         public static Bitmap AddShadow(Bitmap bmp, float opacity, int size, float darkness, Color color, Point offset)
         {
-            Bitmap shadowImage = null;
+            Bitmap bmpShadow = null;
 
             try
             {
-                shadowImage = bmp.CreateEmptyBitmap(size * 2, size * 2);
+                bmpShadow = bmp.CreateEmptyBitmap(size * 2, size * 2);
                 Rectangle shadowRectangle = new Rectangle(size, size, bmp.Width, bmp.Height);
-                ColorMatrixManager.Mask(opacity, color).Apply(bmp, shadowImage, shadowRectangle);
+                ColorMatrixManager.Mask(opacity, color).Apply(bmp, bmpShadow, shadowRectangle);
 
                 if (size > 0)
                 {
-                    BoxBlur(shadowImage, size);
+                    ApplyBoxBlur(bmpShadow, size);
                 }
 
                 if (darkness > 1)
                 {
-                    Bitmap shadowImage2 = ColorMatrixManager.Alpha(darkness).Apply(shadowImage);
-                    shadowImage.Dispose();
-                    shadowImage = shadowImage2;
+                    Bitmap shadowImage2 = ColorMatrixManager.Alpha(darkness).Apply(bmpShadow);
+                    bmpShadow.Dispose();
+                    bmpShadow = shadowImage2;
                 }
 
-                Bitmap bmpResult = shadowImage.CreateEmptyBitmap(Math.Abs(offset.X), Math.Abs(offset.Y));
+                Bitmap bmpResult = bmpShadow.CreateEmptyBitmap(Math.Abs(offset.X), Math.Abs(offset.Y));
 
                 using (Graphics g = Graphics.FromImage(bmpResult))
                 {
                     g.SetHighQuality();
-                    g.DrawImage(shadowImage, Math.Max(0, offset.X), Math.Max(0, offset.Y), shadowImage.Width, shadowImage.Height);
+                    g.DrawImage(bmpShadow, Math.Max(0, offset.X), Math.Max(0, offset.Y), bmpShadow.Width, bmpShadow.Height);
                     g.DrawImage(bmp, Math.Max(size, -offset.X + size), Math.Max(size, -offset.Y + size), bmp.Width, bmp.Height);
                 }
 
@@ -1030,44 +1030,47 @@ namespace ShareX.HelpersLib
             }
             finally
             {
-                if (bmp != null) bmp.Dispose();
-                if (shadowImage != null) shadowImage.Dispose();
+                bmp?.Dispose();
+                bmpShadow?.Dispose();
             }
         }
 
         public static Bitmap AddGlow(Bitmap bmp, int size, float strength, Color color, Point offset, GradientInfo gradient = null)
         {
-            if (size < 1 || strength < 0.1f)
+            if (size < 0 || strength < 0.1f)
             {
                 return bmp;
             }
 
-            Bitmap glowImage = null;
+            Bitmap bmpBlur = null, bmpMask = null;
 
             try
             {
-                glowImage = AddCanvas(bmp, new Padding(size));
-                BoxBlur(glowImage, size);
-
-                if (gradient != null && gradient.IsValid)
+                if (size > 0)
                 {
-                    Bitmap glowImage2 = CreateGradientMask(glowImage, gradient, strength);
-                    glowImage.Dispose();
-                    glowImage = glowImage2;
+                    bmpBlur = AddCanvas(bmp, new Padding(size));
+                    ApplyBoxBlur(bmpBlur, size);
                 }
                 else
                 {
-                    Bitmap glowImage2 = ColorMatrixManager.Mask(strength, color).Apply(glowImage);
-                    glowImage.Dispose();
-                    glowImage = glowImage2;
+                    bmpBlur = bmp;
                 }
 
-                Bitmap bmpResult = glowImage.CreateEmptyBitmap(Math.Abs(offset.X), Math.Abs(offset.Y));
+                if (gradient != null && gradient.IsValid)
+                {
+                    bmpMask = CreateGradientMask(bmpBlur, gradient, strength);
+                }
+                else
+                {
+                    bmpMask = ColorMatrixManager.Mask(strength, color).Apply(bmpBlur);
+                }
+
+                Bitmap bmpResult = bmpMask.CreateEmptyBitmap(Math.Abs(offset.X), Math.Abs(offset.Y));
 
                 using (Graphics g = Graphics.FromImage(bmpResult))
                 {
                     g.SetHighQuality();
-                    g.DrawImage(glowImage, Math.Max(0, offset.X), Math.Max(0, offset.Y), glowImage.Width, glowImage.Height);
+                    g.DrawImage(bmpMask, Math.Max(0, offset.X), Math.Max(0, offset.Y), bmpMask.Width, bmpMask.Height);
                     g.DrawImage(bmp, Math.Max(size, -offset.X + size), Math.Max(size, -offset.Y + size), bmp.Width, bmp.Height);
                 }
 
@@ -1075,8 +1078,9 @@ namespace ShareX.HelpersLib
             }
             finally
             {
-                if (bmp != null) bmp.Dispose();
-                if (glowImage != null) glowImage.Dispose();
+                bmp?.Dispose();
+                bmpBlur?.Dispose();
+                bmpMask?.Dispose();
             }
         }
 
@@ -1091,17 +1095,17 @@ namespace ShareX.HelpersLib
 
             gradient.Draw(mask);
 
-            using (UnsafeBitmap sourceBmp = new UnsafeBitmap(bmp, true))
-            using (UnsafeBitmap maskBmp = new UnsafeBitmap(mask, true))
+            using (UnsafeBitmap bmpSource = new UnsafeBitmap(bmp, true, ImageLockMode.ReadOnly))
+            using (UnsafeBitmap bmpMask = new UnsafeBitmap(mask, true, ImageLockMode.ReadWrite))
             {
-                int pixelCount = sourceBmp.PixelCount;
+                int pixelCount = bmpSource.PixelCount;
 
                 for (int i = 0; i < pixelCount; i++)
                 {
-                    ColorBgra sourceColor = sourceBmp.GetPixel(i);
-                    ColorBgra maskColor = maskBmp.GetPixel(i);
+                    ColorBgra sourceColor = bmpSource.GetPixel(i);
+                    ColorBgra maskColor = bmpMask.GetPixel(i);
                     maskColor.Alpha = (byte)Math.Min(255, sourceColor.Alpha * opacity);
-                    maskBmp.SetPixel(i, maskColor);
+                    bmpMask.SetPixel(i, maskColor);
                 }
             }
 
@@ -1286,7 +1290,7 @@ namespace ShareX.HelpersLib
             }
         }
 
-        public static void BoxBlur(Bitmap bmp, int range)
+        public static void ApplyBoxBlur(Bitmap bmp, int range)
         {
             BoxBlur(bmp, range, new Rectangle(0, 0, bmp.Width, bmp.Height));
         }
