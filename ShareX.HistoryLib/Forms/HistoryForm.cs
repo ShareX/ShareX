@@ -258,8 +258,7 @@ namespace ShareX.HistoryLib
 
                 string[] typeNames = Enum.GetNames(typeof(EDataType));
                 string[] typeTranslations = Helpers.GetLocalizedEnumDescriptions<EDataType>();
-                Dictionary<string, string> lookup = Enumerable.Zip(typeNames, typeTranslations, (key, val) => new { key, val } )
-                    .ToDictionary(e => e.key, e => e.val);
+                Dictionary<string, string> lookup = Enumerable.Zip(typeNames, typeTranslations, (key, val) => new { key, val }).ToDictionary(e => e.key, e => e.val);
 
                 IEnumerable<string> types = historyItems.
                     GroupBy(x => x.Type).
@@ -403,12 +402,10 @@ namespace ShareX.HistoryLib
                     RefreshHistoryItems();
                     e.Handled = true;
                     break;
-#if DEBUG
-                case Keys.Control | Keys.F5:
+                case Keys.Control | Keys.F5 when HelpersOptions.DevMode:
                     RefreshHistoryItems(true);
                     e.Handled = true;
                     break;
-#endif
             }
         }
 

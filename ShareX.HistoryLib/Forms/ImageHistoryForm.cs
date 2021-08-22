@@ -194,12 +194,10 @@ namespace ShareX.HistoryLib
                     RefreshHistoryItems();
                     e.Handled = true;
                     break;
-#if DEBUG
-                case Keys.Control | Keys.F5:
+                case Keys.Control | Keys.F5 when HelpersOptions.DevMode:
                     RefreshHistoryItems(true);
                     e.Handled = true;
                     break;
-#endif
             }
         }
 
