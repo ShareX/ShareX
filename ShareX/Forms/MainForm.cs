@@ -833,8 +833,6 @@ namespace ShareX
             {
                 tsMain.Renderer = new ToolStripDarkRenderer();
                 tsMain.DrawCustomBorder = false;
-                tsSocialButtons.Renderer = new ToolStripDarkRenderer();
-                tsSocialButtons.DrawCustomBorder = false;
                 ShareXResources.ApplyCustomThemeToContextMenuStrip(cmsTray);
                 ShareXResources.ApplyCustomThemeToContextMenuStrip(cmsTaskInfo);
                 ttMain.BackColor = ShareXResources.Theme.BackgroundColor;
@@ -851,8 +849,6 @@ namespace ShareX
             {
                 tsMain.Renderer = new ToolStripCustomRenderer();
                 tsMain.DrawCustomBorder = true;
-                tsSocialButtons.Renderer = new ToolStripCustomRenderer();
-                tsSocialButtons.DrawCustomBorder = true;
                 cmsTray.Renderer = new ToolStripCustomRenderer();
                 cmsTray.Opacity = 1;
                 cmsTaskInfo.Renderer = new ToolStripCustomRenderer();
@@ -870,7 +866,6 @@ namespace ShareX
 
             if (ShareXResources.IsDarkTheme)
             {
-                tsbGitHub.Image = Resources.GitHub_White_32x32;
                 tsmiQRCode.Image = Resources.barcode_2d_white;
                 tsmiTrayQRCode.Image = Resources.barcode_2d_white;
                 tsmiShowQRCode.Image = Resources.barcode_2d_white;
@@ -887,7 +882,6 @@ namespace ShareX
             }
             else
             {
-                tsbGitHub.Image = Resources.GitHub_Black_32x32;
                 tsmiQRCode.Image = Resources.barcode_2d;
                 tsmiTrayQRCode.Image = Resources.barcode_2d;
                 tsmiShowQRCode.Image = Resources.barcode_2d;
@@ -1977,31 +1971,6 @@ namespace ShareX
             {
                 aboutForm.ShowDialog();
             }
-        }
-
-        private void TsbTwitter_Click(object sender, EventArgs e)
-        {
-            URLHelpers.OpenURL(Links.URL_TWITTER);
-        }
-
-        private void TsbDiscord_Click(object sender, EventArgs e)
-        {
-            URLHelpers.OpenURL(Links.URL_DISCORD);
-        }
-
-        private void TsbPatreon_Click(object sender, EventArgs e)
-        {
-            URLHelpers.OpenURL(Links.URL_DONATE);
-        }
-
-        private void TsbBitcoin_Click(object sender, EventArgs e)
-        {
-            URLHelpers.OpenURL(Links.URL_DONATE);
-        }
-
-        private void TsbGitHub_Click(object sender, EventArgs e)
-        {
-            URLHelpers.OpenURL(Links.URL_GITHUB);
         }
 
         #endregion Menu events

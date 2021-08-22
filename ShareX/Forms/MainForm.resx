@@ -498,9 +498,6 @@
   <data name="tsbAbout.Text" xml:space="preserve">
     <value>About...</value>
   </data>
-  <data name="tssMain3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 6</value>
-  </data>
   <data name="tsMain.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
@@ -511,7 +508,7 @@
     <value>6, 6, 6, 0</value>
   </data>
   <data name="tsMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>165, 429</value>
+    <value>165, 471</value>
   </data>
   <data name="tsMain.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -2028,36 +2025,6 @@
   <data name="pToolbars.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <metadata name="tsSocialButtons.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>654, 17</value>
-  </metadata>
-  <data name="tsSocialButtons.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Bottom</value>
-  </data>
-  <data name="tsSocialButtons.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 429</value>
-  </data>
-  <data name="tsSocialButtons.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>6, 3, 6, 6</value>
-  </data>
-  <data name="tsSocialButtons.Size" type="System.Drawing.Size, System.Drawing">
-    <value>165, 42</value>
-  </data>
-  <data name="tsSocialButtons.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;tsSocialButtons.Name" xml:space="preserve">
-    <value>tsSocialButtons</value>
-  </data>
-  <data name="&gt;&gt;tsSocialButtons.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.ToolStripBorderRight, ShareX.HelpersLib, Version=13.5.1.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;tsSocialButtons.Parent" xml:space="preserve">
-    <value>pToolbars</value>
-  </data>
-  <data name="&gt;&gt;tsSocialButtons.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <data name="pToolbars.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Left</value>
   </data>
@@ -2081,66 +2048,6 @@
   </data>
   <data name="&gt;&gt;pToolbars.ZOrder" xml:space="preserve">
     <value>4</value>
-  </data>
-  <data name="tsbTwitter.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="tsbTwitter.Size" type="System.Drawing.Size, System.Drawing">
-    <value>30, 30</value>
-  </data>
-  <data name="tsbTwitter.Text" xml:space="preserve">
-    <value>Twitter</value>
-  </data>
-  <data name="tsbTwitter.ToolTipText" xml:space="preserve">
-    <value>Follow our Twitter account</value>
-  </data>
-  <data name="tsbDiscord.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="tsbDiscord.Size" type="System.Drawing.Size, System.Drawing">
-    <value>30, 30</value>
-  </data>
-  <data name="tsbDiscord.Text" xml:space="preserve">
-    <value>Discord</value>
-  </data>
-  <data name="tsbDiscord.ToolTipText" xml:space="preserve">
-    <value>Join our Discord server</value>
-  </data>
-  <data name="tsbPatreon.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="tsbPatreon.Size" type="System.Drawing.Size, System.Drawing">
-    <value>30, 30</value>
-  </data>
-  <data name="tsbPatreon.Text" xml:space="preserve">
-    <value>Patreon</value>
-  </data>
-  <data name="tsbPatreon.ToolTipText" xml:space="preserve">
-    <value>Support us on Patreon</value>
-  </data>
-  <data name="tsbBitcoin.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="tsbBitcoin.Size" type="System.Drawing.Size, System.Drawing">
-    <value>30, 30</value>
-  </data>
-  <data name="tsbBitcoin.Text" xml:space="preserve">
-    <value>Bitcoin</value>
-  </data>
-  <data name="tsbBitcoin.ToolTipText" xml:space="preserve">
-    <value>Support us using cryptocurrency</value>
-  </data>
-  <data name="tsbGitHub.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="tsbGitHub.Size" type="System.Drawing.Size, System.Drawing">
-    <value>30, 30</value>
-  </data>
-  <data name="tsbGitHub.Text" xml:space="preserve">
-    <value>GitHub</value>
-  </data>
-  <data name="tsbGitHub.ToolTipText" xml:space="preserve">
-    <value>Star our GitHub repo</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -2693,12 +2600,6 @@
   </data>
   <data name="&gt;&gt;tsbAbout.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tssMain3.Name" xml:space="preserve">
-    <value>tssMain3</value>
-  </data>
-  <data name="&gt;&gt;tssMain3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiShowErrors.Name" xml:space="preserve">
     <value>tsmiShowErrors</value>
@@ -3713,36 +3614,6 @@
   </data>
   <data name="&gt;&gt;ttMain.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tsbTwitter.Name" xml:space="preserve">
-    <value>tsbTwitter</value>
-  </data>
-  <data name="&gt;&gt;tsbTwitter.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tsbDiscord.Name" xml:space="preserve">
-    <value>tsbDiscord</value>
-  </data>
-  <data name="&gt;&gt;tsbDiscord.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tsbPatreon.Name" xml:space="preserve">
-    <value>tsbPatreon</value>
-  </data>
-  <data name="&gt;&gt;tsbPatreon.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tsbBitcoin.Name" xml:space="preserve">
-    <value>tsbBitcoin</value>
-  </data>
-  <data name="&gt;&gt;tsbBitcoin.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tsbGitHub.Name" xml:space="preserve">
-    <value>tsbGitHub</value>
-  </data>
-  <data name="&gt;&gt;tsbGitHub.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MainForm</value>
