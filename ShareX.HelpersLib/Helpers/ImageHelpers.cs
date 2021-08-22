@@ -382,6 +382,11 @@ namespace ShareX.HelpersLib
             return bmp;
         }
 
+        public static Bitmap AddCanvas(Image img, int margin)
+        {
+            return AddCanvas(img, new Padding(margin));
+        }
+
         public static Bitmap AddCanvas(Image img, Padding margin)
         {
             return AddCanvas(img, margin, Color.Transparent);
@@ -1048,7 +1053,7 @@ namespace ShareX.HelpersLib
             {
                 if (size > 0)
                 {
-                    bmpBlur = AddCanvas(bmp, new Padding(size));
+                    bmpBlur = AddCanvas(bmp, size);
                     ApplyBoxBlur(bmpBlur, size);
                 }
                 else
