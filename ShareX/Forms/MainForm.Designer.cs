@@ -115,7 +115,6 @@
             this.tsbScreenshotsFolder = new System.Windows.Forms.ToolStripButton();
             this.tsbHistory = new System.Windows.Forms.ToolStripButton();
             this.tsbImageHistory = new System.Windows.Forms.ToolStripButton();
-            this.tsbNews = new ShareX.HelpersLib.ToolStripButtonCounter();
             this.tsddbDebug = new System.Windows.Forms.ToolStripDropDownButton();
             this.tsmiShowDebugLog = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTestImageUpload = new System.Windows.Forms.ToolStripMenuItem();
@@ -296,9 +295,6 @@
             this.tsmiTrayShow = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTrayExit = new System.Windows.Forms.ToolStripMenuItem();
             this.timerTraySingleClick = new System.Windows.Forms.Timer(this.components);
-            this.pNews = new System.Windows.Forms.Panel();
-            this.btnCloseNews = new System.Windows.Forms.Button();
-            this.ucNews = new ShareX.NewsListControl();
             this.pThumbnailView = new System.Windows.Forms.Panel();
             this.lblThumbnailViewTip = new System.Windows.Forms.Label();
             this.ucTaskThumbnailView = new ShareX.TaskThumbnailView();
@@ -317,7 +313,6 @@
             this.tsMain.SuspendLayout();
             this.cmsTaskInfo.SuspendLayout();
             this.cmsTray.SuspendLayout();
-            this.pNews.SuspendLayout();
             this.pThumbnailView.SuspendLayout();
             this.pToolbars.SuspendLayout();
             this.tsSocialButtons.SuspendLayout();
@@ -438,7 +433,6 @@
             this.tsbScreenshotsFolder,
             this.tsbHistory,
             this.tsbImageHistory,
-            this.tsbNews,
             this.tsddbDebug,
             this.tsbDonate,
             this.tsbAbout,
@@ -989,14 +983,6 @@
             resources.ApplyResources(this.tsbImageHistory, "tsbImageHistory");
             this.tsbImageHistory.Name = "tsbImageHistory";
             this.tsbImageHistory.Click += new System.EventHandler(this.tsbImageHistory_Click);
-            // 
-            // tsbNews
-            // 
-            this.tsbNews.Counter = 0;
-            this.tsbNews.Image = global::ShareX.Properties.Resources.megaphone;
-            resources.ApplyResources(this.tsbNews, "tsbNews");
-            this.tsbNews.Name = "tsbNews";
-            this.tsbNews.Click += new System.EventHandler(this.tsbNews_Click);
             // 
             // tsddbDebug
             // 
@@ -2352,26 +2338,6 @@
             // 
             this.timerTraySingleClick.Tick += new System.EventHandler(this.timerTraySingleClick_Tick);
             // 
-            // pNews
-            // 
-            this.pNews.Controls.Add(this.btnCloseNews);
-            this.pNews.Controls.Add(this.ucNews);
-            resources.ApplyResources(this.pNews, "pNews");
-            this.pNews.Name = "pNews";
-            // 
-            // btnCloseNews
-            // 
-            resources.ApplyResources(this.btnCloseNews, "btnCloseNews");
-            this.btnCloseNews.Name = "btnCloseNews";
-            this.btnCloseNews.UseVisualStyleBackColor = true;
-            this.btnCloseNews.Click += new System.EventHandler(this.btnCloseNews_Click);
-            // 
-            // ucNews
-            // 
-            this.ucNews.BackColor = System.Drawing.SystemColors.Window;
-            resources.ApplyResources(this.ucNews, "ucNews");
-            this.ucNews.Name = "ucNews";
-            // 
             // pThumbnailView
             // 
             this.pThumbnailView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(47)))), ((int)(((byte)(56)))));
@@ -2483,7 +2449,6 @@
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.Controls.Add(this.pNews);
             this.Controls.Add(this.pThumbnailView);
             this.Controls.Add(this.scMain);
             this.Controls.Add(this.pToolbars);
@@ -2507,7 +2472,6 @@
             this.tsMain.PerformLayout();
             this.cmsTaskInfo.ResumeLayout(false);
             this.cmsTray.ResumeLayout(false);
-            this.pNews.ResumeLayout(false);
             this.pThumbnailView.ResumeLayout(false);
             this.pThumbnailView.PerformLayout();
             this.pToolbars.ResumeLayout(false);
@@ -2719,11 +2683,8 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiOpenActionsToolbar;
         private System.Windows.Forms.ToolStripMenuItem tsmiDeleteSelectedItem;
         private System.Windows.Forms.ToolStripMenuItem tsmiGoogleImageSearch;
-        private System.Windows.Forms.Panel pNews;
-        private System.Windows.Forms.Button btnCloseNews;
         private System.Windows.Forms.ToolStripMenuItem tsmiImageThumbnailer;
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayImageThumbnailer;
-        private HelpersLib.ToolStripButtonCounter tsbNews;
         private System.Windows.Forms.ToolStripMenuItem tsmiUploadText;
         private System.Windows.Forms.ToolStripMenuItem tsmiShortenURL;
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayUploadText;
@@ -2739,7 +2700,6 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiShowCursor;
         private System.Windows.Forms.ToolStripSeparator tssTrayCapture1;
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayShowCursor;
-        private NewsListControl ucNews;
         private System.Windows.Forms.ToolStripMenuItem tsmiCopyImageDimensions;
         private System.Windows.Forms.ToolStripMenuItem tsmiScreenshotDelay;
         private System.Windows.Forms.ToolStripMenuItem tsmiScreenshotDelay0;

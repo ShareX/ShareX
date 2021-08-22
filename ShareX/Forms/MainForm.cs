@@ -192,14 +192,6 @@ namespace ShareX
 
             ExportImportControl.UploadRequested += json => UploadManager.UploadText(json);
 
-#if !DEBUG
-            ucNews.NewsLoaded += (sender, e) =>
-            {
-                if (ucNews.NewsManager.IsUnread) tsbNews.Counter = ucNews.NewsManager.UnreadCount;
-            };
-            ucNews.Start();
-#endif
-
 #if WindowsStore
             tsmiDNSChanger.Visible = false;
             tsmiTrayDNSChanger.Visible = false;
@@ -854,9 +846,6 @@ namespace ShareX
                 scMain.SplitterLineColor = ShareXResources.Theme.BorderColor;
                 pThumbnailView.BackColor = ShareXResources.Theme.BackgroundColor;
                 lblThumbnailViewTip.ForeColor = ShareXResources.Theme.TextColor;
-                btnCloseNews.FlatAppearance.BorderColor = ShareXResources.Theme.BorderColor;
-                btnCloseNews.ForeColor = ShareXResources.Theme.TextColor;
-                btnCloseNews.BackColor = ShareXResources.Theme.LightBackgroundColor;
             }
             else
             {
@@ -877,9 +866,6 @@ namespace ShareX
                 scMain.SplitterLineColor = ProfessionalColors.SeparatorDark;
                 pThumbnailView.BackColor = SystemColors.Window;
                 lblThumbnailViewTip.ForeColor = Color.Silver;
-                btnCloseNews.FlatAppearance.BorderColor = SystemColors.ControlText;
-                btnCloseNews.ForeColor = SystemColors.ControlText;
-                btnCloseNews.BackColor = SystemColors.Window;
             }
 
             if (ShareXResources.IsDarkTheme)
@@ -920,7 +906,6 @@ namespace ShareX
             pbPreview.UpdateTheme();
             pbPreview.UpdateCheckers(true);
             ucTaskThumbnailView.UpdateTheme();
-            ucNews.UpdateTheme();
         }
 
         private void CleanCustomClipboardFormats()
@@ -1209,12 +1194,6 @@ namespace ShareX
                     }
                 }
             }
-        }
-
-        private void HideNews()
-        {
-            pNews.Visible = false;
-            ucNews.MarkRead();
         }
 
         private void SetScreenshotDelay(decimal delay)
@@ -1620,11 +1599,6 @@ namespace ShareX
             }
         }
 
-        private void btnCloseNews_Click(object sender, EventArgs e)
-        {
-            HideNews();
-        }
-
         #region Menu events
 
         private void tsmiFullscreen_Click(object sender, EventArgs e)
@@ -1990,19 +1964,6 @@ namespace ShareX
         private void tsmiTestURLSharing_Click(object sender, EventArgs e)
         {
             UploadManager.ShareURL(Links.URL_WEBSITE);
-        }
-
-        private void tsbNews_Click(object sender, EventArgs e)
-        {
-            if (!pNews.Visible)
-            {
-                pNews.Visible = true;
-                tsbNews.Counter = 0;
-            }
-            else
-            {
-                HideNews();
-            }
         }
 
         private void tsbDonate_Click(object sender, EventArgs e)
