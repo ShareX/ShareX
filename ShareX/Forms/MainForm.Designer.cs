@@ -302,6 +302,9 @@
             this.tsbTwitter = new System.Windows.Forms.ToolStripButton();
             this.tsbDiscord = new System.Windows.Forms.ToolStripButton();
             this.tssMain3 = new System.Windows.Forms.ToolStripSeparator();
+            this.tssTray4 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsmiTrayTwitter = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiTrayDiscord = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.scMain)).BeginInit();
             this.scMain.Panel1.SuspendLayout();
             this.scMain.Panel2.SuspendLayout();
@@ -1656,10 +1659,13 @@
             this.tsmiScreenshotsFolder,
             this.tsmiTrayHistory,
             this.tsmiTrayImageHistory,
+            this.tssTray3,
             this.tsmiTrayDebug,
             this.tsmiTrayDonate,
+            this.tsmiTrayTwitter,
+            this.tsmiTrayDiscord,
             this.tsmiTrayAbout,
-            this.tssTray3,
+            this.tssTray4,
             this.tsmiRestartAsAdmin,
             this.tsmiTrayRecentItems,
             this.tsmiOpenActionsToolbar,
@@ -2393,6 +2399,25 @@
             this.tssMain3.Name = "tssMain3";
             resources.ApplyResources(this.tssMain3, "tssMain3");
             // 
+            // tssTray4
+            // 
+            this.tssTray4.Name = "tssTray4";
+            resources.ApplyResources(this.tssTray4, "tssTray4");
+            // 
+            // tsmiTrayTwitter
+            // 
+            this.tsmiTrayTwitter.Image = global::ShareX.Properties.Resources.Twitter;
+            this.tsmiTrayTwitter.Name = "tsmiTrayTwitter";
+            resources.ApplyResources(this.tsmiTrayTwitter, "tsmiTrayTwitter");
+            this.tsmiTrayTwitter.Click += new System.EventHandler(this.tsbTwitter_Click);
+            // 
+            // tsmiTrayDiscord
+            // 
+            this.tsmiTrayDiscord.Image = global::ShareX.Properties.Resources.Discord;
+            this.tsmiTrayDiscord.Name = "tsmiTrayDiscord";
+            resources.ApplyResources(this.tsmiTrayDiscord, "tsmiTrayDiscord");
+            this.tsmiTrayDiscord.Click += new System.EventHandler(this.tsbDiscord_Click);
+            // 
             // MainForm
             // 
             this.AllowDrop = true;
@@ -2705,5 +2730,8 @@
         private System.Windows.Forms.ToolStripButton tsbTwitter;
         private System.Windows.Forms.ToolStripButton tsbDiscord;
         private System.Windows.Forms.ToolStripSeparator tssMain3;
+        private System.Windows.Forms.ToolStripSeparator tssTray4;
+        private System.Windows.Forms.ToolStripMenuItem tsmiTrayTwitter;
+        private System.Windows.Forms.ToolStripMenuItem tsmiTrayDiscord;
     }
 }
