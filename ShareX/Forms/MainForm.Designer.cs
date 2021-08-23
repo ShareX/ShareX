@@ -299,6 +299,9 @@
             this.ucTaskThumbnailView = new ShareX.TaskThumbnailView();
             this.ttMain = new System.Windows.Forms.ToolTip(this.components);
             this.pToolbars = new System.Windows.Forms.Panel();
+            this.tsbTwitter = new System.Windows.Forms.ToolStripButton();
+            this.tsbDiscord = new System.Windows.Forms.ToolStripButton();
+            this.tssMain3 = new System.Windows.Forms.ToolStripSeparator();
             ((System.ComponentModel.ISupportInitialize)(this.scMain)).BeginInit();
             this.scMain.Panel1.SuspendLayout();
             this.scMain.Panel2.SuspendLayout();
@@ -425,8 +428,11 @@
             this.tsbScreenshotsFolder,
             this.tsbHistory,
             this.tsbImageHistory,
+            this.tssMain3,
             this.tsddbDebug,
             this.tsbDonate,
+            this.tsbTwitter,
+            this.tsbDiscord,
             this.tsbAbout});
             this.tsMain.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow;
             this.tsMain.Name = "tsMain";
@@ -666,7 +672,7 @@
             // 
             // tsmiTweetMessage
             // 
-            this.tsmiTweetMessage.Image = global::ShareX.Properties.Resources.Twitter_16x16;
+            this.tsmiTweetMessage.Image = global::ShareX.Properties.Resources.Twitter;
             this.tsmiTweetMessage.Name = "tsmiTweetMessage";
             resources.ApplyResources(this.tsmiTweetMessage, "tsmiTweetMessage");
             this.tsmiTweetMessage.Click += new System.EventHandler(this.tsmiTweetMessage_Click);
@@ -846,7 +852,7 @@
             // 
             // tssMain1
             // 
-            this.tssMain1.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
+            this.tssMain1.Margin = new System.Windows.Forms.Padding(0, 3, 0, 6);
             this.tssMain1.Name = "tssMain1";
             resources.ApplyResources(this.tssMain1, "tssMain1");
             // 
@@ -950,7 +956,7 @@
             // 
             // tssMain2
             // 
-            this.tssMain2.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
+            this.tssMain2.Margin = new System.Windows.Forms.Padding(0, 3, 0, 6);
             this.tssMain2.Name = "tssMain2";
             resources.ApplyResources(this.tssMain2, "tssMain2");
             // 
@@ -1897,7 +1903,7 @@
             // 
             // tsmiTrayTweetMessage
             // 
-            this.tsmiTrayTweetMessage.Image = global::ShareX.Properties.Resources.Twitter_16x16;
+            this.tsmiTrayTweetMessage.Image = global::ShareX.Properties.Resources.Twitter;
             this.tsmiTrayTweetMessage.Name = "tsmiTrayTweetMessage";
             resources.ApplyResources(this.tsmiTrayTweetMessage, "tsmiTrayTweetMessage");
             this.tsmiTrayTweetMessage.Click += new System.EventHandler(this.tsmiTweetMessage_Click);
@@ -2367,6 +2373,26 @@
             this.pToolbars.Controls.Add(this.tsMain);
             this.pToolbars.Name = "pToolbars";
             // 
+            // tsbTwitter
+            // 
+            this.tsbTwitter.Image = global::ShareX.Properties.Resources.Twitter;
+            resources.ApplyResources(this.tsbTwitter, "tsbTwitter");
+            this.tsbTwitter.Name = "tsbTwitter";
+            this.tsbTwitter.Click += new System.EventHandler(this.tsbTwitter_Click);
+            // 
+            // tsbDiscord
+            // 
+            this.tsbDiscord.Image = global::ShareX.Properties.Resources.Discord;
+            resources.ApplyResources(this.tsbDiscord, "tsbDiscord");
+            this.tsbDiscord.Name = "tsbDiscord";
+            this.tsbDiscord.Click += new System.EventHandler(this.tsbDiscord_Click);
+            // 
+            // tssMain3
+            // 
+            this.tssMain3.Margin = new System.Windows.Forms.Padding(0, 3, 0, 6);
+            this.tssMain3.Name = "tssMain3";
+            resources.ApplyResources(this.tssMain3, "tssMain3");
+            // 
             // MainForm
             // 
             this.AllowDrop = true;
@@ -2676,5 +2702,8 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiCombineImagesHorizontally;
         private System.Windows.Forms.ToolStripMenuItem tsmiCombineImagesVertically;
         private System.Windows.Forms.ToolStripMenuItem tsmiBingVisualSearch;
+        private System.Windows.Forms.ToolStripButton tsbTwitter;
+        private System.Windows.Forms.ToolStripButton tsbDiscord;
+        private System.Windows.Forms.ToolStripSeparator tssMain3;
     }
 }

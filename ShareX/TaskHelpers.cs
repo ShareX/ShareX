@@ -1492,7 +1492,7 @@ namespace ShareX
                     case HotkeyType.VideoThumbnailer: return Resources.images_stack;
                     case HotkeyType.InspectWindow: return Resources.application_search_result;
                     case HotkeyType.ClipboardViewer: return Resources.clipboard_block;
-                    case HotkeyType.TweetMessage: return Resources.Twitter_16x16;
+                    case HotkeyType.TweetMessage: return Resources.Twitter;
                     case HotkeyType.MonitorTest: return Resources.monitor;
                     // Other
                     case HotkeyType.DisableHotkeys: return Resources.keyboard__minus;

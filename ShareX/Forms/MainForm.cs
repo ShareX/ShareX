@@ -1965,6 +1965,16 @@ namespace ShareX
             URLHelpers.OpenURL(Links.URL_DONATE);
         }
 
+        private void tsbTwitter_Click(object sender, EventArgs e)
+        {
+            URLHelpers.OpenURL(Links.URL_TWITTER);
+        }
+
+        private void tsbDiscord_Click(object sender, EventArgs e)
+        {
+            URLHelpers.OpenURL(Links.URL_DISCORD);
+        }
+
         private void tsbAbout_Click(object sender, EventArgs e)
         {
             using (AboutForm aboutForm = new AboutForm())

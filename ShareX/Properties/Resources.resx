@@ -220,9 +220,6 @@
   <data name="exclamation_button" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\exclamation-button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Bitcoin_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Bitcoin-32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="ActionsToolbar_StayTopMost" xml:space="preserve">
     <value>Stay top most</value>
   </data>
@@ -278,9 +275,6 @@ Middle click to close</value>
   <data name="UploadTask_ThreadDoWork_URL_is_empty_" xml:space="preserve">
     <value>URL is empty.</value>
   </data>
-  <data name="GitHub_Black_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\GitHub-Black-32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="exclamation" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\exclamation.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -289,9 +283,6 @@ Middle click to close</value>
   </data>
   <data name="MainForm_UpdateMainFormTip_Currently_configured_hotkeys_" xml:space="preserve">
     <value>Currently configured hotkeys:</value>
-  </data>
-  <data name="Twitter-32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Twitter-32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="TaskManager_CreateListViewItem_History" xml:space="preserve">
     <value>History</value>
@@ -455,9 +446,6 @@ Are you sure you want to continue?</value>
   <data name="drive" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\drive.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="GitHub_White_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\GitHub-White-32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_File_uploader___0_" xml:space="preserve">
     <value>File uploader: {0}</value>
   </data>
@@ -496,9 +484,6 @@ Are you sure you want to continue?</value>
   </data>
   <data name="application_monitor" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\application-monitor.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Patreon_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Patreon-32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="camera" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\camera.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -786,9 +771,6 @@ Would you like to restart ShareX?</value>
   <data name="keyboard" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\keyboard.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Discord_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Discord-32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="TaskManager_CreateListViewItem_In_queue" xml:space="preserve">
     <value>In queue</value>
   </data>
@@ -1003,9 +985,6 @@ Please run ShareX as administrator to change personal folder path.</value>
   <data name="AboutForm_AboutForm_Language_ko_KR" xml:space="preserve">
     <value>Korean</value>
   </data>
-  <data name="Twitter-16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Twitter-16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="tick_button" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\tick-button.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -1111,5 +1090,11 @@ Please run ShareX as administrator to change personal folder path.</value>
   </data>
   <data name="InspectWindow_WindowStyles" xml:space="preserve">
     <value>Window styles</value>
+  </data>
+  <data name="Twitter" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\twitter.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Discord" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\discord.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

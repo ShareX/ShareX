@@ -462,6 +462,9 @@
   <data name="tsbImageHistory.Text" xml:space="preserve">
     <value>Image history...</value>
   </data>
+  <data name="tssMain3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>152, 6</value>
+  </data>
   <data name="tsddbDebug.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
   </data>
@@ -486,6 +489,30 @@
   <data name="tsbDonate.Text" xml:space="preserve">
     <value>Donate...</value>
   </data>
+  <data name="tsbTwitter.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="tsbTwitter.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="tsbTwitter.Size" type="System.Drawing.Size, System.Drawing">
+    <value>152, 20</value>
+  </data>
+  <data name="tsbTwitter.Text" xml:space="preserve">
+    <value>Twitter...</value>
+  </data>
+  <data name="tsbDiscord.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="tsbDiscord.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="tsbDiscord.Size" type="System.Drawing.Size, System.Drawing">
+    <value>152, 20</value>
+  </data>
+  <data name="tsbDiscord.Text" xml:space="preserve">
+    <value>Discord...</value>
+  </data>
   <data name="tsbAbout.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
   </data>
@@ -505,7 +532,7 @@
     <value>165, 0</value>
   </data>
   <data name="tsMain.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>6, 6, 6, 0</value>
+    <value>6, 5, 6, 2</value>
   </data>
   <data name="tsMain.Size" type="System.Drawing.Size, System.Drawing">
     <value>165, 471</value>
@@ -3614,6 +3641,24 @@
   </data>
   <data name="&gt;&gt;ttMain.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsbTwitter.Name" xml:space="preserve">
+    <value>tsbTwitter</value>
+  </data>
+  <data name="&gt;&gt;tsbTwitter.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsbDiscord.Name" xml:space="preserve">
+    <value>tsbDiscord</value>
+  </data>
+  <data name="&gt;&gt;tsbDiscord.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tssMain3.Name" xml:space="preserve">
+    <value>tssMain3</value>
+  </data>
+  <data name="&gt;&gt;tssMain3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MainForm</value>
