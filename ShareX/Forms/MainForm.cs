@@ -831,6 +831,7 @@ namespace ShareX
 
             if (ShareXResources.UseCustomTheme)
             {
+                tsMain.Font = ShareXResources.Theme.MenuFont;
                 tsMain.Renderer = new ToolStripDarkRenderer();
                 tsMain.DrawCustomBorder = false;
                 ShareXResources.ApplyCustomThemeToContextMenuStrip(cmsTray);

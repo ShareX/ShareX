@@ -132,6 +132,8 @@ namespace ShareX.HelpersLib
         [Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
         public Color MenuCheckBackgroundColor { get; set; }
 
+        public Font MenuFont { get; set; } = new Font("Segoe UI", 10);
+
         public Font ContextMenuFont { get; set; } = new Font("Segoe UI", 10);
 
         public int ContextMenuOpacity { get; set; } = 100;

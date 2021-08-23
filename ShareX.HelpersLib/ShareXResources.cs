@@ -177,6 +177,7 @@ namespace ShareX.HelpersLib
                     ApplyCustomThemeToContextMenuStrip(cms);
                     return;
                 case ToolStrip ts:
+                    ts.Font = Theme.MenuFont;
                     ts.Renderer = new ToolStripDarkRenderer();
                     ApplyCustomThemeToToolStripItemCollection(ts.Items);
                     return;
