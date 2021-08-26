@@ -1323,20 +1323,6 @@ namespace ShareX
             AfterShownJobs();
         }
 
-        private void MainForm_VisibleChanged(object sender, EventArgs e)
-        {
-#if !DEBUG
-            if (Visible)
-            {
-                tsbDonate.StartAnimation();
-            }
-            else
-            {
-                tsbDonate.StopAnimation();
-            }
-#endif
-        }
-
         private void MainForm_Resize(object sender, EventArgs e)
         {
             Refresh();
