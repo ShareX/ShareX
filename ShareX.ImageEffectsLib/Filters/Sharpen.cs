@@ -24,19 +24,42 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using System.ComponentModel;
 using System.Drawing;
 
 namespace ShareX.ImageEffectsLib
 {
+    [Description("Sharpen")]
     internal class Sharpen : ImageEffect
     {
+        private int strength;
+
+        [DefaultValue(5)]
+        public int Strength
+        {
+            get
+            {
+                return strength;
+            }
+            set
+            {
+                int capped = value.Min(10);
+                strength = capped.Max(1);
+            }
+        }
+
+        public Sharpen()
+        {
+            this.ApplyDefaultPropertyValues();
+        }
+
         public override Bitmap Apply(Bitmap bmp)
         {
             //return ImageHelpers.Sharpen(bmp, Strength);
 
             using (bmp)
             {
-                return ConvolutionMatrixManager.Sharpen().Apply(bmp);
+                return ConvolutionMatrixManager.Sharpen(20 - Strength).Apply(bmp);
             }
         }
     }

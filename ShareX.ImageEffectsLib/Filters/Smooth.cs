@@ -24,17 +24,40 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using System.ComponentModel;
 using System.Drawing;
 
 namespace ShareX.ImageEffectsLib
 {
+    [Description("Smooth")]
     internal class Smooth : ImageEffect
     {
+        private int strength;
+
+        [DefaultValue(5)]
+        public int Strength
+        {
+            get
+            {
+                return strength;
+            }
+            set
+            {
+                int capped = value.Min(10);
+                strength = capped.Max(1);
+            }
+        }
+
+        public Smooth()
+        {
+            this.ApplyDefaultPropertyValues();
+        }
+
         public override Bitmap Apply(Bitmap bmp)
         {
             using (bmp)
             {
-                return ConvolutionMatrixManager.Smooth().Apply(bmp);
+                return ConvolutionMatrixManager.Smooth(50 - (5 * Strength)).Apply(bmp);
             }
         }
     }

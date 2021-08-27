@@ -32,11 +32,32 @@ namespace ShareX.ImageEffectsLib
     [Description("Mean removal")]
     internal class MeanRemoval : ImageEffect
     {
+        private int strength;
+
+        [DefaultValue(5)]
+        public int Strength
+        {
+            get
+            {
+                return strength;
+            }
+            set
+            {
+                int capped = value.Min(10);
+                strength = capped.Max(1);
+            }
+        }
+
+        public MeanRemoval()
+        {
+            this.ApplyDefaultPropertyValues();
+        }
+
         public override Bitmap Apply(Bitmap bmp)
         {
             using (bmp)
             {
-                return ConvolutionMatrixManager.MeanRemoval().Apply(bmp);
+                return ConvolutionMatrixManager.MeanRemoval(30 - (2 * Strength)).Apply(bmp);
             }
         }
     }
