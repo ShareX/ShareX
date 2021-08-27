@@ -1242,21 +1242,18 @@ namespace ShareX
         private async Task PrepareCaptureMenuAsync(ToolStripMenuItem tsmiWindow, EventHandler handlerWindow, ToolStripMenuItem tsmiMonitor, EventHandler handlerMonitor)
         {
             tsmiWindow.DropDownItems.Clear();
-
             WindowsList windowsList = new WindowsList();
-            List<WindowInfo> windows = null;
+            List<WindowInfo> windows = await Task.Run(() => windowsList.GetVisibleWindowsList());
 
-            await Task.Run(() =>
+            if (windows != null && windows.Count > 0)
             {
-                windows = windowsList.GetVisibleWindowsList();
-            });
+                ToolStripItem[] items = new ToolStripItem[windows.Count];
 
-            if (windows != null)
-            {
-                foreach (WindowInfo window in windows)
+                for (int i = 0; i < items.Length; i++)
                 {
                     try
                     {
+                        WindowInfo window = windows[i];
                         string title = window.Text.Truncate(50, "...");
                         ToolStripMenuItem tsmi = new ToolStripMenuItem(title);
                         tsmi.Tag = window;
@@ -1270,29 +1267,39 @@ namespace ShareX
                             }
                         }
 
-                        tsmiWindow.DropDownItems.Add(tsmi);
+                        items[i] = tsmi;
                     }
                     catch (Exception e)
                     {
                         DebugHelper.WriteException(e);
                     }
                 }
-            }
 
-            tsmiMonitor.DropDownItems.Clear();
-
-            Screen[] screens = Screen.AllScreens;
-
-            for (int i = 0; i < screens.Length; i++)
-            {
-                Screen screen = screens[i];
-                string text = string.Format("{0}. {1}x{2}", i + 1, screen.Bounds.Width, screen.Bounds.Height);
-                ToolStripItem tsi = tsmiMonitor.DropDownItems.Add(text);
-                tsi.Tag = screen.Bounds;
-                tsi.Click += handlerMonitor;
+                tsmiWindow.DropDownItems.AddRange(items);
             }
 
             tsmiWindow.Invalidate();
+
+            tsmiMonitor.DropDownItems.Clear();
+            Screen[] screens = Screen.AllScreens;
+
+            if (screens != null && screens.Length > 0)
+            {
+                ToolStripItem[] items = new ToolStripItem[screens.Length];
+
+                for (int i = 0; i < items.Length; i++)
+                {
+                    Screen screen = screens[i];
+                    string text = string.Format("{0}. {1}x{2}", i + 1, screen.Bounds.Width, screen.Bounds.Height);
+                    ToolStripMenuItem tsmi = new ToolStripMenuItem(text);
+                    tsmi.Tag = screen.Bounds;
+                    tsmi.Click += handlerMonitor;
+                    items[i] = tsmi;
+                }
+
+                tsmiMonitor.DropDownItems.AddRange(items);
+            }
+
             tsmiMonitor.Invalidate();
         }
 
