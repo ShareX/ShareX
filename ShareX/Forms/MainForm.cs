@@ -598,18 +598,26 @@ namespace ShareX
             tsmiAddImageEffects.DisableMenuCloseOnClick();
             tsmiAddImageEffects.DropDownItems.Clear();
 
-            for (int i = 0; i < Program.DefaultTaskSettings.ImageSettings.ImageEffectPresets.Count; i++)
+            int count = Program.DefaultTaskSettings.ImageSettings.ImageEffectPresets.Count;
+            if (count > 0)
             {
-                ImageEffectPreset effectPreset = Program.DefaultTaskSettings.ImageSettings.ImageEffectPresets[i];
-                ToolStripMenuItem tsmi = new ToolStripMenuItem(effectPreset.ToString());
-                tsmi.Checked = i == Program.DefaultTaskSettings.ImageSettings.SelectedImageEffectPreset;
-                int indexSelected = i;
-                tsmi.Click += (sender, e) =>
+                ToolStripItem[] items = new ToolStripItem[count];
+
+                for (int i = 0; i < count; i++)
                 {
-                    Program.DefaultTaskSettings.ImageSettings.SelectedImageEffectPreset = indexSelected;
-                    ((ToolStripMenuItem)tsmiAddImageEffects.DropDownItems[indexSelected]).RadioCheck();
-                };
-                tsmiAddImageEffects.DropDownItems.Add(tsmi);
+                    ImageEffectPreset effectPreset = Program.DefaultTaskSettings.ImageSettings.ImageEffectPresets[i];
+                    ToolStripMenuItem tsmi = new ToolStripMenuItem(effectPreset.ToString());
+                    tsmi.Checked = i == Program.DefaultTaskSettings.ImageSettings.SelectedImageEffectPreset;
+                    int indexSelected = i;
+                    tsmi.Click += (sender, e) =>
+                    {
+                        Program.DefaultTaskSettings.ImageSettings.SelectedImageEffectPreset = indexSelected;
+                        ((ToolStripMenuItem)tsmiAddImageEffects.DropDownItems[indexSelected]).RadioCheck();
+                    };
+                    items[i] = tsmi;
+                }
+
+                tsmiAddImageEffects.DropDownItems.AddRange(items);
             }
         }
 
