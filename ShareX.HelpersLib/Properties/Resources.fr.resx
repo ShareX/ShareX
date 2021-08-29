@@ -669,9 +669,6 @@ Voulez-vous la télécharger et l'installer ?</value>
   <data name="ReplCodeMenuCategory_Computer" xml:space="preserve">
     <value>Ordinateur</value>
   </data>
-  <data name="ReplCodeMenuCategory_Target" xml:space="preserve">
-    <value>Cible</value>
-  </data>
   <data name="HotkeyType_ScrollingCapture" xml:space="preserve">
     <value>Capture avec défilement</value>
   </data>

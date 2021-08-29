@@ -207,4 +207,16 @@
   <data name="lblHex.Text" xml:space="preserve">
     <value>Heksadesimal:</value>
   </data>
+  <data name="lblName.Text" xml:space="preserve">
+    <value>İsim:</value>
+  </data>
+  <data name="rbRecentColors.Text" xml:space="preserve">
+    <value>Son renkler</value>
+  </data>
+  <data name="rbStandardColors.Text" xml:space="preserve">
+    <value>Standart renkler</value>
+  </data>
+  <data name="btnClipboardColorPicker.ToolTip" xml:space="preserve">
+    <value>Panodan renk seç</value>
+  </data>
 </root>

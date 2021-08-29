@@ -654,9 +654,6 @@
   <data name="ReplCodeMenuCategory_Computer" xml:space="preserve">
     <value>计算机</value>
   </data>
-  <data name="ReplCodeMenuCategory_Target" xml:space="preserve">
-    <value>目标</value>
-  </data>
   <data name="HotkeyType_ScrollingCapture" xml:space="preserve">
     <value>滚动捕捉</value>
   </data>

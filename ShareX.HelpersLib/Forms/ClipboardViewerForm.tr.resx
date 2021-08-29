@@ -117,28 +117,16 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="btnExport.Text" xml:space="preserve">
-    <value> Dışa aktar</value>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX - Pano görüntüleyici</value>
   </data>
-  <data name="btnImport.Text" xml:space="preserve">
-    <value> İçe aktar</value>
+  <data name="btnClearClipboard.Text" xml:space="preserve">
+    <value>Panoyu temizle</value>
   </data>
-  <data name="tsmiExportClipboard.Text" xml:space="preserve">
-    <value>Panoya kopyala</value>
+  <data name="btnRefresh.Text" xml:space="preserve">
+    <value>Yenile</value>
   </data>
-  <data name="tsmiExportFile.Text" xml:space="preserve">
-    <value>Dosyaya kaydet...</value>
-  </data>
-  <data name="tsmiExportUpload.Text" xml:space="preserve">
-    <value>Metin olarak yükle</value>
-  </data>
-  <data name="tsmiImportClipboard.Text" xml:space="preserve">
-    <value>Panodan</value>
-  </data>
-  <data name="tsmiImportFile.Text" xml:space="preserve">
-    <value>Dosyadan...</value>
-  </data>
-  <data name="tsmiImportURL.Text" xml:space="preserve">
-    <value>Adresten...</value>
+  <data name="chFormat.Text" xml:space="preserve">
+    <value>Biçim</value>
   </data>
 </root>

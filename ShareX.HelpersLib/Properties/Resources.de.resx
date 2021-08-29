@@ -669,9 +669,6 @@ Soll sie heruntergeladen und installiert werden?</value>
   <data name="ReplCodeMenuCategory_Computer" xml:space="preserve">
     <value>Computer</value>
   </data>
-  <data name="ReplCodeMenuCategory_Target" xml:space="preserve">
-    <value>Ziel</value>
-  </data>
   <data name="HotkeyType_ScrollingCapture" xml:space="preserve">
     <value>Scroll-Aufnahme</value>
   </data>

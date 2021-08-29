@@ -1,4 +1,4 @@
-﻿
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -173,5 +173,17 @@
   </data>
   <data name="lblHashCheckHash.Text" xml:space="preserve">
     <value>Hash:</value>
+  </data>
+  <data name="btnFilePathBrowse2.Text" xml:space="preserve">
+    <value>Gözat...</value>
+  </data>
+  <data name="cbCompareTwoFiles.Text" xml:space="preserve">
+    <value>İki dosyayı karşılaştır</value>
+  </data>
+  <data name="lblFilePath.Text" xml:space="preserve">
+    <value>Dosya yolu:</value>
+  </data>
+  <data name="lblFilePath2.Text" xml:space="preserve">
+    <value>Dosya yolu:</value>
   </data>
 </root>

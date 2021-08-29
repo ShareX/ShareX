@@ -132,9 +132,6 @@
   <data name="btnStartHashCheck.Text" xml:space="preserve">
     <value>開始</value>
   </data>
-  <data name="lblFile.Text" xml:space="preserve">
-    <value>ファイルのパス:</value>
-  </data>
   <data name="tpFileHashCheck.Text" xml:space="preserve">
     <value>ファイルのハッシュ値照合</value>
   </data>

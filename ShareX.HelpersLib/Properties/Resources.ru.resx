@@ -672,9 +672,6 @@
   <data name="ReplCodeMenuCategory_Computer" xml:space="preserve">
     <value>Компьютер</value>
   </data>
-  <data name="ReplCodeMenuCategory_Target" xml:space="preserve">
-    <value>Цель</value>
-  </data>
   <data name="HotkeyType_ScrollingCapture" xml:space="preserve">
     <value>Захват с прокруткой</value>
   </data>

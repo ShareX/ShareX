@@ -287,9 +287,6 @@ Apakah anda ingin mengunduhnya?</value>
   <data name="HotkeyType_TextCapture" xml:space="preserve">
     <value>Ambil teks (OCR)</value>
   </data>
-  <data name="ReplCodeMenuCategory_Target" xml:space="preserve">
-    <value>Target</value>
-  </data>
   <data name="Stop" xml:space="preserve">
     <value>Hentikan</value>
   </data>

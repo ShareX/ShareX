@@ -202,7 +202,7 @@
     <value>Scrolling capture</value>
   </data>
   <data name="ReplCodeMenuEntry_iAa_Auto_increment_alphanumeric_all" xml:space="preserve">
-    <value>Auto increment alphanumeric case-sensitive. 0 pad left using {n}</value>
+    <value>Auto increment alphanumeric case-sensitive (0 pad left using {n})</value>
   </data>
   <data name="ReplCodeMenuEntry_t_Title_of_active_window" xml:space="preserve">
     <value>Title of window</value>
@@ -277,7 +277,7 @@
     <value>Upload image to host</value>
   </data>
   <data name="ReplCodeMenuEntry_ix_Auto_increment_hexadecimal" xml:space="preserve">
-    <value>Auto increment hexadecimal. 0 pad left using {n}</value>
+    <value>Auto increment hexadecimal (0 pad left using {n})</value>
   </data>
   <data name="CMYK_ToString_Cyan___0_0_0____Magenta___1_0_0____Yellow___2_0_0____Key___3_0_0__" xml:space="preserve">
     <value>Cyan: {0:0.0}%, Magenta: {1:0.0}%, Yellow: {2:0.0}%, Key: {3:0.0}%</value>
@@ -441,7 +441,7 @@ Would you like to download it?</value>
     <value>Tools</value>
   </data>
   <data name="ReplCodeMenuEntry_rn_Random_number_0_to_9" xml:space="preserve">
-    <value>Random number 0 to 9. Repeat using {n}</value>
+    <value>Random number 0 to 9 (Repeat using {n})</value>
   </data>
   <data name="HotkeyType_ClipboardUploadWithContentViewer" xml:space="preserve">
     <value>Upload from clipboard with content viewer</value>
@@ -489,7 +489,7 @@ Would you like to download it?</value>
     <value>.NET (Bad quality)</value>
   </data>
   <data name="ReplCodeMenuEntry_ia_Auto_increment_alphanumeric" xml:space="preserve">
-    <value>Auto increment alphanumeric case-insensitive. 0 pad left using {n}</value>
+    <value>Auto increment alphanumeric case-insensitive (0 pad left using {n})</value>
   </data>
   <data name="DNSChangerForm_btnSave_Click_Setting_DNS_failed_" xml:space="preserve">
     <value>Setting DNS failed.</value>
@@ -756,7 +756,7 @@ Would you like to download and install it?</value>
     <value>Incremental</value>
   </data>
   <data name="RandomEmojiRepeatUsingN" xml:space="preserve">
-    <value>Random emoji. Repeat using {n}</value>
+    <value>Random emoji (Repeat using {n})</value>
   </data>
   <data name="AfterCaptureTasks_SaveThumbnailImageToFile" xml:space="preserve">
     <value>Save thumbnail image to file</value>
@@ -816,7 +816,7 @@ Would you like to download and install it?</value>
     <value>Default .NET encoding (Fast encoding but average quality)</value>
   </data>
   <data name="ReplCodeMenuEntry_rx_Random_hexadecimal" xml:space="preserve">
-    <value>Random hexadecimal char. Repeat using {n}</value>
+    <value>Random hexadecimal char (Repeat using {n})</value>
   </data>
   <data name="HotkeyType_ClipboardUpload_Category" xml:space="preserve">
     <value>Upload</value>
@@ -939,7 +939,7 @@ Would you like to download and install it?</value>
     <value>Step (I)</value>
   </data>
   <data name="ReplCodeMenuEntry_i_Auto_increment_number" xml:space="preserve">
-    <value>Auto increment number. 0 pad left using {n}</value>
+    <value>Auto increment number (0 pad left using {n})</value>
   </data>
   <data name="HotkeyType_ClipboardUpload" xml:space="preserve">
     <value>Upload from clipboard</value>
@@ -1023,7 +1023,7 @@ Would you like to download and install it?</value>
     <value>Shorten URL</value>
   </data>
   <data name="ReplCodeMenuEntry_rf_Random_line_from_file" xml:space="preserve">
-    <value>Random line from a file. Use {filepath} to determine the file</value>
+    <value>Random line from a file (Use {filepath} to determine the file)</value>
   </data>
   <data name="DownloaderForm_StartDownload_Cancel" xml:space="preserve">
     <value>Cancel</value>
@@ -1074,7 +1074,7 @@ Would you like to download and install it?</value>
     <value>Loading image: {0}%</value>
   </data>
   <data name="ReplCodeMenuEntry_ra_Random_alphanumeric_char" xml:space="preserve">
-    <value>Random alphanumeric char. Repeat using {n}</value>
+    <value>Random alphanumeric char (Repeat using {n})</value>
   </data>
   <data name="HotkeyType_StartAutoCapture_Category" xml:space="preserve">
     <value>Screen capture</value>
@@ -1167,7 +1167,7 @@ Would you like to download and install it?</value>
     <value>Text (Background) (T)</value>
   </data>
   <data name="RandomNonAmbiguousAlphanumericCharRepeatUsingN" xml:space="preserve">
-    <value>Random non ambiguous alphanumeric char. Repeat using {n}</value>
+    <value>Random non ambiguous alphanumeric char (Repeat using {n})</value>
   </data>
   <data name="HotkeyType_LastRegion_Category" xml:space="preserve">
     <value>Screen capture</value>
@@ -1317,7 +1317,7 @@ Would you like to download and install it?</value>
     <value>Close notification</value>
   </data>
   <data name="ToastClickAction_AnnotateImage" xml:space="preserve">
-    <value>Annotate image</value>
+    <value>Edit image</value>
   </data>
   <data name="ToastClickAction_CopyImageToClipboard" xml:space="preserve">
     <value>Copy image</value>

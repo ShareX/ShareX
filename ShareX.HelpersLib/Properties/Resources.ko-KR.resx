@@ -967,9 +967,6 @@
   <data name="ReplCodeMenuCategory_Image" xml:space="preserve">
     <value>이미지</value>
   </data>
-  <data name="ReplCodeMenuCategory_Target" xml:space="preserve">
-    <value>타깃</value>
-  </data>
   <data name="HotkeyType_ImageCombiner" xml:space="preserve">
     <value>이미지 취합기</value>
   </data>

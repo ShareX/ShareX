@@ -696,9 +696,6 @@ Você gostaria de baixar e instalar?</value>
   <data name="ReplCodeMenuCategory_Computer" xml:space="preserve">
     <value>Computador</value>
   </data>
-  <data name="ReplCodeMenuCategory_Target" xml:space="preserve">
-    <value>Destino</value>
-  </data>
   <data name="HotkeyType_ScrollingCapture" xml:space="preserve">
     <value>Captura rolante</value>
   </data>

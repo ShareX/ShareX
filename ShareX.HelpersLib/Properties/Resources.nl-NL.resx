@@ -666,9 +666,6 @@ Wil je deze downloaden en installeren?</value>
   <data name="ReplCodeMenuCategory_Computer" xml:space="preserve">
     <value>Computer</value>
   </data>
-  <data name="ReplCodeMenuCategory_Target" xml:space="preserve">
-    <value>Doel</value>
-  </data>
   <data name="HotkeyType_ScrollingCapture" xml:space="preserve">
     <value>Scrollopname</value>
   </data>

@@ -662,9 +662,6 @@
   <data name="ReplCodeMenuEntry_rn_Random_number_0_to_9" xml:space="preserve">
     <value>Número aleatorio del 0 al 9. Repetir con {n}</value>
   </data>
-  <data name="ReplCodeMenuCategory_Target" xml:space="preserve">
-    <value>Destino</value>
-  </data>
   <data name="ReplCodeMenuEntry_unix_Unix_timestamp" xml:space="preserve">
     <value>Marca de tiempo Unix</value>
   </data>

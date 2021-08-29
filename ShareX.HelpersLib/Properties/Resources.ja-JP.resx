@@ -508,9 +508,6 @@
   <data name="HotkeyType_ScreenRecorderGIF" xml:space="preserve">
     <value>独自領域の動画キャプチャー (GIF) を開始/停止</value>
   </data>
-  <data name="ReplCodeMenuCategory_Target" xml:space="preserve">
-    <value>対象</value>
-  </data>
   <data name="HotkeyType_Ruler" xml:space="preserve">
     <value>定規</value>
   </data>
@@ -1108,33 +1105,6 @@
   <data name="AmazonS3StorageClass_STANDARD_IA" xml:space="preserve">
     <value>標準 – 低頻度アクセス ストレージ</value>
   </data>
-  <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__Image__Size___0_x_1__" xml:space="preserve">
-    <value>クリップボードの内容: 画像 (サイズ: {0}x{1})</value>
-  </data>
-  <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__Text__Length___0__" xml:space="preserve">
-    <value>クリップボードの内容: 文字列 (長さ: {0})</value>
-  </data>
-  <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__File__Count___0__" xml:space="preserve">
-    <value>クリップボードの内容: ファイル(ファイル数: {0})</value>
-  </data>
-  <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_is_empty_or_contains_unknown_data_" xml:space="preserve">
-    <value>クリップボードが空または不明なデータです。</value>
-  </data>
-  <data name="ImageEditorInterpolationMode_HighQualityBicubic" xml:space="preserve">
-    <value>高画質バイキュービック</value>
-  </data>
-  <data name="ImageEditorInterpolationMode_Bicubic" xml:space="preserve">
-    <value>バイキュービック</value>
-  </data>
-  <data name="ImageEditorInterpolationMode_Bilinear" xml:space="preserve">
-    <value>バイリニア</value>
-  </data>
-  <data name="ImageEditorInterpolationMode_HighQualityBilinear" xml:space="preserve">
-    <value>高画質バイキュービック</value>
-  </data>
-  <data name="ImageEditorInterpolationMode_NearestNeighbor" xml:space="preserve">
-    <value>ニアレストネイバー</value>
-  </data>
   <data name="HotkeyType_QRCodeDecodeFromScreen_Category" xml:space="preserve">
     <value>ツール</value>
   </data>
@@ -1218,12 +1188,6 @@
   </data>
   <data name="ToastClickAction_AnnotateImage" xml:space="preserve">
     <value>画像編集</value>
-  </data>
-  <data name="ToastClickAction_CloseNotification" xml:space="preserve">
-    <value>通知を閉じる</value>
-  </data>
-  <data name="ToastClickAction_AnnotateImage" xml:space="preserve">
-    <value>画像エディタを開く</value>
   </data>
   <data name="ToastClickAction_CopyImageToClipboard" xml:space="preserve">
     <value>画像をコピー</value>

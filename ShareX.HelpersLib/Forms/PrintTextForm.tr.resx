@@ -124,7 +124,7 @@
     <value>İptal</value>
   </data>
   <data name="btnChangeFont.Text" xml:space="preserve">
-    <value>Yazı tipi değiştir</value>
+    <value>Yazı tipini değiştir...</value>
   </data>
   <data name="btnPrint.Text" xml:space="preserve">
     <value>Yazdır...</value>

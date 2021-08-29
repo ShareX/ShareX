@@ -2780,7 +2780,7 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Random emoji. Repeat using {n}.
+        ///   Looks up a localized string similar to Random emoji (Repeat using {n}).
         /// </summary>
         internal static string RandomEmojiRepeatUsingN {
             get {
@@ -2789,7 +2789,7 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Random non ambiguous alphanumeric char. Repeat using {n}.
+        ///   Looks up a localized string similar to Random non ambiguous alphanumeric char (Repeat using {n}).
         /// </summary>
         internal static string RandomNonAmbiguousAlphanumericCharRepeatUsingN {
             get {
@@ -2960,7 +2960,7 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Auto increment number. 0 pad left using {n}.
+        ///   Looks up a localized string similar to Auto increment number (0 pad left using {n}).
         /// </summary>
         internal static string ReplCodeMenuEntry_i_Auto_increment_number {
             get {
@@ -2969,7 +2969,7 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Auto increment alphanumeric case-insensitive. 0 pad left using {n}.
+        ///   Looks up a localized string similar to Auto increment alphanumeric case-insensitive (0 pad left using {n}).
         /// </summary>
         internal static string ReplCodeMenuEntry_ia_Auto_increment_alphanumeric {
             get {
@@ -2978,7 +2978,7 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Auto increment alphanumeric case-sensitive. 0 pad left using {n}.
+        ///   Looks up a localized string similar to Auto increment alphanumeric case-sensitive (0 pad left using {n}).
         /// </summary>
         internal static string ReplCodeMenuEntry_iAa_Auto_increment_alphanumeric_all {
             get {
@@ -2996,7 +2996,7 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Auto increment hexadecimal. 0 pad left using {n}.
+        ///   Looks up a localized string similar to Auto increment hexadecimal (0 pad left using {n}).
         /// </summary>
         internal static string ReplCodeMenuEntry_ix_Auto_increment_hexadecimal {
             get {
@@ -3077,7 +3077,7 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Random alphanumeric char. Repeat using {n}.
+        ///   Looks up a localized string similar to Random alphanumeric char (Repeat using {n}).
         /// </summary>
         internal static string ReplCodeMenuEntry_ra_Random_alphanumeric_char {
             get {
@@ -3086,7 +3086,7 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Random line from a file. Use {filepath} to determine the file.
+        ///   Looks up a localized string similar to Random line from a file (Use {filepath} to determine the file).
         /// </summary>
         internal static string ReplCodeMenuEntry_rf_Random_line_from_file {
             get {
@@ -3095,7 +3095,7 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Random number 0 to 9. Repeat using {n}.
+        ///   Looks up a localized string similar to Random number 0 to 9 (Repeat using {n}).
         /// </summary>
         internal static string ReplCodeMenuEntry_rn_Random_number_0_to_9 {
             get {
@@ -3104,7 +3104,7 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Random hexadecimal char. Repeat using {n}.
+        ///   Looks up a localized string similar to Random hexadecimal char (Repeat using {n}).
         /// </summary>
         internal static string ReplCodeMenuEntry_rx_Random_hexadecimal {
             get {
@@ -3720,7 +3720,7 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Annotate image.
+        ///   Looks up a localized string similar to Edit image.
         /// </summary>
         internal static string ToastClickAction_AnnotateImage {
             get {

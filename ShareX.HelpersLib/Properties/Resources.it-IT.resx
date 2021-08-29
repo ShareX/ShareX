@@ -723,9 +723,6 @@ Vuoi scaricarla e installarla ora?</value>
   <data name="ReplCodeMenuCategory_Computer" xml:space="preserve">
     <value>Computer</value>
   </data>
-  <data name="ReplCodeMenuCategory_Target" xml:space="preserve">
-    <value>Obiettivo</value>
-  </data>
   <data name="HotkeyType_ScrollingCapture" xml:space="preserve">
     <value>Cattura a Scorrimento</value>
   </data>

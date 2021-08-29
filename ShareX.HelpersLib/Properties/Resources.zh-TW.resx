@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -652,9 +652,6 @@
   </data>
   <data name="ReplCodeMenuCategory_Computer" xml:space="preserve">
     <value>電腦</value>
-  </data>
-  <data name="ReplCodeMenuCategory_Target" xml:space="preserve">
-    <value>目標</value>
   </data>
   <data name="HotkeyType_ScrollingCapture" xml:space="preserve">
     <value>捲動擷取</value>

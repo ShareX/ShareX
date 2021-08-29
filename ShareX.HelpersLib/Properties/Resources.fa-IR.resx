@@ -877,9 +877,6 @@
   <data name="ReplCodeMenuCategory_Incremental" xml:space="preserve">
     <value>افزایشی</value>
   </data>
-  <data name="ReplCodeMenuCategory_Target" xml:space="preserve">
-    <value>هدف</value>
-  </data>
   <data name="ReplCodeMenuEntry_guid_Random_guid" xml:space="preserve">
     <value>GUID تصادفی</value>
   </data>

@@ -672,9 +672,6 @@ Bạn có muốn tải về và cài đặt không?</value>
   <data name="ReplCodeMenuCategory_Computer" xml:space="preserve">
     <value>Máy tính</value>
   </data>
-  <data name="ReplCodeMenuCategory_Target" xml:space="preserve">
-    <value>Đối tượng</value>
-  </data>
   <data name="HotkeyType_ScrollingCapture" xml:space="preserve">
     <value>Chụp khi cuộn trang</value>
   </data>

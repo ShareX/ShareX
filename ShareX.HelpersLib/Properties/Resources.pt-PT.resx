@@ -690,9 +690,6 @@ Você gostaria de transferi-la e instalá-la?</value>
   <data name="ReplCodeMenuCategory_Computer" xml:space="preserve">
     <value>Computador</value>
   </data>
-  <data name="ReplCodeMenuCategory_Target" xml:space="preserve">
-    <value>Destino</value>
-  </data>
   <data name="HotkeyType_ScrollingCapture" xml:space="preserve">
     <value>Captura com botão do meio</value>
   </data>
