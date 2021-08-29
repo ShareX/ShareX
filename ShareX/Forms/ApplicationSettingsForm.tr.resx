@@ -372,12 +372,6 @@
   <data name="cbUseWhiteShareXIcon.Text" xml:space="preserve">
     <value>Beyaz ShareX ikonu kullan</value>
   </data>
-  <data name="gbSteam.Text" xml:space="preserve">
-    <value>Steam</value>
-  </data>
-  <data name="gbWindows.Text" xml:space="preserve">
-    <value>Windows</value>
-  </data>
   <data name="lblCleanupKeepFileCount.Text" xml:space="preserve">
     <value>Saklancak dosya sayısı:</value>
   </data>

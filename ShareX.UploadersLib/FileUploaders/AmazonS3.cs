@@ -28,6 +28,7 @@ using ShareX.UploadersLib.Properties;
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
+using System.ComponentModel;
 using System.Drawing;
 using System.Globalization;
 using System.IO;
@@ -36,13 +37,19 @@ using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.FileUploaders
 {
-    public enum AmazonS3StorageClass // Localized
+    public enum AmazonS3StorageClass
     {
+        [Description("Amazon S3 Standard")]
         STANDARD,
+        [Description("Amazon S3 Standard-Infrequent Access")]
         STANDARD_IA,
+        [Description("Amazon S3 One Zone-Infrequent Access")]
         ONEZONE_IA,
+        [Description("Amazon S3 Intelligent-Tiering")]
         INTELLIGENT_TIERING,
+        //[Description("Amazon S3 Glacier")]
         //GLACIER,
+        //[Description("Amazon S3 Glacier Deep Archive")]
         //DEEP_ARCHIVE
     }
 

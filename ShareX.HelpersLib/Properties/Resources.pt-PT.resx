@@ -1081,9 +1081,6 @@ Gostaria de transferí-la?</value>
   <data name="ImageEditorStartMode_Maximized" xml:space="preserve">
     <value>Maximizado</value>
   </data>
-  <data name="AmazonS3StorageClass_STANDARD" xml:space="preserve">
-    <value>Armazenamento padrão</value>
-  </data>
   <data name="ShapeType_DrawingTextBackground" xml:space="preserve">
     <value>Texto (Fundo) (T)</value>
   </data>
@@ -1113,9 +1110,6 @@ Gostaria de transferí-la?</value>
   </data>
   <data name="Extensions_AddContextMenu_Undo" xml:space="preserve">
     <value>Refazer</value>
-  </data>
-  <data name="AmazonS3StorageClass_STANDARD_IA" xml:space="preserve">
-    <value>Padrão não frequente de acesso ao armazenamento</value>
   </data>
   <data name="RandomNonAmbiguousAlphanumericCharRepeatUsingN" xml:space="preserve">
     <value>Aleatório alfanumérico não ambíguo. Repetir utilizando {n}</value>

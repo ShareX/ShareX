@@ -951,12 +951,6 @@
   <data name="AfterCaptureTasks_ScanQRCode" xml:space="preserve">
     <value>掃描二維碼</value>
   </data>
-  <data name="AmazonS3StorageClass_STANDARD" xml:space="preserve">
-    <value>標準儲存</value>
-  </data>
-  <data name="AmazonS3StorageClass_STANDARD_IA" xml:space="preserve">
-    <value>標準非頻繁存取儲存</value>
-  </data>
   <data name="CodeMenuEntryFilename_RandomAdjective" xml:space="preserve">
     <value>隨機形容詞</value>
   </data>

@@ -722,12 +722,6 @@
   <data name="AfterUploadTasks_UseURLShortener" xml:space="preserve">
     <value>Acortar enlace</value>
   </data>
-  <data name="AmazonS3StorageClass_STANDARD" xml:space="preserve">
-    <value>Almacenamiento estándar</value>
-  </data>
-  <data name="AmazonS3StorageClass_STANDARD_IA" xml:space="preserve">
-    <value>Almacenamiento estándar de acceso poco frecuente</value>
-  </data>
   <data name="CodeMenuEntryFilename_RandomAdjective" xml:space="preserve">
     <value>Adjetivo aleatorio (inglés)</value>
   </data>

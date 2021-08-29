@@ -844,12 +844,6 @@
   <data name="PastebinPrivacy_Unlisted" xml:space="preserve">
     <value>비공개</value>
   </data>
-  <data name="AmazonS3StorageClass_STANDARD" xml:space="preserve">
-    <value>스탠다드 스토리지</value>
-  </data>
-  <data name="AmazonS3StorageClass_STANDARD_IA" xml:space="preserve">
-    <value>스탠다드 Infrequent Access 스토리지</value>
-  </data>
   <data name="PNGBitDepth_Default" xml:space="preserve">
     <value>기본</value>
   </data>

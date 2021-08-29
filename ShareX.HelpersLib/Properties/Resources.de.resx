@@ -1057,9 +1057,6 @@ Soll sie heruntergeladen werden?</value>
   <data name="PastebinExpiration_M1" xml:space="preserve">
     <value>1 Monat</value>
   </data>
-  <data name="AmazonS3StorageClass_STANDARD" xml:space="preserve">
-    <value>Standardspeicherplatz</value>
-  </data>
   <data name="CustomUploaderDestinationType_TextUploader" xml:space="preserve">
     <value>Textuploader</value>
   </data>

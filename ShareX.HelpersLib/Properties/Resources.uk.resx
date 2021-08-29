@@ -1027,9 +1027,6 @@ File size: {2:n0} / {3:n0} KB</value>
   <data name="PastebinExpiration_M1" xml:space="preserve">
     <value>1 місяць</value>
   </data>
-  <data name="AmazonS3StorageClass_STANDARD" xml:space="preserve">
-    <value>Стандартне сховище</value>
-  </data>
   <data name="ShapeType_DrawingTextBackground" xml:space="preserve">
     <value>Текст (тло) (T)</value>
   </data>
@@ -1095,9 +1092,6 @@ File size: {2:n0} / {3:n0} KB</value>
   </data>
   <data name="ScrollingCaptureScrollMethod_KeyPressPageDown" xml:space="preserve">
     <value>Імітувати натискання клавіші «Page Down»</value>
-  </data>
-  <data name="AmazonS3StorageClass_STANDARD_IA" xml:space="preserve">
-    <value>Типове сховище нечастого доступу</value>
   </data>
   <data name="ReplCodeMenuEntry_wy_Week_of_year" xml:space="preserve">
     <value>Тиждень року</value>

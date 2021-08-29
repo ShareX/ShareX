@@ -970,12 +970,6 @@ Bạn có muốn tải về không?</value>
   <data name="HotkeyType_ScreenRecorderCustomRegion_Category" xml:space="preserve">
     <value>Ghi lại màn hình</value>
   </data>
-  <data name="AmazonS3StorageClass_STANDARD" xml:space="preserve">
-    <value>Lưu trữ tiêu chuẩn</value>
-  </data>
-  <data name="AmazonS3StorageClass_STANDARD_IA" xml:space="preserve">
-    <value>Lưu trữ ít truy cập tiêu chuẩn</value>
-  </data>
   <data name="UpdateMessageBox_UpdateMessageBox_LatestVersion" xml:space="preserve">
     <value>Phiên bản mới nhất</value>
   </data>

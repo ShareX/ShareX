@@ -4758,6 +4758,7 @@ when you made the application key.</value>
   </data>
   <data name="btnAmazonS3StorageClassHelp.Text" xml:space="preserve">
     <value>?</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;btnAmazonS3StorageClassHelp.Name" xml:space="preserve">
     <value>btnAmazonS3StorageClassHelp</value>

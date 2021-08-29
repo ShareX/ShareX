@@ -1105,9 +1105,6 @@ Voulez-vous la télécharger ?</value>
   <data name="YouTubeVideoPrivacy_Unlisted" xml:space="preserve">
     <value>Non listés</value>
   </data>
-  <data name="AmazonS3StorageClass_STANDARD" xml:space="preserve">
-    <value>Stockage standard</value>
-  </data>
   <data name="PastebinPrivacy_Unlisted" xml:space="preserve">
     <value>Non listés</value>
   </data>
@@ -1131,9 +1128,6 @@ Voulez-vous la télécharger ?</value>
   </data>
   <data name="RandomNonAmbiguousAlphanumericCharRepeatUsingN" xml:space="preserve">
     <value>Caractères alphanumériques aléatoires non ambigus. Répéter en utilisant {n}</value>
-  </data>
-  <data name="AmazonS3StorageClass_STANDARD_IA" xml:space="preserve">
-    <value>Stockage Standard infrequent access</value>
   </data>
   <data name="ScrollingCaptureScrollTopMethod_SendMessageTop" xml:space="preserve">
     <value>Envoyer un message défiler en haut</value>
@@ -1162,9 +1156,6 @@ Voulez-vous la télécharger ?</value>
   <data name="DrawImageSizeMode_DontResize" xml:space="preserve">
     <value>Ne pas redimensionner</value>
   </data>
-  <data name="AmazonS3StorageClass_INTELLIGENT_TIERING" xml:space="preserve">
-    <value>Amazon S3 Intelligent-Tiering</value>
-  </data>
   <data name="HotkeyType_ImageThumbnailer_Category" xml:space="preserve">
     <value>Outils</value>
   </data>
@@ -1183,20 +1174,11 @@ Voulez-vous la télécharger ?</value>
   <data name="HotkeyType_ImageThumbnailer" xml:space="preserve">
     <value>Générateur de miniatures d'image</value>
   </data>
-  <data name="AmazonS3StorageClass_DEEP_ARCHIVE" xml:space="preserve">
-    <value>Amazon S3 Glacier Deep Archive</value>
-  </data>
   <data name="HotkeyType_QRCodeDecodeFromScreen" xml:space="preserve">
     <value>Code QR (Décoder depuis l'écran)</value>
   </data>
   <data name="DrawImageSizeMode_AbsoluteSize" xml:space="preserve">
     <value>Taille absolue</value>
-  </data>
-  <data name="AmazonS3StorageClass_ONEZONE_IA" xml:space="preserve">
-    <value>Amazon S3 One Zone-Infrequent Access</value>
-  </data>
-  <data name="AmazonS3StorageClass_GLACIER" xml:space="preserve">
-    <value>Amazon S3 Glacier</value>
   </data>
   <data name="HotkeyType_VideoConverter" xml:space="preserve">
     <value>Convertisseur vidéo</value>

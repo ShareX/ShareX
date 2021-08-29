@@ -257,6 +257,7 @@
   </data>
   <data name="tsnudSize.Text" xml:space="preserve">
     <value>64</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="tsMain.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>

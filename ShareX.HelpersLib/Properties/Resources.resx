@@ -210,9 +210,6 @@
   <data name="AfterCaptureTasks_SendImageToPrinter" xml:space="preserve">
     <value>Print image</value>
   </data>
-  <data name="AmazonS3StorageClass_INTELLIGENT_TIERING" xml:space="preserve">
-    <value>Amazon S3 Intelligent-Tiering</value>
-  </data>
   <data name="ShapeType_RegionRectangle" xml:space="preserve">
     <value>Rectangle region</value>
   </data>
@@ -475,9 +472,6 @@ Would you like to download it?</value>
   </data>
   <data name="HotkeyType_RectangleRegion_Category" xml:space="preserve">
     <value>Screen capture</value>
-  </data>
-  <data name="AmazonS3StorageClass_DEEP_ARCHIVE" xml:space="preserve">
-    <value>Amazon S3 Glacier Deep Archive</value>
   </data>
   <data name="GIFQuality_Bit8" xml:space="preserve">
     <value>Octree quantizer 256 colors (Slow encoding but better quality)</value>
@@ -760,9 +754,6 @@ Would you like to download and install it?</value>
   </data>
   <data name="AfterCaptureTasks_SaveThumbnailImageToFile" xml:space="preserve">
     <value>Save thumbnail image to file</value>
-  </data>
-  <data name="AmazonS3StorageClass_ONEZONE_IA" xml:space="preserve">
-    <value>Amazon S3 One Zone-Infrequent Access</value>
   </data>
   <data name="DownloaderForm_StartDownload_Downloading_" xml:space="preserve">
     <value>Downloading.</value>
@@ -1058,9 +1049,6 @@ Would you like to download and install it?</value>
   <data name="HotkeyType_ColorPicker" xml:space="preserve">
     <value>Color picker</value>
   </data>
-  <data name="AmazonS3StorageClass_GLACIER" xml:space="preserve">
-    <value>Amazon S3 Glacier</value>
-  </data>
   <data name="HotkeyType_ScreenRecorderCustomRegion_Category" xml:space="preserve">
     <value>Screen record</value>
   </data>
@@ -1160,9 +1148,6 @@ Would you like to download and install it?</value>
   <data name="PastebinExpiration_M1" xml:space="preserve">
     <value>1 Month</value>
   </data>
-  <data name="AmazonS3StorageClass_STANDARD" xml:space="preserve">
-    <value>Amazon S3 Standard</value>
-  </data>
   <data name="ShapeType_DrawingTextBackground" xml:space="preserve">
     <value>Text (Background) (T)</value>
   </data>
@@ -1243,9 +1228,6 @@ Would you like to download and install it?</value>
   </data>
   <data name="HotkeyType_ImageSplitter_Category" xml:space="preserve">
     <value>Tools</value>
-  </data>
-  <data name="AmazonS3StorageClass_STANDARD_IA" xml:space="preserve">
-    <value>Amazon S3 Standard-Infrequent Access</value>
   </data>
   <data name="tick" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\tick.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

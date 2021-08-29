@@ -1927,6 +1927,7 @@ Otherwise it can't keep up with recording and a lot of frame drops will happen.<
   </data>
   <data name="btnHelperDevicesHelp.Text" xml:space="preserve">
     <value>?</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;btnHelperDevicesHelp.Name" xml:space="preserve">
     <value>btnHelperDevicesHelp</value>

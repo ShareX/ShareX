@@ -847,9 +847,6 @@
   <data name="ReplCodeMenuEntry_height_Gets_image_height" xml:space="preserve">
     <value>ارتفاع تصویر</value>
   </data>
-  <data name="AmazonS3StorageClass_STANDARD" xml:space="preserve">
-    <value>فضای ذخیره سازی استاندار</value>
-  </data>
   <data name="ShapeType_ToolCrop" xml:space="preserve">
     <value>بریدن عکس (C)</value>
   </data>

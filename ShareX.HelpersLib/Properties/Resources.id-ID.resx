@@ -962,12 +962,6 @@ Apakah anda ingin mengunduhnya?</value>
   <data name="HotkeyType_StartAutoCapture" xml:space="preserve">
     <value>Mulai pengambilan otomatis menggunakan area terakhir</value>
   </data>
-  <data name="AmazonS3StorageClass_STANDARD" xml:space="preserve">
-    <value>Penyimpanan steandar</value>
-  </data>
-  <data name="AmazonS3StorageClass_STANDARD_IA" xml:space="preserve">
-    <value>Penyimpanan akses standar yang jarang</value>
-  </data>
   <data name="ShapeType_RegionRectangle" xml:space="preserve">
     <value>Area: Persegi panjang</value>
   </data>

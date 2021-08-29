@@ -326,6 +326,7 @@
   </data>
   <data name="mbHelp.Text" xml:space="preserve">
     <value>?</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="mbHelp.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
@@ -1904,6 +1905,7 @@
   </data>
   <data name="btnJsonPathHelp.Text" xml:space="preserve">
     <value>?</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;btnJsonPathHelp.Name" xml:space="preserve">
     <value>btnJsonPathHelp</value>
@@ -2129,6 +2131,7 @@ store.book[0].title</value>
   </data>
   <data name="btnXPathHelp.Text" xml:space="preserve">
     <value>?</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;btnXPathHelp.Name" xml:space="preserve">
     <value>btnXPathHelp</value>

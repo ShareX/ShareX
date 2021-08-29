@@ -1099,12 +1099,6 @@ Dosya boyutu: {2:n0} / {3:n0} KB</value>
   <data name="YouTubeVideoPrivacy_Private" xml:space="preserve">
     <value>Kişisel</value>
   </data>
-  <data name="AmazonS3StorageClass_STANDARD" xml:space="preserve">
-    <value>Standart depolama</value>
-  </data>
-  <data name="AmazonS3StorageClass_STANDARD_IA" xml:space="preserve">
-    <value>Standart seyrek erişim depolama</value>
-  </data>
   <data name="CodeMenuEntryFilename_RandomAdjective" xml:space="preserve">
     <value>Rastgele sıfat</value>
   </data>

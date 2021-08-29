@@ -58,10 +58,10 @@
             this.tsbSearch = new System.Windows.Forms.ToolStripButton();
             this.tsbAdvancedSearch = new System.Windows.Forms.ToolStripButton();
             this.tss1 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsbToggleMoreInfo = new System.Windows.Forms.ToolStripButton();
             this.tsbCopyStats = new System.Windows.Forms.ToolStripButton();
             this.tss2 = new System.Windows.Forms.ToolStripSeparator();
             this.tsbSettings = new System.Windows.Forms.ToolStripButton();
-            this.tsbToggleMoreInfo = new System.Windows.Forms.ToolStripButton();
             this.scMain = new ShareX.HelpersLib.SplitContainerCustomSplitter();
             this.scHistoryItemInfo = new ShareX.HelpersLib.SplitContainerCustomSplitter();
             this.pbThumbnail = new ShareX.HelpersLib.MyPictureBox();
@@ -290,6 +290,14 @@
             this.tss1.Name = "tss1";
             resources.ApplyResources(this.tss1, "tss1");
             // 
+            // tsbToggleMoreInfo
+            // 
+            this.tsbToggleMoreInfo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbToggleMoreInfo.Image = global::ShareX.HistoryLib.Properties.Resources.layout_header_3_mix;
+            resources.ApplyResources(this.tsbToggleMoreInfo, "tsbToggleMoreInfo");
+            this.tsbToggleMoreInfo.Name = "tsbToggleMoreInfo";
+            this.tsbToggleMoreInfo.Click += new System.EventHandler(this.tsbToggleMoreInfo_Click);
+            // 
             // tsbCopyStats
             // 
             this.tsbCopyStats.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -310,14 +318,6 @@
             resources.ApplyResources(this.tsbSettings, "tsbSettings");
             this.tsbSettings.Name = "tsbSettings";
             this.tsbSettings.Click += new System.EventHandler(this.tsbSettings_Click);
-            // 
-            // tsbToggleMoreInfo
-            // 
-            this.tsbToggleMoreInfo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbToggleMoreInfo.Image = global::ShareX.HistoryLib.Properties.Resources.layout_header_3_mix;
-            resources.ApplyResources(this.tsbToggleMoreInfo, "tsbToggleMoreInfo");
-            this.tsbToggleMoreInfo.Name = "tsbToggleMoreInfo";
-            this.tsbToggleMoreInfo.Click += new System.EventHandler(this.tsbToggleMoreInfo_Click);
             // 
             // scMain
             // 

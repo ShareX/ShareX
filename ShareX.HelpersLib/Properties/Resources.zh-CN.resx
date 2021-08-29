@@ -1003,12 +1003,6 @@
   <data name="ShapeType_ToolCrop" xml:space="preserve">
     <value>工具：图像裁剪 (C)</value>
   </data>
-  <data name="AmazonS3StorageClass_STANDARD" xml:space="preserve">
-    <value>亚马逊 S3 标准</value>
-  </data>
-  <data name="AmazonS3StorageClass_STANDARD_IA" xml:space="preserve">
-    <value>亚马逊 S3 标准不频繁访问</value>
-  </data>
   <data name="ImgurThumbnailType_Small_Thumbnail" xml:space="preserve">
     <value>小缩略图</value>
   </data>
@@ -1137,18 +1131,6 @@
   </data>
   <data name="RandomNonAmbiguousAlphanumericCharRepeatUsingN" xml:space="preserve">
     <value>随机的非易混淆字母与数字字符。使用 {n} 表示重复次数</value>
-  </data>
-  <data name="AmazonS3StorageClass_DEEP_ARCHIVE" xml:space="preserve">
-    <value>亚马逊 S3 Glacier Deep Archive</value>
-  </data>
-  <data name="AmazonS3StorageClass_GLACIER" xml:space="preserve">
-    <value>亚马逊 S3 Glacier</value>
-  </data>
-  <data name="AmazonS3StorageClass_INTELLIGENT_TIERING" xml:space="preserve">
-    <value>亚马逊 S3 智能分层</value>
-  </data>
-  <data name="AmazonS3StorageClass_ONEZONE_IA" xml:space="preserve">
-    <value>亚马逊 S3 单区 不频繁访问存储</value>
   </data>
   <data name="DrawImageSizeMode_DontResize" xml:space="preserve">
     <value>不调整大小</value>

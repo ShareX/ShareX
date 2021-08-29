@@ -1015,12 +1015,6 @@
   <data name="HotkeyType_UploadText" xml:space="preserve">
     <value>Загрузка текста</value>
   </data>
-  <data name="AmazonS3StorageClass_STANDARD" xml:space="preserve">
-    <value>Стандартное хранилище</value>
-  </data>
-  <data name="AmazonS3StorageClass_STANDARD_IA" xml:space="preserve">
-    <value>Стандартное хранилище нечастого доступа</value>
-  </data>
   <data name="ImgurThumbnailType_Big_Square" xml:space="preserve">
     <value>Большой квадрат</value>
   </data>
