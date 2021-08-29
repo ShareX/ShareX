@@ -33,13 +33,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AboutForm));
             this.lblProductName = new System.Windows.Forms.Label();
-            this.lblBerk = new System.Windows.Forms.Label();
+            this.lblJaex = new System.Windows.Forms.Label();
             this.lblMike = new System.Windows.Forms.Label();
             this.rtbCredits = new System.Windows.Forms.RichTextBox();
             this.rtbShareXInfo = new System.Windows.Forms.RichTextBox();
             this.pbMikeURL = new System.Windows.Forms.PictureBox();
             this.pbAU = new System.Windows.Forms.PictureBox();
-            this.pbBerkURL = new System.Windows.Forms.PictureBox();
+            this.pbJaexURL = new System.Windows.Forms.PictureBox();
             this.pbTR = new System.Windows.Forms.PictureBox();
             this.lblTeam = new System.Windows.Forms.Label();
             this.pbLogo = new System.Windows.Forms.PictureBox();
@@ -51,7 +51,7 @@
             this.lblBuild = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbMikeURL)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbAU)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbBerkURL)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbJaexURL)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbTR)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             this.SuspendLayout();
@@ -62,10 +62,10 @@
             this.lblProductName.BackColor = System.Drawing.Color.Transparent;
             this.lblProductName.Name = "lblProductName";
             // 
-            // lblBerk
+            // lblJaex
             // 
-            resources.ApplyResources(this.lblBerk, "lblBerk");
-            this.lblBerk.Name = "lblBerk";
+            resources.ApplyResources(this.lblJaex, "lblJaex");
+            this.lblJaex.Name = "lblJaex";
             // 
             // lblMike
             // 
@@ -110,15 +110,15 @@
             this.pbAU.Name = "pbAU";
             this.pbAU.TabStop = false;
             // 
-            // pbBerkURL
+            // pbJaexURL
             // 
-            this.pbBerkURL.BackColor = System.Drawing.Color.Transparent;
-            this.pbBerkURL.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbBerkURL.Image = global::ShareX.Properties.Resources.GitHub;
-            resources.ApplyResources(this.pbBerkURL, "pbBerkURL");
-            this.pbBerkURL.Name = "pbBerkURL";
-            this.pbBerkURL.TabStop = false;
-            this.pbBerkURL.Click += new System.EventHandler(this.pbBerkURL_Click);
+            this.pbJaexURL.BackColor = System.Drawing.Color.Transparent;
+            this.pbJaexURL.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbJaexURL.Image = global::ShareX.Properties.Resources.GitHub;
+            resources.ApplyResources(this.pbJaexURL, "pbJaexURL");
+            this.pbJaexURL.Name = "pbJaexURL";
+            this.pbJaexURL.TabStop = false;
+            this.pbJaexURL.Click += new System.EventHandler(this.pbJaexURL_Click);
             // 
             // pbTR
             // 
@@ -193,12 +193,12 @@
             this.Controls.Add(this.lblTeam);
             this.Controls.Add(this.rtbShareXInfo);
             this.Controls.Add(this.rtbCredits);
-            this.Controls.Add(this.lblBerk);
+            this.Controls.Add(this.lblJaex);
             this.Controls.Add(this.lblMike);
             this.Controls.Add(this.uclUpdate);
             this.Controls.Add(this.pbMikeURL);
             this.Controls.Add(this.pbAU);
-            this.Controls.Add(this.pbBerkURL);
+            this.Controls.Add(this.pbJaexURL);
             this.Controls.Add(this.pbTR);
             this.Controls.Add(this.lblProductName);
             this.Controls.Add(this.cLogo);
@@ -207,7 +207,7 @@
             this.Shown += new System.EventHandler(this.AboutForm_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.pbMikeURL)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbAU)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbBerkURL)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbJaexURL)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbTR)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
             this.ResumeLayout(false);
@@ -218,9 +218,9 @@
         #endregion Windows Form Designer generated code
 
         private System.Windows.Forms.Label lblProductName;
-        private System.Windows.Forms.Label lblBerk;
+        private System.Windows.Forms.Label lblJaex;
         private System.Windows.Forms.PictureBox pbTR;
-        private System.Windows.Forms.PictureBox pbBerkURL;
+        private System.Windows.Forms.PictureBox pbJaexURL;
         private System.Windows.Forms.PictureBox pbMikeURL;
         private System.Windows.Forms.PictureBox pbAU;
         private System.Windows.Forms.Label lblMike;

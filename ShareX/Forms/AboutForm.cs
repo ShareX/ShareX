@@ -69,7 +69,7 @@ namespace ShareX
 #endif
 
             lblTeam.Text = "ShareX Team:";
-            lblBerk.Text = "Jaex (Berk)";
+            lblJaex.Text = "Jaex";
             lblMike.Text = "McoreD (Michael Delpach)";
 
             rtbShareXInfo.Text = $@"{Resources.AboutForm_AboutForm_Website}: {Links.URL_WEBSITE}
@@ -138,7 +138,7 @@ Copyright (c) 2007-2021 ShareX Team";
             URLHelpers.OpenURL(Links.URL_STEAM);
         }
 
-        private void pbBerkURL_Click(object sender, EventArgs e)
+        private void pbJaexURL_Click(object sender, EventArgs e)
         {
             URLHelpers.OpenURL(Links.URL_JAEX);
         }
