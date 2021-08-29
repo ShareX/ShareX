@@ -126,9 +126,6 @@
   <data name="UploadManager_IsUploadConfirmed_Are_you_sure_you_want_to_upload__0__files_" xml:space="preserve">
     <value>Anda yakin ingin mengunggah {0} file?</value>
   </data>
-  <data name="ScreenRecordForm_StartRecording_Encoding___" xml:space="preserve">
-    <value>Mengenkode...</value>
-  </data>
   <data name="UploadTask_DoUploadJob_You_are_attempting_to_upload_a_large_file" xml:space="preserve">
     <value>Anda mencoba mengunggah file besar.
 Apakah anda yakin ingin melanjutkan?</value>
@@ -150,9 +147,6 @@ Apakah anda yakin ingin melanjutkan?</value>
   </data>
   <data name="AboutForm_AboutForm_Language_nl_NL" xml:space="preserve">
     <value>Bahasa Belanda</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_FFmpeg_error" xml:space="preserve">
-    <value>FFmpeg eror</value>
   </data>
   <data name="ActionsToolbar_Edit" xml:space="preserve">
     <value>Edit...</value>
@@ -233,19 +227,8 @@ Silakan pilih tombol cepat yang berbeda atau keluar dari aplikasi yang bertentan
   <data name="UploadTask_Prepare_Starting" xml:space="preserve">
     <value>Memulai</value>
   </data>
-  <data name="ScreenRecordForm_StartRecording_FFmpeg_video_and_audio_source_both_can_t_be__None__" xml:space="preserve">
-    <value>Sumber audio dan video FFmpeg keduanya tidak boleh "Tidak ada".</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_does_not_exist" xml:space="preserve">
-    <value>{0} tidak ada.
-
-Apakah Anda ingin mengunduhnya secara otomatis?</value>
-  </data>
   <data name="ApplicationSettingsForm_cbStartWithWindows_Text" xml:space="preserve">
     <value>Jalankan ShareX saat memulai Windows</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_Waiting___" xml:space="preserve">
-    <value>Menunggu...</value>
   </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_Image_uploader___0_" xml:space="preserve">
     <value>Pengunggah gambar: {0}</value>
@@ -348,9 +331,6 @@ Jalankan ShareX sebagai administrator untuk mengubah jalur folder pribadi.</valu
   <data name="AboutForm_AboutForm_Language_tr" xml:space="preserve">
     <value>Bahasa Turki</value>
   </data>
-  <data name="ScreenRecordForm_StartRecording_Click_tray_icon_to_stop_recording_" xml:space="preserve">
-    <value>Klik untuk berhenti merekam.</value>
-  </data>
   <data name="MainForm_UpdateWorkflowsMenu_You_can_add_workflows_from_hotkey_settings___" xml:space="preserve">
     <value>Anda bisa menambahkan alur kerja dari pengaturan tombol cepat...</value>
   </data>
@@ -373,14 +353,8 @@ Apakah Anda ingin memulai ulang ShareX?</value>
   <data name="FileExistForm_txtNewName_TextChanged_Use_new_name__" xml:space="preserve">
     <value>Gunakan nama baru:</value>
   </data>
-  <data name="ScreenRecord_ConfirmCancel" xml:space="preserve">
-    <value>Anda yakin ingin menggagalkan perekaman ini?</value>
-  </data>
   <data name="AboutForm_AboutForm_Language_it_IT" xml:space="preserve">
     <value>Bahasa Italia</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_Missing" xml:space="preserve">
-    <value>Hilang</value>
   </data>
   <data name="AboutForm_AboutForm_Translators" xml:space="preserve">
     <value>Penerjemah</value>
@@ -476,9 +450,6 @@ Klik tengah untuk menutup</value>
   <data name="MainForm_UpdateMainWindowLayout_Hide_columns" xml:space="preserve">
     <value>Sembunyikan kolom</value>
   </data>
-  <data name="ScreenRecordForm_DownloaderForm_InstallRequested_FFmpeg_successfully_downloaded_" xml:space="preserve">
-    <value>FFmpeg berhasil diunduh.</value>
-  </data>
   <data name="ActionsToolbar_Close" xml:space="preserve">
     <value>Tutup</value>
   </data>
@@ -512,17 +483,11 @@ Klik tengah untuk menutup</value>
   <data name="AboutForm_AboutForm_Language_es" xml:space="preserve">
     <value>Bahasa Spanyol</value>
   </data>
-  <data name="ScreenRecordForm_StartRecording_Click_tray_icon_to_start_recording_" xml:space="preserve">
-    <value>Klik untuk mulai merekam.</value>
-  </data>
   <data name="UploadManager_ShowShortenURLDialog_Shorten" xml:space="preserve">
     <value>Persingkat</value>
   </data>
   <data name="UploadManager_ShowShortenURLDialog_ShortenURL" xml:space="preserve">
     <value>Persingkat URL</value>
-  </data>
-  <data name="ScreenRecordForm_DownloaderForm_InstallRequested_Download_of_FFmpeg_failed_" xml:space="preserve">
-    <value>Unduhan FFmpeg gagal.</value>
   </data>
   <data name="AboutForm_AboutForm_Language_uk" xml:space="preserve">
     <value>Bahasa Ukraina</value>

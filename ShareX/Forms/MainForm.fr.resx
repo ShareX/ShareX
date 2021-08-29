@@ -666,9 +666,6 @@
   <data name="tsmiOCRImage.Text" xml:space="preserve">
     <value>Image OCR...</value>
   </data>
-  <data name="tsmiSearchImage.Text" xml:space="preserve">
-    <value>Rechercher une image avec Google...</value>
-  </data>
   <data name="tsmiOpenActionsToolbar.Text" xml:space="preserve">
     <value>Activer la barre d'outils des actions</value>
   </data>
@@ -677,12 +674,6 @@
   </data>
   <data name="tsbAbout.Text" xml:space="preserve">
     <value>À propos...</value>
-  </data>
-  <data name="btnCloseNews.Text" xml:space="preserve">
-    <value>Fermer</value>
-  </data>
-  <data name="tsbNews.Text" xml:space="preserve">
-    <value>Nouveautés</value>
   </data>
   <data name="tsmiTrayUploadText.Text" xml:space="preserve">
     <value>Mettre en ligne un texte...</value>
@@ -789,38 +780,14 @@
   <data name="tsbTwitter.Text" xml:space="preserve">
     <value>Twitter</value>
   </data>
-  <data name="tsbPatreon.Text" xml:space="preserve">
-    <value>Patreon</value>
-  </data>
-  <data name="tsbBitcoin.Text" xml:space="preserve">
-    <value>Bitcoin</value>
-  </data>
-  <data name="tsbGitHub.Text" xml:space="preserve">
-    <value>GitHub</value>
-  </data>
-  <data name="tsbBitcoin.ToolTipText" xml:space="preserve">
-    <value>Nous soutenir en utilisant des cryptomonnaies</value>
-  </data>
   <data name="tsbDiscord.Text" xml:space="preserve">
     <value>Discord</value>
-  </data>
-  <data name="tsbTwitter.ToolTipText" xml:space="preserve">
-    <value>Suivez notre compte Twitter</value>
-  </data>
-  <data name="tsbPatreon.ToolTipText" xml:space="preserve">
-    <value>Nous soutenir sur Patreon</value>
   </data>
   <data name="tsmiThumbnailTitleTop.Text" xml:space="preserve">
     <value>Haut</value>
   </data>
   <data name="tsmiThumbnailTitleBottom.Text" xml:space="preserve">
     <value>Bas</value>
-  </data>
-  <data name="tsbDiscord.ToolTipText" xml:space="preserve">
-    <value>Rejoindre notre serveur Discord</value>
-  </data>
-  <data name="tsbGitHub.ToolTipText" xml:space="preserve">
-    <value>Mettre notre dépôt Github en favoris</value>
   </data>
   <data name="tsmiThumbnailTitleShow.Text" xml:space="preserve">
     <value>Afficher</value>

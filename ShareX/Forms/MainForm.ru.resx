@@ -627,20 +627,11 @@
   <data name="tsmiDeleteSelectedItem.Text" xml:space="preserve">
     <value>Убрать задачу из списка</value>
   </data>
-  <data name="tsmiSearchImage.Text" xml:space="preserve">
-    <value>Искать по картинке в Google...</value>
-  </data>
   <data name="tsmiOCRImage.Text" xml:space="preserve">
     <value>Распознать текст (OCR)...</value>
   </data>
   <data name="tsmiCombineImages.Text" xml:space="preserve">
     <value>Объединить изображения...</value>
-  </data>
-  <data name="tsbNews.Text" xml:space="preserve">
-    <value>Новости</value>
-  </data>
-  <data name="btnCloseNews.Text" xml:space="preserve">
-    <value>Закрыть</value>
   </data>
   <data name="tsbAbout.Text" xml:space="preserve">
     <value>О программе...</value>
@@ -770,21 +761,6 @@
   </data>
   <data name="tsmiRunAction.Text" xml:space="preserve">
     <value>Выполнить действие</value>
-  </data>
-  <data name="tsbTwitter.ToolTipText" xml:space="preserve">
-    <value>Читайте наш Твиттер</value>
-  </data>
-  <data name="tsbDiscord.ToolTipText" xml:space="preserve">
-    <value>Присоединяйтесь к нашему серверу Discord</value>
-  </data>
-  <data name="tsbPatreon.ToolTipText" xml:space="preserve">
-    <value>Поддержите нас на  Patreon</value>
-  </data>
-  <data name="tsbBitcoin.ToolTipText" xml:space="preserve">
-    <value>Поддержите нас криптовалютой</value>
-  </data>
-  <data name="tsbGitHub.ToolTipText" xml:space="preserve">
-    <value>Ставьте звезды нашему репозиторию GitHub</value>
   </data>
   <data name="tsmiTrayVideoConverter.Text" xml:space="preserve">
     <value>Конвертер видео...</value>

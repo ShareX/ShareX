@@ -229,6 +229,7 @@
   </data>
   <data name="btnPackageFilePathBrowse.Text" xml:space="preserve">
     <value>...</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;btnPackageFilePathBrowse.Name" xml:space="preserve">
     <value>btnPackageFilePathBrowse</value>
@@ -274,6 +275,7 @@
   </data>
   <data name="btnAssetsFolderPathBrowse.Text" xml:space="preserve">
     <value>...</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;btnAssetsFolderPathBrowse.Name" xml:space="preserve">
     <value>btnAssetsFolderPathBrowse</value>

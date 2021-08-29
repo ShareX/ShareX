@@ -330,9 +330,6 @@
   <data name="cbPlaySoundAfterUpload.Text" xml:space="preserve">
     <value>Bật nhạc sau khi tác vụ đã hoàn thành</value>
   </data>
-  <data name="lblAfterTaskNotification.Text" xml:space="preserve">
-    <value>Sau khi tác vụ hoàn thành:</value>
-  </data>
   <data name="btnTask.Text" xml:space="preserve">
     <value>Tác vụ...</value>
   </data>
@@ -539,9 +536,6 @@
   </data>
   <data name="cbRegionCaptureUseSquareMagnifier.Text" xml:space="preserve">
     <value>Dùng vùng phóng đại hình vuông thay vì hình tròn</value>
-  </data>
-  <data name="cbRegionCaptureUseWindowPattern.Text" xml:space="preserve">
-    <value>Dùng mẫu từ tên cửa sổ cho chụp theo vùng (ShareX sẽ cố gắng xác định cửa sổ sau vùng chọn)</value>
   </data>
   <data name="cbRegionCaptureMultiRegionMode.Text" xml:space="preserve">
     <value>Dùng chế độ đa vùng cho phép thay đổi kích thước và di chuyển các vùng</value>

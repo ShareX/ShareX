@@ -117,19 +117,16 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="btnCancel.Text" xml:space="preserve">
-    <value>キャンセル</value>
-  </data>
-  <data name="cbDontShowThisWindow.Text" xml:space="preserve">
-    <value>このウィンドウを表示しない</value>
-  </data>
-  <data name="btnUpload.Text" xml:space="preserve">
-    <value>アップロード</value>
-  </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - クリップボードからアップロード</value>
+    <value>ShareX - Pencere incele</value>
   </data>
-  <data name="lblQuestion.Text" xml:space="preserve">
-    <value>クリップボードには次のものがあります</value>
+  <data name="btnInspectControl.Text" xml:space="preserve">
+    <value>Kontrol incele...</value>
+  </data>
+  <data name="btnInspectWindow.Text" xml:space="preserve">
+    <value>Pencere incele...</value>
+  </data>
+  <data name="btnRefresh.Text" xml:space="preserve">
+    <value>Yenile</value>
   </data>
 </root>

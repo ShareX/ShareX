@@ -609,9 +609,6 @@
   <data name="tsmiTrayDebug.Text" xml:space="preserve">
     <value>Foutopsporing</value>
   </data>
-  <data name="tsbNews.Text" xml:space="preserve">
-    <value>Nieuws</value>
-  </data>
   <data name="tsmiShortenURL.Text" xml:space="preserve">
     <value>URL verkorten...</value>
   </data>
@@ -630,9 +627,6 @@
   <data name="tsbDonate.Text" xml:space="preserve">
     <value>Doneer...</value>
   </data>
-  <data name="btnCloseNews.Text" xml:space="preserve">
-    <value>Sluiten</value>
-  </data>
   <data name="tsmiTextCapture.Text" xml:space="preserve">
     <value>Tekst vastleggen (OCR)...</value>
   </data>
@@ -647,9 +641,6 @@
   </data>
   <data name="tsbAbout.Text" xml:space="preserve">
     <value>Over...</value>
-  </data>
-  <data name="tsmiSearchImage.Text" xml:space="preserve">
-    <value>Google afbeelding zoeken...</value>
   </data>
   <data name="tsmiCombineImages.Text" xml:space="preserve">
     <value>Afbeeldingen combineren...</value>

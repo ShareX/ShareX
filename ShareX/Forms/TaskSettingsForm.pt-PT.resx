@@ -288,9 +288,6 @@
   <data name="cbRegionCaptureUseSquareMagnifier.Text" xml:space="preserve">
     <value>Utilizar forma quadrada da lente magnificada em vez de circular</value>
   </data>
-  <data name="cbRegionCaptureUseWindowPattern.Text" xml:space="preserve">
-    <value>Utilizar modelo padrão de nome de janelas para captura de regiões (ShareX tentará detectar janela atrás da selecção)</value>
-  </data>
   <data name="cbScreenRecordConfirmAbort.Text" xml:space="preserve">
     <value>Confirmar antes de cancelar</value>
   </data>
@@ -377,9 +374,6 @@
   </data>
   <data name="lblActionsNote.Text" xml:space="preserve">
     <value>Nota: Você pode activar/desactivar acções de "Tarefas após captura -&gt; Realiza acções".</value>
-  </data>
-  <data name="lblAfterTaskNotification.Text" xml:space="preserve">
-    <value>Após tarefa concluída:</value>
   </data>
   <data name="lblAutoIncrementNumber.Text" xml:space="preserve">
     <value>Número de incremento automático:</value>

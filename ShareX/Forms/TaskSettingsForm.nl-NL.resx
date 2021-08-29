@@ -337,9 +337,6 @@ groter zijn dan de afmetingen van een miniatuurversie</value>
   <data name="cbPlaySoundAfterUpload.Text" xml:space="preserve">
     <value>Speel geluid af na voltooien taak</value>
   </data>
-  <data name="lblAfterTaskNotification.Text" xml:space="preserve">
-    <value>Na vervolledigen van taak:</value>
-  </data>
   <data name="btnTask.Text" xml:space="preserve">
     <value>Taak...</value>
   </data>

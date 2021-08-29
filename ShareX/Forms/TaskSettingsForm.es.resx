@@ -319,9 +319,6 @@ Agregar efectos de imagen".</value>
   <data name="cbPlaySoundAfterUpload.Text" xml:space="preserve">
     <value>Reproducir sonido después de que se complete la tarea</value>
   </data>
-  <data name="lblAfterTaskNotification.Text" xml:space="preserve">
-    <value>Después de que se completó la tarea:</value>
-  </data>
   <data name="btnTask.Text" xml:space="preserve">
     <value>Tarea...</value>
   </data>

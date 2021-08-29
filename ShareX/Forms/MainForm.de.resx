@@ -660,26 +660,17 @@
   <data name="tsmiDeleteSelectedFile.ShortcutKeyDisplayString" xml:space="preserve">
     <value>Umschalt+Entf</value>
   </data>
-  <data name="tsmiSearchImage.Text" xml:space="preserve">
-    <value>Google-Bildersuche...</value>
-  </data>
   <data name="tsmiTrayShortenURL.Text" xml:space="preserve">
     <value>URL kürzen...</value>
   </data>
   <data name="tsmiTrayUploadText.Text" xml:space="preserve">
     <value>Text hochladen...</value>
   </data>
-  <data name="btnCloseNews.Text" xml:space="preserve">
-    <value>Schließen</value>
-  </data>
   <data name="tsmiOpenURL.ShortcutKeyDisplayString" xml:space="preserve">
     <value>Eingabe</value>
   </data>
   <data name="tsmiOpenActionsToolbar.Text" xml:space="preserve">
     <value>Aktionsleiste umschalten</value>
-  </data>
-  <data name="tsbNews.Text" xml:space="preserve">
-    <value>Neuigkeiten</value>
   </data>
   <data name="tsmiCopyImage.ShortcutKeyDisplayString" xml:space="preserve">
     <value>Alt+C</value>
@@ -783,15 +774,6 @@
   <data name="tsmiCopyImageDimensions.Text" xml:space="preserve">
     <value>Bildabmessungen</value>
   </data>
-  <data name="tsbGitHub.Text" xml:space="preserve">
-    <value>GitHub</value>
-  </data>
-  <data name="tsbBitcoin.Text" xml:space="preserve">
-    <value>Bitcoin</value>
-  </data>
-  <data name="tsbPatreon.Text" xml:space="preserve">
-    <value>Patreon</value>
-  </data>
   <data name="tsbDiscord.Text" xml:space="preserve">
     <value>Discord</value>
   </data>
@@ -824,18 +806,6 @@
   </data>
   <data name="tsmiImageSplitter.Text" xml:space="preserve">
     <value>Bildteiler...</value>
-  </data>
-  <data name="tsbBitcoin.ToolTipText" xml:space="preserve">
-    <value>Unterstützen Sie uns mit Kryptowährung</value>
-  </data>
-  <data name="tsbDiscord.ToolTipText" xml:space="preserve">
-    <value>Unseren Discord-Server beitreten</value>
-  </data>
-  <data name="tsbPatreon.ToolTipText" xml:space="preserve">
-    <value>Unterstützen Sie uns auf Patreon</value>
-  </data>
-  <data name="tsbTwitter.ToolTipText" xml:space="preserve">
-    <value>Folgen Sie uns auf Twitter</value>
   </data>
   <data name="tsmiAddImageEffects.Text" xml:space="preserve">
     <value>Bildeffekte hinzufügen...</value>

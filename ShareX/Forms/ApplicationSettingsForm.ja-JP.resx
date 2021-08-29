@@ -120,9 +120,6 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - アプリの設定</value>
   </data>
-  <data name="btnApplyTheme.Text" xml:space="preserve">
-    <value>テーマ適用</value>
-  </data>
   <data name="btnBrowseCustomScreenshotsPath.Text" xml:space="preserve">
     <value>参照...</value>
   </data>
@@ -332,9 +329,6 @@
   </data>
   <data name="tpAdvanced.Text" xml:space="preserve">
     <value>高度な設定</value>
-  </data>
-  <data name="tpExportImport.Text" xml:space="preserve">
-    <value>エクスポート/インポート</value>
   </data>
   <data name="tpGeneral.Text" xml:space="preserve">
     <value>全般</value>

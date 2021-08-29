@@ -193,9 +193,6 @@
   <data name="TaskManager_task_UploadCompleted_ShareX___Task_completed" xml:space="preserve">
     <value>Задача выполнена</value>
   </data>
-  <data name="ScreenRecordForm_StartRecording_Waiting___" xml:space="preserve">
-    <value>Ожидание...</value>
-  </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_Image_uploader___0_" xml:space="preserve">
     <value>Сервис загрузки картинок: {0}</value>
   </data>
@@ -251,9 +248,6 @@
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_Task___0_" xml:space="preserve">
     <value>Задача: {0}</value>
   </data>
-  <data name="ScreenRecordForm_StartRecording_FFmpeg_video_and_audio_source_both_can_t_be__None__" xml:space="preserve">
-    <value>Видео и аудио для FFmpeg не могут отсутствовать одновременно.</value>
-  </data>
   <data name="AboutForm_AboutForm_Changelog" xml:space="preserve">
     <value>Список изменений</value>
   </data>
@@ -272,19 +266,11 @@
   <data name="UploadTask_Prepare_Starting" xml:space="preserve">
     <value>Начинается</value>
   </data>
-  <data name="ScreenRecordForm_StartRecording_does_not_exist" xml:space="preserve">
-    <value>{0} не существует.
-
-Хотите автоматически его скачать?</value>
-  </data>
   <data name="AboutForm_AboutForm_External_libraries" xml:space="preserve">
     <value>Внешние библиотеки</value>
   </data>
   <data name="Program_Run_Error" xml:space="preserve">
     <value>Ошибка</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_Click_tray_icon_to_stop_recording_" xml:space="preserve">
-    <value>Нажмите для остановки записи.</value>
   </data>
   <data name="MainForm_UpdateWorkflowsMenu_You_can_add_workflows_from_hotkey_settings___" xml:space="preserve">
     <value>Операции можно добавить в настройках горячих клавиш...</value>
@@ -298,9 +284,6 @@
   </data>
   <data name="FileExistForm_txtNewName_TextChanged_Use_new_name__" xml:space="preserve">
     <value>Использовать новое имя: </value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_Missing" xml:space="preserve">
-    <value>Отсутствует</value>
   </data>
   <data name="AboutForm_AboutForm_Translators" xml:space="preserve">
     <value>Переводчики</value>
@@ -396,23 +379,8 @@
   <data name="ApplicationSettingsForm_btnBrowseCustomScreenshotsPath_Click_Choose_screenshots_folder_path" xml:space="preserve">
     <value>Выберите путь к папке скриншотов</value>
   </data>
-  <data name="ScreenRecordForm_StartRecording_Click_tray_icon_to_start_recording_" xml:space="preserve">
-    <value>Нажмите для начала записи.</value>
-  </data>
-  <data name="ScreenRecordForm_DownloaderForm_InstallRequested_Download_of_FFmpeg_failed_" xml:space="preserve">
-    <value>Не удалось загрузить FFmpeg.</value>
-  </data>
   <data name="UploadManager_UploadFolder_Folder_upload" xml:space="preserve">
     <value>Загрузка папки</value>
-  </data>
-  <data name="ScreenRecordForm_DownloaderForm_InstallRequested_FFmpeg_successfully_downloaded_" xml:space="preserve">
-    <value>FFmpeg успешно загружен.</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_Encoding___" xml:space="preserve">
-    <value>Кодирование...</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_FFmpeg_error" xml:space="preserve">
-    <value>Ошибка FFmpeg</value>
   </data>
   <data name="UploadManager_IsUploadConfirmed_Are_you_sure_you_want_to_upload__0__files_" xml:space="preserve">
     <value>Приступить к загрузке файлов ({0} шт.) ?</value>
@@ -524,9 +492,6 @@
   </data>
   <data name="IntegrationHelpers_EditWithShareX" xml:space="preserve">
     <value>Редактировать в ShareX</value>
-  </data>
-  <data name="ScreenRecord_ConfirmCancel" xml:space="preserve">
-    <value>Вы действительно хотите отменить эту запись?</value>
   </data>
   <data name="ApplicationSettingsForm_btnCheckDevBuild_Click_DevBuilds_Warning" xml:space="preserve">
     <value>Dev сборки могут быть нестабильными и должны использоваться только для тестирования. Хотите установить?</value>

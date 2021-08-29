@@ -294,9 +294,6 @@
   <data name="tsbImageHistory.Text" xml:space="preserve">
     <value>Riwayat gambar...</value>
   </data>
-  <data name="tsbNews.Text" xml:space="preserve">
-    <value>Berita</value>
-  </data>
   <data name="tsmiShowDebugLog.Text" xml:space="preserve">
     <value>Log debug...</value>
   </data>
@@ -479,9 +476,6 @@
   </data>
   <data name="tsmiShareSelectedURL.Text" xml:space="preserve">
     <value>Bagikan URL</value>
-  </data>
-  <data name="tsmiSearchImage.Text" xml:space="preserve">
-    <value>Pencarian Gambar Google...</value>
   </data>
   <data name="tsmiShowQRCode.Text" xml:space="preserve">
     <value>Tampilkan kode QR...</value>
@@ -722,9 +716,6 @@
   </data>
   <data name="niTray.Text" xml:space="preserve">
     <value>ShareX</value>
-  </data>
-  <data name="btnCloseNews.Text" xml:space="preserve">
-    <value>Tutup</value>
   </data>
   <data name="tsmiOpenActionsToolbar.Text" xml:space="preserve">
     <value>Alihkan bilah alat tindakan</value>

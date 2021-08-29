@@ -594,9 +594,6 @@
   <data name="tsmiImagePreviewBottom.Text" xml:space="preserve">
     <value>Dưới</value>
   </data>
-  <data name="btnCloseNews.Text" xml:space="preserve">
-    <value>Đóng</value>
-  </data>
   <data name="tsmiCombineImages.Text" xml:space="preserve">
     <value>Gộp ảnh</value>
   </data>
@@ -654,9 +651,6 @@
   <data name="tsmiHideColumns.Text" xml:space="preserve">
     <value>Ẩn các cột</value>
   </data>
-  <data name="tsbNews.Text" xml:space="preserve">
-    <value>Mới</value>
-  </data>
   <data name="tsmiOCRImage.Text" xml:space="preserve">
     <value>Nhận dạng kí tự từ ảnh...</value>
   </data>
@@ -665,9 +659,6 @@
   </data>
   <data name="tsmiImageEditor.Text" xml:space="preserve">
     <value>Trình chỉnh sửa ảnh...</value>
-  </data>
-  <data name="tsmiSearchImage.Text" xml:space="preserve">
-    <value>Tìm kiếm ảnh trên Google...</value>
   </data>
   <data name="tsmiDeleteSelectedItem.Text" xml:space="preserve">
     <value>Xóa tác vụ khỏi danh sách</value>
@@ -815,14 +806,5 @@
   </data>
   <data name="tsbDiscord.Text" xml:space="preserve">
     <value>Discord</value>
-  </data>
-  <data name="tsbPatreon.Text" xml:space="preserve">
-    <value>Patreon</value>
-  </data>
-  <data name="tsbBitcoin.Text" xml:space="preserve">
-    <value>Bitcoin</value>
-  </data>
-  <data name="tsbGitHub.Text" xml:space="preserve">
-    <value>GitHub</value>
   </data>
 </root>

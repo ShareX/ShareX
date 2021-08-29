@@ -178,6 +178,7 @@
   </data>
   <data name="btnInputFilePathBrowse.Text" xml:space="preserve">
     <value>...</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;btnInputFilePathBrowse.Name" xml:space="preserve">
     <value>btnInputFilePathBrowse</value>
@@ -250,6 +251,7 @@
   </data>
   <data name="btnOutputFolderBrowse.Text" xml:space="preserve">
     <value>...</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;btnOutputFolderBrowse.Name" xml:space="preserve">
     <value>btnOutputFolderBrowse</value>

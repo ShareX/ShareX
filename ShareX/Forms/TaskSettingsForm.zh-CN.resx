@@ -255,9 +255,6 @@
   <data name="cbNameFormatCustomTimeZone.Text" xml:space="preserve">
     <value>使用自定义时区：</value>
   </data>
-  <data name="cbRegionCaptureUseWindowPattern.Text" xml:space="preserve">
-    <value>使用窗口名称模式捕捉区域（ShareX 将尝试检测选择区域后面的窗口）</value>
-  </data>
   <data name="tpFileNaming.Text" xml:space="preserve">
     <value>文件命名</value>
   </data>
@@ -335,9 +332,6 @@
   </data>
   <data name="cbPlaySoundAfterUpload.Text" xml:space="preserve">
     <value>上传后声音提示</value>
-  </data>
-  <data name="lblAfterTaskNotification.Text" xml:space="preserve">
-    <value>任务完成后：</value>
   </data>
   <data name="btnTask.Text" xml:space="preserve">
     <value>任务...</value>

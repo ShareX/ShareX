@@ -627,9 +627,6 @@
   <data name="tsmiDeleteSelectedItem.Text" xml:space="preserve">
     <value>从列表中删除任务</value>
   </data>
-  <data name="tsmiSearchImage.Text" xml:space="preserve">
-    <value>Google 图片搜索...</value>
-  </data>
   <data name="tsmiOCRImage.Text" xml:space="preserve">
     <value>文字识别 (OCR)...</value>
   </data>
@@ -639,17 +636,11 @@
   <data name="tsmiOpenActionsToolbar.Text" xml:space="preserve">
     <value>显示工作栏</value>
   </data>
-  <data name="tsbNews.Text" xml:space="preserve">
-    <value>新闻</value>
-  </data>
   <data name="tsbDonate.Text" xml:space="preserve">
     <value>捐助...</value>
   </data>
   <data name="tsbAbout.Text" xml:space="preserve">
     <value>关于...</value>
-  </data>
-  <data name="btnCloseNews.Text" xml:space="preserve">
-    <value>关闭</value>
   </data>
   <data name="tsmiCopyFile.ShortcutKeyDisplayString" xml:space="preserve">
     <value>Shift+C</value>
@@ -810,15 +801,6 @@
   <data name="tsbDiscord.Text" xml:space="preserve">
     <value>Discord</value>
   </data>
-  <data name="tsbPatreon.Text" xml:space="preserve">
-    <value>Patreon</value>
-  </data>
-  <data name="tsbBitcoin.Text" xml:space="preserve">
-    <value>比特币</value>
-  </data>
-  <data name="tsbGitHub.Text" xml:space="preserve">
-    <value>GitHub</value>
-  </data>
   <data name="tsmiAddImageEffects.Text" xml:space="preserve">
     <value>添加图像效果...</value>
   </data>
@@ -834,28 +816,13 @@
   <data name="tsmiTrayImageSplitter.Text" xml:space="preserve">
     <value>图像分割器...</value>
   </data>
-  <data name="tsbTwitter.ToolTipText" xml:space="preserve">
-    <value>关注我们的 Twitter 账号</value>
-  </data>
-  <data name="tsbDiscord.ToolTipText" xml:space="preserve">
-    <value>参与我们的 Discord 服务器</value>
-  </data>
   <data name="tsmiRestartAsAdmin.Text" xml:space="preserve">
     <value>用管理员权限重启 ShareX...</value>
-  </data>
-  <data name="tsbGitHub.ToolTipText" xml:space="preserve">
-    <value>给我们的 GitHub 库标星</value>
   </data>
   <data name="tsmiTrayVideoConverter.Text" xml:space="preserve">
     <value>视频转换器...</value>
   </data>
   <data name="tsmiVideoConverter.Text" xml:space="preserve">
     <value>视频转换器...</value>
-  </data>
-  <data name="tsbBitcoin.ToolTipText" xml:space="preserve">
-    <value>用加密货币支持我们</value>
-  </data>
-  <data name="tsbPatreon.ToolTipText" xml:space="preserve">
-    <value>在 Patreon 上支持我们</value>
   </data>
 </root>

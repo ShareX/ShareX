@@ -321,9 +321,6 @@
   <data name="cbPlaySoundAfterUpload.Text" xml:space="preserve">
     <value>작업 완료 후 소리 재생하기</value>
   </data>
-  <data name="lblAfterTaskNotification.Text" xml:space="preserve">
-    <value>작업이 완료되었을 시:</value>
-  </data>
   <data name="btnTask.Text" xml:space="preserve">
     <value>작업...</value>
   </data>
@@ -488,9 +485,6 @@
   </data>
   <data name="tpUploaderFilters.Text" xml:space="preserve">
     <value>업로더 필터</value>
-  </data>
-  <data name="cbRegionCaptureUseWindowPattern.Text" xml:space="preserve">
-    <value>창 이름 패턴을 사용해 영역 촬영하기 (ShareX가 선택 영역 뒤에 있는 창 감지를 시도합니다)</value>
   </data>
   <data name="cbRegionCaptureUseDimming.Text" xml:space="preserve">
     <value>배경을 어둡게 해서 선택 영역을 두드러지게 하기 (시작 속도에 영향을 줌)</value>

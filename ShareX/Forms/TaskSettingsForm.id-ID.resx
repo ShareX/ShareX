@@ -165,9 +165,6 @@
   <data name="tpTask.Text" xml:space="preserve">
     <value>Tugas</value>
   </data>
-  <data name="lblAfterTaskNotification.Text" xml:space="preserve">
-    <value>Setelah tugas selesai:</value>
-  </data>
   <data name="cbPlaySoundAfterUpload.Text" xml:space="preserve">
     <value>Putar suara setelah tugas selesai</value>
   </data>
@@ -518,9 +515,6 @@
   </data>
   <data name="lblRegionCaptureSnapSizes.Text" xml:space="preserve">
     <value>Ukuran area akan berubah saat menekan "Alt":</value>
-  </data>
-  <data name="cbRegionCaptureUseWindowPattern.Text" xml:space="preserve">
-    <value>Gunakan pola nama jendela untuk pengambilan area (ShareX akan coba mendeteksi jendela di belakang pemilihan)</value>
   </data>
   <data name="lblNameFormatPattern.Text" xml:space="preserve">
     <value>Pola nama untuk pengambilan atau unggahan papan klip:</value>

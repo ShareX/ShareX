@@ -205,7 +205,7 @@
     <value>Kaldır</value>
   </data>
   <data name="btnActionsEdit.Text" xml:space="preserve">
-    <value>Düzenle</value>
+    <value>Düzenle...</value>
   </data>
   <data name="chActionsExtensions.Text" xml:space="preserve">
     <value>Uzantılar</value>
@@ -220,7 +220,7 @@
     <value>Ad</value>
   </data>
   <data name="btnActionsAdd.Text" xml:space="preserve">
-    <value>Ekle</value>
+    <value>Ekle...</value>
   </data>
   <data name="btnActionsDuplicate.Text" xml:space="preserve">
     <value>Kopyala</value>
@@ -254,9 +254,6 @@
   </data>
   <data name="cbNameFormatCustomTimeZone.Text" xml:space="preserve">
     <value>Kişisel zaman dilimi kullan:</value>
-  </data>
-  <data name="cbRegionCaptureUseWindowPattern.Text" xml:space="preserve">
-    <value>Bölge yakalamada pencere isim kalıbını kullan (ShareX otomatik seçimdeki pencereyi tespit etmeye çalışır)</value>
   </data>
   <data name="tpFileNaming.Text" xml:space="preserve">
     <value>Dosya adlandırma</value>
@@ -336,9 +333,6 @@
   <data name="cbPlaySoundAfterUpload.Text" xml:space="preserve">
     <value>Görev bittikten sonra ses çal</value>
   </data>
-  <data name="lblAfterTaskNotification.Text" xml:space="preserve">
-    <value>Görev bittikten sonra:</value>
-  </data>
   <data name="btnTask.Text" xml:space="preserve">
     <value>Görev...</value>
   </data>
@@ -367,10 +361,10 @@
     <value>Yakalama sonrası...</value>
   </data>
   <data name="chkOverrideFTP.Text" xml:space="preserve">
-    <value>FTP hesabını değiştir:</value>
+    <value>Varsayılan FTP hesabını değiştir</value>
   </data>
   <data name="chkOverrideCustomUploader.Text" xml:space="preserve">
-    <value>Özel yükleyiciyi değiştir:</value>
+    <value>Varsayılan özel yükleyiciyi değiştir</value>
   </data>
   <data name="lblRegionCaptureSnapSizesWidth.Text" xml:space="preserve">
     <value>Genişlik:</value>
@@ -433,7 +427,7 @@
     <value>Ekran renk seçici formatı:</value>
   </data>
   <data name="btnCaptureCustomRegionSelectRectangle.Text" xml:space="preserve">
-    <value>Bölge seç:</value>
+    <value>Bölge seç...</value>
   </data>
   <data name="cbRegionCaptureShowFPS.Text" xml:space="preserve">
     <value>Sol üst köşede FPS göster</value>
@@ -524,5 +518,119 @@
   </data>
   <data name="chkOverrideUploadSettings.Text" xml:space="preserve">
     <value>Yükleme ayarlarını değiştir</value>
+  </data>
+  <data name="btnActions.Text" xml:space="preserve">
+    <value>Aksiyonlar...</value>
+  </data>
+  <data name="btnAutoIncrementNumber.Text" xml:space="preserve">
+    <value>Değiştir</value>
+  </data>
+  <data name="btnScreenshotsFolderBrowse.Text" xml:space="preserve">
+    <value>Gözat...</value>
+  </data>
+  <data name="cbCaptureOCRAutoCopy.Text" xml:space="preserve">
+    <value>Sonuçları otomatik olarak panoya kopyala</value>
+  </data>
+  <data name="cbCaptureOCRProcessOnLoad.Text" xml:space="preserve">
+    <value>Pencere açıldığında OCR uygula</value>
+  </data>
+  <data name="cbCaptureOCRSilent.Text" xml:space="preserve">
+    <value>Sessizce OCR uygula</value>
+  </data>
+  <data name="cbClipboardUploadURLContents.Text" xml:space="preserve">
+    <value>Eğer pano dosya linki içeriyorsa indirip karşıya yükle</value>
+  </data>
+  <data name="cbDisableNotifications.Text" xml:space="preserve">
+    <value>Uyarıları devre dışı bırak</value>
+  </data>
+  <data name="cbDisableNotificationsOnFullscreen.Text" xml:space="preserve">
+    <value>Tam ekran ise uyarıları devre dışı bırak</value>
+  </data>
+  <data name="lblToastWindowDurationSeconds.Text" xml:space="preserve">
+    <value>saniye</value>
+  </data>
+  <data name="lblToastWindowFadeDurationSeconds.Text" xml:space="preserve">
+    <value>saniye</value>
+  </data>
+  <data name="cbImageAutoJPEGQuality.Text" xml:space="preserve">
+    <value>JPEG kalitesini belirtilen resim boyutuna yakın gelicek şekilde otomatik ayarla</value>
+  </data>
+  <data name="cbOverrideScreenshotsFolder.Text" xml:space="preserve">
+    <value>Varsayılan ekran görüntüsü klasörünü değiştir</value>
+  </data>
+  <data name="cbScreenRecordConfirmAbort.Text" xml:space="preserve">
+    <value>İptal ederken onay sor</value>
+  </data>
+  <data name="cbScreenRecordTransparentRegion.Text" xml:space="preserve">
+    <value>Saydam alan seçici kullan</value>
+  </data>
+  <data name="lblToastWindowSize.Text" xml:space="preserve">
+    <value>Boyut:</value>
+  </data>
+  <data name="lblOCRDefaultLanguage.Text" xml:space="preserve">
+    <value>Varsayılan dil:</value>
+  </data>
+  <data name="lblScreenshotDelay.Text" xml:space="preserve">
+    <value>Ekran görüntüsü gecikmesi:</value>
+  </data>
+  <data name="cbScreenRecordTwoPassEncoding.Text" xml:space="preserve">
+    <value>İlk kayıpsız kodlama kullanarak kayıt yap ondan sonra kullanıcı kodlama ayarlarını uygula</value>
+  </data>
+  <data name="cbShowToastNotificationAfterTaskCompleted.Text" xml:space="preserve">
+    <value>Görev bittikten sonra tost bildirimi göster</value>
+  </data>
+  <data name="gbToastWindow.Text" xml:space="preserve">
+    <value>Tost bildirimi</value>
+  </data>
+  <data name="lblToastWindowDuration.Text" xml:space="preserve">
+    <value>Süre:</value>
+  </data>
+  <data name="lblToastWindowFadeDuration.Text" xml:space="preserve">
+    <value>Solma süresi:</value>
+  </data>
+  <data name="lblToastWindowLeftClickAction.Text" xml:space="preserve">
+    <value>Sol tıklama eylemi:</value>
+  </data>
+  <data name="lblToastWindowMiddleClickAction.Text" xml:space="preserve">
+    <value>Orta tıklama eylemi:</value>
+  </data>
+  <data name="lblToastWindowPlacement.Text" xml:space="preserve">
+    <value>Konum:</value>
+  </data>
+  <data name="cbUseCustomCaptureSound.Text" xml:space="preserve">
+    <value>Kişisel yakalama sesi kullan:</value>
+  </data>
+  <data name="cbUseCustomErrorSound.Text" xml:space="preserve">
+    <value>Kişisel hata sesi kullan:</value>
+  </data>
+  <data name="cbUseCustomTaskCompletedSound.Text" xml:space="preserve">
+    <value>Kişisel görev tamamlanma sesi kullan:</value>
+  </data>
+  <data name="lblAutoIncrementNumber.Text" xml:space="preserve">
+    <value>Otomatik artan sayı:</value>
+  </data>
+  <data name="lblToastWindowRightClickAction.Text" xml:space="preserve">
+    <value>Sağ tıklama eylemi:</value>
+  </data>
+  <data name="cbURLRegexReplace.Text" xml:space="preserve">
+    <value>Sonuç linki regex değişimleri kullanarak değiştir</value>
+  </data>
+  <data name="lblURLRegexReplacePattern.Text" xml:space="preserve">
+    <value>Desen:</value>
+  </data>
+  <data name="lblActionsNote.Text" xml:space="preserve">
+    <value>Not: Aksiyonları buradan etkinleştirebilir veya etkisiz hale getirebilirsiniz: "Yakalama sonrası -&gt; Aksiyonları gerçekleştir".</value>
+  </data>
+  <data name="lblToolsScreenColorPickerFormatCtrl.Text" xml:space="preserve">
+    <value>Ekran renk seçici formatı (Ctrl + tıklama):</value>
+  </data>
+  <data name="lblToolsScreenColorPickerInfoText.Text" xml:space="preserve">
+    <value>Ekran renk seçici bilgi yazısı:</value>
+  </data>
+  <data name="lblURLRegexReplaceReplacement.Text" xml:space="preserve">
+    <value>Değiştirme:</value>
+  </data>
+  <data name="tpNotifications.Text" xml:space="preserve">
+    <value>Uyarılar</value>
   </data>
 </root>

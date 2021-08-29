@@ -255,9 +255,6 @@
   <data name="cbNameFormatCustomTimeZone.Text" xml:space="preserve">
     <value>Utiliser un fuseau horaire personnalisé :</value>
   </data>
-  <data name="cbRegionCaptureUseWindowPattern.Text" xml:space="preserve">
-    <value>Utiliser le modèle du nom de la fenêtre pour la capture de région (ShareX essayera de détecter la fenêtre derrière la sélection)</value>
-  </data>
   <data name="tpFileNaming.Text" xml:space="preserve">
     <value>Nommage des fichiers</value>
   </data>
@@ -335,9 +332,6 @@
   </data>
   <data name="cbPlaySoundAfterUpload.Text" xml:space="preserve">
     <value>Jouer un son quand la tâche est complétée</value>
-  </data>
-  <data name="lblAfterTaskNotification.Text" xml:space="preserve">
-    <value>Après que la tâche soit complétée :</value>
   </data>
   <data name="btnTask.Text" xml:space="preserve">
     <value>Tâche...</value>

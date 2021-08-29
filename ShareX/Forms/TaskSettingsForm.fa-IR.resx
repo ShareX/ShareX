@@ -141,9 +141,6 @@
   <data name="btnAfterCapture.Text" xml:space="preserve">
     <value>بعد از ضبط ...</value>
   </data>
-  <data name="lblAfterTaskNotification.Text" xml:space="preserve">
-    <value>بعد از اتمام وظیفه:</value>
-  </data>
   <data name="btnAfterUpload.Text" xml:space="preserve">
     <value>بعد از آپلود ...</value>
   </data>

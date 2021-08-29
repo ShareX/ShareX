@@ -136,16 +136,6 @@
   <data name="UploadTask_DoUploadJob_Uploading" xml:space="preserve">
     <value>Yükleniyor</value>
   </data>
-  <data name="ScreenRecordForm_StartRecording_Encoding___" xml:space="preserve">
-    <value>İşleniyor...</value>
-    <comment>Tepsi simgesi metin uzunluğu sınırı nedeniyle metin 54 karaktere eşit veya daha kısa olmalıdır.</comment>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_FFmpeg_error" xml:space="preserve">
-    <value>FFmpeg hatası</value>
-  </data>
-  <data name="ScreenRecordForm_DownloaderForm_InstallRequested_FFmpeg_successfully_downloaded_" xml:space="preserve">
-    <value>FFmpeg başarıyla indirildi.</value>
-  </data>
   <data name="AutoCaptureForm_UpdateStatus_Timeleft___0_s___1____Total___2_" xml:space="preserve">
     <value>Kalan zaman: {0}s ({1}%) Toplam: {2}</value>
   </data>
@@ -217,10 +207,6 @@ Lütfen kişisel dizin yolunu değiştirmek için ShareX'i yönetici olarak çal
   <data name="TaskManager_task_UploadCompleted_ShareX___Task_completed" xml:space="preserve">
     <value>Görev tamamlandı</value>
   </data>
-  <data name="ScreenRecordForm_StartRecording_Waiting___" xml:space="preserve">
-    <value>Bekleniyor...</value>
-    <comment>Tepsi simgesi metin uzunluğu sınırı nedeniyle metin 54 karaktere eşit veya daha kısa olmalıdır.</comment>
-  </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_Image_uploader___0_" xml:space="preserve">
     <value>Resim yükleyici: {0}</value>
   </data>
@@ -276,9 +262,6 @@ Lütfen başka bir kısayol seçin veya çakışan uygulamayı kapatın ve Share
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_Task___0_" xml:space="preserve">
     <value>Görev: {0}</value>
   </data>
-  <data name="ScreenRecordForm_StartRecording_FFmpeg_video_and_audio_source_both_can_t_be__None__" xml:space="preserve">
-    <value>FFmpeg video ve ses kaynağının ikisi birden "Hiçbiri" olamaz.</value>
-  </data>
   <data name="AboutForm_AboutForm_Changelog" xml:space="preserve">
     <value>Değişim günlüğü</value>
   </data>
@@ -297,36 +280,24 @@ Lütfen başka bir kısayol seçin veya çakışan uygulamayı kapatın ve Share
   <data name="UploadTask_Prepare_Starting" xml:space="preserve">
     <value>Başlatılıyor</value>
   </data>
-  <data name="ScreenRecordForm_StartRecording_does_not_exist" xml:space="preserve">
-    <value>{0} mevcut değil.
-
-Otomatik olarak indirmek ister misiniz?</value>
-  </data>
   <data name="AboutForm_AboutForm_External_libraries" xml:space="preserve">
     <value>Harici kütüphaneler</value>
   </data>
   <data name="Program_Run_Error" xml:space="preserve">
     <value>Hata</value>
   </data>
-  <data name="ScreenRecordForm_StartRecording_Click_tray_icon_to_stop_recording_" xml:space="preserve">
-    <value>Kaydı durdurmak için simge ikonuna tıklayın.</value>
-    <comment>Tepsi simgesi metin uzunluğu sınırı nedeniyle metin 54 karaktere eşit veya daha kısa olmalıdır.</comment>
-  </data>
   <data name="MainForm_UpdateWorkflowsMenu_You_can_add_workflows_from_hotkey_settings___" xml:space="preserve">
     <value>Kısayol ayarlarından yeni iş akışı ekliyebilirsiniz...</value>
   </data>
   <data name="ImageData_Write_Error" xml:space="preserve">
-    <value>Resim buraya kaydedilemedi: {0}</value>
+    <value>Resim buraya kaydedilemedi: {0}.</value>
   </data>
   <data name="ApplicationSettingsForm_cbLanguage_SelectedIndexChanged_Language_Restart" xml:space="preserve">
     <value>ShareX dil değişikliğinin uygulanması için yeniden başlatılmalı.
 ShareX'i yeniden başlatmak ister misiniz?</value>
   </data>
   <data name="FileExistForm_txtNewName_TextChanged_Use_new_name__" xml:space="preserve">
-    <value>Yeni ad kullan:</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_Missing" xml:space="preserve">
-    <value>Eksik</value>
+    <value>Yeni ad kullan: </value>
   </data>
   <data name="AboutForm_AboutForm_Translators" xml:space="preserve">
     <value>Çevirmenler</value>
@@ -422,12 +393,6 @@ ShareX'i yeniden başlatmak ister misiniz?</value>
   <data name="ApplicationSettingsForm_btnBrowseCustomScreenshotsPath_Click_Choose_screenshots_folder_path" xml:space="preserve">
     <value>Ekran görüntüsü dizini seç</value>
   </data>
-  <data name="ScreenRecordForm_StartRecording_Click_tray_icon_to_start_recording_" xml:space="preserve">
-    <value>Kaydı başlatmak için simge ikonuna tıklayın.</value>
-  </data>
-  <data name="ScreenRecordForm_DownloaderForm_InstallRequested_Download_of_FFmpeg_failed_" xml:space="preserve">
-    <value>FFmpeg indirme başarısız.</value>
-  </data>
   <data name="UploadManager_UploadFolder_Folder_upload" xml:space="preserve">
     <value>Dizin yükle</value>
   </data>
@@ -522,9 +487,6 @@ Devam etmek istediğinizden emin misiniz?</value>
   <data name="ActionsToolbarEditForm_Separator" xml:space="preserve">
     <value>Ayırıcı</value>
   </data>
-  <data name="ScreenRecord_ConfirmCancel" xml:space="preserve">
-    <value>Bu kaydı iptal etmek istediğinden emin misin?</value>
-  </data>
   <data name="HotkeySettingsForm_Reset_all_hotkeys_to_defaults_Confirmation" xml:space="preserve">
     <value>Bütün kısayolları varsayılan haline döndür?</value>
   </data>
@@ -574,11 +536,6 @@ Orta fare tuşu kapatmak için</value>
 
 Daha sonra "Yakalama görevleri" menüsünden devre dışı bırakabilirsiniz.</value>
   </data>
-
-  <data name="ScreenRecordForm_StartRecording_Click_tray_icon_to_start_recording_" xml:space="preserve">
-    <value>Kaydı başlatmak için tıklayın.</value>
-    <comment>Tepsi simgesi metin uzunluğu sınırı nedeniyle metin 54 karaktere eşit veya daha kısa olmalıdır.</comment>
-  </data>
   <data name="ShareXNeedsToBeRestartedForThePersonalFolderChangesToApply" xml:space="preserve">
     <value>Kişisel klasör değişikliklerinin uygulanması için ShareX'in yeniden başlatılması gerekir.
 
@@ -622,5 +579,73 @@ ShareX'i yeniden başlatmak ister misiniz?</value>
   </data>
   <data name="ScreenshotDelay0S" xml:space="preserve">
     <value>Ekran görüntüsü gecikmesi: {0}sn</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_id_ID" xml:space="preserve">
+    <value>Endonezyaca</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_pt_PT" xml:space="preserve">
+    <value>Portekizce</value>
+  </data>
+  <data name="FFmpeg_Missing" xml:space="preserve">
+    <value>Eksik</value>
+  </data>
+  <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__File__Count___0__" xml:space="preserve">
+    <value>Pano içeriği: Dosya (Sayısı: {0})</value>
+  </data>
+  <data name="FFmpeg_does_not_exist" xml:space="preserve">
+    <value>{0} mevcut değil.
+
+Otomatik olarak indirmek ister misiniz?</value>
+  </data>
+  <data name="FFmpeg_Download_of_FFmpeg_failed" xml:space="preserve">
+    <value>FFmpeg indirme başarısız.</value>
+  </data>
+  <data name="FFmpeg_FFmpeg_successfully_downloaded" xml:space="preserve">
+    <value>FFmpeg başarıyla indirildi.</value>
+  </data>
+  <data name="FFmpeg_FFmpeg_error" xml:space="preserve">
+    <value>FFmpeg hatası</value>
+  </data>
+  <data name="FFmpeg_FFmpeg_video_and_audio_source_both_can_t_be__None__" xml:space="preserve">
+    <value>FFmpeg video ve ses kaynağının ikisi birden "Hiçbiri" olamaz.</value>
+  </data>
+  <data name="ShareXIsMinimizedToTheSystemTray" xml:space="preserve">
+    <value>ShareX sistem tepsisine küçültüldü.</value>
+  </data>
+  <data name="SwitchToThumbnailView" xml:space="preserve">
+    <value>Küçük resim görünümüne geç</value>
+  </data>
+  <data name="InspectWindow_ClassName" xml:space="preserve">
+    <value>Sınıf ismi</value>
+  </data>
+  <data name="InspectWindow_ClientRectangle" xml:space="preserve">
+    <value>İstemci dikdörtgeni</value>
+  </data>
+  <data name="InspectWindow_ProcessFileName" xml:space="preserve">
+    <value>İşlem dosya ismi</value>
+  </data>
+  <data name="InspectWindow_ProcessIdentifier" xml:space="preserve">
+    <value>İşlem belirleyici</value>
+  </data>
+  <data name="InspectWindow_ProcessName" xml:space="preserve">
+    <value>İşlem ismi</value>
+  </data>
+  <data name="InspectWindow_WindowHandle" xml:space="preserve">
+    <value>Pencere tanıtıcı</value>
+  </data>
+  <data name="InspectWindow_WindowRectangle" xml:space="preserve">
+    <value>Pencere dikdörtgeni</value>
+  </data>
+  <data name="InspectWindow_WindowStyles" xml:space="preserve">
+    <value>Pencere stili</value>
+  </data>
+  <data name="InspectWindow_WindowTitle" xml:space="preserve">
+    <value>Pencere başlığı</value>
+  </data>
+  <data name="OCRForm_AutoProcessing" xml:space="preserve">
+    <value>OCR işleniyor.</value>
+  </data>
+  <data name="MainForm_UploadDebugLogWarning" xml:space="preserve">
+    <value>Hata ayıklama kütüğü hassas bilgiler içerebilir. Devam etmek istediğinize emin misiniz?</value>
   </data>
 </root>

@@ -192,9 +192,6 @@
   <data name="btnTask.Text" xml:space="preserve">
     <value>Tarea...</value>
   </data>
-  <data name="lblAfterTaskNotification.Text" xml:space="preserve">
-    <value>Tras completar la tarea:</value>
-  </data>
   <data name="cbPlaySoundAfterUpload.Text" xml:space="preserve">
     <value>Reproducir sonido al completar la tarea</value>
   </data>
@@ -413,9 +410,6 @@
   </data>
   <data name="lblAutoIncrementNumber.Text" xml:space="preserve">
     <value>Número de incremento automático:</value>
-  </data>
-  <data name="cbRegionCaptureUseWindowPattern.Text" xml:space="preserve">
-    <value>Usar el título de la ventana al capturar región (ShareX intentará detectar la ventana detrás de la selección)</value>
   </data>
   <data name="cbNameFormatCustomTimeZone.Text" xml:space="preserve">
     <value>Usar zona horaria personalizada:</value>

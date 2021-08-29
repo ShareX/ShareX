@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -156,9 +156,6 @@
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_Task___0_" xml:space="preserve">
     <value>任務：{0}</value>
   </data>
-  <data name="ScreenRecordForm_StartRecording_FFmpeg_video_and_audio_source_both_can_t_be__None__" xml:space="preserve">
-    <value>FFmpeg 的視訊和音訊源不能皆為「無」。</value>
-  </data>
   <data name="AboutForm_AboutForm_Changelog" xml:space="preserve">
     <value>更新日誌</value>
   </data>
@@ -177,19 +174,11 @@
   <data name="UploadTask_Prepare_Starting" xml:space="preserve">
     <value>開始中</value>
   </data>
-  <data name="ScreenRecordForm_StartRecording_does_not_exist" xml:space="preserve">
-    <value>{0} 不存在。
-
-要自動下載嗎？</value>
-  </data>
   <data name="AboutForm_AboutForm_External_libraries" xml:space="preserve">
     <value>外部函式庫</value>
   </data>
   <data name="Program_Run_Error" xml:space="preserve">
     <value>錯誤</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_Click_tray_icon_to_stop_recording_" xml:space="preserve">
-    <value>點擊以停止錄製。</value>
   </data>
   <data name="MainForm_UpdateWorkflowsMenu_You_can_add_workflows_from_hotkey_settings___" xml:space="preserve">
     <value>你可以在快捷鍵設定中新增快捷動作...</value>
@@ -204,9 +193,6 @@
   </data>
   <data name="FileExistForm_txtNewName_TextChanged_Use_new_name__" xml:space="preserve">
     <value>使用新名稱：</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_Missing" xml:space="preserve">
-    <value>缺少</value>
   </data>
   <data name="AboutForm_AboutForm_Translators" xml:space="preserve">
     <value>翻譯</value>
@@ -293,15 +279,6 @@
   <data name="ApplicationSettingsForm_btnBrowseCustomScreenshotsPath_Click_Choose_screenshots_folder_path" xml:space="preserve">
     <value>選擇截圖資料夾路徑</value>
   </data>
-  <data name="ScreenRecordForm_StartRecording_Click_tray_icon_to_start_recording_" xml:space="preserve">
-    <value>點擊以開始錄製。</value>
-  </data>
-  <data name="ScreenRecordForm_DownloaderForm_InstallRequested_Download_of_FFmpeg_failed_" xml:space="preserve">
-    <value>FFmpeg 下載失敗。</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_Waiting___" xml:space="preserve">
-    <value>等待中...</value>
-  </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_Image_uploader___0_" xml:space="preserve">
     <value>圖片上傳工具：{0}</value>
   </data>
@@ -381,15 +358,6 @@
   </data>
   <data name="UploadManager_UploadFolder_Folder_upload" xml:space="preserve">
     <value>資料夾上傳</value>
-  </data>
-  <data name="ScreenRecordForm_DownloaderForm_InstallRequested_FFmpeg_successfully_downloaded_" xml:space="preserve">
-    <value>FFmpeg 下載成功。</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_Encoding___" xml:space="preserve">
-    <value>編碼...</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_FFmpeg_error" xml:space="preserve">
-    <value>FFmpeg 錯誤</value>
   </data>
   <data name="UploadManager_IsUploadConfirmed_Are_you_sure_you_want_to_upload__0__files_" xml:space="preserve">
     <value>確定要上傳 {0} 個檔案嗎？</value>
@@ -553,9 +521,6 @@
   </data>
   <data name="QRCodeForm_InputTextToEncode" xml:space="preserve">
     <value>輸入文字以產生二維碼</value>
-  </data>
-  <data name="ScreenRecord_ConfirmCancel" xml:space="preserve">
-    <value>確定要停止錄製嗎？</value>
   </data>
   <data name="ScreenshotDelay0S" xml:space="preserve">
     <value>截圖倒數計時：{0} 秒</value>

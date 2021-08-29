@@ -120,9 +120,6 @@
   <data name="UploadTask_DoUploadJob_You_are_attempting_to_upload_a_large_file" xml:space="preserve">
     <value>Está intentando subir un archivo de gran tamaño. ¿Desea continuar?</value>
   </data>
-  <data name="ScreenRecordForm_StartRecording_Encoding___" xml:space="preserve">
-    <value>Codificando...</value>
-  </data>
   <data name="UploadManager_IsUploadConfirmed_Are_you_sure_you_want_to_upload__0__files_" xml:space="preserve">
     <value>¿Está seguro de que desea subir {0} archivos?</value>
   </data>
@@ -149,9 +146,6 @@
   </data>
   <data name="AboutForm_AboutForm_Language_nl_NL" xml:space="preserve">
     <value>Neerlandés</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_FFmpeg_error" xml:space="preserve">
-    <value>Error de FFmpeg</value>
   </data>
   <data name="ActionsToolbar_Edit" xml:space="preserve">
     <value>Editar...</value>
@@ -217,9 +211,6 @@ Por favor seleccione un atajo de teclado diferente o salga de la aplicación que
   <data name="HotkeySettingsForm_Reset_all_hotkeys_to_defaults_Confirmation" xml:space="preserve">
     <value>¿Restablecer todos los atajos de teclado predefinidos?</value>
   </data>
-  <data name="ScreenRecordForm_StartRecording_FFmpeg_video_and_audio_source_both_can_t_be__None__" xml:space="preserve">
-    <value>Ni el video FFmpeg ni la fuente de audio pueden ser "Ninguno".</value>
-  </data>
   <data name="AboutForm_AboutForm_Changelog" xml:space="preserve">
     <value>Registro de cambios</value>
   </data>
@@ -235,16 +226,8 @@ Por favor seleccione un atajo de teclado diferente o salga de la aplicación que
   <data name="UploadTask_Prepare_Starting" xml:space="preserve">
     <value>Iniciando</value>
   </data>
-  <data name="ScreenRecordForm_StartRecording_does_not_exist" xml:space="preserve">
-    <value>{0} no existe.
-
-¿Desea descargarlo automáticamente?</value>
-  </data>
   <data name="ApplicationSettingsForm_cbStartWithWindows_Text" xml:space="preserve">
     <value>Ejecutar ShareX al iniciar Windows</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_Waiting___" xml:space="preserve">
-    <value>Esperando...</value>
   </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_Image_uploader___0_" xml:space="preserve">
     <value>Servidor de imágenes: {0}</value>
@@ -347,9 +330,6 @@ Ejecute ShareX como administrador y cambie la ubicación de la carpeta personal.
   <data name="AboutForm_AboutForm_Language_tr" xml:space="preserve">
     <value>Turco</value>
   </data>
-  <data name="ScreenRecordForm_StartRecording_Click_tray_icon_to_stop_recording_" xml:space="preserve">
-    <value>Clic para detener la grabación.</value>
-  </data>
   <data name="MainForm_UpdateWorkflowsMenu_You_can_add_workflows_from_hotkey_settings___" xml:space="preserve">
     <value>Los flujos de trabajo pueden agregarse en la configuración de los atajos de teclado...</value>
   </data>
@@ -372,14 +352,8 @@ Ejecute ShareX como administrador y cambie la ubicación de la carpeta personal.
   <data name="FileExistForm_txtNewName_TextChanged_Use_new_name__" xml:space="preserve">
     <value>Usar nuevo nombre:</value>
   </data>
-  <data name="ScreenRecord_ConfirmCancel" xml:space="preserve">
-    <value>¿Está seguro de que desea interrumpir esta grabación?</value>
-  </data>
   <data name="AboutForm_AboutForm_Language_it_IT" xml:space="preserve">
     <value>Italiano</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_Missing" xml:space="preserve">
-    <value>No se encuentra</value>
   </data>
   <data name="AboutForm_AboutForm_Translators" xml:space="preserve">
     <value>Traductores</value>
@@ -474,9 +448,6 @@ Clic medio para cerrar</value>
   <data name="MainForm_UpdateMainWindowLayout_Hide_columns" xml:space="preserve">
     <value>Ocultar columnas</value>
   </data>
-  <data name="ScreenRecordForm_DownloaderForm_InstallRequested_FFmpeg_successfully_downloaded_" xml:space="preserve">
-    <value>FFmpg descargado con éxito.</value>
-  </data>
   <data name="ActionsToolbar_Close" xml:space="preserve">
     <value>Cerrar</value>
   </data>
@@ -509,12 +480,6 @@ Clic medio para cerrar</value>
   </data>
   <data name="AboutForm_AboutForm_Language_es" xml:space="preserve">
     <value>Español</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_Click_tray_icon_to_start_recording_" xml:space="preserve">
-    <value>Clic para iniciar la grabación.</value>
-  </data>
-  <data name="ScreenRecordForm_DownloaderForm_InstallRequested_Download_of_FFmpeg_failed_" xml:space="preserve">
-    <value>La descargar de FFmpeg falló.</value>
   </data>
   <data name="UploadManager_ShowShortenURLDialog_ShortenURL" xml:space="preserve">
     <value>Acortar enlace</value>

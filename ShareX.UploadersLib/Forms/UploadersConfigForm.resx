@@ -2050,6 +2050,7 @@ when you made the application key.</value>
   </data>
   <data name="btnSFTPKeyLocationBrowse.Text" xml:space="preserve">
     <value>...</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;btnSFTPKeyLocationBrowse.Name" xml:space="preserve">
     <value>btnSFTPKeyLocationBrowse</value>
@@ -2986,6 +2987,7 @@ when you made the application key.</value>
   </data>
   <data name="btnFTPSCertificateLocationBrowse.Text" xml:space="preserve">
     <value>...</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;btnFTPSCertificateLocationBrowse.Name" xml:space="preserve">
     <value>btnFTPSCertificateLocationBrowse</value>
@@ -5020,6 +5022,7 @@ when you made the application key.</value>
   </data>
   <data name="btnAmazonS3BucketNameOpen.Text" xml:space="preserve">
     <value>...</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;btnAmazonS3BucketNameOpen.Name" xml:space="preserve">
     <value>btnAmazonS3BucketNameOpen</value>
@@ -5047,6 +5050,7 @@ when you made the application key.</value>
   </data>
   <data name="btnAmazonS3AccessKeyOpen.Text" xml:space="preserve">
     <value>...</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;btnAmazonS3AccessKeyOpen.Name" xml:space="preserve">
     <value>btnAmazonS3AccessKeyOpen</value>
@@ -5965,6 +5969,7 @@ when you made the application key.</value>
   </data>
   <data name="btnAzureStoragePortal.Text" xml:space="preserve">
     <value>...</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;btnAzureStoragePortal.Name" xml:space="preserve">
     <value>btnAzureStoragePortal</value>

@@ -305,9 +305,6 @@
   <data name="tsbImageHistory.Text" xml:space="preserve">
     <value>تاریخچه عکس ...</value>
   </data>
-  <data name="tsbNews.Text" xml:space="preserve">
-    <value>اعلامیه ها</value>
-  </data>
   <data name="tsmiShowDebugLog.Size" type="System.Drawing.Size, System.Drawing">
     <value>180, 22</value>
   </data>
@@ -602,9 +599,6 @@
   <data name="tsmiClearList.Text" xml:space="preserve">
     <value>پاک کردن لیست وظایف</value>
   </data>
-  <data name="btnCloseNews.Text" xml:space="preserve">
-    <value>بستن</value>
-  </data>
   <data name="tsmiCombineImages.Text" xml:space="preserve">
     <value>ترکیب کردن عکس ها ...</value>
   </data>
@@ -673,9 +667,6 @@
   </data>
   <data name="tsmiCopyFolder.Text" xml:space="preserve">
     <value>پوشه</value>
-  </data>
-  <data name="tsmiSearchImage.Text" xml:space="preserve">
-    <value>جستجوی عکس با گوگل ...</value>
   </data>
   <data name="tsmiImagePreviewHide.Text" xml:space="preserve">
     <value>مخفی کردن</value>

@@ -129,4 +129,7 @@
   <data name="btnLicenses.Text" xml:space="preserve">
     <value>Lisanslar...</value>
   </data>
+  <data name="lblBuild.Text" xml:space="preserve">
+    <value>Derleme</value>
+  </data>
 </root>

@@ -157,9 +157,6 @@ Vui lòng chọn phím tắt khác hoặc thoát ứng dụng đang gây lỗi v
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_Task___0_" xml:space="preserve">
     <value>Tác vụ: {0}</value>
   </data>
-  <data name="ScreenRecordForm_StartRecording_FFmpeg_video_and_audio_source_both_can_t_be__None__" xml:space="preserve">
-    <value>Cả hai phần FFmpeg video và audio không thể là "Không có".</value>
-  </data>
   <data name="AboutForm_AboutForm_Changelog" xml:space="preserve">
     <value>Lịch sử thay đổi</value>
   </data>
@@ -178,19 +175,11 @@ Vui lòng chọn phím tắt khác hoặc thoát ứng dụng đang gây lỗi v
   <data name="UploadTask_Prepare_Starting" xml:space="preserve">
     <value>Đang bắt đầu</value>
   </data>
-  <data name="ScreenRecordForm_StartRecording_does_not_exist" xml:space="preserve">
-    <value>{0} không tồn tại.
-
-Bạn có muốn tự động tải nó xuống không?</value>
-  </data>
   <data name="AboutForm_AboutForm_External_libraries" xml:space="preserve">
     <value>Các thư viện bên ngoài</value>
   </data>
   <data name="Program_Run_Error" xml:space="preserve">
     <value>Lỗi</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_Click_tray_icon_to_stop_recording_" xml:space="preserve">
-    <value>Nhấn để dừng ghi hình.</value>
   </data>
   <data name="MainForm_UpdateWorkflowsMenu_You_can_add_workflows_from_hotkey_settings___" xml:space="preserve">
     <value>Bạn có thể thêm các luồng công việc từ thiết lập phím tắt</value>
@@ -201,9 +190,6 @@ Bạn có muốn khởi động lại ShareX không?</value>
   </data>
   <data name="FileExistForm_txtNewName_TextChanged_Use_new_name__" xml:space="preserve">
     <value>Dùng tên mới:</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_Missing" xml:space="preserve">
-    <value>Bị thiếu</value>
   </data>
   <data name="AboutForm_AboutForm_Translators" xml:space="preserve">
     <value>Biên dịch</value>
@@ -289,15 +275,6 @@ Bạn có muốn khởi động lại ShareX không?</value>
   </data>
   <data name="ApplicationSettingsForm_btnBrowseCustomScreenshotsPath_Click_Choose_screenshots_folder_path" xml:space="preserve">
     <value>Chọn đường dẫn thư mục chứa ảnh chụp</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_Click_tray_icon_to_start_recording_" xml:space="preserve">
-    <value>Nhấn để bắt đầu ghi hình.</value>
-  </data>
-  <data name="ScreenRecordForm_DownloaderForm_InstallRequested_Download_of_FFmpeg_failed_" xml:space="preserve">
-    <value>Tải về FFmpeg thất bại.</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_Waiting___" xml:space="preserve">
-    <value>Đang đợi...</value>
   </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_Image_uploader___0_" xml:space="preserve">
     <value>Dịch vụ tải lên ảnh: {0}</value>
@@ -399,15 +376,6 @@ Nhấn "Không" để hủy tiến trình tải lên hiện tại và tắt ch�
   <data name="UploadTask_DoUploadJob_Uploading" xml:space="preserve">
     <value>Đang tải lên</value>
   </data>
-  <data name="ScreenRecordForm_DownloaderForm_InstallRequested_FFmpeg_successfully_downloaded_" xml:space="preserve">
-    <value>FFmpeg đã được tải xuống thành công.</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_Encoding___" xml:space="preserve">
-    <value>Đang mã hóa...</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_FFmpeg_error" xml:space="preserve">
-    <value>Lỗi FFmpeg</value>
-  </data>
   <data name="ApplicationSettingsForm_cbStartWithWindows_Text" xml:space="preserve">
     <value>Chạy ShareX cùng Windows</value>
   </data>
@@ -416,9 +384,6 @@ Nhấn "Không" để hủy tiến trình tải lên hiện tại và tắt ch�
   </data>
   <data name="WorkerTask_GetInvalidConfigResult__0__configuration_is_invalid_or_missing__Please_check__Destination_settings__window_to_configure_it_" xml:space="preserve">
     <value>Thiết lập {0} không đúng hoặc bị thiếu. Vui lòng kiểm tra cửa sổ "Cài đặt dịch vụ tải lên" để thiết lập.</value>
-  </data>
-  <data name="ScreenRecord_ConfirmCancel" xml:space="preserve">
-    <value>Bạn có chắc chắn hủy việc ghi hình này không?</value>
   </data>
   <data name="QuickTaskMenu_ShowMenu_Cancel" xml:space="preserve">
     <value>Hủy bỏ</value>

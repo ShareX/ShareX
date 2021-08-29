@@ -135,9 +135,6 @@
   <data name="rtbInfo.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="rtbInfo.Text" xml:space="preserve">
-    <value />
-  </data>
   <data name="&gt;&gt;rtbInfo.Name" xml:space="preserve">
     <value>rtbInfo</value>
   </data>

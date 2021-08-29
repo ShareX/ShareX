@@ -231,9 +231,6 @@
   <data name="btnTask.Text" xml:space="preserve">
     <value>Operazioni...</value>
   </data>
-  <data name="lblAfterTaskNotification.Text" xml:space="preserve">
-    <value>Dopo il Completamento dell'Operazione:</value>
-  </data>
   <data name="cbPlaySoundAfterUpload.Text" xml:space="preserve">
     <value>Riproduci Suono al Completamento dell'Operazione</value>
   </data>
@@ -512,9 +509,6 @@
   </data>
   <data name="cbClipboardUploadShortenURL.Text" xml:space="preserve">
     <value>Se gli Appunti contengono un URL, Accorcialo</value>
-  </data>
-  <data name="cbRegionCaptureUseWindowPattern.Text" xml:space="preserve">
-    <value>Usa Struttura Nome Finestra per Cattura Regione (ShareX proverà a determinare la finestra dietro la selezione)</value>
   </data>
   <data name="cbWatchFolderEnabled.Text" xml:space="preserve">
     <value>Monitora Cartelle e Carica Nuovi File alla loro Creazione</value>

@@ -297,9 +297,6 @@
   <data name="tsbImageHistory.Text" xml:space="preserve">
     <value>画像の履歴...</value>
   </data>
-  <data name="tsbNews.Text" xml:space="preserve">
-    <value>お知らせ</value>
-  </data>
   <data name="tsddbDebug.Text" xml:space="preserve">
     <value>デバッグ</value>
   </data>
@@ -359,9 +356,6 @@
   </data>
   <data name="tsmiShareSelectedURL.Text" xml:space="preserve">
     <value>URLを共有</value>
-  </data>
-  <data name="tsmiSearchImage.Text" xml:space="preserve">
-    <value>Google 画像検索...</value>
   </data>
   <data name="tsmiShowQRCode.Text" xml:space="preserve">
     <value>QR コードを表示...</value>
@@ -689,9 +683,6 @@
   </data>
   <data name="tsmiTrayExit.Text" xml:space="preserve">
     <value>終了</value>
-  </data>
-  <data name="btnCloseNews.Text" xml:space="preserve">
-    <value>閉じる</value>
   </data>
   <data name="tsmiTrayScreenshotDelay5.Text" xml:space="preserve">
     <value>5秒</value>

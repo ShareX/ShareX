@@ -145,6 +145,6 @@
     <value>Kodla</value>
   </data>
   <data name="lblDecodeResult.Text" xml:space="preserve">
-    <value>Sonuç</value>
+    <value>Sonuç:</value>
   </data>
 </root>

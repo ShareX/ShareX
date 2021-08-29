@@ -342,4 +342,52 @@
   <data name="cbEditWithShareX.Text" xml:space="preserve">
     <value>"ShareX ile düzenle" tuşunu Windows sağ tık menüsünde göster</value>
   </data>
+  <data name="btnPersonalFolderPathApply.Text" xml:space="preserve">
+    <value>Uygula</value>
+  </data>
+  <data name="btnThemeAdd.Text" xml:space="preserve">
+    <value>Ekle</value>
+  </data>
+  <data name="btnThemeRemove.Text" xml:space="preserve">
+    <value>Kaldır</value>
+  </data>
+  <data name="btnThemeReset.Text" xml:space="preserve">
+    <value>Sıfırla...</value>
+  </data>
+  <data name="cbAutomaticallyCleanupBackupFiles.Text" xml:space="preserve">
+    <value>Eski yedek dosyalarını otomatik olarak temizle</value>
+  </data>
+  <data name="cbAutomaticallyCleanupLogFiles.Text" xml:space="preserve">
+    <value>Eski günlük dosyalarını otomatik olarak temizle</value>
+  </data>
+  <data name="cbExportHistory.Text" xml:space="preserve">
+    <value>Geçmiş</value>
+  </data>
+  <data name="cbExportSettings.Text" xml:space="preserve">
+    <value>Ayarlar</value>
+  </data>
+  <data name="cbUseCustomTheme.Text" xml:space="preserve">
+    <value>Özel tema kullan</value>
+  </data>
+  <data name="cbUseWhiteShareXIcon.Text" xml:space="preserve">
+    <value>Beyaz ShareX ikonu kullan</value>
+  </data>
+  <data name="gbSteam.Text" xml:space="preserve">
+    <value>Steam</value>
+  </data>
+  <data name="gbWindows.Text" xml:space="preserve">
+    <value>Windows</value>
+  </data>
+  <data name="lblCleanupKeepFileCount.Text" xml:space="preserve">
+    <value>Saklancak dosya sayısı:</value>
+  </data>
+  <data name="lblExportImportNote.Text" xml:space="preserve">
+    <value>Not: Dışarı aktarılan dosyayı kimseyle paylaşmayınız, çünkü hesap detayları ve yükleme girdileri gibi kişisel bilgiler içerebilir.</value>
+  </data>
+  <data name="tpSettings.Text" xml:space="preserve">
+    <value>Ayarlar</value>
+  </data>
+  <data name="tpTheme.Text" xml:space="preserve">
+    <value>Tema</value>
+  </data>
 </root>

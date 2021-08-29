@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -254,9 +254,6 @@
   <data name="cbNameFormatCustomTimeZone.Text" xml:space="preserve">
     <value>使用自訂時區：</value>
   </data>
-  <data name="cbRegionCaptureUseWindowPattern.Text" xml:space="preserve">
-    <value>在擷取區域時使用視窗名稱模式（ShareX 將嘗試偵測選取區後方的視窗）</value>
-  </data>
   <data name="tpFileNaming.Text" xml:space="preserve">
     <value>檔案命名</value>
   </data>
@@ -334,9 +331,6 @@
   </data>
   <data name="cbPlaySoundAfterUpload.Text" xml:space="preserve">
     <value>任務完成後播放提示音</value>
-  </data>
-  <data name="lblAfterTaskNotification.Text" xml:space="preserve">
-    <value>任務完成後：</value>
   </data>
   <data name="btnTask.Text" xml:space="preserve">
     <value>任務...</value>

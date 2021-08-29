@@ -312,9 +312,6 @@
   <data name="cbPlaySoundAfterUpload.Text" xml:space="preserve">
     <value>Hang lejátszása a feladat befejeztekor</value>
   </data>
-  <data name="lblAfterTaskNotification.Text" xml:space="preserve">
-    <value>Miután a feladat befejeződött:</value>
-  </data>
   <data name="btnTask.Text" xml:space="preserve">
     <value>Feladat...</value>
   </data>

@@ -297,9 +297,6 @@
   <data name="tsbImageHistory.Text" xml:space="preserve">
     <value>Historial de imagen...</value>
   </data>
-  <data name="tsbNews.Text" xml:space="preserve">
-    <value>Novedades</value>
-  </data>
   <data name="tsmiShowDebugLog.Text" xml:space="preserve">
     <value>Registro de depuración...</value>
   </data>
@@ -482,9 +479,6 @@
   </data>
   <data name="tsmiShareSelectedURL.Text" xml:space="preserve">
     <value>Compartir enlace</value>
-  </data>
-  <data name="tsmiSearchImage.Text" xml:space="preserve">
-    <value>Buscar en Google Imágenes...</value>
   </data>
   <data name="tsmiShowQRCode.Text" xml:space="preserve">
     <value>Mostrar código QR...</value>
@@ -729,9 +723,6 @@
   <data name="niTray.Text" xml:space="preserve">
     <value>ShareX</value>
   </data>
-  <data name="btnCloseNews.Text" xml:space="preserve">
-    <value>Cerrar</value>
-  </data>
   <data name="tsmiScreenshotDelay0.Text" xml:space="preserve">
     <value>Sin retraso</value>
   </data>
@@ -815,14 +806,5 @@
   </data>
   <data name="tsbDiscord.Text" xml:space="preserve">
     <value>Discord</value>
-  </data>
-  <data name="tsbPatreon.Text" xml:space="preserve">
-    <value>Patreon</value>
-  </data>
-  <data name="tsbBitcoin.Text" xml:space="preserve">
-    <value>Bitcoin</value>
-  </data>
-  <data name="tsbGitHub.Text" xml:space="preserve">
-    <value>GitHub</value>
   </data>
 </root>

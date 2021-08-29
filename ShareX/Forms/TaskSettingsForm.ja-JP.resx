@@ -189,9 +189,6 @@
   <data name="tsmiURLSharingServices.Text" xml:space="preserve">
     <value>URL共有サービス</value>
   </data>
-  <data name="lblAfterTaskNotification.Text" xml:space="preserve">
-    <value>タスク完了後:</value>
-  </data>
   <data name="cbPlaySoundAfterUpload.Text" xml:space="preserve">
     <value>タスク完了後に音を鳴らす</value>
   </data>
@@ -401,9 +398,6 @@
   </data>
   <data name="tpFileNaming.Text" xml:space="preserve">
     <value>ファイルの名前</value>
-  </data>
-  <data name="cbRegionCaptureUseWindowPattern.Text" xml:space="preserve">
-    <value>領域キャプチャーでウィンドウ名前規則を使用する (Share Xは選択範囲の背景のウィンドウの検出を試みます)</value>
   </data>
   <data name="cbNameFormatCustomTimeZone.Text" xml:space="preserve">
     <value>独自のタイム ゾーンを使用する:</value>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -623,9 +623,6 @@
   <data name="tsmiDeleteSelectedItem.Text" xml:space="preserve">
     <value>從清單移除任務</value>
   </data>
-  <data name="tsmiSearchImage.Text" xml:space="preserve">
-    <value>Google 圖片搜尋...</value>
-  </data>
   <data name="tsmiOCRImage.Text" xml:space="preserve">
     <value>OCR 圖片...</value>
   </data>
@@ -673,9 +670,6 @@
   </data>
   <data name="tsmiCustomUploaderSettings.Text" xml:space="preserve">
     <value>自訂上傳工具設定...</value>
-  </data>
-  <data name="tsbNews.Text" xml:space="preserve">
-    <value>新聞</value>
   </data>
   <data name="tsbDonate.Text" xml:space="preserve">
     <value>捐獻...</value>
@@ -760,8 +754,5 @@
   </data>
   <data name="tsmiTrayCustomUploaderSettings.Text" xml:space="preserve">
     <value>自訂上傳工具設定...</value>
-  </data>
-  <data name="btnCloseNews.Text" xml:space="preserve">
-    <value>關閉</value>
   </data>
 </root>

@@ -121,9 +121,6 @@
     <value>大きな容量のファイルをアップロードしようとしています。
 本当に続行しますか？</value>
   </data>
-  <data name="ScreenRecordForm_StartRecording_Encoding___" xml:space="preserve">
-    <value>エンコードしています...</value>
-  </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_URL_shortener___0_" xml:space="preserve">
     <value>URL短縮サービス: {0}</value>
   </data>
@@ -150,9 +147,6 @@
   </data>
   <data name="UploadTask_DoUploadJob_Uploading" xml:space="preserve">
     <value>アップロード中</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_FFmpeg_error" xml:space="preserve">
-    <value>FFmpegのエラー</value>
   </data>
   <data name="ActionsToolbar_Edit" xml:space="preserve">
     <value>編集...</value>
@@ -212,14 +206,8 @@
   <data name="UploadManager_IsUploadConfirmed_Don_t_show_this_message_again_" xml:space="preserve">
     <value>このメッセージを再表示しない。</value>
   </data>
-  <data name="ScreenRecordForm_DownloaderForm_InstallRequested_Download_of_FFmpeg_failed_" xml:space="preserve">
-    <value>FFmpeg のダウンロードに失敗しました。</value>
-  </data>
   <data name="HotkeySettingsForm_Reset_all_hotkeys_to_defaults_Confirmation" xml:space="preserve">
     <value>すべてのホットキーを既定に戻しますか？</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_FFmpeg_video_and_audio_source_both_can_t_be__None__" xml:space="preserve">
-    <value>FFmpeg ビデオとオーディオの両方を「None」にはできません。</value>
   </data>
   <data name="AboutForm_AboutForm_Changelog" xml:space="preserve">
     <value>更新履歴</value>
@@ -239,19 +227,11 @@
   <data name="UploadTask_Prepare_Starting" xml:space="preserve">
     <value>開始しています</value>
   </data>
-  <data name="ScreenRecordForm_StartRecording_does_not_exist" xml:space="preserve">
-    <value>{0} がありません。
-
-自動でダウンロードしますか？</value>
-  </data>
   <data name="AboutForm_AboutForm_Translators" xml:space="preserve">
     <value>翻訳者</value>
   </data>
   <data name="QuickTaskMenu_ShowMenu_Cancel" xml:space="preserve">
     <value>キャンセル</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_Waiting___" xml:space="preserve">
-    <value>待機中...</value>
   </data>
   <data name="UploadManager_ShowShortenURLDialog_Shorten" xml:space="preserve">
     <value>短縮</value>
@@ -348,9 +328,6 @@
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_After_upload___0_" xml:space="preserve">
     <value>アップロード後: {0}</value>
   </data>
-  <data name="ScreenRecordForm_StartRecording_Click_tray_icon_to_stop_recording_" xml:space="preserve">
-    <value>クリックで録画を停止</value>
-  </data>
   <data name="MainForm_UpdateWorkflowsMenu_You_can_add_workflows_from_hotkey_settings___" xml:space="preserve">
     <value>ホットキーの設定からワークフローを追加できます...</value>
   </data>
@@ -369,9 +346,6 @@ ShareX を再起動しますか？</value>
   </data>
   <data name="BeforeUploadForm_BeforeUploadForm__0__is_about_to_be_uploaded_to__1___You_may_choose_a_different_destination_" xml:space="preserve">
     <value>{0} を {1} にアップロードしようとしています。別のアップロード先を選択することもできます。</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_Missing" xml:space="preserve">
-    <value>参照不可</value>
   </data>
   <data name="UploadTask_DoUploadJob_First_time_upload_warning" xml:space="preserve">
     <value>初回アップロード時の警告</value>
@@ -461,9 +435,6 @@ ShareX を再起動しますか？</value>
   <data name="MainForm_UpdateMainWindowLayout_Hide_columns" xml:space="preserve">
     <value>列を隠す</value>
   </data>
-  <data name="ScreenRecordForm_DownloaderForm_InstallRequested_FFmpeg_successfully_downloaded_" xml:space="preserve">
-    <value>FFmpegのダウンロードが完了しました。</value>
-  </data>
   <data name="ActionsToolbar_Close" xml:space="preserve">
     <value>閉じる</value>
   </data>
@@ -478,9 +449,6 @@ ShareX を再起動しますか？</value>
   </data>
   <data name="QuickTaskMenuEditorForm_Reset_all_quick_tasks_to_defaults_Confirmation" xml:space="preserve">
     <value>すべてのクイックタスクを既定に戻しますか？</value>
-  </data>
-  <data name="ScreenRecordForm_StartRecording_Click_tray_icon_to_start_recording_" xml:space="preserve">
-    <value>クリックで録画を開始</value>
   </data>
   <data name="AboutForm_AboutForm_Language_de" xml:space="preserve">
     <value>ドイツ語</value>
@@ -499,9 +467,6 @@ ShareX を再起動しますか？</value>
   </data>
   <data name="WouldYouLikeToResetThemes" xml:space="preserve">
     <value>テーマをリセットしますか？</value>
-  </data>
-  <data name="ShowThumbnailTitle" xml:space="preserve">
-    <value>サムネイルのタイトル</value>
   </data>
   <data name="ScreenshotDelay0S" xml:space="preserve">
     <value>スクリーンショットを{0}秒後に起動する</value>
@@ -577,9 +542,6 @@ ShareX を再起動しますか？</value>
   </data>
   <data name="PleaseNoteThatShareXIsUsingOCRSpaceSOnlineAPIToPerformOpticalCharacterRecognitionDoYouGivePermissionToShareXToUploadImagesToThisService" xml:space="preserve">
     <value>ShareXのOCRでは、OCR.SpaceのAPIを使います。画像データをOCR.Spaceに転送してもよいですか？</value>
-  </data>
-  <data name="ScreenRecord_ConfirmCancel" xml:space="preserve">
-    <value>録画を中断してもよいですか？</value>
   </data>
   <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__Image__Size___0_x_1__" xml:space="preserve">
     <value>クリップボード内のデータ：画像（サイズ：{0}x{1}）</value>

@@ -591,9 +591,6 @@
   <data name="tsmiImageCombiner.Text" xml:space="preserve">
     <value>이미지 취합기...</value>
   </data>
-  <data name="tsbNews.Text" xml:space="preserve">
-    <value>소식</value>
-  </data>
   <data name="tsbDonate.Text" xml:space="preserve">
     <value>기부...</value>
   </data>
@@ -648,9 +645,6 @@
   <data name="tsmiCopyMarkdownLinkedImage.Text" xml:space="preserve">
     <value>마크다운 링크 걸린 이미지</value>
   </data>
-  <data name="tsmiSearchImage.Text" xml:space="preserve">
-    <value>구글 이미지 검색...</value>
-  </data>
   <data name="tsmiOCRImage.Text" xml:space="preserve">
     <value>이미지에서 문자 추출 (OCR)...</value>
   </data>
@@ -698,9 +692,6 @@
   </data>
   <data name="tsmiTrayVideoThumbnailer.Text" xml:space="preserve">
     <value>비디오 섬네일 생성기...</value>
-  </data>
-  <data name="btnCloseNews.Text" xml:space="preserve">
-    <value>닫기</value>
   </data>
   <data name="tsmiTrayDebug.Text" xml:space="preserve">
     <value>디버그</value>
@@ -771,29 +762,14 @@
   <data name="tsmiImageSplitter.Text" xml:space="preserve">
     <value>이미지 분할기...</value>
   </data>
-  <data name="tsbGitHub.Text" xml:space="preserve">
-    <value>깃헙</value>
-  </data>
   <data name="tsmiTrayScreenshotDelay.Text" xml:space="preserve">
     <value>스크린샷 지연</value>
   </data>
   <data name="tsmiTrayScreenshotDelay1.Text" xml:space="preserve">
     <value>1 초</value>
   </data>
-  <data name="tsbBitcoin.ToolTipText" xml:space="preserve">
-    <value>암호화폐로 지원하기</value>
-  </data>
-  <data name="tsbBitcoin.Text" xml:space="preserve">
-    <value>비트코인</value>
-  </data>
-  <data name="tsbDiscord.ToolTipText" xml:space="preserve">
-    <value>디스코드 서버에 참여해주세요</value>
-  </data>
   <data name="tsbDiscord.Text" xml:space="preserve">
     <value>디스코드</value>
-  </data>
-  <data name="tsbTwitter.ToolTipText" xml:space="preserve">
-    <value>트위터 계정을 팔로우해주세요</value>
   </data>
   <data name="tsbTwitter.Text" xml:space="preserve">
     <value>트위터</value>

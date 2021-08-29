@@ -303,9 +303,6 @@
   <data name="tsddbDebug.Text" xml:space="preserve">
     <value>Debug</value>
   </data>
-  <data name="tsbNews.Text" xml:space="preserve">
-    <value>Notizie</value>
-  </data>
   <data name="tsbDonate.Text" xml:space="preserve">
     <value>Dona</value>
   </data>
@@ -425,9 +422,6 @@
   </data>
   <data name="tsmiShareSelectedURL.Text" xml:space="preserve">
     <value>Condividi URL</value>
-  </data>
-  <data name="tsmiSearchImage.Text" xml:space="preserve">
-    <value>Ricerca Immagini Google...</value>
   </data>
   <data name="tsmiShowQRCode.Text" xml:space="preserve">
     <value>Mostra Codice QR...</value>
@@ -644,9 +638,6 @@
   </data>
   <data name="tsmiTrayExit.Text" xml:space="preserve">
     <value>Esci</value>
-  </data>
-  <data name="btnCloseNews.Text" xml:space="preserve">
-    <value>Chiudi</value>
   </data>
   <data name="tsmiOpenActionsToolbar.Text" xml:space="preserve">
     <value>Attiva/Disattiva Barra delle Azioni</value>
