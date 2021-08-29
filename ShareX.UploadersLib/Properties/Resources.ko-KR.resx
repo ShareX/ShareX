@@ -196,9 +196,6 @@
   <data name="UploadersConfigForm_FTPOpenClient_Unable_to_find_valid_FTP_account_" xml:space="preserve">
     <value>유효한 FTP 계정을 찾을 수 없습니다.</value>
   </data>
-  <data name="CustomFileUploader_Upload_Response_parse_failed_" xml:space="preserve">
-    <value>응답 파싱에 실패했습니다.</value>
-  </data>
   <data name="UploadersConfigForm_Remove_all_custom_uploaders_Confirmation" xml:space="preserve">
     <value>모든 커스텀 업로더를 삭제하겠습니까?</value>
   </data>

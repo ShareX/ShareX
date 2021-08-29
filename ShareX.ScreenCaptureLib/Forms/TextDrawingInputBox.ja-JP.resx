@@ -144,9 +144,6 @@
   <data name="tsmiAlignmentBottom.Text" xml:space="preserve">
     <value>下揃え</value>
   </data>
-  <data name="lblTip.Text" xml:space="preserve">
-    <value>改行: Ctrl + Enter</value>
-  </data>
   <data name="btnCancel.Text" xml:space="preserve">
     <value>キャンセル</value>
   </data>

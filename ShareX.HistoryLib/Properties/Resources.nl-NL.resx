@@ -177,9 +177,6 @@
   <data name="HistoryItemManager_InitializeComponent_Shortened_URL" xml:space="preserve">
     <value>Verkorte link</value>
   </data>
-  <data name="HistoryItemManager_InitializeComponent_Show" xml:space="preserve">
-    <value>Toon</value>
-  </data>
   <data name="HistoryItemManager_InitializeComponent_Text" xml:space="preserve">
     <value>Tekst</value>
   </data>

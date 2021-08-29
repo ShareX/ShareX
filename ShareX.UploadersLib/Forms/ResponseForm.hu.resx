@@ -120,9 +120,6 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Visszajelzés</value>
   </data>
-  <data name="tpString.Text" xml:space="preserve">
-    <value>Szöveg</value>
-  </data>
   <data name="tpWebBrowser.Text" xml:space="preserve">
     <value>Webböngésző</value>
   </data>

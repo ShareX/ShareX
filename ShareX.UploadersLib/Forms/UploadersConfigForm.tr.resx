@@ -398,7 +398,7 @@
     <value>Eposta:</value>
   </data>
   <data name="lblMegaStatusTitle.Text" xml:space="preserve">
-    <value>Durum:</value>
+    <value>Durum: </value>
   </data>
   <data name="lblMegaFolder.Text" xml:space="preserve">
     <value>Dizin:</value>
@@ -656,7 +656,7 @@
     <value>Yükleme halka açık mı?</value>
   </data>
   <data name="cbGfycatIsPublic.Text" xml:space="preserve">
-    <value>Yükleme halka açık mı?</value>
+    <value>Halka açık karşıya yükle</value>
   </data>
   <data name="cbPlikComment.Text" xml:space="preserve">
     <value>Yorum (Markdown)</value>

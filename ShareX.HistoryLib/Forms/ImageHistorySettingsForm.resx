@@ -236,6 +236,7 @@
   </data>
   <data name="lblThumbnailSizeUnit.Text" xml:space="preserve">
     <value>px</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;lblThumbnailSizeUnit.Name" xml:space="preserve">
     <value>lblThumbnailSizeUnit</value>

@@ -120,9 +120,6 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Share X - Configuración de servidor personalizado</value>
   </data>
-  <data name="btnClearUploaders.Text" xml:space="preserve">
-    <value>Quitar todos los servidores...</value>
-  </data>
   <data name="btnDataBeautify.Text" xml:space="preserve">
     <value>Dar formato</value>
   </data>
@@ -188,9 +185,6 @@
   </data>
   <data name="cRegex.HeaderText" xml:space="preserve">
     <value>Expresión regular</value>
-  </data>
-  <data name="gbCustomUploaders.Text" xml:space="preserve">
-    <value>Servidores</value>
   </data>
   <data name="lblBody.Text" xml:space="preserve">
     <value>Cuerpo:</value>
@@ -261,9 +255,6 @@ store.book[0].title</value>
   <data name="lblTextUploader.Text" xml:space="preserve">
     <value>Servidor de imagen:</value>
   </data>
-  <data name="tpRequest.Text" xml:space="preserve">
-    <value>Petición</value>
-  </data>
   <data name="lblXPath.Text" xml:space="preserve">
     <value>XPath:</value>
   </data>
@@ -279,32 +270,8 @@ store.book[0].title</value>
   <data name="tpRegexParse.Text" xml:space="preserve">
     <value>Expresión regular</value>
   </data>
-  <data name="tpResponse.Text" xml:space="preserve">
-    <value>Respuesta</value>
-  </data>
-  <data name="tpResponseInfo.Text" xml:space="preserve">
-    <value>Información de la respuesta</value>
-  </data>
-  <data name="tpResponseText.Text" xml:space="preserve">
-    <value>Texto de la respuesta</value>
-  </data>
-  <data name="tpResult.Text" xml:space="preserve">
-    <value>Resultado</value>
-  </data>
-  <data name="tpTest.Text" xml:space="preserve">
-    <value>Probar</value>
-  </data>
   <data name="tpXmlParse.Text" xml:space="preserve">
     <value>XML</value>
-  </data>
-  <data name="tsbResponseTextCopy.Text" xml:space="preserve">
-    <value>Copiar respuesta</value>
-  </data>
-  <data name="tsbResponseTextJSONFormat.Text" xml:space="preserve">
-    <value>Formato JSON</value>
-  </data>
-  <data name="tsbResponseTextXMLFormat.Text" xml:space="preserve">
-    <value>Formato XML</value>
   </data>
   <data name="tsmiCustomUploaderGuide.Text" xml:space="preserve">
     <value>Cómo usar los servidores personalizados...</value>

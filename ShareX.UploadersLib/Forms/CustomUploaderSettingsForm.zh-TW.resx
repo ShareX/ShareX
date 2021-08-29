@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -119,9 +119,6 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - 自訂上傳工具設定</value>
   </data>
-  <data name="btnClearUploaders.Text" xml:space="preserve">
-    <value>清除上傳工具...</value>
-  </data>
   <data name="btnDataBeautify.Text" xml:space="preserve">
     <value>美化</value>
   </data>
@@ -181,9 +178,6 @@
   </data>
   <data name="cRegex.HeaderText" xml:space="preserve">
     <value>正規表達式</value>
-  </data>
-  <data name="gbCustomUploaders.Text" xml:space="preserve">
-    <value>上傳工具</value>
   </data>
   <data name="lblBody.Text" xml:space="preserve">
     <value>主體：</value>
@@ -262,33 +256,6 @@ store.book[0].title</value>
   </data>
   <data name="tpRegexParse.Text" xml:space="preserve">
     <value>正規表達式</value>
-  </data>
-  <data name="tpRequest.Text" xml:space="preserve">
-    <value>請求</value>
-  </data>
-  <data name="tpResponse.Text" xml:space="preserve">
-    <value>響應</value>
-  </data>
-  <data name="tpResponseInfo.Text" xml:space="preserve">
-    <value>響應資訊</value>
-  </data>
-  <data name="tpResponseText.Text" xml:space="preserve">
-    <value>響應文字</value>
-  </data>
-  <data name="tpResult.Text" xml:space="preserve">
-    <value>結果</value>
-  </data>
-  <data name="tpTest.Text" xml:space="preserve">
-    <value>測試</value>
-  </data>
-  <data name="tsbResponseTextCopy.Text" xml:space="preserve">
-    <value>複製響應</value>
-  </data>
-  <data name="tsbResponseTextJSONFormat.Text" xml:space="preserve">
-    <value>JSON 格式</value>
-  </data>
-  <data name="tsbResponseTextXMLFormat.Text" xml:space="preserve">
-    <value>XML 格式</value>
   </data>
   <data name="tsmiCustomUploaderGuide.Text" xml:space="preserve">
     <value>自訂上傳工具指南...</value>

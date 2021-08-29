@@ -174,9 +174,6 @@
   <data name="ShapeManager_CreateToolbar_CaptureRegions" xml:space="preserve">
     <value>ناحیه های ضبط</value>
   </data>
-  <data name="ShapeManager_CreateToolbar_UseLetters" xml:space="preserve">
-    <value>استفاده از حروف</value>
-  </data>
   <data name="ShapeManager_CreateToolbar_ImageSize" xml:space="preserve">
     <value>سایز عکس...</value>
   </data>

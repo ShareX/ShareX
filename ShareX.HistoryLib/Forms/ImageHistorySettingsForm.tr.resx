@@ -129,7 +129,4 @@
   <data name="lblMaximumImageLimit.Text" xml:space="preserve">
     <value>Maksimum resim limiti:</value>
   </data>
-  <data name="lblViewMode.Text" xml:space="preserve">
-    <value>Görünüm modu:</value>
-  </data>
 </root>

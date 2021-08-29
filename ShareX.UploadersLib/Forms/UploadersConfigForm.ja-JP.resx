@@ -906,28 +906,4 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - アップロード先の設定</value>
   </data>
-  <data name="btnPomfTest.Text" xml:space="preserve">
-    <value>すべてテスト</value>
-  </data>
-  <data name="btnTinyPicOpenMyImages.Text" xml:space="preserve">
-    <value>自分の画像ページを開く...</value>
-  </data>
-  <data name="lblTinyPicUsername.Text" xml:space="preserve">
-    <value>Eメール:</value>
-  </data>
-  <data name="lblTinyPicPassword.Text" xml:space="preserve">
-    <value>パスワード:</value>
-  </data>
-  <data name="btnTinyPicLogin.Text" xml:space="preserve">
-    <value>ログイン</value>
-  </data>
-  <data name="btnCheveretoTestAll.Text" xml:space="preserve">
-    <value>すべてテスト</value>
-  </data>
-  <data name="lblCheveretoUploaders.Text" xml:space="preserve">
-    <value>アップローダー:</value>
-  </data>
-  <data name="lblPomfUploaders.Text" xml:space="preserve">
-    <value>アップローダー:</value>
-  </data>
 </root>

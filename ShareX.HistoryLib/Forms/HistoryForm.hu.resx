@@ -120,12 +120,6 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Előzmény</value>
   </data>
-  <data name="btnApplyFilters.Text" xml:space="preserve">
-    <value>Szűrők alkalmazása</value>
-  </data>
-  <data name="btnRemoveFilters.Text" xml:space="preserve">
-    <value>Szűrők eltávolítása</value>
-  </data>
   <data name="cbDateFilter.Text" xml:space="preserve">
     <value>Dátum szűrő:</value>
   </data>
@@ -140,9 +134,6 @@
   </data>
   <data name="chFilename.Text" xml:space="preserve">
     <value>Fájlnév</value>
-  </data>
-  <data name="gbFilters.Text" xml:space="preserve">
-    <value>Szűrők</value>
   </data>
   <data name="lblFilterFrom.Text" xml:space="preserve">
     <value>Ettől:</value>

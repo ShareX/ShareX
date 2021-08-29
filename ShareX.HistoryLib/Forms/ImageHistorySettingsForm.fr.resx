@@ -129,9 +129,6 @@
   <data name="lblThumbnailSizeUnit.Text" xml:space="preserve">
     <value>px</value>
   </data>
-  <data name="lblViewMode.Text" xml:space="preserve">
-    <value>Mode d'affichage :</value>
-  </data>
   <data name="cbRememberSearchText.Text" xml:space="preserve">
     <value>Mémoriser les entrées de recherche</value>
   </data>

@@ -862,9 +862,6 @@
   <data name="rtbRequestURL.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="rtbRequestURL.Text" xml:space="preserve">
-    <value />
-  </data>
   <data name="&gt;&gt;rtbRequestURL.Name" xml:space="preserve">
     <value>rtbRequestURL</value>
   </data>
@@ -1291,9 +1288,6 @@
   <data name="rtbData.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="rtbData.Text" xml:space="preserve">
-    <value />
-  </data>
   <data name="rtbData.WordWrap" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
@@ -1359,9 +1353,6 @@
   </data>
   <data name="rtbResultErrorMessage.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
-  </data>
-  <data name="rtbResultErrorMessage.Text" xml:space="preserve">
-    <value />
   </data>
   <data name="&gt;&gt;rtbResultErrorMessage.Name" xml:space="preserve">
     <value>rtbResultErrorMessage</value>
@@ -1483,9 +1474,6 @@
   <data name="rtbResultDeletionURL.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="rtbResultDeletionURL.Text" xml:space="preserve">
-    <value />
-  </data>
   <data name="&gt;&gt;rtbResultDeletionURL.Name" xml:space="preserve">
     <value>rtbResultDeletionURL</value>
   </data>
@@ -1579,9 +1567,6 @@
   <data name="rtbResultThumbnailURL.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="rtbResultThumbnailURL.Text" xml:space="preserve">
-    <value />
-  </data>
   <data name="&gt;&gt;rtbResultThumbnailURL.Name" xml:space="preserve">
     <value>rtbResultThumbnailURL</value>
   </data>
@@ -1644,9 +1629,6 @@
   </data>
   <data name="rtbResultURL.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
-  </data>
-  <data name="rtbResultURL.Text" xml:space="preserve">
-    <value />
   </data>
   <data name="&gt;&gt;rtbResultURL.Name" xml:space="preserve">
     <value>rtbResultURL</value>
@@ -1851,6 +1833,7 @@
   </data>
   <data name="tpJsonParse.Text" xml:space="preserve">
     <value>JSON</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;tpJsonParse.Name" xml:space="preserve">
     <value>tpJsonParse</value>
@@ -1969,6 +1952,7 @@ store.book[0].title</value>
   </data>
   <data name="lblJsonPath.Text" xml:space="preserve">
     <value>JsonPath:</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;lblJsonPath.Name" xml:space="preserve">
     <value>lblJsonPath</value>
@@ -2077,6 +2061,7 @@ store.book[0].title</value>
   </data>
   <data name="tpXmlParse.Text" xml:space="preserve">
     <value>XML</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;tpXmlParse.Name" xml:space="preserve">
     <value>tpXmlParse</value>
@@ -2195,6 +2180,7 @@ store.book[0].title</value>
   </data>
   <data name="lblXPath.Text" xml:space="preserve">
     <value>XPath:</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;lblXPath.Name" xml:space="preserve">
     <value>lblXPath</value>
@@ -2279,6 +2265,7 @@ store.book[0].title</value>
   </data>
   <data name="tpRegexParse.Text" xml:space="preserve">
     <value>Regex</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;tpRegexParse.Name" xml:space="preserve">
     <value>tpRegexParse</value>
@@ -2324,6 +2311,7 @@ store.book[0].title</value>
   </metadata>
   <data name="cRegex.HeaderText" xml:space="preserve">
     <value>Regex</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="dgvRegex.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 24</value>

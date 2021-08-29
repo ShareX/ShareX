@@ -117,18 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="tscResponseText.Text" xml:space="preserve">
-    <value>Corpo:</value>
-  </data>
-  <data name="tsbResponseTextJSONFormat.Text" xml:space="preserve">
-    <value>Formato JSON</value>
-  </data>
-  <data name="tsbResponseTextXMLFormat.Text" xml:space="preserve">
-    <value>Formato XML</value>
-  </data>
-  <data name="tsbResponseTextCopy.Text" xml:space="preserve">
-    <value>Copiar resposta</value>
-  </data>
   <data name="btnTextUploaderTest.Text" xml:space="preserve">
     <value>Teste</value>
   </data>
@@ -159,14 +147,8 @@
   <data name="btnDuplicate.Text" xml:space="preserve">
     <value>Duplicar</value>
   </data>
-  <data name="btnClearUploaders.Text" xml:space="preserve">
-    <value>Limpar hospedagens...</value>
-  </data>
   <data name="btnRemove.Text" xml:space="preserve">
     <value>Remover</value>
-  </data>
-  <data name="gbCustomUploaders.Text" xml:space="preserve">
-    <value>Hospedagem</value>
   </data>
   <data name="btnImageUploaderTest.Text" xml:space="preserve">
     <value>Teste</value>
@@ -222,9 +204,6 @@
   <data name="btnDataMinify.Text" xml:space="preserve">
     <value>Reduzir</value>
   </data>
-  <data name="tpRequest.Text" xml:space="preserve">
-    <value>Solicitação</value>
-  </data>
   <data name="lblParseResponse.Text" xml:space="preserve">
     <value>Analisar resposta:</value>
   </data>
@@ -266,21 +245,6 @@ store.book[0].title</value>
   </data>
   <data name="btnRegexAddSyntax.Text" xml:space="preserve">
     <value>Adicionar syntax ao campo da hiperligação</value>
-  </data>
-  <data name="tpResponse.Text" xml:space="preserve">
-    <value>Resposta</value>
-  </data>
-  <data name="tpResult.Text" xml:space="preserve">
-    <value>Resultado</value>
-  </data>
-  <data name="tpResponseInfo.Text" xml:space="preserve">
-    <value>Detalhes da resposta</value>
-  </data>
-  <data name="tpResponseText.Text" xml:space="preserve">
-    <value>Texto da resposta</value>
-  </data>
-  <data name="tpTest.Text" xml:space="preserve">
-    <value>Teste</value>
   </data>
   <data name="lblDestinationType.Text" xml:space="preserve">
     <value>Tipo de destino:</value>

@@ -546,9 +546,6 @@
   <data name="&gt;&gt;gbAdvancedSearch.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="chIcon.Text" xml:space="preserve">
-    <value />
-  </data>
   <data name="chIcon.Width" type="System.Int32, mscorlib">
     <value>24</value>
   </data>

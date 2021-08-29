@@ -135,7 +135,4 @@
   <data name="lblThumbnailSizeUnit.Text" xml:space="preserve">
     <value> px</value>
   </data>
-  <data name="lblViewMode.Text" xml:space="preserve">
-    <value>Modo de vista:</value>
-  </data>
 </root>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -119,9 +119,6 @@
   </resheader>
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - 響應</value>
-  </data>
-  <data name="tpString.Text" xml:space="preserve">
-    <value>文字</value>
   </data>
   <data name="tpWebBrowser.Text" xml:space="preserve">
     <value>網頁瀏覽器</value>

@@ -306,9 +306,6 @@
   <data name="ShapeManager_CenterPoints" xml:space="preserve">
     <value>Центральных точек:</value>
   </data>
-  <data name="ShapeManager_ArrowsOnBothEnds" xml:space="preserve">
-    <value>Стрелки на обоих концах</value>
-  </data>
   <data name="ShapeManager_CreateToolbar_Image" xml:space="preserve">
     <value>Изображение</value>
   </data>
@@ -368,9 +365,6 @@
   </data>
   <data name="ShapeManager_CreateToolbar_FontSize" xml:space="preserve">
     <value>Размер шрифта:</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_UseLetters" xml:space="preserve">
-    <value>Использовать буквы</value>
   </data>
   <data name="ShapeManager_CreateToolbar_InterpolationMode" xml:space="preserve">
     <value>Режим интерполяции:</value>

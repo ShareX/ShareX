@@ -232,9 +232,6 @@ Các thư mục đã tạo:</value>
   <data name="UploadersConfigForm_Remove_all_custom_uploaders_Confirmation" xml:space="preserve">
     <value>Xóa tất cả trình tải lên tùy chỉnh?</value>
   </data>
-  <data name="CustomFileUploader_Upload_Response_parse_failed_" xml:space="preserve">
-    <value>Xử lý dữ liệu trả về gặp lỗi.</value>
-  </data>
   <data name="DuplicateNameNotAllowed" xml:space="preserve">
     <value>Không cho phép trùng tên.</value>
   </data>

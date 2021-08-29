@@ -120,9 +120,6 @@
   <data name="lblThumbnailSize.Text" xml:space="preserve">
     <value>サムネイルのサイズ</value>
   </data>
-  <data name="lblViewMode.Text" xml:space="preserve">
-    <value>履歴の表示形式:</value>
-  </data>
   <data name="lblMaximumImageLimit.Text" xml:space="preserve">
     <value>最大画像数:</value>
   </data>

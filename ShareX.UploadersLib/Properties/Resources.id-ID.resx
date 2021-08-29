@@ -193,9 +193,6 @@ Folder yang dibuat:</value>
   <data name="TwitterTweetForm_SendTweet_Tweet_error" xml:space="preserve">
     <value>Kesalahan Tweet</value>
   </data>
-  <data name="CustomFileUploader_Upload_Response_parse_failed_" xml:space="preserve">
-    <value>Gagal mengurai tanggapan.</value>
-  </data>
   <data name="UploadersConfigForm_Login_failed" xml:space="preserve">
     <value>Login gagal.</value>
   </data>

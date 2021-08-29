@@ -162,9 +162,6 @@
   <data name="tsmiAlignmentBottom.Text" xml:space="preserve">
     <value>Alt</value>
   </data>
-  <data name="lblTip.Text" xml:space="preserve">
-    <value>Yeni satır: Ctrl + Enter</value>
-  </data>
   <data name="tsrbmiGradientHorizontal.Text" xml:space="preserve">
     <value>Yatay</value>
   </data>
@@ -172,7 +169,7 @@
     <value>Dikey</value>
   </data>
   <data name="tsmiSecondColor.Text" xml:space="preserve">
-    <value>İkinci yazı rengi:</value>
+    <value>İkinci yazı rengi...</value>
   </data>
   <data name="lblFont.Text" xml:space="preserve">
     <value>Yazı tipi:</value>

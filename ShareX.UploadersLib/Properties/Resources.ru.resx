@@ -132,9 +132,6 @@
   <data name="OneDrive_RootFolder_Root_folder" xml:space="preserve">
     <value>Корневая директория</value>
   </data>
-  <data name="CustomFileUploader_Upload_Response_parse_failed_" xml:space="preserve">
-    <value>Ошибка при парсинге ответа.</value>
-  </data>
   <data name="KeyFileNameEditor_EditValue_Browse_for_a_key_file___" xml:space="preserve">
     <value>Выбрать файл ключа...</value>
   </data>

@@ -177,9 +177,6 @@
   <data name="HistoryItemManager_InitializeComponent_Shortened_URL" xml:space="preserve">
     <value>URL 短链</value>
   </data>
-  <data name="HistoryItemManager_InitializeComponent_Show" xml:space="preserve">
-    <value>显示</value>
-  </data>
   <data name="HistoryItemManager_InitializeComponent_Text" xml:space="preserve">
     <value>文本</value>
   </data>
@@ -206,12 +203,6 @@
   </data>
   <data name="HistoryItemManager_InitializeComponent_UploadFile" xml:space="preserve">
     <value>上传文件</value>
-  </data>
-  <data name="BtnShowStats_ShowStats" xml:space="preserve">
-    <value>显示统计</value>
-  </data>
-  <data name="BtnShowStats_HideStats" xml:space="preserve">
-    <value>隐藏统计</value>
   </data>
   <data name="HistoryStats_Total" xml:space="preserve">
     <value>总计:</value>

@@ -120,9 +120,6 @@
   <data name="lblTextUploader.Text" xml:space="preserve">
     <value>Service de mise en ligne de textes :</value>
   </data>
-  <data name="gbCustomUploaders.Text" xml:space="preserve">
-    <value>Services de mise en ligne</value>
-  </data>
   <data name="lblImageUploader.Text" xml:space="preserve">
     <value>Service de mise en ligne d'images :</value>
   </data>
@@ -134,12 +131,6 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Paramètres de service de mise en ligne personnalisé</value>
-  </data>
-  <data name="btnClearUploaders.Text" xml:space="preserve">
-    <value>Supprimer les services de mise en ligne...</value>
-  </data>
-  <data name="tsbResponseTextCopy.Text" xml:space="preserve">
-    <value>Copier la réponse</value>
   </data>
   <data name="btnJsonPathHelp.Text" xml:space="preserve">
     <value>?</value>
@@ -201,9 +192,6 @@ store.book[0].title</value>
   <data name="tpJsonParse.Text" xml:space="preserve">
     <value>JSON</value>
   </data>
-  <data name="tsbResponseTextJSONFormat.Text" xml:space="preserve">
-    <value>Format JSON</value>
-  </data>
   <data name="lblJsonPath.Text" xml:space="preserve">
     <value>JsonPath :</value>
   </data>
@@ -240,25 +228,7 @@ store.book[0].title</value>
   <data name="btnRemove.Text" xml:space="preserve">
     <value>Supprimer</value>
   </data>
-  <data name="tpRequest.Text" xml:space="preserve">
-    <value>Requête</value>
-  </data>
-  <data name="tpResult.Text" xml:space="preserve">
-    <value>Résultat</value>
-  </data>
-  <data name="tpResponseText.Text" xml:space="preserve">
-    <value>Texte de réponse</value>
-  </data>
-  <data name="tpResponse.Text" xml:space="preserve">
-    <value>Réponse</value>
-  </data>
-  <data name="tpResponseInfo.Text" xml:space="preserve">
-    <value>Informations de réponse</value>
-  </data>
   <data name="btnTextUploaderTest.Text" xml:space="preserve">
-    <value>Tester</value>
-  </data>
-  <data name="tpTest.Text" xml:space="preserve">
     <value>Tester</value>
   </data>
   <data name="btnURLSharingServiceTest.Text" xml:space="preserve">
@@ -275,9 +245,6 @@ store.book[0].title</value>
   </data>
   <data name="lblResultThumbnailURL.Text" xml:space="preserve">
     <value>URL de la miniature :</value>
-  </data>
-  <data name="tscResponseText.Text" xml:space="preserve">
-    <value>toolStripContainer1</value>
   </data>
   <data name="tsmiUpdateFolder.Text" xml:space="preserve">
     <value>Mettre à jour le dossier...</value>
@@ -308,9 +275,6 @@ store.book[0].title</value>
   </data>
   <data name="tpXmlParse.Text" xml:space="preserve">
     <value>XML</value>
-  </data>
-  <data name="tsbResponseTextXMLFormat.Text" xml:space="preserve">
-    <value>Format XML</value>
   </data>
   <data name="lblXPath.Text" xml:space="preserve">
     <value>XPath :</value>

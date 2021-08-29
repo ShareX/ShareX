@@ -117,9 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="btnApplyFilters.Text" xml:space="preserve">
-    <value>Appliquer les filtres</value>
-  </data>
   <data name="chDateTime.Text" xml:space="preserve">
     <value>Date</value>
   </data>
@@ -132,9 +129,6 @@
   <data name="chFilename.Text" xml:space="preserve">
     <value>Nom du fichier</value>
   </data>
-  <data name="gbFilters.Text" xml:space="preserve">
-    <value>Filtres</value>
-  </data>
   <data name="lblFilterFrom.Text" xml:space="preserve">
     <value>De :</value>
   </data>
@@ -144,14 +138,8 @@
   <data name="cbHostFilter.Text" xml:space="preserve">
     <value>Hôte :</value>
   </data>
-  <data name="btnRemoveFilters.Text" xml:space="preserve">
-    <value>Supprimer les filtres</value>
-  </data>
   <data name="lblFilterTo.Text" xml:space="preserve">
     <value>À :</value>
-  </data>
-  <data name="btnShowStats.Text" xml:space="preserve">
-    <value>Afficher les statistiques</value>
   </data>
   <data name="chURL.Text" xml:space="preserve">
     <value>URL</value>
@@ -161,8 +149,5 @@
   </data>
   <data name="lblFilenameFilter.Text" xml:space="preserve">
     <value>Nom du fichier :</value>
-  </data>
-  <data name="lblMaxItemCount.Text" xml:space="preserve">
-    <value>Limite maximum d'éléments :</value>
   </data>
 </root>

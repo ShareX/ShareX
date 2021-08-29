@@ -153,9 +153,6 @@
   <data name="HistoryForm_UpdateItemCount___Filtered___0_" xml:space="preserve">
     <value>Đã lọc: {0}</value>
   </data>
-  <data name="HistoryItemManager_InitializeComponent_Show" xml:space="preserve">
-    <value>Hiện</value>
-  </data>
   <data name="HistoryManager_GetHistoryItems_Error" xml:space="preserve">
     <value>Lỗi</value>
   </data>
@@ -206,12 +203,6 @@
   </data>
   <data name="HistoryItemManager_InitializeComponent_EditImage" xml:space="preserve">
     <value>Chỉnh sửa ảnh...</value>
-  </data>
-  <data name="BtnShowStats_ShowStats" xml:space="preserve">
-    <value>Hiện số liệu thống kê</value>
-  </data>
-  <data name="BtnShowStats_HideStats" xml:space="preserve">
-    <value>Ẩn số liệu thống kê</value>
   </data>
   <data name="HistoryStats_Total" xml:space="preserve">
     <value>Tổng cộng:</value>

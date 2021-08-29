@@ -177,9 +177,6 @@
   <data name="HistoryItemManager_InitializeComponent_Shortened_URL" xml:space="preserve">
     <value>Gekürzte URL</value>
   </data>
-  <data name="HistoryItemManager_InitializeComponent_Show" xml:space="preserve">
-    <value>Zeigen</value>
-  </data>
   <data name="HistoryItemManager_InitializeComponent_Text" xml:space="preserve">
     <value>Text</value>
   </data>
@@ -206,12 +203,6 @@
   </data>
   <data name="HistoryItemManager_InitializeComponent_EditImage" xml:space="preserve">
     <value>Bild bearbeiten...</value>
-  </data>
-  <data name="BtnShowStats_ShowStats" xml:space="preserve">
-    <value>Statistiken anzeigen</value>
-  </data>
-  <data name="BtnShowStats_HideStats" xml:space="preserve">
-    <value>Statistiken ausblenden</value>
   </data>
   <data name="HistoryItemCounts" xml:space="preserve">
     <value>Anzahl der Historie-Elemente:</value>

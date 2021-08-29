@@ -120,20 +120,11 @@
   <data name="$this.Text" xml:space="preserve">
     <value>히스토리</value>
   </data>
-  <data name="btnApplyFilters.Text" xml:space="preserve">
-    <value>필터 적용</value>
-  </data>
-  <data name="btnRemoveFilters.Text" xml:space="preserve">
-    <value>필터 해제</value>
-  </data>
   <data name="lblFilterFrom.Text" xml:space="preserve">
     <value>시작:</value>
   </data>
   <data name="lblFilterTo.Text" xml:space="preserve">
     <value>끝:</value>
-  </data>
-  <data name="gbFilters.Text" xml:space="preserve">
-    <value>필터</value>
   </data>
   <data name="cbDateFilter.Text" xml:space="preserve">
     <value>날짜 필터:</value>

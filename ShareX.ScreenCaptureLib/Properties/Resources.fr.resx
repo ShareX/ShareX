@@ -360,9 +360,6 @@
   <data name="ShapeManager_CreateToolbar_PasteImageText" xml:space="preserve">
     <value>Coller image/texte</value>
   </data>
-  <data name="ShapeManager_CreateToolbar_UseLetters" xml:space="preserve">
-    <value>Utiliser des lettres</value>
-  </data>
   <data name="ShapeManager_CreateToolbar_AnnotateMenu" xml:space="preserve">
     <value>Menu annotations</value>
   </data>

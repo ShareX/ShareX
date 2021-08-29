@@ -138,9 +138,6 @@
   <data name="lblDestinationType.Text" xml:space="preserve">
     <value>목적지 타입:</value>
   </data>
-  <data name="tpTest.Text" xml:space="preserve">
-    <value>테스트</value>
-  </data>
   <data name="lblURLSharingService.Text" xml:space="preserve">
     <value>URL 공유 서비스:</value>
   </data>

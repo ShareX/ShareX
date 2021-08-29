@@ -120,9 +120,6 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - تنظیمات تاریخچه عکس</value>
   </data>
-  <data name="lblViewMode.Text" xml:space="preserve">
-    <value>حالت نمایش:</value>
-  </data>
   <data name="lblThumbnailSizeUnit.Text" xml:space="preserve">
     <value>پیکسل</value>
   </data>

@@ -135,9 +135,6 @@
   <data name="ShapeManager_CreateContextMenu_Multi_region_mode" xml:space="preserve">
     <value>複数領域選択モード</value>
   </data>
-  <data name="ShapeManager_CreateToolbar_UseLetters" xml:space="preserve">
-    <value>アルファベットを使用</value>
-  </data>
   <data name="ShapeManager_CreateToolbar_ImageSize" xml:space="preserve">
     <value>画像の大きさ...</value>
   </data>
@@ -188,9 +185,6 @@
   </data>
   <data name="ShapeManager_CreateToolbar_Rotate90CounterClockwise" xml:space="preserve">
     <value>左に90° 回転</value>
-  </data>
-  <data name="ShapeManager_ArrowsOnBothEnds" xml:space="preserve">
-    <value>両端に矢印</value>
   </data>
   <data name="ShapeManager_CreateToolbar_InterpolationMode" xml:space="preserve">
     <value>補間方式</value>
@@ -374,17 +368,6 @@
   </data>
   <data name="ShapeManager_CreateContextMenu_Pixel_size_" xml:space="preserve">
     <value>ピクセルの大きさ:</value>
-  </data>
-  <data name="FFmpegHelper_Record_FFmpeg_error" xml:space="preserve">
-    <value>FFmpegのエラー</value>
-  </data>
-  <data name="RectangleRegion_GetRulerText_Ruler_info" xml:space="preserve">
-    <value>X: {0} / Y: {1} / X2: {2} / Y2: {3}
-幅: {4} px / 高さ: {5} px
-距離: {6:0.00} px / 角度: {7:0.00}°</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_EditorBackgroundColor" xml:space="preserve">
-    <value>エディターの背景色...</value>
   </data>
   <data name="RegionCaptureForm_ShowExitConfirmation_Text" xml:space="preserve">
     <value>保存されていませんが、画像エディタを閉じていいですか？</value>

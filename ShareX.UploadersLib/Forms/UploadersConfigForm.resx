@@ -616,6 +616,7 @@ when you made the application key.</value>
   </data>
   <data name="tpTwitter.Text" xml:space="preserve">
     <value>Twitter</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;tpTwitter.Name" xml:space="preserve">
     <value>tpTwitter</value>
@@ -766,6 +767,7 @@ when you made the application key.</value>
   </data>
   <data name="tpBitly.Text" xml:space="preserve">
     <value>bit.ly</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;tpBitly.Name" xml:space="preserve">
     <value>tpBitly</value>
@@ -1027,6 +1029,7 @@ when you made the application key.</value>
   </data>
   <data name="tpYourls.Text" xml:space="preserve">
     <value>YOURLS</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;tpYourls.Name" xml:space="preserve">
     <value>tpYourls</value>
@@ -1186,6 +1189,7 @@ when you made the application key.</value>
   </data>
   <data name="tpAdFly.Text" xml:space="preserve">
     <value>adf.ly</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;tpAdFly.Name" xml:space="preserve">
     <value>tpAdFly</value>
@@ -1372,6 +1376,7 @@ when you made the application key.</value>
   </data>
   <data name="tpPolr.Text" xml:space="preserve">
     <value>Polr</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;tpPolr.Name" xml:space="preserve">
     <value>tpPolr</value>
@@ -1561,6 +1566,7 @@ when you made the application key.</value>
   </data>
   <data name="tpFirebaseDynamicLinks.Text" xml:space="preserve">
     <value>Firebase Dynamic Links</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;tpFirebaseDynamicLinks.Name" xml:space="preserve">
     <value>tpFirebaseDynamicLinks</value>
@@ -1822,6 +1828,7 @@ when you made the application key.</value>
   </data>
   <data name="tpKutt.Text" xml:space="preserve">
     <value>Kutt</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;tpKutt.Name" xml:space="preserve">
     <value>tpKutt</value>
@@ -1951,6 +1958,7 @@ when you made the application key.</value>
   </data>
   <data name="tpZeroWidthShortener.Text" xml:space="preserve">
     <value>Zero Width Shortener</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;tpZeroWidthShortener.Name" xml:space="preserve">
     <value>tpZeroWidthShortener</value>
@@ -2156,6 +2164,7 @@ when you made the application key.</value>
   </data>
   <data name="gbSFTP.Text" xml:space="preserve">
     <value>SFTP</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;gbSFTP.Name" xml:space="preserve">
     <value>gbSFTP</value>
@@ -2513,6 +2522,7 @@ when you made the application key.</value>
   </data>
   <data name="rbFTPProtocolFTP.Text" xml:space="preserve">
     <value>FTP</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;rbFTPProtocolFTP.Name" xml:space="preserve">
     <value>rbFTPProtocolFTP</value>
@@ -2543,6 +2553,7 @@ when you made the application key.</value>
   </data>
   <data name="rbFTPProtocolFTPS.Text" xml:space="preserve">
     <value>FTPS</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;rbFTPProtocolFTPS.Name" xml:space="preserve">
     <value>rbFTPProtocolFTPS</value>
@@ -2573,6 +2584,7 @@ when you made the application key.</value>
   </data>
   <data name="rbFTPProtocolSFTP.Text" xml:space="preserve">
     <value>SFTP</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;rbFTPProtocolSFTP.Name" xml:space="preserve">
     <value>rbFTPProtocolSFTP</value>
@@ -3114,6 +3126,7 @@ when you made the application key.</value>
   </data>
   <data name="gbFTPS.Text" xml:space="preserve">
     <value>FTPS</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;gbFTPS.Name" xml:space="preserve">
     <value>gbFTPS</value>
@@ -3450,6 +3463,7 @@ when you made the application key.</value>
   </data>
   <data name="tpFTP.Text" xml:space="preserve">
     <value>FTP / FTPS / SFTP</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;tpFTP.Name" xml:space="preserve">
     <value>tpFTP</value>
@@ -3609,6 +3623,7 @@ when you made the application key.</value>
   </data>
   <data name="tpDropbox.Text" xml:space="preserve">
     <value>Dropbox</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;tpDropbox.Name" xml:space="preserve">
     <value>tpDropbox</value>
@@ -3741,6 +3756,7 @@ when you made the application key.</value>
   </data>
   <data name="tpOneDrive.Text" xml:space="preserve">
     <value>OneDrive</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;tpOneDrive.Name" xml:space="preserve">
     <value>tpOneDrive</value>
@@ -4014,6 +4030,7 @@ when you made the application key.</value>
   </data>
   <data name="tpGoogleDrive.Text" xml:space="preserve">
     <value>Google Drive</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;tpGoogleDrive.Name" xml:space="preserve">
     <value>tpGoogleDrive</value>
@@ -4251,6 +4268,7 @@ when you made the application key.</value>
   </data>
   <data name="tpPuush.Text" xml:space="preserve">
     <value>puush</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;tpPuush.Name" xml:space="preserve">
     <value>tpPuush</value>
@@ -4500,6 +4518,7 @@ when you made the application key.</value>
   </data>
   <data name="tpBox.Text" xml:space="preserve">
     <value>Box</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;tpBox.Name" xml:space="preserve">
     <value>tpBox</value>
@@ -5334,6 +5353,7 @@ when you made the application key.</value>
   </data>
   <data name="tpAmazonS3.Text" xml:space="preserve">
     <value>Amazon S3</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;tpAmazonS3.Name" xml:space="preserve">
     <value>tpAmazonS3</value>
@@ -5769,6 +5789,7 @@ when you made the application key.</value>
   </data>
   <data name="tpGoogleCloudStorage.Text" xml:space="preserve">
     <value>Google Cloud Storage</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;tpGoogleCloudStorage.Name" xml:space="preserve">
     <value>tpGoogleCloudStorage</value>
@@ -5895,15 +5916,19 @@ when you made the application key.</value>
   </data>
   <data name="cbAzureStorageEnvironment.Items" xml:space="preserve">
     <value>blob.core.windows.net</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="cbAzureStorageEnvironment.Items1" xml:space="preserve">
     <value>blob.core.usgovcloudapi.net</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="cbAzureStorageEnvironment.Items2" xml:space="preserve">
     <value>blob.core.chinacloudapi.cn</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="cbAzureStorageEnvironment.Items3" xml:space="preserve">
     <value>blob.core.cloudapi.de</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="cbAzureStorageEnvironment.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 173</value>
@@ -6208,6 +6233,7 @@ when you made the application key.</value>
   </data>
   <data name="tpAzureStorage.Text" xml:space="preserve">
     <value>Azure Storage</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;tpAzureStorage.Name" xml:space="preserve">
     <value>tpAzureStorage</value>
@@ -6445,6 +6471,7 @@ when you made the application key.</value>
   </data>
   <data name="tpBackblazeB2.Text" xml:space="preserve">
     <value>Backblaze B2</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;tpBackblazeB2.Name" xml:space="preserve">
     <value>tpBackblazeB2</value>
@@ -6625,6 +6652,7 @@ when you made the application key.</value>
   </data>
   <data name="tpGfycat.Text" xml:space="preserve">
     <value>Gfycat</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;tpGfycat.Name" xml:space="preserve">
     <value>tpGfycat</value>
@@ -6943,6 +6971,7 @@ when you made the application key.</value>
   </data>
   <data name="tpMega.Text" xml:space="preserve">
     <value>Mega</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;tpMega.Name" xml:space="preserve">
     <value>tpMega</value>
@@ -7405,6 +7434,7 @@ when you made the application key.</value>
   </data>
   <data name="tpOwnCloud.Text" xml:space="preserve">
     <value>ownCloud / Nextcloud</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;tpOwnCloud.Name" xml:space="preserve">
     <value>tpOwnCloud</value>
@@ -7615,6 +7645,7 @@ when you made the application key.</value>
   </data>
   <data name="tpMediaFire.Text" xml:space="preserve">
     <value>MediaFire</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;tpMediaFire.Name" xml:space="preserve">
     <value>tpMediaFire</value>
@@ -7777,6 +7808,7 @@ when you made the application key.</value>
   </data>
   <data name="tpPushbullet.Text" xml:space="preserve">
     <value>Pushbullet</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;tpPushbullet.Name" xml:space="preserve">
     <value>tpPushbullet</value>
@@ -7954,6 +7986,7 @@ when you made the application key.</value>
   </data>
   <data name="tpSendSpace.Text" xml:space="preserve">
     <value>SendSpace</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;tpSendSpace.Name" xml:space="preserve">
     <value>tpSendSpace</value>
@@ -8113,6 +8146,7 @@ when you made the application key.</value>
   </data>
   <data name="tpHostr.Text" xml:space="preserve">
     <value>Hostr</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;tpHostr.Name" xml:space="preserve">
     <value>tpHostr</value>
@@ -8137,6 +8171,7 @@ when you made the application key.</value>
   </data>
   <data name="txtJiraIssuePrefix.Text" xml:space="preserve">
     <value>PROJECT-</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;txtJiraIssuePrefix.Name" xml:space="preserve">
     <value>txtJiraIssuePrefix</value>
@@ -8221,6 +8256,7 @@ when you made the application key.</value>
   </data>
   <data name="txtJiraHost.Text" xml:space="preserve">
     <value>http://</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;txtJiraHost.Name" xml:space="preserve">
     <value>txtJiraHost</value>
@@ -8320,6 +8356,7 @@ when you made the application key.</value>
   </data>
   <data name="tpJira.Text" xml:space="preserve">
     <value>Atlassian Jira</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;tpJira.Name" xml:space="preserve">
     <value>tpJira</value>
@@ -8479,6 +8516,7 @@ when you made the application key.</value>
   </data>
   <data name="tpLambda.Text" xml:space="preserve">
     <value>Lambda</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;tpLambda.Name" xml:space="preserve">
     <value>tpLambda</value>
@@ -8866,6 +8904,7 @@ when you made the application key.</value>
   </data>
   <data name="tpTeknik.Text" xml:space="preserve">
     <value>Teknik</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;tpTeknik.Name" xml:space="preserve">
     <value>tpTeknik</value>
@@ -8995,6 +9034,7 @@ when you made the application key.</value>
   </data>
   <data name="tpPomf.Text" xml:space="preserve">
     <value>Pomf</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;tpPomf.Name" xml:space="preserve">
     <value>tpPomf</value>
@@ -9010,9 +9050,11 @@ when you made the application key.</value>
   </data>
   <data name="cbSeafileAPIURL.Items" xml:space="preserve">
     <value>https://seacloud.cc/api2/</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="cbSeafileAPIURL.Items1" xml:space="preserve">
     <value>https://cloud.mein-seafile.de/api2/</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="cbSeafileAPIURL.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 32</value>
@@ -9986,6 +10028,7 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpSeafile.Text" xml:space="preserve">
     <value>Seafile</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;tpSeafile.Name" xml:space="preserve">
     <value>tpSeafile</value>
@@ -10187,6 +10230,7 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpStreamable.Text" xml:space="preserve">
     <value>Streamable</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;tpStreamable.Name" xml:space="preserve">
     <value>tpStreamable</value>
@@ -10292,6 +10336,7 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpSul.Text" xml:space="preserve">
     <value>s-ul</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;tpSul.Name" xml:space="preserve">
     <value>tpSul</value>
@@ -10526,6 +10571,7 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpLithiio.Text" xml:space="preserve">
     <value>Lithiio</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;tpLithiio.Name" xml:space="preserve">
     <value>tpLithiio</value>
@@ -11033,6 +11079,7 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpPlik.Text" xml:space="preserve">
     <value>Plik</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;tpPlik.Name" xml:space="preserve">
     <value>tpPlik</value>
@@ -11159,6 +11206,7 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpYouTube.Text" xml:space="preserve">
     <value>YouTube</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;tpYouTube.Name" xml:space="preserve">
     <value>tpYouTube</value>
@@ -12401,6 +12449,7 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpPastebin.Text" xml:space="preserve">
     <value>Pastebin</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;tpPastebin.Name" xml:space="preserve">
     <value>tpPastebin</value>
@@ -12506,6 +12555,7 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpPaste_ee.Text" xml:space="preserve">
     <value>Paste.ee</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;tpPaste_ee.Name" xml:space="preserve">
     <value>tpPaste_ee</value>
@@ -12722,6 +12772,7 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpGist.Text" xml:space="preserve">
     <value>GitHub Gist</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;tpGist.Name" xml:space="preserve">
     <value>tpGist</value>
@@ -12830,6 +12881,7 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpUpaste.Text" xml:space="preserve">
     <value>uPaste</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;tpUpaste.Name" xml:space="preserve">
     <value>tpUpaste</value>
@@ -12989,6 +13041,7 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpHastebin.Text" xml:space="preserve">
     <value>Hastebin</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;tpHastebin.Name" xml:space="preserve">
     <value>tpHastebin</value>
@@ -13118,6 +13171,7 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpOneTimeSecret.Text" xml:space="preserve">
     <value>OneTimeSecret</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;tpOneTimeSecret.Name" xml:space="preserve">
     <value>tpOneTimeSecret</value>
@@ -13175,6 +13229,7 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpPastie.Text" xml:space="preserve">
     <value>Pastie</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;tpPastie.Name" xml:space="preserve">
     <value>tpPastie</value>
@@ -13502,6 +13557,7 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpImgur.Text" xml:space="preserve">
     <value>Imgur</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;tpImgur.Name" xml:space="preserve">
     <value>tpImgur</value>
@@ -13742,6 +13798,7 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpImageShack.Text" xml:space="preserve">
     <value>ImageShack</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;tpImageShack.Name" xml:space="preserve">
     <value>tpImageShack</value>
@@ -13820,6 +13877,7 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpFlickr.Text" xml:space="preserve">
     <value>Flickr</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;tpFlickr.Name" xml:space="preserve">
     <value>tpFlickr</value>
@@ -14309,6 +14367,7 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpPhotobucket.Text" xml:space="preserve">
     <value>Photobucket</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;tpPhotobucket.Name" xml:space="preserve">
     <value>tpPhotobucket</value>
@@ -14585,6 +14644,7 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpGooglePhotos.Text" xml:space="preserve">
     <value>Google Photos</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;tpGooglePhotos.Name" xml:space="preserve">
     <value>tpGooglePhotos</value>
@@ -14774,6 +14834,7 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpChevereto.Text" xml:space="preserve">
     <value>Chevereto</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;tpChevereto.Name" xml:space="preserve">
     <value>tpChevereto</value>
@@ -14882,6 +14943,7 @@ Using an encrypted library disables sharing.</value>
   </data>
   <data name="tpVgyme.Text" xml:space="preserve">
     <value>vgy.me</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;tpVgyme.Name" xml:space="preserve">
     <value>tpVgyme</value>

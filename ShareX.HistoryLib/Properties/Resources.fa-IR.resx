@@ -129,9 +129,6 @@
   <data name="HistoryItemManager_InitializeComponent_Text" xml:space="preserve">
     <value>متن</value>
   </data>
-  <data name="HistoryItemManager_InitializeComponent_Show" xml:space="preserve">
-    <value>نمایش</value>
-  </data>
   <data name="HistoryItemManager_InitializeComponent_Shortened_URL" xml:space="preserve">
     <value>ادرس کوتاه شده</value>
   </data>

@@ -177,9 +177,6 @@
   <data name="HistoryItemManager_InitializeComponent_Shortened_URL" xml:space="preserve">
     <value>URL encurtado</value>
   </data>
-  <data name="HistoryItemManager_InitializeComponent_Show" xml:space="preserve">
-    <value>Mostrar</value>
-  </data>
   <data name="HistoryItemManager_InitializeComponent_Text" xml:space="preserve">
     <value>Texto</value>
   </data>
@@ -191,12 +188,6 @@
   </data>
   <data name="HistoryManager_GetHistoryItems_Error" xml:space="preserve">
     <value>Erro</value>
-  </data>
-  <data name="BtnShowStats_HideStats" xml:space="preserve">
-    <value>Ocultar estatísticas</value>
-  </data>
-  <data name="BtnShowStats_ShowStats" xml:space="preserve">
-    <value>Mostrar estatísticas</value>
   </data>
   <data name="ErrorOccuredWhileReadingHistoryFile" xml:space="preserve">
     <value>Ocorreu um erro ao ler o arquivo de histórico:</value>

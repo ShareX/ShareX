@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -252,9 +252,6 @@
   <data name="RegionCaptureForm_TipYouCanPanImageByHoldingMouseMiddleButtonAndDragging" xml:space="preserve">
     <value>提示：點擊滑鼠中鍵並拖曳即可平移圖片。</value>
   </data>
-  <data name="ShapeManager_ArrowsOnBothEnds" xml:space="preserve">
-    <value>兩端箭頭</value>
-  </data>
   <data name="ShapeManager_CenterPoints" xml:space="preserve">
     <value>中心點：</value>
   </data>
@@ -398,9 +395,6 @@
   </data>
   <data name="ShapeManager_CreateToolbar_StartingStepValue" xml:space="preserve">
     <value>第一步的值：</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_UseLetters" xml:space="preserve">
-    <value>使用字母</value>
   </data>
   <data name="ShapeManager_CursorType" xml:space="preserve">
     <value>游標類型：</value>

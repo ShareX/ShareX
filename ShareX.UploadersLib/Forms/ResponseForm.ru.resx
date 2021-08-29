@@ -120,9 +120,6 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Ответ</value>
   </data>
-  <data name="tpString.Text" xml:space="preserve">
-    <value>Текст</value>
-  </data>
   <data name="tpWebBrowser.Text" xml:space="preserve">
     <value>Веб-браузер</value>
   </data>

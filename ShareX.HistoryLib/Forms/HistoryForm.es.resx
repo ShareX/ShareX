@@ -120,12 +120,6 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Historial</value>
   </data>
-  <data name="btnApplyFilters.Text" xml:space="preserve">
-    <value>Aplicar filtros</value>
-  </data>
-  <data name="btnRemoveFilters.Text" xml:space="preserve">
-    <value>Quitar filtros</value>
-  </data>
   <data name="chDateTime.Text" xml:space="preserve">
     <value>Fecha y hora</value>
   </data>
@@ -134,9 +128,6 @@
   </data>
   <data name="cbHostFilter.Text" xml:space="preserve">
     <value>Filtro de host:</value>
-  </data>
-  <data name="gbFilters.Text" xml:space="preserve">
-    <value>Filtros</value>
   </data>
   <data name="lblFilterTo.Text" xml:space="preserve">
     <value>Para:</value>

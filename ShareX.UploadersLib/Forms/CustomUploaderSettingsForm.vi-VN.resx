@@ -123,9 +123,6 @@
   <data name="tpRegexParse.Text" xml:space="preserve">
     <value>Biểu thức chính quy</value>
   </data>
-  <data name="tpResult.Text" xml:space="preserve">
-    <value>Kết quả</value>
-  </data>
   <data name="mbHelp.Text" xml:space="preserve">
     <value>?</value>
   </data>
@@ -146,12 +143,6 @@
   </data>
   <data name="lblBody.Text" xml:space="preserve">
     <value>Body - Thân:</value>
-  </data>
-  <data name="btnClearUploaders.Text" xml:space="preserve">
-    <value>Xóa các dịch vụ tải lên...</value>
-  </data>
-  <data name="tsbResponseTextCopy.Text" xml:space="preserve">
-    <value>Sao chép dữ liệu trả về</value>
   </data>
   <data name="lblResultDeletionURL.Text" xml:space="preserve">
     <value>URL để xóa</value>
@@ -201,9 +192,6 @@
   <data name="tsmiUpdateFolder.Text" xml:space="preserve">
     <value>Cập nhật thư mục...</value>
   </data>
-  <data name="gbCustomUploaders.Text" xml:space="preserve">
-    <value>Các dịch vụ tải lên</value>
-  </data>
   <data name="lblURLShortener.Text" xml:space="preserve">
     <value>Dịch vụ rút gọn URL:</value>
   </data>
@@ -225,9 +213,6 @@
   <data name="tpXmlParse.Text" xml:space="preserve">
     <value>XML</value>
   </data>
-  <data name="tsbResponseTextXMLFormat.Text" xml:space="preserve">
-    <value>Định dạng XML</value>
-  </data>
   <data name="lblXPath.Text" xml:space="preserve">
     <value>XPath:</value>
   </data>
@@ -247,9 +232,6 @@
     <value>Kiểm tra</value>
   </data>
   <data name="btnURLShortenerTest.Text" xml:space="preserve">
-    <value>Kiểm tra</value>
-  </data>
-  <data name="tpTest.Text" xml:space="preserve">
     <value>Kiểm tra</value>
   </data>
   <data name="tsmiCustomUploaders.Text" xml:space="preserve">
@@ -285,9 +267,6 @@ store.book[0].title</value>
   <data name="tpJsonParse.Text" xml:space="preserve">
     <value>JSON</value>
   </data>
-  <data name="tsbResponseTextJSONFormat.Text" xml:space="preserve">
-    <value>Định dạng JSON</value>
-  </data>
   <data name="lblJsonPath.Text" xml:space="preserve">
     <value>JsonPath:</value>
   </data>
@@ -297,18 +276,6 @@ store.book[0].title</value>
   <data name="btnDataMinify.Text" xml:space="preserve">
     <value>Thu gọn</value>
   </data>
-  <data name="tpRequest.Text" xml:space="preserve">
-    <value>Yêu cầu (Request)</value>
-  </data>
-  <data name="tpResponse.Text" xml:space="preserve">
-    <value>Dữ liệu trả về</value>
-  </data>
-  <data name="tpResponseInfo.Text" xml:space="preserve">
-    <value>Thông tin dữ liệu trả về</value>
-  </data>
-  <data name="tpResponseText.Text" xml:space="preserve">
-    <value>Văn bản trả về</value>
-  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Thiết lập dịch vụ tải lên</value>
   </data>
@@ -317,8 +284,5 @@ store.book[0].title</value>
   </data>
   <data name="lblParameters.Text" xml:space="preserve">
     <value>Các tham số trong URL:</value>
-  </data>
-  <data name="tscResponseText.Text" xml:space="preserve">
-    <value>toolStripContainer1</value>
   </data>
 </root>

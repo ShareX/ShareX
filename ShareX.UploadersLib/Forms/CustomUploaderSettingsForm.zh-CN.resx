@@ -129,12 +129,6 @@
   <data name="lblBody.Text" xml:space="preserve">
     <value>请求体：</value>
   </data>
-  <data name="btnClearUploaders.Text" xml:space="preserve">
-    <value>清除自定义上传...</value>
-  </data>
-  <data name="tsbResponseTextCopy.Text" xml:space="preserve">
-    <value>复制响应</value>
-  </data>
   <data name="mbDestinationType.ToolTip" xml:space="preserve">
     <value>目前，当用户双击 .sxcu 文件导入自定义上传目标时，上传目标类型将被使用。</value>
   </data>
@@ -180,9 +174,6 @@ store.book[0].title</value>
   <data name="lblImageUploader.Text" xml:space="preserve">
     <value>图片上载器：</value>
   </data>
-  <data name="tsbResponseTextJSONFormat.Text" xml:space="preserve">
-    <value>JSON 格式</value>
-  </data>
   <data name="lblRequestMethod.Text" xml:space="preserve">
     <value>方法：</value>
   </data>
@@ -219,21 +210,6 @@ store.book[0].title</value>
   <data name="btnRemove.Text" xml:space="preserve">
     <value>删除</value>
   </data>
-  <data name="tpRequest.Text" xml:space="preserve">
-    <value>请求</value>
-  </data>
-  <data name="tpResponse.Text" xml:space="preserve">
-    <value>响应</value>
-  </data>
-  <data name="tpResponseInfo.Text" xml:space="preserve">
-    <value>响应信息</value>
-  </data>
-  <data name="tpResponseText.Text" xml:space="preserve">
-    <value>响应文本</value>
-  </data>
-  <data name="tpResult.Text" xml:space="preserve">
-    <value>结果</value>
-  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - 自定义上传设置</value>
   </data>
@@ -241,9 +217,6 @@ store.book[0].title</value>
     <value>测试</value>
   </data>
   <data name="btnURLShortenerTest.Text" xml:space="preserve">
-    <value>测试</value>
-  </data>
-  <data name="tpTest.Text" xml:space="preserve">
     <value>测试</value>
   </data>
   <data name="btnURLSharingServiceTest.Text" xml:space="preserve">
@@ -264,9 +237,6 @@ store.book[0].title</value>
   <data name="tsmiUpdateFolder.Text" xml:space="preserve">
     <value>更新文件夹...</value>
   </data>
-  <data name="gbCustomUploaders.Text" xml:space="preserve">
-    <value>上载器</value>
-  </data>
   <data name="lblParameters.Text" xml:space="preserve">
     <value>URL 参数：</value>
   </data>
@@ -284,9 +254,6 @@ store.book[0].title</value>
   </data>
   <data name="cHeadersValue.HeaderText" xml:space="preserve">
     <value>值</value>
-  </data>
-  <data name="tsbResponseTextXMLFormat.Text" xml:space="preserve">
-    <value>XML 格式</value>
   </data>
   <data name="lblXPath.Text" xml:space="preserve">
     <value>XPath：</value>
@@ -320,8 +287,5 @@ store.book[0].title</value>
   </data>
   <data name="tpXmlParse.Text" xml:space="preserve">
     <value>XML</value>
-  </data>
-  <data name="tscResponseText.Text" xml:space="preserve">
-    <value>toolStripContainer1</value>
   </data>
 </root>

@@ -168,9 +168,6 @@
   <data name="RegionCaptureForm_InitializeComponent_ImageEditor" xml:space="preserve">
     <value>Resim düzenleyici</value>
   </data>
-  <data name="ShapeManager_ArrowsOnBothEnds" xml:space="preserve">
-    <value>İki uçlu ok</value>
-  </data>
   <data name="ShapeManager_CenterPoints" xml:space="preserve">
     <value>Orta noktalar:</value>
   </data>

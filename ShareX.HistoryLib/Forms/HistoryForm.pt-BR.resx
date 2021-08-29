@@ -120,12 +120,6 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Histórico</value>
   </data>
-  <data name="btnApplyFilters.Text" xml:space="preserve">
-    <value>Aplicar filtros</value>
-  </data>
-  <data name="btnRemoveFilters.Text" xml:space="preserve">
-    <value>Remover filtros</value>
-  </data>
   <data name="cbDateFilter.Text" xml:space="preserve">
     <value>Filtro de data:</value>
   </data>
@@ -141,23 +135,14 @@
   <data name="chFilename.Text" xml:space="preserve">
     <value>Nome do arquivo</value>
   </data>
-  <data name="gbFilters.Text" xml:space="preserve">
-    <value>Filtros</value>
-  </data>
   <data name="lblFilterFrom.Text" xml:space="preserve">
     <value>De:</value>
   </data>
   <data name="lblFilterTo.Text" xml:space="preserve">
     <value>Para:</value>
   </data>
-  <data name="btnShowStats.Text" xml:space="preserve">
-    <value>Mostrar estatísticas</value>
-  </data>
   <data name="lblFilenameFilter.Text" xml:space="preserve">
     <value>Nome do arquivo:</value>
-  </data>
-  <data name="lblMaxItemCount.Text" xml:space="preserve">
-    <value>Limite máximo de itens:</value>
   </data>
   <data name="chURL.Text" xml:space="preserve">
     <value>URL</value>

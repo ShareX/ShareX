@@ -120,12 +120,6 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Chronik</value>
   </data>
-  <data name="btnApplyFilters.Text" xml:space="preserve">
-    <value>Filter hinzufügen</value>
-  </data>
-  <data name="btnRemoveFilters.Text" xml:space="preserve">
-    <value>Filter entfernen</value>
-  </data>
   <data name="cbDateFilter.Text" xml:space="preserve">
     <value>Datumsfilter:</value>
   </data>
@@ -141,9 +135,6 @@
   <data name="chFilename.Text" xml:space="preserve">
     <value>Dateiname</value>
   </data>
-  <data name="gbFilters.Text" xml:space="preserve">
-    <value>Filter</value>
-  </data>
   <data name="lblFilterFrom.Text" xml:space="preserve">
     <value>Von:</value>
   </data>
@@ -155,9 +146,6 @@
   </data>
   <data name="chURL.Text" xml:space="preserve">
     <value>URL</value>
-  </data>
-  <data name="btnShowStats.Text" xml:space="preserve">
-    <value>Statistiken anzeigen</value>
   </data>
   <data name="lblURLFilter.Text" xml:space="preserve">
     <value>URL:</value>

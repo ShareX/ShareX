@@ -156,9 +156,6 @@
   <data name="ShapeManager_CreateToolbar_ApplyChangesContinueTaskEnter" xml:space="preserve">
     <value>Áp dụng thay đổi và tiếp tục tác vụ (Enter)</value>
   </data>
-  <data name="ShapeManager_ArrowsOnBothEnds" xml:space="preserve">
-    <value>Mũi tên ở hai đầu</value>
-  </data>
   <data name="ShapeManager_CreateToolbar_AutoCloseEditorOnTask" xml:space="preserve">
     <value>Tự đóng trình chỉnh sửa khi chạy tác vụ</value>
   </data>
@@ -266,9 +263,6 @@
   </data>
   <data name="ShapeManager_CreateToolbar_StartingStepValue" xml:space="preserve">
     <value>Giá trị bước đầu tiên:</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_UseLetters" xml:space="preserve">
-    <value>Dùng chữ cái</value>
   </data>
   <data name="RegionCaptureForm_ShowExitConfirmation_ShareXImageEditor" xml:space="preserve">
     <value>ShareX - Trình chỉnh sửa ảnh</value>

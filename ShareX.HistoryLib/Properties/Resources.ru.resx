@@ -174,9 +174,6 @@
   <data name="HistoryItemManager_InitializeComponent_Open" xml:space="preserve">
     <value>Открыть</value>
   </data>
-  <data name="HistoryItemManager_InitializeComponent_Show" xml:space="preserve">
-    <value>Показать</value>
-  </data>
   <data name="HistoryItemManager_InitializeComponent_Shortened_URL" xml:space="preserve">
     <value>Короткую ссылку</value>
   </data>
@@ -206,12 +203,6 @@
   </data>
   <data name="HistoryItemManager_InitializeComponent_EditImage" xml:space="preserve">
     <value>Редактировать изображение...</value>
-  </data>
-  <data name="BtnShowStats_ShowStats" xml:space="preserve">
-    <value>Показать статистику</value>
-  </data>
-  <data name="BtnShowStats_HideStats" xml:space="preserve">
-    <value>Спрятать статистику</value>
   </data>
   <data name="HistoryItemCounts" xml:space="preserve">
     <value>Количество элементов истории:</value>

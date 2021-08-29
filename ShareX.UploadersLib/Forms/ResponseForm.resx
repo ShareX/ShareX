@@ -147,9 +147,6 @@
   <data name="rtbResponseText.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="rtbResponseText.Text" xml:space="preserve">
-    <value />
-  </data>
   <data name="&gt;&gt;rtbResponseText.Name" xml:space="preserve">
     <value>rtbResponseText</value>
   </data>
@@ -239,9 +236,6 @@
   </data>
   <data name="tscResponseText.TabIndex" type="System.Int32, mscorlib">
     <value>44</value>
-  </data>
-  <data name="tscResponseText.Text" xml:space="preserve">
-    <value>toolStripContainer1</value>
   </data>
   <metadata name="tsResponseText.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
@@ -348,9 +342,6 @@
   <data name="rtbResult.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="rtbResult.Text" xml:space="preserve">
-    <value />
-  </data>
   <data name="&gt;&gt;rtbResult.Name" xml:space="preserve">
     <value>rtbResult</value>
   </data>
@@ -440,9 +431,6 @@
   </data>
   <data name="tscResult.TabIndex" type="System.Int32, mscorlib">
     <value>42</value>
-  </data>
-  <data name="tscResult.Text" xml:space="preserve">
-    <value>toolStripContainer1</value>
   </data>
   <metadata name="tsResult.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>153, 17</value>
@@ -572,9 +560,6 @@
   </data>
   <data name="rtbResponseInfo.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
-  </data>
-  <data name="rtbResponseInfo.Text" xml:space="preserve">
-    <value />
   </data>
   <data name="&gt;&gt;rtbResponseInfo.Name" xml:space="preserve">
     <value>rtbResponseInfo</value>
@@ -783,6 +768,12 @@
   <data name="&gt;&gt;tsbResponseTextCopy.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;tsbCopyShortenedURL.Name" xml:space="preserve">
+    <value>tsbCopyShortenedURL</value>
+  </data>
+  <data name="&gt;&gt;tsbCopyShortenedURL.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;tsbCopyURL.Name" xml:space="preserve">
     <value>tsbCopyURL</value>
   </data>
@@ -799,12 +790,6 @@
     <value>tsbCopyDeletionURL</value>
   </data>
   <data name="&gt;&gt;tsbCopyDeletionURL.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tsbCopyShortenedURL.Name" xml:space="preserve">
-    <value>tsbCopyShortenedURL</value>
-  </data>
-  <data name="&gt;&gt;tsbCopyShortenedURL.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">

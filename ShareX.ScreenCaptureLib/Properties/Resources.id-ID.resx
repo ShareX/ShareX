@@ -243,9 +243,6 @@
   <data name="ShapeManager_CreateToolbar_AnnotateMenu" xml:space="preserve">
     <value>Menu anotasi</value>
   </data>
-  <data name="ShapeManager_ArrowsOnBothEnds" xml:space="preserve">
-    <value>Panah di kedua ujungnya</value>
-  </data>
   <data name="ShapeManager_CreateToolbar_AutoCloseEditorOnTask" xml:space="preserve">
     <value>Ototmatis tutup editor pada tugas</value>
   </data>
@@ -314,9 +311,6 @@
   </data>
   <data name="ShapeManager_CreateToolbar_Undo" xml:space="preserve">
     <value>Undo</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_UseLetters" xml:space="preserve">
-    <value>Gunakan huruf</value>
   </data>
   <data name="RectangleRegion_GetAreaText_Area" xml:space="preserve">
     <value>X: {0} Y: {1} L: {2} T: {3}</value>

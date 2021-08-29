@@ -297,9 +297,6 @@
   <data name="ShapeManager_CreateToolbar_AutoCloseEditorOnTask" xml:space="preserve">
     <value>任务中自动关闭编辑器</value>
   </data>
-  <data name="ShapeManager_ArrowsOnBothEnds" xml:space="preserve">
-    <value>两端箭头</value>
-  </data>
   <data name="ShapeManager_CreateToolbar_AnnotateMenu" xml:space="preserve">
     <value>注释菜单</value>
   </data>
@@ -378,9 +375,6 @@
   </data>
   <data name="RegionCaptureForm_TipYouCanPanImageByHoldingMouseMiddleButtonAndDragging" xml:space="preserve">
     <value>提示：按住鼠标中键并拖拽可以平移图像。</value>
-  </data>
-  <data name="ShapeManager_CreateToolbar_UseLetters" xml:space="preserve">
-    <value>使用字母</value>
   </data>
   <data name="ImageEffects" xml:space="preserve">
     <value>添加图像效果...</value>

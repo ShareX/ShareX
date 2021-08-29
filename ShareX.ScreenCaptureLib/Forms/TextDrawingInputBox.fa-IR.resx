@@ -177,7 +177,4 @@
   <data name="tsrbmiGradientHorizontal.Text" xml:space="preserve">
     <value>افقی</value>
   </data>
-  <data name="lblTip.Text" xml:space="preserve">
-    <value>خط جدید: Ctrl + Enter</value>
-  </data>
 </root>
