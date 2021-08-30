@@ -51,8 +51,8 @@ namespace ShareX.ScreenCaptureLib
             ShareXResources.ApplyTheme(this);
 
             eiFFmpeg.ObjectType = typeof(FFmpegOptions);
-            cboVideoCodec.Items.AddRange(Helpers.GetEnumDescriptions<FFmpegVideoCodec>());
-            cboAudioCodec.Items.AddRange(Helpers.GetEnumDescriptions<FFmpegAudioCodec>());
+            cbVideoCodec.Items.AddRange(Helpers.GetEnumDescriptions<FFmpegVideoCodec>());
+            cbAudioCodec.Items.AddRange(Helpers.GetEnumDescriptions<FFmpegAudioCodec>());
             cbx264Preset.Items.AddRange(Helpers.GetEnumDescriptions<FFmpegPreset>());
             cbGIFStatsMode.Items.AddRange(Helpers.GetEnumDescriptions<FFmpegPaletteGenStatsMode>());
             cbNVENCPreset.Items.AddRange(Helpers.GetEnums<FFmpegNVENCPreset>().Select(x => $"{x} ({x.GetDescription()})").ToArray());
@@ -86,8 +86,8 @@ namespace ShareX.ScreenCaptureLib
             lblHelperDevices.Visible = false;
 #endif
 
-            cboVideoCodec.SelectedIndex = (int)Options.FFmpeg.VideoCodec;
-            cboAudioCodec.SelectedIndex = (int)Options.FFmpeg.AudioCodec;
+            cbVideoCodec.SelectedIndex = (int)Options.FFmpeg.VideoCodec;
+            cbAudioCodec.SelectedIndex = (int)Options.FFmpeg.AudioCodec;
 
             tbUserArgs.Text = Options.FFmpeg.UserArgs;
 
@@ -161,39 +161,39 @@ namespace ShareX.ScreenCaptureLib
 
             if (!IsDisposed)
             {
-                cboVideoSource.Items.Clear();
-                cboVideoSource.Items.Add(FFmpegCLIManager.SourceNone);
-                cboVideoSource.Items.Add(FFmpegCLIManager.SourceGDIGrab);
-                cboAudioSource.Items.Clear();
-                cboAudioSource.Items.Add(FFmpegCLIManager.SourceNone);
+                cbVideoSource.Items.Clear();
+                cbVideoSource.Items.Add(FFmpegCLIManager.SourceNone);
+                cbVideoSource.Items.Add(FFmpegCLIManager.SourceGDIGrab);
+                cbAudioSource.Items.Clear();
+                cbAudioSource.Items.Add(FFmpegCLIManager.SourceNone);
 
                 if (devices != null)
                 {
-                    cboVideoSource.Items.AddRange(devices.VideoDevices.ToArray());
-                    cboAudioSource.Items.AddRange(devices.AudioDevices.ToArray());
+                    cbVideoSource.Items.AddRange(devices.VideoDevices.ToArray());
+                    cbAudioSource.Items.AddRange(devices.AudioDevices.ToArray());
                 }
 
-                if (selectDevices && cboVideoSource.Items.Contains(FFmpegCLIManager.SourceVideoDevice))
+                if (selectDevices && cbVideoSource.Items.Contains(FFmpegCLIManager.SourceVideoDevice))
                 {
                     Options.FFmpeg.VideoSource = FFmpegCLIManager.SourceVideoDevice;
                 }
-                else if (!cboVideoSource.Items.Contains(Options.FFmpeg.VideoSource))
+                else if (!cbVideoSource.Items.Contains(Options.FFmpeg.VideoSource))
                 {
                     Options.FFmpeg.VideoSource = FFmpegCLIManager.SourceGDIGrab;
                 }
 
-                cboVideoSource.Text = Options.FFmpeg.VideoSource;
+                cbVideoSource.Text = Options.FFmpeg.VideoSource;
 
-                if (selectDevices && cboAudioSource.Items.Contains(FFmpegCLIManager.SourceAudioDevice))
+                if (selectDevices && cbAudioSource.Items.Contains(FFmpegCLIManager.SourceAudioDevice))
                 {
                     Options.FFmpeg.AudioSource = FFmpegCLIManager.SourceAudioDevice;
                 }
-                else if (!cboAudioSource.Items.Contains(Options.FFmpeg.AudioSource))
+                else if (!cbAudioSource.Items.Contains(Options.FFmpeg.AudioSource))
                 {
                     Options.FFmpeg.AudioSource = FFmpegCLIManager.SourceNone;
                 }
 
-                cboAudioSource.Text = Options.FFmpeg.AudioSource;
+                cbAudioSource.Text = Options.FFmpeg.AudioSource;
 
                 btnRefreshSources.Enabled = true;
             }
@@ -209,11 +209,11 @@ namespace ShareX.ScreenCaptureLib
                 lblOpusQuality.Text = string.Format(Resources.FFmpegOptionsForm_UpdateUI_Bitrate___0_k, Options.FFmpeg.Opus_bitrate);
 
                 bool isValidAudioCodec = true;
-                FFmpegVideoCodec videoCodec = (FFmpegVideoCodec)cboVideoCodec.SelectedIndex;
+                FFmpegVideoCodec videoCodec = (FFmpegVideoCodec)cbVideoCodec.SelectedIndex;
 
                 if (videoCodec == FFmpegVideoCodec.libvpx)
                 {
-                    FFmpegAudioCodec audioCodec = (FFmpegAudioCodec)cboAudioCodec.SelectedIndex;
+                    FFmpegAudioCodec audioCodec = (FFmpegAudioCodec)cbAudioCodec.SelectedIndex;
 
                     if (audioCodec != FFmpegAudioCodec.libvorbis && audioCodec != FFmpegAudioCodec.libopus)
                     {
@@ -287,15 +287,15 @@ namespace ShareX.ScreenCaptureLib
             await RefreshSourcesAsync();
         }
 
-        private void cboVideoSource_SelectedIndexChanged(object sender, EventArgs e)
+        private void cbVideoSource_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Options.FFmpeg.VideoSource = cboVideoSource.Text;
+            Options.FFmpeg.VideoSource = cbVideoSource.Text;
             UpdateUI();
         }
 
-        private void cboAudioSource_SelectedIndexChanged(object sender, EventArgs e)
+        private void cbAudioSource_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Options.FFmpeg.AudioSource = cboAudioSource.Text;
+            Options.FFmpeg.AudioSource = cbAudioSource.Text;
             UpdateUI();
         }
 
@@ -342,11 +342,11 @@ namespace ShareX.ScreenCaptureLib
             URLHelpers.OpenURL("https://github.com/rdp/screen-capture-recorder-to-video-windows-free");
         }
 
-        private void cboVideoCodec_SelectedIndexChanged(object sender, EventArgs e)
+        private void cbVideoCodec_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Options.FFmpeg.VideoCodec = (FFmpegVideoCodec)cboVideoCodec.SelectedIndex;
+            Options.FFmpeg.VideoCodec = (FFmpegVideoCodec)cbVideoCodec.SelectedIndex;
 
-            if (cboVideoCodec.SelectedIndex >= 0)
+            if (cbVideoCodec.SelectedIndex >= 0)
             {
                 switch (Options.FFmpeg.VideoCodec)
                 {
@@ -383,11 +383,11 @@ namespace ShareX.ScreenCaptureLib
             UpdateUI();
         }
 
-        private void cboAudioCodec_SelectedIndexChanged(object sender, EventArgs e)
+        private void cbAudioCodec_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Options.FFmpeg.AudioCodec = (FFmpegAudioCodec)cboAudioCodec.SelectedIndex;
+            Options.FFmpeg.AudioCodec = (FFmpegAudioCodec)cbAudioCodec.SelectedIndex;
 
-            if (cboAudioCodec.SelectedIndex >= 0)
+            if (cbAudioCodec.SelectedIndex >= 0)
             {
                 switch (Options.FFmpeg.AudioCodec)
                 {

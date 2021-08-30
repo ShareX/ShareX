@@ -45,7 +45,7 @@
             this.tbOpusBitrate = new System.Windows.Forms.TrackBar();
             this.nudGIFBayerScale = new System.Windows.Forms.NumericUpDown();
             this.lblCodec = new System.Windows.Forms.Label();
-            this.cboVideoCodec = new System.Windows.Forms.ComboBox();
+            this.cbVideoCodec = new System.Windows.Forms.ComboBox();
             this.lblx264Preset = new System.Windows.Forms.Label();
             this.lblXvidQscale = new System.Windows.Forms.Label();
             this.gbFFmpegExe = new System.Windows.Forms.GroupBox();
@@ -94,11 +94,11 @@
             this.lblVorbisQuality = new System.Windows.Forms.Label();
             this.tpMP3 = new System.Windows.Forms.TabPage();
             this.lblMP3Quality = new System.Windows.Forms.Label();
-            this.cboVideoSource = new System.Windows.Forms.ComboBox();
+            this.cbVideoSource = new System.Windows.Forms.ComboBox();
             this.lblVideoSource = new System.Windows.Forms.Label();
-            this.cboAudioSource = new System.Windows.Forms.ComboBox();
+            this.cbAudioSource = new System.Windows.Forms.ComboBox();
             this.lblAudioSource = new System.Windows.Forms.Label();
-            this.cboAudioCodec = new System.Windows.Forms.ComboBox();
+            this.cbAudioCodec = new System.Windows.Forms.ComboBox();
             this.lblAudioCodec = new System.Windows.Forms.Label();
             this.gbSource = new System.Windows.Forms.GroupBox();
             this.btnHelperDevicesHelp = new System.Windows.Forms.Button();
@@ -307,13 +307,13 @@
             resources.ApplyResources(this.lblCodec, "lblCodec");
             this.lblCodec.Name = "lblCodec";
             // 
-            // cboVideoCodec
+            // cbVideoCodec
             // 
-            this.cboVideoCodec.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboVideoCodec.FormattingEnabled = true;
-            resources.ApplyResources(this.cboVideoCodec, "cboVideoCodec");
-            this.cboVideoCodec.Name = "cboVideoCodec";
-            this.cboVideoCodec.SelectedIndexChanged += new System.EventHandler(this.cboVideoCodec_SelectedIndexChanged);
+            this.cbVideoCodec.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbVideoCodec.FormattingEnabled = true;
+            resources.ApplyResources(this.cbVideoCodec, "cbVideoCodec");
+            this.cbVideoCodec.Name = "cbVideoCodec";
+            this.cbVideoCodec.SelectedIndexChanged += new System.EventHandler(this.cbVideoCodec_SelectedIndexChanged);
             // 
             // lblx264Preset
             // 
@@ -706,39 +706,39 @@
             resources.ApplyResources(this.lblMP3Quality, "lblMP3Quality");
             this.lblMP3Quality.Name = "lblMP3Quality";
             // 
-            // cboVideoSource
+            // cbVideoSource
             // 
-            this.cboVideoSource.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboVideoSource.FormattingEnabled = true;
-            resources.ApplyResources(this.cboVideoSource, "cboVideoSource");
-            this.cboVideoSource.Name = "cboVideoSource";
-            this.cboVideoSource.SelectedIndexChanged += new System.EventHandler(this.cboVideoSource_SelectedIndexChanged);
+            this.cbVideoSource.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbVideoSource.FormattingEnabled = true;
+            resources.ApplyResources(this.cbVideoSource, "cbVideoSource");
+            this.cbVideoSource.Name = "cbVideoSource";
+            this.cbVideoSource.SelectedIndexChanged += new System.EventHandler(this.cbVideoSource_SelectedIndexChanged);
             // 
             // lblVideoSource
             // 
             resources.ApplyResources(this.lblVideoSource, "lblVideoSource");
             this.lblVideoSource.Name = "lblVideoSource";
             // 
-            // cboAudioSource
+            // cbAudioSource
             // 
-            this.cboAudioSource.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboAudioSource.FormattingEnabled = true;
-            resources.ApplyResources(this.cboAudioSource, "cboAudioSource");
-            this.cboAudioSource.Name = "cboAudioSource";
-            this.cboAudioSource.SelectedIndexChanged += new System.EventHandler(this.cboAudioSource_SelectedIndexChanged);
+            this.cbAudioSource.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbAudioSource.FormattingEnabled = true;
+            resources.ApplyResources(this.cbAudioSource, "cbAudioSource");
+            this.cbAudioSource.Name = "cbAudioSource";
+            this.cbAudioSource.SelectedIndexChanged += new System.EventHandler(this.cbAudioSource_SelectedIndexChanged);
             // 
             // lblAudioSource
             // 
             resources.ApplyResources(this.lblAudioSource, "lblAudioSource");
             this.lblAudioSource.Name = "lblAudioSource";
             // 
-            // cboAudioCodec
+            // cbAudioCodec
             // 
-            this.cboAudioCodec.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboAudioCodec.FormattingEnabled = true;
-            resources.ApplyResources(this.cboAudioCodec, "cboAudioCodec");
-            this.cboAudioCodec.Name = "cboAudioCodec";
-            this.cboAudioCodec.SelectedIndexChanged += new System.EventHandler(this.cboAudioCodec_SelectedIndexChanged);
+            this.cbAudioCodec.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbAudioCodec.FormattingEnabled = true;
+            resources.ApplyResources(this.cbAudioCodec, "cbAudioCodec");
+            this.cbAudioCodec.Name = "cbAudioCodec";
+            this.cbAudioCodec.SelectedIndexChanged += new System.EventHandler(this.cbAudioCodec_SelectedIndexChanged);
             // 
             // lblAudioCodec
             // 
@@ -750,9 +750,9 @@
             this.gbSource.Controls.Add(this.btnHelperDevicesHelp);
             this.gbSource.Controls.Add(this.lblHelperDevices);
             this.gbSource.Controls.Add(this.btnInstallHelperDevices);
-            this.gbSource.Controls.Add(this.cboVideoSource);
+            this.gbSource.Controls.Add(this.cbVideoSource);
             this.gbSource.Controls.Add(this.lblVideoSource);
-            this.gbSource.Controls.Add(this.cboAudioSource);
+            this.gbSource.Controls.Add(this.cbAudioSource);
             this.gbSource.Controls.Add(this.lblAudioSource);
             this.gbSource.Controls.Add(this.btnRefreshSources);
             resources.ApplyResources(this.gbSource, "gbSource");
@@ -788,9 +788,9 @@
             // gbCodecs
             // 
             this.gbCodecs.Controls.Add(this.pbAudioCodecWarning);
-            this.gbCodecs.Controls.Add(this.cboAudioCodec);
+            this.gbCodecs.Controls.Add(this.cbAudioCodec);
             this.gbCodecs.Controls.Add(this.lblAudioCodec);
-            this.gbCodecs.Controls.Add(this.cboVideoCodec);
+            this.gbCodecs.Controls.Add(this.cbVideoCodec);
             this.gbCodecs.Controls.Add(this.lblCodec);
             this.gbCodecs.Controls.Add(this.tcFFmpegAudioCodecs);
             this.gbCodecs.Controls.Add(this.tcFFmpegVideoCodecs);
@@ -885,7 +885,7 @@
         private System.Windows.Forms.NumericUpDown nudx264CRF;
         private System.Windows.Forms.ToolTip ttHelpTip;
         private System.Windows.Forms.Label lblCodec;
-        private System.Windows.Forms.ComboBox cboVideoCodec;
+        private System.Windows.Forms.ComboBox cbVideoCodec;
         private System.Windows.Forms.ComboBox cbx264Preset;
         private System.Windows.Forms.Label lblx264Preset;
         private System.Windows.Forms.NumericUpDown nudXvidQscale;
@@ -907,11 +907,11 @@
         private System.Windows.Forms.TabControl tcFFmpegAudioCodecs;
         private System.Windows.Forms.TabPage tpVorbis;
         private System.Windows.Forms.TabPage tpMP3;
-        private System.Windows.Forms.ComboBox cboVideoSource;
+        private System.Windows.Forms.ComboBox cbVideoSource;
         private System.Windows.Forms.Label lblVideoSource;
-        private System.Windows.Forms.ComboBox cboAudioSource;
+        private System.Windows.Forms.ComboBox cbAudioSource;
         private System.Windows.Forms.Label lblAudioSource;
-        private System.Windows.Forms.ComboBox cboAudioCodec;
+        private System.Windows.Forms.ComboBox cbAudioCodec;
         private System.Windows.Forms.Label lblAudioCodec;
         private System.Windows.Forms.GroupBox gbSource;
         private System.Windows.Forms.GroupBox gbCodecs;

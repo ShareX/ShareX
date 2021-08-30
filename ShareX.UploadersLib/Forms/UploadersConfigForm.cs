@@ -212,12 +212,12 @@ namespace ShareX.UploadersLib
                 lblPhotobucketParentAlbumPath.Text = Resources.UploadersConfigForm_LoadSettings_Parent_album_path_e_g_ + " " +
                     Config.PhotobucketAccountInfo.AlbumID + "/Personal/" + DateTime.Now.Year;
 
-                cboPhotobucketAlbumPaths.Items.Clear();
+                cbPhotobucketAlbumPaths.Items.Clear();
 
                 if (Config.PhotobucketAccountInfo.AlbumList.Count > 0)
                 {
-                    cboPhotobucketAlbumPaths.Items.AddRange(Config.PhotobucketAccountInfo.AlbumList.ToArray());
-                    cboPhotobucketAlbumPaths.SelectedIndex = Config.PhotobucketAccountInfo.ActiveAlbumID.
+                    cbPhotobucketAlbumPaths.Items.AddRange(Config.PhotobucketAccountInfo.AlbumList.ToArray());
+                    cbPhotobucketAlbumPaths.SelectedIndex = Config.PhotobucketAccountInfo.ActiveAlbumID.
                         BetweenOrDefault(0, Config.PhotobucketAccountInfo.AlbumList.Count - 1);
                 }
             }
@@ -522,15 +522,15 @@ namespace ShareX.UploadersLib
 
             if (Config.PushbulletSettings.DeviceList.Count > 0)
             {
-                Config.PushbulletSettings.DeviceList.ForEach(x => cboPushbulletDevices.Items.Add(x.Name ?? Resources.UploadersConfigForm_LoadSettings_Invalid_device_name));
+                Config.PushbulletSettings.DeviceList.ForEach(x => cbPushbulletDevices.Items.Add(x.Name ?? Resources.UploadersConfigForm_LoadSettings_Invalid_device_name));
 
                 if (Config.PushbulletSettings.DeviceList.IsValidIndex(Config.PushbulletSettings.SelectedDevice))
                 {
-                    cboPushbulletDevices.SelectedIndex = Config.PushbulletSettings.SelectedDevice;
+                    cbPushbulletDevices.SelectedIndex = Config.PushbulletSettings.SelectedDevice;
                 }
                 else
                 {
-                    cboPushbulletDevices.SelectedIndex = 0;
+                    cbPushbulletDevices.SelectedIndex = 0;
                 }
             }
 
@@ -1026,30 +1026,30 @@ namespace ShareX.UploadersLib
             PhotobucketCreateAlbum();
         }
 
-        private void cboPhotobucketAlbumPaths_SelectedIndexChanged(object sender, EventArgs e)
+        private void cbPhotobucketAlbumPaths_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (Config.PhotobucketAccountInfo != null)
             {
-                Config.PhotobucketAccountInfo.ActiveAlbumID = cboPhotobucketAlbumPaths.SelectedIndex;
+                Config.PhotobucketAccountInfo.ActiveAlbumID = cbPhotobucketAlbumPaths.SelectedIndex;
             }
         }
 
         private void btnPhotobucketAddAlbum_Click(object sender, EventArgs e)
         {
-            string albumPath = cboPhotobucketAlbumPaths.Text;
+            string albumPath = cbPhotobucketAlbumPaths.Text;
             if (!Config.PhotobucketAccountInfo.AlbumList.Contains(albumPath))
             {
                 Config.PhotobucketAccountInfo.AlbumList.Add(albumPath);
-                cboPhotobucketAlbumPaths.Items.Add(albumPath);
+                cbPhotobucketAlbumPaths.Items.Add(albumPath);
             }
         }
 
         private void btnPhotobucketRemoveAlbum_Click(object sender, EventArgs e)
         {
-            if (cboPhotobucketAlbumPaths.Items.Count > 1)
+            if (cbPhotobucketAlbumPaths.Items.Count > 1)
             {
-                cboPhotobucketAlbumPaths.Items.RemoveAt(cboPhotobucketAlbumPaths.SelectedIndex);
-                cboPhotobucketAlbumPaths.SelectedIndex = cboPhotobucketAlbumPaths.Items.Count - 1;
+                cbPhotobucketAlbumPaths.Items.RemoveAt(cbPhotobucketAlbumPaths.SelectedIndex);
+                cbPhotobucketAlbumPaths.SelectedIndex = cbPhotobucketAlbumPaths.Items.Count - 1;
             }
         }
 
@@ -2315,15 +2315,15 @@ namespace ShareX.UploadersLib
         {
             bool enable = !string.IsNullOrEmpty(txtPushbulletUserKey.Text.Trim());
 
-            cboPushbulletDevices.Enabled = enable;
+            cbPushbulletDevices.Enabled = enable;
             btnPushbulletGetDeviceList.Enabled = enable;
 
             Config.PushbulletSettings.UserAPIKey = txtPushbulletUserKey.Text;
         }
 
-        private void cboPushbulletDevices_SelectedIndexChanged(object sender, EventArgs e)
+        private void cbPushbulletDevices_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Config.PushbulletSettings.SelectedDevice = cboPushbulletDevices.SelectedIndex;
+            Config.PushbulletSettings.SelectedDevice = cbPushbulletDevices.SelectedIndex;
         }
 
         private void btnPushbulletGetDeviceList_Click(object sender, EventArgs e)
@@ -2335,19 +2335,19 @@ namespace ShareX.UploadersLib
 
         #region Shared folder
 
-        private void cboSharedFolderImages_SelectedIndexChanged(object sender, EventArgs e)
+        private void cbSharedFolderImages_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Config.LocalhostSelectedImages = cboSharedFolderImages.SelectedIndex;
+            Config.LocalhostSelectedImages = cbSharedFolderImages.SelectedIndex;
         }
 
-        private void cboSharedFolderText_SelectedIndexChanged(object sender, EventArgs e)
+        private void cbSharedFolderText_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Config.LocalhostSelectedText = cboSharedFolderText.SelectedIndex;
+            Config.LocalhostSelectedText = cbSharedFolderText.SelectedIndex;
         }
 
-        private void cboSharedFolderFiles_SelectedIndexChanged(object sender, EventArgs e)
+        private void cbSharedFolderFiles_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Config.LocalhostSelectedFiles = cboSharedFolderFiles.SelectedIndex;
+            Config.LocalhostSelectedFiles = cbSharedFolderFiles.SelectedIndex;
         }
 
         private void btnSharedFolderAdd_Click(object sender, EventArgs e)
@@ -2771,7 +2771,7 @@ namespace ShareX.UploadersLib
 
         #region Streamable
 
-        private void cboxStreamableAnonymous_CheckedChanged(object sender, EventArgs e)
+        private void cbStreamableAnonymous_CheckedChanged(object sender, EventArgs e)
         {
             Config.StreamableAnonymous = cbStreamableAnonymous.Checked;
             txtStreamableUsername.Enabled = !Config.StreamableAnonymous;

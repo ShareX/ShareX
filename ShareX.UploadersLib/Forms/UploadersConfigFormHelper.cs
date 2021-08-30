@@ -173,8 +173,8 @@ namespace ShareX.UploadersLib
                         lblPhotobucketAccountStatus.Text = Resources.UploadersConfigForm_Login_successful;
                         txtPhotobucketDefaultAlbumName.Text = Config.PhotobucketAccountInfo.AlbumID;
                         Config.PhotobucketAccountInfo.AlbumList.Add(Config.PhotobucketAccountInfo.AlbumID);
-                        cboPhotobucketAlbumPaths.Items.Add(Config.PhotobucketAccountInfo.AlbumID);
-                        cboPhotobucketAlbumPaths.SelectedIndex = 0;
+                        cbPhotobucketAlbumPaths.Items.Add(Config.PhotobucketAccountInfo.AlbumID);
+                        cbPhotobucketAlbumPaths.SelectedIndex = 0;
                         MessageBox.Show(Resources.UploadersConfigForm_Login_successful, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
@@ -197,7 +197,7 @@ namespace ShareX.UploadersLib
             {
                 string albumPath = txtPhotobucketParentAlbumPath.Text + "/" + txtPhotobucketNewAlbumName.Text;
                 Config.PhotobucketAccountInfo.AlbumList.Add(albumPath);
-                cboPhotobucketAlbumPaths.Items.Add(albumPath);
+                cbPhotobucketAlbumPaths.Items.Add(albumPath);
                 MessageBox.Show(string.Format(Resources.UploadersConfigForm_PhotobucketCreateAlbum__0__successfully_created_, albumPath), "ShareX",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -764,8 +764,8 @@ namespace ShareX.UploadersLib
 
         public void PushbulletGetDevices()
         {
-            cboPushbulletDevices.Items.Clear();
-            cboPushbulletDevices.ResetText();
+            cbPushbulletDevices.Items.Clear();
+            cbPushbulletDevices.ResetText();
 
             Pushbullet pushbullet = new Pushbullet(Config.PushbulletSettings);
             Config.PushbulletSettings.DeviceList = pushbullet.GetDeviceList();
@@ -774,17 +774,17 @@ namespace ShareX.UploadersLib
             {
                 Config.PushbulletSettings.SelectedDevice = 0;
 
-                cboPushbulletDevices.Enabled = true;
+                cbPushbulletDevices.Enabled = true;
 
                 Config.PushbulletSettings.DeviceList.ForEach(pbDevice =>
                 {
                     if (!string.IsNullOrEmpty(pbDevice.Name))
                     {
-                        cboPushbulletDevices.Items.Add(pbDevice.Name);
+                        cbPushbulletDevices.Items.Add(pbDevice.Name);
                     }
                 });
 
-                cboPushbulletDevices.SelectedIndex = 0;
+                cbPushbulletDevices.SelectedIndex = 0;
             }
         }
 
@@ -975,24 +975,24 @@ namespace ShareX.UploadersLib
             int selected = lbSharedFolderAccounts.SelectedIndex;
 
             lbSharedFolderAccounts.Items.Clear();
-            cboSharedFolderImages.Items.Clear();
-            cboSharedFolderText.Items.Clear();
-            cboSharedFolderFiles.Items.Clear();
+            cbSharedFolderImages.Items.Clear();
+            cbSharedFolderText.Items.Clear();
+            cbSharedFolderFiles.Items.Clear();
 
             if (Config.LocalhostAccountList.Count > 0)
             {
                 foreach (LocalhostAccount account in Config.LocalhostAccountList)
                 {
                     lbSharedFolderAccounts.Items.Add(account);
-                    cboSharedFolderImages.Items.Add(account);
-                    cboSharedFolderText.Items.Add(account);
-                    cboSharedFolderFiles.Items.Add(account);
+                    cbSharedFolderImages.Items.Add(account);
+                    cbSharedFolderText.Items.Add(account);
+                    cbSharedFolderFiles.Items.Add(account);
                 }
 
                 lbSharedFolderAccounts.SelectedIndex = selected.Clamp(0, Config.LocalhostAccountList.Count - 1);
-                cboSharedFolderImages.SelectedIndex = Config.LocalhostSelectedImages.Clamp(0, Config.LocalhostAccountList.Count - 1);
-                cboSharedFolderText.SelectedIndex = Config.LocalhostSelectedText.Clamp(0, Config.LocalhostAccountList.Count - 1);
-                cboSharedFolderFiles.SelectedIndex = Config.LocalhostSelectedFiles.Clamp(0, Config.LocalhostAccountList.Count - 1);
+                cbSharedFolderImages.SelectedIndex = Config.LocalhostSelectedImages.Clamp(0, Config.LocalhostAccountList.Count - 1);
+                cbSharedFolderText.SelectedIndex = Config.LocalhostSelectedText.Clamp(0, Config.LocalhostAccountList.Count - 1);
+                cbSharedFolderFiles.SelectedIndex = Config.LocalhostSelectedFiles.Clamp(0, Config.LocalhostAccountList.Count - 1);
             }
 
             SharedFolderUpdateEnabledStates();
@@ -1000,7 +1000,7 @@ namespace ShareX.UploadersLib
 
         private void SharedFolderUpdateEnabledStates()
         {
-            cboSharedFolderImages.Enabled = cboSharedFolderText.Enabled = cboSharedFolderFiles.Enabled = Config.LocalhostAccountList.Count > 0;
+            cbSharedFolderImages.Enabled = cbSharedFolderText.Enabled = cbSharedFolderFiles.Enabled = Config.LocalhostAccountList.Count > 0;
             btnSharedFolderRemove.Enabled = btnSharedFolderDuplicate.Enabled = lbSharedFolderAccounts.SelectedIndex > -1;
         }
 
