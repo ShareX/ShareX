@@ -188,7 +188,7 @@ namespace ShareX
             }
 
             nudRetryUpload.SetValue(Program.Settings.MaxUploadFailRetry);
-            chkUseSecondaryUploaders.Checked = Program.Settings.UseSecondaryUploaders;
+            cbUseSecondaryUploaders.Checked = Program.Settings.UseSecondaryUploaders;
             gbSecondaryImageUploaders.Enabled = gbSecondaryTextUploaders.Enabled = gbSecondaryFileUploaders.Enabled = Program.Settings.UseSecondaryUploaders;
 
             Program.Settings.SecondaryImageUploaders.AddRange(Helpers.GetEnums<ImageDestination>().Where(n => Program.Settings.SecondaryImageUploaders.All(e => e != n)));
@@ -933,9 +933,9 @@ namespace ShareX
             }
         }
 
-        private void chkUseSecondaryUploaders_CheckedChanged(object sender, EventArgs e)
+        private void cbUseSecondaryUploaders_CheckedChanged(object sender, EventArgs e)
         {
-            Program.Settings.UseSecondaryUploaders = chkUseSecondaryUploaders.Checked;
+            Program.Settings.UseSecondaryUploaders = cbUseSecondaryUploaders.Checked;
             gbSecondaryImageUploaders.Enabled = gbSecondaryTextUploaders.Enabled = gbSecondaryFileUploaders.Enabled = Program.Settings.UseSecondaryUploaders;
         }
 

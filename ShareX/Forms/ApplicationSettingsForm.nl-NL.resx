@@ -177,9 +177,6 @@
   <data name="gbClipboardFormats.Text" xml:space="preserve">
     <value>Klembord formaten</value>
   </data>
-  <data name="chkUseSecondaryUploaders.Text" xml:space="preserve">
-    <value>Gebruik secundaire uploaders in de volgende volgorde tijdens herproberen</value>
-  </data>
   <data name="tpUploadResults.Text" xml:space="preserve">
     <value>Resultaten</value>
   </data>

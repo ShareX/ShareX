@@ -47,7 +47,7 @@ namespace ShareX
             txtFolderPath.Text = watchFolder.FolderPath ?? "";
             txtFilter.Text = watchFolder.Filter ?? "";
             cbIncludeSubdirectories.Checked = watchFolder.IncludeSubdirectories;
-            chkMoveToScreenshotsFolder.Checked = watchFolder.MoveFilesToScreenshotsFolder;
+            cbMoveToScreenshotsFolder.Checked = watchFolder.MoveFilesToScreenshotsFolder;
         }
 
         private void btnPathBrowse_Click(object sender, EventArgs e)
@@ -60,7 +60,7 @@ namespace ShareX
             WatchFolder.FolderPath = txtFolderPath.Text;
             WatchFolder.Filter = txtFilter.Text;
             WatchFolder.IncludeSubdirectories = cbIncludeSubdirectories.Checked;
-            WatchFolder.MoveFilesToScreenshotsFolder = chkMoveToScreenshotsFolder.Checked;
+            WatchFolder.MoveFilesToScreenshotsFolder = cbMoveToScreenshotsFolder.Checked;
 
             DialogResult = DialogResult.OK;
             Close();

@@ -252,9 +252,6 @@
   <data name="chFormat.Text" xml:space="preserve">
     <value>フォーマット</value>
   </data>
-  <data name="chkUseSecondaryUploaders.Text" xml:space="preserve">
-    <value>再試行時に予備アップローダを上から順に使用する</value>
-  </data>
   <data name="gbChrome.Text" xml:space="preserve">
     <value>Chrome 拡張機能</value>
   </data>

@@ -1247,7 +1247,7 @@ namespace ShareX.UploadersLib
             Config.GistOAuth2Info = null;
         }
 
-        private void chkGistPublishPublic_CheckedChanged(object sender, EventArgs e)
+        private void cbGistPublishPublic_CheckedChanged(object sender, EventArgs e)
         {
             Config.GistPublishPublic = cbGistPublishPublic.Checked;
         }

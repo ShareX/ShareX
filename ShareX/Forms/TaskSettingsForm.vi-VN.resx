@@ -267,9 +267,6 @@
   <data name="lblScreenRecorderFixedDuration.Text" xml:space="preserve">
     <value>giây</value>
   </data>
-  <data name="chkScreenRecordAutoStart.Text" xml:space="preserve">
-    <value>Bắt đầu ghi lại sau:</value>
-  </data>
   <data name="lblScreenRecorderStartDelay.Text" xml:space="preserve">
     <value>giây</value>
   </data>
@@ -302,9 +299,6 @@
   </data>
   <data name="cbImageEffectOnlyRegionCapture.Text" xml:space="preserve">
     <value>Chỉ áp dụng hiệu ứng tới vùng được chụp</value>
-  </data>
-  <data name="chkShowImageEffectsWindowAfterCapture.Text" xml:space="preserve">
-    <value>Hiện cửa sổ hiệu ứng ảnh sau khi chụp</value>
   </data>
   <data name="lblImageEffectsNote.Text" xml:space="preserve">
     <value>Bạn có thể kích hoạt/vô hiệu hóa hiệu ứng cho ảnh từ "Tác vụ sau khi chụp -&gt; Thêm hiệu ứng ảnh".</value>
@@ -356,12 +350,6 @@
   </data>
   <data name="btnAfterCapture.Text" xml:space="preserve">
     <value>Sau khi chụp...</value>
-  </data>
-  <data name="chkOverrideFTP.Text" xml:space="preserve">
-    <value>Vượt quyền tài khoản FTP mặc định</value>
-  </data>
-  <data name="chkOverrideCustomUploader.Text" xml:space="preserve">
-    <value>Vượt quyền dịch vụ tải lên tùy chỉnh</value>
   </data>
   <data name="btnRegionCaptureSnapSizesRemove.Text" xml:space="preserve">
     <value>-</value>
@@ -500,27 +488,6 @@
   </data>
   <data name="lblRegionCaptureMagnifierPixelSize.Text" xml:space="preserve">
     <value>Kích cỡ phóng đại điểm ảnh:</value>
-  </data>
-  <data name="chkOverrideGeneralSettings.Text" xml:space="preserve">
-    <value>Vượt quyền cài đặt chung</value>
-  </data>
-  <data name="chkOverrideImageSettings.Text" xml:space="preserve">
-    <value>Vượt quyền cài đặt ảnh</value>
-  </data>
-  <data name="chkOverrideToolsSettings.Text" xml:space="preserve">
-    <value>Vượt quyền cài đặt công cụ</value>
-  </data>
-  <data name="chkOverrideUploadSettings.Text" xml:space="preserve">
-    <value>Vượt quyền cài đặt tải lên</value>
-  </data>
-  <data name="chkOverrideCaptureSettings.Text" xml:space="preserve">
-    <value>Vượt quyền cài đặt chụp</value>
-  </data>
-  <data name="chkOverrideActions.Text" xml:space="preserve">
-    <value>Ghi đè các tác vụ</value>
-  </data>
-  <data name="chkOverrideAdvancedSettings.Text" xml:space="preserve">
-    <value>Vượt quyền cài đặt nâng cao</value>
   </data>
   <data name="lblCaptureCustomRegion.Text" xml:space="preserve">
     <value>Vùng được thiết lập trước:</value>

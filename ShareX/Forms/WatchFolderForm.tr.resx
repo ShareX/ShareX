@@ -138,7 +138,7 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Dizin gözetle</value>
   </data>
-  <data name="chkMoveToScreenshotsDir.Text" xml:space="preserve">
+  <data name="cbMoveToScreenshotsFolder.Text" xml:space="preserve">
     <value>Dosyayı ekran görüntüleri klasörüne taşı</value>
   </data>
 </root>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -178,9 +178,6 @@
   </data>
   <data name="chDescription.Text" xml:space="preserve">
     <value>描述</value>
-  </data>
-  <data name="chkUseSecondaryUploaders.Text" xml:space="preserve">
-    <value>重試時使用次要上傳工具的優先順序</value>
   </data>
   <data name="tpUploadResults.Text" xml:space="preserve">
     <value>結果</value>

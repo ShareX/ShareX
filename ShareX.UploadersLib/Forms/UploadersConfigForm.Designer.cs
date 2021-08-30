@@ -4035,7 +4035,7 @@ namespace ShareX.UploadersLib
             resources.ApplyResources(this.cbGistPublishPublic, "cbGistPublishPublic");
             this.cbGistPublishPublic.Name = "cbGistPublishPublic";
             this.cbGistPublishPublic.UseVisualStyleBackColor = true;
-            this.cbGistPublishPublic.CheckedChanged += new System.EventHandler(this.chkGistPublishPublic_CheckedChanged);
+            this.cbGistPublishPublic.CheckedChanged += new System.EventHandler(this.cbGistPublishPublic_CheckedChanged);
             // 
             // tpUpaste
             // 

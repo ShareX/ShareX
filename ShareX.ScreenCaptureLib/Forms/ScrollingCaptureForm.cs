@@ -70,7 +70,7 @@ namespace ShareX.ScreenCaptureLib
             cbAutoDetectScrollEnd.Checked = Options.AutoDetectScrollEnd;
             cbRemoveDuplicates.Checked = Options.RemoveDuplicates;
             cbAutoCombine.Checked = Options.AfterCaptureAutomaticallyCombine;
-            chkAutoUpload.Checked = Options.AutoUpload;
+            cbAutoUpload.Checked = Options.AutoUpload;
 
             if (forceSelection || Options.StartSelectionAutomatically)
             {
@@ -654,9 +654,9 @@ namespace ShareX.ScreenCaptureLib
             nudTrimBottom.SetValue(result.Bottom);
         }
 
-        private void chkAutoUpload_CheckedChanged(object sender, EventArgs e)
+        private void cbAutoUpload_CheckedChanged(object sender, EventArgs e)
         {
-            Options.AutoUpload = chkAutoUpload.Checked;
+            Options.AutoUpload = cbAutoUpload.Checked;
         }
 
         private Padding GuessEdges(Bitmap img1, Bitmap img2)

@@ -269,9 +269,6 @@
   <data name="lblScreenRecorderFixedDuration.Text" xml:space="preserve">
     <value>秒</value>
   </data>
-  <data name="chkScreenRecordAutoStart.Text" xml:space="preserve">
-    <value>錄製倒數計時：</value>
-  </data>
   <data name="lblScreenRecorderStartDelay.Text" xml:space="preserve">
     <value>秒</value>
   </data>
@@ -304,9 +301,6 @@
   </data>
   <data name="cbImageEffectOnlyRegionCapture.Text" xml:space="preserve">
     <value>只適用於區域擷取</value>
-  </data>
-  <data name="chkShowImageEffectsWindowAfterCapture.Text" xml:space="preserve">
-    <value>擷取後顯示圖片效果視窗</value>
   </data>
   <data name="lblImageEffectsNote.Text" xml:space="preserve">
     <value>備註：你可以在「擷取後的任務 -&gt; 新增圖片效果」啟用/停用圖片效果。</value>
@@ -358,12 +352,6 @@
   </data>
   <data name="btnAfterCapture.Text" xml:space="preserve">
     <value>擷取後...</value>
-  </data>
-  <data name="chkOverrideFTP.Text" xml:space="preserve">
-    <value>覆寫預設 FTP 帳戶</value>
-  </data>
-  <data name="chkOverrideCustomUploader.Text" xml:space="preserve">
-    <value>覆寫預設自訂上傳工具</value>
   </data>
   <data name="cbImageAutoUseJPEG.Text" xml:space="preserve">
     <value>如果圖片尺寸比指定尺寸大，使用 JPEG 格式：</value>
@@ -458,15 +446,6 @@
   <data name="cbOverrideDestinationSettings.Text" xml:space="preserve">
     <value>覆寫目的地</value>
   </data>
-  <data name="chkOverrideAdvancedSettings.Text" xml:space="preserve">
-    <value>覆寫進階設定</value>
-  </data>
-  <data name="chkOverrideGeneralSettings.Text" xml:space="preserve">
-    <value>覆寫一般設定</value>
-  </data>
-  <data name="chkOverrideImageSettings.Text" xml:space="preserve">
-    <value>覆寫圖片設定</value>
-  </data>
   <data name="tpUploaderFilters.Text" xml:space="preserve">
     <value>上傳工具篩選條件</value>
   </data>
@@ -494,12 +473,6 @@
   <data name="lblUploaderFiltersExtensions.Text" xml:space="preserve">
     <value>副檔名篩選條件：</value>
   </data>
-  <data name="chkOverrideActions.Text" xml:space="preserve">
-    <value>覆寫動作</value>
-  </data>
-  <data name="chkOverrideToolsSettings.Text" xml:space="preserve">
-    <value>覆寫工具設定</value>
-  </data>
   <data name="lblActionsNote.Text" xml:space="preserve">
     <value>備註：你可以在「擷取後的任務 -&gt; 執行動作」啟用/停用動作。</value>
   </data>
@@ -508,9 +481,6 @@
   </data>
   <data name="lblScreenshotDelay.Text" xml:space="preserve">
     <value>截圖倒數計時：</value>
-  </data>
-  <data name="chkOverrideCaptureSettings.Text" xml:space="preserve">
-    <value>覆寫擷取設定</value>
   </data>
   <data name="cbScreenRecordTwoPassEncoding.Text" xml:space="preserve">
     <value>使用無損編碼錄製，接著套用使用者的編碼選項</value>
@@ -529,9 +499,6 @@
   </data>
   <data name="lblOCRDefaultLanguage.Text" xml:space="preserve">
     <value>預設語言：</value>
-  </data>
-  <data name="chkOverrideUploadSettings.Text" xml:space="preserve">
-    <value>覆寫上傳設定</value>
   </data>
   <data name="btnAutoIncrementNumber.Text" xml:space="preserve">
     <value>更改</value>

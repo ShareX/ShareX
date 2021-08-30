@@ -180,9 +180,6 @@
   <data name="chDescription.Text" xml:space="preserve">
     <value>描述</value>
   </data>
-  <data name="chkUseSecondaryUploaders.Text" xml:space="preserve">
-    <value>重试时使用辅助上传程序优先级顺序</value>
-  </data>
   <data name="tpUploadResults.Text" xml:space="preserve">
     <value>结果</value>
   </data>

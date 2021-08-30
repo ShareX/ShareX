@@ -270,9 +270,6 @@
   <data name="lblScreenRecorderFixedDuration.Text" xml:space="preserve">
     <value>segundos</value>
   </data>
-  <data name="chkScreenRecordAutoStart.Text" xml:space="preserve">
-    <value>Começar a gravar depois de:</value>
-  </data>
   <data name="lblScreenRecorderStartDelay.Text" xml:space="preserve">
     <value>segundos</value>
   </data>
@@ -305,9 +302,6 @@
   </data>
   <data name="cbImageEffectOnlyRegionCapture.Text" xml:space="preserve">
     <value>Aplicar efeitos somente em capturas de região</value>
-  </data>
-  <data name="chkShowImageEffectsWindowAfterCapture.Text" xml:space="preserve">
-    <value>Mostrar janela de efeitos de imagem após a captura</value>
   </data>
   <data name="lblImageEffectsNote.Text" xml:space="preserve">
     <value>Você pode habilitar/desabilitar efeitos de imagem em "Tarefas pós-captura -&gt; Adicionar efeitos de imagem".</value>
@@ -362,12 +356,6 @@
   </data>
   <data name="btnAfterCapture.Text" xml:space="preserve">
     <value>Após captura...</value>
-  </data>
-  <data name="chkOverrideFTP.Text" xml:space="preserve">
-    <value>Substituir conta FTP padrão:</value>
-  </data>
-  <data name="chkOverrideCustomUploader.Text" xml:space="preserve">
-    <value>Substituir serviço de envio customizado:</value>
   </data>
   <data name="cbRegionCaptureShowFPS.Text" xml:space="preserve">
     <value>Mostrar QPS no canto superior esquerdo</value>

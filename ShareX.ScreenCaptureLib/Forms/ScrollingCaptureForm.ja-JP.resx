@@ -159,9 +159,6 @@
   <data name="cbAutoCombine.Text" xml:space="preserve">
     <value>キャプチャー後自動でオフセットを推測して結合する</value>
   </data>
-  <data name="chkAutoUpload.Text" xml:space="preserve">
-    <value>キャプチャー後の設定にしたがい、アップロード/保存を実行する</value>
-  </data>
   <data name="lblScrollTopMethodBeforeCapture.Text" xml:space="preserve">
     <value>キャプチャー前に最上部にスクロールする方法:</value>
   </data>

@@ -171,9 +171,6 @@
   <data name="cbCaptureClientArea.Text" xml:space="preserve">
     <value>Cattura Area Client durante la Cattura Finestra o di una Finestra Attiva</value>
   </data>
-  <data name="chkOverrideCaptureSettings.Text" xml:space="preserve">
-    <value>Sostituisci Impostazioni Cattura</value>
-  </data>
   <data name="tpRegionCapture.Text" xml:space="preserve">
     <value>Cattura Regione</value>
   </data>
@@ -197,12 +194,6 @@
   </data>
   <data name="tpAdvanced.Text" xml:space="preserve">
     <value>Avanzate</value>
-  </data>
-  <data name="chkOverrideCustomUploader.Text" xml:space="preserve">
-    <value>Sostituisci Servizio di Caricamento Personalizzato Predefinito</value>
-  </data>
-  <data name="chkOverrideFTP.Text" xml:space="preserve">
-    <value>Sostituisci Account FTP Predefinito</value>
   </data>
   <data name="btnAfterCapture.Text" xml:space="preserve">
     <value>Dopo la Cattura...</value>
@@ -237,9 +228,6 @@
   <data name="cbPlaySoundAfterCapture.Text" xml:space="preserve">
     <value>Riproduci Suono alla Cattura</value>
   </data>
-  <data name="chkOverrideGeneralSettings.Text" xml:space="preserve">
-    <value>Sostituisci Impostazioni Generali</value>
-  </data>
   <data name="lblImageFormat.Text" xml:space="preserve">
     <value>Formato Immagine:</value>
   </data>
@@ -255,9 +243,6 @@
   <data name="lblImageJPEGQuality.Text" xml:space="preserve">
     <value>Qualità JPG:</value>
   </data>
-  <data name="chkOverrideImageSettings.Text" xml:space="preserve">
-    <value>Sostituisci Impostazioni Immagine</value>
-  </data>
   <data name="tpEffects.Text" xml:space="preserve">
     <value>Effetti</value>
   </data>
@@ -269,9 +254,6 @@
   </data>
   <data name="cbImageAutoUseJPEG.Text" xml:space="preserve">
     <value>Se la dimesione dell'immagine è maggiore di quella specificata, usa il formato JPEG:</value>
-  </data>
-  <data name="chkShowImageEffectsWindowAfterCapture.Text" xml:space="preserve">
-    <value>Mostra la Finestra degli Effetti Immagine dopo la Cattura</value>
   </data>
   <data name="cbImageEffectOnlyRegionCapture.Text" xml:space="preserve">
     <value>Applica Effetti solo alla Regione Catturata</value>
@@ -372,9 +354,6 @@
   <data name="lblScreenRecorderStartDelay.Text" xml:space="preserve">
     <value>secondi</value>
   </data>
-  <data name="chkScreenRecordAutoStart.Text" xml:space="preserve">
-    <value>Avvia Registrazione Dopo:</value>
-  </data>
   <data name="lblScreenRecorderFixedDuration.Text" xml:space="preserve">
     <value>secondi</value>
   </data>
@@ -396,9 +375,6 @@
   <data name="btnActionsRemove.Text" xml:space="preserve">
     <value>Rimuovi</value>
   </data>
-  <data name="chkOverrideActions.Text" xml:space="preserve">
-    <value>Sostituisci Azioni</value>
-  </data>
   <data name="chWatchFolderFolderPath.Text" xml:space="preserve">
     <value>Percorso Cartella</value>
   </data>
@@ -416,12 +392,6 @@
   </data>
   <data name="lblToolsScreenColorPickerFormat.Text" xml:space="preserve">
     <value>Formato Cattura Colore:</value>
-  </data>
-  <data name="chkOverrideToolsSettings.Text" xml:space="preserve">
-    <value>Sostituisci Impostazioni Strumenti</value>
-  </data>
-  <data name="chkOverrideAdvancedSettings.Text" xml:space="preserve">
-    <value>Sostituisci Impostazioni Avanzate</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Impostazioni Operazione</value>
@@ -482,9 +452,6 @@
   </data>
   <data name="cbScreenRecorderFixedDuration.Text" xml:space="preserve">
     <value>Durata Fissa:</value>
-  </data>
-  <data name="chkOverrideUploadSettings.Text" xml:space="preserve">
-    <value>Sostituisci Impostazioni Caricamento</value>
   </data>
   <data name="tpFileNaming.Text" xml:space="preserve">
     <value>Denominazione File</value>

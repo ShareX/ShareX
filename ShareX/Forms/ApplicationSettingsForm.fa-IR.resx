@@ -475,9 +475,6 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - تنظیمات برنامه</value>
   </data>
-  <data name="chkUseSecondaryUploaders.Text" xml:space="preserve">
-    <value>در هنگام سعی مجدد از آپلودکننده های ثانویه استفاده کن.</value>
-  </data>
   <data name="lblPreviewPersonalFolderPath.Text" xml:space="preserve">
     <value>...</value>
   </data>

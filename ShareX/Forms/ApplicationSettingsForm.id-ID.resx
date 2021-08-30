@@ -306,9 +306,6 @@
   <data name="gbClipboardFormats.Text" xml:space="preserve">
     <value>Format papan klip - ini muncul di bawah Salin dalam menu konteks jendela utama</value>
   </data>
-  <data name="chkUseSecondaryUploaders.Text" xml:space="preserve">
-    <value>Gunakan preferensi urutan pengunggah sekunder saat mencoba kembali</value>
-  </data>
   <data name="gbSecondaryImageUploaders.Text" xml:space="preserve">
     <value>Pengunggah gambar sekunder</value>
   </data>

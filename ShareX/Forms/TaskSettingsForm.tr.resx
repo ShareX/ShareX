@@ -270,9 +270,6 @@
   <data name="lblScreenRecorderFixedDuration.Text" xml:space="preserve">
     <value>saniye</value>
   </data>
-  <data name="chkScreenRecordAutoStart.Text" xml:space="preserve">
-    <value>Kaydetmeye başla:</value>
-  </data>
   <data name="lblScreenRecorderStartDelay.Text" xml:space="preserve">
     <value>saniye sonra</value>
   </data>
@@ -305,9 +302,6 @@
   </data>
   <data name="cbImageEffectOnlyRegionCapture.Text" xml:space="preserve">
     <value>Efektleri sadece yakalama bölgesine uygula</value>
-  </data>
-  <data name="chkShowImageEffectsWindowAfterCapture.Text" xml:space="preserve">
-    <value>Yakalama sonrası resim efektleri ekranını göster</value>
   </data>
   <data name="lblImageEffectsNote.Text" xml:space="preserve">
     <value>"Yakalama sonrası -&gt; Resim efekti ekle" menüsünden resim efektlerini açıp kapatabilirsiniz.</value>
@@ -359,12 +353,6 @@
   </data>
   <data name="btnAfterCapture.Text" xml:space="preserve">
     <value>Yakalama sonrası...</value>
-  </data>
-  <data name="chkOverrideFTP.Text" xml:space="preserve">
-    <value>Varsayılan FTP hesabını değiştir</value>
-  </data>
-  <data name="chkOverrideCustomUploader.Text" xml:space="preserve">
-    <value>Varsayılan özel yükleyiciyi değiştir</value>
   </data>
   <data name="lblRegionCaptureSnapSizesWidth.Text" xml:space="preserve">
     <value>Genişlik:</value>
@@ -498,27 +486,6 @@
   <data name="cbOverrideDestinationSettings.Text" xml:space="preserve">
     <value>Hedefleri değiştir</value>
   </data>
-  <data name="chkOverrideAdvancedSettings.Text" xml:space="preserve">
-    <value>Gelişmiş ayarları değiştir</value>
-  </data>
-  <data name="chkOverrideCaptureSettings.Text" xml:space="preserve">
-    <value>Yakalama ayarlarını değiştir</value>
-  </data>
-  <data name="chkOverrideActions.Text" xml:space="preserve">
-    <value>Aksiyon ayarlarını değiştir</value>
-  </data>
-  <data name="chkOverrideGeneralSettings.Text" xml:space="preserve">
-    <value>Genel ayarları değiştir</value>
-  </data>
-  <data name="chkOverrideImageSettings.Text" xml:space="preserve">
-    <value>Resim ayarlarını değiştir</value>
-  </data>
-  <data name="chkOverrideToolsSettings.Text" xml:space="preserve">
-    <value>Araç ayarlarını değiştir</value>
-  </data>
-  <data name="chkOverrideUploadSettings.Text" xml:space="preserve">
-    <value>Yükleme ayarlarını değiştir</value>
-  </data>
   <data name="btnActions.Text" xml:space="preserve">
     <value>Aksiyonlar...</value>
   </data>
@@ -632,5 +599,38 @@
   </data>
   <data name="tpNotifications.Text" xml:space="preserve">
     <value>Uyarılar</value>
+  </data>
+  <data name="cbOverrideActions.Text" xml:space="preserve">
+    <value>Aksiyon ayarlarını değiştir</value>
+  </data>
+  <data name="cbOverrideAdvancedSettings.Text" xml:space="preserve">
+    <value>Gelişmiş ayarları değiştir</value>
+  </data>
+  <data name="cbOverrideCaptureSettings.Text" xml:space="preserve">
+    <value>Yakalama ayarlarını değiştir</value>
+  </data>
+  <data name="cbOverrideGeneralSettings.Text" xml:space="preserve">
+    <value>Genel ayarları değiştir</value>
+  </data>
+  <data name="cbOverrideImageSettings.Text" xml:space="preserve">
+    <value>Resim ayarlarını değiştir</value>
+  </data>
+  <data name="cbOverrideToolsSettings.Text" xml:space="preserve">
+    <value>Araç ayarlarını değiştir</value>
+  </data>
+  <data name="cbOverrideUploadSettings.Text" xml:space="preserve">
+    <value>Yükleme ayarlarını değiştir</value>
+  </data>
+  <data name="cbScreenRecordAutoStart.Text" xml:space="preserve">
+    <value>Kaydetmeye başla:</value>
+  </data>
+  <data name="cbShowImageEffectsWindowAfterCapture.Text" xml:space="preserve">
+    <value>Yakalama sonrası resim efektleri ekranını göster</value>
+  </data>
+  <data name="cbOverrideCustomUploader.Text" xml:space="preserve">
+    <value>Varsayılan özel yükleyiciyi değiştir</value>
+  </data>
+  <data name="cbOverrideFTPAccount.Text" xml:space="preserve">
+    <value>Varsayılan FTP hesabını değiştir</value>
   </data>
 </root>

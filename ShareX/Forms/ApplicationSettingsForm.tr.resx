@@ -207,9 +207,6 @@
   <data name="tpUploadResults.Text" xml:space="preserve">
     <value>Sonuçlar</value>
   </data>
-  <data name="chkUseSecondaryUploaders.Text" xml:space="preserve">
-    <value>Tekrar denerken ikincil yükleyicileri sırasına göre kullan</value>
-  </data>
   <data name="gbSecondaryImageUploaders.Text" xml:space="preserve">
     <value>İkincil resim yükleyiciler</value>
   </data>
@@ -383,5 +380,8 @@
   </data>
   <data name="tpTheme.Text" xml:space="preserve">
     <value>Tema</value>
+  </data>
+  <data name="cbUseSecondaryUploaders.Text" xml:space="preserve">
+    <value>Tekrar denerken ikincil yükleyicileri sırasına göre kullan</value>
   </data>
 </root>

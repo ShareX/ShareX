@@ -249,9 +249,6 @@
   <data name="gbSecondaryImageUploaders.Text" xml:space="preserve">
     <value>Вторичные для картинок</value>
   </data>
-  <data name="chkUseSecondaryUploaders.Text" xml:space="preserve">
-    <value>При повторе, пробовать вторичные сервисы в указанном порядке</value>
-  </data>
   <data name="tpGeneral.Text" xml:space="preserve">
     <value>Общие</value>
   </data>

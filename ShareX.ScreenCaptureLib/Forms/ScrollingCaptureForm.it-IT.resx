@@ -186,9 +186,6 @@
   <data name="cbAutoCombine.Text" xml:space="preserve">
     <value>Determina l'Offset e Combina le Immagini</value>
   </data>
-  <data name="chkAutoUpload.Text" xml:space="preserve">
-    <value>Carica/Salva (dipende dalle impostazione "Dopo la Cattura")</value>
-  </data>
   <data name="lblScrollTopMethodBeforeCapture.Text" xml:space="preserve">
     <value>Metodo Scorrimento in Cima Prima della Cattura:</value>
   </data>

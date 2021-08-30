@@ -135,9 +135,6 @@
   <data name="cbAutoCombine.Text" xml:space="preserve">
     <value>Adivinha deslocamento e junta imagens após captura</value>
   </data>
-  <data name="chkAutoUpload.Text" xml:space="preserve">
-    <value>Enviar/Guardar dependendo das definições de "após captura"</value>
-  </data>
   <data name="gbAfterCapture.Text" xml:space="preserve">
     <value>Após captura</value>
   </data>

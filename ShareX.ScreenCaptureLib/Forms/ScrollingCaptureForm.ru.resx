@@ -162,9 +162,6 @@
   <data name="cbStartSelectionAutomatically.Text" xml:space="preserve">
     <value>Автоматически начинать выбор региона перед открытием этого окна</value>
   </data>
-  <data name="chkAutoUpload.Text" xml:space="preserve">
-    <value>Автоматически загружать/сохранять в соответствии с настройками задач после захвата и закрывать это окно</value>
-  </data>
   <data name="cbAutoDetectScrollEnd.Text" xml:space="preserve">
     <value>Автоматически обнаруживать конец прокрутки</value>
   </data>

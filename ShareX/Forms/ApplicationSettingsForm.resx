@@ -487,7 +487,7 @@
     <value>btnLanguages</value>
   </data>
   <data name="&gt;&gt;btnLanguages.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MenuButton, ShareX.HelpersLib, Version=13.4.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MenuButton, ShareX.HelpersLib, Version=13.5.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;btnLanguages.Parent" xml:space="preserve">
     <value>tpGeneral</value>
@@ -841,7 +841,7 @@
     <value>eiTheme</value>
   </data>
   <data name="&gt;&gt;eiTheme.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.ExportImportControl, ShareX.HelpersLib, Version=13.4.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.ExportImportControl, ShareX.HelpersLib, Version=13.5.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;eiTheme.Parent" xml:space="preserve">
     <value>tpTheme</value>
@@ -2276,7 +2276,7 @@
     <value>lvClipboardFormats</value>
   </data>
   <data name="&gt;&gt;lvClipboardFormats.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=13.4.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=13.5.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lvClipboardFormats.Parent" xml:space="preserve">
     <value>gbClipboardFormats</value>
@@ -2351,7 +2351,7 @@
     <value>lvSecondaryFileUploaders</value>
   </data>
   <data name="&gt;&gt;lvSecondaryFileUploaders.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=13.4.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=13.5.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lvSecondaryFileUploaders.Parent" xml:space="preserve">
     <value>gbSecondaryFileUploaders</value>
@@ -2402,7 +2402,7 @@
     <value>lvSecondaryImageUploaders</value>
   </data>
   <data name="&gt;&gt;lvSecondaryImageUploaders.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=13.4.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=13.5.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lvSecondaryImageUploaders.Parent" xml:space="preserve">
     <value>gbSecondaryImageUploaders</value>
@@ -2453,7 +2453,7 @@
     <value>lvSecondaryTextUploaders</value>
   </data>
   <data name="&gt;&gt;lvSecondaryTextUploaders.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=13.4.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=13.5.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lvSecondaryTextUploaders.Parent" xml:space="preserve">
     <value>gbSecondaryTextUploaders</value>
@@ -2488,34 +2488,34 @@
   <data name="&gt;&gt;gbSecondaryTextUploaders.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="chkUseSecondaryUploaders.AutoSize" type="System.Boolean, mscorlib">
+  <data name="cbUseSecondaryUploaders.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="chkUseSecondaryUploaders.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="cbUseSecondaryUploaders.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="chkUseSecondaryUploaders.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="cbUseSecondaryUploaders.Location" type="System.Drawing.Point, System.Drawing">
     <value>64, 34</value>
   </data>
-  <data name="chkUseSecondaryUploaders.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="cbUseSecondaryUploaders.Size" type="System.Drawing.Size, System.Drawing">
     <value>305, 17</value>
   </data>
-  <data name="chkUseSecondaryUploaders.TabIndex" type="System.Int32, mscorlib">
+  <data name="cbUseSecondaryUploaders.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="chkUseSecondaryUploaders.Text" xml:space="preserve">
+  <data name="cbUseSecondaryUploaders.Text" xml:space="preserve">
     <value>Use secondary uploaders order of preference when retrying</value>
   </data>
-  <data name="&gt;&gt;chkUseSecondaryUploaders.Name" xml:space="preserve">
-    <value>chkUseSecondaryUploaders</value>
+  <data name="&gt;&gt;cbUseSecondaryUploaders.Name" xml:space="preserve">
+    <value>cbUseSecondaryUploaders</value>
   </data>
-  <data name="&gt;&gt;chkUseSecondaryUploaders.Type" xml:space="preserve">
+  <data name="&gt;&gt;cbUseSecondaryUploaders.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;chkUseSecondaryUploaders.Parent" xml:space="preserve">
+  <data name="&gt;&gt;cbUseSecondaryUploaders.Parent" xml:space="preserve">
     <value>tpUploadRetry</value>
   </data>
-  <data name="&gt;&gt;chkUseSecondaryUploaders.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;cbUseSecondaryUploaders.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
   <data name="cbIfUploadFailRetryOnce.AutoSize" type="System.Boolean, mscorlib">
@@ -3452,7 +3452,7 @@
     <value>tttvMain</value>
   </data>
   <data name="&gt;&gt;tttvMain.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.TabToTreeView, ShareX.HelpersLib, Version=13.4.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.TabToTreeView, ShareX.HelpersLib, Version=13.5.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;tttvMain.Parent" xml:space="preserve">
     <value>$this</value>
@@ -3468,9 +3468,6 @@
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>737, 402</value>
-  </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>640, 440</value>

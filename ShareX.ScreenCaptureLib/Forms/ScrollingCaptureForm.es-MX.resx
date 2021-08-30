@@ -156,9 +156,6 @@
   <data name="cbStartSelectionAutomatically.Text" xml:space="preserve">
     <value>Iniciar la selección para la captura de región antes de abrir esta ventana</value>
   </data>
-  <data name="chkAutoUpload.Text" xml:space="preserve">
-    <value>Subir o guardar, según la configuración de Después de capturar</value>
-  </data>
   <data name="gbAfterCapture.Text" xml:space="preserve">
     <value>Después de capturar</value>
   </data>

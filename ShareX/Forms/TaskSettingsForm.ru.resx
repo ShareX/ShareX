@@ -270,9 +270,6 @@
   <data name="lblScreenRecorderFixedDuration.Text" xml:space="preserve">
     <value>секунд</value>
   </data>
-  <data name="chkScreenRecordAutoStart.Text" xml:space="preserve">
-    <value>Начать запись через:</value>
-  </data>
   <data name="lblScreenRecorderStartDelay.Text" xml:space="preserve">
     <value>секунд</value>
   </data>
@@ -305,9 +302,6 @@
   </data>
   <data name="cbImageEffectOnlyRegionCapture.Text" xml:space="preserve">
     <value>Применять эффекты только при захвате области</value>
-  </data>
-  <data name="chkShowImageEffectsWindowAfterCapture.Text" xml:space="preserve">
-    <value>Показать окно эффектов изображения после захвата</value>
   </data>
   <data name="lblImageEffectsNote.Text" xml:space="preserve">
     <value>Вы можете включать/выключать эффекты изображений в «Задачи после захвата -&gt; Добавить эффекты».</value>
@@ -359,12 +353,6 @@
   </data>
   <data name="btnAfterCapture.Text" xml:space="preserve">
     <value>После захвата...</value>
-  </data>
-  <data name="chkOverrideFTP.Text" xml:space="preserve">
-    <value>Переопределить аккаунт FTP по умолчанию</value>
-  </data>
-  <data name="chkOverrideCustomUploader.Text" xml:space="preserve">
-    <value>Переопределить сервис загрузок по умолчанию</value>
   </data>
   <data name="btnCaptureCustomRegionSelectRectangle.Text" xml:space="preserve">
     <value>Выбрать область...</value>
@@ -488,27 +476,6 @@
   </data>
   <data name="cbOverrideDestinationSettings.Text" xml:space="preserve">
     <value>Переопределить сервисы загрузки</value>
-  </data>
-  <data name="chkOverrideActions.Text" xml:space="preserve">
-    <value>Переопределить действия</value>
-  </data>
-  <data name="chkOverrideAdvancedSettings.Text" xml:space="preserve">
-    <value>Переопределить расширенные настройки</value>
-  </data>
-  <data name="chkOverrideCaptureSettings.Text" xml:space="preserve">
-    <value>Переопределить настройки захвата</value>
-  </data>
-  <data name="chkOverrideGeneralSettings.Text" xml:space="preserve">
-    <value>Переопределить общие настройки</value>
-  </data>
-  <data name="chkOverrideImageSettings.Text" xml:space="preserve">
-    <value>Переопределить настройки изображений</value>
-  </data>
-  <data name="chkOverrideToolsSettings.Text" xml:space="preserve">
-    <value>Переопределить настройки инструментов</value>
-  </data>
-  <data name="chkOverrideUploadSettings.Text" xml:space="preserve">
-    <value>Переопределить настройки загрузок</value>
   </data>
   <data name="lblImagePNGBitDepth.Text" xml:space="preserve">
     <value>Битность PNG:</value>

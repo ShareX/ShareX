@@ -264,9 +264,6 @@
   <data name="tpUploadResults.Text" xml:space="preserve">
     <value>Resultados</value>
   </data>
-  <data name="chkUseSecondaryUploaders.Text" xml:space="preserve">
-    <value>Usar orden de preferencia de servidores alternos al reintentar subir</value>
-  </data>
   <data name="gbSecondaryImageUploaders.Text" xml:space="preserve">
     <value>Servidores alternos para imágenes</value>
   </data>
