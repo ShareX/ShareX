@@ -172,4 +172,34 @@
   <data name="lblFilenameFilter.Text" xml:space="preserve">
     <value>Dosya ismi:</value>
   </data>
+  <data name="btnAdvancedSearch.Text" xml:space="preserve">
+    <value>Ara</value>
+  </data>
+  <data name="btnAdvancedSearchReset.Text" xml:space="preserve">
+    <value>Sıfırla</value>
+  </data>
+  <data name="gbAdvancedSearch.Text" xml:space="preserve">
+    <value>Gelişmiş arama</value>
+  </data>
+  <data name="lblURLFilter.Text" xml:space="preserve">
+    <value>URL:</value>
+  </data>
+  <data name="tsbAdvancedSearch.Text" xml:space="preserve">
+    <value>Gelişmiş arama...</value>
+  </data>
+  <data name="tsbCopyStats.Text" xml:space="preserve">
+    <value>İstatistikleri panoya kopyala</value>
+  </data>
+  <data name="tsbSearch.Text" xml:space="preserve">
+    <value>Ara</value>
+  </data>
+  <data name="tsbSettings.Text" xml:space="preserve">
+    <value>Ayarlar...</value>
+  </data>
+  <data name="tsbToggleMoreInfo.Text" xml:space="preserve">
+    <value>Daha fazla bilgi göster/gizle</value>
+  </data>
+  <data name="tslSearch.Text" xml:space="preserve">
+    <value>Ara:</value>
+  </data>
 </root>
