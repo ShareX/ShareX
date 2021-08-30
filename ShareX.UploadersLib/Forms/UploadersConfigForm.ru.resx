@@ -921,9 +921,6 @@
   <data name="lblFirebaseWebAPIKey.Text" xml:space="preserve">
     <value>Ключ веб API:</value>
   </data>
-  <data name="tpFirebaseDynamicLinks.Text" xml:space="preserve">
-    <value>Firebase Dynamic Links</value>
-  </data>
   <data name="lblGoogleCloudStorageObjectPrefix.Text" xml:space="preserve">
     <value>Путь:</value>
   </data>
@@ -1086,9 +1083,6 @@
   </data>
   <data name="lblTeknikAuthUrl.Text" xml:space="preserve">
     <value>URL для аутентификаци:</value>
-  </data>
-  <data name="tpGoogleDrive.Text" xml:space="preserve">
-    <value>Google Диск</value>
   </data>
   <data name="cbGoogleCloudStorageSetPublicACL.Text" xml:space="preserve">
     <value>Задавать файлам public-read ACL</value>
