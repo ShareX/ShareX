@@ -996,7 +996,7 @@ namespace ShareX
             }
             else
             {
-                niTray.Text = "ShareX";
+                niTray.Text = Program.TitleShort;
             }
 
             tsmiRestartAsAdmin.Visible = HelpersOptions.DevMode && !Helpers.IsAdministrator();

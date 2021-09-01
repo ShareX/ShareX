@@ -75,7 +75,22 @@ namespace ShareX
 
         public static string Title => $"{Name} {VersionText}";
 
-        public static string TitleLong => $"{Title} ({Build})";
+        public static string TitleShort => Name;
+
+        public static string TitleLong
+        {
+            get
+            {
+                string info = Build.ToString();
+
+                if (IsAdmin)
+                {
+                    info += ", Admin";
+                }
+
+                return $"{Title} ({info})";
+            }
+        }
 
         public static bool Dev { get; } = true;
         public static bool MultiInstance { get; private set; }
@@ -83,6 +98,7 @@ namespace ShareX
         public static bool PortableApps { get; private set; }
         public static bool SilentRun { get; private set; }
         public static bool Sandbox { get; private set; }
+        public static bool IsAdmin { get; private set; }
         public static bool SteamFirstTimeConfig { get; private set; }
         public static bool IgnoreHotkeyWarning { get; private set; }
         public static bool PuushMode { get; private set; }
@@ -310,7 +326,8 @@ namespace ShareX
                 DebugHelper.WriteLine("Personal path detection method: " + PersonalPathDetectionMethod);
             }
             DebugHelper.WriteLine("Operating system: " + Helpers.GetOperatingSystemProductName(true));
-            DebugHelper.WriteLine("Running as elevated process: " + Helpers.IsAdministrator());
+            IsAdmin = Helpers.IsAdministrator();
+            DebugHelper.WriteLine("Running as elevated process: " + IsAdmin);
 
             SilentRun = CLI.IsCommandExist("silent", "s");
 #if WindowsStore
