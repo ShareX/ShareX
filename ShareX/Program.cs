@@ -73,22 +73,38 @@ namespace ShareX
             }
         }
 
-        public static string Title => $"{Name} {VersionText}";
-
-        public static string TitleShort => Name;
-
-        public static string TitleLong
+        public static string Title
         {
             get
             {
-                string info = Build.ToString();
+                string title = $"{Name} {VersionText}";
 
-                if (IsAdmin)
+                if (Settings != null && Settings.DevMode)
                 {
-                    info += ", Admin";
+                    string info = Build.ToString();
+
+                    if (IsAdmin)
+                    {
+                        info += ", Admin";
+                    }
+
+                    title += $" ({info})";
                 }
 
-                return $"{Title} ({info})";
+                return title;
+            }
+        }
+
+        public static string TitleShort
+        {
+            get
+            {
+                if (Settings != null && Settings.DevMode)
+                {
+                    return Title;
+                }
+
+                return Name;
             }
         }
 
@@ -615,7 +631,7 @@ namespace ShareX
 
         private static void OnError(Exception e)
         {
-            using (ErrorForm errorForm = new ErrorForm(e.Message, $"{e}\r\n\r\n{TitleLong}", LogsFilePath, Links.URL_ISSUES))
+            using (ErrorForm errorForm = new ErrorForm(e.Message, $"{e}\r\n\r\n{Title}", LogsFilePath, Links.URL_ISSUES))
             {
                 errorForm.ShowDialog();
             }

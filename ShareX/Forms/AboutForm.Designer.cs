@@ -185,6 +185,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.CancelButton = this.btnClose;
+            this.Controls.Add(this.lblProductName);
             this.Controls.Add(this.lblBuild);
             this.Controls.Add(this.btnLicenses);
             this.Controls.Add(this.btnShareXLicense);
@@ -200,7 +201,6 @@
             this.Controls.Add(this.pbAU);
             this.Controls.Add(this.pbJaexURL);
             this.Controls.Add(this.pbTR);
-            this.Controls.Add(this.lblProductName);
             this.Controls.Add(this.cLogo);
             this.Name = "AboutForm";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;

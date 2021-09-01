@@ -990,14 +990,8 @@ namespace ShareX
                 niTray.Icon = ShareXResources.Icon;
             }
 
-            if (HelpersOptions.DevMode)
-            {
-                niTray.Text = Program.TitleLong;
-            }
-            else
-            {
-                niTray.Text = Program.TitleShort;
-            }
+            Text = Program.Title;
+            niTray.Text = Program.TitleShort;
 
             tsmiRestartAsAdmin.Visible = HelpersOptions.DevMode && !Helpers.IsAdministrator();
 
