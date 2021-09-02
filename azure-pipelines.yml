@@ -29,6 +29,6 @@ steps:
 
 - task: PublishBuildArtifacts@1
   inputs:
-    PathtoPublish: 'ShareX/ShareX/bin/$(buildConfiguration)'
+    PathtoPublish: 'ShareX/bin/$(buildConfiguration)'
     ArtifactName: 'drop-binary'
     publishLocation: 'Container'
