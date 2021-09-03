@@ -117,25 +117,97 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="btnAdd.Text" xml:space="preserve">
-    <value>Ekle</value>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX - Özel yükleyici ayarları</value>
   </data>
-  <data name="btnEdit.Text" xml:space="preserve">
-    <value>Düzenle</value>
+  <data name="tsmiCustomUploaders.Text" xml:space="preserve">
+    <value>Özel yükleyiciler...</value>
+  </data>
+  <data name="tsmiCustomUploaderGuide.Text" xml:space="preserve">
+    <value>Özel yükleyici kılavuzu...</value>
+  </data>
+  <data name="btnImageUploaderTest.Text" xml:space="preserve">
+    <value>Test</value>
+  </data>
+  <data name="btnFileUploaderTest.Text" xml:space="preserve">
+    <value>Test</value>
+  </data>
+  <data name="btnURLShortenerTest.Text" xml:space="preserve">
+    <value>Test</value>
+  </data>
+  <data name="btnTextUploaderTest.Text" xml:space="preserve">
+    <value>Test</value>
+  </data>
+  <data name="btnURLSharingServiceTest.Text" xml:space="preserve">
+    <value>Test</value>
+  </data>
+  <data name="lblResultDeletionURL.Text" xml:space="preserve">
+    <value>Silme adresi:</value>
+  </data>
+  <data name="lblDestinationType.Text" xml:space="preserve">
+    <value>Hedef tipi:</value>
+  </data>
+  <data name="btnDuplicate.Text" xml:space="preserve">
+    <value>Çoğalt</value>
+  </data>
+  <data name="lblResultErrorMessage.Text" xml:space="preserve">
+    <value>Hata mesajı:</value>
+  </data>
+  <data name="lblFileUploader.Text" xml:space="preserve">
+    <value>Dosya yükleyici:</value>
+  </data>
+  <data name="lblImageUploader.Text" xml:space="preserve">
+    <value>Resim yükleyici:</value>
+  </data>
+  <data name="btnNew.Text" xml:space="preserve">
+    <value>Yeni</value>
   </data>
   <data name="btnRemove.Text" xml:space="preserve">
     <value>Kaldır</value>
   </data>
-  <data name="btnReset.Text" xml:space="preserve">
-    <value>Varsayılan ayarlara dön...</value>
+  <data name="lblResultThumbnailURL.Text" xml:space="preserve">
+    <value>Küçük resim adresi:</value>
   </data>
-  <data name="btnClose.Text" xml:space="preserve">
-    <value>Kapat</value>
+  <data name="lblTextUploader.Text" xml:space="preserve">
+    <value>Yazı yükleyici:</value>
   </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Hızlı görev menüsü düzenleyici</value>
+  <data name="tsmiUpdateFolder.Text" xml:space="preserve">
+    <value>Klasörü güncelle...</value>
   </data>
-  <data name="lblTip.Text" xml:space="preserve">
-    <value>İpucu: Eğer boş bir görev yaratırsanız menüde ayraç çizgisi olarak gözükecektir.</value>
+  <data name="lblUploaders.Text" xml:space="preserve">
+    <value>Yükleyiciler:</value>
+  </data>
+  <data name="lblURLSharingService.Text" xml:space="preserve">
+    <value>Adres paylaşma servisi:</value>
+  </data>
+  <data name="lblURLShortener.Text" xml:space="preserve">
+    <value>Adres kısaltıcı:</value>
+  </data>
+  <data name="lblResultURL.Text" xml:space="preserve">
+    <value>Adres:</value>
+  </data>
+  <data name="cHeadersValue.HeaderText" xml:space="preserve">
+    <value>Değer</value>
+  </data>
+  <data name="cArgumentsValue.HeaderText" xml:space="preserve">
+    <value>Değer</value>
+  </data>
+  <data name="cParametersValue.HeaderText" xml:space="preserve">
+    <value>Değer</value>
+  </data>
+  <data name="cParametersName.HeaderText" xml:space="preserve">
+    <value>İsim</value>
+  </data>
+  <data name="cArgumentsName.HeaderText" xml:space="preserve">
+    <value>İsim</value>
+  </data>
+  <data name="cHeadersName.HeaderText" xml:space="preserve">
+    <value>İsim</value>
+  </data>
+  <data name="lblName.Text" xml:space="preserve">
+    <value>İsim:</value>
+  </data>
+  <data name="lblRegex.Text" xml:space="preserve">
+    <value>Regex listesi:</value>
   </data>
 </root>

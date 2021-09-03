@@ -170,7 +170,7 @@
     <value>Adres</value>
   </data>
   <data name="lblFilenameFilter.Text" xml:space="preserve">
-    <value>Dosya ismi:</value>
+    <value>Dosya adı:</value>
   </data>
   <data name="btnAdvancedSearch.Text" xml:space="preserve">
     <value>Ara</value>
@@ -182,7 +182,7 @@
     <value>Gelişmiş arama</value>
   </data>
   <data name="lblURLFilter.Text" xml:space="preserve">
-    <value>URL:</value>
+    <value>Adres:</value>
   </data>
   <data name="tsbAdvancedSearch.Text" xml:space="preserve">
     <value>Gelişmiş arama...</value>

@@ -199,7 +199,7 @@ Lütfen kişisel dizin yolunu değiştirmek için ShareX'i yönetici olarak çal
     <value>Ayarların geçerli olabilmesi için ShareX in Steam den yeniden açılması gerekmektedir.</value>
   </data>
   <data name="ActionsForm_btnOK_Click_Name_can_t_be_empty_" xml:space="preserve">
-    <value>Ad boş olamaz.</value>
+    <value>İsim boş olamaz.</value>
   </data>
   <data name="MainForm_UpdateToggleHotkeyButton_Disable_hotkeys" xml:space="preserve">
     <value>Kısayolları devre dışı bırak</value>
@@ -565,9 +565,6 @@ ShareX'i yeniden başlatmak ister misiniz?</value>
   <data name="OCRForm_AutoCompleteFail" xml:space="preserve">
     <value>OCR işlemi sırasında hata oluştu veya metin döndürülmedi.</value>
   </data>
-  <data name="PleaseNoteThatShareXIsUsingOCRSpaceSOnlineAPIToPerformOpticalCharacterRecognitionDoYouGivePermissionToShareXToUploadImagesToThisService" xml:space="preserve">
-    <value>Please note that ShareX is using OCR.Space's online API to perform optical character recognition. Do you give permission to ShareX to upload images to this service?</value>
-  </data>
   <data name="Description" xml:space="preserve">
     <value>Açıklama</value>
   </data>
@@ -647,5 +644,8 @@ Otomatik olarak indirmek ister misiniz?</value>
   </data>
   <data name="MainForm_UploadDebugLogWarning" xml:space="preserve">
     <value>Hata ayıklama kütüğü hassas bilgiler içerebilir. Devam etmek istediğinize emin misiniz?</value>
+  </data>
+  <data name="PleaseNoteThatShareXIsUsingOCRSpaceSOnlineAPIToPerformOpticalCharacterRecognitionDoYouGivePermissionToShareXToUploadImagesToThisService" xml:space="preserve">
+    <value>Lütfen dikkat, ShareX optik karakter tanıma gerçekleştirmek için OCR.Space'in çevrimiçi API'sini kullanmaktadır. ShareX'e bu servise resim yüklemesi için izin veriyor musunuz?</value>
   </data>
 </root>

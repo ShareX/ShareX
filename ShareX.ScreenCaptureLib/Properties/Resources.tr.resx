@@ -261,4 +261,91 @@
   <data name="ShapeManager_CreateToolbar_SaveImageAs" xml:space="preserve">
     <value>Resimi farklı kaydet... (Ctrl + Shift + S)</value>
   </data>
+  <data name="ScreenRecordForm_Start" xml:space="preserve">
+    <value>Başlat</value>
+  </data>
+  <data name="ScreenRecordForm_Stop" xml:space="preserve">
+    <value>Durdur</value>
+  </data>
+  <data name="ScreenRecordForm_StartRecording_Encoding___" xml:space="preserve">
+    <value>Kodlanıyor...</value>
+  </data>
+  <data name="ScreenRecordForm_StartRecording_Waiting___" xml:space="preserve">
+    <value>Bekleniyor...</value>
+  </data>
+  <data name="ScreenRecordForm_StartRecording_Click_tray_icon_to_start_recording_" xml:space="preserve">
+    <value>Kayda başlamak için tıklayın.</value>
+  </data>
+  <data name="ScreenRecordForm_StartRecording_Click_tray_icon_to_stop_recording_" xml:space="preserve">
+    <value>Kaydı durdurmak için tıklayın.</value>
+  </data>
+  <data name="Duplicate" xml:space="preserve">
+    <value>Çoğalt</value>
+  </data>
+  <data name="CloseEsc" xml:space="preserve">
+    <value>Kapat (Esc)</value>
+  </data>
+  <data name="ImageCopied" xml:space="preserve">
+    <value>Resim kopyalandı</value>
+  </data>
+  <data name="ImageSaved" xml:space="preserve">
+    <value>Resim kaydedildi</value>
+  </data>
+  <data name="ImageSavedAs" xml:space="preserve">
+    <value>Resim kaydedildi</value>
+  </data>
+  <data name="ImageUploading" xml:space="preserve">
+    <value>Resim karşıya yükleniyor</value>
+  </data>
+  <data name="ImageEffects" xml:space="preserve">
+    <value>Resim efekti ekle...</value>
+  </data>
+  <data name="DropShadowColor" xml:space="preserve">
+    <value>Düşen gölge rengi...</value>
+  </data>
+  <data name="ShapeManager_BorderStyle" xml:space="preserve">
+    <value>Çerçeve stili:</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Capture_active_monitor" xml:space="preserve">
+    <value>Aktif ekranı yakala</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Capture_fullscreen" xml:space="preserve">
+    <value>Tam ekran yakala</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_LastRegion" xml:space="preserve">
+    <value>Son bölgeyi yakala</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_CopyImageToClipboard" xml:space="preserve">
+    <value>Resimi panoya kopyala (Ctrl + Shift + C)</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_CropImage" xml:space="preserve">
+    <value>Resimi kırp...</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_DropShadow" xml:space="preserve">
+    <value>Düşen gölge</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Fixed_size_region_mode" xml:space="preserve">
+    <value>Sabit boyut bölge modu</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Magnifier_pixel_count_" xml:space="preserve">
+    <value>Büyüteç piksel sayısı:</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Magnifier_pixel_size_" xml:space="preserve">
+    <value>Büyüteç piksel boyutu:</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Show_FPS" xml:space="preserve">
+    <value>FPS göster</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Show_position_and_size_info" xml:space="preserve">
+    <value>Pozisyon ve boyut bilgisi göster</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Show_magnifier" xml:space="preserve">
+    <value>Büyüteç göster</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Show_screen_wide_crosshair" xml:space="preserve">
+    <value>Ekranı kaplayan artı şeklinde imleç göster</value>
+  </data>
+  <data name="ShapeManager_CursorType" xml:space="preserve">
+    <value>İmleç tipi:</value>
+  </data>
 </root>

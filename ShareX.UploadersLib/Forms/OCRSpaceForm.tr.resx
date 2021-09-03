@@ -117,25 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="btnAdd.Text" xml:space="preserve">
-    <value>Ekle</value>
-  </data>
-  <data name="btnEdit.Text" xml:space="preserve">
-    <value>Düzenle</value>
-  </data>
-  <data name="btnRemove.Text" xml:space="preserve">
-    <value>Kaldır</value>
-  </data>
-  <data name="btnReset.Text" xml:space="preserve">
-    <value>Varsayılan ayarlara dön...</value>
-  </data>
-  <data name="btnClose.Text" xml:space="preserve">
-    <value>Kapat</value>
-  </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Hızlı görev menüsü düzenleyici</value>
+    <value>ShareX - Optik karakter tanıma</value>
   </data>
-  <data name="lblTip.Text" xml:space="preserve">
-    <value>İpucu: Eğer boş bir görev yaratırsanız menüde ayraç çizgisi olarak gözükecektir.</value>
+  <data name="btnStartOCR.Text" xml:space="preserve">
+    <value>OCR başlat</value>
+  </data>
+  <data name="lblLanguage.Text" xml:space="preserve">
+    <value>Dil:</value>
+  </data>
+  <data name="lblResult.Text" xml:space="preserve">
+    <value>Sonuç:</value>
+  </data>
+  <data name="llGoogleTranslate.Text" xml:space="preserve">
+    <value>Google Çeviri'de aç ve pencereyi kapat</value>
   </data>
 </root>

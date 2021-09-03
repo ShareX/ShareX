@@ -177,4 +177,16 @@
   <data name="lblTextSize.Text" xml:space="preserve">
     <value>Boyut:</value>
   </data>
+  <data name="tsrbmiGradientForwardDiagonal.Text" xml:space="preserve">
+    <value>İleri çapraz</value>
+  </data>
+  <data name="btnGradient.ToolTip" xml:space="preserve">
+    <value>Gradyan</value>
+  </data>
+  <data name="tsmiGradientMode.Text" xml:space="preserve">
+    <value>Gradyan modu</value>
+  </data>
+  <data name="tsrbmiGradientBackwardDiagonal.Text" xml:space="preserve">
+    <value>Geriye çapraz</value>
+  </data>
 </root>

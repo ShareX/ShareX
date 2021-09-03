@@ -10904,7 +10904,7 @@ Using an encrypted library disables sharing.</value>
     <value>12</value>
   </data>
   <data name="lblPlikAPIKey.Text" xml:space="preserve">
-    <value>API Key: </value>
+    <value>API key:</value>
   </data>
   <data name="&gt;&gt;lblPlikAPIKey.Name" xml:space="preserve">
     <value>lblPlikAPIKey</value>

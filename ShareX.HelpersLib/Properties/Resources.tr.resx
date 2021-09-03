@@ -214,7 +214,7 @@
     <value>Durdur</value>
   </data>
   <data name="PrintTextForm_LoadSettings_Name___0___Size___1_" xml:space="preserve">
-    <value>Ad: {0}, Boyut: {1}</value>
+    <value>İsim: {0}, Boyut: {1}</value>
   </data>
   <data name="UpdateCheckerLabel_UpdateControls_Update_check_failed" xml:space="preserve">
     <value>Güncelleme kontrolü yapılamadı</value>

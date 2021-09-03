@@ -217,7 +217,7 @@
     <value>Yol</value>
   </data>
   <data name="chActionsName.Text" xml:space="preserve">
-    <value>Ad</value>
+    <value>İsim</value>
   </data>
   <data name="btnActionsAdd.Text" xml:space="preserve">
     <value>Ekle...</value>
@@ -403,7 +403,7 @@
     <value>Yükleyici:</value>
   </data>
   <data name="btnUploaderFiltersRemove.Text" xml:space="preserve">
-    <value>Sil</value>
+    <value>Kaldır</value>
   </data>
   <data name="lblImagePNGBitDepth.Text" xml:space="preserve">
     <value>PNG bit derinliği:</value>
@@ -427,7 +427,7 @@
     <value>Pozisyon ve boyut bilgisi göster</value>
   </data>
   <data name="cbRegionCaptureShowCrosshair.Text" xml:space="preserve">
-    <value>Ekranı kaplıyan artı şeklinde imleç göster</value>
+    <value>Ekranı kaplayan artı şeklinde imleç göster</value>
   </data>
   <data name="lblRegionCaptureMouseMiddleClickAction.Text" xml:space="preserve">
     <value>Fare orta tuşuna basıldığında:</value>

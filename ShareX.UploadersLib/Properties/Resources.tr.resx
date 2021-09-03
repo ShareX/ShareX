@@ -208,4 +208,16 @@ Oluşturulmuş dizinler:</value>
   <data name="OAuthControl_OAuthControl_PasteVerificationCodeHere" xml:space="preserve">
     <value>Doğrulama kodunu buraya yapıştır</value>
   </data>
+  <data name="ExportFailed" xml:space="preserve">
+    <value>Dışarı aktarma başarısız.</value>
+  </data>
+  <data name="UploadersConfigForm_Remove_all_custom_uploaders_Confirmation" xml:space="preserve">
+    <value>Bütün özel yükleyicileri kaldır?</value>
+  </data>
+  <data name="UploadersConfigForm_UpdatePastebinStatus_LoggedIn" xml:space="preserve">
+    <value>Giriş başarılı.</value>
+  </data>
+  <data name="UploadersConfigForm_UpdatePastebinStatus_NotLoggedIn" xml:space="preserve">
+    <value>Giriş yapılmadı.</value>
+  </data>
 </root>
