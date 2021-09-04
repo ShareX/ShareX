@@ -175,7 +175,7 @@
     <value>코덱</value>
   </data>
   <data name="nudx264CRF.ToolTip" xml:space="preserve">
-    <value>항율 인자 (CRF): 겂의 범위는 0부터 51까지이며, 0은 무손실, 30이 기본값, 그리고 51이 가능한 최저 품질입니다.
+    <value>항율 인자 (CRF): 값의 범위는 0부터 51까지이며, 0은 무손실, 30이 기본값, 그리고 51이 가능한 최저 품질입니다.
 값이 높아질수록 품질은 낮아지지만, 파일 크기 또한 줄어듭니다.</value>
   </data>
   <data name="tbMP3_qscale.ToolTip" xml:space="preserve">
