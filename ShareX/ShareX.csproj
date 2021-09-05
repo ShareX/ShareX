@@ -1150,6 +1150,9 @@
     <EmbeddedResource Include="Forms\FirstTimeConfigForm.zh-TW.resx">
       <DependentUpon>FirstTimeConfigForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FirstTimeUploadForm.ja-JP.resx">
+      <DependentUpon>FirstTimeUploadForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FirstTimeUploadForm.resx">
       <DependentUpon>FirstTimeUploadForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -1215,6 +1218,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\HotkeySettingsForm.zh-TW.resx">
       <DependentUpon>HotkeySettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\InspectWindowForm.ja-JP.resx">
+      <DependentUpon>InspectWindowForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\InspectWindowForm.resx">
       <DependentUpon>InspectWindowForm.cs</DependentUpon>

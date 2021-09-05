@@ -254,6 +254,9 @@
     <EmbeddedResource Include="Forms\HistoryItemInfoForm.zh-TW.resx">
       <DependentUpon>HistoryItemInfoForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\HistorySettingsForm.ja-JP.resx">
+      <DependentUpon>HistorySettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\HistorySettingsForm.resx">
       <DependentUpon>HistorySettingsForm.cs</DependentUpon>
     </EmbeddedResource>
