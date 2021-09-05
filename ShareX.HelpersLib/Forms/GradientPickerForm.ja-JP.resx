@@ -126,4 +126,13 @@
   <data name="cbtnCurrentColor.Text" xml:space="preserve">
     <value>色</value>
   </data>
+  <data name="btnCancel.Text" xml:space="preserve">
+    <value>キャンセル</value>
+  </data>
+  <data name="btnAdd.Text" xml:space="preserve">
+    <value>追加</value>
+  </data>
+  <data name="btnClear.Text" xml:space="preserve">
+    <value>クリア</value>
+  </data>
 </root>

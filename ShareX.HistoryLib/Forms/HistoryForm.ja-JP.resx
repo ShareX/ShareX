@@ -144,4 +144,31 @@
   <data name="lblFilterTo.Text" xml:space="preserve">
     <value>終了日:</value>
   </data>
+  <data name="btnAdvancedSearch.Text" xml:space="preserve">
+    <value>検索</value>
+  </data>
+  <data name="btnAdvancedSearchReset.Text" xml:space="preserve">
+    <value>リセット</value>
+  </data>
+  <data name="gbAdvancedSearch.Text" xml:space="preserve">
+    <value>高度な検索</value>
+  </data>
+  <data name="tsbAdvancedSearch.Text" xml:space="preserve">
+    <value>高度な検索</value>
+  </data>
+  <data name="tsbCopyStats.Text" xml:space="preserve">
+    <value>利用状況のサマリーをクリップボードにコピー</value>
+  </data>
+  <data name="tsbSearch.Text" xml:space="preserve">
+    <value>検索</value>
+  </data>
+  <data name="tsbSettings.Text" xml:space="preserve">
+    <value>設定:</value>
+  </data>
+  <data name="tsbToggleMoreInfo.Text" xml:space="preserve">
+    <value>詳細情報の表示・非表示の切り替え</value>
+  </data>
+  <data name="tslSearch.Text" xml:space="preserve">
+    <value>検索:</value>
+  </data>
 </root>

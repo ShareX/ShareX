@@ -229,7 +229,7 @@
     <value>ffmpeg.exe の参照</value>
   </data>
   <data name="ShapeManager_CreateToolbar_DropShadow" xml:space="preserve">
-    <value>ドロップシャドウ</value>
+    <value>影を付ける</value>
   </data>
   <data name="ShapeManager_CreateContextMenu_Square_shape_magnifier" xml:space="preserve">
     <value>四角形ルーペ</value>
@@ -437,5 +437,8 @@
   </data>
   <data name="ScreenRecordForm_StartRecording_Click_tray_icon_to_stop_recording_" xml:space="preserve">
     <value>クリックすると録画を停止</value>
+  </data>
+  <data name="ScreenRecordForm_ConfirmCancel" xml:space="preserve">
+    <value>レコーディングを停止してよいですか？</value>
   </data>
 </root>

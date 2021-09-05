@@ -789,4 +789,16 @@
   <data name="tsmiInspectWindow.Text" xml:space="preserve">
     <value>ウィンドウの調査...</value>
   </data>
+  <data name="tsmiGoogleImageSearch.Text" xml:space="preserve">
+    <value>Google画像検索...</value>
+  </data>
+  <data name="tsmiCombineImagesHorizontally.Text" xml:space="preserve">
+    <value>横に並べて結合</value>
+  </data>
+  <data name="tsmiCombineImagesVertically.Text" xml:space="preserve">
+    <value>縦に並べて結合</value>
+  </data>
+  <data name="tsmiBingVisualSearch.Text" xml:space="preserve">
+    <value>Bing画像検索でOCR</value>
+  </data>
 </root>

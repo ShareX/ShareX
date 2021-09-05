@@ -118,13 +118,13 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="cbOverrideAfterCaptureSettings.Text" xml:space="preserve">
-    <value>「キャプチャー後」設定を上書きする</value>
+    <value>「キャプチャー後」の設定を変更する</value>
   </data>
   <data name="cbOverrideAfterUploadSettings.Text" xml:space="preserve">
-    <value>「アップロード後」設定を上書きする</value>
+    <value>「アップロード後」の設定を変更する</value>
   </data>
   <data name="cbOverrideDestinationSettings.Text" xml:space="preserve">
-    <value>「アップロード先」設定を上書きする</value>
+    <value>「アップロード先」の設定を変更する</value>
   </data>
   <data name="lblDescription.Text" xml:space="preserve">
     <value>説明:</value>
@@ -193,7 +193,7 @@
     <value>PNG ビットの深さ:</value>
   </data>
   <data name="cbImageAutoUseJPEG.Text" xml:space="preserve">
-    <value>次の画像サイズより大きい時はJPEG画像形式を使用する:</value>
+    <value>次のファイルサイズより大きい時はJPEG画像形式を使用する:</value>
   </data>
   <data name="lblImageFormat.Text" xml:space="preserve">
     <value>画像フォーマット:</value>
@@ -587,5 +587,53 @@
   </data>
   <data name="tpNotifications.Text" xml:space="preserve">
     <value>通知</value>
+  </data>
+  <data name="cbOverrideActions.Text" xml:space="preserve">
+    <value>「アクション」の設定を変更する</value>
+  </data>
+  <data name="cbOverrideAdvancedSettings.Text" xml:space="preserve">
+    <value>「高度な設定」の設定を変更する</value>
+  </data>
+  <data name="cbOverrideCaptureSettings.Text" xml:space="preserve">
+    <value>「キャプチャー」の設定を変更する</value>
+  </data>
+  <data name="cbOverrideGeneralSettings.Text" xml:space="preserve">
+    <value>「全般」の設定を上書きする</value>
+  </data>
+  <data name="cbOverrideImageSettings.Text" xml:space="preserve">
+    <value>「画像」の設定を上書きする</value>
+  </data>
+  <data name="cbOverrideCustomUploader.Text" xml:space="preserve">
+    <value>「デフォルトのアップローダー」を変更する</value>
+  </data>
+  <data name="cbOverrideFTPAccount.Text" xml:space="preserve">
+    <value>「デフォルトのFTPアカウント」を変更する</value>
+  </data>
+  <data name="cbOverrideToolsSettings.Text" xml:space="preserve">
+    <value>「ツール」の設定を変更する</value>
+  </data>
+  <data name="cbOverrideUploadSettings.Text" xml:space="preserve">
+    <value>「アップロード」の設定を変更する</value>
+  </data>
+  <data name="cbShowImageEffectsWindowAfterCapture.Text" xml:space="preserve">
+    <value>キャプチャー後に画像エフェクトのウィンドウを表示する</value>
+  </data>
+  <data name="cbScreenRecordAutoStart.Text" xml:space="preserve">
+    <value>録画開始を遅らせる:</value>
+  </data>
+  <data name="cbScreenRecordConfirmAbort.Text" xml:space="preserve">
+    <value>録画を中断するときに確認する</value>
+  </data>
+  <data name="cbScreenRecordTransparentRegion.Text" xml:space="preserve">
+    <value>透明な領域選択を使う</value>
+  </data>
+  <data name="cbImageAutoJPEGQuality.Text" xml:space="preserve">
+    <value>指定のファイルサイズになるように画質を自動で調整する</value>
+  </data>
+  <data name="btnActions.Text" xml:space="preserve">
+    <value>説明を開く</value>
+  </data>
+  <data name="cbScreenRecordTwoPassEncoding.Text" xml:space="preserve">
+    <value>ロスレス・エンコーディングで録画した後、ユーザー・エンコーディング・オプションを適用する</value>
   </data>
 </root>
