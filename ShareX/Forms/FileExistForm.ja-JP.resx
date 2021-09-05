@@ -130,7 +130,7 @@
     <value>上書きする:</value>
   </data>
   <data name="btnUniqueName.Text" xml:space="preserve">
-    <value>一意の名前を使用:</value>
+    <value>一意の名前を使用: </value>
   </data>
   <data name="lblTitle.Text" xml:space="preserve">
     <value>この場所にはすでに同名のファイルがあります。

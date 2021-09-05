@@ -1249,4 +1249,22 @@
   <data name="StepType_RomanNumeralsUppercase" xml:space="preserve">
     <value>ローマ数字(大)</value>
   </data>
+  <data name="ReplCodeMenuCategory_Window" xml:space="preserve">
+    <value>ウィンドウ</value>
+  </data>
+  <data name="URLSharingServices_BingVisualSearch" xml:space="preserve">
+    <value>Bing画像検索</value>
+  </data>
+  <data name="ResultOfFirstFile" xml:space="preserve">
+    <value>1つ目のファイルの結果:</value>
+  </data>
+  <data name="ResultOfSecondFile" xml:space="preserve">
+    <value>2つ目のファイルの結果:</value>
+  </data>
+  <data name="Result" xml:space="preserve">
+    <value>ハッシュ値:</value>
+  </data>
+  <data name="Target" xml:space="preserve">
+    <value>期待するハッシュ値:</value>
+  </data>
 </root>

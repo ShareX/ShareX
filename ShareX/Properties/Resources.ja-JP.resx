@@ -604,4 +604,10 @@ ShareX を再起動しますか？</value>
   <data name="FFmpeg_Missing" xml:space="preserve">
     <value>FFmpegがインストールされていない</value>
   </data>
+  <data name="FailedToSaveSettings" xml:space="preserve">
+    <value>設定の保存に失敗しました</value>
+  </data>
+  <data name="ThisFeatureWillNotWorkWhenDisableUploadOptionIsEnabled" xml:space="preserve">
+    <value>アップロードが禁止されている状態では、この機能は利用できません</value>
+  </data>
 </root>

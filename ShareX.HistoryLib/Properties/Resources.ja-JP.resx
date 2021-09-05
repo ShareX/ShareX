@@ -219,4 +219,10 @@
   <data name="HistoryItemManager_InitializeComponent_UploadFile" xml:space="preserve">
     <value>ファイルアップロード</value>
   </data>
+  <data name="ErrorOccuredWhileReadingHistoryFile" xml:space="preserve">
+    <value>履歴を読み込むときにエラーがおきました</value>
+  </data>
+  <data name="HistoryForm_Search_Watermark" xml:space="preserve">
+    <value>ファイル名、ウィンドウ名などを入力して検索</value>
+  </data>
 </root>

@@ -180,4 +180,10 @@
   <data name="cbCompareTwoFiles.Text" xml:space="preserve">
     <value>2つのファイルを比較する</value>
   </data>
+  <data name="lblFilePath.Text" xml:space="preserve">
+    <value>ファイルのパス</value>
+  </data>
+  <data name="lblFilePath2.Text" xml:space="preserve">
+    <value>ファイルのパス</value>
+  </data>
 </root>

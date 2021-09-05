@@ -117,22 +117,16 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="btnLoadedAssemblies.Text" xml:space="preserve">
-    <value>読み込まれたアセンブリ</value>
-  </data>
-  <data name="btnCopyAll.Text" xml:space="preserve">
-    <value>すべてコピー</value>
-  </data>
-  <data name="btnOpenLogFile.Text" xml:space="preserve">
-    <value>ログファイルを開く...</value>
-  </data>
-  <data name="lblRunningFrom.Text" xml:space="preserve">
-    <value>開始パス:</value>
+  <data name="btnRefresh.Text" xml:space="preserve">
+    <value>再読み込み</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - デバッグ ログ</value>
+    <value>ShareX - ウィンドウの調査</value>
   </data>
-  <data name="btnUploadLog.Text" xml:space="preserve">
-    <value>ログをアップロードする</value>
+  <data name="btnInspectWindow.Text" xml:space="preserve">
+    <value>ウィンドウを調べる</value>
+  </data>
+  <data name="btnInspectControl.Text" xml:space="preserve">
+    <value>コントロールを調べる</value>
   </data>
 </root>

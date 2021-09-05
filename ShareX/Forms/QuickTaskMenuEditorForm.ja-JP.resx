@@ -127,7 +127,7 @@
     <value>削除</value>
   </data>
   <data name="btnReset.Text" xml:space="preserve">
-    <value>既定にリセット</value>
+    <value>既定にリセット...</value>
   </data>
   <data name="btnClose.Text" xml:space="preserve">
     <value>閉じる</value>

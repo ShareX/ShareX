@@ -175,7 +175,7 @@
     <value>削除</value>
   </data>
   <data name="btnThemeReset.Text" xml:space="preserve">
-    <value>リセット</value>
+    <value>リセット...</value>
   </data>
   <data name="cbCheckPreReleaseUpdates.Text" xml:space="preserve">
     <value>プレリリース版の更新を確認する</value>
@@ -229,7 +229,7 @@
     <value>エクスプローラのコンテキストメニューに「ShareXでアップロード」を表示する</value>
   </data>
   <data name="cbShowTray.Text" xml:space="preserve">
-    <value>システムトレイ アイコンを表示する</value>
+    <value>トレイアイコンを表示する</value>
   </data>
   <data name="cbSilentRun.Text" xml:space="preserve">
     <value>起動時にシステムトレイに最小化する</value>
@@ -241,7 +241,7 @@
     <value>進行状況をタスクバーに表示する</value>
   </data>
   <data name="cbTrayIconProgressEnabled.Text" xml:space="preserve">
-    <value>進行状況をシステムトレイ アイコンに表示する</value>
+    <value>進行状況をトレイアイコンに表示する</value>
   </data>
   <data name="cbUseCustomScreenshotsPath.Text" xml:space="preserve">
     <value>独自の画像保存フォルダーを使用する:</value>
@@ -372,9 +372,6 @@
   <data name="cbUseCustomTheme.Text" xml:space="preserve">
     <value>独自のテーマを使う</value>
   </data>
-  <data name="gbSteam.Text" xml:space="preserve">
-    <value>Stream</value>
-  </data>
   <data name="gbWindows.Text" xml:space="preserve">
     <value>Windows</value>
   </data>
@@ -386,5 +383,8 @@
   </data>
   <data name="cbAutomaticallyCleanupLogFiles.Text" xml:space="preserve">
     <value>古いログファイルを自動的に削除する</value>
+  </data>
+  <data name="cbUseSecondaryUploaders.Text" xml:space="preserve">
+    <value>アップロードに失敗したときに別のアップロードを実行する</value>
   </data>
 </root>
