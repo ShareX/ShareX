@@ -69,6 +69,7 @@ namespace ShareX.Setup
         private static string ParentDir => AppVeyor ? "." : @"..\..\..\";
         private static string BinDir => Path.Combine(ParentDir, "ShareX", "bin");
         private static string ReleaseDir => Path.Combine(BinDir, "Release");
+        private static string ReleaseExecutablePath => Path.Combine(ReleaseDir, "ShareX.exe");
         private static string DebugDir => Path.Combine(BinDir, "Debug");
         private static string DebugExecutablePath => Path.Combine(DebugDir, "ShareX.exe");
         private static string SteamDir => Path.Combine(BinDir, "Steam");
@@ -324,9 +325,10 @@ namespace ShareX.Setup
             {
                 Helpers.CreateEmptyFile(Path.Combine(destination, "Portable"));
 
-                //FileVersionInfo versionInfo = FileVersionInfo.GetVersionInfo(Path.Combine(releaseDir, "ShareX.exe"));
-                //string zipFilename = string.Format("ShareX-{0}.{1}.{2}-portable.zip", versionInfo.ProductMajorPart, versionInfo.ProductMinorPart, versionInfo.ProductBuildPart);
-                string zipPath = Path.Combine(OutputDir, "ShareX-portable.zip");
+                FileVersionInfo versionInfo = FileVersionInfo.GetVersionInfo(ReleaseExecutablePath);
+                string zipFilename = string.Format("ShareX-{0}.{1}.{2}-portable.zip", versionInfo.ProductMajorPart, versionInfo.ProductMinorPart, versionInfo.ProductBuildPart);
+                string zipPath = Path.Combine(OutputDir, zipFilename);
+                //string zipPath = Path.Combine(OutputDir, "ShareX-portable.zip");
                 ZipManager.Compress(Path.GetFullPath(destination), Path.GetFullPath(zipPath));
 
                 Directory.Delete(destination, true);

@@ -23,7 +23,7 @@ after_build:
 artifacts:
 - path: ShareX-*-setup.exe
   name: Setup
-- path: ShareX-portable.zip
+- path: ShareX-*-portable.zip
   name: Portable
 - path: ShareX-Steam
   name: Steam
