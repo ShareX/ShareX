@@ -534,7 +534,7 @@ Orta fare tuşu kapatmak için</value>
   <data name="WouldYouLikeToEnableImageEffects" xml:space="preserve">
     <value>Görüntü efektlerini etkinleştirmek ister misiniz?
 
-Daha sonra "Yakalama görevleri" menüsünden devre dışı bırakabilirsiniz.</value>
+Daha sonra "Yakalama sonrası" menüsünden devre dışı bırakabilirsiniz.</value>
   </data>
   <data name="ShareXNeedsToBeRestartedForThePersonalFolderChangesToApply" xml:space="preserve">
     <value>Kişisel klasör değişikliklerinin uygulanması için ShareX'in yeniden başlatılması gerekir.

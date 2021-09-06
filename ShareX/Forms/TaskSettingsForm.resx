@@ -160,7 +160,7 @@
     <value>3</value>
   </data>
   <data name="cbOverrideAfterCaptureSettings.Text" xml:space="preserve">
-    <value>Override after capture settings</value>
+    <value>Override after capture tasks</value>
   </data>
   <data name="&gt;&gt;cbOverrideAfterCaptureSettings.Name" xml:space="preserve">
     <value>cbOverrideAfterCaptureSettings</value>
@@ -190,7 +190,7 @@
     <value>5</value>
   </data>
   <data name="cbOverrideAfterUploadSettings.Text" xml:space="preserve">
-    <value>Override after upload settings</value>
+    <value>Override after upload tasks</value>
   </data>
   <data name="&gt;&gt;cbOverrideAfterUploadSettings.Name" xml:space="preserve">
     <value>cbOverrideAfterUploadSettings</value>
