@@ -159,7 +159,7 @@
   <data name="cbAmazonS3CustomCNAME.ToolTip" xml:space="preserve">
     <value>Use this option if you have a bucket set up with a custom domain.
 If text field is empty then bucket name will be used for URL.
-For example, if your bucket is called bucket.example.com then URL will be http://bucket.example.com/...</value>
+For example, if your bucket is called "bucket.example.com" then URL will be "http://bucket.example.com/...".</value>
   </data>
   <data name="&gt;&gt;cbAmazonS3CustomCNAME.Name" xml:space="preserve">
     <value>cbAmazonS3CustomCNAME</value>
@@ -6413,7 +6413,7 @@ when you made the application key.</value>
     <value>24</value>
   </data>
   <data name="lblB2ApplicationKey.Text" xml:space="preserve">
-    <value>Application Key (secret):</value>
+    <value>Application key (secret):</value>
   </data>
   <data name="&gt;&gt;lblB2ApplicationKey.Name" xml:space="preserve">
     <value>lblB2ApplicationKey</value>
@@ -7052,7 +7052,7 @@ when you made the application key.</value>
     <value>15</value>
   </data>
   <data name="lblOwnCloudExpiryTime.Text" xml:space="preserve">
-    <value>Expiry Time (days):</value>
+    <value>Expiry time (days):</value>
   </data>
   <data name="&gt;&gt;lblOwnCloudExpiryTime.Name" xml:space="preserve">
     <value>lblOwnCloudExpiryTime</value>
@@ -11051,7 +11051,7 @@ Using an encrypted library disables sharing.</value>
     <value>13</value>
   </data>
   <data name="gbPlikLoginCredentials.Text" xml:space="preserve">
-    <value>Login Credentials</value>
+    <value>Login credentials</value>
   </data>
   <data name="&gt;&gt;gbPlikLoginCredentials.Name" xml:space="preserve">
     <value>gbPlikLoginCredentials</value>

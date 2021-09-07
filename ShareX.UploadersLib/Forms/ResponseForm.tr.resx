@@ -118,16 +118,16 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Cevap</value>
+    <value>ShareX - Yanıt</value>
   </data>
   <data name="tpWebBrowser.Text" xml:space="preserve">
     <value>İnternet tarayıcı</value>
   </data>
   <data name="tpResponseText.Text" xml:space="preserve">
-    <value>Cevap içeriği</value>
+    <value>Yanıt içeriği</value>
   </data>
   <data name="tpResponseInfo.Text" xml:space="preserve">
-    <value>Cevap bilgisi</value>
+    <value>Yanıt bilgisi</value>
   </data>
   <data name="tpResult.Text" xml:space="preserve">
     <value>Sonuç</value>
@@ -145,7 +145,7 @@
     <value>Adresi kopyala</value>
   </data>
   <data name="tsbResponseTextCopy.Text" xml:space="preserve">
-    <value>Cevap içeriğini kopyala</value>
+    <value>Yanıt içeriğini kopyala</value>
   </data>
   <data name="tsbCopyShortenedURL.Text" xml:space="preserve">
     <value>Kısaltılmış adresi kopyala</value>

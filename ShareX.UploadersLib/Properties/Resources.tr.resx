@@ -220,4 +220,28 @@ Oluşturulmuş dizinler:</value>
   <data name="UploadersConfigForm_UpdatePastebinStatus_NotLoggedIn" xml:space="preserve">
     <value>Giriş yapılmadı.</value>
   </data>
+  <data name="CustomUploaderItem_GetFileFormName_FileFormNameMustBeConfigured" xml:space="preserve">
+    <value>"Dosya form ismi" ayarlanmalıdır.</value>
+  </data>
+  <data name="CustomUploaderItem_GetRequestURL_RequestURLMustBeConfigured" xml:space="preserve">
+    <value>"İstek adresi" ayarlanmalıdır.</value>
+  </data>
+  <data name="UploadersConfigForm_eiCustomUploaders_ExportRequested_RequestURLMustBeConfigured" xml:space="preserve">
+    <value>"İstek adresi" ayarlanmalıdır.</value>
+  </data>
+  <data name="UploadersConfigForm_eiCustomUploaders_ExportRequested_DestinationTypeMustBeConfigured" xml:space="preserve">
+    <value>"Hedef tipi" ayarlanmalıdır.</value>
+  </data>
+  <data name="DuplicateNameNotAllowed" xml:space="preserve">
+    <value>Yinelenen isim kullanılamaz.</value>
+  </data>
+  <data name="UploadersConfigForm_ConnectSFTPAccount_Key_file_not_found" xml:space="preserve">
+    <value>Anahtar dosyası mevcut değil.</value>
+  </data>
+  <data name="LoggedInAs0" xml:space="preserve">
+    <value>{0} olarak giriş yapıldı.</value>
+  </data>
+  <data name="GoogleDrive_MyDrive_My_drive" xml:space="preserve">
+    <value>Drive'ım</value>
+  </data>
 </root>
