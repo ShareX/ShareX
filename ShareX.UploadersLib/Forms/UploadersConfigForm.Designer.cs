@@ -462,7 +462,7 @@ namespace ShareX.UploadersLib
             this.cbPlikRemovable = new System.Windows.Forms.CheckBox();
             this.gbPlikLoginCredentials = new System.Windows.Forms.GroupBox();
             this.nudPlikTTL = new System.Windows.Forms.NumericUpDown();
-            this.cbxPlikTTLUnit = new System.Windows.Forms.ComboBox();
+            this.cbPlikTTLUnit = new System.Windows.Forms.ComboBox();
             this.lblPlikTTL = new System.Windows.Forms.Label();
             this.txtPlikURL = new System.Windows.Forms.TextBox();
             this.lblPlikURL = new System.Windows.Forms.Label();
@@ -3688,7 +3688,7 @@ namespace ShareX.UploadersLib
             // gbPlikLoginCredentials
             // 
             this.gbPlikLoginCredentials.Controls.Add(this.nudPlikTTL);
-            this.gbPlikLoginCredentials.Controls.Add(this.cbxPlikTTLUnit);
+            this.gbPlikLoginCredentials.Controls.Add(this.cbPlikTTLUnit);
             this.gbPlikLoginCredentials.Controls.Add(this.lblPlikTTL);
             this.gbPlikLoginCredentials.Controls.Add(this.txtPlikURL);
             this.gbPlikLoginCredentials.Controls.Add(this.lblPlikURL);
@@ -3725,18 +3725,18 @@ namespace ShareX.UploadersLib
             0});
             this.nudPlikTTL.ValueChanged += new System.EventHandler(this.nudPlikTTL_ValueChanged);
             // 
-            // cbxPlikTTLUnit
+            // cbPlikTTLUnit
             // 
-            this.cbxPlikTTLUnit.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbxPlikTTLUnit.FormattingEnabled = true;
-            this.cbxPlikTTLUnit.Items.AddRange(new object[] {
-            resources.GetString("cbxPlikTTLUnit.Items"),
-            resources.GetString("cbxPlikTTLUnit.Items1"),
-            resources.GetString("cbxPlikTTLUnit.Items2"),
-            resources.GetString("cbxPlikTTLUnit.Items3")});
-            resources.ApplyResources(this.cbxPlikTTLUnit, "cbxPlikTTLUnit");
-            this.cbxPlikTTLUnit.Name = "cbxPlikTTLUnit";
-            this.cbxPlikTTLUnit.SelectedIndexChanged += new System.EventHandler(this.cbxPlikTTLUnit_SelectedIndexChanged);
+            this.cbPlikTTLUnit.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbPlikTTLUnit.FormattingEnabled = true;
+            this.cbPlikTTLUnit.Items.AddRange(new object[] {
+            resources.GetString("cbPlikTTLUnit.Items"),
+            resources.GetString("cbPlikTTLUnit.Items1"),
+            resources.GetString("cbPlikTTLUnit.Items2"),
+            resources.GetString("cbPlikTTLUnit.Items3")});
+            resources.ApplyResources(this.cbPlikTTLUnit, "cbPlikTTLUnit");
+            this.cbPlikTTLUnit.Name = "cbPlikTTLUnit";
+            this.cbPlikTTLUnit.SelectedIndexChanged += new System.EventHandler(this.cbPlikTTLUnit_SelectedIndexChanged);
             // 
             // lblPlikTTL
             // 
@@ -5494,7 +5494,7 @@ namespace ShareX.UploadersLib
         private System.Windows.Forms.Label lblPlikURL;
         private System.Windows.Forms.TextBox txtPlikURL;
         private System.Windows.Forms.CheckBox cbPlikOneShot;
-        private System.Windows.Forms.ComboBox cbxPlikTTLUnit;
+        private System.Windows.Forms.ComboBox cbPlikTTLUnit;
         private System.Windows.Forms.NumericUpDown nudPlikTTL;
         private System.Windows.Forms.Label lblPlikTTL;
         private System.Windows.Forms.TextBox txtGistCustomURL;

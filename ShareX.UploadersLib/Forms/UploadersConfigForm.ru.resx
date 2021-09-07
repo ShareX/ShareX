@@ -732,17 +732,8 @@
   <data name="lblPlikTTL.Text" xml:space="preserve">
     <value>Файлы автоматически удалятся через </value>
   </data>
-  <data name="cbxPlikTTLUnit.Items1" xml:space="preserve">
-    <value>часов</value>
-  </data>
-  <data name="cbxPlikTTLUnit.Items2" xml:space="preserve">
-    <value>минут</value>
-  </data>
-  <data name="cbxPlikTTLUnit.Items" xml:space="preserve">
-    <value>дней</value>
-  </data>
   <data name="lblPlikAPIKey.Text" xml:space="preserve">
-    <value>Ключи API: </value>
+    <value>Ключи API:</value>
   </data>
   <data name="lblPlikPassword.Text" xml:space="preserve">
     <value>Пароль:</value>
@@ -863,9 +854,6 @@
   </data>
   <data name="cbAmazonS3UsePathStyle.Text" xml:space="preserve">
     <value>Использовать запрос в виде пути</value>
-  </data>
-  <data name="cbxPlikTTLUnit.Items3" xml:space="preserve">
-    <value>никогда</value>
   </data>
   <data name="lblAzureStorageCustomDomain.Text" xml:space="preserve">
     <value>Пользовательский домен:</value>

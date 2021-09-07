@@ -636,18 +636,6 @@
   <data name="gbPlikSettings.Text" xml:space="preserve">
     <value>その他の設定</value>
   </data>
-  <data name="cbxPlikTTLUnit.Items" xml:space="preserve">
-    <value>日</value>
-  </data>
-  <data name="cbxPlikTTLUnit.Items1" xml:space="preserve">
-    <value>時間</value>
-  </data>
-  <data name="cbxPlikTTLUnit.Items2" xml:space="preserve">
-    <value>分</value>
-  </data>
-  <data name="cbxPlikTTLUnit.Items3" xml:space="preserve">
-    <value>削除しない</value>
-  </data>
   <data name="lblPlikTTL.Text" xml:space="preserve">
     <value>ファイル自動削除までの期間</value>
   </data>

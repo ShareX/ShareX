@@ -312,9 +312,6 @@
   <data name="lblPhotobucketAccountStatus.Text" xml:space="preserve">
     <value>Acceso requerido.</value>
   </data>
-  <data name="cbxPlikTTLUnit.Items2" xml:space="preserve">
-    <value>minutos</value>
-  </data>
   <data name="colSeafileLibraryName.Text" xml:space="preserve">
     <value>Nombre</value>
   </data>
@@ -326,9 +323,6 @@
   </data>
   <data name="lblTwitterDescription.Text" xml:space="preserve">
     <value>Nombre:</value>
-  </data>
-  <data name="cbxPlikTTLUnit.Items3" xml:space="preserve">
-    <value>nunca</value>
   </data>
   <data name="lblSeafilePassword.Text" xml:space="preserve">
     <value>Contraseña:</value>
@@ -733,12 +727,6 @@ Por ejemplo, si el bucket se llama bucket.example.com, la URL será http://bucke
   </data>
   <data name="cbTwitterSkipMessageBox.Text" xml:space="preserve">
     <value>Ignorar cuadro para enviar mensaje</value>
-  </data>
-  <data name="cbxPlikTTLUnit.Items" xml:space="preserve">
-    <value>días</value>
-  </data>
-  <data name="cbxPlikTTLUnit.Items1" xml:space="preserve">
-    <value>horas</value>
   </data>
   <data name="cbYouTubeUseShortenedLink.Text" xml:space="preserve">
     <value>Usar enlace acortado</value>

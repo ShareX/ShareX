@@ -707,7 +707,7 @@ namespace ShareX.UploadersLib
             cbPlikRemovable.Checked = Config.PlikSettings.Removable;
             cbPlikOneShot.Checked = Config.PlikSettings.OneShot;
             nudPlikTTL.Value = Config.PlikSettings.TTL;
-            cbxPlikTTLUnit.SelectedIndex = Config.PlikSettings.TTLUnit;
+            cbPlikTTLUnit.SelectedIndex = Config.PlikSettings.TTLUnit;
             txtPlikComment.ReadOnly = !cbPlikComment.Checked;
             txtPlikLogin.ReadOnly = !cbPlikIsSecured.Checked;
             txtPlikPassword.ReadOnly = !cbPlikIsSecured.Checked;
@@ -2982,10 +2982,10 @@ namespace ShareX.UploadersLib
             Config.PlikSettings.OneShot = cbPlikOneShot.Checked;
         }
 
-        private void cbxPlikTTLUnit_SelectedIndexChanged(object sender, EventArgs e)
+        private void cbPlikTTLUnit_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Plik.CalculateTTLValue(nudPlikTTL, cbxPlikTTLUnit.SelectedIndex, Config.PlikSettings.TTLUnit);
-            Config.PlikSettings.TTLUnit = cbxPlikTTLUnit.SelectedIndex;
+            Plik.CalculateTTLValue(nudPlikTTL, cbPlikTTLUnit.SelectedIndex, Config.PlikSettings.TTLUnit);
+            Config.PlikSettings.TTLUnit = cbPlikTTLUnit.SelectedIndex;
         }
 
         private void nudPlikTTL_ValueChanged(object sender, EventArgs e)

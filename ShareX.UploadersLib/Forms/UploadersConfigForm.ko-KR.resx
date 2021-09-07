@@ -1047,18 +1047,6 @@
   <data name="gbPlikSettings.Text" xml:space="preserve">
     <value>기타 설정</value>
   </data>
-  <data name="cbxPlikTTLUnit.Items" xml:space="preserve">
-    <value>일</value>
-  </data>
-  <data name="cbxPlikTTLUnit.Items1" xml:space="preserve">
-    <value>시</value>
-  </data>
-  <data name="cbxPlikTTLUnit.Items2" xml:space="preserve">
-    <value>분</value>
-  </data>
-  <data name="cbxPlikTTLUnit.Items3" xml:space="preserve">
-    <value>삭제되지 않음</value>
-  </data>
   <data name="lblPlikTTL.Text" xml:space="preserve">
     <value>다음 시간 뒤 파일 자동 삭제 </value>
   </data>

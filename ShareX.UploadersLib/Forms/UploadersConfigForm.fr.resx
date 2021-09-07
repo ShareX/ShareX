@@ -813,23 +813,11 @@ Utiliser une bibliothèque chiffrée désactive le partage.</value>
   <data name="lblGistCustomURLExample.Text" xml:space="preserve">
     <value>Exemple : https://api.github.com</value>
   </data>
-  <data name="cbxPlikTTLUnit.Items" xml:space="preserve">
-    <value>jours</value>
-  </data>
-  <data name="cbxPlikTTLUnit.Items1" xml:space="preserve">
-    <value>heures</value>
-  </data>
-  <data name="cbxPlikTTLUnit.Items2" xml:space="preserve">
-    <value>minutes</value>
-  </data>
   <data name="cbPlikOneShot.Text" xml:space="preserve">
     <value>Détruire après le premier téléchargement</value>
   </data>
   <data name="gbPlikSettings.Text" xml:space="preserve">
     <value>Autres paramètres</value>
-  </data>
-  <data name="cbxPlikTTLUnit.Items3" xml:space="preserve">
-    <value>jamais</value>
   </data>
   <data name="lblPlikURL.Text" xml:space="preserve">
     <value>Hôte</value>

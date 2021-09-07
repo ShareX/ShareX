@@ -804,9 +804,6 @@ Mesela klasör ismi "bucket.example.com" ise o zaman adres "http://bucket.exampl
   <data name="btnPuushLogin.Text" xml:space="preserve">
     <value>Giriş</value>
   </data>
-  <data name="cbxPlikTTLUnit.Items3" xml:space="preserve">
-    <value>hiçbir zaman</value>
-  </data>
   <data name="btnLithiioGetAPIKey.Text" xml:space="preserve">
     <value>Hesap sayfasını aç...</value>
   </data>
@@ -957,15 +954,6 @@ Mesela klasör ismi "bucket.example.com" ise o zaman adres "http://bucket.exampl
   <data name="cbFirebaseIsShort.Text" xml:space="preserve">
     <value>Kısa bağlantı</value>
   </data>
-  <data name="cbxPlikTTLUnit.Items" xml:space="preserve">
-    <value>gün</value>
-  </data>
-  <data name="cbxPlikTTLUnit.Items1" xml:space="preserve">
-    <value>saat</value>
-  </data>
-  <data name="cbxPlikTTLUnit.Items2" xml:space="preserve">
-    <value>dakika</value>
-  </data>
   <data name="cbGfycatKeepAudio.Text" xml:space="preserve">
     <value>Sesi koru</value>
   </data>
@@ -1088,5 +1076,17 @@ Mesela klasör ismi "bucket.example.com" ise o zaman adres "http://bucket.exampl
   </data>
   <data name="cbB2CustomUrl.Text" xml:space="preserve">
     <value>Özel adres kullan:</value>
+  </data>
+  <data name="cbPlikTTLUnit.Items" xml:space="preserve">
+    <value>gün</value>
+  </data>
+  <data name="cbPlikTTLUnit.Items1" xml:space="preserve">
+    <value>saat</value>
+  </data>
+  <data name="cbPlikTTLUnit.Items2" xml:space="preserve">
+    <value>dakika</value>
+  </data>
+  <data name="cbPlikTTLUnit.Items3" xml:space="preserve">
+    <value>hiçbir zaman</value>
   </data>
 </root>

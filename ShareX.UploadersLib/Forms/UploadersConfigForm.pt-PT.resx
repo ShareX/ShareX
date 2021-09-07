@@ -783,18 +783,6 @@ Utilizar uma biblioteca encriptada desactiva compartilhamento.</value>
   <data name="gbPlikLoginCredentials.Text" xml:space="preserve">
     <value>Credenciais de início de sessão</value>
   </data>
-  <data name="cbxPlikTTLUnit.Items" xml:space="preserve">
-    <value>dias</value>
-  </data>
-  <data name="cbxPlikTTLUnit.Items1" xml:space="preserve">
-    <value>horas</value>
-  </data>
-  <data name="cbxPlikTTLUnit.Items2" xml:space="preserve">
-    <value>minutos</value>
-  </data>
-  <data name="cbxPlikTTLUnit.Items3" xml:space="preserve">
-    <value>nunca</value>
-  </data>
   <data name="lblPlikTTL.Text" xml:space="preserve">
     <value>Ficheiro serão automáticamente removidos em </value>
   </data>

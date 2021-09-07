@@ -701,9 +701,6 @@ Ví dụ: nếu tên bucket là bucket.example.com thì URL sẽ là http://buck
   <data name="lblAzureStorageCustomDomain.Text" xml:space="preserve">
     <value>Tên miền tùy chỉnh:</value>
   </data>
-  <data name="cbxPlikTTLUnit.Items" xml:space="preserve">
-    <value>ngày</value>
-  </data>
   <data name="lblSeafileDaysToExpire.Text" xml:space="preserve">
     <value>Ngày tới khi hết hạn:</value>
   </data>
@@ -1073,9 +1070,6 @@ Ví dụ: nếu tên bucket là bucket.example.com thì URL sẽ là http://buck
   <data name="lblKuttHost.Text" xml:space="preserve">
     <value>Host:</value>
   </data>
-  <data name="cbxPlikTTLUnit.Items1" xml:space="preserve">
-    <value>giờ</value>
-  </data>
   <data name="txtJiraHost.Text" xml:space="preserve">
     <value>http://</value>
   </data>
@@ -1116,14 +1110,8 @@ Sử dụng thư viện được mã hóa sẽ vô hiệu hóa chia sẻ.</value
   <data name="gbPlikLoginCredentials.Text" xml:space="preserve">
     <value>Thông tin đăng nhập</value>
   </data>
-  <data name="cbxPlikTTLUnit.Items2" xml:space="preserve">
-    <value>phút</value>
-  </data>
   <data name="colSeafileLibraryName.Text" xml:space="preserve">
     <value>Tên</value>
-  </data>
-  <data name="cbxPlikTTLUnit.Items3" xml:space="preserve">
-    <value>không bao giờ</value>
   </data>
   <data name="lblGistOAuthInfo.Text" xml:space="preserve">
     <value>Lưu ý: GitHub Enterprise cho doanh nghiệp không được hỗ trợ.</value>

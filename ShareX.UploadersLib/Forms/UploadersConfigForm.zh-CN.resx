@@ -783,15 +783,6 @@
   <data name="gbPlikLoginCredentials.Text" xml:space="preserve">
     <value>登录信息</value>
   </data>
-  <data name="cbxPlikTTLUnit.Items" xml:space="preserve">
-    <value>天</value>
-  </data>
-  <data name="cbxPlikTTLUnit.Items1" xml:space="preserve">
-    <value>小时</value>
-  </data>
-  <data name="cbxPlikTTLUnit.Items2" xml:space="preserve">
-    <value>分钟</value>
-  </data>
   <data name="lblPlikTTL.Text" xml:space="preserve">
     <value>文件将被自动移除于 </value>
   </data>
@@ -833,9 +824,6 @@
   </data>
   <data name="cbPastieIsPublic.Text" xml:space="preserve">
     <value>是否公开上传?</value>
-  </data>
-  <data name="cbxPlikTTLUnit.Items3" xml:space="preserve">
-    <value>永不</value>
   </data>
   <data name="lvlVgymeUserKey.Text" xml:space="preserve">
     <value>用户密钥：</value>
