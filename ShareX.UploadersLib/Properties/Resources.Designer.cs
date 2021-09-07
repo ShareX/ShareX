@@ -705,7 +705,7 @@ namespace ShareX.UploadersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Optional, only used if you didn&apos;t set a bucket when you made the key.
+        ///   Looks up a localized string similar to (Optional) Only used if you didn&apos;t set a bucket when you made the key.
         /// </summary>
         internal static string txtB2BucketWatermark {
             get {
@@ -797,7 +797,7 @@ namespace ShareX.UploadersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Parent album path e.g..
+        ///   Looks up a localized string similar to Parent album path, for example:.
         /// </summary>
         internal static string UploadersConfigForm_LoadSettings_Parent_album_path_e_g_ {
             get {

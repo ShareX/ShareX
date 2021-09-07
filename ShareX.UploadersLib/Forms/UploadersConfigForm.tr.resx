@@ -1059,4 +1059,34 @@ Mesela klasör ismi "bucket.example.com" ise o zaman adres "http://bucket.exampl
   <data name="lblTeknikAuthUrl.Text" xml:space="preserve">
     <value>Kimlik doğrulama adresi:</value>
   </data>
+  <data name="cbFTPAppendRemoteDirectory.Text" xml:space="preserve">
+    <value>Adres yoluna uzak dizini ekle</value>
+  </data>
+  <data name="cbOwnCloudAutoExpire.Text" xml:space="preserve">
+    <value>Paylaşılan bağlantıları otomatik süre aşımına uğrat</value>
+  </data>
+  <data name="lblB2ManageLink.Text" xml:space="preserve">
+    <value>Uygulama anahtarı yaratmak veya klasörleri yönetmek için buraya tıklayın.</value>
+  </data>
+  <data name="lblPlikTTL.Text" xml:space="preserve">
+    <value>Dosyalar otomatik olarak silinecek şu zamanda</value>
+  </data>
+  <data name="cbKuttReuse.Text" xml:space="preserve">
+    <value>Belirtilen hedefe sahip bir adres varsa onu döndür</value>
+  </data>
+  <data name="cbEmailAutomaticSend.Text" xml:space="preserve">
+    <value>Bu eposta adresine pencere göstermeden eposta gönder:</value>
+  </data>
+  <data name="lblBoxShareAccessLevel.Text" xml:space="preserve">
+    <value>Paylaşılan bağlantı erişim düzeyi:</value>
+  </data>
+  <data name="cbAmazonS3PublicACL.Text" xml:space="preserve">
+    <value>Dosyada "public-read" ACL ayarla</value>
+  </data>
+  <data name="cbGoogleCloudStorageSetPublicACL.Text" xml:space="preserve">
+    <value>Dosyada "public-read" ACL ayarla</value>
+  </data>
+  <data name="cbB2CustomUrl.Text" xml:space="preserve">
+    <value>Özel adres kullan:</value>
+  </data>
 </root>

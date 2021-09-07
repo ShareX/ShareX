@@ -244,4 +244,7 @@ Oluşturulmuş dizinler:</value>
   <data name="GoogleDrive_MyDrive_My_drive" xml:space="preserve">
     <value>Drive'ım</value>
   </data>
+  <data name="txtB2BucketWatermark" xml:space="preserve">
+    <value>(Opsiyonel) Yalnızca anahtarı yaratırken bir klasör ayarlamadıysanız kullanılır</value>
+  </data>
 </root>

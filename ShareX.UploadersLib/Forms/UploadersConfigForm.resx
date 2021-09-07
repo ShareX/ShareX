@@ -213,7 +213,7 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
     <value>7</value>
   </data>
   <data name="cbB2CustomUrl.Text" xml:space="preserve">
-    <value>Use custom URL (supports pattern format):</value>
+    <value>Use custom URL:</value>
   </data>
   <data name="cbB2CustomUrl.ToolTip" xml:space="preserve">
     <value>If enabled, the URL you receive will be the upload path
@@ -10793,7 +10793,7 @@ Using an encrypted library disables sharing.</value>
     <value>17</value>
   </data>
   <data name="lblPlikTTL.Text" xml:space="preserve">
-    <value>Files will be automatically removed in </value>
+    <value>Files will be automatically removed in</value>
   </data>
   <data name="&gt;&gt;lblPlikTTL.Name" xml:space="preserve">
     <value>lblPlikTTL</value>
