@@ -192,9 +192,6 @@
   <data name="ShapeManager_CreateContextMenu_EnableAnimations" xml:space="preserve">
     <value>Animationen aktivieren</value>
   </data>
-  <data name="ShapeManager_CreateToolbar_ShapeOptions" xml:space="preserve">
-    <value>Formoptionen</value>
-  </data>
   <data name="ShapeManager_CreateToolbar_Edit" xml:space="preserve">
     <value>Bearbeiten</value>
   </data>

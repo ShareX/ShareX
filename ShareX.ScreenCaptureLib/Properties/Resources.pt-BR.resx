@@ -264,9 +264,6 @@
   <data name="RegionCaptureForm_InitializeComponent_ImageEditor" xml:space="preserve">
     <value>Editor de imagem</value>
   </data>
-  <data name="ShapeManager_CreateToolbar_ShapeOptions" xml:space="preserve">
-    <value>Opções de forma</value>
-  </data>
   <data name="EditorStartupForm_ClipboardDoesNotContainAnImage" xml:space="preserve">
     <value>A área de transferência não contém uma imagem.</value>
   </data>

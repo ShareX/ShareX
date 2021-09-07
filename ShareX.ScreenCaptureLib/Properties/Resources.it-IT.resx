@@ -264,9 +264,6 @@
   <data name="ShapeManager_CreateToolbar_SaveImageAs" xml:space="preserve">
     <value>Salva Immagine come...</value>
   </data>
-  <data name="ShapeManager_CreateToolbar_ShapeOptions" xml:space="preserve">
-    <value>Opzioni Forma</value>
-  </data>
   <data name="ShapeManager_CreateToolbar_Undo" xml:space="preserve">
     <value>Annulla</value>
   </data>

@@ -357,9 +357,6 @@
   <data name="ShapeManager_CreateToolbar_SendToBack" xml:space="preserve">
     <value>Enviar al fondo</value>
   </data>
-  <data name="ShapeManager_CreateToolbar_ShapeOptions" xml:space="preserve">
-    <value>Opciones de forma</value>
-  </data>
   <data name="ShapeManager_CreateToolbar_Undo" xml:space="preserve">
     <value>Deshacer</value>
   </data>

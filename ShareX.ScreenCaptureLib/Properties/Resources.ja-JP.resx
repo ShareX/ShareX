@@ -162,9 +162,6 @@
   <data name="BaseRegionForm_InitializeComponent_Region_capture" xml:space="preserve">
     <value>領域キャプチャー</value>
   </data>
-  <data name="ShapeManager_CreateToolbar_ShapeOptions" xml:space="preserve">
-    <value>図形のオプション</value>
-  </data>
   <data name="ShapeManager_CreateContextMenu_Fixed_size_region_mode" xml:space="preserve">
     <value>固定サイズ領域キャプチャー モード</value>
   </data>

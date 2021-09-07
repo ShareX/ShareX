@@ -225,9 +225,6 @@
   <data name="ShapeManager_CreateContextMenu_RememberMenuState" xml:space="preserve">
     <value>记住菜单状态</value>
   </data>
-  <data name="ShapeManager_CreateToolbar_ShapeOptions" xml:space="preserve">
-    <value>形状选项</value>
-  </data>
   <data name="ShapeManager_CreateToolbar_DropShadow" xml:space="preserve">
     <value>阴影</value>
   </data>

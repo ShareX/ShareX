@@ -229,9 +229,6 @@
   <data name="BaseRegionForm_InitializeComponent_Region_capture" xml:space="preserve">
     <value>Region capture</value>
   </data>
-  <data name="ShapeManager_CreateToolbar_ShapeOptions" xml:space="preserve">
-    <value>Shape options</value>
-  </data>
   <data name="edit_vertical_alignment_top_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\edit-vertical-alignment-top-white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -543,7 +540,7 @@ Would you like to close image editor?</value>
     <value>Border size:</value>
   </data>
   <data name="ShapeManager_CreateToolbar_AnnotateMenu" xml:space="preserve">
-    <value>Annotate menu</value>
+    <value>Editor menu</value>
   </data>
   <data name="ShapeManager_CreateToolbar_PasteImageText" xml:space="preserve">
     <value>Paste image/text</value>
@@ -776,5 +773,8 @@ X: {4} Y: {5}</value>
   </data>
   <data name="ShapeManager_BorderStyle" xml:space="preserve">
     <value>Border style:</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_ToolOptions" xml:space="preserve">
+    <value>Tool options</value>
   </data>
 </root>

@@ -138,9 +138,6 @@
   <data name="RegionCaptureForm_ShowExitConfirmation_ShareXImageEditor" xml:space="preserve">
     <value>ShareX - ویرایشگر عکس</value>
   </data>
-  <data name="ShapeManager_CreateToolbar_ShapeOptions" xml:space="preserve">
-    <value>تنظیمات شکل</value>
-  </data>
   <data name="ShapeManager_CreateToolbar_SendToBack" xml:space="preserve">
     <value>فرستادن به پشت</value>
   </data>

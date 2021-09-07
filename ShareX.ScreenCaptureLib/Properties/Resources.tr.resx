@@ -348,4 +348,119 @@
   <data name="ShapeManager_CursorType" xml:space="preserve">
     <value>İmleç tipi:</value>
   </data>
+  <data name="ShapeManager_CreateToolbar_AnnotateMenu" xml:space="preserve">
+    <value>Editör menüsü</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_EditorStartMode" xml:space="preserve">
+    <value>Editör başlangıç modu:</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_ApplyChangesContinueTaskEnter" xml:space="preserve">
+    <value>Değişiklikleri uygula ve göreve devam et (Enter)</value>
+  </data>
+  <data name="ScreenRecordForm_ConfirmCancel" xml:space="preserve">
+    <value>Kaydı iptal etmek istediğinize emin misiniz?</value>
+  </data>
+  <data name="ShapeManager_ArrowHeadDirection" xml:space="preserve">
+    <value>Ok başı yönü:</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_AutoCloseEditorOnTask" xml:space="preserve">
+    <value>Görevden sonra editörü otomatik kapat</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_AutoCropImage" xml:space="preserve">
+    <value>Resmi otomatik kırp...</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_CancelTaskEsc" xml:space="preserve">
+    <value>Görevi iptal et (Esc)</value>
+  </data>
+  <data name="LightResizeNodes" xml:space="preserve">
+    <value>Basit yeniden boyutlandırma tutamacı kullan</value>
+  </data>
+  <data name="LockMenu" xml:space="preserve">
+    <value>Menüyü kitle</value>
+  </data>
+  <data name="MagnifyStrength" xml:space="preserve">
+    <value>Büyütme gücü:</value>
+  </data>
+  <data name="MenuIconSize" xml:space="preserve">
+    <value>Menü ikon boyutu:</value>
+  </data>
+  <data name="NewLineCtrlEnterOKEnter" xml:space="preserve">
+    <value>Yeni satır: Ctrl + Enter, Tamam: Enter</value>
+  </data>
+  <data name="NewLineEnterOKCtrlEnter" xml:space="preserve">
+    <value>Yeni satır: Enter, Tamam: Ctrl + Enter</value>
+  </data>
+  <data name="OpenKeybindsPage" xml:space="preserve">
+    <value>Tuşlar web sayfasını aç...</value>
+  </data>
+  <data name="RegionCaptureForm_ShowExitConfirmation_Text" xml:space="preserve">
+    <value>Kaydedilmemiş değişiklikler var.
+Resim düzenleyiciyi kapatmak ister misiniz?</value>
+  </data>
+  <data name="RegionCaptureForm_TipYouCanPanImageByHoldingMouseMiddleButtonAndDragging" xml:space="preserve">
+    <value>İpucu: Farenin orta düğmesini basılı tutup sürükleyerek resmi kaydırabilirsiniz.</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Capture_monitor" xml:space="preserve">
+    <value>Monitör yakala</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_EnableAnimations" xml:space="preserve">
+    <value>Animasyonları etkinleştir</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Pixel_size_" xml:space="preserve">
+    <value>Piksel boyutu:</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_RememberMenuState" xml:space="preserve">
+    <value>Menü durumunu hatırla</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Highlight_color___" xml:space="preserve">
+    <value>Vurgulama rengi...</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Multi_region_mode" xml:space="preserve">
+    <value>Çoklu bölge modu</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_Square_shape_magnifier" xml:space="preserve">
+    <value>Kare şeklinde büyüteç</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_CanvasSize" xml:space="preserve">
+    <value>Tuval boyutu...</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_CaptureRegions" xml:space="preserve">
+    <value>Bölgeleri yakala</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_ContinueTaskSpaceOrRightClick" xml:space="preserve">
+    <value>Göreve devam et (Space veya sağ tıklama)</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_Rotate180" xml:space="preserve">
+    <value>180° döndür</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_Rotate90Clockwise" xml:space="preserve">
+    <value>Saat yönünde 90° döndür</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_Rotate90CounterClockwise" xml:space="preserve">
+    <value>90° saat yönünün tersine döndür</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_RunAfterCaptureTasks" xml:space="preserve">
+    <value>Yakalama sonrası görevlerini çalıştır (Enter)</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_ToolOptions" xml:space="preserve">
+    <value>Araç seçenekleri</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_InterpolationMode" xml:space="preserve">
+    <value>Aradeğerleme modu:</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_StepType" xml:space="preserve">
+    <value>Kademe tipi:</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_StartingStepValue" xml:space="preserve">
+    <value>İlk kademe değeri:</value>
+  </data>
+  <data name="ThisWindowWillCloseBeforeOpeningKeybindsPageWantContinue" xml:space="preserve">
+    <value>Tuşlar web sayfası açılmadan önce bu pencere kapanacaktır. Devam etmek istediğinize emin misiniz?</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_SwitchToDrawingToolAfterSelection" xml:space="preserve">
+    <value>Nesne seçtikten sonra çizim aracına geç</value>
+  </data>
+  <data name="ShapeManager_CreateContextMenu_SwitchToSelectionToolAfterDrawing" xml:space="preserve">
+    <value>Nesne çizdikten sonra seçim aracına geç</value>
+  </data>
 </root>

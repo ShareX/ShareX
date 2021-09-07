@@ -120,4 +120,13 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Resim ekle</value>
   </data>
+  <data name="btnCanvasExpandDown.Text" xml:space="preserve">
+    <value>Resmi aşağı koy (tuvali genişleterek)</value>
+  </data>
+  <data name="btnCanvasExpandRight.Text" xml:space="preserve">
+    <value>Resmi sağ tarafa koy (tuvali genişleterek)</value>
+  </data>
+  <data name="btnCenter.Text" xml:space="preserve">
+    <value>Resmi ortaya koy</value>
+  </data>
 </root>

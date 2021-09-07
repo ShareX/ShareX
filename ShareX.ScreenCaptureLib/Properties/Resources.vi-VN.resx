@@ -330,9 +330,6 @@
   <data name="ShapeManager_CreateToolbar_SaveImageAs" xml:space="preserve">
     <value>Lưu ảnh thành... (Ctrl + Shift + S)</value>
   </data>
-  <data name="ShapeManager_CreateToolbar_ShapeOptions" xml:space="preserve">
-    <value>Tùy chọn hình</value>
-  </data>
   <data name="RegionCaptureForm_ShowExitConfirmation_Text" xml:space="preserve">
     <value>Có những thay đổi chưa được lưu.
 Bạn có muốn đóng trình chỉnh sửa ảnh không?</value>

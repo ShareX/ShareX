@@ -231,9 +231,6 @@
   <data name="ShapeManager_CreateToolbar_CaptureRegions" xml:space="preserve">
     <value>영역 촬영</value>
   </data>
-  <data name="ShapeManager_CreateToolbar_ShapeOptions" xml:space="preserve">
-    <value>모양 설정</value>
-  </data>
   <data name="ShapeManager_CreateToolbar_Delete" xml:space="preserve">
     <value>삭제</value>
   </data>

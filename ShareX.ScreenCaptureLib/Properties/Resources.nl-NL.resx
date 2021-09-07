@@ -192,9 +192,6 @@
   <data name="ShapeManager_CreateToolbar_SendBackward" xml:space="preserve">
     <value>Naar achteren sturen</value>
   </data>
-  <data name="ShapeManager_CreateToolbar_ShapeOptions" xml:space="preserve">
-    <value>Vorm opties</value>
-  </data>
   <data name="ShapeManager_CreateToolbar_BringForward" xml:space="preserve">
     <value>Naar voren brengen</value>
   </data>

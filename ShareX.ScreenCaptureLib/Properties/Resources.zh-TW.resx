@@ -384,9 +384,6 @@
   <data name="ShapeManager_CreateToolbar_SendToBack" xml:space="preserve">
     <value>置於底層</value>
   </data>
-  <data name="ShapeManager_CreateToolbar_ShapeOptions" xml:space="preserve">
-    <value>形狀選項</value>
-  </data>
   <data name="ShapeManager_CreateToolbar_Undo" xml:space="preserve">
     <value>復原</value>
   </data>

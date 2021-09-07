@@ -324,9 +324,6 @@
   <data name="RegionCaptureForm_TipYouCanPanImageByHoldingMouseMiddleButtonAndDragging" xml:space="preserve">
     <value>Kiat: Anda bisa menggeser gambar dengan menahan tombol tengah tetikus dan menyeretnya.</value>
   </data>
-  <data name="ShapeManager_CreateToolbar_ShapeOptions" xml:space="preserve">
-    <value>Opsi bentuk</value>
-  </data>
   <data name="ShapeManager_CreateContextMenu_Square_shape_magnifier" xml:space="preserve">
     <value>Kaca pembesar bentuk persegi</value>
   </data>

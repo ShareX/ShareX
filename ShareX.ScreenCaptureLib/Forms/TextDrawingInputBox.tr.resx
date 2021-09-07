@@ -189,4 +189,7 @@
   <data name="tsrbmiGradientBackwardDiagonal.Text" xml:space="preserve">
     <value>Geriye çapraz</value>
   </data>
+  <data name="tsmiEnableGradient.Text" xml:space="preserve">
+    <value>Gradyan etkinleştir</value>
+  </data>
 </root>

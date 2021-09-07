@@ -1636,7 +1636,7 @@ namespace ShareX.ScreenCaptureLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Annotate menu.
+        ///   Looks up a localized string similar to Editor menu.
         /// </summary>
         internal static string ShapeManager_CreateToolbar_AnnotateMenu {
             get {
@@ -1978,15 +1978,6 @@ namespace ShareX.ScreenCaptureLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Shape options.
-        /// </summary>
-        internal static string ShapeManager_CreateToolbar_ShapeOptions {
-            get {
-                return ResourceManager.GetString("ShapeManager_CreateToolbar_ShapeOptions", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Value of first step:.
         /// </summary>
         internal static string ShapeManager_CreateToolbar_StartingStepValue {
@@ -2001,6 +1992,15 @@ namespace ShareX.ScreenCaptureLib.Properties {
         internal static string ShapeManager_CreateToolbar_StepType {
             get {
                 return ResourceManager.GetString("ShapeManager_CreateToolbar_StepType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tool options.
+        /// </summary>
+        internal static string ShapeManager_CreateToolbar_ToolOptions {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateToolbar_ToolOptions", resourceCulture);
             }
         }
         

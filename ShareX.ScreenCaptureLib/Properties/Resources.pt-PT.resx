@@ -165,9 +165,6 @@
   <data name="BaseRegionForm_InitializeComponent_Region_capture" xml:space="preserve">
     <value>Captura de região</value>
   </data>
-  <data name="ShapeManager_CreateToolbar_ShapeOptions" xml:space="preserve">
-    <value>Opções de 'Forma'</value>
-  </data>
   <data name="ShapeManager_CreateContextMenu_Fixed_size_region_mode" xml:space="preserve">
     <value>Modo de região de tamanho fixo</value>
   </data>
