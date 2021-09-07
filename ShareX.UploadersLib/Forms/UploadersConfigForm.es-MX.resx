@@ -1194,9 +1194,6 @@ Por ejemplo, si el bucket se llama bucket.example.com, la URL será http://bucke
   <data name="lblTeknikUrlShortenerAPIUrl.Text" xml:space="preserve">
     <value>Enlace de la API de acortador de enlaces:</value>
   </data>
-  <data name="txtB2CustomUrl.ToolTip" xml:space="preserve">
-    <value>Introducir un enlace personalizado que remplazará el host y la ruta que BackBlaze devuelve.</value>
-  </data>
   <data name="btnGooglePhotosCreateAlbum.Text" xml:space="preserve">
     <value>Crear</value>
   </data>
@@ -1205,11 +1202,6 @@ Por ejemplo, si el bucket se llama bucket.example.com, la URL será http://bucke
   </data>
   <data name="cbB2CustomUrl.Text" xml:space="preserve">
     <value>Usar enlace personalizado (se permiten patrones de formato):</value>
-  </data>
-  <data name="cbB2CustomUrl.ToolTip" xml:space="preserve">
-    <value>Al habilitarse, el enlace que reciba será la ruta de subida que se añada a tal enlace, lo cual resulta útil al emplearse con servicios como CloudFare o algún otro que actúe como interfaz de B2. Consulte la sección "Creating a Vanity URL with B2" en la base de conocimiento de B2. 
-
-Al deshabilitarse, el enlace recibido será determinado por Backblaze B2.</value>
   </data>
   <data name="cbGfycatKeepAudio.Text" xml:space="preserve">
     <value>Conservar audio</value>
@@ -1288,21 +1280,5 @@ Al deshabilitarse, el enlace recibido será determinado por Backblaze B2.</value
   </data>
   <data name="tpTeknik.Text" xml:space="preserve">
     <value>Teknik</value>
-  </data>
-  <data name="txtB2ApplicationKey.ToolTip" xml:space="preserve">
-    <value>La clave de la aplicación. Es alfanumérica.</value>
-  </data>
-  <data name="txtB2ApplicationKeyId.ToolTip" xml:space="preserve">
-    <value>El ID de la clave de la aplicación. Es una cadena hexadecimal en minúscula.</value>
-  </data>
-  <data name="txtB2Bucket.ToolTip" xml:space="preserve">
-    <value>Dónde almacenar los archivos.
-
-Esto solo resulta bien si "Permitir acceso a los buckets" 
-no se estableció para un bucket a la hora de crear 
-la clave de la aplicación.</value>
-  </data>
-  <data name="txtB2UploadPath.ToolTip" xml:space="preserve">
-    <value>La ruta del archivo. Usa un patrón de formato.</value>
   </data>
 </root>

@@ -1029,9 +1029,6 @@
   <data name="btnGooglePhotosCreateAlbum.Text" xml:space="preserve">
     <value>创建</value>
   </data>
-  <data name="txtB2CustomUrl.ToolTip" xml:space="preserve">
-    <value>在此输入一个自定义 URL，它将替换 BackBlaze 返回的主机和路径。</value>
-  </data>
   <data name="lblTeknikExpiration.Text" xml:space="preserve">
     <value>有效期：</value>
   </data>
@@ -1046,14 +1043,6 @@
   </data>
   <data name="cbKuttReuse.Text" xml:space="preserve">
     <value>如果存在具有指定目标的 URL，则返回该 URL</value>
-  </data>
-  <data name="cbB2CustomUrl.ToolTip" xml:space="preserve">
-    <value>如果启用，您收到的 URL 将是附加到指定 URL 上的上传路径。
-
-这与 CloudFlare 等服务或作为 B2 前端的其他服务结合使用
-非常有用。 请参阅 B2 知识库中的文章“使用 B2 创建短链”。
-
-如果禁用，您收到的 URL 将由 Backblaze B2 确定。</value>
   </data>
   <data name="cbGoogleCloudStorageStripExtensionImage.Text" xml:space="preserve">
     <value>图片</value>
@@ -1082,15 +1071,6 @@
   <data name="cbGoogleCloudStorageStripExtensionText.Text" xml:space="preserve">
     <value>文本</value>
   </data>
-  <data name="txtB2ApplicationKeyId.ToolTip" xml:space="preserve">
-    <value>应用程序密钥 ID，小写的十六进制字符串。</value>
-  </data>
-  <data name="txtB2ApplicationKey.ToolTip" xml:space="preserve">
-    <value>应用程序密钥，仅包含字母与数字。</value>
-  </data>
-  <data name="txtB2UploadPath.ToolTip" xml:space="preserve">
-    <value>文件路径，使用名称模板格式。</value>
-  </data>
   <data name="lblTeknikUploadAPIUrl.Text" xml:space="preserve">
     <value>上传 API URL：</value>
   </data>
@@ -1108,12 +1088,6 @@
   </data>
   <data name="cbGoogleCloudStorageStripExtensionVideo.Text" xml:space="preserve">
     <value>视频</value>
-  </data>
-  <data name="txtB2Bucket.ToolTip" xml:space="preserve">
-    <value>文件存储位置。
-
-此选项仅当你创建应用程序密钥时
-未设置“允许访问存储桶”时有效。</value>
   </data>
   <data name="lblB2UrlPreviewLabel.Text" xml:space="preserve">
     <value>URL 预览:</value>

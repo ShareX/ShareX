@@ -741,14 +741,12 @@ namespace ShareX.UploadersLib
             // 
             resources.ApplyResources(this.txtB2CustomUrl, "txtB2CustomUrl");
             this.txtB2CustomUrl.Name = "txtB2CustomUrl";
-            this.ttHelpTip.SetToolTip(this.txtB2CustomUrl, resources.GetString("txtB2CustomUrl.ToolTip"));
             this.txtB2CustomUrl.TextChanged += new System.EventHandler(this.txtB2CustomUrl_TextChanged);
             // 
             // cbB2CustomUrl
             // 
             resources.ApplyResources(this.cbB2CustomUrl, "cbB2CustomUrl");
             this.cbB2CustomUrl.Name = "cbB2CustomUrl";
-            this.ttHelpTip.SetToolTip(this.cbB2CustomUrl, resources.GetString("cbB2CustomUrl.ToolTip"));
             this.cbB2CustomUrl.UseVisualStyleBackColor = true;
             this.cbB2CustomUrl.CheckedChanged += new System.EventHandler(this.cbB2CustomUrl_CheckedChanged);
             // 
@@ -756,21 +754,18 @@ namespace ShareX.UploadersLib
             // 
             resources.ApplyResources(this.txtB2Bucket, "txtB2Bucket");
             this.txtB2Bucket.Name = "txtB2Bucket";
-            this.ttHelpTip.SetToolTip(this.txtB2Bucket, resources.GetString("txtB2Bucket.ToolTip"));
             this.txtB2Bucket.TextChanged += new System.EventHandler(this.txtB2Bucket_TextChanged);
             // 
             // txtB2UploadPath
             // 
             resources.ApplyResources(this.txtB2UploadPath, "txtB2UploadPath");
             this.txtB2UploadPath.Name = "txtB2UploadPath";
-            this.ttHelpTip.SetToolTip(this.txtB2UploadPath, resources.GetString("txtB2UploadPath.ToolTip"));
             this.txtB2UploadPath.TextChanged += new System.EventHandler(this.txtB2UploadPath_TextChanged);
             // 
             // txtB2ApplicationKey
             // 
             resources.ApplyResources(this.txtB2ApplicationKey, "txtB2ApplicationKey");
             this.txtB2ApplicationKey.Name = "txtB2ApplicationKey";
-            this.ttHelpTip.SetToolTip(this.txtB2ApplicationKey, resources.GetString("txtB2ApplicationKey.ToolTip"));
             this.txtB2ApplicationKey.UseSystemPasswordChar = true;
             this.txtB2ApplicationKey.TextChanged += new System.EventHandler(this.txtB2ApplicationKey_TextChanged);
             // 
@@ -778,7 +773,6 @@ namespace ShareX.UploadersLib
             // 
             resources.ApplyResources(this.txtB2ApplicationKeyId, "txtB2ApplicationKeyId");
             this.txtB2ApplicationKeyId.Name = "txtB2ApplicationKeyId";
-            this.ttHelpTip.SetToolTip(this.txtB2ApplicationKeyId, resources.GetString("txtB2ApplicationKeyId.ToolTip"));
             this.txtB2ApplicationKeyId.TextChanged += new System.EventHandler(this.txtB2ApplicationKeyId_TextChanged);
             // 
             // tpOtherUploaders

@@ -743,9 +743,6 @@ Ví dụ: nếu tên bucket là bucket.example.com thì URL sẽ là http://buck
   <data name="lblAmazonS3Endpoints.Text" xml:space="preserve">
     <value>Các Endpoint:</value>
   </data>
-  <data name="txtB2CustomUrl.ToolTip" xml:space="preserve">
-    <value>Nhập URL tùy chọn ở đây để thay thế đường dẫn BackBlaze trả về.</value>
-  </data>
   <data name="lblAzureStorageEnvironment.Text" xml:space="preserve">
     <value>Môi trường:</value>
   </data>
@@ -811,11 +808,6 @@ Ví dụ: nếu tên bucket là bucket.example.com thì URL sẽ là http://buck
   </data>
   <data name="cbAmazonS3StripExtensionVideo.Text" xml:space="preserve">
     <value>Video</value>
-  </data>
-  <data name="txtB2Bucket.ToolTip" xml:space="preserve">
-    <value>Nơi lưu các tệp của bạn.
-
-Chỉ có hiệu lực khi không chọn "Cho phép truy cập tới bucket" cho một bucket khi tạo application key.</value>
   </data>
   <data name="lvlVgymeUserKey.Text" xml:space="preserve">
     <value>User key:</value>
@@ -1213,20 +1205,6 @@ Sử dụng thư viện được mã hóa sẽ vô hiệu hóa chia sẻ.</value
   </data>
   <data name="cbEmailAutomaticSend.Text" xml:space="preserve">
     <value>Gửi email mà không hiện hộp thoại tới địa chỉ email này:</value>
-  </data>
-  <data name="txtB2ApplicationKeyId.ToolTip" xml:space="preserve">
-    <value>Application Key ID. Là chuỗi hệ 16 viết thường</value>
-  </data>
-  <data name="txtB2ApplicationKey.ToolTip" xml:space="preserve">
-    <value>Application Key. Là chữ và số.</value>
-  </data>
-  <data name="txtB2UploadPath.ToolTip" xml:space="preserve">
-    <value>Đường dẫn cho tệp của bạn. Dùng định dạng tên theo mẫu.</value>
-  </data>
-  <data name="cbB2CustomUrl.ToolTip" xml:space="preserve">
-    <value>Nếu được kích hoạt, URL nhận về sẽ là URL được thêm vào đường dẫn tải lên.
-
-Lựa chọn này có ích khi sử dụng với dịch vụ như CloudFlare hoặc dịch vụ khác hoạt động như frontend tới B2. Xem bài viết "Creating a Vanity URL with B2" trong kho kiến thức hỏi đáp B2.</value>
   </data>
   <data name="lblAmazonS3StripExtension.Text" xml:space="preserve">
     <value>Bỏ phần đuôi mở rộng ở:</value>

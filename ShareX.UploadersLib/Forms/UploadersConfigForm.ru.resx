@@ -1020,39 +1020,8 @@
   <data name="lblB2ManageLink.Text" xml:space="preserve">
     <value>Нажмите здесь, чтобы создать ключ приложения или управлять вашими ведрами.</value>
   </data>
-  <data name="txtB2ApplicationKeyId.ToolTip" xml:space="preserve">
-    <value>ID ключа приложения. Похож на шестнадцатеричную строку в нижнем регистре.</value>
-  </data>
-  <data name="txtB2ApplicationKey.ToolTip" xml:space="preserve">
-    <value>Ключ приложения. Похож на буквенно-цифровой.</value>
-  </data>
   <data name="cbB2CustomUrl.Text" xml:space="preserve">
     <value>Использовать пользовательский URL (поддерживает формат шаблонов):</value>
-  </data>
-  <data name="cbB2CustomUrl.ToolTip" xml:space="preserve">
-    <value>Если включено, URL, который вы получите, будет путем загрузки,
-добавленным к данному URL.
-
-Зто полезно в связке с сервисом вроде CloudFlare или
-другим сервисом в роли фронтенда B2.
-Ознакомьтесь со статьей "Creating a Vanity URL with B2"
-в базе знаний B2.
-
-Если выключено, URL, который вы получите, будет зависеть
-от Backblaze B2. </value>
-  </data>
-  <data name="txtB2Bucket.ToolTip" xml:space="preserve">
-    <value>Где хранить ваши файлы.
-
-Это вступит в силу только если вы не задали
-свойство "Разрешить доступ к ведрам (ов)"
-при создании ключа приложения.</value>
-  </data>
-  <data name="txtB2CustomUrl.ToolTip" xml:space="preserve">
-    <value>Введите пользовательский URL, который заменит хост и путь, которые возвращает BackBlaze.</value>
-  </data>
-  <data name="txtB2UploadPath.ToolTip" xml:space="preserve">
-    <value>Путь к вашему файлу. Использует формат шаблонов.</value>
   </data>
   <data name="lblB2UrlPreview.Text" xml:space="preserve">
     <value>Предпросмотр</value>
