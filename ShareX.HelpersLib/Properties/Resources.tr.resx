@@ -905,52 +905,52 @@ Dosya boyutu: {2:n0} / {3:n0} KB</value>
     <value>Varsayılan</value>
   </data>
   <data name="ShapeType_DrawingArrow" xml:space="preserve">
-    <value>Çizim: Ok (A)</value>
+    <value>Ok (A)</value>
   </data>
   <data name="ShapeType_DrawingCursor" xml:space="preserve">
-    <value>Çizim: İmleç</value>
+    <value>İmleç</value>
   </data>
   <data name="ShapeType_DrawingEllipse" xml:space="preserve">
-    <value>Çizim: Elips (E)</value>
+    <value>Elips (E)</value>
   </data>
   <data name="ShapeType_DrawingFreehand" xml:space="preserve">
-    <value>Çizim: Serbest çizim (F)</value>
+    <value>Serbest çizim (F)</value>
   </data>
   <data name="ShapeType_DrawingImage" xml:space="preserve">
-    <value>Çizim: Resim (Dosya)</value>
+    <value>Resim (Dosya)</value>
   </data>
   <data name="ShapeType_DrawingImageScreen" xml:space="preserve">
-    <value>Çizim: Resim (Ekrandan)</value>
+    <value>Resim (Ekrandan)</value>
   </data>
   <data name="ShapeType_DrawingLine" xml:space="preserve">
-    <value>Çizim: Çizgi (L)</value>
+    <value>Çizgi (L)</value>
   </data>
   <data name="ShapeType_DrawingRectangle" xml:space="preserve">
-    <value>Çizim: Dikdörtgen (R)</value>
+    <value>Dikdörtgen (R)</value>
   </data>
   <data name="ShapeType_DrawingSpeechBalloon" xml:space="preserve">
-    <value>Çizim: Konuşma balonu (S)</value>
+    <value>Konuşma balonu (S)</value>
   </data>
   <data name="ShapeType_DrawingStep" xml:space="preserve">
-    <value>Çizim: Kademe (I)</value>
+    <value>Kademe (I)</value>
   </data>
   <data name="ShapeType_DrawingSticker" xml:space="preserve">
-    <value>Çizim: Çıkartma</value>
+    <value>Çıkartma</value>
   </data>
   <data name="ShapeType_DrawingTextBackground" xml:space="preserve">
-    <value>Çizim: Yazı (Arkaplanlı) (T)</value>
+    <value>Yazı (Arkaplanlı) (T)</value>
   </data>
   <data name="ShapeType_DrawingTextOutline" xml:space="preserve">
-    <value>Çizim: Yazı (Dış çizgili) (O)</value>
+    <value>Yazı (Dış çizgili) (O)</value>
   </data>
   <data name="ShapeType_EffectBlur" xml:space="preserve">
-    <value>Efekt: Bulanıklaştır (B)</value>
+    <value>Bulanıklaştır (B)</value>
   </data>
   <data name="ShapeType_EffectHighlight" xml:space="preserve">
-    <value>Efekt: Vurgula (H)</value>
+    <value>Vurgula (H)</value>
   </data>
   <data name="ShapeType_EffectPixelate" xml:space="preserve">
-    <value>Efekt: Mozaikle (P)</value>
+    <value>Mozaikle (P)</value>
   </data>
   <data name="HotkeyType_ShortenURL_Category" xml:space="preserve">
     <value>Yükle</value>
@@ -977,7 +977,7 @@ Dosya boyutu: {2:n0} / {3:n0} KB</value>
     <value>Dikey</value>
   </data>
   <data name="ShapeType_ToolCrop" xml:space="preserve">
-    <value>Araç: Resimi kırp (C)</value>
+    <value>Resmi kırp (C)</value>
   </data>
   <data name="CustomUploaderDestinationType_TextUploader" xml:space="preserve">
     <value>Yazı yükleyici</value>
@@ -1088,13 +1088,13 @@ Dosya boyutu: {2:n0} / {3:n0} KB</value>
     <value>Yukarı kaydırma mesajı yolla</value>
   </data>
   <data name="ShapeType_RegionEllipse" xml:space="preserve">
-    <value>Bölge: Elips</value>
+    <value>Elips bölge</value>
   </data>
   <data name="ShapeType_RegionFreehand" xml:space="preserve">
-    <value>Bölge: Serbest çizim</value>
+    <value>Serbest bölge</value>
   </data>
   <data name="ShapeType_RegionRectangle" xml:space="preserve">
-    <value>Bölge: Dikdörtgen</value>
+    <value>Dikdörtgen bölge</value>
   </data>
   <data name="YouTubeVideoPrivacy_Private" xml:space="preserve">
     <value>Kişisel</value>
