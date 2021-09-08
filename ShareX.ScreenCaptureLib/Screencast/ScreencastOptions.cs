@@ -203,6 +203,7 @@ namespace ShareX.ScreenCaptureLib
                             args.AppendFormat("-preset {0} ", FFmpeg.NVENC_preset);
                             args.AppendFormat("-b:v {0}k ", FFmpeg.NVENC_bitrate);
                             args.AppendFormat("-pix_fmt {0} ", "yuv420p");
+                            args.AppendFormat("-movflags {0} ", "+faststart"); // This will move some information to the beginning of your file and allow the video to begin playing before it is completely downloaded by the viewer
                             break;
                         case FFmpegVideoCodec.h264_amf:
                         case FFmpegVideoCodec.hevc_amf:
