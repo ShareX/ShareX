@@ -1324,4 +1324,10 @@
   <data name="ToastClickAction_Upload" xml:space="preserve">
     <value>Загрузить файл</value>
   </data>
+  <data name="URLSharingServices_BingVisualSearch" xml:space="preserve">
+    <value>Визуальный поиск Bing</value>
+  </data>
+  <data name="EDataType_Default" xml:space="preserve">
+    <value>По умолчанию</value>
+  </data>
 </root>

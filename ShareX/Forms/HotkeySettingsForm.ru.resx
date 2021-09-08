@@ -135,4 +135,7 @@
   <data name="btnRemove.Text" xml:space="preserve">
     <value>Удалить</value>
   </data>
+  <data name="btnHotkeysDisabled.Text" xml:space="preserve">
+    <value>Горячие клавиши отключены. Нажмите здесь, чтобы включить их.</value>
+  </data>
 </root>

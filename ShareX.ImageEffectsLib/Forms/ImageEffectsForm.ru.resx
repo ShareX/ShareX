@@ -180,4 +180,7 @@
   <data name="btnImageEffects.Text" xml:space="preserve">
     <value>Эффекты изображений...</value>
   </data>
+  <data name="btnPresetNew.ToolTip" xml:space="preserve">
+    <value>Новый</value>
+  </data>
 </root>

@@ -255,4 +255,16 @@ store.book[0].title</value>
   <data name="lblResultErrorMessage.Text" xml:space="preserve">
     <value>Ошибка:</value>
   </data>
+  <data name="lblUploaders.Text" xml:space="preserve">
+    <value>Загрузчики:</value>
+  </data>
+  <data name="tsmiClearUploaders.Text" xml:space="preserve">
+    <value>Очистить загрузчики...</value>
+  </data>
+  <data name="lblRequestURL.Text" xml:space="preserve">
+    <value>URL запроса:</value>
+  </data>
+  <data name="lblResultURL.Text" xml:space="preserve">
+    <value>Ссылка:</value>
+  </data>
 </root>

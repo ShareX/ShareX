@@ -121,9 +121,9 @@
     <value>Пользовательский домен:</value>
   </data>
   <data name="cbAmazonS3CustomCNAME.ToolTip" xml:space="preserve">
-    <value>Используйте эту опцию в случае, если у вас есть ведро с пользовательским доменом.
-Если текстовое поле пустое, имя ведра будет использовано в качестве ссылки.
-Например, если ваше ведро называется bucket.example.com, то ссылка будет http://bucket.example.com/...</value>
+    <value>Эта опция для ведра с пользовательским доменом.
+Если оставить текстовое поле пустым, имя ведра и будет ссылкой.
+Например, если ведро называется "bucket.example.com", то ссылка будет "http://bucket.example.com/...".</value>
   </data>
   <data name="tpOtherUploaders.Text" xml:space="preserve">
     <value>Другие сервисы</value>
@@ -730,10 +730,10 @@
     <value>Хост</value>
   </data>
   <data name="lblPlikTTL.Text" xml:space="preserve">
-    <value>Файлы автоматически удалятся через </value>
+    <value>Файлы автоматически удалятся через</value>
   </data>
   <data name="lblPlikAPIKey.Text" xml:space="preserve">
-    <value>Ключи API:</value>
+    <value>Ключ API:</value>
   </data>
   <data name="lblPlikPassword.Text" xml:space="preserve">
     <value>Пароль:</value>
@@ -1055,5 +1055,38 @@
   </data>
   <data name="lblBoxShareAccessLevel.Text" xml:space="preserve">
     <value>Уровень доступа ссылки:</value>
+  </data>
+  <data name="gbGoogleCloudStorageAdvanced.Text" xml:space="preserve">
+    <value>Дополнительно</value>
+  </data>
+  <data name="cbPlikTTLUnit.Items" xml:space="preserve">
+    <value>дней</value>
+  </data>
+  <data name="cbPlikTTLUnit.Items1" xml:space="preserve">
+    <value>часов</value>
+  </data>
+  <data name="cbPlikTTLUnit.Items2" xml:space="preserve">
+    <value>минут</value>
+  </data>
+  <data name="cbPlikTTLUnit.Items3" xml:space="preserve">
+    <value>никогда</value>
+  </data>
+  <data name="lblGfycatTitle.Text" xml:space="preserve">
+    <value>Заголовок:</value>
+  </data>
+  <data name="lblZWSToken.Text" xml:space="preserve">
+    <value>Токен:</value>
+  </data>
+  <data name="lblZWSURL.Text" xml:space="preserve">
+    <value>Ссылка:</value>
+  </data>
+  <data name="lblTeknikPasteAPIUrl.Text" xml:space="preserve">
+    <value>URL API Paste:</value>
+  </data>
+  <data name="lblTeknikUploadAPIUrl.Text" xml:space="preserve">
+    <value>URL API для загрузки:</value>
+  </data>
+  <data name="cbAmazonS3SignedPayload.Text" xml:space="preserve">
+    <value>Подписывать отправку</value>
   </data>
 </root>
