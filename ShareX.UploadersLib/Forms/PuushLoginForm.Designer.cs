@@ -85,7 +85,6 @@
             // 
             this.AcceptButton = this.btnLogin;
             resources.ApplyResources(this, "$this");
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.Controls.Add(this.pbPuush);
@@ -96,6 +95,8 @@
             this.Controls.Add(this.lblEmail);
             this.Controls.Add(this.lblPassword);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "PuushLoginForm";
             ((System.ComponentModel.ISupportInitialize)(this.pbPuush)).EndInit();
             this.ResumeLayout(false);
