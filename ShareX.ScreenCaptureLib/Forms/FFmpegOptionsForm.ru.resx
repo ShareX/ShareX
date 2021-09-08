@@ -248,10 +248,16 @@
   <data name="lblAMFQuality.Text" xml:space="preserve">
     <value>Качество:</value>
   </data>
-  <data name="lblAMFUsage.Text" xml:space="preserve">
-    <value>Использование:</value>
-  </data>
   <data name="tbOpusBitrate.ToolTip" xml:space="preserve">
     <value>По умолчанию 128k.</value>
+  </data>
+  <data name="lblOpusQuality.Text" xml:space="preserve">
+    <value>Битрейт:</value>
+  </data>
+  <data name="lblAMFUsage.Text" xml:space="preserve">
+    <value>Usage:</value>
+  </data>
+  <data name="nudGIFBayerScale.ToolTip" xml:space="preserve">
+    <value>Настраивает индекс Bayer Scale, с большим значением больше бандинг. По умолчанию 2.</value>
   </data>
 </root>

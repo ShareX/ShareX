@@ -130,7 +130,7 @@
     <value>Открыть журнал...</value>
   </data>
   <data name="btnSendBugReport.Text" xml:space="preserve">
-    <value>Отправить отчет об ошибке...</value>
+    <value>Отправить отчет...</value>
   </data>
   <data name="lblErrorMessage.Text" xml:space="preserve">
     <value>Ошибка

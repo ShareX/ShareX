@@ -381,4 +381,7 @@
   <data name="lblCleanupKeepFileCount.Text" xml:space="preserve">
     <value>Оставлять файлов:</value>
   </data>
+  <data name="cbUseSecondaryUploaders.Text" xml:space="preserve">
+    <value>Пробовать вторичные загрузчики в заданном порядке</value>
+  </data>
 </root>

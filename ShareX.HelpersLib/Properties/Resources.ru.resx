@@ -848,40 +848,40 @@
     <value>Захват активного монитора</value>
   </data>
   <data name="ShapeType_DrawingArrow" xml:space="preserve">
-    <value>Рисование: Стрелка</value>
+    <value>Стрелка (A)</value>
   </data>
   <data name="ShapeType_EffectBlur" xml:space="preserve">
-    <value>Эффект: Размытие</value>
+    <value>Размытие (B)</value>
   </data>
   <data name="ShapeType_DrawingEllipse" xml:space="preserve">
-    <value>Рисование: Эллипс</value>
+    <value>Эллипс (E)</value>
   </data>
   <data name="ShapeType_EffectHighlight" xml:space="preserve">
-    <value>Эффект: Подсветить область</value>
+    <value>Подсветить область (H)</value>
   </data>
   <data name="ShapeType_DrawingLine" xml:space="preserve">
-    <value>Рисование: Линия</value>
+    <value>Линия (L)</value>
   </data>
   <data name="ShapeType_EffectPixelate" xml:space="preserve">
-    <value>Эффект: Пикселизация</value>
+    <value>Пикселизация (P)</value>
   </data>
   <data name="ShapeType_DrawingRectangle" xml:space="preserve">
-    <value>Рисование: Прямоугольник</value>
+    <value>Прямоугольник (R)</value>
   </data>
   <data name="ShapeType_DrawingStep" xml:space="preserve">
-    <value>Рисование: Шаг</value>
+    <value>Шаг (I)</value>
   </data>
   <data name="ShapeType_RegionEllipse" xml:space="preserve">
-    <value>Область: Эллипс</value>
+    <value>Эллиптическая область</value>
   </data>
   <data name="ShapeType_RegionRectangle" xml:space="preserve">
-    <value>Область: Прямоугольник</value>
+    <value>Прямоугольная область</value>
   </data>
   <data name="ShapeType_RegionFreehand" xml:space="preserve">
-    <value>Область: От руки</value>
+    <value>Область от руки</value>
   </data>
   <data name="ShapeType_DrawingFreehand" xml:space="preserve">
-    <value>Рисование: От руки</value>
+    <value>От руки (F)</value>
   </data>
   <data name="RegionCaptureAction_CaptureFullscreen" xml:space="preserve">
     <value>Захват всего экрана</value>
@@ -926,10 +926,10 @@
     <value>Отключить прокрутку вверх</value>
   </data>
   <data name="ShapeType_DrawingImage" xml:space="preserve">
-    <value>Рисование: Картинка из файла</value>
+    <value>Картинка из файла</value>
   </data>
   <data name="ShapeType_DrawingSpeechBalloon" xml:space="preserve">
-    <value>Рисование: Сноска</value>
+    <value>Сноска (S)</value>
   </data>
   <data name="HotkeyType_ToggleActionsToolbar" xml:space="preserve">
     <value>Переключить панель действий</value>
@@ -938,10 +938,10 @@
     <value>Выйти из ShareX</value>
   </data>
   <data name="ShapeType_DrawingTextOutline" xml:space="preserve">
-    <value>Рисование: Текст с обводкой</value>
+    <value>Текст с обводкой (O)</value>
   </data>
   <data name="ShapeType_DrawingTextBackground" xml:space="preserve">
-    <value>Рисование: Текст с фоном</value>
+    <value>Текст с фоном (T)</value>
   </data>
   <data name="HotkeyType_ToggleActionsToolbar_Category" xml:space="preserve">
     <value>Другие</value>
@@ -950,10 +950,10 @@
     <value>Другие</value>
   </data>
   <data name="ShapeType_DrawingImageScreen" xml:space="preserve">
-    <value>Рисование: Картинка с экрана</value>
+    <value>Картинка с экрана</value>
   </data>
   <data name="ShapeType_ToolCrop" xml:space="preserve">
-    <value>Кадрировать</value>
+    <value>Кадрировать (C)</value>
   </data>
   <data name="URLSharingServices_GoogleImageSearch" xml:space="preserve">
     <value>Поиск по картинке в Google</value>
@@ -1004,7 +1004,7 @@
     <value>Сокращение ссылки</value>
   </data>
   <data name="ShapeType_DrawingCursor" xml:space="preserve">
-    <value>Рисование: Курсор</value>
+    <value>Курсор</value>
   </data>
   <data name="HotkeyType_ShortenURL_Category" xml:space="preserve">
     <value>Загрузка</value>
@@ -1085,7 +1085,7 @@
     <value>Авторазмер</value>
   </data>
   <data name="ShapeType_DrawingSticker" xml:space="preserve">
-    <value>Рисование: Стикер</value>
+    <value>Стикер</value>
   </data>
   <data name="CodeMenuEntryFilename_RandomAnimal" xml:space="preserve">
     <value>Случайное животное</value>
@@ -1323,5 +1323,11 @@
   </data>
   <data name="ToastClickAction_Upload" xml:space="preserve">
     <value>Загрузить файл</value>
+  </data>
+  <data name="URLSharingServices_BingVisualSearch" xml:space="preserve">
+    <value>Визуальный поиск Bing</value>
+  </data>
+  <data name="EDataType_Default" xml:space="preserve">
+    <value>По умолчанию</value>
   </data>
 </root>

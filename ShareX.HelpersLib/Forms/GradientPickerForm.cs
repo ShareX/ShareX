@@ -43,7 +43,7 @@ namespace ShareX.HelpersLib
             InitializeComponent();
             ShareXResources.ApplyTheme(this);
 
-            cbGradientType.Items.AddRange(Helpers.GetEnumNamesProper<LinearGradientMode>());
+            cbGradientType.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<LinearGradientMode>());
             cbGradientType.SelectedIndex = (int)Gradient.Type;
             UpdateGradientList(true);
             AddPresets();

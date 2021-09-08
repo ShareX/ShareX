@@ -786,4 +786,19 @@
   <data name="tsmiTrayInspectWindow.Text" xml:space="preserve">
     <value>Исследовать окно...</value>
   </data>
+  <data name="tsmiGoogleImageSearch.Text" xml:space="preserve">
+    <value>Искать по картинкам в Google...</value>
+  </data>
+  <data name="tsmiBingVisualSearch.Text" xml:space="preserve">
+    <value>Визуальный поиск Bing (OCR)...</value>
+  </data>
+  <data name="tsmiCombineImagesHorizontally.Text" xml:space="preserve">
+    <value>Объединить горизонтально</value>
+  </data>
+  <data name="tsmiCombineImagesVertically.Text" xml:space="preserve">
+    <value>Объединить вертикально</value>
+  </data>
+  <data name="tsmiThumbnailSize.Text" xml:space="preserve">
+    <value>Размер миниатюры...</value>
+  </data>
 </root>

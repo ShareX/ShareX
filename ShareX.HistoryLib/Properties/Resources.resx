@@ -253,4 +253,10 @@
   <data name="HistoryForm_Search_Watermark" xml:space="preserve">
     <value>File name, window title, process name, etc.</value>
   </data>
+  <data name="Total" xml:space="preserve">
+    <value>Total</value>
+  </data>
+  <data name="Filtered" xml:space="preserve">
+    <value>Filtered</value>
+  </data>
 </root>

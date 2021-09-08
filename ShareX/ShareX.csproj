@@ -1566,6 +1566,9 @@
     <EmbeddedResource Include="Forms\ThumbnailSizeForm.resx">
       <DependentUpon>ThumbnailSizeForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ThumbnailSizeForm.ru.resx">
+      <DependentUpon>ThumbnailSizeForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\WatchFolderForm.de.resx">
       <DependentUpon>WatchFolderForm.cs</DependentUpon>
     </EmbeddedResource>

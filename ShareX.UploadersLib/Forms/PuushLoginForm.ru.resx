@@ -129,4 +129,7 @@
   <data name="llForgottenPassword.Text" xml:space="preserve">
     <value>Забыли пароль?</value>
   </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ShareX - логин puush</value>
+  </data>
 </root>
