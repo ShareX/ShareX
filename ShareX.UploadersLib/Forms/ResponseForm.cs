@@ -25,6 +25,7 @@
 
 using Newtonsoft.Json;
 using ShareX.HelpersLib;
+using ShareX.UploadersLib.Properties;
 using System;
 using System.Windows.Forms;
 
@@ -112,22 +113,22 @@ namespace ShareX.UploadersLib
         private void UpdateResultTab(UploadResult result)
         {
             tsbCopyShortenedURL.Visible = !string.IsNullOrEmpty(result.ShortenedURL);
-            AddInfo(rtbResult, "Shortened URL", result.ShortenedURL);
+            AddInfo(rtbResult, Resources.ShortenedURL, result.ShortenedURL);
             tsbCopyURL.Visible = !string.IsNullOrEmpty(result.URL);
-            AddInfo(rtbResult, "URL", result.URL);
+            AddInfo(rtbResult, Resources.URL, result.URL);
             tsbCopyThumbnailURL.Visible = !string.IsNullOrEmpty(result.ThumbnailURL);
-            AddInfo(rtbResult, "Thumbnail URL", result.ThumbnailURL);
+            AddInfo(rtbResult, Resources.ThumbnailURL, result.ThumbnailURL);
             tsbCopyDeletionURL.Visible = !string.IsNullOrEmpty(result.DeletionURL);
-            AddInfo(rtbResult, "Deletion URL", result.DeletionURL);
-            if (result.IsError) AddInfo(rtbResult, "Error", result.ErrorsToString());
+            AddInfo(rtbResult, Resources.DeletionURL, result.DeletionURL);
+            if (result.IsError) AddInfo(rtbResult, Resources.Error, result.ErrorsToString());
         }
 
         private void UpdateResponseInfoTab(ResponseInfo responseInfo, bool includeResponseText)
         {
-            AddInfo(rtbResponseInfo, "Status code", $"({(int)responseInfo.StatusCode}) {responseInfo.StatusDescription}");
-            AddInfo(rtbResponseInfo, "Response URL", responseInfo.ResponseURL);
-            if (responseInfo.Headers != null && responseInfo.Headers.Count > 0) AddInfo(rtbResponseInfo, "Headers", responseInfo.Headers.ToString().TrimEnd('\r', '\n'));
-            if (includeResponseText) AddInfo(rtbResponseInfo, "Response text", responseInfo.ResponseText);
+            AddInfo(rtbResponseInfo, Resources.StatusCode, $"({(int)responseInfo.StatusCode}) {responseInfo.StatusDescription}");
+            AddInfo(rtbResponseInfo, Resources.ResponseURL, responseInfo.ResponseURL);
+            if (responseInfo.Headers != null && responseInfo.Headers.Count > 0) AddInfo(rtbResponseInfo, Resources.Headers, responseInfo.Headers.ToString().TrimEnd('\r', '\n'));
+            if (includeResponseText) AddInfo(rtbResponseInfo, Resources.ResponseText, responseInfo.ResponseText);
         }
 
         private void tcMain_Selecting(object sender, TabControlCancelEventArgs e)
@@ -176,7 +177,7 @@ namespace ShareX.UploadersLib
                 }
                 catch
                 {
-                    MessageBox.Show("Formatting failed.", "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(Resources.FormattingFailed_JSON, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -193,7 +194,7 @@ namespace ShareX.UploadersLib
                 }
                 catch
                 {
-                    MessageBox.Show("Formatting failed.", "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(Resources.FormattingFailed_XML, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }

@@ -29,6 +29,7 @@ namespace ShareX
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ThumbnailSizeForm));
             this.lblWidth = new System.Windows.Forms.Label();
             this.lblHeight = new System.Windows.Forms.Label();
             this.nudWidth = new System.Windows.Forms.NumericUpDown();
@@ -42,25 +43,17 @@ namespace ShareX
             // 
             // lblWidth
             // 
-            this.lblWidth.AutoSize = true;
-            this.lblWidth.Location = new System.Drawing.Point(13, 16);
+            resources.ApplyResources(this.lblWidth, "lblWidth");
             this.lblWidth.Name = "lblWidth";
-            this.lblWidth.Size = new System.Drawing.Size(38, 13);
-            this.lblWidth.TabIndex = 0;
-            this.lblWidth.Text = "Width:";
             // 
             // lblHeight
             // 
-            this.lblHeight.AutoSize = true;
-            this.lblHeight.Location = new System.Drawing.Point(13, 40);
+            resources.ApplyResources(this.lblHeight, "lblHeight");
             this.lblHeight.Name = "lblHeight";
-            this.lblHeight.Size = new System.Drawing.Size(41, 13);
-            this.lblHeight.TabIndex = 2;
-            this.lblHeight.Text = "Height:";
             // 
             // nudWidth
             // 
-            this.nudWidth.Location = new System.Drawing.Point(120, 12);
+            resources.ApplyResources(this.nudWidth, "nudWidth");
             this.nudWidth.Maximum = new decimal(new int[] {
             500,
             0,
@@ -72,9 +65,6 @@ namespace ShareX
             0,
             0});
             this.nudWidth.Name = "nudWidth";
-            this.nudWidth.Size = new System.Drawing.Size(96, 20);
-            this.nudWidth.TabIndex = 1;
-            this.nudWidth.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.nudWidth.Value = new decimal(new int[] {
             100,
             0,
@@ -83,7 +73,7 @@ namespace ShareX
             // 
             // nudHeight
             // 
-            this.nudHeight.Location = new System.Drawing.Point(120, 36);
+            resources.ApplyResources(this.nudHeight, "nudHeight");
             this.nudHeight.Maximum = new decimal(new int[] {
             500,
             0,
@@ -95,9 +85,6 @@ namespace ShareX
             0,
             0});
             this.nudHeight.Name = "nudHeight";
-            this.nudHeight.Size = new System.Drawing.Size(96, 20);
-            this.nudHeight.TabIndex = 3;
-            this.nudHeight.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.nudHeight.Value = new decimal(new int[] {
             100,
             0,
@@ -106,42 +93,32 @@ namespace ShareX
             // 
             // btnOK
             // 
-            this.btnOK.Location = new System.Drawing.Point(16, 96);
+            resources.ApplyResources(this.btnOK, "btnOK");
             this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(96, 24);
-            this.btnOK.TabIndex = 5;
-            this.btnOK.Text = "OK";
             this.btnOK.UseVisualStyleBackColor = true;
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
             // btnCancel
             // 
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancel.Location = new System.Drawing.Point(120, 96);
+            resources.ApplyResources(this.btnCancel, "btnCancel");
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(96, 24);
-            this.btnCancel.TabIndex = 6;
-            this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnReset
             // 
-            this.btnReset.Location = new System.Drawing.Point(120, 64);
+            resources.ApplyResources(this.btnReset, "btnReset");
             this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(96, 24);
-            this.btnReset.TabIndex = 4;
-            this.btnReset.Text = "Reset";
             this.btnReset.UseVisualStyleBackColor = true;
             this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // ThumbnailSizeForm
             // 
             this.AcceptButton = this.btnOK;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.CancelButton = this.btnCancel;
-            this.ClientSize = new System.Drawing.Size(229, 130);
             this.Controls.Add(this.btnReset);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOK);
@@ -153,8 +130,6 @@ namespace ShareX
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ThumbnailSizeForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ShareX - Thumbnail size";
             ((System.ComponentModel.ISupportInitialize)(this.nudWidth)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudHeight)).EndInit();
             this.ResumeLayout(false);

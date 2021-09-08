@@ -158,6 +158,15 @@ namespace ShareX.UploadersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Deletion URL.
+        /// </summary>
+        internal static string DeletionURL {
+            get {
+                return ResourceManager.GetString("DeletionURL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap document {
@@ -183,6 +192,15 @@ namespace ShareX.UploadersLib.Properties {
         internal static string DuplicateNameNotAllowed {
             get {
                 return ResourceManager.GetString("DuplicateNameNotAllowed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error.
+        /// </summary>
+        internal static string Error {
+            get {
+                return ResourceManager.GetString("Error", resourceCulture);
             }
         }
         
@@ -222,6 +240,24 @@ namespace ShareX.UploadersLib.Properties {
             get {
                 object obj = ResourceManager.GetObject("folder_network", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Formatting failed..
+        /// </summary>
+        internal static string FormattingFailed_JSON {
+            get {
+                return ResourceManager.GetString("FormattingFailed_JSON", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Formatting failed..
+        /// </summary>
+        internal static string FormattingFailed_XML {
+            get {
+                return ResourceManager.GetString("FormattingFailed_XML", resourceCulture);
             }
         }
         
@@ -311,6 +347,15 @@ namespace ShareX.UploadersLib.Properties {
             get {
                 object obj = ResourceManager.GetObject("Hastebin", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Headers.
+        /// </summary>
+        internal static string Headers {
+            get {
+                return ResourceManager.GetString("Headers", resourceCulture);
             }
         }
         
@@ -626,6 +671,24 @@ namespace ShareX.UploadersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Response text.
+        /// </summary>
+        internal static string ResponseText {
+            get {
+                return ResourceManager.GetString("ResponseText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Response URL.
+        /// </summary>
+        internal static string ResponseURL {
+            get {
+                return ResourceManager.GetString("ResponseURL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap Seafile {
@@ -656,6 +719,24 @@ namespace ShareX.UploadersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Shortened URL.
+        /// </summary>
+        internal static string ShortenedURL {
+            get {
+                return ResourceManager.GetString("ShortenedURL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Status code.
+        /// </summary>
+        internal static string StatusCode {
+            get {
+                return ResourceManager.GetString("StatusCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
         internal static System.Drawing.Icon Streamable {
@@ -682,6 +763,15 @@ namespace ShareX.UploadersLib.Properties {
             get {
                 object obj = ResourceManager.GetObject("Teknik", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Thumbnail URL.
+        /// </summary>
+        internal static string ThumbnailURL {
+            get {
+                return ResourceManager.GetString("ThumbnailURL", resourceCulture);
             }
         }
         
@@ -957,6 +1047,15 @@ namespace ShareX.UploadersLib.Properties {
         internal static string UploadersConfigForm_UpdatePastebinStatus_NotLoggedIn {
             get {
                 return ResourceManager.GetString("UploadersConfigForm_UpdatePastebinStatus_NotLoggedIn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to URL.
+        /// </summary>
+        internal static string URL {
+            get {
+                return ResourceManager.GetString("URL", resourceCulture);
             }
         }
         
