@@ -226,7 +226,7 @@ Lütfen kişisel dizin yolunu değiştirmek için ShareX'i yönetici olarak çal
     <value>Kolonları göster</value>
   </data>
   <data name="QuickTaskMenu_ShowMenu_Cancel" xml:space="preserve">
-    <value>İptal et</value>
+    <value>İptal</value>
   </data>
   <data name="TaskManager_CreateListViewItem_History" xml:space="preserve">
     <value>Geçmiş</value>

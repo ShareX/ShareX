@@ -247,4 +247,37 @@ Oluşturulmuş dizinler:</value>
   <data name="txtB2BucketWatermark" xml:space="preserve">
     <value>(Opsiyonel) Yalnızca anahtarı yaratırken bir klasör ayarlamadıysanız kullanılır</value>
   </data>
+  <data name="Error" xml:space="preserve">
+    <value>Hata</value>
+  </data>
+  <data name="URL" xml:space="preserve">
+    <value>Adres</value>
+  </data>
+  <data name="DeletionURL" xml:space="preserve">
+    <value>Silme adresi</value>
+  </data>
+  <data name="Headers" xml:space="preserve">
+    <value>Başlıklar</value>
+  </data>
+  <data name="FormattingFailed_JSON" xml:space="preserve">
+    <value>Biçimlendirme başarısız oldu.</value>
+  </data>
+  <data name="FormattingFailed_XML" xml:space="preserve">
+    <value>Biçimlendirme başarısız oldu.</value>
+  </data>
+  <data name="ShortenedURL" xml:space="preserve">
+    <value>Kısaltılmış adres</value>
+  </data>
+  <data name="ResponseText" xml:space="preserve">
+    <value>Yanıt içeriği</value>
+  </data>
+  <data name="ResponseURL" xml:space="preserve">
+    <value>Yanıt adresi</value>
+  </data>
+  <data name="ThumbnailURL" xml:space="preserve">
+    <value>Küçük resim adresi</value>
+  </data>
+  <data name="StatusCode" xml:space="preserve">
+    <value>Durum kodu</value>
+  </data>
 </root>

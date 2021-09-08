@@ -444,13 +444,13 @@ Dosya boyutu: {2:n0} / {3:n0} KB</value>
     <value>Dosya yükleyici</value>
   </data>
   <data name="ResponseType_Headers" xml:space="preserve">
-    <value>Cevap başlıkları</value>
+    <value>Yanıt başlıkları</value>
   </data>
   <data name="ResponseType_RedirectionURL" xml:space="preserve">
     <value>Yönlendirme adresi</value>
   </data>
   <data name="ResponseType_Text" xml:space="preserve">
-    <value>Cevap içeriği</value>
+    <value>Yanıt içeriği</value>
   </data>
   <data name="TextDestination_CustomTextUploader" xml:space="preserve">
     <value>Özel yazı yükleyici</value>

@@ -385,7 +385,7 @@
     <value>QR kod göster...</value>
   </data>
   <data name="tsmiShowResponse.Text" xml:space="preserve">
-    <value>Cevabı göster...</value>
+    <value>Yanıtı göster...</value>
   </data>
   <data name="tsmiClearList.Text" xml:space="preserve">
     <value>Listeyi temizle</value>
