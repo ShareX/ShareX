@@ -42,6 +42,8 @@ namespace ShareX.HistoryLib
         private HistoryItemManager him;
         private HistoryItem[] allHistoryItems;
         private string defaultTitle;
+        private Dictionary<string, string> typeNamesLocaleLookup;
+        string[] cbTypeFilterSelectionLocalized;
 
         public HistoryForm(string historyPath, HistorySettings settings, Action<string> uploadFile = null, Action<string> editImage = null)
         {
@@ -52,6 +54,11 @@ namespace ShareX.HistoryLib
             tsHistory.Renderer = new ToolStripRoundedEdgeRenderer();
 
             defaultTitle = Text;
+
+            string[] typeNames = Enum.GetNames(typeof(EDataType));
+            string[] typeTranslations = Helpers.GetLocalizedEnumDescriptions<EDataType>();
+            typeNamesLocaleLookup = Enumerable.Zip(typeNames, typeTranslations, (key, val) => new { key, val }).ToDictionary(e => e.key, e => e.val);
+
             UpdateTitle();
 
             // Mark the Date column as having a date; used for sorting
@@ -114,6 +121,16 @@ namespace ShareX.HistoryLib
         {
             allHistoryItems = GetHistoryItems(mockData);
             ApplyFilterSimple();
+
+            if (lvHistory.Items.Count > 0)
+            {
+                cbTypeFilterSelectionLocalized = allHistoryItems.Select(x => x.Type).Distinct().Where(x => !string.IsNullOrEmpty(x)).ToArray();
+                cbTypeFilterSelection.Items.Clear();
+                cbTypeFilterSelection.Items.AddRange(cbTypeFilterSelectionLocalized.Select(x => typeNamesLocaleLookup.TryGetValue(x, out string value) ? value : x).ToArray());
+                cbHostFilterSelection.Items.Clear();
+                cbHostFilterSelection.Items.AddRange(allHistoryItems.Select(x => x.Host).Distinct().Where(x => !string.IsNullOrEmpty(x)).ToArray());
+                ResetFilters();
+            }
         }
 
         private HistoryItem[] him_GetHistoryItems()
@@ -181,11 +198,12 @@ namespace ShareX.HistoryLib
                 FromDate = dtpFilterFrom.Value.Date,
                 ToDate = dtpFilterTo.Value.Date,
                 FilterType = cbTypeFilter.Checked,
-                Type = cbTypeFilterSelection.Text,
                 FilterHost = cbHostFilter.Checked,
                 Host = cbHostFilterSelection.Text,
                 MaxItemCount = Settings.MaxItemCount
             };
+            if (cbTypeFilterSelectionLocalized.IsValidIndex(cbTypeFilterSelection.SelectedIndex))
+                filter.Type = cbTypeFilterSelectionLocalized[cbTypeFilterSelection.SelectedIndex];
 
             ApplyFilter(filter);
         }
@@ -256,14 +274,10 @@ namespace ShareX.HistoryLib
                     status.AppendFormat(" - " + Resources.HistoryForm_UpdateItemCount___Filtered___0_, historyItems.Length.ToString("N0"));
                 }
 
-                string[] typeNames = Enum.GetNames(typeof(EDataType));
-                string[] typeTranslations = Helpers.GetLocalizedEnumDescriptions<EDataType>();
-                Dictionary<string, string> lookup = Enumerable.Zip(typeNames, typeTranslations, (key, val) => new { key, val }).ToDictionary(e => e.key, e => e.val);
-
                 IEnumerable<string> types = historyItems.
                     GroupBy(x => x.Type).
                     OrderByDescending(x => x.Count()).
-                    Select(x => string.Format(" - {0}: {1}", lookup.TryGetValue(x.Key, out string value) ? value : x.Key, x.Count()));
+                    Select(x => string.Format(" - {0}: {1}", typeNamesLocaleLookup.TryGetValue(x.Key, out string value) ? value : x.Key, x.Count()));
 
                 foreach (string type in types)
                 {
@@ -367,15 +381,6 @@ namespace ShareX.HistoryLib
             Refresh();
 
             RefreshHistoryItems();
-
-            if (lvHistory.Items.Count > 0)
-            {
-                cbTypeFilterSelection.Items.Clear();
-                cbTypeFilterSelection.Items.AddRange(allHistoryItems.Select(x => x.Type).Distinct().Where(x => !string.IsNullOrEmpty(x)).ToArray());
-                cbHostFilterSelection.Items.Clear();
-                cbHostFilterSelection.Items.AddRange(allHistoryItems.Select(x => x.Host).Distinct().Where(x => !string.IsNullOrEmpty(x)).ToArray());
-                ResetFilters();
-            }
 
             this.ForceActivate();
         }
