@@ -225,4 +225,10 @@
   <data name="HistoryForm_Search_Watermark" xml:space="preserve">
     <value>Имя файла, заголовок окна, название процесса, и т.д.</value>
   </data>
+  <data name="Total" xml:space="preserve">
+    <value>Всего</value>
+  </data>
+  <data name="Filtered" xml:space="preserve">
+    <value>Отфильтровано</value>
+  </data>
 </root>
