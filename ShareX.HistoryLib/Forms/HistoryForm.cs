@@ -43,7 +43,7 @@ namespace ShareX.HistoryLib
         private HistoryItem[] allHistoryItems;
         private string defaultTitle;
         private Dictionary<string, string> typeNamesLocaleLookup;
-        string[] cbTypeFilterSelectionLocalized;
+        private string[] allTypeNames;
 
         public HistoryForm(string historyPath, HistorySettings settings, Action<string> uploadFile = null, Action<string> editImage = null)
         {
@@ -57,7 +57,7 @@ namespace ShareX.HistoryLib
 
             string[] typeNames = Enum.GetNames(typeof(EDataType));
             string[] typeTranslations = Helpers.GetLocalizedEnumDescriptions<EDataType>();
-            typeNamesLocaleLookup = Enumerable.Zip(typeNames, typeTranslations, (key, val) => new { key, val }).ToDictionary(e => e.key, e => e.val);
+            typeNamesLocaleLookup = typeNames.Zip(typeTranslations, (key, val) => new { key, val }).ToDictionary(e => e.key, e => e.val);
 
             UpdateTitle();
 
@@ -122,15 +122,17 @@ namespace ShareX.HistoryLib
             allHistoryItems = GetHistoryItems(mockData);
             ApplyFilterSimple();
 
-            if (lvHistory.Items.Count > 0)
+            cbTypeFilterSelection.Items.Clear();
+            cbHostFilterSelection.Items.Clear();
+
+            if (allHistoryItems.Length > 0)
             {
-                cbTypeFilterSelectionLocalized = allHistoryItems.Select(x => x.Type).Distinct().Where(x => !string.IsNullOrEmpty(x)).ToArray();
-                cbTypeFilterSelection.Items.Clear();
-                cbTypeFilterSelection.Items.AddRange(cbTypeFilterSelectionLocalized.Select(x => typeNamesLocaleLookup.TryGetValue(x, out string value) ? value : x).ToArray());
-                cbHostFilterSelection.Items.Clear();
+                allTypeNames = allHistoryItems.Select(x => x.Type).Distinct().Where(x => !string.IsNullOrEmpty(x)).ToArray();
+                cbTypeFilterSelection.Items.AddRange(allTypeNames.Select(x => typeNamesLocaleLookup.TryGetValue(x, out string value) ? value : x).ToArray());
                 cbHostFilterSelection.Items.AddRange(allHistoryItems.Select(x => x.Host).Distinct().Where(x => !string.IsNullOrEmpty(x)).ToArray());
-                ResetFilters();
             }
+
+            ResetFilters();
         }
 
         private HistoryItem[] him_GetHistoryItems()
@@ -197,13 +199,16 @@ namespace ShareX.HistoryLib
                 FilterDate = cbDateFilter.Checked,
                 FromDate = dtpFilterFrom.Value.Date,
                 ToDate = dtpFilterTo.Value.Date,
-                FilterType = cbTypeFilter.Checked,
                 FilterHost = cbHostFilter.Checked,
                 Host = cbHostFilterSelection.Text,
                 MaxItemCount = Settings.MaxItemCount
             };
-            if (cbTypeFilterSelectionLocalized.IsValidIndex(cbTypeFilterSelection.SelectedIndex))
-                filter.Type = cbTypeFilterSelectionLocalized[cbTypeFilterSelection.SelectedIndex];
+
+            if (cbTypeFilter.Checked && allTypeNames.IsValidIndex(cbTypeFilterSelection.SelectedIndex))
+            {
+                filter.FilterType = true;
+                filter.Type = allTypeNames[cbTypeFilterSelection.SelectedIndex];
+            }
 
             ApplyFilter(filter);
         }
