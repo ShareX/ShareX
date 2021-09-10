@@ -223,80 +223,21 @@ begin
   Result := ShellExec('', ExpandConstant('{tmp}{\}') + 'netcorecheck' + Dependency_ArchSuffix + '.exe', Version, '', SW_HIDE, ewWaitUntilTerminated, ResultCode) and (ResultCode = 0);
 end;
 
-procedure Dependency_AddMsi45;
-var
-  PackedVersion: Int64;
-begin
-  // https://www.microsoft.com/en-US/download/details.aspx?id=8483
-  if not GetPackedVersion(ExpandConstant('{sys}{\}msi.dll'), PackedVersion) or (ComparePackedVersion(PackedVersion, PackVersionComponents(4, 5, 0, 0)) < 0) then begin
-    Dependency_Add('msi45' + Dependency_ArchSuffix + '.msu',
-      '/quiet /norestart',
-      'Windows Installer 4.5',
-      Dependency_String('https://download.microsoft.com/download/2/6/1/261fca42-22c0-4f91-9451-0e0f2e08356d/Windows6.0-KB942288-v2-x86.msu', 'https://download.microsoft.com/download/2/6/1/261fca42-22c0-4f91-9451-0e0f2e08356d/Windows6.0-KB942288-v2-x64.msu'),
-      '', False, False);
-  end;
-end;
-
-procedure Dependency_AddDotNet11;
-begin
-  // https://www.microsoft.com/en-US/download/details.aspx?id=26
-  if not IsDotNetInstalled(net11, 0) then begin
-    Dependency_Add('dotnetfx11.exe',
-      '/q',
-      '.NET Framework 1.1',
-      'https://download.microsoft.com/download/a/a/c/aac39226-8825-44ce-90e3-bf8203e74006/dotnetfx.exe',
-      '', False, False);
-  end;
-
-  // https://www.microsoft.com/en-US/download/details.aspx?id=33
-  if not IsDotNetInstalled(net11, 1) then begin
-    Dependency_Add('dotnetfx11sp1.exe',
-      '/q',
-      '.NET Framework 1.1 Service Pack 1',
-      'https://download.microsoft.com/download/8/b/4/8b4addd8-e957-4dea-bdb8-c4e00af5b94b/NDP1.1sp1-KB867460-X86.exe',
-      '', False, False);
-  end;
-end;
-
-procedure Dependency_AddDotNet20;
-begin
-  // https://www.microsoft.com/en-US/download/details.aspx?id=1639
-  if not IsDotNetInstalled(net20, 2) then begin
-    Dependency_Add('dotnetfx20' + Dependency_ArchSuffix + '.exe',
-      '/lang:enu /passive /norestart',
-      '.NET Framework 2.0 Service Pack 2',
-      Dependency_String('https://download.microsoft.com/download/c/6/e/c6e88215-0178-4c6c-b5f3-158ff77b1f38/NetFx20SP2_x86.exe', 'https://download.microsoft.com/download/c/6/e/c6e88215-0178-4c6c-b5f3-158ff77b1f38/NetFx20SP2_x64.exe'),
-      '', False, False);
-  end;
-end;
-
 procedure Dependency_AddDotNet35;
 begin
-  // https://www.microsoft.com/en-US/download/details.aspx?id=22
+  // https://dotnet.microsoft.com/download/dotnet-framework/net35-sp1
   if not IsDotNetInstalled(net35, 1) then begin
     Dependency_Add('dotnetfx35.exe',
       '/lang:enu /passive /norestart',
       '.NET Framework 3.5 Service Pack 1',
-      'https://download.microsoft.com/download/0/6/1/061f001c-8752-4600-a198-53214c69b51f/dotnetfx35setup.exe',
+      'https://download.microsoft.com/download/2/0/E/20E90413-712F-438C-988E-FDAA79A8AC3D/dotnetfx35.exe',
       '', False, False);
   end;
 end;
 
-procedure Dependency_AddDotNet40Client;
+procedure Dependency_AddDotNet40;
 begin
-  // https://www.microsoft.com/en-US/download/details.aspx?id=24872
-  if not IsDotNetInstalled(net4client, 0) and not IsDotNetInstalled(net4full, 0) then begin
-    Dependency_Add('dotNetFx40_Client_setup.exe',
-      '/lcid ' + IntToStr(GetUILanguage) + ' /passive /norestart',
-      '.NET Framework 4.0 Client',
-      'https://download.microsoft.com/download/7/B/6/7B629E05-399A-4A92-B5BC-484C74B5124B/dotNetFx40_Client_setup.exe',
-      '', False, False);
-  end;
-end;
-
-procedure Dependency_AddDotNet40Full;
-begin
-  // https://www.microsoft.com/en-US/download/details.aspx?id=17718
+  // https://dotnet.microsoft.com/download/dotnet-framework/net40
   if not IsDotNetInstalled(net4full, 0) then begin
     Dependency_Add('dotNetFx40_Full_setup.exe',
       '/lcid ' + IntToStr(GetUILanguage) + ' /passive /norestart',
@@ -308,36 +249,36 @@ end;
 
 procedure Dependency_AddDotNet45;
 begin
-  // https://www.microsoft.com/en-US/download/details.aspx?id=42643
+  // https://dotnet.microsoft.com/download/dotnet-framework/net452
   if not IsDotNetInstalled(net452, 0) then begin
     Dependency_Add('dotnetfx45.exe',
       '/lcid ' + IntToStr(GetUILanguage) + ' /passive /norestart',
       '.NET Framework 4.5.2',
-      'https://download.microsoft.com/download/B/4/1/B4119C11-0423-477B-80EE-7A474314B347/NDP452-KB2901954-Web.exe',
+      'https://go.microsoft.com/fwlink/?LinkId=397707',
       '', False, False);
   end;
 end;
 
 procedure Dependency_AddDotNet46;
 begin
-  // https://www.microsoft.com/en-US/download/details.aspx?id=53345
+  // https://dotnet.microsoft.com/download/dotnet-framework/net462
   if not IsDotNetInstalled(net462, 0) then begin
     Dependency_Add('dotnetfx46.exe',
       '/lcid ' + IntToStr(GetUILanguage) + ' /passive /norestart',
       '.NET Framework 4.6.2',
-      'https://download.microsoft.com/download/D/5/C/D5C98AB0-35CC-45D9-9BA5-B18256BA2AE6/NDP462-KB3151802-Web.exe',
+      'https://go.microsoft.com/fwlink/?linkid=780596',
       '', False, False);
   end;
 end;
 
 procedure Dependency_AddDotNet47;
 begin
-  // https://support.microsoft.com/en-US/help/4054531
+  // https://dotnet.microsoft.com/download/dotnet-framework/net472
   if not IsDotNetInstalled(net472, 0) then begin
     Dependency_Add('dotnetfx47.exe',
       '/lcid ' + IntToStr(GetUILanguage) + ' /passive /norestart',
       '.NET Framework 4.7.2',
-      'https://download.microsoft.com/download/0/5/C/05C1EC0E-D5EE-463B-BFE3-9311376A6809/NDP472-KB4054531-Web.exe',
+      'https://go.microsoft.com/fwlink/?LinkId=863262',
       '', False, False);
   end;
 end;
@@ -349,7 +290,7 @@ begin
     Dependency_Add('dotnetfx48.exe',
       '/lcid ' + IntToStr(GetUILanguage) + ' /passive /norestart',
       '.NET Framework 4.8',
-      'https://download.visualstudio.microsoft.com/download/pr/7afca223-55d2-470a-8edc-6a1739ae3252/c9b8749dd99fc0d4453b2a3e4c37ba16/ndp48-web.exe',
+      'https://go.microsoft.com/fwlink/?LinkId=2085155',
       '', False, False);
   end;
 end;
