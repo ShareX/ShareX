@@ -146,21 +146,6 @@ namespace ShareX.MediaLib
                 !string.IsNullOrEmpty(Options.OutputFileName);
         }
 
-        private void UpdateInputFilePathTextBox(string filePath)
-        {
-            txtInputFilePath.Text = filePath;
-
-            if (string.IsNullOrEmpty(txtOutputFolder.Text))
-            {
-                txtOutputFolder.Text = Path.GetDirectoryName(filePath);
-            }
-
-            if (string.IsNullOrEmpty(txtOutputFileName.Text))
-            {
-                txtOutputFileName.Text = Path.GetFileNameWithoutExtension(filePath) + "-output";
-            }
-        }
-
         private bool StartEncoding()
         {
             bool result = false;
@@ -213,7 +198,17 @@ namespace ShareX.MediaLib
                 if (ofd.ShowDialog(this) == DialogResult.OK)
                 {
                     string filePath = ofd.FileName;
-                    UpdateInputFilePathTextBox(filePath);
+                    txtInputFilePath.Text = filePath;
+
+                    if (string.IsNullOrEmpty(txtOutputFolder.Text))
+                    {
+                        txtOutputFolder.Text = Path.GetDirectoryName(filePath);
+                    }
+
+                    if (string.IsNullOrEmpty(txtOutputFileName.Text))
+                    {
+                        txtOutputFileName.Text = Path.GetFileNameWithoutExtension(filePath) + "-output";
+                    }
                 }
             }
         }
@@ -290,27 +285,6 @@ namespace ShareX.MediaLib
             else if (ffmpeg != null)
             {
                 ffmpeg.Close();
-            }
-        }
-
-        private void VideoConverterForm_DragEnter(object sender, DragEventArgs e)
-        {
-            if (e.Data.GetDataPresent(DataFormats.FileDrop, false))
-            {
-                e.Effect = DragDropEffects.Copy;
-            }
-            else
-            {
-                e.Effect = DragDropEffects.None;
-            }
-        }
-
-        private void VideoConverterForm_DragDrop(object sender, DragEventArgs e)
-        {
-            if (e.Data.GetDataPresent(DataFormats.FileDrop, false) && e.Data.GetData(DataFormats.FileDrop, false) is string[] files && files.Length > 0)
-            {
-                string filePath = files[0];
-                UpdateInputFilePathTextBox(filePath);
             }
         }
 
