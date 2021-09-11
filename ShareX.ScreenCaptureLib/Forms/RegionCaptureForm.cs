@@ -354,7 +354,7 @@ namespace ShareX.ScreenCaptureLib
                 DimmedCanvas = (Bitmap)Canvas.Clone();
 
                 using (Graphics g = Graphics.FromImage(DimmedCanvas))
-                using (Brush brush = new SolidBrush(Color.FromArgb(30, Color.Black)))
+                using (Brush brush = new SolidBrush(Color.FromArgb(Options.DimmingAlpha, Color.Black)))
                 {
                     g.FillRectangle(brush, 0, 0, DimmedCanvas.Width, DimmedCanvas.Height);
 

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.Label lblRegionCaptureDimmingAlpha;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TaskSettingsForm));
             this.cmsAfterCapture = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.cmsAfterUpload = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -155,6 +156,7 @@
             this.nudCaptureShadowOffset = new System.Windows.Forms.NumericUpDown();
             this.cbOverrideCaptureSettings = new System.Windows.Forms.CheckBox();
             this.tpRegionCapture = new System.Windows.Forms.TabPage();
+            this.nudRegionCaptureDimmingAlpha = new System.Windows.Forms.NumericUpDown();
             this.cbRegionCaptureShowFPS = new System.Windows.Forms.CheckBox();
             this.flpRegionCaptureFixedSize = new System.Windows.Forms.FlowLayoutPanel();
             this.lblRegionCaptureFixedSizeWidth = new System.Windows.Forms.Label();
@@ -293,6 +295,7 @@
             this.pgTaskSettings = new System.Windows.Forms.PropertyGrid();
             this.cbOverrideAdvancedSettings = new System.Windows.Forms.CheckBox();
             this.tttvMain = new ShareX.HelpersLib.TabToTreeView();
+            lblRegionCaptureDimmingAlpha = new System.Windows.Forms.Label();
             this.tcTaskSettings.SuspendLayout();
             this.tpTask.SuspendLayout();
             this.cmsDestinations.SuspendLayout();
@@ -326,6 +329,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudScreenshotDelay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCaptureShadowOffset)).BeginInit();
             this.tpRegionCapture.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudRegionCaptureDimmingAlpha)).BeginInit();
             this.flpRegionCaptureFixedSize.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudRegionCaptureFixedSizeWidth)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudRegionCaptureFixedSizeHeight)).BeginInit();
@@ -354,6 +358,11 @@
             this.pTools.SuspendLayout();
             this.tpAdvanced.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // lblRegionCaptureDimmingAlpha
+            // 
+            resources.ApplyResources(lblRegionCaptureDimmingAlpha, "lblRegionCaptureDimmingAlpha");
+            lblRegionCaptureDimmingAlpha.Name = "lblRegionCaptureDimmingAlpha";
             // 
             // cmsAfterCapture
             // 
@@ -1386,6 +1395,8 @@
             // tpRegionCapture
             // 
             this.tpRegionCapture.BackColor = System.Drawing.SystemColors.Window;
+            this.tpRegionCapture.Controls.Add(lblRegionCaptureDimmingAlpha);
+            this.tpRegionCapture.Controls.Add(this.nudRegionCaptureDimmingAlpha);
             this.tpRegionCapture.Controls.Add(this.cbRegionCaptureShowFPS);
             this.tpRegionCapture.Controls.Add(this.flpRegionCaptureFixedSize);
             this.tpRegionCapture.Controls.Add(this.cbRegionCaptureIsFixedSize);
@@ -1418,6 +1429,27 @@
             this.tpRegionCapture.Controls.Add(this.nudRegionCaptureMagnifierPixelSize);
             resources.ApplyResources(this.tpRegionCapture, "tpRegionCapture");
             this.tpRegionCapture.Name = "tpRegionCapture";
+            // 
+            // nudRegionCaptureDimmingAlpha
+            // 
+            resources.ApplyResources(this.nudRegionCaptureDimmingAlpha, "nudRegionCaptureDimmingAlpha");
+            this.nudRegionCaptureDimmingAlpha.Maximum = new decimal(new int[] {
+            200,
+            0,
+            0,
+            0});
+            this.nudRegionCaptureDimmingAlpha.Minimum = new decimal(new int[] {
+            30,
+            0,
+            0,
+            0});
+            this.nudRegionCaptureDimmingAlpha.Name = "nudRegionCaptureDimmingAlpha";
+            this.nudRegionCaptureDimmingAlpha.Value = new decimal(new int[] {
+            30,
+            0,
+            0,
+            0});
+            this.nudRegionCaptureDimmingAlpha.ValueChanged += new System.EventHandler(this.nudRegionCaptureDimmingAlpha_ValueChanged);
             // 
             // cbRegionCaptureShowFPS
             // 
@@ -2597,6 +2629,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudCaptureShadowOffset)).EndInit();
             this.tpRegionCapture.ResumeLayout(false);
             this.tpRegionCapture.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudRegionCaptureDimmingAlpha)).EndInit();
             this.flpRegionCaptureFixedSize.ResumeLayout(false);
             this.flpRegionCaptureFixedSize.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudRegionCaptureFixedSizeWidth)).EndInit();
@@ -2907,5 +2940,6 @@
         private System.Windows.Forms.Label lblToastWindowDurationSeconds;
         private System.Windows.Forms.Button btnActions;
         private System.Windows.Forms.CheckBox cbImageAutoJPEGQuality;
+        private System.Windows.Forms.NumericUpDown nudRegionCaptureDimmingAlpha;
     }
 }

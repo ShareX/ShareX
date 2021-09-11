@@ -1490,6 +1490,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\TaskSettingsForm.ja-JP.resx">
       <DependentUpon>TaskSettingsForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\TaskSettingsForm.ko-KR.resx">
       <DependentUpon>TaskSettingsForm.cs</DependentUpon>
@@ -1505,9 +1506,11 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\TaskSettingsForm.ru.resx">
       <DependentUpon>TaskSettingsForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\TaskSettingsForm.tr.resx">
       <DependentUpon>TaskSettingsForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\TaskSettingsForm.uk.resx">
       <DependentUpon>TaskSettingsForm.cs</DependentUpon>
@@ -1619,6 +1622,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\TaskSettingsForm.resx">
       <DependentUpon>TaskSettingsForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AfterUploadForm.resx">
       <DependentUpon>AfterUploadForm.cs</DependentUpon>

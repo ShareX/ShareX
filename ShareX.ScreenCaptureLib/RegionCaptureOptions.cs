@@ -50,6 +50,7 @@ namespace ShareX.ScreenCaptureLib
         public bool DetectWindows = true;
         public bool DetectControls = true;
         public bool UseDimming = true;
+        public int DimmingAlpha = 30;
         public bool UseCustomInfoText = false;
         public string CustomInfoText = "X: $x, Y: $y$nR: $r, G: $g, B: $b$nHex: $hex"; // Formats: $x, $y, $r, $g, $b, $hex, $HEX, $n
         public List<SnapSize> SnapSizes = new List<SnapSize>()
