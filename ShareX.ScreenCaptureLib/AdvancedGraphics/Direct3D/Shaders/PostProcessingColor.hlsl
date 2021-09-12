@@ -42,7 +42,7 @@ float3 TuneInputLuminance(float3 scRgbColor)
 // Adjust output luminance based on monitor information.
 float3 TuneOutputLuminance(float3 scRgbColor)
 {
-    return scRgbColor * (MonSdrDispNits / SRGB_D65_WHITE_POINT_NITS);
+    return scRgbColor * (1.0f + (MonSdrDispNits / SRGB_D65_WHITE_POINT_NITS));
 }
 
 // Perform transform processing for Windows HDR content.
@@ -60,25 +60,10 @@ float4 PsWindowsHDR2SDR(VS_OUTPUT p) : SV_TARGET
 
     float4 hdr = screenTexture.Sample(simpleSampler, p.TexCoord);
 
-    // Convert to pure scRGB (DXGI_COLOR_SPACE_RGB_FULL_G10_NONE_P709)
-    float3 eotf = ST2084ToLinear(hdr.xyz);
-    float3 scrgb = mul(from2020to709, eotf);
-
     // Tone mapping
     float3 sdr = TuneInputLuminance(hdr.xyz * ExposureLevel);
     sdr = ToneMapReinhard(sdr);
     sdr = TuneOutputLuminance(sdr);
-
-    // White scale fix-up
-    float scale = SRGB_D65_WHITE_POINT_NITS / MonSdrDispNits;
-    float3x3 whiteFixupMatrix =
-    {
-        { scale, 0, 0 },
-        { 0, scale, 0 },
-        { 0, 0, scale }
-    };
-
-    float3 sdrFixup = mul(whiteFixupMatrix, sdr);
 
     // Return image
     return float4(sdr, hdr.a);
