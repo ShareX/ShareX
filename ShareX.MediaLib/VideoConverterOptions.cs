@@ -39,7 +39,7 @@ namespace ShareX.MediaLib
         {
             get
             {
-                if (string.IsNullOrEmpty(OutputFolderPath) || string.IsNullOrEmpty(OutputFileName))
+                if (!IsValidOutputPath(OutputFolderPath, OutputFileName))
                 {
                     return "";
                 }
@@ -149,6 +149,26 @@ namespace ShareX.MediaLib
                     return "webp";
                 case ConverterVideoCodecs.apng:
                     return "apng";
+            }
+        }
+
+        private bool IsValidOutputPath(string folderPath, string fileName)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(folderPath) || string.IsNullOrEmpty(fileName))
+                {
+                    return false;
+                }
+
+                // Path.Combine will throw if we have invalid characters
+                Path.Combine(folderPath, fileName);
+
+                return true;
+            }
+            catch
+            {
+                return false;
             }
         }
     }
