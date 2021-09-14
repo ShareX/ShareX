@@ -1797,15 +1797,7 @@ namespace ShareX
 
         public static bool IsUploadAllowed()
         {
-            bool isDisabled = false;
-            try {
-                isDisabled = RegistryHelpers.CheckRegistry("SOFTWARE\\ShareX", "DisableUpload", "true", Microsoft.Win32.RegistryHive.LocalMachine);
-            }
-            catch(Exception e) {
-                DebugHelper.WriteException(e);
-            }
-            
-            if (isDisabled)
+            if (Program.Settings.UploadForbidden)
             {
                 MessageBox.Show(Resources.YourSystemAdminDisabledTheUploadFeature, "ShareX",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);

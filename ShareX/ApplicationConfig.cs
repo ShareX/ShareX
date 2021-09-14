@@ -319,5 +319,11 @@ namespace ShareX
         public List<Color> RecentColors = new List<Color>();
 
         #endregion Color Picker Form
+
+        #region Formless
+
+        public bool UploadForbidden = false;
+
+        #endregion Formless
     }
 }
