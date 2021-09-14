@@ -118,6 +118,7 @@ namespace ShareX
         public static bool SteamFirstTimeConfig { get; private set; }
         public static bool IgnoreHotkeyWarning { get; private set; }
         public static bool PuushMode { get; private set; }
+        public static bool UploadForbidden { get; private set; }
 
         internal static ApplicationConfig Settings { get; set; }
         internal static TaskSettings DefaultTaskSettings { get; set; }
@@ -361,6 +362,7 @@ namespace ShareX
             CheckPuushMode();
             DebugWriteFlags();
 
+            SetForbiddenUpload();
             SettingManager.LoadInitialSettings();
 
             Uploader.UpdateServicePointManager();
@@ -617,6 +619,25 @@ namespace ShareX
             }
 
             return false;
+        }
+
+        private static void SetForbiddenUpload()
+        {
+            try
+            {
+                if (RegistryHelpers.CheckRegistry(@"SOFTWARE\ShareX", "UploadForbidden"))
+                {
+                    UploadForbidden = RegistryHelpers.CheckRegistry("SOFTWARE\\ShareX", "UploadForbidden", "true");
+                }
+                else
+                {
+                    UploadForbidden = RegistryHelpers.CheckRegistry(@"SOFTWARE\ShareX", "UploadForbidden", "true", Microsoft.Win32.RegistryHive.LocalMachine);
+                }
+            }
+            catch (Exception e)
+            {
+                DebugHelper.WriteException(e);
+            }
         }
 
         private static void Application_ThreadException(object sender, ThreadExceptionEventArgs e)

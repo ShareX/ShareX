@@ -3117,5 +3117,16 @@ namespace ShareX.Properties {
                         "ShareX", resourceCulture);
             }
         }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Your system admin disabled the upload feature..
+        /// </summary>
+        public static string YourSystemAdminDisabledTheUploadFeature
+        {
+            get
+            {
+                return ResourceManager.GetString("YourSystemAdminDisabledTheUploadFeature", resourceCulture);
+            }
+        }
     }
 }
