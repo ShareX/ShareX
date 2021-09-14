@@ -362,7 +362,7 @@ namespace ShareX
             CheckPuushMode();
             DebugWriteFlags();
 
-            CheckForbiddenUploadRegistry();
+            SetForbiddenUpload();
             SettingManager.LoadInitialSettings();
 
             Uploader.UpdateServicePointManager();
@@ -621,7 +621,7 @@ namespace ShareX
             return false;
         }
 
-        private static void CheckForbiddenUploadRegistry()
+        private static void SetForbiddenUpload()
         {
             try
             {
