@@ -178,12 +178,14 @@ namespace ShareX
         {
             try
             {
-                bool UploadForbidden = RegistryHelpers.CheckRegistry("SOFTWARE\\ShareX", "UploadForbidden", "true");
-                if (!UploadForbidden)
+                if (RegistryHelpers.CheckRegistry(@"SOFTWARE\ShareX", "UploadForbidden"))
                 {
-                    UploadForbidden = RegistryHelpers.CheckRegistry("SOFTWARE\\ShareX", "UploadForbidden", "true", Microsoft.Win32.RegistryHive.LocalMachine);
+                    Settings.UploadForbidden = RegistryHelpers.CheckRegistry("SOFTWARE\\ShareX", "UploadForbidden", "true");
                 }
-                Settings.UploadForbidden = UploadForbidden;
+                else
+                {
+                    Settings.UploadForbidden = RegistryHelpers.CheckRegistry(@"SOFTWARE\ShareX", "UploadForbidden", "true", Microsoft.Win32.RegistryHive.LocalMachine);
+                }
             }
             catch (Exception e)
             {
