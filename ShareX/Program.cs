@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using Microsoft.Win32;
 using ShareX.HelpersLib;
 using ShareX.Properties;
 using ShareX.UploadersLib;
@@ -117,8 +118,8 @@ namespace ShareX
         public static bool IsAdmin { get; private set; }
         public static bool SteamFirstTimeConfig { get; private set; }
         public static bool IgnoreHotkeyWarning { get; private set; }
+        public static bool SystemDisableUpload { get; private set; }
         public static bool PuushMode { get; private set; }
-        public static bool UploadForbidden { get; private set; }
 
         internal static ApplicationConfig Settings { get; set; }
         internal static TaskSettings DefaultTaskSettings { get; set; }
@@ -358,11 +359,11 @@ namespace ShareX
             IgnoreHotkeyWarning = CLI.IsCommandExist("NoHotkeys");
 
             CreateParentFolders();
+            CheckSystemDisableUpload();
             RegisterExtensions();
             CheckPuushMode();
             DebugWriteFlags();
 
-            SetForbiddenUpload();
             SettingManager.LoadInitialSettings();
 
             Uploader.UpdateServicePointManager();
@@ -621,17 +622,20 @@ namespace ShareX
             return false;
         }
 
-        private static void SetForbiddenUpload()
+        private static void CheckSystemDisableUpload()
         {
             try
             {
-                if (RegistryHelpers.CheckRegistry(@"SOFTWARE\ShareX", "UploadForbidden"))
+                string path = @"SOFTWARE\ShareX";
+                string name = "DisableUpload";
+
+                if (RegistryHelpers.CheckRegistry(path, name, null, RegistryHive.CurrentUser))
                 {
-                    UploadForbidden = RegistryHelpers.CheckRegistry("SOFTWARE\\ShareX", "UploadForbidden", "true");
+                    SystemDisableUpload = RegistryHelpers.CheckRegistry(path, name, "true", RegistryHive.CurrentUser);
                 }
                 else
                 {
-                    UploadForbidden = RegistryHelpers.CheckRegistry(@"SOFTWARE\ShareX", "UploadForbidden", "true", Microsoft.Win32.RegistryHive.LocalMachine);
+                    SystemDisableUpload = RegistryHelpers.CheckRegistry(path, name, "true", RegistryHive.LocalMachine);
                 }
             }
             catch (Exception e)
@@ -709,6 +713,7 @@ namespace ShareX
             if (Sandbox) flags.Add(nameof(Sandbox));
             if (SteamFirstTimeConfig) flags.Add(nameof(SteamFirstTimeConfig));
             if (IgnoreHotkeyWarning) flags.Add(nameof(IgnoreHotkeyWarning));
+            if (SystemDisableUpload) flags.Add(nameof(SystemDisableUpload));
             if (PuushMode) flags.Add(nameof(PuushMode));
 
             string output = string.Join(", ", flags);
