@@ -115,7 +115,6 @@ namespace ShareX
         public static void LoadInitialSettings()
         {
             LoadApplicationConfig();
-            LoadUploadForbiddenRegistry();
 
             Task.Run(() =>
             {
@@ -172,25 +171,6 @@ namespace ShareX
             TaskHelpers.ShowNotificationTip(message, "ShareX - " + Resources.FailedToSaveSettings, 5000);
 
             settingsSaveFailWarningCount++;
-        }
-
-        private static void LoadUploadForbiddenRegistry()
-        {
-            try
-            {
-                if (RegistryHelpers.CheckRegistry(@"SOFTWARE\ShareX", "UploadForbidden"))
-                {
-                    Settings.UploadForbidden = RegistryHelpers.CheckRegistry("SOFTWARE\\ShareX", "UploadForbidden", "true");
-                }
-                else
-                {
-                    Settings.UploadForbidden = RegistryHelpers.CheckRegistry(@"SOFTWARE\ShareX", "UploadForbidden", "true", Microsoft.Win32.RegistryHive.LocalMachine);
-                }
-            }
-            catch (Exception e)
-            {
-                DebugHelper.WriteException(e);
-            }
         }
 
         public static void LoadUploadersConfig(bool fallbackSupport = true)

@@ -1797,7 +1797,7 @@ namespace ShareX
 
         public static bool IsUploadAllowed()
         {
-            if (Program.Settings.UploadForbidden)
+            if (Program.UploadForbidden)
             {
                 MessageBox.Show(Resources.YourSystemAdminDisabledTheUploadFeature, "ShareX",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
