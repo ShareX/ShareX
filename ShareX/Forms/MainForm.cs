@@ -1241,13 +1241,12 @@ namespace ShareX
 
             if (windows != null && windows.Count > 0)
             {
-                ToolStripItem[] items = new ToolStripItem[windows.Count];
+                List<ToolStripItem> items = new List<ToolStripItem>();
 
-                for (int i = 0; i < items.Length; i++)
+                foreach (WindowInfo window in windows)
                 {
                     try
                     {
-                        WindowInfo window = windows[i];
                         string title = window.Text.Truncate(50, "...");
                         ToolStripMenuItem tsmi = new ToolStripMenuItem(title);
                         tsmi.Tag = window;
@@ -1261,7 +1260,7 @@ namespace ShareX
                             }
                         }
 
-                        items[i] = tsmi;
+                        items.Add(tsmi);
                     }
                     catch (Exception e)
                     {
@@ -1269,7 +1268,7 @@ namespace ShareX
                     }
                 }
 
-                tsmiWindow.DropDownItems.AddRange(items);
+                tsmiWindow.DropDownItems.AddRange(items.ToArray());
             }
 
             tsmiWindow.Invalidate();
