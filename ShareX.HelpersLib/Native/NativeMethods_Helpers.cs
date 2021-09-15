@@ -125,6 +125,26 @@ namespace ShareX.HelpersLib
             return new IntPtr(GetClassLong(hWnd, nIndex));
         }
 
+        public static IntPtr GetWindowLong(IntPtr hWnd, int nIndex)
+        {
+            if (IntPtr.Size == 4)
+            {
+                return GetWindowLong32(hWnd, nIndex);
+            }
+
+            return GetWindowLongPtr64(hWnd, nIndex);
+        }
+
+        public static IntPtr SetWindowLong(IntPtr hWnd, int nIndex, IntPtr dwNewLong)
+        {
+            if (IntPtr.Size == 4)
+            {
+                return SetWindowLongPtr32(hWnd, nIndex, dwNewLong);
+            }
+
+            return SetWindowLongPtr64(hWnd, nIndex, dwNewLong);
+        }
+
         private static Icon GetSmallApplicationIcon(IntPtr handle)
         {
             SendMessageTimeout(handle, (int)WindowsMessages.GETICON, NativeConstants.ICON_SMALL2, 0, SendMessageTimeoutFlags.SMTO_ABORTIFHUNG, 1000, out IntPtr iconHandle);

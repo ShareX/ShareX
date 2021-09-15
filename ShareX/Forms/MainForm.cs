@@ -1824,6 +1824,11 @@ namespace ShareX
             TaskHelpers.OpenClipboardViewer();
         }
 
+        private void tsmiBorderlessWindow_Click(object sender, EventArgs e)
+        {
+            TaskHelpers.OpenBorderlessWindow();
+        }
+
         private void tsmiInspectWindow_Click(object sender, EventArgs e)
         {
             TaskHelpers.OpenInspectWindow();

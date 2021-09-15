@@ -226,6 +226,9 @@
   <data name="control" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\control.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="heart" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\heart.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="AboutForm_AboutForm_Changelog" xml:space="preserve">
     <value>Changelog</value>
   </data>
@@ -258,11 +261,6 @@ Would you like to restart ShareX?</value>
   <data name="AboutForm_AboutForm_Language_id_ID" xml:space="preserve">
     <value>Indonesian</value>
   </data>
-  <data name="ActionsToolbar_Tip" xml:space="preserve">
-    <value>Hold left down to drag
-Right click to open menu
-Middle click to close</value>
-  </data>
   <data name="application_browser" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\application-browser.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -278,8 +276,8 @@ Middle click to close</value>
   <data name="exclamation" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\exclamation.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="TaskSettingsForm_UpdateWindowTitle_Task_settings" xml:space="preserve">
-    <value>Task settings</value>
+  <data name="InspectWindow_ClassName" xml:space="preserve">
+    <value>Class name</value>
   </data>
   <data name="MainForm_UpdateMainFormTip_Currently_configured_hotkeys_" xml:space="preserve">
     <value>Currently configured hotkeys:</value>
@@ -296,6 +294,9 @@ Middle click to close</value>
   <data name="MainForm_UpdateToggleHotkeyButton_Disable_hotkeys" xml:space="preserve">
     <value>Disable hotkeys</value>
   </data>
+  <data name="MainForm_tsmiDeleteSelectedFile_Click_Do_you_really_want_to_delete_this_file_" xml:space="preserve">
+    <value>Do you really want to delete this file?</value>
+  </data>
   <data name="FFmpeg_Missing" xml:space="preserve">
     <value>Missing</value>
   </data>
@@ -311,8 +312,8 @@ Middle click to close</value>
   <data name="TaskHelpers_OpenQuickScreenColorPicker_Copied_to_clipboard___0_" xml:space="preserve">
     <value>Copied to clipboard: {0}</value>
   </data>
-  <data name="network_cloud" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\network-cloud.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="clock" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\clock.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__File__Count___0__" xml:space="preserve">
     <value>Clipboard content: File (Count: {0})</value>
@@ -331,12 +332,6 @@ Middle click to close</value>
   </data>
   <data name="monitor" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\monitor.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="FileExistForm_txtNewName_TextChanged_Use_new_name__" xml:space="preserve">
-    <value>Use new name: </value>
-  </data>
-  <data name="clipboard_block" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\clipboard-block.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="UploadTask_DoUploadJob_First_time_upload_warning_text" xml:space="preserve">
     <value>Are you sure you want to upload this screenshot?
@@ -401,11 +396,17 @@ Would you like to automatically download it?</value>
   <data name="UploadManager_UploadURL_URL_to_download_from_and_upload" xml:space="preserve">
     <value>URL to download and upload</value>
   </data>
+  <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__Text__Length___0__" xml:space="preserve">
+    <value>Clipboard content: Text (Length: {0})</value>
+  </data>
   <data name="TaskSettingsForm_txtNameFormatPatternActiveWindow_TextChanged_Preview_" xml:space="preserve">
     <value>Preview:</value>
   </data>
   <data name="Rectangle" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Rectangle.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="InspectWindow_ProcessFileName" xml:space="preserve">
+    <value>Process file name</value>
   </data>
   <data name="layout_select_content" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\layout-select-content.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -416,8 +417,8 @@ Would you like to automatically download it?</value>
   <data name="AutoCaptureForm_UpdateRegion_X___0___Y___1___Width___2___Height___3_" xml:space="preserve">
     <value>X: {0}, Y: {1}, Width: {2}, Height: {3}</value>
   </data>
-  <data name="heart" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\heart.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ApplicationSettingsForm_btnResetSettings_Click_WouldYouLikeToResetShareXSettings" xml:space="preserve">
+    <value>Would you like to reset ShareX settings?</value>
   </data>
   <data name="BeforeUploadForm_BeforeUploadForm__0__is_about_to_be_uploaded_to__1___You_may_choose_a_different_destination_" xml:space="preserve">
     <value>{0} is about to be uploaded to {1}. You may choose a different destination.</value>
@@ -429,9 +430,8 @@ Would you like to automatically download it?</value>
 
 Please select a different hotkey or quit the conflicting application and reopen ShareX.</value>
   </data>
-  <data name="DropForm_DrawDropImage_Drop_here" xml:space="preserve">
-    <value>Drop
-here</value>
+  <data name="TaskSettingsForm_UpdateWindowTitle_Task_settings" xml:space="preserve">
+    <value>Task settings</value>
   </data>
   <data name="ApplicationSettingsForm_cbStartWithWindows_DisabledByPolicy_Text" xml:space="preserve">
     <value>Startup has been disabled by your organization</value>
@@ -451,9 +451,6 @@ Are you sure you want to continue?</value>
   </data>
   <data name="application_list" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\application-list.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="TaskSettingsForm_UpdateUploaderMenuNames_URL_shortener___0_" xml:space="preserve">
-    <value>URL shortener: {0}</value>
   </data>
   <data name="crown" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\crown.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -485,8 +482,8 @@ Are you sure you want to continue?</value>
   <data name="application_monitor" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\application-monitor.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="camera" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\camera.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="FileExistForm_txtNewName_TextChanged_Use_new_name__" xml:space="preserve">
+    <value>Use new name: </value>
   </data>
   <data name="wrench_screwdriver" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\wrench-screwdriver.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -512,11 +509,14 @@ Are you sure you want to continue?</value>
   <data name="ApplicationSettingsForm_cbStartWithWindows_EnabledByPolicy_Text" xml:space="preserve">
     <value>Startup has been enabled by your organization</value>
   </data>
-  <data name="clock_select" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\clock-select.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ApplicationSettingsForm_btnBrowsePersonalFolderPath_Click_Choose_ShareX_personal_folder_path" xml:space="preserve">
+    <value>Choose ShareX personal folder path</value>
   </data>
   <data name="WorkerTask_GetInvalidConfigResult__0__configuration_is_invalid_or_missing__Please_check__Destination_settings__window_to_configure_it_" xml:space="preserve">
     <value>{0} configuration is invalid or missing. Please check "Destination settings" window to configure it.</value>
+  </data>
+  <data name="InspectWindow_ProcessName" xml:space="preserve">
+    <value>Process name</value>
   </data>
   <data name="UploadTask_CreateURLShortenerTask_Shorten_URL___0__" xml:space="preserve">
     <value>Shorten URL ({0})</value>
@@ -560,6 +560,9 @@ Are you sure you want to continue?</value>
   <data name="MainForm_tsmiTestTextUpload_Click_Text_upload_test" xml:space="preserve">
     <value>Text upload test</value>
   </data>
+  <data name="InspectWindow_WindowRectangle" xml:space="preserve">
+    <value>Window rectangle</value>
+  </data>
   <data name="WouldYouLikeToEnableImageEffects" xml:space="preserve">
     <value>Would you like to enable image effects?
 
@@ -595,8 +598,8 @@ You can later disable it from "After capture tasks" menu.</value>
   <data name="disk_rename" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\disk-rename.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="cross" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\cross.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="clipboard_block" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\clipboard-block.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="image_export" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\image-export.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -631,6 +634,9 @@ You can later disable it from "After capture tasks" menu.</value>
   <data name="cn" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\cn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Twitter" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\twitter.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="TaskManager_task_UploadCompleted_ShareX___Task_completed" xml:space="preserve">
     <value>Task completed</value>
   </data>
@@ -648,6 +654,9 @@ You can later disable it from "After capture tasks" menu.</value>
   </data>
   <data name="AboutForm_AboutForm_Language_hu" xml:space="preserve">
     <value>Hungarian</value>
+  </data>
+  <data name="Bing" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Bing.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="AboutForm_AboutForm_Language_ja_JP" xml:space="preserve">
     <value>Japanese</value>
@@ -735,8 +744,8 @@ Would you like to restart ShareX?</value>
   <data name="folder_stand" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\folder-stand.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ApplicationSettingsForm_btnBrowsePersonalFolderPath_Click_Choose_ShareX_personal_folder_path" xml:space="preserve">
-    <value>Choose ShareX personal folder path</value>
+  <data name="TaskSettingsForm_UpdateUploaderMenuNames_URL_shortener___0_" xml:space="preserve">
+    <value>URL shortener: {0}</value>
   </data>
   <data name="pt" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pt.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -777,8 +786,14 @@ Would you like to restart ShareX?</value>
   <data name="UploadTask_OnUploadCompleted_Done" xml:space="preserve">
     <value>Done</value>
   </data>
+  <data name="AboutForm_AboutForm_Contributors" xml:space="preserve">
+    <value>Contributors</value>
+  </data>
   <data name="traffic_cone" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\traffic-cone.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="InspectWindow_WindowStyles" xml:space="preserve">
+    <value>Window styles</value>
   </data>
   <data name="MainForm_UpdateWorkflowsMenu_You_can_add_workflows_from_hotkey_settings___" xml:space="preserve">
     <value>You can add workflows from hotkey settings...</value>
@@ -791,6 +806,9 @@ Would you like to restart ShareX?</value>
   </data>
   <data name="UploadTask_DownloadAndUpload_Downloading" xml:space="preserve">
     <value>Downloading</value>
+  </data>
+  <data name="network_cloud" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\network-cloud.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="AboutForm_AboutForm_Language_fr" xml:space="preserve">
     <value>French</value>
@@ -813,6 +831,9 @@ Would you like to restart ShareX?</value>
   <data name="MainForm_UpdateMenu_Hide_menu" xml:space="preserve">
     <value>Hide menu</value>
   </data>
+  <data name="InspectWindow_WindowTitle" xml:space="preserve">
+    <value>Window title</value>
+  </data>
   <data name="vn" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\vn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -824,6 +845,9 @@ Would you like to restart ShareX?</value>
   </data>
   <data name="GitHub" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\GitHub.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Discord" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\discord.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="UploadTask_OnUploadCompleted_Stopped" xml:space="preserve">
     <value>Stopped</value>
@@ -842,6 +866,9 @@ Would you like to restart ShareX?</value>
   </data>
   <data name="IntegrationHelpers_UploadWithShareX" xml:space="preserve">
     <value>Upload with ShareX</value>
+  </data>
+  <data name="clock_select" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\clock-select.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="inbox" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\inbox.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -865,17 +892,21 @@ Please run ShareX as administrator to change personal folder path.</value>
   <data name="disk" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\disk.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="InspectWindow_ProcessIdentifier" xml:space="preserve">
+    <value>Process identifier</value>
+  </data>
   <data name="uac" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\uac.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="AboutForm_AboutForm_Contributors" xml:space="preserve">
-    <value>Contributors</value>
+  <data name="InspectWindow_WindowHandle" xml:space="preserve">
+    <value>Window handle</value>
   </data>
   <data name="AboutForm_AboutForm_Language_it_IT" xml:space="preserve">
     <value>Italian</value>
   </data>
-  <data name="MainForm_tsmiDeleteSelectedFile_Click_Do_you_really_want_to_delete_this_file_" xml:space="preserve">
-    <value>Do you really want to delete this file?</value>
+  <data name="DropForm_DrawDropImage_Drop_here" xml:space="preserve">
+    <value>Drop
+here</value>
   </data>
   <data name="nl" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\nl.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -891,9 +922,6 @@ Please run ShareX as administrator to change personal folder path.</value>
   </data>
   <data name="images_stack" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\images-stack.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ApplicationSettingsForm_btnResetSettings_Click_WouldYouLikeToResetShareXSettings" xml:space="preserve">
-    <value>Would you like to reset ShareX settings?</value>
   </data>
   <data name="layout_select_sidebar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\layout-select-sidebar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -912,6 +940,12 @@ Please run ShareX as administrator to change personal folder path.</value>
   </data>
   <data name="color" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\color.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="camera" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\camera.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="InspectWindow_ClientRectangle" xml:space="preserve">
+    <value>Client rectangle</value>
   </data>
   <data name="image_saturation" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\image-saturation.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -949,9 +983,6 @@ Please run ShareX as administrator to change personal folder path.</value>
   <data name="upload_cloud" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\upload-cloud.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="clock" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\clock.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="layer__arrow" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\layer--arrow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -988,8 +1019,10 @@ Please run ShareX as administrator to change personal folder path.</value>
   <data name="tick_button" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\tick-button.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__Text__Length___0__" xml:space="preserve">
-    <value>Clipboard content: Text (Length: {0})</value>
+  <data name="ActionsToolbar_Tip" xml:space="preserve">
+    <value>Hold left down to drag
+Right click to open menu
+Middle click to close</value>
   </data>
   <data name="navigation_000_button" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\navigation-000-button.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -1005,6 +1038,9 @@ Please run ShareX as administrator to change personal folder path.</value>
   </data>
   <data name="drive_upload" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\drive-upload.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="cross" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cross.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="HotkeyManager_ShowFailedHotkeys_Hotkey_registration_failed" xml:space="preserve">
     <value>Hotkey registration failed</value>
@@ -1029,6 +1065,9 @@ Please run ShareX as administrator to change personal folder path.</value>
   </data>
   <data name="ActionsToolbar_OpenAtShareXStartup" xml:space="preserve">
     <value>Open at ShareX startup</value>
+  </data>
+  <data name="YourSystemAdminDisabledTheUploadFeature" xml:space="preserve">
+    <value>Your system admin disabled the upload feature.</value>
   </data>
   <data name="application_text_image" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\application-text-image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -1061,43 +1100,7 @@ Please run ShareX as administrator to change personal folder path.</value>
   <data name="TaskCompletedSound" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\TaskCompletedSound.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="Bing" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Bing.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="InspectWindow_WindowHandle" xml:space="preserve">
-    <value>Window handle</value>
-  </data>
-  <data name="InspectWindow_WindowTitle" xml:space="preserve">
-    <value>Window title</value>
-  </data>
-  <data name="InspectWindow_ClassName" xml:space="preserve">
-    <value>Class name</value>
-  </data>
-  <data name="InspectWindow_ProcessName" xml:space="preserve">
-    <value>Process name</value>
-  </data>
-  <data name="InspectWindow_ProcessFileName" xml:space="preserve">
-    <value>Process file name</value>
-  </data>
-  <data name="InspectWindow_ProcessIdentifier" xml:space="preserve">
-    <value>Process identifier</value>
-  </data>
-  <data name="InspectWindow_WindowRectangle" xml:space="preserve">
-    <value>Window rectangle</value>
-  </data>
-  <data name="InspectWindow_ClientRectangle" xml:space="preserve">
-    <value>Client rectangle</value>
-  </data>
-  <data name="InspectWindow_WindowStyles" xml:space="preserve">
-    <value>Window styles</value>
-  </data>
-  <data name="Twitter" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\twitter.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Discord" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\discord.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="YourSystemAdminDisabledTheUploadFeature" xml:space="preserve">
-    <value>Your system admin disabled the upload feature.</value>
+  <data name="application-resize-full" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\application-resize-full.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

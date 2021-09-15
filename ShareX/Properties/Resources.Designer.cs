@@ -461,6 +461,16 @@ namespace ShareX.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap application_resize_full {
+            get {
+                object obj = ResourceManager.GetObject("application-resize-full", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap application_search_result {
             get {
                 object obj = ResourceManager.GetObject("application-search-result", resourceCulture);
@@ -3117,14 +3127,12 @@ namespace ShareX.Properties {
                         "ShareX", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Your system admin disabled the upload feature..
         /// </summary>
-        public static string YourSystemAdminDisabledTheUploadFeature
-        {
-            get
-            {
+        public static string YourSystemAdminDisabledTheUploadFeature {
+            get {
                 return ResourceManager.GetString("YourSystemAdminDisabledTheUploadFeature", resourceCulture);
             }
         }

@@ -181,6 +181,12 @@
     <Compile Include="EasterEggAboutAnimation.cs" />
     <Compile Include="EasterEggBounce.cs" />
     <Compile Include="FirefoxManifest.cs" />
+    <Compile Include="Forms\BorderlessWindowForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\BorderlessWindowForm.Designer.cs">
+      <DependentUpon>BorderlessWindowForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ClipboardUploadForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -915,6 +921,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\BeforeUploadForm.zh-TW.resx">
       <DependentUpon>BeforeUploadForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BorderlessWindowForm.resx">
+      <DependentUpon>BorderlessWindowForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ClipboardFormatForm.ja-JP.resx">
       <DependentUpon>ClipboardFormatForm.cs</DependentUpon>
@@ -1910,6 +1919,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Discord.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\application-resize-full.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

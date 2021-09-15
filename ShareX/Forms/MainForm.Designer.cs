@@ -96,6 +96,7 @@
             this.tsmiInspectWindow = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiMonitorTest = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiDNSChanger = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiBorderlessWindow = new System.Windows.Forms.ToolStripMenuItem();
             this.tssMain1 = new System.Windows.Forms.ToolStripSeparator();
             this.tsddbAfterCaptureTasks = new System.Windows.Forms.ToolStripDropDownButton();
             this.tsddbAfterUploadTasks = new System.Windows.Forms.ToolStripDropDownButton();
@@ -305,6 +306,7 @@
             this.ucTaskThumbnailView = new ShareX.TaskThumbnailView();
             this.ttMain = new System.Windows.Forms.ToolTip(this.components);
             this.pToolbars = new System.Windows.Forms.Panel();
+            this.tsmiTrayBorderlessWindow = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.scMain)).BeginInit();
             this.scMain.Panel1.SuspendLayout();
             this.scMain.Panel2.SuspendLayout();
@@ -707,6 +709,7 @@
             this.tsmiIndexFolder,
             this.tssTools4,
             this.tsmiClipboardViewer,
+            this.tsmiBorderlessWindow,
             this.tsmiInspectWindow,
             this.tsmiMonitorTest,
             this.tsmiDNSChanger});
@@ -852,6 +855,13 @@
             this.tsmiDNSChanger.Name = "tsmiDNSChanger";
             resources.ApplyResources(this.tsmiDNSChanger, "tsmiDNSChanger");
             this.tsmiDNSChanger.Click += new System.EventHandler(this.tsmiDNSChanger_Click);
+            // 
+            // tsmiBorderlessWindow
+            // 
+            this.tsmiBorderlessWindow.Image = global::ShareX.Properties.Resources.application_resize_full;
+            this.tsmiBorderlessWindow.Name = "tsmiBorderlessWindow";
+            resources.ApplyResources(this.tsmiBorderlessWindow, "tsmiBorderlessWindow");
+            this.tsmiBorderlessWindow.Click += new System.EventHandler(this.tsmiBorderlessWindow_Click);
             // 
             // tssMain1
             // 
@@ -1960,6 +1970,7 @@
             this.tsmiTrayIndexFolder,
             this.tssTrayTools4,
             this.tsmiTrayClipboardViewer,
+            this.tsmiTrayBorderlessWindow,
             this.tsmiTrayInspectWindow,
             this.tsmiTrayMonitorTest,
             this.tsmiTrayDNSChanger});
@@ -2417,6 +2428,13 @@
             this.pToolbars.Controls.Add(this.tsMain);
             this.pToolbars.Name = "pToolbars";
             // 
+            // tsmiTrayBorderlessWindow
+            // 
+            this.tsmiTrayBorderlessWindow.Image = global::ShareX.Properties.Resources.application_resize_full;
+            this.tsmiTrayBorderlessWindow.Name = "tsmiTrayBorderlessWindow";
+            resources.ApplyResources(this.tsmiTrayBorderlessWindow, "tsmiTrayBorderlessWindow");
+            this.tsmiTrayBorderlessWindow.Click += new System.EventHandler(this.tsmiBorderlessWindow_Click);
+            // 
             // MainForm
             // 
             this.AllowDrop = true;
@@ -2731,5 +2749,7 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayTwitter;
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayDiscord;
         private System.Windows.Forms.ToolStripButton tsbDonate;
+        private System.Windows.Forms.ToolStripMenuItem tsmiBorderlessWindow;
+        private System.Windows.Forms.ToolStripMenuItem tsmiTrayBorderlessWindow;
     }
 }

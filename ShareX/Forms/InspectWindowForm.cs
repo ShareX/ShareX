@@ -80,7 +80,7 @@ namespace ShareX
                     AddInfo(Resources.InspectWindow_ProcessIdentifier, SelectedWindow.ProcessId.ToString());
                     AddInfo(Resources.InspectWindow_WindowRectangle, SelectedWindow.Rectangle.ToStringProper());
                     AddInfo(Resources.InspectWindow_ClientRectangle, SelectedWindow.ClientRectangle.ToStringProper());
-                    AddInfo(Resources.InspectWindow_WindowStyles, SelectedWindow.Styles.ToString());
+                    AddInfo(Resources.InspectWindow_WindowStyles, SelectedWindow.Style.ToString());
                 }
                 catch
                 {

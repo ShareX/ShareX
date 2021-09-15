@@ -80,7 +80,29 @@ namespace ShareX.HelpersLib
 
         public Rectangle ClientRectangle => NativeMethods.GetClientRect(Handle);
 
-        public WindowStyles Styles => (WindowStyles)NativeMethods.GetWindowLong(Handle, NativeConstants.GWL_STYLE);
+        public WindowStyles Style
+        {
+            get
+            {
+                return (WindowStyles)(ulong)NativeMethods.GetWindowLong(Handle, NativeConstants.GWL_STYLE);
+            }
+            set
+            {
+                NativeMethods.SetWindowLong(Handle, NativeConstants.GWL_STYLE, (IntPtr)value);
+            }
+        }
+
+        public WindowStyles ExStyle
+        {
+            get
+            {
+                return (WindowStyles)(ulong)NativeMethods.GetWindowLong(Handle, NativeConstants.GWL_EXSTYLE);
+            }
+            set
+            {
+                NativeMethods.SetWindowLong(Handle, NativeConstants.GWL_EXSTYLE, (IntPtr)value);
+            }
+        }
 
         public Icon Icon => NativeMethods.GetApplicationIcon(Handle);
 
@@ -113,6 +135,21 @@ namespace ShareX.HelpersLib
             {
                 NativeMethods.ShowWindow(Handle, (int)WindowShowStyle.Restore);
             }
+        }
+
+        public void SetWindowPos(SetWindowPosFlags flags)
+        {
+            SetWindowPos(0, 0, 0, 0, flags);
+        }
+
+        public void SetWindowPos(Rectangle rect, SetWindowPosFlags flags)
+        {
+            SetWindowPos(rect.X, rect.Y, rect.Width, rect.Height, flags);
+        }
+
+        public void SetWindowPos(int x, int y, int width, int height, SetWindowPosFlags flags)
+        {
+            NativeMethods.SetWindowPos(Handle, IntPtr.Zero, x, y, width, height, flags);
         }
 
         public override string ToString()

@@ -807,6 +807,12 @@ namespace ShareX
             thumbnailerForm.Show();
         }
 
+        public static void OpenBorderlessWindow()
+        {
+            BorderlessWindowForm borderlessWindowForm = new BorderlessWindowForm();
+            borderlessWindowForm.Show();
+        }
+
         public static void OpenInspectWindow()
         {
             InspectWindowForm inspectWindowForm = new InspectWindowForm();
