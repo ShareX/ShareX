@@ -136,7 +136,14 @@ namespace ShareX.MediaLib
 
             if (!Options.UseCustomArguments)
             {
-                txtArguments.Text = Options.GetFFmpegArgs();
+                try
+                {
+                    txtArguments.Text = Options.GetFFmpegArgs();
+                }
+                catch
+                {
+                    txtArguments.Text = "";
+                }
             }
 
             lblVideoCodec.Visible = cbVideoCodec.Visible = !Options.UseCustomArguments;
@@ -159,13 +166,20 @@ namespace ShareX.MediaLib
                     ffmpeg.TrackEncodeProgress = true;
                     ffmpeg.EncodeProgressChanged += Manager_EncodeProgressChanged;
 
-                    string outputFilePath = Options.OutputFilePath;
-                    string args = Options.Arguments;
-                    result = ffmpeg.Run(args);
-
-                    if (Options.AutoOpenFolder && result && !ffmpeg.StopRequested)
+                    try
                     {
-                        Helpers.OpenFolderWithFile(outputFilePath);
+                        string outputFilePath = Options.OutputFilePath;
+                        string args = Options.Arguments;
+                        result = ffmpeg.Run(args);
+
+                        if (Options.AutoOpenFolder && result && !ffmpeg.StopRequested)
+                        {
+                            Helpers.OpenFolderWithFile(outputFilePath);
+                        }
+                    }
+                    catch (Exception e)
+                    {
+                        e.ShowError();
                     }
                 }
             }
