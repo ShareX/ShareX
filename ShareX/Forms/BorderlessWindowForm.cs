@@ -45,12 +45,7 @@ namespace ShareX
         {
             if (!string.IsNullOrEmpty(windowTitle))
             {
-                IntPtr hWnd = NativeMethods.FindWindow(null, windowTitle);
-
-                if (hWnd == IntPtr.Zero)
-                {
-                    hWnd = SearchWindow(windowTitle);
-                }
+                IntPtr hWnd = SearchWindow(windowTitle);
 
                 if (hWnd == IntPtr.Zero)
                 {
@@ -94,15 +89,20 @@ namespace ShareX
 
         private IntPtr SearchWindow(string windowTitle)
         {
-            foreach (Process process in Process.GetProcesses())
+            IntPtr hWnd = NativeMethods.FindWindow(null, windowTitle);
+
+            if (hWnd == IntPtr.Zero)
             {
-                if (process.MainWindowTitle.Contains(windowTitle, StringComparison.InvariantCultureIgnoreCase))
+                foreach (Process process in Process.GetProcesses())
                 {
-                    return process.MainWindowHandle;
+                    if (process.MainWindowTitle.Contains(windowTitle, StringComparison.InvariantCultureIgnoreCase))
+                    {
+                        return process.MainWindowHandle;
+                    }
                 }
             }
 
-            return IntPtr.Zero;
+            return hWnd;
         }
 
         #region Form events
