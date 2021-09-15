@@ -41,11 +41,16 @@ namespace ShareX
             ShareXResources.ApplyTheme(this);
         }
 
-        private void MakeWindowBorderless(string title)
+        private void MakeWindowBorderless(string windowTitle)
         {
-            if (!string.IsNullOrEmpty(title))
+            if (!string.IsNullOrEmpty(windowTitle))
             {
-                IntPtr hWnd = SearchWindow(title);
+                IntPtr hWnd = NativeMethods.FindWindow(null, windowTitle);
+
+                if (hWnd == IntPtr.Zero)
+                {
+                    hWnd = SearchWindow(windowTitle);
+                }
 
                 if (hWnd == IntPtr.Zero)
                 {
@@ -54,39 +59,44 @@ namespace ShareX
                     return;
                 }
 
-                WindowInfo windowInfo = new WindowInfo(hWnd);
-
-                if (windowInfo.IsMinimized)
-                {
-                    windowInfo.Restore();
-                }
-
-                WindowStyles windowStyle = windowInfo.Style;
-                windowStyle &= ~(WindowStyles.WS_CAPTION | WindowStyles.WS_THICKFRAME | WindowStyles.WS_MINIMIZEBOX | WindowStyles.WS_MAXIMIZEBOX | WindowStyles.WS_SYSMENU);
-                windowInfo.Style = windowStyle;
-
-                WindowStyles windowExStyle = windowInfo.ExStyle;
-                windowExStyle &= ~(WindowStyles.WS_EX_DLGMODALFRAME | WindowStyles.WS_EX_CLIENTEDGE | WindowStyles.WS_EX_STATICEDGE);
-                windowInfo.ExStyle = windowExStyle;
-
-                Rectangle rect = Screen.FromHandle(hWnd).Bounds;
-
-                SetWindowPosFlags setWindowPosFlag = SetWindowPosFlags.SWP_FRAMECHANGED | SetWindowPosFlags.SWP_NOZORDER | SetWindowPosFlags.SWP_NOOWNERZORDER;
-
-                if (rect.IsEmpty)
-                {
-                    setWindowPosFlag |= SetWindowPosFlags.SWP_NOMOVE | SetWindowPosFlags.SWP_NOSIZE;
-                }
-
-                windowInfo.SetWindowPos(rect, setWindowPosFlag);
+                MakeWindowBorderless(hWnd);
             }
         }
 
-        private IntPtr SearchWindow(string title)
+        private void MakeWindowBorderless(IntPtr hWnd)
+        {
+            WindowInfo windowInfo = new WindowInfo(hWnd);
+
+            if (windowInfo.IsMinimized)
+            {
+                windowInfo.Restore();
+            }
+
+            WindowStyles windowStyle = windowInfo.Style;
+            windowStyle &= ~(WindowStyles.WS_CAPTION | WindowStyles.WS_THICKFRAME | WindowStyles.WS_MINIMIZEBOX | WindowStyles.WS_MAXIMIZEBOX | WindowStyles.WS_SYSMENU);
+            windowInfo.Style = windowStyle;
+
+            WindowStyles windowExStyle = windowInfo.ExStyle;
+            windowExStyle &= ~(WindowStyles.WS_EX_DLGMODALFRAME | WindowStyles.WS_EX_CLIENTEDGE | WindowStyles.WS_EX_STATICEDGE);
+            windowInfo.ExStyle = windowExStyle;
+
+            Rectangle rect = Screen.FromHandle(hWnd).Bounds;
+
+            SetWindowPosFlags setWindowPosFlag = SetWindowPosFlags.SWP_FRAMECHANGED | SetWindowPosFlags.SWP_NOZORDER | SetWindowPosFlags.SWP_NOOWNERZORDER;
+
+            if (rect.IsEmpty)
+            {
+                setWindowPosFlag |= SetWindowPosFlags.SWP_NOMOVE | SetWindowPosFlags.SWP_NOSIZE;
+            }
+
+            windowInfo.SetWindowPos(rect, setWindowPosFlag);
+        }
+
+        private IntPtr SearchWindow(string windowTitle)
         {
             foreach (Process process in Process.GetProcesses())
             {
-                if (process.MainWindowTitle.Contains(title, StringComparison.InvariantCultureIgnoreCase))
+                if (process.MainWindowTitle.Contains(windowTitle, StringComparison.InvariantCultureIgnoreCase))
                 {
                     return process.MainWindowHandle;
                 }

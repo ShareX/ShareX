@@ -37,26 +37,29 @@ namespace ShareX
             // lblWindowTitle
             // 
             this.lblWindowTitle.AutoSize = true;
+            this.lblWindowTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblWindowTitle.Location = new System.Drawing.Point(13, 16);
             this.lblWindowTitle.Name = "lblWindowTitle";
-            this.lblWindowTitle.Size = new System.Drawing.Size(68, 13);
+            this.lblWindowTitle.Size = new System.Drawing.Size(82, 16);
             this.lblWindowTitle.TabIndex = 0;
             this.lblWindowTitle.Text = "Window title:";
             // 
             // txtWindowTitle
             // 
-            this.txtWindowTitle.Location = new System.Drawing.Point(16, 32);
+            this.txtWindowTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtWindowTitle.Location = new System.Drawing.Point(16, 40);
             this.txtWindowTitle.Name = "txtWindowTitle";
-            this.txtWindowTitle.Size = new System.Drawing.Size(264, 20);
+            this.txtWindowTitle.Size = new System.Drawing.Size(296, 22);
             this.txtWindowTitle.TabIndex = 1;
             this.txtWindowTitle.TextChanged += new System.EventHandler(this.txtWindowTitle_TextChanged);
             // 
             // btnMakeWindowBorderless
             // 
             this.btnMakeWindowBorderless.Enabled = false;
-            this.btnMakeWindowBorderless.Location = new System.Drawing.Point(16, 56);
+            this.btnMakeWindowBorderless.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMakeWindowBorderless.Location = new System.Drawing.Point(16, 72);
             this.btnMakeWindowBorderless.Name = "btnMakeWindowBorderless";
-            this.btnMakeWindowBorderless.Size = new System.Drawing.Size(264, 32);
+            this.btnMakeWindowBorderless.Size = new System.Drawing.Size(296, 32);
             this.btnMakeWindowBorderless.TabIndex = 2;
             this.btnMakeWindowBorderless.Text = "Make window borderless";
             this.btnMakeWindowBorderless.UseVisualStyleBackColor = true;
@@ -66,7 +69,7 @@ namespace ShareX
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(297, 104);
+            this.ClientSize = new System.Drawing.Size(328, 122);
             this.Controls.Add(this.btnMakeWindowBorderless);
             this.Controls.Add(this.txtWindowTitle);
             this.Controls.Add(this.lblWindowTitle);
