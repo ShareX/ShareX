@@ -176,8 +176,8 @@
             // 
             // VideoConverterForm
             // 
+            this.AllowDrop = true;
             resources.ApplyResources(this, "$this");
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.Controls.Add(this.lblVideoQualityValue);
@@ -204,6 +204,8 @@
             this.MaximizeBox = false;
             this.Name = "VideoConverterForm";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.VideoConverterForm_FormClosing);
+            this.DragDrop += new System.Windows.Forms.DragEventHandler(this.VideoConverterForm_DragDrop);
+            this.DragEnter += new System.Windows.Forms.DragEventHandler(this.VideoConverterForm_DragEnter);
             ((System.ComponentModel.ISupportInitialize)(this.tbVideoQuality)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
