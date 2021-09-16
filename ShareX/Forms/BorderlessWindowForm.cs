@@ -33,15 +33,17 @@ namespace ShareX
 {
     public partial class BorderlessWindowForm : Form
     {
-        public string DefaultWindowTitle { get; set; } = "minecraft";
+        public BorderlessWindowSettings Settings { get; private set; }
 
-        public BorderlessWindowForm()
+        public BorderlessWindowForm(BorderlessWindowSettings settings)
         {
             InitializeComponent();
             ShareXResources.ApplyTheme(this);
+
+            Settings = settings;
         }
 
-        private void MakeWindowBorderless(string windowTitle)
+        private bool MakeWindowBorderless(string windowTitle)
         {
             if (!string.IsNullOrEmpty(windowTitle))
             {
@@ -51,11 +53,15 @@ namespace ShareX
                 {
                     // TODO: Translate
                     MessageBox.Show("Unable to find a window with specified window title.", "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    return;
                 }
-
-                MakeWindowBorderless(hWnd);
+                else
+                {
+                    MakeWindowBorderless(hWnd);
+                    return true;
+                }
             }
+
+            return false;
         }
 
         private void MakeWindowBorderless(IntPtr hWnd)
@@ -109,9 +115,9 @@ namespace ShareX
 
         private void BorderlessWindowForm_Shown(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(DefaultWindowTitle))
+            if (Settings.RememberWindowTitle && !string.IsNullOrEmpty(Settings.WindowTitle))
             {
-                txtWindowTitle.Text = DefaultWindowTitle;
+                txtWindowTitle.Text = Settings.WindowTitle;
                 btnMakeWindowBorderless.Focus();
             }
         }
@@ -125,11 +131,35 @@ namespace ShareX
         {
             try
             {
-                MakeWindowBorderless(txtWindowTitle.Text);
+                string windowTitle = txtWindowTitle.Text;
+
+                if (Settings.RememberWindowTitle)
+                {
+                    Settings.WindowTitle = windowTitle;
+                }
+                else
+                {
+                    Settings.WindowTitle = "";
+                }
+
+                bool result = MakeWindowBorderless(windowTitle);
+
+                if (result && Settings.AutoCloseWindow)
+                {
+                    Close();
+                }
             }
             catch (Exception ex)
             {
                 ex.ShowError();
+            }
+        }
+
+        private void btnSettings_Click(object sender, EventArgs e)
+        {
+            using (BorderlessWindowSettingsForm form = new BorderlessWindowSettingsForm(Settings))
+            {
+                form.ShowDialog();
             }
         }
 

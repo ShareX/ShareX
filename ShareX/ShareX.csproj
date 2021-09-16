@@ -140,6 +140,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="BalloonTipAction.cs" />
+    <Compile Include="BorderlessWindowSettings.cs" />
     <Compile Include="CaptureHelpers\CaptureActiveMonitor.cs" />
     <Compile Include="CaptureHelpers\CaptureActiveWindow.cs" />
     <Compile Include="CaptureHelpers\CaptureBase.cs" />
@@ -186,6 +187,12 @@
     </Compile>
     <Compile Include="Forms\BorderlessWindowForm.Designer.cs">
       <DependentUpon>BorderlessWindowForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\BorderlessWindowSettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\BorderlessWindowSettingsForm.Designer.cs">
+      <DependentUpon>BorderlessWindowSettingsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\ClipboardUploadForm.cs">
       <SubType>Form</SubType>
@@ -924,6 +931,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\BorderlessWindowForm.resx">
       <DependentUpon>BorderlessWindowForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BorderlessWindowSettingsForm.resx">
+      <DependentUpon>BorderlessWindowSettingsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ClipboardFormatForm.ja-JP.resx">
       <DependentUpon>ClipboardFormatForm.cs</DependentUpon>

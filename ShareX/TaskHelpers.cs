@@ -807,9 +807,12 @@ namespace ShareX
             thumbnailerForm.Show();
         }
 
-        public static void OpenBorderlessWindow()
+        public static void OpenBorderlessWindow(TaskSettings taskSettings = null)
         {
-            BorderlessWindowForm borderlessWindowForm = new BorderlessWindowForm();
+            if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
+
+            BorderlessWindowSettings settings = taskSettings.ToolsSettingsReference.BorderlessWindowSettings;
+            BorderlessWindowForm borderlessWindowForm = new BorderlessWindowForm(settings);
             borderlessWindowForm.Show();
         }
 

@@ -429,6 +429,7 @@ namespace ShareX
         public ImageCombinerOptions ImageCombinerOptions = new ImageCombinerOptions();
         public VideoConverterOptions VideoConverterOptions = new VideoConverterOptions();
         public VideoThumbnailOptions VideoThumbnailOptions = new VideoThumbnailOptions();
+        public BorderlessWindowSettings BorderlessWindowSettings = new BorderlessWindowSettings();
     }
 
     public class TaskSettingsAdvanced
