@@ -24,9 +24,12 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.ScreenCaptureLib;
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace ShareX
@@ -41,6 +44,46 @@ namespace ShareX
             ShareXResources.ApplyTheme(this);
 
             Settings = settings;
+        }
+
+        private void UpdateWindowListMenu()
+        {
+            cmsWindowList.Items.Clear();
+
+            WindowsList windowsList = new WindowsList(Handle);
+            List<WindowInfo> windows = windowsList.GetVisibleWindowsList();
+
+            if (windows != null && windows.Count > 0)
+            {
+                List<ToolStripMenuItem> items = new List<ToolStripMenuItem>();
+
+                foreach (WindowInfo window in windows)
+                {
+                    try
+                    {
+                        string title = window.Text;
+                        string shortTitle = title.Truncate(50, "...");
+                        ToolStripMenuItem tsmi = new ToolStripMenuItem(shortTitle);
+                        tsmi.Click += (sender, e) => txtWindowTitle.Text = title;
+
+                        using (Icon icon = window.Icon)
+                        {
+                            if (icon != null && icon.Width > 0 && icon.Height > 0)
+                            {
+                                tsmi.Image = icon.ToBitmap();
+                            }
+                        }
+
+                        items.Add(tsmi);
+                    }
+                    catch (Exception e)
+                    {
+                        DebugHelper.WriteException(e);
+                    }
+                }
+
+                cmsWindowList.Items.AddRange(items.OrderBy(x => x.Text).ToArray());
+            }
         }
 
         private bool MakeWindowBorderless(string windowTitle)
@@ -120,6 +163,11 @@ namespace ShareX
                 txtWindowTitle.Text = Settings.WindowTitle;
                 btnMakeWindowBorderless.Focus();
             }
+        }
+
+        private void mbWindowList_MouseDown(object sender, MouseEventArgs e)
+        {
+            UpdateWindowListMenu();
         }
 
         private void txtWindowTitle_TextChanged(object sender, EventArgs e)

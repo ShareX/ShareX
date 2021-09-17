@@ -51,7 +51,7 @@ namespace ShareX.HelpersLib
                 }
                 else
                 {
-                    menuLocation = new Point(0, Height);
+                    menuLocation = new Point(0, Height - 1);
                 }
 
                 Menu.Show(this, menuLocation);
