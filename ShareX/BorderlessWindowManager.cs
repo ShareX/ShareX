@@ -70,7 +70,7 @@ namespace ShareX
             windowStyle &= ~(
                 WindowStyles.WS_CAPTION // The window has a title bar (includes the WS_BORDER style).
                 | WindowStyles.WS_MAXIMIZEBOX // The window has a maximize button.
-                | WindowStyles.WS_MINIMIZEBOX // The window has a minimize button.
+                /*| WindowStyles.WS_MINIMIZEBOX // The window has a minimize button.*/
                 | WindowStyles.WS_SYSMENU // The window has a window menu on its title bar.
                 | WindowStyles.WS_THICKFRAME // The window has a sizing border. Same as the WS_SIZEBOX style.
                 );
