@@ -48,6 +48,7 @@ namespace ShareX
                 else
                 {
                     MakeWindowBorderless(hWnd);
+
                     return true;
                 }
             }
@@ -65,20 +66,40 @@ namespace ShareX
             }
 
             WindowStyles windowStyle = windowInfo.Style;
-            windowStyle &= ~(WindowStyles.WS_CAPTION | WindowStyles.WS_THICKFRAME | WindowStyles.WS_MINIMIZEBOX | WindowStyles.WS_MAXIMIZEBOX | WindowStyles.WS_SYSMENU);
+            // https://docs.microsoft.com/en-us/windows/win32/winmsg/window-styles
+            windowStyle &= ~(
+                WindowStyles.WS_CAPTION // The window has a title bar (includes the WS_BORDER style).
+                | WindowStyles.WS_MAXIMIZEBOX // The window has a maximize button.
+                | WindowStyles.WS_MINIMIZEBOX // The window has a minimize button.
+                | WindowStyles.WS_SYSMENU // The window has a window menu on its title bar.
+                | WindowStyles.WS_THICKFRAME // The window has a sizing border. Same as the WS_SIZEBOX style.
+                );
             windowInfo.Style = windowStyle;
 
             WindowStyles windowExStyle = windowInfo.ExStyle;
-            windowExStyle &= ~(WindowStyles.WS_EX_DLGMODALFRAME | WindowStyles.WS_EX_CLIENTEDGE | WindowStyles.WS_EX_STATICEDGE);
+            // https://docs.microsoft.com/en-us/windows/win32/winmsg/extended-window-styles
+            windowExStyle &= ~(
+                WindowStyles.WS_EX_CLIENTEDGE // The window has a border with a sunken edge.
+                | WindowStyles.WS_EX_DLGMODALFRAME // The window has a double border.
+                | WindowStyles.WS_EX_STATICEDGE // The window has a three-dimensional border style intended to be used for items that do not accept user input.
+                );
             windowInfo.ExStyle = windowExStyle;
 
             Rectangle rect = Screen.FromHandle(hWnd).Bounds;
 
-            SetWindowPosFlags setWindowPosFlag = SetWindowPosFlags.SWP_FRAMECHANGED | SetWindowPosFlags.SWP_NOZORDER | SetWindowPosFlags.SWP_NOOWNERZORDER;
+            // https://docs.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-setwindowpos
+            SetWindowPosFlags setWindowPosFlag =
+                SetWindowPosFlags.SWP_FRAMECHANGED // Applies new frame styles set using the SetWindowLong function.
+                | SetWindowPosFlags.SWP_NOOWNERZORDER // Does not change the owner window's position in the Z order.
+                | SetWindowPosFlags.SWP_NOZORDER // Retains the current Z order (ignores the hWndInsertAfter parameter).
+                ;
 
             if (rect.IsEmpty)
             {
-                setWindowPosFlag |= SetWindowPosFlags.SWP_NOMOVE | SetWindowPosFlags.SWP_NOSIZE;
+                setWindowPosFlag |=
+                    SetWindowPosFlags.SWP_NOMOVE // Retains the current position (ignores X and Y parameters).
+                    | SetWindowPosFlags.SWP_NOSIZE // Retains the current size (ignores the cx and cy parameters).
+                    ;
             }
 
             windowInfo.SetWindowPos(rect, setWindowPosFlag);
