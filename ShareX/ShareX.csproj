@@ -140,6 +140,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="BalloonTipAction.cs" />
+    <Compile Include="BorderlessWindowManager.cs" />
     <Compile Include="BorderlessWindowSettings.cs" />
     <Compile Include="CaptureHelpers\CaptureActiveMonitor.cs" />
     <Compile Include="CaptureHelpers\CaptureActiveWindow.cs" />

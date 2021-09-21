@@ -27,7 +27,6 @@ using ShareX.HelpersLib;
 using ShareX.ScreenCaptureLib;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
@@ -86,74 +85,6 @@ namespace ShareX
             }
         }
 
-        private bool MakeWindowBorderless(string windowTitle)
-        {
-            if (!string.IsNullOrEmpty(windowTitle))
-            {
-                IntPtr hWnd = SearchWindow(windowTitle);
-
-                if (hWnd == IntPtr.Zero)
-                {
-                    // TODO: Translate
-                    MessageBox.Show("Unable to find a window with specified window title.", "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    MakeWindowBorderless(hWnd);
-                    return true;
-                }
-            }
-
-            return false;
-        }
-
-        private void MakeWindowBorderless(IntPtr hWnd)
-        {
-            WindowInfo windowInfo = new WindowInfo(hWnd);
-
-            if (windowInfo.IsMinimized)
-            {
-                windowInfo.Restore();
-            }
-
-            WindowStyles windowStyle = windowInfo.Style;
-            windowStyle &= ~(WindowStyles.WS_CAPTION | WindowStyles.WS_THICKFRAME | WindowStyles.WS_MINIMIZEBOX | WindowStyles.WS_MAXIMIZEBOX | WindowStyles.WS_SYSMENU);
-            windowInfo.Style = windowStyle;
-
-            WindowStyles windowExStyle = windowInfo.ExStyle;
-            windowExStyle &= ~(WindowStyles.WS_EX_DLGMODALFRAME | WindowStyles.WS_EX_CLIENTEDGE | WindowStyles.WS_EX_STATICEDGE);
-            windowInfo.ExStyle = windowExStyle;
-
-            Rectangle rect = Screen.FromHandle(hWnd).Bounds;
-
-            SetWindowPosFlags setWindowPosFlag = SetWindowPosFlags.SWP_FRAMECHANGED | SetWindowPosFlags.SWP_NOZORDER | SetWindowPosFlags.SWP_NOOWNERZORDER;
-
-            if (rect.IsEmpty)
-            {
-                setWindowPosFlag |= SetWindowPosFlags.SWP_NOMOVE | SetWindowPosFlags.SWP_NOSIZE;
-            }
-
-            windowInfo.SetWindowPos(rect, setWindowPosFlag);
-        }
-
-        private IntPtr SearchWindow(string windowTitle)
-        {
-            IntPtr hWnd = NativeMethods.FindWindow(null, windowTitle);
-
-            if (hWnd == IntPtr.Zero)
-            {
-                foreach (Process process in Process.GetProcesses())
-                {
-                    if (process.MainWindowTitle.Contains(windowTitle, StringComparison.InvariantCultureIgnoreCase))
-                    {
-                        return process.MainWindowHandle;
-                    }
-                }
-            }
-
-            return hWnd;
-        }
-
         #region Form events
 
         private void BorderlessWindowForm_Shown(object sender, EventArgs e)
@@ -190,7 +121,7 @@ namespace ShareX
                     Settings.WindowTitle = "";
                 }
 
-                bool result = MakeWindowBorderless(windowTitle);
+                bool result = BorderlessWindowManager.MakeWindowBorderless(windowTitle);
 
                 if (result && Settings.AutoCloseWindow)
                 {
