@@ -874,6 +874,12 @@ namespace ShareX.ScreenCaptureLib
                 case RegionCaptureAction.CaptureActiveMonitor:
                     Form.CloseWindow(RegionResult.ActiveMonitor);
                     break;
+                case RegionCaptureAction.CaptureLastRegion:
+                    if (RegionCaptureForm.LastRegionFillPath != null)
+                    {
+                        Form.CloseWindow(RegionResult.LastRegion);
+                    }
+                    break;
             }
         }
 

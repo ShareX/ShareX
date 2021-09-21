@@ -1370,4 +1370,7 @@ Would you like to download and install it?</value>
   <data name="EDataType_URL" xml:space="preserve">
     <value>URL</value>
   </data>
+  <data name="RegionCaptureAction_CaptureLastRegion" xml:space="preserve">
+    <value>Capture last region</value>
+  </data>
 </root>

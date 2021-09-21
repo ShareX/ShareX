@@ -2771,6 +2771,15 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Capture last region.
+        /// </summary>
+        internal static string RegionCaptureAction_CaptureLastRegion {
+            get {
+                return ResourceManager.GetString("RegionCaptureAction_CaptureLastRegion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Do nothing.
         /// </summary>
         internal static string RegionCaptureAction_None {

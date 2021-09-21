@@ -255,7 +255,8 @@ namespace ShareX.ScreenCaptureLib
         RemoveShape,
         SwapToolType,
         CaptureFullscreen,
-        CaptureActiveMonitor
+        CaptureActiveMonitor,
+        CaptureLastRegion
     }
 
     public enum ShapeCategory
