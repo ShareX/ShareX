@@ -34,7 +34,7 @@ namespace ShareX
 {
     public class BorderlessWindowManager
     {
-        public static bool MakeWindowBorderless(string windowTitle)
+        public static bool MakeWindowBorderless(string windowTitle, bool useWorkingArea = false)
         {
             if (!string.IsNullOrEmpty(windowTitle))
             {
@@ -47,7 +47,7 @@ namespace ShareX
                 }
                 else
                 {
-                    MakeWindowBorderless(hWnd);
+                    MakeWindowBorderless(hWnd, useWorkingArea);
 
                     return true;
                 }
@@ -56,7 +56,7 @@ namespace ShareX
             return false;
         }
 
-        public static void MakeWindowBorderless(IntPtr hWnd)
+        public static void MakeWindowBorderless(IntPtr hWnd, bool useWorkingArea = false)
         {
             WindowInfo windowInfo = new WindowInfo(hWnd);
 
@@ -85,7 +85,17 @@ namespace ShareX
                 );
             windowInfo.ExStyle = windowExStyle;
 
-            Rectangle rect = Screen.FromHandle(hWnd).Bounds;
+            Screen screen = Screen.FromHandle(hWnd);
+            Rectangle rect;
+
+            if (useWorkingArea)
+            {
+                rect = screen.WorkingArea;
+            }
+            else
+            {
+                rect = screen.Bounds;
+            }
 
             // https://docs.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-setwindowpos
             SetWindowPosFlags setWindowPosFlag =

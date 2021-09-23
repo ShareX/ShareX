@@ -31,6 +31,7 @@ namespace ShareX
         {
             this.cbRememberWindowTitle = new System.Windows.Forms.CheckBox();
             this.cbAutoCloseWindow = new System.Windows.Forms.CheckBox();
+            this.cbExcludeTaskbarArea = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // cbRememberWindowTitle
@@ -55,11 +56,23 @@ namespace ShareX
             this.cbAutoCloseWindow.UseVisualStyleBackColor = true;
             this.cbAutoCloseWindow.CheckedChanged += new System.EventHandler(this.cbAutoCloseWindow_CheckedChanged);
             // 
+            // cbExcludeTaskbarArea
+            // 
+            this.cbExcludeTaskbarArea.AutoSize = true;
+            this.cbExcludeTaskbarArea.Location = new System.Drawing.Point(16, 64);
+            this.cbExcludeTaskbarArea.Name = "cbExcludeTaskbarArea";
+            this.cbExcludeTaskbarArea.Size = new System.Drawing.Size(126, 17);
+            this.cbExcludeTaskbarArea.TabIndex = 2;
+            this.cbExcludeTaskbarArea.Text = "Exclude taskbar area";
+            this.cbExcludeTaskbarArea.UseVisualStyleBackColor = true;
+            this.cbExcludeTaskbarArea.CheckedChanged += new System.EventHandler(this.cbExcludeTaskbarArea_CheckedChanged);
+            // 
             // BorderlessWindowSettingsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(328, 148);
+            this.Controls.Add(this.cbExcludeTaskbarArea);
             this.Controls.Add(this.cbAutoCloseWindow);
             this.Controls.Add(this.cbRememberWindowTitle);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -77,5 +90,6 @@ namespace ShareX
 
         private System.Windows.Forms.CheckBox cbRememberWindowTitle;
         private System.Windows.Forms.CheckBox cbAutoCloseWindow;
+        private System.Windows.Forms.CheckBox cbExcludeTaskbarArea;
     }
 }

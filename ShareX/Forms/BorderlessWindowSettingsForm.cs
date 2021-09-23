@@ -41,6 +41,7 @@ namespace ShareX
             Settings = settings;
             cbRememberWindowTitle.Checked = Settings.RememberWindowTitle;
             cbAutoCloseWindow.Checked = Settings.AutoCloseWindow;
+            cbExcludeTaskbarArea.Checked = Settings.ExcludeTaskbarArea;
         }
 
         private void cbRememberWindowTitle_CheckedChanged(object sender, EventArgs e)
@@ -51,6 +52,11 @@ namespace ShareX
         private void cbAutoCloseWindow_CheckedChanged(object sender, EventArgs e)
         {
             Settings.AutoCloseWindow = cbAutoCloseWindow.Checked;
+        }
+
+        private void cbExcludeTaskbarArea_CheckedChanged(object sender, EventArgs e)
+        {
+            Settings.ExcludeTaskbarArea = cbExcludeTaskbarArea.Checked;
         }
     }
 }

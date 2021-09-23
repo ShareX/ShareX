@@ -121,7 +121,7 @@ namespace ShareX
                     Settings.WindowTitle = "";
                 }
 
-                bool result = BorderlessWindowManager.MakeWindowBorderless(windowTitle);
+                bool result = BorderlessWindowManager.MakeWindowBorderless(windowTitle, Settings.ExcludeTaskbarArea);
 
                 if (result && Settings.AutoCloseWindow)
                 {
