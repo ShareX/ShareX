@@ -2083,6 +2083,24 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Stop screen recording.
+        /// </summary>
+        internal static string HotkeyType_StopScreenRecording {
+            get {
+                return ResourceManager.GetString("HotkeyType_StopScreenRecording", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Screen record.
+        /// </summary>
+        internal static string HotkeyType_StopScreenRecording_Category {
+            get {
+                return ResourceManager.GetString("HotkeyType_StopScreenRecording_Category", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Stop all active uploads.
         /// </summary>
         internal static string HotkeyType_StopUploads {

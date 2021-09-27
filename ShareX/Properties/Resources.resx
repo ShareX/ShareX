@@ -1103,4 +1103,7 @@ Middle click to close</value>
   <data name="application-resize-full" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\application-resize-full.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="camcorder__minus" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\camcorder--minus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

@@ -203,6 +203,7 @@ namespace ShareX
         ScreenRecorderGIFActiveWindow,
         ScreenRecorderGIFCustomRegion,
         StartScreenRecorderGIF,
+        StopScreenRecording,
         AbortScreenRecording,
         // Tools
         ColorPicker,

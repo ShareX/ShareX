@@ -1373,4 +1373,10 @@ Would you like to download and install it?</value>
   <data name="RegionCaptureAction_CaptureLastRegion" xml:space="preserve">
     <value>Capture last region</value>
   </data>
+  <data name="HotkeyType_StopScreenRecording" xml:space="preserve">
+    <value>Stop screen recording</value>
+  </data>
+  <data name="HotkeyType_StopScreenRecording_Category" xml:space="preserve">
+    <value>Screen record</value>
+  </data>
 </root>

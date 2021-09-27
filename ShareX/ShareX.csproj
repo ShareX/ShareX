@@ -1934,6 +1934,9 @@
   <ItemGroup>
     <None Include="Resources\application-resize-full.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\camcorder--minus.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>

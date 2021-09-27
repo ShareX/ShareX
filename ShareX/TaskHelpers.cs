@@ -163,6 +163,9 @@ namespace ShareX
                 case HotkeyType.StartScreenRecorderGIF:
                     StartScreenRecording(ScreenRecordOutput.GIF, ScreenRecordStartMethod.LastRegion, safeTaskSettings);
                     break;
+                case HotkeyType.StopScreenRecording:
+                    StopScreenRecording();
+                    break;
                 case HotkeyType.AbortScreenRecording:
                     AbortScreenRecording();
                     break;
@@ -592,6 +595,11 @@ namespace ShareX
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
             ScreenRecordManager.StartStopRecording(outputType, startMethod, taskSettings);
+        }
+
+        public static void StopScreenRecording()
+        {
+            ScreenRecordManager.StopRecording();
         }
 
         public static void AbortScreenRecording()
@@ -1482,6 +1490,7 @@ namespace ShareX
                     case HotkeyType.ScreenRecorderGIFActiveWindow: return Resources.film__arrow;
                     case HotkeyType.ScreenRecorderGIFCustomRegion: return Resources.film__arrow;
                     case HotkeyType.StartScreenRecorderGIF: return Resources.film__arrow;
+                    case HotkeyType.StopScreenRecording: return Resources.camcorder__minus;
                     case HotkeyType.AbortScreenRecording: return Resources.camcorder__exclamation;
                     // Tools
                     case HotkeyType.ColorPicker: return Resources.color;
