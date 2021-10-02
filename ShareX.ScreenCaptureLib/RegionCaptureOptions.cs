@@ -100,6 +100,9 @@ namespace ShareX.ScreenCaptureLib
         public List<ImageEffectPreset> ImageEffectPresets = new List<ImageEffectPreset>();
         public int SelectedImageEffectPreset = 0;
 
+        // Color picker
+        public ColorPickerOptions ColorPickerOptions = new ColorPickerOptions();
+
         // Screen color picker
         public string ScreenColorPickerInfoText = "";
     }

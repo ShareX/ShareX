@@ -146,7 +146,7 @@ namespace ShareX.ScreenCaptureLib
         public static void ShowScreenColorPickerDialog(RegionCaptureOptions options)
         {
             Color color = Color.Red;
-            ColorPickerForm colorPickerForm = new ColorPickerForm(color, true);
+            ColorPickerForm colorPickerForm = new ColorPickerForm(color, true, true, options.ColorPickerOptions);
             colorPickerForm.EnableScreenColorPickerButton(() => GetPointInfo(options));
             colorPickerForm.Show();
         }
