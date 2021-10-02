@@ -1379,4 +1379,10 @@ Would you like to download and install it?</value>
   <data name="HotkeyType_StopScreenRecording_Category" xml:space="preserve">
     <value>Screen record</value>
   </data>
+  <data name="HotkeyType_ToggleTrayMenu" xml:space="preserve">
+    <value>Toggle tray menu</value>
+  </data>
+  <data name="HotkeyType_ToggleTrayMenu_Category" xml:space="preserve">
+    <value>Other</value>
+  </data>
 </root>

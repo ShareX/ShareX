@@ -2155,6 +2155,24 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Toggle tray menu.
+        /// </summary>
+        internal static string HotkeyType_ToggleTrayMenu {
+            get {
+                return ResourceManager.GetString("HotkeyType_ToggleTrayMenu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Other.
+        /// </summary>
+        internal static string HotkeyType_ToggleTrayMenu_Category {
+            get {
+                return ResourceManager.GetString("HotkeyType_ToggleTrayMenu_Category", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Tweet message.
         /// </summary>
         internal static string HotkeyType_TweetMessage {
