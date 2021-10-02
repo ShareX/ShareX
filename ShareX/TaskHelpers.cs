@@ -260,6 +260,9 @@ namespace ShareX
                 case HotkeyType.ToggleActionsToolbar:
                     ToggleActionsToolbar();
                     break;
+                case HotkeyType.ToggleTrayMenu:
+                    ToggleTrayMenu();
+                    break;
                 case HotkeyType.ExitShareX:
                     Program.MainForm.ForceClose();
                     break;
@@ -1519,6 +1522,7 @@ namespace ShareX
                     case HotkeyType.OpenHistory: return Resources.application_blog;
                     case HotkeyType.OpenImageHistory: return Resources.application_icon_large;
                     case HotkeyType.ToggleActionsToolbar: return Resources.ui_toolbar__arrow;
+                    case HotkeyType.ToggleTrayMenu: return Resources.ui_menu_blue;
                     case HotkeyType.ExitShareX: return Resources.cross;
                 }
             }
@@ -1811,6 +1815,24 @@ namespace ShareX
             };
 
             NotificationForm.Show(toastConfig);
+        }
+
+        public static void ToggleTrayMenu()
+        {
+            ContextMenuStrip cmsTray = Program.MainForm.niTray.ContextMenuStrip;
+
+            if (cmsTray != null && !cmsTray.IsDisposed)
+            {
+                if (cmsTray.Visible)
+                {
+                    cmsTray.Close();
+                }
+                else
+                {
+                    NativeMethods.SetForegroundWindow(cmsTray.Handle);
+                    cmsTray.Show(Cursor.Position);
+                }
+            }
         }
 
         public static bool IsUploadAllowed()

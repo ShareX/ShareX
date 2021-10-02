@@ -232,6 +232,7 @@ namespace ShareX
         OpenHistory,
         OpenImageHistory,
         ToggleActionsToolbar,
+        ToggleTrayMenu,
         ExitShareX
     }
 
