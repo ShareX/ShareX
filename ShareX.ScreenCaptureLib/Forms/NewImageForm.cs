@@ -47,6 +47,7 @@ namespace ShareX.ScreenCaptureLib
             nudWidth.Value = Options.EditorNewImageSize.Width;
             nudHeight.Value = Options.EditorNewImageSize.Height;
             cbTransparent.Checked = Options.EditorNewImageTransparent;
+            btnChangeColor.ColorPickerOptions = options.ColorPickerOptions;
             btnChangeColor.Color = options.EditorNewImageBackgroundColor;
         }
 

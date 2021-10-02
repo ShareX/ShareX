@@ -104,6 +104,7 @@
     <Compile Include="..\SharedAssemblyInfo.cs">
       <Link>Properties\SharedAssemblyInfo.cs</Link>
     </Compile>
+    <Compile Include="ColorPickerOptions.cs" />
     <Compile Include="ControlHider.cs" />
     <Compile Include="Controls\ObjectListView.cs">
       <SubType>Component</SubType>

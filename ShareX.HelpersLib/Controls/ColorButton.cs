@@ -66,6 +66,8 @@ namespace ShareX.HelpersLib
         [DefaultValue(false)]
         public bool ManualButtonClick { get; set; }
 
+        public ColorPickerOptions ColorPickerOptions { get; set; }
+
         private bool isMouseHover;
 
         protected void OnColorChanged(Color color)
@@ -85,7 +87,7 @@ namespace ShareX.HelpersLib
 
         public void ShowColorDialog()
         {
-            if (ColorPickerForm.PickColor(Color, out Color newColor, FindForm()))
+            if (ColorPickerForm.PickColor(Color, out Color newColor, FindForm(), null, ColorPickerOptions))
             {
                 Color = newColor;
             }
