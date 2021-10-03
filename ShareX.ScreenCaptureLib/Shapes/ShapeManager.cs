@@ -758,18 +758,20 @@ namespace ShareX.ScreenCaptureLib
                 {
                     Cursor.Position = Cursor.Position.Add(x, y);
                 }
+                else if (e.Control)
+                {
+                    shape.OnResizing();
+                    shape.Resize(x, y, true);
+                }
+                else if (e.Alt)
+                {
+                    shape.OnResizing();
+                    shape.Resize(x, y, false);
+                }
                 else
                 {
-                    if (e.Control)
-                    {
-                        shape.OnMoving();
-                        shape.Move(x, y);
-                    }
-                    else
-                    {
-                        shape.OnResizing();
-                        shape.Resize(x, y, !e.Alt);
-                    }
+                    shape.OnMoving();
+                    shape.Move(x, y);
                 }
             }
         }
