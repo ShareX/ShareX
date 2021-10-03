@@ -121,6 +121,7 @@ namespace ShareX
         public static bool PuushMode { get; private set; }
 
         public static bool SystemDisableUpload { get; private set; }
+        public static bool SystemDisableUpdateCheck { get; private set; }
 
         internal static ApplicationConfig Settings { get; set; }
         internal static TaskSettings DefaultTaskSettings { get; set; }
@@ -626,6 +627,7 @@ namespace ShareX
         private static void CheckSystemFlags()
         {
             SystemDisableUpload = CheckSystemFlag("DisableUpload");
+            SystemDisableUpdateCheck = CheckSystemFlag("DisableUpdateCheck");
         }
 
         private static bool CheckSystemFlag(string name)
@@ -721,6 +723,7 @@ namespace ShareX
             if (SteamFirstTimeConfig) flags.Add(nameof(SteamFirstTimeConfig));
             if (IgnoreHotkeyWarning) flags.Add(nameof(IgnoreHotkeyWarning));
             if (SystemDisableUpload) flags.Add(nameof(SystemDisableUpload));
+            if (SystemDisableUpdateCheck) flags.Add(nameof(SystemDisableUpdateCheck));
             if (PuushMode) flags.Add(nameof(PuushMode));
 
             string output = string.Join(", ", flags);
