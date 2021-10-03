@@ -118,8 +118,9 @@ namespace ShareX
         public static bool IsAdmin { get; private set; }
         public static bool SteamFirstTimeConfig { get; private set; }
         public static bool IgnoreHotkeyWarning { get; private set; }
-        public static bool SystemDisableUpload { get; private set; }
         public static bool PuushMode { get; private set; }
+
+        public static bool SystemDisableUpload { get; private set; }
 
         internal static ApplicationConfig Settings { get; set; }
         internal static TaskSettings DefaultTaskSettings { get; set; }
@@ -359,7 +360,7 @@ namespace ShareX
             IgnoreHotkeyWarning = CLI.IsCommandExist("NoHotkeys");
 
             CreateParentFolders();
-            CheckSystemDisableUpload();
+            CheckSystemFlags();
             RegisterExtensions();
             CheckPuushMode();
             DebugWriteFlags();
@@ -622,26 +623,32 @@ namespace ShareX
             return false;
         }
 
-        private static void CheckSystemDisableUpload()
+        private static void CheckSystemFlags()
+        {
+            SystemDisableUpload = CheckSystemFlag("DisableUpload");
+        }
+
+        private static bool CheckSystemFlag(string name)
         {
             try
             {
-                string path = @"SOFTWARE\ShareX";
-                string name = "DisableUpload";
+                const string path = @"SOFTWARE\ShareX";
 
-                if (RegistryHelpers.CheckRegistry(path, name, null, RegistryHive.CurrentUser))
+                if (RegistryHelpers.CheckRegistry(path, name, null, RegistryHive.LocalMachine))
                 {
-                    SystemDisableUpload = RegistryHelpers.CheckRegistry(path, name, "true", RegistryHive.CurrentUser);
+                    return RegistryHelpers.CheckRegistry(path, name, "true", RegistryHive.LocalMachine);
                 }
                 else
                 {
-                    SystemDisableUpload = RegistryHelpers.CheckRegistry(path, name, "true", RegistryHive.LocalMachine);
+                    return RegistryHelpers.CheckRegistry(path, name, "true", RegistryHive.CurrentUser);
                 }
             }
             catch (Exception e)
             {
                 DebugHelper.WriteException(e);
             }
+
+            return false;
         }
 
         private static void Application_ThreadException(object sender, ThreadExceptionEventArgs e)
