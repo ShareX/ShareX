@@ -94,7 +94,6 @@ namespace ShareX.HelpersLib
             }
         }
 
-
         public void TryDefaultPrinterOverride()
         {
             string windowsDefault = printDocument.PrinterSettings.PrinterName;
