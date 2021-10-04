@@ -886,7 +886,6 @@ namespace ShareX
                 tsmiURLShorteners.Image = Resources.edit_scale_white;
                 tsmiTrayURLShorteners.Image = Resources.edit_scale_white;
                 tsmiTestURLShortener.Image = Resources.edit_scale_white;
-                tsmiTrayTestURLShortener.Image = Resources.edit_scale_white;
                 tsmiShortenSelectedURL.Image = Resources.edit_scale_white;
             }
             else
@@ -902,7 +901,6 @@ namespace ShareX
                 tsmiURLShorteners.Image = Resources.edit_scale;
                 tsmiTrayURLShorteners.Image = Resources.edit_scale;
                 tsmiTestURLShortener.Image = Resources.edit_scale;
-                tsmiTrayTestURLShortener.Image = Resources.edit_scale;
                 tsmiShortenSelectedURL.Image = Resources.edit_scale;
             }
 
