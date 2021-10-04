@@ -94,6 +94,26 @@ namespace ShareX.HelpersLib
             }
         }
 
+
+        public void TryDefaultPrinterOverride()
+        {
+            string windowsDefault = printDocument.PrinterSettings.PrinterName;
+            if (Settings.DefaultPrinterOverride.Length > 0)
+            {
+                printDocument.PrinterSettings.PrinterName = Settings.DefaultPrinterOverride;
+            }
+            if (!printDocument.PrinterSettings.IsValid)
+            {
+                printDocument.PrinterSettings.PrinterName = windowsDefault;
+                using (MyMessageBox msgbox = new MyMessageBox("Printer \'" + Settings.DefaultPrinterOverride + "\' does not exist. Continuing with windows default printer, you can set the default printer override in application settings",
+                           "Specified Printer not Valid",
+                           MessageBoxButtons.OK))
+                {
+                    msgbox.ShowDialog();
+                }
+            }
+        }
+
         public bool Print()
         {
             if (Printable && (!Settings.ShowPrintDialog || printDialog.ShowDialog() == DialogResult.OK))
@@ -102,7 +122,7 @@ namespace ShareX.HelpersLib
                 {
                     printTextHelper.Font = Settings.TextFont;
                 }
-
+                TryDefaultPrinterOverride();
                 printDocument.Print();
                 return true;
             }

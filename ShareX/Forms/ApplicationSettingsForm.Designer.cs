@@ -142,6 +142,8 @@ namespace ShareX
             this.cbRecentTasksShowInMainWindow = new System.Windows.Forms.CheckBox();
             this.cbRecentTasksSave = new System.Windows.Forms.CheckBox();
             this.tpPrint = new System.Windows.Forms.TabPage();
+            this.lblDefaultPrinterOverride = new System.Windows.Forms.Label();
+            this.txtDefaultPrinterOverride = new System.Windows.Forms.TextBox();
             this.cbPrintDontShowWindowsDialog = new System.Windows.Forms.CheckBox();
             this.cbDontShowPrintSettingDialog = new System.Windows.Forms.CheckBox();
             this.btnShowImagePrintSettings = new System.Windows.Forms.Button();
@@ -322,6 +324,7 @@ namespace ShareX
             // 
             // cmsLanguages
             // 
+            this.cmsLanguages.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.cmsLanguages.Name = "cmsLanguages";
             resources.ApplyResources(this.cmsLanguages, "cmsLanguages");
             // 
@@ -904,6 +907,10 @@ namespace ShareX
             this.lvSecondaryFileUploaders.View = System.Windows.Forms.View.Details;
             this.lvSecondaryFileUploaders.MouseUp += new System.Windows.Forms.MouseEventHandler(this.lvSecondaryUploaders_MouseUp);
             // 
+            // chSecondaryFileUploaders
+            // 
+            resources.ApplyResources(this.chSecondaryFileUploaders, "chSecondaryFileUploaders");
+            // 
             // gbSecondaryImageUploaders
             // 
             this.gbSecondaryImageUploaders.Controls.Add(this.lvSecondaryImageUploaders);
@@ -929,6 +936,10 @@ namespace ShareX
             this.lvSecondaryImageUploaders.View = System.Windows.Forms.View.Details;
             this.lvSecondaryImageUploaders.MouseUp += new System.Windows.Forms.MouseEventHandler(this.lvSecondaryUploaders_MouseUp);
             // 
+            // chSecondaryImageUploaders
+            // 
+            resources.ApplyResources(this.chSecondaryImageUploaders, "chSecondaryImageUploaders");
+            // 
             // gbSecondaryTextUploaders
             // 
             this.gbSecondaryTextUploaders.Controls.Add(this.lvSecondaryTextUploaders);
@@ -953,6 +964,10 @@ namespace ShareX
             this.lvSecondaryTextUploaders.UseCompatibleStateImageBehavior = false;
             this.lvSecondaryTextUploaders.View = System.Windows.Forms.View.Details;
             this.lvSecondaryTextUploaders.MouseUp += new System.Windows.Forms.MouseEventHandler(this.lvSecondaryUploaders_MouseUp);
+            // 
+            // chSecondaryTextUploaders
+            // 
+            resources.ApplyResources(this.chSecondaryTextUploaders, "chSecondaryTextUploaders");
             // 
             // cbUseSecondaryUploaders
             // 
@@ -1071,11 +1086,24 @@ namespace ShareX
             // tpPrint
             // 
             this.tpPrint.BackColor = System.Drawing.SystemColors.Window;
+            this.tpPrint.Controls.Add(this.lblDefaultPrinterOverride);
+            this.tpPrint.Controls.Add(this.txtDefaultPrinterOverride);
             this.tpPrint.Controls.Add(this.cbPrintDontShowWindowsDialog);
             this.tpPrint.Controls.Add(this.cbDontShowPrintSettingDialog);
             this.tpPrint.Controls.Add(this.btnShowImagePrintSettings);
             resources.ApplyResources(this.tpPrint, "tpPrint");
             this.tpPrint.Name = "tpPrint";
+            // 
+            // lblDefaultPrinterOverride
+            // 
+            resources.ApplyResources(this.lblDefaultPrinterOverride, "lblDefaultPrinterOverride");
+            this.lblDefaultPrinterOverride.Name = "lblDefaultPrinterOverride";
+            // 
+            // txtDefaultPrinterOverride
+            // 
+            resources.ApplyResources(this.txtDefaultPrinterOverride, "txtDefaultPrinterOverride");
+            this.txtDefaultPrinterOverride.Name = "txtDefaultPrinterOverride";
+            this.txtDefaultPrinterOverride.TextChanged += new System.EventHandler(this.txtDefaultPrinterOverride_TextChanged);
             // 
             // cbPrintDontShowWindowsDialog
             // 
@@ -1395,5 +1423,7 @@ namespace ShareX
         private System.Windows.Forms.NumericUpDown nudCleanupKeepFileCount;
         private System.Windows.Forms.Label lblCleanupKeepFileCount;
         private System.Windows.Forms.CheckBox cbAutomaticallyCleanupLogFiles;
+        private System.Windows.Forms.Label lblDefaultPrinterOverride;
+        private System.Windows.Forms.TextBox txtDefaultPrinterOverride;
     }
 }
