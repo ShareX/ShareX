@@ -2959,6 +2959,63 @@
   <data name="&gt;&gt;tpHistory.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
+  <data name="lblDefaultPrinterOverride.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblDefaultPrinterOverride.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblDefaultPrinterOverride.Location" type="System.Drawing.Point, System.Drawing">
+    <value>17, 115</value>
+  </data>
+  <data name="lblDefaultPrinterOverride.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="lblDefaultPrinterOverride.Size" type="System.Drawing.Size, System.Drawing">
+    <value>358, 17</value>
+  </data>
+  <data name="lblDefaultPrinterOverride.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="lblDefaultPrinterOverride.Text" xml:space="preserve">
+    <value>Default Printer Override (uses windows default if empty)</value>
+  </data>
+  <data name="&gt;&gt;lblDefaultPrinterOverride.Name" xml:space="preserve">
+    <value>lblDefaultPrinterOverride</value>
+  </data>
+  <data name="&gt;&gt;lblDefaultPrinterOverride.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblDefaultPrinterOverride.Parent" xml:space="preserve">
+    <value>tpPrint</value>
+  </data>
+  <data name="&gt;&gt;lblDefaultPrinterOverride.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="txtDefaultPrinterOverride.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 135</value>
+  </data>
+  <data name="txtDefaultPrinterOverride.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtDefaultPrinterOverride.Size" type="System.Drawing.Size, System.Drawing">
+    <value>509, 22</value>
+  </data>
+  <data name="txtDefaultPrinterOverride.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;txtDefaultPrinterOverride.Name" xml:space="preserve">
+    <value>txtDefaultPrinterOverride</value>
+  </data>
+  <data name="&gt;&gt;txtDefaultPrinterOverride.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtDefaultPrinterOverride.Parent" xml:space="preserve">
+    <value>tpPrint</value>
+  </data>
+  <data name="&gt;&gt;txtDefaultPrinterOverride.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <data name="cbPrintDontShowWindowsDialog.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>

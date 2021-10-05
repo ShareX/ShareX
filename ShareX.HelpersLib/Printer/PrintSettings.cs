@@ -38,6 +38,8 @@ namespace ShareX.HelpersLib
         public XmlFont TextFont { get; set; }
         public bool ShowPrintDialog { get; set; }
 
+        public string DefaultPrinterOverride { get; set; }
+
         public PrintSettings()
         {
             Margin = 5;
@@ -47,6 +49,7 @@ namespace ShareX.HelpersLib
             CenterImage = false;
             TextFont = new XmlFont("Arial", 10);
             ShowPrintDialog = true;
+            DefaultPrinterOverride = "";
         }
     }
 }
