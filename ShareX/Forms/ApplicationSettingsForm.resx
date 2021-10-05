@@ -130,13 +130,10 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="cbUseWhiteShareXIcon.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 150</value>
-  </data>
-  <data name="cbUseWhiteShareXIcon.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>16, 120</value>
   </data>
   <data name="cbUseWhiteShareXIcon.Size" type="System.Drawing.Size, System.Drawing">
-    <value>172, 21</value>
+    <value>134, 17</value>
   </data>
   <data name="cbUseWhiteShareXIcon.TabIndex" type="System.Int32, mscorlib">
     <value>19</value>
@@ -160,13 +157,10 @@
     <value>NoControl</value>
   </data>
   <data name="btnCheckDevBuild.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 340</value>
-  </data>
-  <data name="btnCheckDevBuild.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>16, 272</value>
   </data>
   <data name="btnCheckDevBuild.Size" type="System.Drawing.Size, System.Drawing">
-    <value>360, 29</value>
+    <value>288, 23</value>
   </data>
   <data name="btnCheckDevBuild.TabIndex" type="System.Int32, mscorlib">
     <value>17</value>
@@ -193,13 +187,10 @@
     <value>NoControl</value>
   </data>
   <data name="cbCheckPreReleaseUpdates.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 310</value>
-  </data>
-  <data name="cbCheckPreReleaseUpdates.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>16, 248</value>
   </data>
   <data name="cbCheckPreReleaseUpdates.Size" type="System.Drawing.Size, System.Drawing">
-    <value>222, 21</value>
+    <value>168, 17</value>
   </data>
   <data name="cbCheckPreReleaseUpdates.TabIndex" type="System.Int32, mscorlib">
     <value>16</value>
@@ -220,13 +211,10 @@
     <value>2</value>
   </data>
   <data name="cbTrayMiddleClickAction.Location" type="System.Drawing.Point, System.Drawing">
-    <value>310, 235</value>
-  </data>
-  <data name="cbTrayMiddleClickAction.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>248, 188</value>
   </data>
   <data name="cbTrayMiddleClickAction.Size" type="System.Drawing.Size, System.Drawing">
-    <value>359, 24</value>
+    <value>288, 21</value>
   </data>
   <data name="cbTrayMiddleClickAction.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
@@ -250,13 +238,10 @@
     <value>NoControl</value>
   </data>
   <data name="lblTrayMiddleClickAction.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 240</value>
-  </data>
-  <data name="lblTrayMiddleClickAction.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 0, 4, 0</value>
+    <value>13, 192</value>
   </data>
   <data name="lblTrayMiddleClickAction.Size" type="System.Drawing.Size, System.Drawing">
-    <value>165, 17</value>
+    <value>125, 13</value>
   </data>
   <data name="lblTrayMiddleClickAction.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
@@ -277,13 +262,10 @@
     <value>4</value>
   </data>
   <data name="cbTrayLeftDoubleClickAction.Location" type="System.Drawing.Point, System.Drawing">
-    <value>310, 205</value>
-  </data>
-  <data name="cbTrayLeftDoubleClickAction.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>248, 164</value>
   </data>
   <data name="cbTrayLeftDoubleClickAction.Size" type="System.Drawing.Size, System.Drawing">
-    <value>359, 24</value>
+    <value>288, 21</value>
   </data>
   <data name="cbTrayLeftDoubleClickAction.TabIndex" type="System.Int32, mscorlib">
     <value>14</value>
@@ -307,13 +289,10 @@
     <value>NoControl</value>
   </data>
   <data name="lblTrayLeftDoubleClickAction.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 210</value>
-  </data>
-  <data name="lblTrayLeftDoubleClickAction.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 0, 4, 0</value>
+    <value>13, 168</value>
   </data>
   <data name="lblTrayLeftDoubleClickAction.Size" type="System.Drawing.Size, System.Drawing">
-    <value>190, 17</value>
+    <value>144, 13</value>
   </data>
   <data name="lblTrayLeftDoubleClickAction.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
@@ -334,13 +313,10 @@
     <value>6</value>
   </data>
   <data name="cbTrayLeftClickAction.Location" type="System.Drawing.Point, System.Drawing">
-    <value>310, 175</value>
-  </data>
-  <data name="cbTrayLeftClickAction.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>248, 140</value>
   </data>
   <data name="cbTrayLeftClickAction.Size" type="System.Drawing.Size, System.Drawing">
-    <value>359, 24</value>
+    <value>288, 21</value>
   </data>
   <data name="cbTrayLeftClickAction.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
@@ -364,13 +340,10 @@
     <value>NoControl</value>
   </data>
   <data name="lblTrayLeftClickAction.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 180</value>
-  </data>
-  <data name="lblTrayLeftClickAction.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 0, 4, 0</value>
+    <value>13, 144</value>
   </data>
   <data name="lblTrayLeftClickAction.Size" type="System.Drawing.Size, System.Drawing">
-    <value>143, 17</value>
+    <value>109, 13</value>
   </data>
   <data name="lblTrayLeftClickAction.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
@@ -394,13 +367,10 @@
     <value>NoControl</value>
   </data>
   <data name="btnEditQuickTaskMenu.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 270</value>
-  </data>
-  <data name="btnEditQuickTaskMenu.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>16, 216</value>
   </data>
   <data name="btnEditQuickTaskMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>360, 29</value>
+    <value>288, 23</value>
   </data>
   <data name="btnEditQuickTaskMenu.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -427,13 +397,10 @@
     <value>NoControl</value>
   </data>
   <data name="cbShowTray.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 60</value>
-  </data>
-  <data name="cbShowTray.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>16, 48</value>
   </data>
   <data name="cbShowTray.Size" type="System.Drawing.Size, System.Drawing">
-    <value>122, 21</value>
+    <value>96, 17</value>
   </data>
   <data name="cbShowTray.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -460,13 +427,10 @@
     <value>NoControl</value>
   </data>
   <data name="cbTrayIconProgressEnabled.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 90</value>
-  </data>
-  <data name="cbTrayIconProgressEnabled.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>16, 72</value>
   </data>
   <data name="cbTrayIconProgressEnabled.Size" type="System.Drawing.Size, System.Drawing">
-    <value>197, 21</value>
+    <value>150, 17</value>
   </data>
   <data name="cbTrayIconProgressEnabled.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -493,10 +457,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnLanguages.Location" type="System.Drawing.Point, System.Drawing">
-    <value>310, 20</value>
-  </data>
-  <data name="btnLanguages.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>248, 16</value>
   </data>
   <metadata name="cmsLanguages.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
@@ -511,7 +472,7 @@
     <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="btnLanguages.Size" type="System.Drawing.Size, System.Drawing">
-    <value>360, 29</value>
+    <value>288, 23</value>
   </data>
   <data name="btnLanguages.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -526,7 +487,7 @@
     <value>btnLanguages</value>
   </data>
   <data name="&gt;&gt;btnLanguages.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MenuButton, ShareX.HelpersLib, Version=13.6.2.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MenuButton, ShareX.HelpersLib, Version=13.5.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;btnLanguages.Parent" xml:space="preserve">
     <value>tpGeneral</value>
@@ -541,13 +502,10 @@
     <value>NoControl</value>
   </data>
   <data name="cbRememberMainFormPosition.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 120</value>
-  </data>
-  <data name="cbRememberMainFormPosition.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>16, 96</value>
   </data>
   <data name="cbRememberMainFormPosition.Size" type="System.Drawing.Size, System.Drawing">
-    <value>235, 21</value>
+    <value>180, 17</value>
   </data>
   <data name="cbRememberMainFormPosition.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -574,13 +532,10 @@
     <value>NoControl</value>
   </data>
   <data name="cbSilentRun.Location" type="System.Drawing.Point, System.Drawing">
-    <value>310, 60</value>
-  </data>
-  <data name="cbSilentRun.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>248, 48</value>
   </data>
   <data name="cbSilentRun.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 21</value>
+    <value>136, 17</value>
   </data>
   <data name="cbSilentRun.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -607,13 +562,10 @@
     <value>NoControl</value>
   </data>
   <data name="cbTaskbarProgressEnabled.Location" type="System.Drawing.Point, System.Drawing">
-    <value>310, 90</value>
-  </data>
-  <data name="cbTaskbarProgressEnabled.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>248, 72</value>
   </data>
   <data name="cbTaskbarProgressEnabled.Size" type="System.Drawing.Size, System.Drawing">
-    <value>234, 21</value>
+    <value>178, 17</value>
   </data>
   <data name="cbTaskbarProgressEnabled.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -640,13 +592,10 @@
     <value>NoControl</value>
   </data>
   <data name="cbRememberMainFormSize.Location" type="System.Drawing.Point, System.Drawing">
-    <value>310, 120</value>
-  </data>
-  <data name="cbRememberMainFormSize.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>248, 96</value>
   </data>
   <data name="cbRememberMainFormSize.Size" type="System.Drawing.Size, System.Drawing">
-    <value>211, 21</value>
+    <value>162, 17</value>
   </data>
   <data name="cbRememberMainFormSize.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -673,13 +622,10 @@
     <value>NoControl</value>
   </data>
   <data name="lblLanguage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 20</value>
-  </data>
-  <data name="lblLanguage.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 0, 4, 0</value>
+    <value>13, 16</value>
   </data>
   <data name="lblLanguage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>76, 17</value>
+    <value>58, 13</value>
   </data>
   <data name="lblLanguage.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -700,16 +646,13 @@
     <value>17</value>
   </data>
   <data name="tpGeneral.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 25</value>
-  </data>
-  <data name="tpGeneral.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>4, 22</value>
   </data>
   <data name="tpGeneral.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>3, 3, 3, 3</value>
   </data>
   <data name="tpGeneral.Size" type="System.Drawing.Size, System.Drawing">
-    <value>697, 473</value>
+    <value>556, 376</value>
   </data>
   <data name="tpGeneral.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -733,13 +676,10 @@
     <value>NoControl</value>
   </data>
   <data name="btnThemeReset.Location" type="System.Drawing.Point, System.Drawing">
-    <value>500, 50</value>
-  </data>
-  <data name="btnThemeReset.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>400, 40</value>
   </data>
   <data name="btnThemeReset.Size" type="System.Drawing.Size, System.Drawing">
-    <value>110, 30</value>
+    <value>88, 24</value>
   </data>
   <data name="btnThemeReset.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -763,13 +703,10 @@
     <value>NoControl</value>
   </data>
   <data name="btnThemeRemove.Location" type="System.Drawing.Point, System.Drawing">
-    <value>140, 50</value>
-  </data>
-  <data name="btnThemeRemove.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>112, 40</value>
   </data>
   <data name="btnThemeRemove.Size" type="System.Drawing.Size, System.Drawing">
-    <value>110, 30</value>
+    <value>88, 24</value>
   </data>
   <data name="btnThemeRemove.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -793,13 +730,10 @@
     <value>NoControl</value>
   </data>
   <data name="btnThemeAdd.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 50</value>
-  </data>
-  <data name="btnThemeAdd.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>16, 40</value>
   </data>
   <data name="btnThemeAdd.Size" type="System.Drawing.Size, System.Drawing">
-    <value>110, 30</value>
+    <value>88, 24</value>
   </data>
   <data name="btnThemeAdd.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -820,13 +754,10 @@
     <value>2</value>
   </data>
   <data name="cbThemes.Location" type="System.Drawing.Point, System.Drawing">
-    <value>260, 18</value>
-  </data>
-  <data name="cbThemes.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>208, 14</value>
   </data>
   <data name="cbThemes.Size" type="System.Drawing.Size, System.Drawing">
-    <value>349, 24</value>
+    <value>280, 21</value>
   </data>
   <data name="cbThemes.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -847,13 +778,10 @@
     <value>False</value>
   </data>
   <data name="pgTheme.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 90</value>
-  </data>
-  <data name="pgTheme.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>16, 72</value>
   </data>
   <data name="pgTheme.Size" type="System.Drawing.Size, System.Drawing">
-    <value>590, 380</value>
+    <value>472, 304</value>
   </data>
   <data name="pgTheme.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -877,13 +805,10 @@
     <value>NoControl</value>
   </data>
   <data name="cbUseCustomTheme.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 20</value>
-  </data>
-  <data name="cbUseCustomTheme.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>16, 16</value>
   </data>
   <data name="cbUseCustomTheme.Size" type="System.Drawing.Size, System.Drawing">
-    <value>147, 21</value>
+    <value>114, 17</value>
   </data>
   <data name="cbUseCustomTheme.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -904,13 +829,10 @@
     <value>5</value>
   </data>
   <data name="eiTheme.Location" type="System.Drawing.Point, System.Drawing">
-    <value>260, 50</value>
-  </data>
-  <data name="eiTheme.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 5, 5, 5</value>
+    <value>208, 40</value>
   </data>
   <data name="eiTheme.Size" type="System.Drawing.Size, System.Drawing">
-    <value>231, 30</value>
+    <value>185, 24</value>
   </data>
   <data name="eiTheme.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -919,7 +841,7 @@
     <value>eiTheme</value>
   </data>
   <data name="&gt;&gt;eiTheme.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.ExportImportControl, ShareX.HelpersLib, Version=13.6.2.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.ExportImportControl, ShareX.HelpersLib, Version=13.5.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;eiTheme.Parent" xml:space="preserve">
     <value>tpTheme</value>
@@ -928,16 +850,13 @@
     <value>6</value>
   </data>
   <data name="tpTheme.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 25</value>
-  </data>
-  <data name="tpTheme.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>4, 22</value>
   </data>
   <data name="tpTheme.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>3, 3, 3, 3</value>
   </data>
   <data name="tpTheme.Size" type="System.Drawing.Size, System.Drawing">
-    <value>697, 473</value>
+    <value>556, 376</value>
   </data>
   <data name="tpTheme.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -964,13 +883,10 @@
     <value>NoControl</value>
   </data>
   <data name="cbFirefoxAddonSupport.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 30</value>
-  </data>
-  <data name="cbFirefoxAddonSupport.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>16, 24</value>
   </data>
   <data name="cbFirefoxAddonSupport.Size" type="System.Drawing.Size, System.Drawing">
-    <value>216, 21</value>
+    <value>164, 17</value>
   </data>
   <data name="cbFirefoxAddonSupport.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -994,13 +910,10 @@
     <value>NoControl</value>
   </data>
   <data name="btnFirefoxOpenAddonPage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 60</value>
-  </data>
-  <data name="btnFirefoxOpenAddonPage.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>16, 48</value>
   </data>
   <data name="btnFirefoxOpenAddonPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>360, 29</value>
+    <value>288, 23</value>
   </data>
   <data name="btnFirefoxOpenAddonPage.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -1021,16 +934,10 @@
     <value>1</value>
   </data>
   <data name="gbFirefox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 300</value>
-  </data>
-  <data name="gbFirefox.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
-  </data>
-  <data name="gbFirefox.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>8, 240</value>
   </data>
   <data name="gbFirefox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>670, 110</value>
+    <value>536, 88</value>
   </data>
   <data name="gbFirefox.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -1057,13 +964,10 @@
     <value>NoControl</value>
   </data>
   <data name="cbSteamShowInApp.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 30</value>
-  </data>
-  <data name="cbSteamShowInApp.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>16, 24</value>
   </data>
   <data name="cbSteamShowInApp.Size" type="System.Drawing.Size, System.Drawing">
-    <value>320, 21</value>
+    <value>247, 17</value>
   </data>
   <data name="cbSteamShowInApp.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1084,22 +988,17 @@
     <value>0</value>
   </data>
   <data name="gbSteam.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 420</value>
-  </data>
-  <data name="gbSteam.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
-  </data>
-  <data name="gbSteam.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>8, 336</value>
   </data>
   <data name="gbSteam.Size" type="System.Drawing.Size, System.Drawing">
-    <value>670, 70</value>
+    <value>536, 56</value>
   </data>
   <data name="gbSteam.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
   <data name="gbSteam.Text" xml:space="preserve">
     <value>Steam</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;gbSteam.Name" xml:space="preserve">
     <value>gbSteam</value>
@@ -1120,13 +1019,10 @@
     <value>NoControl</value>
   </data>
   <data name="cbChromeExtensionSupport.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 30</value>
-  </data>
-  <data name="cbChromeExtensionSupport.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>16, 24</value>
   </data>
   <data name="cbChromeExtensionSupport.Size" type="System.Drawing.Size, System.Drawing">
-    <value>243, 21</value>
+    <value>184, 17</value>
   </data>
   <data name="cbChromeExtensionSupport.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -1150,13 +1046,10 @@
     <value>NoControl</value>
   </data>
   <data name="btnChromeOpenExtensionPage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 60</value>
-  </data>
-  <data name="btnChromeOpenExtensionPage.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>16, 48</value>
   </data>
   <data name="btnChromeOpenExtensionPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>360, 29</value>
+    <value>288, 23</value>
   </data>
   <data name="btnChromeOpenExtensionPage.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -1177,16 +1070,10 @@
     <value>1</value>
   </data>
   <data name="gbChrome.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 180</value>
-  </data>
-  <data name="gbChrome.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
-  </data>
-  <data name="gbChrome.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>8, 144</value>
   </data>
   <data name="gbChrome.Size" type="System.Drawing.Size, System.Drawing">
-    <value>670, 110</value>
+    <value>536, 88</value>
   </data>
   <data name="gbChrome.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -1213,13 +1100,10 @@
     <value>NoControl</value>
   </data>
   <data name="cbEditWithShareX.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 90</value>
-  </data>
-  <data name="cbEditWithShareX.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>16, 72</value>
   </data>
   <data name="cbEditWithShareX.Size" type="System.Drawing.Size, System.Drawing">
-    <value>444, 21</value>
+    <value>343, 17</value>
   </data>
   <data name="cbEditWithShareX.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -1246,13 +1130,10 @@
     <value>NoControl</value>
   </data>
   <data name="cbStartWithWindows.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 30</value>
-  </data>
-  <data name="cbStartWithWindows.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>16, 24</value>
   </data>
   <data name="cbStartWithWindows.Size" type="System.Drawing.Size, System.Drawing">
-    <value>18, 17</value>
+    <value>15, 14</value>
   </data>
   <data name="cbStartWithWindows.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1276,13 +1157,10 @@
     <value>NoControl</value>
   </data>
   <data name="cbSendToMenu.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 120</value>
-  </data>
-  <data name="cbSendToMenu.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>16, 96</value>
   </data>
   <data name="cbSendToMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>232, 21</value>
+    <value>181, 17</value>
   </data>
   <data name="cbSendToMenu.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -1309,13 +1187,10 @@
     <value>NoControl</value>
   </data>
   <data name="cbShellContextMenu.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 60</value>
-  </data>
-  <data name="cbShellContextMenu.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>16, 48</value>
   </data>
   <data name="cbShellContextMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>465, 21</value>
+    <value>359, 17</value>
   </data>
   <data name="cbShellContextMenu.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -1336,22 +1211,17 @@
     <value>3</value>
   </data>
   <data name="gbWindows.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 10</value>
-  </data>
-  <data name="gbWindows.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
-  </data>
-  <data name="gbWindows.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>8, 8</value>
   </data>
   <data name="gbWindows.Size" type="System.Drawing.Size, System.Drawing">
-    <value>670, 160</value>
+    <value>536, 128</value>
   </data>
   <data name="gbWindows.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
   <data name="gbWindows.Text" xml:space="preserve">
     <value>Windows</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;gbWindows.Name" xml:space="preserve">
     <value>gbWindows</value>
@@ -1366,16 +1236,13 @@
     <value>3</value>
   </data>
   <data name="tpIntegration.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 25</value>
-  </data>
-  <data name="tpIntegration.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>4, 22</value>
   </data>
   <data name="tpIntegration.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>3, 3, 3, 3</value>
   </data>
   <data name="tpIntegration.Size" type="System.Drawing.Size, System.Drawing">
-    <value>697, 473</value>
+    <value>556, 376</value>
   </data>
   <data name="tpIntegration.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -1399,13 +1266,10 @@
     <value>NoControl</value>
   </data>
   <data name="btnPersonalFolderPathApply.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 70</value>
-  </data>
-  <data name="btnPersonalFolderPathApply.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>16, 56</value>
   </data>
   <data name="btnPersonalFolderPathApply.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 29</value>
+    <value>96, 23</value>
   </data>
   <data name="btnPersonalFolderPathApply.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
@@ -1429,13 +1293,10 @@
     <value>NoControl</value>
   </data>
   <data name="btnOpenScreenshotsFolder.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 230</value>
-  </data>
-  <data name="btnOpenScreenshotsFolder.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>16, 184</value>
   </data>
   <data name="btnOpenScreenshotsFolder.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 29</value>
+    <value>96, 23</value>
   </data>
   <data name="btnOpenScreenshotsFolder.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
@@ -1462,19 +1323,17 @@
     <value>NoControl</value>
   </data>
   <data name="lblPreviewPersonalFolderPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>280, 76</value>
-  </data>
-  <data name="lblPreviewPersonalFolderPath.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 0, 4, 0</value>
+    <value>224, 61</value>
   </data>
   <data name="lblPreviewPersonalFolderPath.Size" type="System.Drawing.Size, System.Drawing">
-    <value>20, 17</value>
+    <value>16, 13</value>
   </data>
   <data name="lblPreviewPersonalFolderPath.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
   <data name="lblPreviewPersonalFolderPath.Text" xml:space="preserve">
     <value>...</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;lblPreviewPersonalFolderPath.Name" xml:space="preserve">
     <value>lblPreviewPersonalFolderPath</value>
@@ -1492,13 +1351,10 @@
     <value>NoControl</value>
   </data>
   <data name="btnBrowsePersonalFolderPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>540, 39</value>
-  </data>
-  <data name="btnBrowsePersonalFolderPath.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>432, 31</value>
   </data>
   <data name="btnBrowsePersonalFolderPath.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 29</value>
+    <value>96, 23</value>
   </data>
   <data name="btnBrowsePersonalFolderPath.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -1525,13 +1381,10 @@
     <value>NoControl</value>
   </data>
   <data name="lblPersonalFolderPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 20</value>
-  </data>
-  <data name="lblPersonalFolderPath.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 0, 4, 0</value>
+    <value>13, 16</value>
   </data>
   <data name="lblPersonalFolderPath.Size" type="System.Drawing.Size, System.Drawing">
-    <value>158, 17</value>
+    <value>117, 13</value>
   </data>
   <data name="lblPersonalFolderPath.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1552,13 +1405,10 @@
     <value>4</value>
   </data>
   <data name="txtPersonalFolderPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 40</value>
-  </data>
-  <data name="txtPersonalFolderPath.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>16, 32</value>
   </data>
   <data name="txtPersonalFolderPath.Size" type="System.Drawing.Size, System.Drawing">
-    <value>509, 22</value>
+    <value>408, 20</value>
   </data>
   <data name="txtPersonalFolderPath.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -1579,13 +1429,10 @@
     <value>NoControl</value>
   </data>
   <data name="btnBrowseCustomScreenshotsPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>540, 139</value>
-  </data>
-  <data name="btnBrowseCustomScreenshotsPath.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>432, 111</value>
   </data>
   <data name="btnBrowseCustomScreenshotsPath.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 29</value>
+    <value>96, 23</value>
   </data>
   <data name="btnBrowseCustomScreenshotsPath.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -1609,13 +1456,10 @@
     <value>NoControl</value>
   </data>
   <data name="btnOpenPersonalFolderPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>150, 70</value>
-  </data>
-  <data name="btnOpenPersonalFolderPath.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>120, 56</value>
   </data>
   <data name="btnOpenPersonalFolderPath.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 29</value>
+    <value>96, 23</value>
   </data>
   <data name="btnOpenPersonalFolderPath.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -1636,13 +1480,10 @@
     <value>7</value>
   </data>
   <data name="txtCustomScreenshotsPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 140</value>
-  </data>
-  <data name="txtCustomScreenshotsPath.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>16, 112</value>
   </data>
   <data name="txtCustomScreenshotsPath.Size" type="System.Drawing.Size, System.Drawing">
-    <value>509, 22</value>
+    <value>408, 20</value>
   </data>
   <data name="txtCustomScreenshotsPath.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -1666,13 +1507,10 @@
     <value>NoControl</value>
   </data>
   <data name="cbUseCustomScreenshotsPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 110</value>
-  </data>
-  <data name="cbUseCustomScreenshotsPath.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>16, 88</value>
   </data>
   <data name="cbUseCustomScreenshotsPath.Size" type="System.Drawing.Size, System.Drawing">
-    <value>229, 21</value>
+    <value>174, 17</value>
   </data>
   <data name="cbUseCustomScreenshotsPath.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -1699,13 +1537,10 @@
     <value>NoControl</value>
   </data>
   <data name="lblSaveImageSubFolderPattern.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 180</value>
-  </data>
-  <data name="lblSaveImageSubFolderPattern.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 0, 4, 0</value>
+    <value>13, 144</value>
   </data>
   <data name="lblSaveImageSubFolderPattern.Size" type="System.Drawing.Size, System.Drawing">
-    <value>126, 17</value>
+    <value>94, 13</value>
   </data>
   <data name="lblSaveImageSubFolderPattern.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -1732,19 +1567,17 @@
     <value>NoControl</value>
   </data>
   <data name="lblSaveImageSubFolderPatternPreview.Location" type="System.Drawing.Point, System.Drawing">
-    <value>150, 236</value>
-  </data>
-  <data name="lblSaveImageSubFolderPatternPreview.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 0, 4, 0</value>
+    <value>120, 189</value>
   </data>
   <data name="lblSaveImageSubFolderPatternPreview.Size" type="System.Drawing.Size, System.Drawing">
-    <value>20, 17</value>
+    <value>16, 13</value>
   </data>
   <data name="lblSaveImageSubFolderPatternPreview.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
   </data>
   <data name="lblSaveImageSubFolderPatternPreview.Text" xml:space="preserve">
     <value>...</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;lblSaveImageSubFolderPatternPreview.Name" xml:space="preserve">
     <value>lblSaveImageSubFolderPatternPreview</value>
@@ -1759,13 +1592,10 @@
     <value>11</value>
   </data>
   <data name="txtSaveImageSubFolderPattern.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 200</value>
-  </data>
-  <data name="txtSaveImageSubFolderPattern.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>16, 160</value>
   </data>
   <data name="txtSaveImageSubFolderPattern.Size" type="System.Drawing.Size, System.Drawing">
-    <value>509, 22</value>
+    <value>408, 20</value>
   </data>
   <data name="txtSaveImageSubFolderPattern.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
@@ -1783,16 +1613,13 @@
     <value>12</value>
   </data>
   <data name="tpPaths.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 25</value>
-  </data>
-  <data name="tpPaths.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>4, 22</value>
   </data>
   <data name="tpPaths.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>3, 3, 3, 3</value>
   </data>
   <data name="tpPaths.Size" type="System.Drawing.Size, System.Drawing">
-    <value>697, 473</value>
+    <value>556, 376</value>
   </data>
   <data name="tpPaths.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -1819,13 +1646,10 @@
     <value>NoControl</value>
   </data>
   <data name="cbAutomaticallyCleanupLogFiles.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 300</value>
-  </data>
-  <data name="cbAutomaticallyCleanupLogFiles.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>16, 240</value>
   </data>
   <data name="cbAutomaticallyCleanupLogFiles.Size" type="System.Drawing.Size, System.Drawing">
-    <value>242, 21</value>
+    <value>184, 17</value>
   </data>
   <data name="cbAutomaticallyCleanupLogFiles.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
@@ -1846,13 +1670,10 @@
     <value>0</value>
   </data>
   <data name="nudCleanupKeepFileCount.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 350</value>
-  </data>
-  <data name="nudCleanupKeepFileCount.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>16, 280</value>
   </data>
   <data name="nudCleanupKeepFileCount.Size" type="System.Drawing.Size, System.Drawing">
-    <value>90, 22</value>
+    <value>72, 20</value>
   </data>
   <data name="nudCleanupKeepFileCount.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
@@ -1879,13 +1700,10 @@
     <value>NoControl</value>
   </data>
   <data name="lblCleanupKeepFileCount.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 330</value>
-  </data>
-  <data name="lblCleanupKeepFileCount.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 0, 4, 0</value>
+    <value>13, 264</value>
   </data>
   <data name="lblCleanupKeepFileCount.Size" type="System.Drawing.Size, System.Drawing">
-    <value>158, 17</value>
+    <value>119, 13</value>
   </data>
   <data name="lblCleanupKeepFileCount.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -1912,13 +1730,10 @@
     <value>NoControl</value>
   </data>
   <data name="cbAutomaticallyCleanupBackupFiles.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 270</value>
-  </data>
-  <data name="cbAutomaticallyCleanupBackupFiles.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>16, 216</value>
   </data>
   <data name="cbAutomaticallyCleanupBackupFiles.Size" type="System.Drawing.Size, System.Drawing">
-    <value>269, 21</value>
+    <value>206, 17</value>
   </data>
   <data name="cbAutomaticallyCleanupBackupFiles.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -1942,10 +1757,7 @@
     <value>NoControl</value>
   </data>
   <data name="pbExportImportNote.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 20</value>
-  </data>
-  <data name="pbExportImportNote.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>16, 16</value>
   </data>
   <data name="pbExportImportNote.Size" type="System.Drawing.Size, System.Drawing">
     <value>32, 32</value>
@@ -1975,13 +1787,10 @@
     <value>NoControl</value>
   </data>
   <data name="cbExportHistory.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 110</value>
-  </data>
-  <data name="cbExportHistory.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>16, 88</value>
   </data>
   <data name="cbExportHistory.Size" type="System.Drawing.Size, System.Drawing">
-    <value>74, 21</value>
+    <value>58, 17</value>
   </data>
   <data name="cbExportHistory.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -2008,13 +1817,10 @@
     <value>NoControl</value>
   </data>
   <data name="cbExportSettings.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 80</value>
-  </data>
-  <data name="cbExportSettings.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>16, 64</value>
   </data>
   <data name="cbExportSettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>81, 21</value>
+    <value>64, 17</value>
   </data>
   <data name="cbExportSettings.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -2038,13 +1844,10 @@
     <value>NoControl</value>
   </data>
   <data name="lblExportImportNote.Location" type="System.Drawing.Point, System.Drawing">
-    <value>70, 20</value>
-  </data>
-  <data name="lblExportImportNote.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 0, 4, 0</value>
+    <value>56, 16</value>
   </data>
   <data name="lblExportImportNote.Size" type="System.Drawing.Size, System.Drawing">
-    <value>610, 40</value>
+    <value>488, 32</value>
   </data>
   <data name="lblExportImportNote.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -2071,13 +1874,10 @@
     <value>NoControl</value>
   </data>
   <data name="btnResetSettings.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 220</value>
-  </data>
-  <data name="btnResetSettings.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>16, 176</value>
   </data>
   <data name="btnResetSettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>230, 30</value>
+    <value>184, 24</value>
   </data>
   <data name="btnResetSettings.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -2101,13 +1901,10 @@
     <value>NoControl</value>
   </data>
   <data name="pbExportImport.Location" type="System.Drawing.Point, System.Drawing">
-    <value>260, 140</value>
-  </data>
-  <data name="pbExportImport.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>208, 112</value>
   </data>
   <data name="pbExportImport.Size" type="System.Drawing.Size, System.Drawing">
-    <value>230, 29</value>
+    <value>184, 23</value>
   </data>
   <data name="pbExportImport.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -2131,13 +1928,10 @@
     <value>NoControl</value>
   </data>
   <data name="btnExport.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 140</value>
-  </data>
-  <data name="btnExport.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>16, 112</value>
   </data>
   <data name="btnExport.Size" type="System.Drawing.Size, System.Drawing">
-    <value>230, 29</value>
+    <value>184, 23</value>
   </data>
   <data name="btnExport.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -2161,13 +1955,10 @@
     <value>NoControl</value>
   </data>
   <data name="btnImport.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 180</value>
-  </data>
-  <data name="btnImport.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>16, 144</value>
   </data>
   <data name="btnImport.Size" type="System.Drawing.Size, System.Drawing">
-    <value>230, 29</value>
+    <value>184, 23</value>
   </data>
   <data name="btnImport.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -2188,16 +1979,13 @@
     <value>11</value>
   </data>
   <data name="tpSettings.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 25</value>
-  </data>
-  <data name="tpSettings.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>4, 22</value>
   </data>
   <data name="tpSettings.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>3, 3, 3, 3</value>
   </data>
   <data name="tpSettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>697, 473</value>
+    <value>556, 376</value>
   </data>
   <data name="tpSettings.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -2224,13 +2012,10 @@
     <value>NoControl</value>
   </data>
   <data name="lblUploadLimit.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 20</value>
-  </data>
-  <data name="lblUploadLimit.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 0, 4, 0</value>
+    <value>13, 16</value>
   </data>
   <data name="lblUploadLimit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>172, 17</value>
+    <value>128, 13</value>
   </data>
   <data name="lblUploadLimit.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -2251,13 +2036,10 @@
     <value>0</value>
   </data>
   <data name="nudUploadLimit.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 40</value>
-  </data>
-  <data name="nudUploadLimit.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>16, 32</value>
   </data>
   <data name="nudUploadLimit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>70, 22</value>
+    <value>56, 20</value>
   </data>
   <data name="nudUploadLimit.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -2284,13 +2066,10 @@
     <value>NoControl</value>
   </data>
   <data name="lblUploadLimitHint.Location" type="System.Drawing.Point, System.Drawing">
-    <value>100, 45</value>
-  </data>
-  <data name="lblUploadLimitHint.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 0, 4, 0</value>
+    <value>80, 36</value>
   </data>
   <data name="lblUploadLimitHint.Size" type="System.Drawing.Size, System.Drawing">
-    <value>123, 17</value>
+    <value>90, 13</value>
   </data>
   <data name="lblUploadLimitHint.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -2311,13 +2090,10 @@
     <value>2</value>
   </data>
   <data name="cbBufferSize.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 100</value>
-  </data>
-  <data name="cbBufferSize.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>16, 80</value>
   </data>
   <data name="cbBufferSize.Size" type="System.Drawing.Size, System.Drawing">
-    <value>94, 24</value>
+    <value>76, 21</value>
   </data>
   <data name="cbBufferSize.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -2341,13 +2117,10 @@
     <value>NoControl</value>
   </data>
   <data name="lblBufferSize.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 80</value>
-  </data>
-  <data name="lblBufferSize.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 0, 4, 0</value>
+    <value>13, 64</value>
   </data>
   <data name="lblBufferSize.Size" type="System.Drawing.Size, System.Drawing">
-    <value>79, 17</value>
+    <value>59, 13</value>
   </data>
   <data name="lblBufferSize.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -2368,16 +2141,13 @@
     <value>4</value>
   </data>
   <data name="tpPerformance.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 25</value>
-  </data>
-  <data name="tpPerformance.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>4, 22</value>
   </data>
   <data name="tpPerformance.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>3, 3, 3, 3</value>
   </data>
   <data name="tpPerformance.Size" type="System.Drawing.Size, System.Drawing">
-    <value>681, 436</value>
+    <value>542, 344</value>
   </data>
   <data name="tpPerformance.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -2401,13 +2171,10 @@
     <value>NoControl</value>
   </data>
   <data name="btnClipboardFormatEdit.Location" type="System.Drawing.Point, System.Drawing">
-    <value>140, 20</value>
-  </data>
-  <data name="btnClipboardFormatEdit.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>112, 16</value>
   </data>
   <data name="btnClipboardFormatEdit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 29</value>
+    <value>96, 23</value>
   </data>
   <data name="btnClipboardFormatEdit.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -2431,13 +2198,10 @@
     <value>NoControl</value>
   </data>
   <data name="btnClipboardFormatRemove.Location" type="System.Drawing.Point, System.Drawing">
-    <value>270, 20</value>
-  </data>
-  <data name="btnClipboardFormatRemove.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>216, 16</value>
   </data>
   <data name="btnClipboardFormatRemove.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 29</value>
+    <value>96, 23</value>
   </data>
   <data name="btnClipboardFormatRemove.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -2461,13 +2225,10 @@
     <value>NoControl</value>
   </data>
   <data name="btnClipboardFormatAdd.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 20</value>
-  </data>
-  <data name="btnClipboardFormatAdd.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>8, 16</value>
   </data>
   <data name="btnClipboardFormatAdd.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 29</value>
+    <value>96, 23</value>
   </data>
   <data name="btnClipboardFormatAdd.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -2494,22 +2255,19 @@
     <value>Description</value>
   </data>
   <data name="chDescription.Width" type="System.Int32, mscorlib">
-    <value>169</value>
+    <value>135</value>
   </data>
   <data name="chFormat.Text" xml:space="preserve">
     <value>Format</value>
   </data>
   <data name="chFormat.Width" type="System.Int32, mscorlib">
-    <value>400</value>
+    <value>320</value>
   </data>
   <data name="lvClipboardFormats.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 60</value>
-  </data>
-  <data name="lvClipboardFormats.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>8, 48</value>
   </data>
   <data name="lvClipboardFormats.Size" type="System.Drawing.Size, System.Drawing">
-    <value>620, 328</value>
+    <value>496, 264</value>
   </data>
   <data name="lvClipboardFormats.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -2518,7 +2276,7 @@
     <value>lvClipboardFormats</value>
   </data>
   <data name="&gt;&gt;lvClipboardFormats.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=13.6.2.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=13.5.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lvClipboardFormats.Parent" xml:space="preserve">
     <value>gbClipboardFormats</value>
@@ -2527,16 +2285,10 @@
     <value>3</value>
   </data>
   <data name="gbClipboardFormats.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 10</value>
-  </data>
-  <data name="gbClipboardFormats.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
-  </data>
-  <data name="gbClipboardFormats.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>8, 8</value>
   </data>
   <data name="gbClipboardFormats.Size" type="System.Drawing.Size, System.Drawing">
-    <value>641, 399</value>
+    <value>512, 320</value>
   </data>
   <data name="gbClipboardFormats.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -2557,16 +2309,13 @@
     <value>0</value>
   </data>
   <data name="tpUploadResults.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 25</value>
-  </data>
-  <data name="tpUploadResults.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>4, 22</value>
   </data>
   <data name="tpUploadResults.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>3, 3, 3, 3</value>
   </data>
   <data name="tpUploadResults.Size" type="System.Drawing.Size, System.Drawing">
-    <value>681, 436</value>
+    <value>542, 344</value>
   </data>
   <data name="tpUploadResults.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -2586,20 +2335,14 @@
   <data name="&gt;&gt;tpUploadResults.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="chSecondaryFileUploaders.Width" type="System.Int32, mscorlib">
-    <value>75</value>
-  </data>
   <data name="lvSecondaryFileUploaders.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
   <data name="lvSecondaryFileUploaders.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 21</value>
-  </data>
-  <data name="lvSecondaryFileUploaders.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>3, 18</value>
   </data>
   <data name="lvSecondaryFileUploaders.Size" type="System.Drawing.Size, System.Drawing">
-    <value>202, 304</value>
+    <value>162, 242</value>
   </data>
   <data name="lvSecondaryFileUploaders.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -2608,7 +2351,7 @@
     <value>lvSecondaryFileUploaders</value>
   </data>
   <data name="&gt;&gt;lvSecondaryFileUploaders.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=13.6.2.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=13.5.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lvSecondaryFileUploaders.Parent" xml:space="preserve">
     <value>gbSecondaryFileUploaders</value>
@@ -2617,16 +2360,13 @@
     <value>0</value>
   </data>
   <data name="gbSecondaryFileUploaders.Location" type="System.Drawing.Point, System.Drawing">
-    <value>450, 80</value>
-  </data>
-  <data name="gbSecondaryFileUploaders.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>360, 64</value>
   </data>
   <data name="gbSecondaryFileUploaders.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 6, 4, 4</value>
+    <value>3, 5, 3, 3</value>
   </data>
   <data name="gbSecondaryFileUploaders.Size" type="System.Drawing.Size, System.Drawing">
-    <value>210, 329</value>
+    <value>168, 263</value>
   </data>
   <data name="gbSecondaryFileUploaders.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -2646,20 +2386,14 @@
   <data name="&gt;&gt;gbSecondaryFileUploaders.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="chSecondaryImageUploaders.Width" type="System.Int32, mscorlib">
-    <value>75</value>
-  </data>
   <data name="lvSecondaryImageUploaders.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
   <data name="lvSecondaryImageUploaders.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 21</value>
-  </data>
-  <data name="lvSecondaryImageUploaders.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>3, 18</value>
   </data>
   <data name="lvSecondaryImageUploaders.Size" type="System.Drawing.Size, System.Drawing">
-    <value>202, 304</value>
+    <value>162, 242</value>
   </data>
   <data name="lvSecondaryImageUploaders.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -2668,7 +2402,7 @@
     <value>lvSecondaryImageUploaders</value>
   </data>
   <data name="&gt;&gt;lvSecondaryImageUploaders.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=13.6.2.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=13.5.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lvSecondaryImageUploaders.Parent" xml:space="preserve">
     <value>gbSecondaryImageUploaders</value>
@@ -2677,16 +2411,13 @@
     <value>0</value>
   </data>
   <data name="gbSecondaryImageUploaders.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 80</value>
-  </data>
-  <data name="gbSecondaryImageUploaders.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>8, 64</value>
   </data>
   <data name="gbSecondaryImageUploaders.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 6, 4, 4</value>
+    <value>3, 5, 3, 3</value>
   </data>
   <data name="gbSecondaryImageUploaders.Size" type="System.Drawing.Size, System.Drawing">
-    <value>210, 329</value>
+    <value>168, 263</value>
   </data>
   <data name="gbSecondaryImageUploaders.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -2706,20 +2437,14 @@
   <data name="&gt;&gt;gbSecondaryImageUploaders.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="chSecondaryTextUploaders.Width" type="System.Int32, mscorlib">
-    <value>75</value>
-  </data>
   <data name="lvSecondaryTextUploaders.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
   <data name="lvSecondaryTextUploaders.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 21</value>
-  </data>
-  <data name="lvSecondaryTextUploaders.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>3, 18</value>
   </data>
   <data name="lvSecondaryTextUploaders.Size" type="System.Drawing.Size, System.Drawing">
-    <value>202, 304</value>
+    <value>162, 242</value>
   </data>
   <data name="lvSecondaryTextUploaders.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -2728,7 +2453,7 @@
     <value>lvSecondaryTextUploaders</value>
   </data>
   <data name="&gt;&gt;lvSecondaryTextUploaders.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=13.6.2.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=13.5.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lvSecondaryTextUploaders.Parent" xml:space="preserve">
     <value>gbSecondaryTextUploaders</value>
@@ -2737,16 +2462,13 @@
     <value>0</value>
   </data>
   <data name="gbSecondaryTextUploaders.Location" type="System.Drawing.Point, System.Drawing">
-    <value>230, 80</value>
-  </data>
-  <data name="gbSecondaryTextUploaders.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>184, 64</value>
   </data>
   <data name="gbSecondaryTextUploaders.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 6, 4, 4</value>
+    <value>3, 5, 3, 3</value>
   </data>
   <data name="gbSecondaryTextUploaders.Size" type="System.Drawing.Size, System.Drawing">
-    <value>210, 329</value>
+    <value>168, 263</value>
   </data>
   <data name="gbSecondaryTextUploaders.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -2773,13 +2495,10 @@
     <value>NoControl</value>
   </data>
   <data name="cbUseSecondaryUploaders.Location" type="System.Drawing.Point, System.Drawing">
-    <value>80, 42</value>
-  </data>
-  <data name="cbUseSecondaryUploaders.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>64, 34</value>
   </data>
   <data name="cbUseSecondaryUploaders.Size" type="System.Drawing.Size, System.Drawing">
-    <value>408, 21</value>
+    <value>305, 17</value>
   </data>
   <data name="cbUseSecondaryUploaders.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -2806,13 +2525,10 @@
     <value>NoControl</value>
   </data>
   <data name="cbIfUploadFailRetryOnce.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 14</value>
-  </data>
-  <data name="cbIfUploadFailRetryOnce.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 0, 4, 0</value>
+    <value>5, 11</value>
   </data>
   <data name="cbIfUploadFailRetryOnce.Size" type="System.Drawing.Size, System.Drawing">
-    <value>251, 17</value>
+    <value>185, 13</value>
   </data>
   <data name="cbIfUploadFailRetryOnce.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -2833,13 +2549,10 @@
     <value>4</value>
   </data>
   <data name="nudRetryUpload.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 40</value>
-  </data>
-  <data name="nudRetryUpload.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>8, 32</value>
   </data>
   <data name="nudRetryUpload.Size" type="System.Drawing.Size, System.Drawing">
-    <value>60, 22</value>
+    <value>48, 20</value>
   </data>
   <data name="nudRetryUpload.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -2860,16 +2573,13 @@
     <value>5</value>
   </data>
   <data name="tpUploadRetry.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 25</value>
-  </data>
-  <data name="tpUploadRetry.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>4, 22</value>
   </data>
   <data name="tpUploadRetry.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>3, 3, 3, 3</value>
   </data>
   <data name="tpUploadRetry.Size" type="System.Drawing.Size, System.Drawing">
-    <value>681, 436</value>
+    <value>542, 344</value>
   </data>
   <data name="tpUploadRetry.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -2893,13 +2603,10 @@
     <value>Fill</value>
   </data>
   <data name="tcUpload.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 4</value>
-  </data>
-  <data name="tcUpload.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>3, 3</value>
   </data>
   <data name="tcUpload.Size" type="System.Drawing.Size, System.Drawing">
-    <value>689, 465</value>
+    <value>550, 370</value>
   </data>
   <data name="tcUpload.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -2917,16 +2624,13 @@
     <value>0</value>
   </data>
   <data name="tpUpload.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 25</value>
-  </data>
-  <data name="tpUpload.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>4, 22</value>
   </data>
   <data name="tpUpload.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>3, 3, 3, 3</value>
   </data>
   <data name="tpUpload.Size" type="System.Drawing.Size, System.Drawing">
-    <value>697, 473</value>
+    <value>556, 376</value>
   </data>
   <data name="tpUpload.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -2953,13 +2657,10 @@
     <value>NoControl</value>
   </data>
   <data name="cbHistoryCheckURL.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 60</value>
-  </data>
-  <data name="cbHistoryCheckURL.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>16, 48</value>
   </data>
   <data name="cbHistoryCheckURL.Size" type="System.Drawing.Size, System.Drawing">
-    <value>216, 21</value>
+    <value>165, 17</value>
   </data>
   <data name="cbHistoryCheckURL.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -2986,13 +2687,10 @@
     <value>NoControl</value>
   </data>
   <data name="cbHistorySaveTasks.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 30</value>
-  </data>
-  <data name="cbHistorySaveTasks.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>16, 24</value>
   </data>
   <data name="cbHistorySaveTasks.Size" type="System.Drawing.Size, System.Drawing">
-    <value>161, 21</value>
+    <value>124, 17</value>
   </data>
   <data name="cbHistorySaveTasks.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -3013,16 +2711,10 @@
     <value>1</value>
   </data>
   <data name="gbHistory.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 10</value>
-  </data>
-  <data name="gbHistory.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
-  </data>
-  <data name="gbHistory.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>8, 8</value>
   </data>
   <data name="gbHistory.Size" type="System.Drawing.Size, System.Drawing">
-    <value>670, 100</value>
+    <value>536, 80</value>
   </data>
   <data name="gbHistory.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -3049,13 +2741,10 @@
     <value>NoControl</value>
   </data>
   <data name="cbRecentTasksTrayMenuMostRecentFirst.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 180</value>
-  </data>
-  <data name="cbRecentTasksTrayMenuMostRecentFirst.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>16, 144</value>
   </data>
   <data name="cbRecentTasksTrayMenuMostRecentFirst.Size" type="System.Drawing.Size, System.Drawing">
-    <value>286, 21</value>
+    <value>217, 17</value>
   </data>
   <data name="cbRecentTasksTrayMenuMostRecentFirst.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -3082,13 +2771,10 @@
     <value>NoControl</value>
   </data>
   <data name="lblRecentTasksMaxCount.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 60</value>
-  </data>
-  <data name="lblRecentTasksMaxCount.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 0, 4, 0</value>
+    <value>13, 48</value>
   </data>
   <data name="lblRecentTasksMaxCount.Size" type="System.Drawing.Size, System.Drawing">
-    <value>225, 17</value>
+    <value>170, 13</value>
   </data>
   <data name="lblRecentTasksMaxCount.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -3109,13 +2795,10 @@
     <value>1</value>
   </data>
   <data name="nudRecentTasksMaxCount.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 80</value>
-  </data>
-  <data name="nudRecentTasksMaxCount.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>16, 64</value>
   </data>
   <data name="nudRecentTasksMaxCount.Size" type="System.Drawing.Size, System.Drawing">
-    <value>70, 22</value>
+    <value>56, 20</value>
   </data>
   <data name="nudRecentTasksMaxCount.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -3142,13 +2825,10 @@
     <value>NoControl</value>
   </data>
   <data name="cbRecentTasksShowInTrayMenu.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 150</value>
-  </data>
-  <data name="cbRecentTasksShowInTrayMenu.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>16, 120</value>
   </data>
   <data name="cbRecentTasksShowInTrayMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>227, 21</value>
+    <value>174, 17</value>
   </data>
   <data name="cbRecentTasksShowInTrayMenu.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -3175,13 +2855,10 @@
     <value>NoControl</value>
   </data>
   <data name="cbRecentTasksShowInMainWindow.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 120</value>
-  </data>
-  <data name="cbRecentTasksShowInMainWindow.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>16, 96</value>
   </data>
   <data name="cbRecentTasksShowInMainWindow.Size" type="System.Drawing.Size, System.Drawing">
-    <value>311, 21</value>
+    <value>239, 17</value>
   </data>
   <data name="cbRecentTasksShowInMainWindow.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -3208,13 +2885,10 @@
     <value>NoControl</value>
   </data>
   <data name="cbRecentTasksSave.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 30</value>
-  </data>
-  <data name="cbRecentTasksSave.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>16, 24</value>
   </data>
   <data name="cbRecentTasksSave.Size" type="System.Drawing.Size, System.Drawing">
-    <value>143, 21</value>
+    <value>112, 17</value>
   </data>
   <data name="cbRecentTasksSave.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -3235,16 +2909,10 @@
     <value>5</value>
   </data>
   <data name="gbRecentLinks.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 120</value>
-  </data>
-  <data name="gbRecentLinks.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
-  </data>
-  <data name="gbRecentLinks.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>8, 96</value>
   </data>
   <data name="gbRecentLinks.Size" type="System.Drawing.Size, System.Drawing">
-    <value>670, 220</value>
+    <value>536, 176</value>
   </data>
   <data name="gbRecentLinks.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -3265,16 +2933,13 @@
     <value>1</value>
   </data>
   <data name="tpHistory.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 25</value>
-  </data>
-  <data name="tpHistory.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>4, 22</value>
   </data>
   <data name="tpHistory.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>3, 3, 3, 3</value>
   </data>
   <data name="tpHistory.Size" type="System.Drawing.Size, System.Drawing">
-    <value>697, 473</value>
+    <value>556, 376</value>
   </data>
   <data name="tpHistory.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -3358,13 +3023,10 @@
     <value>NoControl</value>
   </data>
   <data name="cbPrintDontShowWindowsDialog.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 90</value>
-  </data>
-  <data name="cbPrintDontShowWindowsDialog.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>16, 72</value>
   </data>
   <data name="cbPrintDontShowWindowsDialog.Size" type="System.Drawing.Size, System.Drawing">
-    <value>233, 21</value>
+    <value>180, 17</value>
   </data>
   <data name="cbPrintDontShowWindowsDialog.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -3382,7 +3044,7 @@
     <value>tpPrint</value>
   </data>
   <data name="&gt;&gt;cbPrintDontShowWindowsDialog.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>0</value>
   </data>
   <data name="cbDontShowPrintSettingDialog.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3391,13 +3053,10 @@
     <value>NoControl</value>
   </data>
   <data name="cbDontShowPrintSettingDialog.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 60</value>
-  </data>
-  <data name="cbDontShowPrintSettingDialog.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>16, 48</value>
   </data>
   <data name="cbDontShowPrintSettingDialog.Size" type="System.Drawing.Size, System.Drawing">
-    <value>268, 21</value>
+    <value>203, 17</value>
   </data>
   <data name="cbDontShowPrintSettingDialog.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -3415,19 +3074,16 @@
     <value>tpPrint</value>
   </data>
   <data name="&gt;&gt;cbDontShowPrintSettingDialog.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>1</value>
   </data>
   <data name="btnShowImagePrintSettings.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="btnShowImagePrintSettings.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 20</value>
-  </data>
-  <data name="btnShowImagePrintSettings.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>16, 16</value>
   </data>
   <data name="btnShowImagePrintSettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>260, 29</value>
+    <value>208, 23</value>
   </data>
   <data name="btnShowImagePrintSettings.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -3445,19 +3101,16 @@
     <value>tpPrint</value>
   </data>
   <data name="&gt;&gt;btnShowImagePrintSettings.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>2</value>
   </data>
   <data name="tpPrint.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 25</value>
-  </data>
-  <data name="tpPrint.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>4, 22</value>
   </data>
   <data name="tpPrint.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>3, 3, 3, 3</value>
   </data>
   <data name="tpPrint.Size" type="System.Drawing.Size, System.Drawing">
-    <value>697, 473</value>
+    <value>556, 376</value>
   </data>
   <data name="tpPrint.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -3478,13 +3131,10 @@
     <value>7</value>
   </data>
   <data name="cbProxyMethod.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 40</value>
-  </data>
-  <data name="cbProxyMethod.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>16, 32</value>
   </data>
   <data name="cbProxyMethod.Size" type="System.Drawing.Size, System.Drawing">
-    <value>169, 24</value>
+    <value>136, 21</value>
   </data>
   <data name="cbProxyMethod.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -3508,13 +3158,10 @@
     <value>NoControl</value>
   </data>
   <data name="lblProxyMethod.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 20</value>
-  </data>
-  <data name="lblProxyMethod.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 0, 4, 0</value>
+    <value>13, 16</value>
   </data>
   <data name="lblProxyMethod.Size" type="System.Drawing.Size, System.Drawing">
-    <value>133, 17</value>
+    <value>100, 13</value>
   </data>
   <data name="lblProxyMethod.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -3541,13 +3188,10 @@
     <value>NoControl</value>
   </data>
   <data name="lblProxyHost.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 80</value>
-  </data>
-  <data name="lblProxyHost.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 0, 4, 0</value>
+    <value>13, 64</value>
   </data>
   <data name="lblProxyHost.Size" type="System.Drawing.Size, System.Drawing">
-    <value>41, 17</value>
+    <value>32, 13</value>
   </data>
   <data name="lblProxyHost.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -3568,13 +3212,10 @@
     <value>2</value>
   </data>
   <data name="txtProxyHost.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 100</value>
-  </data>
-  <data name="txtProxyHost.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>16, 80</value>
   </data>
   <data name="txtProxyHost.Size" type="System.Drawing.Size, System.Drawing">
-    <value>289, 22</value>
+    <value>232, 20</value>
   </data>
   <data name="txtProxyHost.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -3592,13 +3233,10 @@
     <value>3</value>
   </data>
   <data name="nudProxyPort.Location" type="System.Drawing.Point, System.Drawing">
-    <value>320, 100</value>
-  </data>
-  <data name="nudProxyPort.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>256, 80</value>
   </data>
   <data name="nudProxyPort.Size" type="System.Drawing.Size, System.Drawing">
-    <value>80, 22</value>
+    <value>64, 20</value>
   </data>
   <data name="nudProxyPort.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -3625,13 +3263,10 @@
     <value>NoControl</value>
   </data>
   <data name="lblProxyPort.Location" type="System.Drawing.Point, System.Drawing">
-    <value>316, 80</value>
-  </data>
-  <data name="lblProxyPort.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 0, 4, 0</value>
+    <value>253, 64</value>
   </data>
   <data name="lblProxyPort.Size" type="System.Drawing.Size, System.Drawing">
-    <value>38, 17</value>
+    <value>29, 13</value>
   </data>
   <data name="lblProxyPort.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -3658,13 +3293,10 @@
     <value>NoControl</value>
   </data>
   <data name="lblProxyPassword.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 200</value>
-  </data>
-  <data name="lblProxyPassword.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 0, 4, 0</value>
+    <value>13, 160</value>
   </data>
   <data name="lblProxyPassword.Size" type="System.Drawing.Size, System.Drawing">
-    <value>73, 17</value>
+    <value>56, 13</value>
   </data>
   <data name="lblProxyPassword.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -3685,13 +3317,10 @@
     <value>6</value>
   </data>
   <data name="txtProxyPassword.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 220</value>
-  </data>
-  <data name="txtProxyPassword.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>16, 176</value>
   </data>
   <data name="txtProxyPassword.Size" type="System.Drawing.Size, System.Drawing">
-    <value>289, 22</value>
+    <value>232, 20</value>
   </data>
   <data name="txtProxyPassword.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -3715,13 +3344,10 @@
     <value>NoControl</value>
   </data>
   <data name="lblProxyUsername.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 140</value>
-  </data>
-  <data name="lblProxyUsername.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 0, 4, 0</value>
+    <value>13, 112</value>
   </data>
   <data name="lblProxyUsername.Size" type="System.Drawing.Size, System.Drawing">
-    <value>77, 17</value>
+    <value>58, 13</value>
   </data>
   <data name="lblProxyUsername.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -3742,13 +3368,10 @@
     <value>8</value>
   </data>
   <data name="txtProxyUsername.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 160</value>
-  </data>
-  <data name="txtProxyUsername.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>16, 128</value>
   </data>
   <data name="txtProxyUsername.Size" type="System.Drawing.Size, System.Drawing">
-    <value>289, 22</value>
+    <value>232, 20</value>
   </data>
   <data name="txtProxyUsername.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -3766,16 +3389,13 @@
     <value>9</value>
   </data>
   <data name="tpProxy.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 25</value>
-  </data>
-  <data name="tpProxy.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>4, 22</value>
   </data>
   <data name="tpProxy.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>6, 6, 6, 6</value>
+    <value>5, 5, 5, 5</value>
   </data>
   <data name="tpProxy.Size" type="System.Drawing.Size, System.Drawing">
-    <value>697, 473</value>
+    <value>556, 376</value>
   </data>
   <data name="tpProxy.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -3799,13 +3419,10 @@
     <value>Fill</value>
   </data>
   <data name="pgSettings.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 4</value>
-  </data>
-  <data name="pgSettings.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>3, 3</value>
   </data>
   <data name="pgSettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>689, 465</value>
+    <value>550, 370</value>
   </data>
   <data name="pgSettings.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -3823,16 +3440,13 @@
     <value>0</value>
   </data>
   <data name="tpAdvanced.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 25</value>
-  </data>
-  <data name="tpAdvanced.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>4, 22</value>
   </data>
   <data name="tpAdvanced.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>3, 3, 3, 3</value>
   </data>
   <data name="tpAdvanced.Size" type="System.Drawing.Size, System.Drawing">
-    <value>697, 473</value>
+    <value>556, 376</value>
   </data>
   <data name="tpAdvanced.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -3853,13 +3467,10 @@
     <value>9</value>
   </data>
   <data name="tcSettings.Location" type="System.Drawing.Point, System.Drawing">
-    <value>216, 0</value>
-  </data>
-  <data name="tcSettings.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>173, 0</value>
   </data>
   <data name="tcSettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>705, 502</value>
+    <value>564, 402</value>
   </data>
   <data name="tcSettings.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -3889,7 +3500,7 @@
     <value>0, 0, 0, 0</value>
   </data>
   <data name="tttvMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>921, 502</value>
+    <value>737, 402</value>
   </data>
   <data name="tttvMain.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -3898,7 +3509,7 @@
     <value>tttvMain</value>
   </data>
   <data name="&gt;&gt;tttvMain.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.TabToTreeView, ShareX.HelpersLib, Version=13.6.2.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.TabToTreeView, ShareX.HelpersLib, Version=13.5.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;tttvMain.Parent" xml:space="preserve">
     <value>$this</value>
@@ -3910,16 +3521,13 @@
     <value>True</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>120, 120</value>
+    <value>96, 96</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>921, 502</value>
-  </data>
-  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>737, 402</value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>796, 538</value>
+    <value>640, 440</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>
