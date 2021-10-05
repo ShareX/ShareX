@@ -54,18 +54,12 @@ namespace ShareX.HistoryLib
             HistoryPath = historyPath;
             Settings = settings;
 
+            ilvImages.SetRenderer(new HistoryImageListViewRenderer());
             ilvImages.ThumbnailSize = Settings.ThumbnailSize;
 
             if (ShareXResources.UseCustomTheme)
             {
                 ilvImages.BorderStyle = BorderStyle.None;
-                ilvImages.Colors.BackColor = ShareXResources.Theme.DarkBackgroundColor;
-                ilvImages.Colors.BorderColor = ShareXResources.Theme.DarkBackgroundColor;
-                ilvImages.Colors.ForeColor = ShareXResources.Theme.TextColor;
-                ilvImages.Colors.ImageInnerBorderColor = Color.Transparent;
-                ilvImages.Colors.ImageOuterBorderColor = Color.Transparent;
-                ilvImages.Colors.SelectedForeColor = ShareXResources.Theme.TextColor;
-                ilvImages.Colors.UnFocusedForeColor = ShareXResources.Theme.TextColor;
             }
 
             him = new HistoryItemManager(uploadFile, editImage);

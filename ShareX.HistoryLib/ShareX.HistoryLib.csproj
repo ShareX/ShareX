@@ -93,6 +93,7 @@
       <DependentUpon>HistorySettingsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="HistoryFilter.cs" />
+    <Compile Include="HistoryImageListViewRenderer.cs" />
     <Compile Include="HistoryItemManager_ContextMenu.cs" />
     <Compile Include="Forms\ImageHistoryForm.cs">
       <SubType>Form</SubType>
