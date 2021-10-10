@@ -42,6 +42,9 @@ namespace ShareX.ImageEffectsLib
         [DefaultValue(typeof(Color), "Transparent"), Editor(typeof(MyColorEditor), typeof(UITypeEditor)), TypeConverter(typeof(MyColorConverter))]
         public Color TargetColor { get; set; }
 
+        [DefaultValue(0)]
+        public int Threshold { get; set; }
+
         public ReplaceColor()
         {
             this.ApplyDefaultPropertyValues();
@@ -49,7 +52,7 @@ namespace ShareX.ImageEffectsLib
 
         public override Bitmap Apply(Bitmap bmp)
         {
-            ImageHelpers.ReplaceColor(bmp, SourceColor, TargetColor, AutoSourceColor);
+            ImageHelpers.ReplaceColor(bmp, SourceColor, TargetColor, AutoSourceColor, Threshold);
             return bmp;
         }
     }

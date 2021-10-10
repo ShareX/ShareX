@@ -2325,7 +2325,7 @@ namespace ShareX.HelpersLib
             }
         }
 
-        public static void ReplaceColor(Bitmap bmp, Color sourceColor, Color targetColor, bool autoSourceColor = false)
+        public static void ReplaceColor(Bitmap bmp, Color sourceColor, Color targetColor, bool autoSourceColor = false, int threshold = 0)
         {
             ColorBgra sourceBgra = new ColorBgra(sourceColor);
             ColorBgra targetBgra = new ColorBgra(targetColor);
@@ -2335,13 +2335,21 @@ namespace ShareX.HelpersLib
                 if (autoSourceColor)
                 {
                     sourceBgra = unsafeBitmap.GetPixel(0);
+                    sourceColor = sourceBgra.ToColor();
                 }
 
                 for (int i = 0; i < unsafeBitmap.PixelCount; i++)
                 {
                     ColorBgra color = unsafeBitmap.GetPixel(i);
 
-                    if (color == sourceBgra)
+                    if (threshold == 0)
+                    {
+                        if (color == sourceBgra)
+                        {
+                            unsafeBitmap.SetPixel(i, targetBgra);
+                        }
+                    }
+                    else if (ColorHelpers.ColorsAreClose(color.ToColor(), sourceColor, threshold))
                     {
                         unsafeBitmap.SetPixel(i, targetBgra);
                     }
