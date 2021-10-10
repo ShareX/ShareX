@@ -180,6 +180,7 @@ namespace ShareX.ImageEffectsLib
                 typeof(Hue),
                 typeof(Inverse),
                 typeof(Polaroid),
+                typeof(ReplaceColor),
                 typeof(Saturation),
                 typeof(SelectiveColor),
                 typeof(Sepia));

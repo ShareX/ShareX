@@ -2325,6 +2325,30 @@ namespace ShareX.HelpersLib
             }
         }
 
+        public static void ReplaceColor(Bitmap bmp, Color sourceColor, Color targetColor, bool autoSourceColor = false)
+        {
+            ColorBgra sourceBgra = new ColorBgra(sourceColor);
+            ColorBgra targetBgra = new ColorBgra(targetColor);
+
+            using (UnsafeBitmap unsafeBitmap = new UnsafeBitmap(bmp, true))
+            {
+                if (autoSourceColor)
+                {
+                    sourceBgra = unsafeBitmap.GetPixel(0);
+                }
+
+                for (int i = 0; i < unsafeBitmap.PixelCount; i++)
+                {
+                    ColorBgra color = unsafeBitmap.GetPixel(i);
+
+                    if (color == sourceBgra)
+                    {
+                        unsafeBitmap.SetPixel(i, targetBgra);
+                    }
+                }
+            }
+        }
+
         public static Size GetImageFileDimensions(string filePath)
         {
             using (Bitmap bmp = LoadImage(filePath))
