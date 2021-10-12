@@ -120,9 +120,6 @@ namespace ShareX
         public static bool IgnoreHotkeyWarning { get; private set; }
         public static bool PuushMode { get; private set; }
 
-        public static bool SystemDisableUpload { get; private set; }
-        public static bool SystemDisableUpdateCheck { get; private set; }
-
         internal static ApplicationConfig Settings { get; set; }
         internal static TaskSettings DefaultTaskSettings { get; set; }
         internal static UploadersConfig UploadersConfig { get; set; }
@@ -361,7 +358,7 @@ namespace ShareX
             IgnoreHotkeyWarning = CLI.IsCommandExist("NoHotkeys");
 
             CreateParentFolders();
-            CheckSystemFlags();
+            SystemOptions.UpdateSystemOptions();
             RegisterExtensions();
             CheckPuushMode();
             DebugWriteFlags();
@@ -624,35 +621,6 @@ namespace ShareX
             return false;
         }
 
-        private static void CheckSystemFlags()
-        {
-            SystemDisableUpload = CheckSystemFlag("DisableUpload");
-            SystemDisableUpdateCheck = CheckSystemFlag("DisableUpdateCheck");
-        }
-
-        private static bool CheckSystemFlag(string name)
-        {
-            try
-            {
-                const string path = @"SOFTWARE\ShareX";
-
-                if (RegistryHelpers.CheckRegistry(path, name, null, RegistryHive.LocalMachine))
-                {
-                    return RegistryHelpers.CheckRegistry(path, name, "true", RegistryHive.LocalMachine);
-                }
-                else
-                {
-                    return RegistryHelpers.CheckRegistry(path, name, "true", RegistryHive.CurrentUser);
-                }
-            }
-            catch (Exception e)
-            {
-                DebugHelper.WriteException(e);
-            }
-
-            return false;
-        }
-
         private static void Application_ThreadException(object sender, ThreadExceptionEventArgs e)
         {
             OnError(e.Exception);
@@ -722,8 +690,8 @@ namespace ShareX
             if (Sandbox) flags.Add(nameof(Sandbox));
             if (SteamFirstTimeConfig) flags.Add(nameof(SteamFirstTimeConfig));
             if (IgnoreHotkeyWarning) flags.Add(nameof(IgnoreHotkeyWarning));
-            if (SystemDisableUpload) flags.Add(nameof(SystemDisableUpload));
-            if (SystemDisableUpdateCheck) flags.Add(nameof(SystemDisableUpdateCheck));
+            if (SystemOptions.DisableUpload) flags.Add(nameof(SystemOptions.DisableUpload));
+            if (SystemOptions.DisableUpdateCheck) flags.Add(nameof(SystemOptions.DisableUpdateCheck));
             if (PuushMode) flags.Add(nameof(PuushMode));
 
             string output = string.Join(", ", flags);

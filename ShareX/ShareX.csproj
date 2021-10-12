@@ -374,6 +374,7 @@
     <Compile Include="StartupManagers\IStartupManager.cs" />
     <Compile Include="StartupManagers\StartupManagerSingletonProvider.cs" />
     <Compile Include="StartupManagers\SteamStartupManager.cs" />
+    <Compile Include="SystemOptions.cs" />
     <Compile Include="TaskHelpers.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

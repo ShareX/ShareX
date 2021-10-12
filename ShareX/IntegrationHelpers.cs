@@ -78,8 +78,8 @@ namespace ShareX
         {
             try
             {
-                return RegistryHelpers.CheckRegistry(ShellExtMenuFilesCmd, null, ShellExtPath) &&
-                    RegistryHelpers.CheckRegistry(ShellExtMenuDirectoryCmd, null, ShellExtPath);
+                return RegistryHelpers.CheckStringValue(ShellExtMenuFilesCmd, null, ShellExtPath) &&
+                    RegistryHelpers.CheckStringValue(ShellExtMenuDirectoryCmd, null, ShellExtPath);
             }
             catch (Exception e)
             {
@@ -130,7 +130,7 @@ namespace ShareX
         {
             try
             {
-                return RegistryHelpers.CheckRegistry(ShellExtEditImageCmd, null, ShellExtEditPath);
+                return RegistryHelpers.CheckStringValue(ShellExtEditImageCmd, null, ShellExtEditPath);
             }
             catch (Exception e)
             {
@@ -176,8 +176,8 @@ namespace ShareX
         {
             try
             {
-                return RegistryHelpers.CheckRegistry(ShellCustomUploaderExtensionPath, null, ShellCustomUploaderExtensionValue) &&
-                    RegistryHelpers.CheckRegistry(ShellCustomUploaderCommandPath, null, ShellCustomUploaderCommandValue);
+                return RegistryHelpers.CheckStringValue(ShellCustomUploaderExtensionPath, null, ShellCustomUploaderExtensionValue) &&
+                    RegistryHelpers.CheckStringValue(ShellCustomUploaderCommandPath, null, ShellCustomUploaderCommandValue);
             }
             catch (Exception e)
             {
@@ -227,8 +227,8 @@ namespace ShareX
         {
             try
             {
-                return RegistryHelpers.CheckRegistry(ShellImageEffectExtensionPath, null, ShellImageEffectExtensionValue) &&
-                    RegistryHelpers.CheckRegistry(ShellImageEffectCommandPath, null, ShellImageEffectCommandValue);
+                return RegistryHelpers.CheckStringValue(ShellImageEffectExtensionPath, null, ShellImageEffectExtensionValue) &&
+                    RegistryHelpers.CheckStringValue(ShellImageEffectCommandPath, null, ShellImageEffectCommandValue);
             }
             catch (Exception e)
             {
@@ -278,7 +278,7 @@ namespace ShareX
         {
             try
             {
-                return RegistryHelpers.CheckRegistry(ChromeNativeMessagingHosts, null, Program.ChromeHostManifestFilePath) &&
+                return RegistryHelpers.CheckStringValue(ChromeNativeMessagingHosts, null, Program.ChromeHostManifestFilePath) &&
                     File.Exists(Program.ChromeHostManifestFilePath);
             }
             catch (Exception e)
@@ -348,7 +348,7 @@ namespace ShareX
         {
             try
             {
-                return RegistryHelpers.CheckRegistry(FirefoxNativeMessagingHosts, null, Program.FirefoxHostManifestFilePath) &&
+                return RegistryHelpers.CheckStringValue(FirefoxNativeMessagingHosts, null, Program.FirefoxHostManifestFilePath) &&
                     File.Exists(Program.FirefoxHostManifestFilePath);
             }
             catch (Exception e)

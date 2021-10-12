@@ -242,7 +242,7 @@ namespace ShareX.UploadersLib
                         return mimeType;
                     }
 
-                    mimeType = RegistryHelpers.GetRegistryValue(ext, "Content Type", RegistryHive.ClassesRoot);
+                    mimeType = RegistryHelpers.GetValueString(ext, "Content Type", RegistryHive.ClassesRoot);
 
                     if (!string.IsNullOrEmpty(mimeType))
                     {
