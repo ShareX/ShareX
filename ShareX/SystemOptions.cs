@@ -33,32 +33,58 @@ namespace ShareX
     {
         private const string RegistryPath = @"SOFTWARE\ShareX";
 
-        public static bool DisableUpload { get; private set; }
         public static bool DisableUpdateCheck { get; private set; }
+        public static bool DisableUpload { get; private set; }
+        public static string PersonalPath { get; private set; }
 
         public static void UpdateSystemOptions()
         {
-            DisableUpload = GetSystemOption("DisableUpload");
-            DisableUpdateCheck = GetSystemOption("DisableUpdateCheck");
+            DisableUpdateCheck = GetSystemOptionBoolean("DisableUpdateCheck");
+            DisableUpload = GetSystemOptionBoolean("DisableUpload");
+            PersonalPath = GetSystemOptionString("PersonalPath");
         }
 
-        private static bool GetSystemOption(string name)
+        private static bool GetSystemOptionBoolean(string name)
         {
             object value = RegistryHelpers.GetValue(RegistryPath, name, RegistryHive.LocalMachine);
 
             if (value != null)
             {
-                return Convert.ToBoolean(value);
+                try
+                {
+                    return Convert.ToBoolean(value);
+                }
+                catch
+                {
+                }
             }
 
             value = RegistryHelpers.GetValue(RegistryPath, name, RegistryHive.CurrentUser);
 
             if (value != null)
             {
-                return Convert.ToBoolean(value);
+                try
+                {
+                    return Convert.ToBoolean(value);
+                }
+                catch
+                {
+                }
             }
 
             return false;
+        }
+
+        private static string GetSystemOptionString(string name)
+        {
+            string value = RegistryHelpers.GetValueString(RegistryPath, name, RegistryHive.LocalMachine);
+
+            if (value == null)
+            {
+                value = RegistryHelpers.GetValueString(RegistryPath, name, RegistryHive.CurrentUser);
+            }
+
+            return value;
         }
     }
 }

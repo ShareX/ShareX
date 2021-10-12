@@ -302,6 +302,7 @@ namespace ShareX
 
             if (CheckAdminTasks()) return; // If ShareX opened just for be able to execute task as Admin
 
+            SystemOptions.UpdateSystemOptions();
             UpdatePersonalPath();
 
             DebugHelper.Init(LogsFilePath);
@@ -358,7 +359,6 @@ namespace ShareX
             IgnoreHotkeyWarning = CLI.IsCommandExist("NoHotkeys");
 
             CreateParentFolders();
-            SystemOptions.UpdateSystemOptions();
             RegisterExtensions();
             CheckPuushMode();
             DebugWriteFlags();
@@ -472,6 +472,11 @@ namespace ShareX
                     Portable = PortableApps = true;
                     CustomPersonalPath = PortableAppsPersonalFolder;
                     PersonalPathDetectionMethod = $"PortableApps file ({PortableAppsCheckFilePath})";
+                }
+                else if (!string.IsNullOrEmpty(SystemOptions.PersonalPath))
+                {
+                    CustomPersonalPath = SystemOptions.PersonalPath;
+                    PersonalPathDetectionMethod = "Registry";
                 }
                 else
                 {
@@ -690,8 +695,8 @@ namespace ShareX
             if (Sandbox) flags.Add(nameof(Sandbox));
             if (SteamFirstTimeConfig) flags.Add(nameof(SteamFirstTimeConfig));
             if (IgnoreHotkeyWarning) flags.Add(nameof(IgnoreHotkeyWarning));
-            if (SystemOptions.DisableUpload) flags.Add(nameof(SystemOptions.DisableUpload));
             if (SystemOptions.DisableUpdateCheck) flags.Add(nameof(SystemOptions.DisableUpdateCheck));
+            if (SystemOptions.DisableUpload) flags.Add(nameof(SystemOptions.DisableUpload));
             if (PuushMode) flags.Add(nameof(PuushMode));
 
             string output = string.Join(", ", flags);
