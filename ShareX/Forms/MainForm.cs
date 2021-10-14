@@ -161,6 +161,19 @@ namespace ShareX
                 tsmiShareSelectedURL.DropDownItems.Add(tsmi);
             }
 
+            foreach (ThumbnailViewClickAction clickAction in Helpers.GetEnums<ThumbnailViewClickAction>())
+            {
+                ThumbnailViewClickAction currentClickAction = clickAction;
+                ToolStripMenuItem tsmi = new ToolStripMenuItem(currentClickAction.GetLocalizedDescription());
+                tsmi.Click += (sender, e) =>
+                {
+                    Program.Settings.ThumbnailClickAction = currentClickAction;
+                    tsmi.RadioCheck();
+                    UpdateMainWindowLayout();
+                };
+                tsmiThumbnailClickAction.DropDownItems.Add(tsmi);
+            }
+
             lvUploads.SupportCustomTheme();
 
             ImageList il = new ImageList();
@@ -184,7 +197,7 @@ namespace ShareX
                 tsddbAfterCaptureTasks, tsddbAfterUploadTasks, tsmiImageUploaders, tsmiImageFileUploaders, tsmiTextUploaders, tsmiTextFileUploaders, tsmiFileUploaders,
                 tsmiURLShorteners, tsmiURLSharingServices, tsmiTrayAfterCaptureTasks, tsmiTrayAfterUploadTasks, tsmiTrayImageUploaders, tsmiTrayImageFileUploaders,
                 tsmiTrayTextUploaders, tsmiTrayTextFileUploaders, tsmiTrayFileUploaders, tsmiTrayURLShorteners, tsmiTrayURLSharingServices, tsmiScreenshotDelay,
-                tsmiTrayScreenshotDelay
+                tsmiTrayScreenshotDelay, tsmiThumbnailClickAction
             })
             {
                 dropDownItem.DisableMenuCloseOnClick();
@@ -280,6 +293,8 @@ namespace ShareX
                     tsmiThumbnailTitleBottom.Check();
                     break;
             }
+
+            ((ToolStripMenuItem)tsmiThumbnailClickAction.DropDownItems[(int)Program.Settings.ThumbnailClickAction]).RadioCheck();
 
             if (Program.Settings.PreviewSplitterDistance > 0)
             {
@@ -1146,8 +1161,9 @@ namespace ShareX
             ucTaskThumbnailView.TitleVisible = Program.Settings.ShowThumbnailTitle;
             ucTaskThumbnailView.TitleLocation = Program.Settings.ThumbnailTitleLocation;
             ucTaskThumbnailView.ThumbnailSize = Program.Settings.ThumbnailSize;
+            ucTaskThumbnailView.ClickAction = Program.Settings.ThumbnailClickAction;
 
-            tsmiThumbnailTitle.Visible = tsmiThumbnailSize.Visible = Program.Settings.TaskViewMode == TaskViewMode.ThumbnailView;
+            tsmiThumbnailTitle.Visible = tsmiThumbnailSize.Visible = tsmiThumbnailClickAction.Visible = Program.Settings.TaskViewMode == TaskViewMode.ThumbnailView;
 
             Refresh();
         }

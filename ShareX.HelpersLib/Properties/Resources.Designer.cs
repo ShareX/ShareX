@@ -3701,6 +3701,60 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Default.
+        /// </summary>
+        internal static string ThumbnailViewClickAction_Default {
+            get {
+                return ResourceManager.GetString("ThumbnailViewClickAction_Default", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit image.
+        /// </summary>
+        internal static string ThumbnailViewClickAction_EditImage {
+            get {
+                return ResourceManager.GetString("ThumbnailViewClickAction_EditImage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Open file.
+        /// </summary>
+        internal static string ThumbnailViewClickAction_OpenFile {
+            get {
+                return ResourceManager.GetString("ThumbnailViewClickAction_OpenFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Open folder.
+        /// </summary>
+        internal static string ThumbnailViewClickAction_OpenFolder {
+            get {
+                return ResourceManager.GetString("ThumbnailViewClickAction_OpenFolder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Open image viewer.
+        /// </summary>
+        internal static string ThumbnailViewClickAction_OpenImageViewer {
+            get {
+                return ResourceManager.GetString("ThumbnailViewClickAction_OpenImageViewer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Open URL.
+        /// </summary>
+        internal static string ThumbnailViewClickAction_OpenURL {
+            get {
+                return ResourceManager.GetString("ThumbnailViewClickAction_OpenURL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap tick {

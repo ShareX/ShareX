@@ -1385,4 +1385,22 @@ Would you like to download and install it?</value>
   <data name="HotkeyType_ToggleTrayMenu_Category" xml:space="preserve">
     <value>Other</value>
   </data>
+  <data name="ThumbnailViewClickAction_Default" xml:space="preserve">
+    <value>Default</value>
+  </data>
+  <data name="ThumbnailViewClickAction_EditImage" xml:space="preserve">
+    <value>Edit image</value>
+  </data>
+  <data name="ThumbnailViewClickAction_OpenFile" xml:space="preserve">
+    <value>Open file</value>
+  </data>
+  <data name="ThumbnailViewClickAction_OpenFolder" xml:space="preserve">
+    <value>Open folder</value>
+  </data>
+  <data name="ThumbnailViewClickAction_OpenImageViewer" xml:space="preserve">
+    <value>Open image viewer</value>
+  </data>
+  <data name="ThumbnailViewClickAction_OpenURL" xml:space="preserve">
+    <value>Open URL</value>
+  </data>
 </root>

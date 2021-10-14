@@ -56,6 +56,7 @@ namespace ShareX
         public bool ShowThumbnailTitle = true;
         public ThumbnailTitleLocation ThumbnailTitleLocation = ThumbnailTitleLocation.Top;
         public Size ThumbnailSize = new Size(200, 150);
+        public ThumbnailViewClickAction ThumbnailClickAction = ThumbnailViewClickAction.Default;
         public ImagePreviewVisibility ImagePreview = ImagePreviewVisibility.Automatic;
         public ImagePreviewLocation ImagePreviewLocation = ImagePreviewLocation.Side;
         public int PreviewSplitterDistance = 335;
