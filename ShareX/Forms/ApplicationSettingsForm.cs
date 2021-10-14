@@ -228,7 +228,7 @@ namespace ShareX
             cbDontShowPrintSettingDialog.Checked = Program.Settings.DontShowPrintSettingsDialog;
             cbPrintDontShowWindowsDialog.Checked = !Program.Settings.PrintSettings.ShowPrintDialog;
             txtDefaultPrinterOverride.Text = Program.Settings.PrintSettings.DefaultPrinterOverride;
-            UpdatePrintControls();
+            lblDefaultPrinterOverride.Visible = txtDefaultPrinterOverride.Visible = !Program.Settings.PrintSettings.ShowPrintDialog;
 
             // Advanced
             pgSettings.SelectedObject = Program.Settings;
@@ -1004,15 +1004,9 @@ namespace ShareX
 
         #region Print
 
-        private void UpdatePrintControls()
-        {
-            txtDefaultPrinterOverride.Enabled = !Program.Settings.PrintSettings.ShowPrintDialog;
-        }
-
         private void cbDontShowPrintSettingDialog_CheckedChanged(object sender, EventArgs e)
         {
             Program.Settings.DontShowPrintSettingsDialog = cbDontShowPrintSettingDialog.Checked;
-            UpdatePrintControls();
         }
 
         private void btnShowImagePrintSettings_Click(object sender, EventArgs e)
@@ -1022,19 +1016,17 @@ namespace ShareX
             {
                 printForm.ShowDialog();
             }
-            UpdatePrintControls();
         }
 
         private void cbPrintDontShowWindowsDialog_CheckedChanged(object sender, EventArgs e)
         {
             Program.Settings.PrintSettings.ShowPrintDialog = !cbPrintDontShowWindowsDialog.Checked;
-            UpdatePrintControls();
+            lblDefaultPrinterOverride.Visible = txtDefaultPrinterOverride.Visible = !Program.Settings.PrintSettings.ShowPrintDialog;
         }
 
         private void txtDefaultPrinterOverride_TextChanged(object sender, EventArgs e)
         {
             Program.Settings.PrintSettings.DefaultPrinterOverride = txtDefaultPrinterOverride.Text;
-            UpdatePrintControls();
         }
 
         #endregion Print

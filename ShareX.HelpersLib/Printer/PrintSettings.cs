@@ -37,7 +37,6 @@ namespace ShareX.HelpersLib
         public bool CenterImage { get; set; }
         public XmlFont TextFont { get; set; }
         public bool ShowPrintDialog { get; set; }
-
         public string DefaultPrinterOverride { get; set; }
 
         public PrintSettings()
