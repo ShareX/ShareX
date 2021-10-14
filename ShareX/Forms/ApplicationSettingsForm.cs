@@ -116,7 +116,15 @@ namespace ShareX
             cbCheckPreReleaseUpdates.Visible = false;
             btnCheckDevBuild.Visible = false;
 #else
-            cbCheckPreReleaseUpdates.Checked = Program.Settings.CheckPreReleaseUpdates;
+            if (SystemOptions.DisableUpdateCheck)
+            {
+                cbCheckPreReleaseUpdates.Visible = false;
+                btnCheckDevBuild.Visible = false;
+            }
+            else
+            {
+                cbCheckPreReleaseUpdates.Checked = Program.Settings.CheckPreReleaseUpdates;
+            }
 #endif
 
             // Theme
