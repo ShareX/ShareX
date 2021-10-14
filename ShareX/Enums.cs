@@ -243,28 +243,28 @@ namespace ShareX
         ToastNotification
     }
 
-    public enum ToastClickAction  // Localized
+    public enum ToastClickAction // Localized
     {
-        [Description("Close notification")]
         CloseNotification,
-        [Description("Annotate image")]
         AnnotateImage,
-        [Description("Copy image")]
         CopyImageToClipboard,
-        [Description("Copy file")]
         CopyFile,
-        [Description("Copy file path")]
         CopyFilePath,
-        [Description("Copy link")]
         CopyUrl,
-        [Description("Open file")]
         OpenFile,
-        [Description("Open folder")]
         OpenFolder,
-        [Description("Open link")]
         OpenUrl,
-        [Description("Upload file")]
         Upload
+    }
+
+    public enum ThumbnailViewClickAction // Localized
+    {
+        Default,
+        OpenImageViewer,
+        OpenFile,
+        OpenFolder,
+        OpenURL,
+        EditImage
     }
 
     public enum FileExistAction // Localized

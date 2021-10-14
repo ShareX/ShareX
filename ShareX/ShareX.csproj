@@ -1938,6 +1938,9 @@
   <ItemGroup>
     <None Include="Resources\camcorder--minus.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image-map.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>

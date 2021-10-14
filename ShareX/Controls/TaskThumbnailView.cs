@@ -118,6 +118,28 @@ namespace ShareX
             }
         }
 
+        private ThumbnailViewClickAction clickAction = ThumbnailViewClickAction.Default;
+
+        public ThumbnailViewClickAction ClickAction
+        {
+            get
+            {
+                return clickAction;
+            }
+            set
+            {
+                if (clickAction != value)
+                {
+                    clickAction = value;
+
+                    foreach (TaskThumbnailPanel panel in Panels)
+                    {
+                        panel.ClickAction = clickAction;
+                    }
+                }
+            }
+        }
+
         public delegate void TaskViewMouseEventHandler(object sender, MouseEventArgs e);
         public event TaskViewMouseEventHandler ContextMenuRequested;
 
@@ -158,6 +180,7 @@ namespace ShareX
         {
             TaskThumbnailPanel panel = new TaskThumbnailPanel(task);
             panel.ThumbnailSize = ThumbnailSize;
+            panel.ClickAction = ClickAction;
             panel.TitleVisible = TitleVisible;
             panel.TitleLocation = TitleLocation;
             panel.MouseEnter += Panel_MouseEnter;

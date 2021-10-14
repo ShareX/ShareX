@@ -205,6 +205,7 @@
             this.tsmiThumbnailTitleTop = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiThumbnailTitleBottom = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiThumbnailSize = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiThumbnailClickAction = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiSwitchTaskViewMode = new System.Windows.Forms.ToolStripMenuItem();
             this.niTray = new System.Windows.Forms.NotifyIcon(this.components);
             this.cmsTray = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -1100,6 +1101,7 @@
             this.tsmiImagePreview,
             this.tsmiThumbnailTitle,
             this.tsmiThumbnailSize,
+            this.tsmiThumbnailClickAction,
             this.tsmiSwitchTaskViewMode});
             this.cmsTaskInfo.Name = "cmsHistory";
             resources.ApplyResources(this.cmsTaskInfo, "cmsTaskInfo");
@@ -1643,6 +1645,12 @@
             this.tsmiThumbnailSize.Name = "tsmiThumbnailSize";
             resources.ApplyResources(this.tsmiThumbnailSize, "tsmiThumbnailSize");
             this.tsmiThumbnailSize.Click += new System.EventHandler(this.tsmiThumbnailSize_Click);
+            // 
+            // tsmiThumbnailClickAction
+            // 
+            this.tsmiThumbnailClickAction.Image = global::ShareX.Properties.Resources.image_map;
+            this.tsmiThumbnailClickAction.Name = "tsmiThumbnailClickAction";
+            resources.ApplyResources(this.tsmiThumbnailClickAction, "tsmiThumbnailClickAction");
             // 
             // tsmiSwitchTaskViewMode
             // 
@@ -2307,6 +2315,7 @@
             // 
             resources.ApplyResources(this.ucTaskThumbnailView, "ucTaskThumbnailView");
             this.ucTaskThumbnailView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(47)))), ((int)(((byte)(56)))));
+            this.ucTaskThumbnailView.ClickAction = ShareX.ThumbnailViewClickAction.Default;
             this.ucTaskThumbnailView.Name = "ucTaskThumbnailView";
             this.ucTaskThumbnailView.ThumbnailSize = new System.Drawing.Size(200, 150);
             this.ucTaskThumbnailView.TitleLocation = ShareX.ThumbnailTitleLocation.Top;
@@ -2633,5 +2642,6 @@
         private System.Windows.Forms.ToolStripButton tsbDonate;
         private System.Windows.Forms.ToolStripMenuItem tsmiBorderlessWindow;
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayBorderlessWindow;
+        private System.Windows.Forms.ToolStripMenuItem tsmiThumbnailClickAction;
     }
 }
