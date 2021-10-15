@@ -227,8 +227,6 @@ namespace ShareX
             }
         }
 
-        public bool ThumbnailSupportsClick { get; private set; }
-
         public ThumbnailViewClickAction ClickAction { get; set; }
 
         private Rectangle dragBoxFromMouseDown;
@@ -322,9 +320,8 @@ namespace ShareX
                 {
                     string filePath = Task.Info.FilePath;
 
-                    if (!string.IsNullOrEmpty(filePath) && File.Exists(filePath))
+                    if (ClickAction != ThumbnailViewClickAction.Select && !string.IsNullOrEmpty(filePath) && File.Exists(filePath))
                     {
-                        ThumbnailSupportsClick = true;
                         pbThumbnail.Cursor = Cursors.Hand;
                     }
 
@@ -409,7 +406,6 @@ namespace ShareX
                 temp.Dispose();
             }
 
-            ThumbnailSupportsClick = false;
             pbThumbnail.Cursor = Cursors.Default;
 
             ThumbnailExists = false;
@@ -535,7 +531,7 @@ namespace ShareX
 
         private void PbThumbnail_MouseClick(object sender, MouseEventArgs e)
         {
-            if (ThumbnailSupportsClick && ModifierKeys == Keys.None && e.Button == MouseButtons.Left)
+            if (ModifierKeys == Keys.None && e.Button == MouseButtons.Left)
             {
                 ExecuteClickAction(ClickAction, Task.Info);
             }
@@ -543,7 +539,7 @@ namespace ShareX
 
         private void pbThumbnail_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            if (ThumbnailSupportsClick && ModifierKeys == Keys.None && e.Button == MouseButtons.Left && ClickAction == ThumbnailViewClickAction.Select)
+            if (ModifierKeys == Keys.None && e.Button == MouseButtons.Left && ClickAction == ThumbnailViewClickAction.Select)
             {
                 ExecuteClickAction(ThumbnailViewClickAction.OpenFile, Task.Info);
             }
