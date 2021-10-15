@@ -541,6 +541,14 @@ namespace ShareX
             }
         }
 
+        private void pbThumbnail_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            if (ThumbnailSupportsClick && ModifierKeys == Keys.None && e.Button == MouseButtons.Left && ClickAction == ThumbnailViewClickAction.Select)
+            {
+                ExecuteClickAction(ThumbnailViewClickAction.OpenFile, Task.Info);
+            }
+        }
+
         private void PbThumbnail_MouseMove(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left && dragBoxFromMouseDown != Rectangle.Empty && !dragBoxFromMouseDown.Contains(e.X, e.Y))
