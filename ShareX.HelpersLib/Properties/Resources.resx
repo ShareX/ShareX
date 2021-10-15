@@ -1403,4 +1403,7 @@ Would you like to download and install it?</value>
   <data name="ThumbnailViewClickAction_OpenURL" xml:space="preserve">
     <value>Open URL</value>
   </data>
+  <data name="ThumbnailViewClickAction_Select" xml:space="preserve">
+    <value>Select</value>
+  </data>
 </root>

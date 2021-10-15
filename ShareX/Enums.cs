@@ -260,6 +260,7 @@ namespace ShareX
     public enum ThumbnailViewClickAction // Localized
     {
         Default,
+        Select,
         OpenImageViewer,
         OpenFile,
         OpenFolder,
