@@ -189,23 +189,6 @@
             this.tsmiShowResponse = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiClearList = new System.Windows.Forms.ToolStripMenuItem();
             this.tssUploadInfo1 = new System.Windows.Forms.ToolStripSeparator();
-            this.tsmiHideMenu = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiHideColumns = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiImagePreview = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiImagePreviewShow = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiImagePreviewHide = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiImagePreviewAutomatic = new System.Windows.Forms.ToolStripMenuItem();
-            this.tssImagePreview = new System.Windows.Forms.ToolStripSeparator();
-            this.tsmiImagePreviewSide = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiImagePreviewBottom = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiThumbnailTitle = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiThumbnailTitleShow = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiThumbnailTitleHide = new System.Windows.Forms.ToolStripMenuItem();
-            this.tssThumbnailTitle = new System.Windows.Forms.ToolStripSeparator();
-            this.tsmiThumbnailTitleTop = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiThumbnailTitleBottom = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiThumbnailSize = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiThumbnailClickAction = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiSwitchTaskViewMode = new System.Windows.Forms.ToolStripMenuItem();
             this.niTray = new System.Windows.Forms.NotifyIcon(this.components);
             this.cmsTray = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -1096,12 +1079,6 @@
             this.tsmiShowResponse,
             this.tsmiClearList,
             this.tssUploadInfo1,
-            this.tsmiHideMenu,
-            this.tsmiHideColumns,
-            this.tsmiImagePreview,
-            this.tsmiThumbnailTitle,
-            this.tsmiThumbnailSize,
-            this.tsmiThumbnailClickAction,
             this.tsmiSwitchTaskViewMode});
             this.cmsTaskInfo.Name = "cmsHistory";
             resources.ApplyResources(this.cmsTaskInfo, "cmsTaskInfo");
@@ -1518,139 +1495,6 @@
             // 
             this.tssUploadInfo1.Name = "tssUploadInfo1";
             resources.ApplyResources(this.tssUploadInfo1, "tssUploadInfo1");
-            // 
-            // tsmiHideMenu
-            // 
-            this.tsmiHideMenu.Image = global::ShareX.Properties.Resources.layout_select_sidebar;
-            this.tsmiHideMenu.Name = "tsmiHideMenu";
-            resources.ApplyResources(this.tsmiHideMenu, "tsmiHideMenu");
-            this.tsmiHideMenu.Click += new System.EventHandler(this.tsmiHideMenu_Click);
-            // 
-            // tsmiHideColumns
-            // 
-            this.tsmiHideColumns.Image = global::ShareX.Properties.Resources.layout_select;
-            this.tsmiHideColumns.Name = "tsmiHideColumns";
-            resources.ApplyResources(this.tsmiHideColumns, "tsmiHideColumns");
-            this.tsmiHideColumns.Click += new System.EventHandler(this.tsmiHideColumns_Click);
-            // 
-            // tsmiImagePreview
-            // 
-            this.tsmiImagePreview.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmiImagePreviewShow,
-            this.tsmiImagePreviewHide,
-            this.tsmiImagePreviewAutomatic,
-            this.tssImagePreview,
-            this.tsmiImagePreviewSide,
-            this.tsmiImagePreviewBottom});
-            this.tsmiImagePreview.Image = global::ShareX.Properties.Resources.layout_select_content;
-            this.tsmiImagePreview.Name = "tsmiImagePreview";
-            resources.ApplyResources(this.tsmiImagePreview, "tsmiImagePreview");
-            // 
-            // tsmiImagePreviewShow
-            // 
-            this.tsmiImagePreviewShow.Checked = true;
-            this.tsmiImagePreviewShow.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.tsmiImagePreviewShow.Name = "tsmiImagePreviewShow";
-            resources.ApplyResources(this.tsmiImagePreviewShow, "tsmiImagePreviewShow");
-            this.tsmiImagePreviewShow.Tag = "Visibility";
-            this.tsmiImagePreviewShow.Click += new System.EventHandler(this.tsmiImagePreviewShow_Click);
-            // 
-            // tsmiImagePreviewHide
-            // 
-            this.tsmiImagePreviewHide.Name = "tsmiImagePreviewHide";
-            resources.ApplyResources(this.tsmiImagePreviewHide, "tsmiImagePreviewHide");
-            this.tsmiImagePreviewHide.Tag = "Visibility";
-            this.tsmiImagePreviewHide.Click += new System.EventHandler(this.tsmiImagePreviewHide_Click);
-            // 
-            // tsmiImagePreviewAutomatic
-            // 
-            this.tsmiImagePreviewAutomatic.Name = "tsmiImagePreviewAutomatic";
-            resources.ApplyResources(this.tsmiImagePreviewAutomatic, "tsmiImagePreviewAutomatic");
-            this.tsmiImagePreviewAutomatic.Tag = "Visibility";
-            this.tsmiImagePreviewAutomatic.Click += new System.EventHandler(this.tsmiImagePreviewAutomatic_Click);
-            // 
-            // tssImagePreview
-            // 
-            this.tssImagePreview.Name = "tssImagePreview";
-            resources.ApplyResources(this.tssImagePreview, "tssImagePreview");
-            // 
-            // tsmiImagePreviewSide
-            // 
-            this.tsmiImagePreviewSide.Checked = true;
-            this.tsmiImagePreviewSide.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.tsmiImagePreviewSide.Name = "tsmiImagePreviewSide";
-            resources.ApplyResources(this.tsmiImagePreviewSide, "tsmiImagePreviewSide");
-            this.tsmiImagePreviewSide.Tag = "Location";
-            this.tsmiImagePreviewSide.Click += new System.EventHandler(this.tsmiImagePreviewSide_Click);
-            // 
-            // tsmiImagePreviewBottom
-            // 
-            this.tsmiImagePreviewBottom.Name = "tsmiImagePreviewBottom";
-            resources.ApplyResources(this.tsmiImagePreviewBottom, "tsmiImagePreviewBottom");
-            this.tsmiImagePreviewBottom.Tag = "Location";
-            this.tsmiImagePreviewBottom.Click += new System.EventHandler(this.tsmiImagePreviewBottom_Click);
-            // 
-            // tsmiThumbnailTitle
-            // 
-            this.tsmiThumbnailTitle.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmiThumbnailTitleShow,
-            this.tsmiThumbnailTitleHide,
-            this.tssThumbnailTitle,
-            this.tsmiThumbnailTitleTop,
-            this.tsmiThumbnailTitleBottom});
-            this.tsmiThumbnailTitle.Image = global::ShareX.Properties.Resources.ui_thumbnail_title;
-            this.tsmiThumbnailTitle.Name = "tsmiThumbnailTitle";
-            resources.ApplyResources(this.tsmiThumbnailTitle, "tsmiThumbnailTitle");
-            // 
-            // tsmiThumbnailTitleShow
-            // 
-            this.tsmiThumbnailTitleShow.Checked = true;
-            this.tsmiThumbnailTitleShow.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.tsmiThumbnailTitleShow.Name = "tsmiThumbnailTitleShow";
-            resources.ApplyResources(this.tsmiThumbnailTitleShow, "tsmiThumbnailTitleShow");
-            this.tsmiThumbnailTitleShow.Tag = "ThumbnailTitleVisible";
-            this.tsmiThumbnailTitleShow.Click += new System.EventHandler(this.TsmiThumbnailTitleShow_Click);
-            // 
-            // tsmiThumbnailTitleHide
-            // 
-            this.tsmiThumbnailTitleHide.Name = "tsmiThumbnailTitleHide";
-            resources.ApplyResources(this.tsmiThumbnailTitleHide, "tsmiThumbnailTitleHide");
-            this.tsmiThumbnailTitleHide.Tag = "ThumbnailTitleVisible";
-            this.tsmiThumbnailTitleHide.Click += new System.EventHandler(this.TsmiThumbnailTitleHide_Click);
-            // 
-            // tssThumbnailTitle
-            // 
-            this.tssThumbnailTitle.Name = "tssThumbnailTitle";
-            resources.ApplyResources(this.tssThumbnailTitle, "tssThumbnailTitle");
-            // 
-            // tsmiThumbnailTitleTop
-            // 
-            this.tsmiThumbnailTitleTop.Checked = true;
-            this.tsmiThumbnailTitleTop.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.tsmiThumbnailTitleTop.Name = "tsmiThumbnailTitleTop";
-            resources.ApplyResources(this.tsmiThumbnailTitleTop, "tsmiThumbnailTitleTop");
-            this.tsmiThumbnailTitleTop.Tag = "ThumbnailTitleLocation";
-            this.tsmiThumbnailTitleTop.Click += new System.EventHandler(this.TsmiThumbnailTitleTop_Click);
-            // 
-            // tsmiThumbnailTitleBottom
-            // 
-            this.tsmiThumbnailTitleBottom.Name = "tsmiThumbnailTitleBottom";
-            resources.ApplyResources(this.tsmiThumbnailTitleBottom, "tsmiThumbnailTitleBottom");
-            this.tsmiThumbnailTitleBottom.Tag = "ThumbnailTitleLocation";
-            this.tsmiThumbnailTitleBottom.Click += new System.EventHandler(this.TsmiThumbnailTitleBottom_Click);
-            // 
-            // tsmiThumbnailSize
-            // 
-            this.tsmiThumbnailSize.Image = global::ShareX.Properties.Resources.image_resize;
-            this.tsmiThumbnailSize.Name = "tsmiThumbnailSize";
-            resources.ApplyResources(this.tsmiThumbnailSize, "tsmiThumbnailSize");
-            this.tsmiThumbnailSize.Click += new System.EventHandler(this.tsmiThumbnailSize_Click);
-            // 
-            // tsmiThumbnailClickAction
-            // 
-            this.tsmiThumbnailClickAction.Image = global::ShareX.Properties.Resources.image_map;
-            this.tsmiThumbnailClickAction.Name = "tsmiThumbnailClickAction";
-            resources.ApplyResources(this.tsmiThumbnailClickAction, "tsmiThumbnailClickAction");
             // 
             // tsmiSwitchTaskViewMode
             // 
@@ -2458,7 +2302,6 @@
         private System.Windows.Forms.ToolStripButton tsbScreenshotsFolder;
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayAfterUploadTasks;
         private System.Windows.Forms.ToolStripSeparator tssUploadInfo1;
-        private System.Windows.Forms.ToolStripMenuItem tsmiImagePreview;
         private System.Windows.Forms.ToolStripMenuItem tsmiUploadSelectedFile;
         private System.Windows.Forms.ToolStripButton tsbImageHistory;
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayImageHistory;
@@ -2473,7 +2316,6 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayHashCheck;
         private System.Windows.Forms.ToolStripMenuItem tsmiMonitor;
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayMonitor;
-        private System.Windows.Forms.ToolStripMenuItem tsmiHideMenu;
         private System.Windows.Forms.ToolStripMenuItem tsmiAutoCapture;
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayAutoCapture;
         private System.Windows.Forms.ToolStripDropDownButton tsddbDebug;
@@ -2515,9 +2357,6 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayQRCode;
         private System.Windows.Forms.ToolStripMenuItem tsmiRectangleLight;
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayRectangleLight;
-        private System.Windows.Forms.ToolStripMenuItem tsmiImagePreviewShow;
-        private System.Windows.Forms.ToolStripMenuItem tsmiImagePreviewHide;
-        private System.Windows.Forms.ToolStripMenuItem tsmiImagePreviewAutomatic;
         private System.Windows.Forms.ToolStripDropDownButton tsddbUpload;
         private System.Windows.Forms.ToolStripMenuItem tsmiUploadFile;
         private System.Windows.Forms.ToolStripMenuItem tsmiUploadClipboard;
@@ -2556,7 +2395,6 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayScrollingCapture;
         private System.Windows.Forms.ToolStripMenuItem tsmiImageCombiner;
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayImageCombiner;
-        private System.Windows.Forms.ToolStripMenuItem tsmiHideColumns;
         private System.Windows.Forms.ToolStripMenuItem tsmiTextCapture;
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayTextCapture;
         private System.Windows.Forms.ToolStripMenuItem tsmiDownloadSelectedURL;
@@ -2575,9 +2413,6 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiCopyMarkdownImage;
         private System.Windows.Forms.ToolStripMenuItem tsmiCopyMarkdownLinkedImage;
         private System.Windows.Forms.ToolStripSeparator tssCopy6;
-        private System.Windows.Forms.ToolStripMenuItem tsmiImagePreviewSide;
-        private System.Windows.Forms.ToolStripMenuItem tsmiImagePreviewBottom;
-        private System.Windows.Forms.ToolStripSeparator tssImagePreview;
         private System.Windows.Forms.ToolStripSeparator tssCapture1;
         private System.Windows.Forms.ToolStripMenuItem tsmiShowCursor;
         private System.Windows.Forms.ToolStripSeparator tssTrayCapture1;
@@ -2604,12 +2439,6 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiSwitchTaskViewMode;
         public System.Windows.Forms.Label lblThumbnailViewTip;
         private System.Windows.Forms.ToolTip ttMain;
-        private System.Windows.Forms.ToolStripMenuItem tsmiThumbnailTitle;
-        private System.Windows.Forms.ToolStripMenuItem tsmiThumbnailTitleShow;
-        private System.Windows.Forms.ToolStripMenuItem tsmiThumbnailTitleHide;
-        private System.Windows.Forms.ToolStripSeparator tssThumbnailTitle;
-        private System.Windows.Forms.ToolStripMenuItem tsmiThumbnailTitleTop;
-        private System.Windows.Forms.ToolStripMenuItem tsmiThumbnailTitleBottom;
         private System.Windows.Forms.ToolStripMenuItem tsmiRunAction;
         private System.Windows.Forms.Panel pToolbars;
         private System.Windows.Forms.ToolStripMenuItem tsmiImageSplitter;
@@ -2620,7 +2449,6 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiClipboardViewer;
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayClipboardViewer;
         private System.Windows.Forms.ToolStripMenuItem tsmiRestartAsAdmin;
-        private System.Windows.Forms.ToolStripMenuItem tsmiThumbnailSize;
         private System.Windows.Forms.ToolStripMenuItem tsmiInspectWindow;
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayInspectWindow;
         private System.Windows.Forms.ToolStripMenuItem tsmiTweetMessage;
@@ -2642,6 +2470,5 @@
         private System.Windows.Forms.ToolStripButton tsbDonate;
         private System.Windows.Forms.ToolStripMenuItem tsmiBorderlessWindow;
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayBorderlessWindow;
-        private System.Windows.Forms.ToolStripMenuItem tsmiThumbnailClickAction;
     }
 }

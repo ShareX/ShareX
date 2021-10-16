@@ -163,9 +163,6 @@
   <data name="barcode_2d_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\barcode-2d-white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="MainForm_UpdateMainWindowLayout_Hide_columns" xml:space="preserve">
-    <value>Hide columns</value>
-  </data>
   <data name="ui_splitter" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ui-splitter.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -354,9 +351,6 @@ Press 'No' to cancel the current upload and disable screenshot auto uploading.</
   <data name="image" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="MainForm_UpdateMenu_Show_menu" xml:space="preserve">
-    <value>Show menu</value>
-  </data>
   <data name="application-resize-full" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\application-resize-full.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -475,9 +469,6 @@ Are you sure you want to continue?</value>
   </data>
   <data name="UploadTask_DoAfterCaptureJobs_Choose_a_folder_to_save" xml:space="preserve">
     <value>Choose a folder to save</value>
-  </data>
-  <data name="MainForm_UpdateMainWindowLayout_Show_columns" xml:space="preserve">
-    <value>Show columns</value>
   </data>
   <data name="MainForm_tsmiDeleteSelectedFile_Click_File_delete_confirmation" xml:space="preserve">
     <value>File delete confirmation</value>
@@ -839,9 +830,6 @@ Would you like to restart ShareX?</value>
   </data>
   <data name="Confirmation" xml:space="preserve">
     <value>Confirmation</value>
-  </data>
-  <data name="MainForm_UpdateMenu_Hide_menu" xml:space="preserve">
-    <value>Hide menu</value>
   </data>
   <data name="InspectWindow_WindowTitle" xml:space="preserve">
     <value>Window title</value>

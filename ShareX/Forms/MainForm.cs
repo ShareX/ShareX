@@ -161,19 +161,6 @@ namespace ShareX
                 tsmiShareSelectedURL.DropDownItems.Add(tsmi);
             }
 
-            foreach (ThumbnailViewClickAction clickAction in Helpers.GetEnums<ThumbnailViewClickAction>())
-            {
-                ThumbnailViewClickAction currentClickAction = clickAction;
-                ToolStripMenuItem tsmi = new ToolStripMenuItem(currentClickAction.GetLocalizedDescription());
-                tsmi.Click += (sender, e) =>
-                {
-                    Program.Settings.ThumbnailClickAction = currentClickAction;
-                    tsmi.RadioCheck();
-                    UpdateMainWindowLayout();
-                };
-                tsmiThumbnailClickAction.DropDownItems.Add(tsmi);
-            }
-
             lvUploads.SupportCustomTheme();
 
             ImageList il = new ImageList();
@@ -197,7 +184,7 @@ namespace ShareX
                 tsddbAfterCaptureTasks, tsddbAfterUploadTasks, tsmiImageUploaders, tsmiImageFileUploaders, tsmiTextUploaders, tsmiTextFileUploaders, tsmiFileUploaders,
                 tsmiURLShorteners, tsmiURLSharingServices, tsmiTrayAfterCaptureTasks, tsmiTrayAfterUploadTasks, tsmiTrayImageUploaders, tsmiTrayImageFileUploaders,
                 tsmiTrayTextUploaders, tsmiTrayTextFileUploaders, tsmiTrayFileUploaders, tsmiTrayURLShorteners, tsmiTrayURLSharingServices, tsmiScreenshotDelay,
-                tsmiTrayScreenshotDelay, tsmiThumbnailClickAction
+                tsmiTrayScreenshotDelay
             })
             {
                 dropDownItem.DisableMenuCloseOnClick();
@@ -251,50 +238,6 @@ namespace ShareX
             {
                 Size = new Size(Size.Width, height);
             }
-
-            switch (Program.Settings.ImagePreview)
-            {
-                case ImagePreviewVisibility.Show:
-                    tsmiImagePreviewShow.Check();
-                    break;
-                case ImagePreviewVisibility.Hide:
-                    tsmiImagePreviewHide.Check();
-                    break;
-                case ImagePreviewVisibility.Automatic:
-                    tsmiImagePreviewAutomatic.Check();
-                    break;
-            }
-
-            switch (Program.Settings.ImagePreviewLocation)
-            {
-                case ImagePreviewLocation.Side:
-                    tsmiImagePreviewSide.Check();
-                    break;
-                case ImagePreviewLocation.Bottom:
-                    tsmiImagePreviewBottom.Check();
-                    break;
-            }
-
-            if (Program.Settings.ShowThumbnailTitle)
-            {
-                tsmiThumbnailTitleShow.Check();
-            }
-            else
-            {
-                tsmiThumbnailTitleHide.Check();
-            }
-
-            switch (Program.Settings.ThumbnailTitleLocation)
-            {
-                case ThumbnailTitleLocation.Top:
-                    tsmiThumbnailTitleTop.Check();
-                    break;
-                case ThumbnailTitleLocation.Bottom:
-                    tsmiThumbnailTitleBottom.Check();
-                    break;
-            }
-
-            ((ToolStripMenuItem)tsmiThumbnailClickAction.DropDownItems[(int)Program.Settings.ThumbnailClickAction]).RadioCheck();
 
             if (Program.Settings.PreviewSplitterDistance > 0)
             {
@@ -1134,27 +1077,7 @@ namespace ShareX
 
         private void UpdateMainWindowLayout()
         {
-            if (Program.Settings.ShowMenu)
-            {
-                tsmiHideMenu.Text = Resources.MainForm_UpdateMenu_Hide_menu;
-            }
-            else
-            {
-                tsmiHideMenu.Text = Resources.MainForm_UpdateMenu_Show_menu;
-            }
-
             tsMain.Visible = Program.Settings.ShowMenu;
-
-            tsmiHideColumns.Visible = tsmiImagePreview.Visible = Program.Settings.TaskViewMode == TaskViewMode.ListView;
-
-            if (Program.Settings.ShowColumns)
-            {
-                tsmiHideColumns.Text = Resources.MainForm_UpdateMainWindowLayout_Hide_columns;
-            }
-            else
-            {
-                tsmiHideColumns.Text = Resources.MainForm_UpdateMainWindowLayout_Show_columns;
-            }
 
             lvUploads.HeaderStyle = Program.Settings.ShowColumns ? ColumnHeaderStyle.Nonclickable : ColumnHeaderStyle.None;
 
@@ -1162,8 +1085,6 @@ namespace ShareX
             ucTaskThumbnailView.TitleLocation = Program.Settings.ThumbnailTitleLocation;
             ucTaskThumbnailView.ThumbnailSize = Program.Settings.ThumbnailSize;
             ucTaskThumbnailView.ClickAction = Program.Settings.ThumbnailClickAction;
-
-            tsmiThumbnailTitle.Visible = tsmiThumbnailSize.Visible = tsmiThumbnailClickAction.Visible = Program.Settings.TaskViewMode == TaskViewMode.ThumbnailView;
 
             Refresh();
         }
@@ -2135,6 +2056,11 @@ namespace ShareX
             TaskHelpers.ToggleHotkeys();
         }
 
+        private void tsmiRestartAsAdmin_Click(object sender, EventArgs e)
+        {
+            Program.Restart(true);
+        }
+
         private void tsmiOpenActionsToolbar_Click(object sender, EventArgs e)
         {
             TaskHelpers.ToggleActionsToolbar();
@@ -2415,98 +2341,6 @@ namespace ShareX
         {
             RemoveAllItems();
             TaskManager.RecentManager.Clear();
-        }
-
-        private void tsmiHideMenu_Click(object sender, EventArgs e)
-        {
-            Program.Settings.ShowMenu = !Program.Settings.ShowMenu;
-            UpdateMainWindowLayout();
-        }
-
-        private void tsmiHideColumns_Click(object sender, EventArgs e)
-        {
-            Program.Settings.ShowColumns = !Program.Settings.ShowColumns;
-            UpdateMainWindowLayout();
-        }
-
-        private void tsmiImagePreviewShow_Click(object sender, EventArgs e)
-        {
-            Program.Settings.ImagePreview = ImagePreviewVisibility.Show;
-            tsmiImagePreviewShow.Check();
-            UpdateInfoManager();
-        }
-
-        private void tsmiImagePreviewHide_Click(object sender, EventArgs e)
-        {
-            Program.Settings.ImagePreview = ImagePreviewVisibility.Hide;
-            tsmiImagePreviewHide.Check();
-            UpdateInfoManager();
-        }
-
-        private void tsmiImagePreviewAutomatic_Click(object sender, EventArgs e)
-        {
-            Program.Settings.ImagePreview = ImagePreviewVisibility.Automatic;
-            tsmiImagePreviewAutomatic.Check();
-            UpdateInfoManager();
-        }
-
-        private void tsmiImagePreviewSide_Click(object sender, EventArgs e)
-        {
-            Program.Settings.ImagePreviewLocation = ImagePreviewLocation.Side;
-            tsmiImagePreviewSide.Check();
-            UpdateInfoManager();
-        }
-
-        private void tsmiImagePreviewBottom_Click(object sender, EventArgs e)
-        {
-            Program.Settings.ImagePreviewLocation = ImagePreviewLocation.Bottom;
-            tsmiImagePreviewBottom.Check();
-            UpdateInfoManager();
-        }
-
-        private void TsmiThumbnailTitleShow_Click(object sender, EventArgs e)
-        {
-            Program.Settings.ShowThumbnailTitle = true;
-            tsmiThumbnailTitleShow.Check();
-            UpdateMainWindowLayout();
-        }
-
-        private void tsmiRestartAsAdmin_Click(object sender, EventArgs e)
-        {
-            Program.Restart(true);
-        }
-
-        private void TsmiThumbnailTitleHide_Click(object sender, EventArgs e)
-        {
-            Program.Settings.ShowThumbnailTitle = false;
-            tsmiThumbnailTitleHide.Check();
-            UpdateMainWindowLayout();
-        }
-
-        private void TsmiThumbnailTitleTop_Click(object sender, EventArgs e)
-        {
-            Program.Settings.ThumbnailTitleLocation = ThumbnailTitleLocation.Top;
-            tsmiThumbnailTitleTop.Check();
-            UpdateMainWindowLayout();
-        }
-
-        private void TsmiThumbnailTitleBottom_Click(object sender, EventArgs e)
-        {
-            Program.Settings.ThumbnailTitleLocation = ThumbnailTitleLocation.Bottom;
-            tsmiThumbnailTitleBottom.Check();
-            UpdateMainWindowLayout();
-        }
-
-        private void tsmiThumbnailSize_Click(object sender, EventArgs e)
-        {
-            /*using (ThumbnailSizeForm form = new ThumbnailSizeForm(Program.Settings.ThumbnailSize))
-            {
-                if (form.ShowDialog() == DialogResult.OK)
-                {
-                    Program.Settings.ThumbnailSize = form.ThumbnailSize;
-                    UpdateMainWindowLayout();
-                }
-            }*/
         }
 
         private void TsmiSwitchTaskViewMode_Click(object sender, EventArgs e)

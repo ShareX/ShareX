@@ -2086,42 +2086,6 @@ namespace ShareX.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Hide columns.
-        /// </summary>
-        public static string MainForm_UpdateMainWindowLayout_Hide_columns {
-            get {
-                return ResourceManager.GetString("MainForm_UpdateMainWindowLayout_Hide_columns", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Show columns.
-        /// </summary>
-        public static string MainForm_UpdateMainWindowLayout_Show_columns {
-            get {
-                return ResourceManager.GetString("MainForm_UpdateMainWindowLayout_Show_columns", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Hide menu.
-        /// </summary>
-        public static string MainForm_UpdateMenu_Hide_menu {
-            get {
-                return ResourceManager.GetString("MainForm_UpdateMenu_Hide_menu", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Show menu.
-        /// </summary>
-        public static string MainForm_UpdateMenu_Show_menu {
-            get {
-                return ResourceManager.GetString("MainForm_UpdateMenu_Show_menu", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Disable hotkeys.
         /// </summary>
         public static string MainForm_UpdateToggleHotkeyButton_Disable_hotkeys {
