@@ -1659,6 +1659,9 @@
   <data name="lblListViewImagePreviewLocation.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lblListViewImagePreviewLocation.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblListViewImagePreviewLocation.Location" type="System.Drawing.Point, System.Drawing">
     <value>13, 72</value>
   </data>
@@ -1707,6 +1710,9 @@
   <data name="lblListViewImagePreviewVisibility.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lblListViewImagePreviewVisibility.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblListViewImagePreviewVisibility.Location" type="System.Drawing.Point, System.Drawing">
     <value>13, 48</value>
   </data>
@@ -1733,6 +1739,9 @@
   </data>
   <data name="cbListViewShowColumns.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="cbListViewShowColumns.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="cbListViewShowColumns.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 24</value>
@@ -1782,6 +1791,9 @@
   <data name="&gt;&gt;gbListView.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="btnThumbnailViewThumbnailSizeReset.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="btnThumbnailViewThumbnailSizeReset.Location" type="System.Drawing.Point, System.Drawing">
     <value>344, 67</value>
   </data>
@@ -1789,7 +1801,7 @@
     <value>75, 23</value>
   </data>
   <data name="btnThumbnailViewThumbnailSizeReset.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
+    <value>7</value>
   </data>
   <data name="btnThumbnailViewThumbnailSizeReset.Text" xml:space="preserve">
     <value>Reset</value>
@@ -1809,6 +1821,9 @@
   <data name="lblThumbnailViewThumbnailSizeX.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lblThumbnailViewThumbnailSizeX.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblThumbnailViewThumbnailSizeX.Location" type="System.Drawing.Point, System.Drawing">
     <value>250, 72</value>
   </data>
@@ -1816,7 +1831,7 @@
     <value>12, 13</value>
   </data>
   <data name="lblThumbnailViewThumbnailSizeX.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
+    <value>5</value>
   </data>
   <data name="lblThumbnailViewThumbnailSizeX.Text" xml:space="preserve">
     <value>x</value>
@@ -1840,7 +1855,7 @@
     <value>64, 20</value>
   </data>
   <data name="nudThumbnailViewThumbnailSizeHeight.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+    <value>6</value>
   </data>
   <data name="nudThumbnailViewThumbnailSizeHeight.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
     <value>Center</value>
@@ -1864,7 +1879,7 @@
     <value>64, 20</value>
   </data>
   <data name="nudThumbnailViewThumbnailSizeWidth.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+    <value>4</value>
   </data>
   <data name="nudThumbnailViewThumbnailSizeWidth.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
     <value>Center</value>
@@ -1888,7 +1903,7 @@
     <value>160, 21</value>
   </data>
   <data name="cbThumbnailViewThumbnailClickAction.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+    <value>9</value>
   </data>
   <data name="&gt;&gt;cbThumbnailViewThumbnailClickAction.Name" xml:space="preserve">
     <value>cbThumbnailViewThumbnailClickAction</value>
@@ -1905,6 +1920,9 @@
   <data name="lblThumbnailViewThumbnailClickAction.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lblThumbnailViewThumbnailClickAction.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblThumbnailViewThumbnailClickAction.Location" type="System.Drawing.Point, System.Drawing">
     <value>13, 96</value>
   </data>
@@ -1912,7 +1930,7 @@
     <value>116, 13</value>
   </data>
   <data name="lblThumbnailViewThumbnailClickAction.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+    <value>8</value>
   </data>
   <data name="lblThumbnailViewThumbnailClickAction.Text" xml:space="preserve">
     <value>Thumbnail click action:</value>
@@ -1931,6 +1949,9 @@
   </data>
   <data name="lblThumbnailViewThumbnailSize.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="lblThumbnailViewThumbnailSize.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="lblThumbnailViewThumbnailSize.Location" type="System.Drawing.Point, System.Drawing">
     <value>13, 72</value>
@@ -1980,6 +2001,9 @@
   <data name="lblThumbnailViewTitleLocation.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lblThumbnailViewTitleLocation.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblThumbnailViewTitleLocation.Location" type="System.Drawing.Point, System.Drawing">
     <value>13, 48</value>
   </data>
@@ -2006,6 +2030,9 @@
   </data>
   <data name="cbThumbnailViewShowTitle.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="cbThumbnailViewShowTitle.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="cbThumbnailViewShowTitle.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 24</value>
@@ -2058,6 +2085,9 @@
   <data name="cbMainWindowShowMenu.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="cbMainWindowShowMenu.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="cbMainWindowShowMenu.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 16</value>
   </data>
@@ -2065,7 +2095,7 @@
     <value>82, 17</value>
   </data>
   <data name="cbMainWindowShowMenu.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>0</value>
   </data>
   <data name="cbMainWindowShowMenu.Text" xml:space="preserve">
     <value>Show menu</value>
@@ -2089,7 +2119,7 @@
     <value>160, 21</value>
   </data>
   <data name="cbMainWindowTaskViewMode.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="&gt;&gt;cbMainWindowTaskViewMode.Name" xml:space="preserve">
     <value>cbMainWindowTaskViewMode</value>
@@ -2106,6 +2136,9 @@
   <data name="lblMainWindowTaskViewMode.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lblMainWindowTaskViewMode.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblMainWindowTaskViewMode.Location" type="System.Drawing.Point, System.Drawing">
     <value>13, 40</value>
   </data>
@@ -2113,7 +2146,7 @@
     <value>88, 13</value>
   </data>
   <data name="lblMainWindowTaskViewMode.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="lblMainWindowTaskViewMode.Text" xml:space="preserve">
     <value>Task view mode:</value>
@@ -4043,6 +4076,9 @@
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>737, 402</value>
+  </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>640, 440</value>

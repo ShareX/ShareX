@@ -62,10 +62,10 @@ namespace ShareX
 
         // List view
         public bool ShowColumns = true;
+        public List<int> TaskListViewColumnWidths = new List<int>();
         public ImagePreviewVisibility ImagePreview = ImagePreviewVisibility.Automatic;
         public ImagePreviewLocation ImagePreviewLocation = ImagePreviewLocation.Side;
         public int PreviewSplitterDistance = 335;
-        public List<int> TaskListViewColumnWidths = new List<int>();
 
         #endregion Main Form
 
