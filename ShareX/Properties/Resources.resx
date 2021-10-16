@@ -398,9 +398,6 @@ Press 'No' to cancel the current upload and disable screenshot auto uploading.</
 
 Would you like to automatically download it?</value>
   </data>
-  <data name="ui_thumbnail_title" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ui-thumbnail-title.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="ApplicationSettingsForm_cbSteamShowInApp_CheckedChanged_For_settings_to_take_effect_ShareX_needs_to_be_reopened_from_Steam_" xml:space="preserve">
     <value>For settings to take effect ShareX needs to be reopened from Steam.</value>
   </data>
@@ -418,9 +415,6 @@ Would you like to automatically download it?</value>
   </data>
   <data name="ui_menu_blue" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ui-menu-blue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="layout_select_content" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\layout-select-content.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="clock__arrow" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\clock--arrow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -667,9 +661,6 @@ You can later disable it from "After capture tasks" menu.</value>
   <data name="AboutForm_AboutForm_Language_ja_JP" xml:space="preserve">
     <value>Japanese</value>
   </data>
-  <data name="image-resize" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\image-resize.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="film" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\film.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -714,9 +705,6 @@ You can later disable it from "After capture tasks" menu.</value>
   </data>
   <data name="folder_tree" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\folder-tree.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="layout_select" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\layout-select.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="edit_drop_cap_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\edit-drop-cap-white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -922,9 +910,6 @@ Please run ShareX as administrator to change personal folder path.</value>
   <data name="ApplicationSettingsForm_btnResetSettings_Click_WouldYouLikeToResetShareXSettings" xml:space="preserve">
     <value>Would you like to reset ShareX settings?</value>
   </data>
-  <data name="layout_select_sidebar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\layout-select-sidebar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="FailedToSaveSettings" xml:space="preserve">
     <value>Failed to save settings</value>
   </data>
@@ -1093,8 +1078,5 @@ Please run ShareX as administrator to change personal folder path.</value>
   </data>
   <data name="TaskCompletedSound" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\TaskCompletedSound.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="image-map" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\image-map.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

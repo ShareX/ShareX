@@ -1704,29 +1704,9 @@ namespace ShareX.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap image_map {
-            get {
-                object obj = ResourceManager.GetObject("image-map", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         public static System.Drawing.Bitmap image_pencil {
             get {
                 object obj = ResourceManager.GetObject("image_pencil", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap image_resize {
-            get {
-                object obj = ResourceManager.GetObject("image-resize", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -2015,36 +1995,6 @@ namespace ShareX.Properties {
         public static System.Drawing.Bitmap layers {
             get {
                 object obj = ResourceManager.GetObject("layers", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap layout_select {
-            get {
-                object obj = ResourceManager.GetObject("layout_select", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap layout_select_content {
-            get {
-                object obj = ResourceManager.GetObject("layout_select_content", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap layout_select_sidebar {
-            get {
-                object obj = ResourceManager.GetObject("layout_select_sidebar", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -2789,16 +2739,6 @@ namespace ShareX.Properties {
         public static System.Drawing.Bitmap ui_splitter {
             get {
                 object obj = ResourceManager.GetObject("ui_splitter", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap ui_thumbnail_title {
-            get {
-                object obj = ResourceManager.GetObject("ui_thumbnail_title", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

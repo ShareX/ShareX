@@ -1766,8 +1766,6 @@
     <None Include="Resources\exclamation-button.png" />
     <None Include="Resources\folder-open-document.png" />
     <None Include="Resources\eraser.png" />
-    <None Include="Resources\layout-select-sidebar.png" />
-    <None Include="Resources\layout-select-content.png" />
     <None Include="Resources\bin.png" />
     <None Include="Resources\film.png" />
     <None Include="Resources\TaskCompletedSound.wav" />
@@ -1797,7 +1795,6 @@
     <None Include="Resources\ui-scroll-pane-image.png" />
     <None Include="Resources\document-break.png" />
     <None Include="Resources\vn.png" />
-    <None Include="Resources\layout-select.png" />
     <None Include="Resources\disk-black.png" />
     <None Include="Resources\control.png" />
     <None Include="Resources\information.png" />
@@ -1867,9 +1864,6 @@
     <None Include="Resources\application-list.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\ui-thumbnail-title.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\ir.png" />
   </ItemGroup>
   <ItemGroup>
@@ -1897,9 +1891,6 @@
     <None Include="Resources\uac.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\image-resize.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\application-search-result.png" />
   </ItemGroup>
   <ItemGroup>
@@ -1922,9 +1913,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\camcorder--minus.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\image-map.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
