@@ -2911,7 +2911,7 @@
     <value>0</value>
   </data>
   <data name="gbSecondaryFileUploaders.Location" type="System.Drawing.Point, System.Drawing">
-    <value>360, 64</value>
+    <value>360, 88</value>
   </data>
   <data name="gbSecondaryFileUploaders.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 5, 3, 3</value>
@@ -2920,7 +2920,7 @@
     <value>168, 263</value>
   </data>
   <data name="gbSecondaryFileUploaders.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>5</value>
   </data>
   <data name="gbSecondaryFileUploaders.Text" xml:space="preserve">
     <value>Secondary file uploaders</value>
@@ -2962,7 +2962,7 @@
     <value>0</value>
   </data>
   <data name="gbSecondaryImageUploaders.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 64</value>
+    <value>8, 88</value>
   </data>
   <data name="gbSecondaryImageUploaders.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 5, 3, 3</value>
@@ -2971,7 +2971,7 @@
     <value>168, 263</value>
   </data>
   <data name="gbSecondaryImageUploaders.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+    <value>3</value>
   </data>
   <data name="gbSecondaryImageUploaders.Text" xml:space="preserve">
     <value>Secondary image uploaders</value>
@@ -3013,7 +3013,7 @@
     <value>0</value>
   </data>
   <data name="gbSecondaryTextUploaders.Location" type="System.Drawing.Point, System.Drawing">
-    <value>184, 64</value>
+    <value>184, 88</value>
   </data>
   <data name="gbSecondaryTextUploaders.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 5, 3, 3</value>
@@ -3022,7 +3022,7 @@
     <value>168, 263</value>
   </data>
   <data name="gbSecondaryTextUploaders.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>4</value>
   </data>
   <data name="gbSecondaryTextUploaders.Text" xml:space="preserve">
     <value>Secondary text uploaders</value>
@@ -3046,7 +3046,7 @@
     <value>NoControl</value>
   </data>
   <data name="cbUseSecondaryUploaders.Location" type="System.Drawing.Point, System.Drawing">
-    <value>64, 34</value>
+    <value>8, 64</value>
   </data>
   <data name="cbUseSecondaryUploaders.Size" type="System.Drawing.Size, System.Drawing">
     <value>305, 17</value>
@@ -4076,9 +4076,6 @@
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>737, 402</value>
-  </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>640, 440</value>
