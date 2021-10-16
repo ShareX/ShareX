@@ -81,6 +81,12 @@ namespace ShareX
             cbTrayLeftClickAction.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<HotkeyType>());
             cbTrayMiddleClickAction.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<HotkeyType>());
 
+            cbMainWindowTaskViewMode.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<TaskViewMode>());
+            cbThumbnailViewTitleLocation.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<ThumbnailTitleLocation>());
+            cbThumbnailViewThumbnailClickAction.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<ThumbnailViewClickAction>());
+            cbListViewImagePreviewVisibility.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<ImagePreviewVisibility>());
+            cbListViewImagePreviewLocation.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<ImagePreviewLocation>());
+
             eiTheme.ObjectType = typeof(ShareXTheme);
 
             CodeMenu.Create<CodeMenuEntryFilename>(txtSaveImageSubFolderPattern, CodeMenuEntryFilename.t, CodeMenuEntryFilename.pn, CodeMenuEntryFilename.i, CodeMenuEntryFilename.width, CodeMenuEntryFilename.height, CodeMenuEntryFilename.n);
@@ -163,6 +169,18 @@ namespace ShareX
             cbUseCustomScreenshotsPath.Checked = Program.Settings.UseCustomScreenshotsPath;
             txtCustomScreenshotsPath.Text = Program.Settings.CustomScreenshotsPath;
             txtSaveImageSubFolderPattern.Text = Program.Settings.SaveImageSubFolderPattern;
+
+            // Main window
+            cbMainWindowShowMenu.Checked = Program.Settings.ShowMenu;
+            cbMainWindowTaskViewMode.SelectedIndex = (int)Program.Settings.TaskViewMode;
+            cbThumbnailViewShowTitle.Checked = Program.Settings.ShowThumbnailTitle;
+            cbThumbnailViewTitleLocation.SelectedIndex = (int)Program.Settings.ThumbnailTitleLocation;
+            nudThumbnailViewThumbnailSizeWidth.SetValue(Program.Settings.ThumbnailSize.Width);
+            nudThumbnailViewThumbnailSizeHeight.SetValue(Program.Settings.ThumbnailSize.Height);
+            cbThumbnailViewThumbnailClickAction.SelectedIndex = (int)Program.Settings.ThumbnailClickAction;
+            cbListViewShowColumns.Checked = Program.Settings.ShowColumns;
+            cbListViewImagePreviewVisibility.SelectedIndex = (int)Program.Settings.ImagePreview;
+            cbListViewImagePreviewLocation.SelectedIndex = (int)Program.Settings.ImagePreviewLocation;
 
             // Settings
             cbAutomaticallyCleanupBackupFiles.Checked = Program.Settings.AutoCleanupBackupFiles;
@@ -698,6 +716,66 @@ namespace ShareX
         }
 
         #endregion Paths
+
+        #region Main window
+
+        private void cbMainWindowShowMenu_CheckedChanged(object sender, EventArgs e)
+        {
+            Program.Settings.ShowMenu = cbMainWindowShowMenu.Checked;
+        }
+
+        private void cbMainWindowTaskViewMode_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Program.Settings.TaskViewMode = (TaskViewMode)cbMainWindowTaskViewMode.SelectedIndex;
+        }
+
+        private void cbThumbnailViewShowTitle_CheckedChanged(object sender, EventArgs e)
+        {
+            Program.Settings.ShowThumbnailTitle = cbThumbnailViewShowTitle.Checked;
+        }
+
+        private void cbThumbnailViewTitleLocation_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Program.Settings.ThumbnailTitleLocation = (ThumbnailTitleLocation)cbThumbnailViewTitleLocation.SelectedIndex;
+        }
+
+        private void nudThumbnailViewThumbnailSizeWidth_ValueChanged(object sender, EventArgs e)
+        {
+            Program.Settings.ThumbnailSize = new Size((int)nudThumbnailViewThumbnailSizeWidth.Value, Program.Settings.ThumbnailSize.Height);
+        }
+
+        private void nudThumbnailViewThumbnailSizeHeight_ValueChanged(object sender, EventArgs e)
+        {
+            Program.Settings.ThumbnailSize = new Size(Program.Settings.ThumbnailSize.Width, (int)nudThumbnailViewThumbnailSizeHeight.Value);
+        }
+
+        private void btnThumbnailViewThumbnailSizeReset_Click(object sender, EventArgs e)
+        {
+            nudThumbnailViewThumbnailSizeWidth.SetValue(200);
+            nudThumbnailViewThumbnailSizeHeight.SetValue(150);
+        }
+
+        private void cbThumbnailViewThumbnailClickAction_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Program.Settings.ThumbnailClickAction = (ThumbnailViewClickAction)cbThumbnailViewThumbnailClickAction.SelectedIndex;
+        }
+
+        private void cbListViewShowColumns_CheckedChanged(object sender, EventArgs e)
+        {
+            Program.Settings.ShowColumns = cbListViewShowColumns.Checked;
+        }
+
+        private void cbListViewImagePreviewVisibility_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Program.Settings.ImagePreview = (ImagePreviewVisibility)cbListViewImagePreviewVisibility.SelectedIndex;
+        }
+
+        private void cbListViewImagePreviewLocation_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Program.Settings.ImagePreviewLocation = (ImagePreviewLocation)cbListViewImagePreviewLocation.SelectedIndex;
+        }
+
+        #endregion
 
         #region Settings
 

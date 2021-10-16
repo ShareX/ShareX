@@ -1635,134 +1635,134 @@
   <data name="&gt;&gt;tpPaths.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="cbImagePreviewLocation.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="cbListViewImagePreviewLocation.Location" type="System.Drawing.Point, System.Drawing">
     <value>176, 68</value>
   </data>
-  <data name="cbImagePreviewLocation.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="cbListViewImagePreviewLocation.Size" type="System.Drawing.Size, System.Drawing">
     <value>160, 21</value>
   </data>
-  <data name="cbImagePreviewLocation.TabIndex" type="System.Int32, mscorlib">
+  <data name="cbListViewImagePreviewLocation.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
-  <data name="&gt;&gt;cbImagePreviewLocation.Name" xml:space="preserve">
-    <value>cbImagePreviewLocation</value>
+  <data name="&gt;&gt;cbListViewImagePreviewLocation.Name" xml:space="preserve">
+    <value>cbListViewImagePreviewLocation</value>
   </data>
-  <data name="&gt;&gt;cbImagePreviewLocation.Type" xml:space="preserve">
+  <data name="&gt;&gt;cbListViewImagePreviewLocation.Type" xml:space="preserve">
     <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;cbImagePreviewLocation.Parent" xml:space="preserve">
+  <data name="&gt;&gt;cbListViewImagePreviewLocation.Parent" xml:space="preserve">
     <value>gbListView</value>
   </data>
-  <data name="&gt;&gt;cbImagePreviewLocation.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;cbListViewImagePreviewLocation.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="lblImagePreviewLocation.AutoSize" type="System.Boolean, mscorlib">
+  <data name="lblListViewImagePreviewLocation.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="lblImagePreviewLocation.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="lblListViewImagePreviewLocation.Location" type="System.Drawing.Point, System.Drawing">
     <value>13, 72</value>
   </data>
-  <data name="lblImagePreviewLocation.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="lblListViewImagePreviewLocation.Size" type="System.Drawing.Size, System.Drawing">
     <value>119, 13</value>
   </data>
-  <data name="lblImagePreviewLocation.TabIndex" type="System.Int32, mscorlib">
+  <data name="lblListViewImagePreviewLocation.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
-  <data name="lblImagePreviewLocation.Text" xml:space="preserve">
+  <data name="lblListViewImagePreviewLocation.Text" xml:space="preserve">
     <value>Image preview location:</value>
   </data>
-  <data name="&gt;&gt;lblImagePreviewLocation.Name" xml:space="preserve">
-    <value>lblImagePreviewLocation</value>
+  <data name="&gt;&gt;lblListViewImagePreviewLocation.Name" xml:space="preserve">
+    <value>lblListViewImagePreviewLocation</value>
   </data>
-  <data name="&gt;&gt;lblImagePreviewLocation.Type" xml:space="preserve">
+  <data name="&gt;&gt;lblListViewImagePreviewLocation.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;lblImagePreviewLocation.Parent" xml:space="preserve">
+  <data name="&gt;&gt;lblListViewImagePreviewLocation.Parent" xml:space="preserve">
     <value>gbListView</value>
   </data>
-  <data name="&gt;&gt;lblImagePreviewLocation.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;lblListViewImagePreviewLocation.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="cbImagePreviewVisibility.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="cbListViewImagePreviewVisibility.Location" type="System.Drawing.Point, System.Drawing">
     <value>176, 44</value>
   </data>
-  <data name="cbImagePreviewVisibility.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="cbListViewImagePreviewVisibility.Size" type="System.Drawing.Size, System.Drawing">
     <value>160, 21</value>
   </data>
-  <data name="cbImagePreviewVisibility.TabIndex" type="System.Int32, mscorlib">
+  <data name="cbListViewImagePreviewVisibility.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="&gt;&gt;cbImagePreviewVisibility.Name" xml:space="preserve">
-    <value>cbImagePreviewVisibility</value>
+  <data name="&gt;&gt;cbListViewImagePreviewVisibility.Name" xml:space="preserve">
+    <value>cbListViewImagePreviewVisibility</value>
   </data>
-  <data name="&gt;&gt;cbImagePreviewVisibility.Type" xml:space="preserve">
+  <data name="&gt;&gt;cbListViewImagePreviewVisibility.Type" xml:space="preserve">
     <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;cbImagePreviewVisibility.Parent" xml:space="preserve">
+  <data name="&gt;&gt;cbListViewImagePreviewVisibility.Parent" xml:space="preserve">
     <value>gbListView</value>
   </data>
-  <data name="&gt;&gt;cbImagePreviewVisibility.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;cbListViewImagePreviewVisibility.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="lblImagePreviewVisibility.AutoSize" type="System.Boolean, mscorlib">
+  <data name="lblListViewImagePreviewVisibility.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="lblImagePreviewVisibility.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="lblListViewImagePreviewVisibility.Location" type="System.Drawing.Point, System.Drawing">
     <value>13, 48</value>
   </data>
-  <data name="lblImagePreviewVisibility.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="lblListViewImagePreviewVisibility.Size" type="System.Drawing.Size, System.Drawing">
     <value>117, 13</value>
   </data>
-  <data name="lblImagePreviewVisibility.TabIndex" type="System.Int32, mscorlib">
+  <data name="lblListViewImagePreviewVisibility.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="lblImagePreviewVisibility.Text" xml:space="preserve">
+  <data name="lblListViewImagePreviewVisibility.Text" xml:space="preserve">
     <value>Image preview visibility:</value>
   </data>
-  <data name="&gt;&gt;lblImagePreviewVisibility.Name" xml:space="preserve">
-    <value>lblImagePreviewVisibility</value>
+  <data name="&gt;&gt;lblListViewImagePreviewVisibility.Name" xml:space="preserve">
+    <value>lblListViewImagePreviewVisibility</value>
   </data>
-  <data name="&gt;&gt;lblImagePreviewVisibility.Type" xml:space="preserve">
+  <data name="&gt;&gt;lblListViewImagePreviewVisibility.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;lblImagePreviewVisibility.Parent" xml:space="preserve">
+  <data name="&gt;&gt;lblListViewImagePreviewVisibility.Parent" xml:space="preserve">
     <value>gbListView</value>
   </data>
-  <data name="&gt;&gt;lblImagePreviewVisibility.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;lblListViewImagePreviewVisibility.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="cbShowColumns.AutoSize" type="System.Boolean, mscorlib">
+  <data name="cbListViewShowColumns.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="cbShowColumns.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="cbListViewShowColumns.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 24</value>
   </data>
-  <data name="cbShowColumns.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="cbListViewShowColumns.Size" type="System.Drawing.Size, System.Drawing">
     <value>95, 17</value>
   </data>
-  <data name="cbShowColumns.TabIndex" type="System.Int32, mscorlib">
+  <data name="cbListViewShowColumns.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="cbShowColumns.Text" xml:space="preserve">
+  <data name="cbListViewShowColumns.Text" xml:space="preserve">
     <value>Show columns</value>
   </data>
-  <data name="&gt;&gt;cbShowColumns.Name" xml:space="preserve">
-    <value>cbShowColumns</value>
+  <data name="&gt;&gt;cbListViewShowColumns.Name" xml:space="preserve">
+    <value>cbListViewShowColumns</value>
   </data>
-  <data name="&gt;&gt;cbShowColumns.Type" xml:space="preserve">
+  <data name="&gt;&gt;cbListViewShowColumns.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;cbShowColumns.Parent" xml:space="preserve">
+  <data name="&gt;&gt;cbListViewShowColumns.Parent" xml:space="preserve">
     <value>gbListView</value>
   </data>
-  <data name="&gt;&gt;cbShowColumns.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;cbListViewShowColumns.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
   <data name="gbListView.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 200</value>
   </data>
   <data name="gbListView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>352, 104</value>
+    <value>432, 104</value>
   </data>
   <data name="gbListView.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -1782,236 +1782,260 @@
   <data name="&gt;&gt;gbListView.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="lblThumbnailSizeX.AutoSize" type="System.Boolean, mscorlib">
+  <data name="btnThumbnailViewThumbnailSizeReset.Location" type="System.Drawing.Point, System.Drawing">
+    <value>344, 67</value>
+  </data>
+  <data name="btnThumbnailViewThumbnailSizeReset.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="btnThumbnailViewThumbnailSizeReset.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="btnThumbnailViewThumbnailSizeReset.Text" xml:space="preserve">
+    <value>Reset</value>
+  </data>
+  <data name="&gt;&gt;btnThumbnailViewThumbnailSizeReset.Name" xml:space="preserve">
+    <value>btnThumbnailViewThumbnailSizeReset</value>
+  </data>
+  <data name="&gt;&gt;btnThumbnailViewThumbnailSizeReset.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnThumbnailViewThumbnailSizeReset.Parent" xml:space="preserve">
+    <value>gbThumbnailView</value>
+  </data>
+  <data name="&gt;&gt;btnThumbnailViewThumbnailSizeReset.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblThumbnailViewThumbnailSizeX.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="lblThumbnailSizeX.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="lblThumbnailViewThumbnailSizeX.Location" type="System.Drawing.Point, System.Drawing">
     <value>250, 72</value>
   </data>
-  <data name="lblThumbnailSizeX.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="lblThumbnailViewThumbnailSizeX.Size" type="System.Drawing.Size, System.Drawing">
     <value>12, 13</value>
   </data>
-  <data name="lblThumbnailSizeX.TabIndex" type="System.Int32, mscorlib">
+  <data name="lblThumbnailViewThumbnailSizeX.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
   </data>
-  <data name="lblThumbnailSizeX.Text" xml:space="preserve">
+  <data name="lblThumbnailViewThumbnailSizeX.Text" xml:space="preserve">
     <value>x</value>
   </data>
-  <data name="&gt;&gt;lblThumbnailSizeX.Name" xml:space="preserve">
-    <value>lblThumbnailSizeX</value>
+  <data name="&gt;&gt;lblThumbnailViewThumbnailSizeX.Name" xml:space="preserve">
+    <value>lblThumbnailViewThumbnailSizeX</value>
   </data>
-  <data name="&gt;&gt;lblThumbnailSizeX.Type" xml:space="preserve">
+  <data name="&gt;&gt;lblThumbnailViewThumbnailSizeX.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;lblThumbnailSizeX.Parent" xml:space="preserve">
+  <data name="&gt;&gt;lblThumbnailViewThumbnailSizeX.Parent" xml:space="preserve">
     <value>gbThumbnailView</value>
   </data>
-  <data name="&gt;&gt;lblThumbnailSizeX.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="&gt;&gt;lblThumbnailViewThumbnailSizeX.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
-  <data name="nudThumbnailSizeHeight.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="nudThumbnailViewThumbnailSizeHeight.Location" type="System.Drawing.Point, System.Drawing">
     <value>272, 68</value>
   </data>
-  <data name="nudThumbnailSizeHeight.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="nudThumbnailViewThumbnailSizeHeight.Size" type="System.Drawing.Size, System.Drawing">
     <value>64, 20</value>
   </data>
-  <data name="nudThumbnailSizeHeight.TabIndex" type="System.Int32, mscorlib">
+  <data name="nudThumbnailViewThumbnailSizeHeight.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
   </data>
-  <data name="nudThumbnailSizeHeight.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+  <data name="nudThumbnailViewThumbnailSizeHeight.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
     <value>Center</value>
   </data>
-  <data name="&gt;&gt;nudThumbnailSizeHeight.Name" xml:space="preserve">
-    <value>nudThumbnailSizeHeight</value>
+  <data name="&gt;&gt;nudThumbnailViewThumbnailSizeHeight.Name" xml:space="preserve">
+    <value>nudThumbnailViewThumbnailSizeHeight</value>
   </data>
-  <data name="&gt;&gt;nudThumbnailSizeHeight.Type" xml:space="preserve">
+  <data name="&gt;&gt;nudThumbnailViewThumbnailSizeHeight.Type" xml:space="preserve">
     <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;nudThumbnailSizeHeight.Parent" xml:space="preserve">
+  <data name="&gt;&gt;nudThumbnailViewThumbnailSizeHeight.Parent" xml:space="preserve">
     <value>gbThumbnailView</value>
   </data>
-  <data name="&gt;&gt;nudThumbnailSizeHeight.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="&gt;&gt;nudThumbnailViewThumbnailSizeHeight.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
-  <data name="nudThumbnailSizeWidth.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="nudThumbnailViewThumbnailSizeWidth.Location" type="System.Drawing.Point, System.Drawing">
     <value>176, 68</value>
   </data>
-  <data name="nudThumbnailSizeWidth.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="nudThumbnailViewThumbnailSizeWidth.Size" type="System.Drawing.Size, System.Drawing">
     <value>64, 20</value>
   </data>
-  <data name="nudThumbnailSizeWidth.TabIndex" type="System.Int32, mscorlib">
+  <data name="nudThumbnailViewThumbnailSizeWidth.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
   </data>
-  <data name="nudThumbnailSizeWidth.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+  <data name="nudThumbnailViewThumbnailSizeWidth.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
     <value>Center</value>
   </data>
-  <data name="&gt;&gt;nudThumbnailSizeWidth.Name" xml:space="preserve">
-    <value>nudThumbnailSizeWidth</value>
+  <data name="&gt;&gt;nudThumbnailViewThumbnailSizeWidth.Name" xml:space="preserve">
+    <value>nudThumbnailViewThumbnailSizeWidth</value>
   </data>
-  <data name="&gt;&gt;nudThumbnailSizeWidth.Type" xml:space="preserve">
+  <data name="&gt;&gt;nudThumbnailViewThumbnailSizeWidth.Type" xml:space="preserve">
     <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;nudThumbnailSizeWidth.Parent" xml:space="preserve">
+  <data name="&gt;&gt;nudThumbnailViewThumbnailSizeWidth.Parent" xml:space="preserve">
     <value>gbThumbnailView</value>
   </data>
-  <data name="&gt;&gt;nudThumbnailSizeWidth.ZOrder" xml:space="preserve">
-    <value>2</value>
+  <data name="&gt;&gt;nudThumbnailViewThumbnailSizeWidth.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
-  <data name="cbThumbnailClickAction.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="cbThumbnailViewThumbnailClickAction.Location" type="System.Drawing.Point, System.Drawing">
     <value>176, 92</value>
   </data>
-  <data name="cbThumbnailClickAction.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="cbThumbnailViewThumbnailClickAction.Size" type="System.Drawing.Size, System.Drawing">
     <value>160, 21</value>
   </data>
-  <data name="cbThumbnailClickAction.TabIndex" type="System.Int32, mscorlib">
+  <data name="cbThumbnailViewThumbnailClickAction.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
-  <data name="&gt;&gt;cbThumbnailClickAction.Name" xml:space="preserve">
-    <value>cbThumbnailClickAction</value>
+  <data name="&gt;&gt;cbThumbnailViewThumbnailClickAction.Name" xml:space="preserve">
+    <value>cbThumbnailViewThumbnailClickAction</value>
   </data>
-  <data name="&gt;&gt;cbThumbnailClickAction.Type" xml:space="preserve">
+  <data name="&gt;&gt;cbThumbnailViewThumbnailClickAction.Type" xml:space="preserve">
     <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;cbThumbnailClickAction.Parent" xml:space="preserve">
+  <data name="&gt;&gt;cbThumbnailViewThumbnailClickAction.Parent" xml:space="preserve">
     <value>gbThumbnailView</value>
   </data>
-  <data name="&gt;&gt;cbThumbnailClickAction.ZOrder" xml:space="preserve">
-    <value>3</value>
+  <data name="&gt;&gt;cbThumbnailViewThumbnailClickAction.ZOrder" xml:space="preserve">
+    <value>4</value>
   </data>
-  <data name="lblThumbnailClickAction.AutoSize" type="System.Boolean, mscorlib">
+  <data name="lblThumbnailViewThumbnailClickAction.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="lblThumbnailClickAction.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="lblThumbnailViewThumbnailClickAction.Location" type="System.Drawing.Point, System.Drawing">
     <value>13, 96</value>
   </data>
-  <data name="lblThumbnailClickAction.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="lblThumbnailViewThumbnailClickAction.Size" type="System.Drawing.Size, System.Drawing">
     <value>116, 13</value>
   </data>
-  <data name="lblThumbnailClickAction.TabIndex" type="System.Int32, mscorlib">
+  <data name="lblThumbnailViewThumbnailClickAction.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
-  <data name="lblThumbnailClickAction.Text" xml:space="preserve">
+  <data name="lblThumbnailViewThumbnailClickAction.Text" xml:space="preserve">
     <value>Thumbnail click action:</value>
   </data>
-  <data name="&gt;&gt;lblThumbnailClickAction.Name" xml:space="preserve">
-    <value>lblThumbnailClickAction</value>
+  <data name="&gt;&gt;lblThumbnailViewThumbnailClickAction.Name" xml:space="preserve">
+    <value>lblThumbnailViewThumbnailClickAction</value>
   </data>
-  <data name="&gt;&gt;lblThumbnailClickAction.Type" xml:space="preserve">
+  <data name="&gt;&gt;lblThumbnailViewThumbnailClickAction.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;lblThumbnailClickAction.Parent" xml:space="preserve">
+  <data name="&gt;&gt;lblThumbnailViewThumbnailClickAction.Parent" xml:space="preserve">
     <value>gbThumbnailView</value>
   </data>
-  <data name="&gt;&gt;lblThumbnailClickAction.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="lblThumbnailSize.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblThumbnailSize.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 72</value>
-  </data>
-  <data name="lblThumbnailSize.Size" type="System.Drawing.Size, System.Drawing">
-    <value>80, 13</value>
-  </data>
-  <data name="lblThumbnailSize.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="lblThumbnailSize.Text" xml:space="preserve">
-    <value>Thumbnail size:</value>
-  </data>
-  <data name="&gt;&gt;lblThumbnailSize.Name" xml:space="preserve">
-    <value>lblThumbnailSize</value>
-  </data>
-  <data name="&gt;&gt;lblThumbnailSize.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblThumbnailSize.Parent" xml:space="preserve">
-    <value>gbThumbnailView</value>
-  </data>
-  <data name="&gt;&gt;lblThumbnailSize.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;lblThumbnailViewThumbnailClickAction.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="cbThumbnailTitleLocation.Location" type="System.Drawing.Point, System.Drawing">
-    <value>176, 44</value>
-  </data>
-  <data name="cbThumbnailTitleLocation.Size" type="System.Drawing.Size, System.Drawing">
-    <value>160, 21</value>
-  </data>
-  <data name="cbThumbnailTitleLocation.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;cbThumbnailTitleLocation.Name" xml:space="preserve">
-    <value>cbThumbnailTitleLocation</value>
-  </data>
-  <data name="&gt;&gt;cbThumbnailTitleLocation.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbThumbnailTitleLocation.Parent" xml:space="preserve">
-    <value>gbThumbnailView</value>
-  </data>
-  <data name="&gt;&gt;cbThumbnailTitleLocation.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="lblThumbnailTitleLocation.AutoSize" type="System.Boolean, mscorlib">
+  <data name="lblThumbnailViewThumbnailSize.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="lblThumbnailTitleLocation.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 48</value>
+  <data name="lblThumbnailViewThumbnailSize.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 72</value>
   </data>
-  <data name="lblThumbnailTitleLocation.Size" type="System.Drawing.Size, System.Drawing">
-    <value>70, 13</value>
+  <data name="lblThumbnailViewThumbnailSize.Size" type="System.Drawing.Size, System.Drawing">
+    <value>80, 13</value>
   </data>
-  <data name="lblThumbnailTitleLocation.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+  <data name="lblThumbnailViewThumbnailSize.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
   </data>
-  <data name="lblThumbnailTitleLocation.Text" xml:space="preserve">
-    <value>Title location:</value>
+  <data name="lblThumbnailViewThumbnailSize.Text" xml:space="preserve">
+    <value>Thumbnail size:</value>
   </data>
-  <data name="&gt;&gt;lblThumbnailTitleLocation.Name" xml:space="preserve">
-    <value>lblThumbnailTitleLocation</value>
+  <data name="&gt;&gt;lblThumbnailViewThumbnailSize.Name" xml:space="preserve">
+    <value>lblThumbnailViewThumbnailSize</value>
   </data>
-  <data name="&gt;&gt;lblThumbnailTitleLocation.Type" xml:space="preserve">
+  <data name="&gt;&gt;lblThumbnailViewThumbnailSize.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;lblThumbnailTitleLocation.Parent" xml:space="preserve">
+  <data name="&gt;&gt;lblThumbnailViewThumbnailSize.Parent" xml:space="preserve">
     <value>gbThumbnailView</value>
   </data>
-  <data name="&gt;&gt;lblThumbnailTitleLocation.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;lblThumbnailViewThumbnailSize.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="cbThumbnailViewTitleLocation.Location" type="System.Drawing.Point, System.Drawing">
+    <value>176, 44</value>
+  </data>
+  <data name="cbThumbnailViewTitleLocation.Size" type="System.Drawing.Size, System.Drawing">
+    <value>160, 21</value>
+  </data>
+  <data name="cbThumbnailViewTitleLocation.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;cbThumbnailViewTitleLocation.Name" xml:space="preserve">
+    <value>cbThumbnailViewTitleLocation</value>
+  </data>
+  <data name="&gt;&gt;cbThumbnailViewTitleLocation.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbThumbnailViewTitleLocation.Parent" xml:space="preserve">
+    <value>gbThumbnailView</value>
+  </data>
+  <data name="&gt;&gt;cbThumbnailViewTitleLocation.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
-  <data name="ShowThumbnailTitle.AutoSize" type="System.Boolean, mscorlib">
+  <data name="lblThumbnailViewTitleLocation.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="ShowThumbnailTitle.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 24</value>
+  <data name="lblThumbnailViewTitleLocation.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 48</value>
   </data>
-  <data name="ShowThumbnailTitle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>72, 17</value>
+  <data name="lblThumbnailViewTitleLocation.Size" type="System.Drawing.Size, System.Drawing">
+    <value>70, 13</value>
   </data>
-  <data name="ShowThumbnailTitle.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="lblThumbnailViewTitleLocation.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
   </data>
-  <data name="ShowThumbnailTitle.Text" xml:space="preserve">
-    <value>Show title</value>
+  <data name="lblThumbnailViewTitleLocation.Text" xml:space="preserve">
+    <value>Title location:</value>
   </data>
-  <data name="&gt;&gt;ShowThumbnailTitle.Name" xml:space="preserve">
-    <value>ShowThumbnailTitle</value>
+  <data name="&gt;&gt;lblThumbnailViewTitleLocation.Name" xml:space="preserve">
+    <value>lblThumbnailViewTitleLocation</value>
   </data>
-  <data name="&gt;&gt;ShowThumbnailTitle.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;lblThumbnailViewTitleLocation.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;ShowThumbnailTitle.Parent" xml:space="preserve">
+  <data name="&gt;&gt;lblThumbnailViewTitleLocation.Parent" xml:space="preserve">
     <value>gbThumbnailView</value>
   </data>
-  <data name="&gt;&gt;ShowThumbnailTitle.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;lblThumbnailViewTitleLocation.ZOrder" xml:space="preserve">
     <value>8</value>
+  </data>
+  <data name="cbThumbnailViewShowTitle.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbThumbnailViewShowTitle.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 24</value>
+  </data>
+  <data name="cbThumbnailViewShowTitle.Size" type="System.Drawing.Size, System.Drawing">
+    <value>72, 17</value>
+  </data>
+  <data name="cbThumbnailViewShowTitle.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="cbThumbnailViewShowTitle.Text" xml:space="preserve">
+    <value>Show title</value>
+  </data>
+  <data name="&gt;&gt;cbThumbnailViewShowTitle.Name" xml:space="preserve">
+    <value>cbThumbnailViewShowTitle</value>
+  </data>
+  <data name="&gt;&gt;cbThumbnailViewShowTitle.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbThumbnailViewShowTitle.Parent" xml:space="preserve">
+    <value>gbThumbnailView</value>
+  </data>
+  <data name="&gt;&gt;cbThumbnailViewShowTitle.ZOrder" xml:space="preserve">
+    <value>9</value>
   </data>
   <data name="gbThumbnailView.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 64</value>
   </data>
   <data name="gbThumbnailView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>352, 128</value>
+    <value>432, 128</value>
   </data>
   <data name="gbThumbnailView.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -2031,79 +2055,79 @@
   <data name="&gt;&gt;gbThumbnailView.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="cbShowMenu.AutoSize" type="System.Boolean, mscorlib">
+  <data name="cbMainWindowShowMenu.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="cbShowMenu.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="cbMainWindowShowMenu.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 16</value>
   </data>
-  <data name="cbShowMenu.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="cbMainWindowShowMenu.Size" type="System.Drawing.Size, System.Drawing">
     <value>82, 17</value>
   </data>
-  <data name="cbShowMenu.TabIndex" type="System.Int32, mscorlib">
+  <data name="cbMainWindowShowMenu.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="cbShowMenu.Text" xml:space="preserve">
+  <data name="cbMainWindowShowMenu.Text" xml:space="preserve">
     <value>Show menu</value>
   </data>
-  <data name="&gt;&gt;cbShowMenu.Name" xml:space="preserve">
-    <value>cbShowMenu</value>
+  <data name="&gt;&gt;cbMainWindowShowMenu.Name" xml:space="preserve">
+    <value>cbMainWindowShowMenu</value>
   </data>
-  <data name="&gt;&gt;cbShowMenu.Type" xml:space="preserve">
+  <data name="&gt;&gt;cbMainWindowShowMenu.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;cbShowMenu.Parent" xml:space="preserve">
+  <data name="&gt;&gt;cbMainWindowShowMenu.Parent" xml:space="preserve">
     <value>tpMainWindow</value>
   </data>
-  <data name="&gt;&gt;cbShowMenu.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;cbMainWindowShowMenu.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="cbTaskViewMode.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="cbMainWindowTaskViewMode.Location" type="System.Drawing.Point, System.Drawing">
     <value>176, 36</value>
   </data>
-  <data name="cbTaskViewMode.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="cbMainWindowTaskViewMode.Size" type="System.Drawing.Size, System.Drawing">
     <value>160, 21</value>
   </data>
-  <data name="cbTaskViewMode.TabIndex" type="System.Int32, mscorlib">
+  <data name="cbMainWindowTaskViewMode.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;cbTaskViewMode.Name" xml:space="preserve">
-    <value>cbTaskViewMode</value>
+  <data name="&gt;&gt;cbMainWindowTaskViewMode.Name" xml:space="preserve">
+    <value>cbMainWindowTaskViewMode</value>
   </data>
-  <data name="&gt;&gt;cbTaskViewMode.Type" xml:space="preserve">
+  <data name="&gt;&gt;cbMainWindowTaskViewMode.Type" xml:space="preserve">
     <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;cbTaskViewMode.Parent" xml:space="preserve">
+  <data name="&gt;&gt;cbMainWindowTaskViewMode.Parent" xml:space="preserve">
     <value>tpMainWindow</value>
   </data>
-  <data name="&gt;&gt;cbTaskViewMode.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;cbMainWindowTaskViewMode.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="lblTaskViewMode.AutoSize" type="System.Boolean, mscorlib">
+  <data name="lblMainWindowTaskViewMode.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="lblTaskViewMode.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="lblMainWindowTaskViewMode.Location" type="System.Drawing.Point, System.Drawing">
     <value>13, 40</value>
   </data>
-  <data name="lblTaskViewMode.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="lblMainWindowTaskViewMode.Size" type="System.Drawing.Size, System.Drawing">
     <value>88, 13</value>
   </data>
-  <data name="lblTaskViewMode.TabIndex" type="System.Int32, mscorlib">
+  <data name="lblMainWindowTaskViewMode.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="lblTaskViewMode.Text" xml:space="preserve">
+  <data name="lblMainWindowTaskViewMode.Text" xml:space="preserve">
     <value>Task view mode:</value>
   </data>
-  <data name="&gt;&gt;lblTaskViewMode.Name" xml:space="preserve">
-    <value>lblTaskViewMode</value>
+  <data name="&gt;&gt;lblMainWindowTaskViewMode.Name" xml:space="preserve">
+    <value>lblMainWindowTaskViewMode</value>
   </data>
-  <data name="&gt;&gt;lblTaskViewMode.Type" xml:space="preserve">
+  <data name="&gt;&gt;lblMainWindowTaskViewMode.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;lblTaskViewMode.Parent" xml:space="preserve">
+  <data name="&gt;&gt;lblMainWindowTaskViewMode.Parent" xml:space="preserve">
     <value>tpMainWindow</value>
   </data>
-  <data name="&gt;&gt;lblTaskViewMode.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;lblMainWindowTaskViewMode.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
   <data name="tpMainWindow.Location" type="System.Drawing.Point, System.Drawing">

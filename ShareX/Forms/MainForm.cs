@@ -2499,14 +2499,14 @@ namespace ShareX
 
         private void tsmiThumbnailSize_Click(object sender, EventArgs e)
         {
-            using (ThumbnailSizeForm form = new ThumbnailSizeForm(Program.Settings.ThumbnailSize))
+            /*using (ThumbnailSizeForm form = new ThumbnailSizeForm(Program.Settings.ThumbnailSize))
             {
                 if (form.ShowDialog() == DialogResult.OK)
                 {
                     Program.Settings.ThumbnailSize = form.ThumbnailSize;
                     UpdateMainWindowLayout();
                 }
-            }
+            }*/
         }
 
         private void TsmiSwitchTaskViewMode_Click(object sender, EventArgs e)
