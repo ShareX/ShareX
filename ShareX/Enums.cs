@@ -276,17 +276,17 @@ namespace ShareX
         Cancel
     }
 
-    public enum ImagePreviewVisibility
+    public enum ImagePreviewVisibility // Localized
     {
         Show, Hide, Automatic
     }
 
-    public enum ImagePreviewLocation
+    public enum ImagePreviewLocation // Localized
     {
         Side, Bottom
     }
 
-    public enum ThumbnailTitleLocation
+    public enum ThumbnailTitleLocation // Localized
     {
         Top, Bottom
     }
@@ -323,7 +323,7 @@ namespace ShareX
         OpenDebugLog
     }
 
-    public enum TaskViewMode
+    public enum TaskViewMode // Localized
     {
         ListView,
         ThumbnailView

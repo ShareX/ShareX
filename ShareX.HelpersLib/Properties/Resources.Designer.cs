@@ -2344,6 +2344,51 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Bottom.
+        /// </summary>
+        internal static string ImagePreviewLocation_Bottom {
+            get {
+                return ResourceManager.GetString("ImagePreviewLocation_Bottom", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Side.
+        /// </summary>
+        internal static string ImagePreviewLocation_Side {
+            get {
+                return ResourceManager.GetString("ImagePreviewLocation_Side", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Automatic.
+        /// </summary>
+        internal static string ImagePreviewVisibility_Automatic {
+            get {
+                return ResourceManager.GetString("ImagePreviewVisibility_Automatic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hide.
+        /// </summary>
+        internal static string ImagePreviewVisibility_Hide {
+            get {
+                return ResourceManager.GetString("ImagePreviewVisibility_Hide", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Show.
+        /// </summary>
+        internal static string ImagePreviewVisibility_Show {
+            get {
+                return ResourceManager.GetString("ImagePreviewVisibility_Show", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Big square.
         /// </summary>
         internal static string ImgurThumbnailType_Big_Square {
@@ -3683,6 +3728,24 @@ namespace ShareX.HelpersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to List view.
+        /// </summary>
+        internal static string TaskViewMode_ListView {
+            get {
+                return ResourceManager.GetString("TaskViewMode_ListView", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Thumbnail view.
+        /// </summary>
+        internal static string TaskViewMode_ThumbnailView {
+            get {
+                return ResourceManager.GetString("TaskViewMode_ThumbnailView", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Custom text uploader.
         /// </summary>
         internal static string TextDestination_CustomTextUploader {
@@ -3697,6 +3760,24 @@ namespace ShareX.HelpersLib.Properties {
         internal static string TextDestination_FileUploader {
             get {
                 return ResourceManager.GetString("TextDestination_FileUploader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bottom.
+        /// </summary>
+        internal static string ThumbnailTitleLocation_Bottom {
+            get {
+                return ResourceManager.GetString("ThumbnailTitleLocation_Bottom", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Top.
+        /// </summary>
+        internal static string ThumbnailTitleLocation_Top {
+            get {
+                return ResourceManager.GetString("ThumbnailTitleLocation_Top", resourceCulture);
             }
         }
         
