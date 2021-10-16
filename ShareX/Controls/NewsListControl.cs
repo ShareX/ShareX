@@ -78,7 +78,7 @@ namespace ShareX
             Task.Run(() =>
             {
                 NewsManager = new NewsManager();
-                NewsManager.LastReadDate = Program.Settings.NewsLastReadDate;
+                //NewsManager.LastReadDate = Program.Settings.NewsLastReadDate;
                 NewsManager.UpdateNews();
                 NewsManager.UpdateUnread();
             }).ContinueInCurrentContext(() =>
@@ -118,7 +118,7 @@ namespace ShareX
 
                 if (latestDate < futureDate)
                 {
-                    Program.Settings.NewsLastReadDate = NewsManager.LastReadDate = latestDate;
+                    //Program.Settings.NewsLastReadDate = NewsManager.LastReadDate = latestDate;
                     NewsManager.UpdateUnread();
                 }
             }
