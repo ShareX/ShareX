@@ -43,31 +43,15 @@ namespace ShareX
         public int NameParserAutoIncrementNumber = 0;
         public List<QuickTaskInfo> QuickTaskPresets = QuickTaskInfo.DefaultPresets;
 
+        // Main window
+        public bool FirstTimeMinimizeToTray = true;
+        public List<int> TaskListViewColumnWidths = new List<int>();
+        public int PreviewSplitterDistance = 335;
+
         public ApplicationConfig()
         {
             this.ApplyDefaultPropertyValues();
         }
-
-        #region Main Form
-
-        public bool FirstTimeMinimizeToTray = true;
-        public bool ShowMenu = true;
-        public TaskViewMode TaskViewMode = TaskViewMode.ThumbnailView;
-
-        // Thumbnail view
-        public bool ShowThumbnailTitle = true;
-        public ThumbnailTitleLocation ThumbnailTitleLocation = ThumbnailTitleLocation.Top;
-        public Size ThumbnailSize = new Size(200, 150);
-        public ThumbnailViewClickAction ThumbnailClickAction = ThumbnailViewClickAction.Default;
-
-        // List view
-        public bool ShowColumns = true;
-        public List<int> TaskListViewColumnWidths = new List<int>();
-        public ImagePreviewVisibility ImagePreview = ImagePreviewVisibility.Automatic;
-        public ImagePreviewLocation ImagePreviewLocation = ImagePreviewLocation.Side;
-        public int PreviewSplitterDistance = 335;
-
-        #endregion Main Form
 
         #region Settings Form
 
@@ -111,6 +95,24 @@ namespace ShareX
         public string SaveImageSubFolderPattern = "%y-%mo";
 
         #endregion Paths
+
+        #region Main window
+
+        public bool ShowMenu = true;
+        public TaskViewMode TaskViewMode = TaskViewMode.ThumbnailView;
+
+        // Thumbnail view
+        public bool ShowThumbnailTitle = true;
+        public ThumbnailTitleLocation ThumbnailTitleLocation = ThumbnailTitleLocation.Top;
+        public Size ThumbnailSize = new Size(200, 150);
+        public ThumbnailViewClickAction ThumbnailClickAction = ThumbnailViewClickAction.Default;
+
+        // List view
+        public bool ShowColumns = true;
+        public ImagePreviewVisibility ImagePreview = ImagePreviewVisibility.Automatic;
+        public ImagePreviewLocation ImagePreviewLocation = ImagePreviewLocation.Side;
+
+        #endregion Main window
 
         #region Settings
 

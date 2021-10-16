@@ -257,14 +257,11 @@ namespace ShareX
             TaskbarManager.Enabled = Program.Settings.TaskbarProgressEnabled;
 
             UpdateCheckStates();
-            UpdateMainWindowLayout();
             UpdateUploaderMenuNames();
             UpdateDestinationStates();
-            UpdateInfoManager();
             UpdateToggleHotkeyButton();
             AfterTaskSettingsJobs();
             AfterApplicationSettingsJobs();
-            UpdateTaskViewMode();
 
             InitHotkeys();
 
@@ -959,6 +956,10 @@ namespace ShareX
                 ConfigureAutoUpdate();
             }
 #endif
+
+            UpdateTaskViewMode();
+            UpdateMainWindowLayout();
+            UpdateInfoManager();
         }
 
         private void ConfigureAutoUpdate()
@@ -1079,12 +1080,12 @@ namespace ShareX
         {
             tsMain.Visible = Program.Settings.ShowMenu;
 
-            lvUploads.HeaderStyle = Program.Settings.ShowColumns ? ColumnHeaderStyle.Nonclickable : ColumnHeaderStyle.None;
-
             ucTaskThumbnailView.TitleVisible = Program.Settings.ShowThumbnailTitle;
             ucTaskThumbnailView.TitleLocation = Program.Settings.ThumbnailTitleLocation;
             ucTaskThumbnailView.ThumbnailSize = Program.Settings.ThumbnailSize;
             ucTaskThumbnailView.ClickAction = Program.Settings.ThumbnailClickAction;
+
+            lvUploads.HeaderStyle = Program.Settings.ShowColumns ? ColumnHeaderStyle.Nonclickable : ColumnHeaderStyle.None;
 
             Refresh();
         }
