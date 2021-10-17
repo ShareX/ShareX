@@ -170,6 +170,11 @@ namespace ShareX
             txtCustomScreenshotsPath.Text = Program.Settings.CustomScreenshotsPath;
             txtSaveImageSubFolderPattern.Text = Program.Settings.SaveImageSubFolderPattern;
 
+            // Settings
+            cbAutomaticallyCleanupBackupFiles.Checked = Program.Settings.AutoCleanupBackupFiles;
+            cbAutomaticallyCleanupLogFiles.Checked = Program.Settings.AutoCleanupLogFiles;
+            nudCleanupKeepFileCount.SetValue(Program.Settings.CleanupKeepFileCount);
+
             // Main window
             cbMainWindowShowMenu.Checked = Program.Settings.ShowMenu;
             cbMainWindowTaskViewMode.SelectedIndex = (int)Program.Settings.TaskViewMode;
@@ -182,18 +187,12 @@ namespace ShareX
             cbListViewImagePreviewVisibility.SelectedIndex = (int)Program.Settings.ImagePreview;
             cbListViewImagePreviewLocation.SelectedIndex = (int)Program.Settings.ImagePreviewLocation;
 
-            // Settings
-            cbAutomaticallyCleanupBackupFiles.Checked = Program.Settings.AutoCleanupBackupFiles;
-            cbAutomaticallyCleanupLogFiles.Checked = Program.Settings.AutoCleanupLogFiles;
-            nudCleanupKeepFileCount.SetValue(Program.Settings.CleanupKeepFileCount);
-
-            // Proxy
-            cbProxyMethod.SelectedIndex = (int)Program.Settings.ProxySettings.ProxyMethod;
-            txtProxyUsername.Text = Program.Settings.ProxySettings.Username;
-            txtProxyPassword.Text = Program.Settings.ProxySettings.Password;
-            txtProxyHost.Text = Program.Settings.ProxySettings.Host ?? "";
-            nudProxyPort.SetValue(Program.Settings.ProxySettings.Port);
-            UpdateProxyControls();
+            // Clipboard formats
+            lvClipboardFormats.Items.Clear();
+            foreach (ClipboardFormat cf in Program.Settings.ClipboardContentFormats)
+            {
+                AddClipboardFormat(cf);
+            }
 
             // Upload
             nudUploadLimit.SetValue(Program.Settings.UploadLimit);
@@ -206,12 +205,6 @@ namespace ShareX
                 cbBufferSize.Items.Add(size);
             }
             cbBufferSize.SelectedIndex = Program.Settings.BufferSizePower.Clamp(0, maxBufferSizePower);
-
-            lvClipboardFormats.Items.Clear();
-            foreach (ClipboardFormat cf in Program.Settings.ClipboardContentFormats)
-            {
-                AddClipboardFormat(cf);
-            }
 
             nudRetryUpload.SetValue(Program.Settings.MaxUploadFailRetry);
             cbUseSecondaryUploaders.Checked = Program.Settings.UseSecondaryUploaders;
@@ -246,6 +239,14 @@ namespace ShareX
             cbPrintDontShowWindowsDialog.Checked = !Program.Settings.PrintSettings.ShowPrintDialog;
             txtDefaultPrinterOverride.Text = Program.Settings.PrintSettings.DefaultPrinterOverride;
             lblDefaultPrinterOverride.Visible = txtDefaultPrinterOverride.Visible = !Program.Settings.PrintSettings.ShowPrintDialog;
+
+            // Proxy
+            cbProxyMethod.SelectedIndex = (int)Program.Settings.ProxySettings.ProxyMethod;
+            txtProxyUsername.Text = Program.Settings.ProxySettings.Username;
+            txtProxyPassword.Text = Program.Settings.ProxySettings.Password;
+            txtProxyHost.Text = Program.Settings.ProxySettings.Host ?? "";
+            nudProxyPort.SetValue(Program.Settings.ProxySettings.Port);
+            UpdateProxyControls();
 
             // Advanced
             pgSettings.SelectedObject = Program.Settings;
@@ -716,66 +717,6 @@ namespace ShareX
 
         #endregion Paths
 
-        #region Main window
-
-        private void cbMainWindowShowMenu_CheckedChanged(object sender, EventArgs e)
-        {
-            Program.Settings.ShowMenu = cbMainWindowShowMenu.Checked;
-        }
-
-        private void cbMainWindowTaskViewMode_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            Program.Settings.TaskViewMode = (TaskViewMode)cbMainWindowTaskViewMode.SelectedIndex;
-        }
-
-        private void cbThumbnailViewShowTitle_CheckedChanged(object sender, EventArgs e)
-        {
-            Program.Settings.ShowThumbnailTitle = cbThumbnailViewShowTitle.Checked;
-        }
-
-        private void cbThumbnailViewTitleLocation_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            Program.Settings.ThumbnailTitleLocation = (ThumbnailTitleLocation)cbThumbnailViewTitleLocation.SelectedIndex;
-        }
-
-        private void nudThumbnailViewThumbnailSizeWidth_ValueChanged(object sender, EventArgs e)
-        {
-            Program.Settings.ThumbnailSize = new Size((int)nudThumbnailViewThumbnailSizeWidth.Value, Program.Settings.ThumbnailSize.Height);
-        }
-
-        private void nudThumbnailViewThumbnailSizeHeight_ValueChanged(object sender, EventArgs e)
-        {
-            Program.Settings.ThumbnailSize = new Size(Program.Settings.ThumbnailSize.Width, (int)nudThumbnailViewThumbnailSizeHeight.Value);
-        }
-
-        private void btnThumbnailViewThumbnailSizeReset_Click(object sender, EventArgs e)
-        {
-            nudThumbnailViewThumbnailSizeWidth.SetValue(200);
-            nudThumbnailViewThumbnailSizeHeight.SetValue(150);
-        }
-
-        private void cbThumbnailViewThumbnailClickAction_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            Program.Settings.ThumbnailClickAction = (ThumbnailViewClickAction)cbThumbnailViewThumbnailClickAction.SelectedIndex;
-        }
-
-        private void cbListViewShowColumns_CheckedChanged(object sender, EventArgs e)
-        {
-            Program.Settings.ShowColumns = cbListViewShowColumns.Checked;
-        }
-
-        private void cbListViewImagePreviewVisibility_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            Program.Settings.ImagePreview = (ImagePreviewVisibility)cbListViewImagePreviewVisibility.SelectedIndex;
-        }
-
-        private void cbListViewImagePreviewLocation_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            Program.Settings.ImagePreviewLocation = (ImagePreviewLocation)cbListViewImagePreviewLocation.SelectedIndex;
-        }
-
-        #endregion
-
         #region Settings
 
         private void cbExportSettings_CheckedChanged(object sender, EventArgs e)
@@ -907,55 +848,67 @@ namespace ShareX
 
         #endregion Settings
 
-        #region Proxy
+        #region Main window
 
-        private void cbProxyMethod_SelectedIndexChanged(object sender, EventArgs e)
+        private void cbMainWindowShowMenu_CheckedChanged(object sender, EventArgs e)
         {
-            Program.Settings.ProxySettings.ProxyMethod = (ProxyMethod)cbProxyMethod.SelectedIndex;
-
-            if (Program.Settings.ProxySettings.ProxyMethod == ProxyMethod.Automatic)
-            {
-                Program.Settings.ProxySettings.IsValidProxy();
-                txtProxyHost.Text = Program.Settings.ProxySettings.Host ?? "";
-                nudProxyPort.SetValue(Program.Settings.ProxySettings.Port);
-            }
-
-            UpdateProxyControls();
+            Program.Settings.ShowMenu = cbMainWindowShowMenu.Checked;
         }
 
-        private void txtProxyUsername_TextChanged(object sender, EventArgs e)
+        private void cbMainWindowTaskViewMode_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Program.Settings.ProxySettings.Username = txtProxyUsername.Text;
+            Program.Settings.TaskViewMode = (TaskViewMode)cbMainWindowTaskViewMode.SelectedIndex;
         }
 
-        private void txtProxyPassword_TextChanged(object sender, EventArgs e)
+        private void cbThumbnailViewShowTitle_CheckedChanged(object sender, EventArgs e)
         {
-            Program.Settings.ProxySettings.Password = txtProxyPassword.Text;
+            Program.Settings.ShowThumbnailTitle = cbThumbnailViewShowTitle.Checked;
         }
 
-        private void txtProxyHost_TextChanged(object sender, EventArgs e)
+        private void cbThumbnailViewTitleLocation_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Program.Settings.ProxySettings.Host = txtProxyHost.Text;
+            Program.Settings.ThumbnailTitleLocation = (ThumbnailTitleLocation)cbThumbnailViewTitleLocation.SelectedIndex;
         }
 
-        private void nudProxyPort_ValueChanged(object sender, EventArgs e)
+        private void nudThumbnailViewThumbnailSizeWidth_ValueChanged(object sender, EventArgs e)
         {
-            Program.Settings.ProxySettings.Port = (int)nudProxyPort.Value;
+            Program.Settings.ThumbnailSize = new Size((int)nudThumbnailViewThumbnailSizeWidth.Value, Program.Settings.ThumbnailSize.Height);
         }
 
-        #endregion Proxy
-
-        #region Upload
-
-        private void nudUploadLimit_ValueChanged(object sender, EventArgs e)
+        private void nudThumbnailViewThumbnailSizeHeight_ValueChanged(object sender, EventArgs e)
         {
-            Program.Settings.UploadLimit = (int)nudUploadLimit.Value;
+            Program.Settings.ThumbnailSize = new Size(Program.Settings.ThumbnailSize.Width, (int)nudThumbnailViewThumbnailSizeHeight.Value);
         }
 
-        private void cbBufferSize_SelectedIndexChanged(object sender, EventArgs e)
+        private void btnThumbnailViewThumbnailSizeReset_Click(object sender, EventArgs e)
         {
-            Program.Settings.BufferSizePower = cbBufferSize.SelectedIndex;
+            nudThumbnailViewThumbnailSizeWidth.SetValue(200);
+            nudThumbnailViewThumbnailSizeHeight.SetValue(150);
         }
+
+        private void cbThumbnailViewThumbnailClickAction_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Program.Settings.ThumbnailClickAction = (ThumbnailViewClickAction)cbThumbnailViewThumbnailClickAction.SelectedIndex;
+        }
+
+        private void cbListViewShowColumns_CheckedChanged(object sender, EventArgs e)
+        {
+            Program.Settings.ShowColumns = cbListViewShowColumns.Checked;
+        }
+
+        private void cbListViewImagePreviewVisibility_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Program.Settings.ImagePreview = (ImagePreviewVisibility)cbListViewImagePreviewVisibility.SelectedIndex;
+        }
+
+        private void cbListViewImagePreviewLocation_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Program.Settings.ImagePreviewLocation = (ImagePreviewLocation)cbListViewImagePreviewLocation.SelectedIndex;
+        }
+
+        #endregion
+
+        #region Clipboard formats
 
         private void AddClipboardFormat(ClipboardFormat cf)
         {
@@ -1020,14 +973,28 @@ namespace ShareX
             }
         }
 
-        private void cbUseSecondaryUploaders_CheckedChanged(object sender, EventArgs e)
+        #endregion
+
+        #region Upload
+
+        private void nudUploadLimit_ValueChanged(object sender, EventArgs e)
         {
-            Program.Settings.UseSecondaryUploaders = cbUseSecondaryUploaders.Checked;
+            Program.Settings.UploadLimit = (int)nudUploadLimit.Value;
+        }
+
+        private void cbBufferSize_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Program.Settings.BufferSizePower = cbBufferSize.SelectedIndex;
         }
 
         private void nudRetryUpload_ValueChanged(object sender, EventArgs e)
         {
             Program.Settings.MaxUploadFailRetry = (int)nudRetryUpload.Value;
+        }
+
+        private void cbUseSecondaryUploaders_CheckedChanged(object sender, EventArgs e)
+        {
+            Program.Settings.UseSecondaryUploaders = cbUseSecondaryUploaders.Checked;
         }
 
         private void lvSecondaryUploaders_MouseUp(object sender, MouseEventArgs e)
@@ -1106,5 +1073,43 @@ namespace ShareX
         }
 
         #endregion Print
+
+        #region Proxy
+
+        private void cbProxyMethod_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Program.Settings.ProxySettings.ProxyMethod = (ProxyMethod)cbProxyMethod.SelectedIndex;
+
+            if (Program.Settings.ProxySettings.ProxyMethod == ProxyMethod.Automatic)
+            {
+                Program.Settings.ProxySettings.IsValidProxy();
+                txtProxyHost.Text = Program.Settings.ProxySettings.Host ?? "";
+                nudProxyPort.SetValue(Program.Settings.ProxySettings.Port);
+            }
+
+            UpdateProxyControls();
+        }
+
+        private void txtProxyUsername_TextChanged(object sender, EventArgs e)
+        {
+            Program.Settings.ProxySettings.Username = txtProxyUsername.Text;
+        }
+
+        private void txtProxyPassword_TextChanged(object sender, EventArgs e)
+        {
+            Program.Settings.ProxySettings.Password = txtProxyPassword.Text;
+        }
+
+        private void txtProxyHost_TextChanged(object sender, EventArgs e)
+        {
+            Program.Settings.ProxySettings.Host = txtProxyHost.Text;
+        }
+
+        private void nudProxyPort_ValueChanged(object sender, EventArgs e)
+        {
+            Program.Settings.ProxySettings.Port = (int)nudProxyPort.Value;
+        }
+
+        #endregion Proxy
     }
 }
