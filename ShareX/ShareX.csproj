@@ -1746,7 +1746,6 @@
     <None Include="Resources\network-ip.png" />
     <None Include="Resources\ruler-triangle.png" />
     <None Include="Resources\barcode-2d.png" />
-    <None Include="Resources\GitHub.png" />
     <None Include="Resources\folder.png" />
     <None Include="Resources\clipboard.png" />
     <None Include="Resources\drive.png" />
@@ -1913,6 +1912,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\camcorder--minus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GitHub.png" />
+    <None Include="Resources\GitHubDark.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

@@ -46,6 +46,12 @@ namespace ShareX
 
             ShareXResources.ApplyTheme(this);
 
+            if (ShareXResources.IsDarkTheme)
+            {
+                pbJaexURL.Image = Resources.GitHubDark;
+                pbMikeURL.Image = Resources.GitHubDark;
+            }
+
 #if STEAM
             uclUpdate.Visible = false;
             lblBuild.Text = "Steam build";
