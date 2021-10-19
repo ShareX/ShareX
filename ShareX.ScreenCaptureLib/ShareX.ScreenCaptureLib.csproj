@@ -341,7 +341,7 @@
     <None Include="Resources\camcorder--pencil.png" />
     <None Include="Resources\control-record.png" />
     <None Include="Resources\control-record-yellow.png" />
-    <Content Include="Resources\Crosshair.cur" />
+    <None Include="Resources\Crosshair.cur" />
     <None Include="Resources\exclamation-button.png" />
   </ItemGroup>
   <ItemGroup>

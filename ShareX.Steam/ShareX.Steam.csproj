@@ -63,7 +63,7 @@
     <None Include="steam_appid.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <Content Include="ShareX_Icon.ico" />
+    <None Include="ShareX_Icon.ico" />
     <None Include="installscript.vdf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

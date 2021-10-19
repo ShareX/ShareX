@@ -1080,7 +1080,7 @@
     <None Include="Resources\navigation-270-button-white.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Favicons\ZeroWidthShortener.png" />
+    <None Include="Favicons\ZeroWidthShortener.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

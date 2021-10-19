@@ -85,7 +85,7 @@
     <None Include="InnoSetup\ShareX-setup.iss" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="WindowsStore\AppxManifest.xml" />
+    <None Include="WindowsStore\AppxManifest.xml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ShareX.HelpersLib\ShareX.HelpersLib.csproj">
