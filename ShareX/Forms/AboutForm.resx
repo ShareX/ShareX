@@ -160,7 +160,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblJaex.Location" type="System.Drawing.Point, System.Drawing">
-    <value>64, 163</value>
+    <value>39, 163</value>
   </data>
   <data name="lblJaex.Size" type="System.Drawing.Size, System.Drawing">
     <value>0, 13</value>
@@ -187,7 +187,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblMike.Location" type="System.Drawing.Point, System.Drawing">
-    <value>64, 187</value>
+    <value>39, 187</value>
   </data>
   <data name="lblMike.Size" type="System.Drawing.Size, System.Drawing">
     <value>0, 13</value>
@@ -211,13 +211,16 @@
     <value>Top, Bottom, Left, Right</value>
   </data>
   <data name="rtbCredits.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 219</value>
+    <value>16, 219</value>
   </data>
   <data name="rtbCredits.Size" type="System.Drawing.Size, System.Drawing">
     <value>560, 333</value>
   </data>
   <data name="rtbCredits.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
+  </data>
+  <data name="rtbCredits.Text" xml:space="preserve">
+    <value />
   </data>
   <data name="rtbCredits.WordWrap" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -243,6 +246,9 @@
   <data name="rtbShareXInfo.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
+  <data name="rtbShareXInfo.Text" xml:space="preserve">
+    <value />
+  </data>
   <data name="&gt;&gt;rtbShareXInfo.Name" xml:space="preserve">
     <value>rtbShareXInfo</value>
   </data>
@@ -259,7 +265,7 @@
     <value>NoControl</value>
   </data>
   <data name="pbMikeURL.Location" type="System.Drawing.Point, System.Drawing">
-    <value>41, 185</value>
+    <value>17, 185</value>
   </data>
   <data name="pbMikeURL.Size" type="System.Drawing.Size, System.Drawing">
     <value>16, 16</value>
@@ -282,38 +288,11 @@
   <data name="&gt;&gt;pbMikeURL.ZOrder" xml:space="preserve">
     <value>12</value>
   </data>
-  <data name="pbAU.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="pbAU.Location" type="System.Drawing.Point, System.Drawing">
-    <value>17, 185</value>
-  </data>
-  <data name="pbAU.Size" type="System.Drawing.Size, System.Drawing">
-    <value>16, 16</value>
-  </data>
-  <data name="pbAU.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
-    <value>CenterImage</value>
-  </data>
-  <data name="pbAU.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
-  </data>
-  <data name="&gt;&gt;pbAU.Name" xml:space="preserve">
-    <value>pbAU</value>
-  </data>
-  <data name="&gt;&gt;pbAU.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pbAU.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;pbAU.ZOrder" xml:space="preserve">
-    <value>13</value>
-  </data>
   <data name="pbJaexURL.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="pbJaexURL.Location" type="System.Drawing.Point, System.Drawing">
-    <value>41, 161</value>
+    <value>17, 161</value>
   </data>
   <data name="pbJaexURL.Size" type="System.Drawing.Size, System.Drawing">
     <value>16, 16</value>
@@ -334,34 +313,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;pbJaexURL.ZOrder" xml:space="preserve">
-    <value>14</value>
-  </data>
-  <data name="pbTR.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="pbTR.Location" type="System.Drawing.Point, System.Drawing">
-    <value>17, 161</value>
-  </data>
-  <data name="pbTR.Size" type="System.Drawing.Size, System.Drawing">
-    <value>16, 16</value>
-  </data>
-  <data name="pbTR.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
-    <value>CenterImage</value>
-  </data>
-  <data name="pbTR.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="&gt;&gt;pbTR.Name" xml:space="preserve">
-    <value>pbTR</value>
-  </data>
-  <data name="&gt;&gt;pbTR.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pbTR.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;pbTR.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>13</value>
   </data>
   <data name="lblTeam.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -532,7 +484,7 @@
     <value>uclUpdate</value>
   </data>
   <data name="&gt;&gt;uclUpdate.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.UpdateCheckerLabel, ShareX.HelpersLib, Version=13.5.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.UpdateCheckerLabel, ShareX.HelpersLib, Version=13.6.2.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;uclUpdate.Parent" xml:space="preserve">
     <value>$this</value>
@@ -556,13 +508,13 @@
     <value>cLogo</value>
   </data>
   <data name="&gt;&gt;cLogo.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.Canvas, ShareX.HelpersLib, Version=13.5.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.Canvas, ShareX.HelpersLib, Version=13.6.2.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;cLogo.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
   <data name="&gt;&gt;cLogo.ZOrder" xml:space="preserve">
-    <value>16</value>
+    <value>14</value>
   </data>
   <data name="lblBuild.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>

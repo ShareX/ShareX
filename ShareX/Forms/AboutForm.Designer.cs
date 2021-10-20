@@ -38,9 +38,7 @@
             this.rtbCredits = new System.Windows.Forms.RichTextBox();
             this.rtbShareXInfo = new System.Windows.Forms.RichTextBox();
             this.pbMikeURL = new System.Windows.Forms.PictureBox();
-            this.pbAU = new System.Windows.Forms.PictureBox();
             this.pbJaexURL = new System.Windows.Forms.PictureBox();
-            this.pbTR = new System.Windows.Forms.PictureBox();
             this.lblTeam = new System.Windows.Forms.Label();
             this.pbLogo = new System.Windows.Forms.PictureBox();
             this.btnClose = new System.Windows.Forms.Button();
@@ -50,9 +48,7 @@
             this.cLogo = new ShareX.HelpersLib.Canvas();
             this.lblBuild = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbMikeURL)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbAU)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbJaexURL)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbTR)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -102,14 +98,6 @@
             this.pbMikeURL.TabStop = false;
             this.pbMikeURL.Click += new System.EventHandler(this.pbMikeURL_Click);
             // 
-            // pbAU
-            // 
-            this.pbAU.BackColor = System.Drawing.Color.Transparent;
-            this.pbAU.Image = global::ShareX.Properties.Resources.au;
-            resources.ApplyResources(this.pbAU, "pbAU");
-            this.pbAU.Name = "pbAU";
-            this.pbAU.TabStop = false;
-            // 
             // pbJaexURL
             // 
             this.pbJaexURL.BackColor = System.Drawing.Color.Transparent;
@@ -119,14 +107,6 @@
             this.pbJaexURL.Name = "pbJaexURL";
             this.pbJaexURL.TabStop = false;
             this.pbJaexURL.Click += new System.EventHandler(this.pbJaexURL_Click);
-            // 
-            // pbTR
-            // 
-            this.pbTR.BackColor = System.Drawing.Color.Transparent;
-            this.pbTR.Image = global::ShareX.Properties.Resources.tr;
-            resources.ApplyResources(this.pbTR, "pbTR");
-            this.pbTR.Name = "pbTR";
-            this.pbTR.TabStop = false;
             // 
             // lblTeam
             // 
@@ -198,17 +178,13 @@
             this.Controls.Add(this.lblMike);
             this.Controls.Add(this.uclUpdate);
             this.Controls.Add(this.pbMikeURL);
-            this.Controls.Add(this.pbAU);
             this.Controls.Add(this.pbJaexURL);
-            this.Controls.Add(this.pbTR);
             this.Controls.Add(this.cLogo);
             this.Name = "AboutForm";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Shown += new System.EventHandler(this.AboutForm_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.pbMikeURL)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbAU)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbJaexURL)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbTR)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -219,10 +195,8 @@
 
         private System.Windows.Forms.Label lblProductName;
         private System.Windows.Forms.Label lblJaex;
-        private System.Windows.Forms.PictureBox pbTR;
         private System.Windows.Forms.PictureBox pbJaexURL;
         private System.Windows.Forms.PictureBox pbMikeURL;
-        private System.Windows.Forms.PictureBox pbAU;
         private System.Windows.Forms.Label lblMike;
         private HelpersLib.Canvas cLogo;
         private System.Windows.Forms.RichTextBox rtbCredits;

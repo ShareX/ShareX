@@ -252,9 +252,6 @@ Would you like to restart ShareX?</value>
   <data name="clipboard" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\clipboard.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="au" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\au.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="AboutForm_AboutForm_Language_id_ID" xml:space="preserve">
     <value>Indonesian</value>
   </data>
