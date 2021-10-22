@@ -255,7 +255,7 @@ namespace ShareX.ScreenCaptureLib
         public bool IsSnapResizing { get; private set; }
         public bool IsRenderingOutput { get; private set; }
         public Point RenderOffset { get; private set; }
-        public bool IsModified { get; internal set; }
+        public bool IsImageModified { get; internal set; }
 
         public InputManager InputManager { get; private set; } = new InputManager();
         public List<SimpleWindowInfo> Windows { get; set; }
@@ -306,6 +306,7 @@ namespace ShareX.ScreenCaptureLib
         public event Action<BaseShape> CurrentShapeChanged;
         public event Action<ShapeType> CurrentShapeTypeChanged;
         public event Action<BaseShape> ShapeCreated;
+        public event Action ImageModified;
 
         internal RegionCaptureForm Form { get; private set; }
 
@@ -376,6 +377,28 @@ namespace ShareX.ScreenCaptureLib
                 control.MouseEnter += () => Form.SetHandCursor(false);
                 control.MouseLeave += () => Form.SetDefaultCursor();
             }
+        }
+
+        private void OnCurrentShapeChanged(BaseShape shape)
+        {
+            CurrentShapeChanged?.Invoke(shape);
+        }
+
+        private void OnCurrentShapeTypeChanged(ShapeType shapeType)
+        {
+            CurrentShapeTypeChanged?.Invoke(shapeType);
+        }
+
+        private void OnShapeCreated(BaseShape shape)
+        {
+            ShapeCreated?.Invoke(shape);
+        }
+
+        private void OnImageModified()
+        {
+            IsImageModified = true;
+
+            ImageModified?.Invoke();
         }
 
         private void form_Shown(object sender, EventArgs e)
@@ -1090,7 +1113,7 @@ namespace ShareX.ScreenCaptureLib
 
             if (shape.ShapeCategory == ShapeCategory.Drawing || shape.ShapeCategory == ShapeCategory.Effect)
             {
-                IsModified = true;
+                OnImageModified();
             }
         }
 
@@ -1419,7 +1442,7 @@ namespace ShareX.ScreenCaptureLib
 
                 if (shape.ShapeCategory == ShapeCategory.Drawing || shape.ShapeCategory == ShapeCategory.Effect)
                 {
-                    IsModified = true;
+                    OnImageModified();
                 }
 
                 UpdateMenu();
@@ -1447,7 +1470,7 @@ namespace ShareX.ScreenCaptureLib
 
                 Shapes.Clear();
                 DeselectCurrentShape();
-                IsModified = true;
+                OnImageModified();
             }
         }
 
@@ -1754,7 +1777,7 @@ namespace ShareX.ScreenCaptureLib
                 effect.OnMoved();
             }
 
-            IsModified = true;
+            OnImageModified();
         }
 
         public void CropArea(Rectangle rect)
@@ -2101,21 +2124,6 @@ namespace ShareX.ScreenCaptureLib
             }
 
             return ColorPickerForm.PickColor(currentColor, out newColor, Form, openScreenColorPicker, Options.ColorPickerOptions);
-        }
-
-        private void OnCurrentShapeChanged(BaseShape shape)
-        {
-            CurrentShapeChanged?.Invoke(shape);
-        }
-
-        private void OnCurrentShapeTypeChanged(ShapeType shapeType)
-        {
-            CurrentShapeTypeChanged?.Invoke(shapeType);
-        }
-
-        private void OnShapeCreated(BaseShape shape)
-        {
-            ShapeCreated?.Invoke(shape);
         }
 
         public void Dispose()

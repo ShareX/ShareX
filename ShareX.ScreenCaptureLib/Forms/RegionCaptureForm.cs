@@ -59,7 +59,7 @@ namespace ShareX.ScreenCaptureLib
         public RegionCaptureMode Mode { get; private set; }
         public bool IsEditorMode => Mode == RegionCaptureMode.Editor || Mode == RegionCaptureMode.TaskEditor;
         public bool IsAnnotationMode => Mode == RegionCaptureMode.Annotation || IsEditorMode;
-        public bool IsModified => ShapeManager != null && ShapeManager.IsModified;
+        public bool IsImageModified => ShapeManager != null && ShapeManager.IsImageModified;
 
         public Point CurrentPosition { get; private set; }
         public Point PanningStrech = new Point();
@@ -543,7 +543,7 @@ namespace ShareX.ScreenCaptureLib
         {
             bool result = true;
 
-            if (IsModified)
+            if (IsImageModified)
             {
                 Pause();
                 result = MessageBox.Show(this, Resources.RegionCaptureForm_ShowExitConfirmation_Text, Resources.RegionCaptureForm_ShowExitConfirmation_ShareXImageEditor,
@@ -1415,7 +1415,7 @@ namespace ShareX.ScreenCaptureLib
         {
             Bitmap bmp = GetResultImage();
 
-            ShapeManager.IsModified = false;
+            ShapeManager.IsImageModified = false;
 
             if (Options.AutoCloseEditorOnTask)
             {
