@@ -26,20 +26,37 @@
 using ShareX.HelpersLib;
 using ShareX.UploadersLib.OtherServices;
 using System;
+using System.Collections.Generic;
+using System.ComponentModel;
 using System.IO;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ShareX.UploadersLib
 {
+    public enum OCRSpaceTranslatorSites
+    {
+        [Description("Google Translate")]
+        Google,
+        [Description("DeepL Translate")]
+        DeepL
+    }
+
     public partial class OCRSpaceForm : Form
     {
-        public OCRSpaceLanguages Language { get; set; }
         public string Result { get; private set; }
 
         private Stream data;
         private string fileName;
         private OCROptions ocrOptions;
+        private OCRSpaceLanguages Language { get; set; }
+
+        private Dictionary<OCRSpaceTranslatorSites, string> TranslatorSiteLinks =
+            new Dictionary<OCRSpaceTranslatorSites, string>()
+            {
+                { OCRSpaceTranslatorSites.Google, "https://translate.google.com/#auto/en/" },
+                { OCRSpaceTranslatorSites.DeepL, "https://www.deepl.com/translator#auto/en/" }
+            };
 
         public OCRSpaceForm(OCROptions ocrOptions)
         {
@@ -49,6 +66,10 @@ namespace ShareX.UploadersLib
             this.ocrOptions = ocrOptions;
             cbLanguages.Items.AddRange(Helpers.GetEnumDescriptions<OCRSpaceLanguages>());
             cbLanguages.SelectedIndex = (int)ocrOptions.DefaultLanguage;
+
+            cbDefaultTLSite.Items.AddRange(Helpers.GetEnumDescriptions<OCRSpaceTranslatorSites>());
+            cbDefaultTLSite.SelectedIndex = (int)ocrOptions.DefaultTranslatorSite;
+
             Language = ocrOptions.DefaultLanguage;
             txtResult.SupportSelectAll();
         }
@@ -85,7 +106,7 @@ namespace ShareX.UploadersLib
         {
             if (stream != null && stream.Length > 0 && !string.IsNullOrEmpty(fileName))
             {
-                cbLanguages.Enabled = btnStartOCR.Enabled = txtResult.Enabled = false;
+                cbLanguages.Enabled = btnStartOCR.Enabled = txtResult.Enabled = btnOpenInBrowser.Enabled = false;
                 pbProgress.Visible = true;
 
                 Result = await OCRSpace.DoOCRAsync(Language, stream, fileName);
@@ -98,10 +119,9 @@ namespace ShareX.UploadersLib
                 if (!IsDisposed)
                 {
                     UpdateControls();
-                    cbLanguages.Enabled = btnStartOCR.Enabled = txtResult.Enabled = true;
+                    cbLanguages.Enabled = btnStartOCR.Enabled = txtResult.Enabled = btnOpenInBrowser.Enabled = true;
                     pbProgress.Visible = false;
                     txtResult.Focus();
-                    llGoogleTranslate.Enabled = true;
                 }
             }
         }
@@ -116,10 +136,16 @@ namespace ShareX.UploadersLib
             await StartOCR(data, fileName);
         }
 
-        private void llGoogleTranslate_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void btnOpenInBrowser_Click(object sender, EventArgs e)
         {
-            URLHelpers.OpenURL("https://translate.google.com/#auto/en/" + Uri.EscapeDataString(txtResult.Text));
+            URLHelpers.OpenURL(TranslatorSiteLinks[ocrOptions.DefaultTranslatorSite] + Uri.EscapeDataString(txtResult.Text));
             Close();
+        }
+
+        private void cbDefaultTLSite_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // This doesn't work
+            ocrOptions.DefaultTranslatorSite = (OCRSpaceTranslatorSites)cbDefaultTLSite.SelectedIndex;
         }
     }
 }
