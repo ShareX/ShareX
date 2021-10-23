@@ -90,6 +90,7 @@ namespace ShareX.ScreenCaptureLib
         // Image editor
         public ImageEditorStartMode ImageEditorStartMode = ImageEditorStartMode.AutoSize;
         public WindowState ImageEditorWindowState = new WindowState();
+        public bool EditorAutoCopyImage = true;
         public bool AutoCloseEditorOnTask = false;
         public bool ShowEditorPanTip = true;
         public ImageInterpolationMode ImageEditorResizeInterpolationMode = ImageInterpolationMode.Bicubic;

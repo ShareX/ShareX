@@ -885,6 +885,13 @@ namespace ShareX.ScreenCaptureLib
                     (sender, e) => Options.ImageEditorStartMode = (ImageEditorStartMode)tscbImageEditorStartMode.Content.SelectedIndex;
                 tsddbOptions.DropDownItems.Add(tscbImageEditorStartMode);
 
+                // TODO: Translate
+                ToolStripMenuItem tsmiEditorAutoCopyImage = new ToolStripMenuItem("Auto copy image to clipboard");
+                tsmiEditorAutoCopyImage.Checked = Options.EditorAutoCopyImage;
+                tsmiEditorAutoCopyImage.CheckOnClick = true;
+                tsmiEditorAutoCopyImage.Click += (sender, e) => Options.EditorAutoCopyImage = tsmiEditorAutoCopyImage.Checked;
+                tsddbOptions.DropDownItems.Add(tsmiEditorAutoCopyImage);
+
                 ToolStripMenuItem tsmiAutoCloseEditorOnTask = new ToolStripMenuItem(Resources.ShapeManager_CreateToolbar_AutoCloseEditorOnTask);
                 tsmiAutoCloseEditorOnTask.Checked = Options.AutoCloseEditorOnTask;
                 tsmiAutoCloseEditorOnTask.CheckOnClick = true;

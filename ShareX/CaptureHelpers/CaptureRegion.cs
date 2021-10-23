@@ -98,7 +98,7 @@ namespace ShareX
 
                 if (imageInfo.Image != null)
                 {
-                    if (form.IsModified)
+                    if (form.IsImageModified)
                     {
                         AllowAnnotation = false;
                     }

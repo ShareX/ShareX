@@ -243,6 +243,11 @@ namespace ShareX.ScreenCaptureLib
         public virtual void OnCreated()
         {
             InitialSize = Rectangle.Size;
+
+            if (ShapeCategory == ShapeCategory.Drawing || ShapeCategory == ShapeCategory.Effect)
+            {
+                Manager.OnImageModified();
+            }
         }
 
         public virtual void OnMoving()
