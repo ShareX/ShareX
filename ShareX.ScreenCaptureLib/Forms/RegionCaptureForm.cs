@@ -285,6 +285,7 @@ namespace ShareX.ScreenCaptureLib
             ShapeManager = new ShapeManager(this);
             ShapeManager.WindowCaptureMode = !IsEditorMode && Options.DetectWindows;
             ShapeManager.IncludeControls = Options.DetectControls;
+            ShapeManager.ImageModified += ShapeManager_ImageModified;
 
             InitBackground(canvas);
 
@@ -299,6 +300,15 @@ namespace ShareX.ScreenCaptureLib
                     wla.IncludeChildWindows = ShapeManager.IncludeControls;
                     ShapeManager.Windows = wla.GetWindowInfoListAsync(5000);
                 });
+            }
+        }
+
+        private void ShapeManager_ImageModified()
+        {
+            if (Options.EditorAutoCopyImage && !IsClosing && IsEditorMode)
+            {
+                Bitmap bmp = GetResultImage();
+                CopyImageRequested(bmp);
             }
         }
 

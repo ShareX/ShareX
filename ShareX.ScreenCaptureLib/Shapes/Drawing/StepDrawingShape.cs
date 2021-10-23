@@ -75,6 +75,7 @@ namespace ShareX.ScreenCaptureLib
             Rectangle = new Rectangle(new Point(pos.X - (Rectangle.Width / 2), pos.Y - (Rectangle.Height / 2)), Rectangle.Size);
             int tailOffset = 5;
             TailPosition = Rectangle.Location.Add(Rectangle.Width + tailOffset, Rectangle.Height + tailOffset);
+            OnCreated();
         }
 
         protected override void UseLightResizeNodes()

@@ -394,8 +394,9 @@ namespace ShareX.ScreenCaptureLib
             ShapeCreated?.Invoke(shape);
         }
 
-        private void OnImageModified()
+        internal void OnImageModified()
         {
+            OrderStepShapes();
             IsImageModified = true;
 
             ImageModified?.Invoke();
@@ -910,8 +911,6 @@ namespace ShareX.ScreenCaptureLib
 
         public void Update()
         {
-            OrderStepShapes();
-
             BaseShape shape = CurrentShape;
 
             if (shape != null)
@@ -1110,11 +1109,6 @@ namespace ShareX.ScreenCaptureLib
         {
             Shapes.Add(shape);
             CurrentShape = shape;
-
-            if (shape.ShapeCategory == ShapeCategory.Drawing || shape.ShapeCategory == ShapeCategory.Effect)
-            {
-                OnImageModified();
-            }
         }
 
         private BaseShape CreateShape()
