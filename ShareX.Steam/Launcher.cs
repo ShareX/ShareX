@@ -34,16 +34,15 @@ namespace ShareX.Steam
 {
     public static class Launcher
     {
-        private static string ContentFolderPath => Helpers.GetAbsolutePath("ShareX");
-        private static string ContentExecutablePath => Path.Combine(ContentFolderPath, "ShareX.exe");
-        private static string ContentSteamFilePath => Path.Combine(ContentFolderPath, "Steam");
-        private static string UpdateFolderPath => Helpers.GetAbsolutePath("Updates");
-        private static string UpdateExecutablePath => Path.Combine(UpdateFolderPath, "ShareX.exe");
-        private static string UpdatingTempFilePath => Path.Combine(ContentFolderPath, "Updating");
+        private static string ContentFolderPath = GetContentFolderPath();
+        private static string ContentExecutablePath = Path.Combine(ContentFolderPath, "ShareX.exe");
+        private static string ContentSteamFilePath = Path.Combine(ContentFolderPath, "Steam");
+        private static string UpdatingTempFilePath = Path.Combine(ContentFolderPath, "Updating");
 
-        private static bool IsFirstTimeRunning { get; set; }
-        private static bool IsStartupRun { get; set; }
-        private static bool ShowInApp => File.Exists(ContentSteamFilePath);
+        private static string UpdateFolderPath = Helpers.GetAbsolutePath("Updates");
+        private static string UpdateExecutablePath = Path.Combine(UpdateFolderPath, "ShareX.exe");
+
+        private static bool IsFirstTimeRunning, IsStartupRun, ShowInApp;
 
         public static void Run(string[] args)
         {
@@ -58,6 +57,12 @@ namespace ShareX.Steam
             bool isSteamInit = false;
 
             IsStartupRun = Helpers.IsCommandExist(args, "-silent");
+
+#if DEBUG
+            ShowInApp = true;
+#else
+            ShowInApp = File.Exists(ContentSteamFilePath);
+#endif
 
             if (!IsShareXRunning())
             {
@@ -118,6 +123,20 @@ namespace ShareX.Steam
             }
         }
 
+        private static string GetContentFolderPath()
+        {
+#if DEBUG
+            string path = Helpers.GetAbsolutePath(@"..\..\..\ShareX\bin\Debug");
+
+            if (Directory.Exists(path))
+            {
+                return path;
+            }
+#endif
+
+            return Helpers.GetAbsolutePath("ShareX");
+        }
+
         private static bool IsShareXRunning()
         {
             // Check ShareX mutex
@@ -128,8 +147,14 @@ namespace ShareX.Steam
         {
             try
             {
+                // Update not exists?
+                if (!File.Exists(UpdateExecutablePath))
+                {
+                    return false;
+                }
+
                 // First time running?
-                if (!Directory.Exists(ContentFolderPath) || !File.Exists(ContentExecutablePath))
+                if (!File.Exists(ContentExecutablePath))
                 {
                     IsFirstTimeRunning = true;
                     return true;
