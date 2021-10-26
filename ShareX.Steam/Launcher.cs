@@ -42,7 +42,7 @@ namespace ShareX.Steam
         private static string UpdateFolderPath = Helpers.GetAbsolutePath("Updates");
         private static string UpdateExecutablePath = Path.Combine(UpdateFolderPath, "ShareX.exe");
 
-        private static bool IsFirstTimeRunning, IsStartupRun, ShowInApp;
+        private static bool IsFirstTimeRunning, IsStartupRun, ShowInApp, IsSteamInit;
 
         public static void Run(string[] args)
         {
@@ -54,8 +54,6 @@ namespace ShareX.Steam
                 return;
             }
 
-            bool isSteamInit = false;
-
             IsStartupRun = Helpers.IsCommandExist(args, "-silent");
 
 #if DEBUG
@@ -66,7 +64,7 @@ namespace ShareX.Steam
 
             if (!IsShareXRunning())
             {
-                // If running on startup and need to show "In-app" then wait until Steam is open
+                // If running on startup and need to show "In-app" then wait for Steam to run.
                 if (IsStartupRun && ShowInApp)
                 {
                     for (int i = 0; i < 30 && !SteamAPI.IsSteamRunning(); i++)
@@ -77,7 +75,18 @@ namespace ShareX.Steam
 
                 if (SteamAPI.IsSteamRunning())
                 {
-                    isSteamInit = SteamAPI.Init();
+                    // Even "IsSteamRunning" is true still Steam API init can fail, therefore need to give more time for Steam to launch.
+                    for (int i = 0; i < 10; i++)
+                    {
+                        IsSteamInit = SteamAPI.Init();
+
+                        if (IsSteamInit)
+                        {
+                            break;
+                        }
+
+                        Thread.Sleep(1000);
+                    }
                 }
 
                 if (IsUpdateRequired())
@@ -85,7 +94,7 @@ namespace ShareX.Steam
                     DoUpdate();
                 }
 
-                if (isSteamInit)
+                if (IsSteamInit)
                 {
                     SteamAPI.Shutdown();
                 }
@@ -97,22 +106,21 @@ namespace ShareX.Steam
 
                 if (IsFirstTimeRunning)
                 {
-                    // Show first time config window
+                    // Show first time config window.
                     arguments = "-SteamConfig";
                 }
                 else if (IsStartupRun)
                 {
-                    // Don't show ShareX main window
+                    // Don't show ShareX main window.
                     arguments = "-silent";
                 }
 
                 RunShareX(arguments);
 
-                if (isSteamInit)
+                if (IsSteamInit)
                 {
-                    // Reason for this workaround because Steam only allows writing review if you played game at least 5 minutes
-                    // So launcher will stay on for 10 seconds and eventually users can reach 5 minutes that way (It will require 30 times opening)
-                    // Otherwise nobody can write review
+                    // Reason for this workaround is because Steam only allows writing review if user is played the game at least 5 minutes.
+                    // For this reason ShareX launcher will stay on for at least 10 seconds to let users eventually reach 5 minutes play time.
                     int waitTime = 10000 - (int)startTimer.ElapsedMilliseconds;
 
                     if (waitTime > 0)
@@ -139,7 +147,7 @@ namespace ShareX.Steam
 
         private static bool IsShareXRunning()
         {
-            // Check ShareX mutex
+            // Check ShareX mutex.
             return Helpers.IsRunning("82E6AC09-0FEF-4390-AD9F-0DD3F5561EFC");
         }
 
@@ -189,7 +197,7 @@ namespace ShareX.Steam
                     Directory.CreateDirectory(ContentFolderPath);
                 }
 
-                // In case updating terminate middle of it, in next Launcher start it can repair
+                // In case updating process terminate middle of it, allow launcher to repair ShareX.
                 Helpers.CreateEmptyFile(UpdatingTempFilePath);
                 Helpers.CopyAll(UpdateFolderPath, ContentFolderPath);
                 File.Delete(UpdatingTempFilePath);
@@ -228,10 +236,10 @@ namespace ShareX.Steam
                 {
                     try
                     {
-                        // Workaround for don't show "In-app"
+                        // Workaround to don't show "In-app".
                         uint result = Helpers.WinExec($"\"{ContentExecutablePath}\" {arguments}", 5);
 
-                        // If the function succeeds, the return value is greater than 31
+                        // If the function succeeds, the return value is greater than 31.
                         if (result > 31)
                         {
                             return;
@@ -241,7 +249,7 @@ namespace ShareX.Steam
                     {
                     }
 
-                    // Workaround 2
+                    // Workaround 2.
                     string path = Path.Combine(Environment.SystemDirectory, "cmd.exe");
 
                     if (!File.Exists(path))
