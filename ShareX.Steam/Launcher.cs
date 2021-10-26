@@ -43,11 +43,10 @@ namespace ShareX.Steam
         private static string UpdateExecutablePath = Path.Combine(UpdateFolderPath, "ShareX.exe");
 
         private static bool IsFirstTimeRunning, IsStartupRun, ShowInApp, IsSteamInit;
+        private static Stopwatch SteamInitStopwatch;
 
         public static void Run(string[] args)
         {
-            Stopwatch startTimer = Stopwatch.StartNew();
-
             if (Helpers.IsCommandExist(args, "-uninstall"))
             {
                 UninstallShareX();
@@ -82,6 +81,7 @@ namespace ShareX.Steam
 
                         if (IsSteamInit)
                         {
+                            SteamInitStopwatch = Stopwatch.StartNew();
                             break;
                         }
 
@@ -91,7 +91,7 @@ namespace ShareX.Steam
 
                 if (IsUpdateRequired())
                 {
-                    DoUpdate();
+                    UpdateShareX();
                 }
 
                 if (IsSteamInit)
@@ -121,7 +121,12 @@ namespace ShareX.Steam
                 {
                     // Reason for this workaround is because Steam only allows writing review if user is played the game at least 5 minutes.
                     // For this reason ShareX launcher will stay on for at least 10 seconds to let users eventually reach 5 minutes play time.
-                    int waitTime = 10000 - (int)startTimer.ElapsedMilliseconds;
+                    int waitTime = 10000;
+
+                    if (SteamInitStopwatch != null)
+                    {
+                        waitTime -= (int)SteamInitStopwatch.ElapsedMilliseconds;
+                    }
 
                     if (waitTime > 0)
                     {
@@ -188,7 +193,7 @@ namespace ShareX.Steam
             return false;
         }
 
-        private static void DoUpdate()
+        private static void UpdateShareX()
         {
             try
             {
