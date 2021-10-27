@@ -317,6 +317,7 @@ namespace ShareX.UploadersLib
             this.txtMegaPassword = new System.Windows.Forms.TextBox();
             this.lblMegaPassword = new System.Windows.Forms.Label();
             this.tpOwnCloud = new System.Windows.Forms.TabPage();
+            this.cbOwnCloudAnimationFriendlyLinks = new System.Windows.Forms.CheckBox();
             this.txtOwnCloudExpiryTime = new System.Windows.Forms.NumericUpDown();
             this.cbOwnCloudAutoExpire = new System.Windows.Forms.CheckBox();
             this.lblOwnCloudExpiryTime = new System.Windows.Forms.Label();
@@ -626,7 +627,6 @@ namespace ShareX.UploadersLib
             this.txtVgymeUserKey = new System.Windows.Forms.TextBox();
             this.lvlVgymeUserKey = new System.Windows.Forms.Label();
             this.tcUploaders = new System.Windows.Forms.TabControl();
-            this.cbOwnCloudAnimationFriendlyLinks = new System.Windows.Forms.CheckBox();
             this.tttvMain = new ShareX.HelpersLib.TabToTreeView();
             this.actRapidShareAccountType = new ShareX.UploadersLib.AccountTypeControl();
             this.tpOtherUploaders.SuspendLayout();
@@ -2663,6 +2663,14 @@ namespace ShareX.UploadersLib
             this.tpOwnCloud.Controls.Add(this.lblOwnCloudHost);
             resources.ApplyResources(this.tpOwnCloud, "tpOwnCloud");
             this.tpOwnCloud.Name = "tpOwnCloud";
+            // 
+            // cbOwnCloudAnimationFriendlyLinks
+            // 
+            resources.ApplyResources(this.cbOwnCloudAnimationFriendlyLinks, "cbOwnCloudAnimationFriendlyLinks");
+            this.cbOwnCloudAnimationFriendlyLinks.Name = "cbOwnCloudAnimationFriendlyLinks";
+            this.cbOwnCloudAnimationFriendlyLinks.UseMnemonic = false;
+            this.cbOwnCloudAnimationFriendlyLinks.UseVisualStyleBackColor = true;
+            this.cbOwnCloudAnimationFriendlyLinks.CheckedChanged += new System.EventHandler(this.cbOwnCloudAnimationFriendlyLinks_CheckedChanged);
             // 
             // txtOwnCloudExpiryTime
             // 
@@ -4916,14 +4924,6 @@ namespace ShareX.UploadersLib
             resources.ApplyResources(this.tcUploaders, "tcUploaders");
             this.tcUploaders.Name = "tcUploaders";
             this.tcUploaders.SelectedIndex = 0;
-            // 
-            // cbOwnCloudAnimationFriendlyLinks
-            // 
-            resources.ApplyResources(this.cbOwnCloudAnimationFriendlyLinks, "cbOwnCloudAnimationFriendlyLinks");
-            this.cbOwnCloudAnimationFriendlyLinks.Name = "cbOwnCloudAnimationFriendlyLinks";
-            this.cbOwnCloudAnimationFriendlyLinks.UseMnemonic = false;
-            this.cbOwnCloudAnimationFriendlyLinks.UseVisualStyleBackColor = true;
-            this.cbOwnCloudAnimationFriendlyLinks.CheckedChanged += new System.EventHandler(this.cbOwnCloudAnimationFriendlyLinks_CheckedChanged);
             // 
             // tttvMain
             // 

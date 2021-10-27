@@ -123,7 +123,7 @@ namespace ShareX.UploadersLib.FileUploaders
                 if (CreateShare)
                 {
                     AllowReportProgress = false;
-                    result.URL = ShareFile(path);
+                    result.URL = ShareFile(path, fileName);
                 }
                 else
                 {
@@ -135,7 +135,7 @@ namespace ShareX.UploadersLib.FileUploaders
         }
 
         // https://doc.owncloud.org/server/10.0/developer_manual/core/ocs-share-api.html#create-a-new-share
-        public string ShareFile(string path)
+        public string ShareFile(string path, string fileName)
         {
             Dictionary<string, string> args = new Dictionary<string, string>();
             args.Add("path", path); // path to the file/folder which should be shared
@@ -183,14 +183,28 @@ namespace ShareX.UploadersLib.FileUploaders
                     {
                         OwnCloudShareResponseData data = ((JObject)result.ocs.data).ToObject<OwnCloudShareResponseData>();
                         string link = data.url;
+
                         if (PreviewLink && Helpers.IsImageFile(path))
                         {
                             link += "/preview";
                         }
                         else if (DirectLink)
                         {
-                            link += (IsCompatibility81 ? "/" : "&") + "download" + (AnimationEnabled ? "/" + System.IO.Path.GetFileName(path) : "");
+                            if (IsCompatibility81)
+                            {
+                                link += "/download";
+                            }
+                            else
+                            {
+                                link += "&download";
+                            }
+
+                            if (AnimationEnabled)
+                            {
+                                link = URLHelpers.CombineURL(link, URLHelpers.URLEncode(fileName));
+                            }
                         }
+
                         return link;
                     }
                     else
