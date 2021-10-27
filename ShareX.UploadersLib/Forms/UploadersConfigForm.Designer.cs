@@ -626,6 +626,7 @@ namespace ShareX.UploadersLib
             this.txtVgymeUserKey = new System.Windows.Forms.TextBox();
             this.lvlVgymeUserKey = new System.Windows.Forms.Label();
             this.tcUploaders = new System.Windows.Forms.TabControl();
+            this.cbOwnCloudAnimationFriendlyLinks = new System.Windows.Forms.CheckBox();
             this.tttvMain = new ShareX.HelpersLib.TabToTreeView();
             this.actRapidShareAccountType = new ShareX.UploadersLib.AccountTypeControl();
             this.tpOtherUploaders.SuspendLayout();
@@ -2643,6 +2644,7 @@ namespace ShareX.UploadersLib
             // tpOwnCloud
             // 
             this.tpOwnCloud.BackColor = System.Drawing.SystemColors.Window;
+            this.tpOwnCloud.Controls.Add(this.cbOwnCloudAnimationFriendlyLinks);
             this.tpOwnCloud.Controls.Add(this.txtOwnCloudExpiryTime);
             this.tpOwnCloud.Controls.Add(this.cbOwnCloudAutoExpire);
             this.tpOwnCloud.Controls.Add(this.lblOwnCloudExpiryTime);
@@ -4915,6 +4917,14 @@ namespace ShareX.UploadersLib
             this.tcUploaders.Name = "tcUploaders";
             this.tcUploaders.SelectedIndex = 0;
             // 
+            // cbOwnCloudAnimationFriendlyLinks
+            // 
+            resources.ApplyResources(this.cbOwnCloudAnimationFriendlyLinks, "cbOwnCloudAnimationFriendlyLinks");
+            this.cbOwnCloudAnimationFriendlyLinks.Name = "cbOwnCloudAnimationFriendlyLinks";
+            this.cbOwnCloudAnimationFriendlyLinks.UseMnemonic = false;
+            this.cbOwnCloudAnimationFriendlyLinks.UseVisualStyleBackColor = true;
+            this.cbOwnCloudAnimationFriendlyLinks.CheckedChanged += new System.EventHandler(this.cbOwnCloudAnimationFriendlyLinks_CheckedChanged);
+            // 
             // tttvMain
             // 
             this.tttvMain.AutoSelectChild = true;
@@ -5671,5 +5681,6 @@ namespace ShareX.UploadersLib
         private System.Windows.Forms.TextBox txtZWSURL;
         private System.Windows.Forms.Label lblZWSToken;
         private System.Windows.Forms.Label lblZWSURL;
+        private System.Windows.Forms.CheckBox cbOwnCloudAnimationFriendlyLinks;
     }
 }

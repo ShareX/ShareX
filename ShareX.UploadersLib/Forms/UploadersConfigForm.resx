@@ -6955,6 +6955,36 @@ For example, if your bucket is called "bucket.example.com" then URL will be "htt
   <data name="&gt;&gt;tpMega.ZOrder" xml:space="preserve">
     <value>11</value>
   </data>
+  <data name="cbOwnCloudAnimationFriendlyLinks.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbOwnCloudAnimationFriendlyLinks.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="cbOwnCloudAnimationFriendlyLinks.Location" type="System.Drawing.Point, System.Drawing">
+    <value>95, 287</value>
+  </data>
+  <data name="cbOwnCloudAnimationFriendlyLinks.Size" type="System.Drawing.Size, System.Drawing">
+    <value>139, 17</value>
+  </data>
+  <data name="cbOwnCloudAnimationFriendlyLinks.TabIndex" type="System.Int32, mscorlib">
+    <value>21</value>
+  </data>
+  <data name="cbOwnCloudAnimationFriendlyLinks.Text" xml:space="preserve">
+    <value>Animation Friendly Links</value>
+  </data>
+  <data name="&gt;&gt;cbOwnCloudAnimationFriendlyLinks.Name" xml:space="preserve">
+    <value>cbOwnCloudAnimationFriendlyLinks</value>
+  </data>
+  <data name="&gt;&gt;cbOwnCloudAnimationFriendlyLinks.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbOwnCloudAnimationFriendlyLinks.Parent" xml:space="preserve">
+    <value>tpOwnCloud</value>
+  </data>
+  <data name="&gt;&gt;cbOwnCloudAnimationFriendlyLinks.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="txtOwnCloudExpiryTime.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 224</value>
   </data>
