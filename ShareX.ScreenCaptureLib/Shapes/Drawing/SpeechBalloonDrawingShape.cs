@@ -57,9 +57,9 @@ namespace ShareX.ScreenCaptureLib
 
         public override void OnCreated()
         {
-            base.OnCreated();
-
+            AutoSize(true);
             TailPosition = Rectangle.Location.Add(0, Rectangle.Height + 30);
+            OnCreated(false);
         }
 
         protected override void UseLightResizeNodes()
