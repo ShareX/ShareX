@@ -36,8 +36,8 @@
             this.btnStartOCR = new System.Windows.Forms.Button();
             this.pbProgress = new System.Windows.Forms.ProgressBar();
             this.btnOpenInBrowser = new System.Windows.Forms.Button();
-            this.cbDefaultTLSite = new System.Windows.Forms.ComboBox();
-            this.lblTranslatorSite = new System.Windows.Forms.Label();
+            this.cbDefaultSite = new System.Windows.Forms.ComboBox();
+            this.lblExternalSite = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // cbLanguages
@@ -84,25 +84,25 @@
             this.btnOpenInBrowser.UseVisualStyleBackColor = true;
             this.btnOpenInBrowser.Click += new System.EventHandler(this.btnOpenInBrowser_Click);
             // 
-            // cbDefaultTLSite
+            // cbDefaultSite
             // 
-            this.cbDefaultTLSite.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbDefaultTLSite.FormattingEnabled = true;
-            resources.ApplyResources(this.cbDefaultTLSite, "cbDefaultTLSite");
-            this.cbDefaultTLSite.Name = "cbDefaultTLSite";
-            this.cbDefaultTLSite.SelectedIndexChanged += new System.EventHandler(this.cbDefaultTLSite_SelectedIndexChanged);
+            this.cbDefaultSite.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbDefaultSite.FormattingEnabled = true;
+            resources.ApplyResources(this.cbDefaultSite, "cbDefaultSite");
+            this.cbDefaultSite.Name = "cbDefaultSite";
+            this.cbDefaultSite.SelectedIndexChanged += new System.EventHandler(this.cbDefaultSite_SelectedIndexChanged);
             // 
-            // lblTranslatorSite
+            // lblExternalSite
             // 
-            resources.ApplyResources(this.lblTranslatorSite, "lblTranslatorSite");
-            this.lblTranslatorSite.Name = "lblTranslatorSite";
+            resources.ApplyResources(this.lblExternalSite, "lblExternalSite");
+            this.lblExternalSite.Name = "lblExternalSite";
             // 
             // OCRSpaceForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.Controls.Add(this.lblTranslatorSite);
-            this.Controls.Add(this.cbDefaultTLSite);
+            this.Controls.Add(this.lblExternalSite);
+            this.Controls.Add(this.cbDefaultSite);
             this.Controls.Add(this.btnOpenInBrowser);
             this.Controls.Add(this.lblResult);
             this.Controls.Add(this.txtResult);
@@ -127,7 +127,7 @@
         private System.Windows.Forms.Button btnStartOCR;
         private System.Windows.Forms.ProgressBar pbProgress;
         private System.Windows.Forms.Button btnOpenInBrowser;
-        private System.Windows.Forms.ComboBox cbDefaultTLSite;
-        private System.Windows.Forms.Label lblTranslatorSite;
+        private System.Windows.Forms.ComboBox cbDefaultSite;
+        private System.Windows.Forms.Label lblExternalSite;
     }
 }

@@ -34,12 +34,20 @@ using System.Windows.Forms;
 
 namespace ShareX.UploadersLib
 {
-    public enum OCRSpaceTranslatorSites
+    public enum OCRSpaceSites
     {
         [Description("Google Translate")]
-        Google,
+        GoogleTranslate,
         [Description("DeepL Translate")]
-        DeepL
+        DeepL,
+        [Description("Jisho")]
+        Jisho,
+        [Description("ichi.moe")]
+        Ichi,
+        [Description("Google")]
+        Google,
+        [Description("ekşi sözlük")]
+        Eksisozluk,
     }
 
     public partial class OCRSpaceForm : Form
@@ -51,11 +59,15 @@ namespace ShareX.UploadersLib
         private OCROptions ocrOptions;
         private OCRSpaceLanguages Language { get; set; }
 
-        private Dictionary<OCRSpaceTranslatorSites, string> TranslatorSiteLinks =
-            new Dictionary<OCRSpaceTranslatorSites, string>()
+        private Dictionary<OCRSpaceSites, string> SiteLinks =
+            new Dictionary<OCRSpaceSites, string>()
             {
-                { OCRSpaceTranslatorSites.Google, "https://translate.google.com/#auto/en/" },
-                { OCRSpaceTranslatorSites.DeepL, "https://www.deepl.com/translator#auto/en/" }
+                { OCRSpaceSites.GoogleTranslate, "https://translate.google.com/#auto/en/" },
+                { OCRSpaceSites.DeepL, "https://www.deepl.com/translator#auto/en/" },
+                { OCRSpaceSites.Jisho, "https://jisho.org/search/" },
+                { OCRSpaceSites.Ichi, "https://ichi.moe/cl/qr/?q=" },
+                { OCRSpaceSites.Google, "https://www.google.com/search?q=" },
+                { OCRSpaceSites.Eksisozluk, "https://eksisozluk.com/?q=" }
             };
 
         public OCRSpaceForm(OCROptions ocrOptions)
@@ -67,8 +79,8 @@ namespace ShareX.UploadersLib
             cbLanguages.Items.AddRange(Helpers.GetEnumDescriptions<OCRSpaceLanguages>());
             cbLanguages.SelectedIndex = (int)ocrOptions.DefaultLanguage;
 
-            cbDefaultTLSite.Items.AddRange(Helpers.GetEnumDescriptions<OCRSpaceTranslatorSites>());
-            cbDefaultTLSite.SelectedIndex = (int)ocrOptions.DefaultTranslatorSite;
+            cbDefaultSite.Items.AddRange(Helpers.GetEnumDescriptions<OCRSpaceSites>());
+            cbDefaultSite.SelectedIndex = (int)ocrOptions.DefaultSite;
 
             Language = ocrOptions.DefaultLanguage;
             txtResult.SupportSelectAll();
@@ -106,7 +118,7 @@ namespace ShareX.UploadersLib
         {
             if (stream != null && stream.Length > 0 && !string.IsNullOrEmpty(fileName))
             {
-                cbLanguages.Enabled = btnStartOCR.Enabled = txtResult.Enabled = btnOpenInBrowser.Enabled = false;
+                cbLanguages.Enabled = btnStartOCR.Enabled = txtResult.Enabled = btnOpenInBrowser.Enabled = cbDefaultSite.Enabled = false;
                 pbProgress.Visible = true;
 
                 Result = await OCRSpace.DoOCRAsync(Language, stream, fileName);
@@ -119,7 +131,7 @@ namespace ShareX.UploadersLib
                 if (!IsDisposed)
                 {
                     UpdateControls();
-                    cbLanguages.Enabled = btnStartOCR.Enabled = txtResult.Enabled = btnOpenInBrowser.Enabled = true;
+                    cbLanguages.Enabled = btnStartOCR.Enabled = txtResult.Enabled = btnOpenInBrowser.Enabled = cbDefaultSite.Enabled = true;
                     pbProgress.Visible = false;
                     txtResult.Focus();
                 }
@@ -138,14 +150,14 @@ namespace ShareX.UploadersLib
 
         private void btnOpenInBrowser_Click(object sender, EventArgs e)
         {
-            URLHelpers.OpenURL(TranslatorSiteLinks[ocrOptions.DefaultTranslatorSite] + Uri.EscapeDataString(txtResult.Text));
+            URLHelpers.OpenURL(SiteLinks[ocrOptions.DefaultSite] + Uri.EscapeDataString(txtResult.Text));
             Close();
         }
 
-        private void cbDefaultTLSite_SelectedIndexChanged(object sender, EventArgs e)
+        private void cbDefaultSite_SelectedIndexChanged(object sender, EventArgs e)
         {
             // This doesn't work
-            ocrOptions.DefaultTranslatorSite = (OCRSpaceTranslatorSites)cbDefaultTLSite.SelectedIndex;
+            ocrOptions.DefaultSite = (OCRSpaceSites)cbDefaultSite.SelectedIndex;
         }
     }
 }

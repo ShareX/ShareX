@@ -321,55 +321,55 @@
   <data name="&gt;&gt;btnOpenInBrowser.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="cbDefaultTLSite.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="cbDefaultSite.Location" type="System.Drawing.Point, System.Drawing">
     <value>371, 30</value>
   </data>
-  <data name="cbDefaultTLSite.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="cbDefaultSite.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 4, 4, 4</value>
   </data>
-  <data name="cbDefaultTLSite.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="cbDefaultSite.Size" type="System.Drawing.Size, System.Drawing">
     <value>169, 24</value>
   </data>
-  <data name="cbDefaultTLSite.TabIndex" type="System.Int32, mscorlib">
+  <data name="cbDefaultSite.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
   </data>
-  <data name="&gt;&gt;cbDefaultTLSite.Name" xml:space="preserve">
-    <value>cbDefaultTLSite</value>
+  <data name="&gt;&gt;cbDefaultSite.Name" xml:space="preserve">
+    <value>cbDefaultSite</value>
   </data>
-  <data name="&gt;&gt;cbDefaultTLSite.Type" xml:space="preserve">
+  <data name="&gt;&gt;cbDefaultSite.Type" xml:space="preserve">
     <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;cbDefaultTLSite.Parent" xml:space="preserve">
+  <data name="&gt;&gt;cbDefaultSite.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;cbDefaultTLSite.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;cbDefaultSite.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="lblTranslatorSite.AutoSize" type="System.Boolean, mscorlib">
+  <data name="lblExternalSite.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="lblTranslatorSite.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="lblExternalSite.Location" type="System.Drawing.Point, System.Drawing">
     <value>370, 10</value>
   </data>
-  <data name="lblTranslatorSite.Size" type="System.Drawing.Size, System.Drawing">
-    <value>103, 17</value>
+  <data name="lblExternalSite.Size" type="System.Drawing.Size, System.Drawing">
+    <value>89, 17</value>
   </data>
-  <data name="lblTranslatorSite.TabIndex" type="System.Int32, mscorlib">
+  <data name="lblExternalSite.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
   </data>
-  <data name="lblTranslatorSite.Text" xml:space="preserve">
-    <value>Translator site:</value>
+  <data name="lblExternalSite.Text" xml:space="preserve">
+    <value>External site:</value>
   </data>
-  <data name="&gt;&gt;lblTranslatorSite.Name" xml:space="preserve">
-    <value>lblTranslatorSite</value>
+  <data name="&gt;&gt;lblExternalSite.Name" xml:space="preserve">
+    <value>lblExternalSite</value>
   </data>
-  <data name="&gt;&gt;lblTranslatorSite.Type" xml:space="preserve">
+  <data name="&gt;&gt;lblExternalSite.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;lblTranslatorSite.Parent" xml:space="preserve">
+  <data name="&gt;&gt;lblExternalSite.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;lblTranslatorSite.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;lblExternalSite.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
