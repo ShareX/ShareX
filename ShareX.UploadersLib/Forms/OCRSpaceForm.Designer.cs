@@ -35,7 +35,9 @@
             this.lblResult = new System.Windows.Forms.Label();
             this.btnStartOCR = new System.Windows.Forms.Button();
             this.pbProgress = new System.Windows.Forms.ProgressBar();
-            this.llGoogleTranslate = new System.Windows.Forms.LinkLabel();
+            this.btnOpenInBrowser = new System.Windows.Forms.Button();
+            this.cbDefaultSite = new System.Windows.Forms.ComboBox();
+            this.lblExternalSite = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // cbLanguages
@@ -75,19 +77,33 @@
             this.pbProgress.Name = "pbProgress";
             this.pbProgress.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
             // 
-            // llGoogleTranslate
+            // btnOpenInBrowser
             // 
-            resources.ApplyResources(this.llGoogleTranslate, "llGoogleTranslate");
-            this.llGoogleTranslate.Name = "llGoogleTranslate";
-            this.llGoogleTranslate.TabStop = true;
-            this.llGoogleTranslate.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llGoogleTranslate_LinkClicked);
+            resources.ApplyResources(this.btnOpenInBrowser, "btnOpenInBrowser");
+            this.btnOpenInBrowser.Name = "btnOpenInBrowser";
+            this.btnOpenInBrowser.UseVisualStyleBackColor = true;
+            this.btnOpenInBrowser.Click += new System.EventHandler(this.btnOpenInBrowser_Click);
+            // 
+            // cbDefaultSite
+            // 
+            this.cbDefaultSite.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbDefaultSite.FormattingEnabled = true;
+            resources.ApplyResources(this.cbDefaultSite, "cbDefaultSite");
+            this.cbDefaultSite.Name = "cbDefaultSite";
+            this.cbDefaultSite.SelectedIndexChanged += new System.EventHandler(this.cbDefaultSite_SelectedIndexChanged);
+            // 
+            // lblExternalSite
+            // 
+            resources.ApplyResources(this.lblExternalSite, "lblExternalSite");
+            this.lblExternalSite.Name = "lblExternalSite";
             // 
             // OCRSpaceForm
             // 
             resources.ApplyResources(this, "$this");
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.Controls.Add(this.llGoogleTranslate);
+            this.Controls.Add(this.lblExternalSite);
+            this.Controls.Add(this.cbDefaultSite);
+            this.Controls.Add(this.btnOpenInBrowser);
             this.Controls.Add(this.lblResult);
             this.Controls.Add(this.txtResult);
             this.Controls.Add(this.lblLanguage);
@@ -110,6 +126,8 @@
         private System.Windows.Forms.Label lblResult;
         private System.Windows.Forms.Button btnStartOCR;
         private System.Windows.Forms.ProgressBar pbProgress;
-        private System.Windows.Forms.LinkLabel llGoogleTranslate;
+        private System.Windows.Forms.Button btnOpenInBrowser;
+        private System.Windows.Forms.ComboBox cbDefaultSite;
+        private System.Windows.Forms.Label lblExternalSite;
     }
 }
