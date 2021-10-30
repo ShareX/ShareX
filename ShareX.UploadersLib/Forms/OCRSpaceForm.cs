@@ -45,9 +45,7 @@ namespace ShareX.UploadersLib
         [Description("ichi.moe")]
         Ichi,
         [Description("Google")]
-        Google,
-        [Description("ekşi sözlük")]
-        Eksisozluk,
+        Google
     }
 
     public partial class OCRSpaceForm : Form
@@ -66,8 +64,7 @@ namespace ShareX.UploadersLib
                 { OCRSpaceSites.DeepL, "https://www.deepl.com/translator#auto/en/" },
                 { OCRSpaceSites.Jisho, "https://jisho.org/search/" },
                 { OCRSpaceSites.Ichi, "https://ichi.moe/cl/qr/?q=" },
-                { OCRSpaceSites.Google, "https://www.google.com/search?q=" },
-                { OCRSpaceSites.Eksisozluk, "https://eksisozluk.com/?q=" }
+                { OCRSpaceSites.Google, "https://www.google.com/search?q=" }
             };
 
         public OCRSpaceForm(OCROptions ocrOptions)
