@@ -64,6 +64,7 @@ namespace ShareX.ScreenCaptureLib
         {
             if (drawCache && isEffectCaching)
             {
+                // TODO: Translate
                 OnDrawOverlay(g, "Processing...");
             }
             else if (drawCache && cachedEffect != null)

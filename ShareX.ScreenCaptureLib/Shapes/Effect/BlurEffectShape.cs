@@ -32,7 +32,8 @@ namespace ShareX.ScreenCaptureLib
     {
         public override ShapeType ShapeType { get; } = ShapeType.EffectBlur;
 
-        public override string OverlayText => $"Blur [{BlurRadius}]";
+        // TODO: Translate
+        public override string OverlayText => "Blur" + $" [{BlurRadius}]";
 
         public int BlurRadius { get; set; }
 

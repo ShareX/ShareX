@@ -32,6 +32,7 @@ namespace ShareX.ScreenCaptureLib
     {
         public override ShapeType ShapeType { get; } = ShapeType.EffectHighlight;
 
+        // TODO: Translate
         public override string OverlayText => "Highlight";
 
         public Color HighlightColor { get; set; }

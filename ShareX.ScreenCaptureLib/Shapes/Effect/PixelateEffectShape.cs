@@ -32,7 +32,8 @@ namespace ShareX.ScreenCaptureLib
     {
         public override ShapeType ShapeType { get; } = ShapeType.EffectPixelate;
 
-        public override string OverlayText => $"Pixelate [{PixelSize}]";
+        // TODO: Translate
+        public override string OverlayText => "Pixelate" + $" [{PixelSize}]";
 
         public int PixelSize { get; set; }
 

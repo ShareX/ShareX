@@ -30,6 +30,7 @@ namespace ShareX
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BorderlessWindowForm));
             this.lblWindowTitle = new System.Windows.Forms.Label();
             this.txtWindowTitle = new System.Windows.Forms.TextBox();
             this.btnMakeWindowBorderless = new System.Windows.Forms.Button();
@@ -40,68 +41,47 @@ namespace ShareX
             // 
             // lblWindowTitle
             // 
-            this.lblWindowTitle.AutoSize = true;
-            this.lblWindowTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWindowTitle.Location = new System.Drawing.Point(13, 56);
+            resources.ApplyResources(this.lblWindowTitle, "lblWindowTitle");
             this.lblWindowTitle.Name = "lblWindowTitle";
-            this.lblWindowTitle.Size = new System.Drawing.Size(82, 16);
-            this.lblWindowTitle.TabIndex = 1;
-            this.lblWindowTitle.Text = "Window title:";
             // 
             // txtWindowTitle
             // 
-            this.txtWindowTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtWindowTitle.Location = new System.Drawing.Point(16, 80);
+            resources.ApplyResources(this.txtWindowTitle, "txtWindowTitle");
             this.txtWindowTitle.Name = "txtWindowTitle";
-            this.txtWindowTitle.Size = new System.Drawing.Size(296, 22);
-            this.txtWindowTitle.TabIndex = 2;
             this.txtWindowTitle.TextChanged += new System.EventHandler(this.txtWindowTitle_TextChanged);
             // 
             // btnMakeWindowBorderless
             // 
-            this.btnMakeWindowBorderless.Enabled = false;
-            this.btnMakeWindowBorderless.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMakeWindowBorderless.Location = new System.Drawing.Point(16, 112);
+            resources.ApplyResources(this.btnMakeWindowBorderless, "btnMakeWindowBorderless");
             this.btnMakeWindowBorderless.Name = "btnMakeWindowBorderless";
-            this.btnMakeWindowBorderless.Size = new System.Drawing.Size(256, 32);
-            this.btnMakeWindowBorderless.TabIndex = 3;
-            this.btnMakeWindowBorderless.Text = "Make window borderless";
             this.btnMakeWindowBorderless.UseVisualStyleBackColor = true;
             this.btnMakeWindowBorderless.Click += new System.EventHandler(this.btnMakeWindowBorderless_Click);
             // 
             // btnSettings
             // 
-            this.btnSettings.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            resources.ApplyResources(this.btnSettings, "btnSettings");
             this.btnSettings.Image = global::ShareX.Properties.Resources.gear;
-            this.btnSettings.Location = new System.Drawing.Point(280, 112);
             this.btnSettings.Name = "btnSettings";
-            this.btnSettings.Size = new System.Drawing.Size(32, 32);
-            this.btnSettings.TabIndex = 4;
             this.btnSettings.UseVisualStyleBackColor = true;
             this.btnSettings.Click += new System.EventHandler(this.btnSettings_Click);
             // 
             // cmsWindowList
             // 
             this.cmsWindowList.Name = "cmsWindowList";
-            this.cmsWindowList.Size = new System.Drawing.Size(61, 4);
+            resources.ApplyResources(this.cmsWindowList, "cmsWindowList");
             // 
             // mbWindowList
             // 
-            this.mbWindowList.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mbWindowList.Location = new System.Drawing.Point(16, 16);
+            resources.ApplyResources(this.mbWindowList, "mbWindowList");
             this.mbWindowList.Menu = this.cmsWindowList;
             this.mbWindowList.Name = "mbWindowList";
-            this.mbWindowList.Size = new System.Drawing.Size(296, 32);
-            this.mbWindowList.TabIndex = 0;
-            this.mbWindowList.Text = "Select a window";
             this.mbWindowList.UseVisualStyleBackColor = true;
             this.mbWindowList.MouseDown += new System.Windows.Forms.MouseEventHandler(this.mbWindowList_MouseDown);
             // 
             // BorderlessWindowForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(328, 161);
             this.Controls.Add(this.mbWindowList);
             this.Controls.Add(this.btnSettings);
             this.Controls.Add(this.btnMakeWindowBorderless);
@@ -111,8 +91,6 @@ namespace ShareX
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "BorderlessWindowForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ShareX - Borderless window";
             this.Shown += new System.EventHandler(this.BorderlessWindowForm_Shown);
             this.ResumeLayout(false);
             this.PerformLayout();
