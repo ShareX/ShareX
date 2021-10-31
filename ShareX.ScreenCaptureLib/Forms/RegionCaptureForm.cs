@@ -307,8 +307,10 @@ namespace ShareX.ScreenCaptureLib
         {
             if (Options.EditorAutoCopyImage && !IsClosing && IsEditorMode)
             {
-                Bitmap bmp = GetResultImage();
-                CopyImageRequested(bmp);
+                using (Bitmap bmp = GetResultImage())
+                {
+                    OnCopyImageRequested(bmp);
+                }
             }
         }
 
@@ -504,6 +506,14 @@ namespace ShareX.ScreenCaptureLib
 
             OnMoved();
             CenterCanvas();
+
+            if (Options.EditorAutoCopyImage && IsEditorMode)
+            {
+                using (Bitmap bmp = Canvas.CloneSafe())
+                {
+                    OnCopyImageRequested(bmp);
+                }
+            }
 
             if (IsEditorMode && Options.ShowEditorPanTip && editorPanTipAnimation != null)
             {
@@ -1473,10 +1483,23 @@ namespace ShareX.ScreenCaptureLib
         {
             if (CopyImageRequested != null)
             {
-                Bitmap bmp = ReceiveImageForTask();
+                using (Bitmap bmp = ReceiveImageForTask())
+                {
+                    if (bmp != null)
+                    {
+                        CopyImageRequested(bmp);
 
+                        ShapeManager.ShowMenuTooltip(Resources.ImageCopied);
+                    }
+                }
+            }
+        }
+
+        internal void OnCopyImageRequested(Bitmap bmp)
+        {
+            if (CopyImageRequested != null && bmp != null)
+            {
                 CopyImageRequested(bmp);
-                ShapeManager.ShowMenuTooltip(Resources.ImageCopied);
             }
         }
 

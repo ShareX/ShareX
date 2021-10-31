@@ -937,10 +937,7 @@ namespace ShareX
 
                         form.CopyImageRequested += output =>
                         {
-                            Program.MainForm.InvokeSafe(() =>
-                            {
-                                using (output) { ClipboardHelpers.CopyImage(output); }
-                            });
+                            Program.MainForm.InvokeSafe(() => ClipboardHelpers.CopyImage(output));
                         };
 
                         form.UploadImageRequested += output =>
