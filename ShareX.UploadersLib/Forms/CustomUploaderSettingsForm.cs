@@ -742,13 +742,13 @@ namespace ShareX.UploadersLib
 
                     rtb.SelectionStart = 0;
                     rtb.SelectionLength = rtb.TextLength;
-                    rtb.SelectionColor = rtb.ForeColor;
+                    rtb.SetFontRegular();
 
                     foreach (CustomUploaderSyntaxInfo syntaxInfo in parser.SyntaxInfoList)
                     {
                         rtb.SelectionStart = syntaxInfo.StartPosition;
                         rtb.SelectionLength = syntaxInfo.Length;
-                        rtb.SelectionColor = Color.Green;
+                        rtb.SetFontBold();
                     }
 
                     rtb.SelectionStart = start;
