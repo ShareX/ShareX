@@ -38,34 +38,33 @@ namespace ShareX.UploadersLib
     {
         [Description("Google Translate")]
         GoogleTranslate,
+        [Description("Google Search")]
+        GoogleSearch,
         [Description("DeepL Translate")]
         DeepL,
         [Description("Jisho")]
         Jisho,
         [Description("ichi.moe")]
-        Ichi,
-        [Description("Google")]
-        Google
+        Ichi
     }
 
     public partial class OCRSpaceForm : Form
     {
+        public OCRSpaceLanguages Language { get; set; }
         public string Result { get; private set; }
 
         private Stream data;
         private string fileName;
         private OCROptions ocrOptions;
-        private OCRSpaceLanguages Language { get; set; }
 
-        private Dictionary<OCRSpaceSites, string> SiteLinks =
-            new Dictionary<OCRSpaceSites, string>()
-            {
-                { OCRSpaceSites.GoogleTranslate, "https://translate.google.com/#auto/en/" },
-                { OCRSpaceSites.DeepL, "https://www.deepl.com/translator#auto/en/" },
-                { OCRSpaceSites.Jisho, "https://jisho.org/search/" },
-                { OCRSpaceSites.Ichi, "https://ichi.moe/cl/qr/?q=" },
-                { OCRSpaceSites.Google, "https://www.google.com/search?q=" }
-            };
+        private Dictionary<OCRSpaceSites, string> defaultSiteLinks = new Dictionary<OCRSpaceSites, string>()
+        {
+            { OCRSpaceSites.GoogleTranslate, "https://translate.google.com/#auto/en/" },
+            { OCRSpaceSites.GoogleSearch, "https://www.google.com/search?q=" },
+            { OCRSpaceSites.DeepL, "https://www.deepl.com/translator#auto/en/" },
+            { OCRSpaceSites.Jisho, "https://jisho.org/search/" },
+            { OCRSpaceSites.Ichi, "https://ichi.moe/cl/qr/?q=" }
+        };
 
         public OCRSpaceForm(OCROptions ocrOptions)
         {
@@ -145,16 +144,20 @@ namespace ShareX.UploadersLib
             await StartOCR(data, fileName);
         }
 
-        private void btnOpenInBrowser_Click(object sender, EventArgs e)
-        {
-            URLHelpers.OpenURL(SiteLinks[ocrOptions.DefaultSite] + Uri.EscapeDataString(txtResult.Text));
-            Close();
-        }
-
         private void cbDefaultSite_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // This doesn't work
             ocrOptions.DefaultSite = (OCRSpaceSites)cbDefaultSite.SelectedIndex;
+        }
+
+        private void btnOpenInBrowser_Click(object sender, EventArgs e)
+        {
+            string result = txtResult.Text;
+
+            if (!string.IsNullOrWhiteSpace(result))
+            {
+                string site = defaultSiteLinks[ocrOptions.DefaultSite] + URLHelpers.URLEncode(result.Trim());
+                URLHelpers.OpenURL(site);
+            }
         }
     }
 }

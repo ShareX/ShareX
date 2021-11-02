@@ -1143,14 +1143,14 @@ namespace ShareX
             {
                 if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
-                OCROptions ocrOptions = taskSettings.CaptureSettings.OCROptions;
+                OCROptions ocrOptions = taskSettings.CaptureSettingsReference.OCROptions;
 
                 if (!ocrOptions.Permission)
                 {
                     if (MessageBox.Show(Resources.PleaseNoteThatShareXIsUsingOCRSpaceSOnlineAPIToPerformOpticalCharacterRecognitionDoYouGivePermissionToShareXToUploadImagesToThisService,
                         Resources.ShareXOpticalCharacterRecognition, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
-                        taskSettings.CaptureSettingsReference.OCROptions.Permission = true;
+                        ocrOptions.Permission = true;
                     }
                     else
                     {
