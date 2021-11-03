@@ -75,6 +75,9 @@ namespace ShareX.MediaLib
         {
             StringBuilder args = new StringBuilder();
 
+            // Hide FFmpeg banner
+            args.Append("-hide_banner ");
+
             // Input file path
             args.Append($"-i \"{InputFilePath}\" ");
 
