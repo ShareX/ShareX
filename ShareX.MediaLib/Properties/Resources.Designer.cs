@@ -88,6 +88,24 @@ namespace ShareX.MediaLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Minimum.
+        /// </summary>
+        internal static string AlignmentMinimum {
+            get {
+                return ResourceManager.GetString("AlignmentMinimum", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pretty.
+        /// </summary>
+        internal static string AlignmentPretty {
+            get {
+                return ResourceManager.GetString("AlignmentPretty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Right.
         /// </summary>
         internal static string AlignmentRight {

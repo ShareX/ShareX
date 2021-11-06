@@ -33,8 +33,6 @@
             this.btnRemove = new System.Windows.Forms.Button();
             this.btnMoveUp = new System.Windows.Forms.Button();
             this.btnMoveDown = new System.Windows.Forms.Button();
-            this.lvImages = new ShareX.HelpersLib.MyListView();
-            this.chFilepath = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnCombine = new System.Windows.Forms.Button();
             this.lblSpace = new System.Windows.Forms.Label();
             this.nudSpace = new System.Windows.Forms.NumericUpDown();
@@ -43,9 +41,12 @@
             this.lblImageAlignment = new System.Windows.Forms.Label();
             this.cbAlignment = new System.Windows.Forms.ComboBox();
             this.flpOrientation = new System.Windows.Forms.FlowLayoutPanel();
-            this.rbOrientationHorizontal = new System.Windows.Forms.RadioButton();
-            this.rbOrientationVertical = new System.Windows.Forms.RadioButton();
+            this.rbOptionHorizontal = new System.Windows.Forms.RadioButton();
+            this.rbOptionVertical = new System.Windows.Forms.RadioButton();
+            this.rbOptionMinimum = new System.Windows.Forms.RadioButton();
             this.cbAutoFillBackground = new System.Windows.Forms.CheckBox();
+            this.lvImages = new ShareX.HelpersLib.MyListView();
+            this.chFilepath = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             ((System.ComponentModel.ISupportInitialize)(this.nudSpace)).BeginInit();
             this.flpOrientation.SuspendLayout();
             this.SuspendLayout();
@@ -77,27 +78,6 @@
             this.btnMoveDown.Name = "btnMoveDown";
             this.btnMoveDown.UseVisualStyleBackColor = true;
             this.btnMoveDown.Click += new System.EventHandler(this.btnMoveDown_Click);
-            // 
-            // lvImages
-            // 
-            this.lvImages.AllowDrop = true;
-            this.lvImages.AllowItemDrag = true;
-            resources.ApplyResources(this.lvImages, "lvImages");
-            this.lvImages.AutoFillColumn = true;
-            this.lvImages.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.chFilepath});
-            this.lvImages.FullRowSelect = true;
-            this.lvImages.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
-            this.lvImages.HideSelection = false;
-            this.lvImages.Name = "lvImages";
-            this.lvImages.UseCompatibleStateImageBehavior = false;
-            this.lvImages.View = System.Windows.Forms.View.Details;
-            this.lvImages.DragDrop += new System.Windows.Forms.DragEventHandler(this.ImageCombinerForm_DragDrop);
-            this.lvImages.DragEnter += new System.Windows.Forms.DragEventHandler(this.ImageCombinerForm_DragEnter);
-            // 
-            // chFilepath
-            // 
-            resources.ApplyResources(this.chFilepath, "chFilepath");
             // 
             // btnCombine
             // 
@@ -148,25 +128,34 @@
             // flpOrientation
             // 
             resources.ApplyResources(this.flpOrientation, "flpOrientation");
-            this.flpOrientation.Controls.Add(this.rbOrientationHorizontal);
-            this.flpOrientation.Controls.Add(this.rbOrientationVertical);
+            this.flpOrientation.Controls.Add(this.rbOptionHorizontal);
+            this.flpOrientation.Controls.Add(this.rbOptionVertical);
+            this.flpOrientation.Controls.Add(this.rbOptionMinimum);
             this.flpOrientation.Name = "flpOrientation";
             // 
-            // rbOrientationHorizontal
+            // rbOptionHorizontal
             // 
-            resources.ApplyResources(this.rbOrientationHorizontal, "rbOrientationHorizontal");
-            this.rbOrientationHorizontal.Name = "rbOrientationHorizontal";
-            this.rbOrientationHorizontal.TabStop = true;
-            this.rbOrientationHorizontal.UseVisualStyleBackColor = true;
-            this.rbOrientationHorizontal.CheckedChanged += new System.EventHandler(this.rbOrientationHorizontal_CheckedChanged);
+            resources.ApplyResources(this.rbOptionHorizontal, "rbOptionHorizontal");
+            this.rbOptionHorizontal.Name = "rbOptionHorizontal";
+            this.rbOptionHorizontal.TabStop = true;
+            this.rbOptionHorizontal.UseVisualStyleBackColor = true;
+            this.rbOptionHorizontal.CheckedChanged += new System.EventHandler(this.rbOrientationHorizontal_CheckedChanged);
             // 
-            // rbOrientationVertical
+            // rbOptionVertical
             // 
-            resources.ApplyResources(this.rbOrientationVertical, "rbOrientationVertical");
-            this.rbOrientationVertical.Name = "rbOrientationVertical";
-            this.rbOrientationVertical.TabStop = true;
-            this.rbOrientationVertical.UseVisualStyleBackColor = true;
-            this.rbOrientationVertical.CheckedChanged += new System.EventHandler(this.rbOrientationVertical_CheckedChanged);
+            resources.ApplyResources(this.rbOptionVertical, "rbOptionVertical");
+            this.rbOptionVertical.Name = "rbOptionVertical";
+            this.rbOptionVertical.TabStop = true;
+            this.rbOptionVertical.UseVisualStyleBackColor = true;
+            this.rbOptionVertical.CheckedChanged += new System.EventHandler(this.rbOrientationVertical_CheckedChanged);
+            // 
+            // rbOptionMinimum
+            // 
+            resources.ApplyResources(this.rbOptionMinimum, "rbOptionMinimum");
+            this.rbOptionMinimum.Name = "rbOptionMinimum";
+            this.rbOptionMinimum.TabStop = true;
+            this.rbOptionMinimum.UseVisualStyleBackColor = true;
+            this.rbOptionMinimum.CheckedChanged += new System.EventHandler(this.rbOrientationMinimum_CheckedChanged);
             // 
             // cbAutoFillBackground
             // 
@@ -174,6 +163,27 @@
             this.cbAutoFillBackground.Name = "cbAutoFillBackground";
             this.cbAutoFillBackground.UseVisualStyleBackColor = true;
             this.cbAutoFillBackground.CheckedChanged += new System.EventHandler(this.cbAutoFillBackground_CheckedChanged);
+            // 
+            // lvImages
+            // 
+            this.lvImages.AllowDrop = true;
+            this.lvImages.AllowItemDrag = true;
+            resources.ApplyResources(this.lvImages, "lvImages");
+            this.lvImages.AutoFillColumn = true;
+            this.lvImages.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.chFilepath});
+            this.lvImages.FullRowSelect = true;
+            this.lvImages.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
+            this.lvImages.HideSelection = false;
+            this.lvImages.Name = "lvImages";
+            this.lvImages.UseCompatibleStateImageBehavior = false;
+            this.lvImages.View = System.Windows.Forms.View.Details;
+            this.lvImages.DragDrop += new System.Windows.Forms.DragEventHandler(this.ImageCombinerForm_DragDrop);
+            this.lvImages.DragEnter += new System.Windows.Forms.DragEventHandler(this.ImageCombinerForm_DragEnter);
+            // 
+            // chFilepath
+            // 
+            resources.ApplyResources(this.chFilepath, "chFilepath");
             // 
             // ImageCombinerForm
             // 
@@ -223,8 +233,9 @@
         private System.Windows.Forms.Label lblImageAlignment;
         private System.Windows.Forms.ComboBox cbAlignment;
         private System.Windows.Forms.FlowLayoutPanel flpOrientation;
-        private System.Windows.Forms.RadioButton rbOrientationHorizontal;
-        private System.Windows.Forms.RadioButton rbOrientationVertical;
+        private System.Windows.Forms.RadioButton rbOptionHorizontal;
+        private System.Windows.Forms.RadioButton rbOptionVertical;
         private System.Windows.Forms.CheckBox cbAutoFillBackground;
+        private System.Windows.Forms.RadioButton rbOptionMinimum;
     }
 }

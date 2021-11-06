@@ -405,7 +405,7 @@ namespace ShareX
             }
         }
 
-        public void CombineImages(Orientation orientation)
+        public void CombineImages(ImageCombinerOption option)
         {
             if (IsItemSelected)
             {
@@ -413,7 +413,7 @@ namespace ShareX
 
                 if (imageFiles.Count() > 1)
                 {
-                    TaskHelpers.CombineImages(imageFiles, orientation);
+                    TaskHelpers.CombineImages(imageFiles, option);
                 }
             }
         }

@@ -2325,12 +2325,12 @@ namespace ShareX
 
         private void tsmiCombineImagesHorizontally_Click(object sender, EventArgs e)
         {
-            uim.CombineImages(Orientation.Horizontal);
+            uim.CombineImages(ImageCombinerOption.Horizontal);
         }
 
         private void tsmiCombineImagesVertically_Click(object sender, EventArgs e)
         {
-            uim.CombineImages(Orientation.Vertical);
+            uim.CombineImages(ImageCombinerOption.Vertical);
         }
 
         private void tsmiShowResponse_Click(object sender, EventArgs e)

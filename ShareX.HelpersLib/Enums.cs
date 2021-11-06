@@ -176,9 +176,16 @@ namespace ShareX.HelpersLib
 
     public enum ImageCombinerAlignment
     {
-        LeftOrTop,
-        Center,
+        LeftOrTopOrMinimum,
+        CenterOrPretty,
         RightOrBottom
+    }
+
+    public enum ImageCombinerOption
+    {
+        Vertical,
+        Horizontal,
+        Minimum
     }
 
     public enum ImageInterpolationMode

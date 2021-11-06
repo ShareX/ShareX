@@ -754,11 +754,11 @@ namespace ShareX
             imageCombinerForm.Show();
         }
 
-        public static void CombineImages(IEnumerable<string> imageFiles, Orientation orientation, TaskSettings taskSettings = null)
+        public static void CombineImages(IEnumerable<string> imageFiles, ImageCombinerOption option, TaskSettings taskSettings = null)
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
-            Bitmap output = ImageHelpers.CombineImages(imageFiles, orientation, taskSettings.ToolsSettings.ImageCombinerOptions.Alignment,
+            Bitmap output = ImageHelpers.CombineImages(imageFiles, option, taskSettings.ToolsSettings.ImageCombinerOptions.Alignment,
                 taskSettings.ToolsSettings.ImageCombinerOptions.Space, taskSettings.ToolsSettings.ImageCombinerOptions.AutoFillBackground);
 
             if (output != null)

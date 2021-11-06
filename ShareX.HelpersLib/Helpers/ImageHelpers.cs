@@ -1926,28 +1926,243 @@ namespace ShareX.HelpersLib
             return null;
         }
 
-        public static Bitmap CombineImages(List<Bitmap> images, Orientation orientation = Orientation.Vertical,
-            ImageCombinerAlignment alignment = ImageCombinerAlignment.LeftOrTop, int space = 0, bool autoFillBackground = false)
+        public static bool IsOverlapping(int x, int y, Bitmap img, List<CombineBoundingBox> _boundingBoxes)
+        {
+            bool isThereOverlap = false;
+            foreach(CombineBoundingBox b in _boundingBoxes)
+            {
+                bool xOverlap = b.XPosition < x + img.Width && b.XPosition + b.Width > x;
+                bool yOverlap = b.YPosition < y + img.Height && b.YPosition + b.Height > y;
+                bool overlaps = xOverlap && yOverlap;
+                isThereOverlap = isThereOverlap || overlaps;
+            }
+
+            return isThereOverlap;
+        }
+
+        public static Bitmap CombineImages(List<Bitmap> images, ImageCombinerOption option = ImageCombinerOption.Vertical,
+            ImageCombinerAlignment alignment = ImageCombinerAlignment.LeftOrTopOrMinimum, int space = 0, bool autoFillBackground = false)
         {
             int width, height;
             int imageCount = images.Count;
             int spaceSize = space * (imageCount - 1);
 
-            if (orientation == Orientation.Vertical)
+            //Minimum
+            List<CombineLeftMostPoint> leftMostPoints = new List<CombineLeftMostPoint>();
+            List<CombineBoundingBox> boundingBoxes = new List<CombineBoundingBox>();
+            List<CombineLayer> layers = new List<CombineLayer>();
+            int currentX = 0, currentLayer = 0, bestMinimumWidth = 0, bestMinimumHeight = 0, minimumArea = -1, overMinimum = 0, xLimit = 1_000_000;
+            List<int> previousWidths = new List<int>();
+
+            if (option != ImageCombinerOption.Minimum)
             {
-                width = images.Max(x => x.Width);
-                height = images.Sum(x => x.Height) + spaceSize;
+                if (option == ImageCombinerOption.Vertical)
+                {
+                    width = images.Max(x => x.Width);
+                    height = images.Sum(x => x.Height) + spaceSize;
+                }
+                else
+                {
+                    width = images.Sum(x => x.Width) + spaceSize;
+                    height = images.Max(x => x.Height);
+                }
             }
             else
             {
-                width = images.Sum(x => x.Width) + spaceSize;
-                height = images.Max(x => x.Height);
+                width = height = 0;
+                while (true)
+                {
+                    images.Sort((a, b) => (b.Height.CompareTo(a.Height)));
+                    leftMostPoints = new List<CombineLeftMostPoint>();
+                    currentLayer = 0;
+                    currentX = 0;
+                    boundingBoxes = new List<CombineBoundingBox>();
+                    layers = new List<CombineLayer>();
+
+                    foreach (Bitmap img in images)
+                    {
+                        leftMostPoints.Sort((a, b) => (a.XPosition.CompareTo(b.XPosition)));
+
+                        bool hasBeenPlaced = false;
+
+                        if (leftMostPoints.Count > 0)
+                        {
+                            foreach (CombineLeftMostPoint point in leftMostPoints)
+                            {
+                                if ((point.YPosition - layers[currentLayer].YPosition) + img.Height <= layers[point.Layer].Height && point.XPosition + img.Width <= currentX && !IsOverlapping(point.XPosition, point.YPosition, img, boundingBoxes))
+                                {
+                                    boundingBoxes.Add(new CombineBoundingBox(point.XPosition - space, point.YPosition - space, img.Width + space, img.Height + space));
+
+                                    if (width <= point.XPosition + img.Width)
+                                    {
+                                        width = point.XPosition + img.Width;
+                                    }
+                                    if (height <= point.YPosition + img.Height)
+                                    {
+                                        height = point.YPosition + img.Height;
+                                    }
+
+                                    hasBeenPlaced = true;
+                                    if (point.XPosition + img.Width < currentX)
+                                    {
+                                        leftMostPoints.Add(new CombineLeftMostPoint(point.XPosition + img.Width + space, point.YPosition + img.Height + space, point.Layer));
+                                    }
+
+                                    point.YPosition += img.Height + space;
+                                    if (point.YPosition == layers[currentLayer].Height)
+                                    {
+                                        leftMostPoints.Remove(point);
+                                    }
+
+                                    currentX = Math.Max(currentX, point.XPosition + img.Width);
+                                    break;
+                                }
+                            }
+                        }
+
+                        if(!hasBeenPlaced)
+                        {
+                            bool found = false;
+                            foreach(CombineLeftMostPoint point in leftMostPoints)
+                            {
+                                if (point.XPosition == currentX)
+                                {
+                                    found = true;
+                                    break;
+                                }
+                            }
+
+                            if (!found)
+                            {
+                                if (currentX == 0 && layers.Count == 0)
+                                {
+                                    layers.Add(new CombineLayer(0, img.Height + space));
+                                }
+                                else
+                                {
+                                    if (currentX + img.Width < xLimit)
+                                    {
+                                        leftMostPoints.Add(new CombineLeftMostPoint(currentX, img.Height + layers[currentLayer].YPosition + space, currentLayer));
+                                    }
+                                }
+                            }
+
+                            if (currentX + img.Width >  xLimit)
+                            {
+                                leftMostPoints.Add(new CombineLeftMostPoint(currentX + space, layers[currentLayer].YPosition, currentLayer));
+                                layers.Add(new CombineLayer(layers[currentLayer].YPosition + layers[currentLayer].Height, img.Height + space));
+                                currentLayer++;
+                                currentX = 0;
+
+                                if (width <= currentX+img.Width)
+                                {
+                                    width = currentX + img.Width;
+                                }
+                                if (height <= layers[currentLayer].YPosition+img.Height)
+                                {
+                                    height = layers[currentLayer].YPosition + img.Height;
+                                }
+
+                                boundingBoxes.Add(new CombineBoundingBox(currentX - space, layers[currentLayer].YPosition, img.Width + space, img.Height + space));
+                                currentX += img.Width+space;
+                            }
+                            else
+                            {
+                                if (width <= currentX + img.Width)
+                                {
+                                    width = currentX + img.Width;
+                                }
+                                if (height <= layers[currentLayer].YPosition + img.Height)
+                                {
+                                    height = layers[currentLayer].YPosition + img.Height;
+                                }
+
+                                boundingBoxes.Add(new CombineBoundingBox(currentX - space, layers[currentLayer].YPosition, img.Width + space, img.Height + space));
+
+                                currentX += img.Width + space;
+                                if (currentX > xLimit)
+                                {
+                                    layers.Add(new CombineLayer(layers[currentLayer].YPosition + layers[currentLayer].Height, img.Height + space));
+                                    currentLayer++;
+                                    currentX = 0;
+                                }
+                            }
+                        }
+                    }
+
+                    if (previousWidths.Count == 0)
+                    {
+                        previousWidths.Add(width);
+
+                        if (alignment == ImageCombinerAlignment.LeftOrTopOrMinimum)
+                        {
+                            minimumArea = width * height;
+                        }
+                        else
+                        {
+                            minimumArea = Math.Max(height, width) / Math.Min(height, width);
+                        }
+
+                        bestMinimumWidth = width;
+                        bestMinimumHeight = height;
+                        xLimit = width / 2;
+                        overMinimum = 0;
+                    }
+                    else
+                    {
+                        int newRatio;
+                        if (alignment == ImageCombinerAlignment.LeftOrTopOrMinimum)
+                        {
+                            newRatio = width * height;
+                        }
+                        else
+                        {
+                            newRatio = Math.Max(height, width) / Math.Min(height, width);
+                        }
+
+                        if (newRatio < minimumArea)
+                        {
+                            previousWidths.Add(width);
+                            minimumArea = newRatio;
+                            bestMinimumWidth = width;
+                            bestMinimumHeight = height;
+                            xLimit = width / 2;
+                            overMinimum = 0;
+                        }
+                        else
+                        {
+                            if (overMinimum == 2)
+                            {
+                                width = bestMinimumWidth;
+                                height = bestMinimumHeight;
+                                break;
+                            }
+                            overMinimum++;
+                            previousWidths.Add(width);
+                            xLimit = (width + previousWidths[previousWidths.Count-2]) / 2;
+                        }
+                    }
+                    width = 0;
+                    height = 0;
+                }
             }
 
             Bitmap bmp = new Bitmap(width, height);
 
             using (Graphics g = Graphics.FromImage(bmp))
             {
+
+                if (option == ImageCombinerOption.Minimum)
+                {
+                    images.Sort((a, b) => (b.Height.CompareTo(a.Height)));
+                    leftMostPoints = new List<CombineLeftMostPoint>();
+                    currentLayer = 0;
+                    currentX = 0;
+                    boundingBoxes = new List<CombineBoundingBox>();
+                    layers = new List<CombineLayer>();
+                    xLimit = width;
+                }
+
                 g.SetHighQuality();
                 int position = 0;
 
@@ -1961,47 +2176,139 @@ namespace ShareX.HelpersLib
                         g.Clear(backgroundColor);
                     }
 
-                    Rectangle rect;
+                    Rectangle rect = new Rectangle(0, 0, 0, 0);
 
-                    if (orientation == Orientation.Vertical)
+                    if (option != ImageCombinerOption.Minimum)
                     {
-                        int x;
-                        switch (alignment)
+                        if (option == ImageCombinerOption.Vertical)
                         {
-                            default:
-                            case ImageCombinerAlignment.LeftOrTop:
-                                x = 0;
-                                break;
-                            case ImageCombinerAlignment.Center:
-                                x = (width / 2) - (image.Width / 2);
-                                break;
-                            case ImageCombinerAlignment.RightOrBottom:
-                                x = width - image.Width;
-                                break;
+                            int x;
+                            switch (alignment)
+                            {
+                                default:
+                                case ImageCombinerAlignment.LeftOrTopOrMinimum:
+                                    x = 0;
+                                    break;
+                                case ImageCombinerAlignment.CenterOrPretty:
+                                    x = (width / 2) - (image.Width / 2);
+                                    break;
+                                case ImageCombinerAlignment.RightOrBottom:
+                                    x = width - image.Width;
+                                    break;
+                            }
+                            rect = new Rectangle(x, position, image.Width, image.Height);
+                            position += image.Height + space;
                         }
-                        rect = new Rectangle(x, position, image.Width, image.Height);
-                        position += image.Height + space;
+                        else
+                        {
+                            int y;
+                            switch (alignment)
+                            {
+                                default:
+                                case ImageCombinerAlignment.LeftOrTopOrMinimum:
+                                    y = 0;
+                                    break;
+                                case ImageCombinerAlignment.CenterOrPretty:
+                                    y = (height / 2) - (image.Height / 2);
+                                    break;
+                                case ImageCombinerAlignment.RightOrBottom:
+                                    y = height - image.Height;
+                                    break;
+                            }
+                            rect = new Rectangle(position, y, image.Width, image.Height);
+                            position += image.Width + space;
+                        }
                     }
                     else
                     {
-                        int y;
-                        switch (alignment)
-                        {
-                            default:
-                            case ImageCombinerAlignment.LeftOrTop:
-                                y = 0;
-                                break;
-                            case ImageCombinerAlignment.Center:
-                                y = (height / 2) - (image.Height / 2);
-                                break;
-                            case ImageCombinerAlignment.RightOrBottom:
-                                y = height - image.Height;
-                                break;
-                        }
-                        rect = new Rectangle(position, y, image.Width, image.Height);
-                        position += image.Width + space;
-                    }
+                        leftMostPoints.Sort((a, b) => (a.XPosition.CompareTo(b.XPosition)));
 
+                        bool hasBeenPlaced = false;
+
+                        if (leftMostPoints.Count > 0)
+                        {
+                            foreach (CombineLeftMostPoint point in leftMostPoints)
+                            {
+                                if ((point.YPosition - layers[currentLayer].YPosition) + image.Height <= layers[point.Layer].Height && point.XPosition + image.Width <= currentX && !IsOverlapping(point.XPosition, point.YPosition, image, boundingBoxes))
+                                {
+                                    boundingBoxes.Add(new CombineBoundingBox(point.XPosition - space, point.YPosition - space, image.Width + space, image.Height + space));
+
+                                    rect = new Rectangle(point.XPosition, point.YPosition, image.Width, image.Height);
+
+                                    hasBeenPlaced = true;
+                                    if (point.XPosition + image.Width < currentX)
+                                    {
+                                        leftMostPoints.Add(new CombineLeftMostPoint(point.XPosition + image.Width + space, point.YPosition + image.Height + space, point.Layer));
+                                    }
+
+                                    point.YPosition += image.Height + space;
+                                    if (point.YPosition == layers[currentLayer].Height)
+                                    {
+                                        leftMostPoints.Remove(point);
+                                    }
+
+                                    currentX = Math.Max(currentX, point.XPosition + image.Width);
+                                    break;
+                                }
+                            }
+                        }
+
+                        if (!hasBeenPlaced)
+                        {
+                            bool found = false;
+                            foreach (CombineLeftMostPoint point in leftMostPoints)
+                            {
+                                if (point.XPosition == currentX)
+                                {
+                                    found = true;
+                                    break;
+                                }
+                            }
+
+                            if (!found)
+                            {
+                                if (currentX == 0 && layers.Count == 0)
+                                {
+                                    layers.Add(new CombineLayer(0, image.Height + space));
+                                }
+                                else
+                                {
+                                    if (currentX + image.Width < xLimit)
+                                    {
+                                        leftMostPoints.Add(new CombineLeftMostPoint(currentX, image.Height + layers[currentLayer].YPosition + space, currentLayer));
+                                    }
+                                }
+                            }
+
+                            if (currentX + image.Width > xLimit)
+                            {
+                                leftMostPoints.Add(new CombineLeftMostPoint(currentX + space, layers[currentLayer].YPosition, currentLayer));
+                                layers.Add(new CombineLayer(layers[currentLayer].YPosition + layers[currentLayer].Height, image.Height + space));
+                                currentLayer++;
+                                currentX = 0;
+
+                                rect = new Rectangle(currentX, layers[currentLayer].YPosition, image.Width, image.Height);
+
+                                boundingBoxes.Add(new CombineBoundingBox(currentX - space, layers[currentLayer].YPosition, image.Width + space, image.Height + space));
+                                currentX += image.Width + space;
+                            }
+                            else
+                            {
+                                rect = new Rectangle(currentX, layers[currentLayer].YPosition, image.Width, image.Height);
+
+                                boundingBoxes.Add(new CombineBoundingBox(currentX - space, layers[currentLayer].YPosition, image.Width + space, image.Height + space));
+
+                                currentX += image.Width + space;
+                                if (currentX > xLimit)
+                                {
+                                    layers.Add(new CombineLayer(layers[currentLayer].YPosition + layers[currentLayer].Height, image.Height + space));
+                                    currentLayer++;
+                                    currentX = 0;
+                                }
+                            }
+                        }
+
+                    }
                     g.DrawImage(image, rect);
                 }
             }
@@ -2009,8 +2316,8 @@ namespace ShareX.HelpersLib
             return bmp;
         }
 
-        public static Bitmap CombineImages(IEnumerable<string> imageFiles, Orientation orientation = Orientation.Vertical,
-            ImageCombinerAlignment alignment = ImageCombinerAlignment.LeftOrTop, int space = 0, bool autoFillBackground = false)
+        public static Bitmap CombineImages(IEnumerable<string> imageFiles, ImageCombinerOption option = ImageCombinerOption.Vertical,
+            ImageCombinerAlignment alignment = ImageCombinerAlignment.LeftOrTopOrMinimum, int space = 0, bool autoFillBackground = false)
         {
             List<Bitmap> images = new List<Bitmap>();
 
@@ -2028,7 +2335,7 @@ namespace ShareX.HelpersLib
 
                 if (images.Count > 1)
                 {
-                    return CombineImages(images, orientation, alignment, space, autoFillBackground);
+                    return CombineImages(images, option, alignment, space, autoFillBackground);
                 }
             }
             finally

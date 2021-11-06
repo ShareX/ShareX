@@ -30,8 +30,8 @@ namespace ShareX.MediaLib
 {
     public class ImageCombinerOptions
     {
-        public Orientation Orientation { get; set; } = Orientation.Vertical;
-        public ImageCombinerAlignment Alignment { get; set; } = ImageCombinerAlignment.LeftOrTop;
+        public ImageCombinerOption Orientation { get; set; } = ImageCombinerOption.Vertical;
+        public ImageCombinerAlignment Alignment { get; set; } = ImageCombinerAlignment.LeftOrTopOrMinimum;
         public int Space { get; set; } = 0;
         public bool AutoFillBackground { get; set; } = false;
     }

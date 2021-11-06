@@ -46,13 +46,17 @@ namespace ShareX.MediaLib
             InitializeComponent();
             ShareXResources.ApplyTheme(this);
 
-            if (Options.Orientation == Orientation.Horizontal)
+            if (Options.Orientation == ImageCombinerOption.Horizontal)
             {
-                rbOrientationHorizontal.Checked = true;
+                rbOptionHorizontal.Checked = true;
+            }
+            else if (Options.Orientation == ImageCombinerOption.Vertical)
+            {
+                rbOptionVertical.Checked = true;
             }
             else
             {
-                rbOrientationVertical.Checked = true;
+                rbOptionMinimum.Checked = true;
             }
 
             UpdateAlignmentComboBox();
@@ -62,13 +66,17 @@ namespace ShareX.MediaLib
 
         private void UpdateOrientation()
         {
-            if (rbOrientationHorizontal.Checked)
+            if (rbOptionHorizontal.Checked)
             {
-                Options.Orientation = Orientation.Horizontal;
+                Options.Orientation = ImageCombinerOption.Horizontal;
+            }
+            else if (rbOptionVertical.Checked)
+            {
+                Options.Orientation = ImageCombinerOption.Vertical;
             }
             else
             {
-                Options.Orientation = Orientation.Vertical;
+                Options.Orientation = ImageCombinerOption.Minimum;
             }
         }
 
@@ -76,17 +84,22 @@ namespace ShareX.MediaLib
         {
             cbAlignment.Items.Clear();
 
-            if (Options.Orientation == Orientation.Horizontal)
+            if (Options.Orientation == ImageCombinerOption.Horizontal)
             {
                 cbAlignment.Items.Add(Resources.AlignmentTop);
                 cbAlignment.Items.Add(Resources.AlignmentHorizontalCenter);
                 cbAlignment.Items.Add(Resources.AlignmentBottom);
             }
-            else
+            else if (Options.Orientation == ImageCombinerOption.Vertical)
             {
                 cbAlignment.Items.Add(Resources.AlignmentLeft);
                 cbAlignment.Items.Add(Resources.AlignmentVerticalCenter);
                 cbAlignment.Items.Add(Resources.AlignmentRight);
+            }
+            else
+            {
+                cbAlignment.Items.Add(Resources.AlignmentMinimum);
+                cbAlignment.Items.Add(Resources.AlignmentPretty);
             }
 
             cbAlignment.SelectedIndex = (int)Options.Alignment;
@@ -150,6 +163,12 @@ namespace ShareX.MediaLib
         }
 
         private void rbOrientationVertical_CheckedChanged(object sender, EventArgs e)
+        {
+            UpdateOrientation();
+            UpdateAlignmentComboBox();
+        }
+
+        private void rbOrientationMinimum_CheckedChanged(object sender, EventArgs e)
         {
             UpdateOrientation();
             UpdateAlignmentComboBox();
@@ -223,5 +242,6 @@ namespace ShareX.MediaLib
                 }
             }
         }
+
     }
 }
