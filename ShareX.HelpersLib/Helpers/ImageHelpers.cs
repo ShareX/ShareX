@@ -1929,7 +1929,7 @@ namespace ShareX.HelpersLib
         public static bool IsOverlapping(int x, int y, Bitmap img, List<CombineBoundingBox> _boundingBoxes)
         {
             bool isThereOverlap = false;
-            foreach(CombineBoundingBox b in _boundingBoxes)
+            foreach (CombineBoundingBox b in _boundingBoxes)
             {
                 bool xOverlap = b.XPosition < x + img.Width && b.XPosition + b.Width > x;
                 bool yOverlap = b.YPosition < y + img.Height && b.YPosition + b.Height > y;
@@ -2020,10 +2020,10 @@ namespace ShareX.HelpersLib
                             }
                         }
 
-                        if(!hasBeenPlaced)
+                        if (!hasBeenPlaced)
                         {
                             bool found = false;
-                            foreach(CombineLeftMostPoint point in leftMostPoints)
+                            foreach (CombineLeftMostPoint point in leftMostPoints)
                             {
                                 if (point.XPosition == currentX)
                                 {
@@ -2047,24 +2047,24 @@ namespace ShareX.HelpersLib
                                 }
                             }
 
-                            if (currentX + img.Width >  xLimit)
+                            if (currentX + img.Width > xLimit)
                             {
                                 leftMostPoints.Add(new CombineLeftMostPoint(currentX + space, layers[currentLayer].YPosition, currentLayer));
                                 layers.Add(new CombineLayer(layers[currentLayer].YPosition + layers[currentLayer].Height, img.Height + space));
                                 currentLayer++;
                                 currentX = 0;
 
-                                if (width <= currentX+img.Width)
+                                if (width <= currentX + img.Width)
                                 {
                                     width = currentX + img.Width;
                                 }
-                                if (height <= layers[currentLayer].YPosition+img.Height)
+                                if (height <= layers[currentLayer].YPosition + img.Height)
                                 {
                                     height = layers[currentLayer].YPosition + img.Height;
                                 }
 
                                 boundingBoxes.Add(new CombineBoundingBox(currentX - space, layers[currentLayer].YPosition, img.Width + space, img.Height + space));
-                                currentX += img.Width+space;
+                                currentX += img.Width + space;
                             }
                             else
                             {
@@ -2139,7 +2139,7 @@ namespace ShareX.HelpersLib
                             }
                             overMinimum++;
                             previousWidths.Add(width);
-                            xLimit = (width + previousWidths[previousWidths.Count-2]) / 2;
+                            xLimit = (width + previousWidths[previousWidths.Count - 2]) / 2;
                         }
                     }
                     width = 0;
