@@ -242,6 +242,5 @@ namespace ShareX.MediaLib
                 }
             }
         }
-
     }
 }

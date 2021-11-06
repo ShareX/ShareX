@@ -2151,7 +2151,6 @@ namespace ShareX.HelpersLib
 
             using (Graphics g = Graphics.FromImage(bmp))
             {
-
                 if (option == ImageCombinerOption.Minimum)
                 {
                     images.Sort((a, b) => (b.Height.CompareTo(a.Height)));
@@ -2307,7 +2306,6 @@ namespace ShareX.HelpersLib
                                 }
                             }
                         }
-
                     }
                     g.DrawImage(image, rect);
                 }
