@@ -1666,9 +1666,13 @@ namespace ShareX.HelpersLib
         {
             if (!string.IsNullOrEmpty(filePath) && File.Exists(filePath))
             {
-                string checksum = GetChecksum(filePath);
                 string outputFilePath = filePath + ".sha256";
-                File.WriteAllText(outputFilePath, checksum);
+                string checksum = GetChecksum(filePath);
+                string fileName = Path.GetFileName(filePath);
+                string content = $"{checksum}  {fileName}";
+
+                File.WriteAllText(outputFilePath, content);
+
                 return outputFilePath;
             }
 
