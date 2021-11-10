@@ -44,7 +44,7 @@ namespace ShareX.HelpersLib
 
             UpdateCompareControls();
             cbHashType.Items.AddRange(Helpers.GetEnumDescriptions<HashType>());
-            cbHashType.SelectedIndex = (int)HashType.SHA1;
+            cbHashType.SelectedIndex = (int)HashType.SHA256;
 
             hashCheck = new HashCheck();
             hashCheck.FileCheckProgressChanged += fileCheck_FileCheckProgressChanged;
