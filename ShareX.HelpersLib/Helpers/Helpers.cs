@@ -1644,5 +1644,35 @@ namespace ShareX.HelpersLib
                 return Icon.FromHandle(bmp.GetHicon());
             }
         }
+
+        public static string GetChecksum(string filePath)
+        {
+            using (SHA256Managed hashAlgorithm = new SHA256Managed())
+            {
+                return GetChecksum(filePath, hashAlgorithm);
+            }
+        }
+
+        public static string GetChecksum(string filePath, HashAlgorithm hashAlgorithm)
+        {
+            using (FileStream fs = File.OpenRead(filePath))
+            {
+                byte[] hash = hashAlgorithm.ComputeHash(fs);
+                return BitConverter.ToString(hash).Replace("-", "");
+            }
+        }
+
+        public static string CreateChecksumFile(string filePath)
+        {
+            if (!string.IsNullOrEmpty(filePath) && File.Exists(filePath))
+            {
+                string checksum = GetChecksum(filePath);
+                string outputFilePath = filePath + ".sha256";
+                File.WriteAllText(outputFilePath, checksum);
+                return outputFilePath;
+            }
+
+            return null;
+        }
     }
 }

@@ -47,8 +47,9 @@ namespace ShareX.Setup
             CreateWindowsStoreDebugFolder = 1 << 7,
             CompileAppx = 1 << 8,
             DownloadFFmpeg = 1 << 9,
+            CreateChecksumFile = 1 << 10,
 
-            Stable = CreateSetup | CreatePortable | OpenOutputDirectory,
+            Stable = CreateSetup | CreatePortable | CreateChecksumFile | OpenOutputDirectory,
             Setup = CreateSetup | OpenOutputDirectory,
             Portable = CreatePortable | OpenOutputDirectory,
             Steam = CreateSteamFolder | OpenOutputDirectory,
@@ -56,7 +57,7 @@ namespace ShareX.Setup
             WindowsStoreDebug = CreateWindowsStoreDebugFolder,
             PortableApps = CreatePortableAppsFolder | OpenOutputDirectory,
             Beta = CreateSetup | UploadOutputFile,
-            AppVeyorRelease = CreateSetup | CreatePortable,
+            AppVeyorRelease = CreateSetup | CreatePortable | CreateChecksumFile,
             AppVeyorSteam = CreateSteamFolder,
             AppVeyorWindowsStore = CreateWindowsStoreFolder | CompileAppx,
             AppVeyorSteamRelease = AppVeyorSteam | DownloadFFmpeg,
@@ -196,6 +197,16 @@ namespace ShareX.Setup
             if (Job.HasFlag(SetupJobs.CreatePortableAppsFolder))
             {
                 CreateFolder(ReleaseDir, PortableAppsOutputDir, SetupJobs.CreatePortableAppsFolder);
+            }
+
+            if (Job.HasFlag(SetupJobs.CreateChecksumFile))
+            {
+                Console.WriteLine("Creating checksum files.");
+
+                foreach (string file in Directory.GetFiles(OutputDir))
+                {
+                    Helpers.CreateChecksumFile(file);
+                }
             }
 
             if (AppVeyor)

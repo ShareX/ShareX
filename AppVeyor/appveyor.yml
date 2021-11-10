@@ -23,8 +23,12 @@ after_build:
 artifacts:
 - path: ShareX-*-setup.exe
   name: Setup
+- path: ShareX-*-setup.exe.sha256
+  name: Setup-Checksum
 - path: ShareX-*-portable.zip
   name: Portable
+- path: ShareX-*-portable.zip.sha256
+  name: Portable-Checksum
 - path: ShareX-Steam
   name: Steam
 - path: ShareX.appx
@@ -36,7 +40,7 @@ deploy:
   description: "[Changelog](https://getsharex.com/changelog)"
   auth_token:
     secure: bbUkNvyu1jnKkuZGlM1ois3MkmpCMlm3Lv68L9V5AYepHt1SG4ZQ15ZoKfjOFg9R
-  artifact: Setup,Portable
+  artifact: Setup,Setup-Checksum,Portable,Portable-Checksum
   draft: false
   prerelease: true
   on:
