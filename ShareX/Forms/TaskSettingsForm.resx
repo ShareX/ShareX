@@ -151,13 +151,13 @@
     <value>NoControl</value>
   </data>
   <data name="cbOverrideAfterCaptureSettings.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 80</value>
+    <value>8, 96</value>
   </data>
   <data name="cbOverrideAfterCaptureSettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>168, 17</value>
+    <value>157, 17</value>
   </data>
   <data name="cbOverrideAfterCaptureSettings.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="cbOverrideAfterCaptureSettings.Text" xml:space="preserve">
     <value>Override after capture tasks</value>
@@ -172,7 +172,7 @@
     <value>tpTask</value>
   </data>
   <data name="&gt;&gt;cbOverrideAfterCaptureSettings.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>12</value>
   </data>
   <data name="cbOverrideAfterUploadSettings.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -181,13 +181,13 @@
     <value>NoControl</value>
   </data>
   <data name="cbOverrideAfterUploadSettings.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 136</value>
+    <value>8, 152</value>
   </data>
   <data name="cbOverrideAfterUploadSettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>164, 17</value>
+    <value>153, 17</value>
   </data>
   <data name="cbOverrideAfterUploadSettings.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="cbOverrideAfterUploadSettings.Text" xml:space="preserve">
     <value>Override after upload tasks</value>
@@ -202,7 +202,7 @@
     <value>tpTask</value>
   </data>
   <data name="&gt;&gt;cbOverrideAfterUploadSettings.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>14</value>
   </data>
   <data name="cbOverrideDestinationSettings.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -211,13 +211,13 @@
     <value>NoControl</value>
   </data>
   <data name="cbOverrideDestinationSettings.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 192</value>
+    <value>8, 208</value>
   </data>
   <data name="cbOverrideDestinationSettings.Size" type="System.Drawing.Size, System.Drawing">
     <value>125, 17</value>
   </data>
   <data name="cbOverrideDestinationSettings.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="cbOverrideDestinationSettings.Text" xml:space="preserve">
     <value>Override destinations</value>
@@ -232,7 +232,7 @@
     <value>tpTask</value>
   </data>
   <data name="&gt;&gt;cbOverrideDestinationSettings.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>15</value>
   </data>
   <data name="lblDescription.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -241,13 +241,13 @@
     <value>NoControl</value>
   </data>
   <data name="lblDescription.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 37</value>
+    <value>5, 53</value>
   </data>
   <data name="lblDescription.Size" type="System.Drawing.Size, System.Drawing">
     <value>63, 13</value>
   </data>
   <data name="lblDescription.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="lblDescription.Text" xml:space="preserve">
     <value>Description:</value>
@@ -262,16 +262,16 @@
     <value>tpTask</value>
   </data>
   <data name="&gt;&gt;lblDescription.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>16</value>
   </data>
   <data name="tbDescription.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 53</value>
+    <value>8, 69</value>
   </data>
   <data name="tbDescription.Size" type="System.Drawing.Size, System.Drawing">
     <value>552, 20</value>
   </data>
   <data name="tbDescription.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="&gt;&gt;tbDescription.Name" xml:space="preserve">
     <value>tbDescription</value>
@@ -283,7 +283,7 @@
     <value>tpTask</value>
   </data>
   <data name="&gt;&gt;tbDescription.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <metadata name="cmsTask.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>299, 17</value>
@@ -297,17 +297,44 @@
   <data name="&gt;&gt;cmsTask.Type" xml:space="preserve">
     <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="lblTask.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblTask.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 8</value>
+  </data>
+  <data name="lblTask.Size" type="System.Drawing.Size, System.Drawing">
+    <value>34, 13</value>
+  </data>
+  <data name="lblTask.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="lblTask.Text" xml:space="preserve">
+    <value>Task:</value>
+  </data>
+  <data name="&gt;&gt;lblTask.Name" xml:space="preserve">
+    <value>lblTask</value>
+  </data>
+  <data name="&gt;&gt;lblTask.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblTask.Parent" xml:space="preserve">
+    <value>tpTask</value>
+  </data>
+  <data name="&gt;&gt;lblTask.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="btnScreenshotsFolderBrowse.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="btnScreenshotsFolderBrowse.Location" type="System.Drawing.Point, System.Drawing">
-    <value>464, 383</value>
+    <value>464, 399</value>
   </data>
   <data name="btnScreenshotsFolderBrowse.Size" type="System.Drawing.Size, System.Drawing">
     <value>96, 23</value>
   </data>
   <data name="btnScreenshotsFolderBrowse.TabIndex" type="System.Int32, mscorlib">
-    <value>15</value>
+    <value>16</value>
   </data>
   <data name="btnScreenshotsFolderBrowse.Text" xml:space="preserve">
     <value>Browse...</value>
@@ -322,16 +349,16 @@
     <value>tpTask</value>
   </data>
   <data name="&gt;&gt;btnScreenshotsFolderBrowse.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="txtScreenshotsFolder.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 384</value>
+    <value>8, 400</value>
   </data>
   <data name="txtScreenshotsFolder.Size" type="System.Drawing.Size, System.Drawing">
     <value>448, 20</value>
   </data>
   <data name="txtScreenshotsFolder.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
+    <value>15</value>
   </data>
   <data name="&gt;&gt;txtScreenshotsFolder.Name" xml:space="preserve">
     <value>txtScreenshotsFolder</value>
@@ -343,7 +370,7 @@
     <value>tpTask</value>
   </data>
   <data name="&gt;&gt;txtScreenshotsFolder.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="cbOverrideScreenshotsFolder.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -352,13 +379,13 @@
     <value>NoControl</value>
   </data>
   <data name="cbOverrideScreenshotsFolder.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 360</value>
+    <value>8, 376</value>
   </data>
   <data name="cbOverrideScreenshotsFolder.Size" type="System.Drawing.Size, System.Drawing">
     <value>155, 17</value>
   </data>
   <data name="cbOverrideScreenshotsFolder.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
+    <value>14</value>
   </data>
   <data name="cbOverrideScreenshotsFolder.Text" xml:space="preserve">
     <value>Override screenshots folder</value>
@@ -373,16 +400,16 @@
     <value>tpTask</value>
   </data>
   <data name="&gt;&gt;cbOverrideScreenshotsFolder.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="cbCustomUploaders.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 328</value>
+    <value>8, 344</value>
   </data>
   <data name="cbCustomUploaders.Size" type="System.Drawing.Size, System.Drawing">
     <value>552, 21</value>
   </data>
   <data name="cbCustomUploaders.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
+    <value>13</value>
   </data>
   <data name="&gt;&gt;cbCustomUploaders.Name" xml:space="preserve">
     <value>cbCustomUploaders</value>
@@ -394,7 +421,7 @@
     <value>tpTask</value>
   </data>
   <data name="&gt;&gt;cbCustomUploaders.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="cbOverrideCustomUploader.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -403,13 +430,13 @@
     <value>NoControl</value>
   </data>
   <data name="cbOverrideCustomUploader.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 304</value>
+    <value>8, 320</value>
   </data>
   <data name="cbOverrideCustomUploader.Size" type="System.Drawing.Size, System.Drawing">
     <value>182, 17</value>
   </data>
   <data name="cbOverrideCustomUploader.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
+    <value>12</value>
   </data>
   <data name="cbOverrideCustomUploader.Text" xml:space="preserve">
     <value>Override default custom uploader</value>
@@ -424,7 +451,7 @@
     <value>tpTask</value>
   </data>
   <data name="&gt;&gt;cbOverrideCustomUploader.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="cbOverrideFTPAccount.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -433,13 +460,13 @@
     <value>NoControl</value>
   </data>
   <data name="cbOverrideFTPAccount.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 248</value>
+    <value>8, 264</value>
   </data>
   <data name="cbOverrideFTPAccount.Size" type="System.Drawing.Size, System.Drawing">
     <value>166, 17</value>
   </data>
   <data name="cbOverrideFTPAccount.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
+    <value>10</value>
   </data>
   <data name="cbOverrideFTPAccount.Text" xml:space="preserve">
     <value>Override default FTP account</value>
@@ -454,16 +481,16 @@
     <value>tpTask</value>
   </data>
   <data name="&gt;&gt;cbOverrideFTPAccount.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="cbFTPAccounts.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 272</value>
+    <value>8, 288</value>
   </data>
   <data name="cbFTPAccounts.Size" type="System.Drawing.Size, System.Drawing">
     <value>552, 21</value>
   </data>
   <data name="cbFTPAccounts.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
+    <value>11</value>
   </data>
   <data name="&gt;&gt;cbFTPAccounts.Name" xml:space="preserve">
     <value>cbFTPAccounts</value>
@@ -475,19 +502,19 @@
     <value>tpTask</value>
   </data>
   <data name="&gt;&gt;cbFTPAccounts.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="btnAfterCapture.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="btnAfterCapture.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 104</value>
+    <value>8, 120</value>
   </data>
   <data name="btnAfterCapture.Size" type="System.Drawing.Size, System.Drawing">
-    <value>552, 23</value>
+    <value>552, 24</value>
   </data>
   <data name="btnAfterCapture.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="btnAfterCapture.Text" xml:space="preserve">
     <value>After capture...</value>
@@ -499,25 +526,25 @@
     <value>btnAfterCapture</value>
   </data>
   <data name="&gt;&gt;btnAfterCapture.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MenuButton, ShareX.HelpersLib, Version=13.5.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MenuButton, ShareX.HelpersLib, Version=13.6.2.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;btnAfterCapture.Parent" xml:space="preserve">
     <value>tpTask</value>
   </data>
   <data name="&gt;&gt;btnAfterCapture.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="btnAfterUpload.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="btnAfterUpload.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 160</value>
+    <value>8, 176</value>
   </data>
   <data name="btnAfterUpload.Size" type="System.Drawing.Size, System.Drawing">
-    <value>552, 23</value>
+    <value>552, 24</value>
   </data>
   <data name="btnAfterUpload.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="btnAfterUpload.Text" xml:space="preserve">
     <value>After upload...</value>
@@ -529,19 +556,19 @@
     <value>btnAfterUpload</value>
   </data>
   <data name="&gt;&gt;btnAfterUpload.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MenuButton, ShareX.HelpersLib, Version=13.5.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MenuButton, ShareX.HelpersLib, Version=13.6.2.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;btnAfterUpload.Parent" xml:space="preserve">
     <value>tpTask</value>
   </data>
   <data name="&gt;&gt;btnAfterUpload.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>10</value>
   </data>
   <data name="btnDestinations.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="btnDestinations.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 216</value>
+    <value>8, 232</value>
   </data>
   <metadata name="cmsDestinations.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>396, 17</value>
@@ -556,10 +583,10 @@
     <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="btnDestinations.Size" type="System.Drawing.Size, System.Drawing">
-    <value>552, 23</value>
+    <value>552, 24</value>
   </data>
   <data name="btnDestinations.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="btnDestinations.Text" xml:space="preserve">
     <value>Destinations...</value>
@@ -571,25 +598,28 @@
     <value>btnDestinations</value>
   </data>
   <data name="&gt;&gt;btnDestinations.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MenuButton, ShareX.HelpersLib, Version=13.5.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MenuButton, ShareX.HelpersLib, Version=13.6.2.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;btnDestinations.Parent" xml:space="preserve">
     <value>tpTask</value>
   </data>
   <data name="&gt;&gt;btnDestinations.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>11</value>
+  </data>
+  <data name="btnTask.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
   </data>
   <data name="btnTask.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="btnTask.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 8</value>
+    <value>8, 24</value>
   </data>
   <data name="btnTask.Size" type="System.Drawing.Size, System.Drawing">
-    <value>552, 23</value>
+    <value>552, 24</value>
   </data>
   <data name="btnTask.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="btnTask.Text" xml:space="preserve">
     <value>Task...</value>
@@ -597,17 +627,20 @@
   <data name="btnTask.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
   </data>
+  <data name="btnTask.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
+    <value>ImageBeforeText</value>
+  </data>
   <data name="&gt;&gt;btnTask.Name" xml:space="preserve">
     <value>btnTask</value>
   </data>
   <data name="&gt;&gt;btnTask.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MenuButton, ShareX.HelpersLib, Version=13.5.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MenuButton, ShareX.HelpersLib, Version=13.6.2.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;btnTask.Parent" xml:space="preserve">
     <value>tpTask</value>
   </data>
   <data name="&gt;&gt;btnTask.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>13</value>
   </data>
   <data name="tpTask.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>
@@ -868,7 +901,7 @@
     <value>lvWatchFolderList</value>
   </data>
   <data name="&gt;&gt;lvWatchFolderList.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=13.5.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=13.6.2.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lvWatchFolderList.Parent" xml:space="preserve">
     <value>tpWatchFolders</value>
@@ -1451,7 +1484,6 @@
   </data>
   <data name="btnCustomErrorSoundPath.Text" xml:space="preserve">
     <value>...</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;btnCustomErrorSoundPath.Name" xml:space="preserve">
     <value>btnCustomErrorSoundPath</value>
@@ -1479,7 +1511,6 @@
   </data>
   <data name="btnCustomTaskCompletedSoundPath.Text" xml:space="preserve">
     <value>...</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;btnCustomTaskCompletedSoundPath.Name" xml:space="preserve">
     <value>btnCustomTaskCompletedSoundPath</value>
@@ -1507,7 +1538,6 @@
   </data>
   <data name="btnCustomCaptureSoundPath.Text" xml:space="preserve">
     <value>...</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;btnCustomCaptureSoundPath.Name" xml:space="preserve">
     <value>btnCustomCaptureSoundPath</value>
@@ -1991,7 +2021,6 @@
   </data>
   <data name="lblToastWindowSizeX.Text" xml:space="preserve">
     <value>x</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;lblToastWindowSizeX.Name" xml:space="preserve">
     <value>lblToastWindowSizeX</value>
@@ -3132,7 +3161,6 @@
   </data>
   <data name="lblImageJPEGQualityHint.Text" xml:space="preserve">
     <value>0 - 100</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;lblImageJPEGQualityHint.Name" xml:space="preserve">
     <value>lblImageJPEGQualityHint</value>
@@ -4342,7 +4370,6 @@
   </data>
   <data name="lblCaptureCustomRegionY.Text" xml:space="preserve">
     <value>Y</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;lblCaptureCustomRegionY.Name" xml:space="preserve">
     <value>lblCaptureCustomRegionY</value>
@@ -4373,7 +4400,6 @@
   </data>
   <data name="lblCaptureCustomRegionX.Text" xml:space="preserve">
     <value>X</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;lblCaptureCustomRegionX.Name" xml:space="preserve">
     <value>lblCaptureCustomRegionX</value>
@@ -5604,7 +5630,6 @@
   </data>
   <data name="btnRegionCaptureSnapSizesRemove.Text" xml:space="preserve">
     <value>-</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;btnRegionCaptureSnapSizesRemove.Name" xml:space="preserve">
     <value>btnRegionCaptureSnapSizesRemove</value>
@@ -5632,7 +5657,6 @@
   </data>
   <data name="btnRegionCaptureSnapSizesAdd.Text" xml:space="preserve">
     <value>+</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;btnRegionCaptureSnapSizesAdd.Name" xml:space="preserve">
     <value>btnRegionCaptureSnapSizesAdd</value>
@@ -7082,7 +7106,6 @@
   </data>
   <data name="tpOCR.Text" xml:space="preserve">
     <value>OCR</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;tpOCR.Name" xml:space="preserve">
     <value>tpOCR</value>
@@ -8306,7 +8329,7 @@
     <value>lvUploaderFiltersList</value>
   </data>
   <data name="&gt;&gt;lvUploaderFiltersList.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=13.5.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=13.6.2.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lvUploaderFiltersList.Parent" xml:space="preserve">
     <value>tpUploaderFilters</value>
@@ -8453,7 +8476,7 @@
     <value>lvUploaderFiltersList</value>
   </data>
   <data name="&gt;&gt;lvUploaderFiltersList.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=13.5.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=13.6.2.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lvUploaderFiltersList.Parent" xml:space="preserve">
     <value>tpUploaderFilters</value>
@@ -8738,7 +8761,7 @@
     <value>lvActions</value>
   </data>
   <data name="&gt;&gt;lvActions.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=13.5.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=13.6.2.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lvActions.Parent" xml:space="preserve">
     <value>pActions</value>
@@ -8927,7 +8950,7 @@
     <value>lvActions</value>
   </data>
   <data name="&gt;&gt;lvActions.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=13.5.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=13.6.2.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lvActions.Parent" xml:space="preserve">
     <value>pActions</value>
@@ -9128,7 +9151,7 @@
     <value>lvWatchFolderList</value>
   </data>
   <data name="&gt;&gt;lvWatchFolderList.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=13.5.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=13.6.2.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lvWatchFolderList.Parent" xml:space="preserve">
     <value>tpWatchFolders</value>
@@ -9572,7 +9595,7 @@
     <value>tttvMain</value>
   </data>
   <data name="&gt;&gt;tttvMain.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.TabToTreeView, ShareX.HelpersLib, Version=13.5.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.TabToTreeView, ShareX.HelpersLib, Version=13.6.2.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;tttvMain.Parent" xml:space="preserve">
     <value>$this</value>

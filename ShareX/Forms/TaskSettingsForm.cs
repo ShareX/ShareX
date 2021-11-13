@@ -681,7 +681,8 @@ namespace ShareX
 
         private void UpdateTaskTabMenuNames()
         {
-            btnTask.Text = string.Format(Resources.TaskSettingsForm_UpdateUploaderMenuNames_Task___0_, TaskSettings.Job.GetLocalizedDescription());
+            btnTask.Text = TaskSettings.Job.GetLocalizedDescription();
+            btnTask.Image = TaskHelpers.FindMenuIcon(TaskSettings.Job);
 
             btnAfterCapture.Text = string.Format(Resources.TaskSettingsForm_UpdateUploaderMenuNames_After_capture___0_,
                 string.Join(", ", TaskSettings.AfterCaptureJob.GetFlags().Select(x => x.GetLocalizedDescription())));

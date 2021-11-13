@@ -293,6 +293,7 @@
             this.pgTaskSettings = new System.Windows.Forms.PropertyGrid();
             this.cbOverrideAdvancedSettings = new System.Windows.Forms.CheckBox();
             this.tttvMain = new ShareX.HelpersLib.TabToTreeView();
+            this.lblTask = new System.Windows.Forms.Label();
             this.tcTaskSettings.SuspendLayout();
             this.tpTask.SuspendLayout();
             this.cmsDestinations.SuspendLayout();
@@ -420,6 +421,7 @@
             // tpTask
             // 
             this.tpTask.BackColor = System.Drawing.SystemColors.Window;
+            this.tpTask.Controls.Add(this.lblTask);
             this.tpTask.Controls.Add(this.btnScreenshotsFolderBrowse);
             this.tpTask.Controls.Add(this.txtScreenshotsFolder);
             this.tpTask.Controls.Add(this.cbOverrideScreenshotsFolder);
@@ -556,6 +558,7 @@
             // 
             // btnTask
             // 
+            this.btnTask.Image = global::ShareX.Properties.Resources.gear;
             resources.ApplyResources(this.btnTask, "btnTask");
             this.btnTask.Menu = this.cmsTask;
             this.btnTask.Name = "btnTask";
@@ -2543,6 +2546,11 @@
             this.tttvMain.TreeViewSize = 190;
             this.tttvMain.TabChanged += new ShareX.HelpersLib.TabToTreeView.TabChangedEventHandler(this.tttvMain_TabChanged);
             // 
+            // lblTask
+            // 
+            resources.ApplyResources(this.lblTask, "lblTask");
+            this.lblTask.Name = "lblTask";
+            // 
             // TaskSettingsForm
             // 
             resources.ApplyResources(this, "$this");
@@ -2907,5 +2915,6 @@
         private System.Windows.Forms.Label lblToastWindowDurationSeconds;
         private System.Windows.Forms.Button btnActions;
         private System.Windows.Forms.CheckBox cbImageAutoJPEGQuality;
+        private System.Windows.Forms.Label lblTask;
     }
 }
