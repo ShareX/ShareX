@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HotkeySelectionControl));
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnHotkey = new ShareX.HelpersLib.ColorButton();
-            this.lblHotkeyDescription = new ShareX.HelpersLib.LabelNoCopy();
+            this.lblHotkeyDescription = new ShareX.HelpersLib.ImageLabel();
             this.SuspendLayout();
             // 
             // btnEdit
@@ -46,6 +46,7 @@
             // 
             resources.ApplyResources(this.btnHotkey, "btnHotkey");
             this.btnHotkey.Color = System.Drawing.Color.Empty;
+            this.btnHotkey.ColorPickerOptions = null;
             this.btnHotkey.ManualButtonClick = true;
             this.btnHotkey.Name = "btnHotkey";
             this.btnHotkey.Offset = 0;
@@ -80,7 +81,7 @@
         }
 
         #endregion
-        private ShareX.HelpersLib.LabelNoCopy lblHotkeyDescription;
+        private ShareX.HelpersLib.ImageLabel lblHotkeyDescription;
         private HelpersLib.ColorButton btnHotkey;
         private System.Windows.Forms.Button btnEdit;
     }

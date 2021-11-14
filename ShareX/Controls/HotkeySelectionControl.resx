@@ -172,7 +172,7 @@
     <value>btnHotkey</value>
   </data>
   <data name="&gt;&gt;btnHotkey.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.ColorButton, ShareX.HelpersLib, Version=13.4.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.ColorButton, ShareX.HelpersLib, Version=13.6.2.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;btnHotkey.Parent" xml:space="preserve">
     <value>$this</value>
@@ -184,7 +184,7 @@
     <value>Top, Left, Right</value>
   </data>
   <data name="lblHotkeyDescription.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleRight</value>
+    <value>MiddleLeft</value>
   </data>
   <data name="lblHotkeyDescription.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -211,7 +211,7 @@
     <value>lblHotkeyDescription</value>
   </data>
   <data name="&gt;&gt;lblHotkeyDescription.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.LabelNoCopy, ShareX.HelpersLib, Version=13.4.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.LabelNoCopy, ShareX.HelpersLib, Version=13.6.2.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lblHotkeyDescription.Parent" xml:space="preserve">
     <value>$this</value>

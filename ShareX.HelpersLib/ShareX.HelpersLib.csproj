@@ -106,6 +106,9 @@
     </Compile>
     <Compile Include="ColorPickerOptions.cs" />
     <Compile Include="ControlHider.cs" />
+    <Compile Include="Controls\ImageLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Controls\ObjectListView.cs">
       <SubType>Component</SubType>
     </Compile>

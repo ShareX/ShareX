@@ -142,13 +142,14 @@ namespace ShareX
         {
             if (Setting.TaskSettings.IsUsingDefaultSettings)
             {
-                lblHotkeyDescription.Image = null;
+                lblHotkeyDescription.ChangeFontStyle(FontStyle.Regular);
             }
             else
             {
-                lblHotkeyDescription.Image = Resources.pencil;
+                lblHotkeyDescription.ChangeFontStyle(FontStyle.Bold);
             }
 
+            lblHotkeyDescription.Image = TaskHelpers.FindMenuIcon(Setting.TaskSettings.Job);
             lblHotkeyDescription.Text = Setting.TaskSettings.ToString();
         }
 

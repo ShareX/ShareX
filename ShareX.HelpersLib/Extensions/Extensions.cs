@@ -806,5 +806,10 @@ namespace ShareX.HelpersLib
         {
             return $"X: {rect.X}, Y: {rect.Y}, Width: {rect.Width}, Height: {rect.Height}";
         }
+
+        public static void ChangeFontStyle(this Control control, FontStyle fontStyle)
+        {
+            control.Font = new Font(control.Font, fontStyle);
+        }
     }
 }
