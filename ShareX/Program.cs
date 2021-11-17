@@ -23,7 +23,6 @@
 
 #endregion License Information (GPL v3)
 
-using Microsoft.Win32;
 using ShareX.HelpersLib;
 using ShareX.Properties;
 using ShareX.UploadersLib;
@@ -66,7 +65,7 @@ namespace ShareX
                 StringBuilder sbVersionText = new StringBuilder();
                 Version version = Version.Parse(Application.ProductVersion);
                 sbVersionText.Append(version.Major + "." + version.Minor);
-                if (version.Build > 0) sbVersionText.Append("." + version.Build);
+                if (version.Build > 0 || version.Revision > 0) sbVersionText.Append("." + version.Build);
                 if (version.Revision > 0) sbVersionText.Append("." + version.Revision);
                 if (Dev) sbVersionText.Append(" Dev");
                 if (Portable) sbVersionText.Append(" Portable");
