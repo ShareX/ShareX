@@ -146,7 +146,7 @@ namespace ShareX.HelpersLib
                 .Replace(CodeMenuEntryFilename.w.ToPrefixString(), CultureInfo.CurrentCulture.DateTimeFormat.GetDayName(dt.DayOfWeek))
                 .Replace(CodeMenuEntryFilename.pm.ToPrefixString(), dt.Hour >= 12 ? "PM" : "AM");
 
-            sb.Replace(CodeMenuEntryFilename.unix.ToPrefixString(), DateTime.UtcNow.ToUnix().ToString());
+            sb.Replace(CodeMenuEntryFilename.unix.ToPrefixString(), DateTimeOffset.UtcNow.ToUnixTimeSeconds().ToString());
 
             if (sb.ToString().Contains(CodeMenuEntryFilename.i.ToPrefixString())
                 || sb.ToString().Contains(CodeMenuEntryFilename.ib.ToPrefixString())

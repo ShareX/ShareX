@@ -280,11 +280,6 @@ namespace ShareX.HelpersLib
             };
         }
 
-        public static long ToUnix(this DateTime dateTime)
-        {
-            return Helpers.DateTimeToUnix(dateTime);
-        }
-
         public static void AppendTextToSelection(this TextBoxBase tb, string text)
         {
             if (!string.IsNullOrEmpty(text))
@@ -810,41 +805,6 @@ namespace ShareX.HelpersLib
         public static void ChangeFontStyle(this Control control, FontStyle fontStyle)
         {
             control.Font = new Font(control.Font, fontStyle);
-        }
-
-        public static T MinBy<T>(this IEnumerable<T> source, Func<T, IComparable> selector)
-        {
-            if (source == null)
-            {
-                throw new ArgumentNullException(nameof(source));
-            }
-
-            if (selector == null)
-            {
-                throw new ArgumentNullException(nameof(selector));
-            }
-
-            return source.Aggregate((min, cur) =>
-            {
-                if (min == null)
-                {
-                    return cur;
-                }
-
-                IComparable minComparer = selector(min);
-                if (minComparer == null)
-                {
-                    return cur;
-                }
-
-                IComparable curComparer = selector(cur);
-                if (curComparer == null)
-                {
-                    return min;
-                }
-
-                return minComparer.CompareTo(curComparer) > 0 ? cur : min;
-            });
         }
     }
 }
