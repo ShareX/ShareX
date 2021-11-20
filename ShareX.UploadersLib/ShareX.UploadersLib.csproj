@@ -228,6 +228,12 @@
     <Compile Include="CustomUploader\CustomUploaderInput.cs" />
     <Compile Include="CustomUploader\CustomUploaderParser.cs" />
     <Compile Include="CustomUploader\CustomUploaderSyntaxInfo.cs" />
+    <Compile Include="Forms\YouTubeVideoOptionsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\YouTubeVideoOptionsForm.Designer.cs">
+      <DependentUpon>YouTubeVideoOptionsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Helpers\EscapeHelper.cs" />
     <Compile Include="Helpers\MimeTypes.cs" />
     <Compile Include="Helpers\OCROptions.cs" />
@@ -966,6 +972,9 @@
     <EmbeddedResource Include="Forms\TwitterTweetForm.resx">
       <DependentUpon>TwitterTweetForm.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\YouTubeVideoOptionsForm.resx">
+      <DependentUpon>YouTubeVideoOptionsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.de.resx">
       <SubType>Designer</SubType>

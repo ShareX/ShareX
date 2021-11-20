@@ -47,7 +47,8 @@ namespace ShareX.UploadersLib.FileUploaders
             return new YouTube(config.YouTubeOAuth2Info)
             {
                 PrivacyType = config.YouTubePrivacyType,
-                UseShortenedLink = config.YouTubeUseShortenedLink
+                UseShortenedLink = config.YouTubeUseShortenedLink,
+                ShowDialog = config.YouTubeShowDialog
             };
         }
 
@@ -59,6 +60,7 @@ namespace ShareX.UploadersLib.FileUploaders
         public OAuth2Info AuthInfo => googleAuth.AuthInfo;
         public YouTubeVideoPrivacy PrivacyType { get; set; }
         public bool UseShortenedLink { get; set; }
+        public bool ShowDialog { get; set; }
 
         private GoogleOAuth2 googleAuth;
 
@@ -90,55 +92,71 @@ namespace ShareX.UploadersLib.FileUploaders
             return googleAuth.GetAccessToken(code);
         }
 
-        private string GetMetadata(string title)
-        {
-            object metadata = new
-            {
-                snippet = new
-                {
-                    title = title
-                },
-                status = new
-                {
-                    privacyStatus = PrivacyType.ToString()
-                }
-            };
-
-            return JsonConvert.SerializeObject(metadata);
-        }
-
         public override UploadResult Upload(Stream stream, string fileName)
         {
             if (!CheckAuthorization()) return null;
 
             string title = Path.GetFileNameWithoutExtension(fileName);
-            string metadata = GetMetadata(title);
+            string description = "";
+            YouTubeVideoPrivacy visibility = PrivacyType;
+
+            if (ShowDialog)
+            {
+                using (YouTubeVideoOptionsForm form = new YouTubeVideoOptionsForm(title, description, visibility))
+                {
+                    if (form.ShowDialog() == DialogResult.OK)
+                    {
+                        title = form.Title;
+                        description = form.Description;
+                        visibility = form.Visibility;
+                    }
+                    else
+                    {
+                        return null;
+                    }
+                }
+            }
+
+            YouTubeVideoUpload uploadVideo = new YouTubeVideoUpload()
+            {
+                snippet = new YouTubeVideoSnippet()
+                {
+                    title = title,
+                    description = description
+                },
+                status = new YouTubeVideoStatusUpload()
+                {
+                    privacyStatus = visibility
+                }
+            };
+
+            string metadata = JsonConvert.SerializeObject(uploadVideo);
 
             UploadResult result = SendRequestFile("https://www.googleapis.com/upload/youtube/v3/videos?part=id,snippet,status", stream, fileName, "file",
                 headers: googleAuth.GetAuthHeaders(), relatedData: metadata);
 
             if (!string.IsNullOrEmpty(result.Response))
             {
-                YouTubeVideo video = JsonConvert.DeserializeObject<YouTubeVideo>(result.Response);
+                YouTubeVideoResponse responseVideo = JsonConvert.DeserializeObject<YouTubeVideoResponse>(result.Response);
 
-                if (video != null)
+                if (responseVideo != null)
                 {
                     if (UseShortenedLink)
                     {
-                        result.URL = $"https://youtu.be/{video.id}";
+                        result.URL = $"https://youtu.be/{responseVideo.id}";
                     }
                     else
                     {
-                        result.URL = $"https://www.youtube.com/watch?v={video.id}";
+                        result.URL = $"https://www.youtube.com/watch?v={responseVideo.id}";
                     }
 
-                    switch (video.status.uploadStatus)
+                    switch (responseVideo.status.uploadStatus)
                     {
                         case YouTubeVideoStatus.UploadFailed:
-                            Errors.Add("Upload failed: " + video.status.failureReason);
+                            Errors.Add("Upload failed: " + responseVideo.status.failureReason);
                             break;
                         case YouTubeVideoStatus.UploadRejected:
-                            Errors.Add("Upload rejected: " + video.status.rejectionReason);
+                            Errors.Add("Upload rejected: " + responseVideo.status.rejectionReason);
                             break;
                     }
                 }
@@ -148,7 +166,13 @@ namespace ShareX.UploadersLib.FileUploaders
         }
     }
 
-    public class YouTubeVideo
+    public class YouTubeVideoUpload
+    {
+        public YouTubeVideoSnippet snippet { get; set; }
+        public YouTubeVideoStatusUpload status { get; set; }
+    }
+
+    public class YouTubeVideoResponse
     {
         public string id { get; set; }
         public YouTubeVideoSnippet snippet { get; set; }
@@ -158,6 +182,8 @@ namespace ShareX.UploadersLib.FileUploaders
     public class YouTubeVideoSnippet
     {
         public string title { get; set; }
+        public string description { get; set; }
+        public string[] tags { get; set; }
     }
 
     public class YouTubeVideoStatus
@@ -169,5 +195,10 @@ namespace ShareX.UploadersLib.FileUploaders
         public string uploadStatus { get; set; }
         public string failureReason { get; set; }
         public string rejectionReason { get; set; }
+    }
+
+    public class YouTubeVideoStatusUpload
+    {
+        public YouTubeVideoPrivacy privacyStatus { get; set; }
     }
 }

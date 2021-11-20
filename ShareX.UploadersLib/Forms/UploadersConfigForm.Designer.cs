@@ -629,6 +629,7 @@ namespace ShareX.UploadersLib
             this.tcUploaders = new System.Windows.Forms.TabControl();
             this.tttvMain = new ShareX.HelpersLib.TabToTreeView();
             this.actRapidShareAccountType = new ShareX.UploadersLib.AccountTypeControl();
+            this.cbYouTubeShowDialog = new System.Windows.Forms.CheckBox();
             this.tpOtherUploaders.SuspendLayout();
             this.tcOtherUploaders.SuspendLayout();
             this.tpTwitter.SuspendLayout();
@@ -3808,6 +3809,7 @@ namespace ShareX.UploadersLib
             // 
             // tpYouTube
             // 
+            this.tpYouTube.Controls.Add(this.cbYouTubeShowDialog);
             this.tpYouTube.Controls.Add(this.cbYouTubeUseShortenedLink);
             this.tpYouTube.Controls.Add(this.cbYouTubePrivacyType);
             this.tpYouTube.Controls.Add(this.lblYouTubePrivacyType);
@@ -4943,6 +4945,13 @@ namespace ShareX.UploadersLib
             this.actRapidShareAccountType.Name = "actRapidShareAccountType";
             this.actRapidShareAccountType.SelectedAccountType = ShareX.UploadersLib.AccountType.Anonymous;
             // 
+            // cbYouTubeShowDialog
+            // 
+            resources.ApplyResources(this.cbYouTubeShowDialog, "cbYouTubeShowDialog");
+            this.cbYouTubeShowDialog.Name = "cbYouTubeShowDialog";
+            this.cbYouTubeShowDialog.UseVisualStyleBackColor = true;
+            this.cbYouTubeShowDialog.CheckedChanged += new System.EventHandler(this.cbYouTubeShowDialog_CheckedChanged);
+            // 
             // UploadersConfigForm
             // 
             resources.ApplyResources(this, "$this");
@@ -5682,5 +5691,6 @@ namespace ShareX.UploadersLib
         private System.Windows.Forms.Label lblZWSToken;
         private System.Windows.Forms.Label lblZWSURL;
         private System.Windows.Forms.CheckBox cbOwnCloudAnimationFriendlyLinks;
+        private System.Windows.Forms.CheckBox cbYouTubeShowDialog;
     }
 }
