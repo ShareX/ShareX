@@ -49,6 +49,11 @@ namespace ShareX.UploadersLib
             cbVisibility.SelectedIndex = (int)Visibility;
         }
 
+        private void YouTubeVideoOptionsForm_Shown(object sender, System.EventArgs e)
+        {
+            this.ForceActivate();
+        }
+
         private void btnOK_Click(object sender, System.EventArgs e)
         {
             Title = txtTitle.Text;

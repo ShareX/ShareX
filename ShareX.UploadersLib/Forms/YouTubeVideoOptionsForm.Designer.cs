@@ -102,6 +102,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "YouTubeVideoOptionsForm";
+            this.Shown += new System.EventHandler(this.YouTubeVideoOptionsForm_Shown);
             this.ResumeLayout(false);
             this.PerformLayout();
 

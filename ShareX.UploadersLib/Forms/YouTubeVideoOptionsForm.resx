@@ -207,6 +207,9 @@
   <data name="txtTitle.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 32</value>
   </data>
+  <data name="txtTitle.MaxLength" type="System.Int32, mscorlib">
+    <value>100</value>
+  </data>
   <data name="txtTitle.Size" type="System.Drawing.Size, System.Drawing">
     <value>352, 22</value>
   </data>
@@ -227,6 +230,9 @@
   </data>
   <data name="txtDescription.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 88</value>
+  </data>
+  <data name="txtDescription.MaxLength" type="System.Int32, mscorlib">
+    <value>5000</value>
   </data>
   <data name="txtDescription.Multiline" type="System.Boolean, mscorlib">
     <value>True</value>
