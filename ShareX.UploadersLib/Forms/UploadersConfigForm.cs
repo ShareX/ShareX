@@ -3071,6 +3071,11 @@ namespace ShareX.UploadersLib
             Config.YouTubeOAuth2Info = null;
         }
 
+        private void llYouTubePermissionsLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            URLHelpers.OpenURL("https://security.google.com/settings/security/permissions");
+        }
+
         private void cbYouTubePrivacyType_SelectedIndexChanged(object sender, EventArgs e)
         {
             Config.YouTubePrivacyType = (YouTubeVideoPrivacy)cbYouTubePrivacyType.SelectedIndex;
