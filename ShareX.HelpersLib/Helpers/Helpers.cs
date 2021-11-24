@@ -1665,5 +1665,26 @@ namespace ShareX.HelpersLib
 
             return null;
         }
+
+        public static Task ForEachAsync<T>(IEnumerable<T> inputEnumerable, Func<T, Task> asyncProcessor, int maxDegreeOfParallelism)
+        {
+            SemaphoreSlim throttler = new SemaphoreSlim(maxDegreeOfParallelism, maxDegreeOfParallelism);
+
+            IEnumerable<Task> tasks = inputEnumerable.Select(async input =>
+            {
+                await throttler.WaitAsync();
+
+                try
+                {
+                    await asyncProcessor(input);
+                }
+                finally
+                {
+                    throttler.Release();
+                }
+            });
+
+            return Task.WhenAll(tasks);
+        }
     }
 }
