@@ -59,9 +59,35 @@ namespace ShareX.HelpersLib
 
         public static bool IsDarkTheme => UseCustomTheme && Theme.IsDarkTheme;
 
-        public static bool UseWhiteIcon { get; set; }
+        private static bool useWhiteIcon;
 
-        public static Icon Icon => UseWhiteIcon ? Resources.ShareX_Icon_White : Resources.ShareX_Icon;
+        public static bool UseWhiteIcon
+        {
+            get
+            {
+                return useWhiteIcon;
+            }
+            set
+            {
+                if (useWhiteIcon != value)
+                {
+                    useWhiteIcon = value;
+
+                    Icon?.Dispose();
+
+                    if (useWhiteIcon)
+                    {
+                        Icon = Resources.ShareX_Icon_White;
+                    }
+                    else
+                    {
+                        Icon = Resources.ShareX_Icon;
+                    }
+                }
+            }
+        }
+
+        public static Icon Icon { get; set; } = Resources.ShareX_Icon;
 
         public static Bitmap Logo => Resources.ShareX_Logo;
 

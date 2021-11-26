@@ -77,6 +77,7 @@ namespace ShareX
             InitializeComponent();
 
             ShareXResources.UseWhiteIcon = Program.Settings.UseWhiteShareXIcon;
+
             Icon = ShareXResources.Icon;
             niTray.Icon = ShareXResources.Icon;
             Text = Program.Title;
