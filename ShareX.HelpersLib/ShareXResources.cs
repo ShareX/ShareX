@@ -73,8 +73,6 @@ namespace ShareX.HelpersLib
                 {
                     useWhiteIcon = value;
 
-                    Icon?.Dispose();
-
                     if (useWhiteIcon)
                     {
                         Icon = Resources.ShareX_Icon_White;
@@ -87,7 +85,23 @@ namespace ShareX.HelpersLib
             }
         }
 
-        public static Icon Icon { get; set; } = Resources.ShareX_Icon;
+        private static Icon icon = Resources.ShareX_Icon;
+
+        public static Icon Icon
+        {
+            get
+            {
+                return icon.CloneSafe();
+            }
+            set
+            {
+                if (icon != value)
+                {
+                    icon?.Dispose();
+                    icon = value;
+                }
+            }
+        }
 
         public static Bitmap Logo => Resources.ShareX_Logo;
 
