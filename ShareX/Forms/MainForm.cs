@@ -556,23 +556,29 @@ namespace ShareX
             int count = Program.DefaultTaskSettings.ImageSettings.ImageEffectPresets.Count;
             if (count > 0)
             {
-                ToolStripItem[] items = new ToolStripItem[count];
+                List<ToolStripItem> items = new List<ToolStripItem>();
 
                 for (int i = 0; i < count; i++)
                 {
                     ImageEffectPreset effectPreset = Program.DefaultTaskSettings.ImageSettings.ImageEffectPresets[i];
-                    ToolStripMenuItem tsmi = new ToolStripMenuItem(effectPreset.ToString());
-                    tsmi.Checked = i == Program.DefaultTaskSettings.ImageSettings.SelectedImageEffectPreset;
-                    int indexSelected = i;
-                    tsmi.Click += (sender, e) =>
+                    if (effectPreset != null)
                     {
-                        Program.DefaultTaskSettings.ImageSettings.SelectedImageEffectPreset = indexSelected;
-                        ((ToolStripMenuItem)tsmiAddImageEffects.DropDownItems[indexSelected]).RadioCheck();
-                    };
-                    items[i] = tsmi;
+                        ToolStripMenuItem tsmi = new ToolStripMenuItem(effectPreset.ToString());
+                        tsmi.Checked = i == Program.DefaultTaskSettings.ImageSettings.SelectedImageEffectPreset;
+                        int indexSelected = i;
+                        tsmi.Click += (sender, e) =>
+                        {
+                            Program.DefaultTaskSettings.ImageSettings.SelectedImageEffectPreset = indexSelected;
+                            ((ToolStripMenuItem)sender).RadioCheck();
+                        };
+                        items.Add(tsmi);
+                    }
                 }
 
-                tsmiAddImageEffects.DropDownItems.AddRange(items);
+                if (items.Count > 0)
+                {
+                    tsmiAddImageEffects.DropDownItems.AddRange(items.ToArray());
+                }
             }
         }
 
