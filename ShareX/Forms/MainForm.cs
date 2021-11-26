@@ -553,6 +553,11 @@ namespace ShareX
             tsmiAddImageEffects.DisableMenuCloseOnClick();
             tsmiAddImageEffects.DropDownItems.Clear();
 
+            if (Program.DefaultTaskSettings.ImageSettings.ImageEffectPresets == null)
+            {
+                Program.DefaultTaskSettings.ImageSettings.ImageEffectPresets = new List<ImageEffectPreset>();
+            }
+
             int count = Program.DefaultTaskSettings.ImageSettings.ImageEffectPresets.Count;
             if (count > 0)
             {
