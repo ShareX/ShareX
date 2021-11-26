@@ -103,7 +103,23 @@ namespace ShareX.HelpersLib
             }
         }
 
-        public static Bitmap Logo => Resources.ShareX_Logo;
+        private static Bitmap logo = Resources.ShareX_Logo;
+
+        public static Bitmap Logo
+        {
+            get
+            {
+                return logo.CloneSafe();
+            }
+            set
+            {
+                if (logo != value)
+                {
+                    logo?.Dispose();
+                    logo = value;
+                }
+            }
+        }
 
         public static ShareXTheme Theme { get; set; } = ShareXTheme.DarkTheme;
 
