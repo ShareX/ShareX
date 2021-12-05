@@ -99,7 +99,7 @@ namespace ShareX.UploadersLib.FileUploaders
                 args.Add("client_secret", AuthInfo.Client_Secret);
                 args.Add("grant_type", "refresh_token");
 
-                string response = SendRequestMultiPart(AuthUrl + "/connect/token", args);
+                string response = SendRequestURLEncoded(HttpMethod.POST, AuthUrl + "/connect/token", args);
 
                 if (!string.IsNullOrEmpty(response))
                 {
@@ -145,7 +145,7 @@ namespace ShareX.UploadersLib.FileUploaders
             args.Add("redirect_uri", Links.URL_CALLBACK);
             args.Add("code", code);
 
-            string response = SendRequestMultiPart(AuthUrl + "/connect/token", args);
+            string response = SendRequestURLEncoded(HttpMethod.POST, AuthUrl + "/connect/token", args);
 
             if (!string.IsNullOrEmpty(response))
             {
