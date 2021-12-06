@@ -326,6 +326,7 @@ namespace ShareX
 
             nudScreenRecordFPS.SetValue(TaskSettings.CaptureSettings.ScreenRecordFPS);
             nudGIFFPS.SetValue(TaskSettings.CaptureSettings.GIFFPS);
+            nudFFMPEGBuffer.SetValue(TaskSettings.CaptureSettings.FFmpegOptions.FFMPEGBuffer);
             cbScreenRecorderFixedDuration.Checked = nudScreenRecorderDuration.Enabled = TaskSettings.CaptureSettings.ScreenRecordFixedDuration;
             nudScreenRecorderDuration.SetValue((decimal)TaskSettings.CaptureSettings.ScreenRecordDuration);
             cbScreenRecordAutoStart.Checked = nudScreenRecorderStartDelay.Enabled = TaskSettings.CaptureSettings.ScreenRecordAutoStart;
@@ -1238,6 +1239,11 @@ namespace ShareX
         private void nudGIFFPS_ValueChanged(object sender, EventArgs e)
         {
             TaskSettings.CaptureSettings.GIFFPS = (int)nudGIFFPS.Value;
+        }
+
+        private void nudFFMPEGBuffer_ValueChanged(object sender, EventArgs e)
+        {
+            TaskSettings.CaptureSettings.FFmpegOptions.FFMPEGBuffer = (int)nudFFMPEGBuffer.Value;
         }
 
         private void cbScreenRecorderFixedDuration_CheckedChanged(object sender, EventArgs e)

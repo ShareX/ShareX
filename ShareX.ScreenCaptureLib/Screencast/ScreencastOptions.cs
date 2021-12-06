@@ -90,7 +90,7 @@ namespace ShareX.ScreenCaptureLib
 
             StringBuilder args = new StringBuilder();
             args.Append("-hide_banner "); // All FFmpeg tools will normally show a copyright notice, build options and library versions. This option can be used to suppress printing this information.
-            args.Append("-rtbufsize 150M "); // Default real time buffer size is 3041280 (3M)
+            args.Append($"-rtbufsize {FFmpeg.FFMPEGBuffer}M "); // Default real time buffer size is 3041280 (3M)
 
             string fps;
 

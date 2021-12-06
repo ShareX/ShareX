@@ -40,6 +40,7 @@
             this.cmsTask = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tcTaskSettings = new System.Windows.Forms.TabControl();
             this.tpTask = new System.Windows.Forms.TabPage();
+            this.lblTask = new System.Windows.Forms.Label();
             this.btnScreenshotsFolderBrowse = new System.Windows.Forms.Button();
             this.txtScreenshotsFolder = new System.Windows.Forms.TextBox();
             this.cbOverrideScreenshotsFolder = new System.Windows.Forms.CheckBox();
@@ -196,6 +197,8 @@
             this.nudRegionCaptureMagnifierPixelCount = new System.Windows.Forms.NumericUpDown();
             this.nudRegionCaptureMagnifierPixelSize = new System.Windows.Forms.NumericUpDown();
             this.tpScreenRecorder = new System.Windows.Forms.TabPage();
+            this.nudFFMPEGBuffer = new System.Windows.Forms.NumericUpDown();
+            this.lblFFMPEGBuffer = new System.Windows.Forms.Label();
             this.cbScreenRecordTransparentRegion = new System.Windows.Forms.CheckBox();
             this.cbScreenRecordTwoPassEncoding = new System.Windows.Forms.CheckBox();
             this.cbScreenRecordConfirmAbort = new System.Windows.Forms.CheckBox();
@@ -293,7 +296,6 @@
             this.pgTaskSettings = new System.Windows.Forms.PropertyGrid();
             this.cbOverrideAdvancedSettings = new System.Windows.Forms.CheckBox();
             this.tttvMain = new ShareX.HelpersLib.TabToTreeView();
-            this.lblTask = new System.Windows.Forms.Label();
             this.tcTaskSettings.SuspendLayout();
             this.tpTask.SuspendLayout();
             this.cmsDestinations.SuspendLayout();
@@ -336,6 +338,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudRegionCaptureMagnifierPixelCount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudRegionCaptureMagnifierPixelSize)).BeginInit();
             this.tpScreenRecorder.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudFFMPEGBuffer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudScreenRecordFPS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudScreenRecorderDuration)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudScreenRecorderStartDelay)).BeginInit();
@@ -440,6 +443,11 @@
             this.tpTask.Controls.Add(this.lblDescription);
             resources.ApplyResources(this.tpTask, "tpTask");
             this.tpTask.Name = "tpTask";
+            // 
+            // lblTask
+            // 
+            resources.ApplyResources(this.lblTask, "lblTask");
+            this.lblTask.Name = "lblTask";
             // 
             // btnScreenshotsFolderBrowse
             // 
@@ -1760,6 +1768,8 @@
             // tpScreenRecorder
             // 
             this.tpScreenRecorder.BackColor = System.Drawing.SystemColors.Window;
+            this.tpScreenRecorder.Controls.Add(this.nudFFMPEGBuffer);
+            this.tpScreenRecorder.Controls.Add(this.lblFFMPEGBuffer);
             this.tpScreenRecorder.Controls.Add(this.cbScreenRecordTransparentRegion);
             this.tpScreenRecorder.Controls.Add(this.cbScreenRecordTwoPassEncoding);
             this.tpScreenRecorder.Controls.Add(this.cbScreenRecordConfirmAbort);
@@ -1777,6 +1787,32 @@
             this.tpScreenRecorder.Controls.Add(this.lblGIFFPS);
             resources.ApplyResources(this.tpScreenRecorder, "tpScreenRecorder");
             this.tpScreenRecorder.Name = "tpScreenRecorder";
+            // 
+            // nudFFMPEGBuffer
+            // 
+            resources.ApplyResources(this.nudFFMPEGBuffer, "nudFFMPEGBuffer");
+            this.nudFFMPEGBuffer.Maximum = new decimal(new int[] {
+            8192,
+            0,
+            0,
+            0});
+            this.nudFFMPEGBuffer.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nudFFMPEGBuffer.Name = "nudFFMPEGBuffer";
+            this.nudFFMPEGBuffer.Value = new decimal(new int[] {
+            300,
+            0,
+            0,
+            0});
+            this.nudFFMPEGBuffer.ValueChanged += new System.EventHandler(this.nudFFMPEGBuffer_ValueChanged);
+            // 
+            // lblFFMPEGBuffer
+            // 
+            resources.ApplyResources(this.lblFFMPEGBuffer, "lblFFMPEGBuffer");
+            this.lblFFMPEGBuffer.Name = "lblFFMPEGBuffer";
             // 
             // cbScreenRecordTransparentRegion
             // 
@@ -2546,11 +2582,6 @@
             this.tttvMain.TreeViewSize = 190;
             this.tttvMain.TabChanged += new ShareX.HelpersLib.TabToTreeView.TabChangedEventHandler(this.tttvMain_TabChanged);
             // 
-            // lblTask
-            // 
-            resources.ApplyResources(this.lblTask, "lblTask");
-            this.lblTask.Name = "lblTask";
-            // 
             // TaskSettingsForm
             // 
             resources.ApplyResources(this, "$this");
@@ -2617,6 +2648,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudRegionCaptureMagnifierPixelSize)).EndInit();
             this.tpScreenRecorder.ResumeLayout(false);
             this.tpScreenRecorder.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudFFMPEGBuffer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudScreenRecordFPS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudScreenRecorderDuration)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudScreenRecorderStartDelay)).EndInit();
@@ -2916,5 +2948,7 @@
         private System.Windows.Forms.Button btnActions;
         private System.Windows.Forms.CheckBox cbImageAutoJPEGQuality;
         private System.Windows.Forms.Label lblTask;
+        private System.Windows.Forms.NumericUpDown nudFFMPEGBuffer;
+        private System.Windows.Forms.Label lblFFMPEGBuffer;
     }
 }

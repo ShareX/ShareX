@@ -56,6 +56,7 @@ namespace ShareX.ScreenCaptureLib
         public FFmpegAMFQuality AMF_quality { get; set; } = FFmpegAMFQuality.speed;
         public FFmpegQSVPreset QSV_preset { get; set; } = FFmpegQSVPreset.fast;
         public int QSV_bitrate { get; set; } = 3000;
+        public int FFMPEGBuffer { get; set; } = 150; //MB
 
         // Audio
         public int AAC_bitrate { get; set; } = 128; // kbit/s
