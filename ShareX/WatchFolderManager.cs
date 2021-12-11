@@ -77,19 +77,27 @@ namespace ShareX
                     taskSettings.WatchFolderList.Add(watchFolderSetting);
                 }
 
-                WatchFolder watchFolder = new WatchFolder { Settings = watchFolderSetting, TaskSettings = taskSettings };
+                WatchFolder watchFolder = new WatchFolder();
+                watchFolder.Settings = watchFolderSetting;
+                watchFolder.TaskSettings = taskSettings;
+
                 watchFolder.FileWatcherTrigger += origPath =>
                 {
                     TaskSettings taskSettingsCopy = TaskSettings.GetSafeTaskSettings(taskSettings);
                     string destPath = origPath;
+
                     if (watchFolderSetting.MoveFilesToScreenshotsFolder)
                     {
-                        destPath = Helpers.GetUniqueFilePath(Path.Combine(Program.ScreenshotsFolder, Path.GetFileName(origPath)));
+                        string screenshotsFolder = taskSettingsCopy.GetScreenshotsFolder();
+                        string fileName = Path.GetFileName(origPath);
+                        destPath = TaskHelpers.HandleExistsFile(screenshotsFolder, fileName, taskSettingsCopy);
                         Helpers.CreateDirectoryFromFilePath(destPath);
                         File.Move(origPath, destPath);
                     }
+
                     UploadManager.UploadFile(destPath, taskSettingsCopy);
                 };
+
                 WatchFolders.Add(watchFolder);
 
                 if (taskSettings.WatchFolderEnabled)
