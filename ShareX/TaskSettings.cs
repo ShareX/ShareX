@@ -76,17 +76,6 @@ namespace ShareX
         public bool OverrideScreenshotsFolder = false;
         public string ScreenshotsFolder = "";
 
-        public string GetScreenshotsFolder()
-        {
-            if (OverrideScreenshotsFolder && !string.IsNullOrEmpty(ScreenshotsFolder))
-            {
-                string screenshotsFolderPath = NameParser.Parse(NameParserType.FolderPath, ScreenshotsFolder);
-                return Helpers.GetAbsolutePath(screenshotsFolderPath);
-            }
-
-            return Program.ScreenshotsFolder;
-        }
-
         public bool UseDefaultGeneralSettings = true;
         public TaskSettingsGeneral GeneralSettings = new TaskSettingsGeneral();
 

@@ -369,8 +369,9 @@ namespace ShareX
         {
             using (ImageData imageData = PrepareImage(bmp, taskSettings))
             {
+                string screenshotsFolder = GetScreenshotsFolder(taskSettings);
                 string fileName = GetFilename(taskSettings, imageData.ImageFormat.GetDescription(), bmp);
-                string filePath = Path.Combine(taskSettings.GetScreenshotsFolder(), fileName);
+                string filePath = Path.Combine(screenshotsFolder, fileName);
 
                 if (!overwriteFile)
                 {
@@ -432,6 +433,17 @@ namespace ShareX
             }
 
             return filename;
+        }
+
+        public static string GetScreenshotsFolder(TaskSettings taskSettings = null)
+        {
+            if (taskSettings != null && taskSettings.OverrideScreenshotsFolder && !string.IsNullOrEmpty(taskSettings.ScreenshotsFolder))
+            {
+                string screenshotsFolderPath = NameParser.Parse(NameParserType.FolderPath, taskSettings.ScreenshotsFolder);
+                return Helpers.GetAbsolutePath(screenshotsFolderPath);
+            }
+
+            return Program.ScreenshotsFolder;
         }
 
         public static bool ShowAfterCaptureForm(TaskSettings taskSettings, out string fileName, TaskMetadata metadata = null, string filePath = null)
@@ -799,7 +811,7 @@ namespace ShareX
                 return;
             }
 
-            taskSettings.ToolsSettingsReference.VideoThumbnailOptions.DefaultOutputDirectory = taskSettings.GetScreenshotsFolder();
+            taskSettings.ToolsSettingsReference.VideoThumbnailOptions.DefaultOutputDirectory = GetScreenshotsFolder(taskSettings);
             VideoThumbnailerForm thumbnailerForm = new VideoThumbnailerForm(taskSettings.CaptureSettings.FFmpegOptions.FFmpegPath,
                 taskSettings.ToolsSettingsReference.VideoThumbnailOptions);
             thumbnailerForm.ThumbnailsTaken += thumbnails =>
@@ -906,8 +918,9 @@ namespace ShareX
                             {
                                 if (string.IsNullOrEmpty(newFilePath))
                                 {
+                                    string screenshotsFolder = GetScreenshotsFolder(taskSettings);
                                     string fileName = GetFilename(taskSettings, taskSettings.ImageSettings.ImageFormat.GetDescription(), output);
-                                    newFilePath = Path.Combine(taskSettings.GetScreenshotsFolder(), fileName);
+                                    newFilePath = Path.Combine(screenshotsFolder, fileName);
                                 }
 
                                 ImageHelpers.SaveImage(output, newFilePath);
@@ -922,8 +935,9 @@ namespace ShareX
                             {
                                 if (string.IsNullOrEmpty(newFilePath))
                                 {
+                                    string screenshotsFolder = GetScreenshotsFolder(taskSettings);
                                     string fileName = GetFilename(taskSettings, taskSettings.ImageSettings.ImageFormat.GetDescription(), output);
-                                    newFilePath = Path.Combine(taskSettings.GetScreenshotsFolder(), fileName);
+                                    newFilePath = Path.Combine(screenshotsFolder, fileName);
                                 }
 
                                 newFilePath = ImageHelpers.SaveImageFileDialog(output, newFilePath);

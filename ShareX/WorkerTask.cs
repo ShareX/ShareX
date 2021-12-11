@@ -632,7 +632,8 @@ namespace ShareX
 
                 if (Info.TaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.SaveImageToFile))
                 {
-                    string filePath = TaskHelpers.HandleExistsFile(Info.TaskSettings.GetScreenshotsFolder(), Info.FileName, Info.TaskSettings);
+                    string screenshotsFolder = TaskHelpers.GetScreenshotsFolder(Info.TaskSettings);
+                    string filePath = TaskHelpers.HandleExistsFile(screenshotsFolder, Info.FileName, Info.TaskSettings);
 
                     if (!string.IsNullOrEmpty(filePath))
                     {
@@ -654,7 +655,7 @@ namespace ShareX
                         }
                         else
                         {
-                            initialDirectory = Info.TaskSettings.GetScreenshotsFolder();
+                            initialDirectory = TaskHelpers.GetScreenshotsFolder(Info.TaskSettings);
                         }
 
                         bool imageSaved;
@@ -698,7 +699,7 @@ namespace ShareX
                     else
                     {
                         thumbnailFilename = Info.FileName;
-                        thumbnailFolder = Info.TaskSettings.GetScreenshotsFolder();
+                        thumbnailFolder = TaskHelpers.GetScreenshotsFolder(Info.TaskSettings);
                     }
 
                     Info.ThumbnailFilePath = TaskHelpers.CreateThumbnail(Image, thumbnailFolder, thumbnailFilename, Info.TaskSettings);
@@ -779,7 +780,8 @@ namespace ShareX
         {
             if (Info.TaskSettings.AdvancedSettings.TextTaskSaveAsFile)
             {
-                string filePath = TaskHelpers.HandleExistsFile(Info.TaskSettings.GetScreenshotsFolder(), Info.FileName, Info.TaskSettings);
+                string screenshotsFolder = TaskHelpers.GetScreenshotsFolder(Info.TaskSettings);
+                string filePath = TaskHelpers.HandleExistsFile(screenshotsFolder, Info.FileName, Info.TaskSettings);
 
                 if (!string.IsNullOrEmpty(filePath))
                 {
@@ -1027,7 +1029,9 @@ namespace ShareX
         {
             string url = Info.Result.URL.Trim();
             Info.Result.URL = "";
-            Info.FilePath = TaskHelpers.HandleExistsFile(Info.TaskSettings.GetScreenshotsFolder(), Info.FileName, Info.TaskSettings);
+
+            string screenshotsFolder = TaskHelpers.GetScreenshotsFolder(Info.TaskSettings);
+            Info.FilePath = TaskHelpers.HandleExistsFile(screenshotsFolder, Info.FileName, Info.TaskSettings);
 
             if (!string.IsNullOrEmpty(Info.FilePath))
             {
