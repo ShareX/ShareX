@@ -111,6 +111,7 @@ namespace ShareX
             }
 
             Rectangle captureRectangle = Rectangle.Empty;
+            TaskMetadata metadata = new TaskMetadata();
 
             switch (startMethod)
             {
@@ -121,7 +122,8 @@ namespace ShareX
                     }
                     else
                     {
-                        RegionCaptureTasks.GetRectangleRegion(out captureRectangle, taskSettings.CaptureSettings.SurfaceOptions);
+                        RegionCaptureTasks.GetRectangleRegion(out captureRectangle, out WindowInfo windowInfo, taskSettings.CaptureSettings.SurfaceOptions);
+                        metadata.UpdateInfo(windowInfo);
                     }
                     break;
                 case ScreenRecordStartMethod.ActiveWindow:
@@ -187,7 +189,7 @@ namespace ShareX
                     {
                         extension = taskSettings.CaptureSettings.FFmpegOptions.Extension;
                     }
-                    string filename = TaskHelpers.GetFilename(taskSettings, extension);
+                    string filename = TaskHelpers.GetFilename(taskSettings, extension, metadata);
                     path = TaskHelpers.HandleExistsFile(taskSettings.GetScreenshotsFolder(), filename, taskSettings);
 
                     if (string.IsNullOrEmpty(path))
@@ -259,7 +261,7 @@ namespace ShareX
                 {
                     recordForm.ChangeState(ScreenRecordState.Encoding);
 
-                    path = ProcessTwoPassEncoding(path, taskSettings);
+                    path = ProcessTwoPassEncoding(path, metadata, taskSettings);
                 }
 
                 if (recordForm != null)
@@ -297,7 +299,7 @@ namespace ShareX
                         }
                     }
 
-                    WorkerTask task = WorkerTask.CreateFileJobTask(path, taskSettings, customFileName);
+                    WorkerTask task = WorkerTask.CreateFileJobTask(path, metadata, taskSettings, customFileName);
                     TaskManager.Start(task);
                 }
 
@@ -316,9 +318,9 @@ namespace ShareX
             recordForm.ChangeStateProgress(progress);
         }
 
-        private static string ProcessTwoPassEncoding(string input, TaskSettings taskSettings, bool deleteInputFile = true)
+        private static string ProcessTwoPassEncoding(string input, TaskMetadata metadata, TaskSettings taskSettings, bool deleteInputFile = true)
         {
-            string filename = TaskHelpers.GetFilename(taskSettings, taskSettings.CaptureSettings.FFmpegOptions.Extension);
+            string filename = TaskHelpers.GetFilename(taskSettings, taskSettings.CaptureSettings.FFmpegOptions.Extension, metadata);
             string output = Path.Combine(taskSettings.GetScreenshotsFolder(), filename);
 
             try

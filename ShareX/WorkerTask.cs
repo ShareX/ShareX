@@ -179,7 +179,7 @@ namespace ShareX
             return task;
         }
 
-        public static WorkerTask CreateFileJobTask(string filePath, TaskSettings taskSettings, string customFileName = null)
+        public static WorkerTask CreateFileJobTask(string filePath, TaskMetadata metadata, TaskSettings taskSettings, string customFileName = null)
         {
             WorkerTask task = new WorkerTask(taskSettings);
             task.Info.FilePath = filePath;
@@ -196,6 +196,7 @@ namespace ShareX
                 task.Info.FileName = TaskHelpers.GetFilename(task.Info.TaskSettings, ext);
             }
 
+            task.Info.Metadata = metadata;
             task.Info.Job = TaskJob.Job;
 
             if (task.Info.IsUploadJob && !task.LoadFileStream())

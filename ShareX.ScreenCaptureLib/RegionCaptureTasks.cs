@@ -46,11 +46,18 @@ namespace ShareX.ScreenCaptureLib
 
         public static bool GetRectangleRegion(out Rectangle rect, RegionCaptureOptions options)
         {
+            return GetRectangleRegion(out rect, out _, options);
+        }
+
+        public static bool GetRectangleRegion(out Rectangle rect, out WindowInfo windowInfo, RegionCaptureOptions options)
+        {
             RegionCaptureOptions newOptions = GetRegionCaptureOptions(options);
 
             using (RegionCaptureForm form = new RegionCaptureForm(RegionCaptureMode.Default, newOptions))
             {
                 form.ShowDialog();
+
+                windowInfo = form.GetWindowInfo();
 
                 if (form.Result == RegionResult.Region)
                 {
