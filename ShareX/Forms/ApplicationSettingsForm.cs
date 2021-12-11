@@ -368,7 +368,7 @@ namespace ShareX
         {
             try
             {
-                lblSaveImageSubFolderPatternPreview.Text = Program.ScreenshotsFolder;
+                lblSaveImageSubFolderPatternPreview.Text = TaskHelpers.GetScreenshotsFolder();
             }
             catch (Exception e)
             {

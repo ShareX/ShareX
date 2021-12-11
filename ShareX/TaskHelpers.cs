@@ -435,15 +435,35 @@ namespace ShareX
             return filename;
         }
 
-        public static string GetScreenshotsFolder(TaskSettings taskSettings = null)
+        public static string GetScreenshotsFolder(TaskSettings taskSettings = null, TaskMetadata metadata = null)
         {
-            if (taskSettings != null && taskSettings.OverrideScreenshotsFolder && !string.IsNullOrEmpty(taskSettings.ScreenshotsFolder))
+            string screenshotsFolder;
+
+            NameParser nameParser = new NameParser(NameParserType.FolderPath);
+
+            if (metadata != null)
             {
-                string screenshotsFolderPath = NameParser.Parse(NameParserType.FolderPath, taskSettings.ScreenshotsFolder);
-                return Helpers.GetAbsolutePath(screenshotsFolderPath);
+                if (metadata.Image != null)
+                {
+                    nameParser.ImageWidth = metadata.Image.Width;
+                    nameParser.ImageHeight = metadata.Image.Height;
+                }
+
+                nameParser.WindowText = metadata.WindowTitle;
+                nameParser.ProcessName = metadata.ProcessName;
             }
 
-            return Program.ScreenshotsFolder;
+            if (taskSettings != null && taskSettings.OverrideScreenshotsFolder && !string.IsNullOrEmpty(taskSettings.ScreenshotsFolder))
+            {
+                screenshotsFolder = nameParser.Parse(taskSettings.ScreenshotsFolder);
+            }
+            else
+            {
+                string subFolderPattern = nameParser.Parse(Program.Settings.SaveImageSubFolderPattern);
+                screenshotsFolder = Path.Combine(Program.ScreenshotsParentFolder, subFolderPattern);
+            }
+
+            return Helpers.GetAbsolutePath(screenshotsFolder);
         }
 
         public static bool ShowAfterCaptureForm(TaskSettings taskSettings, out string fileName, TaskMetadata metadata = null, string filePath = null)
@@ -652,9 +672,11 @@ namespace ShareX
 
         public static void OpenScreenshotsFolder()
         {
-            if (Directory.Exists(Program.ScreenshotsFolder))
+            string screenshotsFolder = GetScreenshotsFolder();
+
+            if (Directory.Exists(screenshotsFolder))
             {
-                Helpers.OpenFolder(Program.ScreenshotsFolder);
+                Helpers.OpenFolder(screenshotsFolder);
             }
             else
             {

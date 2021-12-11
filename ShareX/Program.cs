@@ -252,16 +252,6 @@ namespace ShareX
             }
         }
 
-        public static string ScreenshotsFolder
-        {
-            get
-            {
-                string subFolderName = NameParser.Parse(NameParserType.FolderPath, Settings.SaveImageSubFolderPattern);
-                string folderPath = Path.Combine(ScreenshotsParentFolder, subFolderName);
-                return Helpers.GetAbsolutePath(folderPath);
-            }
-        }
-
         public static string ToolsFolder => Path.Combine(PersonalFolder, "Tools");
         public static string ImageEffectsFolder => Path.Combine(PersonalFolder, "ImageEffects");
         public static string ScreenRecorderCacheFilePath => Path.Combine(PersonalFolder, "ScreenRecorder.avi");
