@@ -227,9 +227,9 @@ namespace ShareX.HelpersLib
             {
                 if (ofd.ShowDialog() == DialogResult.OK)
                 {
-                    foreach (string filename in ofd.FileNames)
+                    foreach (string fileName in ofd.FileNames)
                     {
-                        ImportFile(filename);
+                        ImportFile(fileName);
                     }
 
                     OnImportCompleted();

@@ -302,18 +302,18 @@ namespace ShareX.UploadersLib.FileUploaders
             {
                 if (!string.IsNullOrEmpty(file))
                 {
-                    string filename = Path.GetFileName(file);
+                    string fileName = Path.GetFileName(file);
 
                     if (File.Exists(file))
                     {
-                        UploadFile(file, URLHelpers.CombineURL(remotePath, filename));
+                        UploadFile(file, URLHelpers.CombineURL(remotePath, fileName));
                     }
                     else if (Directory.Exists(file))
                     {
                         List<string> filesList = new List<string>();
                         filesList.AddRange(Directory.GetFiles(file));
                         filesList.AddRange(Directory.GetDirectories(file));
-                        string path = URLHelpers.CombineURL(remotePath, filename);
+                        string path = URLHelpers.CombineURL(remotePath, fileName);
                         CreateDirectory(path);
                         UploadFiles(filesList.ToArray(), path);
                     }
@@ -454,8 +454,8 @@ namespace ShareX.UploadersLib.FileUploaders
         {
             if (Connect())
             {
-                string filename = URLHelpers.GetFileName(remotePath);
-                if (filename == "." || filename == "..")
+                string fileName = URLHelpers.GetFileName(remotePath);
+                if (fileName == "." || fileName == "..")
                 {
                     return;
                 }

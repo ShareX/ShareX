@@ -111,14 +111,14 @@ namespace ShareX.HelpersLib
         private static string GetShortcutTargetPath(string shortcutPath)
         {
             string directory = Path.GetDirectoryName(shortcutPath);
-            string filename = Path.GetFileName(shortcutPath);
+            string fileName = Path.GetFileName(shortcutPath);
 
             try
             {
                 Type t = Type.GetTypeFromProgID("Shell.Application");
                 object shell = Activator.CreateInstance(t);
                 Folder folder = (Folder)t.InvokeMember("NameSpace", BindingFlags.InvokeMethod, null, shell, new object[] { directory });
-                FolderItem folderItem = folder.ParseName(filename);
+                FolderItem folderItem = folder.ParseName(fileName);
 
                 if (folderItem != null)
                 {
@@ -145,11 +145,11 @@ namespace ShareX.HelpersLib
             if (!string.IsNullOrEmpty(filePath) && File.Exists(filePath))
             {
                 string directory = Path.GetDirectoryName(filePath);
-                string filename = Path.GetFileName(filePath);
+                string fileName = Path.GetFileName(filePath);
 
                 Shell shell = new ShellClass();
                 Folder folder = shell.NameSpace(directory);
-                FolderItem folderItem = folder.ParseName(filename);
+                FolderItem folderItem = folder.ParseName(fileName);
 
                 FolderItemVerbs verbs = folderItem.Verbs();
 

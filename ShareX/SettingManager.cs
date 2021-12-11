@@ -41,7 +41,7 @@ namespace ShareX
 {
     internal static class SettingManager
     {
-        private const string ApplicationConfigFilename = "ApplicationConfig.json";
+        private const string ApplicationConfigFileName = "ApplicationConfig.json";
 
         private static string ApplicationConfigFilePath
         {
@@ -49,11 +49,11 @@ namespace ShareX
             {
                 if (Program.Sandbox) return null;
 
-                return Path.Combine(Program.PersonalFolder, ApplicationConfigFilename);
+                return Path.Combine(Program.PersonalFolder, ApplicationConfigFileName);
             }
         }
 
-        private const string UploadersConfigFilename = "UploadersConfig.json";
+        private const string UploadersConfigFileName = "UploadersConfig.json";
 
         private static string UploadersConfigFilePath
         {
@@ -72,11 +72,11 @@ namespace ShareX
                     uploadersConfigFolder = Program.PersonalFolder;
                 }
 
-                return Path.Combine(uploadersConfigFolder, UploadersConfigFilename);
+                return Path.Combine(uploadersConfigFolder, UploadersConfigFileName);
             }
         }
 
-        private const string HotkeysConfigFilename = "HotkeysConfig.json";
+        private const string HotkeysConfigFileName = "HotkeysConfig.json";
 
         private static string HotkeysConfigFilePath
         {
@@ -95,7 +95,7 @@ namespace ShareX
                     hotkeysConfigFolder = Program.PersonalFolder;
                 }
 
-                return Path.Combine(hotkeysConfigFolder, HotkeysConfigFilename);
+                return Path.Combine(hotkeysConfigFolder, HotkeysConfigFileName);
             }
         }
 
@@ -364,13 +364,13 @@ namespace ShareX
                 if (settings)
                 {
                     msApplicationConfig = Settings.SaveToMemoryStream(false);
-                    entries.Add(new ZipEntryInfo(msApplicationConfig, ApplicationConfigFilename));
+                    entries.Add(new ZipEntryInfo(msApplicationConfig, ApplicationConfigFileName));
 
                     msUploadersConfig = UploadersConfig.SaveToMemoryStream(false);
-                    entries.Add(new ZipEntryInfo(msUploadersConfig, UploadersConfigFilename));
+                    entries.Add(new ZipEntryInfo(msUploadersConfig, UploadersConfigFileName));
 
                     msHotkeysConfig = HotkeysConfig.SaveToMemoryStream(false);
-                    entries.Add(new ZipEntryInfo(msHotkeysConfig, HotkeysConfigFilename));
+                    entries.Add(new ZipEntryInfo(msHotkeysConfig, HotkeysConfigFileName));
                 }
 
                 if (history)

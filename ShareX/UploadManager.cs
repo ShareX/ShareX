@@ -449,13 +449,13 @@ namespace ShareX
             }
         }
 
-        public static void UploadImageStream(Stream stream, string filename, TaskSettings taskSettings = null)
+        public static void UploadImageStream(Stream stream, string fileName, TaskSettings taskSettings = null)
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
-            if (stream != null && stream.Length > 0 && !string.IsNullOrEmpty(filename))
+            if (stream != null && stream.Length > 0 && !string.IsNullOrEmpty(fileName))
             {
-                WorkerTask task = WorkerTask.CreateDataUploaderTask(EDataType.Image, stream, filename, taskSettings);
+                WorkerTask task = WorkerTask.CreateDataUploaderTask(EDataType.Image, stream, fileName, taskSettings);
                 TaskManager.Start(task);
             }
         }

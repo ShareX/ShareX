@@ -190,7 +190,7 @@ namespace ShareX
                         extension = taskSettings.CaptureSettings.FFmpegOptions.Extension;
                     }
                     string screenshotsFolder = TaskHelpers.GetScreenshotsFolder(taskSettings, metadata);
-                    string fileName = TaskHelpers.GetFilename(taskSettings, extension, metadata);
+                    string fileName = TaskHelpers.GetFileName(taskSettings, extension, metadata);
                     path = TaskHelpers.HandleExistsFile(screenshotsFolder, fileName, taskSettings);
 
                     if (string.IsNullOrEmpty(path))
@@ -291,10 +291,10 @@ namespace ShareX
                 {
                     if (!string.IsNullOrEmpty(customFileName))
                     {
-                        string currentFilename = Path.GetFileNameWithoutExtension(path);
+                        string currentFileName = Path.GetFileNameWithoutExtension(path);
                         string ext = Path.GetExtension(path);
 
-                        if (!currentFilename.Equals(customFileName, StringComparison.InvariantCultureIgnoreCase))
+                        if (!currentFileName.Equals(customFileName, StringComparison.InvariantCultureIgnoreCase))
                         {
                             path = Helpers.RenameFile(path, customFileName + ext);
                         }
@@ -322,7 +322,7 @@ namespace ShareX
         private static string ProcessTwoPassEncoding(string input, TaskMetadata metadata, TaskSettings taskSettings, bool deleteInputFile = true)
         {
             string screenshotsFolder = TaskHelpers.GetScreenshotsFolder(taskSettings, metadata);
-            string fileName = TaskHelpers.GetFilename(taskSettings, taskSettings.CaptureSettings.FFmpegOptions.Extension, metadata);
+            string fileName = TaskHelpers.GetFileName(taskSettings, taskSettings.CaptureSettings.FFmpegOptions.Extension, metadata);
             string output = Path.Combine(screenshotsFolder, fileName);
 
             try

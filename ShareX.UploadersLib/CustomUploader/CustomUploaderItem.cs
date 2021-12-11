@@ -266,7 +266,7 @@ namespace ShareX.UploadersLib
                 }
 
                 CustomUploaderParser parser = new CustomUploaderParser(responseInfo, RegexList);
-                parser.Filename = input.Filename;
+                parser.FileName = input.FileName;
                 parser.URLEncode = true;
 
                 if (responseInfo.IsSuccess)

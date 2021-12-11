@@ -92,7 +92,7 @@ namespace ShareX.HelpersLib
             }
         }
 
-        public static string GetFilenameExtension(string filePath, bool includeDot = false, bool checkSecondExtension = true)
+        public static string GetFileNameExtension(string filePath, bool includeDot = false, bool checkSecondExtension = true)
         {
             string extension = "";
 
@@ -107,7 +107,7 @@ namespace ShareX.HelpersLib
                     if (checkSecondExtension)
                     {
                         filePath = filePath.Remove(pos);
-                        string extension2 = GetFilenameExtension(filePath, false, false);
+                        string extension2 = GetFileNameExtension(filePath, false, false);
 
                         if (!string.IsNullOrEmpty(extension2))
                         {
@@ -132,7 +132,7 @@ namespace ShareX.HelpersLib
             return extension;
         }
 
-        public static string GetFilenameSafe(string filePath)
+        public static string GetFileNameSafe(string filePath)
         {
             if (!string.IsNullOrEmpty(filePath))
             {
@@ -152,7 +152,7 @@ namespace ShareX.HelpersLib
             return filePath;
         }
 
-        public static string ChangeFilenameExtension(string fileName, string extension)
+        public static string ChangeFileNameExtension(string fileName, string extension)
         {
             if (!string.IsNullOrEmpty(fileName))
             {
@@ -186,7 +186,7 @@ namespace ShareX.HelpersLib
 
         public static bool CheckExtension(string filePath, IEnumerable<string> extensions)
         {
-            string ext = GetFilenameExtension(filePath);
+            string ext = GetFileNameExtension(filePath);
 
             if (!string.IsNullOrEmpty(ext))
             {

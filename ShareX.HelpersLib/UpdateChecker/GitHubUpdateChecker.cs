@@ -151,7 +151,7 @@ namespace ShareX.HelpersLib
                     {
                         if (asset != null && !string.IsNullOrEmpty(asset.name) && asset.name.EndsWith(endsWith, StringComparison.OrdinalIgnoreCase))
                         {
-                            Filename = asset.name;
+                            FileName = asset.name;
 
                             if (isBrowserDownloadURL)
                             {

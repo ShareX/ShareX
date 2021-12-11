@@ -27,12 +27,12 @@ namespace ShareX.UploadersLib
 {
     public class CustomUploaderInput
     {
-        public string Filename { get; set; }
+        public string FileName { get; set; }
         public string Input { get; set; }
 
-        public CustomUploaderInput(string filename, string input)
+        public CustomUploaderInput(string fileName, string input)
         {
-            Filename = filename;
+            FileName = fileName;
             Input = input;
         }
     }

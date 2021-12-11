@@ -107,8 +107,8 @@ namespace ShareX
 
             if (task.Info.TaskSettings.UploadSettings.FileUploadUseNamePattern)
             {
-                string ext = Helpers.GetFilenameExtension(task.Info.FilePath);
-                task.Info.FileName = TaskHelpers.GetFilename(task.Info.TaskSettings, ext);
+                string ext = Helpers.GetFileNameExtension(task.Info.FilePath);
+                task.Info.FileName = TaskHelpers.GetFileName(task.Info.TaskSettings, ext);
             }
 
             if (task.Info.TaskSettings.AdvancedSettings.ProcessImagesDuringFileUpload && task.Info.DataType == EDataType.Image)
@@ -141,7 +141,7 @@ namespace ShareX
             }
             else
             {
-                task.Info.FileName = TaskHelpers.GetFilename(taskSettings, "bmp", metadata);
+                task.Info.FileName = TaskHelpers.GetFileName(taskSettings, "bmp", metadata);
             }
 
             task.Info.Metadata = metadata;
@@ -154,7 +154,7 @@ namespace ShareX
             WorkerTask task = new WorkerTask(taskSettings);
             task.Info.Job = TaskJob.TextUpload;
             task.Info.DataType = EDataType.Text;
-            task.Info.FileName = TaskHelpers.GetFilename(taskSettings, taskSettings.AdvancedSettings.TextFileExtension);
+            task.Info.FileName = TaskHelpers.GetFileName(taskSettings, taskSettings.AdvancedSettings.TextFileExtension);
             task.Text = text;
             return task;
         }
@@ -187,13 +187,13 @@ namespace ShareX
 
             if (!string.IsNullOrEmpty(customFileName))
             {
-                string ext = Helpers.GetFilenameExtension(task.Info.FilePath);
+                string ext = Helpers.GetFileNameExtension(task.Info.FilePath);
                 task.Info.FileName = Helpers.AppendExtension(customFileName, ext);
             }
             else if (task.Info.TaskSettings.UploadSettings.FileUploadUseNamePattern)
             {
-                string ext = Helpers.GetFilenameExtension(task.Info.FilePath);
-                task.Info.FileName = TaskHelpers.GetFilename(task.Info.TaskSettings, ext);
+                string ext = Helpers.GetFileNameExtension(task.Info.FilePath);
+                task.Info.FileName = TaskHelpers.GetFileName(task.Info.TaskSettings, ext);
             }
 
             task.Info.Metadata = metadata;
@@ -212,22 +212,22 @@ namespace ShareX
             WorkerTask task = new WorkerTask(taskSettings);
             task.Info.Job = upload ? TaskJob.DownloadUpload : TaskJob.Download;
 
-            string filename = URLHelpers.URLDecode(url, 10);
-            filename = URLHelpers.GetFileName(filename);
-            filename = Helpers.GetValidFileName(filename);
+            string fileName = URLHelpers.URLDecode(url, 10);
+            fileName = URLHelpers.GetFileName(fileName);
+            fileName = Helpers.GetValidFileName(fileName);
 
             if (task.Info.TaskSettings.UploadSettings.FileUploadUseNamePattern)
             {
-                string ext = Helpers.GetFilenameExtension(filename);
-                filename = TaskHelpers.GetFilename(task.Info.TaskSettings, ext);
+                string ext = Helpers.GetFileNameExtension(fileName);
+                fileName = TaskHelpers.GetFileName(task.Info.TaskSettings, ext);
             }
 
-            if (string.IsNullOrEmpty(filename))
+            if (string.IsNullOrEmpty(fileName))
             {
                 return null;
             }
 
-            task.Info.FileName = filename;
+            task.Info.FileName = fileName;
             task.Info.DataType = TaskHelpers.FindDataType(task.Info.FileName, taskSettings);
             task.Info.Result.URL = url;
             return task;
@@ -443,7 +443,7 @@ namespace ShareX
             }
         }
 
-        private bool DoUpload(Stream data, string filename, int retry = 0)
+        private bool DoUpload(Stream data, string fileName, int retry = 0)
         {
             bool isError = false;
 
@@ -472,18 +472,18 @@ namespace ShareX
                     sslBypassHelper = new SSLBypassHelper();
                 }
 
-                if (!CheckUploadFilters(data, filename))
+                if (!CheckUploadFilters(data, fileName))
                 {
                     switch (Info.UploadDestination)
                     {
                         case EDataType.Image:
-                            Info.Result = UploadImage(data, filename);
+                            Info.Result = UploadImage(data, fileName);
                             break;
                         case EDataType.Text:
-                            Info.Result = UploadText(data, filename);
+                            Info.Result = UploadText(data, fileName);
                             break;
                         case EDataType.File:
-                            Info.Result = UploadFile(data, filename);
+                            Info.Result = UploadFile(data, fileName);
                             break;
                     }
                 }
@@ -689,20 +689,20 @@ namespace ShareX
 
                 if (Info.TaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.SaveThumbnailImageToFile))
                 {
-                    string thumbnailFilename, thumbnailFolder;
+                    string thumbnailFileName, thumbnailFolder;
 
                     if (!string.IsNullOrEmpty(Info.FilePath))
                     {
-                        thumbnailFilename = Path.GetFileName(Info.FilePath);
+                        thumbnailFileName = Path.GetFileName(Info.FilePath);
                         thumbnailFolder = Path.GetDirectoryName(Info.FilePath);
                     }
                     else
                     {
-                        thumbnailFilename = Info.FileName;
+                        thumbnailFileName = Info.FileName;
                         thumbnailFolder = TaskHelpers.GetScreenshotsFolder(Info.TaskSettings, Info.Metadata);
                     }
 
-                    Info.ThumbnailFilePath = TaskHelpers.CreateThumbnail(Image, thumbnailFolder, thumbnailFilename, Info.TaskSettings);
+                    Info.ThumbnailFilePath = TaskHelpers.CreateThumbnail(Image, thumbnailFolder, thumbnailFileName, Info.TaskSettings);
 
                     if (!string.IsNullOrEmpty(Info.ThumbnailFilePath))
                     {
@@ -747,8 +747,8 @@ namespace ShareX
 
                         if (isFileModified)
                         {
-                            string extension = Helpers.GetFilenameExtension(Info.FilePath);
-                            Info.FileName = Helpers.ChangeFilenameExtension(fileName, extension);
+                            string extension = Helpers.GetFileNameExtension(Info.FilePath);
+                            Info.FileName = Helpers.ChangeFileNameExtension(fileName, extension);
 
                             LoadFileStream();
                         }
@@ -927,11 +927,11 @@ namespace ShareX
             return null;
         }
 
-        private bool CheckUploadFilters(Stream stream, string filename)
+        private bool CheckUploadFilters(Stream stream, string fileName)
         {
-            if (Info.TaskSettings.UploadSettings.UploaderFilters != null && !string.IsNullOrEmpty(filename) && stream != null)
+            if (Info.TaskSettings.UploadSettings.UploaderFilters != null && !string.IsNullOrEmpty(fileName) && stream != null)
             {
-                UploaderFilter filter = Info.TaskSettings.UploadSettings.UploaderFilters.FirstOrDefault(x => x.IsValidFilter(filename));
+                UploaderFilter filter = Info.TaskSettings.UploadSettings.UploaderFilters.FirstOrDefault(x => x.IsValidFilter(fileName));
 
                 if (filter != null)
                 {
@@ -939,7 +939,7 @@ namespace ShareX
 
                     if (service != null)
                     {
-                        Info.Result = UploadData(service, stream, filename);
+                        Info.Result = UploadData(service, stream, fileName);
 
                         return true;
                     }

@@ -359,7 +359,7 @@ namespace ShareX.HistoryLib
 
             IEnumerable<string> fileExtensions = historyItems.
                 Where(x => !string.IsNullOrEmpty(x.FileName) && !x.FileName.EndsWith(")")).
-                Select(x => Helpers.GetFilenameExtension(x.FileName)).
+                Select(x => Helpers.GetFileNameExtension(x.FileName)).
                 GroupBy(x => x).
                 OrderByDescending(x => x.Count()).
                 Select(x => string.Format("{0} ({1})", x.Key, x.Count()));

@@ -84,8 +84,8 @@ namespace ShareX.MediaLib
                     timeSliceElapsed = GetTimeSlice(Options.ThumbnailCount) * (i + 1);
                 }
 
-                string filename = string.Format("{0}-{1}.{2}", mediaFileName, timeSliceElapsed, Options.ImageFormat.GetDescription());
-                string tempThumbnailPath = Path.Combine(GetOutputDirectory(), filename);
+                string fileName = string.Format("{0}-{1}.{2}", mediaFileName, timeSliceElapsed, Options.ImageFormat.GetDescription());
+                string tempThumbnailPath = Path.Combine(GetOutputDirectory(), fileName);
 
                 using (Process process = new Process())
                 {

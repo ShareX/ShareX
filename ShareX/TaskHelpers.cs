@@ -298,12 +298,12 @@ namespace ShareX
             return imageData;
         }
 
-        public static string CreateThumbnail(Bitmap bmp, string folder, string filename, TaskSettings taskSettings)
+        public static string CreateThumbnail(Bitmap bmp, string folder, string fileName, TaskSettings taskSettings)
         {
             if ((taskSettings.ImageSettings.ThumbnailWidth > 0 || taskSettings.ImageSettings.ThumbnailHeight > 0) && (!taskSettings.ImageSettings.ThumbnailCheckSize ||
                 (bmp.Width > taskSettings.ImageSettings.ThumbnailWidth && bmp.Height > taskSettings.ImageSettings.ThumbnailHeight)))
             {
-                string thumbnailFileName = Path.GetFileNameWithoutExtension(filename) + taskSettings.ImageSettings.ThumbnailName + ".jpg";
+                string thumbnailFileName = Path.GetFileNameWithoutExtension(fileName) + taskSettings.ImageSettings.ThumbnailName + ".jpg";
                 string thumbnailFilePath = HandleExistsFile(folder, thumbnailFileName, taskSettings);
 
                 if (!string.IsNullOrEmpty(thumbnailFilePath))
@@ -370,7 +370,7 @@ namespace ShareX
             using (ImageData imageData = PrepareImage(bmp, taskSettings))
             {
                 string screenshotsFolder = GetScreenshotsFolder(taskSettings);
-                string fileName = GetFilename(taskSettings, imageData.ImageFormat.GetDescription(), bmp);
+                string fileName = GetFileName(taskSettings, imageData.ImageFormat.GetDescription(), bmp);
                 string filePath = Path.Combine(screenshotsFolder, fileName);
 
                 if (!overwriteFile)
@@ -386,15 +386,15 @@ namespace ShareX
             }
         }
 
-        public static string GetFilename(TaskSettings taskSettings, string extension, Bitmap bmp)
+        public static string GetFileName(TaskSettings taskSettings, string extension, Bitmap bmp)
         {
             TaskMetadata metadata = new TaskMetadata(bmp);
-            return GetFilename(taskSettings, extension, metadata);
+            return GetFileName(taskSettings, extension, metadata);
         }
 
-        public static string GetFilename(TaskSettings taskSettings, string extension = null, TaskMetadata metadata = null)
+        public static string GetFileName(TaskSettings taskSettings, string extension = null, TaskMetadata metadata = null)
         {
-            string filename;
+            string fileName;
 
             NameParser nameParser = new NameParser(NameParserType.FileName)
             {
@@ -418,21 +418,21 @@ namespace ShareX
 
             if (!string.IsNullOrEmpty(taskSettings.UploadSettings.NameFormatPatternActiveWindow) && !string.IsNullOrEmpty(nameParser.WindowText))
             {
-                filename = nameParser.Parse(taskSettings.UploadSettings.NameFormatPatternActiveWindow);
+                fileName = nameParser.Parse(taskSettings.UploadSettings.NameFormatPatternActiveWindow);
             }
             else
             {
-                filename = nameParser.Parse(taskSettings.UploadSettings.NameFormatPattern);
+                fileName = nameParser.Parse(taskSettings.UploadSettings.NameFormatPattern);
             }
 
             Program.Settings.NameParserAutoIncrementNumber = nameParser.AutoIncrementNumber;
 
             if (!string.IsNullOrEmpty(extension))
             {
-                filename += "." + extension.TrimStart('.');
+                fileName += "." + extension.TrimStart('.');
             }
 
-            return filename;
+            return fileName;
         }
 
         public static string GetScreenshotsFolder(TaskSettings taskSettings = null, TaskMetadata metadata = null)
@@ -596,9 +596,9 @@ namespace ShareX
             }
         }
 
-        public static string HandleExistsFile(string folder, string filename, TaskSettings taskSettings)
+        public static string HandleExistsFile(string folder, string fileName, TaskSettings taskSettings)
         {
-            string filepath = Path.Combine(folder, filename);
+            string filepath = Path.Combine(folder, fileName);
             return HandleExistsFile(filepath, taskSettings);
         }
 
@@ -612,7 +612,7 @@ namespace ShareX
                         using (FileExistForm form = new FileExistForm(filepath))
                         {
                             form.ShowDialog();
-                            filepath = form.Filepath;
+                            filepath = form.FilePath;
                         }
                         break;
                     case FileExistAction.UniqueName:
@@ -952,7 +952,7 @@ namespace ShareX
                                 if (string.IsNullOrEmpty(newFilePath))
                                 {
                                     string screenshotsFolder = GetScreenshotsFolder(taskSettings);
-                                    string fileName = GetFilename(taskSettings, taskSettings.ImageSettings.ImageFormat.GetDescription(), output);
+                                    string fileName = GetFileName(taskSettings, taskSettings.ImageSettings.ImageFormat.GetDescription(), output);
                                     newFilePath = Path.Combine(screenshotsFolder, fileName);
                                 }
 
@@ -969,7 +969,7 @@ namespace ShareX
                                 if (string.IsNullOrEmpty(newFilePath))
                                 {
                                     string screenshotsFolder = GetScreenshotsFolder(taskSettings);
-                                    string fileName = GetFilename(taskSettings, taskSettings.ImageSettings.ImageFormat.GetDescription(), output);
+                                    string fileName = GetFileName(taskSettings, taskSettings.ImageSettings.ImageFormat.GetDescription(), output);
                                     newFilePath = Path.Combine(screenshotsFolder, fileName);
                                 }
 

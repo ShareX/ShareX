@@ -149,7 +149,7 @@ namespace ShareX.MediaLib
                 int height = (int)nudHeight.Value;
                 int quality = (int)nudQuality.Value;
                 string outputFolder = txtOutputFolder.Text;
-                string outputFilename = txtOutputFilename.Text;
+                string outputFileName = txtOutputFilename.Text;
 
                 Cursor = Cursors.WaitCursor;
 
@@ -167,8 +167,8 @@ namespace ShareX.MediaLib
                                 {
                                     using (Bitmap thumbnail = ImageHelpers.CreateThumbnail(bmp, width, height))
                                     {
-                                        string filename = Path.GetFileNameWithoutExtension(filePath);
-                                        string outputPath = Path.Combine(outputFolder, outputFilename.Replace("$filename", filename));
+                                        string fileName = Path.GetFileNameWithoutExtension(filePath);
+                                        string outputPath = Path.Combine(outputFolder, outputFileName.Replace("$filename", fileName));
                                         outputPath = Path.ChangeExtension(outputPath, "jpg");
 
                                         using (Bitmap newImage = ImageHelpers.FillBackground(thumbnail, Color.White))

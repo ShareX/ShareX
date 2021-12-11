@@ -43,7 +43,7 @@ namespace ShareX.UploadersLib
         public const char SyntaxEscapeChar = '\\';
 
         public bool IsOutput { get; set; }
-        public string Filename { get; set; }
+        public string FileName { get; set; }
         public string Input { get; set; }
         public ResponseInfo ResponseInfo { get; set; }
         public List<Match> RegexMatches { get; set; }
@@ -61,9 +61,9 @@ namespace ShareX.UploadersLib
             IsOutput = false;
         }
 
-        public CustomUploaderParser(string filename, string input)
+        public CustomUploaderParser(string fileName, string input)
         {
-            Filename = filename;
+            FileName = fileName;
             Input = input;
 
             IsOutput = false;
@@ -87,7 +87,7 @@ namespace ShareX.UploadersLib
             IsOutput = true;
         }
 
-        public CustomUploaderParser(CustomUploaderInput input) : this(input.Filename, input.Input)
+        public CustomUploaderParser(CustomUploaderInput input) : this(input.FileName, input.Input)
         {
         }
 
@@ -233,7 +233,7 @@ namespace ShareX.UploadersLib
 
             if (CheckKeyword(syntax, "filename")) // Example: $filename$
             {
-                return AutoEncode(Filename);
+                return AutoEncode(FileName);
             }
             else if (CheckKeyword(syntax, "random", out value)) // Example: $random:domain1.com|domain2.com$
             {

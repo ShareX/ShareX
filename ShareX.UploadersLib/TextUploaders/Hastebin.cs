@@ -90,7 +90,7 @@ namespace ShareX.UploadersLib.TextUploaders
 
                         if (UseFileExtension)
                         {
-                            string ext = Helpers.GetFilenameExtension(fileName);
+                            string ext = Helpers.GetFileNameExtension(fileName);
 
                             if (!string.IsNullOrEmpty(ext) && !ext.Equals("txt", StringComparison.InvariantCultureIgnoreCase))
                             {

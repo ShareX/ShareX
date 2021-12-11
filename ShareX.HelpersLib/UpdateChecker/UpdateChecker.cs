@@ -43,22 +43,22 @@ namespace ShareX.HelpersLib
         public bool IsPortable { get; set; }
         public IWebProxy Proxy { get; set; }
 
-        private string filename;
+        private string fileName;
 
-        public string Filename
+        public string FileName
         {
             get
             {
-                if (string.IsNullOrEmpty(filename))
+                if (string.IsNullOrEmpty(fileName))
                 {
                     return HttpUtility.UrlDecode(DownloadURL.Substring(DownloadURL.LastIndexOf('/') + 1));
                 }
 
-                return filename;
+                return fileName;
             }
             set
             {
-                filename = value;
+                fileName = value;
             }
         }
 

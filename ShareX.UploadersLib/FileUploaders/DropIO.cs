@@ -33,20 +33,17 @@ namespace ShareX.UploadersLib.FileUploaders
     public sealed class DropIO : FileUploader
     {
         public string DropName { get; set; }
-
         public string DropDescription { get; set; }
 
         public class Asset
         {
             public string Name { get; set; }
-
             public string OriginalFilename { get; set; }
         }
 
         public class Drop
         {
             public string Name { get; set; }
-
             public string AdminToken { get; set; }
         }
 

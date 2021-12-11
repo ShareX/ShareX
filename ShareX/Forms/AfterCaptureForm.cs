@@ -64,7 +64,7 @@ namespace ShareX
                 btnCopy.Enabled = true;
             }
 
-            FileName = TaskHelpers.GetFilename(TaskSettings, null, metadata);
+            FileName = TaskHelpers.GetFileName(TaskSettings, null, metadata);
             txtFileName.Text = FileName;
         }
 

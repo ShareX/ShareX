@@ -179,7 +179,7 @@ namespace ShareX
             }
         }
 
-        public const string HistoryFilename = "History.json";
+        public const string HistoryFileName = "History.json";
 
         public static string HistoryFilePath
         {
@@ -187,11 +187,11 @@ namespace ShareX
             {
                 if (Sandbox) return null;
 
-                return Path.Combine(PersonalFolder, HistoryFilename);
+                return Path.Combine(PersonalFolder, HistoryFileName);
             }
         }
 
-        public const string HistoryFilenameOld = "History.xml";
+        public const string HistoryFileNameOld = "History.xml";
 
         public static string HistoryFilePathOld
         {
@@ -199,20 +199,20 @@ namespace ShareX
             {
                 if (Sandbox) return null;
 
-                return Path.Combine(PersonalFolder, HistoryFilenameOld);
+                return Path.Combine(PersonalFolder, HistoryFileNameOld);
             }
         }
 
-        public const string LogsFoldername = "Logs";
+        public const string LogsFolderName = "Logs";
 
-        public static string LogsFolder => Path.Combine(PersonalFolder, LogsFoldername);
+        public static string LogsFolder => Path.Combine(PersonalFolder, LogsFolderName);
 
         public static string LogsFilePath
         {
             get
             {
-                string filename = string.Format("ShareX-Log-{0:yyyy-MM}.txt", DateTime.Now);
-                return Path.Combine(LogsFolder, filename);
+                string fileName = string.Format("ShareX-Log-{0:yyyy-MM}.txt", DateTime.Now);
+                return Path.Combine(LogsFolder, fileName);
             }
         }
 

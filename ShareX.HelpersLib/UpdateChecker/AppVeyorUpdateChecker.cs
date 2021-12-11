@@ -68,7 +68,7 @@ namespace ShareX.HelpersLib
                     throw new Exception("Unable to find setup file.");
                 }
 
-                Filename = artifact.fileName;
+                FileName = artifact.fileName;
                 DownloadURL = appveyor.GetArtifactDownloadURL(job.jobId, artifact.fileName);
                 if (Version.TryParse(project.build.version, out Version version))
                 {

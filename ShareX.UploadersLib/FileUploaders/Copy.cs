@@ -192,17 +192,17 @@ namespace ShareX.UploadersLib.FileUploaders
 
         public string GetLinkURL(CopyLinksInfo link, string path, CopyURLType urlType = CopyURLType.Default)
         {
-            string filename = URLHelpers.URLEncode(URLHelpers.GetFileName(path));
+            string fileName = URLHelpers.URLEncode(URLHelpers.GetFileName(path));
 
             switch (urlType)
             {
                 default:
                 case CopyURLType.Default:
-                    return string.Format("https://www.copy.com/s/{0}/{1}", link.id, filename);
+                    return string.Format("https://www.copy.com/s/{0}/{1}", link.id, fileName);
                 case CopyURLType.Shortened:
                     return string.Format("https://copy.com/{0}", link.id);
                 case CopyURLType.Direct:
-                    return string.Format("https://copy.com/{0}/{1}", link.id, filename);
+                    return string.Format("https://copy.com/{0}/{1}", link.id, fileName);
             }
         }
 

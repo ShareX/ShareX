@@ -63,11 +63,11 @@ namespace ShareX.Setup
                 Directory.CreateDirectory(toFolder);
             }
 
-            foreach (string filepath in files)
+            foreach (string filePath in files)
             {
-                string filename = Path.GetFileName(filepath);
-                string dest = Path.Combine(toFolder, filename);
-                File.Copy(filepath, dest);
+                string fileName = Path.GetFileName(filePath);
+                string dest = Path.Combine(toFolder, fileName);
+                File.Copy(filePath, dest);
             }
         }
 
@@ -81,9 +81,9 @@ namespace ShareX.Setup
 
                 foreach (string file in files)
                 {
-                    string filename = Path.GetFileName(file);
+                    string fileName = Path.GetFileName(file);
 
-                    if (ignoreFiles.All(x => !filename.Equals(x, StringComparison.InvariantCultureIgnoreCase)))
+                    if (ignoreFiles.All(x => !fileName.Equals(x, StringComparison.InvariantCultureIgnoreCase)))
                     {
                         newFiles.Add(file);
                     }

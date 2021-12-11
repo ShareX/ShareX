@@ -1767,7 +1767,7 @@ namespace ShareX.HelpersLib
         public static ImageFormat GetImageFormat(string filePath)
         {
             ImageFormat imageFormat = ImageFormat.Png;
-            string ext = Helpers.GetFilenameExtension(filePath);
+            string ext = Helpers.GetFileNameExtension(filePath);
 
             if (!string.IsNullOrEmpty(ext))
             {
@@ -1840,7 +1840,7 @@ namespace ShareX.HelpersLib
 
                     sfd.FileName = Path.GetFileName(filePath);
 
-                    string ext = Helpers.GetFilenameExtension(filePath);
+                    string ext = Helpers.GetFileNameExtension(filePath);
 
                     if (!string.IsNullOrEmpty(ext))
                     {

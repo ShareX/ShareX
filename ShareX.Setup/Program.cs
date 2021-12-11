@@ -233,11 +233,11 @@ namespace ShareX.Setup
             CompileISSFile("ShareX-setup.iss");
         }
 
-        private static void CompileISSFile(string filename)
+        private static void CompileISSFile(string fileName)
         {
             if (File.Exists(InnoSetupCompilerPath))
             {
-                Console.WriteLine("Compiling setup file: " + filename);
+                Console.WriteLine("Compiling setup file: " + fileName);
 
                 using (Process process = new Process())
                 {
@@ -245,7 +245,7 @@ namespace ShareX.Setup
                     {
                         FileName = InnoSetupCompilerPath,
                         WorkingDirectory = Path.GetFullPath(InnoSetupDir),
-                        Arguments = $"\"{filename}\"",
+                        Arguments = $"\"{fileName}\"",
                         UseShellExecute = false
                     };
 
@@ -337,8 +337,8 @@ namespace ShareX.Setup
                 Helpers.CreateEmptyFile(Path.Combine(destination, "Portable"));
 
                 FileVersionInfo versionInfo = FileVersionInfo.GetVersionInfo(ReleaseExecutablePath);
-                string zipFilename = string.Format("ShareX-{0}.{1}.{2}-portable.zip", versionInfo.ProductMajorPart, versionInfo.ProductMinorPart, versionInfo.ProductBuildPart);
-                string zipPath = Path.Combine(OutputDir, zipFilename);
+                string zipFileName = string.Format("ShareX-{0}.{1}.{2}-portable.zip", versionInfo.ProductMajorPart, versionInfo.ProductMinorPart, versionInfo.ProductBuildPart);
+                string zipPath = Path.Combine(OutputDir, zipFileName);
                 //string zipPath = Path.Combine(OutputDir, "ShareX-portable.zip");
                 ZipManager.Compress(Path.GetFullPath(destination), Path.GetFullPath(zipPath));
 

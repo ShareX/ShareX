@@ -40,7 +40,7 @@ namespace ShareX.HelpersLib
         public event DownloaderInstallEventHandler InstallRequested;
 
         public string URL { get; set; }
-        public string Filename { get; set; }
+        public string FileName { get; set; }
         public string DownloadLocation { get; private set; }
         public IWebProxy Proxy { get; set; }
         public string AcceptHeader { get; set; }
@@ -64,14 +64,14 @@ namespace ShareX.HelpersLib
             RunInstallerInBackground = true;
         }
 
-        public DownloaderForm(string url, string filename) : this()
+        public DownloaderForm(string url, string fileName) : this()
         {
             URL = url;
-            Filename = filename;
-            lblFilename.Text = Helpers.SafeStringFormat(Resources.DownloaderForm_DownloaderForm_Filename___0_, Filename);
+            FileName = fileName;
+            lblFilename.Text = Helpers.SafeStringFormat(Resources.DownloaderForm_DownloaderForm_Filename___0_, FileName);
         }
 
-        public DownloaderForm(UpdateChecker updateChecker) : this(updateChecker.DownloadURL, updateChecker.Filename)
+        public DownloaderForm(UpdateChecker updateChecker) : this(updateChecker.DownloadURL, updateChecker.FileName)
         {
             Proxy = updateChecker.Proxy;
 
@@ -216,7 +216,7 @@ namespace ShareX.HelpersLib
 
                 string folderPath = Path.Combine(Path.GetTempPath(), "ShareX");
                 Helpers.CreateDirectory(folderPath);
-                DownloadLocation = Path.Combine(folderPath, Filename);
+                DownloadLocation = Path.Combine(folderPath, FileName);
 
                 DebugHelper.WriteLine($"Downloading: \"{URL}\" -> \"{DownloadLocation}\"");
 

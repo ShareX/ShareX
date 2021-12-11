@@ -121,7 +121,7 @@ namespace ShareX.HelpersLib
 
         public static string SearchProgramPath(string fileName)
         {
-            // First method: HKEY_CLASSES_ROOT\Applications\{filename}\shell\{command}\command
+            // First method: HKEY_CLASSES_ROOT\Applications\{fileName}\shell\{command}\command
 
             string[] commands = new string[] { "open", "edit" };
 

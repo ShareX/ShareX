@@ -149,24 +149,24 @@ namespace ShareX.UploadersLib.FileUploaders
             return headers;
         }
 
-        public static string VerifyPath(string path, string filename = null)
+        public static string VerifyPath(string path, string fileName = null)
         {
             if (!string.IsNullOrEmpty(path))
             {
                 path = path.Trim().Replace('\\', '/').Trim('/');
                 path = URLHelpers.AddSlash(path, SlashType.Prefix);
 
-                if (!string.IsNullOrEmpty(filename))
+                if (!string.IsNullOrEmpty(fileName))
                 {
-                    path = URLHelpers.CombineURL(path, filename);
+                    path = URLHelpers.CombineURL(path, fileName);
                 }
 
                 return path;
             }
 
-            if (!string.IsNullOrEmpty(filename))
+            if (!string.IsNullOrEmpty(fileName))
             {
-                return filename;
+                return fileName;
             }
 
             return "";
@@ -205,7 +205,7 @@ namespace ShareX.UploadersLib.FileUploaders
             return false;
         }
 
-        public UploadResult UploadFile(Stream stream, string path, string filename, bool createShareableLink = false, bool useDirectLink = false)
+        public UploadResult UploadFile(Stream stream, string path, string fileName, bool createShareableLink = false, bool useDirectLink = false)
         {
             if (stream.Length > 150000000)
             {
@@ -215,7 +215,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
             string json = JsonConvert.SerializeObject(new
             {
-                path = VerifyPath(path, filename),
+                path = VerifyPath(path, fileName),
                 mode = "overwrite",
                 autorename = false,
                 mute = true

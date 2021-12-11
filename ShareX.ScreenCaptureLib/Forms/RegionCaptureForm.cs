@@ -260,11 +260,11 @@ namespace ShareX.ScreenCaptureLib
                     text += $" - {Canvas.Width}x{Canvas.Height}";
                 }
 
-                string filename = Helpers.GetFilenameSafe(ImageFilePath);
+                string fileName = Helpers.GetFileNameSafe(ImageFilePath);
 
-                if (!string.IsNullOrEmpty(filename))
+                if (!string.IsNullOrEmpty(fileName))
                 {
-                    text += " - " + filename;
+                    text += " - " + fileName;
                 }
 
                 if (!IsFullscreen && Options.ShowFPS)
