@@ -34,12 +34,14 @@ namespace ShareX.HelpersLib
 {
     public static class ShareXResources
     {
+        public static string Name { get; set; } = "ShareX";
+
         public static string UserAgent
         {
             get
             {
                 Version version = Version.Parse(Application.ProductVersion);
-                return $"ShareX/{version.Major}.{version.Minor}.{version.Build}";
+                return $"{Name}/{version.Major}.{version.Minor}.{version.Build}";
             }
         }
 
