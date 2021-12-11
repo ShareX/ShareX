@@ -29,12 +29,12 @@ namespace ShareX
 {
     public class CaptureCustomRegion : CaptureBase
     {
-        protected override ImageInfo Execute(TaskSettings taskSettings)
+        protected override TaskMetadata Execute(TaskSettings taskSettings)
         {
             Rectangle rect = taskSettings.CaptureSettings.CaptureCustomRegion;
-            ImageInfo imageInfo = CreateImageInfo(rect);
-            imageInfo.Image = TaskHelpers.GetScreenshot(taskSettings).CaptureRectangle(rect);
-            return imageInfo;
+            TaskMetadata metadata = CreateMetadata(rect);
+            metadata.Image = TaskHelpers.GetScreenshot(taskSettings).CaptureRectangle(rect);
+            return metadata;
         }
     }
 }

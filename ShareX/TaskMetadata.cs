@@ -29,7 +29,7 @@ using System.Drawing;
 
 namespace ShareX
 {
-    public class ImageInfo : IDisposable
+    public class TaskMetadata : IDisposable
     {
         public Bitmap Image { get; set; }
 
@@ -61,11 +61,11 @@ namespace ShareX
             }
         }
 
-        public ImageInfo()
+        public TaskMetadata()
         {
         }
 
-        public ImageInfo(Bitmap image)
+        public TaskMetadata(Bitmap image)
         {
             Image = image;
         }
@@ -81,10 +81,7 @@ namespace ShareX
 
         public void Dispose()
         {
-            if (Image != null)
-            {
-                Image.Dispose();
-            }
+            Image?.Dispose();
         }
     }
 }

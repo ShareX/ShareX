@@ -36,11 +36,11 @@ namespace ShareX
             MonitorRectangle = monitorRectangle;
         }
 
-        protected override ImageInfo Execute(TaskSettings taskSettings)
+        protected override TaskMetadata Execute(TaskSettings taskSettings)
         {
-            ImageInfo imageInfo = CreateImageInfo(MonitorRectangle);
-            imageInfo.Image = TaskHelpers.GetScreenshot().CaptureRectangle(MonitorRectangle);
-            return imageInfo;
+            TaskMetadata metadata = CreateMetadata(MonitorRectangle);
+            metadata.Image = TaskHelpers.GetScreenshot().CaptureRectangle(MonitorRectangle);
+            return metadata;
         }
     }
 }

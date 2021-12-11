@@ -129,7 +129,7 @@ namespace ShareX
             return task;
         }
 
-        public static WorkerTask CreateImageUploaderTask(ImageInfo imageInfo, TaskSettings taskSettings, string customFileName = null)
+        public static WorkerTask CreateImageUploaderTask(TaskMetadata metadata, TaskSettings taskSettings, string customFileName = null)
         {
             WorkerTask task = new WorkerTask(taskSettings);
             task.Info.Job = TaskJob.Job;
@@ -141,11 +141,11 @@ namespace ShareX
             }
             else
             {
-                task.Info.FileName = TaskHelpers.GetFilename(taskSettings, "bmp", imageInfo);
+                task.Info.FileName = TaskHelpers.GetFilename(taskSettings, "bmp", metadata);
             }
 
-            task.Info.ImageInfo = imageInfo;
-            task.Image = imageInfo.Image;
+            task.Info.Metadata = metadata;
+            task.Image = metadata.Image;
             return task;
         }
 

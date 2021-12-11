@@ -30,12 +30,12 @@ namespace ShareX
 {
     public class CaptureActiveMonitor : CaptureBase
     {
-        protected override ImageInfo Execute(TaskSettings taskSettings)
+        protected override TaskMetadata Execute(TaskSettings taskSettings)
         {
             Rectangle rect = CaptureHelpers.GetActiveScreenWorkingArea();
-            ImageInfo imageInfo = CreateImageInfo(rect);
-            imageInfo.Image = TaskHelpers.GetScreenshot(taskSettings).CaptureActiveMonitor();
-            return imageInfo;
+            TaskMetadata metadata = CreateMetadata(rect);
+            metadata.Image = TaskHelpers.GetScreenshot(taskSettings).CaptureActiveMonitor();
+            return metadata;
         }
     }
 }

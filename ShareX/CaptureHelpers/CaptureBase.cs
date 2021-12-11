@@ -60,7 +60,7 @@ namespace ShareX
             }
         }
 
-        protected abstract ImageInfo Execute(TaskSettings taskSettings);
+        protected abstract TaskMetadata Execute(TaskSettings taskSettings);
 
         private void CaptureInternal(TaskSettings taskSettings, bool autoHideForm)
         {
@@ -70,12 +70,12 @@ namespace ShareX
                 Thread.Sleep(250);
             }
 
-            ImageInfo imageInfo = null;
+            TaskMetadata metadata = null;
 
             try
             {
                 AllowAnnotation = true;
-                imageInfo = Execute(taskSettings);
+                metadata = Execute(taskSettings);
             }
             catch (Exception ex)
             {
@@ -88,13 +88,13 @@ namespace ShareX
                     Program.MainForm.ForceActivate();
                 }
 
-                AfterCapture(imageInfo, taskSettings);
+                AfterCapture(metadata, taskSettings);
             }
         }
 
-        private void AfterCapture(ImageInfo imageInfo, TaskSettings taskSettings)
+        private void AfterCapture(TaskMetadata metadata, TaskSettings taskSettings)
         {
-            if (imageInfo != null && imageInfo.Image != null)
+            if (metadata != null && metadata.Image != null)
             {
                 if (taskSettings.GeneralSettings.PlaySoundAfterCapture)
                 {
@@ -112,23 +112,23 @@ namespace ShareX
                     taskSettings.AfterCaptureJob = taskSettings.AfterCaptureJob.Remove(AfterCaptureTasks.AddImageEffects);
                 }
 
-                UploadManager.RunImageTask(imageInfo, taskSettings);
+                UploadManager.RunImageTask(metadata, taskSettings);
             }
         }
 
-        protected ImageInfo CreateImageInfo()
+        protected TaskMetadata CreateMetadata()
         {
-            return CreateImageInfo(Rectangle.Empty, null);
+            return CreateMetadata(Rectangle.Empty, null);
         }
 
-        protected ImageInfo CreateImageInfo(Rectangle insideRect)
+        protected TaskMetadata CreateMetadata(Rectangle insideRect)
         {
-            return CreateImageInfo(insideRect, "explorer");
+            return CreateMetadata(insideRect, "explorer");
         }
 
-        protected ImageInfo CreateImageInfo(Rectangle insideRect, string ignoreProcess)
+        protected TaskMetadata CreateMetadata(Rectangle insideRect, string ignoreProcess)
         {
-            ImageInfo imageInfo = new ImageInfo();
+            TaskMetadata metadata = new TaskMetadata();
 
             IntPtr handle = NativeMethods.GetForegroundWindow();
             WindowInfo windowInfo = new WindowInfo(handle);
@@ -136,10 +136,10 @@ namespace ShareX
             if ((ignoreProcess == null || !windowInfo.ProcessName.Equals(ignoreProcess, StringComparison.InvariantCultureIgnoreCase)) &&
                 (insideRect.IsEmpty || windowInfo.Rectangle.Contains(insideRect)))
             {
-                imageInfo.UpdateInfo(windowInfo);
+                metadata.UpdateInfo(windowInfo);
             }
 
-            return imageInfo;
+            return metadata;
         }
     }
 }

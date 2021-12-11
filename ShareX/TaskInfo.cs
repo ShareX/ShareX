@@ -89,7 +89,7 @@ namespace ShareX
         public string FileName { get; set; }
         public string ThumbnailFilePath { get; set; }
         public EDataType DataType { get; set; }
-        public ImageInfo ImageInfo { get; set; }
+        public TaskMetadata Metadata { get; set; }
 
         public EDataType UploadDestination
         {
@@ -164,18 +164,18 @@ namespace ShareX
 
         public Dictionary<string, string> GetTags()
         {
-            if (ImageInfo != null)
+            if (Metadata != null)
             {
                 Dictionary<string, string> tags = new Dictionary<string, string>();
 
-                if (!string.IsNullOrEmpty(ImageInfo.WindowTitle))
+                if (!string.IsNullOrEmpty(Metadata.WindowTitle))
                 {
-                    tags.Add("WindowTitle", ImageInfo.WindowTitle);
+                    tags.Add("WindowTitle", Metadata.WindowTitle);
                 }
 
-                if (!string.IsNullOrEmpty(ImageInfo.ProcessName))
+                if (!string.IsNullOrEmpty(Metadata.ProcessName))
                 {
-                    tags.Add("ProcessName", ImageInfo.ProcessName);
+                    tags.Add("ProcessName", Metadata.ProcessName);
                 }
 
                 if (tags.Count > 0)

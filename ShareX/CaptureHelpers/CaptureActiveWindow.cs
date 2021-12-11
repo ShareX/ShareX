@@ -27,20 +27,20 @@ namespace ShareX
 {
     public class CaptureActiveWindow : CaptureBase
     {
-        protected override ImageInfo Execute(TaskSettings taskSettings)
+        protected override TaskMetadata Execute(TaskSettings taskSettings)
         {
-            ImageInfo imageInfo = CreateImageInfo();
+            TaskMetadata metadata = CreateMetadata();
 
             if (taskSettings.CaptureSettings.CaptureTransparent && !taskSettings.CaptureSettings.CaptureClientArea)
             {
-                imageInfo.Image = TaskHelpers.GetScreenshot(taskSettings).CaptureActiveWindowTransparent();
+                metadata.Image = TaskHelpers.GetScreenshot(taskSettings).CaptureActiveWindowTransparent();
             }
             else
             {
-                imageInfo.Image = TaskHelpers.GetScreenshot(taskSettings).CaptureActiveWindow();
+                metadata.Image = TaskHelpers.GetScreenshot(taskSettings).CaptureActiveWindow();
             }
 
-            return imageInfo;
+            return metadata;
         }
     }
 }

@@ -30,12 +30,12 @@ namespace ShareX
 {
     public class CaptureFullscreen : CaptureBase
     {
-        protected override ImageInfo Execute(TaskSettings taskSettings)
+        protected override TaskMetadata Execute(TaskSettings taskSettings)
         {
             Rectangle rect = CaptureHelpers.GetScreenWorkingArea();
-            ImageInfo imageInfo = CreateImageInfo(rect);
-            imageInfo.Image = TaskHelpers.GetScreenshot(taskSettings).CaptureFullscreen();
-            return imageInfo;
+            TaskMetadata metadata = CreateMetadata(rect);
+            metadata.Image = TaskHelpers.GetScreenshot(taskSettings).CaptureFullscreen();
+            return metadata;
         }
     }
 }

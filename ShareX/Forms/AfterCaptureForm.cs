@@ -56,15 +56,15 @@ namespace ShareX
             AddAfterUploadItems(TaskSettings.AfterUploadJob);
         }
 
-        public AfterCaptureForm(ImageInfo imageInfo, TaskSettings taskSettings) : this(taskSettings)
+        public AfterCaptureForm(TaskMetadata metadata, TaskSettings taskSettings) : this(taskSettings)
         {
-            if (imageInfo != null && imageInfo.Image != null)
+            if (metadata != null && metadata.Image != null)
             {
-                pbImage.LoadImage(imageInfo.Image);
+                pbImage.LoadImage(metadata.Image);
                 btnCopy.Enabled = true;
             }
 
-            FileName = TaskHelpers.GetFilename(TaskSettings, null, imageInfo);
+            FileName = TaskHelpers.GetFilename(TaskSettings, null, metadata);
             txtFileName.Text = FileName;
         }
 

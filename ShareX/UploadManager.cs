@@ -337,15 +337,15 @@ namespace ShareX
 
         public static void RunImageTask(Bitmap bmp, TaskSettings taskSettings, bool skipQuickTaskMenu = false, bool skipAfterCaptureWindow = false)
         {
-            ImageInfo imageInfo = new ImageInfo(bmp);
-            RunImageTask(imageInfo, taskSettings, skipQuickTaskMenu, skipAfterCaptureWindow);
+            TaskMetadata metadata = new TaskMetadata(bmp);
+            RunImageTask(metadata, taskSettings, skipQuickTaskMenu, skipAfterCaptureWindow);
         }
 
-        public static void RunImageTask(ImageInfo imageInfo, TaskSettings taskSettings, bool skipQuickTaskMenu = false, bool skipAfterCaptureWindow = false)
+        public static void RunImageTask(TaskMetadata metadata, TaskSettings taskSettings, bool skipQuickTaskMenu = false, bool skipAfterCaptureWindow = false)
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
-            if (imageInfo != null && imageInfo.Image != null && taskSettings != null)
+            if (metadata != null && metadata.Image != null && taskSettings != null)
             {
                 if (!skipQuickTaskMenu && taskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.ShowQuickTaskMenu))
                 {
@@ -355,13 +355,13 @@ namespace ShareX
                     {
                         if (taskInfo == null)
                         {
-                            RunImageTask(imageInfo, taskSettings, true);
+                            RunImageTask(metadata, taskSettings, true);
                         }
                         else if (taskInfo.IsValid)
                         {
                             taskSettings.AfterCaptureJob = taskInfo.AfterCaptureTasks;
                             taskSettings.AfterUploadJob = taskInfo.AfterUploadTasks;
-                            RunImageTask(imageInfo, taskSettings, true);
+                            RunImageTask(metadata, taskSettings, true);
                         }
                     };
 
@@ -372,12 +372,12 @@ namespace ShareX
 
                 string customFileName = null;
 
-                if (!skipAfterCaptureWindow && !TaskHelpers.ShowAfterCaptureForm(taskSettings, out customFileName, imageInfo))
+                if (!skipAfterCaptureWindow && !TaskHelpers.ShowAfterCaptureForm(taskSettings, out customFileName, metadata))
                 {
                     return;
                 }
 
-                WorkerTask task = WorkerTask.CreateImageUploaderTask(imageInfo, taskSettings, customFileName);
+                WorkerTask task = WorkerTask.CreateImageUploaderTask(metadata, taskSettings, customFileName);
                 TaskManager.Start(task);
             }
         }

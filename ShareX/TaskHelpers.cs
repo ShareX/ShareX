@@ -387,11 +387,11 @@ namespace ShareX
 
         public static string GetFilename(TaskSettings taskSettings, string extension, Bitmap bmp)
         {
-            ImageInfo imageInfo = new ImageInfo(bmp);
-            return GetFilename(taskSettings, extension, imageInfo);
+            TaskMetadata metadata = new TaskMetadata(bmp);
+            return GetFilename(taskSettings, extension, metadata);
         }
 
-        public static string GetFilename(TaskSettings taskSettings, string extension = null, ImageInfo imageInfo = null)
+        public static string GetFilename(TaskSettings taskSettings, string extension = null, TaskMetadata metadata = null)
         {
             string filename;
 
@@ -403,16 +403,16 @@ namespace ShareX
                 CustomTimeZone = taskSettings.UploadSettings.UseCustomTimeZone ? taskSettings.UploadSettings.CustomTimeZone : null
             };
 
-            if (imageInfo != null)
+            if (metadata != null)
             {
-                if (imageInfo.Image != null)
+                if (metadata.Image != null)
                 {
-                    nameParser.ImageWidth = imageInfo.Image.Width;
-                    nameParser.ImageHeight = imageInfo.Image.Height;
+                    nameParser.ImageWidth = metadata.Image.Width;
+                    nameParser.ImageHeight = metadata.Image.Height;
                 }
 
-                nameParser.WindowText = imageInfo.WindowTitle;
-                nameParser.ProcessName = imageInfo.ProcessName;
+                nameParser.WindowText = metadata.WindowTitle;
+                nameParser.ProcessName = metadata.ProcessName;
             }
 
             if (!string.IsNullOrEmpty(nameParser.WindowText))
@@ -434,7 +434,7 @@ namespace ShareX
             return filename;
         }
 
-        public static bool ShowAfterCaptureForm(TaskSettings taskSettings, out string fileName, ImageInfo imageInfo = null, string filePath = null)
+        public static bool ShowAfterCaptureForm(TaskSettings taskSettings, out string fileName, TaskMetadata metadata = null, string filePath = null)
         {
             fileName = null;
 
@@ -450,15 +450,12 @@ namespace ShareX
                     }
                     else
                     {
-                        afterCaptureForm = new AfterCaptureForm(imageInfo, taskSettings);
+                        afterCaptureForm = new AfterCaptureForm(metadata, taskSettings);
                     }
 
                     if (afterCaptureForm.ShowDialog() == DialogResult.Cancel)
                     {
-                        if (imageInfo != null)
-                        {
-                            imageInfo.Dispose();
-                        }
+                        metadata?.Dispose();
 
                         return false;
                     }

@@ -45,7 +45,7 @@ namespace ShareX
             RegionCaptureType = regionCaptureType;
         }
 
-        protected override ImageInfo Execute(TaskSettings taskSettings)
+        protected override TaskMetadata Execute(TaskSettings taskSettings)
         {
             switch (RegionCaptureType)
             {
@@ -59,9 +59,9 @@ namespace ShareX
             }
         }
 
-        protected ImageInfo ExecuteRegionCapture(TaskSettings taskSettings)
+        protected TaskMetadata ExecuteRegionCapture(TaskSettings taskSettings)
         {
-            ImageInfo imageInfo = new ImageInfo();
+            TaskMetadata metadata = new TaskMetadata();
 
             RegionCaptureMode mode;
 
@@ -94,9 +94,9 @@ namespace ShareX
 
                 form.ShowDialog();
 
-                imageInfo.Image = form.GetResultImage();
+                metadata.Image = form.GetResultImage();
 
-                if (imageInfo.Image != null)
+                if (metadata.Image != null)
                 {
                     if (form.IsImageModified)
                     {
@@ -106,17 +106,17 @@ namespace ShareX
                     if (form.Result == RegionResult.Region)
                     {
                         WindowInfo windowInfo = form.GetWindowInfo();
-                        imageInfo.UpdateInfo(windowInfo);
+                        metadata.UpdateInfo(windowInfo);
                     }
 
                     lastRegionCaptureType = RegionCaptureType.Default;
                 }
             }
 
-            return imageInfo;
+            return metadata;
         }
 
-        protected ImageInfo ExecuteRegionCaptureLight(TaskSettings taskSettings)
+        protected TaskMetadata ExecuteRegionCaptureLight(TaskSettings taskSettings)
         {
             Bitmap bmp = null;
 
@@ -133,10 +133,10 @@ namespace ShareX
                 }
             }
 
-            return new ImageInfo(bmp);
+            return new TaskMetadata(bmp);
         }
 
-        protected ImageInfo ExecuteRegionCaptureTransparent(TaskSettings taskSettings)
+        protected TaskMetadata ExecuteRegionCaptureTransparent(TaskSettings taskSettings)
         {
             Bitmap bmp = null;
 
@@ -153,7 +153,7 @@ namespace ShareX
                 }
             }
 
-            return new ImageInfo(bmp);
+            return new TaskMetadata(bmp);
         }
     }
 }
