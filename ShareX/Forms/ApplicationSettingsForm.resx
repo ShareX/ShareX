@@ -1260,6 +1260,54 @@
   <data name="&gt;&gt;tpIntegration.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="txtSaveImageSubFolderPatternWindow.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 232</value>
+  </data>
+  <data name="txtSaveImageSubFolderPatternWindow.Size" type="System.Drawing.Size, System.Drawing">
+    <value>408, 20</value>
+  </data>
+  <data name="txtSaveImageSubFolderPatternWindow.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="&gt;&gt;txtSaveImageSubFolderPatternWindow.Name" xml:space="preserve">
+    <value>txtSaveImageSubFolderPatternWindow</value>
+  </data>
+  <data name="&gt;&gt;txtSaveImageSubFolderPatternWindow.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtSaveImageSubFolderPatternWindow.Parent" xml:space="preserve">
+    <value>tpPaths</value>
+  </data>
+  <data name="&gt;&gt;txtSaveImageSubFolderPatternWindow.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblSaveImageSubFolderPatternWindow.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblSaveImageSubFolderPatternWindow.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 216</value>
+  </data>
+  <data name="lblSaveImageSubFolderPatternWindow.Size" type="System.Drawing.Size, System.Drawing">
+    <value>148, 13</value>
+  </data>
+  <data name="lblSaveImageSubFolderPatternWindow.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="lblSaveImageSubFolderPatternWindow.Text" xml:space="preserve">
+    <value>Sub folder pattern for window:</value>
+  </data>
+  <data name="&gt;&gt;lblSaveImageSubFolderPatternWindow.Name" xml:space="preserve">
+    <value>lblSaveImageSubFolderPatternWindow</value>
+  </data>
+  <data name="&gt;&gt;lblSaveImageSubFolderPatternWindow.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblSaveImageSubFolderPatternWindow.Parent" xml:space="preserve">
+    <value>tpPaths</value>
+  </data>
+  <data name="&gt;&gt;lblSaveImageSubFolderPatternWindow.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <data name="btnPersonalFolderPathApply.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -1270,7 +1318,7 @@
     <value>96, 23</value>
   </data>
   <data name="btnPersonalFolderPathApply.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
+    <value>3</value>
   </data>
   <data name="btnPersonalFolderPathApply.Text" xml:space="preserve">
     <value>Apply</value>
@@ -1285,7 +1333,7 @@
     <value>tpPaths</value>
   </data>
   <data name="&gt;&gt;btnPersonalFolderPathApply.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>2</value>
   </data>
   <data name="btnOpenScreenshotsFolder.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -1312,7 +1360,7 @@
     <value>tpPaths</value>
   </data>
   <data name="&gt;&gt;btnOpenScreenshotsFolder.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="lblPreviewPersonalFolderPath.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1327,7 +1375,7 @@
     <value>16, 13</value>
   </data>
   <data name="lblPreviewPersonalFolderPath.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="lblPreviewPersonalFolderPath.Text" xml:space="preserve">
     <value>...</value>
@@ -1342,7 +1390,7 @@
     <value>tpPaths</value>
   </data>
   <data name="&gt;&gt;lblPreviewPersonalFolderPath.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>4</value>
   </data>
   <data name="btnBrowsePersonalFolderPath.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -1369,7 +1417,7 @@
     <value>tpPaths</value>
   </data>
   <data name="&gt;&gt;btnBrowsePersonalFolderPath.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>5</value>
   </data>
   <data name="lblPersonalFolderPath.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1399,7 +1447,7 @@
     <value>tpPaths</value>
   </data>
   <data name="&gt;&gt;lblPersonalFolderPath.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>6</value>
   </data>
   <data name="txtPersonalFolderPath.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 32</value>
@@ -1420,7 +1468,7 @@
     <value>tpPaths</value>
   </data>
   <data name="&gt;&gt;txtPersonalFolderPath.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>7</value>
   </data>
   <data name="btnBrowseCustomScreenshotsPath.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -1447,7 +1495,7 @@
     <value>tpPaths</value>
   </data>
   <data name="&gt;&gt;btnBrowseCustomScreenshotsPath.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>8</value>
   </data>
   <data name="btnOpenPersonalFolderPath.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -1459,7 +1507,7 @@
     <value>96, 23</value>
   </data>
   <data name="btnOpenPersonalFolderPath.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="btnOpenPersonalFolderPath.Text" xml:space="preserve">
     <value>Open...</value>
@@ -1474,7 +1522,7 @@
     <value>tpPaths</value>
   </data>
   <data name="&gt;&gt;btnOpenPersonalFolderPath.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>9</value>
   </data>
   <data name="txtCustomScreenshotsPath.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 112</value>
@@ -1495,7 +1543,7 @@
     <value>tpPaths</value>
   </data>
   <data name="&gt;&gt;txtCustomScreenshotsPath.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>10</value>
   </data>
   <data name="cbUseCustomScreenshotsPath.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1525,7 +1573,7 @@
     <value>tpPaths</value>
   </data>
   <data name="&gt;&gt;cbUseCustomScreenshotsPath.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>11</value>
   </data>
   <data name="lblSaveImageSubFolderPattern.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1555,7 +1603,7 @@
     <value>tpPaths</value>
   </data>
   <data name="&gt;&gt;lblSaveImageSubFolderPattern.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>12</value>
   </data>
   <data name="lblSaveImageSubFolderPatternPreview.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1585,7 +1633,7 @@
     <value>tpPaths</value>
   </data>
   <data name="&gt;&gt;lblSaveImageSubFolderPatternPreview.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>13</value>
   </data>
   <data name="txtSaveImageSubFolderPattern.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 160</value>
@@ -1606,7 +1654,7 @@
     <value>tpPaths</value>
   </data>
   <data name="&gt;&gt;txtSaveImageSubFolderPattern.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>14</value>
   </data>
   <data name="tpPaths.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>

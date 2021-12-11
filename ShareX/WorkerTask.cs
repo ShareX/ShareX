@@ -632,7 +632,7 @@ namespace ShareX
 
                 if (Info.TaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.SaveImageToFile))
                 {
-                    string screenshotsFolder = TaskHelpers.GetScreenshotsFolder(Info.TaskSettings);
+                    string screenshotsFolder = TaskHelpers.GetScreenshotsFolder(Info.TaskSettings, Info.Metadata);
                     string filePath = TaskHelpers.HandleExistsFile(screenshotsFolder, Info.FileName, Info.TaskSettings);
 
                     if (!string.IsNullOrEmpty(filePath))
@@ -655,7 +655,7 @@ namespace ShareX
                         }
                         else
                         {
-                            initialDirectory = TaskHelpers.GetScreenshotsFolder(Info.TaskSettings);
+                            initialDirectory = TaskHelpers.GetScreenshotsFolder(Info.TaskSettings, Info.Metadata);
                         }
 
                         bool imageSaved;
@@ -699,7 +699,7 @@ namespace ShareX
                     else
                     {
                         thumbnailFilename = Info.FileName;
-                        thumbnailFolder = TaskHelpers.GetScreenshotsFolder(Info.TaskSettings);
+                        thumbnailFolder = TaskHelpers.GetScreenshotsFolder(Info.TaskSettings, Info.Metadata);
                     }
 
                     Info.ThumbnailFilePath = TaskHelpers.CreateThumbnail(Image, thumbnailFolder, thumbnailFilename, Info.TaskSettings);

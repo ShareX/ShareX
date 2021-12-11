@@ -90,6 +90,7 @@ namespace ShareX
             eiTheme.ObjectType = typeof(ShareXTheme);
 
             CodeMenu.Create<CodeMenuEntryFilename>(txtSaveImageSubFolderPattern, CodeMenuEntryFilename.t, CodeMenuEntryFilename.pn, CodeMenuEntryFilename.i, CodeMenuEntryFilename.width, CodeMenuEntryFilename.height, CodeMenuEntryFilename.n);
+            CodeMenu.Create<CodeMenuEntryFilename>(txtSaveImageSubFolderPatternWindow, CodeMenuEntryFilename.i, CodeMenuEntryFilename.n);
 
             cbProxyMethod.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<ProxyMethod>());
 
@@ -169,6 +170,7 @@ namespace ShareX
             cbUseCustomScreenshotsPath.Checked = Program.Settings.UseCustomScreenshotsPath;
             txtCustomScreenshotsPath.Text = Program.Settings.CustomScreenshotsPath;
             txtSaveImageSubFolderPattern.Text = Program.Settings.SaveImageSubFolderPattern;
+            txtSaveImageSubFolderPatternWindow.Text = Program.Settings.SaveImageSubFolderPatternWindow;
 
             // Settings
             cbAutomaticallyCleanupBackupFiles.Checked = Program.Settings.AutoCleanupBackupFiles;
@@ -713,6 +715,11 @@ namespace ShareX
         private void btnOpenScreenshotsFolder_Click(object sender, EventArgs e)
         {
             Helpers.OpenFolder(lblSaveImageSubFolderPatternPreview.Text);
+        }
+
+        private void txtSaveImageSubFolderPatternWindow_TextChanged(object sender, EventArgs e)
+        {
+            Program.Settings.SaveImageSubFolderPatternWindow = Helpers.GetValidFolderPath(txtSaveImageSubFolderPatternWindow.Text);
         }
 
         #endregion Paths

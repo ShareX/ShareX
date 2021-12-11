@@ -93,6 +93,7 @@ namespace ShareX
         public string CustomScreenshotsPath = "";
 
         public string SaveImageSubFolderPattern = "%y-%mo";
+        public string SaveImageSubFolderPatternWindow = "";
 
         #endregion Paths
 

@@ -416,7 +416,7 @@ namespace ShareX
                 nameParser.ProcessName = metadata.ProcessName;
             }
 
-            if (!string.IsNullOrEmpty(nameParser.WindowText))
+            if (!string.IsNullOrEmpty(taskSettings.UploadSettings.NameFormatPatternActiveWindow) && !string.IsNullOrEmpty(nameParser.WindowText))
             {
                 filename = nameParser.Parse(taskSettings.UploadSettings.NameFormatPatternActiveWindow);
             }
@@ -459,8 +459,19 @@ namespace ShareX
             }
             else
             {
-                string subFolderPattern = nameParser.Parse(Program.Settings.SaveImageSubFolderPattern);
-                screenshotsFolder = Path.Combine(Program.ScreenshotsParentFolder, subFolderPattern);
+                string subFolderPattern;
+
+                if (!string.IsNullOrEmpty(Program.Settings.SaveImageSubFolderPatternWindow) && !string.IsNullOrEmpty(nameParser.WindowText))
+                {
+                    subFolderPattern = Program.Settings.SaveImageSubFolderPatternWindow;
+                }
+                else
+                {
+                    subFolderPattern = Program.Settings.SaveImageSubFolderPattern;
+                }
+
+                string subFolderPath = nameParser.Parse(subFolderPattern);
+                screenshotsFolder = Path.Combine(Program.ScreenshotsParentFolder, subFolderPath);
             }
 
             return Helpers.GetAbsolutePath(screenshotsFolder);

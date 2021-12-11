@@ -189,7 +189,7 @@ namespace ShareX
                     {
                         extension = taskSettings.CaptureSettings.FFmpegOptions.Extension;
                     }
-                    string screenshotsFolder = TaskHelpers.GetScreenshotsFolder(taskSettings);
+                    string screenshotsFolder = TaskHelpers.GetScreenshotsFolder(taskSettings, metadata);
                     string fileName = TaskHelpers.GetFilename(taskSettings, extension, metadata);
                     path = TaskHelpers.HandleExistsFile(screenshotsFolder, fileName, taskSettings);
 
@@ -321,7 +321,7 @@ namespace ShareX
 
         private static string ProcessTwoPassEncoding(string input, TaskMetadata metadata, TaskSettings taskSettings, bool deleteInputFile = true)
         {
-            string screenshotsFolder = TaskHelpers.GetScreenshotsFolder(taskSettings);
+            string screenshotsFolder = TaskHelpers.GetScreenshotsFolder(taskSettings, metadata);
             string fileName = TaskHelpers.GetFilename(taskSettings, taskSettings.CaptureSettings.FFmpegOptions.Extension, metadata);
             string output = Path.Combine(screenshotsFolder, fileName);
 

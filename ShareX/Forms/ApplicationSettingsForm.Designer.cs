@@ -123,6 +123,7 @@ namespace ShareX
             this.cbMainWindowTaskViewMode = new System.Windows.Forms.ComboBox();
             this.lblMainWindowTaskViewMode = new System.Windows.Forms.Label();
             this.tpClipboardFormats = new System.Windows.Forms.TabPage();
+            this.lblClipboardFormatsTip = new System.Windows.Forms.Label();
             this.btnClipboardFormatEdit = new System.Windows.Forms.Button();
             this.btnClipboardFormatRemove = new System.Windows.Forms.Button();
             this.btnClipboardFormatAdd = new System.Windows.Forms.Button();
@@ -178,7 +179,8 @@ namespace ShareX
             this.tpAdvanced = new System.Windows.Forms.TabPage();
             this.pgSettings = new System.Windows.Forms.PropertyGrid();
             this.tttvMain = new ShareX.HelpersLib.TabToTreeView();
-            this.lblClipboardFormatsTip = new System.Windows.Forms.Label();
+            this.lblSaveImageSubFolderPatternWindow = new System.Windows.Forms.Label();
+            this.txtSaveImageSubFolderPatternWindow = new System.Windows.Forms.TextBox();
             this.tcSettings.SuspendLayout();
             this.tpGeneral.SuspendLayout();
             this.tpTheme.SuspendLayout();
@@ -557,6 +559,8 @@ namespace ShareX
             // tpPaths
             // 
             this.tpPaths.BackColor = System.Drawing.SystemColors.Window;
+            this.tpPaths.Controls.Add(this.txtSaveImageSubFolderPatternWindow);
+            this.tpPaths.Controls.Add(this.lblSaveImageSubFolderPatternWindow);
             this.tpPaths.Controls.Add(this.btnPersonalFolderPathApply);
             this.tpPaths.Controls.Add(this.btnOpenScreenshotsFolder);
             this.tpPaths.Controls.Add(this.lblPreviewPersonalFolderPath);
@@ -957,6 +961,11 @@ namespace ShareX
             resources.ApplyResources(this.tpClipboardFormats, "tpClipboardFormats");
             this.tpClipboardFormats.Name = "tpClipboardFormats";
             this.tpClipboardFormats.UseVisualStyleBackColor = true;
+            // 
+            // lblClipboardFormatsTip
+            // 
+            resources.ApplyResources(this.lblClipboardFormatsTip, "lblClipboardFormatsTip");
+            this.lblClipboardFormatsTip.Name = "lblClipboardFormatsTip";
             // 
             // btnClipboardFormatEdit
             // 
@@ -1394,10 +1403,16 @@ namespace ShareX
             this.tttvMain.TreeViewSize = 175;
             this.tttvMain.TabChanged += new ShareX.HelpersLib.TabToTreeView.TabChangedEventHandler(this.tttvMain_TabChanged);
             // 
-            // lblClipboardFormatsTip
+            // lblSaveImageSubFolderPatternWindow
             // 
-            resources.ApplyResources(this.lblClipboardFormatsTip, "lblClipboardFormatsTip");
-            this.lblClipboardFormatsTip.Name = "lblClipboardFormatsTip";
+            resources.ApplyResources(this.lblSaveImageSubFolderPatternWindow, "lblSaveImageSubFolderPatternWindow");
+            this.lblSaveImageSubFolderPatternWindow.Name = "lblSaveImageSubFolderPatternWindow";
+            // 
+            // txtSaveImageSubFolderPatternWindow
+            // 
+            resources.ApplyResources(this.txtSaveImageSubFolderPatternWindow, "txtSaveImageSubFolderPatternWindow");
+            this.txtSaveImageSubFolderPatternWindow.Name = "txtSaveImageSubFolderPatternWindow";
+            this.txtSaveImageSubFolderPatternWindow.TextChanged += new System.EventHandler(this.txtSaveImageSubFolderPatternWindow_TextChanged);
             // 
             // ApplicationSettingsForm
             // 
@@ -1615,5 +1630,7 @@ namespace ShareX
         private System.Windows.Forms.Button btnThumbnailViewThumbnailSizeReset;
         private System.Windows.Forms.TabPage tpClipboardFormats;
         private System.Windows.Forms.Label lblClipboardFormatsTip;
+        private System.Windows.Forms.TextBox txtSaveImageSubFolderPatternWindow;
+        private System.Windows.Forms.Label lblSaveImageSubFolderPatternWindow;
     }
 }
