@@ -332,6 +332,8 @@ namespace ShareX.HistoryLib
 
         private string OutputStats(HistoryItem[] historyItems)
         {
+            string empty = "(empty)";
+
             StringBuilder sb = new StringBuilder();
 
             sb.AppendLine(Resources.HistoryItemCounts);
@@ -360,9 +362,9 @@ namespace ShareX.HistoryLib
             IEnumerable<string> fileExtensions = historyItems.
                 Where(x => !string.IsNullOrEmpty(x.FileName) && !x.FileName.EndsWith(")")).
                 Select(x => Helpers.GetFileNameExtension(x.FileName)).
-                GroupBy(x => x).
+                GroupBy(x => string.IsNullOrWhiteSpace(x) ? empty : x).
                 OrderByDescending(x => x.Count()).
-                Select(x => string.Format("{0} ({1})", x.Key, x.Count()));
+                Select(x => string.Format("[{0}] {1}", x.Count(), x.Key));
 
             sb.AppendLine(string.Join(Environment.NewLine, fileExtensions));
 
@@ -370,11 +372,21 @@ namespace ShareX.HistoryLib
             sb.AppendLine(Resources.HistoryStats_Hosts);
 
             IEnumerable<string> hosts = historyItems.
-                GroupBy(x => x.Host).
+                GroupBy(x => string.IsNullOrWhiteSpace(x.Host) ? empty : x.Host).
                 OrderByDescending(x => x.Count()).
-                Select(x => string.Format("{0} ({1})", x.Key, x.Count()));
+                Select(x => string.Format("[{0}] {1}", x.Count(), x.Key));
 
-            sb.Append(string.Join(Environment.NewLine, hosts));
+            sb.AppendLine(string.Join(Environment.NewLine, hosts));
+
+            sb.AppendLine();
+            sb.AppendLine("Process names:"); // TODO: Translate
+
+            IEnumerable<string> processNames = historyItems.
+                GroupBy(x => string.IsNullOrWhiteSpace(x.TagsProcessName) ? empty : x.TagsProcessName).
+                OrderByDescending(x => x.Count()).
+                Select(x => string.Format("[{0}] {1}", x.Count(), x.Key));
+
+            sb.Append(string.Join(Environment.NewLine, processNames));
 
             return sb.ToString();
         }

@@ -31,6 +31,8 @@ namespace ShareX
 {
     public class TaskMetadata : IDisposable
     {
+        private const int WindowInfoMaxLength = 255;
+
         public Bitmap Image { get; set; }
 
         private string windowTitle;
@@ -43,7 +45,7 @@ namespace ShareX
             }
             set
             {
-                windowTitle = value.Truncate(255);
+                windowTitle = value.Truncate(WindowInfoMaxLength);
             }
         }
 
@@ -57,7 +59,7 @@ namespace ShareX
             }
             set
             {
-                processName = value.Truncate(255);
+                processName = value.Truncate(WindowInfoMaxLength);
             }
         }
 
