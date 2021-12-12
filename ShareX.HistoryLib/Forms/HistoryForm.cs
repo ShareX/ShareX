@@ -461,10 +461,11 @@ namespace ShareX.HistoryLib
             tsbToggleMoreInfo.Checked = !isPanelVisible;
         }
 
-        private void tsbCopyStats_Click(object sender, EventArgs e)
+        private void tsbShowStats_Click(object sender, EventArgs e)
         {
             string stats = OutputStats(allHistoryItems);
-            ClipboardHelpers.CopyText(stats);
+            // TODO: Translate
+            OutputBox.Show(stats, "History stats");
         }
 
         private void tsbSettings_Click(object sender, EventArgs e)

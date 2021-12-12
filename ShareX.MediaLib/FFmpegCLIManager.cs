@@ -93,10 +93,7 @@ namespace ShareX.MediaLib
             bool result = errorCode == 0;
             if (!result && ShowError)
             {
-                using (OutputBox outputBox = new OutputBox(Output.ToString(), Resources.FFmpegError))
-                {
-                    outputBox.ShowDialog();
-                }
+                OutputBox.Show(Output.ToString(), Resources.FFmpegError, true);
             }
             return result;
         }

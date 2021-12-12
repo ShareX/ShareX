@@ -404,13 +404,13 @@
     <None Include="Resources\magnifier--plus.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\clipboard-list.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\gear.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\layout-header-3-mix.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chart.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

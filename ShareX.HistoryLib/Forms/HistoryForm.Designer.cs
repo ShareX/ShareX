@@ -59,7 +59,7 @@
             this.tsbAdvancedSearch = new System.Windows.Forms.ToolStripButton();
             this.tss1 = new System.Windows.Forms.ToolStripSeparator();
             this.tsbToggleMoreInfo = new System.Windows.Forms.ToolStripButton();
-            this.tsbCopyStats = new System.Windows.Forms.ToolStripButton();
+            this.tsbShowStats = new System.Windows.Forms.ToolStripButton();
             this.tss2 = new System.Windows.Forms.ToolStripSeparator();
             this.tsbSettings = new System.Windows.Forms.ToolStripButton();
             this.scMain = new ShareX.HelpersLib.SplitContainerCustomSplitter();
@@ -252,7 +252,7 @@
             this.tsbAdvancedSearch,
             this.tss1,
             this.tsbToggleMoreInfo,
-            this.tsbCopyStats,
+            this.tsbShowStats,
             this.tss2,
             this.tsbSettings});
             this.tsHistory.Name = "tsHistory";
@@ -298,13 +298,13 @@
             this.tsbToggleMoreInfo.Name = "tsbToggleMoreInfo";
             this.tsbToggleMoreInfo.Click += new System.EventHandler(this.tsbToggleMoreInfo_Click);
             // 
-            // tsbCopyStats
+            // tsbShowStats
             // 
-            this.tsbCopyStats.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbCopyStats.Image = global::ShareX.HistoryLib.Properties.Resources.clipboard_list;
-            resources.ApplyResources(this.tsbCopyStats, "tsbCopyStats");
-            this.tsbCopyStats.Name = "tsbCopyStats";
-            this.tsbCopyStats.Click += new System.EventHandler(this.tsbCopyStats_Click);
+            this.tsbShowStats.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbShowStats.Image = global::ShareX.HistoryLib.Properties.Resources.chart;
+            resources.ApplyResources(this.tsbShowStats, "tsbShowStats");
+            this.tsbShowStats.Name = "tsbShowStats";
+            this.tsbShowStats.Click += new System.EventHandler(this.tsbShowStats_Click);
             // 
             // tss2
             // 
@@ -434,10 +434,10 @@
         private System.Windows.Forms.ToolStripButton tsbAdvancedSearch;
         private System.Windows.Forms.Button btnAdvancedSearch;
         private System.Windows.Forms.Button btnAdvancedSearchReset;
-        private System.Windows.Forms.ToolStripButton tsbCopyStats;
         private System.Windows.Forms.ToolStripSeparator tss2;
         private System.Windows.Forms.PropertyGrid pgHistoryItemInfo;
         private HelpersLib.SplitContainerCustomSplitter scHistoryItemInfo;
         private System.Windows.Forms.ToolStripButton tsbToggleMoreInfo;
+        private System.Windows.Forms.ToolStripButton tsbShowStats;
     }
 }
