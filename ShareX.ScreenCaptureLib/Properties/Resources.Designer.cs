@@ -101,6 +101,15 @@ namespace ShareX.ScreenCaptureLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Auto copy image to clipboard.
+        /// </summary>
+        internal static string AutoCopyImageToClipboard {
+            get {
+                return ResourceManager.GetString("AutoCopyImageToClipboard", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap balloon_box_left {
@@ -116,6 +125,15 @@ namespace ShareX.ScreenCaptureLib.Properties {
         internal static string BaseRegionForm_InitializeComponent_Region_capture {
             get {
                 return ResourceManager.GetString("BaseRegionForm_InitializeComponent_Region_capture", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Blur.
+        /// </summary>
+        internal static string Blur {
+            get {
+                return ResourceManager.GetString("Blur", resourceCulture);
             }
         }
         
@@ -648,6 +666,15 @@ namespace ShareX.ScreenCaptureLib.Properties {
             get {
                 object obj = ResourceManager.GetObject("grid_white", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Highlight.
+        /// </summary>
+        internal static string Highlight {
+            get {
+                return ResourceManager.GetString("Highlight", resourceCulture);
             }
         }
         
@@ -1200,12 +1227,30 @@ namespace ShareX.ScreenCaptureLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Pixelate.
+        /// </summary>
+        internal static string Pixelate {
+            get {
+                return ResourceManager.GetString("Pixelate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap printer {
             get {
                 object obj = ResourceManager.GetObject("printer", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Processing....
+        /// </summary>
+        internal static string Processing {
+            get {
+                return ResourceManager.GetString("Processing", resourceCulture);
             }
         }
         

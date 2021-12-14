@@ -398,6 +398,15 @@ namespace ShareX.HistoryLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to History stats.
+        /// </summary>
+        internal static string HistoryStats {
+            get {
+                return ResourceManager.GetString("HistoryStats", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to File extensions:.
         /// </summary>
         internal static string HistoryStats_FileExtensions {
@@ -480,6 +489,15 @@ namespace ShareX.HistoryLib.Properties {
             get {
                 object obj = ResourceManager.GetObject("notebook", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Process names:.
+        /// </summary>
+        internal static string ProcessNames {
+            get {
+                return ResourceManager.GetString("ProcessNames", resourceCulture);
             }
         }
         

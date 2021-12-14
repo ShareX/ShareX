@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.ScreenCaptureLib.Properties;
 using System.Drawing;
 
 namespace ShareX.ScreenCaptureLib
@@ -32,8 +33,7 @@ namespace ShareX.ScreenCaptureLib
     {
         public override ShapeType ShapeType { get; } = ShapeType.EffectPixelate;
 
-        // TODO: Translate
-        public override string OverlayText => "Pixelate" + $" [{PixelSize}]";
+        public override string OverlayText => Resources.Pixelate + $" [{PixelSize}]";
 
         public int PixelSize { get; set; }
 

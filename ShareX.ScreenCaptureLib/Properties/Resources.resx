@@ -777,4 +777,19 @@ X: {4} Y: {5}</value>
   <data name="ShapeManager_CreateToolbar_ToolOptions" xml:space="preserve">
     <value>Tool options</value>
   </data>
+  <data name="Processing" xml:space="preserve">
+    <value>Processing...</value>
+  </data>
+  <data name="Blur" xml:space="preserve">
+    <value>Blur</value>
+  </data>
+  <data name="Highlight" xml:space="preserve">
+    <value>Highlight</value>
+  </data>
+  <data name="Pixelate" xml:space="preserve">
+    <value>Pixelate</value>
+  </data>
+  <data name="AutoCopyImageToClipboard" xml:space="preserve">
+    <value>Auto copy image to clipboard</value>
+  </data>
 </root>

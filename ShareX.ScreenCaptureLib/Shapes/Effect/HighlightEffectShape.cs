@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.ScreenCaptureLib.Properties;
 using System.Drawing;
 
 namespace ShareX.ScreenCaptureLib
@@ -32,8 +33,7 @@ namespace ShareX.ScreenCaptureLib
     {
         public override ShapeType ShapeType { get; } = ShapeType.EffectHighlight;
 
-        // TODO: Translate
-        public override string OverlayText => "Highlight";
+        public override string OverlayText => Resources.Highlight;
 
         public Color HighlightColor { get; set; }
 

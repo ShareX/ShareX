@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.ScreenCaptureLib.Properties;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Threading.Tasks;
@@ -64,8 +65,7 @@ namespace ShareX.ScreenCaptureLib
         {
             if (drawCache && isEffectCaching)
             {
-                // TODO: Translate
-                OnDrawOverlay(g, "Processing...");
+                OnDrawOverlay(g, Resources.Processing);
             }
             else if (drawCache && cachedEffect != null)
             {

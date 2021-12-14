@@ -379,7 +379,7 @@ namespace ShareX.HistoryLib
             sb.AppendLine(string.Join(Environment.NewLine, hosts));
 
             sb.AppendLine();
-            sb.AppendLine("Process names:"); // TODO: Translate
+            sb.AppendLine(Resources.ProcessNames);
 
             IEnumerable<string> processNames = historyItems.
                 GroupBy(x => string.IsNullOrWhiteSpace(x.TagsProcessName) ? empty : x.TagsProcessName).
@@ -464,8 +464,7 @@ namespace ShareX.HistoryLib
         private void tsbShowStats_Click(object sender, EventArgs e)
         {
             string stats = OutputStats(allHistoryItems);
-            // TODO: Translate
-            OutputBox.Show(stats, "History stats");
+            OutputBox.Show(stats, Resources.HistoryStats);
         }
 
         private void tsbSettings_Click(object sender, EventArgs e)

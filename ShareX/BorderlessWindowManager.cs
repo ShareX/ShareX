@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.Properties;
 using System;
 using System.Diagnostics;
 using System.Drawing;
@@ -42,8 +43,7 @@ namespace ShareX
 
                 if (hWnd == IntPtr.Zero)
                 {
-                    // TODO: Translate
-                    MessageBox.Show("Unable to find a window with specified window title.", "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(Resources.UnableToFindAWindowWithSpecifiedWindowTitle, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {

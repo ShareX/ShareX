@@ -2745,6 +2745,15 @@ namespace ShareX.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Unable to find a window with specified window title..
+        /// </summary>
+        public static string UnableToFindAWindowWithSpecifiedWindowTitle {
+            get {
+                return ResourceManager.GetString("UnableToFindAWindowWithSpecifiedWindowTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         public static System.Drawing.Bitmap upload_cloud {
