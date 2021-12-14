@@ -177,4 +177,7 @@
   <data name="tslSearch.Text" xml:space="preserve">
     <value>Поиск:</value>
   </data>
+  <data name="tsbShowStats.Text" xml:space="preserve">
+    <value>Показать статистику...</value>
+  </data>
 </root>
