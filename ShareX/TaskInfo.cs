@@ -159,6 +159,7 @@ namespace ShareX
             }
 
             TaskSettings = taskSettings;
+            Metadata = new TaskMetadata();
             Result = new UploadResult();
         }
 

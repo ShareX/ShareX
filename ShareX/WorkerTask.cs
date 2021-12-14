@@ -623,6 +623,8 @@ namespace ShareX
                 TaskHelpers.PrintImage(Image);
             }
 
+            Info.Metadata.Image = Image;
+
             if (Info.TaskSettings.AfterCaptureJob.HasFlagAny(AfterCaptureTasks.SaveImageToFile, AfterCaptureTasks.SaveImageToFileWithDialog, AfterCaptureTasks.DoOCR,
                 AfterCaptureTasks.UploadImageToHost))
             {
