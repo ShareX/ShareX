@@ -801,4 +801,10 @@
   <data name="tsmiThumbnailSize.Text" xml:space="preserve">
     <value>Размер миниатюры...</value>
   </data>
+  <data name="tsmiBorderlessWindow.Text" xml:space="preserve">
+    <value>Безрамочное окно...</value>
+  </data>
+  <data name="tsmiTrayBorderlessWindow.Text" xml:space="preserve">
+    <value>Безрамочное окно...</value>
+  </data>
 </root>

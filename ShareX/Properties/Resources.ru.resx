@@ -649,4 +649,7 @@
   <data name="FFmpeg_Download_of_FFmpeg_failed" xml:space="preserve">
     <value>Загрузка FFmpeg не удалась.</value>
   </data>
+  <data name="UnableToFindAWindowWithSpecifiedWindowTitle" xml:space="preserve">
+    <value>Не удалось найти окно с указанным заголовком.</value>
+  </data>
 </root>
