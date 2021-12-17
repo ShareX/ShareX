@@ -172,7 +172,7 @@ namespace ShareX.HelpersLib
 
         protected override void OnKeyDown(KeyEventArgs e)
         {
-            if (MultiSelect && e.Control && e.KeyCode == Keys.A)
+            if (MultiSelect && e.KeyData == (Keys.Control | Keys.A))
             {
                 foreach (ListViewItem lvi in Items)
                 {

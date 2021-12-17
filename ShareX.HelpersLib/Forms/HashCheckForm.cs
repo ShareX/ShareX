@@ -50,6 +50,9 @@ namespace ShareX.HelpersLib
             hashCheck.FileCheckProgressChanged += fileCheck_FileCheckProgressChanged;
 
             translator = new Translator();
+
+            txtResult.SupportSelectAll();
+            txtTarget.SupportSelectAll();
         }
 
         #region File hash check
@@ -166,22 +169,6 @@ namespace ShareX.HelpersLib
         private void txtTarget_TextChanged(object sender, EventArgs e)
         {
             UpdateResult();
-        }
-
-        private void txtResult_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.Control && e.KeyCode == Keys.A)
-            {
-                txtResult.SelectAll();
-            }
-        }
-
-        private void txtTarget_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.Control && e.KeyCode == Keys.A)
-            {
-                txtTarget.SelectAll();
-            }
         }
 
         private void tpFileHashCheck_DragEnter(object sender, DragEventArgs e)
