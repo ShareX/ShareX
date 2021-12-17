@@ -271,7 +271,7 @@ namespace ShareX.HelpersLib
         {
             tb.KeyDown += (sender, e) =>
             {
-                if (e.Control && e.KeyCode == Keys.A)
+                if (e.KeyData == (Keys.Control | Keys.A))
                 {
                     tb.SelectAll();
                     e.SuppressKeyPress = true;
