@@ -1727,6 +1727,35 @@ namespace ShareX
             }
         }
 
+        public static void HandleNativeMessagingInput(string filePath)
+        {
+            if (!string.IsNullOrEmpty(filePath) && File.Exists(filePath))
+            {
+                NativeMessagingInput nativeMessagingInput = null;
+
+                try
+                {
+                    nativeMessagingInput = JsonHelpers.DeserializeFromFile<NativeMessagingInput>(filePath);
+                }
+                catch (Exception e)
+                {
+                    DebugHelper.WriteException(e);
+                }
+
+                if (nativeMessagingInput != null)
+                {
+                    if (!string.IsNullOrEmpty(nativeMessagingInput.URL) && URLHelpers.IsValidURL(nativeMessagingInput.URL))
+                    {
+                        UploadManager.DownloadAndUploadFile(nativeMessagingInput.URL);
+                    }
+                    else if (!string.IsNullOrEmpty(nativeMessagingInput.Text))
+                    {
+                        UploadManager.UploadText(nativeMessagingInput.Text);
+                    }
+                }
+            }
+        }
+
         public static void OpenActionsToolbar()
         {
             ActionsToolbarForm.Instance.ForceActivate();

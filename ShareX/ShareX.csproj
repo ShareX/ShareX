@@ -219,6 +219,7 @@
     <Compile Include="Forms\TextUploadForm.Designer.cs">
       <DependentUpon>TextUploadForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="NativeMessageInput.cs" />
     <Compile Include="NewsItem.cs" />
     <Compile Include="NewsManager.cs" />
     <Compile Include="..\SharedAssemblyInfo.cs">

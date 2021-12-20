@@ -51,7 +51,8 @@ namespace ShareX
 
                 if (command.IsCommand)
                 {
-                    if (CheckCustomUploader(command) || CheckImageEffect(command) || CheckCLIHotkey(command) || CheckCLIWorkflow(command))
+                    if (CheckCustomUploader(command) || CheckImageEffect(command) || CheckCLIHotkey(command) || CheckCLIWorkflow(command) ||
+                        CheckNativeMessagingInput(command))
                     {
                     }
 
@@ -149,6 +150,21 @@ namespace ShareX
                         }
                     }
                 }
+            }
+
+            return false;
+        }
+
+        private bool CheckNativeMessagingInput(CLICommand command)
+        {
+            if (command.Command.Equals("NativeMessagingInput", StringComparison.InvariantCultureIgnoreCase))
+            {
+                if (!string.IsNullOrEmpty(command.Parameter) && command.Parameter.EndsWith(".json", StringComparison.OrdinalIgnoreCase))
+                {
+                    TaskHelpers.HandleNativeMessagingInput(command.Parameter);
+                }
+
+                return true;
             }
 
             return false;

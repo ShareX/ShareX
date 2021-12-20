@@ -1232,7 +1232,7 @@ namespace ShareX.HelpersLib
             return Path.GetFullPath(path);
         }
 
-        public static string GetTempPath(string extension)
+        public static string GetTempFilePath(string extension)
         {
             string path = Path.GetTempFileName();
             return Path.ChangeExtension(path, extension);
@@ -1391,7 +1391,8 @@ namespace ShareX.HelpersLib
 
         public static string EscapeCLIText(string text)
         {
-            return string.Format("\"{0}\"", text.Replace("\\", "\\\\").Replace("\"", "\\\""));
+            string escapedText = text.Replace("\\", "\\\\").Replace("\"", "\\\"");
+            return $"\"{escapedText}\"";
         }
 
         public static string BytesToHex(byte[] bytes)
