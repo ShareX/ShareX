@@ -1736,6 +1736,8 @@ namespace ShareX
                 try
                 {
                     nativeMessagingInput = JsonHelpers.DeserializeFromFile<NativeMessagingInput>(filePath);
+
+                    File.Delete(filePath);
                 }
                 catch (Exception e)
                 {
