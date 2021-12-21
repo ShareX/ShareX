@@ -194,6 +194,8 @@ namespace ShareX.ImageEffectsLib
                 g.TranslateTransform(-moveX, -moveY);
             }
 
+            g.PixelOffsetMode = PixelOffsetMode.Half;
+
             if (RandomOpacity)
             {
                 float opacity = RandomFast.Next(Math.Min(RandomOpacityMin, RandomOpacityMax), Math.Max(RandomOpacityMin, RandomOpacityMax)).Clamp(0, 100) / 100f;
@@ -215,6 +217,8 @@ namespace ShareX.ImageEffectsLib
             {
                 g.ResetTransform();
             }
+
+            g.PixelOffsetMode = PixelOffsetMode.Default;
         }
     }
 }
