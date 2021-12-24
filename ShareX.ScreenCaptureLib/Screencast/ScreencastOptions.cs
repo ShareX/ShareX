@@ -90,19 +90,8 @@ namespace ShareX.ScreenCaptureLib
 
             StringBuilder args = new StringBuilder();
             args.Append("-hide_banner "); // All FFmpeg tools will normally show a copyright notice, build options and library versions. This option can be used to suppress printing this information.
-            args.Append("-rtbufsize 256M "); // Default real time buffer size is 3041280 (3M)
-            args.Append("-thread_queue_size 1024 "); // This option sets the maximum number of queued packets when reading from the file or device.
 
-            string fps;
-
-            if (isCustom)
-            {
-                fps = "$fps$";
-            }
-            else
-            {
-                fps = FPS.ToString();
-            }
+            string framerate = isCustom ? "$fps$" : FPS.ToString();
 
             if (IsRecording)
             {
@@ -110,24 +99,36 @@ namespace ShareX.ScreenCaptureLib
                 {
                     if (FFmpeg.VideoSource.Equals(FFmpegCLIManager.SourceGDIGrab, StringComparison.InvariantCultureIgnoreCase))
                     {
+                        string x = isCustom ? "$area_x$" : CaptureArea.X.ToString();
+                        string y = isCustom ? "$area_y$" : CaptureArea.Y.ToString();
+                        string width = isCustom ? "$area_width$" : CaptureArea.Width.ToString();
+                        string height = isCustom ? "$area_height$" : CaptureArea.Height.ToString();
+                        string cursor = isCustom ? "$cursor$" : DrawCursor ? "1" : "0";
+
                         // http://ffmpeg.org/ffmpeg-devices.html#gdigrab
-                        args.AppendFormat("-f gdigrab -framerate {0} -offset_x {1} -offset_y {2} -video_size {3}x{4} -draw_mouse {5} -i desktop ",
-                            fps, isCustom ? "$area_x$" : CaptureArea.X.ToString(), isCustom ? "$area_y$" : CaptureArea.Y.ToString(),
-                            isCustom ? "$area_width$" : CaptureArea.Width.ToString(), isCustom ? "$area_height$" : CaptureArea.Height.ToString(),
-                            isCustom ? "$cursor$" : DrawCursor ? "1" : "0");
+                        AppendInputDevice(args, "gdigrab", false);
+                        args.Append($"-framerate {framerate} ");
+                        args.Append($"-offset_x {x} ");
+                        args.Append($"-offset_y {y} ");
+                        args.Append($"-video_size {width}x{height} ");
+                        args.Append($"-draw_mouse {cursor} ");
+                        args.Append("-i desktop ");
 
                         if (FFmpeg.IsAudioSourceSelected)
                         {
-                            args.AppendFormat("-f dshow -i audio={0} ", Helpers.EscapeCLIText(FFmpeg.AudioSource));
+                            AppendInputDevice(args, "dshow", true);
+                            args.Append($"-i audio={Helpers.EscapeCLIText(FFmpeg.AudioSource)} ");
                         }
                     }
                     else
                     {
-                        args.AppendFormat("-f dshow -framerate {0} -i video={1}", fps, Helpers.EscapeCLIText(FFmpeg.VideoSource));
+                        AppendInputDevice(args, "dshow", FFmpeg.IsAudioSourceSelected);
+                        args.Append($"-framerate {framerate} ");
+                        args.Append($"-i video={Helpers.EscapeCLIText(FFmpeg.VideoSource)}");
 
                         if (FFmpeg.IsAudioSourceSelected)
                         {
-                            args.AppendFormat(":audio={0} ", Helpers.EscapeCLIText(FFmpeg.AudioSource));
+                            args.Append($":audio={Helpers.EscapeCLIText(FFmpeg.AudioSource)} ");
                         }
                         else
                         {
@@ -137,7 +138,8 @@ namespace ShareX.ScreenCaptureLib
                 }
                 else if (FFmpeg.IsAudioSourceSelected)
                 {
-                    args.AppendFormat("-f dshow -i audio={0} ", Helpers.EscapeCLIText(FFmpeg.AudioSource));
+                    AppendInputDevice(args, "dshow", true);
+                    args.Append($"-i audio={Helpers.EscapeCLIText(FFmpeg.AudioSource)} ");
                 }
             }
             else
@@ -169,15 +171,15 @@ namespace ShareX.ScreenCaptureLib
                         videoCodec = FFmpeg.VideoCodec.ToString();
                     }
 
-                    args.AppendFormat("-c:v {0} ", videoCodec);
-                    args.AppendFormat("-r {0} ", fps); // output FPS
+                    args.Append($"-c:v {videoCodec} ");
+                    args.Append($"-r {framerate} "); // output FPS
                 }
 
                 if (IsLossless)
                 {
-                    args.AppendFormat("-preset {0} ", FFmpegPreset.ultrafast);
-                    args.AppendFormat("-tune {0} ", FFmpegTune.zerolatency);
-                    args.AppendFormat("-qp {0} ", 0);
+                    args.Append($"-preset {FFmpegPreset.ultrafast} ");
+                    args.Append($"-tune {FFmpegTune.zerolatency} ");
+                    args.Append("-qp 0 ");
                 }
                 else
                 {
@@ -185,47 +187,47 @@ namespace ShareX.ScreenCaptureLib
                     {
                         case FFmpegVideoCodec.libx264: // https://trac.ffmpeg.org/wiki/Encode/H.264
                         case FFmpegVideoCodec.libx265: // https://trac.ffmpeg.org/wiki/Encode/H.265
-                            args.AppendFormat("-preset {0} ", FFmpeg.x264_Preset);
-                            if (IsRecording) args.AppendFormat("-tune {0} ", FFmpegTune.zerolatency);
-                            args.AppendFormat("-crf {0} ", FFmpeg.x264_CRF);
-                            args.AppendFormat("-pix_fmt {0} ", "yuv420p"); // -pix_fmt yuv420p required otherwise can't stream in Chrome
-                            args.AppendFormat("-movflags {0} ", "+faststart"); // This will move some information to the beginning of your file and allow the video to begin playing before it is completely downloaded by the viewer
+                            args.Append($"-preset {FFmpeg.x264_Preset} ");
+                            if (IsRecording) args.Append($"-tune {FFmpegTune.zerolatency} ");
+                            args.Append($"-crf {FFmpeg.x264_CRF} ");
+                            args.Append("-pix_fmt yuv420p "); // -pix_fmt yuv420p required otherwise can't stream in Chrome
+                            args.Append("-movflags +faststart "); // This will move some information to the beginning of your file and allow the video to begin playing before it is completely downloaded by the viewer
                             break;
                         case FFmpegVideoCodec.libvpx: // https://trac.ffmpeg.org/wiki/Encode/VP8
                         case FFmpegVideoCodec.libvpx_vp9: // https://trac.ffmpeg.org/wiki/Encode/VP9
-                            if (IsRecording) args.AppendFormat("-deadline {0} ", "realtime");
-                            args.AppendFormat("-b:v {0}k ", FFmpeg.VPx_bitrate);
-                            args.AppendFormat("-pix_fmt {0} ", "yuv420p"); // -pix_fmt yuv420p required otherwise causing issues in Chrome related to WebM transparency support
+                            if (IsRecording) args.Append("-deadline realtime ");
+                            args.Append($"-b:v {FFmpeg.VPx_bitrate}k ");
+                            args.Append("-pix_fmt yuv420p "); // -pix_fmt yuv420p required otherwise causing issues in Chrome related to WebM transparency support
                             break;
                         case FFmpegVideoCodec.libxvid: // https://trac.ffmpeg.org/wiki/Encode/MPEG-4
-                            args.AppendFormat("-qscale:v {0} ", FFmpeg.XviD_qscale);
+                            args.Append($"-qscale:v {FFmpeg.XviD_qscale} ");
                             break;
                         case FFmpegVideoCodec.h264_nvenc: // https://trac.ffmpeg.org/wiki/HWAccelIntro#NVENC
                         case FFmpegVideoCodec.hevc_nvenc:
-                            args.AppendFormat("-preset {0} ", FFmpeg.NVENC_preset);
-                            args.AppendFormat("-b:v {0}k ", FFmpeg.NVENC_bitrate);
-                            args.AppendFormat("-pix_fmt {0} ", "yuv420p");
-                            args.AppendFormat("-movflags {0} ", "+faststart"); // This will move some information to the beginning of your file and allow the video to begin playing before it is completely downloaded by the viewer
+                            args.Append($"-preset {FFmpeg.NVENC_preset} ");
+                            args.Append($"-b:v {FFmpeg.NVENC_bitrate}k ");
+                            args.Append("-pix_fmt yuv420p ");
+                            args.Append("-movflags +faststart "); // This will move some information to the beginning of your file and allow the video to begin playing before it is completely downloaded by the viewer
                             break;
                         case FFmpegVideoCodec.h264_amf:
                         case FFmpegVideoCodec.hevc_amf:
-                            args.AppendFormat("-usage {0} ", FFmpeg.AMF_usage);
-                            args.AppendFormat("-quality {0} ", FFmpeg.AMF_quality);
-                            args.AppendFormat("-pix_fmt {0} ", "yuv420p");
+                            args.Append($"-usage {FFmpeg.AMF_usage} ");
+                            args.Append($"-quality {FFmpeg.AMF_quality} ");
+                            args.Append("-pix_fmt yuv420p ");
                             break;
                         case FFmpegVideoCodec.h264_qsv: // https://trac.ffmpeg.org/wiki/Hardware/QuickSync
                         case FFmpegVideoCodec.hevc_qsv:
-                            args.AppendFormat("-preset {0} ", FFmpeg.QSV_preset);
-                            args.AppendFormat("-b:v {0}k ", FFmpeg.QSV_bitrate);
+                            args.Append($"-preset {FFmpeg.QSV_preset} ");
+                            args.Append($"-b:v {FFmpeg.QSV_bitrate}k ");
                             break;
                         case FFmpegVideoCodec.libwebp: // https://www.ffmpeg.org/ffmpeg-codecs.html#libwebp
-                            args.AppendFormat("-lossless {0} ", "0");
-                            args.AppendFormat("-preset {0} ", "default");
-                            args.AppendFormat("-loop {0} ", "0");
+                            args.Append("-lossless 0 ");
+                            args.Append("-preset default ");
+                            args.Append("-loop 0 ");
                             break;
                         case FFmpegVideoCodec.apng:
                             args.Append("-f apng ");
-                            args.AppendFormat("-plays {0} ", "0");
+                            args.Append("-plays 0 ");
                             break;
                     }
                 }
@@ -236,41 +238,44 @@ namespace ShareX.ScreenCaptureLib
                 switch (FFmpeg.AudioCodec)
                 {
                     case FFmpegAudioCodec.libvoaacenc: // http://trac.ffmpeg.org/wiki/Encode/AAC
-                        args.AppendFormat("-c:a aac -ac 2 -b:a {0}k ", FFmpeg.AAC_bitrate); // -ac 2 required otherwise failing with 7.1
+                        args.Append($"-c:a aac -ac 2 -b:a {FFmpeg.AAC_bitrate}k "); // -ac 2 required otherwise failing with 7.1
                         break;
                     case FFmpegAudioCodec.libopus: // https://www.ffmpeg.org/ffmpeg-codecs.html#libopus-1
-                        args.AppendFormat("-c:a libopus -b:a {0}k ", FFmpeg.Opus_bitrate);
+                        args.Append($"-c:a libopus -b:a {FFmpeg.Opus_bitrate}k ");
                         break;
                     case FFmpegAudioCodec.libvorbis: // http://trac.ffmpeg.org/wiki/TheoraVorbisEncodingGuide
-                        args.AppendFormat("-c:a libvorbis -qscale:a {0} ", FFmpeg.Vorbis_qscale);
+                        args.Append($"-c:a libvorbis -qscale:a {FFmpeg.Vorbis_qscale} ");
                         break;
                     case FFmpegAudioCodec.libmp3lame: // http://trac.ffmpeg.org/wiki/Encode/MP3
-                        args.AppendFormat("-c:a libmp3lame -qscale:a {0} ", FFmpeg.MP3_qscale);
+                        args.Append($"-c:a libmp3lame -qscale:a {FFmpeg.MP3_qscale} ");
                         break;
                 }
             }
 
             if (Duration > 0)
             {
-                args.AppendFormat("-t {0} ", isCustom ? "$duration$" : Duration.ToString("0.0", CultureInfo.InvariantCulture)); // duration limit
+                string duration = isCustom ? "$duration$" : Duration.ToString("0.0", CultureInfo.InvariantCulture);
+                args.Append($"-t {duration} "); // duration limit
             }
 
             args.Append("-y "); // overwrite file
 
-            string output;
-
-            if (isCustom)
-            {
-                output = "$output$";
-            }
-            else
-            {
-                output = Path.ChangeExtension(OutputPath, IsLossless ? "mp4" : FFmpeg.Extension);
-            }
-
-            args.AppendFormat("\"{0}\"", output);
+            string output = isCustom ? "$output$" : Path.ChangeExtension(OutputPath, IsLossless ? "mp4" : FFmpeg.Extension);
+            args.Append($"\"{output}\"");
 
             return args.ToString();
+        }
+
+        private void AppendInputDevice(StringBuilder args, string inputDevice, bool audioSource)
+        {
+            args.Append($"-f {inputDevice} ");
+            args.Append("-thread_queue_size 1024 "); // This option sets the maximum number of queued packets when reading from the file or device.
+            args.Append("-rtbufsize 256M "); // Default real time buffer size is 3041280 (3M)
+
+            if (audioSource)
+            {
+                args.Append("-audio_buffer_size 80 "); // Set audio device buffer size in milliseconds (which can directly impact latency, depending on the device).
+            }
         }
     }
 }
