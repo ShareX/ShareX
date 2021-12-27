@@ -113,6 +113,9 @@
     <Compile Include="Controls\ObjectListView.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Controls\ReadOnlyRichTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Controls\ToolStripRoundedEdgeRenderer.cs" />
     <Compile Include="Controls\DarkColorTable.cs" />
     <Compile Include="Controls\HotkeySelectionButton.cs">

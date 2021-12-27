@@ -38,12 +38,8 @@ namespace ShareX
         public AboutForm()
         {
             InitializeComponent();
-
             lblProductName.Text = Program.Title;
             pbLogo.Image = ShareXResources.Logo;
-
-            rtbInfo.AddContextMenu();
-
             ShareXResources.ApplyTheme(this);
 
 #if STEAM

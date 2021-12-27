@@ -33,7 +33,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AboutForm));
             this.lblProductName = new System.Windows.Forms.Label();
-            this.rtbInfo = new System.Windows.Forms.RichTextBox();
+            this.rtbInfo = new HelpersLib.ReadOnlyRichTextBox();
             this.pbLogo = new System.Windows.Forms.PictureBox();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnShareXLicense = new System.Windows.Forms.Button();
@@ -134,7 +134,7 @@
 
         private System.Windows.Forms.Label lblProductName;
         private HelpersLib.Canvas cLogo;
-        private System.Windows.Forms.RichTextBox rtbInfo;
+        private HelpersLib.ReadOnlyRichTextBox rtbInfo;
         private HelpersLib.UpdateCheckerLabel uclUpdate;
         private System.Windows.Forms.PictureBox pbLogo;
         private System.Windows.Forms.Button btnClose;
