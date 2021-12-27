@@ -1,13 +1,14 @@
 #define MyAppName "ShareX"
 #define MyAppRootDirectory "..\.."
 #define MyAppOutputDirectory MyAppRootDirectory + "\Output"
-#define MyAppReleaseDirectory MyAppRootDirectory + "\ShareX\bin\Release"
-#define MyAppFilename MyAppName + ".exe"
-#define MyAppFilepath MyAppReleaseDirectory + "\" + MyAppFilename
+#define MyAppReleaseDirectory MyAppRootDirectory + "\" + MyAppName + "\bin\Release"
+#define MyAppFileName MyAppName + ".exe"
+#define MyAppFilePath MyAppReleaseDirectory + "\" + MyAppFileName
 #dim Version[4]
-#expr GetVersionComponents(MyAppFilepath, Version[0], Version[1], Version[2], Version[3])
+#expr GetVersionComponents(MyAppFilePath, Version[0], Version[1], Version[2], Version[3])
 #define MyAppVersion Str(Version[0]) + "." + Str(Version[1]) + "." + Str(Version[2])
 #define MyAppPublisher "ShareX Team"
+#define MyAppURL "https://getsharex.com"
 #define MyAppId "82E6AC09-0FEF-4390-AD9F-0DD3F5561EFC"
 
 [Setup]
@@ -16,36 +17,25 @@ AppId={#MyAppId}
 AppMutex={#MyAppId}
 AppName={#MyAppName}
 AppPublisher={#MyAppPublisher}
-AppPublisherURL=https://getsharex.com
-AppSupportURL=https://github.com/ShareX/ShareX/issues
-AppUpdatesURL=https://github.com/ShareX/ShareX/releases
+AppPublisherURL={#MyAppURL}
 AppVerName={#MyAppName} {#MyAppVersion}
 AppVersion={#MyAppVersion}
-ArchitecturesAllowed=x86 x64 ia64 arm64
+ArchitecturesAllowed=x86 x64 arm64 ia64
 ArchitecturesInstallIn64BitMode=x64 ia64
 DefaultDirName={commonpf}\{#MyAppName}
 DefaultGroupName={#MyAppName}
-DirExistsWarning=no
-DisableStartupPrompt=yes
-DisableWelcomePage=yes
 DisableProgramGroupPage=yes
-DisableReadyPage=no
-DisableReadyMemo=no
-DisableFinishedPage=no
 LicenseFile={#MyAppRootDirectory}\LICENSE.txt
 MinVersion=6.1sp1
 OutputBaseFilename={#MyAppName}-{#MyAppVersion}-setup
 OutputDir={#MyAppOutputDirectory}
 PrivilegesRequired=none
-ShowLanguageDialog=no
-UninstallDisplayIcon={app}\{#MyAppFilename}
+SolidCompression=yes
+UninstallDisplayIcon={app}\{#MyAppFileName}
 UninstallDisplayName={#MyAppName}
 VersionInfoCompany={#MyAppPublisher}
 VersionInfoTextVersion={#MyAppVersion}
 VersionInfoVersion={#MyAppVersion}
-WizardImageFile=WizardImageFile.bmp
-WizardImageStretch=no
-WizardSmallImageFile=WizardSmallImageFile.bmp
 
 [Tasks]
 Name: "CreateDesktopIcon"; Description: "Create a desktop shortcut"; GroupDescription: "Additional shortcuts:"; Check: not IsUpdating and not DesktopIconExists
@@ -54,8 +44,8 @@ Name: "CreateSendToIcon"; Description: "Create a send to shortcut"; GroupDescrip
 Name: "CreateStartupIcon"; Description: "Run ShareX when Windows starts"; GroupDescription: "Other tasks:"; Check: not IsUpdating
 
 [Files]
-Source: "{#MyAppFilepath}"; DestDir: {app}; Flags: ignoreversion
-Source: "{#MyAppFilepath}.config"; DestDir: {app}; Flags: ignoreversion
+Source: "{#MyAppFilePath}"; DestDir: {app}; Flags: ignoreversion
+Source: "{#MyAppFilePath}.config"; DestDir: {app}; Flags: ignoreversion
 Source: "{#MyAppReleaseDirectory}\*.dll"; DestDir: {app}; Flags: ignoreversion
 Source: "{#MyAppRootDirectory}\Licenses\*.txt"; DestDir: {app}\Licenses; Flags: ignoreversion
 Source: "{#MyAppOutputDirectory}\Recorder-devices-setup.exe"; DestDir: {app}; Flags: ignoreversion
@@ -83,22 +73,22 @@ Source: "{#MyAppRootDirectory}\ShareX.ScreenCaptureLib\Stickers\*"; DestDir: {ap
 Source: "puush"; DestDir: {app}; Check: IsPuushMode
 
 [Icons]
-Name: "{group}\{#MyAppName}"; Filename: "{app}\{#MyAppFilename}"; WorkingDir: "{app}"
+Name: "{group}\{#MyAppName}"; Filename: "{app}\{#MyAppFileName}"; WorkingDir: "{app}"
 Name: "{group}\{cm:UninstallProgram,{#MyAppName}}"; Filename: "{uninstallexe}"; WorkingDir: "{app}"
-Name: "{userdesktop}\{#MyAppName}"; Filename: "{app}\{#MyAppFilename}"; WorkingDir: "{app}"; Tasks: CreateDesktopIcon
-Name: "{usersendto}\{#MyAppName}"; Filename: "{app}\{#MyAppFilename}"; WorkingDir: "{app}"; Tasks: CreateSendToIcon
-Name: "{userstartup}\{#MyAppName}"; Filename: "{app}\{#MyAppFilename}"; WorkingDir: "{app}"; Parameters: "-silent"; Tasks: CreateStartupIcon
+Name: "{userdesktop}\{#MyAppName}"; Filename: "{app}\{#MyAppFileName}"; WorkingDir: "{app}"; Tasks: CreateDesktopIcon
+Name: "{usersendto}\{#MyAppName}"; Filename: "{app}\{#MyAppFileName}"; WorkingDir: "{app}"; Tasks: CreateSendToIcon
+Name: "{userstartup}\{#MyAppName}"; Filename: "{app}\{#MyAppFileName}"; WorkingDir: "{app}"; Parameters: "-silent"; Tasks: CreateStartupIcon
 
 [Run]
-Filename: "{app}\{#MyAppFilename}"; Description: "{cm:LaunchProgram,{#MyAppName}}"; Flags: nowait postinstall; Check: not IsNoRun
+Filename: "{app}\{#MyAppFileName}"; Description: "{cm:LaunchProgram,{#MyAppName}}"; Flags: nowait postinstall; Check: not IsNoRun
 
 [Registry]
 Root: "HKCU"; Subkey: "Software\Classes\*\shell\{#MyAppName}"; ValueType: string; ValueData: "Upload with {#MyAppName}"; Tasks: CreateContextMenuButton
-Root: "HKCU"; Subkey: "Software\Classes\*\shell\{#MyAppName}"; ValueType: string; ValueName: "Icon"; ValueData: """{app}\{#MyAppFilename}"",0"; Tasks: CreateContextMenuButton
-Root: "HKCU"; Subkey: "Software\Classes\*\shell\{#MyAppName}\command"; ValueType: string; ValueData: """{app}\{#MyAppFilename}"" ""%1"""; Tasks: CreateContextMenuButton
+Root: "HKCU"; Subkey: "Software\Classes\*\shell\{#MyAppName}"; ValueType: string; ValueName: "Icon"; ValueData: """{app}\{#MyAppFileName}"",0"; Tasks: CreateContextMenuButton
+Root: "HKCU"; Subkey: "Software\Classes\*\shell\{#MyAppName}\command"; ValueType: string; ValueData: """{app}\{#MyAppFileName}"" ""%1"""; Tasks: CreateContextMenuButton
 Root: "HKCU"; Subkey: "Software\Classes\Directory\shell\{#MyAppName}"; ValueType: string; ValueData: "Upload with {#MyAppName}"; Tasks: CreateContextMenuButton
-Root: "HKCU"; Subkey: "Software\Classes\Directory\shell\{#MyAppName}"; ValueType: string; ValueName: "Icon"; ValueData: """{app}\{#MyAppFilename}"",0"; Tasks: CreateContextMenuButton
-Root: "HKCU"; Subkey: "Software\Classes\Directory\shell\{#MyAppName}\command"; ValueType: string; ValueData: """{app}\{#MyAppFilename}"" ""%1"""; Tasks: CreateContextMenuButton
+Root: "HKCU"; Subkey: "Software\Classes\Directory\shell\{#MyAppName}"; ValueType: string; ValueName: "Icon"; ValueData: """{app}\{#MyAppFileName}"",0"; Tasks: CreateContextMenuButton
+Root: "HKCU"; Subkey: "Software\Classes\Directory\shell\{#MyAppName}\command"; ValueType: string; ValueData: """{app}\{#MyAppFileName}"" ""%1"""; Tasks: CreateContextMenuButton
 Root: "HKCU"; Subkey: "Software\Classes\*\shell\{#MyAppName}"; Flags: dontcreatekey uninsdeletekey
 Root: "HKCU"; Subkey: "Software\Classes\Directory\shell\{#MyAppName}"; Flags: dontcreatekey uninsdeletekey
 Root: "HKCU"; Subkey: "Software\Classes\.sxcu"; Flags: dontcreatekey uninsdeletekey
@@ -144,7 +134,7 @@ begin
   begin
     if MsgBox('Uninstall has detected that {#MyAppName} is currently running.' + #13#10#13#10 + 'Would you like to close it?', mbError, MB_YESNO) = IDYES then
     begin
-      Exec('taskkill.exe', '/f /im {#MyAppFilename}', '', SW_HIDE, ewWaitUntilTerminated, ErrorCode);
+      Exec('taskkill.exe', '/f /im {#MyAppFileName}', '', SW_HIDE, ewWaitUntilTerminated, ErrorCode);
     end
     else
     begin

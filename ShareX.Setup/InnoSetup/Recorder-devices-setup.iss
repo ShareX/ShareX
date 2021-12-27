@@ -1,23 +1,20 @@
 #define MyAppName "Recorder Devices for ShareX"
-#define MyAppVersion "0.12.10"
 #define MyAppRootDirectory "..\.."
 #define MyAppOutputDirectory MyAppRootDirectory + "\Output"
 #define MyAppLibDirectory MyAppRootDirectory + "\Lib"
+#define MyAppVersion "0.12.10"
 
 [Setup]
 AppName={#MyAppName}
 AppVerName={#MyAppName} {#MyAppVersion}
 AppVersion={#MyAppVersion}
-ArchitecturesAllowed=x86 x64 ia64
+ArchitecturesAllowed=x86 x64 arm64 ia64
 ArchitecturesInstallIn64BitMode=x64 ia64
 DefaultDirName={commonpf}\{#MyAppName}
 DefaultGroupName={#MyAppName}
-DirExistsWarning=no
-DisableReadyPage=no
-DisableReadyMemo=no
 OutputBaseFilename=Recorder-devices-setup
 OutputDir={#MyAppOutputDirectory}
-ShowLanguageDialog=no
+SolidCompression=yes
 
 [Files]
 Source: "{#MyAppLibDirectory}\screen-capture-recorder.dll"; DestDir: {app}; Flags: regserver 32bit; Check: not IsWin64
