@@ -148,7 +148,7 @@
     <value>True</value>
   </data>
   <data name="lblCheckingUpdates.Location" type="System.Drawing.Point, System.Drawing">
-    <value>24, 6</value>
+    <value>24, 3</value>
   </data>
   <data name="lblCheckingUpdates.Size" type="System.Drawing.Size, System.Drawing">
     <value>117, 13</value>
@@ -175,7 +175,7 @@
     <value>True</value>
   </data>
   <data name="lblStatus.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 6</value>
+    <value>0, 3</value>
   </data>
   <data name="lblStatus.Size" type="System.Drawing.Size, System.Drawing">
     <value>77, 13</value>
@@ -205,7 +205,7 @@
     <value>True</value>
   </data>
   <data name="llblUpdateAvailable.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 6</value>
+    <value>0, 3</value>
   </data>
   <data name="llblUpdateAvailable.Size" type="System.Drawing.Size, System.Drawing">
     <value>188, 13</value>

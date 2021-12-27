@@ -70,20 +70,11 @@ namespace ShareX.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Contributors.
+        ///   Looks up a localized string similar to Credits.
         /// </summary>
-        public static string AboutForm_AboutForm_Contributors {
+        public static string AboutForm_AboutForm_Credits {
             get {
-                return ResourceManager.GetString("AboutForm_AboutForm_Contributors", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to External libraries.
-        /// </summary>
-        public static string AboutForm_AboutForm_External_libraries {
-            get {
-                return ResourceManager.GetString("AboutForm_AboutForm_External_libraries", resourceCulture);
+                return ResourceManager.GetString("AboutForm_AboutForm_Credits", resourceCulture);
             }
         }
         
@@ -259,11 +250,38 @@ namespace ShareX.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Links.
+        /// </summary>
+        public static string AboutForm_AboutForm_Links {
+            get {
+                return ResourceManager.GetString("AboutForm_AboutForm_Links", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Privacy policy.
+        /// </summary>
+        public static string AboutForm_AboutForm_Privacy_policy {
+            get {
+                return ResourceManager.GetString("AboutForm_AboutForm_Privacy_policy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Project page.
         /// </summary>
         public static string AboutForm_AboutForm_Project_page {
             get {
                 return ResourceManager.GetString("AboutForm_AboutForm_Project_page", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Team.
+        /// </summary>
+        public static string AboutForm_AboutForm_Team {
+            get {
+                return ResourceManager.GetString("AboutForm_AboutForm_Team", resourceCulture);
             }
         }
         

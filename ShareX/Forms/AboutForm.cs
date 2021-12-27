@@ -26,6 +26,7 @@
 using ShareX.HelpersLib;
 using ShareX.Properties;
 using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace ShareX
@@ -41,16 +42,9 @@ namespace ShareX
             lblProductName.Text = Program.Title;
             pbLogo.Image = ShareXResources.Logo;
 
-            rtbShareXInfo.AddContextMenu();
-            rtbCredits.AddContextMenu();
+            rtbInfo.AddContextMenu();
 
             ShareXResources.ApplyTheme(this);
-
-            if (ShareXResources.IsDarkTheme)
-            {
-                pbJaexURL.Image = Resources.GitHubDark;
-                pbMikeURL.Image = Resources.GitHubDark;
-            }
 
 #if STEAM
             uclUpdate.Visible = false;
@@ -61,6 +55,7 @@ namespace ShareX
             lblBuild.Text = "Microsoft Store build";
             lblBuild.Visible = true;
 #else
+
             if (!SystemOptions.DisableUpdateCheck && !Program.PortableApps)
             {
                 uclUpdate.UpdateLoadingImage();
@@ -74,21 +69,20 @@ namespace ShareX
             }
 #endif
 
-            lblTeam.Text = "ShareX Team:";
-            lblJaex.Text = "Jaex";
-            lblMike.Text = "McoreD (Michael Delpach)";
-
-            rtbShareXInfo.Text = $@"{Resources.AboutForm_AboutForm_Website}: {Links.URL_WEBSITE}
+            rtbInfo.AppendLine(Resources.AboutForm_AboutForm_Links, FontStyle.Bold, 13);
+            rtbInfo.AppendLine($@"{Resources.AboutForm_AboutForm_Website}: {Links.URL_WEBSITE}
 {Resources.AboutForm_AboutForm_Project_page}: {Links.URL_GITHUB}
-{Resources.AboutForm_AboutForm_Changelog}: {Links.URL_CHANGELOG}";
+{Resources.AboutForm_AboutForm_Changelog}: {Links.URL_CHANGELOG}
+{Resources.AboutForm_AboutForm_Privacy_policy}: {Links.URL_PRIVACY_POLICY}
+", FontStyle.Regular);
 
-            rtbCredits.Text = $@"{Resources.AboutForm_AboutForm_Contributors}:
+            rtbInfo.AppendLine(Resources.AboutForm_AboutForm_Team, FontStyle.Bold, 13);
+            rtbInfo.AppendLine($@"Jaex: {Links.URL_JAEX}
+McoreD (Michael Delpach): {Links.URL_MCORED}
+", FontStyle.Regular);
 
-https://github.com/ShareX/ShareX/graphs/contributors
-
-{Resources.AboutForm_AboutForm_Translators}:
-
-{Resources.AboutForm_AboutForm_Language_tr}: https://github.com/Jaex
+            rtbInfo.AppendLine(Resources.AboutForm_AboutForm_Translators, FontStyle.Bold, 13);
+            rtbInfo.AppendLine($@"{Resources.AboutForm_AboutForm_Language_tr}: https://github.com/Jaex
 {Resources.AboutForm_AboutForm_Language_de}: https://github.com/Starbug2 & https://github.com/Kaeltis
 {Resources.AboutForm_AboutForm_Language_fr}: https://github.com/nwies & https://github.com/Shadorc
 {Resources.AboutForm_AboutForm_Language_zh_CH}: https://github.com/jiajiechan
@@ -107,23 +101,25 @@ https://github.com/ShareX/ShareX/graphs/contributors
 {Resources.AboutForm_AboutForm_Language_fa_IR}: https://github.com/pourmand1376
 {Resources.AboutForm_AboutForm_Language_pt_PT}: https://github.com/FarewellAngelina
 {Resources.AboutForm_AboutForm_Language_ja_JP}: https://github.com/kanaxx
+", FontStyle.Regular);
 
-{Resources.AboutForm_AboutForm_External_libraries}:
-
-Json.NET: https://github.com/JamesNK/Newtonsoft.Json
+            rtbInfo.AppendLine(Resources.AboutForm_AboutForm_Credits, FontStyle.Bold, 13);
+            rtbInfo.AppendLine(@"Json.NET: https://github.com/JamesNK/Newtonsoft.Json
 SSH.NET: https://github.com/sshnet/SSH.NET
 Icons: http://p.yusukekamiyamane.com
 ImageListView: https://github.com/oozcitak/imagelistview
 FFmpeg: https://www.ffmpeg.org
-DirectShow video and audio device: https://github.com/rdp/screen-capture-recorder-to-video-windows-free
+Recorder devices: https://github.com/rdp/screen-capture-recorder-to-video-windows-free
 FluentFTP: https://github.com/robinrodricks/FluentFTP
 Steamworks.NET: https://github.com/rlabrecque/Steamworks.NET
 OCR Space: https://ocr.space
 ZXing.Net: https://github.com/micjahn/ZXing.Net
 MegaApiClient: https://github.com/gpailler/MegaApiClient
+Inno Setup Dependency Installer: https://github.com/DomGries/InnoDependencyInstaller
 Blob Emoji: http://blobs.gg
+", FontStyle.Regular);
 
-Copyright (c) 2007-2021 ShareX Team";
+            rtbInfo.AppendText("Copyright (c) 2007-2021 ShareX Team", FontStyle.Bold, 13);
 
             easterEgg = new EasterEggAboutAnimation(cLogo, this);
         }
@@ -137,21 +133,6 @@ Copyright (c) 2007-2021 ShareX Team";
         {
             easterEgg.Start();
             pbLogo.Visible = false;
-        }
-
-        private void pbSteam_Click(object sender, EventArgs e)
-        {
-            URLHelpers.OpenURL(Links.URL_STEAM);
-        }
-
-        private void pbJaexURL_Click(object sender, EventArgs e)
-        {
-            URLHelpers.OpenURL(Links.URL_JAEX);
-        }
-
-        private void pbMikeURL_Click(object sender, EventArgs e)
-        {
-            URLHelpers.OpenURL(Links.URL_MCORED);
         }
 
         private void rtb_LinkClicked(object sender, LinkClickedEventArgs e)

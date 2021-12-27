@@ -33,6 +33,7 @@ namespace ShareX.HelpersLib
         public const string URL_CALLBACK = URL_WEBSITE + "/callback/";
         public const string URL_CHANGELOG = URL_WEBSITE + "/changelog";
         public const string URL_DONATE = URL_WEBSITE + "/donate";
+        public const string URL_PRIVACY_POLICY = URL_WEBSITE + "/privacy-policy";
         public const string URL_IMAGE_EFFECTS = URL_WEBSITE + "/image-effects";
         public const string URL_ACTIONS = URL_WEBSITE + "/actions";
         public const string URL_JAEX = "https://github.com/Jaex";

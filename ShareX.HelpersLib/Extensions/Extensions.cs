@@ -668,11 +668,6 @@ namespace ShareX.HelpersLib
             pi.SetValue(dgv, value, null);
         }
 
-        public static void AppendLine(this RichTextBox rtb, string value = "")
-        {
-            rtb.AppendText(value + Environment.NewLine);
-        }
-
         public static void SetFontRegular(this RichTextBox rtb)
         {
             rtb.SelectionFont = new Font(rtb.Font, FontStyle.Regular);
@@ -681,6 +676,33 @@ namespace ShareX.HelpersLib
         public static void SetFontBold(this RichTextBox rtb)
         {
             rtb.SelectionFont = new Font(rtb.Font, FontStyle.Bold);
+        }
+
+        public static void AppendText(this RichTextBox rtb, string text, FontStyle fontStyle, float fontSize = 0)
+        {
+            Font font;
+
+            if (fontSize > 0)
+            {
+                font = new Font(rtb.Font.FontFamily, fontSize, fontStyle);
+            }
+            else
+            {
+                font = new Font(rtb.Font, fontStyle);
+            }
+
+            rtb.SelectionFont = font;
+            rtb.AppendText(text);
+        }
+
+        public static void AppendLine(this RichTextBox rtb, string text = "")
+        {
+            rtb.AppendText(text + Environment.NewLine);
+        }
+
+        public static void AppendLine(this RichTextBox rtb, string text, FontStyle fontStyle, float fontSize = 0)
+        {
+            rtb.AppendText(text + Environment.NewLine, fontStyle, fontSize);
         }
 
         public static void SupportCustomTheme(this ListView lv)

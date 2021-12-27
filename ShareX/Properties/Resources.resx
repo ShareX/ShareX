@@ -756,9 +756,6 @@ Would you like to restart ShareX?</value>
   <data name="pencil" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pencil.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="AboutForm_AboutForm_External_libraries" xml:space="preserve">
-    <value>External libraries</value>
-  </data>
   <data name="application-search-result" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\application-search-result.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -773,9 +770,6 @@ Would you like to restart ShareX?</value>
   </data>
   <data name="UploadTask_OnUploadCompleted_Done" xml:space="preserve">
     <value>Done</value>
-  </data>
-  <data name="AboutForm_AboutForm_Contributors" xml:space="preserve">
-    <value>Contributors</value>
   </data>
   <data name="traffic_cone" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\traffic-cone.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -1078,5 +1072,17 @@ Please run ShareX as administrator to change personal folder path.</value>
   </data>
   <data name="UnableToFindAWindowWithSpecifiedWindowTitle" xml:space="preserve">
     <value>Unable to find a window with specified window title.</value>
+  </data>
+  <data name="AboutForm_AboutForm_Privacy_policy" xml:space="preserve">
+    <value>Privacy policy</value>
+  </data>
+  <data name="AboutForm_AboutForm_Credits" xml:space="preserve">
+    <value>Credits</value>
+  </data>
+  <data name="AboutForm_AboutForm_Links" xml:space="preserve">
+    <value>Links</value>
+  </data>
+  <data name="AboutForm_AboutForm_Team" xml:space="preserve">
+    <value>Team</value>
   </data>
 </root>
