@@ -1098,4 +1098,7 @@
   <data name="lblYouTubePermissionsTip.Text" xml:space="preserve">
     <value>Вы можете отозвать доступ в любое время по ссылке ниже:</value>
   </data>
+  <data name="cbOwnCloudAppendFileNameToURL.Text" xml:space="preserve">
+    <value>Добавлять имя файла в конец ссылки</value>
+  </data>
 </root>
