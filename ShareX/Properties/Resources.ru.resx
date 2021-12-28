@@ -652,4 +652,19 @@
   <data name="UnableToFindAWindowWithSpecifiedWindowTitle" xml:space="preserve">
     <value>Не удалось найти окно с указанным заголовком.</value>
   </data>
+  <data name="AboutForm_AboutForm_Team" xml:space="preserve">
+    <value>Команда</value>
+  </data>
+  <data name="AboutForm_AboutForm_Links" xml:space="preserve">
+    <value>Ссылки</value>
+  </data>
+  <data name="AboutForm_AboutForm_Privacy_policy" xml:space="preserve">
+    <value>Политика конфиденциальности</value>
+  </data>
+  <data name="AboutForm_AboutForm_Credits" xml:space="preserve">
+    <value>Благодарности</value>
+  </data>
+  <data name="YourSystemAdminDisabledTheUploadFeature" xml:space="preserve">
+    <value>Ваш системный администратор отключил возможность загрузки.</value>
+  </data>
 </root>
