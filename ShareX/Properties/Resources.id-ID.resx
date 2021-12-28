@@ -160,9 +160,6 @@ Apakah anda yakin ingin melanjutkan?</value>
   <data name="QRCodeForm_InputTextToEncode" xml:space="preserve">
     <value>Input teks untuk dienkode</value>
   </data>
-  <data name="AboutForm_AboutForm_Contributors" xml:space="preserve">
-    <value>Kontributor</value>
-  </data>
   <data name="TaskManager_task_UploadCompleted_ShareX___Task_completed" xml:space="preserve">
     <value>Tugas selesai</value>
   </data>
@@ -236,17 +233,8 @@ Silakan pilih tombol cepat yang berbeda atau keluar dari aplikasi yang bertentan
   <data name="TaskHelpers_OpenQuickScreenColorPicker_Copied_to_clipboard___0_" xml:space="preserve">
     <value>Disalin ke papan klip: {0}</value>
   </data>
-  <data name="MainForm_UpdateMenu_Hide_menu" xml:space="preserve">
-    <value>Sembunyikan menu</value>
-  </data>
   <data name="TaskHelpers_TweetMessage_Unable_to_find_valid_Twitter_account_" xml:space="preserve">
     <value>Gagal menemukan akun Twitter yang valid.</value>
-  </data>
-  <data name="MainForm_UpdateMenu_Show_menu" xml:space="preserve">
-    <value>Tampilkan menu</value>
-  </data>
-  <data name="MainForm_UpdateMainWindowLayout_Show_columns" xml:space="preserve">
-    <value>Tampilkan kolom</value>
   </data>
   <data name="UploadManager_UploadURL_URL_to_download_from_and_upload" xml:space="preserve">
     <value>URL untuk mengunduh dan mengunggah</value>
@@ -262,9 +250,6 @@ Silakan pilih tombol cepat yang berbeda atau keluar dari aplikasi yang bertentan
   </data>
   <data name="QuickTaskMenu_ShowMenu_Cancel" xml:space="preserve">
     <value>Batal</value>
-  </data>
-  <data name="TaskSettingsForm_UpdateUploaderMenuNames_Task___0_" xml:space="preserve">
-    <value>Tugas: {0}</value>
   </data>
   <data name="HotkeyManager_ShowFailedHotkeys_Hotkey_registration_failed" xml:space="preserve">
     <value>Pendaftaran tombol cepat gagal</value>
@@ -368,9 +353,6 @@ Apakah Anda ingin memulai ulang ShareX?</value>
   <data name="UploadManager_UploadFolder_Folder_upload" xml:space="preserve">
     <value>Unggahan folder</value>
   </data>
-  <data name="AboutForm_AboutForm_External_libraries" xml:space="preserve">
-    <value>Pustaka eksternal</value>
-  </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_After_capture___0_" xml:space="preserve">
     <value>Setelah mengambil: {0}</value>
   </data>
@@ -446,9 +428,6 @@ Klik tengah untuk menutup</value>
   </data>
   <data name="TaskSettingsForm_txtNameFormatPatternActiveWindow_TextChanged_Preview_" xml:space="preserve">
     <value>Pratinjau:</value>
-  </data>
-  <data name="MainForm_UpdateMainWindowLayout_Hide_columns" xml:space="preserve">
-    <value>Sembunyikan kolom</value>
   </data>
   <data name="ActionsToolbar_Close" xml:space="preserve">
     <value>Tutup</value>

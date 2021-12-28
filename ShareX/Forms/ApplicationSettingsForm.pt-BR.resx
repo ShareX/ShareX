@@ -171,9 +171,6 @@
   <data name="btnClipboardFormatAdd.Text" xml:space="preserve">
     <value>Adicionar...</value>
   </data>
-  <data name="gbClipboardFormats.Text" xml:space="preserve">
-    <value>Formatos da área de transferência - aparecem debaixo de Copiar no menu de contexto na janela principal</value>
-  </data>
   <data name="chDescription.Text" xml:space="preserve">
     <value>Descrição</value>
   </data>
@@ -225,9 +222,6 @@
   <data name="lblProxyPassword.Text" xml:space="preserve">
     <value>Senha:</value>
   </data>
-  <data name="tpUploadRetry.Text" xml:space="preserve">
-    <value>Reenvio</value>
-  </data>
   <data name="tpUpload.Text" xml:space="preserve">
     <value>Enviar</value>
   </data>
@@ -236,9 +230,6 @@
   </data>
   <data name="chFormat.Text" xml:space="preserve">
     <value>Formato</value>
-  </data>
-  <data name="tpUploadResults.Text" xml:space="preserve">
-    <value>Resultados</value>
   </data>
   <data name="gbSecondaryImageUploaders.Text" xml:space="preserve">
     <value>Hospedagem de imagens</value>

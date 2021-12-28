@@ -126,9 +126,6 @@
   <data name="btnStartOCR.Text" xml:space="preserve">
     <value>OCR 시작하기</value>
   </data>
-  <data name="llGoogleTranslate.Text" xml:space="preserve">
-    <value>구글번역 열고 창 닫기</value>
-  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - 텍스트 촬영</value>
   </data>

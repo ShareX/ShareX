@@ -201,12 +201,6 @@
   <data name="chFormat.Text" xml:space="preserve">
     <value>Biçim</value>
   </data>
-  <data name="gbClipboardFormats.Text" xml:space="preserve">
-    <value>Pano biçimleri</value>
-  </data>
-  <data name="tpUploadResults.Text" xml:space="preserve">
-    <value>Sonuçlar</value>
-  </data>
   <data name="gbSecondaryImageUploaders.Text" xml:space="preserve">
     <value>İkincil resim yükleyiciler</value>
   </data>
@@ -275,9 +269,6 @@
   </data>
   <data name="btnExport.Text" xml:space="preserve">
     <value>Dışarı aktar...</value>
-  </data>
-  <data name="tpUploadRetry.Text" xml:space="preserve">
-    <value>Tekrarla</value>
   </data>
   <data name="tpUpload.Text" xml:space="preserve">
     <value>Yükleme</value>

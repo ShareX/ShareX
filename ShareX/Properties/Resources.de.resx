@@ -120,9 +120,6 @@
   <data name="AutoCaptureForm_UpdateStatus_Timeleft___0_s___1____Total___2_" xml:space="preserve">
     <value>Zeit übrig: {0}s ({1}%) Gesamt: {2}</value>
   </data>
-  <data name="AboutForm_AboutForm_Contributors" xml:space="preserve">
-    <value>Mitwirkende</value>
-  </data>
   <data name="UploadManager_UploadURL_URL_to_download_from_and_upload" xml:space="preserve">
     <value>URL zum Down- und Upload</value>
   </data>
@@ -193,9 +190,6 @@ Bitte starte ShareX als Administrator, um den Einstellungsordner zu ändern.</va
   <data name="TaskHelpers_OpenQuickScreenColorPicker_Copied_to_clipboard___0_" xml:space="preserve">
     <value>In Zwischenablage kopiert: {0}</value>
   </data>
-  <data name="MainForm_UpdateMenu_Hide_menu" xml:space="preserve">
-    <value>Menü ausblenden</value>
-  </data>
   <data name="TaskHelpers_TweetMessage_Unable_to_find_valid_Twitter_account_" xml:space="preserve">
     <value>Kann kein gültiges Twitter-Konto finden.</value>
   </data>
@@ -233,9 +227,6 @@ Bitte wähle ein anderes Tastenkürzel aus oder beende das widersprüchliche Pro
   <data name="UploadManager_IsUploadConfirmed_Don_t_show_this_message_again_" xml:space="preserve">
     <value>Diese Nachricht nicht mehr anzeigen.</value>
   </data>
-  <data name="TaskSettingsForm_UpdateUploaderMenuNames_Task___0_" xml:space="preserve">
-    <value>Aufgabe: Aufgabe {0}</value>
-  </data>
   <data name="AboutForm_AboutForm_Changelog" xml:space="preserve">
     <value>Änderungsprotokoll</value>
   </data>
@@ -253,9 +244,6 @@ Bitte wähle ein anderes Tastenkürzel aus oder beende das widersprüchliche Pro
   </data>
   <data name="UploadTask_Prepare_Starting" xml:space="preserve">
     <value>Startet</value>
-  </data>
-  <data name="AboutForm_AboutForm_External_libraries" xml:space="preserve">
-    <value>Externe Bibliotheken</value>
   </data>
   <data name="Program_Run_Error" xml:space="preserve">
     <value>Fehler</value>
@@ -364,9 +352,6 @@ Soll ShareX neu gestartet werden?</value>
   <data name="ApplicationSettingsForm_btnBrowseCustomScreenshotsPath_Click_Choose_screenshots_folder_path" xml:space="preserve">
     <value>Wähle einen Screenshot-Ordner aus</value>
   </data>
-  <data name="MainForm_UpdateMenu_Show_menu" xml:space="preserve">
-    <value>Menü anzeigen</value>
-  </data>
   <data name="UploadManager_UploadFolder_Folder_upload" xml:space="preserve">
     <value>Ordner hochladen</value>
   </data>
@@ -399,17 +384,11 @@ Bist du sicher?</value>
   <data name="HotkeySettingsForm_Reset_all_hotkeys_to_defaults_Confirmation" xml:space="preserve">
     <value>Alle Hotkeys auf die Standardeinstellungen zurücksetzen?</value>
   </data>
-  <data name="MainForm_UpdateMainWindowLayout_Show_columns" xml:space="preserve">
-    <value>Spalten anzeigen</value>
-  </data>
   <data name="ActionsToolbar_Edit" xml:space="preserve">
     <value>Bearbeiten...</value>
   </data>
   <data name="IntegrationHelpers_UploadWithShareX" xml:space="preserve">
     <value>Mit ShareX hochladen</value>
-  </data>
-  <data name="MainForm_UpdateMainWindowLayout_Hide_columns" xml:space="preserve">
-    <value>Spalten ausblenden</value>
   </data>
   <data name="ActionsToolbar_Close" xml:space="preserve">
     <value>Schließen</value>

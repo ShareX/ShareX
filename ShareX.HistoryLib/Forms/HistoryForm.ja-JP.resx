@@ -156,9 +156,6 @@
   <data name="tsbAdvancedSearch.Text" xml:space="preserve">
     <value>高度な検索</value>
   </data>
-  <data name="tsbCopyStats.Text" xml:space="preserve">
-    <value>利用状況のサマリーをクリップボードにコピー</value>
-  </data>
   <data name="tsbSearch.Text" xml:space="preserve">
     <value>検索</value>
   </data>

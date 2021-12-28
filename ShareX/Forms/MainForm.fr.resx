@@ -375,21 +375,6 @@
   <data name="tsmiClearList.Text" xml:space="preserve">
     <value>Vider la liste des tâches</value>
   </data>
-  <data name="tsmiHideMenu.Text" xml:space="preserve">
-    <value>Cacher le menu</value>
-  </data>
-  <data name="tsmiImagePreviewShow.Text" xml:space="preserve">
-    <value>Afficher</value>
-  </data>
-  <data name="tsmiImagePreviewHide.Text" xml:space="preserve">
-    <value>Cacher</value>
-  </data>
-  <data name="tsmiImagePreviewAutomatic.Text" xml:space="preserve">
-    <value>Automatique</value>
-  </data>
-  <data name="tsmiImagePreview.Text" xml:space="preserve">
-    <value>Prévisualisation de l'image</value>
-  </data>
   <data name="tsmiTrayFullscreen.Text" xml:space="preserve">
     <value>Plein écran</value>
   </data>
@@ -504,12 +489,6 @@
   <data name="tsmiTrayImageHistory.Text" xml:space="preserve">
     <value>Historique des images...</value>
   </data>
-  <data name="tsmiTrayDonate.Text" xml:space="preserve">
-    <value>Faire un don...</value>
-  </data>
-  <data name="tsmiTrayAbout.Text" xml:space="preserve">
-    <value>À propos...</value>
-  </data>
   <data name="tsmiTrayShow.Text" xml:space="preserve">
     <value>Afficher la fenêtre de ShareX</value>
   </data>
@@ -587,30 +566,6 @@
   </data>
   <data name="tsmiTrayScrollingCapture.Text" xml:space="preserve">
     <value>Capture avec défilement...</value>
-  </data>
-  <data name="tsmiTrayShowDebugLog.Text" xml:space="preserve">
-    <value>Journal de débogage...</value>
-  </data>
-  <data name="tsmiTrayTestImageUpload.Text" xml:space="preserve">
-    <value>Tester la mise en ligne d'images</value>
-  </data>
-  <data name="tsmiTrayTestTextUpload.Text" xml:space="preserve">
-    <value>Tester la mise en ligne de textes</value>
-  </data>
-  <data name="tsmiTrayTestFileUpload.Text" xml:space="preserve">
-    <value>Tester la mise en ligne de fichiers</value>
-  </data>
-  <data name="tsmiTrayTestURLShortener.Text" xml:space="preserve">
-    <value>Tester le raccourcisseur d'URL</value>
-  </data>
-  <data name="tsmiTrayTestURLSharing.Text" xml:space="preserve">
-    <value>Tester le partage d'URL</value>
-  </data>
-  <data name="tsmiTrayDebug.Text" xml:space="preserve">
-    <value>Déboguer</value>
-  </data>
-  <data name="tsmiHideColumns.Text" xml:space="preserve">
-    <value>Cacher les colonnes</value>
   </data>
   <data name="tsmiTextCapture.Text" xml:space="preserve">
     <value>Capture de texte (OCR)...</value>
@@ -726,12 +681,6 @@
   <data name="tsmiCopyImageDimensions.Text" xml:space="preserve">
     <value>Dimensions de l'image</value>
   </data>
-  <data name="tsmiImagePreviewSide.Text" xml:space="preserve">
-    <value>Côté</value>
-  </data>
-  <data name="tsmiImagePreviewBottom.Text" xml:space="preserve">
-    <value>Bas</value>
-  </data>
   <data name="tsmiScreenshotDelay.Text" xml:space="preserve">
     <value>Délai de capture d'écran</value>
   </data>
@@ -782,21 +731,6 @@
   </data>
   <data name="tsbDiscord.Text" xml:space="preserve">
     <value>Discord</value>
-  </data>
-  <data name="tsmiThumbnailTitleTop.Text" xml:space="preserve">
-    <value>Haut</value>
-  </data>
-  <data name="tsmiThumbnailTitleBottom.Text" xml:space="preserve">
-    <value>Bas</value>
-  </data>
-  <data name="tsmiThumbnailTitleShow.Text" xml:space="preserve">
-    <value>Afficher</value>
-  </data>
-  <data name="tsmiThumbnailTitleHide.Text" xml:space="preserve">
-    <value>Cacher</value>
-  </data>
-  <data name="tsmiThumbnailTitle.Text" xml:space="preserve">
-    <value>Titre de la miniature</value>
   </data>
   <data name="tsmiRunAction.Text" xml:space="preserve">
     <value>Exécuter action</value>

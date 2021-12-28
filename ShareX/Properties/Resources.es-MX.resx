@@ -159,9 +159,6 @@
   <data name="QRCodeForm_InputTextToEncode" xml:space="preserve">
     <value>Introducir texto a codificar</value>
   </data>
-  <data name="AboutForm_AboutForm_Contributors" xml:space="preserve">
-    <value>Colaboradores</value>
-  </data>
   <data name="TaskManager_task_UploadCompleted_ShareX___Task_completed" xml:space="preserve">
     <value>Tarea completada</value>
   </data>
@@ -235,17 +232,8 @@ Por favor seleccione un atajo de teclado diferente o salga de la aplicación que
   <data name="TaskHelpers_OpenQuickScreenColorPicker_Copied_to_clipboard___0_" xml:space="preserve">
     <value>Copiado al portapapeles: {0}</value>
   </data>
-  <data name="MainForm_UpdateMenu_Hide_menu" xml:space="preserve">
-    <value>Ocultar menú</value>
-  </data>
   <data name="TaskHelpers_TweetMessage_Unable_to_find_valid_Twitter_account_" xml:space="preserve">
     <value>No se puede encontrar una cuenta de Twitter válida.</value>
-  </data>
-  <data name="MainForm_UpdateMenu_Show_menu" xml:space="preserve">
-    <value>Mostrar menú</value>
-  </data>
-  <data name="MainForm_UpdateMainWindowLayout_Show_columns" xml:space="preserve">
-    <value>Mostrar columnas</value>
   </data>
   <data name="UploadManager_UploadURL_URL_to_download_from_and_upload" xml:space="preserve">
     <value>Enlace para descargar y subir</value>
@@ -261,9 +249,6 @@ Por favor seleccione un atajo de teclado diferente o salga de la aplicación que
   </data>
   <data name="QuickTaskMenu_ShowMenu_Cancel" xml:space="preserve">
     <value>Cancelar</value>
-  </data>
-  <data name="TaskSettingsForm_UpdateUploaderMenuNames_Task___0_" xml:space="preserve">
-    <value>Tarea: {0}</value>
   </data>
   <data name="HotkeyManager_ShowFailedHotkeys_Hotkey_registration_failed" xml:space="preserve">
     <value>No se pudo registrar el atajo de teclado</value>
@@ -367,9 +352,6 @@ Ejecute ShareX como administrador y cambie la ubicación de la carpeta personal.
   <data name="UploadManager_UploadFolder_Folder_upload" xml:space="preserve">
     <value>Subir carpeta</value>
   </data>
-  <data name="AboutForm_AboutForm_External_libraries" xml:space="preserve">
-    <value>Bibliotecas externas</value>
-  </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_After_capture___0_" xml:space="preserve">
     <value>Después de capturar: {0}</value>
   </data>
@@ -444,9 +426,6 @@ Clic medio para cerrar</value>
   </data>
   <data name="TaskSettingsForm_txtNameFormatPatternActiveWindow_TextChanged_Preview_" xml:space="preserve">
     <value>Vista previa:</value>
-  </data>
-  <data name="MainForm_UpdateMainWindowLayout_Hide_columns" xml:space="preserve">
-    <value>Ocultar columnas</value>
   </data>
   <data name="ActionsToolbar_Close" xml:space="preserve">
     <value>Cerrar</value>

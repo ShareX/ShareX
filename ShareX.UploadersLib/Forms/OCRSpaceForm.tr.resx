@@ -129,7 +129,4 @@
   <data name="lblResult.Text" xml:space="preserve">
     <value>Sonuç:</value>
   </data>
-  <data name="llGoogleTranslate.Text" xml:space="preserve">
-    <value>Google Çeviri'de aç ve pencereyi kapat</value>
-  </data>
 </root>

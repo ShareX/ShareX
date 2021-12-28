@@ -187,9 +187,6 @@
   <data name="tsbAdvancedSearch.Text" xml:space="preserve">
     <value>Gelişmiş arama...</value>
   </data>
-  <data name="tsbCopyStats.Text" xml:space="preserve">
-    <value>İstatistikleri panoya kopyala</value>
-  </data>
   <data name="tsbSearch.Text" xml:space="preserve">
     <value>Ara</value>
   </data>

@@ -438,24 +438,6 @@
   <data name="tsmiClearList.Text" xml:space="preserve">
     <value>Pulisci Lista</value>
   </data>
-  <data name="tsmiHideMenu.Text" xml:space="preserve">
-    <value>Nascondi Menu</value>
-  </data>
-  <data name="tsmiHideColumns.Text" xml:space="preserve">
-    <value>Nascondi Colonne</value>
-  </data>
-  <data name="tsmiImagePreviewShow.Text" xml:space="preserve">
-    <value>Mostra</value>
-  </data>
-  <data name="tsmiImagePreviewHide.Text" xml:space="preserve">
-    <value>Nascondi</value>
-  </data>
-  <data name="tsmiImagePreviewAutomatic.Text" xml:space="preserve">
-    <value>Automatica</value>
-  </data>
-  <data name="tsmiImagePreview.Text" xml:space="preserve">
-    <value>Anteprima Immagine</value>
-  </data>
   <data name="tsmiTrayFullscreen.Text" xml:space="preserve">
     <value>Schermo Intero</value>
   </data>
@@ -603,33 +585,6 @@
   <data name="tsmiTrayImageHistory.Text" xml:space="preserve">
     <value>Cronologia Immagini</value>
   </data>
-  <data name="tsmiTrayShowDebugLog.Text" xml:space="preserve">
-    <value>Log di Debug...</value>
-  </data>
-  <data name="tsmiTrayTestImageUpload.Text" xml:space="preserve">
-    <value>Prova Servizio Caricamento Immagini</value>
-  </data>
-  <data name="tsmiTrayTestTextUpload.Text" xml:space="preserve">
-    <value>Prova Servizio Caricamento Testo</value>
-  </data>
-  <data name="tsmiTrayTestFileUpload.Text" xml:space="preserve">
-    <value>Prova Servizio Caricamento File</value>
-  </data>
-  <data name="tsmiTrayTestURLShortener.Text" xml:space="preserve">
-    <value>Prova Servizio Accorciamento URL</value>
-  </data>
-  <data name="tsmiTrayTestURLSharing.Text" xml:space="preserve">
-    <value>Prova Servizio Condivisione URL</value>
-  </data>
-  <data name="tsmiTrayDebug.Text" xml:space="preserve">
-    <value>Debug</value>
-  </data>
-  <data name="tsmiTrayDonate.Text" xml:space="preserve">
-    <value>Dona</value>
-  </data>
-  <data name="tsmiTrayAbout.Text" xml:space="preserve">
-    <value>Informazioni</value>
-  </data>
   <data name="tsmiTrayRecentItems.Text" xml:space="preserve">
     <value>Collegamenti Recenti</value>
   </data>
@@ -710,11 +665,5 @@
   </data>
   <data name="tsmiTrayImageEditor.Text" xml:space="preserve">
     <value>Editor Immagini...</value>
-  </data>
-  <data name="tsmiImagePreviewSide.Text" xml:space="preserve">
-    <value>Laterale</value>
-  </data>
-  <data name="tsmiImagePreviewBottom.Text" xml:space="preserve">
-    <value>Bassa</value>
   </data>
 </root>

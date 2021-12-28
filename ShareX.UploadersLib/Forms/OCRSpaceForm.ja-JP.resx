@@ -126,9 +126,6 @@
   <data name="btnStartOCR.Text" xml:space="preserve">
     <value>OCR 開始</value>
   </data>
-  <data name="llGoogleTranslate.Text" xml:space="preserve">
-    <value>Google翻訳を開き、ウィンドウを閉じる</value>
-  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - OCR</value>
   </data>

@@ -267,23 +267,8 @@
   <data name="tsmiHashCheck.Text" xml:space="preserve">
     <value>哈希值（Hash）检查...</value>
   </data>
-  <data name="tsmiHideMenu.Text" xml:space="preserve">
-    <value>隐藏菜单</value>
-  </data>
   <data name="tsmiImageEffects.Text" xml:space="preserve">
     <value>图像效果...</value>
-  </data>
-  <data name="tsmiImagePreview.Text" xml:space="preserve">
-    <value>图像预览</value>
-  </data>
-  <data name="tsmiImagePreviewAutomatic.Text" xml:space="preserve">
-    <value>自动</value>
-  </data>
-  <data name="tsmiImagePreviewHide.Text" xml:space="preserve">
-    <value>隐藏</value>
-  </data>
-  <data name="tsmiImagePreviewShow.Text" xml:space="preserve">
-    <value>显示</value>
   </data>
   <data name="tsmiImageUploaders.Text" xml:space="preserve">
     <value>图片上传</value>
@@ -387,9 +372,6 @@
   <data name="tsmiTextUploaders.Text" xml:space="preserve">
     <value>文字上传</value>
   </data>
-  <data name="tsmiTrayAbout.Text" xml:space="preserve">
-    <value>关于...</value>
-  </data>
   <data name="tsmiTrayAfterCaptureTasks.Text" xml:space="preserve">
     <value>截图后</value>
   </data>
@@ -413,9 +395,6 @@
   </data>
   <data name="tsmiTrayDNSChanger.Text" xml:space="preserve">
     <value>修改 DNS...</value>
-  </data>
-  <data name="tsmiTrayDonate.Text" xml:space="preserve">
-    <value>捐赠...</value>
   </data>
   <data name="tsmiTrayExit.Text" xml:space="preserve">
     <value>退出</value>
@@ -585,27 +564,6 @@
   <data name="tsmiTrayToggleHotkeys.Text" xml:space="preserve">
     <value>禁用快捷键</value>
   </data>
-  <data name="tsmiTrayShowDebugLog.Text" xml:space="preserve">
-    <value>调试日志...</value>
-  </data>
-  <data name="tsmiTrayTestImageUpload.Text" xml:space="preserve">
-    <value>测试图片上传</value>
-  </data>
-  <data name="tsmiTrayTestTextUpload.Text" xml:space="preserve">
-    <value>测试文本上传</value>
-  </data>
-  <data name="tsmiTrayTestFileUpload.Text" xml:space="preserve">
-    <value>测试文件上传</value>
-  </data>
-  <data name="tsmiTrayTestURLShortener.Text" xml:space="preserve">
-    <value>测试URL短链</value>
-  </data>
-  <data name="tsmiTrayTestURLSharing.Text" xml:space="preserve">
-    <value>测试URL共享</value>
-  </data>
-  <data name="tsmiTrayDebug.Text" xml:space="preserve">
-    <value>调试</value>
-  </data>
   <data name="tsmiTrayRecentItems.Text" xml:space="preserve">
     <value>最近的链接</value>
   </data>
@@ -617,9 +575,6 @@
   </data>
   <data name="tsmiTrayTextCapture.Text" xml:space="preserve">
     <value>文字识别 (OCR)...</value>
-  </data>
-  <data name="tsmiHideColumns.Text" xml:space="preserve">
-    <value>隐藏列</value>
   </data>
   <data name="niTray.Text" xml:space="preserve">
     <value>ShareX</value>
@@ -677,12 +632,6 @@
   </data>
   <data name="tsmiImageEditor.Text" xml:space="preserve">
     <value>图像编辑器...</value>
-  </data>
-  <data name="tsmiImagePreviewBottom.Text" xml:space="preserve">
-    <value>底部</value>
-  </data>
-  <data name="tsmiImagePreviewSide.Text" xml:space="preserve">
-    <value>侧边</value>
   </data>
   <data name="tsmiImageThumbnailer.Text" xml:space="preserve">
     <value>生成图像缩略图...</value>
@@ -755,21 +704,6 @@
   </data>
   <data name="tsmiRunAction.Text" xml:space="preserve">
     <value>运行动作</value>
-  </data>
-  <data name="tsmiThumbnailTitleShow.Text" xml:space="preserve">
-    <value>显示</value>
-  </data>
-  <data name="tsmiThumbnailTitleHide.Text" xml:space="preserve">
-    <value>隐藏</value>
-  </data>
-  <data name="tsmiThumbnailTitleTop.Text" xml:space="preserve">
-    <value>顶</value>
-  </data>
-  <data name="tsmiThumbnailTitleBottom.Text" xml:space="preserve">
-    <value>底</value>
-  </data>
-  <data name="tsmiThumbnailTitle.Text" xml:space="preserve">
-    <value>缩略图标题</value>
   </data>
   <data name="tsmiTrayScreenshotDelay0.Text" xml:space="preserve">
     <value>无延迟</value>

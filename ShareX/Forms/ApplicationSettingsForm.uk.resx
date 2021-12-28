@@ -279,12 +279,6 @@
   <data name="chFormat.Text" xml:space="preserve">
     <value>Формат</value>
   </data>
-  <data name="gbClipboardFormats.Text" xml:space="preserve">
-    <value>Формати буфера обміну</value>
-  </data>
-  <data name="tpUploadResults.Text" xml:space="preserve">
-    <value>Результати</value>
-  </data>
   <data name="gbSecondaryFileUploaders.Text" xml:space="preserve">
     <value>Вторинні вивантажувачі файлів</value>
   </data>
@@ -296,9 +290,6 @@
   </data>
   <data name="cbIfUploadFailRetryOnce.Text" xml:space="preserve">
     <value>Кількість спроб вивантаження при збої:</value>
-  </data>
-  <data name="tpUploadRetry.Text" xml:space="preserve">
-    <value>Повторити</value>
   </data>
   <data name="tpUpload.Text" xml:space="preserve">
     <value>Вивантажити</value>

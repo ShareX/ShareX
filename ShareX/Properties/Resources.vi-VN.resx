@@ -120,9 +120,6 @@
   <data name="AutoCaptureForm_UpdateStatus_Timeleft___0_s___1____Total___2_" xml:space="preserve">
     <value>Thời gian còn lại: {0}giây ({1}%) Tổng cộng: {2}</value>
   </data>
-  <data name="AboutForm_AboutForm_Contributors" xml:space="preserve">
-    <value>Những người đóng góp</value>
-  </data>
   <data name="TaskHelpers_TweetMessage_Unable_to_find_valid_Twitter_account_" xml:space="preserve">
     <value>Không thể tìm thấy tài khoàn Twitter hợp lệ.</value>
   </data>
@@ -154,9 +151,6 @@ Vui lòng chọn phím tắt khác hoặc thoát ứng dụng đang gây lỗi v
   <data name="UploadManager_IsUploadConfirmed_Don_t_show_this_message_again_" xml:space="preserve">
     <value>Không hiện thông báo này nữa.</value>
   </data>
-  <data name="TaskSettingsForm_UpdateUploaderMenuNames_Task___0_" xml:space="preserve">
-    <value>Tác vụ: {0}</value>
-  </data>
   <data name="AboutForm_AboutForm_Changelog" xml:space="preserve">
     <value>Lịch sử thay đổi</value>
   </data>
@@ -174,9 +168,6 @@ Vui lòng chọn phím tắt khác hoặc thoát ứng dụng đang gây lỗi v
   </data>
   <data name="UploadTask_Prepare_Starting" xml:space="preserve">
     <value>Đang bắt đầu</value>
-  </data>
-  <data name="AboutForm_AboutForm_External_libraries" xml:space="preserve">
-    <value>Các thư viện bên ngoài</value>
   </data>
   <data name="Program_Run_Error" xml:space="preserve">
     <value>Lỗi</value>
@@ -281,12 +272,6 @@ Bạn có muốn khởi động lại ShareX không?</value>
   </data>
   <data name="TaskHelpers_OpenQuickScreenColorPicker_Copied_to_clipboard___0_" xml:space="preserve">
     <value>Đã sao chép vào vùng nhớ tạm: {0}</value>
-  </data>
-  <data name="MainForm_UpdateMenu_Hide_menu" xml:space="preserve">
-    <value>Ẩn menu</value>
-  </data>
-  <data name="MainForm_UpdateMenu_Show_menu" xml:space="preserve">
-    <value>Hiện menu</value>
   </data>
   <data name="UploadManager_UploadURL_URL_to_download_from_and_upload" xml:space="preserve">
     <value>URL để tải xuống và tải lên</value>
@@ -430,9 +415,6 @@ Nhấn "Không" để hủy tiến trình tải lên hiện tại và tắt ch�
   <data name="UploadManager_ShowShortenURLDialog_ShortenURL" xml:space="preserve">
     <value>Rút gọn URL</value>
   </data>
-  <data name="MainForm_UpdateMainWindowLayout_Show_columns" xml:space="preserve">
-    <value>Hiện các cột</value>
-  </data>
   <data name="AboutForm_AboutForm_Language_zh_TW" xml:space="preserve">
     <value>Tiếng Trung phồn thể</value>
   </data>
@@ -444,9 +426,6 @@ Nhấn "Không" để hủy tiến trình tải lên hiện tại và tắt ch�
   </data>
   <data name="AboutForm_AboutForm_Language_es" xml:space="preserve">
     <value>Tiếng Tây Ban Nha</value>
-  </data>
-  <data name="MainForm_UpdateMainWindowLayout_Hide_columns" xml:space="preserve">
-    <value>Ẩn các cột</value>
   </data>
   <data name="AboutForm_AboutForm_Language_hu" xml:space="preserve">
     <value>Tiếng Hungary</value>
