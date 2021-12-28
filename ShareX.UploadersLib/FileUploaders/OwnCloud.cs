@@ -55,7 +55,7 @@ namespace ShareX.UploadersLib.FileUploaders
                 CreateShare = config.OwnCloudCreateShare,
                 DirectLink = config.OwnCloudDirectLink,
                 PreviewLink = config.OwnCloudUsePreviewLinks,
-                AnimationEnabled = config.OwnCloudAnimationFriendlyLinks,
+                AppendFileNameToURL = config.OwnCloudAppendFileNameToURL,
                 IsCompatibility81 = config.OwnCloud81Compatibility,
                 AutoExpireTime = config.OwnCloudExpiryTime,
                 AutoExpire = config.OwnCloudAutoExpire
@@ -73,7 +73,7 @@ namespace ShareX.UploadersLib.FileUploaders
         public string Path { get; set; }
         public int AutoExpireTime { get; set; }
         public bool CreateShare { get; set; }
-        public bool AnimationEnabled { get; set; }
+        public bool AppendFileNameToURL { get; set; }
         public bool DirectLink { get; set; }
         public bool PreviewLink { get; set; }
         public bool IsCompatibility81 { get; set; }
@@ -199,7 +199,7 @@ namespace ShareX.UploadersLib.FileUploaders
                                 link += "&download";
                             }
 
-                            if (AnimationEnabled)
+                            if (AppendFileNameToURL)
                             {
                                 link = URLHelpers.CombineURL(link, URLHelpers.URLEncode(fileName));
                             }
