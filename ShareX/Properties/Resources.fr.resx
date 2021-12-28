@@ -139,9 +139,6 @@ Cliquez sur « Non » pour annuler la mise en ligne et désactiver la mise en li
   <data name="AutoCaptureForm_UpdateStatus_Timeleft___0_s___1____Total___2_" xml:space="preserve">
     <value>Temps restant : {0}s ({1}%) Total : {2}</value>
   </data>
-  <data name="AboutForm_AboutForm_Contributors" xml:space="preserve">
-    <value>Contributeurs</value>
-  </data>
   <data name="UploadManager_UploadURL_URL_to_download_from_and_upload" xml:space="preserve">
     <value>URL à télécharger et à mettre en ligne</value>
   </data>
@@ -213,17 +210,8 @@ Veuillez exécuter ShareX en tant qu'administrateur pour changer le chemin du do
   <data name="TaskHelpers_OpenQuickScreenColorPicker_Copied_to_clipboard___0_" xml:space="preserve">
     <value>Copié dans le presse-papier : {0}</value>
   </data>
-  <data name="MainForm_UpdateMenu_Hide_menu" xml:space="preserve">
-    <value>Cacher le menu</value>
-  </data>
   <data name="TaskHelpers_TweetMessage_Unable_to_find_valid_Twitter_account_" xml:space="preserve">
     <value>Impossible de trouver un compte Twitter valide.</value>
-  </data>
-  <data name="MainForm_UpdateMenu_Show_menu" xml:space="preserve">
-    <value>Afficher le menu</value>
-  </data>
-  <data name="MainForm_UpdateMainWindowLayout_Show_columns" xml:space="preserve">
-    <value>Afficher les colonnes</value>
   </data>
   <data name="QuickTaskMenu_ShowMenu_Cancel" xml:space="preserve">
     <value>Annuler</value>
@@ -259,9 +247,6 @@ Veuillez sélectionner un raccourci différent ou quitter l'application en confl
   <data name="UploadManager_IsUploadConfirmed_Don_t_show_this_message_again_" xml:space="preserve">
     <value>Ne plus afficher ce message.</value>
   </data>
-  <data name="TaskSettingsForm_UpdateUploaderMenuNames_Task___0_" xml:space="preserve">
-    <value>Tâche : {0}</value>
-  </data>
   <data name="AboutForm_AboutForm_Changelog" xml:space="preserve">
     <value>Historique des modifications</value>
   </data>
@@ -279,9 +264,6 @@ Veuillez sélectionner un raccourci différent ou quitter l'application en confl
   </data>
   <data name="UploadTask_Prepare_Starting" xml:space="preserve">
     <value>Démarrage</value>
-  </data>
-  <data name="AboutForm_AboutForm_External_libraries" xml:space="preserve">
-    <value>Bibliothèques externes</value>
   </data>
   <data name="Program_Run_Error" xml:space="preserve">
     <value>Erreur</value>
@@ -365,9 +347,6 @@ Voulez-vous redémarrer ShareX ?</value>
   </data>
   <data name="MainForm_tsmiTestTextUpload_Click_Text_upload_test" xml:space="preserve">
     <value>Test de mise en ligne d'un texte</value>
-  </data>
-  <data name="MainForm_UpdateMainWindowLayout_Hide_columns" xml:space="preserve">
-    <value>Cacher les colonnes</value>
   </data>
   <data name="TaskSettingsForm_UpdateWindowTitle_Task_settings_for__0_" xml:space="preserve">
     <value>Paramètres des tâches pour {0}</value>

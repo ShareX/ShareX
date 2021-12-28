@@ -120,12 +120,6 @@
   <data name="AboutForm_AboutForm_Changelog" xml:space="preserve">
     <value>Registo de alterações nesta versão</value>
   </data>
-  <data name="AboutForm_AboutForm_Contributors" xml:space="preserve">
-    <value>Contribuídores</value>
-  </data>
-  <data name="AboutForm_AboutForm_External_libraries" xml:space="preserve">
-    <value>Bibliotecas externas</value>
-  </data>
   <data name="AboutForm_AboutForm_Project_page" xml:space="preserve">
     <value>Página do projecto</value>
   </data>
@@ -279,18 +273,6 @@ Por favor, selecione uma tecla de atalho diferente ou feche o programa que está
   <data name="MainForm_UpdateMainFormTip_Currently_configured_hotkeys_" xml:space="preserve">
     <value>Teclas de atalho configuradas actualmente:</value>
   </data>
-  <data name="MainForm_UpdateMainWindowLayout_Hide_columns" xml:space="preserve">
-    <value>Esconder colunas</value>
-  </data>
-  <data name="MainForm_UpdateMainWindowLayout_Show_columns" xml:space="preserve">
-    <value>Mostrar colunas</value>
-  </data>
-  <data name="MainForm_UpdateMenu_Hide_menu" xml:space="preserve">
-    <value>Esconder menu</value>
-  </data>
-  <data name="MainForm_UpdateMenu_Show_menu" xml:space="preserve">
-    <value>Mostrar menu</value>
-  </data>
   <data name="MainForm_UpdateToggleHotkeyButton_Disable_hotkeys" xml:space="preserve">
     <value>Desactivar teclas de atalho</value>
   </data>
@@ -404,9 +386,6 @@ Deseja reiniciar agora?</value>
   </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_Image_uploader___0_" xml:space="preserve">
     <value>Envio de imagens: {0}</value>
-  </data>
-  <data name="TaskSettingsForm_UpdateUploaderMenuNames_Task___0_" xml:space="preserve">
-    <value>Tarefa: {0}</value>
   </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_Text_uploader___0_" xml:space="preserve">
     <value>Envio de texto: {0}</value>

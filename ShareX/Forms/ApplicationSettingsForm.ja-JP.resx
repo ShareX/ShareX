@@ -255,9 +255,6 @@
   <data name="gbChrome.Text" xml:space="preserve">
     <value>Chrome 拡張機能</value>
   </data>
-  <data name="gbClipboardFormats.Text" xml:space="preserve">
-    <value>クリップボードの書式 - メインウィンドウで右クリックメニューの「コピー」に表示される</value>
-  </data>
   <data name="gbFirefox.Text" xml:space="preserve">
     <value>Firefox アドオン</value>
   </data>
@@ -347,12 +344,6 @@
   </data>
   <data name="tpUpload.Text" xml:space="preserve">
     <value>アップロード</value>
-  </data>
-  <data name="tpUploadResults.Text" xml:space="preserve">
-    <value>結果</value>
-  </data>
-  <data name="tpUploadRetry.Text" xml:space="preserve">
-    <value>再試行</value>
   </data>
   <data name="tpTheme.Text" xml:space="preserve">
     <value>テーマ</value>

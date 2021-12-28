@@ -129,7 +129,4 @@
   <data name="lblResult.Text" xml:space="preserve">
     <value>Resultado:</value>
   </data>
-  <data name="llGoogleTranslate.Text" xml:space="preserve">
-    <value>Abrir en Google Translate y cerrar ventana</value>
-  </data>
 </root>

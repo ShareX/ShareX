@@ -240,12 +240,6 @@
   <data name="gbSecondaryFileUploaders.Text" xml:space="preserve">
     <value>Вторичные для файлов</value>
   </data>
-  <data name="gbClipboardFormats.Text" xml:space="preserve">
-    <value>Форматы содержимого буфера - они появятся в контекстном меню в главном окне</value>
-  </data>
-  <data name="tpUploadResults.Text" xml:space="preserve">
-    <value>Результаты</value>
-  </data>
   <data name="gbSecondaryImageUploaders.Text" xml:space="preserve">
     <value>Вторичные для картинок</value>
   </data>
@@ -266,9 +260,6 @@
   </data>
   <data name="btnExport.Text" xml:space="preserve">
     <value>Экспорт...</value>
-  </data>
-  <data name="tpUploadRetry.Text" xml:space="preserve">
-    <value>Повторы</value>
   </data>
   <data name="tpUpload.Text" xml:space="preserve">
     <value>Загрузка</value>

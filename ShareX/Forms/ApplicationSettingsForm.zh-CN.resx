@@ -174,14 +174,8 @@
   <data name="btnClipboardFormatAdd.Text" xml:space="preserve">
     <value>添加...</value>
   </data>
-  <data name="gbClipboardFormats.Text" xml:space="preserve">
-    <value>剪贴板格式</value>
-  </data>
   <data name="chDescription.Text" xml:space="preserve">
     <value>描述</value>
-  </data>
-  <data name="tpUploadResults.Text" xml:space="preserve">
-    <value>结果</value>
   </data>
   <data name="gbSecondaryImageUploaders.Text" xml:space="preserve">
     <value>辅助图像上传程序</value>
@@ -233,9 +227,6 @@
   </data>
   <data name="lblProxyPassword.Text" xml:space="preserve">
     <value>密码：</value>
-  </data>
-  <data name="tpUploadRetry.Text" xml:space="preserve">
-    <value>重试</value>
   </data>
   <data name="tpUpload.Text" xml:space="preserve">
     <value>上传</value>

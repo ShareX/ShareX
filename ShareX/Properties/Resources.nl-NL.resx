@@ -120,9 +120,6 @@
   <data name="AutoCaptureForm_UpdateStatus_Timeleft___0_s___1____Total___2_" xml:space="preserve">
     <value>Resterende tijd: {0}s ({1}%) Totaal: {2}</value>
   </data>
-  <data name="AboutForm_AboutForm_Contributors" xml:space="preserve">
-    <value>Bijdragen door:</value>
-  </data>
   <data name="TaskHelpers_TweetMessage_Unable_to_find_valid_Twitter_account_" xml:space="preserve">
     <value>Kan geen geldig Twitter account vinden.</value>
   </data>
@@ -154,9 +151,6 @@ Gelieve een andere sneltoets te selecteren of sluit het conflicterende programma
   <data name="UploadManager_IsUploadConfirmed_Don_t_show_this_message_again_" xml:space="preserve">
     <value>Toon dit bericht niet opnieuw.</value>
   </data>
-  <data name="TaskSettingsForm_UpdateUploaderMenuNames_Task___0_" xml:space="preserve">
-    <value>Taak: {0}</value>
-  </data>
   <data name="AboutForm_AboutForm_Changelog" xml:space="preserve">
     <value>Updategeschiedenis</value>
   </data>
@@ -174,9 +168,6 @@ Gelieve een andere sneltoets te selecteren of sluit het conflicterende programma
   </data>
   <data name="UploadTask_Prepare_Starting" xml:space="preserve">
     <value>Starten</value>
-  </data>
-  <data name="AboutForm_AboutForm_External_libraries" xml:space="preserve">
-    <value>Externe bibliotheken</value>
   </data>
   <data name="Program_Run_Error" xml:space="preserve">
     <value>Fout</value>
@@ -285,12 +276,6 @@ Wil je ShareX opnieuw opstarten?</value>
   <data name="TaskHelpers_OpenQuickScreenColorPicker_Copied_to_clipboard___0_" xml:space="preserve">
     <value>Gekopieerd naar klembord: {0}</value>
   </data>
-  <data name="MainForm_UpdateMenu_Hide_menu" xml:space="preserve">
-    <value>Verberg menu</value>
-  </data>
-  <data name="MainForm_UpdateMenu_Show_menu" xml:space="preserve">
-    <value>Toon menu</value>
-  </data>
   <data name="UploadManager_UploadURL_URL_to_download_from_and_upload" xml:space="preserve">
     <value>URL om te downloaden en dan te uploaden</value>
   </data>
@@ -386,9 +371,6 @@ Ben je zeker dat je door wilt gaan?</value>
   </data>
   <data name="IntegrationHelpers_UploadWithShareX" xml:space="preserve">
     <value>Upload met ShareX</value>
-  </data>
-  <data name="MainForm_UpdateMainWindowLayout_Hide_columns" xml:space="preserve">
-    <value>Kolommen verbergen</value>
   </data>
   <data name="TaskManager_CreateListViewItem_History" xml:space="preserve">
     <value>Geschiedenis</value>

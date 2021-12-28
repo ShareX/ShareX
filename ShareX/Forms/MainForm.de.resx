@@ -363,21 +363,6 @@
   <data name="tsmiClearList.Text" xml:space="preserve">
     <value>Liste leeren</value>
   </data>
-  <data name="tsmiHideMenu.Text" xml:space="preserve">
-    <value>Menü ausblenden</value>
-  </data>
-  <data name="tsmiImagePreviewShow.Text" xml:space="preserve">
-    <value>Anzeigen</value>
-  </data>
-  <data name="tsmiImagePreviewHide.Text" xml:space="preserve">
-    <value>Ausblenden</value>
-  </data>
-  <data name="tsmiImagePreviewAutomatic.Text" xml:space="preserve">
-    <value>Automatisch</value>
-  </data>
-  <data name="tsmiImagePreview.Text" xml:space="preserve">
-    <value>Bildvorschau</value>
-  </data>
   <data name="tsmiTrayFullscreen.Text" xml:space="preserve">
     <value>Vollbild</value>
   </data>
@@ -495,12 +480,6 @@
   <data name="tsmiTrayImageHistory.Text" xml:space="preserve">
     <value>Bilderchronik...</value>
   </data>
-  <data name="tsmiTrayDonate.Text" xml:space="preserve">
-    <value>Spenden...</value>
-  </data>
-  <data name="tsmiTrayAbout.Text" xml:space="preserve">
-    <value>Über...</value>
-  </data>
   <data name="tsmiTrayShow.Text" xml:space="preserve">
     <value>Hauptfenster öffnen</value>
   </data>
@@ -587,30 +566,6 @@
   </data>
   <data name="tsmiVideoThumbnailer.Text" xml:space="preserve">
     <value>Video-Thumbnailer...</value>
-  </data>
-  <data name="tsmiTrayDebug.Text" xml:space="preserve">
-    <value>Debug</value>
-  </data>
-  <data name="tsmiTrayTestURLSharing.Text" xml:space="preserve">
-    <value>URL-Teilen testen</value>
-  </data>
-  <data name="tsmiTrayTestURLShortener.Text" xml:space="preserve">
-    <value>URL-Kürzen testen</value>
-  </data>
-  <data name="tsmiTrayTestFileUpload.Text" xml:space="preserve">
-    <value>Dateiupload testen</value>
-  </data>
-  <data name="tsmiTrayTestTextUpload.Text" xml:space="preserve">
-    <value>Textupload testen</value>
-  </data>
-  <data name="tsmiTrayTestImageUpload.Text" xml:space="preserve">
-    <value>Bildupload testen</value>
-  </data>
-  <data name="tsmiTrayShowDebugLog.Text" xml:space="preserve">
-    <value>Debugprotokoll...</value>
-  </data>
-  <data name="tsmiHideColumns.Text" xml:space="preserve">
-    <value>Spalten ausblenden</value>
   </data>
   <data name="tsbAbout.Text" xml:space="preserve">
     <value>Über...</value>
@@ -711,12 +666,6 @@
   <data name="tsmiCombineImages.Text" xml:space="preserve">
     <value>Bilder zusammenführen...</value>
   </data>
-  <data name="tsmiImagePreviewSide.Text" xml:space="preserve">
-    <value>Seitlich</value>
-  </data>
-  <data name="tsmiImagePreviewBottom.Text" xml:space="preserve">
-    <value>Unten</value>
-  </data>
   <data name="tsmiTrayImageThumbnailer.Text" xml:space="preserve">
     <value>Bild-Thumbnailer...</value>
   </data>
@@ -785,21 +734,6 @@
   </data>
   <data name="tsmiTrayImageSplitter.Text" xml:space="preserve">
     <value>Bildteiler...</value>
-  </data>
-  <data name="tsmiThumbnailTitle.Text" xml:space="preserve">
-    <value>Titel der Bildvorschau</value>
-  </data>
-  <data name="tsmiThumbnailTitleBottom.Text" xml:space="preserve">
-    <value>Unten</value>
-  </data>
-  <data name="tsmiThumbnailTitleTop.Text" xml:space="preserve">
-    <value>Oben</value>
-  </data>
-  <data name="tsmiThumbnailTitleHide.Text" xml:space="preserve">
-    <value>Ausblenden</value>
-  </data>
-  <data name="tsmiThumbnailTitleShow.Text" xml:space="preserve">
-    <value>Anzeigen</value>
   </data>
   <data name="tsmiRunAction.Text" xml:space="preserve">
     <value>Aktion ausführen</value>

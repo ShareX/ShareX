@@ -1089,9 +1089,6 @@
   <data name="cbAmazonS3SignedPayload.Text" xml:space="preserve">
     <value>Подписывать отправку</value>
   </data>
-  <data name="cbOwnCloudAnimationFriendlyLinks.Text" xml:space="preserve">
-    <value>Прямые ссылки с поддержкой анимаций</value>
-  </data>
   <data name="cbYouTubeShowDialog.Text" xml:space="preserve">
     <value>Показывать диалог параметров видео</value>
   </data>

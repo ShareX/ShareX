@@ -393,21 +393,6 @@
   <data name="tsmiClearList.Text" xml:space="preserve">
     <value>Borrar lista</value>
   </data>
-  <data name="tsmiHideMenu.Text" xml:space="preserve">
-    <value>Ocultar menú</value>
-  </data>
-  <data name="tsmiImagePreview.Text" xml:space="preserve">
-    <value>Previsualización de imagen</value>
-  </data>
-  <data name="tsmiImagePreviewShow.Text" xml:space="preserve">
-    <value>Mostrar</value>
-  </data>
-  <data name="tsmiImagePreviewHide.Text" xml:space="preserve">
-    <value>Ocultar</value>
-  </data>
-  <data name="tsmiImagePreviewAutomatic.Text" xml:space="preserve">
-    <value>Automático</value>
-  </data>
   <data name="tsmiTrayCapture.Text" xml:space="preserve">
     <value>Capturar</value>
   </data>
@@ -539,12 +524,6 @@
   </data>
   <data name="tsmiTrayImageHistory.Text" xml:space="preserve">
     <value>Historial de la imagen...</value>
-  </data>
-  <data name="tsmiTrayDonate.Text" xml:space="preserve">
-    <value>Donar...</value>
-  </data>
-  <data name="tsmiTrayAbout.Text" xml:space="preserve">
-    <value>Sobre...</value>
   </data>
   <data name="tsmiTrayShow.Text" xml:space="preserve">
     <value>Mostrar la ventana ShareX</value>

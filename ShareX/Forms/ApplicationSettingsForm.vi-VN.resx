@@ -210,9 +210,6 @@
   <data name="btnBrowseCustomScreenshotsPath.Text" xml:space="preserve">
     <value>Duyệt...</value>
   </data>
-  <data name="gbClipboardFormats.Text" xml:space="preserve">
-    <value>Định dạng cho vùng nhớ tạm - xuất hiện dưới mục Sao chép ở menu ngữ cảnh trong cửa sổ chính</value>
-  </data>
   <data name="lblProxyUsername.Text" xml:space="preserve">
     <value>Tên người dùng:</value>
   </data>
@@ -234,9 +231,6 @@
   <data name="lblProxyPassword.Text" xml:space="preserve">
     <value>Mật khẩu:</value>
   </data>
-  <data name="tpUploadRetry.Text" xml:space="preserve">
-    <value>Thử lại</value>
-  </data>
   <data name="tpUpload.Text" xml:space="preserve">
     <value>Tải lên</value>
   </data>
@@ -248,9 +242,6 @@
   </data>
   <data name="gbSecondaryTextUploaders.Text" xml:space="preserve">
     <value>Dịch vụ tải lên văn bản phụ</value>
-  </data>
-  <data name="tpUploadResults.Text" xml:space="preserve">
-    <value>Kết quả</value>
   </data>
   <data name="gbSecondaryImageUploaders.Text" xml:space="preserve">
     <value>Dịch vụ tải lên ảnh phụ</value>

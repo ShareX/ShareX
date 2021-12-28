@@ -129,7 +129,4 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX - Texterkennung (OCR)</value>
   </data>
-  <data name="llGoogleTranslate.Text" xml:space="preserve">
-    <value>In Google-Übersetzer öffnen &amp; Fenster schließen</value>
-  </data>
 </root>

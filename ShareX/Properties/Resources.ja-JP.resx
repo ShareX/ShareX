@@ -157,9 +157,6 @@
   <data name="QRCodeForm_InputTextToEncode" xml:space="preserve">
     <value>エンコードするテキストを入力</value>
   </data>
-  <data name="AboutForm_AboutForm_Contributors" xml:space="preserve">
-    <value>コントリビューター</value>
-  </data>
   <data name="TaskManager_task_UploadCompleted_ShareX___Task_completed" xml:space="preserve">
     <value>タスクの完了</value>
   </data>
@@ -242,20 +239,11 @@
   <data name="TaskHelpers_OpenQuickScreenColorPicker_Copied_to_clipboard___0_" xml:space="preserve">
     <value>クリップボードにコピー: {0}</value>
   </data>
-  <data name="MainForm_UpdateMenu_Hide_menu" xml:space="preserve">
-    <value>メニューを隠す</value>
-  </data>
   <data name="TaskSettingsForm_UpdateWindowTitle_Task_settings_for__0_" xml:space="preserve">
     <value>{0} のタスク設定</value>
   </data>
   <data name="TaskHelpers_TweetMessage_Unable_to_find_valid_Twitter_account_" xml:space="preserve">
     <value>有効なTwitter アカウントが見つかりません。</value>
-  </data>
-  <data name="MainForm_UpdateMenu_Show_menu" xml:space="preserve">
-    <value>メニューを表示</value>
-  </data>
-  <data name="MainForm_UpdateMainWindowLayout_Show_columns" xml:space="preserve">
-    <value>列を表示</value>
   </data>
   <data name="UploadManager_UploadURL_URL_to_download_from_and_upload" xml:space="preserve">
     <value>ダウンロード後にアップロードするファイルのあるURL</value>
@@ -271,9 +259,6 @@
   </data>
   <data name="AutoCaptureForm_UpdateStatus_Timeleft___0_s___1____Total___2_" xml:space="preserve">
     <value>残り時間: {0}s ({1}%) 合計: {2}</value>
-  </data>
-  <data name="TaskSettingsForm_UpdateUploaderMenuNames_Task___0_" xml:space="preserve">
-    <value>タスク: {0}</value>
   </data>
   <data name="HotkeyManager_ShowFailedHotkeys_Hotkey_registration_failed" xml:space="preserve">
     <value>ホットキーの登録に失敗</value>
@@ -356,9 +341,6 @@ ShareX を再起動しますか？</value>
   <data name="UploadManager_UploadFolder_Folder_upload" xml:space="preserve">
     <value>フォルダーのアップロード</value>
   </data>
-  <data name="AboutForm_AboutForm_External_libraries" xml:space="preserve">
-    <value>外部ライブラリ</value>
-  </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_After_capture___0_" xml:space="preserve">
     <value>キャプチャー後: {0}</value>
   </data>
@@ -431,9 +413,6 @@ ShareX を再起動しますか？</value>
   </data>
   <data name="MainForm_tsmiTestTextUpload_Click_Text_upload_test" xml:space="preserve">
     <value>テキストアップロードのテスト</value>
-  </data>
-  <data name="MainForm_UpdateMainWindowLayout_Hide_columns" xml:space="preserve">
-    <value>列を隠す</value>
   </data>
   <data name="ActionsToolbar_Close" xml:space="preserve">
     <value>閉じる</value>

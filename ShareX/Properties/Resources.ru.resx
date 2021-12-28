@@ -124,9 +124,6 @@
   <data name="AutoCaptureForm_UpdateStatus_Timeleft___0_s___1____Total___2_" xml:space="preserve">
     <value>Осталось: {0}с ({1}%) Всего: {2}</value>
   </data>
-  <data name="AboutForm_AboutForm_Contributors" xml:space="preserve">
-    <value>Участники</value>
-  </data>
   <data name="UploadManager_UploadURL_URL_to_download_from_and_upload" xml:space="preserve">
     <value>Ссылка для закачки перед загрузкой</value>
   </data>
@@ -199,17 +196,8 @@
   <data name="TaskHelpers_OpenQuickScreenColorPicker_Copied_to_clipboard___0_" xml:space="preserve">
     <value>Скопировано в буфер: {0}</value>
   </data>
-  <data name="MainForm_UpdateMenu_Hide_menu" xml:space="preserve">
-    <value>Скрыть меню</value>
-  </data>
   <data name="TaskHelpers_TweetMessage_Unable_to_find_valid_Twitter_account_" xml:space="preserve">
     <value>Не удалось найти рабочий аккаунт Twitter.</value>
-  </data>
-  <data name="MainForm_UpdateMenu_Show_menu" xml:space="preserve">
-    <value>Показать меню</value>
-  </data>
-  <data name="MainForm_UpdateMainWindowLayout_Show_columns" xml:space="preserve">
-    <value>Показать столбцы</value>
   </data>
   <data name="QuickTaskMenu_ShowMenu_Cancel" xml:space="preserve">
     <value>Отменить</value>
@@ -245,9 +233,6 @@
   <data name="UploadManager_IsUploadConfirmed_Don_t_show_this_message_again_" xml:space="preserve">
     <value>Больше не показывать это сообщение.</value>
   </data>
-  <data name="TaskSettingsForm_UpdateUploaderMenuNames_Task___0_" xml:space="preserve">
-    <value>Задача: {0}</value>
-  </data>
   <data name="AboutForm_AboutForm_Changelog" xml:space="preserve">
     <value>Список изменений</value>
   </data>
@@ -265,9 +250,6 @@
   </data>
   <data name="UploadTask_Prepare_Starting" xml:space="preserve">
     <value>Начинается</value>
-  </data>
-  <data name="AboutForm_AboutForm_External_libraries" xml:space="preserve">
-    <value>Внешние библиотеки</value>
   </data>
   <data name="Program_Run_Error" xml:space="preserve">
     <value>Ошибка</value>
@@ -351,9 +333,6 @@
   </data>
   <data name="MainForm_tsmiTestTextUpload_Click_Text_upload_test" xml:space="preserve">
     <value>Проверка загрузки текста</value>
-  </data>
-  <data name="MainForm_UpdateMainWindowLayout_Hide_columns" xml:space="preserve">
-    <value>Скрыть столбцы</value>
   </data>
   <data name="TaskSettingsForm_UpdateWindowTitle_Task_settings_for__0_" xml:space="preserve">
     <value>Настройки задачи для операции «{0}»</value>

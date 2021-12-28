@@ -372,15 +372,6 @@
   <data name="tsmiClearList.Text" xml:space="preserve">
     <value>一覧を消去</value>
   </data>
-  <data name="tsmiHideMenu.Text" xml:space="preserve">
-    <value>メニューを隠す</value>
-  </data>
-  <data name="tsmiHideColumns.Text" xml:space="preserve">
-    <value>列を隠す</value>
-  </data>
-  <data name="tsmiImagePreview.Text" xml:space="preserve">
-    <value>画像のプレビュー</value>
-  </data>
   <data name="tsmiOpenURL.Text" xml:space="preserve">
     <value>URL</value>
   </data>
@@ -467,21 +458,6 @@
   </data>
   <data name="tsmiCopyFolder.Text" xml:space="preserve">
     <value>フォルダー</value>
-  </data>
-  <data name="tsmiImagePreviewShow.Text" xml:space="preserve">
-    <value>表示</value>
-  </data>
-  <data name="tsmiImagePreviewHide.Text" xml:space="preserve">
-    <value>隠す</value>
-  </data>
-  <data name="tsmiImagePreviewAutomatic.Text" xml:space="preserve">
-    <value>自動</value>
-  </data>
-  <data name="tsmiImagePreviewSide.Text" xml:space="preserve">
-    <value>横</value>
-  </data>
-  <data name="tsmiImagePreviewBottom.Text" xml:space="preserve">
-    <value>下</value>
   </data>
   <data name="tsmiTrayCapture.Text" xml:space="preserve">
     <value>キャプチャー</value>
@@ -645,33 +621,6 @@
   <data name="tsmiTrayImageHistory.Text" xml:space="preserve">
     <value>画像の履歴...</value>
   </data>
-  <data name="tsmiTrayDebug.Text" xml:space="preserve">
-    <value>デバッグ</value>
-  </data>
-  <data name="tsmiTrayShowDebugLog.Text" xml:space="preserve">
-    <value>デバッグ ログ...</value>
-  </data>
-  <data name="tsmiTrayTestImageUpload.Text" xml:space="preserve">
-    <value>画像アップロードのテスト</value>
-  </data>
-  <data name="tsmiTrayTestTextUpload.Text" xml:space="preserve">
-    <value>テキストアップロードのテスト</value>
-  </data>
-  <data name="tsmiTrayTestFileUpload.Text" xml:space="preserve">
-    <value>ファイルアップロードのテスト</value>
-  </data>
-  <data name="tsmiTrayTestURLShortener.Text" xml:space="preserve">
-    <value>短縮URL作成テスト</value>
-  </data>
-  <data name="tsmiTrayTestURLSharing.Text" xml:space="preserve">
-    <value>URL共有のテスト</value>
-  </data>
-  <data name="tsmiTrayDonate.Text" xml:space="preserve">
-    <value>寄付する...</value>
-  </data>
-  <data name="tsmiTrayAbout.Text" xml:space="preserve">
-    <value>ShareXについて...</value>
-  </data>
   <data name="tsmiTrayRecentItems.Text" xml:space="preserve">
     <value>最近使用したリンク</value>
   </data>
@@ -738,23 +687,8 @@
   <data name="tsmiRunAction.Text" xml:space="preserve">
     <value>アクションを実行</value>
   </data>
-  <data name="tsmiThumbnailTitle.Text" xml:space="preserve">
-    <value>サムネイルのタイトル</value>
-  </data>
   <data name="tsmiSwitchTaskViewMode.Text" xml:space="preserve">
     <value>サムネイルビューに切り替える</value>
-  </data>
-  <data name="tsmiThumbnailTitleShow.Text" xml:space="preserve">
-    <value>表示する</value>
-  </data>
-  <data name="tsmiThumbnailTitleHide.Text" xml:space="preserve">
-    <value>表示しない</value>
-  </data>
-  <data name="tsmiThumbnailTitleTop.Text" xml:space="preserve">
-    <value>サムネイルの上に表示</value>
-  </data>
-  <data name="tsmiThumbnailTitleBottom.Text" xml:space="preserve">
-    <value>サムネイルの下に表示</value>
   </data>
   <data name="tsmiTrayScreenshotDelay.Text" xml:space="preserve">
     <value>キャプチャーを遅らせて起動</value>
@@ -776,9 +710,6 @@
   </data>
   <data name="tsmiClipboardViewer.Text" xml:space="preserve">
     <value>クリップボードビューアー...</value>
-  </data>
-  <data name="tsmiThumbnailSize.Text" xml:space="preserve">
-    <value>サムネイルサイズの変更...</value>
   </data>
   <data name="tsmiCopyImageDimensions.Text" xml:space="preserve">
     <value>画像のサイズ</value>

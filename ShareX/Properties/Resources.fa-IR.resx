@@ -147,9 +147,6 @@
   <data name="QuickTaskMenu_ShowMenu_Continue" xml:space="preserve">
     <value>ادامه دادن</value>
   </data>
-  <data name="AboutForm_AboutForm_Contributors" xml:space="preserve">
-    <value>مشارکت کنندگان</value>
-  </data>
   <data name="MainForm_UpdateToggleHotkeyButton_Disable_hotkeys" xml:space="preserve">
     <value>غیرفعال کردن کلیدهای سریع</value>
   </data>
@@ -231,9 +228,6 @@
   <data name="AboutForm_AboutForm_Language_es_MX" xml:space="preserve">
     <value>اسپانیایی - مکزیکی</value>
   </data>
-  <data name="AboutForm_AboutForm_External_libraries" xml:space="preserve">
-    <value>کتابخانه های خارجی</value>
-  </data>
   <data name="AboutForm_AboutForm_Translators" xml:space="preserve">
     <value>مترجمین</value>
   </data>
@@ -309,9 +303,6 @@
   <data name="MainForm_tsmiTestTextUpload_Click_Text_upload_test" xml:space="preserve">
     <value>تست آپلود متن</value>
   </data>
-  <data name="TaskSettingsForm_UpdateUploaderMenuNames_Task___0_" xml:space="preserve">
-    <value>وظیفه: {0}</value>
-  </data>
   <data name="TaskSettingsForm_UpdateWindowTitle_Task_settings_for__0_" xml:space="preserve">
     <value>تنظیمات وظیفه برای {0}</value>
   </data>
@@ -323,12 +314,6 @@
   </data>
   <data name="UploadTask_Prepare_Starting" xml:space="preserve">
     <value>در حال شروع</value>
-  </data>
-  <data name="MainForm_UpdateMenu_Show_menu" xml:space="preserve">
-    <value>نشان دادن منو</value>
-  </data>
-  <data name="MainForm_UpdateMainWindowLayout_Show_columns" xml:space="preserve">
-    <value>نمایش ستون ها</value>
   </data>
   <data name="ShareXNeedsToBeRestartedForThePersonalFolderChangesToApply" xml:space="preserve">
     <value>برای تغییر پوشه شخصی ShareX نیاز به راه اندازی مجدد دارد.
@@ -377,9 +362,6 @@
   <data name="OCRForm_AutoComplete" xml:space="preserve">
     <value>خروجی OCR به کلیپ بورد شما کپی شد.</value>
   </data>
-  <data name="MainForm_UpdateMainWindowLayout_Hide_columns" xml:space="preserve">
-    <value>مخفی کردن ستون ها</value>
-  </data>
   <data name="ActionsForm_btnOK_Click_Name_can_t_be_empty_" xml:space="preserve">
     <value>نام نمی تواند خالی باشد</value>
   </data>
@@ -409,9 +391,6 @@
   </data>
   <data name="TaskHelpers_OpenQuickScreenColorPicker_Copied_to_clipboard___0_" xml:space="preserve">
     <value>به کلیپ بورد کپی شد: {0}</value>
-  </data>
-  <data name="MainForm_UpdateMenu_Hide_menu" xml:space="preserve">
-    <value>مخفی کردن منو</value>
   </data>
   <data name="UploadManager_UploadURL_URL_to_download_from_and_upload" xml:space="preserve">
     <value>آدرس برای دانلود و آپلود</value>

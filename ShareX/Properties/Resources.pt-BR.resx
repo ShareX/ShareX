@@ -120,9 +120,6 @@
   <data name="AutoCaptureForm_UpdateStatus_Timeleft___0_s___1____Total___2_" xml:space="preserve">
     <value>Tempo restante: {0}s ({1}%) Total: {2}</value>
   </data>
-  <data name="AboutForm_AboutForm_Contributors" xml:space="preserve">
-    <value>Contribuidores</value>
-  </data>
   <data name="TaskHelpers_TweetMessage_Unable_to_find_valid_Twitter_account_" xml:space="preserve">
     <value>Não foi possível encontrar uma conta válida do Twitter.</value>
   </data>
@@ -154,9 +151,6 @@ Por favor, selecione um atalho diferente ou feche o programa conflituoso e reabr
   <data name="UploadManager_IsUploadConfirmed_Don_t_show_this_message_again_" xml:space="preserve">
     <value>Não mostrar esta mensagem novamente.</value>
   </data>
-  <data name="TaskSettingsForm_UpdateUploaderMenuNames_Task___0_" xml:space="preserve">
-    <value>Tarefa: {0}</value>
-  </data>
   <data name="AboutForm_AboutForm_Changelog" xml:space="preserve">
     <value>Registro de alterações</value>
   </data>
@@ -174,9 +168,6 @@ Por favor, selecione um atalho diferente ou feche o programa conflituoso e reabr
   </data>
   <data name="UploadTask_Prepare_Starting" xml:space="preserve">
     <value>Iniciando</value>
-  </data>
-  <data name="AboutForm_AboutForm_External_libraries" xml:space="preserve">
-    <value>Bibliotecas externas</value>
   </data>
   <data name="Program_Run_Error" xml:space="preserve">
     <value>Erro</value>
@@ -285,12 +276,6 @@ Gostaria de reiniciar agora?</value>
   <data name="TaskHelpers_OpenQuickScreenColorPicker_Copied_to_clipboard___0_" xml:space="preserve">
     <value>Copiado para a área de transferência: {0}</value>
   </data>
-  <data name="MainForm_UpdateMenu_Hide_menu" xml:space="preserve">
-    <value>Esconder menu</value>
-  </data>
-  <data name="MainForm_UpdateMenu_Show_menu" xml:space="preserve">
-    <value>Mostrar menu</value>
-  </data>
   <data name="UploadManager_UploadURL_URL_to_download_from_and_upload" xml:space="preserve">
     <value>URL para baixar arquivo e enviar</value>
   </data>
@@ -385,9 +370,6 @@ Tem certeza de que quer continuar?</value>
   <data name="HotkeySettingsForm_Reset_all_hotkeys_to_defaults_Confirmation" xml:space="preserve">
     <value>Redefinir todos os atalhos?</value>
   </data>
-  <data name="MainForm_UpdateMainWindowLayout_Show_columns" xml:space="preserve">
-    <value>Mostrar colunas</value>
-  </data>
   <data name="QuickTaskMenuEditorForm_Reset_all_quick_tasks_to_defaults_Confirmation" xml:space="preserve">
     <value>Redefinir todas tarefas rápidas?</value>
   </data>
@@ -396,9 +378,6 @@ Tem certeza de que quer continuar?</value>
   </data>
   <data name="QuickTaskMenu_ShowMenu_Continue" xml:space="preserve">
     <value>Continuar</value>
-  </data>
-  <data name="MainForm_UpdateMainWindowLayout_Hide_columns" xml:space="preserve">
-    <value>Esconder colunas</value>
   </data>
   <data name="QuickTaskMenu_ShowMenu_Cancel" xml:space="preserve">
     <value>Cancelar</value>

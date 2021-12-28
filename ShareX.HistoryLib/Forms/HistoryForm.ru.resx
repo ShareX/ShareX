@@ -171,9 +171,6 @@
   <data name="tsbToggleMoreInfo.Text" xml:space="preserve">
     <value>Детальная информация</value>
   </data>
-  <data name="tsbCopyStats.Text" xml:space="preserve">
-    <value>Скопировать статистику в буфер обмена</value>
-  </data>
   <data name="tslSearch.Text" xml:space="preserve">
     <value>Поиск:</value>
   </data>
