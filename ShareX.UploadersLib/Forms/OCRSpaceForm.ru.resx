@@ -132,4 +132,10 @@
   <data name="llGoogleTranslate.Text" xml:space="preserve">
     <value>Открыть в Google Translate и закрыть окно</value>
   </data>
+  <data name="btnOpenInBrowser.Text" xml:space="preserve">
+    <value>Открыть в браузере...</value>
+  </data>
+  <data name="lblExternalSite.Text" xml:space="preserve">
+    <value>Внешний сайт:</value>
+  </data>
 </root>

@@ -126,4 +126,7 @@
   <data name="mbWindowList.Text" xml:space="preserve">
     <value>Выберите окно</value>
   </data>
+  <data name="lblWindowTitle.Text" xml:space="preserve">
+    <value>Заголовок окна:</value>
+  </data>
 </root>
