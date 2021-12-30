@@ -378,4 +378,55 @@
   <data name="cbUseSecondaryUploaders.Text" xml:space="preserve">
     <value>アップロードに失敗したときに別のアップロードを実行する</value>
   </data>
+  <data name="btnThumbnailViewThumbnailSizeReset.Text" xml:space="preserve">
+    <value>リセット</value>
+  </data>
+  <data name="cbListViewShowColumns.Text" xml:space="preserve">
+    <value>カラム名を表示</value>
+  </data>
+  <data name="cbMainWindowShowMenu.Text" xml:space="preserve">
+    <value>左にメニューを表示</value>
+  </data>
+  <data name="cbThumbnailViewShowTitle.Text" xml:space="preserve">
+    <value>タイトルを表示</value>
+  </data>
+  <data name="gbListView.Text" xml:space="preserve">
+    <value>リスト形式</value>
+  </data>
+  <data name="gbThumbnailView.Text" xml:space="preserve">
+    <value>サムネイル形式</value>
+  </data>
+  <data name="lblClipboardFormatsTip.Text" xml:space="preserve">
+    <value>ここで設定したフォーマットは、メインウィンドウで画像を右クリックしたときのコピーメニューに表示されます</value>
+  </data>
+  <data name="lblListViewImagePreviewLocation.Text" xml:space="preserve">
+    <value>画像プレビューの表示位置:</value>
+  </data>
+  <data name="lblListViewImagePreviewVisibility.Text" xml:space="preserve">
+    <value>画像プレビューの表示設定:</value>
+  </data>
+  <data name="lblMainWindowTaskViewMode.Text" xml:space="preserve">
+    <value>タスクビューの表示モード:</value>
+  </data>
+  <data name="lblThumbnailViewThumbnailClickAction.Text" xml:space="preserve">
+    <value>クリックしたときのアクション:</value>
+  </data>
+  <data name="lblThumbnailViewThumbnailSize.Text" xml:space="preserve">
+    <value>サムネイルのサイズ:</value>
+  </data>
+  <data name="lblThumbnailViewThumbnailSizeX.Text" xml:space="preserve">
+    <value>x</value>
+  </data>
+  <data name="lblThumbnailViewTitleLocation.Text" xml:space="preserve">
+    <value>タイトルの表示位置:</value>
+  </data>
+  <data name="tpClipboardFormats.Text" xml:space="preserve">
+    <value>クリップボードフォーマット</value>
+  </data>
+  <data name="tpMainWindow.Text" xml:space="preserve">
+    <value>メインウィンドウ</value>
+  </data>
+  <data name="lblSaveImageSubFolderPatternWindow.Text" xml:space="preserve">
+    <value>ウィンドウキャプチャー時の保存先フォルダ:</value>
+  </data>
 </root>

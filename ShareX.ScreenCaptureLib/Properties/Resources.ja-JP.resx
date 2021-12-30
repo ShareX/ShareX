@@ -438,4 +438,16 @@
   <data name="ScreenRecordForm_ConfirmCancel" xml:space="preserve">
     <value>レコーディングを停止してよいですか？</value>
   </data>
+  <data name="AutoCopyImageToClipboard" xml:space="preserve">
+    <value>クリップボードに自動でコピーする</value>
+  </data>
+  <data name="Blur" xml:space="preserve">
+    <value>ぼかし</value>
+  </data>
+  <data name="Pixelate" xml:space="preserve">
+    <value>モザイク</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_ToolOptions" xml:space="preserve">
+    <value>注釈のオプション設定</value>
+  </data>
 </root>

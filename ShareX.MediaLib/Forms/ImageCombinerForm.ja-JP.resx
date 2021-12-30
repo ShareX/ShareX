@@ -156,4 +156,7 @@
   <data name="lblImageAlignment.Text" xml:space="preserve">
     <value>画像の位置調整</value>
   </data>
+  <data name="cbAutoFillBackground.Text" xml:space="preserve">
+    <value>背景を自動で埋める</value>
+  </data>
 </root>

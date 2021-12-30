@@ -126,4 +126,12 @@
   <data name="btnNo.Text" xml:space="preserve">
     <value>いいえ</value>
   </data>
+  <data name="lblHeader.Text" xml:space="preserve">
+    <value>注意！</value>
+  </data>
+  <data name="lblInfo.Text" xml:space="preserve">
+    <value>ShareXがインターネットにスクリーンショットをアップロードしようとしてます。続けますか？
+
+いいえを選択すると、現在のアップロードを中止し、今後も自動でアップロードしないように設定します。</value>
+  </data>
 </root>

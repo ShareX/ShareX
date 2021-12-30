@@ -589,4 +589,16 @@ ShareX を再起動しますか？</value>
   <data name="ThisFeatureWillNotWorkWhenDisableUploadOptionIsEnabled" xml:space="preserve">
     <value>アップロードが禁止されている状態では、この機能は利用できません</value>
   </data>
+  <data name="AboutForm_AboutForm_Links" xml:space="preserve">
+    <value>リンク</value>
+  </data>
+  <data name="AboutForm_AboutForm_Credits" xml:space="preserve">
+    <value>クレジット</value>
+  </data>
+  <data name="AboutForm_AboutForm_Team" xml:space="preserve">
+    <value>チーム</value>
+  </data>
+  <data name="AboutForm_AboutForm_Privacy_policy" xml:space="preserve">
+    <value>プライバシーポリシー</value>
+  </data>
 </root>
