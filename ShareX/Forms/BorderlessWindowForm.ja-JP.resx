@@ -117,58 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="chFilename.Text" xml:space="preserve">
-    <value>ファイル名</value>
-  </data>
-  <data name="lblFilenameFilter.Text" xml:space="preserve">
-    <value>ファイル名:</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - 履歴</value>
-  </data>
-  <data name="cbDateFilter.Text" xml:space="preserve">
-    <value>日付フィルター:</value>
-  </data>
-  <data name="cbHostFilter.Text" xml:space="preserve">
-    <value>ホスト フィルター:</value>
-  </data>
-  <data name="cbTypeFilter.Text" xml:space="preserve">
-    <value>ファイルの種類フィルター:</value>
-  </data>
-  <data name="chDateTime.Text" xml:space="preserve">
-    <value>日時</value>
-  </data>
-  <data name="lblFilterFrom.Text" xml:space="preserve">
-    <value>開始日:</value>
-  </data>
-  <data name="lblFilterTo.Text" xml:space="preserve">
-    <value>終了日:</value>
-  </data>
-  <data name="btnAdvancedSearch.Text" xml:space="preserve">
-    <value>検索</value>
-  </data>
-  <data name="btnAdvancedSearchReset.Text" xml:space="preserve">
-    <value>リセット</value>
-  </data>
-  <data name="gbAdvancedSearch.Text" xml:space="preserve">
-    <value>高度な検索</value>
-  </data>
-  <data name="tsbAdvancedSearch.Text" xml:space="preserve">
-    <value>高度な検索</value>
-  </data>
-  <data name="tsbSearch.Text" xml:space="preserve">
-    <value>検索</value>
-  </data>
-  <data name="tsbSettings.Text" xml:space="preserve">
-    <value>設定:</value>
-  </data>
-  <data name="tsbToggleMoreInfo.Text" xml:space="preserve">
-    <value>詳細情報の表示・非表示の切り替え</value>
-  </data>
-  <data name="tslSearch.Text" xml:space="preserve">
-    <value>検索:</value>
-  </data>
-  <data name="tsbShowStats.Text" xml:space="preserve">
-    <value>使用履歴を表示...</value>
+  <data name="lblWindowTitle.Text" xml:space="preserve">
+    <value>ウィンドウのタイトル:</value>
   </data>
 </root>

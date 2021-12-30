@@ -225,4 +225,13 @@
   <data name="HistoryForm_Search_Watermark" xml:space="preserve">
     <value>ファイル名、ウィンドウ名などを入力して検索</value>
   </data>
+  <data name="HistoryStats" xml:space="preserve">
+    <value>使用履歴</value>
+  </data>
+  <data name="ProcessNames" xml:space="preserve">
+    <value>プロセス名:</value>
+  </data>
+  <data name="Total" xml:space="preserve">
+    <value>合計</value>
+  </data>
 </root>
