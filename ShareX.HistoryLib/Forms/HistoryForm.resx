@@ -586,7 +586,7 @@
     <value>lvHistory</value>
   </data>
   <data name="&gt;&gt;lvHistory.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=13.6.2.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyListView, ShareX.HelpersLib, Version=13.7.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lvHistory.Parent" xml:space="preserve">
     <value>tscHistory.ContentPanel</value>
@@ -718,7 +718,7 @@
     <value>3, 0</value>
   </data>
   <data name="tsHistory.Size" type="System.Drawing.Size, System.Drawing">
-    <value>508, 25</value>
+    <value>477, 25</value>
   </data>
   <data name="tsHistory.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -799,7 +799,7 @@
     <value>0, 0</value>
   </data>
   <data name="pbThumbnail.Size" type="System.Drawing.Size, System.Drawing">
-    <value>627, 445</value>
+    <value>627, 442</value>
   </data>
   <data name="pbThumbnail.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -808,7 +808,7 @@
     <value>pbThumbnail</value>
   </data>
   <data name="&gt;&gt;pbThumbnail.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.MyPictureBox, ShareX.HelpersLib, Version=13.6.2.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.MyPictureBox, ShareX.HelpersLib, Version=13.7.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;pbThumbnail.Parent" xml:space="preserve">
     <value>scHistoryItemInfo.Panel1</value>
@@ -838,7 +838,7 @@
     <value>0, 0</value>
   </data>
   <data name="pgHistoryItemInfo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>627, 209</value>
+    <value>627, 212</value>
   </data>
   <data name="pgHistoryItemInfo.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -871,7 +871,7 @@
     <value>627, 661</value>
   </data>
   <data name="scHistoryItemInfo.SplitterDistance" type="System.Int32, mscorlib">
-    <value>445</value>
+    <value>442</value>
   </data>
   <data name="scHistoryItemInfo.SplitterWidth" type="System.Int32, mscorlib">
     <value>7</value>
@@ -883,7 +883,7 @@
     <value>scHistoryItemInfo</value>
   </data>
   <data name="&gt;&gt;scHistoryItemInfo.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.SplitContainerCustomSplitter, ShareX.HelpersLib, Version=13.6.2.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.SplitContainerCustomSplitter, ShareX.HelpersLib, Version=13.7.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;scHistoryItemInfo.Parent" xml:space="preserve">
     <value>scMain.Panel2</value>
@@ -922,7 +922,7 @@
     <value>scMain</value>
   </data>
   <data name="&gt;&gt;scMain.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.SplitContainerCustomSplitter, ShareX.HelpersLib, Version=13.6.2.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ShareX.HelpersLib.SplitContainerCustomSplitter, ShareX.HelpersLib, Version=13.7.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;scMain.Parent" xml:space="preserve">
     <value>$this</value>

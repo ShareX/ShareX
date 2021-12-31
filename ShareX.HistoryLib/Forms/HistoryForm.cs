@@ -41,9 +41,12 @@ namespace ShareX.HistoryLib
 
         private HistoryItemManager him;
         private HistoryItem[] allHistoryItems;
+        private HistoryItem[] filteredHistoryItems;
         private string defaultTitle;
         private Dictionary<string, string> typeNamesLocaleLookup;
         private string[] allTypeNames;
+        private ListViewItem[] listViewCache;
+        private int listViewFirstItem;
 
         public HistoryForm(string historyPath, HistorySettings settings, Action<string> uploadFile = null, Action<string> editImage = null)
         {
@@ -137,7 +140,7 @@ namespace ShareX.HistoryLib
 
         private HistoryItem[] him_GetHistoryItems()
         {
-            return lvHistory.SelectedItems.Cast<ListViewItem>().Select(x => x.Tag as HistoryItem).ToArray();
+            return lvHistory.SelectedIndices.Cast<int>().Select(i => filteredHistoryItems[i]).ToArray();
         }
 
         private HistoryItem[] GetHistoryItems(bool mockData = false)
@@ -163,8 +166,13 @@ namespace ShareX.HistoryLib
             if (allHistoryItems != null && allHistoryItems.Length > 0)
             {
                 IEnumerable<HistoryItem> historyItems = filter.ApplyFilter(allHistoryItems);
+                filteredHistoryItems = historyItems.ToArray();
 
-                AddHistoryItems(historyItems.ToArray());
+                UpdateTitle(filteredHistoryItems);
+
+                listViewCache = null;
+                lvHistory.VirtualListSize = 0;
+                lvHistory.VirtualListSize = filteredHistoryItems.Length;
             }
         }
 
@@ -213,54 +221,35 @@ namespace ShareX.HistoryLib
             ApplyFilter(filter);
         }
 
-        private void AddHistoryItems(HistoryItem[] historyItems)
+        private ListViewItem CreateListViewItem(int index)
         {
-            Cursor = Cursors.WaitCursor;
+            HistoryItem hi = filteredHistoryItems[index];
 
-            UpdateTitle(historyItems);
+            ListViewItem lvi = new ListViewItem();
 
-            lvHistory.Items.Clear();
-
-            ListViewItem[] listViewItems = new ListViewItem[historyItems.Length];
-
-            for (int i = 0; i < historyItems.Length; i++)
+            if (hi.Type.Equals("Image", StringComparison.InvariantCultureIgnoreCase))
             {
-                HistoryItem hi = historyItems[i];
-                ListViewItem lvi = listViewItems[i] = new ListViewItem();
-
-                if (hi.Type.Equals("Image", StringComparison.InvariantCultureIgnoreCase))
-                {
-                    lvi.ImageIndex = 0;
-                }
-                else if (hi.Type.Equals("Text", StringComparison.InvariantCultureIgnoreCase))
-                {
-                    lvi.ImageIndex = 1;
-                }
-                else if (hi.Type.Equals("File", StringComparison.InvariantCultureIgnoreCase))
-                {
-                    lvi.ImageIndex = 2;
-                }
-                else
-                {
-                    lvi.ImageIndex = 3;
-                }
-
-                lvi.SubItems.Add(hi.DateTime.ToString()).Tag = hi.DateTime;
-                lvi.SubItems.Add(hi.FileName);
-                lvi.SubItems.Add(hi.URL);
-                lvi.Tag = hi;
+                lvi.ImageIndex = 0;
+            }
+            else if (hi.Type.Equals("Text", StringComparison.InvariantCultureIgnoreCase))
+            {
+                lvi.ImageIndex = 1;
+            }
+            else if (hi.Type.Equals("File", StringComparison.InvariantCultureIgnoreCase))
+            {
+                lvi.ImageIndex = 2;
+            }
+            else
+            {
+                lvi.ImageIndex = 3;
             }
 
-            lvHistory.Items.AddRange(listViewItems);
-            lvHistory.FillLastColumn();
-            lvHistory.Focus();
+            lvi.SubItems.Add(hi.DateTime.ToString()).Tag = hi.DateTime;
+            lvi.SubItems.Add(hi.FileName);
+            lvi.SubItems.Add(hi.URL);
+            lvi.Tag = hi;
 
-            if (lvHistory.Items.Count > 0)
-            {
-                lvHistory.Items[0].Selected = true;
-            }
-
-            Cursor = Cursors.Default;
+            return lvi;
         }
 
         private void UpdateTitle(HistoryItem[] historyItems = null)
@@ -396,9 +385,7 @@ namespace ShareX.HistoryLib
         private void HistoryForm_Shown(object sender, EventArgs e)
         {
             Refresh();
-
             RefreshHistoryItems();
-
             this.ForceActivate();
         }
 
@@ -517,6 +504,35 @@ namespace ShareX.HistoryLib
             ApplyFilterAdvanced();
         }
 
+        private void lvHistory_RetrieveVirtualItem(object sender, RetrieveVirtualItemEventArgs e)
+        {
+            if (listViewCache != null && e.ItemIndex >= listViewFirstItem && e.ItemIndex < listViewFirstItem + listViewCache.Length)
+            {
+                e.Item = listViewCache[e.ItemIndex - listViewFirstItem];
+            }
+            else
+            {
+                e.Item = CreateListViewItem(e.ItemIndex);
+            }
+        }
+
+        private void lvHistory_CacheVirtualItems(object sender, CacheVirtualItemsEventArgs e)
+        {
+            if (listViewCache != null && e.StartIndex >= listViewFirstItem && e.EndIndex <= listViewFirstItem + listViewCache.Length)
+            {
+                return;
+            }
+
+            listViewFirstItem = e.StartIndex;
+            int length = e.EndIndex - e.StartIndex + 1;
+            listViewCache = new ListViewItem[length];
+
+            for (int i = 0; i < length; i++)
+            {
+                listViewCache[i] = CreateListViewItem(e.StartIndex + i);
+            }
+        }
+
         private void lvHistory_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
         {
             UpdateControls();
@@ -539,9 +555,10 @@ namespace ShareX.HistoryLib
         {
             List<string> selection = new List<string>();
 
-            foreach (ListViewItem item in lvHistory.SelectedItems)
+            foreach (int index in lvHistory.SelectedIndices)
             {
-                HistoryItem hi = (HistoryItem)item.Tag;
+                HistoryItem hi = filteredHistoryItems[index];
+
                 if (File.Exists(hi.FilePath))
                 {
                     selection.Add(hi.FilePath);
