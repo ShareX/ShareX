@@ -30,6 +30,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ShareX.HistoryLib
@@ -120,9 +121,10 @@ namespace ShareX.HistoryLib
             cbHostFilterSelection.ResetText();
         }
 
-        private void RefreshHistoryItems(bool mockData = false)
+        private async Task RefreshHistoryItems(bool mockData = false)
         {
-            allHistoryItems = GetHistoryItems(mockData);
+            allHistoryItems = await GetHistoryItems(mockData);
+
             ApplyFilterSimple();
 
             cbTypeFilterSelection.Items.Clear();
@@ -143,7 +145,7 @@ namespace ShareX.HistoryLib
             return lvHistory.SelectedIndices.Cast<int>().Select(i => filteredHistoryItems[i]).ToArray();
         }
 
-        private HistoryItem[] GetHistoryItems(bool mockData = false)
+        private async Task<HistoryItem[]> GetHistoryItems(bool mockData = false)
         {
             HistoryManager history;
 
@@ -156,7 +158,7 @@ namespace ShareX.HistoryLib
                 history = new HistoryManagerJSON(HistoryPath);
             }
 
-            List<HistoryItem> historyItems = history.GetHistoryItems();
+            List<HistoryItem> historyItems = await history.GetHistoryItemsAsync();
             historyItems.Reverse();
             return historyItems.ToArray();
         }
@@ -380,11 +382,11 @@ namespace ShareX.HistoryLib
 
         #region Form events
 
-        private void HistoryForm_Shown(object sender, EventArgs e)
+        private async void HistoryForm_Shown(object sender, EventArgs e)
         {
-            Refresh();
-            RefreshHistoryItems();
             this.ForceActivate();
+
+            await RefreshHistoryItems();
         }
 
         private void HistoryForm_Resize(object sender, EventArgs e)
@@ -401,17 +403,17 @@ namespace ShareX.HistoryLib
             }
         }
 
-        private void HistoryForm_KeyDown(object sender, KeyEventArgs e)
+        private async void HistoryForm_KeyDown(object sender, KeyEventArgs e)
         {
             switch (e.KeyData)
             {
                 case Keys.F5:
-                    RefreshHistoryItems();
                     e.Handled = true;
+                    await RefreshHistoryItems();
                     break;
                 case Keys.Control | Keys.F5 when HelpersOptions.DevMode:
-                    RefreshHistoryItems(true);
                     e.Handled = true;
+                    await RefreshHistoryItems(true);
                     break;
             }
         }

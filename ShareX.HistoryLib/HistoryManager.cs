@@ -29,6 +29,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ShareX.HistoryLib
@@ -60,6 +61,11 @@ namespace ShareX.HistoryLib
             }
 
             return new List<HistoryItem>();
+        }
+
+        public async Task<List<HistoryItem>> GetHistoryItemsAsync()
+        {
+            return await Task.Run(() => GetHistoryItems());
         }
 
         public bool AppendHistoryItem(HistoryItem historyItem)
