@@ -338,6 +338,30 @@
   <data name="&gt;&gt;gbAdvancedSearch.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="chIcon.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chIcon.Width" type="System.Int32, mscorlib">
+    <value>24</value>
+  </data>
+  <data name="chDateTime.Text" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="chDateTime.Width" type="System.Int32, mscorlib">
+    <value>115</value>
+  </data>
+  <data name="chFilename.Text" xml:space="preserve">
+    <value>Filename</value>
+  </data>
+  <data name="chFilename.Width" type="System.Int32, mscorlib">
+    <value>170</value>
+  </data>
+  <data name="chURL.Text" xml:space="preserve">
+    <value>URL</value>
+  </data>
+  <data name="chURL.Width" type="System.Int32, mscorlib">
+    <value>230</value>
+  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="lvHistory.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -420,74 +444,11 @@
   <data name="tsHistory.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>None</value>
   </data>
-  <data name="tslSearch.Size" type="System.Drawing.Size, System.Drawing">
-    <value>45, 22</value>
-  </data>
-  <data name="tslSearch.Text" xml:space="preserve">
-    <value>Search:</value>
-  </data>
-  <data name="tstbSearch.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 9pt</value>
-  </data>
-  <data name="tstbSearch.Size" type="System.Drawing.Size, System.Drawing">
-    <value>300, 25</value>
-  </data>
-  <data name="tsbSearch.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="tsbSearch.Size" type="System.Drawing.Size, System.Drawing">
-    <value>23, 22</value>
-  </data>
-  <data name="tsbSearch.Text" xml:space="preserve">
-    <value>Search</value>
-  </data>
-  <data name="tsbAdvancedSearch.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="tsbAdvancedSearch.Size" type="System.Drawing.Size, System.Drawing">
-    <value>23, 22</value>
-  </data>
-  <data name="tsbAdvancedSearch.Text" xml:space="preserve">
-    <value>Advanced search...</value>
-  </data>
-  <data name="tss1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>6, 25</value>
-  </data>
-  <data name="tsbToggleMoreInfo.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="tsbToggleMoreInfo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>23, 22</value>
-  </data>
-  <data name="tsbToggleMoreInfo.Text" xml:space="preserve">
-    <value>Toggle more info</value>
-  </data>
-  <data name="tsbShowStats.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="tsbShowStats.Size" type="System.Drawing.Size, System.Drawing">
-    <value>23, 22</value>
-  </data>
-  <data name="tsbShowStats.Text" xml:space="preserve">
-    <value>Show stats...</value>
-  </data>
-  <data name="tss2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>6, 25</value>
-  </data>
-  <data name="tsbSettings.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="tsbSettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>23, 22</value>
-  </data>
-  <data name="tsbSettings.Text" xml:space="preserve">
-    <value>Settings...</value>
-  </data>
   <data name="tsHistory.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 0</value>
   </data>
   <data name="tsHistory.Size" type="System.Drawing.Size, System.Drawing">
-    <value>508, 25</value>
+    <value>477, 25</value>
   </data>
   <data name="tsHistory.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -915,29 +876,68 @@
   <data name="&gt;&gt;txtFilenameFilter.ZOrder" xml:space="preserve">
     <value>14</value>
   </data>
-  <data name="chIcon.Text" xml:space="preserve">
-    <value />
+  <data name="tslSearch.Size" type="System.Drawing.Size, System.Drawing">
+    <value>45, 22</value>
   </data>
-  <data name="chIcon.Width" type="System.Int32, mscorlib">
-    <value>24</value>
+  <data name="tslSearch.Text" xml:space="preserve">
+    <value>Search:</value>
   </data>
-  <data name="chDateTime.Text" xml:space="preserve">
-    <value>Date</value>
+  <data name="tstbSearch.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9pt</value>
   </data>
-  <data name="chDateTime.Width" type="System.Int32, mscorlib">
-    <value>115</value>
+  <data name="tstbSearch.Size" type="System.Drawing.Size, System.Drawing">
+    <value>300, 25</value>
   </data>
-  <data name="chFilename.Text" xml:space="preserve">
-    <value>Filename</value>
+  <data name="tsbSearch.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
   </data>
-  <data name="chFilename.Width" type="System.Int32, mscorlib">
-    <value>170</value>
+  <data name="tsbSearch.Size" type="System.Drawing.Size, System.Drawing">
+    <value>23, 22</value>
   </data>
-  <data name="chURL.Text" xml:space="preserve">
-    <value>URL</value>
+  <data name="tsbSearch.Text" xml:space="preserve">
+    <value>Search</value>
   </data>
-  <data name="chURL.Width" type="System.Int32, mscorlib">
-    <value>230</value>
+  <data name="tsbAdvancedSearch.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="tsbAdvancedSearch.Size" type="System.Drawing.Size, System.Drawing">
+    <value>23, 22</value>
+  </data>
+  <data name="tsbAdvancedSearch.Text" xml:space="preserve">
+    <value>Advanced search...</value>
+  </data>
+  <data name="tss1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>6, 25</value>
+  </data>
+  <data name="tsbToggleMoreInfo.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="tsbToggleMoreInfo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>23, 22</value>
+  </data>
+  <data name="tsbToggleMoreInfo.Text" xml:space="preserve">
+    <value>Toggle more info</value>
+  </data>
+  <data name="tsbShowStats.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="tsbShowStats.Size" type="System.Drawing.Size, System.Drawing">
+    <value>23, 22</value>
+  </data>
+  <data name="tsbShowStats.Text" xml:space="preserve">
+    <value>Show stats...</value>
+  </data>
+  <data name="tss2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>6, 25</value>
+  </data>
+  <data name="tsbSettings.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="tsbSettings.Size" type="System.Drawing.Size, System.Drawing">
+    <value>23, 22</value>
+  </data>
+  <data name="tsbSettings.Text" xml:space="preserve">
+    <value>Settings...</value>
   </data>
   <data name="scMain.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>

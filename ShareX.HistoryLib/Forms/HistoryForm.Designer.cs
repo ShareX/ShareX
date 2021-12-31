@@ -206,7 +206,6 @@
             // 
             // lvHistory
             // 
-            this.lvHistory.AllowColumnSort = true;
             this.lvHistory.AutoFillColumn = true;
             this.lvHistory.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.lvHistory.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
@@ -216,6 +215,7 @@
             this.chURL});
             resources.ApplyResources(this.lvHistory, "lvHistory");
             this.lvHistory.FullRowSelect = true;
+            this.lvHistory.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.lvHistory.HideSelection = false;
             this.lvHistory.Name = "lvHistory";
             this.lvHistory.UseCompatibleStateImageBehavior = false;

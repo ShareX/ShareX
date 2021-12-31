@@ -65,9 +65,6 @@ namespace ShareX.HistoryLib
 
             UpdateTitle();
 
-            // Mark the Date column as having a date; used for sorting
-            chDateTime.Tag = new DateTime();
-
             ImageList il = new ImageList();
             il.ColorDepth = ColorDepth.Depth32Bit;
             il.Images.Add(Resources.image);
