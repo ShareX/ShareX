@@ -418,15 +418,9 @@ namespace ShareX.HistoryLib
             }
         }
 
-        private void tstbSearch_KeyDown(object sender, KeyEventArgs e)
+        private void tstbSearch_TextChanged(object sender, EventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
-            {
-                e.Handled = true;
-                e.SuppressKeyPress = true;
-                ApplyFilterSimple();
-                tstbSearch.Focus();
-            }
+            ApplyFilterSimple();
         }
 
         private void tsbSearch_Click(object sender, EventArgs e)
