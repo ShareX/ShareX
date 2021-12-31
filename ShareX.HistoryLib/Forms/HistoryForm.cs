@@ -453,32 +453,8 @@ namespace ShareX.HistoryLib
             }
         }
 
-        private void txtFilenameFilter_KeyDown(object sender, KeyEventArgs e)
+        private void AdvancedFilter_ValueChanged(object sender, EventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
-            {
-                e.Handled = true;
-                e.SuppressKeyPress = true;
-                ApplyFilterAdvanced();
-                txtFilenameFilter.Focus();
-            }
-        }
-
-        private void txtURLFilter_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                e.Handled = true;
-                e.SuppressKeyPress = true;
-                ApplyFilterAdvanced();
-                txtURLFilter.Focus();
-            }
-        }
-
-        private void btnAdvancedSearch_Click(object sender, EventArgs e)
-        {
-            gbAdvancedSearch.Visible = false;
-            tsbAdvancedSearch.Checked = false;
             ApplyFilterAdvanced();
         }
 
