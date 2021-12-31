@@ -191,8 +191,7 @@ namespace ShareX.HistoryLib
 
             HistoryFilter filter = new HistoryFilter()
             {
-                Filename = searchText,
-                MaxItemCount = Settings.MaxItemCount
+                Filename = searchText
             };
 
             ApplyFilter(filter);
@@ -208,8 +207,7 @@ namespace ShareX.HistoryLib
                 FromDate = dtpFilterFrom.Value.Date,
                 ToDate = dtpFilterTo.Value.Date,
                 FilterHost = cbHostFilter.Checked,
-                Host = cbHostFilterSelection.Text,
-                MaxItemCount = Settings.MaxItemCount
+                Host = cbHostFilterSelection.Text
             };
 
             if (cbTypeFilter.Checked && allTypeNames.IsValidIndex(cbTypeFilterSelection.SelectedIndex))
@@ -450,16 +448,9 @@ namespace ShareX.HistoryLib
 
         private void tsbSettings_Click(object sender, EventArgs e)
         {
-            int maxItemCount = Settings.MaxItemCount;
-
             using (HistorySettingsForm form = new HistorySettingsForm(Settings))
             {
                 form.ShowDialog();
-            }
-
-            if (maxItemCount != Settings.MaxItemCount)
-            {
-                RefreshHistoryItems();
             }
         }
 

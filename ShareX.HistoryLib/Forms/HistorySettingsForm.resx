@@ -118,70 +118,18 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="lblMaximumItemLimit.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="lblMaximumItemLimit.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 16</value>
-  </data>
-  <data name="lblMaximumItemLimit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>96, 13</value>
-  </data>
-  <data name="lblMaximumItemLimit.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="lblMaximumItemLimit.Text" xml:space="preserve">
-    <value>Maximum item limit:</value>
-  </data>
-  <data name="&gt;&gt;lblMaximumItemLimit.Name" xml:space="preserve">
-    <value>lblMaximumItemLimit</value>
-  </data>
-  <data name="&gt;&gt;lblMaximumItemLimit.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblMaximumItemLimit.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;lblMaximumItemLimit.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="nudMaximumItemLimit.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 32</value>
-  </data>
-  <data name="nudMaximumItemLimit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>64, 20</value>
-  </data>
-  <data name="nudMaximumItemLimit.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="nudMaximumItemLimit.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Center</value>
-  </data>
-  <data name="&gt;&gt;nudMaximumItemLimit.Name" xml:space="preserve">
-    <value>nudMaximumItemLimit</value>
-  </data>
-  <data name="&gt;&gt;nudMaximumItemLimit.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;nudMaximumItemLimit.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;nudMaximumItemLimit.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <data name="cbRememberSearchText.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="cbRememberSearchText.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 64</value>
+    <value>16, 16</value>
   </data>
   <data name="cbRememberSearchText.Size" type="System.Drawing.Size, System.Drawing">
     <value>138, 17</value>
   </data>
   <data name="cbRememberSearchText.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>0</value>
   </data>
   <data name="cbRememberSearchText.Text" xml:space="preserve">
     <value>Remember search input</value>
@@ -202,13 +150,13 @@
     <value>True</value>
   </data>
   <data name="cbRememberWindowState.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 88</value>
+    <value>16, 40</value>
   </data>
   <data name="cbRememberWindowState.Size" type="System.Drawing.Size, System.Drawing">
     <value>142, 17</value>
   </data>
   <data name="cbRememberWindowState.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>1</value>
   </data>
   <data name="cbRememberWindowState.Text" xml:space="preserve">
     <value>Remember window state</value>
@@ -234,6 +182,7 @@
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>334, 211</value>
   </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>
   </data>
