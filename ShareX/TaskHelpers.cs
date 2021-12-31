@@ -1781,7 +1781,8 @@ namespace ShareX
             {
                 IsBeta = Program.Dev,
                 IsPortable = Program.Portable,
-                Proxy = HelpersOptions.CurrentProxy.GetWebProxy()
+                Proxy = HelpersOptions.CurrentProxy.GetWebProxy(),
+                Branch = "develop"
             };
             updateChecker.CheckUpdate();
             UpdateMessageBox.Start(updateChecker);

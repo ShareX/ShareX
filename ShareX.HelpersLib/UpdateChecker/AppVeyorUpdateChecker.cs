@@ -30,6 +30,8 @@ namespace ShareX.HelpersLib
 {
     public class AppVeyorUpdateChecker : UpdateChecker
     {
+        public string Branch { get; set; } = "master";
+
         public override void CheckUpdate()
         {
             try
@@ -41,7 +43,7 @@ namespace ShareX.HelpersLib
                     Proxy = Proxy
                 };
 
-                AppVeyorProject project = appveyor.GetProjectByBranch("master");
+                AppVeyorProject project = appveyor.GetProjectByBranch(Branch);
 
                 if (!project.build.status.Equals("success", StringComparison.InvariantCultureIgnoreCase) &&
                     !project.build.status.Equals("running", StringComparison.InvariantCultureIgnoreCase))
