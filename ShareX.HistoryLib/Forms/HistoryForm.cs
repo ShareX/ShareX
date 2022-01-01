@@ -464,6 +464,12 @@ namespace ShareX.HistoryLib
             ApplyFilterAdvanced();
         }
 
+        private void btnAdvancedSearchClose_Click(object sender, EventArgs e)
+        {
+            gbAdvancedSearch.Visible = false;
+            tsbAdvancedSearch.Checked = false;
+        }
+
         private void lvHistory_RetrieveVirtualItem(object sender, RetrieveVirtualItemEventArgs e)
         {
             if (listViewCache != null && e.ItemIndex >= listViewFirstItem && e.ItemIndex < listViewFirstItem + listViewCache.Length)

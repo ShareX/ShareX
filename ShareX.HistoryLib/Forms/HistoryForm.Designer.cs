@@ -65,6 +65,7 @@
             this.scHistoryItemInfo = new ShareX.HelpersLib.SplitContainerCustomSplitter();
             this.pbThumbnail = new ShareX.HelpersLib.MyPictureBox();
             this.pgHistoryItemInfo = new System.Windows.Forms.PropertyGrid();
+            this.btnAdvancedSearchClose = new System.Windows.Forms.Button();
             this.tscHistory.ContentPanel.SuspendLayout();
             this.tscHistory.TopToolStripPanel.SuspendLayout();
             this.tscHistory.SuspendLayout();
@@ -85,7 +86,6 @@
             // 
             // tscHistory.ContentPanel
             // 
-            this.tscHistory.ContentPanel.Controls.Add(this.gbAdvancedSearch);
             this.tscHistory.ContentPanel.Controls.Add(this.lvHistory);
             resources.ApplyResources(this.tscHistory.ContentPanel, "tscHistory.ContentPanel");
             resources.ApplyResources(this.tscHistory, "tscHistory");
@@ -97,6 +97,7 @@
             // 
             // gbAdvancedSearch
             // 
+            this.gbAdvancedSearch.Controls.Add(this.btnAdvancedSearchClose);
             this.gbAdvancedSearch.Controls.Add(this.btnAdvancedSearchReset);
             this.gbAdvancedSearch.Controls.Add(this.lblURLFilter);
             this.gbAdvancedSearch.Controls.Add(this.txtURLFilter);
@@ -344,6 +345,7 @@
             // 
             // scHistoryItemInfo.Panel1
             // 
+            this.scHistoryItemInfo.Panel1.Controls.Add(this.gbAdvancedSearch);
             this.scHistoryItemInfo.Panel1.Controls.Add(this.pbThumbnail);
             // 
             // scHistoryItemInfo.Panel2
@@ -368,6 +370,13 @@
             this.pgHistoryItemInfo.Name = "pgHistoryItemInfo";
             this.pgHistoryItemInfo.PropertySort = System.Windows.Forms.PropertySort.NoSort;
             this.pgHistoryItemInfo.ToolbarVisible = false;
+            // 
+            // btnAdvancedSearchClose
+            // 
+            resources.ApplyResources(this.btnAdvancedSearchClose, "btnAdvancedSearchClose");
+            this.btnAdvancedSearchClose.Name = "btnAdvancedSearchClose";
+            this.btnAdvancedSearchClose.UseVisualStyleBackColor = true;
+            this.btnAdvancedSearchClose.Click += new System.EventHandler(this.btnAdvancedSearchClose_Click);
             // 
             // HistoryForm
             // 
@@ -439,5 +448,6 @@
         private HelpersLib.SplitContainerCustomSplitter scHistoryItemInfo;
         private System.Windows.Forms.ToolStripButton tsbToggleMoreInfo;
         private System.Windows.Forms.ToolStripButton tsbShowStats;
+        private System.Windows.Forms.Button btnAdvancedSearchClose;
     }
 }
