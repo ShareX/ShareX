@@ -170,8 +170,14 @@ namespace ShareX.HistoryLib
                 UpdateTitle(filteredHistoryItems);
 
                 listViewCache = null;
+                listViewFirstItem = 0;
                 lvHistory.VirtualListSize = 0;
-                lvHistory.VirtualListSize = filteredHistoryItems.Length;
+
+                if (filteredHistoryItems.Length > 0)
+                {
+                    lvHistory.VirtualListSize = filteredHistoryItems.Length;
+                    lvHistory.SelectedIndices.Add(0);
+                }
             }
         }
 
@@ -241,7 +247,7 @@ namespace ShareX.HistoryLib
                 lvi.ImageIndex = 3;
             }
 
-            lvi.SubItems.Add(hi.DateTime.ToString()).Tag = hi.DateTime;
+            lvi.SubItems.Add(hi.DateTime.ToString());
             lvi.SubItems.Add(hi.FileName);
             lvi.SubItems.Add(hi.URL);
             lvi.Tag = hi;
