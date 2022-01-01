@@ -40,6 +40,7 @@
             this.cmsTask = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tcTaskSettings = new System.Windows.Forms.TabControl();
             this.tpTask = new System.Windows.Forms.TabPage();
+            this.lblTask = new System.Windows.Forms.Label();
             this.btnScreenshotsFolderBrowse = new System.Windows.Forms.Button();
             this.txtScreenshotsFolder = new System.Windows.Forms.TextBox();
             this.cbOverrideScreenshotsFolder = new System.Windows.Forms.CheckBox();
@@ -293,7 +294,6 @@
             this.pgTaskSettings = new System.Windows.Forms.PropertyGrid();
             this.cbOverrideAdvancedSettings = new System.Windows.Forms.CheckBox();
             this.tttvMain = new ShareX.HelpersLib.TabToTreeView();
-            this.lblTask = new System.Windows.Forms.Label();
             this.tcTaskSettings.SuspendLayout();
             this.tpTask.SuspendLayout();
             this.cmsDestinations.SuspendLayout();
@@ -440,6 +440,11 @@
             this.tpTask.Controls.Add(this.lblDescription);
             resources.ApplyResources(this.tpTask, "tpTask");
             this.tpTask.Name = "tpTask";
+            // 
+            // lblTask
+            // 
+            resources.ApplyResources(this.lblTask, "lblTask");
+            this.lblTask.Name = "lblTask";
             // 
             // btnScreenshotsFolderBrowse
             // 
@@ -2545,11 +2550,6 @@
             this.tttvMain.TreeViewFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.tttvMain.TreeViewSize = 190;
             this.tttvMain.TabChanged += new ShareX.HelpersLib.TabToTreeView.TabChangedEventHandler(this.tttvMain_TabChanged);
-            // 
-            // lblTask
-            // 
-            resources.ApplyResources(this.lblTask, "lblTask");
-            this.lblTask.Name = "lblTask";
             // 
             // TaskSettingsForm
             // 
