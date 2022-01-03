@@ -37,7 +37,7 @@ namespace ShareX.UploadersLib.ImageUploaders
     {
         public override ImageDestination EnumValue { get; } = ImageDestination.Picasa;
 
-        public override Icon ServiceIcon => Resources.GooglePhotos;
+        public override Image ServiceImage => Resources.GooglePhotos;
 
         public override bool CheckConfig(UploadersConfig config)
         {
