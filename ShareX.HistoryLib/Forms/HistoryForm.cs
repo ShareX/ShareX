@@ -47,7 +47,7 @@ namespace ShareX.HistoryLib
         private Dictionary<string, string> typeNamesLocaleLookup;
         private string[] allTypeNames;
         private ListViewItem[] listViewCache;
-        private int listViewFirstItem;
+        private int listViewCacheStartIndex;
 
         public HistoryForm(string historyPath, HistorySettings settings, Action<string> uploadFile = null, Action<string> editImage = null)
         {
@@ -170,7 +170,7 @@ namespace ShareX.HistoryLib
                 UpdateTitle(filteredHistoryItems);
 
                 listViewCache = null;
-                listViewFirstItem = 0;
+                listViewCacheStartIndex = 0;
                 lvHistory.VirtualListSize = 0;
 
                 if (filteredHistoryItems.Length > 0)
@@ -250,7 +250,6 @@ namespace ShareX.HistoryLib
             lvi.SubItems.Add(hi.DateTime.ToString());
             lvi.SubItems.Add(hi.FileName);
             lvi.SubItems.Add(hi.URL);
-            lvi.Tag = hi;
 
             return lvi;
         }
@@ -478,9 +477,9 @@ namespace ShareX.HistoryLib
 
         private void lvHistory_RetrieveVirtualItem(object sender, RetrieveVirtualItemEventArgs e)
         {
-            if (listViewCache != null && e.ItemIndex >= listViewFirstItem && e.ItemIndex < listViewFirstItem + listViewCache.Length)
+            if (listViewCache != null && e.ItemIndex >= listViewCacheStartIndex && e.ItemIndex < listViewCacheStartIndex + listViewCache.Length)
             {
-                e.Item = listViewCache[e.ItemIndex - listViewFirstItem];
+                e.Item = listViewCache[e.ItemIndex - listViewCacheStartIndex];
             }
             else
             {
@@ -490,12 +489,12 @@ namespace ShareX.HistoryLib
 
         private void lvHistory_CacheVirtualItems(object sender, CacheVirtualItemsEventArgs e)
         {
-            if (listViewCache != null && e.StartIndex >= listViewFirstItem && e.EndIndex <= listViewFirstItem + listViewCache.Length)
+            if (listViewCache != null && e.StartIndex >= listViewCacheStartIndex && e.EndIndex <= listViewCacheStartIndex + listViewCache.Length)
             {
                 return;
             }
 
-            listViewFirstItem = e.StartIndex;
+            listViewCacheStartIndex = e.StartIndex;
             int length = e.EndIndex - e.StartIndex + 1;
             listViewCache = new ListViewItem[length];
 
