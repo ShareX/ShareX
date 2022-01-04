@@ -804,6 +804,7 @@
             // 
             // nudToastWindowFadeDuration
             // 
+            this.nudToastWindowFadeDuration.DecimalPlaces = 1;
             resources.ApplyResources(this.nudToastWindowFadeDuration, "nudToastWindowFadeDuration");
             this.nudToastWindowFadeDuration.Maximum = new decimal(new int[] {
             30,
@@ -815,6 +816,7 @@
             // 
             // nudToastWindowDuration
             // 
+            this.nudToastWindowDuration.DecimalPlaces = 1;
             resources.ApplyResources(this.nudToastWindowDuration, "nudToastWindowDuration");
             this.nudToastWindowDuration.Maximum = new decimal(new int[] {
             30,
