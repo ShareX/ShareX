@@ -187,7 +187,7 @@
     <value>Adicionar...</value>
   </data>
   <data name="btnWatchFolderRemove.Text" xml:space="preserve">
-    <value>Remover...</value>
+    <value>Remover</value>
   </data>
   <data name="chWatchFolderIncludeSubdirectories.Text" xml:space="preserve">
     <value>Incluir subdiretórios</value>
@@ -205,7 +205,7 @@
     <value>Remover</value>
   </data>
   <data name="btnActionsEdit.Text" xml:space="preserve">
-    <value>Editar</value>
+    <value>Editar...</value>
   </data>
   <data name="chActionsExtensions.Text" xml:space="preserve">
     <value>Extensões</value>
@@ -220,7 +220,7 @@
     <value>Nome</value>
   </data>
   <data name="btnActionsAdd.Text" xml:space="preserve">
-    <value>Adicionar</value>
+    <value>Adicionar...</value>
   </data>
   <data name="btnActionsDuplicate.Text" xml:space="preserve">
     <value>Duplicar</value>
@@ -259,13 +259,13 @@
     <value>Nomeação de arquivos</value>
   </data>
   <data name="lblGIFFPS.Text" xml:space="preserve">
-    <value>QPS do GIF:</value>
+    <value>FPS do GIF:</value>
   </data>
   <data name="cbScreenRecorderFixedDuration.Text" xml:space="preserve">
     <value>Duração fixa:</value>
   </data>
   <data name="lblScreenRecordFPS.Text" xml:space="preserve">
-    <value>QPS da gravação de tela:</value>
+    <value>FPS da gravação de tela:</value>
   </data>
   <data name="lblScreenRecorderFixedDuration.Text" xml:space="preserve">
     <value>segundos</value>
@@ -358,19 +358,19 @@
     <value>Após captura...</value>
   </data>
   <data name="cbRegionCaptureShowFPS.Text" xml:space="preserve">
-    <value>Mostrar QPS no canto superior esquerdo</value>
+    <value>Mostrar FPS no canto superior esquerdo</value>
   </data>
   <data name="cbRegionCaptureIsFixedSize.Text" xml:space="preserve">
     <value>Modo de região de tamanho fixo:</value>
   </data>
   <data name="cbRegionCaptureShowCrosshair.Text" xml:space="preserve">
-    <value>Mostrar mira do tamanho da tela:</value>
+    <value>Mostrar mira do tamanho da tela</value>
   </data>
   <data name="lblRegionCaptureMagnifierPixelSize.Text" xml:space="preserve">
     <value>Tamanho do pixel da lente de aumento:</value>
   </data>
   <data name="lblRegionCaptureMagnifierPixelCount.Text" xml:space="preserve">
-    <value>Quantidade de pixels da lente de aumento</value>
+    <value>Quantidade de pixels da lente de aumento:</value>
   </data>
   <data name="cbRegionCaptureUseSquareMagnifier.Text" xml:space="preserve">
     <value>Usar forma quadrada da lente de aumento</value>
@@ -388,7 +388,7 @@
     <value>+</value>
   </data>
   <data name="cbRegionCaptureUseCustomInfoText.Text" xml:space="preserve">
-    <value>Usar texto personalizado no canto superior direito</value>
+    <value>Usar texto personalizado no canto superior direito:</value>
   </data>
   <data name="cbRegionCaptureDetectControls.Text" xml:space="preserve">
     <value>Detectar regiões de controle dentro das janelas</value>
@@ -439,7 +439,7 @@
     <value>0</value>
   </data>
   <data name="lblRegionCaptureSnapSizes.Text" xml:space="preserve">
-    <value>Ao segurar Alt, as dimensões da região serão proporcionais</value>
+    <value>Ao segurar Alt, as dimensões da região serão proporcionais:</value>
   </data>
   <data name="cbRegionCaptureDetectWindows.Text" xml:space="preserve">
     <value>Detectar janelas e permitir captura do cursor</value>
@@ -455,5 +455,125 @@
   </data>
   <data name="cbImageAutoUseJPEG.Text" xml:space="preserve">
     <value>Se o tamanho da imagem for maior que o especificado, utilizar JPEG como formato de imagem:</value>
+  </data>
+  <data name="btnActions.Text" xml:space="preserve">
+    <value>Ações...</value>
+  </data>
+  <data name="btnAutoIncrementNumber.Text" xml:space="preserve">
+    <value>Editar</value>
+  </data>
+  <data name="cbScreenRecordConfirmAbort.Text" xml:space="preserve">
+    <value>Confirmar antes de cancelar</value>
+  </data>
+  <data name="lblUploaderFiltersExtensionsExample.Text" xml:space="preserve">
+    <value>Exemplo: png, jpg, jpeg</value>
+  </data>
+  <data name="lblUploaderFiltersExtensions.Text" xml:space="preserve">
+    <value>Filtro de extensão:</value>
+  </data>
+  <data name="tpUploaderFilters.Text" xml:space="preserve">
+    <value>Filtro de envio</value>
+  </data>
+  <data name="lblToastWindowRightClickAction.Text" xml:space="preserve">
+    <value>Ação ao pressionar o botão direito:</value>
+  </data>
+  <data name="lblToastWindowMiddleClickAction.Text" xml:space="preserve">
+    <value>Ação ao pressionar o scroll:</value>
+  </data>
+  <data name="lblToastWindowDurationSeconds.Text" xml:space="preserve">
+    <value>segundos</value>
+  </data>
+  <data name="lblScreenshotDelay.Text" xml:space="preserve">
+    <value>Atraso na captura de tela:</value>
+  </data>
+  <data name="lblToastWindowFadeDurationSeconds.Text" xml:space="preserve">
+    <value>segundos</value>
+  </data>
+  <data name="btnUploaderFiltersRemove.Text" xml:space="preserve">
+    <value>Remover</value>
+  </data>
+  <data name="cbFileUploadReplaceProblematicCharacters.Text" xml:space="preserve">
+    <value>Substituir caracteres problemáticos em uma URL com underline ao realizar o envio</value>
+  </data>
+  <data name="cbShowToastNotificationAfterTaskCompleted.Text" xml:space="preserve">
+    <value>Mostrar uma notificação após a tarefa ser concluída</value>
+  </data>
+  <data name="lblToastWindowSize.Text" xml:space="preserve">
+    <value>Tamanho:</value>
+  </data>
+  <data name="cbScreenRecordAutoStart.Text" xml:space="preserve">
+    <value>Começar a gravar após:</value>
+  </data>
+  <data name="lblTask.Text" xml:space="preserve">
+    <value>Tarefa:</value>
+  </data>
+  <data name="gbToastWindow.Text" xml:space="preserve">
+    <value>Notificação</value>
+  </data>
+  <data name="btnUploaderFiltersUpdate.Text" xml:space="preserve">
+    <value>Atualizar</value>
+  </data>
+  <data name="chUploaderFiltersName.Text" xml:space="preserve">
+    <value>Hospedagem</value>
+  </data>
+  <data name="lblUploaderFiltersDestination.Text" xml:space="preserve">
+    <value>Hospedagem:</value>
+  </data>
+  <data name="cbUseCustomCaptureSound.Text" xml:space="preserve">
+    <value>Usar áudio personalizado de captura:</value>
+  </data>
+  <data name="cbUseCustomErrorSound.Text" xml:space="preserve">
+    <value>Usar áudio personalizado de erro:</value>
+  </data>
+  <data name="cbUseCustomTaskCompletedSound.Text" xml:space="preserve">
+    <value>Usar áudio personalizado de tarefa concluída:</value>
+  </data>
+  <data name="cbScreenRecordTransparentRegion.Text" xml:space="preserve">
+    <value>Usar seleção de região transparente</value>
+  </data>
+  <data name="tpOCR.Text" xml:space="preserve">
+    <value>OCR (Reconhecimento Óptico de Caracteres)</value>
+  </data>
+  <data name="tpNotifications.Text" xml:space="preserve">
+    <value>Notificações</value>
+  </data>
+  <data name="lblActionsNote.Text" xml:space="preserve">
+    <value>Dica: Você pode habilitar/desabilitar ações em "Tarefas após captura -&gt; Realizar ações".</value>
+  </data>
+  <data name="chUploaderFiltersExtension.Text" xml:space="preserve">
+    <value>Extensão</value>
+  </data>
+  <data name="lblToastWindowLeftClickAction.Text" xml:space="preserve">
+    <value>Ação ao pressionar o botão esquerdo:</value>
+  </data>
+  <data name="btnUploaderFiltersAdd.Text" xml:space="preserve">
+    <value>Adicionar</value>
+  </data>
+  <data name="btnWatchFolderEdit.Text" xml:space="preserve">
+    <value>Editar...</value>
+  </data>
+  <data name="btnScreenshotsFolderBrowse.Text" xml:space="preserve">
+    <value>Procurar...</value>
+  </data>
+  <data name="cbDisableNotifications.Text" xml:space="preserve">
+    <value>Desabilitar notificações</value>
+  </data>
+  <data name="cbDisableNotificationsOnFullscreen.Text" xml:space="preserve">
+    <value>Desabilitar notificações em tela cheia</value>
+  </data>
+  <data name="lblToastWindowDuration.Text" xml:space="preserve">
+    <value>Duração:</value>
+  </data>
+  <data name="cbOverrideImageSettings.Text" xml:space="preserve">
+    <value>Ignorar configurações de imagem</value>
+  </data>
+  <data name="cbOverrideCaptureSettings.Text" xml:space="preserve">
+    <value>Ignorar configurações de captura</value>
+  </data>
+  <data name="cbCaptureOCRAutoCopy.Text" xml:space="preserve">
+    <value>Copiar resultados para a área de transferência automaticamente</value>
+  </data>
+  <data name="lblOCRDefaultLanguage.Text" xml:space="preserve">
+    <value>Idioma padrão:</value>
   </data>
 </root>

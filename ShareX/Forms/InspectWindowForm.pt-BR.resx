@@ -118,27 +118,15 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Monitorar pasta</value>
+    <value>ShareX - Inspecionar aba</value>
   </data>
-  <data name="btnCancel.Text" xml:space="preserve">
-    <value>Cancelar</value>
+  <data name="btnInspectWindow.Text" xml:space="preserve">
+    <value>Inspecionar aba...</value>
   </data>
-  <data name="btnOK.Text" xml:space="preserve">
-    <value>OK</value>
+  <data name="btnInspectControl.Text" xml:space="preserve">
+    <value>Inspecionar controle...</value>
   </data>
-  <data name="cbIncludeSubdirectories.Text" xml:space="preserve">
-    <value>Incluir subdiretórios</value>
-  </data>
-  <data name="lblFilter.Text" xml:space="preserve">
-    <value>Filtro:</value>
-  </data>
-  <data name="lblFilterExample.Text" xml:space="preserve">
-    <value>Exemplo: *.png</value>
-  </data>
-  <data name="lblFolderPath.Text" xml:space="preserve">
-    <value>Local da pasta:</value>
-  </data>
-  <data name="cbMoveToScreenshotsFolder.Text" xml:space="preserve">
-    <value>Mover arquivo para a pasta de screenshots</value>
+  <data name="btnRefresh.Text" xml:space="preserve">
+    <value>Atualizar</value>
   </data>
 </root>

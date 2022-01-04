@@ -136,7 +136,7 @@
     <value>Região</value>
   </data>
   <data name="lblDuration.Text" xml:space="preserve">
-    <value>Tempo de repetição</value>
+    <value>Tempo de repetição:</value>
   </data>
   <data name="lblDurationSeconds.Text" xml:space="preserve">
     <value>segundos</value>

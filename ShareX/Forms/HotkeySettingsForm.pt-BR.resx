@@ -133,6 +133,9 @@
     <value>Remover</value>
   </data>
   <data name="btnReset.Text" xml:space="preserve">
-    <value>Restaurar atalhos padrões</value>
+    <value>Restaurar atalhos padrões...</value>
+  </data>
+  <data name="btnHotkeysDisabled.Text" xml:space="preserve">
+    <value>Os atalhos estão desabilitados. Você pode clicar aqui para habilita-los.</value>
   </data>
 </root>

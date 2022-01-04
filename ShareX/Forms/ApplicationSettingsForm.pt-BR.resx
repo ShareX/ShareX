@@ -241,10 +241,10 @@
     <value>Mostrar ShareX no menu de "Enviar para"</value>
   </data>
   <data name="gbSecondaryTextUploaders.Text" xml:space="preserve">
-    <value>Hospedagem de texto </value>
+    <value>Hospedagem de texto</value>
   </data>
   <data name="cbUseCustomScreenshotsPath.Text" xml:space="preserve">
-    <value>Pasta de screenshots customizada</value>
+    <value>Pasta de screenshots customizada:</value>
   </data>
   <data name="cbSteamShowInApp.Text" xml:space="preserve">
     <value>Enquanto o programa estiver aberto, mostrar "Em aplicativo" na Steam</value>
@@ -308,5 +308,122 @@
   </data>
   <data name="cbCheckPreReleaseUpdates.Text" xml:space="preserve">
     <value>Verificar por atualizações de teste</value>
+  </data>
+  <data name="btnCheckDevBuild.Text" xml:space="preserve">
+    <value>Instalar versão para desenvolvedores</value>
+  </data>
+  <data name="btnChromeOpenExtensionPage.Text" xml:space="preserve">
+    <value>Instalar a extensão ShareX para Chrome</value>
+  </data>
+  <data name="btnFirefoxOpenAddonPage.Text" xml:space="preserve">
+    <value>Instalar a extensão ShareX para Firefox</value>
+  </data>
+  <data name="btnPersonalFolderPathApply.Text" xml:space="preserve">
+    <value>Aplicar</value>
+  </data>
+  <data name="btnResetSettings.Text" xml:space="preserve">
+    <value>Restaurar configurações...</value>
+  </data>
+  <data name="btnThemeAdd.Text" xml:space="preserve">
+    <value>Adicionar</value>
+  </data>
+  <data name="btnThemeRemove.Text" xml:space="preserve">
+    <value>Remover</value>
+  </data>
+  <data name="btnThemeReset.Text" xml:space="preserve">
+    <value>Restaurar...</value>
+  </data>
+  <data name="btnThumbnailViewThumbnailSizeReset.Text" xml:space="preserve">
+    <value>Restaurar</value>
+  </data>
+  <data name="cbAutomaticallyCleanupBackupFiles.Text" xml:space="preserve">
+    <value>Limpar automaticamente arquivos antigos de backup</value>
+  </data>
+  <data name="cbAutomaticallyCleanupLogFiles.Text" xml:space="preserve">
+    <value>Limpar automaticamente arquivos de registros antigos</value>
+  </data>
+  <data name="cbChromeExtensionSupport.Text" xml:space="preserve">
+    <value>Ativar suporte para extensão do Chrome</value>
+  </data>
+  <data name="cbEditWithShareX.Text" xml:space="preserve">
+    <value>Mostrar botão "Editar com ShareX" no menu de contexto do Windows Explorer</value>
+  </data>
+  <data name="cbExportHistory.Text" xml:space="preserve">
+    <value>Histórico</value>
+  </data>
+  <data name="cbExportSettings.Text" xml:space="preserve">
+    <value>Configurações</value>
+  </data>
+  <data name="cbFirefoxAddonSupport.Text" xml:space="preserve">
+    <value>Ativar suporte para extensão do Firefox</value>
+  </data>
+  <data name="cbListViewShowColumns.Text" xml:space="preserve">
+    <value>Mostrar colunas</value>
+  </data>
+  <data name="cbMainWindowShowMenu.Text" xml:space="preserve">
+    <value>Mostrar menu</value>
+  </data>
+  <data name="cbThumbnailViewShowTitle.Text" xml:space="preserve">
+    <value>Mostrar título</value>
+  </data>
+  <data name="cbUseCustomTheme.Text" xml:space="preserve">
+    <value>Usar tema customizado</value>
+  </data>
+  <data name="cbUseSecondaryUploaders.Text" xml:space="preserve">
+    <value>Utilizar a hospedagem secundária ao tentar novamente</value>
+  </data>
+  <data name="cbUseWhiteShareXIcon.Text" xml:space="preserve">
+    <value>Utilizar ícone branco do ShareX</value>
+  </data>
+  <data name="gbChrome.Text" xml:space="preserve">
+    <value>Extensão do Chrome</value>
+  </data>
+  <data name="gbFirefox.Text" xml:space="preserve">
+    <value>Extensão do Firefox</value>
+  </data>
+  <data name="gbSteam.Text" xml:space="preserve">
+    <value>Steam</value>
+  </data>
+  <data name="gbThumbnailView.Text" xml:space="preserve">
+    <value>Visualização da miniatura</value>
+  </data>
+  <data name="gbWindows.Text" xml:space="preserve">
+    <value>Windows</value>
+  </data>
+  <data name="lblCleanupKeepFileCount.Text" xml:space="preserve">
+    <value>Número de arquivos para manter:</value>
+  </data>
+  <data name="lblExportImportNote.Text" xml:space="preserve">
+    <value>Atenção! Não compartilhe o arquivo exportado pois pode conter informações pessoais como detalhe da conta e seu histórico de envios!</value>
+  </data>
+  <data name="lblListViewImagePreviewLocation.Text" xml:space="preserve">
+    <value>Local da pré-visualização de imagem:</value>
+  </data>
+  <data name="lblListViewImagePreviewVisibility.Text" xml:space="preserve">
+    <value>Visibilidade da pré-visualização de imagem:</value>
+  </data>
+  <data name="lblMainWindowTaskViewMode.Text" xml:space="preserve">
+    <value>Modo de visualização das tarefas:</value>
+  </data>
+  <data name="lblThumbnailViewThumbnailClickAction.Text" xml:space="preserve">
+    <value>Ação de click na miniatura:</value>
+  </data>
+  <data name="lblThumbnailViewThumbnailSize.Text" xml:space="preserve">
+    <value>Tamanho da miniatura:</value>
+  </data>
+  <data name="lblThumbnailViewTitleLocation.Text" xml:space="preserve">
+    <value>Local do título:</value>
+  </data>
+  <data name="tpMainWindow.Text" xml:space="preserve">
+    <value>Janela principal</value>
+  </data>
+  <data name="tpSettings.Text" xml:space="preserve">
+    <value>Configurações</value>
+  </data>
+  <data name="tpTheme.Text" xml:space="preserve">
+    <value>Tema</value>
+  </data>
+  <data name="tpClipboardFormats.Text" xml:space="preserve">
+    <value>Formatos da janela de transferência</value>
   </data>
 </root>
