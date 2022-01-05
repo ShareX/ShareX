@@ -356,7 +356,13 @@ namespace ShareX
                 {
                     if (!string.IsNullOrEmpty(filepath) && File.Exists(filepath))
                     {
-                        FileSystem.DeleteFile(filepath, UIOption.OnlyErrorDialogs, RecycleOption.SendToRecycleBin);
+                        try
+                        {
+                            FileSystem.DeleteFile(filepath, UIOption.OnlyErrorDialogs, RecycleOption.SendToRecycleBin);
+                        }
+                        catch
+                        {
+                        }
                     }
                 }
             }
