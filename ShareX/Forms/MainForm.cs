@@ -914,9 +914,8 @@ namespace ShareX
                             string actionFilePath = action.GetFullPath();
                             tsmi.Image = actionsMenuIconCache.GetFileIconAsImage(actionFilePath);
                         }
-                        catch (Exception e)
+                        catch
                         {
-                            DebugHelper.WriteException(e);
                         }
 
                         tsmi.Click += async (sender, e) => await action.RunAsync(filePath);

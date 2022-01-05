@@ -128,14 +128,14 @@ namespace ShareX.MediaLib
                 {
                     using (Image img = CombineScreenshots(tempThumbnails))
                     {
-                        string tempFilepath = Path.Combine(GetOutputDirectory(), Path.GetFileNameWithoutExtension(MediaPath) + Options.FilenameSuffix + "." + Options.ImageFormat.GetDescription());
-                        ImageHelpers.SaveImage(img, tempFilepath);
-                        thumbnails.Add(new VideoThumbnailInfo(tempFilepath));
+                        string tempFilePath = Path.Combine(GetOutputDirectory(), Path.GetFileNameWithoutExtension(MediaPath) + Options.FilenameSuffix + "." + Options.ImageFormat.GetDescription());
+                        ImageHelpers.SaveImage(img, tempFilePath);
+                        thumbnails.Add(new VideoThumbnailInfo(tempFilePath));
                     }
 
                     if (!Options.KeepScreenshots)
                     {
-                        tempThumbnails.ForEach(x => File.Delete(x.Filepath));
+                        tempThumbnails.ForEach(x => File.Delete(x.FilePath));
                     }
                 }
                 else
@@ -145,7 +145,7 @@ namespace ShareX.MediaLib
 
                 if (Options.OpenDirectory && thumbnails.Count > 0)
                 {
-                    Helpers.OpenFolderWithFile(thumbnails[0].Filepath);
+                    Helpers.OpenFolderWithFile(thumbnails[0].FilePath);
                 }
             }
 
@@ -219,7 +219,7 @@ namespace ShareX.MediaLib
 
                 foreach (VideoThumbnailInfo thumbnail in thumbnails)
                 {
-                    Bitmap bmp = ImageHelpers.LoadImage(thumbnail.Filepath);
+                    Bitmap bmp = ImageHelpers.LoadImage(thumbnail.FilePath);
 
                     if (Options.MaxThumbnailWidth > 0 && bmp.Width > Options.MaxThumbnailWidth)
                     {

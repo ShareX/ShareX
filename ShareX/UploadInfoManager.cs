@@ -23,7 +23,6 @@
 
 #endregion License Information (GPL v3)
 
-using Microsoft.VisualBasic.FileIO;
 using ShareX.HelpersLib;
 using ShareX.UploadersLib;
 using System.Collections.Generic;
@@ -352,12 +351,9 @@ namespace ShareX
         {
             if (IsItemSelected)
             {
-                foreach (string filepath in SelectedItems.Select(x => x.Info.FilePath))
+                foreach (string filePath in SelectedItems.Select(x => x.Info.FilePath))
                 {
-                    if (!string.IsNullOrEmpty(filepath) && File.Exists(filepath))
-                    {
-                        FileSystem.DeleteFile(filepath, UIOption.OnlyErrorDialogs, RecycleOption.SendToRecycleBin);
-                    }
+                    Helpers.SendFileToRecycleBin(filePath);
                 }
             }
         }
