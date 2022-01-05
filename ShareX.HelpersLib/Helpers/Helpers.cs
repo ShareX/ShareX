@@ -705,13 +705,13 @@ namespace ShareX.HelpersLib
             }
         }
 
-        public static void PlaySoundAsync(string filepath)
+        public static void PlaySoundAsync(string filePath)
         {
-            if (!string.IsNullOrEmpty(filepath) && File.Exists(filepath))
+            if (!string.IsNullOrEmpty(filePath) && File.Exists(filePath))
             {
                 Task.Run(() =>
                 {
-                    using (SoundPlayer soundPlayer = new SoundPlayer(filepath))
+                    using (SoundPlayer soundPlayer = new SoundPlayer(filePath))
                     {
                         soundPlayer.PlaySync();
                     }

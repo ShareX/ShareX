@@ -309,9 +309,9 @@ namespace ShareX
             }
         }
 
-        private static void CreateChromeHostManifest(string filepath)
+        private static void CreateChromeHostManifest(string filePath)
         {
-            Helpers.CreateDirectoryFromFilePath(filepath);
+            Helpers.CreateDirectoryFromFilePath(filePath);
 
             ChromeManifest manifest = new ChromeManifest()
             {
@@ -324,7 +324,7 @@ namespace ShareX
 
             string json = JsonConvert.SerializeObject(manifest, Formatting.Indented);
 
-            File.WriteAllText(filepath, json, Encoding.UTF8);
+            File.WriteAllText(filePath, json, Encoding.UTF8);
         }
 
         private static void RegisterChromeExtensionSupport()
@@ -379,9 +379,9 @@ namespace ShareX
             }
         }
 
-        private static void CreateFirefoxHostManifest(string filepath)
+        private static void CreateFirefoxHostManifest(string filePath)
         {
-            Helpers.CreateDirectoryFromFilePath(filepath);
+            Helpers.CreateDirectoryFromFilePath(filePath);
 
             FirefoxManifest manifest = new FirefoxManifest()
             {
@@ -394,7 +394,7 @@ namespace ShareX
 
             string json = JsonConvert.SerializeObject(manifest, Formatting.Indented);
 
-            File.WriteAllText(filepath, json, Encoding.UTF8);
+            File.WriteAllText(filePath, json, Encoding.UTF8);
         }
 
         private static void RegisterFirefoxAddonSupport()

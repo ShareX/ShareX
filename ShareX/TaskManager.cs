@@ -167,8 +167,8 @@ namespace ShareX
         {
             TaskInfo info = task.Info;
 
-            string status = string.Format("Upload started. Filename: {0}", info.FileName);
-            if (!string.IsNullOrEmpty(info.FilePath)) status += ", Filepath: " + info.FilePath;
+            string status = string.Format("Upload started. File name: {0}", info.FileName);
+            if (!string.IsNullOrEmpty(info.FilePath)) status += ", File path: " + info.FilePath;
             DebugHelper.WriteLine(status);
 
             ListViewItem lvi = TaskListView.FindItem(task);
@@ -289,7 +289,7 @@ namespace ShareX
 
                         if (task.Status == TaskStatus.Stopped)
                         {
-                            DebugHelper.WriteLine($"Task stopped. Filename: {info.FileName}");
+                            DebugHelper.WriteLine($"Task stopped. File name: {info.FileName}");
 
                             if (lvi != null)
                             {
@@ -302,7 +302,7 @@ namespace ShareX
                         {
                             string errors = string.Join("\r\n\r\n", info.Result.Errors.ToArray());
 
-                            DebugHelper.WriteLine($"Task failed. Filename: {info.FileName}, Errors:\r\n{errors}");
+                            DebugHelper.WriteLine($"Task failed. File name: {info.FileName}, Errors:\r\n{errors}");
 
                             if (lvi != null)
                             {
@@ -332,7 +332,7 @@ namespace ShareX
                         }
                         else
                         {
-                            DebugHelper.WriteLine($"Task completed. Filename: {info.FileName}, Duration: {(long)info.TaskDuration.TotalMilliseconds} ms");
+                            DebugHelper.WriteLine($"Task completed. File name: {info.FileName}, Duration: {(long)info.TaskDuration.TotalMilliseconds} ms");
 
                             string result = info.ToString();
 

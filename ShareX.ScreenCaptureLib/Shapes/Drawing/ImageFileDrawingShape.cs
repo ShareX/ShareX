@@ -60,9 +60,9 @@ namespace ShareX.ScreenCaptureLib
         {
             Manager.IsMoving = false;
             Manager.Form.Pause();
-            string filepath = ImageHelpers.OpenImageFileDialog(Manager.Form);
+            string filePath = ImageHelpers.OpenImageFileDialog(Manager.Form);
             Manager.Form.Resume();
-            return LoadImageFile(filepath, centerImage);
+            return LoadImageFile(filePath, centerImage);
         }
 
         private bool LoadImageFile(string filePath, bool centerImage)

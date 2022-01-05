@@ -30,17 +30,17 @@ namespace ShareX.MediaLib
 {
     public class VideoThumbnailInfo
     {
-        public string Filepath { get; set; }
+        public string FilePath { get; set; }
         public TimeSpan Timestamp { get; set; }
 
-        public VideoThumbnailInfo(string filepath)
+        public VideoThumbnailInfo(string filePath)
         {
-            Filepath = filepath;
+            FilePath = filePath;
         }
 
         public override string ToString()
         {
-            return Path.GetFileName(Filepath);
+            return Path.GetFileName(FilePath);
         }
     }
 }

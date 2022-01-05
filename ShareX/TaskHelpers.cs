@@ -598,33 +598,33 @@ namespace ShareX
 
         public static string HandleExistsFile(string folder, string fileName, TaskSettings taskSettings)
         {
-            string filepath = Path.Combine(folder, fileName);
-            return HandleExistsFile(filepath, taskSettings);
+            string filePath = Path.Combine(folder, fileName);
+            return HandleExistsFile(filePath, taskSettings);
         }
 
-        public static string HandleExistsFile(string filepath, TaskSettings taskSettings)
+        public static string HandleExistsFile(string filePath, TaskSettings taskSettings)
         {
-            if (File.Exists(filepath))
+            if (File.Exists(filePath))
             {
                 switch (taskSettings.ImageSettings.FileExistAction)
                 {
                     case FileExistAction.Ask:
-                        using (FileExistForm form = new FileExistForm(filepath))
+                        using (FileExistForm form = new FileExistForm(filePath))
                         {
                             form.ShowDialog();
-                            filepath = form.FilePath;
+                            filePath = form.FilePath;
                         }
                         break;
                     case FileExistAction.UniqueName:
-                        filepath = Helpers.GetUniqueFilePath(filepath);
+                        filePath = Helpers.GetUniqueFilePath(filePath);
                         break;
                     case FileExistAction.Cancel:
-                        filepath = "";
+                        filePath = "";
                         break;
                 }
             }
 
-            return filepath;
+            return filePath;
         }
 
         public static void OpenDropWindow(TaskSettings taskSettings = null)
@@ -853,7 +853,7 @@ namespace ShareX
                 {
                     foreach (VideoThumbnailInfo thumbnailInfo in thumbnails)
                     {
-                        UploadManager.UploadFile(thumbnailInfo.Filepath, taskSettings);
+                        UploadManager.UploadFile(thumbnailInfo.FilePath, taskSettings);
                     }
                 }
             };

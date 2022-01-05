@@ -1916,11 +1916,11 @@ namespace ShareX.HelpersLib
 
         public static Bitmap LoadImageWithFileDialog()
         {
-            string filepath = OpenImageFileDialog();
+            string filePath = OpenImageFileDialog();
 
-            if (!string.IsNullOrEmpty(filepath))
+            if (!string.IsNullOrEmpty(filePath))
             {
-                return LoadImage(filepath);
+                return LoadImage(filePath);
             }
 
             return null;
