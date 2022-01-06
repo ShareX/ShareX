@@ -92,6 +92,14 @@ namespace ShareX
             }
         }
 
+        public static void CloseActiveForm()
+        {
+            if (instance != null && !instance.IsDisposed)
+            {
+                instance.Close();
+            }
+        }
+
         public void LoadConfig(NotificationFormConfig config)
         {
             Config?.Dispose();

@@ -45,6 +45,8 @@ namespace ShareX
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
+            NotificationForm.CloseActiveForm();
+
             if (taskSettings.CaptureSettings.ScreenshotDelay > 0)
             {
                 int delay = (int)(taskSettings.CaptureSettings.ScreenshotDelay * 1000);
