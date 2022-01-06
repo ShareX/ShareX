@@ -31,52 +31,10 @@ using System.Windows.Forms;
 
 namespace ShareX
 {
-    public class NotificationFormConfig : IDisposable
-    {
-        public int Duration { get; set; }
-        public int FadeDuration { get; set; }
-        public ContentAlignment Placement { get; set; }
-        public int Offset { get; set; } = 5;
-        public Size Size { get; set; }
-        public bool IsValid => (Duration > 0 || FadeDuration > 0) && Size.Width > 0 && Size.Height > 0;
-        public Color BackgroundColor { get; set; } = Color.FromArgb(50, 50, 50);
-        public Color BorderColor { get; set; } = Color.FromArgb(40, 40, 40);
-        public int TextPadding { get; set; } = 10;
-        public Font TextFont { get; set; } = new Font("Arial", 11);
-        public Color TextColor { get; set; } = Color.FromArgb(210, 210, 210);
-        public Font TitleFont { get; set; } = new Font("Arial", 11, FontStyle.Bold);
-        public Color TitleColor { get; set; } = Color.FromArgb(240, 240, 240);
-
-        public Bitmap Image { get; set; }
-        public string Title { get; set; }
-        public string Text { get; set; }
-        public string FilePath { get; set; }
-        public string URL { get; set; }
-        public ToastClickAction LeftClickAction { get; set; }
-        public ToastClickAction RightClickAction { get; set; }
-        public ToastClickAction MiddleClickAction { get; set; }
-
-        public void Dispose()
-        {
-            if (TextFont != null)
-            {
-                TextFont.Dispose();
-            }
-
-            if (TitleFont != null)
-            {
-                TitleFont.Dispose();
-            }
-
-            if (Image != null)
-            {
-                Image.Dispose();
-            }
-        }
-    }
-
     public class NotificationForm : Form
     {
+        private static NotificationForm instance;
+
         public NotificationFormConfig Config { get; private set; }
 
         private bool isMouseInside;
@@ -101,11 +59,42 @@ namespace ShareX
             }
         }
 
-        private NotificationForm(NotificationFormConfig config)
+        private NotificationForm()
         {
             InitializeComponent();
             Icon = ShareXResources.Icon;
             SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.UserPaint | ControlStyles.AllPaintingInWmPaint, true);
+        }
+
+        public static void Show(NotificationFormConfig config)
+        {
+            if (config.IsValid)
+            {
+                if (config.Image == null)
+                {
+                    config.Image = ImageHelpers.LoadImage(config.FilePath);
+                }
+
+                if (config.Image != null || !string.IsNullOrEmpty(config.Text))
+                {
+                    if (instance == null || instance.IsDisposed)
+                    {
+                        instance = new NotificationForm();
+                        instance.LoadConfig(config);
+
+                        NativeMethods.ShowWindow(instance.Handle, (int)WindowShowStyle.ShowNoActivate);
+                    }
+                    else
+                    {
+                        instance.LoadConfig(config);
+                    }
+                }
+            }
+        }
+
+        public void LoadConfig(NotificationFormConfig config)
+        {
+            Config?.Dispose();
 
             Config = config;
             opacityDecrement = (float)fadeInterval / Config.FadeDuration;
@@ -138,6 +127,11 @@ namespace ShareX
             NativeMethods.SetWindowPos(Handle, (IntPtr)SpecialWindowHandles.HWND_TOPMOST, position.X + Screen.PrimaryScreen.WorkingArea.X,
                 position.Y + Screen.PrimaryScreen.WorkingArea.Y, Config.Size.Width, Config.Size.Height, SetWindowPosFlags.SWP_NOACTIVATE);
 
+            tDuration.Stop();
+            tOpacity.Stop();
+            Refresh();
+            Opacity = 1;
+
             if (Config.Duration <= 0)
             {
                 DurationEnd();
@@ -146,23 +140,6 @@ namespace ShareX
             {
                 tDuration.Interval = Config.Duration;
                 tDuration.Start();
-            }
-        }
-
-        public static void Show(NotificationFormConfig config)
-        {
-            if (config.IsValid)
-            {
-                if (config.Image == null)
-                {
-                    config.Image = ImageHelpers.LoadImage(config.FilePath);
-                }
-
-                if (config.Image != null || !string.IsNullOrEmpty(config.Text))
-                {
-                    NotificationForm form = new NotificationForm(config);
-                    NativeMethods.ShowWindow(form.Handle, (int)WindowShowStyle.ShowNoActivate);
-                }
             }
         }
 
@@ -376,10 +353,8 @@ namespace ShareX
 
         private void NotificationForm_MouseMove(object sender, MouseEventArgs e)
         {
-            // We add a threshold before triggering the drag-drop operation in order to fix MouseClick
             if (isMouseDragging)
             {
-                // The radius around the mouse, until a drag-drop operation gets triggered
                 int dragThreshold = 20;
 
                 Rectangle dragThresholdRectangle = new Rectangle(dragStart.X - dragThreshold, dragStart.Y - dragThreshold, dragThreshold * 2, dragThreshold * 2);
