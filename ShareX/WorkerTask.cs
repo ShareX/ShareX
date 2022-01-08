@@ -370,14 +370,30 @@ namespace ShareX
 
         private void DoUploadJob()
         {
-            if (Program.Settings.ShowUploadWarning && !FirstTimeUploadForm.ShowForm())
+            if (Program.Settings.ShowUploadWarning)
             {
+                bool disableUpload = !FirstTimeUploadForm.ShowForm();
+
                 Program.Settings.ShowUploadWarning = false;
-                Program.DefaultTaskSettings.AfterCaptureJob = Program.DefaultTaskSettings.AfterCaptureJob.Remove(AfterCaptureTasks.UploadImageToHost);
-                Info.TaskSettings.AfterCaptureJob = Info.TaskSettings.AfterCaptureJob.Remove(AfterCaptureTasks.UploadImageToHost);
-                Info.Result.IsURLExpected = false;
-                RequestSettingUpdate = true;
-                return;
+
+                if (disableUpload)
+                {
+                    Program.DefaultTaskSettings.AfterCaptureJob = Program.DefaultTaskSettings.AfterCaptureJob.Remove(AfterCaptureTasks.UploadImageToHost);
+
+                    foreach (HotkeySettings hotkeySettings in Program.HotkeysConfig.Hotkeys)
+                    {
+                        if (hotkeySettings.TaskSettings != null)
+                        {
+                            hotkeySettings.TaskSettings.AfterCaptureJob = hotkeySettings.TaskSettings.AfterCaptureJob.Remove(AfterCaptureTasks.UploadImageToHost);
+                        }
+                    }
+
+                    Info.TaskSettings.AfterCaptureJob = Info.TaskSettings.AfterCaptureJob.Remove(AfterCaptureTasks.UploadImageToHost);
+                    Info.Result.IsURLExpected = false;
+                    RequestSettingUpdate = true;
+
+                    return;
+                }
             }
 
             if (Program.Settings.ShowLargeFileSizeWarning > 0)
@@ -397,8 +413,6 @@ namespace ShareX
 
             if (!StopRequested)
             {
-                Program.Settings.ShowUploadWarning = false;
-
                 SettingManager.WaitUploadersConfig();
 
                 Status = TaskStatus.Working;
