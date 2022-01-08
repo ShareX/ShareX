@@ -184,7 +184,7 @@ namespace ShareX.MediaLib
             VideoInfo videoInfo = new VideoInfo();
             videoInfo.FilePath = videoPath;
 
-            Run($"-i \"{videoPath}\" -hide_banner");
+            Run($"-hide_banner -i \"{videoPath}\"");
             string output = Output.ToString();
 
             Match matchInput = Regex.Match(output, @"Duration: (?<Duration>\d{2}:\d{2}:\d{2}\.\d{2}),.+?start: (?<Start>\d+\.\d+),.+?bitrate: (?<Bitrate>\d+) kb/s",
@@ -226,7 +226,7 @@ namespace ShareX.MediaLib
         {
             DirectShowDevices devices = new DirectShowDevices();
 
-            Run("-list_devices true -f dshow -i dummy");
+            Run("-hide_banner -list_devices true -f dshow -i dummy");
 
             string output = Output.ToString();
             string[] lines = output.Lines();
