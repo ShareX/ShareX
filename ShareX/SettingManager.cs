@@ -161,7 +161,7 @@ namespace ShareX
 
             if (e is UnauthorizedAccessException || e is FileNotFoundException)
             {
-                message = Resources.YourAntiVirusSoftwareOrTheControlledFolderAccessFeatureInWindows10CouldBeBlockingShareX;
+                message = Resources.YourAntiVirusSoftwareOrTheControlledFolderAccessFeatureInWindowsCouldBeBlockingShareX;
             }
             else
             {
