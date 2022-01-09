@@ -1887,7 +1887,10 @@ namespace ShareX
                 Text = text
             };
 
-            NotificationForm.Show(toastConfig);
+            Program.MainForm.InvokeSafe(() =>
+            {
+                NotificationForm.Show(toastConfig);
+            });
         }
 
         public static void ToggleTrayMenu()
