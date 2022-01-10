@@ -64,7 +64,7 @@ namespace ShareX
 
         public void Dispose()
         {
-            ImageStream.Dispose();
+            ImageStream?.Dispose();
         }
     }
 }
