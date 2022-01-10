@@ -503,7 +503,7 @@ namespace ShareX
                         sb.AppendLine();
                         sb.Append(e);
 
-                        MessageBox.Show(sb.ToString(), "ShareX - " + Resources.Program_Run_Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show(sb.ToString(), "ShareX - " + Resources.Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
                         CustomPersonalPath = "";
                     }
                 }

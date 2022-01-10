@@ -1311,6 +1311,15 @@ namespace ShareX.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Error.
+        /// </summary>
+        public static string Error {
+            get {
+                return ResourceManager.GetString("Error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
         /// </summary>
         public static System.IO.UnmanagedMemoryStream ErrorSound {
@@ -1760,11 +1769,11 @@ namespace ShareX.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Could not write image to path {0}..
+        ///   Looks up a localized string similar to Could not write image to path:.
         /// </summary>
-        public static string ImageData_Write_Error {
+        public static string ImageData_Write_Error_Message {
             get {
-                return ResourceManager.GetString("ImageData_Write_Error", resourceCulture);
+                return ResourceManager.GetString("ImageData_Write_Error_Message", resourceCulture);
             }
         }
         
@@ -2243,15 +2252,6 @@ namespace ShareX.Properties {
             get {
                 object obj = ResourceManager.GetObject("printer", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Error.
-        /// </summary>
-        public static string Program_Run_Error {
-            get {
-                return ResourceManager.GetString("Program_Run_Error", resourceCulture);
             }
         }
         

@@ -48,7 +48,15 @@ namespace ShareX
             catch (Exception e)
             {
                 DebugHelper.WriteException(e);
-                MessageBox.Show(string.Format(Resources.ImageData_Write_Error + "\r\n\r\n" + e, filePath), "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                string message = $"{Resources.ImageData_Write_Error_Message}\r\n\"{filePath}\"";
+
+                if (e is UnauthorizedAccessException || e is FileNotFoundException)
+                {
+                    message += "\r\n\r\n" + Resources.YourAntiVirusSoftwareOrTheControlledFolderAccessFeatureInWindowsCouldBeBlockingShareX;
+                }
+
+                MessageBox.Show(message, "ShareX - " + Resources.Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             return false;
