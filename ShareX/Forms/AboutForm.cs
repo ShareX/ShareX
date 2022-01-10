@@ -51,8 +51,7 @@ namespace ShareX
             lblBuild.Text = "Microsoft Store build";
             lblBuild.Visible = true;
 #else
-
-            if (!SystemOptions.DisableUpdateCheck && !Program.PortableApps)
+            if (!SystemOptions.DisableUpdateCheck)
             {
                 uclUpdate.UpdateLoadingImage();
 

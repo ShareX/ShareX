@@ -40,14 +40,13 @@ namespace ShareX.Setup
             CreateSetup = 1,
             CreatePortable = 1 << 1,
             CreateSteamFolder = 1 << 2,
-            CreatePortableAppsFolder = 1 << 3,
-            OpenOutputDirectory = 1 << 4,
-            UploadOutputFile = 1 << 5,
-            CreateWindowsStoreFolder = 1 << 6,
-            CreateWindowsStoreDebugFolder = 1 << 7,
-            CompileAppx = 1 << 8,
-            DownloadFFmpeg = 1 << 9,
-            CreateChecksumFile = 1 << 10,
+            OpenOutputDirectory = 1 << 3,
+            UploadOutputFile = 1 << 4,
+            CreateWindowsStoreFolder = 1 << 5,
+            CreateWindowsStoreDebugFolder = 1 << 6,
+            CompileAppx = 1 << 7,
+            DownloadFFmpeg = 1 << 8,
+            CreateChecksumFile = 1 << 9,
 
             Stable = CreateSetup | CreatePortable | CreateChecksumFile | OpenOutputDirectory,
             Setup = CreateSetup | OpenOutputDirectory,
@@ -55,7 +54,6 @@ namespace ShareX.Setup
             Steam = CreateSteamFolder | OpenOutputDirectory,
             WindowsStore = CreateWindowsStoreFolder,
             WindowsStoreDebug = CreateWindowsStoreDebugFolder,
-            PortableApps = CreatePortableAppsFolder | OpenOutputDirectory,
             Beta = CreateSetup | UploadOutputFile,
             AppVeyorRelease = CreateSetup | CreatePortable | CreateChecksumFile,
             AppVeyorSteam = CreateSteamFolder,
@@ -85,7 +83,6 @@ namespace ShareX.Setup
         private static string SetupDir => Path.Combine(ParentDir, "ShareX.Setup");
         private static string InnoSetupDir => Path.Combine(SetupDir, "InnoSetup");
         private static string WindowsStorePackageFilesDir => Path.Combine(SetupDir, "WindowsStore");
-        private static string PortableAppsOutputDir => Path.Combine(ParentDir, @"..\PortableApps\ShareXPortable\App\ShareX");
 
         private static string SteamLauncherDir => Path.Combine(ParentDir, @"ShareX.Steam\bin\Release");
         private static string SteamUpdatesDir => Path.Combine(SteamOutputDir, "Updates");
@@ -192,11 +189,6 @@ namespace ShareX.Setup
                 }
 
                 Directory.Delete(WindowsStoreOutputDir, true);
-            }
-
-            if (Job.HasFlag(SetupJobs.CreatePortableAppsFolder))
-            {
-                CreateFolder(ReleaseDir, PortableAppsOutputDir, SetupJobs.CreatePortableAppsFolder);
             }
 
             if (Job.HasFlag(SetupJobs.CreateChecksumFile))
@@ -324,11 +316,7 @@ namespace ShareX.Setup
 
             Helpers.CopyAll(Path.Combine(ParentDir, @"ShareX.ScreenCaptureLib\Stickers"), Path.Combine(destination, "Stickers"));
 
-            if (job == SetupJobs.CreatePortableAppsFolder)
-            {
-                Helpers.CreateEmptyFile(Path.Combine(destination, "PortableApps"));
-            }
-            else if (job == SetupJobs.CreateWindowsStoreFolder || job == SetupJobs.CreateWindowsStoreDebugFolder)
+            if (job == SetupJobs.CreateWindowsStoreFolder || job == SetupJobs.CreateWindowsStoreDebugFolder)
             {
                 Helpers.CopyAll(WindowsStorePackageFilesDir, destination);
             }

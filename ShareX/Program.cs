@@ -111,7 +111,6 @@ namespace ShareX
         public static bool Dev { get; } = true;
         public static bool MultiInstance { get; private set; }
         public static bool Portable { get; private set; }
-        public static bool PortableApps { get; private set; }
         public static bool SilentRun { get; private set; }
         public static bool Sandbox { get; private set; }
         public static bool IsAdmin { get; private set; }
@@ -137,7 +136,6 @@ namespace ShareX
 
         public static readonly string DefaultPersonalFolder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), Name);
         public static readonly string PortablePersonalFolder = Helpers.GetAbsolutePath(Name);
-        public static readonly string PortableAppsPersonalFolder = Helpers.GetAbsolutePath(@"..\..\Data");
 
         private static string PersonalPathConfigFilePath
         {
@@ -160,7 +158,6 @@ namespace ShareX
             Name, PersonalPathConfigFileName);
 
         private static readonly string PortableCheckFilePath = Helpers.GetAbsolutePath("Portable");
-        private static readonly string PortableAppsCheckFilePath = Helpers.GetAbsolutePath("PortableApps");
         public static readonly string NativeMessagingHostFilePath = Helpers.GetAbsolutePath("ShareX_NativeMessagingHost.exe");
         public static readonly string SteamInAppFilePath = Helpers.GetAbsolutePath("Steam");
 
@@ -456,12 +453,6 @@ namespace ShareX
                     CustomPersonalPath = PortablePersonalFolder;
                     PersonalPathDetectionMethod = $"Portable file ({PortableCheckFilePath})";
                 }
-                else if (File.Exists(PortableAppsCheckFilePath))
-                {
-                    Portable = PortableApps = true;
-                    CustomPersonalPath = PortableAppsPersonalFolder;
-                    PersonalPathDetectionMethod = $"PortableApps file ({PortableAppsCheckFilePath})";
-                }
                 else if (!string.IsNullOrEmpty(SystemOptions.PersonalPath))
                 {
                     CustomPersonalPath = SystemOptions.PersonalPath;
@@ -679,7 +670,6 @@ namespace ShareX
             if (Dev) flags.Add(nameof(Dev));
             if (MultiInstance) flags.Add(nameof(MultiInstance));
             if (Portable) flags.Add(nameof(Portable));
-            if (PortableApps) flags.Add(nameof(PortableApps));
             if (SilentRun) flags.Add(nameof(SilentRun));
             if (Sandbox) flags.Add(nameof(Sandbox));
             if (SteamFirstTimeConfig) flags.Add(nameof(SteamFirstTimeConfig));

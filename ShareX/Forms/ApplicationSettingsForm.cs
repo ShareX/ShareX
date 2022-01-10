@@ -338,11 +338,7 @@ namespace ShareX
 
                 if (string.IsNullOrEmpty(personalPath))
                 {
-                    if (Program.PortableApps)
-                    {
-                        personalPath = Program.PortableAppsPersonalFolder;
-                    }
-                    else if (Program.Portable)
+                    if (Program.Portable)
                     {
                         personalPath = Program.PortablePersonalFolder;
                     }
