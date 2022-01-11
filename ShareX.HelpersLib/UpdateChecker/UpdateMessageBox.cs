@@ -30,7 +30,7 @@ using System.Windows.Forms;
 
 namespace ShareX.HelpersLib
 {
-    public partial class UpdateMessageBox : BlackStyleForm
+    public partial class UpdateMessageBox : Form
     {
         public static bool IsOpen { get; private set; }
         public static bool DontShow { get; private set; }
@@ -42,7 +42,9 @@ namespace ShareX.HelpersLib
         public UpdateMessageBox(bool activateWindow, UpdateChecker updateChecker)
         {
             ActivateWindow = activateWindow;
+
             InitializeComponent();
+            ShareXResources.ApplyTheme(this);
 
             if (!ActivateWindow)
             {
