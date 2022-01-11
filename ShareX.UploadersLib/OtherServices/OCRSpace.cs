@@ -97,19 +97,30 @@ namespace ShareX.UploadersLib.OtherServices
         public string APIKey { get; set; }
         public OCRSpaceLanguages Language { get; set; } = OCRSpaceLanguages.eng;
         public bool Overlay { get; set; }
+        public bool UseOCREngine2 { get; set; }
 
-        public OCRSpace(string apiKey, OCRSpaceLanguages language = OCRSpaceLanguages.eng, bool overlay = false)
+        public OCRSpace(string apiKey, OCRSpaceLanguages language = OCRSpaceLanguages.eng, bool overlay = false, bool useOCREngine2 = false)
         {
             APIKey = apiKey;
             Language = language;
             Overlay = overlay;
+            UseOCREngine2 = useOCREngine2;
         }
 
         public OCRSpaceResponse DoOCR(Stream stream, string fileName)
         {
             Dictionary<string, string> arguments = new Dictionary<string, string>();
             arguments.Add("apikey", APIKey);
-            arguments.Add("language", Language.ToString());
+
+            if (UseOCREngine2)
+            {
+                arguments.Add("OCREngine", "2");
+            }
+            else
+            {
+                arguments.Add("language", Language.ToString());
+            }
+
             arguments.Add("isOverlayRequired", Overlay.ToString());
 
             UploadResult ur = SendRequestFile(APIURLUSA, stream, fileName, "file", arguments);
@@ -133,12 +144,19 @@ namespace ShareX.UploadersLib.OtherServices
 
             try
             {
-                OCRSpace ocr = new OCRSpace(APIKeys.OCRSpaceAPIKey, language);
+                bool useOCREngine2 = language.HasFlagAny(OCRSpaceLanguages.eng, OCRSpaceLanguages.ger, OCRSpaceLanguages.fre);
+
+                OCRSpace ocr = new OCRSpace(APIKeys.OCRSpaceAPIKey, language, false, useOCREngine2);
                 OCRSpaceResponse response = ocr.DoOCR(stream, fileName);
 
                 if (response != null && !response.IsErroredOnProcessing && response.ParsedResults.Count > 0)
                 {
                     result = response.ParsedResults[0].ParsedText;
+
+                    if (!string.IsNullOrEmpty(result))
+                    {
+                        result = result.ReplaceNewLines();
+                    }
                 }
             }
             catch (Exception e)

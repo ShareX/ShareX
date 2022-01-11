@@ -27,6 +27,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 
 namespace ShareX.HelpersLib
 {
@@ -283,6 +284,11 @@ namespace ShareX.HelpersLib
         public static string[] Lines(this string text)
         {
             return text.Split(new string[] { "\r\n", "\n" }, StringSplitOptions.None);
+        }
+
+        public static string ReplaceNewLines(this string text, string replacement = "\r\n")
+        {
+            return Regex.Replace(text, @"\r\n?|\n", replacement);
         }
 
         public static IEnumerable<Tuple<string, string>> ForEachBetween(this string text, string front, string back)
