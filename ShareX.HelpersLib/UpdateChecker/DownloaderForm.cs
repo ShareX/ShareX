@@ -34,7 +34,7 @@ using System.Windows.Forms;
 
 namespace ShareX.HelpersLib
 {
-    public partial class DownloaderForm : BlackStyleForm
+    public partial class DownloaderForm : Form
     {
         public delegate void DownloaderInstallEventHandler(string filePath);
         public event DownloaderInstallEventHandler InstallRequested;
@@ -55,6 +55,7 @@ namespace ShareX.HelpersLib
         private DownloaderForm()
         {
             InitializeComponent();
+            ShareXResources.ApplyTheme(this);
 
             ChangeStatus(Resources.DownloaderForm_DownloaderForm_Waiting_);
             Status = DownloaderFormStatus.Waiting;

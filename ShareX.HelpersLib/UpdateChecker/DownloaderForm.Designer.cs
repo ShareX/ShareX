@@ -29,58 +29,45 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DownloaderForm));
-            this.lblProgress = new ShareX.HelpersLib.BlackStyleLabel();
-            this.lblStatus = new ShareX.HelpersLib.BlackStyleLabel();
-            this.lblFilename = new ShareX.HelpersLib.BlackStyleLabel();
-            this.btnAction = new ShareX.HelpersLib.BlackStyleButton();
+            this.lblProgress = new System.Windows.Forms.Label();
+            this.lblStatus = new System.Windows.Forms.Label();
+            this.lblFilename = new System.Windows.Forms.Label();
+            this.btnAction = new System.Windows.Forms.Button();
             this.pbProgress = new ShareX.HelpersLib.BlackStyleProgressBar();
             this.SuspendLayout();
             // 
             // lblProgress
             // 
-            this.lblProgress.BackColor = System.Drawing.Color.Transparent;
             resources.ApplyResources(this.lblProgress, "lblProgress");
-            this.lblProgress.ForeColor = System.Drawing.Color.White;
             this.lblProgress.Name = "lblProgress";
             // 
             // lblStatus
             // 
-            this.lblStatus.BackColor = System.Drawing.Color.Transparent;
             resources.ApplyResources(this.lblStatus, "lblStatus");
-            this.lblStatus.ForeColor = System.Drawing.Color.White;
             this.lblStatus.Name = "lblStatus";
             // 
             // lblFilename
             // 
-            this.lblFilename.BackColor = System.Drawing.Color.Transparent;
             resources.ApplyResources(this.lblFilename, "lblFilename");
-            this.lblFilename.ForeColor = System.Drawing.Color.White;
             this.lblFilename.Name = "lblFilename";
             // 
             // btnAction
             // 
-            this.btnAction.BackColor = System.Drawing.Color.Transparent;
-            this.btnAction.Cursor = System.Windows.Forms.Cursors.Hand;
             resources.ApplyResources(this.btnAction, "btnAction");
-            this.btnAction.ForeColor = System.Drawing.Color.White;
             this.btnAction.Name = "btnAction";
+            this.btnAction.UseVisualStyleBackColor = true;
             this.btnAction.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnAction_MouseClick);
             // 
             // pbProgress
             // 
-            this.pbProgress.BackColor = System.Drawing.Color.Transparent;
             resources.ApplyResources(this.pbProgress, "pbProgress");
-            this.pbProgress.Maximum = 100;
-            this.pbProgress.Minimum = 0;
             this.pbProgress.Name = "pbProgress";
-            this.pbProgress.Value = 0;
             // 
             // DownloaderForm
             // 
             resources.ApplyResources(this, "$this");
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
+            this.BackColor = System.Drawing.SystemColors.Window;
             this.Controls.Add(this.lblProgress);
             this.Controls.Add(this.lblStatus);
             this.Controls.Add(this.lblFilename);
@@ -98,9 +85,9 @@
 
         #endregion
         private BlackStyleProgressBar pbProgress;
-        private BlackStyleButton btnAction;
-        private BlackStyleLabel lblFilename;
-        private BlackStyleLabel lblStatus;
-        private BlackStyleLabel lblProgress;
+        private System.Windows.Forms.Button btnAction;
+        private System.Windows.Forms.Label lblFilename;
+        private System.Windows.Forms.Label lblStatus;
+        private System.Windows.Forms.Label lblProgress;
     }
 }
