@@ -123,13 +123,13 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="cbRunStartup.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Arial, 8pt</value>
+    <value>Segoe UI, 9.75pt</value>
   </data>
   <data name="cbRunStartup.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 48</value>
+    <value>16, 56</value>
   </data>
   <data name="cbRunStartup.Size" type="System.Drawing.Size, System.Drawing">
-    <value>195, 18</value>
+    <value>221, 21</value>
   </data>
   <data name="cbRunStartup.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -147,19 +147,19 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;cbRunStartup.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>6</value>
   </data>
   <data name="cbShellContextMenuButton.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="cbShellContextMenuButton.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Arial, 8pt</value>
+    <value>Segoe UI, 9.75pt</value>
   </data>
   <data name="cbShellContextMenuButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 72</value>
+    <value>16, 80</value>
   </data>
   <data name="cbShellContextMenuButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>366, 18</value>
+    <value>435, 21</value>
   </data>
   <data name="cbShellContextMenuButton.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -177,19 +177,19 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;cbShellContextMenuButton.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>5</value>
   </data>
   <data name="cbSendToMenu.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="cbSendToMenu.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Arial, 8pt</value>
+    <value>Segoe UI, 9.75pt</value>
   </data>
   <data name="cbSendToMenu.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 96</value>
+    <value>16, 104</value>
   </data>
   <data name="cbSendToMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>182, 18</value>
+    <value>212, 21</value>
   </data>
   <data name="cbSendToMenu.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -207,19 +207,19 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;cbSendToMenu.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>4</value>
   </data>
   <data name="cbSteamInApp.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="cbSteamInApp.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Arial, 8pt</value>
+    <value>Segoe UI, 9.75pt</value>
   </data>
   <data name="cbSteamInApp.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 120</value>
+    <value>16, 128</value>
   </data>
   <data name="cbSteamInApp.Size" type="System.Drawing.Size, System.Drawing">
-    <value>248, 18</value>
+    <value>294, 21</value>
   </data>
   <data name="cbSteamInApp.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -237,34 +237,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;cbSteamInApp.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="pbLogo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>424, 14</value>
-  </data>
-  <data name="pbLogo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>128, 128</value>
-  </data>
-  <data name="pbLogo.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;pbLogo.Name" xml:space="preserve">
-    <value>pbLogo</value>
-  </data>
-  <data name="&gt;&gt;pbLogo.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pbLogo.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;pbLogo.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
   <data name="btnOK.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Arial, 9.75pt</value>
+    <value>Segoe UI, 9.75pt</value>
   </data>
   <data name="btnOK.Location" type="System.Drawing.Point, System.Drawing">
-    <value>424, 152</value>
+    <value>384, 200</value>
   </data>
   <data name="btnOK.Size" type="System.Drawing.Size, System.Drawing">
     <value>128, 32</value>
@@ -291,13 +270,13 @@
     <value>True</value>
   </data>
   <data name="lblNote.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Arial, 8.25pt</value>
+    <value>Segoe UI, 9.75pt</value>
   </data>
   <data name="lblNote.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 161</value>
+    <value>13, 160</value>
   </data>
   <data name="lblNote.Size" type="System.Drawing.Size, System.Drawing">
-    <value>342, 14</value>
+    <value>416, 17</value>
   </data>
   <data name="lblNote.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -324,13 +303,13 @@
     <value>True</value>
   </data>
   <data name="lblTitle.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Arial, 12pt</value>
+    <value>Segoe UI, 14.25pt, style=Bold</value>
   </data>
   <data name="lblTitle.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 14</value>
+    <value>13, 16</value>
   </data>
   <data name="lblTitle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>170, 18</value>
+    <value>220, 25</value>
   </data>
   <data name="lblTitle.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -357,7 +336,7 @@
     <value>96, 96</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>561, 194</value>
+    <value>526, 245</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">

@@ -204,7 +204,7 @@
     <value>Arial, 8pt</value>
   </data>
   <data name="cbDontShow.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 168</value>
+    <value>16, 166</value>
   </data>
   <data name="cbDontShow.Size" type="System.Drawing.Size, System.Drawing">
     <value>260, 18</value>

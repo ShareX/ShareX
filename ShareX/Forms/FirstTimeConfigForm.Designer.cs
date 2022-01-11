@@ -33,11 +33,9 @@
             this.cbShellContextMenuButton = new System.Windows.Forms.CheckBox();
             this.cbSendToMenu = new System.Windows.Forms.CheckBox();
             this.cbSteamInApp = new System.Windows.Forms.CheckBox();
-            this.pbLogo = new System.Windows.Forms.PictureBox();
             this.btnOK = new System.Windows.Forms.Button();
             this.lblNote = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // cbRunStartup
@@ -68,12 +66,6 @@
             this.cbSteamInApp.UseVisualStyleBackColor = false;
             this.cbSteamInApp.CheckedChanged += new System.EventHandler(this.cbSteamInApp_CheckedChanged);
             // 
-            // pbLogo
-            // 
-            resources.ApplyResources(this.pbLogo, "pbLogo");
-            this.pbLogo.Name = "pbLogo";
-            this.pbLogo.TabStop = false;
-            // 
             // btnOK
             // 
             resources.ApplyResources(this.btnOK, "btnOK");
@@ -97,7 +89,6 @@
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.lblNote);
             this.Controls.Add(this.btnOK);
-            this.Controls.Add(this.pbLogo);
             this.Controls.Add(this.cbSteamInApp);
             this.Controls.Add(this.cbSendToMenu);
             this.Controls.Add(this.cbShellContextMenuButton);
@@ -106,7 +97,6 @@
             this.MaximizeBox = false;
             this.Name = "FirstTimeConfigForm";
             this.TopMost = true;
-            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -118,7 +108,6 @@
         private System.Windows.Forms.CheckBox cbShellContextMenuButton;
         private System.Windows.Forms.CheckBox cbSendToMenu;
         private System.Windows.Forms.CheckBox cbSteamInApp;
-        private System.Windows.Forms.PictureBox pbLogo;
         private System.Windows.Forms.Button btnOK;
         private System.Windows.Forms.Label lblNote;
         private System.Windows.Forms.Label lblTitle;
