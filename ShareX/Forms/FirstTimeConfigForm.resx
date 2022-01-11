@@ -117,6 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="cbRunStartup.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="cbRunStartup.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 8pt</value>
@@ -125,11 +129,10 @@
     <value>10, 48</value>
   </data>
   <data name="cbRunStartup.Size" type="System.Drawing.Size, System.Drawing">
-    <value>406, 16</value>
+    <value>195, 18</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="cbRunStartup.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+    <value>2</value>
   </data>
   <data name="cbRunStartup.Text" xml:space="preserve">
     <value>Run ShareX when Windows starts</value>
@@ -138,13 +141,16 @@
     <value>cbRunStartup</value>
   </data>
   <data name="&gt;&gt;cbRunStartup.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.BlackStyleCheckBox, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;cbRunStartup.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
   <data name="&gt;&gt;cbRunStartup.ZOrder" xml:space="preserve">
     <value>7</value>
+  </data>
+  <data name="cbShellContextMenuButton.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="cbShellContextMenuButton.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 8pt</value>
@@ -153,10 +159,10 @@
     <value>10, 72</value>
   </data>
   <data name="cbShellContextMenuButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>406, 16</value>
+    <value>366, 18</value>
   </data>
   <data name="cbShellContextMenuButton.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="cbShellContextMenuButton.Text" xml:space="preserve">
     <value>Show "Upload with ShareX" button in Windows Explorer context menu</value>
@@ -165,13 +171,16 @@
     <value>cbShellContextMenuButton</value>
   </data>
   <data name="&gt;&gt;cbShellContextMenuButton.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.BlackStyleCheckBox, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;cbShellContextMenuButton.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
   <data name="&gt;&gt;cbShellContextMenuButton.ZOrder" xml:space="preserve">
     <value>6</value>
+  </data>
+  <data name="cbSendToMenu.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="cbSendToMenu.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 8pt</value>
@@ -180,10 +189,10 @@
     <value>10, 96</value>
   </data>
   <data name="cbSendToMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>406, 16</value>
+    <value>182, 18</value>
   </data>
   <data name="cbSendToMenu.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>4</value>
   </data>
   <data name="cbSendToMenu.Text" xml:space="preserve">
     <value>Show ShareX in "Send to" menu</value>
@@ -192,13 +201,16 @@
     <value>cbSendToMenu</value>
   </data>
   <data name="&gt;&gt;cbSendToMenu.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.BlackStyleCheckBox, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;cbSendToMenu.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
   <data name="&gt;&gt;cbSendToMenu.ZOrder" xml:space="preserve">
     <value>5</value>
+  </data>
+  <data name="cbSteamInApp.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="cbSteamInApp.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 8pt</value>
@@ -207,10 +219,10 @@
     <value>10, 120</value>
   </data>
   <data name="cbSteamInApp.Size" type="System.Drawing.Size, System.Drawing">
-    <value>406, 16</value>
+    <value>248, 18</value>
   </data>
   <data name="cbSteamInApp.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>5</value>
   </data>
   <data name="cbSteamInApp.Text" xml:space="preserve">
     <value>While ShareX is open, show "In-app" in Steam</value>
@@ -219,7 +231,7 @@
     <value>cbSteamInApp</value>
   </data>
   <data name="&gt;&gt;cbSteamInApp.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.BlackStyleCheckBox, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;cbSteamInApp.Parent" xml:space="preserve">
     <value>$this</value>
@@ -258,7 +270,7 @@
     <value>128, 32</value>
   </data>
   <data name="btnOK.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+    <value>0</value>
   </data>
   <data name="btnOK.Text" xml:space="preserve">
     <value>OK</value>
@@ -267,7 +279,7 @@
     <value>btnOK</value>
   </data>
   <data name="&gt;&gt;btnOK.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.BlackStyleButton, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;btnOK.Parent" xml:space="preserve">
     <value>$this</value>
@@ -275,32 +287,41 @@
   <data name="&gt;&gt;btnOK.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="lblNote.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
   <data name="lblNote.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 8.25pt</value>
   </data>
   <data name="lblNote.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 152</value>
+    <value>8, 161</value>
   </data>
   <data name="lblNote.Size" type="System.Drawing.Size, System.Drawing">
-    <value>408, 32</value>
+    <value>342, 14</value>
   </data>
   <data name="lblNote.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+    <value>6</value>
   </data>
   <data name="lblNote.Text" xml:space="preserve">
     <value>You can find these settings in "Application settings -&gt; Integration tab".</value>
+  </data>
+  <data name="lblNote.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
   </data>
   <data name="&gt;&gt;lblNote.Name" xml:space="preserve">
     <value>lblNote</value>
   </data>
   <data name="&gt;&gt;lblNote.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.BlackStyleLabel, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;lblNote.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblNote.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="lblTitle.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="lblTitle.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 12pt</value>
@@ -309,10 +330,10 @@
     <value>8, 14</value>
   </data>
   <data name="lblTitle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>403, 23</value>
+    <value>170, 18</value>
   </data>
   <data name="lblTitle.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
+    <value>1</value>
   </data>
   <data name="lblTitle.Text" xml:space="preserve">
     <value>ShareX first time config</value>
@@ -321,7 +342,7 @@
     <value>lblTitle</value>
   </data>
   <data name="&gt;&gt;lblTitle.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.BlackStyleLabel, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;lblTitle.Parent" xml:space="preserve">
     <value>$this</value>
@@ -333,7 +354,7 @@
     <value>True</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
+    <value>96, 96</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>561, 194</value>
@@ -344,11 +365,11 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>ShareX</value>
-  <comment>@Invariant</comment></data>
+  </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>FirstTimeConfigForm</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>ShareX.HelpersLib.BlackStyleForm, ShareX.HelpersLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>

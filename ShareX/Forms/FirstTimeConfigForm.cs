@@ -29,13 +29,15 @@ using System.Windows.Forms;
 
 namespace ShareX
 {
-    public partial class FirstTimeConfigForm : BlackStyleForm
+    public partial class FirstTimeConfigForm : Form
     {
         private bool loaded;
 
         public FirstTimeConfigForm()
         {
             InitializeComponent();
+            ShareXResources.ApplyTheme(this);
+
             pbLogo.Image = ImageHelpers.ResizeImage(ShareXResources.Logo, 128, 128);
 
             StartupState state = StartupManagerSingletonProvider.CurrentStartupManager.State;
