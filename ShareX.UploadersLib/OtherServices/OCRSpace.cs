@@ -144,9 +144,7 @@ namespace ShareX.UploadersLib.OtherServices
 
             try
             {
-                bool useOCREngine2 = language.HasFlagAny(OCRSpaceLanguages.eng, OCRSpaceLanguages.ger, OCRSpaceLanguages.fre);
-
-                OCRSpace ocr = new OCRSpace(APIKeys.OCRSpaceAPIKey, language, false, useOCREngine2);
+                OCRSpace ocr = new OCRSpace(APIKeys.OCRSpaceAPIKey, language, false, language == OCRSpaceLanguages.eng);
                 OCRSpaceResponse response = ocr.DoOCR(stream, fileName);
 
                 if (response != null && !response.IsErroredOnProcessing && response.ParsedResults.Count > 0)
