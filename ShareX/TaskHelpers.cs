@@ -1784,8 +1784,13 @@ namespace ShareX
                 Proxy = HelpersOptions.CurrentProxy.GetWebProxy(),
                 Branch = "develop"
             };
+
             updateChecker.CheckUpdate();
-            UpdateMessageBox.Start(updateChecker);
+
+            if (updateChecker.Status == UpdateStatus.UpdateAvailable)
+            {
+                updateChecker.DownloadUpdate();
+            }
         }
 
         public static Image CreateQRCode(string text, int width, int height)
