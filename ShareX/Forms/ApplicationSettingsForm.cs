@@ -448,12 +448,19 @@ namespace ShareX
             Program.Settings.CheckPreReleaseUpdates = cbCheckPreReleaseUpdates.Checked;
         }
 
-        private void btnCheckDevBuild_Click(object sender, EventArgs e)
+        private async void btnCheckDevBuild_Click(object sender, EventArgs e)
         {
+            btnCheckDevBuild.Enabled = false;
+
             if (MessageBox.Show(Resources.ApplicationSettingsForm_btnCheckDevBuild_Click_DevBuilds_Warning, "ShareX",
                 MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
-                TaskHelpers.DownloadAppVeyorBuild();
+                await TaskHelpers.DownloadAppVeyorBuild();
+            }
+
+            if (!IsDisposed)
+            {
+                btnCheckDevBuild.Enabled = true;
             }
         }
 

@@ -1775,7 +1775,7 @@ namespace ShareX
             }
         }
 
-        public static void DownloadAppVeyorBuild()
+        public static async Task DownloadAppVeyorBuild()
         {
             AppVeyorUpdateChecker updateChecker = new AppVeyorUpdateChecker()
             {
@@ -1785,7 +1785,7 @@ namespace ShareX
                 Branch = "develop"
             };
 
-            updateChecker.CheckUpdate();
+            await updateChecker.CheckUpdateAsync();
 
             if (updateChecker.Status == UpdateStatus.UpdateAvailable)
             {

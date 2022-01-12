@@ -34,6 +34,7 @@ namespace ShareX
     public partial class AboutForm : Form
     {
         private EasterEggAboutAnimation easterEgg;
+        private bool checkUpdate;
 
         public AboutForm()
         {
@@ -54,9 +55,7 @@ namespace ShareX
             if (!SystemOptions.DisableUpdateCheck)
             {
                 uclUpdate.UpdateLoadingImage();
-
-                UpdateChecker updateChecker = Program.UpdateManager.CreateUpdateChecker();
-                uclUpdate.CheckUpdate(updateChecker);
+                checkUpdate = true;
             }
             else
             {
@@ -119,9 +118,15 @@ Blob Emoji: http://blobs.gg
             easterEgg = new EasterEggAboutAnimation(cLogo, this);
         }
 
-        private void AboutForm_Shown(object sender, EventArgs e)
+        private async void AboutForm_Shown(object sender, EventArgs e)
         {
             this.ForceActivate();
+
+            if (checkUpdate)
+            {
+                UpdateChecker updateChecker = Program.UpdateManager.CreateUpdateChecker();
+                await uclUpdate.CheckUpdate(updateChecker);
+            }
         }
 
         private void pbLogo_MouseDown(object sender, MouseEventArgs e)

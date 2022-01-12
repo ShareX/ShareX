@@ -24,7 +24,7 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib.Properties;
-using System.Threading;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ShareX.HelpersLib
@@ -40,7 +40,7 @@ namespace ShareX.HelpersLib
             InitializeComponent();
         }
 
-        public void CheckUpdate(UpdateChecker updateChecker)
+        public async Task CheckUpdate(UpdateChecker updateChecker)
         {
             if (!IsBusy)
             {
@@ -54,9 +54,7 @@ namespace ShareX.HelpersLib
                 pbLoading.Visible = true;
                 lblCheckingUpdates.Visible = true;
 
-                Thread thread = new Thread(CheckingUpdate);
-                thread.IsBackground = true;
-                thread.Start();
+                await CheckingUpdate();
             }
         }
 
@@ -72,9 +70,9 @@ namespace ShareX.HelpersLib
             }
         }
 
-        private void CheckingUpdate()
+        private async Task CheckingUpdate()
         {
-            updateChecker.CheckUpdate();
+            await updateChecker.CheckUpdateAsync();
 
             try
             {

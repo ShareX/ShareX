@@ -25,6 +25,7 @@
 
 using System;
 using System.Net;
+using System.Threading.Tasks;
 using System.Web;
 using System.Windows.Forms;
 
@@ -83,6 +84,11 @@ namespace ShareX.HelpersLib
         }
 
         public abstract void CheckUpdate();
+
+        public Task CheckUpdateAsync()
+        {
+            return Task.Run(CheckUpdate);
+        }
 
         public void DownloadUpdate()
         {
