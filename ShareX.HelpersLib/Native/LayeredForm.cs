@@ -43,7 +43,6 @@ namespace ShareX.HelpersLib
             Name = "LayeredForm";
             ShowInTaskbar = false;
             Text = "LayeredForm";
-            TopMost = true;
             ResumeLayout(false);
         }
 
