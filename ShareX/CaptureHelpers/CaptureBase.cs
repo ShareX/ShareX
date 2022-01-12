@@ -45,7 +45,10 @@ namespace ShareX
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
-            NotificationForm.CloseActiveForm();
+            if (taskSettings.GeneralSettings.ToastWindowAutoHide)
+            {
+                NotificationForm.CloseActiveForm();
+            }
 
             if (taskSettings.CaptureSettings.ScreenshotDelay > 0)
             {

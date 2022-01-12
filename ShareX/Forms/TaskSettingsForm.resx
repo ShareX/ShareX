@@ -790,7 +790,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnCustomErrorSoundPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>536, 341</value>
+    <value>536, 365</value>
   </data>
   <data name="btnCustomErrorSoundPath.Size" type="System.Drawing.Size, System.Drawing">
     <value>26, 23</value>
@@ -817,7 +817,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnCustomTaskCompletedSoundPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>536, 317</value>
+    <value>536, 341</value>
   </data>
   <data name="btnCustomTaskCompletedSoundPath.Size" type="System.Drawing.Size, System.Drawing">
     <value>26, 23</value>
@@ -844,7 +844,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnCustomCaptureSoundPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>536, 293</value>
+    <value>536, 317</value>
   </data>
   <data name="btnCustomCaptureSoundPath.Size" type="System.Drawing.Size, System.Drawing">
     <value>26, 23</value>
@@ -868,7 +868,7 @@
     <value>3</value>
   </data>
   <data name="txtCustomErrorSoundPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>248, 342</value>
+    <value>248, 366</value>
   </data>
   <data name="txtCustomErrorSoundPath.Size" type="System.Drawing.Size, System.Drawing">
     <value>280, 20</value>
@@ -889,7 +889,7 @@
     <value>4</value>
   </data>
   <data name="txtCustomTaskCompletedSoundPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>248, 318</value>
+    <value>248, 342</value>
   </data>
   <data name="txtCustomTaskCompletedSoundPath.Size" type="System.Drawing.Size, System.Drawing">
     <value>280, 20</value>
@@ -910,7 +910,7 @@
     <value>5</value>
   </data>
   <data name="txtCustomCaptureSoundPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>248, 294</value>
+    <value>248, 318</value>
   </data>
   <data name="txtCustomCaptureSoundPath.Size" type="System.Drawing.Size, System.Drawing">
     <value>280, 20</value>
@@ -937,7 +937,7 @@
     <value>NoControl</value>
   </data>
   <data name="cbUseCustomErrorSound.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 344</value>
+    <value>8, 368</value>
   </data>
   <data name="cbUseCustomErrorSound.Size" type="System.Drawing.Size, System.Drawing">
     <value>141, 17</value>
@@ -967,7 +967,7 @@
     <value>NoControl</value>
   </data>
   <data name="cbUseCustomTaskCompletedSound.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 320</value>
+    <value>8, 344</value>
   </data>
   <data name="cbUseCustomTaskCompletedSound.Size" type="System.Drawing.Size, System.Drawing">
     <value>192, 17</value>
@@ -997,7 +997,7 @@
     <value>NoControl</value>
   </data>
   <data name="cbUseCustomCaptureSound.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 296</value>
+    <value>8, 320</value>
   </data>
   <data name="cbUseCustomCaptureSound.Size" type="System.Drawing.Size, System.Drawing">
     <value>156, 17</value>
@@ -1019,6 +1019,33 @@
   </data>
   <data name="&gt;&gt;cbUseCustomCaptureSound.ZOrder" xml:space="preserve">
     <value>9</value>
+  </data>
+  <data name="cbToastWindowAutoHide.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbToastWindowAutoHide.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 192</value>
+  </data>
+  <data name="cbToastWindowAutoHide.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 17</value>
+  </data>
+  <data name="cbToastWindowAutoHide.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="cbToastWindowAutoHide.Text" xml:space="preserve">
+    <value>Automatically hide on screen capture</value>
+  </data>
+  <data name="&gt;&gt;cbToastWindowAutoHide.Name" xml:space="preserve">
+    <value>cbToastWindowAutoHide</value>
+  </data>
+  <data name="&gt;&gt;cbToastWindowAutoHide.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbToastWindowAutoHide.Parent" xml:space="preserve">
+    <value>gbToastWindow</value>
+  </data>
+  <data name="&gt;&gt;cbToastWindowAutoHide.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="lblToastWindowFadeDurationSeconds.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1048,7 +1075,7 @@
     <value>gbToastWindow</value>
   </data>
   <data name="&gt;&gt;lblToastWindowFadeDurationSeconds.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="lblToastWindowDurationSeconds.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1078,7 +1105,7 @@
     <value>gbToastWindow</value>
   </data>
   <data name="&gt;&gt;lblToastWindowDurationSeconds.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="lblToastWindowSizeX.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1108,7 +1135,7 @@
     <value>gbToastWindow</value>
   </data>
   <data name="&gt;&gt;lblToastWindowSizeX.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="cbToastWindowMiddleClickAction.Location" type="System.Drawing.Point, System.Drawing">
     <value>176, 164</value>
@@ -1129,7 +1156,7 @@
     <value>gbToastWindow</value>
   </data>
   <data name="&gt;&gt;cbToastWindowMiddleClickAction.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="cbToastWindowRightClickAction.Location" type="System.Drawing.Point, System.Drawing">
     <value>176, 140</value>
@@ -1150,7 +1177,7 @@
     <value>gbToastWindow</value>
   </data>
   <data name="&gt;&gt;cbToastWindowRightClickAction.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="cbToastWindowLeftClickAction.Location" type="System.Drawing.Point, System.Drawing">
     <value>176, 116</value>
@@ -1171,7 +1198,7 @@
     <value>gbToastWindow</value>
   </data>
   <data name="&gt;&gt;cbToastWindowLeftClickAction.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="nudToastWindowSizeHeight.Location" type="System.Drawing.Point, System.Drawing">
     <value>280, 92</value>
@@ -1195,7 +1222,7 @@
     <value>gbToastWindow</value>
   </data>
   <data name="&gt;&gt;nudToastWindowSizeHeight.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="nudToastWindowSizeWidth.Location" type="System.Drawing.Point, System.Drawing">
     <value>176, 92</value>
@@ -1219,7 +1246,7 @@
     <value>gbToastWindow</value>
   </data>
   <data name="&gt;&gt;nudToastWindowSizeWidth.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="cbToastWindowPlacement.Location" type="System.Drawing.Point, System.Drawing">
     <value>176, 68</value>
@@ -1240,7 +1267,7 @@
     <value>gbToastWindow</value>
   </data>
   <data name="&gt;&gt;cbToastWindowPlacement.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="nudToastWindowFadeDuration.Location" type="System.Drawing.Point, System.Drawing">
     <value>176, 44</value>
@@ -1264,7 +1291,7 @@
     <value>gbToastWindow</value>
   </data>
   <data name="&gt;&gt;nudToastWindowFadeDuration.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>10</value>
   </data>
   <data name="nudToastWindowDuration.Location" type="System.Drawing.Point, System.Drawing">
     <value>176, 20</value>
@@ -1288,7 +1315,7 @@
     <value>gbToastWindow</value>
   </data>
   <data name="&gt;&gt;nudToastWindowDuration.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>11</value>
   </data>
   <data name="lblToastWindowMiddleClickAction.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1318,7 +1345,7 @@
     <value>gbToastWindow</value>
   </data>
   <data name="&gt;&gt;lblToastWindowMiddleClickAction.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>12</value>
   </data>
   <data name="lblToastWindowRightClickAction.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1348,7 +1375,7 @@
     <value>gbToastWindow</value>
   </data>
   <data name="&gt;&gt;lblToastWindowRightClickAction.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>13</value>
   </data>
   <data name="lblToastWindowLeftClickAction.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1378,7 +1405,7 @@
     <value>gbToastWindow</value>
   </data>
   <data name="&gt;&gt;lblToastWindowLeftClickAction.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>14</value>
   </data>
   <data name="lblToastWindowSize.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1408,7 +1435,7 @@
     <value>gbToastWindow</value>
   </data>
   <data name="&gt;&gt;lblToastWindowSize.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>15</value>
   </data>
   <data name="lblToastWindowPlacement.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1438,7 +1465,7 @@
     <value>gbToastWindow</value>
   </data>
   <data name="&gt;&gt;lblToastWindowPlacement.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>16</value>
   </data>
   <data name="lblToastWindowFadeDuration.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1468,7 +1495,7 @@
     <value>gbToastWindow</value>
   </data>
   <data name="&gt;&gt;lblToastWindowFadeDuration.ZOrder" xml:space="preserve">
-    <value>16</value>
+    <value>17</value>
   </data>
   <data name="lblToastWindowDuration.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1498,13 +1525,13 @@
     <value>gbToastWindow</value>
   </data>
   <data name="&gt;&gt;lblToastWindowDuration.ZOrder" xml:space="preserve">
-    <value>17</value>
+    <value>18</value>
   </data>
   <data name="gbToastWindow.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 80</value>
   </data>
   <data name="gbToastWindow.Size" type="System.Drawing.Size, System.Drawing">
-    <value>552, 200</value>
+    <value>552, 224</value>
   </data>
   <data name="gbToastWindow.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -1531,7 +1558,7 @@
     <value>NoControl</value>
   </data>
   <data name="cbDisableNotificationsOnFullscreen.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 392</value>
+    <value>8, 416</value>
   </data>
   <data name="cbDisableNotificationsOnFullscreen.Size" type="System.Drawing.Size, System.Drawing">
     <value>183, 17</value>
@@ -1561,7 +1588,7 @@
     <value>NoControl</value>
   </data>
   <data name="cbDisableNotifications.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 368</value>
+    <value>8, 392</value>
   </data>
   <data name="cbDisableNotifications.Size" type="System.Drawing.Size, System.Drawing">
     <value>120, 17</value>

@@ -206,6 +206,7 @@ namespace ShareX
             cbToastWindowRightClickAction.SelectedIndex = (int)TaskSettings.GeneralSettings.ToastWindowRightClickAction;
             cbToastWindowMiddleClickAction.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<ToastClickAction>());
             cbToastWindowMiddleClickAction.SelectedIndex = (int)TaskSettings.GeneralSettings.ToastWindowMiddleClickAction;
+            cbToastWindowAutoHide.Checked = TaskSettings.GeneralSettings.ToastWindowAutoHide;
             cbUseCustomCaptureSound.Checked = TaskSettings.GeneralSettings.UseCustomCaptureSound;
             txtCustomCaptureSoundPath.Enabled = btnCustomCaptureSoundPath.Enabled = TaskSettings.GeneralSettings.UseCustomCaptureSound;
             txtCustomCaptureSoundPath.Text = TaskSettings.GeneralSettings.CustomCaptureSoundPath;
@@ -832,6 +833,11 @@ namespace ShareX
         private void cbToastWindowMiddleClickAction_SelectedIndexChanged(object sender, EventArgs e)
         {
             TaskSettings.GeneralSettings.ToastWindowMiddleClickAction = (ToastClickAction)cbToastWindowMiddleClickAction.SelectedIndex;
+        }
+
+        private void cbToastWindowAutoHide_CheckedChanged(object sender, EventArgs e)
+        {
+            TaskSettings.GeneralSettings.ToastWindowAutoHide = cbToastWindowAutoHide.Checked;
         }
 
         private void cbUseCustomCaptureSound_CheckedChanged(object sender, EventArgs e)

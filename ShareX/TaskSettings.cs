@@ -278,6 +278,7 @@ namespace ShareX
         public ToastClickAction ToastWindowLeftClickAction = ToastClickAction.OpenUrl;
         public ToastClickAction ToastWindowRightClickAction = ToastClickAction.CloseNotification;
         public ToastClickAction ToastWindowMiddleClickAction = ToastClickAction.AnnotateImage;
+        public bool ToastWindowAutoHide = true;
         public bool UseCustomCaptureSound = false;
         public string CustomCaptureSoundPath = "";
         public bool UseCustomTaskCompletedSound = false;

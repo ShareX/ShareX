@@ -294,6 +294,7 @@
             this.pgTaskSettings = new System.Windows.Forms.PropertyGrid();
             this.cbOverrideAdvancedSettings = new System.Windows.Forms.CheckBox();
             this.tttvMain = new ShareX.HelpersLib.TabToTreeView();
+            this.cbToastWindowAutoHide = new System.Windows.Forms.CheckBox();
             this.tcTaskSettings.SuspendLayout();
             this.tpTask.SuspendLayout();
             this.cmsDestinations.SuspendLayout();
@@ -691,6 +692,7 @@
             // 
             // gbToastWindow
             // 
+            this.gbToastWindow.Controls.Add(this.cbToastWindowAutoHide);
             this.gbToastWindow.Controls.Add(this.lblToastWindowFadeDurationSeconds);
             this.gbToastWindow.Controls.Add(this.lblToastWindowDurationSeconds);
             this.gbToastWindow.Controls.Add(this.lblToastWindowSizeX);
@@ -2553,6 +2555,13 @@
             this.tttvMain.TreeViewSize = 190;
             this.tttvMain.TabChanged += new ShareX.HelpersLib.TabToTreeView.TabChangedEventHandler(this.tttvMain_TabChanged);
             // 
+            // cbToastWindowAutoHide
+            // 
+            resources.ApplyResources(this.cbToastWindowAutoHide, "cbToastWindowAutoHide");
+            this.cbToastWindowAutoHide.Name = "cbToastWindowAutoHide";
+            this.cbToastWindowAutoHide.UseVisualStyleBackColor = true;
+            this.cbToastWindowAutoHide.CheckedChanged += new System.EventHandler(this.cbToastWindowAutoHide_CheckedChanged);
+            // 
             // TaskSettingsForm
             // 
             resources.ApplyResources(this, "$this");
@@ -2918,5 +2927,6 @@
         private System.Windows.Forms.Button btnActions;
         private System.Windows.Forms.CheckBox cbImageAutoJPEGQuality;
         private System.Windows.Forms.Label lblTask;
+        private System.Windows.Forms.CheckBox cbToastWindowAutoHide;
     }
 }
