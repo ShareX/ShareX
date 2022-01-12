@@ -243,10 +243,10 @@
     <value>Segoe UI, 9.75pt</value>
   </data>
   <data name="btnOK.Location" type="System.Drawing.Point, System.Drawing">
-    <value>384, 200</value>
+    <value>392, 200</value>
   </data>
   <data name="btnOK.Size" type="System.Drawing.Size, System.Drawing">
-    <value>128, 32</value>
+    <value>120, 32</value>
   </data>
   <data name="btnOK.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
