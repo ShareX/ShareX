@@ -121,6 +121,18 @@ namespace ShareX.HelpersLib
             //
             resources.ApplyResources(txtInputText, "txtInputText");
             txtInputText.Name = "txtInputText";
+            txtInputText.KeyUp += (sender, e) =>
+            {
+                if (e.KeyCode == Keys.Enter)
+                {
+                    this.btnOK_Click(sender, null);
+                }
+                else if (e.KeyCode == Keys.Escape)
+                {
+                    this.btnCancel_Click(sender, null);
+                }
+            };
+
             //
             // InputBox
             //

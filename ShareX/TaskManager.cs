@@ -80,6 +80,16 @@ namespace ShareX
             }
         }
 
+        public static void RenameFile(WorkerTask task, string newFilePath)
+        {
+            TaskInfo newTaskInfo = task.Info;
+            String oldFilePath = task.Info.FilePath;
+
+            newTaskInfo.FilePath = newFilePath;
+            RecentManager.RenameFile(oldFilePath, newFilePath);
+            TaskManager.UpdateTaskInfo(task, newTaskInfo);
+        }
+
         public static void Remove(WorkerTask task)
         {
             if (task != null)
@@ -148,6 +158,7 @@ namespace ShareX
             historyItem.Type = "Image";
             AppendHistoryItemAsync(historyItem);
         }
+
         public static void UpdateMainFormTip()
         {
             Program.MainForm.lblListViewTip.Visible = Program.MainForm.lblThumbnailViewTip.Visible = Program.Settings.ShowMainWindowTip && Tasks.Count == 0;

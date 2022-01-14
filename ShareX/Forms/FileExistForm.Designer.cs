@@ -1,4 +1,6 @@
-﻿namespace ShareX
+﻿using System.Windows.Forms;
+
+namespace ShareX
 {
     partial class FileExistForm
     {

@@ -125,6 +125,13 @@ namespace ShareX
             }
         }
 
+        public void RenameFile(string currentFilePath, string newFilePath)
+        {
+            Tasks.First(t => t.FilePath == currentFilePath).FilePath = newFilePath;
+            UpdateTrayMenu();
+            //UpdateMainWindowList();
+        }
+
         public void Clear()
         {
             lock (itemsLock)

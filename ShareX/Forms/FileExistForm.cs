@@ -75,58 +75,63 @@ namespace ShareX
             if (!string.IsNullOrEmpty(newFileName))
             {
                 FilePath = Path.Combine(Path.GetDirectoryName(FilePath), newFileName);
+
+                if (File.Exists(FilePath))
+                {
+                    // don't allow to override implicitly the existing file
+                    btnNewName.Enabled = false;
+                    return;
+
+                } else
+                {
+                    this.DialogResult = DialogResult.OK;
+                }
+
                 Close();
             }
+        }
+
+        private Boolean IsFileNameModifiedAndValid(String newFileName)
+        {
+            return !string.IsNullOrEmpty(newFileName) && !newFileName.Equals(fileName, StringComparison.InvariantCultureIgnoreCase);
         }
 
         private void UseUniqueFileName()
         {
             FilePath = uniqueFilePath;
+            this.DialogResult = DialogResult.OK;
             Close();
         }
 
         private void Cancel()
         {
             FilePath = "";
+            this.DialogResult = DialogResult.Cancel;
             Close();
         }
 
         private void txtNewName_TextChanged(object sender, EventArgs e)
         {
-            string newFileName = txtNewName.Text;
-            btnNewName.Enabled = !string.IsNullOrEmpty(newFileName) && !newFileName.Equals(fileName, StringComparison.InvariantCultureIgnoreCase);
+            btnNewName.Enabled = IsFileNameModifiedAndValid(txtNewName.Text);
             btnNewName.Text = Resources.FileExistForm_txtNewName_TextChanged_Use_new_name__ + GetNewFileName();
         }
 
         private void txtNewName_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyData == Keys.Enter || e.KeyData == Keys.Escape)
-            {
-                e.SuppressKeyPress = true;
-            }
         }
 
         private void txtNewName_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.KeyData == Keys.Enter)
             {
-                string newFileName = txtNewName.Text;
-
-                if (!string.IsNullOrEmpty(newFileName))
+                if (IsFileNameModifiedAndValid(txtNewName.Text))
                 {
-                    if (newFileName.Equals(fileName, StringComparison.InvariantCultureIgnoreCase))
-                    {
-                        Close();
-                    }
-                    else
-                    {
-                        UseNewFileName();
-                    }
+                    btnNewName_Click(sender, e);
                 }
             }
             else if (e.KeyData == Keys.Escape)
             {
-                Cancel();
+                btnUniqueName_Click(sender, e);
             }
         }
 
@@ -137,6 +142,7 @@ namespace ShareX
 
         private void btnOverwrite_Click(object sender, EventArgs e)
         {
+            this.DialogResult = DialogResult.OK;
             Close();
         }
 

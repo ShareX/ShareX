@@ -23,7 +23,6 @@
 
 #endregion License Information (GPL v3)
 
-using Microsoft.VisualBasic;    // improve the renaming to not rely on inputbox
 using ShareX.HelpersLib;
 using ShareX.ImageEffectsLib;
 using ShareX.Properties;
@@ -1055,9 +1054,11 @@ namespace ShareX
             return null;
         }
 
-        private void RenameSelectedItem()
+        private bool RenameSelectedItem()
         {
             WorkerTask task = null;
+            string newFilePath;
+            bool overwrite = false;
 
             if (Program.Settings.TaskViewMode == TaskViewMode.ListView)
             {
@@ -1068,20 +1069,46 @@ namespace ShareX
                 task = ucTaskThumbnailView.SelectedPanels.Select(x => x.Task).FirstOrDefault();
             }
 
-            string newFileName;
-            string newFilePath;
-            newFileName = Interaction.InputBox("Rename", "Rename", task.Info.FileName);
+            if (! File.Exists(task.Info.FilePath)) { return false; }
+            string newFileName = InputBox.GetInputText("ShareX - Rename: " + task.Info.FileName, task.Info.FileName);
 
-            if (! String.IsNullOrEmpty(newFileName))
+            if (Helpers.IsValidFileName(newFileName, true) != true) { return false; }
+            newFilePath = Path.Combine(Path.GetDirectoryName(task.Info.FilePath), newFileName);
+
+            if (String.Compare(task.Info.FilePath, newFilePath, StringComparison.InvariantCultureIgnoreCase) == 0
+                || string.IsNullOrWhiteSpace(newFileName)
+                || string.IsNullOrWhiteSpace(newFilePath)
+                )
             {
-                newFilePath = Helpers.RenameFile(task.Info.FilePath, newFileName);
-
-                TaskInfo newTaskInfo = task.Info;
-                newTaskInfo.FilePath = newFilePath;
-
-                TaskManager.UpdateTaskInfo(task, newTaskInfo);
-                UpdateInfoManager();
+                return false;
             }
+
+            if (File.Exists(newFilePath))
+            {
+                using (FileExistForm form = new FileExistForm(newFilePath))
+                {
+                    DialogResult dialogResult = form.ShowDialog();
+                    if (dialogResult != DialogResult.OK) { return false; }
+                    newFilePath = form.FilePath;
+                }
+            }
+
+            if (String.Compare(task.Info.FilePath, newFilePath, StringComparison.InvariantCultureIgnoreCase) == 0
+                || !Helpers.IsValidFileName(newFileName, true)
+                || !Helpers.IsValidFilePath(newFilePath, true))
+            {
+                return false;
+            }
+
+            String oldFilePath = task.Info.FilePath;
+
+            if (!String.IsNullOrWhiteSpace(Helpers.RenameFile(task.Info.FilePath, Path.GetFileName(newFilePath), true, true)))  // rename file on disk
+            {
+                TaskManager.RenameFile(task, newFilePath);                                          // rename task in MainWindow and RecentTask in tray
+                UpdateInfoManager();
+                return true;
+            }
+            return false;
         }
 
         private void RemoveTasks(WorkerTask[] tasks)

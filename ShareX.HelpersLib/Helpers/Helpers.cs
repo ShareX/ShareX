@@ -979,19 +979,66 @@ namespace ShareX.HelpersLib
             }
         }
 
-        public static bool IsValidFilePath(string path)
+        public static bool IsValidFilePath(string path, bool directoryMustExist = false, bool showExceptions = false)
         {
             FileInfo fi = null;
 
             try
             {
                 fi = new FileInfo(path);
+
+                if (directoryMustExist && !Directory.Exists(Directory.GetParent(Path.GetFullPath(path)).FullName))
+                {
+                    return false;
+                }
             }
-            catch (ArgumentException) { }
-            catch (PathTooLongException) { }
-            catch (NotSupportedException) { }
+            catch (Exception e)
+            {
+                if (e is ArgumentException
+                    || e is PathTooLongException
+                    || e is NotSupportedException)
+                {
+                    MessageBox.Show($"Provided path: {path} is invalid!", "ShareX - Path Validation Error " + Resources.Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+            }
 
             return fi != null;
+        }
+
+        public static bool IsValidFileName(string pathOrFilename, Boolean showExceptions)
+        {
+            String fileName = null;
+            char[] forbiddenChars = Path.GetInvalidFileNameChars();
+
+            if (String.IsNullOrWhiteSpace(pathOrFilename)) { return false; }
+
+            try
+            {
+                if (Path.IsPathRooted(pathOrFilename) && Path.GetPathRoot(pathOrFilename).Length > 1)
+                {
+                    fileName = Path.GetFileName(pathOrFilename);
+                }
+                else
+                {
+                    fileName = pathOrFilename;
+                }
+
+                if (fileName.Any(c => forbiddenChars.Contains(c)))
+                {
+                    throw new ArgumentException("Forbiddens characters found!");
+                }
+
+                return true;
+
+            } catch (ArgumentException e) {
+                if (showExceptions)
+                {
+                    MessageBox.Show($"The filename: {fileName}\r\nis invalid:\r\n {e.Message}", "ShareX - FileName Validation " + Resources.Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+
+            return false;
         }
 
         public static string CopyFile(string filePath, string destinationFolder, bool overwrite = true)
@@ -1028,7 +1075,7 @@ namespace ShareX.HelpersLib
             return null;
         }
 
-        public static string RenameFile(string filePath, string newFileName)
+        public static string RenameFile(string filePath, string newFileName, bool overwrite = false, bool showExceptions = false)
         {
             try
             {
@@ -1039,6 +1086,10 @@ namespace ShareX.HelpersLib
 
                     if (Path.GetFullPath(Path.Combine(directory, newFileName)) != Path.GetFullPath(filePath))
                     {
+                        if (File.Exists(newFilePath) && overwrite == true)
+                        {
+                            File.Delete(newFilePath);
+                        }
                         File.Move(filePath, newFilePath);
                         return newFilePath;
                     }
@@ -1046,10 +1097,13 @@ namespace ShareX.HelpersLib
             }
             catch (Exception e)
             {
-                MessageBox.Show("Rename file error:\r\n" + e.ToString(), "ShareX - " + Resources.Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if (showExceptions)
+                {
+                    MessageBox.Show("Rename file error:\r\n" + e.ToString(), "ShareX - Rename Error " + Resources.Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
 
-            return filePath;
+            return null;
         }
 
         public static string BackupFileWeekly(string filePath, string destinationFolder)
