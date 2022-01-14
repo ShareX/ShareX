@@ -999,6 +999,15 @@
   <data name="tsmiDeleteSelectedItem.Text" xml:space="preserve">
     <value>Remove task from list</value>
   </data>
+  <data name="tsmiRenameSelectedFile.ShortcutKeyDisplayString" xml:space="preserve">
+    <value>F2</value>
+  </data>
+  <data name="tsmiRenameSelectedFile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>228, 22</value>
+  </data>
+  <data name="tsmiRenameSelectedFile.Text" xml:space="preserve">
+    <value>Rename file</value>
+  </data>
   <data name="tsmiDeleteSelectedFile.ShortcutKeyDisplayString" xml:space="preserve">
     <value>Shift+Del</value>
   </data>

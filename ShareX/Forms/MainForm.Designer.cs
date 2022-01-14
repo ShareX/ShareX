@@ -176,6 +176,7 @@
             this.tsmiAddImageEffects = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiRunAction = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiDeleteSelectedItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiRenameSelectedFile = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiDeleteSelectedFile = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiShortenSelectedURL = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiShareSelectedURL = new System.Windows.Forms.ToolStripMenuItem();
@@ -1068,6 +1069,7 @@
             this.tsmiAddImageEffects,
             this.tsmiRunAction,
             this.tsmiDeleteSelectedItem,
+            this.tsmiRenameSelectedFile,
             this.tsmiDeleteSelectedFile,
             this.tsmiShortenSelectedURL,
             this.tsmiShareSelectedURL,
@@ -1405,6 +1407,13 @@
             this.tsmiDeleteSelectedItem.Name = "tsmiDeleteSelectedItem";
             resources.ApplyResources(this.tsmiDeleteSelectedItem, "tsmiDeleteSelectedItem");
             this.tsmiDeleteSelectedItem.Click += new System.EventHandler(this.tsmiDeleteSelectedItem_Click);
+            //
+            // tsmiRenameSelectedFile
+            // 
+            this.tsmiRenameSelectedFile.Image = global::ShareX.Properties.Resources.rename_file;
+            this.tsmiRenameSelectedFile.Name = "tsmiRenameSelectedFile";
+            resources.ApplyResources(this.tsmiRenameSelectedFile, "tsmiRenameSelectedFile");
+            this.tsmiRenameSelectedFile.Click += new System.EventHandler(this.tsmiRenameSelectedFile_Click);
             // 
             // tsmiDeleteSelectedFile
             // 
@@ -2375,6 +2384,7 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiShortenSelectedURL;
         private System.Windows.Forms.ToolStripMenuItem tsmiEditSelectedFile;
         private System.Windows.Forms.ToolStripMenuItem tsmiTestURLSharing;
+        private System.Windows.Forms.ToolStripMenuItem tsmiRenameSelectedFile;
         private System.Windows.Forms.ToolStripMenuItem tsmiDeleteSelectedFile;
         private System.Windows.Forms.ToolStripMenuItem tsmiScreenRecordingFFmpeg;
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayScreenRecordingFFmpeg;

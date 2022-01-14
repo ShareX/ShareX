@@ -129,6 +129,25 @@ namespace ShareX
             }
         }
 
+        public static void UpdateTaskInfo(WorkerTask task, TaskInfo newTaskInfo)
+        {
+            if (String.IsNullOrEmpty(newTaskInfo.FilePath)) return;
+
+            ListViewItem lvi = TaskListView.FindItem(task);
+
+            if (lvi != null)
+            {
+                lvi.Text = newTaskInfo.FileName;
+                lvi.Tag = task;
+                lvi.SubItems[6].Text = newTaskInfo.FilePath;
+            }
+
+            HistoryItem historyItem = task.Info.GetHistoryItem();
+            historyItem.FilePath = newTaskInfo.FilePath;
+            historyItem.FileName = newTaskInfo.FileName;
+            historyItem.Type = "Image";
+            AppendHistoryItemAsync(historyItem);
+        }
         public static void UpdateMainFormTip()
         {
             Program.MainForm.lblListViewTip.Visible = Program.MainForm.lblThumbnailViewTip.Visible = Program.Settings.ShowMainWindowTip && Tasks.Count == 0;

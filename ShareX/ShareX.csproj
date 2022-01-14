@@ -97,6 +97,7 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -1928,6 +1929,9 @@
   <ItemGroup>
     <None Include="Resources\GitHub.png" />
     <None Include="Resources\GitHubDark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\rename_file.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

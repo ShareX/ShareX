@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using Microsoft.VisualBasic;    // improve the renaming to not rely on inputbox
 using ShareX.HelpersLib;
 using ShareX.ImageEffectsLib;
 using ShareX.Properties;
@@ -619,7 +620,7 @@ namespace ShareX
             tsmiStopUpload.Visible = tsmiOpen.Visible = tsmiCopy.Visible = tsmiShowErrors.Visible = tsmiShowResponse.Visible = tsmiGoogleImageSearch.Visible =
                 tsmiBingVisualSearch.Visible = tsmiShowQRCode.Visible = tsmiOCRImage.Visible = tsmiCombineImages.Visible = tsmiUploadSelectedFile.Visible =
                 tsmiDownloadSelectedURL.Visible = tsmiEditSelectedFile.Visible = tsmiAddImageEffects.Visible = tsmiRunAction.Visible = tsmiDeleteSelectedItem.Visible =
-                tsmiDeleteSelectedFile.Visible = tsmiShortenSelectedURL.Visible = tsmiShareSelectedURL.Visible = false;
+                tsmiRenameSelectedFile.Visible = tsmiDeleteSelectedFile.Visible = tsmiShortenSelectedURL.Visible = tsmiShareSelectedURL.Visible = false;
 
             if (Program.Settings.TaskViewMode == TaskViewMode.ListView)
             {
@@ -729,6 +730,7 @@ namespace ShareX
                     tsmiAddImageEffects.Visible = uim.SelectedItem.IsImageFile;
                     UpdateActionsMenu(uim.SelectedItem.Info.FilePath);
                     tsmiDeleteSelectedItem.Visible = true;
+                    tsmiRenameSelectedFile.Visible = uim.SelectedItem.IsFileExist && uim.SelectedItems.Length == 1;
                     tsmiDeleteSelectedFile.Visible = uim.SelectedItem.IsFileExist;
                     tsmiShortenSelectedURL.Visible = uim.SelectedItem.IsURLExist;
                     tsmiShareSelectedURL.Visible = uim.SelectedItem.IsURLExist;
@@ -1051,6 +1053,35 @@ namespace ShareX
             }
 
             return null;
+        }
+
+        private void RenameSelectedItem()
+        {
+            WorkerTask task = null;
+
+            if (Program.Settings.TaskViewMode == TaskViewMode.ListView)
+            {
+                task = lvUploads.SelectedItems.Cast<ListViewItem>().Select(x => x.Tag as WorkerTask).FirstOrDefault();
+            }
+            else if (Program.Settings.TaskViewMode == TaskViewMode.ThumbnailView)
+            {
+                task = ucTaskThumbnailView.SelectedPanels.Select(x => x.Task).FirstOrDefault();
+            }
+
+            string newFileName;
+            string newFilePath;
+            newFileName = Interaction.InputBox("Rename", "Rename", task.Info.FileName);
+
+            if (! String.IsNullOrEmpty(newFileName))
+            {
+                newFilePath = Helpers.RenameFile(task.Info.FilePath, newFileName);
+
+                TaskInfo newTaskInfo = task.Info;
+                newTaskInfo.FilePath = newFilePath;
+
+                TaskManager.UpdateTaskInfo(task, newTaskInfo);
+                UpdateInfoManager();
+            }
         }
 
         private void RemoveTasks(WorkerTask[] tasks)
@@ -1434,6 +1465,9 @@ namespace ShareX
                     break;
                 case Keys.Delete:
                     RemoveSelectedItems();
+                    break;
+                case Keys.F2:
+                    RenameSelectedItem();
                     break;
                 case Keys.Shift | Keys.Delete:
                     uim.DeleteFiles();
@@ -2287,6 +2321,11 @@ namespace ShareX
         private void tsmiDeleteSelectedItem_Click(object sender, EventArgs e)
         {
             RemoveSelectedItems();
+        }
+
+        private void tsmiRenameSelectedFile_Click(object sender, EventArgs e)
+        {
+            RenameSelectedItem();
         }
 
         private void tsmiDeleteSelectedFile_Click(object sender, EventArgs e)
