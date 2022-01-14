@@ -56,7 +56,7 @@ namespace ShareX
             AddAfterUploadItems(TaskSettings.AfterUploadJob);
         }
 
-        public AfterCaptureForm(TaskMetadata metadata, TaskSettings taskSettings) : this(taskSettings)
+        public AfterCaptureForm(TaskMetadata metadata, TaskSettings taskSettings, string customFileName = null) : this(taskSettings)
         {
             if (metadata != null && metadata.Image != null)
             {
@@ -64,7 +64,8 @@ namespace ShareX
                 btnCopy.Enabled = true;
             }
 
-            FileName = TaskHelpers.GetFileName(TaskSettings, null, metadata);
+            
+            FileName = string.IsNullOrEmpty(customFileName) ? TaskHelpers.GetFileName(TaskSettings, null, metadata) : customFileName;
             txtFileName.Text = FileName;
         }
 

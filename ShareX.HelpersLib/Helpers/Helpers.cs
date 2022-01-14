@@ -1036,8 +1036,12 @@ namespace ShareX.HelpersLib
                 {
                     string directory = Path.GetDirectoryName(filePath);
                     string newFilePath = Path.Combine(directory, newFileName);
-                    File.Move(filePath, newFilePath);
-                    return newFilePath;
+
+                    if (Path.GetFullPath(Path.Combine(directory, newFileName)) != Path.GetFullPath(filePath))
+                    {
+                        File.Move(filePath, newFilePath);
+                        return newFilePath;
+                    }
                 }
             }
             catch (Exception e)

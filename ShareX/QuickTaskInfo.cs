@@ -32,6 +32,7 @@ namespace ShareX
     public class QuickTaskInfo
     {
         public string Name { get; set; }
+        public string CustomFileName { get; set; }
         public AfterCaptureTasks AfterCaptureTasks { get; set; }
         public AfterUploadTasks AfterUploadTasks { get; set; }
 
@@ -65,6 +66,12 @@ namespace ShareX
             Name = name;
             AfterCaptureTasks = afterCaptureTasks;
             AfterUploadTasks = afterUploadTasks;
+        }
+
+        public QuickTaskInfo(string customFileName)
+        {
+            Name = "CustomFileName";
+            CustomFileName = customFileName;
         }
 
         public QuickTaskInfo(AfterCaptureTasks afterCaptureTasks, AfterUploadTasks afterUploadTasks = AfterUploadTasks.None) : this(null, afterCaptureTasks, afterUploadTasks)

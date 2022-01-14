@@ -34,9 +34,31 @@ namespace ShareX
     {
         public delegate void TaskInfoSelectedEventHandler(QuickTaskInfo taskInfo);
         public TaskInfoSelectedEventHandler TaskInfoSelected;
+        private string FileName;
+        private string CustomFileName;
 
-        public void ShowMenu()
+        public string NewFileName
         {
+            get
+            {
+                return this.FileName == this.CustomFileName ? null : this.CustomFileName;
+            }
+            set
+            {             
+                this.CustomFileName = value;
+            }
+        }
+
+        private void Continue()
+        {
+            OnTaskInfoSelected(new QuickTaskInfo(this.NewFileName));
+        }
+        public void ShowMenu(string fileName)
+        {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
+
+            this.FileName = fileName;
+
             ContextMenuStrip cms = new ContextMenuStrip()
             {
                 Font = new Font("Arial", 10f),
@@ -51,12 +73,44 @@ namespace ShareX
                 }
             };
 
+            //cms.ImageList = new ImageList();
+            //cms.ImageList.Images.Add(Resources.rename_file);
+
+            ToolStripMenuItem tsmiFilenameCaption = new ToolStripMenuItem(Resources.QuickTaskMenu_ShowMenu_SaveAsFilename);
+            tsmiFilenameCaption.Image = Resources.rename_file;
+            cms.Items.Add(tsmiFilenameCaption);
+
+            ToolStripTextBox tsmiFilename = new ToolStripTextBox();
+            tsmiFilename.Text = this.FileName;
+            tsmiFilename.Size = new Size(300, 22);
+            //tsmiFilename.DisplayStyle = ToolStripItemDisplayStyle.ImageAndText;
+            //tsmiFilename.ImageIndex = 0;  // does not work for some reason
+            tsmiFilename.ToolTipText = Resources.QuickTaskMenu_ShowMenu_Filename_Tooltip;  //TODO move to resources
+            tsmiFilename.SelectAll();
+            tsmiFilename.Focus();
+            tsmiFilename.KeyDown += (sender, e) =>
+            {
+                if (e.KeyCode == Keys.Enter)
+                {
+                    this.NewFileName = tsmiFilename.Text;
+                    cms.Close();
+                    this.Continue();
+
+                    e.Handled = true;
+                    e.SuppressKeyPress = true;
+                }
+            };
+            
+            cms.Items.Add(tsmiFilename);
+
+            // Continue
             ToolStripMenuItem tsmiContinue = new ToolStripMenuItem(Resources.QuickTaskMenu_ShowMenu_Continue);
             tsmiContinue.Image = Resources.control;
             tsmiContinue.Click += (sender, e) =>
             {
+                this.NewFileName = tsmiFilename.Text;
                 cms.Close();
-                OnTaskInfoSelected(null);
+                this.Continue();
             };
             cms.Items.Add(tsmiContinue);
 
@@ -74,6 +128,8 @@ namespace ShareX
                         {
                             QuickTaskInfo selectedTaskInfo = ((ToolStripMenuItem)sender).Tag as QuickTaskInfo;
                             cms.Close();
+                            this.NewFileName = cms.Items[1].Text;
+                            selectedTaskInfo.CustomFileName = this.NewFileName;
                             OnTaskInfoSelected(selectedTaskInfo);
                         };
                         cms.Items.Add(tsmi);
@@ -83,8 +139,6 @@ namespace ShareX
                         cms.Items.Add(new ToolStripSeparator());
                     }
                 }
-
-                cms.Items[0].Select();
 
                 cms.Items.Add(new ToolStripSeparator());
             }
@@ -113,8 +167,8 @@ namespace ShareX
             Point cursorPosition = CaptureHelpers.GetCursorPosition();
             cursorPosition.Offset(-10, -10);
             cms.Show(cursorPosition);
-            cms.Focus();
-        }
+            tsmiFilename.Focus();
+}
 
         protected void OnTaskInfoSelected(QuickTaskInfo taskInfo)
         {

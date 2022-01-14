@@ -335,15 +335,16 @@ namespace ShareX
             }
         }
 
-        public static void RunImageTask(Bitmap bmp, TaskSettings taskSettings, bool skipQuickTaskMenu = false, bool skipAfterCaptureWindow = false)
+        public static void RunImageTask(Bitmap bmp, TaskSettings taskSettings, bool skipQuickTaskMenu = false, bool skipAfterCaptureWindow = false, String customFileName = null)
         {
             TaskMetadata metadata = new TaskMetadata(bmp);
-            RunImageTask(metadata, taskSettings, skipQuickTaskMenu, skipAfterCaptureWindow);
+            RunImageTask(metadata, taskSettings, skipQuickTaskMenu, skipAfterCaptureWindow, customFileName);
         }
 
-        public static void RunImageTask(TaskMetadata metadata, TaskSettings taskSettings, bool skipQuickTaskMenu = false, bool skipAfterCaptureWindow = false)
+        public static void RunImageTask(TaskMetadata metadata, TaskSettings taskSettings, bool skipQuickTaskMenu = false, bool skipAfterCaptureWindow = false, String customFileName = null)
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
+
 
             if (metadata != null && metadata.Image != null && taskSettings != null)
             {
@@ -353,26 +354,27 @@ namespace ShareX
 
                     quickTaskMenu.TaskInfoSelected += taskInfo =>
                     {
-                        if (taskInfo == null)
+                        String tmpFilename = null;
+                        if (taskInfo != null)
                         {
-                            RunImageTask(metadata, taskSettings, true);
+                            tmpFilename = taskInfo.CustomFileName;
+                            if (taskInfo.IsValid)
+                            {
+                                taskSettings.AfterCaptureJob = taskInfo.AfterCaptureTasks;
+                                taskSettings.AfterUploadJob = taskInfo.AfterUploadTasks;
+                            }
                         }
-                        else if (taskInfo.IsValid)
-                        {
-                            taskSettings.AfterCaptureJob = taskInfo.AfterCaptureTasks;
-                            taskSettings.AfterUploadJob = taskInfo.AfterUploadTasks;
-                            RunImageTask(metadata, taskSettings, true);
-                        }
+
+                        RunImageTask(metadata, taskSettings, true, false, tmpFilename);
+
                     };
 
-                    quickTaskMenu.ShowMenu();
+                    quickTaskMenu.ShowMenu(TaskHelpers.GetFileName(taskSettings, null, metadata));
 
                     return;
                 }
 
-                string customFileName = null;
-
-                if (!skipAfterCaptureWindow && !TaskHelpers.ShowAfterCaptureForm(taskSettings, out customFileName, metadata))
+                if (!skipAfterCaptureWindow && !TaskHelpers.ShowAfterCaptureForm(taskSettings, out customFileName, metadata, null, customFileName))
                 {
                     return;
                 }
