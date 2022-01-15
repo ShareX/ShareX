@@ -110,6 +110,11 @@ namespace ShareX
                 return;
             }
 
+            if (taskSettings.GeneralSettings.ToastWindowAutoHide)
+            {
+                NotificationForm.CloseActiveForm();
+            }
+
             Rectangle captureRectangle = Rectangle.Empty;
             TaskMetadata metadata = new TaskMetadata();
 
