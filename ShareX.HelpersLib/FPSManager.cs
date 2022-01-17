@@ -34,7 +34,7 @@ namespace ShareX.HelpersLib
         public event Action FPSUpdated;
 
         public int FPS { get; private set; }
-        public int FPSLimit { get; set; } = 100;
+        public int FPSLimit { get; set; }
 
         private int frameCount;
         private Stopwatch fpsTimer, frameTimer;
@@ -81,8 +81,12 @@ namespace ShareX.HelpersLib
 
                     if (currentFrameDuration < targetFrameDuration)
                     {
-                        int diff = (int)Math.Round(targetFrameDuration - currentFrameDuration);
-                        Thread.Sleep(diff);
+                        int sleepDuration = (int)Math.Round(targetFrameDuration - currentFrameDuration);
+
+                        if (sleepDuration > 0)
+                        {
+                            Thread.Sleep(sleepDuration);
+                        }
                     }
 
                     frameTimer.Restart();

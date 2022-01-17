@@ -104,12 +104,15 @@ namespace ShareX.ScreenCaptureLib
             CanvasRectangle = ClientArea;
 
             timerStart = new Stopwatch();
+            fpsManager = new FPSManager()
+            {
+                FPSLimit = 100
+            };
+            fpsManager.FPSUpdated += FpsManager_FPSChanged;
             regionAnimation = new RectangleAnimation()
             {
                 Duration = TimeSpan.FromMilliseconds(200)
             };
-            fpsManager = new FPSManager();
-            fpsManager.FPSUpdated += FpsManager_FPSChanged;
 
             if (IsEditorMode && Options.ShowEditorPanTip)
             {
@@ -160,14 +163,6 @@ namespace ShareX.ScreenCaptureLib
             Prepare(canvas);
 
             InitializeComponent();
-        }
-
-        private void FpsManager_FPSChanged()
-        {
-            if (Options.ShowFPS && !IsFullscreen)
-            {
-                UpdateTitle();
-            }
         }
 
         private void InitializeComponent()
@@ -727,6 +722,8 @@ namespace ShareX.ScreenCaptureLib
                 timerStart.Start();
             }
 
+            fpsManager.Update();
+
             UpdateCoordinates();
 
             ShapeManager.UpdateObjects();
@@ -743,6 +740,14 @@ namespace ShareX.ScreenCaptureLib
             }
 
             ShapeManager.Update();
+        }
+
+        private void FpsManager_FPSChanged()
+        {
+            if (Options.ShowFPS && !IsFullscreen)
+            {
+                UpdateTitle();
+            }
         }
 
         protected override void OnPaintBackground(PaintEventArgs e)
@@ -767,8 +772,6 @@ namespace ShareX.ScreenCaptureLib
             g.CompositingMode = CompositingMode.SourceOver;
 
             Draw(g);
-
-            fpsManager.Update();
 
             if (Options.ShowFPS && IsFullscreen)
             {
