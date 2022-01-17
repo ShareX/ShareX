@@ -51,7 +51,6 @@ namespace ShareX.ScreenCaptureLib
         public Bitmap Canvas { get; private set; }
         public Rectangle CanvasRectangle { get; internal set; }
         public RegionResult Result { get; private set; }
-        public int FPS { get; private set; }
         public int MonitorIndex { get; set; }
         public string ImageFilePath { get; set; }
         public bool IsFullscreen { get; private set; }
@@ -81,13 +80,13 @@ namespace ShareX.ScreenCaptureLib
         private Pen borderPen, borderDotPen, borderDotStaticPen, textOuterBorderPen, textInnerBorderPen, markerPen, canvasBorderPen;
         private Brush textBrush, textShadowBrush, textBackgroundBrush;
         private Font infoFont, infoFontMedium, infoFontBig;
-        private Stopwatch timerStart, timerFPS;
-        private int frameCount;
+        private Stopwatch timerStart;
         private bool pause, isKeyAllowed, forceClose;
         private RectangleAnimation regionAnimation;
         private TextAnimation editorPanTipAnimation;
         private Cursor defaultCursor, openHandCursor, closedHandCursor;
         private Color canvasBackgroundColor, canvasBorderColor, textColor, textShadowColor, textBackgroundColor, textOuterBorderColor, textInnerBorderColor;
+        private FPSManager fpsManager;
 
         public RegionCaptureForm(RegionCaptureMode mode, RegionCaptureOptions options, Bitmap canvas = null)
         {
@@ -105,7 +104,11 @@ namespace ShareX.ScreenCaptureLib
             CanvasRectangle = ClientArea;
 
             timerStart = new Stopwatch();
-            timerFPS = new Stopwatch();
+            fpsManager = new FPSManager()
+            {
+                FPSLimit = 100
+            };
+            fpsManager.FPSUpdated += FpsManager_FPSChanged;
             regionAnimation = new RectangleAnimation()
             {
                 Duration = TimeSpan.FromMilliseconds(200)
@@ -269,7 +272,7 @@ namespace ShareX.ScreenCaptureLib
 
                 if (!IsFullscreen && Options.ShowFPS)
                 {
-                    text += " - FPS: " + FPS.ToString();
+                    text += " - FPS: " + fpsManager.FPS.ToString();
                 }
             }
             else
@@ -717,8 +720,9 @@ namespace ShareX.ScreenCaptureLib
             if (!timerStart.IsRunning)
             {
                 timerStart.Start();
-                timerFPS.Start();
             }
+
+            fpsManager.Update();
 
             UpdateCoordinates();
 
@@ -736,6 +740,14 @@ namespace ShareX.ScreenCaptureLib
             }
 
             ShapeManager.Update();
+        }
+
+        private void FpsManager_FPSChanged()
+        {
+            if (Options.ShowFPS && !IsFullscreen)
+            {
+                UpdateTitle();
+            }
         }
 
         protected override void OnPaintBackground(PaintEventArgs e)
@@ -761,14 +773,9 @@ namespace ShareX.ScreenCaptureLib
 
             Draw(g);
 
-            if (Options.ShowFPS)
+            if (Options.ShowFPS && IsFullscreen)
             {
-                CheckFPS();
-
-                if (IsFullscreen)
-                {
-                    DrawFPS(g, 10);
-                }
+                DrawFPS(g, 10);
             }
 
             if (!pause)
@@ -953,24 +960,6 @@ namespace ShareX.ScreenCaptureLib
             }
         }
 
-        private void CheckFPS()
-        {
-            frameCount++;
-
-            if (timerFPS.ElapsedMilliseconds >= 1000)
-            {
-                FPS = (int)(frameCount / timerFPS.Elapsed.TotalSeconds);
-                frameCount = 0;
-                timerFPS.Reset();
-                timerFPS.Start();
-
-                if (!IsFullscreen)
-                {
-                    UpdateTitle();
-                }
-            }
-        }
-
         private void DrawFPS(Graphics g, int offset)
         {
             Point textPosition = new Point(offset, offset);
@@ -981,7 +970,7 @@ namespace ShareX.ScreenCaptureLib
                 textPosition = textPosition.Add(rectScreen.Location);
             }
 
-            g.DrawTextWithShadow(FPS.ToString(), textPosition, infoFontBig, Brushes.White, Brushes.Black, new Point(0, 1));
+            g.DrawTextWithShadow(fpsManager.FPS.ToString(), textPosition, infoFontBig, Brushes.White, Brushes.Black, new Point(0, 1));
         }
 
         private void DrawInfoText(Graphics g, string text, Rectangle rect, Font font, int padding)

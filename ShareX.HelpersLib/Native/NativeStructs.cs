@@ -1010,4 +1010,11 @@ namespace ShareX.HelpersLib
         public ushort bV5ProfileSize;
         public ushort bV5Reserved;
     }
+
+    [StructLayout(LayoutKind.Sequential)]
+    public struct TimeCaps
+    {
+        public uint wPeriodMin;
+        public uint wPeriodMax;
+    }
 }

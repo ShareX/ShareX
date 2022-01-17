@@ -457,6 +457,19 @@ namespace ShareX.HelpersLib
 
         #endregion dwmapi.dll
 
+        #region winmm.dll
+
+        [DllImport("winmm.dll", EntryPoint = "timeBeginPeriod")]
+        public static extern uint TimeBeginPeriod(uint uMilliseconds);
+
+        [DllImport("winmm.dll", EntryPoint = "timeEndPeriod")]
+        public static extern uint TimeEndPeriod(uint uMilliseconds);
+
+        [DllImport("winmm.dll", EntryPoint = "timeGetDevCaps")]
+        public static extern uint TimeGetDevCaps(ref TimeCaps timeCaps, uint sizeTimeCaps);
+
+        #endregion
+
         #region Other dll
 
         /// <summary>

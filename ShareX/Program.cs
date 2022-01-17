@@ -296,6 +296,7 @@ namespace ShareX
             MultiInstance = CLI.IsCommandExist("multi", "m");
 
             using (ApplicationInstanceManager instanceManager = new ApplicationInstanceManager(!MultiInstance, args, SingleInstanceCallback))
+            using (TimerResolutionManager timerResolutionManager = new TimerResolutionManager())
             {
                 Run();
             }

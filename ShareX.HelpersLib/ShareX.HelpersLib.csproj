@@ -164,8 +164,10 @@
     <Compile Include="Forms\ClipboardViewerForm.designer.cs">
       <DependentUpon>ClipboardViewerForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="FPSManager.cs" />
     <Compile Include="Helpers\ClipboardHelpersEx.cs" />
     <Compile Include="Helpers\JsonHelpers.cs" />
+    <Compile Include="TimerResolutionManager.cs" />
     <Compile Include="ImageFilesCache.cs" />
     <Compile Include="MaxLengthStream.cs" />
     <Compile Include="PointInfo.cs" />
