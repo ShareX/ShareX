@@ -109,7 +109,7 @@ namespace ShareX.ScreenCaptureLib
                 Duration = TimeSpan.FromMilliseconds(200)
             };
             fpsManager = new FPSManager();
-            fpsManager.FPSChanged += FpsManager_FPSChanged;
+            fpsManager.FPSUpdated += FpsManager_FPSChanged;
 
             if (IsEditorMode && Options.ShowEditorPanTip)
             {

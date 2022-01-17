@@ -28,12 +28,22 @@ using System.Runtime.InteropServices;
 
 namespace ShareX.HelpersLib
 {
-    public static class TimerResolutionManager
+    public class TimerResolutionManager : IDisposable
     {
         private static readonly object thisLock = new object();
 
         private static bool enabled;
         private static uint lastPeriod;
+
+        public TimerResolutionManager(uint period = 1)
+        {
+            Enable(period);
+        }
+
+        public void Dispose()
+        {
+            Disable();
+        }
 
         public static bool Enable(uint period = 1)
         {

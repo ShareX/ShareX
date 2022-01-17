@@ -25,45 +25,68 @@
 
 using System;
 using System.Diagnostics;
+using System.Threading;
 
 namespace ShareX.HelpersLib
 {
     public class FPSManager
     {
-        public event Action FPSChanged;
+        public event Action FPSUpdated;
 
         public int FPS { get; private set; }
+        public int FPSLimit { get; set; } = 100;
 
         private int frameCount;
-        private Stopwatch timer;
+        private Stopwatch fpsTimer, frameTimer;
 
         public FPSManager()
         {
-            timer = new Stopwatch();
+            fpsTimer = new Stopwatch();
+            frameTimer = new Stopwatch();
         }
 
-        protected void OnFPSChanged()
+        protected void OnFPSUpdated()
         {
-            FPSChanged?.Invoke();
+            FPSUpdated?.Invoke();
         }
 
         public void Update()
         {
-            if (!timer.IsRunning)
-            {
-                timer.Start();
-            }
-
             frameCount++;
 
-            if (timer.ElapsedMilliseconds >= 1000)
+            if (!fpsTimer.IsRunning)
             {
-                FPS = (int)(frameCount / timer.Elapsed.TotalSeconds);
+                fpsTimer.Start();
+            }
+            else if (fpsTimer.ElapsedMilliseconds >= 1000)
+            {
+                FPS = (int)(frameCount / fpsTimer.Elapsed.TotalSeconds);
 
-                OnFPSChanged();
+                OnFPSUpdated();
 
                 frameCount = 0;
-                timer.Restart();
+                fpsTimer.Restart();
+            }
+
+            if (FPSLimit > 0)
+            {
+                if (!frameTimer.IsRunning)
+                {
+                    frameTimer.Start();
+                }
+                else
+                {
+                    double currentFrameDuration = frameTimer.Elapsed.TotalMilliseconds;
+                    double targetFrameDuration = 1000d / FPSLimit;
+
+                    if (currentFrameDuration < targetFrameDuration)
+                    {
+                        int diff = (int)Math.Round(targetFrameDuration - currentFrameDuration);
+                        Thread.Sleep(diff);
+                    }
+
+                    frameTimer.Restart();
+                }
             }
         }
     }
