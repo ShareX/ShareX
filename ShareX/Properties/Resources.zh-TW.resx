@@ -496,7 +496,7 @@
     <value>OCR 處理中。</value>
   </data>
   <data name="PleaseNoteThatShareXIsUsingOCRSpaceSOnlineAPIToPerformOpticalCharacterRecognitionDoYouGivePermissionToShareXToUploadImagesToThisService" xml:space="preserve">
-    <value>請註意，ShareX 將使用 OCR.Space 的線上 API 來執行光學字元辨識。您是否允許 ShareX 上傳圖片到此線上服務？</value>
+    <value>請注意，ShareX 將使用 OCR.Space 的線上 API 來執行光學字元辨識。您是否允許 ShareX 上傳圖片到此線上服務？</value>
   </data>
   <data name="QRCodeForm_InputTextToEncode" xml:space="preserve">
     <value>輸入文字以產生二維條碼</value>
@@ -543,7 +543,7 @@
     <value>葡萄牙語</value>
   </data>
   <data name="InspectWindow_ProcessName" xml:space="preserve">
-    <value>程序名稱</value>
+    <value>處理程序名稱</value>
   </data>
   <data name="FFmpeg_Download_of_FFmpeg_failed" xml:space="preserve">
     <value>下載 ffmepg 失敗。</value>
@@ -563,19 +563,19 @@
 請問您要自動下載嗎？</value>
   </data>
   <data name="InspectWindow_ProcessFileName" xml:space="preserve">
-    <value>程序檔案名稱</value>
+    <value>處理程序檔案名稱</value>
   </data>
   <data name="YourAntiVirusSoftwareOrTheControlledFolderAccessFeatureInWindowsCouldBeBlockingShareX" xml:space="preserve">
     <value>您在 Windows 的防毒軟體或是控制資料夾存取的功能可能會封鎖 ShareX</value>
   </data>
   <data name="WouldYouLikeToResetThemes" xml:space="preserve">
-    <value>您想要重置主題嗎？</value>
+    <value>您想要重置布景主題嗎？</value>
   </data>
   <data name="ThisFeatureWillNotWorkWhenDisableUploadOptionIsEnabled" xml:space="preserve">
     <value>本功能無法在「DisableUpload」選項為啟用的狀態下運作！</value>
   </data>
   <data name="InspectWindow_WindowRectangle" xml:space="preserve">
-    <value>矩形窗口</value>
+    <value>矩形視窗</value>
   </data>
   <data name="WouldYouLikeToEnableImageEffects" xml:space="preserve">
     <value>請問您想要啟用圖片特效嗎？
@@ -610,7 +610,7 @@
     <value>FFmpeg 視訊和音訊來源兩者不可以為 「None」。</value>
   </data>
   <data name="InspectWindow_ProcessIdentifier" xml:space="preserve">
-    <value>程序識別器</value>
+    <value>處理程序識別器</value>
   </data>
   <data name="InspectWindow_WindowHandle" xml:space="preserve">
     <value>視窗處置</value>
