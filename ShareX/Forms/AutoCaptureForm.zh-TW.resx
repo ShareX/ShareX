@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -127,7 +127,7 @@
     <value>選擇區域</value>
   </data>
   <data name="cbAutoMinimize.Text" xml:space="preserve">
-    <value>自動最小化到系統匣</value>
+    <value>自動最小化到工作列</value>
   </data>
   <data name="cbWaitUploads.Text" xml:space="preserve">
     <value>等待工作完成</value>

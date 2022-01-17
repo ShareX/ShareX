@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -118,21 +118,30 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - 快捷鍵設定</value>
+    <value>ShareX - 快速鍵設定</value>
   </data>
   <data name="btnAdd.Text" xml:space="preserve">
     <value>新增...</value>
   </data>
   <data name="btnDuplicate.Text" xml:space="preserve">
-    <value>複製</value>
+    <value>重複</value>
   </data>
   <data name="btnEdit.Text" xml:space="preserve">
     <value>編輯...</value>
+  </data>
+  <data name="btnHotkeysDisabled.Text" xml:space="preserve">
+    <value>快速鍵已停用。您可以點選此處啟用它們。</value>
+  </data>
+  <data name="btnMoveDown.Text" xml:space="preserve">
+    <value>↓</value>
+  </data>
+  <data name="btnMoveUp.Text" xml:space="preserve">
+    <value>↑</value>
   </data>
   <data name="btnRemove.Text" xml:space="preserve">
     <value>移除</value>
   </data>
   <data name="btnReset.Text" xml:space="preserve">
-    <value>恢復預設快捷鍵...</value>
+    <value>恢復預設快速鍵...</value>
   </data>
 </root>

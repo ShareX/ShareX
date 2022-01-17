@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -129,16 +129,16 @@
   <data name="btnCopy.Text" xml:space="preserve">
     <value>複製</value>
   </data>
+  <data name="lblFileName.Text" xml:space="preserve">
+    <value>檔案名稱：</value>
+  </data>
   <data name="tpAfterCapture.Text" xml:space="preserve">
     <value>擷取後</value>
-  </data>
-  <data name="tpBeforeUpload.Text" xml:space="preserve">
-    <value>目的地</value>
   </data>
   <data name="tpAfterUpload.Text" xml:space="preserve">
     <value>上傳後</value>
   </data>
-  <data name="lblFileName.Text" xml:space="preserve">
-    <value>檔名：</value>
+  <data name="tpBeforeUpload.Text" xml:space="preserve">
+    <value>目的地</value>
   </data>
 </root>

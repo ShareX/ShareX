@@ -116,107 +116,11 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="lblDescription.Text" xml:space="preserve">
-    <value>描述：</value>
-  </data>
-  <data name="tpTask.Text" xml:space="preserve">
-    <value>任務</value>
-  </data>
-  <data name="tpGeneral.Text" xml:space="preserve">
-    <value>一般</value>
-  </data>
-  <data name="tpImage.Text" xml:space="preserve">
-    <value>圖片</value>
-  </data>
-  <data name="lblCaptureCustomRegionWidth.Text" xml:space="preserve">
-    <value>寬</value>
-  </data>
-  <data name="lblCaptureCustomRegionHeight.Text" xml:space="preserve">
-    <value>高</value>
-  </data>
-  <data name="cbShowCursor.Text" xml:space="preserve">
-    <value>在截圖中顯示游標</value>
-  </data>
-  <data name="lblCaptureShadowOffset.Text" xml:space="preserve">
-    <value>陰影偏移量：</value>
-  </data>
-  <data name="cbCaptureTransparent.Text" xml:space="preserve">
-    <value>擷取視窗透明度</value>
-  </data>
-  <data name="cbCaptureAutoHideTaskbar.Text" xml:space="preserve">
-    <value>擷取視窗時，如果視窗與工作列重疊，則隱藏工作列</value>
-  </data>
-  <data name="cbCaptureShadow.Text" xml:space="preserve">
-    <value>擷取視窗陰影（需要透明度）</value>
-  </data>
-  <data name="lblScreenshotDelayInfo.Text" xml:space="preserve">
-    <value>秒</value>
-  </data>
-  <data name="cbCaptureClientArea.Text" xml:space="preserve">
-    <value>擷取視窗或活動視窗時擷取客戶端範圍</value>
-  </data>
-  <data name="tpRegionCapture.Text" xml:space="preserve">
-    <value>區域擷取</value>
-  </data>
-  <data name="tpScreenRecorder.Text" xml:space="preserve">
-    <value>螢幕錄製</value>
-  </data>
-  <data name="tpCapture.Text" xml:space="preserve">
-    <value>擷取</value>
-  </data>
-  <data name="tpUpload.Text" xml:space="preserve">
-    <value>上傳</value>
-  </data>
-  <data name="tpActions.Text" xml:space="preserve">
-    <value>動作</value>
-  </data>
-  <data name="tpWatchFolders.Text" xml:space="preserve">
-    <value>監視資料夾</value>
-  </data>
-  <data name="tpTools.Text" xml:space="preserve">
-    <value>工具</value>
-  </data>
-  <data name="tpAdvanced.Text" xml:space="preserve">
-    <value>進階</value>
-  </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - 任務設定</value>
+    <value>ShareX - 工作設定</value>
   </data>
-  <data name="btnWatchFolderAdd.Text" xml:space="preserve">
-    <value>新增...</value>
-  </data>
-  <data name="btnWatchFolderRemove.Text" xml:space="preserve">
-    <value>移除</value>
-  </data>
-  <data name="chWatchFolderIncludeSubdirectories.Text" xml:space="preserve">
-    <value>包含子目錄</value>
-  </data>
-  <data name="chWatchFolderFilter.Text" xml:space="preserve">
-    <value>篩選條件</value>
-  </data>
-  <data name="chWatchFolderFolderPath.Text" xml:space="preserve">
-    <value>資料夾路徑</value>
-  </data>
-  <data name="cbWatchFolderEnabled.Text" xml:space="preserve">
-    <value>監視資料夾，如有新檔案則自動上傳</value>
-  </data>
-  <data name="btnActionsRemove.Text" xml:space="preserve">
-    <value>移除</value>
-  </data>
-  <data name="btnActionsEdit.Text" xml:space="preserve">
-    <value>編輯</value>
-  </data>
-  <data name="chActionsExtensions.Text" xml:space="preserve">
-    <value>副檔名</value>
-  </data>
-  <data name="chActionsArgs.Text" xml:space="preserve">
-    <value>參數</value>
-  </data>
-  <data name="chActionsPath.Text" xml:space="preserve">
-    <value>路徑</value>
-  </data>
-  <data name="chActionsName.Text" xml:space="preserve">
-    <value>名稱</value>
+  <data name="btnActions.Text" xml:space="preserve">
+    <value>動作…</value>
   </data>
   <data name="btnActionsAdd.Text" xml:space="preserve">
     <value>新增</value>
@@ -224,236 +128,62 @@
   <data name="btnActionsDuplicate.Text" xml:space="preserve">
     <value>複製</value>
   </data>
-  <data name="cbClipboardUploadShortenURL.Text" xml:space="preserve">
-    <value>如果剪貼簿中有網址，則使用縮網址服務</value>
+  <data name="btnActionsEdit.Text" xml:space="preserve">
+    <value>編輯</value>
   </data>
-  <data name="cbClipboardUploadAutoIndexFolder.Text" xml:space="preserve">
-    <value>如果剪貼簿中有資料夾路徑，則自動索引該資料夾並上傳索引</value>
-  </data>
-  <data name="cbClipboardUploadShareURL.Text" xml:space="preserve">
-    <value>如果剪貼簿中有網址，則使用網址分享服務分享</value>
-  </data>
-  <data name="tpUploadClipboard.Text" xml:space="preserve">
-    <value>剪貼簿上傳</value>
-  </data>
-  <data name="lblNameFormatPattern.Text" xml:space="preserve">
-    <value>上傳擷取或剪貼簿時的名稱模式：</value>
-  </data>
-  <data name="cbFileUploadUseNamePattern.Text" xml:space="preserve">
-    <value>在上傳檔案時使用名稱模式，而非實際檔名</value>
-  </data>
-  <data name="lblNameFormatPatternPreviewActiveWindow.Text" xml:space="preserve">
-    <value>預覽：</value>
-  </data>
-  <data name="lblNameFormatPatternActiveWindow.Text" xml:space="preserve">
-    <value>視窗擷取時的名稱模式：</value>
-  </data>
-  <data name="lblNameFormatPatternPreview.Text" xml:space="preserve">
-    <value>預覽：</value>
-  </data>
-  <data name="cbNameFormatCustomTimeZone.Text" xml:space="preserve">
-    <value>使用自訂時區：</value>
-  </data>
-  <data name="tpFileNaming.Text" xml:space="preserve">
-    <value>檔案命名</value>
-  </data>
-  <data name="lblGIFFPS.Text" xml:space="preserve">
-    <value>GIF FPS：</value>
-  </data>
-  <data name="cbScreenRecorderFixedDuration.Text" xml:space="preserve">
-    <value>固定時長：</value>
-  </data>
-  <data name="lblScreenRecordFPS.Text" xml:space="preserve">
-    <value>螢幕錄製 FPS：</value>
-  </data>
-  <data name="lblScreenRecorderFixedDuration.Text" xml:space="preserve">
-    <value>秒</value>
-  </data>
-  <data name="lblScreenRecorderStartDelay.Text" xml:space="preserve">
-    <value>秒</value>
-  </data>
-  <data name="btnScreenRecorderFFmpegOptions.Text" xml:space="preserve">
-    <value>螢幕錄製選項...</value>
-  </data>
-  <data name="cbScreenRecorderShowCursor.Text" xml:space="preserve">
-    <value>在錄製時顯示游標</value>
-  </data>
-  <data name="lblThumbnailWidth.Text" xml:space="preserve">
-    <value>寬：</value>
-  </data>
-  <data name="lblThumbnailHeight.Text" xml:space="preserve">
-    <value>高：</value>
-  </data>
-  <data name="lblThumbnailName.Text" xml:space="preserve">
-    <value>縮圖名稱：</value>
-  </data>
-  <data name="lblThumbnailNamePreview.Text" xml:space="preserve">
-    <value>預覽</value>
-  </data>
-  <data name="cbThumbnailIfSmaller.Text" xml:space="preserve">
-    <value>僅在圖片尺寸大於縮圖尺寸時才建立縮圖</value>
-  </data>
-  <data name="tpThumbnail.Text" xml:space="preserve">
-    <value>縮圖</value>
-  </data>
-  <data name="btnImageEffects.Text" xml:space="preserve">
-    <value>圖片效果設定...</value>
-  </data>
-  <data name="cbImageEffectOnlyRegionCapture.Text" xml:space="preserve">
-    <value>只適用於區域擷取</value>
-  </data>
-  <data name="lblImageEffectsNote.Text" xml:space="preserve">
-    <value>備註：你可以在「擷取後的任務 -&gt; 新增圖片效果」啟用/停用圖片效果。</value>
-  </data>
-  <data name="tpEffects.Text" xml:space="preserve">
-    <value>效果</value>
-  </data>
-  <data name="lblImageJPEGQuality.Text" xml:space="preserve">
-    <value>JPEG 品質：</value>
-  </data>
-  <data name="lblImageGIFQuality.Text" xml:space="preserve">
-    <value>GIF 品質：</value>
-  </data>
-  <data name="lblImageFileExist.Text" xml:space="preserve">
-    <value>如果檔案存在：</value>
-  </data>
-  <data name="lblImageFormat.Text" xml:space="preserve">
-    <value>圖片格式：</value>
-  </data>
-  <data name="cbPlaySoundAfterCapture.Text" xml:space="preserve">
-    <value>擷取完畢後播放提示音</value>
-  </data>
-  <data name="cbPlaySoundAfterUpload.Text" xml:space="preserve">
-    <value>任務完成後播放提示音</value>
-  </data>
-  <data name="btnTask.Text" xml:space="preserve">
-    <value>任務...</value>
-  </data>
-  <data name="tsmiURLSharingServices.Text" xml:space="preserve">
-    <value>網址分享服務</value>
-  </data>
-  <data name="tsmiURLShorteners.Text" xml:space="preserve">
-    <value>縮網址服務</value>
-  </data>
-  <data name="tsmiFileUploaders.Text" xml:space="preserve">
-    <value>檔案上傳工具</value>
-  </data>
-  <data name="tsmiTextUploaders.Text" xml:space="preserve">
-    <value>文字上傳工具</value>
-  </data>
-  <data name="tsmiImageUploaders.Text" xml:space="preserve">
-    <value>圖片上傳工具</value>
-  </data>
-  <data name="btnDestinations.Text" xml:space="preserve">
-    <value>目的地...</value>
-  </data>
-  <data name="btnAfterUpload.Text" xml:space="preserve">
-    <value>上傳後...</value>
+  <data name="btnActionsRemove.Text" xml:space="preserve">
+    <value>移除</value>
   </data>
   <data name="btnAfterCapture.Text" xml:space="preserve">
     <value>擷取後...</value>
   </data>
-  <data name="cbImageAutoUseJPEG.Text" xml:space="preserve">
-    <value>如果圖片尺寸比指定尺寸大，使用 JPEG 格式：</value>
+  <data name="btnAfterUpload.Text" xml:space="preserve">
+    <value>上傳後...</value>
+  </data>
+  <data name="btnAutoIncrementNumber.Text" xml:space="preserve">
+    <value>更改</value>
   </data>
   <data name="btnCaptureCustomRegionSelectRectangle.Text" xml:space="preserve">
     <value>選擇區域...</value>
   </data>
-  <data name="lblCaptureCustomRegion.Text" xml:space="preserve">
-    <value>預先定義區域：</value>
+  <data name="btnCustomCaptureSoundPath.Text" xml:space="preserve">
+    <value>...</value>
   </data>
-  <data name="cbRegionCaptureShowFPS.Text" xml:space="preserve">
-    <value>在左上角顯示 FPS</value>
+  <data name="btnCustomErrorSoundPath.Text" xml:space="preserve">
+    <value>...</value>
   </data>
-  <data name="lblRegionCaptureFixedSizeWidth.Text" xml:space="preserve">
-    <value>寬：</value>
+  <data name="btnCustomTaskCompletedSoundPath.Text" xml:space="preserve">
+    <value>...</value>
   </data>
-  <data name="lblRegionCaptureFixedSizeHeight.Text" xml:space="preserve">
-    <value>高：</value>
+  <data name="btnDestinations.Text" xml:space="preserve">
+    <value>目的地...</value>
   </data>
-  <data name="cbRegionCaptureIsFixedSize.Text" xml:space="preserve">
-    <value>固定大小區域模式：</value>
+  <data name="btnImageEffects.Text" xml:space="preserve">
+    <value>圖片效果設定...</value>
   </data>
-  <data name="cbRegionCaptureShowCrosshair.Text" xml:space="preserve">
-    <value>顯示全螢幕十字線</value>
-  </data>
-  <data name="lblRegionCaptureMagnifierPixelSize.Text" xml:space="preserve">
-    <value>放大鏡像素尺寸：</value>
-  </data>
-  <data name="lblRegionCaptureMagnifierPixelCount.Text" xml:space="preserve">
-    <value>放大鏡像素數量：</value>
-  </data>
-  <data name="cbRegionCaptureUseSquareMagnifier.Text" xml:space="preserve">
-    <value>使用方形放大鏡代替圓形</value>
-  </data>
-  <data name="cbRegionCaptureShowMagnifier.Text" xml:space="preserve">
-    <value>在游標附近顯示放大鏡</value>
-  </data>
-  <data name="cbRegionCaptureShowInfo.Text" xml:space="preserve">
-    <value>顯示位置與尺寸資訊</value>
-  </data>
-  <data name="lblRegionCaptureSnapSizes.Text" xml:space="preserve">
-    <value>按住 Alt 鍵時，區域將貼齊的尺寸：</value>
-  </data>
-  <data name="cbRegionCaptureDetectControls.Text" xml:space="preserve">
-    <value>同時偵測視窗內的控制區域</value>
-  </data>
-  <data name="cbRegionCaptureDetectWindows.Text" xml:space="preserve">
-    <value>偵測視窗區域，並允許游標懸停擷取</value>
-  </data>
-  <data name="lblRegionCaptureMouseMiddleClickAction.Text" xml:space="preserve">
-    <value>滑鼠中鍵單擊動作：</value>
-  </data>
-  <data name="lblRegionCaptureMouse5ClickAction.Text" xml:space="preserve">
-    <value>滑鼠側鍵 2 單擊動作：</value>
-  </data>
-  <data name="lblRegionCaptureMouse4ClickAction.Text" xml:space="preserve">
-    <value>滑鼠側鍵 1 單擊動作：</value>
-  </data>
-  <data name="lblRegionCaptureMouseRightClickAction.Text" xml:space="preserve">
-    <value>滑鼠右鍵單擊動作：</value>
-  </data>
-  <data name="cbRegionCaptureMultiRegionMode.Text" xml:space="preserve">
-    <value>使用多區域模式，允許調整尺寸和移動區域</value>
-  </data>
-  <data name="btnRegionCaptureSnapSizesDialogCancel.Text" xml:space="preserve">
-    <value>取消</value>
+  <data name="btnRegionCaptureSnapSizesAdd.Text" xml:space="preserve">
+    <value>+</value>
   </data>
   <data name="btnRegionCaptureSnapSizesDialogAdd.Text" xml:space="preserve">
     <value>新增</value>
   </data>
-  <data name="RegionCaptureSnapSizesHeight.Text" xml:space="preserve">
-    <value>高：</value>
+  <data name="btnRegionCaptureSnapSizesDialogCancel.Text" xml:space="preserve">
+    <value>取消</value>
   </data>
-  <data name="lblRegionCaptureSnapSizesWidth.Text" xml:space="preserve">
-    <value>寬：</value>
+  <data name="btnRegionCaptureSnapSizesRemove.Text" xml:space="preserve">
+    <value>-</value>
   </data>
-  <data name="cbRegionCaptureUseDimming.Text" xml:space="preserve">
-    <value>暗化背景以便輕鬆區別選取區（將影響啟動速度）</value>
+  <data name="btnScreenRecorderFFmpegOptions.Text" xml:space="preserve">
+    <value>螢幕錄製選項...</value>
   </data>
-  <data name="cbRegionCaptureUseCustomInfoText.Text" xml:space="preserve">
-    <value>在游標附近顯示自訂文字：</value>
+  <data name="btnScreenshotsFolderBrowse.Text" xml:space="preserve">
+    <value>瀏覽...</value>
   </data>
-  <data name="lblToolsScreenColorPickerFormat.Text" xml:space="preserve">
-    <value>螢幕檢色器格式：</value>
+  <data name="btnTask.Text" xml:space="preserve">
+    <value>工作...</value>
   </data>
-  <data name="cbOverrideAfterCaptureSettings.Text" xml:space="preserve">
-    <value>覆寫擷取後設定</value>
-  </data>
-  <data name="cbOverrideAfterUploadSettings.Text" xml:space="preserve">
-    <value>覆寫上傳後設定</value>
-  </data>
-  <data name="cbOverrideDestinationSettings.Text" xml:space="preserve">
-    <value>覆寫目的地</value>
-  </data>
-  <data name="tpUploaderFilters.Text" xml:space="preserve">
-    <value>上傳工具篩選條件</value>
-  </data>
-  <data name="chUploaderFiltersName.Text" xml:space="preserve">
-    <value>上傳工具</value>
-  </data>
-  <data name="chUploaderFiltersExtension.Text" xml:space="preserve">
-    <value>副檔名</value>
+  <data name="btnUploaderFiltersAdd.Text" xml:space="preserve">
+    <value>新增</value>
   </data>
   <data name="btnUploaderFiltersRemove.Text" xml:space="preserve">
     <value>移除</value>
@@ -461,32 +191,20 @@
   <data name="btnUploaderFiltersUpdate.Text" xml:space="preserve">
     <value>更新</value>
   </data>
-  <data name="btnUploaderFiltersAdd.Text" xml:space="preserve">
-    <value>新增</value>
+  <data name="btnWatchFolderAdd.Text" xml:space="preserve">
+    <value>新增...</value>
   </data>
-  <data name="lblUploaderFiltersDestination.Text" xml:space="preserve">
-    <value>上傳工具：</value>
+  <data name="btnWatchFolderEdit.Text" xml:space="preserve">
+    <value>編輯...</value>
   </data>
-  <data name="lblUploaderFiltersExtensionsExample.Text" xml:space="preserve">
-    <value>範例：png, jpg, jpeg</value>
+  <data name="btnWatchFolderRemove.Text" xml:space="preserve">
+    <value>移除</value>
   </data>
-  <data name="lblUploaderFiltersExtensions.Text" xml:space="preserve">
-    <value>副檔名篩選條件：</value>
+  <data name="cbCaptureAutoHideTaskbar.Text" xml:space="preserve">
+    <value>擷取視窗時，如果視窗與工作列重疊，則隱藏工作列</value>
   </data>
-  <data name="lblActionsNote.Text" xml:space="preserve">
-    <value>備註：你可以在「擷取後的任務 -&gt; 執行動作」啟用/停用動作。</value>
-  </data>
-  <data name="lblImagePNGBitDepth.Text" xml:space="preserve">
-    <value>PNG 位元深度：</value>
-  </data>
-  <data name="lblScreenshotDelay.Text" xml:space="preserve">
-    <value>截圖倒數計時：</value>
-  </data>
-  <data name="cbScreenRecordTwoPassEncoding.Text" xml:space="preserve">
-    <value>使用無損編碼錄製，接著套用使用者的編碼選項</value>
-  </data>
-  <data name="cbScreenRecordConfirmAbort.Text" xml:space="preserve">
-    <value>停止時跳出確認提示</value>
+  <data name="cbCaptureClientArea.Text" xml:space="preserve">
+    <value>擷取視窗或活動視窗時擷取客戶端範圍</value>
   </data>
   <data name="cbCaptureOCRAutoCopy.Text" xml:space="preserve">
     <value>自動複製結果到剪貼簿</value>
@@ -497,22 +215,454 @@
   <data name="cbCaptureOCRSilent.Text" xml:space="preserve">
     <value>背景處理 OCR</value>
   </data>
-  <data name="lblOCRDefaultLanguage.Text" xml:space="preserve">
-    <value>預設語言：</value>
+  <data name="cbCaptureShadow.Text" xml:space="preserve">
+    <value>擷取視窗陰影（需要透明度）</value>
   </data>
-  <data name="btnAutoIncrementNumber.Text" xml:space="preserve">
-    <value>更改</value>
+  <data name="cbCaptureTransparent.Text" xml:space="preserve">
+    <value>擷取視窗透明度</value>
   </data>
-  <data name="lblAutoIncrementNumber.Text" xml:space="preserve">
-    <value>自動遞增：</value>
+  <data name="cbClipboardUploadAutoIndexFolder.Text" xml:space="preserve">
+    <value>如果剪貼簿中有資料夾路徑，則自動索引該資料夾並上傳索引</value>
   </data>
-  <data name="cbFileUploadReplaceProblematicCharacters.Text" xml:space="preserve">
-    <value>上傳時使用底線替換網址中的問題字元</value>
+  <data name="cbClipboardUploadShareURL.Text" xml:space="preserve">
+    <value>如果剪貼簿中有網址，則使用網址分享服務分享</value>
+  </data>
+  <data name="cbClipboardUploadShortenURL.Text" xml:space="preserve">
+    <value>如果剪貼簿中有網址，則使用縮網址服務</value>
   </data>
   <data name="cbClipboardUploadURLContents.Text" xml:space="preserve">
     <value>如果剪貼簿中有檔案網址，則下載並上傳之</value>
   </data>
-  <data name="btnWatchFolderEdit.Text" xml:space="preserve">
-    <value>編輯...</value>
+  <data name="cbDisableNotifications.Text" xml:space="preserve">
+    <value>停用通知</value>
+  </data>
+  <data name="cbDisableNotificationsOnFullscreen.Text" xml:space="preserve">
+    <value>全螢幕時停用通知</value>
+  </data>
+  <data name="cbFileUploadReplaceProblematicCharacters.Text" xml:space="preserve">
+    <value>上傳時使用底線替換網址中的問題字元</value>
+  </data>
+  <data name="cbFileUploadUseNamePattern.Text" xml:space="preserve">
+    <value>在上傳檔案時使用名稱模式，而非實際檔名</value>
+  </data>
+  <data name="cbImageAutoJPEGQuality.Text" xml:space="preserve">
+    <value>自動調整 JEPG 質量以維持圖片尺寸更接近指定的尺寸</value>
+  </data>
+  <data name="cbImageAutoUseJPEG.Text" xml:space="preserve">
+    <value>如果圖片尺寸比指定尺寸大，使用 JPEG 格式：</value>
+  </data>
+  <data name="cbImageEffectOnlyRegionCapture.Text" xml:space="preserve">
+    <value>只適用於區域擷取</value>
+  </data>
+  <data name="cbNameFormatCustomTimeZone.Text" xml:space="preserve">
+    <value>使用自訂時區：</value>
+  </data>
+  <data name="cbOverrideActions.Text" xml:space="preserve">
+    <value>覆寫動作</value>
+  </data>
+  <data name="cbOverrideAdvancedSettings.Text" xml:space="preserve">
+    <value>覆寫進階設定</value>
+  </data>
+  <data name="cbOverrideAfterCaptureSettings.Text" xml:space="preserve">
+    <value>覆寫擷取後設定</value>
+  </data>
+  <data name="cbOverrideAfterUploadSettings.Text" xml:space="preserve">
+    <value>覆寫上傳後設定</value>
+  </data>
+  <data name="cbOverrideCaptureSettings.Text" xml:space="preserve">
+    <value>覆寫擷取設定</value>
+  </data>
+  <data name="cbOverrideCustomUploader.Text" xml:space="preserve">
+    <value>覆寫預設的自訂上傳器</value>
+  </data>
+  <data name="cbOverrideDestinationSettings.Text" xml:space="preserve">
+    <value>覆寫目的地</value>
+  </data>
+  <data name="cbOverrideFTPAccount.Text" xml:space="preserve">
+    <value>覆寫預設的 FTP 帳號</value>
+  </data>
+  <data name="cbOverrideGeneralSettings.Text" xml:space="preserve">
+    <value>覆寫全域設定</value>
+  </data>
+  <data name="cbOverrideImageSettings.Text" xml:space="preserve">
+    <value>覆寫圖片設定</value>
+  </data>
+  <data name="cbOverrideScreenshotsFolder.Text" xml:space="preserve">
+    <value>覆寫截圖資料夾</value>
+  </data>
+  <data name="cbOverrideToolsSettings.Text" xml:space="preserve">
+    <value>覆寫工具設定</value>
+  </data>
+  <data name="cbOverrideUploadSettings.Text" xml:space="preserve">
+    <value>覆寫上傳設定</value>
+  </data>
+  <data name="cbPlaySoundAfterCapture.Text" xml:space="preserve">
+    <value>擷取完畢後播放提示音</value>
+  </data>
+  <data name="cbPlaySoundAfterUpload.Text" xml:space="preserve">
+    <value>工作完成後播放提示音</value>
+  </data>
+  <data name="cbRegionCaptureDetectControls.Text" xml:space="preserve">
+    <value>同時偵測視窗內的控制區域</value>
+  </data>
+  <data name="cbRegionCaptureDetectWindows.Text" xml:space="preserve">
+    <value>偵測視窗區域，並允許游標懸停擷取</value>
+  </data>
+  <data name="cbRegionCaptureIsFixedSize.Text" xml:space="preserve">
+    <value>固定大小區域模式：</value>
+  </data>
+  <data name="cbRegionCaptureMultiRegionMode.Text" xml:space="preserve">
+    <value>使用多區域模式，允許調整尺寸和移動區域</value>
+  </data>
+  <data name="cbRegionCaptureShowCrosshair.Text" xml:space="preserve">
+    <value>顯示全螢幕十字線</value>
+  </data>
+  <data name="cbRegionCaptureShowFPS.Text" xml:space="preserve">
+    <value>在左上角顯示 FPS</value>
+  </data>
+  <data name="cbRegionCaptureShowInfo.Text" xml:space="preserve">
+    <value>顯示位置與尺寸資訊</value>
+  </data>
+  <data name="cbRegionCaptureShowMagnifier.Text" xml:space="preserve">
+    <value>在游標附近顯示放大鏡</value>
+  </data>
+  <data name="cbRegionCaptureUseCustomInfoText.Text" xml:space="preserve">
+    <value>在游標附近顯示自訂文字：</value>
+  </data>
+  <data name="cbRegionCaptureUseDimming.Text" xml:space="preserve">
+    <value>暗化背景以便輕鬆區別選取區（將影響啟動速度）</value>
+  </data>
+  <data name="cbRegionCaptureUseSquareMagnifier.Text" xml:space="preserve">
+    <value>使用方形放大鏡代替圓形</value>
+  </data>
+  <data name="cbScreenRecordAutoStart.Text" xml:space="preserve">
+    <value>延遲</value>
+  </data>
+  <data name="cbScreenRecordConfirmAbort.Text" xml:space="preserve">
+    <value>停止時跳出確認提示</value>
+  </data>
+  <data name="cbScreenRecorderFixedDuration.Text" xml:space="preserve">
+    <value>固定時長：</value>
+  </data>
+  <data name="cbScreenRecorderShowCursor.Text" xml:space="preserve">
+    <value>在錄製時顯示游標</value>
+  </data>
+  <data name="cbScreenRecordTransparentRegion.Text" xml:space="preserve">
+    <value>使用透明區域選擇</value>
+  </data>
+  <data name="cbScreenRecordTwoPassEncoding.Text" xml:space="preserve">
+    <value>使用無損編碼錄製，接著套用使用者的編碼選項</value>
+  </data>
+  <data name="cbShowCursor.Text" xml:space="preserve">
+    <value>在截圖中顯示游標</value>
+  </data>
+  <data name="cbShowImageEffectsWindowAfterCapture.Text" xml:space="preserve">
+    <value>擷取後顯示圖片效果視窗</value>
+  </data>
+  <data name="cbShowToastNotificationAfterTaskCompleted.Text" xml:space="preserve">
+    <value>工作完成後顯示快顯提示</value>
+  </data>
+  <data name="cbThumbnailIfSmaller.Text" xml:space="preserve">
+    <value>僅在圖片尺寸大於縮圖尺寸時才建立縮圖</value>
+  </data>
+  <data name="cbToastWindowAutoHide.Text" xml:space="preserve">
+    <value>螢幕擷取時自動隱藏</value>
+  </data>
+  <data name="cbURLRegexReplace.Text" xml:space="preserve">
+    <value>使用正規表達式替換替換 URL 的結果</value>
+  </data>
+  <data name="cbUseCustomCaptureSound.Text" xml:space="preserve">
+    <value>使用自訂擷取音效：</value>
+  </data>
+  <data name="cbUseCustomErrorSound.Text" xml:space="preserve">
+    <value>使用自訂錯誤音效：</value>
+  </data>
+  <data name="cbUseCustomTaskCompletedSound.Text" xml:space="preserve">
+    <value>使用自訂工作完成音效：</value>
+  </data>
+  <data name="cbWatchFolderEnabled.Text" xml:space="preserve">
+    <value>監視資料夾，如有新檔案則自動上傳</value>
+  </data>
+  <data name="chActionsArgs.Text" xml:space="preserve">
+    <value>參數</value>
+  </data>
+  <data name="chActionsExtensions.Text" xml:space="preserve">
+    <value>副檔名</value>
+  </data>
+  <data name="chActionsName.Text" xml:space="preserve">
+    <value>名稱</value>
+  </data>
+  <data name="chActionsPath.Text" xml:space="preserve">
+    <value>路徑</value>
+  </data>
+  <data name="chUploaderFiltersExtension.Text" xml:space="preserve">
+    <value>副檔名</value>
+  </data>
+  <data name="chUploaderFiltersName.Text" xml:space="preserve">
+    <value>上傳工具</value>
+  </data>
+  <data name="chWatchFolderFilter.Text" xml:space="preserve">
+    <value>篩選條件</value>
+  </data>
+  <data name="chWatchFolderFolderPath.Text" xml:space="preserve">
+    <value>資料夾路徑</value>
+  </data>
+  <data name="chWatchFolderIncludeSubdirectories.Text" xml:space="preserve">
+    <value>包含子目錄</value>
+  </data>
+  <data name="gbToastWindow.Text" xml:space="preserve">
+    <value>快顯通知</value>
+  </data>
+  <data name="lblActionsNote.Text" xml:space="preserve">
+    <value>備註：您可以在「擷取後的工作 -&gt; 執行動作」啟用/停用動作。</value>
+  </data>
+  <data name="lblAutoIncrementNumber.Text" xml:space="preserve">
+    <value>自動遞增：</value>
+  </data>
+  <data name="lblCaptureCustomRegion.Text" xml:space="preserve">
+    <value>預先定義區域：</value>
+  </data>
+  <data name="lblCaptureCustomRegionHeight.Text" xml:space="preserve">
+    <value>高</value>
+  </data>
+  <data name="lblCaptureCustomRegionWidth.Text" xml:space="preserve">
+    <value>寬</value>
+  </data>
+  <data name="lblCaptureCustomRegionX.Text" xml:space="preserve">
+    <value>X</value>
+  </data>
+  <data name="lblCaptureCustomRegionY.Text" xml:space="preserve">
+    <value>Y</value>
+  </data>
+  <data name="lblCaptureShadowOffset.Text" xml:space="preserve">
+    <value>陰影偏移量：</value>
+  </data>
+  <data name="lblDescription.Text" xml:space="preserve">
+    <value>描述：</value>
+  </data>
+  <data name="lblGIFFPS.Text" xml:space="preserve">
+    <value>GIF FPS：</value>
+  </data>
+  <data name="lblImageEffectsNote.Text" xml:space="preserve">
+    <value>備註：您可以在「擷取後的工作 -&gt; 新增圖片效果」啟用/停用圖片效果。</value>
+  </data>
+  <data name="lblImageFileExist.Text" xml:space="preserve">
+    <value>如果檔案存在：</value>
+  </data>
+  <data name="lblImageFormat.Text" xml:space="preserve">
+    <value>圖片格式：</value>
+  </data>
+  <data name="lblImageGIFQuality.Text" xml:space="preserve">
+    <value>GIF 品質：</value>
+  </data>
+  <data name="lblImageJPEGQuality.Text" xml:space="preserve">
+    <value>JPEG 品質：</value>
+  </data>
+  <data name="lblImageJPEGQualityHint.Text" xml:space="preserve">
+    <value>0 - 100</value>
+  </data>
+  <data name="lblImagePNGBitDepth.Text" xml:space="preserve">
+    <value>PNG 位元深度：</value>
+  </data>
+  <data name="lblImageSizeLimitHint.Text" xml:space="preserve">
+    <value>kB</value>
+  </data>
+  <data name="lblNameFormatPattern.Text" xml:space="preserve">
+    <value>上傳擷取或剪貼簿時的名稱模式：</value>
+  </data>
+  <data name="lblNameFormatPatternActiveWindow.Text" xml:space="preserve">
+    <value>視窗擷取時的名稱模式：</value>
+  </data>
+  <data name="lblNameFormatPatternPreview.Text" xml:space="preserve">
+    <value>預覽：</value>
+  </data>
+  <data name="lblNameFormatPatternPreviewActiveWindow.Text" xml:space="preserve">
+    <value>預覽：</value>
+  </data>
+  <data name="lblOCRDefaultLanguage.Text" xml:space="preserve">
+    <value>預設語言：</value>
+  </data>
+  <data name="lblRegionCaptureFixedSizeHeight.Text" xml:space="preserve">
+    <value>高：</value>
+  </data>
+  <data name="lblRegionCaptureFixedSizeWidth.Text" xml:space="preserve">
+    <value>寬：</value>
+  </data>
+  <data name="lblRegionCaptureMagnifierPixelCount.Text" xml:space="preserve">
+    <value>放大鏡像素數量：</value>
+  </data>
+  <data name="lblRegionCaptureMagnifierPixelSize.Text" xml:space="preserve">
+    <value>放大鏡像素尺寸：</value>
+  </data>
+  <data name="lblRegionCaptureMouse4ClickAction.Text" xml:space="preserve">
+    <value>滑鼠側鍵 1 點選動作：</value>
+  </data>
+  <data name="lblRegionCaptureMouse5ClickAction.Text" xml:space="preserve">
+    <value>滑鼠側鍵 2 點選動作：</value>
+  </data>
+  <data name="lblRegionCaptureMouseMiddleClickAction.Text" xml:space="preserve">
+    <value>滑鼠中鍵點選動作：</value>
+  </data>
+  <data name="lblRegionCaptureMouseRightClickAction.Text" xml:space="preserve">
+    <value>滑鼠右鍵點選動作：</value>
+  </data>
+  <data name="lblRegionCaptureSnapSizes.Text" xml:space="preserve">
+    <value>按住 Alt 鍵時，區域將貼齊的尺寸：</value>
+  </data>
+  <data name="lblRegionCaptureSnapSizesWidth.Text" xml:space="preserve">
+    <value>寬：</value>
+  </data>
+  <data name="lblScreenRecorderFixedDuration.Text" xml:space="preserve">
+    <value>秒</value>
+  </data>
+  <data name="lblScreenRecorderStartDelay.Text" xml:space="preserve">
+    <value>秒後開始錄製</value>
+  </data>
+  <data name="lblScreenRecordFPS.Text" xml:space="preserve">
+    <value>螢幕錄製 FPS：</value>
+  </data>
+  <data name="lblScreenshotDelay.Text" xml:space="preserve">
+    <value>截圖倒數計時：</value>
+  </data>
+  <data name="lblScreenshotDelayInfo.Text" xml:space="preserve">
+    <value>秒</value>
+  </data>
+  <data name="lblTask.Text" xml:space="preserve">
+    <value>工作：</value>
+  </data>
+  <data name="lblThumbnailHeight.Text" xml:space="preserve">
+    <value>高：</value>
+  </data>
+  <data name="lblThumbnailName.Text" xml:space="preserve">
+    <value>縮圖名稱：</value>
+  </data>
+  <data name="lblThumbnailNamePreview.Text" xml:space="preserve">
+    <value>預覽</value>
+  </data>
+  <data name="lblThumbnailWidth.Text" xml:space="preserve">
+    <value>寬：</value>
+  </data>
+  <data name="lblToastWindowDuration.Text" xml:space="preserve">
+    <value>時長：</value>
+  </data>
+  <data name="lblToastWindowDurationSeconds.Text" xml:space="preserve">
+    <value>秒</value>
+  </data>
+  <data name="lblToastWindowFadeDuration.Text" xml:space="preserve">
+    <value>淡出時長：</value>
+  </data>
+  <data name="lblToastWindowFadeDurationSeconds.Text" xml:space="preserve">
+    <value>秒</value>
+  </data>
+  <data name="lblToastWindowLeftClickAction.Text" xml:space="preserve">
+    <value>滑鼠左鍵點選的動作：</value>
+  </data>
+  <data name="lblToastWindowMiddleClickAction.Text" xml:space="preserve">
+    <value>滑鼠中鍵點選的動作：</value>
+  </data>
+  <data name="lblToastWindowPlacement.Text" xml:space="preserve">
+    <value>放置：</value>
+  </data>
+  <data name="lblToastWindowRightClickAction.Text" xml:space="preserve">
+    <value>滑鼠右鍵點選的動作：</value>
+  </data>
+  <data name="lblToastWindowSize.Text" xml:space="preserve">
+    <value>尺寸：</value>
+  </data>
+  <data name="lblToastWindowSizeX.Text" xml:space="preserve">
+    <value>x</value>
+  </data>
+  <data name="lblToolsScreenColorPickerFormat.Text" xml:space="preserve">
+    <value>螢幕檢色器格式：</value>
+  </data>
+  <data name="lblToolsScreenColorPickerFormatCtrl.Text" xml:space="preserve">
+    <value>螢幕顏色檢色器格式 (Ctrl + 左鍵點選):</value>
+  </data>
+  <data name="lblToolsScreenColorPickerInfoText.Text" xml:space="preserve">
+    <value>螢幕顏色檢色器資訊文字：</value>
+  </data>
+  <data name="lblUploaderFiltersDestination.Text" xml:space="preserve">
+    <value>上傳工具：</value>
+  </data>
+  <data name="lblUploaderFiltersExtensions.Text" xml:space="preserve">
+    <value>副檔名篩選條件：</value>
+  </data>
+  <data name="lblUploaderFiltersExtensionsExample.Text" xml:space="preserve">
+    <value>範例：png, jpg, jpeg</value>
+  </data>
+  <data name="lblURLRegexReplacePattern.Text" xml:space="preserve">
+    <value>名稱格式：</value>
+  </data>
+  <data name="lblURLRegexReplaceReplacement.Text" xml:space="preserve">
+    <value>替代：</value>
+  </data>
+  <data name="RegionCaptureSnapSizesHeight.Text" xml:space="preserve">
+    <value>高：</value>
+  </data>
+  <data name="tpActions.Text" xml:space="preserve">
+    <value>動作</value>
+  </data>
+  <data name="tpAdvanced.Text" xml:space="preserve">
+    <value>進階</value>
+  </data>
+  <data name="tpCapture.Text" xml:space="preserve">
+    <value>擷取</value>
+  </data>
+  <data name="tpEffects.Text" xml:space="preserve">
+    <value>效果</value>
+  </data>
+  <data name="tpFileNaming.Text" xml:space="preserve">
+    <value>檔案命名</value>
+  </data>
+  <data name="tpGeneral.Text" xml:space="preserve">
+    <value>一般</value>
+  </data>
+  <data name="tpImage.Text" xml:space="preserve">
+    <value>圖片</value>
+  </data>
+  <data name="tpNotifications.Text" xml:space="preserve">
+    <value>通知</value>
+  </data>
+  <data name="tpRegionCapture.Text" xml:space="preserve">
+    <value>區域擷取</value>
+  </data>
+  <data name="tpScreenRecorder.Text" xml:space="preserve">
+    <value>螢幕錄製</value>
+  </data>
+  <data name="tpTask.Text" xml:space="preserve">
+    <value>工作</value>
+  </data>
+  <data name="tpThumbnail.Text" xml:space="preserve">
+    <value>縮圖</value>
+  </data>
+  <data name="tpTools.Text" xml:space="preserve">
+    <value>工具</value>
+  </data>
+  <data name="tpUpload.Text" xml:space="preserve">
+    <value>上傳</value>
+  </data>
+  <data name="tpUploadClipboard.Text" xml:space="preserve">
+    <value>剪貼簿上傳</value>
+  </data>
+  <data name="tpUploaderFilters.Text" xml:space="preserve">
+    <value>上傳工具篩選條件</value>
+  </data>
+  <data name="tpWatchFolders.Text" xml:space="preserve">
+    <value>監視資料夾</value>
+  </data>
+  <data name="tsmiFileUploaders.Text" xml:space="preserve">
+    <value>檔案上傳工具</value>
+  </data>
+  <data name="tsmiImageUploaders.Text" xml:space="preserve">
+    <value>圖片上傳工具</value>
+  </data>
+  <data name="tsmiTextUploaders.Text" xml:space="preserve">
+    <value>文字上傳工具</value>
+  </data>
+  <data name="tsmiURLSharingServices.Text" xml:space="preserve">
+    <value>網址分享服務</value>
+  </data>
+  <data name="tsmiURLShorteners.Text" xml:space="preserve">
+    <value>縮網址服務</value>
   </data>
 </root>
