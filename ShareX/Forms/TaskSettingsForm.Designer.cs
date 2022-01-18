@@ -74,6 +74,7 @@
             this.cbUseCustomTaskCompletedSound = new System.Windows.Forms.CheckBox();
             this.cbUseCustomCaptureSound = new System.Windows.Forms.CheckBox();
             this.gbToastWindow = new System.Windows.Forms.GroupBox();
+            this.cbToastWindowAutoHide = new System.Windows.Forms.CheckBox();
             this.lblToastWindowFadeDurationSeconds = new System.Windows.Forms.Label();
             this.lblToastWindowDurationSeconds = new System.Windows.Forms.Label();
             this.lblToastWindowSizeX = new System.Windows.Forms.Label();
@@ -294,7 +295,8 @@
             this.pgTaskSettings = new System.Windows.Forms.PropertyGrid();
             this.cbOverrideAdvancedSettings = new System.Windows.Forms.CheckBox();
             this.tttvMain = new ShareX.HelpersLib.TabToTreeView();
-            this.cbToastWindowAutoHide = new System.Windows.Forms.CheckBox();
+            this.lblRegionCaptureFPSLimit = new System.Windows.Forms.Label();
+            this.nudRegionCaptureFPSLimit = new System.Windows.Forms.NumericUpDown();
             this.tcTaskSettings.SuspendLayout();
             this.tpTask.SuspendLayout();
             this.cmsDestinations.SuspendLayout();
@@ -355,6 +357,7 @@
             this.tpTools.SuspendLayout();
             this.pTools.SuspendLayout();
             this.tpAdvanced.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudRegionCaptureFPSLimit)).BeginInit();
             this.SuspendLayout();
             // 
             // cmsAfterCapture
@@ -714,6 +717,13 @@
             resources.ApplyResources(this.gbToastWindow, "gbToastWindow");
             this.gbToastWindow.Name = "gbToastWindow";
             this.gbToastWindow.TabStop = false;
+            // 
+            // cbToastWindowAutoHide
+            // 
+            resources.ApplyResources(this.cbToastWindowAutoHide, "cbToastWindowAutoHide");
+            this.cbToastWindowAutoHide.Name = "cbToastWindowAutoHide";
+            this.cbToastWindowAutoHide.UseVisualStyleBackColor = true;
+            this.cbToastWindowAutoHide.CheckedChanged += new System.EventHandler(this.cbToastWindowAutoHide_CheckedChanged);
             // 
             // lblToastWindowFadeDurationSeconds
             // 
@@ -1398,6 +1408,8 @@
             // tpRegionCapture
             // 
             this.tpRegionCapture.BackColor = System.Drawing.SystemColors.Window;
+            this.tpRegionCapture.Controls.Add(this.nudRegionCaptureFPSLimit);
+            this.tpRegionCapture.Controls.Add(this.lblRegionCaptureFPSLimit);
             this.tpRegionCapture.Controls.Add(this.cbRegionCaptureShowFPS);
             this.tpRegionCapture.Controls.Add(this.flpRegionCaptureFixedSize);
             this.tpRegionCapture.Controls.Add(this.cbRegionCaptureIsFixedSize);
@@ -2555,12 +2567,21 @@
             this.tttvMain.TreeViewSize = 190;
             this.tttvMain.TabChanged += new ShareX.HelpersLib.TabToTreeView.TabChangedEventHandler(this.tttvMain_TabChanged);
             // 
-            // cbToastWindowAutoHide
+            // lblRegionCaptureFPSLimit
             // 
-            resources.ApplyResources(this.cbToastWindowAutoHide, "cbToastWindowAutoHide");
-            this.cbToastWindowAutoHide.Name = "cbToastWindowAutoHide";
-            this.cbToastWindowAutoHide.UseVisualStyleBackColor = true;
-            this.cbToastWindowAutoHide.CheckedChanged += new System.EventHandler(this.cbToastWindowAutoHide_CheckedChanged);
+            resources.ApplyResources(this.lblRegionCaptureFPSLimit, "lblRegionCaptureFPSLimit");
+            this.lblRegionCaptureFPSLimit.Name = "lblRegionCaptureFPSLimit";
+            // 
+            // nudRegionCaptureFPSLimit
+            // 
+            resources.ApplyResources(this.nudRegionCaptureFPSLimit, "nudRegionCaptureFPSLimit");
+            this.nudRegionCaptureFPSLimit.Maximum = new decimal(new int[] {
+            300,
+            0,
+            0,
+            0});
+            this.nudRegionCaptureFPSLimit.Name = "nudRegionCaptureFPSLimit";
+            this.nudRegionCaptureFPSLimit.ValueChanged += new System.EventHandler(this.nudRegionCaptureFPSLimit_ValueChanged);
             // 
             // TaskSettingsForm
             // 
@@ -2657,6 +2678,7 @@
             this.pTools.PerformLayout();
             this.tpAdvanced.ResumeLayout(false);
             this.tpAdvanced.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudRegionCaptureFPSLimit)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2928,5 +2950,7 @@
         private System.Windows.Forms.CheckBox cbImageAutoJPEGQuality;
         private System.Windows.Forms.Label lblTask;
         private System.Windows.Forms.CheckBox cbToastWindowAutoHide;
+        private System.Windows.Forms.NumericUpDown nudRegionCaptureFPSLimit;
+        private System.Windows.Forms.Label lblRegionCaptureFPSLimit;
     }
 }
