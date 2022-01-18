@@ -989,6 +989,18 @@ namespace ShareX.ScreenCaptureLib
             };
             tsddbOptions.DropDownItems.Add(tsmiShowFPS);
 
+            // TODO: Translate
+            ToolStripLabeledNumericUpDown tslnudFPSLimit = new ToolStripLabeledNumericUpDown("FPS limit:");
+            tslnudFPSLimit.Content.Minimum = 0;
+            tslnudFPSLimit.Content.Maximum = 300;
+            tslnudFPSLimit.Content.Value = Options.FPSLimit;
+            tslnudFPSLimit.Content.ValueChanged = (sender, e) =>
+            {
+                Options.FPSLimit = (int)tslnudFPSLimit.Content.Value;
+                Form.FPSManager.FPSLimit = Options.FPSLimit;
+            };
+            tsddbOptions.DropDownItems.Add(tslnudFPSLimit);
+
             ToolStripMenuItem tsmiSwitchToDrawingToolAfterSelection = new ToolStripMenuItem(Resources.ShapeManager_CreateContextMenu_SwitchToDrawingToolAfterSelection);
             tsmiSwitchToDrawingToolAfterSelection.Checked = Options.SwitchToDrawingToolAfterSelection;
             tsmiSwitchToDrawingToolAfterSelection.CheckOnClick = true;
