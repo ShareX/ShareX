@@ -1862,7 +1862,7 @@
       <Version>13.0.1</Version>
     </PackageReference>
     <PackageReference Include="ZXing.Net">
-      <Version>0.16.6</Version>
+      <Version>0.16.7</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
