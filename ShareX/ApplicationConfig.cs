@@ -184,7 +184,7 @@ namespace ShareX
         [Category("Application"), DefaultValue(false), Description("Show only customized tasks in main window workflows.")]
         public bool WorkflowsOnlyShowEdited { get; set; }
 
-        [Category("Application"), DefaultValue(true), Description("Automatically expand capture menu when you open the tray menu.")]
+        [Category("Application"), DefaultValue(false), Description("Automatically expand capture menu when you open the tray menu.")]
         public bool TrayAutoExpandCaptureMenu { get; set; }
 
         [Category("Application"), DefaultValue(true), Description("Show tips and hotkeys in main window when task list is empty.")]
@@ -211,7 +211,7 @@ namespace ShareX
 
         private int hotkeyRepeatLimit;
 
-        [Category("Hotkey"), DefaultValue(1000), Description("If you hold hotkeys then it will only trigger every this milliseconds.")]
+        [Category("Hotkey"), DefaultValue(500), Description("If you hold hotkeys then it will only trigger every this milliseconds.")]
         public int HotkeyRepeatLimit
         {
             get
