@@ -40,9 +40,10 @@ namespace ShareX.HelpersLib
         public const string URL_MCORED = "https://github.com/McoreD";
         public const string URL_STEAM = "http://store.steampowered.com/app/400040/";
         public const string URL_DISCORD = "https://discord.gg/ShareX";
-        public const string URL_TWITTER = "https://twitter.com/GetShareX";
+        public const string URL_TWITTER = "https://twitter.com/ShareX";
         private const string URL_DOCS = URL_WEBSITE + "/docs";
         public const string URL_CUSTOM_UPLOADER = URL_DOCS + "/custom-uploader";
+        public const string URL_REGION_CAPTURE = URL_DOCS + "/region-capture";
         public const string URL_CUSTOM_UPLOADERS = "https://github.com/ShareX/CustomUploaders";
     }
 }

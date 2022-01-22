@@ -1079,7 +1079,7 @@ namespace ShareX.ScreenCaptureLib
                     }
                 }
 
-                URLHelpers.OpenURL("https://getsharex.com/docs/region-capture");
+                URLHelpers.OpenURL(Links.URL_REGION_CAPTURE);
             };
             tsddbOptions.DropDownItems.Add(tsmiKeybinds);
 
