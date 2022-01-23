@@ -1987,12 +1987,13 @@ namespace ShareX.ScreenCaptureLib
         {
             Form.Pause();
 
-            using (CanvasSizeForm canvasSizeForm = new CanvasSizeForm())
+            using (CanvasSizeForm canvasSizeForm = new CanvasSizeForm(Padding.Empty, Options.EditorCanvasColor))
             {
                 if (canvasSizeForm.ShowDialog(Form) == DialogResult.OK)
                 {
                     Padding canvas = canvasSizeForm.Canvas;
-                    Bitmap bmp = ImageHelpers.AddCanvas(Form.Canvas, canvas, Options.EditorCanvasColor);
+                    Color canvasColor = canvasSizeForm.CanvasColor;
+                    Bitmap bmp = ImageHelpers.AddCanvas(Form.Canvas, canvas, canvasColor);
 
                     if (bmp != null)
                     {

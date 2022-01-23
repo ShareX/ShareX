@@ -413,6 +413,11 @@ namespace ShareX.HelpersLib
 
                     using (Brush brush = new SolidBrush(canvasColor))
                     {
+                        if (margin.Left > 0)
+                        {
+                            g.FillRectangle(brush, 0, 0, margin.Left, bmp.Height);
+                        }
+
                         if (margin.Top > 0)
                         {
                             g.FillRectangle(brush, 0, 0, bmp.Width, margin.Top);
@@ -426,11 +431,6 @@ namespace ShareX.HelpersLib
                         if (margin.Bottom > 0)
                         {
                             g.FillRectangle(brush, 0, bmp.Height - margin.Bottom, bmp.Width, margin.Bottom);
-                        }
-
-                        if (margin.Left > 0)
-                        {
-                            g.FillRectangle(brush, 0, 0, margin.Left, bmp.Height);
                         }
                     }
                 }

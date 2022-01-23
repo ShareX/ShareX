@@ -25,6 +25,7 @@
 
 using ShareX.HelpersLib;
 using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace ShareX.ScreenCaptureLib
@@ -32,6 +33,7 @@ namespace ShareX.ScreenCaptureLib
     public partial class CanvasSizeForm : Form
     {
         public Padding Canvas { get; private set; }
+        public Color CanvasColor { get; private set; }
 
         public CanvasSizeForm()
         {
@@ -39,13 +41,16 @@ namespace ShareX.ScreenCaptureLib
             ShareXResources.ApplyTheme(this);
         }
 
-        public CanvasSizeForm(Padding canvas) : this()
+        public CanvasSizeForm(Padding canvas, Color canvasColor) : this()
         {
             Canvas = canvas;
-            nudLeft.SetValue(canvas.Left);
-            nudTop.SetValue(canvas.Top);
-            nudRight.SetValue(canvas.Right);
-            nudBottom.SetValue(canvas.Bottom);
+            CanvasColor = canvasColor;
+
+            nudLeft.SetValue(Canvas.Left);
+            nudTop.SetValue(Canvas.Top);
+            nudRight.SetValue(Canvas.Right);
+            nudBottom.SetValue(Canvas.Bottom);
+            cbtnCanvasColor.Color = CanvasColor;
         }
 
         private void CanvasSizeForm_Shown(object sender, EventArgs e)
@@ -56,13 +61,17 @@ namespace ShareX.ScreenCaptureLib
         private void btnOK_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.OK;
+
             Canvas = new Padding((int)nudLeft.Value, (int)nudTop.Value, (int)nudRight.Value, (int)nudBottom.Value);
+            CanvasColor = cbtnCanvasColor.Color;
+
             Close();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.Cancel;
+
             Close();
         }
     }
