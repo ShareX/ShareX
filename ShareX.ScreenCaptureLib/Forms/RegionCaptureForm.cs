@@ -106,7 +106,7 @@ namespace ShareX.ScreenCaptureLib
             timerStart = new Stopwatch();
             FPSManager = new FPSManager()
             {
-                FPSLimit = 100
+                FPSLimit = Options.FPSLimit
             };
             FPSManager.FPSUpdated += FpsManager_FPSChanged;
             regionAnimation = new RectangleAnimation()
