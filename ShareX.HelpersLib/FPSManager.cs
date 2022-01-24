@@ -45,6 +45,11 @@ namespace ShareX.HelpersLib
             frameTimer = new Stopwatch();
         }
 
+        public FPSManager(int fpsLimit) : this()
+        {
+            FPSLimit = fpsLimit;
+        }
+
         protected void OnFPSUpdated()
         {
             FPSUpdated?.Invoke();
@@ -60,7 +65,7 @@ namespace ShareX.HelpersLib
             }
             else if (fpsTimer.ElapsedMilliseconds >= 1000)
             {
-                FPS = (int)(frameCount / fpsTimer.Elapsed.TotalSeconds);
+                FPS = (int)Math.Round(frameCount / fpsTimer.Elapsed.TotalSeconds);
 
                 OnFPSUpdated();
 

@@ -104,10 +104,7 @@ namespace ShareX.ScreenCaptureLib
             CanvasRectangle = ClientArea;
 
             timerStart = new Stopwatch();
-            FPSManager = new FPSManager()
-            {
-                FPSLimit = Options.FPSLimit
-            };
+            FPSManager = new FPSManager(Options.FPSLimit);
             FPSManager.FPSUpdated += FpsManager_FPSChanged;
             regionAnimation = new RectangleAnimation()
             {
