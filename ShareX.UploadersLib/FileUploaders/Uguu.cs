@@ -42,23 +42,11 @@ namespace ShareX.UploadersLib.FileUploaders
 
     public class Uguu : FileUploader
     {
-        public bool RandomName { get; set; }
-        public string CustomName { get; set; }
 
         public override UploadResult Upload(Stream stream, string fileName)
         {
-            Dictionary<string, string> arguments = new Dictionary<string, string>();
-
-            if (RandomName)
-            {
-                arguments.Add("randomname", "on");
-            }
-            else if (!string.IsNullOrEmpty(CustomName))
-            {
-                arguments.Add("name", CustomName);
-            }
-
-            UploadResult result = SendRequestFile("https://uguu.se/api.php?d=upload-tool", stream, fileName, "file", arguments);
+         
+            UploadResult result = SendRequestFile("https://uguu.se/upload.php?output=text", stream, fileName, "files[]");
 
             if (result.IsSuccess)
             {
