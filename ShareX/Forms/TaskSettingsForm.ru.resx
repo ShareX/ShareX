@@ -633,4 +633,10 @@
   <data name="cbURLRegexReplace.Text" xml:space="preserve">
     <value>Заменить URL результата через регулярные выражения</value>
   </data>
+  <data name="lblRegionCaptureFPSLimit.Text" xml:space="preserve">
+    <value>Лимит FPS:</value>
+  </data>
+  <data name="cbToastWindowAutoHide.Text" xml:space="preserve">
+    <value>Автоматически прятать при захвате экрана</value>
+  </data>
 </root>

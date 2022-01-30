@@ -177,4 +177,7 @@
   <data name="tsbShowStats.Text" xml:space="preserve">
     <value>Показать статистику...</value>
   </data>
+  <data name="btnAdvancedSearchClose.Text" xml:space="preserve">
+    <value>Закрыть</value>
+  </data>
 </root>

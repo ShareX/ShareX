@@ -478,4 +478,7 @@
   <data name="AutoCopyImageToClipboard" xml:space="preserve">
     <value>Автоматически копировать изображение в буфер обмена</value>
   </data>
+  <data name="FPSLimit" xml:space="preserve">
+    <value>Лимит FPS:</value>
+  </data>
 </root>

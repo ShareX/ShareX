@@ -792,4 +792,7 @@ X: {4} Y: {5}</value>
   <data name="AutoCopyImageToClipboard" xml:space="preserve">
     <value>Auto copy image to clipboard</value>
   </data>
+  <data name="FPSLimit" xml:space="preserve">
+    <value>FPS limit:</value>
+  </data>
 </root>
