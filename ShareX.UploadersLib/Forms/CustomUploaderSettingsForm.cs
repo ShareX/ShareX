@@ -728,33 +728,36 @@ namespace ShareX.UploadersLib
 
         private void CustomUploaderSyntaxHighlight(RichTextBox rtb)
         {
-            if (!string.IsNullOrEmpty(rtb.Text))
+            string text = rtb.Text;
+
+            if (!string.IsNullOrEmpty(text))
             {
-                CustomUploaderParser parser = new CustomUploaderParser();
-                parser.SkipSyntaxParse = true;
-                parser.Parse(rtb.Text);
+                int start = rtb.SelectionStart;
+                int length = rtb.SelectionLength;
+                rtb.BeginUpdate();
 
-                if (parser.SyntaxInfoList != null)
+                rtb.SelectionStart = 0;
+                rtb.SelectionLength = rtb.TextLength;
+                rtb.SelectionColor = rtb.ForeColor;
+
+                CustomUploaderSyntaxParser parser = new CustomUploaderSyntaxParser();
+
+                for (int i = 0; i < text.Length; i++)
                 {
-                    int start = rtb.SelectionStart;
-                    int length = rtb.SelectionLength;
-                    rtb.BeginUpdate();
+                    char c = text[i];
 
-                    rtb.SelectionStart = 0;
-                    rtb.SelectionLength = rtb.TextLength;
-                    rtb.SetFontRegular();
-
-                    foreach (CustomUploaderSyntaxInfo syntaxInfo in parser.SyntaxInfoList)
+                    if (c == parser.SyntaxStart || c == parser.SyntaxEnd || c == parser.SyntaxParameterStart ||
+                        c == parser.SyntaxParameterDelimiter || c == parser.SyntaxEscape)
                     {
-                        rtb.SelectionStart = syntaxInfo.StartPosition;
-                        rtb.SelectionLength = syntaxInfo.Length;
-                        rtb.SetFontBold();
+                        rtb.SelectionStart = i;
+                        rtb.SelectionLength = 1;
+                        rtb.SelectionColor = Color.FromArgb(0, 255, 0);
                     }
-
-                    rtb.SelectionStart = start;
-                    rtb.SelectionLength = length;
-                    rtb.EndUpdate();
                 }
+
+                rtb.SelectionStart = start;
+                rtb.SelectionLength = length;
+                rtb.EndUpdate();
             }
         }
 
