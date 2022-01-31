@@ -29,7 +29,7 @@ namespace ShareX.UploadersLib
     {
         public override string Name { get; } = "header";
 
-        public override string Call(CustomUploaderParser2 parser, string[] parameters)
+        public override string Call(CustomUploaderSyntaxParser parser, string[] parameters)
         {
             string header = parameters[0];
 

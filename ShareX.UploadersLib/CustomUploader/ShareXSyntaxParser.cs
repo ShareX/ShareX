@@ -23,28 +23,18 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.HelpersLib;
-using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace ShareX.UploadersLib
 {
-    public class CustomUploaderParser2
+    public abstract class ShareXSyntaxParser
     {
-        private static IEnumerable<CustomUploaderFunction> Functions = Helpers.GetInstances<CustomUploaderFunction>();
-
-        public char SyntaxStart { get; private set; } = '{';
-        public char SyntaxEnd { get; private set; } = '}';
-        public char SyntaxParameterStart { get; private set; } = ':';
-        public char SyntaxParameterDelimiter { get; private set; } = '|';
-        public char SyntaxEscape { get; private set; } = '\\';
-
-        public string FileName { get; set; }
-        public string Input { get; set; }
-        public ResponseInfo ResponseInfo { get; set; }
-        public List<string> RegexList { get; set; }
-        public bool URLEncode { get; set; } // Only URL encodes file name and input
+        public virtual char SyntaxStart { get; } = '{';
+        public virtual char SyntaxEnd { get; } = '}';
+        public virtual char SyntaxParameterStart { get; } = ':';
+        public virtual char SyntaxParameterDelimiter { get; } = '|';
+        public virtual char SyntaxEscape { get; } = '\\';
 
         public string Parse(string text)
         {
@@ -137,17 +127,6 @@ namespace ShareX.UploadersLib
             return CallFunction(sbFunctionName.ToString(), parameters.ToArray());
         }
 
-        private string CallFunction(string functionName, string[] parameters)
-        {
-            foreach (CustomUploaderFunction function in Functions)
-            {
-                if (function.Name.Equals(functionName, StringComparison.OrdinalIgnoreCase))
-                {
-                    return function.Call(this, parameters);
-                }
-            }
-
-            throw new Exception("Invalid function name: " + functionName);
-        }
+        protected abstract string CallFunction(string functionName, string[] parameters);
     }
 }

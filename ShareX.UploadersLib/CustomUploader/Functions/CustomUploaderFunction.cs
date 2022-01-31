@@ -29,6 +29,6 @@ namespace ShareX.UploadersLib
     {
         public abstract string Name { get; }
 
-        public abstract string Call(CustomUploaderParser2 parser, string[] parameters);
+        public abstract string Call(CustomUploaderSyntaxParser parser, string[] parameters);
     }
 }

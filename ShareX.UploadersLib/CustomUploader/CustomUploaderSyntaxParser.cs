@@ -24,21 +24,32 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using System;
+using System.Collections.Generic;
 
 namespace ShareX.UploadersLib
 {
-    internal class CustomUploaderFunctionFileName : CustomUploaderFunction
+    public class CustomUploaderSyntaxParser : ShareXSyntaxParser
     {
-        public override string Name { get; } = "filename";
+        private static IEnumerable<CustomUploaderFunction> Functions = Helpers.GetInstances<CustomUploaderFunction>();
 
-        public override string Call(CustomUploaderSyntaxParser parser, string[] parameters)
+        public string FileName { get; set; }
+        public string Input { get; set; }
+        public ResponseInfo ResponseInfo { get; set; }
+        public List<string> RegexList { get; set; }
+        public bool URLEncode { get; set; } // Only URL encodes file name and input
+
+        protected override string CallFunction(string functionName, string[] parameters)
         {
-            if (parser.URLEncode)
+            foreach (CustomUploaderFunction function in Functions)
             {
-                return URLHelpers.URLEncode(parser.FileName);
+                if (function.Name.Equals(functionName, StringComparison.OrdinalIgnoreCase))
+                {
+                    return function.Call(this, parameters);
+                }
             }
 
-            return parser.FileName;
+            throw new Exception("Invalid function name: " + functionName);
         }
     }
 }

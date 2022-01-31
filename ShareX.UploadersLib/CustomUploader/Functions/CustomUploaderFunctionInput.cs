@@ -31,7 +31,7 @@ namespace ShareX.UploadersLib
     {
         public override string Name { get; } = "input";
 
-        public override string Call(CustomUploaderParser2 parser, string[] parameters)
+        public override string Call(CustomUploaderSyntaxParser parser, string[] parameters)
         {
             if (parser.URLEncode)
             {
