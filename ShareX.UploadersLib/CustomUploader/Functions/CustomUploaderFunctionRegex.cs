@@ -35,26 +35,33 @@ namespace ShareX.UploadersLib
         {
             if (parameters.Length > 0)
             {
-                string regexIndex = parameters[0];
+                string pattern = parameters[0];
 
-                if (!string.IsNullOrEmpty(regexIndex) && int.TryParse(regexIndex, out int regexIndexNumber))
+                if (!string.IsNullOrEmpty(pattern))
                 {
-                    string pattern = parser.RegexList[regexIndexNumber - 1];
                     Match match = Regex.Match(parser.ResponseInfo.ResponseText, pattern);
 
-                    if (parameters.Length > 1)
+                    if (match.Success)
                     {
-                        string regexGroup = parameters[1];
-
-                        if (!string.IsNullOrEmpty(regexGroup) && int.TryParse(regexGroup, out int regexGroupNumber))
+                        if (parameters.Length > 1)
                         {
-                            return match.Groups[regexGroupNumber].Value;
+                            string group = parameters[1];
+
+                            if (!string.IsNullOrEmpty(group))
+                            {
+                                if (int.TryParse(group, out int groupNumber))
+                                {
+                                    return match.Groups[groupNumber].Value;
+                                }
+                                else
+                                {
+                                    return match.Groups[group].Value;
+                                }
+                            }
                         }
 
-                        return match.Groups[regexGroup].Value;
+                        return match.Value;
                     }
-
-                    return match.Value;
                 }
             }
 

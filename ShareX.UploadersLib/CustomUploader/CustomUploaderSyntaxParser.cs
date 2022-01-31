@@ -36,7 +36,6 @@ namespace ShareX.UploadersLib
         public string FileName { get; set; }
         public string Input { get; set; }
         public ResponseInfo ResponseInfo { get; set; }
-        public List<string> RegexList { get; set; }
         public bool URLEncode { get; set; } // Only URL encodes file name and input
         public bool JSONEncode { get; set; }
         public bool XMLEncode { get; set; }

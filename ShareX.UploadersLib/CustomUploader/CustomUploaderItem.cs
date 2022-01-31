@@ -269,7 +269,6 @@ namespace ShareX.UploadersLib
                 {
                     FileName = input.FileName,
                     ResponseInfo = responseInfo,
-                    RegexList = RegexList,
                     URLEncode = true
                 };
 
