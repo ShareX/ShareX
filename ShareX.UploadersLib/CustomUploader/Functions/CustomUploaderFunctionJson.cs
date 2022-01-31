@@ -34,6 +34,7 @@ namespace ShareX.UploadersLib
 
         public override string Call(CustomUploaderSyntaxParser parser, string[] parameters)
         {
+            // https://goessner.net/articles/JsonPath/
             string jsonPath = parameters[0];
 
             if (!string.IsNullOrEmpty(jsonPath))

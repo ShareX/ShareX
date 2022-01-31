@@ -362,8 +362,7 @@ namespace ShareX.UploadersLib
             return null;
         }
 
-        // http://www.w3schools.com/xsl/xpath_syntax.asp
-        // https://msdn.microsoft.com/en-us/library/ms256086(v=vs.110).aspx
+        // https://www.w3schools.com/xml/xpath_syntax.asp
         private string ParseSyntaxXml(string syntaxXPath)
         {
             if (!string.IsNullOrEmpty(syntaxXPath))
