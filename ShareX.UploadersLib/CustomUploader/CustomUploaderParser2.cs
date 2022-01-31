@@ -48,36 +48,33 @@ namespace ShareX.UploadersLib
 
         public string Parse(string text)
         {
-            return ParseSyntax(text, 0, out _);
-        }
-
-        private string ParseSyntax(string text, int startPosition, out int endPosition)
-        {
-            endPosition = startPosition;
-
             if (string.IsNullOrEmpty(text))
             {
                 return "";
             }
 
+            return ParseSyntax(text, 0, out _);
+        }
+
+        private string ParseSyntax(string text, int startPosition, out int endPosition)
+        {
             StringBuilder sbResult = new StringBuilder();
             bool escape = false;
+            int i;
 
-            for (int i = startPosition; i < text.Length; i++)
+            for (i = startPosition; i < text.Length; i++)
             {
                 if (!escape)
                 {
                     if (text[i] == SyntaxStart)
                     {
-                        string parsed = ParseSyntax(text, i + 1, out i);
-                        parsed = ParseFunction(parsed);
+                        string parsed = ParseFunction(text, i + 1, out i);
                         sbResult.Append(parsed);
                         continue;
                     }
-                    else if (text[i] == SyntaxEnd)
+                    else if (text[i] == SyntaxEnd || text[i] == SyntaxParameterDelimiter)
                     {
-                        endPosition = i;
-                        return sbResult.ToString();
+                        break;
                     }
                     else if (text[i] == SyntaxEscape)
                     {
@@ -85,44 +82,66 @@ namespace ShareX.UploadersLib
                         continue;
                     }
                 }
-                else
-                {
-                    escape = false;
-                }
 
+                escape = false;
                 sbResult.Append(text[i]);
             }
 
+            endPosition = i;
             return sbResult.ToString();
         }
 
-        private string ParseFunction(string text)
+        private string ParseFunction(string text, int startPosition, out int endPosition)
         {
-            string functionName;
-            string[] parameterArray = null;
+            StringBuilder sbFunctionName = new StringBuilder();
+            bool parsingFunctionName = true;
+            List<string> parameters = new List<string>();
+            bool escape = false;
+            int i;
 
-            int parameterPosition = text.IndexOf(SyntaxParameterStart);
-
-            if (parameterPosition >= 0)
+            for (i = startPosition; i < text.Length; i++)
             {
-                functionName = text.Remove(parameterPosition);
-                string parameters = text.Substring(parameterPosition + 1);
-                // TODO: Support delimiter escape
-                parameterArray = parameters.Split(SyntaxParameterDelimiter);
-            }
-            else
-            {
-                functionName = text;
+                if (!escape)
+                {
+                    if (text[i] == SyntaxEnd)
+                    {
+                        break;
+                    }
+                    else if (text[i] == SyntaxEscape)
+                    {
+                        escape = true;
+                        continue;
+                    }
+
+                    if (parsingFunctionName)
+                    {
+                        if (text[i] == SyntaxParameterStart)
+                        {
+                            parsingFunctionName = false;
+                            continue;
+                        }
+
+                        sbFunctionName.Append(text[i]);
+                    }
+                    else
+                    {
+                        string parsed = ParseSyntax(text, i, out i);
+                        parameters.Add(parsed);
+                    }
+                }
+
+                escape = false;
             }
 
-            return CallFunction(functionName, parameterArray);
+            endPosition = i;
+            return CallFunction(sbFunctionName.ToString(), parameters.ToArray());
         }
 
         private string CallFunction(string functionName, string[] parameters)
         {
             foreach (CustomUploaderFunction function in Functions)
             {
-                if (function.Name.Equals(functionName, StringComparison.InvariantCultureIgnoreCase))
+                if (function.Name.Equals(functionName, StringComparison.OrdinalIgnoreCase))
                 {
                     return function.Call(this, parameters);
                 }

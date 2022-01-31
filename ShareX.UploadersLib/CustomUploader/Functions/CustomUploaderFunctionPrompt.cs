@@ -34,7 +34,8 @@ namespace ShareX.UploadersLib
 
         public override string Call(CustomUploaderParser2 parser, string[] parameters)
         {
-            string title = "ShareX - Prompt", defaultValue = "";
+            string title = "ShareX - Prompt";
+            string defaultValue = "";
 
             if (parameters.Length > 0)
             {

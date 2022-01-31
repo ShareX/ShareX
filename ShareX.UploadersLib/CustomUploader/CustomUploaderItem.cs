@@ -265,9 +265,13 @@ namespace ShareX.UploadersLib
                     responseInfo.ResponseText = "";
                 }
 
-                CustomUploaderParser parser = new CustomUploaderParser(responseInfo, RegexList);
-                parser.FileName = input.FileName;
-                parser.URLEncode = true;
+                CustomUploaderParser2 parser = new CustomUploaderParser2()
+                {
+                    FileName = input.FileName,
+                    ResponseInfo = responseInfo,
+                    RegexList = RegexList,
+                    URLEncode = true
+                };
 
                 if (responseInfo.IsSuccess)
                 {
