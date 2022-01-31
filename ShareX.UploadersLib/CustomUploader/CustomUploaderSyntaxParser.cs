@@ -42,6 +42,16 @@ namespace ShareX.UploadersLib
         public bool UseNameParser { get; set; }
         public NameParserType NameParserType { get; set; } = NameParserType.Text;
 
+        public CustomUploaderSyntaxParser()
+        {
+        }
+
+        public CustomUploaderSyntaxParser(CustomUploaderInput input)
+        {
+            FileName = input.FileName;
+            Input = input.Input;
+        }
+
         public override string Parse(string text)
         {
             if (UseNameParser && !string.IsNullOrEmpty(text))

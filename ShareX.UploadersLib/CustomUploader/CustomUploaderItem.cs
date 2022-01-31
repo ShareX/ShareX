@@ -149,7 +149,7 @@ namespace ShareX.UploadersLib
                 throw new Exception(Resources.CustomUploaderItem_GetRequestURL_RequestURLMustBeConfigured);
             }
 
-            CustomUploaderParser parser = new CustomUploaderParser(input);
+            CustomUploaderSyntaxParser parser = new CustomUploaderSyntaxParser(input);
             parser.URLEncode = true;
             string url = parser.Parse(RequestURL);
 
@@ -165,7 +165,7 @@ namespace ShareX.UploadersLib
 
             if (Parameters != null)
             {
-                CustomUploaderParser parser = new CustomUploaderParser(input);
+                CustomUploaderSyntaxParser parser = new CustomUploaderSyntaxParser(input);
                 parser.UseNameParser = true;
 
                 foreach (KeyValuePair<string, string> parameter in Parameters)
@@ -198,7 +198,7 @@ namespace ShareX.UploadersLib
 
         public string GetData(CustomUploaderInput input)
         {
-            CustomUploaderParser parser = new CustomUploaderParser(input);
+            CustomUploaderSyntaxParser parser = new CustomUploaderSyntaxParser(input);
             parser.UseNameParser = true;
             parser.JSONEncode = Body == CustomUploaderBody.JSON;
             parser.XMLEncode = Body == CustomUploaderBody.XML;
@@ -222,7 +222,7 @@ namespace ShareX.UploadersLib
 
             if (Arguments != null)
             {
-                CustomUploaderParser parser = new CustomUploaderParser(input);
+                CustomUploaderSyntaxParser parser = new CustomUploaderSyntaxParser(input);
                 parser.UseNameParser = true;
 
                 foreach (KeyValuePair<string, string> arg in Arguments)
@@ -240,7 +240,7 @@ namespace ShareX.UploadersLib
             {
                 NameValueCollection collection = new NameValueCollection();
 
-                CustomUploaderParser parser = new CustomUploaderParser(input);
+                CustomUploaderSyntaxParser parser = new CustomUploaderSyntaxParser(input);
                 parser.UseNameParser = true;
 
                 foreach (KeyValuePair<string, string> header in Headers)
