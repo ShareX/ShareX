@@ -53,10 +53,10 @@ namespace ShareX.UploadersLib
                 return "";
             }
 
-            return ParseSyntax(text, 0, out _);
+            return ParseSyntax(text, false, 0, out _);
         }
 
-        private string ParseSyntax(string text, int startPosition, out int endPosition)
+        private string ParseSyntax(string text, bool isParameter, int startPosition, out int endPosition)
         {
             StringBuilder sbResult = new StringBuilder();
             bool escape = false;
@@ -72,7 +72,7 @@ namespace ShareX.UploadersLib
                         sbResult.Append(parsed);
                         continue;
                     }
-                    else if (text[i] == SyntaxEnd || text[i] == SyntaxParameterDelimiter)
+                    else if (isParameter && (text[i] == SyntaxEnd || text[i] == SyntaxParameterDelimiter))
                     {
                         break;
                     }
@@ -125,7 +125,7 @@ namespace ShareX.UploadersLib
                     }
                     else
                     {
-                        string parsed = ParseSyntax(text, i, out i);
+                        string parsed = ParseSyntax(text, true, i, out i);
                         parameters.Add(parsed);
                     }
                 }
