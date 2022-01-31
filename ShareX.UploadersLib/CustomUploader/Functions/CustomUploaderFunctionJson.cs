@@ -27,6 +27,7 @@ using Newtonsoft.Json.Linq;
 
 namespace ShareX.UploadersLib
 {
+    // Example: {json:files[0].url}
     internal class CustomUploaderFunctionJson : CustomUploaderFunction
     {
         public override string Name { get; } = "json";

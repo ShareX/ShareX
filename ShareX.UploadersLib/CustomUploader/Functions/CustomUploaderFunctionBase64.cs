@@ -27,6 +27,7 @@ using ShareX.HelpersLib;
 
 namespace ShareX.UploadersLib
 {
+    // Example: Basic {base64:username:password}
     internal class CustomUploaderFunctionBase64 : CustomUploaderFunction
     {
         public override string Name { get; } = "base64";

@@ -751,7 +751,7 @@ namespace ShareX.UploadersLib
                     {
                         rtb.SelectionStart = i;
                         rtb.SelectionLength = 1;
-                        rtb.SelectionColor = Color.FromArgb(0, 255, 0);
+                        rtb.SelectionColor = Color.Lime;
                     }
                 }
 

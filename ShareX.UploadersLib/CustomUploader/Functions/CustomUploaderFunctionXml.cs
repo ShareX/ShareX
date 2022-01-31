@@ -28,6 +28,7 @@ using System.Xml.XPath;
 
 namespace ShareX.UploadersLib
 {
+    // Example: {xml:/files/file[1]/url}
     internal class CustomUploaderFunctionXml : CustomUploaderFunction
     {
         public override string Name { get; } = "xml";

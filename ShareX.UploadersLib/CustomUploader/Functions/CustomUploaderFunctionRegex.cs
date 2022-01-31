@@ -27,6 +27,9 @@ using System.Text.RegularExpressions;
 
 namespace ShareX.UploadersLib
 {
+    // Example: {regex:(?<=href=").+(?=")}
+    // Example: {regex:href="(.+)"|1}
+    // Example: {regex:href="(?<url>.+)"|url}
     internal class CustomUploaderFunctionRegex : CustomUploaderFunction
     {
         public override string Name { get; } = "regex";

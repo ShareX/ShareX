@@ -27,6 +27,7 @@ using System.Linq;
 
 namespace ShareX.UploadersLib
 {
+    // Example: {select:domain1.com|domain2.com}
     internal class CustomUploaderFunctionSelect : CustomUploaderFunction
     {
         public override string Name { get; } = "select";

@@ -25,6 +25,7 @@
 
 namespace ShareX.UploadersLib
 {
+    // Example: {header:Location}
     internal class CustomUploaderFunctionHeader : CustomUploaderFunction
     {
         public override string Name { get; } = "header";

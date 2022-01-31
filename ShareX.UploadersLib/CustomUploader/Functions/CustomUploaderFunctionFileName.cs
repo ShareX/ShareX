@@ -27,6 +27,7 @@ using ShareX.HelpersLib;
 
 namespace ShareX.UploadersLib
 {
+    // Example: {filename}
     internal class CustomUploaderFunctionFileName : CustomUploaderFunction
     {
         public override string Name { get; } = "filename";

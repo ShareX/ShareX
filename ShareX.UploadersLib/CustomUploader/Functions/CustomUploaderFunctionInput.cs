@@ -27,6 +27,7 @@ using ShareX.HelpersLib;
 
 namespace ShareX.UploadersLib
 {
+    // Example: {input}
     internal class CustomUploaderFunctionInput : CustomUploaderFunction
     {
         public override string Name { get; } = "input";
