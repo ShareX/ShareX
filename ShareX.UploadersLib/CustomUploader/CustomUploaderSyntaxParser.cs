@@ -38,6 +38,23 @@ namespace ShareX.UploadersLib
         public ResponseInfo ResponseInfo { get; set; }
         public List<string> RegexList { get; set; }
         public bool URLEncode { get; set; } // Only URL encodes file name and input
+        public bool JSONEncode { get; set; }
+        public bool XMLEncode { get; set; }
+        public bool UseNameParser { get; set; }
+        public NameParserType NameParserType { get; set; } = NameParserType.Text;
+
+        public override string Parse(string text)
+        {
+            if (UseNameParser && !string.IsNullOrEmpty(text))
+            {
+                NameParser nameParser = new NameParser(NameParserType);
+                EscapeHelper escapeHelper = new EscapeHelper();
+                escapeHelper.KeepEscapeCharacter = true;
+                text = escapeHelper.Parse(text, nameParser.Parse);
+            }
+
+            return base.Parse(text);
+        }
 
         protected override string CallFunction(string functionName, string[] parameters)
         {
@@ -45,7 +62,21 @@ namespace ShareX.UploadersLib
             {
                 if (function.Name.Equals(functionName, StringComparison.OrdinalIgnoreCase))
                 {
-                    return function.Call(this, parameters);
+                    string result = function.Call(this, parameters);
+
+                    if (!string.IsNullOrEmpty(result))
+                    {
+                        if (JSONEncode)
+                        {
+                            result = URLHelpers.JSONEncode(result);
+                        }
+                        else if (XMLEncode)
+                        {
+                            result = URLHelpers.XMLEncode(result);
+                        }
+                    }
+
+                    return result;
                 }
             }
 

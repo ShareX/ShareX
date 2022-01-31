@@ -36,7 +36,7 @@ namespace ShareX.UploadersLib
         public virtual char SyntaxParameterDelimiter { get; } = '|';
         public virtual char SyntaxEscape { get; } = '\\';
 
-        public string Parse(string text)
+        public virtual string Parse(string text)
         {
             if (string.IsNullOrEmpty(text))
             {
