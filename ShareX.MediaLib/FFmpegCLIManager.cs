@@ -230,20 +230,19 @@ namespace ShareX.MediaLib
 
             string output = Output.ToString();
             string[] lines = output.Lines();
-            bool isVideo = true;
-            Regex regex = new Regex(@"\[dshow @ \w+\]  ""(.+)""", RegexOptions.Compiled | RegexOptions.CultureInvariant);
+            bool isAudio = false;
+            Regex regex = new Regex(@"\[dshow @ \w+\] +""(.+)""", RegexOptions.Compiled | RegexOptions.CultureInvariant);
 
             foreach (string line in lines)
             {
-                if (line.Contains("] DirectShow video devices", StringComparison.InvariantCulture))
+                if (line.Contains("] DirectShow video devices"))
                 {
-                    isVideo = true;
+                    isAudio = false;
                     continue;
                 }
-
-                if (line.Contains("] DirectShow audio devices", StringComparison.InvariantCulture))
+                else if (line.Contains("] DirectShow audio devices"))
                 {
-                    isVideo = false;
+                    isAudio = true;
                     continue;
                 }
 
@@ -251,15 +250,24 @@ namespace ShareX.MediaLib
 
                 if (match.Success)
                 {
-                    string value = match.Groups[1].Value;
-
-                    if (isVideo)
+                    if (line.EndsWith("\" (video)"))
                     {
-                        devices.VideoDevices.Add(value);
+                        isAudio = false;
+                    }
+                    else if (line.EndsWith("\" (audio)"))
+                    {
+                        isAudio = true;
+                    }
+
+                    string deviceName = match.Groups[1].Value;
+
+                    if (isAudio)
+                    {
+                        devices.AudioDevices.Add(deviceName);
                     }
                     else
                     {
-                        devices.AudioDevices.Add(value);
+                        devices.VideoDevices.Add(deviceName);
                     }
                 }
             }

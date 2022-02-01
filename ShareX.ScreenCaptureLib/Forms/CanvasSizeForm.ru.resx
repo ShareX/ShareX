@@ -138,4 +138,7 @@
   <data name="btnCancel.Text" xml:space="preserve">
     <value>Отменить</value>
   </data>
+  <data name="cbtnCanvasColor.Text" xml:space="preserve">
+    <value>Цвет полотна...</value>
+  </data>
 </root>

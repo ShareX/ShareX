@@ -23,34 +23,38 @@
 
 #endregion License Information (GPL v3)
 
-using System.IO;
+using ShareX.HelpersLib;
+using System.Windows.Forms;
 
-namespace ShareX.UploadersLib.FileUploaders
+namespace ShareX.UploadersLib
 {
-    public class UguuFileUploaderService : FileUploaderService
+    internal class CustomUploaderFunctionPrompt : CustomUploaderFunction
     {
-        public override FileDestination EnumValue { get; } = FileDestination.Uguu;
+        public override string Name { get; } = "prompt";
 
-        public override bool CheckConfig(UploadersConfig config) => true;
-
-        public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
+        public override string Call(CustomUploaderParser2 parser, string[] parameters)
         {
-            return new Uguu();
-        }
-    }
+            string title = "ShareX - Prompt", defaultValue = "";
 
-    public class Uguu : FileUploader
-    {
-        public override UploadResult Upload(Stream stream, string fileName)
-        {
-            UploadResult result = SendRequestFile("https://uguu.se/upload.php?output=text", stream, fileName, "files[]");
-
-            if (result.IsSuccess)
+            if (parameters.Length > 0)
             {
-                result.URL = result.Response;
+                title = parameters[0];
+
+                if (parameters.Length > 1)
+                {
+                    defaultValue = parameters[1];
+                }
             }
 
-            return result;
+            using (InputBox inputBox = new InputBox(title, defaultValue))
+            {
+                if (inputBox.ShowDialog() == DialogResult.OK)
+                {
+                    return inputBox.InputText;
+                }
+            }
+
+            return defaultValue;
         }
     }
 }

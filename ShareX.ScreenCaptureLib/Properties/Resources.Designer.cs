@@ -630,6 +630,15 @@ namespace ShareX.ScreenCaptureLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to FPS limit:.
+        /// </summary>
+        internal static string FPSLimit {
+            get {
+                return ResourceManager.GetString("FPSLimit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap gear {

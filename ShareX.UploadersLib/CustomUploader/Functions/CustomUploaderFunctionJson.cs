@@ -23,34 +23,29 @@
 
 #endregion License Information (GPL v3)
 
-using System.IO;
+using Newtonsoft.Json.Linq;
 
-namespace ShareX.UploadersLib.FileUploaders
+namespace ShareX.UploadersLib
 {
-    public class UguuFileUploaderService : FileUploaderService
+    internal class CustomUploaderFunctionJson : CustomUploaderFunction
     {
-        public override FileDestination EnumValue { get; } = FileDestination.Uguu;
+        public override string Name { get; } = "json";
 
-        public override bool CheckConfig(UploadersConfig config) => true;
-
-        public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
+        public override string Call(CustomUploaderParser2 parser, string[] parameters)
         {
-            return new Uguu();
-        }
-    }
+            string jsonPath = parameters[0];
 
-    public class Uguu : FileUploader
-    {
-        public override UploadResult Upload(Stream stream, string fileName)
-        {
-            UploadResult result = SendRequestFile("https://uguu.se/upload.php?output=text", stream, fileName, "files[]");
-
-            if (result.IsSuccess)
+            if (!string.IsNullOrEmpty(jsonPath))
             {
-                result.URL = result.Response;
+                if (!jsonPath.StartsWith("$."))
+                {
+                    jsonPath = "$." + jsonPath;
+                }
+
+                return (string)JToken.Parse(parser.ResponseInfo.ResponseText).SelectToken(jsonPath);
             }
 
-            return result;
+            return null;
         }
     }
 }

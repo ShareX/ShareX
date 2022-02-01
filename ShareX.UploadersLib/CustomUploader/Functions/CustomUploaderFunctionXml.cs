@@ -24,33 +24,34 @@
 #endregion License Information (GPL v3)
 
 using System.IO;
+using System.Xml.XPath;
 
-namespace ShareX.UploadersLib.FileUploaders
+namespace ShareX.UploadersLib
 {
-    public class UguuFileUploaderService : FileUploaderService
+    internal class CustomUploaderFunctionXml : CustomUploaderFunction
     {
-        public override FileDestination EnumValue { get; } = FileDestination.Uguu;
+        public override string Name { get; } = "xml";
 
-        public override bool CheckConfig(UploadersConfig config) => true;
-
-        public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
+        public override string Call(CustomUploaderParser2 parser, string[] parameters)
         {
-            return new Uguu();
-        }
-    }
+            string xpath = parameters[0];
 
-    public class Uguu : FileUploader
-    {
-        public override UploadResult Upload(Stream stream, string fileName)
-        {
-            UploadResult result = SendRequestFile("https://uguu.se/upload.php?output=text", stream, fileName, "files[]");
-
-            if (result.IsSuccess)
+            if (!string.IsNullOrEmpty(xpath))
             {
-                result.URL = result.Response;
+                using (StringReader sr = new StringReader(parser.ResponseInfo.ResponseText))
+                {
+                    XPathDocument doc = new XPathDocument(sr);
+                    XPathNavigator nav = doc.CreateNavigator();
+                    XPathNavigator node = nav.SelectSingleNode(xpath);
+
+                    if (node != null)
+                    {
+                        return node.Value;
+                    }
+                }
             }
 
-            return result;
+            return null;
         }
     }
 }
