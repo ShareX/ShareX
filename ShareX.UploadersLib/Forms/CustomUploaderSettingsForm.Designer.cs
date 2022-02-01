@@ -728,12 +728,12 @@
             this.pMain.Controls.Add(this.lblResultURL);
             this.pMain.Controls.Add(this.pRequestURL);
             this.pMain.Controls.Add(this.cbRequestMethod);
-            this.pMain.Controls.Add(this.pBodyData);
             this.pMain.Controls.Add(this.lblRequestURL);
-            this.pMain.Controls.Add(this.pBodyArguments);
             this.pMain.Controls.Add(this.cbBody);
             this.pMain.Controls.Add(this.lblBody);
             this.pMain.Controls.Add(this.lblRequestMethod);
+            this.pMain.Controls.Add(this.pBodyArguments);
+            this.pMain.Controls.Add(this.pBodyData);
             this.pMain.Name = "pMain";
             // 
             // CustomUploaderSettingsForm
