@@ -60,11 +60,13 @@ namespace ShareX.ScreenCaptureLib
 
                 if (Orientation == Orientation.Horizontal)
                 {
-                    isScrollbarNeeded = form.CanvasRectangle.Left < form.ClientArea.Left || form.CanvasRectangle.Right > form.ClientArea.Right;
+                    isScrollbarNeeded = form.CanvasRectangle.Left < form.ClientArea.Left
+                        || (form.CanvasRectangle.Right * form.ZoomFactor) > form.ClientArea.Right;
                 }
                 else
                 {
-                    isScrollbarNeeded = form.CanvasRectangle.Top < form.ClientArea.Top || form.CanvasRectangle.Bottom > form.ClientArea.Bottom;
+                    isScrollbarNeeded = form.CanvasRectangle.Top < form.ClientArea.Top
+                        || (form.CanvasRectangle.Bottom * form.ZoomFactor) > form.ClientArea.Bottom;
                 }
 
                 Visible = isScrollbarNeeded || IsDragging;
@@ -142,9 +144,12 @@ namespace ShareX.ScreenCaptureLib
                 thumbColor = ThumbColor;
             }
 
+            var transform = g.Transform;
             using (Brush trackBrush = new SolidBrush(TrackColor))
             using (Brush thumbBrush = new SolidBrush(thumbColor))
+            using (Matrix identity = new Matrix())
             {
+                g.Transform = identity; // ignore editor scaling
                 if (IsCapsule)
                 {
                     g.SmoothingMode = SmoothingMode.HighQuality;
@@ -162,6 +167,7 @@ namespace ShareX.ScreenCaptureLib
                     g.FillRectangle(thumbBrush, ThumbRectangle);
                 }
             }
+            g.Transform = transform;
         }
 
         private void Scroll(Point position)

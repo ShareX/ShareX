@@ -225,7 +225,7 @@ namespace ShareX.ScreenCaptureLib
 
         public virtual void OnCreating()
         {
-            Point pos = InputManager.ClientMousePosition;
+            Point pos = Manager.Form.ScaledClientMousePosition;
 
             if (Options.IsFixedSize && ShapeCategory == ShapeCategory.Region)
             {
@@ -270,11 +270,11 @@ namespace ShareX.ScreenCaptureLib
         {
             if (Manager.IsCreating)
             {
-                Point pos = InputManager.ClientMousePosition;
+                Point pos = Manager.Form.ScaledClientMousePosition;
 
                 if (Manager.IsCornerMoving && !Manager.IsPanning)
                 {
-                    StartPosition = StartPosition.Add(InputManager.MouseVelocity);
+                    StartPosition = StartPosition.Add(Manager.Form.ScaledClientMouseVelocity);
                 }
 
                 if (Manager.IsProportionalResizing || ForceProportionalResizing)
@@ -303,7 +303,7 @@ namespace ShareX.ScreenCaptureLib
             }
             else if (Manager.IsMoving && !Manager.IsPanning)
             {
-                Move(InputManager.MouseVelocity);
+                Move(Manager.Form.ScaledClientMouseVelocity);
             }
 
             if (LimitRectangleToInsideCanvas)
@@ -361,13 +361,13 @@ namespace ShareX.ScreenCaptureLib
 
                     if (Manager.IsCornerMoving || Manager.IsPanning)
                     {
-                        tempStartPos.Offset(InputManager.MouseVelocity);
-                        tempEndPos.Offset(InputManager.MouseVelocity);
-                        tempNodePos.Offset(InputManager.MouseVelocity);
-                        tempRectangle.LocationOffset(InputManager.MouseVelocity);
+                        tempStartPos.Offset(Manager.Form.ScaledClientMouseVelocity);
+                        tempEndPos.Offset(Manager.Form.ScaledClientMouseVelocity);
+                        tempNodePos.Offset(Manager.Form.ScaledClientMouseVelocity);
+                        tempRectangle.LocationOffset(Manager.Form.ScaledClientMouseVelocity);
                     }
 
-                    Point pos = InputManager.ClientMousePosition;
+                    Point pos = Manager.Form.ScaledClientMousePosition;
                     Point startPos = tempStartPos;
                     Point endPos = tempEndPos;
 

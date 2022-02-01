@@ -31,6 +31,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -62,6 +63,8 @@ namespace ShareX.ScreenCaptureLib
 
         public Point CurrentPosition { get; private set; }
         public Point PanningStrech = new Point();
+
+        public float ZoomFactor { get; private set; } = 1;
 
         public SimpleWindowInfo SelectedWindow { get; private set; }
 
@@ -129,6 +132,8 @@ namespace ShareX.ScreenCaptureLib
             infoFontBig = new Font("Verdana", 16, FontStyle.Bold);
             markerPen = new Pen(Color.FromArgb(200, Color.Red));
 
+            MouseWheel += onMouseWheel;
+
             if (ShareXResources.UseCustomTheme)
             {
                 canvasBackgroundColor = ShareXResources.Theme.BackgroundColor;
@@ -160,6 +165,27 @@ namespace ShareX.ScreenCaptureLib
             Prepare(canvas);
 
             InitializeComponent();
+        }
+
+        public Point ScaledClientMousePosition => InputManager.ClientMousePosition.Scale(1 / ZoomFactor);
+        public Point ScaledClientMouseVelocity => InputManager.MouseVelocity.Scale(1 / ZoomFactor);
+
+        private void onMouseWheel(object sender, MouseEventArgs e)
+        {
+            // TODO: center zoom on mouse position
+            if ((ModifierKeys & Keys.Control) == 0)
+            {
+                return;
+            }
+            if (e.Delta > 0)
+            {
+                ZoomFactor += 0.1F;
+            }
+            else if (ZoomFactor > 0.2)
+            {
+                ZoomFactor -= 0.1F;
+            }
+            UpdateTitle();
         }
 
         private void InitializeComponent()
@@ -249,35 +275,40 @@ namespace ShareX.ScreenCaptureLib
         {
             if (forceClose) return;
 
-            string text;
+            var title = new StringBuilder();
 
             if (IsEditorMode)
             {
-                text = "ShareX - " + Resources.RegionCaptureForm_InitializeComponent_ImageEditor;
+                title.AppendFormat("ShareX - {0}", Resources.RegionCaptureForm_InitializeComponent_ImageEditor);
 
                 if (Canvas != null)
                 {
-                    text += $" - {Canvas.Width}x{Canvas.Height}";
+                    title.AppendFormat(" - {0}x{1}", Canvas.Width, Canvas.Height);
                 }
 
                 string fileName = Helpers.GetFileNameSafe(ImageFilePath);
 
                 if (!string.IsNullOrEmpty(fileName))
                 {
-                    text += " - " + fileName;
+                    title.AppendFormat(" - {0}", fileName);
                 }
 
                 if (!IsFullscreen && Options.ShowFPS)
                 {
-                    text += " - FPS: " + FPSManager.FPS.ToString();
+                    title.AppendFormat(" - FPS: {0}", FPSManager.FPS.ToString());
+                }
+
+                if (ZoomFactor != 1.0)
+                {
+                    title.AppendFormat(" - ZOOM: {0}%", Math.Round(ZoomFactor * 100));
                 }
             }
             else
             {
-                text = "ShareX - " + Resources.BaseRegionForm_InitializeComponent_Region_capture;
+                title.AppendFormat("ShareX - {0}", Resources.BaseRegionForm_InitializeComponent_Region_capture);
             }
 
-            Text = text;
+            Text = title.ToString();
         }
 
         private void Prepare(Bitmap canvas = null)
@@ -408,6 +439,8 @@ namespace ShareX.ScreenCaptureLib
 
             Rectangle limitRectangle = new Rectangle(ClientArea.X + panLimitSize.Width, ClientArea.Y + panLimitSize.Height,
                 ClientArea.Width - (panLimitSize.Width * 2), ClientArea.Height - (panLimitSize.Height * 2));
+
+            limitRectangle = limitRectangle.Scale(1 / ZoomFactor);
 
             deltaX = Math.Max(deltaX, limitRectangle.Left - CanvasRectangle.Right);
             deltaX = Math.Min(deltaX, limitRectangle.Right - CanvasRectangle.Left);
@@ -727,7 +760,7 @@ namespace ShareX.ScreenCaptureLib
 
             if (ShapeManager.IsPanning)
             {
-                Pan(InputManager.MouseVelocity);
+                Pan(ScaledClientMouseVelocity);
                 UpdateCenterOffset();
             }
 
@@ -758,17 +791,18 @@ namespace ShareX.ScreenCaptureLib
 
             Graphics g = e.Graphics;
 
+            g.PixelOffsetMode = PixelOffsetMode.HighSpeed;
+            g.InterpolationMode = InterpolationMode.NearestNeighbor;
+
             if (IsEditorMode && !CanvasRectangle.Contains(ClientArea))
             {
+                g.ScaleTransform(ZoomFactor, ZoomFactor);
                 g.Clear(canvasBackgroundColor);
                 g.DrawRectangleProper(canvasBorderPen, CanvasRectangle.Offset(1));
             }
 
-            g.CompositingMode = CompositingMode.SourceCopy;
-            g.FillRectangle(backgroundBrush, CanvasRectangle);
-            g.CompositingMode = CompositingMode.SourceOver;
-
-            Draw(g);
+            DrawBackground(g);
+            DrawShapes(g);
 
             if (Options.ShowFPS && IsFullscreen)
             {
@@ -779,9 +813,23 @@ namespace ShareX.ScreenCaptureLib
             {
                 Invalidate();
             }
+
+            g.PixelOffsetMode = PixelOffsetMode.Default;
+            g.InterpolationMode = InterpolationMode.Default;
         }
 
-        private void Draw(Graphics g)
+        private void DrawBackground(Graphics g)
+        {
+            // TODO: dynamically adjust scaling quality when zoom != 1 based on FPS
+            // Quality is more important when scaling down than up.
+            g.PixelOffsetMode = PixelOffsetMode.HighSpeed;
+            g.InterpolationMode = InterpolationMode.NearestNeighbor;
+            g.SmoothingMode = SmoothingMode.HighSpeed;
+            g.CompositingQuality = CompositingQuality.HighSpeed;
+            g.DrawImage(backgroundBrush.Image, CanvasRectangle);
+        }
+
+        private void DrawShapes(Graphics g)
         {
             // Draw snap rectangles
             if (ShapeManager.IsCreating && ShapeManager.IsSnapResizing)
@@ -1040,7 +1088,13 @@ namespace ShareX.ScreenCaptureLib
             using (Brush textBrush = new SolidBrush(Color.FromArgb((int)(textAnimation.Opacity * 255), textColor)))
             using (Brush textShadowBrush = new SolidBrush(Color.FromArgb((int)(textAnimation.Opacity * 255), textShadowColor)))
             {
-                DrawInfoText(g, textAnimation.Text, textRectangle, infoFontMedium, padding, backgroundBrush, outerBorderPen, innerBorderPen, textBrush, textShadowBrush);
+                var transform = g.Transform;
+                using (Matrix identity = new Matrix())
+                {
+                    g.Transform = identity; // ignore zoom
+                    DrawInfoText(g, textAnimation.Text, textRectangle, infoFontMedium, padding, backgroundBrush, outerBorderPen, innerBorderPen, textBrush, textShadowBrush);
+                }
+                g.Transform = transform;
             }
         }
 
@@ -1105,7 +1159,7 @@ namespace ShareX.ScreenCaptureLib
         private void DrawCrosshair(Graphics g)
         {
             int offset = 5;
-            Point mousePos = InputManager.ClientMousePosition;
+            Point mousePos = ScaledClientMousePosition;
             Point left = new Point(mousePos.X - offset, mousePos.Y), left2 = new Point(0, mousePos.Y);
             Point right = new Point(mousePos.X + offset, mousePos.Y), right2 = new Point(ClientArea.Width - 1, mousePos.Y);
             Point top = new Point(mousePos.X, mousePos.Y - offset), top2 = new Point(mousePos.X, 0);
@@ -1194,9 +1248,12 @@ namespace ShareX.ScreenCaptureLib
 
             if (Options.ShowMagnifier)
             {
+                Matrix transform = g.Transform;
                 using (GraphicsQualityManager quality = new GraphicsQualityManager(g))
                 using (TextureBrush brush = new TextureBrush(magnifier))
+                using (Matrix identity = new Matrix())
                 {
+                    g.Transform = identity; // ignore zoom
                     brush.TranslateTransform(x, y + magnifierPosition);
 
                     if (Options.UseSquareMagnifier)
@@ -1212,6 +1269,7 @@ namespace ShareX.ScreenCaptureLib
                         g.DrawEllipse(Pens.Black, x, y + magnifierPosition, magnifier.Width - 1, magnifier.Height - 1);
                     }
                 }
+                g.Transform = transform;
             }
 
             if (Options.ShowInfo)

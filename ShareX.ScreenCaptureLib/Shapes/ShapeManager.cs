@@ -501,6 +501,10 @@ namespace ShareX.ScreenCaptureLib
 
         private void form_MouseWheel(object sender, MouseEventArgs e)
         {
+            if ((Control.ModifierKeys & Keys.Control) != 0)
+            {
+                return;
+            }
             if (e.Delta > 0)
             {
                 if (Options.ShowMagnifier)
@@ -1035,12 +1039,8 @@ namespace ShareX.ScreenCaptureLib
             IsPanning = false;
         }
 
-        internal void UpdateObjects()
+        internal void UpdateObjects(ImageEditorControl[] objects, Point mousePosition)
         {
-            ImageEditorControl[] objects = DrawableObjects.OrderByDescending(x => x.Order).ToArray();
-
-            Point position = InputManager.ClientMousePosition;
-
             if (objects.All(x => !x.IsDragging))
             {
                 for (int i = 0; i < objects.Length; i++)
@@ -1049,13 +1049,13 @@ namespace ShareX.ScreenCaptureLib
 
                     if (obj.Visible)
                     {
-                        obj.IsCursorHover = obj.Rectangle.Contains(position);
+                        obj.IsCursorHover = obj.Rectangle.Contains(mousePosition);
 
                         if (obj.IsCursorHover)
                         {
                             if (InputManager.IsMousePressed(MouseButtons.Left))
                             {
-                                obj.OnMouseDown(position);
+                                obj.OnMouseDown(mousePosition);
                             }
 
                             for (int j = i + 1; j < objects.Length; j++)
@@ -1080,11 +1080,19 @@ namespace ShareX.ScreenCaptureLib
                     {
                         if (obj.IsDragging)
                         {
-                            obj.OnMouseUp(position);
+                            obj.OnMouseUp(mousePosition);
                         }
                     }
                 }
             }
+        }
+
+        internal void UpdateObjects()
+        {
+            ImageEditorControl[] scrollbars = DrawableObjects.Where(x => x is ImageEditorScrollbar).ToArray();
+            ImageEditorControl[] shapes = DrawableObjects.Except(scrollbars).OrderByDescending(x => x.Order).ToArray();
+            UpdateObjects(shapes, Form.ScaledClientMousePosition);
+            UpdateObjects(scrollbars, InputManager.ClientMousePosition);
         }
 
         internal void DrawObjects(Graphics g)
@@ -1288,7 +1296,7 @@ namespace ShareX.ScreenCaptureLib
 
                     if (Options.IsFixedSize && IsCurrentShapeTypeRegion)
                     {
-                        Point location = InputManager.ClientMousePosition;
+                        Point location = Form.ScaledClientMousePosition;
 
                         BaseShape rectangleRegionShape = CreateShape(ShapeType.RegionRectangle);
                         rectangleRegionShape.Rectangle = new Rectangle(new Point(location.X - (Options.FixedSize.Width / 2),
@@ -1484,7 +1492,7 @@ namespace ShareX.ScreenCaptureLib
 
         public BaseShape GetIntersectShape()
         {
-            return GetIntersectShape(InputManager.ClientMousePosition);
+            return GetIntersectShape(Form.ScaledClientMousePosition);
         }
 
         public BaseShape GetIntersectShape(Point position)
@@ -1680,7 +1688,7 @@ namespace ShareX.ScreenCaptureLib
                 {
                     if (insertMousePosition)
                     {
-                        shapeCopy.MoveAbsolute(InputManager.ClientMousePosition, true);
+                        shapeCopy.MoveAbsolute(Form.ScaledClientMousePosition, true);
                     }
                     else
                     {
@@ -1726,7 +1734,7 @@ namespace ShareX.ScreenCaptureLib
 
                     if (insertMousePosition)
                     {
-                        pos = InputManager.ClientMousePosition;
+                        pos = Form.ScaledClientMousePosition;
                     }
                     else
                     {
@@ -1821,7 +1829,7 @@ namespace ShareX.ScreenCaptureLib
 
         public Color GetCurrentColor(Bitmap bmp)
         {
-            return GetColor(bmp, InputManager.ClientMousePosition);
+            return GetColor(bmp, Form.ScaledClientMousePosition);
         }
 
         public Color GetCurrentColor()

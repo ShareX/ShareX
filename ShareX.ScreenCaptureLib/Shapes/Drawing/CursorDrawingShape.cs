@@ -49,7 +49,7 @@ namespace ShareX.ScreenCaptureLib
         public override void OnCreating()
         {
             Manager.IsMoving = true;
-            UpdateCursor(Manager.GetSelectedCursor().Handle, InputManager.ClientMousePosition);
+            UpdateCursor(Manager.GetSelectedCursor().Handle, Manager.Form.ScaledClientMousePosition);
             OnCreated();
         }
 
