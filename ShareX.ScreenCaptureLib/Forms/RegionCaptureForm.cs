@@ -179,11 +179,11 @@ namespace ShareX.ScreenCaptureLib
             }
             if (e.Delta > 0)
             {
-                ZoomFactor += 0.1F;
+                ZoomFactor *= 1.1F;
             }
             else if (ZoomFactor > 0.2)
             {
-                ZoomFactor -= 0.1F;
+                ZoomFactor /= 1.1F;
             }
             UpdateTitle();
         }
