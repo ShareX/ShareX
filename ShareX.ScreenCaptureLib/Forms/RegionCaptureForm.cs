@@ -791,14 +791,14 @@ namespace ShareX.ScreenCaptureLib
 
             Graphics g = e.Graphics;
 
-            g.PixelOffsetMode = PixelOffsetMode.HighSpeed;
-            g.InterpolationMode = InterpolationMode.NearestNeighbor;
-
-            if (IsEditorMode && !CanvasRectangle.Contains(ClientArea))
+            if (IsEditorMode)
             {
                 g.ScaleTransform(ZoomFactor, ZoomFactor);
-                g.Clear(canvasBackgroundColor);
-                g.DrawRectangleProper(canvasBorderPen, CanvasRectangle.Offset(1));
+                if (!CanvasRectangle.Contains(ClientArea))
+                {
+                    g.Clear(canvasBackgroundColor);
+                    g.DrawRectangleProper(canvasBorderPen, CanvasRectangle.Offset(1));
+                }
             }
 
             DrawBackground(g);
@@ -820,8 +820,8 @@ namespace ShareX.ScreenCaptureLib
 
         private void DrawBackground(Graphics g)
         {
-            // TODO: dynamically adjust scaling quality when zoom != 1 based on FPS
-            // Quality is more important when scaling down than up.
+            // TODO: dynamically improved scaling quality when zoom != 1 if FPS is high
+            // especially when scaling down
             g.PixelOffsetMode = PixelOffsetMode.HighSpeed;
             g.InterpolationMode = InterpolationMode.NearestNeighbor;
             g.SmoothingMode = SmoothingMode.HighSpeed;
