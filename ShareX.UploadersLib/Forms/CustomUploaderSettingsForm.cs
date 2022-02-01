@@ -36,7 +36,6 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -51,7 +50,6 @@ namespace ShareX.UploadersLib
         public UploadersConfig Config { get; private set; }
 
         private bool customUploaderPauseLoad;
-        private CustomUploaderURLType customUploaderURLType = CustomUploaderURLType.URL;
 
         public CustomUploaderSettingsForm(UploadersConfig config)
         {
@@ -202,18 +200,6 @@ namespace ShareX.UploadersLib
             rtbData.Text = uploader.Data ?? "";
             CustomUploaderSyntaxHighlight(rtbData);
 
-            txtJsonPath.Text = "";
-            txtXPath.Text = "";
-
-            dgvRegex.Rows.Clear();
-            if (uploader.RegexList != null)
-            {
-                foreach (string regex in uploader.RegexList)
-                {
-                    dgvRegex.Rows.Add(new string[] { regex });
-                }
-            }
-
             rtbResultURL.Text = uploader.URL;
             CustomUploaderSyntaxHighlight(rtbResultURL);
             rtbResultThumbnailURL.Text = uploader.ThumbnailURL;
@@ -237,12 +223,12 @@ namespace ShareX.UploadersLib
                 lbCustomUploaderList.Items.Count > 0;
 
             CustomUploaderUpdateBodyState();
-            CustomUploaderUpdateResponseState();
         }
 
         private void CustomUploaderUpdateBodyState()
         {
             CustomUploaderItem uploader = CustomUploaderGetSelected();
+
             if (uploader != null)
             {
                 pBodyArguments.Visible = uploader.Body == CustomUploaderBody.MultipartFormData ||
@@ -251,13 +237,6 @@ namespace ShareX.UploadersLib
                 pBodyData.Visible = uploader.Body == CustomUploaderBody.JSON || uploader.Body == CustomUploaderBody.XML;
                 btnDataMinify.Visible = uploader.Body == CustomUploaderBody.JSON;
             }
-        }
-
-        private void CustomUploaderUpdateResponseState()
-        {
-            btnJsonAddSyntax.Enabled = !string.IsNullOrEmpty(txtJsonPath.Text);
-            btnXmlAddSyntax.Enabled = !string.IsNullOrEmpty(txtXPath.Text);
-            btnRegexAddSyntax.Enabled = dgvRegex.SelectedCells.OfType<DataGridViewCell>().Any(x => !x.OwningRow.IsNewRow);
         }
 
         private void CustomUploaderRefreshNames()
@@ -519,24 +498,6 @@ namespace ShareX.UploadersLib
             return dictionary;
         }
 
-        private List<string> DataGridViewToList(DataGridView dgv)
-        {
-            List<string> list = new List<string>();
-
-            for (int i = 0; i < dgv.Rows.Count; i++)
-            {
-                DataGridViewRow row = dgv.Rows[i];
-                string item = row.Cells[0].Value?.ToString();
-
-                if (!string.IsNullOrEmpty(item))
-                {
-                    list.Add(item);
-                }
-            }
-
-            return list;
-        }
-
         private void CustomUploaderDestinationTypeUpdate()
         {
             CustomUploaderItem uploader = CustomUploaderGetSelected();
@@ -628,30 +589,6 @@ namespace ShareX.UploadersLib
                 cbURLShortener.SelectedIndex = Config.CustomURLShortenerSelected.Clamp(0, Config.CustomUploadersList.Count - 1);
                 cbURLSharingService.SelectedIndex = Config.CustomURLSharingServiceSelected.Clamp(0, Config.CustomUploadersList.Count - 1);
             }
-        }
-
-        private void AddTextToActiveURLField(string text)
-        {
-            RichTextBox rtb;
-
-            switch (customUploaderURLType)
-            {
-                default:
-                case CustomUploaderURLType.URL:
-                    rtb = rtbResultURL;
-                    break;
-                case CustomUploaderURLType.ThumbnailURL:
-                    rtb = rtbResultThumbnailURL;
-                    break;
-                case CustomUploaderURLType.DeletionURL:
-                    rtb = rtbResultDeletionURL;
-                    break;
-                case CustomUploaderURLType.ErrorMessage:
-                    rtb = rtbResultErrorMessage;
-                    break;
-            }
-
-            rtb.AppendText(text);
         }
 
         private async Task TestCustomUploader(CustomUploaderDestinationType type, int index)
@@ -1081,112 +1018,11 @@ namespace ShareX.UploadersLib
             CustomUploaderFormatJsonData(Formatting.None);
         }
 
-        private void txtCustomUploaderJsonPath_TextChanged(object sender, EventArgs e)
-        {
-            CustomUploaderUpdateResponseState();
-        }
-
-        private void btnCustomUploadJsonPathHelp_Click(object sender, EventArgs e)
-        {
-            URLHelpers.OpenURL("http://goessner.net/articles/JsonPath/");
-        }
-
-        private void btnCustomUploaderJsonAddSyntax_Click(object sender, EventArgs e)
-        {
-            string syntax = txtJsonPath.Text;
-
-            if (!string.IsNullOrEmpty(syntax))
-            {
-                if (syntax.StartsWith("$."))
-                {
-                    syntax = syntax.Substring(2);
-                }
-
-                AddTextToActiveURLField($"$json:{syntax}$");
-            }
-        }
-
-        private void txtCustomUploaderXPath_TextChanged(object sender, EventArgs e)
-        {
-            CustomUploaderUpdateResponseState();
-        }
-
-        private void btnCustomUploaderXPathHelp_Click(object sender, EventArgs e)
-        {
-            URLHelpers.OpenURL("https://www.w3schools.com/xml/xpath_syntax.asp");
-        }
-
-        private void btnCustomUploaderXmlSyntaxAdd_Click(object sender, EventArgs e)
-        {
-            string syntax = txtXPath.Text;
-
-            if (!string.IsNullOrEmpty(syntax))
-            {
-                AddTextToActiveURLField($"$xml:{syntax}$");
-            }
-        }
-
-        private void dgvRegex_SelectionChanged(object sender, EventArgs e)
-        {
-            CustomUploaderUpdateResponseState();
-        }
-
-        private void dgvRegex_CellValueChanged(object sender, DataGridViewCellEventArgs e)
-        {
-            CheckDataGridView(dgvRegex, false);
-
-            CustomUploaderItem uploader = CustomUploaderGetSelected();
-            if (uploader != null) uploader.RegexList = DataGridViewToList(dgvRegex);
-        }
-
-        private void btnCustomUploaderRegexAddSyntax_Click(object sender, EventArgs e)
-        {
-            if (dgvRegex.SelectedCells.Count > 0)
-            {
-                int selectedIndex = dgvRegex.SelectedCells[0].RowIndex;
-                string regex = dgvRegex.SelectedCells[0].Value?.ToString();
-
-                if (!string.IsNullOrEmpty(regex))
-                {
-                    string syntax;
-                    Match match = Regex.Match(regex, @"\((?:\?<(.+?)>)?.+?\)");
-
-                    if (match.Success)
-                    {
-                        if (match.Groups.Count > 1 && !string.IsNullOrEmpty(match.Groups[1].Value))
-                        {
-                            syntax = string.Format("$regex:{0}|{1}$", selectedIndex + 1, match.Groups[1].Value);
-                        }
-                        else
-                        {
-                            syntax = string.Format("$regex:{0}|1$", selectedIndex + 1);
-                        }
-                    }
-                    else
-                    {
-                        syntax = string.Format("$regex:{0}$", selectedIndex + 1);
-                    }
-
-                    AddTextToActiveURLField(syntax);
-                }
-            }
-        }
-
-        private void rtbCustomUploaderURL_Enter(object sender, EventArgs e)
-        {
-            customUploaderURLType = CustomUploaderURLType.URL;
-        }
-
         private void rtbCustomUploaderURL_TextChanged(object sender, EventArgs e)
         {
             CustomUploaderItem uploader = CustomUploaderGetSelected();
             if (uploader != null) uploader.URL = rtbResultURL.Text;
             CustomUploaderSyntaxHighlight(rtbResultURL);
-        }
-
-        private void rtbCustomUploaderThumbnailURL_Enter(object sender, EventArgs e)
-        {
-            customUploaderURLType = CustomUploaderURLType.ThumbnailURL;
         }
 
         private void rtbCustomUploaderThumbnailURL_TextChanged(object sender, EventArgs e)
@@ -1196,21 +1032,11 @@ namespace ShareX.UploadersLib
             CustomUploaderSyntaxHighlight(rtbResultThumbnailURL);
         }
 
-        private void rtbCustomUploaderDeletionURL_Enter(object sender, EventArgs e)
-        {
-            customUploaderURLType = CustomUploaderURLType.DeletionURL;
-        }
-
         private void rtbCustomUploaderDeletionURL_TextChanged(object sender, EventArgs e)
         {
             CustomUploaderItem uploader = CustomUploaderGetSelected();
             if (uploader != null) uploader.DeletionURL = rtbResultDeletionURL.Text;
             CustomUploaderSyntaxHighlight(rtbResultDeletionURL);
-        }
-
-        private void rtbResultErrorMessage_Enter(object sender, EventArgs e)
-        {
-            customUploaderURLType = CustomUploaderURLType.ErrorMessage;
         }
 
         private void rtbResultErrorMessage_TextChanged(object sender, EventArgs e)

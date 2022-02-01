@@ -89,11 +89,6 @@ namespace ShareX.UploadersLib
         // For backward compatibility
         public ResponseType ResponseType { private get; set; }
 
-        [DefaultValue(null)]
-        public List<string> RegexList { get; set; }
-
-        public bool ShouldSerializeRegexList() => RegexList != null && RegexList.Count > 0;
-
         [DefaultValue("")]
         public string URL { get; set; }
 
