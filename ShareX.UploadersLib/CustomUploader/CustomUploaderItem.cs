@@ -30,6 +30,8 @@ using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.ComponentModel;
+using System.Linq;
+using System.Text;
 using System.Windows.Forms;
 
 namespace ShareX.UploadersLib
@@ -409,8 +411,72 @@ namespace ShareX.UploadersLib
 
                 ResponseType = ResponseType.Text;
 
+                Version = "13.7.1";
+            }
+
+            if (Helpers.CompareVersion(Version, "13.7.1") <= 0)
+            {
+                RequestURL = MigrateOldSyntax(RequestURL);
+
+                if (Parameters != null)
+                {
+                    foreach (string key in Parameters.Keys.ToList())
+                    {
+                        Parameters[key] = MigrateOldSyntax(Parameters[key]);
+                    }
+                }
+
+                if (Headers != null)
+                {
+                    foreach (string key in Headers.Keys.ToList())
+                    {
+                        Headers[key] = MigrateOldSyntax(Headers[key]);
+                    }
+                }
+
+                if (Arguments != null)
+                {
+                    foreach (string key in Arguments.Keys.ToList())
+                    {
+                        Arguments[key] = MigrateOldSyntax(Arguments[key]);
+                    }
+                }
+
+                Data = MigrateOldSyntax(Data);
+                URL = MigrateOldSyntax(URL);
+                ThumbnailURL = MigrateOldSyntax(ThumbnailURL);
+                DeletionURL = MigrateOldSyntax(DeletionURL);
+                ErrorMessage = MigrateOldSyntax(ErrorMessage);
+
                 Version = Application.ProductVersion;
             }
+        }
+
+        private string MigrateOldSyntax(string input)
+        {
+            if (string.IsNullOrEmpty(input))
+            {
+                return input;
+            }
+
+            StringBuilder sbInput = new StringBuilder(input);
+
+            bool start = true;
+
+            for (int i = 0; i < input.Length; i++)
+            {
+                if (input[i] == '$')
+                {
+                    sbInput[i] = start ? '{' : '}';
+                    start = !start;
+                }
+                else if (input[i] == '\\')
+                {
+                    i++;
+                }
+            }
+
+            return sbInput.ToString();
         }
 
         private void CheckRequestURL()
