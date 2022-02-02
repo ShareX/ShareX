@@ -459,7 +459,7 @@ namespace ShareX.UploadersLib
                 return input;
             }
 
-            StringBuilder sbInput = new StringBuilder(input);
+            StringBuilder sbInput = new StringBuilder();
 
             bool start = true;
 
@@ -467,13 +467,21 @@ namespace ShareX.UploadersLib
             {
                 if (input[i] == '$')
                 {
-                    sbInput[i] = start ? '{' : '}';
+                    sbInput.Append(start ? '{' : '}');
                     start = !start;
+                    continue;
                 }
                 else if (input[i] == '\\')
                 {
                     i++;
+                    continue;
                 }
+                else if (input[i] == '{' || input[i] == '}')
+                {
+                    sbInput.Append('\\');
+                }
+
+                sbInput.Append(input[i]);
             }
 
             return sbInput.ToString();
