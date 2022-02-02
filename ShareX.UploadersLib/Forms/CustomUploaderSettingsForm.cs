@@ -240,17 +240,21 @@ namespace ShareX.UploadersLib
 
         private void CustomUploaderRefreshNames()
         {
-            customUploaderPauseLoad = true;
-
             int index = lbCustomUploaderList.SelectedIndex;
-            lbCustomUploaderList.Items[index] = lbCustomUploaderList.Items[index];
-            cbImageUploader.Items[index] = cbImageUploader.Items[index];
-            cbTextUploader.Items[index] = cbTextUploader.Items[index];
-            cbFileUploader.Items[index] = cbFileUploader.Items[index];
-            cbURLShortener.Items[index] = cbURLShortener.Items[index];
-            cbURLSharingService.Items[index] = cbURLSharingService.Items[index];
 
-            customUploaderPauseLoad = false;
+            if (index >= 0)
+            {
+                customUploaderPauseLoad = true;
+
+                lbCustomUploaderList.Items[index] = lbCustomUploaderList.Items[index];
+                cbImageUploader.Items[index] = cbImageUploader.Items[index];
+                cbTextUploader.Items[index] = cbTextUploader.Items[index];
+                cbFileUploader.Items[index] = cbFileUploader.Items[index];
+                cbURLShortener.Items[index] = cbURLShortener.Items[index];
+                cbURLSharingService.Items[index] = cbURLSharingService.Items[index];
+
+                customUploaderPauseLoad = false;
+            }
         }
 
         private void CustomUploaderClearUploaders()
