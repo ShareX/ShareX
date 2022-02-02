@@ -37,8 +37,6 @@ namespace ShareX.UploadersLib
         public string Input { get; set; }
         public ResponseInfo ResponseInfo { get; set; }
         public bool URLEncode { get; set; } // Only URL encodes file name and input
-        public bool JSONEncode { get; set; }
-        public bool XMLEncode { get; set; }
         public bool UseNameParser { get; set; }
         public NameParserType NameParserType { get; set; } = NameParserType.Text;
 
@@ -71,21 +69,7 @@ namespace ShareX.UploadersLib
             {
                 if (function.Name.Equals(functionName, StringComparison.OrdinalIgnoreCase))
                 {
-                    string result = function.Call(this, parameters);
-
-                    if (!string.IsNullOrEmpty(result))
-                    {
-                        if (JSONEncode)
-                        {
-                            result = URLHelpers.JSONEncode(result);
-                        }
-                        else if (XMLEncode)
-                        {
-                            result = URLHelpers.XMLEncode(result);
-                        }
-                    }
-
-                    return result;
+                    return function.Call(this, parameters);
                 }
             }
 

@@ -193,12 +193,32 @@ namespace ShareX.UploadersLib
 
         public string GetData(CustomUploaderInput input)
         {
-            CustomUploaderSyntaxParser parser = new CustomUploaderSyntaxParser(input);
-            parser.UseNameParser = true;
-            parser.JSONEncode = Body == CustomUploaderBody.JSON;
-            parser.XMLEncode = Body == CustomUploaderBody.XML;
+            NameParser nameParser = new NameParser(NameParserType.Text);
+            string result = nameParser.Parse(Data);
 
-            return parser.Parse(Data);
+            Dictionary<string, string> replace = new Dictionary<string, string>();
+            replace.Add("{input}", EncodeBodyData(input.Input));
+            replace.Add("{filename}", EncodeBodyData(input.FileName));
+            result = result.BatchReplace(replace, StringComparison.OrdinalIgnoreCase);
+
+            return result;
+        }
+
+        private string EncodeBodyData(string input)
+        {
+            if (!string.IsNullOrEmpty(input))
+            {
+                if (Body == CustomUploaderBody.JSON)
+                {
+                    return URLHelpers.JSONEncode(input);
+                }
+                else if (Body == CustomUploaderBody.XML)
+                {
+                    return URLHelpers.XMLEncode(input);
+                }
+            }
+
+            return input;
         }
 
         public string GetFileFormName()
