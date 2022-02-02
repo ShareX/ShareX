@@ -247,8 +247,6 @@
     <Compile Include="FileUploaders\Pushbullet.cs" />
     <Compile Include="FileUploaders\GfycatUploader.cs" />
     <Compile Include="CustomUploader\CustomUploaderInput.cs" />
-    <Compile Include="CustomUploader\CustomUploaderParser.cs" />
-    <Compile Include="CustomUploader\CustomUploaderSyntaxInfo.cs" />
     <Compile Include="Forms\YouTubeVideoOptionsForm.cs">
       <SubType>Form</SubType>
     </Compile>
