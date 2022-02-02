@@ -212,12 +212,6 @@
     <Compile Include="Forms\InspectWindowForm.Designer.cs">
       <DependentUpon>InspectWindowForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\TextUploadForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\TextUploadForm.Designer.cs">
-      <DependentUpon>TextUploadForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="NativeMessageInput.cs" />
     <Compile Include="NewsItem.cs" />
     <Compile Include="NewsManager.cs" />
@@ -1548,48 +1542,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\TaskSettingsForm.zh-TW.resx">
       <DependentUpon>TaskSettingsForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\TextUploadForm.de.resx">
-      <DependentUpon>TextUploadForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\TextUploadForm.es-MX.resx">
-      <DependentUpon>TextUploadForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\TextUploadForm.fa-IR.resx">
-      <DependentUpon>TextUploadForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\TextUploadForm.fr.resx">
-      <DependentUpon>TextUploadForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\TextUploadForm.ja-JP.resx">
-      <DependentUpon>TextUploadForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\TextUploadForm.ko-KR.resx">
-      <DependentUpon>TextUploadForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\TextUploadForm.pt-PT.resx">
-      <DependentUpon>TextUploadForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\TextUploadForm.resx">
-      <DependentUpon>TextUploadForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\TextUploadForm.ru.resx">
-      <DependentUpon>TextUploadForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\TextUploadForm.tr.resx">
-      <DependentUpon>TextUploadForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\TextUploadForm.uk.resx">
-      <DependentUpon>TextUploadForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\TextUploadForm.vi-VN.resx">
-      <DependentUpon>TextUploadForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\TextUploadForm.zh-CN.resx">
-      <DependentUpon>TextUploadForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\TextUploadForm.zh-TW.resx">
-      <DependentUpon>TextUploadForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\WatchFolderForm.de.resx">
       <DependentUpon>WatchFolderForm.cs</DependentUpon>

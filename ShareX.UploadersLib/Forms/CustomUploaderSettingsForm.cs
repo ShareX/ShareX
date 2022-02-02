@@ -198,7 +198,6 @@ namespace ShareX.UploadersLib
             txtFileFormName.Text = uploader.FileFormName ?? "";
 
             rtbData.Text = uploader.Data ?? "";
-            CustomUploaderSyntaxHighlight(rtbData);
 
             rtbResultURL.Text = uploader.URL;
             CustomUploaderSyntaxHighlight(rtbResultURL);
@@ -621,8 +620,19 @@ namespace ShareX.UploadersLib
                             break;
                         case CustomUploaderDestinationType.TextUploader:
                             CustomTextUploader textUploader = new CustomTextUploader(item);
-                            result = textUploader.UploadText("ShareX text upload test", "Test.txt");
-                            result.Errors.AddRange(textUploader.Errors);
+                            using (TextUploadForm form = new TextUploadForm("ShareX text upload test"))
+                            {
+                                if (form.ShowDialog() == DialogResult.OK)
+                                {
+                                    string text = form.Content;
+
+                                    if (!string.IsNullOrEmpty(text))
+                                    {
+                                        result = textUploader.UploadText(text, "Test.txt");
+                                        result.Errors.AddRange(textUploader.Errors);
+                                    }
+                                }
+                            }
                             break;
                         case CustomUploaderDestinationType.FileUploader:
                             using (Stream stream = ShareXResources.Logo.GetStream())
@@ -993,8 +1003,6 @@ namespace ShareX.UploadersLib
         {
             CustomUploaderItem uploader = CustomUploaderGetSelected();
             if (uploader != null) uploader.Data = rtbData.Text;
-
-            CustomUploaderSyntaxHighlight(rtbData);
         }
 
         private void btnCustomUploaderDataBeautify_Click(object sender, EventArgs e)

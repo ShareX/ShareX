@@ -229,6 +229,12 @@
     <Compile Include="Forms\ResponseForm.Designer.cs">
       <DependentUpon>ResponseForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\TextUploadForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\TextUploadForm.Designer.cs">
+      <DependentUpon>TextUploadForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\UploadersConfigFormHelper.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -789,6 +795,48 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ResponseForm.zh-TW.resx">
       <DependentUpon>ResponseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TextUploadForm.de.resx">
+      <DependentUpon>TextUploadForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TextUploadForm.es-MX.resx">
+      <DependentUpon>TextUploadForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TextUploadForm.fa-IR.resx">
+      <DependentUpon>TextUploadForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TextUploadForm.fr.resx">
+      <DependentUpon>TextUploadForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TextUploadForm.ja-JP.resx">
+      <DependentUpon>TextUploadForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TextUploadForm.ko-KR.resx">
+      <DependentUpon>TextUploadForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TextUploadForm.pt-PT.resx">
+      <DependentUpon>TextUploadForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TextUploadForm.resx">
+      <DependentUpon>TextUploadForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TextUploadForm.ru.resx">
+      <DependentUpon>TextUploadForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TextUploadForm.tr.resx">
+      <DependentUpon>TextUploadForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TextUploadForm.uk.resx">
+      <DependentUpon>TextUploadForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TextUploadForm.vi-VN.resx">
+      <DependentUpon>TextUploadForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TextUploadForm.zh-CN.resx">
+      <DependentUpon>TextUploadForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TextUploadForm.zh-TW.resx">
+      <DependentUpon>TextUploadForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\TwitterTweetForm.de.resx">
       <DependentUpon>TwitterTweetForm.cs</DependentUpon>

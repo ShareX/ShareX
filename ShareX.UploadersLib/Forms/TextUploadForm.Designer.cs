@@ -1,4 +1,4 @@
-﻿namespace ShareX
+﻿namespace ShareX.UploadersLib
 {
     partial class TextUploadForm
     {
