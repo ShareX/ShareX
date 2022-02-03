@@ -442,7 +442,8 @@ namespace ShareX.UploadersLib
                     }
                 }
 
-                Data = MigrateOldSyntax(Data);
+                Data = Data.Replace("$input$", "{input}", StringComparison.OrdinalIgnoreCase).
+                    Replace("$filename$", "{filename}", StringComparison.OrdinalIgnoreCase);
                 URL = MigrateOldSyntax(URL);
                 ThumbnailURL = MigrateOldSyntax(ThumbnailURL);
                 DeletionURL = MigrateOldSyntax(DeletionURL);

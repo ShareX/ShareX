@@ -98,7 +98,7 @@ namespace ShareX.HelpersLib
 
         public static string Replace(this string str, string oldValue, string newValue, StringComparison comparison)
         {
-            if (string.IsNullOrEmpty(oldValue))
+            if (string.IsNullOrEmpty(str) || string.IsNullOrEmpty(oldValue))
             {
                 return str;
             }
