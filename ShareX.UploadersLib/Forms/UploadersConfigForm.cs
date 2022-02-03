@@ -601,11 +601,11 @@ namespace ShareX.UploadersLib
 
             #endregion Lambda
 
-            #region Lithiio
+            #region LobFile
 
             txtLithiioApiKey.Text = Config.LithiioSettings.UserAPIKey;
 
-            #endregion Lithiio
+            #endregion
 
             #region Teknik
 
@@ -2816,7 +2816,7 @@ namespace ShareX.UploadersLib
 
         #endregion Sul
 
-        #region Lithiio
+        #region LobFile
 
         private void txtLithiioApiKey_TextChanged(object sender, EventArgs e)
         {
@@ -2829,8 +2829,8 @@ namespace ShareX.UploadersLib
             {
                 Cursor = Cursors.WaitCursor;
 
-                Lithiio lithiio = new Lithiio();
-                string apiKey = lithiio.FetchAPIKey(txtLithiioEmail.Text, txtLithiioPassword.Text);
+                LobFile lobFile = new LobFile();
+                string apiKey = lobFile.FetchAPIKey(txtLithiioEmail.Text, txtLithiioPassword.Text);
                 txtLithiioApiKey.Text = apiKey ?? "";
             }
             catch (Exception ex)
@@ -2845,10 +2845,10 @@ namespace ShareX.UploadersLib
 
         private void btnLithiioGetAPIKey_Click(object sender, EventArgs e)
         {
-            URLHelpers.OpenURL("https://lithi.io/my-account.php");
+            URLHelpers.OpenURL("https://lobfile.com/my-account");
         }
 
-        #endregion Lithiio
+        #endregion
 
         #region Azure Storage
 

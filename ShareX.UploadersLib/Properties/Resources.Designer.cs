@@ -440,9 +440,9 @@ namespace ShareX.UploadersLib.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Lithiio {
+        internal static System.Drawing.Bitmap LobFile {
             get {
-                object obj = ResourceManager.GetObject("Lithiio", resourceCulture);
+                object obj = ResourceManager.GetObject("LobFile", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

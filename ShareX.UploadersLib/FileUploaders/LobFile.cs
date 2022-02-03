@@ -34,11 +34,11 @@ using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.FileUploaders
 {
-    public class LithiioFileUploaderService : FileUploaderService
+    public class LobFileFileUploaderService : FileUploaderService
     {
         public override FileDestination EnumValue { get; } = FileDestination.Lithiio;
 
-        public override Image ServiceImage => Resources.Lithiio;
+        public override Image ServiceImage => Resources.LobFile;
 
         public override bool CheckConfig(UploadersConfig config)
         {
@@ -47,21 +47,21 @@ namespace ShareX.UploadersLib.FileUploaders
 
         public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
         {
-            return new Lithiio(config.LithiioSettings);
+            return new LobFile(config.LithiioSettings);
         }
 
         public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpLithiio;
     }
 
-    public sealed class Lithiio : FileUploader
+    public sealed class LobFile : FileUploader
     {
         public LithiioSettings Config { get; private set; }
 
-        public Lithiio()
+        public LobFile()
         {
         }
 
-        public Lithiio(LithiioSettings config)
+        public LobFile(LithiioSettings config)
         {
             Config = config;
         }

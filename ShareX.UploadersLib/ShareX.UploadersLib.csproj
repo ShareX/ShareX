@@ -147,7 +147,7 @@
     <Compile Include="FileUploaders\BackblazeB2.cs" />
     <Compile Include="FileUploaders\Box.cs" />
     <Compile Include="FileUploaders\GoogleCloudStorage.cs" />
-    <Compile Include="FileUploaders\Lithiio.cs" />
+    <Compile Include="FileUploaders\LobFile.cs" />
     <Compile Include="FileUploaders\MegaAuthInfos.cs" />
     <Compile Include="FileUploaders\Plik.cs" />
     <Compile Include="FileUploaders\PlikSettings.cs" />
@@ -1146,9 +1146,6 @@
     <None Include="Favicons\Teknik.ico" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Favicons\Lithiio.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\navigation-270-button-white.png" />
   </ItemGroup>
   <ItemGroup>
@@ -1156,6 +1153,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Favicons\GooglePhotos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Favicons\LobFile.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

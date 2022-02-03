@@ -325,11 +325,11 @@ namespace ShareX.UploadersLib
 
         #endregion Lambda
 
-        #region Lithiio
+        #region LobFile
 
         public LithiioSettings LithiioSettings { get; set; } = new LithiioSettings();
 
-        #endregion Lithiio
+        #endregion
 
         #region Teknik
 
