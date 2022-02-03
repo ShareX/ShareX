@@ -55,13 +55,13 @@ namespace ShareX.UploadersLib.FileUploaders
 
     public sealed class LobFile : FileUploader
     {
-        public LithiioSettings Config { get; private set; }
+        public LobFileSettings Config { get; private set; }
 
         public LobFile()
         {
         }
 
-        public LobFile(LithiioSettings config)
+        public LobFile(LobFileSettings config)
         {
             Config = config;
         }
@@ -71,11 +71,11 @@ namespace ShareX.UploadersLib.FileUploaders
             Dictionary<string, string> args = new Dictionary<string, string>();
             args.Add("api_key", Config.UserAPIKey);
 
-            UploadResult result = SendRequestFile("https://lithi.io/api/v2/upload", stream, fileName, "file", args);
+            UploadResult result = SendRequestFile("https://lobfile.com/api/v3/upload", stream, fileName, "file", args);
 
             if (result.IsSuccess)
             {
-                LithiioUploadResponse uploadResponse = JsonConvert.DeserializeObject<LithiioUploadResponse>(result.Response);
+                LobFileUploadResponse uploadResponse = JsonConvert.DeserializeObject<LobFileUploadResponse>(result.Response);
 
                 if (uploadResponse.Success)
                 {
@@ -100,7 +100,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
             if (!string.IsNullOrEmpty(response))
             {
-                LithiioFetchAPIKeyResponse apiKeyResponse = JsonConvert.DeserializeObject<LithiioFetchAPIKeyResponse>(response);
+                LobFileFetchAPIKeyResponse apiKeyResponse = JsonConvert.DeserializeObject<LobFileFetchAPIKeyResponse>(response);
 
                 if (apiKeyResponse.Success)
                 {
@@ -115,24 +115,24 @@ namespace ShareX.UploadersLib.FileUploaders
             return null;
         }
 
-        private class LithiioResponse
+        private class LobFileResponse
         {
             public bool Success { get; set; }
             public string Error { get; set; }
         }
 
-        private class LithiioUploadResponse : LithiioResponse
+        private class LobFileUploadResponse : LobFileResponse
         {
             public string URL { get; set; }
         }
 
-        private class LithiioFetchAPIKeyResponse : LithiioResponse
+        private class LobFileFetchAPIKeyResponse : LobFileResponse
         {
             public string API_Key { get; set; }
         }
     }
 
-    public class LithiioSettings
+    public class LobFileSettings
     {
         [JsonEncrypt]
         public string UserAPIKey { get; set; } = "";

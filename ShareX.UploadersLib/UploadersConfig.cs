@@ -327,7 +327,7 @@ namespace ShareX.UploadersLib
 
         #region LobFile
 
-        public LithiioSettings LithiioSettings { get; set; } = new LithiioSettings();
+        public LobFileSettings LithiioSettings { get; set; } = new LobFileSettings();
 
         #endregion
 
