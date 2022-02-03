@@ -23,8 +23,6 @@
 
 #endregion License Information (GPL v3)
 
-// Credits: https://github.com/gpailler
-
 using CG.Web.MegaApiClient;
 using ShareX.UploadersLib.Properties;
 using System;

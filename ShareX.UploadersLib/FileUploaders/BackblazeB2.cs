@@ -46,9 +46,6 @@ namespace ShareX.UploadersLib.FileUploaders
     /// <summary>
     /// A <see cref="FileUploaderService"/> implementation for the Backblaze B2 Cloud Storage API.
     /// </summary>
-    /// <remarks>
-    /// Contributed by: <a href="https://github.com/tinybarks">@tinybarks</a>
-    /// </remarks>
     public class BackblazeB2UploaderService : FileUploaderService
     {
         public override FileDestination EnumValue => FileDestination.BackblazeB2;
@@ -76,9 +73,6 @@ namespace ShareX.UploadersLib.FileUploaders
     /// <summary>
     /// An <see cref="ImageUploader"/> implementation for the Backblaze B2 Cloud Storage API.
     /// </summary>
-    /// <remarks>
-    /// Contributed by: <a href="https://github.com/tinybarks">@tinybarks</a>
-    /// </remarks>
     [Localizable(false)]
     public sealed class BackblazeB2 : ImageUploader
     {

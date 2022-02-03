@@ -23,8 +23,6 @@
 
 #endregion License Information (GPL v3)
 
-// Credits: https://github.com/KamilKZ
-
 using Newtonsoft.Json;
 using ShareX.HelpersLib;
 using System.Collections.Generic;

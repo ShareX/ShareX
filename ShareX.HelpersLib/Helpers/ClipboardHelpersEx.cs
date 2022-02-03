@@ -34,7 +34,7 @@ namespace ShareX.HelpersLib
 {
     internal class ClipboardHelpersEx
     {
-        // Credits: https://stackoverflow.com/a/46424800/264877
+        // Source: https://stackoverflow.com/a/46424800/264877
 
         /// <summary>
         /// Copies the given image to the clipboard as PNG, DIB and standard Bitmap format.

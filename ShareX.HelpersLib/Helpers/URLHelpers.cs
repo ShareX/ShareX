@@ -268,7 +268,7 @@ namespace ShareX.HelpersLib
 
             if (useRegex)
             {
-                // https://gist.github.com/729294
+                // Source: https://gist.github.com/729294
                 string pattern =
                     "^" +
                     // protocol identifier

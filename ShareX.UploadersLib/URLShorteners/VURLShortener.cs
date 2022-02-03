@@ -23,8 +23,6 @@
 
 #endregion License Information (GPL v3)
 
-// Credits: https://github.com/DanielMcAssey
-
 using System.Collections.Generic;
 
 namespace ShareX.UploadersLib.URLShorteners
