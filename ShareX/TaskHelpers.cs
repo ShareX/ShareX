@@ -1834,10 +1834,10 @@ namespace ShareX
                 BarcodeReader barcodeReader = new BarcodeReader
                 {
                     AutoRotate = true,
-                    TryInverted = true,
                     Options = new DecodingOptions
                     {
-                        TryHarder = true
+                        TryHarder = true,
+                        TryInverted = true
                     }
                 };
 
