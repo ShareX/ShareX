@@ -47,7 +47,7 @@ namespace ShareX
             uclUpdate.Visible = false;
             lblBuild.Text = "Steam build";
             lblBuild.Visible = true;
-#elif WindowsStore
+#elif MicrosoftStore
             uclUpdate.Visible = false;
             lblBuild.Text = "Microsoft Store build";
             lblBuild.Visible = true;

@@ -68,7 +68,7 @@ namespace ShareX.ScreenCaptureLib
 
             // General
 
-#if STEAM || WindowsStore
+#if STEAM || MicrosoftStore
             cbOverrideFFmpegPath.Checked = Options.FFmpeg.OverrideCLIPath;
             gbFFmpegExe.Enabled = Options.FFmpeg.OverrideCLIPath;
 #else
@@ -80,7 +80,7 @@ namespace ShareX.ScreenCaptureLib
 
             await RefreshSourcesAsync();
 
-#if WindowsStore
+#if MicrosoftStore
             btnInstallHelperDevices.Visible = false;
             btnHelperDevicesHelp.Visible = false;
             lblHelperDevices.Visible = false;
@@ -127,7 +127,7 @@ namespace ShareX.ScreenCaptureLib
             // MP3
             tbMP3_qscale.Value = FFmpegCLIManager.mp3_max - Options.FFmpeg.MP3_qscale;
 
-#if WindowsStore
+#if MicrosoftStore
             btnTest.Visible = false;
 #endif
 
@@ -262,7 +262,7 @@ namespace ShareX.ScreenCaptureLib
 
         private void cbOverrideFFmpegPath_CheckedChanged(object sender, EventArgs e)
         {
-#if STEAM || WindowsStore
+#if STEAM || MicrosoftStore
             Options.FFmpeg.OverrideCLIPath = cbOverrideFFmpegPath.Checked;
             gbFFmpegExe.Enabled = Options.FFmpeg.OverrideCLIPath;
 #endif

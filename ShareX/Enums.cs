@@ -27,7 +27,7 @@ using Newtonsoft.Json;
 using System;
 using System.ComponentModel;
 
-#if WindowsStore
+#if MicrosoftStore
 using Windows.ApplicationModel;
 #endif
 
@@ -296,7 +296,7 @@ namespace ShareX
         Default, Light, Transparent
     }
 
-#if !WindowsStore
+#if !MicrosoftStore
     public enum StartupState
     {
         Disabled,

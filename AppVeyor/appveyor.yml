@@ -4,7 +4,7 @@ configuration:
 - Release
 - Debug
 - Steam
-- WindowsStore
+- MicrosoftStore
 platform: Any CPU
 shallow_clone: true
 environment:
@@ -32,7 +32,7 @@ artifacts:
 - path: ShareX-Steam
   name: Steam
 - path: ShareX.appx
-  name: WindowsStore
+  name: MicrosoftStore
 deploy:
   provider: GitHub
   tag: $(APPVEYOR_REPO_TAG_NAME)
