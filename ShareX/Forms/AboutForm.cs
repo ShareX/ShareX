@@ -34,7 +34,7 @@ namespace ShareX
     public partial class AboutForm : Form
     {
         private EasterEggAboutAnimation easterEgg;
-        private bool checkUpdate;
+        private bool checkUpdate = false;
 
         public AboutForm()
         {
