@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ShareX.Forms
+namespace ShareX
 {
     public partial class TimedRecordingForm : Form
     {

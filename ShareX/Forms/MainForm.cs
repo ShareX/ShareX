@@ -37,8 +37,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using ShareX.Forms;
-using Timer = System.Timers.Timer;
+
 
 namespace ShareX
 {

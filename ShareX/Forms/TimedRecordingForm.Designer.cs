@@ -1,4 +1,4 @@
-﻿namespace ShareX.Forms
+﻿namespace ShareX
 {
     partial class TimedRecordingForm
     {
