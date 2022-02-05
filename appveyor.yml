@@ -34,15 +34,21 @@ artifacts:
 - path: ShareX.appx
   name: MicrosoftStore
 deploy:
-  provider: GitHub
-  tag: $(APPVEYOR_REPO_TAG_NAME)
-  release: ShareX $(AppVersion)
-  description: "[Changelog](https://getsharex.com/changelog)"
-  auth_token:
-    secure: bbUkNvyu1jnKkuZGlM1ois3MkmpCMlm3Lv68L9V5AYepHt1SG4ZQ15ZoKfjOFg9R
-  artifact: Setup,Setup-Checksum,Portable,Portable-Checksum
-  draft: false
-  prerelease: true
-  on:
-    configuration: Release
-    appveyor_repo_tag: true
+  - provider: Webhook
+    url: https://app.signpath.io/API/v1/8c737825-80e6-466c-b4e1-19868ed085f5/Integrations/AppVeyor?ProjectSlug=ShareX&SigningPolicySlug=test-signing
+    authorization:
+      secure: 6JmUH7L6pPQz/HoRilhGfO78UwtyFOELO/e//aZ4Hv5vf7yGE9+/1bxNCR+/fE+96dkR0Yvl2HYH9vsO0NOpBg==
+    on:
+      configuration: Release
+  - provider: GitHub
+    tag: $(APPVEYOR_REPO_TAG_NAME)
+    release: ShareX $(AppVersion)
+    description: "[Changelog](https://getsharex.com/changelog)"
+    auth_token:
+      secure: bbUkNvyu1jnKkuZGlM1ois3MkmpCMlm3Lv68L9V5AYepHt1SG4ZQ15ZoKfjOFg9R
+    artifact: Setup,Setup-Checksum,Portable,Portable-Checksum
+    draft: false
+    prerelease: true
+    on:
+      configuration: Release
+      appveyor_repo_tag: true
