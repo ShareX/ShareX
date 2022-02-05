@@ -34,19 +34,19 @@
             this.cancelBtn = new System.Windows.Forms.Button();
             this.secondsRadioBtn = new System.Windows.Forms.RadioButton();
             this.minutesRadioBtn = new System.Windows.Forms.RadioButton();
+            this.hoursRadioBtn = new System.Windows.Forms.RadioButton();
             this.SuspendLayout();
             // 
             // lengthTxt
             // 
             this.lengthTxt.Location = new System.Drawing.Point(12, 28);
             this.lengthTxt.Name = "lengthTxt";
-            this.lengthTxt.Size = new System.Drawing.Size(203, 20);
+            this.lengthTxt.Size = new System.Drawing.Size(246, 20);
             this.lengthTxt.TabIndex = 5;
             // 
             // lblRecordingLength
             // 
             this.lblRecordingLength.AutoSize = true;
-            this.lblRecordingLength.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblRecordingLength.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.lblRecordingLength.Location = new System.Drawing.Point(12, 12);
             this.lblRecordingLength.Name = "lblRecordingLength";
@@ -68,7 +68,7 @@
             // 
             this.cancelBtn.Location = new System.Drawing.Point(140, 101);
             this.cancelBtn.Name = "cancelBtn";
-            this.cancelBtn.Size = new System.Drawing.Size(75, 23);
+            this.cancelBtn.Size = new System.Drawing.Size(118, 23);
             this.cancelBtn.TabIndex = 8;
             this.cancelBtn.Text = "Cancel";
             this.cancelBtn.UseVisualStyleBackColor = true;
@@ -78,8 +78,7 @@
             // 
             this.secondsRadioBtn.AutoSize = true;
             this.secondsRadioBtn.Checked = true;
-            this.secondsRadioBtn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.secondsRadioBtn.Location = new System.Drawing.Point(80, 54);
+            this.secondsRadioBtn.Location = new System.Drawing.Point(15, 54);
             this.secondsRadioBtn.Name = "secondsRadioBtn";
             this.secondsRadioBtn.Size = new System.Drawing.Size(67, 17);
             this.secondsRadioBtn.TabIndex = 11;
@@ -90,8 +89,7 @@
             // minutesRadioBtn
             // 
             this.minutesRadioBtn.AutoSize = true;
-            this.minutesRadioBtn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.minutesRadioBtn.Location = new System.Drawing.Point(153, 54);
+            this.minutesRadioBtn.Location = new System.Drawing.Point(112, 54);
             this.minutesRadioBtn.Name = "minutesRadioBtn";
             this.minutesRadioBtn.Size = new System.Drawing.Size(62, 17);
             this.minutesRadioBtn.TabIndex = 12;
@@ -99,12 +97,23 @@
             this.minutesRadioBtn.Text = "Minutes";
             this.minutesRadioBtn.UseVisualStyleBackColor = true;
             // 
+            // hoursRadioBtn
+            // 
+            this.hoursRadioBtn.AutoSize = true;
+            this.hoursRadioBtn.Location = new System.Drawing.Point(205, 54);
+            this.hoursRadioBtn.Name = "hoursRadioBtn";
+            this.hoursRadioBtn.Size = new System.Drawing.Size(53, 17);
+            this.hoursRadioBtn.TabIndex = 13;
+            this.hoursRadioBtn.TabStop = true;
+            this.hoursRadioBtn.Text = "Hours";
+            this.hoursRadioBtn.UseVisualStyleBackColor = true;
+            // 
             // TimedRecordingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(47)))), ((int)(((byte)(56)))));
-            this.ClientSize = new System.Drawing.Size(250, 136);
+            this.ClientSize = new System.Drawing.Size(287, 136);
+            this.Controls.Add(this.hoursRadioBtn);
             this.Controls.Add(this.minutesRadioBtn);
             this.Controls.Add(this.secondsRadioBtn);
             this.Controls.Add(this.cancelBtn);
@@ -114,7 +123,6 @@
             this.Name = "TimedRecordingForm";
             this.ShowIcon = false;
             this.Text = "ShareX - Recording Timer";
-            this.Load += new System.EventHandler(this.TimedRecordingForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -128,5 +136,6 @@
         private System.Windows.Forms.Button cancelBtn;
         private System.Windows.Forms.RadioButton secondsRadioBtn;
         private System.Windows.Forms.RadioButton minutesRadioBtn;
+        private System.Windows.Forms.RadioButton hoursRadioBtn;
     }
 }

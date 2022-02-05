@@ -23,7 +23,7 @@ namespace ShareX
 
         private void startRecordingBtn_Click(object sender, EventArgs e)
         {
-            double totalTime;
+            double totalTime = 0;
             double regionDelay = 3000;
             double recordingLength = CheckValidInput();
 
@@ -33,14 +33,17 @@ namespace ShareX
                 {
                     totalTime = (recordingLength * 1000) + regionDelay;
                 }
-                else
+                else if(minutesRadioBtn.Checked)
                 {
                     totalTime = (recordingLength * 60000) + regionDelay;
+                }
+                else if (hoursRadioBtn.Checked)
+                {
+                    totalTime = (recordingLength * 3600000) + regionDelay;
                 }
 
                 this.Hide();
                 TimedScreenRecordingManager.StartTimedRecording(totalTime);
-
             }
         }
 
@@ -60,11 +63,6 @@ namespace ShareX
         private void cancelBtn_Click(object sender, EventArgs e)
         {
             this.Hide();
-        }
-
-        private void TimedRecordingForm_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

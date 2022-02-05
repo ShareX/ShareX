@@ -638,11 +638,13 @@ namespace ShareX
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
             ScreenRecordManager.StartStopRecording(outputType, startMethod, taskSettings);
+            TimedScreenRecordingManager.StopRecordingTimer();
         }
 
         public static void StopScreenRecording()
         {
             ScreenRecordManager.StopRecording();
+            TimedScreenRecordingManager.StopRecordingTimer();
         }
 
         public static void AbortScreenRecording()
