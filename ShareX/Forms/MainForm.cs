@@ -37,6 +37,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ShareX.Forms;
 using Timer = System.Timers.Timer;
 
 namespace ShareX
@@ -2342,7 +2343,12 @@ namespace ShareX
 
         private void screenRecordingTimedToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            TimedScreenRecordingManager.StartTimedRecording(60000);
+            using (TimedRecordingForm timedRecordingForm = new TimedRecordingForm())
+            {
+                timedRecordingForm.ShowDialog();
+            }
+
+            //TimedScreenRecordingManager.StartTimedRecording(60000);
         }
 
         private void tsmiCombineImagesVertically_Click(object sender, EventArgs e)

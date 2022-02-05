@@ -52,6 +52,7 @@
             this.tsmiLastRegion = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiScreenRecordingFFmpeg = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiScreenRecordingGIF = new System.Windows.Forms.ToolStripMenuItem();
+            this.screenRecordingTimedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiScrollingCapture = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTextCapture = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiAutoCapture = new System.Windows.Forms.ToolStripMenuItem();
@@ -279,7 +280,6 @@
             this.ucTaskThumbnailView = new ShareX.TaskThumbnailView();
             this.ttMain = new System.Windows.Forms.ToolTip(this.components);
             this.pToolbars = new System.Windows.Forms.Panel();
-            this.screenRecordingTimedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.scMain)).BeginInit();
             this.scMain.Panel1.SuspendLayout();
             this.scMain.Panel2.SuspendLayout();
@@ -501,6 +501,13 @@
             this.tsmiScreenRecordingGIF.Name = "tsmiScreenRecordingGIF";
             resources.ApplyResources(this.tsmiScreenRecordingGIF, "tsmiScreenRecordingGIF");
             this.tsmiScreenRecordingGIF.Click += new System.EventHandler(this.tsmiScreenRecordingGIF_Click);
+            // 
+            // screenRecordingTimedToolStripMenuItem
+            // 
+            this.screenRecordingTimedToolStripMenuItem.Image = global::ShareX.Properties.Resources.clock_select;
+            this.screenRecordingTimedToolStripMenuItem.Name = "screenRecordingTimedToolStripMenuItem";
+            resources.ApplyResources(this.screenRecordingTimedToolStripMenuItem, "screenRecordingTimedToolStripMenuItem");
+            this.screenRecordingTimedToolStripMenuItem.Click += new System.EventHandler(this.screenRecordingTimedToolStripMenuItem_Click);
             // 
             // tsmiScrollingCapture
             // 
@@ -2183,12 +2190,6 @@
             resources.ApplyResources(this.pToolbars, "pToolbars");
             this.pToolbars.Controls.Add(this.tsMain);
             this.pToolbars.Name = "pToolbars";
-            // 
-            // screenRecordingTimedToolStripMenuItem
-            // 
-            this.screenRecordingTimedToolStripMenuItem.Name = "screenRecordingTimedToolStripMenuItem";
-            resources.ApplyResources(this.screenRecordingTimedToolStripMenuItem, "screenRecordingTimedToolStripMenuItem");
-            this.screenRecordingTimedToolStripMenuItem.Click += new System.EventHandler(this.screenRecordingTimedToolStripMenuItem_Click);
             // 
             // MainForm
             // 
