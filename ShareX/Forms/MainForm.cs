@@ -37,6 +37,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Timer = System.Timers.Timer;
 
 namespace ShareX
 {
@@ -2337,6 +2338,11 @@ namespace ShareX
         private void tsmiCombineImagesHorizontally_Click(object sender, EventArgs e)
         {
             uim.CombineImages(Orientation.Horizontal);
+        }
+
+        private void screenRecordingTimedToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TimedScreenRecordingManager.StartTimedRecording(60000);
         }
 
         private void tsmiCombineImagesVertically_Click(object sender, EventArgs e)

@@ -279,6 +279,7 @@
             this.ucTaskThumbnailView = new ShareX.TaskThumbnailView();
             this.ttMain = new System.Windows.Forms.ToolTip(this.components);
             this.pToolbars = new System.Windows.Forms.Panel();
+            this.screenRecordingTimedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.scMain)).BeginInit();
             this.scMain.Panel1.SuspendLayout();
             this.scMain.Panel2.SuspendLayout();
@@ -428,6 +429,7 @@
             this.tsmiLastRegion,
             this.tsmiScreenRecordingFFmpeg,
             this.tsmiScreenRecordingGIF,
+            this.screenRecordingTimedToolStripMenuItem,
             this.tsmiScrollingCapture,
             this.tsmiTextCapture,
             this.tsmiAutoCapture,
@@ -2182,6 +2184,12 @@
             this.pToolbars.Controls.Add(this.tsMain);
             this.pToolbars.Name = "pToolbars";
             // 
+            // screenRecordingTimedToolStripMenuItem
+            // 
+            this.screenRecordingTimedToolStripMenuItem.Name = "screenRecordingTimedToolStripMenuItem";
+            resources.ApplyResources(this.screenRecordingTimedToolStripMenuItem, "screenRecordingTimedToolStripMenuItem");
+            this.screenRecordingTimedToolStripMenuItem.Click += new System.EventHandler(this.screenRecordingTimedToolStripMenuItem_Click);
+            // 
             // MainForm
             // 
             this.AllowDrop = true;
@@ -2470,5 +2478,6 @@
         private System.Windows.Forms.ToolStripButton tsbDonate;
         private System.Windows.Forms.ToolStripMenuItem tsmiBorderlessWindow;
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayBorderlessWindow;
+        private System.Windows.Forms.ToolStripMenuItem screenRecordingTimedToolStripMenuItem;
     }
 }
