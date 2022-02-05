@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ShareX.HelpersLib;
 
 namespace ShareX
 {
@@ -17,6 +18,7 @@ namespace ShareX
         public TimedRecordingForm()
         {
             InitializeComponent();
+            ShareXResources.ApplyTheme(this);
         }
 
         private void startRecordingBtn_Click(object sender, EventArgs e)
@@ -58,6 +60,11 @@ namespace ShareX
         private void cancelBtn_Click(object sender, EventArgs e)
         {
             this.Hide();
+        }
+
+        private void TimedRecordingForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
