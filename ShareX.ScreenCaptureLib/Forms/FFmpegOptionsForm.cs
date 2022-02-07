@@ -66,11 +66,9 @@ namespace ShareX.ScreenCaptureLib
         {
             settingsLoaded = false;
 
-            // General
-
 #if STEAM || MicrosoftStore
             cbOverrideFFmpegPath.Checked = Options.FFmpeg.OverrideCLIPath;
-            gbFFmpegExe.Enabled = Options.FFmpeg.OverrideCLIPath;
+            txtFFmpegPath.Enabled = btnFFmpegBrowse.Enabled = btnDownload.Enabled = Options.FFmpeg.OverrideCLIPath;
 #else
             cbOverrideFFmpegPath.Visible = false;
 #endif
@@ -271,7 +269,7 @@ namespace ShareX.ScreenCaptureLib
         {
 #if STEAM || MicrosoftStore
             Options.FFmpeg.OverrideCLIPath = cbOverrideFFmpegPath.Checked;
-            gbFFmpegExe.Enabled = Options.FFmpeg.OverrideCLIPath;
+            txtFFmpegPath.Enabled = btnFFmpegBrowse.Enabled = btnDownload.Enabled = Options.FFmpeg.OverrideCLIPath;
 #endif
         }
 
