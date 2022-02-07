@@ -107,6 +107,9 @@
             this.btnRefreshSources = new System.Windows.Forms.Button();
             this.gbCodecs = new System.Windows.Forms.GroupBox();
             this.eiFFmpeg = new ShareX.HelpersLib.ExportImportControl();
+            this.cbx264UseBitrate = new System.Windows.Forms.CheckBox();
+            this.nudx264Bitrate = new System.Windows.Forms.NumericUpDown();
+            this.lblx264BitrateK = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.nudx264CRF)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudXvidQscale)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbVorbis_qscale)).BeginInit();
@@ -137,6 +140,7 @@
             this.tpMP3.SuspendLayout();
             this.gbSource.SuspendLayout();
             this.gbCodecs.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudx264Bitrate)).BeginInit();
             this.SuspendLayout();
             // 
             // lblx264CRF
@@ -414,11 +418,14 @@
             // tpX264
             // 
             this.tpX264.BackColor = System.Drawing.SystemColors.Window;
+            this.tpX264.Controls.Add(this.lblx264BitrateK);
+            this.tpX264.Controls.Add(this.cbx264UseBitrate);
             this.tpX264.Controls.Add(this.pbx264PresetWarning);
-            this.tpX264.Controls.Add(this.nudx264CRF);
             this.tpX264.Controls.Add(this.lblx264CRF);
             this.tpX264.Controls.Add(this.cbx264Preset);
             this.tpX264.Controls.Add(this.lblx264Preset);
+            this.tpX264.Controls.Add(this.nudx264CRF);
+            this.tpX264.Controls.Add(this.nudx264Bitrate);
             resources.ApplyResources(this.tpX264, "tpX264");
             this.tpX264.Name = "tpX264";
             // 
@@ -808,6 +815,39 @@
             this.eiFFmpeg.ExportRequested += new ShareX.HelpersLib.ExportImportControl.ExportEventHandler(this.eiFFmpeg_ExportRequested);
             this.eiFFmpeg.ImportRequested += new ShareX.HelpersLib.ExportImportControl.ImportEventHandler(this.eiFFmpeg_ImportRequested);
             // 
+            // cbx264UseBitrate
+            // 
+            resources.ApplyResources(this.cbx264UseBitrate, "cbx264UseBitrate");
+            this.cbx264UseBitrate.Name = "cbx264UseBitrate";
+            this.cbx264UseBitrate.UseVisualStyleBackColor = true;
+            this.cbx264UseBitrate.CheckedChanged += new System.EventHandler(this.cbx264UseBitrate_CheckedChanged);
+            // 
+            // nudx264Bitrate
+            // 
+            resources.ApplyResources(this.nudx264Bitrate, "nudx264Bitrate");
+            this.nudx264Bitrate.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
+            this.nudx264Bitrate.Minimum = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            this.nudx264Bitrate.Name = "nudx264Bitrate";
+            this.nudx264Bitrate.Value = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.nudx264Bitrate.ValueChanged += new System.EventHandler(this.nudx264Bitrate_ValueChanged);
+            // 
+            // lblx264BitrateK
+            // 
+            resources.ApplyResources(this.lblx264BitrateK, "lblx264BitrateK");
+            this.lblx264BitrateK.Name = "lblx264BitrateK";
+            // 
             // FFmpegOptionsForm
             // 
             resources.ApplyResources(this, "$this");
@@ -874,6 +914,7 @@
             this.gbSource.PerformLayout();
             this.gbCodecs.ResumeLayout(false);
             this.gbCodecs.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudx264Bitrate)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -958,5 +999,8 @@
         private System.Windows.Forms.TrackBar tbOpusBitrate;
         private System.Windows.Forms.Label lblOpusQuality;
         private System.Windows.Forms.NumericUpDown nudGIFBayerScale;
+        private System.Windows.Forms.NumericUpDown nudx264Bitrate;
+        private System.Windows.Forms.CheckBox cbx264UseBitrate;
+        private System.Windows.Forms.Label lblx264BitrateK;
     }
 }

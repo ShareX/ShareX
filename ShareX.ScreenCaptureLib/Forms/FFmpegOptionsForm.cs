@@ -93,6 +93,8 @@ namespace ShareX.ScreenCaptureLib
 
             // x264
             nudx264CRF.SetValue(Options.FFmpeg.x264_CRF);
+            nudx264Bitrate.SetValue(Options.FFmpeg.x264_Bitrate);
+            cbx264UseBitrate.Checked = Options.FFmpeg.x264_Use_Bitrate;
             cbx264Preset.SelectedIndex = (int)Options.FFmpeg.x264_Preset;
 
             // VPx
@@ -203,6 +205,11 @@ namespace ShareX.ScreenCaptureLib
         {
             if (settingsLoaded)
             {
+                // TODO: Translate
+                lblx264CRF.Text = Options.FFmpeg.x264_Use_Bitrate ? "Bitrate:" : "CRF:";
+                nudx264CRF.Visible = !Options.FFmpeg.x264_Use_Bitrate;
+                nudx264Bitrate.Visible = lblx264BitrateK.Visible = Options.FFmpeg.x264_Use_Bitrate;
+
                 lblAACQuality.Text = string.Format(Resources.FFmpegOptionsForm_UpdateUI_Bitrate___0_k, Options.FFmpeg.AAC_Bitrate);
                 lblVorbisQuality.Text = Resources.FFmpegOptionsForm_UpdateUI_Quality_ + " " + Options.FFmpeg.Vorbis_QScale;
                 lblMP3Quality.Text = Resources.FFmpegOptionsForm_UpdateUI_Quality_ + " " + Options.FFmpeg.MP3_QScale;
@@ -413,6 +420,18 @@ namespace ShareX.ScreenCaptureLib
         private void nudx264CRF_ValueChanged(object sender, EventArgs e)
         {
             Options.FFmpeg.x264_CRF = (int)nudx264CRF.Value;
+            UpdateUI();
+        }
+
+        private void nudx264Bitrate_ValueChanged(object sender, EventArgs e)
+        {
+            Options.FFmpeg.x264_Bitrate = (int)nudx264Bitrate.Value;
+            UpdateUI();
+        }
+
+        private void cbx264UseBitrate_CheckedChanged(object sender, EventArgs e)
+        {
+            Options.FFmpeg.x264_Use_Bitrate = cbx264UseBitrate.Checked;
             UpdateUI();
         }
 

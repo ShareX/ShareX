@@ -189,7 +189,14 @@ namespace ShareX.ScreenCaptureLib
                         case FFmpegVideoCodec.libx265: // https://trac.ffmpeg.org/wiki/Encode/H.265
                             args.Append($"-preset {FFmpeg.x264_Preset} ");
                             if (IsRecording) args.Append($"-tune {FFmpegTune.zerolatency} ");
-                            args.Append($"-crf {FFmpeg.x264_CRF} ");
+                            if (FFmpeg.x264_Use_Bitrate)
+                            {
+                                args.Append($"-b:v {FFmpeg.x264_Bitrate}k ");
+                            }
+                            else
+                            {
+                                args.Append($"-crf {FFmpeg.x264_CRF} ");
+                            }
                             args.Append("-pix_fmt yuv420p "); // -pix_fmt yuv420p required otherwise can't stream in Chrome
                             args.Append("-movflags +faststart "); // This will move some information to the beginning of your file and allow the video to begin playing before it is completely downloaded by the viewer
                             break;
