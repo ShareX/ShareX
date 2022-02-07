@@ -96,14 +96,14 @@ namespace ShareX.ScreenCaptureLib
             cbx264Preset.SelectedIndex = (int)Options.FFmpeg.x264_Preset;
 
             // VPx
-            nudVP8Bitrate.SetValue(Options.FFmpeg.VPx_bitrate);
+            nudVP8Bitrate.SetValue(Options.FFmpeg.VPx_Bitrate);
 
             // Xvid
-            nudXvidQscale.SetValue(Options.FFmpeg.XviD_qscale);
+            nudXvidQscale.SetValue(Options.FFmpeg.XviD_QScale);
 
             // NVENC
-            nudNVENCBitrate.SetValue(Options.FFmpeg.NVENC_bitrate);
-            cbNVENCPreset.SelectedIndex = (int)Options.FFmpeg.NVENC_preset;
+            nudNVENCBitrate.SetValue(Options.FFmpeg.NVENC_Bitrate);
+            cbNVENCPreset.SelectedIndex = (int)Options.FFmpeg.NVENC_Preset;
 
             // GIF
             cbGIFStatsMode.SelectedIndex = (int)Options.FFmpeg.GIFStatsMode;
@@ -111,21 +111,21 @@ namespace ShareX.ScreenCaptureLib
             nudGIFBayerScale.SetValue(Options.FFmpeg.GIFBayerScale);
 
             // AMF
-            cbAMFUsage.SelectedIndex = (int)Options.FFmpeg.AMF_usage;
-            cbAMFQuality.SelectedIndex = (int)Options.FFmpeg.AMF_quality;
+            cbAMFUsage.SelectedIndex = (int)Options.FFmpeg.AMF_Usage;
+            cbAMFQuality.SelectedIndex = (int)Options.FFmpeg.AMF_Quality;
 
             // QuickSync
-            nudQSVBitrate.SetValue(Options.FFmpeg.QSV_bitrate);
-            cbQSVPreset.SelectedIndex = (int)Options.FFmpeg.QSV_preset;
+            nudQSVBitrate.SetValue(Options.FFmpeg.QSV_Bitrate);
+            cbQSVPreset.SelectedIndex = (int)Options.FFmpeg.QSV_Preset;
 
             // AAC
-            tbAACBitrate.Value = Options.FFmpeg.AAC_bitrate / 32;
+            tbAACBitrate.Value = Options.FFmpeg.AAC_Bitrate / 32;
 
             // Vorbis
-            tbVorbis_qscale.Value = Options.FFmpeg.Vorbis_qscale;
+            tbVorbis_qscale.Value = Options.FFmpeg.Vorbis_QScale;
 
             // MP3
-            tbMP3_qscale.Value = FFmpegCLIManager.mp3_max - Options.FFmpeg.MP3_qscale;
+            tbMP3_qscale.Value = FFmpegCLIManager.mp3_max - Options.FFmpeg.MP3_QScale;
 
 #if MicrosoftStore
             btnTest.Visible = false;
@@ -203,10 +203,10 @@ namespace ShareX.ScreenCaptureLib
         {
             if (settingsLoaded)
             {
-                lblAACQuality.Text = string.Format(Resources.FFmpegOptionsForm_UpdateUI_Bitrate___0_k, Options.FFmpeg.AAC_bitrate);
-                lblVorbisQuality.Text = Resources.FFmpegOptionsForm_UpdateUI_Quality_ + " " + Options.FFmpeg.Vorbis_qscale;
-                lblMP3Quality.Text = Resources.FFmpegOptionsForm_UpdateUI_Quality_ + " " + Options.FFmpeg.MP3_qscale;
-                lblOpusQuality.Text = string.Format(Resources.FFmpegOptionsForm_UpdateUI_Bitrate___0_k, Options.FFmpeg.Opus_bitrate);
+                lblAACQuality.Text = string.Format(Resources.FFmpegOptionsForm_UpdateUI_Bitrate___0_k, Options.FFmpeg.AAC_Bitrate);
+                lblVorbisQuality.Text = Resources.FFmpegOptionsForm_UpdateUI_Quality_ + " " + Options.FFmpeg.Vorbis_QScale;
+                lblMP3Quality.Text = Resources.FFmpegOptionsForm_UpdateUI_Quality_ + " " + Options.FFmpeg.MP3_QScale;
+                lblOpusQuality.Text = string.Format(Resources.FFmpegOptionsForm_UpdateUI_Bitrate___0_k, Options.FFmpeg.Opus_Bitrate);
 
                 bool isValidAudioCodec = true;
                 FFmpegVideoCodec videoCodec = (FFmpegVideoCodec)cbVideoCodec.SelectedIndex;
@@ -424,25 +424,25 @@ namespace ShareX.ScreenCaptureLib
 
         private void nudVP8Bitrate_ValueChanged(object sender, EventArgs e)
         {
-            Options.FFmpeg.VPx_bitrate = (int)nudVP8Bitrate.Value;
+            Options.FFmpeg.VPx_Bitrate = (int)nudVP8Bitrate.Value;
             UpdateUI();
         }
 
         private void nudQscale_ValueChanged(object sender, EventArgs e)
         {
-            Options.FFmpeg.XviD_qscale = (int)nudXvidQscale.Value;
+            Options.FFmpeg.XviD_QScale = (int)nudXvidQscale.Value;
             UpdateUI();
         }
 
         private void cbNVENCPreset_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Options.FFmpeg.NVENC_preset = (FFmpegNVENCPreset)cbNVENCPreset.SelectedIndex;
+            Options.FFmpeg.NVENC_Preset = (FFmpegNVENCPreset)cbNVENCPreset.SelectedIndex;
             UpdateUI();
         }
 
         private void nudNVENCBitrate_ValueChanged(object sender, EventArgs e)
         {
-            Options.FFmpeg.NVENC_bitrate = (int)nudNVENCBitrate.Value;
+            Options.FFmpeg.NVENC_Bitrate = (int)nudNVENCBitrate.Value;
             UpdateUI();
         }
 
@@ -466,49 +466,49 @@ namespace ShareX.ScreenCaptureLib
 
         private void cbAMFUsage_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Options.FFmpeg.AMF_usage = (FFmpegAMFUsage)cbAMFUsage.SelectedIndex;
+            Options.FFmpeg.AMF_Usage = (FFmpegAMFUsage)cbAMFUsage.SelectedIndex;
             UpdateUI();
         }
 
         private void cbAMFQuality_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Options.FFmpeg.AMF_quality = (FFmpegAMFQuality)cbAMFQuality.SelectedIndex;
+            Options.FFmpeg.AMF_Quality = (FFmpegAMFQuality)cbAMFQuality.SelectedIndex;
             UpdateUI();
         }
 
         private void cbQSVPreset_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Options.FFmpeg.QSV_preset = (FFmpegQSVPreset)cbQSVPreset.SelectedIndex;
+            Options.FFmpeg.QSV_Preset = (FFmpegQSVPreset)cbQSVPreset.SelectedIndex;
             UpdateUI();
         }
 
         private void nudQSVBitrate_ValueChanged(object sender, EventArgs e)
         {
-            Options.FFmpeg.QSV_bitrate = (int)nudQSVBitrate.Value;
+            Options.FFmpeg.QSV_Bitrate = (int)nudQSVBitrate.Value;
             UpdateUI();
         }
 
         private void tbAACBitrate_ValueChanged(object sender, EventArgs e)
         {
-            Options.FFmpeg.AAC_bitrate = tbAACBitrate.Value * 32;
+            Options.FFmpeg.AAC_Bitrate = tbAACBitrate.Value * 32;
             UpdateUI();
         }
 
         private void tbOpusBirate_ValueChanged(object sender, EventArgs e)
         {
-            Options.FFmpeg.Opus_bitrate = tbOpusBitrate.Value * 32;
+            Options.FFmpeg.Opus_Bitrate = tbOpusBitrate.Value * 32;
             UpdateUI();
         }
 
         private void tbVorbis_qscale_ValueChanged(object sender, EventArgs e)
         {
-            Options.FFmpeg.Vorbis_qscale = tbVorbis_qscale.Value;
+            Options.FFmpeg.Vorbis_QScale = tbVorbis_qscale.Value;
             UpdateUI();
         }
 
         private void tbMP3_qscale_ValueChanged(object sender, EventArgs e)
         {
-            Options.FFmpeg.MP3_qscale = FFmpegCLIManager.mp3_max - tbMP3_qscale.Value;
+            Options.FFmpeg.MP3_QScale = FFmpegCLIManager.mp3_max - tbMP3_qscale.Value;
             UpdateUI();
         }
 
