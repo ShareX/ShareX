@@ -89,7 +89,7 @@ namespace ShareX.ScreenCaptureLib
             cbVideoCodec.SelectedIndex = (int)Options.FFmpeg.VideoCodec;
             cbAudioCodec.SelectedIndex = (int)Options.FFmpeg.AudioCodec;
 
-            tbUserArgs.Text = Options.FFmpeg.UserArgs;
+            txtUserArgs.Text = Options.FFmpeg.UserArgs;
 
             // x264
             nudx264CRF.SetValue(Options.FFmpeg.x264_CRF);
@@ -531,9 +531,9 @@ namespace ShareX.ScreenCaptureLib
             UpdateUI();
         }
 
-        private void tbUserArgs_TextChanged(object sender, EventArgs e)
+        private void txtUserArgs_TextChanged(object sender, EventArgs e)
         {
-            Options.FFmpeg.UserArgs = tbUserArgs.Text;
+            Options.FFmpeg.UserArgs = txtUserArgs.Text;
             UpdateUI();
         }
 
