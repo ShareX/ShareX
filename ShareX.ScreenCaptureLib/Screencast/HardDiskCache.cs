@@ -49,7 +49,7 @@ namespace ShareX.ScreenCaptureLib
         private FileStream fsCache;
         private List<LocationInfo> indexList;
 
-        public HardDiskCache(ScreencastOptions options)
+        public HardDiskCache(ScreenRecordingOptions options)
         {
             Options = options;
             Helpers.CreateDirectoryFromFilePath(Options.OutputPath);

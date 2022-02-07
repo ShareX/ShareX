@@ -194,7 +194,7 @@
     <Compile Include="Forms\FFmpegOptionsForm.Designer.cs">
       <DependentUpon>FFmpegOptionsForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Screencast\ScreencastOptions.cs" />
+    <Compile Include="Screencast\ScreenRecordingOptions.cs" />
     <Compile Include="Forms\RegionCaptureLightForm.cs">
       <SubType>Form</SubType>
     </Compile>

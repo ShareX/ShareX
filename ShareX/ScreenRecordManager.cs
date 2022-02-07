@@ -230,7 +230,7 @@ namespace ShareX
 
                         if (!abortRequested)
                         {
-                            ScreencastOptions options = new ScreencastOptions()
+                            ScreenRecordingOptions options = new ScreenRecordingOptions()
                             {
                                 IsRecording = true,
                                 IsLossless = taskSettings.CaptureSettings.ScreenRecordTwoPassEncoding,

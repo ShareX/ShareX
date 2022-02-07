@@ -33,7 +33,7 @@ using System.Text;
 
 namespace ShareX.ScreenCaptureLib
 {
-    public class ScreencastOptions
+    public class ScreenRecordingOptions
     {
         public bool IsRecording { get; set; }
         public bool IsLossless { get; set; }
