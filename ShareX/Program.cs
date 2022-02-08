@@ -34,7 +34,7 @@ using System.Text;
 using System.Threading;
 using System.Windows.Forms;
 
-#if WindowsStore
+#if MicrosoftStore
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 #endif
@@ -50,7 +50,7 @@ namespace ShareX
             ShareXBuild.Release;
 #elif STEAM
             ShareXBuild.Steam;
-#elif WindowsStore
+#elif MicrosoftStore
             ShareXBuild.MicrosoftStore;
 #elif DEBUG
             ShareXBuild.Debug;
@@ -335,7 +335,7 @@ namespace ShareX
             DebugHelper.WriteLine("Running as elevated process: " + IsAdmin);
 
             SilentRun = CLI.IsCommandExist("silent", "s");
-#if WindowsStore
+#if MicrosoftStore
             SilentRun = SilentRun || AppInstance.GetActivatedEventArgs()?.Kind == ActivationKind.StartupTask;
 #endif
 
@@ -461,7 +461,7 @@ namespace ShareX
                 }
                 else
                 {
-#if !WindowsStore
+#if !MicrosoftStore
                     MigratePersonalPathConfig();
 #endif
 
@@ -516,7 +516,7 @@ namespace ShareX
 
         private static void RegisterExtensions()
         {
-#if !WindowsStore
+#if !MicrosoftStore
             if (!Portable)
             {
                 if (!IntegrationHelpers.CheckCustomUploaderExtension())

@@ -133,7 +133,7 @@ namespace ShareX.UploadersLib
         Streamable,
         [Description("s-ul")]
         Sul,
-        [Description("Lithiio")]
+        [Description("LobFile")]
         Lithiio,
         [Description("transfer.sh")]
         Transfersh,
@@ -339,14 +339,6 @@ namespace ShareX.UploadersLib
         LoginRequired,
         LoginSuccessful,
         LoginFailed
-    }
-
-    public enum CustomUploaderURLType
-    {
-        URL,
-        ThumbnailURL,
-        DeletionURL,
-        ErrorMessage
     }
 
     public enum YouTubeVideoPrivacy // Localized

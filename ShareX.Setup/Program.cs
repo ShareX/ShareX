@@ -42,8 +42,8 @@ namespace ShareX.Setup
             CreateSteamFolder = 1 << 2,
             OpenOutputDirectory = 1 << 3,
             UploadOutputFile = 1 << 4,
-            CreateWindowsStoreFolder = 1 << 5,
-            CreateWindowsStoreDebugFolder = 1 << 6,
+            CreateMicrosoftStoreFolder = 1 << 5,
+            CreateMicrosoftStoreDebugFolder = 1 << 6,
             CompileAppx = 1 << 7,
             DownloadFFmpeg = 1 << 8,
             CreateChecksumFile = 1 << 9,
@@ -52,14 +52,14 @@ namespace ShareX.Setup
             Setup = CreateSetup | OpenOutputDirectory,
             Portable = CreatePortable | OpenOutputDirectory,
             Steam = CreateSteamFolder | OpenOutputDirectory,
-            WindowsStore = CreateWindowsStoreFolder,
-            WindowsStoreDebug = CreateWindowsStoreDebugFolder,
+            MicrosoftStore = CreateMicrosoftStoreFolder,
+            MicrosoftStoreDebug = CreateMicrosoftStoreDebugFolder,
             Beta = CreateSetup | UploadOutputFile,
             AppVeyorRelease = CreateSetup | CreatePortable | CreateChecksumFile,
             AppVeyorSteam = CreateSteamFolder,
-            AppVeyorWindowsStore = CreateWindowsStoreFolder | CompileAppx,
+            AppVeyorMicrosoftStore = CreateMicrosoftStoreFolder | CompileAppx,
             AppVeyorSteamRelease = AppVeyorSteam | DownloadFFmpeg,
-            AppVeyorWindowsStoreRelease = AppVeyorWindowsStore | DownloadFFmpeg
+            AppVeyorMicrosoftStoreRelease = AppVeyorMicrosoftStore | DownloadFFmpeg
         }
 
         private static SetupJobs Job = SetupJobs.Stable;
@@ -72,23 +72,23 @@ namespace ShareX.Setup
         private static string DebugDir => Path.Combine(BinDir, "Debug");
         private static string DebugExecutablePath => Path.Combine(DebugDir, "ShareX.exe");
         private static string SteamDir => Path.Combine(BinDir, "Steam");
-        private static string WindowsStoreDir => Path.Combine(BinDir, "WindowsStore");
-        private static string WindowsStoreDebugDir => Path.Combine(BinDir, "WindowsStoreDebug");
+        private static string MicrosoftStoreDir => Path.Combine(BinDir, "MicrosoftStore");
+        private static string MicrosoftStoreDebugDir => Path.Combine(BinDir, "MicrosoftStoreDebug");
 
         private static string OutputDir => Path.Combine(ParentDir, "Output");
         private static string PortableOutputDir => Path.Combine(OutputDir, "ShareX-portable");
         private static string SteamOutputDir => Path.Combine(OutputDir, "ShareX-Steam");
-        private static string WindowsStoreOutputDir => Path.Combine(OutputDir, "ShareX-WindowsStore");
+        private static string MicrosoftStoreOutputDir => Path.Combine(OutputDir, "ShareX-MicrosoftStore");
 
         private static string SetupDir => Path.Combine(ParentDir, "ShareX.Setup");
         private static string InnoSetupDir => Path.Combine(SetupDir, "InnoSetup");
-        private static string WindowsStorePackageFilesDir => Path.Combine(SetupDir, "WindowsStore");
+        private static string MicrosoftStorePackageFilesDir => Path.Combine(SetupDir, "MicrosoftStore");
 
         private static string SteamLauncherDir => Path.Combine(ParentDir, @"ShareX.Steam\bin\Release");
         private static string SteamUpdatesDir => Path.Combine(SteamOutputDir, "Updates");
         private static string NativeMessagingHostDir => Path.Combine(ParentDir, @"ShareX.NativeMessagingHost\bin\Release");
         private static string RecorderDevicesSetupPath => Path.Combine(OutputDir, "Recorder-devices-setup.exe");
-        private static string WindowsStoreAppxPath => Path.Combine(OutputDir, "ShareX.appx");
+        private static string MicrosoftStoreAppxPath => Path.Combine(OutputDir, "ShareX.appx");
 
         public static string InnoSetupCompilerPath = @"C:\Program Files (x86)\Inno Setup 6\ISCC.exe";
         public static string FFmpeg32bit => Path.Combine(OutputDir, "ffmpeg.exe");
@@ -109,20 +109,20 @@ namespace ShareX.Setup
                 AppVeyor = true;
                 Job = SetupJobs.AppVeyorSteam;
             }
-            else if (SetupHelpers.CheckArguments(args, "-AppVeyorWindowsStore"))
+            else if (SetupHelpers.CheckArguments(args, "-AppVeyorMicrosoftStore"))
             {
                 AppVeyor = true;
-                Job = SetupJobs.AppVeyorWindowsStore;
+                Job = SetupJobs.AppVeyorMicrosoftStore;
             }
             else if (SetupHelpers.CheckArguments(args, "-AppVeyorSteamRelease"))
             {
                 AppVeyor = true;
                 Job = SetupJobs.AppVeyorSteamRelease;
             }
-            else if (SetupHelpers.CheckArguments(args, "-AppVeyorWindowsStoreRelease"))
+            else if (SetupHelpers.CheckArguments(args, "-AppVeyorMicrosoftStoreRelease"))
             {
                 AppVeyor = true;
-                Job = SetupJobs.AppVeyorWindowsStoreRelease;
+                Job = SetupJobs.AppVeyorMicrosoftStoreRelease;
             }
 
             Console.WriteLine("Setup job: " + Job);
@@ -154,19 +154,19 @@ namespace ShareX.Setup
                 }
             }
 
-            if (Job.HasFlag(SetupJobs.CreateWindowsStoreFolder))
+            if (Job.HasFlag(SetupJobs.CreateMicrosoftStoreFolder))
             {
-                CreateFolder(WindowsStoreDir, WindowsStoreOutputDir, SetupJobs.CreateWindowsStoreFolder);
+                CreateFolder(MicrosoftStoreDir, MicrosoftStoreOutputDir, SetupJobs.CreateMicrosoftStoreFolder);
 
                 if (Job.HasFlag(SetupJobs.DownloadFFmpeg))
                 {
-                    CopyFFmpeg(WindowsStoreOutputDir, false, true);
+                    CopyFFmpeg(MicrosoftStoreOutputDir, false, true);
                 }
             }
 
-            if (Job.HasFlag(SetupJobs.CreateWindowsStoreDebugFolder))
+            if (Job.HasFlag(SetupJobs.CreateMicrosoftStoreDebugFolder))
             {
-                CreateFolder(WindowsStoreDebugDir, WindowsStoreOutputDir, SetupJobs.CreateWindowsStoreDebugFolder);
+                CreateFolder(MicrosoftStoreDebugDir, MicrosoftStoreOutputDir, SetupJobs.CreateMicrosoftStoreDebugFolder);
             }
 
             if (Job.HasFlag(SetupJobs.CompileAppx))
@@ -176,7 +176,7 @@ namespace ShareX.Setup
                     ProcessStartInfo psi = new ProcessStartInfo()
                     {
                         FileName = MakeAppxPath,
-                        Arguments = $"pack /d \"{WindowsStoreOutputDir}\" /p \"{WindowsStoreAppxPath}\" /l /o",
+                        Arguments = $"pack /d \"{MicrosoftStoreOutputDir}\" /p \"{MicrosoftStoreAppxPath}\" /l /o",
                         UseShellExecute = false,
                         RedirectStandardOutput = true
                     };
@@ -188,7 +188,7 @@ namespace ShareX.Setup
                     process.WaitForExit();
                 }
 
-                Directory.Delete(WindowsStoreOutputDir, true);
+                Directory.Delete(MicrosoftStoreOutputDir, true);
             }
 
             if (Job.HasFlag(SetupJobs.CreateChecksumFile))
@@ -288,14 +288,14 @@ namespace ShareX.Setup
             SetupHelpers.CopyFile(Path.Combine(source, "ShareX.exe.config"), destination);
             SetupHelpers.CopyFiles(source, "*.dll", destination);
 
-            if (job == SetupJobs.CreateWindowsStoreDebugFolder)
+            if (job == SetupJobs.CreateMicrosoftStoreDebugFolder)
             {
                 SetupHelpers.CopyFiles(source, "*.pdb", destination);
             }
 
             SetupHelpers.CopyFiles(Path.Combine(ParentDir, "Licenses"), "*.txt", Path.Combine(destination, "Licenses"));
 
-            if (job != SetupJobs.CreateWindowsStoreFolder && job != SetupJobs.CreateWindowsStoreDebugFolder)
+            if (job != SetupJobs.CreateMicrosoftStoreFolder && job != SetupJobs.CreateMicrosoftStoreDebugFolder)
             {
                 if (!File.Exists(RecorderDevicesSetupPath))
                 {
@@ -316,9 +316,9 @@ namespace ShareX.Setup
 
             Helpers.CopyAll(Path.Combine(ParentDir, @"ShareX.ScreenCaptureLib\Stickers"), Path.Combine(destination, "Stickers"));
 
-            if (job == SetupJobs.CreateWindowsStoreFolder || job == SetupJobs.CreateWindowsStoreDebugFolder)
+            if (job == SetupJobs.CreateMicrosoftStoreFolder || job == SetupJobs.CreateMicrosoftStoreDebugFolder)
             {
-                Helpers.CopyAll(WindowsStorePackageFilesDir, destination);
+                Helpers.CopyAll(MicrosoftStorePackageFilesDir, destination);
             }
             else if (job == SetupJobs.CreatePortable)
             {

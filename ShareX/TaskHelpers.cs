@@ -1082,7 +1082,7 @@ namespace ShareX
 
         public static void OpenDNSChanger()
         {
-#if WindowsStore
+#if MicrosoftStore
             MessageBox.Show("Not supported in Microsoft Store build.", "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
 #else
             if (Helpers.IsAdministrator())
@@ -1332,7 +1332,7 @@ namespace ShareX
                         Program.DefaultTaskSettings.CaptureSettings.FFmpegOptions.CLIPath = taskSettings.TaskSettingsReference.CaptureSettings.FFmpegOptions.CLIPath =
                             taskSettings.CaptureSettings.FFmpegOptions.CLIPath = Program.DefaultFFmpegFilePath;
 
-#if STEAM || WindowsStore
+#if STEAM || MicrosoftStore
                         Program.DefaultTaskSettings.CaptureSettings.FFmpegOptions.OverrideCLIPath = taskSettings.TaskSettingsReference.CaptureSettings.FFmpegOptions.OverrideCLIPath =
                           taskSettings.CaptureSettings.FFmpegOptions.OverrideCLIPath = true;
 #endif
@@ -1834,10 +1834,10 @@ namespace ShareX
                 BarcodeReader barcodeReader = new BarcodeReader
                 {
                     AutoRotate = true,
-                    TryInverted = true,
                     Options = new DecodingOptions
                     {
-                        TryHarder = true
+                        TryHarder = true,
+                        TryInverted = true
                     }
                 };
 

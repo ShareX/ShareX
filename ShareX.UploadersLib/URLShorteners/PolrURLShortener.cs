@@ -23,8 +23,6 @@
 
 #endregion License Information (GPL v3)
 
-// Credits: https://github.com/DanielMcAssey
-
 using ShareX.HelpersLib;
 using ShareX.UploadersLib.Properties;
 using System.Collections.Generic;

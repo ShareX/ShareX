@@ -160,7 +160,7 @@ namespace ShareX.UploadersLib
         {
             string homePath = HttpHomePath.Replace("%host", Host);
 
-            CustomUploaderParser parser = new CustomUploaderParser();
+            CustomUploaderSyntaxParser parser = new CustomUploaderSyntaxParser();
             parser.UseNameParser = true;
             parser.NameParserType = NameParserType.URL;
             return parser.Parse(homePath);

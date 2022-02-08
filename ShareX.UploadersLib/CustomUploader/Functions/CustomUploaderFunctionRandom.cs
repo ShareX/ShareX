@@ -27,11 +27,12 @@ using ShareX.HelpersLib;
 
 namespace ShareX.UploadersLib
 {
+    // Example: {random:domain1.com|domain2.com}
     internal class CustomUploaderFunctionRandom : CustomUploaderFunction
     {
         public override string Name { get; } = "random";
 
-        public override string Call(CustomUploaderParser2 parser, string[] parameters)
+        public override string Call(CustomUploaderSyntaxParser parser, string[] parameters)
         {
             if (parameters.Length > 0)
             {

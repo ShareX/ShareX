@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-#if !WindowsStore
+#if !MicrosoftStore
 
 using System.Windows.Forms;
 

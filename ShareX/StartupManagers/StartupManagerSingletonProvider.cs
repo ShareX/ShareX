@@ -31,7 +31,7 @@ namespace ShareX
 
         static StartupManagerSingletonProvider()
         {
-#if WindowsStore
+#if MicrosoftStore
             CurrentStartupManager = new CentennialStartupManager();
 #elif STEAM
             CurrentStartupManager = new SteamStartupManager();

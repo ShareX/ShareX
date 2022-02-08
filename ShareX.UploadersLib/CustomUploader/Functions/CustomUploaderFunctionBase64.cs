@@ -27,11 +27,12 @@ using ShareX.HelpersLib;
 
 namespace ShareX.UploadersLib
 {
+    // Example: Basic {base64:username:password}
     internal class CustomUploaderFunctionBase64 : CustomUploaderFunction
     {
         public override string Name { get; } = "base64";
 
-        public override string Call(CustomUploaderParser2 parser, string[] parameters)
+        public override string Call(CustomUploaderSyntaxParser parser, string[] parameters)
         {
             string text = parameters[0];
 

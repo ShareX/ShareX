@@ -33,7 +33,7 @@ using System.Text;
 
 namespace ShareX.ScreenCaptureLib
 {
-    public class ScreencastOptions
+    public class ScreenRecordingOptions
     {
         public bool IsRecording { get; set; }
         public bool IsLossless { get; set; }
@@ -189,36 +189,43 @@ namespace ShareX.ScreenCaptureLib
                         case FFmpegVideoCodec.libx265: // https://trac.ffmpeg.org/wiki/Encode/H.265
                             args.Append($"-preset {FFmpeg.x264_Preset} ");
                             if (IsRecording) args.Append($"-tune {FFmpegTune.zerolatency} ");
-                            args.Append($"-crf {FFmpeg.x264_CRF} ");
+                            if (FFmpeg.x264_Use_Bitrate)
+                            {
+                                args.Append($"-b:v {FFmpeg.x264_Bitrate}k ");
+                            }
+                            else
+                            {
+                                args.Append($"-crf {FFmpeg.x264_CRF} ");
+                            }
                             args.Append("-pix_fmt yuv420p "); // -pix_fmt yuv420p required otherwise can't stream in Chrome
                             args.Append("-movflags +faststart "); // This will move some information to the beginning of your file and allow the video to begin playing before it is completely downloaded by the viewer
                             break;
                         case FFmpegVideoCodec.libvpx: // https://trac.ffmpeg.org/wiki/Encode/VP8
                         case FFmpegVideoCodec.libvpx_vp9: // https://trac.ffmpeg.org/wiki/Encode/VP9
                             if (IsRecording) args.Append("-deadline realtime ");
-                            args.Append($"-b:v {FFmpeg.VPx_bitrate}k ");
+                            args.Append($"-b:v {FFmpeg.VPx_Bitrate}k ");
                             args.Append("-pix_fmt yuv420p "); // -pix_fmt yuv420p required otherwise causing issues in Chrome related to WebM transparency support
                             break;
                         case FFmpegVideoCodec.libxvid: // https://trac.ffmpeg.org/wiki/Encode/MPEG-4
-                            args.Append($"-qscale:v {FFmpeg.XviD_qscale} ");
+                            args.Append($"-qscale:v {FFmpeg.XviD_QScale} ");
                             break;
                         case FFmpegVideoCodec.h264_nvenc: // https://trac.ffmpeg.org/wiki/HWAccelIntro#NVENC
                         case FFmpegVideoCodec.hevc_nvenc:
-                            args.Append($"-preset {FFmpeg.NVENC_preset} ");
-                            args.Append($"-b:v {FFmpeg.NVENC_bitrate}k ");
+                            args.Append($"-preset {FFmpeg.NVENC_Preset} ");
+                            args.Append($"-b:v {FFmpeg.NVENC_Bitrate}k ");
                             args.Append("-pix_fmt yuv420p ");
                             args.Append("-movflags +faststart "); // This will move some information to the beginning of your file and allow the video to begin playing before it is completely downloaded by the viewer
                             break;
                         case FFmpegVideoCodec.h264_amf:
                         case FFmpegVideoCodec.hevc_amf:
-                            args.Append($"-usage {FFmpeg.AMF_usage} ");
-                            args.Append($"-quality {FFmpeg.AMF_quality} ");
+                            args.Append($"-usage {FFmpeg.AMF_Usage} ");
+                            args.Append($"-quality {FFmpeg.AMF_Quality} ");
                             args.Append("-pix_fmt yuv420p ");
                             break;
                         case FFmpegVideoCodec.h264_qsv: // https://trac.ffmpeg.org/wiki/Hardware/QuickSync
                         case FFmpegVideoCodec.hevc_qsv:
-                            args.Append($"-preset {FFmpeg.QSV_preset} ");
-                            args.Append($"-b:v {FFmpeg.QSV_bitrate}k ");
+                            args.Append($"-preset {FFmpeg.QSV_Preset} ");
+                            args.Append($"-b:v {FFmpeg.QSV_Bitrate}k ");
                             break;
                         case FFmpegVideoCodec.libwebp: // https://www.ffmpeg.org/ffmpeg-codecs.html#libwebp
                             args.Append("-lossless 0 ");
@@ -238,16 +245,16 @@ namespace ShareX.ScreenCaptureLib
                 switch (FFmpeg.AudioCodec)
                 {
                     case FFmpegAudioCodec.libvoaacenc: // http://trac.ffmpeg.org/wiki/Encode/AAC
-                        args.Append($"-c:a aac -ac 2 -b:a {FFmpeg.AAC_bitrate}k "); // -ac 2 required otherwise failing with 7.1
+                        args.Append($"-c:a aac -ac 2 -b:a {FFmpeg.AAC_Bitrate}k "); // -ac 2 required otherwise failing with 7.1
                         break;
                     case FFmpegAudioCodec.libopus: // https://www.ffmpeg.org/ffmpeg-codecs.html#libopus-1
-                        args.Append($"-c:a libopus -b:a {FFmpeg.Opus_bitrate}k ");
+                        args.Append($"-c:a libopus -b:a {FFmpeg.Opus_Bitrate}k ");
                         break;
                     case FFmpegAudioCodec.libvorbis: // http://trac.ffmpeg.org/wiki/TheoraVorbisEncodingGuide
-                        args.Append($"-c:a libvorbis -qscale:a {FFmpeg.Vorbis_qscale} ");
+                        args.Append($"-c:a libvorbis -qscale:a {FFmpeg.Vorbis_QScale} ");
                         break;
                     case FFmpegAudioCodec.libmp3lame: // http://trac.ffmpeg.org/wiki/Encode/MP3
-                        args.Append($"-c:a libmp3lame -qscale:a {FFmpeg.MP3_qscale} ");
+                        args.Append($"-c:a libmp3lame -qscale:a {FFmpeg.MP3_QScale} ");
                         break;
                 }
             }

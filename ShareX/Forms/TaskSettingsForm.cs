@@ -1222,7 +1222,7 @@ namespace ShareX
 
         private void btnScreenRecorderFFmpegOptions_Click(object sender, EventArgs e)
         {
-            ScreencastOptions options = new ScreencastOptions
+            ScreenRecordingOptions options = new ScreenRecordingOptions
             {
                 IsRecording = true,
                 FFmpeg = TaskSettings.CaptureSettings.FFmpegOptions,

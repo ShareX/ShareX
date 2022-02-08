@@ -266,9 +266,6 @@ Created folders:</value>
   <data name="Pomf" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Favicons\Pomf.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Lithiio" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Favicons\Lithiio.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="UploadersConfigForm_MegaConfigureTab_Configured" xml:space="preserve">
     <value>Configured</value>
   </data>
@@ -445,5 +442,8 @@ Created folders:</value>
   </data>
   <data name="GooglePhotos" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\favicons\googlephotos.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LobFile" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Favicons\LobFile.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

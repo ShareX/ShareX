@@ -233,7 +233,7 @@ namespace ShareX.UploadersLib.FileUploaders
             {
                 try
                 {
-                    return UploadData2(localStream, remotePath);
+                    return UploadDataInternal(localStream, remotePath);
                 }
                 catch (FtpCommandException e)
                 {
@@ -242,7 +242,7 @@ namespace ShareX.UploadersLib.FileUploaders
                     {
                         CreateMultiDirectory(URLHelpers.GetDirectoryPath(remotePath));
 
-                        return UploadData2(localStream, remotePath);
+                        return UploadDataInternal(localStream, remotePath);
                     }
 
                     throw e;
@@ -252,7 +252,7 @@ namespace ShareX.UploadersLib.FileUploaders
             return false;
         }
 
-        private bool UploadData2(Stream localStream, string remotePath)
+        private bool UploadDataInternal(Stream localStream, string remotePath)
         {
             bool result;
             using (Stream remoteStream = client.OpenWrite(remotePath))

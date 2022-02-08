@@ -45,29 +45,31 @@ namespace ShareX.ScreenCaptureLib
         // Video
         public FFmpegPreset x264_Preset { get; set; } = FFmpegPreset.ultrafast;
         public int x264_CRF { get; set; } = 28;
-        public int VPx_bitrate { get; set; } = 3000; // kbit/s
-        public int XviD_qscale { get; set; } = 10;
-        public FFmpegNVENCPreset NVENC_preset { get; set; } = FFmpegNVENCPreset.llhp;
-        public int NVENC_bitrate { get; set; } = 3000; // kbit/s
+        public bool x264_Use_Bitrate { get; set; } = false;
+        public int x264_Bitrate { get; set; } = 3000; // kbit/s
+        public int VPx_Bitrate { get; set; } = 3000; // kbit/s
+        public int XviD_QScale { get; set; } = 10;
+        public FFmpegNVENCPreset NVENC_Preset { get; set; } = FFmpegNVENCPreset.llhp;
+        public int NVENC_Bitrate { get; set; } = 3000; // kbit/s
         public FFmpegPaletteGenStatsMode GIFStatsMode { get; set; } = FFmpegPaletteGenStatsMode.full;
         public FFmpegPaletteUseDither GIFDither { get; set; } = FFmpegPaletteUseDither.sierra2_4a;
         public int GIFBayerScale { get; set; } = 2;
-        public FFmpegAMFUsage AMF_usage { get; set; } = FFmpegAMFUsage.transcoding;
-        public FFmpegAMFQuality AMF_quality { get; set; } = FFmpegAMFQuality.speed;
-        public FFmpegQSVPreset QSV_preset { get; set; } = FFmpegQSVPreset.fast;
-        public int QSV_bitrate { get; set; } = 3000;
+        public FFmpegAMFUsage AMF_Usage { get; set; } = FFmpegAMFUsage.transcoding;
+        public FFmpegAMFQuality AMF_Quality { get; set; } = FFmpegAMFQuality.speed;
+        public FFmpegQSVPreset QSV_Preset { get; set; } = FFmpegQSVPreset.fast;
+        public int QSV_Bitrate { get; set; } = 3000; // kbit/s
 
         // Audio
-        public int AAC_bitrate { get; set; } = 128; // kbit/s
-        public int Opus_bitrate { get; set; } = 128; //kbit/s
-        public int Vorbis_qscale { get; set; } = 3;
-        public int MP3_qscale { get; set; } = 4;
+        public int AAC_Bitrate { get; set; } = 128; // kbit/s
+        public int Opus_Bitrate { get; set; } = 128; // kbit/s
+        public int Vorbis_QScale { get; set; } = 3;
+        public int MP3_QScale { get; set; } = 4;
 
         public string FFmpegPath
         {
             get
             {
-#if STEAM || WindowsStore
+#if STEAM || MicrosoftStore
                 if (!OverrideCLIPath)
                 {
                     if (NativeMethods.Is64Bit())

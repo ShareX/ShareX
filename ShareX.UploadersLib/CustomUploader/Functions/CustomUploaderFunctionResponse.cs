@@ -25,11 +25,12 @@
 
 namespace ShareX.UploadersLib
 {
+    // Example: {response}
     internal class CustomUploaderFunctionResponse : CustomUploaderFunction
     {
         public override string Name { get; } = "response";
 
-        public override string Call(CustomUploaderParser2 parser, string[] parameters)
+        public override string Call(CustomUploaderSyntaxParser parser, string[] parameters)
         {
             return parser.ResponseInfo.ResponseText;
         }

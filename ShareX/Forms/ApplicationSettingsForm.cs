@@ -119,7 +119,7 @@ namespace ShareX
             cbTrayLeftClickAction.SelectedIndex = (int)Program.Settings.TrayLeftClickAction;
             cbTrayMiddleClickAction.SelectedIndex = (int)Program.Settings.TrayMiddleClickAction;
 
-#if STEAM || WindowsStore
+#if STEAM || MicrosoftStore
             cbCheckPreReleaseUpdates.Visible = false;
             btnCheckDevBuild.Visible = false;
 #else
@@ -141,7 +141,7 @@ namespace ShareX
             UpdateThemeControls();
 
             // Integration
-#if WindowsStore
+#if MicrosoftStore
             cbShellContextMenu.Visible = false;
             cbEditWithShareX.Visible = false;
             cbSendToMenu.Visible = false;

@@ -23,8 +23,6 @@
 
 #endregion License Information (GPL v3)
 
-// Credits: https://github.com/lithium720
-
 using Newtonsoft.Json;
 using ShareX.HelpersLib;
 using ShareX.UploadersLib.Properties;
@@ -36,11 +34,11 @@ using System.Windows.Forms;
 
 namespace ShareX.UploadersLib.FileUploaders
 {
-    public class LithiioFileUploaderService : FileUploaderService
+    public class LobFileFileUploaderService : FileUploaderService
     {
         public override FileDestination EnumValue { get; } = FileDestination.Lithiio;
 
-        public override Image ServiceImage => Resources.Lithiio;
+        public override Image ServiceImage => Resources.LobFile;
 
         public override bool CheckConfig(UploadersConfig config)
         {
@@ -49,21 +47,21 @@ namespace ShareX.UploadersLib.FileUploaders
 
         public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
         {
-            return new Lithiio(config.LithiioSettings);
+            return new LobFile(config.LithiioSettings);
         }
 
         public override TabPage GetUploadersConfigTabPage(UploadersConfigForm form) => form.tpLithiio;
     }
 
-    public sealed class Lithiio : FileUploader
+    public sealed class LobFile : FileUploader
     {
-        public LithiioSettings Config { get; private set; }
+        public LobFileSettings Config { get; private set; }
 
-        public Lithiio()
+        public LobFile()
         {
         }
 
-        public Lithiio(LithiioSettings config)
+        public LobFile(LobFileSettings config)
         {
             Config = config;
         }
@@ -73,11 +71,11 @@ namespace ShareX.UploadersLib.FileUploaders
             Dictionary<string, string> args = new Dictionary<string, string>();
             args.Add("api_key", Config.UserAPIKey);
 
-            UploadResult result = SendRequestFile("https://lithi.io/api/v2/upload", stream, fileName, "file", args);
+            UploadResult result = SendRequestFile("https://lobfile.com/api/v3/upload", stream, fileName, "file", args);
 
             if (result.IsSuccess)
             {
-                LithiioUploadResponse uploadResponse = JsonConvert.DeserializeObject<LithiioUploadResponse>(result.Response);
+                LobFileUploadResponse uploadResponse = JsonConvert.DeserializeObject<LobFileUploadResponse>(result.Response);
 
                 if (uploadResponse.Success)
                 {
@@ -102,7 +100,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
             if (!string.IsNullOrEmpty(response))
             {
-                LithiioFetchAPIKeyResponse apiKeyResponse = JsonConvert.DeserializeObject<LithiioFetchAPIKeyResponse>(response);
+                LobFileFetchAPIKeyResponse apiKeyResponse = JsonConvert.DeserializeObject<LobFileFetchAPIKeyResponse>(response);
 
                 if (apiKeyResponse.Success)
                 {
@@ -117,24 +115,24 @@ namespace ShareX.UploadersLib.FileUploaders
             return null;
         }
 
-        private class LithiioResponse
+        private class LobFileResponse
         {
             public bool Success { get; set; }
             public string Error { get; set; }
         }
 
-        private class LithiioUploadResponse : LithiioResponse
+        private class LobFileUploadResponse : LobFileResponse
         {
             public string URL { get; set; }
         }
 
-        private class LithiioFetchAPIKeyResponse : LithiioResponse
+        private class LobFileFetchAPIKeyResponse : LobFileResponse
         {
             public string API_Key { get; set; }
         }
     }
 
-    public class LithiioSettings
+    public class LobFileSettings
     {
         [JsonEncrypt]
         public string UserAPIKey { get; set; } = "";

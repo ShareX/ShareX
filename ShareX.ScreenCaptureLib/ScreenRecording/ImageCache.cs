@@ -33,7 +33,7 @@ namespace ShareX.ScreenCaptureLib
     public abstract class ImageCache : IDisposable
     {
         public bool IsWorking { get; protected set; }
-        public ScreencastOptions Options { get; set; }
+        public ScreenRecordingOptions Options { get; set; }
 
         protected Thread task;
         protected BlockingCollection<Image> imageQueue;

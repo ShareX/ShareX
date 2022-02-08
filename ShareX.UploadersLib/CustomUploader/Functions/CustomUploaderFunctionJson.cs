@@ -27,12 +27,14 @@ using Newtonsoft.Json.Linq;
 
 namespace ShareX.UploadersLib
 {
+    // Example: {json:files[0].url}
     internal class CustomUploaderFunctionJson : CustomUploaderFunction
     {
         public override string Name { get; } = "json";
 
-        public override string Call(CustomUploaderParser2 parser, string[] parameters)
+        public override string Call(CustomUploaderSyntaxParser parser, string[] parameters)
         {
+            // https://goessner.net/articles/JsonPath/
             string jsonPath = parameters[0];
 
             if (!string.IsNullOrEmpty(jsonPath))

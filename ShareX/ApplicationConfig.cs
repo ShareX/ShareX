@@ -170,7 +170,7 @@ namespace ShareX
         #region Advanced
 
         [Category("Application"), DefaultValue(true), Description("Automatically check updates.")]
-#if STEAM || WindowsStore
+#if STEAM || MicrosoftStore
         [Browsable(false)]
 #endif
         public bool AutoCheckUpdate { get; set; }

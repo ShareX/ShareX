@@ -28,12 +28,14 @@ using System.Xml.XPath;
 
 namespace ShareX.UploadersLib
 {
+    // Example: {xml:/files/file[1]/url}
     internal class CustomUploaderFunctionXml : CustomUploaderFunction
     {
         public override string Name { get; } = "xml";
 
-        public override string Call(CustomUploaderParser2 parser, string[] parameters)
+        public override string Call(CustomUploaderSyntaxParser parser, string[] parameters)
         {
+            // https://www.w3schools.com/xml/xpath_syntax.asp
             string xpath = parameters[0];
 
             if (!string.IsNullOrEmpty(xpath))

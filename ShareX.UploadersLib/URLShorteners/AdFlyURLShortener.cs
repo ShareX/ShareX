@@ -23,8 +23,6 @@
 
 #endregion License Information (GPL v3)
 
-// Credits: https://github.com/LRNAB
-
 using ShareX.UploadersLib.Properties;
 using System.Collections.Generic;
 using System.Drawing;

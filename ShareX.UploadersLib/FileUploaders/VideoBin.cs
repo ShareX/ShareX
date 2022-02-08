@@ -23,8 +23,6 @@
 
 #endregion License Information (GPL v3)
 
-// Credits: https://github.com/corey-/
-
 using System.Collections.Generic;
 using System.IO;
 

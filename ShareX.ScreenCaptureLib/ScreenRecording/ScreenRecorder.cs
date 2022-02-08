@@ -87,7 +87,7 @@ namespace ShareX.ScreenCaptureLib
 
         public ScreenRecordOutput OutputType { get; private set; }
 
-        public ScreencastOptions Options { get; set; }
+        public ScreenRecordingOptions Options { get; set; }
 
         public event Action RecordingStarted;
 
@@ -102,7 +102,7 @@ namespace ShareX.ScreenCaptureLib
         private FFmpegCLIManager ffmpeg;
         private bool stopRequested;
 
-        public ScreenRecorder(ScreenRecordOutput outputType, ScreencastOptions options, Screenshot screenshot, Rectangle captureRectangle)
+        public ScreenRecorder(ScreenRecordOutput outputType, ScreenRecordingOptions options, Screenshot screenshot, Rectangle captureRectangle)
         {
             if (string.IsNullOrEmpty(options.OutputPath))
             {
