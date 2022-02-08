@@ -1194,19 +1194,19 @@ namespace ShareX.ScreenCaptureLib
 
             if (Options.ShowMagnifier)
             {
-                using (GraphicsQualityManager quality = new GraphicsQualityManager(g))
-                using (TextureBrush brush = new TextureBrush(magnifier))
+                if (Options.UseSquareMagnifier)
                 {
-                    brush.TranslateTransform(x, y + magnifierPosition);
+                    g.DrawImage(magnifier, x, y + magnifierPosition, magnifier.Width, magnifier.Height);
+                    g.DrawRectangleProper(Pens.White, x - 1, y + magnifierPosition - 1, magnifier.Width + 2, magnifier.Height + 2);
+                    g.DrawRectangleProper(Pens.Black, x, y + magnifierPosition, magnifier.Width, magnifier.Height);
+                }
+                else
+                {
+                    using (GraphicsQualityManager quality = new GraphicsQualityManager(g))
+                    using (TextureBrush brush = new TextureBrush(magnifier))
+                    {
+                        brush.TranslateTransform(x, y + magnifierPosition);
 
-                    if (Options.UseSquareMagnifier)
-                    {
-                        g.FillRectangle(brush, x, y + magnifierPosition, magnifier.Width, magnifier.Height);
-                        g.DrawRectangleProper(Pens.White, x - 1, y + magnifierPosition - 1, magnifier.Width + 2, magnifier.Height + 2);
-                        g.DrawRectangleProper(Pens.Black, x, y + magnifierPosition, magnifier.Width, magnifier.Height);
-                    }
-                    else
-                    {
                         g.FillEllipse(brush, x, y + magnifierPosition, magnifier.Width, magnifier.Height);
                         g.DrawEllipse(Pens.White, x - 1, y + magnifierPosition - 1, magnifier.Width + 2 - 1, magnifier.Height + 2 - 1);
                         g.DrawEllipse(Pens.Black, x, y + magnifierPosition, magnifier.Width - 1, magnifier.Height - 1);
