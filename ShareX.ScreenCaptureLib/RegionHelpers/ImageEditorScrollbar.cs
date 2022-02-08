@@ -144,12 +144,11 @@ namespace ShareX.ScreenCaptureLib
                 thumbColor = ThumbColor;
             }
 
-            var transform = g.Transform;
             using (Brush trackBrush = new SolidBrush(TrackColor))
             using (Brush thumbBrush = new SolidBrush(thumbColor))
-            using (Matrix identity = new Matrix())
             {
-                g.Transform = identity; // ignore editor scaling
+                var savedTransform = g.Transform;
+                g.ScaleTransform(1 / form.ZoomFactor, 1 / form.ZoomFactor); // ignore zoom
                 if (IsCapsule)
                 {
                     g.SmoothingMode = SmoothingMode.HighQuality;
@@ -166,8 +165,8 @@ namespace ShareX.ScreenCaptureLib
                     g.FillRectangle(trackBrush, Rectangle);
                     g.FillRectangle(thumbBrush, ThumbRectangle);
                 }
+                g.Transform = savedTransform;
             }
-            g.Transform = transform;
         }
 
         private void Scroll(Point position)

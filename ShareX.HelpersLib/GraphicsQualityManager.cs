@@ -34,19 +34,35 @@ namespace ShareX.HelpersLib
         private CompositingQuality previousCompositingQuality;
         private InterpolationMode previousInterpolationMode;
         private SmoothingMode previousSmoothingMode;
+        private PixelOffsetMode previousPixelOffsetMode;
         private Graphics g;
 
-        public GraphicsQualityManager(Graphics g, bool setHighQuality = true)
+        public enum Quality
+        {
+            Low,
+            High,
+        }
+
+        public GraphicsQualityManager(Graphics g, Quality? quality = Quality.High)
         {
             this.g = g;
 
             previousCompositingQuality = g.CompositingQuality;
             previousInterpolationMode = g.InterpolationMode;
             previousSmoothingMode = g.SmoothingMode;
+            previousPixelOffsetMode = g.PixelOffsetMode;
 
-            if (setHighQuality)
+            if (!quality.HasValue)
+            {
+                return;
+            }
+            if (quality.Value == Quality.High)
             {
                 SetHighQuality();
+            }
+            else if (quality.Value == Quality.Low)
+            {
+                SetLowQuality();
             }
         }
 
@@ -60,6 +76,17 @@ namespace ShareX.HelpersLib
             }
         }
 
+        public void SetLowQuality()
+        {
+            if (g != null)
+            {
+                g.PixelOffsetMode = PixelOffsetMode.HighSpeed;
+                g.InterpolationMode = InterpolationMode.NearestNeighbor;
+                g.SmoothingMode = SmoothingMode.HighSpeed;
+                g.CompositingQuality = CompositingQuality.HighSpeed;
+            }
+        }
+
         public void Dispose()
         {
             if (g != null)
@@ -67,6 +94,7 @@ namespace ShareX.HelpersLib
                 g.CompositingQuality = previousCompositingQuality;
                 g.InterpolationMode = previousInterpolationMode;
                 g.SmoothingMode = previousSmoothingMode;
+                g.PixelOffsetMode = previousPixelOffsetMode;
             }
         }
     }
