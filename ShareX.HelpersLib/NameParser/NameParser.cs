@@ -72,7 +72,17 @@ namespace ShareX.HelpersLib
             return new NameParser(nameParserType).Parse(pattern);
         }
 
+        public static string Parse(NameParserType nameParserType, string pattern, string fileName)
+        {
+            return new NameParser(nameParserType).Parse(pattern, fileName);
+        }
+
         public string Parse(string pattern)
+        {
+            return Parse(pattern, null);
+        }
+
+        public string Parse(string pattern, string fileName)
         {
             if (string.IsNullOrEmpty(pattern))
             {
@@ -80,6 +90,12 @@ namespace ShareX.HelpersLib
             }
 
             StringBuilder sb = new StringBuilder(pattern);
+
+            if (!string.IsNullOrEmpty(fileName))
+            {
+                string fileExtension = Helpers.GetFileNameExtension(fileName);
+                sb.Replace("%ft", fileExtension);
+            }
 
             if (WindowText != null)
             {
