@@ -148,7 +148,7 @@ namespace ShareX.ScreenCaptureLib
             using (Brush thumbBrush = new SolidBrush(thumbColor))
             {
                 var savedTransform = g.Transform;
-                g.ScaleTransform(1 / form.ZoomFactor, 1 / form.ZoomFactor); // ignore zoom
+                form.ZoomTransform(g, true);
                 if (IsCapsule)
                 {
                     g.SmoothingMode = SmoothingMode.HighQuality;

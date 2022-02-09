@@ -2077,6 +2077,15 @@ namespace ShareX.ScreenCaptureLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Zoom to fit on open.
+        /// </summary>
+        internal static string ShapeManager_CreateToolbar_ZoomToFitOnOpen {
+            get {
+                return ResourceManager.GetString("ShapeManager_CreateToolbar_ZoomToFitOnOpen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Cursor type:.
         /// </summary>
         internal static string ShapeManager_CursorType {
