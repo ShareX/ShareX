@@ -132,6 +132,9 @@
   <data name="txtContent.Multiline" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="txtContent.ScrollBars" type="System.Windows.Forms.ScrollBars, System.Windows.Forms">
+    <value>Both</value>
+  </data>
   <data name="txtContent.Size" type="System.Drawing.Size, System.Drawing">
     <value>616, 472</value>
   </data>
@@ -208,7 +211,7 @@
     <value>True</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
+    <value>96, 96</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>632, 520</value>
