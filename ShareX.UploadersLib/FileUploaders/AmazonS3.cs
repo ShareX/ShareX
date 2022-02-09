@@ -266,7 +266,7 @@ namespace ShareX.UploadersLib.FileUploaders
 
         private string GetUploadPath(string fileName)
         {
-            string path = NameParser.Parse(NameParserType.FolderPath, Settings.ObjectPrefix.Trim('/'));
+            string path = NameParser.Parse(NameParserType.FolderPath, Settings.ObjectPrefix.Trim('/'), fileName);
 
             if ((Settings.RemoveExtensionImage && Helpers.IsImageFile(fileName)) ||
                 (Settings.RemoveExtensionText && Helpers.IsTextFile(fileName)) ||
